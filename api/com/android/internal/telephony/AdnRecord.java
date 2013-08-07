@@ -1,16 +1,17 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AdnRecord implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.917 -0400", hash_original_field = "798BA4A06E75DF8F98A86DA56829D58F", hash_generated_field = "8258D0DD79FD51E01DCB0F44838DA6A0")
@@ -32,7 +33,7 @@ public class AdnRecord implements Parcelable {
 
     int recordNumber;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.918 -0400", hash_original_method = "7045C9AFF2F4A7CC7D801D193F8DA208", hash_generated_method = "2D209CB67E1077EC186814F0E2051BDA")
     public  AdnRecord(byte[] record) {
         this(0, 0, record);
@@ -41,7 +42,7 @@ public class AdnRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.919 -0400", hash_original_method = "39E5440420DD5CB806135CB05DFC1155", hash_generated_method = "667CADEBC2FC4216EF17B9A2768F90C1")
     public  AdnRecord(int efid, int recordNumber, byte[] record) {
         addTaint(record[0]);
@@ -55,7 +56,7 @@ public class AdnRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.919 -0400", hash_original_method = "3103748B60A6B4F91D8C8340F4241AA3", hash_generated_method = "E3DF30BA6B7D324D77BFD92060C97194")
     public  AdnRecord(String alphaTag, String number) {
         this(0, 0, alphaTag, number);
@@ -65,7 +66,7 @@ public class AdnRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.919 -0400", hash_original_method = "C511B456FEBF7A32E27BD651B4B0F96B", hash_generated_method = "8E1F468C67E51C1C26A74BACD8CDB141")
     public  AdnRecord(String alphaTag, String number, String[] emails) {
         this(0, 0, alphaTag, number, emails);
@@ -76,7 +77,7 @@ public class AdnRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.920 -0400", hash_original_method = "06878C60780B4D9C01767F1F53E52E0B", hash_generated_method = "DB50F2CEE4F92ABE4D005D3996EFF7B3")
     public  AdnRecord(int efid, int recordNumber, String alphaTag, String number, String[] emails) {
         this.efid = efid;
@@ -93,7 +94,7 @@ public class AdnRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.921 -0400", hash_original_method = "D0AEC6EC6E3FB2D90C73DE97D25EE860", hash_generated_method = "3DE96C976C7EAB0FE566AB7C2BE80CAE")
     public  AdnRecord(int efid, int recordNumber, String alphaTag, String number) {
         this.efid = efid;
@@ -110,7 +111,7 @@ public class AdnRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.921 -0400", hash_original_method = "AC3A7A9E3A191B711B11224D0DA9AF99", hash_generated_method = "A0084AA409C9E84926732D40D3E99CB4")
     public String getAlphaTag() {
 String var64C27E170699D534429D7BBF1BBBEA29_1040082031 =         alphaTag;
@@ -121,7 +122,7 @@ String var64C27E170699D534429D7BBF1BBBEA29_1040082031 =         alphaTag;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.921 -0400", hash_original_method = "EC6570D4091CFB302FD4A14DB7A9F4B4", hash_generated_method = "421C288318C6696E4DAD4FBFFF210DEF")
     public String getNumber() {
 String var63E80DF571E08DAA47BEFBF0BD0EEBAD_1216491440 =         number;
@@ -132,7 +133,7 @@ String var63E80DF571E08DAA47BEFBF0BD0EEBAD_1216491440 =         number;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.922 -0400", hash_original_method = "92D2F53049B5866D80AA794995783C1B", hash_generated_method = "5DF1F0FC23413F710D9C6058237021D9")
     public String[] getEmails() {
 String[] var72203EAA7D038E15106184833E380CD2_1478630902 =         emails;
@@ -143,7 +144,7 @@ String[] var72203EAA7D038E15106184833E380CD2_1478630902 =         emails;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.922 -0400", hash_original_method = "318E4DB00CD29A795BAB76EF64647C6C", hash_generated_method = "8AD750FE9F5EE2A604E640BF0FA92A76")
     public void setEmails(String[] emails) {
         this.emails = emails;
@@ -152,7 +153,7 @@ String[] var72203EAA7D038E15106184833E380CD2_1478630902 =         emails;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.922 -0400", hash_original_method = "68220200E4F2B5D293B76BDD34BEE487", hash_generated_method = "8BAFCEDDE46CBB458EDE8DAF9BCE69E9")
     public String toString() {
 String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" + alphaTag + "' '" + number + " " + emails + "'";
@@ -163,7 +164,7 @@ String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" +
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.923 -0400", hash_original_method = "5D6691CA551F86617D7220208AC31A8F", hash_generated_method = "F018041EEF47EC4DE9281CA55876AF10")
     public boolean isEmpty() {
         boolean varB679BA4A49178A5FFFFB2091D165AB85_1658234918 = (TextUtils.isEmpty(alphaTag) && TextUtils.isEmpty(number) && emails == null);
@@ -174,7 +175,7 @@ String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" +
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.923 -0400", hash_original_method = "D17030B2DC40ED56DDEA746A2C4F2F4F", hash_generated_method = "D1202261236EF341590F4D3F96FBA5BD")
     public boolean hasExtendedRecord() {
         boolean varF09E7BA1B696F5D5907F2CB3ADB1E96C_1034614568 = (extRecord != 0 && extRecord != 0xff);
@@ -185,6 +186,7 @@ String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" +
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean stringCompareNullEqualsEmpty(String s1, String s2) {
         if (s1 == s2) {
             return true;
@@ -199,7 +201,7 @@ String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" +
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.924 -0400", hash_original_method = "EA1ABD1A8E044AEC4146178ABB95A33B", hash_generated_method = "8A06A2946D32733505F3FFFE23CF937C")
     public boolean isEqual(AdnRecord adn) {
         addTaint(adn.getTaint());
@@ -215,7 +217,7 @@ String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" +
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.924 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F90E5FE0DC9B4DFBDC70C8997BEB94DF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_975759562 = (0);
@@ -226,7 +228,7 @@ String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" +
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.924 -0400", hash_original_method = "D94966D9C7C7FE5B7B9FBD39671B9050", hash_generated_method = "CD794A4295AA7A8752E051586478080A")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -245,6 +247,7 @@ String var3150255CB96D67940667A85BE93CA1C9_1737533097 =         "ADN Record '" +
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.927 -0400", hash_original_method = "43E5A3A3017D389C996FCD504E7A9103", hash_generated_method = "0C67FB1C68501107FB03E22938ACC74D")
     public byte[] buildAdnString(int recordSize) {
         addTaint(recordSize);
@@ -303,6 +306,7 @@ for(int i = 0;i < recordSize;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.928 -0400", hash_original_method = "D43EB4B47E694B53E14D637B6CBB15DA", hash_generated_method = "42B146F35B6BAF5F763822029579334F")
     public void appendExtRecord(byte[] extRecord) {
         try 
@@ -346,6 +350,7 @@ for(int i = 0;i < recordSize;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.931 -0400", hash_original_method = "C94E0153AA9A00481672837ABFA310B4", hash_generated_method = "2E1CA589DBC29225A459633C75B72C33")
     private void parseRecord(byte[] record) {
         try 

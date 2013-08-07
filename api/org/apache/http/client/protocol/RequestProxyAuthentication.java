@@ -1,6 +1,7 @@
 package org.apache.http.client.protocol;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.apache.commons.logging.Log;
@@ -15,10 +16,10 @@ import org.apache.http.auth.AuthenticationException;
 import org.apache.http.auth.Credentials;
 import org.apache.http.protocol.HttpContext;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RequestProxyAuthentication implements HttpRequestInterceptor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.537 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")

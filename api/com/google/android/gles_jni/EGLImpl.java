@@ -1,6 +1,7 @@
 package com.google.android.gles_jni;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
@@ -11,10 +12,10 @@ import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class EGLImpl implements EGL10 {

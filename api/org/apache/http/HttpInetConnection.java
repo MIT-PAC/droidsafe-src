@@ -1,6 +1,7 @@
 package org.apache.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetAddress;
 
 public interface HttpInetConnection extends HttpConnection {

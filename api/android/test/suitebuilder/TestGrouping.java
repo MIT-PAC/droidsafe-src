@@ -1,6 +1,7 @@
 package android.test.suitebuilder;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -21,10 +22,10 @@ import android.test.PackageInfoSources;
 
 import com.android.internal.util.Predicate;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestGrouping {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.176 -0400", hash_original_field = "70C19B020BEFD5DD40A8FC5A2B69533F", hash_generated_field = "92A1F72A3CA9AFF319E6A33DD1FCF056")
@@ -199,7 +200,7 @@ TestGrouping var72A74007B2BE62B849F475C7BDA4658B_1370115956 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.180 -0400", hash_original_method = "C38D4C4BAAACEDDA4FA2C460C27FC791", hash_generated_method = "A5CC7F7D0F8F444FCB7C79726067DEAC")
     public String getFirstIncludedPackage() {
 String varF8D28C66D98E8F5E93FEBFB5E22AE752_221520753 =         firstIncludedPackage;
@@ -210,6 +211,7 @@ String varF8D28C66D98E8F5E93FEBFB5E22AE752_221520753 =         firstIncludedPack
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.180 -0400", hash_original_method = "EB0D3DDEC19295079ED9F02F9ADFE3B2", hash_generated_method = "01F40D8636AF37241CFB8554049ADD99")
     private List<Class<? extends TestCase>> testCaseClassesInPackage(String packageName) {
         addTaint(packageName.getTaint());
@@ -225,6 +227,7 @@ List<Class<? extends TestCase>> varF30E1B2D05AB96E9BCFDD94FD0B601B7_1302633565 =
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.181 -0400", hash_original_method = "9793CFC93A78E03886A5AA31DA3BF499", hash_generated_method = "FE765FCBACD67BD11C5F5D343570579E")
     @SuppressWarnings("unchecked")
     private List<Class<? extends TestCase>> selectTestClasses(Set<Class<?>> allClasses) {
@@ -285,6 +288,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_962876593 =         selectedItems;
     
     private static class SortBySimpleName implements Comparator<Class<? extends TestCase>>, Serializable {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.182 -0400", hash_original_method = "DF47E6BDF91D187CFB898DEC7629CE17", hash_generated_method = "DF47E6BDF91D187CFB898DEC7629CE17")
         public SortBySimpleName ()
         {
@@ -322,6 +326,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_962876593 =         selectedItems;
     
     private static class SortByFullyQualifiedName implements Comparator<Class<? extends TestCase>>, Serializable {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.183 -0400", hash_original_method = "E467FE44B8FD2B3FC2F2C02A44638E77", hash_generated_method = "E467FE44B8FD2B3FC2F2C02A44638E77")
         public SortByFullyQualifiedName ()
         {
@@ -348,6 +353,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_962876593 =         selectedItems;
     
     private static class TestCasePredicate implements Predicate<Class<?>> {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.183 -0400", hash_original_method = "C51D9C1D123C5970141C72E69FC5E23D", hash_generated_method = "C51D9C1D123C5970141C72E69FC5E23D")
         public TestCasePredicate ()
         {
@@ -409,6 +415,7 @@ for(Constructor<? extends TestCase> constructor : constructors)
     
     private static class TestMethodPredicate implements Predicate<Method> {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.185 -0400", hash_original_method = "5644BC516EF6C647F77F88686C681987", hash_generated_method = "5644BC516EF6C647F77F88686C681987")
         public TestMethodPredicate ()
         {

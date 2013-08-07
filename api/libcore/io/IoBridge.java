@@ -1,6 +1,7 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.AF_INET6;
 import static libcore.io.OsConstants.EACCES;
 import static libcore.io.OsConstants.EADDRINUSE;
@@ -68,14 +69,14 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 import libcore.util.MutableInt;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class IoBridge {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.552 -0400", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "1249D99A029C3582A74310C04E7ECC4A")
     private  IoBridge() {
         // ---------- Original Method ----------
@@ -143,6 +144,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean connectErrno(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs) throws ErrnoException, IOException {
         if (timeoutMs == 0) {
             Libcore.os.connect(fd, inetAddress, port);
@@ -173,7 +175,7 @@ public final class IoBridge {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String connectDetail(InetAddress inetAddress, int port, int timeoutMs, ErrnoException cause) {
         String detail = "failed to connect to " + inetAddress + " (port " + port + ")";
         if (timeoutMs > 0) {
@@ -247,7 +249,7 @@ public final class IoBridge {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
         switch (option) {
         case SocketOptions.IP_MULTICAST_IF:
@@ -288,13 +290,13 @@ public final class IoBridge {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean booleanFromInt(int i) {
         return (i != 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int booleanToInt(boolean b) {
         return b ? 1 : 0;
     }
@@ -309,6 +311,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void setSocketOptionErrno(FileDescriptor fd, int option, Object value) throws ErrnoException, SocketException {
         switch (option) {
         case SocketOptions.IP_MULTICAST_IF:
@@ -472,6 +475,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int maybeThrowAfterSendto(boolean isDatagram, ErrnoException errnoException) throws SocketException {
         if (isDatagram) {
             if (errnoException.errno == ECONNRESET || errnoException.errno == ECONNREFUSED) {
@@ -514,7 +518,7 @@ public final class IoBridge {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int postRecvfrom(boolean isRead, DatagramPacket packet, boolean isConnected, InetSocketAddress srcAddress, int byteCount) {
         if (isRead && byteCount == 0) {
             return -1;
@@ -530,7 +534,7 @@ public final class IoBridge {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int maybeThrowAfterRecvfrom(boolean isRead, boolean isConnected, ErrnoException errnoException) throws SocketException, SocketTimeoutException {
         if (isRead) {
             if (errnoException.errno == EAGAIN || errnoException.errno == EWOULDBLOCK) {

@@ -1,6 +1,7 @@
 package org.bouncycastle.crypto.macs;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Hashtable;
 
 import org.bouncycastle.crypto.CipherParameters;
@@ -9,10 +10,10 @@ import org.bouncycastle.crypto.ExtendedDigest;
 import org.bouncycastle.crypto.Mac;
 import org.bouncycastle.crypto.params.KeyParameter;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HMac implements Mac {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.036 -0400", hash_original_field = "C10F77963A2B21079156A0E5C5A4BB3C", hash_generated_field = "F5CA32AF1F0185FA6739BEFB868D9AC1")
@@ -40,6 +41,7 @@ public class HMac implements Mac {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.038 -0400", hash_original_method = "2F24A8925EE1F6A5F74219B54F49BAF8", hash_generated_method = "BE12F9EADFC7A313DFF86BD76AF11427")
     private  HMac(
         Digest digest,
@@ -58,6 +60,7 @@ public class HMac implements Mac {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int getByteLength(
         Digest digest) {
         if (digest instanceof ExtendedDigest)

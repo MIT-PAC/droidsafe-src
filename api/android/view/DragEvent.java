@@ -1,14 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DragEvent implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.608 -0400", hash_original_field = "A3988EEE869C06063B06A0C38A6A1E11", hash_generated_field = "87F72266090A426F9B25050359B17309")
@@ -42,14 +43,14 @@ public class DragEvent implements Parcelable {
 
     private boolean mRecycled;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.609 -0400", hash_original_method = "5492E1A6EF7C89CB56D8B22EE2854B8B", hash_generated_method = "C325B7A5D23661790703116059A6FDC6")
     private  DragEvent() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.609 -0400", hash_original_method = "7C5024523CDDAF1D0113FCBE9F36B975", hash_generated_method = "938EDBDAF55CF15B95F169EDD98664E3")
     private void init(int action, float x, float y, ClipDescription description, ClipData data,
             Object localState, boolean result) {
@@ -77,7 +78,7 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static DragEvent obtain(int action, float x, float y, Object localState,
             ClipDescription description, ClipData data, boolean result) {
         final DragEvent ev;
@@ -99,7 +100,7 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static DragEvent obtain(DragEvent source) {
         return obtain(source.mAction, source.mX, source.mY, source.mLocalState,
                 source.mClipDescription, source.mClipData, source.mDragResult);
@@ -183,7 +184,7 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_960813999 =         mLocalState;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.610 -0400", hash_original_method = "BFE96ED2CE5B148D8BC4E31880D4A75D", hash_generated_method = "EF856474A04634086C4B2C34FDF3EF9B")
     public final void recycle() {
         if(TRACK_RECYCLED_LOCATION)        

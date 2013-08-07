@@ -1,13 +1,14 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.CacheRequest;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.137 -0400", hash_original_field = "136419F556A56B4DD064ACA8F98BADEF", hash_generated_field = "A47BA202024AEED5382C6DACAC7B8715")

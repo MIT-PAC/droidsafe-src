@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.res.CompatibilityInfo.Translator;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,10 +13,10 @@ import android.graphics.SurfaceTexture;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Surface implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.059 -0400", hash_original_field = "BD9155F16322AD91398B71690C8B7AEA", hash_generated_field = "3070A52A13AD896F784FBCE51B4EC514")
@@ -65,7 +66,7 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.061 -0400", hash_original_method = "63DD348776A9AD7A69FD5A5406A9D749", hash_generated_method = "C584B60D4070D219729F8C3282DD6DF4")
     public  Surface(SurfaceSession s,
             int pid, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
@@ -91,7 +92,7 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.063 -0400", hash_original_method = "77F92398B62C28FF78E552B775B6A70A", hash_generated_method = "FDB64651208DEE56DB6D1C2510724720")
     public  Surface(SurfaceSession s,
             int pid, String name, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
@@ -119,7 +120,7 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.063 -0400", hash_original_method = "CA741F0DB07B20B1C302E68F5EF5136C", hash_generated_method = "CFF9079F6F8989E212EED52D804FE5C8")
     public  Surface() {
         if(DEBUG_RELEASE)        
@@ -135,6 +136,7 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.064 -0400", hash_original_method = "6ECF42DC85BE770B3A0C34165723456A", hash_generated_method = "6B38CFE5047E5BAE29E67E9C13DA5F73")
     private  Surface(Parcel source) throws OutOfResourcesException {
         addTaint(source.getTaint());
@@ -233,7 +235,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.067 -0400", hash_original_method = "4CE5C8D563EAB7D0D818407349F1750B", hash_generated_method = "BFA0F1087A11B66BEC825F177ED4CCE4")
     public int getGenerationId() {
         int var53362B083976939F1558AE45894FA6BA_1973914788 = (mSurfaceGenerationId);
@@ -291,7 +293,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void setOrientation(int display, int orientation) {
         setOrientation(display, orientation, 0);
     }
@@ -325,7 +327,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.068 -0400", hash_original_method = "7F99A19F828A289B6FD343EC8CB65512", hash_generated_method = "72AA9B77CC2AA972E9C4071D2F5243EE")
     public void setPosition(int x, int y) {
         addTaint(y);

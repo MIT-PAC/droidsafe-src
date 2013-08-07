@@ -1,13 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MulticastSocket extends DatagramSocket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.797 -0400", hash_original_field = "96B66E9938C3C3EFB77DFCB3A31F2836", hash_generated_field = "FA21EF96F67F8787C26D586D454C48A6")
@@ -176,7 +177,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.805 -0400", hash_original_method = "5D3737731721260F57AF95D7810519A1", hash_generated_method = "CBB8A4F420303A555A6BA7D7FE2813FE")
     private void checkJoinOrLeave(SocketAddress groupAddress, NetworkInterface netInterface) throws IOException {
         addTaint(netInterface.getTaint());
@@ -219,7 +220,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.806 -0400", hash_original_method = "6596B4EA78B0ED28321084C8CA9DCC77", hash_generated_method = "A40939F5E15D55DEC9C721738978367F")
     private void checkJoinOrLeave(InetAddress groupAddr) throws IOException {
         addTaint(groupAddr.getTaint());

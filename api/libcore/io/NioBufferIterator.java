@@ -1,10 +1,11 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class NioBufferIterator extends BufferIterator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.648 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "849BAB492558B51E7BC4F1C331A435E4")
@@ -20,7 +21,7 @@ public final class NioBufferIterator extends BufferIterator {
 
     private int position;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "1851358DA9BE5B3D125F1A8CE59A39B7", hash_generated_method = "0424634FEE076B20A42B61ECA5D4A252")
       NioBufferIterator(int address, int size, boolean swap) {
         this.address = address;
@@ -33,7 +34,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "E36D4B83C08A879BB369FD4BF3E743B5", hash_generated_method = "D66EB936D868E838CC6FBF758BD016A1")
     public void seek(int offset) {
         position = offset;
@@ -42,7 +43,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "5C6BD475B81B38C95ED571F8A0E18EDC", hash_generated_method = "940E96887BCB1FBE664555A63C820A3C")
     public void skip(int byteCount) {
         position += byteCount;
@@ -51,7 +52,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "AF50505279F6805CCFBDD6FA7CF3687B", hash_generated_method = "1B3C42FB9872A5DA84CB54FF89C7B26F")
     public void readByteArray(byte[] dst, int dstOffset, int byteCount) {
         addTaint(dstOffset);
@@ -64,7 +65,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "47AEAAA269BE342FCE4A8C8B269BAED8", hash_generated_method = "A9BB1FBDDC5189AE359EF7B8D647C1B7")
     public byte readByte() {
         byte result = Memory.peekByte(address + position);
@@ -79,7 +80,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "F3BC6F7E073908C181908589CEF0FEA1", hash_generated_method = "2D5FAC74FD3954E9A5D138F7ED27E37A")
     public int readInt() {
         int result = Memory.peekInt(address + position, swap);
@@ -94,7 +95,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "61F99480AF42C401222A5DDE05D611E9", hash_generated_method = "9D264C8747233403E14A7FFCF1C7C4A5")
     public void readIntArray(int[] dst, int dstOffset, int intCount) {
         addTaint(dstOffset);
@@ -107,7 +108,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.649 -0400", hash_original_method = "34473D83268F7BAA3E1410708A3FD84F", hash_generated_method = "7EC79BDFE26C052B998BB4578D4E87A8")
     public short readShort() {
         short result = Memory.peekShort(address + position, swap);

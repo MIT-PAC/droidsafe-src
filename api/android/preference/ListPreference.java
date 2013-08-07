@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,10 +9,10 @@ import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ListPreference extends DialogPreference {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.312 -0400", hash_original_field = "A2A3482E1757A40787036BBDB9FBE706", hash_generated_field = "4FC648754770C3205F9446C9F7605834")
@@ -249,6 +250,7 @@ for(int i = mEntryValues.length - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.322 -0400", hash_original_method = "72A7028E3449428A8EE1CE440273EEC8", hash_generated_method = "087163CF6E9295B321982617764832A8")
     private int getValueIndex() {
         int var343FBCBF4C59CD973D936304A5C127F2_563519454 = (findIndexOfValue(mValue));

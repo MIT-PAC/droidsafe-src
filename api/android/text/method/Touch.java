@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Layout;
 import android.text.Layout.Alignment;
 import android.text.NoCopySpan;
@@ -9,14 +10,14 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Touch {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.846 -0400", hash_original_method = "FF7FAE7578041B972B60FFE115691062", hash_generated_method = "F8174DCCCAA12EC7CD4BEF28AD13D4D4")
     private  Touch() {
         // ---------- Original Method ----------

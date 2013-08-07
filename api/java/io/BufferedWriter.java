@@ -1,13 +1,14 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
 import libcore.util.SneakyThrow;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BufferedWriter extends Writer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.400 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "0251D9C19BD1379B95D6A9A5D4A8C80D")
@@ -129,6 +130,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.406 -0400", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "D5B6A3F8AB9EA2E05029A9C8B87126F9")
     private void checkNotClosed() throws IOException {
         if(isClosed())        
@@ -144,6 +146,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.406 -0400", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "E40EA2268EB097A4F1392CA223EF1383")
     private void flushInternal() throws IOException {
         if(pos > 0)        
@@ -159,7 +162,7 @@ public class BufferedWriter extends Writer {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.407 -0400", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "7F9CA8F69650F2F5DA796329762CBF07")
     private boolean isClosed() {
         boolean varAE601444E7D588038E147A2CA548E6D7_1754750598 = (out == null);

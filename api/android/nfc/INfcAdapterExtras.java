@@ -1,6 +1,7 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface INfcAdapterExtras extends android.os.IInterface
 {

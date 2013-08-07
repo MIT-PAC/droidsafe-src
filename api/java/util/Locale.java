@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -8,10 +9,10 @@ import java.io.ObjectStreamField;
 import java.io.Serializable;
 
 import libcore.icu.ICU;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Locale implements Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.206 -0400", hash_original_field = "AF9AD4037F4BB83AC9CEB5E118E6DE1A", hash_generated_field = "19B779CD8189BCE485C226E9C90F5F3B")
@@ -27,7 +28,7 @@ public final class Locale implements Cloneable, Serializable {
 
     private transient String cachedToStringResult;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.207 -0400", hash_original_method = "3151080AB39B36B6870FE53962DD218F", hash_generated_method = "EE01A9EAA1684C1454F7936A22A4747D")
     private  Locale(boolean unused, String lowerCaseLanguageCode, String upperCaseCountryCode) {
         addTaint(unused);
@@ -495,7 +496,7 @@ String var66D22B56B8793B92BBBBA1F207965C13_851066035 =         (result == null) 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.217 -0400", hash_original_method = "C73C94720A0586E8BA389B0E4B761A7E", hash_generated_method = "7DE619ECEC88113AD1C6753FBD486E6B")
     private String toNewString() {
         if(languageCode.length() == 0 && countryCode.length() == 0)        
@@ -537,7 +538,7 @@ String varE65B3A02759122992CB82C0E651AD408_1482555691 =         result.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.217 -0400", hash_original_method = "03500CE785032DF09CF1C69BAF02C627", hash_generated_method = "451531EC6CFF215571930AE6226FD5CC")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -557,7 +558,7 @@ String varE65B3A02759122992CB82C0E651AD408_1482555691 =         result.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.218 -0400", hash_original_method = "119900B43F45E61950B2C4FD2DBBE050", hash_generated_method = "D3338A68F22AB0AA28E6AF440D44E529")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

@@ -1,13 +1,14 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.graphics.PointF;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class FaceDetector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.167 -0400", hash_original_field = "651CEF29F37C9F53091FD6A9046D9F00", hash_generated_field = "B2E1347C5E93135AD628FBFEBF992869")

@@ -1,12 +1,13 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
 import libcore.io.Streams;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class InputStream extends Object implements Closeable {
     

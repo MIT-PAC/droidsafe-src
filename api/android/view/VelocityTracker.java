@@ -1,14 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.Pool;
 import android.util.Poolable;
 import android.util.PoolableManager;
 import android.util.Pools;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class VelocityTracker implements Poolable<VelocityTracker> {
@@ -22,7 +23,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
 
     private boolean mIsPooled;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.274 -0400", hash_original_method = "F7334C8DF7CFD0702F8B319FC0AAEBEC", hash_generated_method = "D85E3DAABC499710A355B9A59E327BBA")
     private  VelocityTracker() {
         mPtr = nativeInitialize();
@@ -91,7 +92,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.278 -0400", hash_original_method = "2CC1A1BE49EC62DFF418BB32459396A9", hash_generated_method = "74AE9F16F0DD1BBCC61D5A9BA8889C0C")
     public void setNextPoolable(VelocityTracker element) {
         mNext = element;
@@ -100,7 +101,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.278 -0400", hash_original_method = "DEA3C3D2ED346DE60DC91CC9918022D0", hash_generated_method = "D759BE744DE65F8503CFDE8BF1C09521")
     public VelocityTracker getNextPoolable() {
 VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
@@ -111,7 +112,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.279 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "799B6D87CDBE00F9A9E87FFAD5DA0B1D")
     public boolean isPooled() {
         boolean var224D05F4261498DA1D9DF38424832532_322340227 = (mIsPooled);
@@ -122,7 +123,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.279 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
     public void setPooled(boolean isPooled) {
         mIsPooled = isPooled;
@@ -254,7 +255,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.285 -0400", hash_original_method = "53182452353A9C74BE3B46A3229E5647", hash_generated_method = "25FAD989A83856E77552CF916EE74520")
     public boolean getEstimator(int id, int degree, int horizonMillis, Estimator outEstimator) {
         addTaint(outEstimator.getTaint());
@@ -323,7 +324,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.287 -0400", hash_original_method = "17E8AE405780B4520E14D05EC083CF07", hash_generated_method = "5189F636DC7F0031576DAB3F4B6EA466")
         private float estimate(float time, float[] c) {
             addTaint(c[0]);

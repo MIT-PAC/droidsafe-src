@@ -1,12 +1,14 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public final class AccessController {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.746 -0400", hash_original_method = "933F644DAAB02DBBD976309C952EDFF1", hash_generated_method = "413E2414F33FF227172B34BB7BB4830A")
     private  AccessController() {
         // ---------- Original Method ----------

@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.Key;
 import java.security.KeyFactory;
@@ -22,7 +23,7 @@ import javax.net.ssl.X509ExtendedKeyManager;
 import javax.net.ssl.X509KeyManager;
 import javax.security.auth.x500.X500Principal;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class ClientHandshakeImpl extends HandshakeProtocol {
     
@@ -82,6 +83,7 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.189 -0400", hash_original_method = "A1AF1BC51EE82C9340D705103AD7A155", hash_generated_method = "34AB750B95F9FEAA9E5DB9B016ECCE56")
     private void renegotiateNewSession() {
         if(parameters.getEnableSessionCreation())        
@@ -124,6 +126,7 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.190 -0400", hash_original_method = "FFCAFC294E61749148CA1FC19A14A2BB", hash_generated_method = "923F226CD9CCDFFFCDAC17AA0ED53D1F")
     private void startSession() {
         CipherSuite[] cipher_suites;
@@ -596,6 +599,7 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.203 -0400", hash_original_method = "D4DFA4A65ECB84B5CCE7F9A88CE9F713", hash_generated_method = "B104F25657ACC58E1B5DF9097A7E0310")
     private void verifyServerCert() {
         String authType = session.cipherSuite.getAuthType(serverKeyExchange != null);
@@ -656,6 +660,7 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.204 -0400", hash_original_method = "BCA1C752C9C2161C7353D057736B9B80", hash_generated_method = "EE5253BFD6174C24E631263FD42716F5")
     private SSLSessionImpl findSessionToResume() {
         String host = null;

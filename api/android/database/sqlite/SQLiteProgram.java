@@ -1,14 +1,15 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
 import android.database.Cursor;
 import android.database.DatabaseUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class SQLiteProgram extends SQLiteClosable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.876 -0400", hash_original_field = "8C0B67E1F99496AB4CD09433C231BEB3", hash_generated_field = "45ED686A7022C4BC2786DB04CE6EE8DB")
@@ -84,7 +85,7 @@ for(int i = 0;i < size;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.883 -0400", hash_original_method = "EE8899F672BCD12A22959F518D1125AF", hash_generated_method = "0F180997DE6C247BFFF13B002088130B")
     private void compileSql() {
         if((mStatementType & STATEMENT_CACHEABLE) == 0)        
@@ -208,6 +209,7 @@ String varFA0654C7C9BA8BFE449D55D59921973A_1573957148 =         mSql;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.891 -0400", hash_original_method = "7AFA2099A2DCB432F4822D315BB6A2D0", hash_generated_method = "4A595504354986C6F6252D36EDEFCE7F")
     private void bind(int type, int index, Object value) {
         addTaint(value.getTaint());
@@ -365,6 +367,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.897 -0400", hash_original_method = "8DD7248015BFD919A162C74D92E1DB42", hash_generated_method = "043DAB4DFBEA2BA9F1995D35F5FCA5BB")
     private void addToBindArgs(int index, Object value) {
         addTaint(value.getTaint());

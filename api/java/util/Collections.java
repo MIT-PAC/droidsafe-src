@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -8,14 +9,14 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Collections {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.629 -0400", hash_original_method = "0C1BC548FC19EEB6A684F12763720939", hash_generated_method = "F5EC8594995493427AAF50F2EB8C349F")
     private  Collections() {
         // ---------- Original Method ----------
@@ -650,21 +651,21 @@ public class Collections {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     public static <T> Enumeration<T> emptyEnumeration() {
         return (Enumeration<T>) EMPTY_ENUMERATION;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     public static <T> Iterator<T> emptyIterator() {
         return (Iterator<T>) EMPTY_ITERATOR;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static <T> ListIterator<T> emptyListIterator() {
         return Collections.<T>emptyList().listIterator();
     }
@@ -843,7 +844,7 @@ E var24D05606CDD4BC4C89F2F5A15C16F343_533353621 =                 element;
     private static final class EmptyList extends AbstractList implements RandomAccess, Serializable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.635 -0400", hash_original_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B", hash_generated_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B")
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public EmptyList ()
         {
             //Synthesized constructor
@@ -888,7 +889,7 @@ E var24D05606CDD4BC4C89F2F5A15C16F343_533353621 =                 element;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.636 -0400", hash_original_method = "3CB4CAF1EADC3F12C565BD7D2B5F5514", hash_generated_method = "801FC09055278A4658A521B8059E8876")
         private Object readResolve() {
 Object var41537F84856EC2B8175806D98827383E_1804832711 =             Collections.EMPTY_LIST;
@@ -909,7 +910,7 @@ Object var41537F84856EC2B8175806D98827383E_1804832711 =             Collections.
     private static final class EmptySet extends AbstractSet implements Serializable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.636 -0400", hash_original_method = "3A37381B9598D46CF46D5D53F85DF5B1", hash_generated_method = "3A37381B9598D46CF46D5D53F85DF5B1")
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public EmptySet ()
         {
             //Synthesized constructor
@@ -953,7 +954,7 @@ Iterator var2DC6937AF28EC3FA949592521F2521D5_1518535643 =             EMPTY_ITER
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.638 -0400", hash_original_method = "2ED0845ADEAE5655731C197578B08F82", hash_generated_method = "2877B1327402811348CAB38C7BD23CD2")
         private Object readResolve() {
 Object varF4CA34D7BD1863138D7F8BDB7243DF79_1138094290 =             Collections.EMPTY_SET;
@@ -974,7 +975,7 @@ Object varF4CA34D7BD1863138D7F8BDB7243DF79_1138094290 =             Collections.
     private static final class EmptyMap extends AbstractMap implements Serializable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.638 -0400", hash_original_method = "0E8F36F90F9C751DA5A12903A16705DF", hash_generated_method = "0E8F36F90F9C751DA5A12903A16705DF")
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public EmptyMap ()
         {
             //Synthesized constructor
@@ -1056,7 +1057,7 @@ Collection var3EB787547078B98C6DA0C5CC8DE617C5_161877832 =             EMPTY_LIS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.639 -0400", hash_original_method = "59A22E9415A338EB85D7A7DD214359CC", hash_generated_method = "36AE1B37DFE3EF645F4EC1A1CBBA862B")
         private Object readResolve() {
 Object var82C06B799CE89F4FFB58A600643773F8_1481268190 =             Collections.EMPTY_MAP;
@@ -1076,7 +1077,7 @@ Object var82C06B799CE89F4FFB58A600643773F8_1481268190 =             Collections.
     
     private static final class ReverseComparator<T> implements Comparator<T>, Serializable {
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.641 -0400", hash_original_method = "FFB2FB11DBE006893CA9746ECCE68517", hash_generated_method = "FFB2FB11DBE006893CA9746ECCE68517")
         public ReverseComparator ()
         {
@@ -1101,7 +1102,7 @@ Object var82C06B799CE89F4FFB58A600643773F8_1481268190 =             Collections.
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.642 -0400", hash_original_method = "DD371F0FDF8300FDCFBD1E5C395D42BC", hash_generated_method = "F238C0F6F57039370F30CCC0ECAEA2BC")
         private Object readResolve() throws ObjectStreamException {
 Object var30C80D8445A0CA6A7769041AAD00A443_1340467786 =             INSTANCE;
@@ -1834,7 +1835,7 @@ T[] varA824E05E0FA0C1B35EB9A8324FF1796D_221099759 =                 c.toArray(ar
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.705 -0400", hash_original_method = "981AD07707BE70675431924A12FE33C6", hash_generated_method = "350CD97D03809885CB7561AF44340EC3")
         private void writeObject(ObjectOutputStream stream) throws IOException {
             addTaint(stream.getTaint());
@@ -1896,7 +1897,7 @@ List<E> var867584235690190D4FBEF7E995366649_1163571144 =                 new Syn
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.706 -0400", hash_original_method = "3A06B4F1BF7736CF10F2183ECBC34EF4", hash_generated_method = "1D611E60A248E06873F76D240E7D2213")
         private Object writeReplace() {
 Object var91C5F48A6EC2BB7DF4455DCCC8C58A1A_876647516 =             new SynchronizedList<E>(list);
@@ -2250,7 +2251,7 @@ List<E> var46FC9BA78CD4658D3E3096D9AF06081C_1845511722 =                 new Syn
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.710 -0400", hash_original_method = "981AD07707BE70675431924A12FE33C6", hash_generated_method = "350CD97D03809885CB7561AF44340EC3")
         private void writeObject(ObjectOutputStream stream) throws IOException {
             addTaint(stream.getTaint());
@@ -2265,7 +2266,7 @@ List<E> var46FC9BA78CD4658D3E3096D9AF06081C_1845511722 =                 new Syn
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.710 -0400", hash_original_method = "172F08E6F2352F1764A4A70C48C6E243", hash_generated_method = "D917FF639D73A35AA5BAFA4F89FE4441")
         private Object readResolve() {
             if(list instanceof RandomAccess)            
@@ -2580,7 +2581,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_223768981 =                 m.toStrin
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.719 -0400", hash_original_method = "981AD07707BE70675431924A12FE33C6", hash_generated_method = "350CD97D03809885CB7561AF44340EC3")
         private void writeObject(ObjectOutputStream stream) throws IOException {
             addTaint(stream.getTaint());
@@ -2658,7 +2659,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_223768981 =                 m.toStrin
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.720 -0400", hash_original_method = "981AD07707BE70675431924A12FE33C6", hash_generated_method = "350CD97D03809885CB7561AF44340EC3")
         private void writeObject(ObjectOutputStream stream) throws IOException {
             addTaint(stream.getTaint());
@@ -2818,7 +2819,7 @@ SortedMap<K, V> var76FD45A0B6EE1B8CC0C79332C3896766_1887335037 =                
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.724 -0400", hash_original_method = "981AD07707BE70675431924A12FE33C6", hash_generated_method = "350CD97D03809885CB7561AF44340EC3")
         private void writeObject(ObjectOutputStream stream) throws IOException {
             addTaint(stream.getTaint());
@@ -2974,7 +2975,7 @@ SortedSet<E> var6F7D9083A65424D18B09B8597111017E_923391220 =                 new
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.726 -0400", hash_original_method = "981AD07707BE70675431924A12FE33C6", hash_generated_method = "350CD97D03809885CB7561AF44340EC3")
         private void writeObject(ObjectOutputStream stream) throws IOException {
             addTaint(stream.getTaint());
@@ -3258,7 +3259,7 @@ List<E> varBA808AAB260B23150BE108CC34C64548_232408560 =             new Unmodifi
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.736 -0400", hash_original_method = "C39E6F512687738DD8D987CDE63A2838", hash_generated_method = "64AAE86A1F1D78D605C8AB1B8D900EC6")
         private Object writeReplace() {
 Object var49FE19F72A72127942299509E99152D2_1212784955 =             new UnmodifiableList<E>(list);
@@ -3533,7 +3534,7 @@ List<E> varADECA7016C61BEC124377A2945128243_66833490 =             new Unmodifia
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.752 -0400", hash_original_method = "5F3DDA40E6BDC67502A2E43BA75DBB15", hash_generated_method = "AAA08931C5127FE348601A70E027DF82")
         private Object readResolve() {
             if(list instanceof RandomAccess)            
@@ -4427,7 +4428,7 @@ Iterator<E> varFCA11838FE7195B1BCD4A5C4A80B9796_2034278783 =             backing
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.773 -0400", hash_original_method = "8082AE1FFA2825B9433C3082C2F87EDC", hash_generated_method = "C4A865194E7336FA95CD8863516C203F")
         @SuppressWarnings("unchecked")
         private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {

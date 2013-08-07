@@ -1,6 +1,7 @@
 package org.apache.harmony.crypto.internal;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.security.AlgorithmParameters;
 import java.security.InvalidAlgorithmParameterException;
@@ -16,9 +17,9 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.ShortBufferException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class NullCipherSpi extends CipherSpi {
     

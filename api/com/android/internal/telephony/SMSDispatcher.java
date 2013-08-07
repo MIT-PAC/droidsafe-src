@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.telephony.SmsManager.RESULT_ERROR_FDN_CHECK_FAILURE;
 import static android.telephony.SmsManager.RESULT_ERROR_GENERIC_FAILURE;
 import static android.telephony.SmsManager.RESULT_ERROR_LIMIT_EXCEEDED;
@@ -44,10 +45,10 @@ import com.android.internal.R;
 import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
 import com.android.internal.util.HexDump;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class SMSDispatcher extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.933 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "510AC3BCB553F2FCF25972E2B33B836E")
@@ -288,6 +289,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.944 -0400", hash_original_method = "1E59FCBE70CAB945B533C092F603248E", hash_generated_method = "D59BF0F9CEBBA085E16694B8F358387E")
     private void createWakelock() {
         PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
@@ -845,7 +847,7 @@ for(int i = 0;i < msgCount;i++)
     protected abstract void sendSms(SmsTracker tracker);
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.983 -0400", hash_original_method = "3673C71AC378B483B72EBB14D4C20DB7", hash_generated_method = "D23C6C59E22A24804F3C2FDB63F981E3")
     private void sendMultipartSms(SmsTracker tracker) {
         addTaint(tracker.getTaint());
@@ -883,6 +885,7 @@ for(int i = 0, count = parts.size();i < count;i++)
             int result, Message response);
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.984 -0400", hash_original_method = "3FF14669D60F392B7539BF30A1AA74B3", hash_generated_method = "72B694781084167CD4436E7A561C5E02")
     private void notifyAndAcknowledgeLastIncomingSms(boolean success,
             int result, Message response) {

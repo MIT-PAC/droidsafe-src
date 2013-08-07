@@ -1,6 +1,7 @@
 package junit.runner;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,10 +21,10 @@ import junit.framework.AssertionFailedError;
 import junit.framework.Test;
 import junit.framework.TestListener;
 import junit.framework.TestSuite;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class BaseTestRunner implements TestListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.386 -0400", hash_original_field = "D86EF6FE2DDA8BCB0B1FF97852B6C141", hash_generated_field = "7A70A04F8D8A962F9AD485A249A9FE8E")
@@ -372,14 +373,14 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_133763568 =         new Stan
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static File getPreferencesFile() {
         String home= System.getProperty("user.home");
         return new File(home, "junit.properties");
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void readPreferences() {
         InputStream is= null;
         try {

@@ -1,14 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GestureDetector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.337 -0400", hash_original_field = "63791A3FD882CB7E1632DF20805E6846", hash_generated_field = "12BE8B5CD241157C9F0107D5273E27D1")
@@ -148,6 +149,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.342 -0400", hash_original_method = "452594061FCEBDDF878D27E65F4EBA07", hash_generated_method = "36C70C63702B89C1D978C3AF7BA1A43E")
     private void init(Context context, boolean ignoreMultitouch) {
         addTaint(context.getTaint());
@@ -380,6 +382,7 @@ switch(action & MotionEvent.ACTION_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.349 -0400", hash_original_method = "9B9F1964085C6E9CB79BA6CBFD2B9081", hash_generated_method = "796824CC773B7377848C7366EC1CAA07")
     private void cancel() {
         mHandler.removeMessages(SHOW_PRESS);
@@ -411,6 +414,7 @@ switch(action & MotionEvent.ACTION_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.349 -0400", hash_original_method = "EA18A75BD47C1C65D8FE280884C192C1", hash_generated_method = "8468563D0BB68C6CAD45E2CCE14A9B61")
     private boolean isConsideredDoubleTap(MotionEvent firstDown, MotionEvent firstUp,
             MotionEvent secondDown) {
@@ -447,6 +451,7 @@ switch(action & MotionEvent.ACTION_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.349 -0400", hash_original_method = "1B110E72A2C7F37DAF94A595462A9E07", hash_generated_method = "E2D9F2F38B3AC8E6DE4DCDABAEFB8284")
     private void dispatchLongPress() {
         mHandler.removeMessages(TAP);

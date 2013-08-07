@@ -1,15 +1,16 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetSocketAddress;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ProxyProperties implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.163 -0400", hash_original_field = "AE3E518F8FFDE1F8C00699B4C58E95B5", hash_generated_field = "C8F07C3E0F6788C43A05E20D5536D66C")
@@ -25,6 +26,7 @@ public class ProxyProperties implements Parcelable {
 
     private String[] mParsedExclusionList;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.164 -0400", hash_original_method = "54A7DBB96A42C21C9A34864E71BDFD9B", hash_generated_method = "3016880FA037606211CE706EEDE03259")
     public  ProxyProperties(String host, int port, String exclList) {
         addTaint(exclList.getTaint());
@@ -38,6 +40,7 @@ public class ProxyProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.164 -0400", hash_original_method = "BC11E2D42BFC71E7CE241ADFD4F8685E", hash_generated_method = "63CFA9158D0179E62AF9851432940F54")
     private  ProxyProperties(String host, int port, String exclList, String[] parsedExclList) {
         mHost = host;
@@ -52,6 +55,7 @@ public class ProxyProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.164 -0400", hash_original_method = "A69C6CB2998D1D9E29343274F58FCABE", hash_generated_method = "17C8ABC252A039088A166C16EF3830DC")
     public  ProxyProperties(ProxyProperties source) {
         if(source != null)        
@@ -71,6 +75,7 @@ public class ProxyProperties implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.164 -0400", hash_original_method = "207ACF10C117D35BCDF8E06D043E3E5B", hash_generated_method = "355BE28370DEED195EAC4B6AC96E6397")
     public InetSocketAddress getSocketAddress() {
         InetSocketAddress inetSocketAddress = null;
@@ -93,7 +98,7 @@ InetSocketAddress var571036BB61B9E7FDBB9F3BBC66371C29_1957345502 =         inetS
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.164 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "BFAB79A73F991F6DD97F41836AAEAFCC")
     public String getHost() {
 String varE57614B151242FB69B92E61EEA287D33_10611194 =         mHost;
@@ -104,7 +109,7 @@ String varE57614B151242FB69B92E61EEA287D33_10611194 =         mHost;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.164 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "8B90C85E27CEFF8E5C512E0E90BF2FBE")
     public int getPort() {
         int var5EFA61C4FCA92CA992BE37C2BAF4D350_1435477479 = (mPort);
@@ -115,7 +120,7 @@ String varE57614B151242FB69B92E61EEA287D33_10611194 =         mHost;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.164 -0400", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "4E5634495BECD399515DE8ADAAB04C30")
     public String getExclusionList() {
 String varC0B04173BEBA2500AEBF48903299C3F4_1773792936 =         mExclusionList;
@@ -126,6 +131,7 @@ String varC0B04173BEBA2500AEBF48903299C3F4_1773792936 =         mExclusionList;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.165 -0400", hash_original_method = "BEF68745D535D943EDDB2DD96C1B6EA8", hash_generated_method = "A400141A9BAD1D5E50FFC8CB00FA76AC")
     private void setExclusionList(String exclusionList) {
         mExclusionList = exclusionList;
@@ -163,6 +169,7 @@ for(int i = 0;i < splitExclusionList.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.165 -0400", hash_original_method = "72D2F326AF1444346066F9053B4FD5C0", hash_generated_method = "6B7833E8BE5837739DFCE21118DC0866")
     public boolean isExcluded(String url) {
         addTaint(url.getTaint());
@@ -210,6 +217,7 @@ for(int i = 0;i< mParsedExclusionList.length;i+=2)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.165 -0400", hash_original_method = "FF3E8127D15D936B6F66AB217E4EB9BA", hash_generated_method = "7BCBE7F11D16BAC8831D5BC02D558E76")
     public java.net.Proxy makeProxy() {
         java.net.Proxy proxy = java.net.Proxy.NO_PROXY;
@@ -240,6 +248,7 @@ java.net.Proxy var60FC9F22F7E863EBFD33B2ADB8462743_1586426084 =         proxy;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.166 -0400", hash_original_method = "FE9AE719D0C3E87A445C3CEFBF6B38D6", hash_generated_method = "0B1E3CEA28013B15723FD1A04F2DDC78")
     @Override
     public String toString() {
@@ -279,6 +288,7 @@ String var2460B846747F8B22185AD8BE722266A5_986218408 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.166 -0400", hash_original_method = "16EB0AD501F97CC03F0A85B7200F0E73", hash_generated_method = "EC3A205C10E101180D3EAD090A62CD59")
     @Override
     public boolean equals(Object o) {
@@ -337,7 +347,7 @@ String var2460B846747F8B22185AD8BE722266A5_986218408 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.166 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DD9252ED1831B5A44D1E8466C893F46F")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2116146747 = (0);
@@ -348,6 +358,7 @@ String var2460B846747F8B22185AD8BE722266A5_986218408 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.166 -0400", hash_original_method = "AD2D5515FEDCF9B25A708B71445DFAB4", hash_generated_method = "CA87245FD03E13532EF5D73D8B2A831F")
     @Override
     public int hashCode() {
@@ -363,6 +374,7 @@ String var2460B846747F8B22185AD8BE722266A5_986218408 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.166 -0400", hash_original_method = "038CE78D7B15BBF2D949EA22EA3CF00F", hash_generated_method = "0E5101B4C4C4BA18D5AB6C9E5FB78F2C")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

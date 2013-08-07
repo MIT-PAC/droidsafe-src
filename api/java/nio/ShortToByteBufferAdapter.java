@@ -1,18 +1,19 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.io.SizeOf;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class ShortToByteBufferAdapter extends ShortBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.013 -0400", hash_original_field = "73D79CD15754C8F39826976EB3E77012", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
 
     private ByteBuffer byteBuffer;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.014 -0400", hash_original_method = "A7ACA037BB98388A15E54FB4598E481B", hash_generated_method = "99030E6A8F05267CDC21391C0846AEB3")
     private  ShortToByteBufferAdapter(ByteBuffer byteBuffer) {
         super(byteBuffer.capacity() / SizeOf.SHORT);

@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.os.Build;
@@ -8,10 +9,10 @@ import android.util.FloatMath;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Scroller {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.656 -0400", hash_original_field = "C5AB706852158521E9D44BF62A49B1C9", hash_generated_field = "B9E13EBC2196F570555262A42E5818EF")
@@ -127,7 +128,7 @@ public class Scroller {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.662 -0400", hash_original_method = "B6D5379ECD830F8ABC23D18179CF1E64", hash_generated_method = "F233265148CD87477FD8E16DDF415A5B")
     private float computeDeceleration(float friction) {
         addTaint(friction);
@@ -482,7 +483,7 @@ switch(mMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.680 -0400", hash_original_method = "8B3C79E02507006E36F2788C827D3070", hash_generated_method = "1BC0CF0F495974BB9F8C369F89B7FC8A")
     public boolean isScrollingInDirection(float xvel, float yvel) {
         addTaint(yvel);

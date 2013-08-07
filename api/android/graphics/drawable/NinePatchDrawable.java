@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -21,10 +22,10 @@ import android.graphics.Region;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NinePatchDrawable extends Drawable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.354 -0400", hash_original_field = "80A04E56058AB398069773FAD8CBA742", hash_generated_field = "6C68B5548B044A9A7BC44A7FEBD76DE2")
@@ -110,7 +111,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.357 -0400", hash_original_method = "EB08CD45C7A208D135CB0BEAA7998119", hash_generated_method = "BF0F1A13FDB2188FD0ADF9C2CB131DB4")
     private  NinePatchDrawable(NinePatchState state, Resources res) {
         addTaint(res.getTaint());
@@ -121,7 +122,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.359 -0400", hash_original_method = "0EDC8E1D8196DBA7E3430735EBC66D6F", hash_generated_method = "DCE32EDE24D2471C53AF18C0A7D9C77A")
     private void setNinePatchState(NinePatchState state, Resources res) {
         mNinePatchState = state;
@@ -195,7 +196,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.363 -0400", hash_original_method = "E8279E2F004E74E2D3A3C9AE5B1B6A96", hash_generated_method = "2F9B40EE02EDB2B79413BDB88C9DB922")
     private void computeBitmapSize() {
         final int sdensity = mNinePatch.getDensity();

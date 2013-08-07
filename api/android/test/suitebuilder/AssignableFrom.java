@@ -1,9 +1,10 @@
 package android.test.suitebuilder;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.util.Predicate;
 
-import droidsafe.annotations.*;
+
 
 class AssignableFrom implements Predicate<TestMethod> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.126 -0400", hash_original_field = "63A9F0EA7BB98050796B649E85481845", hash_generated_field = "CD7AA0FB599481FB503A3BD1231F661A")

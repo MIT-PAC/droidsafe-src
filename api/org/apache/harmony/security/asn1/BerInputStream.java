@@ -1,14 +1,15 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BerInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.629 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
@@ -469,7 +470,7 @@ switch(length){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.702 -0400", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "2F77AD91D3D4B7C2F774CAEBB94843CB")
     private int strToInt(int off, int count) throws ASN1Exception {
         addTaint(count);
@@ -580,7 +581,7 @@ for(int i = off, end = off + count;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.719 -0400", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "03865AE25796AF9E983F5085C2A1E594")
     private ASN1Exception expected(String what) throws ASN1Exception {
         addTaint(what.getTaint());
@@ -794,7 +795,7 @@ for(;i < type.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.779 -0400", hash_original_method = "A1B2FAB02C0A9A6283AF8F291FFC1121", hash_generated_method = "40DA58FEAF1EB9073FDBC901002CD1CF")
     private void decodeValueCollection(ASN1ValueCollection collection) throws IOException {
         addTaint(collection.getTaint());

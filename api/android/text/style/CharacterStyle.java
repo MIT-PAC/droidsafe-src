@@ -1,11 +1,12 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.TextPaint;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class CharacterStyle {
     

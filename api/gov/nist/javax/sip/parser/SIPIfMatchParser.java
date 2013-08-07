@@ -1,15 +1,16 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.SIPIfMatch;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class SIPIfMatchParser extends HeaderParser {
     

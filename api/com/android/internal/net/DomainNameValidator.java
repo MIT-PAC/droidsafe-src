@@ -1,6 +1,7 @@
 package com.android.internal.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
 import java.util.Collection;
@@ -11,10 +12,10 @@ import javax.security.auth.x500.X500Principal;
 
 import android.net.NetworkUtils;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DomainNameValidator {
     

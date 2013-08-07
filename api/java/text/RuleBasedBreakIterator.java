@@ -1,10 +1,11 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.icu.NativeBreakIterator;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 class RuleBasedBreakIterator extends BreakIterator {
     
@@ -52,7 +53,7 @@ class RuleBasedBreakIterator extends BreakIterator {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.906 -0400", hash_original_method = "49EE36B5C8835D510AEEA1B2E4051F58", hash_generated_method = "D40E9AC97EE5E7B156F794513EB4C83F")
     private void validateOffset(int offset) {
         addTaint(offset);

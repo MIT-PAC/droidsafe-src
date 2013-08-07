@@ -1,21 +1,23 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class IccFileHandler extends Handler implements IccConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.099 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
 
     protected PhoneBase phone;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.100 -0400", hash_original_method = "D43DCB164382547ACBC107CD3DAC237A", hash_generated_method = "B69471EEAB99E896BBF620126EB05566")
     protected  IccFileHandler(PhoneBase phone) {
         super();
@@ -25,13 +27,14 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.100 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.100 -0400", hash_original_method = "663260DCC0AEA6DC2CA2BB2A67F595C2", hash_generated_method = "E8F910D7E1BA3B3CCB0E099D067687BA")
     public void loadEFLinearFixed(int fileid, int recordNum, Message onLoaded) {
         addTaint(onLoaded.getTaint());
@@ -50,6 +53,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.101 -0400", hash_original_method = "AD3D0941CCBE990655E4D58F2671DA3B", hash_generated_method = "A71314FA168457C1BBAA39DE2F07118D")
     public void loadEFImgLinearFixed(int recordNum, Message onLoaded) {
         addTaint(onLoaded.getTaint());
@@ -70,6 +74,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.101 -0400", hash_original_method = "50E0C1880D1B176F78B29AB1FC2AC0F6", hash_generated_method = "83CE1220F70A8E0A7858A0A91EBDAD7E")
     public void getEFLinearRecordSize(int fileid, Message onLoaded) {
         addTaint(onLoaded.getTaint());
@@ -87,6 +92,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.101 -0400", hash_original_method = "65C59C00611DFB92BBD6DFE9FDCAEDDA", hash_generated_method = "FE376B104781CC0719C190FF20952443")
     public void loadEFLinearFixedAll(int fileid, Message onLoaded) {
         addTaint(onLoaded.getTaint());
@@ -103,6 +109,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.102 -0400", hash_original_method = "E6873BA2275643766469BAAFD3B2D8F2", hash_generated_method = "59A635F6A26076F4AC7D79F76702D14F")
     public void loadEFTransparent(int fileid, Message onLoaded) {
         addTaint(onLoaded.getTaint());
@@ -119,6 +126,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.102 -0400", hash_original_method = "2560A35ADA01F4B533EB0E56DA8161F2", hash_generated_method = "1A3415A9F48A58C007711ADD60A7EC52")
     public void loadEFImgTransparent(int fileid, int highOffset, int lowOffset,
             int length, Message onLoaded) {
@@ -139,6 +147,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.103 -0400", hash_original_method = "FA70C1BBB046CBB00612B81948F784B1", hash_generated_method = "9207D66BEB06124BB0AD7DAE43024007")
     public void updateEFLinearFixed(int fileid, int recordNum, byte[] data,
             String pin2, Message onComplete) {
@@ -157,6 +166,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.103 -0400", hash_original_method = "E2C68C0F33001D18516AF5A16FEBCDCE", hash_generated_method = "7CB0E461FA6C6E2EF8B5F25316499AF0")
     public void updateEFTransparent(int fileid, byte[] data, Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -172,6 +182,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.103 -0400", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "3FA08E26A7C2474CC418010849B9EF04")
     private void sendResult(Message response, Object result, Throwable ex) {
         addTaint(ex.getTaint());
@@ -192,6 +203,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.111 -0400", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "C7E8A94DCD34DCAA3B6DD52A31070460")
     public void handleMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -415,7 +427,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.112 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "58A6439D9BC66E5F10555CA6B0C7C307")
     protected String getCommonIccEFPath(int efid) {
         addTaint(efid);
@@ -497,6 +509,7 @@ String varF9EB698F99A9BDFF5C272E2D1596B263_1607366801 =         MF_SIM + DF_TELE
 
         ArrayList<byte[]> results;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.114 -0400", hash_original_method = "51FF1105D833FA23AFEA102913139717", hash_generated_method = "39DEDF6560E57782DF67CC79885DC1F4")
           LoadLinearFixedContext(int efid, int recordNum, Message onLoaded) {
             this.efid = efid;
@@ -511,6 +524,7 @@ String varF9EB698F99A9BDFF5C272E2D1596B263_1607366801 =         MF_SIM + DF_TELE
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.114 -0400", hash_original_method = "D730261F991D6C5434BBC408762FB0A8", hash_generated_method = "94B3DA3648FF158F58E975BBA6C57772")
           LoadLinearFixedContext(int efid, Message onLoaded) {
             this.efid = efid;

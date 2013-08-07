@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.HttpHost;
 
 interface RequestFeeder {

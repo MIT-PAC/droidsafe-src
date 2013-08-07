@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -14,10 +15,10 @@ import com.android.internal.telephony.DataConnection.UpdateLinkPropertyResult;
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DataConnectionAc extends AsyncChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.997 -0400", hash_original_field = "503F6607C959C61B036C1484733875DB", hash_generated_field = "59F9615F1046A159253328ABFF9EBAC4")
@@ -733,7 +734,7 @@ PendingIntent var540C13E9E156B687226421B24F2DF178_1211111534 =             null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "3340C70610FFA5D9D28FC6E77DE7CB0F", hash_generated_method = "03146726C72A54D3150569648E131B16")
     private void log(String s) {
         addTaint(s.getTaint());

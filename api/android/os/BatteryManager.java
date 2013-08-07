@@ -1,8 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class BatteryManager {
     

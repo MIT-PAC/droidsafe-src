@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IAlarmManager extends android.os.IInterface
 {

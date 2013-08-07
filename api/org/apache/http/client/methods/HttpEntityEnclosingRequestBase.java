@@ -1,11 +1,12 @@
 package org.apache.http.client.methods;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.URI;
 
 import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+
 import droidsafe.runtime.*;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -23,7 +24,7 @@ public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase imp
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	@Override
 	   public HttpEntity getEntity() {
         return this.entity;

@@ -1,13 +1,14 @@
 package junit.framework;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestResult extends Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.294 -0400", hash_original_field = "A9DB4B1F5286C1409CCDE497F567244F", hash_generated_field = "3D48F046A221F0C0CA21EE3F7549F095")
@@ -99,7 +100,7 @@ for(Enumeration e= cloneListeners().elements();e.hasMoreElements();)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.298 -0400", hash_original_method = "B6A6493DA121BF70308A3AD912C75AC8", hash_generated_method = "6BDFBCBDB7E53341DBE16B5234AE83A9")
     private synchronized Vector cloneListeners() {
 Vector varD882C66CDA18635825D85407EC1AFEC6_1125848865 =         (Vector)fListeners.clone();

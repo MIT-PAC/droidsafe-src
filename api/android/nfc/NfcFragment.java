@@ -1,11 +1,12 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class NfcFragment extends Fragment {
     
@@ -16,6 +17,7 @@ public final class NfcFragment extends Fragment {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static void attach(Activity activity) {
         FragmentManager manager = activity.getFragmentManager();
         if (manager.findFragmentByTag(FRAGMENT_TAG) == null) {
@@ -24,6 +26,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void remove(Activity activity) {
         FragmentManager manager = activity.getFragmentManager();
         Fragment fragment = manager.findFragmentByTag(FRAGMENT_TAG);
@@ -33,6 +36,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.292 -0400", hash_original_method = "9E8EF57626D62E2B7C3743DD3C3689D3", hash_generated_method = "B2BBDBE211ECC4865C183B6FFBA946E3")
     @Override
     public void onAttach(Activity activity) {
@@ -62,6 +66,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.295 -0400", hash_original_method = "94292D3BC9674D261A6EF4BCCF7C8037", hash_generated_method = "4AC320B0085C363B4702D105FA395F8D")
     @Override
     public void onResume() {
@@ -79,6 +84,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.299 -0400", hash_original_method = "3DB00EC587E995AABF9F1C949970BD43", hash_generated_method = "226927A4AB8142122D587930C7CE85AC")
     @Override
     public void onPause() {
@@ -96,6 +102,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.301 -0400", hash_original_method = "CC535C4F2465D6A6983D04B0B890F971", hash_generated_method = "5CE801F46E853C84800573F66B65D296")
     @Override
     public void onDestroy() {

@@ -1,11 +1,12 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.SocketException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class ErrnoException extends Exception {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.160 -0400", hash_original_field = "18B5CA8CBD35BC4F1D1B026A63E1062E", hash_generated_field = "3A7419DC5D02B665865D1D41C31D2769")

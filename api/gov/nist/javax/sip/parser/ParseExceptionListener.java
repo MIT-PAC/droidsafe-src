@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.message.SIPMessage;
 
 import java.text.ParseException;

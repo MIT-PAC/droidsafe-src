@@ -1,6 +1,7 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,8 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class BluetoothHeadset implements BluetoothProfile {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.271 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -113,6 +114,7 @@ public final class BluetoothHeadset implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.276 -0400", hash_original_method = "7284EC53ABB82E4A2B97F7B894F0105F", hash_generated_method = "98BABF203BED510AB35336B20F6E50ED")
     public boolean connect(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -153,6 +155,7 @@ public final class BluetoothHeadset implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.277 -0400", hash_original_method = "4AB2501852FA35F2A69CDF567F29169A", hash_generated_method = "0AE802CEB7DFA7B4A6BD09E2A334885A")
     public boolean disconnect(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -308,6 +311,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.281 -0400", hash_original_method = "F982CE0C4DEC9189A14DF4553C949192", hash_generated_method = "757D2D1CBB5FE3F91437EA80F8E58CA9")
     public boolean setPriority(BluetoothDevice device, int priority) {
         addTaint(priority);
@@ -360,6 +364,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.283 -0400", hash_original_method = "705F88F05E8E78847084743E12D945BD", hash_generated_method = "664E06B46C9D09F708EDE5F8CFD86F6E")
     public int getPriority(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -508,6 +513,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.291 -0400", hash_original_method = "6F6D31332C45DEAF9F6DB793EAF6FAFC", hash_generated_method = "A1CF6D81A016E60606E49CF17A487406")
     public int getBatteryUsageHint(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -544,12 +550,14 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isBluetoothVoiceDialingEnabled(Context context) {
         return context.getResources().getBoolean(
                 com.android.internal.R.bool.config_bluetooth_sco_off_call);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.292 -0400", hash_original_method = "2676E323C2C9765143A21FFE59CC6873", hash_generated_method = "9D202C50622B216A49815730434E6A29")
     public boolean cancelConnectThread() {
         if(DBG)        
@@ -588,6 +596,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.293 -0400", hash_original_method = "EA55CECCBAC2EAE8EDC221C89634D263", hash_generated_method = "4DEBF16640B47E058DA4E3EB69FEBAD6")
     public boolean acceptIncomingConnect(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -627,6 +636,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.294 -0400", hash_original_method = "6D2538BEDFF897738BE4A0A290C33070", hash_generated_method = "61ED810C9BEF796C9525A3684E3E3F36")
     public boolean createIncomingConnect(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -666,6 +676,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.295 -0400", hash_original_method = "4505463E5EDB411267D82D01A0F1D824", hash_generated_method = "F45F6767147F7AD4E74C1206895A88B4")
     public boolean rejectIncomingConnect(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -705,6 +716,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.296 -0400", hash_original_method = "A8F7BAC49E734C18D4B72E93D6F191D5", hash_generated_method = "AB43F14767F72A623E11583F2973F8FC")
     public boolean connectHeadsetInternal(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -744,6 +756,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.297 -0400", hash_original_method = "DE8B58BD5456FA1A62F7BE53852C68CF", hash_generated_method = "967FC1EEC0E752A6FECBDBED5EFD3CCB")
     public boolean disconnectHeadsetInternal(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -783,6 +796,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.299 -0400", hash_original_method = "04E80317E50A33841443E656AF5FDA5A", hash_generated_method = "940536426C87A1FF3F34E31158A90066")
     public boolean setAudioState(BluetoothDevice device, int state) {
         addTaint(state);
@@ -823,6 +837,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.301 -0400", hash_original_method = "398E968FC0AE96999E6F1C9EB97CF08A", hash_generated_method = "CC2F33360D9050947B05DA1BA20284FF")
     public int getAudioState(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -862,6 +877,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.302 -0400", hash_original_method = "D15419F6AD1B4E28C80D3421F9F86FA4", hash_generated_method = "36ACB6C2AA1DFEF85FA005ED7C384C91")
     public boolean startScoUsingVirtualVoiceCall(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -903,6 +919,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.303 -0400", hash_original_method = "EC64256DA9DAF95A4E5DDEFAF84087E3", hash_generated_method = "F38A360982922B2587604FF8C44274B5")
     public boolean stopScoUsingVirtualVoiceCall(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -944,6 +961,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.304 -0400", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "EC5BAA0E814F06A7794CA42122C65933")
     private boolean isEnabled() {
         if(mAdapter.getState() == BluetoothAdapter.STATE_ON)        
@@ -961,6 +979,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.305 -0400", hash_original_method = "7FB46929D91880D43466C28024A250A9", hash_generated_method = "0B0DE4302DDDC76F601280B1F63F4CFE")
     private boolean isDisabled() {
         if(mAdapter.getState() == BluetoothAdapter.STATE_OFF)        
@@ -978,6 +997,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.306 -0400", hash_original_method = "EB67AF48F977D4A31E9F2F2B80A49421", hash_generated_method = "0E3C8586D9B7062AC25DD8AF3C7B318F")
     private boolean isValidDevice(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -1003,6 +1023,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void log(String msg) {
         Log.d(TAG, msg);
     }

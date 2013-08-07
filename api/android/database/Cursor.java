@@ -1,6 +1,7 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.Bundle;

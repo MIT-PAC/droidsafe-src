@@ -1,14 +1,15 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import javax.net.ssl.SSLProtocolException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SSLRecordProtocol {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.357 -0400", hash_original_field = "21D6F40CFB511982E4424E0E250A9557", hash_generated_field = "14A9356888CCC2F5828130712AD7BEEF")
@@ -218,6 +219,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.365 -0400", hash_original_method = "5CCC3748379530494C61DB0E5CDE03DA", hash_generated_method = "C4C01BF8C6109E46E53EFA587F6737F1")
     private byte[] packetize(byte type, byte[] version, byte[] fragment) {
         addTaint(fragment[0]);
@@ -258,6 +260,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.366 -0400", hash_original_method = "B29F5DC9A2BE75FFC944D86037256C31", hash_generated_method = "5AC86242E8CE8EDF6BD6F94B5207CBE5")
     private void setSession(SSLSessionImpl session) {
         if(!sessionWasChanged)        

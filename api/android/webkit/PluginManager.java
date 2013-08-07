@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +17,10 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.content.pm.Signature;
 import android.os.SystemProperties;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PluginManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.816 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -29,6 +30,7 @@ public class PluginManager {
 
     private ArrayList<PackageInfo> mPackageInfoCache;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.817 -0400", hash_original_method = "0D07D19E48ED71562BE80BC3DA9E707F", hash_generated_method = "3E4B2E71D1B71C8750E5BBC7C1095F8E")
     private  PluginManager(Context context) {
         mContext = context;
@@ -39,6 +41,7 @@ public class PluginManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static synchronized PluginManager getInstance(Context context) {
         if (mInstance == null) {
             if (context == null) {
@@ -51,6 +54,7 @@ public class PluginManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.817 -0400", hash_original_method = "2EF75139857ED5BD518FA65C3602E9EA", hash_generated_method = "6A9D0DAF7E8200A02EE9C07AD9F3CE65")
     public void refreshPlugins(boolean reloadOpenPages) {
         addTaint(reloadOpenPages);
@@ -64,7 +68,7 @@ public class PluginManager {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.818 -0400", hash_original_method = "7B4BF60DDCCCE0391FC04EA9A7E517B7", hash_generated_method = "D273A9D3DA52E7A51128EB9F06D2ABD9")
      String[] getPluginDirectories() {
         ArrayList<String> directories = new ArrayList<String>();
@@ -146,6 +150,7 @@ String[] varE0C2C4B802B12586A2E4ACEA1B32FB7F_818616627 =         directories.toA
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.819 -0400", hash_original_method = "A1FA8B166BFF0FCEB8723AD1FF203538", hash_generated_method = "2FB092884E517E3C0967BE2C3459FF16")
      boolean containsPluginPermissionAndSignatures(String pluginAPKName) {
         addTaint(pluginAPKName.getTaint());
@@ -182,6 +187,7 @@ String[] varE0C2C4B802B12586A2E4ACEA1B32FB7F_818616627 =         directories.toA
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean containsPluginPermissionAndSignatures(PackageInfo pkgInfo) {
         String permissions[] = pkgInfo.requestedPermissions;
         if (permissions == null) {
@@ -219,6 +225,7 @@ String[] varE0C2C4B802B12586A2E4ACEA1B32FB7F_818616627 =         directories.toA
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.835 -0400", hash_original_method = "E90FACC8787C376685A6D80F188924B0", hash_generated_method = "4DA9755C2940F4590E738E15752AD9D8")
      String getPluginsAPKName(String pluginLib) {
         addTaint(pluginLib.getTaint());
@@ -258,6 +265,7 @@ String var540C13E9E156B687226421B24F2DF178_1065326639 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.835 -0400", hash_original_method = "FC2E28857813BB5E17C54D889AE237C7", hash_generated_method = "363AFBA0379472AD99833CF0C0157FDB")
      String getPluginSharedDataDirectory() {
 String var9DD7862E5AB9FDDCC7694533E6D60BB1_1057158247 =         mContext.getDir("plugins", 0).getPath();
@@ -268,6 +276,7 @@ String var9DD7862E5AB9FDDCC7694533E6D60BB1_1057158247 =         mContext.getDir(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.835 -0400", hash_original_method = "44FD7B6877FFF90B805F430598983AE5", hash_generated_method = "60022EB9EC070E9DE5D17FC3B8235BA8")
      Class<?> getPluginClass(String packageName, String className) throws NameNotFoundException, ClassNotFoundException {
         addTaint(className.getTaint());

@@ -1,6 +1,7 @@
 package org.bouncycastle.crypto.signers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
@@ -14,10 +15,10 @@ import org.bouncycastle.math.ec.ECAlgorithms;
 import org.bouncycastle.math.ec.ECConstants;
 import org.bouncycastle.math.ec.ECPoint;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ECDSASigner implements ECConstants, DSA {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.158 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6")
@@ -173,7 +174,7 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_662778947 =         res;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.165 -0400", hash_original_method = "D79E78A694EF1FC7CCC97532E7031B66", hash_generated_method = "238CA63E9D6390A7795CA9E8893AB969")
     private BigInteger calculateE(BigInteger n, byte[] message) {
         addTaint(message[0]);

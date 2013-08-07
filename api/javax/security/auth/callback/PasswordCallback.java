@@ -1,13 +1,14 @@
 package javax.security.auth.callback;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PasswordCallback implements Callback, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.867 -0400", hash_original_field = "4AE35DBB42614D2429B7D6D181A950BB", hash_generated_field = "73A8FB617E5E6FEE69E01BC210863E4D")
@@ -31,7 +32,7 @@ public class PasswordCallback implements Callback, Serializable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.868 -0400", hash_original_method = "3C861E594BCF1170EC69D71F98E7DC21", hash_generated_method = "3FE574704384E3201A5DFDAAC534C2DB")
     private void setPrompt(String prompt) throws IllegalArgumentException {
         if(prompt == null || prompt.length() == 0)        

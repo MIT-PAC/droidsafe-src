@@ -1,13 +1,14 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Character implements Serializable, Comparable<Character> {
@@ -49,7 +50,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkValidCodePoint(int codePoint) {
         if (!isValidCodePoint(codePoint)) {
             throw new IllegalArgumentException("Invalid code point: " + codePoint);
@@ -69,7 +70,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int compare(char lhs, char rhs) {
         return lhs - rhs;
     }
@@ -105,7 +106,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isSurrogate(char ch) {
         return ch >= MIN_SURROGATE && ch <= MAX_SURROGATE;
     }
@@ -493,7 +494,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String getName(int codePoint) {
         checkValidCodePoint(codePoint);
         if (getType(codePoint) == Character.UNASSIGNED) {
@@ -631,19 +632,19 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static char highSurrogate(int codePoint) {
         return (char) ((codePoint >> 10) + 0xd7c0);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static char lowSurrogate(int codePoint) {
         return (char) ((codePoint & 0x3ff) | 0xdc00);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isBmpCodePoint(int codePoint) {
         return codePoint >= 0 && codePoint <= 0xffff;
     }
@@ -1171,7 +1172,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_935948158 =             name;
     
     public static final class UnicodeBlock extends Subset {
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.421 -0400", hash_original_method = "234E88093AAFC12110C9FE35072443BD", hash_generated_method = "4B1FCCF606CEF9910A2C98FAAC82908F")
         private  UnicodeBlock(String blockName, int start, int end) {
             super(blockName);

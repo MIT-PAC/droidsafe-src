@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -30,10 +31,10 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.ScaleAnimation;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class FragmentManager {
     
@@ -321,6 +322,7 @@ final class FragmentManagerImpl extends FragmentManager {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_method = "70ACCC725CBD51E4B696A7DF31DD0DB0", hash_generated_method = "F78E183FC76910FE3ECFA49C795666BF")
     private void throwException(RuntimeException ex) {
         addTaint(ex.getTaint());
@@ -1865,6 +1867,7 @@ Fragment var540C13E9E156B687226421B24F2DF178_2006706304 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.377 -0400", hash_original_method = "B87B380B690A16EB7F37B7EE1C0A0D26", hash_generated_method = "64DA60204D2CA76D4D3DB55BFC82B84F")
     private void checkStateLoss() {
         if(mStateSaved)        

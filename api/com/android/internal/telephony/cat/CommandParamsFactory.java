@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Iterator;
 import java.util.List;
 
@@ -11,10 +12,10 @@ import android.os.Message;
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.IccFileHandler;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class CommandParamsFactory extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.176 -0400", hash_original_field = "10B237369439DE6AB484E8A6DD54A69C", hash_generated_field = "066A6762D0C2A5B772EAA58E81EAA0D0")
@@ -30,6 +31,7 @@ class CommandParamsFactory extends Handler {
 
     private RilMessageDecoder mCaller = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.177 -0400", hash_original_method = "7BCA60CE4AA4C3E7854AB72DFCEE5CF9", hash_generated_method = "58DF729E5AC1C5DFA0BE2B31CFDA387B")
     private  CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
         mCaller = caller;
@@ -53,6 +55,7 @@ class CommandParamsFactory extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.178 -0400", hash_original_method = "2E4478F23D166A2E5E35D0CD5C4A129E", hash_generated_method = "75638B1FAF93F0C2FFAF9F3652BB90A6")
     private CommandDetails processCommandDetails(List<ComprehensionTlv> ctlvs) {
         addTaint(ctlvs.getTaint());
@@ -205,6 +208,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.184 -0400", hash_original_method = "3AB391E8251356D82C52829EE4B32ED7", hash_generated_method = "B167FCD61A20B5CCBF8F3FCB1FF15484")
     private ResultCode setIcons(Object data) {
         addTaint(data.getTaint());
@@ -251,7 +255,7 @@ for(Bitmap icon : icons)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.184 -0400", hash_original_method = "075D6D54A772D277DACB0A1749F22220", hash_generated_method = "890BBE601D7498292AA6CD8EF9E6D69E")
     private void sendCmdParams(ResultCode resCode) {
         addTaint(resCode.getTaint());
@@ -261,6 +265,7 @@ for(Bitmap icon : icons)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.185 -0400", hash_original_method = "747AFE004560A767DF481C3AA8002660", hash_generated_method = "11EB5DAE1FC5BD801B4F9147A779227A")
     private ComprehensionTlv searchForTag(ComprehensionTlvTag tag,
             List<ComprehensionTlv> ctlvs) {
@@ -276,6 +281,7 @@ ComprehensionTlv var855E5E8990508B7B35052B665B493CE9_1088843787 =         search
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.185 -0400", hash_original_method = "D88B588A55F67F23980463DF8FB0DA04", hash_generated_method = "AFD5AA6E268640B3116AE0F8034BAB9E")
     private ComprehensionTlv searchForNextTag(ComprehensionTlvTag tag,
             Iterator<ComprehensionTlv> iter) {
@@ -308,6 +314,7 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_4449078 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.186 -0400", hash_original_method = "7E1C347C9C4DEE22923C4A46BE429D13", hash_generated_method = "5B41F4DD05A60D8C4B407D4885308150")
     private boolean processDisplayText(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -363,6 +370,7 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_4449078 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.187 -0400", hash_original_method = "7C3BADEB42DA2C878C6C5ABCBE524429", hash_generated_method = "B1C474FD93E1EA18898CD02FB406E66B")
     private boolean processSetUpIdleModeText(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -403,6 +411,7 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_4449078 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.187 -0400", hash_original_method = "025DF7E231D7740FB891A823A7EE822B", hash_generated_method = "3F108E92E362D00F4564F885D1BA8FC9")
     private boolean processGetInkey(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -457,6 +466,7 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_4449078 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.189 -0400", hash_original_method = "03663C70D425FF89FCC6E89BA931B637", hash_generated_method = "3334509B062EECA538344E18E1E616EF")
     private boolean processGetInput(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -532,6 +542,7 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_4449078 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.189 -0400", hash_original_method = "328C209D553235E9687156E0E720555C", hash_generated_method = "3345BFC515AD85ED08FB2F66F9477D41")
     private boolean processRefresh(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) {
@@ -561,6 +572,7 @@ switch(cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.191 -0400", hash_original_method = "BCD1A4E1E4B160F1064A009F1000860C", hash_generated_method = "C4CB00BDE7EBBFA9E1557BD4729B3AAA")
     private boolean processSelectItem(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -658,6 +670,7 @@ switch(mIconLoadState){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.192 -0400", hash_original_method = "A40BEAAD1582CC67F32BB145B8ABDE84", hash_generated_method = "C6321A7838AE939F85F686D9C9027310")
     private boolean processEventNotify(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -693,6 +706,7 @@ switch(mIconLoadState){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.193 -0400", hash_original_method = "C7EE76D8654D8C691124AB97A0520EED", hash_generated_method = "80DC93769E451B6C893A49F872A74B55")
     private boolean processSetUpEventList(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) {
@@ -708,6 +722,7 @@ switch(mIconLoadState){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.194 -0400", hash_original_method = "8945EEF95EF30DB6F3AC6F2F65AD50C7", hash_generated_method = "4256943CE6F86D072D9C4FE93AE702D0")
     private boolean processLaunchBrowser(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -779,6 +794,7 @@ switch(cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.196 -0400", hash_original_method = "9E25ADC04DC19743F5D672C3FA9262A8", hash_generated_method = "9531B1227A53D22AE10B00F87778DF14")
     private boolean processPlayTone(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -845,6 +861,7 @@ switch(cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.198 -0400", hash_original_method = "1675CA7AE4DACD4909A19602008CCD7F", hash_generated_method = "6C8501281A270D2A81AAA9C41CB56F0B")
     private boolean processSetupCall(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
@@ -898,7 +915,7 @@ switch(cmdDet.commandQualifier){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.199 -0400", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "B1C10186BA0F75A2CCDE93DE3C87BFDF")
     private boolean processProvideLocalInfo(CommandDetails cmdDet, List<ComprehensionTlv> ctlvs) throws ResultException {
         addTaint(ctlvs.getTaint());

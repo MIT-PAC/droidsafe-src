@@ -1,6 +1,7 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import android.annotation.SdkConstant;
@@ -18,11 +19,12 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneFactory;
 import com.android.internal.telephony.TelephonyProperties;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class TelephonyManager {
     
+    @DSModeled(DSC.BAN)
     public TelephonyManager(Context context) {
         if (sContext == null) {
             Context appContext = context.getApplicationContext();
@@ -37,11 +39,12 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private TelephonyManager() {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static TelephonyManager getDefault() {
         return sInstance;
     }
@@ -84,6 +87,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public void enableLocationUpdates() {
         try {
             getITelephony().enableLocationUpdates();
@@ -93,6 +97,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public void disableLocationUpdates() {
         try {
             getITelephony().disableLocationUpdates();
@@ -113,6 +118,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public int getCurrentPhoneType() {
         try{
             ITelephony telephony = getITelephony();
@@ -142,6 +148,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private int getPhoneTypeFromProperty() {
         int type =
             SystemProperties.getInt(TelephonyProperties.CURRENT_ACTIVE_PHONE,
@@ -150,6 +157,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private int getPhoneTypeFromNetworkType() {
         // When the system property CURRENT_ACTIVE_PHONE, has not been set,
         // use the system property for default network type.
@@ -200,7 +208,7 @@ public class TelephonyManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getNetworkClass(int networkType) {
         switch (networkType) {
             case NETWORK_TYPE_GPRS:
@@ -227,12 +235,13 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String getNetworkTypeName() {
         return getNetworkTypeName(getNetworkType());
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String getNetworkTypeName(int type) {
         switch (type) {
             case NETWORK_TYPE_GPRS:
@@ -334,6 +343,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public int getLteOnCdmaMode() {
         try {
             return getITelephony().getLteOnCdmaMode();
@@ -371,6 +381,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String getLine1AlphaTag() {
         try {
             return getSubscriberInfo().getLine1AlphaTag();
@@ -383,6 +394,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String getMsisdn() {
         try {
             return getSubscriberInfo().getMsisdn();
@@ -407,6 +419,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String getCompleteVoiceMailNumber() {
         try {
             return getSubscriberInfo().getCompleteVoiceMailNumber();
@@ -419,6 +432,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public int getVoiceMessageCount() {
         try {
             return getITelephony().getVoiceMessageCount();
@@ -443,6 +457,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String getIsimImpi() {
         try {
             return getSubscriberInfo().getIsimImpi();
@@ -455,6 +470,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String getIsimDomain() {
         try {
             return getSubscriberInfo().getIsimDomain();
@@ -467,6 +483,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String[] getIsimImpu() {
         try {
             return getSubscriberInfo().getIsimImpu();
@@ -479,6 +496,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private IPhoneSubInfo getSubscriberInfo() {
         // get it each time because that process crashes a lot
         return IPhoneSubInfo.Stub.asInterface(ServiceManager.getService("iphonesubinfo"));
@@ -523,6 +541,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private ITelephony getITelephony() {
         return ITelephony.Stub.asInterface(ServiceManager.getService(Context.TELEPHONY_SERVICE));
     }
@@ -541,6 +560,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public int getCdmaEriIconIndex() {
         try {
             return getITelephony().getCdmaEriIconIndex();
@@ -553,6 +573,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public int getCdmaEriIconMode() {
         try {
             return getITelephony().getCdmaEriIconMode();
@@ -565,6 +586,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public String getCdmaEriText() {
         try {
             return getITelephony().getCdmaEriText();
@@ -577,6 +599,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public boolean isVoiceCapable() {
         if (sContext == null) return true;
         return sContext.getResources().getBoolean(
@@ -584,6 +607,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public boolean isSmsCapable() {
         if (sContext == null) return true;
         return sContext.getResources().getBoolean(

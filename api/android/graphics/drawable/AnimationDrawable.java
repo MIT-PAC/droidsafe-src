@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -10,10 +11,10 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.SystemClock;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AnimationDrawable extends DrawableContainer implements Runnable, Animatable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.341 -0400", hash_original_field = "3405E3C097684DA39297C61B3FBF4BCE", hash_generated_field = "8C9FC3EF51CD1D7374A26DD8B125CA14")
@@ -34,7 +35,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.342 -0400", hash_original_method = "586B7D97991AD2B5DDF2BA28DAD874F2", hash_generated_method = "73715A255D8BA3FA2401D48109BD3696")
     private  AnimationDrawable(AnimationState state, Resources res) {
         addTaint(res.getTaint());
@@ -224,7 +225,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_326901010 =         mAnimationState
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.348 -0400", hash_original_method = "5BF496D6A5AC4A1943AFC092E55892DA", hash_generated_method = "6675B8FE44905DA9FFD973246CC2786C")
     private void nextFrame(boolean unschedule) {
         addTaint(unschedule);
@@ -245,7 +246,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_326901010 =         mAnimationState
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.349 -0400", hash_original_method = "B59ABD564D6BE8E67E70E520C58F1693", hash_generated_method = "BC34A338D4C6C10B3D40432E71599F26")
     private void setFrame(int frame, boolean unschedule, boolean animate) {
         addTaint(animate);

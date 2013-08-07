@@ -1,16 +1,17 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import android.animation.Keyframe.FloatKeyframe;
 import android.animation.Keyframe.IntKeyframe;
 import android.animation.Keyframe.ObjectKeyframe;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class KeyframeSet {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.910 -0400", hash_original_field = "8ABE62D0F4315FED9AFE09DF6C0B1969", hash_generated_field = "546EF363B5340CFFE8BC4CB61B7D7CDB")

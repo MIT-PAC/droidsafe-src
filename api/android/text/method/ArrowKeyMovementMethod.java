@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Rect;
 import android.text.Layout;
 import android.text.Selection;
@@ -9,10 +10,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ArrowKeyMovementMethod extends BaseMovementMethod implements MovementMethod {
     
@@ -24,20 +25,20 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isSelecting(Spannable buffer) {
         return ((MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SHIFT_ON) == 1) ||
                 (MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SELECTING) != 0));
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getCurrentLineTop(Spannable buffer, Layout layout) {
         return layout.getLineTop(layout.getLineForOffset(Selection.getSelectionEnd(buffer)));
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getPageHeight(TextView widget) {
         final Rect rect = new Rect();
         return widget.getGlobalVisibleRect(rect) ? rect.height() : 0;
@@ -433,7 +434,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.903 -0400", hash_original_method = "67D023CBFAD79BEA97EFF9BE9D5119F7", hash_generated_method = "4EE867843F421ED436D336CB55239208")
     @Override
     protected boolean leftWord(TextView widget, Spannable buffer) {
@@ -453,7 +454,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.903 -0400", hash_original_method = "117E80B3C82F659E45802A24AF653E84", hash_generated_method = "1FE192C0094BAAFCBD6573C13A615B8A")
     @Override
     protected boolean rightWord(TextView widget, Spannable buffer) {

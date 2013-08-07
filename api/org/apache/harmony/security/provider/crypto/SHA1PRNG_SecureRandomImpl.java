@@ -1,6 +1,7 @@
 package org.apache.harmony.security.provider.crypto;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -9,10 +10,10 @@ import java.security.SecureRandomSpi;
 
 import libcore.io.Streams;
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serializable, SHA1_Data {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.338 -0400", hash_original_field = "FE4C0F30AA359C41D9F9A5F69C8C4192", hash_generated_field = "B094937ADDF13116DE9FAD14BAA3CD5D")
@@ -68,6 +69,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.341 -0400", hash_original_method = "71D119B7F725F786DBF6F5411B9162C3", hash_generated_method = "9A1FE8C53E30A0D9CF70D743789E86B0")
     private void updateSeed(byte[] bytes) {
         SHA1Impl.updateHash(seed, bytes, 0, bytes.length - 1);
@@ -278,6 +280,7 @@ for(i = 0;i < EXTRAFRAME_OFFSET;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.350 -0400", hash_original_method = "716FAD60FA2495E9DABF23B35E588917", hash_generated_method = "2DDF7CB572157DED6BEED9C43D74D1AB")
     private void writeObject(ObjectOutputStream oos) throws IOException {
         addTaint(oos.getTaint());
@@ -335,6 +338,7 @@ for(int i = 0;i < intData.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.352 -0400", hash_original_method = "87BDC97ACB5596298F61FE4642318DFC", hash_generated_method = "B0128A4480AD61AAE9CBFF0A5FEAB7C9")
     private void readObject(ObjectInputStream ois) throws IOException,
             ClassNotFoundException {

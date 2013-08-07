@@ -1,6 +1,7 @@
 package org.apache.http.client.protocol;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Collection;
 
@@ -11,7 +12,7 @@ import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.client.params.ClientPNames;
 import org.apache.http.protocol.HttpContext;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class RequestDefaultHeaders implements HttpRequestInterceptor {
     

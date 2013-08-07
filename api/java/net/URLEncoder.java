@@ -1,16 +1,18 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.Charsets;
 
 import libcore.net.UriCodec;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class URLEncoder {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.087 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
     private  URLEncoder() {
         // ---------- Original Method ----------

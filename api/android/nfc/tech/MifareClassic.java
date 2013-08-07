@@ -1,6 +1,7 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -9,10 +10,10 @@ import android.nfc.ErrorCodes;
 import android.nfc.Tag;
 import android.nfc.TagLostException;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class MifareClassic extends BasicTagTechnology {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.551 -0400", hash_original_field = "70A0825F7C8424D762F96A4610B5A4E1", hash_generated_field = "A5FF4684C8ADE9FC7594EE2E1226C64D")
@@ -25,6 +26,7 @@ public final class MifareClassic extends BasicTagTechnology {
 
     private int mSize;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.554 -0400", hash_original_method = "05B1EEC895D259A0FF8852CB7B561E5D", hash_generated_method = "D4D0EE0A8E2D2D5BBE77C39DCCDBE127")
     public  MifareClassic(Tag tag) throws RemoteException {
         super(tag, TagTechnology.MIFARE_CLASSIC);
@@ -114,7 +116,7 @@ switch(a.getSak()){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.557 -0400", hash_original_method = "571F1D61EE68738D4B1083BD48C02876", hash_generated_method = "29E4275E64C287A2E8EB9C51B40B02E4")
     public boolean isEmulated() {
         boolean var70A0825F7C8424D762F96A4610B5A4E1_921489645 = (mIsEmulated);
@@ -278,6 +280,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.563 -0400", hash_original_method = "A4BE9C6E30E6595D3E1AAF1825AE0C43", hash_generated_method = "3A52CAAC64501F1AB35C44AD36AF6871")
     private boolean authenticate(int sector, byte[] key, boolean keyA) throws IOException {
         addTaint(keyA);
@@ -546,6 +549,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void validateSector(int sector) {
         if (sector < 0 || sector >= MAX_SECTOR_COUNT) {
             throw new IndexOutOfBoundsException("sector out of bounds: " + sector);
@@ -553,6 +557,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void validateBlock(int block) {
         if (block < 0 || block >= MAX_BLOCK_COUNT) {
             throw new IndexOutOfBoundsException("block out of bounds: " + block);
@@ -560,6 +565,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void validateValueOperand(int value) {
         if (value < 0) {
             throw new IllegalArgumentException("value operand negative");

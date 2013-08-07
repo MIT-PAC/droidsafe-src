@@ -1,16 +1,17 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.harmony.security.asn1.ASN1Implicit;
 import org.apache.harmony.security.asn1.ASN1Integer;
 import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class GeneralSubtree {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.367 -0400", hash_original_field = "593616DE15330C0FB2D55E55410BF994", hash_generated_field = "D4C59288F044029ACC216DF9F428B5A5")

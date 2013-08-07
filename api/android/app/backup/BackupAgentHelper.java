@@ -1,13 +1,14 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.os.ParcelFileDescriptor;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BackupAgentHelper extends BackupAgent {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.140 -0400", hash_original_field = "5C5B05EB15E682152B7155938D6BF50C", hash_generated_field = "60A0C9A2E37C523B1D67C9306AA95150")
@@ -48,7 +49,7 @@ public class BackupAgentHelper extends BackupAgent {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.142 -0400", hash_original_method = "846FCA7C7B95F7683BAEC473D9697583", hash_generated_method = "CC6A80FE307316D8A1286EE020094397")
     public BackupHelperDispatcher getDispatcher() {
 BackupHelperDispatcher var5DF19C452CAB59A9933C6AED8DEC3FBC_1671345947 =         mDispatcher;

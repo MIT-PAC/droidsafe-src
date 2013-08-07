@@ -1,6 +1,7 @@
 package javax.security.cert;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
@@ -8,9 +9,9 @@ import java.security.PublicKey;
 import java.security.SignatureException;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class Certificate {
     

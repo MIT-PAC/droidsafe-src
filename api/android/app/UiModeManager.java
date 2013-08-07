@@ -1,12 +1,13 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class UiModeManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.316 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "AC5296BC9334BAEB9DDA5E503BF7ECAF")

@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,10 +17,10 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PreferenceManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.789 -0400", hash_original_field = "C145D87741EB407D6B1FF715AD484119", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")
@@ -83,6 +84,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.791 -0400", hash_original_method = "962D66AE85693F6FF77A2DEF54D76478", hash_generated_method = "34B51017A324E0CC9BE74F3575C5B9BA")
     private  PreferenceManager(Context context) {
         addTaint(context.getTaint());
@@ -92,6 +94,7 @@ public class PreferenceManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.791 -0400", hash_original_method = "2AA94A8F94EE739DE2B0DB27540BEB34", hash_generated_method = "1FEF65B26EA7FB18FC4F33B72116A507")
     private void init(Context context) {
         mContext = context;
@@ -122,7 +125,7 @@ PreferenceFragment var5DA1096D62F21920EA3FC00E046E5678_295272075 =         mFrag
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.792 -0400", hash_original_method = "6682C9F88019B1A37FE99B0D2B3B34A2", hash_generated_method = "AA7BA6E2DF06979AB79CF3B6E657C5E5")
     private List<ResolveInfo> queryIntentActivities(Intent queryIntent) {
         addTaint(queryIntent.getTaint());
@@ -182,6 +185,7 @@ PreferenceScreen varD1085896DC735505FE279EE21156CD3E_1818396226 =         rootPr
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.795 -0400", hash_original_method = "94F9DF66CFF516C2DE1B651AB9A3388E", hash_generated_method = "34E31170CC26E65387602489D32A8DDB")
     public PreferenceScreen inflateFromResource(Context context, int resId,
             PreferenceScreen rootPreferences) {
@@ -306,12 +310,13 @@ SharedPreferences var51219B3CDC87A25E51630D49EFFCE292_1497285742 =         mShar
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String getDefaultSharedPreferencesName(Context context) {
         return context.getPackageName() + "_preferences";
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getDefaultSharedPreferencesMode() {
         return Context.MODE_PRIVATE;
     }
@@ -437,6 +442,7 @@ SharedPreferences.Editor varA6CD2099D508E43C12F4496CEDFD54C4_1315578157 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.803 -0400", hash_original_method = "2ED947FD2CD87E45A298D362CE1C3C54", hash_generated_method = "4BD75C86C65D262DB4AC16D9BA4805BF")
     private void setNoCommit(boolean noCommit) {
         if(!noCommit && mEditor != null)        
@@ -790,6 +796,7 @@ for(int i = 0;i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.811 -0400", hash_original_method = "9025418B8BBAFCD2E271951C43610D69", hash_generated_method = "A3F6EC93B62F8AA7FA81DA75CAAA6268")
     private void dismissAllScreens() {
         ArrayList<DialogInterface> screensToDismiss;

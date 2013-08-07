@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.NumberFormat;
 
 import android.content.Context;
@@ -19,10 +20,10 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ProgressDialog extends AlertDialog {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.462 -0400", hash_original_field = "8E57A1AD458E8C11842F6CF5D7E06883", hash_generated_field = "77244E1CDBA901DF4A72F7384A95707A")
@@ -101,7 +102,7 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.465 -0400", hash_original_method = "FE2AC98467F95F1FDF5E365DE947BD3D", hash_generated_method = "EB60C8DF224A339DC28B96F8E67BA73A")
     private void initFormats() {
         mProgressNumberFormat = "%1d/%2d";
@@ -589,7 +590,7 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.497 -0400", hash_original_method = "28A5BA5A84A47E224F80ADB1F1423669", hash_generated_method = "3381CDF2225D84E26B49476232567754")
     private void onProgressChanged() {
         if(mProgressStyle == STYLE_HORIZONTAL)        

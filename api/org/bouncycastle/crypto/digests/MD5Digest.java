@@ -1,10 +1,11 @@
 package org.bouncycastle.crypto.digests;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class MD5Digest extends GeneralDigest {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.770 -0400", hash_original_field = "106530DC42BAA21C67F8A3AF4D7FD9E1", hash_generated_field = "A20F40A5A8396B664558E10A31EADBF9")
@@ -118,7 +119,7 @@ String var01833783E5A5FEFADF736A2D18E3349A_1147217742 =         "MD5";
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.775 -0400", hash_original_method = "C095FEC528E22D3933584D069B5AEBEC", hash_generated_method = "32D201254469F34E37C8CDB6F6210FF9")
     private void unpackWord(
         int     word,
@@ -193,7 +194,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.776 -0400", hash_original_method = "A078642CC72A2F738FA96A2966371333", hash_generated_method = "B577C0E41F82EF10BBA7B1283513A625")
     private int rotateLeft(
         int x,
@@ -208,7 +209,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.776 -0400", hash_original_method = "38D2A24ABE645695148EECE5A1633407", hash_generated_method = "8006A8C90CBFD52B18986BCF439BAF32")
     private int F(
         int u,
@@ -225,7 +226,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.777 -0400", hash_original_method = "F823417414ECF2428B5CBDD347B9FAAC", hash_generated_method = "773E3BA49CF1B023B8E775192C884EEC")
     private int G(
         int u,
@@ -242,7 +243,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.777 -0400", hash_original_method = "83C9F03736BB5BDF54EC87B24EC05890", hash_generated_method = "BEA996C193271E75C68E33C6449807B0")
     private int H(
         int u,
@@ -259,7 +260,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.777 -0400", hash_original_method = "23BAA908E549D3D7165335B8EBDAA412", hash_generated_method = "0DA790DDF5F73AC5C393983503A69E2F")
     private int K(
         int u,

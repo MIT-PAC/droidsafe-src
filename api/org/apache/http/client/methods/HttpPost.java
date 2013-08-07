@@ -1,8 +1,9 @@
 package org.apache.http.client.methods;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.net.URI;
 

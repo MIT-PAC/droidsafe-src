@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IApplicationToken extends android.os.IInterface
 {

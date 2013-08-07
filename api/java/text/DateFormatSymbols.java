@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -11,10 +12,10 @@ import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DateFormatSymbols implements Serializable, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.009 -0400", hash_original_field = "F93C182ABF27C94E3A5B7A9F01CA9F60", hash_generated_field = "B3AAF3207AD6EC4015B2989CC1E896AA")
@@ -140,7 +141,7 @@ String[][] varEBF7F37D366F40A93466E6A48C2F7696_1504360394 =         zoneStrings;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.014 -0400", hash_original_method = "E120B4C8193E856C74E13A18ACCA4F59", hash_generated_method = "388A6D5AE7F5C74E8148031056CF63C3")
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         addTaint(ois.getTaint());
@@ -158,7 +159,7 @@ String[][] varEBF7F37D366F40A93466E6A48C2F7696_1504360394 =         zoneStrings;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.014 -0400", hash_original_method = "5B6B2CBEB972D19E7440DD4CD3FE992C", hash_generated_method = "2E8A29414A0BE9C0F4783192240C2E7F")
     private void writeObject(ObjectOutputStream oos) throws IOException {
         addTaint(oos.getTaint());
@@ -242,7 +243,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1732920285 =             super.clone(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean timeZoneStringsEqual(DateFormatSymbols lhs, DateFormatSymbols rhs) {
         if (lhs.zoneStrings == null && rhs.zoneStrings == null && lhs.locale.equals(rhs.locale)) {
             return true;
@@ -371,7 +372,7 @@ String[][] varD69B750B3B3DE2784BD39EED4D0C28EC_1368880856 =         clone2dStrin
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String[][] clone2dStringArray(String[][] array) {
         String[][] result = new String[array.length][];
         for (int i = 0; i < array.length; ++i) {

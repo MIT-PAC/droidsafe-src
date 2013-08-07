@@ -1,6 +1,7 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.ECHILD;
 import static libcore.io.OsConstants.SIGKILL;
 import static libcore.io.OsConstants.WEXITSTATUS;
@@ -27,10 +28,10 @@ import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.util.MutableInt;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 final class ProcessManager {
@@ -41,6 +42,7 @@ final class ProcessManager {
 
     private final ProcessReferenceQueue referenceQueue = new ProcessReferenceQueue();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.453 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
     private  ProcessManager() {
         Thread reaperThread = new Thread(ProcessManager.class.getName()) {
@@ -61,6 +63,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.453 -0400", hash_original_method = "BF6AA9440795270C2D5A5C002031838F", hash_generated_method = "54B0E2956D775063FBCA380BEE721098")
     private void cleanUp() {
         ProcessReference reference;
@@ -82,7 +85,7 @@ final class ProcessManager {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.454 -0400", hash_original_method = "534F9793819E6D7D8427F97C64CDA54E", hash_generated_method = "B0840AF9BB24D6E130D726E21B8F151B")
     private void watchChildren() {
         MutableInt status = new MutableInt(-1);
@@ -135,6 +138,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.456 -0400", hash_original_method = "4025BDFB051861E82299213D97AFEE05", hash_generated_method = "CC590DE6C79383A31A027AF8E4B18ED1")
     private void onExit(int pid, int exitValue) {
         addTaint(exitValue);
@@ -168,6 +172,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.456 -0400", hash_original_method = "E4B4D1EC14DE436D47A63B575F4759A6", hash_generated_method = "2A3DC071AD631520B4ED17D86AEF9EA2")
     private void waitForMoreChildren() {
         synchronized
@@ -523,6 +528,7 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_700224810 =             (Pr
 
         private FileDescriptor fd;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.466 -0400", hash_original_method = "BA3785E1A3DB1BABE64D1C4B047B2648", hash_generated_method = "13DCE028ACF64B329B01FFD270781DCF")
         private  ProcessInputStream(FileDescriptor fd) {
             super(fd);
@@ -577,6 +583,7 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_700224810 =             (Pr
 
         private FileDescriptor fd;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.466 -0400", hash_original_method = "B3C6B215267D4A75B46BBDC1F5BB9CDB", hash_generated_method = "7303B1A97A9117BEB783BF40DA54A18E")
         private  ProcessOutputStream(FileDescriptor fd) {
             super(fd);

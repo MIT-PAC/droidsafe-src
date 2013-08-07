@@ -1,15 +1,16 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.NameValue;
 import gov.nist.core.Separators;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class AuthenticationInfo extends ParametersHeader implements javax.sip.header.AuthenticationInfoHeader {
     

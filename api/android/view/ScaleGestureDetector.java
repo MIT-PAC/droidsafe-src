@@ -1,13 +1,14 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.FloatMath;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ScaleGestureDetector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -426,6 +427,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.989 -0400", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "6572947CD97A8E41CCE66FB387BDB0A4")
     private int findNewActiveIndex(MotionEvent ev, int otherActiveId, int oldIndex) {
         addTaint(oldIndex);
@@ -474,6 +476,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static float getRawX(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawX();
@@ -482,6 +485,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static float getRawY(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawY();
@@ -490,6 +494,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.995 -0400", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "CBDF072BFE5829B1D228F253F6D3C44C")
     private void setContext(MotionEvent curr) {
         if(mCurrEvent != null)        
@@ -540,6 +545,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.996 -0400", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "30E2C34A724FADA3EB87CED62FD583BA")
     private void reset() {
         if(mPrevEvent != null)        

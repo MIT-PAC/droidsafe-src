@@ -1,12 +1,13 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class ReplacementSpan extends MetricAffectingSpan {
     

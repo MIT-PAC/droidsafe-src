@@ -1,10 +1,11 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.net.Uri;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class ContentUris {
     

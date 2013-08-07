@@ -1,13 +1,14 @@
 package javax.crypto;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.SecureRandom;
 
 import org.apache.harmony.crypto.internal.NullCipherSpi;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class NullCipher extends Cipher {
     

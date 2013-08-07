@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
@@ -30,10 +31,10 @@ import org.apache.http.params.HttpParams;
 
 import android.content.Context;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HttpsConnection extends Connection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.228 -0400", hash_original_field = "9EB1CE36ECBD5AF4267329395E50E86C", hash_generated_field = "0A84F656FB5724862D6D0C3942C87FC1")
@@ -49,6 +50,7 @@ public class HttpsConnection extends Connection {
 
     private HttpHost mProxyHost;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.228 -0400", hash_original_method = "09C25F5735AB0754281F1FBF0B28F30D", hash_generated_method = "4937DF2BB7F4620AC3775E5E26F09720")
       HttpsConnection(Context context, HttpHost host, HttpHost proxy,
                     RequestFeeder requestFeeder) {
@@ -97,13 +99,13 @@ public class HttpsConnection extends Connection {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private synchronized static SSLSocketFactory getSocketFactory() {
         return mSslSocketFactory;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.229 -0400", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "4B8075248C213E7C49A5EEBA2B95A200")
      void setCertificate(SslCertificate certificate) {
         addTaint(certificate.getTaint());
@@ -113,7 +115,7 @@ public class HttpsConnection extends Connection {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.234 -0400", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "AD3B2B7020EEA8B4D642AC47C6DD5A9D")
     @Override
      AndroidHttpClientConnection openConnection(Request req) throws IOException {
@@ -331,6 +333,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1303278650 =    
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.237 -0400", hash_original_method = "94AF48C1BBE0D9628C41EDAE43AD4A70", hash_generated_method = "F7616D8C46554D4B0A63C13BBA13BA46")
     @Override
      void closeConnection() {
@@ -369,6 +372,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1303278650 =    
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.239 -0400", hash_original_method = "AF3B09D914ADDB679280100B7539789D", hash_generated_method = "3932166F3621C00D850E1CE41617491A")
      void restartConnection(boolean proceed) {
         if(HttpLog.LOGV)        
@@ -400,7 +404,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1303278650 =    
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.239 -0400", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "EACC9FF0295C7AC0EE3AC47861DDD4A6")
     @Override
      String getScheme() {
@@ -438,6 +442,7 @@ String varD77F5CF20131CC5BD2D3B9090001888B_1542332171 =         "https";
 
 class SSLConnectionClosedByUserException extends SSLException {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.240 -0400", hash_original_method = "1C338196B36BFFFB864A09C466046734", hash_generated_method = "12E090A5BFD5466C086FEE77A2D7DCF2")
     public  SSLConnectionClosedByUserException(String reason) {
         super(reason);

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.InternalErrorHandler;
@@ -13,10 +14,10 @@ import java.text.ParseException;
 
 import javax.sip.InvalidArgumentException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class MessageProcessor implements Runnable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.610 -0400", hash_original_field = "93843F38363D24DFE376CC298A9F7B78", hash_generated_field = "3DC51267A61BBDF8C5A7E9BDABF1462E")

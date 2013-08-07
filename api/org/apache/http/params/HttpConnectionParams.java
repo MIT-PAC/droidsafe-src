@@ -1,10 +1,12 @@
 package org.apache.http.params;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public final class HttpConnectionParams implements CoreConnectionPNames {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.208 -0400", hash_original_method = "E377E6E9E726367BB194BBBFED21463F", hash_generated_method = "C92261D75273D144D335B520B6DC917E")
     private  HttpConnectionParams() {
         super();

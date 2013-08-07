@@ -1,6 +1,7 @@
 package org.apache.harmony.xml.dom;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +15,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.TypeInfo;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ElementImpl extends InnerNodeImpl implements Element {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.433 -0400", hash_original_field = "CEC00E48144CD3C5B0000055F3D7FF26", hash_generated_field = "6DED3D0909D027805E22F95BA58508AE")
@@ -61,7 +62,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.434 -0400", hash_original_method = "33812125B5F046930FB02168EEB43D40", hash_generated_method = "6727D892520F6F45795C5DAFF3C22C0C")
     private int indexOfAttribute(String name) {
         addTaint(name.getTaint());
@@ -89,7 +90,7 @@ for(int i = 0;i < attributes.size();i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.435 -0400", hash_original_method = "7BDB91D541F3C8F5E0B377A9C520D55B", hash_generated_method = "C23587EB85F2C03FFA1AC37642DD2F29")
     private int indexOfAttributeNS(String namespaceURI, String localName) {
         addTaint(localName.getTaint());
@@ -734,7 +735,7 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1344190057 =         NULL_TYPE_INFO
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.452 -0400", hash_original_method = "DC316EFAFE6C9719F9A6712C7C0724A1", hash_generated_method = "44DDA3BBF423BA5D44B87882CC4DC3BB")
         private int indexOfItem(String name) {
             addTaint(name.getTaint());
@@ -746,7 +747,7 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1344190057 =         NULL_TYPE_INFO
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.452 -0400", hash_original_method = "258D65E063DA88D4950E14323AAE31E6", hash_generated_method = "4F0270995B1607F637F78DDB7282E0FF")
         private int indexOfItemNS(String namespaceURI, String localName) {
             addTaint(localName.getTaint());

@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ISyncContext extends android.os.IInterface
 {

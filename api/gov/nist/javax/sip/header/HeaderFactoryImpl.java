@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.address.GenericURI;
 import gov.nist.javax.sip.header.extensions.Join;
 import gov.nist.javax.sip.header.extensions.JoinHeader;
@@ -122,10 +123,10 @@ import javax.sip.header.ViaHeader;
 import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.header.WarningHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.489 -0400", hash_original_field = "6FA63D73209D74D0D54BC416A32DB10D", hash_generated_field = "0D2878F1D6B0CD805C869443DA7FE75E")

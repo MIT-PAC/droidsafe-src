@@ -1,6 +1,7 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -13,10 +14,10 @@ import java.nio.charset.CodingErrorAction;
 import java.util.Formatter;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class LoggingPrintStream extends PrintStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.583 -0400", hash_original_field = "F3FE2D9E511ACAFB35D0D4B62216EA77", hash_generated_field = "F25016152F6B827256AC69E5E852FFFB")
@@ -39,7 +40,7 @@ abstract class LoggingPrintStream extends PrintStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.035 -0400", hash_original_method = "9EC321B6DFE561BEEE5F374ADAFA7A30", hash_generated_method = "0CF066A83124D2B7F58571604E6E54B0")
     protected  LoggingPrintStream() {
         super(new OutputStream() {
-            @DSModeled(DSC.SAFE)
+            @DSModeled(DSC.BAN)
     public void write(int oneByte) throws IOException {
                 throw new AssertionError();
             }
@@ -52,7 +53,7 @@ abstract class LoggingPrintStream extends PrintStream {
     protected abstract void log(String line);
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.584 -0400", hash_original_method = "B82EE3D19B5D6B5B238555A3C574E964", hash_generated_method = "E395ABEE7588D1C6079D814E6681CA0E")
     @Override
     public synchronized void flush() {
@@ -62,6 +63,7 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.585 -0400", hash_original_method = "4ED1A827BC075458493301694F5FB1B1", hash_generated_method = "A6C030FAC50FA899E35DBC5E95E375E8")
     private void flush(boolean completely) {
         addTaint(completely);
@@ -107,7 +109,7 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.586 -0400", hash_original_method = "2DD612F978C37BC7835E83A5EC002758", hash_generated_method = "19044F57C28D10A8762C56261C2825FA")
     public void write(int oneByte) {
         addTaint(oneByte);
@@ -117,7 +119,7 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.587 -0400", hash_original_method = "DD74A1A5E8F3C8FBA0F2CF6C71691621", hash_generated_method = "42D2B6801CF74ED52F10052A1528442E")
     @Override
     public void write(byte[] buffer) {
@@ -167,7 +169,7 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.589 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "9A194AB1E98142D937813C3441CD5093")
     @Override
     public boolean checkError() {
@@ -179,7 +181,7 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.590 -0400", hash_original_method = "51169B2EF8C8211EB75CA27439BAE4AB", hash_generated_method = "2A0A3827C6A0447713ECA04520FF48CE")
     @Override
     protected void setError() {
@@ -187,7 +189,7 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.590 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
@@ -263,7 +265,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.592 -0400", hash_original_method = "34D92369FB78C59105446434E08E5A35", hash_generated_method = "3493EAB224538C362E40F9AA2A494CD6")
     @Override
     public synchronized void print(char[] charArray) {
@@ -276,7 +278,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.593 -0400", hash_original_method = "9A1F4F8E7B087A358A5E2FCB594FC1F1", hash_generated_method = "8F59234D870BB91B140F494D96210C04")
     @Override
     public synchronized void print(char ch) {
@@ -294,7 +296,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.593 -0400", hash_original_method = "820BD1560BF89A8CCF87FDD4C009E434", hash_generated_method = "A3580F312FF2CD91E8F3C9669860705F")
     @Override
     public synchronized void print(double dnum) {
@@ -305,7 +307,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.593 -0400", hash_original_method = "BF192CAA8CC79321D5E28D82D881B0DE", hash_generated_method = "AC6D1853ACEE5CFBD99111BEB744EB49")
     @Override
     public synchronized void print(float fnum) {
@@ -316,7 +318,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.594 -0400", hash_original_method = "EA729F5E50977D112911F5C250343E89", hash_generated_method = "99CDB100941EA43D23B0C0DE8012F105")
     @Override
     public synchronized void print(int inum) {
@@ -327,7 +329,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.595 -0400", hash_original_method = "2F9DD3DF69B1439CAC48F255A2B06D16", hash_generated_method = "60C25EB8338062E53DA4770A1F3642DB")
     @Override
     public synchronized void print(long lnum) {
@@ -338,7 +340,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.595 -0400", hash_original_method = "0154750185D34191234B4807E3679F12", hash_generated_method = "5D367BFBCCC01DA964F9118B676D990B")
     @Override
     public synchronized void print(Object obj) {
@@ -351,7 +353,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.595 -0400", hash_original_method = "F2C90C1214AEAFC8178C26840ED36663", hash_generated_method = "68E76B8414EFAE337B87E8E1544C9093")
     @Override
     public synchronized void print(String str) {
@@ -364,7 +366,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.596 -0400", hash_original_method = "5ECA1B577D18215F52A8C9A6333D9CFC", hash_generated_method = "E4CCA37F26C4FDD0B557C46E2C5548FC")
     @Override
     public synchronized void print(boolean bool) {
@@ -375,7 +377,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.596 -0400", hash_original_method = "7A4D58C37164C3E851ED3ACE479C647B", hash_generated_method = "092FE2800A8865F19D4DB0FB3E12EEF9")
     @Override
     public synchronized void println() {
@@ -385,7 +387,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.596 -0400", hash_original_method = "9D1363302FBD4F1058D52926AD245DD3", hash_generated_method = "58913D6D3A1147892A6E4B3D82A9BD0D")
     @Override
     public synchronized void println(char[] charArray) {
@@ -398,7 +400,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.596 -0400", hash_original_method = "01C278022DBB5824908D391A202B4A36", hash_generated_method = "EA6AA243657CE0F28AEB4BD13A7071C0")
     @Override
     public synchronized void println(char ch) {
@@ -411,7 +413,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.597 -0400", hash_original_method = "CE32681476B37833026295BF14F82F86", hash_generated_method = "1F0FA9E0B60635956ECDB30DD46B74B9")
     @Override
     public synchronized void println(double dnum) {
@@ -424,7 +426,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.597 -0400", hash_original_method = "DD6ED147F9391D413B16E144DA317870", hash_generated_method = "B52705BD832C4AB9DE4A048961901694")
     @Override
     public synchronized void println(float fnum) {
@@ -437,7 +439,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.597 -0400", hash_original_method = "AF6787AC8EF2FEBAAFAF97782B2D9A73", hash_generated_method = "379C679E30FE41C22E31048745C7442E")
     @Override
     public synchronized void println(int inum) {
@@ -450,7 +452,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.597 -0400", hash_original_method = "460CB99F3847A5BE06D2BF7094246043", hash_generated_method = "5511F77D9CFCA164858FCB876BEB5CF9")
     @Override
     public synchronized void println(long lnum) {
@@ -463,7 +465,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.597 -0400", hash_original_method = "790D5F04D5F763A67F6384A1DADD6007", hash_generated_method = "5288593FA99D284EA0CD6B2FDA0E3C41")
     @Override
     public synchronized void println(Object obj) {
@@ -476,6 +478,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.598 -0400", hash_original_method = "EBB6B619FF9A797B3350DC2D212BCB5E", hash_generated_method = "D9678ADD59E2E9141705F87FA761B651")
     @Override
     public synchronized void println(String s) {
@@ -522,7 +525,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.598 -0400", hash_original_method = "09E0763383C859949559D7053E0AFD5D", hash_generated_method = "4B1E47204068D4AF8121008BDEEA44DF")
     @Override
     public synchronized void println(boolean bool) {
@@ -535,7 +538,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1298104794 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.598 -0400", hash_original_method = "C72D2A095158FF2DF7FBE0880B8BD63F", hash_generated_method = "62952A2142A549E688310EFA8E42BE0A")
     @Override
     public synchronized PrintStream append(char c) {
@@ -550,7 +553,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_637892018 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.598 -0400", hash_original_method = "C203B04FBC05591B3DF1483A3F91F520", hash_generated_method = "74ADAAC3A248F66E418C6F79057F723E")
     @Override
     public synchronized PrintStream append(CharSequence csq) {
@@ -567,7 +570,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_407109973 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.598 -0400", hash_original_method = "6ED0867725346C7DB431FFF2CFBE5CE7", hash_generated_method = "62347359B02F6127C241035416E39FCF")
     @Override
     public synchronized PrintStream append(

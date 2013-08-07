@@ -1,6 +1,7 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -8,14 +9,14 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import libcore.util.BasicLruCache;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class TimeZones {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.901 -0400", hash_original_method = "A05C4975F009B050E4723CBEC63CF03D", hash_generated_method = "A3706FB06655BF7A8E96F021B21E6A98")
     private  TimeZones() {
         // ---------- Original Method ----------
@@ -109,7 +110,7 @@ String[][] varDC838461EE2FA0CA4C9BBB70A15456B0_1069865706 =             result;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.904 -0400", hash_original_method = "B8ADCF3091CCD0EA103D9032F8613DD2", hash_generated_method = "5A7ADE4AA1DECADF6175D595B59ABCD6")
         private synchronized void internStrings(String[][] result) {
             addTaint(result[0][0].getTaint());

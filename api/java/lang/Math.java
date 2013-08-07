@@ -1,17 +1,18 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Random;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Math {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.348 -0400", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "78B9D931D5E71470A5832EAA02F41698")
     private  Math() {
         // ---------- Original Method ----------
@@ -588,7 +589,7 @@ public final class Math {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int shiftIntBits(int bits, int digits) {
         if (digits > 0) {
             return bits << digits;
@@ -613,7 +614,7 @@ public final class Math {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static long shiftLongBits(long bits, long digits) {
         if (digits > 0) {
             return bits << digits;

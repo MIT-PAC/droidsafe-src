@@ -1,12 +1,13 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.Log;
 
 import com.android.internal.telephony.Connection;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class CdmaCallWaitingNotification {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.317 -0400", hash_original_field = "923514A5863F58F99BFC8BE708235C6E", hash_generated_field = "376AFD5842E589F4F70A309CABF53160")
@@ -47,6 +48,7 @@ public class CdmaCallWaitingNotification {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.318 -0400", hash_original_method = "7BACCCFD399686BD18F0B929D0C46F63", hash_generated_method = "09650E23445DABCED85D6FF7202551DC")
     public String toString() {
 String var0FF37B5AFCEF923E613934F2498F778A_302937697 =         super.toString() + "Call Waiting Notification  "
@@ -77,6 +79,7 @@ String var0FF37B5AFCEF923E613934F2498F778A_302937697 =         super.toString() 
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int presentationFromCLIP(int cli) {
         switch(cli) {
             case 0: return Connection.PRESENTATION_ALLOWED;

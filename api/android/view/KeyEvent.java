@@ -1,16 +1,17 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.method.MetaKeyKeyListener;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.KeyCharacterMap.KeyData;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class KeyEvent extends InputEvent implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "A21260B04ED5B32DBDB0093B175D9F6A")
@@ -53,6 +54,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
 
     private String mCharacters;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "560F8A7FDE8C5C12025FD3A840761BDA")
     private  KeyEvent() {
         // ---------- Original Method ----------
@@ -272,6 +274,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.327 -0400", hash_original_method = "5AF6098C2FF410C0A9EE2BEE9470EC38", hash_generated_method = "33CAD1EFF43FC0C02F7B3E9661DD9448")
     private  KeyEvent(KeyEvent origEvent, int action) {
         mDownTime = origEvent.mDownTime;
@@ -298,6 +301,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.330 -0400", hash_original_method = "6CD21CCD9028EF5AE389AE8F77253E73", hash_generated_method = "7875E9A704AEFC535275AEDFF1A3D334")
     private  KeyEvent(Parcel in) {
         mDeviceId = in.readInt();
@@ -324,7 +328,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void populateKeycodeSymbolicNames() {
         SparseArray<String> names = KEYCODE_SYMBOLIC_NAMES;
         names.append(KEYCODE_UNKNOWN, "KEYCODE_UNKNOWN");
@@ -553,6 +557,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static KeyEvent obtain() {
         final KeyEvent ev;
         synchronized (gRecyclerLock) {
@@ -919,6 +924,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int metaStateFilterDirectionalModifiers(int metaState,
             int modifiers, int basic, int left, int right) {
         final boolean wantBasic = (modifiers & basic) != 0;

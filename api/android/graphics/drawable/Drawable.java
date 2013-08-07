@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
@@ -27,10 +28,10 @@ import android.util.StateSet;
 import android.util.TypedValue;
 import android.util.Xml;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Drawable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.572 -0400", hash_original_field = "0C685B7B5DBE2FA698BB3FD957C188EC", hash_generated_field = "5E6D3F09C1210458D0C754595BB30DAC")
@@ -731,7 +732,7 @@ ConstantState var540C13E9E156B687226421B24F2DF178_1421985647 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
             Rect pad, String srcName) {
         if (np != null) {

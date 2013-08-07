@@ -1,15 +1,16 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Layout;
 import android.text.Spannable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ScrollingMovementMethod extends BaseMovementMethod implements MovementMethod {
     

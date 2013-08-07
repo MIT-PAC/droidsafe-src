@@ -1,8 +1,9 @@
 package org.w3c.dom;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class DOMException extends RuntimeException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.123 -0400", hash_original_field = "C13367945D5D4C91047B3B50234AA7AB", hash_generated_field = "5E518509D078CBA65D8E1C88B69CC66E")

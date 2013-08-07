@@ -1,6 +1,7 @@
 package org.apache.http.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ClientCookie extends Cookie {
 

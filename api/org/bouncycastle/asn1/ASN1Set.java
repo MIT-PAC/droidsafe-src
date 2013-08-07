@@ -1,15 +1,16 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract public class ASN1Set extends ASN1Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.816 -0400", hash_original_field = "BDECEFA98886A378E1E58B7CE4D15A5D", hash_generated_field = "B61BB4FD9E03C235F8AEC9C8695ACDDC")
@@ -290,7 +291,7 @@ DERObject var9F6A5CC5D0E8FDBA0198C27DF56526D2_1098449876 =             outer;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.821 -0400", hash_original_method = "A69C6C665FC9D3DE250A324544079C85", hash_generated_method = "B25F9DDCED0DEE33F68DF296B19DAC4D")
     private DEREncodable getNext(Enumeration e) {
         addTaint(e.getTaint());
@@ -314,7 +315,7 @@ DEREncodable var142E4525AFF6FB7F5C03BA975A3F000D_919367333 =         encObj;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.822 -0400", hash_original_method = "207A76DA1E8D21F977EB59C485DCA4E9", hash_generated_method = "ABEF6A97E62B71397F17D2B4E4755AFB")
     private boolean lessThanOrEqual(
          byte[] a,
@@ -347,6 +348,7 @@ for(int i = 0;i != len;++i)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.822 -0400", hash_original_method = "522D47B99F0E20F7487ED5107F130A00", hash_generated_method = "A1123B22C053F206087C7C78C5D4350A")
     private byte[] getEncoded(
         DEREncodable obj) {

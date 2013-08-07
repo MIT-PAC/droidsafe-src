@@ -1,16 +1,17 @@
 package java.math;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Random;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BigInteger extends Number implements Comparable<BigInteger>, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.770 -0400", hash_original_field = "33A2DB2A239C5BAAA46376495EE5F6ED", hash_generated_field = "1B931597CE47BECC94315E7FDFB3AE18")
@@ -350,7 +351,7 @@ BigInt varF61D17EA034CC14FAE8780D55F9242B6_1859815725 =             bigInt;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.777 -0400", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "FB8F32B7985E2B240502D873FAE13D52")
     private void setBigInt(BigInt bigInt) {
         this.bigInt = bigInt;
@@ -361,7 +362,7 @@ BigInt varF61D17EA034CC14FAE8780D55F9242B6_1859815725 =             bigInt;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.778 -0400", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "DDED3CCDAC81118323E9CC670E4E61F1")
     private void setJavaRepresentation(int sign, int numberLength, int[] digits) {
         while
@@ -1348,7 +1349,7 @@ BigInteger var94FA3EB230AA07017F3209E36A021E1F_924548947 =         Primality.nex
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.805 -0400", hash_original_method = "F2F8EDC382104DB344E8DD617201B0F3", hash_generated_method = "AECCC739F85D786AC2DB0078826155AF")
     private byte[] twosComplement() {
         prepareJavaRepresentation();
@@ -1456,7 +1457,7 @@ for(int i = 0;i < bytesInInteger;i++,digit >>= 8)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void parseFromString(BigInteger bi, String value, int radix) {
         int stringLength = value.length();
         int endChar = stringLength;
@@ -1547,7 +1548,7 @@ BigInteger var07385F68A35B2993CB0AE05D58EC8825_2050929495 =         new BigInteg
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.806 -0400", hash_original_method = "883E43F5C4566D0C2A7853533F533817", hash_generated_method = "6D0CEE76D89BFC579C407DC5297AE36E")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         addTaint(in.getTaint());
@@ -1563,7 +1564,7 @@ BigInteger var07385F68A35B2993CB0AE05D58EC8825_2050929495 =         new BigInteg
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.806 -0400", hash_original_method = "4837A11F07A86A58815A56F1112D57DF", hash_generated_method = "9E3A39E058765404F6C23020BE61F28B")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());

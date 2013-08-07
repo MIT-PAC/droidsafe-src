@@ -1,14 +1,15 @@
 package java.util.regex;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Pattern implements Serializable {
@@ -22,7 +23,7 @@ public final class Pattern implements Serializable {
 
     transient int address;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.441 -0400", hash_original_method = "F3225888DE48ADF8B6D1D654970A412C", hash_generated_method = "E74919D6B37253823BA096EFF012E04F")
     private  Pattern(String pattern, int flags) throws PatternSyntaxException {
         if((flags & CANON_EQ) != 0)        
@@ -127,7 +128,7 @@ String var407D32260E541B695CF3FD3F7EFB76AB_1212330995 =         pattern;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.444 -0400", hash_original_method = "7197179B856EBAB7792F85CCE5015D4A", hash_generated_method = "F102E74225D29C0BF57D645813894500")
     private void compile() throws PatternSyntaxException {
         if(pattern == null)        
@@ -197,7 +198,7 @@ String var407D32260E541B695CF3FD3F7EFB76AB_1212330995 =         pattern;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.445 -0400", hash_original_method = "53B6DF024185B8C2D6E69EA267F8FA46", hash_generated_method = "FC842B9FDB03AC6B69A2D0DF517F3C08")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         addTaint(s.getTaint());

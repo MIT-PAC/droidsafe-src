@@ -1,6 +1,7 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Throwable implements java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.615 -0400", hash_original_field = "2444D5A1A0CC057BD6374C3E9B4D0F41", hash_generated_field = "5F933F283197F636E634092890034B15")
@@ -75,7 +76,7 @@ public class Throwable implements java.io.Serializable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.619 -0400", hash_original_method = "E90AFC6F1FC322D1AB2CAA72835C3192", hash_generated_method = "F59C306B1BC63EC8029895A88BBF35D8")
     protected  Throwable(String detailMessage, Throwable throwable, boolean enableSuppression) {
         this(detailMessage, throwable);
@@ -176,7 +177,7 @@ for(StackTraceElement element : newTrace)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int countDuplicates(StackTraceElement[] currentStack,
             StackTraceElement[] parentStack) {
         int duplicates = 0;
@@ -193,7 +194,7 @@ for(StackTraceElement element : newTrace)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.625 -0400", hash_original_method = "5A8373E0D01D66F3E38F3485979BD426", hash_generated_method = "CA40D027FB0933464078815A8A279275")
     private StackTraceElement[] getInternalStackTrace() {
         if(stackTrace == null)        
@@ -259,7 +260,7 @@ StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1378528702 =         sta
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.629 -0400", hash_original_method = "9161BE82060982591CF587E371FF5EC1", hash_generated_method = "A69A1B0472FD5DA53C293B7A5B8152EF")
     private void printStackTrace(Appendable err, String indent, StackTraceElement[] parentStack) throws IOException {
         addTaint(parentStack[0].getTaint());
@@ -383,7 +384,7 @@ Throwable var3C8F3313F49435961542E8707E527956_1458256153 =         cause;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.632 -0400", hash_original_method = "FE7E0A038916A44CD2EDEB98621E4496", hash_generated_method = "436F8FDD701EDD1BFA95D48667315EE2")
     public final void addSuppressed(Throwable throwable) {
         addTaint(throwable.getTaint());
@@ -416,7 +417,7 @@ Throwable var3C8F3313F49435961542E8707E527956_1458256153 =         cause;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.633 -0400", hash_original_method = "8B184B5B883F2271AE4A6DCD97FDDD74", hash_generated_method = "C79E6C1B6074A8ABF867B44AA0A63F96")
     public final Throwable[] getSuppressed() {
 Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_675596110 =         (suppressedExceptions != null)
@@ -431,7 +432,7 @@ Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_675596110 =         (suppressedE
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.633 -0400", hash_original_method = "9B67B0A60488A3B6BF6B1F8E333B2B37", hash_generated_method = "69B9BD3E909BC1656E915C2D03DA1729")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -443,7 +444,7 @@ Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_675596110 =         (suppressedE
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.633 -0400", hash_original_method = "D9E2A8DEA9D5CE3A923EF2188BD1E0E9", hash_generated_method = "B93F62DC035F095BBCAF219EA2AC3384")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         addTaint(in.getTaint());

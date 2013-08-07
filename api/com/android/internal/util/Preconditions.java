@@ -1,7 +1,8 @@
 package com.android.internal.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class Preconditions {
     

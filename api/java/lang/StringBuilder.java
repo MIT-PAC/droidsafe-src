@@ -1,15 +1,16 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class StringBuilder extends AbstractStringBuilder implements Appendable, CharSequence, Serializable {
     
@@ -535,7 +536,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_235870127 =         super.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.265 -0400", hash_original_method = "2C3CA2755DA5729156EEFA2755095C82", hash_generated_method = "4DE1DD5BE1C3D644C6D668838FFFE727")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
@@ -552,7 +553,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_235870127 =         super.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.266 -0400", hash_original_method = "955BAED9D745223A762EA03F9D3C1E25", hash_generated_method = "0CF6F2B40A5C1B15330F2F0B53F306B6")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());

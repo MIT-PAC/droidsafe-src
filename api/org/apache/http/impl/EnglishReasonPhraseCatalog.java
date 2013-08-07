@@ -1,15 +1,16 @@
 package org.apache.http.impl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import org.apache.http.HttpStatus;
 import org.apache.http.ReasonPhraseCatalog;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     
@@ -52,7 +53,7 @@ String varD602C4C1684F7464133CA1A6851CC44A_797259413 =         reason;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;

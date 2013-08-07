@@ -1,6 +1,7 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.URI;
@@ -64,8 +65,8 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.HttpProcessor;
 import org.apache.http.protocol.HttpRequestExecutor;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class DefaultRequestDirector implements RequestDirector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.813 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
@@ -1013,6 +1014,7 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_639884716 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.838 -0400", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "17198A02B2E5C37081B5A7BE5C174595")
     private void abortConnection() {
         ManagedClientConnection mcc = managedConn;

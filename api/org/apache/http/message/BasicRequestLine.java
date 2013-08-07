@@ -1,13 +1,14 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.RequestLine;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BasicRequestLine implements RequestLine, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.034 -0400", hash_original_field = "F9B1081663AF351C5C340BD27A8FEE5E", hash_generated_field = "FB524F3C45513827A3D0C2FF3CDC9338")

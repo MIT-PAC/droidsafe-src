@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,10 +10,10 @@ import android.net.ParseException;
 import android.net.Uri;
 import android.net.WebAddress;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class URLUtil {
     
@@ -123,6 +124,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int parseHex(byte b) {
         if (b >= '0' && b <= '9') return (b - '0');
         if (b >= 'A' && b <= 'F') return (b - 'A' + 10);
@@ -137,7 +139,7 @@ public final class URLUtil {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static boolean isResourceUrl(String url) {
         return (null != url) && url.startsWith(RESOURCE_BASE);
     }

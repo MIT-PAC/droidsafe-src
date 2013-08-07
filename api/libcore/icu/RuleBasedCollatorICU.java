@@ -1,15 +1,16 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.CharacterIterator;
 import java.text.CollationKey;
 import java.text.ParseException;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class RuleBasedCollatorICU implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.880 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "849BAB492558B51E7BC4F1C331A435E4")
@@ -43,7 +44,7 @@ public final class RuleBasedCollatorICU implements Cloneable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.881 -0400", hash_original_method = "A318B723665122F54B169082CADE3CC3", hash_generated_method = "372D2CB5171EA86DC45CCC1173FBD6F1")
     private  RuleBasedCollatorICU(int address) {
         this.address = address;
@@ -207,7 +208,7 @@ CollationElementIteratorICU var9C852F1F0476779AB6D95093BE3D4B76_518638885 =     
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.884 -0400", hash_original_method = "7AE77B5FB071109A54141F0830318144", hash_generated_method = "DEFA1D4C91AB48B5D34EE14EEE54E94E")
     private String characterIteratorToString(CharacterIterator it) {
         addTaint(it.getTaint());

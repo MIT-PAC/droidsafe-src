@@ -1,6 +1,7 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractCollection;
@@ -14,10 +15,10 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V>, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.482 -0400", hash_original_field = "6E087A676FE9EB60B1F8BDB5CE343DC8", hash_generated_field = "4BE7BE92627D08015B3B3DAF23AD6BAD")
@@ -120,7 +121,7 @@ for(int i = 0;i < this.segments.length;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int hash(int h) {
         h += (h <<  15) ^ 0xffffcd7d;
         h ^= (h >>> 10);
@@ -583,7 +584,7 @@ Enumeration<V> varA5D0B7DD47403A81B3461DEE499DEE74_1147019218 =         new Valu
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.493 -0400", hash_original_method = "39AA0B3013D1EF3A3A6D6B7DFFE53DC3", hash_generated_method = "F38085849F4A55073030916148165AC9")
     private void writeObject(java.io.ObjectOutputStream s) throws IOException {
         addTaint(s.getTaint());
@@ -633,7 +634,7 @@ for(HashEntry<K,V> e = tab[i];e != null;e = e.next)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.494 -0400", hash_original_method = "27FA8D459FE7A66670B6D1423BE5DC25", hash_generated_method = "9BE88E4957E056FC7CBF2EE5C4389504")
     private void readObject(java.io.ObjectInputStream s) throws IOException, ClassNotFoundException {
         addTaint(s.getTaint());

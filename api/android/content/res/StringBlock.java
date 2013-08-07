@@ -1,6 +1,7 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
@@ -27,10 +28,10 @@ import android.util.SparseArray;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 final class StringBlock {
@@ -53,6 +54,7 @@ final class StringBlock {
 
     StyleIDs mStyleIDs = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.037 -0400", hash_original_method = "C056884F6217F27ACF2C69899BB237D2", hash_generated_method = "4F0A9DDDA48150DF375A701C2C6690CC")
     public  StringBlock(byte[] data, boolean useSparse) {
         mNative = nativeCreate(data, 0, data.length);
@@ -68,6 +70,7 @@ final class StringBlock {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.038 -0400", hash_original_method = "325B6049E710893083487955374CD75A", hash_generated_method = "60AA75B1220799DAD6E9C7057AB84498")
     public  StringBlock(byte[] data, int offset, int size, boolean useSparse) {
         mNative = nativeCreate(data, offset, size);
@@ -83,6 +86,7 @@ final class StringBlock {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.039 -0400", hash_original_method = "451F884D80CF979FA811D85381B93BA8", hash_generated_method = "0D1826B2632CB37E2FB55747A0150CA5")
       StringBlock(int obj, boolean useSparse) {
         mNative = obj;
@@ -98,7 +102,7 @@ final class StringBlock {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.042 -0400", hash_original_method = "CA0D40E41A55E0E3360E62E713B76B88", hash_generated_method = "64A4FCF1284FA1F1682F5B245A8392CF")
     public CharSequence get(int idx) {
         synchronized
@@ -228,7 +232,7 @@ CharSequence varB5053E025797B3BF768F5C37934C244D_1968585681 =             res;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.044 -0400", hash_original_method = "0AE42B829C6407A7351435B91C0A8F63", hash_generated_method = "9B316FC98E3AB60D004F5D4D4B36377A")
     protected void finalize() throws Throwable {
         if(mOwnsNative)        
@@ -242,6 +246,7 @@ CharSequence varB5053E025797B3BF768F5C37934C244D_1968585681 =             res;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.048 -0400", hash_original_method = "7157B2241FD2EE4083D0D740C065977B", hash_generated_method = "D8D729C6D02E1569BFDC6EB73E514796")
     private CharSequence applyStyles(String str, int[] style, StyleIDs ids) {
         addTaint(ids.getTaint());
@@ -419,6 +424,7 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_2110379561 =         new Spanne
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void addParagraphSpan(Spannable buffer, Object what,
                                          int start, int end) {
         int len = buffer.length();
@@ -440,7 +446,7 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_2110379561 =         new Spanne
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String subtag(String full, String attribute) {
         int start = full.indexOf(attribute);
         if (start < 0) {
@@ -542,6 +548,7 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_2110379561 =         new Spanne
 
         private int mSize;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.063 -0400", hash_original_method = "822F731BB1BA127213FF49F8E178606F", hash_generated_method = "8B0CB46E6A2F126B20C4298DCDA8FF8F")
         public  Height(int size) {
             mSize = size;

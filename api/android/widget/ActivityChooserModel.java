@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -30,10 +31,10 @@ import android.util.Xml;
 
 import com.android.internal.content.PackageMonitor;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ActivityChooserModel extends DataSetObservable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.154 -0400", hash_original_field = "4C000E064E4AAC53A002F734A3803AFE", hash_generated_field = "6392F8242B4A9D3DC6E2F079ACDCEA46")
@@ -79,6 +80,7 @@ public class ActivityChooserModel extends DataSetObservable {
 
     private OnChooseActivityListener mActivityChoserModelPolicy;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.155 -0400", hash_original_method = "807F9125D161268ACCBF934F5F44F95B", hash_generated_method = "D4720E2BC3C9D66889563D801E8159FD")
     private  ActivityChooserModel(Context context, String historyFileName) {
         mContext = context.getApplicationContext();
@@ -324,6 +326,7 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_398345165 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.161 -0400", hash_original_method = "79A1B7D3C52D92BAB878ED8275782ED6", hash_generated_method = "5E09CEDE6A1BC09D58744FE19130CF12")
     private void readHistoricalData() {
         synchronized
@@ -353,6 +356,7 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_398345165 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.161 -0400", hash_original_method = "50EE1C88911FEE4E5E828FE89316C1B7", hash_generated_method = "A27EC6C3A7305F0B8EF17D99A4E9FAFD")
     private void persistHistoricalData() {
         synchronized
@@ -413,6 +417,7 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_398345165 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.162 -0400", hash_original_method = "B440CA3B13B34DB5E9312802F4C1443D", hash_generated_method = "FBD868E3B4D7BB6ED10134AC201B4166")
     private void sortActivities() {
         synchronized
@@ -501,6 +506,7 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_398345165 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.163 -0400", hash_original_method = "50B8FA4A00A0FC54414B26FDB0055015", hash_generated_method = "DA0FCF0A47166EA7770D1D2A6B3E7435")
     private boolean addHisoricalRecord(HistoricalRecord historicalRecord) {
         addTaint(historicalRecord.getTaint());
@@ -532,6 +538,7 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_398345165 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.164 -0400", hash_original_method = "84DEA752877B716573664E1E2DB7F950", hash_generated_method = "2E7F3055A1DB03798BFC7C98F1F9C0BA")
     private void pruneExcessiveHistoricalRecordsLocked() {
         List<HistoricalRecord> choiceRecords = mHistoricalRecords;
@@ -564,6 +571,7 @@ for(int i = 0;i < pruneCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.164 -0400", hash_original_method = "CE097995E3DDE01957F3BEF111DCC08A", hash_generated_method = "CF49077B2CD7CD012AC125F34EB99385")
     private void loadActivitiesLocked() {
         mActivites.clear();
@@ -599,6 +607,7 @@ for(int i = 0;i < resolveInfoCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.164 -0400", hash_original_method = "A58F8162E2D66FE48738B2459230A97A", hash_generated_method = "86325D14E5B34998F424D60739551EA2")
     private void pruneHistoricalRecordsForPackageLocked(String packageName) {
         addTaint(packageName.getTaint());

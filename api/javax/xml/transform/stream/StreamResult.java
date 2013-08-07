@@ -1,16 +1,17 @@
 package javax.xml.transform.stream;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.OutputStream;
 import java.io.Writer;
 
 import javax.xml.transform.Result;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StreamResult implements Result {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.173 -0400", hash_original_field = "089D1A278481B86E821237F8E98E6DE7", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")

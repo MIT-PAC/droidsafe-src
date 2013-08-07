@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -36,10 +37,10 @@ import com.android.internal.os.AtomicFile;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.FastXmlSerializer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SyncStorageEngine extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.075 -0400", hash_original_field = "ADB03CF0C832D5859AE5ED806F964C77", hash_generated_field = "DCD9F929FBF293182CD7E5CC415D1656")
@@ -103,6 +104,7 @@ public class SyncStorageEngine extends Handler {
 
     private boolean mMasterSyncAutomatically = true;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.079 -0400", hash_original_method = "A6EFE710C6881152489583C4A465D2CD", hash_generated_method = "A17D5CE8054B2871FE235C5A70D9FADE")
     private  SyncStorageEngine(Context context, File dataDir) {
         addTaint(dataDir.getTaint());
@@ -130,11 +132,13 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SyncStorageEngine newTestInstance(Context context) {
         return new SyncStorageEngine(context, context.getFilesDir());
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void init(Context context) {
         if (sSyncStorageEngine != null) {
             return;
@@ -144,6 +148,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SyncStorageEngine getSingleton() {
         if (sSyncStorageEngine == null) {
             throw new IllegalStateException("not initialized");
@@ -152,6 +157,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.081 -0400", hash_original_method = "4DFC4B128F767AF6A0DE11433A3D7DB7", hash_generated_method = "669236A9391295DBA274922E72966D46")
     @Override
     public void handleMessage(Message msg) {
@@ -184,6 +190,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.082 -0400", hash_original_method = "52497A49330565A574CE17BDC87E49EE", hash_generated_method = "2494473549C3B7090412C86528C5E2A3")
     public void addStatusChangeListener(int mask, ISyncStatusObserver callback) {
         addTaint(callback.getTaint());
@@ -199,6 +206,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.083 -0400", hash_original_method = "6F129CA4CBCD6FCA8FC01A242206CA3D", hash_generated_method = "829163B010B5C5F5757CEE6FDB83D1CF")
     public void removeStatusChangeListener(ISyncStatusObserver callback) {
         addTaint(callback.getTaint());
@@ -213,6 +221,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.085 -0400", hash_original_method = "08D269D186E562E9C4A4640195EC72C3", hash_generated_method = "B3666221FC7702FAE947B49AC7499C36")
     private void reportChange(int which) {
         addTaint(which);
@@ -261,6 +270,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.087 -0400", hash_original_method = "1E3EB54BE416021CC2FC55EA818E4E21", hash_generated_method = "84F0AD420A48E7711C3F010301C54048")
     public boolean getSyncAutomatically(Account account, String providerName) {
         addTaint(providerName.getTaint());
@@ -314,6 +324,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.089 -0400", hash_original_method = "581987DB149A8DCAC958F242477B1863", hash_generated_method = "2E39C6FDCB34A7B5A95EBBB555E7079E")
     public void setSyncAutomatically(Account account, String providerName, boolean sync) {
         addTaint(sync);
@@ -356,6 +367,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.089 -0400", hash_original_method = "669A99F5C38004FBAED3A18D6E12F4E4", hash_generated_method = "AB95755275437E95805A9655CECF2CE6")
     public int getIsSyncable(Account account, String providerName) {
         addTaint(providerName.getTaint());
@@ -416,6 +428,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.090 -0400", hash_original_method = "F95D35FA2526F2113282D0AA6609AE27", hash_generated_method = "606DE907D6D61C23D5AD305858ADFABA")
     public void setIsSyncable(Account account, String providerName, int syncable) {
         addTaint(syncable);
@@ -452,6 +465,7 @@ public class SyncStorageEngine extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.091 -0400", hash_original_method = "8DC1822E61630B36C083348F9F85FD1C", hash_generated_method = "B5E5724F1237D1AC0D98DA24B6ECC93C")
     public Pair<Long, Long> getBackoff(Account account, String providerName) {
         addTaint(providerName.getTaint());
@@ -480,6 +494,7 @@ Pair<Long, Long> var81AABFB7829C88CA23765C85C1608D34_1595225041 =             Pa
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.092 -0400", hash_original_method = "470D6F06A561962AAC0558CECDD66F24", hash_generated_method = "9976C17807783B943892E7A2E53596A9")
     public void setBackoff(Account account, String providerName,
             long nextSyncTime, long nextDelay) {
@@ -536,6 +551,7 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.092 -0400", hash_original_method = "AFA2215C700770E680F9E8F54668F915", hash_generated_method = "56A964F56C4C4C2E14ABE80E387ED86D")
     public void clearAllBackoffs(SyncQueue syncQueue) {
         addTaint(syncQueue.getTaint());
@@ -569,6 +585,7 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.093 -0400", hash_original_method = "4C9FEA1518FBFDF4D1B5258B0B2AE78D", hash_generated_method = "E795D5945A10BF212FCA23A1068206EE")
     public void setDelayUntilTime(Account account, String providerName, long delayUntil) {
         addTaint(delayUntil);
@@ -605,6 +622,7 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.094 -0400", hash_original_method = "DA0E26DF9B57177D554F116843CE820C", hash_generated_method = "F5F32C5E1950559796211D7440406798")
     public long getDelayUntilTime(Account account, String providerName) {
         addTaint(providerName.getTaint());
@@ -633,7 +651,7 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.095 -0400", hash_original_method = "DA5487F77FC92CA93809E84A1EE05946", hash_generated_method = "EFE61AA99799A2004065324FA177EC07")
     private void updateOrRemovePeriodicSync(Account account, String providerName, Bundle extras,
             long period, boolean add) {
@@ -725,6 +743,7 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.096 -0400", hash_original_method = "403A8311B76EBF44C870FFCE456B63FB", hash_generated_method = "6062AF640FD196C757199FCDEFDE4915")
     public void addPeriodicSync(Account account, String providerName, Bundle extras,
             long pollFrequency) {
@@ -738,6 +757,7 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.096 -0400", hash_original_method = "A5551A39E3E716437015AA42AB9CA434", hash_generated_method = "CA4ACA4A82C301A6858BF5BC46511F5B")
     public void removePeriodicSync(Account account, String providerName, Bundle extras) {
         addTaint(extras.getTaint());
@@ -751,6 +771,7 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.096 -0400", hash_original_method = "43BA96B870E40929E429A78D83FB8F24", hash_generated_method = "2A2F8C8EE3762A4D651AA2095980BC2E")
     public List<PeriodicSync> getPeriodicSyncs(Account account, String providerName) {
         addTaint(providerName.getTaint());
@@ -784,6 +805,7 @@ List<PeriodicSync> var05D370037654F0E0BD3414B0C5C352FF_911568578 =         syncs
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.097 -0400", hash_original_method = "AF0CE82B663D00FD098AAFE2F6E1B437", hash_generated_method = "1C66FE6157DE9D235C7DCC0ADEE0C846")
     public void setMasterSyncAutomatically(boolean flag) {
         synchronized
@@ -817,7 +839,7 @@ List<PeriodicSync> var05D370037654F0E0BD3414B0C5C352FF_911568578 =         syncs
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.097 -0400", hash_original_method = "6DBCD9157A2DF54805879831F88D4B77", hash_generated_method = "312C968ACF9A94C88788A47A63EC5341")
     public boolean getMasterSyncAutomatically() {
         synchronized
@@ -833,6 +855,7 @@ List<PeriodicSync> var05D370037654F0E0BD3414B0C5C352FF_911568578 =         syncs
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.098 -0400", hash_original_method = "AC4455129C3CF5603625E4A23A44D091", hash_generated_method = "37B30B5771774A14468F4BCAC4401E52")
     public AuthorityInfo getOrCreateAuthority(Account account, String authority) {
         addTaint(authority.getTaint());
@@ -854,6 +877,7 @@ AuthorityInfo var6AC3C52FCAEF4011F7C800AC6EF24E9E_783497456 =             getOrC
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.098 -0400", hash_original_method = "BAFC16DAE21D996A746903C6AB7A1E8C", hash_generated_method = "DFCD586F2EC20F65EA44B973A4B62647")
     public void removeAuthority(Account account, String authority) {
         addTaint(authority.getTaint());
@@ -869,6 +893,7 @@ AuthorityInfo var6AC3C52FCAEF4011F7C800AC6EF24E9E_783497456 =             getOrC
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.099 -0400", hash_original_method = "B031DD2BDA31C86F4257F62895ABA1B2", hash_generated_method = "ACEF4032C802AAA161BF42A9C00610C6")
     public AuthorityInfo getAuthority(int authorityId) {
         addTaint(authorityId);
@@ -885,6 +910,7 @@ AuthorityInfo varF9481FD836E751268DF2A1BF46E4186D_766039470 =             mAutho
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.099 -0400", hash_original_method = "F75815D4B05E7C78CBDEC7A3CDAC25FD", hash_generated_method = "096DBEFB9D5701B71D0D6496A883535B")
     public boolean isSyncActive(Account account, String authority) {
         addTaint(authority.getTaint());
@@ -920,6 +946,7 @@ for(SyncInfo syncInfo : mCurrentSyncs)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.099 -0400", hash_original_method = "42358B0BF27AF155FB408124FA39D63B", hash_generated_method = "865CED9A2E671967A7AFDA813886AD79")
     public PendingOperation insertIntoPending(PendingOperation op) {
         addTaint(op.getTaint());
@@ -954,6 +981,7 @@ PendingOperation var85CF662FCFA548E032A48B39B921372E_2113137494 =         op;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.100 -0400", hash_original_method = "50B189E2AFDD83FCD044E18708DDFA85", hash_generated_method = "AEACC7E1D7ACBF1406F399E55C97F0CB")
     public boolean deleteFromPending(PendingOperation op) {
         addTaint(op.getTaint());
@@ -1009,6 +1037,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.100 -0400", hash_original_method = "B0FBF76821996DB4DA7D3758DC73EE90", hash_generated_method = "BE75BA690E17005A7699542C12DE67F4")
     public int clearPending() {
         int num;
@@ -1049,6 +1078,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.101 -0400", hash_original_method = "C927FD207EDF022EE536945570AA8499", hash_generated_method = "54F33745250643EA884CABFB55437984")
     public ArrayList<PendingOperation> getPendingOperations() {
         synchronized
@@ -1064,6 +1094,7 @@ ArrayList<PendingOperation> varCE48EACD2EA0CB59C3F5D218B3C13801_360575008 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.101 -0400", hash_original_method = "CC9059641F127440F6B10F04341F5D1E", hash_generated_method = "9839B4883628BAF7CA11AB3CC20366CC")
     public int getPendingOperationCount() {
         synchronized
@@ -1079,6 +1110,7 @@ ArrayList<PendingOperation> varCE48EACD2EA0CB59C3F5D218B3C13801_360575008 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.101 -0400", hash_original_method = "38BC76D95CA0A954EB857B91A285A324", hash_generated_method = "A9296E2E3FDDBC984FDE2741BB289BF9")
     public void doDatabaseCleanup(Account[] accounts) {
         addTaint(accounts[0].getTaint());
@@ -1171,6 +1203,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1121348669 =         syncInfo;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.102 -0400", hash_original_method = "2B31DF94CF8024B200C12FFD3895E8BE", hash_generated_method = "F4BD4F5CED1C713C1F285467D2591CF6")
     public void removeActiveSync(SyncInfo syncInfo) {
         addTaint(syncInfo.getTaint());
@@ -1194,6 +1227,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1121348669 =         syncInfo;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.102 -0400", hash_original_method = "5624025FD66E34CEC2F994FDB502F76B", hash_generated_method = "4CF4CD5E23AE17353DE22949D91BFDC6")
     public void reportActiveChange() {
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_ACTIVE);
@@ -1202,6 +1236,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1121348669 =         syncInfo;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.103 -0400", hash_original_method = "7B7D2D5D3E7E0D062624D3006A76AABE", hash_generated_method = "7C0CFAF358D3207431331E6C6D3A4AF8")
     public long insertStartSyncEvent(Account accountName, String authorityName,
             long now, int source) {
@@ -1249,6 +1284,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1121348669 =         syncInfo;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean equals(Bundle b1, Bundle b2) {
         if (b1.size() != b2.size()) {
             return false;
@@ -1268,6 +1304,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1121348669 =         syncInfo;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.105 -0400", hash_original_method = "50B7DBCE95202763C50A27A5F5D2A2F4", hash_generated_method = "605CBE7D6F965F31EEBDD5C42C9307D5")
     public void stopSyncEvent(long historyId, long elapsedTime, String resultMessage,
             long downstreamActivity, long upstreamActivity) {
@@ -1401,6 +1438,7 @@ switch(item.source){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.106 -0400", hash_original_method = "F85BE50FB140D59BBA80C586F09539D3", hash_generated_method = "8C6D7D0B33D558C11989AE1473E02926")
     public List<SyncInfo> getCurrentSyncs() {
         synchronized
@@ -1416,6 +1454,7 @@ List<SyncInfo> var98D9832D6E7726FBA7C65251F12F5321_453197720 =             new A
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.106 -0400", hash_original_method = "337F005F5350F3BD5177B0B27AD2E944", hash_generated_method = "75DC4CEC02218487F7EEB142B4499DEE")
     public ArrayList<SyncStatusInfo> getSyncStatus() {
         synchronized
@@ -1442,6 +1481,7 @@ ArrayList<SyncStatusInfo> var730D3CE922A7317E5C5959581BA7A4E3_2894709 =         
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.106 -0400", hash_original_method = "AEA28BD7AFFA3D47C607E69E1C170D48", hash_generated_method = "BBB83062155BCDA67774583023949C8E")
     public ArrayList<AuthorityInfo> getAuthorities() {
         synchronized
@@ -1468,6 +1508,7 @@ ArrayList<AuthorityInfo> var856335B33F20D10100490622F4E3620B_1844522723 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.107 -0400", hash_original_method = "0CFE1C56DFD3FFD9F777D7B0D6FDA886", hash_generated_method = "69AFB03739E35C8DD4A7776B89CFCBB4")
     public SyncStatusInfo getStatusByAccountAndAuthority(Account account, String authority) {
         addTaint(authority.getTaint());
@@ -1516,6 +1557,7 @@ SyncStatusInfo var540C13E9E156B687226421B24F2DF178_568684698 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.108 -0400", hash_original_method = "11629709D08EF9D9A0440D25565E7A8F", hash_generated_method = "81468A3D17BF970A4A6E95EAB566C7AF")
     public boolean isSyncPending(Account account, String authority) {
         addTaint(authority.getTaint());
@@ -1567,6 +1609,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.108 -0400", hash_original_method = "B27CDDFFB9BAFF7BFEA0365E872FDD46", hash_generated_method = "DB015A79B8C571D879F75DE15FEDC90C")
     public ArrayList<SyncHistoryItem> getSyncHistory() {
         synchronized
@@ -1612,6 +1655,7 @@ DayStats[] var326AB3082797E11390DC7F191D96A430_2010313762 =             ds;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.109 -0400", hash_original_method = "CFA8C7FA80DDF752958B19CD5427CAD8", hash_generated_method = "184D90F25A4FD48D524F4B683F74923F")
     public long getInitialSyncFailureTime() {
         synchronized
@@ -1664,6 +1708,7 @@ DayStats[] var326AB3082797E11390DC7F191D96A430_2010313762 =             ds;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.110 -0400", hash_original_method = "C1CC7B80E3CCED2D49B24E4AC052D091", hash_generated_method = "A64477ECC819BA11ADA98FE0420B11B7")
     private int getCurrentDayLocked() {
         mCal.setTimeInMillis(System.currentTimeMillis());
@@ -1691,6 +1736,7 @@ DayStats[] var326AB3082797E11390DC7F191D96A430_2010313762 =             ds;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.110 -0400", hash_original_method = "6C953B58E1758760E6819A681B8F6E8F", hash_generated_method = "92EBB26118D1643C321967E82FFF1FCA")
     private AuthorityInfo getAuthorityLocked(Account accountName, String authorityName,
             String tag) {
@@ -1749,6 +1795,7 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_1706785532 =         authority
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.111 -0400", hash_original_method = "8765A57952C80F1A5760550FE9E929E6", hash_generated_method = "3C82DE10C30EA5A510C67512F99736CF")
     private AuthorityInfo getOrCreateAuthorityLocked(Account accountName,
             String authorityName, int ident, boolean doWrite) {
@@ -1790,6 +1837,7 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_185489285 =         authority;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.111 -0400", hash_original_method = "654490315D677BE62FC7AFF81C0D5F85", hash_generated_method = "D2D95D52FFD9737D710FAB6717B45968")
     private void removeAuthorityLocked(Account account, String authorityName, boolean doWrite) {
         addTaint(doWrite);
@@ -1822,6 +1870,7 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_185489285 =         authority;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.111 -0400", hash_original_method = "8F9F327D2E93831D0CA3DA1F9594BFF4", hash_generated_method = "079740E8D1888F9F622B385123DE4CC0")
     public SyncStatusInfo getOrCreateSyncStatus(AuthorityInfo authority) {
         addTaint(authority.getTaint());
@@ -1838,6 +1887,7 @@ SyncStatusInfo varDAD8554A159528D7292177B77B4E7D71_1089749128 =             getO
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.112 -0400", hash_original_method = "1C22F2C698CD79AA856218BCBCBEF0F7", hash_generated_method = "4937FC63732D6850FA1C7DE697E418D0")
     private SyncStatusInfo getOrCreateSyncStatusLocked(int authorityId) {
         addTaint(authorityId);
@@ -1860,6 +1910,7 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_872161487 =         status;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.112 -0400", hash_original_method = "EC72A1F81B7D887353DF2FA5F052A597", hash_generated_method = "CECD7D768CEAD8027E15782B2EB4A810")
     public void writeAllState() {
         synchronized
@@ -1882,7 +1933,7 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_872161487 =         status;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.112 -0400", hash_original_method = "E278B7FDC712595C2D25226C12B41BCD", hash_generated_method = "1E6BFD699FAE548F7E57430D3002414F")
     public void clearAndReadState() {
         synchronized
@@ -1922,6 +1973,7 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_872161487 =         status;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.113 -0400", hash_original_method = "9E90C2E17AAFB2A4F084659253144E64", hash_generated_method = "13ED21170003ECBFDB212434ECAF58ED")
     private void readAccountInfoLocked() {
         int highestAuthorityId = -1;
@@ -2032,7 +2084,7 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_872161487 =         status;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.115 -0400", hash_original_method = "1F0CD4338AAE9E719690DF5E0BB493ED", hash_generated_method = "F3FFB6810775E310B3CB79A2FB57B699")
     private boolean maybeMigrateSettingsForRenamedAuthorities() {
         boolean writeNeeded = false;
@@ -2074,7 +2126,7 @@ for(AuthorityInfo authorityInfo : authoritiesToRemove)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.117 -0400", hash_original_method = "39CA1CD415012CC0A4B70AAED3727A93", hash_generated_method = "AC219B4D322A19B346C4ADD8C2AA67A5")
     private AuthorityInfo parseAuthority(XmlPullParser parser, int version) {
         addTaint(version);
@@ -2139,6 +2191,7 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_1396839662 =         authority
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.118 -0400", hash_original_method = "5B7C41C6008D60C9ED6FB4C92797A204", hash_generated_method = "750C0F9B431C0D21FA0DDD686C1DCF23")
     private Pair<Bundle, Long> parsePeriodicSync(XmlPullParser parser, AuthorityInfo authority) {
         addTaint(authority.getTaint());
@@ -2186,6 +2239,7 @@ Pair<Bundle, Long> var4CB73F5A6FFDC0C3E371E5FE2FDE4D31_662644512 =         perio
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.119 -0400", hash_original_method = "63A9A531A6D6EE37322509C7D60C0471", hash_generated_method = "BA224A972022F0FAEEEBB132B13CBA8C")
     private void parseExtra(XmlPullParser parser, Pair<Bundle, Long> periodicSync) {
         addTaint(periodicSync.getTaint());
@@ -2243,6 +2297,7 @@ Pair<Bundle, Long> var4CB73F5A6FFDC0C3E371E5FE2FDE4D31_662644512 =         perio
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.120 -0400", hash_original_method = "D0303AA7EB859F30BDBC9813BB120707", hash_generated_method = "456AC6D44877321312D3DB7B70E74378")
     private void writeAccountInfoLocked() {
         if(DEBUG_FILE){ }        FileOutputStream fos = null;
@@ -2352,16 +2407,19 @@ for(String key : extras.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     static int getIntColumn(Cursor c, String name) {
         return c.getInt(c.getColumnIndex(name));
     }
 
     
+    @DSModeled(DSC.BAN)
     static long getLongColumn(Cursor c, String name) {
         return c.getLong(c.getColumnIndex(name));
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.126 -0400", hash_original_method = "96B84444EEB95F8262A1F514B70427CB", hash_generated_method = "B381CFC19804DF4B0F031BEB4EE1FB9A")
     private void readAndDeleteLegacyAccountInfoLocked() {
         File file = mContext.getDatabasePath("syncmanager.db");
@@ -2500,6 +2558,7 @@ for(String key : extras.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.127 -0400", hash_original_method = "8A0C770C89ACE123AD07688E6EE32DB8", hash_generated_method = "9C0F0CBD34C7DFA8B638EA55C2470ACB")
     private void readStatusLocked() {
         if(DEBUG_FILE){ }        try 
@@ -2535,6 +2594,7 @@ for(String key : extras.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.128 -0400", hash_original_method = "74BDFC1296AA332718133078DAF25C56", hash_generated_method = "4E627493643D4DE2911489C6845CB6F2")
     private void writeStatusLocked() {
         if(DEBUG_FILE){ }        removeMessages(MSG_WRITE_STATUS);
@@ -2567,6 +2627,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.133 -0400", hash_original_method = "1231AB171DBB37761A49B7E20056B86A", hash_generated_method = "2A91568769FC020D1AB274AA429F8E27")
     private void readPendingOperationsLocked() {
         if(DEBUG_FILE){ }        try 
@@ -2625,6 +2686,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.133 -0400", hash_original_method = "0152B02FFEBFCD8F723BAE9C7F6EE92A", hash_generated_method = "CF15AD6C10E21C514484D1D4B68DF105")
     private void writePendingOperationLocked(PendingOperation op, Parcel out) {
         addTaint(out.getTaint());
@@ -2650,6 +2712,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.134 -0400", hash_original_method = "B08FC5F8DD5CA36D6F4DD131B7753109", hash_generated_method = "5B56B74F233D88467F3FC6D024E3E710")
     private void writePendingOperationsLocked() {
         final int N = mPendingOperations.size();
@@ -2684,6 +2747,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.135 -0400", hash_original_method = "3B9D2CCD4E7B33665C76FD82482A168C", hash_generated_method = "13A5EBAF6308EA20DC31307C05655DDB")
     private void appendPendingOperationLocked(PendingOperation op) {
         addTaint(op.getTaint());
@@ -2743,6 +2807,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     static private byte[] flattenBundle(Bundle bundle) {
         byte[] flatData = null;
         Parcel parcel = Parcel.obtain();
@@ -2756,6 +2821,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     static private Bundle unflattenBundle(byte[] flatData) {
         Bundle bundle;
         Parcel parcel = Parcel.obtain();
@@ -2772,6 +2838,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.136 -0400", hash_original_method = "EF23341A4D9A5255D7511F96FA9CF980", hash_generated_method = "E73FBDE22EE1E539FBBE23260432B7A2")
     private void readStatisticsLocked() {
         try 
@@ -2818,6 +2885,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.137 -0400", hash_original_method = "FBD3A634F75EF390904BDDFD24CE73C8", hash_generated_method = "29B5B9C2D4DAF3ABDEE6D10D02BE5081")
     private void writeStatisticsLocked() {
         if(DEBUG_FILE){ }        removeMessages(MSG_WRITE_STATISTICS);
@@ -2881,6 +2949,7 @@ for(int i=0;i<N;i++)
 
         byte[] flatExtras;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.138 -0400", hash_original_method = "EF059F8E3294963F1E848A9313768B5B", hash_generated_method = "ECE8E5E0F4B60B404F31D36C12807A31")
           PendingOperation(Account account, int source,
                 String authority, Bundle extras, boolean expedited) {
@@ -2900,6 +2969,7 @@ for(int i=0;i<N;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.140 -0400", hash_original_method = "1B5DBB8810EC174C356BDFB975D9E53C", hash_generated_method = "3B16B7399A2D0DA02220BB5FA54FDA88")
           PendingOperation(PendingOperation other) {
             this.account = other.account;
@@ -2930,6 +3000,7 @@ for(int i=0;i<N;i++)
 
         final HashMap<String, AuthorityInfo> authorities = new HashMap<String, AuthorityInfo>();
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.141 -0400", hash_original_method = "0A42050331BE326DBD226E8BF4C55827", hash_generated_method = "B735F73451A3ACA4DAAEEE69356C87D1")
           AccountInfo(Account account) {
             this.account = account;
@@ -2971,6 +3042,7 @@ for(int i=0;i<N;i++)
 
         ArrayList<Pair<Bundle, Long>> periodicSyncs;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.143 -0400", hash_original_method = "F1AF0EF8567860728BE1920368DC5483", hash_generated_method = "01670732909F0C8780290ABAEC12ABEF")
           AuthorityInfo(Account account, String authority, int ident) {
             this.account = account;
@@ -3056,6 +3128,7 @@ for(int i=0;i<N;i++)
 
         public long failureTime;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.144 -0400", hash_original_method = "59D9CE47C9B58BC0ECFC5F57173A8EB8", hash_generated_method = "1997158732D9C97E768763E2795DF4D3")
         public  DayStats(int day) {
             this.day = day;

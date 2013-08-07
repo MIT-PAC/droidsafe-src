@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Spanned
 extends CharSequence

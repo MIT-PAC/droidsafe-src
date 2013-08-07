@@ -1,13 +1,14 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.LinkedList;
 
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class HttpAuthHandlerImpl extends HttpAuthHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.139 -0400", hash_original_field = "92BCA70246F96A0F4366A7F1448D9E16", hash_generated_field = "E0FAA2A6C497494B58133B8740B95CC3")
@@ -79,6 +80,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.140 -0400", hash_original_method = "633BAC1354102784355BBDC241836385", hash_generated_method = "2E7EFD070BB3E1E03B8C1B62FF5996FA")
     private boolean handleResponseForSynchronousRequest(String username, String password) {
         LoadListener loader = null;
@@ -111,7 +113,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.140 -0400", hash_original_method = "D0913A95E2E0984BDC30D85F1A6DD6EF", hash_generated_method = "E45C4BF2EF286DDD894B985A2244BF2F")
     private void signalRequestComplete() {
         synchronized
@@ -239,7 +241,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.141 -0400", hash_original_method = "886E13332A9209796D68B57BD4AA101D", hash_generated_method = "80F37B4D2EEE68ACA221FB51A2F201B9")
     private void waitForRequestToComplete() {
         synchronized
@@ -269,6 +271,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.141 -0400", hash_original_method = "915750F5CD3DA8563236F4856CDF7624", hash_generated_method = "D4A75886C029AED430F0DA1108C43AF1")
     private void processNextLoader() {
         LoadListener loader = null;
@@ -307,7 +310,7 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static void onReceivedCredentials(LoadListener loader,
             String host, String realm, String username, String password) {
         //DSFIXME:  CODE0009: Possible callback target function detected

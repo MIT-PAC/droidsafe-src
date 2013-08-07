@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.pkcs;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -12,8 +13,8 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DEROctetString;
 import org.bouncycastle.asn1.DERSequence;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class PKCS12PBEParams extends ASN1Encodable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.018 -0400", hash_original_field = "471DACEA75A62298F21BD08196E91EF6", hash_generated_field = "78F9CF53C7E0D6433DD6CC8969049302")

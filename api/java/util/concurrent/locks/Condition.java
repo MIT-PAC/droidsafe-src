@@ -1,6 +1,7 @@
 package java.util.concurrent.locks;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 

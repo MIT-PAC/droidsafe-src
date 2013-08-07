@@ -1,10 +1,11 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Layout.Directions;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 class AndroidBidi {
@@ -16,6 +17,7 @@ class AndroidBidi {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static int bidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
         if (chs == null || chInfo == null) {
             throw new NullPointerException();
@@ -36,6 +38,7 @@ class AndroidBidi {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Directions directions(int dir, byte[] levels, int lstart,
             char[] chars, int cstart, int len) {
         int baseLevel = dir == Layout.DIR_LEFT_TO_RIGHT ? 0 : 1;

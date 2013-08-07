@@ -1,11 +1,12 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Handler;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ContentObserver {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.568 -0400", hash_original_field = "DDB508BA6BDDCDC9D416A8817238314C", hash_generated_field = "02AF804D48FC2EFA36319D85B176604C")
@@ -26,6 +27,7 @@ public abstract class ContentObserver {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.570 -0400", hash_original_method = "01F21475A40B0383A9D17C9A77564941", hash_generated_method = "660581EFDE3FED69B649D25BFF2317A6")
     public IContentObserver getContentObserver() {
         synchronized
@@ -48,6 +50,7 @@ IContentObserver varF2CB7A1EAFE712633AC71AFDD720A221_1367586139 =             mT
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.572 -0400", hash_original_method = "0CB42947C64AC2776A7D9A6FF8C462FE", hash_generated_method = "B10605A2F2C70A687B7B81848670E3D4")
     public IContentObserver releaseContentObserver() {
         synchronized

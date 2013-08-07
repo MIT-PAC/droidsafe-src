@@ -1,6 +1,7 @@
 package android.speech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IRecognitionListener extends android.os.IInterface
 {

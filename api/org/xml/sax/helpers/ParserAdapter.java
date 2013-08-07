@@ -1,6 +1,7 @@
 package org.xml.sax.helpers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -21,10 +22,10 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ParserAdapter implements XMLReader, DocumentHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.456 -0400", hash_original_field = "98AEDCDD6727BD81632D9F9CB201EE47", hash_generated_field = "E45249B9729220F661033FE0273CAECE")
@@ -134,7 +135,7 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.459 -0400", hash_original_method = "9AA60727AB1204C604E2657D93003A43", hash_generated_method = "F593B3CF7ED67221BDE3E10BAD85546F")
     private void setup(Parser parser) {
         if(parser == null)        
@@ -653,7 +654,7 @@ for(SAXParseException ex : exceptions)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.473 -0400", hash_original_method = "43648C78921975CBE3898500F19AF8D8", hash_generated_method = "C5F35A113D9586A8452E68E4F864D336")
     private void setupParser() {
         if(!prefixes && !namespaces)        
@@ -699,6 +700,7 @@ for(SAXParseException ex : exceptions)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.544 -0400", hash_original_method = "295B884B2E4E1E5DF2659FCF14AB7437", hash_generated_method = "A63E40ABA0ADB07D109396D7430691CA")
     private String [] processName(String qName, boolean isAttribute,
                    boolean useException) throws SAXException {
@@ -750,7 +752,7 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_128503195 =         parts;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.476 -0400", hash_original_method = "E1E473BD4A5E19C1B1699A01EEA95F9A", hash_generated_method = "C0FBD2105D04EADE05B1B2DB25B78E50")
     private SAXParseException makeException(String message) {
         addTaint(message.getTaint());
@@ -775,6 +777,7 @@ SAXParseException var20635D848D8DF8DDB7580E516CF29899_421282511 =             ne
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.477 -0400", hash_original_method = "2915748C93DEC7F425A1836D3BEC9D20", hash_generated_method = "0EACF1D69B56D90EF1935D58FE787729")
     private void checkNotParsing(String type, String name) throws SAXNotSupportedException {
         addTaint(name.getTaint());

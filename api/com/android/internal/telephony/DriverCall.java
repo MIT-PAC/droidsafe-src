@@ -1,12 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DriverCall implements Comparable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.242 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "AE1343475DB0F2C28979E182E3B11BCC")
@@ -49,12 +50,14 @@ public class DriverCall implements Comparable {
 
     public UUSInfo uusInfo;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_method = "DF91F81E80FDB939BBEABFE9635EC975", hash_generated_method = "A0F6DD97DA81B4F7A55DEAA088C14728")
     public  DriverCall() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     static DriverCall fromCLCCLine(String line) {
         DriverCall ret = new DriverCall();
         ATResponseParser p = new ATResponseParser(line);
@@ -82,6 +85,7 @@ public class DriverCall implements Comparable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.244 -0400", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "56A4960B1309083FC987E9E4C439C06D")
     public String toString() {
 String var73E2365DCE80719343796B149C5DF735_528768870 =         "id=" + index + ","
@@ -110,6 +114,7 @@ String var73E2365DCE80719343796B149C5DF735_528768870 =         "id=" + index + "
     }
 
     
+    @DSModeled(DSC.BAN)
     public static State stateFromCLCC(int state) throws ATParseEx {
         switch(state) {
             case 0: return State.ACTIVE;
@@ -124,6 +129,7 @@ String var73E2365DCE80719343796B149C5DF735_528768870 =         "id=" + index + "
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int presentationFromCLIP(int cli) throws ATParseEx {
         switch(cli) {
             case 0: return Connection.PRESENTATION_ALLOWED;
@@ -136,7 +142,7 @@ String var73E2365DCE80719343796B149C5DF735_528768870 =         "id=" + index + "
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.244 -0400", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "97F2D1E38F0EFDF7C2B3A2F9963376F2")
     public int compareTo(Object o) {
         addTaint(o.getTaint());

@@ -1,6 +1,7 @@
 package javax.microedition.khronos.egl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface EGL10 extends EGL {
     int EGL_SUCCESS                     = 0x3000;

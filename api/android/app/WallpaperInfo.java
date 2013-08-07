@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -24,10 +25,10 @@ import android.service.wallpaper.WallpaperService;
 import android.util.AttributeSet;
 import android.util.Printer;
 import android.util.Xml;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class WallpaperInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.360 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "6778D731BF0BE2E5E9F46404EEE44664")

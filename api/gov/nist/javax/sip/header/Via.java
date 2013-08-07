@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.NameValue;
@@ -13,10 +14,10 @@ import javax.sip.InvalidArgumentException;
 import javax.sip.address.Hop;
 import javax.sip.header.ViaHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Via extends ParametersHeader implements javax.sip.header.ViaHeader, ViaHeaderExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.707 -0400", hash_original_field = "610A766B3E0567396106CE73CA862AB1", hash_generated_field = "5B51F01BA670CB6A7B4E1A02DEB8A619")

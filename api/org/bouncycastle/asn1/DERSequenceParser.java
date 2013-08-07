@@ -1,10 +1,11 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class DERSequenceParser implements ASN1SequenceParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.530 -0400", hash_original_field = "5431B8D4D4E17964894E609DD0DF69C0", hash_generated_field = "76949B28A5103E4F545C65F9E6322200")

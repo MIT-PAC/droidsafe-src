@@ -1,15 +1,16 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.GeneralSecurityException;
 import java.util.Hashtable;
 
 import javax.crypto.Cipher;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CipherSuite {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.081 -0400", hash_original_field = "CC6F6F66788638B9CE162A8016D9F45F", hash_generated_field = "31167280C241F9B17D639631F29E89F8")
@@ -58,6 +59,7 @@ public class CipherSuite {
 
     private int hashSize;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.091 -0400", hash_original_method = "54B6F4B5E133F8A61DA406B9859D0D86", hash_generated_method = "9F4A0C3F9489DE433857F6097F59FB2F")
     private  CipherSuite(String name, boolean isExportable, int keyExchange,
             String authType, String cipherName, String hash, byte[] code) {
@@ -264,7 +266,7 @@ public class CipherSuite {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static CipherSuite getCipherSuiteByCode(int i1, int i2, int i3) {
         CipherSuite[] cipherSuites;
         if (i1 == 0x00 && i2 == 0x00) {

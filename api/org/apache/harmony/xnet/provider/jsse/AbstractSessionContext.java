@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -20,10 +21,10 @@ import javax.net.ssl.SSLSessionContext;
 
 import org.apache.harmony.security.provider.cert.X509CertImpl;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class AbstractSessionContext implements SSLSessionContext {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.863 -0400", hash_original_field = "F7558008F30251ED687039538F2EE14F", hash_generated_field = "7A30EE95E508037D9FEE1354CEFAC193")
@@ -63,6 +64,7 @@ abstract class AbstractSessionContext implements SSLSessionContext {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.864 -0400", hash_original_method = "A58241B75AD2B44C3E74E917DCCEF491", hash_generated_method = "FF1873F15E796F1752209DFF882F3FA7")
     private Iterator<SSLSession> sessionIterator() {
         synchronized

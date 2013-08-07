@@ -1,16 +1,17 @@
 package android.support.v4.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SimpleCursorAdapter extends ResourceCursorAdapter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.056 -0400", hash_original_field = "EDE7DB5B0C4E79BD52B42E685F59B951", hash_generated_field = "6AD876BF1B2A93FF841DC0A6CDF82D53")
@@ -239,6 +240,7 @@ CharSequence var081817866C3B88B7C446C3ACFBAD57D7_107170517 =         super.conve
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.063 -0400", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "1CEB9E15C6F76DE34215B06CC30C3FD7")
     private void findColumns(String[] from) {
         if(mCursor != null)        

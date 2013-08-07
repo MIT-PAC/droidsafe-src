@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IRemoteControlClient extends android.os.IInterface
 {

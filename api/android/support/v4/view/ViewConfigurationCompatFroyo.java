@@ -1,10 +1,11 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.view.ViewConfiguration;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 class ViewConfigurationCompatFroyo {
     

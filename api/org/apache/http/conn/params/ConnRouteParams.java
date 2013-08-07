@@ -1,17 +1,19 @@
 package org.apache.http.conn.params;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetAddress;
 
 import org.apache.http.HttpHost;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class ConnRouteParams implements ConnRoutePNames {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.757 -0400", hash_original_method = "2F583F6C69B80DBD9155194B569BE764", hash_generated_method = "FFA6007C752912BAF6FA892E8F7D0248")
     private  ConnRouteParams() {
         // ---------- Original Method ----------

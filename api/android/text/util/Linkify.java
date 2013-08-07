@@ -1,6 +1,7 @@
 package android.text.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -18,10 +19,10 @@ import android.text.style.URLSpan;
 import android.util.Patterns;
 import android.webkit.WebView;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Linkify {
     
@@ -96,7 +97,7 @@ public class Linkify {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final void addLinkMovementMethod(TextView t) {
         MovementMethod m = t.getMovementMethod();
         if ((m == null) || !(m instanceof LinkMovementMethod)) {
@@ -155,14 +156,14 @@ public class Linkify {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final void applyLink(String url, int start, int end, Spannable text) {
         URLSpan span = new URLSpan(url);
         text.setSpan(span, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final String makeUrl(String url, String[] prefixes,
             Matcher m, TransformFilter filter) {
         if (filter != null) {
@@ -187,7 +188,7 @@ public class Linkify {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final void gatherLinks(ArrayList<LinkSpec> links,
             Spannable s, Pattern pattern, String[] schemes,
             MatchFilter matchFilter, TransformFilter transformFilter) {
@@ -207,7 +208,7 @@ public class Linkify {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final void gatherMapLinks(ArrayList<LinkSpec> links, Spannable s) {
         String string = s.toString();
         String address;
@@ -236,7 +237,7 @@ public class Linkify {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final void pruneOverlaps(ArrayList<LinkSpec> links) {
         Comparator<LinkSpec>  c = new Comparator<LinkSpec>() {
             public final int compare(LinkSpec a, LinkSpec b) {

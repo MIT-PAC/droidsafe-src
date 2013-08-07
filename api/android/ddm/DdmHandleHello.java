@@ -1,6 +1,7 @@
 package android.ddm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
 import org.apache.harmony.dalvik.ddmc.Chunk;
@@ -8,13 +9,14 @@ import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
 
 import android.os.Debug;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DdmHandleHello extends ChunkHandler {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.211 -0400", hash_original_method = "7D5B1A101327E53BA05D666FE17BE587", hash_generated_method = "2E100489FD6DDE0FDD214C08AF626324")
     private  DdmHandleHello() {
         // ---------- Original Method ----------
@@ -97,6 +99,7 @@ Chunk var94F94D2E0660C50518BB0127ED1E85C0_1647296866 =             handleFEAT(re
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.216 -0400", hash_original_method = "DA2CEBE94E81B4AF53080A8A1470F538", hash_generated_method = "4A350BCC8E85FE5DD345F4474DB11363")
     private Chunk handleHELO(Chunk request) {
         addTaint(request.getTaint());
@@ -132,6 +135,7 @@ Chunk var1BC29E376418A8DFBC75319DBDA8D7C9_1475227040 =         reply;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.219 -0400", hash_original_method = "4DE14E90C721327585D89816C2D399A5", hash_generated_method = "1FD76C3DA7C706F27AACC6CF4604CDF4")
     private Chunk handleFEAT(Chunk request) {
         addTaint(request.getTaint());

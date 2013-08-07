@@ -1,16 +1,18 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class DeviceMotionAndOrientationManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.224 -0400", hash_original_field = "9371E2004CE9EC2E60E3F0EBE8ED2E84", hash_generated_field = "73DACDCC92B5BF8822959B0368CF2255")
 
     private WebViewCore mWebViewCore;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.225 -0400", hash_original_method = "4CABCA1B40F3E929EC370CEBD3D74690", hash_generated_method = "B530AA45CFBA2E928BEAE49927EDFD96")
     public  DeviceMotionAndOrientationManager(WebViewCore webViewCore) {
         mWebViewCore = webViewCore;
@@ -19,6 +21,7 @@ public final class DeviceMotionAndOrientationManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.225 -0400", hash_original_method = "591CB7A3D11D3A931F472B1CBCBD3C6F", hash_generated_method = "1E9561F17704E8BECA6E2C74720BC0FF")
     public void useMock() {
         nativeUseMock(mWebViewCore);
@@ -28,6 +31,7 @@ public final class DeviceMotionAndOrientationManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.225 -0400", hash_original_method = "4286A0C5B7CC1E24AD50574E75188454", hash_generated_method = "7CAB04ABD9CE834459C8AF5B6B0AABA3")
     public void setMockOrientation(boolean canProvideAlpha, double alpha, boolean canProvideBeta,
             double beta, boolean canProvideGamma, double gamma) {
@@ -46,6 +50,7 @@ public final class DeviceMotionAndOrientationManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.226 -0400", hash_original_method = "2AF261550854349B7D04FA666A22BAC6", hash_generated_method = "89BEBD8C8BFC0CEE9F5884217147EB4E")
     public void onMotionChange(Double x, Double y, Double z, double interval) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -67,6 +72,7 @@ public final class DeviceMotionAndOrientationManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.226 -0400", hash_original_method = "6B027F62004F2780826093ACE4A2C2BC", hash_generated_method = "600C38A286FE95AD8731E3EDF44D806D")
     public void onOrientationChange(Double alpha, Double beta, Double gamma) {
         //DSFIXME:  CODE0009: Possible callback target function detected

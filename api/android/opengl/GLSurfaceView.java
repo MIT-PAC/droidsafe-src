@@ -1,6 +1,7 @@
 package android.opengl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Writer;
 import java.util.ArrayList;
 
@@ -20,10 +21,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.252 -0400", hash_original_field = "5C8CC32ADEFFBB82D5398A3F0A956341", hash_generated_field = "E80A115172E1CADCEDB95343305F31F8")
@@ -81,6 +82,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.254 -0400", hash_original_method = "E27264F3583A6717A4BE0996AD22B7A6", hash_generated_method = "C6A51B3F92CEBD35D5741E2A42EC3331")
     private void init() {
         SurfaceHolder holder = getHolder();
@@ -395,6 +397,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.265 -0400", hash_original_method = "D0DDFF21B511089DC22A6A0EC54D9B69", hash_generated_method = "A84D7E2139BB88F789B9F8F23DA3EFC0")
     private void checkRenderThreadState() {
         if(mGLThread != null)        
@@ -477,6 +480,7 @@ EGLContext var4C18EADC35FDAA640D05B1661AC9F8A7_1756112244 =             egl.eglC
     
     private static class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.267 -0400", hash_original_method = "6C49886831D2941418C9D5571DBB218F", hash_generated_method = "6C49886831D2941418C9D5571DBB218F")
         public DefaultWindowSurfaceFactory ()
         {
@@ -590,6 +594,7 @@ EGLConfig var81567CF7749AF2EA37063F56A4D104CE_1965624746 =             config;
                 EGLConfig[] configs);
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.270 -0400", hash_original_method = "A5ED2D6BA80622A09257A565CA0B4B3A", hash_generated_method = "8292428C952977D5126A5A533AEDED68")
         private int[] filterConfigSpec(int[] configSpec) {
             addTaint(configSpec[0]);
@@ -718,6 +723,7 @@ EGLConfig var540C13E9E156B687226421B24F2DF178_867898396 =             null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.273 -0400", hash_original_method = "97DBBE0DC2E33C941B4CF19B7BAFBD1F", hash_generated_method = "40EFB7DF5B9AB0D553B4286F2B6A8084")
         private int findConfigAttrib(EGL10 egl, EGLDisplay display,
                 EGLConfig config, int attribute, int defaultValue) {
@@ -1003,6 +1009,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.283 -0400", hash_original_method = "BBFD946D1E92713A8E3F246C64816A5E", hash_generated_method = "2653A3AF88837D543E107E60A9B32AFB")
         private void throwEglException(String function) {
             addTaint(function.getTaint());
@@ -1012,6 +1019,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.284 -0400", hash_original_method = "F35384FC419606847EA5AA038D9E6031", hash_generated_method = "FB3CBAFBF39C21F2E8F3F0C0173DC3ED")
         private void throwEglException(String function, int error) {
             addTaint(error);
@@ -1138,6 +1146,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.289 -0400", hash_original_method = "1FA739F1ECF9B8C719EEC300CFB94B99", hash_generated_method = "7C2EBA300F9F2362B5C6814AEBE0C1BB")
         private void stopEglSurfaceLocked() {
             if(mHaveEglSurface)            
@@ -1153,6 +1162,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.289 -0400", hash_original_method = "08753DB570F3FF0DFFEC96C08E49FCF2", hash_generated_method = "272A4019F75A39A8226A3A23B7805B77")
         private void stopEglContextLocked() {
             if(mHaveEglContext)            
@@ -1170,6 +1180,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.297 -0400", hash_original_method = "711FE3C53AF4E351881864AF0E3340A2", hash_generated_method = "F6D2EDD702F236F7FE5B1AB3BD520CCA")
         private void guardedRun() throws InterruptedException {
             mEglHelper = new EglHelper();
@@ -1422,7 +1433,7 @@ switch(error){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.300 -0400", hash_original_method = "0EE68488D52C3628D006C7323CA4E5A0", hash_generated_method = "9FCE4B3BBBBE91BC37260A7396F45573")
         private boolean readyToDraw() {
             boolean varD45A9E3CBAE4F7104CD510795BE80E11_1175313808 = ((!mPaused) && mHasSurface
@@ -1836,6 +1847,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.311 -0400", hash_original_method = "E3A61F648C50A4FD42F02D92C137403F", hash_generated_method = "604770BBA3EC8093548B9883BDD7DCF6")
         private void flushBuilder() {
             if(mBuilder.length() > 0)            
@@ -1874,6 +1886,7 @@ for(int i = 0;i < count;i++)
 
         private GLThread mEglOwner;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.312 -0400", hash_original_method = "5D6BCD582D13070585FC5F161A43B68D", hash_generated_method = "5D6BCD582D13070585FC5F161A43B68D")
         public GLThreadManager ()
         {
@@ -2009,6 +2022,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.315 -0400", hash_original_method = "6DFB699ADC87072E31136271B3768D35", hash_generated_method = "25C35E5FCEB1923EE90EF372FCA4FDC1")
         private void checkGLESVersion() {
             if(! mGLESVersionCheckComplete)            

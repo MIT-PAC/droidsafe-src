@@ -1,14 +1,16 @@
 package libcore.net.url;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public final class UrlUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.403 -0400", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "C53F924364698517C893492550830BCA")
     private  UrlUtils() {
         // ---------- Original Method ----------

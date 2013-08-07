@@ -1,6 +1,7 @@
 package org.bouncycastle.openssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.Key;
 import java.security.Provider;
@@ -25,10 +26,10 @@ import org.bouncycastle.crypto.generators.OpenSSLPBEParametersGenerator;
 import org.bouncycastle.crypto.generators.PKCS5S2ParametersGenerator;
 import org.bouncycastle.crypto.params.KeyParameter;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class PEMUtilities {
     
@@ -215,6 +216,7 @@ final class PEMUtilities {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static SecretKey getKey(
         char[]  password,
         String  algorithm,
@@ -224,6 +226,7 @@ final class PEMUtilities {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static SecretKey getKey(
         char[]  password,
         String  algorithm,

@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Hashtable;
@@ -9,10 +10,10 @@ import java.util.TimeZone;
 
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class DateFormat extends Format {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.829 -0400", hash_original_field = "A0E7B2A565119C0A7EC3126A16016113", hash_generated_field = "69C10C9929AB222710744337F1708515")
@@ -372,7 +373,7 @@ Object var0D84F404ADD0A115F77E7D80294D92BC_394248094 =         parse(string, pos
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkDateStyle(int style) {
         if (!(style == SHORT || style == MEDIUM || style == LONG
                 || style == FULL || style == DEFAULT)) {
@@ -381,7 +382,7 @@ Object var0D84F404ADD0A115F77E7D80294D92BC_394248094 =         parse(string, pos
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkTimeStyle(int style) {
         if (!(style == SHORT || style == MEDIUM || style == LONG
                 || style == FULL || style == DEFAULT)) {

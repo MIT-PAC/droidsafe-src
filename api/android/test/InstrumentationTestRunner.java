@@ -1,6 +1,7 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
@@ -34,10 +35,10 @@ import android.test.suitebuilder.annotation.HasAnnotation;
 import com.android.internal.util.Predicate;
 import com.android.internal.util.Predicates;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class InstrumentationTestRunner extends Instrumentation implements TestSuiteProvider {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "DDBF77BBD59535F3FF16689A18C16686", hash_generated_field = "57041D8C5014DE6D87A28603CC7822CE")
@@ -182,7 +183,7 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.715 -0400", hash_original_method = "10E6FBEC332CFAAD363071CF1888C5BE", hash_generated_method = "ECBE4C2E42E9267136D1C7F24D1F2537")
     public Bundle getBundle() {
 Bundle varA1A5383052F874A8109F2B0284C0CCF1_1386932201 =         mArguments;

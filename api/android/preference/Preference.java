@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -25,10 +26,10 @@ import android.widget.TextView;
 
 import com.android.internal.util.CharSequences;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Preference implements Comparable<Preference>, OnDependencyChangeListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.485 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -452,6 +453,7 @@ View var6BB281F92ECF603ABC908502047A266C_2056737467 =         layout;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.497 -0400", hash_original_method = "4F80205B57D5838ADEC212DC6CB9E651", hash_generated_method = "F8D88C4E05E7307313CE459E152FFDCC")
     private void setEnabledStateOnViews(View v, boolean enabled) {
         addTaint(enabled);
@@ -1097,6 +1099,7 @@ PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_167095326 =         mPrefe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.512 -0400", hash_original_method = "A499F7D8BECEFF58ECE377DCDDB4C87B", hash_generated_method = "E848D78F1FD0E779F3E9512A7F9A438E")
     private void registerDependency() {
         if(TextUtils.isEmpty(mDependencyKey))        
@@ -1125,6 +1128,7 @@ PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_167095326 =         mPrefe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.512 -0400", hash_original_method = "40F9072BE8C6932FEF31F09A7FFFCE04", hash_generated_method = "E0CA9DEA4D60DF893A54187F3423CA69")
     private void unregisterDependency() {
         if(mDependencyKey != null)        
@@ -1165,6 +1169,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_2064155410 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.513 -0400", hash_original_method = "528DD85662997ACAED3BC519F97454B8", hash_generated_method = "BE6AE736963F5DA69F515FFFAFA7C007")
     private void registerDependent(Preference dependent) {
         addTaint(dependent.getTaint());
@@ -1183,6 +1188,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_2064155410 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.513 -0400", hash_original_method = "9028FF718331F8BA1AAB10BD4FAE315E", hash_generated_method = "5378EC508EA2CBB41E2F17650C88EAA1")
     private void unregisterDependent(Preference dependent) {
         addTaint(dependent.getTaint());
@@ -1292,6 +1298,7 @@ String varAA01AFCCA0F4C7780E180B3A36010E30_701533246 =         mDependencyKey;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.514 -0400", hash_original_method = "0CC9C8053B2B40671F6785C5B066E9AB", hash_generated_method = "E53BC9B32D62F09EB903381F0FF0746E")
     private void dispatchSetInitialValue() {
         final boolean shouldPersist = shouldPersist();
@@ -1328,6 +1335,7 @@ String varAA01AFCCA0F4C7780E180B3A36010E30_701533246 =         mDependencyKey;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.515 -0400", hash_original_method = "22CEE8BE8E503CA7A500DF872E2100EC", hash_generated_method = "3A3824EEA217C0AF1BC1154CE1860920")
     private void tryCommit(SharedPreferences.Editor editor) {
         addTaint(editor.getTaint());

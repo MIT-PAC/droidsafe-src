@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Layout;
@@ -11,10 +12,10 @@ import android.text.method.TextKeyListener.Capitalize;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyListener {
     
@@ -56,7 +57,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.947 -0400", hash_original_method = "070DF95C0353A773EEB24BBDC2D8297C", hash_generated_method = "3B4072DF33BE2B4F262CA80C4503B8B6")
     private boolean backspaceOrForwardDelete(View view, Editable content, int keyCode,
             KeyEvent event, boolean isForwardDelete) {
@@ -113,7 +114,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.948 -0400", hash_original_method = "2C36007D0B232577504AED53A81D7DC4", hash_generated_method = "43999D2C9B3B40AA6481F9A4812ECD77")
     private boolean deleteSelection(View view, Editable content) {
         addTaint(content.getTaint());
@@ -152,7 +153,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.968 -0400", hash_original_method = "AAA6731DEEEC720845223B285BF37660", hash_generated_method = "6ACB12A5B173C0E0500BB0D901F53509")
     private boolean deleteLine(View view, Editable content) {
         addTaint(content.getTaint());

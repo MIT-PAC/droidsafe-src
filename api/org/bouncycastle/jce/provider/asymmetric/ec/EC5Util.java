@@ -1,6 +1,7 @@
 package org.bouncycastle.jce.provider.asymmetric.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.security.spec.ECField;
 import java.security.spec.ECFieldF2m;
@@ -13,9 +14,9 @@ import org.bouncycastle.jce.spec.ECNamedCurveParameterSpec;
 import org.bouncycastle.jce.spec.ECNamedCurveSpec;
 import org.bouncycastle.math.ec.ECCurve;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class EC5Util {
     

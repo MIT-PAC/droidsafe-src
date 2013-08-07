@@ -1,6 +1,7 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.AbstractQueue;
 import java.util.Collection;
 import java.util.Collections;
@@ -9,10 +10,10 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.913 -0400", hash_original_field = "14FF183E0CBF22E7DBE09157245ED2D4", hash_generated_field = "93A6B6C7FD7700420692EFD74AC915AE")
@@ -418,7 +419,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.924 -0400", hash_original_method = "7D89BB192BA936EC93EB72454855578A", hash_generated_method = "9179A06E3AA62ADBDECB4E97145D3048")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         addTaint(s.getTaint());
@@ -452,7 +453,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.924 -0400", hash_original_method = "E156E82E550566200FEDBE52C0090F6F", hash_generated_method = "C7B18286A3A74F985F71E96B9CC7F16C")
     private void readObject(final java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         addTaint(s.getTaint());

@@ -1,14 +1,15 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.076 -0400", hash_original_field = "5B484EED7F441408FBB3DA9CD489795B", hash_generated_field = "F3DE0713F398F5B7918E6C35C0AAE054")

@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -9,10 +10,10 @@ import android.telephony.SmsMessage;
 
 import com.android.internal.util.HexDump;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SmsHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.187 -0400", hash_original_field = "0BF6DB71DA27A10BD429DE23DFC110F3", hash_generated_field = "05ED881ED743F115A7BFB64944720FFD")

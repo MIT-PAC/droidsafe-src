@@ -1,13 +1,14 @@
 package android.hardware.usb;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 
 import android.os.ParcelFileDescriptor;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class UsbDeviceConnection {
@@ -18,6 +19,7 @@ public class UsbDeviceConnection {
 
     private int mNativeContext;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.934 -0400", hash_original_method = "890EADCD61ADE223E295BF032157EE11", hash_generated_method = "D29F217DDACE7CAD99DBB7C07BFE803F")
     public  UsbDeviceConnection(UsbDevice device) {
         mDevice = device;

@@ -1,6 +1,7 @@
 package org.xml.sax.helpers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -9,13 +10,14 @@ import java.nio.charset.Charsets;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final public class XMLReaderFactory {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.510 -0400", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "B01B84B33B0F242545E564D5500CACD5")
     private  XMLReaderFactory() {
         // ---------- Original Method ----------

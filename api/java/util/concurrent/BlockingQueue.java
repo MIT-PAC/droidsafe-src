@@ -1,6 +1,7 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.Queue;
 

@@ -1,11 +1,13 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class DatabaseObjectNotClosedException extends RuntimeException {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.155 -0400", hash_original_method = "94780EE97E0D3B24B7301C55822424F4", hash_generated_method = "2D2E511949251DC58070A74B02AFBEEF")
     public  DatabaseObjectNotClosedException() {
         super(s);

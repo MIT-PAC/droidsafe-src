@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -15,10 +16,10 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509KeyManager;
 import javax.net.ssl.X509TrustManager;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SSLParametersImpl implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.308 -0400", hash_original_field = "BBF2E072FADE089E3AAF9C311B04B922", hash_generated_field = "18DF1224C27021F1A3724F6E02033981")
@@ -466,6 +467,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_2043267237 =             super.clone(
     }
 
     
+    @DSModeled(DSC.BAN)
     private static X509KeyManager getDefaultKeyManager() {
         X509KeyManager result = defaultKeyManager;
         if (result == null) {
@@ -475,6 +477,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_2043267237 =             super.clone(
     }
 
     
+    @DSModeled(DSC.BAN)
     private static X509KeyManager createDefaultKeyManager() {
         try {
             String algorithm = KeyManagerFactory.getDefaultAlgorithm();
@@ -492,7 +495,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_2043267237 =             super.clone(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
         for (KeyManager km : kms) {
             if (km instanceof X509KeyManager) {
@@ -512,6 +515,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_2043267237 =             super.clone(
     }
 
     
+    @DSModeled(DSC.BAN)
     private static X509TrustManager createDefaultTrustManager() {
         try {
             String algorithm = TrustManagerFactory.getDefaultAlgorithm();
@@ -528,7 +532,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_2043267237 =             super.clone(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static X509TrustManager findX509TrustManager(TrustManager[] tms) {
         for (TrustManager tm : tms) {
             if (tm instanceof X509TrustManager) {

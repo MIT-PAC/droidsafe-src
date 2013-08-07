@@ -1,8 +1,9 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
 
 public enum TextColor {
     BLACK(0x0),
@@ -26,6 +27,7 @@ public enum TextColor {
     TextColor(int value) {
         mValue = value;
     }
+    @DSModeled(DSC.BAN)
     public static TextColor fromInt(int value) {
         for (TextColor e : TextColor.values()) {
             if (e.mValue == value) {

@@ -1,14 +1,15 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
 import org.apache.harmony.security.fortress.Engine;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class MessageDigest extends MessageDigestSpi {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.075 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
@@ -303,6 +304,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
 
         private MessageDigestSpi spiImpl;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.085 -0400", hash_original_method = "AF4F6C5934F11306EFBE5B299B5A2B9A", hash_generated_method = "A429A5B998EC05778C035C93FB935975")
         private  MessageDigestImpl(MessageDigestSpi messageDigestSpi,
                 Provider provider, String algorithm) {

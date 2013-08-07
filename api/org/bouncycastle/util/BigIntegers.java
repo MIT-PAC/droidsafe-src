@@ -1,11 +1,12 @@
 package org.bouncycastle.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class BigIntegers {
     

@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Deque<E> extends Queue<E> {
     

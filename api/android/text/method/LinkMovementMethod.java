@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Layout;
 import android.text.NoCopySpan;
 import android.text.Selection;
@@ -10,10 +11,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LinkMovementMethod extends ScrollingMovementMethod {
     
@@ -160,7 +161,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.302 -0400", hash_original_method = "0A452BAD56CDA444E4158895C806016D", hash_generated_method = "CF87349C01D4B3291D8A095AA324F162")
     private boolean action(int what, TextView widget, Spannable buffer) {
         addTaint(buffer.getTaint());

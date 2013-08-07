@@ -1,6 +1,7 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
@@ -9,9 +10,9 @@ import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 import droidsafe.helpers.DSUtils;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
@@ -192,7 +193,7 @@ public final class NativeConverter {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int translateCodingErrorAction(CodingErrorAction action) {
         if (action == CodingErrorAction.REPORT) {
             return 0;

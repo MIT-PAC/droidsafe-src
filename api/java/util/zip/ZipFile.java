@@ -1,6 +1,7 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.File;
@@ -16,10 +17,10 @@ import libcore.io.BufferIterator;
 import libcore.io.HeapBufferIterator;
 import libcore.io.Streams;
 import dalvik.system.CloseGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ZipFile implements ZipConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.798 -0400", hash_original_field = "5B063E275D506F65EBF1B02D926F19A4", hash_generated_field = "0CA74B4233F69873CB47E022D845EA81")
@@ -167,7 +168,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.803 -0400", hash_original_method = "65CE3BC8A7A8514DBA7266C40E446CDF", hash_generated_method = "E96096CD3D634EA32310C62E9635D487")
     private void checkNotClosed() {
         if(mRaf == null)        
@@ -323,7 +324,7 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_1691297042 =         fileName;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.809 -0400", hash_original_method = "C4C5F4E81B860F4CAE8325550F47061B", hash_generated_method = "9EBD72DA5C0407FD5E5451555296B023")
     private void readCentralDir() throws IOException {
         long scanOffset = mRaf.length() - ENDHDR;

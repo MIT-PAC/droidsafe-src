@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.InvalidObjectException;
 import java.io.Serializable;
 import java.lang.reflect.Field;

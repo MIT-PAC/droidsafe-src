@@ -1,14 +1,15 @@
 package org.apache.commons.logging.impl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.apache.commons.logging.Log;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class Jdk14Logger implements Log, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.832 -0400", hash_original_field = "4400709C3053BCEA3D08290498B4E677", hash_generated_field = "025246D335C438AB38D500F038665755")
@@ -28,6 +29,7 @@ public class Jdk14Logger implements Log, Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.832 -0400", hash_original_method = "C5765CC5B1B39AF0EFD6226D38EFAF69", hash_generated_method = "DF79140CA2C8A36FDFD15D65F4CBAC19")
     private void log( Level level, String msg, Throwable ex ) {
         addTaint(ex.getTaint());

@@ -1,14 +1,15 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.util.WeakHashMap;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CoderResult {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.626 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "E1B24004551291FC3F431CA1B2F6785F")
@@ -18,6 +19,7 @@ public class CoderResult {
 
     private int length;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.628 -0400", hash_original_method = "720E366141B1E6A3092F9CE363C44766", hash_generated_method = "D851FBA0928E192998BF1AF90BB4D1C7")
     private  CoderResult(int type, int length) {
         this.type = type;

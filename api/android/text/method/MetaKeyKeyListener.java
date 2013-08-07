@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Editable;
 import android.text.NoCopySpan;
 import android.text.Spannable;
@@ -8,10 +9,10 @@ import android.text.Spanned;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class MetaKeyKeyListener {
     
@@ -58,7 +59,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getActive(CharSequence text, Object meta,
                                  int on, int lock) {
         if (!(text instanceof Spanned)) {
@@ -97,7 +98,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void adjust(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == PRESSED)
@@ -116,7 +117,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void resetLock(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == LOCKED)
@@ -175,7 +176,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.377 -0400", hash_original_method = "04CA7F5473BAF6356CB45A56F068D921", hash_generated_method = "90F2F54E066A3BB680F858093C9AE39D")
     private void press(Editable content, Object what) {
         addTaint(what.getTaint());
@@ -209,13 +210,13 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void startSelecting(View view, Spannable content) {
         content.setSpan(SELECTING, 0, 0, PRESSED);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void stopSelecting(View view, Spannable content) {
         content.removeSpan(SELECTING);
     }
@@ -272,7 +273,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.378 -0400", hash_original_method = "E71400F62D0FFB0C9763693B0DBF0337", hash_generated_method = "48292083C49046879120B0511977B05C")
     private void release(Editable content, Object what, KeyEvent event) {
         addTaint(event.getTaint());
@@ -426,7 +427,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static long press(long state, int what, long mask,
             long locked, long pressed, long released, long used) {
         if ((state & pressed) != 0) {
@@ -461,7 +462,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static long release(long state, int what, long mask,
             long pressed, long released, long used, KeyEvent event) {
         switch (event.getKeyCharacterMap().getModifierBehavior()) {

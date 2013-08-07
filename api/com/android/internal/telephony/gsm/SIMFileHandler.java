@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Message;
 import android.util.Log;
 
@@ -10,14 +11,15 @@ import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.IccFileHandler;
 import com.android.internal.telephony.Phone;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class SIMFileHandler extends IccFileHandler implements IccConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.430 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "59DB8B09027983825DB66C99CC153469")
 
     private Phone mPhone;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.430 -0400", hash_original_method = "28787217280B11FEE5B9021DD1097C9A", hash_generated_method = "E0F6B16E89762658DF17EF8C6EF8CDD8")
       SIMFileHandler(GSMPhone phone) {
         super(phone);
@@ -27,6 +29,7 @@ public final class SIMFileHandler extends IccFileHandler implements IccConstants
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.430 -0400", hash_original_method = "9B378D368B78D2E2F938DA57C729E6B5", hash_generated_method = "9A4F77B4E25F9CFE2D71D8AC605A621B")
     public void dispose() {
         super.dispose();
@@ -35,6 +38,7 @@ public final class SIMFileHandler extends IccFileHandler implements IccConstants
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.431 -0400", hash_original_method = "48D1C945A3808FD7B021E909C155155D", hash_generated_method = "390AF6D8D57B2EBD6C228B7EC0FD43E8")
     protected void finalize() {
         Log.d(LOG_TAG, "SIMFileHandler finalized");
@@ -43,6 +47,7 @@ public final class SIMFileHandler extends IccFileHandler implements IccConstants
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.431 -0400", hash_original_method = "D06C959A971F705A496791A8170E55B9", hash_generated_method = "77C805872CA69F6467EFC5D284BEB40A")
     @Override
     public void handleMessage(Message msg) {
@@ -53,6 +58,7 @@ public final class SIMFileHandler extends IccFileHandler implements IccConstants
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.432 -0400", hash_original_method = "10EDEC4C0ACD70E5A3D3B2572E081074", hash_generated_method = "31A2078CA71277330EBA37875FD80A2F")
     protected String getEFPath(int efid) {
         addTaint(efid);
@@ -107,6 +113,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_1849585912 =         path;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.432 -0400", hash_original_method = "45FB79CED1F6261AE88F32026733A48A", hash_generated_method = "F86FF548D74882274FC42BBA5BDAA6ED")
     protected void logd(String msg) {
         addTaint(msg.getTaint());
@@ -116,6 +123,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_1849585912 =         path;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.433 -0400", hash_original_method = "186F2705ACAE4FAB6B3F0960135671C1", hash_generated_method = "7C7025F790B2B79900FDADAD81ED13E2")
     protected void loge(String msg) {
         addTaint(msg.getTaint());

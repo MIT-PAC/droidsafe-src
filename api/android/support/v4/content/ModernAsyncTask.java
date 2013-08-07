@@ -1,6 +1,7 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
@@ -18,10 +19,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Process;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class ModernAsyncTask<Params, Progress, Result> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.966 -0400", hash_original_field = "BB30BA3EDC46FDDC92BDFE7FACA691F0", hash_generated_field = "DAAB2689B37CB24EEF0B8E3B973EEFF3")
@@ -106,12 +107,13 @@ Result var3E54577D8BA0B3895F3C3277069ED558_513924779 =             postResult(do
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void init() {
         sHandler.getLooper();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void setDefaultExecutor(Executor exec) {
         sDefaultExecutor = exec;
     }
@@ -363,6 +365,7 @@ ModernAsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_18
     
     private static class InternalHandler extends Handler {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.980 -0400", hash_original_method = "702720A53E3CB2FDA0E1C09BCF5135A3", hash_generated_method = "702720A53E3CB2FDA0E1C09BCF5135A3")
         public InternalHandler ()
         {
@@ -406,6 +409,7 @@ switch(msg.what){
 
         Params[] mParams;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.982 -0400", hash_original_method = "6133B28C5B62218BD6304F54DA37E6FE", hash_generated_method = "6133B28C5B62218BD6304F54DA37E6FE")
         public WorkerRunnable ()
         {

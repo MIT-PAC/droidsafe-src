@@ -1,6 +1,7 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.nfc.ErrorCodes;
@@ -9,11 +10,12 @@ import android.nfc.INfcTag;
 import android.nfc.NdefMessage;
 import android.nfc.Tag;
 import android.os.RemoteException;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class NdefFormatable extends BasicTagTechnology {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.698 -0400", hash_original_method = "074BAD8FDA859E71D091A9807C3BD3AB", hash_generated_method = "25CA3327852ABB990C5F36B5B2E347B5")
     public  NdefFormatable(Tag tag) throws RemoteException {
         super(tag, TagTechnology.NDEF_FORMATABLE);

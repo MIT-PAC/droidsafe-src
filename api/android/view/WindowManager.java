@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.pm.ActivityInfo;
 import android.graphics.PixelFormat;
 import android.os.IBinder;

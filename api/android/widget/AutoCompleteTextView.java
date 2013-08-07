@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
@@ -22,10 +23,10 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AutoCompleteTextView extends EditText implements Filter.FilterListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.685 -0400", hash_original_field = "E1CABE1E2EB0E02B938A46A1B7A0EBFD", hash_generated_field = "1FDB4027FDC409C38C96D7C7129240A3")
@@ -159,7 +160,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.689 -0400", hash_original_method = "58D3202231E1A3AE7FD8546C3F8B5C86", hash_generated_method = "5E8318BD6AE816BF6A553349975BDD5C")
     private void onClickImpl() {
         if(isPopupShowing())        
@@ -353,7 +354,7 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1654412578 =         mPopup.getBack
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.694 -0400", hash_original_method = "AB6AF7AB4438F2936FAB5E115855ABD1", hash_generated_method = "2DB8A20E119F934F9A2991689F09D838")
     public void setDropDownAnimationStyle(int animationStyle) {
         addTaint(animationStyle);
@@ -363,7 +364,7 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1654412578 =         mPopup.getBack
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.694 -0400", hash_original_method = "348942C9B29D455789FBCF016CC929C3", hash_generated_method = "12DD111B6A84A24E41CF325F32282538")
     public int getDropDownAnimationStyle() {
         int var816B0EC48DB4C372BCF76D1AAEC8966A_153272422 = (mPopup.getAnimationStyle());
@@ -374,7 +375,7 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1654412578 =         mPopup.getBack
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.694 -0400", hash_original_method = "4343F66DAC432AAC8F4BD77081597537", hash_generated_method = "B4CE8D8C26BD87AB6817EBD133DA8ECD")
     public boolean isDropDownAlwaysVisible() {
         boolean var02A603F69D53C1BA03CBBFB8B5937DA3_315078103 = (mPopup.isDropDownAlwaysVisible());
@@ -385,7 +386,7 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1654412578 =         mPopup.getBack
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.694 -0400", hash_original_method = "9D048710298E272B53CC3CA9B767E12A", hash_generated_method = "FD8ED3488F6CA647809E7062D103782E")
     public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
         addTaint(dropDownAlwaysVisible);
@@ -395,7 +396,7 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1654412578 =         mPopup.getBack
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.694 -0400", hash_original_method = "5251E63145860B08CE1AA76BBDDDD070", hash_generated_method = "2D80C8CB1D34B9C837528C37DEF42857")
     public boolean isDropDownDismissedOnCompletion() {
         boolean var136ABDC94A753EA99E787B313DCAB6C7_1507967517 = (mDropDownDismissedOnCompletion);
@@ -406,7 +407,7 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1654412578 =         mPopup.getBack
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.694 -0400", hash_original_method = "87D4B20D86EF98CE5F9B2DCFB12777AB", hash_generated_method = "60B8689EC6F3BBAD668A4B2923A0BC91")
     public void setDropDownDismissedOnCompletion(boolean dropDownDismissedOnCompletion) {
         mDropDownDismissedOnCompletion = dropDownDismissedOnCompletion;
@@ -889,7 +890,7 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_488430523 =         mFilter.con
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.699 -0400", hash_original_method = "87F4A447D592D0FFBC34508A48276E40", hash_generated_method = "7F957E394606C5D79841CB53DEA0413B")
     private void performCompletion(View selectedView, int position, long id) {
         addTaint(id);
@@ -945,7 +946,7 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_488430523 =         mFilter.con
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.700 -0400", hash_original_method = "3F95D8A8308B140C895762391C3A32C6", hash_generated_method = "502A82D0190EA626125A51B291042371")
     public void setText(CharSequence text, boolean filter) {
         addTaint(filter);
@@ -998,7 +999,7 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_488430523 =         mFilter.con
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.701 -0400", hash_original_method = "43BA40231E8A8ECAF857BC9AE8C4397B", hash_generated_method = "AAAD29A240B6514A486D7B7FC0F2D174")
     private void updateDropDownForFilter(int count) {
         addTaint(count);
@@ -1176,7 +1177,7 @@ switch(hint){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.704 -0400", hash_original_method = "E5B4D0CB7911E0BF332298A12D86AD4A", hash_generated_method = "A9417F64F27E0248C39106ECDBA36D11")
     public void showDropDownAfterLayout() {
         mPopup.postShow();
@@ -1185,7 +1186,7 @@ switch(hint){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.704 -0400", hash_original_method = "E55E3CC7F05D9D6DD7DBC4A161FF882F", hash_generated_method = "051C95117151B443F9082D0AD48C2491")
     public void ensureImeVisible(boolean visible) {
         addTaint(visible);
@@ -1199,7 +1200,7 @@ switch(hint){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.704 -0400", hash_original_method = "16FCF16EE4527CEC1661452DABA1BD86", hash_generated_method = "F6C0A9F9255DD39F3D99B459E798DC67")
     public boolean isInputMethodNotNeeded() {
         boolean var597C2240CA1A3462E67A3E88FFFF4617_71034413 = (mPopup.getInputMethodMode() == ListPopupWindow.INPUT_METHOD_NOT_NEEDED);
@@ -1250,7 +1251,7 @@ switch(hint){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.705 -0400", hash_original_method = "3BAD4610337E0EF5F8BF22A9BBBB2B17", hash_generated_method = "9CAB43A5A6BF3AEAA949B77F4C12F4DA")
     public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         addTaint(forceIgnoreOutsideTouch);
@@ -1260,7 +1261,7 @@ switch(hint){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.705 -0400", hash_original_method = "DD23AC9F9BC11D23FC9B33CDFA0AE577", hash_generated_method = "2156FC9816750186C2019DB784D4B9CB")
     private void buildImeCompletions() {
         final ListAdapter adapter = mAdapter;

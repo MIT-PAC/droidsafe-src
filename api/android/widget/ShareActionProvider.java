@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,10 +18,10 @@ import android.widget.ActivityChooserModel.OnChooseActivityListener;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ShareActionProvider extends ActionProvider {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.930 -0400", hash_original_field = "E80075D82EAA0135CBEAE00EBB5C22F2", hash_generated_field = "B8F76B4F7281B5BE96A33CBC1F738330")
@@ -156,6 +157,7 @@ for(int i = 0;i < expandedActivityCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.939 -0400", hash_original_method = "5CBD2FEC274C7972832B56342BCF52F4", hash_generated_method = "117A6882365FD9FE90D0F6412F83F156")
     private void setActivityChooserPolicyIfNeeded() {
         if(mOnShareTargetSelectedListener == null)        

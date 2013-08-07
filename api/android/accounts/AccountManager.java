@@ -1,6 +1,7 @@
 package android.accounts;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,10 +29,10 @@ import android.text.TextUtils;
 
 import com.google.android.collect.Maps;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AccountManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.795 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -64,6 +65,7 @@ public class AccountManager {
         }
     };
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.810 -0400", hash_original_method = "399D8365074F8431C3C32ED7720975E8", hash_generated_method = "699A204D5899DBCF695891C3392F1F59")
     public  AccountManager(Context context, IAccountManager service) {
         mContext = context;
@@ -76,6 +78,7 @@ public class AccountManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.814 -0400", hash_original_method = "25BBC3E1043ACDD515139061A9597BA7", hash_generated_method = "34C7F2EB81FAF854CED2B6C04922B77F")
     public  AccountManager(Context context, IAccountManager service, Handler handler) {
         mContext = context;
@@ -88,6 +91,7 @@ public class AccountManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Bundle sanitizeResult(Bundle result) {
         if (result != null) {
             if (result.containsKey(KEY_AUTHTOKEN)
@@ -1014,6 +1018,7 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_992146252 =    
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.032 -0400", hash_original_method = "05C769BBE692F72E464B52B58848EACE", hash_generated_method = "9C8597D05E95DEE9B9D7D0991840332F")
     private void ensureNotOnMainThread() {
         final Looper looper = Looper.myLooper();
@@ -1109,6 +1114,7 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_992146252 =    
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.054 -0400", hash_original_method = "6FDE075EEB86D1BECEDE842FFDA184DE", hash_generated_method = "9CA9B1125603D7BBA2FD273A11BF2463")
     private Exception convertErrorToException(int code, String message) {
         addTaint(message.getTaint());
@@ -1381,6 +1387,7 @@ AccountManagerFuture<Bundle> var72A74007B2BE62B849F475C7BDA4658B_1156969260 =   
         public abstract void doWork() throws RemoteException;
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.107 -0400", hash_original_method = "6C34E289CBAB2DD26AA2603338539143", hash_generated_method = "F9C35AFCD44C9C04B3C9D84CE29F726A")
         private Bundle internalGetResult(Long timeout, TimeUnit unit) throws OperationCanceledException, IOException, AuthenticatorException {
             addTaint(unit.getTaint());

@@ -1,11 +1,12 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Rect;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Gravity {
     
@@ -22,7 +23,7 @@ public class Gravity {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void apply(int gravity, int w, int h, Rect container,
             Rect outRect, int layoutDirection) {
         int absGravity = getAbsoluteGravity(gravity, layoutDirection);

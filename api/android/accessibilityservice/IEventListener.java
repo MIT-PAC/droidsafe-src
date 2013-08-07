@@ -1,6 +1,7 @@
 package android.accessibilityservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IEventListener extends android.os.IInterface
 {

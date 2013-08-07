@@ -1,6 +1,7 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,10 +10,10 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import android.os.ParcelUuid;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class BluetoothSocket implements Closeable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.676 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
@@ -104,6 +105,7 @@ public final class BluetoothSocket implements Closeable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.681 -0400", hash_original_method = "C8329D18FDDAB97E8C009C3EF70FA11B", hash_generated_method = "C7D802D148BA1741340B08B559B6DA2B")
     private  BluetoothSocket(int type, int fd, boolean auth, boolean encrypt, String address,
             int port) throws IOException {
@@ -118,6 +120,7 @@ public final class BluetoothSocket implements Closeable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.681 -0400", hash_original_method = "6187FAF262C27B43BD19556B133B66CD", hash_generated_method = "BCF7108A8E63404F27A6C9EAB9DDD65C")
     @Override
     protected void finalize() throws Throwable {

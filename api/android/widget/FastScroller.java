@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -16,10 +17,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.AbsListView.OnScrollListener;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class FastScroller {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.666 -0400", hash_original_field = "E4F0AC5F69FC7254EF772878E84BE9AD", hash_generated_field = "723113CD58F6B081A7D304DE131200C0")
@@ -210,7 +211,7 @@ class FastScroller {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.670 -0400", hash_original_method = "8A07D5E4DE8CD170DC3BFC9FE8A30504", hash_generated_method = "0EE924EB15FAA986B21693A42CA35E6A")
     private void refreshDrawableState() {
         int[] state = mState == STATE_DRAGGING ? PRESSED_STATES : DEFAULT_STATES;
@@ -329,7 +330,7 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.673 -0400", hash_original_method = "C32E62B08B27A384339E1BC75CFE4552", hash_generated_method = "D04987BFE1D4AE2E46B9CD42F9227A5A")
     private void resetThumbPos() {
         final int viewWidth = mList.getWidth();
@@ -357,7 +358,7 @@ switch(mPosition){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.674 -0400", hash_original_method = "5C6D13F417D5AA8E0A1553C57F0CD3F0", hash_generated_method = "1586DA41E264BEF8F098FBE82F888BAD")
     private void useThumbDrawable(Context context, Drawable drawable) {
         mThumbDrawable = drawable;
@@ -389,7 +390,7 @@ switch(mPosition){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.677 -0400", hash_original_method = "0A57524C8928F6FDE971C9B9E9D3463C", hash_generated_method = "E00468CD2FA23E91A0693E918DA3AE56")
     private void init(Context context) {
         TypedArray ta = context.getTheme().obtainStyledAttributes(ATTRS);
@@ -869,7 +870,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_330476030 =         mSections;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.693 -0400", hash_original_method = "5B13E30A0127E5E811D3308FC0C54801", hash_generated_method = "FB96DA07DC72742CFC2CA3582237E658")
     private int getThumbPositionForListPosition(int firstVisibleItem, int visibleItemCount,
             int totalItemCount) {
@@ -921,7 +922,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_330476030 =         mSections;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.694 -0400", hash_original_method = "CEA01B9B754ED8848F89028F972B696F", hash_generated_method = "EE3570EACFEF93FEA7F996E4F2C62C63")
     private void cancelFling() {
         MotionEvent cancelFling = MotionEvent.obtain(0, 0, MotionEvent.ACTION_CANCEL, 0, 0, 0);

@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.telephony.SmsManager.STATUS_ON_ICC_FREE;
 
 import java.util.ArrayList;
@@ -23,10 +24,10 @@ import com.android.internal.telephony.IntRangeManager;
 import com.android.internal.telephony.SMSDispatcher;
 import com.android.internal.telephony.SmsRawData;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.647 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
@@ -390,6 +391,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_485900680 =         mSms;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.654 -0400", hash_original_method = "D2ABD2A7A42536455FF89EC95B86ABFC", hash_generated_method = "8493E8542081558E943902985D8E27DA")
     private boolean setCellBroadcastActivation(boolean activate) {
         addTaint(activate);

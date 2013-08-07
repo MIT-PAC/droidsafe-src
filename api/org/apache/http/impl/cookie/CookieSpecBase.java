@@ -1,6 +1,7 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -12,7 +13,7 @@ import org.apache.http.cookie.CookieAttributeHandler;
 import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public abstract class CookieSpecBase extends AbstractCookieSpec {
     

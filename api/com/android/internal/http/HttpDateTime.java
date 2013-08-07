@@ -1,15 +1,16 @@
 package com.android.internal.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.text.format.Time;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class HttpDateTime {
     

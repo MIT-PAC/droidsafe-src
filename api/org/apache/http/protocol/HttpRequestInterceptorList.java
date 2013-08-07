@@ -1,6 +1,7 @@
 package org.apache.http.protocol;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import org.apache.http.HttpRequestInterceptor;

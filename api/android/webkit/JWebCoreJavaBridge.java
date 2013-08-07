@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Set;
@@ -9,10 +10,10 @@ import android.net.ProxyProperties;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class JWebCoreJavaBridge extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.197 -0400", hash_original_field = "18E62AA806BC4A382C7823F4E0961736", hash_generated_field = "2974AA9EDEE26975BC6F1AFB9A7C8BD7")
@@ -64,7 +65,7 @@ final class JWebCoreJavaBridge extends Handler {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.198 -0400", hash_original_method = "02E069F093A33F917985EC0A146AF5DF", hash_generated_method = "482361C838A1D6C0B6F62C16E4D30209")
     private void fireSharedTimer() {
         mHasInstantTimer = false;
@@ -123,6 +124,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.198 -0400", hash_original_method = "AB9D63477B4D64307AC8C3CAD493B037", hash_generated_method = "E6C1DD8C897E1EE49852D729942B140D")
     private void signalServiceFuncPtrQueue() {
         Message msg = obtainMessage(FUNCPTR_MESSAGE);
@@ -183,7 +185,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.200 -0400", hash_original_method = "D5A9FC7DDB356B7F9D175C82B50A2AF1", hash_generated_method = "29D5F5345B4E8FB18A42984A246E1751")
     private void setCookies(String url, String value) {
         addTaint(value.getTaint());
@@ -220,7 +222,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.201 -0400", hash_original_method = "E3D7D6931554145E868760CB2C4A26A3", hash_generated_method = "906852C9798F82C317DAEB577552160E")
     private String cookies(String url) {
         addTaint(url.getTaint());
@@ -232,6 +234,7 @@ String varAECD863DE9AAC895DB47A4271B851D54_844602701 =         CookieManager.get
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.201 -0400", hash_original_method = "E9376C130584FE2146C1CFB7A84FB471", hash_generated_method = "EC1527D0A619519488EDA7F37ED6CA3D")
     private boolean cookiesEnabled() {
         boolean varD80850DD1D24F86E3200FD3D2B28A132_1578149805 = (CookieManager.getInstance().acceptCookie());
@@ -242,6 +245,7 @@ String varAECD863DE9AAC895DB47A4271B851D54_844602701 =         CookieManager.get
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.201 -0400", hash_original_method = "9CEFD28F2377E55BFA773DC40D227755", hash_generated_method = "BF6DA43F9D145CCBA73817B0EA70A5A4")
     private String[] getPluginDirectories() {
 String[] var07F6A7380CC680CBDF46335135D62147_899808675 =         PluginManager.getInstance(null).getPluginDirectories();
@@ -252,6 +256,7 @@ String[] var07F6A7380CC680CBDF46335135D62147_899808675 =         PluginManager.g
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.201 -0400", hash_original_method = "EA355C7E0B9693F5192FD4CEC8057AD3", hash_generated_method = "3960E0E5D1B361CBAAC87891AAC48CE7")
     private String getPluginSharedDataDirectory() {
 String var0D77ECDD31455C4DF86C73A42D37FC8D_1960142804 =         PluginManager.getInstance(null).getPluginSharedDataDirectory();
@@ -262,7 +267,7 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_1960142804 =         PluginManager.ge
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.201 -0400", hash_original_method = "8308F15706BD844BBD432043C004CF45", hash_generated_method = "A512D0498C6FE08096B54AEFDDC32E76")
     private void setSharedTimer(long timemillis) {
         addTaint(timemillis);
@@ -301,6 +306,7 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_1960142804 =         PluginManager.ge
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.202 -0400", hash_original_method = "962436894D889C4038B1520A1ECBED33", hash_generated_method = "68B6C2CBBFA028BD9F485378FE8F067F")
     private void stopSharedTimer() {
         if(DebugFlags.J_WEB_CORE_JAVA_BRIDGE)        
@@ -319,6 +325,7 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_1960142804 =         PluginManager.ge
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.202 -0400", hash_original_method = "017AD119A16DE91023E8FE76067DD440", hash_generated_method = "DBDA05051204538090FDE7915D2936FD")
     private String[] getKeyStrengthList() {
 String[] varDBCAD717D2F0C05E3C7F0AAD2619EDB5_361597117 =         CertTool.getKeyStrengthList();
@@ -329,7 +336,7 @@ String[] varDBCAD717D2F0C05E3C7F0AAD2619EDB5_361597117 =         CertTool.getKey
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.202 -0400", hash_original_method = "A59843A23C4CF1F3FD140F676EC35D8E", hash_generated_method = "AA64CDE9F80BCB797E1AED4A9F17E1D6")
     synchronized private String getSignedPublicKey(int index, String challenge,
             String url) {
@@ -362,7 +369,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_997479125 =             "";
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.204 -0400", hash_original_method = "7BAB6C5DC5E9A5F66D14195839893242", hash_generated_method = "66E20C7AB7E984F23F21A1AB41CDAEB5")
     private String resolveFilePathForContentUri(String uri) {
         addTaint(uri.getTaint());

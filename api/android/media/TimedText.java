@@ -1,14 +1,15 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
 import android.os.Parcel;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class TimedText {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.325 -0400", hash_original_field = "EFA56283585F59792DE14EFDEC543EA6", hash_generated_field = "BB91EE8BB361270D3F9E96BDF275F77B")
@@ -60,6 +61,7 @@ public class TimedText {
 
     private Text mTextStruct;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.328 -0400", hash_original_method = "20C0CCB7F458006F6F50D13C409F05F4", hash_generated_method = "94150419739F59396CE5A8A52F4D9891")
     public  TimedText(byte[] obj) {
         addTaint(obj[0]);
@@ -80,6 +82,7 @@ public class TimedText {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.332 -0400", hash_original_method = "791BBBBBE0FA40697270B44A4D66C782", hash_generated_method = "702AB57B428E3B5E666EE49FD17FAA3C")
     private boolean parseParcel() {
         mParcel.setDataPosition(0);
@@ -238,6 +241,7 @@ switch(key){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.333 -0400", hash_original_method = "0BA14F4ADFDDDB9356E71AC4A1ECA0E9", hash_generated_method = "A91456EEC8ACCEF9DCB13CF6975F3CDA")
     private void readStyle() {
         Style style = new Style();
@@ -298,6 +302,7 @@ switch(key){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.334 -0400", hash_original_method = "00AE5F5A406478801ABD16E12F474E1A", hash_generated_method = "BF25CA6282179A61EA68F54E0A0FD519")
     private void readFont() {
         int entryCount = mParcel.readInt();
@@ -330,6 +335,7 @@ for(int i = 0;i < entryCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.334 -0400", hash_original_method = "89A8EBF8FEFD90B855BF480125FCEA6A", hash_generated_method = "C31FC3E33FCE52C6F7898AC1605F5CE9")
     private void readHighlight() {
         CharPos pos = new CharPos();
@@ -351,6 +357,7 @@ for(int i = 0;i < entryCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.335 -0400", hash_original_method = "9FC931A03E07E67B33BB5A4FA8F46AC4", hash_generated_method = "AB23D3EE9724A1192E0D1096FB25580E")
     private void readKaraoke() {
         int entryCount = mParcel.readInt();
@@ -383,6 +390,7 @@ for(int i = 0;i < entryCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.336 -0400", hash_original_method = "76399CA140680AA49BE7C693D75B5452", hash_generated_method = "6F0215116978816232DB154FE5DB67FA")
     private void readHyperText() {
         HyperText hyperText = new HyperText();
@@ -416,6 +424,7 @@ for(int i = 0;i < entryCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.336 -0400", hash_original_method = "9C2885E2BFC08F88B4AF57AA760616C2", hash_generated_method = "F62C088DDC1EE11BF9577ED12F36FCDD")
     private void readBlinkingText() {
         CharPos blinkingPos = new CharPos();
@@ -479,6 +488,7 @@ for(int i = 0;i < entryCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.337 -0400", hash_original_method = "D714619D6E49B86D75D24C1705999B69", hash_generated_method = "4083F86FCC5677509C364C52BD4CF6EC")
     public Set keySet() {
 Set varBBC4C0AAD9644B71B43DA8509843FD46_1233482818 =         mKeyObjectMap.keySet();

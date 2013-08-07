@@ -1,13 +1,14 @@
 package javax.crypto;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class KeyGeneratorSpi {
     

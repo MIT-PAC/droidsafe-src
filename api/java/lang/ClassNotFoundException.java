@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class ClassNotFoundException extends Exception {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.715 -0400", hash_original_field = "54D54A126A783BC9CBA8C06137136943", hash_generated_field = "F73E8300D821D42895FBD4F8215B8AE6")

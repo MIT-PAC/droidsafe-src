@@ -1,10 +1,11 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class WorkSource implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.852 -0400", hash_original_field = "1B2924E0CDC894FEA7E3856870275E70", hash_generated_field = "95F99CF2E70DB79AD069A36B506646F2")
@@ -52,6 +53,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.855 -0400", hash_original_method = "98AF9D8E14FDBDB8400169325402879B", hash_generated_method = "70A6251886E48ABB203ED54B374D6A2A")
     public  WorkSource(int uid) {
         addTaint(uid);
@@ -73,7 +75,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.856 -0400", hash_original_method = "FA15A7D9EE41DC68B6DF2C6C4250D26C", hash_generated_method = "90128746F04DC1F5A49BF7B9DF7ED585")
     public int size() {
         int var1B2924E0CDC894FEA7E3856870275E70_1307816162 = (mNum);
@@ -84,7 +86,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.860 -0400", hash_original_method = "2BE27D9B96D07A7F769CE0AAEC8A3019", hash_generated_method = "1728C6D2C7BFA34668F4E74E3181F919")
     public int get(int index) {
         addTaint(index);
@@ -188,7 +190,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.863 -0400", hash_original_method = "7924E91892F2F47DFBA42DC07794F83E", hash_generated_method = "78EFCF29562F90693664726E525F5973")
     public void set(int uid) {
         mNum = 1;
@@ -202,7 +204,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.864 -0400", hash_original_method = "7CA4549360AB4144F4EE2A696452CCBF", hash_generated_method = "E53A2F23DA039C3A062D88E416AAEE90")
     public WorkSource[] setReturningDiffs(WorkSource other) {
         addTaint(other.getTaint());
@@ -257,7 +259,7 @@ WorkSource[] var540C13E9E156B687226421B24F2DF178_1530849350 =             null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.865 -0400", hash_original_method = "3C62D026004765F6E3FE84798605B705", hash_generated_method = "6939F95DC7F62C367079BD5E0DC2F8C2")
     public WorkSource addReturningNewbs(WorkSource other) {
         addTaint(other.getTaint());
@@ -278,7 +280,7 @@ WorkSource var58A621AD92B821B849DEFCA427B300B1_201676370 =             sNewbWork
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.865 -0400", hash_original_method = "4279F5B1CF7891D9D61E24583D3B3149", hash_generated_method = "C53A14FAD3E930F799F8E9C712BAFD1D")
     public boolean add(int uid) {
         synchronized
@@ -296,7 +298,7 @@ WorkSource var58A621AD92B821B849DEFCA427B300B1_201676370 =             sNewbWork
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.866 -0400", hash_original_method = "6E5D478DFA5CD5B5102A5F18DB42CF54", hash_generated_method = "08B3EC7E3C3BDFEE002B3655D1F6ED48")
     public WorkSource addReturningNewbs(int uid) {
         synchronized
@@ -367,7 +369,7 @@ for(int i2=0;i2<N2 && i1<N1;i2++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.870 -0400", hash_original_method = "34E034689DDCE68A5D27EE33789EB9C2", hash_generated_method = "C2698EB48AEFA931FC6D33D9A35D84A2")
     private boolean updateLocked(WorkSource other, boolean set, boolean returnNewbs) {
         addTaint(returnNewbs);
@@ -469,7 +471,7 @@ for(int i2=0;i2<N2;i2++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.871 -0400", hash_original_method = "E8ED9AF8451B0D2EC41EDBDBB476EE69", hash_generated_method = "CE7EDB869AF3E643B1197828FBC4EAE8")
     private void addLocked(int uid) {
         if(mUids == null)        

@@ -1,16 +1,17 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.database.DatabaseUtils;
 import android.os.ParcelFileDescriptor;
 import android.os.SystemClock;
 import dalvik.system.BlockGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SQLiteStatement extends SQLiteProgram {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.056 -0400", hash_original_field = "E67780D6797A95AA13F04D47887933FA", hash_generated_field = "2F51843A821BD5FB98E893CC1830882F")
@@ -103,6 +104,7 @@ public class SQLiteStatement extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.060 -0400", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "7BBF6CA8F3FC8F268D1BE88F824B3398")
     private void saveSqlAsLastSqlStatement() {
         if(((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
@@ -248,6 +250,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.068 -0400", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "8AABFB05BAD41294769D01113CF324B3")
     private long acquireAndLock(boolean rwFlag) {
         addTaint(rwFlag);
@@ -300,6 +303,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.070 -0400", hash_original_method = "3195EF2C5595E73848E74AA3B0A84A6E", hash_generated_method = "C21D6BAFEEFA8F70ABEAE73AF2467CE1")
     private void releaseAndUnlock() {
         releaseReference();

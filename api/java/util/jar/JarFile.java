@@ -1,6 +1,7 @@
 package java.util.jar;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FilterInputStream;
 import java.io.IOException;
@@ -12,7 +13,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import libcore.io.Streams;
-import droidsafe.annotations.*;
+
 
 public class JarFile extends ZipFile {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.890 -0400", hash_original_field = "7F5CB74AF5D7F4B82200738FDBDC5A45", hash_generated_field = "261709621967406C2758961F4730EA20")
@@ -241,7 +242,7 @@ Manifest var1E3066E1404CD0BB62AB3E2DCB96B149_756282419 =         manifest;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.897 -0400", hash_original_method = "388F847516FC198A1371FF54043E7729", hash_generated_method = "1C91A8755396C4C973ECE2989A2E289D")
     private void readMetaEntries() throws IOException {
         ZipEntry[] metaEntries = getMetaEntriesImpl();
@@ -284,7 +285,7 @@ for(ZipEntry entry : metaEntries)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean endsWithIgnoreCase(String s, String suffix) {
         return s.regionMatches(true, s.length() - suffix.length(), suffix, 0, suffix.length());
     }
@@ -375,7 +376,7 @@ ZipEntry var8426B46703D579116B5F4E1AE17ACF98_1367943438 =         je;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.900 -0400", hash_original_method = "4B8F98994A94A2FEBED0E4C85A619A5C", hash_generated_method = "9F320233CB91246127EF2841371880FD")
     private ZipEntry[] getMetaEntriesImpl() {
         List<ZipEntry> list = new ArrayList<ZipEntry>(8);

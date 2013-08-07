@@ -1,6 +1,7 @@
 package org.apache.http.protocol;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.ProtocolException;
 
@@ -14,7 +15,7 @@ import org.apache.http.HttpVersion;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.params.CoreProtocolPNames;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class HttpRequestExecutor {
     

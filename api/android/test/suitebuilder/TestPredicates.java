@@ -1,6 +1,7 @@
 package android.test.suitebuilder;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.test.InstrumentationTestCase;
 import android.test.suitebuilder.annotation.HasAnnotation;
 import android.test.suitebuilder.annotation.LargeTest;
@@ -12,8 +13,8 @@ import android.test.suitebuilder.annotation.Suppress;
 import com.android.internal.util.Predicate;
 import com.android.internal.util.Predicates;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class TestPredicates {
     

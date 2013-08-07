@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC;
 import android.os.AsyncResult;
@@ -15,10 +16,10 @@ import com.android.internal.telephony.IccRecords;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.MccTable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class RuimRecords extends IccRecords {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.340 -0400", hash_original_field = "D57C967AFB88E398799D962D4CC36F18", hash_generated_field = "37183B293BAF9977D813A0D8B999B0F9")
@@ -37,6 +38,7 @@ public final class RuimRecords extends IccRecords {
 
     private String mPrlVersion;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.341 -0400", hash_original_method = "44C32614C87F88FAB25838E2BB007C1E", hash_generated_method = "282B775ED5840C4C14DF47054E02291D")
       RuimRecords(CDMAPhone p) {
         super(p);
@@ -59,6 +61,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.341 -0400", hash_original_method = "BEB073340466462D0D2D43B235458798", hash_generated_method = "2C1624B406FCF7877DD944AD9568AFA1")
     @Override
     public void dispose() {
@@ -72,6 +75,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.342 -0400", hash_original_method = "F3AC7B1645E4B6C17E75361C82F92F71", hash_generated_method = "8135547F7335BCC93E8ADF2EAD79E568")
     @Override
     protected void finalize() {
@@ -82,7 +86,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.342 -0400", hash_original_method = "890888F3646E6C0F40397D6A9CAE2069", hash_generated_method = "C164568DFBFDA4D969CE0DF6F4836D64")
     @Override
     protected void onRadioOffOrNotAvailable() {
@@ -101,7 +105,7 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.343 -0400", hash_original_method = "08E37B8778E680438FC3D481E4B7618D", hash_generated_method = "C55E2A2B55A4A89454B4DE6C0E7EA8C6")
     public String getMdnNumber() {
 String var1FDFB70D070E103265F511CBBD7E87E9_1961015093 =         mMyMobileNumber;
@@ -112,7 +116,7 @@ String var1FDFB70D070E103265F511CBBD7E87E9_1961015093 =         mMyMobileNumber;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.343 -0400", hash_original_method = "70E8E8D1A91067A8AAF119FFCE233CA9", hash_generated_method = "67DD5DE74D3640FA59FF33993F3CA06B")
     public String getCdmaMin() {
 String var3AED8228038CC465260B536B9B728D30_550573643 =         mMin2Min1;
@@ -123,7 +127,7 @@ String var3AED8228038CC465260B536B9B728D30_550573643 =         mMin2Min1;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.343 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "C0F7244E2A9B3EAFB963BC996E69C647")
     public String getPrlVersion() {
 String varF0DFA2A5AE60E78166448A9BF5899625_302694040 =         mPrlVersion;
@@ -134,6 +138,7 @@ String varF0DFA2A5AE60E78166448A9BF5899625_302694040 =         mPrlVersion;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.344 -0400", hash_original_method = "42127C0CAB9B1B50FC97B071B6934168", hash_generated_method = "A4FEC9C6D9285F1AF3DAB2AFF680011F")
     @Override
     public void setVoiceMailNumber(String alphaTag, String voiceNumber, Message onComplete) {
@@ -151,7 +156,7 @@ String varF0DFA2A5AE60E78166448A9BF5899625_302694040 =         mPrlVersion;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.344 -0400", hash_original_method = "1D5D0C2F4FF0286B2839C7504C536EE3", hash_generated_method = "72BD7942533D93BFB9764D286429D53E")
     @Override
     public void onRefresh(boolean fileChanged, int[] fileList) {
@@ -169,6 +174,7 @@ String varF0DFA2A5AE60E78166448A9BF5899625_302694040 =         mPrlVersion;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.345 -0400", hash_original_method = "1499AC64B3568BF128EFDB3C9845AC3C", hash_generated_method = "0561A77057949C09A65BBC2584738062")
     public String getRUIMOperatorNumeric() {
         if(mImsi == null)        
@@ -199,6 +205,7 @@ String var61ABF2776DBD6C902397B405DE533C4D_1351928350 =         mImsi.substring(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.348 -0400", hash_original_method = "584E0C361321C2DCD1B11D8CE97AF6DF", hash_generated_method = "699ED64687E8576A8A3645AF6763C44E")
     @Override
     public void handleMessage(Message msg) {
@@ -302,7 +309,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.349 -0400", hash_original_method = "7082FCE9B35AC4F9F043D561172547FE", hash_generated_method = "F63B5B9289591575DB6AD56FDD6563CC")
     @Override
     protected void onRecordLoaded() {
@@ -328,6 +335,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.350 -0400", hash_original_method = "E50365918A8B4813331E3A24E11292EF", hash_generated_method = "FBF5B9BBF59482AF31F258DFBEBA6FA4")
     @Override
     protected void onAllRecordsLoaded() {
@@ -359,6 +367,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.350 -0400", hash_original_method = "0D138DB0BC983C7D13FA7613202FEE21", hash_generated_method = "1FF78874CA0F2DC120C3E1185A7CA429")
     private void onRuimReady() {
         phone.mIccCard.broadcastIccStateChangedIntent(
@@ -373,6 +382,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.351 -0400", hash_original_method = "618248758DCBCE1B082F10F6590C51C4", hash_generated_method = "6D556C673F6D97DF2BE72929A2949E7B")
     private void fetchRuimRecords() {
         recordsRequested = true;
@@ -392,7 +402,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.351 -0400", hash_original_method = "409F5B7F98F19D492107B7A38CA851EE", hash_generated_method = "C7EC2D52AEC568C2FC824893EC383A64")
     @Override
     public int getDisplayRule(String plmn) {
@@ -405,6 +415,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.351 -0400", hash_original_method = "A6740B433D4FB4F3079B795061BDE226", hash_generated_method = "AB33E6F7F8D8827A2806B032DF81D24A")
     @Override
     public void setVoiceMessageWaiting(int line, int countWaiting) {
@@ -439,7 +450,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.351 -0400", hash_original_method = "BF9176F3CF68AA171F4E13CD5AF3ED9E", hash_generated_method = "DB8AD3E07BE7726A72327FFBE1B7A781")
     private void handleRuimRefresh(int[] result) {
         addTaint(result[0]);
@@ -476,6 +487,7 @@ switch((result[0])){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.352 -0400", hash_original_method = "15EF52C4433D17716212414EB6E50E76", hash_generated_method = "7D5682B24658D535E9B96A107AF718F4")
     @Override
     protected void log(String s) {
@@ -486,6 +498,7 @@ switch((result[0])){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.352 -0400", hash_original_method = "650BB8E79BCC4D913E519971F11AFA1E", hash_generated_method = "E7D94BCA5445789397AC7E67B09B77DB")
     @Override
     protected void loge(String s) {

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.StackLogger;
 import gov.nist.javax.sip.SipStackImpl;
 
@@ -19,10 +20,10 @@ import java.util.concurrent.TimeUnit;
 import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLSocket;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class IOHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.350 -0400", hash_original_field = "86B49D1C8FD26DA78BB808FB5DDCB721", hash_generated_field = "7C78FF5476489511BDB7D6F9C761D492")
@@ -82,6 +83,7 @@ Socket var1C4C10334B791AF9AB0467C72691123D_2066856296 =         (Socket) socketT
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.353 -0400", hash_original_method = "F53BBC08C4AFCA76781E5C2EA0968907", hash_generated_method = "559A94D296D5862D53A7A9BE92844E9A")
     private void writeChunks(OutputStream outputStream, byte[] bytes, int length) throws IOException {
         addTaint(length);

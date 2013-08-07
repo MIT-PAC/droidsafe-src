@@ -1,6 +1,7 @@
 package org.bouncycastle.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -30,8 +31,8 @@ import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Selector;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class AttributeCertificateHolder implements CertSelector, Selector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.505 -0400", hash_original_field = "A403F79916FA151CDCC745626E69FED2", hash_generated_field = "81EEF30676831ECD3948BE1C9E69FB41")
@@ -210,6 +211,7 @@ String var540C13E9E156B687226421B24F2DF178_175141312 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.511 -0400", hash_original_method = "813AC8AE1843F5B7087E11CB016E8403", hash_generated_method = "AB618BE93A2853BC7E977047C425E02D")
     private GeneralNames generateGeneralNames(X509Principal principal) {
         addTaint(principal.getTaint());
@@ -221,6 +223,7 @@ GeneralNames var94B0934CB17A73A5ED7AD1B3F1523ADC_118188333 =         new General
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.511 -0400", hash_original_method = "938EE7D821BB407EF13AE79847029298", hash_generated_method = "C070FC1AD0B3FBCB564245F06E60604D")
     private boolean matchesDN(X509Principal subject, GeneralNames targets) {
         addTaint(targets.getTaint());
@@ -273,6 +276,7 @@ for(int i = 0;i != names.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.512 -0400", hash_original_method = "7552EC21B75F1C8319E3B7352977E9CE", hash_generated_method = "990F264A40A2AF0261158E97C4D5AC76")
     private Object[] getNames(GeneralName[] names) {
         addTaint(names[0].getTaint());
@@ -318,6 +322,7 @@ Object[] var6C26F6EC1F7A67F950053C95FE24CCE6_1861599678 =         l.toArray(new 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.513 -0400", hash_original_method = "2BE9B6F72BB32A06F2A43AB8DF17A2B5", hash_generated_method = "50296D2C1F9ACBB42A89F9A50CEA2511")
     private Principal[] getPrincipals(GeneralNames names) {
         addTaint(names.getTaint());

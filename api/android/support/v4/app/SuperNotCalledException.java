@@ -1,8 +1,9 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.AndroidRuntimeException;
-import droidsafe.annotations.DSGenerator;
+
 
 final class SuperNotCalledException extends AndroidRuntimeException {
     

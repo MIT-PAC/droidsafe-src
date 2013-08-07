@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,10 +20,10 @@ import android.util.Printer;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class IntentFilter implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.475 -0400", hash_original_field = "22FC7A378B4F7C5F90F70A47BE1E4FCD", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
@@ -136,6 +137,7 @@ public class IntentFilter implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.484 -0400", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "91C505C438C5A84AC801F398BF946E86")
     private  IntentFilter(Parcel source) {
         mActions = new ArrayList<String>();
@@ -180,6 +182,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int findStringInSet(String[] set, String string,
             int[] lengths, int lenPos) {
         if (set == null) return -1;
@@ -191,6 +194,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String[] addStringToSet(String[] set, String string,
             int[] lengths, int lenPos) {
         if (findStringInSet(set, string, lengths, lenPos) >= 0) return set;
@@ -215,6 +219,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String[] removeStringFromSet(String[] set, String string,
             int[] lengths, int lenPos) {
         int pos = findStringInSet(set, string, lengths, lenPos);
@@ -1303,7 +1308,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.553 -0400", hash_original_method = "FBEEEBAC37A62143C058604C825166BE", hash_generated_method = "096842513A13DA8F6E0F5ACC93C7D589")
     public boolean debugCheck() {
         boolean varB326B5062B2F0E69046810717534CB09_780211631 = (true);
@@ -1314,6 +1319,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.555 -0400", hash_original_method = "742383A5720F36FAAE26E247984D38D1", hash_generated_method = "13283704523FEF7D1186E8E96601646B")
     private final boolean findMimeType(String type) {
         addTaint(type.getTaint());

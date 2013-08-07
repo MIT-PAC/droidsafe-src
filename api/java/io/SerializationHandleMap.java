@@ -1,10 +1,11 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 final class SerializationHandleMap {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.611 -0400", hash_original_field = "14F802E1FBA977727845E8872C1743A7", hash_generated_field = "3812BADF0A98B0817D55431A2E260B33")
@@ -34,6 +35,7 @@ final class SerializationHandleMap {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.614 -0400", hash_original_method = "E316A93A87558F399ED4EA2FE7F26EE8", hash_generated_method = "601118B60C66E941835E8C4A11B3ED5C")
     private void resizeArrays(int newSize) {
         Object[] oldKeys = keys;
@@ -90,6 +92,7 @@ for(int i = 0;i < oldKeys.length;++i)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.615 -0400", hash_original_method = "188F67866E8CBA269C0CFF587B29CD3B", hash_generated_method = "BEB26D9519BC5484928C8158DD3B7A68")
     private int findIndex(Object key, Object[] array) {
         addTaint(array[0].getTaint());
@@ -123,6 +126,7 @@ for(int i = 0;i < oldKeys.length;++i)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.616 -0400", hash_original_method = "CEF876F6D496A0BEC63D43E9A8B9FA0E", hash_generated_method = "DD6D5D19C0D71B6772BE21ECD4ADECAE")
     private int getModuloHash(Object key, int length) {
         addTaint(length);
@@ -175,6 +179,7 @@ for(int i = 0;i < oldKeys.length;++i)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.617 -0400", hash_original_method = "B0944A4627DD585C58C4A846FDB51A94", hash_generated_method = "F569FDAC8A3EA0813CC85B292BA24007")
     private void rehash() {
         int newSize = keys.length * 2;

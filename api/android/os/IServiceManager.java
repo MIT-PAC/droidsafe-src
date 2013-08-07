@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IServiceManager extends IInterface
 {

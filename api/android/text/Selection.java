@@ -1,16 +1,17 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.BreakIterator;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Selection {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.152 -0400", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "43EBC81447082EA8B9876FF117E2ADA5")
     private  Selection() {
         // ---------- Original Method ----------
@@ -304,7 +305,7 @@ public class Selection {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int findEdge(Spannable text, Layout layout, int dir) {
         int pt = getSelectionEnd(text);
         int line = layout.getLineForOffset(pt);
@@ -321,7 +322,7 @@ public class Selection {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int chooseHorizontal(Layout layout, int direction,
                                         int off1, int off2) {
         int line1 = layout.getLineForOffset(off1);
@@ -353,6 +354,7 @@ public class Selection {
     
     private static final class START implements NoCopySpan {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.156 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
         public START ()
         {
@@ -366,6 +368,7 @@ public class Selection {
     
     private static final class END implements NoCopySpan {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.157 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
         public END ()
         {

@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.SOL_SOCKET;
 import static libcore.io.OsConstants.SO_BINDTODEVICE;
 
@@ -10,10 +11,10 @@ import java.nio.channels.DatagramChannel;
 
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DatagramSocket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.404 -0400", hash_original_field = "86CCEC3D9FF0E9C0514506E982CDC08B", hash_generated_field = "0E47AFFF5CC1F2155F99BECA6A70C2D2")
@@ -142,6 +143,7 @@ public class DatagramSocket {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.407 -0400", hash_original_method = "70ACB9C2984CE075C85AFFAB4CC3F2C3", hash_generated_method = "59D2D1D291BDE3026B369DE7BD559C0C")
     private void checkPort(int aPort) {
         addTaint(aPort);
@@ -434,6 +436,7 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1713415942 =         impl.getLoc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.418 -0400", hash_original_method = "3874DFBADA775207309D591B6CC4D492", hash_generated_method = "6CEC83495089E16C4FA7452702DF2E7A")
     public void setNetworkInterface(NetworkInterface netInterface) throws SocketException {
         addTaint(netInterface.getTaint());
@@ -548,6 +551,7 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1713415942 =         impl.getLoc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.420 -0400", hash_original_method = "1B212BFD5D3AE863EDBC7C1325928232", hash_generated_method = "063325BC5A9F022E91A3EC84CD5D09EE")
     private void ensureBound() throws SocketException {
         if(!isBound())        
@@ -856,7 +860,7 @@ DatagramChannel var540C13E9E156B687226421B24F2DF178_1506503413 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.423 -0400", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "3EF8543353E5D764A4E6932613DE0250")
     public final FileDescriptor getFileDescriptor$() {
 FileDescriptor var90D0CD7641DADE7AC7C643EE2F281FD7_1630363246 =         impl.fd;

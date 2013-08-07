@@ -1,6 +1,7 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;

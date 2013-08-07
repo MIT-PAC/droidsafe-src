@@ -1,13 +1,14 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.graphics.Bitmap;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class GLES20DisplayList extends DisplayList {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.173 -0400", hash_original_field = "D40867AE35FD7434138AD06437D816AD", hash_generated_field = "43DF9227571FB6A174765DA4CC1A8056")

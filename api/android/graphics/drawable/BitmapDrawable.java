@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -20,10 +21,10 @@ import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BitmapDrawable extends Drawable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.407 -0400", hash_original_field = "8CF9D6A2BA83DEFBA443E79D87D8B1A2", hash_generated_field = "3A76FEC83F92CDCF2EE402CB0D000CA7")
@@ -170,7 +171,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.412 -0400", hash_original_method = "FB19047A342C9589C667FFAF2B0ECEA1", hash_generated_method = "64DA8E1E2360AAEBBD8776CA3ECF0205")
     private  BitmapDrawable(BitmapState state, Resources res) {
         mBitmapState = state;
@@ -216,7 +217,7 @@ Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1774956550 =         mBitmap;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.414 -0400", hash_original_method = "BD13D47BACD5F22B3F18803E2B331415", hash_generated_method = "5BD547052F6BE282E7B4F0BFF461A99A")
     private void computeBitmapSize() {
         mBitmapWidth = mBitmap.getScaledWidth(mTargetDensity);
@@ -227,7 +228,7 @@ Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1774956550 =         mBitmap;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.415 -0400", hash_original_method = "5A8B316E5E7A06983942607FAB994128", hash_generated_method = "FAC645F6B1147F59BBC47A9751C86933")
     private void setBitmap(Bitmap bitmap) {
         if(bitmap != mBitmap)        

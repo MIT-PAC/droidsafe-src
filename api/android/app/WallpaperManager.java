@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,10 +30,10 @@ import android.os.ServiceManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ViewRootImpl;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WallpaperManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.435 -0400", hash_original_field = "84013B9B56B226FA2280C6FF3BE1B5D7", hash_generated_field = "79E763BC7220887CD284E78890CFBD39")
@@ -71,6 +72,7 @@ public class WallpaperManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.438 -0400", hash_original_method = "6F9497943DE7A2ADCF716329D67D9BA7", hash_generated_method = "C1980254BC9416C1574BFBB2E63CDC67")
     public IWallpaperManager getIWallpaperManager() {
 IWallpaperManager varBC9BA9E0BC90EB794A65A5242E56B9CA_1871073191 =         sGlobals.mService;
@@ -173,6 +175,7 @@ Drawable var540C13E9E156B687226421B24F2DF178_96356134 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.442 -0400", hash_original_method = "214C7E80807DBED0084465B1D80DE965", hash_generated_method = "986973D0A67ECED90AD9B6DAD0D8517C")
     public Bitmap getBitmap() {
 Bitmap varCA837979D68D3CF2EF7A932B9188079C_1940508861 =         sGlobals.peekWallpaperBitmap(mContext, true);
@@ -357,6 +360,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.451 -0400", hash_original_method = "4C0B3C480EF9954FF86E8D84EAD55CC1", hash_generated_method = "1CFC61DCCDA520DDD9ABBB665445DDB7")
     private void setWallpaper(InputStream data, FileOutputStream fos) throws IOException {
         addTaint(fos.getTaint());
@@ -620,6 +624,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
 
         private Paint mPaint;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.466 -0400", hash_original_method = "A000E3823EF3583E37A464733E9034D5", hash_generated_method = "38655F32CD9DFD57679F12FD7FFD5218")
         private  FastBitmapDrawable(Bitmap bitmap) {
             mBitmap = bitmap;
@@ -918,6 +923,7 @@ Bitmap varC038012FF42C722A2F248588A92BE2E9_952259215 =                 mWallpape
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.487 -0400", hash_original_method = "16667119AC99E737F53C6C4F154ADE70", hash_generated_method = "8905A3A754B2145FB1221F30FEC48A5D")
         private Bitmap getCurrentWallpaperLocked() {
             try 
@@ -963,6 +969,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1740261013 =             null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.489 -0400", hash_original_method = "7D56EB02955E82C8DDBD02F9FFA3CE84", hash_generated_method = "8FAEDB966CC4186F3BA9A3F469430357")
         private Bitmap getDefaultWallpaperLocked(Context context) {
             addTaint(context.getTaint());

@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -12,11 +13,12 @@ import android.content.pm.XmlSerializerAndParser;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.931 -0400", hash_original_method = "8CDDE404CCAAE32CB4E80B968E9086E6", hash_generated_method = "98D8627A1AB8DE395266F7B5DF74FF5B")
       SyncAdaptersCache(Context context) {
         super(context, SERVICE_INTERFACE, SERVICE_META_DATA, ATTRIBUTES_NAME, sSerializer);
@@ -25,6 +27,7 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.933 -0400", hash_original_method = "F9B230DBB35FEE10F3AAB555789F4A09", hash_generated_method = "7EB378D726FE23A27493A75BBC9FFF86")
     public SyncAdapterType parseServiceAttributes(Resources res,
             String packageName, AttributeSet attrs) {
@@ -75,6 +78,7 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_863138875 =             new 
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.934 -0400", hash_original_method = "15333EFEF823B7914676A1825E4A4C8F", hash_generated_method = "CABC9AD7D46C52B2295FAC982AD56AED")
         public void writeAsXml(SyncAdapterType item, XmlSerializer out) throws IOException {
             addTaint(out.getTaint());
@@ -87,6 +91,7 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_863138875 =             new 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.934 -0400", hash_original_method = "E847E68056A13960846185658512993F", hash_generated_method = "39DF9587B4583BB26F045993CF3897DD")
         public SyncAdapterType createFromXml(XmlPullParser parser) throws IOException, XmlPullParserException {
             addTaint(parser.getTaint());

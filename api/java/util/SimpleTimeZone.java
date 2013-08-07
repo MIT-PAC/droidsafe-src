@@ -1,15 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SimpleTimeZone extends TimeZone {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.568 -0400", hash_original_field = "9EAE9BC39BBA20610F9CA26BA8609746", hash_generated_field = "02FD65C4AE6246DF84FF429CBB8EEA00")
@@ -526,7 +527,7 @@ switch(endMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.581 -0400", hash_original_method = "8AD8F18B8E2CE991A6AB313B3340B306", hash_generated_method = "0DC18C86ADA8401F42D39485151EDEC9")
     private boolean isLeapYear(int year) {
         addTaint(year);
@@ -547,7 +548,7 @@ switch(endMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.581 -0400", hash_original_method = "EABB822EA3A4CED689A420DE5F07AD18", hash_generated_method = "45EDF9681A405F6B5A3FB1D92C4456A6")
     private int mod7(int num1) {
         addTaint(num1);
@@ -583,7 +584,7 @@ switch(endMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.583 -0400", hash_original_method = "29EACAF13C91B179EA825409505E4565", hash_generated_method = "D075511C6DC210F2D427C415A36D6EDE")
     private void checkRange(int month, int dayOfWeek, int time) {
         addTaint(time);
@@ -620,7 +621,7 @@ switch(endMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.583 -0400", hash_original_method = "F04B5CC4561F29CBDFD2A63D85494102", hash_generated_method = "A14BBBC71A64DBFA0BBCE71B6FED1793")
     private void checkDay(int month, int day) {
         addTaint(day);
@@ -638,7 +639,7 @@ switch(endMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.584 -0400", hash_original_method = "E98C141304510A5F08CF5DF5CC63E118", hash_generated_method = "B2628C2573A762026CA37DEEB58CC87B")
     private void setEndMode() {
         if(endDayOfWeek == 0)        
@@ -752,7 +753,7 @@ switch(endMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.589 -0400", hash_original_method = "4370DAC820CAB38F82466934EE4F5C8D", hash_generated_method = "68B3FB0D50C49B0F6929A3439A3F343E")
     private void setStartMode() {
         if(startDayOfWeek == 0)        
@@ -914,7 +915,7 @@ String var20F954FD534D7F6240714D87A28A185A_980829911 =         getClass().getNam
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.592 -0400", hash_original_method = "F4691E6CC75F84FE0527C352A6F6F1B9", hash_generated_method = "3AF6E77932D09CDDA4B26B268AA87FAA")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -977,7 +978,7 @@ String var20F954FD534D7F6240714D87A28A185A_980829911 =         getClass().getNam
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.593 -0400", hash_original_method = "19765306B3DA0529AD0AFD53EDC0B4B8", hash_generated_method = "A3CA1DC8A42EACF155A580603E8449CF")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

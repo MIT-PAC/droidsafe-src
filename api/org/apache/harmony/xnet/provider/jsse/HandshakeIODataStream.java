@@ -1,16 +1,17 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.util.Arrays;
 
 import javax.net.ssl.SSLHandshakeException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HandshakeIODataStream extends SSLInputStream implements org.apache.harmony.xnet.provider.jsse.Appendable, DataStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.583 -0400", hash_original_field = "C912DD9B833D125CB4248BE9D582C46D", hash_generated_field = "6ABB97B7E5704DAE089E4AEB36CEB9EE")
@@ -193,6 +194,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.589 -0400", hash_original_method = "2AF2E557DF862B37CD8412561C90BA0E", hash_generated_method = "60D02C2432505DDA3CAC748FCDCD4B8C")
     private void append(byte[] src, int from, int length) {
         addTaint(from);
@@ -243,6 +245,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.590 -0400", hash_original_method = "7D810597598BCFC529CACE9B428759B7", hash_generated_method = "F10C7007A5E34FDD773FDB6E4B15CED8")
     private void enlargeBuffer(int size) {
         buff_size = (size < inc_buff_size)
@@ -279,6 +282,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.593 -0400", hash_original_method = "5D32524C92EB4CDA6DDBF787AA4026BF", hash_generated_method = "E8E46D6030E7897E18219248C0BE459C")
     private void check(int length) {
         addTaint(length);

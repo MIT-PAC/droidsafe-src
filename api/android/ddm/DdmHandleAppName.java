@@ -1,6 +1,7 @@
 package android.ddm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
 import org.apache.harmony.dalvik.ddmc.Chunk;
@@ -8,13 +9,14 @@ import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
 
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DdmHandleAppName extends ChunkHandler {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.119 -0400", hash_original_method = "D8F21F6A35B29C82CC84858F5D50C10E", hash_generated_method = "4AA0C4196E29438E7A86C54BEE924FD0")
     private  DdmHandleAppName() {
         // ---------- Original Method ----------
@@ -67,7 +69,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_263146205 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void sendAPNM(String appName) {
         if (false)
             Log.v("ddm", "Sending app name");

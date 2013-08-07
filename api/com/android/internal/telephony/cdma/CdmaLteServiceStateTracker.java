@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.AsyncResult;
 import android.os.Message;
 import android.telephony.ServiceState;
@@ -15,10 +16,10 @@ import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.gsm.GsmDataConnectionTracker;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.738 -0400", hash_original_field = "B5F20DF0028332D17F33E3BF40040A23", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")
@@ -492,6 +493,7 @@ switch(cm.getRadioState()){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.754 -0400", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "0FB2904CFA2FEECE62FF41B0044DEB10")
     private boolean isInHomeSidNid(int sid, int nid) {
         addTaint(nid);

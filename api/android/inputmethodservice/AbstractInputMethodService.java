@@ -1,6 +1,7 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
@@ -11,10 +12,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodSession;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbstractInputMethodService extends Service implements KeyEvent.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.078 -0400", hash_original_field = "DBEE96406A00F429F32FF5AA58FA6E69", hash_generated_field = "9355B5F89B0311B79EB4664ED09CF53D")

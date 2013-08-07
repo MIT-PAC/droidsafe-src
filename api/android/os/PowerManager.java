@@ -1,11 +1,12 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PowerManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.324 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "5A93C277105259AF4C607FFD616B68DC")
@@ -15,12 +16,14 @@ public class PowerManager {
 
     Handler mHandler;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.325 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
     private  PowerManager() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.325 -0400", hash_original_method = "060274E80C670013EA8E2104C630EB40", hash_generated_method = "987BBA9C2442A389A6642FEC3C9D08F9")
     public  PowerManager(IPowerManager service, Handler handler) {
         mService = service;
@@ -89,6 +92,7 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_340718386 =         new WakeLock(fl
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.328 -0400", hash_original_method = "1657059AF219261DAAA3A6D217AB2CFE", hash_generated_method = "BD838FEB5C0F7DF0D6140291474EDA76")
     public void setBacklightBrightness(int brightness) {
         addTaint(brightness);
@@ -107,6 +111,7 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_340718386 =         new WakeLock(fl
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.329 -0400", hash_original_method = "3FEFDF5F90A1934664CD9ABDDAD0F802", hash_generated_method = "ABAB99F9240A1A37CB9EA2FC284C976E")
     public int getSupportedWakeLockFlags() {
         try 
@@ -277,6 +282,7 @@ switch(flags & LOCK_MASK){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.333 -0400", hash_original_method = "E457E28DCC06A4C1478E4841AEE77235", hash_generated_method = "B78D792E53F771C0F817469AB3AD3914")
         private void acquireLocked() {
             if(!mRefCounted || mCount++ == 0)            
@@ -311,6 +317,7 @@ switch(flags & LOCK_MASK){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.337 -0400", hash_original_method = "4CBF875B7FFD1CFD45FAA62AD6F1991F", hash_generated_method = "E3F9EB7B0DF7031DD3ED906E69D151F1")
         public void release(int flags) {
             addTaint(flags);

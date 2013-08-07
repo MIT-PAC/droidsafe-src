@@ -1,8 +1,9 @@
 package android.nfc;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public final class NfcEvent {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.260 -0400", hash_original_field = "4A8BADE580C221E695275E8488E6ECA3", hash_generated_field = "3C5882DF1C6C01F0D0017D9C73957B88")

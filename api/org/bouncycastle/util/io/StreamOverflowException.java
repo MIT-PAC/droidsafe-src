@@ -1,9 +1,10 @@
 package org.bouncycastle.util.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class StreamOverflowException extends IOException {
     

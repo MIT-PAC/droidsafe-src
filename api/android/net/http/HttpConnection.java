@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -9,12 +10,13 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 
 import android.content.Context;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 class HttpConnection extends Connection {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.176 -0400", hash_original_method = "8B0FF76444F6FD4A7628D73D943DE9DB", hash_generated_method = "272759CD16D2D43385322A80BF1D6C19")
       HttpConnection(Context context, HttpHost host,
                    RequestFeeder requestFeeder) {
@@ -26,6 +28,7 @@ class HttpConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.176 -0400", hash_original_method = "EFF3BAA5D0EF7633E7DF2DAA76502E87", hash_generated_method = "D68C580BC97181C456D932C616C1D051")
     @Override
      AndroidHttpClientConnection openConnection(Request req) throws IOException {
@@ -54,6 +57,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1893354635 =    
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.177 -0400", hash_original_method = "28229552049A2A2DB18166A64CE88A0A", hash_generated_method = "4B62D9E387E3411FA8910B36C93EF9E2")
      void closeConnection() {
         try 
@@ -85,7 +89,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1893354635 =    
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.177 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
      void restartConnection(boolean abort) {
         addTaint(abort);
@@ -93,7 +97,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1893354635 =    
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.177 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "3EE88FCC6CA54ABCE2924DC1C5217E0C")
      String getScheme() {
 String var44B57466CD1C2BC7FBE96906897504B6_94487541 =         "http";

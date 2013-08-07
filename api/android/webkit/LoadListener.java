@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,10 +30,10 @@ import android.webkit.CacheManager.CacheResult;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class LoadListener extends Handler implements EventHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.475 -0400", hash_original_field = "1F82295670D8C49C778553291F467693", hash_generated_field = "C2ADEC4B7675869DD34EF84CA5DC8ADA")
@@ -214,7 +215,7 @@ class LoadListener extends Handler implements EventHandler {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.476 -0400", hash_original_method = "E8BFBC0989CB1303890EF6ABB82F2DCB", hash_generated_method = "1D30724615CFE0039A108856FCC50022")
     private void clearNativeLoader() {
         sNativeLoaderCount -= 1;
@@ -341,7 +342,7 @@ for(int i = 0;i < cookies.size();++i)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.478 -0400", hash_original_method = "311EC7904C0F96CC61CCD61A611678E4", hash_generated_method = "3093922A30DF6CD932A7DCA690CEA10B")
     private void handleHeaders(Headers headers) {
         if(mCancelled)        
@@ -526,7 +527,7 @@ for(int i = 0;i < cookies.size();++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.479 -0400", hash_original_method = "80BDEC9DD0BC19198E8FAA3CF681EF16", hash_generated_method = "39D031018CCD7899ED29AE530F4F9284")
     private void handleStatus(int major, int minor, int code, String reason) {
         addTaint(minor);
@@ -559,7 +560,7 @@ for(int i = 0;i < cookies.size();++i)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.479 -0400", hash_original_method = "0FA338360DC1BF86862C5325E0DDE15B", hash_generated_method = "A1AB9795B9B45F432C01417840B80351")
     private void handleCertificate(SslCertificate certificate) {
         addTaint(certificate.getTaint());
@@ -591,6 +592,7 @@ for(int i = 0;i < cookies.size();++i)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.479 -0400", hash_original_method = "FF98E8647B63FEBC8B925077CB2E6971", hash_generated_method = "BFAA29B7AE658444FE661E602E4F9A12")
     private void handleError(int id, String description) {
         mErrorID = id;
@@ -653,7 +655,7 @@ for(int i = 0;i < cookies.size();++i)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.480 -0400", hash_original_method = "CDF3DE93E351C5A11A75DE0E367F817E", hash_generated_method = "23F01B99D514F0583EB9ED5BC36911BD")
     private void handleEndData() {
         if(mCancelled)        
@@ -844,6 +846,7 @@ switch(mStatusCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.482 -0400", hash_original_method = "8A34681F6BA1F3EEE132C403DE00B59E", hash_generated_method = "8F093FE924D1B726DB567D3881E8DDF2")
     private void handleSslError(SslError error) {
         if(!mCancelled)        
@@ -1204,7 +1207,7 @@ String varC435B1B6BE37769F851B818623C35399_21893807 =         mTransferEncoding;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.485 -0400", hash_original_method = "78D8A8AE22C18C73CE2907680A09633B", hash_generated_method = "3DCB9B423105DB3EEF38DE83F4513AEE")
     private void commitHeadersCheckRedirect() {
         if(mCancelled)        
@@ -1225,7 +1228,7 @@ String varC435B1B6BE37769F851B818623C35399_21893807 =         mTransferEncoding;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.485 -0400", hash_original_method = "8E8E66962C082FBF4981B6E1121BFDBD", hash_generated_method = "C61667B6FC1FA27B1FE6176AB1C3C983")
     private void commitHeaders() {
         if(mIsMainPageLoader && CertTool.getCertType(mMimeType) != null)        
@@ -1248,7 +1251,7 @@ String varC435B1B6BE37769F851B818623C35399_21893807 =         mTransferEncoding;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.488 -0400", hash_original_method = "E28F47114E6BDDF9FD429A699C881F5C", hash_generated_method = "C28ED8FE5AE4C35EBB24DC321B47FC1C")
     private void setNativeResponse() {
         int nativeResponse = createNativeResponse();
@@ -1261,6 +1264,7 @@ String varC435B1B6BE37769F851B818623C35399_21893807 =         mTransferEncoding;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.488 -0400", hash_original_method = "90DA669053E3EAB1E41208AD478B9563", hash_generated_method = "16CAF5DC7E81AA0CA9CBDEB1CC4C143D")
     private int createNativeResponse() {
         int statusCode = (mStatusCode == HTTP_NOT_MODIFIED &&
@@ -1301,7 +1305,7 @@ String varC435B1B6BE37769F851B818623C35399_21893807 =         mTransferEncoding;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.488 -0400", hash_original_method = "6C3510E057E7F86D9E5BFE641B751A6D", hash_generated_method = "8D3C7523265FABC000FBB7CB8CE88B5F")
     private void commitLoad() {
         if(mCancelled)        
@@ -1411,7 +1415,7 @@ String varC435B1B6BE37769F851B818623C35399_21893807 =         mTransferEncoding;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.491 -0400", hash_original_method = "209FBE9F3E1C7384DEBC7D7B19E27A8A", hash_generated_method = "184A6E36506D96229650E20EB782DB74")
     private int getErrorID() {
         int varD8DD47A761DBCF70988BC325F1308BC8_2145228197 = (mErrorID);
@@ -1422,7 +1426,7 @@ String varC435B1B6BE37769F851B818623C35399_21893807 =         mTransferEncoding;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.491 -0400", hash_original_method = "D67F514368DCF056FAAB1F778CFC87BD", hash_generated_method = "9F21E237D68FFC07BC0835D5B30325A6")
     private String getErrorDescription() {
 String varC737508C9F8C89DB7BD4BC133B497C01_326508499 =         mErrorDescription;
@@ -1506,7 +1510,7 @@ String varC737508C9F8C89DB7BD4BC133B497C01_326508499 =         mErrorDescription
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.508 -0400", hash_original_method = "A28FBC4A594C62B1FB221C43DC1C2583", hash_generated_method = "B8B505D541F89B5EC49AD7F8FCB79BA1")
     private void doRedirect() {
         if(mCancelled)        
@@ -1689,6 +1693,7 @@ String varC737508C9F8C89DB7BD4BC133B497C01_326508499 =         mErrorDescription
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.514 -0400", hash_original_method = "AE0FC74CC8A0BC926B5DCE69D72EC94D", hash_generated_method = "25802EC394AD6458F1E12138B6EED77E")
     private HttpAuthHeader parseAuthHeader(String header) {
         addTaint(header.getTaint());
@@ -1775,7 +1780,7 @@ HttpAuthHeader var540C13E9E156B687226421B24F2DF178_11755733 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.514 -0400", hash_original_method = "977413F84EEA9D9E0B7BBB5D674FC9E7", hash_generated_method = "D9C501D50799F4A927177E6B2EBD1B42")
     private boolean ignoreCallbacks() {
         boolean var99935062AE79A9C6C1FC7DE99B97AB18_1913363639 = ((mCancelled || mAuthHeader != null ||
@@ -1827,7 +1832,7 @@ HttpAuthHeader var540C13E9E156B687226421B24F2DF178_11755733 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.516 -0400", hash_original_method = "EF260C0902D2E84B94B185FE48F20D51", hash_generated_method = "28711DD643CF34608F49D6D8562CDC72")
     private void guessMimeType() {
         if(URLUtil.isDataUrl(mUrl) && mMimeType.length() != 0)        
@@ -1860,7 +1865,7 @@ HttpAuthHeader var540C13E9E156B687226421B24F2DF178_11755733 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.516 -0400", hash_original_method = "2EA3CE69FA8B837FDAA4CA6DE51D2499", hash_generated_method = "B33E62641DBBCB9D882938679B16B709")
     private String guessMimeTypeFromExtension(String url) {
         addTaint(url.getTaint());
@@ -1880,6 +1885,7 @@ String var03409C10DCA5CE89E0AD48CDF1A78421_1243645540 =         MimeTypeMap.getS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.516 -0400", hash_original_method = "4C14C55105A23524352CD131708D205A", hash_generated_method = "236EF38E8295B93154FA549C85020C0C")
     private void sendMessageInternal(Message msg) {
         addTaint(msg.getTaint());

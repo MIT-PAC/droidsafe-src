@@ -1,6 +1,7 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -33,10 +34,10 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ViewPager extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.762 -0400", hash_original_field = "41B6E682666A6CCC9F7FD53F365400D5", hash_generated_field = "4DED95E1F9669C7056C2DE4B99A4DA42")
@@ -216,6 +217,7 @@ public class ViewPager extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.764 -0400", hash_original_method = "80EB60C09FE5B35C976F87EEFD89447E", hash_generated_method = "DC48196C2F46CD8DCCDB6109B8BFD565")
     private void setScrollState(int newState) {
         if(mScrollState == newState)        
@@ -287,6 +289,7 @@ for(int i = 0;i < mItems.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.764 -0400", hash_original_method = "18421C7E85141EF2E7552011BA442EAC", hash_generated_method = "0C8992E353EFECAD2887239ABEA18A97")
     private void removeNonDecorViews() {
 for(int i = 0;i < getChildCount();i++)
@@ -1114,6 +1117,7 @@ for(int i = 0;i < size;++i)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.773 -0400", hash_original_method = "BF2EFCA6E1F80930784A0AE156969F1F", hash_generated_method = "A81D3F537E19C722A760A45997DECA44")
     private void recomputeScrollPosition(int width, int oldWidth, int margin, int oldMargin) {
         addTaint(oldMargin);
@@ -1284,6 +1288,7 @@ switch(hgrav){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.785 -0400", hash_original_method = "07505BF167DC29F6F179D71B0816840E", hash_generated_method = "43F6E9261B674A1B740A3B7F99473FB9")
     private void pageScrolled(int xpos) {
         addTaint(xpos);
@@ -1373,6 +1378,7 @@ switch(hgrav){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.793 -0400", hash_original_method = "B1229287A4B4E18886EBB2FC1C1A6ECA", hash_generated_method = "853BCDA6A2E3A08520FDEE0235508018")
     private void completeScroll() {
         boolean needPopulate = mScrolling;
@@ -1692,6 +1698,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.804 -0400", hash_original_method = "A599F43FA0EC47D3B5F0044593C86DDF", hash_generated_method = "1A7E9BB883F9F8D3F899A972DD006B46")
     private int determineTargetPage(int currentPage, float pageOffset, int velocity, int deltaX) {
         addTaint(deltaX);
@@ -1927,6 +1934,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.811 -0400", hash_original_method = "0206AC68AD27D7D682B52A43262096FD", hash_generated_method = "4927DD1F7D8C90960B9057A38242035B")
     private void onSecondaryPointerUp(MotionEvent ev) {
         final int pointerIndex = MotionEventCompat.getActionIndex(ev);
@@ -1955,6 +1963,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.811 -0400", hash_original_method = "6F589820542A60985222493865875D9E", hash_generated_method = "B3FFAD48F39B9DC40D2A2610E26DC042")
     private void endDrag() {
         mIsBeingDragged = false;
@@ -1974,7 +1983,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.811 -0400", hash_original_method = "2B073E6A9B3015E7E6D245BDA0374ADD", hash_generated_method = "595C47E523309F0CF1633FFA5A230E6D")
     private void setScrollingCacheEnabled(boolean enabled) {
         if(mScrollingCacheEnabled != enabled)        

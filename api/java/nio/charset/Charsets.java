@@ -1,14 +1,16 @@
 package java.nio.charset;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Charsets {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.602 -0400", hash_original_method = "9D5DC2CDE25FE055FB5E2F5C6BA10509", hash_generated_method = "E20E44130780AFDA6559CADE58899D8C")
     private  Charsets() {
         // ---------- Original Method ----------
@@ -36,7 +38,7 @@ public class Charsets {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static byte[] toBigEndianUtf16Bytes(char[] chars, int offset, int length) {
         byte[] result = new byte[length * 2];
         int end = offset + length;

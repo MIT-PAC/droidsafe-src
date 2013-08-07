@@ -1,6 +1,7 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.ParcelFileDescriptor;
 
 public interface BackupHelper {

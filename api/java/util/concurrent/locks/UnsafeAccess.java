@@ -1,12 +1,13 @@
 package java.util.concurrent.locks;
 
 // Droidsafe Imports
-import sun.misc.Unsafe;
 import droidsafe.annotations.*;
+import sun.misc.Unsafe;
+
 
 final class UnsafeAccess {
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.612 -0400", hash_original_method = "0EFE42460BC7E37E4F419C0570A5DDF5", hash_generated_method = "393CA590A86CE109ADFD700B705308B2")
     private  UnsafeAccess() {
         // ---------- Original Method ----------

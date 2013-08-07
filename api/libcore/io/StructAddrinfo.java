@@ -1,10 +1,11 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetAddress;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class StructAddrinfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.792 -0400", hash_original_field = "AAEBD9FA2D5130AF3BFFB9EF9F83A1E1", hash_generated_field = "F6F5403BFC3EAEF861F1D3595C2A4026")

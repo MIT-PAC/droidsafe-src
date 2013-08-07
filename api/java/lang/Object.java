@@ -1,9 +1,10 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 import droidsafe.helpers.DSTaintObject;
 
 public class Object {

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.SIPHeaderNames;
@@ -9,9 +10,9 @@ import gov.nist.javax.sip.header.UnsupportedList;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class UnsupportedParser extends HeaderParser {
     

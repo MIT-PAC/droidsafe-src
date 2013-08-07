@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -46,10 +47,10 @@ import android.os.SystemClock;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ViewDebug {
     
@@ -60,19 +61,19 @@ public class ViewDebug {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static long getViewInstanceCount() {
         return Debug.countInstancesOfClass(View.class);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static long getViewRootImplCount() {
         return Debug.countInstancesOfClass(ViewRootImpl.class);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void startLooperProfiling(String path, FileDescriptor fileDescriptor) {
         if (sLooperProfilerStorage.get() == null) {
             LooperProfiler profiler = new LooperProfiler(path, fileDescriptor);
@@ -82,7 +83,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void stopLooperProfiling() {
         LooperProfiler profiler = sLooperProfilerStorage.get();
         if (profiler != null) {
@@ -283,7 +284,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static View findView(View root, String parameter) {
         if (parameter.indexOf('@') != -1) {
             final String[] ids = parameter.split("@");
@@ -301,7 +302,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void invalidate(View root, String parameter) {
         final View view = findView(root, parameter);
         if (view != null) {
@@ -310,7 +311,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void requestLayout(View root, String parameter) {
         final View view = findView(root, parameter);
         if (view != null) {
@@ -323,7 +324,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void profile(View root, OutputStream clientStream, String parameter) throws IOException {
         final View view = findView(root, parameter);
         BufferedWriter out = null;
@@ -482,6 +483,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void captureViewLayer(View view, DataOutputStream clientStream, boolean visible) throws IOException {
         final boolean localVisible = view.getVisibility() == View.VISIBLE && visible;
         if ((view.mPrivateFlags & View.SKIP_DRAW) != View.SKIP_DRAW) {
@@ -518,6 +520,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void outputDisplayList(View root, String parameter) throws IOException {
         final View view = findView(root, parameter);
         view.getViewRootImpl().outputDisplayList(view);
@@ -573,6 +576,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void dump(View root, OutputStream clientStream) throws IOException {
         BufferedWriter out = null;
         try {
@@ -594,6 +598,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static View findView(ViewGroup group, String className, int hashCode) {
         if (isRequestedView(group, className, hashCode)) {
             return group;
@@ -614,11 +619,13 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isRequestedView(View view, String className, int hashCode) {
         return view.getClass().getName().equals(className) && view.hashCode() == hashCode;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void dumpViewHierarchyWithProperties(Context context, ViewGroup group,
             BufferedWriter out, int level) {
         if (!dumpViewWithProperties(context, group, out, level)) {
@@ -636,6 +643,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean dumpViewWithProperties(Context context, View view,
             BufferedWriter out, int level) {
         try {
@@ -656,6 +664,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Field[] getExportedPropertyFields(Class<?> klass) {
         if (sFieldsForClasses == null) {
             sFieldsForClasses = new HashMap<Class<?>, Field[]>();
@@ -685,6 +694,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Method[] getExportedPropertyMethods(Class<?> klass) {
         if (sMethodsForClasses == null) {
             sMethodsForClasses = new HashMap<Class<?>, Method[]>(100);
@@ -716,12 +726,14 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void dumpViewProperties(Context context, Object view,
             BufferedWriter out) throws IOException {
         dumpViewProperties(context, view, out, "");
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void dumpViewProperties(Context context, Object view,
             BufferedWriter out, String prefix) throws IOException {
         Class<?> klass = view.getClass();
@@ -733,6 +745,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void exportMethods(Context context, Object view, BufferedWriter out,
             Class<?> klass, String prefix) throws IOException {
         final Method[] methods = getExportedPropertyMethods(klass);
@@ -795,6 +808,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void exportFields(Context context, Object view, BufferedWriter out,
             Class<?> klass, String prefix) throws IOException {
         final Field[] fields = getExportedPropertyFields(klass);
@@ -858,6 +872,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void writeEntry(BufferedWriter out, String prefix, String name,
             String suffix, Object value) throws IOException {
         out.write(prefix);
@@ -886,6 +901,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void exportUnrolledArray(Context context, BufferedWriter out,
             ExportedProperty property, int[] array, String prefix, String suffix) throws IOException {
         final IntToString[] indexMapping = property.indexMapping();
@@ -946,6 +962,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void writeValue(BufferedWriter out, Object value) throws IOException {
         if (value != null) {
             String output = value.toString().replace("\n", "\\n");
@@ -958,6 +975,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void dumpViewHierarchy(ViewGroup group, BufferedWriter out, int level) {
         if (!dumpView(group, out, level)) {
             return;
@@ -974,6 +992,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean dumpView(Object view, BufferedWriter out, int level) {
         try {
             for (int i = 0; i < level; i++) {
@@ -991,6 +1010,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Field[] capturedViewGetPropertyFields(Class<?> klass) {
         if (mCapturedViewFieldsForClasses == null) {
             mCapturedViewFieldsForClasses = new HashMap<Class<?>, Field[]>();
@@ -1016,6 +1036,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Method[] capturedViewGetPropertyMethods(Class<?> klass) {
         if (mCapturedViewMethodsForClasses == null) {
             mCapturedViewMethodsForClasses = new HashMap<Class<?>, Method[]>();
@@ -1043,6 +1064,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String capturedViewExportMethods(Object obj, Class<?> klass,
             String prefix) {
         if (obj == null) {
@@ -1079,6 +1101,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String capturedViewExportFields(Object obj, Class<?> klass, String prefix) {
         if (obj == null) {
             return "null";
@@ -1152,6 +1175,7 @@ public class ViewDebug {
 
         public int indexOnScreen;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.273 -0400", hash_original_method = "ED320AF13EB079D56E1BB2CD418F0F12", hash_generated_method = "ED320AF13EB079D56E1BB2CD418F0F12")
         public RecyclerTrace ()
         {
@@ -1252,7 +1276,7 @@ public class ViewDebug {
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.279 -0400", hash_original_method = "A4E97683E16A36EF6068E097213C1038", hash_generated_method = "0FB72CCEA50EA0A93F924F35E12C4FD1")
         private int getTraceId(Message message) {
             addTaint(message.getTaint());
@@ -1299,7 +1323,7 @@ public class ViewDebug {
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.281 -0400", hash_original_method = "B1053AAB109E078FB60D54B6D9E37ED4", hash_generated_method = "AE38BB95A86B2CDE9EBD1002E7DAC717")
         private void saveTraces() {
             FileOutputStream fos = new FileOutputStream(mFileDescriptor.getFileDescriptor());
@@ -1336,7 +1360,7 @@ public class ViewDebug {
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void writeTraces(FileOutputStream out, long offset, long wallStart,
                 long threadStart, ArrayList<Entry> entries) throws IOException {
             FileChannel channel = out.getChannel();
@@ -1394,7 +1418,7 @@ public class ViewDebug {
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void addMethods(HashMap<String, Integer> names, DataOutputStream out) throws IOException {
             for (Map.Entry<String, Integer> name : names.entrySet()) {
                 out.writeBytes(String.format("0x%08x\tEventQueue\t%s\t()V\tLooper\t-2\n",
@@ -1403,13 +1427,13 @@ public class ViewDebug {
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void addThreadId(int id, String name, DataOutputStream out) throws IOException {
             out.writeBytes(Integer.toString(id) + '\t' + name + '\n');
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void addValue(String name, String value, DataOutputStream out) throws IOException {
             if (name != null) {
                 out.writeBytes(name + "=");
@@ -1418,7 +1442,7 @@ public class ViewDebug {
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void startSection(String name, DataOutputStream out) throws IOException {
             out.writeBytes("*" + name + '\n');
         }

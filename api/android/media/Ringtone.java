@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
@@ -12,10 +13,10 @@ import android.net.Uri;
 import android.provider.DrmStore;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Ringtone {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.070 -0400", hash_original_field = "1485DC20EE331C508F2D09C5AE35FE29", hash_generated_field = "29CF01719F6820D08330DF490C891644")
@@ -106,7 +107,7 @@ String varD044B7BC8179EF64E9AD64248361B60E_369898316 =         mTitle = getTitle
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
         Cursor cursor = null;
         ContentResolver res = context.getContentResolver();
@@ -152,6 +153,7 @@ String varD044B7BC8179EF64E9AD64248361B60E_369898316 =         mTitle = getTitle
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.075 -0400", hash_original_method = "3D9FD67EE5212878A40EB00FDD255FB4", hash_generated_method = "6BE232C3D782AF514AEBF6678D5C494B")
     private void openMediaPlayer() throws IOException {
         if(mAudio != null)        

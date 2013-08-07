@@ -1,16 +1,17 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.util.FloatMath;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class OverScroller {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.739 -0400", hash_original_field = "C5AB706852158521E9D44BF62A49B1C9", hash_generated_field = "B9E13EBC2196F570555262A42E5818EF")
@@ -48,7 +49,7 @@ public class OverScroller {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.740 -0400", hash_original_method = "8F06EBB42FF76B1717D428E4F6418D97", hash_generated_method = "6CC70F0454D9E7BF867254450C7A84AC")
     public  OverScroller(Context context, Interpolator interpolator, boolean flywheel) {
         addTaint(context.getTaint());
@@ -206,7 +207,7 @@ public class OverScroller {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "9AE57030D7C8A0E7D6E4B9C3569B7863", hash_generated_method = "E580DCE509848247D532EBD1D32BDA7E")
     @Deprecated
     public final int getDuration() {
@@ -218,7 +219,7 @@ public class OverScroller {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "C8E559EF6FD22D868574182D9D2BCAF9", hash_generated_method = "035670F369EFE5298CE10FF9C80A594D")
     @Deprecated
     public void extendDuration(int extend) {
@@ -231,7 +232,7 @@ public class OverScroller {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "21D9AD21BF731806972ABE02338AD0C0", hash_generated_method = "B77FB4DA3B1FDFF3BEFF281ED53615DB")
     @Deprecated
     public void setFinalX(int newX) {
@@ -242,7 +243,7 @@ public class OverScroller {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.745 -0400", hash_original_method = "300115417BC2D028444CA0676224C129", hash_generated_method = "4BD9E36BCFB7A0D51CDE9E0CCF8A3D9C")
     @Deprecated
     public void setFinalY(int newY) {
@@ -484,7 +485,7 @@ switch(mMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.750 -0400", hash_original_method = "6776820FB8E88CBACCBB30EFABCCA565", hash_generated_method = "979B1D0101BE5DCC3F88D7F6AF56F4EA")
     public int timePassed() {
         final long time = AnimationUtils.currentAnimationTimeMillis();
@@ -499,7 +500,7 @@ switch(mMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.750 -0400", hash_original_method = "EC43B1555D38CD3A665472CFA4E77643", hash_generated_method = "3CEB3F7741ED98EB50AF4E98CAEAA2C8")
     public boolean isScrollingInDirection(float xvel, float yvel) {
         addTaint(yvel);
@@ -599,13 +600,13 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         static private float getDeceleration(int velocity) {
             return velocity > 0 ? -GRAVITY : GRAVITY;
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.751 -0400", hash_original_method = "97FBA6B7752D67B719405DAE507B2D91", hash_generated_method = "6594E547C56E3A36410B7595C40B7C75")
         private void adjustDuration(int start, int oldFinal, int newFinal) {
             addTaint(newFinal);
@@ -735,7 +736,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.753 -0400", hash_original_method = "FE4DCB4600DDD23F75B042FA5167B4E7", hash_generated_method = "FB332897CE3805816FC5084D5602688B")
         private void startSpringback(int start, int end, int velocity) {
             addTaint(velocity);
@@ -799,7 +800,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.754 -0400", hash_original_method = "55451D958AF332430844B13377F10B18", hash_generated_method = "7FD7127F224D25752FE860F9B9C99EFC")
         private double getSplineDeceleration(int velocity) {
             addTaint(velocity);
@@ -811,7 +812,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.754 -0400", hash_original_method = "7888FBEE8D14061C2ED981410CC88AC0", hash_generated_method = "AA4D1D4323C2A75FA6CA0D9FA59FA704")
         private double getSplineFlingDistance(int velocity) {
             addTaint(velocity);
@@ -827,7 +828,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.755 -0400", hash_original_method = "1F09855DFC7D15DA5ECD081A4B3F581B", hash_generated_method = "200F81F3C1846149BD8995442F798A13")
         private int getSplineFlingDuration(int velocity) {
             addTaint(velocity);
@@ -843,7 +844,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.755 -0400", hash_original_method = "C51353CD784B93D7179DA830597304C4", hash_generated_method = "9EA133680B2BE4FC0D342AFF09BCCFC5")
         private void fitOnBounceCurve(int start, int end, int velocity) {
             addTaint(velocity);
@@ -868,7 +869,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.755 -0400", hash_original_method = "5D48F28010F8FCB9211B58C3C36EC8CC", hash_generated_method = "280DD2F3E3E96A08E6F9099B68AC4415")
         private void startBounceAfterEdge(int start, int end, int velocity) {
             mDeceleration = getDeceleration(velocity == 0 ? start - end : velocity);
@@ -881,7 +882,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.756 -0400", hash_original_method = "E644EF955DC6FD722F53E2DD199A395E", hash_generated_method = "3BD0B0E62F177AD5B32E70444624654D")
         private void startAfterEdge(int start, int min, int max, int velocity) {
             addTaint(velocity);
@@ -938,7 +939,7 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.756 -0400", hash_original_method = "4D9D443F2B4C6EC9AAAB1FF452014EB4", hash_generated_method = "8E44A0A909749DBAFFA723A78E5AB9A4")
         private void onEdgeReached() {
             float distance = mVelocity * mVelocity / (2.0f * Math.abs(mDeceleration));

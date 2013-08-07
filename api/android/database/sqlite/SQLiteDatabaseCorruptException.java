@@ -1,7 +1,8 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class SQLiteDatabaseCorruptException extends SQLiteException {
     

@@ -1,16 +1,17 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
 import com.android.internal.telephony.IPhoneStateListener;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PhoneStateListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.692 -0400", hash_original_field = "93DBE9FBF8EA760E573744A3CB51F49C", hash_generated_field = "240FC5CF3A1E5844CEA1A4686BC3A90E")
@@ -124,7 +125,7 @@ public class PhoneStateListener {
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.692 -0400", hash_original_method = "5CE4B3BDFCEEE2F8239B6E7FA479E13E", hash_generated_method = "6DBBD590ED3BF273738C91D64A6C9B53")
         public void onOtaspChanged(int otaspMode) {
             
@@ -281,7 +282,7 @@ public class PhoneStateListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_method = "AF1EBC6D8A2DA1E39265DEC2CD9D5FBB", hash_generated_method = "D71E5EE2F05952023B3DADF0BC31A241")
     public void onOtaspChanged(int otaspMode) {
         //DSFIXME:  CODE0009: Possible callback target function detected

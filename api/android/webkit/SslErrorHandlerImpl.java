@@ -1,15 +1,16 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.LinkedList;
 
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class SslErrorHandlerImpl extends SslErrorHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.080 -0400", hash_original_field = "0924E7DA0697C861A386D2C4A20421F8", hash_generated_field = "1DFA7AE1BD952C18E1D76D9BAFCEAA92")
@@ -39,6 +40,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.083 -0400", hash_original_method = "91EB591AB70C8A379D1426222FA143D7", hash_generated_method = "A88A0B916C7B5A9C81213D0D94E1F0CE")
     private  SslErrorHandlerImpl(SslErrorHandler origin, LoadListener listener) {
         mOriginHandler = origin;
@@ -214,6 +216,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.089 -0400", hash_original_method = "C17562BADC30EBD8B8536D75F1BFCDF6", hash_generated_method = "5D6816E268BD844A7A2C6201DBEF2B70")
     private synchronized boolean processNextLoader() {
         LoadListener loader = mLoaderQueue.peek();

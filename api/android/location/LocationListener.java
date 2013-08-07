@@ -1,6 +1,7 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 
 public interface LocationListener {

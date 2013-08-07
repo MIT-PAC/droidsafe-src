@@ -1,12 +1,13 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class HeapBufferIterator extends BufferIterator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.420 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
@@ -25,7 +26,7 @@ public final class HeapBufferIterator extends BufferIterator {
 
     private int position;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8", hash_generated_method = "823E99C85FB6B418E4A8B14A07E9B962")
       HeapBufferIterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
         this.buffer = buffer;
@@ -40,7 +41,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "E36D4B83C08A879BB369FD4BF3E743B5", hash_generated_method = "D66EB936D868E838CC6FBF758BD016A1")
     public void seek(int offset) {
         position = offset;
@@ -49,7 +50,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "5C6BD475B81B38C95ED571F8A0E18EDC", hash_generated_method = "940E96887BCB1FBE664555A63C820A3C")
     public void skip(int byteCount) {
         position += byteCount;
@@ -58,7 +59,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "3E61A2FCBE8F1A085EF50016EDA93C91", hash_generated_method = "F2A972725E0F950EABF7D46C2A9BF48F")
     public void readByteArray(byte[] dst, int dstOffset, int byteCount) {
         addTaint(dstOffset);
@@ -71,7 +72,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "7E225AB4906C9181CA855352CCAC2289", hash_generated_method = "0B554F35C2F9558D440F918A447E49CC")
     public byte readByte() {
         byte result = buffer[offset + position];
@@ -86,7 +87,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "DB59E455EA40BB4A6ED9DEE68F53B94D", hash_generated_method = "E0B737010494C202529575E36469A726")
     public int readInt() {
         int result = Memory.peekInt(buffer, offset + position, order);
@@ -101,7 +102,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "329E16A9527E1EB7B49C2B3423D775A3", hash_generated_method = "F9498F674AF7E8E07D616E60E23ACF01")
     public void readIntArray(int[] dst, int dstOffset, int intCount) {
         addTaint(intCount);
@@ -117,7 +118,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.422 -0400", hash_original_method = "DE8A7EDE581D91941B0B91B035994D93", hash_generated_method = "30A1901A590DB9B0ED38B365F12E9890")
     public short readShort() {
         short result = Memory.peekShort(buffer, offset + position, order);
@@ -132,7 +133,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
         return new HeapBufferIterator(buffer, offset, byteCount, order);
     }

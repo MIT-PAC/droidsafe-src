@@ -1,6 +1,7 @@
 package com.android.internal.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Message;
 
 public interface IState {

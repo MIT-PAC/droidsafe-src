@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.shapes.RectShape;
@@ -9,10 +10,10 @@ import android.util.AttributeSet;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RatingBar extends AbsSeekBar {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.241 -0400", hash_original_field = "363D0777077E57DB14FD78240A95F5D1", hash_generated_field = "41FB5B10B91C91607A37B16172D7BB7B")
@@ -216,6 +217,7 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_2096033726 =      
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.268 -0400", hash_original_method = "3A53F1CA5B2034CF32272EC34B36C37A", hash_generated_method = "9E1DE52A30890E64823862AA64C11438")
     private float getProgressPerStar() {
         if(mNumStars > 0)        
@@ -271,6 +273,7 @@ Shape varFD572D5AD6370B39B60D854340119E95_736262057 =         new RectShape();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.268 -0400", hash_original_method = "8E49EEB31BBD9AD69349C4C139B0ADB3", hash_generated_method = "2DABF9E1533100A98DE68A36C815A320")
     private void updateSecondaryProgress(int progress) {
         addTaint(progress);

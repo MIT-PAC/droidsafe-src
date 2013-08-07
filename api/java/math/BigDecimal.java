@@ -1,6 +1,7 @@
 package java.math;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -8,10 +9,10 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 import libcore.math.MathUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BigDecimal extends Number implements Comparable<BigDecimal>, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.576 -0400", hash_original_field = "0A495C22CEE2486109FF49D52FAB7401", hash_generated_field = "326D03DFD6F64D4B3F1173FBD427B520")
@@ -36,7 +37,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
 
     private transient int precision = 0;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.576 -0400", hash_original_method = "6BC27F867C09C0249873A4D338F8666D", hash_generated_method = "675ADE6C6F01FF4ED08427C7FC23A83B")
     private  BigDecimal(long smallValue, int scale) {
         this.smallValue = smallValue;
@@ -49,7 +50,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.576 -0400", hash_original_method = "9F6CD654516DCD03F33530EDCF81D84D", hash_generated_method = "3DC98F1132A232115D5983B57B665BF0")
     private  BigDecimal(int smallValue, int scale) {
         this.smallValue = smallValue;
@@ -506,7 +507,7 @@ BigDecimal varAA3EB47E36541685CC2623C1EC32ACA4_897208305 =             addAndMul
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static BigDecimal addAndMult10(BigDecimal thisValue,BigDecimal augend, int diffScale) {
         if(diffScale < MathUtils.LONG_POWERS_OF_TEN.length &&
                 Math.max(thisValue.bitLength,augend.bitLength+LONG_POWERS_OF_TEN_BIT_LENGTH[diffScale])+1<64) {
@@ -846,7 +847,7 @@ BigDecimal varF6C63A795D53A996135BB70BCA9E6E0B_1513396922 =         divideBigInt
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static BigDecimal divideBigIntegers(BigInteger scaledDividend, BigInteger scaledDivisor, int scale, RoundingMode roundingMode) {
         BigInteger[] quotAndRem = scaledDividend.divideAndRemainder(scaledDivisor);
         BigInteger quotient = quotAndRem[0];
@@ -878,7 +879,7 @@ BigDecimal varF6C63A795D53A996135BB70BCA9E6E0B_1513396922 =         divideBigInt
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static BigDecimal dividePrimitiveLongs(long scaledDividend, long scaledDivisor, int scale, RoundingMode roundingMode) {
         long quotient = scaledDividend / scaledDivisor;
         long remainder = scaledDividend % scaledDivisor;
@@ -1505,7 +1506,7 @@ BigDecimal var099658E03F9BF7D1563531EEEABC8E1F_710795689 =         round(mc);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.601 -0400", hash_original_method = "F3E74BAAEB162D78F28E445308393563", hash_generated_method = "C1C85CA1C6269639FBF6506B8728564C")
     private boolean isZero() {
         boolean var82D0A726C120D5744FDF0390F9FF98A3_1583080267 = (bitLength == 0 && this.smallValue != -1);
@@ -1578,7 +1579,7 @@ BigDecimal var099658E03F9BF7D1563531EEEABC8E1F_710795689 =         round(mc);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.602 -0400", hash_original_method = "EAD040D94F5F819E555B537F69E87C66", hash_generated_method = "95BE04735A06B475F8C969CBAA3BFE6C")
     private int decimalDigitsInLong(long value) {
         addTaint(value);
@@ -1714,7 +1715,7 @@ BigDecimal var18B7F63A30DCEE38D3BB12F0A0E8352C_235503069 =         movePoint(sca
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.609 -0400", hash_original_method = "EF6481821B33DB93DBF91CDB78772ACF", hash_generated_method = "0FCF1180B479463D5800268A36B491B6")
     private BigDecimal movePoint(long newScale) {
         addTaint(newScale);
@@ -2534,7 +2535,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.630 -0400", hash_original_method = "55CD7E6ED2002FE9D7C30850FBD08759", hash_generated_method = "302C7A4476621A1CEB0DF9106E185BB0")
     private void inplaceRound(MathContext mc) {
         addTaint(mc.getTaint());
@@ -2583,13 +2584,13 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int longCompareTo(long value1, long value2) {
         return value1 > value2 ? 1 : (value1 < value2 ? -1 : 0);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.631 -0400", hash_original_method = "7FBE752FF3FF6B350050AE2B0F2B0308", hash_generated_method = "6F63D71CB645EEA08B0D4376FB6BE196")
     private void smallRound(MathContext mc, int discardedPrecision) {
         addTaint(discardedPrecision);
@@ -2621,7 +2622,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int roundingBehavior(int parityBit, int fraction, RoundingMode roundingMode) {
         int increment = 0;
         switch (roundingMode) {
@@ -2661,7 +2662,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.632 -0400", hash_original_method = "77E444DFD73510CC8BF3E35576C17A04", hash_generated_method = "9848A981137340FF0198997AFCC9296A")
     private long valueExact(int bitLengthOfType) {
         addTaint(bitLengthOfType);
@@ -2684,7 +2685,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.633 -0400", hash_original_method = "610DE3E95388579A8DD4E22BDEDE3C6E", hash_generated_method = "6BFC52A2FD8797B24E0FEF95FAA72EE0")
     private int approxPrecision() {
         int var7CDA58196C86390834B6F2307552DAD7_1750699668 = (precision > 0
@@ -2699,7 +2700,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int safeLongToInt(long longValue) {
         if (longValue < Integer.MIN_VALUE || longValue > Integer.MAX_VALUE) {
             throw new ArithmeticException("Out of int range: " + longValue);
@@ -2708,7 +2709,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static BigDecimal zeroScaledBy(long longScale) {
         if (longScale == (int) longScale) {
             return valueOf(0,(int)longScale);
@@ -2720,7 +2721,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.633 -0400", hash_original_method = "886E4F08C2196C85465CF795B505FE44", hash_generated_method = "B223894362AA1D8F0C8B7257680A781C")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
@@ -2740,7 +2741,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.633 -0400", hash_original_method = "19FA8CC309F5EC9C814FD711C697099A", hash_generated_method = "A182EAFF59BE1C772C43C11E96D8B230")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -2752,7 +2753,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_2045275545 =         valueOf(1, s
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.636 -0400", hash_original_method = "1C1109E2DBDCFAE7331AD37D197254D0", hash_generated_method = "BFC5885E1AC10BE47B0F97C110FA0E1B")
     private BigInteger getUnscaledValue() {
         if(intVal == null)        
@@ -2770,7 +2771,7 @@ BigInteger var8FF653FB840FA82FCA73D5A3807C8FDF_1970183124 =         intVal;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.636 -0400", hash_original_method = "3BE919C32007DA5FAF4FB8B842EE650C", hash_generated_method = "42271E755316AB344A200BAE571C12BC")
     private void setUnscaledValue(BigInteger unscaledValue) {
         this.intVal = unscaledValue;
@@ -2788,7 +2789,7 @@ BigInteger var8FF653FB840FA82FCA73D5A3807C8FDF_1970183124 =         intVal;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int bitLength(long smallValue) {
         if(smallValue < 0) {
             smallValue = ~smallValue;
@@ -2797,7 +2798,7 @@ BigInteger var8FF653FB840FA82FCA73D5A3807C8FDF_1970183124 =         intVal;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int bitLength(int smallValue) {
         if(smallValue < 0) {
             smallValue = ~smallValue;

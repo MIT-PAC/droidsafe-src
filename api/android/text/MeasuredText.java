@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.style.MetricAffectingSpan;
@@ -9,10 +10,10 @@ import android.util.Log;
 
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class MeasuredText {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.018 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
@@ -46,6 +47,7 @@ class MeasuredText {
 
     private TextPaint mWorkPaint;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.018 -0400", hash_original_method = "D598B3CBC464CFD963CF00BDB269B2BE", hash_generated_method = "42783F836CB64369EF4A69ACD2229E3E")
     private  MeasuredText() {
         mWorkPaint = new TextPaint();
@@ -54,6 +56,7 @@ class MeasuredText {
     }
 
     
+    @DSModeled(DSC.BAN)
     static MeasuredText obtain() {
         MeasuredText mt;
         synchronized (sLock) {
@@ -73,7 +76,7 @@ class MeasuredText {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static MeasuredText recycle(MeasuredText mt) {
         mt.mText = null;
         if (mt.mLen < 1000) {
@@ -91,6 +94,7 @@ class MeasuredText {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.022 -0400", hash_original_method = "AA7EC2CF46DA02829550CC76130A18E2", hash_generated_method = "52BF36F531C768F435B2AA8CF9C4773F")
      void setPara(CharSequence text, int start, int end, TextDirectionHeuristic textDir) {
         addTaint(textDir.getTaint());
@@ -272,7 +276,7 @@ for(int i = mPos + 1, e = mPos + len;i < e;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.029 -0400", hash_original_method = "F30A282CEAB73A5948442153B9251096", hash_generated_method = "EB92270DCDD6170C708F0A1162E5A337")
      int breakText(int start, int limit, boolean forwards, float width) {
         addTaint(width);
@@ -326,7 +330,7 @@ for(int i = limit;--i >= start;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.029 -0400", hash_original_method = "053843F92349BBB89263F41FED96E473", hash_generated_method = "587459D18EF608CF1E5DB3216EABF9EA")
      float measure(int start, int limit) {
         addTaint(limit);

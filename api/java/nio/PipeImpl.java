@@ -1,6 +1,7 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.O_RDONLY;
 import static libcore.io.OsConstants.O_WRONLY;
 
@@ -14,10 +15,10 @@ import java.nio.channels.spi.SelectorProvider;
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class PipeImpl extends Pipe {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.436 -0400", hash_original_field = "F6E041176F8CC2998F9465EDE0DFEEB1", hash_generated_field = "4B05C0563C4559C55245EBA97183BE45")
@@ -81,6 +82,7 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_1916345077 =         source;
 
         private FileDescriptor fd;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.445 -0400", hash_original_method = "86C415C3CB1DC768FC064168AEB16626", hash_generated_method = "848D3F377F277155D9207132A062928F")
         private  FdCloser(FileDescriptor fd) {
             this.fd = fd;

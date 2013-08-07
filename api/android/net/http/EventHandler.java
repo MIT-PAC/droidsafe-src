@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface EventHandler {
 

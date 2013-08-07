@@ -1,16 +1,17 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class NfcF extends BasicTagTechnology {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.769 -0400", hash_original_field = "0BF6864C5F4227002F2CA21BE8F000AE", hash_generated_field = "8144AE907BE5B2181516DBD1D62E97D6")
@@ -20,6 +21,7 @@ public final class NfcF extends BasicTagTechnology {
 
     private byte[] mManufacturer = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.770 -0400", hash_original_method = "0D9BC91BC56C91CB4B73C77A46406834", hash_generated_method = "D7D19CE68E32AF4015FC4D5E207627BE")
     public  NfcF(Tag tag) throws RemoteException {
         super(tag, TagTechnology.NFC_F);

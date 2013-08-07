@@ -1,6 +1,7 @@
 package org.bouncycastle.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -35,10 +36,10 @@ import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Strings;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class X509Util {
     
@@ -49,6 +50,7 @@ class X509Util {
     }
 
 
+    @DSModeled(DSC.BAN)
     private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
         return new RSASSAPSSparams(
             hashAlgId,

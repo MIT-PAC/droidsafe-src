@@ -1,15 +1,16 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.os.Build;
 import android.os.SystemProperties;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class SQLiteDebug {
@@ -21,12 +22,14 @@ public final class SQLiteDebug {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static final boolean shouldLogSlowQuery(long elapsedTimeMillis) {
         int slowQueryMillis = SystemProperties.getInt("db.log.slow_query_threshold", -1);
         return slowQueryMillis >= 0 && elapsedTimeMillis > slowQueryMillis;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static PagerStats getDatabaseInfo() {
         PagerStats stats = new PagerStats();
         getPagerStats(stats);
@@ -63,13 +66,13 @@ public final class SQLiteDebug {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getNumActiveCursorsFinalized() {
         return sNumActiveCursorsFinalized;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static synchronized void notifyActiveCursorFinalized() {
         sNumActiveCursorsFinalized++;
     }
@@ -129,6 +132,7 @@ public final class SQLiteDebug {
 
         public String cache;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.728 -0400", hash_original_method = "25D4B03C8D42132F3189FD0C37F279E2", hash_generated_method = "E543A68E2B8BAB41A9EFBC14410135C7")
         public  DbStats(String dbName, long pageCount, long pageSize, int lookaside,
             int hits, int misses, int cachesize) {

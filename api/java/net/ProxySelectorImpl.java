@@ -1,13 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 final class ProxySelectorImpl extends ProxySelector {
     
@@ -51,7 +52,7 @@ List<Proxy> var5E22424134D08E91E6B049D6790CF264_1504305023 =         Collections
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.349 -0400", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "63465D443981602B49D3B46FA0B7133F")
     private Proxy selectOneProxy(URI uri) {
         addTaint(uri.getTaint());
@@ -141,6 +142,7 @@ Proxy var7D4E701A1F0837EF6523426E9F4A0688_891134130 =         Proxy.NO_PROXY;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.350 -0400", hash_original_method = "8F772B362E14FE9459180F7871735648", hash_generated_method = "5C23E98EDDA47AC21CA0E61A244C3BC8")
     private Proxy lookupProxy(String hostKey, String portKey, Proxy.Type type, int defaultPort) {
         addTaint(defaultPort);
@@ -168,6 +170,7 @@ Proxy var02AD375D853B0C8A83897EB8FF814B7F_1671797556 =         new Proxy(type, I
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.351 -0400", hash_original_method = "36E6CCC8C23DA7DA61B6599903A6840E", hash_generated_method = "CE30AC94ABFDD15DE2EF9AD6AE6D4E8E")
     private int getSystemPropertyInt(String key, int defaultValue) {
         addTaint(defaultValue);
@@ -200,6 +203,7 @@ Proxy var02AD375D853B0C8A83897EB8FF814B7F_1671797556 =         new Proxy(type, I
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.352 -0400", hash_original_method = "960A16929DB84D35FDCE84F421A041D1", hash_generated_method = "7B103087BB67868386D417407874AA3A")
     private boolean isNonProxyHost(String host, String nonProxyHosts) {
         addTaint(nonProxyHosts.getTaint());

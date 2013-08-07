@@ -1,12 +1,13 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Schema {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.189 -0400", hash_original_field = "8188B69D13D5B1ECF8F5A593CC51B318", hash_generated_field = "C61B01F294C72FE231EFE447D1205178")

@@ -1,6 +1,7 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
@@ -17,10 +18,10 @@ import android.util.Xml;
 
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ColorStateList implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.096 -0400", hash_original_field = "90D2BFFC9D360D1A65ACEAB45ADBE457", hash_generated_field = "7D52F505B14BC667C4ED1C5AB261B59A")
@@ -33,6 +34,7 @@ public class ColorStateList implements Parcelable {
 
     private int mDefaultColor = 0xffff0000;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.097 -0400", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "B853D9FA4CC0F774905FDCA69D04F16F")
     private  ColorStateList() {
         // ---------- Original Method ----------
@@ -95,6 +97,7 @@ for(int i = 0;i < states.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ColorStateList createFromXmlInner(Resources r, XmlPullParser parser,
             AttributeSet attrs) throws XmlPullParserException, IOException {
         ColorStateList colorStateList;
@@ -132,6 +135,7 @@ ColorStateList var3DD0BBD465CAAA82779B9248F9A3D5BF_1585531296 =         new Colo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.106 -0400", hash_original_method = "096D4D4F0EE82FD61B43B813E755281E", hash_generated_method = "425644FE901AFBBCD31EFCE97229BC42")
     private void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         addTaint(attrs.getTaint());

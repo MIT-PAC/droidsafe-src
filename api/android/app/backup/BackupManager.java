@@ -1,12 +1,13 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class BackupManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.261 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -21,6 +22,7 @@ public class BackupManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void checkServiceBinder() {
         if (sService == null) {
             sService = IBackupManager.Stub.asInterface(
@@ -118,6 +120,7 @@ public class BackupManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.267 -0400", hash_original_method = "4E9AC35DE965C4DA64E27C8C094DFEC3", hash_generated_method = "C8FFCB3AB176ED67BC4BC695D851FFFF")
     public RestoreSession beginRestoreSession() {
         RestoreSession session = null;

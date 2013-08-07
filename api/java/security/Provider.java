@@ -1,6 +1,7 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.NotActiveException;
@@ -20,10 +21,10 @@ import java.util.Set;
 import org.apache.harmony.luni.util.TwoKeyHashMap;
 import org.apache.harmony.security.fortress.Services;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Provider extends Properties {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.307 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -211,6 +212,7 @@ String var50E90DE824F2DD490679392189EDA33C_1054371514 =         name + " version
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.312 -0400", hash_original_method = "F898BA9F30F0CED7EAABA59AE5C4F6F9", hash_generated_method = "B048ACB4D9B7591C5029ED46774097C6")
     private void myPutAll(Map<?,?> t) {
         addTaint(t.getTaint());
@@ -420,6 +422,7 @@ Object varBACBF699252AC3FDC76153D632679B1D_375596264 =         super.remove(key)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.315 -0400", hash_original_method = "205FEBDC4595F3CAF3DB8C26A01A3B21", hash_generated_method = "2585AD6A88338662B2AD9D4E9E0849FE")
     private boolean checkAttribute(String servAlg, String attribute, String val) {
         addTaint(val.getTaint());
@@ -721,6 +724,7 @@ for(String alias : s.getAliases())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.320 -0400", hash_original_method = "FD9674DD64603638CEEAFAAECA2377E1", hash_generated_method = "757B8995BEDF8740FBDE08E0A781B786")
     private void serviceInfoToProperties(Provider.Service s) {
         addTaint(s.getTaint());
@@ -763,6 +767,7 @@ for(Map.Entry<String, String> entry : s.attributes.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.320 -0400", hash_original_method = "E3342D080F10DDAA1FF9ED29EA29694F", hash_generated_method = "70FAE20E246FC72C24D52443F390DDA8")
     private void serviceInfoFromProperties(Provider.Service s) {
         addTaint(s.getTaint());
@@ -803,7 +808,7 @@ for(Map.Entry<String, String> entry : s.attributes.entrySet())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.321 -0400", hash_original_method = "C88E49400116B5906A9CAC0E8D20528B", hash_generated_method = "2A8E7CFD229A5E53F7903E2AC18099A7")
     private void removeFromPropertyServiceTable(Object key) {
         addTaint(key.getTaint());
@@ -891,7 +896,7 @@ for(String alias : ser.aliases)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.324 -0400", hash_original_method = "C12B51396475B7F4EF23B74D619C33FD", hash_generated_method = "59A4818189A0EC8995B4F5535294CC25")
     private void updatePropertyServiceTable() {
         Object _key;
@@ -1044,7 +1049,7 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.325 -0400", hash_original_method = "FD7619437CD0960F1AEBA32A154F0328", hash_generated_method = "9C6A342A2081A7D73BA214C115FEC8EA")
     private void servicesChanged() {
         lastServicesByType = null;
@@ -1057,6 +1062,7 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.325 -0400", hash_original_method = "768CFC89B63FD1F782E3758D2BCFC6C0", hash_generated_method = "BEA2C42DB158CE6C3270D65A149F3B2E")
     private void putProviderInfo() {
         super.put("Provider.id name", (name != null) ? name : "null");
@@ -1071,6 +1077,7 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.325 -0400", hash_original_method = "62DD35352FE8FA7B38C17798ED376C47", hash_generated_method = "8591E84DAC78F9C06F298E8D51CB4675")
     private String getPropertyIgnoreCase(String key) {
         addTaint(key.getTaint());
@@ -1109,6 +1116,7 @@ String var540C13E9E156B687226421B24F2DF178_614732304 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.326 -0400", hash_original_method = "C9BE26B06AA230EA20C77B7F366C53C8", hash_generated_method = "C349757B0405244ECF57CED8F47A32D0")
     private void readObject(java.io.ObjectInputStream in) throws NotActiveException, IOException, ClassNotFoundException {
         addTaint(in.getTaint());

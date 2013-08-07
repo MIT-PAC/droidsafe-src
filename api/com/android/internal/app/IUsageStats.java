@@ -1,6 +1,7 @@
 package com.android.internal.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IUsageStats extends android.os.IInterface
 {

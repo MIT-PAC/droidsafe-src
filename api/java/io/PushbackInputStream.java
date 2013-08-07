@@ -1,12 +1,13 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PushbackInputStream extends FilterInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.340 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
@@ -178,6 +179,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.357 -0400", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "1DCE197321B75F236B122D5CB1805B81")
     private IOException streamClosed() throws IOException {
         IOException varA0BB301E46D4FCBF44B7C62E997ABEAD_1557202841 = new IOException("PushbackInputStream is closed");

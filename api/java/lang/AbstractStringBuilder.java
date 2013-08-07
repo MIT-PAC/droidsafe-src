@@ -1,14 +1,15 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.InvalidObjectException;
 import java.util.Arrays;
 
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class AbstractStringBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.916 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
@@ -116,7 +117,7 @@ abstract class AbstractStringBuilder {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.920 -0400", hash_original_method = "8DE386E9EA04BE56519C8A6264F91502", hash_generated_method = "F483F597C52285B82C03EDA25CF66C3A")
     private void enlargeBuffer(int min) {
         addTaint(min);
@@ -335,7 +336,7 @@ for(int i = start;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.931 -0400", hash_original_method = "FC4FB8D4DBB369ED29C378FB60B58B5D", hash_generated_method = "0E5983FD632607112BA7C74F0288F2E5")
     private StringIndexOutOfBoundsException indexAndLength(int index) {
         addTaint(index);
@@ -347,7 +348,7 @@ for(int i = start;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.931 -0400", hash_original_method = "ABFB3D9F0C982EE0B945F30A8DA651B2", hash_generated_method = "63B0EB363EAD983B257E1434DD2051D9")
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
         addTaint(end);
@@ -662,7 +663,7 @@ for(int i = start;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.004 -0400", hash_original_method = "E2C445AFFEE441B211B71B3E0E3E89EA", hash_generated_method = "624012EDA1A9446A3F17269E2BA17F00")
     private void move(int size, int index) {
         addTaint(index);

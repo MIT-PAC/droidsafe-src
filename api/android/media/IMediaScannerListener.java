@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IMediaScannerListener extends android.os.IInterface
 {

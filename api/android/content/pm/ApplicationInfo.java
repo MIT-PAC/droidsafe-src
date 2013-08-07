@@ -1,6 +1,7 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.Collator;
 import java.util.Comparator;
 
@@ -10,10 +11,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.309 -0400", hash_original_field = "076F9A985964BB9FD17F8637C357D2C5", hash_generated_field = "7AA799578052361E8AB8F2E0B535D75E")
@@ -126,6 +127,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.319 -0400", hash_original_method = "C34B9C3D6C69EB97D4130A1E4D235BF1", hash_generated_method = "F179328CBBE4B5CAEB27A180DC76F14A")
     private  ApplicationInfo(Parcel source) {
         super(source);
@@ -308,7 +310,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_107466566 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.321 -0400", hash_original_method = "110E01A7854D6A7CF0C047806FCA3437", hash_generated_method = "4260BDBF7ADA9DD58BFC26F5C7BE7B86")
     public void disableCompatibilityMode() {
         flags |= (FLAG_SUPPORTS_LARGE_SCREENS | FLAG_SUPPORTS_NORMAL_SCREENS |
@@ -321,7 +323,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_107466566 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.322 -0400", hash_original_method = "ED007A8BD44C2C8CDC7AE52AC1ADD2C8", hash_generated_method = "E25A9FE0BAA84A713B89CA87FF095647")
     @Override
     protected Drawable loadDefaultIcon(PackageManager pm) {
@@ -347,7 +349,7 @@ Drawable varAD0C68E9FDEBCDCC559AABA877077272_442877638 =         pm.getDefaultAc
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.322 -0400", hash_original_method = "B87914FC2F221448B9EDC9CCD205939A", hash_generated_method = "35CEC5D6412F45BECDDCFF87FF5F1DB9")
     private boolean isPackageUnavailable(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -372,7 +374,7 @@ Drawable varAD0C68E9FDEBCDCC559AABA877077272_442877638 =         pm.getDefaultAc
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.322 -0400", hash_original_method = "4CB14D4C822DE3694FE375457E968E4C", hash_generated_method = "36E4C053257B0D62D5409ED37F86A5ED")
     @Override
     protected ApplicationInfo getApplicationInfo() {

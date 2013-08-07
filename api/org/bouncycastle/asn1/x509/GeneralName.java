@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
@@ -19,10 +20,10 @@ import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.util.IPAddress;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GeneralName extends ASN1Encodable implements ASN1Choice {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.693 -0400", hash_original_field = "BE8F80182E0C983916DA7338C2C1C040", hash_generated_field = "C14035F3386E46275A7D663AC38D8A14")
@@ -243,7 +244,7 @@ switch(tag){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.700 -0400", hash_original_method = "F02018A790F280370B2CB39B10862FEC", hash_generated_method = "DDB0D059B2067E140D94E3642AF5A8FF")
     private byte[] toGeneralNameEncoding(String ip) {
         addTaint(ip.getTaint());
@@ -317,7 +318,7 @@ switch(tag){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.701 -0400", hash_original_method = "B54AB1000C04EF98C8414C613F178EE6", hash_generated_method = "258BA28276EF9E214656AFB3B86C624E")
     private void parseIPv4Mask(String mask, byte[] addr, int offset) {
         addTaint(offset);
@@ -337,7 +338,7 @@ for(int i = 0;i != maskVal;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.701 -0400", hash_original_method = "D3256FE340A5AB891180F872DE9312FE", hash_generated_method = "68A2479A5E81FFF17B9F79253FBFBA95")
     private void parseIPv4(String ip, byte[] addr, int offset) {
         addTaint(offset);
@@ -360,7 +361,7 @@ for(int i = 0;i != maskVal;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.702 -0400", hash_original_method = "AAEA46BCEA791BA55D0418C441E919BF", hash_generated_method = "0F6A2469E9723EB3FAAD0B6F596419E7")
     private int[] parseMask(String mask) {
         addTaint(mask.getTaint());
@@ -384,7 +385,7 @@ for(int i = 0;i != maskVal;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_method = "C5093ABFF769462F7C38A897D6D20C09", hash_generated_method = "1B8046E623BFD2322A87EA4A941EA3A9")
     private void copyInts(int[] parsedIp, byte[] addr, int offSet) {
         addTaint(offSet);
@@ -404,7 +405,7 @@ for(int i = 0;i != parsedIp.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_method = "9628A2DF5EA66A9EC56C6B58E58FBD48", hash_generated_method = "BBB15ABE6E3E996BCCDEA7E1184EFDE5")
     private int[] parseIPv6(String ip) {
         addTaint(ip.getTaint());

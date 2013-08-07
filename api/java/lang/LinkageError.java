@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class LinkageError extends Error {
     
@@ -24,7 +25,7 @@ public class LinkageError extends Error {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.223 -0400", hash_original_method = "EA091AF8CE4C0C3DC980640F02BF597B", hash_generated_method = "0615C50E7D42C168EF2991AC0D3CC097")
     public  LinkageError(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

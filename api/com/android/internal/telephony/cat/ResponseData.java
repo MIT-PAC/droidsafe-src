@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
@@ -13,10 +14,10 @@ import com.android.internal.telephony.EncodeException;
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.cat.AppInterface.CommandType;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class ResponseData {
     
@@ -322,6 +323,7 @@ for(byte b : data)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.511 -0400", hash_original_method = "8DC11942C3F1A663AB0155C3D476E532", hash_generated_method = "07B6019B90CEFA6A965AE247DD490CE2")
     private byte byteToBCD(int value) {
         addTaint(value);
@@ -346,6 +348,7 @@ for(byte b : data)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.512 -0400", hash_original_method = "024E89671E7DB3E94FD073693C0532F0", hash_generated_method = "CF357380AFF42B9080D2D2B035B3DBC8")
     private byte getTZOffSetByte(long offSetVal) {
         addTaint(offSetVal);

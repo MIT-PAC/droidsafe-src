@@ -1,14 +1,15 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.GraphicsOperations;
 import android.text.SpannableString;
 import android.text.SpannedString;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Paint {
@@ -126,7 +127,7 @@ public class Paint {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.919 -0400", hash_original_method = "98AB66F312E073116B808F98CBEF958E", hash_generated_method = "BD7871E3A37A563592B6AC84BB6E6C1C")
     private void setClassVariablesFrom(Paint paint) {
         mColorFilter = paint.mColorFilter;
@@ -165,7 +166,7 @@ public class Paint {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.919 -0400", hash_original_method = "163478F4D44D5ADDAB10921FE1B9406D", hash_generated_method = "407FC46B741F88D4037C340D8E4C7070")
     public void setCompatibilityScaling(float factor) {
         if(factor == 1.0)        
@@ -191,7 +192,7 @@ public class Paint {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.920 -0400", hash_original_method = "35E33B2836010FD893C5DC650465B2C6", hash_generated_method = "6335DCAC0EAE58191FCEE33938CCB692")
     public int getBidiFlags() {
         int var1748BBD3D4961DC7F03913160F67CAB2_1678175132 = (mBidiFlags);
@@ -202,7 +203,7 @@ public class Paint {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.920 -0400", hash_original_method = "47898531701F33FAC5767BA6A377013D", hash_generated_method = "D5F2EFA94FD8E8382BA1F0D2F0D92529")
     public void setBidiFlags(int flags) {
         flags &= BIDI_FLAG_MASK;
@@ -1514,7 +1515,7 @@ for(int i=0;i<res;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.957 -0400", hash_original_method = "FA2DB9E943D72A496CC6A996B7086F15", hash_generated_method = "62536C0E4DE13559FC0CCFE89EC0CB51")
     public int getTextGlyphs(String text, int start, int end, int contextStart, int contextEnd,
             int flags, char[] glyphs) {
@@ -1575,7 +1576,7 @@ for(int i=0;i<res;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.958 -0400", hash_original_method = "CEF06EAF1F3995907C189C9C72603DEF", hash_generated_method = "E2165FC7B1D9E40925999069CB634906")
     public float getTextRunAdvances(char[] chars, int index, int count,
             int contextIndex, int contextCount, int flags, float[] advances,
@@ -1598,7 +1599,7 @@ for(int i=0;i<res;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.959 -0400", hash_original_method = "5F3C708402843653E3430F9E58C46380", hash_generated_method = "47F5BBB12207CBC34874A1AA7272AE9F")
     public float getTextRunAdvances(char[] chars, int index, int count,
             int contextIndex, int contextCount, int flags, float[] advances,
@@ -1668,7 +1669,7 @@ for(int i = advancesIndex, e = i + count;i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.960 -0400", hash_original_method = "2F009E21E693FAD74101A2B25EBDF10B", hash_generated_method = "A06D23EAA45C4EEE1954A72C8461C4E9")
     public float getTextRunAdvances(CharSequence text, int start, int end,
             int contextStart, int contextEnd, int flags, float[] advances,
@@ -1691,7 +1692,7 @@ for(int i = advancesIndex, e = i + count;i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.961 -0400", hash_original_method = "4EFF4F6D396021295344678FBB8A998E", hash_generated_method = "233D1D0BA431AAACF23983A0BDAF55C6")
     public float getTextRunAdvances(CharSequence text, int start, int end,
             int contextStart, int contextEnd, int flags, float[] advances,
@@ -1764,7 +1765,7 @@ for(int i = advancesIndex, e = i + count;i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.961 -0400", hash_original_method = "1581EA555CC5336BCB2DDF38747B9672", hash_generated_method = "3A9FD4619B02D435E129BB4D573F26AA")
     public float getTextRunAdvances(String text, int start, int end, int contextStart,
             int contextEnd, int flags, float[] advances, int advancesIndex) {
@@ -1786,7 +1787,7 @@ for(int i = advancesIndex, e = i + count;i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.962 -0400", hash_original_method = "1C46AF2D403F5DA84F25080DCEA69AA0", hash_generated_method = "1F2BF067ED34E630AC1A914920A0EBD4")
     public float getTextRunAdvances(String text, int start, int end, int contextStart,
             int contextEnd, int flags, float[] advances, int advancesIndex, int reserved) {
@@ -1854,7 +1855,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.963 -0400", hash_original_method = "EB6D9B15E4067DFED9B2A74E5C744A1F", hash_generated_method = "2D74E1C0D8DF153331F8DC9459DF9E81")
     public int getTextRunCursor(char[] text, int contextStart, int contextLength,
             int flags, int offset, int cursorOpt) {
@@ -1891,7 +1892,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.964 -0400", hash_original_method = "34AAA4A164F43F1E201745A1F65B4411", hash_generated_method = "DD049576DB922405F91D23AF35EC814B")
     public int getTextRunCursor(CharSequence text, int contextStart,
            int contextEnd, int flags, int offset, int cursorOpt) {
@@ -1943,7 +1944,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.964 -0400", hash_original_method = "D546CDC2181E95744AE417A48EFCB65E", hash_generated_method = "FE4DD884B501EE0DD62E992735EC3DCC")
     public int getTextRunCursor(String text, int contextStart, int contextEnd,
             int flags, int offset, int cursorOpt) {

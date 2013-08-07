@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.x500;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 

@@ -1,6 +1,7 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteClosable;
 import android.os.Binder;
@@ -10,10 +11,10 @@ import android.os.Process;
 import android.util.Log;
 import android.util.SparseIntArray;
 import dalvik.system.CloseGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class CursorWindow extends SQLiteClosable implements Parcelable {
@@ -66,6 +67,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.719 -0400", hash_original_method = "2F52A6C89F1D54A86C82C46FF5E1EC25", hash_generated_method = "A6D530AB8F68F628B90E02AB82F602A3")
     private  CursorWindow(Parcel source) {
         mStartPos = source.readInt();
@@ -247,6 +249,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.728 -0400", hash_original_method = "DF965B7262A7C1EB6D66FE3F57E4031E", hash_generated_method = "0C43514FB3CDD1C17CE65F13DE837159")
     private void dispose() {
         if(mCloseGuard != null)        
@@ -271,7 +274,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.729 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "D2CDAAEA0A06E67BE1D914B20E1A52F5")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
@@ -861,6 +864,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.751 -0400", hash_original_method = "A1A5B0D31D251CEBDD86B0232FAF0913", hash_generated_method = "441934865EFC76AD1BB40C3EFED93A45")
     private void recordNewWindow(int pid, int window) {
         addTaint(window);
@@ -882,6 +886,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.752 -0400", hash_original_method = "35EFD039834BDFB7DFA5FAF4FCFF938C", hash_generated_method = "2E3089DDBA93EB46C131D7D4FF2CBDCF")
     private void recordClosingOfWindow(int window) {
         addTaint(window);
@@ -903,6 +908,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.753 -0400", hash_original_method = "FB6D9C80437A7691015FDFE53D1A15C9", hash_generated_method = "8108349B8F14A9FD7E444DB38884D567")
     private String printStats() {
         StringBuilder buff = new StringBuilder();

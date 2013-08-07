@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,8 +11,8 @@ import java.util.Map;
 import java.util.Set;
 
 import android.util.SparseArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public final class Bundle implements Parcelable, Cloneable {
 	/** this is added to swapout the annonymous class */
@@ -115,6 +116,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public static Bundle forPair(String key, String value){
 		Bundle b = new Bundle(1);
         b.putString(key, value);
@@ -130,6 +132,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public String getPairValue(){
         String str = new String();
         str.addTaint(getTaint());
@@ -182,7 +185,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public boolean setAllowFds(boolean allowFds){
 		addTaint(allowFds);
 		return getTaintBoolean();
@@ -766,6 +769,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated public void putIBinder(String key, IBinder value){
 		mKey = key;
 		mValueIBinder = value;
@@ -792,6 +796,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void typeWarning(String key, Object value, String className,
         Object defaultValue, ClassCastException e){
 		// Original method
@@ -815,6 +820,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void typeWarning(String key, Object value, String className,
         ClassCastException e){
 		// Original method
@@ -1563,6 +1569,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated public IBinder getIBinder(String key){
 		return mValueIBinder;
 		// Original method

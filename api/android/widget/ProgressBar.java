@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -37,10 +38,10 @@ import android.view.animation.Transformation;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ProgressBar extends View {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.067 -0400", hash_original_field = "2FB832D2671571BF4EC0C84F8DA6AA79", hash_generated_field = "B5D566AA92521F570066E8773A24B0C0")
@@ -152,7 +153,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.074 -0400", hash_original_method = "DAE8B382D7288D55BBDECA5C905F6E78", hash_generated_method = "ECBB23DC7D3A80E2D75EF00254655675")
     public  ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleRes) {
         super(context, attrs, defStyle);
@@ -206,7 +207,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.076 -0400", hash_original_method = "224A1F0FE2A7F3DC81BFFEE36861F394", hash_generated_method = "70855A04D6562824065D564D4B93E8F8")
     private Drawable tileify(Drawable drawable, boolean clip) {
         addTaint(clip);
@@ -283,7 +284,7 @@ Shape varE5AD6A465EDE45C705AEBAD629956806_621586862 =         new RoundRectShape
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.077 -0400", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "A37EB23EBBDAD68C503FC33BC9FC4DFE")
     private Drawable tileifyIndeterminate(Drawable drawable) {
         addTaint(drawable.getTaint());
@@ -323,7 +324,7 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_507455730 =         drawable;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.079 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "8DA820DB7B007C068BE9D230A5110A34")
     private void initProgressBar() {
         mMax = 100;
@@ -541,7 +542,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.084 -0400", hash_original_method = "10671D93E2F61D98C60CD8288CC260A2", hash_generated_method = "C320777395D89C9FF1521C14A3EE007F")
     private synchronized void doRefreshProgress(int id, int progress, boolean fromUser,
             boolean callBackToApp) {
@@ -605,7 +606,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.085 -0400", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "ACFE39C730480A10D40425C8BDE03D7B")
     private synchronized void refreshProgress(int id, int progress, boolean fromUser) {
         addTaint(fromUser);
@@ -1028,7 +1029,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "74277B895F883AA5B2EB254A27C149C7", hash_generated_method = "883A1F09580CEB6D2BC45799B6D0CBB7")
     @Override
     public int getResolvedLayoutDirection(Drawable who) {
@@ -1058,7 +1059,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.093 -0400", hash_original_method = "EA480A5BB3C1237E93332F6C8EE84591", hash_generated_method = "E890F37E2A821761E9E87DB75CB5037C")
     private void updateDrawableBounds(int w, int h) {
         addTaint(h);
@@ -1195,7 +1196,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "035F9AA26E84ABF84843C88F22BD02C4")
     private void updateDrawableState() {
         int[] state = getDrawableState();
@@ -1323,7 +1324,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "20F0DBCD6142D6C8A8DBD6A9085999AF", hash_generated_method = "8B96CF4A8042ACE3CB9E7F89C59F7EC8")
     private void scheduleAccessibilityEventSender() {
         if(mAccessibilityEventSender == null)        
@@ -1414,7 +1415,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "9D61E8AE00F16C0432FB33E15078B080", hash_generated_method = "9ED54A037992D9B4CCD324548CA845EB")
         private  SavedState(Parcel in) {
             super(in);

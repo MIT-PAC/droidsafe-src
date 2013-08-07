@@ -1,12 +1,13 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ExtractedTextRequest implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.519 -0400", hash_original_field = "94A08DA1FECBB6E8B46990538C7B50B2", hash_generated_field = "5EAD126FF3F63D06599D4B7FB9755E47")

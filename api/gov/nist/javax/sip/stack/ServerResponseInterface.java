@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.message.SIPResponse;
 
 public interface ServerResponseInterface {

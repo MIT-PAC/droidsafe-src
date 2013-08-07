@@ -1,6 +1,7 @@
 package com.android.internal.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.ActionBar;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,10 +13,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ActionBarContainer extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.691 -0400", hash_original_field = "CE7CD8C505C6894370684CBA7E67B65D", hash_generated_field = "527C228A5C97714BAF48C0C499097913")

@@ -2,6 +2,8 @@ package droidsafe.runtime;
 
 import java.util.Random;
 
+//Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
@@ -10,8 +12,8 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.app.Application;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 /**
  * This class will simulate the android runtime system by making any calls or creating 
@@ -44,7 +46,7 @@ public class DroidSafeAndroidRuntime {
 	 * 
 	 * @param activity
 	 */
-	@DSModeled(DSC.SPEC)
+	@DSModeled(DSC.BAN)
 	public static void modelActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
 		
@@ -70,6 +72,7 @@ public class DroidSafeAndroidRuntime {
 			activity.droidsafeOnSavedInstanceState(new Bundle());
 			
 			activity.droidsafeOnResume();
+			activity.droidsafeOnPause();
 			activity.droidsafeOnStop();
 			activity.droidsafeOnDestroy();
 			activity.onDetachedFromWindow();

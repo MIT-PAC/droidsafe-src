@@ -1,13 +1,14 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.UUID;
 
 import android.os.ParcelUuid;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class BluetoothUuid {
     
@@ -18,61 +19,73 @@ public final class BluetoothUuid {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static boolean isAudioSource(ParcelUuid uuid) {
         return uuid.equals(AudioSource);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isAudioSink(ParcelUuid uuid) {
         return uuid.equals(AudioSink);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isAdvAudioDist(ParcelUuid uuid) {
         return uuid.equals(AdvAudioDist);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isHandsfree(ParcelUuid uuid) {
         return uuid.equals(Handsfree);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isHeadset(ParcelUuid uuid) {
         return uuid.equals(HSP);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isAvrcpController(ParcelUuid uuid) {
         return uuid.equals(AvrcpController);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isAvrcpTarget(ParcelUuid uuid) {
         return uuid.equals(AvrcpTarget);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isInputDevice(ParcelUuid uuid) {
         return uuid.equals(Hid);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isPanu(ParcelUuid uuid) {
         return uuid.equals(PANU);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isNap(ParcelUuid uuid) {
         return uuid.equals(NAP);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isBnep(ParcelUuid uuid) {
         return uuid.equals(BNEP);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isUuidPresent(ParcelUuid[] uuidArray, ParcelUuid uuid) {
         if ((uuidArray == null || uuidArray.length == 0) && uuid == null)
             return true;
@@ -85,6 +98,7 @@ public final class BluetoothUuid {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean containsAnyUuid(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
         if (uuidA == null && uuidB == null) return true;
         if (uuidA == null) {
@@ -101,6 +115,7 @@ public final class BluetoothUuid {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean containsAllUuids(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
         if (uuidA == null && uuidB == null) return true;
         if (uuidA == null) {
@@ -115,6 +130,7 @@ public final class BluetoothUuid {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getServiceIdentifierFromParcelUuid(ParcelUuid parcelUuid) {
         UUID uuid = parcelUuid.getUuid();
         long value = (uuid.getMostSignificantBits() & 0x0000FFFF00000000L) >>> 32;

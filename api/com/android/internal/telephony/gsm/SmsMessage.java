@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.telephony.SmsMessage.ENCODING_16BIT;
 import static android.telephony.SmsMessage.ENCODING_7BIT;
 import static android.telephony.SmsMessage.ENCODING_8BIT;
@@ -24,10 +25,10 @@ import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.SmsHeader;
 import com.android.internal.telephony.SmsMessageBase;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SmsMessage extends SmsMessageBase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.852 -0400", hash_original_field = "D302E5EFB0B648FBA3A15C5F33DF9776", hash_generated_field = "7857416028EC39FBC0A39F3682AC483E")
@@ -94,6 +95,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SmsMessage newFromCMT(String[] lines) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -106,7 +108,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static SmsMessage newFromCDS(String line) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -119,6 +121,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SmsMessage createFromEfRecord(int index, byte[] data) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -149,6 +152,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested, byte[] header) {
@@ -157,6 +161,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message,
             boolean statusReportRequested, byte[] header, int encoding,
@@ -239,6 +244,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static byte[] encodeUCS2(String message, byte[] header) throws UnsupportedEncodingException {
         byte[] userData, textPart;
         textPart = message.getBytes("utf-16be");
@@ -294,6 +300,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ByteArrayOutputStream getSubmitPduHead(
             String scAddress, String destinationAddress, byte mtiByte,
             boolean statusReportRequested, SubmitPdu ret) {
@@ -514,6 +521,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.859 -0400", hash_original_method = "AF62799239B28F1660277ADF3CA55E81", hash_generated_method = "F520895CF4E5E3C508BE131B5E8338DE")
     private void parsePdu(byte[] pdu) {
         addTaint(pdu[0]);
@@ -563,6 +571,7 @@ switch(mti){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.860 -0400", hash_original_method = "A70831539166366B9681E2ACC95982AC", hash_generated_method = "FB47605E7932C2AB133FE724A70DCC4A")
     private void parseSmsStatusReport(PduParser p, int firstByte) {
         isStatusReportMessage = true;
@@ -639,6 +648,7 @@ switch(mti){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.862 -0400", hash_original_method = "445BCC4CA8B8EE2EB716CA993346CBBC", hash_generated_method = "572833D8D3A8D25E320AC4E7873D0F00")
     private void parseUserData(PduParser p, boolean hasUserDataHeader) {
         addTaint(hasUserDataHeader);
@@ -1025,7 +1035,7 @@ GsmSmsAddress varEDFF4FBBF053B5DC2B444ADFA049EE0F_371703465 =             ret;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.865 -0400", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "4F87B4E484ECC5EBEB8BBDC6756FFB56")
          SmsHeader getUserDataHeader() {
 SmsHeader varC667C99DB117EC88666F8C8FC671A339_949888473 =             userDataHeader;

@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,10 +13,10 @@ import android.os.Message;
 import com.android.internal.telephony.CommandException;
 import com.android.internal.telephony.MmiCode;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class CdmaMmiCode extends Handler implements MmiCode {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.911 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "F2FC592D71DA2BCBED04F0F797B7B907")
@@ -55,6 +56,7 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
 
     CharSequence message;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.912 -0400", hash_original_method = "0E9735A507190BB775A80B2FEDEEE634", hash_generated_method = "3C26477742E86CC6E45CC5268A0F2AE9")
       CdmaMmiCode(CDMAPhone phone) {
         super(phone.getHandler().getLooper());
@@ -66,7 +68,7 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static CdmaMmiCode newFromDialString(String dialString, CDMAPhone phone) {
         Matcher m;
         CdmaMmiCode ret = null;
@@ -86,13 +88,14 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String makeEmptyNull(String s) {
         if (s != null && s.length() == 0) return null;
         return s;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.913 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "472F928A7569D7FEC9614C64D02971CC")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_335383108 =         state;
@@ -103,7 +106,7 @@ State var37C56C9D63C623261861C16DCFB73F6D_335383108 =         state;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.913 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "6BCDC028CD96D7822AD2F7DB7E992DA2")
     public CharSequence getMessage() {
 CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
@@ -114,6 +117,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.914 -0400", hash_original_method = "7D43DA40239536121B4F58148ED0B98B", hash_generated_method = "56B028B32599CFE5108B411FA8B8E454")
     public void cancel() {
         if(state == State.COMPLETE || state == State.FAILED)        
@@ -131,7 +135,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.914 -0400", hash_original_method = "ABB2058860BEBFF25C4A9C7B954D0A37", hash_generated_method = "D2DE4A0822D19787D53254A52BF648C4")
     public boolean isCancelable() {
         boolean var68934A3E9455FA72420237EB05902327_1881133892 = (false);
@@ -142,6 +146,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.914 -0400", hash_original_method = "F83C3F3C3A6997A8F3CDD4D707F81FB0", hash_generated_method = "994846D01E45779FB29CEB81A32CA65B")
      boolean isPukCommand() {
         boolean var5A581E433070AF4838840D8266C34F91_213416354 = (sc != null && sc.equals(SC_PUK));
@@ -152,6 +157,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.915 -0400", hash_original_method = "CA7357DC4342746EF1FE3C742A9E7FC8", hash_generated_method = "CB6D0BC6C2080FCA09A75208414B1509")
      boolean isRegister() {
         boolean var8AFE299431940E3F9012D8FC2BB2FDCF_414754307 = (action != null && action.equals(ACTION_REGISTER));
@@ -162,6 +168,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.915 -0400", hash_original_method = "325A40B5366E66641BBFDAE340904BED", hash_generated_method = "199878DFEDE17F324739B919B716D246")
     public boolean isUssdRequest() {
         boolean var68934A3E9455FA72420237EB05902327_2110071514 = (false);
@@ -173,6 +180,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.916 -0400", hash_original_method = "D40242C1775E5BFA18B0D32E606C72BC", hash_generated_method = "86F702C41293C3DB89286001B969A415")
      void processCode() {
         try 
@@ -224,6 +232,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.916 -0400", hash_original_method = "60196158E22905B06D5E62564673E5E1", hash_generated_method = "8D5D96E26CBDDA8A4D99891B21FC6323")
     private void handlePasswordError(int res) {
         addTaint(res);
@@ -243,6 +252,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.917 -0400", hash_original_method = "20352E1B7818DCA44840F8C27B44EA84", hash_generated_method = "52F1F85429917172AE9EC8F24D8A94E9")
     public void handleMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -266,6 +276,7 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1569763704 =         message;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.917 -0400", hash_original_method = "DCFC51ECC309A2A613B704517DAD4649", hash_generated_method = "3758627094D39018631C415A2BBD164A")
     private CharSequence getScString() {
         if(sc != null)        
@@ -290,6 +301,7 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1063816445 =         "";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.919 -0400", hash_original_method = "52C2461B739F9120EA0709185D4E10B9", hash_generated_method = "84F89315011DA007F5466969C5E71D30")
     private void onSetComplete(AsyncResult ar) {
         addTaint(ar.getTaint());

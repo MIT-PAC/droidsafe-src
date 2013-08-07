@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,10 +11,10 @@ import java.util.TimerTask;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "6C7797A425EBA1D07F236FF9B39AA429", hash_generated_field = "D427CDF1FC427D67E4945D1E0E231D42")
@@ -47,13 +48,14 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
 
     public boolean mPlayerBuffering = false;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_method = "28D653DD01D92986A2B4676333E22F44", hash_generated_method = "E877102CF44EDBE37327EE0B3614BDF9")
     protected  HTML5VideoView() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_method = "3012844A52D4FF8D08A8750FA45AE671", hash_generated_method = "D7C8A7B98F068ECA8592BF1958291198")
     public void start() {
         if(mCurrentState == STATE_PREPARED)        
@@ -81,7 +83,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_method = "53F6A4797DD5828003875392A3AF17CE", hash_generated_method = "239EDB5FE582BE1EF9B63082D70E7BA2")
     public void pause() {
         if(isPlaying())        
@@ -113,7 +115,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "439630F284E895C4A0EC26592582E769", hash_generated_method = "224B30D78957F136809A8B6100A4C1F9")
     public int getDuration() {
         if(mCurrentState == STATE_PREPARED)        
@@ -137,7 +139,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "5E9270330E1DC98C2EF1834461EFA6AE", hash_generated_method = "0D056DA3764A4CEE566133912418EE02")
     public int getCurrentPosition() {
         if(mCurrentState == STATE_PREPARED)        
@@ -157,7 +159,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "29179F4E6F5DEF8BE6DF61D7C781E0A2", hash_generated_method = "E32EAC0E3969A7C5407467F62677A933")
     public void seekTo(int pos) {
         if(mCurrentState == STATE_PREPARED)        
@@ -172,7 +174,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "FFF63CE630758A2DC8461EEC2B2493E2", hash_generated_method = "A2821916163D44A3A659DBF86E6C8720")
     public boolean isPlaying() {
         if(mCurrentState == STATE_PREPARED)        
@@ -196,7 +198,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "0FBE82A8FF8F42AB54B25C4455F7DE4C", hash_generated_method = "EC615B19064898D7226096A372E245A3")
     public void release() {
         if(mCurrentState != STATE_RELEASED)        
@@ -212,7 +214,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "59D4F83219BBDE4F48B39B417FC8C6D3", hash_generated_method = "399EF696E9097B91AE462CC144E22C35")
     public void stopPlayback() {
         if(mCurrentState == STATE_PREPARED)        
@@ -226,7 +228,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "FE87C901FEC48725BE9A00E5A7A6B389", hash_generated_method = "FF62A5CA922A8A18BF0F4910A76830E6")
     public boolean getAutostart() {
         boolean var31825AE6E4F03F79884718C65CDD49D5_1905587491 = (mAutostart);
@@ -237,7 +239,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "83FF2150FEBE6917B81E8E4D5EFDEDB8", hash_generated_method = "1AB5ECA1601662A5BA3D8CACB9DF1AA8")
     public boolean getPauseDuringPreparing() {
         boolean varF31379AC693AFD32806C2F8AFF4FB2B1_2141396867 = (mPauseDuringPreparing);
@@ -248,7 +250,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "25A3A58F4D699286035B0F84C85D6FDC", hash_generated_method = "8D5F2A249F2CD08E0E39617378FD04E1")
     public void init(int videoLayerId, int position, boolean autoStart) {
         mPlayer = new MediaPlayer();
@@ -271,6 +273,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static Map<String, String> generateHeaders(String url,
             HTML5VideoViewProxy proxy) {
         boolean isPrivate = proxy.getWebView().isPrivateBrowsingEnabled();
@@ -286,7 +289,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "4A72F313DB07B237CDCFE2148C78F1A8", hash_generated_method = "EAB59583A6ABB2F017872447AEE18A8E")
     public void setVideoURI(String uri, HTML5VideoViewProxy proxy) {
         mUri = Uri.parse(uri);
@@ -297,7 +300,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "7F2C5845AC97F9E01BF6739081098AFA", hash_generated_method = "9C97881D86FD74143394FC7DFA1C2BF4")
     public void setOnCompletionListener(HTML5VideoViewProxy proxy) {
         addTaint(proxy.getTaint());
@@ -307,7 +310,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "B3DA09063B346725FC2FACD292CDBF3D", hash_generated_method = "4B544866EE92AA9C84184724C5701A23")
     public void setOnErrorListener(HTML5VideoViewProxy proxy) {
         addTaint(proxy.getTaint());
@@ -317,7 +320,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "88BA8808B84DAD90592F4339F231D5ED", hash_generated_method = "4D6AF3753C8541AA77B64DFD77C61EFB")
     public void setOnPreparedListener(HTML5VideoViewProxy proxy) {
         mProxy = proxy;
@@ -328,7 +331,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "9B3DE5A2AE36BDD54043208A8ECFD89C", hash_generated_method = "5C574C787098B3BC3B5139FF18561C47")
     public void setOnInfoListener(HTML5VideoViewProxy proxy) {
         addTaint(proxy.getTaint());
@@ -338,6 +341,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "F9607B1B919A7A6BBECF31855FC93C59", hash_generated_method = "8A33A6DF4C5291E75BF0E813CDED435F")
     public void prepareDataAndDisplayMode(HTML5VideoViewProxy proxy) {
         addTaint(proxy.getTaint());
@@ -384,7 +388,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "4F2E24A50F82208E59877C3E2625C348", hash_generated_method = "8CE7F142AA54D5BAC14A455A01C66A36")
     public int getVideoLayerId() {
         int var984724E54A3D174511409B8A76927E34_1484007936 = (mVideoLayerId);
@@ -395,7 +399,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "90E098B5ED1DEFDE8C60551334D6CBD4", hash_generated_method = "9AF64898EB7AB4C1827CF38B782C72EA")
     public int getCurrentState() {
         if(isPlaying())        
@@ -419,7 +423,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "023FEEEA138ACC710F3FC682E3FCF8D2", hash_generated_method = "0330F2FAB61F0883B5F6BF95A39075D4")
     @Override
     public void onPrepared(MediaPlayer mp) {
@@ -449,7 +453,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "61063445AE0708B1C305C74A0C0CFD4D", hash_generated_method = "CD6EE95AC0F91FE126976F3154F9EDEE")
     public void pauseAndDispatch(HTML5VideoViewProxy proxy) {
         addTaint(proxy.getTaint());
@@ -466,7 +470,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "9BC7893A1A30D65DD41983AD520ABA24", hash_generated_method = "1815228FE6AF9C66AC74D74832BB079D")
     public void enterFullScreenVideoState(int layerId,
             HTML5VideoViewProxy proxy, WebView webView) {
@@ -477,7 +481,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "040F96FADC077BA4992C03214586310A", hash_generated_method = "B4B9E71B88D83C7FBC65D1EF2D4354A6")
     public boolean isFullScreenMode() {
         boolean var68934A3E9455FA72420237EB05902327_1022334896 = (false);
@@ -488,14 +492,14 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "576D7BAAE83D7D96FC7F76762AF5D519", hash_generated_method = "72B0C98E60E0E0F576CB0E078AC7C55A")
     public void decideDisplayMode() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "C9A7CF84D371C51EADC63585245E2DF8", hash_generated_method = "CC33432DFA9C4257BB0E6B4EF94EE82E")
     public boolean getReadyToUseSurfTex() {
         boolean var68934A3E9455FA72420237EB05902327_968535273 = (false);
@@ -506,7 +510,7 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "EB4C543379CBB61A7D197317729D4B81", hash_generated_method = "5AD538643A96DED7835B0B5F5669FC29")
     public SurfaceTexture getSurfaceTexture(int videoLayerId) {
         addTaint(videoLayerId);
@@ -518,14 +522,14 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "F878AB9D8B307F7725C7D90E69C96D89", hash_generated_method = "07BFA0BF77B7C18AD06224A1226A429A")
     public void deleteSurfaceTexture() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "4BDE667A00FC91D9C95E5191E09A54C3", hash_generated_method = "7C6F7CEC376742BE77984CDDE92417C4")
     public int getTextureName() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1986352920 = (0);
@@ -536,7 +540,7 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "BA6BA92F877820EFB4A7324F8FF815C7", hash_generated_method = "ADD4DD1B4C4294E80B30A8E0EF42D04F")
     public boolean getPlayerBuffering() {
         boolean var21A94B24414CC83F408019CEEE7256DB_1784112081 = (mPlayerBuffering);
@@ -547,7 +551,7 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "90D4C50A046C8B21871A46FE1FDA531C", hash_generated_method = "453F7193DA9035441C449E361090501E")
     public void setPlayerBuffering(boolean playerBuffering) {
         mPlayerBuffering = playerBuffering;
@@ -558,7 +562,7 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "D1649F9781058EFE73B80767CB5DBB7F", hash_generated_method = "78654B15F1DDD1BB483C8E3622ECF5B9")
     protected void switchProgressView(boolean playerBuffering) {
         addTaint(playerBuffering);
@@ -566,7 +570,7 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "620458B5B8BB9506BFC901A9D3B27999", hash_generated_method = "3FE3E80ACD88E429783472FFF515D8ED")
     public boolean surfaceTextureDeleted() {
         boolean var68934A3E9455FA72420237EB05902327_1724691648 = (false);
@@ -577,7 +581,7 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "8A279E58756D4B031794A7C12A636619", hash_generated_method = "E7CA2ECC24FCAB83C0E5AD7ADDCA3E5F")
     public boolean fullScreenExited() {
         boolean var68934A3E9455FA72420237EB05902327_1063918214 = (false);
@@ -593,6 +597,7 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
 
         private HTML5VideoViewProxy mProxy;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "3C26C895A00D8A9565624E1D679282AA", hash_generated_method = "0F41425E63DDD706022823AA445EA086")
         public  TimeupdateTask(HTML5VideoViewProxy proxy) {
             mProxy = proxy;
@@ -601,7 +606,7 @@ SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "BCE01212467B54ADF40E3CF16EDCE71A", hash_generated_method = "720F4FE730506E910812AE5C0641C63B")
         @Override
         public void run() {

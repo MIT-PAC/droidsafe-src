@@ -1,11 +1,12 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class BasicPermission extends Permission implements Serializable {
     

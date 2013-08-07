@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -18,10 +19,10 @@ import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 import android.webkit.CacheManager.CacheResult;
 import android.webkit.CookieManager.Cookie;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WebViewDatabase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.485 -0400", hash_original_field = "867BB3294E9C68C99FCD8CAE06CC4189", hash_generated_field = "93D9ABAC661FEA809DA54BD9E7E9D9D3")
@@ -70,6 +71,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.487 -0400", hash_original_method = "AC87AD0E19559694D58F1943BD15C1D5", hash_generated_method = "0D1BDC6D908C33603AEFD0D02BD4C1B6")
     private synchronized void init(Context context) {
         addTaint(context.getTaint());
@@ -103,7 +105,7 @@ public class WebViewDatabase {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.487 -0400", hash_original_method = "CE06D258DB88B89F42DED68141C198E0", hash_generated_method = "8ED787C8A111B97FFF6227F82334906C")
     private void initDatabase(Context context) {
         addTaint(context.getTaint());
@@ -145,7 +147,7 @@ public class WebViewDatabase {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.490 -0400", hash_original_method = "C7A89DE182CA76C10CB3961C893695C2", hash_generated_method = "B7B953F9F84E18EEB6FF32F047B97209")
     private void initCacheDatabase(Context context) {
         addTaint(context.getTaint());
@@ -220,7 +222,7 @@ public class WebViewDatabase {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void upgradeDatabase() {
         upgradeDatabaseToV10();
         upgradeDatabaseFromV10ToV11();
@@ -228,7 +230,7 @@ public class WebViewDatabase {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void upgradeDatabaseFromV10ToV11() {
         int oldVersion = mDatabase.getVersion();
         if (oldVersion >= 11) {
@@ -252,6 +254,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void upgradeDatabaseToV10() {
         int oldVersion = mDatabase.getVersion();
         if (oldVersion >= 10) {
@@ -318,7 +321,7 @@ public class WebViewDatabase {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void upgradeCacheDatabase() {
         int oldVersion = mCacheDatabase.getVersion();
         if (oldVersion != 0) {
@@ -331,6 +334,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void bootstrapCacheDatabase() {
         if (mCacheDatabase != null) {
             mCacheDatabase.execSQL("CREATE TABLE cache"
@@ -351,6 +355,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.492 -0400", hash_original_method = "B19C14CCA683C2C1072DDA1B7A6274D5", hash_generated_method = "A92C21C8D2E361CBF6588F4AE3AC0B4E")
     private boolean checkInitialized() {
         synchronized
@@ -386,6 +391,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.492 -0400", hash_original_method = "CBFCA06012BEB8B609A8EBC6EEC6D1A4", hash_generated_method = "D75CD6B40F7D5B19D08D7484FBDD5116")
     private boolean hasEntries(int tableId) {
         addTaint(tableId);

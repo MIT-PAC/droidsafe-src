@@ -1,6 +1,7 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,10 +12,10 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class BluetoothInputDevice implements BluetoothProfile {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.509 -0400", hash_original_field = "CA257FD83AF4C9E6C265E05B6CDBF2DD", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
@@ -27,6 +28,7 @@ public final class BluetoothInputDevice implements BluetoothProfile {
 
     private IBluetooth mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.511 -0400", hash_original_method = "97D7A1AD2A2B5CF8AA634AC52F7EF42D", hash_generated_method = "381838150C3D747428EFE659E5B96574")
       BluetoothInputDevice(Context mContext, ServiceListener l) {
         addTaint(mContext.getTaint());
@@ -61,7 +63,7 @@ public final class BluetoothInputDevice implements BluetoothProfile {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.513 -0400", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "7E2810AC4BDE36569F993386C707233F")
      void close() {
         mServiceListener = null;
@@ -70,6 +72,7 @@ public final class BluetoothInputDevice implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.515 -0400", hash_original_method = "F2019F4C3E8629A52034D770ECD44393", hash_generated_method = "CABEB3242406FFCC93AE0EF44C8C1CF6")
     public boolean connect(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -110,6 +113,7 @@ public final class BluetoothInputDevice implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.517 -0400", hash_original_method = "9415AEF5C20AF4D988D1F3F693875D2E", hash_generated_method = "F2779073A91178AC2F6841F658B0A813")
     public boolean disconnect(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -150,6 +154,7 @@ public final class BluetoothInputDevice implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.519 -0400", hash_original_method = "DD11A5A037066B819B09B91F048A8292", hash_generated_method = "9EEA11E81E30A44340E45717C680FF8F")
     public List<BluetoothDevice> getConnectedDevices() {
         if(DBG)        
@@ -187,6 +192,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_2097184249 =          
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.520 -0400", hash_original_method = "8CAF8E68108C6561E50EE464A6851A15", hash_generated_method = "4223F7ECD716DA66DA3E40A30167862A")
     public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
         addTaint(states[0]);
@@ -225,6 +231,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_370951346 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.521 -0400", hash_original_method = "97B42C809342D6C6DAC05DB0DA17D1EC", hash_generated_method = "B0859B198EC1A7B9A7E3ACC0755627EC")
     public int getConnectionState(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -265,6 +272,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_370951346 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.523 -0400", hash_original_method = "9373326E4AC064A071DC5CD973E0011C", hash_generated_method = "1389B9FD9915BD563326B1B89C88865F")
     public boolean setPriority(BluetoothDevice device, int priority) {
         addTaint(priority);
@@ -317,6 +325,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_370951346 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.524 -0400", hash_original_method = "1D1EE6052242ABD7AAF16EB7DF8BA827", hash_generated_method = "E6FD272FA4DF285CBF09355F2217E7AB")
     public int getPriority(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -357,6 +366,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_370951346 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.525 -0400", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "1E073A2614B9B1E32244C3E72D216E91")
     private boolean isEnabled() {
         if(mAdapter.getState() == BluetoothAdapter.STATE_ON)        
@@ -374,6 +384,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_370951346 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.526 -0400", hash_original_method = "EB67AF48F977D4A31E9F2F2B80A49421", hash_generated_method = "AF6151D96062E4A8BAABFF72876FEAA4")
     private boolean isValidDevice(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -399,6 +410,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_370951346 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void log(String msg) {
         Log.d(TAG, msg);
     }

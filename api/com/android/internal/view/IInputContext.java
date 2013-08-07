@@ -1,6 +1,7 @@
 package com.android.internal.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IInputContext extends android.os.IInterface
 {

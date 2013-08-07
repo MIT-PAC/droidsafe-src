@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 
 import android.content.Context;
@@ -10,10 +11,10 @@ import android.util.AttributeSet;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ViewStub extends View {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.819 -0400", hash_original_field = "1B9BAD1B673A228AC1F5D0B0D0148A81", hash_generated_field = "BFA3E80188244F67D086E6C1264D1920")
@@ -90,7 +91,7 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.820 -0400", hash_original_method = "7D8DDEBB17ED3180A708C3B6F0212F68", hash_generated_method = "CCF3516282D357CF9B0D0F281C26EB81")
     private void initialize(Context context) {
         addTaint(context.getTaint());

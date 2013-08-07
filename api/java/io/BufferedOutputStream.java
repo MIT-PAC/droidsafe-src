@@ -1,10 +1,11 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class BufferedOutputStream extends FilterOutputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.313 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
@@ -54,6 +55,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.317 -0400", hash_original_method = "E23D99313D714FF4FE33BC33C5A12E3B", hash_generated_method = "D8FD0801B6E456AE5F329DE44381A8CC")
     private void checkNotClosed() throws IOException {
         if(buf == null)        
@@ -162,6 +164,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.321 -0400", hash_original_method = "AAC3F75032624F788E22A2E407A017DD", hash_generated_method = "B666C8C1C7135EA8F14F583F8FCB7409")
     private void flushInternal() throws IOException {
         if(count > 0)        

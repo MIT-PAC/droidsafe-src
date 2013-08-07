@@ -1,19 +1,21 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.474 -0400", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "49E124CE99C124C9C743BD828F75C77A")
     public  BulkCursorNative() {
         attachInterface(this, descriptor);
@@ -22,6 +24,7 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     }
 
     
+    @DSModeled(DSC.BAN)
     static public IBulkCursor asInterface(IBinder obj) {
         if (obj == null) {
             return null;
@@ -34,6 +37,7 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.476 -0400", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "1E9077DD4B7AB7DF16E9076DE1E8612E")
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
@@ -177,7 +181,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.478 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "98BFC6F0283ADC16A7FA9AF6731C4F1E")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_1449447870 =         this;

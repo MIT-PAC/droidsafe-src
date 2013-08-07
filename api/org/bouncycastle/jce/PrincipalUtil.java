@@ -1,6 +1,7 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.cert.CRLException;
 import java.security.cert.CertificateEncodingException;
@@ -11,7 +12,7 @@ import org.bouncycastle.asn1.ASN1Object;
 import org.bouncycastle.asn1.x509.TBSCertList;
 import org.bouncycastle.asn1.x509.TBSCertificateStructure;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class PrincipalUtil {
     

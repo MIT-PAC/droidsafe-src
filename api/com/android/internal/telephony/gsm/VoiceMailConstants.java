@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,14 +16,15 @@ import android.util.Xml;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class VoiceMailConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.018 -0400", hash_original_field = "A7DDC0939D7CC2DCDAAB30900E979453", hash_generated_field = "4822A23B6DAC900206318E4733509E52")
 
     private HashMap<String, String[]> CarrierVmMap;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.018 -0400", hash_original_method = "DDF8D53D84854590566E7F07FF4C6145", hash_generated_method = "C3E263BD40B13CFFA32C025D4E16B624")
       VoiceMailConstants() {
         CarrierVmMap = new HashMap<String, String[]>();
@@ -33,6 +35,7 @@ class VoiceMailConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.018 -0400", hash_original_method = "EA61BB6A69E663D3A55745A8DC567B93", hash_generated_method = "CE6D09CA1F2742BB42119B812362B9AC")
      boolean containsCarrier(String carrier) {
         addTaint(carrier.getTaint());
@@ -44,6 +47,7 @@ class VoiceMailConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.019 -0400", hash_original_method = "50C2E249A143A488875B9940B1F1FDE1", hash_generated_method = "70DE23FCB8078A7358AF6836D7F2009A")
      String getCarrierName(String carrier) {
         addTaint(carrier.getTaint());
@@ -57,6 +61,7 @@ String varD24591417917DD3D4237E62016A99D8A_714757338 =         data[NAME];
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.019 -0400", hash_original_method = "0EE8F97DB48267A64D2C0726286D2A1F", hash_generated_method = "36E903A9224CDC7DF01DDDD90C079EF3")
      String getVoiceMailNumber(String carrier) {
         addTaint(carrier.getTaint());
@@ -70,6 +75,7 @@ String var72FF74B6CD4ABE1D2FC635821C089974_809255586 =         data[NUMBER];
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.019 -0400", hash_original_method = "DE969177752DBF24A725FEF909B2130D", hash_generated_method = "BE793A601220C49F6C077ACCCEBA60F8")
      String getVoiceMailTag(String carrier) {
         addTaint(carrier.getTaint());
@@ -83,6 +89,7 @@ String var999169416C4489763CC073FF64F0FE09_1965099081 =         data[TAG];
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.021 -0400", hash_original_method = "F2B6258CF868D3537F2007BF45D05D11", hash_generated_method = "9767775BA188DFEEA4F2FB661E60073C")
     private void loadVoiceMail() {
         FileReader vmReader;

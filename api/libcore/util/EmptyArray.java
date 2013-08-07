@@ -1,11 +1,13 @@
 package libcore.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public final class EmptyArray {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.439 -0400", hash_original_method = "22DFB1C541C2464C033363DDDF2AB621", hash_generated_method = "4DC025C911879B3556E1D7F67743E4B9")
     private  EmptyArray() {
         // ---------- Original Method ----------

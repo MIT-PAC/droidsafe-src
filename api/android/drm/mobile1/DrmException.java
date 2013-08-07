@@ -1,10 +1,12 @@
 package android.drm.mobile1;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class DrmException extends Exception {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.337 -0400", hash_original_method = "DE31351B18888D140C40B16D35F58F0A", hash_generated_method = "BBDC82AA5C084132898FACE097BB6BF4")
     private  DrmException() {
         // ---------- Original Method ----------

@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -9,10 +10,10 @@ import java.util.Locale;
 
 import libcore.net.UriCodec;
 import libcore.net.url.UrlUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class URI implements Comparable<URI>, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.825 -0400", hash_original_field = "B45CFFE084DD3D20D928BEE85E7B0F21", hash_generated_field = "D1325E87F7D151CD81D0B4A318C3AE5C")
@@ -58,6 +59,7 @@ public final class URI implements Comparable<URI>, Serializable {
 
     private transient int hash = -1;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.826 -0400", hash_original_method = "73A80A2F92FBB785BC19E418E6230F90", hash_generated_method = "1BF7E280541A2A445B26B3247430EA17")
     private  URI() {
         // ---------- Original Method ----------
@@ -235,6 +237,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.834 -0400", hash_original_method = "A6104B5B1EE0EDAB23A12CFEC06EAA04", hash_generated_method = "DA9CABC9B9E9A98017F63ABE4B6F2FF1")
     private void parseURI(String uri, boolean forceServer) throws URISyntaxException {
         addTaint(forceServer);
@@ -306,6 +309,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.834 -0400", hash_original_method = "7C3EE07FDCFF0269213047D1214B9B32", hash_generated_method = "061C89AF9DF211EB75C8C127D4FCD155")
     private String validateScheme(String uri, int end) throws URISyntaxException {
         addTaint(end);
@@ -341,6 +345,7 @@ String var88B91DAB7AF172446DA0405A25DCBF5D_1934527842 =         uri.substring(0,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.835 -0400", hash_original_method = "C0C315FFD2F67C196D4E9EC4D3711FBC", hash_generated_method = "B4534D2BF6486EA21365E262534DE5C2")
     private void parseAuthority(boolean forceServer) throws URISyntaxException {
         addTaint(forceServer);
@@ -423,6 +428,7 @@ String var88B91DAB7AF172446DA0405A25DCBF5D_1934527842 =         uri.substring(0,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.835 -0400", hash_original_method = "7C8CF37E6F7B87B68C0DE679D5852184", hash_generated_method = "8F2FC7A4C7DFBCB42F266BBF7E6E9245")
     private void validateUserInfo(String uri, String userInfo, int index) throws URISyntaxException {
         addTaint(index);
@@ -448,6 +454,7 @@ for(int i = 0;i < userInfo.length();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.836 -0400", hash_original_method = "A181BC4B37A51E9F8D899B7902CC2A7C", hash_generated_method = "D9F71D2E885D69732A7DD916D139AF49")
     private boolean isValidHost(boolean forceServer, String host) throws URISyntaxException {
         addTaint(host.getTaint());
@@ -524,6 +531,7 @@ for(int i = 0;i < userInfo.length();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.836 -0400", hash_original_method = "2E78BBD0316E5BD424863A1938BE67AE", hash_generated_method = "58B3707B150D729C43551183F0556748")
     private boolean isValidDomainName(String host) {
         addTaint(host.getTaint());
@@ -789,7 +797,7 @@ for(String token : host.split("\\."))
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.839 -0400", hash_original_method = "A98420F05D15A307D401E461EEAC37D0", hash_generated_method = "6062D929F5B1AFE9A883868ED62B6B07")
     private URI duplicate() {
         URI clone = new URI();
@@ -826,6 +834,7 @@ URI var3DE52045BFD3C1BF3742F994ED6139AD_155443741 =         clone;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.840 -0400", hash_original_method = "FCD362BE8E93703CF564A6DF1A0DE711", hash_generated_method = "047B63C630D92D15F9B63C64E6537ADF")
     private String convertHexToLowerCase(String s) {
         addTaint(s.getTaint());
@@ -865,6 +874,7 @@ String varE65B3A02759122992CB82C0E651AD408_1864994828 =         result.toString(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.840 -0400", hash_original_method = "6D42C9BDBF773AFA30CCB9F3B2C418F1", hash_generated_method = "E587029A7753CF14F7C1F89961A9CD8D")
     private boolean escapedEquals(String first, String second) {
         addTaint(second.getTaint());
@@ -1179,6 +1189,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_2069881997 =         host;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.843 -0400", hash_original_method = "06FADD20E42E3EC8160E0651D1C1C356", hash_generated_method = "50A54364BC122DB830BF80D6A12DE343")
     public int getEffectivePort() {
         int varCF83DA2DFAE878CA65F5EB1895EB625B_1667528691 = (getEffectivePort(scheme, port));
@@ -1189,6 +1200,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_2069881997 =         host;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getEffectivePort(String scheme, int specifiedPort) {
         if (specifiedPort != -1) {
             return specifiedPort;
@@ -1306,6 +1318,7 @@ String varD266FB1A901BB0D9A16D45416C785B25_1022728937 =         fragment;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.844 -0400", hash_original_method = "E5D7EFF0C51BEFD641F2F6FB80CD17F5", hash_generated_method = "D5E58ACC38AC33591A27F1EA16051FF8")
     private String normalize(String path, boolean discardRelativePrefix) {
         path = UrlUtils.canonicalizePath(path, discardRelativePrefix);
@@ -1491,6 +1504,7 @@ URI varDC838461EE2FA0CA4C9BBB70A15456B0_1572670845 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.845 -0400", hash_original_method = "3DD7E8659D07AF42D9C7F4A4AC66ED05", hash_generated_method = "4ED8B0EDF42D95602712173E78B58A92")
     private void setSchemeSpecificPart() {
         StringBuilder ssp = new StringBuilder();
@@ -1536,6 +1550,7 @@ URI var6EDC2CB917A200A202A3C7444E2D29E2_967310178 =         resolve(create(relat
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.845 -0400", hash_original_method = "630095D6548B2B3A1441046549437B77", hash_generated_method = "4FA84E49228C19123AFE4551B42290F1")
     private String decode(String s) {
         addTaint(s.getTaint());
@@ -1611,6 +1626,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_2130932876 =         string;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.846 -0400", hash_original_method = "854CA4638ADB9894AD51F585C304D672", hash_generated_method = "0B60206631064AC9D3D17F0B2496CC55")
     private String getHashString() {
         StringBuilder result = new StringBuilder();
@@ -1688,6 +1704,7 @@ URL varDABA914D840E6D43A1E159EFF2D2A3B3_662114510 =         new URL(toString());
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.847 -0400", hash_original_method = "B129014206D9E37AE762E15B64782F43", hash_generated_method = "4A15F9A54464884A8CE2DFEC0431ADCF")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         addTaint(in.getTaint());
@@ -1712,6 +1729,7 @@ URL varDABA914D840E6D43A1E159EFF2D2A3B3_662114510 =         new URL(toString());
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.847 -0400", hash_original_method = "85F695901967363D4183474FCAC9E200", hash_generated_method = "64ECA8697047437409628550606FC4E7")
     private void writeObject(ObjectOutputStream out) throws IOException, ClassNotFoundException {
         addTaint(out.getTaint());

@@ -1,15 +1,17 @@
 package org.apache.http.client.utils;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 import org.apache.http.HttpHost;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class URIUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.622 -0400", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "77A26DB302405FD332BF0150E844EF5E")
     private  URIUtils() {
         // ---------- Original Method ----------

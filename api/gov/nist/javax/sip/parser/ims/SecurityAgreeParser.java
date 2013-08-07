@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.NameValue;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.SIPHeaderList;
@@ -17,7 +18,7 @@ import gov.nist.javax.sip.parser.TokenTypes;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class SecurityAgreeParser extends HeaderParser {
     

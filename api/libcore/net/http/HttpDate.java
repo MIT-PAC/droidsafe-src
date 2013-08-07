@@ -1,6 +1,7 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,10 +9,10 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class HttpDate {
     

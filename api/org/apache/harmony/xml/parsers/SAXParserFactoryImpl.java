@@ -1,6 +1,7 @@
 package org.apache.harmony.xml.parsers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,8 +11,8 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXNotRecognizedException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class SAXParserFactoryImpl extends SAXParserFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.791 -0400", hash_original_field = "987495AE8EA75D7FFAE9F17C211F4863", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")

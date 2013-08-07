@@ -1,6 +1,7 @@
 package junit.textui;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintStream;
 
 import junit.framework.Test;
@@ -10,10 +11,10 @@ import junit.runner.BaseTestRunner;
 import junit.runner.StandardTestSuiteLoader;
 import junit.runner.TestSuiteLoader;
 import junit.runner.Version;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestRunner extends BaseTestRunner {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.503 -0400", hash_original_field = "92EFB2FF93CA617868CE9883F7FD9329", hash_generated_field = "4B0543678AD73423AC3560CD1726B815")

@@ -1,16 +1,17 @@
 package com.android.server;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.net.SocketException;
 
 import android.util.Log;
 import android.util.Slog;
 import dalvik.system.SocketTagger;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class NetworkManagementSocketTagger extends SocketTagger {

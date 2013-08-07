@@ -1,15 +1,16 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class IoVec {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.206 -0400", hash_original_field = "1BCBC3F3B6DC171723792DD8598DF826", hash_generated_field = "8F7E59474A3A47E6FACE7437BBBF16C4")

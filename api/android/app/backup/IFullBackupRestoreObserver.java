@@ -1,6 +1,7 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IFullBackupRestoreObserver extends android.os.IInterface
 {

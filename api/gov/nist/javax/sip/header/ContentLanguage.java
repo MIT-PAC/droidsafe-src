@@ -1,12 +1,13 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ContentLanguage extends SIPHeader implements javax.sip.header.ContentLanguageHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.252 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "90B62845FED5E7253FA0E87D66166425")

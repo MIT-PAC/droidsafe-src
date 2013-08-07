@@ -1,6 +1,7 @@
 package gov.nist.core;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Properties;
 
 public interface StackLogger extends LogLevels {

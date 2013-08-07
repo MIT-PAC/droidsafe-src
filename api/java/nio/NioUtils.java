@@ -1,28 +1,30 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.nio.channels.FileChannel;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public final class NioUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.419 -0400", hash_original_method = "8E7A8D6DFD82A6BAC9AB3CD54CF31BDC", hash_generated_method = "0EA9CC78AA483B22B86873E261FF908D")
     private  NioUtils() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getDirectBufferAddress(Buffer buffer) {
         return buffer.effectiveDirectAddress;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static void freeDirectBuffer(ByteBuffer buffer) {
         if (buffer == null) {
             return;
@@ -37,24 +39,25 @@ public final class NioUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static FileDescriptor getFD(FileChannel fc) {
         return ((FileChannelImpl) fc).getFD();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static FileChannel newFileChannel(Object stream, FileDescriptor fd, int mode) {
         return new FileChannelImpl(stream, fd, mode);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static byte[] unsafeArray(ByteBuffer b) {
         return ((HeapByteBuffer) b).backingArray;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int unsafeArrayOffset(ByteBuffer b) {
         return ((HeapByteBuffer) b).offset;
     }

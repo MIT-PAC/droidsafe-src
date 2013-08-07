@@ -1,6 +1,7 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
@@ -8,10 +9,10 @@ import java.util.Random;
 import android.content.res.Resources;
 import android.os.SystemClock;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class DatabaseConnectionPool {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.130 -0400", hash_original_field = "60CF7A6EA37051AFA5579BFF259593F0", hash_generated_field = "6DB5215553C1840CAEC8065EEA2DFF1E")
@@ -285,7 +286,7 @@ String varA8F8BFF7B1F2F52B225C2C2411606CA3_1991099664 =         buff.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.139 -0400", hash_original_method = "8B6A0047A202C3A27DBFDE3CD809337B", hash_generated_method = "77C1B699DA78CB73993DB6036DAEE561")
     private void doAsserts() {
 for(int i = 0;i < mPool.size();i++)
@@ -364,6 +365,7 @@ for(int i = 0;i < mPool.size();i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.144 -0400", hash_original_method = "45198477A389ECAEEDC0006E6891DF34", hash_generated_method = "F7534B4562044B2F9E882537D42D3807")
         private synchronized void acquire() {
             if(Log.isLoggable(TAG, Log.DEBUG))            
@@ -385,6 +387,7 @@ for(int i = 0;i < mPool.size();i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.144 -0400", hash_original_method = "AE7C5C4381BC6984ACC18DB5CB72EB59", hash_generated_method = "8873B8B0FCDF6106A3D7D5A951D3C338")
         private synchronized void release() {
             if(Log.isLoggable(TAG, Log.DEBUG))            
@@ -411,6 +414,7 @@ for(int i = 0;i < mPool.size();i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.145 -0400", hash_original_method = "789BC5D306614F739870740EDEE72A08", hash_generated_method = "56BA1E993BF21D718E089AEFBC1E0468")
         private synchronized boolean isFree() {
             if(Log.isLoggable(TAG, Log.DEBUG))            
@@ -428,6 +432,7 @@ for(int i = 0;i < mPool.size();i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.145 -0400", hash_original_method = "55CDA36173BE763B72AF18BF479F1305", hash_generated_method = "3EE20EE305535CA4A83FE4585D8E99A5")
         private synchronized void verify() {
             if(mFreeBusyFlag == FREE)            

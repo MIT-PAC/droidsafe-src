@@ -1,12 +1,13 @@
 package org.bouncycastle.asn1.x9;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
 import org.bouncycastle.math.ec.ECCurve;
 import org.bouncycastle.math.ec.ECFieldElement;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class X9IntegerConverter {
     

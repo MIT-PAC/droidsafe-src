@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -21,10 +22,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
 import android.view.inputmethod.EditorInfo;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SearchableInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.058 -0400", hash_original_field = "D057B2BB85264BE6A162A2050E03E209", hash_generated_field = "D6FEAD9F73C8FE6EF0F3A12308DAC489")
@@ -242,7 +243,7 @@ ComponentName varCF461DA42806DB5CBA344D9330283F60_1591791793 =         mSearchAc
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.076 -0400", hash_original_method = "E8E1D8EA6D890D66AA7ADE8877B0250D", hash_generated_method = "E4C78A898CF857181D79BC3F542C1D60")
     public boolean useBadgeLabel() {
         boolean var75FC1C8D52FF5DAD9AA79A236D8F402E_1069272438 = (0 != (mSearchMode & SEARCH_MODE_BADGE_LABEL));
@@ -253,7 +254,7 @@ ComponentName varCF461DA42806DB5CBA344D9330283F60_1591791793 =         mSearchAc
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.077 -0400", hash_original_method = "FEE9D772AE5D3D19558CCEFFB0D8835C", hash_generated_method = "66389524814747F1A6386FDE5D958DEC")
     public boolean useBadgeIcon() {
         boolean var8A0531D2112EE78CF8C4C0743704EBD9_668598712 = ((0 != (mSearchMode & SEARCH_MODE_BADGE_ICON)) && (mIconId != 0));
@@ -352,7 +353,7 @@ String varF83231E5CCFF6B553FE201A622B94241_1229322237 =         mSuggestIntentDa
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.081 -0400", hash_original_method = "BBBE2BBFCBFB429E05BB475016E66C58", hash_generated_method = "E57338666115F47714DFA68AD2278A10")
     public Context getActivityContext(Context context) {
         addTaint(context.getTaint());
@@ -364,6 +365,7 @@ Context var1A4A3F2A709A718B2F904609658B5327_1538363680 =         createActivityC
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Context createActivityContext(Context context, ComponentName activity) {
         Context theirContext = null;
         try {
@@ -377,7 +379,7 @@ Context var1A4A3F2A709A718B2F904609658B5327_1538363680 =         createActivityC
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.082 -0400", hash_original_method = "B0B7C6DE2D55DA45CA53022A0C4DE186", hash_generated_method = "9A1104313D4F6CA80F71E61D502E7439")
     public Context getProviderContext(Context context, Context activityContext) {
         addTaint(activityContext.getTaint());
@@ -421,6 +423,7 @@ Context varAE9E4E2B51B60753D4D52AA89B2019F3_1399636344 =         theirContext;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.082 -0400", hash_original_method = "642EB13C162B9C3DDBE9F6D8F3F1EFAB", hash_generated_method = "7D8163A72E5F84BEFE237B7E28C26069")
     public ActionKeyInfo findActionKey(int keyCode) {
         addTaint(keyCode);
@@ -441,7 +444,7 @@ ActionKeyInfo var84BB625C941C7D500DC00A075C71E98C_354147134 =         mActionKey
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.083 -0400", hash_original_method = "0D70E2215A9C7B06033D45B8CD7DC306", hash_generated_method = "1BC1D87EFF2B8367D4515F9893003EEB")
     private void addActionKey(ActionKeyInfo keyInfo) {
         addTaint(keyInfo.getTaint());
@@ -458,7 +461,7 @@ ActionKeyInfo var84BB625C941C7D500DC00A075C71E98C_354147134 =         mActionKey
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static SearchableInfo getActivityMetaData(Context context, ActivityInfo activityInfo) {
         XmlResourceParser xml = 
                 activityInfo.loadXmlMetaData(context.getPackageManager(), MD_LABEL_SEARCHABLE);
@@ -535,7 +538,7 @@ ActionKeyInfo var84BB625C941C7D500DC00A075C71E98C_354147134 =         mActionKey
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.084 -0400", hash_original_method = "32CB8385CEC61194A5C52A7CECC7153B", hash_generated_method = "5DA986C51AC43FC50AC75F9E399AF846")
     public int getLabelId() {
         int varD057B2BB85264BE6A162A2050E03E209_1732463864 = (mLabelId);
@@ -557,7 +560,7 @@ ActionKeyInfo var84BB625C941C7D500DC00A075C71E98C_354147134 =         mActionKey
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.085 -0400", hash_original_method = "B3A2F353BC85020D961D66DA378099D0", hash_generated_method = "DD1A15EE37FD7E8B1AA9D0F77B3C7D93")
     public int getIconId() {
         int varD7630CF52154C2427A7112C0FFA081B1_499314013 = (mIconId);
@@ -645,7 +648,7 @@ ActionKeyInfo var84BB625C941C7D500DC00A075C71E98C_354147134 =         mActionKey
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.089 -0400", hash_original_method = "A9AA4A30E735A990543D5C1057AC451E", hash_generated_method = "BA6222FE8E6DCBB8AF1479B3CF26709C")
     public int getSearchButtonText() {
         int var0826F96358F107FED726F6D2004E0424_394071193 = (mSearchButtonText);
@@ -816,6 +819,7 @@ for(ActionKeyInfo actionKey : mActionKeys.values())
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.097 -0400", hash_original_method = "F27ACAC54FD4E2AFDD49ECEAEB99C834", hash_generated_method = "265E684231582EEA1B0AE30A9EA12397")
         private  ActionKeyInfo(Parcel in) {
             mKeyCode = in.readInt();

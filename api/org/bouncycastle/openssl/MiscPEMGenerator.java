@@ -1,6 +1,7 @@
 package org.bouncycastle.openssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.Key;
@@ -41,10 +42,10 @@ import org.bouncycastle.util.io.pem.PemObjectGenerator;
 import org.bouncycastle.x509.X509AttributeCertificate;
 import org.bouncycastle.x509.X509V2AttributeCertificate;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MiscPEMGenerator implements PemObjectGenerator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.978 -0400", hash_original_field = "BE8F80182E0C983916DA7338C2C1C040", hash_generated_field = "03657E147A117C299E988405DFDF1FE0")
@@ -129,7 +130,7 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.986 -0400", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "2BF72FA44483A6034926C2493DEDDCBE")
     private PemObject createPemObject(Object o) throws IOException {
         addTaint(o.getTaint());
@@ -260,6 +261,7 @@ PemObject var8F3B58E96848E0C08AAC47F156725822_1971535098 =         new PemObject
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.988 -0400", hash_original_method = "DE836D95AE95CC4B16EC27C37C4EBA2F", hash_generated_method = "DBE339B8EABD5A9F467C70698D8E3E41")
     private String getHexEncoded(byte[] bytes) throws IOException {
         addTaint(bytes[0]);
@@ -283,6 +285,7 @@ String var300818D7D4F603E5F4346D4E090224B6_1902017978 =         new String(chars
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.990 -0400", hash_original_method = "C0940F4479949D8BE443C2F5943EB650", hash_generated_method = "31537065A84B56C15B2F27AEDEB39F82")
     private PemObject createPemObject(
         Object       obj,

@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,8 +22,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class ContextWrapper extends Context {
     private Context mBase;
@@ -39,7 +40,7 @@ public class ContextWrapper extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Context getBaseContext() {
         return mBase;
     }
@@ -91,6 +92,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public int getThemeResId() {
         return mBase.getThemeResId();
@@ -134,6 +136,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public File getSharedPrefsFile(String name) {
         return mBase.getSharedPrefsFile(name);

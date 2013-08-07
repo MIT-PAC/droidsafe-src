@@ -1,10 +1,11 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class ATResponseParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.266 -0400", hash_original_field = "6438C669E0D0DE98E6929C2CC0FAC474", hash_generated_field = "D67826549E3D41E5CE98380D120E6CF5")
@@ -20,6 +21,7 @@ public class ATResponseParser {
 
     private int tokEnd;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.267 -0400", hash_original_method = "2DC067EE65EE5AEB61F14CBD640EED38", hash_generated_method = "90B4D99E6FA66562090E2203837F21D3")
     public  ATResponseParser(String line) {
         this.line = line;
@@ -28,6 +30,7 @@ public class ATResponseParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.267 -0400", hash_original_method = "D2BEE04A1EF039BFE740D598D7938B39", hash_generated_method = "CF43656056F89F03172AD80E7680D4D2")
     public boolean nextBoolean() {
         nextTok();
@@ -65,6 +68,7 @@ public class ATResponseParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.268 -0400", hash_original_method = "D8B8577219277F33EAE3DA6AB88F25AB", hash_generated_method = "D739903131E1C897DBA6A70C5FD5DFC8")
     public int nextInt() {
         int ret = 0;
@@ -99,6 +103,7 @@ for(int i = tokStart;i < tokEnd;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.269 -0400", hash_original_method = "098AF12FD324D863E13EA52B5E17698D", hash_generated_method = "74D936D17813AAD968F9BC841BF853F0")
     public String nextString() {
         nextTok();
@@ -111,6 +116,7 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1908455533 =         line.substring(t
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.269 -0400", hash_original_method = "10F6658C8E801D9A6B4832727F713C99", hash_generated_method = "66ABBE79AC471142FF8F7FFA04ED4DD6")
     public boolean hasMore() {
         boolean var6025777476581CB9A5AD5A10C75E617E_1539499950 = (next < line.length());
@@ -199,6 +205,7 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1908455533 =         line.substring(t
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.274 -0400", hash_original_method = "418256DED150EC59875240044DA6104A", hash_generated_method = "17D08790EA4A082751A988013E200436")
     private char skipWhiteSpace(char c) {
         addTaint(c);

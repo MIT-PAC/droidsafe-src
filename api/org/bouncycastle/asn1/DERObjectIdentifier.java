@@ -1,15 +1,16 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.math.BigInteger;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DERObjectIdentifier extends ASN1Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.438 -0400", hash_original_field = "F393F3F5E496869A15BC72CBFD56F541", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
@@ -130,6 +131,7 @@ String var5778A82547164F0256F955B75BC8D996_810465090 =         identifier;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.444 -0400", hash_original_method = "7C147E60AEA70A2E84F8C4657E7FBA13", hash_generated_method = "07B2A7E93505A9D6A192915DF69B80DA")
     private void writeField(
         OutputStream    out,
@@ -159,6 +161,7 @@ String var5778A82547164F0256F955B75BC8D996_810465090 =         identifier;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.445 -0400", hash_original_method = "58F2C435CDACAD8814E2A1351775DAC9", hash_generated_method = "0F0BBCB1C8C819266FD04B8CED2320B6")
     private void writeField(
         OutputStream    out,
@@ -297,6 +300,7 @@ String var5B63C5E61AFD535DA7B77B7EF14D4A91_360962898 =         getId();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isValidIdentifier(
         String identifier) {
         if (identifier.length() < 3

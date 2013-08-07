@@ -1,14 +1,15 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Country implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.916 -0400", hash_original_field = "C7E1D84BBBBD6E2342AD8875187F4659", hash_generated_field = "A4787DDEE2CB6821D6A9300F5DB86C40")
@@ -42,7 +43,7 @@ public class Country implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.918 -0400", hash_original_method = "E5422BF754D1EEFE24F783DEE0DEB6C8", hash_generated_method = "93FC7471C9A9942792321C1DF9B6A336")
     public  Country(Country country) {
         mCountryIso = country.mCountryIso;
@@ -53,7 +54,7 @@ public class Country implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.918 -0400", hash_original_method = "5F3223376651F8BE6A8AF3345618A060", hash_generated_method = "2474FA7ECEB069B352EE4A0DED83BA91")
     public final String getCountryIso() {
 String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
@@ -64,7 +65,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.919 -0400", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "2090313D3D23A0DA0D78C6BA5212FDA6")
     public final int getSource() {
         int var6917951DFB797D97827BAAA584F128DE_1004759578 = (mSource);
@@ -75,7 +76,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.919 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FE3ADA66DE4418FEFE74ED707039A9BE")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2071225664 = (0);
@@ -86,7 +87,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.920 -0400", hash_original_method = "FCA327E6B3FDBBC7798ED2309FF9DDE2", hash_generated_method = "C9942526C4E1080AA8DDF55A21E17068")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);
@@ -99,7 +100,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.920 -0400", hash_original_method = "A4E8BAE44F340138225E9939A030C872", hash_generated_method = "E3BFBFD40A647CE34E8E31FC794AA441")
     @Override
     public boolean equals(Object object) {
@@ -132,7 +133,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.921 -0400", hash_original_method = "B421DD13AECD8D681C930C2BD9632735", hash_generated_method = "5A752425D486FFB0EE40F41A19CE4143")
     @Override
     public int hashCode() {
@@ -159,7 +160,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.922 -0400", hash_original_method = "1D459D842605CA34811091FC29FDA2D4", hash_generated_method = "53F1FF3450EF142E1839A9FB9F13615C")
     public boolean equalsIgnoreSource(Country country) {
         addTaint(country.getTaint());

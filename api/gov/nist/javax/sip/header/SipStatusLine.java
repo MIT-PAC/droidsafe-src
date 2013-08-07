@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface SipStatusLine {
 

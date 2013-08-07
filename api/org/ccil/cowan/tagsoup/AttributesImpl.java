@@ -1,12 +1,13 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.xml.sax.Attributes;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AttributesImpl implements Attributes {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.699 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "136C4DD872F8065EECD33F6CD4E7556E")
@@ -570,6 +571,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.713 -0400", hash_original_method = "CB574EAE8A001C113E60067C9D40C52E", hash_generated_method = "B4F0205D74EE5BE54E3DB5F901BA23FB")
     private void ensureCapacity(int n) {
         addTaint(n);
@@ -627,6 +629,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.713 -0400", hash_original_method = "5A39796CA8340A67B1FFF4D32268D0FF", hash_generated_method = "346340FDAC46E488D537A3C9CE6AD5B4")
     private void badIndex(int index) throws ArrayIndexOutOfBoundsException {
         addTaint(index);

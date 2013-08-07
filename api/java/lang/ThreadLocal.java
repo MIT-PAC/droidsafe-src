@@ -1,14 +1,15 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ThreadLocal<T> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.570 -0400", hash_original_field = "426DC84987C4B2179AAC3652CD9F0630", hash_generated_field = "E19C4AFB9937521DCDC693F15C42E2A7")
@@ -192,7 +193,7 @@ Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838 =         current.localVal
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.579 -0400", hash_original_method = "9BD4203D3E5EBD7464FA7B2A4E6BD9E0", hash_generated_method = "379E049E21CBC2DE337CB3BE0A2DB8BC")
         @SuppressWarnings({"unchecked"})
         private void inheritValues(Values fromParent) {
@@ -227,7 +228,7 @@ for(int i = table.length - 2;i >= 0;i -= 2)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.581 -0400", hash_original_method = "8D46CF6663407215221C449D596ED15A", hash_generated_method = "C7EB45EBDA4EAA513131B1354BE102DF")
         private void initializeTable(int capacity) {
             this.table = new Object[capacity * 2];
@@ -243,7 +244,7 @@ for(int i = table.length - 2;i >= 0;i -= 2)
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.583 -0400", hash_original_method = "9C8BB7874FA14669E3E1A4855CFECE2B", hash_generated_method = "EA2CD0921D8A0BFC314FC53447F193A3")
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private void cleanUp() {
             if(rehash())            
             {
@@ -278,7 +279,7 @@ for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.585 -0400", hash_original_method = "D5329B07F2A83D8B781C7C8F5FD2D30A", hash_generated_method = "52D56192824852B32E18F20CB4F6E2BD")
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private boolean rehash() {
             if(tombstones + size < maximumLoad)            
             {
@@ -503,7 +504,7 @@ for(int index = key.hash & mask;;index = next(index))
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.590 -0400", hash_original_method = "A1B9AE6202C436A7C194238B45D86066", hash_generated_method = "F58CC3BF68255592FF21F5E76AA23B62")
         private int next(int index) {
             addTaint(index);

@@ -1,6 +1,7 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +26,10 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Printer;
 import android.util.Xml;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class InputMethodInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.602 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "6778D731BF0BE2E5E9F46404EEE44664")
@@ -456,7 +457,7 @@ String var46A8C37BD18223DBA7F7BB5E017FE828_810412377 =         "InputMethodInfo{
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.617 -0400", hash_original_method = "14EC3F96E0FE12EE22A064553C434BBF", hash_generated_method = "1686782B21CE6904A08E907EEA880889")
     public boolean isAuxiliaryIme() {
         boolean var977F5006FFFDD545C39D52373806572E_1919870510 = (mIsAuxIme);

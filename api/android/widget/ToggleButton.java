@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -10,10 +11,10 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ToggleButton extends CompoundButton {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.005 -0400", hash_original_field = "B8D771293243D6B66B9BDFE3767FA658", hash_generated_field = "88910E09C0D7EF0865C6C6AF2A30F920")
@@ -87,7 +88,7 @@ public class ToggleButton extends CompoundButton {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.008 -0400", hash_original_method = "A3A4B8254A3076C3DF78E3AF06A5BAA7", hash_generated_method = "B654F2B6AF94D87A1B149BC736107006")
     private void syncTextState() {
         boolean checked = isChecked();
@@ -176,7 +177,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_1943124057 =         mTextOff;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.012 -0400", hash_original_method = "ECF0FA7CF2036753A46FE0C4EF856618", hash_generated_method = "4368DF37D4D4F3BE295B7CF8CA0E4405")
     private void updateReferenceToIndicatorDrawable(Drawable backgroundDrawable) {
         addTaint(backgroundDrawable.getTaint());

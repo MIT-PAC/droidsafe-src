@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -54,9 +55,9 @@ import android.view.accessibility.AccessibilityEvent;
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class Activity extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
     private SparseArray<ManagedDialog> mManagedDialogs;
@@ -110,6 +111,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 @DSModeled(DSC.SAFE)
 	public Activity() {
 		super();
+		// RLJ - trying this to stop PTA errors
+		//mWindow = PolicyManager.makeNewWindow((Context)this);
 	}
     @DSModeled(DSC.SPEC)
     public Intent getIntent(){
@@ -314,7 +317,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private void restoreManagedDialogs(Bundle savedInstanceState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -322,7 +325,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
 		final Dialog dialog = onCreateDialog(dialogId, args);
 		dialog.dispatchOnCreate(state);
@@ -341,7 +344,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String savedDialogKeyFor(int key){
 		// Original method
 		/*
@@ -353,7 +356,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String savedDialogArgsKeyFor(int key){
 		// Original method
 		/*
@@ -496,7 +499,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private void saveManagedDialogs(Bundle outState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -695,7 +698,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public FragmentManager getFragmentManager(){
 		if (mFragments == null)
 			mFragments = new FragmentManagerImpl();
@@ -816,7 +819,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @Deprecated public void setPersistent(boolean isPersistent){
 		// Original method
 		/*
@@ -853,7 +856,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	private void initActionBar(){
 		Window window = getWindow();
 		window.getDecorView();
@@ -1738,7 +1741,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private IllegalArgumentException missingDialog(int id){
 		return new IllegalArgumentException("");
 		// Original method
@@ -1953,7 +1956,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
 	public void startActivityForResult(Intent intent, int requestCode){
 		/*
         The modeling required here will create the call to onActivityResult that 
@@ -2014,7 +2017,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, Activity activity){
 		// Original method
@@ -2456,7 +2459,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
 	protected void onActivityResult(int requestCode, int resultCode, Intent data){
 		// Original method
 		/*
@@ -2663,7 +2666,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	private void ensureSearchManager(){
 		mSearchManager = new SearchManager(this, null);
 		// Original method
@@ -2946,7 +2949,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public boolean isImmersive(){
 		try {
             return ActivityManagerNative.getDefault().isImmersive(mToken); //Call down into 
@@ -2966,7 +2969,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public void setImmersive(boolean i){
 		try {
             ActivityManagerNative.getDefault().setImmersive(mToken, i);
@@ -3049,7 +3052,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
 	final void attach(Context context, ActivityThread aThread, Instrumentation instr, IBinder token,
             Application application, Intent intent, ActivityInfo info, CharSequence title, 
             Activity parent, String id, NonConfigurationInstances lastNonConfigurationInstances,
@@ -3067,7 +3070,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
 	final void attach(Context context, ActivityThread aThread,
             Instrumentation instr, IBinder token, int ident,
             Application application, Intent intent, ActivityInfo info,
@@ -3118,10 +3121,12 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
         addTaint(icicle.getTaint());
-        onCreate(icicle);
+        //mWindow = PolicyManager.makeNewWindow(this);
         mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
         mFragments.dispatchActivityCreated();
+        onCreate(icicle);
+        onStart();
         // ---------- Original Method ----------
         //onCreate(icicle);
         //mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
@@ -3278,7 +3283,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public final boolean isResumed(){
 		return getTaintBoolean();
 		// Original method
@@ -3325,6 +3330,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         Dialog mDialog;
         Bundle mArgs;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.926 -0400", hash_original_method = "9DCA77B5D1234925DAEE8DA8399779D6", hash_generated_method = "9DCA77B5D1234925DAEE8DA8399779D6")
         public ManagedDialog ()
         {
@@ -3438,6 +3444,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSModeled(DSC.BAN)
 	public void droidsafeOnSavedInstanceState(Bundle b) {
     	this.onSaveInstanceState(b);
+	}
+
+    @DSModeled(DSC.BAN)
+	public void droidsafeOnPause() {
+    	this.onPause();
 	}
 
     

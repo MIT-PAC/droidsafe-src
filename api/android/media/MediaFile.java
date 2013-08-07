@@ -1,16 +1,17 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.List;
 
 import android.media.DecoderCapabilities.AudioDecoder;
 import android.media.DecoderCapabilities.VideoDecoder;
 import android.mtp.MtpConstants;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MediaFile {
     
@@ -21,12 +22,14 @@ public class MediaFile {
     }
 
 
+    @DSModeled(DSC.BAN)
     static void addFileType(String extension, int fileType, String mimeType) {
         sFileTypeMap.put(extension, new MediaFileType(fileType, mimeType));
         sMimeTypeMap.put(mimeType, Integer.valueOf(fileType));
     }
 
     
+    @DSModeled(DSC.BAN)
     static void addFileType(String extension, int fileType, String mimeType, int mtpFormatCode) {
         addFileType(extension, fileType, mimeType);
         sFileTypeToFormatMap.put(extension, Integer.valueOf(mtpFormatCode));
@@ -35,6 +38,7 @@ public class MediaFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isWMAEnabled() {
         List<AudioDecoder> decoders = DecoderCapabilities.getAudioDecoders();
         int count = decoders.size();
@@ -48,6 +52,7 @@ public class MediaFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isWMVEnabled() {
         List<VideoDecoder> decoders = DecoderCapabilities.getVideoDecoders();
         int count = decoders.size();
@@ -61,7 +66,7 @@ public class MediaFile {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isAudioFileType(int fileType) {
         return ((fileType >= FIRST_AUDIO_FILE_TYPE &&
                 fileType <= LAST_AUDIO_FILE_TYPE) ||
@@ -70,7 +75,7 @@ public class MediaFile {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isVideoFileType(int fileType) {
         return (fileType >= FIRST_VIDEO_FILE_TYPE &&
                 fileType <= LAST_VIDEO_FILE_TYPE)
@@ -79,27 +84,28 @@ public class MediaFile {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isImageFileType(int fileType) {
         return (fileType >= FIRST_IMAGE_FILE_TYPE &&
                 fileType <= LAST_IMAGE_FILE_TYPE);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isPlayListFileType(int fileType) {
         return (fileType >= FIRST_PLAYLIST_FILE_TYPE &&
                 fileType <= LAST_PLAYLIST_FILE_TYPE);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isDrmFileType(int fileType) {
         return (fileType >= FIRST_DRM_FILE_TYPE &&
                 fileType <= LAST_DRM_FILE_TYPE);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static MediaFileType getFileType(String path) {
         int lastDot = path.lastIndexOf(".");
         if (lastDot < 0)
@@ -108,6 +114,7 @@ public class MediaFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isMimeTypeMedia(String mimeType) {
         int fileType = getFileTypeForMimeType(mimeType);
         return isAudioFileType(fileType) || isVideoFileType(fileType)
@@ -115,6 +122,7 @@ public class MediaFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getFileTitle(String path) {
         int lastSlash = path.lastIndexOf('/');
         if (lastSlash >= 0) {
@@ -131,18 +139,21 @@ public class MediaFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getFileTypeForMimeType(String mimeType) {
         Integer value = sMimeTypeMap.get(mimeType);
         return (value == null ? 0 : value.intValue());
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getMimeTypeForFile(String path) {
         MediaFileType mediaFileType = getFileType(path);
         return (mediaFileType == null ? null : mediaFileType.mimeType);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getFormatCode(String fileName, String mimeType) {
         if (mimeType != null) {
             Integer value = sMimeTypeToFormatMap.get(mimeType);
@@ -162,6 +173,7 @@ public class MediaFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getMimeTypeForFormatCode(int formatCode) {
         return sFormatToMimeTypeMap.get(formatCode);
     }
@@ -175,6 +187,7 @@ public class MediaFile {
 
         public String mimeType;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.501 -0400", hash_original_method = "5DA6BED04674A9B9CD299FCBDC3FDFAE", hash_generated_method = "D07946761458CF842A754E37F4709A88")
           MediaFileType(int fileType, String mimeType) {
             this.fileType = fileType;

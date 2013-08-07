@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static javax.microedition.khronos.egl.EGL10.EGL_ALPHA_SIZE;
 import static javax.microedition.khronos.egl.EGL10.EGL_BAD_NATIVE_WINDOW;
 import static javax.microedition.khronos.egl.EGL10.EGL_BLUE_SIZE;
@@ -44,10 +45,10 @@ import android.util.Log;
 
 import com.google.android.gles_jni.EGLImpl;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class HardwareRenderer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.525 -0400", hash_original_field = "6F84A7F10C955D3C78F44E5278F6195B", hash_generated_field = "7A48C52BD142368ED44BC086FD9013A2")
@@ -64,7 +65,7 @@ public abstract class HardwareRenderer {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void disable(boolean system) {
         sRendererDisabled = true;
         if (system) {
@@ -73,7 +74,7 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isAvailable() {
         return GLES20Canvas.isAvailable();
     }
@@ -123,7 +124,7 @@ public abstract class HardwareRenderer {
     abstract HardwareCanvas getCanvas();
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void setupDiskCache(File cacheDir) {
         nSetupShadersDiskCache(new File(cacheDir, CACHE_PATH_SHADERS).getAbsolutePath());
     }
@@ -337,6 +338,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.534 -0400", hash_original_method = "87E6FBE52BF3E41B35644D0BA431AF43", hash_generated_method = "724BB10E1821067E94AC57137E341A8E")
         private void fallback(boolean fallback) {
             addTaint(fallback);
@@ -480,6 +482,7 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.537 -0400", hash_original_method = "7EBBB0609098A0727E2316EE23892E6C", hash_generated_method = "5950AB41F58F95C94A08A5B70FE82546")
         private EGLConfig chooseEglConfig() {
             EGLConfig[] configs = new EGLConfig[1];
@@ -523,6 +526,7 @@ EGLConfig var540C13E9E156B687226421B24F2DF178_1290590049 =             null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.538 -0400", hash_original_method = "0890A6845DB8299C7ED9F063C47BF666", hash_generated_method = "6FC5D75673E2291D1EE0C855331C45B2")
         private void printConfig(EGLConfig config) {
             addTaint(config.getTaint());
@@ -719,6 +723,7 @@ EGLContext var927F4799C479B4C43A974ADDE6053FE6_1394440957 =             egl.eglC
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.539 -0400", hash_original_method = "DE5D7845AE9FF0DF12BC88C1DA1B9378", hash_generated_method = "59279ECA4FB0C58B52855668C1D9705B")
         private boolean createSurface(SurfaceHolder holder) {
             mEglSurface = sEgl.eglCreateWindowSurface(sEglDisplay, sEglConfig, holder, null);
@@ -1235,6 +1240,7 @@ SurfaceTexture varAA924545A7AC84D1B0FCFE9418DCB8F7_1257300807 =             ((GL
         }
 
         
+        @DSModeled(DSC.BAN)
         private static void destroyHardwareLayer(View view) {
             view.destroyLayer();
             if (view instanceof ViewGroup) {
@@ -1281,6 +1287,7 @@ SurfaceTexture varAA924545A7AC84D1B0FCFE9418DCB8F7_1257300807 =             ((GL
         }
 
         
+        @DSModeled(DSC.BAN)
         private static void destroyResources(View view) {
             view.destroyHardwareResources();
             if (view instanceof ViewGroup) {
@@ -1322,6 +1329,7 @@ SurfaceTexture varAA924545A7AC84D1B0FCFE9418DCB8F7_1257300807 =             ((GL
         }
 
         
+        @DSModeled(DSC.BAN)
         private static void usePbufferSurface(EGLContext eglContext) {
             synchronized (sPbufferLock) {
                 if (sPbuffer == null) {

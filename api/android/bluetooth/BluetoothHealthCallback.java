@@ -1,10 +1,11 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public abstract class BluetoothHealthCallback {
     

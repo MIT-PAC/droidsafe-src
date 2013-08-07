@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -23,10 +24,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class FragmentActivity extends Activity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.736 -0400", hash_original_field = "BD6DAC53FC9C157B350330EAEE248807", hash_generated_field = "501FA87408E2F66D936187DF5DCADDC6")
@@ -505,6 +506,7 @@ switch(featureId){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.068 -0400", hash_original_method = "22DD6D11219C23D125AE29FC1331896B", hash_generated_method = "FA89657D88D3369A8E7951E23FEAAA18")
     @Override
     protected void onNewIntent(Intent intent) {
@@ -825,6 +827,7 @@ Object var5B57144719C5DFE393244107A5A35FBA_1406433072 =         nc != null ? nc.
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String viewToString(View view) {
         StringBuilder out = new StringBuilder(128);
         out.append(view.getClass().getName());
@@ -892,6 +895,7 @@ Object var5B57144719C5DFE393244107A5A35FBA_1406433072 =         nc != null ? nc.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.072 -0400", hash_original_method = "0B7E3349E1F0303BBAAE6767112F50B2", hash_generated_method = "45A51C74069149FCF9F1548BE869ED30")
     private void dumpViewHierarchy(String prefix, PrintWriter writer, View view) {
         addTaint(view.getTaint());

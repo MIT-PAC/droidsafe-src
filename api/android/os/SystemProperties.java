@@ -1,10 +1,11 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class SystemProperties {
@@ -54,7 +55,7 @@ public class SystemProperties {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String get(String key) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -63,7 +64,7 @@ public class SystemProperties {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String get(String key, String def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -72,7 +73,7 @@ public class SystemProperties {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getInt(String key, int def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -81,6 +82,7 @@ public class SystemProperties {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long getLong(String key, long def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -89,6 +91,7 @@ public class SystemProperties {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean getBoolean(String key, boolean def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -97,6 +100,7 @@ public class SystemProperties {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void set(String key, String val) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);

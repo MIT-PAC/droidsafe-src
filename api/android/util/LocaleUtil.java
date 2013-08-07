@@ -1,20 +1,23 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import libcore.icu.ICU;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class LocaleUtil {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.739 -0400", hash_original_method = "DB2CFC1123D815AD16F73168E1C2B755", hash_generated_method = "F9680582E9F3FF3D5F3D7BEF7775E7F5")
     private  LocaleUtil() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getLayoutDirectionFromLocale(Locale locale) {
         if (locale != null && !locale.equals(Locale.ROOT)) {
             final String scriptSubtag = ICU.getScript(ICU.addLikelySubtags(locale.toString()));
@@ -28,6 +31,7 @@ public class LocaleUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int getLayoutDirectionFromFirstChar(Locale locale) {
         switch(Character.getDirectionality(locale.getDisplayName(locale).charAt(0))) {
             case Character.DIRECTIONALITY_RIGHT_TO_LEFT:

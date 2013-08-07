@@ -1,8 +1,9 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.util.List;
 import java.util.NoSuchElementException;

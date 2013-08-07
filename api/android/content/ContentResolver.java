@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,9 +33,9 @@ import android.text.TextUtils;
 import android.util.EventLog;
 import android.util.Log;
 import dalvik.system.CloseGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 import droidsafe.concrete.DSCursor;
 
 public abstract class ContentResolver {
@@ -51,6 +52,7 @@ public abstract class ContentResolver {
     protected abstract IContentProvider acquireProvider(Context c, String name);
 
     
+    @DSModeled(DSC.BAN)
     protected IContentProvider acquireExistingProvider(Context c, String name) {
         return acquireProvider(c, name);
     }
@@ -387,7 +389,7 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_827792567 =             
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.609 -0400", hash_original_method = "39DD117C1A4502740FE90592CCDD92D2", hash_generated_method = "32B3078D6B11F25190CACF63AB1BE54D")
     public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException {
         addTaint(uri.getTaint());
@@ -462,7 +464,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     static public int modeToMode(Uri uri, String mode) throws FileNotFoundException {
         int modeBits;
         if ("r".equals(mode)) {
@@ -621,7 +623,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public final IContentProvider acquireProvider(Uri uri) {
         if (!SCHEME_CONTENT.equals(uri.getScheme())) {
             return null;
@@ -634,7 +636,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public final IContentProvider acquireExistingProvider(Uri uri) {
         if (!SCHEME_CONTENT.equals(uri.getScheme())) {
             return null;
@@ -647,6 +649,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.BAN)
     public final IContentProvider acquireProvider(String name) {
         if (name == null) {
             return null;
@@ -948,6 +951,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SyncStatusInfo getSyncStatus(Account account, String authority) {
         try {
             return getContentService().getSyncStatus(account, authority);
@@ -997,7 +1001,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private int samplePercentForDuration(long durationMillis) {
         if (durationMillis >= SLOW_THRESHOLD_MILLIS) {
             return 100;
@@ -1006,7 +1010,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private void maybeLogQueryToEventLog(long durationMillis,
                                          Uri uri, String[] projection,
                                          String selection, String sortOrder) {
@@ -1045,7 +1049,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private void maybeLogUpdateToEventLog(
         long durationMillis, Uri uri, String operation, String selection) {
         int samplePercent = samplePercentForDuration(durationMillis);
@@ -1068,6 +1072,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.BAN)
     public static IContentService getContentService() {
         if (sContentService != null) {
             return sContentService;

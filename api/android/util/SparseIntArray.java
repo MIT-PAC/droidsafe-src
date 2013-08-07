@@ -1,12 +1,13 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SparseIntArray implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.211 -0400", hash_original_field = "1FF7333D8075E8242307366B57B0CC5B", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
@@ -298,7 +299,7 @@ for(int i = 0;i < mSize;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {

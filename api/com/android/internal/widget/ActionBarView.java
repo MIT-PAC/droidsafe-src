@@ -1,6 +1,7 @@
 package com.android.internal.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
 import android.app.Activity;
@@ -45,10 +46,10 @@ import com.android.internal.view.menu.MenuPresenter;
 import com.android.internal.view.menu.MenuView;
 import com.android.internal.view.menu.SubMenuBuilder;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ActionBarView extends AbsActionBarView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.036 -0400", hash_original_field = "A75260FCE4EB84735EF4F8857FDD8871", hash_generated_field = "D7021ACCA51C37141CA5A3F0F0CB8D58")

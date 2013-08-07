@@ -1,12 +1,13 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Region implements Parcelable {
@@ -78,7 +79,7 @@ public class Region implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.086 -0400", hash_original_method = "5B5253F8036AE411F7DD245C7F6E35C3", hash_generated_method = "01C6E0BEBF91446973826C5A49A77230")
     private  Region(int ni, int dummy) {
         this(ni);
@@ -310,7 +311,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_229971889 =         path;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.094 -0400", hash_original_method = "39111F1C858A6D228BD34A5A0563D24D", hash_generated_method = "D91EAAD3D7EC8A230C5EB71204DB1B93")
     public void scale(float scale) {
         addTaint(scale);

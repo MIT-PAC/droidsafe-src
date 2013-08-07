@@ -1,6 +1,7 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
@@ -11,13 +12,14 @@ import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Streams {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.789 -0400", hash_original_method = "C77AFB36715A9D022AA555F8E2CA0E65", hash_generated_method = "1AA6BD22E66D64175A500F429CBE1AC9")
     private  Streams() {
         // ---------- Original Method ----------

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.address.GenericURI;
 
 import java.text.ParseException;
@@ -8,10 +9,10 @@ import java.text.ParseException;
 import javax.sip.address.URI;
 import javax.sip.header.ErrorInfoHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ErrorInfo extends ParametersHeader implements ErrorInfoHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.325 -0400", hash_original_field = "6B3E9CDFD9FD6B6F313D7DD4526C9CEB", hash_generated_field = "8F903FEA2C89EDECE455B9C7E7CF07FC")

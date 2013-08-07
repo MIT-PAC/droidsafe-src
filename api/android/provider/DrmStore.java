@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,10 +18,10 @@ import android.drm.mobile1.DrmRights;
 import android.drm.mobile1.DrmRightsManager;
 import android.net.Uri;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class DrmStore {
     

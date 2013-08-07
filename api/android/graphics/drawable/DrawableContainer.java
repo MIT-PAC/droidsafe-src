@@ -1,16 +1,17 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.os.SystemClock;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DrawableContainer extends Drawable implements Drawable.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.690 -0400", hash_original_field = "6DB222960773F6967427BFC156C9AD7B", hash_generated_field = "2DB19AB4F82F5273EE7E6529BBA72AE4")

@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -19,13 +20,14 @@ import android.telephony.SmsMessage;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Telephony {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.889 -0400", hash_original_method = "2CAFC6EF3CCF11FE20893B46D3EAF4A2", hash_generated_method = "A6723A410EBE39DDFE0725B9413E935E")
     public  Telephony() {
         // ---------- Original Method ----------
@@ -372,6 +374,7 @@ public final class Telephony {
     
     public static final class Threads implements ThreadsColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.894 -0400", hash_original_method = "45D6965ABD617E611598473C57FD4F7C", hash_generated_method = "082B4F6FF5F0018201C341C776361FB0")
         private  Threads() {
             // ---------- Original Method ----------
@@ -692,6 +695,7 @@ public final class Telephony {
         
         public static final class Intents {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.897 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
             private  Intents() {
                 // ---------- Original Method ----------
@@ -981,6 +985,7 @@ public final class Telephony {
     
     public static final class Intents {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.901 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
         private  Intents() {
             // ---------- Original Method ----------

@@ -1,13 +1,14 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LruCache<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.874 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "008FED306747468EE2384D75A989933A")
@@ -163,6 +164,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_1904774997 =         previous;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.878 -0400", hash_original_method = "5A85F1994DB09F90DA92A4710FB4C22D", hash_generated_method = "62DD735914E47109C0E01C4B544C0766")
     private void trimToSize(int maxSize) {
         addTaint(maxSize);

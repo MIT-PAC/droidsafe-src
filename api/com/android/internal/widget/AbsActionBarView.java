@@ -1,6 +1,7 @@
 package com.android.internal.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -17,10 +18,10 @@ import com.android.internal.R;
 import com.android.internal.view.menu.ActionMenuPresenter;
 import com.android.internal.view.menu.ActionMenuView;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbsActionBarView extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.635 -0400", hash_original_field = "4301CED8C5B8959C82A54CDC142B837C", hash_generated_field = "7B14B552DB0C79CBA209909A2B52BF74")

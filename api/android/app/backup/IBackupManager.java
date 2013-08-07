@@ -1,6 +1,7 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IBackupManager extends android.os.IInterface
 {

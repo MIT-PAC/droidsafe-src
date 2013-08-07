@@ -1,20 +1,22 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.UnknownHostException;
 
 import com.android.internal.os.RuntimeInit;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Log {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.755 -0400", hash_original_method = "869367D375FC874369E92ACB08C85ECE", hash_generated_method = "A62EB914C3FFD50186C13765FE4CB4E6")
     private  Log() {
         // ---------- Original Method ----------

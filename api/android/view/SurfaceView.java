@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
@@ -22,10 +23,10 @@ import android.util.AttributeSet;
 
 import com.android.internal.view.BaseIWindow;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class SurfaceView extends View {
@@ -482,7 +483,7 @@ public class SurfaceView extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.204 -0400", hash_original_method = "8A7163C0B5D9260FCDBBE7B713CA285D", hash_generated_method = "EC875459420059988B62E0689FF79ECE")
     private void init() {
         setWillNotDraw(true);
@@ -646,7 +647,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.207 -0400", hash_original_method = "F99ED41FE6B39B12C38A6C99019A5F97", hash_generated_method = "17A2A7FE675F92C41C798BEDADC2A627")
     @Override
     protected boolean setFrame(int left, int top, int right, int bottom) {
@@ -810,7 +811,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.211 -0400", hash_original_method = "1670DE99B4A30E6D116E6931C42E66D0", hash_generated_method = "038066FDD6533F376555CE67954F9E82")
     public void setWindowType(int type) {
         mWindowType = type;
@@ -819,7 +820,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.216 -0400", hash_original_method = "1133978B42097E05A4BF8CED29255FA3", hash_generated_method = "128EED3733F0FC01E31068F53657E414")
     private void updateWindow(boolean force, boolean redrawNeeded) {
         addTaint(redrawNeeded);
@@ -1044,7 +1045,7 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_447966681 =        
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.218 -0400", hash_original_method = "A4CE5F54BDA2367531BCEA3F1517BC09", hash_generated_method = "53390F028C627B3691703C1DE7152956")
     public boolean isFixedSize() {
         boolean var1C8AF9176ECD1A92CAC16542656B0789_1298521386 = ((mRequestedWidth != -1 || mRequestedHeight != -1));

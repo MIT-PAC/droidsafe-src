@@ -1,16 +1,17 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.AF_INET;
 
 import java.io.ObjectStreamException;
 import java.nio.ByteOrder;
 
 import libcore.io.Memory;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Inet4Address extends InetAddress {
     
@@ -199,6 +200,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.527 -0400", hash_original_method = "ED281EE0C7A186E413EE6AFE3B25FC7C", hash_generated_method = "E9A65F76B911A169A67869803953F912")
     private Object writeReplace() throws ObjectStreamException {
 Object var018746D7CDD66E0C0F2B4CEA8F394772_1661696511 =         new Inet4Address(ipaddress, hostName);

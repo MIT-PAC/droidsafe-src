@@ -1,11 +1,12 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class AbstractCollection<E> implements Collection<E> {
     

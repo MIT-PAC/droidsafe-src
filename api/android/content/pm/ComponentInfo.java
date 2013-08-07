@@ -1,13 +1,14 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ComponentInfo extends PackageItemInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.362 -0400", hash_original_field = "15CA13E1529EAD87820F354B3BC6598E", hash_generated_field = "89C41A1178051ADE4F3D6AE74553DD49")
@@ -220,6 +221,7 @@ CharSequence varB017984728AC60AD1F0BF8734F33F15C_1552982801 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.373 -0400", hash_original_method = "584CAA069A59D426001F803F7AD39AAD", hash_generated_method = "735BFD7B8DB7B2140D5DA96B5B9DB089")
     @Override
     protected Drawable loadDefaultIcon(PackageManager pm) {
@@ -232,6 +234,7 @@ Drawable varC09D9974726D0718A5F07B870A506296_1184767004 =         applicationInf
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.373 -0400", hash_original_method = "E27DEF2367944E00B3FB42CCCCC00CEB", hash_generated_method = "9EB19445B17534A92847E076FCB7B696")
     @Override
     protected Drawable loadDefaultLogo(PackageManager pm) {
@@ -244,7 +247,7 @@ Drawable varC6423699DBFD54FBC0A4ED249151ECE7_868942523 =         applicationInfo
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.373 -0400", hash_original_method = "6586F246687FA42890C123804417F38B", hash_generated_method = "3ABB8B9E9A9FE7B74A2EB54996B077B1")
     @Override
     protected ApplicationInfo getApplicationInfo() {

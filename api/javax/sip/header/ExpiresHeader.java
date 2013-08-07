@@ -1,6 +1,7 @@
 package javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 
 public interface ExpiresHeader extends Header {

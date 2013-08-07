@@ -1,12 +1,13 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DhcpInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.462 -0400", hash_original_field = "9D0DE3EE8DA929F164DA3D6942A26C0E", hash_generated_field = "C724F9C20BA29ABA1B784CD7B6F790AC")
@@ -38,6 +39,7 @@ public class DhcpInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.464 -0400", hash_original_method = "39B86796FD777927684A932467EC8639", hash_generated_method = "B9F609EF229BB81C3D684FFBA5D41A88")
     public  DhcpInfo(DhcpInfo source) {
         if(source != null)        
@@ -102,13 +104,13 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1611793050 =         str.toString();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void putAddress(StringBuffer buf, int addr) {
         buf.append(NetworkUtils.intToInetAddress(addr).getHostAddress());
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.465 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5AA35666D4BE217DF54C792BC7129116")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1811279466 = (0);
@@ -119,7 +121,7 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1611793050 =         str.toString();
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.466 -0400", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "F87B62B9FC8B7BB277B51C26D6B492CB")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

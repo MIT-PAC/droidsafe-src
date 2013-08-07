@@ -1,8 +1,9 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class PortUnreachableException extends SocketException {
     
@@ -20,6 +21,7 @@ public class PortUnreachableException extends SocketException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.281 -0400", hash_original_method = "3045F383C8CE75FC18DF1FE38D9A0FBC", hash_generated_method = "4292B25864E56DF091B40D51645DFA7E")
     public  PortUnreachableException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

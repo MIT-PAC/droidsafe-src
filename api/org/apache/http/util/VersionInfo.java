@@ -1,16 +1,17 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class VersionInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.583 -0400", hash_original_field = "5DC10C942C376F4D917341A8F6F35478", hash_generated_field = "B4EE0AE6CDFC7729E2DF3959619B27C8")

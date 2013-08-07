@@ -1,6 +1,7 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.EINVAL;
 import static libcore.io.OsConstants.O_ACCMODE;
 import static libcore.io.OsConstants.O_RDONLY;
@@ -16,9 +17,9 @@ import java.nio.ByteBuffer;
 
 import dalvik.system.BlockGuard;
 import dalvik.system.SocketTagger;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class BlockGuardOs extends ForwardingOs {
     
@@ -31,7 +32,7 @@ public class BlockGuardOs extends ForwardingOs {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.979 -0400", hash_original_method = "C76A4564374F8B1BE91B3642FF0C847C", hash_generated_method = "11A968D6814675D8C628DA0F002E1F08")
     private FileDescriptor tagSocket(FileDescriptor fd) throws ErrnoException {
         addTaint(fd.getTaint());
@@ -58,7 +59,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1473985440 =             fd;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.980 -0400", hash_original_method = "94528424D623701A416A9704EA17EE51", hash_generated_method = "B178EEC8EFEC59A4ED9724B55DEB2902")
     private void untagSocket(FileDescriptor fd) throws ErrnoException {
         addTaint(fd.getTaint());
@@ -131,7 +132,7 @@ FileDescriptor varEB739DAEA0779973AFC08C3F032D7A35_244430921 =         tagSocket
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static boolean isLingerSocket(FileDescriptor fd) throws ErrnoException {
         StructLinger linger = Libcore.os.getsockoptLinger(fd, SOL_SOCKET, SO_LINGER);
         return linger.isOn() && linger.l_linger > 0;

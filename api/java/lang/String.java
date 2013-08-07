@@ -1,6 +1,7 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
@@ -14,10 +15,10 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class String implements Serializable, Comparable<String>, CharSequence {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.792 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
@@ -46,7 +47,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.792 -0400", hash_original_method = "8A258D0AF74DE6E118252D0EA5531366", hash_generated_method = "A11432EA568E66AD1DE5D8C05C5AB870")
     @SuppressWarnings("unused")
     private  String(String s, char c) {
@@ -392,7 +393,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.923 -0400", hash_original_method = "8B59C74FD130D5556CE63A5F3CE74139", hash_generated_method = "08126433ED54CCD02F64DEF6C42B8545")
     @SuppressWarnings( { "unused", "nls" })
     private  String(String s1, String s2) {
@@ -424,7 +425,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.926 -0400", hash_original_method = "E07460C3146BC4727C3E888CAC21772A", hash_generated_method = "73ACD6CE76E5E989647928EAA1950CB1")
     @SuppressWarnings( { "unused", "nls" })
     private  String(String s1, String s2, String s3) {
@@ -550,7 +551,7 @@ for(int i = offset;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.946 -0400", hash_original_method = "8767608BAC25DDC267BEC70B13CF72A3", hash_generated_method = "23EDDAB7C39C6B71B48112C650C2BBBB")
     @SuppressWarnings("unused")
     private  String(String s1, int v1) {
@@ -589,7 +590,7 @@ for(int i = offset;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.947 -0400", hash_original_method = "00E4125D0AA58BE2E1232BB5FC2C4846", hash_generated_method = "F020748DDC5F8E883B209AB0EDF462FD")
     private StringIndexOutOfBoundsException indexAndLength(int index) {
         addTaint(index);
@@ -601,7 +602,7 @@ for(int i = offset;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.948 -0400", hash_original_method = "C5BE1ED07127E02665146DD0ACED99A5", hash_generated_method = "94B09C20B0DE569BBF0E89074113E16A")
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
         addTaint(end);
@@ -614,7 +615,7 @@ for(int i = offset;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.948 -0400", hash_original_method = "FABF855F22C4847A4FF9FC56E0D56C67", hash_generated_method = "974AF8CFA1C811A9B4DCD2CD323DBD14")
     private StringIndexOutOfBoundsException failedBoundsCheck(int arrayLength, int offset, int count) {
         addTaint(count);
@@ -628,7 +629,7 @@ for(int i = offset;i < end;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.949 -0400", hash_original_method = "1D42C2C4BD065BE4935C25058CB25A0E", hash_generated_method = "963E7C6B4EC4B4E4B6CB5B75B3EB0E00")
     private char foldCase(char ch) {
         addTaint(ch);
@@ -1079,7 +1080,7 @@ for(int i = offset;i < end;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.997 -0400", hash_original_method = "9DA1418F8A10F302F688A26755CAB088", hash_generated_method = "8C369D3FC3788786966452B4CB522A60")
     private int indexOfSupplementary(int c, int start) {
         addTaint(start);
@@ -1325,7 +1326,7 @@ for(int i = _offset + start;i >= _offset;--i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.003 -0400", hash_original_method = "ECC6B0EDCC4F01358439BB31BFF21134", hash_generated_method = "5B2138642F978379EF8D1D6EE1C1C878")
     private int lastIndexOfSupplementary(int c, int start) {
         addTaint(start);
@@ -2220,7 +2221,7 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_1649835730 =         substring(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unused")
     private static int indexOf(String haystackString, String needleString,
             int cache, int md2, char lastChar) {
@@ -2258,6 +2259,7 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_1649835730 =         substring(
     
     private static final class CaseInsensitiveComparator implements Comparator<String>, Serializable {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.207 -0400", hash_original_method = "4085F5B81BF948B4B3F485D1409A9E33", hash_generated_method = "4085F5B81BF948B4B3F485D1409A9E33")
         public CaseInsensitiveComparator ()
         {

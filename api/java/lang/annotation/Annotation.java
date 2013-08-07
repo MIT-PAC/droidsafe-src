@@ -1,6 +1,7 @@
 package java.lang.annotation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Annotation {
 

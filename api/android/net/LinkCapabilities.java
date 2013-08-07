@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -9,16 +10,17 @@ import java.util.Set;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LinkCapabilities implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.038 -0400", hash_original_field = "CC010D636843DF8CC2B8C35E93302C15", hash_generated_field = "6D2F490064193A394308FD52EAD2F213")
 
     private HashMap<Integer, String> mCapabilities;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.038 -0400", hash_original_method = "8AC97A1FCCB5728EBAB2151990B61507", hash_generated_method = "5CABA04E7070710949FB09D336670A02")
     public  LinkCapabilities() {
         mCapabilities = new HashMap<Integer, String>();
@@ -27,6 +29,7 @@ public class LinkCapabilities implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.039 -0400", hash_original_method = "B89651C5D9CFDB434612BD816E092144", hash_generated_method = "0878ACDF400A9CDAA93315C0D1C4216C")
     public  LinkCapabilities(LinkCapabilities source) {
         if(source != null)        
@@ -46,12 +49,14 @@ public class LinkCapabilities implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static LinkCapabilities createNeedsMap(String applicationRole) {
         if (DBG) log("createNeededCapabilities(applicationRole) EX");
         return new LinkCapabilities();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.040 -0400", hash_original_method = "65569EBD49455AAF0883C4D69A42B604", hash_generated_method = "4F70271EFC86EA6CB157AC698C1F121C")
     public void clear() {
         mCapabilities.clear();
@@ -60,7 +65,7 @@ public class LinkCapabilities implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.040 -0400", hash_original_method = "50DA395E2AF302C1CC5EAE713D0D4EBB", hash_generated_method = "5EFF9843369AC5519FDB09107E6F03FF")
     public boolean isEmpty() {
         boolean var651A9CCC76FF7B6A32F11DFBA25B6C83_188626561 = (mCapabilities.isEmpty());
@@ -71,7 +76,7 @@ public class LinkCapabilities implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.040 -0400", hash_original_method = "32A53E9BB0DE153D2975EBB6ECC5F512", hash_generated_method = "21FC8CCF37DEC97B6FDED2A1C787CA7A")
     public int size() {
         int var4F37A19B41DACFAB8B445BF9526CFCB2_537096324 = (mCapabilities.size());
@@ -82,6 +87,7 @@ public class LinkCapabilities implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.041 -0400", hash_original_method = "568005AD4EF2A886FBB9B820A5E2167C", hash_generated_method = "80927E46435347FCD88486653D3C325F")
     public String get(int key) {
         addTaint(key);
@@ -93,6 +99,7 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1940263274 =         mCapabilities.ge
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.041 -0400", hash_original_method = "126A86B00CA0552F526F15B68A83F2ED", hash_generated_method = "407DE26955FB5137BDB572DBA0641A73")
     public void put(int key, String value) {
         addTaint(value.getTaint());
@@ -103,7 +110,7 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1940263274 =         mCapabilities.ge
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.042 -0400", hash_original_method = "C1A26B01C735E97490E02BBFBAC6A09E", hash_generated_method = "8CA191B6AEF7D69E8E2CFC4F779F5D42")
     public boolean containsKey(int key) {
         addTaint(key);
@@ -115,7 +122,7 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1940263274 =         mCapabilities.ge
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.042 -0400", hash_original_method = "05E28527AC6BDB7F8BDD1968A304DADF", hash_generated_method = "CD2D12EE4DC840B8B062AFC2141AADFB")
     public boolean containsValue(String value) {
         addTaint(value.getTaint());
@@ -137,6 +144,7 @@ Set<Entry<Integer, String>> varB74657035CAC30102BE4F1FDE7200E78_61839002 =      
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.043 -0400", hash_original_method = "9EFA80A4731E36F41CEC9CDBD3C0FD66", hash_generated_method = "F934E3869A7E3015DEC104CE409DA6AE")
     public Set<Integer> keySet() {
 Set<Integer> varEA618452F40CB38732BAA6482DBBF012_1805952249 =         mCapabilities.keySet();
@@ -147,6 +155,7 @@ Set<Integer> varEA618452F40CB38732BAA6482DBBF012_1805952249 =         mCapabilit
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.043 -0400", hash_original_method = "3BC9717E7FFAE02D41102E4F5DA33838", hash_generated_method = "076EB30D330951F6A5284EA40AE353D6")
     public Collection<String> values() {
 Collection<String> varA9D5CC32CED998FAD23DBA7A946F0A52_1257548451 =         mCapabilities.values();
@@ -157,7 +166,7 @@ Collection<String> varA9D5CC32CED998FAD23DBA7A946F0A52_1257548451 =         mCap
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.043 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "82FC49E0AD4BB19E83A5647EA4ABAC03")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1557744946 = (0);
@@ -168,6 +177,7 @@ Collection<String> varA9D5CC32CED998FAD23DBA7A946F0A52_1257548451 =         mCap
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.044 -0400", hash_original_method = "A28D232247661B92586D4FEECBA4E0AF", hash_generated_method = "F45776D92DA2E001F9F6A0C06E9D1229")
     @Override
     public String toString() {
@@ -215,6 +225,7 @@ String var2460B846747F8B22185AD8BE722266A5_319784191 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.044 -0400", hash_original_method = "76DC40F01B1B28CF1F7E32C3EB72CACA", hash_generated_method = "EEE80439C2F30A8173E08E018B634E5E")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -234,6 +245,7 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static void log(String s) {
         Log.d(TAG, s);
     }
@@ -241,6 +253,7 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
     
     public static final class Key {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.045 -0400", hash_original_method = "63943B74C3B7537BF21BF313857C8294", hash_generated_method = "9111A328D08351EAFE3972B5E48A468B")
         private  Key() {
             // ---------- Original Method ----------
@@ -283,6 +296,7 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
     
     public static final class Role {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.046 -0400", hash_original_method = "B6871343D9E854D112856D815CFF5530", hash_generated_method = "78F599F7713B91E62A6511F5FC9496CD")
         private  Role() {
             // ---------- Original Method ----------

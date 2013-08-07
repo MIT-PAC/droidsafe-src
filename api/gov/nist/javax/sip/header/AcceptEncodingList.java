@@ -1,11 +1,12 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.sip.header.AcceptEncodingHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class AcceptEncodingList extends SIPHeaderList<AcceptEncoding> {
     

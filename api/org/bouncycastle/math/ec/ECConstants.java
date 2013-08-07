@@ -1,6 +1,7 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
 public interface ECConstants

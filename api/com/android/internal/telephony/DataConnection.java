@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,10 +20,10 @@ import com.android.internal.util.Protocol;
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class DataConnection extends StateMachine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.896 -0400", hash_original_field = "DA5953071EE7823FDF8D83F49423D96B", hash_generated_field = "CD0721759B4466C03691E733797DD315")
@@ -98,6 +99,7 @@ public abstract class DataConnection extends StateMachine {
 
     private DcDisconnectionErrorCreatingConnection mDisconnectingErrorCreatingConnection = new DcDisconnectionErrorCreatingConnection();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.899 -0400", hash_original_method = "C1A86AB25296EBC0B07A31287A18BD02", hash_generated_method = "FF17E6215528B33FC51F74A116EF414D")
     protected  DataConnection(PhoneBase phone, String name, int id, RetryManager rm) {
         super(name);
@@ -155,6 +157,7 @@ public abstract String toString();
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.901 -0400", hash_original_method = "59ED68D7EF373C505428063E232AFE5C", hash_generated_method = "40C33FD9737C4F2776F556CC995C1DDE")
     private void tearDownData(Object o) {
         addTaint(o.getTaint());
@@ -191,6 +194,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.902 -0400", hash_original_method = "4864ED15F4860BAE9DD2587736D4A08F", hash_generated_method = "0422BD222B7D78A64B5666D029F2F8DD")
     private void notifyConnectCompleted(ConnectionParams cp, FailCause cause) {
         addTaint(cp.getTaint());
@@ -237,6 +241,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.903 -0400", hash_original_method = "DB15644DADCD9FE90AC8779F50E40D9C", hash_generated_method = "B1801680D87068F7BB6249BB80312C0E")
     private void notifyDisconnectCompleted(DisconnectParams dp) {
         addTaint(dp.getTaint());
@@ -270,6 +275,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.904 -0400", hash_original_method = "1BB05B964694E45E9B1991E5D1915447", hash_generated_method = "291EB36F37354AD2C22795FA353979AD")
     protected int getRadioTechnology(int defaultRadioTechnology) {
         addTaint(defaultRadioTechnology);
@@ -296,7 +302,7 @@ public abstract String toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.914 -0400", hash_original_method = "AAF5779D145C421CCE90F0916803977D", hash_generated_method = "1E0D7FFAAA1F113D0A0FE4F2B7E779DC")
     public int getDataConnectionId() {
         int var6AC7F06B6413A1BE9C136DC7DF0D2B60_930770934 = (mId);
@@ -307,6 +313,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.914 -0400", hash_original_method = "FC51BF074579EE4E5F8C7AB511B49B8A", hash_generated_method = "3D73255E3ACB724677B990A4F502C4F9")
     public int getRetryCount() {
         int var856722A58FF7F8FC2D44F69E6603CDE1_103943147 = (mRetryMgr.getRetryCount());
@@ -317,6 +324,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.914 -0400", hash_original_method = "21D3097027A7BF6D8D1F04609D8A2AE9", hash_generated_method = "0EE803B049F2D147150586A2042CFED6")
     public int getRetryTimer() {
         int var40230F6DAFFC9B4870524C7581051C68_467758969 = (mRetryMgr.getRetryTimer());
@@ -327,6 +335,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.914 -0400", hash_original_method = "2EFBBED22C4BDBBAA07E00436CC70BDF", hash_generated_method = "0E371755B2F0C7630C7641033AED74E0")
     public void increaseRetryCount() {
         mRetryMgr.increaseRetryCount();
@@ -335,6 +344,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.914 -0400", hash_original_method = "BE0E8B7CBE5F430456218437A69801A6", hash_generated_method = "936DCC864427DDC4488B6112BD3DFFA1")
     public boolean isRetryNeeded() {
         boolean var8CFC4B429BB22FAC1C66AB2505A18020_115209703 = (mRetryMgr.isRetryNeeded());
@@ -345,6 +355,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.915 -0400", hash_original_method = "6E600B114543C0C51BDDB686B0EEF1BE", hash_generated_method = "32DE04BB7113D9D458E9B8A4B5F7798C")
     public void resetRetryCount() {
         mRetryMgr.resetRetryCount();
@@ -353,6 +364,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.915 -0400", hash_original_method = "FE4AFC35148D7FCE7B6DEB885B8B31DF", hash_generated_method = "8D1E6E9AC70CC605B5E9E3DFBC8CC440")
     public void retryForeverUsingLastTimeout() {
         mRetryMgr.retryForeverUsingLastTimeout();
@@ -361,6 +373,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.915 -0400", hash_original_method = "7BE7662A27A4557E7DE38D4C4F7B834F", hash_generated_method = "81AF5C8070C9704F70F3E5710282AA23")
     public boolean isRetryForever() {
         boolean var83983FC62F4738DD7E28A321F54D1CF6_1169127073 = (mRetryMgr.isRetryForever());
@@ -371,6 +384,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.915 -0400", hash_original_method = "7F3E6401D154FAD4235CC7C3EA752D6F", hash_generated_method = "C32370C3C83DFF31BF4CB2A32BA7C576")
     public boolean configureRetry(int maxRetryCount, int retryTime, int randomizationTime) {
         addTaint(randomizationTime);
@@ -384,6 +398,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.915 -0400", hash_original_method = "23B74F0922BA8C1F44E04170074AC8EE", hash_generated_method = "6A6D3F45D63050954BCBB20A968607D9")
     public boolean configureRetry(String configStr) {
         addTaint(configStr.getTaint());
@@ -395,6 +410,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.915 -0400", hash_original_method = "14EAC6C2DDCA29A3543D7FF941CEE3A4", hash_generated_method = "183F622F9B2FEC94ECFF704FEC664F4C")
     protected void clearSettings() {
         if(DBG)        
@@ -420,6 +436,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.916 -0400", hash_original_method = "75094A2EA3723036F1D43E5DA379759D", hash_generated_method = "BEA429400F242F796610DD303FED745E")
     private DataCallState.SetupResult onSetupConnectionCompleted(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -481,7 +498,7 @@ DataCallState.SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_156992028 =       
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.916 -0400", hash_original_method = "F1DF17AEAB523CA725A1A0E7587A5B33", hash_generated_method = "97E0EAEB82C4A1A200D8FDDCD26E1712")
     private int getSuggestedRetryTime(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -504,6 +521,7 @@ DataCallState.SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_156992028 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.916 -0400", hash_original_method = "61A23083F49649744D5BB908131730E7", hash_generated_method = "E827284F6027FB80F95C9D642A7C6F5F")
     private DataCallState.SetupResult setLinkProperties(DataCallState response,
             LinkProperties lp) {
@@ -529,6 +547,7 @@ DataCallState.SetupResult varB3E099EEEE237B1B0921398F20EF7758_304925393 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.916 -0400", hash_original_method = "45E9586484C37E223B6289BDE8E786AB", hash_generated_method = "E8C9DE6160B84AE0A35CDC74488A142E")
     private UpdateLinkPropertyResult updateLinkProperty(DataCallState newState) {
         addTaint(newState.getTaint());
@@ -569,6 +588,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.917 -0400", hash_original_method = "DA4DADB76FBE855C8C796E356354585B", hash_generated_method = "A393135805A2D8AEA0546C83C412E478")
     public void bringUp(Message onCompletedMsg, ApnSetting apn) {
         addTaint(apn.getTaint());
@@ -579,6 +599,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.917 -0400", hash_original_method = "16642B60370F95B35D583CCC8A36D6BF", hash_generated_method = "EAA936056D24C9F0F618B1FC01C8824C")
     public void tearDown(String reason, Message onCompletedMsg) {
         addTaint(onCompletedMsg.getTaint());
@@ -600,6 +621,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
 
         public Message onCompletedMsg;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.917 -0400", hash_original_method = "9C883FBF948634C8BFC48155A41A0F4D", hash_generated_method = "5B1C503045A8C8AA9F1D0D2502298AF5")
         public  ConnectionParams(ApnSetting apn, Message onCompletedMsg) {
             this.apn = apn;
@@ -625,6 +647,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
 
         public Message onCompletedMsg;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.917 -0400", hash_original_method = "8634A04E02B052AB53AF8D3EFA7F5294", hash_generated_method = "B99F546FDC561AFD0159FD12EB1DB176")
         public  DisconnectParams(String reason, Message onCompletedMsg) {
             this.reason = reason;
@@ -677,11 +700,11 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
         FailCause(int errorCode) {
             mErrorCode = errorCode;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         int getErrorCode() {
             return mErrorCode;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public boolean isPermanentFail() {
             return (this == OPERATOR_BARRED) || (this == MISSING_UNKNOWN_APN) ||
                    (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -689,7 +712,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
                    (this == SERVICE_OPTION_NOT_SUBSCRIBED) || (this == NSAPI_IN_USE) ||
                    (this == PROTOCOL_ERRORS);
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public boolean isEventLoggable() {
             return (this == OPERATOR_BARRED) || (this == INSUFFICIENT_RESOURCES) ||
                     (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -700,6 +723,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
                     (this == PROTOCOL_ERRORS) ||
                     (this == UNACCEPTABLE_NETWORK_PARAMETER);
         }
+        @DSModeled(DSC.BAN)
         public static FailCause fromInt(int errorCode) {
             FailCause fc = sErrorCodeToFailCauseMap.get(errorCode);
             if (fc == null) {
@@ -715,6 +739,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
 
         private int mRetryOverride = -1;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.917 -0400", hash_original_method = "A504ADA2782D67F9E42B2FFAADC374C6", hash_generated_method = "D56974FF4E6B6EE04E4624DA72A498E3")
           CallSetupException(int retryOverride) {
             mRetryOverride = retryOverride;
@@ -723,7 +748,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.918 -0400", hash_original_method = "474AEB2E917376DACCA3A8D3E49DB29C", hash_generated_method = "D39201A29CD393DEA03873F404F9F35A")
         public int getRetryOverride() {
             int var847246398D99EC2E1B8C5A876FE0F1E9_88663147 = (mRetryOverride);
@@ -749,6 +774,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
 
         public LinkProperties newLp;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.918 -0400", hash_original_method = "5FFECF7E7800E048A607977532017882", hash_generated_method = "5F3DBF488565FEEEF21CADA2F24034BE")
         public  UpdateLinkPropertyResult(LinkProperties curLp) {
             oldLp = curLp;
@@ -772,6 +798,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.918 -0400", hash_original_method = "AF33D4647C9368E21A04243E95A9DF92", hash_generated_method = "F27D177C1C31D4AE7056D39884557535")
         @Override
         public void enter() {
@@ -781,6 +808,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.918 -0400", hash_original_method = "B29A8A064FC1508BFE2503E3804D9F04", hash_generated_method = "89332A3E017EEAA1B196A8EF770738C3")
         @Override
         public void exit() {
@@ -790,6 +818,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.919 -0400", hash_original_method = "38E04FBDF2EDCBA5E9341920E990239B", hash_generated_method = "A28ED068FA17E03CC655D6E58981CD17")
         @Override
         public boolean processMessage(Message msg) {
@@ -1017,7 +1046,7 @@ switch(msg.what){
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.919 -0400", hash_original_method = "CBB71B6A4AE30457112F09AD25305330", hash_generated_method = "CDF958F2AA876817F9330E37B1E1D834")
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause,
                                                int retryOverride) {
@@ -1035,7 +1064,7 @@ switch(msg.what){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.920 -0400", hash_original_method = "58F7FEE7FE1847BE132197954CFB7983", hash_generated_method = "22EAB28409D32344C2A22692C17E5698")
         public void setEnterNotificationParams(DisconnectParams dp) {
             if(VDBG)            
@@ -1047,6 +1076,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.920 -0400", hash_original_method = "7E7CE9C76124761714CEFBB8783C6ACB", hash_generated_method = "94AC668A01B24D3E313EEA2D82FF364A")
         @Override
         public void enter() {
@@ -1078,7 +1108,7 @@ switch(msg.what){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.920 -0400", hash_original_method = "0122D4B6A897CA907F15060B70B58C0B", hash_generated_method = "2FF782B07AED250A63958B87AD09AB7B")
         @Override
         public void exit() {
@@ -1092,6 +1122,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.920 -0400", hash_original_method = "F7BD47A9DC4B0FE6830EC189D0B30877", hash_generated_method = "A58AE8FC10DBAB42D4D3CBB30666D5F3")
         @Override
         public boolean processMessage(Message msg) {
@@ -1154,6 +1185,7 @@ switch(msg.what){
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.921 -0400", hash_original_method = "FDE326A498C74E1E809F141FF2FEACCA", hash_generated_method = "191D3163D2183E46E086CA7EAFBF3EBF")
         @Override
         public boolean processMessage(Message msg) {
@@ -1268,7 +1300,7 @@ switch(result){
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.922 -0400", hash_original_method = "65AC06854CC9D1F4537757F901F06476", hash_generated_method = "01BFD2E6F6C2A381AB36D1A73A10E96B")
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
             if(VDBG)            
@@ -1282,6 +1314,7 @@ switch(result){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.922 -0400", hash_original_method = "F04274E6B6E666DB4B8B2ADDB4ED15CF", hash_generated_method = "A69E3344F17933321C16A3E549F1A752")
         @Override
         public void enter() {
@@ -1299,7 +1332,7 @@ switch(result){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.922 -0400", hash_original_method = "6361033575190DC86852AD59967B3D8E", hash_generated_method = "41F12992C45BA1B13C3E1498872DF26C")
         @Override
         public void exit() {
@@ -1311,6 +1344,7 @@ switch(result){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.923 -0400", hash_original_method = "E272CADF23159A9F3D514AE20DA7ACA2", hash_generated_method = "AA8480DF0D4389AD4CFF2C663F0AC9BA")
         @Override
         public boolean processMessage(Message msg) {
@@ -1376,6 +1410,7 @@ switch(msg.what){
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.923 -0400", hash_original_method = "DD3249EFBD400B69680BE43C46063370", hash_generated_method = "8EC1246E89768E668548AF37B1CF7500")
         @Override
         public boolean processMessage(Message msg) {
@@ -1436,6 +1471,7 @@ switch(msg.what){
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.924 -0400", hash_original_method = "E9D4515D62B87825C79C67876E4313E2", hash_generated_method = "E4AA0B2060A5859BD5647A3DA5E95BF6")
         @Override
         public boolean processMessage(Message msg) {

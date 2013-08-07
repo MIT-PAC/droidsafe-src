@@ -1,22 +1,24 @@
 package java.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Proxy implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.180 -0400", hash_original_field = "2510C39011C5BE704182423E3A695E91", hash_generated_field = "89B0705CC0F6BF714E0545A8467AD6EB")
 
     protected InvocationHandler h;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.180 -0400", hash_original_method = "1299DC7DDC1977A0E223548A22BEB1B2", hash_generated_method = "D647A7D612843DD58BA0B0DD89164A21")
     @SuppressWarnings("unused")
     private  Proxy() {

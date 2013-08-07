@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IActivityController extends android.os.IInterface
 {

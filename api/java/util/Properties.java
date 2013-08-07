@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,10 +30,10 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Properties extends Hashtable<Object, Object> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.421 -0400", hash_original_field = "C968D5902105C7A38B74CBA2C954C7FE", hash_generated_field = "FD91B16F92409AD1E464978ACF6CCD28")
@@ -58,7 +59,7 @@ public class Properties extends Hashtable<Object, Object> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.423 -0400", hash_original_method = "8670FB32C289DA514C35A14528148A6D", hash_generated_method = "DB4D712D977768F08744F22087605AA7")
     private void dumpString(StringBuilder buffer, String string, boolean key) {
         addTaint(key);
@@ -188,7 +189,7 @@ String varA1B66E00F250B2004594D11D7A1EDAF2_1853540370 =         property;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.426 -0400", hash_original_method = "68CAE489B2B77D788FAF807067B604BA", hash_generated_method = "C833EB6DA76BEB021321130EA0F6748F")
     private void listToAppendable(Appendable out) {
         addTaint(out.getTaint());
@@ -817,7 +818,7 @@ for(Map.Entry<Object, Object> entry : entrySet())
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.438 -0400", hash_original_method = "C245FBB3FF946795FFB47FE71F12C3B1", hash_generated_method = "C3F7B8F7A728304AC959E0BBF7D18279")
     private String substitutePredefinedEntries(String s) {
         addTaint(s.getTaint());

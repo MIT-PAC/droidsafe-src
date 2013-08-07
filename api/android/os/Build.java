@@ -1,12 +1,13 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.telephony.TelephonyProperties;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Build {
     
@@ -23,13 +24,13 @@ public class Build {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String getString(String property) {
         return SystemProperties.get(property, UNKNOWN);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static long getLong(String property) {
         try {
             return Long.parseLong(SystemProperties.get(property));

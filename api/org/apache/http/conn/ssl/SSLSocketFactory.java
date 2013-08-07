@@ -1,6 +1,7 @@
 package org.apache.http.conn.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -26,10 +27,10 @@ import org.apache.http.conn.scheme.LayeredSocketFactory;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SSLSocketFactory implements LayeredSocketFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.083 -0400", hash_original_field = "BC9F9BFF8F0C1C44BE0441660A338FEA", hash_generated_field = "99E7FAE9E3E14DF80520CEFA14EB241F")
@@ -138,6 +139,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.087 -0400", hash_original_method = "B5B8605C888DE528BB32DDEA2B05EF81", hash_generated_method = "ECDC694BC4F29B8EB127473FB8B8106E")
     private  SSLSocketFactory() {
         super();

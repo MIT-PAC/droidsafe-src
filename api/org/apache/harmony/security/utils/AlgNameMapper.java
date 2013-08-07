@@ -1,6 +1,7 @@
 package org.apache.harmony.security.utils;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.Provider;
 import java.security.Security;
 import java.util.HashMap;
@@ -11,14 +12,14 @@ import java.util.Set;
 
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AlgNameMapper {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.375 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
     private  AlgNameMapper() {
         // ---------- Original Method ----------
@@ -43,7 +44,7 @@ public class AlgNameMapper {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void selectEntries(Provider p) {
         Set<Map.Entry<Object, Object>> entrySet = p.entrySet();
         for (String service : serviceName) {

@@ -1,12 +1,13 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class Formatter {
     

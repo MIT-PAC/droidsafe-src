@@ -1,6 +1,7 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,10 +26,10 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.ext.LexicalHandler;
 import org.xml.sax.helpers.DefaultHandler;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Parser extends DefaultHandler implements ScanHandler, XMLReader, LexicalHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.146 -0400", hash_original_field = "E14ACAA95F0ECE7CA53A254FD0FCEE26", hash_generated_field = "4F44CE27A3793F7751E9A2BE62EDA28B")
@@ -159,7 +160,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static Boolean truthValue(boolean b) {
         return b ? Boolean.TRUE : Boolean.FALSE;
     }
@@ -480,6 +481,7 @@ ErrorHandler varF30FCC774C37D18FDA65D270F88B540B_725143057 =         (theErrorHa
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.157 -0400", hash_original_method = "4BDCB9FDB6AA49AD5AB8549244541048", hash_generated_method = "B4F04EDEF07BCB05D60378A9CA17CD2E")
     private void setup() {
         if(theSchema == null)        
@@ -531,6 +533,7 @@ Reader varF54C85E2A8BED917566CC9AA4C9DA4E1_764170742 =             new InputStre
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.157 -0400", hash_original_method = "0FC12B7CFED0DCE2629E4B14587480A6", hash_generated_method = "8F97F92E0392D493E9FCE28B2C3CA590")
     private Reader getReader(InputSource s) throws SAXException, IOException {
         addTaint(s.getTaint());
@@ -586,6 +589,7 @@ Reader var4C1F3C86A0E56B6E375080F5F710547E_1108461591 =         r;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.157 -0400", hash_original_method = "CDC68ACD7694626FF67B6B6D163E3BB7", hash_generated_method = "31D5C7485AC753754756D579B4170777")
     private InputStream getInputStream(String publicid, String systemid) throws IOException, SAXException {
         addTaint(systemid.getTaint());
@@ -651,6 +655,7 @@ InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1113995642 =         c.getInputS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.158 -0400", hash_original_method = "BD88D393D059FDFF1FEBA4E80D3AAF56", hash_generated_method = "EA4C0B9D57BEB53EFD39A2D602593A4B")
     private String expandEntities(String src) {
         addTaint(src.getTaint());
@@ -954,6 +959,7 @@ for(sp = theStack;sp != null;sp = sp.next())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.162 -0400", hash_original_method = "B330A365C16A276F019BF46E61F37EA8", hash_generated_method = "01FCC8C24C7DE5958327497B782EF039")
     private void restart(Element e) throws SAXException {
         addTaint(e.getTaint());
@@ -975,6 +981,7 @@ for(sp = theStack;sp != null;sp = sp.next())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.162 -0400", hash_original_method = "C52776A5281CF0A097BB6E08724FB3A1", hash_generated_method = "BCE6F8ABEC3816D0132B422D3936AA3C")
     private void pop() throws SAXException {
         if(theStack == null)        
@@ -1024,6 +1031,7 @@ for(int i = atts.getLength() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.162 -0400", hash_original_method = "C8A2C1B1941DD99452371A15DDB14C88", hash_generated_method = "FFC0103F54A6C22AA2A930BF9D2A62B7")
     private void restartablyPop() throws SAXException {
         Element popped = theStack;
@@ -1045,6 +1053,7 @@ for(int i = atts.getLength() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.163 -0400", hash_original_method = "CEB0923649F562E1C47AECBE0F37237A", hash_generated_method = "669FBF71B8DF6DF50054CBA137482FFA")
     private void push(Element e) throws SAXException {
         String name = e.name();
@@ -1092,6 +1101,7 @@ for(int i = 0;i < len;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.163 -0400", hash_original_method = "EBD18CEBBA646E39DB7BD8DC690DDED7", hash_generated_method = "9285606C43CFB9B7687C839B4837C63C")
     private String prefixOf(String name) {
         addTaint(name.getTaint());
@@ -1110,6 +1120,7 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_1000499131 =         prefix;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.163 -0400", hash_original_method = "761321F4D2C89C49E6A94969107BF018", hash_generated_method = "800E8D977EC989A93C0A2C06E42EB83E")
     private boolean foreign(String prefix, String namespace) {
         addTaint(namespace.getTaint());
@@ -1189,6 +1200,7 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_1000499131 =         prefix;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String trimquotes(String in) {
         if (in == null) return in;
         int length = in.length();
@@ -1202,6 +1214,7 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_1000499131 =         prefix;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String[] split(String val) throws IllegalArgumentException {
         val = val.trim();
         if (val.length() == 0) {
@@ -1242,6 +1255,7 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_1000499131 =         prefix;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.165 -0400", hash_original_method = "92ECD15FFBF9920D383290E17881F5A3", hash_generated_method = "4C1CBAAE69F71C200E7C3802C0884B56")
     private String cleanPublicid(String src) {
         addTaint(src.getTaint());
@@ -1485,6 +1499,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.167 -0400", hash_original_method = "37597577D17F3DB30561754D63AF952D", hash_generated_method = "C39A9BAC2EC4BBB87D138E4B7181DF62")
     private void rectify(Element e) throws SAXException {
         addTaint(e.getTaint());
@@ -1566,6 +1581,7 @@ for(sp = theStack;sp != null;sp = sp.next())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.168 -0400", hash_original_method = "C657524A51A66CA45344D36C0B6F5C26", hash_generated_method = "FAC67D39AA0CE132A230BF222EBF1846")
     private String makeName(char[] buff, int offset, int length) {
         addTaint(length);

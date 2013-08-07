@@ -1,14 +1,15 @@
 package libcore.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.charset.Charsets;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class UriCodec {
     
@@ -87,6 +88,7 @@ String var83F838AFDFF49EDFAA9A2F840A0E32DF_1048973455 =         uri.substring(st
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.877 -0400", hash_original_method = "7FC39F773DF770E48BBB73C216A59F70", hash_generated_method = "48AAFB27A41079073B2C27F22602DE5F")
     private void appendEncoded(StringBuilder builder, String s, Charset charset,
             boolean isPartiallyEncoded) {
@@ -217,7 +219,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1247271125 =         builder.toString
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int hexToInt(char c) {
         if ('0' <= c && c <= '9') {
             return c - '0';
@@ -236,6 +238,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1247271125 =         builder.toString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void appendHex(StringBuilder builder, String s, Charset charset) {
         for (byte b : s.getBytes(charset)) {
             appendHex(builder, b);
@@ -243,6 +246,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1247271125 =         builder.toString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void appendHex(StringBuilder sb, byte b) {
         sb.append('%');
         sb.append(Byte.toHexString(b, true));

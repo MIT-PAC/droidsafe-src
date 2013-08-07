@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -9,10 +10,10 @@ import java.util.Vector;
 
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class GeolocationPermissions {
@@ -139,6 +140,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.834 -0400", hash_original_method = "C8B20551C681C75E8A94C862CADE3192", hash_generated_method = "0656529F923403AB7BC08ED6EF1CA9DC")
     private synchronized void postMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -166,6 +168,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.835 -0400", hash_original_method = "B15FFE1BDDB388A76F495C309FEFF3DA", hash_generated_method = "1C7FA8D0FDD7047080CA6C74911CEC8A")
     private void postUIMessage(Message msg) {
         addTaint(msg.getTaint());

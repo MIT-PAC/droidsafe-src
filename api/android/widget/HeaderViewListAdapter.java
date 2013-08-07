@@ -1,15 +1,16 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.830 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "90F29768206AB431EA361CD94838716F")
@@ -105,7 +106,7 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.833 -0400", hash_original_method = "41241BC7260E3C26DE66CCD5C227EECC", hash_generated_method = "ED81AE9C45D5F5B1CE4B82CA13417B67")
     private boolean areAllListInfosSelectable(ArrayList<ListView.FixedViewInfo> infos) {
         addTaint(infos.getTaint());

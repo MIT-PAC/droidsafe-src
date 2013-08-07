@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.MSG_PEEK;
 
 import java.io.FileDescriptor;
@@ -12,10 +13,10 @@ import libcore.io.Libcore;
 import libcore.io.StructGroupReq;
 import libcore.util.EmptyArray;
 import dalvik.system.CloseGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.031 -0400", hash_original_field = "77B540FD61B8B8FFBCEAA60964FD06BB", hash_generated_field = "9D4B2046F6FC3648B8B879B96386B204")
@@ -31,6 +32,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
 
     private int connectedPort = -1;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.033 -0400", hash_original_method = "FF5B4FF1395B9B48A74781458F7C1E74", hash_generated_method = "F69569036B9BF8D1D666C417831AC438")
     public  PlainDatagramSocketImpl(FileDescriptor fd, int localPort) {
         addTaint(localPort);
@@ -50,6 +52,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.033 -0400", hash_original_method = "D4BBB37482735C0570902FEE6B871111", hash_generated_method = "0B50554EC69C2AC737278909772A9528")
     public  PlainDatagramSocketImpl() {
         fd = new FileDescriptor();
@@ -58,6 +61,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.034 -0400", hash_original_method = "B1D68F8F8FBA849D5DC5627B8806817B", hash_generated_method = "630B8F9342ED68BB41C411BDBA4020D5")
     @Override
     public void bind(int port, InetAddress address) throws SocketException {
@@ -93,6 +97,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.035 -0400", hash_original_method = "D39FE6DF46AF0712D00AFEA38D6C38F1", hash_generated_method = "98D2AEB4412C8F1848257B9E60BF8010")
     @Override
     public synchronized void close() {
@@ -113,6 +118,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.036 -0400", hash_original_method = "070E6EC700413C2D4EE062356971B3CD", hash_generated_method = "14092F58ECD8BEDBFC2345B9D3F199FD")
     @Override
     public void create() throws SocketException {
@@ -122,6 +128,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.036 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "271B01A0C286411ADC3A779686EF67E4")
     @Override
     protected void finalize() throws Throwable {
@@ -149,6 +156,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.037 -0400", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "2152448D6D4CB0BBD6F6FB8E39E1EF01")
     @Override
     public Object getOption(int option) throws SocketException {
@@ -161,6 +169,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.037 -0400", hash_original_method = "BF2D1BB0C5E1E015F3FE4931092FD89F", hash_generated_method = "CAB258E6847F8B9C7D2D291F275B4A37")
     @Override
     public int getTimeToLive() throws IOException {
@@ -172,6 +181,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.038 -0400", hash_original_method = "C71063A9367F37A3CEDAA8D1B842628A", hash_generated_method = "E20868225068108879FB43D66104CF78")
     @Override
     public byte getTTL() throws IOException {
@@ -183,12 +193,14 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     private static StructGroupReq makeGroupReq(InetAddress gr_group, NetworkInterface networkInterface) {
         int gr_interface = (networkInterface != null) ? networkInterface.getIndex() : 0;
         return new StructGroupReq(gr_interface, gr_group);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.038 -0400", hash_original_method = "5A414D7F1F4B7D29FD74389039C76E5E", hash_generated_method = "F623CF466948EF076EDF4602D8B3D48D")
     @Override
     public void join(InetAddress addr) throws IOException {
@@ -199,6 +211,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.039 -0400", hash_original_method = "273B4AEA263ECC0370749C1CFAD10357", hash_generated_method = "E8E08867241BD294C550311728164350")
     @Override
     public void joinGroup(SocketAddress addr, NetworkInterface netInterface) throws IOException {
@@ -217,6 +230,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.040 -0400", hash_original_method = "68D7D449E4F76C69A913900EB50ADB23", hash_generated_method = "A9B13B0311526DFD8E48A1679E82B3B8")
     @Override
     public void leave(InetAddress addr) throws IOException {
@@ -227,6 +241,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.040 -0400", hash_original_method = "4969BCB60F2AF80E11B01CE49FB27B9C", hash_generated_method = "036B91C1324354D84318D07395FF7A57")
     @Override
     public void leaveGroup(SocketAddress addr, NetworkInterface netInterface) throws IOException {
@@ -245,7 +260,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.041 -0400", hash_original_method = "0B66924116C94ED3C0FF1D3069EB61F1", hash_generated_method = "BC0DAD3D0BC5F635D010AC44868BC332")
     @Override
     protected int peek(InetAddress sender) throws IOException {
@@ -264,6 +279,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.042 -0400", hash_original_method = "7D10FF5DEA56961E254003DBDCD7E211", hash_generated_method = "5B80F8E6599BAB108A46CEDFAC9B490A")
     private void doRecv(DatagramPacket pack, int flags) throws IOException {
         addTaint(flags);
@@ -281,6 +297,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.042 -0400", hash_original_method = "224A3066C9859A283A41E4BE468B7199", hash_generated_method = "A24A277C045836674C20C541CDDB92E6")
     @Override
     public void receive(DatagramPacket pack) throws IOException {
@@ -291,6 +308,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.043 -0400", hash_original_method = "CCC12A69269736949CE83C1543FC63FC", hash_generated_method = "19C2EEB4A51D75909FF67BF5BB00D09F")
     @Override
     public int peekData(DatagramPacket pack) throws IOException {
@@ -305,6 +323,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.043 -0400", hash_original_method = "7ACBDBE2565DC623BE65BEE0D3657AD7", hash_generated_method = "AA3F35E5D26FFFB06A93C5D982ECD14D")
     @Override
     public void send(DatagramPacket packet) throws IOException {
@@ -319,6 +338,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.043 -0400", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "D158AD7C51F9AD33335EEADD78E28B5A")
     public void setOption(int option, Object value) throws SocketException {
         addTaint(value.getTaint());
@@ -329,6 +349,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.044 -0400", hash_original_method = "DDE567B7B25A07BB14A31131F0762C29", hash_generated_method = "DDAC88B3271C55AE54A89183B0767503")
     @Override
     public void setTimeToLive(int ttl) throws IOException {
@@ -339,6 +360,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.044 -0400", hash_original_method = "AF63162F005FE2D131203598170CD418", hash_generated_method = "C2E88E2D0192CD2C913D1A96D5D6A294")
     @Override
     public void setTTL(byte ttl) throws IOException {
@@ -349,7 +371,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.045 -0400", hash_original_method = "C42A5992F0CED0134F017245292E33CB", hash_generated_method = "EB0FE409A2CCC8173B4F1E88C92358C5")
     @Override
     public void connect(InetAddress inetAddr, int port) throws SocketException {
@@ -378,6 +400,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.060 -0400", hash_original_method = "6540AF72C9B04626D85951E517011FFF", hash_generated_method = "C14884AA720232671734E289A46AF45D")
     @Override
     public void disconnect() {
@@ -406,6 +429,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1254128329 =         IoBridge.getSock
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.061 -0400", hash_original_method = "9F84EE545D7A893B2BE12E7FDE7E048D", hash_generated_method = "640C0BB32C25BE7BB659FD4016D60C77")
     private void updatePacketRecvAddress(DatagramPacket packet) {
         addTaint(packet.getTaint());

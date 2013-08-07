@@ -1,8 +1,9 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.view.View;
-import droidsafe.annotations.DSGenerator;
+
 
 class ViewCompatGingerbread {
     

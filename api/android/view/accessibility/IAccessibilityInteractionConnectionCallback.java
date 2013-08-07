@@ -1,6 +1,7 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IAccessibilityInteractionConnectionCallback extends android.os.IInterface
 {

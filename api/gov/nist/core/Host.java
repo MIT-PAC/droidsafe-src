@@ -1,13 +1,14 @@
 package gov.nist.core;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Host extends GenericObject {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.316 -0400", hash_original_field = "6FA63D73209D74D0D54BC416A32DB10D", hash_generated_field = "0D2878F1D6B0CD805C869443DA7FE75E")
@@ -227,6 +228,7 @@ String varB9A086326A3B77E8D4CF1FBB7004D18C_1033684749 =         rawIpAddress;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.322 -0400", hash_original_method = "B4E9CFE10688A14DAC1625E8CC87AC41", hash_generated_method = "3D20A7BC34C8C596A0A4F2AE40E8EBF4")
     private void setHost(String host, int type) {
         inetAddress = null;
@@ -327,7 +329,7 @@ InetAddress varC7DF9E11D1E8039B1F9825069E449303_1092639714 =         inetAddress
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.324 -0400", hash_original_method = "22A9CB4332482AECEE114125E6F63C27", hash_generated_method = "23B14F91F3F7D637059E32DAE56670CA")
     private boolean isIPv6Address(String address) {
         addTaint(address.getTaint());

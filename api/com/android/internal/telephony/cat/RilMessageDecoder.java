@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Handler;
 import android.os.Message;
 
@@ -9,8 +10,8 @@ import com.android.internal.telephony.IccUtils;
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class RilMessageDecoder extends StateMachine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.565 -0400", hash_original_field = "323B97ECC7245864248EAE86A2F8A7C0", hash_generated_field = "1D31B9527FBE265BC5A565819E7A3298")
@@ -29,6 +30,7 @@ class RilMessageDecoder extends StateMachine {
 
     private StateCmdParamsReady mStateCmdParamsReady = new StateCmdParamsReady();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.566 -0400", hash_original_method = "80000F6682C0A8DA18E484599E848E2C", hash_generated_method = "5F4E68F54CB745219D0E765FBD98B005")
     private  RilMessageDecoder(Handler caller, IccFileHandler fh) {
         super("RilMessageDecoder");
@@ -84,6 +86,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.568 -0400", hash_original_method = "D82B03DF0CAD2B5CB90F2219FBBA492B", hash_generated_method = "1014EA25D8D8CF7E084C205B982798EF")
     private void sendCmdForExecution(RilMessage rilMsg) {
         addTaint(rilMsg.getTaint());
@@ -97,6 +100,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.569 -0400", hash_original_method = "7155A04451229DB43083FDF7F69C4418", hash_generated_method = "261C5A48C7CFC617160435103586B81E")
     private boolean decodeMessageParams(RilMessage rilMsg) {
         boolean decodingStarted;

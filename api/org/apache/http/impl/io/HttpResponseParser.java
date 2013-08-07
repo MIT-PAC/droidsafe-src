@@ -1,6 +1,7 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.apache.http.HttpException;
@@ -15,8 +16,8 @@ import org.apache.http.message.ParserCursor;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class HttpResponseParser extends AbstractMessageParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.588 -0400", hash_original_field = "231DD88D1D24FBAC95F5FF27F7E132D5", hash_generated_field = "617CD99CE3703350A89163AF27F85CC2")

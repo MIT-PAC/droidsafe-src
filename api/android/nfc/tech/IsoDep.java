@@ -1,16 +1,17 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class IsoDep extends BasicTagTechnology {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.496 -0400", hash_original_field = "F4F4BB2F9EB2DC5DB314559654709FE8", hash_generated_field = "C1B33D9EC979F28624EE472E9265053E")
@@ -20,6 +21,7 @@ public final class IsoDep extends BasicTagTechnology {
 
     private byte[] mHistBytes = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.497 -0400", hash_original_method = "FFBD1FB2ECDDD8F0799F6AF75CBD6C12", hash_generated_method = "58E05187FF1F01CFC18110B640E2842C")
     public  IsoDep(Tag tag) throws RemoteException {
         super(tag, TagTechnology.ISO_DEP);

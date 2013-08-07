@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.ServerLogger;
 import gov.nist.javax.sip.header.CSeq;
@@ -30,10 +31,10 @@ import javax.net.ssl.SSLSocket;
 import javax.sip.address.Hop;
 import javax.sip.message.Response;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class TLSMessageChannel extends MessageChannel implements SIPMessageListener, Runnable, RawMessageChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.829 -0400", hash_original_field = "52CA6755165FFD50983D257A0F1E043B", hash_generated_field = "F3B00F7E70704D963CC4197CD003FB94")
@@ -257,6 +258,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_465991160 =         this.peerProtocol
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.836 -0400", hash_original_method = "769119032395AFB8B9E88BC54405133A", hash_generated_method = "A816F38E2B010419DF44D99118FA6F4D")
     private void sendMessage(byte[] msg, boolean retry) throws IOException {
         addTaint(retry);

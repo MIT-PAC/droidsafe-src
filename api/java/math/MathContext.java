@@ -1,15 +1,16 @@
 package java.math;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.io.StreamCorruptedException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class MathContext implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.140 -0400", hash_original_field = "E2794D8F12719281EFF5601251C8A680", hash_generated_field = "549991DA880D86C6AEB7236C4321FF98")
@@ -79,7 +80,7 @@ public final class MathContext implements Serializable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.157 -0400", hash_original_method = "426953F7355AB3CD325EF2685FB1287C", hash_generated_method = "4D99600D91552FBA7061C2B4591AF98E")
     private IllegalArgumentException invalidMathContext(String reason, String s) {
         addTaint(s.getTaint());
@@ -92,7 +93,7 @@ public final class MathContext implements Serializable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.157 -0400", hash_original_method = "D8DAE7CCCFF0DCEAE4D1ED9221F38BDC", hash_generated_method = "79D1CABDC59B5ED98BEA37DF82362A87")
     private void checkValid() {
         if(precision < 0)        
@@ -180,7 +181,7 @@ String var939940AE6DFAF48A015D25E5ACE18ECD_2136665392 =         "precision=" + p
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.159 -0400", hash_original_method = "323BCE51E980C267DF7F7C47AD5D1D50", hash_generated_method = "D54DD74D12FD631EF23CF608D606AF11")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         addTaint(s.getTaint());

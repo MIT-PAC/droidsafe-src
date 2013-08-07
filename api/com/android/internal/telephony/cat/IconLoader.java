@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
 import android.graphics.Bitmap;
@@ -13,10 +14,10 @@ import android.os.Message;
 
 import com.android.internal.telephony.IccFileHandler;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class IconLoader extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.299 -0400", hash_original_field = "990880030B80BFF3BC8D3AE0AC35462D", hash_generated_field = "34FA58117F875C1478775AF3E2E8B77F")
@@ -53,6 +54,7 @@ class IconLoader extends Handler {
 
     private HashMap<Integer, Bitmap> mIconsCache = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.300 -0400", hash_original_method = "FC71F40EA342EA47A36AF8D952C946AD", hash_generated_method = "D81E1AF06D69423341019A37A935F45B")
     private  IconLoader(Looper looper , IccFileHandler fh) {
         super(looper);
@@ -126,7 +128,7 @@ class IconLoader extends Handler {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.302 -0400", hash_original_method = "CF2A7740DA96FFBF2B7742A73D5B85D3", hash_generated_method = "6AAAA2C675A03B903720E2B891188AD5")
     private void startLoadingIcon(int recordNumber) {
         mId = null;
@@ -212,7 +214,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.304 -0400", hash_original_method = "57AAD79E24539ED69C4A9588C1A4DBA1", hash_generated_method = "CFB7AD184E8E0F6CE50E3624B7E9759B")
     private boolean handleImageDescriptor(byte[] rawData) {
         mId = ImageDescriptor.parse(rawData, 1);
@@ -234,7 +236,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.305 -0400", hash_original_method = "78AA98F6413EBAF06D9D3065D89FA10B", hash_generated_method = "B3A123CBAF95CDF1AAC90C96EAD2F3C8")
     private void readClut() {
         int length = mIconData[3] * CLUT_ENTRY_SIZE;
@@ -251,7 +253,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.305 -0400", hash_original_method = "9B2E1F9D86B0BE7AA9984F6F6998AD1A", hash_generated_method = "420BE97C4C48E7D6BEA19A7BEC200754")
     private void readId() {
         if(mRecordNumber < 0)        
@@ -273,7 +275,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.306 -0400", hash_original_method = "E5FF0727F4A23FBA52C74807E31F642C", hash_generated_method = "35743DA67D5D7862E0114E3AE4CC1E79")
     private void readIconData() {
         Message msg = this.obtainMessage(EVENT_READ_ICON_DONE);
@@ -284,7 +286,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.306 -0400", hash_original_method = "2C2351D604337717A113511ACF501262", hash_generated_method = "F1DB21F67C09B0D4A77A3140EDF8A3B7")
     private void postIcon() {
         if(mState == STATE_SINGLE_ICON)        
@@ -345,7 +347,7 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int bitToBnW(int bit) {
         if(bit == 1){
             return Color.WHITE;
@@ -390,7 +392,7 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getMask(int numOfBits) {
         int mask = 0x00;
         switch (numOfBits) {

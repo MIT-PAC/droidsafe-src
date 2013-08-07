@@ -1,10 +1,11 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Handler;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class SslErrorHandler extends Handler {
     

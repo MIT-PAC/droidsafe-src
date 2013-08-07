@@ -1,18 +1,19 @@
 package android.opengl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGL11;
 
 import android.graphics.Bitmap;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class GLUtils {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.380 -0400", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "602B8AFAFBDBCCEF4BCB5E24B6A14FC8")
     private  GLUtils() {
         // ---------- Original Method ----------

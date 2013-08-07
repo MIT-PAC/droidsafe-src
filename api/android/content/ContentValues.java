@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,10 +9,10 @@ import java.util.Set;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ContentValues implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.353 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "6A0C6DC1A4312984791FEB326F38FF7D")
@@ -42,7 +43,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.355 -0400", hash_original_method = "79B820032F5D7F722A5DF12324BC548A", hash_generated_method = "4656658A43EB411DAEBB7511F1FF62E0")
     private  ContentValues(HashMap<String, Object> values) {
         mValues = values;
@@ -711,6 +712,7 @@ Set<String> var3563EE38FE64D76F70F52DD9D1FB041A_613255004 =         mValues.keyS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.385 -0400", hash_original_method = "F231C09776862BE2F464FBA056529E22", hash_generated_method = "B66E12E5AAE439C893D33DD68374F443")
     @SuppressWarnings("unchecked")
     @Deprecated

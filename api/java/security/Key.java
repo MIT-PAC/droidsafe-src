@@ -1,6 +1,7 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 
 public interface Key extends Serializable {

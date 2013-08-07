@@ -1,10 +1,11 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import libcore.net.MimeUtils;
-import droidsafe.annotations.DSGenerator;
+
 
 class DefaultFileNameMap implements FileNameMap {
     

@@ -1,8 +1,9 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public final class StructStatFs {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.806 -0400", hash_original_field = "F5384879ABDA803D556FB5514F2EE2DC", hash_generated_field = "393385A523174AFDB05044DC2616C489")
@@ -30,6 +31,7 @@ public final class StructStatFs {
 
     public long f_frsize;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.807 -0400", hash_original_method = "A2BBDE1C513EF61F7C6F88EB6F620A3C", hash_generated_method = "BD7647E8428982D10E703E25BB8BE610")
       StructStatFs(long f_bsize, long f_blocks, long f_bfree, long f_bavail,
             long f_files, long f_ffree, long f_namemax, long f_frsize) {

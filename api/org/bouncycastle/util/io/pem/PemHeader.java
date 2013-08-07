@@ -1,10 +1,11 @@
 package org.bouncycastle.util.io.pem;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class PemHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.376 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -79,6 +80,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_241523726 =         value;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.380 -0400", hash_original_method = "552BFCCB5F897360ADAD8A79D56E72F9", hash_generated_method = "2AED66DD37DE2FC55F5DA5540BD23A43")
     private int getHashCode(String s) {
         addTaint(s.getTaint());
@@ -100,6 +102,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_241523726 =         value;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.380 -0400", hash_original_method = "56C7E9071A8414DCCD1359B9AFE0CC30", hash_generated_method = "53C44651438D46A37EEA001FE298D39E")
     private boolean isEqual(String s1, String s2) {
         addTaint(s2.getTaint());

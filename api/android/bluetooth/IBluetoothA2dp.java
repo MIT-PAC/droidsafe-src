@@ -1,6 +1,7 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IBluetoothA2dp extends android.os.IInterface
 {

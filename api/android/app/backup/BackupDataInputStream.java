@@ -1,13 +1,14 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BackupDataInputStream extends InputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.182 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "FFE7EE17DFA37A68070A0F0495753B29")
@@ -23,6 +24,7 @@ public class BackupDataInputStream extends InputStream {
 
     byte[] mOneByte;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.183 -0400", hash_original_method = "C2C10C1477F29698CE48A2404B00FC26", hash_generated_method = "1A1C8E636B0AAC290AD1FB4EF8D4012F")
       BackupDataInputStream(BackupDataInput data) {
         mData = data;

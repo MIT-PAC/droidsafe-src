@@ -1,10 +1,11 @@
 package java.security.spec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.GeneralSecurityException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class InvalidKeySpecException extends GeneralSecurityException {
     

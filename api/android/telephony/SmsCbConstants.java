@@ -1,6 +1,7 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface SmsCbConstants {
     

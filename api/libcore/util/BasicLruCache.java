@@ -1,13 +1,14 @@
 package libcore.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 
 public class BasicLruCache<K, V> {
@@ -108,7 +109,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_28504045 =         previous;
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.416 -0400", hash_original_method = "C2014D558C9CB4AC36D82EB01EFD84A6", hash_generated_method = "F23DD3CA6877980108331FA4F00C7BD9")
     private void trimToSize(int maxSize) {
         addTaint(maxSize);

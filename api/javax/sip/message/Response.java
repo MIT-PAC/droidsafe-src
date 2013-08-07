@@ -1,6 +1,7 @@
 package javax.sip.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 
 public interface Response extends Message {

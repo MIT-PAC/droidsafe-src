@@ -1,11 +1,12 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Editable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class JapanesePhoneNumberFormatter {
     

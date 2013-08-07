@@ -1,11 +1,12 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class SecurityClient extends SecurityAgree implements SecurityClientHeader, ExtensionHeader {
     

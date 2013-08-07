@@ -1,6 +1,7 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IPackageStatsObserver extends android.os.IInterface
 {

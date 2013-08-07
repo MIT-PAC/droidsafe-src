@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,10 +14,10 @@ import android.text.TextUtils;
 import com.android.internal.telephony.CallerInfo;
 import com.android.internal.telephony.Connection;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CallLog {
     
@@ -36,7 +37,7 @@ public class CallLog {
         }
 
 
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
         public static Uri addCall(CallerInfo ci, Context context, String number,
                 int presentation, int callType, long start, int duration) {
             final ContentResolver resolver = context.getContentResolver();
@@ -123,7 +124,7 @@ public class CallLog {
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
         private static void removeExpiredEntries(Context context) {
             final ContentResolver resolver = context.getContentResolver();
             resolver.delete(CONTENT_URI, "_id IN " +

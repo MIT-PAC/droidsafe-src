@@ -1,20 +1,22 @@
 package android.accounts;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AccountManagerResponse implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.357 -0400", hash_original_field = "E72652B09AB331E8E60D8A37942A6989", hash_generated_field = "D637A55DBCA794D5ED83787471490AEF")
 
     private IAccountManagerResponse mResponse;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.360 -0400", hash_original_method = "3522B88B7A321F46293EAD30C75E1618", hash_generated_method = "59FA086C4129E04241D85AD832C5FDC8")
     public  AccountManagerResponse(IAccountManagerResponse response) {
         mResponse = response;
@@ -23,6 +25,7 @@ public class AccountManagerResponse implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.364 -0400", hash_original_method = "25719BDE37ECFBE2984FFF140C89B60A", hash_generated_method = "68FA4D479BEB125118EB07ECE8D64669")
     public  AccountManagerResponse(Parcel parcel) {
         mResponse =
@@ -33,6 +36,7 @@ public class AccountManagerResponse implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.366 -0400", hash_original_method = "9B774AF037DE184114612158D52CE3AE", hash_generated_method = "5195F6FFDB93A555A2A1D320D8B1B164")
     public void onResult(Bundle result) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -52,6 +56,7 @@ public class AccountManagerResponse implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.371 -0400", hash_original_method = "E6057BE96727FC9D5F2F0AC6DA4D66E7", hash_generated_method = "5EC3DDE7129EAF0CD565510519F81B7B")
     public void onError(int errorCode, String errorMessage) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -72,7 +77,7 @@ public class AccountManagerResponse implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.375 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DF9B9FC016D5DEC2392CCC99D6CE4970")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1613154803 = (0);
@@ -83,6 +88,7 @@ public class AccountManagerResponse implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.378 -0400", hash_original_method = "CE73222339489F4EC9333AF29A0583AB", hash_generated_method = "90F0408D0E0696F094210E9AED553B6E")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

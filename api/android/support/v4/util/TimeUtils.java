@@ -1,12 +1,13 @@
 package android.support.v4.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TimeUtils {
     
@@ -17,7 +18,7 @@ public class TimeUtils {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private int accumField(int amt, int suffix, boolean always, int zeropad) {
         if (amt > 99 || (always && zeropad >= 3)) {
             return 3+suffix;
@@ -32,7 +33,7 @@ public class TimeUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private int printField(char[] formatStr, int amt, char suffix, int pos,
             boolean always, int zeropad) {
         if (always || amt > 0) {
@@ -58,6 +59,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int formatDurationLocked(long duration, int fieldLen) {
         if (sFormatStr.length < fieldLen) {
             sFormatStr = new char[fieldLen];
@@ -121,6 +123,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long duration, StringBuilder builder) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, 0);
@@ -129,6 +132,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, fieldLen);
@@ -137,11 +141,13 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long duration, PrintWriter pw) {
         formatDuration(duration, pw, 0);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long time, long now, PrintWriter pw) {
         if (time == 0) {
             pw.print("--");

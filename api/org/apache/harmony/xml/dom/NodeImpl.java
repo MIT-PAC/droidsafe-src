@@ -1,6 +1,7 @@
 package org.apache.harmony.xml.dom;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -19,10 +20,10 @@ import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.TypeInfo;
 import org.w3c.dom.UserDataHandler;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class NodeImpl implements Node {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.657 -0400", hash_original_field = "FDC3BDEFB79CEC8EB8211D2499E04704", hash_generated_field = "3C52D3A90E4759490A57AF776DEAFE65")
@@ -492,7 +493,7 @@ String var540C13E9E156B687226421B24F2DF178_2093286424 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.665 -0400", hash_original_method = "DFD855C107B39D74015E43DCF13ECA5E", hash_generated_method = "4A151236E96E7834D93EDE416595FC15")
     private String getParentBaseUri() {
         Node parentNode = getParentNode();
@@ -505,6 +506,7 @@ String var9F008E4670FF2B5D32F29108A858BFF8_837578713 =         parentNode != nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.665 -0400", hash_original_method = "1D824B9402137DBC708C242BAEC27F82", hash_generated_method = "59A0AFD5BDFB375765FF87142B34C576")
     private String sanitizeUri(String uri) {
         addTaint(uri.getTaint());
@@ -631,6 +633,7 @@ switch(getNodeType()){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.667 -0400", hash_original_method = "DDD4A4E09BB31E4B92DF0753DE457415", hash_generated_method = "9B8DA67EFE7623ABEF6FCA93DBE97B5C")
     private NodeImpl getNamespacingElement() {
 switch(this.getNodeType()){
@@ -672,7 +675,7 @@ NodeImpl var8BC235EA48173B3F91C3D3D2A4E83A35_887718335 =         getContainingEl
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.667 -0400", hash_original_method = "E4B9E13482B5AB13521831694CDD3F31", hash_generated_method = "D3338B06D1114EF374E5B3B105140C7A")
     private NodeImpl getContainingElement() {
 for(Node p = getParentNode();p != null;p = p.getParentNode())
@@ -836,6 +839,7 @@ String var540C13E9E156B687226421B24F2DF178_551338838 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static List<Object> createEqualityKey(Node node) {
         List<Object> values = new ArrayList<Object>();
         values.add(node.getNodeType());
@@ -944,7 +948,7 @@ for(int i = 0;i < listA.size();i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.671 -0400", hash_original_method = "C9854B9EF2C5621F4F378B8106F34125", hash_generated_method = "C1FE56E83238551C5563D64E8A01BF38")
     private boolean namedNodeMapsEqual(NamedNodeMap a, NamedNodeMap b) {
         addTaint(b.getTaint());

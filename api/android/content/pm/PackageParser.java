@@ -1,6 +1,7 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -46,10 +47,10 @@ import android.util.TypedValue;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PackageParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.020 -0400", hash_original_field = "6D55A934CD0311CDA3B2E6B59509DD26", hash_generated_field = "57425F83C121F61E241FD46B0ED62373")
@@ -80,6 +81,7 @@ public class PackageParser {
 
     private ParseComponentArgs mParseProviderArgs;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.021 -0400", hash_original_method = "DDBED2CCEF7CE747A37B4CF69A21D51E", hash_generated_method = "E69DDF97EF9C8A4CD053936837CFE800")
     public  PackageParser(String archiveSourcePath) {
         mArchiveSourcePath = archiveSourcePath;
@@ -88,7 +90,7 @@ public class PackageParser {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.021 -0400", hash_original_method = "65A62D9388B66A4D9595CDAEE2873A09", hash_generated_method = "103DD5B4DFB0483919E33AB133A239C0")
     public void setSeparateProcesses(String[] procs) {
         mSeparateProcesses = procs;
@@ -97,7 +99,7 @@ public class PackageParser {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.021 -0400", hash_original_method = "14C9699FDDD05F8B9AF1818DB0942037", hash_generated_method = "109C581621376AE52DD74733E1366244")
     public void setOnlyCoreApps(boolean onlyCoreApps) {
         mOnlyCoreApps = onlyCoreApps;
@@ -106,6 +108,7 @@ public class PackageParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final boolean isPackageFilename(String name) {
         return name.endsWith(".apk");
     }
@@ -259,7 +262,7 @@ public class PackageParser {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.022 -0400", hash_original_method = "83F32E741E7740326FB3ACF1CABD2263", hash_generated_method = "7A09DDB97693B21379BEEBD25F34AA9D")
     private Certificate[] loadCertificates(JarFile jarFile, JarEntry je,
             byte[] readBuffer) {
@@ -305,7 +308,7 @@ Certificate[] var540C13E9E156B687226421B24F2DF178_305734780 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.023 -0400", hash_original_method = "043AC7F11A9C5FD11FB43AEF955AD87D", hash_generated_method = "FBA2DF5349806186CC35F2C144C9A8F2")
     public int getParseError() {
         int varBDCAA77B0CE7BEBD0AAD5ADCACBCBA88_799461216 = (mParseError);
@@ -316,7 +319,7 @@ Certificate[] var540C13E9E156B687226421B24F2DF178_305734780 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.024 -0400", hash_original_method = "F8C0CFF9FE003FD5724E792D5942913B", hash_generated_method = "53668BEDC18FDE3DE8BE24918D690EB1")
     public Package parsePackage(File sourceFile, String destCodePath,
             DisplayMetrics metrics, int flags) {
@@ -423,7 +426,7 @@ Package varED674789E18B51C56C5496E452A560E9_1041706803 =         pkg;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.025 -0400", hash_original_method = "19D0E628AA10FC207BA0D548739FDEDB", hash_generated_method = "51F625123D7DAF7EEF71FDCC4068E687")
     public boolean collectCertificates(Package pkg, int flags) {
         addTaint(flags);
@@ -585,7 +588,7 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static PackageLite parsePackageLite(String packageFilePath, int flags) {
         AssetManager assmgr = null;
         final XmlResourceParser parser;
@@ -629,6 +632,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String validateName(String name, boolean requiresSeparator) {
         final int N = name.length();
         boolean hasSep = false;
@@ -656,6 +660,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String parsePackageName(XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws IOException, XmlPullParserException {
         int type;
@@ -688,7 +693,7 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static PackageLite parsePackageLite(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws IOException,
             XmlPullParserException {
@@ -745,6 +750,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     static public Signature stringToSignature(String str) {
         final int N = str.length();
         byte[] sig = new byte[N];
@@ -755,6 +761,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.058 -0400", hash_original_method = "91CC6CEE84025557458760F97B90CD2F", hash_generated_method = "DED0035F4E6E9AFB3D586F5E41BADBF6")
     private Package parsePackage(
         Resources res, XmlResourceParser parser, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -1282,6 +1289,7 @@ Package varED674789E18B51C56C5496E452A560E9_781523538 =         pkg;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String buildClassName(String pkg, CharSequence clsSeq,
             String[] outError) {
         if (clsSeq == null || clsSeq.length() <= 0) {
@@ -1307,6 +1315,7 @@ Package varED674789E18B51C56C5496E452A560E9_781523538 =         pkg;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String buildCompoundName(String pkg,
             CharSequence procSeq, String type, String[] outError) {
         String proc = procSeq.toString();
@@ -1336,6 +1345,7 @@ Package varED674789E18B51C56C5496E452A560E9_781523538 =         pkg;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String buildProcessName(String pkg, String defProc,
             CharSequence procSeq, int flags, String[] separateProcesses,
             String[] outError) {
@@ -1357,6 +1367,7 @@ Package varED674789E18B51C56C5496E452A560E9_781523538 =         pkg;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String buildTaskAffinityName(String pkg, String defProc,
             CharSequence procSeq, String[] outError) {
         if (procSeq == null) {
@@ -1369,6 +1380,7 @@ Package varED674789E18B51C56C5496E452A560E9_781523538 =         pkg;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.062 -0400", hash_original_method = "E3395575DA3BE4CF83D20AFB0193668F", hash_generated_method = "2E96F79503CCC1F60F02B64152ECE7B4")
     private PermissionGroup parsePermissionGroup(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
@@ -1414,6 +1426,7 @@ PermissionGroup var768916ECB5B80042EF41FFF6B22D9A06_2005927219 =         perm;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.063 -0400", hash_original_method = "1D11570A32C6A271E593822206F9BD54", hash_generated_method = "2FBAFE88F18117339085700BDB3FCF4E")
     private Permission parsePermission(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
@@ -1476,6 +1489,7 @@ Permission var768916ECB5B80042EF41FFF6B22D9A06_1888655264 =         perm;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.064 -0400", hash_original_method = "BAA3C6F5A9B5CEE097497C276EDD624D", hash_generated_method = "04C4F6A114E61B0C66B735D79A7F40ED")
     private Permission parsePermissionTree(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
@@ -1535,6 +1549,7 @@ Permission var768916ECB5B80042EF41FFF6B22D9A06_907426283 =         perm;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.065 -0400", hash_original_method = "77B98478A5AAF7EC4E5B725BE9FDC9E7", hash_generated_method = "4174143A9A50AA7126E5027E9531E9EC")
     private Instrumentation parseInstrumentation(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, String[] outError) throws XmlPullParserException, IOException {
@@ -1599,6 +1614,7 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_1849474103 =         a;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.071 -0400", hash_original_method = "3784AF975EC3AF37D03EE1A91A900A73", hash_generated_method = "A7C10521F17E977EBF225F62193C1BC8")
     private boolean parseApplication(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -1949,6 +1965,7 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_1849474103 =         a;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.072 -0400", hash_original_method = "63CFF58BE3C03EE3AAF09BEB17B3529D", hash_generated_method = "DA013FD7D92D20591C949FF26D997860")
     private boolean parsePackageItemInfo(Package owner, PackageItemInfo outInfo,
             String[] outError, String tag, TypedArray sa,
@@ -2003,7 +2020,7 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_1849474103 =         a;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.078 -0400", hash_original_method = "5541C23C630FF3AC70030479982C4C1F", hash_generated_method = "20BA9FA693377D6AF234A0CD96E0AB3B")
     private Activity parseActivity(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError,
@@ -2245,6 +2262,7 @@ Activity var3F5343BF1D849954A73F0BB303805FFD_9394273 =         a;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.085 -0400", hash_original_method = "2C553740AE22C20570EEFC51EEC11A38", hash_generated_method = "83D22C52DDB86DA1C587310324567AE6")
     private Activity parseActivityAlias(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -2422,7 +2440,7 @@ Activity var3F5343BF1D849954A73F0BB303805FFD_363546821 =         a;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.141 -0400", hash_original_method = "CC761DF5515ACB2817B0A6BEDC12031E", hash_generated_method = "5A7296A8876025CD3486A1230BBA64AB")
     private Provider parseProvider(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -2535,7 +2553,7 @@ Provider var74E4690D9F2A026504928C017944E149_601473185 =         p;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.144 -0400", hash_original_method = "05A16AA66DEB0B6B5120CEC23FE33532", hash_generated_method = "49FAFE9860AD7E02C52EEB6A05B7F94B")
     private boolean parseProviderTags(Resources res,
             XmlPullParser parser, AttributeSet attrs,
@@ -2747,7 +2765,7 @@ Provider var74E4690D9F2A026504928C017944E149_601473185 =         p;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.149 -0400", hash_original_method = "1B6E257916FE773842F0B213D728DC29", hash_generated_method = "01D55EF0EF2BF147984A22012D539D88")
     private Service parseService(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -2875,6 +2893,7 @@ Service var0478718F0636FB61899C13801CE9FE09_1067231156 =         s;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.153 -0400", hash_original_method = "99FE3F7E654A8DB168806DBE6C913C62", hash_generated_method = "4C77FD1A3417CF72AEE060C575FE9211")
     private boolean parseAllMetaData(Resources res,
             XmlPullParser parser, AttributeSet attrs, String tag,
@@ -2930,6 +2949,7 @@ Service var0478718F0636FB61899C13801CE9FE09_1067231156 =         s;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.154 -0400", hash_original_method = "714C7ED1FC52C32A41D3A8C089BB2BEC", hash_generated_method = "C605A0DBC020D49603483DD2A9A89758")
     private Bundle parseMetaData(Resources res,
             XmlPullParser parser, AttributeSet attrs,
@@ -3017,7 +3037,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static VerifierInfo parseVerifier(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException,
             IOException {
@@ -3064,7 +3084,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.159 -0400", hash_original_method = "B28F171FD6C00B48F648DC5DCFE3EFC1", hash_generated_method = "4811CC05EEFB4E9EE89A7C31A999D032")
     private boolean parseIntent(Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags,
@@ -3228,7 +3248,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean copyNeeded(int flags, Package p, Bundle metaData) {
         if (p.mSetEnabled != PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
             boolean enabled = p.mSetEnabled == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
@@ -3248,7 +3268,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static ApplicationInfo generateApplicationInfo(Package p, int flags) {
         if (p == null) return null;
         if (!copyNeeded(flags, p, null)) {
@@ -3288,6 +3308,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final PermissionInfo generatePermissionInfo(
             Permission p, int flags) {
         if (p == null) return null;
@@ -3300,6 +3321,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final PermissionGroupInfo generatePermissionGroupInfo(
             PermissionGroup pg, int flags) {
         if (pg == null) return null;
@@ -3312,6 +3334,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final ActivityInfo generateActivityInfo(Activity a,
             int flags) {
         if (a == null) return null;
@@ -3325,6 +3348,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final ServiceInfo generateServiceInfo(Service s, int flags) {
         if (s == null) return null;
         if (!copyNeeded(flags, s.owner, s.metaData)) {
@@ -3337,6 +3361,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final ProviderInfo generateProviderInfo(Provider p,
             int flags) {
         if (p == null) return null;
@@ -3355,6 +3380,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final InstrumentationInfo generateInstrumentationInfo(
             Instrumentation i, int flags) {
         if (i == null) return null;
@@ -3367,7 +3393,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled) {
         sCompatibilityModeEnabled = compatibilityModeEnabled;
     }
@@ -3384,6 +3410,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
 
         public int fileVersion;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.166 -0400", hash_original_method = "2CD4C5E2A660B34C44D0A141A2AEA4A5", hash_generated_method = "F5F4FF09A35908459A08AD63049CA1FA")
         public  NewPermissionInfo(String name, int sdkVersion, int fileVersion) {
             this.name = name;
@@ -3426,6 +3453,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
 
         TypedArray sa;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.167 -0400", hash_original_method = "FEBED5B917290B280BC232B6F93C8DA6", hash_generated_method = "55548C9D938CBB68771CEA96F9BC74DD")
           ParsePackageItemArgs(Package _owner, String[] _outError,
                 int _nameRes, int _labelRes, int _iconRes, int _logoRes) {
@@ -3466,6 +3494,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
 
         int flags;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.170 -0400", hash_original_method = "A5B17BCC2B409C42234E0A16A22942F4", hash_generated_method = "4EB7544A320C49E073E5ADB595ADF15B")
           ParseComponentArgs(Package _owner, String[] _outError,
                 int _nameRes, int _labelRes, int _iconRes, int _logoRes,
@@ -3628,6 +3657,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
 
         public ManifestDigest manifestDigest;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.180 -0400", hash_original_method = "8954AF7805FA48686FD1C5CD1B4EC95C", hash_generated_method = "7D4DBC5FA92B3E51FD3593495D906C93")
         public  Package(String _name) {
             packageName = _name;
@@ -3640,6 +3670,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1431880255 =         data;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.180 -0400", hash_original_method = "B05A09470669E629F210442116CDFAC5", hash_generated_method = "96A7635DAE33148C391664E05DF4A9F8")
         public void setPackageName(String newName) {
             packageName = newName;
@@ -3677,6 +3708,7 @@ for(int i=instrumentation.size()-1;i>=0;i--)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.180 -0400", hash_original_method = "7DFEBE5DF638D8804915FD110C0E2540", hash_generated_method = "E9849B3F1739E0F171378DE0510935C0")
         public String toString() {
 String var7225B3CC8914DF65BB421A6F179F031C_250582609 =             "Package{"
@@ -3715,6 +3747,7 @@ String var7225B3CC8914DF65BB421A6F179F031C_250582609 =             "Package{"
 
         String componentShortName;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.181 -0400", hash_original_method = "B544BED1308F0633C32173E605BDF8E5", hash_generated_method = "D740BCDFFC25F96008F5E3E0E4F9606C")
         public  Component(Package _owner) {
             owner = _owner;
@@ -3819,6 +3852,7 @@ String var7225B3CC8914DF65BB421A6F179F031C_250582609 =             "Package{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.184 -0400", hash_original_method = "BF1ED0A6C0ACE1EE7610EB0D74F5C800", hash_generated_method = "80754D90237DE2855DE5833EA37526D3")
         public ComponentName getComponentName() {
             if(componentName != null)            
@@ -3847,6 +3881,7 @@ ComponentName var7B6CF3BE908806ACB1532BFAD7EBF1F3_984163089 =             compon
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.184 -0400", hash_original_method = "3A4D7499A9518F3ABB20BEBAE6816B9D", hash_generated_method = "0612138EAF6F6F67A3D81F1AB0CD0C21")
         public String getComponentShortName() {
             if(componentShortName != null)            
@@ -3875,7 +3910,7 @@ String varFA3F4C9635F1476C20031AA38480ED2D_504687689 =             componentShor
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.184 -0400", hash_original_method = "AFFE8B7215C15E45738BCB365FA520F8", hash_generated_method = "ED0B38A266C1BF393A5AE5820021118A")
         public void setPackageName(String packageName) {
             addTaint(packageName.getTaint());
@@ -3902,6 +3937,7 @@ String varFA3F4C9635F1476C20031AA38480ED2D_504687689 =             componentShor
 
         public PermissionGroup group;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.185 -0400", hash_original_method = "28D7021527B7BC8061929232C0A668B9", hash_generated_method = "8707512B571445C2CCA3E908C046D590")
         public  Permission(Package _owner) {
             super(_owner);
@@ -3912,6 +3948,7 @@ String varFA3F4C9635F1476C20031AA38480ED2D_504687689 =             componentShor
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.185 -0400", hash_original_method = "37E156160FC75CB3C9E2BA72594B754D", hash_generated_method = "E949AB2E0E0812B705A4BD6A0701D3BA")
         public  Permission(Package _owner, PermissionInfo _info) {
             super(_owner);
@@ -3922,6 +3959,7 @@ String varFA3F4C9635F1476C20031AA38480ED2D_504687689 =             componentShor
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.185 -0400", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "10C7D0C53A4ED20F8E3E70EEE720E714")
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
@@ -3932,6 +3970,7 @@ String varFA3F4C9635F1476C20031AA38480ED2D_504687689 =             componentShor
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.185 -0400", hash_original_method = "D70298090C91BEA7F3B1C7F9C9416449", hash_generated_method = "29782FE338C85CCE0B789FFEFD5D7107")
         public String toString() {
 String varA4B73F78D64437A97BC4CB3FE2F19AAD_1329519570 =             "Permission{"
@@ -3955,6 +3994,7 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1329519570 =             "Permission{
 
         public PermissionGroupInfo info;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.185 -0400", hash_original_method = "19A5AAAA7728282CABC960AB069F9E98", hash_generated_method = "B5A5E2D4B3E639BF01CEC8D0362F5ECF")
         public  PermissionGroup(Package _owner) {
             super(_owner);
@@ -3965,6 +4005,7 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1329519570 =             "Permission{
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.186 -0400", hash_original_method = "8FB9374E9D85DC0253F34BC909070B56", hash_generated_method = "C6070FF59C068E97212414DCA5EB0187")
         public  PermissionGroup(Package _owner, PermissionGroupInfo _info) {
             super(_owner);
@@ -3975,6 +4016,7 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1329519570 =             "Permission{
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.186 -0400", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "10C7D0C53A4ED20F8E3E70EEE720E714")
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
@@ -3985,6 +4027,7 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1329519570 =             "Permission{
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.186 -0400", hash_original_method = "5B6E9035FB2F0E9673597108CCAFFCEF", hash_generated_method = "76DAE8680F2FBF344FB71921912906F7")
         public String toString() {
 String var230D88132BCDB5C1EFFF3FA52025C2F5_892089084 =             "PermissionGroup{"
@@ -4019,6 +4062,7 @@ String var230D88132BCDB5C1EFFF3FA52025C2F5_892089084 =             "PermissionGr
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.190 -0400", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "10C7D0C53A4ED20F8E3E70EEE720E714")
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
@@ -4029,6 +4073,7 @@ String var230D88132BCDB5C1EFFF3FA52025C2F5_892089084 =             "PermissionGr
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.190 -0400", hash_original_method = "3ED5BAD5E29B5F8C3FFE202D917D91C6", hash_generated_method = "516CC076C535A7474DAB30C3A1152E70")
         public String toString() {
 String var7349656C7BD58594155B01DB7429F0FA_861819933 =             "Activity{"
@@ -4063,6 +4108,7 @@ String var7349656C7BD58594155B01DB7429F0FA_861819933 =             "Activity{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.192 -0400", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "10C7D0C53A4ED20F8E3E70EEE720E714")
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
@@ -4073,6 +4119,7 @@ String var7349656C7BD58594155B01DB7429F0FA_861819933 =             "Activity{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.193 -0400", hash_original_method = "983F0C4312E41963E910123205C22323", hash_generated_method = "F8C300A59AD094C10BA1E8ED6119DFE9")
         public String toString() {
 String varE0BB0FB3650D73E43E1F3BF4E654C95D_1550021840 =             "Service{"
@@ -4112,6 +4159,7 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1550021840 =             "Service{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.194 -0400", hash_original_method = "7DA675634165C06E74013727D919E49C", hash_generated_method = "150CC3EFD195162CC132E1D5F85237A7")
         public  Provider(Provider existingProvider) {
             super(existingProvider);
@@ -4123,6 +4171,7 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1550021840 =             "Service{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.194 -0400", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "10C7D0C53A4ED20F8E3E70EEE720E714")
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
@@ -4133,6 +4182,7 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1550021840 =             "Service{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.195 -0400", hash_original_method = "68549008F1EBCA6BA1DE59DAB2FE7E3C", hash_generated_method = "B80B5F814C2439B5EF446685C402638A")
         public String toString() {
 String var57150B0931FFC28ACB80176BA213B66A_973482619 =             "Provider{"
@@ -4166,6 +4216,7 @@ String var57150B0931FFC28ACB80176BA213B66A_973482619 =             "Provider{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.196 -0400", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "10C7D0C53A4ED20F8E3E70EEE720E714")
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
@@ -4176,6 +4227,7 @@ String var57150B0931FFC28ACB80176BA213B66A_973482619 =             "Provider{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.196 -0400", hash_original_method = "CB405027A6A70334D830F0B5C698645E", hash_generated_method = "F4C2E0790C5AABC6D98531A9AC3AB9AE")
         public String toString() {
 String varB0CB4174C45C34ACD15551F9B93A3408_32302554 =             "Instrumentation{"
@@ -4227,6 +4279,7 @@ String varB0CB4174C45C34ACD15551F9B93A3408_32302554 =             "Instrumentati
 
         public Activity activity;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.198 -0400", hash_original_method = "4F41670063BD951D72DDB0235971893F", hash_generated_method = "0462B156AB73AD83F3A7439B178E9A79")
         public  ActivityIntentInfo(Activity _activity) {
             activity = _activity;
@@ -4235,6 +4288,7 @@ String varB0CB4174C45C34ACD15551F9B93A3408_32302554 =             "Instrumentati
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.198 -0400", hash_original_method = "7C91146E1C4D7077E2D0C55B0D43BF57", hash_generated_method = "D065060DF74060994CE1322E4CF496AB")
         public String toString() {
 String var8C912E976DD3A09E794833615D8D03AB_785379177 =             "ActivityIntentInfo{"
@@ -4258,6 +4312,7 @@ String var8C912E976DD3A09E794833615D8D03AB_785379177 =             "ActivityInte
 
         public Service service;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.199 -0400", hash_original_method = "2C256432D4530E0F15F4AED85D9A44A0", hash_generated_method = "61FE60C3F8E05F8F2F3135BC3B31D794")
         public  ServiceIntentInfo(Service _service) {
             service = _service;
@@ -4266,6 +4321,7 @@ String var8C912E976DD3A09E794833615D8D03AB_785379177 =             "ActivityInte
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.199 -0400", hash_original_method = "32EA4E8A8FC07DAD01188F341ACB2C51", hash_generated_method = "92DAE5FF39C53F8DDBB3C96A93F5F137")
         public String toString() {
 String var9772429D16BD47DBA31528978466C827_1079149608 =             "ServiceIntentInfo{"

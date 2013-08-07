@@ -1,10 +1,11 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class SparseArray<E> implements Cloneable {
     private boolean mGarbage = false;
@@ -130,7 +131,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void gc(){
 		// Original method
 		/*
@@ -312,7 +313,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int binarySearch(int[] a, int start, int len, int key){
 		// Original method
 		/*

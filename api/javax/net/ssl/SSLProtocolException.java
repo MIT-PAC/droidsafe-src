@@ -1,8 +1,9 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class SSLProtocolException extends SSLException {
     

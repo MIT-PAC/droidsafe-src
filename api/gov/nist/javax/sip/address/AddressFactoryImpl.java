@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.address;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.parser.StringMsgParser;
 import gov.nist.javax.sip.parser.URLParser;
 
@@ -9,9 +10,9 @@ import java.text.ParseException;
 import javax.sip.address.SipURI;
 import javax.sip.address.TelURL;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     

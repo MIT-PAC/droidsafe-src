@@ -1,6 +1,7 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -16,10 +17,10 @@ import android.os.PerformanceCollector.PerformanceResultsWriter;
 
 import com.google.android.collect.Lists;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AndroidTestRunner extends BaseTestRunner {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "AFBAC9716FC2073B5BFEA6A40ED35C25", hash_generated_field = "6DA683BBE787F263E5F5E79B3A62B986")
@@ -166,6 +167,7 @@ Class<? extends Test> var540C13E9E156B687226421B24F2DF178_676899573 =         nu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.347 -0400", hash_original_method = "680F4AFE025176BB5C5C3EA4F624B107", hash_generated_method = "A084F214802D4AA08E8157C030626113")
     private TestCase buildSingleTestMethod(Class testClass, String testMethodName) {
         addTaint(testMethodName.getTaint());
@@ -217,6 +219,7 @@ TestCase var540C13E9E156B687226421B24F2DF178_2139168606 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.349 -0400", hash_original_method = "771A297B38A7AB0B0FF5862A497CDBEC", hash_generated_method = "6F946C7F2AF08368991157AD3F83F438")
     private Test getTest(Class clazz) {
         addTaint(clazz.getTaint());
@@ -437,7 +440,7 @@ for(TestCase testCase : mTestCases)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.354 -0400", hash_original_method = "37F3C4CB00E2065177941F440A1EB96E", hash_generated_method = "B9C8894AFEBF94656C66FAA8B38F355F")
     public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
         mPerfWriter = writer;

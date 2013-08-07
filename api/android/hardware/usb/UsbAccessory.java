@@ -1,12 +1,13 @@
 package android.hardware.usb;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class UsbAccessory implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.861 -0400", hash_original_field = "6D6C47A5EB4751EE95A0B83ED231F29F", hash_generated_field = "FB8FA14B444DCDECB7E1F2DE256B790B")
@@ -28,6 +29,7 @@ public class UsbAccessory implements Parcelable {
 
     private String mSerial;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.863 -0400", hash_original_method = "7CD9FDFE8EAEAE0E43B9A1D60D60D495", hash_generated_method = "2BD440FEB3D93B660A14AFD3D7FACE44")
     public  UsbAccessory(String manufacturer, String model, String description,
             String version, String uri, String serial) {
@@ -47,6 +49,7 @@ public class UsbAccessory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.864 -0400", hash_original_method = "D12B07FB292F613652E291AA784D1EC3", hash_generated_method = "85F4E0DF4FB13ED6AAC867EA2394FF31")
     public  UsbAccessory(String[] strings) {
         mManufacturer = strings[0];
@@ -131,6 +134,7 @@ String var1445B1C0309D4AB287DFD42BFC40DFCD_483751696 =         mSerial;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean compare(String s1, String s2) {
         if (s1 == null) return (s2 == null);
         return s1.equals(s2);

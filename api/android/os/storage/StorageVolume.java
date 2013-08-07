@@ -1,12 +1,13 @@
 package android.os.storage;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StorageVolume implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.110 -0400", hash_original_field = "FB4FCB3508FC66D4E3F113990AC335C6", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
@@ -34,6 +35,7 @@ public class StorageVolume implements Parcelable {
 
     private long mMaxFileSize;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.113 -0400", hash_original_method = "64D7A9B637D8ABCF56CD10EE906A4905", hash_generated_method = "81313F5D3A30294AF7A1432AB6ECE6C7")
     public  StorageVolume(String path, String description, boolean removable,
             boolean emulated, int mtpReserveSpace, boolean allowMassStorage, long maxFileSize) {
@@ -55,6 +57,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.116 -0400", hash_original_method = "C6DC3558E219CD63D264358A9A1233CF", hash_generated_method = "DA958F3A8D6B6A18BBD14EFFE081EDC7")
     private  StorageVolume(String path, String description, boolean removable,
             boolean emulated, int mtpReserveSpace, int storageId,
@@ -79,7 +82,7 @@ public class StorageVolume implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.118 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "5655C139544869AFA247E9BC7F102C35")
     public String getPath() {
 String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_912969250 =         mPath;
@@ -90,7 +93,7 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_912969250 =         mPath;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.119 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "83130B1CB5AA6BE328ABAAAA21528F99")
     public String getDescription() {
 String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
@@ -101,7 +104,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.119 -0400", hash_original_method = "C8355C5823499E966C6E9C9BBED7B59B", hash_generated_method = "CAC43AA0A426DADF5821CE6F01614C2A")
     public boolean isRemovable() {
         boolean varBA2C430BDE7AD99954A160F0B96DA6E4_339959619 = (mRemovable);
@@ -112,7 +115,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.119 -0400", hash_original_method = "3969E4BD26F514DAFEA3D81664C42C95", hash_generated_method = "064952A7814272FD91B8119AF87DEBEC")
     public boolean isEmulated() {
         boolean varBB81BAE7E9AD52D1C2A9CFC73AB6E39F_1257566927 = (mEmulated);
@@ -123,7 +126,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.120 -0400", hash_original_method = "D91614A87EF069B6CB0CB580F9424F2A", hash_generated_method = "EB4C0ACBCFD00E756D7F2A2E56849F8A")
     public int getStorageId() {
         int varA211BEEE10AFE736EE5E9E3E7140A322_462752153 = (mStorageId);
@@ -134,7 +137,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.120 -0400", hash_original_method = "DF85DF3474DF218FD90EC56A476BBB47", hash_generated_method = "F681C9EB234C13040C7D4D682143B82F")
     public void setStorageId(int index) {
         mStorageId = ((index + 1) << 16) + 1;
@@ -143,7 +146,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.120 -0400", hash_original_method = "AD5CC5267CED7BD79E23E2B3D995596D", hash_generated_method = "076C8DC815C51215020B400574A5E4C7")
     public int getMtpReserveSpace() {
         int var44CF13B011CB07C962C5DA973669BEB6_1053614016 = (mMtpReserveSpace);
@@ -154,7 +157,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.121 -0400", hash_original_method = "70EAD3302E25E04AF22ADA1536C85D6E", hash_generated_method = "2F5808EB663AC5B0D120F007D28A73DD")
     public boolean allowMassStorage() {
         boolean var570ECAEBA3421EAED0D3DCFAEDD80845_1629813854 = (mAllowMassStorage);
@@ -165,7 +168,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.121 -0400", hash_original_method = "F3A7583351778AC1576078A1D9F37684", hash_generated_method = "FAC7571732E99DCEEE3D2409CDAF9A0D")
     public long getMaxFileSize() {
         long var902454EC5B152CFEA9735C0AAF77CDE8_1073432943 = (mMaxFileSize);
@@ -176,6 +179,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.121 -0400", hash_original_method = "3EBFC06A3F5F08EEF4400F1412AD16A4", hash_generated_method = "9DA3FCA937939C782FD8A9D75282DECE")
     @Override
     public boolean equals(Object obj) {
@@ -199,6 +203,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.122 -0400", hash_original_method = "828243B6D2ADC87A48F7C7C656C5F549", hash_generated_method = "C757542F843C222723D65CE5C4DD21F8")
     @Override
     public int hashCode() {
@@ -210,6 +215,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_176531736 =         mDescription;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.122 -0400", hash_original_method = "D35752FC760ED96A302E69B1B40DBE8B", hash_generated_method = "F85AF9877E5551A87FC5038B5547488A")
     @Override
     public String toString() {
@@ -227,7 +233,7 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_1036925601 =         "StorageVolume [
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.122 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "83FA6FC5475765EE1663F9DBDF419976")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1397873828 = (0);
@@ -238,6 +244,7 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_1036925601 =         "StorageVolume [
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.123 -0400", hash_original_method = "39BDB7739C8FE16566F7ABF501D9091E", hash_generated_method = "7DD63717C81A3DD1DB69551FB9D8E831")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);

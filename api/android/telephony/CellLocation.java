@@ -1,6 +1,7 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -10,9 +11,9 @@ import android.telephony.gsm.GsmCellLocation;
 import com.android.internal.telephony.ITelephony;
 import com.android.internal.telephony.Phone;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class CellLocation {
     
@@ -34,7 +35,7 @@ public abstract class CellLocation {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static CellLocation newFromBundle(Bundle bundle) {
         switch(TelephonyManager.getDefault().getCurrentPhoneType()) {
         case Phone.PHONE_TYPE_CDMA:

@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,10 +9,10 @@ import android.util.Log;
 
 import com.android.internal.os.BinderInternal;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ServiceManager {
     
@@ -22,7 +23,7 @@ public final class ServiceManager {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static IServiceManager getIServiceManager() {
         if (sServiceManager != null) {
             return sServiceManager;
@@ -32,7 +33,7 @@ public final class ServiceManager {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static IBinder getService(String name) {
         try {
             IBinder service = sCache.get(name);
@@ -48,7 +49,7 @@ public final class ServiceManager {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static void addService(String name, IBinder service) {
         try {
             getIServiceManager().addService(name, service);
@@ -58,7 +59,7 @@ public final class ServiceManager {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static IBinder checkService(String name) {
         try {
             IBinder service = sCache.get(name);
@@ -74,6 +75,7 @@ public final class ServiceManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String[] listServices() throws RemoteException {
         try {
             return getIServiceManager().listServices();

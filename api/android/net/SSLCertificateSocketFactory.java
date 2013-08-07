@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -25,10 +26,10 @@ import org.apache.harmony.xnet.provider.jsse.SSLClientSessionCache;
 
 import android.os.SystemProperties;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SSLCertificateSocketFactory extends SSLSocketFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.280 -0400", hash_original_field = "F948430F59414DE0848E0387E3BDAA08", hash_generated_field = "89FC72129020E12BF57CD2392B01CE22")
@@ -62,6 +63,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.281 -0400", hash_original_method = "0B60EEBB0E30E9D2D2074F3C398E1DED", hash_generated_method = "6830AC530177609ED297B497DEB3CC58")
     private  SSLCertificateSocketFactory(
             int handshakeTimeoutMillis, SSLSessionCache cache, boolean secure) {
@@ -97,7 +99,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static void verifyHostname(Socket socket, String hostname) throws IOException {
         if (!(socket instanceof SSLSocket)) {
             throw new IllegalArgumentException("Attempt to verify non-SSL socket");
@@ -150,12 +152,14 @@ SSLSocketFactory varF47896031DB2974730631E4534BA0DEC_1972100245 =             (S
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isSslCheckRelaxed() {
         return "1".equals(SystemProperties.get("ro.debuggable")) &&
             "yes".equals(SystemProperties.get("socket.relaxsslcheck"));
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.282 -0400", hash_original_method = "293C785CB66F2E86F228FEC441D5947A", hash_generated_method = "81537E0EDE5DA05237A2F0038E8413A2")
     private synchronized SSLSocketFactory getDelegate() {
         if(!mSecure || isSslCheckRelaxed())        

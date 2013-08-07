@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static com.android.internal.util.Preconditions.checkNotNull;
 
 import java.net.InetAddress;
@@ -9,16 +10,17 @@ import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.os.Binder;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ConnectivityManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.384 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "91FD67C0243C9CAC51474C01D9540196")
 
     private IConnectivityManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.385 -0400", hash_original_method = "6A60C197741333EAEC6E0EA679C6387D", hash_generated_method = "9748824EC9A278AAE7881447974F69D5")
     public  ConnectivityManager(IConnectivityManager service) {
         mService = checkNotNull(service, "missing IConnectivityManager");
@@ -33,6 +35,7 @@ public class ConnectivityManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getNetworkTypeName(int type) {
         switch (type) {
             case TYPE_MOBILE:
@@ -69,7 +72,7 @@ public class ConnectivityManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isNetworkTypeMobile(int networkType) {
         switch (networkType) {
             case TYPE_MOBILE:
@@ -151,6 +154,7 @@ NetworkInfo var540C13E9E156B687226421B24F2DF178_895888217 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.391 -0400", hash_original_method = "EA020BF9EC9A5FD5A107F43E91D20C3E", hash_generated_method = "EC2809AA83A2EA59602F064C66F75A55")
     public NetworkInfo getActiveNetworkInfoForUid(int uid) {
         addTaint(uid);
@@ -222,6 +226,7 @@ NetworkInfo[] var540C13E9E156B687226421B24F2DF178_354435853 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.394 -0400", hash_original_method = "D6D4DA92D9064C06A48DA2C5EB8FF9D2", hash_generated_method = "2C33A607607498B54F4C51CD23BF7103")
     public LinkProperties getActiveLinkProperties() {
         try 
@@ -245,6 +250,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_2138275556 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.394 -0400", hash_original_method = "C7AAA0ED9F7BD2D04E30B8A62557C00D", hash_generated_method = "F82FD5C57891D5E034A2B192FC627B2D")
     public LinkProperties getLinkProperties(int networkType) {
         addTaint(networkType);
@@ -269,6 +275,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1478821864 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.395 -0400", hash_original_method = "8773F3976862F74C7E8795673CF57A3F", hash_generated_method = "FC7CFEB3FA498D6BCF1EB22379744117")
     public boolean setRadios(boolean turnOn) {
         addTaint(turnOn);
@@ -293,6 +300,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1478821864 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.395 -0400", hash_original_method = "F4DEFED01E737220B0A84C9B3C165EA1", hash_generated_method = "F177FCC84E0D796098C6758FB2EAB9DE")
     public boolean setRadio(int networkType, boolean turnOn) {
         addTaint(turnOn);
@@ -393,6 +401,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1478821864 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.398 -0400", hash_original_method = "EFA83347B3FFE38EB6FE081BBE35835E", hash_generated_method = "04A9A022B601A179BE252BC3553442CB")
     public boolean requestRouteToHostAddress(int networkType, InetAddress hostAddress) {
         addTaint(hostAddress.getTaint());
@@ -432,7 +441,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1478821864 =             null
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.399 -0400", hash_original_method = "C7D66D7319A6F772837F5FAC4582BCF2", hash_generated_method = "DD5713BFAEAD7937DCF087E006B8A5CE")
     @Deprecated
     public void setBackgroundDataSetting(boolean allowBackgroundData) {
@@ -441,6 +450,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1478821864 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.399 -0400", hash_original_method = "2A17F1CC768C6D56971308D1A367AB75", hash_generated_method = "1C94882A3F4CAA44ED0E0BA0BC774B91")
     public NetworkQuotaInfo getActiveNetworkQuotaInfo() {
         try 
@@ -464,6 +474,7 @@ NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_76733763 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.400 -0400", hash_original_method = "4787FEDAB977985506F4394396606391", hash_generated_method = "EA1141DA6DC0C57E2326BE1B4F0D4B57")
     public boolean getMobileDataEnabled() {
         try 
@@ -487,6 +498,7 @@ NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_76733763 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.401 -0400", hash_original_method = "03BF638942F758314C38E6E89D590F06", hash_generated_method = "8C7040F05C00E42F43910B521E4E4743")
     public void setMobileDataEnabled(boolean enabled) {
         addTaint(enabled);
@@ -505,6 +517,7 @@ NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_76733763 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.402 -0400", hash_original_method = "65586E40689502E42674D85C93789ED5", hash_generated_method = "FD519C2A85FD44ECC6CBB5D6549F655D")
     public String[] getTetherableIfaces() {
         try 
@@ -528,6 +541,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1857727811 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.403 -0400", hash_original_method = "1A1AB0AA8E53EB2A72A3BB78A36F79E1", hash_generated_method = "77F6D44F2ABE0BCBCC8D69E5B6A28FAF")
     public String[] getTetheredIfaces() {
         try 
@@ -551,6 +565,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1961157562 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.404 -0400", hash_original_method = "B4F0365B2F0B873A76FA3BA63C88578F", hash_generated_method = "A408D8CE9DD478B004A91AB1C6C693AA")
     public String[] getTetheringErroredIfaces() {
         try 
@@ -574,6 +589,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_419703303 =             new String[
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.404 -0400", hash_original_method = "88DA982A0D8C00E6CF08BAB9F849E24F", hash_generated_method = "EE1CBDF256F0317603ADE53FBE44C65B")
     public int tether(String iface) {
         addTaint(iface.getTaint());
@@ -598,6 +614,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_419703303 =             new String[
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.406 -0400", hash_original_method = "A16CE7410015543313DA1C15EBE8B863", hash_generated_method = "E2879C9835DF3A9E8FD47F41241A260F")
     public int untether(String iface) {
         addTaint(iface.getTaint());
@@ -622,6 +639,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_419703303 =             new String[
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.407 -0400", hash_original_method = "457F62D672DCD1BF7CAF2342EBCF7BE3", hash_generated_method = "85982A6ED657A4AB09F5EE61202E1FC8")
     public boolean isTetheringSupported() {
         try 
@@ -645,6 +663,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_419703303 =             new String[
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.409 -0400", hash_original_method = "DC0367A904D99268D94A314F1CB55B9B", hash_generated_method = "07FE563D9D51FF54882FA25C93B5BBC5")
     public String[] getTetherableUsbRegexs() {
         try 
@@ -668,6 +687,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1105548221 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.410 -0400", hash_original_method = "8DD288EE3D6933895D6454F488DECB73", hash_generated_method = "1919012EF32C847A236FC338D0B2D49F")
     public String[] getTetherableWifiRegexs() {
         try 
@@ -691,6 +711,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_384352562 =             new String[
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.410 -0400", hash_original_method = "83E2E43D24B9648666006A701F93D599", hash_generated_method = "8CD990F8ADEC75E912242CF02AAEF078")
     public String[] getTetherableBluetoothRegexs() {
         try 
@@ -714,6 +735,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1018378364 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.411 -0400", hash_original_method = "952ADB6A2A3AEF46E275F5FA17E284ED", hash_generated_method = "008CBCC1B91B6483073F7C7DE055ACE4")
     public int setUsbTethering(boolean enable) {
         addTaint(enable);
@@ -738,6 +760,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1018378364 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.412 -0400", hash_original_method = "A91E88C74DCBFDB505B1B5012FAE30D1", hash_generated_method = "24C01995C724F5DB167A3375526BD6A5")
     public int getLastTetherError(String iface) {
         addTaint(iface.getTaint());
@@ -762,6 +785,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1018378364 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.412 -0400", hash_original_method = "400BD091D4CACB3FCA76B3A275DD11D5", hash_generated_method = "A8B7D0C7D232E725238F7741A584FC4F")
     public boolean requestNetworkTransitionWakelock(String forWhom) {
         addTaint(forWhom.getTaint());
@@ -788,6 +812,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1018378364 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.413 -0400", hash_original_method = "37DB5DE823B5870FA290320C99B5BB07", hash_generated_method = "89B0E2A036C6A7716FACFA7DA36F0C1F")
     public void reportInetCondition(int networkType, int percentage) {
         addTaint(percentage);
@@ -807,6 +832,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1018378364 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.413 -0400", hash_original_method = "0F41E571577973AB5A169120A0CDA859", hash_generated_method = "726511FC235987EF6B59F3FD23FF463D")
     public void setGlobalProxy(ProxyProperties p) {
         addTaint(p.getTaint());
@@ -825,6 +851,7 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1018378364 =             new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.414 -0400", hash_original_method = "7F5BD964F39855F539616DAFB8170A5C", hash_generated_method = "CBB0FFAE605F28089EF667F609DA760E")
     public ProxyProperties getGlobalProxy() {
         try 
@@ -848,6 +875,7 @@ ProxyProperties var540C13E9E156B687226421B24F2DF178_1127966349 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.414 -0400", hash_original_method = "C61C105C2967FBAB6E5B43A96F13A0DE", hash_generated_method = "FDC2AF7023868B7875BF70FED79F153A")
     public ProxyProperties getProxy() {
         try 
@@ -871,6 +899,7 @@ ProxyProperties var540C13E9E156B687226421B24F2DF178_68776989 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.415 -0400", hash_original_method = "9D2F7B8AE7DD2651562BD08E17F617DF", hash_generated_method = "938BBEE696104355AB187E6B5D6E040A")
     public void setDataDependency(int networkType, boolean met) {
         addTaint(met);
@@ -890,6 +919,7 @@ ProxyProperties var540C13E9E156B687226421B24F2DF178_68776989 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.416 -0400", hash_original_method = "A6B9FE53FCB83D066C3DAD2A2CD2AA6D", hash_generated_method = "E2A603DC35DBB694D6B11962F67DC5EA")
     public boolean isNetworkSupported(int networkType) {
         addTaint(networkType);

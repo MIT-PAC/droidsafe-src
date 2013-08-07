@@ -1,7 +1,8 @@
 package org.apache.commons.codec;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class DecoderException extends Exception {
     

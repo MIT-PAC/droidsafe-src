@@ -1,8 +1,9 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
 
 public class TypedValue {
     public int type;

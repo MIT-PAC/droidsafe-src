@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IPhoneSubInfo extends android.os.IInterface
 {

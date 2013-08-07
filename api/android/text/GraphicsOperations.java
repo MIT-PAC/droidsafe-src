@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 

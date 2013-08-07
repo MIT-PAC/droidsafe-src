@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -32,10 +33,10 @@ import android.widget.AbsListView.OnScrollListener;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CalendarView extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.881 -0400", hash_original_field = "ED78BABF354FEF8D61EC60FB59A2000B", hash_generated_field = "8B23991BED629DDCFDA8E1DD88120AF5")
@@ -499,6 +500,7 @@ public class CalendarView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.894 -0400", hash_original_method = "4AE549580BCF2D6667C808ED8CCBDCDC", hash_generated_method = "FF6C538F4D348A34958D776E53AA09E7")
     private void setCurrentLocale(Locale locale) {
         if(locale.equals(mCurrentLocale))        
@@ -522,6 +524,7 @@ public class CalendarView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.894 -0400", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "61EC0164C81C8794AD5D2908AB5B807F")
     private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
         addTaint(locale.getTaint());
@@ -553,6 +556,7 @@ Calendar var7F1C6FE82B6466987740139940995C7D_1897776491 =             newCalenda
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.895 -0400", hash_original_method = "70DC9A9889795E848236506BBC0A481B", hash_generated_method = "BB45D795A21538ABCCACE356B9748C7F")
     private boolean isSameDate(Calendar firstDate, Calendar secondDate) {
         addTaint(secondDate.getTaint());
@@ -567,6 +571,7 @@ Calendar var7F1C6FE82B6466987740139940995C7D_1897776491 =             newCalenda
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.896 -0400", hash_original_method = "513863F202D0E7C406F959CC7EBC2D43", hash_generated_method = "734305B550B77B191D23D565503D8840")
     private void setUpAdapter() {
         if(mAdapter == null)        
@@ -619,6 +624,7 @@ Calendar var7F1C6FE82B6466987740139940995C7D_1897776491 =             newCalenda
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.899 -0400", hash_original_method = "2BEB208CF4EFB41463E1218ACA7650C9", hash_generated_method = "5DDE8C5F9883688C18A3EAFC6440BD72")
     private void setUpHeader(int weekDayTextAppearanceResId) {
         addTaint(weekDayTextAppearanceResId);
@@ -661,13 +667,15 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.900 -0400", hash_original_method = "CFADBCF95F8E177F25E22F1FC2115F77", hash_generated_method = "A7212EABDEC78C4670A7D51B166BE4DD")
     private void setUpListView() {
         mListView.setDivider(null);
         mListView.setItemsCanFocus(true);
         mListView.setVerticalScrollBarEnabled(false);
         mListView.setOnScrollListener(new OnScrollListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.900 -0400", hash_original_method = "00F32D753053A861AE7DBFD213079352", hash_generated_method = "C3F9DF9B73485268F5BFEBE41DDBD9B4")
+        @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.900 -0400", hash_original_method = "00F32D753053A861AE7DBFD213079352", hash_generated_method = "C3F9DF9B73485268F5BFEBE41DDBD9B4")
         public void onScrollStateChanged(AbsListView view, int scrollState) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(scrollState);
@@ -676,7 +684,8 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
             // ---------- Original Method ----------
             //CalendarView.this.onScrollStateChanged(view, scrollState);
         }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.900 -0400", hash_original_method = "E68786505B378D9C994B2BFCAEDF7B06", hash_generated_method = "EA02612E2594E7F67FC321ABFC227955")
+        @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.900 -0400", hash_original_method = "E68786505B378D9C994B2BFCAEDF7B06", hash_generated_method = "EA02612E2594E7F67FC321ABFC227955")
         public void onScroll(
                     AbsListView view, int firstVisibleItem, int visibleItemCount,
                     int totalItemCount) {
@@ -714,6 +723,7 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.902 -0400", hash_original_method = "9885B6A6E0E890A0EF52CBA474F609AF", hash_generated_method = "0E844A6F35E4422F5C6DD9C0F3DB681E")
     private void goTo(Calendar date, boolean animate, boolean setSelected, boolean forceScroll) {
         addTaint(forceScroll);
@@ -779,6 +789,7 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.904 -0400", hash_original_method = "4EF37BB5E8B6D289AE6D0021CE0D4FEB", hash_generated_method = "87C94761FD67F9EFE62354DFFB1181B8")
     private boolean parseDate(String date, Calendar outDate) {
         addTaint(outDate.getTaint());
@@ -807,6 +818,7 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.905 -0400", hash_original_method = "F153BBCA7962990A30E79BE6D90D9C30", hash_generated_method = "68C75E90DECCCD3630FC8AB86410853C")
     private void onScrollStateChanged(AbsListView view, int scrollState) {
         addTaint(scrollState);
@@ -817,6 +829,7 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.907 -0400", hash_original_method = "FE6404A8901B8111BDEFCBB086ABC460", hash_generated_method = "9531FF84C9494AAA25C42FC0BF66910B")
     private void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
             int totalItemCount) {
@@ -896,6 +909,7 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.909 -0400", hash_original_method = "2D87D8A121385B44A48D783AA9D15CB4", hash_generated_method = "0635C722637CB28F0CD60C0234980BBE")
     private void setMonthDisplayed(Calendar calendar) {
         addTaint(calendar.getTaint());
@@ -926,6 +940,7 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.909 -0400", hash_original_method = "025B6CEC43A90DA392B09F9FACE78FF5", hash_generated_method = "B9C56989667227EB22A023503E41B63E")
     private int getWeeksSinceMinDate(Calendar date) {
         addTaint(date.getTaint());
@@ -1053,6 +1068,7 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.912 -0400", hash_original_method = "155544AF4C95F51C95BCC140A715A96B", hash_generated_method = "41311F926BFCC998EB366019D8CBD762")
         private void init() {
             mSelectedWeek = getWeeksSinceMinDate(mSelectedDate);
@@ -1253,6 +1269,7 @@ View var4B3D7F76B00CE0C2FF9DC309BE93B973_1271152330 =             weekView;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.915 -0400", hash_original_method = "DDBBBC0FCC832A9812721416C01B8F28", hash_generated_method = "5BFCD1D5FB51F91F9B872F6076CD5CC8")
         private void onDateTapped(Calendar day) {
             addTaint(day.getTaint());
@@ -1404,6 +1421,7 @@ for(;i < mNumCells;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.917 -0400", hash_original_method = "FEF07EDEB83DCD7D850BA0B7A04A7856", hash_generated_method = "0EDF79AFD422A561AEFB941B8564204D")
         private void setPaintProperties() {
             mDrawPaint.setFakeBoldText(false);
@@ -1513,6 +1531,7 @@ Calendar var6B7DB0E14A75815A70795AEE528E21DF_1950891506 =             mFirstDay;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.918 -0400", hash_original_method = "86B2559C98404D7EBD9D2D1A57D5B7B9", hash_generated_method = "9CE1D0EEB5FBABB56A1FB81388A93520")
         private void drawBackground(Canvas canvas) {
             addTaint(canvas.getTaint());
@@ -1545,6 +1564,7 @@ Calendar var6B7DB0E14A75815A70795AEE528E21DF_1950891506 =             mFirstDay;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.918 -0400", hash_original_method = "D3ED4C16A7F0A5B2E5F9E818EC82B4AE", hash_generated_method = "948A5BC8AA557E781C3A675A0B95A405")
         private void drawWeekNumbers(Canvas canvas) {
             addTaint(canvas.getTaint());
@@ -1573,6 +1593,7 @@ for(;i < nDays;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.918 -0400", hash_original_method = "D028062BEA4F3ED75274534BCA9F109C", hash_generated_method = "E709529DEA0DED460AEF4E47DC993918")
         private void drawWeekSeparators(Canvas canvas) {
             addTaint(canvas.getTaint());
@@ -1604,6 +1625,7 @@ for(;i < nDays;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.919 -0400", hash_original_method = "A1C98C2320B89AC1B0E9DE7623F0F5E4", hash_generated_method = "63C139C941A30F1F9FC6B4DFBF8CF742")
         private void drawSelectedDateVerticalBars(Canvas canvas) {
             addTaint(canvas.getTaint());
@@ -1649,6 +1671,7 @@ for(;i < nDays;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.919 -0400", hash_original_method = "F4AE55BB3F9C613E7E5A646F02C33791", hash_generated_method = "BC87DAAA961292A6002771AFECC7BFCB")
         private void updateSelectionPositions() {
             if(mHasSelectedDay)            

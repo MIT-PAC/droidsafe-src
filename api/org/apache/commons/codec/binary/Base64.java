@@ -1,15 +1,16 @@
 package org.apache.commons.codec.binary;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.commons.codec.BinaryDecoder;
 import org.apache.commons.codec.BinaryEncoder;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.EncoderException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Base64 implements BinaryEncoder, BinaryDecoder {
     
@@ -20,7 +21,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isBase64(byte octect) {
         if (octect == PAD) {
             return true;

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.header.SIPHeaderNamesCache;
 import gov.nist.javax.sip.header.extensions.Join;
@@ -104,10 +105,10 @@ import javax.sip.header.ViaHeader;
 import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.header.WarningHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ParserFactory {
     

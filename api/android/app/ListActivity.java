@@ -1,8 +1,9 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import android.os.Bundle;
 import android.os.Handler;
@@ -61,6 +62,7 @@ public class ListActivity extends Activity {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.764 -0400", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "D4F933E3714595AC8E3D7A38148816F9")
     protected void onListItemClick(ListView l, View v, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -202,6 +204,7 @@ ListView var344AE622895130273F3D062543816FEE_584396463 =         mList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.782 -0400", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "BCB65BDC5A8C2B81E757A67E7C05CFBD")
     public ListAdapter getListAdapter() {
 ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1101591930 =         mAdapter;
@@ -212,6 +215,7 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1101591930 =         mAdapter;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.783 -0400", hash_original_method = "8B5C698EA2865F1A0F6EAF61F2AE4FB9", hash_generated_method = "8A39C1E8DD04D52E92C3522329566B10")
     private void ensureList() {
         if(mList != null)        

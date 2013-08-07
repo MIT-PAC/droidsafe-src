@@ -1,10 +1,11 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public abstract class AbstractWindowedCursor extends AbstractCursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.426 -0400", hash_original_field = "F4214BE1FFE044F8CA79EEDDDED72016", hash_generated_field = "12D5C423EDB86BC0F7511811E7121A5B")
@@ -263,6 +264,7 @@ CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_1302098756 =         mWindow;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.436 -0400", hash_original_method = "53135D68273D9C60BFA0802F12D5EFAC", hash_generated_method = "A02CDFF16FC796F08C7ECD03C0B558F5")
     protected void closeWindow() {
         if(mWindow != null)        
@@ -278,6 +280,7 @@ CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_1302098756 =         mWindow;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.437 -0400", hash_original_method = "5B67F8BB651F008F63750FC6E33E54E8", hash_generated_method = "816A65FA914C2F24D019945062AC1401")
     protected void clearOrCreateWindow(String name) {
         if(mWindow == null)        
@@ -297,6 +300,7 @@ CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_1302098756 =         mWindow;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.438 -0400", hash_original_method = "C8847040621704A6986D97364F312269", hash_generated_method = "6CD575C7E400F361AFC0582D59EEEF79")
     @Override
     protected void onDeactivateOrClose() {

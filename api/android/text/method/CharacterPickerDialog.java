@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -20,10 +21,10 @@ import android.widget.GridView;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CharacterPickerDialog extends Dialog implements OnItemClickListener, OnClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.159 -0400", hash_original_field = "7D6C73188D7990FE5A4B99F8F090B9EA", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
@@ -113,7 +114,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.169 -0400", hash_original_method = "889637D7E351CCF8A657470FC2914F00", hash_generated_method = "2C0F226862C0876664AAF28FB22531CB")
     private void replaceCharacterAndClose(CharSequence replace) {
         addTaint(replace.getTaint());

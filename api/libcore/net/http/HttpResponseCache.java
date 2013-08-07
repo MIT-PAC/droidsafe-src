@@ -1,6 +1,7 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
@@ -39,10 +40,10 @@ import libcore.io.Base64;
 import libcore.io.DiskLruCache;
 import libcore.io.IoUtils;
 import libcore.io.Streams;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class HttpResponseCache extends ResponseCache {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.396 -0400", hash_original_field = "0FEA6A13C52B4D4725368F24B045CA84", hash_generated_field = "8D7B3AC911505868AEA4010DF26181F8")
@@ -72,7 +73,7 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.397 -0400", hash_original_method = "BDF5FA5DFC6F094E24DB34D390FA0AF5", hash_generated_method = "BCFADF42DD5DD012983CA412A7D59C0C")
     private String uriToKey(URI uri) {
         addTaint(uri.getTaint());
@@ -166,6 +167,7 @@ CacheResponse var1901008CAF5259B3F7C1937589ACF437_1980901228 =         entry.isH
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.399 -0400", hash_original_method = "414C2C76D37A8FDF2E21B69DEB8F21E6", hash_generated_method = "C07F900AC7384CE6342E06E21C438122")
     private InputStream newBodyInputStream(final DiskLruCache.Snapshot snapshot) {
         addTaint(snapshot.getTaint());
@@ -282,6 +284,7 @@ CacheRequest var540C13E9E156B687226421B24F2DF178_1810460014 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.401 -0400", hash_original_method = "E894667736427F176108888DBBB58A41", hash_generated_method = "1903C525687D97D424B932251CC663C1")
     private HttpEngine getHttpEngine(HttpURLConnection httpConnection) {
         addTaint(httpConnection.getTaint());
@@ -670,6 +673,7 @@ for(int i = 0;i < responseHeaders.length();i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.410 -0400", hash_original_method = "03191EC96D9A5CD24E720BDBCBE04A2D", hash_generated_method = "783E1F184BA0D6307BCB01A56B82F777")
         private boolean isHttps() {
             boolean var84590F99892941EEBA41F98A1FDD816B_1813402239 = (uri.startsWith("https://"));
@@ -680,6 +684,7 @@ for(int i = 0;i < responseHeaders.length();i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.411 -0400", hash_original_method = "6902188738A592ACC936EB175BFF523B", hash_generated_method = "521A07C68820DFE15F84622AF97A332C")
         private int readInt(InputStream in) throws IOException {
             addTaint(in.getTaint());
@@ -706,6 +711,7 @@ for(int i = 0;i < responseHeaders.length();i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.411 -0400", hash_original_method = "DA1C299BAC85411132B971A655DE52AC", hash_generated_method = "2977680F3F28303E574C624B4B4D5136")
         private Certificate[] readCertArray(InputStream in) throws IOException {
             addTaint(in.getTaint());
@@ -758,6 +764,7 @@ Certificate[] varDC838461EE2FA0CA4C9BBB70A15456B0_286082867 =                 re
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.412 -0400", hash_original_method = "31A77F7FE4035FAC2C12BBD4DA149ECB", hash_generated_method = "591883254654BC0EE360BF9C5DD16FF7")
         private void writeCertArray(Writer writer, Certificate[] certificates) throws IOException {
             addTaint(certificates[0].getTaint());

@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -24,10 +25,10 @@ import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class X509Name extends ASN1Encodable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "A34048331D21536E4DEEECC5E8A1DED5", hash_generated_field = "9B1A952CEBF3178959A402DABEDC0A6B")
@@ -376,7 +377,7 @@ for(int i = 0;i < this.ordering.size();i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "964F6D63AF200DB73DB551657282148F", hash_generated_method = "8383E393BB94621645487748E96BE6DD")
     private DERObjectIdentifier decodeOID(
         String      name,
@@ -756,7 +757,7 @@ for(int j = 0;j < orderingSize;j++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.208 -0400", hash_original_method = "4C05CDE4A9C2B68738F6FCFBDDBEA55B", hash_generated_method = "4F32A910B539D22150FE787957D1078F")
     private boolean equivalentStrings(String s1, String s2) {
         addTaint(s2.getTaint());
@@ -793,7 +794,7 @@ for(int j = 0;j < orderingSize;j++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "94F49650EDA8FF5038678A71C47387EA", hash_generated_method = "662A584615DFF528F598BB2773AF53ED")
     private String canonicalize(String s) {
         addTaint(s.getTaint());
@@ -823,7 +824,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_479002831 =         value;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "1715BA5BBF60D20A8E5502C0E7F89042")
     private ASN1Object decodeObject(String oValue) {
         addTaint(oValue.getTaint());
@@ -851,7 +852,7 @@ ASN1Object varDC836AD1738524F460698D3D090F44A0_2111923778 =             ASN1Obje
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "0B3967651A83688C2E29590C8AB3C1F4")
     private String stripInternalSpaces(
         String str) {
@@ -894,7 +895,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_716714771 =         res.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "276C610AF86C7F7EC8233E2E5B295559", hash_generated_method = "72C683AF7BF2C0498E9BE64DE54A298D")
     private void appendValue(
         StringBuffer        buf,
@@ -1011,7 +1012,7 @@ String var4FC680801218E6372BC708D6FA44AE60_149756947 =         buf.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "378794CEEE2AB1A23A8EBB1C5DC390AF")
     private String bytesToString(
         byte[] data) {

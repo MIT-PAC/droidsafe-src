@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.Separators;
 
@@ -10,10 +11,10 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SIPDate implements Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "717AAECF4D718C53F4246C571B5CAE89", hash_generated_field = "2BD9D52B8925416FAD31A17813ACA6C8")
@@ -314,7 +315,7 @@ String var2A647B1AB7CAB288D6A463E2252BABED_1250520621 =         sipMonth;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.134 -0400", hash_original_method = "ED081120415B25517E6A51D04161FC1C", hash_generated_method = "D96D5D4772A1CFC8C90621C14BC511EE")
     private void setJavaCal() {
         javaCal =

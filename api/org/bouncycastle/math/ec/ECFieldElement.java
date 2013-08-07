@@ -1,13 +1,14 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.util.Random;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ECFieldElement implements ECConstants {
     
@@ -283,6 +284,7 @@ ECFieldElement var540C13E9E156B687226421B24F2DF178_1555834571 =             null
         }
 
         
+        @DSModeled(DSC.BAN)
         private static BigInteger[] lucasSequence(
             BigInteger  p,
             BigInteger  P,
@@ -454,6 +456,7 @@ ECFieldElement var540C13E9E156B687226421B24F2DF178_1555834571 =             null
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.568 -0400", hash_original_method = "E37831F6788FECA0B3C28407A9D117A4", hash_generated_method = "0A25AF3D31E3563872BEF9704D2BA9E8")
         private  F2m(int m, int k1, int k2, int k3, IntArray x) {
             t = (m + 31) >> 5;

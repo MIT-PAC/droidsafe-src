@@ -1,24 +1,25 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Method;
 
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Void {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.723 -0400", hash_original_method = "CD8BC0E717D271B8A5F5646E1CE2D7A5", hash_generated_method = "824764433804841F8B24CCE495EAD381")
     private  Void() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     private static Class<Void> lookupType() {
         try {

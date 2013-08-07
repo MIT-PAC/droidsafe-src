@@ -1,16 +1,17 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Menu implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.437 -0400", hash_original_field = "691D502CFD0E0626CD3B058E5682AD1C", hash_generated_field = "476ABB1F52C3A12124EEACDB58E8E189")
@@ -70,6 +71,7 @@ public class Menu implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.444 -0400", hash_original_method = "170B02CF9C000CCCFFA0390811062CB3", hash_generated_method = "6D049DF9F137E0DDAF395EA0222D7001")
     private  Menu(Parcel in) {
         title = in.readString();

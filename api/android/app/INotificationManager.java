@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface INotificationManager extends android.os.IInterface
 {

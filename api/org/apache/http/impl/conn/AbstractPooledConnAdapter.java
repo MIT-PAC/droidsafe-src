@@ -1,6 +1,7 @@
 package org.apache.http.impl.conn;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.apache.http.HttpHost;
@@ -10,8 +11,8 @@ import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.031 -0400", hash_original_field = "1ED3D3BFFB26F10C3A3630D847DAF20E", hash_generated_field = "95F8882F466E854F78FFC45E4BE1549E")

@@ -1,13 +1,14 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class CallTracker extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.519 -0400", hash_original_field = "AFC27A2C0BFE1A5164DE0AD98E91F583", hash_generated_field = "FD6602A5A7D30569DE1750B9B6FB9D72")
@@ -30,6 +31,7 @@ public abstract class CallTracker extends Handler {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.520 -0400", hash_original_method = "9E5AE1F19CA0B0DDA40DD7B38560CD23", hash_generated_method = "42A78FD8782117D0BA6B84E1D284E64E")
     protected void pollCallsWhenSafe() {
         needsPoll = true;
@@ -47,6 +49,7 @@ public abstract class CallTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.520 -0400", hash_original_method = "33B1B958F6F144EDE51B6E4EC19481A6", hash_generated_method = "5697EE82B0FA539118EB2A4DD834458B")
     protected void pollCallsAfterDelay() {
         Message msg = obtainMessage();
@@ -59,6 +62,7 @@ public abstract class CallTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.520 -0400", hash_original_method = "F4B21BAFF99BD772D70D384A80DFCDD5", hash_generated_method = "C1B3541F4FBF97A7243A923C8BFCB5D5")
     protected boolean isCommandExceptionRadioNotAvailable(Throwable e) {
         addTaint(e.getTaint());
@@ -78,6 +82,7 @@ public abstract class CallTracker extends Handler {
     protected abstract void handlePollCalls(AsyncResult ar);
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.520 -0400", hash_original_method = "EE2AAD2C27709A74385988B0D484AC09", hash_generated_method = "FE80939189D3C44DD3848560891262C1")
     protected void handleRadioAvailable() {
         pollCallsWhenSafe();
@@ -86,6 +91,7 @@ public abstract class CallTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.521 -0400", hash_original_method = "91C44089CAD2AA24231C5131EC918B32", hash_generated_method = "4E1A331B0B42434F5BA4DC86477DD1C6")
     protected Message obtainNoPollCompleteMessage(int what) {
         addTaint(what);
@@ -101,7 +107,7 @@ Message var7D44CBDF570B5CB81D544F0887CE90C1_450677238 =         obtainMessage(wh
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.521 -0400", hash_original_method = "D0619E60C8BD0CE46928E7D6B87D3BBB", hash_generated_method = "BBE15BE63C1E583507AF6B3BFACFC255")
     private boolean checkNoOperationsPending() {
         if(DBG_POLL)        

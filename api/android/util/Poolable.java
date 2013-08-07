@@ -1,6 +1,7 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Poolable<T> {
     void setNextPoolable(T element);

@@ -1,16 +1,17 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.util.List;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Pair;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     
@@ -68,6 +69,7 @@ for(Pair<String, String> p : attachedDbs)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.957 -0400", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "A95DA789E2F16824EB1FBA00E32B04E1")
     private void deleteDatabaseFile(String fileName) {
         addTaint(fileName.getTaint());

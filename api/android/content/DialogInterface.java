@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.view.KeyEvent;
 
 public interface DialogInterface {    

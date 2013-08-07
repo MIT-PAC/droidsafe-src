@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetSocketAddress;
 import java.net.ProxySelector;
 import java.net.URI;
@@ -20,8 +21,8 @@ import android.annotation.SdkConstant.SdkConstantType;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class Proxy {
     
@@ -32,6 +33,7 @@ public final class Proxy {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static final java.net.Proxy getProxy(Context ctx, String url) {
         String host = "";
         if (url != null) {
@@ -94,6 +96,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final HttpHost getPreferredHttpHost(Context context,
             String url) {
         java.net.Proxy prefProxy = getProxy(context, url);
@@ -106,6 +109,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final boolean isLocalHost(String host) {
         if (host == null) {
             return false;
@@ -125,6 +129,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void validate(String hostname, String port, String exclList) {
         Matcher match = HOSTNAME_PATTERN.matcher(hostname);
         Matcher listMatch = EXCLLIST_PATTERN.matcher(exclList);
@@ -154,6 +159,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final HttpRoutePlanner getAndroidProxySelectorRoutePlanner(Context context) {
         AndroidProxySelectorRoutePlanner ret = new AndroidProxySelectorRoutePlanner(
                 new SchemeRegistry(), ProxySelector.getDefault(), context);
@@ -161,6 +167,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void setHttpProxySystemProperty(ProxyProperties p) {
         String host = null;
         String port = null;
@@ -174,6 +181,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void setHttpProxySystemProperty(String host, String port, String exclList) {
         if (exclList != null) exclList = exclList.replace(",", "|");
         if (false) Log.d(TAG, "setHttpProxySystemProperty :"+host+":"+port+" - "+exclList);

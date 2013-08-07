@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,10 +11,10 @@ import android.content.pm.ActivityInfo;
 import android.os.Binder;
 import android.os.Bundle;
 import android.view.Window;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LocalActivityManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.126 -0400", hash_original_field = "7EF90D5DA2994166B5492D71C1F03D41", hash_generated_field = "421BA2E15FA30D31BA5B63CB3A7B5B13")
@@ -53,6 +54,7 @@ public class LocalActivityManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.134 -0400", hash_original_method = "B12896933A50085371F00492E36D4EA5", hash_generated_method = "F12E0349B73AB392CC89CF3C0B07C0E2")
     private void moveToState(LocalActivityRecord r, int desiredState) {
         addTaint(desiredState);
@@ -141,6 +143,7 @@ switch(r.curState){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.136 -0400", hash_original_method = "D6EC4953476E7D98493712A14D0E2C8F", hash_generated_method = "7B174F664367A8A3ED9410D8B85FA493")
     private void performPause(LocalActivityRecord r, boolean finishing) {
         addTaint(finishing);
@@ -264,6 +267,7 @@ Window var48B86E8FFA177D997A5C756A6FCAA4D0_651424175 =         r.window;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.148 -0400", hash_original_method = "9068A3C43CAB8D5C5EE5DD7E1741D6DA", hash_generated_method = "9DBA721D9E4FCBCAF463421D636A2EA3")
     private Window performDestroy(LocalActivityRecord r, boolean finish) {
         addTaint(finish);
@@ -570,6 +574,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.162 -0400", hash_original_method = "070B049D0EB630832F296616C02C666D", hash_generated_method = "755904102D6FE7C83CA95E2E69F22FD0")
     public HashMap<String,Object> dispatchRetainNonConfigurationInstance() {
         HashMap<String,Object> instanceMap = null;

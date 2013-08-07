@@ -1,6 +1,7 @@
 package com.android.internal.telephony.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static com.android.internal.telephony.IccConstants.EF_DOMAIN;
 import static com.android.internal.telephony.IccConstants.EF_IMPI;
 import static com.android.internal.telephony.IccConstants.EF_IMPU;
@@ -16,10 +17,10 @@ import com.android.internal.telephony.IccFileHandler;
 import com.android.internal.telephony.IccRecords;
 import com.android.internal.telephony.gsm.SimTlv;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class IsimUiccRecords implements IsimRecords {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.044 -0400", hash_original_field = "76EADD29A38BB9020CFAA25983EC4F62", hash_generated_field = "DE30CC27BA99BC0F13199E25EE20093E")
@@ -39,6 +40,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.046 -0400", hash_original_method = "65EA4CC7473CC6604A3DE8B9A82FCC11", hash_generated_method = "352C2064251271D46236216A375AAC92")
     public int fetchIsimRecords(IccFileHandler iccFh, Handler h) {
         addTaint(h.getTaint());
@@ -63,6 +65,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String isimTlvToString(byte[] record) {
         SimTlv tlv = new SimTlv(record, 0, record.length);
         do {
@@ -75,6 +78,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.047 -0400", hash_original_method = "6D2B5E713513F7C05BF0126DA069258E", hash_generated_method = "6166A4B4E5C0FBE8D8969844DBA01BDC")
      void log(String s) {
         addTaint(s.getTaint());
@@ -85,6 +89,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.047 -0400", hash_original_method = "D22606291D00D3FF31B88F1A658749A5", hash_generated_method = "81BB7FA7F08AFFBF91627F1973E1BD2A")
      void loge(String s) {
         addTaint(s.getTaint());
@@ -94,7 +99,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.048 -0400", hash_original_method = "0C48887FF3A7960AF9ADE0B3DADCC487", hash_generated_method = "F0C421D21833DFD472DE9260B22160F8")
     public String getIsimImpi() {
 String var1D9CDF2A60EDFA3FC6494E4EA3FF7172_1864345062 =         mIsimImpi;
@@ -105,7 +110,7 @@ String var1D9CDF2A60EDFA3FC6494E4EA3FF7172_1864345062 =         mIsimImpi;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.048 -0400", hash_original_method = "4243CC1C17FF1186628D392C9E7E1EB1", hash_generated_method = "19960B5F0B8A6EE685BF94832E9D473F")
     public String getIsimDomain() {
 String varEDA38A6132AFDA573E134F78457A391B_1374473781 =         mIsimDomain;
@@ -116,6 +121,7 @@ String varEDA38A6132AFDA573E134F78457A391B_1374473781 =         mIsimDomain;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.049 -0400", hash_original_method = "9090A8F6ED42A9AE952A72E5A0840C23", hash_generated_method = "DB4398365403049CC3FD7989EBBB045E")
     public String[] getIsimImpu() {
 String[] var460EEB9014B84B45A549101AD23A732D_1906269700 =         (mIsimImpu != null) ? mIsimImpu.clone() : null;
@@ -135,7 +141,7 @@ String[] var460EEB9014B84B45A549101AD23A732D_1906269700 =         (mIsimImpu != 
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.050 -0400", hash_original_method = "81740E578FCC01A298E59A120ACB7A20", hash_generated_method = "00F732A754F17BB17070A48F510DA2A3")
         public String getEfName() {
 String var8674027D88476581C69AA5BD2AB58569_1364648055 =             "EF_ISIM_IMPI";
@@ -146,6 +152,7 @@ String var8674027D88476581C69AA5BD2AB58569_1364648055 =             "EF_ISIM_IMP
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.051 -0400", hash_original_method = "90A14C4AAFF433EE7EAC0700F3BB549F", hash_generated_method = "979C0396888DDB124C46C1A00D64E975")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -174,7 +181,7 @@ String var8674027D88476581C69AA5BD2AB58569_1364648055 =             "EF_ISIM_IMP
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.052 -0400", hash_original_method = "6ACADD4D30DF15849A74BDE374634092", hash_generated_method = "C97E903A262600809669216F036C3FCE")
         public String getEfName() {
 String var3AF90F29E4FFA7FDFF74D17A8F27F21D_1271903831 =             "EF_ISIM_IMPU";
@@ -185,6 +192,7 @@ String var3AF90F29E4FFA7FDFF74D17A8F27F21D_1271903831 =             "EF_ISIM_IMP
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.053 -0400", hash_original_method = "6EEA897801EC1809D035B3B23B9DD12A", hash_generated_method = "1590CE539B03CC5C1780677116074ADE")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -227,7 +235,7 @@ for(byte[] identity : impuList)
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.054 -0400", hash_original_method = "42CE7E28C1D31526FC06B2AB64B01116", hash_generated_method = "E3E4EFC83E973D7D431F0C599A3D594C")
         public String getEfName() {
 String var1A700BEF13E1FED8405541952A0C927E_102181472 =             "EF_ISIM_DOMAIN";
@@ -238,6 +246,7 @@ String var1A700BEF13E1FED8405541952A0C927E_102181472 =             "EF_ISIM_DOMA
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.054 -0400", hash_original_method = "7C79F77549AD4915107C48F1E050653A", hash_generated_method = "E8DB62EC60B6809AABAADDBE723151BE")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected

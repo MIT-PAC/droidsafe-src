@@ -1,6 +1,7 @@
 package javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.Iterator;
 

@@ -1,19 +1,20 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbsSavedState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.390 -0400", hash_original_field = "E79BC38E7D1FDBAAEC758443D630638F", hash_generated_field = "EEFC201B63925E4659FF4A1C55B1892F")
 
     private Parcelable mSuperState;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.391 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
     private  AbsSavedState() {
         mSuperState = null;

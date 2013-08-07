@@ -1,8 +1,9 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 
 public final class StructPasswd {

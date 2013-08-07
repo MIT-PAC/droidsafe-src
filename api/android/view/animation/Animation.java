@@ -1,6 +1,7 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.RectF;
@@ -8,10 +9,10 @@ import android.os.SystemProperties;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import dalvik.system.CloseGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Animation implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "385457F169B7B8F3F055692484147005", hash_generated_field = "2B949884EB9BE3C788B16B27F6DA2E53")
@@ -196,7 +197,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.735 -0400", hash_original_method = "BA118FB94C8A2A7F04D6CE25751A9CE0", hash_generated_method = "EABFF5C032B25525517DC724151C7582")
     public void detach() {
         if(mStarted && !mEnded)        
@@ -850,7 +851,7 @@ switch(type){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CF5E77120A30A36E6B295FA946811571", hash_generated_method = "7298B4134AF9D7C22EC5B952093B299A")
     public void getInvalidateRegion(int left, int top, int right, int bottom,
             RectF invalidate, Transformation transformation) {
@@ -890,7 +891,7 @@ switch(type){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CE5BD1162FB4278724A9276A03F0A96A", hash_generated_method = "ED2C6D2087CE238AB85C759D8587D6EB")
     public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -941,7 +942,7 @@ switch(type){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "00F0E38B38876C14DBBEFF57F3DE3ED9", hash_generated_method = "ADB1F47306D64E755E8DC3D08F2E7F00")
     public boolean hasAlpha() {
         boolean var68934A3E9455FA72420237EB05902327_121671538 = (false);

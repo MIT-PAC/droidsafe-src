@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -12,10 +13,10 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.SystemProperties;
 import android.view.accessibility.AccessibilityEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Window {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.964 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -574,6 +575,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_1150603740 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.984 -0400", hash_original_method = "AB4AFCB92A037D63668D3D8B793C0712", hash_generated_method = "BC0414B30BF53856A92F5946FDE035F0")
     private boolean isOutOfBounds(Context context, MotionEvent event) {
         addTaint(event.getTaint());

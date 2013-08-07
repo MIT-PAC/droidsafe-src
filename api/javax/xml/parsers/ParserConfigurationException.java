@@ -1,9 +1,10 @@
 package javax.xml.parsers;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public class ParserConfigurationException extends Exception {
     

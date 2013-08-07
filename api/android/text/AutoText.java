@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Locale;
 
@@ -13,10 +14,10 @@ import android.view.View;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AutoText {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_field = "5BDF724CD0456C44608769D876789E27", hash_generated_field = "88B4BB6C6C54F768FFBA5254BB72365D")
@@ -35,7 +36,7 @@ public class AutoText {
 
     private int mSize;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_method = "09AEE40B99596F23FD7F50F9A174308F", hash_generated_method = "8A758FB35DD76CF0024FB127BB02DD22")
     private  AutoText(Resources resources) {
         mLocale = resources.getConfiguration().locale;
@@ -46,7 +47,7 @@ public class AutoText {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static AutoText getInstance(View view) {
         Resources res = view.getContext().getResources();
         Locale locale = res.getConfiguration().locale;
@@ -74,7 +75,7 @@ public class AutoText {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.408 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "B134F8C13EB13F06D024E131972C22E2")
     private int getSize() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_1697508504 = (mSize);
@@ -145,7 +146,7 @@ String var540C13E9E156B687226421B24F2DF178_1228640314 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.411 -0400", hash_original_method = "E19B6C2A17EB3626AF05ED9F48AE64FD", hash_generated_method = "54E25F1FFFDDE125DC4BC12E7361C73F")
     private void init(Resources r) {
         addTaint(r.getTaint());
@@ -210,7 +211,7 @@ String var540C13E9E156B687226421B24F2DF178_1228640314 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.415 -0400", hash_original_method = "0D3B451571572F26E1C81E0825865666", hash_generated_method = "AB2F9F3CDA283B47A8F2E1BB5630ACF5")
     private void add(String src, char off) {
         addTaint(src.getTaint());
@@ -256,7 +257,7 @@ for(;mTrie[herep] != TRIE_NULL;herep = mTrie[herep] + TRIE_NEXT)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_method = "6974F5A5A1101E98F9450C35EFEECA6C", hash_generated_method = "D2C9FD827B77B85D05BD0D84A85F66FC")
     private char newTrieNode() {
         if(mTrieUsed + TRIE_SIZEOF > mTrie.length)        

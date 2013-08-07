@@ -1,6 +1,7 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.sip.ClientTransaction;
 import javax.sip.address.Hop;
 

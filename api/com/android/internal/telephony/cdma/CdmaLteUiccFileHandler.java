@@ -1,16 +1,18 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Message;
 import android.util.Log;
 
 import com.android.internal.telephony.IccFileHandler;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class CdmaLteUiccFileHandler extends IccFileHandler {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.770 -0400", hash_original_method = "F91AC2EC8400C94DFA50E0DE5830B6E7", hash_generated_method = "CE2FF0BDB64F66AEEF51F473190BEDAB")
       CdmaLteUiccFileHandler(CDMALTEPhone phone) {
         super(phone);
@@ -19,6 +21,7 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.771 -0400", hash_original_method = "B50B51C72253EA7CE2666FA23DED632D", hash_generated_method = "0285DB39E034E21E683D8D888BC585E6")
     protected String getEFPath(int efid) {
         addTaint(efid);
@@ -65,6 +68,7 @@ String varF4D283B5C0D01F03F5830893B3B42A1A_929733933 =         MF_SIM + DF_ADFIS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.772 -0400", hash_original_method = "6E38A6F3073A316D7DC84B086C57AB0E", hash_generated_method = "D9C95A21FD183A1E3C1F81666B5EADA2")
     @Override
     public void loadEFTransparent(int fileid, Message onLoaded) {
@@ -93,6 +97,7 @@ String varF4D283B5C0D01F03F5830893B3B42A1A_929733933 =         MF_SIM + DF_ADFIS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.772 -0400", hash_original_method = "9E18A7664E95C7EB6352A9A22332F4AA", hash_generated_method = "4BE1957A5EF6E784777E741487538607")
     protected void logd(String msg) {
         addTaint(msg.getTaint());
@@ -102,6 +107,7 @@ String varF4D283B5C0D01F03F5830893B3B42A1A_929733933 =         MF_SIM + DF_ADFIS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.773 -0400", hash_original_method = "420CE2D43D58036FFB967B46A860B403", hash_generated_method = "716A6202FD80821EFA4FCD5E3A01AB59")
     protected void loge(String msg) {
         addTaint(msg.getTaint());

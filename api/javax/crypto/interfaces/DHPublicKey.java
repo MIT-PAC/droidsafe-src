@@ -1,6 +1,7 @@
 package javax.crypto.interfaces;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.security.PublicKey;
 

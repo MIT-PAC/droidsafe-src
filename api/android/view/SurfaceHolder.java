@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 

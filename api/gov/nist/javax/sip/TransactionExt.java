@@ -1,6 +1,7 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.cert.Certificate;
 
 import javax.net.ssl.SSLPeerUnverifiedException;

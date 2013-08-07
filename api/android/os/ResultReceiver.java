@@ -1,12 +1,13 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.os.IResultReceiver;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ResultReceiver implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.522 -0400", hash_original_field = "C9B888E88FFB6944F562FB3344471686", hash_generated_field = "0415A6A03CA0C2158681D2FE07F934C8")

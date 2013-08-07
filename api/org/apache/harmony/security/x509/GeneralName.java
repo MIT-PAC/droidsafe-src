@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URI;
@@ -25,10 +26,10 @@ import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
 import org.apache.harmony.security.x501.Name;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class GeneralName {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.322 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "3577E5E669CAE3960DB734B50E9992AB")

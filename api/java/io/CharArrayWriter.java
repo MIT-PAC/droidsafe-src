@@ -1,12 +1,13 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CharArrayWriter extends Writer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.535 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "F3184E7FC423A3DB65CA949884DB59BD")
@@ -53,7 +54,7 @@ public class CharArrayWriter extends Writer {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.537 -0400", hash_original_method = "74E26FDF253668E5689F73596E4C1217", hash_generated_method = "C52FC5F77B02935642B6F8DEFE2250FA")
     private void expand(int i) {
         addTaint(i);

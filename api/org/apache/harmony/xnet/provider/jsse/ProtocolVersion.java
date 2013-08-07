@@ -1,12 +1,13 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Hashtable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ProtocolVersion {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.048 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
@@ -16,6 +17,7 @@ public class ProtocolVersion {
 
     public byte[] version;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.049 -0400", hash_original_method = "B6EFD2221FD9ABD3C193138DD70242C4", hash_generated_method = "CD103DD1931067F9E6DAD4D4E3F86EC8")
     private  ProtocolVersion(String name, byte[] version) {
         this.name = name;

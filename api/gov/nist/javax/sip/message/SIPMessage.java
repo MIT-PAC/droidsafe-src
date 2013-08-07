@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.SIPConstants;
 import gov.nist.javax.sip.Utils;
@@ -76,10 +77,10 @@ import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class SIPMessage extends MessageObject implements javax.sip.message.Message, MessageExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.155 -0400", hash_original_field = "1E0E36F4EE56089C28BCB9B0F9B200D4", hash_generated_field = "4BA5E6BB1036D79534D4BE3D73466535")
@@ -569,7 +570,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_180011674 =         stringRepresentat
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.167 -0400", hash_original_method = "D9E90811A837F48EC447FF925318738A", hash_generated_method = "A8F9FDB2BA0BDD3F289F15A0FF88DC6E")
     private void attachHeader(SIPHeader h) {
         addTaint(h.getTaint());
@@ -1052,7 +1053,7 @@ Header varCCB0AD9CF7E1F5AFBE8B1DF0A30B8415_1578699432 =         getHeaderLowerCa
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.176 -0400", hash_original_method = "32A79E235DDCC6E80E2B12189B346373", hash_generated_method = "12FA061C5C92A88AA4CF0FAA78158891")
     private Header getHeaderLowerCase(String lowerCaseHeaderName) {
         addTaint(lowerCaseHeaderName.getTaint());
@@ -1663,7 +1664,7 @@ Object var540C13E9E156B687226421B24F2DF178_370877119 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.181 -0400", hash_original_method = "D3327D918F93ECC2995A4C67A415A1A5", hash_generated_method = "E4A07DFF382A07C6F220F461C866E952")
     private void computeContentLength(Object content) {
         addTaint(content.getTaint());
@@ -1817,7 +1818,7 @@ String var4A58D553E11CF1284D32C65807D538A0_1646029635 =             this.getHead
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.183 -0400", hash_original_method = "2723C6F27F309BF6F386C5DF25AB6032", hash_generated_method = "0A86A169A23525DDBC8D2FFF0F81B79C")
     private SIPHeader getSIPHeaderListLowerCase(String lowerCaseHeaderName) {
         addTaint(lowerCaseHeaderName.getTaint());
@@ -1829,7 +1830,7 @@ SIPHeader var9F84BCDE7A03E3F19EFF3E75A8D0C3B5_1131633331 =         nameTable.get
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.183 -0400", hash_original_method = "9F4B7A8AFA1B725FEEE6FA6CFA2755DF", hash_generated_method = "37D4751BD559FF0F9817B96E8A4FDDB3")
     @SuppressWarnings("unchecked")
     private List<SIPHeader> getHeaderList(String headerName) {

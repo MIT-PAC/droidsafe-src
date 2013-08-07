@@ -1,6 +1,7 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Closeable;
 import java.io.IOException;
 

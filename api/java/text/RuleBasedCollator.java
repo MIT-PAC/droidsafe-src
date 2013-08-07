@@ -1,10 +1,11 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.icu.RuleBasedCollatorICU;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class RuleBasedCollator extends Collator {
     

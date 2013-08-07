@@ -1,14 +1,15 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 
 import libcore.icu.TimeZones;
 import libcore.util.ZoneInfoDB;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class TimeZone implements Serializable, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.801 -0400", hash_original_field = "B718ADEC73E04CE3EC720DD11A06A308", hash_generated_field = "771D545AF32E3EF0A7656F85E986567C")
@@ -151,7 +152,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1687644428 =         builder.toString
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.806 -0400", hash_original_method = "7CED7894325BE9D599DFC54349DF84F9", hash_generated_method = "C746D457280AEDCD29D2AAAB9CB38C60")
     private void appendNumber(StringBuilder builder, int count, int value) {
         addTaint(value);
@@ -240,7 +241,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static TimeZone getCustomTimeZone(String id) {
         char sign = id.charAt(3);
         if (sign != '+' && sign != '-') {
@@ -273,7 +274,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String formatTimeZoneName(String name, int offset) {
         StringBuilder buf = new StringBuilder();
         int index = offset, length = name.length();
@@ -325,7 +326,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     public abstract boolean inDaylightTime(Date time);
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int parseNumber(String string, int offset, int[] position) {
         int index = offset, length = string.length(), digit, result = 0;
         while (index < length

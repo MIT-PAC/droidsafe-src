@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -55,10 +56,10 @@ import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.RetryManager;
 import com.android.internal.util.AsyncChannel;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class GsmDataConnectionTracker extends DataConnectionTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.695 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "7EC1F2F34382E79A9367C16E4BB8DCA3")
@@ -113,6 +114,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         
 };
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.696 -0400", hash_original_method = "11FDC14BF2164142AF8732E525079D07", hash_generated_method = "9BB35ECA4CE2F8D428F1776FF242B804")
     public  GsmDataConnectionTracker(PhoneBase p) {
         super(p);
@@ -149,6 +151,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.696 -0400", hash_original_method = "3545EE6BB84B537BCF88623776AFA30D", hash_generated_method = "1737DC5C2B38796452A544CEE48A3277")
     public int getRecoveryAction() {
         int action = Settings.System.getInt(mPhone.getContext().getContentResolver(),
@@ -166,6 +169,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.696 -0400", hash_original_method = "D18EC99E3BCC3D9A76595B0D702BEA57", hash_generated_method = "4915CB2D6436D51D205C41680AC9A600")
     public void putRecoveryAction(int action) {
         addTaint(action);
@@ -180,7 +184,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.697 -0400", hash_original_method = "DABEDBF19FEC4514BE5AAA6475C962EB", hash_generated_method = "1A10F629513B738DD341C2BD813B2882")
     @Override
     protected void onActionIntentReconnectAlarm(Intent intent) {
@@ -222,7 +226,7 @@ for(ApnContext apnContext : dcac.getApnListSync())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.698 -0400", hash_original_method = "4494E5E1AF62FA72ED21CBDD59685023", hash_generated_method = "2CEC678BFD48E0CD7A4526D23263E43F")
     @Override
     public void dispose() {
@@ -248,6 +252,7 @@ for(ApnContext apnContext : dcac.getApnListSync())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.698 -0400", hash_original_method = "7B2466E598494011616B7E0248698FD2", hash_generated_method = "2B4BB2A1C5F56EC12BA245189DC8902A")
     @Override
     public boolean isApnTypeActive(String type) {
@@ -269,6 +274,7 @@ for(ApnContext apnContext : dcac.getApnListSync())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.699 -0400", hash_original_method = "63B54477A01480F02B741F41FE0D8DBF", hash_generated_method = "A6EEE2BF148D80CF4C3AD5F47F0BF333")
     @Override
     protected boolean isDataPossible(String apnType) {
@@ -317,6 +323,7 @@ for(ApnContext apnContext : dcac.getApnListSync())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.700 -0400", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "758B007E72E5165CA9C8567AC9EFA11A")
     @Override
     protected void finalize() {
@@ -327,7 +334,7 @@ for(ApnContext apnContext : dcac.getApnListSync())
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.700 -0400", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "BB7CD7F99A4308A8081325643B157F90")
     @Override
     protected String getActionIntentReconnectAlarm() {
@@ -339,7 +346,7 @@ String var329BD4E79853976212F297A2D79B9594_1477581043 =         INTENT_RECONNECT
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.700 -0400", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "383C5973359C9809F9622FBA80272BFE")
     @Override
     protected String getActionIntentDataStallAlarm() {
@@ -351,6 +358,7 @@ String var91B284560FDB6DF833F06E9F3D4A1EF3_1091883027 =         INTENT_DATA_STAL
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.701 -0400", hash_original_method = "0E3E3502B5D9BF75D72D228425E0F7B7", hash_generated_method = "7930A6653B8633EF0E12C54EF9ED9193")
     private ApnContext addApnContext(String type) {
         addTaint(type.getTaint());
@@ -368,7 +376,7 @@ ApnContext varCF4B811E793262ABD77EF06D86F9643C_152451624 =         apnContext;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.702 -0400", hash_original_method = "8959993CE2EB92BA5CEF3E2E51BAABDD", hash_generated_method = "0BD192C276C19E4DE5BE66B496FF4B76")
     protected void initApnContextsAndDataConnection() {
         boolean defaultEnabled = SystemProperties.getBoolean(DEFALUT_DATA_ON_BOOT_PROP, true);
@@ -425,6 +433,7 @@ switch(networkConfig.type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.702 -0400", hash_original_method = "C5F45AE4298273442B50BBFD614E8417", hash_generated_method = "572C05D22834B8491D42BEB374105C9D")
     @Override
     protected LinkProperties getLinkProperties(String apnType) {
@@ -461,6 +470,7 @@ LinkProperties varF900AB9E8929FEE5E70A9D065AB8EDB8_356631149 =         new LinkP
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.703 -0400", hash_original_method = "94651B427B7F42F00ED4B45503EF287D", hash_generated_method = "9B34C5065B29882B30CC160921EFC01C")
     @Override
     protected LinkCapabilities getLinkCapabilities(String apnType) {
@@ -497,6 +507,7 @@ LinkCapabilities var5BB424D660FE96EE1DB16C6054B1CD0C_1135578155 =         new Li
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.703 -0400", hash_original_method = "BFF203ED461E9185DBA7A58AF111F0F3", hash_generated_method = "CFE19DA105B5F190A0F2D0C7BDFFC59E")
     @Override
     public String[] getActiveApnTypes() {
@@ -525,6 +536,7 @@ String[] var0DC708DD5D4C3EE2353654471D9E74FF_219549989 =         (String[])resul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.704 -0400", hash_original_method = "8D1CDDA6C04920E256FCAAE007846C5E", hash_generated_method = "89230DDB34D87C4A3CF2E3B241CA9A1E")
     @Override
     public String getActiveApnString(String apnType) {
@@ -558,6 +570,7 @@ String var540C13E9E156B687226421B24F2DF178_1102299304 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.704 -0400", hash_original_method = "5E11C1BF7F74A775167DAE6DA061B097", hash_generated_method = "3095B322D583B68EB2913F149ADCAD80")
     @Override
     public boolean isApnTypeEnabled(String apnType) {
@@ -581,6 +594,7 @@ String var540C13E9E156B687226421B24F2DF178_1102299304 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.704 -0400", hash_original_method = "06373F80BD4BEEF603E49D19A1DC6DA1", hash_generated_method = "945F45D655F72B24D6A2158AD21FE98E")
     @Override
     protected void setState(State s) {
@@ -592,6 +606,7 @@ String var540C13E9E156B687226421B24F2DF178_1102299304 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.704 -0400", hash_original_method = "F24CC52DF36174C789130EC41124E06F", hash_generated_method = "A83FF816E106CA31644524FB2E39F96B")
     @Override
     public State getState(String apnType) {
@@ -615,6 +630,7 @@ State varC0DC3708F3E928943B2805F3F9CB2E19_1776183859 =         State.FAILED;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.705 -0400", hash_original_method = "3A07E102C7877AE139AF74E35A92CB31", hash_generated_method = "62D182681FB804DED59BFF538DCBDE20")
     public State getOverallState() {
         boolean isConnecting = false;
@@ -683,6 +699,7 @@ State varC0DC3708F3E928943B2805F3F9CB2E19_1601243859 =             State.FAILED;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.706 -0400", hash_original_method = "DED9CF35B00E99A5C3539FDABA142E11", hash_generated_method = "1CA58DFC2E6A12A8758A94675B5170EB")
     @Override
     public synchronized int enableApnType(String apnType) {
@@ -735,6 +752,7 @@ State varC0DC3708F3E928943B2805F3F9CB2E19_1601243859 =             State.FAILED;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.707 -0400", hash_original_method = "6BE0F7A51104BACC1DFB5733CC5E30CC", hash_generated_method = "AEC7D1F1F39E4380066CE86B73C1BBE9")
     private void notifyApnIdUpToCurrent(String reason, ApnContext apnContext, String type) {
         addTaint(type.getTaint());
@@ -772,6 +790,7 @@ switch(apnContext.getState()){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.707 -0400", hash_original_method = "68A04474A9A6C009171326D545E43C31", hash_generated_method = "6580072D0D7DC737F43AABC33D9B1DEE")
     @Override
     public synchronized int disableApnType(String type) {
@@ -830,6 +849,7 @@ switch(apnContext.getState()){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.708 -0400", hash_original_method = "A26AD8C394281D1D0A1213181383C4F5", hash_generated_method = "9764B10E9C554F3652C7F95F840A86FE")
     @Override
     protected boolean isApnTypeAvailable(String type) {
@@ -870,6 +890,7 @@ for(ApnSetting apn : mAllApns)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.708 -0400", hash_original_method = "C851438642EDA5AB3134873854010685", hash_generated_method = "B75438F412CF2A06D1C56A015372F8AE")
     @Override
     public boolean getAnyDataEnabled() {
@@ -907,6 +928,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.709 -0400", hash_original_method = "7A177E6FBAF2829724A437FA44770C6E", hash_generated_method = "0AFF6E1AC9321F3F52DC45163866D9B1")
     private boolean isDataAllowed(ApnContext apnContext) {
         addTaint(apnContext.getTaint());
@@ -918,6 +940,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.709 -0400", hash_original_method = "DBAD0221F2A53A2AC3E8556324A28A19", hash_generated_method = "63CDEA985F972FC14F1A6DB6531AF1DD")
     protected void onDataConnectionDetached() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -934,6 +957,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.709 -0400", hash_original_method = "F401CBF6A4FFFF291696606C3EE2FE85", hash_generated_method = "F5664691DC862F1CD59F21FEFCB2F8CA")
     private void onDataConnectionAttached() {
         if(DBG)        
@@ -965,6 +989,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.711 -0400", hash_original_method = "000E90D5C33553E8124AA0C75E4D9E4F", hash_generated_method = "DAB42CC3EE8D5C2C6F1B7BE06C7222DC")
     @Override
     protected boolean isDataAllowed() {
@@ -1019,7 +1044,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.712 -0400", hash_original_method = "625A02DD3D04B0C927BA692603CBFCC6", hash_generated_method = "AA6F16FC0E1C09AE38C93A09D76220B8")
     private void setupDataOnReadyApns(String reason) {
         addTaint(reason.getTaint());
@@ -1064,6 +1089,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.713 -0400", hash_original_method = "293D247CD6F3CD381680AFA4CF477431", hash_generated_method = "F052C66F8F4E4D3A901321FBE9F7CB6B")
     private boolean trySetupData(String reason, String type) {
         addTaint(type.getTaint());
@@ -1108,7 +1134,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.713 -0400", hash_original_method = "01B865917AB0716CB4ECB273F41078C0", hash_generated_method = "0EA66E62005312C4CAB0230A417FA561")
     private boolean trySetupData(ApnContext apnContext) {
         addTaint(apnContext.getTaint());
@@ -1179,6 +1205,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.715 -0400", hash_original_method = "9CD870BA8C542E1D80FC2F2D725750C0", hash_generated_method = "ED1C95FB4B92A2A975CE6A7A020BFFFD")
     @Override
     protected void notifyOffApnsOfAvailability(String reason) {
@@ -1219,6 +1246,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.716 -0400", hash_original_method = "66E1568E09B68AEC1E9A7CA6629E1BE4", hash_generated_method = "FAF12D0C0A24F1B66149C9887B597D50")
     protected void cleanUpAllConnections(boolean tearDown, String reason) {
         addTaint(reason.getTaint());
@@ -1245,6 +1273,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.716 -0400", hash_original_method = "CD47D8147DAAE254C6F8BD59780442CD", hash_generated_method = "2D088F3876E1383B088B94DAEFF2ED24")
     @Override
     protected void onCleanUpAllConnections(String cause) {
@@ -1256,7 +1285,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.716 -0400", hash_original_method = "2562A19804F84494AABD51DA4769B2BA", hash_generated_method = "56A3DA4642D9BA1FAE4DAD04A19FB87F")
     private void cleanUpConnection(boolean tearDown, ApnContext apnContext) {
         addTaint(apnContext.getTaint());
@@ -1326,6 +1355,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.717 -0400", hash_original_method = "1F926905027AA18BF39C8A7A893395A9", hash_generated_method = "EFF3D3EDBD279CE88D9AC9CAE51B09E4")
     private void cancelReconnectAlarm(DataConnectionAc dcac) {
         addTaint(dcac.getTaint());
@@ -1350,7 +1380,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.718 -0400", hash_original_method = "08930E35848EBECD6CC869C9C6D6B1F8", hash_generated_method = "BC213494F4ECDED0DEC79D99264DB123")
     private String[] parseTypes(String types) {
         addTaint(types.getTaint());
@@ -1379,6 +1409,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_704813433 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.718 -0400", hash_original_method = "25E446029D7F780B1E04F89AE12B062D", hash_generated_method = "38B3AF6C86547375FFF20102E039F285")
     private ArrayList<ApnSetting> createApnList(Cursor cursor) {
         addTaint(cursor.getTaint());
@@ -1429,6 +1460,7 @@ ArrayList<ApnSetting> varDC838461EE2FA0CA4C9BBB70A15456B0_1378360060 =         r
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.719 -0400", hash_original_method = "2E87B4CBA5BF77A80284005F43D6FB91", hash_generated_method = "8131A0B87CC412980EE71B7781491EF8")
     private boolean dataConnectionNotInUse(DataConnectionAc dcac) {
         addTaint(dcac.getTaint());
@@ -1452,6 +1484,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.719 -0400", hash_original_method = "871B8246FCDE157C8EBBD019FC69C7EE", hash_generated_method = "9CEB3698982C9F63175774AB60599C28")
     private GsmDataConnection findFreeDataConnection() {
 for(DataConnectionAc dcac : mDataConnectionAsyncChannels.values())
@@ -1480,6 +1513,7 @@ GsmDataConnection var540C13E9E156B687226421B24F2DF178_489365810 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.720 -0400", hash_original_method = "9845808D61EC26568899ACA30184D52E", hash_generated_method = "2E10706A4D450F8E3AB6BC24178C6827")
     protected GsmDataConnection findReadyDataConnection(ApnSetting apn) {
         addTaint(apn.getTaint());
@@ -1531,7 +1565,7 @@ GsmDataConnection var540C13E9E156B687226421B24F2DF178_2905146 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.722 -0400", hash_original_method = "BBFF3626F623A28B2260A4B879BEB776", hash_generated_method = "AC33185B6D72E3F4F186A5677E7B2640")
     private boolean setupData(ApnContext apnContext) {
         addTaint(apnContext.getTaint());
@@ -1615,7 +1649,7 @@ GsmDataConnection var540C13E9E156B687226421B24F2DF178_2905146 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.722 -0400", hash_original_method = "651F557B6A8D0D165E9CDD4391DC0D13", hash_generated_method = "599592C8D5A013379EA76526A72731C8")
     private void onApnChanged() {
         State overallState = getOverallState();
@@ -1647,6 +1681,7 @@ GsmDataConnection var540C13E9E156B687226421B24F2DF178_2905146 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.723 -0400", hash_original_method = "65E72951AE41561D32861B862A9CCB8A", hash_generated_method = "4C40C0F0CD676573F221A7633483581D")
     private DataConnectionAc findDataConnectionAcByCid(int cid) {
         addTaint(cid);
@@ -1672,7 +1707,7 @@ DataConnectionAc var540C13E9E156B687226421B24F2DF178_920833103 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.723 -0400", hash_original_method = "3E391A4D32CF36E6E02EF7EB45223170", hash_generated_method = "E33E3B7D4CD2B75AAC4E054DFC6AF12D")
     private List<ApnContext> findApnContextToClean(Collection<DataConnectionAc> dcacs) {
         addTaint(dcacs.getTaint());
@@ -1720,7 +1755,7 @@ List<ApnContext> varED12C351C2E8CA4F85F097DDC7E77B4D_1311743148 =         list;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.725 -0400", hash_original_method = "2CAD8F6019A6EE1B4B77B4750A278A68", hash_generated_method = "8D337B0D3DDAF54F59B8A44C11A20658")
     private void onDataStateChanged(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -1872,6 +1907,7 @@ for(ApnContext apnContext : apnsToCleanup)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.728 -0400", hash_original_method = "66B167D0E0A206B2D44C874F7CFFABF5", hash_generated_method = "962239666915B16008D0E0C5B8056895")
     private void notifyDefaultData(ApnContext apnContext) {
         addTaint(apnContext.getTaint());
@@ -1898,6 +1934,7 @@ for(ApnContext apnContext : apnsToCleanup)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.728 -0400", hash_original_method = "06C0A537C422D51FEBC3A4D7FED033FC", hash_generated_method = "C116D794B971757484B1407B0688B8E0")
     protected void gotoIdleAndNotifyDataConnection(String reason) {
         addTaint(reason.getTaint());
@@ -1912,7 +1949,7 @@ for(ApnContext apnContext : apnsToCleanup)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.729 -0400", hash_original_method = "E0A0A9601ED58F14AFBBF23896E64411", hash_generated_method = "B15AEEE94D49A3A4F6A6C846243A9553")
     private void resetPollStats() {
         mTxPkts = -1;
@@ -1925,7 +1962,7 @@ for(ApnContext apnContext : apnsToCleanup)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.730 -0400", hash_original_method = "85BF013ED3EA874C77BCE8B69E224FC2", hash_generated_method = "CE016FE8E803B5DE1FA3BD1E94E9F46F")
     private void doRecovery() {
         if(getOverallState() == State.CONNECTED)        
@@ -1990,6 +2027,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.730 -0400", hash_original_method = "6E590AA3974E9F6C1EEF78A59E60FE7C", hash_generated_method = "010FE0636D382155AE57AF8D3D3519A7")
     @Override
     protected void startNetStatPoll() {
@@ -2011,6 +2049,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.730 -0400", hash_original_method = "A8EA63C8FD8E985352F3B26222CD114C", hash_generated_method = "D7CA93D025B983F0AF8C323CC6587828")
     @Override
     protected void stopNetStatPoll() {
@@ -2025,6 +2064,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.730 -0400", hash_original_method = "7B64E8A50E5FAE405E2B8EDB2C4EA1BE", hash_generated_method = "C9C1CBD5BAA4F3D3FB589B30654E6A75")
     @Override
     protected void restartRadio() {
@@ -2043,6 +2083,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.731 -0400", hash_original_method = "757A180615AA792B2C29A1B55C4F521C", hash_generated_method = "459BA30632063A79C451974BA18AF91B")
     private void updateDataStallInfo() {
         long sent;
@@ -2106,6 +2147,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.731 -0400", hash_original_method = "81664D2568F01996EC1331372DE6C46E", hash_generated_method = "0C919AAA37BDC8B676499B03E550F7C0")
     @Override
     protected void onDataStallAlarm(int tag) {
@@ -2145,6 +2187,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.732 -0400", hash_original_method = "94396473B615B857A09FF1389DF39C19", hash_generated_method = "AFB8109DF791DDC8574130F792E8355D")
     private void updateDataActivity() {
         long sent;
@@ -2196,7 +2239,7 @@ switch(recoveryAction){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.732 -0400", hash_original_method = "2F0F0316C5E4D930E75010F1BAA9D392", hash_generated_method = "FB5C73A58E6D3BD038499945CF0C79A0")
     private boolean shouldPostNotification(GsmDataConnection.FailCause  cause) {
         addTaint(cause.getTaint());
@@ -2208,6 +2251,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.732 -0400", hash_original_method = "62A24BB1F647222AA978F8E837B2D330", hash_generated_method = "3214FF33D428A71CB6BF74348470B674")
     private boolean retryAfterDisconnected(String reason) {
         addTaint(reason.getTaint());
@@ -2228,6 +2272,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.732 -0400", hash_original_method = "B5DAD52C5259D76162A701D0CC3F0E5D", hash_generated_method = "6F6D248B9B6C609B4F78D9EB2744A358")
     private void reconnectAfterFail(FailCause lastFailCauseCode,
                                     ApnContext apnContext, int retryOverride) {
@@ -2288,7 +2333,7 @@ switch(recoveryAction){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.733 -0400", hash_original_method = "68704E7FD0A79E29C0B17E36042D228F", hash_generated_method = "B0FF02F9676987296FB6684E36116819")
     private void startAlarmForReconnect(int delay, ApnContext apnContext) {
         addTaint(apnContext.getTaint());
@@ -2320,6 +2365,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.733 -0400", hash_original_method = "752A3E1271AADAA161C9D22B1F08D3F3", hash_generated_method = "5FCAFB9BE390D9C0FE2A136407D25865")
     private void startDataStallAlarm() {
         int delayInMs = Settings.Secure.getInt(mResolver,
@@ -2343,6 +2389,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.733 -0400", hash_original_method = "9BAB3B8D9CDA09D3CE76C98C24705EFE", hash_generated_method = "BFB228B8553C579BB49D94879F6ED52B")
     private void stopDataStallAlarm() {
         AlarmManager am = (AlarmManager) mPhone.getContext().getSystemService(Context.ALARM_SERVICE);
@@ -2372,6 +2419,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.733 -0400", hash_original_method = "B7B20E847D290047FDFE77B8D734C484", hash_generated_method = "D2DBAD1267102255FA345B0463AE3E83")
     private void notifyNoData(GsmDataConnection.FailCause lastFailCauseCode,
                               ApnContext apnContext) {
@@ -2395,6 +2443,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.734 -0400", hash_original_method = "E0D6F2F660096B71ECF89DBFFFD7E4A9", hash_generated_method = "106CF87F5F82D3A67D066FCAE4049BEB")
     private void onRecordsLoaded() {
         if(DBG)        
@@ -2418,6 +2467,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.734 -0400", hash_original_method = "4B71314721E8EC7414109EE47221FD04", hash_generated_method = "BB0631E6E6A53EF8C99D14ACA6F0100F")
     @Override
     protected void onSetDependencyMet(String apnType, boolean met) {
@@ -2456,6 +2506,7 @@ switch(recoveryAction){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.734 -0400", hash_original_method = "99E85476A8EB35B364BDD45037DA3C4C", hash_generated_method = "79EC980420D135438278A8B2F1C79BBB")
     private void applyNewState(ApnContext apnContext, boolean enabled, boolean met) {
         addTaint(met);
@@ -2513,7 +2564,7 @@ switch(recoveryAction){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.735 -0400", hash_original_method = "CD0E8AA9DA59D5F15CB3DBA9C10480A3", hash_generated_method = "CC574663736B66F46A74D4C9B823DA89")
     private DataConnection checkForConnectionForApnContext(ApnContext apnContext) {
         addTaint(apnContext.getTaint());
@@ -2567,7 +2618,7 @@ DataConnection var540C13E9E156B687226421B24F2DF178_915245723 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.735 -0400", hash_original_method = "C4FAA9463FB18AA2956D630E0A7A0FC4", hash_generated_method = "C5CAC4A0CE32F77B19EA42AC996BBDBC")
     @Override
     protected void onEnableApn(int apnId, int enabled) {
@@ -2594,6 +2645,7 @@ DataConnection var540C13E9E156B687226421B24F2DF178_915245723 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.735 -0400", hash_original_method = "885166865223FFC382706A95C40269FC", hash_generated_method = "BDB3D08D59BCEC23F895D208F7965C94")
     @Override
     protected boolean onTrySetupData(String reason) {
@@ -2612,6 +2664,7 @@ DataConnection var540C13E9E156B687226421B24F2DF178_915245723 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.735 -0400", hash_original_method = "0F081CC5E381F07585D5A8591D9B8176", hash_generated_method = "224E758F4D1DBBC8216B6F8992B72398")
     protected boolean onTrySetupData(ApnContext apnContext) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2627,6 +2680,7 @@ DataConnection var540C13E9E156B687226421B24F2DF178_915245723 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.736 -0400", hash_original_method = "94279F194E7EEE60FDEB34DD3123F420", hash_generated_method = "9D5F07F226C9E3D104EC5F0744DDEF27")
     @Override
     protected void onRoamingOff() {
@@ -2653,6 +2707,7 @@ DataConnection var540C13E9E156B687226421B24F2DF178_915245723 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.736 -0400", hash_original_method = "F695F1E8C2AB53D2ED55D91C043A1972", hash_generated_method = "B5264246AB2783E2CA48F8407E7CCAD2")
     @Override
     protected void onRoamingOn() {
@@ -2684,6 +2739,7 @@ DataConnection var540C13E9E156B687226421B24F2DF178_915245723 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.736 -0400", hash_original_method = "2023A2D13D03549C0A5EFF7393A0A72A", hash_generated_method = "C49CC14473AB35436F2C4874A44695CD")
     @Override
     protected void onRadioAvailable() {
@@ -2718,7 +2774,7 @@ DataConnection var540C13E9E156B687226421B24F2DF178_915245723 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.736 -0400", hash_original_method = "3A8D622B44F84A55C5B45212A617D18F", hash_generated_method = "932FD2A17E149DF5C70A79B675E3C95F")
     @Override
     protected void onRadioOffOrNotAvailable() {
@@ -2754,6 +2810,7 @@ for(DataConnection dc : mDataConnections.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.738 -0400", hash_original_method = "31196134743B1AB9B97F59AB7F4DD6B0", hash_generated_method = "A8FBD35D198D9661EFFCBC8FBFFC4D47")
     @Override
     protected void onDataSetupComplete(AsyncResult ar) {
@@ -2912,6 +2969,7 @@ for(DataConnection dc : mDataConnections.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.739 -0400", hash_original_method = "D4180B029AFCA66C11673889FF654292", hash_generated_method = "B322B19A3DA392CEA1B0F471E0810C8B")
     @Override
     protected void onDisconnectDone(int connId, AsyncResult ar) {
@@ -2958,7 +3016,7 @@ for(DataConnection dc : mDataConnections.values())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.739 -0400", hash_original_method = "F62EA026E4AEAA1F320C05AA5A1ED4A9", hash_generated_method = "F76C2C9C91DD3732E2E9AC8837F9040E")
     protected void onPollPdp() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2975,6 +3033,7 @@ for(DataConnection dc : mDataConnections.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.739 -0400", hash_original_method = "7D6F87E7A2D5372F8DAAC4AE4D373312", hash_generated_method = "EB550115938A95F3BB1D1E97D6FDB5CC")
     @Override
     protected void onVoiceCallStarted() {
@@ -3040,6 +3099,7 @@ for(DataConnection dc : mDataConnections.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.740 -0400", hash_original_method = "2BB2576C993A3562ED602CBB829AED3C", hash_generated_method = "7C7D6FFDBD5FEFAEACC654AD315A4B25")
     @Override
     protected void onCleanUpConnection(boolean tearDown, int apnId, String reason) {
@@ -3090,6 +3150,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.740 -0400", hash_original_method = "82B1D5E02818D0100BE3FB5300291D89", hash_generated_method = "AE8BCDA27817B5F2C59C660858A96ECE")
     @Override
     public boolean isDisconnected() {
@@ -3115,6 +3176,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.740 -0400", hash_original_method = "85B9B626BCFF754F4C98AF3615661037", hash_generated_method = "BCF1938E5D8E79FBA143AE55F8F3C449")
     @Override
     protected void notifyDataConnection(String reason) {
@@ -3145,6 +3207,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.741 -0400", hash_original_method = "FAE53DB9273E730E3BB3527C1EA0C82D", hash_generated_method = "462B135CDB90AF8F6514D7958C8A409E")
     private void createAllApnList() {
         mAllApns = new ArrayList<ApnSetting>();
@@ -3190,6 +3253,7 @@ for(ApnContext apnContext : mApnContexts.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.741 -0400", hash_original_method = "5EA4CC699810E4F50A6EFC012301B7BB", hash_generated_method = "28F720EE85F8E87BDE04B08A47368CBD")
     private GsmDataConnection createDataConnection() {
         if(DBG)        
@@ -3222,7 +3286,7 @@ GsmDataConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1105468179 =         conn;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.741 -0400", hash_original_method = "E3018B8151F871DAB6348A26AB9C8E22", hash_generated_method = "05B7A71E4725DA1EEA4BFAFFBAD252A5")
     private void configureRetry(DataConnection dc, boolean forDefault) {
         addTaint(forDefault);
@@ -3255,6 +3319,7 @@ GsmDataConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1105468179 =         conn;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.741 -0400", hash_original_method = "3AA2B8847F1D4D39DED653A1D9ABBA74", hash_generated_method = "51D74C1D9AA9264E887748B87160A222")
     private void destroyDataConnections() {
         if(mDataConnections != null)        
@@ -3278,6 +3343,7 @@ GsmDataConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1105468179 =         conn;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.742 -0400", hash_original_method = "848BE9CB29607B1E2AFE44721BE481D7", hash_generated_method = "AD2F2DF8DBFDD8AB3592ABA5710A0F1B")
     private ArrayList<ApnSetting> buildWaitingApns(String requestedApnType) {
         addTaint(requestedApnType.getTaint());
@@ -3363,6 +3429,7 @@ ArrayList<ApnSetting> var96869C0A4A98E2663B7AE018A1369DF2_960109105 =         ap
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.742 -0400", hash_original_method = "E41D316825399ADA7868FFC16CE8AB28", hash_generated_method = "B804E5691CDC97AC30206520787B7420")
     private String apnListToString(ArrayList<ApnSetting> apns) {
         addTaint(apns.getTaint());
@@ -3387,6 +3454,7 @@ String varE65B3A02759122992CB82C0E651AD408_112435128 =         result.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.742 -0400", hash_original_method = "3866195B872E529451BB06B2525880D5", hash_generated_method = "6EA2D6C203F1AADDD825685665726055")
     private void startDelayedRetry(GsmDataConnection.FailCause cause,
                                    ApnContext apnContext, int retryOverride) {
@@ -3401,6 +3469,7 @@ String varE65B3A02759122992CB82C0E651AD408_112435128 =         result.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.743 -0400", hash_original_method = "A60F121DAB80740EFF8A86C7BC5BA500", hash_generated_method = "E99F7542C07DC52105E6E69CE27355B1")
     private void setPreferredApn(int pos) {
         addTaint(pos);
@@ -3430,6 +3499,7 @@ String varE65B3A02759122992CB82C0E651AD408_112435128 =         result.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.743 -0400", hash_original_method = "C73C211081CDB852B85A3162F1169F83", hash_generated_method = "941FD96AD6938BA35085A0D4BA668752")
     private ApnSetting getPreferredApn() {
         if(mAllApns.isEmpty())        
@@ -3477,6 +3547,7 @@ ApnSetting var540C13E9E156B687226421B24F2DF178_2091246715 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.743 -0400", hash_original_method = "AE6FD47652B0A19C805CE62DFEA0E86E", hash_generated_method = "D8716E53F858CD1DFB35269829764780")
     @Override
     public void handleMessage(Message msg) {
@@ -3574,6 +3645,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.744 -0400", hash_original_method = "46AFDD0964E9004EF08AD58B2795A021", hash_generated_method = "68750A9E24C1A789520704EF76941572")
     protected int getApnProfileID(String apnType) {
         addTaint(apnType.getTaint());
@@ -3616,6 +3688,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.745 -0400", hash_original_method = "EC98DB8AAEBCEBF774D7D372A9BC5BED", hash_generated_method = "0DF2195CE7E22C3C1A7DD2D03814877B")
     private int getCellLocationId() {
         int cid = -1;
@@ -3649,6 +3722,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.745 -0400", hash_original_method = "74A1E45944BDF6EB75FE1BB75B450C28", hash_generated_method = "45E2D47826A0A2B2C80FFB8CA4A323DB")
     @Override
     protected void log(String s) {
@@ -3659,6 +3733,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.747 -0400", hash_original_method = "F4E978940BCE74A01AFD260967E7D0F1", hash_generated_method = "4161D7256990615E95C2D94DA5F096C5")
     @Override
     protected void loge(String s) {
@@ -3677,7 +3752,7 @@ switch(msg.what){
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.747 -0400", hash_original_method = "C002DCEBDDA1BCF98FA65E6C3DFBEDC7", hash_generated_method = "40A9A6E843A4E7FC3F3A0C67AFDC74A6")
         @Override
         public void onChange(boolean selfChange) {

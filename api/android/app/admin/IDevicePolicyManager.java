@@ -1,6 +1,7 @@
 package android.app.admin;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IDevicePolicyManager extends android.os.IInterface
 {

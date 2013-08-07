@@ -1,6 +1,7 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,10 +32,10 @@ import libcore.io.ErrnoException;
 import libcore.io.IoBridge;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.092 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
@@ -245,6 +246,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1491654690 =         socket;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.095 -0400", hash_original_method = "06F6825183E6F900AF6E00DC91481B34", hash_generated_method = "798E9CBDA64576795935DCA6E0C99870")
     private void initLocalAddressAndPort() {
         SocketAddress sa;
@@ -417,6 +419,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1491654690 =         socket;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.098 -0400", hash_original_method = "59936954910C41239CB7D8967AB1C758", hash_generated_method = "F3A0FF9FC7232FF48557175BF6A05D34")
     private int readImpl(ByteBuffer dst) throws IOException {
         addTaint(dst.getTaint());
@@ -544,6 +547,7 @@ for(int val = offset;val < length + offset;val++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.099 -0400", hash_original_method = "9CA5CC5B2105A1C6A6351FB0E1EC75B2", hash_generated_method = "C865654EA217137A31EC1F1A16E4E960")
     private int writeImpl(ByteBuffer src) throws IOException {
         addTaint(src.getTaint());
@@ -603,7 +607,7 @@ for(int val = offset;val < length + offset;val++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.100 -0400", hash_original_method = "39D9BE1DFB590318884AF060F0654BAC", hash_generated_method = "6F0CD0012402F9D22E69279C04568367")
     synchronized private void checkOpenConnected() throws ClosedChannelException {
         if(!isOpen())        
@@ -628,7 +632,7 @@ for(int val = offset;val < length + offset;val++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.100 -0400", hash_original_method = "ACDFE21557429638E6BE7769521129CC", hash_generated_method = "5B73F410ABA4B11CBD4BE969BF440BF0")
     synchronized private void checkUnconnected() throws IOException {
         if(!isOpen())        
@@ -978,6 +982,7 @@ InputStream varBBCB65A129E4FF2F4EF7DA1CCF148B3D_1407690018 =             new Soc
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.103 -0400", hash_original_method = "6DFEABBD8C66364625150870CA176E5F", hash_generated_method = "CEF0DE8FBD2C7C2FD01862DDF9467264")
         private void checkOpenAndConnected() throws SocketException {
             if(!channel.isOpen())            

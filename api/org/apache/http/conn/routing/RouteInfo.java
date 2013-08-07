@@ -1,6 +1,7 @@
 package org.apache.http.conn.routing;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetAddress;
 
 import org.apache.http.HttpHost;

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.InternalErrorHandler;
@@ -20,10 +21,10 @@ import javax.sip.address.SipURI;
 import javax.sip.header.ContactHeader;
 import javax.sip.header.ViaHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.javax.sip.ListeningPointExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.446 -0400", hash_original_field = "7B334B7260361141659FA9862E803476", hash_generated_field = "B1CF55BB145913C3C7A70130704FABEE")

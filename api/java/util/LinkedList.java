@@ -1,16 +1,17 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Queue<E>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.113 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "073488151E86FC108C1C096E75333D8B")
@@ -935,7 +936,7 @@ E varAD3301876DF8721CEF17AFAABE29CC10_850774123 =         removeFirstImpl();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "BE1ED77C9E5B42F2AAE1F87EC7415C20", hash_generated_method = "A4CD8E9CE52EDFC0F6FE76A2F5BB744C")
     private boolean removeFirstOccurrenceImpl(Object o) {
         addTaint(o.getTaint());
@@ -949,7 +950,7 @@ E varAD3301876DF8721CEF17AFAABE29CC10_850774123 =         removeFirstImpl();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "9DDC0B1D5E05429D7358050E932B03D0")
     private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
         addTaint(iter.getTaint());
@@ -1186,7 +1187,7 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_875582466 =         contents;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.137 -0400", hash_original_method = "6BB9A441F12D3E8CACB448F2BFF70164", hash_generated_method = "15C731CFA7712C533369F8FFD15F051E")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1208,7 +1209,7 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_875582466 =         contents;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.137 -0400", hash_original_method = "7A7BB5A4D858D82384B74EA358B45BD7", hash_generated_method = "581C710E4AAE3D3860B5F9D074085890")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,

@@ -1,12 +1,13 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Build;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class InputEventConsistencyVerifier {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.096 -0400", hash_original_field = "02B8E2B08EEFD631BD36F22665C339F2", hash_generated_field = "842464D18B9CC1D906D30912951F1B29")
@@ -74,7 +75,7 @@ public final class InputEventConsistencyVerifier {
     private StringBuilder mViolationMessage;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.097 -0400", hash_original_method = "D65E8A245B5C473707AFD205D57D3AF8", hash_generated_method = "33D025E9014950329B11E0EABEA29DB9")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public  InputEventConsistencyVerifier(Object caller, int flags) {
         this(caller, flags, InputEventConsistencyVerifier.class.getSimpleName());
         addTaint(flags);
@@ -84,7 +85,7 @@ public final class InputEventConsistencyVerifier {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.098 -0400", hash_original_method = "31CA6A116339576A3C7E1C4293F4F7B1", hash_generated_method = "25151441769D8C7D937887594A926350")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public  InputEventConsistencyVerifier(Object caller, int flags, String logTag) {
         this.mCaller = caller;
         this.mFlags = flags;
@@ -96,13 +97,13 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isInstrumentationEnabled() {
         return IS_ENG_BUILD;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.101 -0400", hash_original_method = "13418E29B3FCE72BDE84CBF193C1BADD", hash_generated_method = "718F6BAEBC9F32735511F8F6D427FB0C")
     public void reset() {
         mLastEvent = null;
@@ -137,7 +138,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.102 -0400", hash_original_method = "9981F0DD702462FD09DA371539E225DF", hash_generated_method = "D450634EBB39229DDCE0ADFED1D31DF9")
     public void onInputEvent(InputEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -182,7 +183,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.104 -0400", hash_original_method = "37A5317EE58F7483AB8019E5DEA39C1C", hash_generated_method = "13650007C3E19A1C39863AEF155C5A15")
     public void onKeyEvent(KeyEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -253,7 +254,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.105 -0400", hash_original_method = "742053359AC2416542EBDE8E8736FB44", hash_generated_method = "1EAB31B8DD546EF73FF5796314609253")
     public void onTrackballEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -328,7 +329,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.108 -0400", hash_original_method = "F64D7AF6BB2368971DDEEF01EB83BDA6", hash_generated_method = "30B07D87EE31F4C624D5B65631787589")
     public void onTouchEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -495,7 +496,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.108 -0400", hash_original_method = "23EA37DFEC977078F682E35F151F1942", hash_generated_method = "8788FFC06EA0B5B25FB55B44CFCB2631")
     public void onGenericMotionEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -559,7 +560,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "95A33BD7B12ABE8439BBD32736BE35D7", hash_generated_method = "F4063FC04131F87BA8EE9AAE1F233D78")
     public void onUnhandledEvent(InputEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -606,7 +607,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "0D02225F7CFB86AB0627FF86E895BCB3", hash_generated_method = "B318D7FDE241437C730C0CBAC33EB8FB")
     private void ensureMetaStateIsNormalized(int metaState) {
         addTaint(metaState);
@@ -625,7 +626,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "960C41882671A36CAB1E6050FF4DEA3B", hash_generated_method = "F1E2266104622299B69C51DB7C8AA106")
     private void ensurePointerCountIsOneForThisAction(MotionEvent event) {
         addTaint(event.getTaint());
@@ -644,7 +645,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "418A844BE60240583EF50FE17898B3BB", hash_generated_method = "8AD94D3E7F70876E28DF6AC01DA0CE55")
     private void ensureHistorySizeIsZeroForThisAction(MotionEvent event) {
         addTaint(event.getTaint());
@@ -663,7 +664,7 @@ switch(action){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.110 -0400", hash_original_method = "4D608F0C62317EB539D3EDD1A5B0BBF8", hash_generated_method = "60AB95EBBC720ED16B74A979BC34B4FD")
     private boolean startEvent(InputEvent event, int nestingLevel, String eventType) {
         if(event == mLastEvent && nestingLevel < mLastNestingLevel
@@ -710,7 +711,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.110 -0400", hash_original_method = "ED6D322EBF7819A0A849ACCBA13E8A32", hash_generated_method = "0E728C2AA5DA84F1D56BFD35CC1EC338")
     private void finishEvent() {
         if(mViolationMessage != null && mViolationMessage.length() != 0)        
@@ -764,7 +765,7 @@ for(int i = 0;i < RECENT_EVENTS_TO_LOG;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void appendEvent(StringBuilder message, int index,
             InputEvent event, boolean unhandled) {
         message.append(index).append(": sent at ").append(event.getEventTimeNano());
@@ -776,7 +777,7 @@ for(int i = 0;i < RECENT_EVENTS_TO_LOG;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.111 -0400", hash_original_method = "C6124E8B7D001D6ECE47F875379D529E", hash_generated_method = "E12CAD1F34500F8FC54B030A85C101BC")
     private void problem(String message) {
         addTaint(message.getTaint());
@@ -806,7 +807,7 @@ for(int i = 0;i < RECENT_EVENTS_TO_LOG;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.111 -0400", hash_original_method = "98F44F7E9C89F442263CA208119E2058", hash_generated_method = "A7B1D145B3085D628D133B4C236A9082")
     private KeyState findKeyState(int deviceId, int source, int keyCode, boolean remove) {
         addTaint(remove);
@@ -866,7 +867,7 @@ KeyState var540C13E9E156B687226421B24F2DF178_1695263063 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.111 -0400", hash_original_method = "49CD2D0DE125B77D543B3E0017318A6E", hash_generated_method = "FB1ECE31E15DC3332206BFD06182A06B")
     private void addKeyState(int deviceId, int source, int keyCode) {
         addTaint(keyCode);
@@ -899,14 +900,14 @@ KeyState var540C13E9E156B687226421B24F2DF178_1695263063 =         null;
 
         public boolean unhandled;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.112 -0400", hash_original_method = "9B72C46296302693275D5291E4057DE0", hash_generated_method = "46EE7D525ED839CFC8CA395DBE68DDF7")
         private  KeyState() {
             // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public static KeyState obtain(int deviceId, int source, int keyCode) {
             KeyState state;
             synchronized (mRecycledListLock) {
@@ -925,7 +926,7 @@ KeyState var540C13E9E156B687226421B24F2DF178_1695263063 =         null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.112 -0400", hash_original_method = "F16B27E6183802CE84F6921B26D81A30", hash_generated_method = "CC6AC4BC9D70480CD822939542AD2131")
         public void recycle() {
             synchronized

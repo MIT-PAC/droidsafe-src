@@ -1,9 +1,10 @@
 package org.apache.harmony.security.provider.crypto;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public class SHA1Impl implements SHA1_Data {
     

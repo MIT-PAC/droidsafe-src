@@ -1,6 +1,7 @@
 package org.apache.http.protocol;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface HttpContext {
 

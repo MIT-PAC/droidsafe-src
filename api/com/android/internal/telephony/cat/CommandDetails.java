@@ -1,12 +1,13 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class ValueObject {
     
@@ -37,12 +38,14 @@ class CommandDetails extends ValueObject implements Parcelable {
 
     public int commandQualifier;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.955 -0400", hash_original_method = "72B242645176D3C048490A6F87EF8C3E", hash_generated_method = "D119A005614DCAFC6E618543CD54EADF")
       CommandDetails() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.956 -0400", hash_original_method = "465BB229D9A5966C3E9ADC72C0D64377", hash_generated_method = "FCBCCD79B659683FAA303080B1C81EE6")
     public  CommandDetails(Parcel in) {
         compRequired = true;
@@ -57,7 +60,7 @@ class CommandDetails extends ValueObject implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.956 -0400", hash_original_method = "C0C704DA5801253794AC36F584EC8459", hash_generated_method = "CA4D106A0E1A1B47AF8AD7315B1792D9")
     public ComprehensionTlvTag getTag() {
 ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_1892808642 =         ComprehensionTlvTag.COMMAND_DETAILS;
@@ -68,7 +71,7 @@ ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_1892808642 =         Com
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.957 -0400", hash_original_method = "0B93253C460C2EDDDD5784E156E19F28", hash_generated_method = "E5C277336FF493BD201A4D65F2C4F114")
     public boolean compareTo(CommandDetails other) {
         addTaint(other.getTaint());
@@ -86,6 +89,7 @@ ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_1892808642 =         Com
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.957 -0400", hash_original_method = "27B546585D0CB89B418F4678204A3CCC", hash_generated_method = "D009DE340B774BFB65532BD04357D388")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -100,7 +104,7 @@ ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_1892808642 =         Com
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.957 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C85630894B2D3E0338FB94023ADE93C1")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_325667737 = (0);

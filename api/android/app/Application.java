@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.content.ComponentCallbacks;
@@ -9,10 +10,10 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Application extends ContextWrapper implements ComponentCallbacks2 {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.117 -0400", hash_original_field = "1009BF2C0E9446739A33C63F7A074E0B", hash_generated_field = "16B69693C5E15AB94DE4137F3E4501E9")
@@ -341,6 +342,7 @@ for(int i=0;i<callbacks.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.141 -0400", hash_original_method = "324DD85B066E69EB73C73FA0F3E95B35", hash_generated_method = "D2E8052186185EF546937DD0FFFA2C8D")
     private Object[] collectComponentCallbacks() {
         Object[] callbacks = null;
@@ -365,6 +367,7 @@ Object[] var7E06ACD9C2C819F377F4C0B98904AB11_1734513625 =         callbacks;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.144 -0400", hash_original_method = "8B856F104DA3FA2F4A1E951FC948DC43", hash_generated_method = "FA3FC30C50C8ABA150A508922F70888F")
     private Object[] collectActivityLifecycleCallbacks() {
         Object[] callbacks = null;

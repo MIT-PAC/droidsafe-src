@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +11,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ViewFlipper extends ViewAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.240 -0400", hash_original_field = "AB885A31780121055D1BDD1B69C143B0", hash_generated_field = "EF72A9C12698542BA68675F47801C510")
@@ -223,7 +224,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "01EB120A60E7A5C93ADD152BE225A9A1", hash_generated_method = "95DAE41B7EF1D4EE1E159B09B77728E8")
     private void updateRunning() {
         updateRunning(true);
@@ -232,7 +233,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.250 -0400", hash_original_method = "FEBFE82757020B844DFA7E8A1658E9A7", hash_generated_method = "AFC07426A2A5ED4EB088A9BC40257CB4")
     private void updateRunning(boolean flipNow) {
         addTaint(flipNow);

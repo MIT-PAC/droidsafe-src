@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.HostNameParser;
 import gov.nist.core.HostPort;
 import gov.nist.core.LexerCore;
@@ -13,9 +14,9 @@ import gov.nist.javax.sip.header.ViaList;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class ViaParser extends HeaderParser {
     
@@ -37,6 +38,7 @@ public class ViaParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.547 -0400", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "34DA52AC96BD13820126702A933D1FEC")
     private void parseVia(Via v) throws ParseException {
         addTaint(v.getTaint());

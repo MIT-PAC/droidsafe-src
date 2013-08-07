@@ -1,13 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class InetSocketAddress extends SocketAddress {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.694 -0400", hash_original_field = "3EF9A0D7FAB5D2BCABF0978C0A35244E", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
@@ -20,6 +21,7 @@ public class InetSocketAddress extends SocketAddress {
 
     private int port;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.695 -0400", hash_original_method = "E61EEABC5DF9527410338B11302226FE", hash_generated_method = "D6A8A6FF7A7F9DF0030B1E8520AD5301")
     public  InetSocketAddress() {
         this.addr = null;
@@ -149,6 +151,7 @@ String varAC60CAEE0ED0B1E182673A2E3E7A6307_1567749775 =         (addr != null) ?
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.701 -0400", hash_original_method = "152FB4941FA191CB3163ABC6AAB86F6D", hash_generated_method = "20B17B93B0A9799B58880BA9E6D72148")
     public final String getHostString() {
 String varA176FBB649535D87C7C729399E998756_1767560490 =         (hostname != null) ? hostname : addr.getHostAddress();
@@ -260,6 +263,7 @@ String var1B7CAFC033DE18D29F647AE499B2444D_593277045 =         ((addr != null) ?
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.705 -0400", hash_original_method = "A70A079C45F63B1946A4E7EB22F91BB3", hash_generated_method = "F24508607C5B504D65DD7E44716575A0")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

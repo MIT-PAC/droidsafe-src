@@ -1,6 +1,7 @@
 package javax.security.auth.x500;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -11,10 +12,10 @@ import java.util.Map;
 
 import org.apache.harmony.security.x501.Name;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class X500Principal implements Serializable, Principal {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.061 -0400", hash_original_field = "567C996739EDFA1CDBAD4C55A80580DF", hash_generated_field = "CFC846905F9BAB769B1824279452E9D4")
@@ -144,6 +145,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.153 -0400", hash_original_method = "9E8384C79D62223409840D75AB5AB58E", hash_generated_method = "09EFF356EBDF39DF087EF8EC087C4E14")
     private IllegalArgumentException incorrectInputEncoding(IOException e) {
         addTaint(e.getTaint());
@@ -158,6 +160,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.154 -0400", hash_original_method = "6436965683334E035C1CE670538AE7C6", hash_generated_method = "ABDA72E7CBEFE08540F89AF93F018AF2")
     private IllegalArgumentException incorrectInputName(IOException e, String name) {
         addTaint(name.getTaint());
@@ -173,6 +176,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.154 -0400", hash_original_method = "4587ED52F7AA726C7418DB94B8315A23", hash_generated_method = "7661A1D74C9E8F17648EC4CB2286CF6F")
     private synchronized String getCanonicalName() {
         if(canonicalName == null)        
@@ -377,6 +381,7 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_455315863 =         dn.getName(RFC177
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.160 -0400", hash_original_method = "11CA04BE900A069B4C6C484CD5BEB982", hash_generated_method = "8FB4070FC90A2E7E6893E0A4FF922ED6")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -386,6 +391,7 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_455315863 =         dn.getName(RFC177
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.160 -0400", hash_original_method = "8759D8976B48D4CB6209F3200BF3598B", hash_generated_method = "152ACDA71726E5032041ABE752F2EA68")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         dn = (Name) Name.ASN1.decode((byte[]) in.readObject());
@@ -394,7 +400,7 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_455315863 =         dn.getName(RFC177
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.161 -0400", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "C09F354362013FCF1AD51629340FE853")
     private String substituteNameFromMap(String name, Map<String, String> keywordMap) {
         addTaint(keywordMap.getTaint());

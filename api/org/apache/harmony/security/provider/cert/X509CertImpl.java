@@ -1,6 +1,7 @@
 package org.apache.harmony.security.provider.cert;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
@@ -31,10 +32,10 @@ import org.apache.harmony.security.x509.Extensions;
 import org.apache.harmony.security.x509.TBSCertificate;
 import org.apache.harmony.xnet.provider.jsse.OpenSSLSignature;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class X509CertImpl extends X509Certificate {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.193 -0400", hash_original_field = "E0D30CEF5C6139275B58B525001B413C", hash_generated_field = "A35DA85BFB78148ECCCCEB5F8393F6B0")
@@ -151,7 +152,7 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.197 -0400", hash_original_method = "5C762410FB306F1308EE7204752B0EB0", hash_generated_method = "A3C99B8F445CBDB15716DEBC1A28E669")
     private void checkValidity(long time) throws CertificateExpiredException, CertificateNotYetValidException {
         addTaint(time);
@@ -285,7 +286,7 @@ Date varFEDE4E5DB357A7A9C6F6942870B50E47_104809517 =         new Date(getNotBefo
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.200 -0400", hash_original_method = "4558EB8E531DC796F00773B26346E007", hash_generated_method = "64C8E38933FB2400AF9A72F624977EB7")
     private long getNotBeforeInternal() {
         long result = notBefore;
@@ -316,7 +317,7 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_1418722844 =         new Date(getNotAft
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.201 -0400", hash_original_method = "DD249744796DD4B2B8069CA6B07316ED", hash_generated_method = "4AD89B41AD5FACAC95DC88CA6E982F79")
     private long getNotAfterInternal() {
         long result = notAfter;
@@ -347,7 +348,7 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_1418722844 =         new Date(getNotAft
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.201 -0400", hash_original_method = "3E85018628BFB50292B491E8B8B8C0CD", hash_generated_method = "14110BF06D4C93EEFD7BADFDC69FC13C")
     private byte[] getTbsCertificateInternal() {
         byte[] result = tbsCertificate;
@@ -378,7 +379,7 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_1418722844 =         new Date(getNotAft
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.202 -0400", hash_original_method = "1D526D791318CE6ACD668C92F6511A39", hash_generated_method = "16C1AF63AD5996AA94A659CD7AB75DFC")
     private byte[] getSignatureInternal() {
         byte[] result = signature;
@@ -660,7 +661,7 @@ Collection<List<?>> varFDB4369B42BB66019B0D43D7D2AC0A9E_445582906 =             
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.208 -0400", hash_original_method = "89DAFF52A0746AEA205DFD1B0F750CF1", hash_generated_method = "A3777E780A85DA0939016F75B88FB872")
     private byte[] getEncodedInternal() throws CertificateEncodingException {
         byte[] result = encoding;

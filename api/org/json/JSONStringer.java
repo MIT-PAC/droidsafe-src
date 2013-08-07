@@ -1,12 +1,13 @@
 package org.json;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class JSONStringer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.471 -0400", hash_original_field = "EB6AB58F1561677E9297620615127CB9", hash_generated_field = "A0CBD6F499FC0AC1E6545290B568BB70")
@@ -142,6 +143,7 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1413833912 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.474 -0400", hash_original_method = "8F2C7ADB42C2C89CD99F5BA7F29697D3", hash_generated_method = "95EC646EF3DCBE2854B86E5135881DED")
     private Scope peek() throws JSONException {
         if(stack.isEmpty())        
@@ -161,6 +163,7 @@ Scope var0C13C1874AA5E05BC89B862E007E5C49_1398700443 =         stack.get(stack.s
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.475 -0400", hash_original_method = "06C25D9275C46608400AACFE7B687C39", hash_generated_method = "51CE78FA73CA4F56B9EFDBA5648DCE9D")
     private void replaceTop(Scope topOfStack) {
         addTaint(topOfStack.getTaint());
@@ -310,6 +313,7 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1378737455 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.479 -0400", hash_original_method = "E6F73466C6FDC5C4F374E57C86CB98DF", hash_generated_method = "F073B1E91438EFE5914C81F71582F62E")
     private void string(String value) {
         addTaint(value.getTaint());
@@ -356,6 +360,7 @@ switch(c){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.479 -0400", hash_original_method = "A1C4E39B6594D26F11F448F86F922EBA", hash_generated_method = "053E40E5E5499CCB1EFA3B7F06D2503D")
     private void newline() {
         if(indent == null)        
@@ -402,6 +407,7 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_667761184 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.480 -0400", hash_original_method = "2432D2D31ED521C760D918E6DCE1C6CE", hash_generated_method = "8275708AAAF0F86D9BD85882C79A9BBD")
     private void beforeKey() throws JSONException {
         Scope context = peek();
@@ -430,6 +436,7 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_667761184 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.481 -0400", hash_original_method = "9CA1703B701EBBFA9C513149EAF6F304", hash_generated_method = "0B038F134FA8636719D51EFE09777675")
     private void beforeValue() throws JSONException {
         if(stack.isEmpty())        

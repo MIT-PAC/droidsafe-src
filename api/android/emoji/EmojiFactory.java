@@ -1,15 +1,16 @@
 package android.emoji;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import android.graphics.Bitmap;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class EmojiFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.497 -0400", hash_original_field = "FC3844AD7E0AD1A2D30D63DA701B5F11", hash_generated_field = "6AC97E1F58C9735B2329D1C9A5ED4485")
@@ -25,7 +26,7 @@ public final class EmojiFactory {
 
     private Map<Integer, WeakReference<Bitmap>> mCache;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.498 -0400", hash_original_method = "3CFB061344A54165CC98223BF316C16E", hash_generated_method = "C7D0D69F38285DF25F7919D10B271128")
     private  EmojiFactory(int nativeEmojiFactory, String name) {
         mNativeEmojiFactory = nativeEmojiFactory;
@@ -38,7 +39,7 @@ public final class EmojiFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.499 -0400", hash_original_method = "32C84A5952A8F243E533AA978C471609", hash_generated_method = "1022AB339BCE8F38D8D3090647D24799")
     @Override
     protected void finalize() throws Throwable {
@@ -59,7 +60,7 @@ public final class EmojiFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.499 -0400", hash_original_method = "61A4CE5E0B45509C63F06179C920C9C2", hash_generated_method = "D491DB6FF21DDA6EE282F92BBD554F4D")
     public String name() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_2000875739 =         mName;
@@ -70,6 +71,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_2000875739 =         mName;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.500 -0400", hash_original_method = "51D3837892087BC1526F97486EB96A82", hash_generated_method = "AFF1D2FF6C1697AF8FB2D9CDA121CB5E")
     public synchronized Bitmap getBitmapFromAndroidPua(int pua) {
         addTaint(pua);
@@ -124,6 +126,7 @@ Bitmap var3F12A0424932F6B5155AA6C49B63FE6E_524775330 =                 tmp;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.501 -0400", hash_original_method = "9A7284FF37A5214E9B7F9311E2EF3E6C", hash_generated_method = "2008E7B8D24484A4B8E4095D3220636F")
     public synchronized Bitmap getBitmapFromVendorSpecificSjis(char sjis) {
         addTaint(sjis);
@@ -135,6 +138,7 @@ Bitmap varC5F7FE1D4DC4CA1B8DCAD3328E5279D5_1241136235 =         getBitmapFromAnd
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.501 -0400", hash_original_method = "F5F3B81D8E941B288B2A41FCC9367619", hash_generated_method = "E5374F4F241F38BC4D9897AEAE971299")
     public synchronized Bitmap getBitmapFromVendorSpecificPua(int vsp) {
         addTaint(vsp);
@@ -146,6 +150,7 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_891853793 =         getBitmapFromAndr
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.502 -0400", hash_original_method = "5E0818C254D368AF2876C64915580604", hash_generated_method = "F9ECE2F0E0B0ED6F7AC86C8F451CD9B4")
     public int getAndroidPuaFromVendorSpecificSjis(char sjis) {
         addTaint(sjis);
@@ -157,6 +162,7 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_891853793 =         getBitmapFromAndr
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.503 -0400", hash_original_method = "CAA9928E1DDFC9E6AF0D5DC613844580", hash_generated_method = "A49AC859CC5C4610BFA381AD7D570CEE")
     public int getVendorSpecificSjisFromAndroidPua(int pua) {
         addTaint(pua);
@@ -168,6 +174,7 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_891853793 =         getBitmapFromAndr
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.503 -0400", hash_original_method = "BF155C8450604BCD58870D68939F5C48", hash_generated_method = "AD457A3974C91883A755A4F68E77DD81")
     public int getAndroidPuaFromVendorSpecificPua(int vsp) {
         addTaint(vsp);
@@ -179,7 +186,7 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_891853793 =         getBitmapFromAndr
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.505 -0400", hash_original_method = "332632D7825438D0B8DBF43F7E76A339", hash_generated_method = "A03448831456695AC3D4582EE9C4748A")
     public String getAndroidPuaFromVendorSpecificPua(String vspString) {
         addTaint(vspString.getTaint());
@@ -216,6 +223,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1491981683 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.506 -0400", hash_original_method = "B08EB100AB82E54ADADC386CF8B33D33", hash_generated_method = "C419FBA9D4EBFF3EC1D45F0FA02E3098")
     public int getVendorSpecificPuaFromAndroidPua(int pua) {
         addTaint(pua);
@@ -227,7 +235,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1491981683 =         new String(codeP
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.508 -0400", hash_original_method = "6085ED2713FAD0096DF7C4BD4C86F8DD", hash_generated_method = "027B5E5C02FF86D5623DE0292DA5C946")
     public String getVendorSpecificPuaFromAndroidPua(String puaString) {
         addTaint(puaString.getTaint());
@@ -276,7 +284,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1536079929 =         new String(codeP
 	}
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.509 -0400", hash_original_method = "E94B589829434939D487652724460608", hash_generated_method = "9D84CFCAA98B6F65E8FDFCF75F8741F3")
     public int getMinimumAndroidPua() {
         int var6D01B26D80C78B9F3068F6781CD3B69C_8402789 = (nativeGetMinimumAndroidPua(mNativeEmojiFactory));
@@ -287,7 +295,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1536079929 =         new String(codeP
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.510 -0400", hash_original_method = "84EA08D07D32F9FA087FFC75B38A56E8", hash_generated_method = "458A2198BBCE23875469B6001E4888D7")
     public int getMaximumAndroidPua() {
         int var2A941F107A5D696EC71FA20E6118A915_1992272826 = (nativeGetMaximumAndroidPua(mNativeEmojiFactory));

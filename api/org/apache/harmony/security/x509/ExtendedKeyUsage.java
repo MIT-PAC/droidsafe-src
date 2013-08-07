@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -11,10 +12,10 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ExtendedKeyUsage extends ExtensionValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.097 -0400", hash_original_field = "14F802E1FBA977727845E8872C1743A7", hash_generated_field = "B63F3A923567277A38E2C25A71F126D8")

@@ -1,11 +1,12 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.spec.AlgorithmParameterSpec;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class KeyPairGeneratorSpi {
     

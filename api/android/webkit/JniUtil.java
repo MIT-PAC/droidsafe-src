@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.InputStream;
 
@@ -9,20 +10,22 @@ import android.content.Context;
 import android.net.Uri;
 import android.provider.Settings;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 class JniUtil {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.227 -0400", hash_original_method = "7797423382E6C41F3BC6877796CBF278", hash_generated_method = "7AE97D3B4E9D45C2A019FC4E29ED6E30")
     private  JniUtil() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void checkInitialized() {
         if (sContext == null) {
             throw new IllegalStateException("Call CookieSyncManager::createInstance() or create a webview before using this class");
@@ -44,6 +47,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static synchronized String getDatabaseDirectory() {
         checkInitialized();
         if (sDatabaseDirectory == null) {
@@ -53,6 +57,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static synchronized String getCacheDirectory() {
         checkInitialized();
         if (sCacheDirectory == null) {
@@ -67,6 +72,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static synchronized long contentUrlSize(String url) {
         if (url.startsWith(ANDROID_CONTENT)) {
             try {
@@ -97,6 +103,7 @@ class JniUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static synchronized InputStream contentUrlStream(String url) {
         if (url.startsWith(ANDROID_CONTENT)) {
             try {
@@ -124,7 +131,7 @@ class JniUtil {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static synchronized String getAutofillQueryUrl() {
         checkInitialized();
         return Settings.Secure.getString(sContext.getContentResolver(),
@@ -132,7 +139,7 @@ class JniUtil {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
         checkInitialized();
         ActivityManager manager = (ActivityManager) sContext.getSystemService(

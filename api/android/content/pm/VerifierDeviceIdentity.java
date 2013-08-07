@@ -1,16 +1,17 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
 import java.util.Random;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class VerifierDeviceIdentity implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.845 -0400", hash_original_field = "925EF8231AAA68ACC2C87B01BF3AC56C", hash_generated_field = "C881F5DFD1BC7D567E596FEF17B3CE41")
@@ -20,6 +21,7 @@ public class VerifierDeviceIdentity implements Parcelable {
 
     private String mIdentityString;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.846 -0400", hash_original_method = "E059465E7DB8A2431674A21301113B59", hash_generated_method = "5B40BFFB7D43821ECE66CFA15D91A5D5")
     public  VerifierDeviceIdentity(long identity) {
         mIdentity = identity;
@@ -30,6 +32,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.849 -0400", hash_original_method = "C7AE44830E0FC5E69D8DADD2D1F4EE49", hash_generated_method = "5C44CB16F71B67511D6C83722F03ED32")
     private  VerifierDeviceIdentity(Parcel source) {
         addTaint(source.getTaint());
@@ -43,18 +46,21 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static VerifierDeviceIdentity generate() {
         final SecureRandom sr = new SecureRandom();
         return generate(sr);
     }
 
     
+    @DSModeled(DSC.BAN)
     static VerifierDeviceIdentity generate(Random rng) {
         long identity = rng.nextLong();
         return new VerifierDeviceIdentity(identity);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final String encodeBase32(long input) {
         final char[] alphabet = ENCODE;
         final char encoded[] = new char[LONG_SIZE + (LONG_SIZE / GROUP_SIZE)];
@@ -71,6 +77,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final long decodeBase32(byte[] input) throws IllegalArgumentException {
         long output = 0L;
         int numParsed = 0;
@@ -110,7 +117,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.853 -0400", hash_original_method = "A24AB6F6393E3B1D0D15482B7A9B6B3D", hash_generated_method = "B4F50AB02B61378161411FD53AA98AF3")
     @Override
     public int hashCode() {
@@ -122,7 +129,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.854 -0400", hash_original_method = "C98AD9093350C34D0EE60C856A2859EF", hash_generated_method = "12BC311C40A346F2C7A0ACD1EA484688")
     @Override
     public boolean equals(Object other) {
@@ -146,7 +153,7 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.856 -0400", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "046F03065E63D22CEDD9E95E87A193BC")
     @Override
     public String toString() {
@@ -158,6 +165,7 @@ String var07D462A050FE03B4C86B74A2A5E47504_1066338075 =         mIdentityString;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static VerifierDeviceIdentity parse(String deviceIdentity) throws IllegalArgumentException {
         final byte[] input;
         try {
@@ -169,7 +177,7 @@ String var07D462A050FE03B4C86B74A2A5E47504_1066338075 =         mIdentityString;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.858 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1EC836F445439AEFA6104863DE9EC49F")
     @Override
     public int describeContents() {
@@ -181,6 +189,7 @@ String var07D462A050FE03B4C86B74A2A5E47504_1066338075 =         mIdentityString;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.858 -0400", hash_original_method = "74CC0770FB4A8F3105F468C0A6751DF9", hash_generated_method = "8BCE8B1E8B7ED052E466B701D8E34A4B")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

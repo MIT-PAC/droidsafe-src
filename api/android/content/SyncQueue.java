@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,10 +15,10 @@ import android.util.Pair;
 
 import com.google.android.collect.Maps;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SyncQueue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.629 -0400", hash_original_field = "45147E3AEB1E4ADCE06A13083E577526", hash_generated_field = "C4D1F4553F2DAB654514F44F7C643ACD")
@@ -57,6 +58,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.631 -0400", hash_original_method = "D3ED8DB5FFE6F89C719EB4A464B29556", hash_generated_method = "5C1BB77A8A1B9A14A00B14DCB6CA8479")
     public boolean add(SyncOperation operation) {
         addTaint(operation.getTaint());
@@ -68,6 +70,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.633 -0400", hash_original_method = "DE2F99F3641547A1BC9E364A4B2B8E2B", hash_generated_method = "5BBEB41B7FFD16908ADA28AC749F0B59")
     private boolean add(SyncOperation operation,
             SyncStorageEngine.PendingOperation pop) {
@@ -124,7 +127,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.635 -0400", hash_original_method = "6EA1C69DAD85A65D52720F29F3DAA89B", hash_generated_method = "43227B16A981F05D22D6413B5FEC2A9A")
     public void remove(SyncOperation operation) {
         addTaint(operation.getTaint());
@@ -149,7 +152,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.635 -0400", hash_original_method = "B31E7F9449B862015CEE60B6F703FDEF", hash_generated_method = "5D21943CC08F55C3F4F9C2EEE2A953CF")
     public void onBackoffChanged(Account account, String providerName, long backoff) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -174,6 +177,7 @@ for(SyncOperation op : mOperationsMap.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.637 -0400", hash_original_method = "B5F16B587E82C75B14DBD47F35BFF547", hash_generated_method = "44E99ECA27160FAF896105BD87F9BFBA")
     public void onDelayUntilTimeChanged(Account account, String providerName, long delayUntil) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -198,6 +202,7 @@ for(SyncOperation op : mOperationsMap.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.638 -0400", hash_original_method = "3BDDACB884C02271E516EA5014748603", hash_generated_method = "4F29F8567A5CB52968263D7789AB7A03")
     public void remove(Account account, String authority) {
         addTaint(authority.getTaint());
@@ -227,6 +232,7 @@ for(SyncOperation op : mOperationsMap.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.640 -0400", hash_original_method = "DE0C3912E55B433E68B0CDCDD70A3B83", hash_generated_method = "0C491C4A1C5E3B35BBB0CBFCB601C7B1")
     public void dump(StringBuilder sb) {
         addTaint(sb.getTaint());

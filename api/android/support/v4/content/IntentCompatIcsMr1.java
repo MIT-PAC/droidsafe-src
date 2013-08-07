@@ -1,8 +1,9 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Intent;
-import droidsafe.annotations.DSGenerator;
+
 
 class IntentCompatIcsMr1 {
     
@@ -13,6 +14,7 @@ class IntentCompatIcsMr1 {
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
         return Intent.makeMainSelectorActivity(selectorAction, selectorCategory);
     }

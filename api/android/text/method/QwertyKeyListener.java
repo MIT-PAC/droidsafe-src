@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.AutoText;
 import android.text.Editable;
 import android.text.NoCopySpan;
@@ -12,10 +13,10 @@ import android.util.SparseArray;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class QwertyKeyListener extends BaseKeyListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.632 -0400", hash_original_field = "7B00CDF214A58D964DB1FD6D561A182A", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
@@ -28,7 +29,7 @@ public class QwertyKeyListener extends BaseKeyListener {
 
     private boolean mFullKeyboard;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.633 -0400", hash_original_method = "49C27B077A312737DD85C2ED4E150C41", hash_generated_method = "25D87651643C9B230153ECA71855D847")
     private  QwertyKeyListener(Capitalize cap, boolean autoText, boolean fullKeyboard) {
         mAutoCap = cap;
@@ -371,7 +372,7 @@ for(int j = selEnd - 3;j > 0;j--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.645 -0400", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "099D6115B137FE85F1389976786A920C")
     private String getReplacement(CharSequence src, int start, int end,
                                   View view) {
@@ -444,7 +445,7 @@ String varFE81D892BE5757A0E16305825903D324_171204131 =         out;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.646 -0400", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "4A5450C386022F5B49A650D57D7C064B")
     private boolean showCharacterPicker(View view, Editable content, char c,
                                         boolean insert, int count) {
@@ -481,7 +482,7 @@ String varFE81D892BE5757A0E16305825903D324_171204131 =         out;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String toTitleCase(String src) {
         return Character.toUpperCase(src.charAt(0)) + src.substring(1);
     }

@@ -1,14 +1,15 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.315 -0400", hash_original_field = "4FCFEE3D082C4C61BD6B374EB2663F5D", hash_generated_field = "FECF2C1F375A3EF42076236F811E3099")
@@ -21,6 +22,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
 
     private boolean mIsLastSlice;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.316 -0400", hash_original_method = "24B996F8F50716248E38E24116049A17", hash_generated_method = "1887BA279D0200732AFFAF5AF7BA7C32")
     public  ParceledListSlice() {
         mParcel = Parcel.obtain();
@@ -29,6 +31,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.316 -0400", hash_original_method = "EA156AE64DA15F3296203897A2798D45", hash_generated_method = "F635FE86E5D41FC3A680E8C152909E12")
     private  ParceledListSlice(Parcel p, int numItems, boolean lastSlice) {
         mParcel = p;
@@ -41,7 +44,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.317 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9E31960F88863CE38D3856C2705F52D8")
     @Override
     public int describeContents() {
@@ -53,6 +56,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.318 -0400", hash_original_method = "757A8AA414BA94194408A3738A93F76D", hash_generated_method = "62B52FB7CB55FB65150B423B6F7B09BB")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -136,7 +140,7 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_1359745589 =         item;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.321 -0400", hash_original_method = "1F10264B91664C7E8F28E8217E753C37", hash_generated_method = "ABBE6BB800E0320F1A7EC7F3DF4139A4")
     public void setLastSlice(boolean lastSlice) {
         mIsLastSlice = lastSlice;
@@ -145,7 +149,7 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_1359745589 =         item;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.321 -0400", hash_original_method = "C1EA9F78A57EB4E786518F27886C353B", hash_generated_method = "87A40C452A77DDCE243BF26E98B0E71E")
     public boolean isLastSlice() {
         boolean var4A05E03E5F8F12BD83251DE71259F835_1731853373 = (mIsLastSlice);

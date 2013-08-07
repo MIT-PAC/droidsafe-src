@@ -1,6 +1,7 @@
 package java.security.cert;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Set;
 
 public interface X509Extension {

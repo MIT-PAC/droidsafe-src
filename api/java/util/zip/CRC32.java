@@ -1,12 +1,13 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CRC32 implements Checksum {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.485 -0400", hash_original_field = "55856D1757C7BB6CDB0B9B2914C9C1F8", hash_generated_field = "103DD39C404FCCE4417B434D3EE0291E")

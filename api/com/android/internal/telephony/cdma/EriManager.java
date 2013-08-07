@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,10 +19,10 @@ import android.util.Xml;
 import com.android.internal.telephony.PhoneBase;
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class EriManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.259 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "E7BDAD23CF4F53103B9ED94B380FFE2A")
@@ -94,20 +95,21 @@ switch(mEriFileSource){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.261 -0400", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "E557464B9F1CB4500DE84483A9542396")
     private void loadEriFileFromModem() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.261 -0400", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "E7A0D2EF52E0D62B1AC03B9954F84BEF")
     private void loadEriFileFromFileSystem() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.264 -0400", hash_original_method = "C6A3384D5129DFA3EA95328C5EF0C849", hash_generated_method = "9905FA626D82E09136388C388944E1BD")
     private void loadEriFileFromXml() {
         XmlPullParser parser = null;
@@ -263,6 +265,7 @@ switch(mEriFileSource){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.267 -0400", hash_original_method = "EC9DEB76FD43053D10B144FC41192B14", hash_generated_method = "056418BA1308B4494048AC5AD93D2626")
     private EriInfo getEriInfo(int roamingIndicator) {
         addTaint(roamingIndicator);
@@ -287,6 +290,7 @@ EriInfo var540C13E9E156B687226421B24F2DF178_360779077 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.273 -0400", hash_original_method = "D2C726FAB5040CEBEF6EB4A1388860BE", hash_generated_method = "2F8B7FC6A0538DB3F2DDB1CCD2BE27AC")
     private EriDisplayInformation getEriDisplayInformation(int roamInd, int defRoamInd) {
         addTaint(defRoamInd);

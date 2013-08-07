@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Canvas;
@@ -11,10 +12,10 @@ import android.os.SystemClock;
 import android.util.FloatMath;
 import android.view.ScaleGestureDetector;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ZoomManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.796 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
@@ -192,7 +193,7 @@ class ZoomManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.803 -0400", hash_original_method = "E8BCC867B6D8CCFABF539A9D95032C95", hash_generated_method = "044CA3F35DF3912DC2557C65DFC8C381")
     private void setDefaultZoomScale(float defaultScale) {
         final float originalDefault = mDefaultScale;
@@ -497,7 +498,7 @@ class ZoomManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.809 -0400", hash_original_method = "0D06D835317E38A4890F08EB962517B9", hash_generated_method = "4903C185EE067BC34ABF943FED968BA3")
     private boolean zoom(float zoomMultiplier) {
         addTaint(zoomMultiplier);
@@ -681,6 +682,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.857 -0400", hash_original_method = "3A85AAAB95D1CDF586170EB3BBF2667E", hash_generated_method = "F9A79B4E7FC1A0C1E09151237D62ED60")
     private void setZoomScale(float scale, boolean reflowText, boolean force) {
         addTaint(force);
@@ -812,7 +814,7 @@ class ZoomManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.858 -0400", hash_original_method = "712C22BAE7AA3B12B6A5A40165B58905", hash_generated_method = "80A23724A250B952CF0FD5DE028ACB94")
     private void setZoomOverviewWidth(int width) {
         if(width == 0)        
@@ -856,7 +858,7 @@ class ZoomManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.859 -0400", hash_original_method = "C0C0965039A172A5A5AAF6C9C4472D2A", hash_generated_method = "A0DAFE5222C9D5EDCF485B535A45DA26")
     private void zoomToOverview() {
         int scrollY = mWebView.getScrollY();
@@ -876,6 +878,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.859 -0400", hash_original_method = "6051F287C8BD349D628462D7AA7CF8A8", hash_generated_method = "99FAD3E4D224A52901A21B3F6D1C82E2")
     private void zoomToReadingLevelOrMore() {
         final float zoomScale = Math.max(getReadingLevelScale(),
@@ -1254,7 +1257,7 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_1038541492 =         mS
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.862 -0400", hash_original_method = "03F547EF9A141661565AD38656124362", hash_generated_method = "CC1C4D383F2DDD8D47A2AC3EE062C490")
     private ZoomControlBase getCurrentZoomControl() {
         if(mWebView.getSettings() != null && mWebView.getSettings().supportZoom())        
@@ -1455,7 +1458,7 @@ View var540C13E9E156B687226421B24F2DF178_1687687093 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.865 -0400", hash_original_method = "7BD5EC8FD84F966DA50367EA866227AA", hash_generated_method = "8335069DA08E3ECC73E486A4239E7C8F")
         private void clear() {
             mSize = 0;
@@ -1475,7 +1478,7 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.865 -0400", hash_original_method = "BEA568413C11D502CA7CED6FD222D059", hash_generated_method = "8FD819B1AFAAC1DD87B484EE364FF3BB")
         private void add(float focusDelta) {
             mSum += focusDelta;
@@ -1501,7 +1504,7 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.865 -0400", hash_original_method = "D980EABC4C0F2D2A081289A0764FD494", hash_generated_method = "27E40A102301B63BF6A698EF36181E46")
         private float getSum() {
             float varBACF4F47646DA9E5EF6C6786F47B387A_1320512401 = (mSum);

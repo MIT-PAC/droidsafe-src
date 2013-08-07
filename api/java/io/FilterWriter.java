@@ -1,8 +1,9 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 
 public abstract class FilterWriter extends Writer {

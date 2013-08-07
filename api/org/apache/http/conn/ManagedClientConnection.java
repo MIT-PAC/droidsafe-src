@@ -1,6 +1,7 @@
 package org.apache.http.conn;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 

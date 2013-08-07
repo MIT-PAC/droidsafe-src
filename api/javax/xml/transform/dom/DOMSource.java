@@ -1,14 +1,15 @@
 package javax.xml.transform.dom;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.xml.transform.Source;
 
 import org.w3c.dom.Node;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DOMSource implements Source {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.132 -0400", hash_original_field = "36C4536996CA5615DCF9911F068786DC", hash_generated_field = "FF348B25B2CE5FD5278D4CA5F8E8C280")

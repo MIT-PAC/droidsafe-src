@@ -1,7 +1,8 @@
 package javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class TooManyHopsException extends Exception {
     

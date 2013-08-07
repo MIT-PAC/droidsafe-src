@@ -1,7 +1,8 @@
 package android.nfc;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class FormatException extends Exception {
     

@@ -1,10 +1,11 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 class EmulatedFieldsForDumping extends ObjectOutputStream.PutField {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.695 -0400", hash_original_field = "2F09CF6A0C7823B6AADE31761B07AB12", hash_generated_field = "5423796031E51D6FB469318D4F31ADED")

@@ -1,17 +1,19 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.io.SizeOf;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class CharToByteBufferAdapter extends CharBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.397 -0400", hash_original_field = "73D79CD15754C8F39826976EB3E77012", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
 
     private ByteBuffer byteBuffer;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.398 -0400", hash_original_method = "20CC34DEF3812E72CBA72992E239D17C", hash_generated_method = "7B64404964C0A8F96913AC03401200AD")
     private  CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         super(byteBuffer.capacity() / SizeOf.CHAR);

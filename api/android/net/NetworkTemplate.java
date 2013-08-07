@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.net.ConnectivityManager.TYPE_ETHERNET;
 import static android.net.ConnectivityManager.TYPE_WIFI;
 import static android.net.ConnectivityManager.TYPE_WIMAX;
@@ -17,10 +18,10 @@ import android.os.Parcelable;
 
 import com.android.internal.util.Objects;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NetworkTemplate implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.989 -0400", hash_original_field = "2532E26E563B8CCB0666E9168F784D0B", hash_generated_field = "D0FA22F19C60C7D870BF0A9AE53EB17C")
@@ -30,6 +31,7 @@ public class NetworkTemplate implements Parcelable {
 
     private String mSubscriberId;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.990 -0400", hash_original_method = "FD7BCAE9218E775535D7C5C898F0D923", hash_generated_method = "CE8152D74D27C01C071E095B44F7971E")
     public  NetworkTemplate(int matchRule, String subscriberId) {
         this.mMatchRule = matchRule;
@@ -40,6 +42,7 @@ public class NetworkTemplate implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.990 -0400", hash_original_method = "467A86E8EFDDFF4383A8018B1ADE829F", hash_generated_method = "74AE2D4F62712F633F7706FDACDCA097")
     private  NetworkTemplate(Parcel in) {
         mMatchRule = in.readInt();
@@ -50,31 +53,37 @@ public class NetworkTemplate implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkTemplate buildTemplateMobileAll(String subscriberId) {
         return new NetworkTemplate(MATCH_MOBILE_ALL, subscriberId);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkTemplate buildTemplateMobile3gLower(String subscriberId) {
         return new NetworkTemplate(MATCH_MOBILE_3G_LOWER, subscriberId);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkTemplate buildTemplateMobile4g(String subscriberId) {
         return new NetworkTemplate(MATCH_MOBILE_4G, subscriberId);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkTemplate buildTemplateWifi() {
         return new NetworkTemplate(MATCH_WIFI, null);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkTemplate buildTemplateEthernet() {
         return new NetworkTemplate(MATCH_ETHERNET, null);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.010 -0400", hash_original_method = "16E233F925554B3B88BD36CB1859F60A", hash_generated_method = "35C553513973EFA3AC4783478FA2D6FC")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -87,7 +96,7 @@ public class NetworkTemplate implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.010 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E61E3387AD0150ACB343351915C4E788")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_333488581 = (0);
@@ -98,6 +107,7 @@ public class NetworkTemplate implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.010 -0400", hash_original_method = "743C43E5DEE5FAC4123020B60468B1AB", hash_generated_method = "A65626757C409527D7CB889A29449862")
     @Override
     public String toString() {
@@ -113,6 +123,7 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_2024865222 =         "NetworkTemplate
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.010 -0400", hash_original_method = "61F711039243E011B66A7D31CCB469F2", hash_generated_method = "45569EE3500C6F5153C5F5C35F8D4CB7")
     @Override
     public int hashCode() {
@@ -124,6 +135,7 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_2024865222 =         "NetworkTemplate
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.011 -0400", hash_original_method = "97109AC3BBA8BEF8ECFCD42700ABFADC", hash_generated_method = "EBBB609A3615A72DBFE0BD038EA9736B")
     @Override
     public boolean equals(Object obj) {
@@ -149,7 +161,7 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_2024865222 =         "NetworkTemplate
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.011 -0400", hash_original_method = "F3B6429C6B29080B6AB6244CD6E2C6C6", hash_generated_method = "69B72BD55EA37F269100E7CD95841272")
     public int getMatchRule() {
         int var2532E26E563B8CCB0666E9168F784D0B_181029143 = (mMatchRule);
@@ -160,7 +172,7 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_2024865222 =         "NetworkTemplate
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.011 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "9074180FFBEF062CA885461E24E2DDB6")
     public String getSubscriberId() {
 String varD221C4376DC09E8E422076D12DB9853B_2111694230 =         mSubscriberId;
@@ -171,6 +183,7 @@ String varD221C4376DC09E8E422076D12DB9853B_2111694230 =         mSubscriberId;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.011 -0400", hash_original_method = "9C317DAC08BBC55C4495C595EA5A7F8A", hash_generated_method = "F77494D6B20F97C2EEAC3756F1722919")
     public boolean matches(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -218,6 +231,7 @@ switch(mMatchRule){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.012 -0400", hash_original_method = "BBF3C380B9774B27B4245C54F7894533", hash_generated_method = "C5C4CE7AA0DCEB31F017E1926B89C04E")
     private boolean matchesMobile(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -244,6 +258,7 @@ switch(mMatchRule){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.012 -0400", hash_original_method = "0F24D42BACA619E1B4D2A14C838DE427", hash_generated_method = "5AE5D9F8E6C164597AF8A819D6C71EF0")
     private boolean matchesMobile3gLower(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -283,6 +298,7 @@ switch(getNetworkClass(ident.mSubType)){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.013 -0400", hash_original_method = "B7894A7F3E04E8F81CBF1F61E6B8AB40", hash_generated_method = "77B1C6F187ABDA7957CB5329547CA583")
     private boolean matchesMobile4g(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -318,7 +334,7 @@ switch(getNetworkClass(ident.mSubType)){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.013 -0400", hash_original_method = "FC1062696978183943559E1C2F0FCB30", hash_generated_method = "8E1A0D65FCBCED408D3E24474A63235F")
     private boolean matchesWifi(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -339,7 +355,7 @@ switch(getNetworkClass(ident.mSubType)){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.013 -0400", hash_original_method = "A66E0F5FCADB4F7B6C8822100B46777D", hash_generated_method = "75D0F87D1D3876C713F6EC73B5411EAC")
     private boolean matchesEthernet(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -360,7 +376,7 @@ switch(getNetworkClass(ident.mSubType)){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String getMatchRuleName(int matchRule) {
         switch (matchRule) {
             case MATCH_MOBILE_3G_LOWER:

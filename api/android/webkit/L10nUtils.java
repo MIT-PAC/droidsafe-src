@@ -1,15 +1,16 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
 import java.util.Map;
 
 import android.content.Context;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class L10nUtils {
     
@@ -20,11 +21,13 @@ public class L10nUtils {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static void setApplicationContext(Context applicationContext) {
         mApplicationContext = applicationContext.getApplicationContext();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String loadString(int id) {
         if (mStrings == null) {
             mStrings = new HashMap<Integer, SoftReference<String> >(mIdsArray.length);
@@ -35,7 +38,7 @@ public class L10nUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static String getLocalisedString(int id) {
         if (mStrings == null) {
             return loadString(id);

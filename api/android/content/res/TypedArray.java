@@ -1,10 +1,11 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class TypedArray {
     private final Resources mResources;
@@ -158,6 +159,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public String getNonConfigurationString(int index, int allowedChangingConfigs){
         String str = new String();
         str.addTaint(getTaint());
@@ -541,6 +543,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private boolean getValueAt(int index, TypedValue outValue){
 		outValue.type = 0;
         outValue.data = getTaintInt();
@@ -571,6 +574,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private CharSequence loadStringValueAt(int index){
         String str = new String();
         str.addTaint(getTaint());

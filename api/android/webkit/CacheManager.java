@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,10 +22,10 @@ import android.util.Log;
 import com.android.org.bouncycastle.crypto.Digest;
 import com.android.org.bouncycastle.crypto.digests.SHA1Digest;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class CacheManager {
     
@@ -52,6 +53,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     static private boolean createCacheDirectory() {
         assert !JniUtil.useChromiumHttpStack();
         if (!mBaseDir.exists()) {
@@ -212,6 +214,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated
     public static CacheResult createCacheFile(String url, int statusCode,
             Headers headers, String mimeType, boolean forceCache) {
@@ -381,7 +384,7 @@ public final class CacheManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isCachableRedirect(int statusCode) {
         if (statusCode == 301 || statusCode == 302 || statusCode == 307) {
             return true;
@@ -391,6 +394,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String getDatabaseKey(String url, long postIdentifier) {
         assert !JniUtil.useChromiumHttpStack();
         if (postIdentifier == 0) return url;
@@ -398,6 +402,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("deprecation")
     private static void setupFiles(String url, CacheResult cacheRet) {
         assert !JniUtil.useChromiumHttpStack();
@@ -452,6 +457,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void appendAsHex(int i, StringBuffer ret) {
         assert !JniUtil.useChromiumHttpStack();
         String hex = Integer.toHexString(i);
@@ -482,6 +488,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static CacheResult parseHeaders(int statusCode, Headers headers,
             String mimeType) {
         assert !JniUtil.useChromiumHttpStack();
@@ -808,7 +815,7 @@ OutputStream var586556CF1CDD9DA081CC8DC911E7A6E6_1341470846 =             outStr
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "24FE4CA1135DA21E8B00A4A2D819D5D2", hash_generated_method = "3969089D2E06A5D5A418BB6CA59DBC16")
         public void setContentLength(long contentLength) {
             this.contentLength = contentLength;

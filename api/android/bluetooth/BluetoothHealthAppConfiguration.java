@@ -1,12 +1,13 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class BluetoothHealthAppConfiguration implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.456 -0400", hash_original_field = "311C2C8498DF6A626CBDB8AA4193499C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
@@ -22,6 +23,7 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
 
     private int mChannelType;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.457 -0400", hash_original_method = "F1CCBE170029B3726B6812F4B24EEA34", hash_generated_method = "7ED2F71D8DDFD78BA3AB5CB6DEB14173")
       BluetoothHealthAppConfiguration(String name, int dataType) {
         mName = name;
@@ -36,6 +38,7 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.459 -0400", hash_original_method = "C6E2AF4F2B152BF94119581EC8280111", hash_generated_method = "A230CD7368896174A0FF070C5F95D18A")
       BluetoothHealthAppConfiguration(String name, int dataType, int role, int
         channelType) {
@@ -160,7 +163,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_2024313670 =         mName;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.467 -0400", hash_original_method = "1B2362EE05FDF056E4EF857CCB8AB5A5", hash_generated_method = "FA2201EDAC566C64A2508248AEE78163")
     public int getChannelType() {
         int varC29796028A7F353A6C6E1CD0E951F8F0_1077038123 = (mChannelType);

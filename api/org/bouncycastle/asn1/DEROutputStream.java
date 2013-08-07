@@ -1,13 +1,14 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class DEROutputStream extends FilterOutputStream implements DERTags {
     
@@ -20,6 +21,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.476 -0400", hash_original_method = "9630CA34FB2F7F75F5B62885DAC93016", hash_generated_method = "391E32B79C2B6ACECE7A1D11B605EE1E")
     private void writeLength(
         int length) throws IOException {

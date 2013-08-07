@@ -1,13 +1,14 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.Bundle;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CursorWrapper implements Cursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.779 -0400", hash_original_field = "F54BB255BEA99BFE91A331B490610EDF", hash_generated_field = "B2F25E19BD844FCC3F1C8464C0B5BC23")

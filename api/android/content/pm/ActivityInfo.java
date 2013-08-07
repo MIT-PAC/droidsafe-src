@@ -1,11 +1,12 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class ActivityInfo extends ComponentInfo implements Parcelable {
     public int theme;
@@ -41,6 +42,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private ActivityInfo(Parcel source) {
     	super(source);
         addTaint(source.readInt()); //theme
@@ -59,7 +61,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int activityInfoConfigToNative(int input){
 		return input;
 		// Original method
@@ -77,7 +79,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public int getRealConfigChanged(){
 		// Original method
 		/*
@@ -92,7 +94,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public final int getThemeResource() {
         return getTaintInt();
     }

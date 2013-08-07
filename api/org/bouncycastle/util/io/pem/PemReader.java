@@ -1,6 +1,7 @@
 package org.bouncycastle.util.io.pem;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -9,10 +10,10 @@ import java.util.List;
 
 import org.bouncycastle.util.encoders.Base64;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PemReader extends BufferedReader {
     
@@ -58,7 +59,7 @@ PemObject var540C13E9E156B687226421B24F2DF178_95504384 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.414 -0400", hash_original_method = "B4339AB43686CE97B8B754B51FC0C571", hash_generated_method = "3DCA2B19CA5D69CBD09E916C66812A08")
     private PemObject loadObject(String type) throws IOException {
         addTaint(type.getTaint());

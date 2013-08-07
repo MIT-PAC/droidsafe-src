@@ -1,9 +1,10 @@
 package android.text;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Editable
 extends CharSequence, GetChars, Spannable, Appendable

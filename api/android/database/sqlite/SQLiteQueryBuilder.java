@@ -1,6 +1,7 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -12,10 +13,10 @@ import android.database.DatabaseUtils;
 import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SQLiteQueryBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.992 -0400", hash_original_field = "CAC1605D9B4F31C278921D5EA4DD178B", hash_generated_field = "769F77C34DE42382B188666E269E7701")
@@ -178,7 +179,7 @@ String varDFAC709EF682E7EE77A36551B3D5FA40_753282632 =         mTables;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void appendClause(StringBuilder s, String name, String clause) {
         if (!TextUtils.isEmpty(clause)) {
             s.append(name);
@@ -283,6 +284,7 @@ Cursor var12E0F7DE1781C915D060A2E700D32EBB_1666779604 =         db.rawQueryWithF
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.009 -0400", hash_original_method = "A033D274CBE9E5A0C4BD18FE9EA6496C", hash_generated_method = "E024B6162D1ABDCE5627DC751D3C8BA8")
     private void validateSql(SQLiteDatabase db, String sql) {
         addTaint(sql.getTaint());
@@ -522,7 +524,7 @@ String varE73198DDFB7E7C53E7B645B55E7AD475_2012238173 =         query.toString()
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.023 -0400", hash_original_method = "37AD514842546773747C53CA078B5ACE", hash_generated_method = "B7BEDAB65622195BCC5E2DD13AB9AC1A")
     private String[] computeProjection(String[] projectionIn) {
         addTaint(projectionIn[0].getTaint());

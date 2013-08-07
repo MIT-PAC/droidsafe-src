@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
@@ -9,10 +10,10 @@ import java.util.Set;
 import java.util.TimeZone;
 
 import android.os.Parcel;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Metadata {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.863 -0400", hash_original_field = "4FCFEE3D082C4C61BD6B374EB2663F5D", hash_generated_field = "FECF2C1F375A3EF42076236F811E3099")
@@ -22,12 +23,14 @@ public class Metadata {
 
     private final HashMap<Integer, Integer> mKeyToPosMap = new HashMap<Integer, Integer>();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.863 -0400", hash_original_method = "42EB03B7CCF72771EC09BC7329CF6561", hash_generated_method = "DA29DB50537B7681661C6C11E0C14FF9")
     public  Metadata() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.864 -0400", hash_original_method = "AD5931B1126E13DCBE3F825449AFE253", hash_generated_method = "8B25AC667842DBEFFEEE2894F31FE089")
     private boolean scanAllRecords(Parcel parcel, int bytesLeft) {
         addTaint(bytesLeft);
@@ -85,6 +88,7 @@ public class Metadata {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.865 -0400", hash_original_method = "35CAF9C1FD62AB3C548A70E81DF2A0C5", hash_generated_method = "1C4776533CA58C0622AC8FBD010595EC")
     public boolean parse(Parcel parcel) {
         if(parcel.dataAvail() < kMetaHeaderSize)        
@@ -126,6 +130,7 @@ public class Metadata {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.865 -0400", hash_original_method = "87FE67157845253CBCE0E047F3C9B374", hash_generated_method = "971639A8FA3362E0A7A15BAB3371E24D")
     public Set<Integer> keySet() {
 Set<Integer> var19BD1B7180A2FD56EA0AAC27E469272A_1295618902 =         mKeyToPosMap.keySet();
@@ -270,19 +275,19 @@ Date varBD9B55B530F60709CCFA9E4F3BCA3194_98084209 =             cal.getTime();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int lastSytemId() {
         return LAST_SYSTEM;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int firstCustomId() {
         return FIRST_CUSTOM;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int lastType() {
         return LAST_TYPE;
     }

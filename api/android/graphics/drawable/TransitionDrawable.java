@@ -1,13 +1,14 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.os.SystemClock;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TransitionDrawable extends LayerDrawable implements Drawable.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "A7B20EF19631195D4CD5E5E59BE8ED91", hash_generated_field = "D70F55987D084695053B74ED3F9477FE")
@@ -55,7 +56,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_method = "EA80240A8BFE15F4A059DA8EDA5E6B2D", hash_generated_method = "783646D46B8A867D755590D4F91771E7")
     private  TransitionDrawable(TransitionState state, Resources res) {
         super(state, res);
@@ -65,7 +66,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.794 -0400", hash_original_method = "63330FC0726BC441343F8A6C1CE8445A", hash_generated_method = "420E6B132C9C9B47A613EB096B3CB9C3")
     private  TransitionDrawable(TransitionState state, Drawable[] layers) {
         super(layers, state);

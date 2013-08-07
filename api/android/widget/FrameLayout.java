@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -14,10 +15,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class FrameLayout extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.829 -0400", hash_original_field = "1FCB44928A1025EC3CED7E7B3EF3CA14", hash_generated_field = "CB728A1909AFA591F1BDDDA61ED16AE9")
@@ -270,7 +271,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.837 -0400", hash_original_method = "FF3A696BD56D74C1EF72BB71EC65ECEC", hash_generated_method = "3B848B6BB6DD5E62561117B22FD4A0F8")
     private int getPaddingLeftWithForeground() {
         int varDC0A3D7C1505A27B9E48C17AE34A1E81_606293913 = (mForegroundInPadding ? Math.max(mPaddingLeft, mForegroundPaddingLeft) :
@@ -283,7 +284,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.838 -0400", hash_original_method = "6F38D617A9DA11062600EF5C115E1518", hash_generated_method = "808275ECBCB643C1B21ED366DBBC1D18")
     private int getPaddingRightWithForeground() {
         int varB342987A4C294CA75C6949247823E4A8_764282444 = (mForegroundInPadding ? Math.max(mPaddingRight, mForegroundPaddingRight) :
@@ -296,7 +297,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.838 -0400", hash_original_method = "9A91E9D92D71EE5460C3A06ABC1FBD77", hash_generated_method = "0FD11F86F7A399038B15DDC02232FD95")
     private int getPaddingTopWithForeground() {
         int var746CA6AFF045068DF48405B11493A0EC_203595868 = (mForegroundInPadding ? Math.max(mPaddingTop, mForegroundPaddingTop) :
@@ -309,7 +310,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.838 -0400", hash_original_method = "6BA199CF08BDB4F9A10CECB43AC6A7C1", hash_generated_method = "5CE587B6DBFB59BB0A07C5328A588D04")
     private int getPaddingBottomWithForeground() {
         int varCAAEF7FF42994C83C26DE06A27165354_1404405162 = (mForegroundInPadding ? Math.max(mPaddingBottom, mForegroundPaddingBottom) :

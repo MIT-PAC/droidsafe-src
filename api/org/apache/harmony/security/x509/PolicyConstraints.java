@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
 
@@ -10,10 +11,10 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class PolicyConstraints extends ExtensionValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.584 -0400", hash_original_field = "B820DDFDE59782AF17624246D7206CD1", hash_generated_field = "1D29512805492C5F9F07DF75C64BA8D6")
@@ -53,7 +54,7 @@ public final class PolicyConstraints extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.586 -0400", hash_original_method = "8B4F6C3FF9A61E2FC4F0FDE77894DD6A", hash_generated_method = "27E4C2E709CB80A7E682C74912EB4D27")
     private  PolicyConstraints(BigInteger requireExplicitPolicy,
                             BigInteger inhibitPolicyMapping, byte[] encoding) {

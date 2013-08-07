@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -17,10 +18,10 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SSLSocketImpl extends SSLSocket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.537 -0400", hash_original_field = "3AE81331685336BDF4905577358403FE", hash_generated_field = "43A471CC626A390C3F42C96A293CE4F3")
@@ -629,6 +630,7 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_2040576798 =         appDataOS;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.559 -0400", hash_original_method = "14168DA1E68DB132A0DACBB007EAD125", hash_generated_method = "4A6C7BCC0141DA74C0F581BCD76FE06E")
     private void shutdown() {
         if(handshake_started)        
@@ -776,7 +778,7 @@ switch(type = recordProtocol.unwrap()){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.562 -0400", hash_original_method = "B11A6FC07E880C42041746EA2FD3607A", hash_generated_method = "0890397EA3AC763A30A556831EB1CD54")
     private void doHandshake() throws IOException {
         SSLEngineResult.HandshakeStatus status;
@@ -866,7 +868,7 @@ for(int i=0;i<size;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.562 -0400", hash_original_method = "1DCA961CD2F2BCD453967A97232AAFC6", hash_generated_method = "B3D04C5865EB60CA318C08AC4BF6AFC9")
     private void processAlert() throws IOException {
         if(!alertProtocol.hasAlert())        
@@ -902,6 +904,7 @@ switch(alertProtocol.getDescriptionCode()){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.563 -0400", hash_original_method = "716B8ABB2A0B730F9297C2C81BE3F29D", hash_generated_method = "B93E3A59AAFB02D7ECF8E3BD24C7E8AD")
     private void reportFatalAlert(byte description_code,
             SSLException reason) throws IOException {

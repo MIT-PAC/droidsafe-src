@@ -1,14 +1,15 @@
 package java.util.jar;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.charset.Charsets;
 import java.util.Map;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class InitManifest {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.685 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "779441B2743BF5C0505B790A17C97DE6")
@@ -115,7 +116,7 @@ class InitManifest {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.688 -0400", hash_original_method = "A5E7BCD31AF83D3157F8D11FE9DEE1F1", hash_generated_method = "900907833E116DA1E226E85844657A89")
     private boolean readHeader() throws IOException {
         if(consecutiveLineBreaks > 1)        
@@ -143,7 +144,7 @@ class InitManifest {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.689 -0400", hash_original_method = "BA591702B8733A5B91A49342DCC26BF2", hash_generated_method = "6B7BFD5658BB74276F733EA9E252937B")
     private void readName() throws IOException {
         int mark = pos;
@@ -193,7 +194,7 @@ class InitManifest {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.690 -0400", hash_original_method = "F963A8011A3FFB3111BBD881FC78A3FF", hash_generated_method = "260B9AFE843C2F0C6D7FEA3631B64457")
     private void readValue() throws IOException {
         boolean lastCr = false;

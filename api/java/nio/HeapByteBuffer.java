@@ -1,12 +1,13 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.io.Memory;
 import libcore.io.SizeOf;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class HeapByteBuffer extends BaseByteBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.086 -0400", hash_original_field = "8D50CD27AA8B6BEC65C484FFCC5B2334", hash_generated_field = "09D04850ECF89DF686CB8B497D53F4F4")

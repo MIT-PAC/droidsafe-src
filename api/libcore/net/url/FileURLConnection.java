@@ -1,6 +1,7 @@
 package libcore.net.url;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -14,10 +15,10 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import libcore.net.UriCodec;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class FileURLConnection extends URLConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.182 -0400", hash_original_field = "5B063E275D506F65EBF1B02D926F19A4", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
@@ -183,6 +184,7 @@ String var74BE35FB698BCBEC5E595F7D368A5F61_1929148891 =         "content/unknown
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.186 -0400", hash_original_method = "D31BC01A8E6F1896A7501EEF99417267", hash_generated_method = "17A79D4062B04FAA1CC4B2FBB6778B64")
     private InputStream getDirectoryListing(File f) {
         addTaint(f.getTaint());

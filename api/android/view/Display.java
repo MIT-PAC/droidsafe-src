@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.res.CompatibilityInfo;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -8,10 +9,10 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.util.DisplayMetrics;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Display {
@@ -101,7 +102,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "79B8C4439194701109AF7AA6129A555C", hash_generated_method = "CCC57910A60FFFE46777166360FEAAD3")
     private void getSizeInternal(Point outSize, boolean doCompat) {
         addTaint(doCompat);
@@ -162,7 +163,7 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "404C4EF6FA3AD3B9975B754C597D6C0E", hash_generated_method = "9F72D0A1C69A802F93E9E2B86E2A3209")
     public int getMaximumSizeDimension() {
         try 
@@ -245,7 +246,7 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "B1AC967D724C688D478E66D81CB079DE", hash_generated_method = "62C7E3CE07717E516B996020BB6FD984")
     public void getRealSize(Point outSize) {
         addTaint(outSize.getTaint());
@@ -283,7 +284,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "1DDDF7191F0FF0F7297CF97C1DA4B799", hash_generated_method = "53F5931042A3A9ABEB0BD425BAE35711")
     public int getRawWidth() {
         int w = getRawWidthNative();
@@ -306,7 +307,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.522 -0400", hash_original_method = "3ACB8E9BEACC517B317C29EAF3634629", hash_generated_method = "0DD5CC70672A02C5C6E0CFE6C5F91284")
     public int getRawHeight() {
         int h = getRawHeightNative();
@@ -401,7 +402,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "EF32DD6952DB89EBAA6A7EFF5769279F", hash_generated_method = "CEB9F6CDC024DCF0EC6F879D5778E32C")
     public void getRealMetrics(DisplayMetrics outMetrics) {
         addTaint(outMetrics.getTaint());
@@ -418,7 +419,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "FDECD188634E4AD18CD2905FF365772D", hash_generated_method = "763FA032A6C73A5F121D489A6F4E2EE3")
     public int getRawExternalWidth() {
         int varDA11E8CD1811ACB79CCF0FD62CD58F86_1656875826 = (1280);
@@ -429,7 +430,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_method = "376AC17F1270BAB2AB31395345202FD2", hash_generated_method = "DB8AA79266E59B237C0461FF2BC2753B")
     public int getRawExternalHeight() {
         int var5F2C22CB4A5380AF7CA75622A6426917_669291068 = (720);
@@ -440,7 +441,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_method = "9D75A337ADB9CB99DE08523595E3FF43", hash_generated_method = "076F3564DD94D07B124591656DC49DE9")
     public void getMetricsWithSize(DisplayMetrics outMetrics,
             int width, int height) {
@@ -487,7 +488,7 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHolder compat) {
         return new Display(displayId, compat);
     }

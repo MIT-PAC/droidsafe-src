@@ -1,6 +1,7 @@
 package javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 public interface ContentLanguageHeader extends Header {

@@ -1,15 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_field = "DC179BC931E5CE19266490D4C791F6F9", hash_generated_field = "99404527879A26BB1EA746B8950DD10D")
@@ -184,7 +185,7 @@ Iterator<E> var286E0827A1FF5574E4CA8F3B053AEA56_1723938179 =         backingMap.
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.224 -0400", hash_original_method = "338B1A875F3BC7E4991A09D0F5CEB0AA", hash_generated_method = "07AF6EC737A10200DDD2FAF359C27B81")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -207,7 +208,7 @@ for(E e : this)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.224 -0400", hash_original_method = "A3FDF0D301AE73958000FBEC5434608A", hash_generated_method = "E8E7D5F7F203631BFBFB53FE54177525")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,

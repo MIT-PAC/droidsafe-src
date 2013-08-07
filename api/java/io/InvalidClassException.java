@@ -1,10 +1,11 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class InvalidClassException extends ObjectStreamException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.135 -0400", hash_original_field = "26B2A720F7B8C9BD8D3999C52DA409D0", hash_generated_field = "B0C75E444ABFD30811DA4022885A4FE7")

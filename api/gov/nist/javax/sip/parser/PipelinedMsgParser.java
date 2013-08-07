@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Debug;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.header.ContentLength;
@@ -10,10 +11,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class PipelinedMsgParser implements Runnable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.302 -0400", hash_original_field = "0BFCB22B0FA3021CB632B75985A84AE3", hash_generated_field = "E951DA693006702904D44903EC071300")
@@ -78,7 +79,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static synchronized int getNewUid() {
         return uid++;
     }
@@ -123,6 +124,7 @@ Object var74E4690D9F2A026504928C017944E149_149281408 =         p;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.310 -0400", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "9F7A26902C941701466974C623B38E65")
     private String readLine(InputStream inputStream) throws IOException {
         addTaint(inputStream.getTaint());

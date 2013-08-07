@@ -1,12 +1,13 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     private final DataSetObservable mDataSetObservable = new DataSetObservable();

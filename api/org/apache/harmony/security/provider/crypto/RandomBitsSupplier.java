@@ -1,16 +1,17 @@
 package org.apache.harmony.security.provider.crypto;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.ProviderException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RandomBitsSupplier implements SHA1_Data {
     
@@ -27,6 +28,7 @@ public class RandomBitsSupplier implements SHA1_Data {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static synchronized byte[] getUnixDeviceRandom(int numBytes) {
         byte[] bytes = new byte[numBytes];
         int total = 0;

@@ -1,6 +1,7 @@
 package org.apache.http.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.apache.http.util.CharArrayBuffer;

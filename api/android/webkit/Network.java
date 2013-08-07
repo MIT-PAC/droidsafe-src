@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Map;
@@ -16,10 +17,10 @@ import android.net.http.RequestHandle;
 import android.net.http.RequestQueue;
 import android.net.http.SslError;
 import android.os.Bundle;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class Network {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.611 -0400", hash_original_field = "1E809564B7DE2310DE54967FAFFCD227", hash_generated_field = "319865EBA225C5210ACF05AB725BAB66")
@@ -47,6 +48,7 @@ class Network {
 
     private RoamingMonitor mRoamingMonitor;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.612 -0400", hash_original_method = "27D599105D57C8AB9F99EAD7FE1A52D5", hash_generated_method = "8617DCB17BA1660FC623DB379F5D12C3")
     private  Network(Context context) {
         if(DebugFlags.NETWORK)        
@@ -107,7 +109,7 @@ class Network {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.645 -0400", hash_original_method = "7636534D5021AA0AC5AC07906EACA40E", hash_generated_method = "573E850B74569715EC91B0516CBFD4A2")
     private void monitorRoaming() {
         mRoamingMonitor = new RoamingMonitor();
@@ -122,6 +124,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.645 -0400", hash_original_method = "7D0FFF1DC9E3EFF208EFD53429D521D6", hash_generated_method = "B10BAEFD110786AC7BA45D78FABC82CA")
     private void stopMonitoringRoaming() {
         if(mRoamingMonitor != null)        

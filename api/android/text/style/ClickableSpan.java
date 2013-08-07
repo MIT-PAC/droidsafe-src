@@ -1,11 +1,12 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.TextPaint;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class ClickableSpan extends CharacterStyle implements UpdateAppearance {
     

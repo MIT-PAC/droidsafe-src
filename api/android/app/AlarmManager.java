@@ -1,9 +1,10 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.RemoteException;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class AlarmManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.885 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "86B776A6A69718EFA060C569C84D8641")

@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
@@ -13,10 +14,10 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Service extends ContextWrapper implements ComponentCallbacks2 {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.131 -0400", hash_original_field = "4637F257714ED0010AAAD4B2D42CA0B5", hash_generated_field = "4DECD94BE6B0174DE36067CBF50C84C9")
@@ -231,6 +232,7 @@ Application varF254F0ADF054F0318B65674CA3670A5E_2075624035 =         mApplicatio
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.146 -0400", hash_original_method = "3B13E95A68EC397B0EFBCB7AA4B170BC", hash_generated_method = "6045C21E4FADE12E063F2EF52169C031")
     @Deprecated
     public final void setForeground(boolean isForeground) {
@@ -296,6 +298,7 @@ Application varF254F0ADF054F0318B65674CA3670A5E_2075624035 =         mApplicatio
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.153 -0400", hash_original_method = "9EEE96C6B536EA578538BBE977205B62", hash_generated_method = "55AE90E37C54EA0349E76D75234CC35B")
     public final void attach(
             Context context,

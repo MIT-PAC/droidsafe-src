@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,10 +23,10 @@ import com.android.internal.telephony.gsm.GsmSMSDispatcher;
 import com.android.internal.telephony.gsm.SimCard;
 import com.android.internal.telephony.ims.IsimRecords;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CDMALTEPhone extends CDMAPhone {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.095 -0400", hash_original_field = "5FF746CE02B754A19471A70F50E4C815", hash_generated_field = "27F27AE32D7151DB014BA8DF2F1FF61C")
@@ -184,6 +185,7 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_625460955 =         ret;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.869 -0400", hash_original_method = "55A3B9E950023A6988A6B5C4DCBDEA6C", hash_generated_method = "9D68D09A9CDC24FE2E8AF94F0D427509")
     private void handleSetSelectNetwork(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -379,6 +381,7 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_1635702481 =         mIccRecords.getM
 
         public String operatorAlphaLong;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.873 -0400", hash_original_method = "3039E12EC83A8AA31D55051619D54055", hash_generated_method = "3039E12EC83A8AA31D55051619D54055")
         public NetworkSelectMessage ()
         {

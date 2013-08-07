@@ -1,15 +1,16 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 
 import android.graphics.Paint;
 import android.text.style.UpdateLayout;
 import android.text.style.WrapTogetherSpan;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DynamicLayout extends Layout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.528 -0400", hash_original_field = "70C30248F16505818D6F9EB3DE4F855F", hash_generated_field = "15367B8B2C746CFC484DB8A82189D9A1")
@@ -193,7 +194,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.537 -0400", hash_original_method = "680F026D747328AC88C64FC8C5845240", hash_generated_method = "939D984A7088BFC70E0A97943BE89E32")
     private void reflow(CharSequence s, int where, int before, int after) {
         addTaint(after);
@@ -529,6 +530,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1975399395 =         mObjects.get
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.539 -0400", hash_original_method = "86BF27AD60282A12928BABF6F115B549", hash_generated_method = "36F92D39253E7DA824E28AC9FE3A6464")
         private void reflow(CharSequence s, int where, int before, int after) {
             addTaint(after);

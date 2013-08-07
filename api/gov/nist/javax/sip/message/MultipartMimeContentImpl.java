@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.HeaderFactoryExt;
 import gov.nist.javax.sip.header.HeaderFactoryImpl;
 
@@ -13,10 +14,10 @@ import javax.sip.header.ContentDispositionHeader;
 import javax.sip.header.ContentTypeHeader;
 import javax.sip.header.Header;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MultipartMimeContentImpl implements MultipartMimeContent {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.880 -0400", hash_original_field = "1405CE9A3C3312B897AB90A8EB46A75F", hash_generated_field = "FD0E7DDD1AF822BB0A779B8E067816D9")

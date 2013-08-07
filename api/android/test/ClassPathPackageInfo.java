@@ -1,12 +1,13 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collections;
 import java.util.Set;
 
 import com.google.android.collect.Sets;
 
-import droidsafe.annotations.*;
+
 
 public class ClassPathPackageInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.367 -0400", hash_original_field = "36CD38F49B9AFA08222C0DC9EBFE35EB", hash_generated_field = "FD7D781D3D61CDBFBA455DBEB931B016")
@@ -71,6 +72,7 @@ Set<Class<?>> varD2D4612E029977363A9BBEBD4F0339C0_832339472 =         set;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.374 -0400", hash_original_method = "0BDCB6DD30A5E7EF4568BA987D7AB3D6", hash_generated_method = "277039752B920F89D35C56BA67C17A49")
     private void addTopLevelClassesTo(Set<Class<?>> set) {
         addTaint(set.getTaint());

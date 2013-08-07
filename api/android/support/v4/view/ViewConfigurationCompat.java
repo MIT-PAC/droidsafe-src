@@ -1,9 +1,10 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.view.ViewConfiguration;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class ViewConfigurationCompat {
     

@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Binder;
 import android.os.IBinder;
@@ -10,10 +11,10 @@ import android.view.View;
 
 import com.android.internal.statusbar.IStatusBarService;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StatusBarManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.291 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -26,6 +27,7 @@ public class StatusBarManager {
 
     private IBinder mToken = new Binder();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.291 -0400", hash_original_method = "3CFEC728F9006821D55520F81F0C151A", hash_generated_method = "AA88790BF74B94A758B0908E6E9AD026")
       StatusBarManager(Context context) {
         mContext = context;
@@ -34,6 +36,7 @@ public class StatusBarManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.292 -0400", hash_original_method = "1D3FF7F9C7208A1463AE69512DB03B53", hash_generated_method = "A59AA6A78A27D7B9FE5EEDE5576DB985")
     private synchronized IStatusBarService getService() {
         if(mService == null)        
@@ -59,6 +62,7 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_450290913 =         mServi
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.293 -0400", hash_original_method = "C0418D4EF5E5492E87411EACA6ADF7F3", hash_generated_method = "E294DE41EB64E8CFD05C13A8EAB09425")
     public void disable(int what) {
         addTaint(what);
@@ -88,6 +92,7 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_450290913 =         mServi
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.294 -0400", hash_original_method = "5BF2BF9E6EAB3A672A6E4C279ED476B8", hash_generated_method = "66256E6F09E5C471FCDEA5849678C748")
     public void expand() {
         try 
@@ -116,6 +121,7 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_450290913 =         mServi
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.295 -0400", hash_original_method = "E2C83593B12AFE0B35E16B01E1A7A647", hash_generated_method = "FB056B616E45FDA3683F0D6C2D040043")
     public void collapse() {
         try 
@@ -144,7 +150,7 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_450290913 =         mServi
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.295 -0400", hash_original_method = "8A330421DEC3E061C169D87595A7D18D", hash_generated_method = "FF2FBDF53C6F9D1BB22FC9A20C76BD7D")
     public void setIcon(String slot, int iconId, int iconLevel, String contentDescription) {
         addTaint(contentDescription.getTaint());
@@ -179,7 +185,7 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_450290913 =         mServi
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.296 -0400", hash_original_method = "D02D0B03CC45E73478507B52DB06904B", hash_generated_method = "E7FB8425B1A88C6116E53DA7B40945F1")
     public void removeIcon(String slot) {
         addTaint(slot.getTaint());
@@ -209,7 +215,7 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_450290913 =         mServi
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.297 -0400", hash_original_method = "59E45760864584BE81198BD1AADB01C2", hash_generated_method = "3808104A40FA297AEEF0AC962B18E911")
     public void setIconVisibility(String slot, boolean visible) {
         addTaint(visible);

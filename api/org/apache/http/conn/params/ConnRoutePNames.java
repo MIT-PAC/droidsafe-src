@@ -1,6 +1,7 @@
 package org.apache.http.conn.params;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ConnRoutePNames {
 

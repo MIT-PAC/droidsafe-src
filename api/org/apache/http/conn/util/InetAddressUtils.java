@@ -1,13 +1,15 @@
 package org.apache.http.conn.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.regex.Pattern;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class InetAddressUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.100 -0400", hash_original_method = "E7DF1187E83FF322875E27EB624FDD7F", hash_generated_method = "888B48C74A32AFD9606BF2D2E8E545B4")
     private  InetAddressUtils() {
         // ---------- Original Method ----------

@@ -1,13 +1,14 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.103 -0400", hash_original_field = "64F93D01E165083D0DC505B68AA2262A", hash_generated_field = "DEE7EAAE0C2AC4A8B1FAFE0F9E9DFB7A")
@@ -48,7 +49,7 @@ public abstract class Handler {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.106 -0400", hash_original_method = "505322F9A2F9CDB1C20F31F6B7CB4718", hash_generated_method = "7C698E7776B961B2E958904B8924A0C3")
     private Object getDefaultInstance(String className) {
         addTaint(className.getTaint());

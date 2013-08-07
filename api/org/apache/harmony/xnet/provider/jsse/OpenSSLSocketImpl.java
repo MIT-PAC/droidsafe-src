@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,10 +34,10 @@ import org.apache.harmony.security.provider.cert.X509CertImpl;
 
 import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements NativeCrypto.SSLHandshakeCallbacks {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.947 -0400", hash_original_field = "7A26561346F073823CD60CDE206B36E2", hash_generated_field = "748A6049ACB01D98F85E21799F2EB11A")
@@ -220,6 +221,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.952 -0400", hash_original_method = "33D1B746D20986D17267826F3151AB68", hash_generated_method = "1522001EEC8F25FDDDBF64710A57BDF4")
     private void init(SSLParametersImpl sslParameters) throws IOException {
         addTaint(sslParameters.getTaint());
@@ -235,7 +237,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.953 -0400", hash_original_method = "28ECC4752D5D2759E8F75423B7F304E1", hash_generated_method = "85DC27B70EC2B768C744122A7207BA7A")
     private void init(SSLParametersImpl sslParameters,
                       String[] enabledProtocols,
@@ -253,6 +255,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.954 -0400", hash_original_method = "DB9C757E33C47645F1FC9AEA51E10B24", hash_generated_method = "5C09BB3E084D027EF05EB94D693C9F57")
     private OpenSSLSessionImpl getCachedClientSession(ClientSessionContext sessionContext) {
         addTaint(sessionContext.getTaint());
@@ -338,6 +341,7 @@ OpenSSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_237636930 =         sessi
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.955 -0400", hash_original_method = "8DC54C39C6445BAF3181407C830C5887", hash_generated_method = "6F4438F8906DF5E810BF076E37186984")
     private void checkOpen() throws SocketException {
         if(isClosed())        
@@ -588,6 +592,7 @@ for(String keyType : keyTypes)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static X509Certificate[] createCertChain(byte[][] certificatesBytes) {
         if (certificatesBytes == null) {
             return null;
@@ -604,6 +609,7 @@ for(String keyType : keyTypes)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.961 -0400", hash_original_method = "447042B984B2D213A231B86095B05FCC", hash_generated_method = "B044C5B5B79AB370CE5F6B68105524FA")
     private void setCertificate(String alias) throws CertificateEncodingException, SSLException {
         addTaint(alias.getTaint());
@@ -717,6 +723,7 @@ for(int i = 0;i < asn1DerEncodedPrincipals.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.962 -0400", hash_original_method = "7C2534895E7335878B6E22FB6F2D87D0", hash_generated_method = "4E547F7B5CEB63DA48BFCC2769E0B044")
     private void notifyHandshakeCompletedListeners() {
         if(listeners != null && !listeners.isEmpty())        
@@ -1281,6 +1288,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_994533848 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.971 -0400", hash_original_method = "0B5EFC2C593350712C0760AFE47F069D", hash_generated_method = "9E089A296342E7DA8FE064679399176B")
     private void free() {
         if(sslNativePointer == 0)        

@@ -1,15 +1,16 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class CharsetDecoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.509 -0400", hash_original_field = "61628476CEFEE98E133C4A262D6104E7", hash_generated_field = "529EF1EB47EC503C08AD8590AE0F62F5")
@@ -142,6 +143,7 @@ CharBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_163917115 =         output;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.514 -0400", hash_original_method = "297219195E5B4473685A201861AC1DC3", hash_generated_method = "5A8EC11F5198E95956BA645C9AEFD9E2")
     private void checkCoderResult(CoderResult result) throws CharacterCodingException {
         addTaint(result.getTaint());
@@ -167,6 +169,7 @@ CharBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_163917115 =         output;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.519 -0400", hash_original_method = "D4DFBF2849FE3731857D4FDEE2ED4787", hash_generated_method = "E41C87AC35041D530E6F8B95172A519A")
     private CharBuffer allocateMore(CharBuffer output) {
         addTaint(output.getTaint());

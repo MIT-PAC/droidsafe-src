@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 
 import android.content.ComponentName;
@@ -34,10 +35,10 @@ import android.view.accessibility.AccessibilityEvent;
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.711 -0400", hash_original_field = "581D71027A593FE178E11F8CF96A261F", hash_generated_field = "8ACEFA51F1C212AC94944686D7E3BDFC")
@@ -164,6 +165,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.718 -0400", hash_original_method = "845C16E53E1BE45A2BA7FF67CD257C6C", hash_generated_method = "E1811EB5F89C0A6FE0913B6E63230420")
     @Deprecated
     protected  Dialog(Context context, boolean cancelable,
@@ -378,6 +380,7 @@ Activity var1F93BAB3C8E73BD5DD59D84CA7D69EBB_626784901 =         mOwnerActivity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.727 -0400", hash_original_method = "866BAFBEBC09B92D7388CA2F75E61BAD", hash_generated_method = "02F2465081B30BD7BCD9FE91F06BA52C")
     private void sendDismissMessage() {
         if(mDismissMessage != null)        
@@ -391,6 +394,7 @@ Activity var1F93BAB3C8E73BD5DD59D84CA7D69EBB_626784901 =         mOwnerActivity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.728 -0400", hash_original_method = "02D405BDD0443049D755381D9E715694", hash_generated_method = "21B6817432E19F232C011E2D2DD82365")
     private void sendShowMessage() {
         if(mShowMessage != null)        
@@ -1251,6 +1255,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1917337497 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.768 -0400", hash_original_method = "2C0F3C4A58B092DBFC10EA72C5A7ED76", hash_generated_method = "648F7D99CDDB85661F4AA09CE095CE8B")
     private ComponentName getAssociatedActivity() {
         Activity activity = mOwnerActivity;

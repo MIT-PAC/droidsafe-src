@@ -1,15 +1,16 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.apache.harmony.security.asn1.ASN1Enumerated;
 import org.apache.harmony.security.asn1.ASN1Type;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ReasonCode extends ExtensionValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.674 -0400", hash_original_field = "C13367945D5D4C91047B3B50234AA7AB", hash_generated_field = "38BD380FAFFB7B224FC85C442EDC81E3")

@@ -1,12 +1,13 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implements Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.893 -0400", hash_original_field = "FB94A9C20B79E783DE4BCF1F79EAF776", hash_generated_field = "0757B9C0415F73A0D91556E8A81F8809")
@@ -211,6 +212,7 @@ Object var60FC9F22F7E863EBFD33B2ADB8462743_854371647 =         proxy;
 
         private E[] elements;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.898 -0400", hash_original_method = "F430ADBE7D405D29614A0779FFE3FD6E", hash_generated_method = "F430ADBE7D405D29614A0779FFE3FD6E")
         public SerializationProxy ()
         {
@@ -218,7 +220,7 @@ Object var60FC9F22F7E863EBFD33B2ADB8462743_854371647 =         proxy;
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.899 -0400", hash_original_method = "60C5F56392547A20884548FBBB7D801A", hash_generated_method = "F9E63A5A4DCA43DE2A708F3A2223E1C5")
         private Object readResolve() {
             EnumSet<E> set = EnumSet.noneOf(elementType);

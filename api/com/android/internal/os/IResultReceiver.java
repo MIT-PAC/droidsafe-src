@@ -1,6 +1,7 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IResultReceiver extends android.os.IInterface
 {

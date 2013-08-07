@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,10 +14,10 @@ import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import java.util.zip.CheckedInputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class FileUtils {
@@ -28,6 +29,7 @@ public class FileUtils {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static boolean getFileStatus(String path, FileStatus status) {
         StrictMode.noteDiskRead();
         return getFileStatusNative(path, status);
@@ -64,6 +66,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean sync(FileOutputStream stream) {
         try {
             if (stream != null) {
@@ -76,6 +79,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean copyFile(File srcFile, File destFile) {
         boolean result = false;
         try {
@@ -92,6 +96,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean copyToFile(InputStream inputStream, File destFile) {
         try {
             if (destFile.exists()) {
@@ -119,11 +124,13 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isFilenameSafe(File file) {
         return SAFE_FILENAME_PATTERN.matcher(file.getPath()).matches();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String readTextFile(File file, int max, String ellipsis) throws IOException {
         InputStream input = new FileInputStream(file);
         try {
@@ -171,6 +178,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void stringToFile(String filename, String string) throws IOException {
         FileWriter out = new FileWriter(filename);
         try {
@@ -181,6 +189,7 @@ public class FileUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long checksumCrc32(File file) throws FileNotFoundException, IOException {
         CRC32 checkSummer = new CRC32();
         CheckedInputStream cis = null;

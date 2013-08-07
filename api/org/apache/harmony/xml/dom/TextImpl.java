@@ -1,13 +1,14 @@
 package org.apache.harmony.xml.dom;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class TextImpl extends CharacterDataImpl implements Text {
     
@@ -149,7 +150,7 @@ Text varDC838461EE2FA0CA4C9BBB70A15456B0_768671805 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.712 -0400", hash_original_method = "9928E14A90ED22F7792AF824C555C38E", hash_generated_method = "0CBA2B4799D69800D7690A8E15929938")
     private TextImpl firstTextNodeInCurrentRun() {
         TextImpl firstTextInCurrentRun = this;
@@ -182,7 +183,7 @@ TextImpl var0029222DF1606034C9ECFB713BE58214_319112207 =         firstTextInCurr
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.712 -0400", hash_original_method = "E11C938286265122BF52D51A5CD9EED3", hash_generated_method = "53A392CD9624372A3D6D566D252765CB")
     private TextImpl nextTextNode() {
         Node nextSibling = getNextSibling();

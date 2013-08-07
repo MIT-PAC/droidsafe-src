@@ -1,6 +1,7 @@
 package javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.sip.address.URI;
 
 public interface WWWAuthenticateHeader extends AuthorizationHeader {

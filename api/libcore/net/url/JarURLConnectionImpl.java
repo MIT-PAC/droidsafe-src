@@ -1,6 +1,7 @@
 package libcore.net.url;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -20,10 +21,10 @@ import java.util.jar.JarFile;
 import java.util.zip.ZipFile;
 
 import libcore.net.UriCodec;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class JarURLConnectionImpl extends JarURLConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.356 -0400", hash_original_field = "7513C8779F857C1C660563D5E54D3D36", hash_generated_field = "07485ED06E2A407A7D38E89DF7EA433B")
@@ -87,6 +88,7 @@ JarFile var8E1F414344626BA4FB59E50115387315_2102347690 =         jarFile;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.359 -0400", hash_original_method = "E0D7867F43E3325F58427586B81262FC", hash_generated_method = "17CECF61D0E9A3E8901B06FA680C7162")
     private void findJarFile() throws IOException {
         JarFile jar = null;
@@ -233,6 +235,7 @@ JarEntry varAD3A77394289B6D52417AADF8827369A_1717278875 =         jarEntry;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.362 -0400", hash_original_method = "47E7331F0B55D0071578FE2F3BE66635", hash_generated_method = "E465B88CFA3B12B90F70837AC3543A89")
     private void findJarEntry() throws IOException {
         if(getEntryName() == null)        

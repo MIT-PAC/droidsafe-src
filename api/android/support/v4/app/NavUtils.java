@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -8,13 +9,14 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NavUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.691 -0400", hash_original_method = "E75D43BE6A1853BDB1330AA34521ED0F", hash_generated_method = "40223732185F53587003CD833DE7D091")
     private  NavUtils() {
         // ---------- Original Method ----------

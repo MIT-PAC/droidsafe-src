@@ -1,14 +1,15 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 final class DualPivotQuicksort {
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.303 -0400", hash_original_method = "7D881BD1A8E4D4C26C8DF479B09D2287", hash_generated_method = "9C971A81550C1F38D789FED4E5A30339")
     private  DualPivotQuicksort() {
         // ---------- Original Method ----------
@@ -28,7 +29,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void doSort(int[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -45,7 +46,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void dualPivotQuicksort(int[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -181,7 +182,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void doSort(long[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -198,7 +199,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void dualPivotQuicksort(long[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -334,7 +335,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void doSort(short[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -362,7 +363,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void dualPivotQuicksort(short[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -498,7 +499,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void doSort(char[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -525,7 +526,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void dualPivotQuicksort(char[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -661,7 +662,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void doSort(byte[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -689,7 +690,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void dualPivotQuicksort(byte[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -825,7 +826,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void sortNegZeroAndNaN(float[] a, int left, int right) {
         final int NEGATIVE_ZERO = Float.floatToIntBits(-0.0f);
         int numNegativeZeros = 0;
@@ -854,7 +855,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int findAnyZero(float[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
@@ -870,7 +871,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void doSort(float[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -887,7 +888,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void dualPivotQuicksort(float[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;
@@ -1023,7 +1024,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void sortNegZeroAndNaN(double[] a, int left, int right) {
         final long NEGATIVE_ZERO = Double.doubleToLongBits(-0.0d);
         int numNegativeZeros = 0;
@@ -1052,7 +1053,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int findAnyZero(double[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
@@ -1068,7 +1069,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void doSort(double[] a, int left, int right) {
         if (right - left + 1 < INSERTION_SORT_THRESHOLD) {
             for (int i = left + 1; i <= right; i++) {
@@ -1085,7 +1086,7 @@ final class DualPivotQuicksort {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void dualPivotQuicksort(double[] a, int left, int right) {
         int sixth = (right - left + 1) / 6;
         int e1 = left  + sixth;

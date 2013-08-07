@@ -1,9 +1,10 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.telephony.PhoneNumberUtils;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class SuppServiceNotification {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.879 -0400", hash_original_field = "2C4033243BCB1298D8FC9ED74DC33162", hash_generated_field = "D837495804683F73D90BFDCC9932C2C7")
@@ -29,6 +30,7 @@ public class SuppServiceNotification {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.880 -0400", hash_original_method = "A03F8251EC229F0DECFD7D9A52A7C82D", hash_generated_method = "E2DF6EB38C6250BCA4DC0B8C7547568C")
     public String toString() {
 String varFD564195B2D314AB58505BEAE5A1510A_1366204967 =         super.toString() + " mobile"

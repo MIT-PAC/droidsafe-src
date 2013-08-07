@@ -1,13 +1,15 @@
 package java.math;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class Primality {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.226 -0400", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "BF7E1FB696DD619FEE28860391904779")
     private  Primality() {
         // ---------- Original Method ----------

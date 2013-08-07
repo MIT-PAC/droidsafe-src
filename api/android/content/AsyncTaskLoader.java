@@ -1,8 +1,9 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -225,6 +226,7 @@ D var7522CCD187CB392DA75B6694C38569FC_616122858 =         loadInBackground();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.325 -0400", hash_original_method = "13983B8AAAA767CBF57A8C7D5EF6BF65", hash_generated_method = "B676BD6A52869B5090A9640B485DB77E")
     public void waitForLoader() {
         LoadTask task = mTask;

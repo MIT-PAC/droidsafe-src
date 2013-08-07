@@ -1,15 +1,17 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Memory {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.625 -0400", hash_original_method = "8E748606B262B165332F0089DEAB291F", hash_generated_method = "65AB48DAC941764A247934D1396F6184")
     private  Memory() {
         // ---------- Original Method ----------

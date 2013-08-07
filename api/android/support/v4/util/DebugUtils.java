@@ -1,9 +1,10 @@
 package android.support.v4.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public class DebugUtils {
     
@@ -14,7 +15,7 @@ public class DebugUtils {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");

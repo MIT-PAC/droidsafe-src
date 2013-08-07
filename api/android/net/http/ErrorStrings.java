@@ -1,27 +1,30 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ErrorStrings {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.029 -0400", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "0498F89C8088675FDFC23A8A118F14B3")
     private  ErrorStrings() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getString(int errorCode, Context context) {
         return context.getText(getResource(errorCode)).toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getResource(int errorCode) {
         switch(errorCode) {
             case EventHandler.OK:

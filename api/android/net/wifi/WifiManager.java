@@ -1,6 +1,7 @@
 package android.net.wifi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import android.annotation.SdkConstant;
@@ -16,10 +17,10 @@ import android.os.WorkSource;
 
 import com.android.internal.util.AsyncChannel;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WifiManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.417 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "DB1464CA9C87828D9D93BD784121DA8C")
@@ -35,6 +36,7 @@ public class WifiManager {
 
     private AsyncChannel mAsyncChannel = new AsyncChannel();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.418 -0400", hash_original_method = "45AC664258FD08C08C588B627CDDFFBC", hash_generated_method = "B4F1E9EA15C43234D8FE3A9CE9AF5CBA")
     public  WifiManager(IWifiManager service, Handler handler) {
         mService = service;
@@ -110,6 +112,7 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_230204521 =         
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.422 -0400", hash_original_method = "E64504FDFA81026BF4EAE79A420D3010", hash_generated_method = "0C2739DCCB9DF9337379116B64874F00")
     private int addOrUpdateNetwork(WifiConfiguration config) {
         addTaint(config.getTaint());
@@ -207,6 +210,7 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_230204521 =         
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.427 -0400", hash_original_method = "4C2FCF871904470A4665E52D44D62875", hash_generated_method = "1BA8F87A87CA4418688E41CB10EB2A97")
     public void disableNetwork(int netId, int reason) {
         addTaint(reason);
@@ -348,6 +352,7 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_230204521 =         
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.435 -0400", hash_original_method = "1BECDA97215EAB893F9C0F926E7877B4", hash_generated_method = "960FF3A1865B5F5C0051A520401AB961")
     public boolean startScanActive() {
         try 
@@ -442,6 +447,7 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_2128924608 =             nu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.439 -0400", hash_original_method = "9549A9F9433914F9E55F5CC34183554C", hash_generated_method = "AB8215AB2A46AFE10B080E75EED6B225")
     public void setCountryCode(String country, boolean persist) {
         addTaint(persist);
@@ -460,6 +466,7 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_2128924608 =             nu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.440 -0400", hash_original_method = "4B6C5827C7D51FB40ECD8DD67D760E19", hash_generated_method = "780648C0C390E84DC57B3D184EDCD094")
     public void setFrequencyBand(int band, boolean persist) {
         addTaint(persist);
@@ -478,6 +485,7 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_2128924608 =             nu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.440 -0400", hash_original_method = "481BDDBC9D497285776974614BBC7D82", hash_generated_method = "160D7DE61B7D088EFFF851AA1440F75D")
     public int getFrequencyBand() {
         try 
@@ -501,6 +509,7 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_2128924608 =             nu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.441 -0400", hash_original_method = "F73D127A0D43FAD1AD9DBA6A689AC70A", hash_generated_method = "5B61129B2F1526B8F7B48320DE5D5CDA")
     public boolean isDualBandSupported() {
         try 
@@ -624,6 +633,7 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_1330563889 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.447 -0400", hash_original_method = "2BFE81971E8D979C3ECBD7F543427F67", hash_generated_method = "DABBF9717DEA43AD27DB1D63F2B9F50F")
     public boolean setWifiApEnabled(WifiConfiguration wifiConfig, boolean enabled) {
         addTaint(enabled);
@@ -651,6 +661,7 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_1330563889 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.448 -0400", hash_original_method = "B0BA72D208162E33734DF133F2E7F6AA", hash_generated_method = "99B4DD67606E16F8F798D5CD5F3FFD2A")
     public int getWifiApState() {
         try 
@@ -674,6 +685,7 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_1330563889 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.448 -0400", hash_original_method = "657EB8B0A945E7FD7BA91E2539A322BE", hash_generated_method = "DBA52A744FB070057D2F06FA531033A7")
     public boolean isWifiApEnabled() {
         boolean var2AD5E4D3AFB8F4B8AA800AF5E27BBAE9_1425319853 = (getWifiApState() == WIFI_AP_STATE_ENABLED);
@@ -684,6 +696,7 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_1330563889 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.449 -0400", hash_original_method = "99407E6898AC76390D3E229EC6CF35C4", hash_generated_method = "0E381B067728193D9AABE30ACEEA581E")
     public WifiConfiguration getWifiApConfiguration() {
         try 
@@ -707,6 +720,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.450 -0400", hash_original_method = "32645F13A37CD40BEF3F9464116D1367", hash_generated_method = "17889891F1A05AABE40475FBFF717A56")
     public boolean setWifiApConfiguration(WifiConfiguration wifiConfig) {
         addTaint(wifiConfig.getTaint());
@@ -733,6 +747,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.451 -0400", hash_original_method = "F505CF72442DFA261366294723957A53", hash_generated_method = "3815053CB65244B89621779CEBA75B95")
     public boolean startWifi() {
         try 
@@ -758,6 +773,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.452 -0400", hash_original_method = "F7F977701F133D0F59F048A53A2C698B", hash_generated_method = "7B1FD2692470EBDC1AF74E3EFDE8BBA5")
     public boolean stopWifi() {
         try 
@@ -783,6 +799,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.453 -0400", hash_original_method = "6E01C15F4CA49AC218CA465537508537", hash_generated_method = "F9FCA34728499923035948A9E3F0C019")
     public boolean addToBlacklist(String bssid) {
         addTaint(bssid.getTaint());
@@ -809,6 +826,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.454 -0400", hash_original_method = "614FAF75AF873709E1677408EE18D7B6", hash_generated_method = "384EE96B01853435E4D1A6BAD5F5BAF8")
     public boolean clearBlacklist() {
         try 
@@ -834,6 +852,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.455 -0400", hash_original_method = "F93FD4BCC6C0F6B375A42EEFE25B9408", hash_generated_method = "F0745431211788A9F31DAC89ED140603")
     public void asyncConnect(Context srcContext, Handler srcHandler) {
         addTaint(srcHandler.getTaint());
@@ -844,6 +863,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.456 -0400", hash_original_method = "B69D8EEDABB0031125B40805CA5F91D8", hash_generated_method = "FEE6B5B517EB6F3402902C4D90A6915C")
     public void connectNetwork(WifiConfiguration config) {
         addTaint(config.getTaint());
@@ -860,6 +880,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.457 -0400", hash_original_method = "9464671A8FCBA7A99848867493116AAD", hash_generated_method = "BF2CCD32967AD1DD1F5BC178139A1AAD")
     public void connectNetwork(int networkId) {
         addTaint(networkId);
@@ -876,6 +897,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.458 -0400", hash_original_method = "210177ED8E63F9C12E442B1614E4B9E7", hash_generated_method = "99E91FEBF569488B60C7CFA0FD7C1CC9")
     public void saveNetwork(WifiConfiguration config) {
         addTaint(config.getTaint());
@@ -892,6 +914,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.459 -0400", hash_original_method = "A04E73224B607EFF8F851CD080EF29BA", hash_generated_method = "54A1E6A6F717307C4C85F9C2E17F9960")
     public void forgetNetwork(int netId) {
         addTaint(netId);
@@ -908,6 +931,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.459 -0400", hash_original_method = "CB69F89B2E3E5728AFF3169858F2154E", hash_generated_method = "7E7690C8BFC0C5E0E1D371EC87A08CCB")
     public void startWps(WpsInfo config) {
         addTaint(config.getTaint());
@@ -924,6 +948,7 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_1133598784 =             n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.460 -0400", hash_original_method = "A358F8361C96DABE1A63B04B5804B3F5", hash_generated_method = "9DBA59B30A59B025D90ED5E4EAA3E9C3")
     public Messenger getMessenger() {
         try 
@@ -947,6 +972,7 @@ Messenger var540C13E9E156B687226421B24F2DF178_2051790017 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.462 -0400", hash_original_method = "F47F46BF01C13AECFB0A8E0A7BCA30AB", hash_generated_method = "67D2C02AF7729F26A640A16852BF6CAD")
     public String getConfigFile() {
         try 
@@ -1004,6 +1030,7 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_973696805 =         new Multic
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.464 -0400", hash_original_method = "36EA363278EADF8446AD30BF262D8211", hash_generated_method = "B181F6352DF73D2F66C8B5F35A1E33EC")
     public boolean isMulticastEnabled() {
         try 
@@ -1027,6 +1054,7 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_973696805 =         new Multic
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.465 -0400", hash_original_method = "03CE776E3230E83E55C388557E1A9516", hash_generated_method = "8E023DD90132F46D9B6586D5CA5886C4")
     public boolean initializeMulticastFiltering() {
         try 

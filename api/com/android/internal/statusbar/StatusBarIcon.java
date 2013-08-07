@@ -1,12 +1,13 @@
 package com.android.internal.statusbar;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StatusBarIcon implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.167 -0400", hash_original_field = "89BDC6D785F9592259F3FD88C8FC1DA7", hash_generated_field = "120E6CD15DC0115F43F5BF8A73434313")

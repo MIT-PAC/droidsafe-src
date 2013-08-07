@@ -1,13 +1,14 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class HardwareCanvas extends Canvas {
     
@@ -18,7 +19,7 @@ public abstract class HardwareCanvas extends Canvas {
     }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.414 -0400", hash_original_method = "BD882F06CCC6AC9974E10A9883BC45CA", hash_generated_method = "32D0010EFAD0960CA2AF0CE769CE07C5")
     @Override
     public boolean isHardwareAccelerated() {
@@ -30,7 +31,7 @@ public abstract class HardwareCanvas extends Canvas {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.414 -0400", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "7462F96BF1C63630B7D25EC3C339A546")
     @Override
     public void setBitmap(Bitmap bitmap) {
@@ -63,7 +64,7 @@ public abstract class HardwareCanvas extends Canvas {
     abstract void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint);
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.416 -0400", hash_original_method = "0FE8E55D6D4280D2FC5B882C82F13271", hash_generated_method = "F5E0E18D1F71B3D61E7E551BE94BFB72")
     public boolean callDrawGLFunction(int drawGLFunction) {
         addTaint(drawGLFunction);

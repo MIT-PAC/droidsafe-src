@@ -1,6 +1,7 @@
 package android.app.admin;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,10 +28,10 @@ import android.util.AttributeSet;
 import android.util.Printer;
 import android.util.SparseArray;
 import android.util.Xml;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class DeviceAdminInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.545 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "2D4BD551D6F35F2FF0B83E0BB38D3A72")
@@ -282,6 +283,7 @@ String varDD87F71CE88E649A307A99E76E33B4BE_1503969972 =         sRevKnownPolicie
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.559 -0400", hash_original_method = "ED92B1C7E9AB1C3DE434E84362F61420", hash_generated_method = "7F144ECFEE6AA34F506CABBDCCA11BAE")
     public ArrayList<PolicyInfo> getUsedPolicies() {
         ArrayList<PolicyInfo> res = new ArrayList<PolicyInfo>();
@@ -308,7 +310,7 @@ ArrayList<PolicyInfo> varB5053E025797B3BF768F5C37934C244D_857479402 =         re
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.562 -0400", hash_original_method = "9540BEA2A1ABEB78FD332A0993AE68E4", hash_generated_method = "4B3338A8DE0DA566E6DE84827D5710FC")
     public void writePoliciesToXml(XmlSerializer out) throws IllegalArgumentException, IllegalStateException, IOException {
         addTaint(out.getTaint());
@@ -318,7 +320,7 @@ ArrayList<PolicyInfo> varB5053E025797B3BF768F5C37934C244D_857479402 =         re
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.565 -0400", hash_original_method = "8AE790C821B5E4F39ADC01FFE00626E1", hash_generated_method = "8C9590F7F9DB5EE5A22B3E48C1DCA69F")
     public void readPoliciesFromXml(XmlPullParser parser) throws XmlPullParserException, IOException {
         mUsesPolicies = Integer.parseInt(

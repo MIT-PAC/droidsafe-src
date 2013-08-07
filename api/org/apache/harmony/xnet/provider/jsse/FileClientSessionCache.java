@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,13 +19,14 @@ import java.util.TreeSet;
 import javax.net.ssl.SSLSession;
 
 import libcore.io.IoUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class FileClientSessionCache {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.520 -0400", hash_original_method = "EB2573B5E8F417FAB0EF293234CCCD0D", hash_generated_method = "828492362A3CD17C2E63D720E59E71D4")
     private  FileClientSessionCache() {
         // ---------- Original Method ----------
@@ -99,12 +101,14 @@ public class FileClientSessionCache {
         }
 
         
+        @DSModeled(DSC.BAN)
         private static Map<String, File> newAccessOrder() {
             return new LinkedHashMap<String, File>(
                     MAX_SIZE, 0.75f, true );
         }
 
         
+        @DSModeled(DSC.BAN)
         private static String fileName(String host, int port) {
             if (host == null) {
                 throw new NullPointerException("host");
@@ -247,6 +251,7 @@ public class FileClientSessionCache {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.528 -0400", hash_original_method = "FF4C7212103FFBD9D2780D404E5A05FB", hash_generated_method = "1F3BA25F80B5624C4DF0E7A926595A56")
         private void makeRoom() {
             if(size <= MAX_SIZE)            
@@ -276,6 +281,7 @@ public class FileClientSessionCache {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.529 -0400", hash_original_method = "F581C713CF99D0BA42CA770E334518CE", hash_generated_method = "20D26B69789961BA9BD556E8EB956AF3")
         private void indexFiles() {
             String[] initialFiles = this.initialFiles;
@@ -306,6 +312,7 @@ for(CacheFile cacheFile : diskOnly)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.530 -0400", hash_original_method = "DB4D1632DEDA59F34618884D114D9227", hash_generated_method = "543E3F2CCD14B3C79B5EABF2220F3F4A")
         @SuppressWarnings("ThrowableInstanceNeverThrown")
         private void delete(File file) {

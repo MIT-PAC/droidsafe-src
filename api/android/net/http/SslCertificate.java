@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -23,10 +24,10 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SslCertificate {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.937 -0400", hash_original_field = "903FF6B9C45D66198E077F15960795B3", hash_generated_field = "3A0F95171EDB19B88E8BBB2C224E603F")
@@ -83,6 +84,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.939 -0400", hash_original_method = "EBF5C56E3FBE1E8BC5B0F01C28F68A19", hash_generated_method = "D5C97C2B3842B3CC6467841F292BF5A7")
     private  SslCertificate(
             String issuedTo, String issuedBy,
@@ -211,6 +213,7 @@ DName var9A957C3D1EADCF1F564E726204D0B108_890394318 =         mIssuedBy;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String getSerialNumber(X509Certificate x509Certificate) {
         if (x509Certificate == null) {
             return "";
@@ -223,6 +226,7 @@ DName var9A957C3D1EADCF1F564E726204D0B108_890394318 =         mIssuedBy;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String getDigest(X509Certificate x509Certificate, String algorithm) {
         if (x509Certificate == null) {
             return "";
@@ -240,6 +244,7 @@ DName var9A957C3D1EADCF1F564E726204D0B108_890394318 =         mIssuedBy;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final String fingerprint(byte[] bytes) {
         if (bytes == null) {
             return "";
@@ -268,6 +273,7 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_1577345488 =         ("Issued to: " +
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Date parseDate(String string) {
         try {
             return new SimpleDateFormat(ISO_8601_DATE_FORMAT).parse(string);
@@ -277,6 +283,7 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_1577345488 =         ("Issued to: " +
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String formatDate(Date date) {
         if (date == null) {
             return "";
@@ -285,6 +292,7 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_1577345488 =         ("Issued to: " +
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Date cloneDate(Date date) {
         if (date == null) {
             return null;
@@ -293,7 +301,7 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_1577345488 =         ("Issued to: " +
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.946 -0400", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "81A4520E3B698E7E5829FCDC0A666C7D")
     public View inflateCertificateView(Context context) {
         addTaint(context.getTaint());
@@ -340,6 +348,7 @@ View varFC33B9A8916B0D6941F38F3EDB46A4C6_2046476596 =         certificateView;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.947 -0400", hash_original_method = "AFB9B131464BD8BEA4E9664B02B81FAF", hash_generated_method = "795EA1F1BCAB3EBD6557DCB7491A38C0")
     private String formatCertificateDate(Context context, Date certificateDate) {
         addTaint(certificateDate.getTaint());

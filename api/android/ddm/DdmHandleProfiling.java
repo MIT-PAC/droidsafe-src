@@ -1,6 +1,7 @@
 package android.ddm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
 import org.apache.harmony.dalvik.ddmc.Chunk;
@@ -8,13 +9,14 @@ import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
 
 import android.os.Debug;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DdmHandleProfiling extends ChunkHandler {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.262 -0400", hash_original_method = "7648F12CCEF030214D1E836EAA9C8F00", hash_generated_method = "48A50242375078711F75A3CE1492C05E")
     private  DdmHandleProfiling() {
         // ---------- Original Method ----------
@@ -110,6 +112,7 @@ Chunk var641B7C200B55AD640B34A04578B16E05_1824037277 =             handleMPRQ(re
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.267 -0400", hash_original_method = "7940F56C64BA10714BAFA7B4E80C835C", hash_generated_method = "B4E949CDCB39203728C98E0F3AB58133")
     private Chunk handleMPRS(Chunk request) {
         addTaint(request.getTaint());
@@ -149,6 +152,7 @@ Chunk varF626287F27C1788E68DEB751CDE022DB_240016260 =             createFailChun
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.269 -0400", hash_original_method = "C47365EF242409DEE5C5F31B2C812A87", hash_generated_method = "F0EF1B81CEA9DE5BF4A135AD7147A688")
     private Chunk handleMPRE(Chunk request) {
         addTaint(request.getTaint());
@@ -181,6 +185,7 @@ Chunk varC625D22574896D3031709CE6201F38D1_1799395641 =         new Chunk(CHUNK_M
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.270 -0400", hash_original_method = "0C48BE140EF77A3564208CCA411868CA", hash_generated_method = "83CEC5F43E781EAD09B7F28F4A37AC4F")
     private Chunk handleMPSS(Chunk request) {
         addTaint(request.getTaint());
@@ -220,6 +225,7 @@ Chunk varF626287F27C1788E68DEB751CDE022DB_357964433 =             createFailChun
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.272 -0400", hash_original_method = "47063ECEB662F521C374596F0F7AD1C6", hash_generated_method = "5D7A522AE3EF0D6D25D34B6D83CEB448")
     private Chunk handleMPSE(Chunk request) {
         addTaint(request.getTaint());
@@ -258,6 +264,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_1092363666 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.273 -0400", hash_original_method = "0E3CEBD2C4AA1513EB9DBAF86A751F94", hash_generated_method = "10DF811D0161C9366CC037DEF8DA6EB8")
     private Chunk handleMPRQ(Chunk request) {
         addTaint(request.getTaint());

@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IWallpaperManagerCallback extends android.os.IInterface
 {

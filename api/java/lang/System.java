@@ -1,6 +1,7 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Console;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -22,14 +23,15 @@ import libcore.io.Libcore;
 import libcore.io.StructUtsname;
 import dalvik.system.VMRuntime;
 import dalvik.system.VMStack;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class System {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.362 -0400", hash_original_method = "E6A64E449436C53F69301A453DED3B55", hash_generated_method = "56A6DF4ABD5F4C986DFF90DF1C5AAD2A")
     private  System() {
         // ---------- Original Method ----------
@@ -86,7 +88,7 @@ public final class System {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String getenv(String name, String defaultValue) {
         if (name == null) {
             throw new NullPointerException("name == null");
@@ -129,7 +131,7 @@ public final class System {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void initSystemProperties() {
         VMRuntime runtime = VMRuntime.getRuntime();
         Properties p = new Properties();
@@ -184,7 +186,7 @@ public final class System {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void parsePropertyAssignments(Properties p, String[] assignments) {
         for (String assignment : assignments) {
             int split = assignment.indexOf('=');
@@ -247,7 +249,7 @@ public final class System {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String lineSeparator() {
         return lineSeparator;
     }
@@ -263,32 +265,37 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void logE(String message) {
         log('E', message, null);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void logE(String message, Throwable th) {
         log('E', message, th);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void logI(String message) {
         log('I', message, null);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void logI(String message, Throwable th) {
         log('I', message, th);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void logW(String message) {
         log('W', message, null);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void logW(String message, Throwable th) {
         log('W', message, th);
     }
@@ -397,6 +404,7 @@ String var97F01DF1234C7D523320BD81BC314B44_892000716 =             map.get(toNon
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.368 -0400", hash_original_method = "5309B26B5A621654CCE92CC093E8959E", hash_generated_method = "1C547020BD5D5C81D6F22EDFCDFAE9D1")
         private String toNonNullString(Object o) {
             addTaint(o.getTaint());

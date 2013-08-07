@@ -1,9 +1,10 @@
 package junit.runner;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public class ReloadingTestSuiteLoader implements TestSuiteLoader {
     
@@ -14,6 +15,7 @@ public class ReloadingTestSuiteLoader implements TestSuiteLoader {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.403 -0400", hash_original_method = "13C1DA2A7A06C5AA5CC7BC929B5B4B4D", hash_generated_method = "E94031855450D5E25D8115AD6C226F90")
     public Class load(String suiteClassName) throws ClassNotFoundException {
         addTaint(suiteClassName.getTaint());
@@ -25,6 +27,7 @@ Class var89AC116B9B9FC8B936DF2FD910E07E90_1802463982 =         createLoader().lo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.403 -0400", hash_original_method = "89B315CCC74BC2AD3DF0F1D261AE00FD", hash_generated_method = "A1644F894AE2187ABDB8F1818DA8DE34")
     public Class reload(Class aClass) throws ClassNotFoundException {
         addTaint(aClass.getTaint());

@@ -1,6 +1,7 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CountDownLatch;
@@ -9,8 +10,8 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.util.TimeUtils;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public abstract class AsyncTaskLoader<D> extends Loader<D> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.766 -0400", hash_original_field = "0F416DC8E1EF1E61CE9DC1C4C6AAC524", hash_generated_field = "5C3107BBF367803569D0AB8A39076D22")
@@ -224,6 +225,7 @@ D var7522CCD187CB392DA75B6694C38569FC_1534979897 =         loadInBackground();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.777 -0400", hash_original_method = "13983B8AAAA767CBF57A8C7D5EF6BF65", hash_generated_method = "B676BD6A52869B5090A9640B485DB77E")
     public void waitForLoader() {
         LoadTask task = mTask;

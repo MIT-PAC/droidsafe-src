@@ -1,12 +1,13 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.524 -0400", hash_original_field = "DFCD77CC0FBBCE4763B1866A24A4CCFF", hash_generated_field = "1E15C10F775B223368F80DF5C8726D1A")
@@ -32,7 +33,7 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.526 -0400", hash_original_method = "BDEAB060DBF06B617753E5FD68DF3DA6", hash_generated_method = "CF17B3F2DAC2067844F40FF84CF8C685")
     public void initialize(IBulkCursor bulkCursor, int count, int idIndex,
             boolean wantsAllOnMoveCalls) {
@@ -51,6 +52,7 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int findRowIdColumnIndex(String[] columnNames) {
         int length = columnNames.length;
         for (int i = 0; i < length; i++) {
@@ -62,6 +64,7 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.527 -0400", hash_original_method = "7E3AA4478BE7164F626026375ACE354B", hash_generated_method = "D7D0F4B21BC063605D485787CF17F4EE")
     public IContentObserver getObserver() {
 IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObserverBridge.getContentObserver();
@@ -72,6 +75,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObser
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.528 -0400", hash_original_method = "A0DC3D6282923B31FCC435384F5B1B63", hash_generated_method = "8C4996307801C0ACA2AC5495811F0748")
     private void throwIfCursorIsClosed() {
         if(mBulkCursor == null)        
@@ -87,6 +91,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObser
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.530 -0400", hash_original_method = "0E6B64C20F6304D897F9214656E1B9B2", hash_generated_method = "F4DA8B007C92B801263CA47279A5EB82")
     @Override
     public int getCount() {
@@ -100,7 +105,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObser
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.532 -0400", hash_original_method = "A467CB6464BEC42A874BA0630DE4F114", hash_generated_method = "7082F64604EFBB1098A332A8FA1330E6")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
@@ -158,7 +163,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObser
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.534 -0400", hash_original_method = "DCD3F558B41192D9CD395623901FE4A3", hash_generated_method = "ED7A593E1FCB5ECE9BD6FCEFF4B73CDD")
     @Override
     public void deactivate() {
@@ -185,6 +190,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObser
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.535 -0400", hash_original_method = "546597EB3DC3CEE4DD604F653491E5D5", hash_generated_method = "B726E89BEC8F15DFCCF0CB5B814DC12C")
     @Override
     public void close() {
@@ -217,7 +223,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObser
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.538 -0400", hash_original_method = "2BB8C0DB5A3CE31D75C859DF8A5992AB", hash_generated_method = "72609CE14E7891D5E0FEB788E59B7E7F")
     @Override
     public boolean requery() {
@@ -270,6 +276,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_2035851578 =         mObser
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.540 -0400", hash_original_method = "1A723D6E7321D209C1569AA4BBEA85AD", hash_generated_method = "2BCB60F991CEE8D2E06CFF30A0F0C22D")
     @Override
     public String[] getColumnNames() {
@@ -304,7 +311,7 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_369012382 =         mColumns;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.541 -0400", hash_original_method = "5109D579D87DF77312539D6DDC351AB2", hash_generated_method = "839DAA60CC711C6E5F05B1BC5C8C87F5")
     @Override
     public Bundle getExtras() {
@@ -331,7 +338,7 @@ Bundle varC9D220A55BC9FCE6E848D4BF5278F31D_1305962087 =             mBulkCursor.
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.542 -0400", hash_original_method = "EAE7773B95560E382A302B739F6438AF", hash_generated_method = "A534B5126AF75721B662590F36D5EE82")
     @Override
     public Bundle respond(Bundle extras) {

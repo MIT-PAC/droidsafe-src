@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
@@ -9,10 +10,10 @@ import android.os.Bundle;
 import android.support.v4.content.Loader;
 import android.support.v4.util.DebugUtils;
 import android.support.v4.util.SparseArrayCompat;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class LoaderManager {
     
@@ -121,6 +122,7 @@ class LoaderManagerImpl extends LoaderManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.620 -0400", hash_original_method = "31DF1B394D718AFF7F9D42E1B24A1D9F", hash_generated_method = "AEE3DDBCA8DDA64FBE96B606E6EE835B")
     private LoaderInfo createLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {
@@ -141,6 +143,7 @@ LoaderInfo var43CF3338FDBA93597A9562D3166E9DC4_1414640789 =         info;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.621 -0400", hash_original_method = "D2BDC915DCB9CB038EA75210255617B9", hash_generated_method = "8572FF1AEFA9533A7E2E1E8DBB6C391C")
     private LoaderInfo createAndInstallLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {

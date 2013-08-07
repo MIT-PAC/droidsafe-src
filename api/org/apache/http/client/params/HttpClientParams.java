@@ -1,12 +1,14 @@
 package org.apache.http.client.params;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.params.HttpParams;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class HttpClientParams {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.459 -0400", hash_original_method = "C1A6271AA6801B961C8CB360166C77E0", hash_generated_method = "3ABEB5187B9BC90F9E9381CD590B61B4")
     private  HttpClientParams() {
         super();

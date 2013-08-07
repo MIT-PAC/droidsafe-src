@@ -1,6 +1,7 @@
 package org.bouncycastle.util.encoders;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 

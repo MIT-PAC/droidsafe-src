@@ -1,8 +1,9 @@
 package org.apache.http.impl.auth;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class UnsupportedDigestAlgorithmException extends RuntimeException {
     

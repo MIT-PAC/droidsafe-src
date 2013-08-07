@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -9,10 +10,10 @@ import java.util.ListIterator;
 
 import javax.sip.header.AllowHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AllowList extends SIPHeaderList<Allow> {
     

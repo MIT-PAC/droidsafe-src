@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -10,10 +11,10 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbsSeekBar extends ProgressBar {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.769 -0400", hash_original_field = "4C52B1548343B5F67E71ABAB98CDCE25", hash_generated_field = "A9FD89A9EA0824250F9B9C034928CB8F")
@@ -291,7 +292,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.779 -0400", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "EEBA0758A06700BC917CD7B6307F35F7")
     private void updateThumbPos(int w, int h) {
         addTaint(h);
@@ -334,7 +335,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.780 -0400", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "F30533D5251F0D11C8B4CFD2FF36B697")
     private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
         addTaint(gap);
@@ -524,7 +525,7 @@ switch(event.getAction()){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.783 -0400", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "F2D8B3C76143D4B3CDE1BEDEB49AFE66")
     private void trackTouchEvent(MotionEvent event) {
         addTaint(event.getTaint());
@@ -570,7 +571,7 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.784 -0400", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "8A968C4896AB12821206CFEA1423C0BB")
     private void attemptClaimDrag() {
         if(mParent != null)        

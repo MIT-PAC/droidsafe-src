@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 
 import android.content.res.Resources;
@@ -8,10 +9,10 @@ import android.content.res.Resources.NotFoundException;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class IccUtils {
     
@@ -246,7 +247,7 @@ public class IccUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int bitToRGB(int bit) {
         if(bit == 1){
             return Color.WHITE;
@@ -282,6 +283,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int[] mapTo2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 != (8 % bits)) {
@@ -319,6 +321,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int[] mapToNon2OrderBitColor(byte[] data, int valueIndex,
             int length, int[] colorArray, int bits) {
         if (0 == (8 % bits)) {
@@ -331,7 +334,7 @@ public class IccUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int[] getCLUT(byte[] rawData, int offset, int number) {
         if (null == rawData) {
             return null;

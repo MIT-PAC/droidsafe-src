@@ -1,6 +1,7 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.Socket;
 import java.security.Principal;
 import java.security.PrivateKey;

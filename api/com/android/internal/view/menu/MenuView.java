@@ -1,6 +1,7 @@
 package com.android.internal.view.menu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.drawable.Drawable;
 
 public interface MenuView {

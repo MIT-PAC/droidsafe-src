@@ -1,10 +1,11 @@
 package org.json;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class JSONTokener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.544 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "955F96F6D73BCB070D987B819612F71F")
@@ -75,6 +76,7 @@ Object var4ADAB184192CA9F9224C13214DADE59A_1292748072 =         readLiteral();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.581 -0400", hash_original_method = "1C1094F3B0EBF3FC35F6CA7F4976DC54", hash_generated_method = "1312F9BAA97CE162CE906BDB2D2CAE36")
     private int nextCleanInternal() throws JSONException {
         while
@@ -132,6 +134,7 @@ switch(peek){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.582 -0400", hash_original_method = "A96A54ECB7E0243FC9401A9259237DF7", hash_generated_method = "08D985BA552FDDA1AE8EBC4B5DF68DDA")
     private void skipToEndOfLine() {
 for(;pos < in.length();pos++)
@@ -204,6 +207,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1724938424 =                     buil
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.685 -0400", hash_original_method = "A0F5694EA3978EBF3A8A4E5207628E80", hash_generated_method = "9A5D75E3EE5007938DD79FF074126C2A")
     private char readEscapeCharacter() throws JSONException {
         char escaped = in.charAt(pos++);
@@ -277,6 +281,7 @@ switch(escaped){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.718 -0400", hash_original_method = "921E97B7A015080CE0A01C361479BF49", hash_generated_method = "C6BC82EF090C7FF139A99020E1F39468")
     private Object readLiteral() throws JSONException {
         String literal = nextToInternal("{}[]/\\:,=;# \t\f");
@@ -359,6 +364,7 @@ Object var504FB0EB6DB538B769C3E7F0E01CD58F_2063109877 =         new String(liter
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.720 -0400", hash_original_method = "593B1F2EF0668764A615A5DB85CFDCCD", hash_generated_method = "778A4C1F3140C0DD3F8A87B2DBF6DEFC")
     private String nextToInternal(String excluded) {
         addTaint(excluded.getTaint());
@@ -388,6 +394,7 @@ String var92605759E550AE8D37EAF6CB6CE70F3A_2042422604 =         in.substring(sta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.736 -0400", hash_original_method = "D694401380EAF5A76DF87137C67448EA", hash_generated_method = "860620602C17A303FD43BC4334A25D74")
     private JSONObject readObject() throws JSONException {
         JSONObject result = new JSONObject();
@@ -454,6 +461,7 @@ JSONObject varDC838461EE2FA0CA4C9BBB70A15456B0_1119572946 =             result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.747 -0400", hash_original_method = "E76B205E92636F1E7B3FC6B2B934FE47", hash_generated_method = "24EB628C57A2174DF43A5FD2D2036403")
     private JSONArray readArray() throws JSONException {
         JSONArray result = new JSONArray();

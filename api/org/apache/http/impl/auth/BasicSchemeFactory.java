@@ -1,11 +1,12 @@
 package org.apache.http.impl.auth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.auth.AuthScheme;
 import org.apache.http.auth.AuthSchemeFactory;
 import org.apache.http.params.HttpParams;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class BasicSchemeFactory implements AuthSchemeFactory {
     

@@ -1,8 +1,9 @@
 package android.view;
 
 // Droidsafe Imports
-import android.graphics.Rect;
 import droidsafe.annotations.*;
+import android.graphics.Rect;
+
 
 public class TouchDelegate {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.240 -0400", hash_original_field = "A4825BD7697117286DB2E2D9A1861183", hash_generated_field = "667AB02B0815B77F40A4B676D819C645")

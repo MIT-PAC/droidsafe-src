@@ -1,6 +1,7 @@
 package com.android.internal.view.menu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -20,10 +21,10 @@ import android.widget.ImageButton;
 
 import com.android.internal.view.menu.ActionMenuView.ActionMenuChildView;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProvider.SubUiVisibilityListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.981 -0400", hash_original_field = "18A904A5C0CC1E1FE45C814D28B71B26", hash_generated_field = "62B115CA56547ACC4395C5191DCAFA48")

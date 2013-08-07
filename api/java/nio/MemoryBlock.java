@@ -1,6 +1,7 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.MAP_PRIVATE;
 import static libcore.io.OsConstants.MAP_SHARED;
 import static libcore.io.OsConstants.PROT_READ;
@@ -14,10 +15,10 @@ import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 import libcore.io.Memory;
 import dalvik.system.VMRuntime;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class MemoryBlock {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.396 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "2E3B00925A9AD8CC3173924CFBB7B9E6")
@@ -27,6 +28,7 @@ class MemoryBlock {
 
     protected long size;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.396 -0400", hash_original_method = "2736B0514B2AB4564F5D7D5517308E00", hash_generated_method = "7049F40DB4B35A37F28A4478AC10008E")
     private  MemoryBlock(int address, long size) {
         this.address = address;
@@ -401,6 +403,7 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1431854467 =         getClass().getNa
     
     private static class MemoryMappedBlock extends MemoryBlock {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.406 -0400", hash_original_method = "4FA1675756D2D9224619666C72B7406C", hash_generated_method = "61963BA16BCA38A2617F88B05F1CF586")
         private  MemoryMappedBlock(int address, long byteCount) {
             super(address, byteCount);
@@ -457,6 +460,7 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1431854467 =         getClass().getNa
 
         private byte[] array;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.409 -0400", hash_original_method = "8A7988AD7039E674F46AF68EAF8AE446", hash_generated_method = "C06BB50E8D6E4AF2DECA0F3FAC47B3B8")
         private  NonMovableHeapBlock(byte[] array, int address, long byteCount) {
             super(address, byteCount);
@@ -498,6 +502,7 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1431854467 =         getClass().getNa
     
     private static class UnmanagedBlock extends MemoryBlock {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.410 -0400", hash_original_method = "3FA50BA19E59098968678E710BF90D48", hash_generated_method = "81E2C13CD1B80A44BB60960108992316")
         private  UnmanagedBlock(int address, long byteCount) {
             super(address, byteCount);

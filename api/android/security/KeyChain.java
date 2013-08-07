@@ -1,6 +1,7 @@
 package android.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.IOException;
@@ -29,10 +30,10 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class KeyChain {
     
@@ -124,6 +125,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static PrivateKey toPrivateKey(byte[] bytes) {
         if (bytes == null) {
             throw new IllegalArgumentException("bytes == null");
@@ -137,6 +139,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static X509Certificate toCertificate(byte[] bytes) {
         if (bytes == null) {
             throw new IllegalArgumentException("bytes == null");
@@ -180,6 +183,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void ensureNotOnMainThread(Context context) {
         Looper looper = Looper.myLooper();
         if (looper != null && looper == context.getMainLooper()) {
@@ -194,6 +198,7 @@ public final class KeyChain {
 
         private KeyChainAliasCallback keyChainAliasResponse;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.024 -0400", hash_original_method = "C9AAF5E97D9880605AC7CEDD0F5EF602", hash_generated_method = "734EA7C6CEA33BDAA3DD6D725B46AD40")
         private  AliasResponse(KeyChainAliasCallback keyChainAliasResponse) {
             this.keyChainAliasResponse = keyChainAliasResponse;
@@ -227,6 +232,7 @@ public final class KeyChain {
 
         private IKeyChainService service;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.025 -0400", hash_original_method = "0B75A6D253D58C29BB28E672713E5120", hash_generated_method = "6C4CDE9C615FDBE0665776FFBD223C20")
         private  KeyChainConnection(Context context,
                                    ServiceConnection serviceConnection,

@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -11,10 +12,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class URLConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.052 -0400", hash_original_field = "572D4E421E5E6B9BC11D815E8A027112", hash_generated_field = "65BA9482E03BACCDBB5A2D08239D2205")
@@ -166,6 +167,7 @@ String var510A0BC22C0D704C1004D5A998438214_1964403696 =         getHeaderField("
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.060 -0400", hash_original_method = "F46F19D62AAF6AA8CA742989F38D6600", hash_generated_method = "E7C08385662F1B0E109B770409F3A592")
     private ContentHandler getContentHandler(String type) throws IOException {
         addTaint(type.getTaint());
@@ -375,6 +377,7 @@ Map<String, List<String>> varA32ED10B45EA6ACB8D1ECFEFE1C18540_553406560 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.068 -0400", hash_original_method = "B91416BA99E534CF967424CBFE2F2ACE", hash_generated_method = "B908EC3B515FB9BC821B49A2EF5DEAB0")
     private void checkNotConnected() {
         if(connected)        
@@ -665,6 +668,7 @@ URL var4F9C62D322C7F68D5668056D4B193F9B_1582075202 =         url;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.073 -0400", hash_original_method = "8088F9069DED191ECB9FB0409A3793EB", hash_generated_method = "A4DC76E60A77AAB184DFB37B353A1874")
     private String parseTypeString(String typeString) {
         addTaint(typeString.getTaint());

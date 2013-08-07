@@ -1,12 +1,13 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.Socket;
 
 import org.apache.http.params.HttpParams;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class SocketOutputBuffer extends AbstractSessionOutputBuffer {
     

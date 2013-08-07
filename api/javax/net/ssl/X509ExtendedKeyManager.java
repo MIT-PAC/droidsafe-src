@@ -1,11 +1,12 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.Principal;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class X509ExtendedKeyManager implements X509KeyManager {
     

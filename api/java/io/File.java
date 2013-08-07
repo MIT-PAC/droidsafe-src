@@ -1,6 +1,7 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.EEXIST;
 import static libcore.io.OsConstants.F_OK;
 import static libcore.io.OsConstants.O_CREAT;
@@ -37,10 +38,10 @@ import libcore.io.StructStatFs;
 
 import org.apache.harmony.luni.util.DeleteOnExit;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class File implements Serializable, Comparable<File> {
@@ -114,6 +115,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String fixSlashes(String origPath) {
         boolean lastWasSlash = false;
         char[] newPath = origPath.toCharArray();
@@ -138,6 +140,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String join(String prefix, String suffix) {
         int prefixLength = prefix.length();
         boolean haveSlash = (prefixLength > 0 && prefix.charAt(prefixLength - 1) == separatorChar);
@@ -148,7 +151,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void checkURI(URI uri) {
         if (!uri.isAbsolute()) {
             throw new IllegalArgumentException("URI is not absolute: " + uri);
@@ -209,6 +212,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.820 -0400", hash_original_method = "66AEEE703F2A5FBBF7F14BCD3C8F63B9", hash_generated_method = "0C44B19CE2464D4E09DE0B876EE2BC5F")
     private boolean doAccess(int mode) {
         addTaint(mode);
@@ -679,6 +683,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.831 -0400", hash_original_method = "1AE2CD7860321C46BB79C9D3B3E6342E", hash_generated_method = "CCBC0E0AD218637FD8B7E581464D48BB")
     private boolean doChmod(int mask, boolean set) {
         addTaint(set);
@@ -842,6 +847,7 @@ File[] var36CD04F8590545BE163F612A0C547736_510542342 =         result.toArray(ne
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.833 -0400", hash_original_method = "7CC449D7C06EBE9C929936D878A8919D", hash_generated_method = "CC3ED78B83BA36B3882FDB2D5B3AC32F")
     private File[] filenamesToFiles(String[] filenames) {
         addTaint(filenames[0].getTaint());
@@ -1118,6 +1124,7 @@ URL var9F0992E1CDD9692D51AE22365958494F_479158924 =         new URL("file", "", 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "6DC10F50F559258D97A948A93E776D0B", hash_generated_method = "191A2DA5FC2E815BDB8D60F7ECD793CA")
     private String getAbsoluteName() {
         File f = getAbsoluteFile();
@@ -1146,6 +1153,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_248740100 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "84E8B11DBED8384FBE25A5788F12F18C", hash_generated_method = "6A6D83BE60C0FC48DB1E5EA5B5695225")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1157,6 +1165,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_248740100 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "FED9F4FA8E5031FA72F265B39D2840EA", hash_generated_method = "C987743FCB1A70962960ACC00987A73B")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

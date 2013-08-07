@@ -1,14 +1,15 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 import java.nio.charset.Charsets;
 
 import libcore.io.Memory;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class Socks4Message {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.553 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
@@ -213,6 +214,7 @@ String var75B00C229FB73EC955B2048ABEF9CD64_548365449 =         "Success";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.556 -0400", hash_original_method = "B2CC94DDACEA4538F2C9BF58B190DB1B", hash_generated_method = "F7FB0B2C576F1EB624FE9D9FDDC461AF")
     private String getString(int offset, int maxLength) {
         addTaint(maxLength);
@@ -237,7 +239,7 @@ String varD6DBB704B6C19F3F537EF08C38038191_485423378 =         new String(buffer
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.557 -0400", hash_original_method = "7A63CD666B1834D5EA2D981ACB832F0E", hash_generated_method = "0465461CFE1490F5F862D4E910831D4E")
     private int getVersionNumber() {
         int var3BDC3373F100A77A4D510F10D3356443_570527124 = (buffer[INDEX_VERSION]);
@@ -248,6 +250,7 @@ String varD6DBB704B6C19F3F537EF08C38038191_485423378 =         new String(buffer
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.557 -0400", hash_original_method = "9E3EFE7D6597C76393DFD5F31266B92C", hash_generated_method = "799EA2088F1838B1C3FD809E32372B92")
     private void setString(int offset, int maxLength, String theString) {
         addTaint(theString.getTaint());
@@ -264,7 +267,7 @@ String varD6DBB704B6C19F3F537EF08C38038191_485423378 =         new String(buffer
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.557 -0400", hash_original_method = "551CE4AE0E4E79E50F85783B3E28117C", hash_generated_method = "057034333245897DECAF09231E016CBC")
     private void setVersionNumber(int number) {
         buffer[INDEX_VERSION] = (byte) number;

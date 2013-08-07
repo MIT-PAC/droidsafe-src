@@ -1,8 +1,9 @@
 package libcore.net.http;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
 
 enum ResponseSource {
     CACHE,

@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.accounts.Account;
 import android.content.ContentProviderClient;
 import android.content.ContentProviderOperation;
@@ -10,10 +11,10 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Pair;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SyncStateContract {
     

@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -25,10 +26,10 @@ import com.android.internal.telephony.cdma.sms.UserData;
 import com.android.internal.util.BitwiseInputStream;
 import com.android.internal.util.HexDump;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SmsMessage extends SmsMessageBase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.476 -0400", hash_original_field = "9ACB44549B41563697BB490144EC6258", hash_generated_field = "4BAC49709EDEAEFDD9E07400E0F02406")
@@ -124,6 +125,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SmsMessage createFromEfRecord(int index, byte[] data) {
         try {
             SmsMessage msg = new SmsMessage();
@@ -152,6 +154,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SubmitPdu getSubmitPdu(String scAddr, String destAddr, String message,
             boolean statusReportRequested, SmsHeader smsHeader) {
         if (message == null || destAddr == null) {
@@ -318,6 +321,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.481 -0400", hash_original_method = "CD6FB45A1A4A8300476A32D9A94A5A2D", hash_generated_method = "2247BF293B6A55F71CB7159A7C65A9B4")
     private void parsePdu(byte[] pdu) {
         addTaint(pdu[0]);
@@ -362,6 +366,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.483 -0400", hash_original_method = "4600019E789700BB681DB9CDCB53078A", hash_generated_method = "03CA9AA858FFE620C961C9FBFD821563")
     private void parsePduFromEfRecord(byte[] pdu) {
         addTaint(pdu[0]);
@@ -591,6 +596,7 @@ MessageClass varD7AAFCD744EEA0B66C34410F065237FA_268988632 =             Message
     }
 
     
+    @DSModeled(DSC.BAN)
     private synchronized static int getNextMessageId() {
         int msgId = SystemProperties.getInt(TelephonyProperties.PROPERTY_CDMA_MSG_ID, 1);
         String nextMsgId = Integer.toString((msgId % 0xFFFF) + 1);
@@ -604,6 +610,7 @@ MessageClass varD7AAFCD744EEA0B66C34410F065237FA_268988632 =             Message
     }
 
     
+    @DSModeled(DSC.BAN)
     private static SubmitPdu privateGetSubmitPdu(String destAddrStr, boolean statusReportRequested,
             UserData userData) {
         CdmaSmsAddress destAddr = CdmaSmsAddress.parse(
@@ -660,6 +667,7 @@ MessageClass varD7AAFCD744EEA0B66C34410F065237FA_268988632 =             Message
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.485 -0400", hash_original_method = "D3C9920CEA488FFF412D7F8E3FE64835", hash_generated_method = "FCC30460848B7588E0A43ABC0ABBA9FB")
     private void createPdu() {
         SmsEnvelope env = mEnvelope;
@@ -694,7 +702,7 @@ MessageClass varD7AAFCD744EEA0B66C34410F065237FA_268988632 =             Message
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.486 -0400", hash_original_method = "A11C498F23B8370C7C5D04AE2A0C173A", hash_generated_method = "3208978665429799D9015E3D2336705B")
     private byte convertDtmfToAscii(byte dtmfDigit) {
         addTaint(dtmfDigit);
@@ -759,7 +767,7 @@ switch(dtmfDigit){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.486 -0400", hash_original_method = "D8D3E4C6269124C18E32B3734994B647", hash_generated_method = "60A3A7925FEC9AF05ACFFD4361305F57")
      int getNumOfVoicemails() {
         int var8E3F21144FF0BAA03A1A56B1E68F39D4_1004982328 = (mBearerData.numberOfMessages);
@@ -770,6 +778,7 @@ switch(dtmfDigit){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.486 -0400", hash_original_method = "ECE8D39C64EEB1FB74B915B4B0882D92", hash_generated_method = "CBA641B835AF79EEC0540A9A15250B0F")
      byte[] getIncomingSmsFingerprint() {
         ByteArrayOutputStream output = new ByteArrayOutputStream();

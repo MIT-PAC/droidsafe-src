@@ -1,14 +1,15 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ServiceState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.532 -0400", hash_original_field = "CD8D7D0ED7F8789944E5A8281BA9DF7A", hash_generated_field = "F60690C16A904EA5E0E01BA5DAB95D57")
@@ -108,6 +109,7 @@ public class ServiceState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ServiceState newFromBundle(Bundle m) {
         ServiceState ret;
         ret = new ServiceState();
@@ -224,7 +226,7 @@ public class ServiceState implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.539 -0400", hash_original_method = "3DFEB66E744CCF30AC3F0251BA213E84", hash_generated_method = "3209DB4CD5DA7DCE6BFB4E90BD79DD42")
     public boolean isEmergencyOnly() {
         boolean var760B1F73F911038F6C307E933712FBA8_1273466983 = (mIsEmergencyOnly);
@@ -235,7 +237,7 @@ public class ServiceState implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.539 -0400", hash_original_method = "83FC91D4D13183AA7E425917DAA84866", hash_generated_method = "D2200693AD25E62352097345040C850E")
     public int getCdmaRoamingIndicator() {
         int var8EC702EA0B774368248A97343F355573_1137442050 = (this.mCdmaRoamingIndicator);
@@ -246,7 +248,7 @@ public class ServiceState implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.539 -0400", hash_original_method = "66A4F6EB11ADB385A490C7939EB92055", hash_generated_method = "C2C93375F08E28B1DD4B14FD950ABB80")
     public int getCdmaDefaultRoamingIndicator() {
         int var4D811802DFB95367828A4392C02F25FA_1983364464 = (this.mCdmaDefaultRoamingIndicator);
@@ -257,7 +259,7 @@ public class ServiceState implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.540 -0400", hash_original_method = "A86147562C8C2CE9187BA7AFC3028DA0", hash_generated_method = "2A107E2663C7F3E6C6F6A3C7BB691099")
     public int getCdmaEriIconIndex() {
         int var542D78A32F58AC1777EDC480E528590D_608065326 = (this.mCdmaEriIconIndex);
@@ -268,7 +270,7 @@ public class ServiceState implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.540 -0400", hash_original_method = "637A5E08A8AA09E09B00A7308F96EA32", hash_generated_method = "40A1289DCC2CE5676E3557DFC739CD39")
     public int getCdmaEriIconMode() {
         int varE8E64B97E2B53344BA670C91DA9A50C4_1120194893 = (this.mCdmaEriIconMode);
@@ -392,6 +394,7 @@ String var943DC28A2B14FE8AE17153FF6F969ACF_680350636 =         mOperatorNumeric;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String radioTechnologyToString(int rt) {
         String rtString;
         switch(rt) {
@@ -487,7 +490,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.544 -0400", hash_original_method = "8ACC80A7889D35C4C641DEE09D896F76", hash_generated_method = "FD85B86F0ECF83F99FE09898A135D41E")
     private void setNullState(int state) {
         mState = state;
@@ -558,7 +561,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.546 -0400", hash_original_method = "B2BA3AF9B92E65EA8B062AC201A0C0F0", hash_generated_method = "F2B108E944B0EDB88B7C5DF0C8DEE5B7")
     public void setEmergencyOnly(boolean emergencyOnly) {
         mIsEmergencyOnly = emergencyOnly;
@@ -567,7 +570,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.546 -0400", hash_original_method = "C5CC061ACF011623DDFD13C5F3F99CC3", hash_generated_method = "95FFD314FD0A0685BE1321CF3791396E")
     public void setCdmaRoamingIndicator(int roaming) {
         this.mCdmaRoamingIndicator = roaming;
@@ -576,7 +579,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.546 -0400", hash_original_method = "723EC448C9CB51F7110A335E414C4680", hash_generated_method = "A2BB49F52906E681CF96691F2251B042")
     public void setCdmaDefaultRoamingIndicator(int roaming) {
         this.mCdmaDefaultRoamingIndicator = roaming;
@@ -585,7 +588,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.547 -0400", hash_original_method = "270DF85E703DBBACE36CF343B8162562", hash_generated_method = "B0AACDB8E38F97633346B3B4835E8917")
     public void setCdmaEriIconIndex(int index) {
         this.mCdmaEriIconIndex = index;
@@ -594,7 +597,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.547 -0400", hash_original_method = "B583E3E822650F1B5214B53503BF1241", hash_generated_method = "0316BEBDF43E5B19472BA6E6AE128413")
     public void setCdmaEriIconMode(int mode) {
         this.mCdmaEriIconMode = mode;
@@ -616,7 +619,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.547 -0400", hash_original_method = "2932DCDD0502DE94804E9827964069D2", hash_generated_method = "E493DDC360F50CDDBDCC3FE4BB704447")
     public void setOperatorAlphaLong(String longName) {
         mOperatorAlphaLong = longName;
@@ -634,11 +637,13 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean equalsHandlesNulls(Object a, Object b) {
         return (a == null) ? (b == null) : a.equals (b);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.547 -0400", hash_original_method = "45F7665F0B17EC4A3962C47A86921C1E", hash_generated_method = "F2DDA3BAB5864A01A9612F2D4D632F3B")
     private void setFromNotifierBundle(Bundle m) {
         mState = m.getInt("state");
@@ -671,6 +676,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.548 -0400", hash_original_method = "9BCA23D068820B6DD53DFB45DB9457FF", hash_generated_method = "71C9C6312F1E6DBEFC1C425565438140")
     public void fillInNotifierBundle(Bundle m) {
         addTaint(m.getTaint());
@@ -704,7 +710,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.548 -0400", hash_original_method = "C012C4DB079EEB33708722C3BF4101EF", hash_generated_method = "1F99DEEAD6AC0C2BC8FBC98190DF50ED")
     public void setRadioTechnology(int state) {
         this.mRadioTechnology = state;
@@ -713,7 +719,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.548 -0400", hash_original_method = "C1350CF85A5CAF49D330DF5D8BE50D5D", hash_generated_method = "62E7E29AB3EB805EBAD797E9DF58B733")
     public void setCssIndicator(int css) {
         this.mCssIndicator = (css != 0);
@@ -722,7 +728,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.548 -0400", hash_original_method = "A7D542E3F6857DF89C73ABBE482A1544", hash_generated_method = "9F8AA35149F291326BF5B14CCD791B63")
     public void setSystemAndNetworkId(int systemId, int networkId) {
         this.mSystemId = systemId;
@@ -733,7 +739,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.548 -0400", hash_original_method = "D4EB1377E20B241083847F14436F60D5", hash_generated_method = "DFB078BACA81CBB79237FAAA5AAAD08F")
     public int getRadioTechnology() {
         int varEF25AE191D273A880E41407979BD02C4_1025700655 = (this.mRadioTechnology);
@@ -744,7 +750,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.548 -0400", hash_original_method = "5F3502ED7337480E1E948E539B84EEE6", hash_generated_method = "3E5AECB5A0D5FA5BD54F48CBC42EF857")
     public int getCssIndicator() {
         int var6A0A5A4CA367E66EBDDD90EBB27DF823_721180958 = (this.mCssIndicator ? 1 : 0);
@@ -755,7 +761,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.549 -0400", hash_original_method = "909C93F66AD557988A123F548D8C31FC", hash_generated_method = "D415AB7DEC9E1F87CD15912BCB04205D")
     public int getNetworkId() {
         int varC36C789BAAC39C6FF0348461365E3AA8_1597463123 = (this.mNetworkId);
@@ -766,7 +772,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.549 -0400", hash_original_method = "E5E4F22C1EB64E5BA2863333F6C891A3", hash_generated_method = "EA6EC086C92640EBC5E3C4B81DA94F3E")
     public int getSystemId() {
         int varDC9AC627E8999951F7D1333DA260C4E1_2025542128 = (this.mSystemId);

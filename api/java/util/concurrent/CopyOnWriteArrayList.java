@@ -1,6 +1,7 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -17,10 +18,10 @@ import java.util.RandomAccess;
 
 import libcore.util.EmptyArray;
 import libcore.util.Objects;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.840 -0400", hash_original_field = "6A7F245843454CF4F28AD7C5E2572AA2", hash_generated_field = "9773C6104DBFF8AC92488F3C4AD39164")
@@ -635,7 +636,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_1830571824 =         removed;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.857 -0400", hash_original_method = "4C6E97480A096674EA078C65954A8FE2", hash_generated_method = "539DA11D152D2B5A8E70753FF683356F")
     private int removeOrRetain(Collection<?> collection, boolean retain, int from, int to) {
         addTaint(to);
@@ -700,7 +701,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_911881868 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.858 -0400", hash_original_method = "3E2723924788C644A99252EDEC8904D6", hash_generated_method = "3127D5EEF913DFBDCB5E1AAADE61DFEE")
     private void removeRange(int from, int to) {
         addTaint(to);
@@ -766,7 +767,7 @@ Object[] varC7DFD266FBF449A638EA2377E8678BA1_651604710 =         elements;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.859 -0400", hash_original_method = "53FDF52EC3502469838FF7FC9C3722C1", hash_generated_method = "1BF6924BD29F36A9F5A749D0BE94EBD2")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -787,7 +788,7 @@ for(Object o : snapshot)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.860 -0400", hash_original_method = "5D8878D7111BA02D76F457F9A02251F1", hash_generated_method = "D3977299908449FF088C13F12491A6B1")
     private synchronized void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         addTaint(in.getTaint());

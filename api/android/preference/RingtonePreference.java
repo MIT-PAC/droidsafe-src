@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -8,10 +9,10 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RingtonePreference extends Preference implements PreferenceManager.OnActivityResultListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.874 -0400", hash_original_field = "429D9ED5263EDB27ACD4DEA6BD2ED8B4", hash_generated_field = "94A7358A6004BBA5ED4F762F8CB38E98")

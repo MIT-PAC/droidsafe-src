@@ -1,14 +1,15 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.EventObject;
 
 import javax.sip.Dialog;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DialogTimeoutEvent extends EventObject {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.333 -0400", hash_original_field = "3C2D99B5275A90DCEE818DED7CDA5744", hash_generated_field = "1B483DA67C4F6DE71E44B6CDA63B2927")

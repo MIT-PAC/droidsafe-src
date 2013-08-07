@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,10 +9,10 @@ import java.util.ListIterator;
 
 import javax.sip.header.UserAgentHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class UserAgent extends SIPHeader implements UserAgentHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.655 -0400", hash_original_field = "9688EFB908EECBA4C560247BC17C9D80", hash_generated_field = "23BE30BA77F76A348892FB57EBB6010B")
@@ -28,7 +29,7 @@ public class UserAgent extends SIPHeader implements UserAgentHeader {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.656 -0400", hash_original_method = "54509C1E79AD8AD51EA2FF1C763ECD71", hash_generated_method = "D0AC26C727A1FACF5F6CBB6436F25855")
     private String encodeProduct() {
         StringBuffer tokens = new StringBuffer();

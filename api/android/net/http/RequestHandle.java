@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,10 +16,10 @@ import org.apache.commons.codec.binary.Base64;
 import android.net.ParseException;
 import android.net.WebAddress;
 import android.webkit.CookieManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RequestHandle {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.484 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
@@ -104,6 +105,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.504 -0400", hash_original_method = "971FA82A9D84F9459C5196533729906E", hash_generated_method = "6AE939C06120ED8C23F94606DF68DFEC")
     public void cancel() {
         if(mRequest != null)        
@@ -117,6 +119,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.504 -0400", hash_original_method = "981EAB54F552460A30185E1B96B8DE52", hash_generated_method = "C92FEAF252960534BA9B0AD42F228FC3")
     public void pauseRequest(boolean pause) {
         addTaint(pause);
@@ -131,6 +134,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.504 -0400", hash_original_method = "2C5209A970780A5B14F30F7C2DFA5DF9", hash_generated_method = "E8477B4F359CE64CB4CA30CA10362D7A")
     public void handleSslErrorResponse(boolean proceed) {
         addTaint(proceed);
@@ -145,7 +149,7 @@ public class RequestHandle {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.504 -0400", hash_original_method = "1E2E2512E5F173592E2117FB4C479261", hash_generated_method = "DE11008A5A90D0A4A103FA521AACF0DC")
     public boolean isRedirectMax() {
         boolean varE59A16454EBA0506B8807ACFE87505C0_1901546934 = (mRedirectCount >= MAX_REDIRECT_COUNT);
@@ -156,7 +160,7 @@ public class RequestHandle {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.505 -0400", hash_original_method = "3AC7970B74E2F8214DB13CA8BCAB44BF", hash_generated_method = "DEA44C88027A7873051FB74BF028090B")
     public int getRedirectCount() {
         int var5C719A8BE232C682CF3CBD6C1D4CA4E2_1612376767 = (mRedirectCount);
@@ -167,7 +171,7 @@ public class RequestHandle {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.505 -0400", hash_original_method = "FFEBE76B00A2A9B427C3877CD59FFD71", hash_generated_method = "75F6E6041180F5755B1072705080BEBF")
     public void setRedirectCount(int count) {
         mRedirectCount = count;
@@ -264,6 +268,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.506 -0400", hash_original_method = "38ABF845B1FE2E62FC6D2FD8DBFFE504", hash_generated_method = "699DDDF0CFDB4063358F71CE3345BCBF")
     public void setupBasicAuthResponse(boolean isProxy, String username, String password) {
         addTaint(password.getTaint());
@@ -286,6 +291,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.506 -0400", hash_original_method = "B5A5838E4BCFB5CBC22C9A029CA123B8", hash_generated_method = "BD748A60921D9EE33C6848578E6E4BB8")
     public void setupDigestAuthResponse(boolean isProxy,
                                         String username,
@@ -322,6 +328,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.506 -0400", hash_original_method = "671BE1071898035C0F84A86A39735052", hash_generated_method = "CE59BB3623DB558A429D15C7FCEF113F")
     private void setupAuthResponse() {
         try 
@@ -349,7 +356,7 @@ public class RequestHandle {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.506 -0400", hash_original_method = "E02C2F0EA498C425350A019498EEA751", hash_generated_method = "94330865D2B69EAC8E013BDCA3522BDA")
     public String getMethod() {
 String var4E41053965FCD154582D303800DDC3B2_1031530164 =         mMethod;
@@ -360,6 +367,7 @@ String var4E41053965FCD154582D303800DDC3B2_1031530164 =         mMethod;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String computeBasicAuthResponse(String username, String password) {
         Assert.assertNotNull(username);
         Assert.assertNotNull(password);
@@ -367,6 +375,7 @@ String var4E41053965FCD154582D303800DDC3B2_1031530164 =         mMethod;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.506 -0400", hash_original_method = "8819509041D3F58366571B93CC9E3D4B", hash_generated_method = "739C8F45FA1E2134F512E5E5B3753B74")
     public void waitUntilComplete() {
         mRequest.waitUntilComplete();
@@ -375,6 +384,7 @@ String var4E41053965FCD154582D303800DDC3B2_1031530164 =         mMethod;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.507 -0400", hash_original_method = "420B4AD7BC25160624AF5D40CF27D44F", hash_generated_method = "1B3B0D7106989F16033C678CA91170A5")
     public void processRequest() {
         if(mConnection != null)        
@@ -388,6 +398,7 @@ String var4E41053965FCD154582D303800DDC3B2_1031530164 =         mMethod;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.507 -0400", hash_original_method = "21566870DD44046714482EED382208F4", hash_generated_method = "DD4666E03B2EFA26A4C3BEAD9AAFDA0D")
     private String computeDigestAuthResponse(String username,
                                              String password,
@@ -437,7 +448,7 @@ String var2A1114F4272D753FE23A36E3D68CD293_987571034 =         response;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String authorizationHeader(boolean isProxy) {
         if (!isProxy) {
             return AUTHORIZATION_HEADER;
@@ -447,6 +458,7 @@ String var2A1114F4272D753FE23A36E3D68CD293_987571034 =         response;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.508 -0400", hash_original_method = "7BFA5C62C730E408B108712B34B74DD9", hash_generated_method = "7F49DB11B561D243B1B781D45F470B94")
     private String computeDigest(
         String A1, String A2, String nonce, String QOP, String nc, String cnonce) {
@@ -493,6 +505,7 @@ String var540C13E9E156B687226421B24F2DF178_1051745648 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.508 -0400", hash_original_method = "BB88C0CE3A8E823447F9A5A2F73C21EF", hash_generated_method = "A36985067FEDCB73019ABB8AD7CA10F3")
     private String KD(String secret, String data) {
         addTaint(data.getTaint());
@@ -505,6 +518,7 @@ String var76709ED9029AE93F2064A644EBA98F42_562725922 =         H(secret + ":" + 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.508 -0400", hash_original_method = "ACD3D964B796417ECD09BF2089A3A365", hash_generated_method = "137F10664846ABEEEDC8A9B38D8D22E1")
     private String H(String param) {
         addTaint(param.getTaint());
@@ -547,6 +561,7 @@ String var540C13E9E156B687226421B24F2DF178_209407530 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.509 -0400", hash_original_method = "F71FFAFC3CF70E71567406DE8A9A2D97", hash_generated_method = "045E67A75D624B415F591299241E06C6")
     private String bufferToHex(byte[] buffer) {
         addTaint(buffer[0]);
@@ -600,6 +615,7 @@ String var540C13E9E156B687226421B24F2DF178_489464904 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.509 -0400", hash_original_method = "15E2F72950F37D4FA5596F6CA90D9CCE", hash_generated_method = "BEE71CB25FE4AFAB0D5C90B46958CD2A")
     private String computeCnonce() {
         Random rand = new Random();
@@ -618,6 +634,7 @@ String var8C0C5094D0DCD3B77EA8304A17184C2B_1005609648 =         Integer.toString
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.509 -0400", hash_original_method = "2F687A14AA3727476BB6949A7966696D", hash_generated_method = "DDE7A79E60AC02569B5A3C73729C9BF0")
     private String doubleQuote(String param) {
         addTaint(param.getTaint());
@@ -638,6 +655,7 @@ String var540C13E9E156B687226421B24F2DF178_1650653515 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.509 -0400", hash_original_method = "85265833A731D9185DA35397C2BF1AAD", hash_generated_method = "2CF04E688B0D741F649E42844C4F44DD")
     private void createAndQueueNewRequest() {
         if(mConnection != null)        

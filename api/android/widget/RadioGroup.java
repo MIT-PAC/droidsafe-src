@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -9,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RadioGroup extends LinearLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.203 -0400", hash_original_field = "CD9E757D941282FD5AF72E8B3AF603EF", hash_generated_field = "0E60C492BFE4F917273C3792086EBFC2")
@@ -75,7 +76,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.205 -0400", hash_original_method = "BF04917C1358A32EDE5746B4072D7D20", hash_generated_method = "2A140ABC2C96227F957D97D7A9C8FD90")
     private void init() {
         mChildOnCheckedChangeListener = new CheckedStateTracker();
@@ -191,7 +192,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.208 -0400", hash_original_method = "5FA05BD652ABFE7F3AF547784FD6946B", hash_generated_method = "B97F800B9977A6A9C7F55A446C7F3D8E")
     private void setCheckedId(int id) {
         mCheckedId = id;
@@ -207,7 +208,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.208 -0400", hash_original_method = "C9C9D7D4FE388186AB4F88F5226CFA81", hash_generated_method = "4B27C4883D03C940AFBC001E8032FDA5")
     private void setCheckedStateForView(int viewId, boolean checked) {
         addTaint(checked);

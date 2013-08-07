@@ -1,6 +1,7 @@
 package org.apache.harmony.security.fortress;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.Provider;
 import java.security.Security;
 import java.util.ArrayList;
@@ -9,10 +10,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Services {
     
@@ -23,7 +24,7 @@ public class Services {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void loadProviders() {
         String providerClassName = null;
         int i = 1;

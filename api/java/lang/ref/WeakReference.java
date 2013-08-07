@@ -1,7 +1,8 @@
 package java.lang.ref;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class WeakReference<T> extends Reference<T> {
     

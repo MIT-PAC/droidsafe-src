@@ -1,6 +1,7 @@
 package org.xml.sax;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 @Deprecated public interface DocumentHandler {
 

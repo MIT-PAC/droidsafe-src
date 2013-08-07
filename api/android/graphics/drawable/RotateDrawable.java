@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -13,10 +14,10 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RotateDrawable extends Drawable implements Drawable.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.449 -0400", hash_original_field = "48A902C1D749B47EBC75C77370D5A1F0", hash_generated_field = "6525A0317A729C6A21603F930B262102")
@@ -34,7 +35,7 @@ public class RotateDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.450 -0400", hash_original_method = "995C0E9A95F93D2E12F98717831D2FCB", hash_generated_method = "DDDE6149D3CE02B80BFFE97CEC56A3B9")
     private  RotateDrawable(RotateState rotateState, Resources res) {
         mState = new RotateState(rotateState, this, res);

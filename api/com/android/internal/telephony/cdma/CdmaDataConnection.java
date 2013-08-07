@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Message;
 import android.util.Log;
 
@@ -9,11 +10,12 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.RetryManager;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class CdmaDataConnection extends DataConnection {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.479 -0400", hash_original_method = "90BEBC84F90039055B8CE59477380674", hash_generated_method = "B81648F6AB419A6DCAB1BF385B0968A8")
     private  CdmaDataConnection(CDMAPhone phone, String name, int id, RetryManager rm) {
         super(phone, name, id, rm);
@@ -25,6 +27,7 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.BAN)
     static CdmaDataConnection makeDataConnection(CDMAPhone phone, int id, RetryManager rm) {
         synchronized (mCountLock) {
             mCount += 1;
@@ -37,6 +40,7 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.481 -0400", hash_original_method = "1E0A08AF35615E9E10187C3143DD41F0", hash_generated_method = "A37F07C1ECB55EAB024A56DF4B8C713D")
     @Override
     protected void onConnect(ConnectionParams cp) {
@@ -73,6 +77,7 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.481 -0400", hash_original_method = "3581014A48A474B85EE6C8602B0DDEFE", hash_generated_method = "0829B659DF600CDD5395CD1416C59620")
     @Override
     public String toString() {
@@ -86,6 +91,7 @@ String var20537B75E409F43099188469A355FDC5_325452225 =         "State=" + getCur
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.481 -0400", hash_original_method = "78F02BF6B20F01750FE4BD6062BC9879", hash_generated_method = "BD7B41EE7486A54B5669B1A81F84EAAD")
     @Override
     protected boolean isDnsOk(String[] domainNameServers) {
@@ -115,6 +121,7 @@ String var20537B75E409F43099188469A355FDC5_325452225 =         "State=" + getCur
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.482 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "3D39A3641D1F679267312BB4AD7C571C")
     @Override
     protected void log(String s) {

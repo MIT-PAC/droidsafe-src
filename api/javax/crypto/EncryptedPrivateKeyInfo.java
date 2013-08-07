@@ -1,6 +1,7 @@
 package javax.crypto;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
 import java.security.InvalidAlgorithmParameterException;
@@ -22,10 +23,10 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.utils.AlgNameMapper;
 import org.apache.harmony.security.x509.AlgorithmIdentifier;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class EncryptedPrivateKeyInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.103 -0400", hash_original_field = "CDE54E566F514F637B77F1C0B5BA9798", hash_generated_field = "660D008EA392E932E9C27E468BE1012B")
@@ -187,7 +188,7 @@ public class EncryptedPrivateKeyInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isNullValue(byte[] toCheck) {
         return toCheck[0] == 5 && toCheck[1] == 0;
     }
@@ -506,7 +507,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_2093323626 =            
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.190 -0400", hash_original_method = "F2C8E0AE199C63E108D40A2C42D8E5F5", hash_generated_method = "9D071966545943DF1C6EC0E035663AD2")
     private InvalidKeyException invalidKey() throws InvalidKeyException {
         InvalidKeyException varB88FC85BF2AB94E1CB7ED53A5595DB16_1975010713 = new InvalidKeyException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
@@ -539,6 +540,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_2093323626 =            
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.192 -0400", hash_original_method = "BB96A16B2E5B8AF0DEB9007883ABA8DF", hash_generated_method = "08E7CB67140B65B45072E8447AF87A89")
     private boolean mapAlgName() {
         if(AlgNameMapper.isOID(this.algName))        

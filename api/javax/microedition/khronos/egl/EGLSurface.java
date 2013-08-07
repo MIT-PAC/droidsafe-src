@@ -1,7 +1,8 @@
 package javax.microedition.khronos.egl;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public abstract class EGLSurface {
     

@@ -1,6 +1,7 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.SoftReference;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,11 +12,12 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class DateUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.864 -0400", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "F2D2192E1AB0D80DE38C401BF608C353")
     private  DateUtils() {
         // ---------- Original Method ----------

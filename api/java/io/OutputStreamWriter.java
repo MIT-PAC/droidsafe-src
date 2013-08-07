@@ -1,6 +1,7 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
@@ -9,8 +10,8 @@ import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class OutputStreamWriter extends Writer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.107 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
@@ -132,6 +133,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.112 -0400", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "9B8F3591AAECFA2B0C088EDC2C48457E")
     private void flushBytes(boolean flushUnderlyingStream) throws IOException {
         addTaint(flushUnderlyingStream);
@@ -166,6 +168,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.113 -0400", hash_original_method = "5FDBBBBEF70B98878F7238A71245F3A5", hash_generated_method = "43E7C827D181E1D6E169D5039562AB44")
     private void convert(CharBuffer chars) throws IOException {
         addTaint(chars.getTaint());
@@ -199,6 +202,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.115 -0400", hash_original_method = "17AF81F5CD218F57FFE1053C07491E0D", hash_generated_method = "D789BA1EA2F1AEFA7AD2BA6661A8D5B2")
     private void drainEncoder() throws IOException {
         CharBuffer chars = CharBuffer.allocate(0);
@@ -256,6 +260,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.116 -0400", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "E2652E8AED0EF44CFD1E8F419F72C9C6")
     private void checkStatus() throws IOException {
         if(encoder == null)        

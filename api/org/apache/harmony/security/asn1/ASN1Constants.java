@@ -1,6 +1,7 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ASN1Constants {
     

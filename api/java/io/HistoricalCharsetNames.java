@@ -1,11 +1,12 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class HistoricalCharsetNames {
     

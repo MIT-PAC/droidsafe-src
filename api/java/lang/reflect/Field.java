@@ -1,6 +1,7 @@
 package java.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.annotation.Annotation;
 import java.util.Comparator;
 
@@ -8,10 +9,10 @@ import org.apache.harmony.kernel.vm.StringUtils;
 import org.apache.harmony.luni.lang.reflect.GenericSignatureParser;
 import org.apache.harmony.luni.lang.reflect.Types;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Field extends AccessibleObject implements Member {
@@ -63,7 +64,7 @@ public final class Field extends AccessibleObject implements Member {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.004 -0400", hash_original_method = "5029B4C059F978BE158986B034FE3005", hash_generated_method = "7599278F3A909698F9008CA14287B9C3")
     private synchronized void initGenericType() {
         if(!genericTypesAreInitialized)        
@@ -427,6 +428,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1839843716 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.013 -0400", hash_original_method = "994767CE6492BCD5B50ECB089389E539", hash_generated_method = "5D7294B8827B49C2CC53AAD3E29B4F41")
     @SuppressWarnings("unused")
     private String getSignature() {

@@ -1,15 +1,17 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.RemoteException;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class ThrottleManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.325 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "6BB94C28B991564A2654192146B5BDD6")
 
     private IThrottleManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.325 -0400", hash_original_method = "A34F832700CA864903AE32FE53CD267E", hash_generated_method = "3F4BC6E2219D8CDC47CEDF2CEA3212F6")
     @SuppressWarnings({"UnusedDeclaration"})
     private  ThrottleManager() {
@@ -17,6 +19,7 @@ public class ThrottleManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.325 -0400", hash_original_method = "1E8483A92A1408237E2885FBEDD54340", hash_generated_method = "5BAA81ACE2D9663C0B54B6AC96DFBA11")
     public  ThrottleManager(IThrottleManager service) {
         if(service == null)        
@@ -36,6 +39,7 @@ public class ThrottleManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.326 -0400", hash_original_method = "2AA7855A594B5700D93ECFB7D9A7B7C4", hash_generated_method = "B14ADC7D9113494E2BC83444859FAEA6")
     public long getResetTime(String iface) {
         addTaint(iface.getTaint());
@@ -60,6 +64,7 @@ public class ThrottleManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.326 -0400", hash_original_method = "71ECD56B8A0A75240BCCEB36337D3BA2", hash_generated_method = "1DC678A92BCA20B29978F42AF3515F7C")
     public long getPeriodStartTime(String iface) {
         addTaint(iface.getTaint());
@@ -84,6 +89,7 @@ public class ThrottleManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.326 -0400", hash_original_method = "8241A155E8F913EC462AEA4A2F5ED1F8", hash_generated_method = "3150BACF0FB1FEA078EB739F48835BF1")
     public long getByteCount(String iface, int direction, int period, int ago) {
         addTaint(ago);
@@ -111,6 +117,7 @@ public class ThrottleManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.326 -0400", hash_original_method = "1E5CE1E6E971F0A1DB09E08194D8A23E", hash_generated_method = "4E825E3F7C7746FA44E49F380FDB7877")
     public long getCliffThreshold(String iface, int cliff) {
         addTaint(cliff);
@@ -136,6 +143,7 @@ public class ThrottleManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.326 -0400", hash_original_method = "1E0667CC63B486C17ACE24556BBA89F5", hash_generated_method = "8268A1A0F93A6F7ABC31CDD37894427B")
     public int getCliffLevel(String iface, int cliff) {
         addTaint(cliff);
@@ -161,6 +169,7 @@ public class ThrottleManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.327 -0400", hash_original_method = "BE6DD87215E82DDA8E4A2908333DC9D4", hash_generated_method = "7ED58CFFA641BA3E8FF2F386AFA97940")
     public String getHelpUri() {
         try 

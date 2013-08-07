@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.x9;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -11,10 +12,10 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERSequence;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.391 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "C9026F3AA6576B332E83AF850E791F56")

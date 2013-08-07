@@ -1,6 +1,7 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.util.Collections;
@@ -12,10 +13,10 @@ import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
 import libcore.util.Objects;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ResponseHeaders {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.070 -0400", hash_original_field = "9305B73D359BD06734FEE0B3638079E1", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
@@ -464,6 +465,7 @@ String varBCB9696E34DE6C6E990E36231F1734E3_1338706236 =         wwwAuthenticate;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.084 -0400", hash_original_method = "62B4E508B2BD1FD8674C188E31D3FA94", hash_generated_method = "2E9FBB544F1618D12A9DD259DE29C8C8")
     private long computeAge(long nowMillis) {
         addTaint(nowMillis);
@@ -491,6 +493,7 @@ String varBCB9696E34DE6C6E990E36231F1734E3_1338706236 =         wwwAuthenticate;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.085 -0400", hash_original_method = "723583A81B93D8753154A40B95765CF8", hash_generated_method = "65FCF710A3FBB29126B019FFA93D32BE")
     private long computeFreshnessLifetime() {
         if(maxAgeSeconds != -1)        
@@ -536,7 +539,7 @@ String varBCB9696E34DE6C6E990E36231F1734E3_1338706236 =         wwwAuthenticate;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.085 -0400", hash_original_method = "8F28A3C0281B6F16DECF00092A03388F", hash_generated_method = "5DBE9BFC33F61CF9246438B69278AF8D")
     private boolean isFreshnessLifetimeHeuristic() {
         boolean varB3779E1B2D66F50C18AC10B4E5E4B2CF_1278389083 = (maxAgeSeconds == -1 && expires == null);
@@ -792,6 +795,7 @@ ResponseHeaders varBC0B9C117D11B2A6A830E7D800770C7D_1047153866 =         new Res
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isEndToEnd(String fieldName) {
         return !fieldName.equalsIgnoreCase("Connection")
                 && !fieldName.equalsIgnoreCase("Keep-Alive")

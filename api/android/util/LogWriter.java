@@ -1,10 +1,11 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Writer;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class LogWriter extends Writer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.781 -0400", hash_original_field = "22FC7A378B4F7C5F90F70A47BE1E4FCD", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
@@ -20,6 +21,7 @@ public class LogWriter extends Writer {
 
     private StringBuilder mBuilder = new StringBuilder(128);
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.782 -0400", hash_original_method = "E44EE0F95315B8E0B0AD825ED26FE77A", hash_generated_method = "D7AD5B779E6E88DC7856B65491B83776")
     public  LogWriter(int priority, String tag) {
         mPriority = priority;
@@ -32,6 +34,7 @@ public class LogWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.783 -0400", hash_original_method = "ABBE3E1E49A04D726DE9335FE3D64F4B", hash_generated_method = "5C49E3626BD0C6D8215CFB8F659F0B8A")
     public  LogWriter(int priority, String tag, int buffer) {
         mPriority = priority;
@@ -44,6 +47,7 @@ public class LogWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.783 -0400", hash_original_method = "651C3299C6098C5206251D3395E7F56C", hash_generated_method = "D08D7FDC7D86BF10CFE149353B975CA7")
     @Override
     public void close() {
@@ -53,6 +57,7 @@ public class LogWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.784 -0400", hash_original_method = "4397D4B6CC585AD9A2FABC1DB1031654", hash_generated_method = "97F56083B0C8ACED57AE8237C5E7EFB5")
     @Override
     public void flush() {
@@ -62,6 +67,7 @@ public class LogWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.784 -0400", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "9BDF1371A8F52A0B4DB9441B7A707252")
     @Override
     public void write(char[] buf, int offset, int count) {
@@ -93,6 +99,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.785 -0400", hash_original_method = "365F60E44B7DA4848E76578B1D312F6F", hash_generated_method = "4B01CB39177B60ACFCFD92E4934FB5D7")
     private void flushBuilder() {
         if(mBuilder.length() > 0)        

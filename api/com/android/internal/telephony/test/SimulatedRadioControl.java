@@ -1,6 +1,7 @@
 package com.android.internal.telephony.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface SimulatedRadioControl
 {

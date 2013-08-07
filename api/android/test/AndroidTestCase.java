@@ -1,6 +1,7 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Field;
 
 import junit.framework.TestCase;
@@ -8,10 +9,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AndroidTestCase extends TestCase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.283 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
@@ -79,7 +80,7 @@ Context var178E2AD52D6FBBB503F908168856B574_1627509544 =         mContext;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.286 -0400", hash_original_method = "3848B0B3D63F14BFB1A8E29618D82C34", hash_generated_method = "B699A63D99510D00DDB5F97C782A1536")
     public void setTestContext(Context context) {
         mTestContext = context;
@@ -88,7 +89,7 @@ Context var178E2AD52D6FBBB503F908168856B574_1627509544 =         mContext;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.286 -0400", hash_original_method = "0FA51A2375E728630821E2E4824DA56A", hash_generated_method = "D4B4810F48BDB84237397D5B4B751CFA")
     public Context getTestContext() {
 Context var76636B45E4D1C87FF9777E5D70C7AB46_1891283509 =         mTestContext;

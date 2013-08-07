@@ -3,6 +3,7 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.annotations.*;
 
+
 public interface IWindowManager extends android.os.IInterface
 {
 

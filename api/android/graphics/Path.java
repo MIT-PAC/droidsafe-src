@@ -1,10 +1,11 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Path {
@@ -337,7 +338,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_1521479272 =         sFillTypeArray
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.306 -0400", hash_original_method = "4C4C77916FAC7E47D84337BC4A27AFDA", hash_generated_method = "03C3F9106318D79761CADDE43B31F645")
     private void detectSimplePath(float left, float top, float right, float bottom, Direction dir) {
         addTaint(bottom);
@@ -649,7 +650,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_1521479272 =         sFillTypeArray
     protected void finalize() {}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     final int ni() {
         return getTaintInt(); 
     }

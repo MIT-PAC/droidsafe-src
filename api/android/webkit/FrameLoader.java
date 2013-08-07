@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,10 +10,10 @@ import android.net.http.EventHandler;
 import android.net.http.RequestHandle;
 import android.os.Build;
 import android.webkit.CacheManager.CacheResult;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class FrameLoader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.708 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "D7FBD6A4D07A65117411BC8C01652773")
@@ -205,7 +206,7 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1244776930 =         mListener;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static boolean handleLocalFile(String url, LoadListener loadListener,
             WebSettings settings) {
         assert !JniUtil.useChromiumHttpStack();
@@ -322,7 +323,7 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1244776930 =         mListener;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.733 -0400", hash_original_method = "D628211A63EBF198D6007A9671F95672", hash_generated_method = "EAE83E1A2EF110E3F79827C2EF31B37F")
     private void startCacheLoad(CacheResult result) {
         addTaint(result.getTaint());
@@ -357,7 +358,7 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1244776930 =         mListener;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.733 -0400", hash_original_method = "ED6284595A2927F289F312ED71C4BF2D", hash_generated_method = "04CBE39D95ADC5EB67EE6CFC5AB62C19")
     private boolean handleCache() {
 switch(mCacheMode){
@@ -410,7 +411,7 @@ switch(mCacheMode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.733 -0400", hash_original_method = "2D0BB20A4C7261DEBC8826658FC12230", hash_generated_method = "4712B931494AD22C3CCFAC85ADE49922")
     private void populateStaticHeaders() {
         String accept = mHeaders.get("Accept");
@@ -446,7 +447,7 @@ switch(mCacheMode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.734 -0400", hash_original_method = "FC5DAD276D63BF9B93BD19919189EAE8", hash_generated_method = "EEEC9434E0A08CEA31852FC09037CFDA")
     private void populateHeaders() {
         if(mReferrer != null)        

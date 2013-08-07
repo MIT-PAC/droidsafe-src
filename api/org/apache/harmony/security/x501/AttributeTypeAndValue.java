@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x501;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.charset.Charsets;
 import java.util.Arrays;
@@ -18,10 +19,10 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BerOutputStream;
 import org.apache.harmony.security.utils.ObjectIdentifier;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class AttributeTypeAndValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.512 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "8882A462AEDA287957EC397E85D609FD")
@@ -31,7 +32,7 @@ public final class AttributeTypeAndValue {
 
     private AttributeValue value;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.513 -0400", hash_original_method = "6EC11ED1743D72D03D153EE3955FA226", hash_generated_method = "E5E12649FAADB9729D11ACE6459D9D75")
     private  AttributeTypeAndValue(int[] oid, AttributeValue value) throws IOException {
         ObjectIdentifier thisOid = getOID(oid);
@@ -177,6 +178,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ObjectIdentifier getOID(int[] oid) {
         int index = hashIntArray(oid) % CAPACITY;
         ObjectIdentifier[] list = KNOWN_OIDS[index];
@@ -189,6 +191,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void addOID(ObjectIdentifier oid) {
         int[] newOid = oid.getOid();
         int index = hashIntArray(newOid) % CAPACITY;
@@ -208,7 +211,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int hashIntArray(int[] oid) {
         int intHash = 0;
         for (int i = 0; i < oid.length && i < 4; i++) {

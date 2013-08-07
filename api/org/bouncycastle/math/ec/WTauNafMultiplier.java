@@ -1,9 +1,10 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-import droidsafe.annotations.DSGenerator;
+
 
 class WTauNafMultiplier implements ECMultiplier {
     
@@ -53,6 +54,7 @@ ECPoint var7D4C483E3AE81B6FBDD328B64E587BCD_2064752159 =         multiplyWTnaf(p
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.922 -0400", hash_original_method = "35C9D9252ADD71DF3C65B7738D13F8CD", hash_generated_method = "71E9EE1947EB8E9A4904134AD1D7BDF8")
     private ECPoint.F2m multiplyWTnaf(ECPoint.F2m p, ZTauElement lambda,
             PreCompInfo preCompInfo, byte a, byte mu) {
@@ -93,6 +95,7 @@ ECPoint.F2m var8FB674322EEF53AD831EA5BF0B5AB0AB_1706242830 =         multiplyFro
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ECPoint.F2m multiplyFromWTnaf(ECPoint.F2m p, byte[] u,
             PreCompInfo preCompInfo) {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();

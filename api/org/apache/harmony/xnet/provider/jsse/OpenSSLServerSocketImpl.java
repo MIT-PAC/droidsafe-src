@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -11,10 +12,10 @@ import java.security.interfaces.RSAPrivateKey;
 
 import javax.net.ssl.SSLException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.753 -0400", hash_original_field = "275693D255E1C48D7D5797E25BF7F3FC", hash_generated_field = "D3BEC3280BC0116C55BDEA33933A255E")
@@ -277,6 +278,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1525099289 =         socket;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.755 -0400", hash_original_method = "8DBC4EF4AD92DA8E96BA5DD8978DFCC3", hash_generated_method = "2D0A9E8A1F83F1A2ED667BE9904598D8")
     private void checkEnabledCipherSuites() throws SSLException {
 for(String enabledCipherSuite : enabledCipherSuites)
@@ -331,6 +333,7 @@ for(String enabledCipherSuite : enabledCipherSuites)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.756 -0400", hash_original_method = "23192C3ABD6FAD935D4B733BEA5E6735", hash_generated_method = "7160498F560498DE9E82940BFC3ADFA9")
     private boolean checkForPrivateKey(String keyType, Class keyClass) {
         addTaint(keyClass.getTaint());

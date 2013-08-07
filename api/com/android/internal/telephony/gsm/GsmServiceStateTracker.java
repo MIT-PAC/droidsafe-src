@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -47,10 +48,10 @@ import com.android.internal.telephony.ServiceStateTracker;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.TelephonyProperties;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class GsmServiceStateTracker extends ServiceStateTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.362 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
@@ -199,6 +200,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
         
 };
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.366 -0400", hash_original_method = "89B681C68F2C3DCA55179D15C34AC4AC", hash_generated_method = "3674E78DB0738469C53C072BA81027AE")
     public  GsmServiceStateTracker(GSMPhone phone) {
         super();
@@ -240,6 +242,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.366 -0400", hash_original_method = "D8900B5121A238BBC317864D0A18F1DD", hash_generated_method = "B40ED7CB9364FAE6479A4D45B656DCB0")
     public void dispose() {
         cm.unregisterForAvailable(this);
@@ -266,6 +269,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.367 -0400", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "40BDA4D14701B8CE588BCB1AD2B486E8")
     protected void finalize() {
         if(DBG)        
@@ -275,7 +279,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.367 -0400", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "6FA897DD3F2EF26DB6D9BA90E3F617CB")
     @Override
     protected Phone getPhone() {
@@ -287,7 +291,7 @@ Phone var3DF544D9611CD6A47CD50808F9E2E7D5_1445475754 =         phone;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.370 -0400", hash_original_method = "8D6E3CD042747DF0CD652F21C9ED2A0B", hash_generated_method = "60410A48D33DDE1A6DF861650696F9DF")
     public void handleMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -444,6 +448,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.372 -0400", hash_original_method = "BC2E3346E1E8D048BB892FC104E776BC", hash_generated_method = "1EBDA37B0127C1DB8911540E5C24C3D7")
     protected void setPowerStateToDesired() {
         if(mDesiredPowerState
@@ -468,6 +473,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.372 -0400", hash_original_method = "E3C7A91B3D91C3ACB7BE5D936C3A4029", hash_generated_method = "7B80391196098382748D93DB9B77989F")
     @Override
     protected void hangupAndPowerOff() {
@@ -488,7 +494,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.373 -0400", hash_original_method = "12AE11DB9489E0514D18AAE66522FB76", hash_generated_method = "726EC9BA479C3BADDC83DA12A726D188")
     protected void updateSpnDisplay() {
         int rule = phone.mIccRecords.getDisplayRule(ss.getOperatorNumeric());
@@ -531,7 +537,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.377 -0400", hash_original_method = "715C325B720DBA72DF5B4684F1B692D5", hash_generated_method = "39BCDF1C522917A80D14E71E0DA9061F")
     protected void handlePollStateResult(int what, AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -685,6 +691,7 @@ switch(what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.379 -0400", hash_original_method = "76DE4C6A99E85827FF76DDCBD0A680F0", hash_generated_method = "FB6F947C716BD93C04B4BB847C77356E")
     private void setSignalStrengthDefaultValues() {
         mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, true);
@@ -693,6 +700,7 @@ switch(what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.380 -0400", hash_original_method = "4A9AA9B5E92E73D941CD4914D7782EA3", hash_generated_method = "2717FBF28FEDF837B9CA385A0EBBCFAD")
     private void pollState() {
         pollingContext = new int[1];
@@ -748,7 +756,7 @@ switch(cm.getRadioState()){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.386 -0400", hash_original_method = "9E4E42BAC69A7F7033D249A5EA2291CC", hash_generated_method = "1AED95EF47C48D4E18180853867EAA78")
     private void pollStateDone() {
         if(DBG)        
@@ -941,7 +949,7 @@ switch(cm.getRadioState()){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.387 -0400", hash_original_method = "FF36AACCF1BD8DBC263BCA1FAF3CB26B", hash_generated_method = "F0BAC818561997E232C8726B6014A4B7")
     private boolean isGprsConsistent(int gprsState, int serviceState) {
         addTaint(serviceState);
@@ -956,6 +964,7 @@ switch(cm.getRadioState()){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.387 -0400", hash_original_method = "99CED85D89C5E9DD8967FF1E935BF80B", hash_generated_method = "BF5ED3C95264268108B9614078832ADC")
     private TimeZone getNitzTimeZone(int offset, boolean dst, long when) {
         addTaint(when);
@@ -981,6 +990,7 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_491636324 =         guess;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.388 -0400", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "8F6074FE685F0F87E322199F8392401C")
     private TimeZone findTimeZone(int offset, boolean dst, long when) {
         addTaint(when);
@@ -1027,7 +1037,7 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887 =         guess;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.388 -0400", hash_original_method = "C454880D3BFCEEC9D9AA3258CF5DFAC4", hash_generated_method = "A81797C278C3BF65AB5D07A5FD8E56AD")
     private void queueNextSignalStrengthPoll() {
         if(dontPollSignalStrength || (cm.getRadioState().isCdma()))        
@@ -1051,6 +1061,7 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887 =         guess;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.388 -0400", hash_original_method = "313D4989F4A5423E3CAD270FA74FCE9F", hash_generated_method = "335424F3BC3B0819809A2075A04A4AEB")
     private void onSignalStrengthResult(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -1102,7 +1113,7 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887 =         guess;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.389 -0400", hash_original_method = "F4F35E6AADE0C2C218C2CEC9E86259B9", hash_generated_method = "28EB821A759AC046ACDE147C4D566A78")
     private void onRestrictedStateChanged(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -1217,6 +1228,7 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887 =         guess;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "224D5C409E7F86CE5414891CFB70A981", hash_generated_method = "3D8EDF3B48C2C17EE8731B09A7F3712C")
     private int regCodeToServiceState(int code) {
         addTaint(code);
@@ -1268,7 +1280,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "AA2B480220D0A9A6A57F2074CF68FE7D")
     private boolean regCodeIsRoaming(int code) {
         addTaint(code);
@@ -1280,6 +1292,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "A83CC5F0F34C62E2D3BC7866CECAC756", hash_generated_method = "46D35B6B27430013E9C1DCCE862970B6")
     private boolean isRoamingBetweenOperators(boolean gsmRoaming, ServiceState s) {
         addTaint(s.getTaint());
@@ -1323,6 +1336,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int twoDigitsAt(String s, int offset) {
         int a, b;
         a = Character.digit(s.charAt(offset), 10);
@@ -1334,7 +1348,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "462522C9E25E239E090C32F4DC1CCDBD", hash_generated_method = "07E56A0C2D3F24254D1B654C1B462652")
      int getCurrentGprsState() {
         int varAE002CCACEDC16E1ADAE58BCD2D9B837_1419119966 = (gprsState);
@@ -1345,7 +1359,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.391 -0400", hash_original_method = "76A0DFDE7E82168261B9485993735FA8", hash_generated_method = "A27D5D7F78BEAC76B85A32747D024249")
     public int getCurrentDataConnectionState() {
         int varAE002CCACEDC16E1ADAE58BCD2D9B837_1575648048 = (gprsState);
@@ -1356,7 +1370,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.391 -0400", hash_original_method = "35025CCE5222CF7AFA718FFADECE80EF", hash_generated_method = "5206F618B3A487865DA8EB5FE5BC6D83")
     public boolean isConcurrentVoiceAndDataAllowed() {
         boolean var10896807F1D0D24F85768ECF425B98D6_756194061 = ((mRadioTechnology >= ServiceState.RADIO_TECHNOLOGY_UMTS));
@@ -1367,6 +1381,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String displayNameFor(int off) {
         off = off / 1000 / 60;
         char[] buf = new char[9];
@@ -1390,7 +1405,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.392 -0400", hash_original_method = "D8515350C34B3E7CC6A83CEBE4C1FE6C", hash_generated_method = "BF98506DF60295183DE892B5DAD82D9E")
     private void setTimeFromNITZString(String nitz, long nitzReceiveTime) {
         addTaint(nitzReceiveTime);
@@ -1527,6 +1542,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "10C2AC47FB9B2FA38284A276FBC39461", hash_generated_method = "99EC6873A0BE00DC44AFE2B99B4CED10")
     private boolean getAutoTime() {
         try 
@@ -1552,6 +1568,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "46367736BD7DFDD485A94174DBA3ECD3", hash_generated_method = "6DC911419E97CE0E18B68B5320163E3A")
     private boolean getAutoTimeZone() {
         try 
@@ -1577,7 +1594,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "89E6488BB9B703C7CA9BBABF73A30618")
     private void saveNitzTimeZone(String zoneId) {
         mSavedTimeZone = zoneId;
@@ -1586,6 +1603,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "BBC081DF5E9AA5E0F675E4C4D97D41FA", hash_generated_method = "FA812F2463447E256E093AB70BACE34A")
     private void saveNitzTime(long time) {
         mSavedTime = time;
@@ -1596,6 +1614,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "28A8B5328B033F98ED5E62B240AD20B6", hash_generated_method = "984A6F220FA299B6040E2A27C2DE4419")
     private void setAndBroadcastNetworkSetTimeZone(String zoneId) {
         addTaint(zoneId.getTaint());
@@ -1616,6 +1635,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.394 -0400", hash_original_method = "062E38B571EEA7E979075562F8B40A5D", hash_generated_method = "5F6CE596255AD73B6FA27FE77554A384")
     private void setAndBroadcastNetworkSetTime(long time) {
         addTaint(time);
@@ -1633,6 +1653,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.394 -0400", hash_original_method = "2770201C4A137564A500CEEFB3D4E467", hash_generated_method = "5BADBCC49182FF711778A01027AE3216")
     private void revertToNitzTime() {
         if(Settings.System.getInt(phone.getContext().getContentResolver(),
@@ -1666,6 +1687,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.394 -0400", hash_original_method = "846FA792EAB8BB56C921A6228BC9EB73", hash_generated_method = "B09F98EA2BB5CD5FB4D0F420DE98A6B4")
     private void revertToNitzTimeZone() {
         if(Settings.System.getInt(phone.getContext().getContentResolver(),
@@ -1691,6 +1713,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_method = "90EFCD7762032B11006E493EA631CF1F", hash_generated_method = "D78259CB3733203062F28383224859A4")
     private void setNotification(int notifyType) {
         addTaint(notifyType);
@@ -1750,6 +1773,7 @@ switch(notifyType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_method = "4109BBDDE3BB927415F4177275F054A2", hash_generated_method = "0C024BC85B4018640CE69C4B1B93B00C")
     @Override
     protected void log(String s) {
@@ -1760,6 +1784,7 @@ switch(notifyType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_method = "E8A9D45B999B20E24B18F0E2F50C667F", hash_generated_method = "5D4ED3A9E70D2AABB538EA7C903DDA44")
     @Override
     protected void loge(String s) {
@@ -1769,6 +1794,7 @@ switch(notifyType){
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void sloge(String s) {
         Log.e(LOG_TAG, "[GsmSST] " + s);
     }

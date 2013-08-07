@@ -1,14 +1,15 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 import java.nio.charset.ModifiedUtf8;
 
 import libcore.io.Memory;
 import libcore.io.SizeOf;
 import libcore.io.Streams;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class DataInputStream extends FilterInputStream implements DataInput {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.594 -0400", hash_original_field = "239E1A8E5C884A724F64EE44024C15F5", hash_generated_field = "0DF1829DEBB6EA0D971CFA5BDB181CF9")
@@ -283,6 +284,7 @@ String var8DE7745E9459616109A9A855B8DF1F39_1217144226 =         decodeUTF(utfSiz
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String decodeUTF(int utfSize, DataInput in) throws IOException {
         byte[] buf = new byte[utfSize];
         in.readFully(buf, 0, utfSize);

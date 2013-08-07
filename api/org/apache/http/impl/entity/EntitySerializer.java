@@ -1,6 +1,7 @@
 package org.apache.http.impl.entity;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -13,8 +14,8 @@ import org.apache.http.impl.io.ContentLengthOutputStream;
 import org.apache.http.impl.io.IdentityOutputStream;
 import org.apache.http.io.SessionOutputBuffer;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class EntitySerializer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.299 -0400", hash_original_field = "27B348194FA2C44245DD354AB07C0458", hash_generated_field = "ADE4068D7F9D27835F9860151E36C4D1")

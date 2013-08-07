@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
@@ -17,10 +18,10 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Xml;
 import android.widget.FrameLayout;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class LayoutInflater {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.808 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "40AF400BA8F86FA9C9E428F903D03FF5")
@@ -471,6 +472,7 @@ View var4A4697B81353FB366B444B5D55EB814F_319029995 =             constructor.new
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.817 -0400", hash_original_method = "0971FA0124FB7B31B88F61FC842AABEB", hash_generated_method = "68556A50A47825C2581DCE38A1B09592")
     private void failNotAllowed(String name, String prefix, AttributeSet attrs) {
         addTaint(attrs.getTaint());
@@ -648,6 +650,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1742993740 =             view;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.820 -0400", hash_original_method = "D305B9D132FFD898328C34D4AEEA8981", hash_generated_method = "A28773FE12CAEE49892230B2567D41EF")
     private void parseRequestFocus(XmlPullParser parser, View parent) throws XmlPullParserException, IOException {
         addTaint(parent.getTaint());
@@ -670,6 +673,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1742993740 =             view;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.821 -0400", hash_original_method = "3903965D4D2522F244AF5345C6CDB188", hash_generated_method = "6C181D9CE71A6A339D686BF251BA26A1")
     private void parseInclude(XmlPullParser parser, View parent, AttributeSet attrs) throws XmlPullParserException, IOException {
         addTaint(attrs.getTaint());
@@ -935,6 +939,7 @@ View var055A44BB32643942C424748EC4A9CD57_1166923459 =             mF22 != null ?
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.825 -0400", hash_original_method = "553FA2CA85816FF11073226F48838667", hash_generated_method = "00C0A90E7BA24936A24ED91BF6920ACE")
         private void makeBlink() {
             Message message = mHandler.obtainMessage(MESSAGE_BLINK);

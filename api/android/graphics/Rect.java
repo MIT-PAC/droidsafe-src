@@ -1,13 +1,14 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 import java.util.regex.Pattern;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public final class Rect implements Parcelable {
     public int left;
@@ -92,7 +93,7 @@ public final class Rect implements Parcelable {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public String toShortString(StringBuilder sb){
 		// Original method
 		/*
@@ -147,7 +148,7 @@ public final class Rect implements Parcelable {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void printShortString(PrintWriter pw){
 		// Original method
 		/*
@@ -587,7 +588,7 @@ public final class Rect implements Parcelable {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void scale(float scale){
 		// Original method
 		/*

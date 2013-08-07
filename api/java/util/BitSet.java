@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -9,10 +10,10 @@ import java.nio.ByteOrder;
 import java.nio.LongBuffer;
 
 import libcore.io.SizeOf;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BitSet implements Serializable, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.079 -0400", hash_original_field = "CC411E6C13670E52124629B8AC83F7D0", hash_generated_field = "487233F7143B18DBA481DB90C8ACD8D3")
@@ -50,7 +51,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.080 -0400", hash_original_method = "F5397E49D432953D65E6CB2ED1150384", hash_generated_method = "1C0E37C5115CD13FD56B4BE776F6A166")
     private  BitSet(long[] bits) {
         this.bits = bits;
@@ -63,7 +64,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.080 -0400", hash_original_method = "2E0FE194508C45AD5184DCF0A152D7A0", hash_generated_method = "70FD16BD6869BF3839FB328DA0703FD2")
     private void shrinkSize() {
         int i = longCount - 1;
@@ -82,7 +83,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static long[] arrayForBits(int bitCount) {
         return new long[(bitCount + 63)/ 64];
     }
@@ -175,7 +176,7 @@ for(int i = 0;i < longCount;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.084 -0400", hash_original_method = "FD70AAE85AF9795828FE994C30CD34E8", hash_generated_method = "AE589F6F3C46404803046C74D6F9BFFF")
     private void ensureCapacity(int desiredLongCount) {
         addTaint(desiredLongCount);
@@ -332,7 +333,7 @@ for(int i = 0;i < longCount;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.087 -0400", hash_original_method = "71550A783E2339080C93A6660DB93338", hash_generated_method = "C8FA5192241807840A1F26CB01ABAEB0")
     private void checkIndex(int index) {
         addTaint(index);
@@ -349,7 +350,7 @@ for(int i = 0;i < longCount;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.087 -0400", hash_original_method = "87A456FF76D283B2A0EA4C0CB9963D07", hash_generated_method = "C4A733DCE80899F2C8620249FFB5A349")
     private void checkRange(int fromIndex, int toIndex) {
         addTaint(toIndex);
@@ -971,7 +972,7 @@ String var2460B846747F8B22185AD8BE722266A5_1269554646 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.096 -0400", hash_original_method = "BDE3A7C277C6F771330A08D119C9767D", hash_generated_method = "BE136E9CB3E63AC6C3F411543F95128C")
     public int previousSetBit(int index) {
         addTaint(index);
@@ -1008,7 +1009,7 @@ for(int i = index;i >= 0;--i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.097 -0400", hash_original_method = "4D910DE065D256451DE439F25B5A6A08", hash_generated_method = "75B43382CDF78A14A8EB4B1604E0E6B7")
     public int previousClearBit(int index) {
         addTaint(index);
@@ -1076,13 +1077,13 @@ for(int i = 0;i < longCount;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static BitSet valueOf(long[] longs) {
         return new BitSet(longs.clone());
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static BitSet valueOf(LongBuffer longBuffer) {
         long[] longs = new long[longBuffer.remaining()];
         for (int i = 0; i < longs.length; ++i) {
@@ -1092,13 +1093,13 @@ for(int i = 0;i < longCount;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static BitSet valueOf(byte[] bytes) {
         return BitSet.valueOf(ByteBuffer.wrap(bytes));
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static BitSet valueOf(ByteBuffer byteBuffer) {
         byteBuffer = byteBuffer.slice().order(ByteOrder.LITTLE_ENDIAN);
         long[] longs = arrayForBits(byteBuffer.remaining() * 8);
@@ -1113,7 +1114,7 @@ for(int i = 0;i < longCount;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.097 -0400", hash_original_method = "87C10E36682237AA1B22F77F460E655A", hash_generated_method = "380FE4AE2E39356DB2A00038C5512480")
     public long[] toLongArray() {
         long[] varA7B86AB69207221E0772B497BB3C8517_44835742 = (Arrays.copyOf(bits, longCount));
@@ -1124,7 +1125,7 @@ for(int i = 0;i < longCount;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.098 -0400", hash_original_method = "BCE80AE7073A25796C80405F8FB14636", hash_generated_method = "4D5052E13FAD006B143E16F0C1482264")
     public byte[] toByteArray() {
         int bitCount = length();
@@ -1150,7 +1151,7 @@ for(int i = 0;i < result.length;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.098 -0400", hash_original_method = "928646C6EBB028EB87EF1072BE151B53", hash_generated_method = "ABED21843088C993299A9DDD6D02486F")
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         addTaint(ois.getTaint());

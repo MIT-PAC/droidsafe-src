@@ -1,15 +1,17 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.channels.FileChannel.MapMode;
 
 import libcore.io.SizeOf;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 final class MappedByteBufferAdapter extends MappedByteBuffer {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.352 -0400", hash_original_method = "47B29CB1ACCF161EBA65518E27011CFA", hash_generated_method = "EA8865BF6A6608F4EB1C180A9C6E04BC")
     private  MappedByteBufferAdapter(ByteBuffer buffer) {
         super(buffer);

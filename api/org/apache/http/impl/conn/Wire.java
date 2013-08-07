@@ -1,16 +1,17 @@
 package org.apache.http.impl.conn;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.commons.logging.Log;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Wire {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.260 -0400", hash_original_field = "DC1D71BBB5C4D2A5E936DB79EF10C19F", hash_generated_field = "B44E589F36524A8564E741C819F5943D")
@@ -26,7 +27,7 @@ public class Wire {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.263 -0400", hash_original_method = "8AB487D8D5FB9334AB649D48E9DFB74A", hash_generated_method = "96754D9F7E98A4F3A15C3BC8F64D7256")
     private void wire(String header, InputStream instream) throws IOException {
         addTaint(instream.getTaint());

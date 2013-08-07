@@ -1,6 +1,7 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,14 +16,14 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
 
 import libcore.io.Streams;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Channels {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.130 -0400", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "A3FFC3FD46BE47AAF4DAB2140E96D8E8")
     private  Channels() {
         // ---------- Original Method ----------

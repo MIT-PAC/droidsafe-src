@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,10 +31,10 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ContactsContract {
     
@@ -184,6 +185,7 @@ public final class ContactsContract {
     
     public static final class Directory implements BaseColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.206 -0400", hash_original_method = "C1FAFD7F8C25A27903905826E99B3CB4", hash_generated_method = "32027E1E1476A00A97D4C9A87338A0EE")
         private  Directory() {
             // ---------- Original Method ----------
@@ -277,6 +279,7 @@ public final class ContactsContract {
     
     public static final class SyncState implements SyncStateContract.Columns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.207 -0400", hash_original_method = "C3CB9524AE86EE634A43E203167EAA5A", hash_generated_method = "7C56DAB1CC85D73593C30D4266013E44")
         private  SyncState() {
             // ---------- Original Method ----------
@@ -317,6 +320,7 @@ public final class ContactsContract {
     
     public static final class ProfileSyncState implements SyncStateContract.Columns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.207 -0400", hash_original_method = "1AF1C4539078F536A57F5CC0E82C2CE1", hash_generated_method = "62C098D2F6555C9344B4BEE7E8733390")
         private  ProfileSyncState() {
             // ---------- Original Method ----------
@@ -379,6 +383,7 @@ public final class ContactsContract {
     
     public static class Contacts implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactNameColumns, ContactStatusColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.208 -0400", hash_original_method = "F5E3085137E37D29F0F8CB3C296F1F57", hash_generated_method = "EBAB9AC2EF768DD752DA8373D9E74008")
         private  Contacts() {
             // ---------- Original Method ----------
@@ -488,6 +493,7 @@ public final class ContactsContract {
         
         public static final class Data implements BaseColumns, DataColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.209 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             private  Data() {
                 // ---------- Original Method ----------
@@ -503,6 +509,7 @@ public final class ContactsContract {
         
         public static final class Entity implements BaseColumns, ContactsColumns, ContactNameColumns, RawContactsColumns, BaseSyncColumns, SyncColumns, DataColumns, StatusColumns, ContactOptionsColumns, ContactStatusColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.209 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             private  Entity() {
                 // ---------- Original Method ----------
@@ -524,6 +531,7 @@ public final class ContactsContract {
         
         public static final class StreamItems implements StreamItemsColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.209 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             private  StreamItems() {
                 // ---------- Original Method ----------
@@ -539,6 +547,7 @@ public final class ContactsContract {
         
         public static final class AggregationSuggestions implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactStatusColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.209 -0400", hash_original_method = "35E5891C5F5088704DD7A6D202E906B4", hash_generated_method = "466C7EBC7F53D00329A79C14605D9051")
             private  AggregationSuggestions() {
                 // ---------- Original Method ----------
@@ -676,6 +685,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
         
         public static final class Photo implements BaseColumns, DataColumnsWithJoins {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.211 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             private  Photo() {
                 // ---------- Original Method ----------
@@ -751,6 +761,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
     
     public static final class Profile implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactNameColumns, ContactStatusColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "B87424FB8F4DF05D98854CA5453341A1", hash_generated_method = "F0740920D8E660C3FAFA79C0F30FDA26")
         private  Profile() {
             // ---------- Original Method ----------
@@ -777,6 +788,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
     
     public static final class RawContacts implements BaseColumns, RawContactsColumns, ContactOptionsColumns, ContactNameColumns, SyncColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "6107CD4B76D912ACDA57642552743C0C", hash_generated_method = "005A36265C3975138432C36B012CB07D")
         private  RawContacts() {
             // ---------- Original Method ----------
@@ -810,6 +822,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
         
         public static final class Data implements BaseColumns, DataColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             private  Data() {
                 // ---------- Original Method ----------
@@ -825,6 +838,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
         
         public static final class Entity implements BaseColumns, DataColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             private  Entity() {
                 // ---------- Original Method ----------
@@ -843,6 +857,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
         
         public static final class StreamItems implements BaseColumns, StreamItemsColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             private  StreamItems() {
                 // ---------- Original Method ----------
@@ -858,6 +873,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
         
         public static final class DisplayPhoto {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.213 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
             private  DisplayPhoto() {
                 // ---------- Original Method ----------
@@ -1008,6 +1024,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public static final class StreamItems implements BaseColumns, StreamItemsColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.214 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
         private  StreamItems() {
             // ---------- Original Method ----------
@@ -1016,6 +1033,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class StreamItemPhotos implements BaseColumns, StreamItemPhotosColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.214 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
             private  StreamItemPhotos() {
                 // ---------- Original Method ----------
@@ -1061,6 +1079,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public static final class StreamItemPhotos implements BaseColumns, StreamItemPhotosColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.214 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
         private  StreamItemPhotos() {
             // ---------- Original Method ----------
@@ -1076,6 +1095,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public static final class PhotoFiles implements BaseColumns, PhotoFilesColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.215 -0400", hash_original_method = "68B58AFB95B4CB9CF9AA43D4A8112325", hash_generated_method = "059107858AF90ED764E5882C1FCC748C")
         private  PhotoFiles() {
             // ---------- Original Method ----------
@@ -1088,6 +1108,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public final static class Data implements DataColumnsWithJoins {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.215 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
         private  Data() {
             // ---------- Original Method ----------
@@ -1125,6 +1146,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public final static class RawContactsEntity implements BaseColumns, DataColumns, RawContactsColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.215 -0400", hash_original_method = "F8C55B41037119D58D30171BDB7F39D2", hash_generated_method = "B8AC49C785E02A24876BA7954CC9671E")
         private  RawContactsEntity() {
             // ---------- Original Method ----------
@@ -1154,6 +1176,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public static final class PhoneLookup implements BaseColumns, PhoneLookupColumns, ContactsColumns, ContactOptionsColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.215 -0400", hash_original_method = "D1B05D947AED4866E4130EF727A894C9", hash_generated_method = "CEF12FA719FCE0616B6F9109D727ED4D")
         private  PhoneLookup() {
             // ---------- Original Method ----------
@@ -1176,6 +1199,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public static class StatusUpdates implements StatusColumns, PresenceColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.216 -0400", hash_original_method = "5AF8C140309DC273491B33B4E92E1FA7", hash_generated_method = "F61E7CF0B8D56F58CA9C892D1715AD61")
         private  StatusUpdates() {
             // ---------- Original Method ----------
@@ -1261,6 +1285,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public static final class CommonDataKinds {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.216 -0400", hash_original_method = "3EB47618DCA126249F6622B558B44C8E", hash_generated_method = "17AE15FF7C1A5C629F88953C9F30A23B")
         private  CommonDataKinds() {
             // ---------- Original Method ----------
@@ -1269,6 +1294,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class StructuredName implements DataColumnsWithJoins {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.216 -0400", hash_original_method = "3FC3D91ED9F213084C3DE2075E5DC6AD", hash_generated_method = "CE1EF34405CD085F5E1F4B00ACF1AACC")
             private  StructuredName() {
                 // ---------- Original Method ----------
@@ -1317,6 +1343,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Nickname implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.217 -0400", hash_original_method = "C2B5C7987B903EB42CE1EDEA1961E0EA", hash_generated_method = "32E284B5312A7E0C5334C9B07602E0ED")
             private  Nickname() {
                 // ---------- Original Method ----------
@@ -1354,6 +1381,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Phone implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.217 -0400", hash_original_method = "8C72E3409D1DFC404D9CBFEE30B178A0", hash_generated_method = "5D173D82F090B2D243AF646F29A6957E")
             private  Phone() {
                 // ---------- Original Method ----------
@@ -1499,6 +1527,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Email implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.219 -0400", hash_original_method = "4685E1971C120F244FF83B34E469953F", hash_generated_method = "AE4BB686E4A7B4068C4E01F323C0B09B")
             private  Email() {
                 // ---------- Original Method ----------
@@ -1570,6 +1599,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class StructuredPostal implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.219 -0400", hash_original_method = "C8D888449545672CEC46DD26E7BDDD9A", hash_generated_method = "6863A6EEFAC7C6659E60E563C7E51932")
             private  StructuredPostal() {
                 // ---------- Original Method ----------
@@ -1648,6 +1678,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Im implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.221 -0400", hash_original_method = "7F43853CDED9232ACA3765709B5C5CC7", hash_generated_method = "3D120A0520BAC27E9D81D0F0F88DB3FD")
             private  Im() {
                 // ---------- Original Method ----------
@@ -1758,6 +1789,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Organization implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.223 -0400", hash_original_method = "DB9E0507E0CFF6D3A6878FC813F638FB", hash_generated_method = "24D678582F58DD0084445608A443E82F")
             private  Organization() {
                 // ---------- Original Method ----------
@@ -1824,6 +1856,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Relation implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.224 -0400", hash_original_method = "AB820511C2318175DFB023ADDE00500D", hash_generated_method = "004DD1D842B963562C78785064E7989B")
             private  Relation() {
                 // ---------- Original Method ----------
@@ -1919,6 +1952,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Event implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.226 -0400", hash_original_method = "D3DDD15A13BA6EC1D9CD48C2CCCFE0B4", hash_generated_method = "F9069AC01DFBB6E335236591397070B2")
             private  Event() {
                 // ---------- Original Method ----------
@@ -1960,6 +1994,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Photo implements DataColumnsWithJoins {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.227 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             private  Photo() {
                 // ---------- Original Method ----------
@@ -1981,6 +2016,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Note implements DataColumnsWithJoins {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.228 -0400", hash_original_method = "EBAE52FCFF9289B17EA2262C75B6F6C0", hash_generated_method = "22ECB65A834798A58E72F146C908C2C8")
             private  Note() {
                 // ---------- Original Method ----------
@@ -1999,6 +2035,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class GroupMembership implements DataColumnsWithJoins {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.228 -0400", hash_original_method = "9948141C64D53CA8E17E7FD2EBA08DA8", hash_generated_method = "428CD6B4AF8D64BBC7FE2E70673D8538")
             private  GroupMembership() {
                 // ---------- Original Method ----------
@@ -2021,6 +2058,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Website implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.229 -0400", hash_original_method = "CC2DAF060546DD565E4193F5085BC2F2", hash_generated_method = "95610DE2A4CA3A3ED50311363B3F2A27")
             private  Website() {
                 // ---------- Original Method ----------
@@ -2060,6 +2098,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class SipAddress implements DataColumnsWithJoins, CommonColumns {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.229 -0400", hash_original_method = "7307A74E42B27B76827D43357DA8B367", hash_generated_method = "EF707E530C2FC911E23A8D91CEFB5F2B")
             private  SipAddress() {
                 // ---------- Original Method ----------
@@ -2109,6 +2148,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         
         public static final class Identity implements DataColumnsWithJoins {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.231 -0400", hash_original_method = "CB97BE8665681C1FD82290A9CE03A1A5", hash_generated_method = "EAF95E91D3C42B1A473D86AA0DA890E2")
             private  Identity() {
                 // ---------- Original Method ----------
@@ -2153,6 +2193,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
     
     public static final class Groups implements BaseColumns, GroupsColumns, SyncColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.231 -0400", hash_original_method = "7BA2DC4B038FD72F399C633B1C4B5B34", hash_generated_method = "4AF005563E89F66C166EA0E603C46AC1")
         private  Groups() {
             // ---------- Original Method ----------
@@ -2231,6 +2272,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1564253429 =                 new Enti
     
     public static final class AggregationExceptions implements BaseColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.233 -0400", hash_original_method = "AEC5F5D30A84CFEC2D9D1903833FB78B", hash_generated_method = "ED7E5F4AC17489A373923084FD271B08")
         private  AggregationExceptions() {
             // ---------- Original Method ----------
@@ -2272,6 +2314,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1564253429 =                 new Enti
     
     public static final class Settings implements SettingsColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.236 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "2C16D3C86A761A9DF5E58231442F813C")
         private  Settings() {
             // ---------- Original Method ----------
@@ -2294,6 +2337,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1564253429 =                 new Enti
     
     public static final class ProviderStatus {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.236 -0400", hash_original_method = "795A4A88B7E0FFCBF277CCA1899F11E6", hash_generated_method = "31F9DB0C46ADEE3AB9E7AC4FBB60BDC4")
         private  ProviderStatus() {
             // ---------- Original Method ----------
@@ -2428,6 +2472,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1564253429 =                 new Enti
     
     public static final class DisplayPhoto {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.240 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
         private  DisplayPhoto() {
             // ---------- Original Method ----------

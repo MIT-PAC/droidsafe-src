@@ -1,12 +1,13 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class UnsafeArrayList<T> extends AbstractList<T> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.679 -0400", hash_original_field = "481A5F16B24D461E31D85ABA607238B8", hash_generated_field = "42DB228EAC7DA8545EB1D1E5B9915BD3")
@@ -80,7 +81,7 @@ T varF21683B7BF428041682AC146600794E7_1669991070 =         array[i];
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.685 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "E6774A30C8018F172FD33A40684E425D")
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_809394960 = (size);

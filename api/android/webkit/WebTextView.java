@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -48,10 +49,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.035 -0400", hash_original_field = "E629B0C9798771544E235B84F0C22269", hash_generated_field = "74A54BC69C155F1DB9DBB9FB9549E6B1")
@@ -420,6 +421,7 @@ ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_863724196 =         mReceiver
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.038 -0400", hash_original_method = "480AEB5EE1C7676DB93788B189E32B71", hash_generated_method = "CFD2B1EB16C70F7E0ABD10DA0A1C02E9")
     private void lineUpScroll() {
         Layout layout = getLayout();
@@ -953,6 +955,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.042 -0400", hash_original_method = "950AB6742CC7236DE25064405668EBFC", hash_generated_method = "CE7A01C7486F7EFAAC98C7D6E699475F")
     private void sendDomEvent(KeyEvent event) {
         addTaint(event.getTaint());
@@ -1051,7 +1054,7 @@ switch(event.getAction()){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.043 -0400", hash_original_method = "6C4324E77F1CB780AA79022DD606C31E", hash_generated_method = "00AFB86BB31B20C4F47A23EA72B0CEE6")
     private void setMaxLength(int maxLength) {
         mMaxLength = maxLength;
@@ -1580,7 +1583,7 @@ View var8BB2C09B3FFE775E9F9FBFEC00A28511_1545284613 =             tv;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.087 -0400", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "E29443429247A5B5E60DF42163779843")
         private void setTextView(TextView tv) {
             mTextView = tv;

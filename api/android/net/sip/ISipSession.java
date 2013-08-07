@@ -1,6 +1,7 @@
 package android.net.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ISipSession extends android.os.IInterface
 {

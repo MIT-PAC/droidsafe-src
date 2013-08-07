@@ -1,12 +1,13 @@
 package org.apache.harmony.xml;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.xml.sax.Attributes;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 abstract class ExpatAttributes implements Attributes {

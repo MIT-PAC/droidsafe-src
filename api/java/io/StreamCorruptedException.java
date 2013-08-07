@@ -1,8 +1,9 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class StreamCorruptedException extends ObjectStreamException {
     

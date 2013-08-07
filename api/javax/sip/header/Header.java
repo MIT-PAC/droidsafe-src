@@ -1,6 +1,7 @@
 package javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 
 public interface Header extends Cloneable, Serializable {

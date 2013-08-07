@@ -1,13 +1,14 @@
 package java.util.concurrent.locks;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.575 -0400", hash_original_field = "53A68C354CA707EE3CF4135EF2B687CE", hash_generated_field = "8F79220737B731E52680B143D15FE029")
@@ -488,7 +489,7 @@ for(;;)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.593 -0400", hash_original_method = "4AE7D8D2A940AB168E8F2908DE9ACCF1", hash_generated_method = "341402616B162A7F02BE8AF7DBA3DDFB")
         private IllegalMonitorStateException unmatchedUnlockException() {
 IllegalMonitorStateException varAC3EE6A2AAB0A3AB5F9F21BDB3141812_1037364743 =             new IllegalMonitorStateException(
@@ -848,7 +849,7 @@ Thread var968C91F9D0BAAE3E440CA3AE2A5B5090_25571564 =             ((exclusiveCou
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.603 -0400", hash_original_method = "4E48396D4489DBF7E8DA7E593070FC82", hash_generated_method = "10F4B8958932986F227806E7628AC7E0")
         private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
             addTaint(s.getTaint());

@@ -1,10 +1,11 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class MalformedURLException extends IOException {
     
@@ -22,6 +23,7 @@ public class MalformedURLException extends IOException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.760 -0400", hash_original_method = "ACF50FF54717652ACCF5120218FC2A60", hash_generated_method = "8387E598B6C25BB03E3569D4E90956E0")
     public  MalformedURLException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

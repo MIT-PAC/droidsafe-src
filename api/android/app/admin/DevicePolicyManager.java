@@ -1,6 +1,7 @@
 package android.app.admin;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -19,10 +20,10 @@ import android.os.Handler;
 import android.os.RemoteCallback;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DevicePolicyManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.707 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -32,6 +33,7 @@ public class DevicePolicyManager {
 
     private IDevicePolicyManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.708 -0400", hash_original_method = "50DCCFAFB01D68C84073DED89668D8AE", hash_generated_method = "C38A3CAA5978B5E74759E44B9191AA99")
     private  DevicePolicyManager(Context context, Handler handler) {
         addTaint(handler.getTaint());
@@ -45,6 +47,7 @@ public class DevicePolicyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static DevicePolicyManager create(Context context, Handler handler) {
         DevicePolicyManager me = new DevicePolicyManager(context, handler);
         return me.mService != null ? me : null;
@@ -110,6 +113,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_2073047090 =         nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.711 -0400", hash_original_method = "EE57BBE804AE4C87F4CB89ED9793C019", hash_generated_method = "5BD024A810F25488DE2AB24B90E6CA70")
     public boolean packageHasActiveAdmins(String packageName) {
         addTaint(packageName.getTaint());
@@ -1110,6 +1114,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1437797311 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.749 -0400", hash_original_method = "46A87FF58FD44FDC19B7F90436F7E978", hash_generated_method = "D814BF95586DE8929FD28F8339F62C8F")
     public ComponentName getGlobalProxyAdmin() {
         if(mService != null)        
@@ -1284,6 +1289,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1156806914 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.759 -0400", hash_original_method = "2E5C17164A00D32AA17FC960DDB2A30B", hash_generated_method = "5C38B93F888237F255E766CCEDF55A67")
     public void setActiveAdmin(ComponentName policyReceiver, boolean refreshing) {
         addTaint(refreshing);
@@ -1309,6 +1315,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1156806914 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.761 -0400", hash_original_method = "6B96BC98EC991BA4501EAC59D3A81719", hash_generated_method = "49E78D8D761B7D67EDDE443763E13B7F")
     public DeviceAdminInfo getAdminInfo(ComponentName cn) {
         addTaint(cn.getTaint());
@@ -1367,6 +1374,7 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_2024028732 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.765 -0400", hash_original_method = "B78826B0ABC7DA178D8BC699F76B9B76", hash_generated_method = "FD03F2E82F5102DDC85324E85921D4BA")
     public void getRemoveWarning(ComponentName admin, RemoteCallback result) {
         addTaint(result.getTaint());
@@ -1392,6 +1400,7 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_2024028732 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.767 -0400", hash_original_method = "6E15637B027827B7A463543C03AC9E11", hash_generated_method = "A623AA6862278A180CD6DBE63DA6FB16")
     public void setActivePasswordState(int quality, int length, int letters, int uppercase,
             int lowercase, int numbers, int symbols, int nonletter) {
@@ -1426,6 +1435,7 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_2024028732 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.768 -0400", hash_original_method = "7A06EB783FBF60A73CE8C82F7F508BC8", hash_generated_method = "71D102D57880828DEC9322A937A40ABF")
     public void reportFailedPasswordAttempt() {
         if(mService != null)        
@@ -1449,6 +1459,7 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_2024028732 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.768 -0400", hash_original_method = "715E68F4DA8529CFE0A9E396D6B5FAA4", hash_generated_method = "5E480C75F0F913422005290F00D7BEA2")
     public void reportSuccessfulPasswordAttempt() {
         if(mService != null)        

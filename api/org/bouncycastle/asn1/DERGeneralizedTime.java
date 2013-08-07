@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,10 +9,10 @@ import java.util.Date;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DERGeneralizedTime extends ASN1Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.317 -0400", hash_original_field = "07CC694B9B3FC636710FA08B6922C42B", hash_generated_field = "206625922693B80AD0E1ADE6B9CDD982")
@@ -159,6 +160,7 @@ String var764FB26AB938608CFF815DA1893107ED_1267559608 =         time + calculate
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.322 -0400", hash_original_method = "EB1651DAB0D660D6B18E01CA950AD828", hash_generated_method = "0B1AC534807D10543958D16804637126")
     private String calculateGMTOffset() {
         String sign = "+";
@@ -209,6 +211,7 @@ String var2C086C598863E0349F310FCA1BDEDBDA_261625657 =         "GMT" + sign + co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.322 -0400", hash_original_method = "17817B80FDAA9A144B025AECDD509966", hash_generated_method = "431BD54168885FFC1145849D04AD38D6")
     private String convert(int time) {
         addTaint(time);
@@ -310,6 +313,7 @@ Date varC894E815AA82318FD33F469B86EDD99E_427608434 =         dateF.parse(d);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.327 -0400", hash_original_method = "5EC472F8945A730F12ABB53C050C6A0C", hash_generated_method = "9079726A25A5083461B88756E8C918B5")
     private boolean hasFractionalSeconds() {
         boolean varD5D5351CBD88B9A84FD689FA6E5C6AF1_1166298732 = (time.indexOf('.') == 14);
@@ -320,6 +324,7 @@ Date varC894E815AA82318FD33F469B86EDD99E_427608434 =         dateF.parse(d);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.327 -0400", hash_original_method = "8BA225FFF1B0D4854B6BEDB73124ABD2", hash_generated_method = "BCA7DB5A4B7A9B9899A590112621B0FE")
     private byte[] getOctets() {
         char[] cs = time.toCharArray();

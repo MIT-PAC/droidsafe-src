@@ -1,9 +1,10 @@
 package org.bouncycastle.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public class IPAddress {
     
@@ -83,6 +84,7 @@ public class IPAddress {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isMaskValue(String component, int size) {
         try
         {

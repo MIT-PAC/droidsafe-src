@@ -1,6 +1,7 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface PerformanceTestCase
 {

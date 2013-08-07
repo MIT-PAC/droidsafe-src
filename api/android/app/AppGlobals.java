@@ -1,8 +1,9 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.pm.IPackageManager;
-import droidsafe.annotations.DSGenerator;
+
 
 public class AppGlobals {
     
@@ -13,21 +14,25 @@ public class AppGlobals {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static Application getInitialApplication() {
         return ActivityThread.currentApplication();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getInitialPackage() {
         return ActivityThread.currentPackageName();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static IPackageManager getPackageManager() {
         return ActivityThread.getPackageManager();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getIntCoreSetting(String key, int defaultValue) {
         ActivityThread currentActivityThread = ActivityThread.currentActivityThread();
         if (currentActivityThread != null) {

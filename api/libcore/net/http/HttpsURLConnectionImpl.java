@@ -1,6 +1,7 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -22,10 +23,10 @@ import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSocket;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class HttpsURLConnectionImpl extends HttpsURLConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.662 -0400", hash_original_field = "7F662005788AB434B371FBB0EFC6D45F", hash_generated_field = "78DC7187ACD4D2AF4A458EEC4F87313D")
@@ -52,6 +53,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.663 -0400", hash_original_method = "EBF39AE3893E60948871AA1B184525FE", hash_generated_method = "50768619EE7BFAB9EEDED75DBDA4A919")
     private void checkConnected() {
         if(delegate.getSSLSocket() == null)        
@@ -837,6 +839,7 @@ SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_625926625 =             engine != 
 
         private HttpsURLConnectionImpl enclosing;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.670 -0400", hash_original_method = "8AE083BB8B8AC6DA8D0AC1B890A493FE", hash_generated_method = "3EB6C03FB9BC660C5BD5D375629BD073")
         private  HttpsEngine(HttpURLConnectionImpl policy, String method, RawHeaders requestHeaders,
                 HttpConnection connection, RetryableOutputStream requestBody,
@@ -896,6 +899,7 @@ SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_625926625 =             engine != 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.670 -0400", hash_original_method = "E179043C81F65C857C0C51A1F43AC946", hash_generated_method = "2F1AC5C38A329FD7F9D6B049407B29F1")
         private boolean makeSslConnection(boolean tlsTolerant) throws IOException {
             addTaint(tlsTolerant);
@@ -934,6 +938,7 @@ SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_625926625 =             engine != 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.671 -0400", hash_original_method = "8A9A8685511C9FB74B559F38C5A36FB4", hash_generated_method = "9910D6508A92EF0E71596B2849314DE5")
         private void makeTunnel(HttpURLConnectionImpl policy, HttpConnection connection,
                 RequestHeaders requestHeaders) throws IOException {

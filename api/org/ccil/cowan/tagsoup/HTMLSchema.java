@@ -1,7 +1,8 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class HTMLSchema extends Schema implements HTMLModels {
     

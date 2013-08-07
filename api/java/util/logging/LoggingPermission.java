@@ -1,14 +1,15 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.security.BasicPermission;
 import java.security.Guard;
 import java.security.Permission;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public final class LoggingPermission extends BasicPermission implements Guard, Serializable {
     

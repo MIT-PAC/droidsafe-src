@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.util.regex.Pattern;
@@ -16,10 +17,10 @@ import android.util.Printer;
 import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TextUtils {
 	static class MyCreator implements Parcelable.Creator<CharSequence> {
@@ -41,7 +42,7 @@ public class TextUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private TextUtils() { /* cannot be instantiated */ }
 
     
@@ -386,7 +387,7 @@ public class TextUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void writeWhere(Parcel p, Spanned sp, Object o) {
         p.writeInt(sp.getSpanStart(o));
         p.writeInt(sp.getSpanEnd(o));
@@ -536,7 +537,7 @@ public class TextUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void readSpan(Parcel p, Spannable sp, Object o) {
         sp.setSpan(o, p.readInt(), p.readInt(), p.readInt());
     }
@@ -719,7 +720,7 @@ public class TextUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static float setPara(MeasuredText mt, TextPaint paint,
             CharSequence text, int start, int end, TextDirectionHeuristic textDir) {
         mt.setPara(text, start, end, textDir);
@@ -1059,7 +1060,7 @@ public class TextUtils {
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         public boolean hasNext() {
         	// GITI DSModeled - the result of this method should have no impact
         	// on the PTA whether or not the result is TRUE or FALSE.

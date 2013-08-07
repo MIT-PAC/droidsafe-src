@@ -1,7 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class NetworkOnMainThreadException extends RuntimeException {
     

@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class Byte extends Number implements Comparable<Byte> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.213 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "8CCAF7A9B8382D1617ADC5CB954C674D")
@@ -53,7 +54,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int compare(byte lhs, byte rhs) {
         return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
     }
@@ -184,7 +185,7 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_1608544967 =         Integer.toString
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String toHexString(byte b, boolean upperCase) {
         return IntegralToString.byteToHexString(b, upperCase);
     }

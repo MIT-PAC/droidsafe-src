@@ -1,6 +1,7 @@
 package android.view.textservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,10 +18,10 @@ import com.android.internal.textservice.ISpellCheckerSessionListener;
 import com.android.internal.textservice.ITextServicesManager;
 import com.android.internal.textservice.ITextServicesSessionListener;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SpellCheckerSession {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.900 -0400", hash_original_field = "86570ADBC3157007B47DF3D9431125CE", hash_generated_field = "215C075D2F430DB54F33624A6C82B697")
@@ -62,7 +63,7 @@ public class SpellCheckerSession {
         
 };
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.902 -0400", hash_original_method = "EAC7F16E5AF219F835F940B08638A4A9", hash_generated_method = "F9FA48F0EADAEBCA145DD75C1969F14F")
     public  SpellCheckerSession(
             SpellCheckerInfo info, ITextServicesManager tsm, SpellCheckerSessionListener listener) {
@@ -257,7 +258,7 @@ ISpellCheckerSessionListener var820AE1A05D9F7D1D7D422F5929FB9AB9_1994063276 =   
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.910 -0400", hash_original_method = "FF3B1A32D02DE5F870E94EBAC6E0CDD1", hash_generated_method = "836DF91E7D75EF5DA76A50F84254C4C2")
         private void processTask(ISpellCheckerSession session, SpellCheckerParams scp,
                 boolean async) {
@@ -433,7 +434,7 @@ switch(scp.mWhat){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.916 -0400", hash_original_method = "A1EA0918B68CB66F258D8DAFDFEA4BA7", hash_generated_method = "21C5B6F3747336A2E36103F23C6D3AEC")
         private void processOrEnqueueTask(SpellCheckerParams scp) {
             addTaint(scp.getTaint());

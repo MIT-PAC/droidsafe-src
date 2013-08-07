@@ -1,11 +1,12 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class GLES20Layer extends HardwareLayer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.178 -0400", hash_original_field = "005B4338173753DA1B50DCC47C3EC00C", hash_generated_field = "ADD2D11ABDFD02268E62F53E7A576EE2")

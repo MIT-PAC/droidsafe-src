@@ -1,6 +1,7 @@
 package junit.runner;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,10 +15,10 @@ import java.util.Vector;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestCaseClassLoader extends ClassLoader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.437 -0400", hash_original_field = "6DC07F35CC4626DDD55666217A1F8835", hash_generated_field = "CDE9A4356D91B8BE55E8D619F0B3C51E")
@@ -34,6 +35,7 @@ public class TestCaseClassLoader extends ClassLoader {
 
     private Vector fExcluded;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.437 -0400", hash_original_method = "34D150DBA15CCC20FE0F33E337B5D5A0", hash_generated_method = "0405E7A9F9CDDBD8059303C3584E3D81")
     public  TestCaseClassLoader() {
         this(System.getProperty("java.class.path"));
@@ -41,6 +43,7 @@ public class TestCaseClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.438 -0400", hash_original_method = "F24087B7DF675CB39963D340E9AD0382", hash_generated_method = "D0925693CBC5D77C68D15A229C5B0D95")
     public  TestCaseClassLoader(String classPath) {
         addTaint(classPath.getTaint());
@@ -52,6 +55,7 @@ public class TestCaseClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.438 -0400", hash_original_method = "D6CB27563073EDFA6C1A1F398697E6E2", hash_generated_method = "F77E182DE81433C52CF97C4B208B5996")
     private void scanPath(String classPath) {
         addTaint(classPath.getTaint());
@@ -73,7 +77,7 @@ public class TestCaseClassLoader extends ClassLoader {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.438 -0400", hash_original_method = "AD2D4B295C951CB6F23A0FC95F789D06", hash_generated_method = "C5220FCCFBAAA8F42A7CB30B5F178C0E")
     public URL getResource(String name) {
         addTaint(name.getTaint());
@@ -85,6 +89,7 @@ URL var3B4FE7F0BAA357C9C981381484B8370E_779329559 =         ClassLoader.getSyste
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.439 -0400", hash_original_method = "E25FB0A342865210AC2893507B1969D9", hash_generated_method = "272ABA76516BD4241E6A1A38F3B74836")
     public InputStream getResourceAsStream(String name) {
         addTaint(name.getTaint());
@@ -96,6 +101,7 @@ InputStream var01C5C7295C81AB8015BCC0F108FE2C88_1155671409 =         ClassLoader
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.439 -0400", hash_original_method = "9B640A23D84324F25105A52D659CD058", hash_generated_method = "1F921D6D4174B11F9B9EBB799889F70A")
     public boolean isExcluded(String name) {
         addTaint(name.getTaint());
@@ -121,6 +127,7 @@ for(int i= 0;i < fExcluded.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.440 -0400", hash_original_method = "5A8E1629692D9DC7C7333C92257A2E23", hash_generated_method = "F3FDFB72950443E5BF50664BE2A212E6")
     public synchronized Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
         addTaint(resolve);
@@ -184,6 +191,7 @@ Class var807FB10045EE51C06BDB74744A6714DF_76383369 =         c;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.442 -0400", hash_original_method = "43D8A8DE8192DE4313AA08C95ADD1453", hash_generated_method = "E85686ABAC1B3C78D2960FEE3898A05A")
     private byte[] lookupClassData(String className) throws ClassNotFoundException {
         addTaint(className.getTaint());
@@ -227,6 +235,7 @@ for(int i= 0;i < fPathItems.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.443 -0400", hash_original_method = "D1958816D560AAF990D492328B2ACA22", hash_generated_method = "F0729B95EFB6687C66BF303DAAA004D8")
      boolean isJar(String pathEntry) {
         addTaint(pathEntry.getTaint());
@@ -242,6 +251,7 @@ for(int i= 0;i < fPathItems.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.444 -0400", hash_original_method = "4C328FCFB8D8C5A73ACC65BA858A3F7E", hash_generated_method = "C09343EB8217B80608C57897ABAC20DA")
     private byte[] loadFileData(String path, String fileName) {
         addTaint(fileName.getTaint());
@@ -265,6 +275,7 @@ for(int i= 0;i < fPathItems.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.444 -0400", hash_original_method = "6E324290C9C24F4E29DE2D96FABDFD83", hash_generated_method = "1AAD5F78F9A2131415563F0164A42F2F")
     private byte[] getClassData(File f) {
         addTaint(f.getTaint());
@@ -306,6 +317,7 @@ for(int i= 0;i < fPathItems.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.447 -0400", hash_original_method = "C76B1C7062D123058031C76531140DC1", hash_generated_method = "03D6CA4AC68CFDC1F9E51C53D736BC20")
     private byte[] loadJarData(String path, String fileName) {
         addTaint(fileName.getTaint());
@@ -407,6 +419,7 @@ for(int i= 0;i < fPathItems.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.449 -0400", hash_original_method = "1F7171E3DD1B25E20F5BDFEA6D44B6AF", hash_generated_method = "1818E03E59D42FBBA0C67FD218135035")
     private void readExcludedPackages() {
         fExcluded= new Vector(10);

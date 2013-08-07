@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,10 +10,10 @@ import java.util.Set;
 
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class WebStorage {
@@ -386,6 +387,7 @@ Collection<Origin> var540C13E9E156B687226421B24F2DF178_1642933525 =         null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.822 -0400", hash_original_method = "62EA151909BF01F1F742C4723FE70A6A", hash_generated_method = "3F4124122CD649158C5EEF1F52FBF08C")
     private synchronized void postMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -400,6 +402,7 @@ Collection<Origin> var540C13E9E156B687226421B24F2DF178_1642933525 =         null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.823 -0400", hash_original_method = "B15FFE1BDDB388A76F495C309FEFF3DA", hash_generated_method = "1C7FA8D0FDD7047080CA6C74911CEC8A")
     private void postUIMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -441,6 +444,7 @@ Collection<Origin> var540C13E9E156B687226421B24F2DF178_1642933525 =         null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.823 -0400", hash_original_method = "5D4FD384A27446A0E17BE685B23E3829", hash_generated_method = "EA0C82C8A988DBC81373CC053B48455A")
     private void syncValues() {
         Set<String> tmp = nativeGetOrigins();
@@ -515,6 +519,7 @@ for(String origin : tmp)
 
         private long mUsage = 0;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.824 -0400", hash_original_method = "4FE78C59959DAB66D5A54195A66AB06B", hash_generated_method = "76322ED2B92E6B7663D8A0519AE3B0DF")
         private  Origin(String origin, long quota, long usage) {
             mOrigin = origin;
@@ -527,6 +532,7 @@ for(String origin : tmp)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.824 -0400", hash_original_method = "C2CBF7E5975A0E1FB4219FCE2892FC4D", hash_generated_method = "FC09A97162600BEE334A20CD3A6FDFA1")
         private  Origin(String origin, long quota) {
             mOrigin = origin;
@@ -537,6 +543,7 @@ for(String origin : tmp)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.824 -0400", hash_original_method = "EABE3A839C363BB6725AAE2908A0D269", hash_generated_method = "231D896CFDCFAA5D10466EAE91ED23CC")
         private  Origin(String origin) {
             mOrigin = origin;

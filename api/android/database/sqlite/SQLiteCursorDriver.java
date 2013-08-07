@@ -1,6 +1,7 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 

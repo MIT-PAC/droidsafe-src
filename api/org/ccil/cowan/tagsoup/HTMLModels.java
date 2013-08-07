@@ -1,6 +1,7 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface HTMLModels {
 

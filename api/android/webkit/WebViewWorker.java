@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,11 +11,12 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 final class WebViewWorker extends Handler {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.547 -0400", hash_original_method = "D7D568B3C492B7B5D5E0F8FEE23B0F62", hash_generated_method = "FC1CA988FF2A0A5639474C285FD5AFBA")
     private  WebViewWorker(Looper looper) {
         super(looper);

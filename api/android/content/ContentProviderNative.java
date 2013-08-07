@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -20,13 +21,14 @@ import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract public class ContentProviderNative extends Binder implements IContentProvider {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.912 -0400", hash_original_method = "AF85EE1D14BCBAFA210CD4FE8D0D0EAA", hash_generated_method = "5B89B81546A27F738FE867A18D587122")
     public  ContentProviderNative() {
         attachInterface(this, descriptor);
@@ -35,7 +37,7 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     static public IContentProvider asInterface(IBinder obj) {
         if (obj == null) {
             return null;
@@ -305,7 +307,7 @@ for(int i = 0;i < numOperations;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.924 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "9C283933AEA953AABDC77F3FBE2B0401")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_1864939486 =         this;

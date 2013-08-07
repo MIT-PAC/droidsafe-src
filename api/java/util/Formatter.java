@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.File;
@@ -20,10 +21,10 @@ import java.nio.charset.Charset;
 import libcore.icu.LocaleData;
 import libcore.icu.NativeDecimalFormat;
 import libcore.io.IoUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Formatter implements Closeable, Flushable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.201 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "3DC9338DC786F95D1A95A8961D85A2A6")
@@ -238,7 +239,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.216 -0400", hash_original_method = "9D62CCD9646FE324AC0FFA6EB7C17C6C", hash_generated_method = "F440F0F4F19DD0F3A971D77AD6708931")
     private NativeDecimalFormat getDecimalFormat(String pattern) {
         addTaint(pattern.getTaint());
@@ -250,7 +251,7 @@ NativeDecimalFormat varF1A011F64A3D62CFB9F23834C4DD6D2F_385920051 =         cach
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.216 -0400", hash_original_method = "E3DA6A4C963B6E9187963221C571CEC2", hash_generated_method = "AC016607CC190FBCCBE39E2D99351BF4")
     private void checkNotClosed() {
         if(closed)        
@@ -465,7 +466,7 @@ Formatter var72A74007B2BE62B849F475C7BDA4658B_823154557 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.217 -0400", hash_original_method = "4A93F3F0DF6F4E45CC93AF5660722832", hash_generated_method = "8A6638FE494E3D64F5738509388116C7")
     private void outputCharSequence(CharSequence cs, int start, int end) {
         addTaint(end);
@@ -488,7 +489,7 @@ Formatter var72A74007B2BE62B849F475C7BDA4658B_823154557 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.218 -0400", hash_original_method = "4EF20CF84298D39EE17983F53878C341", hash_generated_method = "1BC38E6858A236ACEE58670947572730")
     private Object getArgument(Object[] args, int index, FormatSpecifierParser fsp,
             Object lastArgument, boolean hasLastArgumentSet) {
@@ -541,7 +542,7 @@ Object var0F0E04C2C9573F1EA16ACDFC27A934D9_992384000 =         args[index];
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.233 -0400", hash_original_method = "0237F1DF7BD7A386A4F4D1B44D43876F", hash_generated_method = "6A9EE01247036DA9D7A8999456CBACA9")
     private CharSequence transform(FormatToken token, Object argument) {
         this.formatToken = token;
@@ -663,7 +664,7 @@ CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_336092551 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.234 -0400", hash_original_method = "D44F27ADB431306CEB9F9E1F25036901", hash_generated_method = "69200DD9DE4E90D15B362E73D6D93BD2")
     private IllegalFormatConversionException badArgumentType() {
         IllegalFormatConversionException var8D9A9D73BB7B70CBBFC4949C6CAE468B_1557872731 = new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
@@ -674,7 +675,7 @@ CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_336092551 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.235 -0400", hash_original_method = "8CD3AC57424B332A3611698407D98FD3", hash_generated_method = "4910808DB1C2CC13BB96CCC5468824E4")
     private CharSequence localizeDigits(CharSequence s) {
         addTaint(s.getTaint());
@@ -708,7 +709,7 @@ CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_225905621 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.235 -0400", hash_original_method = "CC3FF2DA7072A05A8664F97319F6C752", hash_generated_method = "102E5DB85468373E0BFC55BCF203F6C7")
     private CharSequence insertGrouping(CharSequence s) {
         addTaint(s.getTaint());
@@ -759,7 +760,7 @@ CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_329877460 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.235 -0400", hash_original_method = "54F34C95EDCEEE411BD250D07A12E500", hash_generated_method = "8A3F65AB8EDDB19B1D9AADB8E914E679")
     private CharSequence transformFromBoolean() {
         CharSequence result;
@@ -792,7 +793,7 @@ CharSequence var60F8A6E047F2F602EBD809018D02719B_688052084 =         padding(res
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.235 -0400", hash_original_method = "FEE63D21FF5AA7B8F21641D7D3CB6697", hash_generated_method = "5F3EF1014B0E3A3840DA0AEC3296AAED")
     private CharSequence transformFromHashCode() {
         CharSequence result;
@@ -818,7 +819,7 @@ CharSequence var60F8A6E047F2F602EBD809018D02719B_289184826 =         padding(res
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.236 -0400", hash_original_method = "41FDF272148D1D909A3CC241D4F2B404", hash_generated_method = "B972A9CC66E1AD8766B061ED02DED703")
     private CharSequence transformFromString() {
         if(arg instanceof Formattable)        
@@ -867,7 +868,7 @@ CharSequence var60F8A6E047F2F602EBD809018D02719B_1919924448 =         padding(re
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.247 -0400", hash_original_method = "78103310C8550D540C751775D2E73F1B", hash_generated_method = "B13EB1524AC76AF2AE421531F9B11514")
     private CharSequence transformFromCharacter() {
         if(arg == null)        
@@ -926,7 +927,7 @@ CharSequence var60F8A6E047F2F602EBD809018D02719B_464663905 =             padding
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.247 -0400", hash_original_method = "1802F533F155B8AA49557FA5A74B7DBE", hash_generated_method = "D682A12A240A5B5618D7170C9ABF6D76")
     private CharSequence transformFromPercent() {
 CharSequence var3B37D2693C4C26B1B03169D06EE532D9_1736490382 =         padding("%", 0);
@@ -937,7 +938,7 @@ CharSequence var3B37D2693C4C26B1B03169D06EE532D9_1736490382 =         padding("%
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.248 -0400", hash_original_method = "EF7726D1BC858C4C5BDC40B9ACBD3ABF", hash_generated_method = "3D4435F985D18D8FA157B262A88632D6")
     private CharSequence padding(CharSequence source, int startIndex) {
         addTaint(startIndex);
@@ -1004,7 +1005,7 @@ CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_340368465 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.248 -0400", hash_original_method = "AA67EEFB247ACC7BDA1BABCD03B30A80", hash_generated_method = "DFF0E11A6ECA39468216C80B9C85142E")
     private StringBuilder toStringBuilder(CharSequence cs) {
         addTaint(cs.getTaint());
@@ -1016,7 +1017,7 @@ StringBuilder var7D98D02202DEE9E6FC80D24C7671D12C_1480535347 =         cs instan
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.248 -0400", hash_original_method = "CE1A2CC9741A13D14659E3953A660AC1", hash_generated_method = "C2C8418EA1EC768ECC7AF351337A77D8")
     private StringBuilder wrapParentheses(StringBuilder result) {
         addTaint(result.getTaint());
@@ -1049,7 +1050,7 @@ StringBuilder varDC838461EE2FA0CA4C9BBB70A15456B0_315047290 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.261 -0400", hash_original_method = "FADDE3D8C4FA639F028B03B661D10023", hash_generated_method = "3F910B6A240BEE5C76952989D8CD1A63")
     private CharSequence transformFromInteger() {
         int startIndex = 0;
@@ -1168,7 +1169,7 @@ CharSequence varE4AAF0D88C94F7EDF0E0F68A12FC9293_805120300 =         padding(res
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.262 -0400", hash_original_method = "15D0DEB8422EE33E04C98AFC872D1D51", hash_generated_method = "802AAF17696CAD1DAD55D5FF5B89B53C")
     private CharSequence transformFromNull() {
         formatToken.flagZero = false;
@@ -1181,7 +1182,7 @@ CharSequence var45945176AADF4B8A5B5D84B27915BF58_708727492 =         padding("nu
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.262 -0400", hash_original_method = "28740AE89E2FC451EFE3093F54121A6C", hash_generated_method = "3659C3ECE2100D1C6459C3F1A723CD4E")
     private CharSequence transformFromBigInteger() {
         int startIndex = 0;
@@ -1259,7 +1260,7 @@ CharSequence varE4AAF0D88C94F7EDF0E0F68A12FC9293_435014647 =         padding(res
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.271 -0400", hash_original_method = "3FA485DEFE055FA59E9A89B7029B3055", hash_generated_method = "27F30E01DC368BFB2DB6B8F4B3CDA5E9")
     private CharSequence transformFromDateTime() {
         if(arg == null)        
@@ -1331,7 +1332,7 @@ CharSequence var60F8A6E047F2F602EBD809018D02719B_2011909612 =         padding(re
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.272 -0400", hash_original_method = "6A85D50A5F6F83B5DE3D767D1CCF3B76", hash_generated_method = "AC320FE8EEB7DA7905BA1E18B743D927")
     private boolean appendT(StringBuilder result, char conversion, Calendar calendar) {
         addTaint(calendar.getTaint());
@@ -1538,7 +1539,7 @@ switch(conversion){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.273 -0400", hash_original_method = "07C369462F22245026E1280008B34AEC", hash_generated_method = "72B581A69049F4DC09C67DC72A75F830")
     private int to12Hour(int hour) {
         addTaint(hour);
@@ -1550,7 +1551,7 @@ switch(conversion){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.273 -0400", hash_original_method = "60B30B4DC0B127EF94D361BC9EB2AF90", hash_generated_method = "F932EDC027880E6B8472E25FE2452DFC")
     private void appendLocalized(StringBuilder result, long value, int width) {
         addTaint(width);
@@ -1604,7 +1605,7 @@ for(int i = 0;i < zeroCount;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.273 -0400", hash_original_method = "977B62B975352D4F075C1101DB18FB73", hash_generated_method = "7AE09A15EBEBA8CB4763EBDC3D480EDA")
     private CharSequence transformFromSpecialNumber(double d) {
         addTaint(d);
@@ -1680,7 +1681,7 @@ CharSequence varDC725D1E462A197A483AC17012C8475C_1544218348 =         padding(so
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.311 -0400", hash_original_method = "DECF7ECF8109F764E81E2CF8101BCB0C", hash_generated_method = "B11CFA526E4ECCDCE76F728B6A547051")
     private CharSequence transformFromFloat() {
         if(arg == null)        
@@ -1778,7 +1779,7 @@ CharSequence varE4AAF0D88C94F7EDF0E0F68A12FC9293_192850840 =         padding(res
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.313 -0400", hash_original_method = "43DA2A76094CCA7D42287B4466035D61", hash_generated_method = "E36FB1996AB88BFD207776B0592654E8")
     private void transformE(StringBuilder result) {
         addTaint(result.getTaint());
@@ -1821,7 +1822,7 @@ for(int i = 0;i < chars.length;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.318 -0400", hash_original_method = "1973123C0DFAE44325340FD650EA833E", hash_generated_method = "2DD48D3579EAD5FA7F76C0A2D7C6C446")
     private void transformG(StringBuilder result) {
         addTaint(result.getTaint());
@@ -1902,7 +1903,7 @@ for(int i = 0;i < chars.length;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.319 -0400", hash_original_method = "DF70A96812FA1EE536149F6B5D8F4C45", hash_generated_method = "73CA128BB4E92C92DE0A0FB72A654D51")
     private void transformF(StringBuilder result) {
         addTaint(result.getTaint());
@@ -1948,7 +1949,7 @@ for(int i = 0;i < precision;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.340 -0400", hash_original_method = "DCC3844221755C0C14FA659BF8647E6B", hash_generated_method = "0CD7BA9772E57C63F74D77CE124473B0")
     private void transformA(StringBuilder result) {
         addTaint(result.getTaint());
@@ -2105,6 +2106,7 @@ NativeDecimalFormat var786B68CE85DDA5DF40C19A5AF9A0EE7F_1862518083 =            
 
         private StringBuilder strFlags;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.346 -0400", hash_original_method = "98998A93ECCA1CEE378BE6F5FF82B45F", hash_generated_method = "98998A93ECCA1CEE378BE6F5FF82B45F")
         public FormatToken ()
         {
@@ -2573,7 +2575,7 @@ String varAEB69BD2749C34A7344D72401C529AA5_1810477854 =             format.subst
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.420 -0400", hash_original_method = "6521B9C02DA744FF180556D39A74ED44", hash_generated_method = "6107C4514FE4F1DDD29F0294709CF8C4")
         private int peek() {
             int var1FC742731B74CA4A1561C852ACE9793B_244801396 = ((i < length) ? format.charAt(i) : -1);
@@ -2584,7 +2586,7 @@ String varAEB69BD2749C34A7344D72401C529AA5_1810477854 =             format.subst
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.428 -0400", hash_original_method = "F520742ED92EBACDB47FBF0D0B1F08F4", hash_generated_method = "D43226D5FC51B9A5AE240FDB770E9B7F")
         private char advance() {
             if(i >= length)            
@@ -2604,7 +2606,7 @@ String varAEB69BD2749C34A7344D72401C529AA5_1810477854 =             format.subst
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.429 -0400", hash_original_method = "DFAEBB829CC6A7AFE465DA1B9A0C1D5A", hash_generated_method = "672E02504C8964117826DD2CF662E752")
         private UnknownFormatConversionException unknownFormatConversionException() {
             UnknownFormatConversionException varE6C5B89159EB5EDE089CB95AF18D63D4_1351681312 = new UnknownFormatConversionException(getFormatSpecifierText());
@@ -2615,7 +2617,7 @@ String varAEB69BD2749C34A7344D72401C529AA5_1810477854 =             format.subst
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.429 -0400", hash_original_method = "AD27190704DEC79DF3778A7C88589CDF", hash_generated_method = "2FAF277DC38F4C7E27775AB8A54176D8")
         private FormatToken parseArgumentIndexAndFlags(FormatToken token) {
             addTaint(token.getTaint());
@@ -2685,7 +2687,7 @@ FormatToken var57DCFD229290E8B525C83F6EBF3A9765_2092884852 =                 par
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.431 -0400", hash_original_method = "F4C6E47C7F58A93445972E2EDFDFCD5C", hash_generated_method = "A5B1F2558CAEADBEC33BBBEA1E3CDB58")
         private FormatToken parseWidth(FormatToken token, int width) {
             addTaint(width);
@@ -2715,7 +2717,7 @@ FormatToken var57DCFD229290E8B525C83F6EBF3A9765_1487377648 =                 par
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.439 -0400", hash_original_method = "06DE93E908B11B43F41251F270A468F2", hash_generated_method = "95045814556BC653561D43EA7BC29B71")
         private FormatToken parsePrecision(FormatToken token) {
             addTaint(token.getTaint());
@@ -2746,7 +2748,7 @@ FormatToken var57DCFD229290E8B525C83F6EBF3A9765_807203475 =                 pars
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.441 -0400", hash_original_method = "779E7C7A9E24C2B8C7A984530163E241", hash_generated_method = "18B1E22B4F69332383948A274DDAA8A6")
         private FormatToken parseConversionType(FormatToken token) {
             addTaint(token.getTaint());
@@ -2771,7 +2773,7 @@ FormatToken var84AE1F94A3CF2A5D8DE4571F3693A75E_518726550 =             token;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.443 -0400", hash_original_method = "ADF8322FF676CF5038257F50E4E4E6DC", hash_generated_method = "C2873F8D757D1134CA59F49095D6C8B6")
         private int nextInt() {
             long value = 0;
@@ -2801,7 +2803,7 @@ FormatToken var84AE1F94A3CF2A5D8DE4571F3693A75E_518726550 =             token;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.444 -0400", hash_original_method = "F2814F47D4EB7F1D4CA24D9FE1C3918D", hash_generated_method = "BAB837A91B7A39BE93625D1335329A15")
         private int failNextInt() {
             while

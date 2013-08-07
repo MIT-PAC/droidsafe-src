@@ -1,14 +1,15 @@
 package org.apache.http.conn.routing;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetAddress;
 
 import org.apache.http.HttpHost;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class HttpRoute implements RouteInfo, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.840 -0400", hash_original_field = "3F08D0C1EE30947C2F84BB49ACD4C461", hash_generated_field = "7B58806231BEF3BA039CB1C0F515C7D6")
@@ -152,7 +153,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static HttpHost[] toChain(HttpHost proxy) {
         if (proxy == null)
             return null;
@@ -160,6 +161,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static HttpHost[] toChain(HttpHost[] proxies) {
         if ((proxies == null) || (proxies.length < 1))
             return null;

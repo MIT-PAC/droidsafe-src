@@ -1,6 +1,7 @@
 package org.apache.http.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.URI;
 
 import org.apache.http.HttpResponse;

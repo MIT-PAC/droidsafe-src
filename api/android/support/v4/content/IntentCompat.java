@@ -1,31 +1,36 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Build;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class IntentCompat {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.828 -0400", hash_original_method = "83FA4EBC7BDF0C9600DF4B8A1228BD78", hash_generated_method = "16347C92B7A5F44FF250E58B89036E6B")
     private  IntentCompat() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainActivity(ComponentName mainActivity) {
         return IMPL.makeMainActivity(mainActivity);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainSelectorActivity(String selectorAction,
             String selectorCategory) {
         return IMPL.makeMainSelectorActivity(selectorAction, selectorCategory);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         return IMPL.makeRestartActivityTask(mainActivity);
     }
@@ -40,6 +45,7 @@ public class IntentCompat {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.832 -0400", hash_original_method = "4B98301A7E59A155B150C46D4BE1C0A7", hash_generated_method = "3E4AAE1DCC0F1E141B1D68E8877D09EE")
         @Override
         public Intent makeMainActivity(ComponentName componentName) {
@@ -58,6 +64,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_663335548 =             intent;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.832 -0400", hash_original_method = "C2ED66B58A361F10BA817EED5E34E61E", hash_generated_method = "3DEFD8E7A5360659D029D4D6FDD5EFE2")
         @Override
         public Intent makeMainSelectorActivity(String selectorAction,
@@ -76,6 +83,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_1555284856 =             intent;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.833 -0400", hash_original_method = "F82489D0D61AED6A92FA7B650E973F8B", hash_generated_method = "05D2280F3EC5909E406E2D6857AC0A4A")
         @Override
         public Intent makeRestartActivityTask(ComponentName mainActivity) {
@@ -107,6 +115,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_286079698 =             intent;
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.834 -0400", hash_original_method = "7AEF38C337C1A4B268D6BF228A89F2D2", hash_generated_method = "97B15510C5BE96712D577CD15A21FFE5")
         @Override
         public Intent makeMainActivity(ComponentName componentName) {
@@ -119,6 +128,7 @@ Intent var794116B7ABB37746D51F28497CB0A71E_91000539 =             IntentCompatHo
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.834 -0400", hash_original_method = "9C5B324D72EEDCECCD1591039BA9002E", hash_generated_method = "A43CCFABCB29EDA07E5696521EF0E65D")
         @Override
         public Intent makeRestartActivityTask(ComponentName componentName) {
@@ -144,6 +154,7 @@ Intent var0DF19734A7165BB16E7A28B8E7E316CC_1804808759 =             IntentCompat
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_method = "273E6CE96758BF678EE6C7070C39071C", hash_generated_method = "33B00DCB8BA4E91AECB4139C769933CA")
         @Override
         public Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {

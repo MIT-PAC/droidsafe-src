@@ -1,6 +1,7 @@
 package org.xml.sax.ext;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.xml.sax.SAXException;
 
 public interface LexicalHandler

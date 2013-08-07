@@ -1,10 +1,11 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class LinkedHashMap<K, V> extends HashMap<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.727 -0400", hash_original_field = "099FB995346F31C749F6E40DB0F395E3", hash_generated_field = "D6704B8F26715061947446A5240B101A")
@@ -80,7 +81,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.730 -0400", hash_original_method = "EB729947D8C5A87C341C9E9026AB1206", hash_generated_method = "71584A9A86768B59927AB36E65973CE0")
     public Entry<K, V> eldest() {
         LinkedEntry<K, V> eldest = header.nxt;
@@ -241,7 +242,7 @@ V var540C13E9E156B687226421B24F2DF178_2057882229 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.734 -0400", hash_original_method = "D37211F13FFE982B5329A6F04D365268", hash_generated_method = "C6CD5BB404251D6B83F85F81B1319D29")
     private void makeTail(LinkedEntry<K, V> e) {
         addTaint(e.getTaint());

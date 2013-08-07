@@ -1,7 +1,8 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 abstract class BaseByteBuffer extends ByteBuffer {
     

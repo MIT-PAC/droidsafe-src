@@ -1,14 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.ContextImpl;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Resources;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ContextThemeWrapper extends ContextWrapper {
     private Context mBase;
@@ -51,7 +52,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @Override
     public int getThemeResId() {
         return -1;
@@ -84,7 +85,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.611 -0400", hash_original_method = "274E46830CAE6261C7392F8B8EF11DA4", hash_generated_method = "6F51DC32008736AA454500B75DDF7DAC")
     private void initializeTheme() {
         final boolean first = mTheme == null;

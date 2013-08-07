@@ -1,12 +1,13 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class NativePluralRules {
@@ -14,6 +15,7 @@ public final class NativePluralRules {
 
     private int address;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.855 -0400", hash_original_method = "AA726DD537B18CF5E6F027FB7C25435F", hash_generated_method = "CE58BB3507445ED0089597718F7F8DAB")
     private  NativePluralRules(int address) {
         this.address = address;

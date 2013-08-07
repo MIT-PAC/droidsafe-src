@@ -1,16 +1,17 @@
 package org.apache.harmony.security.pkcs7;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import org.apache.harmony.security.asn1.ASN1SetOf;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class AuthenticatedAttributes {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.041 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
@@ -20,7 +21,7 @@ final class AuthenticatedAttributes {
 
     private List<AttributeTypeAndValue> authenticatedAttributes;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.042 -0400", hash_original_method = "56322F0DE2F5B85A8944FA9A9F9F5ADE", hash_generated_method = "160A13FCA6726717A1B9C3D9A09862BE")
     private  AuthenticatedAttributes(byte[] encoding,
             List<AttributeTypeAndValue> authenticatedAttributes) {

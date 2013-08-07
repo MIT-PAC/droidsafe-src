@@ -1,6 +1,7 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Enumeration;
 
 public interface SSLSessionContext {

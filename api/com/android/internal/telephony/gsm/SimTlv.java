@@ -1,10 +1,11 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class SimTlv {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.670 -0400", hash_original_field = "3D5BD4084DB83091C19B38CDE3CD87DC", hash_generated_field = "86A3D06170A107D6E7EB13AB011FB99A")
@@ -29,6 +30,7 @@ public class SimTlv {
 
     boolean hasValidTlvObject;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.671 -0400", hash_original_method = "09DDFD30343833E55BD01CFD3EB31B7F", hash_generated_method = "47A157035D4E147914ED7DBCABB4C887")
     public  SimTlv(byte[] record, int offset, int length) {
         this.record = record;
@@ -45,6 +47,7 @@ public class SimTlv {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.672 -0400", hash_original_method = "E4941B82FB2B1D8A93B786E30A0BC739", hash_generated_method = "BCC1DFBD26AE452A48C12318457CCF7A")
     public boolean nextObject() {
         if(!hasValidTlvObject)        
@@ -66,7 +69,7 @@ public class SimTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.672 -0400", hash_original_method = "6E8A16A8DAAB3D52539EED38524C3D56", hash_generated_method = "BE1DEC992C269CA84D615823436E3B44")
     public boolean isValidObject() {
         boolean varD91501AE627873BC4A3030BD7AD0D179_296385010 = (hasValidTlvObject);
@@ -77,7 +80,7 @@ public class SimTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.673 -0400", hash_original_method = "6A87500957D7F16920BD9A3282060AAA", hash_generated_method = "D9EA23D923730A10740E88D649B69AD4")
     public int getTag() {
         if(!hasValidTlvObject)        
@@ -95,6 +98,7 @@ public class SimTlv {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.673 -0400", hash_original_method = "0617D6165A26B8CE55A8A8181EBF929A", hash_generated_method = "B7CB16615620C6F24146E0CC3926B807")
     public byte[] getData() {
         if(!hasValidTlvObject)        
@@ -116,7 +120,7 @@ public class SimTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.675 -0400", hash_original_method = "F0FED94C714DCB7A0D654E5FF6165803", hash_generated_method = "4AF8B6E2A53F314D9CFFA4833A27969E")
     private boolean parseCurrentTlvObject() {
         try 

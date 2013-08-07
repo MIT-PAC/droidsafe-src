@@ -1,6 +1,7 @@
 package com.android.internal.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Handler;
@@ -8,10 +9,10 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.util.Slog;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract public class AsyncService extends Service {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.610 -0400", hash_original_field = "83FE717B4B643B5D605C868F0E136C03", hash_generated_field = "CFBB34CA870432E8D673742E9448B620")

@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     
@@ -33,7 +34,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.279 -0400", hash_original_method = "FCCD2BDA38C43A03106A3DA5EA866DEA", hash_generated_method = "DA14F557B0862047DB80DD324FF09EC1")
     public  StringIndexOutOfBoundsException(String s, int index) {
         this(s.length(), index);
@@ -43,7 +44,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.280 -0400", hash_original_method = "78176BEE1BF5E3D3E49AE6693FD0EBDF", hash_generated_method = "2679EC849F08B1F36D38E289625FF876")
     public  StringIndexOutOfBoundsException(int sourceLength, int index) {
         super("length=" + sourceLength + "; index=" + index);
@@ -53,7 +54,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.280 -0400", hash_original_method = "E66129678530AEEFFFBEABAD39F4532F", hash_generated_method = "C03D3CFBA15A060D7AECB3D6A3CDAB03")
     public  StringIndexOutOfBoundsException(String s, int offset, int count) {
         this(s.length(), offset, count);
@@ -64,7 +65,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.280 -0400", hash_original_method = "47D615FB94A12D10BEA7B6CBBC941916", hash_generated_method = "7C1B7B96D1E68363DCF368740C7F68DD")
     public  StringIndexOutOfBoundsException(int sourceLength, int offset,
             int count) {

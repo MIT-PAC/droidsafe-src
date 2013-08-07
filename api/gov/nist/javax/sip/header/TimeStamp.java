@@ -1,13 +1,14 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.TimeStampHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TimeStamp extends SIPHeader implements TimeStampHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.593 -0400", hash_original_field = "34BC11BD1D0CE270E57C98CEA00E8D5F", hash_generated_field = "76B8D8E0781BF84AACE2DA76A4001EFB")
@@ -33,7 +34,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.595 -0400", hash_original_method = "A6A60BDDB9B869E20670F0D4B71173B1", hash_generated_method = "CFCB346FD14771E35EA1305C9DF3133E")
     private String getTimeStampAsString() {
         if(timeStamp == -1 && timeStampFloat == -1)        
@@ -65,7 +66,7 @@ String var7989E3F135E688AB6BA1B117FE333CA6_1613933718 =         Float.toString(t
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.596 -0400", hash_original_method = "BFD0E29F8DBDA29B6D5527F4C53FF1F0", hash_generated_method = "8046B6D9D62D833792C9BC273E5A9A48")
     private String getDelayAsString() {
         if(delay == -1 && delayFloat == -1)        

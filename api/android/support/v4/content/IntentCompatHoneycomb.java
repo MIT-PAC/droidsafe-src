@@ -1,9 +1,10 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ComponentName;
 import android.content.Intent;
-import droidsafe.annotations.DSGenerator;
+
 
 class IntentCompatHoneycomb {
     
@@ -14,11 +15,13 @@ class IntentCompatHoneycomb {
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainActivity(ComponentName mainActivity) {
         return Intent.makeMainActivity(mainActivity);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         return Intent.makeRestartActivityTask(mainActivity);
     }

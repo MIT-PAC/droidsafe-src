@@ -1,12 +1,13 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class FutureTask<V> implements RunnableFuture<V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.455 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
@@ -167,7 +168,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.458 -0400", hash_original_method = "87EA2642D244DCFE21163D8924915415", hash_generated_method = "E62589B3EF60410D33CA60FFBE562394")
         private boolean ranOrCancelled(int state) {
             addTaint(state);

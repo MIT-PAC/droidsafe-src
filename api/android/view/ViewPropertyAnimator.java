@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -8,10 +9,10 @@ import java.util.Set;
 import android.animation.Animator;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ViewPropertyAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.896 -0400", hash_original_field = "7D6C73188D7990FE5A4B99F8F090B9EA", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
@@ -517,7 +518,7 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_812601378 =         thi
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.905 -0400", hash_original_method = "10886573EB8B45FC976B918620A506A6", hash_generated_method = "D84E91E3898D4791773481D75296A024")
     private void startAnimation() {
         ValueAnimator animator = ValueAnimator.ofFloat(1.0f);
@@ -551,7 +552,7 @@ for(int i = 0;i < propertyCount;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.906 -0400", hash_original_method = "DC6A356EFD140318ADF1C94BF09D3544", hash_generated_method = "747AF21211DEF47919A0F14EB53253B7")
     private void animateProperty(int constantName, float toValue) {
         addTaint(toValue);
@@ -566,7 +567,7 @@ for(int i = 0;i < propertyCount;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.906 -0400", hash_original_method = "B9FE8E2780DEC5F83DA892CAE9192499", hash_generated_method = "A5B8DBE795D13265E1A5F32F24943CBE")
     private void animatePropertyBy(int constantName, float byValue) {
         addTaint(byValue);
@@ -579,7 +580,7 @@ for(int i = 0;i < propertyCount;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.907 -0400", hash_original_method = "1BDECA037A3A41B230975E15C12C5086", hash_generated_method = "DF9B9C8AF5D48B4BF600D02CBB7DC588")
     private void animatePropertyBy(int constantName, float startValue, float byValue) {
         addTaint(byValue);
@@ -615,7 +616,7 @@ for(Animator runningAnim : animatorSet)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.908 -0400", hash_original_method = "543199367D6B4536DD4796BA994C91F7", hash_generated_method = "691352C82D26CDF5047A47150F705E2D")
     private void setValue(int propertyConstant, float value) {
         addTaint(value);
@@ -658,7 +659,7 @@ switch(propertyConstant){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.908 -0400", hash_original_method = "7CFF5C0EAB5A873E8FB7B3F0396E6B5F", hash_generated_method = "5B29A59E2967C5249A52407EFFB3FEF5")
     private float getValue(int propertyConstant) {
         addTaint(propertyConstant);

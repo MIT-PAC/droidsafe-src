@@ -1,8 +1,9 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.URI;
@@ -685,7 +686,7 @@ HttpRequestInterceptor varBB4763CB0F25016809DFE65E2B809ED2_40175488 =         ge
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.115 -0400", hash_original_method = "D4908515F9C0F07C0BDB783E33343E25", hash_generated_method = "8966665B5C518A27D0FE7C079490263B")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private HttpHost determineTarget(HttpUriRequest request) {
         addTaint(request.getTaint());
         HttpHost target = null;

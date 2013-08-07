@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -27,10 +28,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class FragmentState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.576 -0400", hash_original_field = "E0F3773C57D5A4C143336ECFEFDE9748", hash_generated_field = "6BC238A3BDD37BF1CAC26EA2CE45C508")
@@ -892,6 +893,7 @@ LoaderManager var805CC3710F0829AF609E93E575C2DA90_579500914 =         mLoaderMan
 	}
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.611 -0400", hash_original_method = "8FF008E86C71DF2CF57F1B9E3E9D8CD9", hash_generated_method = "C6C39EB4CCA4D8B7580440C89EAF15CF")
     public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
         addTaint(savedInstanceState.getTaint());
@@ -977,7 +979,7 @@ Animator var540C13E9E156B687226421B24F2DF178_1614417778 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		//return null;

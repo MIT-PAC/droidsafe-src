@@ -1,16 +1,17 @@
 package java.util.concurrent.locks;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import sun.misc.Unsafe;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchronizer implements java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.292 -0400", hash_original_field = "96E89A298E0A9F469B9AE458D6AFAE9F", hash_generated_field = "C968564223BCE6AEFE8413EAB36A32B1")
@@ -103,7 +104,7 @@ Node varE0D714D758F1540A8DF364A965AF9150_1262158398 =                     t;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.296 -0400", hash_original_method = "7269E5EC16B8883F661BF745CCC5E6A6", hash_generated_method = "EBB8C59130DF77C5C7F30CAFA7B2B4C8")
     private Node addWaiter(Node mode) {
         addTaint(mode.getTaint());
@@ -139,7 +140,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_496908491 =         node;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.298 -0400", hash_original_method = "51AEDFDDD323C78EE2EC4A6DE568B8D1", hash_generated_method = "E532E4CBBEBFF44C610D0F95E73E8319")
     private void setHead(Node node) {
         head = node;
@@ -152,7 +153,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_496908491 =         node;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.299 -0400", hash_original_method = "F262A3A18BABECF7EC492736953EAF6E", hash_generated_method = "A93A115F239F2D3D3F010BE781B1A7F1")
     private void unparkSuccessor(Node node) {
         addTaint(node.getTaint());
@@ -185,7 +186,7 @@ for(Node t = tail;t != null && t != node;t = t.prev)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.301 -0400", hash_original_method = "D8D55646997B45206CD2F0528B603753", hash_generated_method = "70DCCB5937F13D53C20996F49C5243FC")
     private void doReleaseShared() {
 for(;;)
@@ -228,7 +229,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.302 -0400", hash_original_method = "A2FB30DAE399AEFA487E20396027BD36", hash_generated_method = "40E839A4C9B6A476B26404E2C51E7F79")
     private void setHeadAndPropagate(Node node, int propagate) {
         addTaint(propagate);
@@ -252,7 +253,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.303 -0400", hash_original_method = "1CA41B58715410C4216B9DE6C43BB9D4", hash_generated_method = "C5F79ACF849694CECD07366B161DDD11")
     private void cancelAcquire(Node node) {
         addTaint(node.getTaint());
@@ -292,7 +293,7 @@ for(;;)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
         int ws = pred.waitStatus;
         if (ws == Node.SIGNAL)
@@ -309,13 +310,13 @@ for(;;)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void selfInterrupt() {
         Thread.currentThread().interrupt();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.305 -0400", hash_original_method = "C551D5FD0C0A2C72DAD755E48C68905F", hash_generated_method = "F073936CFF5A65E94E682340A37C048E")
     private final boolean parkAndCheckInterrupt() {
         LockSupport.park(this);
@@ -381,7 +382,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.306 -0400", hash_original_method = "E74C4677EAF9B6C97A4A9A93D88FC71E", hash_generated_method = "ECA6F63F8CF2D3A3CCB42911CA1FE8E9")
     private void doAcquireInterruptibly(int arg) throws InterruptedException {
         addTaint(arg);
@@ -436,7 +437,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.308 -0400", hash_original_method = "AF980EBAC4BC6C4AB1174BED3B10073B", hash_generated_method = "DB3EF83971300B68D8BE9546F06E710F")
     private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedException {
         addTaint(nanosTimeout);
@@ -488,7 +489,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.309 -0400", hash_original_method = "D66678B4038334D8E14600B3A8FC8FD7", hash_generated_method = "706DE7BF41217D97C1B1C0111FA50E7F")
     private void doAcquireShared(int arg) {
         addTaint(arg);
@@ -528,7 +529,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.311 -0400", hash_original_method = "4E093FA1B6FCF5593272CE0DEA00D69B", hash_generated_method = "2D4E165097B376D719672743C0EFA351")
     private void doAcquireSharedInterruptibly(int arg) throws InterruptedException {
         addTaint(arg);
@@ -590,7 +591,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.313 -0400", hash_original_method = "873D99639E9E59C87CD3A574B36E4573", hash_generated_method = "74D9A3CD2C4AFF05F50E27E05D2F1FB9")
     private boolean doAcquireSharedNanos(int arg, long nanosTimeout) throws InterruptedException {
         addTaint(nanosTimeout);
@@ -900,7 +901,7 @@ Thread var870C75E9F1DE61C9DB12235564677748_63023656 =         (head == tail) ? n
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.331 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "93D1441071F9B2E98ED53DC347544755")
     private Thread fullGetFirstQueuedThread() {
         Node h;
@@ -998,7 +999,7 @@ for(Node p = tail;p != null;p = p.prev)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.339 -0400", hash_original_method = "155F6B01F514C41CA8367710346D37E3", hash_generated_method = "A633E7E52CFCEBB5E96D063F622CD696")
     public final boolean hasQueuedPredecessors() {
         Node t = tail;
@@ -1166,7 +1167,7 @@ String var4EB727B8FD98B5F7ED6D14E18A4FCCA4_1295557547 =         super.toString()
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.377 -0400", hash_original_method = "E84A510853D9F9659F34649D5E631E14", hash_generated_method = "82F42682478FFBEF86F6BB3D64706C4F")
     private boolean findNodeFromTail(Node node) {
         addTaint(node.getTaint());
@@ -1379,7 +1380,7 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_1388021589 =         cond
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.390 -0400", hash_original_method = "20D2259271C7B1C96C133ACBD2C26B14", hash_generated_method = "26BF181AA211A7FBEC55AF252E73C56E")
     private final boolean compareAndSetHead(Node update) {
         addTaint(update.getTaint());
@@ -1391,7 +1392,7 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_1388021589 =         cond
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.391 -0400", hash_original_method = "8C47C531A43F622294BF6051B04C8993", hash_generated_method = "759064A1ACE6F1B9890EA1DC1370CF13")
     private final boolean compareAndSetTail(Node expect, Node update) {
         addTaint(update.getTaint());
@@ -1404,7 +1405,7 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_1388021589 =         cond
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final boolean compareAndSetWaitStatus(Node node,
                                                          int expect,
                                                          int update) {
@@ -1413,7 +1414,7 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_1388021589 =         cond
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final boolean compareAndSetNext(Node node,
                                                    Node expect,
                                                    Node update) {
@@ -1540,7 +1541,7 @@ Node var74E4690D9F2A026504928C017944E149_1158107245 =             p;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.400 -0400", hash_original_method = "43F5E066353E431B2C9AD7CD0397BCCF", hash_generated_method = "32CF2F58F59B79B994D29F36AC55FED7")
         private Node addConditionWaiter() {
             Node t = lastWaiter;
@@ -1574,7 +1575,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1116113005 =             node;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.402 -0400", hash_original_method = "74B8316ED8B5F40365D8BD9CF002AB2D", hash_generated_method = "5A26EDA37C913BD6A78C85A0B826BA92")
         private void doSignal(Node first) {
             addTaint(first.getTaint());
@@ -1596,7 +1597,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1116113005 =             node;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.403 -0400", hash_original_method = "DE4F68C515AD9FDEF86DCFCC83AF390E", hash_generated_method = "538AA885639A6DAD8B8C761ACEA5BCCC")
         private void doSignalAll(Node first) {
             addTaint(first.getTaint());
@@ -1620,7 +1621,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1116113005 =             node;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.404 -0400", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "80733A3444837168288E85B20119B428")
         private void unlinkCancelledWaiters() {
             Node t = firstWaiter;
@@ -1735,7 +1736,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1116113005 =             node;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.406 -0400", hash_original_method = "5CA3F4E55230C1BE0E77A65DF87A61F3", hash_generated_method = "077D3EA3390394F9DED6EBBE5F213EF7")
         private int checkInterruptWhileWaiting(Node node) {
             addTaint(node.getTaint());
@@ -1751,7 +1752,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1116113005 =             node;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.407 -0400", hash_original_method = "5304D5C5F98F936C59A15960318DA98F", hash_generated_method = "6332C66033F7ABEFAF1D6EEF65DA116D")
         private void reportInterruptAfterWait(int interruptMode) throws InterruptedException {
             addTaint(interruptMode);

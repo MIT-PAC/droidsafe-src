@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +9,10 @@ import java.util.List;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 import org.apache.harmony.security.x501.AttributeValue;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class DNParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.026 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
@@ -42,6 +43,7 @@ public final class DNParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.029 -0400", hash_original_method = "7D5C37EF81BA8B102CA672C27E3E2647", hash_generated_method = "EED7C19550B31A10559733AF4FB89AE8")
     private String nextAT() throws IOException {
         hasQE = false;
@@ -97,6 +99,7 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_623502099 =         new String(chars,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.030 -0400", hash_original_method = "5F9B58135FF863A8E24F4B2AD9DF48BE", hash_generated_method = "9E7D7D25465FED998136BF040F6F98DE")
     private String quotedAV() throws IOException {
         pos++;
@@ -159,6 +162,7 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_1374962699 =         new String(chars
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.034 -0400", hash_original_method = "59E635302CD6807B36C1A45A26BE591E", hash_generated_method = "32D0B08DF73750530A467DC52E9A6A63")
     private String hexAV() throws IOException {
         if(pos + 4 >= chars.length)        
@@ -214,6 +218,7 @@ String varCC1247AAA5590D16A647B2E2A6BA7DE8_726894396 =         new String(chars,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.036 -0400", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "C3CE90485001081A099F7ED77BA91DE3")
     private String escapedAV() throws IOException {
         beg = pos;
@@ -264,6 +269,7 @@ String varF4AE4525652FA624971421628D52D24A_70462894 =                 new String
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.036 -0400", hash_original_method = "1A89A1602A29634CB35E16E135F5FE74", hash_generated_method = "B89CE5A981191CD06642242F72F6476B")
     private char getEscaped() throws IOException {
         pos++;
@@ -395,7 +401,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.041 -0400", hash_original_method = "C98D163E17FC33654783E302104D54C8", hash_generated_method = "19C145531E723E42585BED449E95EAB2")
     private int getByte(int position) throws IOException {
         addTaint(position);

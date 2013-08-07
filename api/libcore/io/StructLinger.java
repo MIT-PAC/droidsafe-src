@@ -1,10 +1,11 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class StructLinger {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.799 -0400", hash_original_field = "40A71E47B0D99B119DE0C65A0B48528E", hash_generated_field = "313A34DC743869D82F472BEDE730F98E")

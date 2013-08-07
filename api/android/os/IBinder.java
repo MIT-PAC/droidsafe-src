@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 
 public interface IBinder {

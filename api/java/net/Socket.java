@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,10 +9,10 @@ import java.io.OutputStream;
 import java.nio.channels.SocketChannel;
 
 import libcore.io.IoBridge;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Socket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.485 -0400", hash_original_field = "86CCEC3D9FF0E9C0514506E982CDC08B", hash_generated_field = "76382137C184A183F2BF2D8583A90AEC")
@@ -163,6 +164,7 @@ public class Socket {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.490 -0400", hash_original_method = "FE893551BF445ECD0CF959494571F82D", hash_generated_method = "8189DBE7B95240EE8F3E61437F204202")
     private void tryAllAddresses(String dstName, int dstPort, InetAddress
             localAddress, int localPort, boolean streaming) throws IOException {
@@ -207,6 +209,7 @@ for(int i = 0;i < dstAddresses.length - 1;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.491 -0400", hash_original_method = "B238EF3FEB62ADA205D3F3298560A137", hash_generated_method = "B88FB7A26B274835DE0F41D311D51CC1")
     private void checkDestination(InetAddress destAddr, int dstPort) {
         addTaint(dstPort);
@@ -562,6 +565,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1515464079 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.495 -0400", hash_original_method = "20DD1F1CA9EDC17BE2B90F2B7E5FF655", hash_generated_method = "3E4310086A8225C1052CE8FC0ABCB969")
     private void startupSocket(InetAddress dstAddress, int dstPort,
             InetAddress localAddress, int localPort, boolean streaming) throws IOException {
@@ -623,6 +627,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1515464079 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.495 -0400", hash_original_method = "933F73796CB698722A986AC13FC9BFF8", hash_generated_method = "569096575148F0CADE38101539FD478A")
     private boolean usingSocks() {
         boolean var5E1E555BE0AAD4134390E5A70C27656D_548649677 = (proxy != null && proxy.type() == Proxy.Type.SOCKS);
@@ -695,6 +700,7 @@ String varB034AC56C48F7BEF9DF09FF96FD67CC5_1322028598 =         impl.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.496 -0400", hash_original_method = "80C03A9E4F151BE4271ACE586291D7DE", hash_generated_method = "694F83428E682D6EC10000F81105C82E")
     private void checkOpenAndCreate(boolean create) throws SocketException {
         addTaint(create);
@@ -1087,6 +1093,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_480002091 =         new InetSo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.499 -0400", hash_original_method = "95A7BF302299AFCDED7970E2F7424717", hash_generated_method = "794BDF12835FAD96C22BC1E6B513ECB3")
     private void cacheLocalAddress() {
         this.localAddress = IoBridge.getSocketLocalAddress(impl.fd);
@@ -1106,7 +1113,7 @@ SocketChannel var540C13E9E156B687226421B24F2DF178_702097887 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.500 -0400", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "292139BDC10A5A833F1FD570C1841E50")
     public FileDescriptor getFileDescriptor$() {
 FileDescriptor var90D0CD7641DADE7AC7C643EE2F281FD7_1153662367 =         impl.fd;

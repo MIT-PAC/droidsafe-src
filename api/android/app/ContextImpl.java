@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -79,10 +80,10 @@ import android.view.textservice.TextServicesManager;
 import com.android.internal.os.IDropBoxManagerService;
 import com.android.internal.policy.PolicyManager;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.concrete.DroidSafeContentResolver;
 import droidsafe.helpers.DSUtils;
 
@@ -270,7 +271,7 @@ public class ContextImpl extends Context {
 
     
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Resources getResources() {
         return Resources.getSystem();
     }
@@ -283,7 +284,7 @@ public class ContextImpl extends Context {
 
     
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public ContentResolver getContentResolver() {
         return contentResolver;
     }
@@ -368,6 +369,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.071 -0400", hash_original_method = "0A29125F4E4AA8A93CA3D1CE13216DA3", hash_generated_method = "3E4E7766B0DED496458EDE1A39939CF9")
     private File getPreferencesDir() {
         synchronized
@@ -510,6 +512,7 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_237158048 =         db;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.080 -0400", hash_original_method = "5E7F893311C7FFBA04D943EFEC31C4D2", hash_generated_method = "0BCF517720F4FD6FA1F80926818391CD")
     private File getDatabasesDir() {
         synchronized
@@ -673,7 +676,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.104 -0400", hash_original_method = "22E75A5CFB9DB3D3B6EDA1829895EA59", hash_generated_method = "43B2BF89975362326EFDEF5C29629973")
     private Intent registerReceiverInternal(BroadcastReceiver receiver,
             IntentFilter filter, String broadcastPermission,
@@ -907,6 +910,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1029140709 =             null;
 
     WallpaperManager wallPaperManager = new WallpaperManager(this, mMainThread.getHandler());
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.108 -0400", hash_original_method = "0B425FF354429B91E3FB5E5F0CCF5247", hash_generated_method = "9DC6D6BDC8B919CA9F34CC2423316AAF")
     private WallpaperManager getWallpaperManager() {
 		return wallPaperManager;
@@ -944,6 +948,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1029140709 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.110 -0400", hash_original_method = "6A8DDEA43434D3CB20BB0A5477A87FA9", hash_generated_method = "5BB4D99C6796D51F5C5DB798AB5D5B3C")
     private void enforce(
             String permission, int resultOfCheck,
@@ -1040,6 +1045,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1029140709 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.114 -0400", hash_original_method = "4ABE3E1ABE03D924F88AC8D7A295DCAE", hash_generated_method = "D5A164F066DC40893BBC893CC934B4B8")
     private String uriModeFlagToString(int uriModeFlags) {
         addTaint(uriModeFlags);
@@ -1076,7 +1082,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.115 -0400", hash_original_method = "6A9FD3C401F0CEC7314A7CD25AD534A9", hash_generated_method = "31449087A3AA8A60A1B9198669E5798A")
     private void enforceForUri(
             int modeFlags, int resultOfCheck, boolean selfToo,
@@ -1162,6 +1168,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.118 -0400", hash_original_method = "E67FD2E3CB9CBDDDA85EF29E76BC4DD2", hash_generated_method = "4CAE89A8970C39DFE71503D53F5E095B")
     private File getDataDirFile() {
         if(mPackageInfo != null)        
@@ -1348,6 +1355,7 @@ IBinder var776483BEB0D8BCC1373C51E8861CFB6F_944315431 =         mActivityToken;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.126 -0400", hash_original_method = "B435A8710874F18AA5DE97F01977E23C", hash_generated_method = "95DA246C45244B00BF0BD94F34CA4C0E")
     private File validateFilePath(String name, boolean createDirectory) {
         addTaint(createDirectory);
@@ -1396,6 +1404,7 @@ File varABE3CFB53FE4A79F34CB25BC80BFD6E2_786471606 =         f;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.127 -0400", hash_original_method = "E9A305FD20BBA1C0FB0979159F7000FC", hash_generated_method = "D89D4DCF1C5E12272E3957FCCD0A252D")
     private File makeFilename(File base, String name) {
         addTaint(name.getTaint());

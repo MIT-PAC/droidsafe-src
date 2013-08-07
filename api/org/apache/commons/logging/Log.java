@@ -1,6 +1,7 @@
 package org.apache.commons.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Log {
 

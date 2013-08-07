@@ -1,6 +1,7 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Enumeration;
 import java.util.Vector;
 
@@ -11,9 +12,9 @@ import org.bouncycastle.asn1.x9.X962NamedCurves;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.jce.spec.ECNamedCurveParameterSpec;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class ECNamedCurveTable {
     
@@ -78,7 +79,7 @@ public class ECNamedCurveTable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void addEnumeration(
         Vector v, 
         Enumeration e) {

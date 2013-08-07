@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.NameValueList;
 import gov.nist.javax.sip.DialogExt;
@@ -77,10 +78,10 @@ import javax.sip.header.TimeStampHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SIPDialog implements javax.sip.Dialog, DialogExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.373 -0400", hash_original_field = "46C9B2C3A305D009DCA963EA55E53037", hash_generated_field = "8B7AA916EC7A88984DDF8AA52B9F1641")
@@ -255,7 +256,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
 
     protected Contact contactHeader;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.378 -0400", hash_original_method = "B89E344ABA0B0C4EAAF339C3C960DE0F", hash_generated_method = "685613B365B139F14EC760382B8F90A2")
     private  SIPDialog(SipProviderImpl provider) {
         this.terminateOnBye = true;
@@ -361,7 +362,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.382 -0400", hash_original_method = "9EE497100AA17813744E66E4A05B8669", hash_generated_method = "D730239923E29F7DFE5B86469FB919EC")
     private void recordStackTrace() {
         StringWriter stringWriter = new StringWriter();
@@ -376,7 +377,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.382 -0400", hash_original_method = "40815EC709415499328FA1CBE062ACB5", hash_generated_method = "672791473F6E9DBF528505DF6025D1DB")
     private void printRouteList() {
         if(sipStack.isLoggingEnabled())        
@@ -392,7 +393,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.382 -0400", hash_original_method = "6746D685A6EEFE6F86FE53A5B90B58CB", hash_generated_method = "4EDAC2AB1A386E8370EE2E6D163319F8")
     private boolean isClientDialog() {
         SIPTransaction transaction = (SIPTransaction) this.getFirstTransaction();
@@ -405,6 +406,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.383 -0400", hash_original_method = "871D6D7CB1794492ED7691CB8C5B804E", hash_generated_method = "89CBF867C6FA598DA15F5D1A6EC4896B")
     private void raiseIOException(String host, int port, String protocol) {
         addTaint(protocol.getTaint());
@@ -420,6 +422,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.383 -0400", hash_original_method = "352742C76D82997D1FD2B39635FE380F", hash_generated_method = "348C548DB0E2C4F49DA72B3D52EC5BB0")
     private void raiseErrorEvent(int dialogTimeoutError) {
         addTaint(dialogTimeoutError);
@@ -467,7 +470,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.384 -0400", hash_original_method = "E7371746614A4FB0A7068DCC784728D1", hash_generated_method = "6D69CC4E5DB2276D49E392AB8FD69649")
     private void setRemoteParty(SIPMessage sipMessage) {
         if(!isServer())        
@@ -494,6 +497,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.385 -0400", hash_original_method = "07989C3909E96A7576DAE0D29DD189A0", hash_generated_method = "6AE7C00BFD2959D66437AFF9D4F6F13E")
     private void addRoute(RecordRouteList recordRouteList) {
         addTaint(recordRouteList.getTaint());
@@ -584,6 +588,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.387 -0400", hash_original_method = "32344AE5A14991821D94A9D2D9260949", hash_generated_method = "EF1EC8AE84767D70CF25B4F5C3C3C60D")
     private synchronized void addRoute(SIPResponse sipResponse) {
         addTaint(sipResponse.getTaint());
@@ -651,7 +656,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.388 -0400", hash_original_method = "EDCC5E2E639B8E515D6889EB4E225297", hash_generated_method = "D60105956ABBCF0B15D698BFEC3D32E0")
     private synchronized RouteList getRouteList() {
         if(sipStack.isLoggingEnabled())        
@@ -696,6 +701,7 @@ RouteList varF9E19AD6135C970F387F77C6F3DE4477_298200937 =         retval;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.390 -0400", hash_original_method = "EE053BB78DA7F62675E98D1AF5A5B915", hash_generated_method = "E67925F349EEE043DBE5F9BEB141539F")
     private void sendAck(Request request, boolean throwIOExceptionAsSipException) throws SipException {
         addTaint(throwIOExceptionAsSipException);
@@ -1314,7 +1320,7 @@ String var8BDB7310D064EBC529941BE9D229C459_724540774 =         this.dialogId;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void storeFirstTransactionInfo(SIPDialog dialog, SIPTransaction transaction) {
         dialog.firstTransaction = transaction;
         dialog.firstTransactionSeen = true;
@@ -1405,7 +1411,7 @@ String var8BDB7310D064EBC529941BE9D229C459_724540774 =         this.dialogId;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.424 -0400", hash_original_method = "D993372A10E82664D688CA2C725ED950", hash_generated_method = "5B9F81BC01697E7B602CCF2CE1270A64")
     private void setRemoteTag(String hisTag) {
         if(sipStack.isLoggingEnabled())        
@@ -1500,7 +1506,7 @@ SIPServerTransaction var540C13E9E156B687226421B24F2DF178_2100152901 =         nu
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.425 -0400", hash_original_method = "0F222FB6A793487D534C4C9D0AE37F48", hash_generated_method = "368F230BBC52F6A9F46B4723F8D76286")
     private void setLocalSequenceNumber(long lCseq) {
         if(sipStack.isLoggingEnabled())        
@@ -1624,7 +1630,7 @@ String var9DE7A7E9315738F00198F8DF7C7E5465_1987383127 =         hisTag;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.426 -0400", hash_original_method = "CA511CD87985B97DC1F9ED1FACA7DA9D", hash_generated_method = "8AA3E954DDDCEFBAF3594ADDDAAAA15D")
     private void setLocalTag(String mytag) {
         if(sipStack.isLoggingEnabled())        
@@ -1662,7 +1668,7 @@ CallIdHeader var0A1A7D5AA74854841C64078E07B44310_778818550 =         this.callId
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.426 -0400", hash_original_method = "4B0BBE43D23308E79DF92279003CECC0", hash_generated_method = "517DBAA469E981201785F2FDAACB9B73")
     private void setCallId(SIPRequest sipRequest) {
         this.callIdHeader = sipRequest.getCallId();
@@ -1682,7 +1688,7 @@ javax.sip.address.Address varA324A22659E41955B199219D5C3C3E02_1790286353 =      
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.426 -0400", hash_original_method = "1D3A055B19FDF32D0E14CBB9A0F366F2", hash_generated_method = "5BFC69554EF62208B88216B9ABCE5B77")
     private void setLocalParty(SIPMessage sipMessage) {
         if(!isServer())        
@@ -1804,7 +1810,7 @@ Request var38B8A60208B4BE77DD71253D980B16B4_885036430 =         this.createReque
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.428 -0400", hash_original_method = "B004628D88AAF4473352CE6B2CF39886", hash_generated_method = "E718E79F7A142FA37DDD56469FB1F79E")
     private Request createRequest(String method, SIPResponse sipResponse) throws SipException {
         addTaint(sipResponse.getTaint());
@@ -2124,7 +2130,7 @@ Request varC7C20CEFE913CADDEFC247E46F836F62_173731697 =         sipRequest;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.434 -0400", hash_original_method = "BB6E18DBBED43A4BEB60B225A721A13E", hash_generated_method = "40B3CF5D2D79BE2FE6D9BF1810F345F3")
     private boolean toRetransmitFinalResponse(int T2) {
         addTaint(T2);
@@ -2336,7 +2342,7 @@ Request var540C13E9E156B687226421B24F2DF178_1149184586 =             null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.438 -0400", hash_original_method = "AE874CF06DEDE92D6543D8F7D52B6043", hash_generated_method = "1D5FA0CF72832A2CD1D30B664619D640")
     private void updateRequest(SIPRequest sipRequest) {
         addTaint(sipRequest.getTaint());
@@ -2814,6 +2820,7 @@ SIPResponse varB79F2C108A34EA379E0E4ADD4F794C06_1802813606 =         lastRespons
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.443 -0400", hash_original_method = "5B8AFE9B6B91DF83BE42F6862D2EF06A", hash_generated_method = "F73C501318BAFBD578FA6FBE51B01669")
     private void doTargetRefresh(SIPMessage sipMessage) {
         addTaint(sipMessage.getTaint());
@@ -2832,7 +2839,7 @@ SIPResponse varB79F2C108A34EA379E0E4ADD4F794C06_1802813606 =         lastRespons
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final boolean optionPresent(ListIterator l, String option) {
         while (l.hasNext()) {
             OptionTag opt = (OptionTag) l.next();
@@ -3237,7 +3244,7 @@ String var5E770A468DCD83168A71F3D41C9B3988_2042549335 =         earlyDialogId;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.451 -0400", hash_original_method = "68D4C33CE448DB45C09F49FC9815E4FD", hash_generated_method = "EAFEA098C1D75D51099230EDA00E4652")
     private void setLastAckReceived(SIPRequest lastAckReceived) {
         this.lastAckReceived = lastAckReceived;
@@ -3257,7 +3264,7 @@ SIPRequest varFA84105AD136BC5C28A74CDCB14A99CB_951125081 =         lastAckReceiv
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.451 -0400", hash_original_method = "AE316349F4F2DB7FF5C817D5A1FDA212", hash_generated_method = "A753A427692B7DEB55775EE2604691AF")
     private void setLastAckSent(SIPRequest lastAckSent) {
         this.lastAckSent = lastAckSent;

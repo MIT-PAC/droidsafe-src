@@ -1,17 +1,19 @@
 package org.apache.harmony.dalvik.ddmc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DdmServer {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.868 -0400", hash_original_method = "9245089A3DC1CB81EAEF9FD5F462A315", hash_generated_method = "285A1E98A8D6D11E80518C3C162413CF")
     private  DdmServer() {
         // ---------- Original Method ----------
@@ -57,6 +59,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void broadcast(int event) {
         synchronized (mHandlerMap) {
             Collection values = mHandlerMap.values();
@@ -78,6 +81,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Chunk dispatch(int type, byte[] data, int offset, int length) {
         ChunkHandler handler;
         synchronized (mHandlerMap) {

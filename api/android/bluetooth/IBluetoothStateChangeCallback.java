@@ -1,6 +1,7 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IBluetoothStateChangeCallback extends android.os.IInterface
 {

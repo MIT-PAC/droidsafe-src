@@ -1,13 +1,14 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.accounts.Account;
 import android.os.Bundle;
 import android.os.SystemClock;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SyncOperation implements Comparable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.581 -0400", hash_original_field = "E268443E43D93DAB7EBEF303BBE9642F", hash_generated_field = "48DCC252B03FBCBEDBDE2E34968668DF")
@@ -47,7 +48,7 @@ public class SyncOperation implements Comparable {
 
     public long effectiveRunTime;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.585 -0400", hash_original_method = "B06968042D7BA4644F7F8CC6E7EA9B45", hash_generated_method = "EA5C5AE95A4E423C6F2798E56A1A23BA")
     public  SyncOperation(Account account, int source, String authority, Bundle extras,
             long delayInMs, long backoff, long delayUntil, boolean allowParallelSyncs) {
@@ -84,7 +85,7 @@ public class SyncOperation implements Comparable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.589 -0400", hash_original_method = "BE085BAA1CD2B4B4487382D0022F31D7", hash_generated_method = "44AF7038BB0152FE7BD44E3BDEC3C97C")
       SyncOperation(SyncOperation other) {
         this.account = other.account;
@@ -113,7 +114,7 @@ public class SyncOperation implements Comparable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.590 -0400", hash_original_method = "432EE1A094EFB9968E7A50DA8ACAC133", hash_generated_method = "0DE4EABB7C7C62CBAB374994494B1064")
     private void removeFalseExtra(String extraName) {
         addTaint(extraName.getTaint());
@@ -128,7 +129,7 @@ public class SyncOperation implements Comparable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.591 -0400", hash_original_method = "DD55706005FD16094E01DF90CF28D99E", hash_generated_method = "5B7D04A7FC1AC953DAF37B9A0609DA49")
     public String toString() {
 String varA6B8BD37985A60A440C49B7AA6CF67BB_205373090 =         dump(true);
@@ -139,7 +140,7 @@ String varA6B8BD37985A60A440C49B7AA6CF67BB_205373090 =         dump(true);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.592 -0400", hash_original_method = "47737E917226B122B7AA0C5B23AFE223", hash_generated_method = "A8666071FB755F36ABE7839940C3D049")
     public String dump(boolean useOneLine) {
         addTaint(useOneLine);
@@ -181,7 +182,7 @@ String var2460B846747F8B22185AD8BE722266A5_1423196240 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.592 -0400", hash_original_method = "0CBE4B28609593623A1CB97001F0DBD2", hash_generated_method = "7AE8EBB0AD4876AB24651A57539F79B7")
     public boolean isInitialization() {
         boolean var7DDE28B1FD1D777B1D79F3951983CA43_1145230961 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false));
@@ -192,7 +193,7 @@ String var2460B846747F8B22185AD8BE722266A5_1423196240 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.593 -0400", hash_original_method = "A202EE0B500962365FD241C616148E63", hash_generated_method = "5C6AF6999FF53E908A10C394DBCE56C7")
     public boolean ignoreBackoff() {
         boolean var38DDFF7D7CA52472479FAE474236403E_925857647 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false));
@@ -203,7 +204,7 @@ String var2460B846747F8B22185AD8BE722266A5_1423196240 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.593 -0400", hash_original_method = "557BF419234DEC0AF5F90553488D23D9", hash_generated_method = "229ADB5FD29FB703B3B2FD5BC1B1A40E")
     private String toKey() {
         StringBuilder sb = new StringBuilder();
@@ -224,7 +225,7 @@ String var2460B846747F8B22185AD8BE722266A5_1736535248 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void extrasToStringBuilder(Bundle bundle, StringBuilder sb) {
         sb.append("[");
         for (String key : bundle.keySet()) {
@@ -234,7 +235,7 @@ String var2460B846747F8B22185AD8BE722266A5_1736535248 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.594 -0400", hash_original_method = "0B30B519DCD273F2706D3A8819933F53", hash_generated_method = "3470C2C3EB73D929C84713285D0EFEAE")
     public void updateEffectiveRunTime() {
         effectiveRunTime = ignoreBackoff()
@@ -251,7 +252,7 @@ String var2460B846747F8B22185AD8BE722266A5_1736535248 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.595 -0400", hash_original_method = "94E2F05BFAF6BA397C21B12E8FAD132F", hash_generated_method = "66A1BDAC98D95D23D735B39ACC38833D")
     public int compareTo(Object o) {
         addTaint(o.getTaint());

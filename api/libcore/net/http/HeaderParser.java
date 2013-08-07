@@ -1,7 +1,8 @@
 package libcore.net.http;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 final class HeaderParser {
     
@@ -42,6 +43,7 @@ final class HeaderParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int skipUntil(String input, int pos, String characters) {
         for (; pos < input.length(); pos++) {
             if (characters.indexOf(input.charAt(pos)) != -1) {
@@ -52,6 +54,7 @@ final class HeaderParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int skipWhitespace(String input, int pos) {
         for (; pos < input.length(); pos++) {
             char c = input.charAt(pos);

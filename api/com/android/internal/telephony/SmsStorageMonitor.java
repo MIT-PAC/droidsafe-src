@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +11,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.provider.Telephony.Sms.Intents;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SmsStorageMonitor extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.372 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -136,6 +137,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.377 -0400", hash_original_method = "CBDD17965584D059356B67C204E0599E", hash_generated_method = "0DE4019B27CA1A73339D9921CA34394B")
     private void createWakelock() {
         PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
@@ -148,6 +150,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.377 -0400", hash_original_method = "A1AEC8C81078600BF66207F442C7D632", hash_generated_method = "4D96370800094366C09A5CD9CAFF2CDF")
     private void handleIccFull() {
         Intent intent = new Intent(Intents.SIM_FULL_ACTION);

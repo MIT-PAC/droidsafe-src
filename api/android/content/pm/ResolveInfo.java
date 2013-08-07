@@ -1,6 +1,7 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.Collator;
 import java.util.Comparator;
 
@@ -10,10 +11,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ResolveInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.659 -0400", hash_original_field = "D189E59358BD9D02DDCA24FC5ED15564", hash_generated_field = "FCA2A130861F7E80B0DB4D7C0D3F6C7C")
@@ -62,6 +63,7 @@ public class ResolveInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.663 -0400", hash_original_method = "D76D30C905C95224DB17E633EB6195C1", hash_generated_method = "0F6125C05464BE9DA404484F88A2D1BC")
     private  ResolveInfo(Parcel source) {
 switch(source.readInt()){

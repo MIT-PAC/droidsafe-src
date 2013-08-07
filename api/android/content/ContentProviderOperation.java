@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,10 +11,10 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ContentProviderOperation implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.031 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
@@ -44,7 +45,7 @@ public class ContentProviderOperation implements Parcelable {
 
     private boolean mYieldAllowed;
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.034 -0400", hash_original_method = "E83648833C15023B0A37354984B5CA31", hash_generated_method = "82CDA661D135A6B2C13B951998951636")
     private  ContentProviderOperation(Builder builder) {
         mType = builder.mType;
@@ -69,6 +70,7 @@ public class ContentProviderOperation implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.038 -0400", hash_original_method = "9004240102FD3717D6F1BEB293484741", hash_generated_method = "915F550161F1009692B244425881A126")
     private  ContentProviderOperation(Parcel source) {
         mType = source.readInt();
@@ -215,7 +217,7 @@ Uri var7D41D50876117CE5D7DFAD684A455037_1149734064 =         mUri;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.042 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "C87E25768E1441CCC20D336D8BCE4E73")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_1752826784 = (mType);
@@ -464,6 +466,7 @@ String var5437924A98110F3BAD119BEF211F2BFE_2052902349 =         "mType: " + mTyp
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.056 -0400", hash_original_method = "4E134EAC713EA4116B151015A8D49950", hash_generated_method = "9250210D3BF9F9585F55251E1242C26E")
     private long backRefToValue(ContentProviderResult[] backRefs, int numBackRefs,
             Integer backRefIndex) {
@@ -547,7 +550,7 @@ String var5437924A98110F3BAD119BEF211F2BFE_2052902349 =         "mType: " + mTyp
 
         private boolean mYieldAllowed;
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.060 -0400", hash_original_method = "E4683F1EC70220B8EE12920060472DE0", hash_generated_method = "1456977F6104FA8F2A8AE3FDD13360C7")
         private  Builder(int type, Uri uri) {
             if(uri == null)            

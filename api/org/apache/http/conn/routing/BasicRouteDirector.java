@@ -1,7 +1,8 @@
 package org.apache.http.conn.routing;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class BasicRouteDirector implements HttpRouteDirector {
     

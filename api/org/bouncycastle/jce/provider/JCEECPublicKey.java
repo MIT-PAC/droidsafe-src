@@ -1,6 +1,7 @@
 package org.bouncycastle.jce.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -35,10 +36,10 @@ import org.bouncycastle.jce.provider.asymmetric.ec.ECUtil;
 import org.bouncycastle.jce.spec.ECNamedCurveSpec;
 import org.bouncycastle.math.ec.ECCurve;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfaces.ECPublicKey, ECPointEncoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.653 -0400", hash_original_field = "4CE104ED21742E2616088672EB5F3AE9", hash_generated_field = "03A7690F51B3F9BF560AF66A2E562751")
@@ -233,6 +234,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.659 -0400", hash_original_method = "78B971AFBB9FB77663E9AB2BC39F53F9", hash_generated_method = "9BEEA40AAEC25916117B65D6415F788D")
     private ECParameterSpec createSpec(EllipticCurve ellipticCurve, ECDomainParameters dp) {
         addTaint(dp.getTaint());
@@ -393,6 +395,7 @@ String varF820115C876B7F160DE375988A3E1CA1_653130863 =         "X.509";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.664 -0400", hash_original_method = "7BE58B7CFDB546DA8CA10F5D2E9502BA", hash_generated_method = "6211640010B5B8182AF3F0157D7D9303")
     private void extractBytes(byte[] encKey, int offSet, BigInteger bI) {
         addTaint(bI.getTaint());
@@ -597,6 +600,7 @@ String var4FC680801218E6372BC708D6FA44AE60_947856697 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.667 -0400", hash_original_method = "65AAF373098ED8D46B05238E5475AB46", hash_generated_method = "93BDAF02EB2E47650C4355683F4D4D9D")
     private void readObject(
         ObjectInputStream in) throws IOException, ClassNotFoundException {
@@ -612,6 +616,7 @@ String var4FC680801218E6372BC708D6FA44AE60_947856697 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.668 -0400", hash_original_method = "2E7E67EC6D00C929FDA46D4809812937", hash_generated_method = "9B99901F14687E210B002216F8C2690C")
     private void writeObject(
         ObjectOutputStream out) throws IOException {

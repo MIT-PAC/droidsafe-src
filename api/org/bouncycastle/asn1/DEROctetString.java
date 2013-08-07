@@ -1,9 +1,10 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class DEROctetString extends ASN1OctetString {
     

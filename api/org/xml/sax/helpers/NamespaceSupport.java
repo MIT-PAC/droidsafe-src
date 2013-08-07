@@ -1,16 +1,17 @@
 package org.xml.sax.helpers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EmptyStackException;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NamespaceSupport {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.378 -0400", hash_original_field = "7E0A10944FD50182E16E23B0A3D9335C", hash_generated_field = "C9FE6E28AC860EBE1DBAB5714D1187ED")
@@ -600,6 +601,7 @@ Enumeration varBFCD16886F1317652E333795EE580297_553531150 =                 pref
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.393 -0400", hash_original_method = "26D71A046B8A5E21DEFC65FB89CD9FDA", hash_generated_method = "01B5A4107A0C0CF2E1BDF9FC42DC4E82")
         private void copyTables() {
             if(prefixTable != null)            

@@ -1,8 +1,9 @@
 package android.hardware;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
 
 public class SensorEvent {
     public final float[] values;

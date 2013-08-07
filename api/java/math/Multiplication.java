@@ -1,11 +1,13 @@
 package java.math;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 class Multiplication {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.190 -0400", hash_original_method = "CE81298360999BF52006386DE7E36DBD", hash_generated_method = "C1903448A4FC57F0699C8C4004F3EB1D")
     private  Multiplication() {
         // ---------- Original Method ----------

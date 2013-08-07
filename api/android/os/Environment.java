@@ -1,15 +1,16 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 
 import android.os.storage.IMountService;
 import android.os.storage.StorageVolume;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Environment {
     
@@ -20,6 +21,7 @@ public class Environment {
     }
 
 
+    @DSModeled(DSC.BAN)
     private static StorageVolume getPrimaryVolume() {
         if (mPrimaryVolume == null) {
             synchronized (mLock) {
@@ -45,6 +47,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static File getSystemSecureDirectory() {
         if (isEncryptedFilesystemEnabled()) {
             return new File(SECURE_DATA_DIRECTORY, "system");
@@ -54,6 +57,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static File getSecureDataDirectory() {
         if (isEncryptedFilesystemEnabled()) {
             return SECURE_DATA_DIRECTORY;
@@ -63,6 +67,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isEncryptedFilesystemEnabled() {
         return SystemProperties.getBoolean(SYSTEM_PROPERTY_EFS_ENABLED, false);
     }
@@ -86,33 +91,38 @@ public class Environment {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static File getExternalStorageAndroidDataDir() {
         return EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static File getExternalStorageAppDataDirectory(String packageName) {
         return new File(EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY, packageName);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static File getExternalStorageAppMediaDirectory(String packageName) {
         return new File(EXTERNAL_STORAGE_ANDROID_MEDIA_DIRECTORY, packageName);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static File getExternalStorageAppObbDirectory(String packageName) {
         return new File(EXTERNAL_STORAGE_ANDROID_OBB_DIRECTORY, packageName);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static File getExternalStorageAppFilesDirectory(String packageName) {
         return new File(new File(EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY,
                 packageName), "files");
     }
 
     
+    @DSModeled(DSC.BAN)
     public static File getExternalStorageAppCacheDirectory(String packageName) {
         return new File(new File(EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY,
                 packageName), "cache");

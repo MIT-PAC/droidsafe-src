@@ -1,9 +1,10 @@
 package junit.framework;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public class Assert {
     
@@ -238,7 +239,7 @@ public class Assert {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private void failSame(String message) {
         String formatted= "";
         if (message != null)
@@ -247,7 +248,7 @@ public class Assert {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private void failNotSame(String message, Object expected, Object actual) {
         String formatted= "";
         if (message != null)
@@ -256,7 +257,7 @@ public class Assert {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private void failNotEquals(String message, Object expected, Object actual) {
         fail(format(message, expected, actual));
     }

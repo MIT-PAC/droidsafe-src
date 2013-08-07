@@ -1,6 +1,7 @@
 package dalvik.system.profiler;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,10 +10,10 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SamplingProfiler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.035 -0400", hash_original_field = "7866DB6D1CAD3E99097EE63747D20CDC", hash_generated_field = "C152621F50161C6F4001CF97446A8451")

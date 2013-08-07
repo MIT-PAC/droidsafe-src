@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.x500.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Hashtable;
 
@@ -17,10 +18,10 @@ import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameStyle;
 import org.bouncycastle.asn1.x509.X509ObjectIdentifiers;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BCStyle implements X500NameStyle {
     
@@ -149,6 +150,7 @@ for(int i = 0;i != rdns1.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.432 -0400", hash_original_method = "54A0483298F3DFD022315937FBAF5933", hash_generated_method = "8ED91514F4A82EF0BC3A17CDE8DC050A")
     private boolean foundMatch(boolean reverse, RDN rdn, RDN[] possRDNs) {
         addTaint(possRDNs[0].getTaint());
@@ -267,6 +269,7 @@ for(int i = 0;i != atvs1.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.434 -0400", hash_original_method = "9BB2C53F6636F1E7BA3066DC2FBD5F40", hash_generated_method = "45B332F92849B4C2FA330047D206BC9B")
     private boolean atvAreEqual(AttributeTypeAndValue atv1, AttributeTypeAndValue atv2) {
         addTaint(atv2.getTaint());
@@ -398,6 +401,7 @@ for(int j = 0;j != atv.length;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.436 -0400", hash_original_method = "D9D0265B1123594600F423F1ABB5E8A9", hash_generated_method = "A85A7C2439633990DD2133D3798DA9FD")
     private int calcHashCode(ASN1Encodable enc) {
         addTaint(enc.getTaint());

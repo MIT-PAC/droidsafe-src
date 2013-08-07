@@ -1,8 +1,9 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public final class CharArrayBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.547 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "D84F28F88F1F0A20B618AC030F591DF4")

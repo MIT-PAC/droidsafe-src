@@ -1,6 +1,7 @@
 package javax.security.auth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Destroyable {
 

@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IRotationWatcher extends android.os.IInterface
 {

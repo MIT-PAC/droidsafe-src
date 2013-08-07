@@ -1,6 +1,7 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -38,10 +39,10 @@ import com.android.internal.util.FastXmlSerializer;
 import com.google.android.collect.Lists;
 import com.google.android.collect.Maps;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class RegisteredServicesCache<V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.550 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "DE8577C1C990964647332D172A1FAC00")
@@ -119,6 +120,7 @@ public abstract class RegisteredServicesCache<V> {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.555 -0400", hash_original_method = "EB7158F459E2A057373DBB2E8C73133E", hash_generated_method = "D63E23565C71278CBC2105E7E4B25692")
     public void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
         addTaint(args[0].getTaint());
@@ -146,7 +148,7 @@ for(ServiceInfo info : services.values())
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.556 -0400", hash_original_method = "D8F0001D796B123F3D4D73C4471FA428", hash_generated_method = "BE20450A7E4F9EB1D504FCA0BBF9884F")
     public RegisteredServicesCacheListener<V> getListener() {
         synchronized
@@ -265,6 +267,7 @@ Collection<ServiceInfo<V>> var01EADE7461BB4905E6FEDFBECC0D286A_1586203734 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.560 -0400", hash_original_method = "1776E8B4D21775792D782A371FDFF29B", hash_generated_method = "2140358EBF9B6CF521EC1F6B949CBD73")
     public void close() {
         final BroadcastReceiver receiver = mReceiver.getAndSet(null);
@@ -280,6 +283,7 @@ Collection<ServiceInfo<V>> var01EADE7461BB4905E6FEDFBECC0D286A_1586203734 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.561 -0400", hash_original_method = "675DD0BF255C7F4136F548B1BE5CB74C", hash_generated_method = "25A9A4B58434BD863E2C490BA5DB8F1B")
     @Override
     protected void finalize() throws Throwable {
@@ -297,6 +301,7 @@ Collection<ServiceInfo<V>> var01EADE7461BB4905E6FEDFBECC0D286A_1586203734 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.561 -0400", hash_original_method = "30EEE88D5EBEE3E7BF1A3FE6896BBA6C", hash_generated_method = "E3A43A8B1B3814CE0A407DAB5EF1C7AD")
     private boolean inSystemImage(int callerUid) {
         addTaint(callerUid);
@@ -340,7 +345,7 @@ for(String name : packages)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.564 -0400", hash_original_method = "7FD7D9F6A29EBA7075A2BE7C2AD27E68", hash_generated_method = "44DB6FEB9E3A22E5F8DCB6563D037A9D")
      void generateServicesMap() {
         PackageManager pm = mContext.getPackageManager();
@@ -506,6 +511,7 @@ for(int i = 0, N = serviceInfos.size();i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.572 -0400", hash_original_method = "05773225026B5770A572BEDCCA950685", hash_generated_method = "FBA8F7DA4DB9690BAD0A282362DE0F45")
     private ServiceInfo<V> parseServiceInfo(ResolveInfo service) throws XmlPullParserException, IOException {
         addTaint(service.getTaint());
@@ -569,6 +575,7 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_1933099905 =             new 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.577 -0400", hash_original_method = "AEFFF388F6549F52CCF36E0502C98B34", hash_generated_method = "3C7200E89B1FEDE25C0D2102CF801A1F")
     private void readPersistentServicesLocked() {
         mPersistentServices = Maps.newHashMap();
@@ -640,6 +647,7 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_1933099905 =             new 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.580 -0400", hash_original_method = "EE98DCC48BA776AAD27AD82ED0CDBCAD", hash_generated_method = "B48FD1310EFCBD075BD6C7C79A42333B")
     private void writePersistentServicesLocked() {
         if(mSerializerAndParser == null)        
@@ -705,6 +713,7 @@ for(Map.Entry<V, Integer> service : mPersistentServices.entrySet())
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.584 -0400", hash_original_method = "72B8806B88D8BA2A16DDBB10DB9489CE", hash_generated_method = "DC47EF4DC640B505D161840A9C55E448")
         @Override
         public String toString() {

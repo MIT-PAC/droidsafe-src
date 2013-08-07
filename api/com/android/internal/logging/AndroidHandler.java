@@ -1,6 +1,7 @@
 package com.android.internal.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.logging.Formatter;
@@ -12,10 +13,10 @@ import java.util.logging.Logger;
 import android.util.Log;
 import dalvik.system.DalvikLogHandler;
 import dalvik.system.DalvikLogging;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class AndroidHandler extends Handler implements DalvikLogHandler {

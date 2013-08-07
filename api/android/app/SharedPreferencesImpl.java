@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,10 +29,10 @@ import com.android.internal.util.XmlUtils;
 import com.google.android.collect.Maps;
 
 import dalvik.system.BlockGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class SharedPreferencesImpl implements SharedPreferences {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.229 -0400", hash_original_field = "E5808F908EB29E322B1768E76474CE1A", hash_generated_field = "183611C0D8A74A7CE3F1C64EE45173DC")
@@ -83,6 +84,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.233 -0400", hash_original_method = "F1282AA19C3183BEA34E2A247A149BD2", hash_generated_method = "E48C7078411FE40CA01BD8CB4F54AF62")
     private void startLoadFromDisk() {
         synchronized
@@ -116,6 +118,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.235 -0400", hash_original_method = "E285F048C64F263B62F1F06EEC72F6E0", hash_generated_method = "3DED542562CB06FB73016C7AD30E6A8D")
     private void loadFromDiskLocked() {
         if(mLoaded)        
@@ -168,6 +171,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static File makeBackupFile(File prefsFile) {
         return new File(prefsFile.getPath() + ".bak");
     }
@@ -193,7 +197,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.237 -0400", hash_original_method = "A66A0F368E0CD54CE4119FA6EA4CE2B9", hash_generated_method = "55FD5FA65D6CB57AB370F322D06BA347")
     private boolean hasFileChangedUnexpectedly() {
         synchronized
@@ -266,7 +270,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.238 -0400", hash_original_method = "4E41B5524ECBD1AD902DE6B06A01DA71", hash_generated_method = "8C3BC3A151840941EF4D6E130D26CB97")
     private void awaitLoadedLocked() {
         if(!mLoaded)        
@@ -514,6 +518,7 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_1473235632 =         new EditorImpl()
     }
 
     
+    @DSModeled(DSC.BAN)
     private static FileOutputStream createFileOutputStream(File file) {
         FileOutputStream str = null;
         try {
@@ -538,7 +543,7 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_1473235632 =         new EditorImpl()
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.252 -0400", hash_original_method = "2845FAF740EE3AE38D64734030124734", hash_generated_method = "0B2DC468A044C0061DB30CFADF783EE5")
     private void writeToFile(MemoryCommitResult mcr) {
         addTaint(mcr.getTaint());
@@ -625,6 +630,7 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_1473235632 =         new EditorImpl()
 
         public volatile boolean writeToDiskResult = false;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.256 -0400", hash_original_method = "1F3E23CA54BAEE886A8B49EA267FA6D4", hash_generated_method = "1F3E23CA54BAEE886A8B49EA267FA6D4")
         public MemoryCommitResult ()
         {
@@ -854,7 +860,7 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_976969928 =                 this;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.266 -0400", hash_original_method = "686A9AF4CEF5EAEBEB20BB8BD072C7B7", hash_generated_method = "BECCAB2CE57AF091CCE825049DDCE5F6")
         private MemoryCommitResult commitToMemory() {
             MemoryCommitResult mcr = new MemoryCommitResult();

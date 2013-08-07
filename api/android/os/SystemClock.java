@@ -1,13 +1,15 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class SystemClock {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.807 -0400", hash_original_method = "447AF20F3E8B0F9406C259A46D1AF12B", hash_generated_method = "7A8216692042821899DFD22170D9FC77")
     private  SystemClock() {
         // ---------- Original Method ----------

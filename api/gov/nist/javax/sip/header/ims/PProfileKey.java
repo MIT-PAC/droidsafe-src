@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.address.AddressImpl;
 import gov.nist.javax.sip.header.AddressParametersHeader;
 
@@ -8,7 +9,7 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class PProfileKey extends AddressParametersHeader implements PProfileKeyHeader, SIPHeaderNamesIms, ExtensionHeader {
     

@@ -1,10 +1,11 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class IccIoResult {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.156 -0400", hash_original_field = "CF7AB46209C6D3BE84FA81C940CD6249", hash_generated_field = "605D00358F6732BF4A4D044EA247A970")
@@ -17,6 +18,7 @@ public class IccIoResult {
 
     public byte[] payload;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.157 -0400", hash_original_method = "FC114C268C65B1E20AA18C3590A39E31", hash_generated_method = "C79C721930FC7A3D7D5BF6B30DC8FA95")
     public  IccIoResult(int sw1, int sw2, byte[] payload) {
         this.sw1 = sw1;
@@ -29,6 +31,7 @@ public class IccIoResult {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.157 -0400", hash_original_method = "ECAE0DFB5EB8DE1F7EC625CCCC39CE4E", hash_generated_method = "61F02DB6780F5F498BA14BC02DA0F5D6")
     public  IccIoResult(int sw1, int sw2, String hexString) {
         this(sw1, sw2, IccUtils.hexStringToBytes(hexString));
@@ -39,6 +42,7 @@ public class IccIoResult {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.157 -0400", hash_original_method = "C2E2D21A49FBAEB09CAD48E279230B17", hash_generated_method = "3C6EA5D7B4FA8D16B136BDA97B25AAC0")
     public String toString() {
 String varE49F1C2CA3932E94AEDB8A58B7457D2E_149728494 =         "IccIoResponse sw1:0x" + Integer.toHexString(sw1) + " sw2:0x"
@@ -51,7 +55,7 @@ String varE49F1C2CA3932E94AEDB8A58B7457D2E_149728494 =         "IccIoResponse sw
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.158 -0400", hash_original_method = "E45E4CA02C1498571B14F8EF02CBA542", hash_generated_method = "23C575B0443FC112798CA95C64A67F36")
     public boolean success() {
         boolean var6542F7F14374E68C5016419CC02AA14E_29676042 = (sw1 == 0x90 || sw1 == 0x91 || sw1 == 0x9e || sw1 == 0x9f);
@@ -62,6 +66,7 @@ String varE49F1C2CA3932E94AEDB8A58B7457D2E_149728494 =         "IccIoResponse sw
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.159 -0400", hash_original_method = "6314A49369EA2E2C83A84515E57327FB", hash_generated_method = "450DE5AF650CA35232565D4EDD321BEA")
     public IccException getException() {
         if(success())        

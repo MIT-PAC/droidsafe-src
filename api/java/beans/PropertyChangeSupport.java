@@ -1,6 +1,7 @@
 package java.beans;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -14,8 +15,8 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import libcore.util.Objects;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class PropertyChangeSupport implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.181 -0400", hash_original_field = "9403382C8BE8BF444B950899205C2500", hash_generated_field = "C4FC1B92735A56C9579E71916FC2FFF8")
@@ -90,6 +91,7 @@ for(PropertyChangeListener p : listeners)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.184 -0400", hash_original_method = "A38B8477985ECBF9EAC6EDFBD5290064", hash_generated_method = "587BA60AA0828CCF3E1A987A38764CD3")
     private boolean equals(String aName, EventListener a, EventListener b) {
         addTaint(b.getTaint());
@@ -322,6 +324,7 @@ PropertyChangeListener[] var8E8BCC75E96F024B72E78A7CD5C9975D_635972848 =        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.189 -0400", hash_original_method = "2B46BB9E8064A4DB5FBAF8D8B87BA3A9", hash_generated_method = "7642612CFDC1008E79030C52170B316C")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -361,6 +364,7 @@ for(PropertyChangeListener p : listeners)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.190 -0400", hash_original_method = "CF711F06198DA67AA575F0B0D8CAC00C", hash_generated_method = "FC956BF2F2FC6D617370C9B5BA962084")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {

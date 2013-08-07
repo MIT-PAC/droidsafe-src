@@ -1,6 +1,7 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface CrossProcessCursor extends Cursor {
     

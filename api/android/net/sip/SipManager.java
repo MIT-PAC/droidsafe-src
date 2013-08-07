@@ -1,6 +1,7 @@
 package android.net.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 
 import android.app.PendingIntent;
@@ -10,10 +11,10 @@ import android.content.pm.PackageManager;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SipManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.565 -0400", hash_original_field = "C89A12AD1BC30A8688B3556A71E2BBE6", hash_generated_field = "E6ACD78799E84217EB210D7F6F326F7C")
@@ -23,6 +24,7 @@ public class SipManager {
 
     private Context mContext;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.566 -0400", hash_original_method = "C37128DE517781FF4AF379CF096D6229", hash_generated_method = "46535482E89F824BA8974FC865635BB0")
     private  SipManager(Context context) {
         mContext = context;
@@ -56,6 +58,7 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.568 -0400", hash_original_method = "78D0C1947CAE04BC8743510E34683CF6", hash_generated_method = "C226BD68CE5CA2F2D909A0E66C6E9FE5")
     private void createSipService() {
         IBinder b = ServiceManager.getService(Context.SIP_SERVICE);
@@ -374,7 +377,7 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_140590857 =             call;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static Intent createIncomingCallBroadcast(String callId,
             String sessionDescription) {
         Intent intent = new Intent();
@@ -492,6 +495,7 @@ SipSession varCDEBB4B2D7C9C11FEA72AC760BD9229E_738791754 =             ((s == nu
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ISipSessionListener createRelay(
             SipRegistrationListener listener, String uri) {
         return ((listener == null) ? null : new ListenerRelay(listener, uri));
@@ -537,6 +541,7 @@ SipSession var4963606BA616877CE0A6A4A5E865B5F2_1899546576 =             new SipS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.580 -0400", hash_original_method = "1735A7464BE0976B91AB92297644D35E", hash_generated_method = "8105E4FD2479A376950B7E385F7057AC")
     public SipProfile[] getListOfProfiles() {
         try 
@@ -578,6 +583,7 @@ SipProfile[] var7F3AFDA0578CF1A81A72F7621B23A66E_917364581 =             new Sip
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.583 -0400", hash_original_method = "DB62FE45AF7F183C085E9ABCEE6AC21A", hash_generated_method = "BC2A9B84B40A4FA022B1C646B872389B")
         private String getUri(ISipSession session) {
             addTaint(session.getTaint());

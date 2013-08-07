@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
@@ -8,10 +9,10 @@ import android.os.Registrant;
 import android.os.RegistrantList;
 import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ServiceStateTracker extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.068 -0400", hash_original_field = "820EB5B696EA2A657C0DB1E258DC7D81", hash_generated_field = "EDF057DBE0A02042DBF83073757034E9")
@@ -78,13 +79,14 @@ public abstract class ServiceStateTracker extends Handler {
 
     private boolean mWantSingleLocationUpdate;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.070 -0400", hash_original_method = "9FCBDF2ED872770289A466CFAFBF2272", hash_generated_method = "EC17C25E196F47AE6D11EE4EF45CB92F")
     public  ServiceStateTracker() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.070 -0400", hash_original_method = "34F755352C02DF9FD9E8CDE125547BA1", hash_generated_method = "A4D7285B7669D56D00DABB7936E81512")
     public boolean getDesiredPowerState() {
         boolean varC89D1AF0AEE8D0A2CF4FED65DAD30DE6_1347920341 = (mDesiredPowerState);
@@ -95,6 +97,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.071 -0400", hash_original_method = "37CB7B52ED49DF56B69CEDC0A8B6FEA7", hash_generated_method = "ADE4FA416F0EA751327702B4338E232E")
     public void registerForRoamingOn(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -116,6 +119,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.071 -0400", hash_original_method = "14E5206D7B7C852E20FD1241EAC246C6", hash_generated_method = "7B0E8ABD8DC07994B7A9E1EE187339C5")
     public void unregisterForRoamingOn(Handler h) {
         addTaint(h.getTaint());
@@ -125,6 +129,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.072 -0400", hash_original_method = "13A5A77104C9ACCD9C28F87D910D95FA", hash_generated_method = "F6BF2CB6A240C1E6A14F701AD82A7B2D")
     public void registerForRoamingOff(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -146,6 +151,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.072 -0400", hash_original_method = "D1DD4EA819F10675CB2C3CAADBABF939", hash_generated_method = "397CA0B434CB1A23785E285D6904FC55")
     public void unregisterForRoamingOff(Handler h) {
         addTaint(h.getTaint());
@@ -155,6 +161,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.073 -0400", hash_original_method = "7FC24E85162575F4AD0EC1D2B7D4DA9A", hash_generated_method = "A025CD7209F12FD16EE0E0841DA61E18")
     public void reRegisterNetwork(Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -166,6 +173,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.075 -0400", hash_original_method = "58B5CA04F87B88A9C6B403E745D26733", hash_generated_method = "92BDBC4BB37F973F511A951B7426B3A8")
     public void setRadioPower(boolean power) {
         mDesiredPowerState = power;
@@ -176,6 +184,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.077 -0400", hash_original_method = "7C68C47F455301AB5237FB081DD87707", hash_generated_method = "A64305A3C5AE0A15B7CF187088C81618")
     public void enableSingleLocationUpdate() {
         if(mWantSingleLocationUpdate || mWantContinuousLocationUpdates)        
@@ -189,6 +198,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.078 -0400", hash_original_method = "5E0DE008FDA53D6E066E09E5FF8905A8", hash_generated_method = "5EFDEA145548F7C6421C58FEF1199223")
     public void enableLocationUpdates() {
         if(mWantSingleLocationUpdate || mWantContinuousLocationUpdates)        
@@ -202,6 +212,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.079 -0400", hash_original_method = "F0181FD0DF80A6AAF51E269E67B33EC8", hash_generated_method = "13587F63A9CDB9E1532CC6B19C05B013")
     protected void disableSingleLocationUpdate() {
         mWantSingleLocationUpdate = false;
@@ -217,6 +228,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.079 -0400", hash_original_method = "70DFFFF4880D84ACE04FFF62B87B40F7", hash_generated_method = "3D7F68D0C9994935E6BCCD955EC76188")
     public void disableLocationUpdates() {
         mWantContinuousLocationUpdates = false;
@@ -232,6 +244,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.080 -0400", hash_original_method = "85B887C2BDF2CF10C0119B00ACC95929", hash_generated_method = "D9226C69CCF7580B2D9A616F1D5CBC6F")
     @Override
     public void handleMessage(Message msg) {
@@ -297,6 +310,7 @@ switch(msg.what){
     public abstract boolean isConcurrentVoiceAndDataAllowed();
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.082 -0400", hash_original_method = "1B39DC11812BAED5F6DBE7D3309539B9", hash_generated_method = "C14A1F409C724F127F50A916261E12D8")
     public void registerForDataConnectionAttached(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -318,6 +332,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.083 -0400", hash_original_method = "522E6F692E8A34CBC0692BA5B00B104A", hash_generated_method = "0228F11F54DF21E5EAE442F3DFB7E637")
     public void unregisterForDataConnectionAttached(Handler h) {
         addTaint(h.getTaint());
@@ -327,6 +342,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.084 -0400", hash_original_method = "77B8D4D5781330742D00786669C25585", hash_generated_method = "6272E6A8D8CA37566CC3134340416198")
     public void registerForDataConnectionDetached(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -348,6 +364,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.084 -0400", hash_original_method = "EDB8FFB895F180442CD81D10E9DCB320", hash_generated_method = "339DDA0B6A0646C1EC551F1E5E32A252")
     public void unregisterForDataConnectionDetached(Handler h) {
         addTaint(h.getTaint());
@@ -357,6 +374,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.086 -0400", hash_original_method = "076CF7EAC62798919AFD2DB28A5B16ED", hash_generated_method = "1ED6C802DED30FA20EEA0E4E5C06A9C9")
     public void registerForNetworkAttached(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -378,6 +396,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.087 -0400", hash_original_method = "724BCD9A17C4DC5B22474701A65D5E92", hash_generated_method = "D99859EEA20F834B51D579FE8C1E10C2")
     public void unregisterForNetworkAttached(Handler h) {
         addTaint(h.getTaint());
@@ -387,6 +406,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.088 -0400", hash_original_method = "32627558F162EE4DAA643B6ABADEA2AE", hash_generated_method = "B428C745ED18AC6B285C69485F0337B9")
     public void registerForPsRestrictedEnabled(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -408,6 +428,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.089 -0400", hash_original_method = "9066DA15695A4B8D83C2DCD56A112C2B", hash_generated_method = "BDEE252955A662FCAAFCAEF3308662EC")
     public void unregisterForPsRestrictedEnabled(Handler h) {
         addTaint(h.getTaint());
@@ -417,6 +438,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.090 -0400", hash_original_method = "80FC2224C82FF97B7F6C95DA27C6509B", hash_generated_method = "F4E4BF88E6F7056F80653A9AF3F1E4DF")
     public void registerForPsRestrictedDisabled(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -438,6 +460,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.091 -0400", hash_original_method = "3E796B0EF9A5478F633347EEDEC69A91", hash_generated_method = "0E77F3FE97D43173ED8E4F975A49C3F9")
     public void unregisterForPsRestrictedDisabled(Handler h) {
         addTaint(h.getTaint());
@@ -447,6 +470,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.092 -0400", hash_original_method = "4017CCA25B6B957B00970913316AB84B", hash_generated_method = "5A0431E11F22D66A5C1D231C170E7A34")
     public void powerOffRadioSafely(DataConnectionTracker dcTracker) {
         addTaint(dcTracker.getTaint());
@@ -486,7 +510,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.093 -0400", hash_original_method = "67059C8AF83909E1964C0331470598CC", hash_generated_method = "06A27B8F42375806921B545AF3BB85DA")
     public boolean processPendingRadioPowerOffAfterDataOff() {
         synchronized
@@ -524,7 +548,7 @@ switch(msg.what){
     protected abstract void hangupAndPowerOff();
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.095 -0400", hash_original_method = "CCBC34A7562606F2023BFC5649B6E19A", hash_generated_method = "F6D15879E1DF2FFC771820A47AF4ACD6")
     protected void cancelPollState() {
         pollingContext = new int[1];

@@ -1,6 +1,7 @@
 package android.hardware;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,10 @@ import android.util.SparseIntArray;
 import android.view.IRotationWatcher;
 import android.view.IWindowManager;
 import android.view.Surface;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class SensorManager {
@@ -50,7 +51,7 @@ public class SensorManager {
                     try {
                         sRotation = sWindowManager.watchRotation(
                                 new IRotationWatcher.Stub() {
-                                    @DSModeled(DSC.SAFE)
+                                    @DSModeled(DSC.BAN)
     public void onRotationChanged(int rotation) {
                                         SensorManager.this.onRotationChanged(rotation);
                                     }
@@ -81,7 +82,7 @@ public class SensorManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private int getLegacySensorType(int type) {
 		/*
         switch (type) {
@@ -256,6 +257,7 @@ List<Sensor> varED12C351C2E8CA4F85F097DDC7E77B4D_1918059607 =         list;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.877 -0400", hash_original_method = "2BFEE9499E6BC093763ECA6BB97D348E", hash_generated_method = "BDBDE1E7D163E16871F71399C898F761")
     @SuppressWarnings("deprecation")
     private boolean registerLegacyListener(int legacyType, int type,
@@ -328,6 +330,7 @@ List<Sensor> varED12C351C2E8CA4F85F097DDC7E77B4D_1918059607 =         list;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.878 -0400", hash_original_method = "9C431FA18D1D7C546E542BF96DE5A08A", hash_generated_method = "6B299193632A75A92AEE1115E85972B2")
     @SuppressWarnings("deprecation")
     private void unregisterLegacyListener(int legacyType, int type,
@@ -418,6 +421,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.880 -0400", hash_original_method = "500C86ADE6AA4F4A0E12D1A653386772", hash_generated_method = "ECEB83A13D193ED6AF937AD2013DF140")
     private boolean enableSensorLocked(Sensor sensor, int delay) {
         addTaint(delay);
@@ -450,7 +454,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	private boolean disableSensorLocked(Sensor sensor) {
         for (ListenerDelegate i : sListeners) {
             if (i.hasSensor(sensor)) {
@@ -550,6 +554,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.882 -0400", hash_original_method = "1441CD23D4F492BD7877A59C29F56827", hash_generated_method = "68834892F5B6DC954FF63CBEBFA5FC17")
     private void unregisterListener(Object listener, Sensor sensor) {
         addTaint(sensor.getTaint());
@@ -595,7 +600,7 @@ for(int i=0;i<size;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	private void unregisterListener(Object listener) {
         if (listener == null) {
             return;
@@ -701,7 +706,7 @@ for(int i=0;i<size;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
             float[] outR) {
         final int length = outR.length;
@@ -761,7 +766,7 @@ for(int i=0;i<size;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void onRotationChanged(int rotation) {
         synchronized(sListeners) {
         	addTaint(rotation);
@@ -955,6 +960,7 @@ for(int i=0;i<size;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.888 -0400", hash_original_method = "7237223B63C43177AB2849F160B99FEC", hash_generated_method = "6F089E7DC3B7C5939FE12778170233BB")
         private SensorEvent createSensorEvent() {
 SensorEvent varCF57860F6690A6B594D00FB0F29270CF_1393524586 =             new SensorEvent(3);
@@ -1104,6 +1110,7 @@ SensorEvent varE0D714D758F1540A8DF364A965AF9150_207451627 =             t;
             }
 
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.891 -0400", hash_original_method = "8D69A6F3F762D5CCB4AA9AA134EC788D", hash_generated_method = "C17135B7C26B08A37574E9CD87338B83")
             private boolean open() {
                 sQueue = sensors_create_queue();
@@ -1449,7 +1456,7 @@ switch(t.sensor.getType()){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.901 -0400", hash_original_method = "7A14D827894C3DC6FC1EC81B36F33A0A", hash_generated_method = "4C265B1CB28A54021A32BEA4EF697D14")
         private void mapSensorDataToWindow(int sensor,
                 float[] values, int orientation) {

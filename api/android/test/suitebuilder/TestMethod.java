@@ -1,16 +1,17 @@
 package android.test.suitebuilder;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import junit.framework.TestCase;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestMethod {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.220 -0400", hash_original_field = "778943794DB9E30DC87B8F346E6CF336", hash_generated_field = "4B9B267011D653678A1583AF1D29B06C")

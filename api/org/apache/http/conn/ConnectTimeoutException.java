@@ -1,10 +1,11 @@
 package org.apache.http.conn;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.InterruptedIOException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class ConnectTimeoutException extends InterruptedIOException {
     

@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -11,10 +12,10 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.StateSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StateListDrawable extends DrawableContainer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.707 -0400", hash_original_field = "98224A175F5DD299C71B89DE954A0408", hash_generated_field = "980C8FFE9150BE923FD62F944FCAAAEC")
@@ -32,7 +33,7 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.708 -0400", hash_original_method = "90179FAF2CD102672779F3C6B59674D6", hash_generated_method = "A626E1BEE80BB60E02C9F2063D8F77B3")
     private  StateListDrawable(StateListState state, Resources res) {
         addTaint(res.getTaint());
@@ -218,7 +219,7 @@ StateListState var15CA3D3F03B1B8383B2D584EC564E071_2069023105 =         mStateLi
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.714 -0400", hash_original_method = "D9E3394F970F5413D258086831B5CB36", hash_generated_method = "0530ED42AB86A4317BE582860E4DC40F")
     public int getStateCount() {
         int varC9D05DAF97FA1C61954CF19B96CC7A92_529087623 = (mStateListState.getChildCount());
@@ -229,7 +230,7 @@ StateListState var15CA3D3F03B1B8383B2D584EC564E071_2069023105 =         mStateLi
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.715 -0400", hash_original_method = "55D68A9E9C260DCF60D1CBBC77B3FC0F", hash_generated_method = "617954BCF445C38C6D1918E1F4E3F5D7")
     public int[] getStateSet(int index) {
         addTaint(index);
@@ -241,7 +242,7 @@ StateListState var15CA3D3F03B1B8383B2D584EC564E071_2069023105 =         mStateLi
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.715 -0400", hash_original_method = "266BB2A523416F0BDAD03984AE85B606", hash_generated_method = "7F66953A8A96887D4237711E8C49D26D")
     public Drawable getStateDrawable(int index) {
         addTaint(index);
@@ -253,7 +254,7 @@ Drawable var2B920C6B2A8938211FBB77210BF418E6_1554343870 =         mStateListStat
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.716 -0400", hash_original_method = "410013485164C1DC2E995A85C1D3348C", hash_generated_method = "F0A92B2BAFFF8B2905427A5C30F90AE8")
     public int getStateDrawableIndex(int[] stateSet) {
         addTaint(stateSet[0]);
@@ -348,7 +349,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_821147901 =         this;
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.720 -0400", hash_original_method = "A182AEBDD3B8E6EFB499434DA2A68669", hash_generated_method = "9C7BA2243DE254CEFA414D626EEAC422")
         private int indexOfStateSet(int[] stateSet) {
             addTaint(stateSet[0]);

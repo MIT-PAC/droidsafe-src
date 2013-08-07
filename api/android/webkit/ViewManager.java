@@ -1,16 +1,17 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsoluteLayout;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ViewManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.270 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
@@ -56,7 +57,7 @@ ChildView var8A3190BB88EBE69DB41074FCFE3B369D_788869339 =         new ChildView(
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.275 -0400", hash_original_method = "2B29D777BD882375E9FE491E62B8E4F4", hash_generated_method = "02092D08166DC093F55A0C828EC87D69")
     private void requestLayout(ChildView v) {
         addTaint(v.getTaint());
@@ -416,6 +417,7 @@ ChildView var540C13E9E156B687226421B24F2DF178_450023259 =         null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.285 -0400", hash_original_method = "E19361570D109423E86E664B0AC4389A", hash_generated_method = "81F1B9CCE09D41FA95747D6546C055C7")
         private void attachViewOnUIThread() {
             mWebView.addView(mView);
@@ -459,7 +461,7 @@ ChildView var540C13E9E156B687226421B24F2DF178_450023259 =         null;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.286 -0400", hash_original_method = "2FC5BD33F15E4B580397FED329387FB1", hash_generated_method = "766AEA0F1F8FC4C35F207C999F4B4121")
         private void removeViewOnUIThread() {
             mWebView.removeView(mView);

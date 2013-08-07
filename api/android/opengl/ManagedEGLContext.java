@@ -1,6 +1,7 @@
 package android.opengl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static javax.microedition.khronos.egl.EGL10.EGL_DEFAULT_DISPLAY;
 import static javax.microedition.khronos.egl.EGL10.EGL_NO_DISPLAY;
 
@@ -15,16 +16,17 @@ import android.util.Log;
 
 import com.google.android.gles_jni.EGLImpl;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ManagedEGLContext {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.406 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "5F205B80EE2B67A11B019B523ECA191F")
 
     EGLContext mContext;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "9D266735F37ADE970716DE5C813A7490", hash_generated_method = "F7B11D8BD9EF7F0A5140DBD6FF57A603")
     public  ManagedEGLContext(EGLContext context) {
         mContext = context;
@@ -40,7 +42,7 @@ public abstract class ManagedEGLContext {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "267E36C465557AA223C76C57B412ADBC")
     public EGLContext getContext() {
 EGLContext var178E2AD52D6FBBB503F908168856B574_2128029169 =         mContext;
@@ -51,6 +53,7 @@ EGLContext var178E2AD52D6FBBB503F908168856B574_2128029169 =         mContext;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "3A3C884C8DD72479D5B7016BF0489D57", hash_generated_method = "418519E6B0AAFC40765D5AFF890A67AE")
     public void terminate() {
         execTerminate();
@@ -59,6 +62,7 @@ EGLContext var178E2AD52D6FBBB503F908168856B574_2128029169 =         mContext;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B6770F67CF9038CAE7126511421AF7E1")
      void execTerminate() {
         onTerminate(mContext);
@@ -71,6 +75,7 @@ EGLContext var178E2AD52D6FBBB503F908168856B574_2128029169 =         mContext;
     public abstract void onTerminate(EGLContext context);
 
     
+    @DSModeled(DSC.BAN)
     public static boolean doTerminate() {
         ArrayList<ManagedEGLContext> active;
         if (Looper.getMainLooper() != Looper.myLooper()) {

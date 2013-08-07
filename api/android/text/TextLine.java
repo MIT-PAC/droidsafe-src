@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Array;
 
 import android.graphics.Bitmap;
@@ -17,10 +18,10 @@ import android.util.Log;
 
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class TextLine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.884 -0400", hash_original_field = "78E27F80AC0100441F897783EFA42851", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
@@ -76,6 +77,7 @@ class TextLine {
     }
 
 
+    @DSModeled(DSC.BAN)
     static TextLine obtain() {
         TextLine tl;
         synchronized (sCached) {
@@ -95,6 +97,7 @@ class TextLine {
     }
 
     
+    @DSModeled(DSC.BAN)
     static TextLine recycle(TextLine tl) {
         tl.mText = null;
         tl.mPaint = null;
@@ -114,6 +117,7 @@ class TextLine {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.889 -0400", hash_original_method = "38DB7B0D381033DA01F9181167C14361", hash_generated_method = "F5073AB15A598E3CB888AECDBD17F421")
      void set(TextPaint paint, CharSequence text, int start, int limit, int dir,
             Directions directions, boolean hasTabs, TabStops tabStops) {
@@ -169,7 +173,7 @@ for(int j = i - start + 1, e = inext - start;j < e;++j)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.892 -0400", hash_original_method = "20A60861C26C58A53A0282FABD9ED153", hash_generated_method = "5A4A461B5A73E637F80ED8E2B627765F")
      void draw(Canvas c, float x, int top, int y, int bottom) {
         addTaint(bottom);
@@ -260,6 +264,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.893 -0400", hash_original_method = "7F5367E991A6BC7E9EDD55CA9BF0FBE6", hash_generated_method = "EE99070E0B9C735F356F6EC7C9BA7395")
      float metrics(FontMetricsInt fmi) {
         addTaint(fmi.getTaint());
@@ -271,6 +276,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.895 -0400", hash_original_method = "5986320AFF9EF780E7B17B08599A90A9", hash_generated_method = "E7F60D08824FA2DB27A269296A6CE719")
      float measure(int offset, boolean trailing, FontMetricsInt fmi) {
         addTaint(fmi.getTaint());
@@ -386,7 +392,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.897 -0400", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "F6306DADDDAC62BE4C50F6383EDECF37")
     private float drawRun(Canvas c, int start,
             int limit, boolean runIsRtl, float x, int top, int y, int bottom,
@@ -425,6 +431,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.897 -0400", hash_original_method = "92FB3641FED625E21CE916EA375B8557", hash_generated_method = "DC181BC408A67A148853E90C0F2D1B1A")
     private float measureRun(int start, int offset, int limit, boolean runIsRtl,
             FontMetricsInt fmi) {
@@ -441,6 +448,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.904 -0400", hash_original_method = "4BDB20A2184F91CDB9542314BD3E47CD", hash_generated_method = "CBAAB2560A2736347C99411B4017AB26")
      int getOffsetToLeftRightOf(int cursor, boolean toLeft) {
         addTaint(toLeft);
@@ -592,6 +600,7 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.908 -0400", hash_original_method = "31252F4808C2C77A1E467D2963FB3AD5", hash_generated_method = "F603C3CABEA38AAFFDFEB56390DC4B05")
     private int getOffsetBeforeAfter(int runIndex, int runStart, int runLimit,
             boolean runIsRtl, int offset, boolean after) {
@@ -683,6 +692,7 @@ for(int j = 0;j < spans.length;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void expandMetricsFromPaint(FontMetricsInt fmi, TextPaint wp) {
         final int previousTop     = fmi.top;
         final int previousAscent  = fmi.ascent;
@@ -695,6 +705,7 @@ for(int j = 0;j < spans.length;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     static void updateMetrics(FontMetricsInt fmi, int previousTop, int previousAscent,
             int previousDescent, int previousBottom, int previousLeading) {
         fmi.top     = Math.min(fmi.top,     previousTop);
@@ -705,6 +716,7 @@ for(int j = 0;j < spans.length;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.911 -0400", hash_original_method = "F8AC228F4E44CF9CD673B1404700AC77", hash_generated_method = "6DB6297BECC29C4D5353A1B3EF890FC4")
     private float handleText(TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl,
@@ -793,6 +805,7 @@ for(int j = 0;j < spans.length;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.912 -0400", hash_original_method = "5BB6CBCB4177EDC48B270A42A6989FB0", hash_generated_method = "991DA5B80489FFF308CE14BF24AAAE50")
     private float handleReplacement(ReplacementSpan replacement, TextPaint wp,
             int start, int limit, boolean runIsRtl, Canvas c,
@@ -853,6 +866,7 @@ for(int j = 0;j < spans.length;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.913 -0400", hash_original_method = "5FABB9B94E4E730AC35956B01320E35B", hash_generated_method = "DC3F0E3C39D6ACED2FE4469F77213FF4")
     private float handleRun(int start, int measureLimit,
             int limit, boolean runIsRtl, Canvas c, float x, int top, int y,
@@ -955,6 +969,7 @@ for(int k = 0;k < mCharacterStyleSpanSet.numberOfSpans;k++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.915 -0400", hash_original_method = "C8ABF2DC6B89611B840AEC4DBAADD344", hash_generated_method = "5A31470D12DCEAE542D801F2AEA87AE9")
     private void drawTextRun(Canvas c, TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl, float x, int y) {
@@ -996,6 +1011,7 @@ for(int k = 0;k < mCharacterStyleSpanSet.numberOfSpans;k++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.915 -0400", hash_original_method = "AC74D3C7A92A1C0DA8A76C86F50D3219", hash_generated_method = "CF1F627898C22299F79B913D4FA554C0")
      float ascent(int pos) {
         addTaint(pos);
@@ -1040,6 +1056,7 @@ for(MetricAffectingSpan span : spans)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.916 -0400", hash_original_method = "73134044CD530D6AE99976E01BA5E625", hash_generated_method = "1F0738C2E0C75BCB8096AC0541913907")
      float nextTab(float h) {
         addTaint(h);
@@ -1090,6 +1107,7 @@ for(MetricAffectingSpan span : spans)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.918 -0400", hash_original_method = "DCBC67B7023E3760B724E28392339389", hash_generated_method = "F5FB0B202E38A739397227BE6DA6ABEB")
         @SuppressWarnings("unchecked")
         public void init(Spanned spanned, int start, int limit) {
@@ -1125,7 +1143,7 @@ for(int i = 0;i < length;i++)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.919 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "BD41BBC68AEAC619AA4AB37ECF5DB841")
         public boolean hasSpansIntersecting(int start, int end) {
             addTaint(end);
@@ -1150,7 +1168,7 @@ for(int i = 0;i < numberOfSpans;i++)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.920 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "BB5254AF9AA6C3C042F7B0FCFB2014CB")
          int getNextTransition(int start, int limit) {
             addTaint(limit);
@@ -1178,7 +1196,7 @@ for(int i = 0;i < numberOfSpans;i++)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.920 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "45D6B23027A8EAF82BF142D1CA4A1B6A")
         public void recycle() {
 for(int i = 0;i < numberOfSpans;i++)

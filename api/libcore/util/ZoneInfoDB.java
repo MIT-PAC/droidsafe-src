@@ -1,6 +1,7 @@
 package libcore.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.charset.Charsets;
 import java.util.ArrayList;
@@ -15,20 +16,21 @@ import libcore.io.MemoryMappedFile;
 
 import org.apache.harmony.luni.internal.util.TimezoneGetter;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ZoneInfoDB {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.579 -0400", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "F186C26C76B663EC1F34BF428D4B8EAF")
     private  ZoneInfoDB() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 
     private static String readVersion() {
     	try {
@@ -40,7 +42,7 @@ public final class ZoneInfoDB {
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     private static MemoryMappedFile mapData() {
         try {
             return MemoryMappedFile.mmapRO(ZONE_FILE_NAME);
@@ -50,7 +52,7 @@ public final class ZoneInfoDB {
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     private static void readIndex() {
         MemoryMappedFile mappedFile = null;
         try {
@@ -64,7 +66,7 @@ public final class ZoneInfoDB {
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     private static void readIndex(MemoryMappedFile mappedFile) throws ErrnoException, IOException {
         BufferIterator it = mappedFile.bigEndianIterator();
         final int SIZEOF_TZNAME = 40;
@@ -101,7 +103,7 @@ public final class ZoneInfoDB {
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	private static TimeZone makeTimeZone(String id) throws IOException {
         int index = Arrays.binarySearch(ids, id);
         if (index < 0) {
@@ -130,13 +132,13 @@ public final class ZoneInfoDB {
         return new ZoneInfo(id, transitions, type, gmtOffsets, isDsts);
     }
 
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     public static String[] getAvailableIDs() {
         return ids.clone();
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	public static String[] getAvailableIDs(int rawOffset) {
         List<String> matches = new ArrayList<String>();
         for (int i = 0, end = rawUtcOffsets.length; i < end; i++) {
@@ -148,7 +150,7 @@ public final class ZoneInfoDB {
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     public static TimeZone getSystemDefault() {
         synchronized (LOCK) {
             TimezoneGetter tzGetter = TimezoneGetter.getInstance();
@@ -164,7 +166,7 @@ public final class ZoneInfoDB {
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     public static TimeZone getTimeZone(String id) {
         if (id == null) {
             return null;
@@ -177,7 +179,7 @@ public final class ZoneInfoDB {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String getVersion() {
         return VERSION;
     }

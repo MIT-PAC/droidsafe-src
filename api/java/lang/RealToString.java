@@ -1,11 +1,12 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.math.MathUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class RealToString {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.518 -0400", hash_original_field = "9ABBD36D7ACD664753616E6F0C45ED20", hash_generated_field = "6D9BB978CBD3D3FD82983DAB50AF5B36")
@@ -19,7 +20,7 @@ final class RealToString {
     private int digitCount;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.519 -0400", hash_original_method = "F7A95644C563B2D2A217A4C43DE10AFD", hash_generated_method = "169948A49888C1C730B719BC7C95C046")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private  RealToString() {
         // ---------- Original Method ----------
     }
@@ -31,7 +32,7 @@ final class RealToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
         if (sb != null) {
             sb.append0(s);
@@ -62,6 +63,7 @@ String varF4EEEB4C20BC8ED70835679C92A2BBC0_385646869 =         convertDouble(nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.522 -0400", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "89C00D0EA8D7927F106521A3B3D5A8DE")
     private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
         addTaint(inputNumber);
@@ -255,7 +257,7 @@ String var8EEABFE9064AA4A4E48633B57953C96D_897356997 =         (sb != null) ? nu
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.527 -0400", hash_original_method = "C9139C7071A5044040591AD73A0078E9", hash_generated_method = "DF0DA0D72AB2EDCC9146BC22E27677F0")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void freeFormatExponential(AbstractStringBuilder sb, boolean positive) {
         addTaint(positive);
         addTaint(sb.getTaint());
@@ -309,7 +311,7 @@ String var8EEABFE9064AA4A4E48633B57953C96D_897356997 =         (sb != null) ? nu
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.527 -0400", hash_original_method = "81B49BC2D9465FB81325CD1E0D55DA15", hash_generated_method = "F75125C491EFD4B5CF589E85703570C4")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void freeFormat(AbstractStringBuilder sb, boolean positive) {
         addTaint(positive);
         addTaint(sb.getTaint());
@@ -383,7 +385,7 @@ for(int i = k + 1;i < 0;++i)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.530 -0400", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "E43B3BEE7A9C7BCE6E3CD8D745468F89")
     private void longDigitGenerator(long f, int e, boolean isDenormalized,
             boolean mantissaIsZero, int p) {

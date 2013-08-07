@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import android.content.ActivityNotFoundException;
@@ -20,10 +21,10 @@ import android.os.ServiceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SearchManager implements DialogInterface.OnDismissListener, DialogInterface.OnCancelListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.792 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -78,6 +79,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.796 -0400", hash_original_method = "DA3F20917B57D7E33A815871BCDB23BC", hash_generated_method = "3921233B92E4727472735BE10DF39B10")
     public void startSearch(String initialQuery,
                             boolean selectInitialQuery,
@@ -108,7 +110,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.797 -0400", hash_original_method = "69AA3000988676CA7D95377F664F088F", hash_generated_method = "074905C66545B468B1E135C9330FD8FE")
     private void ensureSearchDialog() {
         if(mSearchDialog == null)        
@@ -178,6 +180,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.801 -0400", hash_original_method = "C1495B155CB6927BC4386A7FC3D8EFF9", hash_generated_method = "5250E894E34C19E50D7A2E4E05922C30")
     public List<ResolveInfo> getGlobalSearchActivities() {
         try 
@@ -202,6 +205,7 @@ List<ResolveInfo> var540C13E9E156B687226421B24F2DF178_115543329 =             nu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.802 -0400", hash_original_method = "375B46C6B18E608C61AB732BC7ABBFF0", hash_generated_method = "2E170CCCDE82FC52B3F0CA97E10F051A")
     public ComponentName getGlobalSearchActivity() {
         try 
@@ -226,6 +230,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_817388662 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.803 -0400", hash_original_method = "B76C058C1256501309C0E936D28D0087", hash_generated_method = "AB3AB548E4E28774186698AE198073A0")
     public ComponentName getWebSearchActivity() {
         try 
@@ -297,6 +302,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_127232092 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.805 -0400", hash_original_method = "DBEBE34FE7AB0A40BB7E886EA7BCCC44", hash_generated_method = "E576FB95D49D8D3B8FEF657165D76A34")
     public boolean isVisible() {
         boolean varC712A5564A36DFE53DC9EC29FE2C8E46_754132068 = (mSearchDialog == null? false : mSearchDialog.isShowing());

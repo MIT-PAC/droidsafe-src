@@ -1,16 +1,17 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.harmony.security.asn1.ASN1Oid;
 import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class AccessDescription {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.764 -0400", hash_original_field = "EFF2DC7FD3790EE08D45FB31BBFAC94C", hash_generated_field = "248BF95BB7065D90F1AFE45C45CFFDF8")
@@ -23,7 +24,7 @@ public final class AccessDescription {
 
     private byte[] encoding;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.766 -0400", hash_original_method = "FB49FC0C1C39F6A3E5A7CF2545478BA4", hash_generated_method = "2DC2B4F5F853BD382B1E8F46D351C1FF")
     private  AccessDescription(String accessMethod, GeneralName accessLocation, byte[] encoding) {
         this.accessMethod = accessMethod;

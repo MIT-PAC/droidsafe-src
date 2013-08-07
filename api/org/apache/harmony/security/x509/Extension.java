@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -13,10 +14,10 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Extension {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.151 -0400", hash_original_field = "81A958EC06A2C622709F6D43796C0CC6", hash_generated_field = "8FF788D802F19156A5C417E4A45E7E12")
@@ -112,7 +113,7 @@ public final class Extension {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.156 -0400", hash_original_method = "22B9D2F4819411931A16D6B56F128648", hash_generated_method = "10865578CB40C6A017938930366CE1E5")
     private  Extension(int[] extnID, boolean critical, byte[] extnValue,
             byte[] rawExtnValue, byte[] encoding,
@@ -347,7 +348,7 @@ BasicConstraints var540C13E9E156B687226421B24F2DF178_1731560724 =             nu
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.163 -0400", hash_original_method = "9C77FF45155916489182A216F1E7CCEA", hash_generated_method = "2E2617D9F2DDD3E30F07A88E2AC59519")
     private void decodeExtensionValue() throws IOException {
         if(valueDecoded)        

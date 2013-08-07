@@ -1,7 +1,8 @@
 package java.math;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 class Division {
     

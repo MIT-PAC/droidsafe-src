@@ -1,6 +1,7 @@
 package javax.security.cert;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
@@ -15,10 +16,10 @@ import java.security.SignatureException;
 import java.security.cert.CertificateFactory;
 import java.util.Date;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class X509Certificate extends Certificate {
     

@@ -1,14 +1,16 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class Patterns {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.975 -0400", hash_original_method = "91DADCDFBE7734A1949A5AEB67A00312", hash_generated_method = "DCA1D744818DE2F75F6DF6E223A6F400")
     private  Patterns() {
         // ---------- Original Method ----------

@@ -1,16 +1,17 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.Via;
 import gov.nist.javax.sip.message.SIPResponse;
 
 import java.security.MessageDigest;
 import java.util.HashSet;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Utils implements UtilsExt {
     

@@ -1,16 +1,17 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TypefaceSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.347 -0400", hash_original_field = "BAA635101CF6E107BAC89837AE69780A", hash_generated_field = "9590C932BAED724FD12B55F1BADC30FA")
@@ -101,7 +102,7 @@ String var7557778AC2C76B4CD57475AB227E6F5A_1462912296 =         mFamily;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void apply(Paint paint, String family) {
         int oldStyle;
         Typeface old = paint.getTypeface();

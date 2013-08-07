@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Activity;
 import android.os.AsyncResult;
 import android.os.Handler;
@@ -13,10 +14,10 @@ import com.android.internal.telephony.IccIoResult;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.cat.ComprehensionTlvTag;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class UsimDataDownloadHandler extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.906 -0400", hash_original_field = "8DED1767E2ACBCA09F61DC1D6C7324D2", hash_generated_field = "BA1337E4728FB9F6BD795CF7696F04DE")
@@ -57,6 +58,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.911 -0400", hash_original_method = "B0FB1A5BEF9BBCC367C24989F3FA51BD", hash_generated_method = "14CA98D062CB5FF3653C01E66A9BE9AB")
     private void handleDataDownload(SmsMessage smsMessage) {
         addTaint(smsMessage.getTaint());
@@ -108,7 +110,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
         int length = tpduLength + 5;
         length += (tpduLength > 127 ? 2 : 1);
@@ -119,6 +121,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.917 -0400", hash_original_method = "4D0156FCE32C3B62D3099FB0908581D6", hash_generated_method = "6F8A18DCA271D31BDC7A81C6D318B86A")
     private void sendSmsAckForEnvelopeResponse(IccIoResult response, int dcs, int pid) {
         addTaint(pid);
@@ -196,7 +199,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.918 -0400", hash_original_method = "906B533055E100DFA749FD0587281F55", hash_generated_method = "15DB38CEE7D6B7D886C8F91F0944A93D")
     private void acknowledgeSmsWithError(int cause) {
         addTaint(cause);
@@ -206,7 +209,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean is7bitDcs(int dcs) {
         return ((dcs & 0x8C) == 0x00) || ((dcs & 0xF4) == 0xF0);
     }

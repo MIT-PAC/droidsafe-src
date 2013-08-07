@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.PendingIntent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,10 +13,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.SystemClock;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RemoteControlClient {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.978 -0400", hash_original_field = "825986C2B615FC9AC12680D3918F4AD8", hash_generated_field = "84304313B5BE2FAF3B60D13295A73C77")
@@ -262,7 +263,7 @@ MetadataEditor varED224B1BF4EAE660E8B6808A4D079108_1085237358 =         editor;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.986 -0400", hash_original_method = "2C35ADA55DC65E9D8CCC19BDAA7D2B4B", hash_generated_method = "A1388D27E357F50A8533F9463DA256AA")
     public PendingIntent getRcMediaIntent() {
 PendingIntent var1596228B9A06056CB18AE26D216C4D1A_623396981 =         mRcMediaIntent;
@@ -273,7 +274,7 @@ PendingIntent var1596228B9A06056CB18AE26D216C4D1A_623396981 =         mRcMediaIn
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.987 -0400", hash_original_method = "6031DEC176ACCB06C28473E7885E0907", hash_generated_method = "B2C77D1A5390E25C5FB20DBC5702DEF5")
     public IRemoteControlClient getIRemoteControlClient() {
 IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mIRCC;
@@ -284,7 +285,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.988 -0400", hash_original_method = "1D4279FF389DE00E45CE62733E438945", hash_generated_method = "7BE69845830A5C30F8E86A0E732E3185")
     private void detachFromDisplay_syncCacheLock() {
         mRcDisplay = null;
@@ -297,6 +298,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.989 -0400", hash_original_method = "DCEF21D9331BDE9855981A4FAF951191", hash_generated_method = "3FB7A2E1A77F70FA4A7D2BED83BCB705")
     private void sendPlaybackState_syncCacheLock() {
         if((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null))        
@@ -324,6 +326,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.989 -0400", hash_original_method = "414E902B5C775D55BC88776E02F34242", hash_generated_method = "9FDD58057F2688A3BEBEBEE2190BFA3E")
     private void sendMetadata_syncCacheLock() {
         if((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null))        
@@ -349,6 +352,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.990 -0400", hash_original_method = "AE3ACB485EA21BE41AFE152A08682540", hash_generated_method = "7D91231B66CF314FAC8EE71F0ED7466E")
     private void sendTransportControlFlags_syncCacheLock() {
         if((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null))        
@@ -376,6 +380,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.991 -0400", hash_original_method = "1072470EEE2F2109E34F0B1C5EF1161C", hash_generated_method = "E4BB987BFA089E58BE17F4E739A1E2CE")
     private void sendArtwork_syncCacheLock() {
         if((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null))        
@@ -403,6 +408,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.992 -0400", hash_original_method = "9C956ABC194A8C18AFD74A607E4260C4", hash_generated_method = "62E66948C1C58836BA9333A56196C591")
     private void sendMetadataWithArtwork_syncCacheLock() {
         if((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null))        
@@ -430,6 +436,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.993 -0400", hash_original_method = "0BE7AE1519A8E1F03CB0A5A1A7C2DA4C", hash_generated_method = "41DCAC07CC73BA8056C2C156B8136902")
     private void onNewInternalClientGen(Integer clientGeneration, int artWidth, int artHeight) {
         synchronized
@@ -452,7 +459,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.995 -0400", hash_original_method = "6CA13622614E338BD9C3EB3C00B6EAD4", hash_generated_method = "CE1E34C2269255946FE14815078895D2")
     private void onNewCurrentClientGen(int clientGeneration) {
         synchronized
@@ -466,7 +473,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.996 -0400", hash_original_method = "53EC796651633C35ADEE8DE59FBA0A28", hash_generated_method = "7EB3D35BCC5B940E229808DC7334D943")
     private void onPlugDisplay(IRemoteControlDisplay rcd) {
         synchronized
@@ -480,6 +487,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.997 -0400", hash_original_method = "C16B385AF67DD61790B8C9E68A3BEA11", hash_generated_method = "93DDA2D0AB837878B27BAAC2833A35F4")
     private void onUnplugDisplay(IRemoteControlDisplay rcd) {
         addTaint(rcd.getTaint());
@@ -503,6 +511,7 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1441011026 =         mI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.999 -0400", hash_original_method = "1F39DBEB11686CD36B20A5C71DB4136D", hash_generated_method = "54BF838B97008517A38F7148DA6876B4")
     private Bitmap scaleBitmapIfTooBig(Bitmap bitmap, int maxWidth, int maxHeight) {
         addTaint(maxHeight);
@@ -535,7 +544,7 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1110661739 =         bitmap;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean validTypeForKey(int key, int[] validKeys) {
         try {
             for (int i = 0 ; ; i++) {
@@ -572,6 +581,7 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1110661739 =         bitmap;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.003 -0400", hash_original_method = "3FF219DE1407B1650498BA4CB70E771E", hash_generated_method = "4A2164E12F3FF817BCD9F013D5F0252F")
         public Object clone() throws CloneNotSupportedException {
             CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_444958061 = new CloneNotSupportedException();

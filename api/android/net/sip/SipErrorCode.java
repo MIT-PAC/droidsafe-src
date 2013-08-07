@@ -1,13 +1,15 @@
 package android.net.sip;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class SipErrorCode {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.516 -0400", hash_original_method = "298DBB0089D5BDD0947985D624D66502", hash_generated_method = "A393C2CD781F4E1A7DF9F09461968B5C")
     private  SipErrorCode() {
         // ---------- Original Method ----------

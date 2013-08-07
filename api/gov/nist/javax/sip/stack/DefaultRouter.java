@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.net.AddressResolver;
 import gov.nist.javax.sip.SIPConstants;
@@ -24,10 +25,10 @@ import javax.sip.address.URI;
 import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DefaultRouter implements Router {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.245 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
@@ -37,6 +38,7 @@ public class DefaultRouter implements Router {
 
     private Hop defaultRoute;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.245 -0400", hash_original_method = "1E8D5551C1C844D291A6EDC5BD70E069", hash_generated_method = "8B9D0899EFA10ABEE473358BCF33303F")
     private  DefaultRouter() {
         // ---------- Original Method ----------
@@ -214,6 +216,7 @@ Hop var540C13E9E156B687226421B24F2DF178_1655616454 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.251 -0400", hash_original_method = "1A8C9A0DF77761777787B14E70DB6165", hash_generated_method = "39C1AAAB58BADDF0DA98ACB8EB84D987")
     private final Hop createHop(SipURI sipUri, Request request) {
         addTaint(request.getTaint());

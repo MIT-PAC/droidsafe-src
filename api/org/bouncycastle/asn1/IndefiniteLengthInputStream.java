@@ -1,14 +1,15 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class IndefiniteLengthInputStream extends LimitedInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.745 -0400", hash_original_field = "738F8790AC12386096EC5731A3B156E1", hash_generated_field = "EED902105BB6C063F6B373DB3476C8FB")
@@ -61,6 +62,7 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.748 -0400", hash_original_method = "4FDE0FC0A80FB708AB4FF6F00CAD13DD", hash_generated_method = "EA36548D77A184A803AA0E0A8445EA01")
     private boolean checkForEof() {
         if(!_eofReached && _eofOn00 && (_b1 == 0x00 && _b2 == 0x00))        

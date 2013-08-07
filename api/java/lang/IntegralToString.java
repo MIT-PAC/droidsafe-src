@@ -1,19 +1,22 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class IntegralToString {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.196 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
     private  IntegralToString() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String intToString(int i, int radix) {
         if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
             radix = 10;
@@ -42,18 +45,19 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String intToString(int i) {
         return convertInt(null, i);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void appendInt(AbstractStringBuilder sb, int i) {
         convertInt(sb, i);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String convertInt(AbstractStringBuilder sb, int i) {
         boolean negative = false;
         String quickResult = null;
@@ -115,6 +119,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String longToString(long v, int radix) {
         int i = (int) v;
         if (i == v) {
@@ -147,18 +152,19 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String longToString(long l) {
         return convertLong(null, l);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void appendLong(AbstractStringBuilder sb, long l) {
         convertLong(sb, l);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String convertLong(AbstractStringBuilder sb, long n) {
         int i = (int) n;
         if (i == n) {
@@ -210,7 +216,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int intIntoCharArray(char[] buf, int cursor, int n) {
         while ((n & 0xffff0000) != 0) {
             int q = (int) ((0x51EB851FL * (n >>> 2)) >>> 35);
@@ -229,6 +235,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String intToBinaryString(int i) {
         int bufLen = 32;
         char[] buf = new char[bufLen];
@@ -240,6 +247,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String longToBinaryString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
@@ -255,6 +263,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static StringBuilder appendByteAsHex(StringBuilder sb, byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         sb.append(digits[(b >> 4) & 0xf]);
@@ -263,6 +272,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String byteToHexString(byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[2];
@@ -272,6 +282,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String bytesToHexString(byte[] bytes, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[bytes.length * 2];
@@ -284,7 +295,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String intToHexString(int i, boolean upperCase, int minWidth) {
         int bufLen = 8;
         char[] buf = new char[bufLen];
@@ -297,6 +308,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String longToHexString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
@@ -312,6 +324,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String intToOctalString(int i) {
         int bufLen = 11;
         char[] buf = new char[bufLen];
@@ -323,6 +336,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String longToOctalString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {

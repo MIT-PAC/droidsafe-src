@@ -1,15 +1,16 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class ChunkedOutputStream extends AbstractHttpOutputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.934 -0400", hash_original_field = "C0E37FC3522AAF119980E44CDA3BD507", hash_generated_field = "7E119A02B300ABE6FAAAAAB772A34121")
@@ -37,7 +38,7 @@ final class ChunkedOutputStream extends AbstractHttpOutputStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.938 -0400", hash_original_method = "4E0221343957C12C5A2A1CAE66CCC091", hash_generated_method = "856046E6C53F09CBDA822AD9F680B9CB")
     private int dataLength(int dataPlusHeaderLength) {
         addTaint(dataPlusHeaderLength);
@@ -94,6 +95,7 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.940 -0400", hash_original_method = "3C05A9E8858284557710D8ECCDD07B35", hash_generated_method = "5A23DEAA87FAE43CC34B5FF4838A23CE")
     private void writeHex(int i) throws IOException {
         int cursor = 8;
@@ -150,6 +152,7 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.941 -0400", hash_original_method = "8C406F82035B71C42CDC38D557C582DC", hash_generated_method = "D77B48CBF481BD8943B5E9C19561FADD")
     private void writeBufferedChunkToSocket() throws IOException {
         int size = bufferedChunk.size();

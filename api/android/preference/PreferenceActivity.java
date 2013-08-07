@@ -1,8 +1,9 @@
 package android.preference;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import android.app.Fragment;
 import android.app.FragmentBreadCrumbs;
@@ -359,6 +360,7 @@ Header var0F018EE4F0AD04E5FC7022D1F64677F0_402436716 =         mHeaders.get(0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.427 -0400", hash_original_method = "3D3F0DDAE644689D05411BA38FC63FD0", hash_generated_method = "51B7851B9DB89AE8D7238F6C5CF7E88D")
     public Header onGetNewHeader() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -370,6 +372,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.432 -0400", hash_original_method = "2E92E1B9DF373424BC377EC8A240659F", hash_generated_method = "F45695A5F2F86F35BBA19C4D3E46F18D")
     public void onBuildHeaders(List<Header> target) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -689,6 +692,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.492 -0400", hash_original_method = "BC5669EA98C9095AD4591AFCBD99CE20", hash_generated_method = "05ABF09D2E465058589333E2123351B1")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -799,6 +803,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.511 -0400", hash_original_method = "B5DA23DDC47E44587D99F550083B256B", hash_generated_method = "90EC8DE2E47BBC836FEED95C393FC42C")
     public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
             int titleRes, int shortTitleRes) {
@@ -990,6 +995,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.550 -0400", hash_original_method = "7A46889D874DD705E59FA4FB1509394D", hash_generated_method = "AD8B3E2994D47F36692A20BABB2FE90B")
     private void switchToHeaderInner(String fragmentName, Bundle args, int direction) {
         addTaint(direction);
@@ -1200,6 +1206,7 @@ Header var540C13E9E156B687226421B24F2DF178_928101578 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.575 -0400", hash_original_method = "35CCCF58010C828A125388DBAAB260E2", hash_generated_method = "CCD71968ABB38D35E2FCFB0EA934F100")
     public void finishPreferencePanel(Fragment caller, int resultCode, Intent resultData) {
         addTaint(resultData.getTaint());
@@ -1256,6 +1263,7 @@ Header var540C13E9E156B687226421B24F2DF178_928101578 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.581 -0400", hash_original_method = "6C1825C42631AE6FCE57D0240C5D762E", hash_generated_method = "62DE4FD95EC2A6D210170DB16FB47120")
     private void postBindPreferences() {
         if(mHandler.hasMessages(MSG_BIND_PREFERENCES))        
@@ -1267,6 +1275,7 @@ Header var540C13E9E156B687226421B24F2DF178_928101578 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.584 -0400", hash_original_method = "548F27FE8CA6D6649BD8B5A7939C474E", hash_generated_method = "04275918F224E187ABF5A8521868CD6D")
     private void bindPreferences() {
         final PreferenceScreen preferenceScreen = getPreferenceScreen();
@@ -1291,6 +1300,7 @@ Header var540C13E9E156B687226421B24F2DF178_928101578 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.588 -0400", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "FF0A1125A8B8FA5E823F7AEA5C520666")
     @Deprecated
     public PreferenceManager getPreferenceManager() {
@@ -1302,6 +1312,7 @@ PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_743531044 =         mPrefe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.591 -0400", hash_original_method = "B2669BE6B91E4B8BF7765D817C0F2C8A", hash_generated_method = "3EB839ED8B0EE645576AC72D20736F78")
     private void requirePreferenceManager() {
         if(mPreferenceManager == null)        
@@ -1374,6 +1385,7 @@ PreferenceScreen var540C13E9E156B687226421B24F2DF178_1161814857 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.605 -0400", hash_original_method = "5674CE8C214451535BFAB18211614C8C", hash_generated_method = "994365E398A017D99D07B6A5AD6A37DB")
     @Deprecated
     public void addPreferencesFromIntent(Intent intent) {
@@ -1400,6 +1412,7 @@ PreferenceScreen var540C13E9E156B687226421B24F2DF178_1161814857 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.609 -0400", hash_original_method = "ADC2C8250ACD9F9573CD9A45AF1661C3", hash_generated_method = "E70FDB545CBF331C09C3569B5B2992AE")
     @Deprecated
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
@@ -1435,6 +1448,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1071960949 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.617 -0400", hash_original_method = "5A6127558FF9D60C52821F59A1A351C3", hash_generated_method = "D57D01EBB933E9B22B810E43247A5847")
     @Override
     protected void onNewIntent(Intent intent) {
@@ -1451,6 +1465,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1071960949 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.623 -0400", hash_original_method = "BC54EB6D436D19F86F3C9657BD0BE1AA", hash_generated_method = "6F80C6ADE0DDC523ABF7A3B96571F952")
     protected boolean hasNextButton() {
         boolean var1E13A8D62F65FA8B16FFABE15551D8B3_1714306332 = (mNextButton != null);
@@ -1461,6 +1476,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1071960949 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.627 -0400", hash_original_method = "CC6F0F14612F322772A46478BA75E81F", hash_generated_method = "550F1C61017D49E1E417EE2B012C6BAE")
     protected Button getNextButton() {
 Button var0A300EA22629DC89E0DD4FA357122FBD_1421989561 =         mNextButton;
@@ -1541,6 +1557,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
 
             TextView summary;
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.646 -0400", hash_original_method = "7AAB7B01E6419825274A30D2382564EA", hash_generated_method = "7AAB7B01E6419825274A30D2382564EA")
             public HeaderViewHolder ()
             {
@@ -1695,6 +1712,7 @@ CharSequence varFFEE091C203152B4B8D9368992F950CE_1043247137 =             breadC
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.700 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D47BC5CB8D43EFE296BA482ABA1518B0")
         @Override
         public int describeContents() {

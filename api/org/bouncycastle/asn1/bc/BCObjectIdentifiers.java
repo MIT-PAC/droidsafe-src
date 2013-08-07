@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.bc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 
 public interface BCObjectIdentifiers

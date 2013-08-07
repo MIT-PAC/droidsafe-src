@@ -1,12 +1,13 @@
 package org.bouncycastle.jce.spec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.spec.KeySpec;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ECKeySpec implements KeySpec {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.689 -0400", hash_original_field = "B979C2934AC0B4BA3F08DABFDD1B2299", hash_generated_field = "82AE92EF7773AA5ED9F82BE71242C394")

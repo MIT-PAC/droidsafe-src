@@ -1,6 +1,7 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,10 +9,10 @@ import android.database.AbstractWindowedCursor;
 import android.database.CursorWindow;
 import android.os.StrictMode;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SQLiteCursor extends AbstractWindowedCursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.298 -0400", hash_original_field = "03938FDF3029AF609FD8FCBAEE02B61F", hash_generated_field = "973CDCF4620458EDC8DC04989EC9D73D")
@@ -159,6 +160,7 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_1542224551 =             mQue
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.307 -0400", hash_original_method = "1027AA1FD2FF7DB5721417BC40818677", hash_generated_method = "EE80B7B477FE0D6A4A491DCD70263CE7")
     private void fillWindow(int startPos) {
         addTaint(startPos);
@@ -197,7 +199,7 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_1542224551 =             mQue
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.308 -0400", hash_original_method = "976132A7E3467B4AD1CD095C1F4D25D0", hash_generated_method = "E1548F201A68F242417EEFBA2D3DDC14")
     private synchronized SQLiteQuery getQuery() {
 SQLiteQuery varC104E74F3085CDE7E6D7F4CAA0F9BCA1_1727408861 =         mQuery;

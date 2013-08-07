@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -27,10 +28,10 @@ import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class FragmentState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.922 -0400", hash_original_field = "E0F3773C57D5A4C143336ECFEFDE9748", hash_generated_field = "6BC238A3BDD37BF1CAC26EA2CE45C508")
@@ -723,6 +724,7 @@ FragmentManager var3493CF387537729524962FC6B360BFAD_1666147175 =         mChildF
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.936 -0400", hash_original_method = "B31DB62F63300A3D3A62AFCA68722969", hash_generated_method = "FD10FB82062A802A13575C171DAE7FDD")
     final public Fragment getParentFragment() {
 Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
@@ -1001,6 +1003,7 @@ LoaderManager var805CC3710F0829AF609E93E575C2DA90_1740282117 =         mLoaderMa
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.940 -0400", hash_original_method = "8FF008E86C71DF2CF57F1B9E3E9D8CD9", hash_generated_method = "78C2D4F593E7237DAB1C7DF1AA8ADF93")
     public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
         addTaint(savedInstanceState.getTaint());
@@ -1110,6 +1113,7 @@ View var2A050D4EA4182130A6C1E6806618CCD0_174818966 =         mView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.941 -0400", hash_original_method = "01C4E5BCA343F9B21B52342AACDB7055", hash_generated_method = "9F3F9CB12391666B738CAD822238CD91")
     public void onViewStateRestored(Bundle savedInstanceState) {
         //DSFIXME:  CODE0009: Possible callback target function detected

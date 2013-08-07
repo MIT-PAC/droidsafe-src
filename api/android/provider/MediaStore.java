@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,10 +26,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class MediaStore {
     
@@ -150,6 +151,7 @@ public final class MediaStore {
     
     private static class InternalThumbnails implements BaseColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.453 -0400", hash_original_method = "B538DEE370A2D5B0ED2152EA1CB2C251", hash_generated_method = "B538DEE370A2D5B0ED2152EA1CB2C251")
         public InternalThumbnails ()
         {
@@ -157,7 +159,7 @@ public final class MediaStore {
         }
 
 
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
         private static Bitmap getMiniThumbFromFile(Cursor c, Uri baseUri, ContentResolver cr, BitmapFactory.Options options) {
             Bitmap bitmap = null;
             Uri thumbUri = null;
@@ -378,6 +380,7 @@ public final class MediaStore {
             }
 
             
+            @DSModeled(DSC.BAN)
             private static final Bitmap StoreThumbnail(
                     ContentResolver cr,
                     Bitmap source,

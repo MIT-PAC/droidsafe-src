@@ -1,6 +1,7 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.channels.CancelledKeyException;
 import java.nio.channels.SelectableChannel;
 import java.nio.channels.SelectionKey;
@@ -9,10 +10,10 @@ import java.nio.channels.SocketChannel;
 import java.nio.channels.spi.AbstractSelectableChannel;
 import java.nio.channels.spi.AbstractSelectionKey;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class SelectionKeyImpl extends AbstractSelectionKey {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.812 -0400", hash_original_field = "C485D2ED5CC4CE64FCCCCA710C7A0BB7", hash_generated_field = "E125EF1A670EBEF5649D9B822EF15475")
@@ -156,7 +157,7 @@ Selector var755D5516CC9C857A99E0A4197911305D_2037244143 =         selector;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.816 -0400", hash_original_method = "3C7107E57611448B023007D9312E8BE0", hash_generated_method = "69FCACABCB11EF4D0B247554B6EA413F")
     private void checkValid() {
         if(!isValid())        

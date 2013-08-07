@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
@@ -15,10 +16,10 @@ import android.opengl.ManagedEGLContext;
 import android.os.IBinder;
 import android.util.AndroidRuntimeException;
 import android.view.inputmethod.InputMethodManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class WindowLeaked extends AndroidRuntimeException {
     
@@ -51,13 +52,13 @@ public class WindowManagerImpl implements WindowManager {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static WindowManagerImpl getDefault() {
         return sWindowManager;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static WindowManager getDefault(CompatibilityInfo compatInfo) {
         CompatibilityInfoHolder cih = new CompatibilityInfoHolder();
         cih.set(compatInfo);
@@ -75,13 +76,13 @@ public class WindowManagerImpl implements WindowManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static WindowManager getDefault(CompatibilityInfoHolder compatInfo) {
         return new CompatModeWrapper(sWindowManager, compatInfo);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.126 -0400", hash_original_method = "8E464E19F5A7F279FF3FC1B84D15C4F0", hash_generated_method = "773AF46EB62CCA9A7FFA776EE870C34D")
     public boolean isHardwareAccelerated() {
         boolean var68934A3E9455FA72420237EB05902327_1398376055 = (false);
@@ -92,7 +93,7 @@ public class WindowManagerImpl implements WindowManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.126 -0400", hash_original_method = "3A47767500C080C4B7D3F95A5195D385", hash_generated_method = "600FF69966859A98C0DB15D9B7C8B7EE")
     public void addView(View view) {
         addTaint(view.getTaint());
@@ -127,7 +128,7 @@ public class WindowManagerImpl implements WindowManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.130 -0400", hash_original_method = "FC07162832A382775417964F34DC350F", hash_generated_method = "39E9852548DC8B9BF0995B0A261DD639")
     private void addView(View view, ViewGroup.LayoutParams params,
             CompatibilityInfoHolder cih, boolean nest) {
@@ -252,7 +253,7 @@ for(int i=0;i<count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.133 -0400", hash_original_method = "6ED1D335390D20FBE30CC53F4D61DE9F", hash_generated_method = "3C7936718D1AE9AF50E2CD4B3BD01CEE")
     public void removeView(View view) {
         addTaint(view.getTaint());
@@ -282,7 +283,7 @@ for(int i=0;i<count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.134 -0400", hash_original_method = "EE35B3CBE21A32408B24AA67A208567E", hash_generated_method = "2977B01283962DBD6918D5117AA3C4A5")
     public void removeViewImmediate(View view) {
         addTaint(view.getTaint());
@@ -320,7 +321,7 @@ for(int i=0;i<count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.135 -0400", hash_original_method = "45C6626A33F0E52A8F561F8DE7007122", hash_generated_method = "0BBE18A11EB9A2890B3D573549B4CAD5")
      View removeViewLocked(int index) {
         addTaint(index);
@@ -365,7 +366,7 @@ View var057D265746AE9672AFE5F9FF6338071D_76940314 =         view;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.136 -0400", hash_original_method = "4A1C8F1E2D0E07B0DD1B6F93F46E614A", hash_generated_method = "648F8B43D923FE9D544ACA88F468F6BB")
      void finishRemoveViewLocked(View view, int index) {
         addTaint(index);
@@ -402,7 +403,7 @@ View var057D265746AE9672AFE5F9FF6338071D_76940314 =         view;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.136 -0400", hash_original_method = "235A702EEE225FF475D5967A0654B4AA", hash_generated_method = "8D8B8F901F68C8841231CF905E031D4C")
     public void closeAll(IBinder token, String who, String what) {
         addTaint(what.getTaint());
@@ -437,7 +438,7 @@ for(int i=0;i<count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.137 -0400", hash_original_method = "1760CCD9A30F61845B0A646D5EFB7F37", hash_generated_method = "C899BF8F6E94EE0F3184FDFACF09737E")
     public void trimMemory(int level) {
         addTaint(level);
@@ -471,7 +472,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.137 -0400", hash_original_method = "B85ACF4E2D1A27D42C4275E82179233A", hash_generated_method = "7C07F04EA59363CB3E57CF748C4D328B")
     public void trimLocalMemory() {
         synchronized
@@ -495,7 +496,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.138 -0400", hash_original_method = "8E8B6C2ACDFF2687F40321E0E64E3BBE", hash_generated_method = "CDC369AF972FD3235D2CFF9F4CC7FC41")
     public void dumpGfxInfo(FileDescriptor fd) {
         addTaint(fd.getTaint());
@@ -538,7 +539,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.138 -0400", hash_original_method = "32E6F8530311607C65FF5EAF5F0BD6AD", hash_generated_method = "D82EEFAE5B79DF60BC3641DB333FACBB")
     public void setStoppedState(IBinder token, boolean stopped) {
         addTaint(stopped);
@@ -572,7 +573,7 @@ for(int i=0;i<count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.139 -0400", hash_original_method = "5FCDC552B8E05196F9C2F723B4C31106", hash_generated_method = "0BF914CB92F4F452AC34ECF0E976F09D")
     public void reportNewConfiguration(Configuration config) {
         addTaint(config.getTaint());
@@ -598,7 +599,7 @@ for(int i=0;i<count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.139 -0400", hash_original_method = "1CFBFD36B7BEFA0EB1A8D0118BDA1924", hash_generated_method = "12C3D7D48B47CFDFF6DAEA58C57F0DC2")
     public WindowManager.LayoutParams getRootViewLayoutParameter(View view) {
         addTaint(view.getTaint());
@@ -645,7 +646,7 @@ WindowManager.LayoutParams var540C13E9E156B687226421B24F2DF178_1972400867 =     
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.140 -0400", hash_original_method = "2D5B77D42F80E7BB97C9217066ACC1E7", hash_generated_method = "910D676C81E32EF366F77F71D3376042")
     public void closeAll() {
         closeAll(null, null, null);
@@ -654,7 +655,7 @@ WindowManager.LayoutParams var540C13E9E156B687226421B24F2DF178_1972400867 =     
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.140 -0400", hash_original_method = "6421FA4950C786DB3C3137628B8417F4", hash_generated_method = "C08FF9BDDAAB6F5F4F96B79C9B959126")
     public Display getDefaultDisplay() {
 Display var15DC8EFA0A5C9CE2FFEA5848868DAC8F_1835208786 =         new Display(Display.DEFAULT_DISPLAY, null);
@@ -665,7 +666,7 @@ Display var15DC8EFA0A5C9CE2FFEA5848868DAC8F_1835208786 =         new Display(Dis
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void removeItem(Object[] dst, Object[] src, int index) {
         if (dst.length > 0) {
             if (index > 0) {
@@ -678,7 +679,7 @@ Display var15DC8EFA0A5C9CE2FFEA5848868DAC8F_1835208786 =         new Display(Dis
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.141 -0400", hash_original_method = "D0BCCB21246B97649D4401D223B22EEE", hash_generated_method = "780BF914DABFF5120881B62F13D66F3D")
     private int findViewLocked(View view, boolean required) {
         addTaint(required);
@@ -734,7 +735,7 @@ for(int i=0;i<count;i++)
 
         private CompatibilityInfoHolder mCompatibilityInfo;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.143 -0400", hash_original_method = "3FF7A4C8C61ABC650A78463DAC06ED7D", hash_generated_method = "9DC5F473B5C44E92E7428AD5BA04466A")
           CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
             mWindowManager = wm instanceof CompatModeWrapper
@@ -786,7 +787,7 @@ for(int i=0;i<count;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.144 -0400", hash_original_method = "5F05EF082DAFF0E6020E51FDACFCFBF6", hash_generated_method = "220E9649562E39191092F8569472AB88")
         @Override
         public void removeView(View view) {
@@ -797,7 +798,7 @@ for(int i=0;i<count;i++)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.144 -0400", hash_original_method = "56BE5D6095195D262FD5BEEEDA100E7B", hash_generated_method = "2EC8A921516C9FEEB065FE2A9B9F0A93")
         @Override
         public Display getDefaultDisplay() {
@@ -809,7 +810,7 @@ Display varD12F9DF4287A14A2D53902174684A7C5_905853206 =             mDefaultDisp
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.144 -0400", hash_original_method = "4EE5EB2962C6A561F3596BAB39C4DB7E", hash_generated_method = "A3B47ED81A5575738D502ACC7E01285F")
         @Override
         public void removeViewImmediate(View view) {
@@ -820,7 +821,7 @@ Display varD12F9DF4287A14A2D53902174684A7C5_905853206 =             mDefaultDisp
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.145 -0400", hash_original_method = "E8FDE829A6ED2289D510D94BC19E7A4F", hash_generated_method = "84F864CCF7B222DE4DCFEA936B853421")
         @Override
         public boolean isHardwareAccelerated() {

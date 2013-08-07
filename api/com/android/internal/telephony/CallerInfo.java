@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import android.content.Context;
@@ -22,10 +23,10 @@ import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.android.i18n.phonenumbers.geocoding.PhoneNumberOfflineGeocoder;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CallerInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
@@ -92,6 +93,7 @@ public class CallerInfo {
 
     private boolean mIsVoiceMail;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_method = "35A0AB919675AC2E6DFA09874C99CFA1", hash_generated_method = "7EF09FC36F6EA834DB6A5FF04EABDDBC")
     public  CallerInfo() {
         mIsEmergency = false;
@@ -102,7 +104,7 @@ public class CallerInfo {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
         CallerInfo info = new CallerInfo();
         info.photoResource = 0;
@@ -166,14 +168,14 @@ public class CallerInfo {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
         return getCallerInfo(context, contactRef,
                 context.getContentResolver().query(contactRef, null, null, null, null));
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static CallerInfo getCallerInfo(Context context, String number) {
         if (VDBG) Log.v(TAG, "getCallerInfo() based on number...");
         if (TextUtils.isEmpty(number)) {
@@ -194,6 +196,7 @@ public class CallerInfo {
     }
 
     
+    @DSModeled(DSC.BAN)
     static CallerInfo doSecondaryLookupIfNecessary(Context context,
             String number, CallerInfo previousResult) {
         if (!previousResult.contactExists
@@ -209,6 +212,7 @@ public class CallerInfo {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getCallerId(Context context, String number) {
         CallerInfo info = getCallerInfo(context, number);
         String callerID = null;
@@ -224,7 +228,7 @@ public class CallerInfo {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "949F12A508ED637C7BFB9FE80F3ED419", hash_generated_method = "37FA2DA01082417026523AF47BA0779F")
     public boolean isEmergencyNumber() {
         boolean var7376A55F5290745246270E1790E042B5_690769222 = (mIsEmergency);
@@ -235,7 +239,7 @@ public class CallerInfo {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "61436A0A05C2AD638DF9E2E803CA6155", hash_generated_method = "5D7D3D54D64F05799111E78C5175F45E")
     public boolean isVoiceMailNumber() {
         boolean var4452D8CFC3290241F7E75DF22D239FD7_623479805 = (mIsVoiceMail);
@@ -246,6 +250,7 @@ public class CallerInfo {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "680AF92753A12CD38D8F57C4697879D6")
      CallerInfo markAsEmergency(Context context) {
         phoneNumber = context.getString(
@@ -264,7 +269,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1616552895 =         this;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "4BD684E00DB08079E2E6C45704D4A3A8")
      CallerInfo markAsVoiceMail() {
         mIsVoiceMail = true;
@@ -291,7 +296,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String normalize(String s) {
         if (s == null || s.length() > 0) {
             return s;
@@ -301,7 +306,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
         if (VDBG) Log.v(TAG, "- getColumnIndexForPersonId: contactRef URI = '"
                         + contactRef + "'...");
@@ -326,7 +331,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.579 -0400", hash_original_method = "3180F1E37BC19852F53F68E8E13D968F", hash_generated_method = "4C6D13AE6F83DD7FE5892D790FE2AE9F")
     public void updateGeoDescription(Context context, String fallbackNumber) {
         addTaint(fallbackNumber.getTaint());
@@ -338,7 +343,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String getGeoDescription(Context context, String number) {
         if (VDBG) Log.v(TAG, "getGeoDescription('" + number + "')...");
         if (TextUtils.isEmpty(number)) {
@@ -367,7 +372,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String getCurrentCountryIso(Context context, Locale locale) {
         String countryIso;
         CountryDetector detector = (CountryDetector) context.getSystemService(
@@ -383,6 +388,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.580 -0400", hash_original_method = "B2E8AF8AE71BB271A220763604B9FEA5", hash_generated_method = "1016AA1CC9C20FA62A99D0AAB6DF1DB8")
     public String toString() {
         final boolean VERBOSE_DEBUG = false;

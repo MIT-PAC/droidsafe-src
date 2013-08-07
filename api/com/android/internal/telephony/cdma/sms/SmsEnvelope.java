@@ -1,8 +1,9 @@
 package com.android.internal.telephony.cdma.sms;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public final class SmsEnvelope {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.741 -0400", hash_original_field = "9CEBBECC0F683775CABCD1C6DD3D70C7", hash_generated_field = "7D96870A082A2C76305FFABAAF52B964")

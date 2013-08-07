@@ -1,14 +1,15 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;
 import org.apache.http.util.CharArrayBuffer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     

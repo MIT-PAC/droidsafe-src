@@ -1,6 +1,7 @@
 package android.os.storage;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +14,10 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.SparseArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StorageManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.065 -0400", hash_original_field = "B37A65C8E4C16F5F00CB3D4C405B1D2D", hash_generated_field = "824B06D572005F1C1B35E543BCE5CB91")
@@ -38,6 +39,7 @@ public class StorageManager {
 
     private final ObbActionListener mObbActionListener = new ObbActionListener();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.066 -0400", hash_original_method = "1751DA8EA422A6A8B82F8F3E4926F05B", hash_generated_method = "42B5B1F86354DDB212884BE19E30C173")
     public  StorageManager(Looper tgtLooper) throws RemoteException {
         mMountService = IMountService.Stub.asInterface(ServiceManager.getService("mount"));
@@ -60,6 +62,7 @@ public class StorageManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.067 -0400", hash_original_method = "E880709C72C5FA3A0762DDC8432351B1", hash_generated_method = "D2C2E713385AF1193DE7985D35017373")
     private int getNextNonce() {
         int varF17C7CA92AB3E11E07554CE3600EEE39_679676827 = (mNextNonce.getAndIncrement());
@@ -70,6 +73,7 @@ public class StorageManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.067 -0400", hash_original_method = "99C6C81E5E38E1D6866033383A8A6E37", hash_generated_method = "A9DB10DE2A9C23118659BEBF39A888AB")
     public void registerListener(StorageEventListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -92,6 +96,7 @@ public class StorageManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.068 -0400", hash_original_method = "3AB3B2EFDC587B358784DA10414214BD", hash_generated_method = "F9B27539C17BEDC602562E17022AACFA")
     public void unregisterListener(StorageEventListener listener) {
         addTaint(listener.getTaint());
@@ -129,6 +134,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.068 -0400", hash_original_method = "5EB71443ECA98B5E7A476E0AE8AAD3AD", hash_generated_method = "515D0C5145970309938C634DF9201311")
     public void enableUsbMassStorage() {
         try 
@@ -147,6 +153,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.069 -0400", hash_original_method = "663240D4ECB8ED0B06161F54AFBC5E98", hash_generated_method = "F672D3156A9AB066614E0A47A20BF4E2")
     public void disableUsbMassStorage() {
         try 
@@ -165,6 +172,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.069 -0400", hash_original_method = "09220D6F0F0E5ED3096951AEB948E338", hash_generated_method = "C9A5CBE9914AF3500C7EEC9B0ED17FBE")
     public boolean isUsbMassStorageConnected() {
         try 
@@ -189,6 +197,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.069 -0400", hash_original_method = "D60840A90A5B0A49A8865BA4D2E3CCDB", hash_generated_method = "26361634816D27E23EC8EB7FC4DC22D6")
     public boolean isUsbMassStorageEnabled() {
         try 
@@ -379,6 +388,7 @@ String var540C13E9E156B687226421B24F2DF178_943358471 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.073 -0400", hash_original_method = "9BA3F19D0DE55EC9B6B86E9B817FE10B", hash_generated_method = "24CD9EE3C56ABA24EBF2E62DE851B74F")
     public String getVolumeState(String mountPoint) {
         addTaint(mountPoint.getTaint());
@@ -404,6 +414,7 @@ String var540C13E9E156B687226421B24F2DF178_2103583109 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.074 -0400", hash_original_method = "7E321C52EE616E46A0C899410949AC4D", hash_generated_method = "C2240FD04729B49E24DBF431832572A8")
     public StorageVolume[] getVolumeList() {
         try 
@@ -448,6 +459,7 @@ StorageVolume[] var540C13E9E156B687226421B24F2DF178_1531371435 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.075 -0400", hash_original_method = "32FCB28C74C473CB8B8088CF6B7B3DD3", hash_generated_method = "9C08E64E79C44E067A8D35571B3E634A")
     public String[] getVolumePaths() {
         StorageVolume[] volumes = getVolumeList();

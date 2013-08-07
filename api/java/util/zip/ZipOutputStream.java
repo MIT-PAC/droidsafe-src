@@ -1,6 +1,7 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -8,7 +9,7 @@ import java.nio.charset.Charsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import droidsafe.annotations.*;
+
 
 public class ZipOutputStream extends DeflaterOutputStream implements ZipConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.854 -0400", hash_original_field = "06D4CD63BDE972FC66A0AED41D2F5C51", hash_generated_field = "3ED42D4B537F5FDB36FDF1EA0D6B44D6")
@@ -404,7 +405,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.868 -0400", hash_original_method = "DBE9EE31F55A33C252870BC7FED94C64", hash_generated_method = "BE2D4082734726D6F395801B8C61ECA9")
     private long writeLong(OutputStream os, long i) throws IOException {
         addTaint(i);
@@ -425,7 +426,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.868 -0400", hash_original_method = "1DFA02CC93F18F84127269F34641BCA1", hash_generated_method = "668184DFDC7C729590469F6A357811BD")
     private int writeShort(OutputStream os, int i) throws IOException {
         addTaint(i);
@@ -479,7 +480,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.870 -0400", hash_original_method = "D282356A3A75F4936D2E72EF1631ED03", hash_generated_method = "F227F98F6D44388CF627C652E594CC40")
     private void checkClosed() throws IOException {
         if(cDir == null)        

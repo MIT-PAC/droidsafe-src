@@ -1,6 +1,7 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.SoftReference;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -19,10 +20,10 @@ import java.util.WeakHashMap;
 
 import libcore.io.Memory;
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class ObjectStreamClass implements Serializable {
@@ -172,6 +173,7 @@ Field var540C13E9E156B687226421B24F2DF178_930772849 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ObjectStreamClass createClassDesc(Class<?> cl) {
         ObjectStreamClass result = new ObjectStreamClass();
         boolean isArray = cl.isArray();
@@ -296,6 +298,7 @@ for(int i = 0;i < _fields.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static long computeSerialVersionUID(Class<?> cl, Field[] fields) {
         for (int i = 0; i < fields.length; i++) {
             final Field field = fields[i];
@@ -428,11 +431,13 @@ for(int i = 0;i < _fields.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String descriptorForFieldSignature(String signature) {
         return signature.replace('.', '/');
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String descriptorForSignature(String signature) {
         return signature.substring(signature.indexOf("("));
     }
@@ -484,6 +489,7 @@ Object varEF848881956A937135F95B8D07FA083C_712097437 =         newInstance(insta
 	}
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.983 -0400", hash_original_method = "66A47A19F5FB8C837FA66140F62CB154", hash_generated_method = "91C88B7425113F1E86DFAC2E6CC0E5F5")
     private Class<?> resolveConstructorClass(Class<?> objectClass) throws InvalidClassException {
         addTaint(objectClass.getTaint());
@@ -692,6 +698,7 @@ List<ObjectStreamClass> varDC838461EE2FA0CA4C9BBB70A15456B0_676366102 =         
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.984 -0400", hash_original_method = "970C4D30E4F07A217EB44CA0880B9D33", hash_generated_method = "00E51CED2C198A6932E6062CDBD9B8CD")
     private List<ObjectStreamClass> makeHierarchy() {
         ArrayList<ObjectStreamClass> result = new ArrayList<ObjectStreamClass>();
@@ -711,6 +718,7 @@ List<ObjectStreamClass> varDC838461EE2FA0CA4C9BBB70A15456B0_2099456153 =        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.984 -0400", hash_original_method = "F57C7EC559BF09EB03BA0EA2BC063E8F", hash_generated_method = "C3AC8A3FA338727C6657204B779B88B8")
     private void copyFieldAttributes() {
         if((loadFields == null) || fields == null)        
@@ -841,6 +849,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.986 -0400", hash_original_method = "742EA2900A6EB88CE28517352A724CD7", hash_generated_method = "5F1FFE78E26AA1A310D199DC72C38791")
     private void resolveProperties() {
         if(arePropertiesResolved)        
@@ -936,6 +945,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.BAN)
     private static WeakHashMap<Class<?>, ObjectStreamClass> getCache() {
         ThreadLocal<WeakHashMap<Class<?>, ObjectStreamClass>> tls = storage.get();
         if (tls == null) {
@@ -1173,6 +1183,7 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_306065815 =         methodReadObjectN
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.989 -0400", hash_original_method = "555F932795060D0A381054093FA5AE4C", hash_generated_method = "668600AF565BAE4F98C5C32A8E191848")
     private int primitiveSize(Class<?> type) {
         addTaint(type.getTaint());

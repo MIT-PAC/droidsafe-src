@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.util.Log.d;
 
 import java.util.ArrayList;
@@ -28,10 +29,10 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RelativeLayout extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "824472FBDC9B8A7A1D14D0F19A7337AC", hash_generated_field = "C96F9BEAD28A0E01882C41D253AFA846")
@@ -102,7 +103,7 @@ public class RelativeLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.497 -0400", hash_original_method = "2508EFC88C6F20ACAB1B8BFE22290A1F", hash_generated_method = "18773DCC3CD65F2AB9267E9D4FB35E51")
     private void initFromAttributes(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());
@@ -236,7 +237,7 @@ public class RelativeLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.500 -0400", hash_original_method = "701273CD7B3C60F684ABCCF0BE7DD8A5", hash_generated_method = "8659C69625F6F3B717B7A04B2B942BE4")
     private void sortChildren() {
         int count = getChildCount();
@@ -510,7 +511,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.509 -0400", hash_original_method = "572E26DE16208C5960AF0F468C9CEB6F", hash_generated_method = "E602CC6E7398BCFC60490F9549029B62")
     private void alignBaseline(View child, LayoutParams params) {
         addTaint(params.getTaint());
@@ -549,7 +550,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.509 -0400", hash_original_method = "6FAB1FA940C67F7A3A04C20DF403CDD7", hash_generated_method = "B56AEFCE4745206457591A7DDA5BDE0F")
     private void measureChild(View child, LayoutParams params, int myWidth, int myHeight) {
         addTaint(myHeight);
@@ -582,7 +583,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.510 -0400", hash_original_method = "C649DEFF309C12811323B81F575C7972", hash_generated_method = "24E132E767F7297960A0B4D954546A46")
     private void measureChildHorizontal(View child, LayoutParams params, int myWidth, int myHeight) {
         addTaint(myHeight);
@@ -620,7 +621,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.512 -0400", hash_original_method = "78354A3A0D2C9A2AC648B99E7333EDDC", hash_generated_method = "17E0A87B0753FD17262D0B0307741C4B")
     private int getChildMeasureSpec(int childStart, int childEnd,
             int childSize, int startMargin, int endMargin, int startPadding,
@@ -694,7 +695,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.515 -0400", hash_original_method = "B9478380B54B111B46A13309CA4FBB39", hash_generated_method = "0B10A4E9DF0C24B591F2E0735F93520E")
     private boolean positionChildHorizontal(View child, LayoutParams params, int myWidth,
             boolean wrapContent) {
@@ -744,7 +745,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.516 -0400", hash_original_method = "09EB493CF05E8E659EC89F37304CD399", hash_generated_method = "5BDD4EF875801A22A50B0734E2C49DAF")
     private boolean positionChildVertical(View child, LayoutParams params, int myHeight,
             boolean wrapContent) {
@@ -794,7 +795,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.519 -0400", hash_original_method = "C61E9BCFF76D7B76D77F18D001923EFF", hash_generated_method = "C0C66D05E7E10A76C247FF4170C9A250")
     private void applyHorizontalSizeRules(LayoutParams childParams, int myWidth) {
         addTaint(myWidth);
@@ -876,7 +877,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.522 -0400", hash_original_method = "B3DE38D6CE01D7E90C154524E3D3CC84", hash_generated_method = "6B03BC71EF56FFB5D3948A541FDAE3DA")
     private void applyVerticalSizeRules(LayoutParams childParams, int myHeight) {
         addTaint(myHeight);
@@ -962,7 +963,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.523 -0400", hash_original_method = "1C833E1C2ADE997D1187353BA16BCE70", hash_generated_method = "C215DE6A509BBD1FE50A706F10C5FE29")
     private View getRelatedView(int[] rules, int relation) {
         addTaint(relation);
@@ -1016,7 +1017,7 @@ View var540C13E9E156B687226421B24F2DF178_737876707 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.523 -0400", hash_original_method = "1432C4369AF9849456CCA14753707552", hash_generated_method = "22691014038952AD6697FA9E32D9D6C0")
     private LayoutParams getRelatedViewParams(int[] rules, int relation) {
         addTaint(relation);
@@ -1047,7 +1048,7 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_1064684565 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.542 -0400", hash_original_method = "B96AFAE3C58D6FFF0F9AB9328789A20B", hash_generated_method = "BEEE71C39EDB256F02B5E71F25658189")
     private int getRelatedViewBaseline(int[] rules, int relation) {
         addTaint(relation);
@@ -1071,7 +1072,7 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_1064684565 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.542 -0400", hash_original_method = "8A1AB6E076A6FFB22058EEC6C343479D", hash_generated_method = "21EB867A17524776BC2CCE0B2E4DDC14")
     private void centerHorizontal(View child, LayoutParams params, int myWidth) {
         addTaint(myWidth);
@@ -1089,7 +1090,7 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_1064684565 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.543 -0400", hash_original_method = "D7FF6A5DD857E80D590F5847BEDB8204", hash_generated_method = "148EA00E48905863A48AF233142CDCC5")
     private void centerVertical(View child, LayoutParams params, int myHeight) {
         addTaint(myHeight);
@@ -1508,6 +1509,7 @@ String var415ADF52E55102ED4321EF30FF1080EF_1544025716 =             output + "Vi
 
         private LinkedList<Node> mRoots = new LinkedList<Node>();
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_method = "970FB9BC48F419CD4D1512AB366BD03A", hash_generated_method = "970FB9BC48F419CD4D1512AB366BD03A")
         public DependencyGraph ()
         {
@@ -1596,7 +1598,7 @@ for(Node dependent : dependents)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.556 -0400", hash_original_method = "3833904997A1288F1E7950B84718C1E5", hash_generated_method = "33D4BFCCC4E864A5C8B5DB98D5C03878")
         private LinkedList<Node> findRoots(int[] rulesFilter) {
             addTaint(rulesFilter[0]);
@@ -1673,7 +1675,7 @@ for(Node node : roots)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void appendViewId(Resources resources, Node node, StringBuilder buffer) {
             if (node.view.getId() != View.NO_ID) {
                 buffer.append(resources.getResourceEntryName(node.view.getId()));
@@ -1683,7 +1685,7 @@ for(Node node : roots)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void printNode(Resources resources, Node node) {
             if (node.dependents.size() == 0) {
                 printViewId(resources, node.view);
@@ -1697,7 +1699,7 @@ for(Node node : roots)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static void printdependents(Resources resources, Node node, StringBuilder buffer) {
             buffer.append(" -> ");
             appendViewId(resources, node, buffer);

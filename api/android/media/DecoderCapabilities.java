@@ -1,22 +1,25 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class DecoderCapabilities {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.102 -0400", hash_original_method = "599AF8A39C7326727CA1A71C57B2EC2D", hash_generated_method = "CD6D75BD19893A81BF93FAF6BD81BA03")
     private  DecoderCapabilities() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     public static List<VideoDecoder> getVideoDecoders() {
         List<VideoDecoder> decoderList = new ArrayList<VideoDecoder>();
         int nDecoders = native_get_num_video_decoders();
@@ -27,6 +30,7 @@ public class DecoderCapabilities {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static List<AudioDecoder> getAudioDecoders() {
         List<AudioDecoder> decoderList = new ArrayList<AudioDecoder>();
         int nDecoders = native_get_num_audio_decoders();

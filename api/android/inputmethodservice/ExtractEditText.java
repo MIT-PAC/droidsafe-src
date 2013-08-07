@@ -1,15 +1,16 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ExtractEditText extends EditText {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.147 -0400", hash_original_field = "BB5B873D5AA4316358E44EE9F67CDC3B", hash_generated_field = "451A1E4BDED6910D4643671429CF353C")
@@ -213,7 +214,7 @@ public class ExtractEditText extends EditText {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.155 -0400", hash_original_method = "8821EFE99206E3F001E81A89F23C541D", hash_generated_method = "8E126FA49998E613390E2F1FCD233D1B")
     @Override
     protected void viewClicked(InputMethodManager imm) {
@@ -229,7 +230,7 @@ public class ExtractEditText extends EditText {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.163 -0400", hash_original_method = "5EFADD14D723A5DDC172F34D6074AA1D", hash_generated_method = "F9EE5538E6AA87AA47FAB5DED002BB54")
     @Override
     protected void deleteText_internal(int start, int end) {
@@ -241,7 +242,7 @@ public class ExtractEditText extends EditText {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.164 -0400", hash_original_method = "439F32381BAC49247AD70546B9BEE6A0", hash_generated_method = "4958D6B1F85A7A7F7A64D9FF2B4F22BD")
     @Override
     protected void replaceText_internal(int start, int end, CharSequence text) {
@@ -254,7 +255,7 @@ public class ExtractEditText extends EditText {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.171 -0400", hash_original_method = "68A0F27720FB577E88EB01CE64B3B91C", hash_generated_method = "0D2922EAA3A423972165667948D9887E")
     @Override
     protected void setSpan_internal(Object span, int start, int end, int flags) {
@@ -268,7 +269,7 @@ public class ExtractEditText extends EditText {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.176 -0400", hash_original_method = "4F35DEE60ED94EEB6924945BBEBAAE46", hash_generated_method = "CAC619E3074C7B011882CC12883765DA")
     @Override
     protected void setCursorPosition_internal(int start, int end) {

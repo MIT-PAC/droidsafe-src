@@ -1,7 +1,8 @@
 package org.apache.http.params;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public abstract class AbstractHttpParams implements HttpParams {
     

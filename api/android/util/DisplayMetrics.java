@@ -1,8 +1,9 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
 
 public class DisplayMetrics {
     public int widthPixels;
@@ -44,7 +45,7 @@ public class DisplayMetrics {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getDeviceDensity() {
         return 0;
     }

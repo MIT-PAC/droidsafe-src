@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.HostNameParser;
 import gov.nist.core.HostPort;
 import gov.nist.core.NameValue;
@@ -13,9 +14,9 @@ import gov.nist.javax.sip.address.TelephoneNumber;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class URLParser extends Parser {
     
@@ -188,6 +189,7 @@ String var9A78A74044906F8BA6AB50FB9A7D58A3_693650322 =         lexer.getBuffer()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.234 -0400", hash_original_method = "28DEAB6489C56D85C58F2548442629A5", hash_generated_method = "D7CA72A0241B168CF9B76F559DB866D3")
     private NameValue uriParam() throws ParseException {
         if(debug)        
@@ -671,6 +673,7 @@ GenericURI varF9E19AD6135C970F387F77C6F3DE4477_226862894 =         retval;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.359 -0400", hash_original_method = "FA28BF7ACB321CCE37D931F114A366BD", hash_generated_method = "8FEAE8ADBD99624C12132D9B8BEDADE9")
     private String base_phone_number() throws ParseException {
         StringBuffer s = new StringBuffer();
@@ -741,6 +744,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_1543142773 =             s.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.388 -0400", hash_original_method = "0C6D1452631B0ABABC52FCC37CE65FF7", hash_generated_method = "5D2CA8D546FA861DA6188BEBC70281BC")
     private String local_number() throws ParseException {
         StringBuffer s = new StringBuffer();
@@ -855,6 +859,7 @@ TelephoneNumber varC1D4D5C1C91533F312FAF0BF887574CF_740685850 =             tn;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.412 -0400", hash_original_method = "0F1ADEC60659CEA5C84BABEF7D06F081", hash_generated_method = "3619E6713742DB20411BBBD5E2118EBB")
     private final TelephoneNumber global_phone_number( boolean inBrackets ) throws ParseException {
         addTaint(inBrackets);
@@ -913,6 +918,7 @@ TelephoneNumber varC1D4D5C1C91533F312FAF0BF887574CF_1715288892 =             tn;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.414 -0400", hash_original_method = "883FF19CD75AFF340396001C616EFCAA", hash_generated_method = "545F1A43C9A44115D387793798FD50D2")
     private TelephoneNumber local_phone_number( boolean inBrackets ) throws ParseException {
         addTaint(inBrackets);
@@ -960,6 +966,7 @@ TelephoneNumber varC1D4D5C1C91533F312FAF0BF887574CF_818095830 =         tn;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.415 -0400", hash_original_method = "F5BCCE1D5E357F2A71ACB92ADA6046C2", hash_generated_method = "B4CE6267F3B60340E755BCA985D6F8AB")
     private NameValueList tel_parameters() throws ParseException {
         NameValueList nvList = new NameValueList();
@@ -1023,6 +1030,7 @@ NameValueList var6DFD9DB88C9F14F93E00B2BFA73F7706_2016449333 =                 n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.417 -0400", hash_original_method = "4B2DA37312785E9B10734C6846FECD1E", hash_generated_method = "2C2CB78E54004E893EEA03EE9526ED86")
     private NameValue phone_context() throws ParseException {
         lexer.match('=');

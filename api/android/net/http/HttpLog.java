@@ -1,10 +1,11 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.SystemClock;
 import android.util.Log;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class HttpLog {
     
@@ -15,11 +16,13 @@ class HttpLog {
     }
 
 
+    @DSModeled(DSC.BAN)
     static void v(String logMe) {
         Log.v(LOGTAG, SystemClock.uptimeMillis() + " " + Thread.currentThread().getName() + " " + logMe);
     }
 
     
+    @DSModeled(DSC.BAN)
     static void e(String logMe) {
         Log.e(LOGTAG, logMe);
     }

@@ -1,10 +1,11 @@
 package java.math;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 final class BigInt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.669 -0400", hash_original_field = "93F416957F94153A0658C38C2890FA30", hash_generated_field = "2E7F69903943700473696173A4E00017")
@@ -90,7 +91,7 @@ String varEE38A904DF70C757D780CC0689FFC426_1453104462 =         this.decString()
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void Check(boolean success) {
         if (!success) {
             StringBuilder sb = new StringBuilder("(openssl)ERR: ");
@@ -101,6 +102,7 @@ String varEE38A904DF70C757D780CC0689FFC426_1453104462 =         this.decString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.672 -0400", hash_original_method = "271E8D5D7DE583053F26E9ECE2A9ACB3", hash_generated_method = "6590B780BDA809903AB57FA813FAD850")
     private void makeValid() {
         if(this.bignum == 0)        
@@ -116,6 +118,7 @@ String varEE38A904DF70C757D780CC0689FFC426_1453104462 =         this.decString()
     }
 
     
+    @DSModeled(DSC.BAN)
     private static BigInt newBigInt() {
         BigInt bi = new BigInt();
         bi.bignum = NativeBN.BN_new();
@@ -177,7 +180,7 @@ BigInt var87B0A797C42126F3585C9636042C24CE_2137102410 =         bi;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.674 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "21F976EDF30C167A6426C42ADD3956DE")
     private NumberFormatException invalidBigInteger(String s) {
         addTaint(s.getTaint());
@@ -292,6 +295,7 @@ String varF5914D263E7A63078B23C8BE55D5C92B_1514872935 =         nonAscii ? toAsc
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String toAscii(String s, int base) {
         int length = s.length();
         StringBuilder result = new StringBuilder(length);

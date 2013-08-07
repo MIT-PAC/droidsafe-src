@@ -1,8 +1,9 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.view.menu.MenuPopupHelper;
@@ -52,6 +53,7 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.346 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "7B534D787BDA7218D4776D2172ED96A7")
     public Menu getMenu() {
 Menu var10D851031FD6BA7C53B0186C7F1D9213_1122954786 =         mMenu;
@@ -97,6 +99,7 @@ MenuInflater var25503C1986659659AE31638A329E040B_451162616 =         new MenuInf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.371 -0400", hash_original_method = "28F3665ED7463B0146351549FFC48231", hash_generated_method = "9F6DA51E9D0BCDB48D44E9DCC692FF64")
     public void setOnMenuItemClickListener(OnMenuItemClickListener listener) {
         mMenuItemClickListener = listener;
@@ -105,6 +108,7 @@ MenuInflater var25503C1986659659AE31638A329E040B_451162616 =         new MenuInf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.378 -0400", hash_original_method = "C95583275768EA3036A4E9EDA3D06AF7", hash_generated_method = "264730297F2947921933CD4642D9E756")
     public void setOnDismissListener(OnDismissListener listener) {
         mDismissListener = listener;
@@ -181,6 +185,7 @@ MenuInflater var25503C1986659659AE31638A329E040B_451162616 =         new MenuInf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.406 -0400", hash_original_method = "6B692B27380EC4C10CDFFF60DC2D0482", hash_generated_method = "2074465CD9A30183B1E5202C403E062E")
     public void onCloseSubMenu(SubMenuBuilder menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -189,6 +194,7 @@ MenuInflater var25503C1986659659AE31638A329E040B_451162616 =         new MenuInf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.413 -0400", hash_original_method = "BD3281B75359F57929C0B7D8E3BC0065", hash_generated_method = "00C3370B4338E9D0BE3E67D205B0AEAE")
     public void onMenuModeChange(MenuBuilder menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected

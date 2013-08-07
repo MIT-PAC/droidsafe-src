@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,10 +51,10 @@ import android.util.Log;
 
 import com.android.internal.http.HttpDateTime;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class AndroidHttpClient implements HttpClient {
@@ -68,6 +69,7 @@ public final class AndroidHttpClient implements HttpClient {
 
     private volatile LoggingConfiguration curlConfiguration;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.732 -0400", hash_original_method = "D8AE79D95EB274B9A84FF0181FB0726D", hash_generated_method = "F86CEFABA527356AD4922D07F2634D31")
     private  AndroidHttpClient(ClientConnectionManager ccm, HttpParams params) {
         this.delegate = new DefaultHttpClient(ccm, params) {        
@@ -382,6 +384,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(targe
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String toCurl(HttpUriRequest request, boolean logAuthToken) throws IOException {
         StringBuilder builder = new StringBuilder();
         builder.append("curl ");
@@ -432,6 +435,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(targe
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isBinaryContent(HttpUriRequest request) {
         Header[] headers;
         headers = request.getHeaders(Headers.CONTENT_ENCODING);
@@ -469,6 +473,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(targe
 
         private int level;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.735 -0400", hash_original_method = "7A9F95068D47CF60B894A5D5EE822200", hash_generated_method = "DDC2BDD6DC1614A04F536562C855C1CE")
         private  LoggingConfiguration(String tag, int level) {
             this.tag = tag;
@@ -479,6 +484,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(targe
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.735 -0400", hash_original_method = "B5444C1DC99A243E7A135E83B11C8EBC", hash_generated_method = "72930AEB86D8AE9248C5CB40F9575F98")
         private boolean isLoggable() {
             boolean varF6071C9114C968C92D018274AD7D4F3F_2040901877 = (Log.isLoggable(tag, level));
@@ -489,6 +495,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(targe
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.735 -0400", hash_original_method = "0A6EBDDF0EE93BAA660A9D5D941C1EF5", hash_generated_method = "E742801E4D5E3C30B65E57B6B062ECF0")
         private void println(String message) {
             addTaint(message.getTaint());

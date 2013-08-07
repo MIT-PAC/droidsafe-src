@@ -1,6 +1,7 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -16,10 +17,10 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 import libcore.icu.NativeConverter;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Charset implements Comparable<Charset> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.415 -0400", hash_original_field = "3FD37E7C1754DA8004AB09E17AD51B85", hash_generated_field = "4394C126BF71D5F3C3D84B833D0FB596")
@@ -56,6 +57,7 @@ for(String alias : aliases)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void checkCharsetName(String name) {
         if (name.isEmpty()) {
             throw new IllegalCharsetNameException(name);
@@ -69,7 +71,7 @@ for(String alias : aliases)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isValidCharsetNameCharacter(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
                 c == '-' || c == '.' || c == ':' || c == '_';
@@ -95,6 +97,7 @@ for(String alias : aliases)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Charset cacheCharset(String charsetName, Charset cs) {
         synchronized (CACHED_CHARSETS) {
             String canonicalName = cs.name();
@@ -138,6 +141,7 @@ for(String alias : aliases)
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Charset forNameUEE(String charsetName) throws UnsupportedEncodingException {
         try {
             return Charset.forName(charsetName);
@@ -367,6 +371,7 @@ String varAE5877D4DAD502DC1B608A0F13648963_1971865224 =         getClass().getNa
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Charset getDefaultCharset() {
         String encoding = System.getProperty("file.encoding", "UTF-8");
         try {

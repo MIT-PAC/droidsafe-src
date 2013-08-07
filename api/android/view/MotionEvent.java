@@ -1,14 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Matrix;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.SparseArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class MotionEvent extends InputEvent implements Parcelable {
@@ -25,14 +26,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
 
     private boolean mRecycled;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.752 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
     private  MotionEvent() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
         if (gSharedTempPointerCoords == null
                 || gSharedTempPointerCoords.length < desiredCapacity) {
@@ -296,7 +297,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private MotionEvent obtain() {
         final MotionEvent ev;
         synchronized (gRecyclerLock) {
@@ -416,7 +417,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.764 -0400", hash_original_method = "78DE11FBBF58608981D1F74EEB443B54", hash_generated_method = "9527F964637F3EFC3AB37597B1B98663")
     @Override
     public MotionEvent copy() {
@@ -482,7 +483,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.764 -0400", hash_original_method = "A082C8E505553F853E56AAFC11CF0CDA", hash_generated_method = "7607C4622D338DF7A6F483ECCB464AFD")
     public final void scale(float scale) {
         addTaint(scale);
@@ -562,7 +563,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "3A9CDEA51D903248E7ACBBA8C3F57155", hash_generated_method = "29FE3AF9DF4DC4A53809421B23F6D675")
     public final boolean isTouchEvent() {
         boolean varDFE61C24DD01208F966A163BDD38A4CD_763986490 = (nativeIsTouchEvent(mNativePtr));
@@ -584,7 +585,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "24A8A0C0077001C335E0B5C917301FE4", hash_generated_method = "DE3C3D95A2490110A6039ABB70C2E54F")
     @Override
     public final boolean isTainted() {
@@ -598,7 +599,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "96C1138F844BE852B50B0529E539E061", hash_generated_method = "57EF329636FE9540DF3DC82261F2E901")
     @Override
     public final void setTainted(boolean tainted) {
@@ -622,7 +623,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "97B3432DE604A4A8C3339017F5056697", hash_generated_method = "204CBCF8A37B0B817930F4C634EFA42C")
     public final void setDownTime(long downTime) {
         addTaint(downTime);
@@ -643,7 +644,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "9EB1FC24DA069289850F91A3F8734D9A", hash_generated_method = "4F051836F91DBB2A1A68CA60F07F3BDE")
     public final long getEventTimeNano() {
         long varB79ED88242A7E101FD2975DEAA6D4999_1187871124 = (nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT));
@@ -1433,7 +1434,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.778 -0400", hash_original_method = "542474DD15BDDADB068A65C6A3EEA8E2", hash_generated_method = "9FC0BA1A8E705CC83EBC4C1D62C0A07C")
     public final boolean isWithinBoundsNoHistory(float left, float top,
             float right, float bottom) {
@@ -1469,7 +1470,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final float clamp(float value, float low, float high) {
         if (value < low) {
             return low;
@@ -1480,7 +1481,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.780 -0400", hash_original_method = "C00E6E79D43678980DA0F4144A65F6A2", hash_generated_method = "12FB9FC8A1DED9DF8DAC7AFA2261E87E")
     public final MotionEvent clampNoHistory(float left, float top, float right, float bottom) {
         addTaint(bottom);
@@ -1520,7 +1521,7 @@ MotionEvent var589F943EB1E905D6F47E9BDE80F73551_1327258170 =             ev;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.781 -0400", hash_original_method = "FBF170B15B2FFBEE1AB1D4E32A8773CA", hash_generated_method = "92B748DD5FDCA9FDF54DE391F46E363B")
     public final int getPointerIdBits() {
         int idBits = 0;
@@ -1542,7 +1543,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.783 -0400", hash_original_method = "4F0FF8B26009CA9D26EE500AEFE507EC", hash_generated_method = "C69B9F3F9BDD6610297F374D69A3C0AF")
     public final MotionEvent split(int idBits) {
         addTaint(idBits);
@@ -1674,7 +1675,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1220090895 =         msg.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String actionToString(int action) {
         switch (action) {
             case ACTION_DOWN:
@@ -1734,7 +1735,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1220090895 =         msg.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String buttonStateToString(int buttonState) {
         if (buttonState == 0) {
             return "0";
@@ -1762,14 +1763,14 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1220090895 =         msg.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String toolTypeToString(int toolType) {
         String symbolicName = TOOL_TYPE_SYMBOLIC_NAMES.get(toolType);
         return symbolicName != null ? symbolicName : Integer.toString(toolType);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static MotionEvent createFromParcelBody(Parcel in) {
         MotionEvent ev = obtain();
         ev.mNativePtr = nativeReadFromParcel(ev.mNativePtr, in);

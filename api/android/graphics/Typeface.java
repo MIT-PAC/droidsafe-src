@@ -1,13 +1,14 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 
 import android.content.res.AssetManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Typeface {
@@ -15,7 +16,7 @@ public class Typeface {
 
     int native_instance;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.202 -0400", hash_original_method = "A1E0C89A80599EF6E13C90B8B8945AA4", hash_generated_method = "A11C4C141B825233B826624D242E9E37")
     private  Typeface(int ni) {
         if(0 == ni)        

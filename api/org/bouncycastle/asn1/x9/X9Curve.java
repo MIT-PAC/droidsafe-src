@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.x9;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -14,10 +15,10 @@ import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.math.ec.ECCurve;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.313 -0400", hash_original_field = "4EFA264F5EF3E1A5C95736E07544EBF0", hash_generated_field = "D4FD3D236F6822F3201F264EA949068E")
@@ -111,7 +112,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.319 -0400", hash_original_method = "D736F484B6800931FE72576618335766", hash_generated_method = "F8A7AB9086DF75A7F57A1062C254A824")
     private void setFieldIdentifier() {
         if(curve instanceof ECCurve.Fp)        

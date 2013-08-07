@@ -1,6 +1,7 @@
 package org.bouncycastle.crypto.generators;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.Mac;
 import org.bouncycastle.crypto.PBEParametersGenerator;
@@ -9,10 +10,10 @@ import org.bouncycastle.crypto.macs.HMac;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.params.ParametersWithIV;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.006 -0400", hash_original_field = "60CC4A7350BD40026A718609258D4E10", hash_generated_field = "46DC2FCCD8C543ECEF82F3A223B0B31A")
@@ -25,6 +26,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.008 -0400", hash_original_method = "5838C1952069FB825926D87DA007F2C4", hash_generated_method = "FED6B575AC0D11874D5E85C0DE1F6547")
     private void F(
         byte[]  P,
@@ -93,7 +95,7 @@ for(int j = 0;j != state.length;j++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.009 -0400", hash_original_method = "D84C49C513A1760CAD87960E0D89CE0E", hash_generated_method = "E2A65E3E9FB0C770A72FEFD274A338E4")
     private void intToOctet(
         byte[]  buf,
@@ -112,6 +114,7 @@ for(int j = 0;j != state.length;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.011 -0400", hash_original_method = "9180E4FA1A99F957676BE4B76909E69A", hash_generated_method = "FA5CFAEF318CF4615873A68FD8026178")
     private byte[] generateDerivedKey(
         int dkLen) {

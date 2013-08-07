@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -13,10 +14,10 @@ import java.util.Locale;
 
 import libcore.icu.LocaleData;
 import libcore.icu.NativeDecimalFormat;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DecimalFormat extends NumberFormat {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.090 -0400", hash_original_field = "5503577415FC1D8D6B3818212A1745BC", hash_generated_field = "52EBB9EA358F4A29D5EE09E100128428")
@@ -99,7 +100,7 @@ public class DecimalFormat extends NumberFormat {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.092 -0400", hash_original_method = "701B7114CA5711EBC62D39124CAE5412", hash_generated_method = "CCEC8A6B8BFE4C5B294879A66E21B6D3")
     private void initNative(String pattern) {
         try 
@@ -224,7 +225,7 @@ AttributedCharacterIterator var1C8F08569E748D494B38E4E81FDA61BE_2001920330 =    
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.095 -0400", hash_original_method = "FBA2DE4CAF4AAEBE0D141C6C51AFFE4A", hash_generated_method = "0F2E7D6B461187D00FB0B92CB73CB7E5")
     private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition position) {
         addTaint(position.getTaint());
@@ -781,7 +782,7 @@ String varDFC74F53FA2B8E3B85B1E9D7EEF183F2_1453619505 =         dform.toPattern(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.104 -0400", hash_original_method = "5BC6394F5F5C73D6097502885E125B6B", hash_generated_method = "F8FDEE228FEEE7060EAECC3138F40B55")
     private void writeObject(ObjectOutputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());
@@ -814,7 +815,7 @@ String varDFC74F53FA2B8E3B85B1E9D7EEF183F2_1453619505 =         dform.toPattern(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.104 -0400", hash_original_method = "779EB6B3B1C2B5888DC5BF2D6BFB0D9C", hash_generated_method = "3D1EE7B944A1E1ED08D42D153B8324FB")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

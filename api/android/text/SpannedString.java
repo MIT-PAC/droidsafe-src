@@ -1,9 +1,10 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 public final class SpannedString extends SpannableStringInternal implements CharSequence, GetChars, Spanned {
     
@@ -16,7 +17,7 @@ public final class SpannedString extends SpannableStringInternal implements Char
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.509 -0400", hash_original_method = "E05868F8FE8E68E6279EDAD3C69CD063", hash_generated_method = "CA2C1B740D91BC45FA9416DCEDCDA186")
     private  SpannedString(CharSequence source, int start, int end) {
         super(source, start, end);

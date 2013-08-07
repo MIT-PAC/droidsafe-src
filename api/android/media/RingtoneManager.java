@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +20,10 @@ import android.util.Log;
 
 import com.android.internal.database.SortCursor;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RingtoneManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.124 -0400", hash_original_field = "C145D87741EB407D6B1FF715AD484119", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")
@@ -242,7 +243,7 @@ Uri var2A644E3E4254A7B4229AC3F3F0E82486_859401017 =         getUriFromCursor(cur
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Uri getUriFromCursor(Cursor cursor) {
         return ContentUris.withAppendedId(Uri.parse(cursor.getString(URI_COLUMN_INDEX)), cursor
                 .getLong(ID_COLUMN_INDEX));
@@ -308,7 +309,7 @@ for(int i = 0;i < cursorCount;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Uri getValidRingtoneUriFromCursorAndClose(Context context, Cursor cursor) {
         if (cursor != null) {
             Uri uri = null;
@@ -323,6 +324,7 @@ for(int i = 0;i < cursorCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.136 -0400", hash_original_method = "110261102C7F5AFCA1139D9C233B8EDA", hash_generated_method = "FD91F80208D4777232954CB4CBEEF440")
     private Cursor getInternalRingtones() {
 Cursor varD4117AB3E5F8CEF89663189BA800770F_1705425305 =         query(
@@ -339,6 +341,7 @@ Cursor varD4117AB3E5F8CEF89663189BA800770F_1705425305 =         query(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.136 -0400", hash_original_method = "39880916742952A44000639C81C1DE13", hash_generated_method = "5292F3059AA94B71E24783FF1DEF44B5")
     private Cursor getDrmRingtones() {
 Cursor var47CD44F0D9BC63FBCFE2300FDD4C6E5D_164776683 =         query(
@@ -353,6 +356,7 @@ Cursor var47CD44F0D9BC63FBCFE2300FDD4C6E5D_164776683 =         query(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.137 -0400", hash_original_method = "2B8B74EFBA4661DD0239B341E05A9848", hash_generated_method = "73655EBF1F9B1C16AC82836A6A424B1E")
     private Cursor getMediaRingtones() {
         final String status = Environment.getExternalStorageState();
@@ -377,6 +381,7 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1516967560 =         (status.equals(E
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.137 -0400", hash_original_method = "395BF736796D6FE27621FD0BAFF0C552", hash_generated_method = "D125AF7F13E9CF87215C4B3152A14638")
     private void setFilterColumnsList(int type) {
         addTaint(type);
@@ -409,6 +414,7 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1516967560 =         (status.equals(E
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String constructBooleanTrueWhereClause(List<String> columns, boolean includeDrm) {
         if (columns == null) return null;
         StringBuilder sb = new StringBuilder();
@@ -429,7 +435,7 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1516967560 =         (status.equals(E
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.139 -0400", hash_original_method = "4C1ED3200DB68E8363398CACE6114D33", hash_generated_method = "FFFC14B61F0AB83ED4245BF932319070")
     private Cursor query(Uri uri,
             String[] projection,
@@ -502,7 +508,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_842273843 =             mContext.getC
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String getSettingForType(int type) {
         if ((type & TYPE_RINGTONE) != 0) {
             return Settings.System.RINGTONE;

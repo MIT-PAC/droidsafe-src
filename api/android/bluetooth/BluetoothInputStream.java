@@ -1,20 +1,21 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class BluetoothInputStream extends InputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.542 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
 
     private BluetoothSocket mSocket;
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.543 -0400", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "51DD95F90510A057FC33A562FC393929")
       BluetoothInputStream(BluetoothSocket s) {
         mSocket = s;
@@ -23,6 +24,7 @@ final class BluetoothInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.544 -0400", hash_original_method = "F8D5D10C5F2F8FB1DCC0A3044A3235C3", hash_generated_method = "3BA9A6A09AECF38338432FAD247DC680")
     public int available() throws IOException {
         int varEDE8435F226749B7C408708AD6C4DD12_381519550 = (mSocket.available());
@@ -33,6 +35,7 @@ final class BluetoothInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.545 -0400", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "FD4CC8D718C262BFF2A44C717A5A00BB")
     public void close() throws IOException {
         mSocket.close();
@@ -41,6 +44,7 @@ final class BluetoothInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.546 -0400", hash_original_method = "2059D974D6DFEDC9A8B8553096188222", hash_generated_method = "D0A545C552BF89965D6F9E4C791B8681")
     public int read() throws IOException {
         byte b[] = new byte[1];
@@ -68,7 +72,7 @@ final class BluetoothInputStream extends InputStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.549 -0400", hash_original_method = "20F62B1F3CA63F6FE3BCEE9660F3F09F", hash_generated_method = "46E7C3EA611BB7EC9176F845509BABF3")
     public int read(byte[] b, int offset, int length) throws IOException {
         addTaint(length);

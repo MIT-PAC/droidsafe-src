@@ -1,14 +1,15 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ASN1Sequence extends ASN1Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.775 -0400", hash_original_field = "393195A079C882476F3D5AA22C5A8674", hash_generated_field = "1C6134BBF67C6927627E9694230C698B")
@@ -275,7 +276,7 @@ DEREncodable varD80E22438A65327AC831683B7CA408E3_1763743089 =         (DEREncoda
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.782 -0400", hash_original_method = "A69C6C665FC9D3DE250A324544079C85", hash_generated_method = "79431ED0D7572E0FB0F87F072A0F4A05")
     private DEREncodable getNext(Enumeration e) {
         addTaint(e.getTaint());

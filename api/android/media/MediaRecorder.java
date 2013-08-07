@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,10 +12,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.view.Surface;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MediaRecorder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.749 -0400", hash_original_field = "20E813A614226843849BF2E571A8EBCA", hash_generated_field = "4FF8A42CAE4591AC91206314B4192EA4")
@@ -478,6 +479,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void postEventFromNative(Object mediarecorder_ref,
                                             int what, int arg1, int arg2, Object obj) {
         MediaRecorder mr = (MediaRecorder)((WeakReference)mediarecorder_ref).get();

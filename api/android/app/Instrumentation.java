@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +28,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.Window;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Instrumentation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.423 -0400", hash_original_field = "99CA2AB98020F687D6F8CAD3BC28A985", hash_generated_field = "E2A875EF987A77EEC850F20D740B8615")
@@ -1091,6 +1092,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.465 -0400", hash_original_method = "8051F011270999D9228A08818EFD61DD", hash_generated_method = "8868714604E8DB7AB8E2D72B050A5A11")
     private void addValue(String key, int value, Bundle results) {
         addTaint(results.getTaint());
@@ -1162,7 +1164,7 @@ Bundle var238ECCC9872FFCA0B3C3DB83598FF044_1799286533 =         results;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.467 -0400", hash_original_method = "2C6BFD417D58A73C3437D9BD22014CB6", hash_generated_method = "422777C674C13CD6D37FB4F9CAB08A39")
     public ActivityResult execStartActivity(
             Context who, IBinder contextThread, IBinder token, Activity target,
@@ -1266,7 +1268,7 @@ for(int i=0;i<intents.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.469 -0400", hash_original_method = "D8D9B46CC68EC6EB44E02EECB84F8BB9", hash_generated_method = "0505686E89308CC1C3F53E0FF3AABA7F")
     public ActivityResult execStartActivity(
         Context who, IBinder contextThread, IBinder token, Fragment target,
@@ -1371,6 +1373,7 @@ ActivityResult var540C13E9E156B687226421B24F2DF178_1080214768 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.470 -0400", hash_original_method = "F94F35385602BE8879B41CCA4D6F8D26", hash_generated_method = "A0B4784E501661ABF0CC76BB2A06244A")
     private final void validateNotAppThread() {
         if(ActivityThread.currentActivityThread() != null)        
@@ -1723,6 +1726,7 @@ Intent var7AF81C367EA4623980C8741236739982_1283047780 =             mResultData;
     
     private static final class EmptyRunnable implements Runnable {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.475 -0400", hash_original_method = "9351A801773C8F1D9056187EA700F8B4", hash_generated_method = "9351A801773C8F1D9056187EA700F8B4")
         public EmptyRunnable ()
         {

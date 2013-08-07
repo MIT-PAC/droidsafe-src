@@ -1,10 +1,11 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class ByteOrder {
@@ -15,6 +16,7 @@ public final class ByteOrder {
 
     public boolean needsSwap;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.284 -0400", hash_original_method = "B317EBC8D5650E5C34B265838B9D3EC5", hash_generated_method = "23C748F854E4D36213A9E09C7B4EA27E")
     private  ByteOrder(String name, boolean needsSwap) {
         this.name = name;

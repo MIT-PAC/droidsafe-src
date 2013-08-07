@@ -1,6 +1,7 @@
 package javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface SipListener {
     void processDialogTerminated(DialogTerminatedEvent dialogTerminatedEvent);

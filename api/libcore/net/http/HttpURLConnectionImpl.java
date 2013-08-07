@@ -1,6 +1,7 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,10 +22,10 @@ import java.util.List;
 import java.util.Map;
 
 import libcore.io.Base64;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class HttpURLConnectionImpl extends HttpURLConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.565 -0400", hash_original_field = "AD9869ADBCCEEFF5A73F8163B0777153", hash_generated_field = "FC0F8278C90053902D318AF538EA40AF")
@@ -360,6 +361,7 @@ Permission var9D7DA8812B4FFEFF8AF26BF4EBD67933_928262976 =         new SocketPer
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.574 -0400", hash_original_method = "B5D2FEB67E0E8EA367DFCE05C581AB69", hash_generated_method = "BD889BA66F5ADFFB083D65DE7435E3F5")
     private String getConnectToHost() {
 String varD98A48BB4EDCF32A414442F1174BE9A0_1904973355 =         usingProxy()
@@ -374,6 +376,7 @@ String varD98A48BB4EDCF32A414442F1174BE9A0_1904973355 =         usingProxy()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.574 -0400", hash_original_method = "D34A028DDA4370B463B41421A37DF230", hash_generated_method = "75C7DB79EA64E45052D22C9F86352BE1")
     private int getConnectToPort() {
         int hostPort = usingProxy()
@@ -411,6 +414,7 @@ String varCFA12E4FF31F6BDF669A47CB12D4A809_275751690 =         rawRequestHeaders
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.575 -0400", hash_original_method = "D46D1C92B88A5C8C0BC8F8E633D4D9BD", hash_generated_method = "1353B4695205FF314F273ABBEE9E5BA7")
     private void initHttpEngine() throws IOException {
         if(httpEngineFailure != null)        
@@ -486,6 +490,7 @@ HttpEngine var83FEA069440C6425B9B7BD852FCB896D_133216922 =         new HttpEngin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.577 -0400", hash_original_method = "DF359A1395A825950E7AA2723E1FBB6D", hash_generated_method = "8D068A2F7EE8CEB0AFF992E3C4455C9E")
     private HttpEngine getResponse() throws IOException {
         initHttpEngine();
@@ -558,6 +563,7 @@ HttpEngine varAA56CD70F706D25D7750C40296FAF5EA_158256195 =         httpEngine;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.578 -0400", hash_original_method = "CCC24799A0A4E36EF41D9DC91181B3F5", hash_generated_method = "E6DBD9C4F243B3BBC80FBE72BA5B9951")
     private Retry processResponseHeaders() throws IOException {
 switch(getResponseCode()){
@@ -686,6 +692,7 @@ Retry var261310BD8E5C3519A25312A7E432722D_1155042667 =         Retry.NONE;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.579 -0400", hash_original_method = "3D7D8508CEE0817C42F7A7AE8F461D7F", hash_generated_method = "3F97A12C66289FC5B8998C3C72D5B78E")
     private String getAuthorizationCredentials(String challenge) throws IOException {
         addTaint(challenge.getTaint());
@@ -726,6 +733,7 @@ String var33A5D8597EF845A2988B8D284418CA88_1509680793 =         scheme + " " + e
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.579 -0400", hash_original_method = "1B9895D1709534856DAC9B7A8958AAC2", hash_generated_method = "F18DFBD3DD8302102E1A042C42683072")
     private InetAddress getConnectToInetAddress() throws IOException {
 InetAddress varD46BBB19BBDDFD810185B2CBF9A3750A_1196579454 =         usingProxy()

@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -8,10 +9,10 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.341 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "19DEB795009FCB78D63A1C2C298CE954")
@@ -131,7 +132,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.347 -0400", hash_original_method = "6631235722E4D3190E3529D2039DDD7A", hash_generated_method = "FE36B163F86E1A97E198B18AF38E1841")
     private void constructorPutAll(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());
@@ -146,7 +147,7 @@ for(Entry<? extends K, ? extends V> e : map.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int capacityForInitSize(int size) {
         int result = (size >> 1) + size;
         return (result & ~(MAXIMUM_CAPACITY-1))==0 ? result : MAXIMUM_CAPACITY;
@@ -473,7 +474,7 @@ for(Entry<? extends K, ? extends V> e : map.entrySet())
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.359 -0400", hash_original_method = "5BCC94324BA2D5ECBED6314BEA7D0FA8", hash_generated_method = "B5A6383892470F6E1DB0E8EDE51B1B1C")
     private void ensureCapacity(int numMappings) {
         addTaint(numMappings);
@@ -719,7 +720,7 @@ Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new Value
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.369 -0400", hash_original_method = "CF57466F07C2DB8AF5EFB522D22E3680", hash_generated_method = "871E41CFD4777EF0B724B8C5351615A3")
     private synchronized boolean containsMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -752,7 +753,7 @@ for(HashtableEntry<K, V> e = tab[index];e != null;e = e.next)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.371 -0400", hash_original_method = "A191738781408606E816E9A37080097D", hash_generated_method = "D8F6E8E7E7FD3058625E314BE1505141")
     private synchronized boolean removeMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -908,14 +909,14 @@ String varE65B3A02759122992CB82C0E651AD408_1054590055 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int secondaryHash(int h) {
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int roundUpToPowerOfTwo(int i) {
         i--;
         i |= i >>>  1;
@@ -927,7 +928,7 @@ String varE65B3A02759122992CB82C0E651AD408_1054590055 =         result.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.376 -0400", hash_original_method = "19818AA4E6F1DBA67EBB75B368743917", hash_generated_method = "3F395FD92DFBACFB0EEEE0858BA58751")
     private synchronized void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -956,7 +957,7 @@ for(Entry<K, V> e : entrySet())
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.377 -0400", hash_original_method = "2EADB0DA3622DE13512805CD17FDFE7A", hash_generated_method = "399A5670241C83FF7B5FD9415EAD81BB")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

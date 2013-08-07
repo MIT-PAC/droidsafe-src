@@ -1,6 +1,7 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,10 +21,10 @@ import android.os.SystemProperties;
 import android.util.Log;
 import dalvik.system.profiler.BinaryHprofWriter;
 import dalvik.system.profiler.SamplingProfiler;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SamplingProfilerIntegration {
     
@@ -89,6 +90,7 @@ public class SamplingProfilerIntegration {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void writeSnapshotFile(String processName, PackageInfo packageInfo) {
         if (!enabled) {
             return;
@@ -119,6 +121,7 @@ public class SamplingProfilerIntegration {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void generateSnapshotHeader(String processName, PackageInfo packageInfo,
             PrintStream out) {
         out.println("Version: 3");

@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -30,10 +31,10 @@ import com.android.internal.telephony.WspTypeDecoder;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 import com.android.internal.telephony.cdma.sms.UserData;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class CdmaSMSDispatcher extends SMSDispatcher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.963 -0400", hash_original_field = "99435B34EC210BD6AB4CF145BA066DD0", hash_generated_field = "32AEC3A3AE4EA72117A81D9C026D630A")
@@ -81,7 +82,7 @@ String var7E8ED78256EA5640D81A12BE6B09A2A1_1605250742 =         android.telephon
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.964 -0400", hash_original_method = "D8F9BF94E3CE828F06F15D06BD41575B", hash_generated_method = "03DD0AE38F414E7F49E6FBB331A7B67E")
     private void handleCdmaStatusReport(SmsMessage sms) {
         addTaint(sms.getTaint());
@@ -465,7 +466,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_1065058420 =         Sms
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int resultToCause(int rc) {
         switch (rc) {
         case Activity.RESULT_OK:
@@ -482,7 +483,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_1065058420 =         Sms
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index) {
         index += 4;
         byte[] omaPdu = new byte[origPdu.length - index];

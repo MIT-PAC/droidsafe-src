@@ -1,6 +1,7 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,10 +9,10 @@ import java.util.Map;
 
 import libcore.util.EmptyArray;
 import dalvik.system.VMStack;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Thread implements Runnable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.425 -0400", hash_original_field = "DFCB349389E84D15F92F0101BDA522EF", hash_generated_field = "AD2271ADED5B0642EAD7F6C10D7138A3")
@@ -729,7 +730,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.468 -0400", hash_original_method = "C18D87700F0558E88B776CB695EE515A", hash_generated_method = "1F4763FA66A84E8702113961AD92D106")
     public final void pushInterruptAction$(Runnable interruptAction) {
         addTaint(interruptAction.getTaint());
@@ -751,7 +752,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.468 -0400", hash_original_method = "134AC2DB3FFDAEE2D6D132954D878FFF", hash_generated_method = "A9B42C9D408152FD5A796DD53A3A73F4")
     public final void popInterruptAction$(Runnable interruptAction) {
         addTaint(interruptAction.getTaint());
@@ -1088,6 +1089,7 @@ switch(parkState){
     
     private static class ParkState {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.471 -0400", hash_original_method = "13ABD2C1475A75B421FFE7ADB6CF97D6", hash_generated_method = "13ABD2C1475A75B421FFE7ADB6CF97D6")
         public ParkState ()
         {

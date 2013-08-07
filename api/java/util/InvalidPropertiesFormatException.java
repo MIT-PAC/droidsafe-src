@@ -1,15 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.NotSerializableException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class InvalidPropertiesFormatException extends IOException {
     
@@ -32,7 +33,7 @@ public class InvalidPropertiesFormatException extends IOException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.536 -0400", hash_original_method = "D501A96831B009EDE0E99C982A162728", hash_generated_method = "6EBD3200C2B8D4C3FAFE47ED14DE4C83")
     private void writeObject(ObjectOutputStream out) throws NotSerializableException {
         addTaint(out.getTaint());
@@ -44,7 +45,7 @@ public class InvalidPropertiesFormatException extends IOException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.536 -0400", hash_original_method = "B2CAB4BC3D811DD242C577EA7CF7F980", hash_generated_method = "054882D28F3AC9041C470B8D243A686F")
     private void readObject(ObjectInputStream in) throws NotSerializableException {
         addTaint(in.getTaint());

@@ -1,11 +1,12 @@
 package org.apache.http.conn.params;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class ConnManagerParams implements ConnManagerPNames {
     

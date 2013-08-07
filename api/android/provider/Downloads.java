@@ -1,15 +1,17 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.DownloadManager;
 import android.net.Uri;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Downloads {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.290 -0400", hash_original_method = "9B4A677720B6322F28A15E895C99B092", hash_generated_method = "BCFC969F167E5171E2BDC38F7DDB8203")
     private  Downloads() {
         // ---------- Original Method ----------
@@ -18,6 +20,7 @@ public final class Downloads {
     
     public static final class Impl implements BaseColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.295 -0400", hash_original_method = "BBF0D9B1CF16C5FC7549DABF49EBEFE0", hash_generated_method = "3F538DB11C86ADB27843AD5963111DF7")
         private  Impl() {
             // ---------- Original Method ----------

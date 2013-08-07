@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
@@ -21,10 +22,10 @@ import javax.net.ssl.SSLException;
 import javax.security.auth.x500.X500Principal;
 
 import libcore.io.Memory;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class NativeCrypto {
@@ -158,7 +159,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static int X509_NAME_hash(X500Principal principal, String algorithm) {
         try {
             byte[] digest = MessageDigest.getInstance(algorithm).digest(principal.getEncoded());
@@ -169,7 +170,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void add(String standard, String openssl) {
         OPENSSL_TO_STANDARD_CIPHER_SUITES.put(openssl, standard);
         STANDARD_TO_OPENSSL_CIPHER_SUITES.put(standard, openssl);

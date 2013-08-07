@@ -1,13 +1,15 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class PackageInfoSources {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.787 -0400", hash_original_method = "20BC19A093C9C1A7F81C885B5938F700", hash_generated_method = "846EA8EA3F675CB9A6FF18093CBD0222")
     private  PackageInfoSources() {
         // ---------- Original Method ----------

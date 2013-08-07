@@ -1,6 +1,7 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.StringTokenizer;
 
 import org.apache.http.cookie.ClientCookie;
@@ -11,9 +12,9 @@ import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 import org.apache.http.cookie.SetCookie2;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     
@@ -44,7 +45,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean portMatch(int port, int[] ports) {
         boolean portInList = false;
         for (int i = 0, len = ports.length; i < len; i++) {

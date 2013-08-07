@@ -1,6 +1,7 @@
 package javax.crypto;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.Key;
 
 public interface SecretKey extends Key {

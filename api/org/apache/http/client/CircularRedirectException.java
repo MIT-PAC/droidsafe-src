@@ -1,8 +1,9 @@
 package org.apache.http.client;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class CircularRedirectException extends RedirectException {
     

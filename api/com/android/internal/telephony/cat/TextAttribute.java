@@ -1,8 +1,9 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class TextAttribute {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.587 -0400", hash_original_field = "EA2B2676C28C0DB26D39331A336C6B92", hash_generated_field = "D3D73C9CC2FDA0D0E8781D6E9A3253AA")
@@ -33,6 +34,7 @@ public class TextAttribute {
 
     public TextColor color;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.592 -0400", hash_original_method = "4F5520D3BCCB9D14B21693AFF8505891", hash_generated_method = "A9D302A56AE6341504F2B5F68DC283FD")
     public  TextAttribute(int start, int length, TextAlignment align,
             FontSize size, boolean bold, boolean italic, boolean underlined,

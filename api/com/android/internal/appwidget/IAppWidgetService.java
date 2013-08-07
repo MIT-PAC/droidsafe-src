@@ -1,6 +1,7 @@
 package com.android.internal.appwidget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IAppWidgetService extends android.os.IInterface
 {

@@ -1,11 +1,12 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class MessageQueue {
     Message mMessages;

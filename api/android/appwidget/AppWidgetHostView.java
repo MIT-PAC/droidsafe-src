@@ -1,6 +1,7 @@
 package android.appwidget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -29,10 +30,10 @@ import android.widget.FrameLayout;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsAdapter.RemoteAdapterConnectionCallback;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AppWidgetHostView extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.681 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -172,6 +173,7 @@ AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1895509295 =         m
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.688 -0400", hash_original_method = "11D592545671EB0AE44582AC9EA105B8", hash_generated_method = "AE3E57A85B229620E751D681B89B3721")
     private int generateId() {
         final int id = getId();
@@ -374,6 +376,7 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_1492782215 =         new FrameL
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.695 -0400", hash_original_method = "D246979F206AF74202D8DE4F4ED2EC44", hash_generated_method = "E88BE7F59D9B290AD74DE45241E93C74")
     private Context getRemoteContext(RemoteViews views) {
         addTaint(views.getTaint());
@@ -559,6 +562,7 @@ View var8BB2C09B3FFE775E9F9FBFEC00A28511_959516455 =         tv;
     
     private static class ParcelableSparseArray extends SparseArray<Parcelable> implements Parcelable {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.704 -0400", hash_original_method = "545E9F4FFC3CA9F22ED723B298F0D3D0", hash_generated_method = "545E9F4FFC3CA9F22ED723B298F0D3D0")
         public ParcelableSparseArray ()
         {

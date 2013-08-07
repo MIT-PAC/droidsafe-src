@@ -1,6 +1,7 @@
 package android.net.wifi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IWifiManager extends android.os.IInterface
 {

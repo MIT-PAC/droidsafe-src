@@ -1,9 +1,10 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class Looper {
     final MessageQueue mQueue;
@@ -11,7 +12,7 @@ public class Looper {
     volatile boolean mRun;
     private Printer mLogging = null;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private Looper(){
         mQueue = new MessageQueue();
         mRun = true;
@@ -36,7 +37,7 @@ public class Looper {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private synchronized static void setMainLooper(Looper looper) {
         mMainLooper = looper;
     }
@@ -112,7 +113,7 @@ public class Looper {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public MessageQueue getQueue(){
         return mQueue;  //DSFIXME:  CODE0001: Unresolved return type/value combination
     }

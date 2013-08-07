@@ -1,8 +1,9 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class ProtocolException extends java.io.IOException {
     
@@ -20,6 +21,7 @@ public class ProtocolException extends java.io.IOException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.298 -0400", hash_original_method = "8A280093AAE5F90F3CD44950672A326E", hash_generated_method = "52115333BC07E85567077F59E3C3E6E4")
     public  ProtocolException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

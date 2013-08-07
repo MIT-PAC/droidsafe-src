@@ -1,9 +1,10 @@
 package org.apache.harmony.luni.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Type;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class Types {
     

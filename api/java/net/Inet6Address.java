@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.AF_INET6;
 
 import java.io.IOException;
@@ -10,10 +11,10 @@ import java.io.ObjectStreamField;
 import java.util.Arrays;
 import java.util.Enumeration;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Inet6Address extends InetAddress {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.573 -0400", hash_original_field = "4053739BB83B56A1ED1EFBD07BF580A5", hash_generated_field = "540B1C4E03CB3F83CE53991B800AA5B4")
@@ -81,6 +82,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.576 -0400", hash_original_method = "5C85837CE4C7853B5C8DB05F5798B94D", hash_generated_method = "23EF5A1DB78C3C94EF88F22C72CD03E4")
     private boolean compareLocalType(Inet6Address ia) {
         addTaint(ia.getTaint());
@@ -296,6 +298,7 @@ NetworkInterface var540C13E9E156B687226421B24F2DF178_114362307 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.587 -0400", hash_original_method = "080327AC5673C5B50BEA99966675EA0A", hash_generated_method = "183CD4E1701B0FCE236E7B16111BB19B")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -328,6 +331,7 @@ NetworkInterface var540C13E9E156B687226421B24F2DF178_114362307 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.588 -0400", hash_original_method = "6B9730D7168B0E96ABCC55BBF7E32967", hash_generated_method = "68D3888C49FC9CBA826C41D110806B7B")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

@@ -1,11 +1,12 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ActionProvider {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.418 -0400", hash_original_field = "1D7EBD76CDEE89061E0336D81ED19A26", hash_generated_field = "B0B6D637F5D44582200E582C4D2D6000")
@@ -56,7 +57,7 @@ public abstract class ActionProvider {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.419 -0400", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "4965DF89D75A45720F4555BC74EC6B5D")
     public void subUiVisibilityChanged(boolean isVisible) {
         addTaint(isVisible);
@@ -71,7 +72,7 @@ public abstract class ActionProvider {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.419 -0400", hash_original_method = "D36B582FBFECE681E89AD6546A9F8E0B", hash_generated_method = "B1FA1AA5736D11F90BC907F84A60ABD9")
     public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
         mSubUiVisibilityListener = listener;

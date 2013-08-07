@@ -1,6 +1,7 @@
 package android.appwidget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.WeakHashMap;
@@ -17,10 +18,10 @@ import android.widget.RemoteViews;
 
 import com.android.internal.appwidget.IAppWidgetService;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AppWidgetManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.745 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -30,6 +31,7 @@ public class AppWidgetManager {
 
     private DisplayMetrics mDisplayMetrics;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.746 -0400", hash_original_method = "28C84B38FB30543E3D37A9D265756E51", hash_generated_method = "391E3BBAB453694FA7CFC5C70B85397B")
     private  AppWidgetManager(Context context) {
         mContext = context;
@@ -273,7 +275,7 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_1852149243 =          
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.761 -0400", hash_original_method = "9635C6DE1FB30445E1097958A10AD035", hash_generated_method = "A914BE8944297FF398351CE27E6E2809")
     public void bindRemoteViewsService(int appWidgetId, Intent intent, IBinder connection) {
         addTaint(connection.getTaint());
@@ -299,7 +301,7 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_1852149243 =          
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.762 -0400", hash_original_method = "2B1B0C7D3E264A2CA6F28D675EB000CD", hash_generated_method = "40F6B4E07D0CB094A04238791CBA04C9")
     public void unbindRemoteViewsService(int appWidgetId, Intent intent) {
         addTaint(intent.getTaint());

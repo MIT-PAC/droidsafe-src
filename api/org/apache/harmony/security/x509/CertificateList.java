@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.harmony.security.asn1.ASN1BitString;
 import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
@@ -8,10 +9,10 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.utils.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class CertificateList {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.930 -0400", hash_original_field = "434A8DAF2056B5C3BDA6E59178AA316C", hash_generated_field = "77B3A284D6DF0EF4A47E1206333ED0FE")
@@ -46,7 +47,7 @@ public final class CertificateList {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.931 -0400", hash_original_method = "296A8B306ED3B280093A8F830EEE1E41", hash_generated_method = "17F3BE8A0536D3DD761284DABCBA7EF4")
     private  CertificateList(TBSCertList tbsCertList,
                        AlgorithmIdentifier signatureAlgorithm,

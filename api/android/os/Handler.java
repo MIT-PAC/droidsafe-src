@@ -1,11 +1,12 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.968 -0400", hash_original_field = "2D043F2822EC0D4E2690BDFE63EDDFCA", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
@@ -491,7 +492,7 @@ public class Handler {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	private final Message getPostMessage(Runnable r) {
         Message m = new Message();
         m.callback = r;
@@ -499,6 +500,7 @@ public class Handler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.985 -0400", hash_original_method = "001850E10F072AF670657F2F37A16A9C", hash_generated_method = "7675AE7E8DC5A859ADCFF3C6CDF65515")
     private final Message getPostMessage(Runnable r, Object token) {
         addTaint(token.getTaint());
@@ -517,6 +519,7 @@ Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_282552721 =         m;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.985 -0400", hash_original_method = "6CA31B63D4772009E291A8EEE8116A2F", hash_generated_method = "4F5BF0AD5154E4E243D5141532570008")
     private final void handleCallback(Message message) {
         addTaint(message.getTaint());

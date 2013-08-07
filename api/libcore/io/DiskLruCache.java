@@ -1,6 +1,7 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.Closeable;
@@ -29,10 +30,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class DiskLruCache implements Closeable {
@@ -123,6 +124,7 @@ public final class DiskLruCache implements Closeable {
         
 };
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.119 -0400", hash_original_method = "F7C5B739E468E97586605C521F3C2B42", hash_generated_method = "72D38F4B2DCD8001D35CBA47221BB3AF")
     private  DiskLruCache(File directory, int appVersion, int valueCount, long maxSize) {
         this.directory = directory;
@@ -168,6 +170,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.120 -0400", hash_original_method = "D80881F7E6F2A63F9AF02A98171F075C", hash_generated_method = "6ACED7D538ACA2E9CC18E83658E9CA99")
     private void readJournal() throws IOException {
         InputStream in = new BufferedInputStream(new FileInputStream(journalFile));
@@ -211,6 +214,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.121 -0400", hash_original_method = "B93033832384BE0A8F735535A303EB51", hash_generated_method = "A16073A35CB5D7C41F36C5F959E27A66")
     private void readJournalLine(String line) throws IOException {
         addTaint(line.getTaint());
@@ -259,6 +263,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.122 -0400", hash_original_method = "BF29FD79336E7D0F2752A5C16F704FCA", hash_generated_method = "406736370DCD549C6608698821B70623")
     private void processJournal() throws IOException {
         deleteIfExists(journalFileTmp);
@@ -303,6 +308,7 @@ for(int t = 0;t < valueCount;t++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.123 -0400", hash_original_method = "CAFF8A7D35D4FC2C6D20C8D2E31B18B9", hash_generated_method = "B9C5FE85B5B7C2C1B3BA383723B89C20")
     private synchronized void rebuildJournal() throws IOException {
         if(journalWriter != null)        
@@ -338,6 +344,7 @@ for(Entry entry : lruEntries.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void deleteIfExists(File file) throws IOException {
         try {
             Libcore.os.remove(file.getPath());
@@ -493,6 +500,7 @@ File varC39D8F3C6A92AA6D50DA32871B590FE5_1151946875 =         directory;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.127 -0400", hash_original_method = "E3B5F5B6DB82C9D68E2AD58524FD46D2", hash_generated_method = "A54FB696560B72B8131E9B6721B15E86")
     private synchronized void completeEdit(Editor editor, boolean success) throws IOException {
         addTaint(success);
@@ -558,6 +566,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.128 -0400", hash_original_method = "BD0CD0940E277CB89BD11D972CAF1EC0", hash_generated_method = "7AF9C2C5DFB6F21C3660A5FAA400910C")
     private boolean journalRebuildRequired() {
         final int REDUNDANT_OP_COMPACT_THRESHOLD = 2000;
@@ -642,6 +651,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.130 -0400", hash_original_method = "8ED19EB33A6AB2822DDF1831EB4A2E5C", hash_generated_method = "9D1085ED3074E14EF36377742E37F68E")
     private void checkNotClosed() {
         if(journalWriter == null)        
@@ -700,6 +710,7 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.130 -0400", hash_original_method = "52FB98FFFDCED62623018A96063CC5F4", hash_generated_method = "A2A58E9D063E53AD305845CB909F34E7")
     private void trimToSize() throws IOException {
         while
@@ -726,6 +737,7 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.131 -0400", hash_original_method = "A6AB05B3A3783BAC84CED8DCEEB398D1", hash_generated_method = "58087C611631064837E6C57FEDEDA6C1")
     private void validateKey(String key) {
         addTaint(key.getTaint());
@@ -744,6 +756,7 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String inputStreamToString(InputStream in) throws IOException {
         return Streams.readFully(new InputStreamReader(in, Charsets.UTF_8));
     }
@@ -1090,6 +1103,7 @@ String varE65B3A02759122992CB82C0E651AD408_1661039038 =             result.toStr
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.152 -0400", hash_original_method = "38ABC3E1459516CB332E39C8B303294B", hash_generated_method = "B0527B792D02482E1708E3F5AE275694")
         private void setLengths(String[] strings) throws IOException {
             if(strings.length != valueCount)            
@@ -1125,6 +1139,7 @@ for(int i = 0;i < strings.length;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.152 -0400", hash_original_method = "0EB1B022FC0EF6548A3015E3FEB332B5", hash_generated_method = "2427E83A0AEB9FEAA8868981718D0A26")
         private IOException invalidLengths(String[] strings) throws IOException {
             addTaint(strings[0].getTaint());

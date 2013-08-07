@@ -1,6 +1,7 @@
 package java.beans;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.EventListener;
 
 public interface PropertyChangeListener extends EventListener {

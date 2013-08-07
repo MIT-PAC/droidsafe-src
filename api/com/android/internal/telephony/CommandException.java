@@ -1,17 +1,19 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CommandException extends RuntimeException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.608 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "237634D9088F176545E1DA209B5F69AC")
 
     private Error e;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.608 -0400", hash_original_method = "AE462A80EC1EE4B5A1CC7ED5CD5F752D", hash_generated_method = "CCCCBFED75AB3988A8F88F5CA73BC6A4")
     public  CommandException(Error e) {
         super(e.toString());
@@ -21,6 +23,7 @@ public class CommandException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static CommandException fromRilErrno(int ril_errno) {
         switch(ril_errno) {
             case RILConstants.SUCCESS:                       return null;
@@ -61,7 +64,7 @@ public class CommandException extends RuntimeException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.609 -0400", hash_original_method = "279F774637579DF8D6F317F53F6621B2", hash_generated_method = "B45FD66DAFF269A61E6D2D35B67E0C13")
     public Error getCommandError() {
 Error var6BFFBFA2F1D556BA80433C2335198CE9_1572834659 =         e;

@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -37,10 +38,10 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AndroidHttpClientConnection implements HttpInetConnection, HttpConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "DC681AA2DD2A0BE47CBDD78540D5A8BD", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
@@ -71,6 +72,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
 
     private Socket socket = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.771 -0400", hash_original_method = "34D8A32964859B1FAAC1AC49D9EAB8C7", hash_generated_method = "5D5370FE957D216B92C117496F770B7E")
     public  AndroidHttpClientConnection() {
         this.entityserializer =  new EntitySerializer(
@@ -123,6 +125,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.771 -0400", hash_original_method = "EF7CB084264EC0FC42FD48CA086E7FEB", hash_generated_method = "BF33FC15E8D5F7BBA5698AA9D4DE8899")
     @Override
     public String toString() {
@@ -153,6 +156,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1840684208 =         buffer.toString(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "DC1AA50674A805557AAF326F9B9D49FB")
     private void assertNotOpen() {
         if(this.open)        
@@ -168,6 +172,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1840684208 =         buffer.toString(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "4BAA9E8808635CB59C63629D7F721A83")
     private void assertOpen() {
         if(!this.open)        
@@ -183,6 +188,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1840684208 =         buffer.toString(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "8E8BDB37899E8F9E80D937FD54AF461B", hash_generated_method = "FE9E11BC57B16E5E8CDD58CE7A9AF1EA")
     public boolean isOpen() {
         boolean varE850F00B58D108E3C63F93C8F17C0010_723105941 = ((this.open && this.socket != null && this.socket.isConnected()));
@@ -193,6 +199,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1840684208 =         buffer.toString(
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "CB78E0AEAE483DFA04211FE17D9B9235")
     public InetAddress getLocalAddress() {
         if(this.socket != null)        
@@ -216,6 +223,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_242035424 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "31EDC2680B5CD073E7ED7E95ECC8709C")
     public int getLocalPort() {
         if(this.socket != null)        
@@ -239,6 +247,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_242035424 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "00865E34507345CD9E67310C13C06F13")
     public InetAddress getRemoteAddress() {
         if(this.socket != null)        
@@ -262,6 +271,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "F4934E23F1FBA5A42782303583754952")
     public int getRemotePort() {
         if(this.socket != null)        
@@ -285,6 +295,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "BE67356934499B3F4828E090EF89D577")
     public void setSocketTimeout(int timeout) {
         addTaint(timeout);
@@ -310,6 +321,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "48B8550A6B116C5E13DFCDC7169ADA6E")
     public int getSocketTimeout() {
         if(this.socket != null)        
@@ -346,6 +358,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "CEF80ABEDD17E9F414E04B4979CC6A82", hash_generated_method = "A28E06A0CA260323C8F4F1C99DF0CED4")
     public void shutdown() throws IOException {
         this.open = false;
@@ -363,6 +376,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "E2A0230BE95C4B74092464470E281A24", hash_generated_method = "F1846722FD7DAA0EB6FBC61594D64B90")
     public void close() throws IOException {
         if(!this.open)        
@@ -468,6 +482,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
     protected void doFlush() throws IOException {
         this.outbuffer.flush();
@@ -476,6 +491,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "C32057FFD327A27B41D17512113B46BE")
     public void flush() throws IOException {
         assertOpen();
@@ -486,6 +502,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "5382496E6517DB13491696C30DF0839D", hash_generated_method = "1926810DD273271C9582F91749450C10")
     public StatusLine parseResponseHeader(Headers headers) throws IOException, ParseException {
         addTaint(headers.getTaint());
@@ -663,6 +680,7 @@ HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_2074931648 =         entity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.776 -0400", hash_original_method = "3BE812D13F4292433A7C6B8D5ADAC2E8", hash_generated_method = "2FE4C2607C48A4FECAF07EBBF6053055")
     public boolean isStale() {
         assertOpen();
@@ -690,7 +708,7 @@ HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_2074931648 =         entity;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.776 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "90E03BDA83F9128F7E96D6EAAF488096")
     public HttpConnectionMetrics getMetrics() {
 HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_233664329 =         this.metrics;

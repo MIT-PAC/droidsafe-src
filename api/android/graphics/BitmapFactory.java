@@ -1,6 +1,7 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -11,10 +12,10 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class BitmapFactory {
@@ -147,7 +148,7 @@ public class BitmapFactory {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static Bitmap finishDecode(Bitmap bm, Rect outPadding, Options opts) {
         if (bm == null || opts == null) {
             return bm;

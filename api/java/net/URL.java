@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -14,10 +15,10 @@ import libcore.net.url.FileHandler;
 import libcore.net.url.FtpHandler;
 import libcore.net.url.JarHandler;
 import libcore.net.url.UrlUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class URL implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.954 -0400", hash_original_field = "81788BA0D7D02D81C063DBCA621BA11B", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
@@ -521,7 +522,7 @@ URI varABE6DEE154A7C8840C60A090742E451F_948675775 =         new URI(toExternalFo
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "9819CA3EECC28CF10D8C0CAB99E6CDCB", hash_generated_method = "61E6D29F4A01AF10B238288AC786F182")
     public URI toURILenient() throws URISyntaxException {
         if(streamHandler == null)        
@@ -571,6 +572,7 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.975 -0400", hash_original_method = "75E256B9492C6227D987E1CACFC70E15", hash_generated_method = "ECA034582473802248444DA9346C43CD")
     private void readObject(ObjectInputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -619,6 +621,7 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.976 -0400", hash_original_method = "CCBF13D66B2182AA6C1A2589205C2944", hash_generated_method = "459B5EABAB5975823B4693DE8F7B3CFD")
     private void writeObject(ObjectOutputStream s) throws IOException {
         addTaint(s.getTaint());
@@ -628,6 +631,7 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.976 -0400", hash_original_method = "89A7E9DBD8F7AF35FA9A39C4922A8C55", hash_generated_method = "8F7B1D3003452A9A142C344C81F71116")
     public int getEffectivePort() {
         int varE15514297653782693CCA4CFFA420DFA_1753444195 = (URI.getEffectivePort(protocol, port));

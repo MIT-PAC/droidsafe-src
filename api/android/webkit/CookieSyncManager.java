@@ -1,19 +1,21 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import android.content.Context;
 import android.webkit.CookieManager.Cookie;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class CookieSyncManager extends WebSyncManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.196 -0400", hash_original_field = "987C70772419D69E3D25E6A1F99457DA", hash_generated_field = "67C891CCE0BBDCBA776A2A7129D5A0E9")
 
     private long mLastUpdate;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.197 -0400", hash_original_method = "5E4F0B174A675D28BE31D2D74DFE21DE", hash_generated_method = "320941A299E83C604E95EABFA239D955")
     private  CookieSyncManager(Context context) {
         super(context, "CookieSyncManager");
@@ -175,6 +177,7 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_1354625075 =         mData
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.200 -0400", hash_original_method = "CE02A4B6AAF984780597D96D08B33D6E", hash_generated_method = "F3F17D28298E164139FE38FACE024DB3")
     private void syncFromRamToFlash(ArrayList<Cookie> list) {
         addTaint(list.getTaint());
@@ -221,6 +224,7 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_1354625075 =         mData
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void checkInstanceIsCreated() {
         if (sRef == null) {
             throw new IllegalStateException(

@@ -1,15 +1,16 @@
 package android.opengl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Writer;
 
 import javax.microedition.khronos.egl.EGL;
 import javax.microedition.khronos.opengles.GL;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GLDebugHelper {
     

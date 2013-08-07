@@ -1,6 +1,7 @@
 package com.android.internal.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IRemoteViewsFactory extends android.os.IInterface
 {

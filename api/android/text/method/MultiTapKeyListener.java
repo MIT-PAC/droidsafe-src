@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.text.Editable;
@@ -11,10 +12,10 @@ import android.text.method.TextKeyListener.Capitalize;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.440 -0400", hash_original_field = "3D1DE554C8D876872742134AF6F3B39A", hash_generated_field = "7D23761C8705FAE591EE2FF3599940B6")
@@ -224,7 +225,7 @@ for(Object method : methods)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void removeTimeouts(Spannable buf) {
         Timeout[] timeout = buf.getSpans(0, buf.length(), Timeout.class);
         for (int i = 0; i < timeout.length; i++) {

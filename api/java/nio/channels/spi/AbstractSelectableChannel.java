@@ -1,6 +1,7 @@
 package java.nio.channels.spi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.channels.CancelledKeyException;
 import java.nio.channels.ClosedChannelException;
@@ -12,10 +13,10 @@ import java.nio.channels.Selector;
 import java.util.ArrayList;
 import java.util.List;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbstractSelectableChannel extends SelectableChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.336 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0234634A410EB36D3E632222798EC314")
@@ -272,6 +273,7 @@ SelectableChannel var72A74007B2BE62B849F475C7BDA4658B_1197868880 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.342 -0400", hash_original_method = "57F0CA9634BB6BE72AE1A3DBAB2B8264", hash_generated_method = "3C597EE140BDF2C10EE17FF36B2399A5")
     private synchronized boolean containsValidKeys() {
 for(SelectionKey key : keyList)

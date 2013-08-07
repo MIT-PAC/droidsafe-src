@@ -1,10 +1,11 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
-import droidsafe.annotations.DSGenerator;
+
 
 public class ActivityCompat {
     

@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
@@ -14,10 +15,10 @@ import android.view.ViewGroup;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.853 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "F3411DF47899C6681AB924958C72D742")
@@ -113,7 +114,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.855 -0400", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "95F290FF3D8900B1A5D05DB6AC9E34A4")
     private void initAbsSpinner() {
         setFocusable(true);
@@ -570,7 +571,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_382991945 =         ss;
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.869 -0400", hash_original_method = "65E5A0CAB50633949DC788A62A186FA9", hash_generated_method = "5605444F121F9896A1C4C86DC8A5C0CA")
         private  SavedState(Parcel in) {
             super(in);

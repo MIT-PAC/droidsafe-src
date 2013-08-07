@@ -1,6 +1,7 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.telephony.TelephonyManager.PHONE_TYPE_CDMA;
 
 import java.util.ArrayList;
@@ -14,16 +15,17 @@ import com.android.internal.telephony.SmsMessageBase;
 import com.android.internal.telephony.SmsMessageBase.SubmitPduBase;
 import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SmsMessage {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.080 -0400", hash_original_field = "6C6FE296324BD37F8F46A4EDA590FE7A", hash_generated_field = "6512A5313A4B16FABCD0C4BB52D92A5B")
 
     public SmsMessageBase mWrappedSmsMessage;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.081 -0400", hash_original_method = "8785081C14DC1062450E96A46CF3DF25", hash_generated_method = "7A720F4140A5D3175262E2DF902BCE6A")
     private  SmsMessage(SmsMessageBase smb) {
         mWrappedSmsMessage = smb;
@@ -39,6 +41,7 @@ public class SmsMessage {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SmsMessage createFromPdu(byte[] pdu, String format) {
         SmsMessageBase wrappedMessage;
         if (FORMAT_3GPP2.equals(format)) {
@@ -53,6 +56,7 @@ public class SmsMessage {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SmsMessage newFromCMT(String[] lines) {
         SmsMessageBase wrappedMessage =
                 com.android.internal.telephony.gsm.SmsMessage.newFromCMT(lines);
@@ -60,7 +64,7 @@ public class SmsMessage {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static SmsMessage newFromParcel(Parcel p) {
         SmsMessageBase wrappedMessage =
                 com.android.internal.telephony.cdma.SmsMessage.newFromParcel(p);
@@ -68,6 +72,7 @@ public class SmsMessage {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SmsMessage createFromEfRecord(int index, byte[] data) {
         SmsMessageBase wrappedMessage;
         int activePhone = TelephonyManager.getDefault().getCurrentPhoneType();
@@ -106,6 +111,7 @@ public class SmsMessage {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ArrayList<String> fragmentText(String text) {
         int activePhone = TelephonyManager.getDefault().getCurrentPhoneType();
         TextEncodingDetails ted = (PHONE_TYPE_CDMA == activePhone) ?
@@ -475,6 +481,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
 
         public byte[] encodedMessage;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.087 -0400", hash_original_method = "84E90F8D80D26E2676EED6BCE3E65E06", hash_generated_method = "D65631A9BDFFB9B21266433BCDB38CFF")
         protected  SubmitPdu(SubmitPduBase spb) {
             this.encodedMessage = spb.encodedMessage;

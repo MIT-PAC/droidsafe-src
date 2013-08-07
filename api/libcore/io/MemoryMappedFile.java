@@ -1,6 +1,7 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.MAP_SHARED;
 import static libcore.io.OsConstants.O_RDONLY;
 import static libcore.io.OsConstants.PROT_READ;
@@ -8,10 +9,10 @@ import static libcore.io.OsConstants.PROT_READ;
 import java.io.FileDescriptor;
 import java.nio.ByteOrder;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class MemoryMappedFile implements AutoCloseable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.641 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "A3F92EACCD07E081D12E0C4FE5B97927")

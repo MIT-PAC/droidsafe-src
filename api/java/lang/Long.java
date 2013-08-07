@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class Long extends Number implements Comparable<Long> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.272 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "8A7F925BC1BBEBA69C20FE023280FB40")
@@ -53,13 +54,13 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int compare(long lhs, long rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static NumberFormatException invalidLong(String s) {
         throw new NumberFormatException("Invalid long: \"" + s + "\"");
     }
@@ -255,7 +256,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static long parse(String string, int offset, int radix, boolean negative) {
         long max = Long.MIN_VALUE / radix;
         long result = 0, length = string.length();

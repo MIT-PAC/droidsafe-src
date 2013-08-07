@@ -1,15 +1,16 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
 import java.net.URL;
 
 import dalvik.system.VMStack;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Package implements AnnotatedElement {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.412 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -37,7 +38,7 @@ public class Package implements AnnotatedElement {
 
     private URL sealBase;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.414 -0400", hash_original_method = "374156791F3AAF85E275A2925DC8F66C", hash_generated_method = "8B54440B05CE69FA7889906BBB357BE1")
       Package(String name, String specTitle, String specVersion, String specVendor,
             String implTitle, String implVersion, String implVendor, URL sealBase) {
@@ -293,7 +294,7 @@ for(int i = 0;i < Math.min(requested.length, provided.length);i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.419 -0400", hash_original_method = "55B8ABCD808682E10A2965544061F7A5", hash_generated_method = "02C22F605BF85D715560910FFF9C133E")
     public boolean isSealed(URL url) {
         addTaint(url.getTaint());

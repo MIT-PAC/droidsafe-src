@@ -1,15 +1,16 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.STDERR_FILENO;
 import static libcore.io.OsConstants.STDIN_FILENO;
 import static libcore.io.OsConstants.STDOUT_FILENO;
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class FileDescriptor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.868 -0400", hash_original_field = "AFBBCDF48BBBB69A1D97A2B7954DC265", hash_generated_field = "AD84990C5A466F07845F94B14109703E")
@@ -58,7 +59,7 @@ public final class FileDescriptor {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.869 -0400", hash_original_method = "4727A8983DC634F09BFA44F7F7F1F8B5", hash_generated_method = "D6B812BE5B1DF5CB286DC57F6BA8FCCC")
     public final int getInt$() {
         int varDA3F6396C032B006442940855C25DFD8_1635296081 = (descriptor);
@@ -69,7 +70,7 @@ public final class FileDescriptor {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.869 -0400", hash_original_method = "AED03175AA9315DC6552DD5B6FFA10D4", hash_generated_method = "9CD3F8ACD13BA5BC1DEAE478056B0187")
     public final void setInt$(int fd) {
         this.descriptor = fd;

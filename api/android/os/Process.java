@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -11,10 +12,10 @@ import android.net.LocalSocket;
 import android.net.LocalSocketAddress;
 import android.util.Log;
 import dalvik.system.Zygote;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 class ZygoteStartFailedEx extends Exception {
@@ -69,7 +70,7 @@ public class Process {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void openZygoteSocketIfNeeded() throws ZygoteStartFailedEx {
         int retryCount;
         if (sPreviousZygoteOpenFailed) {
@@ -120,6 +121,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ProcessStartResult zygoteSendArgsAndGetResult(ArrayList<String> args) throws ZygoteStartFailedEx {
         openZygoteSocketIfNeeded();
         try {
@@ -246,6 +248,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final int getUidForPid(int pid) {
         String[] procStatusLabels = { "Uid:" };
         long[] procStatusValues = new long[1];
@@ -255,6 +258,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final int getParentPid(int pid) {
         String[] procStatusLabels = { "PPid:" };
         long[] procStatusValues = new long[1];
@@ -335,6 +339,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void killProcessQuiet(int pid) {
         sendSignalQuiet(pid, SIGNAL_KILL);
     }

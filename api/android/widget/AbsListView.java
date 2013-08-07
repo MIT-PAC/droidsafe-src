@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +33,9 @@ import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class AbsListView extends AdapterView<ListAdapter> implements TextWatcher, ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener, ViewTreeObserver.OnTouchModeChangeListener, RemoteViewsAdapter.RemoteAdapterConnectionCallback {
     int mChoiceMode = CHOICE_MODE_NONE;
@@ -153,6 +154,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void initAbsListView(){
 		// Original method
 		/*
@@ -379,6 +381,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private boolean contentFits(){
 		// Original method
 		/*
@@ -648,6 +651,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void useDefaultSelector(){
 		// Original method
 		/*
@@ -715,6 +719,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private boolean acceptFilter(){
 		// Original method
 		/*
@@ -1068,6 +1073,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void positionSelector(int l, int t, int r, int b){
 		// Original method
 		/*
@@ -1193,6 +1199,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void drawSelector(Canvas canvas){
 		// Original method
 		/*
@@ -1554,6 +1561,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private boolean startScrollIfNeeded(int y){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1561,6 +1569,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void scrollIfNeeded(int y){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1648,6 +1657,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void initOrResetVelocityTracker(){
 		// Original method
 		/*
@@ -1663,6 +1673,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void initVelocityTrackerIfNotExists(){
 		// Original method
 		/*
@@ -1676,6 +1687,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void recycleVelocityTracker(){
 		// Original method
 		/*
@@ -1711,6 +1723,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void onSecondaryPointerUp(MotionEvent ev){
 		// Original method
 		/*
@@ -1868,6 +1881,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void createScrollingCache(){
 		// Original method
 		/*
@@ -1883,6 +1897,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void clearScrollingCache(){
 		// Original method
 		/*
@@ -2081,6 +2096,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void dismissPopup(){
 		// Original method
 		/*
@@ -2094,6 +2110,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void showPopup(){
 		// Original method
 		/*
@@ -2109,6 +2126,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void positionPopup(){
 		// Original method
 		/*
@@ -2174,6 +2192,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void createTextFilter(boolean animateEntrance){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2405,6 +2424,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private boolean checkScrap(ArrayList<View> scrap){
 		// Original method
 		/*
@@ -2432,6 +2452,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void finishGlows(){
 		// Original method
 		/*
@@ -2564,6 +2585,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 
         
+        @DSModeled(DSC.BAN)
         private SavedState(Parcel in){
 			super(in);
 			/*
@@ -3417,6 +3439,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 
         
+        @DSModeled(DSC.BAN)
         private void pruneScrapViews(){
 			// Original method
 			/*

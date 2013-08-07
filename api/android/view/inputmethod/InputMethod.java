@@ -1,6 +1,7 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.os.IBinder;

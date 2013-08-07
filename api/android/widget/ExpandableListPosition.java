@@ -1,12 +1,13 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ExpandableListPosition {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.412 -0400", hash_original_field = "EE07D40A93E39122F7007E1922755F80", hash_generated_field = "2301C40FE9B33471D945A5226ECAAB38")
@@ -22,14 +23,14 @@ class ExpandableListPosition {
 
     public int type;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "CA9DC1117656D5954D084C62466145DC")
     private  ExpandableListPosition() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_method = "6E7C899DC67219985BD699CC84AD95E6", hash_generated_method = "D1043CAEEE96B318519BE4957822CE46")
     private void resetState() {
         groupPos = 0;
@@ -106,7 +107,7 @@ class ExpandableListPosition {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static ExpandableListPosition getRecycledOrCreate() {
         ExpandableListPosition elp;
         synchronized (sPool) {

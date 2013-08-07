@@ -1,16 +1,17 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static com.android.internal.R.styleable.AnticipateOvershootInterpolator;
 import static com.android.internal.R.styleable.AnticipateOvershootInterpolator_extraTension;
 import static com.android.internal.R.styleable.AnticipateOvershootInterpolator_tension;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AnticipateOvershootInterpolator implements Interpolator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.878 -0400", hash_original_field = "BACCDDE44E4D1D72971417472395EF45", hash_generated_field = "D99941F5581612BAF56000DD0A59C563")
@@ -61,13 +62,13 @@ public class AnticipateOvershootInterpolator implements Interpolator {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static float a(float t, float s) {
         return t * t * ((s + 1) * t - s);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static float o(float t, float s) {
         return t * t * ((s + 1) * t + s);
     }

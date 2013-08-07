@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IClipboard extends android.os.IInterface
 {

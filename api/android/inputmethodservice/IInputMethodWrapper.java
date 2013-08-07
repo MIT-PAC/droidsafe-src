@@ -1,6 +1,7 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
@@ -28,8 +29,8 @@ import com.android.internal.view.IInputMethodCallback;
 import com.android.internal.view.IInputMethodSession;
 import com.android.internal.view.InputConnectionWrapper;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.304 -0400", hash_original_field = "562619214306F5C11A815E975B7D2477", hash_generated_field = "2E2648297276C861114A30927FA43363")

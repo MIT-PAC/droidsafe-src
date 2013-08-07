@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.net.LocalServerSocket;
 import android.os.Looper;
@@ -13,8 +14,8 @@ import com.android.internal.telephony.gsm.GSMPhone;
 import com.android.internal.telephony.sip.SipPhone;
 import com.android.internal.telephony.sip.SipPhoneFactory;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class PhoneFactory {
     
@@ -25,11 +26,13 @@ public class PhoneFactory {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static void makeDefaultPhones(Context context) {
         makeDefaultPhone(context);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void makeDefaultPhone(Context context) {
         synchronized(Phone.class) {
             if (!sMadeDefaults) {
@@ -114,6 +117,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getPhoneType(int networkMode) {
         switch(networkMode) {
         case RILConstants.NETWORK_MODE_CDMA:
@@ -141,6 +145,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Phone getDefaultPhone() {
         if (sLooper != Looper.myLooper()) {
             throw new RuntimeException(
@@ -153,6 +158,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Phone getCdmaPhone() {
         Phone phone;
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
@@ -173,6 +179,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Phone getGsmPhone() {
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             Phone phone = new GSMPhone(sContext, sCommandsInterface, sPhoneNotifier);
@@ -181,6 +188,7 @@ public class PhoneFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SipPhone makeSipPhone(String sipUri) {
         return SipPhoneFactory.makePhone(sipUri, sContext, sPhoneNotifier);
     }

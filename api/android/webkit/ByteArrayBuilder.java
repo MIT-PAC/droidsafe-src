@@ -1,15 +1,16 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ByteArrayBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.330 -0400", hash_original_field = "D96663553B59C302287984487A58CF9F", hash_generated_field = "B776907C1A6A4E01FFB277D178950D86")
@@ -144,6 +145,7 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_1752700387 =         mChunks.removeFir
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.334 -0400", hash_original_method = "3A2BA3FFD8F41065BE9E5F1BD3D65412", hash_generated_method = "1EB4B4A1E7FA715FCC99A0FD6C6AAEBA")
     private void processPoolLocked() {
         while
@@ -167,7 +169,7 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_1752700387 =         mChunks.removeFir
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.334 -0400", hash_original_method = "823F243F1FE2DDA7035072AD49FCCD96", hash_generated_method = "0353DE0C405506CD1CDA6AFC07F97AE8")
     private Chunk obtainChunk(int length) {
         addTaint(length);

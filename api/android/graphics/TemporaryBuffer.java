@@ -1,12 +1,13 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TemporaryBuffer {
     
@@ -17,6 +18,7 @@ public class TemporaryBuffer {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static char[] obtain(int len) {
         char[] buf;
         synchronized (TemporaryBuffer.class) {
@@ -30,7 +32,7 @@ public class TemporaryBuffer {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void recycle(char[] temp) {
         if (temp.length > 1000) return;
         synchronized (TemporaryBuffer.class) {

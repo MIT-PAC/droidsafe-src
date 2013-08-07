@@ -1,6 +1,7 @@
 package android.accessibilityservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -20,10 +21,10 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Xml;
 import android.view.accessibility.AccessibilityEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AccessibilityServiceInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.824 -0400", hash_original_field = "B6798C32DB18990EFA91D37F3C984B4D", hash_generated_field = "EEF9A290ACD5C7B733F6B6DEDE8E3A43")
@@ -63,6 +64,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.871 -0400", hash_original_method = "D068D99220BF43F7F5E36309EDDC7C96", hash_generated_method = "010C328372962F56A8C21FC5663F7D3B")
     public  AccessibilityServiceInfo(ResolveInfo resolveInfo, Context context) throws XmlPullParserException, IOException {
         addTaint(context.getTaint());
@@ -143,7 +145,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.880 -0400", hash_original_method = "2C9B75B7F79417EB76D61370935CF9C8", hash_generated_method = "A0C7324A63FA3E4756821C675147A473")
     public void updateDynamicallyConfigurableProperties(AccessibilityServiceInfo other) {
         eventTypes = other.eventTypes;
@@ -254,6 +256,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_1598126750 =         mDescription;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.936 -0400", hash_original_method = "7D575AC4AF313C6A4D2D5091D77147E2", hash_generated_method = "A72BDE444FE7201E107DC7271F0D928A")
     private void initFromParcel(Parcel parcel) {
         eventTypes = parcel.readInt();
@@ -309,6 +312,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toS
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void appendFeedbackTypes(StringBuilder stringBuilder, int feedbackTypes) {
         stringBuilder.append("feedbackTypes:");
         stringBuilder.append("[");
@@ -340,6 +344,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toS
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void appendEventTypes(StringBuilder stringBuilder, int eventTypes) {
         stringBuilder.append("eventTypes:");
         stringBuilder.append("[");
@@ -355,6 +360,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toS
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void appendFlags(StringBuilder stringBuilder, int flags) {
         stringBuilder.append("flags:");
         stringBuilder.append("[");

@@ -1,6 +1,7 @@
 package java.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.annotation.Annotation;
 
 import libcore.util.EmptyArray;
@@ -10,10 +11,10 @@ import org.apache.harmony.luni.lang.reflect.GenericSignatureParser;
 import org.apache.harmony.luni.lang.reflect.ListOfTypes;
 import org.apache.harmony.luni.lang.reflect.Types;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Constructor<T> extends AccessibleObject implements GenericDeclaration, Member {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.935 -0400", hash_original_field = "02CBE457FB1B22631E594CE79672D2F1", hash_generated_field = "A496C5D8F7CD0CB9CA97840555DF2AAA")
@@ -41,6 +42,7 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
 
     int slot;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.952 -0400", hash_original_method = "F22CB981733D75C2BC34BDB791B93657", hash_generated_method = "5981B35754AB4E8CEEDEF9BB5EC55BCB")
 	public  Constructor() {
         // ---------- Original Method ----------
@@ -61,6 +63,7 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.937 -0400", hash_original_method = "ED32915D16D10FD7E30E61397009B806", hash_generated_method = "8C2846F25BB3F03FA2834DBE67122EDE")
     private synchronized void initGenericTypes() {
         if(!genericTypesAreInitialized)        
@@ -358,6 +361,7 @@ Class<?>[] var5C3F1AD275E23F393681FEA8A66E0F80_818691122 =         parameterType
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.946 -0400", hash_original_method = "70A1497759834DE033251D58FB1BC60F", hash_generated_method = "FC117460764535969726C4A4D1C79B87")
     @SuppressWarnings("unused")
     private String getSignature() {

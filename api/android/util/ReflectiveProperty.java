@@ -1,14 +1,15 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ReflectiveProperty<T, V> extends Property<T, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.067 -0400", hash_original_field = "16EEDAABC5C1FB42003AA47180ED612B", hash_generated_field = "EEA8654E15111D59944789CA5B543C76")
@@ -85,6 +86,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.068 -0400", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "F79DC0FAAA8B7107A7AB9B6C257E1DF8")
     private boolean typesMatch(Class<V> valueType, Class getterType) {
         addTaint(getterType.getTaint());

@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -15,10 +16,10 @@ import android.net.ParseException;
 import android.net.WebAddress;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class CookieManager {
@@ -33,7 +34,7 @@ public final class CookieManager {
 
     private int pendingCookieOperations = 0;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.135 -0400", hash_original_method = "D1B429C0ADFDAAD2AA9A34491D464202", hash_generated_method = "7E9E6C54D01E5F13F7A4CCB58B878A0F")
     private  CookieManager() {
         // ---------- Original Method ----------
@@ -132,6 +133,7 @@ public final class CookieManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.137 -0400", hash_original_method = "FD6DC9D8EE462ADB809067B2E36820B1", hash_generated_method = "6012AA7553EA542D21EDEFB9480AA444")
     public void setCookie(String url, String value, boolean privateBrowsing) {
         addTaint(privateBrowsing);
@@ -168,6 +170,7 @@ public final class CookieManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.140 -0400", hash_original_method = "8AF5CC468B90A5A42A5116E5B0AA2987", hash_generated_method = "A18DFAB557E9BC8E225ECB52AEBEE109")
     public synchronized void setCookie(WebAddress uri, String value) {
         addTaint(value.getTaint());
@@ -321,6 +324,7 @@ String var407A51A1DFAF9AAFAEF8FC170E67F8D8_1020485275 =         getCookie(uri);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.142 -0400", hash_original_method = "5ACC35EE5D78B03ACC91967E6F456E58", hash_generated_method = "48BC927A401330AD600592C165FAE96B")
     public String getCookie(String url, boolean privateBrowsing) {
         addTaint(privateBrowsing);
@@ -360,6 +364,7 @@ String varDC437723AB9FFD70AC3DBD8C655741B2_360273990 =         nativeGetCookie(u
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.143 -0400", hash_original_method = "BE3F143473537E9CE993D89B685428CF", hash_generated_method = "C277380435D03E17C65C9D388D7217CC")
     public synchronized String getCookie(WebAddress uri) {
         addTaint(uri.getTaint());
@@ -449,6 +454,7 @@ String var540C13E9E156B687226421B24F2DF178_1697329591 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.144 -0400", hash_original_method = "E5896ED24A303B704C1A851D6E9894DE", hash_generated_method = "15F08066BA9FFD9F2340FB970B163BE5")
     public void waitForCookieOperationsToComplete() {
         synchronized
@@ -476,7 +482,7 @@ String var540C13E9E156B687226421B24F2DF178_1697329591 =             null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.144 -0400", hash_original_method = "65B0411E3AAD9BA729084C50D7485B13", hash_generated_method = "A9E6A312E809291F60B900D7678FD37D")
     private synchronized void signalCookieOperationsComplete() {
         pendingCookieOperations--;
@@ -488,7 +494,7 @@ String var540C13E9E156B687226421B24F2DF178_1697329591 =             null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.144 -0400", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "E349E3171C584B41701676E3CC873736")
     private synchronized void signalCookieOperationsStart() {
         pendingCookieOperations++;
@@ -601,6 +607,7 @@ Void var540C13E9E156B687226421B24F2DF178_684834096 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.146 -0400", hash_original_method = "6C96B3E47AB792BE3053A98B747C02B0", hash_generated_method = "879B614FDB03F572EAD9FF281611947B")
     public synchronized boolean hasCookies(boolean privateBrowsing) {
         addTaint(privateBrowsing);
@@ -828,6 +835,7 @@ ArrayList<Cookie> var74ABD4429824C0B59980227BA1F53471_2074389697 =         retli
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.149 -0400", hash_original_method = "5193D0EACEE146C23C2F9C98185BC9CF", hash_generated_method = "427E7382836ED2420B135C10F4768C85")
     private String[] getHostAndPath(WebAddress uri) {
         addTaint(uri.getTaint());
@@ -875,6 +883,7 @@ String[] var540C13E9E156B687226421B24F2DF178_1297980302 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.150 -0400", hash_original_method = "0BC29AC3055E44155EBF14855C5D487F", hash_generated_method = "92D2241938E2C946CA7F5116CA92060A")
     private String getBaseDomain(String host) {
         addTaint(host.getTaint());
@@ -915,6 +924,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_1071486964 =             host;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.154 -0400", hash_original_method = "686D7BF75F67F22DBAC0E1E36B7A58EB", hash_generated_method = "E6CF81D88547D167EE4AC1D083D4759A")
     private ArrayList<Cookie> parseCookie(String host, String path,
             String cookieString) {
@@ -1423,6 +1433,7 @@ String var350011719E9D74BBEF287BFDF99EFDD8_1678821163 =             "domain: " +
     
     private static final class CookieComparator implements Comparator<Cookie> {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.157 -0400", hash_original_method = "EA07F3AA36DD3B1C5469CE7D110356B0", hash_generated_method = "EA07F3AA36DD3B1C5469CE7D110356B0")
         public CookieComparator ()
         {

@@ -1,6 +1,7 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -18,10 +19,10 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Tag implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.366 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "81204E2516309774DDE98BCC95D4D337")
@@ -81,6 +82,7 @@ public final class Tag implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.372 -0400", hash_original_method = "AA46592E4023484A1FFE154B94A62E4A", hash_generated_method = "9D3C10A38DF81CF08763E8BC18A41F3D")
     private String[] generateTechStringList(int[] techList) {
         addTaint(techList[0]);
@@ -130,7 +132,7 @@ String[] var2E6885ACC179B2D302813BAD2D696933_446814900 =         strings;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.372 -0400", hash_original_method = "89421ECB0C954DB9BA373A13BA3FAA83", hash_generated_method = "D0AEAE4C90EF938B11ED9B5DB44CBEDD")
     public int getServiceHandle() {
         int var2C5FEB0198F897EC9ED4F5F58999D842_1394403319 = (mServiceHandle);
@@ -163,6 +165,7 @@ String[] varCD028AAF1881533C9F08026F039B4C4D_1172290243 =         mTechStringLis
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.373 -0400", hash_original_method = "4E5CB2043A65C51A8349137C18388B2C", hash_generated_method = "B920C0AA54064F694772B235F72A6E62")
     public Tag rediscover() throws IOException {
         if(getConnectedTechnology() != -1)        
@@ -210,7 +213,7 @@ Tag var9B601A3966D02397507C32AA33318068_427872672 =                 newTag;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.374 -0400", hash_original_method = "066FD8962F433FECE6D4FD3B60FADEA0", hash_generated_method = "1BD327D50E59B6A508E844136C0F9510")
     public boolean hasTech(int techType) {
         addTaint(techType);
@@ -234,7 +237,7 @@ for(int tech : mTechList)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.375 -0400", hash_original_method = "31360E4A8CC1CC354A13744DCF6ABA65", hash_generated_method = "FDD9EACB9ECD1C740CC131C1FB2D77AA")
     public Bundle getTechExtras(int tech) {
         addTaint(tech);
@@ -271,7 +274,7 @@ Bundle var6543B1FECCBBFB52C39498A0EC7DCB0D_1760483841 =         mTechExtras[pos]
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.376 -0400", hash_original_method = "67284B405524DECAA6F6D36DFD293E76", hash_generated_method = "E0F883A5F0F0CF0B3731365B7DB796C9")
     public INfcTag getTagService() {
 INfcTag varCEA41967F78A032165E0C3EE868F689A_1138768068 =         mTagService;
@@ -378,6 +381,7 @@ String var2460B846747F8B22185AD8BE722266A5_1414232147 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.379 -0400", hash_original_method = "5C3F1EA15BE184F081C4AA8C7B39A394", hash_generated_method = "B5596FBD105AB91D7CEF61AE2CEFD21C")
     public synchronized void setConnectedTechnology(int technology) {
         if(mConnectedTechnology == -1)        
@@ -399,7 +403,7 @@ String var2460B846747F8B22185AD8BE722266A5_1414232147 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.379 -0400", hash_original_method = "B7538F13EF8EEF4B4D475104909015D7", hash_generated_method = "98B7AEB8BD24661294C01605C72F2CD2")
     public int getConnectedTechnology() {
         int var824FFD6D91C3217E3C5250F0EF6A1CF5_1645771387 = (mConnectedTechnology);
@@ -410,7 +414,7 @@ String var2460B846747F8B22185AD8BE722266A5_1414232147 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.380 -0400", hash_original_method = "4FE592F130B2AB198D9A9024B7A375C0", hash_generated_method = "CDDFA9CDCDA74E225B20B2008ED8B5D1")
     public void setTechnologyDisconnected() {
         mConnectedTechnology = -1;

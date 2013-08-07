@@ -1,6 +1,7 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
@@ -14,16 +15,17 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class BluetoothDevice implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.171 -0400", hash_original_field = "9C8E67CB570F7F2DF167C544686B922A", hash_generated_field = "C679AE506A0300BA50CA43522D6BE5D0")
 
     private String mAddress;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.173 -0400", hash_original_method = "01E6ABA43F371BE96DE0741E69CF2696", hash_generated_method = "D3A9D39122444F560EFC096D53D1F09B")
       BluetoothDevice(String address) {
         getService();
@@ -155,6 +157,7 @@ String var540C13E9E156B687226421B24F2DF178_327174258 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.177 -0400", hash_original_method = "3D31424D7A0639D60E5B5097A46F207C", hash_generated_method = "CA04EA1795E491C14E01CC9E02160BC1")
     public String getAlias() {
         try 
@@ -177,6 +180,7 @@ String var540C13E9E156B687226421B24F2DF178_1955296597 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.178 -0400", hash_original_method = "49B51B4B037A5C39323EEFF06458ED35", hash_generated_method = "96E4E6DF6DD590FC6B5040AA8BBA704F")
     public boolean setAlias(String alias) {
         addTaint(alias.getTaint());
@@ -200,6 +204,7 @@ String var540C13E9E156B687226421B24F2DF178_1955296597 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.179 -0400", hash_original_method = "0C2F081FEB58CFB1BA7C24E91B419B7D", hash_generated_method = "90E9191CDC2BE623DE984C98186D883E")
     public String getAliasName() {
         String name = getAlias();
@@ -219,6 +224,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1350500968 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.180 -0400", hash_original_method = "7ABDE8D07F07F9433B847CB6022477DB", hash_generated_method = "19767D8F7D06077CE1452D7725D683DE")
     public boolean createBond() {
         try 
@@ -289,6 +295,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1350500968 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.184 -0400", hash_original_method = "0C0048A8FF7823EF43482AC4C17114D5", hash_generated_method = "D21A4478DE09F7CF0853E78C8549E229")
     public boolean cancelBondProcess() {
         try 
@@ -311,6 +318,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1350500968 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.185 -0400", hash_original_method = "2ABE478EBB53F919726366CC411EDF02", hash_generated_method = "AA3985E70BE3AB4FFFE32F47B909488E")
     public boolean removeBond() {
         try 
@@ -386,6 +394,7 @@ BluetoothClass var540C13E9E156B687226421B24F2DF178_75118612 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.188 -0400", hash_original_method = "31D115AB32A31FB0B9AF4C26A4E47F46", hash_generated_method = "8CF4AD2480459086D9F36A21C9598E83")
     public boolean getTrustState() {
         try 
@@ -410,6 +419,7 @@ BluetoothClass var540C13E9E156B687226421B24F2DF178_75118612 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.189 -0400", hash_original_method = "9D6C6E6815AA7950FF362F094CFFC963", hash_generated_method = "C7FB1804394FC5EC0931D3A3166CD53A")
     public boolean setTrust(boolean value) {
         addTaint(value);
@@ -479,6 +489,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.193 -0400", hash_original_method = "3159A609DA44BB79D68A9974B9B6A655", hash_generated_method = "53075DE459A77DBD61FDA12D58AD2274")
     public int getServiceChannel(ParcelUuid uuid) {
         addTaint(uuid.getTaint());
@@ -525,6 +536,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.196 -0400", hash_original_method = "3609F7C358721757CCD34D699F0B8CE9", hash_generated_method = "D1D931B68DCA5E45056A37841A52B26C")
     public boolean setPasskey(int passkey) {
         addTaint(passkey);
@@ -548,6 +560,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.197 -0400", hash_original_method = "C6032CF5D33EF2ED9DD2C95EBB11B5A2", hash_generated_method = "FF8FB388CF65100EE71F9D89FE47855B")
     public boolean setPairingConfirmation(boolean confirm) {
         addTaint(confirm);
@@ -571,6 +584,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.198 -0400", hash_original_method = "23E27132155361CD962933565A6A609F", hash_generated_method = "73FB71FB1DFEC8379502949F056500B0")
     public boolean setRemoteOutOfBandData() {
         try 
@@ -593,6 +607,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.199 -0400", hash_original_method = "52E8DE9DDBFDE18365F513F918590AAC", hash_generated_method = "E72A9CCCE3699AB7F533FBECFDAB6288")
     public boolean cancelPairingUserInput() {
         try 
@@ -615,6 +630,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.200 -0400", hash_original_method = "C1B670BF8E55A118E70A73AF396353BD", hash_generated_method = "38A6F59C32053B5CB8F55EE2B46F7107")
     public boolean isBluetoothDock() {
         try 
@@ -637,7 +653,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.202 -0400", hash_original_method = "98EAE836400D818BB4CCAFDB9F3FE0E9", hash_generated_method = "281072F2ABB7E100D0FB0DBFC661AC16")
     public BluetoothSocket createRfcommSocket(int channel) throws IOException {
         addTaint(channel);
@@ -679,7 +695,7 @@ BluetoothSocket var73C70BFE9204F8F5C0EF762AD73861F3_1500976974 =         new Blu
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.205 -0400", hash_original_method = "65B6B4065AE19FE91B1B928AB482A400", hash_generated_method = "E89561AB8299C28D17BFFEA7AA75750B")
     public BluetoothSocket createInsecureRfcommSocket(int port) throws IOException {
         addTaint(port);
@@ -693,7 +709,7 @@ BluetoothSocket varECB7EF97AD866D9F177972C6A2DD32DD_1985120364 =         new Blu
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.205 -0400", hash_original_method = "A2683B7D001B6D4367715042EC6C96CC", hash_generated_method = "6A31C1A8DFA5FA5448ABBC7B35668A3C")
     public BluetoothSocket createScoSocket() throws IOException {
 BluetoothSocket varCBE45E1CC339E38D120332CED93F6CAC_1207411206 =         new BluetoothSocket(BluetoothSocket.TYPE_SCO, -1, true, true, this, -1, null);
@@ -704,6 +720,7 @@ BluetoothSocket varCBE45E1CC339E38D120332CED93F6CAC_1207411206 =         new Blu
     }
 
     
+    @DSModeled(DSC.BAN)
     public static byte[] convertPinToBytes(String pin) {
         if (pin == null) {
             return null;

@@ -1,14 +1,15 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Filter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.716 -0400", hash_original_field = "BA7E3585BAC0AB9D61DD30CE7204792F", hash_generated_field = "95F8A0CD9492F0837A9DA3FE5B46EFD4")
@@ -33,7 +34,7 @@ public abstract class Filter {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.717 -0400", hash_original_method = "945149F2F16183884CBDA739B056A27B", hash_generated_method = "AD9BA4186451CF4377A8B2EB59E35A7A")
     public void setDelayer(Delayer delayer) {
         synchronized
@@ -232,6 +233,7 @@ switch(what){
 
         FilterResults results;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.721 -0400", hash_original_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC", hash_generated_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC")
         public RequestArguments ()
         {

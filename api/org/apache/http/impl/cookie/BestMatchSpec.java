@@ -1,6 +1,7 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import org.apache.http.Header;
@@ -10,10 +11,10 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.CookieSpec;
 import org.apache.http.cookie.MalformedCookieException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BestMatchSpec implements CookieSpec {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.704 -0400", hash_original_field = "60E59FA1D4034653FC981EEB8C0CE3F3", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
@@ -51,7 +52,7 @@ public class BestMatchSpec implements CookieSpec {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.705 -0400", hash_original_method = "F5D458E4620E2EBF824493C3536FD1C3", hash_generated_method = "EEE457974DC6D712B2C4E7B18CD9D902")
     private RFC2965Spec getStrict() {
         if(this.strict == null)        
@@ -69,7 +70,7 @@ RFC2965Spec varDB6279AFE8E7F0A60897A3819FA9FC75_265585704 =         strict;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.706 -0400", hash_original_method = "FE28D7A5554F455D8D7B5F3F6FCB0BC9", hash_generated_method = "49F2BEA21A3CC7F000A0143604C29D77")
     private BrowserCompatSpec getCompat() {
         if(this.compat == null)        
@@ -87,7 +88,7 @@ BrowserCompatSpec varAFEEE60A042EE3ADCC984CE27FD0517C_950606512 =         compat
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.706 -0400", hash_original_method = "31CE28BB07784CC0AF4C8F0ADF6151C2", hash_generated_method = "4B7761F88C2D5E475113BE722FD0CD70")
     private NetscapeDraftSpec getNetscape() {
         if(this.netscape == null)        

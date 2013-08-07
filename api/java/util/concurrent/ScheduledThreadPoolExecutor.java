@@ -1,6 +1,7 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.AbstractQueue;
 import java.util.Arrays;
 import java.util.Collection;
@@ -11,10 +12,10 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements ScheduledExecutorService {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.757 -0400", hash_original_field = "16F5A356C77125C2C156C9F6B6F49691", hash_generated_field = "AA2F9CF8A8BDA098B7353794A7890F68")
@@ -102,7 +103,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.760 -0400", hash_original_method = "74BC2A8347918586B07692C369988E7C", hash_generated_method = "1233BDA0885E8E1DBF51CE9FE38BD51F")
     private void delayedExecute(RunnableScheduledFuture<?> task) {
         addTaint(task.getTaint());
@@ -220,7 +221,7 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =      
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.763 -0400", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "3FFAAEFF6D65C54AD59454485CCA9AD9")
     private long triggerTime(long delay, TimeUnit unit) {
         addTaint(unit.getTaint());
@@ -247,7 +248,7 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =      
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.764 -0400", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "C55593E057915B81F432D6006BE1A520")
     private long overflowFree(long delay) {
         addTaint(delay);
@@ -736,7 +737,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =        
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.773 -0400", hash_original_method = "AD0F8B1CE8B17F01519D37E93CCE792B", hash_generated_method = "2C5B79ED8658044948D37A8C1CAADFD0")
         private void setNextRunTime() {
             long p = period;
@@ -827,7 +828,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =        
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.775 -0400", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "A2C53C2309413CED15321F200F5F1DAE")
         private void setIndex(RunnableScheduledFuture f, int idx) {
             addTaint(idx);
@@ -840,7 +841,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =        
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.776 -0400", hash_original_method = "82039C4DF7CA25BEE85708617CA17C0A", hash_generated_method = "A81A70FEDAD3242E6F6F3034E7F90834")
         private void siftUp(int k, RunnableScheduledFuture key) {
             while
@@ -871,7 +872,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =        
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.777 -0400", hash_original_method = "2B1F11A0F086CDEBFE52E8E81BF54F43", hash_generated_method = "02C04E8F52483FB1DA198C6724577D3D")
         private void siftDown(int k, RunnableScheduledFuture key) {
             int half = size >>> 1;
@@ -910,7 +911,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =        
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.777 -0400", hash_original_method = "A3FC13DF1E683960EBCF25B1C68B6117", hash_generated_method = "22A15400E6CEAE45BB74CE06A79658E8")
         private void grow() {
             int oldCapacity = queue.length;
@@ -927,7 +928,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =        
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.778 -0400", hash_original_method = "C580641A4A2388B58215BACCB42FFCE3", hash_generated_method = "B63EB28E9C835470A88960DD5A40FFF0")
         private int indexOf(Object x) {
             addTaint(x.getTaint());
@@ -1235,7 +1236,7 @@ RunnableScheduledFuture var6B197F94F16A075B757ED2FE0B3729CA_1063790251 =        
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.780 -0400", hash_original_method = "95AFA75D0998C104C226840186514FC9", hash_generated_method = "CD280D0ACBAB8600C939648B2756B75A")
         private RunnableScheduledFuture finishPoll(RunnableScheduledFuture f) {
             addTaint(f.getTaint());
@@ -1461,7 +1462,7 @@ for(int i = 0;i < size;i++)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.782 -0400", hash_original_method = "2FE630D35A7B40B0A6753A3386B27535", hash_generated_method = "83617AFDC102C9CDBBE6DDF12BFBC643")
         private RunnableScheduledFuture pollExpired() {
             RunnableScheduledFuture first = queue[0];

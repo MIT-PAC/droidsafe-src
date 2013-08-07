@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.text.style.LeadingMarginSpan;
@@ -12,10 +13,10 @@ import android.util.Log;
 
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StaticLayout extends Layout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.690 -0400", hash_original_field = "6CD75FA86B8D1E573AF761513C2464BF", hash_generated_field = "45537663750337309A584754E1437CDD")
@@ -68,7 +69,7 @@ public class StaticLayout extends Layout {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.692 -0400", hash_original_method = "81565FB766EC1D266415894033F3BC38", hash_generated_method = "1BDEA4DDCB95B2D4AE1B3855FDF537E6")
     public  StaticLayout(CharSequence source, TextPaint paint,
             int width, Alignment align, TextDirectionHeuristic textDir,
@@ -110,7 +111,7 @@ public class StaticLayout extends Layout {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.693 -0400", hash_original_method = "683465774808809C7366667F354731A1", hash_generated_method = "186A22AC5077869045034CC835F739C5")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
             TextPaint paint, int outerwidth,
@@ -586,7 +587,7 @@ for(int j = spanStart;j < spanEnd;j++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final boolean isIdeographic(char c, boolean includeNonStarters) {
         if (c >= '\u2E80' && c <= '\u2FFF') {
             return true; 
@@ -820,7 +821,7 @@ for(int i = 0;i < chooseHt.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.709 -0400", hash_original_method = "12884526F2C70C1C98137C0940B4D04E", hash_generated_method = "CEA2B4A8C3EE1C16FB28783952E70CB8")
     private void calculateEllipsis(int lineStart, int lineEnd,
                                    float[] widths, int widthStart,

@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -26,10 +27,10 @@ import android.widget.NumberPicker.OnValueChangeListener;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DatePicker extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.160 -0400", hash_original_field = "8ED95193CF2BD359A1F40C120860D6B8", hash_generated_field = "57FC055B6C9771133CE6C857A7DABDD2")
@@ -463,6 +464,7 @@ CalendarView varC46E21775E2EA6ACA4FD7340AD5EC654_354974099 =         mCalendarVi
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.172 -0400", hash_original_method = "A700AEEDD57B848576647AE119590A45", hash_generated_method = "91427AE78830B364CC5D9449BD929F02")
     private void setCurrentLocale(Locale locale) {
         if(locale.equals(mCurrentLocale))        
@@ -499,6 +501,7 @@ for(int i = 0;i < mNumberOfMonths;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.172 -0400", hash_original_method = "FA738DF80665124C3A5E01ADC04827D9", hash_generated_method = "A1A38B937F24D07170624F4392C78D0B")
     private Calendar getCalendarForLocale(Calendar oldCalendar, Locale locale) {
         addTaint(locale.getTaint());
@@ -530,6 +533,7 @@ Calendar var7F1C6FE82B6466987740139940995C7D_548638906 =             newCalendar
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.173 -0400", hash_original_method = "EC825478EA562937FD242C7F7D2C8CF4", hash_generated_method = "3227830CA65080D08458DA3916A58197")
     private void reorderSpinners() {
         mSpinners.removeAllViews();
@@ -646,6 +650,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.175 -0400", hash_original_method = "4EF37BB5E8B6D289AE6D0021CE0D4FEB", hash_generated_method = "E1400B2DC6C929C6AC179AE198ABBFBA")
     private boolean parseDate(String date, Calendar outDate) {
         addTaint(outDate.getTaint());
@@ -674,6 +679,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.175 -0400", hash_original_method = "7DA7F7B10A47108B3DBE60145E22A8FC", hash_generated_method = "7D3FB070DCB47FF0B2E6DAB29834B522")
     private boolean isNewDate(int year, int month, int dayOfMonth) {
         addTaint(dayOfMonth);
@@ -691,6 +697,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.176 -0400", hash_original_method = "421AA01E04B51628D97359BDD118BF23", hash_generated_method = "DEE3B41D776703A0B4CC6AA3CE42340A")
     private void setDate(int year, int month, int dayOfMonth) {
         addTaint(dayOfMonth);
@@ -716,6 +723,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.176 -0400", hash_original_method = "CC0C6797D7B0307D38215BFED9C815FE", hash_generated_method = "D029609BFFE75683162806ED86F12468")
     private void updateSpinners() {
         if(mCurrentDate.equals(mMinDate))        
@@ -763,6 +771,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.177 -0400", hash_original_method = "FCBFFA03953049B21025A6ECF65DCE7B", hash_generated_method = "1374E2CB7A57CFB36E9738E5446FFEF5")
     private void updateCalendarView() {
         mCalendarView.setDate(mCurrentDate.getTimeInMillis(), false, false);
@@ -801,6 +810,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.178 -0400", hash_original_method = "B58D4A1A16597327E1564790BB46799A", hash_generated_method = "C13E2D20D4C44B6D819874FA50654C0F")
     private void notifyDateChanged() {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
@@ -816,6 +826,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.179 -0400", hash_original_method = "70CD174A23393C16E923952AAD4C91D4", hash_generated_method = "4D3B23B87856C132784ABFBF928AA1F6")
     private void setImeOptions(NumberPicker spinner, int spinnerCount, int spinnerIndex) {
         addTaint(spinnerIndex);
@@ -844,6 +855,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.180 -0400", hash_original_method = "DB545D481E75722C0C153D7F54EF544D", hash_generated_method = "A9A247ABA3DD44339D21CC3829DDDBC6")
     private void setContentDescriptions() {
         String text = mContext.getString(R.string.date_picker_increment_day_button);
@@ -863,6 +875,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.181 -0400", hash_original_method = "CDABFADCA81181A0329F14F43A5F5848", hash_generated_method = "DC66B97B0B1BB902918C584526236453")
     private void updateInputState() {
         InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
@@ -914,6 +927,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
 
         private int mDay;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.182 -0400", hash_original_method = "A02F651556C80A285B651552B4D99E55", hash_generated_method = "D8AB391D75CA1C9FD251EFD34F7687CF")
         private  SavedState(Parcelable superState, int year, int month, int day) {
             super(superState);
@@ -928,6 +942,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1301159927 =         new SavedSta
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.182 -0400", hash_original_method = "CA21CAD6F1AA58ABF5FA7E877A966564", hash_generated_method = "529258F22E562DCA4D2F461195E4F6E4")
         private  SavedState(Parcel in) {
             super(in);

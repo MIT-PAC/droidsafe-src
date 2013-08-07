@@ -1,6 +1,7 @@
 package org.bouncycastle.util.io.pem;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 public interface PemObjectParser

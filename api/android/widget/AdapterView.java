@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.os.Parcelable;
@@ -14,10 +15,10 @@ import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.372 -0400", hash_original_field = "8E50E9FFA5F23A5C36A761E8937EC922", hash_generated_field = "4CE3CF821E7A7D08A592A5CA9EDE4305")
@@ -588,6 +589,7 @@ View varAE7C11E50171EC79263635AB3464BCAA_1903663149 =         mEmptyView;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.391 -0400", hash_original_method = "3E542C38250D34B64375C7B9ACE53374", hash_generated_method = "502081D276FF2F79E79E07F25B55700E")
     private void updateEmptyStatus(boolean empty) {
         addTaint(empty);
@@ -748,6 +750,7 @@ Object var17A047747B6E56B7BE9D3B130AAAD3CE_2045830456 =         (adapter == null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.393 -0400", hash_original_method = "02337B5D029912B3F89D3F5D70F11AFE", hash_generated_method = "6327696DC11503774657EB30F752E79C")
     private void fireOnSelected() {
         if(mOnItemSelectedListener == null)        
@@ -885,6 +888,7 @@ Object var17A047747B6E56B7BE9D3B130AAAD3CE_2045830456 =         (adapter == null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.394 -0400", hash_original_method = "1A6615688A72EC8D9F005EEFA4CD86A3", hash_generated_method = "F66C916BA38BAF793FB28AB23ECF027C")
     private boolean isScrollableForAccessibility() {
         T adapter = getAdapter();

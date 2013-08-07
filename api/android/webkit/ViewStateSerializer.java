@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -10,20 +11,22 @@ import java.io.OutputStream;
 import android.graphics.Point;
 import android.graphics.Region;
 import android.webkit.WebViewCore.DrawData;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 class ViewStateSerializer {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.294 -0400", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "118ABB2718261FF45C39549C1EF9F141")
     private  ViewStateSerializer() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     static boolean serializeViewState(OutputStream stream, WebView web) throws IOException {
         int baseLayer = web.getBaseLayer();
         if (baseLayer == 0) {
@@ -38,6 +41,7 @@ class ViewStateSerializer {
     }
 
     
+    @DSModeled(DSC.BAN)
     static DrawData deserializeViewState(InputStream stream, WebView web) throws IOException {
         DataInputStream dis = new DataInputStream(stream);
         int version = dis.readInt();

@@ -1,16 +1,17 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.address.AddressImpl;
 
 import javax.sip.address.Address;
 import javax.sip.header.HeaderAddress;
 import javax.sip.header.Parameters;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AddressParametersHeader extends ParametersHeader implements Parameters {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.698 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "50232C7D5628BA6D2DA2D4A79905A12A")

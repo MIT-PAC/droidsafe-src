@@ -1,10 +1,11 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public enum Tone implements Parcelable {
     DIAL(0x01),
@@ -40,6 +41,7 @@ public enum Tone implements Parcelable {
     Tone(int value) {
         mValue = value;
     }
+    @DSModeled(DSC.BAN)
     public static Tone fromInt(int value) {
         for (Tone e : Tone.values()) {
             if (e.mValue == value) {
@@ -52,10 +54,11 @@ public enum Tone implements Parcelable {
     Tone(Parcel in) {
         mValue = in.readInt();
     }
+    @DSModeled(DSC.BAN)
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(ordinal());
     }
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public int describeContents() {
         return 0;
     }

@@ -1,10 +1,11 @@
 package org.apache.http.protocol;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class DefaultedHttpContext implements HttpContext {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.287 -0400", hash_original_field = "F5DDAF0CA7929578B408C909429F68F2", hash_generated_field = "E015EF617CD4ED004D5007AC30C609BC")

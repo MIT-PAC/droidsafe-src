@@ -1,6 +1,7 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static java.nio.channels.SelectionKey.OP_ACCEPT;
 import static java.nio.channels.SelectionKey.OP_CONNECT;
 import static java.nio.channels.SelectionKey.OP_READ;
@@ -30,10 +31,10 @@ import libcore.io.IoBridge;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.StructPollfd;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class SelectorImpl extends AbstractSelector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.853 -0400", hash_original_field = "68EA0DC5C7CD33D02AB22A452F03FE60", hash_generated_field = "6DE612B35C9E8808CBEC2658E9286A57")
@@ -187,6 +188,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_1192850091 =         unmod
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.865 -0400", hash_original_method = "16DB849132AADD2CAC6FB8494D5700D0", hash_generated_method = "2B4032921A17EBB066EE04BD5ED8FE7F")
     private void checkClosed() {
         if(!isOpen())        
@@ -247,6 +249,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_1192850091 =         unmod
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.891 -0400", hash_original_method = "07E877B82AC1C68A90F5E02CD6388406", hash_generated_method = "F438C1EEB0AABA819FBDCA35CC69D6ED")
     private int selectInternal(long timeout) throws IOException {
         addTaint(timeout);
@@ -301,6 +304,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_1192850091 =         unmod
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.892 -0400", hash_original_method = "1864B10FEC667AA8A534CE9CC6FD0BC2", hash_generated_method = "491C65C71FDA317098D7EF3A364A9198")
     private void setPollFd(int i, FileDescriptor fd, int events, Object object) {
         addTaint(object.getTaint());
@@ -319,7 +323,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_1192850091 =         unmod
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.892 -0400", hash_original_method = "C2C79FE5727E3E67D8033155BDE5FA42", hash_generated_method = "0239ABC7D1648C3C8AD66B2BB6D18196")
     private void preparePollFds() {
         int i = 1;
@@ -358,7 +362,7 @@ for(SelectionKeyImpl key : mutableKeys)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.893 -0400", hash_original_method = "561794DF92118E00B9893BD515660DDC", hash_generated_method = "9C36A453C6F6647C691C85BECA480CFE")
     private void ensurePollFdsCapacity() {
         while
@@ -373,7 +377,7 @@ for(SelectionKeyImpl key : mutableKeys)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.894 -0400", hash_original_method = "5DC934A1F65A8C13AADF3FD37642D2BD", hash_generated_method = "E548464CF6F8C196D8B863A685889923")
     private int processPollFds() throws IOException {
         if(pollFds.get(0).revents == POLLIN)        
@@ -455,6 +459,7 @@ Set<SelectionKey> varD4515E6E6CFA065CDA39E787B1F4334B_235757191 =         select
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.895 -0400", hash_original_method = "ECFBB6A45EE52702BEFF3EF78A8EE9C3", hash_generated_method = "3E6C15FBBF84F8664E50DCF3A94B13A8")
     private int doCancel() {
         int deselected = 0;

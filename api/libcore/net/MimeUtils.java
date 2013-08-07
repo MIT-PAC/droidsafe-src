@@ -1,6 +1,7 @@
 package libcore.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,20 +10,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class MimeUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.837 -0400", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "A4660306B18E6B2B3A8E8D9DE7F28302")
     private  MimeUtils() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void add(String mimeType, String extension) {
         if (!mimeTypeToExtensionMap.containsKey(mimeType)) {
             mimeTypeToExtensionMap.put(mimeType, extension);
@@ -31,6 +33,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static InputStream getContentTypesPropertiesStream() {
         String userTable = System.getProperty("content.types.user.table");
         if (userTable != null) {
@@ -53,6 +56,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void applyOverrides() {
         InputStream stream = getContentTypesPropertiesStream();
         if (stream == null) {

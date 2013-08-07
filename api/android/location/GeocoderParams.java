@@ -1,15 +1,16 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GeocoderParams implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.087 -0400", hash_original_field = "CF3890B8F9E27793E741F9D9569D3C34", hash_generated_field = "1A21143DB168F6FB0629A178DF0F089E")
@@ -19,12 +20,14 @@ public class GeocoderParams implements Parcelable {
 
     private String mPackageName;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.088 -0400", hash_original_method = "6AA13481A09E5725F329ED6947D74643", hash_generated_method = "4E4A64F08F1F24D9E300D4DF6C20E04E")
     private  GeocoderParams() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.090 -0400", hash_original_method = "E27B65887C9418FA89109125506244DE", hash_generated_method = "6DE3CA200355C6BC57CBBF9FD12981D0")
     public  GeocoderParams(Context context, Locale locale) {
         mLocale = locale;
@@ -35,7 +38,7 @@ public class GeocoderParams implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.090 -0400", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "2F14296E7E4A52100F9D852C5C100F40")
     public Locale getLocale() {
 Locale varD4470AF088C85BDC4D13A941A003DD34_1497316478 =         mLocale;
@@ -46,7 +49,7 @@ Locale varD4470AF088C85BDC4D13A941A003DD34_1497316478 =         mLocale;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.091 -0400", hash_original_method = "1D100AD0503AB463478DA14DEA58A5D8", hash_generated_method = "9EE063D267FB582E10430E723F71FD8C")
     public String getClientPackage() {
 String var5601F77C1E784C31FA233AB799182FA6_1988991985 =         mPackageName;
@@ -57,7 +60,7 @@ String var5601F77C1E784C31FA233AB799182FA6_1988991985 =         mPackageName;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.092 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7B27E1F88A19D03A6454DA53144A4360")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_906781075 = (0);
@@ -68,6 +71,7 @@ String var5601F77C1E784C31FA233AB799182FA6_1988991985 =         mPackageName;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.094 -0400", hash_original_method = "B02571ABD79129FBD5D7E40D8169B3C2", hash_generated_method = "5D99D76CB0FE42E0D5A546C6D46F0B4B")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);

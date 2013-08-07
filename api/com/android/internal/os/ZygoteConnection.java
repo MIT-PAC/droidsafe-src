@@ -1,6 +1,7 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -22,10 +23,10 @@ import android.os.SystemProperties;
 import android.util.Log;
 import dalvik.system.PathClassLoader;
 import dalvik.system.Zygote;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ZygoteConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.777 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "9F88E22AD28B44C4F3ABF7860B4C458C")
@@ -243,6 +244,7 @@ FileDescriptor varB4DE187B48E9D304340996C59BDD1FA8_1140419984 =         mSocket.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.783 -0400", hash_original_method = "366F843C8FBE8BB09896187A9CDF1388", hash_generated_method = "07F7681FDC5D17637B29F4846CEE9BA9")
     private String[] readArgumentList() throws IOException {
         int argc;
@@ -309,6 +311,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_1151888769 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void applyUidSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
         if (peerUid == 0) {
@@ -348,6 +351,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_1151888769 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void applyRlimitSecurityPolicy(
             Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
@@ -360,6 +364,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_1151888769 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void applyCapabilitiesSecurityPolicy(
             Arguments args, Credentials peer) throws ZygoteSecurityException {
         if (args.permittedCapabilities == 0
@@ -388,6 +393,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_1151888769 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void applyInvokeWithSecurityPolicy(Arguments args, Credentials peer) throws ZygoteSecurityException {
         int peerUid = peer.getUid();
         if (args.invokeWith != null && peerUid != 0) {
@@ -413,6 +419,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_1151888769 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.785 -0400", hash_original_method = "D56D87B601F5E5F24F9D8C0DB423B19E", hash_generated_method = "E1A23CA1BD482645DFD7BF20A908D27C")
     private void handleChildProc(Arguments parsedArgs,
             FileDescriptor[] descriptors, FileDescriptor pipeFd, PrintStream newStderr) throws ZygoteInit.MethodAndArgsCaller {
@@ -518,6 +525,7 @@ for(FileDescriptor fd : descriptors)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.788 -0400", hash_original_method = "3D3F8EE18B5CE9AC13BB6381C124884E", hash_generated_method = "52CA50ED48EF2F94274EFD61BE2EEE87")
     private boolean handleParentProc(int pid,
             FileDescriptor[] descriptors, FileDescriptor pipeFd, Arguments parsedArgs) {
@@ -608,7 +616,7 @@ for(FileDescriptor fd : descriptors)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.789 -0400", hash_original_method = "A5A16DB5966812C0B6C21E171E7DEF94", hash_generated_method = "5BFB956212478E9B0A9275A55802037F")
     private void setChildPgid(int pid) {
         addTaint(pid);
@@ -629,6 +637,7 @@ for(FileDescriptor fd : descriptors)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void logAndPrintError(PrintStream newStderr,
             String message, Throwable ex) {
         Log.e(TAG, message, ex);

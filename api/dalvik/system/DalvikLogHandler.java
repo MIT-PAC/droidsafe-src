@@ -1,6 +1,7 @@
 package dalvik.system;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

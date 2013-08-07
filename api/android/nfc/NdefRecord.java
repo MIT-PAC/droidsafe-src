@@ -1,16 +1,17 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.charset.Charsets;
 import java.util.Arrays;
 
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class NdefRecord implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.116 -0400", hash_original_field = "9C3CD7D37D3E1E66BE9B3B005FC98B3A", hash_generated_field = "D69A1323403FF74B40E10D9DDFD257AB")
@@ -40,6 +41,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.119 -0400", hash_original_method = "EE3B4F476C5F89F900E25765E0C165C3", hash_generated_method = "F7108C0C9FA12024A4B41305F7849566")
       NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload, byte flags) {
         if((type == null) || (id == null) || (payload == null))        
@@ -155,7 +157,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static Uri parseWellKnownUriRecord(NdefRecord record) throws FormatException {
         byte[] payload = record.getPayload();
         if (payload.length < 2) {

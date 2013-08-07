@@ -1,13 +1,14 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.*;
+
 
 public class CheckBox extends CompoundButton {
     

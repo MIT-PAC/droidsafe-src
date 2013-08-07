@@ -1,14 +1,15 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.PublicKey;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class VerifierInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.872 -0400", hash_original_field = "387F1FA6FC99B8AE187C010A06120611", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
@@ -18,6 +19,7 @@ public class VerifierInfo implements Parcelable {
 
     public PublicKey publicKey;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.874 -0400", hash_original_method = "CA1DA71A9B8C344527DB0EB280A0A444", hash_generated_method = "6D1D7EFF4AE49334C9DE82052C4CD5C0")
     public  VerifierInfo(String packageName, PublicKey publicKey) {
         if(packageName == null || packageName.length() == 0)        
@@ -46,6 +48,7 @@ public class VerifierInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.875 -0400", hash_original_method = "C00118AB5B5CCE6381E41D90579B27A9", hash_generated_method = "538AC1C4CA2AF3E4936D2D0C0FFD434A")
     private  VerifierInfo(Parcel source) {
         packageName = source.readString();
@@ -56,7 +59,7 @@ public class VerifierInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.876 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BCE028BE5E5719CC8CAFA80A14706011")
     @Override
     public int describeContents() {
@@ -68,6 +71,7 @@ public class VerifierInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.877 -0400", hash_original_method = "F898CE68252B35C4629787E370ED7F66", hash_generated_method = "218A7E4B012B0800AE36210D3AF91041")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

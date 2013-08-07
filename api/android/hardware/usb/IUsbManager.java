@@ -1,6 +1,7 @@
 package android.hardware.usb;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IUsbManager extends android.os.IInterface
 {

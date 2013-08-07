@@ -1,18 +1,20 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class BluetoothClass implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.096 -0400", hash_original_field = "3C06167D41E761EA62261D0BFD22DD5C", hash_generated_field = "6544EE8866FC2E4C41A3A39948F7A47D")
 
     private int mClass;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.096 -0400", hash_original_method = "3018CA2607FD366405F97E43B06E77B3", hash_generated_method = "90B904425EE4604164B554F63464E722")
     public  BluetoothClass(int classInt) {
         mClass = classInt;
@@ -121,6 +123,7 @@ String varE79732AA16E5FC09BDC824B127CB6617_1323526015 =         Integer.toHexStr
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.102 -0400", hash_original_method = "21B6C08F5C9193686AC48EB890043753", hash_generated_method = "C83EC8E1839BDE6B961676D189C1CE6D")
     public boolean doesClassMatch(int profile) {
         addTaint(profile);

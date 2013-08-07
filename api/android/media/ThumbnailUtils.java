@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,10 +17,10 @@ import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore.Images;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ThumbnailUtils {
     
@@ -30,6 +31,7 @@ public class ThumbnailUtils {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static Bitmap createImageThumbnail(String filePath, int kind) {
         boolean wantMini = (kind == Images.Thumbnails.MINI_KIND);
         int targetSize = wantMini
@@ -137,6 +139,7 @@ public class ThumbnailUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int computeSampleSize(BitmapFactory.Options options,
             int minSideLength, int maxNumOfPixels) {
         int initialSize = computeInitialSampleSize(options, minSideLength,
@@ -154,6 +157,7 @@ public class ThumbnailUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int computeInitialSampleSize(BitmapFactory.Options options,
             int minSideLength, int maxNumOfPixels) {
         double w = options.outWidth;
@@ -177,7 +181,7 @@ public class ThumbnailUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
             Uri uri, ContentResolver cr, ParcelFileDescriptor pfd,
             BitmapFactory.Options options) {
@@ -210,7 +214,7 @@ public class ThumbnailUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void closeSilently(ParcelFileDescriptor c) {
         if (c == null) return;
         try {
@@ -220,7 +224,7 @@ public class ThumbnailUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static ParcelFileDescriptor makeInputStream(
             Uri uri, ContentResolver cr) {
         try {
@@ -231,7 +235,7 @@ public class ThumbnailUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Bitmap transform(Matrix scaler,
             Bitmap source,
             int targetWidth,
@@ -312,6 +316,7 @@ public class ThumbnailUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void createThumbnailFromEXIF(String filePath, int targetSize,
             int maxPixels, SizedThumbnailBitmap sizedThumbBitmap) {
         if (filePath == null) return;
@@ -371,6 +376,7 @@ public class ThumbnailUtils {
 
         public int mThumbnailHeight;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.264 -0400", hash_original_method = "00296400B022DD946E1008D4AF6645F7", hash_generated_method = "00296400B022DD946E1008D4AF6645F7")
         public SizedThumbnailBitmap ()
         {

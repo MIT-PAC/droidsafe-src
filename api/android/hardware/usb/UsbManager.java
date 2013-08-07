@@ -1,6 +1,7 @@
 package android.hardware.usb;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
 import android.app.PendingIntent;
@@ -9,8 +10,8 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.os.SystemProperties;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class UsbManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.022 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -20,6 +21,7 @@ public class UsbManager {
 
     private IUsbManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.023 -0400", hash_original_method = "68E88C1381A537FEBD5C1D01CC81CFD6", hash_generated_method = "0147BA6BA88EBD3825613E13FAA8DB75")
     public  UsbManager(Context context, IUsbManager service) {
         mContext = context;
@@ -266,6 +268,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_532364495 =            
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean propertyContainsFunction(String property, String function) {
         String functions = SystemProperties.get(property, "");
         int index = functions.indexOf(function);
@@ -277,6 +280,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_532364495 =            
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.030 -0400", hash_original_method = "B2F7E99E5659CE0D7ECF8F6FFE68B901", hash_generated_method = "CFC6BD8D8E722BA78BEC9B71820A30AF")
     public boolean isFunctionEnabled(String function) {
         addTaint(function.getTaint());
@@ -288,6 +292,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_532364495 =            
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.031 -0400", hash_original_method = "4ECB85B34540B5A01AD76105AF55C635", hash_generated_method = "4162E419464013A1F056747ACA7DC3BA")
     public String getDefaultFunction() {
         String functions = SystemProperties.get("persist.sys.usb.config", "");
@@ -315,6 +320,7 @@ String varA910D99B3498A5875DCE8E4786C1850C_854403506 =             functions;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.032 -0400", hash_original_method = "F2B908DC7033D00CDC14F7636607BD05", hash_generated_method = "643D453C0D3E1BE761C07D36B758E60C")
     public void setCurrentFunction(String function, boolean makeDefault) {
         addTaint(makeDefault);
@@ -335,6 +341,7 @@ String varA910D99B3498A5875DCE8E4786C1850C_854403506 =             functions;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.032 -0400", hash_original_method = "4FECF17333249386DEF6A0E8A7778CCC", hash_generated_method = "9FE82B361B0E0B2E7AEB90EDC3182476")
     public void setMassStorageBackingFile(String path) {
         addTaint(path.getTaint());

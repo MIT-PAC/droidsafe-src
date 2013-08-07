@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.ServerLogger;
@@ -54,10 +55,10 @@ import javax.sip.header.EventHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class SIPTransactionStack implements SIPTransactionEventListener, SIPDialogEventListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.455 -0400", hash_original_field = "BB024B2AD3D00DEB98AA88DE95E2AC00", hash_generated_field = "4492ED7A506BF07B68742FB955C2E21E")
@@ -1434,6 +1435,7 @@ SIPServerTransaction varE52D098A62AE08C43CFA67AFBFB0CA01_1695680876 =           
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.475 -0400", hash_original_method = "A02B6100DC58EB921085C7ED44EE1D0C", hash_generated_method = "2B36324108A02819C43B8B2B3A7540E9")
     private void addTransactionHash(SIPTransaction sipTransaction) {
         addTaint(sipTransaction.getTaint());
@@ -2226,6 +2228,7 @@ String var45515A2592231F3BCF49C3DB63F02A4B_430547765 =         auditReport;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.488 -0400", hash_original_method = "5A76CC0B1A3067E5B9DACF3EB61E431C", hash_generated_method = "0C6CA76E5407898693D4BDBA0510388E")
     private String auditDialogs(Set activeCallIDs, long leakedDialogTimer) {
         addTaint(leakedDialogTimer);
@@ -2285,6 +2288,7 @@ String var45515A2592231F3BCF49C3DB63F02A4B_1444578192 =         auditReport;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.490 -0400", hash_original_method = "B29AC2188DE994EDE68B3EFDD85B41F1", hash_generated_method = "B72C115F41F48694DAFDE293695B1AE9")
     private String auditTransactions(ConcurrentHashMap transactionsMap,
             long a_nLeakedTransactionTimer) {

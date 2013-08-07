@@ -1,6 +1,7 @@
 package android.view.textservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -12,10 +13,10 @@ import android.content.pm.ApplicationInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SpellCheckerSubtype implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.970 -0400", hash_original_field = "DB752714D7C5597F6D4538948E3D4382", hash_generated_field = "1C2C808B01EBFBF48626EDEF77BDA121")
@@ -142,7 +143,7 @@ String varD5103786A790F3D4881070784C5A1DFD_2136825052 =         mSubtypeExtraVal
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static Locale constructLocaleFromString(String localeStr) {
         if (TextUtils.isEmpty(localeStr))
             return null;
@@ -231,7 +232,7 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1831196585 =             locale
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int hashCodeInternal(String locale, String extraValue) {
         return Arrays.hashCode(new Object[] {locale, extraValue});
     }

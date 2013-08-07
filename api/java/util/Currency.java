@@ -1,21 +1,22 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Currency implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.994 -0400", hash_original_field = "3F4D9AC950DFB473BC6A0BB61B5D51EC", hash_generated_field = "09A83EE2F8EE9A2398F93CB4F525F4D2")
 
     private String currencyCode;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.994 -0400", hash_original_method = "B8C067C2D581EC195B8ADF9C49328ECD", hash_generated_method = "89190EFF2CBAF0E9684CBB21096A71AD")
     private  Currency(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -76,7 +77,7 @@ public final class Currency implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static Set<Currency> getAvailableCurrencies() {
         Set<Currency> result = new LinkedHashSet<Currency>();
         String[] currencyCodes = ICU.getAvailableCurrencyCodes();
@@ -98,7 +99,7 @@ String varDCA4AC53D28391F46322772F57580CB2_339155831 =         currencyCode;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.995 -0400", hash_original_method = "024B35E959A93D0BB9AFB5000392D858", hash_generated_method = "75EFBAD530E15AAB0B723D7483D1BB4E")
     public String getDisplayName() {
 String varB9A5C9A13F510C3DA69A4E71F1129D4D_848753007 =         getDisplayName(Locale.getDefault());
@@ -109,7 +110,7 @@ String varB9A5C9A13F510C3DA69A4E71F1129D4D_848753007 =         getDisplayName(Lo
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.995 -0400", hash_original_method = "B412E21D17743E44672A03725048BDDA", hash_generated_method = "BEB012B1FB291E8A29B61BE9D438C3DA")
     public String getDisplayName(Locale locale) {
         addTaint(locale.getTaint());
@@ -198,7 +199,7 @@ String varDCA4AC53D28391F46322772F57580CB2_2131570623 =         currencyCode;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.996 -0400", hash_original_method = "BB7ABE2F39426123A0B73E0A126344FC", hash_generated_method = "3B9159903F88B428A8D24A96767E4028")
     private Object readResolve() {
 Object varD4FA9C15216E7D131112D808565A84F6_1297834162 =         getInstance(currencyCode);

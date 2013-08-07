@@ -1,6 +1,7 @@
 package org.apache.commons.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,10 +17,10 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Properties;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class LogFactory {
     
@@ -59,6 +60,7 @@ public abstract class LogFactory {
     public abstract void setAttribute(String name, Object value);
 
     
+    @DSModeled(DSC.BAN)
     private static final Hashtable createFactoryStore() {
         Hashtable result = null;
         String storeImplementationClass 
@@ -508,6 +510,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean implementsLogFactory(Class logFactoryClass) {
         boolean implementsLogFactory = false;
         if (logFactoryClass != null) {
@@ -689,6 +692,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void initDiagnostics() {
         String dest;
         try {
@@ -732,6 +736,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final void logDiagnostic(String msg) {
         if (diagnosticsStream != null) {
             diagnosticsStream.print(diagnosticPrefix);
@@ -749,6 +754,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void logClassLoaderEnvironment(Class clazz) {
         if (!isDiagnosticsEnabled()) {
             return;

@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcelable;
 
 public interface ParcelableSpan extends Parcelable {

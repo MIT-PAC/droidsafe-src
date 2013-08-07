@@ -1,6 +1,7 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.ServerLogger;
 import gov.nist.core.StackLogger;
 import gov.nist.core.net.AddressResolver;
@@ -44,10 +45,10 @@ import javax.sip.address.Router;
 import javax.sip.header.HeaderFactory;
 import javax.sip.message.Request;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipStack, SipStackExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.828 -0400", hash_original_field = "0C887D575D34CEEB43215C9C2EB3F7E0", hash_generated_field = "B13D933CCB9027F950F0F782A6866769")
@@ -673,7 +674,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.856 -0400", hash_original_method = "4F314CDF94BE73A82A3392DB747CDD4B", hash_generated_method = "8970D290BC5634C680040A422CAB7B77")
     private void reInitialize() {
         super.reInit();

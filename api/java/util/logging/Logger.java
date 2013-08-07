@@ -1,6 +1,7 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,10 +12,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import dalvik.system.DalvikLogHandler;
 import dalvik.system.DalvikLogging;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Logger {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.312 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "927B896D5AC0DD7FBCC14EBF7566F9A4")
@@ -150,7 +151,7 @@ for(Logger logger : children)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.317 -0400", hash_original_method = "D16C95477ED680F14972EC7ADA3B262B", hash_generated_method = "B77507E99325CC5428FE2DFA0A508960")
     private synchronized void initResourceBundle(String resourceBundleName) {
         String current = this.resourceBundleName;
@@ -203,7 +204,7 @@ for(Logger logger : children)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static Logger getGlobal() {
         return global;
     }
@@ -484,7 +485,7 @@ String var7214CEE3997909E522736F52DB465A8B_1887112707 =         this.resourceBun
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.322 -0400", hash_original_method = "E806564A12DA7CFA1DDB69B8445E1F80", hash_generated_method = "1722373BAE131A95F5F981862248DA0F")
     private boolean internalIsLoggable(Level l) {
         addTaint(l.getTaint());
@@ -519,7 +520,7 @@ String var7214CEE3997909E522736F52DB465A8B_1887112707 =         this.resourceBun
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.338 -0400", hash_original_method = "B262787C5366F934ED8D0783BCB7A8ED", hash_generated_method = "FEFFB63644A09559B7B193E945822767")
     private void setResourceBundle(LogRecord record) {
         addTaint(record.getTaint());

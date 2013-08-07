@@ -1,6 +1,7 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
@@ -14,10 +15,10 @@ import java.text.ParsePosition;
 import java.util.Currency;
 import java.util.NoSuchElementException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class NativeDecimalFormat {
@@ -104,6 +105,7 @@ public final class NativeDecimalFormat {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.830 -0400", hash_original_method = "F2FB63D256AD622AD0AA1906E5944DB2", hash_generated_method = "5AAFFDF8705B718E89082099B750E33B")
     private  NativeDecimalFormat(NativeDecimalFormat other) {
         this.address = cloneImpl(other.address);
@@ -401,6 +403,7 @@ AttributedCharacterIterator varE3ABF6B4C0DDC070CF0843A4557F5D73_414887544 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.841 -0400", hash_original_method = "E9B105AB178BFBFEB280AF82F381CE84", hash_generated_method = "F3E38DCD20841B64AD8A058B1F82F85D")
     private int makeScalePositive(int scale, StringBuilder val) {
         addTaint(val.getTaint());
@@ -807,6 +810,7 @@ String varAB13615B7DE428590B461B7CCD1A3EA5_43927066 =         getTextAttribute(t
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void applyPattern(int addr, boolean localized, String pattern) {
         try {
             applyPatternImpl(addr, localized, pattern);
@@ -995,6 +999,7 @@ switch(roundingMode){
 
         private int pos = -3;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.847 -0400", hash_original_method = "3872533C5F4C6DF8E9B47456E87ABB09", hash_generated_method = "61C6C4E209B2EB1D194185007E303529")
         private  FieldPositionIterator() {
             // ---------- Original Method ----------
@@ -1009,7 +1014,7 @@ switch(roundingMode){
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
         private static int getNativeFieldPositionId(FieldPosition fp) {
             int id = fp.getField();
             if (id < -1 || id > 1) {
@@ -1030,6 +1035,7 @@ switch(roundingMode){
         }
 
         
+        @DSModeled(DSC.BAN)
         private static void setFieldPosition(FieldPositionIterator fpi, FieldPosition fp) {
             if (fpi != null && fp != null) {
                 int field = getNativeFieldPositionId(fp);
@@ -1067,6 +1073,7 @@ switch(roundingMode){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.848 -0400", hash_original_method = "28A52A04516ACAEA5CBE057E7005DC29", hash_generated_method = "DA081028951B06E66773E9FF0DC0DBD0")
         private void checkValid() {
             if(data == null || pos < 0 || pos == data.length)            
@@ -1129,7 +1136,7 @@ Format.Field var6997504BD7AD57E0F76526D97121C1E9_686302244 =             fields[
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.849 -0400", hash_original_method = "E1A3B20A4A62E5F6661DF7F73A635F7C", hash_generated_method = "2FA05A6182FB4AA13AC353371D99B73A")
         private void setData(int[] data) {
             this.data = data;

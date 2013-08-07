@@ -1,12 +1,13 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PrintWriterPrinter implements Printer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.005 -0400", hash_original_field = "1CF9037BCEA86E09FF4A32CFA952E82E", hash_generated_field = "F05012BDDB58D140166F54E133EB677E")

@@ -1,10 +1,11 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class ConcurrentModificationException extends RuntimeException {
     
@@ -24,7 +25,7 @@ public class ConcurrentModificationException extends RuntimeException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.975 -0400", hash_original_method = "2C18D4011661B4B4C3C2AF76F80D71D0", hash_generated_method = "D54BC96BBFF941E955626CF545F2B2D1")
     public  ConcurrentModificationException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);
@@ -34,7 +35,7 @@ public class ConcurrentModificationException extends RuntimeException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.975 -0400", hash_original_method = "1483D8E8224DDF6AD31766681C65E484", hash_generated_method = "51B1549ED82E454472609869B884B7D8")
     public  ConcurrentModificationException(Throwable cause) {
         super(cause);

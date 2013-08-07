@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.net.LinkCapabilities;
 import android.net.LinkProperties;
 import android.os.Bundle;
@@ -9,10 +10,10 @@ import android.os.ServiceManager;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DefaultPhoneNotifier implements PhoneNotifier {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.220 -0400", hash_original_field = "DD0FB23439ECB9C0C2624C354888EAF5", hash_generated_field = "4C8DBF7E7839184D9CCCD54726CB48C0")
@@ -178,6 +179,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.222 -0400", hash_original_method = "45F138472694590FF541E86BA364ACA8", hash_generated_method = "E8DAE81C97C9283870DABAB63D16519E")
     private void doNotifyDataConnection(Phone sender, String reason, String apnType,
             Phone.DataState state) {
@@ -282,7 +284,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.222 -0400", hash_original_method = "2A392D1FEF0E39928D559AB442BF53B9", hash_generated_method = "F7E2F6E2C1BD30D3529804142CCA13F9")
     private void log(String s) {
         addTaint(s.getTaint());

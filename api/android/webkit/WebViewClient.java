@@ -1,14 +1,15 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Message;
 import android.view.KeyEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WebViewClient {
     
@@ -142,7 +143,7 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_1742185791 =         nul
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.617 -0400", hash_original_method = "B2EE2F5677BCC95DB5D614A683A4C62D", hash_generated_method = "E76D4D6EE1DEFD7875B9B2AF2E567A59")
     public void onProceededAfterSslError(WebView view, SslError error) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -152,6 +153,7 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_1742185791 =         nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.618 -0400", hash_original_method = "C5A42222BD6D7B11B03E8E8DC75486E5", hash_generated_method = "E8E037B69AB5D3E1175600D9CBB56F62")
     public void onReceivedClientCertRequest(WebView view,
             ClientCertRequestHandler handler, String host_and_port) {

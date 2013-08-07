@@ -1,8 +1,9 @@
 package android.preference;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -76,6 +77,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.103 -0400", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "78F0577AB1A805F183E32F1C6426A226")
     public String getText() {
 String var7F7ECB4B14362FFBA020956966B29A66_931637996 =         mText;
@@ -201,6 +203,7 @@ Object var0AC0FFFECD61C5D7F483CEEBDC224FAC_1016672297 =         a.getString(inde
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.131 -0400", hash_original_method = "25F3ADCBABEE77EF933107206F4A63FB", hash_generated_method = "B59C05E6184051797C41801947C0CF9B")
     public EditText getEditText() {
 EditText var8A50566AD29B7D2AD5438781BF3A5FB4_773345932 =         mEditText;
@@ -211,6 +214,7 @@ EditText var8A50566AD29B7D2AD5438781BF3A5FB4_773345932 =         mEditText;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.134 -0400", hash_original_method = "7FAD769054190EA8D5B257F9884DACB8", hash_generated_method = "77C53E8C3A8DADFF7BA567287754DD1F")
     @Override
     protected boolean needInputMethod() {

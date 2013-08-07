@@ -1,6 +1,7 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.Collator;
 import java.util.Comparator;
 
@@ -10,10 +11,10 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.text.TextUtils;
 import android.util.Printer;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PackageItemInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.242 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
@@ -164,6 +165,7 @@ Drawable varB77E3BDD223F0ECAD6D8B57AE6CCEB66_1733270520 =         loadDefaultIco
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.248 -0400", hash_original_method = "8E0B311EF662738B18859A93F77EBD0A", hash_generated_method = "770ABEBCDCE5C726BEA1CA33E7FC148C")
     protected Drawable loadDefaultIcon(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -202,7 +204,7 @@ Drawable var3716CCA1FFFC9EFA2CF03E314A8A1A27_837026196 =         loadDefaultLogo
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.250 -0400", hash_original_method = "790329C099FCB9AD7C46A077CBE50219", hash_generated_method = "782A9BC2CD89E7BE939D1758B86D147F")
     protected Drawable loadDefaultLogo(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -301,7 +303,7 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_684238922 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.253 -0400", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "C917DFC50DA984F6ECD5D325C0097FBD")
     protected ApplicationInfo getApplicationInfo() {
 ApplicationInfo var540C13E9E156B687226421B24F2DF178_698361942 =         null;

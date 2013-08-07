@@ -1,12 +1,13 @@
 package org.apache.http.client.methods;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.URI;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HttpGet extends HttpRequestBase {
     

@@ -1,15 +1,16 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SyncStatusInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.804 -0400", hash_original_field = "A6E80D6465C4F39AC517335BD9346D44", hash_generated_field = "A9902B6EC2628AF68CD4117B511E65F0")
@@ -64,6 +65,7 @@ public class SyncStatusInfo implements Parcelable {
 
     public ArrayList<Long> periodicSyncTimes;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.806 -0400", hash_original_method = "A601236BC9972CD1DA6DEFC9BDCCDDF9", hash_generated_method = "BB787ACFE6D55BF74960948674FE5AEC")
       SyncStatusInfo(int authorityId) {
         this.authorityId = authorityId;
@@ -72,6 +74,7 @@ public class SyncStatusInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.810 -0400", hash_original_method = "48BE1C9789126DF2BDCDE38D758F27DD", hash_generated_method = "5C6FD6F693A1FD0582E03F8012F5B23F")
       SyncStatusInfo(Parcel parcel) {
         int version = parcel.readInt();
@@ -118,6 +121,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.812 -0400", hash_original_method = "7E33E8226B73A02621B31754517607B3", hash_generated_method = "63C73553ECB7047E4F838377AD4C75EB")
     public int getLastFailureMesgAsInt(int def) {
         addTaint(def);
@@ -149,7 +153,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.813 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C037295706E9C356D00432F03EE84288")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_389396590 = (0);
@@ -160,6 +164,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.814 -0400", hash_original_method = "9461760C81A4DFF607A36CA2D6370E1C", hash_generated_method = "B73DC814B2E25AEEF2DEEAA6B8CD1C80")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);
@@ -197,6 +202,7 @@ for(long periodicSyncTime : periodicSyncTimes)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.815 -0400", hash_original_method = "BB3C22BCE01837AA4BAC40A0B35F8BC2", hash_generated_method = "9155ACA81EB7FC21ED9DB68D6505F41C")
     public void setPeriodicSyncTime(int index, long when) {
         addTaint(when);
@@ -209,6 +215,7 @@ for(long periodicSyncTime : periodicSyncTimes)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.816 -0400", hash_original_method = "CB3B6F2BD6B69A04BBE5B4B8321ED55E", hash_generated_method = "2A8281D36F44955C2A9A236F83302204")
     private void ensurePeriodicSyncTimeSize(int index) {
         addTaint(index);
@@ -237,6 +244,7 @@ for(int i = periodicSyncTimes.size();i < requiredSize;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.817 -0400", hash_original_method = "E0266DD4F289B692F6E7B79E10E75B20", hash_generated_method = "93E8A3EE5FEF002A9EC7100CC7EED256")
     public long getPeriodicSyncTime(int index) {
         addTaint(index);
@@ -257,6 +265,7 @@ for(int i = periodicSyncTimes.size();i < requiredSize;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.817 -0400", hash_original_method = "5D5F49D9C483CE201F8BB2B6D37F0FB1", hash_generated_method = "2AB20A703E54688395AB54626C12F81F")
     public void removePeriodicSyncTime(int index) {
         addTaint(index);

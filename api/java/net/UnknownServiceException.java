@@ -1,10 +1,11 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class UnknownServiceException extends IOException {
     
@@ -22,6 +23,7 @@ public class UnknownServiceException extends IOException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.168 -0400", hash_original_method = "E3B2640B549BA587BAC4EC77E8C4280A", hash_generated_method = "6D22DDD94745C3A0AEEE9F635031563E")
     public  UnknownServiceException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

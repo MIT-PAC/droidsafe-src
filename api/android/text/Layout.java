@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
 import android.emoji.EmojiFactory;
@@ -19,10 +20,10 @@ import android.text.style.TabStopSpan;
 
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Layout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.934 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
@@ -70,7 +71,7 @@ public abstract class Layout {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.936 -0400", hash_original_method = "E08E539EEFF1AD274546B85662DC9DCC", hash_generated_method = "6395EFF07D76BC18DC7424783F48B3F7")
     protected  Layout(CharSequence text, TextPaint paint,
                      int width, Alignment align, TextDirectionHeuristic textDir,
@@ -410,7 +411,7 @@ for(int n = 0;n < length;n++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.945 -0400", hash_original_method = "94C8B0A33C8A9972488E17891E7B8BAC", hash_generated_method = "C6DCC6BBA35E42A29D86DEAE4B6BC78A")
     private int getLineStartPos(int line, int left, int right) {
         addTaint(right);
@@ -587,7 +588,7 @@ Alignment varC04E5C57D472FBB575D9430F22E2842D_979096409 =         mAlignment;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.946 -0400", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "39761A805CEA4A83E51A140017DB1598")
     public final TextDirectionHeuristic getTextDirectionHeuristic() {
 TextDirectionHeuristic var3A0D72519E0B51077F9922AC60B8A2A3_1580742974 =         mTextDir;
@@ -660,7 +661,7 @@ TextDirectionHeuristic var3A0D72519E0B51077F9922AC60B8A2A3_1580742974 =         
     public abstract int getBottomPadding();
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.947 -0400", hash_original_method = "2C3949CE81E6BE871356E85B216A576F", hash_generated_method = "7D5FBEF50AF5FC81B03310BF5728F278")
     public boolean isLevelBoundary(int offset) {
         addTaint(offset);
@@ -776,7 +777,7 @@ for(int i = 0;i < runs.length;i += 2)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.948 -0400", hash_original_method = "2802B19F8A9E2D0D463FD305FA66136A", hash_generated_method = "488CCF4921D61183EFBD46E8DD008A71")
     private boolean primaryIsTrailingPrevious(int offset) {
         addTaint(offset);
@@ -868,7 +869,7 @@ for(int i = 0;i < runs.length;i += 2)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.949 -0400", hash_original_method = "A6F47D9472D86FF595A17085495F07A6", hash_generated_method = "031D6F342F3F076AF62A055F050E5A18")
     private float getHorizontal(int offset, boolean trailing) {
         addTaint(trailing);
@@ -883,7 +884,7 @@ for(int i = 0;i < runs.length;i += 2)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.949 -0400", hash_original_method = "B47A0ABADD57DE266AAF87A7E699E873", hash_generated_method = "56F44405DC0BFB7A569BC534F23E4FB2")
     private float getHorizontal(int offset, boolean trailing, int line) {
         addTaint(line);
@@ -1079,7 +1080,7 @@ for(int i = 0;i < runs.length;i += 2)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.950 -0400", hash_original_method = "22E5E0C81FE58627900045F7BF4DB10C", hash_generated_method = "522FD616B9273514F4CD5D19F015DDC1")
     private float getLineExtent(int line, boolean full) {
         addTaint(full);
@@ -1116,7 +1117,7 @@ for(int i = 0;i < runs.length;i += 2)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.950 -0400", hash_original_method = "8D693BD7DA670D75D51405BA4AD1D35A", hash_generated_method = "99EBD7AA1E9D6596790CB7919B35F40A")
     private float getLineExtent(int line, TabStops tabStops, boolean full) {
         addTaint(full);
@@ -1335,7 +1336,7 @@ for(int i = 0;i < dirs.mDirections.length;i += 2)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.952 -0400", hash_original_method = "2B63DEF38DAE998AFE5301FAAC214E4B", hash_generated_method = "6994CF372EE6E88DB926B69C7E0F6B7A")
     private int getLineVisibleEnd(int line, int start, int end) {
         addTaint(end);
@@ -1445,7 +1446,7 @@ for(;end > start;end--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.953 -0400", hash_original_method = "0024CF60F9AAE9E8C390E55EB92D8B7D", hash_generated_method = "A4E160F0CFE6C319C1D60836BC07DC3D")
     private int getOffsetToLeftRightOf(int caret, boolean toLeft) {
         addTaint(toLeft);
@@ -1514,7 +1515,7 @@ for(;end > start;end--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.954 -0400", hash_original_method = "F9D5E8173F5C3CA491A1C8A8AE760B93", hash_generated_method = "22D34561D1FD2DBB0D435745C1094789")
     private int getOffsetAtStartOf(int offset) {
         addTaint(offset);
@@ -1651,7 +1652,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.955 -0400", hash_original_method = "12119B0793FEC64A3F791B69831CA1AC", hash_generated_method = "DA23D10776D5FD0596D33C0A852A8FFA")
     private void addSelection(int line, int start, int end,
                               int top, int bottom, Path dest) {
@@ -1831,7 +1832,7 @@ Alignment varCEAE2685351A3CF46F157F15BE8AD2B6_818189174 =         align;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.958 -0400", hash_original_method = "E5BF73D13B43F74BA21E795D809567BE", hash_generated_method = "337C6BE8FA9EF71BC5F124BA8ED74B30")
     private int getParagraphLeadingMargin(int line) {
         addTaint(line);
@@ -1969,7 +1970,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.961 -0400", hash_original_method = "0902B773EC3014719EA37A51347EC9C6", hash_generated_method = "FD0C7C3C4BA2DFBFA9DC944C78A59D3F")
     private void ellipsize(int start, int end, int line,
                            char[] dest, int destoff) {

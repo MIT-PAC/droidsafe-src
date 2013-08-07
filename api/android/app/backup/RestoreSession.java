@@ -1,15 +1,16 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.os.RemoteException;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RestoreSession {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.555 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -22,6 +23,7 @@ public class RestoreSession {
 
     RestoreObserverWrapper mObserver = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.557 -0400", hash_original_method = "603F247D543111CC62EE9EB2C3201E30", hash_generated_method = "F3BECFC9424092C247E9FC4DE58DECD3")
       RestoreSession(Context context, IRestoreSession binder) {
         mContext = context;
@@ -32,6 +34,7 @@ public class RestoreSession {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.558 -0400", hash_original_method = "85E5CD06982622FBF40B882974335BE2", hash_generated_method = "2E5BABCC4DA5CC8316562ACE53D8D689")
     public int getAvailableRestoreSets(RestoreObserver observer) {
         addTaint(observer.getTaint());
@@ -60,6 +63,7 @@ public class RestoreSession {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.561 -0400", hash_original_method = "C8DAB2ADB788499C67FF0E8E9408ECE5", hash_generated_method = "0D732AD408EDFD8D87C27BA9785DA2AF")
     public int restoreAll(long token, RestoreObserver observer) {
         addTaint(token);
@@ -99,6 +103,7 @@ public class RestoreSession {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.563 -0400", hash_original_method = "F5EFDD74303F049C8AACBA4BE897E134", hash_generated_method = "35EBDC8F50EBFBAD9176E43FA26F9E28")
     public int restoreSome(long token, RestoreObserver observer, String[] packages) {
         addTaint(packages[0].getTaint());
@@ -139,6 +144,7 @@ public class RestoreSession {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.565 -0400", hash_original_method = "45656BEA7940AC3102C43782877B83F7", hash_generated_method = "05DA92BC1ED96FC92C31CC885C710667")
     public int restorePackage(String packageName, RestoreObserver observer) {
         addTaint(packageName.getTaint());
@@ -178,6 +184,7 @@ public class RestoreSession {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.567 -0400", hash_original_method = "97A09429CDECAD0EA89948A618DDD793", hash_generated_method = "612247F4837A4CAF2A74D43F84ECBE92")
     public void endRestoreSession() {
         try 
@@ -267,7 +274,7 @@ switch(msg.what){
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.571 -0400", hash_original_method = "09B9DD73C3E4A1439A279C7C4D1CFC03", hash_generated_method = "2F50BAFD1BE78E86C546D0C5DFA814CB")
         public void restoreStarting(int numPackages) {
             addTaint(numPackages);
@@ -279,7 +286,7 @@ switch(msg.what){
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.572 -0400", hash_original_method = "4CFF49A8B007F8B448F2967D6A75009D", hash_generated_method = "31766C357506570A5FADBB1195FA94D3")
         public void onUpdate(int nowBeingRestored, String currentPackage) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -293,7 +300,7 @@ switch(msg.what){
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.573 -0400", hash_original_method = "9021095FD560CADBADD83E17671DA995", hash_generated_method = "CA417BC5B0D06FEA4D8A0973BA34390A")
         public void restoreFinished(int error) {
             addTaint(error);

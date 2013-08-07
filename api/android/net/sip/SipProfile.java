@@ -1,6 +1,7 @@
 package android.net.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.text.ParseException;
@@ -16,10 +17,10 @@ import javax.sip.address.URI;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SipProfile implements Parcelable, Serializable, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.632 -0400", hash_original_field = "9C8E67CB570F7F2DF167C544686B922A", hash_generated_field = "16324C43983326A3B46F3FCABA310E0B")
@@ -56,12 +57,14 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
 
     private transient int mCallingUid = 0;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.633 -0400", hash_original_method = "A9E3259F33F9DE91C391F7016F4793EF", hash_generated_method = "F93E0B2FF811F46C0359831D1336A6D7")
     private  SipProfile() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.635 -0400", hash_original_method = "03F00CBB1D1D79A9110C9D3986D03161", hash_generated_method = "208365E4FFF39ADE6BA452905A4F5CFB")
     private  SipProfile(Parcel in) {
         mAddress = (Address) in.readSerializable();
@@ -133,6 +136,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.637 -0400", hash_original_method = "95F156513507BA474AAADC0CAD04DB56", hash_generated_method = "DBB6756D59BB96BFB2F419B433CCAD24")
     public SipURI getUri() {
 SipURI var95FDA4C63539A7F6A3372CE48866EE18_826765425 =         (SipURI) mAddress.getURI();
@@ -162,7 +166,7 @@ String varCD3A2D1DE5E8E77723178044A3636A53_1042641550 =         getUri().toStrin
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.637 -0400", hash_original_method = "15923319AE2A6D9E076B860EB8423C19", hash_generated_method = "48A8A3628696AD1485DA17DBD3BCC890")
     public Address getSipAddress() {
 Address var86CD3BA5FA0F42F72E695A9A747D1E23_2128047423 =         mAddress;
@@ -292,7 +296,7 @@ String varB7B5AF13F9E5284422C310D543CA143D_367150269 =         mProfileName;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.641 -0400", hash_original_method = "24890DFC4ECCC257FBD9D683C57D0141", hash_generated_method = "0A7C123223C7B04C699C67D459550FF6")
     public void setCallingUid(int uid) {
         mCallingUid = uid;
@@ -301,7 +305,7 @@ String varB7B5AF13F9E5284422C310D543CA143D_367150269 =         mProfileName;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.641 -0400", hash_original_method = "1B2206C44B78A8BBFEDFDFC351FB4749", hash_generated_method = "C72BF710A0CFC0A8ABD7FC7ED2CE7FC5")
     public int getCallingUid() {
         int varADFDCD8DB22A6CFEC4CB8ABED6EFC7FA_2145126667 = (mCallingUid);
@@ -312,7 +316,7 @@ String varB7B5AF13F9E5284422C310D543CA143D_367150269 =         mProfileName;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.642 -0400", hash_original_method = "0A3380549EECCCE1451002357806ED2B", hash_generated_method = "1F3EC62BF823DD4E6E366C501EA3BA6B")
     private Object readResolve() throws ObjectStreamException {
         if(mPort == 0)        
@@ -448,6 +452,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_499356423 =         this;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.645 -0400", hash_original_method = "9B9A6C83AA85ED9069AF543EFC545200", hash_generated_method = "BCF86A35C7123A10294F50D0E8123336")
         private String fix(String uriString) {
             addTaint(uriString.getTaint());

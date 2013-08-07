@@ -1,14 +1,16 @@
 package java.nio.charset;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class CodingErrorAction {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.640 -0400", hash_original_field = "418C5509E2171D55B0AEE5C2EA4442B5", hash_generated_field = "B1982569D823DF720405855D93182845")
 
     private String action;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.640 -0400", hash_original_method = "97CD51F500ABFE41AE4BD609F91C5F74", hash_generated_method = "7A8E959B2CD8A428B2EF81F66E186CC8")
     private  CodingErrorAction(String action) {
         this.action = action;

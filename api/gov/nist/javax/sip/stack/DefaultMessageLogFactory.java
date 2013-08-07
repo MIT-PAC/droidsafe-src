@@ -1,11 +1,12 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.LogRecord;
 import gov.nist.javax.sip.LogRecordFactory;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class DefaultMessageLogFactory implements LogRecordFactory {
     

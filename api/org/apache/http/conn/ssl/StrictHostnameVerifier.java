@@ -1,11 +1,12 @@
 package org.apache.http.conn.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.net.ssl.SSLException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class StrictHostnameVerifier extends AbstractVerifier {
     

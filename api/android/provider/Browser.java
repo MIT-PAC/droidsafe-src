@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -15,8 +16,8 @@ import android.provider.BrowserContract.History;
 import android.provider.BrowserContract.Searches;
 import android.util.Log;
 import android.webkit.WebIconDatabase;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class Browser {
     
@@ -42,6 +43,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void sendString(Context c,
                                         String stringToSend,
                                         String chooserDialogTitle) {
@@ -71,11 +73,13 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final void addOrUrlEquals(StringBuilder sb) {
         sb.append(" OR " + BookmarkColumns.URL + " = ");
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final Cursor getVisitedLike(ContentResolver cr, String url) {
         boolean secure = false;
         String compareString = url;
@@ -160,6 +164,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final String[] getVisitedHistory(ContentResolver cr) {
         Cursor c = null;
         String[] str = null;
@@ -230,6 +235,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final void deleteHistoryWhere(ContentResolver cr, String whereClause) {
         Cursor cursor = null;
         try {

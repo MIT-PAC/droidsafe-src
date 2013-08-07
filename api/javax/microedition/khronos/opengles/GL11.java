@@ -1,6 +1,7 @@
 package javax.microedition.khronos.opengles;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface GL11 extends GL10 {
     int GL_ACTIVE_TEXTURE                          = 0x84E0;

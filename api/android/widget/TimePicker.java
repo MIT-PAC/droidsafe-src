@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.Locale;
@@ -21,10 +22,10 @@ import android.widget.NumberPicker.OnValueChangeListener;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TimePicker extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.890 -0400", hash_original_field = "AB9371C54D62E21B7C9B3A0218F3CF8E", hash_generated_field = "35FD601AE81D55F188A5E5435A238E5F")
@@ -318,6 +319,7 @@ public class TimePicker extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.904 -0400", hash_original_method = "980D3FE8BB317B8359A795201150D40B", hash_generated_method = "F1D9F8801B54CF397ED9522D73C73ED7")
     private void setCurrentLocale(Locale locale) {
         if(locale.equals(mCurrentLocale))        
@@ -584,6 +586,7 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.910 -0400", hash_original_method = "D50D8E33466194F955FDB4E6708A42AD", hash_generated_method = "13196BACB44422C23C50D8C48E0ADF42")
     private void updateHourControl() {
         if(is24HourView())        
@@ -611,6 +614,7 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.911 -0400", hash_original_method = "C352743C674140A19902F99B280928CF", hash_generated_method = "AAD61B065493103C368265D0998F72A7")
     private void updateAmPmControl() {
         if(is24HourView())        
@@ -660,6 +664,7 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.911 -0400", hash_original_method = "8A252D715D292AC897EF9505006002CC", hash_generated_method = "97E3ACCB50D717165DBE447150590099")
     private void onTimeChanged() {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
@@ -675,6 +680,7 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.912 -0400", hash_original_method = "4C27F718F6DC2C1B1670607286108308", hash_generated_method = "BAFB29E04A992B4A355A2267C2780E13")
     private void setContentDescriptions() {
         String text = mContext.getString(R.string.time_picker_increment_minute_button);
@@ -697,6 +703,7 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.913 -0400", hash_original_method = "EA3F98147485CBE1A2219199F92431C8", hash_generated_method = "F45E3DBD9372DA394CDC8A2F5ADB9F15")
     private void updateInputState() {
         InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
@@ -745,6 +752,7 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
 
         private int mMinute;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.913 -0400", hash_original_method = "F395FF1FB7466B722BA2E9FD639B6FEC", hash_generated_method = "F8A955477404115369E61A054894052B")
         private  SavedState(Parcelable superState, int hour, int minute) {
             super(superState);
@@ -757,6 +765,7 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.914 -0400", hash_original_method = "E55ECE0F217E584D660F2F1E2BD9AF6D", hash_generated_method = "5CC81B14D3F46C2076B5C2B2E083007B")
         private  SavedState(Parcel in) {
             super(in);

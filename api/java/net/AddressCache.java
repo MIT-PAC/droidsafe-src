@@ -1,11 +1,12 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.util.BasicLruCache;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class AddressCache {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.250 -0400", hash_original_field = "05F5B634845D92FA0490913D8D84B01F", hash_generated_field = "66F36FCE191D24F1E090B75C9CC1CFED")
@@ -96,6 +97,7 @@ Object var540C13E9E156B687226421B24F2DF178_1502061580 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.255 -0400", hash_original_method = "CA6BD7BD54236FC7C97CCB9D1828122E", hash_generated_method = "9116A5C46BE0EDF86807202A7B25203F")
     private long customTtl(String propertyName, long defaultTtlNanos) {
         addTaint(defaultTtlNanos);

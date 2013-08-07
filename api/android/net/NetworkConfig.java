@@ -1,10 +1,11 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class NetworkConfig {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.309 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
@@ -26,6 +27,7 @@ public class NetworkConfig {
 
     public int restoreTime;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.310 -0400", hash_original_method = "93F95FF083791513BC80A25A69B4AF8A", hash_generated_method = "1A05FE727A426596D9FEF27F4D73E691")
     public  NetworkConfig(String init) {
         addTaint(init.getTaint());
@@ -47,7 +49,7 @@ public class NetworkConfig {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.310 -0400", hash_original_method = "474B729266EEB37673AA204F699AE5C3", hash_generated_method = "153769439BDC588AE9ED6C441BBF88AD")
     public boolean isDefault() {
         boolean varF4E52B2901BB1FD7247499B30FF884A3_2120675970 = ((type == radio));

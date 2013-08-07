@@ -1,15 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.767 -0400", hash_original_field = "BC8C6DCF12CE09E50A98BB57ADFCADD9", hash_generated_field = "499A2D73243CED99A42E214D64505A6C")
@@ -490,7 +491,7 @@ E var1488522CA63FA559F06B9E300ACDBE8D_2059536130 =         elementAt(location);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.803 -0400", hash_original_method = "B022A84D94038C9BB0C01ED819C072BD", hash_generated_method = "98CD7C8BB70A99FB1026BA9FE2AED777")
     private void grow(int newCapacity) {
         addTaint(newCapacity);
@@ -505,7 +506,7 @@ E var1488522CA63FA559F06B9E300ACDBE8D_2059536130 =         elementAt(location);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.803 -0400", hash_original_method = "183736DEF5A7AE33048C32065B21DF67", hash_generated_method = "79E3116E494A0C4F1C4B2091C2181850")
     private void growByOne() {
         int adding = 0;
@@ -538,7 +539,7 @@ E var1488522CA63FA559F06B9E300ACDBE8D_2059536130 =         elementAt(location);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.804 -0400", hash_original_method = "1763D1FD6D85CB337349BE3D39A45770", hash_generated_method = "44C8DD9A6652B3DEE402B9A6406F2A03")
     private void growBy(int required) {
         addTaint(required);
@@ -1090,7 +1091,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_999939029 =             result;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int index, int size) {
         throw new ArrayIndexOutOfBoundsException(size, index);
     }
@@ -1274,7 +1275,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_693101289 =         buffer.toString()
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.853 -0400", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "17A96E89DBC8BDB21D3336A9C484CCA6")
     private synchronized void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());

@@ -1,12 +1,13 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NetworkState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.547 -0400", hash_original_field = "BC303683CCB67AB9CAD099FFC4A3091E", hash_generated_field = "97BC2F6998D1E4D0DED95BC177B82BD4")
@@ -22,6 +23,7 @@ public class NetworkState implements Parcelable {
 
     public String subscriberId;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_method = "D6391A7872D312C012506A6DA31DB5D3", hash_generated_method = "EC0F42F4E0307B6126DF6332390DADB8")
     public  NetworkState(NetworkInfo networkInfo, LinkProperties linkProperties,
             LinkCapabilities linkCapabilities) {
@@ -33,6 +35,7 @@ public class NetworkState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_method = "9B5E574B8F0C49F1D3E90E7F9E978574", hash_generated_method = "67457763AE93E14049403E64D5960DBD")
     public  NetworkState(NetworkInfo networkInfo, LinkProperties linkProperties,
             LinkCapabilities linkCapabilities, String subscriberId) {
@@ -48,6 +51,7 @@ public class NetworkState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_method = "A56CA9045340CA1A085D30A3C9DD57C6", hash_generated_method = "EB8EA19A14538AF6862AF07AB6EA3AA9")
     public  NetworkState(Parcel in) {
         networkInfo = in.readParcelable(null);
@@ -62,7 +66,7 @@ public class NetworkState implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "384876978ECE0B6A18A8FB513D30B55A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_917206253 = (0);
@@ -73,7 +77,7 @@ public class NetworkState implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_method = "EF66345FC72BF78BF99044E19149D234", hash_generated_method = "48A4DC19AEE40DD53090FA15BD129CC8")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

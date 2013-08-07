@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header.extensions;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 
 import javax.sip.header.Header;

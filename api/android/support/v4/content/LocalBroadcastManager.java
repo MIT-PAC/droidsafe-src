@@ -1,6 +1,7 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -12,10 +13,10 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LocalBroadcastManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.921 -0400", hash_original_field = "5ABA4A253E78386295F297E632FF4E34", hash_generated_field = "722D46A23A9E453AC7AC6D5797C29418")
@@ -34,6 +35,7 @@ public class LocalBroadcastManager {
 
     private Handler mHandler;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.922 -0400", hash_original_method = "839AC2DB210099F0B624D40E6378447E", hash_generated_method = "1963CB7FD696A59C71B1B0E04AC6874D")
     private  LocalBroadcastManager(Context context) {
         mAppContext = context;
@@ -279,6 +281,7 @@ for(int i=0;i<receivers.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.931 -0400", hash_original_method = "3F6742DF10D1E655ECFD08018DEE1CF4", hash_generated_method = "04FAAF88FDEB1E40F0F726195B57428A")
     private void executePendingBroadcasts() {
         while

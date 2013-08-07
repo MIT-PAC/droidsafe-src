@@ -1,15 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.725 -0400", hash_original_field = "6A7F245843454CF4F28AD7C5E2572AA2", hash_generated_field = "777D1E33E50D4CDEA795A5FBEBE9B75E")
@@ -53,7 +54,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.728 -0400", hash_original_method = "86AF4C096D752C20A8CB0D886E79B7FB", hash_generated_method = "7880F76458629820F33A005C779B0222")
     private void allocateElements(int numElements) {
         addTaint(numElements);
@@ -88,7 +89,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.728 -0400", hash_original_method = "35225802D7F18BE5673FDDFDE4B70B2E", hash_generated_method = "0A01FF0183A6B9E76A7B5CEE19A7D9B8")
     private void doubleCapacity() {
         int p = head;
@@ -565,7 +566,7 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_2099015912 =         removeFirst();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.738 -0400", hash_original_method = "BBF79E0ADE5790277B99F1D7AA727B20", hash_generated_method = "1D9C6F57BCDE2C7294D7BB32ACA5DF67")
     private void checkInvariants() {
         // ---------- Original Method ----------
@@ -577,7 +578,7 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_2099015912 =         removeFirst();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.740 -0400", hash_original_method = "6B28B7CDDDC5837E98E272935A4DA74A", hash_generated_method = "18C9FAF10DB497F37E9739E298F6C96C")
     private boolean delete(int i) {
         addTaint(i);
@@ -830,7 +831,7 @@ ArrayDeque<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1268751069 =             resul
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.747 -0400", hash_original_method = "5A84D35A2C5A040CC18139106D665D0E", hash_generated_method = "93EB7642BA8BB24E3533817E9BA3E16B")
     private void writeObject(ObjectOutputStream s) throws IOException {
         addTaint(s.getTaint());
@@ -848,7 +849,7 @@ for(int i = head;i != tail;i = (i + 1) & mask)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.748 -0400", hash_original_method = "ABF871D717FCC2D87CA02E500CE54CBF", hash_generated_method = "247F5C6B322A797807EB5831518B08F7")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();

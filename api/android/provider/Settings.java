@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,10 +27,10 @@ import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.AndroidException;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Settings {
     
@@ -40,6 +41,7 @@ public final class Settings {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static String getGTalkDeviceId(long androidId) {
         return "android-" + Long.toHexString(androidId);
     }
@@ -372,7 +374,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public static void clearConfiguration(Configuration inoutConfig) {
             inoutConfig.fontScale = 0;
         }
@@ -384,7 +386,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public static boolean hasInterestingConfigurationChanges(int changes) {
             return (changes&ActivityInfo.CONFIG_FONT_SCALE) != 0;
         }
@@ -1116,16 +1118,19 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.BAN)
         public static final String getBluetoothHeadsetPriorityKey(String address) {
             return ("bluetooth_headset_priority_" + address.toUpperCase());
         }
 
         
+        @DSModeled(DSC.BAN)
         public static final String getBluetoothA2dpSinkPriorityKey(String address) {
             return ("bluetooth_a2dp_sink_priority_" + address.toUpperCase());
         }
 
         
+        @DSModeled(DSC.BAN)
         public static final String getBluetoothInputDevicePriorityKey(String address) {
             return ("bluetooth_input_device_priority_" + address.toUpperCase());
         }

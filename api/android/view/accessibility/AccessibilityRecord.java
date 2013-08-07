@@ -1,15 +1,16 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Parcelable;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AccessibilityRecord {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.478 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "819E660F8F7271EBD249CE0B621A6CFF")
@@ -585,7 +586,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.494 -0400", hash_original_method = "0D9114E83A94DAB2C664FA6E45C487C9", hash_generated_method = "F7C7CF110AFA05BD358D80D700ADEDC6")
     public void setConnectionId(int connectionId) {
         enforceNotSealed();
@@ -596,7 +597,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.494 -0400", hash_original_method = "7730BDD0DFF4FE8B243CA8BC305ED86E", hash_generated_method = "0D7B5E4D59CD0A6DD9DDC234474696D4")
     public void setSealed(boolean sealed) {
         mSealed = sealed;
@@ -652,7 +653,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.495 -0400", hash_original_method = "4FB14FE7E8FA7F40071202FB709EF8E4", hash_generated_method = "2BCF6C6CA96E36E3148A078854CE283C")
     private boolean getBooleanProperty(int property) {
         addTaint(property);
@@ -664,7 +665,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.495 -0400", hash_original_method = "1E3C58B2EEBD5BD671884B4ADC3ACB2F", hash_generated_method = "95C48EDB697FC48992ED6C6F994F1F64")
     private void setBooleanProperty(int property, boolean value) {
         addTaint(value);

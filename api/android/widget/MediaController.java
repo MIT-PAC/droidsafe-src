@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Formatter;
 import java.util.Locale;
 
@@ -22,10 +23,10 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.android.internal.policy.PolicyManager;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.320 -0400", hash_original_field = "01AE51C88036C324EFB5646FEE9EB109", hash_generated_field = "C74867B897C11D551703ED8F09673E65")
@@ -377,7 +378,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.324 -0400", hash_original_method = "5AB721CF8AD66EE5762FE50902543B8E", hash_generated_method = "23191FD52B96F9E7404E05B0D03554AA")
     private void initFloatingWindow() {
         mWindowManager = (WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE);
@@ -410,7 +411,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.325 -0400", hash_original_method = "A15216BA04857F16D27E94A01ED8D9C8", hash_generated_method = "1511A01BAD7F587E281791C0F994A377")
     private void initFloatingWindowLayout() {
         mDecorLayoutParams = new WindowManager.LayoutParams();
@@ -441,7 +442,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.326 -0400", hash_original_method = "273528B94A02173E736183C73352565A", hash_generated_method = "6603F115B58AD0A111D498ADAC13E1E7")
     private void updateFloatingWindowLayout() {
         int [] anchorPos = new int[2];
@@ -506,7 +507,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.327 -0400", hash_original_method = "47AAB8ACF83F9E0950F4FC2EF0028588", hash_generated_method = "7EDEA8B1312AEC865B53889C8FEE2A79")
     protected View makeControllerView() {
         LayoutInflater inflate = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -523,7 +524,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1852993487 =         mRoot;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.329 -0400", hash_original_method = "6027E965805CA7D75D241C044D75CFC3", hash_generated_method = "DAD6B2D6E532D12D8E10E912B1ECFC80")
     private void initControllerView(View v) {
         mPauseButton = (ImageButton) v.findViewById(com.android.internal.R.id.pause);
@@ -589,7 +590,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1852993487 =         mRoot;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.330 -0400", hash_original_method = "4DD833D5B8F1F18277B038D9576E3A42", hash_generated_method = "37FCB9CE942835039AF687B7705C1DCE")
     private void disableUnsupportedButtons() {
         try 
@@ -714,7 +715,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1852993487 =         mRoot;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.331 -0400", hash_original_method = "E3DEF3CD65DC2BEF1837B2236B56198B", hash_generated_method = "8B10064358DC24ED920F97AFD767FB55")
     private String stringForTime(int timeMs) {
         addTaint(timeMs);
@@ -749,7 +750,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.332 -0400", hash_original_method = "972585652F798E535DB73510970F52DB", hash_generated_method = "6092BD05F91DFDC2AFFEE8393D3AAADE")
     private int setProgress() {
         if(mPlayer == null || mDragging)        
@@ -912,7 +913,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.334 -0400", hash_original_method = "B0869F9835F79F721C7D9CE04C896B2B", hash_generated_method = "C426C429605339CC86F18F1CAAB69E49")
     private void updatePausePlay() {
         if(mRoot == null || mPauseButton == null)        
@@ -936,7 +937,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.334 -0400", hash_original_method = "F9113ED701E8317A61E1AB80861EF0B1", hash_generated_method = "A150864218C42F04F8F737162601D6BC")
     private void doPauseResume() {
         if(mPlayer.isPlaying())        
@@ -1013,7 +1014,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.335 -0400", hash_original_method = "8961D157AE11C5565BE89171B02042D7", hash_generated_method = "C56F3110B781E6F5A49332579E6C2734")
     private void installPrevNextListeners() {
         if(mNextButton != null)        

@@ -1,11 +1,12 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.io.Memory;
 import libcore.io.SizeOf;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
     

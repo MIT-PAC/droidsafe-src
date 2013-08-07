@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -11,10 +12,10 @@ import android.util.SparseArray;
 
 import com.android.internal.telephony.gsm.UsimPhoneBookManager;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class AdnRecordCache extends Handler implements IccConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.667 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C")
@@ -33,6 +34,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
 
     SparseArray<Message> userWriteResponse = new SparseArray<Message>();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.668 -0400", hash_original_method = "778B025D62231C2A3FAD8914E2C62313", hash_generated_method = "D7D947F84080CF4D64D3A5D475032C17")
     public  AdnRecordCache(PhoneBase phone) {
         this.phone = phone;
@@ -43,7 +45,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.668 -0400", hash_original_method = "C51C4513003EDC9EA86A76A3037140C3", hash_generated_method = "39E1DB1685B71CBB7026B24F81570F04")
     public void reset() {
         adnLikeFiles.clear();
@@ -58,6 +60,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.669 -0400", hash_original_method = "D74CB42B2A20381108736DF447231499", hash_generated_method = "BA88A2EB7C2D013DD8BB439BD8125703")
     private void clearWaiters() {
         int size = adnLikeWaiters.size();
@@ -79,6 +82,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.670 -0400", hash_original_method = "AA0A19B306C1CFC2139DB9008BF6A4C8", hash_generated_method = "612A107BF31BC92C01AF5FCC19854ACB")
     private void clearUserWriters() {
         int size = userWriteResponse.size();
@@ -96,6 +100,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.670 -0400", hash_original_method = "F416E740ABBE99926C901CF2ED82B3B0", hash_generated_method = "92E07E5D02BA07FC56CAC904A013F345")
     public ArrayList<AdnRecord> getRecordsIfLoaded(int efid) {
         addTaint(efid);
@@ -107,7 +112,7 @@ ArrayList<AdnRecord> var3D961DBCF8C551D2B336F2C2F608BD6B_910694204 =         adn
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.671 -0400", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "F0A5BAFB7280BE49D3BC6C27F6CA1C75")
      int extensionEfForEf(int efid) {
         addTaint(efid);
@@ -154,6 +159,7 @@ switch(efid){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.671 -0400", hash_original_method = "A626AB07A72819AA36869010FF1E4126", hash_generated_method = "D11595183DEC425F7EA8A3F2C9D7DC8C")
     private void sendErrorResponse(Message response, String errString) {
         addTaint(errString.getTaint());
@@ -173,6 +179,7 @@ switch(efid){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.672 -0400", hash_original_method = "92DB73E806C3C282A27A1468C26BF7B3", hash_generated_method = "DDCFAD5CEBCD6AF5A092DD480D70D4E2")
     public void updateAdnByIndex(int efid, AdnRecord adn, int recordIndex, String pin2,
             Message response) {
@@ -215,6 +222,7 @@ switch(efid){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.674 -0400", hash_original_method = "71F49E0E0C93DA66D27CAD14CA0014CE", hash_generated_method = "63A3F87681E3BC0A8B1BE9D64E17F954")
     public void updateAdnBySearch(int efid, AdnRecord oldAdn, AdnRecord newAdn,
             String pin2, Message response) {
@@ -285,6 +293,7 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.676 -0400", hash_original_method = "05810E0F51AA47EAC0C24CA3CBEDF0F7", hash_generated_method = "8F70942F0E8B611AC0C6CB7694891581")
     public void requestLoadAllAdnLike(int efid, int extensionEf, Message response) {
         addTaint(response.getTaint());
@@ -335,6 +344,7 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.677 -0400", hash_original_method = "06D7CFA235737447F2D0DAD9C5CA936C", hash_generated_method = "7F0B9F088C8B8A2F2C50B0AFC0D77CE5")
     private void notifyWaiters(ArrayList<Message> waiters, AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -361,6 +371,7 @@ for(int i = 0, s = waiters.size();i < s;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.679 -0400", hash_original_method = "EDA0843A3B437B2415185CC41779F06F", hash_generated_method = "44BFC8ECF48DE65EBB31675B99882F9A")
     public void handleMessage(Message msg) {
         addTaint(msg.getTaint());

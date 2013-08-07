@@ -1,14 +1,15 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
 import org.bouncycastle.asn1.x9.X9IntegerConverter;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ECPoint {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.638 -0400", hash_original_field = "4EFA264F5EF3E1A5C95736E07544EBF0", hash_generated_field = "704A3581F062D90BBFC67E94998B89B2")
@@ -573,6 +574,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1246016497 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.BAN)
         private static void checkPoints(ECPoint a, ECPoint b) {
             if (!(a.curve.equals(b.curve)))
             {

@@ -1,22 +1,24 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.jar.Attributes;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ManifestDigest implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.153 -0400", hash_original_field = "B8FE4F34D4AED3B4DC97BF8FB1EDF7B9", hash_generated_field = "0913C277DFFA3409C95DA4BDD49D7D83")
 
     private byte[] mDigest;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.154 -0400", hash_original_method = "241EA3F870D09C8B7DFC477170347AB4", hash_generated_method = "2AB590B81F932E0A610817C3AFE1AF52")
       ManifestDigest(byte[] digest) {
         mDigest = digest;
@@ -25,6 +27,7 @@ public class ManifestDigest implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.155 -0400", hash_original_method = "95270655529A33593B4B2CDF05A8799C", hash_generated_method = "81E6E9333D28391C1F01F5EDAEBA2B05")
     private  ManifestDigest(Parcel source) {
         mDigest = source.createByteArray();
@@ -33,6 +36,7 @@ public class ManifestDigest implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     static ManifestDigest fromAttributes(Attributes attributes) {
         if (attributes == null) {
             return null;
@@ -53,7 +57,7 @@ public class ManifestDigest implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.156 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7FA8EBE9F82B31446E91E969A84BE35A")
     @Override
     public int describeContents() {
@@ -65,6 +69,7 @@ public class ManifestDigest implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.157 -0400", hash_original_method = "47C1315D4986EA9CB4630AE53F1E05CD", hash_generated_method = "3D7007CC4701018016CF1F0A22AB3E5D")
     @Override
     public boolean equals(Object o) {
@@ -88,6 +93,7 @@ public class ManifestDigest implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.157 -0400", hash_original_method = "E44F66496A9E1D9F549FC1B26A939089", hash_generated_method = "AD318753F25A44A9BD33DD7DFAC3BFE7")
     @Override
     public int hashCode() {
@@ -99,6 +105,7 @@ public class ManifestDigest implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.158 -0400", hash_original_method = "A781DED7FEB614EC5183E2E44D7D4BA6", hash_generated_method = "BF14F45DC2AA7CA978B60019DEC51F42")
     @Override
     public String toString() {
@@ -131,6 +138,7 @@ String var2460B846747F8B22185AD8BE722266A5_626166886 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.158 -0400", hash_original_method = "E99B09FB599433225D7E730F25E61FEC", hash_generated_method = "B27DCC9A5085A4FBFEA2182A7249C9E5")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

@@ -1,6 +1,7 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.AbstractQueue;
 import java.util.Collection;
 import java.util.Iterator;
@@ -9,10 +10,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.572 -0400", hash_original_field = "7BD14A231864E618E1840C7E117E59C1", hash_generated_field = "277B4266A058D752E724058E1F215618")
@@ -119,7 +120,7 @@ for(E e : c)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.574 -0400", hash_original_method = "15D22B562F85AEAC3F4AC4996FFD23A3", hash_generated_method = "C88CC2A92019BFE63FC44817948B087E")
     private void signalNotEmpty() {
         final ReentrantLock takeLock = this.takeLock;
@@ -143,7 +144,7 @@ for(E e : c)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.575 -0400", hash_original_method = "23256B84FD63DB25D1FF9FA99CF29C9A", hash_generated_method = "72C992F6506997D32138FF21DE2D90EF")
     private void signalNotFull() {
         final ReentrantLock putLock = this.putLock;
@@ -167,7 +168,7 @@ for(E e : c)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.575 -0400", hash_original_method = "050BE5B4C52573633224C87BCCA985D9", hash_generated_method = "1294900CE5F97C64F9A5E140C9BF1299")
     private void enqueue(Node<E> node) {
         last = last.next = node;
@@ -1018,7 +1019,7 @@ Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1840524097 =         new Itr();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.589 -0400", hash_original_method = "407E789BCFB8527B31EA0FCB2D45014F", hash_generated_method = "3FC85FCF0701BFD63D43A7F2EA01AB0D")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         addTaint(s.getTaint());
@@ -1047,7 +1048,7 @@ for(Node<E> p = head.next;p != null;p = p.next)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.590 -0400", hash_original_method = "2A845E5CA6C44D2307376F014D4A5DD1", hash_generated_method = "A3E6A002B5F48C4FDF8D7D334C83F6BF")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         addTaint(s.getTaint());
@@ -1144,7 +1145,7 @@ for(;;)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.591 -0400", hash_original_method = "4F1204B9DEA81FB44DF832DBC08BD27C", hash_generated_method = "CADC8B68EF823325A3C6EE16ECA1A987")
         private Node<E> nextNode(Node<E> p) {
             addTaint(p.getTaint());

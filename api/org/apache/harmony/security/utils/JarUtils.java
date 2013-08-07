@@ -1,6 +1,7 @@
 package org.apache.harmony.security.utils;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
@@ -26,10 +27,10 @@ import org.apache.harmony.security.provider.cert.X509CertImpl;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 import org.apache.harmony.xnet.provider.jsse.OpenSSLSignature;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class JarUtils {
     
@@ -130,7 +131,7 @@ public class JarUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
         LinkedList chain = new LinkedList();
         chain.add(0, signer);
@@ -156,7 +157,7 @@ public class JarUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
         for (int i = 0; i < candidates.length; i++) {
             if (issuer.equals(candidates[i].getSubjectDN())) {

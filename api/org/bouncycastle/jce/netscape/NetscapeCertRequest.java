@@ -1,6 +1,7 @@
 package org.bouncycastle.jce.netscape;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -27,10 +28,10 @@ import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NetscapeCertRequest extends ASN1Encodable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.316 -0400", hash_original_field = "8710B712D6001BE6B1DFD7058DD60BA8", hash_generated_field = "EE2A131D5158CEBBA9141A6C94018250")
@@ -130,7 +131,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static ASN1Sequence getReq(
         byte[]  r) throws IOException {
         ASN1InputStream aIn = new ASN1InputStream(new ByteArrayInputStream(r));
@@ -317,7 +318,7 @@ PublicKey varF4E785CAC4E37DDA6682AE974579280B_1178187371 =         pubkey;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.327 -0400", hash_original_method = "500EEF6D5B4EBED065BB69A7AF04B4E9", hash_generated_method = "A717DBB8F4E9C18D95E77365ABB676C5")
     private DERObject getKeySpec() throws NoSuchAlgorithmException,
             InvalidKeySpecException, NoSuchProviderException {

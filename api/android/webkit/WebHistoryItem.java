@@ -1,14 +1,15 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.graphics.Bitmap;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WebHistoryItem implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.369 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
@@ -39,6 +40,7 @@ public class WebHistoryItem implements Cloneable {
 
     private Object mCustomData;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.369 -0400", hash_original_method = "93B50544C985FE4A97DF747EDD3ED058", hash_generated_method = "F381FDA6D5C42F873D7344B180AD3D99")
     private  WebHistoryItem() {
         synchronized
@@ -69,6 +71,7 @@ public class WebHistoryItem implements Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.369 -0400", hash_original_method = "42CAAAC2E67437069EA69BA0A3B8DA56", hash_generated_method = "CC746A132F4814588D4EF034BFF933DB")
     private  WebHistoryItem(WebHistoryItem item) {
         mUrl = item.mUrl;
@@ -141,6 +144,7 @@ Bitmap var462CB6577AAAB158434445CB00AE6AE4_1832563295 =         mFavicon;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.370 -0400", hash_original_method = "886A530589EC671EA3EEBBE4BA956254", hash_generated_method = "3845FFAA9EE3960C09A8FCBDB1DBD6DA")
     public String getTouchIconUrl() {
         if(mTouchIconUrlFromLink != null)        
@@ -188,7 +192,7 @@ String var66730157FF03C8AB569ADE01D2C3C7D1_1282134159 =         mTouchIconUrlSer
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.371 -0400", hash_original_method = "910685AC0FAB997B808A2261BF18CB41", hash_generated_method = "3AF036905CA03C2BA4C18CFBFADFB08C")
     public Object getCustomData() {
 Object var59DC1B5337A5DFD5414CD638BE20A387_1813525463 =         mCustomData;
@@ -199,7 +203,7 @@ Object var59DC1B5337A5DFD5414CD638BE20A387_1813525463 =         mCustomData;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.371 -0400", hash_original_method = "C3DB27902C6D683426C80DDC02D99EDF", hash_generated_method = "7B907F8F0821BBEC90CC8C8215767869")
     public void setCustomData(Object data) {
         mCustomData = data;
@@ -217,7 +221,7 @@ Object var59DC1B5337A5DFD5414CD638BE20A387_1813525463 =         mCustomData;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.371 -0400", hash_original_method = "6AEC6A0521F7371C54A3BE7086F783A3", hash_generated_method = "8DF9423CFC1034F21AD0595BB8A206BA")
      void setTouchIconUrl(String url, boolean precomposed) {
         addTaint(precomposed);
@@ -268,7 +272,7 @@ WebHistoryItem var2497720903CF073BD8C984E52DB0ECAF_1095959950 =         new WebH
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.372 -0400", hash_original_method = "54E9940C94044B5E33255DF6DC9264D1", hash_generated_method = "7A1731F51705F4FE6D7F3BFC2429EDDD")
     private void update(String url, String originalUrl, String title, 
             Bitmap favicon, byte[] data) {

@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -16,10 +17,10 @@ import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.shapes.Shape;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ShapeDrawable extends Drawable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.617 -0400", hash_original_field = "F650B6D51E8A0558B8CDC9DB09FD9330", hash_generated_field = "E775880DE66EC067EFB70E829A0DB9BA")
@@ -47,7 +48,7 @@ public class ShapeDrawable extends Drawable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.619 -0400", hash_original_method = "1601A6C313758A231E2593A310142434", hash_generated_method = "BC1A7556F13C9F16471EEF9C585D7FC3")
     private  ShapeDrawable(ShapeState state) {
         mShapeState = new ShapeState(state);
@@ -246,7 +247,7 @@ Paint var84E707B3D661C8604D8EBE952CA760C8_203697972 =         mShapeState.mPaint
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int modulateAlpha(int paintAlpha, int alpha) {
         int scale = alpha + (alpha >>> 7);
         return paintAlpha * scale >>> 8;
@@ -489,7 +490,7 @@ Paint var84E707B3D661C8604D8EBE952CA760C8_203697972 =         mShapeState.mPaint
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.643 -0400", hash_original_method = "A8D04337EAFF1E34F1C3CFBFD3AD3EF7", hash_generated_method = "833F1E4DB6399B6277C1891A22B18BC5")
     private void updateShape() {
         if(mShapeState.mShape != null)        

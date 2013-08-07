@@ -1,6 +1,7 @@
 package com.google.android.gles_jni;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.Buffer;
 
 import javax.microedition.khronos.opengles.GL10;
@@ -14,10 +15,10 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
 import android.os.Build;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.611 -0400", hash_original_field = "8C8F45597D72D547EC6C57788A116CDD", hash_generated_field = "15CBD0DB05354E49FA41EDA6F6894843")

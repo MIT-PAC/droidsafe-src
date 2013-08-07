@@ -1,6 +1,7 @@
 package org.apache.http.impl.auth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -12,8 +13,8 @@ import org.apache.http.message.HeaderValueParser;
 import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public abstract class RFC2617Scheme extends AuthSchemeBase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.473 -0400", hash_original_field = "21FFCE5B8A6CC8CC6A41448DD69623C9", hash_generated_field = "B49004743386D72E13E3DDAE8A9782AD")

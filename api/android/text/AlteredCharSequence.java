@@ -1,10 +1,11 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class AlteredCharSequence implements CharSequence, GetChars {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.092 -0400", hash_original_field = "59B50EB80ABF1071654EE6DE5094E070", hash_generated_field = "D233E3389CE5D79EE6040D6A855ED4FF")
@@ -20,7 +21,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
 
     private CharSequence mSource;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.098 -0400", hash_original_method = "C1A67ADB666FBDE0BE16EFE2B57C9F5A", hash_generated_method = "772558D4FCF2A5CC3D1DCF0D754887B9")
     private  AlteredCharSequence(CharSequence source, char[] sub,
                                 int substart, int subend) {
@@ -131,6 +132,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
 
         private Spanned mSpanned;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.104 -0400", hash_original_method = "C72F214965B45129737A1599B1B4D92F", hash_generated_method = "9B01835712124BBD0028A80B1040D3E7")
         private  AlteredSpanned(CharSequence source, char[] sub,
                                int substart, int subend) {

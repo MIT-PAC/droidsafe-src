@@ -1,9 +1,10 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Date;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class ASN1GeneralizedTime extends DERGeneralizedTime {
     

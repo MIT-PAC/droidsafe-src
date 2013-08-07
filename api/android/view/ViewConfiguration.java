@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.AppGlobals;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -9,10 +10,10 @@ import android.os.RemoteException;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ViewConfiguration {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.783 -0400", hash_original_field = "7572292F9A0C0E3DA861F35B2F9EB690", hash_generated_field = "28AD0F459ECA25E08B8AF100A990B431")
@@ -100,7 +101,7 @@ public class ViewConfiguration {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.790 -0400", hash_original_method = "815441BD896E00C6B865EAF3CE23B912", hash_generated_method = "741E1AEA6E1447EBEF97500CA42EEC3A")
     private  ViewConfiguration(Context context) {
         addTaint(context.getTaint());
@@ -255,13 +256,13 @@ public class ViewConfiguration {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getHoverTapTimeout() {
         return HOVER_TAP_TIMEOUT;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getHoverTapSlop() {
         return HOVER_TAP_SLOP;
     }
@@ -314,7 +315,7 @@ public class ViewConfiguration {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @Deprecated
     public static int getDoubleTapSlop() {
         return DOUBLE_TAP_SLOP;
@@ -332,7 +333,7 @@ public class ViewConfiguration {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.795 -0400", hash_original_method = "B7560D2EBF5FE44925FF9E0F817886D6", hash_generated_method = "99C92AF975E8BDDBFCF6E94117420471")
     public int getScaledTouchExplorationTapSlop() {
         int var65E37DD557E6D0E9D40F0750A85C869B_781233794 = (mScaledTouchExplorationTapSlop);
@@ -343,7 +344,7 @@ public class ViewConfiguration {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static long getSendRecurringAccessibilityEventsInterval() {
         return SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS;
     }
@@ -472,7 +473,7 @@ public class ViewConfiguration {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_method = "B98AC48BC285AD77A873792B80842BAD", hash_generated_method = "832F7AF46202397A5D8C824E18838301")
     public boolean isFadingMarqueeEnabled() {
         boolean varB38C8D561AB27D8D243BC403028E7F56_1491373823 = (mFadingMarqueeEnabled);

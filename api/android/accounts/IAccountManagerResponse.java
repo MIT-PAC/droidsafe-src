@@ -1,6 +1,7 @@
 package android.accounts;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IAccountManagerResponse extends android.os.IInterface
 {

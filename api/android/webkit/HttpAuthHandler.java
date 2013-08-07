@@ -1,10 +1,11 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Handler;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class HttpAuthHandler extends Handler {
     
@@ -41,7 +42,7 @@ public class HttpAuthHandler extends Handler {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.114 -0400", hash_original_method = "22C12092B284774CBE15329CD788E924", hash_generated_method = "8E0DFBFBF1C1AF1945772DD06B148FA7")
     public boolean suppressDialog() {
         boolean var68934A3E9455FA72420237EB05902327_52398019 = (false);

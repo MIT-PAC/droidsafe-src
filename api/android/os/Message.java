@@ -1,8 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
 
 public final class Message implements Parcelable {
     public int what;
@@ -339,6 +340,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private final void readFromParcel(Parcel source){
 		// Original method
 		/*

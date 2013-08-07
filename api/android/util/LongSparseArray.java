@@ -1,12 +1,13 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LongSparseArray<E> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.809 -0400", hash_original_field = "09A7D01F9A4EF2933D39C68D27937238", hash_generated_field = "3E9E77485A77FB735B3D2728BEADA3A6")
@@ -22,7 +23,7 @@ public class LongSparseArray<E> {
 
     private int mSize;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.809 -0400", hash_original_method = "F893922E2C2E4CF6AF95C190516DB394", hash_generated_method = "6A1F4B6B8C0C50DC092B16F38EE20B61")
     public  LongSparseArray() {
         this(10);
@@ -30,7 +31,7 @@ public class LongSparseArray<E> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.810 -0400", hash_original_method = "69FE78AD0B4200050B3EDA46329CEBED", hash_generated_method = "2F8B33E1FC222BCBE8DE8718FECEA2E8")
     public  LongSparseArray(int initialCapacity) {
         initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
@@ -45,7 +46,7 @@ public class LongSparseArray<E> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.811 -0400", hash_original_method = "9447795B515DAD767A419A6C51E84D78", hash_generated_method = "B8197DB6C00C30729DACDE8C7A02FDA9")
     public long[] getKeys() {
         int length = mKeys.length;
@@ -120,7 +121,7 @@ E var9A906597833C8E11199C8E4BAC361563_1507251476 =             (E) mValues[i];
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.813 -0400", hash_original_method = "D6F064C21D8F72C9BE34FD8563F8D233", hash_generated_method = "CF17BD7C013BDCBF019F34F878EC7475")
     public void delete(long key) {
         addTaint(key);
@@ -144,7 +145,7 @@ E var9A906597833C8E11199C8E4BAC361563_1507251476 =             (E) mValues[i];
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.813 -0400", hash_original_method = "A104FD86A71D431024F36E7E390CA038", hash_generated_method = "08E9C063C5ADE9F4ED8C6B9004580137")
     public void remove(long key) {
         addTaint(key);
@@ -154,7 +155,7 @@ E var9A906597833C8E11199C8E4BAC361563_1507251476 =             (E) mValues[i];
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.815 -0400", hash_original_method = "A9D8FA819E144A31281F443F869190B4", hash_generated_method = "8C06E3E29373946E775F8591664FBD65")
     private void gc() {
         int n = mSize;
@@ -241,7 +242,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.819 -0400", hash_original_method = "F891E9E45688B24DB77EAA9DE670091B", hash_generated_method = "BF22354ACC1C289ADB2DE8FFFF8804D0")
     public int size() {
         if(mGarbage)        
@@ -259,7 +260,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.819 -0400", hash_original_method = "B1F6BB5033A022FAFBEA87494F8412EB", hash_generated_method = "EAF064EF219EF31995B1F19539138E42")
     public long keyAt(int index) {
         addTaint(index);
@@ -313,7 +314,7 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1266140726 =         (E) mValues[index];
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.840 -0400", hash_original_method = "09C66188F9324AB9196B3AD659514994", hash_generated_method = "19C6AEBB12B982262DC795E210DE7AA8")
     public int indexOfKey(long key) {
         addTaint(key);
@@ -360,7 +361,7 @@ for(int i = 0;i < mSize;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.840 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "61ED33368900ED20EB0D15BBCF4A009A")
     public void clear() {
         int n = mSize;
@@ -431,7 +432,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int binarySearch(long[] a, int start, int len, long key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {
@@ -450,7 +451,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.841 -0400", hash_original_method = "B88BEB15E15C0A7F30A2606914985D6D", hash_generated_method = "13ECA30EB9D20497C3AB48B65568DE57")
     private void checkIntegrity() {
 for(int i = 1;i < mSize;i++)

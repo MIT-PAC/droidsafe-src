@@ -1,6 +1,7 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Rect;
@@ -9,8 +10,8 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.WindowManager;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class SoftInputWindow extends Dialog {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.720 -0400", hash_original_field = "6161C99CAA240E7F1DA73FC1A16EB6C7", hash_generated_field = "9399A9196ADA53199056D05EEBB238C5")
@@ -178,6 +179,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.731 -0400", hash_original_method = "F6A5F856FF7B400209C66879FBEA71E5", hash_generated_method = "B05844D7C519B2E8DE79B7249DC21DFD")
     private void initDockWindow() {
         WindowManager.LayoutParams lp = getWindow().getAttributes();

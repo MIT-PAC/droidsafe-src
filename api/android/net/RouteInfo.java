@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -9,10 +10,10 @@ import java.util.Collection;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RouteInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.216 -0400", hash_original_field = "20FA5FDA87CAF7DA2AF783B06FECA0CC", hash_generated_field = "E49ACA82B1444E6526072819A9167A9F")
@@ -28,6 +29,7 @@ public class RouteInfo implements Parcelable {
 
     private boolean mIsHost;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.218 -0400", hash_original_method = "E18B95CB9612527F42443FCFFAAF42E3", hash_generated_method = "A3E4B0436CD803812923ABBACF405CFE")
     public  RouteInfo(LinkAddress destination, InetAddress gateway) {
         if(destination == null)        
@@ -71,6 +73,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.236 -0400", hash_original_method = "69D5DE546AFD98D206E268F1C948A647", hash_generated_method = "8FC1A9AD84B436766E8F7826A0FC6230")
     public  RouteInfo(InetAddress gateway) {
         this(null, gateway);
@@ -79,11 +82,13 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static RouteInfo makeHostRoute(InetAddress host) {
         return makeHostRoute(host, null);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static RouteInfo makeHostRoute(InetAddress host, InetAddress gateway) {
         if (host == null) return null;
         if (host instanceof Inet4Address) {
@@ -94,6 +99,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "BB5D6BF5854981BD1DD4B0D75DB6E8C7", hash_generated_method = "B48B433582A57B9A2023163683031997")
     private boolean isHost() {
         boolean varFF746EBC5176A4B2B72BB69BB861F7D2_1758220762 = ((mGateway.equals(Inet4Address.ANY) || mGateway.equals(Inet6Address.ANY)));
@@ -104,6 +110,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "FAF1A1F97A113F82E8429CDDF8F77F02", hash_generated_method = "76E1CBC74261849B270ABE1212C721A3")
     private boolean isDefault() {
         boolean val = false;
@@ -134,7 +141,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "FA0CA5E40F8E771A63FCF523BDA84B16")
     public LinkAddress getDestination() {
 LinkAddress var1651AAAB4F528E3F559D89910825A761_1235816825 =         mDestination;
@@ -145,7 +152,7 @@ LinkAddress var1651AAAB4F528E3F559D89910825A761_1235816825 =         mDestinatio
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "BF807F87417CEDF6268601BBD3B04BEC")
     public InetAddress getGateway() {
 InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1773637548 =         mGateway;
@@ -156,7 +163,7 @@ InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1773637548 =         mGateway;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "E1C93CD9EE24D2AA8F06A9C7E7B28049", hash_generated_method = "00FB9C560D174A09DECCB35253C8C4C9")
     public boolean isDefaultRoute() {
         boolean var75283F9EF09855A8ADC5A1F98FCF1F5C_662093835 = (mIsDefault);
@@ -167,7 +174,7 @@ InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1773637548 =         mGateway;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "2A05D2869C11595F53C52D7E29A06E41", hash_generated_method = "522CE2E22E00E5E5F92588A5E61EFF9D")
     public boolean isHostRoute() {
         boolean varE09EAA67E50D034EFD051379F631DEF3_891064133 = (mIsHost);
@@ -178,6 +185,7 @@ InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1773637548 =         mGateway;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "0AA1B383C324478F235BB186C8938BCB", hash_generated_method = "76DE9011E7DAC7EF7648B31AF2D4FF5F")
     public String toString() {
         String val = "";
@@ -196,7 +204,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8FCD00A083F3FC1B346F407464379C55")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1722079254 = (0);
@@ -207,6 +215,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "75D0FB165031E3DBB8B900D70000DB62", hash_generated_method = "26E61C371F634F8FE7EEB224E2CCE504")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -247,6 +256,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_method = "5CF3A2DBAE721423A1CBA779912D2779", hash_generated_method = "BD40483FDD0F145B0E7A3F8F151CFBDD")
     @Override
     public boolean equals(Object obj) {
@@ -289,6 +299,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_method = "BB776300BCED21F4485D8738DE0E6814", hash_generated_method = "CF11CECF46D4EBC966C0C1052C068DEF")
     @Override
     public int hashCode() {
@@ -304,6 +315,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_method = "CBA981572951BCD1DD27D7FBA4D7D8C9", hash_generated_method = "EDFC5D1A4CE193AB82DC377B26403EB9")
     private boolean matches(InetAddress destination) {
         addTaint(destination.getTaint());

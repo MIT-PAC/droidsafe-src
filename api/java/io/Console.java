@@ -1,13 +1,14 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Formatter;
 
 import libcore.io.Libcore;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Console implements Flushable {
@@ -18,6 +19,7 @@ public final class Console implements Flushable {
 
     private PrintWriter writer;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.570 -0400", hash_original_method = "4BB1B19487B7F99D445DFF44E768497C", hash_generated_method = "F63CBA47110CFE9BD3FA9E844BE04033")
     private  Console(InputStream in, OutputStream out) throws IOException {
         this.reader = new ConsoleReader(in);
@@ -28,12 +30,13 @@ public final class Console implements Flushable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static Console getConsole() {
         return console;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Console makeConsole() {
         if (!Libcore.os.isatty(FileDescriptor.in) || !Libcore.os.isatty(FileDescriptor.out)) {
             return null;
@@ -169,6 +172,7 @@ String var54932DCBE9604DD8D26100A2DD0CC65C_1559035034 =             readLine();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int setEcho(boolean on, int previousState) {
         try {
             return setEchoImpl(on, previousState);

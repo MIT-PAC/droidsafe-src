@@ -1,12 +1,13 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NetworkQuotaInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.507 -0400", hash_original_field = "E081766EDB5BBAB91596FB5A1B03B4B8", hash_generated_field = "0C1817B4E94B497C8227D0B7A72FE116")
@@ -19,6 +20,7 @@ public class NetworkQuotaInfo implements Parcelable {
 
     private long mHardLimitBytes;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.508 -0400", hash_original_method = "660F75E1FFA6B2DFE2CDD12BDF75A84D", hash_generated_method = "91C439B321E81D734DBCF25192A8DAA4")
     public  NetworkQuotaInfo(long estimatedBytes, long softLimitBytes, long hardLimitBytes) {
         mEstimatedBytes = estimatedBytes;
@@ -31,6 +33,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.509 -0400", hash_original_method = "F9FF260BD3516E5193BB69E75EACBCC6", hash_generated_method = "506083803062B317728026A841CC5B03")
     public  NetworkQuotaInfo(Parcel in) {
         mEstimatedBytes = in.readLong();
@@ -43,7 +46,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.509 -0400", hash_original_method = "9A1B44DAAD2420BC074FF7BE5F6986CE", hash_generated_method = "F338335B926C73074A1807253A7AD454")
     public long getEstimatedBytes() {
         long varE081766EDB5BBAB91596FB5A1B03B4B8_309740539 = (mEstimatedBytes);
@@ -54,7 +57,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.510 -0400", hash_original_method = "C8858C0BE5B1D5B7AD428D2F09A67941", hash_generated_method = "710C9E269537935C068A137C62BD5FD2")
     public long getSoftLimitBytes() {
         long var407B6D18E17605524108F73C59330777_2099925558 = (mSoftLimitBytes);
@@ -65,7 +68,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.510 -0400", hash_original_method = "32F0E566D231A4A60EB6312295EBA3AB", hash_generated_method = "35E801095CFCF38E8937380259D4385D")
     public long getHardLimitBytes() {
         long varA2D5EBBE48D8BF149BE44E9240D2555E_1209933865 = (mHardLimitBytes);
@@ -76,7 +79,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.511 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5FA075CA2F267F629737C5186F9E75C4")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1228425815 = (0);
@@ -87,7 +90,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.512 -0400", hash_original_method = "62923C632AA7262774DF27E525AA9FBB", hash_generated_method = "068BB645A106698A95318ECF8F142BC4")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

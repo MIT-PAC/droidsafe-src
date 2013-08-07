@@ -1,13 +1,14 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.InputType;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DigitsKeyListener extends NumberKeyListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.229 -0400", hash_original_field = "67FFB6CBBC91A7DDA72F7BC62403D295", hash_generated_field = "FBD332757CDFEDE23B2BA55765028B23")

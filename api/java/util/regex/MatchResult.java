@@ -1,6 +1,7 @@
 package java.util.regex;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface MatchResult {
 

@@ -1,16 +1,17 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 
 import libcore.io.Streams;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DeflaterOutputStream extends FilterOutputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.567 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
@@ -56,7 +57,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.569 -0400", hash_original_method = "4AB400BD05A544E56EC5FA788A743E49", hash_generated_method = "FB66FD477913D2AD65F93BAB6FD83F97")
     public  DeflaterOutputStream(OutputStream os, boolean syncFlush) {
         this(os, new Deflater(), BUF_SIZE, syncFlush);
@@ -66,7 +67,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.569 -0400", hash_original_method = "030FC273048345BE6683513E5C823172", hash_generated_method = "E26A235F655019C7C5A57E31F5C59720")
     public  DeflaterOutputStream(OutputStream os, Deflater def, boolean syncFlush) {
         this(os, def, BUF_SIZE, syncFlush);
@@ -77,7 +78,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.571 -0400", hash_original_method = "36641FCF7AB1B4FCCCA71F3379196A62", hash_generated_method = "1F3D772F41EB97FCFC9F6F1D04AF2D69")
     public  DeflaterOutputStream(OutputStream os, Deflater def, int bsize, boolean syncFlush) {
         super(os);

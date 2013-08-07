@@ -1,6 +1,7 @@
 package org.apache.harmony.xml.dom;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,10 +22,10 @@ import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.Text;
 import org.w3c.dom.UserDataHandler;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class DocumentImpl extends InnerNodeImpl implements Document {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.358 -0400", hash_original_field = "9A0C2D739DCDFB02BF9A89440A1742BE", hash_generated_field = "02CE798A8CB59B7226C8831D772A3C37")
@@ -87,13 +88,13 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isXMLIdentifierStart(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c == '_');
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isXMLIdentifierPart(char c) {
         return isXMLIdentifierStart(c) || (c >= '0' && c <= '9') || (c == '-') || (c == '.');
     }
@@ -116,6 +117,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.363 -0400", hash_original_method = "71EB0F41099D1D8D08C83EAF224E8D36", hash_generated_method = "167DBB89EF80A441E8710A4368353B25")
     private NodeImpl shallowCopy(short operation, Node node) {
         addTaint(node.getTaint());
@@ -313,6 +315,7 @@ Node varC986607E6DD9F5E55531D8567E31A845_281067735 =         nodeImpl;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.366 -0400", hash_original_method = "AE2A1AE898A744D8ADE864AE8BDC4C1C", hash_generated_method = "5B2F7B3F041A3C8C776EF632BA0EDDA9")
     private void changeDocumentToThis(NodeImpl node) {
         addTaint(node.getTaint());
@@ -878,6 +881,7 @@ Map<String, UserData> varD826347363F7164F3227DB7372F59AE9_1396791905 =         u
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void notifyUserDataHandlers(
             short operation, Node source, NodeImpl destination) {
         if (!(source instanceof NodeImpl)) {

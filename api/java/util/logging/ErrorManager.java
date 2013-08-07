@@ -1,10 +1,11 @@
 package java.util.logging;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class ErrorManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.055 -0400", hash_original_field = "4F33252742282F871B0617168156FD55", hash_generated_field = "73DCA3E62AD96D31516E07B7942B98AB")

@@ -1,11 +1,12 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
 import android.graphics.Matrix;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class Transformation {
     protected Matrix mMatrix;
@@ -91,7 +92,7 @@ public class Transformation {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void toShortString(StringBuilder sb) {
         sb.append("{alpha="); sb.append(mAlpha);
         sb.append(" matrix="); mMatrix.toShortString(sb);
@@ -99,7 +100,7 @@ public class Transformation {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void printShortString(PrintWriter pw) {
         pw.print("{alpha="); pw.print(mAlpha);
         pw.print(" matrix=");

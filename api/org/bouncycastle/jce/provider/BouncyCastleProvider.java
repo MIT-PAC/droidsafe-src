@@ -1,6 +1,7 @@
 package org.bouncycastle.jce.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.security.Provider;
@@ -15,8 +16,8 @@ import org.bouncycastle.asn1.oiw.OIWObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.jce.interfaces.ConfigurableProvider;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class BouncyCastleProvider extends Provider implements ConfigurableProvider {
     
@@ -47,6 +48,7 @@ Object var540C13E9E156B687226421B24F2DF178_1261972976 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.614 -0400", hash_original_method = "E95DD2D2AFF3ACCA1D641BC0C226DDDF", hash_generated_method = "B256A7800D009BB479F7B3324152D03F")
     private void setup() {
         loadAlgorithms(SYMMETRIC_CIPHER_PACKAGE, SYMMETRIC_CIPHERS);
@@ -257,6 +259,7 @@ Object var540C13E9E156B687226421B24F2DF178_1261972976 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.617 -0400", hash_original_method = "686C79C0163D29E08379E22D5F4091D3", hash_generated_method = "225D7C032AB443D055AEF4D21BD6FD5C")
     private void loadAlgorithms(String packageName, String[] names) {
         addTaint(names[0].getTaint());
@@ -299,6 +302,7 @@ for(int i = 0;i != names.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.620 -0400", hash_original_method = "5007A2B2A77D22A1FFE2768D1D69CD26", hash_generated_method = "447A07BF6A22B92A869044F857856329")
     private void addMappings(Map mappings) {
         addTaint(mappings.getTaint());
@@ -326,6 +330,7 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.622 -0400", hash_original_method = "BF810DB148D6F4B76C3D9477121B375F", hash_generated_method = "95ABA48C049175A237B5BDA048680B19")
     private void addMacAlgorithms() {
         addHMACAlgorithm("MD5", "org.bouncycastle.jce.provider.JCEMac$MD5", "org.bouncycastle.jce.provider.JCEKeyGenerator$MD5HMAC");
@@ -347,6 +352,7 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.623 -0400", hash_original_method = "92FD2A26DA15B4D69904AC037AAE7782", hash_generated_method = "F38B9FB879FA1AE740AC29CDF34FAD31")
     private void addHMACAlgorithm(
         String algorithm,
@@ -373,6 +379,7 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.624 -0400", hash_original_method = "D71084920D31BEC8673D5601F90CF345", hash_generated_method = "0AA90759939D5D268EF7ECDACD8DE9D7")
     private void addHMACAlias(
         String              algorithm,
@@ -389,6 +396,7 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.625 -0400", hash_original_method = "D1811F612B066C9B05A7CE06AED0A036", hash_generated_method = "61C57A7CA772B2781B26B3B4F976E996")
     private void addMessageDigestAlgorithms() {
         put("MessageDigest.SHA-1", "org.bouncycastle.jce.provider.JDKMessageDigest$SHA1");
@@ -411,6 +419,7 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.626 -0400", hash_original_method = "7420A66ACC92234B394212961D34DE13", hash_generated_method = "D116756CA2DB548349B7EEBE237D2169")
     private void addSignatureAlgorithms() {
         put("Signature.MD5WithRSAEncryption", "org.bouncycastle.jce.provider.JDKDigestSignature$MD5WithRSAEncryption");

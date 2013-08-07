@@ -1,12 +1,13 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SeekBar extends AbsSeekBar {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.907 -0400", hash_original_field = "5938BF25D075D659DB9277B79B5DE721", hash_generated_field = "C83474F838E540BD5E50F97536CB12F2")

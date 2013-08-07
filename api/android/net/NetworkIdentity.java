@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.net.ConnectivityManager.isNetworkTypeMobile;
 import android.content.Context;
 import android.os.Build;
@@ -8,10 +9,10 @@ import android.telephony.TelephonyManager;
 
 import com.android.internal.util.Objects;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NetworkIdentity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.336 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "B93BF1EFA6B57CC598632E54B97CD147")
@@ -27,6 +28,7 @@ public class NetworkIdentity {
 
     boolean mRoaming;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.337 -0400", hash_original_method = "D66D82649648EB29DB5225580D369B63", hash_generated_method = "C3CF55C2AC8127625AA75BCBD592237A")
     public  NetworkIdentity(int type, int subType, String subscriberId, boolean roaming) {
         this.mType = type;
@@ -41,6 +43,7 @@ public class NetworkIdentity {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.337 -0400", hash_original_method = "70DBA97D9C7155A4770B35E22D7D5A29", hash_generated_method = "8CAA0525E4F7517ADFB6951E2A530A49")
     @Override
     public int hashCode() {
@@ -52,6 +55,7 @@ public class NetworkIdentity {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.337 -0400", hash_original_method = "A5A3AB07A0E4347DBE654AC710955A89", hash_generated_method = "F3EB6444DC18DA6F9D2E3AF3C325E737")
     @Override
     public boolean equals(Object obj) {
@@ -79,6 +83,7 @@ public class NetworkIdentity {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "750D47FEDF778AEB33FDF257D4CBFC36", hash_generated_method = "A04ECE4F03530F1C7FB07D8DDC95AD71")
     @Override
     public String toString() {
@@ -113,7 +118,7 @@ String varC04A558420C11F186DEAB34E29860899_378201177 =         "[type=" + typeNa
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "40C360F128B0931C41877FA8E0348531")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_323109062 = (mType);
@@ -124,7 +129,7 @@ String varC04A558420C11F186DEAB34E29860899_378201177 =         "[type=" + typeNa
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "A4DDC328E17941CDB6FA9336B74814D9", hash_generated_method = "ED178F4B0E566AF60F56E790E67B992D")
     public int getSubType() {
         int var9626C0B267A1B4C2C31F3FFD0E237EB6_1266972738 = (mSubType);
@@ -135,7 +140,7 @@ String varC04A558420C11F186DEAB34E29860899_378201177 =         "[type=" + typeNa
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "B0B0F3BFDAB0ABB7A5BDC6A0408E817D")
     public String getSubscriberId() {
 String varD221C4376DC09E8E422076D12DB9853B_1319501581 =         mSubscriberId;
@@ -146,7 +151,7 @@ String varD221C4376DC09E8E422076D12DB9853B_1319501581 =         mSubscriberId;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "5DB7D39A77121E41D8F19900F512328F")
     public boolean getRoaming() {
         boolean var53676CF9ACC69A311F8B40D8878A560F_655786716 = (mRoaming);
@@ -157,6 +162,7 @@ String varD221C4376DC09E8E422076D12DB9853B_1319501581 =         mSubscriberId;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String scrubSubscriberId(String subscriberId) {
         if ("eng".equals(Build.TYPE)) {
             return subscriberId;
@@ -166,6 +172,7 @@ String varD221C4376DC09E8E422076D12DB9853B_1319501581 =         mSubscriberId;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkIdentity buildNetworkIdentity(Context context, NetworkState state) {
         final int type = state.networkInfo.getType();
         final int subType = state.networkInfo.getSubtype();

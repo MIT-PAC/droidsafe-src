@@ -1,12 +1,13 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MatrixCursor extends AbstractCursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.986 -0400", hash_original_field = "0A0FFB19F00AC5DAD30A4E7D26990EE1", hash_generated_field = "E79D10B9148CF1E07E28DC9A748C915B")
@@ -49,6 +50,7 @@ public class MatrixCursor extends AbstractCursor {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.990 -0400", hash_original_method = "A7EF9562410A67389E3E61A73FDE647E", hash_generated_method = "50A0D711E380E1E34BED5716715E9A67")
     private Object get(int column) {
         addTaint(column);
@@ -190,6 +192,7 @@ for(Object columnValue : columnValues)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.993 -0400", hash_original_method = "F5D0F3FA334A37A2680A290D6DEEBDBE", hash_generated_method = "CEEB6407C7243DF686E033A403141374")
     private void addRow(ArrayList<?> columnValues, int start) {
         addTaint(start);
@@ -222,6 +225,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.994 -0400", hash_original_method = "0FD21978EF299D1119588B65FAE6C3BE", hash_generated_method = "6C0130B0E6C8078E67E641ACD2395A22")
     private void ensureCapacity(int size) {
         addTaint(size);

@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import android.os.Message;
@@ -8,8 +9,8 @@ import android.util.Log;
 
 import com.android.internal.telephony.IccPhoneBookInterfaceManager;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     

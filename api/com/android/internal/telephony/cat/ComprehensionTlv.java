@@ -1,13 +1,14 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ComprehensionTlv {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.225 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "BFBA40DE531B5000F1981B7BBF1ED026")
@@ -26,6 +27,7 @@ class ComprehensionTlv {
 
     private byte[] mRawValue;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.225 -0400", hash_original_method = "F083BF2976A39A70E87A329F21B5205D", hash_generated_method = "020782AEA4213AFDFBB86D391AADBE72")
     protected  ComprehensionTlv(int tag, boolean cr, int length, byte[] data,
             int valueIndex) {
@@ -43,7 +45,7 @@ class ComprehensionTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.225 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "4206AB0B45A7D08A5FE33A89D2DEF033")
     public int getTag() {
         int var07496860B5C53FDD66588727158D5F73_1029471151 = (mTag);
@@ -54,7 +56,7 @@ class ComprehensionTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.226 -0400", hash_original_method = "BBBB347994ECBB1AA0023AC2A90F5AE7", hash_generated_method = "5737F8DFF9BA7823422C6720BE9CBD6D")
     public boolean isComprehensionRequired() {
         boolean var0F17E746BE153E70A72E97F8AE4B0967_819088903 = (mCr);
@@ -65,7 +67,7 @@ class ComprehensionTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.226 -0400", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "51B627784D1264335A46790F0F30066D")
     public int getLength() {
         int var429F431E8CD8AC287AA27460675EAEFE_1558811804 = (mLength);
@@ -76,7 +78,7 @@ class ComprehensionTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.226 -0400", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "85E17D2048BD263B640FCD6EB6A8C20B")
     public int getValueIndex() {
         int var23B7A8A7152E7007B08DAF983B584CA9_675960075 = (mValueIndex);
@@ -87,7 +89,7 @@ class ComprehensionTlv {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.226 -0400", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "824240204B08DF9CE88FE6F5BCEB6B6D")
     public byte[] getRawValue() {
         byte[] var68EFE75FA9F684BF74FD95FB591C4772_313875150 = (mRawValue);
@@ -98,6 +100,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static List<ComprehensionTlv> decodeMany(byte[] data, int startIndex) throws ResultException {
         ArrayList<ComprehensionTlv> items = new ArrayList<ComprehensionTlv>();
         int endIndex = data.length;
@@ -116,6 +119,7 @@ class ComprehensionTlv {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ComprehensionTlv decode(byte[] data, int startIndex) throws ResultException {
         try {
             int curIndex = startIndex;

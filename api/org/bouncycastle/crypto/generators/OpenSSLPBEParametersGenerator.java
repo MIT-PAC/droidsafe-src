@@ -1,6 +1,7 @@
 package org.bouncycastle.crypto.generators;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.PBEParametersGenerator;
@@ -8,10 +9,10 @@ import org.bouncycastle.crypto.digests.MD5Digest;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.params.ParametersWithIV;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class OpenSSLPBEParametersGenerator extends PBEParametersGenerator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.982 -0400", hash_original_field = "16434969A53FBE1B6177CDA9EA0B2CD3", hash_generated_field = "91AB1A516766E39A2EE21B008511F72A")
@@ -38,6 +39,7 @@ public class OpenSSLPBEParametersGenerator extends PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.984 -0400", hash_original_method = "4E618B69222EA698951005FED9FF9FA3", hash_generated_method = "B2BC24FEDB4EA05F8C9AB68EE9442FB4")
     private byte[] generateDerivedKey(
         int bytesNeeded) {

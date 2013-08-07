@@ -1,10 +1,11 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class ByteArrayBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.431 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
@@ -33,7 +34,7 @@ public final class ByteArrayBuffer {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.434 -0400", hash_original_method = "00DB8B6A06284480D1470563C3051457", hash_generated_method = "6480572B68B9B86AD9C02C3C0C6383C9")
     private void expand(int newlen) {
         addTaint(newlen);

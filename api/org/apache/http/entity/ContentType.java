@@ -1,14 +1,15 @@
 package org.apache.http.entity;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 
 import org.apache.http.HeaderElement;
 import org.apache.http.HttpEntity;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public final class ContentType implements Serializable {
 	

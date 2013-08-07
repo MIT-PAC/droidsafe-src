@@ -1,14 +1,15 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Locale;
 
 import android.util.MathUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Color {
@@ -58,7 +59,7 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static float hue(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -89,7 +90,7 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static float saturation(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -106,7 +107,7 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static float brightness(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -136,13 +137,13 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int HSBtoColor(float[] hsb) {
         return HSBtoColor(hsb[0], hsb[1], hsb[2]);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int HSBtoColor(float h, float s, float b) {
         h = MathUtils.constrain(h, 0.0f, 1.0f);
         s = MathUtils.constrain(s, 0.0f, 1.0f);

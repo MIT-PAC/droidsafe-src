@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -12,8 +13,8 @@ import android.util.AttributeSet;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.650 -0400", hash_original_field = "D1487CA8252F4AA0A95324AB4DDD5316", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
@@ -55,6 +56,7 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.655 -0400", hash_original_method = "7B227AC4C6BF5338AF52F597A9EDC5E2", hash_generated_method = "97D721084DFEECEA5417B367F5EF73D1")
     private void init(PreferenceManager preferenceManager) {
         mPreferenceManager = preferenceManager;

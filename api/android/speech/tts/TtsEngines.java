@@ -1,6 +1,7 @@
 package android.speech.tts;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.provider.Settings.Secure.getString;
 
 import java.io.IOException;
@@ -30,16 +31,17 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TtsEngines {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.563 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.564 -0400", hash_original_method = "E276758190DBE13181DF9330ABF915FA", hash_generated_method = "BBA0A4812D4E67B5F55600D1B9BB6415")
     public  TtsEngines(Context ctx) {
         mContext = ctx;
@@ -48,7 +50,7 @@ public class TtsEngines {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.564 -0400", hash_original_method = "F86D04A99B76CBDE409709AB3B031B49", hash_generated_method = "E72E4F31E2E8084BAFF633BBB67D9304")
     public String getDefaultEngine() {
         String engine = getString(mContext.getContentResolver(),
@@ -63,6 +65,7 @@ String var0A296E2CD1BFADF641B85E5629D6007B_1628031147 =         isEngineInstalle
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.564 -0400", hash_original_method = "19A7DAF08EA8F2C03F3D1884DA46504A", hash_generated_method = "FA396E144FBC359FC49B7C45516DECAD")
     public String getHighestRankedEngineName() {
         final List<EngineInfo> engines = getEngines();
@@ -84,7 +87,7 @@ String var540C13E9E156B687226421B24F2DF178_115147683 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.564 -0400", hash_original_method = "A5DBD894AAA6A5E1130078152956054E", hash_generated_method = "FD4CF41E4A985993A5375D8FE829C148")
     public EngineInfo getEngineInfo(String packageName) {
         addTaint(packageName.getTaint());
@@ -115,6 +118,7 @@ EngineInfo var540C13E9E156B687226421B24F2DF178_1897287183 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.565 -0400", hash_original_method = "DACAAA1F42C7CE1B11C8FF369696D83F", hash_generated_method = "3C18AE41BCA16703B85D071BC9AD80E9")
     public List<EngineInfo> getEngines() {
         PackageManager pm = mContext.getPackageManager();
@@ -157,7 +161,7 @@ List<EngineInfo> varC8BA3C6249E186ACF366B0F1A542730C_932055549 =         engines
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.566 -0400", hash_original_method = "096C3576F274D5610E35106CC045EF53", hash_generated_method = "61DCBF2B1F856491B45883E97761426E")
     private boolean isSystemEngine(ServiceInfo info) {
         addTaint(info.getTaint());
@@ -171,7 +175,7 @@ List<EngineInfo> varC8BA3C6249E186ACF366B0F1A542730C_932055549 =         engines
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.566 -0400", hash_original_method = "6576B103C8DDCA7E7096DC36C32D66CE", hash_generated_method = "826DFB91BF6B324B39CC4113F232EA83")
     public boolean isEngineInstalled(String engine) {
         addTaint(engine.getTaint());
@@ -192,7 +196,7 @@ List<EngineInfo> varC8BA3C6249E186ACF366B0F1A542730C_932055549 =         engines
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.567 -0400", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "7A418261EF482C5E7059B1D08771C775")
     public Intent getSettingsIntent(String engine) {
         addTaint(engine.getTaint());
@@ -241,7 +245,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1715593601 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.568 -0400", hash_original_method = "9D4652ECD9FA23521B324D3DE279FEF6", hash_generated_method = "8BF19D80EB9F726377B4F9550556F947")
     private String settingsActivityFromServiceInfo(ServiceInfo si, PackageManager pm) {
         addTaint(pm.getTaint());
@@ -314,7 +318,7 @@ String var540C13E9E156B687226421B24F2DF178_423272102 =             null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.571 -0400", hash_original_method = "AAFB3DF5C9862013F914C97CA1EC4890", hash_generated_method = "54D0CD4625012698EBB246482064272D")
     private EngineInfo getEngineInfo(ResolveInfo resolve, PackageManager pm) {
         addTaint(pm.getTaint());
@@ -352,7 +356,7 @@ EngineInfo var540C13E9E156B687226421B24F2DF178_387619575 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.572 -0400", hash_original_method = "18ECF8DE6689127C36214444D644F0A3", hash_generated_method = "36286A3BFEA3700ABBD2E118A9472455")
     public String getLocalePrefForEngine(String engineName) {
         addTaint(engineName.getTaint());
@@ -380,6 +384,7 @@ String varB14E682FEAD06D8198D8ADBCBD62DEDB_1654725841 =         locale;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String[] parseLocalePref(String pref) {
         String[] returnVal = new String[] { "", "", ""};
         if (!TextUtils.isEmpty(pref)) {
@@ -392,6 +397,7 @@ String varB14E682FEAD06D8198D8ADBCBD62DEDB_1654725841 =         locale;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.573 -0400", hash_original_method = "610702C4AF37E3C5EE6AAD794DF1E7DF", hash_generated_method = "43E47F70E63142765CC14E08CE4B3C08")
     private String getV1Locale() {
         final ContentResolver cr = mContext.getContentResolver();
@@ -443,6 +449,7 @@ String var1B839A74781C84B9D1829F7923B05281_388512219 =         v1Locale;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.574 -0400", hash_original_method = "DCEE8BF4C9B6F52F0B0F667E0393B18E", hash_generated_method = "A1ABFBEEB408CA1F35992053CC06F60F")
     private String getDefaultLocale() {
         final Locale locale = Locale.getDefault();
@@ -489,6 +496,7 @@ String var793E9FCB8AF595162999BC610B5A4C5E_1258183013 =         defaultLocale;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String parseEnginePrefFromList(String prefValue, String engineName) {
         if (TextUtils.isEmpty(prefValue)) {
             return null;
@@ -506,7 +514,7 @@ String var793E9FCB8AF595162999BC610B5A4C5E_1258183013 =         defaultLocale;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.575 -0400", hash_original_method = "9D847C860A473B48E829C1EE33625F6B", hash_generated_method = "4F26426A637DE7AD0FB371639A9B17D1")
     public synchronized void updateLocalePrefForEngine(String name, String newLocale) {
         addTaint(newLocale.getTaint());
@@ -539,6 +547,7 @@ String var793E9FCB8AF595162999BC610B5A4C5E_1258183013 =         defaultLocale;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.577 -0400", hash_original_method = "00BF6BD14B34E2134A0C0EF2661B3919", hash_generated_method = "5C07B5C79542BDEFD836934AA8B07A0C")
     private String updateValueInCommaSeparatedList(String list, String key,
             String newValue) {
@@ -603,13 +612,14 @@ String varFE312D2AD51B57E6FBC9C13A73F3868E_1432695256 =         newPrefList.toSt
     
     private static class EngineInfoComparator implements Comparator<EngineInfo> {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.578 -0400", hash_original_method = "81257836895CDB49D308B7B95E17876A", hash_generated_method = "046E030CC996B69833C1997F8A404D60")
         private  EngineInfoComparator() {
             // ---------- Original Method ----------
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.578 -0400", hash_original_method = "E919388D461770C5E68C050C2BB6D626", hash_generated_method = "56A0A59B416B71CF5AD0CA88B308F7EC")
         @Override
         public int compare(EngineInfo lhs, EngineInfo rhs) {

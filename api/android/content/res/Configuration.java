@@ -1,13 +1,14 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import android.content.pm.ActivityInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public final class Configuration implements Parcelable, Comparable<Configuration> {
 	/** replacing anonymous inner class */
@@ -59,6 +60,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.BAN)
     private Configuration(Parcel source) {
         readFromParcel(source);
     }
@@ -91,6 +93,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.BAN)
     @Deprecated public void makeDefault() {
         setToDefaults();
     }
@@ -176,7 +179,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public boolean isOtherSeqNewer(Configuration other) {
         if (other == null) {
             return false;

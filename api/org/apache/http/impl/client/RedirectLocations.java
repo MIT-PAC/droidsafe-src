@@ -1,12 +1,13 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class RedirectLocations {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.890 -0400", hash_original_field = "7B09EE9A35BA33DA533A4D7CECA76160", hash_generated_field = "E609FAD9509EA57EE6F15C46616EE93D")

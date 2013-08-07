@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IConnectivityManager extends android.os.IInterface
 {

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.RSeq;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.SIPHeaderNames;
@@ -9,9 +10,9 @@ import java.text.ParseException;
 
 import javax.sip.InvalidArgumentException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class RSeqParser extends HeaderParser {
     

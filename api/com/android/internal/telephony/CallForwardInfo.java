@@ -1,11 +1,12 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.telephony.PhoneNumberUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CallForwardInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.484 -0400", hash_original_field = "9ACB44549B41563697BB490144EC6258", hash_generated_field = "E9243AA6ACDC688110619DDCF59ACF0B")
@@ -34,7 +35,7 @@ public class CallForwardInfo {
     }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.485 -0400", hash_original_method = "EA7E7BF9BED1BC105930545F926483CA", hash_generated_method = "2FF3C283D5B84ABDF28EA8C3A4BBFC54")
     public String toString() {
 String varBD27EB6ED1FF8008C8406F96DC54FF13_1343399528 =         super.toString() + (status == 0 ? " not active " : " active ")

@@ -1,12 +1,13 @@
 package android.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.telephony.CellLocation;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CdmaCellLocation extends CellLocation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.233 -0400", hash_original_field = "2B9F88F31AD9FCE7ABFBB18752950285", hash_generated_field = "880CD477F89AEF4CABEE47659812611F")
@@ -242,6 +243,7 @@ String varD00AE8B4DB8250B02A118CD67CC66F17_347902140 =         "[" + this.mBaseS
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean equalsHandlesNulls(Object a, Object b) {
         return (a == null) ? (b == null) : a.equals (b);
     }
@@ -264,7 +266,7 @@ String varD00AE8B4DB8250B02A118CD67CC66F17_347902140 =         "[" + this.mBaseS
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.244 -0400", hash_original_method = "8DF1697B3E0EEA68CA131C0067500EBA", hash_generated_method = "ED816F5D87EAD7EAFE70DD09C32C1AD9")
     public boolean isEmpty() {
         boolean var27982435A14BB8D93E80836A7CB07524_1400481456 = ((this.mBaseStationId == -1 &&

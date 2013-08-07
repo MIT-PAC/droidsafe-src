@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Vector;
@@ -12,16 +13,17 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Browser;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class WebIconDatabase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.396 -0400", hash_original_field = "FD607A408617F0526DD1616AA88B403D", hash_generated_field = "AD056510E524158496964C320931C857")
 
     private final EventHandler mEventHandler = new EventHandler();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.396 -0400", hash_original_method = "D97F7EFB28FBFEC67D724170FB0509C5", hash_generated_method = "282A0D53C15427A619DE121EA3CBF850")
     private  WebIconDatabase() {
         // ---------- Original Method ----------
@@ -217,6 +219,7 @@ public final class WebIconDatabase {
 
         private Vector<Message> mMessages = new Vector<Message>();
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.415 -0400", hash_original_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779", hash_generated_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779")
         public EventHandler ()
         {
@@ -242,6 +245,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.416 -0400", hash_original_method = "93C53855D8E83D18C38BE52A1D7D3DDC", hash_generated_method = "B72F36F0D002944359EF7ADEB094C7B6")
         private synchronized void createHandler() {
             if(mHandler == null)            
@@ -291,7 +295,7 @@ for(int size = mMessages.size();size > 0;size--)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.417 -0400", hash_original_method = "9D0DE68A4BFD007DC242C5FC5FA57FA9", hash_generated_method = "F8AEC8224A3AC67FFB57CFA78CAEE6E5")
         private synchronized boolean hasHandler() {
             boolean varA0688A549C082DCF7CAF0C6FBCF98DF0_1517927830 = (mHandler != null);
@@ -302,6 +306,7 @@ for(int size = mMessages.size();size > 0;size--)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.417 -0400", hash_original_method = "4B2498A7504C7636E794F105FA929903", hash_generated_method = "0202DD5EAF607240E4BC3B821012E9A1")
         private synchronized void postMessage(Message msg) {
             addTaint(msg.getTaint());
@@ -322,6 +327,7 @@ for(int size = mMessages.size();size > 0;size--)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.418 -0400", hash_original_method = "14DAA8F1389B41CD064DE9C446247235", hash_generated_method = "23ECBFB9B098173DBFD03A1D1E948F8C")
         private void bulkRequestIcons(Message msg) {
             addTaint(msg.getTaint());
@@ -359,6 +365,7 @@ for(int size = mMessages.size();size > 0;size--)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.418 -0400", hash_original_method = "FD70C30826AD390D3E7262DECFBF2A75", hash_generated_method = "A455A86F8F192B381120BAEE4E8FF6DD")
         private void requestIconAndSendResult(String url, IconListener listener) {
             addTaint(listener.getTaint());

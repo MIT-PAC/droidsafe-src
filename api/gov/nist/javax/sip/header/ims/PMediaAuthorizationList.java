@@ -1,9 +1,10 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeaderList;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class PMediaAuthorizationList extends SIPHeaderList<PMediaAuthorization> {
     

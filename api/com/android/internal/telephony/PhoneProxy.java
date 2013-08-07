@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import android.app.ActivityManagerNative;
@@ -22,10 +23,10 @@ import com.android.internal.telephony.gsm.UsimServiceTable;
 import com.android.internal.telephony.ims.IsimRecords;
 import com.android.internal.telephony.test.SimulatedRadioControl;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PhoneProxy extends Handler implements Phone {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.824 -0400", hash_original_field = "10728AB9087E7707D37847A2389DDE0C", hash_generated_field = "79E1E1372DEBD73F7DC06CB339BF8515")
@@ -140,7 +141,7 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void logd(String msg) {
         Log.d(LOG_TAG, "[PhoneProxy] " + msg);
     }
@@ -993,7 +994,7 @@ String varE7F307187646B548EFAC44A59EF31EBA_1915055407 =         mActivePhone.get
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.865 -0400", hash_original_method = "D1C747624B6D1D0F21E7BC1753211E26", hash_generated_method = "B5E7A2AD278CF520645E3262E902E51D")
     public int getVoiceMessageCount() {
         int var50F99E7353D3DAF7CE4A9C6A6EFB1EB5_394051996 = (mActivePhone.getVoiceMessageCount());

@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -24,13 +25,14 @@ import com.android.internal.os.RuntimeInit;
 import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
 import dalvik.system.VMDebug;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class StrictMode {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.746 -0400", hash_original_method = "E3867A4A77A9B912C067B4B7EB14B6CB", hash_generated_method = "4A3827557D89D96B907E9813E3C5AC14")
     private  StrictMode() {
         // ---------- Original Method ----------
@@ -63,6 +65,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void setCloseGuardEnabled(boolean enabled) {
         if (!(CloseGuard.getReporter() instanceof AndroidCloseGuardReporter)) {
             CloseGuard.setReporter(new AndroidCloseGuardReporter());
@@ -71,6 +74,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getThreadPolicyMask() {
         return BlockGuard.getThreadPolicy().getPolicyMask();
     }
@@ -101,6 +105,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean amTheSystemServerProcess() {
         if (Process.myUid() != Process.SYSTEM_UID) {
             return false;
@@ -117,6 +122,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean conditionallyEnableDebugLogging() {
         boolean doFlashes = SystemProperties.getBoolean(VISUAL_PROPERTY, false)
                 && !amTheSystemServerProcess();
@@ -152,6 +158,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void enableDeathOnNetwork() {
         int oldPolicy = getThreadPolicyMask();
         int newPolicy = oldPolicy | DETECT_NETWORK | PENALTY_DEATH_ON_NETWORK;
@@ -159,6 +166,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int parsePolicyFromMessage(String message) {
         if (message == null || !message.startsWith("policy=")) {
             return 0;
@@ -176,6 +184,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int parseViolationFromMessage(String message) {
         if (message == null) {
             return 0;
@@ -198,11 +207,13 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean tooManyViolationsThisLoop() {
         return violationsBeingTimed.get().size() >= MAX_OFFENSES_PER_LOOP;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void executeDeathPenalty(ViolationInfo info) {
         int violationBit = parseViolationFromMessage(info.crashInfo.exceptionMessage);
         throw new StrictModeViolation(info.policy, violationBit, null);
@@ -250,6 +261,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void conditionallyCheckInstanceCounts() {
         VmPolicy policy = getVmPolicy();
         if (policy.classInstanceLimit.size() == 0) {
@@ -310,30 +322,33 @@ public final class StrictMode {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean vmSqliteObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CURSOR_LEAKS) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean vmClosableObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CLOSABLE_LEAKS) != 0;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void onSqliteObjectLeaked(String message, Throwable originStack) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         onVmPolicyViolation(message, originStack);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void onWebViewMethodCalledOnWrongThread(Throwable originStack) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         onVmPolicyViolation(null, originStack);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void onVmPolicyViolation(String message, Throwable originStack) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         final boolean penaltyDropbox = (sVmPolicyMask & PENALTY_DROPBOX) != 0;
@@ -421,11 +436,13 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void onBinderStrictModePolicyChange(int newPolicy) {
         setBlockGuardPolicy(newPolicy);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Span enterCriticalSpan(String name) {
         if (IS_USER_BUILD) {
             return NO_OP_SPAN;
@@ -467,6 +484,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void noteDiskRead() {
         BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
@@ -476,6 +494,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void noteDiskWrite() {
         BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
@@ -485,11 +504,13 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Object trackActivity(Object instance) {
         return new InstanceTracker(instance);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void incrementExpectedActivityCount(Class klass) {
         if (klass == null) {
             return;
@@ -505,6 +526,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void decrementExpectedActivityCount(Class klass) {
         if (klass == null) {
             return;
@@ -541,6 +563,7 @@ public final class StrictMode {
 
         int mask;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.750 -0400", hash_original_method = "B0AC15ACB9093249F94C953D0A842CAE", hash_generated_method = "CD2B4FBA33571E2F2EF5D0491C95A1F6")
         private  ThreadPolicy(int mask) {
             this.mask = mask;
@@ -741,7 +764,7 @@ Builder varC3126CEB2524227BCB28FCD226FE486C_1747300594 =                 enable(
             }
 
             
-                        @DSModeled(DSC.SAFE)
+                        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "2254A93B7EA82193EB3433A6A97592A0")
             private Builder enable(int bit) {
                 mMask |= bit;
@@ -754,7 +777,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_366612052 =                 this;
             }
 
             
-                        @DSModeled(DSC.SAFE)
+                        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "DD377E4C338D3B09C11C3D4D7DFD99D3", hash_generated_method = "FB995DD0D8A66E96AE5E8F78D6779930")
             private Builder disable(int bit) {
                 mMask &= ~bit;
@@ -807,6 +830,7 @@ ThreadPolicy varEBA1A0201E5503996C968AF363927B41_1318457206 =                 ne
 
         HashMap<Class, Integer> classInstanceLimit;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.753 -0400", hash_original_method = "BE6E35A5EA1ACA059EF2A402B69D7023", hash_generated_method = "AF3E0963E335112AB7A8226A9368692D")
         private  VmPolicy(int mask, HashMap<Class, Integer> classInstanceLimit) {
             if(classInstanceLimit == null)            
@@ -977,7 +1001,7 @@ Builder varC3126CEB2524227BCB28FCD226FE486C_1272195904 =                 enable(
             }
 
             
-                        @DSModeled(DSC.SAFE)
+                        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "879AA6DE2768B208ED13B14418D603DB")
             private Builder enable(int bit) {
                 mMask |= bit;
@@ -1462,6 +1486,7 @@ for(ViolationInfo previous : violations)
     
     private static class AndroidCloseGuardReporter implements CloseGuard.Reporter {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.763 -0400", hash_original_method = "E7772DF8591E8A95C00A24C3A7BC9385", hash_generated_method = "E7772DF8591E8A95C00A24C3A7BC9385")
         public AndroidCloseGuardReporter ()
         {
@@ -1485,6 +1510,7 @@ for(ViolationInfo previous : violations)
     
     private static class LogStackTrace extends Exception {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.764 -0400", hash_original_method = "9318B319D2DE8ECE742465D2C7D8840B", hash_generated_method = "9318B319D2DE8ECE742465D2C7D8840B")
         public LogStackTrace ()
         {
@@ -1529,6 +1555,7 @@ for(ViolationInfo previous : violations)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.765 -0400", hash_original_method = "BAA90C1A527ED6ADE64DE9CF5831D500", hash_generated_method = "5812B292A3A2312F9CA6B671439979D5")
         public void finish() {
             ThreadSpanState state = mContainerState;
@@ -1587,6 +1614,7 @@ for(ViolationInfo previous : violations)
 
         public int mFreeListSize;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.765 -0400", hash_original_method = "897FCF469D672A73C45810344D5B48A8", hash_generated_method = "897FCF469D672A73C45810344D5B48A8")
         public ThreadSpanState ()
         {

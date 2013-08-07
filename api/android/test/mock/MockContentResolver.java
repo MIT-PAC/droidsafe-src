@@ -15,7 +15,8 @@
  */
 
 package android.test.mock;
-
+//Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,7 +26,7 @@ import android.net.Uri;
 
 import com.google.android.collect.Maps;
 
-import droidsafe.annotations.*;
+
 
 import java.util.Map;
 
@@ -107,7 +108,7 @@ public class MockContentResolver extends ContentResolver {
     }
 
     /** @hide */
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @Override
     public boolean releaseProvider(IContentProvider provider) {
         return true;

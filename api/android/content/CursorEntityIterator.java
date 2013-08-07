@@ -1,12 +1,13 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.database.Cursor;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class CursorEntityIterator implements EntityIterator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_field = "F54BB255BEA99BFE91A331B490610EDF", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
@@ -16,6 +17,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
 
     private boolean mIsClosed;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_method = "76B86F8C1E31679F8727B434E61B14CB", hash_generated_method = "B0CDFD30A5D8289392A197569989206F")
     public  CursorEntityIterator(Cursor cursor) {
         mIsClosed = false;
@@ -32,6 +34,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
     public abstract Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException;
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_method = "EFC615883F392C5E7B7F6E9EF3393B85", hash_generated_method = "615271A9F440649387636AA3AD1F6FE7")
     public final boolean hasNext() {
         if(mIsClosed)        
@@ -51,6 +54,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "E69C7FE396FBF487669DC0A4275B461F")
     public Entity next() {
         if(mIsClosed)        
@@ -92,6 +96,7 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_656514421 =             getEntityAndI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "2158F00E167F00121D9D2190C01FAABB", hash_generated_method = "079DFC141AAC73FA45B9C248EB02DE6E")
     public void remove() {
         UnsupportedOperationException var3507AD2E5185A524A543CF22C0250BAC_1298754522 = new UnsupportedOperationException("remove not supported by EntityIterators");
@@ -102,6 +107,7 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_656514421 =             getEntityAndI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "D0360F07FA873653A69218CB10B6D78C", hash_generated_method = "B230BABD808BEAE19CD0AE46FE64A3B0")
     public final void reset() {
         if(mIsClosed)        
@@ -119,6 +125,7 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_656514421 =             getEntityAndI
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "B24D9E2E069589E778F23FCBC29406BF", hash_generated_method = "C3809F69E058058F0178670A46CC07E2")
     public final void close() {
         if(mIsClosed)        

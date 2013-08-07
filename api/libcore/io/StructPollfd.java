@@ -1,10 +1,11 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class StructPollfd {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.801 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "4ED9B7CD0F5862CC649C5C4B2E5F5F51")

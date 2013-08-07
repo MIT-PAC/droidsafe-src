@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -17,10 +18,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class DialogPreference extends Preference implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, PreferenceManager.OnActivityDestroyListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.190 -0400", hash_original_field = "AB0228EB14569C0671EE8B2756FB9139", hash_generated_field = "42060B98383429459FECD4D4CDE8C54F")
@@ -306,7 +307,7 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_141097512 =         mNegativeBu
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.201 -0400", hash_original_method = "E61813EC392C6A7361FD971C8A66C42E", hash_generated_method = "A41D172F213D7E1B85BEC8C14741E91D")
     protected boolean needInputMethod() {
         boolean var68934A3E9455FA72420237EB05902327_217928558 = (false);
@@ -317,6 +318,7 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_141097512 =         mNegativeBu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.202 -0400", hash_original_method = "3B69F31C6833A6156BA93E6BE7789317", hash_generated_method = "B3F792BA298537DB8052E460A8DB5496")
     private void requestInputMethod(Dialog dialog) {
         addTaint(dialog.getTaint());

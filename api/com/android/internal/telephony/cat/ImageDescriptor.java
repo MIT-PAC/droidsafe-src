@@ -1,8 +1,9 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class ImageDescriptor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.327 -0400", hash_original_field = "EAAE26A6FB20ED3EF54FB23BFA0B1FCC", hash_generated_field = "1589F848FE4FF192F7CCE1B9F9E85747")
@@ -27,6 +28,7 @@ public class ImageDescriptor {
 
     int length;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.329 -0400", hash_original_method = "9D6AA19EA5B9D87B22803CD155673A0E", hash_generated_method = "C7915BDAFA725EF1255F3327B87FD7AD")
       ImageDescriptor() {
         width = 0;
@@ -47,6 +49,7 @@ public class ImageDescriptor {
     }
 
     
+    @DSModeled(DSC.BAN)
     static ImageDescriptor parse(byte[] rawData, int valueIndex) {
         ImageDescriptor d = new ImageDescriptor();
         try {

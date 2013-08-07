@@ -1,6 +1,7 @@
 package com.android.i18n.phonenumbers.geocoding;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -17,7 +18,7 @@ import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import droidsafe.annotations.*;
+
 
 public class MappingFileProvider implements Externalizable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.618 -0400", hash_original_field = "69F496FCE87C6BC7DC2D0257BB43A268", hash_generated_field = "3E0B4451FC75BFBEA7BE0888ADA52D93")

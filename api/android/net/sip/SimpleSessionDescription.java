@@ -1,13 +1,14 @@
 package android.net.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SimpleSessionDescription {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.369 -0400", hash_original_field = "411C3A7A9C40CC3933F588BBB034DE72", hash_generated_field = "7FC97BC1C457A3C7034DB3B8BF10C7C3")
@@ -17,6 +18,7 @@ public class SimpleSessionDescription {
 
     private final ArrayList<Media> mMedia = new ArrayList<Media>();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.370 -0400", hash_original_method = "2A5A308C97610724520D8E7C21BD0897", hash_generated_method = "95E68D1FD375A4F58844D985779FE980")
     public  SimpleSessionDescription(long sessionId, String address) {
         addTaint(address.getTaint());
@@ -39,6 +41,7 @@ public class SimpleSessionDescription {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.370 -0400", hash_original_method = "55B596B0C996801BF0FD9956A535E1C7", hash_generated_method = "EEAEFC31CA3B5D6E6173393E3D0745D0")
     public  SimpleSessionDescription(String message) {
         addTaint(message.getTaint());
@@ -84,6 +87,7 @@ for(String format : parts[3].split(" "))
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.371 -0400", hash_original_method = "EA659D41568208E07CC0B460E13AE27A", hash_generated_method = "2961411FD89DACEAD4DECB5981D59CDC")
     public Media newMedia(String type, int port, int portCount,
             String protocol) {
@@ -113,6 +117,7 @@ Media[] var36F2E75E5285F87859F9AF6BCE3D44D2_855785821 =         mMedia.toArray(n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.372 -0400", hash_original_method = "5F8774B802EBD1C84B8B67985F8F69FE", hash_generated_method = "D05E3EAE92FCF016F6FABA288746C92F")
     public String encode() {
         StringBuilder buffer = new StringBuilder();
@@ -134,6 +139,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_861678272 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.373 -0400", hash_original_method = "F8D52A976FE0230A990054D249BBC343", hash_generated_method = "1B443DE54651934AFDC20BA1F4129888")
     public String getAddress() {
 String var636B966AFDAFEC29040EC8E8FA458908_1749296778 =         mFields.getAddress();
@@ -144,6 +150,7 @@ String var636B966AFDAFEC29040EC8E8FA458908_1749296778 =         mFields.getAddre
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.373 -0400", hash_original_method = "9CF6A3FFF46CFF8C635A973470CB60F8", hash_generated_method = "34A578D76264F546764A9C5A523819D7")
     public void setAddress(String address) {
         addTaint(address.getTaint());
@@ -153,6 +160,7 @@ String var636B966AFDAFEC29040EC8E8FA458908_1749296778 =         mFields.getAddre
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.373 -0400", hash_original_method = "CF383146C8D4D1A90CD3326AD48DF581", hash_generated_method = "BC1ECE6084F48FE0F97D674CF4C82065")
     public String getEncryptionMethod() {
 String varFB8378A883C94B06797AD07E363171B5_402615709 =         mFields.getEncryptionMethod();
@@ -163,6 +171,7 @@ String varFB8378A883C94B06797AD07E363171B5_402615709 =         mFields.getEncryp
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.373 -0400", hash_original_method = "A3819CF07A96AB27E331482FA08A72EC", hash_generated_method = "FC971B90E9B1010CD3E94982D99BA098")
     public String getEncryptionKey() {
 String var42CDEA47B0DBF9D9734EA57642C02DA2_1049325663 =         mFields.getEncryptionKey();
@@ -173,6 +182,7 @@ String var42CDEA47B0DBF9D9734EA57642C02DA2_1049325663 =         mFields.getEncry
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.374 -0400", hash_original_method = "A82F97B5F7341431789E84B509C9D803", hash_generated_method = "36681D182D013C76410578A8A5E337C4")
     public void setEncryption(String method, String key) {
         addTaint(key.getTaint());
@@ -183,6 +193,7 @@ String var42CDEA47B0DBF9D9734EA57642C02DA2_1049325663 =         mFields.getEncry
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.374 -0400", hash_original_method = "E6DC230D0F77B46CC062C029BF806CE1", hash_generated_method = "C6354139C17A1647E795406F81B031D8")
     public String[] getBandwidthTypes() {
 String[] var91700E63EA946BD1125FA827B9682874_579330647 =         mFields.getBandwidthTypes();
@@ -193,6 +204,7 @@ String[] var91700E63EA946BD1125FA827B9682874_579330647 =         mFields.getBand
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.374 -0400", hash_original_method = "F5B1268DC2500E20A835AD2EE3964BC1", hash_generated_method = "538FD997399C13D872F5231B8F456DFC")
     public int getBandwidth(String type) {
         addTaint(type.getTaint());
@@ -204,6 +216,7 @@ String[] var91700E63EA946BD1125FA827B9682874_579330647 =         mFields.getBand
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.375 -0400", hash_original_method = "8E0EC67E7D91F3DDCC83F18482476DA9", hash_generated_method = "BA0AE84DBC88374D3ABCD485701AC23B")
     public void setBandwidth(String type, int value) {
         addTaint(value);
@@ -214,6 +227,7 @@ String[] var91700E63EA946BD1125FA827B9682874_579330647 =         mFields.getBand
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.375 -0400", hash_original_method = "5B56D37EB252892A4BEDE959A6610969", hash_generated_method = "BA7D113B6D416AC638045AE65C6749C2")
     public String[] getAttributeNames() {
 String[] varE9A1A1DE8F86498B03558DECC84C4DEE_1913494871 =         mFields.getAttributeNames();
@@ -224,6 +238,7 @@ String[] varE9A1A1DE8F86498B03558DECC84C4DEE_1913494871 =         mFields.getAtt
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.375 -0400", hash_original_method = "8C22B12F041FCBB6C901893035A47DF3", hash_generated_method = "6CCCD71A3CFB5E833582E9FCE5AF363C")
     public String getAttribute(String name) {
         addTaint(name.getTaint());
@@ -235,6 +250,7 @@ String varCA33BF02D280D51D7B795F30C150EFBE_1429630215 =         mFields.getAttri
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.376 -0400", hash_original_method = "A5005CAFDCC1F5EB8A695D7ADEDCA043", hash_generated_method = "2E36B6B67B18BF1F711E142BA852D69C")
     public void setAttribute(String name, String value) {
         addTaint(value.getTaint());
@@ -262,6 +278,7 @@ String varCA33BF02D280D51D7B795F30C150EFBE_1429630215 =         mFields.getAttri
 
         private ArrayList<String> mFormats = new ArrayList<String>();
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.377 -0400", hash_original_method = "02F078FAC4A0FFA7B56C26518CB9B9A1", hash_generated_method = "3475065E93FD65F6A2B2E9FB94DB4CC1")
         private  Media(String type, int port, int portCount, String protocol) {
             super("icbka");
@@ -277,7 +294,7 @@ String varCA33BF02D280D51D7B795F30C150EFBE_1429630215 =         mFields.getAttri
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.378 -0400", hash_original_method = "F57356AE1A37FC524BD36BB2BA67325B", hash_generated_method = "8E5B81CB46D31F78AF10C3FBFE17C5E7")
         public String getType() {
 String var4BA7381699FCDF343F6526506FD5D65C_1844631447 =             mType;
@@ -288,7 +305,7 @@ String var4BA7381699FCDF343F6526506FD5D65C_1844631447 =             mType;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.378 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "02B238C7A85D0300B796AA227BEB9100")
         public int getPort() {
             int var5EFA61C4FCA92CA992BE37C2BAF4D350_1418201038 = (mPort);
@@ -299,7 +316,7 @@ String var4BA7381699FCDF343F6526506FD5D65C_1844631447 =             mType;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.378 -0400", hash_original_method = "7A9595EE55A65FB3ADE35A1A62D4E357", hash_generated_method = "3BFB05BE0B2C8DF338FB5F26CC276398")
         public int getPortCount() {
             int varD0E1DF8C25F4A332E41D25A2CE9F3985_1433358641 = (mPortCount);
@@ -310,7 +327,7 @@ String var4BA7381699FCDF343F6526506FD5D65C_1844631447 =             mType;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.378 -0400", hash_original_method = "259570BEE3678204ECD026726561CF7F", hash_generated_method = "CFBC2E8317D999AE767314F16271A3A5")
         public String getProtocol() {
 String var08FE45DCAD8E150FAC65A2ED6B7AD1DC_1981123420 =             mProtocol;
@@ -321,6 +338,7 @@ String var08FE45DCAD8E150FAC65A2ED6B7AD1DC_1981123420 =             mProtocol;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.379 -0400", hash_original_method = "FE32CC25BB54D83998E2230125207ED2", hash_generated_method = "60929414BAB837B263BB29481E2AAF7E")
         public String[] getFormats() {
 String[] var1AB82AAA43843F67731B6738BE17D9F6_507491027 =             mFormats.toArray(new String[mFormats.size()]);
@@ -331,6 +349,7 @@ String[] var1AB82AAA43843F67731B6738BE17D9F6_507491027 =             mFormats.to
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.380 -0400", hash_original_method = "FA4CAF6A8A475DAE2E8CED4184402CED", hash_generated_method = "D1C9B39D85160BA85783918D1848F736")
         public String getFmtp(String format) {
             addTaint(format.getTaint());
@@ -342,6 +361,7 @@ String varFDEF856B706A303731C65E04FA4DF645_872157550 =             super.get("a=
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.380 -0400", hash_original_method = "C64230710F5A14357C2D213EB5CAD075", hash_generated_method = "6DD84FE933D967093B0DE843238A8C54")
         public void setFormat(String format, String fmtp) {
             addTaint(fmtp.getTaint());
@@ -358,6 +378,7 @@ String varFDEF856B706A303731C65E04FA4DF645_872157550 =             super.get("a=
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.381 -0400", hash_original_method = "9754946CE829C7317659B7AE5D5C7570", hash_generated_method = "0170BBF0E323C5C31CB1A595C5240736")
         public void removeFormat(String format) {
             addTaint(format.getTaint());
@@ -371,6 +392,7 @@ String varFDEF856B706A303731C65E04FA4DF645_872157550 =             super.get("a=
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.382 -0400", hash_original_method = "9C0F6B568B86FD34F835983651B5C872", hash_generated_method = "A6CEA89885BDCFA0EA4F8F648797ECC1")
         public int[] getRtpPayloadTypes() {
             int[] types = new int[mFormats.size()];
@@ -402,6 +424,7 @@ for(String format : mFormats)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.383 -0400", hash_original_method = "24059B72158848D6AA4D09BBC6EA89FF", hash_generated_method = "2EC295D2AF968B59D06021934DEC0BCE")
         public String getRtpmap(int type) {
             addTaint(type);
@@ -413,6 +436,7 @@ String var51F8CDE9E2CAD0E396CB4B12AD628C37_521848897 =             super.get("a=
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.384 -0400", hash_original_method = "B26584A4E479E1852859F85D5F0DF9AE", hash_generated_method = "AC6B12B53D0EA277BC1064C130A1F3E2")
         public String getFmtp(int type) {
             addTaint(type);
@@ -424,6 +448,7 @@ String var7469C96DF23F0880E3C389D3B022EFF2_188069914 =             super.get("a=
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.384 -0400", hash_original_method = "F9FA54C35728FF67E338ECA5310C56AD", hash_generated_method = "134401685065880E9F5440BB6E6494BB")
         public void setRtpPayload(int type, String rtpmap, String fmtp) {
             addTaint(fmtp.getTaint());
@@ -443,6 +468,7 @@ String var7469C96DF23F0880E3C389D3B022EFF2_188069914 =             super.get("a=
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.385 -0400", hash_original_method = "DA7390F19D86262D8A26D94062855C18", hash_generated_method = "A494A6314722924A08CBD2508B41633C")
         public void removeRtpPayload(int type) {
             addTaint(type);
@@ -452,6 +478,7 @@ String var7469C96DF23F0880E3C389D3B022EFF2_188069914 =             super.get("a=
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.385 -0400", hash_original_method = "9628E0029B5D265C0B7D76261776561B", hash_generated_method = "6229887238B1DDAFF0F2E6DE3886C48B")
         private void write(StringBuilder buffer) {
             addTaint(buffer.getTaint());
@@ -493,6 +520,7 @@ for(String format : mFormats)
 
         private final ArrayList<String> mLines = new ArrayList<String>();
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.386 -0400", hash_original_method = "961F9332E222C9766CB023FF8444B0B1", hash_generated_method = "53E28CC7DD6276023EA5568413E9B75D")
           Fields(String order) {
             mOrder = order;
@@ -501,6 +529,7 @@ for(String format : mFormats)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.386 -0400", hash_original_method = "A670B06063C17BED4844A712165B1C95", hash_generated_method = "75E2FDCDC0C3C5518AFB112481F0F635")
         public String getAddress() {
             String address = get("c", '=');
@@ -535,6 +564,7 @@ String var1BF089703585EA2A3F76A548CA952814_507201497 =             (slash < 0) ?
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.387 -0400", hash_original_method = "D0AF733436A7D8101A9CE592CCF78EC4", hash_generated_method = "91840FD50146863D7EDABFFCCDF2F78F")
         public void setAddress(String address) {
             addTaint(address.getTaint());
@@ -553,6 +583,7 @@ String var1BF089703585EA2A3F76A548CA952814_507201497 =             (slash < 0) ?
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.387 -0400", hash_original_method = "118574D8F2FBBB67C378449350CD8498", hash_generated_method = "F5DB772F783DCB4E53F6A191388F4022")
         public String getEncryptionMethod() {
             String encryption = get("k", '=');
@@ -576,6 +607,7 @@ String varEEA69AC7A711FF3D447866E716ED7DAB_241443632 =             (colon == -1)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.388 -0400", hash_original_method = "E755BA7ABD1182BDF3E20148341D4912", hash_generated_method = "8E08F661501762D7B971F869EF63EA8B")
         public String getEncryptionKey() {
             String encryption = get("k", '=');
@@ -599,6 +631,7 @@ String var7D288BF80A92EAB7CBA6016DDAC46AE7_506900486 =             (colon == -1)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.388 -0400", hash_original_method = "D6BD475F892E56E5EB541552A030D2BC", hash_generated_method = "2E428D4D912FA03D98D263F7E3CBD8B1")
         public void setEncryption(String method, String key) {
             addTaint(key.getTaint());
@@ -611,6 +644,7 @@ String var7D288BF80A92EAB7CBA6016DDAC46AE7_506900486 =             (colon == -1)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.389 -0400", hash_original_method = "647C47031353EA6DBD8C2255C9701417", hash_generated_method = "CACF2D1BD16A71882C16023C97E1AC73")
         public String[] getBandwidthTypes() {
 String[] var64D0A7A251C3348E8A84A9C48BE427A9_1823507975 =             cut("b=", ':');
@@ -621,6 +655,7 @@ String[] var64D0A7A251C3348E8A84A9C48BE427A9_1823507975 =             cut("b=", 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.389 -0400", hash_original_method = "AAFC6858B139DD8B4164F3A7991B844E", hash_generated_method = "3B5A9C42E7DBC081643B70D2E09B3A6E")
         public int getBandwidth(String type) {
             addTaint(type.getTaint());
@@ -653,6 +688,7 @@ String[] var64D0A7A251C3348E8A84A9C48BE427A9_1823507975 =             cut("b=", 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.390 -0400", hash_original_method = "599740758F5BEDB2EA85017AA799A405", hash_generated_method = "D817999E53C2D79736373561FA4A9479")
         public void setBandwidth(String type, int value) {
             addTaint(value);
@@ -663,6 +699,7 @@ String[] var64D0A7A251C3348E8A84A9C48BE427A9_1823507975 =             cut("b=", 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.390 -0400", hash_original_method = "7DE1393AC1C7539875AD2D3F3301C0B7", hash_generated_method = "B214959AA66D77C64F7130BE01387E38")
         public String[] getAttributeNames() {
 String[] var8115D36206B0C50035E3C513B2BBF372_1823959438 =             cut("a=", ':');
@@ -673,6 +710,7 @@ String[] var8115D36206B0C50035E3C513B2BBF372_1823959438 =             cut("a=", 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.390 -0400", hash_original_method = "1FA4E1C2AB18E99215F11DC02E4EE2C1", hash_generated_method = "E8AACA3EFE501F829DBF32920B4520DE")
         public String getAttribute(String name) {
             addTaint(name.getTaint());
@@ -684,6 +722,7 @@ String var849565A12C004DEFBB4396F20634EF28_923074779 =             get("a=" + na
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.391 -0400", hash_original_method = "5FC68CD08D9765AB5882516E9433018C", hash_generated_method = "BB42C60D0EEFE34F44FFF47108E7192E")
         public void setAttribute(String name, String value) {
             addTaint(value.getTaint());
@@ -694,6 +733,7 @@ String var849565A12C004DEFBB4396F20634EF28_923074779 =             get("a=" + na
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.391 -0400", hash_original_method = "0B643EB7A40766CD17BE57ED23F6E069", hash_generated_method = "0A18F383C26108864E9BEA9BA2249BF7")
         private void write(StringBuilder buffer) {
             addTaint(buffer.getTaint());
@@ -720,6 +760,7 @@ for(String line : mLines)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.391 -0400", hash_original_method = "1E2B4FDCC5FCB983233F6190F7157F83", hash_generated_method = "C8F5631623FBFD58F8407A4DAF5EE0A5")
         private void parse(String line) {
             addTaint(line.getTaint());
@@ -767,6 +808,7 @@ for(String line : mLines)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.392 -0400", hash_original_method = "AC73044C1BE8B35906F49C8C6D477AFE", hash_generated_method = "F0E4B55235BDB628D28713DD071CD07B")
         private String[] cut(String prefix, char delimiter) {
             addTaint(delimiter);
@@ -806,6 +848,7 @@ String[] varA3D37981F10577BE2FF327E6C05A0DC0_1073925576 =             Arrays.cop
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.392 -0400", hash_original_method = "6CC88714FB6247DC4BDAFCE2B4177456", hash_generated_method = "7BBDC57A0621D779E187EAC7CBFC7896")
         private int find(String key, char delimiter) {
             addTaint(delimiter);
@@ -838,6 +881,7 @@ for(int i = mLines.size() - 1;i >= 0;--i)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.392 -0400", hash_original_method = "9868AB060D9EE7DD5CB696B838DF99A9", hash_generated_method = "5C485992E5635524461C7D009D0E10A9")
         private void set(String key, char delimiter, String value) {
             addTaint(value.getTaint());
@@ -881,6 +925,7 @@ for(int i = mLines.size() - 1;i >= 0;--i)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.392 -0400", hash_original_method = "820DDC74FB3CD5776CD6646B43FBF51C", hash_generated_method = "395DF297960DE0C57763708E15F5DAAF")
         private String get(String key, char delimiter) {
             addTaint(delimiter);

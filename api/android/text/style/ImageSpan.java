@@ -1,6 +1,7 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.InputStream;
 
 import android.content.Context;
@@ -9,10 +10,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ImageSpan extends DynamicDrawableSpan {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.024 -0400", hash_original_field = "D548B27C6AC66A9D9B5D05ED35C2D844", hash_generated_field = "F17AF26B1AE93DE0DD2EED2442B6F076")
@@ -128,7 +129,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.027 -0400", hash_original_method = "E44302541FD4ECECF2698F7D07EBCA57", hash_generated_method = "A513108C546DEDD9250233754F222146")
     public  ImageSpan(Context context, Uri uri) {
         this(context, uri, ALIGN_BOTTOM);
@@ -138,7 +139,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.028 -0400", hash_original_method = "97E5D1114EAA0CA1A8404960D716AC3A", hash_generated_method = "47CEDD6A5E7BB632352DB482EBDF61E1")
     public  ImageSpan(Context context, Uri uri, int verticalAlignment) {
         super(verticalAlignment);

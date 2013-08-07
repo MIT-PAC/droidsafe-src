@@ -1,11 +1,12 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class BounceInterpolator implements Interpolator {
     
@@ -26,7 +27,7 @@ public class BounceInterpolator implements Interpolator {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static float bounce(float t) {
         return t * t * 8.0f;
     }

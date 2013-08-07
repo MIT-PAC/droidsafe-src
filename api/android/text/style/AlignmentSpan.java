@@ -1,6 +1,7 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.text.Layout;
 import android.text.ParcelableSpan;

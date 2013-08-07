@@ -1,6 +1,7 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,10 +16,10 @@ import android.util.Log;
 
 import com.android.internal.location.DummyLocationProvider;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LocationManager {
     private ILocationManager mService;
@@ -35,12 +36,13 @@ public class LocationManager {
 
     private HashMap<LocationListener,ListenerTransport> mListeners = new HashMap<LocationListener,ListenerTransport>();
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
 	public LocationManager(ILocationManager service) {
         mService = service;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.982 -0400", hash_original_method = "F4540EAD4F3CF2106C64C62C1DCA569C", hash_generated_method = "E6B9FBD61969F58B1DACCB8EE5D070EE")
     private LocationProvider createProvider(String name, Bundle info) {
         addTaint(info.getTaint());
@@ -341,6 +343,7 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.987 -0400", hash_original_method = "7527D3AF7E08617A40988967AFB4FC4D", hash_generated_method = "324B2DB34138E35B89555069BC343BA8")
     private void _requestLocationUpdates(String provider, Criteria criteria, long minTime,
             float minDistance, boolean singleShot, LocationListener listener, Looper looper) {
@@ -458,6 +461,7 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.989 -0400", hash_original_method = "21FA37E7FC7084DE02389BC0809F92F8", hash_generated_method = "547776629047CCC5CFE06266ED0BE550")
     private void _requestLocationUpdates(String provider, Criteria criteria,
             long minTime, float minDistance, boolean singleShot, PendingIntent intent) {
@@ -1182,6 +1186,7 @@ GpsStatus var62D3D5D442782C1992154E821A40FA75_1740037446 =         status;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.999 -0400", hash_original_method = "486A02DD90A0BB213EFD64094D84B261", hash_generated_method = "306AC3B7E8A3F0216FC925ED69C72C30")
     public boolean sendNiResponse(int notifId, int userResponse) {
         addTaint(userResponse);
@@ -1344,6 +1349,7 @@ GpsStatus var62D3D5D442782C1992154E821A40FA75_1740037446 =         status;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.006 -0400", hash_original_method = "B4AFFA03A7F956D43DB0E44DEB20B60F", hash_generated_method = "15A6796DAAF4A1912417AF601BBACA6D")
         private void _handleMessage(Message msg) {
             addTaint(msg.getTaint());

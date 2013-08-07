@@ -1,15 +1,16 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BERConstructedOctetString extends DEROctetString {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.925 -0400", hash_original_field = "CFDB301C608FC54C7F65954F8C926AC1", hash_generated_field = "D188A20B051C25B638BF89B386738B27")
@@ -53,7 +54,7 @@ public class BERConstructedOctetString extends DEROctetString {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     static private byte[] toBytes(
         Vector  octs) {
         ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
@@ -109,7 +110,7 @@ Enumeration var1B9859BDE61F66EA282C2AFE1BCE9641_1333940941 =         octs.elemen
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.927 -0400", hash_original_method = "03E7802E2319FF252715B6886182CABF", hash_generated_method = "CF3E2E646EDA0FEB9435B95AC714FBC5")
     private Vector generateOcts() {
         Vector vec = new Vector();

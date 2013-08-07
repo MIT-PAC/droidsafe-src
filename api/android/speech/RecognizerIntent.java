@@ -1,19 +1,21 @@
 package android.speech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RecognizerIntent {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.161 -0400", hash_original_method = "481DA9A3FEB0B3A08BDC3010832E7C57", hash_generated_method = "54134A4D30F1224788C4C762BD8FF149")
     private  RecognizerIntent() {
         // ---------- Original Method ----------

@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -13,10 +14,10 @@ import java.util.Locale;
 
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class NumberFormat extends Format {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.829 -0400", hash_original_field = "A8297487699539E2F81FB26EFCAE4926", hash_generated_field = "BA0A3C716E8972AFDE20CB1849A202C5")
@@ -232,7 +233,7 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1272520115 =             format
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static NumberFormat getInstance(String pattern, Locale locale) {
         return new DecimalFormat(pattern, locale);
     }
@@ -503,7 +504,7 @@ Object var540C13E9E156B687226421B24F2DF178_1598643270 =             null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.840 -0400", hash_original_method = "615BDCCE0F576CE8071CDC67AB896544", hash_generated_method = "778D992F1E3770A728E7A4A19FAA1F57")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -532,7 +533,7 @@ Object var540C13E9E156B687226421B24F2DF178_1598643270 =             null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.841 -0400", hash_original_method = "7CE1B061AB7260929E58BDEF36BC550E", hash_generated_method = "7120A29A4A1C6E7E8CFB964FC8A88483")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

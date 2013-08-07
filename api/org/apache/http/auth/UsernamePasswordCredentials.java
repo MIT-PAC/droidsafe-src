@@ -1,8 +1,9 @@
 package org.apache.http.auth;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.security.Principal;
 import org.apache.http.util.LangUtils;
@@ -70,6 +71,7 @@ public class UsernamePasswordCredentials implements Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.168 -0400", hash_original_method = "BB172E7710F2C6896B8F9EADD44CB225", hash_generated_method = "B205387E5927A8CADBC49236802978C8")
     public Principal getUserPrincipal() {
 Principal varA4EE1AD4A5765C52734A508323BADA56_888939726 =         this.principal;
@@ -90,6 +92,7 @@ String var645820FD954E697A3E19AB60B789C574_653362428 =         this.principal.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.184 -0400", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "997C4E52264C582EF24BCF66B96D9B11")
     public String getPassword() {
 String var8371B008E722D01F0CA3A116DA23853F_1175400134 =         password;

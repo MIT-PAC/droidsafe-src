@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
@@ -12,10 +13,10 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLSession;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SSLEngineImpl extends SSLEngine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.168 -0400", hash_original_field = "7FBF54CF570CEAF60078F31954B8B4A0", hash_generated_field = "E654CE2FA30E1E8D898FBE3969CE5BA6")
@@ -884,6 +885,7 @@ SSLEngineResult varBEA709060994944EF40F7489BDF50675_2314233 =                 ne
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.266 -0400", hash_original_method = "2E4498D8774C920317F596FEB8E0DACF", hash_generated_method = "6154C95F34A00564A3C2B515E4F5A9F3")
     private void shutdown() {
         engine_was_closed = true;
@@ -915,7 +917,7 @@ SSLEngineResult varBEA709060994944EF40F7489BDF50675_2314233 =                 ne
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.266 -0400", hash_original_method = "C6B39897E63E44773E5CEE8467983722", hash_generated_method = "9A6B4CBFBCF1F50C8E4B0D075E79C5EB")
     private SSLEngineResult.Status getEngineStatus() {
 SSLEngineResult.Status var925E923E0431B37FC45FA5E1D17248C1_1069573820 =         (engine_was_closed)

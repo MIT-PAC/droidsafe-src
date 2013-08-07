@@ -1,6 +1,7 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Principal {
     

@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -10,10 +11,10 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.provider.Telephony.Sms.Intents;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WapPushOverSms {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.520 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -35,7 +36,7 @@ public class WapPushOverSms {
 
     private WapPushConnection mWapConn = null;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.521 -0400", hash_original_method = "7408CC3A8D1F62FE40C38A48E5413064", hash_generated_method = "ACDB8A63C6AB0F97DDE14EB0A53DC58A")
     public  WapPushOverSms(Phone phone, SMSDispatcher smsDispatcher) {
         mSmsDispatcher = smsDispatcher;
@@ -50,6 +51,7 @@ public class WapPushOverSms {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.527 -0400", hash_original_method = "B943BA9A516C7D27398DA677689F619E", hash_generated_method = "FDF34C1A58F270ACD9A55CFC287C081A")
     public int dispatchWapPdu(byte[] pdu) {
         if(false)        
@@ -192,6 +194,7 @@ public class WapPushOverSms {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.530 -0400", hash_original_method = "D2C26FA4308EBF4ECDE771359B9348B6", hash_generated_method = "BA01D31387E9E544C417CDE93BF74D3B")
         public void onServiceConnected(ComponentName name, IBinder service) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -205,6 +208,7 @@ public class WapPushOverSms {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.531 -0400", hash_original_method = "645B7220F43862050D99493B740CC6E9", hash_generated_method = "87B539341ED60A91E0FF00E74F73D6E0")
         public void onServiceDisconnected(ComponentName name) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -218,6 +222,7 @@ public class WapPushOverSms {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.531 -0400", hash_original_method = "A9E3FC2EB163E786A448AD9CCAE84A6D", hash_generated_method = "DA76A9D86BC32FCA02677E35464696A9")
         public void bindWapPushManager() {
             if(mWapPushMan != null)            
@@ -233,6 +238,7 @@ public class WapPushOverSms {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.532 -0400", hash_original_method = "701141D5EA76AC5255B679005307FF1D", hash_generated_method = "BA4CF9086DEB25F99A69D90AAAB229F2")
         private void rebindWapPushManager() {
             if(mWapPushMan != null)            
@@ -286,7 +292,7 @@ public class WapPushOverSms {
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.533 -0400", hash_original_method = "12BA8034F310D7C3159CADAC53085388", hash_generated_method = "BA1A53792580C60BD95F25C0B231EEFF")
         public IWapPushManager getWapPushManager() {
 IWapPushManager var28BA9EE784314DA2EAA57CCAF5310288_859252770 =             mWapPushMan;

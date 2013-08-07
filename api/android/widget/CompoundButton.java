@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -15,10 +16,10 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class CompoundButton extends Button implements Checkable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.999 -0400", hash_original_field = "B7985199D35C1155A55567C458443B15", hash_generated_field = "5B3EF9355FF9C7031B185F0E3C8A05A3")
@@ -177,7 +178,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.004 -0400", hash_original_method = "CC17A77F98E8CA70C4846D647AA35249", hash_generated_method = "A56A31C0300B93A41C104B6DF066BB90")
      void setOnCheckedChangeWidgetListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeWidgetListener = listener;
@@ -433,6 +434,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_388557675 =         ss;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.012 -0400", hash_original_method = "527F999E441AD9A28BC136B181E8236B", hash_generated_method = "D51BA829018FE61D140FB0956773F5A3")
         private  SavedState(Parcel in) {
             super(in);

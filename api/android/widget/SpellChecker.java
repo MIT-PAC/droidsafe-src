@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.BreakIterator;
 import java.util.Locale;
 
@@ -20,10 +21,10 @@ import android.view.textservice.TextServicesManager;
 
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SpellChecker implements SpellCheckerSessionListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.297 -0400", hash_original_field = "59FFF1360E9B57BB348C2BF9F881659F", hash_generated_field = "B044D5C32398EDC8D922234EFA4F1DF3")
@@ -63,7 +64,7 @@ public class SpellChecker implements SpellCheckerSessionListener {
 
     private Runnable mSpellRunnable;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.298 -0400", hash_original_method = "EA2B38816C4BD4485D1FFEBB2CE3FE95", hash_generated_method = "88E46BA7978A9979E678090F13EBF845")
     public  SpellChecker(TextView textView) {
         mTextView = textView;
@@ -82,7 +83,7 @@ public class SpellChecker implements SpellCheckerSessionListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.299 -0400", hash_original_method = "132221852F8DDF087B45024FD49A8E7F", hash_generated_method = "A2C4CFB9F2E54D41A9E35F776448E78C")
     private void resetSession() {
         closeSession();
@@ -129,7 +130,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.301 -0400", hash_original_method = "A16726E56767CB6AA7867DE749E54AF0", hash_generated_method = "AD73757F5DEB354F3D13B9B46E22B6D0")
     private void setLocale(Locale locale) {
         mCurrentLocale = locale;
@@ -144,7 +145,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.301 -0400", hash_original_method = "7E55E284FCAD6408034DF45536DFE0B3", hash_generated_method = "8589103CD84E79BCF96035960F122164")
     private boolean isSessionActive() {
         boolean varB694535CC8119906BC8E325AD31D84D9_190702433 = (mSpellCheckerSession != null);
@@ -155,7 +156,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.302 -0400", hash_original_method = "AAA52197918C65A359451CD46304BE67", hash_generated_method = "DE31D3C66C7C0F2ED014193375664D5E")
     public void closeSession() {
         if(mSpellCheckerSession != null)        
@@ -185,7 +186,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.304 -0400", hash_original_method = "5D19DB78B5A2119B2E660E625690F49E", hash_generated_method = "A54FEE20F5046D75D720520DFE26B9FA")
     private int nextSpellCheckSpanIndex() {
 for(int i = 0;i < mLength;i++)
@@ -231,7 +232,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.304 -0400", hash_original_method = "A1EABCB0A317A13B5BB9A67E3EDF2F7D", hash_generated_method = "31041C1BE68105820FB3E19596D9CB39")
     private void addSpellCheckSpan(Editable editable, int start, int end) {
         addTaint(end);
@@ -247,7 +248,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.305 -0400", hash_original_method = "E45444ACDA725CE9A6A26FFAD79AE5C6", hash_generated_method = "7E4901173F980EF2C24E314503A8DB3E")
     public void removeSpellCheckSpan(SpellCheckSpan spellCheckSpan) {
         addTaint(spellCheckSpan.getTaint());
@@ -271,7 +272,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.305 -0400", hash_original_method = "91E9278A0058E0FC6383B30785A8CFA9", hash_generated_method = "D00D41525B8D7A6F78ACFD7BB33C5992")
     public void onSelectionChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -281,7 +282,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.306 -0400", hash_original_method = "6CA87C3B81B676351D5CE260A5491025", hash_generated_method = "9EB558F4EC5C9E5B0C744066A3010CD5")
     public void spellCheck(int start, int end) {
         addTaint(end);
@@ -326,7 +327,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.307 -0400", hash_original_method = "BA5B8BA52678A659BE9D822C4132A8EA", hash_generated_method = "AB67BCC5A01FBF8BEA03192F0BA7FF3B")
     private void spellCheck() {
         if(mSpellCheckerSession == null)        
@@ -368,7 +369,7 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.308 -0400", hash_original_method = "A75E28D7E7AFF4B0223DAD7BAD9E1275", hash_generated_method = "A68988C4E715293F9680F78AE3674700")
     @Override
     public void onGetSuggestions(SuggestionsInfo[] results) {
@@ -404,7 +405,7 @@ for(int j = 0;j < mLength;j++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.309 -0400", hash_original_method = "57E44CFBFBBC7EE198958F01316D8781", hash_generated_method = "EAD22FF5F783C965B72647DD48396E07")
     private void scheduleNewSpellCheck() {
         if(mSpellRunnable == null)        
@@ -462,7 +463,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.311 -0400", hash_original_method = "7C6C5A03DA2C9F5FF814A532005DE2A2", hash_generated_method = "0D61409EFEB7B30B8914D0A7C9130108")
     private void createMisspelledSuggestionSpan(Editable editable, SuggestionsInfo suggestionsInfo,
             SpellCheckSpan spellCheckSpan) {
@@ -547,7 +548,7 @@ for(int k = 0;k < suggests.length;k++)
         }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.313 -0400", hash_original_method = "C4550C9FA073E61C6C7A190D43162B55", hash_generated_method = "EE40AEFCD5DE794FC439BF1E12203269")
         public void init(int start, int end) {
             addTaint(end);
@@ -560,7 +561,7 @@ for(int k = 0;k < suggests.length;k++)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.313 -0400", hash_original_method = "86B0D995E6C3BF5225FAD4AECF9F58F6", hash_generated_method = "45B8F4A922A98FCBE98DADDE73470229")
         public void finish() {
             ((Editable) mTextView.getText()).removeSpan(mRange);
@@ -569,7 +570,7 @@ for(int k = 0;k < suggests.length;k++)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.314 -0400", hash_original_method = "F88808B62872052B620FE7CDA250E1D3", hash_generated_method = "887281AF7ACA7621F053D2831FF31ABA")
         public boolean isFinished() {
             boolean varBAB72613879D558AA251DE010CEEF9CF_1332816667 = (((Editable) mTextView.getText()).getSpanStart(mRange) < 0);
@@ -580,7 +581,7 @@ for(int k = 0;k < suggests.length;k++)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.316 -0400", hash_original_method = "D0FCA268222D024780345A48D1B99D28", hash_generated_method = "1366A12354143EC0EFA97A9D3F6A86CD")
         public void parse() {
             Editable editable = (Editable) mTextView.getText();

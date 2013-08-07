@@ -1,6 +1,7 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.TimeZone;
@@ -22,10 +23,10 @@ import com.android.internal.logging.AndroidConfig;
 import com.android.server.NetworkManagementSocketTagger;
 
 import dalvik.system.VMRuntime;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class RuntimeInit {
@@ -37,6 +38,7 @@ public class RuntimeInit {
     }
 
 
+    @DSModeled(DSC.BAN)
     private static final void commonInit() {
         if (DEBUG) Slog.d(TAG, "Entered RuntimeInit!");
         Thread.setDefaultUncaughtExceptionHandler(new UncaughtHandler());
@@ -66,6 +68,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String getDefaultUserAgent() {
         StringBuilder result = new StringBuilder(64);
         result.append("Dalvik/");
@@ -90,6 +93,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void invokeStaticMain(String className, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         Class<?> cl;
         try {
@@ -118,6 +122,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void main(String[] argv) {
         if (argv.length == 2 && argv[1].equals("application")) {
             if (DEBUG) Slog.d(TAG, "RuntimeInit: Starting application");
@@ -136,6 +141,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void zygoteInit(int targetSdkVersion, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         if (DEBUG) Slog.d(TAG, "RuntimeInit: Starting application from zygote");
         redirectLogStreams();
@@ -145,12 +151,14 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void wrapperInit(int targetSdkVersion, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         if (DEBUG) Slog.d(TAG, "RuntimeInit: Starting application from wrapper");
         applicationInit(targetSdkVersion, argv);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void applicationInit(int targetSdkVersion, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         VMRuntime.getRuntime().setTargetHeapUtilization(0.75f);
         VMRuntime.getRuntime().setTargetSdkVersion(targetSdkVersion);
@@ -165,6 +173,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void redirectLogStreams() {
         System.out.close();
         System.setOut(new AndroidPrintStream(Log.INFO, "System.out"));
@@ -195,6 +204,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void wtf(String tag, Throwable t) {
         try {
             if (ActivityManagerNative.getDefault().handleApplicationWtf(
@@ -208,13 +218,13 @@ public class RuntimeInit {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static final void setApplicationObject(IBinder app) {
         mApplicationObject = app;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static final IBinder getApplicationObject() {
         return mApplicationObject;
     }
@@ -222,6 +232,7 @@ public class RuntimeInit {
     
     private static class UncaughtHandler implements Thread.UncaughtExceptionHandler {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.655 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
         public UncaughtHandler ()
         {
@@ -229,7 +240,7 @@ public class RuntimeInit {
         }
 
 
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.655 -0400", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "85B8A7EC12546E6F392AE1E64811A623")
         public void uncaughtException(Thread t, Throwable e) {
             addTaint(e.getTaint());

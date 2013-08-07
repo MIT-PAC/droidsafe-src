@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class AssertionError extends Error {
     
@@ -15,7 +16,7 @@ public class AssertionError extends Error {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "DB301E384A0E7AC0DA0AB52BDA1439A9", hash_generated_method = "E251B81B3D4ADAB6EC7D3460AEF90AB0")
     public  AssertionError(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

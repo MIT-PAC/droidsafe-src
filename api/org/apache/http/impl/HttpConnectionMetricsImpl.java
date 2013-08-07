@@ -1,15 +1,16 @@
 package org.apache.http.impl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
 import org.apache.http.HttpConnectionMetrics;
 import org.apache.http.io.HttpTransportMetrics;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.346 -0400", hash_original_field = "6822EEC83D34666203ADF86CD4795A4B", hash_generated_field = "5E7FFC1430A937FAE7142DC53FF509E3")

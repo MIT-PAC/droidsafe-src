@@ -1,16 +1,17 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class DebugUtils {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.631 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
     public  DebugUtils() {
         // ---------- Original Method ----------
@@ -56,7 +57,7 @@ public class DebugUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");

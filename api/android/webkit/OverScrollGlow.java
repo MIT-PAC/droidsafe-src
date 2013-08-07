@@ -1,14 +1,15 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import android.widget.EdgeEffect;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class OverScrollGlow {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.702 -0400", hash_original_field = "B6E6A78A9ACB6C4FA6614BAFEDBC05E2", hash_generated_field = "1629930CD96E325649F3C70757D5A77E")
@@ -33,6 +34,7 @@ public class OverScrollGlow {
 
     private int mOverScrollDeltaY;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.704 -0400", hash_original_method = "C880ED290A9E3BE27C712EA7FDA57F5B", hash_generated_method = "35B02E8D7ADFDD13EA359CD99016AA70")
     public  OverScrollGlow(WebView host) {
         mHostView = host;
@@ -51,6 +53,7 @@ public class OverScrollGlow {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.705 -0400", hash_original_method = "951D1D5C70B11C07C923672F61940F77", hash_generated_method = "5A5812C4BA4F0DB1B7B214C7B391607E")
     public void pullGlow(int x, int y, int oldX, int oldY, int maxX, int maxY) {
         addTaint(maxY);
@@ -111,7 +114,7 @@ public class OverScrollGlow {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.706 -0400", hash_original_method = "898E1992D368021CDA53745F0D37B2ED", hash_generated_method = "DB9138BBE530C1A27762C46B9EBC1FDA")
     public void setOverScrollDeltas(int deltaX, int deltaY) {
         mOverScrollDeltaX = deltaX;
@@ -122,6 +125,7 @@ public class OverScrollGlow {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.707 -0400", hash_original_method = "559A3475151AFD9F125F7EFF6D7FC3A7", hash_generated_method = "DAA874F0300B4D4471C75703418C8C83")
     public void absorbGlow(int x, int y, int oldX, int oldY, int rangeX, int rangeY) {
         addTaint(rangeY);
@@ -175,6 +179,7 @@ public class OverScrollGlow {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.721 -0400", hash_original_method = "3B1E2223EF9E382987FDA8605560E6C8", hash_generated_method = "D0B769BE9F83A86467B612F593AE4D30")
     public boolean drawEdgeGlows(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -228,6 +233,7 @@ public class OverScrollGlow {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.721 -0400", hash_original_method = "991A6F9A141C4C9221BF71360DEAB6AF", hash_generated_method = "0A9D726395F20E6455961A23E8B0326E")
     public boolean isAnimating() {
         boolean var421F71E7C1C4D53313F50EFB45C4EEAF_282284492 = ((!mEdgeGlowTop.isFinished() || !mEdgeGlowBottom.isFinished() ||
@@ -240,6 +246,7 @@ public class OverScrollGlow {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.721 -0400", hash_original_method = "F2C1801AA96B9D8F59B00F59054F0306", hash_generated_method = "0A16160F8629C218C4D8429A9B957BCF")
     public void releaseAll() {
         mEdgeGlowTop.onRelease();

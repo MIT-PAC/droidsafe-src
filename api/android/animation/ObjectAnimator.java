@@ -1,14 +1,15 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.util.Log;
 import android.util.Property;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ObjectAnimator extends ValueAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.420 -0400", hash_original_field = "562619214306F5C11A815E975B7D2477", hash_generated_field = "532AA6353374D87021D18089A8C99282")
@@ -28,7 +29,7 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.423 -0400", hash_original_method = "72D05C8CED3E11A756BC68866B4296D0", hash_generated_method = "908359367A860F063D504A9A990778EC")
     private  ObjectAnimator(Object target, String propertyName) {
         addTaint(propertyName.getTaint());

@@ -1,6 +1,7 @@
 package dalvik.system.profiler;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ThreadSampler {
 

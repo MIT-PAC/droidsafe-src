@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.LinkedList;
@@ -19,10 +20,10 @@ import org.apache.http.protocol.HttpContext;
 
 import android.content.Context;
 import android.os.SystemClock;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class Connection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.939 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -53,6 +54,7 @@ abstract class Connection {
 
     private byte[] mBuf;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.940 -0400", hash_original_method = "5BAB9F531750E6A689F8FF5D2A254CB9", hash_generated_method = "8638DF5D935AC67BE8ACABC50432A630")
     protected  Connection(Context context, HttpHost host,
                          RequestFeeder requestFeeder) {
@@ -70,7 +72,7 @@ abstract class Connection {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.940 -0400", hash_original_method = "9B5E41A5FF20333698838F3F6DF6BCD6", hash_generated_method = "7D49A3145F3247CB6EB2673CEE4CE3E1")
      HttpHost getHost() {
 HttpHost varE57614B151242FB69B92E61EEA287D33_1103899882 =         mHost;
@@ -81,6 +83,7 @@ HttpHost varE57614B151242FB69B92E61EEA287D33_1103899882 =         mHost;
     }
 
     
+    @DSModeled(DSC.BAN)
     static Connection getConnection(
             Context context, HttpHost host, HttpHost proxy,
             RequestFeeder requestFeeder) {
@@ -91,7 +94,7 @@ HttpHost varE57614B151242FB69B92E61EEA287D33_1103899882 =         mHost;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.940 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "E9BE344D9B6D69A748715799C3584F79")
      SslCertificate getCertificate() {
 SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_175967284 =         mCertificate;
@@ -102,6 +105,7 @@ SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_175967284 =         mCertific
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.940 -0400", hash_original_method = "E0AFA64670C1DBA320AD7B4F64C9D703", hash_generated_method = "3B488F91FC8DC4ED1BB3FD8181F0B0DA")
      void cancel() {
         mActive = STATE_CANCEL_REQUESTED;
@@ -117,7 +121,7 @@ SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_175967284 =         mCertific
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.943 -0400", hash_original_method = "F5EEA514D7040591FC6D3FB9B4E157ED", hash_generated_method = "90E7FCD9DF8AADBE39E6E7B49FD40632")
      void processRequests(Request firstRequest) {
         addTaint(firstRequest.getTaint());
@@ -296,6 +300,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.945 -0400", hash_original_method = "3DB5627BDFAF8C06A0CDDAD2458FF1F0", hash_generated_method = "24BB25497F5EBCA77D6462A5DE6D0321")
     private boolean clearPipe(LinkedList<Request> pipe) {
         addTaint(pipe.getTaint());
@@ -341,7 +346,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.946 -0400", hash_original_method = "65B4C91B53E686F7A0B5A125142FC3C0", hash_generated_method = "4A298B7ED3BAAF75CA3626CDCA4249AD")
     private boolean openHttpConnection(Request req) {
         long now = SystemClock.uptimeMillis();
@@ -433,6 +438,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.947 -0400", hash_original_method = "6EC91A36E40ABAF43D521C6CD9682246", hash_generated_method = "9CDDCC0FD6CAEAC9EE5871C1C23C9461")
     private boolean httpFailure(Request req, int errorId, Exception e) {
         addTaint(e.getTaint());
@@ -487,7 +493,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.947 -0400", hash_original_method = "510B2315D285A4B8D2701F50BEED692F", hash_generated_method = "9BDD7AB932705EEF3FFEB26F7C0E804A")
      HttpContext getHttpContext() {
 HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContext;
@@ -562,6 +568,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContex
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.947 -0400", hash_original_method = "30E271C8B4BA77F90D768E6DAD0368A8", hash_generated_method = "4D4E5718D6623C41E8E53EA293E55F7E")
      void setCanPersist(HttpEntity entity, ProtocolVersion ver, int connType) {
         mCanPersist = keepAlive(entity, ver, connType, mHttpContext);
@@ -570,7 +577,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContex
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.948 -0400", hash_original_method = "948404D3184D15107ABD2526F5DFBFE0", hash_generated_method = "C987B1689B3761BB7765A463FADF77BA")
      void setCanPersist(boolean canPersist) {
         mCanPersist = canPersist;
@@ -579,7 +586,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContex
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.948 -0400", hash_original_method = "5B21A605E2B59BE630988FE4FC055560", hash_generated_method = "58948E82C2ACE81FBD2631863176A413")
      boolean getCanPersist() {
         boolean var97A1B0DF7A8AAEB03A6EC2B31E06308F_358179545 = (mCanPersist);
@@ -602,6 +609,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContex
     abstract AndroidHttpClientConnection openConnection(Request req) throws IOException;
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.948 -0400", hash_original_method = "AD69CA65EB98EE93EFEEFD66CD2BA041", hash_generated_method = "EE64BA2A2506C33419805FE414AE8F16")
     public synchronized String toString() {
 String varCB14F0A7BD5D5FF81E804E15C1A5E873_1951521272 =         mHost.toString();
@@ -612,7 +620,7 @@ String varCB14F0A7BD5D5FF81E804E15C1A5E873_1951521272 =         mHost.toString()
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.948 -0400", hash_original_method = "ED2ED37A31E0A6859AF61C011936FDA1", hash_generated_method = "1C319C0E1FE49E7DFA7F27368C0C48AC")
      byte[] getBuf() {
         if(mBuf == null)        

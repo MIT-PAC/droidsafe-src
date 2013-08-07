@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
@@ -9,10 +10,10 @@ import org.apache.harmony.security.asn1.ASN1SequenceOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class CRLDistributionPoints extends ExtensionValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.855 -0400", hash_original_field = "D9F0A7743229E8FD18F6BB254ADBE7DC", hash_generated_field = "A33A9FF005559B338B382EC4C32F0F90")
@@ -22,7 +23,7 @@ public final class CRLDistributionPoints extends ExtensionValue {
 
     private byte[] encoding;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.856 -0400", hash_original_method = "A85C2ECCECA3DBD03B41866807FEA9E1", hash_generated_method = "48FD99AAFF0763BC2F31C9959DCF5462")
     private  CRLDistributionPoints(List<DistributionPoint> distributionPoints, byte[] encoding) {
         if((distributionPoints == null) || (distributionPoints.size() == 0))        

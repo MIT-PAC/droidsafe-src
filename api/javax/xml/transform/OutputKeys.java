@@ -1,11 +1,13 @@
 package javax.xml.transform;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class OutputKeys {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.994 -0400", hash_original_method = "C4127F219AC170F374CB3A1F6630DA14", hash_generated_method = "85A27E0188674BF70CE334481EEA5E74")
     private  OutputKeys() {
         // ---------- Original Method ----------

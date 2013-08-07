@@ -1,15 +1,16 @@
 package android.net.wifi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.BitSet;
 
 import android.net.LinkProperties;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WifiConfiguration implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.174 -0400", hash_original_field = "19C847337F720E130F334CF33214EB73", hash_generated_field = "63CFF92B16B0D9FC501D58CB0D039ADA")
@@ -143,6 +144,7 @@ for(EnterpriseField field : enterpriseFields)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.176 -0400", hash_original_method = "C987CC483E64718E2FB8D8B4A4E18BC6", hash_generated_method = "35F0D3CADD3BDE7D2FC3F459602EC24C")
     public  WifiConfiguration(WifiConfiguration source) {
         if(source != null)        
@@ -303,6 +305,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1592928268 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static BitSet readBitSet(Parcel src) {
         int cardinality = src.readInt();
         BitSet set = new BitSet();
@@ -312,6 +315,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1592928268 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void writeBitSet(Parcel dest, BitSet set) {
         int nextSetBit = -1;
         dest.writeInt(set.cardinality());
@@ -320,6 +324,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1592928268 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.178 -0400", hash_original_method = "9AFA2ED3E118B7190C0E7E9D5FFF2220", hash_generated_method = "4EB5D35CEFA9E45A2289847D4C068DAB")
     public int getAuthType() {
         if(allowedKeyManagement.get(KeyMgmt.WPA_PSK))        
@@ -366,7 +371,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1592928268 =         sbuf.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.178 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0EE93D929D5E0B883E9A1AD14F406EBB")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_863167922 = (0);
@@ -377,6 +382,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1592928268 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.178 -0400", hash_original_method = "AEDB33EEF5EAFBB380DF78B8CF162994", hash_generated_method = "BC5C67E037B797080F929BA02D404A03")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -464,6 +470,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_800297803 =             value;
     
     public static class KeyMgmt {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.184 -0400", hash_original_method = "3C24C7AE0F0A09BE18E455DF08BF91AE", hash_generated_method = "84233618D069A8DDF728C3B1AD79C9CD")
         private  KeyMgmt() {
             // ---------- Original Method ----------
@@ -498,6 +505,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_800297803 =             value;
     
     public static class Protocol {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.184 -0400", hash_original_method = "FEC0085CF7FD0AE9B8536A4264422A72", hash_generated_method = "BDFBDD91E12BC6AB0AC098F24E528B8C")
         private  Protocol() {
             // ---------- Original Method ----------
@@ -522,6 +530,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_800297803 =             value;
     
     public static class AuthAlgorithm {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.185 -0400", hash_original_method = "02B498F2C9B084569031A4C2852FE733", hash_generated_method = "0DC3E2E4C06E7A517A353243CDD6C6F7")
         private  AuthAlgorithm() {
             // ---------- Original Method ----------
@@ -549,6 +558,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_800297803 =             value;
     
     public static class PairwiseCipher {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.185 -0400", hash_original_method = "D49801CF041AD620DA06D49E02E3EE50", hash_generated_method = "80B019872D8101A5104B248737E04786")
         private  PairwiseCipher() {
             // ---------- Original Method ----------
@@ -576,6 +586,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_800297803 =             value;
     
     public static class GroupCipher {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.186 -0400", hash_original_method = "A10BFAF56809802940D7EFFA4240EAB0", hash_generated_method = "65BD6B7E2641A28A143BE5DB0E9B6215")
         private  GroupCipher() {
             // ---------- Original Method ----------
@@ -606,6 +617,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_800297803 =             value;
     
     public static class Status {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.187 -0400", hash_original_method = "FE406DC4CFD00C0AE0BFBAA724FB9F50", hash_generated_method = "7E294D2CADE3312347600003F64067B6")
         private  Status() {
             // ---------- Original Method ----------

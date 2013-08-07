@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -9,10 +10,10 @@ import android.net.http.EventHandler;
 import android.net.http.Headers;
 import android.os.Handler;
 import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class StreamLoader implements Handler.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.128 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
@@ -151,6 +152,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_method = "65A84C3A774E903513B92EB5B550F331", hash_generated_method = "F97064E3938DEEBD16AA40E70959E257")
     private void sendHeaders() {
         Headers headers = new Headers();
@@ -170,6 +172,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_method = "4C4D4DF9D04A987F005277A578061144", hash_generated_method = "3DFAB7A302C91B9CDE63F595CC3D5ACE")
     private boolean sendData() {
         if(mDataStream != null)        
@@ -209,6 +212,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_method = "1E3300194DB856434710C1AC838853B7", hash_generated_method = "85C7FCBAE96F31152501A4FECB65A952")
     private void closeStreamAndSendEndData() {
         if(mDataStream != null)        

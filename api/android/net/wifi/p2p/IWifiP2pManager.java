@@ -1,6 +1,7 @@
 package android.net.wifi.p2p;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IWifiP2pManager extends android.os.IInterface
 {

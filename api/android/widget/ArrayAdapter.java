@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -13,10 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     private List<T> mObjects;
@@ -294,7 +295,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
         mContext = context;
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -356,7 +357,7 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
         View view;

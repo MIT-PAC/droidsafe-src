@@ -1,12 +1,13 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ObjectIdentifier {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.952 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
@@ -155,6 +156,7 @@ for(int i = 0;i < oid.length && i < 4;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int[] toIntArray(String str, boolean shouldThrow) {
         if (str == null) {
             if (! shouldThrow) {

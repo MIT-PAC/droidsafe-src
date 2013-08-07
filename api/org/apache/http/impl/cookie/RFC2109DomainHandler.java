@@ -1,6 +1,7 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import org.apache.http.cookie.Cookie;
@@ -9,7 +10,7 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class RFC2109DomainHandler implements CookieAttributeHandler {
     

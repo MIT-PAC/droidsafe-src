@@ -1,7 +1,8 @@
 package org.apache.harmony.xml;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 class ExpatException extends Exception {
     

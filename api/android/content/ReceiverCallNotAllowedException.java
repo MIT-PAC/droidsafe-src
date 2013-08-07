@@ -1,8 +1,9 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.AndroidRuntimeException;
-import droidsafe.annotations.DSGenerator;
+
 
 public class ReceiverCallNotAllowedException extends AndroidRuntimeException {
     

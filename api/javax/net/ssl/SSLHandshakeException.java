@@ -1,8 +1,9 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class SSLHandshakeException extends SSLException {
     
@@ -14,6 +15,7 @@ public class SSLHandshakeException extends SSLException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.726 -0400", hash_original_method = "6E4EDFE9C902AE43BD6AF73325E7CB73", hash_generated_method = "9E854348974BED872AA7C89159962F7C")
     public  SSLHandshakeException(Throwable cause) {
         super(cause);
@@ -22,6 +24,7 @@ public class SSLHandshakeException extends SSLException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.726 -0400", hash_original_method = "7F0A583E3C5916ED2C2C7E0A6DE82F31", hash_generated_method = "2469B9EC9365DE3968D9FBFE77AFB89D")
     public  SSLHandshakeException(String reason, Throwable cause) {
         super(reason, cause);

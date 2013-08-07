@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,10 +10,10 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Modifier;
 
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Binder implements IBinder {
@@ -371,6 +372,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_1703837821 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.684 -0400", hash_original_method = "F07199776E11DA2675C840AC9A2F2A30", hash_generated_method = "9C5249DB831DD1E1E766BB85A1D08A51")
     private boolean execTransact(int code, int dataObj, int replyObj,
             int flags) {
@@ -608,6 +610,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_610493722 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final void sendDeathNotice(DeathRecipient recipient) {
         if (false) Log.v("JavaBinder", "sendDeathNotice to " + recipient);
         try {

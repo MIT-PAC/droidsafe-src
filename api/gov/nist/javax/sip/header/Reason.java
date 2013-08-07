@@ -1,14 +1,15 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.Utils;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Reason extends ParametersHeader implements javax.sip.header.ReasonHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.817 -0400", hash_original_field = "7FC2BCE87197C31953A120E8CD83179B", hash_generated_field = "0D9A1057F894C5C025812C805A74752D")

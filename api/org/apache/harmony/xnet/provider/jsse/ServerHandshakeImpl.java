@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.KeyFactory;
@@ -22,8 +23,8 @@ import javax.net.ssl.X509ExtendedKeyManager;
 import javax.net.ssl.X509KeyManager;
 import javax.net.ssl.X509TrustManager;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class ServerHandshakeImpl extends HandshakeProtocol {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.865 -0400", hash_original_field = "4AA2361BEE79AADD8595859693612743", hash_generated_field = "F778C7A1E11234387361395B9C2BAFEF")
@@ -672,6 +673,7 @@ for(int i = 0;i < clientHello.cipher_suites.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.890 -0400", hash_original_method = "1900CB4813DE311B701E9907815D7379", hash_generated_method = "70E822289D395CB88A5B9DDA85724E0E")
     private SSLSessionImpl findSessionToResume(byte[] session_id) {
         addTaint(session_id[0]);
@@ -683,6 +685,7 @@ SSLSessionImpl var17920C4727A1A491ECB429D01D5C0164_1854720046 =         (SSLSess
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.890 -0400", hash_original_method = "CED7C9E9124D8D76ECA389CBA359AC39", hash_generated_method = "FC9F7E9FD52995B94EF48725D18CD91D")
     private CipherSuite selectSuite(CipherSuite[] clientSuites) {
         addTaint(clientSuites[0].getTaint());

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.PackageNames;
 import gov.nist.javax.sip.header.ims.PAccessNetworkInfo;
 import gov.nist.javax.sip.header.ims.PAccessNetworkInfoHeader;
@@ -24,10 +25,10 @@ import gov.nist.javax.sip.header.ims.ServiceRoute;
 
 import java.util.Hashtable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NameMap implements SIPHeaderNames, PackageNames {
     
@@ -68,6 +69,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void initializeNameMap() {
         nameMap = new Hashtable();
         putNameMap(MinExpires.NAME, MinExpires.class.getName());

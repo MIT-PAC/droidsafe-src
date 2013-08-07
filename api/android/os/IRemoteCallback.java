@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IRemoteCallback extends android.os.IInterface
 {

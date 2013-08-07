@@ -1,11 +1,12 @@
 package java.util.concurrent.atomic;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import sun.misc.Unsafe;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class AtomicLong extends Number implements java.io.Serializable {

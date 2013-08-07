@@ -1,9 +1,10 @@
 package com.android.internal.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class Objects {
     

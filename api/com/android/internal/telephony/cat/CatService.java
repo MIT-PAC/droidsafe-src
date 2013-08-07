@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Locale;
 
@@ -18,10 +19,10 @@ import com.android.internal.telephony.IccFileHandler;
 import com.android.internal.telephony.IccRecords;
 import com.android.internal.telephony.IccUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class RilMessage {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.887 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
@@ -75,6 +76,7 @@ public class CatService extends Handler implements AppInterface {
 
     private RilMessageDecoder mMsgDecoder = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.891 -0400", hash_original_method = "0B6E46ACD511396208B0FB6CDAFB964A", hash_generated_method = "E2E83C75775706BA675BFCB8F5B0183C")
     private  CatService(CommandsInterface ci, IccRecords ir, Context context,
             IccFileHandler fh, IccCard ic) {
@@ -106,6 +108,7 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.891 -0400", hash_original_method = "D708104FB5CF5762DDEBFF2BAD6B6B04", hash_generated_method = "E3620C337A6B286ABC08B087041B971D")
     public void dispose() {
         mIccRecords.unregisterForRecordsLoaded(this);
@@ -124,6 +127,7 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.891 -0400", hash_original_method = "0386F7586104C91B22CE4150238AFD39", hash_generated_method = "963AC07ED7DE6AEA46B3068BB242386B")
     protected void finalize() {
         CatLog.d(this, "Service finalized");
@@ -132,6 +136,7 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.892 -0400", hash_original_method = "E9D273BBD1B8139BCAB5560E10ADE1AE", hash_generated_method = "9FD0A6ECDC14F2AF2A0DC85099A9EF3A")
     private void handleRilMsg(RilMessage rilMsg) {
         addTaint(rilMsg.getTaint());
@@ -194,6 +199,7 @@ switch(rilMsg.mId){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.895 -0400", hash_original_method = "962D88968BE7A135485D50B41AC85213", hash_generated_method = "A6E689AE2AE3224E798D6F9470931FF8")
     private void handleProactiveCommand(CommandParams cmdParams) {
         addTaint(cmdParams.getTaint());
@@ -283,6 +289,7 @@ switch(cmdParams.cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.895 -0400", hash_original_method = "F4FE7D680FC27736DB53FE02767C67C5", hash_generated_method = "AC347CF6457FB719998C7B2BD8B79CD1")
     private void handleSessionEnd() {
         CatLog.d(this, "SESSION END");
@@ -297,6 +304,7 @@ switch(cmdParams.cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.897 -0400", hash_original_method = "1946CA6BE8E37F5C447374ACD2229E75", hash_generated_method = "E62504099F403380BB048B578846CEC4")
     private void sendTerminalResponse(CommandDetails cmdDet,
             ResultCode resultCode, boolean includeAdditionalInfo,
@@ -360,6 +368,7 @@ switch(cmdParams.cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.898 -0400", hash_original_method = "638B326A6DB369CFE44B9E340F9EEB09", hash_generated_method = "BD649BFB93732B622862735935E53EF7")
     private void encodeOptionalTags(CommandDetails cmdDet,
             ResultCode resultCode, Input cmdInput, ByteArrayOutputStream buf) {
@@ -399,6 +408,7 @@ switch(cmdType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.898 -0400", hash_original_method = "0852EED8EE8FA95FED775B0B05726071", hash_generated_method = "608379A99DCDCBBB81200B2218F37886")
     private void getInKeyResponse(ByteArrayOutputStream buf, Input cmdInput) {
         addTaint(cmdInput.getTaint());
@@ -417,6 +427,7 @@ switch(cmdType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.898 -0400", hash_original_method = "9C18CC5EFDD0B345CA3B94FA3BA225B1", hash_generated_method = "76EFAD7D9B8AD88D54D26391B00C269E")
     private void getPliResponse(ByteArrayOutputStream buf) {
         addTaint(buf.getTaint());
@@ -439,6 +450,7 @@ switch(cmdType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.900 -0400", hash_original_method = "8584D48A0DB0867CC39B0E747FD77F24", hash_generated_method = "BE0A53C97153B7E16DC2AE6D0F57D8AC")
     private void sendMenuSelection(int menuId, boolean helpRequired) {
         addTaint(helpRequired);
@@ -472,6 +484,7 @@ switch(cmdType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.901 -0400", hash_original_method = "BB297ADB158EDB6C7A0522557FDE81DF", hash_generated_method = "67A5D695562079598D9EB1E24657C684")
     private void eventDownload(int event, int sourceId, int destinationId,
             byte[] additionalInfo, boolean oneShot) {
@@ -532,6 +545,7 @@ for(byte b : additionalInfo)
     }
 
     
+    @DSModeled(DSC.BAN)
     public static CatService getInstance(CommandsInterface ci, IccRecords ir,
             Context context, IccFileHandler fh, IccCard ic) {
         synchronized (sInstanceLock) {
@@ -557,11 +571,13 @@ for(byte b : additionalInfo)
     }
 
     
+    @DSModeled(DSC.BAN)
     public static AppInterface getInstance() {
         return getInstance(null, null, null, null, null);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.903 -0400", hash_original_method = "08AB5E16EBCD81DA8811894A2C2969C7", hash_generated_method = "B624333829CED388A4A34E03DC1D4802")
     @Override
     public void handleMessage(Message msg) {
@@ -615,6 +631,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.903 -0400", hash_original_method = "8251947338311BFA45C2A2344891C68B", hash_generated_method = "FEF280C7D6B73F7372BA9209B32A4535")
     public synchronized void onCmdResponse(CatResponseMessage resMsg) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -634,6 +651,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.904 -0400", hash_original_method = "B0A9A02E0F2D96AF829ED175E58D2181", hash_generated_method = "06C22D233EEB5A1B6D5F608C43B976A0")
     private boolean validateResponse(CatResponseMessage resMsg) {
         addTaint(resMsg.getTaint());
@@ -654,6 +672,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.904 -0400", hash_original_method = "FED22D423ED234057B6FD28452B9EEF5", hash_generated_method = "B22B6F8B161922CB297A79E610240DC1")
     private boolean removeMenu(Menu menu) {
         addTaint(menu.getTaint());
@@ -689,7 +708,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.904 -0400", hash_original_method = "48D7C107F944AA3B8D2770DC9FDB0ED7", hash_generated_method = "4C6EB676C6950072E961904D96746D64")
     private void handleCmdResponse(CatResponseMessage resMsg) {
         addTaint(resMsg.getTaint());

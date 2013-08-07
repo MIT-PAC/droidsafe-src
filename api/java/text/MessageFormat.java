@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -13,10 +14,10 @@ import java.util.List;
 import java.util.Locale;
 
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MessageFormat extends Format {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
@@ -272,7 +273,7 @@ StringBuffer var1F66D20762CFEE3B98D9E22CDAD14062_1066641912 =         formatImpl
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.735 -0400", hash_original_method = "CB09F1AB0972A7396E3B2DB81FB1793E", hash_generated_method = "5E13A600C4506E81D0A548EB3D03B101")
     private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
             FieldPosition position, List<FieldContainer> fields) {
@@ -345,7 +346,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629 =         buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.736 -0400", hash_original_method = "C43D87ABB966C2154325453E86772F9C", hash_generated_method = "7A4B320F81F8BFFBCFEB8B08AD9B35D6")
     private void handleArgumentField(int begin, int end, int argIndex,
             FieldPosition position, List<FieldContainer> fields) {
@@ -382,7 +383,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629 =         buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.737 -0400", hash_original_method = "DE679CD49EEE558B2CA2B7C9C9DE5810", hash_generated_method = "29B771FD742389F8993909A481D8A249")
     private void handleFormat(Format format, Object arg, int begin, List<FieldContainer> fields) {
         addTaint(fields.getTaint());
@@ -710,7 +711,7 @@ Object var0D84F404ADD0A115F77E7D80294D92BC_392451055 =         parse(string, pos
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.745 -0400", hash_original_method = "F0EBB1D410262325E53A6EB4F51F6A54", hash_generated_method = "E34ABB7DAE7046A0F28A91EEC1F36C0A")
     private int match(String string, ParsePosition position, boolean last,
             String[] tokens) {
@@ -764,7 +765,7 @@ for(int i = tokens.length;--i >= 0;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.747 -0400", hash_original_method = "C959BA9FF5D67B6099707C942E630082", hash_generated_method = "EE0CB78E0606180E8A755487EF13D5AA")
     private Format parseVariable(String string, ParsePosition position) {
         addTaint(position.getTaint());
@@ -947,7 +948,7 @@ for(int i = 0;i <= maxOffset;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.750 -0400", hash_original_method = "BE681D9EC5F601D03AA4D2DED505610A", hash_generated_method = "E2A8BC1C32917E6036A41F9D4CB8525B")
     private String decodeDecimalFormat(StringBuffer buffer, Format format) {
         addTaint(format.getTaint());
@@ -998,7 +999,7 @@ String var540C13E9E156B687226421B24F2DF178_1380089862 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.750 -0400", hash_original_method = "4C7466ADB5C592A5046867709A03D0C4", hash_generated_method = "05F9B45DC3EF7D6D43C96208EB34535F")
     private String decodeSimpleDateFormat(StringBuffer buffer, Format format) {
         addTaint(format.getTaint());
@@ -1147,7 +1148,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1105567738 =         buffer.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.751 -0400", hash_original_method = "6D428A023D401981380713AD4CDA7F82", hash_generated_method = "8B6BA6E09C3D489FCB91453B3F79F9D0")
     private void appendQuoted(StringBuffer buffer, String string) {
         addTaint(string.getTaint());
@@ -1182,7 +1183,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.752 -0400", hash_original_method = "9DFEE475D15759FEAAC0AFBD81E7E5BF", hash_generated_method = "CBB6943F5B04099A235DE6515F4971D6")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1214,7 +1215,7 @@ for(int i = 0;i <= maxOffset;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_method = "A9ED7844547D5D70718F3EA12242A430", hash_generated_method = "95C3259BE192611991F9A2CC87BE8043")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

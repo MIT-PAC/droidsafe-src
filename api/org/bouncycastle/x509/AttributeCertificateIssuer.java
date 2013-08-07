@@ -1,6 +1,7 @@
 package org.bouncycastle.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.Principal;
 import java.security.cert.CertSelector;
@@ -20,10 +21,10 @@ import org.bouncycastle.asn1.x509.V2Form;
 import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Selector;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AttributeCertificateIssuer implements CertSelector, Selector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.541 -0400", hash_original_field = "3FCDB73D36D54F2CC22D0F68E6B6E182", hash_generated_field = "F472E80F733CDF00E48AF589322F06BE")
@@ -54,7 +55,7 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.543 -0400", hash_original_method = "E1F244CC3C2F69A383C3B6A34635861B", hash_generated_method = "98914B8ECB7765EBF74DEB261F97F788")
     private Object[] getNames() {
         GeneralNames name;
@@ -121,7 +122,7 @@ Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_427413284 =         (Principal[]
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.545 -0400", hash_original_method = "DB608757031C3F022268BBCAE1434BBE", hash_generated_method = "4E1007EC008361D1D7159FC32DBFFFAE")
     private boolean matchesDN(X500Principal subject, GeneralNames targets) {
         addTaint(targets.getTaint());

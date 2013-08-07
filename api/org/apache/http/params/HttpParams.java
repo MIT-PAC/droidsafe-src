@@ -1,6 +1,7 @@
 package org.apache.http.params;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface HttpParams {
 

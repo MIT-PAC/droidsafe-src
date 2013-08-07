@@ -1,6 +1,7 @@
 package android.accessibilityservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IAccessibilityServiceConnection extends android.os.IInterface
 {

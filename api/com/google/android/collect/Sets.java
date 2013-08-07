@@ -1,12 +1,13 @@
 package com.google.android.collect;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class Sets {
     

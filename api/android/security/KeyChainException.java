@@ -1,7 +1,8 @@
 package android.security;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class KeyChainException extends Exception {
     

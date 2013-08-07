@@ -1,6 +1,7 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
@@ -47,10 +48,10 @@ import android.view.inputmethod.InputMethodSubtype;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class InputMethodService extends AbstractInputMethodService {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.494 -0400", hash_original_field = "47E3DC1D02320FF11860FCA10E93021A", hash_generated_field = "01719032B78A2D912F910E37CD479B69")
@@ -1304,6 +1305,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.539 -0400", hash_original_method = "AE7818A6DC114C265A5A8660654BB926", hash_generated_method = "E92A22CBEC1EDD4A34526ED72FC9DB0C")
     private void finishViews() {
         if(mInputViewStarted)        
@@ -1597,6 +1599,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.553 -0400", hash_original_method = "939E9922D22E9C6523AEB259C97CBC65", hash_generated_method = "325D0DF6830A0F7C7CDA8BE6EFE8071F")
     private void requestShowSelf(int flags) {
         addTaint(flags);
@@ -1606,6 +1609,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.553 -0400", hash_original_method = "2F1E84CCA4C2BB5EFB606DA289F60F64", hash_generated_method = "AB631030957EFC4D9D903B3D47643FEA")
     private boolean handleBack(boolean doIt) {
         addTaint(doIt);
@@ -1763,6 +1767,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.558 -0400", hash_original_method = "F1BA2156F30663683BD63E2F68C8FA5C", hash_generated_method = "606E6A9FE627571F9EF77D44BDD59D8E")
     private void onToggleSoftInput(int showFlags, int hideFlags) {
         addTaint(hideFlags);
@@ -2034,6 +2039,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.563 -0400", hash_original_method = "56B9FB82082DF66D8709DA9479270344", hash_generated_method = "9A236248B83B60F761D9AAD4CD8FCEE9")
     public void onExtractedDeleteText(int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2054,6 +2060,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.563 -0400", hash_original_method = "3752CFC0704EAA41A71F5FCC4C7F691D", hash_generated_method = "BDA3CE585D68C1190519CC6987E56002")
     public void onExtractedReplaceText(int start, int end, CharSequence text) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2075,6 +2082,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.564 -0400", hash_original_method = "2386EADCDB176594EC064F3F20DE5D60", hash_generated_method = "FE2EFEBD73969F6F3D27B791CE80C00D")
     public void onExtractedSetSpan(Object span, int start, int end, int flags) {
         //DSFIXME:  CODE0009: Possible callback target function detected

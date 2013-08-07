@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Matrix;
@@ -13,10 +14,10 @@ import android.util.Pool;
 import android.util.Poolable;
 import android.util.PoolableManager;
 import android.util.Pools;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20RecordingCanvas> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.210 -0400", hash_original_field = "7B38C26CC56878D73DF5CEDF555F45AE", hash_generated_field = "35E28CCA15868A28E16FD08ECC45E14C")
@@ -29,7 +30,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
 
     private GLES20DisplayList mDisplayList;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.211 -0400", hash_original_method = "812619B49F53F101F754768C67C6D06B", hash_generated_method = "DB948983801BF86D0D9F511447C56561")
     private  GLES20RecordingCanvas() {
         super(true , true );
@@ -79,7 +80,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.212 -0400", hash_original_method = "FB81CD87D0D9397EB08E4403B91E1B9C", hash_generated_method = "84A19FE355FA90A053D69892410B2F03")
     private void recordShaderBitmap(Paint paint) {
         addTaint(paint.getTaint());

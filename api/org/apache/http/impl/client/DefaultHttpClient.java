@@ -1,8 +1,9 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import org.apache.http.ConnectionReuseStrategy;
 import org.apache.http.HttpVersion;

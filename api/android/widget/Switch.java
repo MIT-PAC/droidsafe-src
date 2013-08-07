@@ -1,8 +1,9 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -202,6 +203,7 @@ public class Switch extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.025 -0400", hash_original_method = "667B994D675EC27CF64612287AF7A922", hash_generated_method = "1D8E63C4B68720CCFB3037715CE9C326")
     private void setSwitchTypefaceByIndex(int typefaceIndex, int styleIndex) {
         addTaint(styleIndex);
@@ -299,6 +301,7 @@ switch(typefaceIndex){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.043 -0400", hash_original_method = "5C0E5388314CF71485B1BF56327EECD2", hash_generated_method = "AB3D12136ED64ED9544FAA90CCE4DAED")
     public CharSequence getTextOn() {
 CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_1391447410 =         mTextOn;
@@ -319,6 +322,7 @@ CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_1391447410 =         mTextOn;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.049 -0400", hash_original_method = "EAEA80D56F502C97F845DE2B9DA853EF", hash_generated_method = "5F922F1D34ECA5A2EA0D6268196B6D5D")
     public CharSequence getTextOff() {
 CharSequence varAB991E92B38590F8C1DAE21519779556_265359710 =         mTextOff;
@@ -436,6 +440,7 @@ switch(widthMode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.081 -0400", hash_original_method = "D1466C388B2346E8DF10ED51CFBEA0FC", hash_generated_method = "8BDBCB278E968AD92C94012D307DBD5C")
     private Layout makeLayout(CharSequence text) {
         addTaint(text.getTaint());
@@ -451,6 +456,7 @@ Layout varCE2BB04DC870A298373702A783739055_1467233509 =         new StaticLayout
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.087 -0400", hash_original_method = "EC82A35D1017AC4F050030BE5A651660", hash_generated_method = "62058B30834EDA7458AB741634836C71")
     private boolean hitThumb(float x, float y) {
         addTaint(y);
@@ -557,6 +563,7 @@ switch(mTouchMode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.119 -0400", hash_original_method = "C7212DC872D0065CD5A602E451EED0FD", hash_generated_method = "DD077BD3408653B31F15AB21E046C86E")
     private void cancelSuperTouch(MotionEvent ev) {
         addTaint(ev.getTaint());
@@ -572,6 +579,7 @@ switch(mTouchMode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.125 -0400", hash_original_method = "6053E208B701C67F21F78DB5D1D6AC6A", hash_generated_method = "6B1FAB84EED998D56FABF620F9EAC7A6")
     private void stopDrag(MotionEvent ev) {
         addTaint(ev.getTaint());
@@ -617,6 +625,7 @@ switch(mTouchMode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.129 -0400", hash_original_method = "7C8C019C9C57DB27BCCABCAFF8863202", hash_generated_method = "E38135EBCD5AF7DA5497464F4436EA86")
     private void animateThumbToCheckedState(boolean newCheckedState) {
         addTaint(newCheckedState);
@@ -626,6 +635,7 @@ switch(mTouchMode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.132 -0400", hash_original_method = "49A1E38FB4C1D1775597A6823232C034", hash_generated_method = "29786727837E90BF4DA845D45990E7C1")
     private boolean getTargetCheckedState() {
         boolean var5AA6B655859B5EFB82782A0372A6FE1D_272103324 = (mThumbPosition >= getThumbScrollRange() / 2);
@@ -749,6 +759,7 @@ switch(getGravity() & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.177 -0400", hash_original_method = "B890BAF452343CC74FA34D76EC58FC5C", hash_generated_method = "999D70262D556685031015D9F84516BA")
     private int getThumbScrollRange() {
         if(mTrackDrawable == null)        

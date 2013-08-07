@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -11,10 +12,10 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ListFragment extends Fragment {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.569 -0400", hash_original_field = "6781893E9FA50A9B7103FD3F674E566B", hash_generated_field = "ED5BAD7C7A1EC83F341419B29A267C9F")
@@ -261,6 +262,7 @@ ListView var344AE622895130273F3D062543816FEE_996198527 =         mList;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.579 -0400", hash_original_method = "01D2A62CF5C9E9D8F31EAD95561BA6AA", hash_generated_method = "C22595E15D4345FF413A64708110ACBD")
     private void setListShown(boolean shown, boolean animate) {
         addTaint(animate);
@@ -326,6 +328,7 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_928310078 =         mAdapter;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.580 -0400", hash_original_method = "E4157ED141058B6B94474E0556BB8B74", hash_generated_method = "D9D156B208E7682D94664026CEA3EB14")
     private void ensureList() {
         if(mList != null)        

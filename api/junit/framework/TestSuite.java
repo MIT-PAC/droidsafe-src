@@ -1,6 +1,7 @@
 package junit.framework;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Constructor;
@@ -10,10 +11,10 @@ import java.lang.reflect.Modifier;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestSuite implements Test {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.342 -0400", hash_original_field = "3BCA106602C866BE981E31C77F5BEC5D", hash_generated_field = "B0AB7F7DF848E16FC564E5B040C82D2A")
@@ -108,7 +109,7 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.346 -0400", hash_original_method = "A640EC9003137483798EE7A767F176ED", hash_generated_method = "EB9357559CC18E0E634C71F7CD139CBD")
     private void addTestMethod(Method m, Vector names, Class theClass) {
         addTaint(theClass.getTaint());
@@ -167,7 +168,7 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String exceptionToString(Throwable t) {
         StringWriter stringWriter= new StringWriter();
         PrintWriter writer= new PrintWriter(stringWriter);
@@ -209,7 +210,7 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.348 -0400", hash_original_method = "473CCC3375A8D379896F6F0BA14357FA", hash_generated_method = "888176BF90C1A87FBF4A955A73085C0C")
     private boolean isPublicTestMethod(Method m) {
         addTaint(m.getTaint());
@@ -221,7 +222,7 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.348 -0400", hash_original_method = "F90105657E9B98DED7B6D12FD1F09EBC", hash_generated_method = "CCC0CCE29CBA6534D0E0F11754C54B10")
     private boolean isTestMethod(Method m) {
         addTaint(m.getTaint());

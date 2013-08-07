@@ -1,10 +1,11 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class ZTauElement {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.931 -0400", hash_original_field = "7B774EFFE4A349C6DD82AD4F4F21D34C", hash_generated_field = "40CFD1A249FCA5B191A31B3219FCE18D")

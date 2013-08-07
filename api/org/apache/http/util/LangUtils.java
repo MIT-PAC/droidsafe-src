@@ -1,14 +1,15 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class LangUtils {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.541 -0400", hash_original_method = "BC85A4AC258097A2ABE3F2013DFA665D", hash_generated_method = "0E018D83B4375A17854C491F261E03A8")
     private  LangUtils() {
         // ---------- Original Method ----------

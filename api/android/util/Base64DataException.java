@@ -1,9 +1,10 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class Base64DataException extends IOException {
     

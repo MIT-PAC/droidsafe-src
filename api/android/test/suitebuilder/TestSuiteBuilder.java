@@ -1,6 +1,7 @@
 package android.test.suitebuilder;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.test.suitebuilder.TestGrouping.SORT_BY_FULLY_QUALIFIED_NAME;
 import static android.test.suitebuilder.TestPredicates.REJECT_SUPPRESSED;
 
@@ -20,10 +21,10 @@ import android.test.TestCaseUtil;
 import com.android.internal.util.Predicate;
 import com.google.android.collect.Lists;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestSuiteBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.282 -0400", hash_original_field = "5C18EF72771564B7F43C497DC507AEAB", hash_generated_field = "FFC623C2EA984831A33BAADC181E897E")
@@ -274,7 +275,7 @@ TestSuiteBuilder var69B049DE1E09C679D066531AD48DC89D_219125916 =         addRequ
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.289 -0400", hash_original_method = "95C63968A7356AFE59EE1560EDC6AFD0", hash_generated_method = "385C9FEB740E78FC11B673E862BC8B04")
     protected TestGrouping getTestGrouping() {
 TestGrouping var668D3050613E8B26B179F6C37A7EABCF_1209170870 =         testGrouping;

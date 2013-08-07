@@ -1,11 +1,12 @@
 package android.text.format;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.net.NetworkUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public final class Formatter {
     
@@ -29,7 +30,7 @@ public final class Formatter {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String formatFileSize(Context context, long number, boolean shorter) {
         if (context == null) {
             return "";

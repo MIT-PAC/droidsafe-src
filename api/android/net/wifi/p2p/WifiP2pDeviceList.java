@@ -1,16 +1,17 @@
 package android.net.wifi.p2p;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WifiP2pDeviceList implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.648 -0400", hash_original_field = "3179B13FAAD5C0029CA9A9DDFE363FE9", hash_generated_field = "DD90A9525404352AE853B3D0A4AC59A5")
@@ -55,6 +56,7 @@ for(WifiP2pDevice device : devices)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.650 -0400", hash_original_method = "70CE399D4AEC1ED49C7E7903137A1A02", hash_generated_method = "686C424594128C9A40F3EB98E54B6890")
     public boolean clear() {
         if(mDevices.isEmpty())        
@@ -74,6 +76,7 @@ for(WifiP2pDevice device : devices)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.652 -0400", hash_original_method = "FB31C2BA18EF767553E65099D683D802", hash_generated_method = "1AED31CC1566F70613E5F3DC95D56E51")
     public void update(WifiP2pDevice device) {
         addTaint(device.getTaint());
@@ -110,6 +113,7 @@ for(WifiP2pDevice d : mDevices)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.654 -0400", hash_original_method = "020B85F823F552419F9C1AF8A2509846", hash_generated_method = "57F8E0A38C7D21335F9E777FAEC63890")
     public boolean remove(WifiP2pDevice device) {
         addTaint(device.getTaint());

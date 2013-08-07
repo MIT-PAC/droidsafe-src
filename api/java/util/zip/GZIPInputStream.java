@@ -1,6 +1,7 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +9,7 @@ import java.nio.ByteOrder;
 import java.util.Arrays;
 
 import libcore.io.Memory;
-import droidsafe.annotations.*;
+
 
 public class GZIPInputStream extends InflaterInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.599 -0400", hash_original_field = "7261E76873EC00F13387C2BADC428359", hash_generated_field = "C9B4058E3717760CA96883C40FEF405D")
@@ -175,7 +176,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.604 -0400", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "6B59DEE3224CF52857A8182836E188BE")
     private void verifyCrc() throws IOException {
         int size = inf.getRemaining();
@@ -212,7 +213,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.606 -0400", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "1AD877AB675543FE10BCBD2C5673A333")
     private void readFully(byte[] buffer, int offset, int length) throws IOException {
         addTaint(length);
@@ -245,7 +246,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.607 -0400", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "077D3E0C1AFDB1725FA6EB10CAD57AE1")
     private void readZeroTerminated(boolean hcrc) throws IOException {
         addTaint(hcrc);

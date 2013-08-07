@@ -1,19 +1,22 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Method;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class ExceptionUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.525 -0400", hash_original_method = "A1F3D67C211E4EC7543A3C1E27BD7049", hash_generated_method = "F95AF61D71C58EF7813E91379E4F91E7")
     private  ExceptionUtils() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     static private Method getInitCauseMethod() {
         try {
             Class[] paramsClasses = new Class[] { Throwable.class };

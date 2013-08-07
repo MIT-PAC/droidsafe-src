@@ -1,12 +1,13 @@
 package com.google.android.gles_jni;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.microedition.khronos.egl.EGLSurface;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class EGLSurfaceImpl extends EGLSurface {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.560 -0400", hash_original_field = "3DC8CA11CDD01EA82F28251758139AEE", hash_generated_field = "296DD015E00E19A6AFBFBEA67F8ACDA3")

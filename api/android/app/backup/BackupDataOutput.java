@@ -1,13 +1,14 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class BackupDataOutput {
@@ -15,6 +16,7 @@ public class BackupDataOutput {
 
     int mBackupWriter;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.202 -0400", hash_original_method = "519CBE74D64F306E29EEFC8CCFEDDE23", hash_generated_method = "34B7E6B56300B0213BB3DFCEDB3ABCE0")
     public  BackupDataOutput(FileDescriptor fd) {
         if(fd == null)        
@@ -93,6 +95,7 @@ public class BackupDataOutput {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.205 -0400", hash_original_method = "BD5511530074677855FB5F031E6A0A48", hash_generated_method = "E9B02604FE69BADB9B9332ABA82F9F3A")
     public void setKeyPrefix(String keyPrefix) {
         addTaint(keyPrefix.getTaint());
@@ -102,6 +105,7 @@ public class BackupDataOutput {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.205 -0400", hash_original_method = "7380B31B3FE738857D26F18ED18C23C7", hash_generated_method = "9C603892475912CA423BEAEF1B06C23D")
     protected void finalize() throws Throwable {
         try 

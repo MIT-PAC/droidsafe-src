@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.content.pm.PackageManager.GET_SIGNATURES;
 import static android.text.format.Time.MONTH_DAY;
 
@@ -16,16 +17,17 @@ import android.text.format.Time;
 
 import com.google.android.collect.Sets;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NetworkPolicyManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.493 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "99D41184207358A72CF865D27CF56B99")
 
     private INetworkPolicyManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.493 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "D38E2F3C6BBCF7701EB83058FEF1E0DC")
     public  NetworkPolicyManager(INetworkPolicyManager service) {
         if(service == null)        
@@ -43,11 +45,13 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkPolicyManager getSystemService(Context context) {
         return (NetworkPolicyManager) context.getSystemService(Context.NETWORK_POLICY_SERVICE);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.494 -0400", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "DEC24C933533BB9E9D99BEA6719D6B8F")
     public void setNetworkPolicies(NetworkPolicy[] policies) {
         addTaint(policies[0].getTaint());
@@ -66,6 +70,7 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.494 -0400", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "9313056A3B1B8CAD324B4B39B73E841F")
     public NetworkPolicy[] getNetworkPolicies() {
         try 
@@ -89,6 +94,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.495 -0400", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "F31C0CED39263F9AD2CCEAAEFEC79384")
     public void setUidPolicy(int uid, int policy) {
         addTaint(policy);
@@ -108,6 +114,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.495 -0400", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "613C0453D92E692AEBB980A6819530DA")
     public int getUidPolicy(int uid) {
         addTaint(uid);
@@ -132,6 +139,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.495 -0400", hash_original_method = "14080C9EBE421CBAA0CC7A85DC8AF1A5", hash_generated_method = "C24CEFF6E15A1744700711AE690AB1B2")
     public void registerListener(INetworkPolicyListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -151,6 +159,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.496 -0400", hash_original_method = "35702F276EA8A80B200FDB5306DFD41E", hash_generated_method = "371523183CC19B92A10C034B5B6EDD56")
     public void unregisterListener(INetworkPolicyListener listener) {
         addTaint(listener.getTaint());
@@ -169,6 +178,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long computeLastCycleBoundary(long currentTime, NetworkPolicy policy) {
         final Time now = new Time(Time.TIMEZONE_UTC);
         now.set(currentTime);
@@ -188,6 +198,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long computeNextCycleBoundary(long currentTime, NetworkPolicy policy) {
         final Time now = new Time(Time.TIMEZONE_UTC);
         now.set(currentTime);
@@ -207,6 +218,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void snapToCycleDay(Time time, int cycleDay) {
         if (cycleDay > time.getActualMaximum(MONTH_DAY)) {
             time.month += 1;
@@ -219,7 +231,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isUidValidForPolicy(Context context, int uid) {
         if (uid < android.os.Process.FIRST_APPLICATION_UID
                 || uid > android.os.Process.LAST_APPLICATION_UID) {
@@ -249,6 +261,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpPolicy(PrintWriter fout, int policy) {
         fout.write("[");
         if ((policy & POLICY_REJECT_METERED_BACKGROUND) != 0) {
@@ -258,6 +271,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_877191296 =             null
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpRules(PrintWriter fout, int rules) {
         fout.write("[");
         if ((rules & RULE_REJECT_METERED) != 0) {

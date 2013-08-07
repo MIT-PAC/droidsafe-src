@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,10 +14,10 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Spinner extends AbsSpinner implements OnClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.395 -0400", hash_original_field = "E863CEB96C01242A6262A422DC21BA91", hash_generated_field = "2B2C8DD5949DF96120E12CE686443E54")
@@ -381,7 +382,7 @@ switch(mGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.409 -0400", hash_original_method = "16A0D15DF35F8329F5BE73262CE9B509", hash_generated_method = "A148C161B0B8832BD9A772EF155625E0")
     private View makeAndAddView(int position) {
         addTaint(position);
@@ -417,7 +418,7 @@ View var73902FD3E151130B4329B76EF04D2A54_1203615473 =         child;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.422 -0400", hash_original_method = "EA422D8BE64CA8F3FB87FB3D4E23C7FB", hash_generated_method = "53AC7C215039BABA1441D88DDD711E86")
     private void setUpChild(View child) {
         addTaint(child.getTaint());

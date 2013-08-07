@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.Field;
@@ -12,10 +13,10 @@ import android.util.TypedValue;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class FileLoader extends StreamLoader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.381 -0400", hash_original_field = "FB4FCB3508FC66D4E3F113990AC335C6", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
@@ -63,6 +64,7 @@ class FileLoader extends StreamLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.383 -0400", hash_original_method = "987DD890C3289D23A785AB1F430BD4A8", hash_generated_method = "D519123CC969EAE48C1467A1D5FC0B3C")
     private String errString(Exception ex) {
         addTaint(ex.getTaint());

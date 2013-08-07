@@ -1,16 +1,18 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import libcore.icu.ICU;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class CaseMapper {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.252 -0400", hash_original_method = "8FD2C0B10363E6DF4E4A890BB3EDCD79", hash_generated_method = "D0D9B1F1B12C1017900AA1743826FCC0")
     private  CaseMapper() {
         // ---------- Original Method ----------
@@ -47,6 +49,7 @@ class CaseMapper {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isFinalSigma(char[] value, int offset, int count, int index) {
         if (index <= offset) {
             return false;
@@ -66,7 +69,7 @@ class CaseMapper {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int upperIndex(int ch) {
         int index = -1;
         if (ch >= 0xdf) {

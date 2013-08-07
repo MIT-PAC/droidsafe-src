@@ -1,6 +1,7 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,10 +21,10 @@ import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class BackupAgent extends ContextWrapper {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.108 -0400", hash_original_field = "6812121D3014FEFEE7A1118C07DF58B2", hash_generated_field = "7FA1510B7C47FB23A1BC45219C359763")
@@ -246,6 +247,7 @@ for(File entry : contents)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.119 -0400", hash_original_method = "588B4C1C50D0665AE90099672BE15A28", hash_generated_method = "B32995C9B26B6C2B65EB71094E1CF1C1")
     protected void onRestoreFile(ParcelFileDescriptor data, long size,
             int type, String domain, String path, long mode, long mtime) throws IOException {
@@ -303,7 +305,7 @@ for(File entry : contents)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.120 -0400", hash_original_method = "2EA8D194620A11CB2853C240391D2146", hash_generated_method = "83C3BCE04B8450717179DF3FCC972CB4")
     public final IBinder onBind() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -315,6 +317,7 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_993426132 =         mBinder;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.121 -0400", hash_original_method = "20906B0697539AB9D636DC69F7DBB057", hash_generated_method = "CD5B8FBF2D0E90B46E81A657F9152257")
     public void attach(Context context) {
         addTaint(context.getTaint());

@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,10 +26,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Context {
     
@@ -120,7 +121,7 @@ String var3E6B52F63767621631F101D027EAE3AD_1525639224 =         getResources().g
     public abstract void setTheme(int resid);
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public int getThemeResId() {
         return 0;
     }

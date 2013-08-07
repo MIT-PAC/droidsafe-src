@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.AttributedCharacterIterator.Attribute;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,10 +13,10 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AttributedString {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.529 -0400", hash_original_field = "1CB251EC0D568DE6A929B520C4AED8D1", hash_generated_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C")
@@ -74,7 +75,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.531 -0400", hash_original_method = "3A8973AD4EBE1F3B94E1633368C42F9D", hash_generated_method = "C411FA53F84E9C9DE5B8293C340E514E")
     private  AttributedString(AttributedCharacterIterator iterator, int start,
             int end, Set<Attribute> attributes) {
@@ -671,7 +672,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_932780858 =                 clone;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.565 -0400", hash_original_method = "20101C80E99D94E4CD68776989F0B447", hash_generated_method = "83B7A4B1FE66725A6A8200ED558401EE")
         private boolean inRange(Range range) {
             addTaint(range.getTaint());
@@ -694,6 +695,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_932780858 =                 clone;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.566 -0400", hash_original_method = "D282867E9466B5652FFBD5F7BCA71B9B", hash_generated_method = "B7BA13ED47D370C7C51160D86548B0C8")
         private boolean inRange(List<Range> ranges) {
             addTaint(ranges.getTaint());
@@ -772,6 +774,7 @@ Set<AttributedIterator.Attribute> varDC838461EE2FA0CA4C9BBB70A15456B0_606233894 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.566 -0400", hash_original_method = "7F47FD199B74CEDC765420E2B0AD1B85", hash_generated_method = "C60283ACFE619CB7E557000762FFEAE0")
         private Object currentValue(List<Range> ranges) {
             addTaint(ranges.getTaint());
@@ -891,6 +894,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "40F484258D42E498FCA29FFC5F596001", hash_generated_method = "C0B6066A7B7B170D599DA3CD3F5AE957")
         private int runLimit(List<Range> ranges) {
             addTaint(ranges.getTaint());
@@ -1017,6 +1021,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "3940F742081E74CA234FF11DA5FD3120", hash_generated_method = "1B2ECBF777A2D0DB15B58D7B9D784527")
         private int runStart(List<Range> ranges) {
             addTaint(ranges.getTaint());

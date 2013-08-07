@@ -1,13 +1,15 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public abstract class ServiceManagerNative extends Binder implements IServiceManager {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.573 -0400", hash_original_method = "9F01F56EAD98DCCF5588838D591C9215", hash_generated_method = "85C73BFA46F2172E7BBE49D58C0ED876")
     public  ServiceManagerNative() {
         attachInterface(this, descriptor);
@@ -16,6 +18,7 @@ public abstract class ServiceManagerNative extends Binder implements IServiceMan
     }
 
     
+    @DSModeled(DSC.BAN)
     static public IServiceManager asInterface(IBinder obj) {
         if (obj == null) {
             return null;
@@ -29,6 +32,7 @@ public abstract class ServiceManagerNative extends Binder implements IServiceMan
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.576 -0400", hash_original_method = "77391B19BF1D318FBD43A52170DD3D86", hash_generated_method = "51CBFDC116990946C78165D99B6C56EA")
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -101,7 +105,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.577 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "4A5EE40906A818160752CEE34A393C53")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_719639042 =         this;

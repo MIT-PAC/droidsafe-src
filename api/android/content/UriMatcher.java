@@ -1,15 +1,16 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
 import android.net.Uri;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class UriMatcher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.174 -0400", hash_original_field = "8D867CBFB20E1BFF428C0F34B70EC406", hash_generated_field = "814428A5309A583B3B018643DB7956B1")
@@ -39,6 +40,7 @@ public class UriMatcher {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.175 -0400", hash_original_method = "02B7CF0C93AE1B23BA80DE9D9DFF6FFA", hash_generated_method = "961CCE42CAD03B4C745729506ACEF774")
     private  UriMatcher() {
         mCode = NO_MATCH;

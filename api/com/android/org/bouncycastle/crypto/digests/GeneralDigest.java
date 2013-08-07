@@ -1,12 +1,13 @@
 package com.android.org.bouncycastle.crypto.digests;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.org.bouncycastle.crypto.ExtendedDigest;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class GeneralDigest implements ExtendedDigest {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.245 -0400", hash_original_field = "5A6404CE8F44AE5DF2E1D4C64517E9F8", hash_generated_field = "143ABAB13B7522AC48A1AF414B584EA6")

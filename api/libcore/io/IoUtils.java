@@ -1,6 +1,7 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.F_GETFL;
 import static libcore.io.OsConstants.F_SETFL;
 import static libcore.io.OsConstants.O_NONBLOCK;
@@ -12,12 +13,13 @@ import java.io.RandomAccessFile;
 import java.net.Socket;
 import java.nio.charset.Charsets;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public final class IoUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.575 -0400", hash_original_method = "79E9471925B005378EBE1BC903B5DD58", hash_generated_method = "23C96EFBE22D08DF5FBBE8620DF9E369")
     private  IoUtils() {
         // ---------- Original Method ----------
@@ -92,6 +94,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static UnsafeByteSequence readFileAsBytes(String path) throws IOException {
         RandomAccessFile f = null;
         try {

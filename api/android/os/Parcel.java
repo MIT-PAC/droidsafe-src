@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,8 +11,8 @@ import java.util.Map;
 
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public final class Parcel {
     @SuppressWarnings({"UnusedDeclaration"})
@@ -20,6 +21,7 @@ public final class Parcel {
     private int mOwnObject;
     private RuntimeException mStack;
     
+    @DSModeled(DSC.BAN)
     private Parcel(int obj){
 		init(obj);
 		/*
@@ -267,6 +269,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final void writeCharSequence(CharSequence val){
 		mValueCharSequence = val;
 		// Original method
@@ -891,6 +894,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final void writeCharSequenceArray(CharSequence[] val){
 		mValueCharSequenceArray = val;
 		// Original method
@@ -1172,6 +1176,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final int readExceptionCode(){
 		return getTaintInt();
 		// Original method
@@ -1252,6 +1257,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final CharSequence readCharSequence(){
 		return mValueCharSequence;
 		// Original method
@@ -1433,6 +1439,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final String[] readStringArray(){
 		return mValueStringArray;
 		// Original method
@@ -1454,6 +1461,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final CharSequence[] readCharSequenceArray(){
 		return mValueCharSequenceArray;
 		// Original method
@@ -1938,6 +1946,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void readSparseBooleanArrayInternal(SparseBooleanArray outVal, int N){
 		// Original method
 		/*

@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,15 +27,15 @@ import com.android.internal.util.TypedProperties;
 
 import dalvik.bytecode.OpcodeInfo;
 import dalvik.system.VMDebug;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Debug {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.990 -0400", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "CEC0EF1C9C14E821D3D42B954D6BD596")
     private  Debug() {
         // ---------- Original Method ----------
@@ -87,6 +88,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String[] getVmFeatureList() {
         return VMDebug.getVmFeatureList();
     }
@@ -159,17 +161,20 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startMethodTracing(String traceName, FileDescriptor fd,
         int bufferSize, int flags) {
         VMDebug.startMethodTracing(traceName, fd, bufferSize, flags);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startMethodTracingDdms(int bufferSize, int flags) {
         VMDebug.startMethodTracingDdms(bufferSize, flags);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isMethodTracingActive() {
         return VMDebug.isMethodTracingActive();
     }
@@ -468,11 +473,13 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpHprofData(String fileName, FileDescriptor fd) throws IOException {
         VMDebug.dumpHprofData(fileName, fd);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void dumpHprofDataDdms() {
         VMDebug.dumpHprofDataDdms();
     }
@@ -483,6 +490,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static long countInstancesOfClass(Class cls) {
         return VMDebug.countInstancesOfClass(cls, true);
     }
@@ -518,16 +526,19 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final boolean cacheRegisterMap(String classAndMethodDesc) {
         return VMDebug.cacheRegisterMap(classAndMethodDesc);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void dumpReferenceTables() {
         VMDebug.dumpReferenceTables();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean fieldTypeMatches(Field field, Class<?> cl) {
         Class<?> fieldClass = field.getType();
         if (fieldClass == cl) {
@@ -674,6 +685,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.996 -0400", hash_original_method = "EAA33F4FBF3C878879D517CBC8FFA048", hash_generated_method = "138FA19B001BA4AC55AD2A691F2B65DF")
         private  MemoryInfo(Parcel source) {
             addTaint(source.getTaint());

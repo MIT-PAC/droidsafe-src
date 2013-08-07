@@ -1,12 +1,13 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.charset.Charset;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class UnsafeByteSequence {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.659 -0400", hash_original_field = "4B3A6218BB3E3A7303E8A171A60FCF92", hash_generated_field = "4E58ABB9D5068B90ACC1157BF07E4EBB")
@@ -16,6 +17,7 @@ public class UnsafeByteSequence {
 
     private int count;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.659 -0400", hash_original_method = "3B8A36370055AF819C3748255F1BDC68", hash_generated_method = "B480D5F65BA5A041317D50ECA353DED2")
     public  UnsafeByteSequence(int initialCapacity) {
         this.bytes = new byte[initialCapacity];
@@ -24,7 +26,7 @@ public class UnsafeByteSequence {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.660 -0400", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "1700F0BC7EDE0CCBFFC8A5AECA1CCB76")
     public int size() {
         int varE2942A04780E223B215EB8B663CF5353_1424891642 = (count);
@@ -35,7 +37,7 @@ public class UnsafeByteSequence {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.660 -0400", hash_original_method = "CD6FA0D10C84692422449C0C5D320E8A", hash_generated_method = "37A38F7B043D44D70AC23E12C0B9583A")
     public void rewind() {
         count = 0;
@@ -44,6 +46,7 @@ public class UnsafeByteSequence {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.661 -0400", hash_original_method = "5B2175FB0361CE80BA769109F54D5CFC", hash_generated_method = "06D3F608A4A3FDA6E771AF9004841FFD")
     public void write(byte[] buffer, int offset, int length) {
         addTaint(offset);
@@ -67,6 +70,7 @@ public class UnsafeByteSequence {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.661 -0400", hash_original_method = "CCB897927F45B316C80C49A08CD4BEC5", hash_generated_method = "1D2502F559198FAEF4B9356225ECC793")
     public void write(int b) {
         if(count == bytes.length)        
@@ -86,6 +90,7 @@ public class UnsafeByteSequence {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.662 -0400", hash_original_method = "6A961C2A026EF073EA4353A09C4F8B0B", hash_generated_method = "66D62B7D4961DAD3120A7A066117615F")
     @FindBugsSuppressWarnings("EI_EXPOSE_REP")
     public byte[] toByteArray() {
@@ -110,6 +115,7 @@ public class UnsafeByteSequence {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.662 -0400", hash_original_method = "EBA6423CDD36F9469C412144E3270E61", hash_generated_method = "14D06EDDF519CE4AA811967532401315")
     public String toString(Charset cs) {
         addTaint(cs.getTaint());

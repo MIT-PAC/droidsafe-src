@@ -1,6 +1,7 @@
 package com.android.i18n.phonenumbers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.Character.UnicodeBlock;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -10,7 +11,7 @@ import java.util.regex.Pattern;
 import com.android.i18n.phonenumbers.PhoneNumberUtil.Leniency;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-import droidsafe.annotations.*;
+
 
 final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "C778FABC1A5FC38BFB2983B44747E15A", hash_generated_field = "2E33D99F5B4A20B25B98A154596BE936")

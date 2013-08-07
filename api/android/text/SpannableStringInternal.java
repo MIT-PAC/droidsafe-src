@@ -1,14 +1,15 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Array;
 
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class SpannableStringInternal {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.784 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "2EBA23F479A3FA4159B4CC40D57E4F25")
@@ -453,7 +454,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.793 -0400", hash_original_method = "AE5753E793A4485018C5FAB8D6A92DBC", hash_generated_method = "E3FED9D828B8C60E350C18074421AE2E")
     private void sendSpanAdded(Object what, int start, int end) {
         addTaint(end);
@@ -474,7 +475,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.793 -0400", hash_original_method = "60A86A7ABB49125FA35263BF87AB59D6", hash_generated_method = "2FA99781654342E619A8954DE98C0A4B")
     private void sendSpanRemoved(Object what, int start, int end) {
         addTaint(end);
@@ -495,7 +496,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.794 -0400", hash_original_method = "859EF27A1BB05860E7E5EF0EAB661D52", hash_generated_method = "18D2923662B1F7267D9A8F9A1863BDD0")
     private void sendSpanChanged(Object what, int s, int e, int st, int en) {
         addTaint(en);
@@ -520,7 +521,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String region(int start, int end) {
         return "(" + start + " ... " + end + ")";
     }

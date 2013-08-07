@@ -1,13 +1,14 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DecelerateInterpolator implements Interpolator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.918 -0400", hash_original_field = "7DECF88C2827213B3E7BC0566F9E08CD", hash_generated_field = "A4F5427DC6C0D3BD86B003B9F84706BC")

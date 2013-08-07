@@ -1,6 +1,7 @@
 package org.bouncycastle.jce.provider.asymmetric.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.InvalidKeyException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -20,9 +21,9 @@ import org.bouncycastle.jce.provider.JCEECPublicKey;
 import org.bouncycastle.jce.provider.ProviderUtil;
 import org.bouncycastle.jce.spec.ECParameterSpec;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class ECUtil {
     

@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,10 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeInternalListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.627 -0400", hash_original_field = "60A1F576EA55DAAA9B029C3300F68D2D", hash_generated_field = "9E796A8BD15586231740457EF37FD47D")
@@ -67,6 +68,7 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.629 -0400", hash_original_method = "47CAC8934A77F33A41B8A2FADE539715", hash_generated_method = "F3A53D7C099FEB4F6A2629ADC6016B62")
     private void syncMyPreferences() {
         synchronized
@@ -104,6 +106,7 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.630 -0400", hash_original_method = "DB0831C85843D6D53F9495F3413A2CE3", hash_generated_method = "AC060DC7A703230347A68E0AE9FC84D9")
     private void flattenPreferenceGroup(List<Preference> preferences, PreferenceGroup group) {
         addTaint(group.getTaint());
@@ -133,6 +136,7 @@ for(int i = 0;i < groupSize;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.631 -0400", hash_original_method = "B927BA6712254BD5B8D47CF220E79C5B", hash_generated_method = "3EC6F6F9056CD7B0629D22F19E0426B8")
     private PreferenceLayout createPreferenceLayout(Preference preference, PreferenceLayout in) {
         addTaint(in.getTaint());
@@ -153,6 +157,7 @@ PreferenceLayout var08A2C4A72E6D9753FFB2150962070B4D_959762402 =         pl;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.631 -0400", hash_original_method = "22004160B58BE5F5ED0505DF7AB89FF1", hash_generated_method = "76F09BBEB7638D778C7524FBBD4DA8B2")
     private void addPreferenceClassName(Preference preference) {
         addTaint(preference.getTaint());
@@ -384,6 +389,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_1628782937 =         preference.getView
 
         private String name;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.636 -0400", hash_original_method = "12E8ADB8C3EE61AC77B7A82A93B07078", hash_generated_method = "12E8ADB8C3EE61AC77B7A82A93B07078")
         public PreferenceLayout ()
         {

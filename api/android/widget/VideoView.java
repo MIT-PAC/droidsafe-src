@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Map;
 
@@ -23,10 +24,10 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.MediaController.MediaPlayerControl;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class VideoView extends SurfaceView implements MediaPlayerControl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.141 -0400", hash_original_field = "CE75D1B054E16C63898691B02166B900", hash_generated_field = "C9C0A5B85686F17E8711EF81CEC90335")
@@ -485,7 +486,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.158 -0400", hash_original_method = "BE85099A7AB9FDC5F9372F356FE70764", hash_generated_method = "D4EE1143999D59A12455EFD43719BE38")
     private void initVideoView() {
         mVideoWidth = 0;
@@ -571,7 +572,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.160 -0400", hash_original_method = "4401AC32A9DAF43DD0875A239764A2D5", hash_generated_method = "750156031A414222D79F960D9F7906CC")
     private void openVideo() {
         if(mUri == null || mSurfaceHolder == null)        
@@ -637,7 +638,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.161 -0400", hash_original_method = "4E9048D91253AD27AA53E4E66A36C9AD", hash_generated_method = "ACA4BFB4AF95A8F19B01F050AE7E0D1F")
     private void attachMediaController() {
         if(mMediaPlayer != null && mMediaController != null)        
@@ -686,7 +687,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.163 -0400", hash_original_method = "99FF896B381D47748A631FF0CD5A79C0", hash_generated_method = "A79F037E170175C4699A27FB73531204")
     private void release(boolean cleartargetstate) {
         addTaint(cleartargetstate);
@@ -827,7 +828,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.165 -0400", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "3FD9697155F837AC56FFFC09091C9312")
     private void toggleMediaControlsVisiblity() {
         if(mMediaController.isShowing())        
@@ -1012,7 +1013,7 @@ switch(specMode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.167 -0400", hash_original_method = "181624277C30FCEFD8B4CC029FACB2EE", hash_generated_method = "848DAE07A8B7659C54E3121118D4D53D")
     private boolean isInPlaybackState() {
         boolean var1C53704901E4033DF3FE8CE3B2EB3177_314261898 = ((mMediaPlayer != null &&

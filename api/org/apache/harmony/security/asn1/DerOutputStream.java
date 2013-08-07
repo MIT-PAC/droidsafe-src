@@ -1,11 +1,12 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import libcore.util.Objects;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class DerOutputStream extends BerOutputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.920 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
@@ -130,7 +131,7 @@ for(int i = 0;i < type.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.923 -0400", hash_original_method = "633BE494EAD83DB36EAB8BCAACE55EAA", hash_generated_method = "95EA7F631AADF71E3FABCAEF5941F4B0")
     private void encodeValueCollection(ASN1ValueCollection collection) {
         addTaint(collection.getTaint());
@@ -155,7 +156,7 @@ for(int i = 0;i < values.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.924 -0400", hash_original_method = "4D1A9BCC2A43E189556FAAB3E35CA849", hash_generated_method = "F1071627A0104779CCFA0A0C19C0D01C")
     private void push(int[] lengths, Object[] values) {
         index++;
@@ -293,6 +294,7 @@ for(int i = 0;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.927 -0400", hash_original_method = "437F3D994C4DC9FE69A29C0E967F3DCB", hash_generated_method = "BA87351CB696B6E9F6FD3E829CE90F5F")
     private void getValueOfLength(ASN1ValueCollection collection) {
         addTaint(collection.getTaint());

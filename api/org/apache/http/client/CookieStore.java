@@ -1,6 +1,7 @@
 package org.apache.http.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Date;
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -30,10 +31,10 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class CallbackProxy extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.816 -0400", hash_original_field = "AFFD03B1A69DF9C27FA75CB579217844", hash_generated_field = "6F5FFC523604435BA0DD35F79F6A85A7")
@@ -867,6 +868,7 @@ switch(messageLevel){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.836 -0400", hash_original_method = "2F62F4E531DE0AF4C82D66205801E78A", hash_generated_method = "239292A03E2A1C8071CF2D7C707703DE")
     private String getJsDialogTitle(String url) {
         addTaint(url.getTaint());

@@ -1,6 +1,7 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,13 +15,14 @@ import com.android.internal.telephony.ISms;
 import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.SmsRawData;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SmsManager {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.974 -0400", hash_original_method = "20095975633950A922641E0460F74587", hash_generated_method = "EA8DBC7FD3892C316F9DA405480D8C8E")
     private  SmsManager() {
         // ---------- Original Method ----------
@@ -201,6 +203,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.995 -0400", hash_original_method = "149DCB8E596A59716D0EA3B88B730E88", hash_generated_method = "7DC63406F8003AF285C3D45C7CC692F2")
     public boolean copyMessageToIcc(byte[] smsc, byte[] pdu, int status) {
         addTaint(status);
@@ -234,6 +237,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.995 -0400", hash_original_method = "D912FCB1DFFBD3EFF004E65AAFF52944", hash_generated_method = "E96AE50044607A85FE46F93DE44587EA")
     public boolean deleteMessageFromIcc(int messageIndex) {
         addTaint(messageIndex);
@@ -269,6 +273,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.995 -0400", hash_original_method = "E7AD2FCC9238E9621F78F9C99C389491", hash_generated_method = "6BDDE200F7CC9F044A77152E465D4A9A")
     public boolean updateMessageOnIcc(int messageIndex, int newStatus, byte[] pdu) {
         addTaint(pdu[0]);
@@ -302,6 +307,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ArrayList<SmsMessage> getAllMessagesFromIcc() {
         List<SmsRawData> records = null;
         try {
@@ -315,6 +321,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.995 -0400", hash_original_method = "D2AB66A7ACEF0D4C8C4D01478F148AA5", hash_generated_method = "9ECE1998D785375DD37DB292480BA3AA")
     public boolean enableCellBroadcast(int messageIdentifier) {
         addTaint(messageIdentifier);
@@ -346,6 +353,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.996 -0400", hash_original_method = "BF7C27985ACD2C46C3E7C98C6196EF24", hash_generated_method = "2C4A67C78880082F4FD6E4DBED33BF4B")
     public boolean disableCellBroadcast(int messageIdentifier) {
         addTaint(messageIdentifier);
@@ -377,6 +385,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.996 -0400", hash_original_method = "48FE73E95EE31EEBE730A030272A67D6", hash_generated_method = "E3C111F728DE409B580363E8BFDEB5F3")
     public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
         addTaint(endMessageId);
@@ -409,6 +418,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.996 -0400", hash_original_method = "528508E389FED61ADC9A70FF93AA8789", hash_generated_method = "B3BD01EB22342A45FCC8C3094E57505F")
     public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
         addTaint(endMessageId);
@@ -441,6 +451,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_1398356207 =         SmsMe
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRawData> records) {
         ArrayList<SmsMessage> messages = new ArrayList<SmsMessage>();
         if (records != null) {

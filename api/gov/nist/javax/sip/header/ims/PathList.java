@@ -1,8 +1,9 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeaderList;
-import droidsafe.annotations.DSGenerator;
+
 
 public class PathList extends SIPHeaderList<Path> {
     

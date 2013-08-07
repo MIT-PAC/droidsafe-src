@@ -1,12 +1,13 @@
 package android.net.wifi.p2p;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WifiP2pDevice implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.606 -0400", hash_original_field = "271FEAE7FBE3640A38493945A82BE63F", hash_generated_field = "9A7D4F81FAFB7D27EA987849BE77B870")
@@ -44,6 +45,7 @@ public class WifiP2pDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.610 -0400", hash_original_method = "B4DFEB594E50AA2111054B3A3A6DF197", hash_generated_method = "3E65347525C4054E532F6FA0FA653812")
     public  WifiP2pDevice(String string) throws IllegalArgumentException {
         String[] tokens = string.split(" ");
@@ -295,7 +297,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1984423810 =         sbuf.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.620 -0400", hash_original_method = "81EACEB4EB0E2420630EBFC84E59B2A4", hash_generated_method = "CE91589973490FD97B9E0E26502C61DA")
     private String trimQuotes(String str) {
         addTaint(str.getTaint());
@@ -318,7 +320,7 @@ String var061B89662D09DE43FE2A2D88636258A2_1452513810 =         str;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.621 -0400", hash_original_method = "C0F4185566F115FC2220CE409C454DF3", hash_generated_method = "527877CA6F302B4F2F1B49EBDE782FF1")
     private int parseHex(String hexString) {
         addTaint(hexString.getTaint());

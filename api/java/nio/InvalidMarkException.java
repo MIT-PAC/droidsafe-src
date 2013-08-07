@@ -1,10 +1,11 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class InvalidMarkException extends IllegalStateException {
     
@@ -15,6 +16,7 @@ public class InvalidMarkException extends IllegalStateException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.188 -0400", hash_original_method = "29531E800CAD0F117D34A6102B8A5CF9", hash_generated_method = "12439BB8A7F05A76A92F3ED9129F6BAE")
     public  InvalidMarkException(String detailMessage) {
         super(detailMessage);

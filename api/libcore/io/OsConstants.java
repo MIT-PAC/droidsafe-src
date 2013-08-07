@@ -1,13 +1,15 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class OsConstants {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.714 -0400", hash_original_method = "0498D6F7A9D700EE7D091D4440C7A579", hash_generated_method = "A197106530DC08E504EC74CDFEA7722E")
     private  OsConstants() {
         // ---------- Original Method ----------
@@ -381,7 +383,7 @@ public final class OsConstants {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int placeholder() {
         return 0;
     }

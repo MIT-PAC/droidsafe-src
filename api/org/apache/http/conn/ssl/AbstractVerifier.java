@@ -1,6 +1,7 @@
 package org.apache.http.conn.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateParsingException;
@@ -21,10 +22,10 @@ import javax.net.ssl.SSLSocket;
 
 import org.apache.http.conn.util.InetAddressUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbstractVerifier implements X509HostnameVerifier {
     

@@ -1,6 +1,7 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -12,10 +13,10 @@ import java.util.ResourceBundle;
 
 import libcore.util.Objects;
 import dalvik.system.VMStack;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Level implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.140 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -158,7 +159,7 @@ String var7214CEE3997909E522736F52DB465A8B_1227544428 =         this.resourceBun
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.145 -0400", hash_original_method = "68F6CB700CD961C98FAD85DDC5107742", hash_generated_method = "75ECC68B6E36609E233BF844D833974A")
     private Object readResolve() {
         synchronized
@@ -204,7 +205,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_641176677 =             this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.145 -0400", hash_original_method = "267F1EA9E96531D86D40818D686262D8", hash_generated_method = "C1A531C66B9B2D21B1427DEC27AAFD80")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {

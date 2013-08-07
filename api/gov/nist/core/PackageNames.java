@@ -1,6 +1,7 @@
 package gov.nist.core;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface PackageNames {
     public static final String JAIN_HEADER_PACKAGE = "javax.sip.header";

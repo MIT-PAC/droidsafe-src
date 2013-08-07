@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
@@ -18,10 +19,10 @@ import android.widget.ListView;
 
 import com.android.internal.app.AlertController;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AlertDialog extends Dialog implements DialogInterface {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.975 -0400", hash_original_field = "5117530B5FC21047AC49783CC786404F", hash_generated_field = "167B5CF3490749BA13C3817234C227CF")
@@ -845,7 +846,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_96541784 =             this;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.066 -0400", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "0749378B45A87D9B27127D25D71BAA31")
         public Builder setView(View view, int viewSpacingLeft, int viewSpacingTop,
                 int viewSpacingRight, int viewSpacingBottom) {
@@ -882,7 +883,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_292044711 =             this;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.069 -0400", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "9DD41119228AE4686AD2CBFF3CCD7130")
         public Builder setRecycleOnMeasureEnabled(boolean enabled) {
             P.mRecycleOnMeasure = enabled;

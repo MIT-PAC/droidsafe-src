@@ -1,12 +1,13 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CharArrayReader extends Reader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.511 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "F3184E7FC423A3DB65CA949884DB59BD")
@@ -77,7 +78,7 @@ public class CharArrayReader extends Reader {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.514 -0400", hash_original_method = "F0DC6C1F8DBE67146FDB19D4375AE051", hash_generated_method = "7E49AA90BEA532A819B1315EAA0A6F40")
     private boolean isOpen() {
         boolean var0C54AD404B2ACA93D3F8FCA41C54249F_1343164928 = (buf != null);
@@ -88,7 +89,7 @@ public class CharArrayReader extends Reader {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.515 -0400", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "93093733BFA5B867040B73EC7D880EFB")
     private boolean isClosed() {
         boolean var424D22B8FEEB84C8061682CC5DE6923D_183702961 = (buf == null);
@@ -116,7 +117,7 @@ public class CharArrayReader extends Reader {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.515 -0400", hash_original_method = "DD3D03D90C3AA2556C16493577BC59FF", hash_generated_method = "19EF7637637D9D5E1494C47BB45D8AFF")
     private void checkNotClosed() throws IOException {
         if(isClosed())        

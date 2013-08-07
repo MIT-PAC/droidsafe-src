@@ -1,6 +1,7 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,14 +14,15 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class EventLog {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.690 -0400", hash_original_method = "F2F67500BFF17861178525A826A9D5EF", hash_generated_method = "53C7EDD75DD3FA6552B96F6BC591B81D")
     public  EventLog() {
         // ---------- Original Method ----------
@@ -68,6 +70,7 @@ public class EventLog {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static synchronized void readTagsFile() {
         if (sTagCodes != null && sTagNames != null) return;
         sTagCodes = new HashMap<String, Integer>();
@@ -198,6 +201,7 @@ Object var540C13E9E156B687226421B24F2DF178_773378962 =                 null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.692 -0400", hash_original_method = "153DDF284ABF68138956B6F9D94EE6B9", hash_generated_method = "4455298C47869133E6F1A91594FCA99F")
         private Object decodeObject() {
             byte type = mBuffer.get();

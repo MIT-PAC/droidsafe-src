@@ -1,6 +1,7 @@
 package android.speech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -19,10 +20,10 @@ import android.os.RemoteException;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SpeechRecognizer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.216 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "C468B76F6B6018BB8DB9FFE2A162E10B")
@@ -190,7 +191,7 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static void checkIsCalledFromMainThread() {
         if (Looper.myLooper() != Looper.getMainLooper()) {
             throw new RuntimeException(
@@ -199,7 +200,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.224 -0400", hash_original_method = "BD5701E8DF0BF25E7CB3736533848F1A", hash_generated_method = "A5A5569C94AE4A1C397AFB5586BE1123")
     private void putMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -220,7 +221,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.225 -0400", hash_original_method = "02FE733144FE02DDB0F8182E4A142CB0", hash_generated_method = "FF63DA8C334E4FB067088B55607641B1")
     private void handleStartListening(Intent recognizerIntent) {
         addTaint(recognizerIntent.getTaint());
@@ -252,7 +253,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.225 -0400", hash_original_method = "B90CA3721E1A91D945B72975FC03EB82", hash_generated_method = "868DDBE8C65BCA2AD55F5E98FB3717E1")
     private void handleStopMessage() {
         if(!checkOpenConnection())        
@@ -283,7 +284,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.226 -0400", hash_original_method = "5E81A38D35A2865AC1654F506B5D7265", hash_generated_method = "BB5BF4B051B1FF448EF63E92CA1AB6C1")
     private void handleCancelMessage() {
         if(!checkOpenConnection())        
@@ -314,7 +315,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.226 -0400", hash_original_method = "325935BA5701514064BC283979E7156C", hash_generated_method = "CA159233609EA7D659E78FFB28ACFA6D")
     private boolean checkOpenConnection() {
         if(mService != null)        
@@ -337,6 +338,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.227 -0400", hash_original_method = "90AD91808DE7CDCDA112C3C449526B0F", hash_generated_method = "8D108356CEA86C34ABEC68C8CEE863E5")
     private void handleChangeListener(RecognitionListener listener) {
         if(DBG)        

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.NameValueList;
 import gov.nist.javax.sip.SIPConstants;
@@ -40,10 +41,10 @@ import javax.sip.header.RouteHeader;
 import javax.sip.header.TimeStampHeader;
 import javax.sip.message.Request;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SIPClientTransaction extends SIPTransaction implements ServerResponseInterface, javax.sip.ClientTransaction, gov.nist.javax.sip.ClientTransactionExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "9D1B3F5D17ED1B162A9028E26EB002CF", hash_generated_field = "4FD467E2912A8CCA6B0DF0BC8D0D1212")
@@ -337,6 +338,7 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1838047113 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.882 -0400", hash_original_method = "ADF3D75C6ADD47CBC6B3D63B5D3998CF", hash_generated_method = "0E34F8263D7006E4E63431945E103609")
     private void nonInviteClientTransaction(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog sipDialog) throws IOException {
@@ -434,6 +436,7 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1838047113 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.884 -0400", hash_original_method = "C74AAAAD68DF1265333F033333BC207B", hash_generated_method = "F9C87560DDA7F0452FEDB1728923712A")
     private void inviteClientTransaction(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog dialog) throws IOException {
@@ -980,7 +983,7 @@ Request var53E5C6F852A0BB73314408FE0ABC9A68_895348035 =         ackRequest;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.893 -0400", hash_original_method = "C777E21FF4216BC8A7ADE1EB27ADDE8D", hash_generated_method = "1C2F8DCC2FF03C6D1BEB2EBE085771C9")
     private final Request createErrorAck() throws SipException, ParseException {
         SIPRequest originalRequest = this.getOriginalRequest();

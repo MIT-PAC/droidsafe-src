@@ -1,16 +1,17 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class CharsetEncoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.579 -0400", hash_original_field = "95CC64DD2825F9DF13EC4AD683ECF339", hash_generated_field = "220BF257D2CCF23A35C6D1D35FB3F79C")
@@ -134,6 +135,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.583 -0400", hash_original_method = "8FE38300B66D2E408C3C937D4188B910", hash_generated_method = "DFE2542FA3D78A71C84D06535545D5D3")
     private boolean implCanEncode(CharBuffer cb) {
         addTaint(cb.getTaint());
@@ -300,6 +302,7 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_383822937 =         output;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.586 -0400", hash_original_method = "AAF7B17852C8827C6D375001E4EF8669", hash_generated_method = "5DF2108BB45D3910757D0C884F125EAF")
     private void checkCoderResult(CoderResult result) throws CharacterCodingException {
         addTaint(result.getTaint());
@@ -325,6 +328,7 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_383822937 =         output;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.587 -0400", hash_original_method = "46B614F003BDECDBAF0C028FA8A61DD7", hash_generated_method = "8DDBB17C34A936C6C9E576BB5EB1F5FE")
     private ByteBuffer allocateMore(ByteBuffer output) {
         addTaint(output.getTaint());

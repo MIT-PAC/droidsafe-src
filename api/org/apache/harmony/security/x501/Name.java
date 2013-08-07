@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x501;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,10 +18,10 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.DerInputStream;
 import org.apache.harmony.security.x509.DNParser;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class Name {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.750 -0400", hash_original_field = "4B719ACEE4A1D5E30577F59E80D06205", hash_generated_field = "30CBCFF31EBF02BAF8CCE8746893E2BE")
@@ -69,6 +70,7 @@ public final class Name {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.752 -0400", hash_original_method = "31033A15DF0AC22272F2A1E0E5DFAD4C", hash_generated_method = "8232F001CAB6A6D20D5565435712EF88")
     private  Name(List<List<AttributeTypeAndValue>> rdn) {
         this.rdn = rdn;
@@ -165,7 +167,7 @@ String varA736130F7261BDD046BD91E8F9411BA0_2039158447 =             canonicalStr
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.756 -0400", hash_original_method = "F650F61C4EF367763857B0C83C9384E7", hash_generated_method = "A90CC2F918F4CD8ACDB99F53F93ED3A6")
     private String getName0(String format) {
         addTaint(format.getTaint());

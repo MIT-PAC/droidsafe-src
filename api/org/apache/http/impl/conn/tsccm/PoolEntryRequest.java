@@ -1,6 +1,7 @@
 package org.apache.http.impl.conn.tsccm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.http.conn.ConnectionPoolTimeoutException;

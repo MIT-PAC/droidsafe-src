@@ -1,16 +1,17 @@
 package libcore.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Formatter;
 import java.util.TimeZone;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ZoneInfo extends TimeZone {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.543 -0400", hash_original_field = "25533336D3CA3E874C41CD80205EFA67", hash_generated_field = "060566AE9D04406A02A61A31328950F2")
@@ -35,7 +36,7 @@ public final class ZoneInfo extends TimeZone {
 
     private boolean mUseDst;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.546 -0400", hash_original_method = "7B585FDC58F35CED01D1FBB089EE95E4", hash_generated_method = "727133FC28FC441C8D650224D389BFC8")
     ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] isDsts) {
         addTaint(name.getTaint());
@@ -96,7 +97,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.548 -0400", hash_original_method = "F24BAF6EEBE3E0E7B99D03D590A46295", hash_generated_method = "E3DDE6DB58910D8DDA65E0EDE880D5EF")
     @Override
     public int getOffset(int era, int year, int month, int day, int dayOfWeek, int millis) {
@@ -143,7 +144,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.548 -0400", hash_original_method = "1DD2E67C6E4C7148C355A1BA56BEEEAB", hash_generated_method = "D33EEE12A4BA22B78DB368B31CE32FB8")
     @Override
     public int getOffset(long when) {
@@ -176,6 +177,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.549 -0400", hash_original_method = "B2B7B20D9A81D2665491427CA669DC48", hash_generated_method = "77B00BAB7750529E57B663A78F103AB9")
     @Override
     public boolean inDaylightTime(Date time) {
@@ -210,7 +212,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.550 -0400", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "E305B0A0B83E37BC37CCB246BA4E60B2")
     @Override
     public int getRawOffset() {
@@ -222,7 +224,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.550 -0400", hash_original_method = "AE2A1B68EBE1FCF14F7860BA64C34CCE", hash_generated_method = "079E0D8D6A4EFB8E0B2D948CAED07A5E")
     @Override
     public void setRawOffset(int off) {
@@ -232,7 +234,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.550 -0400", hash_original_method = "81F7D5AE987C5D23D9D894C0567E3722", hash_generated_method = "A95028D907EE261B91142F2E12C6E3E5")
     @Override
     public boolean useDaylightTime() {
@@ -244,6 +246,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.551 -0400", hash_original_method = "73AAAC31DDE42029904964FC44B684BD", hash_generated_method = "2ACE1B0179D3E21574D50896B6737943")
     @Override
     public boolean hasSameRules(TimeZone timeZone) {
@@ -293,7 +296,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.552 -0400", hash_original_method = "ECC5255AD9E8EF75737AB68867396FFB", hash_generated_method = "94AFD972B0A2938CDCFD5BD278AA746F")
     @Override
     public boolean equals(Object obj) {
@@ -317,7 +320,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.552 -0400", hash_original_method = "8C2336163065486F5E05E5E7E360E4D3", hash_generated_method = "F3C82A5809776A067C54BA0BE0739E85")
     @Override
     public int hashCode() {
@@ -347,7 +350,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.553 -0400", hash_original_method = "0C13B49DB3B5709653F75D972BEB7E8A", hash_generated_method = "BE70981D989D3E8AED42D6A13DEA1B7A")
     @Override
     public String toString() {
@@ -388,7 +391,7 @@ String var2460B846747F8B22185AD8BE722266A5_1706445766 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String formatTime(int s, TimeZone tz) {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy zzz");
         sdf.setTimeZone(tz);

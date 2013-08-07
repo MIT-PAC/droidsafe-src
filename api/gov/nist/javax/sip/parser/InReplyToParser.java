@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.InReplyTo;
 import gov.nist.javax.sip.header.InReplyToList;
@@ -9,9 +10,9 @@ import gov.nist.javax.sip.header.SIPHeaderNames;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class InReplyToParser extends HeaderParser {
     

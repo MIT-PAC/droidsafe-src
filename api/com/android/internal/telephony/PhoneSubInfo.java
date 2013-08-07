@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
@@ -12,10 +13,10 @@ import android.util.Log;
 
 import com.android.internal.telephony.ims.IsimRecords;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PhoneSubInfo extends IPhoneSubInfo.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.900 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "59DB8B09027983825DB66C99CC153469")
@@ -163,7 +164,7 @@ String var63E80DF571E08DAA47BEFBF0BD0EEBAD_1156607688 =         number;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.902 -0400", hash_original_method = "E9A6A2984EA72CED9E5DEFCEFCC9AE08", hash_generated_method = "2A523BE571632AACC78D86200D255777")
     public String getCompleteVoiceMailNumber() {
         mContext.enforceCallingOrSelfPermission(CALL_PRIVILEGED,

@@ -1,6 +1,7 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.Enumeration;
@@ -17,17 +18,19 @@ import org.apache.harmony.security.fortress.Engine;
 import org.apache.harmony.security.fortress.SecurityAccess;
 import org.apache.harmony.security.fortress.Services;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class Security {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.455 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
     private  Security() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void registerDefaultProviders() {
         secprops.put("security.provider.1", "org.apache.harmony.xnet.provider.jsse.OpenSSLProvider");
         secprops.put("security.provider.2", "org.apache.harmony.security.provider.cert.DRLCertFactory");
@@ -209,6 +212,7 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void renumProviders() {
         Provider[] p = Services.getProviders();
         for (int i = 0; i < p.length; i++) {
@@ -219,6 +223,7 @@ public final class Security {
     
     private static class SecurityDoor implements SecurityAccess {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {

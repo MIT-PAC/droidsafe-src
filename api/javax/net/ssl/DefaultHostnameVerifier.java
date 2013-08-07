@@ -1,6 +1,7 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.InetAddress;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateParsingException;
@@ -12,10 +13,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class DefaultHostnameVerifier implements HostnameVerifier {
     
@@ -84,7 +85,7 @@ for(String cn : getDNSSubjectAlts(x509))
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.559 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "FF9A098325D07FFAA77ED843CAE563E8")
     private boolean matches(String hostName, String cn) {
         addTaint(cn.getTaint());
@@ -129,6 +130,7 @@ for(String cn : getDNSSubjectAlts(x509))
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.561 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "9C4305B6696E12B27209682CB8A5808F")
     private boolean acceptableCountryWildcard(String cn) {
         addTaint(cn.getTaint());
@@ -160,7 +162,7 @@ for(String cn : getDNSSubjectAlts(x509))
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.561 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "E09C9D1D6220EA556B67B38A6221C3D6")
     private String getFirstCn(X509Certificate cert) {
         addTaint(cert.getTaint());
@@ -190,6 +192,7 @@ String var540C13E9E156B687226421B24F2DF178_960074410 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.562 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "017F4CFB891E8E09A0F6902F5F57D3DB")
     private List<String> getDNSSubjectAlts(X509Certificate cert) {
         addTaint(cert.getTaint());

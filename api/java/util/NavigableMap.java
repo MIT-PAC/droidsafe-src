@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface NavigableMap<K,V> extends SortedMap<K,V> {
     

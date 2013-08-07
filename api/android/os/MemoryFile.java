@@ -1,15 +1,16 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class MemoryFile {
@@ -111,6 +112,7 @@ public class MemoryFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.530 -0400", hash_original_method = "08DA91581CCCF703195AD89F50B4F4A1", hash_generated_method = "5741B4223E746BB45735ECA03E926CEB")
      void deactivate() {
         if(!isDeactivated())        
@@ -136,7 +138,7 @@ public class MemoryFile {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.531 -0400", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "E6077F9EB637C837C661248F57466C23")
     private boolean isDeactivated() {
         boolean var472664B108BA887238443A411579BA83_1725905244 = (mAddress == 0);
@@ -147,6 +149,7 @@ public class MemoryFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.531 -0400", hash_original_method = "3246A0B1468E43E22E475A6EAB25C98D", hash_generated_method = "3573DDCADAAF32F6D8449AEB7121EE67")
     private boolean isClosed() {
         boolean var401A99D823C7C2A08DCAD7BDB9EB9F83_1484832973 = (!mFD.valid());
@@ -309,7 +312,7 @@ OutputStream var86EFA5916CD0155241780D6EEE9688E0_1423779640 =         new Memory
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.534 -0400", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "34243EAEB82351C1D9A4A6F60687C338")
     public FileDescriptor getFileDescriptor() throws IOException {
 FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_744389184 =         mFD;
@@ -320,6 +323,7 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_744389184 =         mFD;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int getSize(FileDescriptor fd) throws IOException {
         return native_get_size(fd);
     }

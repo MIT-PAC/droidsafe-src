@@ -1,6 +1,7 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -11,10 +12,10 @@ import android.util.AndroidRuntimeException;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ValueAnimator extends Animator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.958 -0400", hash_original_field = "4FBE52F16DA5DC1AFB86B1520E59C2C0", hash_generated_field = "3C3A30DDD94D9D47CBB52C3848791CE7")
@@ -571,7 +572,7 @@ TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_780078706 =         mInterp
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.049 -0400", hash_original_method = "4B39A931455D340382CCAC7898FAB8D3", hash_generated_method = "4F5881271E026A969D96D0163697FF89")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void start(boolean playBackwards) {
         if(Looper.myLooper() == null)        
         {
@@ -745,7 +746,7 @@ for(AnimatorListener listener : tmpListeners)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.066 -0400", hash_original_method = "634DE70818167FA9FFDD8CDDE693BD3B", hash_generated_method = "4D46B15480B7C7634D8BC9E980BB3039")
     private void endAnimation() {
         sAnimations.get().remove(this);
@@ -781,7 +782,7 @@ for(int i = 0;i < numListeners;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.067 -0400", hash_original_method = "45B9B57EC5A2CFD523C0E84592BD9EAC", hash_generated_method = "4F59FA0AFF03E77C61AD689FEB69C3B8")
     private void startAnimation() {
         initAnimation();
@@ -809,7 +810,7 @@ for(int i = 0;i < numListeners;++i)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.071 -0400", hash_original_method = "33DF90BAA846BB88E01B9C85165D068C", hash_generated_method = "6555D1700CBEFFEF13C38C47E94ED8B4")
     private boolean delayedAnimationFrame(long currentTime) {
         if(!mStartedDelay)        
@@ -1035,6 +1036,7 @@ String var74D8482D05AF02514EABC315066E6806_2116745028 =         returnVal;
     
     private static class AnimationHandler extends Handler {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.111 -0400", hash_original_method = "2DEE4CFD7471B34E056063BEAD8FACC4", hash_generated_method = "2DEE4CFD7471B34E056063BEAD8FACC4")
         public AnimationHandler ()
         {

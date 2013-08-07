@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.text.Editable;
 import android.text.SpannableString;
@@ -8,10 +9,10 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.QwertyKeyListener;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.362 -0400", hash_original_field = "F17D9A2BC894EC426CD0CB6E97DFAED1", hash_generated_field = "DC05FA21DC7A9D97C12BF9C7B68E4314")

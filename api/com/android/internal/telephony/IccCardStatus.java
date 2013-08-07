@@ -1,12 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class IccCardStatus {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.013 -0400", hash_original_field = "B5278EC7E3332C34F3E9480E899A5F4E", hash_generated_field = "9AED67EEE170BD9DAD5D65F0CE4452F9")
@@ -38,7 +39,7 @@ public class IccCardStatus {
     }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.014 -0400", hash_original_method = "FA0602D88E7C21991E0740ABD82BDA04", hash_generated_method = "72BE9EF709F3C832120BBF9D308FF36F")
     public CardState getCardState() {
 CardState var2D1E0840F22322CEA6782A0E26A4A513_671860938 =         mCardState;
@@ -49,7 +50,7 @@ CardState var2D1E0840F22322CEA6782A0E26A4A513_671860938 =         mCardState;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.015 -0400", hash_original_method = "DF1BA1B7D815247B6DDD09A8150ACB8E", hash_generated_method = "02BB207B263861AF20FF00AF342B767E")
     public void setCardState(int state) {
         addTaint(state);
@@ -85,7 +86,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.016 -0400", hash_original_method = "EAD880236056BC0FED4A918911F5B846", hash_generated_method = "AB73C4CA0E71A3E41C28B9C17E852FE8")
     public PinState getUniversalPinState() {
 PinState var01A551BCF4C2957CEA82343EFB7BBFCF_440963501 =         mUniversalPinState;
@@ -96,7 +97,7 @@ PinState var01A551BCF4C2957CEA82343EFB7BBFCF_440963501 =         mUniversalPinSt
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.018 -0400", hash_original_method = "B5D48B53E99405CE8B767A81E3B60FC3", hash_generated_method = "F2903BDF88818C7AF00B186D3F51A04C")
     public void setUniversalPinState(int state) {
         addTaint(state);
@@ -150,7 +151,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.018 -0400", hash_original_method = "BB106B954443B302CECFC313EF7CB395", hash_generated_method = "61415327CE3CA7E678EE3161D8405AC4")
     public int getGsmUmtsSubscriptionAppIndex() {
         int var3E8DC37F731F198865915768FB05C367_2081406669 = (mGsmUmtsSubscriptionAppIndex);
@@ -161,7 +162,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.019 -0400", hash_original_method = "08BD9E6DFC873F65C3F784287907D5E3", hash_generated_method = "03968C0784B0953DB1DC116AD2BB207A")
     public void setGsmUmtsSubscriptionAppIndex(int gsmUmtsSubscriptionAppIndex) {
         mGsmUmtsSubscriptionAppIndex = gsmUmtsSubscriptionAppIndex;
@@ -170,7 +171,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.020 -0400", hash_original_method = "2A192AC2BA1E64618C17CC6A1074F688", hash_generated_method = "9D23834FF725F7D4DA22162D6806A26A")
     public int getCdmaSubscriptionAppIndex() {
         int varC0CBC2A81F0876A1D29E0DD01BDCB0D2_34484702 = (mCdmaSubscriptionAppIndex);
@@ -181,7 +182,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.021 -0400", hash_original_method = "891E989E2EC1A38AF8B37DBC8E8322CF", hash_generated_method = "6D1B0649C9CFAF249D62B999C50E4C43")
     public void setCdmaSubscriptionAppIndex(int cdmaSubscriptionAppIndex) {
         mCdmaSubscriptionAppIndex = cdmaSubscriptionAppIndex;
@@ -190,7 +191,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.021 -0400", hash_original_method = "66775E00E5C07C014B4CD9717DAD3963", hash_generated_method = "1683870C8168A82581D22C2E7083CE3C")
     public int getImsSubscriptionAppIndex() {
         int var396B4A6976B7DC9E2179C8BE7CC98B90_632977792 = (mImsSubscriptionAppIndex);
@@ -201,7 +202,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.023 -0400", hash_original_method = "F62298652BB86C33D896C0D398774EF1", hash_generated_method = "EDDFA44F41288CFC56DC7BAF3703C59D")
     public void setImsSubscriptionAppIndex(int imsSubscriptionAppIndex) {
         mImsSubscriptionAppIndex = imsSubscriptionAppIndex;
@@ -210,7 +211,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.023 -0400", hash_original_method = "73A878FBCD525FA581932F7C6A7C55D4", hash_generated_method = "E7460CA85130F916A0EB0776520084D7")
     public int getNumApplications() {
         int var360D6A6B07C55B04E0858861D2699CF8_1641683755 = (mNumApplications);
@@ -221,7 +222,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.024 -0400", hash_original_method = "6F974EA3499D29038B295A1FDDF2D7B1", hash_generated_method = "E0EE19C0A0A8F7AD8CB842C7430E7BAA")
     public void setNumApplications(int numApplications) {
         mNumApplications = numApplications;
@@ -230,7 +231,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.025 -0400", hash_original_method = "A2EAD3988F60EC73A08878F3FE639EE8", hash_generated_method = "16675080692E3ED5EA9853877242ED18")
     public void addApplication(IccCardApplication application) {
         addTaint(application.getTaint());
@@ -240,7 +241,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.025 -0400", hash_original_method = "57D1023FA4D5ED682F8C58AD605F19ED", hash_generated_method = "B06D144FF9E5AB33140B8377E8877202")
     public IccCardApplication getApplication(int index) {
         addTaint(index);
@@ -252,7 +253,7 @@ IccCardApplication var4EF5E4003948690D864DE616AE0C5D71_320087700 =         mAppl
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.026 -0400", hash_original_method = "29E2CBB78335356F6993D73415A74DA6", hash_generated_method = "7FC1B8733E1920EDB84A5634B5A82028")
     @Override
     public String toString() {
@@ -289,7 +290,7 @@ String var2460B846747F8B22185AD8BE722266A5_880815449 =         sb.toString();
         CARDSTATE_ABSENT,
         CARDSTATE_PRESENT,
         CARDSTATE_ERROR;
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isCardPresent() {
             return this == CARDSTATE_PRESENT;
         }
@@ -303,15 +304,15 @@ String var2460B846747F8B22185AD8BE722266A5_880815449 =         sb.toString();
         PINSTATE_DISABLED,
         PINSTATE_ENABLED_BLOCKED,
         PINSTATE_ENABLED_PERM_BLOCKED;
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isPermBlocked() {
             return this == PINSTATE_ENABLED_PERM_BLOCKED;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isPinRequired() {
             return this == PINSTATE_ENABLED_NOT_VERIFIED;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isPukRequired() {
             return this == PINSTATE_ENABLED_BLOCKED;
         }

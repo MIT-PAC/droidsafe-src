@@ -1,12 +1,13 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Iterator;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class CursorJoiner implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
     private Cursor mCursorLeft;
@@ -57,6 +58,7 @@ public final class CursorJoiner implements Iterator<CursorJoiner.Result>, Iterab
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:44.224 -0400", hash_original_method = "9B0D8B6CEE5AA7BD346EB9D2E041D4FA", hash_generated_method = "08DB92CFE303949AA36FBF8D1140F053")
     private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
         addTaint(columnNames[0].getTaint());
@@ -126,6 +128,7 @@ for(int i = 0;i < columnNames.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void populateValues(String[] values, Cursor cursor, int[] columnIndicies,
             int startingIndex) {
         assert startingIndex == 0 || startingIndex == 1;
@@ -135,7 +138,7 @@ for(int i = 0;i < columnNames.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void incrementCursors() {
        mCursorLeft.moveToNext();
        mCursorRight.moveToNext();

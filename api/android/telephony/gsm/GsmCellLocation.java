@@ -1,12 +1,13 @@
 package android.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.telephony.CellLocation;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GsmCellLocation extends CellLocation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.259 -0400", hash_original_field = "B2F9C701F6B9FA98A906A1D27571667E", hash_generated_field = "E1DF72766EAA7700CC09E2EF71762BF7")
@@ -100,7 +101,7 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.264 -0400", hash_original_method = "C81AA559E9201CC662BD56FE57EC5612", hash_generated_method = "FBA4344E835EEEB4D9AAE7A0BA923E04")
     public void setPsc(int psc) {
         mPsc = psc;
@@ -172,6 +173,7 @@ String varF33E5A404114ABDA40FB2431CC5ECD4B_1481956726 =         "["+ mLac + "," 
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean equalsHandlesNulls(Object a, Object b) {
         return (a == null) ? (b == null) : a.equals (b);
     }
@@ -190,7 +192,7 @@ String varF33E5A404114ABDA40FB2431CC5ECD4B_1481956726 =         "["+ mLac + "," 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.270 -0400", hash_original_method = "4AB62BA2C67CFF55264B23F8CEEE7482", hash_generated_method = "82480DC33D1CE757028DC116E1817963")
     public boolean isEmpty() {
         boolean varA4BAC2586B510062364329D68E1FF9DE_1045194711 = ((mLac == -1 && mCid == -1 && mPsc == -1));

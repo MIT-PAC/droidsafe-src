@@ -1,13 +1,14 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
 import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class BasicDomainHandler implements CookieAttributeHandler {
     

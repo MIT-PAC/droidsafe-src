@@ -1,15 +1,16 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
 
 import libcore.io.Streams;
 import libcore.util.EmptyArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ClientKeyExchange extends Message {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.273 -0400", hash_original_field = "B9F55CF4379EB16BB06D0EC8FED510DF", hash_generated_field = "A8EC1747D3C20FCA9F3B799F3E21511E")

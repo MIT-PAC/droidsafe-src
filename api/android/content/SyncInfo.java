@@ -1,13 +1,14 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SyncInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.951 -0400", hash_original_field = "A6E80D6465C4F39AC517335BD9346D44", hash_generated_field = "A9902B6EC2628AF68CD4117B511E65F0")
@@ -23,6 +24,7 @@ public class SyncInfo implements Parcelable {
 
     public long startTime;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.956 -0400", hash_original_method = "08CB15341E378B91930C38215FF9CE0F", hash_generated_method = "E4A50A663AFC7854E79A004CB1D284BE")
       SyncInfo(int authorityId, Account account, String authority,
             long startTime) {
@@ -38,6 +40,7 @@ public class SyncInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.959 -0400", hash_original_method = "C517E1FF2489673370FA690A620D127C", hash_generated_method = "E03442F5CEB20545221B8CC457780884")
       SyncInfo(Parcel parcel) {
         authorityId = parcel.readInt();
@@ -52,7 +55,7 @@ public class SyncInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.960 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C081DBFB84FA758D8A38B3D2F34AA8B0")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1092651850 = (0);
@@ -63,7 +66,7 @@ public class SyncInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.961 -0400", hash_original_method = "1C5B91DE7E7E8D04DC252E4EE5F1DBAA", hash_generated_method = "3A08AB990C036BE215594BA3B7F9A0CC")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);

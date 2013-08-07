@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.graphics.Rect;
@@ -14,10 +15,10 @@ import android.view.View.MeasureSpec;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ListPopupWindow {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.698 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -225,7 +226,7 @@ public class ListPopupWindow {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.705 -0400", hash_original_method = "B51F6D3B2B582EB2529861E286FFBDAA", hash_generated_method = "C259F7A19612B2ACBFCE0BD237FE9AAB")
     public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         mForceIgnoreOutsideTouch = forceIgnoreOutsideTouch;
@@ -234,7 +235,7 @@ public class ListPopupWindow {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.705 -0400", hash_original_method = "0D7558B683A811B4FB459E3A92DCFACB", hash_generated_method = "6C5818E602B53931F3E1B0DBF55A9DBB")
     public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
         mDropDownAlwaysVisible = dropDownAlwaysVisible;
@@ -243,7 +244,7 @@ public class ListPopupWindow {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.705 -0400", hash_original_method = "452BC62A357E5A143092E81C66B09D6A", hash_generated_method = "71C10E5B8AD37E4FA0FC1DA201327FC0")
     public boolean isDropDownAlwaysVisible() {
         boolean var943ED63B762C4367544DC0A05775D6AA_1394339227 = (mDropDownAlwaysVisible);
@@ -646,7 +647,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_1358605475 =         mDropDownAnchorVie
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.711 -0400", hash_original_method = "202D4492803683737094012DDF6DD86F", hash_generated_method = "E7D37E557811E1F27F4B96C54D2FAFEC")
     private void removePromptView() {
         if(mPromptView != null)        
@@ -1067,7 +1068,7 @@ switch(keyCode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.724 -0400", hash_original_method = "F5C740553BB47CFEBEC052FD2A1DEFBA", hash_generated_method = "F19212F524157543401757E3253BD08A")
     private int buildDropDown() {
         ViewGroup dropDownView;

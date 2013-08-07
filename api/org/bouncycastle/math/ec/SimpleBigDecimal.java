@@ -1,12 +1,13 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class SimpleBigDecimal {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.754 -0400", hash_original_field = "33A2DB2A239C5BAAA46376495EE5F6ED", hash_generated_field = "4CD174344F65D3883705CA71073A947D")
@@ -36,6 +37,7 @@ class SimpleBigDecimal {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.756 -0400", hash_original_method = "BB0449F02A6AA340B8F9AEE6846C1B89", hash_generated_method = "3D0C818EB173578CDB4338C6D8735F35")
     private  SimpleBigDecimal(SimpleBigDecimal limBigDec) {
         bigInt = limBigDec.bigInt;
@@ -51,6 +53,7 @@ class SimpleBigDecimal {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.757 -0400", hash_original_method = "C3E845BC0594ECAC644A3338EF26C373", hash_generated_method = "180A2EF7772396F96E75B4E7F3701CCA")
     private void checkScale(SimpleBigDecimal b) {
         addTaint(b.getTaint());

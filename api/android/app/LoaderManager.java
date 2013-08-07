@@ -1,8 +1,9 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import android.content.Loader;
 import android.os.Bundle;
@@ -105,6 +106,7 @@ class LoaderManagerImpl extends LoaderManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.014 -0400", hash_original_method = "31DF1B394D718AFF7F9D42E1B24A1D9F", hash_generated_method = "640ECB33088DD0E9E849989CEECEDAD6")
     private LoaderInfo createLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {
@@ -125,6 +127,7 @@ LoaderInfo var43CF3338FDBA93597A9562D3166E9DC4_1959797088 =         info;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.015 -0400", hash_original_method = "D2BDC915DCB9CB038EA75210255617B9", hash_generated_method = "621CDE6E292FB8601D1789D1E426B383")
     private LoaderInfo createAndInstallLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {

@@ -1,13 +1,15 @@
 package org.apache.http.protocol;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class HTTP {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.301 -0400", hash_original_method = "3A6FCD823D5B25065B735A0BBABE71E6", hash_generated_method = "A1337A31689D4A05956686C0F56DC7FB")
     private  HTTP() {
         // ---------- Original Method ----------

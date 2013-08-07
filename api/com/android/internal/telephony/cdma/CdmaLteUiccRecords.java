@@ -1,6 +1,7 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_TEST_CSIM;
 
@@ -24,10 +25,10 @@ import com.android.internal.telephony.gsm.SIMRecords;
 import com.android.internal.telephony.ims.IsimRecords;
 import com.android.internal.telephony.ims.IsimUiccRecords;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class CdmaLteUiccRecords extends SIMRecords {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.857 -0400", hash_original_field = "EAD5894CADB8C58D92F20ECA3BE46145", hash_generated_field = "0EA5A23D0B103EB32088F2AFA5A81D56")
@@ -58,6 +59,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
 
     private final IsimUiccRecords mIsimUiccRecords = new IsimUiccRecords();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.858 -0400", hash_original_method = "1EEE248672EF4A8C6E78EC57BC4B596E", hash_generated_method = "2D882D7A9673974FCDBD7A2C4A677D9E")
     public  CdmaLteUiccRecords(PhoneBase p) {
         super(p);
@@ -66,7 +68,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.858 -0400", hash_original_method = "2DE8400081AD5D0DFDE4A5A335B40E41", hash_generated_method = "B7D227E03E096434627AED5838ED4D4C")
     @Override
     protected void onRecordLoaded() {
@@ -92,6 +94,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.859 -0400", hash_original_method = "E8EE1C045698968684402EFF7D154AD0", hash_generated_method = "EF8A1A3F87EF17E62252C665538BB192")
     @Override
     protected void onAllRecordsLoaded() {
@@ -148,7 +151,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.861 -0400", hash_original_method = "097B9B51B341025D2C6281D6E7202450", hash_generated_method = "D8B485151DC04C36A1C4737907DF22F3")
     private int adjstMinDigits(int digits) {
         addTaint(digits);
@@ -168,6 +171,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.861 -0400", hash_original_method = "8ACEB43E18F76CD22FB9AEC49B26074B", hash_generated_method = "64E5924418210E0B9742CA09B82954C2")
     private void onGetCSimEprlDone(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -192,6 +196,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.862 -0400", hash_original_method = "6650B0E8C5FD9109D896567DAC7169B6", hash_generated_method = "B33DD1884BB9E62900073EF24B64FE00")
     private void setLocaleFromCsim() {
         String prefLang = null;
@@ -237,6 +242,7 @@ public final class CdmaLteUiccRecords extends SIMRecords {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.863 -0400", hash_original_method = "389005660E8D32B57FD0D16BC435823F", hash_generated_method = "7D688FF6C7A21385B1AA202AB384E3D0")
     private String findBestLanguage(byte[] languages) {
         addTaint(languages[0]);
@@ -296,6 +302,7 @@ String var540C13E9E156B687226421B24F2DF178_2129984190 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.863 -0400", hash_original_method = "8715F9DE01323914473DFA590E77B6CC", hash_generated_method = "AD7FBED3E995ADE5916F56A3AE0B337B")
     @Override
     protected void log(String s) {
@@ -306,6 +313,7 @@ String var540C13E9E156B687226421B24F2DF178_2129984190 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.864 -0400", hash_original_method = "2E582D58F93B3D53A9755A5359649796", hash_generated_method = "01262007AEE252593CEC27CC6EFDD900")
     @Override
     protected void loge(String s) {
@@ -315,7 +323,7 @@ String var540C13E9E156B687226421B24F2DF178_2129984190 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.864 -0400", hash_original_method = "0A56566EECB0365BEB6D3F46827C5157", hash_generated_method = "D900CC36C110072429B7B16EAD80FD60")
     public String getMdn() {
 String var393C1D26E06E9DFB5EBF371AB98AA875_488487703 =         mMdn;
@@ -326,7 +334,7 @@ String var393C1D26E06E9DFB5EBF371AB98AA875_488487703 =         mMdn;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.864 -0400", hash_original_method = "80A82BB385CD03C9B3FC60961865E100", hash_generated_method = "A585DCFD62F9397CBC90F3B435F0D62C")
     public String getMin() {
 String varFF498CE7DB7B276D58AE6690DD82E33E_1003979442 =         mMin;
@@ -337,7 +345,7 @@ String varFF498CE7DB7B276D58AE6690DD82E33E_1003979442 =         mMin;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.864 -0400", hash_original_method = "063CD09EDCF873A8EE48D2C85BBEA4D0", hash_generated_method = "D52459D757CB8F396C0936C325D2BAEB")
     public String getSid() {
 String varFD2D431497481B2BDF28AE8346814D54_1335685745 =         mHomeSystemId;
@@ -348,7 +356,7 @@ String varFD2D431497481B2BDF28AE8346814D54_1335685745 =         mHomeSystemId;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.865 -0400", hash_original_method = "884F79DB94780A6DBB795ED0D5CD48AE", hash_generated_method = "A7A3F2029C549A69756D7A17B7507311")
     public String getNid() {
 String var3934B37C896EBDACECB487BCC2589F5E_1891885324 =         mHomeNetworkId;
@@ -359,7 +367,7 @@ String var3934B37C896EBDACECB487BCC2589F5E_1891885324 =         mHomeNetworkId;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.865 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "888F425F48059355ED91320E64F26A37")
     public String getPrlVersion() {
 String varF0DFA2A5AE60E78166448A9BF5899625_429671421 =         mPrlVersion;
@@ -370,7 +378,7 @@ String varF0DFA2A5AE60E78166448A9BF5899625_429671421 =         mPrlVersion;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.865 -0400", hash_original_method = "C58B4A883B983444DBA9A30FEBE0DD9B", hash_generated_method = "2D513424D404887CFB476E4B42F0D6F8")
     public boolean getCsimSpnDisplayCondition() {
         boolean var2FB84317EB0764E4B104D72016521CD2_81039904 = (mCsimSpnDisplayCondition);
@@ -381,7 +389,7 @@ String varF0DFA2A5AE60E78166448A9BF5899625_429671421 =         mPrlVersion;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.865 -0400", hash_original_method = "C3918CF1E72E747DA54324AC57BD2CA6", hash_generated_method = "4D2797ECBCA7CD99737332176B676312")
     @Override
     public IsimRecords getIsimRecords() {
@@ -393,7 +401,7 @@ IsimRecords var9FA4504138E211DC1245B2D89A614D67_411058342 =         mIsimUiccRec
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.866 -0400", hash_original_method = "80E64791B17F9A8D9A19FB8366ED7D81", hash_generated_method = "73A065D2C8F8988D08C97DD66E796D98")
     @Override
     public boolean isProvisioned() {
@@ -425,6 +433,7 @@ IsimRecords var9FA4504138E211DC1245B2D89A614D67_411058342 =         mIsimUiccRec
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.866 -0400", hash_original_method = "B5878332DE43EFB46C0A76BAF3DD0FEF", hash_generated_method = "0579C6C822FBF8984E53EDBE456A7A65")
     @Override
     protected int dispatchGsmMessage(SmsMessageBase message) {
@@ -446,7 +455,7 @@ IsimRecords var9FA4504138E211DC1245B2D89A614D67_411058342 =         mIsimUiccRec
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.867 -0400", hash_original_method = "46D131BE59CA4E55BA893DF6F7101791", hash_generated_method = "E94999271A5FCD7664B6A9E6CF14891C")
         public String getEfName() {
 String var513A1894234E60DB93F91E2EBB321818_1499045688 =             "EF_PL";
@@ -457,6 +466,7 @@ String var513A1894234E60DB93F91E2EBB321818_1499045688 =             "EF_PL";
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.867 -0400", hash_original_method = "10BD1E11D2518DCC1D89C745EA9F4059", hash_generated_method = "6F05EEEE9B66E5E88566E17DF02079AC")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -483,7 +493,7 @@ String var513A1894234E60DB93F91E2EBB321818_1499045688 =             "EF_PL";
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.867 -0400", hash_original_method = "43CB272303B94BD2BDA1313C04660298", hash_generated_method = "2436DAB2CB134856E06FC2788865909E")
         public String getEfName() {
 String var0C55B213DB3CB1F3FA5AF7F0C5D26F41_1822955296 =             "EF_CSIM_LI";
@@ -494,7 +504,7 @@ String var0C55B213DB3CB1F3FA5AF7F0C5D26F41_1822955296 =             "EF_CSIM_LI"
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.868 -0400", hash_original_method = "450EAA4EF2F439560DA5559C99B4124D", hash_generated_method = "88B08C9FED1AE20B3DB490C5AD3B88AD")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -569,7 +579,7 @@ switch(mEFli[i+1]){
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.869 -0400", hash_original_method = "E361E237BF5D8C3526DBBFADBF2588AE", hash_generated_method = "F37C0C5E86243113D38E74CFBF63E97B")
         public String getEfName() {
 String varA4C3CE1F1A7611DA5E2A3192BC7D3F91_1618482883 =             "EF_CSIM_SPN";
@@ -580,6 +590,7 @@ String varA4C3CE1F1A7611DA5E2A3192BC7D3F91_1618482883 =             "EF_CSIM_SPN
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.870 -0400", hash_original_method = "57EF16BB2157E0EC6AC6B1903C815AC5", hash_generated_method = "0408F2161CAC48C34A96B232D2FF5FC7")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -650,7 +661,7 @@ switch(encoding){
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.871 -0400", hash_original_method = "6DF96F6BE7868B2EF5D1FBEB4BBED3CD", hash_generated_method = "D1333D4B53725EF6CCEA9FEE794CFBFF")
         public String getEfName() {
 String varF29B05E9A4381212A0376D6296361B0B_2054969289 =             "EF_CSIM_MDN";
@@ -661,6 +672,7 @@ String varF29B05E9A4381212A0376D6296361B0B_2054969289 =             "EF_CSIM_MDN
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.871 -0400", hash_original_method = "A47BCAD22D310B4F4C4F5C35578109CD", hash_generated_method = "CA9D4C2BFA58BEA9B688DC03C0B83857")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -694,7 +706,7 @@ String varF29B05E9A4381212A0376D6296361B0B_2054969289 =             "EF_CSIM_MDN
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.872 -0400", hash_original_method = "076F279972298500654A9EE948D0453D", hash_generated_method = "A51264E35B9EF0EC1A471F186FCAA6DB")
         public String getEfName() {
 String varF98FD8D49A0E6522E0E3E4E510CDC037_133501469 =             "EF_CSIM_IMSIM";
@@ -705,6 +717,7 @@ String varF98FD8D49A0E6522E0E3E4E510CDC037_133501469 =             "EF_CSIM_IMSI
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.872 -0400", hash_original_method = "17F309FAD2B89ABBF6BD1F73DBFF98C1", hash_generated_method = "723A15A32CD21C1E5B1E69E16FCBB0BB")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -756,7 +769,7 @@ String varF98FD8D49A0E6522E0E3E4E510CDC037_133501469 =             "EF_CSIM_IMSI
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.873 -0400", hash_original_method = "72D2F700CD05B7B8BF5E2816D58B5E15", hash_generated_method = "2F275A5B255EBA93E6D9199CA64E371B")
         public String getEfName() {
 String varB3406108D299562EFF46E9471973B52E_36991271 =             "EF_CSIM_CDMAHOME";
@@ -813,7 +826,7 @@ for(byte[] data : dataList)
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.874 -0400", hash_original_method = "04C305ABDF4F5B734468C2FED0130506", hash_generated_method = "EC15DEA40682F96D70A33B476F0B9078")
         public String getEfName() {
 String var00C958484E51A3739F90563221AC3032_1500332999 =             "EF_CSIM_EPRL";
@@ -824,6 +837,7 @@ String var00C958484E51A3739F90563221AC3032_1500332999 =             "EF_CSIM_EPR
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.874 -0400", hash_original_method = "B4E1B568EC9A83A605CFFEF5F57F8030", hash_generated_method = "7EDB07F533D6B95CA1D8B0FAA95AED92")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected

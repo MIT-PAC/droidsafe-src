@@ -1,6 +1,7 @@
 package com.android.internal.telephony.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 
 import android.content.Context;
@@ -9,7 +10,7 @@ import android.util.Log;
 
 import com.android.internal.telephony.PhoneNotifier;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class SipPhoneFactory {
     
@@ -20,6 +21,7 @@ public class SipPhoneFactory {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static SipPhone makePhone(String sipUri, Context context,
             PhoneNotifier phoneNotifier) {
         try {

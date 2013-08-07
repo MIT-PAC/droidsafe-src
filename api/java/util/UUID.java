@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -10,10 +11,10 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 import libcore.io.Memory;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class UUID implements Serializable, Comparable<UUID> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.653 -0400", hash_original_field = "6D865F6ED4C841DE5F4163617E9ED5E0", hash_generated_field = "E05311E58F38272D7C9B90EC864288E6")
@@ -54,7 +55,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.656 -0400", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "4165E6205ECBE08F0A147C73A4BC69BE")
     private void init() {
         int msbHash = (int) (mostSigBits ^ (mostSigBits >>> 32));
@@ -116,7 +117,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static UUID makeUuid(byte[] hash, int version) {
         long msb = Memory.peekLong(hash, 0, ByteOrder.BIG_ENDIAN);
         long lsb = Memory.peekLong(hash, 8, ByteOrder.BIG_ENDIAN);
@@ -415,7 +416,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1985289829 =         builder.toString
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.661 -0400", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "9B727D193306F40CE5A6C46DD735C1D4")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {

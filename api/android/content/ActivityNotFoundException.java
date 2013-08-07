@@ -1,7 +1,8 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class ActivityNotFoundException extends RuntimeException {
     

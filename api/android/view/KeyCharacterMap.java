@@ -1,14 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.RemoteException;
 import android.util.AndroidRuntimeException;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class KeyCharacterMap {
@@ -19,7 +20,7 @@ public class KeyCharacterMap {
 
     private int mPtr;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.171 -0400", hash_original_method = "F25FFC35847D9654A71D98E78C4759D8", hash_generated_method = "BA7BA688730B5A8F24D16B2D5566D72A")
     private  KeyCharacterMap(int deviceId, int ptr) {
         mDeviceId = deviceId;
@@ -165,7 +166,7 @@ public class KeyCharacterMap {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.177 -0400", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "839714433C1AB1652906FEC18CC2A616")
     public boolean getFallbackAction(int keyCode, int metaState,
             FallbackAction outFallbackAction) {

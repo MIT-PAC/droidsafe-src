@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,10 +20,10 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.Process;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ContentProvider implements ComponentCallbacks2 {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.783 -0400", hash_original_field = "EC9A3144C1687F6FFFFC7AC4B8A997AD", hash_generated_field = "64C2E29345D1A72D78C884235FF4120B")
@@ -71,6 +72,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ContentProvider coerceToLocalContentProvider(
             IContentProvider abstractInterface) {
         if (abstractInterface instanceof Transport) {
@@ -719,7 +721,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_142278736 =             
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.823 -0400", hash_original_method = "E57399204B1619B526E92C84388A407F", hash_generated_method = "FAE33D2F349D1E8E2627A2CD2A10103B")
         private void enforceReadPermission(Uri uri) {
             addTaint(uri.getTaint());
@@ -777,7 +779,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_142278736 =             
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.826 -0400", hash_original_method = "329C06E4068EEDF4ECCAEC3BA5AB45CE", hash_generated_method = "2C24E8671BCBD9C82D003E6BC222B131")
         private boolean hasWritePermission(Uri uri) {
             addTaint(uri.getTaint());
@@ -838,7 +840,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_142278736 =             
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.827 -0400", hash_original_method = "7CEC600BB70206A61DA89C0C0D2014C1", hash_generated_method = "699A190FB6B3D12861B2F3BF1336EEE8")
         private void enforceWritePermission(Uri uri) {
             addTaint(uri.getTaint());

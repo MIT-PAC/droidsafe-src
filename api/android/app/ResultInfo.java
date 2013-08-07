@@ -1,13 +1,14 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ResultInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.528 -0400", hash_original_field = "344245CF6F3FB0EF7E71D82B314565C8", hash_generated_field = "9751D4E955A56AA5356026C082D57D65")
@@ -23,7 +24,7 @@ public class ResultInfo implements Parcelable {
 
     public Intent mData;
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.529 -0400", hash_original_method = "5613E3DAA5C00F0B9643F3F13EB312FC", hash_generated_method = "7996DAB0AC864885B2CBAC135A1A1795")
     public  ResultInfo(String resultWho, int requestCode, int resultCode,
             Intent data) {
@@ -39,6 +40,7 @@ public class ResultInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.535 -0400", hash_original_method = "96F78670445F12E6C74BEEDC3D49BD9C", hash_generated_method = "74ABBA3DC38C7AE74C1C79476572E0DA")
     public  ResultInfo(Parcel in) {
         mResultWho = in.readString();
@@ -64,6 +66,7 @@ public class ResultInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.536 -0400", hash_original_method = "45459039AB19A0482EB7D8EB8705A318", hash_generated_method = "D303D66D35E819D921E93D20CC426FC1")
     public String toString() {
 String var503AE12A5260321A6845A1C1B1307BB1_96201398 =         "ResultInfo{who=" + mResultWho + ", request=" + mRequestCode
@@ -76,7 +79,7 @@ String var503AE12A5260321A6845A1C1B1307BB1_96201398 =         "ResultInfo{who=" 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.537 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "60215E93B550401EA3DA3BD6E17567BB")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1609171456 = (0);
@@ -87,6 +90,7 @@ String var503AE12A5260321A6845A1C1B1307BB1_96201398 =         "ResultInfo{who=" 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.537 -0400", hash_original_method = "C00CE2610591477E96DECA81C0021A12", hash_generated_method = "1A24F76E58C25CC707F7FB0D840D498A")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

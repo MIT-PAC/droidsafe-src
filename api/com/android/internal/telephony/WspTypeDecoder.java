@@ -1,12 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WspTypeDecoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.606 -0400", hash_original_field = "87B087375EA22EC6DF3C6E6687D91C30", hash_generated_field = "8290EB0F02CFA38CB47A5B024440BD48")
@@ -25,6 +26,7 @@ public class WspTypeDecoder {
 
     HashMap<String, String> contentParameters;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.607 -0400", hash_original_method = "5272930664D9B8230407C0BE43B28A37", hash_generated_method = "64FBC31D7C3F545B7475044B7FFE92E1")
     public  WspTypeDecoder(byte[] pdu) {
         wspData = pdu;
@@ -33,6 +35,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.608 -0400", hash_original_method = "AD9CBD08D1B6621762343776ED03C203", hash_generated_method = "B8910E62FFEAB774C32112D4836BFD6A")
     public boolean decodeTextString(int startIndex) {
         int index = startIndex;
@@ -68,6 +71,7 @@ public class WspTypeDecoder {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.609 -0400", hash_original_method = "3D6D7F94DFC73BF2A0EB1C158A6FC357", hash_generated_method = "F1D2ED3C3B31F5EF17A8AB7965FD27B5")
     public boolean decodeTokenText(int startIndex) {
         int index = startIndex;
@@ -92,7 +96,7 @@ public class WspTypeDecoder {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.611 -0400", hash_original_method = "83D32C5BCB0549BFFFB2F2ED18850933", hash_generated_method = "965AF126C3D413FAF7A0F61A23444CE6")
     public boolean decodeShortInteger(int startIndex) {
         if((wspData[startIndex] & 0x80) == 0)        
@@ -116,7 +120,7 @@ public class WspTypeDecoder {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.613 -0400", hash_original_method = "B3FA7CC1597D63764316082CF6F63FFB", hash_generated_method = "0EA0AAB10433C6FEDCA8B1FF6C7AF8A3")
     public boolean decodeLongInteger(int startIndex) {
         int lengthMultiOctet = wspData[startIndex] & 0xff;
@@ -149,6 +153,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.614 -0400", hash_original_method = "7B23A3D94A21E730AAD2DD6C619E091C", hash_generated_method = "ABAB61B9F20BF50C08D1E06978F9E71D")
     public boolean decodeIntegerValue(int startIndex) {
         addTaint(startIndex);
@@ -169,7 +174,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.615 -0400", hash_original_method = "C4B929220DC6CCE2C4298A937E6A511E", hash_generated_method = "6A0F0673CF1B84F0E983275290B55696")
     public boolean decodeUintvarInteger(int startIndex) {
         int index = startIndex;
@@ -207,6 +212,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.616 -0400", hash_original_method = "EAB4DD919BF3841A91E98F99540A239A", hash_generated_method = "B6C0AA6F6D2206B911A30C095FE8A116")
     public boolean decodeValueLength(int startIndex) {
         if((wspData[startIndex] & 0xff) > WAP_PDU_LENGTH_QUOTE)        
@@ -243,6 +249,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.617 -0400", hash_original_method = "EF88FEA15C53B4BFAD6A7F9FD25E8828", hash_generated_method = "7DC7FD1FCDC13324D5F20750B0FD20F0")
     public boolean decodeExtensionMedia(int startIndex) {
         int index = startIndex;
@@ -275,6 +282,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.618 -0400", hash_original_method = "996125374865CC4B3A630D89D596F543", hash_generated_method = "09FA388F3EEE793CDD4C78D8F49950DB")
     public boolean decodeConstrainedEncoding(int startIndex) {
         addTaint(startIndex);
@@ -297,6 +305,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.619 -0400", hash_original_method = "DFA72F248348DAACE561F2A4664CE110", hash_generated_method = "3E72E33A047A0A60B078018A80E18AB6")
     public boolean decodeContentType(int startIndex) {
         addTaint(startIndex);
@@ -372,6 +381,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.622 -0400", hash_original_method = "C75EA04BE4FCD731CE2D1E2104C2BFC7", hash_generated_method = "C3913431D681E28E419FC65A2CB47484")
     private boolean readContentParameters(int startIndex, int leftToRead, int accumulator) {
         addTaint(leftToRead);
@@ -473,7 +483,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.624 -0400", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "BD4707CA292BD18C168EEB268DBAE654")
     private boolean decodeNoValue(int startIndex) {
         addTaint(startIndex);
@@ -500,6 +510,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.625 -0400", hash_original_method = "CE7AFD5926883ED0297E0E8EC7A7D731", hash_generated_method = "8EF9E10B622BAA7271DF6C50594218BC")
     private void expandWellKnownMimeType() {
         if(stringValue == null)        
@@ -521,6 +532,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.626 -0400", hash_original_method = "6DB17C60367E4FD9EA73FA0EFFFEAB7B", hash_generated_method = "083C80CF102275705AAC6F8F7360D41F")
     public boolean decodeContentLength(int startIndex) {
         addTaint(startIndex);
@@ -532,6 +544,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.626 -0400", hash_original_method = "B28E495795E9250815D18C95A5C9BAB3", hash_generated_method = "44C2B306D4F565BAA502230534C03CFF")
     public boolean decodeContentLocation(int startIndex) {
         addTaint(startIndex);
@@ -543,6 +556,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.626 -0400", hash_original_method = "AEF025906C652297B5F2A3BDE834B061", hash_generated_method = "A2985885F80222D9718DCEC126B5CBB3")
     public boolean decodeXWapApplicationId(int startIndex) {
         addTaint(startIndex);
@@ -565,6 +579,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.627 -0400", hash_original_method = "BA996E98F19E8451E86BBFBC5F7B64F6", hash_generated_method = "AD454604267AD46548BAFDAA46252C91")
     public boolean seekXWapApplicationId(int startIndex, int endIndex) {
         addTaint(endIndex);
@@ -655,6 +670,7 @@ for(index = startIndex;index <= endIndex;)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "ABD97DC4CA444BF0EFE71949DA3B86E2", hash_generated_method = "79DB56A867221F9ED52A47B7635B1796")
     public boolean decodeXWapContentURI(int startIndex) {
         addTaint(startIndex);
@@ -666,6 +682,7 @@ for(index = startIndex;index <= endIndex;)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "E928D18936C3E8793DB3C75F90F53AE7", hash_generated_method = "E4E29F649124B7EAF89793C99CCB200C")
     public boolean decodeXWapInitiatorURI(int startIndex) {
         addTaint(startIndex);
@@ -677,7 +694,7 @@ for(index = startIndex;index <= endIndex;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "6FCC12FCB3545B4E340C3DDB54E32561")
     public int getDecodedDataLength() {
         int var8099F621661FD70FB137BCB82175502F_1632478166 = (dataLength);
@@ -688,7 +705,7 @@ for(index = startIndex;index <= endIndex;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "5622257285D6967F10ECD8972521083B")
     public long getValue32() {
         long var7AD31D85AAE2172A581FDA7D1EAB5B0A_996198005 = (unsigned32bit);
@@ -699,7 +716,7 @@ for(index = startIndex;index <= endIndex;)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "22720B3F34D6AC4935C384E2FCD145DA")
     public String getValueString() {
 String varFF91E0F0881095C075E75F0EB79E58BA_1726284603 =         stringValue;
@@ -710,7 +727,7 @@ String varFF91E0F0881095C075E75F0EB79E58BA_1726284603 =         stringValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "F1FCA07D8088CB011EA83E53B391A96C", hash_generated_method = "A35E21BE85DF0CA6CA8C65173EF056A8")
     public HashMap<String, String> getContentParameters() {
 HashMap<String, String> varC17DA6B8CB924FDB4B9347F320DA03D2_1739051153 =         contentParameters;

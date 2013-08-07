@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
 import android.annotation.SdkConstant;
@@ -20,10 +21,10 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.VolumePanel;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AudioManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.020 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -67,6 +68,7 @@ public class AudioManager {
 
     private IBinder mICallBack = new Binder();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.022 -0400", hash_original_method = "42BDED457A05AA4B5FB652FAAB5F6EE7", hash_generated_method = "53D81A41BE30830265A3A3C7E43BFA2F")
     public  AudioManager(Context context) {
         mContext = context;
@@ -77,7 +79,7 @@ public class AudioManager {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static IAudioService getService() {
         if (sService != null) {
             return sService;
@@ -88,7 +90,7 @@ public class AudioManager {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.024 -0400", hash_original_method = "F1E14361B214327A2A0E751697355D64", hash_generated_method = "93E7042DC59C6447A160431FAEAF78D7")
     public void preDispatchKeyEvent(int keyCode, int stream) {
         addTaint(stream);
@@ -112,7 +114,7 @@ public class AudioManager {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.024 -0400", hash_original_method = "CE7E2CE8B01D9CBEAD319BD036F134E9", hash_generated_method = "1CFCCD38F01A2E74BC905D91B1239BB1")
     public void handleKeyDown(int keyCode, int stream) {
         addTaint(stream);
@@ -158,7 +160,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.024 -0400", hash_original_method = "4690E566A0F7A4762BD0C4814376C399", hash_generated_method = "0BD8243AAE0632D27712628A1FB0841C")
     public void handleKeyUp(int keyCode, int stream) {
         addTaint(stream);
@@ -297,7 +299,7 @@ switch(keyCode){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isValidRingerMode(int ringerMode) {
         if (ringerMode < 0 || ringerMode > RINGER_MODE_MAX) {
             return false;
@@ -360,6 +362,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.026 -0400", hash_original_method = "16B6103C3931EF2B68A7F288EB86CE17", hash_generated_method = "D3E272CB260BB30EDBB05C946E7C2A63")
     public int getLastAudibleStreamVolume(int streamType) {
         addTaint(streamType);
@@ -483,7 +486,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.028 -0400", hash_original_method = "740B30F7577C3CCB183F4420A2F982C5", hash_generated_method = "B17047A106DE87A1D48A2DBBA9558191")
     public boolean isStreamMute(int streamType) {
         addTaint(streamType);
@@ -511,7 +514,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.028 -0400", hash_original_method = "7B6A5349C22F082B0BD2BFA86A0EB11D", hash_generated_method = "F0344FF33A696923D229AEAEBE4CF048")
     public void forceVolumeControlStream(int streamType) {
         mVolumeControlStream = streamType;
@@ -922,7 +925,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.032 -0400", hash_original_method = "FB00D8D09EE0A42D5615E8AEAC323753", hash_generated_method = "FB45A70665C308E6B6629B3B0ADAEE6C")
     @Deprecated
     public void setParameter(String key, String value) {
@@ -1020,6 +1023,7 @@ String var08287DC451D1CC3521112D759BA21CFC_850931796 =         AudioSystem.getPa
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.033 -0400", hash_original_method = "91B9C921984750C333F4A3D84250AE14", hash_generated_method = "8CCAC163CFA014F328CFD41569368BF3")
     private boolean querySoundEffectsEnabled() {
         boolean var9B4F972891AEAA68B2C06EE10E2823FB_1011640793 = (Settings.System.getInt(mContext.getContentResolver(), Settings.System.SOUND_EFFECTS_ENABLED, 0) != 0);
@@ -1070,6 +1074,7 @@ String var08287DC451D1CC3521112D759BA21CFC_850931796 =         AudioSystem.getPa
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.033 -0400", hash_original_method = "19FA7B2AF0BC01FED1DAA16E011C492D", hash_generated_method = "74B01FDC530C6782AD6178CFAA19C66D")
     private OnAudioFocusChangeListener findFocusListener(String id) {
         addTaint(id.getTaint());
@@ -1081,6 +1086,7 @@ OnAudioFocusChangeListener varE98DA20F913E1F55E3FD9128257B23DB_2048942170 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.034 -0400", hash_original_method = "F0553D3D8E69373BA6CE7B065E0EBE95", hash_generated_method = "8BAE6A94C816F711D6E416BD2CC229D0")
     private String getIdForAudioFocusListener(OnAudioFocusChangeListener l) {
         addTaint(l.getTaint());

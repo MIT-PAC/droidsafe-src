@@ -1,12 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.telephony.IccCardStatus.PinState;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class IccCardApplication {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.984 -0400", hash_original_field = "DAFA1D6A0E85051DEC222617BBED6E45", hash_generated_field = "47D78C1AB52244F57090C85D69289E76")
@@ -41,7 +42,7 @@ public class IccCardApplication {
     }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.985 -0400", hash_original_method = "1116744B87B74A8B1F94F0BFA362A158", hash_generated_method = "CCF75F7879D7B3D30BD9D1C43A7882F2")
      AppType AppTypeFromRILInt(int type) {
         addTaint(type);
@@ -90,7 +91,7 @@ switch(type){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.987 -0400", hash_original_method = "9534088223FA9637F4929B2D2CEDDB5A", hash_generated_method = "A8F06C4E6AAA5DF12999CF29F6C22C51")
      AppState AppStateFromRILInt(int state) {
         addTaint(state);
@@ -139,7 +140,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.990 -0400", hash_original_method = "17A43E5E3170BC2C3023BB14299D6F08", hash_generated_method = "2D9CB52C83676EFCB8528F1FFE74871D")
      PersoSubState PersoSubstateFromRILInt(int substate) {
         addTaint(substate);
@@ -233,7 +234,7 @@ switch(substate){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.993 -0400", hash_original_method = "691AF073265032051E58110F3AF07370", hash_generated_method = "C6E4B6D29C47307719C65E4575F3C7C4")
      PinState PinStateFromRILInt(int state) {
         addTaint(state);
@@ -269,7 +270,7 @@ switch(state){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.994 -0400", hash_original_method = "B7A3E528A56EA330AD359B5362903D13", hash_generated_method = "14906F776C5E3E26841EC03685F70F3B")
     @Override
     public String toString() {
@@ -324,23 +325,23 @@ String var2460B846747F8B22185AD8BE722266A5_32480758 =         sb.toString();
         APPSTATE_PUK,
         APPSTATE_SUBSCRIPTION_PERSO,
         APPSTATE_READY;
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isPinRequired() {
             return this == APPSTATE_PIN;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isPukRequired() {
             return this == APPSTATE_PUK;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isSubscriptionPersoEnabled() {
             return this == APPSTATE_SUBSCRIPTION_PERSO;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isAppReady() {
             return this == APPSTATE_READY;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isAppNotReady() {
             return this == APPSTATE_UNKNOWN  ||
                    this == APPSTATE_DETECTED;
@@ -374,7 +375,7 @@ String var2460B846747F8B22185AD8BE722266A5_32480758 =         sb.toString();
         PERSOSUBSTATE_RUIM_CORPORATE_PUK,
         PERSOSUBSTATE_RUIM_SERVICE_PROVIDER_PUK,
         PERSOSUBSTATE_RUIM_RUIM_PUK;
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         boolean isPersoSubStateUnknown() {
             return this == PERSOSUBSTATE_UNKNOWN;
         }

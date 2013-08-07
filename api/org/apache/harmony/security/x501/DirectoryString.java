@@ -1,12 +1,13 @@
 package org.apache.harmony.security.x501;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.harmony.security.asn1.ASN1Choice;
 import org.apache.harmony.security.asn1.ASN1StringType;
 import org.apache.harmony.security.asn1.ASN1Type;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class DirectoryString {
     

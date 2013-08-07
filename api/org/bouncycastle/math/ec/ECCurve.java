@@ -1,13 +1,14 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.util.Random;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ECCurve {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.434 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "16F3809D308EE3B5C0D90855C77B94DD")
@@ -558,7 +559,7 @@ BigInteger[] var316474D4DA67FD8479E170FE8E19F283_2113659500 =             si;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.448 -0400", hash_original_method = "ABCDD5682443273B6E9EF7110AFEAA10", hash_generated_method = "061A3EE76A61AD88D6B3964A2C49F4F8")
         private ECPoint decompressPoint(
             byte[] xEnc, 
@@ -607,7 +608,7 @@ ECPoint varD903BA7B856E5972E8BD7D9E7940A611_1672650258 =             new ECPoint
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.449 -0400", hash_original_method = "25ED10C579C6ED4884A834D5A2CEB482", hash_generated_method = "FBED8B59F28FDCF4994822E7CCFC73E8")
         private ECFieldElement solveQuadradicEquation(ECFieldElement beta) {
             addTaint(beta.getTaint());

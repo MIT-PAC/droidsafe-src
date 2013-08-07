@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.SIPConstants;
 import gov.nist.javax.sip.ServerTransactionExt;
@@ -36,10 +37,10 @@ import javax.sip.header.RSeqHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SIPServerTransaction extends SIPTransaction implements ServerRequestInterface, javax.sip.ServerTransaction, ServerTransactionExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.944 -0400", hash_original_field = "4FC01D2A5D48A500CF94ED84B859B122", hash_generated_field = "28502708C76D5DD6019AE19DD6820CAF")
@@ -106,6 +107,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.946 -0400", hash_original_method = "05CFFFBF5E08267473584C7C9C8831C7", hash_generated_method = "7EE2A9F7DBEC4B169839C6B04E4B46B0")
     private void sendResponse(SIPResponse transactionResponse) throws IOException {
         addTaint(transactionResponse.getTaint());
@@ -669,7 +671,7 @@ String var829AB8E41EC16E528E3235849BDA35FA_990181392 =         getMessageChannel
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.961 -0400", hash_original_method = "0BCA3A7152B5F6366E7B8E296683796F", hash_generated_method = "53BDA6ABD558E686C57E0EAF51D4B05A")
     private void fireReliableResponseRetransmissionTimer() {
         try 
@@ -984,7 +986,7 @@ SIPResponse varA8D04ABCC2F40254E91C4FADCF1C6CA4_1810789009 =         this.lastRe
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.973 -0400", hash_original_method = "094652DDD499EE6CA69CC6BEDE88479D", hash_generated_method = "9394344BF4D191233AE222B80BE87023")
     private TransactionState getRealState() {
 TransactionState varB2F6DC77C80BF408EE3A0FF5E79E41E6_1407454478 =         super.getState();

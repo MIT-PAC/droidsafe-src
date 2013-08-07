@@ -1,6 +1,7 @@
 package com.android.internal.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -17,7 +18,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 import android.util.Xml;
-import droidsafe.annotations.*;
+
 
 public class XmlUtils {
     

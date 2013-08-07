@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
@@ -38,10 +39,10 @@ import org.bouncycastle.asn1.DERUnknownTag;
 import org.bouncycastle.asn1.DERVisibleString;
 import org.bouncycastle.util.encoders.Hex;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ASN1Dump {
     
@@ -302,6 +303,7 @@ public class ASN1Dump {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl) {
         DERApplicationSpecific app = (DERApplicationSpecific)obj;
         StringBuffer buf = new StringBuffer();
@@ -353,6 +355,7 @@ public class ASN1Dump {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String dumpBinaryDataAsString(String indent, byte[] bytes) {
         String nl = System.getProperty("line.separator");
         StringBuffer buf = new StringBuffer();
@@ -385,6 +388,7 @@ public class ASN1Dump {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String calculateAscString(byte[] bytes, int off, int len) {
         StringBuffer buf = new StringBuffer();
         for (int i = off; i != off + len; i++)

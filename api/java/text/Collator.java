@@ -1,15 +1,16 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Comparator;
 import java.util.Locale;
 
 import libcore.icu.ICU;
 import libcore.icu.RuleBasedCollatorICU;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Collator implements Comparator<Object>, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.700 -0400", hash_original_field = "6B1141D8E17A149C65A8272EB5BA314A", hash_generated_field = "571EB1F8C774D603CEDE0C031FD66C11")
@@ -189,7 +190,7 @@ public abstract int hashCode();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.707 -0400", hash_original_method = "59C448B2403440A52B430BC264B57CED", hash_generated_method = "B1C2768F039F44A409375BDCD9D750AE")
     private int decompositionMode_Java_ICU(int mode) {
         addTaint(mode);
@@ -216,7 +217,7 @@ switch(mode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.708 -0400", hash_original_method = "221AF1495063A31B1C807B8FB0041DE6", hash_generated_method = "9FB6D7B95F549DA492FFBEE849B3DB01")
     private int decompositionMode_ICU_Java(int mode) {
         addTaint(mode);
@@ -245,7 +246,7 @@ switch(mode){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.708 -0400", hash_original_method = "8D5EE21418DD2AA072EEA3359693FB17", hash_generated_method = "4A0278C18A7F2E8BE58343A1A56CEA34")
     private int strength_Java_ICU(int value) {
         addTaint(value);
@@ -284,7 +285,7 @@ switch(value){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_method = "28CE8F975C7774291F421ACF5AFE6047", hash_generated_method = "F4F7E2300FB61384AFF5C342B0C283D4")
     private int strength_ICU_Java(int value) {
         addTaint(value);

@@ -1,10 +1,11 @@
 package org.apache.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class MalformedChunkCodingException extends IOException {
     

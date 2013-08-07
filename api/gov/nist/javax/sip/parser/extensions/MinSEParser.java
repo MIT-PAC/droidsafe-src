@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser.extensions;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.extensions.MinSE;
 import gov.nist.javax.sip.parser.Lexer;
@@ -11,7 +12,7 @@ import java.text.ParseException;
 
 import javax.sip.InvalidArgumentException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class MinSEParser extends ParametersParser {
     

@@ -1,12 +1,14 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.telephony.IccCard;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public final class RuimCard extends IccCard {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.283 -0400", hash_original_method = "B727D2F994ECB759A082BD5FA4C042CC", hash_generated_method = "12CD7D1BE32F686D8502CB075C19CD00")
       RuimCard(CDMAPhone phone, String LOG_TAG, boolean dbg) {
         super(phone, LOG_TAG, dbg);
@@ -25,6 +27,7 @@ public final class RuimCard extends IccCard {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.283 -0400", hash_original_method = "E58435576E88AA9F55937FD79433F654", hash_generated_method = "8E19DBFC9E727A9EF26ACC64B2B5FD29")
     @Override
     public void dispose() {
@@ -40,6 +43,7 @@ public final class RuimCard extends IccCard {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.284 -0400", hash_original_method = "9DB5C3DD2D46DFBEACD42980054AFF5F", hash_generated_method = "DA2749578CE8F221E917001681B5AF1F")
     @Override
     public String getServiceProviderName() {

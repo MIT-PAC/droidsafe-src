@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,13 +29,14 @@ import android.os.ServiceManager;
 import android.os.StrictMode;
 import android.text.TextUtils;
 import android.util.Singleton;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ActivityManagerNative extends Binder implements IActivityManager {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:41.868 -0400", hash_original_method = "444DC66B3432907DFEA55328E5B69649", hash_generated_method = "FF0B4D083A157B879D7CD5A2215454A9")
     public  ActivityManagerNative() {
         attachInterface(this, descriptor);
@@ -43,6 +45,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
+    @DSModeled(DSC.BAN)
     static public IActivityManager asInterface(IBinder obj) {
         if (obj == null) {
             return null;
@@ -56,11 +59,13 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
+    @DSModeled(DSC.BAN)
     static public IActivityManager getDefault() {
         return gDefault.get();
     }
 
     
+    @DSModeled(DSC.BAN)
     static public boolean isSystemReady() {
         if (!sSystemReady) {
             sSystemReady = getDefault().testIsSystemReady();
@@ -69,7 +74,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     static public void broadcastStickyIntent(Intent intent, String permission) {
         try {
             getDefault().broadcastIntent(
@@ -80,6 +85,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
+    @DSModeled(DSC.BAN)
     static public void noteWakeupAlarm(PendingIntent ps) {
         try {
             getDefault().noteWakeupAlarm(ps.getTarget());
@@ -88,6 +94,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:41.917 -0400", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "4DFCE4B7A3473BD7F930CA415A79587F")
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1826,7 +1833,7 @@ for(i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:41.926 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "1F77402C0260D1857E0C5753991CA409")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_589252078 =         this;

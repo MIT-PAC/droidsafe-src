@@ -1,6 +1,7 @@
 package android.net.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -16,10 +17,10 @@ import android.net.wifi.WifiManager;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SipAudioCall {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.469 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -189,6 +190,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.475 -0400", hash_original_method = "AA0DE56AB4C8CE099E885498EC0B29F9", hash_generated_method = "19DA3E5282345ECE79D0817ED58E4AFE")
     private synchronized void close(boolean closeRtp) {
         addTaint(closeRtp);
@@ -271,7 +273,7 @@ SipProfile var1F5B6E206EF352601A1166F3159D4E4E_847753376 =             (mSipSess
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.477 -0400", hash_original_method = "9DD9B38A5D2A310FA14C467CD9F0FD11", hash_generated_method = "3CD11A9C57D684ADF452FBFB025EA063")
     public SipSession getSipSession() {
         synchronized
@@ -287,6 +289,7 @@ SipSession varC0E7CBD9D248459FA598C4FAB18B8428_300083211 =             mSipSessi
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.478 -0400", hash_original_method = "88FD57B0E3684A7BA74DB8405E64F4E3", hash_generated_method = "4FB06C75E0E7EC9D1A84E901B9A067C0")
     private synchronized void transferToNewSession() {
         if(mTransferringSession == null)        
@@ -332,6 +335,7 @@ SipSession varC0E7CBD9D248459FA598C4FAB18B8428_300083211 =             mSipSessi
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.485 -0400", hash_original_method = "5E0B84D644E5F5257B7A32D95C62CBE3", hash_generated_method = "126C0A87209BC520FD4BA9B979A58122")
     private SipSession.Listener createListener() {
 SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new SipSession.Listener() {        
@@ -693,6 +697,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.487 -0400", hash_original_method = "20EC585B752C6E63355D5D35BEA59116", hash_generated_method = "F995E802C90C8314AA9BF9146DCAA7D8")
     private void onError(int errorCode, String message) {
         Log.d(TAG, "sip session error: "
@@ -936,6 +941,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.491 -0400", hash_original_method = "0D8E98137E8907FA474D9700B196F628", hash_generated_method = "85B2F3AB18992AF1E39F998A03184AE9")
     private SimpleSessionDescription createOffer() {
         SimpleSessionDescription offer = new SimpleSessionDescription(mSessionId, getLocalIp());
@@ -964,6 +970,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_1721309568 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.492 -0400", hash_original_method = "7AC71E8F4C8E41998B13EFBED71D93BD", hash_generated_method = "619EE8D4F5EED8F0D95438FE08F9DEEC")
     private SimpleSessionDescription createAnswer(String offerSd) {
         addTaint(offerSd.getTaint());
@@ -1049,6 +1056,7 @@ SimpleSessionDescription var5F54B2A44CB8DC27B659B464640CF0FE_923627025 =        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.493 -0400", hash_original_method = "B99EA71C05B29A1F5EF342AB2FDD525C", hash_generated_method = "3BAB19D64676C0907F576888E58C7C88")
     private SimpleSessionDescription createHoldOffer() {
         SimpleSessionDescription offer = createContinueOffer();
@@ -1063,6 +1071,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_1070643639 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.493 -0400", hash_original_method = "71EB52827AB306B4A3579086FF868817", hash_generated_method = "A41777BFD4443B1ACCA7EB9B7DC79BF5")
     private SimpleSessionDescription createContinueOffer() {
         SimpleSessionDescription offer = new SimpleSessionDescription(mSessionId, getLocalIp());
@@ -1093,6 +1102,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.494 -0400", hash_original_method = "9511FA94EBBE4D902AF961AAA5743C5F", hash_generated_method = "B81FE6FC27EB0DCE871C7AEE98355E8C")
     private void grabWifiHighPerfLock() {
         if(mWifiHighPerfLock == null)        
@@ -1113,6 +1123,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.494 -0400", hash_original_method = "94C077E9D4A3B70D9C34E2292E80901C", hash_generated_method = "DC752C46CA2E029893BF23FC531D2597")
     private void releaseWifiHighPerfLock() {
         if(mWifiHighPerfLock != null)        
@@ -1129,6 +1140,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.494 -0400", hash_original_method = "FC1EDAFB978C2E10313819704C8134E2", hash_generated_method = "0E62FD9C2ADD967F3EF06BDD0F44E4B5")
     private boolean isWifiOn() {
         boolean varB83845AFE4A2BD54D45EEA5B632B56C3_2103757421 = ((mWm.getConnectionInfo().getBSSID() == null) ? false : true);
@@ -1188,6 +1200,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.496 -0400", hash_original_method = "1B6C9A8A7DE7A949D0CD2E188D6FBBDC", hash_generated_method = "251157939BAB1C019FAEEBF58AB60964")
     private boolean isSpeakerOn() {
         boolean var4E5753886FDAE4B2B5EBD4B29ED7355F_1129838185 = (((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
@@ -1237,7 +1250,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.497 -0400", hash_original_method = "974213146461E5146ED1F54CFC83DFBA", hash_generated_method = "D42A7E70CC33814D8B06052D02F88BAC")
     public AudioStream getAudioStream() {
         synchronized
@@ -1253,6 +1266,7 @@ AudioStream var7989BA78C9201E5975DDDFB7EFFDB611_964964386 =             mAudioSt
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.497 -0400", hash_original_method = "BB542D10B17F9F4E162984482435ECE8", hash_generated_method = "F3F492CC62B6D6473F55E6ACFF5F5096")
     public AudioGroup getAudioGroup() {
         synchronized
@@ -1275,6 +1289,7 @@ AudioGroup varC72C554806D9F24F64BE7554224D6C80_277040381 =             ((mAudioS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.498 -0400", hash_original_method = "59C2E1D195E6E28B792310EB7C59BD4B", hash_generated_method = "77600E9C134D4524F1EB8A1CC766C2DD")
     public void setAudioGroup(AudioGroup group) {
         synchronized
@@ -1320,6 +1335,7 @@ AudioGroup varC72C554806D9F24F64BE7554224D6C80_277040381 =             ((mAudioS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.499 -0400", hash_original_method = "29EB701080CA01C59CC1BB8E207AC1D7", hash_generated_method = "4306AC41FB8AFE123AED874186696AA9")
     private synchronized void startAudioInternal() throws UnknownHostException {
         if(mPeerSd == null)        
@@ -1424,6 +1440,7 @@ for(int type : media.getRtpPayloadTypes())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.500 -0400", hash_original_method = "1498B4B4889D09E5AF0E80BDDCC19CDB", hash_generated_method = "2A94F17834DC5B458B0EB44E45278920")
     private void setAudioGroupMode() {
         AudioGroup audioGroup = getAudioGroup();
@@ -1464,6 +1481,7 @@ for(int type : media.getRtpPayloadTypes())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.501 -0400", hash_original_method = "CC3F94229D0F8EEA9220358FBB15354E", hash_generated_method = "7A8FC348A47EAD95F5D19B680D113E03")
     private void stopCall(boolean releaseSocket) {
         addTaint(releaseSocket);
@@ -1491,6 +1509,7 @@ for(int type : media.getRtpPayloadTypes())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "B878A2570A0CCD8ECF14B79C9C36E090", hash_generated_method = "32BAFFCBD85FD20F854389C78ED01CEC")
     private String getLocalIp() {
 String varD6B92870042BA5D27310C46B2B2CE35E_1190928670 =         mSipSession.getLocalIp();
@@ -1501,6 +1520,7 @@ String varD6B92870042BA5D27310C46B2B2CE35E_1190928670 =         mSipSession.getL
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "16DFE4C58B2AE1A5BAAA6CDCCC648429", hash_generated_method = "4E036FC43686124C640036BA0D8C6D8B")
     private void throwSipException(Throwable throwable) throws SipException {
         addTaint(throwable.getTaint());
@@ -1525,6 +1545,7 @@ String varD6B92870042BA5D27310C46B2B2CE35E_1190928670 =         mSipSession.getL
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "7E510B007B6231BC910990588CC742B2", hash_generated_method = "BDB581593345D75D3C3000FDC0EB9019")
     private SipProfile getPeerProfile(SipSession session) {
         addTaint(session.getTaint());

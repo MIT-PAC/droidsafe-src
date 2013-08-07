@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.clientauthutils;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.SipStackImpl;
 import gov.nist.javax.sip.message.SIPRequest;
 import gov.nist.javax.sip.stack.SIPClientTransaction;
@@ -31,8 +32,8 @@ import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class AuthenticationHelperImpl implements AuthenticationHelper {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.414 -0400", hash_original_field = "D5D9A01DEEBF6762D6D6FE216A30D468", hash_generated_field = "1A1B69CD5FD1781DFE3A277E582E290E")
@@ -247,6 +248,7 @@ ClientTransaction var6D5F25C6C85A276C275EA81740691138_464217576 =             re
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.426 -0400", hash_original_method = "2D1C964540C22A20DCB24ADF01A4F207", hash_generated_method = "9CDD65F33498225E8E1B7BF3CC485EF3")
     private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
             WWWAuthenticateHeader authHeader, UserCredentials userCredentials) {
@@ -312,6 +314,7 @@ AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_119518739 =         auth
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.443 -0400", hash_original_method = "122A01004B39FE573FF7374B710A1EFB", hash_generated_method = "05470B0E9D311D4D5EF9A2E29260057D")
     private AuthorizationHeader getAuthorization(String method, String uri, String requestBody,
             WWWAuthenticateHeader authHeader, UserCredentialHash userCredentials) {
@@ -376,6 +379,7 @@ AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_1443690413 =         aut
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.443 -0400", hash_original_method = "ADD4EE56A02B7B5492F16169DF575C77", hash_generated_method = "29012D0024263DF94FEF9012D9E2BD76")
     private void removeBranchID(Request request) {
         addTaint(request.getTaint());

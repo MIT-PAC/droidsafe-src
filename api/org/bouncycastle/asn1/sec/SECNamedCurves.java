@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.sec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -14,10 +15,10 @@ import org.bouncycastle.math.ec.ECPoint;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SECNamedCurves {
     
@@ -28,6 +29,7 @@ public class SECNamedCurves {
     }
 
 
+    @DSModeled(DSC.BAN)
     private static BigInteger fromHex(
         String hex) {
         return new BigInteger(1, Hex.decode(hex));

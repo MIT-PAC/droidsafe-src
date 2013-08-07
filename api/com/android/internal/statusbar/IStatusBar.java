@@ -1,6 +1,7 @@
 package com.android.internal.statusbar;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IStatusBar extends android.os.IInterface
 {

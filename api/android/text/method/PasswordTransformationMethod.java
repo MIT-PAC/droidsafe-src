@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 
 import android.graphics.Rect;
@@ -15,10 +16,10 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.UpdateLayout;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PasswordTransformationMethod implements TransformationMethod, TextWatcher {
     
@@ -171,7 +172,7 @@ for(int i = 0;v == null && i < vr.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void removeVisibleSpans(Spannable sp) {
         Visible[] old = sp.getSpans(0, sp.length(), Visible.class);
         for (int i = 0; i < old.length; i++) {

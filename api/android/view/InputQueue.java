@@ -1,12 +1,13 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.MessageQueue;
 import android.util.Slog;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class InputQueue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.122 -0400", hash_original_field = "8E934369C1BCE6316A2C1FFFF8C383AB", hash_generated_field = "9822897BD047FB46E3B13005AC739818")
@@ -82,6 +83,7 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1864546670 =         mChannel;
     }
 
     
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unused")
     private static void dispatchKeyEvent(InputHandler inputHandler,
             KeyEvent event, long finishedToken) {
@@ -90,6 +92,7 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1864546670 =         mChannel;
     }
 
     
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unused")
     private static void dispatchMotionEvent(InputHandler inputHandler,
             MotionEvent event, long finishedToken) {
@@ -106,6 +109,7 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1864546670 =         mChannel;
 
         private long mFinishedToken;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.124 -0400", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "FE7116F7FDD08D0BCD50ADD251496AB3")
         private  FinishedCallback() {
             // ---------- Original Method ----------

@@ -1,16 +1,17 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.microedition.khronos.opengles.GL;
 
 import android.text.GraphicsOperations;
 import android.text.SpannableString;
 import android.text.SpannedString;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Canvas {
@@ -90,7 +91,7 @@ public class Canvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.069 -0400", hash_original_method = "B940DF21824B9124E6B753106E553281", hash_generated_method = "34311A5FF1FA45B349D973EEDF587B46")
     @Deprecated
     protected GL getGL() {
@@ -136,7 +137,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.070 -0400", hash_original_method = "85F5D8C713E0C3D78EE01CE144D393CD", hash_generated_method = "5E7607C7F35EFC6197184F074C0525A9")
     public void setViewport(int width, int height) {
         addTaint(height);
@@ -189,7 +190,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.072 -0400", hash_original_method = "097B83D968163B69D9FD944A715444E1", hash_generated_method = "A6B4CCAC527ADCBCA2970ADC88659071")
     public void setScreenDensity(int density) {
         mScreenDensity = density;
@@ -919,7 +920,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void throwIfRecycled(Bitmap bitmap) {
         if (bitmap.isRecycled()) {
             throw new RuntimeException(
@@ -928,7 +929,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.106 -0400", hash_original_method = "ED4DAC4BAED1A32A3D194D286EE0C9BC", hash_generated_method = "4CEE03DE2E27870C2160F08F6922FE0E")
     public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
         addTaint(paint.getTaint());
@@ -1079,7 +1080,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     protected static void checkRange(int length, int offset, int count) {
         if ((offset | count) < 0 || offset + count > length) {
             throw new ArrayIndexOutOfBoundsException();
@@ -1309,7 +1310,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.114 -0400", hash_original_method = "6EBE295547BE775A36E1A6AF2206E2F5", hash_generated_method = "E8D342E8F62A78D2BEEFEF30CE3285B5")
     public void drawTextRun(char[] text, int index, int count,
             int contextIndex, int contextCount, float x, float y, int dir,
@@ -1367,7 +1368,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.115 -0400", hash_original_method = "92F46C968D6DA82FFBC09248C72F0C8C", hash_generated_method = "8A69C7F09264EE2778F86C09A8230722")
     public void drawTextRun(CharSequence text, int start, int end,
             int contextStart, int contextEnd, float x, float y, int dir,

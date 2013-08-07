@@ -1,6 +1,7 @@
 package android.text.format;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -16,10 +17,10 @@ import android.text.SpannedString;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DateFormat {
     
@@ -86,7 +87,7 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static java.text.DateFormat getDateFormatForSetting(Context context,
                                                                String value) {
         String format = getDateFormatStringForSetting(context, value);
@@ -94,7 +95,7 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String getDateFormatStringForSetting(Context context, String value) {
         if (value != null) {
             int month = value.indexOf('M');
@@ -170,7 +171,7 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String getDateFormatString(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.DATE_FORMAT);
@@ -269,7 +270,7 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final String getMonthString(Calendar inDate, int count) {
         int month = inDate.get(Calendar.MONTH);
         if (count >= 4)
@@ -282,7 +283,7 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final String getTimeZoneString(Calendar inDate, int count) {
         TimeZone tz = inDate.getTimeZone();
         if (count < 2) { 
@@ -296,7 +297,7 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final String formatZoneOffset(int offset, int count) {
         offset /= 1000;
         StringBuilder tb = new StringBuilder();
@@ -314,14 +315,14 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final String getYearString(Calendar inDate, int count) {
         int year = inDate.get(Calendar.YEAR);
         return (count <= 2) ? zeroPad(year % 100, 2) : String.valueOf(year);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final int appendQuotedText(SpannableStringBuilder s, int i, int len) {
         if (i + 1 < len && s.charAt(i + 1) == QUOTE) {
             s.delete(i, i + 1);
@@ -351,7 +352,7 @@ public class DateFormat {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final String zeroPad(int inValue, int inMinDigits) {
         String val = String.valueOf(inValue);
         if (val.length() < inMinDigits) {

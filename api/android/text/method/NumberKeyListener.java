@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Selection;
@@ -9,9 +10,9 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.view.KeyEvent;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class NumberKeyListener extends BaseKeyListener implements InputFilter {
     

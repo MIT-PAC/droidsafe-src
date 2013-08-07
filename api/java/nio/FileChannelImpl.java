@@ -1,6 +1,7 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.EAGAIN;
 import static libcore.io.OsConstants.EINVAL;
 import static libcore.io.OsConstants.ENOSYS;
@@ -36,10 +37,10 @@ import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 import libcore.io.StructFlock;
 import libcore.util.MutableLong;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class FileChannelImpl extends FileChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_field = "F7B44CFAFD5C52223D5498196C8A2E7B", hash_generated_field = "6DF85966286B5A79BC125BD24D7FC97F")
@@ -67,7 +68,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.718 -0400", hash_original_method = "6E6D3E88914C52E71D3EAF93EC51DF72", hash_generated_method = "0D7F97E60BF6E6A0A21E47C571C2F41D")
     private void checkOpen() throws ClosedChannelException {
         if(!isOpen())        
@@ -83,7 +84,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.718 -0400", hash_original_method = "48C6D0CA0A11D20CF44BD79CC21BDD35", hash_generated_method = "0980FE734D235194CA03944D40240997")
     private void checkReadable() {
         if((mode & O_ACCMODE) == O_WRONLY)        
@@ -99,7 +100,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.719 -0400", hash_original_method = "B5384AE1DC067BB9B7371F695174CE9F", hash_generated_method = "0DE8AEFAC0E498417518C26A82283D08")
     private void checkWritable() {
         if((mode & O_ACCMODE) == O_RDONLY)        
@@ -129,7 +130,7 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.743 -0400", hash_original_method = "7E2D5FC994D104072ED63DC91E4C8FE1", hash_generated_method = "479266149936620AC722BC83B00A0873")
     private FileLock basicLock(long position, long size, boolean shared, boolean wait) throws IOException {
         addTaint(wait);
@@ -195,7 +196,7 @@ FileLock var049A21A38D12A7336D7F2DB1250835F9_1067829065 =         success ? pend
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static long translateLockLength(long byteCount) {
         return (byteCount == Long.MAX_VALUE) ? 0 : byteCount;
     }
@@ -490,7 +491,7 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1620352505 =         this;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.831 -0400", hash_original_method = "B09A36EC89FDAA97AACE4894ACCEC4C2", hash_generated_method = "73E96C143967799820FFFB0F0E53D029")
     private int readImpl(ByteBuffer buffer, long position) throws IOException {
         addTaint(position);
@@ -555,7 +556,7 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1620352505 =         this;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.832 -0400", hash_original_method = "4AF9CF697EB56447960A29F46F724C12", hash_generated_method = "19C94A956AE5997EA3D93A0EAA8C0217")
     private int transferIoVec(IoVec ioVec) throws IOException {
         addTaint(ioVec.getTaint());
@@ -859,7 +860,7 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1031436473 =         this;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.926 -0400", hash_original_method = "B7C7E18920DBBA232C5F1428FFA4A3EB", hash_generated_method = "A832C54A4E09C5F8838E86FBE1003426")
     private int writeImpl(ByteBuffer buffer, long position) throws IOException {
         addTaint(position);
@@ -961,6 +962,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_2091354658 =         fd;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.936 -0400", hash_original_method = "F902144182B3E2AF28D0016B48F7903B", hash_generated_method = "88F2E43FA9CF8352726F6AA181CAFD75")
     private synchronized void addLock(FileLock lock) throws OverlappingFileLockException {
         addTaint(lock.getTaint());
@@ -993,6 +995,7 @@ for(FileLock existingLock : locks)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.941 -0400", hash_original_method = "AE9E3F40D0EE8D3948C9955DBE0083E8", hash_generated_method = "89395557843AF8F624E2E77B4F1639FE")
     private synchronized void removeLock(FileLock lock) {
         addTaint(lock.getTaint());

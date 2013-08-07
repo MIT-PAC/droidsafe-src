@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.ims.PMediaAuthorization;
@@ -14,7 +15,7 @@ import java.text.ParseException;
 
 import javax.sip.InvalidArgumentException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class PMediaAuthorizationParser extends HeaderParser implements TokenTypes {
     

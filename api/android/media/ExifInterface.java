@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -9,10 +10,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ExifInterface {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:44.170 -0400", hash_original_field = "8D10768D3001B3CF50E3F691611FB247", hash_generated_field = "85FF07821F4F75AB23CF084EAB4F73FE")
@@ -121,7 +122,7 @@ public class ExifInterface {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
 	private void loadAttributes() throws IOException {
 		addTaint("string attribute taint".getTaint()); //Implicit taint for getAttribute
 		//addTaint(-1.getTaint()); //Implicit taint for getAttributeInt
@@ -276,6 +277,7 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:44.178 -0400", hash_original_method = "E8E77BF544503216344BBA6B3C85FE94", hash_generated_method = "C5528857F201221F9602AA09FD1391BC")
     public long getDateTime() {
         String dateTimeString = mAttributes.get(TAG_DATETIME);
@@ -319,6 +321,7 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:44.179 -0400", hash_original_method = "E20B898080FF0A84D7C05898F2A9273F", hash_generated_method = "757ED631F39FC9E8DA405744167A9C03")
     public long getGpsDateTime() {
         String date = mAttributes.get(TAG_GPS_DATESTAMP);
@@ -373,6 +376,7 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     private static float convertRationalLatLonToFloat(
             String rationalString, String ref) {
         try {

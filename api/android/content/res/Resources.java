@@ -1,6 +1,7 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 
@@ -14,9 +15,9 @@ import android.util.DisplayMetrics;
 import android.util.LongSparseArray;
 import android.util.SparseArray;
 import android.util.TypedValue;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class Resources {
     final TypedValue mTmpValue = new TypedValue();
@@ -47,7 +48,7 @@ public class Resources {
 
     
     
-    @DSModeled
+    @DSModeled(DSC.BAN)
     public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config, CompatibilityInfo compInfo){
 		//addTaint(assets.getTaint());
@@ -64,7 +65,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	public Resources() {
 	    mAssets = null;
 	}
@@ -76,13 +77,13 @@ public class Resources {
         }
     }
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     private static <T> LongSparseArray<T> emptySparseArray() {
         return (LongSparseArray<T>) EMPTY_ARRAY;
     }
 
-    @DSModeled
+    @DSModeled(DSC.BAN)
     public static int selectDefaultTheme(int curTheme, int targetSdkVersion){
 		// Original method
 		/*
@@ -97,7 +98,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int selectSystemTheme(int curTheme, int targetSdkVersion,
             int orig, int holo, int deviceDefault){
 		// Original method
@@ -153,7 +154,7 @@ public class Resources {
 		return str;
 	}
 
-	  @DSModeled
+	  @DSModeled(DSC.BAN)
     private NativePluralRules getPluralRule(){
 		// Original method
 		/*
@@ -170,7 +171,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
 	private static int attrForQuantityCode(int quantityCode){
 		// Original method
 		/*
@@ -189,7 +190,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
 	private static String stringForQuantityCode(int quantityCode){
     	String str = new String();
 		str.addTaint(quantityCode);
@@ -410,7 +411,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
 	public Drawable getDrawableForDensity(int id, int density){
 		// Original method
 		/*
@@ -651,7 +652,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
 	public void getValueForDensity(int id, int density, TypedValue outValue, boolean resolveRefs){
 		// Original method
 		/*
@@ -725,6 +726,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics, CompatibilityInfo compat){
 		// Original method
@@ -733,6 +735,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void clearDrawableCache(
             LongSparseArray<WeakReference<ConstantState>> cache,
             int configChanges){
@@ -742,6 +745,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public static void updateSystemConfiguration(Configuration config, DisplayMetrics metrics,
             CompatibilityInfo compat){
 		// Original method
@@ -756,6 +760,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public static void updateSystemConfiguration(Configuration config, DisplayMetrics metrics){
 		// Original method
 		/*
@@ -787,7 +792,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public CompatibilityInfo getCompatibilityInfo(){
 		// Original method
 		/*
@@ -800,6 +805,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public void setCompatibilityInfo(CompatibilityInfo ci){
 		//addTaint(ci.getTaint());
 		mCompatibilityInfo = ci;  //Preserved
@@ -945,6 +951,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final void startPreloading(){
 		// Original method
 		/*
@@ -983,6 +990,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private Drawable getCachedDrawable(
             LongSparseArray<WeakReference<ConstantState>> drawableCache,
             long key){
@@ -1015,6 +1023,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private ColorStateList getCachedColorStateList(int key){
 		// Original method
 		/*
@@ -1067,6 +1076,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private TypedArray getCachedStyledAttributes(int len){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

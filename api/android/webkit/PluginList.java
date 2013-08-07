@@ -1,20 +1,22 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PluginList {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_field = "3BBFD44F77386E6A06EB986F62953E04", hash_generated_field = "2E9E45DF2A62E67ADA94EFB03194A6CB")
 
     private ArrayList<Plugin> mPlugins;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "AFA11BE3CB57F72948CE6AE6103E33EF", hash_generated_method = "C0A35AE6C5CE177275069814697F2449")
     @Deprecated
     public  PluginList() {
@@ -24,7 +26,7 @@ public class PluginList {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "1801070113215AA650907EEB61F166CD", hash_generated_method = "9238712433EFAEF44E0E9E7D52F7C912")
     @Deprecated
     public synchronized List getList() {
@@ -36,6 +38,7 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_2138606153 =         mPlugins;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "C7DCB9134CAFAAB6388686E1F6701327", hash_generated_method = "67A3D1222E8DE7CD64D71D2CA0545524")
     @Deprecated
     public synchronized void addPlugin(Plugin plugin) {
@@ -51,6 +54,7 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_2138606153 =         mPlugins;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "980F1FA54E922541E9F37CE45E714F3E", hash_generated_method = "7F857B0E768C6CEEE483EBB6149AE6A1")
     @Deprecated
     public synchronized void removePlugin(Plugin plugin) {
@@ -68,6 +72,7 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_2138606153 =         mPlugins;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "D08BA028CDC8B846863357DB1B876085", hash_generated_method = "DCFA1CD279657F7D3B02F4C9E52A23CF")
     @Deprecated
     public synchronized void clear() {
@@ -77,6 +82,7 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_2138606153 =         mPlugins;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "FD99E1EA214C7B87A27E9195924486C8", hash_generated_method = "5AEDE06D92F59382E859C924A8FB4289")
     @Deprecated
     public synchronized void pluginClicked(Context context, int position) {

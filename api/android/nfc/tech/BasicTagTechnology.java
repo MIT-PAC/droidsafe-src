@@ -1,16 +1,17 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
 import android.nfc.TransceiveResult;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class BasicTagTechnology implements TagTechnology {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.463 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "26F2563105474DD2A79B3C79190EB5BE")
@@ -151,6 +152,7 @@ Tag varD6A25044F8E609F6CD67330C1523D33D_1850809499 =         mTag;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.470 -0400", hash_original_method = "9693ABC23B7E982FA8E766A116B1D439", hash_generated_method = "973C59CE0231AA2E0AB644FA557E6BB6")
     @Override
     public void reconnect() throws IOException {

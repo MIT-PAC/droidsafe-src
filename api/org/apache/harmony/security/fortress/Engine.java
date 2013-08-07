@@ -1,14 +1,15 @@
 package org.apache.harmony.security.fortress;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.NoSuchAlgorithmException;
 import java.security.Provider;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Engine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.973 -0400", hash_original_field = "0F096338B64A1D1B348B86DF38313C01", hash_generated_field = "ECD50B84C78A208F5EC2C3BF804F2559")
@@ -103,7 +104,7 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_2042620629 =         service.newInsta
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.995 -0400", hash_original_method = "30EA070B5875ADB1FAA05CA3F6CF14E2", hash_generated_method = "FDCD91660543249FDE9DF45FED50288D")
     private NoSuchAlgorithmException notFound(String serviceName, String algorithm) throws NoSuchAlgorithmException {
         addTaint(algorithm.getTaint());
@@ -129,7 +130,7 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_2042620629 =         service.newInsta
 
         private Provider.Service service;
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.996 -0400", hash_original_method = "CED34B656EC03ABCC50FF9454F3ADD00", hash_generated_method = "8800597E2F5F372C2DD11E854A6A0F47")
         private  ServiceCacheEntry(String algorithm,
                                   int refreshNumber,
@@ -156,7 +157,7 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_2042620629 =         service.newInsta
 
         public Provider provider;
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.997 -0400", hash_original_method = "CD98A36834DFC76460E887FD6F06A4ED", hash_generated_method = "20BDD65E0BE5E0F91615EFB5B93DE53F")
         private  SpiAndProvider(Object spi, Provider provider) {
             this.spi = spi;

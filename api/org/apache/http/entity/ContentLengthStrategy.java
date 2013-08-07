@@ -1,6 +1,7 @@
 package org.apache.http.entity;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.HttpException;
 import org.apache.http.HttpMessage;
 

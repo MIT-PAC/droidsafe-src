@@ -1,6 +1,7 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -16,10 +17,10 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.util.Xml;
 import android.view.animation.AnimationUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AnimatorInflater {
     
@@ -54,13 +55,13 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimatorFromXml(c, parser, Xml.asAttributeSet(parser), null, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
             AttributeSet attrs, AnimatorSet parent, int sequenceOrdering) throws XmlPullParserException, IOException {
         Animator anim = null;
@@ -111,7 +112,7 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
         ObjectAnimator anim = new ObjectAnimator();
         loadAnimator(context, attrs, anim);
@@ -124,7 +125,7 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
         TypedArray a =
                 context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.Animator);

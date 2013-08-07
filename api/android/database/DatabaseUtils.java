@@ -1,6 +1,7 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.text.Collator;
@@ -25,10 +26,10 @@ import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DatabaseUtils {
     
@@ -110,6 +111,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final void readExceptionFromParcel(Parcel reply, String msg, int code) {
         switch (code) {
             case 2:
@@ -157,7 +159,7 @@ public class DatabaseUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getTypeOfObject(Object obj) {
         if (obj == null) {
             return Cursor.FIELD_TYPE_NULL;
@@ -302,7 +304,7 @@ public class DatabaseUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getKeyLen(byte[] arr) {
         if (arr[arr.length - 1] != 0) {
             return arr.length;
@@ -312,6 +314,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static byte[] getCollationKeyInBytes(String name) {
         if (mColl == null) {
             mColl = Collator.getInstance();
@@ -705,6 +708,7 @@ public class DatabaseUtils {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.938 -0400", hash_original_method = "C9A601B53671BC96A8E157301601DE92", hash_generated_method = "AC5690D02BA66ABBAABD03801E28CA4E")
         private void buildSQL() throws SQLException {
             StringBuilder sb = new StringBuilder(128);
@@ -756,6 +760,7 @@ public class DatabaseUtils {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.939 -0400", hash_original_method = "102F3921944A0F32C4E4BE81F61A753B", hash_generated_method = "426753298BB544ADC0BA480E8630BB1D")
         private SQLiteStatement getStatement(boolean allowReplace) throws SQLException {
             addTaint(allowReplace);
@@ -802,6 +807,7 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_1084171090 =                
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.939 -0400", hash_original_method = "13ED4597857164B01AAF7D1C6E2C9384", hash_generated_method = "65A6DB51C5E8144C8E822D8B4BF6A289")
         private synchronized long insertInternal(ContentValues values, boolean allowReplace) {
             addTaint(allowReplace);

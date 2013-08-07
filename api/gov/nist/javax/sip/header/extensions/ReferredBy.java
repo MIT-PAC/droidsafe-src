@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header.extensions;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.address.AddressImpl;
 import gov.nist.javax.sip.header.AddressParametersHeader;
 
@@ -8,10 +9,10 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ReferredBy extends AddressParametersHeader implements ExtensionHeader, ReferredByHeader {
     

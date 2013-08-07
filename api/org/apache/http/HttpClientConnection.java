@@ -1,6 +1,7 @@
 package org.apache.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 public interface HttpClientConnection extends HttpConnection {

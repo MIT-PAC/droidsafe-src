@@ -1,10 +1,11 @@
 package org.apache.http.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.ProtocolException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class RedirectException extends ProtocolException {
     

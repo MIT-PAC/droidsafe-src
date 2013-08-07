@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -10,8 +11,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class LinearLayout extends ViewGroup {
     @ViewDebug.ExportedProperty(category = "layout")
@@ -125,7 +126,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public int getShowDividers() {
         return getTaintInt();
     }
@@ -156,7 +157,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public int getDividerWidth() {
         return getTaintInt();
     }
@@ -314,7 +315,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     protected boolean hasDividerBeforeChildAt(int childIndex) {
         if (childIndex == 0) {
             return (mShowDividers & SHOW_DIVIDER_BEGINNING) != 0;
@@ -525,7 +526,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void forceUniformWidth(int count, int heightMeasureSpec) {
         int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(),
                 MeasureSpec.EXACTLY);
@@ -812,7 +813,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void forceUniformHeight(int count, int widthMeasureSpec) {
         int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),
                 MeasureSpec.EXACTLY);
@@ -1027,7 +1028,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private void setChildFrame(View child, int left, int top, int width, int height) {        
         child.layout(left, top, left + width, top + height);
     }

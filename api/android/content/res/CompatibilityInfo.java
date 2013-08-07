@@ -1,6 +1,7 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.pm.ApplicationInfo;
 import android.graphics.Canvas;
 import android.graphics.PointF;
@@ -12,10 +13,10 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CompatibilityInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.170 -0400", hash_original_field = "44CEE0DD1BE1998482D8262782403C60", hash_generated_field = "B4CB39B5E76E4F134AE9FD81F38E628C")
@@ -31,6 +32,7 @@ public class CompatibilityInfo implements Parcelable {
 
     public float applicationInvertedScale;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.177 -0400", hash_original_method = "9C59C0A19ADE82EBF59B39AA82601FD9", hash_generated_method = "18AD6CFE6DAC37BD4E5421A1D263A036")
     public  CompatibilityInfo(ApplicationInfo appInfo, int screenLayout, int sw,
             boolean forceCompat) {
@@ -172,6 +174,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.180 -0400", hash_original_method = "A82321676D9C84B0538DAFB6CC61C0CB", hash_generated_method = "D97765B16CE7043641005CA614BC91BD")
     private  CompatibilityInfo(int compFlags,
             int dens, float scale, float invertedScale) {
@@ -187,6 +190,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.181 -0400", hash_original_method = "3DDB26515D25880873E2C6C7F1DDA6F5", hash_generated_method = "A144E464C092FC9674C214597E793D47")
     private  CompatibilityInfo() {
         this(NEVER_NEEDS_COMPAT, DisplayMetrics.DENSITY_DEVICE,
@@ -196,6 +200,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.182 -0400", hash_original_method = "B251F1B77EF355BF6FA118A826DF4F4A", hash_generated_method = "48F71F1044639FA67CF1237AD6C85A09")
     private  CompatibilityInfo(Parcel source) {
         mCompatibilityFlags = source.readInt();
@@ -210,7 +215,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.182 -0400", hash_original_method = "E2D07E7BFECA2D29A0CD39AB3E4AD2F4", hash_generated_method = "C42D57D9BDCBE3EA3F96951A94F23C36")
     public boolean isScalingRequired() {
         boolean var6A6CD585B1B2D73D861457664A9CD0F9_712684239 = ((mCompatibilityFlags&SCALING_REQUIRED) != 0);
@@ -221,7 +226,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.183 -0400", hash_original_method = "AEF0832D3207872CC75E4AC6D7849C73", hash_generated_method = "CCF216EE43F89A06F17DFC9F0EDDC23C")
     public boolean supportsScreen() {
         boolean var84D503005FB9552E72FBBDCB72F1ED29_173417250 = ((mCompatibilityFlags&NEEDS_SCREEN_COMPAT) == 0);
@@ -232,7 +237,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.183 -0400", hash_original_method = "BD11775B1F66D2736A032A6A37E2552F", hash_generated_method = "A876F26497255640D1715EA5349CD043")
     public boolean neverSupportsScreen() {
         boolean var379E94ED74A64A75DEBC993E9380509C_1191169645 = ((mCompatibilityFlags&ALWAYS_NEEDS_COMPAT) != 0);
@@ -243,7 +248,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.183 -0400", hash_original_method = "CFA6F9CFCD9588B682D5F07DFF385684", hash_generated_method = "5571197846216CF8F7A515A71DE2FBEA")
     public boolean alwaysSupportsScreen() {
         boolean var7620E96D5792B82515FAB327536E265B_1266746093 = ((mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0);
@@ -254,6 +259,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.184 -0400", hash_original_method = "93ABC602B8C8A6238860B5CA46099876", hash_generated_method = "100870F2FD485E3A607CC8FF5A6F1F76")
     public Translator getTranslator() {
 Translator var6A5072CB73297FFF4B7B0652833EAB52_214876014 =         isScalingRequired() ? new Translator() : null;
@@ -264,6 +270,7 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_214876014 =         isScalingRequ
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.186 -0400", hash_original_method = "F5DFBBE3DCF906040672C2B4A4880712", hash_generated_method = "63D1C59C04F2532F2C4828EB4F3A8471")
     public void applyToDisplayMetrics(DisplayMetrics inoutDm) {
         addTaint(inoutDm.getTaint());
@@ -292,6 +299,7 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_214876014 =         isScalingRequ
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.188 -0400", hash_original_method = "D1D0A6DB2934A6F26FB8AACA9CE38F1E", hash_generated_method = "427E3E00EF8592BD9A7B55153D4213E4")
     public void applyToConfiguration(Configuration inoutConfig) {
         addTaint(inoutConfig.getTaint());
@@ -316,7 +324,7 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_214876014 =         isScalingRequ
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
         final int width = dm.noncompatWidthPixels;
         final int height = dm.noncompatHeightPixels;
@@ -356,7 +364,7 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_214876014 =         isScalingRequ
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.190 -0400", hash_original_method = "CD2E846E95D6DD1EBA23C219F15E8AAF", hash_generated_method = "B62009C29715A33582EBAC0E0B217735")
     @Override
     public boolean equals(Object o) {
@@ -412,6 +420,7 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_214876014 =         isScalingRequ
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.191 -0400", hash_original_method = "8391774F9F4D17C2A23793FA4442739E", hash_generated_method = "F80665E5E8324B1392942694F6CF4332")
     @Override
     public String toString() {
@@ -465,6 +474,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.193 -0400", hash_original_method = "8473CF5A5DF2B74B5499D26C5398575D", hash_generated_method = "5098F28B7D5C788A500A66F05A9CCADE")
     @Override
     public int hashCode() {
@@ -486,7 +496,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.193 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "518FA71FA28B2800F2FF828D00586565")
     @Override
     public int describeContents() {
@@ -498,6 +508,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.194 -0400", hash_original_method = "FEB528FDE7329032F7938F1739557EEE", hash_generated_method = "F0CAF85ABEB3CAC948DCD2C7B515967A")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -550,6 +561,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.197 -0400", hash_original_method = "36CC389463C4EECA1FFAD848C8F58415", hash_generated_method = "3E580084CFB719EE5C7C45B4652F3C8C")
         public void translateRectInScreenToAppWinFrame(Rect rect) {
             addTaint(rect.getTaint());
@@ -559,6 +571,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.197 -0400", hash_original_method = "0A49DDBACE394A9C82B87775AA7B8808", hash_generated_method = "CFEA6109ED9472D4D0AA0D3CDFA7B81A")
         public void translateRegionInWindowToScreen(Region transparentRegion) {
             addTaint(transparentRegion.getTaint());
@@ -568,6 +581,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.197 -0400", hash_original_method = "F6C04E9988D3236CD1A288419E980857", hash_generated_method = "7A0FBBE206BF8F768C2AFFB5324DECAE")
         public void translateCanvas(Canvas canvas) {
             addTaint(canvas.getTaint());
@@ -586,6 +600,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.198 -0400", hash_original_method = "4D5FCD5F9907EB8D629A45C5A11C2836", hash_generated_method = "20139CE5E567763905A8500D1C0C1861")
         public void translateEventInScreenToAppWindow(MotionEvent event) {
             addTaint(event.getTaint());
@@ -604,6 +619,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.198 -0400", hash_original_method = "657A8C506709C2AB2507FE170E8B78C8", hash_generated_method = "F0592AB7B34F260DCA3908BB27ECE70F")
         public void translateRectInAppWindowToScreen(Rect rect) {
             addTaint(rect.getTaint());
@@ -613,6 +629,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.199 -0400", hash_original_method = "5BBB001295BC7F6BF111AF6DC66C9205", hash_generated_method = "38ECC7EE97864264DB470EDD65BC8269")
         public void translateRectInScreenToAppWindow(Rect rect) {
             addTaint(rect.getTaint());
@@ -622,7 +639,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.199 -0400", hash_original_method = "9DE177160064B2A1F8C9D8228C599CDD", hash_generated_method = "E9ECA9325CF050EB116910023DF44307")
         public void translatePointInScreenToAppWindow(PointF point) {
             addTaint(point.getTaint());
@@ -641,6 +658,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.200 -0400", hash_original_method = "122ACDBA22A4D3B6B9E93FB00E1FAEC7", hash_generated_method = "3379719A54E32855EF96840676F5252E")
         public void translateLayoutParamsInAppWindowToScreen(LayoutParams params) {
             addTaint(params.getTaint());
@@ -650,6 +668,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.200 -0400", hash_original_method = "43D8C9F45845A6C6CC10427CCFCFAF3D", hash_generated_method = "7A4302CB13395DABD91C04F35010EADE")
         public Rect getTranslatedContentInsets(Rect contentInsets) {
             addTaint(contentInsets.getTaint());
@@ -668,6 +687,7 @@ Rect var50789666040DE8BECD26ECF524635EAB_1098898742 =             mContentInsets
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.201 -0400", hash_original_method = "DB46A5AF3015676AE668EB7338A074FC", hash_generated_method = "F7F894F94636CE680621718EB0C7C392")
         public Rect getTranslatedVisibleInsets(Rect visibleInsets) {
             addTaint(visibleInsets.getTaint());
@@ -686,6 +706,7 @@ Rect var3CCF2CBB078D5E5EE27DEDCF2052BAE5_1995638641 =             mVisibleInsets
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.201 -0400", hash_original_method = "25CFF327B78CA768A3AFCA299ED2CC8E", hash_generated_method = "363CD96FA7DED67B8BCC06632F190373")
         public Region getTranslatedTouchableArea(Region touchableArea) {
             addTaint(touchableArea.getTaint());

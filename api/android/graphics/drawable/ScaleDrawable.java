@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -13,10 +14,10 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ScaleDrawable extends Drawable implements Drawable.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.537 -0400", hash_original_field = "2D1FE34192530332F56868A0998C61E0", hash_generated_field = "1B46C06B589E11041FD605EA02E6FD03")
@@ -60,7 +61,7 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.539 -0400", hash_original_method = "044BA74036106E0DA1F4FE69AE9E5ADC", hash_generated_method = "6721B4F6DF11F5114CA467CA4B12E797")
     private  ScaleDrawable(ScaleState state, Resources res) {
         mScaleState = new ScaleState(state, this, res);
@@ -80,7 +81,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_895390183 =         mScaleState.mDr
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static float getPercent(TypedArray a, int name) {
         String s = a.getString(name);
         if (s != null) {

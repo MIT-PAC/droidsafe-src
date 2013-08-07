@@ -1,16 +1,17 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements Serializable, Cloneable, Map<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.590 -0400", hash_original_field = "056E0360B75D77ECE0AE955FE59BF15D", hash_generated_field = "784B4CB2B0AA1435846B96ECF749418D")
@@ -426,7 +427,7 @@ Collection<V> var60B0A8A6E555943126A18D312F8E04FB_358821968 =         valuesColl
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.600 -0400", hash_original_method = "DC4D5C48E92024F936CD723136F7EC43", hash_generated_method = "232D92AC03D454BF9E5F7DAD40AE5CC2")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,
@@ -457,7 +458,7 @@ for(int i = elementCount;i > 0;i--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.600 -0400", hash_original_method = "7E98F968D6A8FBC0CE4D31A606E7DB44", hash_generated_method = "EC4BE742E19546A2AFEEFA873A1FD45F")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -483,7 +484,7 @@ for(int i = elementCount;i > 0;i--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.601 -0400", hash_original_method = "AB7EF2A62AD1394405351664F3033DEE", hash_generated_method = "F2EE450EC8782A7EB49638B9E8E56378")
     private boolean isValidKeyType(Object key) {
         addTaint(key.getTaint());
@@ -504,7 +505,7 @@ for(int i = elementCount;i > 0;i--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.603 -0400", hash_original_method = "E2B9C0EDB3E88C666CBFA70F3A732433", hash_generated_method = "D730116B98D134A16FDA01B3A791E739")
     @SuppressWarnings("unchecked")
     private void initialization(EnumMap enumMap) {
@@ -524,7 +525,7 @@ for(int i = elementCount;i > 0;i--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.604 -0400", hash_original_method = "74B7FF14F292272934F29B542A6B3535", hash_generated_method = "9FC8FBB551CD14785E1041E3AB443C0B")
     private void initialization(Class<K> type) {
         keyType = type;
@@ -541,7 +542,7 @@ for(int i = elementCount;i > 0;i--)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.605 -0400", hash_original_method = "394364EB9AA119D86D9EB30D7D288B77", hash_generated_method = "628FCDAE26CD1B1682776714272B0E9B")
     @SuppressWarnings("unchecked")
     private void putAllImpl(Map map) {
@@ -762,7 +763,7 @@ String varE65B3A02759122992CB82C0E651AD408_184613515 =             result.toStri
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.615 -0400", hash_original_method = "D6BC45043628808E78169E86857FDCA6", hash_generated_method = "AC1A8C3D838C2FCAACFBDBD39E6D6E2F")
         private void checkEntryStatus() {
             if(!enumMap.hasMapping[ordinal])            
@@ -900,7 +901,7 @@ String var5CDD27A171D0E5C79918D5587971E74E_1999057489 =             type.get(
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.620 -0400", hash_original_method = "8DC9DAAEB887A2B3089BD6592C09E5DA", hash_generated_method = "87F138B17A91C9990B1B7B120E52F08B")
         private void checkStatus() {
             if(-1 == prePosition)            

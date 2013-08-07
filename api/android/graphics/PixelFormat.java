@@ -1,10 +1,11 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class PixelFormat {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.631 -0400", hash_original_field = "C79C8A122EB0B40BB95012C1344026C6", hash_generated_field = "25CC68B225378088BC05AACA8A83059E")

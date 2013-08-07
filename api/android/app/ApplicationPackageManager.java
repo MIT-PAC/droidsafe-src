@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,10 +41,10 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Process;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class ApplicationPackageManager extends PackageManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.469 -0400", hash_original_field = "D582EAEF778B662187C3776F3BC85DE5", hash_generated_field = "BB74ADCE9FCE390733990F175981A8B2")
@@ -1607,7 +1608,7 @@ Resources var4ECAD796BEBC2036726E2B4D3C6D94FC_1364128856 =         getResourcesF
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.540 -0400", hash_original_method = "805BC435FDAE098AFC4F53B40E89D7C1", hash_generated_method = "113AC83B03024E210A2E61C49E5FC61F")
     private Drawable getCachedIcon(ResourceName name) {
         addTaint(name.getTaint());
@@ -1637,6 +1638,7 @@ Drawable var540C13E9E156B687226421B24F2DF178_323226357 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.541 -0400", hash_original_method = "1ADDA1851B7207BD0D6C119E2C63D6A2", hash_generated_method = "AC3861F30662FDCC0F506F5C2283D5F8")
     private void putCachedIcon(ResourceName name, Drawable dr) {
         addTaint(dr.getTaint());
@@ -1697,7 +1699,7 @@ Drawable var540C13E9E156B687226421B24F2DF178_323226357 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.544 -0400", hash_original_method = "B66098C8E55783775B73FA7D73879D41", hash_generated_method = "92B0CA613B75981B2E3008A65D7FF32C")
     private CharSequence getCachedString(ResourceName name) {
         addTaint(name.getTaint());
@@ -1734,6 +1736,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_175742070 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.545 -0400", hash_original_method = "70E4290F1842F0A45B89D50D6CDEDDBB", hash_generated_method = "0BE61ABF45CCAED0BAE893C4FC9BC606")
     private void putCachedString(ResourceName name, CharSequence cs) {
         addTaint(cs.getTaint());
@@ -2404,7 +2407,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_877577658 =         new Ar
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.604 -0400", hash_original_method = "26D19368C79A5889D2D25A72A45789A8", hash_generated_method = "C0BAD32DAE9E0D2D77D5EDFB2BD1A99B")
     @Override
     public UserInfo createUser(String name, int flags) {
@@ -2431,6 +2434,7 @@ UserInfo var540C13E9E156B687226421B24F2DF178_987036524 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.606 -0400", hash_original_method = "D3989192690585F23E6C25734E0C3BDB", hash_generated_method = "68F8E936705911413E485755A6B68D23")
     @Override
     public List<UserInfo> getUsers() {
@@ -2450,7 +2454,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1680764632 =         users;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.607 -0400", hash_original_method = "7D391C716B6EBFD3B4233647A1DCBC34", hash_generated_method = "C2FBC0673B350D2369BCF52EE7FBB0E2")
     @Override
     public boolean removeUser(int id) {
@@ -2476,7 +2480,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1680764632 =         users;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.608 -0400", hash_original_method = "C52981B6B26B608864F1952FFD2E785F", hash_generated_method = "768E22F6EBCD52428AB6C0593A94E9CB")
     @Override
     public void updateUserName(int id, String name) {
@@ -2486,7 +2490,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1680764632 =         users;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.610 -0400", hash_original_method = "B193A8F9463928060D13777D952477CD", hash_generated_method = "4CD5B965E87522729F955C64A5544391")
     @Override
     public void updateUserFlags(int id, int flags) {
@@ -2496,7 +2500,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1680764632 =         users;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.611 -0400", hash_original_method = "05FAEEF75E7B74D35A0F0687A4ACD32C", hash_generated_method = "78BCD582C6864EA4A9E3D3DC61EA6D40")
     @Override
     public VerifierDeviceIdentity getVerifierDeviceIdentity() {

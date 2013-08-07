@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -17,10 +18,10 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SlidingDrawer extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.189 -0400", hash_original_field = "C6ED19C522463B2CF739046573EC7132", hash_generated_field = "B9AD435137DADE0845830F9270F70E30")
@@ -506,6 +507,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.207 -0400", hash_original_method = "88CBA816EA18A335641DE4CDFF39F34A", hash_generated_method = "B4CA1930A20B771C06C344DC0BD8E1E3")
     private void animateClose(int position) {
         addTaint(position);
@@ -517,6 +519,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.208 -0400", hash_original_method = "C2A732DFCC58ACB6BBE028A7D0745854", hash_generated_method = "B9B2C10D5AFA205190B830FA8287A839")
     private void animateOpen(int position) {
         addTaint(position);
@@ -528,6 +531,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.210 -0400", hash_original_method = "D605C0C7A0239DE60A633AEEC0D2A029", hash_generated_method = "72A319FCFE2C9862A4586ED91FB67874")
     private void performFling(int position, float velocity, boolean always) {
         addTaint(always);
@@ -587,6 +591,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.214 -0400", hash_original_method = "59A44BD10421444D4E6898819BFB6759", hash_generated_method = "B0117B393D003F6670CDF6A5B86DCE83")
     private void prepareTracking(int position) {
         addTaint(position);
@@ -621,6 +626,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.215 -0400", hash_original_method = "EB5E8744EDA67A38CC286A32349D536F", hash_generated_method = "4A6FD9BE13D0975406D1561B630FD014")
     private void moveHandle(int position) {
         addTaint(position);
@@ -706,6 +712,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.217 -0400", hash_original_method = "8AB257947D81E84CE88DA2BD3F113967", hash_generated_method = "FB35F7E9C02172C82A89EF62200B97BB")
     private void prepareContent() {
         if(mAnimating)        
@@ -744,6 +751,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.218 -0400", hash_original_method = "211492025B22CF1DCBA38CDE66604CEE", hash_generated_method = "CA3520032B72423EE1C42195F479A543")
     private void stopTracking() {
         mHandle.setPressed(false);
@@ -770,6 +778,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.220 -0400", hash_original_method = "1985F913D861388A154BC055CAF12D3C", hash_generated_method = "084F8BA0CE6ED3CCE121770A45D51751")
     private void doAnimation() {
         if(mAnimating)        
@@ -813,6 +822,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.221 -0400", hash_original_method = "D38E54734013AFEACE31D553AEEA44A0", hash_generated_method = "67E532C08C34AFBB41200F884128FA5C")
     private void incrementAnimation() {
         long now = SystemClock.uptimeMillis();
@@ -957,6 +967,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.224 -0400", hash_original_method = "1255865AE0DB052085CB21C8279D10AA", hash_generated_method = "0DE3464BE219B2823A96571BE1036781")
     private void closeDrawer() {
         moveHandle(COLLAPSED_FULL_CLOSED);
@@ -985,6 +996,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.225 -0400", hash_original_method = "68D1245B0829B631CA56B61B1EFB607E", hash_generated_method = "0541D688A2F251CE752456E450069118")
     private void openDrawer() {
         moveHandle(EXPANDED_FULL_OPEN);

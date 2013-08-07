@@ -1,6 +1,7 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.PerformanceCollector;
 import android.os.PerformanceCollector.PerformanceResultsWriter;
 

@@ -1,13 +1,14 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.HttpHost;
 
 import android.os.SystemClock;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class IdleCache {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.262 -0400", hash_original_field = "379C729523CD5967E1C64411ED82B1A2", hash_generated_field = "5DA8A4D4C2CDF098EB768C6225089E33")
@@ -26,6 +27,7 @@ class IdleCache {
 
     private int mReused = 0;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.263 -0400", hash_original_method = "381EAC5E18A2676540DA51802FE9C22A", hash_generated_method = "BAFC3C81E726FE7B91D886E61387DE79")
       IdleCache() {
 for(int i = 0;i < IDLE_CACHE_MAX;i++)
@@ -39,6 +41,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.264 -0400", hash_original_method = "15C17CA69A0E3C6519F160E1B18C9284", hash_generated_method = "893332F3D6039DC2FA2054AC6DAACFDA")
     synchronized boolean cacheConnection(
             HttpHost host, Connection connection) {
@@ -81,7 +84,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.267 -0400", hash_original_method = "84A867D5F5B3563DFEB3ADE540AAE988", hash_generated_method = "2F5ABF904043E0FB6A3C79479B9A6B9F")
     synchronized Connection getConnection(HttpHost host) {
         addTaint(host.getTaint());
@@ -127,7 +130,7 @@ Connection varEDFF4FBBF053B5DC2B444ADFA049EE0F_1192020068 =         ret;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.270 -0400", hash_original_method = "3CB6FBE953A3200168C4C82134203CFB", hash_generated_method = "8B2D5B358AEA1270BD5C5EDACCB39C3A")
     synchronized void clear() {
 for(int i = 0;mCount > 0 && i < IDLE_CACHE_MAX;i++)
@@ -154,7 +157,7 @@ for(int i = 0;mCount > 0 && i < IDLE_CACHE_MAX;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.272 -0400", hash_original_method = "D819290B68B2E791C413DF56F024C65B", hash_generated_method = "AEE43958128F0F79804035295610C6AA")
     private synchronized void clearIdle() {
         if(mCount > 0)        
@@ -219,7 +222,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
         }
 
 
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.275 -0400", hash_original_method = "251C8B975B1D281BC736CAA8083B5C8E", hash_generated_method = "D8917CFCEA8A09470AD25411D95F05B8")
         public void run() {
             int check = 0;

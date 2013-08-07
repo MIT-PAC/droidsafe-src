@@ -1,13 +1,14 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.024 -0400", hash_original_field = "B52D9E9D9646E0353AB30807D53B3F06", hash_generated_field = "FF4CF5F81862B8524694C4DB9DDE635D")

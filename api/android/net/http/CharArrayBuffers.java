@@ -1,13 +1,14 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class CharArrayBuffers {
     
@@ -57,7 +58,7 @@ class CharArrayBuffers {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static char toLower(char c) {
         if (c >= 'A' && c <= 'Z'){
             c += uppercaseAddon;

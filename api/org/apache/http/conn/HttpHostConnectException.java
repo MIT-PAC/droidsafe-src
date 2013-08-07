@@ -1,14 +1,15 @@
 package org.apache.http.conn;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.ConnectException;
 
 import org.apache.http.HttpHost;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HttpHostConnectException extends ConnectException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.711 -0400", hash_original_field = "67B3DBA8BC6778101892EB77249DB32E", hash_generated_field = "A05924381413D1FF5A0ADAC711A8D56A")

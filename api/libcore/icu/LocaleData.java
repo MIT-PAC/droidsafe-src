@@ -1,15 +1,16 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class LocaleData {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.922 -0400", hash_original_field = "3CD3E760E15423653736E26E4D21E54A", hash_generated_field = "8A13F0EA9FFA1E934CE8561DD3C5989E")
@@ -124,6 +125,7 @@ public final class LocaleData {
 
     public String percentPattern;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.925 -0400", hash_original_method = "CFFFBB83D5CAB96B8DF6F8A1F3FD834E", hash_generated_method = "D26C45D435D79556A74DEBD6612FAA64")
     private  LocaleData() {
         // ---------- Original Method ----------
@@ -153,6 +155,7 @@ public final class LocaleData {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static LocaleData makeLocaleData(Locale locale) {
         String language = locale.getLanguage();
         String country = locale.getCountry();
@@ -218,7 +221,7 @@ String var5A6DE645536F723A5172C7B3F4462C9F_1616582546 =         "LocaleData[" +
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.940 -0400", hash_original_method = "97F8929D36249A9101B1710A2B088C68", hash_generated_method = "661A5D0F5903D7BE6EB7261ACD81ADE1")
     private void overrideWithDataFrom(LocaleData overrides) {
         if(overrides.firstDayOfWeek != null)        
@@ -450,6 +453,7 @@ String var47A9C88E8999743CB5904718E9A01273_637681337 =         fullTimeFormat;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static LocaleData initLocaleData(Locale locale) {
         LocaleData localeData = new LocaleData();
         if (!ICU.initLocaleDataImpl(locale.toString(), localeData)) {

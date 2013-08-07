@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import android.content.Context;
@@ -10,10 +11,10 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.util.EventLog;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WebSettings {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.567 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
@@ -258,6 +259,7 @@ public class WebSettings {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.569 -0400", hash_original_method = "4DE075F72507E4E460D500D800684FF5", hash_generated_method = "BF87D083056DD36762DD8DFA35358E02")
     private String getCurrentAcceptLanguage() {
         Locale locale;
@@ -295,6 +297,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_226328214 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String convertObsoleteLanguageCodeToNew(String langCode) {
         if (langCode == null) {
             return null;
@@ -310,6 +313,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_226328214 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void addLocaleToHttpAcceptLanguage(StringBuilder builder,
                                                       Locale locale) {
         String language = convertObsoleteLanguageCodeToNew(locale.getLanguage());
@@ -324,6 +328,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_226328214 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.570 -0400", hash_original_method = "7A96EBBEB91D958845CC53A11C0AF344", hash_generated_method = "9CDA40E66BC06B0DB4EA3FF5C9A66F17")
     private synchronized String getCurrentUserAgent() {
         Locale locale;
@@ -414,7 +419,7 @@ String varE72B15D0FE2364B4652A376ACAFBA38E_1810850022 =         String.format(ba
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.570 -0400", hash_original_method = "BB54171E3BDD4A64CB98C2709AC39B9C", hash_generated_method = "D34368A02E07C2A570922F9D937E7427")
      boolean supportTouchOnly() {
         boolean varD46F66368C8A17CB1607B1673483E82B_2096826158 = (mLightTouchEnabled);
@@ -713,6 +718,7 @@ TextSize varA667F0019A139609606DB37BCD641C93_1762892690 =         closestSize !=
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.581 -0400", hash_original_method = "E23B2F666BB6D09A8C611DD5B37D2698", hash_generated_method = "09C709307553D8058D837CA6F5A25D16")
     public void setDoubleTapZoom(int doubleTapZoom) {
         if(mDoubleTapZoom != doubleTapZoom)        
@@ -728,7 +734,7 @@ TextSize varA667F0019A139609606DB37BCD641C93_1762892690 =         closestSize !=
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.581 -0400", hash_original_method = "137930918FD91EA20A5F57296DD24AFB", hash_generated_method = "4890343CC4F14CE44B5E958D337968B7")
     public int getDoubleTapZoom() {
         int varB24A87E78F1CA38FA17FF0BB7E4C8A3D_840023459 = (mDoubleTapZoom);
@@ -1247,6 +1253,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.601 -0400", hash_original_method = "E6659EF50725F66F9827ED33E4CFAB21", hash_generated_method = "9527A145900C649C5117DA2FAA06C397")
     public synchronized void setPageCacheCapacity(int size) {
         if(size < 0)        
@@ -1348,6 +1355,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.607 -0400", hash_original_method = "4445E93EF699C8E4DE794753E49CA477", hash_generated_method = "0B4E78E94E98AD8A79506E6D3ACE1E50")
     private void verifyNetworkAccess() {
         if(!mBlockNetworkLoads)        
@@ -1391,6 +1399,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.609 -0400", hash_original_method = "8A9F66ACB83E46F66732CB0783F8BD97", hash_generated_method = "AC9C31EF301FDA55234E882CD7F32D5E")
     public synchronized void setHardwareAccelSkiaEnabled(boolean flag) {
         if(mHardwareAccelSkia != flag)        
@@ -1406,7 +1415,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.609 -0400", hash_original_method = "B41E73346B4841FDA1F28A35C0158347", hash_generated_method = "60E64CE4CB609742A0E48A0013F97685")
     public synchronized boolean getHardwareAccelSkiaEnabled() {
         boolean varEB21311A166E0F2DBA02B218D19B4AC9_110146542 = (mHardwareAccelSkia);
@@ -1417,6 +1426,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.609 -0400", hash_original_method = "69FE03F7A269EF1D16FCCD39ECE7D049", hash_generated_method = "70118629FB48BC31CDC0E5F0131B7539")
     public synchronized void setShowVisualIndicator(boolean flag) {
         if(mShowVisualIndicator != flag)        
@@ -1432,7 +1442,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.609 -0400", hash_original_method = "C63472D12B908062A1CEAE79E75779C9", hash_generated_method = "ECF6361108031955F37E6DC12DE78350")
     public synchronized boolean getShowVisualIndicator() {
         boolean varB43EF6CB92DDDD967AA82418BC205214_416474040 = (mShowVisualIndicator);
@@ -1619,6 +1629,7 @@ String var09ADE5DECF0573905A2C722EF656BEFD_1789841075 =         mDatabasePath;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.613 -0400", hash_original_method = "5C3A0FF2F7925F672A8F3BF470C8C1B9", hash_generated_method = "2145D7D320B33EA7A8DA240334B657D2")
     public synchronized void setWorkersEnabled(boolean flag) {
         if(mWorkersEnabled != flag)        
@@ -1649,6 +1660,7 @@ String var09ADE5DECF0573905A2C722EF656BEFD_1789841075 =         mDatabasePath;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.613 -0400", hash_original_method = "ED4873F24C9B96C88ADEA94C6CEBF439", hash_generated_method = "B84327DEB02009204CF4A60D7F7A9697")
     public synchronized void setXSSAuditorEnabled(boolean flag) {
         if(mXSSAuditorEnabled != flag)        
@@ -1965,6 +1977,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.633 -0400", hash_original_method = "9F8C026B57F7FDFD26FE193DA8C87BB6", hash_generated_method = "05DD6215B4364E5E03CBD9C423B1B7CA")
     public void setShrinksStandaloneImagesToFit(boolean shrink) {
         if(mShrinksStandaloneImagesToFit != shrink)        
@@ -1980,6 +1993,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.633 -0400", hash_original_method = "041EEBDF0CC6DB4D857EE5FE00439A69", hash_generated_method = "2E832976280C843DBE994376E28B6AFA")
     public void setMaximumDecodedImageSize(long size) {
         if(mMaximumDecodedImageSize != size)        
@@ -2033,7 +2047,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.633 -0400", hash_original_method = "9C2B0A9C4AD9BDB94288AB167718CCA9", hash_generated_method = "3D3E3F455DD16F494C6704524CA8C15D")
     public boolean forceUserScalable() {
         boolean var848CE56F11C41CF540C3E3D9775A50CD_2107664042 = (mForceUserScalable);
@@ -2044,7 +2058,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.637 -0400", hash_original_method = "1D6F9D93B2A4A93CBF13AD0469B99A04", hash_generated_method = "7138B412D9EF0A057D7618421D7F0639")
     public synchronized void setForceUserScalable(boolean flag) {
         mForceUserScalable = flag;
@@ -2068,6 +2082,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.637 -0400", hash_original_method = "1A8C919F0F6505492DC614E84115DF0C", hash_generated_method = "F61C7134BE409D0B39FF0DC9DB0724EC")
     public synchronized void setAutoFillEnabled(boolean enabled) {
         addTaint(enabled);
@@ -2086,7 +2101,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.637 -0400", hash_original_method = "8774A835D2148EBC629E39CB3DCAFA63", hash_generated_method = "1AB86210F6713225EF73AA3ACB00D552")
     public synchronized boolean getAutoFillEnabled() {
         boolean var50EA70E6285C1FCC7F3B54A690D3A99B_672837205 = (mAutoFillEnabled);
@@ -2097,6 +2112,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.637 -0400", hash_original_method = "3148173678A0F0377520D6B2C8079A70", hash_generated_method = "4AC5916B6C89A554548624C538C5A9FE")
     public synchronized void setAutoFillProfile(AutoFillProfile profile) {
         if(mAutoFillProfile != profile)        
@@ -2112,7 +2128,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.637 -0400", hash_original_method = "40495DA1FFE9EC3467407968672CDCF7", hash_generated_method = "767663C77195EAEB5900B7EFF6ACA311")
     public synchronized AutoFillProfile getAutoFillProfile() {
 AutoFillProfile varDCF553BB5F5743139326AD6AFF33B6D4_449259077 =         mAutoFillProfile;
@@ -2152,6 +2168,7 @@ AutoFillProfile varDCF553BB5F5743139326AD6AFF33B6D4_449259077 =         mAutoFil
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.640 -0400", hash_original_method = "51A1E424E5F24F0C6AF042B09286C12C", hash_generated_method = "2FBBC9B17F398A03B1F17079F3321661")
     public void setProperty(String key, String value) {
         addTaint(value.getTaint());
@@ -2167,6 +2184,7 @@ AutoFillProfile varDCF553BB5F5743139326AD6AFF33B6D4_449259077 =         mAutoFil
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.640 -0400", hash_original_method = "E79B730EE57AB5AA3332F72B80B24914", hash_generated_method = "CC4BB9E90FD216B50030E3827806F9EA")
     public String getProperty(String key) {
         addTaint(key.getTaint());
@@ -2220,7 +2238,7 @@ String var953EAE7B2F85C0E869D0F2008318D845_728848379 =         mWebView.nativeGe
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.643 -0400", hash_original_method = "32C980BFA3F312B2745A36CC144BD5C9", hash_generated_method = "F9F52305F23143363AFC102C487FD00F")
     private int pin(int size) {
         addTaint(size);
@@ -2250,6 +2268,7 @@ String var953EAE7B2F85C0E869D0F2008318D845_728848379 =         mWebView.nativeGe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.643 -0400", hash_original_method = "028ACD01F22F62E6B019AFF3AD2AE2F1", hash_generated_method = "CF312E77451B47E2F44D5FE40AFD1B62")
     private synchronized void postSync() {
         if(!mSyncPending)        
@@ -2520,6 +2539,7 @@ String var6A717345AF76EF28363FFAB5D9CDC4CC_2006849013 =             mPhoneNumber
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.661 -0400", hash_original_method = "5DB82DF3D22DC31DB9F8A52C18B58140", hash_generated_method = "B5AB3291AD33F11E70232B2AEE7B8C52")
         private synchronized void createHandler() {
             setRenderPriority();
@@ -2564,6 +2584,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.661 -0400", hash_original_method = "C47047917EAD94E1F72D1853ABF9CDB1", hash_generated_method = "C3428E61FCEC12B1434968D54EBB49AC")
         private void setRenderPriority() {
             synchronized
@@ -2604,6 +2625,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.661 -0400", hash_original_method = "AA202573A133FD4C93192532FFFE560D", hash_generated_method = "4DBA84A4C1963987B57E213B639CE5DE")
         private synchronized boolean sendMessage(Message msg) {
             addTaint(msg.getTaint());

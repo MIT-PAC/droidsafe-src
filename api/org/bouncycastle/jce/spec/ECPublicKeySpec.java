@@ -1,12 +1,13 @@
 package org.bouncycastle.jce.spec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.bouncycastle.math.ec.ECPoint;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ECPublicKeySpec extends ECKeySpec {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.741 -0400", hash_original_field = "7694F4A66316E53C8CDD9D9954BD611D", hash_generated_field = "190FD5BD9908F6C1ABFEFC9764DEAE12")

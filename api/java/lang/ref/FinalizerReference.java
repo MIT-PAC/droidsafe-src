@@ -1,10 +1,11 @@
 package java.lang.ref;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class FinalizerReference<T> extends Reference<T> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.758 -0400", hash_original_field = "0EDA241FC65CCF35D9743309AC395215", hash_generated_field = "F4C159F0B6076ECC1F9CAA1CB201F6E0")
@@ -37,7 +38,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.759 -0400", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "AA79A11271518D347BCB1CB74D552364")
     @Override
     public void clear() {
@@ -47,6 +48,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
     }
 
     
+    @DSModeled(DSC.BAN)
     static void add(Object referent) {
         FinalizerReference<?> reference = new FinalizerReference<Object>(referent, queue);
         synchronized (FinalizerReference.class) {
@@ -60,7 +62,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void remove(FinalizerReference reference) {
         synchronized (FinalizerReference.class) {
             FinalizerReference next = reference.next;
@@ -79,6 +81,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void finalizeAllEnqueued() throws InterruptedException {
         Sentinel sentinel = new Sentinel();
         FinalizerReference<Object> reference = new FinalizerReference<Object>(null, queue);
@@ -93,6 +96,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
 
         boolean finalized = false;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.761 -0400", hash_original_method = "E2AD40226AFB74C4AE2C6FB439A5AA79", hash_generated_method = "E2AD40226AFB74C4AE2C6FB439A5AA79")
         public Sentinel ()
         {
@@ -100,6 +104,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.762 -0400", hash_original_method = "0B77E3D00E3E63F9573A7AA23F424DE4", hash_generated_method = "C853D95507C1B6CBA3AFB545F976D807")
         @Override
         protected synchronized void finalize() throws Throwable {
@@ -111,6 +116,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.762 -0400", hash_original_method = "A29097CA472383A8F0DF21D7D263FC96", hash_generated_method = "F9EBC14D37BCEB0BC09147006A13433A")
         synchronized void awaitFinalization() throws InterruptedException {
             while

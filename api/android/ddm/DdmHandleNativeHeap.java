@@ -1,17 +1,19 @@
 package android.ddm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.harmony.dalvik.ddmc.Chunk;
 import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DdmHandleNativeHeap extends ChunkHandler {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.235 -0400", hash_original_method = "ACE04131AFA484CBFE62D5908678C3E3", hash_generated_method = "A38AD3DD2B6A1166A8F3D50A828FB6DB")
     private  DdmHandleNativeHeap() {
         // ---------- Original Method ----------
@@ -68,6 +70,7 @@ Chunk var86A46C1BD48740636DD323FF61292445_600296553 =             handleNHGT(req
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.243 -0400", hash_original_method = "14897B1C078BC71A7C6BA04BAB3CD153", hash_generated_method = "9E873703B302194B204BBA63478049A0")
     private Chunk handleNHGT(Chunk request) {
         addTaint(request.getTaint());

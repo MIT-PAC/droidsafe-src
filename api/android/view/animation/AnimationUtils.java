@@ -1,6 +1,7 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -12,10 +13,10 @@ import android.content.res.XmlResourceParser;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.Xml;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AnimationUtils {
     
@@ -55,13 +56,13 @@ public class AnimationUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
             AnimationSet parent, AttributeSet attrs) throws XmlPullParserException, IOException {
         Animation anim = null;
@@ -117,14 +118,14 @@ public class AnimationUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser) throws XmlPullParserException, IOException {
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         LayoutAnimationController controller = null;
@@ -208,7 +209,7 @@ public class AnimationUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         Interpolator interpolator = null;
         int type;

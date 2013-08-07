@@ -1,6 +1,7 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -12,8 +13,8 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.ExceptionUtils;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class ChunkedInputStream extends InputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.492 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")
@@ -173,6 +174,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.498 -0400", hash_original_method = "4EC8EF70B227B064D40EEFDD2252C457", hash_generated_method = "19055AF53F3ECC5BBFAAE3C51AE57F9F")
     private void nextChunk() throws IOException {
         chunkSize = getChunkSize();
@@ -203,6 +205,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.499 -0400", hash_original_method = "992D2E5FFE364796E637C7610DCE798B", hash_generated_method = "D94521F7AF2CCE4FCEBC81CB38EFC671")
     private int getChunkSize() throws IOException {
         if(!bof)        
@@ -248,6 +251,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.501 -0400", hash_original_method = "B639A385C0DFC1E0B0F3B3045E38F98A", hash_generated_method = "8830E16668B021D9E0644ED706E6DE45")
     private void parseTrailerHeaders() throws IOException {
         try 

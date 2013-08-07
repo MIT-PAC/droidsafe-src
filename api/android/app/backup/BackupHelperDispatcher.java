@@ -1,6 +1,7 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.Map;
@@ -8,10 +9,10 @@ import java.util.TreeMap;
 
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class BackupHelperDispatcher {
@@ -19,12 +20,14 @@ public class BackupHelperDispatcher {
 
     TreeMap<String,BackupHelper> mHelpers = new TreeMap<String,BackupHelper>();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.232 -0400", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "AF1A5159B4C616692A2600B7B383730D")
     public  BackupHelperDispatcher() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.234 -0400", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "A047BBD64C879EFF2262D85E46B41350")
     public void addHelper(String keyPrefix, BackupHelper helper) {
         addTaint(helper.getTaint());
@@ -35,7 +38,7 @@ public class BackupHelperDispatcher {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.236 -0400", hash_original_method = "B596D5B1B749A849E47ABD34415972F7", hash_generated_method = "7CC637D21FA3374A3006B573399A2C18")
     public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
              ParcelFileDescriptor newState) throws IOException {
@@ -81,6 +84,7 @@ for(Map.Entry<String,BackupHelper> entry : helpers.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.238 -0400", hash_original_method = "B20B211F99695DC29EC53BF566272BED", hash_generated_method = "70F7D4C172672097E52F45A36A316EFA")
     private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState, Header header, BackupHelper helper) throws IOException {
@@ -123,7 +127,7 @@ for(Map.Entry<String,BackupHelper> entry : helpers.entrySet())
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.240 -0400", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "1DFB267EC009BBE50DCA3E664A7D995F")
     public void performRestore(BackupDataInput input, int appVersionCode,
             ParcelFileDescriptor newState) throws IOException {
@@ -205,6 +209,7 @@ for(BackupHelper helper : mHelpers.values())
 
         String keyPrefix;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.244 -0400", hash_original_method = "7DC9F4B0B6F0B6B866C998FD2825EB34", hash_generated_method = "7DC9F4B0B6F0B6B866C998FD2825EB34")
         public Header ()
         {

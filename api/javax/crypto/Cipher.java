@@ -1,6 +1,7 @@
 package javax.crypto;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.security.AlgorithmParameters;
 import java.security.InvalidAlgorithmParameterException;
@@ -20,10 +21,10 @@ import java.util.Set;
 import org.apache.harmony.crypto.internal.NullCipherSpi;
 import org.apache.harmony.security.fortress.Engine;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Cipher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.989 -0400", hash_original_field = "15D61712450A686A7F365ADF4FEF581F", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
@@ -100,11 +101,13 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static NoSuchAlgorithmException invalidTransformation(String transformation) throws NoSuchAlgorithmException {
         throw new NoSuchAlgorithmException("Invalid transformation: " + transformation);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static synchronized Cipher getCipher(String transformation, Provider provider) throws NoSuchAlgorithmException, NoSuchPaddingException {
         if (transformation == null || transformation.isEmpty()) {
             throw invalidTransformation(transformation);
@@ -176,6 +179,7 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String[] checkTransformation(String transformation) throws NoSuchAlgorithmException {
         if (transformation.startsWith("/")) {
             transformation = transformation.substring(1);
@@ -315,6 +319,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.994 -0400", hash_original_method = "09F21B40649178B5CD7EDFF6A1F24869", hash_generated_method = "CE46253524713CFAF3D98EB67FB2FD7F")
     private void checkMode(int mode) {
         addTaint(mode);

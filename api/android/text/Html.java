@@ -1,6 +1,7 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.HashMap;
@@ -37,14 +38,14 @@ import android.text.style.UnderlineSpan;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Html {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.649 -0400", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "03497373D06A453313C747AE9BCD9BA5")
     private  Html() {
         // ---------- Original Method ----------
@@ -83,7 +84,7 @@ public class Html {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void withinHtml(StringBuilder out, Spanned text) {
         int len = text.length();
         int next;
@@ -117,7 +118,7 @@ public class Html {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void withinDiv(StringBuilder out, Spanned text,
             int start, int end) {
         int next;
@@ -135,7 +136,7 @@ public class Html {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void withinBlockquote(StringBuilder out, Spanned text,
                                          int start, int end) {
         out.append("<p>");
@@ -156,7 +157,7 @@ public class Html {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void withinParagraph(StringBuilder out, Spanned text,
                                         int start, int end, int nl,
                                         boolean last) {
@@ -274,7 +275,7 @@ public class Html {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void withinStyle(StringBuilder out, Spanned text,
                                     int start, int end) {
         for (int i = start; i < end; i++) {
@@ -302,6 +303,7 @@ public class Html {
     
     private static class HtmlParser {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.650 -0400", hash_original_method = "2BD8172A597CA1F4EC32CC40B5134462", hash_generated_method = "2BD8172A597CA1F4EC32CC40B5134462")
         public HtmlParser ()
         {
@@ -413,6 +415,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.652 -0400", hash_original_method = "D9F0F9B119583626825989DD5C2C535C", hash_generated_method = "46BEFAF18F77B93C762E0C66460036B5")
     private void handleStartTag(String tag, Attributes attributes) {
         addTaint(attributes.getTaint());
@@ -529,6 +532,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.653 -0400", hash_original_method = "6B986DC33BF60A186B7109194B660A70", hash_generated_method = "DCCD9F9DB769FB75E89FBD5FDBF8CDB1")
     private void handleEndTag(String tag) {
         addTaint(tag.getTaint());
@@ -641,6 +645,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void handleP(SpannableStringBuilder text) {
         int len = text.length();
         if (len >= 1 && text.charAt(len - 1) == '\n') {
@@ -656,11 +661,13 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void handleBr(SpannableStringBuilder text) {
         text.append("\n");
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Object getLast(Spanned text, Class kind) {
         Object[] objs = text.getSpans(0, text.length(), kind);
         if (objs.length == 0) {
@@ -671,12 +678,14 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void start(SpannableStringBuilder text, Object mark) {
         int len = text.length();
         text.setSpan(mark, len, len, Spannable.SPAN_MARK_MARK);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void end(SpannableStringBuilder text, Class kind,
                             Object repl) {
         int len = text.length();
@@ -690,6 +699,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void startImg(SpannableStringBuilder text,
                                  Attributes attributes, Html.ImageGetter img) {
         String src = attributes.getValue("", "src");
@@ -709,6 +719,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void startFont(SpannableStringBuilder text,
                                   Attributes attributes) {
         String color = attributes.getValue("", "color");
@@ -718,6 +729,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void endFont(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Font.class);
@@ -753,6 +765,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void startA(SpannableStringBuilder text, Attributes attributes) {
         String href = attributes.getValue("", "href");
         int len = text.length();
@@ -760,6 +773,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void endA(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Href.class);
@@ -775,6 +789,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableString
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void endHeader(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Header.class);
@@ -926,6 +941,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static HashMap<String,Integer> buildColorMap() {
         HashMap<String,Integer> map = new HashMap<String,Integer>();
         map.put("aqua", 0x00FFFF);
@@ -948,6 +964,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int getHtmlColor(String color) {
         Integer i = COLORS.get(color.toLowerCase());
         if (i != null) {
@@ -964,6 +981,7 @@ for(int i = 0;i < length;i++)
     
     private static class Bold {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "360EF21B8D8783EFA444B4BE5FDC6AD7", hash_generated_method = "360EF21B8D8783EFA444B4BE5FDC6AD7")
         public Bold ()
         {
@@ -977,6 +995,7 @@ for(int i = 0;i < length;i++)
     
     private static class Italic {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "49A8CF03F12E3553DCC23BB27643EAFC", hash_generated_method = "49A8CF03F12E3553DCC23BB27643EAFC")
         public Italic ()
         {
@@ -990,6 +1009,7 @@ for(int i = 0;i < length;i++)
     
     private static class Underline {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "84D51255F87B8DD26833841AC6851E69", hash_generated_method = "84D51255F87B8DD26833841AC6851E69")
         public Underline ()
         {
@@ -1003,6 +1023,7 @@ for(int i = 0;i < length;i++)
     
     private static class Big {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "273608B63D858A3552D83E6F68A870F3", hash_generated_method = "273608B63D858A3552D83E6F68A870F3")
         public Big ()
         {
@@ -1016,6 +1037,7 @@ for(int i = 0;i < length;i++)
     
     private static class Small {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "30BB2E22576FED131404001997B90E83", hash_generated_method = "30BB2E22576FED131404001997B90E83")
         public Small ()
         {
@@ -1029,6 +1051,7 @@ for(int i = 0;i < length;i++)
     
     private static class Monospace {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "9E34A0C6710AE2CB78083EA433BD9375", hash_generated_method = "9E34A0C6710AE2CB78083EA433BD9375")
         public Monospace ()
         {
@@ -1042,6 +1065,7 @@ for(int i = 0;i < length;i++)
     
     private static class Blockquote {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "8510635EE940E5512FA9DD7C2C1B8599", hash_generated_method = "8510635EE940E5512FA9DD7C2C1B8599")
         public Blockquote ()
         {
@@ -1055,6 +1079,7 @@ for(int i = 0;i < length;i++)
     
     private static class Super {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE", hash_generated_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE")
         public Super ()
         {
@@ -1068,6 +1093,7 @@ for(int i = 0;i < length;i++)
     
     private static class Sub {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "35CBF4C3F1CE0FC70451AFA9D19DB301", hash_generated_method = "35CBF4C3F1CE0FC70451AFA9D19DB301")
         public Sub ()
         {

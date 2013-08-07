@@ -1,6 +1,7 @@
 package org.bouncycastle.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.InvalidKeyException;

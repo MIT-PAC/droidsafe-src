@@ -1,6 +1,7 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 interface ZipConstants {
 

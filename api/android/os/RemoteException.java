@@ -1,8 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.AndroidException;
-import droidsafe.annotations.DSGenerator;
+
 
 public class RemoteException extends AndroidException {
     

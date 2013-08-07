@@ -1,13 +1,14 @@
 package java.util.concurrent.locks;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ReentrantLock implements Lock, java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.494 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
@@ -452,7 +453,7 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_1190475811 =             getState() =
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.505 -0400", hash_original_method = "05D5902ED2395493955B66F039D49364", hash_generated_method = "75645607B1168731113488FBAFB4AB43")
         private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
             addTaint(s.getTaint());

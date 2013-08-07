@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Iterator;
 
 import javax.sip.header.ContentTypeHeader;

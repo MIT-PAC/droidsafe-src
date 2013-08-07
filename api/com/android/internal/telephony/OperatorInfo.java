@@ -1,12 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class OperatorInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.564 -0400", hash_original_field = "EBA1AB368B4E5EA262B356E9FEB5DBFF", hash_generated_field = "F0150DE98C56463E8FBA5168FF9D36D5")
@@ -22,6 +23,7 @@ public class OperatorInfo implements Parcelable {
 
     private State state = State.UNKNOWN;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.565 -0400", hash_original_method = "4475B64A2C44E2D075CC5ECE1CB355AC", hash_generated_method = "DD36DA18EB148E635450102FC6720221")
       OperatorInfo(String operatorAlphaLong,
                 String operatorAlphaShort,
@@ -39,6 +41,7 @@ public class OperatorInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.565 -0400", hash_original_method = "22D6EAAD8ACDCB5BD2588D137EBB558E", hash_generated_method = "4E2B322581FF7B98591959B7B4F2C6F3")
     public  OperatorInfo(String operatorAlphaLong,
                 String operatorAlphaShort,
@@ -54,7 +57,7 @@ public class OperatorInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.565 -0400", hash_original_method = "B51FA3C3765E71F08A241B1C8BA79C96", hash_generated_method = "C25EE716BAABB1F8B352B40A08706005")
     public String getOperatorAlphaLong() {
 String var1B7C97A61CBCC0846D213DF60C49D4F5_752212390 =         operatorAlphaLong;
@@ -65,7 +68,7 @@ String var1B7C97A61CBCC0846D213DF60C49D4F5_752212390 =         operatorAlphaLong
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.566 -0400", hash_original_method = "A8269EAEF0CA69A19C2F3D33BBF8152B", hash_generated_method = "519D6817D0CE5F4D97CE621BE864A2D2")
     public String getOperatorAlphaShort() {
 String varCD7C131ECB0CB94030B0581F1C3C360A_331548981 =         operatorAlphaShort;
@@ -76,7 +79,7 @@ String varCD7C131ECB0CB94030B0581F1C3C360A_331548981 =         operatorAlphaShor
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.566 -0400", hash_original_method = "06DBB2F851A1F540C7CE21639E1F11FC", hash_generated_method = "921C933273BF8B06A2CDB6410FC3983B")
     public String getOperatorNumeric() {
 String var2910E34F66A87ACEB979401752EFC981_681973430 =         operatorNumeric;
@@ -87,7 +90,7 @@ String var2910E34F66A87ACEB979401752EFC981_681973430 =         operatorNumeric;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.566 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "7AEE7F5EF72B34CCF2700C9A38F44A06")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_1892963017 =         state;
@@ -98,6 +101,7 @@ State var37C56C9D63C623261861C16DCFB73F6D_1892963017 =         state;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static State rilStateToState(String s) {
         if (s.equals("unknown")) {
             return State.UNKNOWN;
@@ -114,6 +118,7 @@ State var37C56C9D63C623261861C16DCFB73F6D_1892963017 =         state;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.567 -0400", hash_original_method = "3A69A53B1D569DD83E423933B58E91F0", hash_generated_method = "B062EC4DCBAC75F8D31B78F077CE9574")
     public String toString() {
 String varDA2EAB669D8286E1B66AAEFC8A7FAD34_1571873580 =         "OperatorInfo " + operatorAlphaLong
@@ -130,7 +135,7 @@ String varDA2EAB669D8286E1B66AAEFC8A7FAD34_1571873580 =         "OperatorInfo " 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.568 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6059816D6E613AE40005E2CBF1A9B7B8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1500285604 = (0);
@@ -141,6 +146,7 @@ String varDA2EAB669D8286E1B66AAEFC8A7FAD34_1571873580 =         "OperatorInfo " 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.568 -0400", hash_original_method = "8E3E997094B6FE23C6A87821AE0A248F", hash_generated_method = "7091B2FA9F94DC2EBEAFD0AE58264B69")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

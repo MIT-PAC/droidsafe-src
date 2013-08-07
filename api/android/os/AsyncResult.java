@@ -1,8 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public class AsyncResult {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.558 -0400", hash_original_field = "25C84ECB718C6159E9324F086F630B67", hash_generated_field = "ACC4BEB2E6BD76B8FB51D8C386A55DC8")
@@ -15,6 +16,7 @@ public class AsyncResult {
 
     public Object result;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.558 -0400", hash_original_method = "198D3897BE246B2AE096FCE067E81108", hash_generated_method = "8F6C040BA0BD8D45D2C9FD08E5B23663")
     public  AsyncResult(Object uo, Object r, Throwable ex) {
         userObj = uo;
@@ -27,6 +29,7 @@ public class AsyncResult {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static AsyncResult forMessage(Message m, Object r, Throwable ex) {
         AsyncResult ret;
         ret = new AsyncResult (m.obj, r, ex);
@@ -35,6 +38,7 @@ public class AsyncResult {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static AsyncResult forMessage(Message m) {
         AsyncResult ret;
         ret = new AsyncResult (m.obj, null, null);

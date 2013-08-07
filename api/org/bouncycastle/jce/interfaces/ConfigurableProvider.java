@@ -1,6 +1,7 @@
 package org.bouncycastle.jce.interfaces;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ConfigurableProvider
 {

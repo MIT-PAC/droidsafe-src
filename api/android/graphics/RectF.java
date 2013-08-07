@@ -1,6 +1,7 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
 import android.os.Parcel;
@@ -9,10 +10,10 @@ import android.util.FloatMath;
 
 import com.android.internal.util.FastMath;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RectF implements Parcelable {
     public float left;
@@ -66,14 +67,14 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public String toShortString(StringBuilder sb) {    	
     	sb.append(1);
     	return sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void printShortString(PrintWriter pw) {
     	char c = 0;
     	pw.append(c);

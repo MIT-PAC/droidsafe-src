@@ -1,14 +1,15 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Base64OutputStream extends FilterOutputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.601 -0400", hash_original_field = "0EA4A0DB010EFD4ED3CA4EBEE723B65C", hash_generated_field = "1F1AACA9B8C921BF3C739250DBC6741F")
@@ -33,6 +34,7 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.601 -0400", hash_original_method = "5457B6ADA9169BEDA2429E8007C22AEC", hash_generated_method = "6C6B2C937DD34D93B5EED25E7BFB26EE")
     public  Base64OutputStream(OutputStream out, int flags, boolean encode) {
         super(out);
@@ -82,6 +84,7 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.602 -0400", hash_original_method = "F067C038C49D9731F81C40BA311D56BE", hash_generated_method = "56B2963A30BC9470257F370E84B15732")
     private void flushBuffer() throws IOException {
         if(bpos > 0)        
@@ -175,6 +178,7 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.602 -0400", hash_original_method = "4C39B7C855C3608586F188D73E5D3223", hash_generated_method = "71B47D5F218A8D9847B76220176A1F9A")
     private void internalWrite(byte[] b, int off, int len, boolean finish) throws IOException {
         addTaint(finish);
@@ -197,7 +201,7 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.602 -0400", hash_original_method = "8F1A1CDA0B50B3C3FF8220D3A1F18B22", hash_generated_method = "1BDC9CF85F926B908004AE0BF2A73DB2")
     private byte[] embiggen(byte[] b, int len) {
         addTaint(len);

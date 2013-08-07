@@ -1,16 +1,17 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.harmony.security.asn1.ASN1Explicit;
 import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.DirectoryString;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class EDIPartyName {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.078 -0400", hash_original_field = "C7DB6307E9B57AC480C9F2D089C20B85", hash_generated_field = "E531E1267091A670A42BD3F34A2AF2BA")
@@ -23,7 +24,7 @@ public final class EDIPartyName {
 
     private byte[] encoding;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.080 -0400", hash_original_method = "2E4835ED3F1B68ED273C9B2B326EFCFA", hash_generated_method = "F696079F2CA56838285735C3A64B1A92")
     private  EDIPartyName(String nameAssigner, String partyName, byte[] encoding) {
         this.nameAssigner = nameAssigner;

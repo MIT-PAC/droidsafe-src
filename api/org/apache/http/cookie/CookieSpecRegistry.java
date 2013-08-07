@@ -1,6 +1,7 @@
 package org.apache.http.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -9,8 +10,8 @@ import java.util.Map;
 
 import org.apache.http.params.HttpParams;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class CookieSpecRegistry {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.164 -0400", hash_original_field = "601891FA30D304E1116F68409D06FF18", hash_generated_field = "010E9F60B3F377D0B23925E8DA25B64D")

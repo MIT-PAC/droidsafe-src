@@ -1,16 +1,17 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class InputDevice implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.996 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
@@ -32,7 +33,7 @@ public final class InputDevice implements Parcelable {
 
     private final ArrayList<MotionRange> mMotionRanges = new ArrayList<MotionRange>();
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.997 -0400", hash_original_method = "2C37C35B619B46784669EFC9CA5E5179", hash_generated_method = "93E63FA312CE70DEEBBCD18536A99918")
     private  InputDevice() {
         // ---------- Original Method ----------
@@ -201,7 +202,7 @@ List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_361978484 =         mMotio
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.999 -0400", hash_original_method = "F938DEDD59851FE8B4D63705E085118B", hash_generated_method = "4AE7F16C0174DD6AD10D81EDBC912323")
     private void addMotionRange(int axis, int source,
             float min, float max, float flat, float fuzz) {
@@ -217,7 +218,7 @@ List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_361978484 =         mMotio
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.000 -0400", hash_original_method = "66E89B3285A9850971D96BAD9F2BB44F", hash_generated_method = "7FA6141262F5D3ECEE0E316A6E848BC9")
     private void readFromParcel(Parcel in) {
         mId = in.readInt();
@@ -357,7 +358,7 @@ String var748F562E35834E3B11BDA296A09FD9A8_1307843716 =         description.toSt
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.002 -0400", hash_original_method = "C8D7AE07A3174BF8CEBA0E0E2EC288B0", hash_generated_method = "8D760B6A315FB9259DF622AD08B13A80")
     private void appendSourceDescriptionIfApplicable(StringBuilder description, int source,
             String sourceName) {
@@ -397,7 +398,7 @@ String var748F562E35834E3B11BDA296A09FD9A8_1307843716 =         description.toSt
 
         private float mFuzz;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_method = "003C115B43ED25425A82F4C0BC4BFB2D", hash_generated_method = "F4F973ACE14B026CE8F881C426E10F2D")
         private  MotionRange(int axis, int source, float min, float max, float flat, float fuzz) {
             mAxis = axis;

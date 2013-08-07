@@ -1,7 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class FileWriter extends OutputStreamWriter {
     

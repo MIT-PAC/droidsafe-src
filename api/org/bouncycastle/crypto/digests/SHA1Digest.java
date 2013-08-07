@@ -1,12 +1,13 @@
 package org.bouncycastle.crypto.digests;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.bouncycastle.crypto.util.Pack;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SHA1Digest extends GeneralDigest {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.944 -0400", hash_original_field = "106530DC42BAA21C67F8A3AF4D7FD9E1", hash_generated_field = "A20F40A5A8396B664558E10A31EADBF9")
@@ -190,7 +191,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.950 -0400", hash_original_method = "56B08AF140AAB579ED6513720D1D076E", hash_generated_method = "E81BD2F1E289ED5FFD714827713E22C2")
     private int f(
         int    u,
@@ -207,7 +208,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.950 -0400", hash_original_method = "D49E57B066D19086A0B27FD85ECFCAA8", hash_generated_method = "04875C33D90C3B9642F4C25071ACC976")
     private int h(
         int    u,
@@ -224,7 +225,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.950 -0400", hash_original_method = "1EBC13F1810260C1F73348183BDA0BFB", hash_generated_method = "03EC57054728A35040F1EE06A36B0D22")
     private int g(
         int    u,

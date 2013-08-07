@@ -1,6 +1,7 @@
 package org.apache.http.impl.entity;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.Header;
 import org.apache.http.HttpException;
 import org.apache.http.HttpMessage;
@@ -9,7 +10,7 @@ import org.apache.http.ProtocolException;
 import org.apache.http.entity.ContentLengthStrategy;
 import org.apache.http.protocol.HTTP;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class StrictContentLengthStrategy implements ContentLengthStrategy {
     

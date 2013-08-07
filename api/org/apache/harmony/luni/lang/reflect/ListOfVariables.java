@@ -1,11 +1,12 @@
 package org.apache.harmony.luni.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class ListOfVariables {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.025 -0400", hash_original_field = "2686711326D110237E3D188B571EE880", hash_generated_field = "ADB884948D4C2258B0B63DC54D3E2A0F")

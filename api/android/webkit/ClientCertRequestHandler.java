@@ -1,14 +1,15 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.PrivateKey;
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.X509Certificate;
 
 import org.apache.harmony.xnet.provider.jsse.NativeCrypto;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class ClientCertRequestHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.936 -0400", hash_original_field = "210C1862D81E3FCC2FD87A83EA255D40", hash_generated_field = "076F5BF2A47D119E2704BFAF413B4749")
@@ -24,6 +25,7 @@ public final class ClientCertRequestHandler {
 
     private SslClientCertLookupTable mTable;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.937 -0400", hash_original_method = "AEE151B717737CBCB7A587EF1854CBAA", hash_generated_method = "CC9D3356029648C4CD59FE8F430B2C69")
       ClientCertRequestHandler(BrowserFrame browserFrame,
                              int handle,
@@ -41,6 +43,7 @@ public final class ClientCertRequestHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.937 -0400", hash_original_method = "FD9D9C54290793DEF25EE96780FA43D9", hash_generated_method = "C4A66D5ED40536FD239EBE37E2A0923B")
     public void proceed(PrivateKey privateKey, X509Certificate[] chain) {
         addTaint(chain[0].getTaint());
@@ -72,6 +75,7 @@ public final class ClientCertRequestHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.937 -0400", hash_original_method = "FA404A4E1A97322F22CB23ECA9545548", hash_generated_method = "6C467D92C3B4D0C786BB58115DA32A26")
     public void ignore() {
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
@@ -80,6 +84,7 @@ public final class ClientCertRequestHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.938 -0400", hash_original_method = "E250E51CEC55FC558312A1D8553D2784", hash_generated_method = "990D36A655D7C75AC901D12157190C1E")
     public void cancel() {
         mTable.Deny(mHostAndPort);

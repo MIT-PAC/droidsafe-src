@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.oiw;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 
 public interface OIWObjectIdentifiers

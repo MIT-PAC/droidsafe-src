@@ -1,9 +1,10 @@
 package dalvik.system;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class VMStack {

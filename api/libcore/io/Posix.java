@@ -1,6 +1,7 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -10,9 +11,9 @@ import java.nio.NioUtils;
 
 import libcore.util.MutableInt;
 import libcore.util.MutableLong;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Posix implements Os {

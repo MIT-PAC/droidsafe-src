@@ -1,10 +1,11 @@
 package java.util.regex;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Matcher implements MatchResult {
@@ -74,7 +75,7 @@ Matcher var72A74007B2BE62B849F475C7BDA4658B_1656879820 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.404 -0400", hash_original_method = "5B3F4DCDB18701B7EDED77C3B9D3C550", hash_generated_method = "67D2777EBF3F682A40339A7B098EB61C")
     private void appendEvaluated(StringBuffer buffer, String s) {
         addTaint(s.getTaint());
@@ -159,7 +160,7 @@ Matcher var27B831E3E9D7996FF75BF262D46760AE_346754845 =         reset(input, 0, 
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.409 -0400", hash_original_method = "1E13D8D8B85E56AF9BB58282CB9C7392", hash_generated_method = "00FB523A4CC85C1CFA1855E09FC86D22")
     private Matcher reset(CharSequence input, int start, int end) {
         if(input == null)        
@@ -246,7 +247,7 @@ Matcher var72A74007B2BE62B849F475C7BDA4658B_1131073176 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.411 -0400", hash_original_method = "4B8F5281B8D449CBFD7748E2AB98FC6B", hash_generated_method = "7103FCDC0C3502E02876C3BCAF9A118B")
     private void resetForInput() {
         setInputImpl(address, input, regionStart, regionEnd);
@@ -620,7 +621,7 @@ Matcher var72A74007B2BE62B849F475C7BDA4658B_2099028483 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.423 -0400", hash_original_method = "62DD7ED3C887DF9CAF781EDBA38B8A50", hash_generated_method = "DF2BDA89EE0640098CFD4D9568E2EC85")
     private void ensureMatch() {
         if(!matchFound)        

@@ -1,15 +1,16 @@
 package com.android.i18n.phonenumbers.geocoding;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.util.SortedMap;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class DefaultMapStorage extends AreaCodeMapStorageStrategy {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.487 -0400", hash_original_field = "0478D9B86559137B4E632D5910E2F2C6", hash_generated_field = "8F024CB0AD263019B845A09CCEFC6C3E")

@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.util.HashMap;
@@ -14,13 +15,14 @@ import android.content.Context;
 import android.security.Credentials;
 import android.security.KeyChain;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class CertTool {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.931 -0400", hash_original_method = "1838D0FEFA9E4F93A3624A1092DC54F1", hash_generated_method = "A2E73AC90715BF3F494182DD5E1CE810")
     private  CertTool() {
         // ---------- Original Method ----------

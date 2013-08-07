@@ -1,11 +1,12 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class ECAlgorithms {
     
@@ -46,6 +47,7 @@ public class ECAlgorithms {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l) {
         int m = Math.max(k.bitLength(), l.bitLength());

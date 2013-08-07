@@ -1,12 +1,13 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Date;
 
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class BasicMaxAgeHandler extends AbstractCookieAttributeHandler {
     

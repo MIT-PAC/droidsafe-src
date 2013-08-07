@@ -1,6 +1,7 @@
 package android.ddm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
@@ -11,13 +12,14 @@ import org.apache.harmony.dalvik.ddmc.DdmVmInternal;
 
 import android.os.Debug;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DdmHandleHeap extends ChunkHandler {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.165 -0400", hash_original_method = "236E8F4E2F7DDA83D2B39E117A0E950F", hash_generated_method = "81842FAD8AC8408A0CA4E2FFE4F623DF")
     private  DdmHandleHeap() {
         // ---------- Original Method ----------
@@ -129,6 +131,7 @@ Chunk var3C20A4609E2BAEC2C58361F49A9C8F7C_1855202040 =             handleREAL(re
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.176 -0400", hash_original_method = "0E2E7ADFAF4A415A5EE0645FFEAB4A6D", hash_generated_method = "8F92A94F917C2BD479B415DE89A29AC4")
     private Chunk handleHPIF(Chunk request) {
         addTaint(request.getTaint());
@@ -161,6 +164,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_905822194 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.177 -0400", hash_original_method = "A8B738C149F8A2DC880C585E17CFB83A", hash_generated_method = "652F854576BBC2CD53E55D3908169331")
     private Chunk handleHPSGNHSG(Chunk request, boolean isNative) {
         addTaint(isNative);
@@ -197,6 +201,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_1377012565 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.179 -0400", hash_original_method = "7193E5D1FD98ED03C267523A43581515", hash_generated_method = "85C37CF387617204C007175046773EA9")
     private Chunk handleHPDU(Chunk request) {
         addTaint(request.getTaint());
@@ -250,6 +255,7 @@ Chunk var75564E282821E05102CC43D870C8A28C_754514911 =         new Chunk(CHUNK_HP
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.181 -0400", hash_original_method = "C41093B7B99D47CB32AB13B14E448339", hash_generated_method = "8E4C8B87957DBC7D5B6A9459D91666BF")
     private Chunk handleHPDS(Chunk request) {
         addTaint(request.getTaint());
@@ -304,6 +310,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_1893892285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.182 -0400", hash_original_method = "5AC6D538920D957D7D86B15E943C316B", hash_generated_method = "4BA04FAA0C04FFA8CCC57BD50119449F")
     private Chunk handleHPGC(Chunk request) {
         addTaint(request.getTaint());
@@ -321,6 +328,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_1546430422 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.182 -0400", hash_original_method = "C9F19EAFED9803F043951491F6273920", hash_generated_method = "0FAC5F9F6D06FC27FC1EFAE648F0E9CC")
     private Chunk handleREAE(Chunk request) {
         addTaint(request.getTaint());
@@ -344,6 +352,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_1756033726 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.183 -0400", hash_original_method = "B480B93C7FE178F2CE62D90F1F153D77", hash_generated_method = "EDA5886CF1F27C0483D8B51AE0BFC8FF")
     private Chunk handleREAQ(Chunk request) {
         addTaint(request.getTaint());
@@ -359,6 +368,7 @@ Chunk var3C84717D4949F40EA85D8C58F4D81EF2_1070376981 =         new Chunk(CHUNK_R
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.184 -0400", hash_original_method = "34D94CBD5BF588E49D545F9249DA1F17", hash_generated_method = "5927FC4A581E44AB078C3B1378BE9ACC")
     private Chunk handleREAL(Chunk request) {
         addTaint(request.getTaint());

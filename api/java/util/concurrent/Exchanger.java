@@ -1,8 +1,9 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.util.concurrent.atomic.*;
 import java.util.concurrent.locks.LockSupport;
@@ -21,6 +22,7 @@ public class Exchanger<V> {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.448 -0400", hash_original_method = "85CC613BF9709593CA039307E2227217", hash_generated_method = "F3AB0A199168C8CD96B8E268A4CAD324")
     private Object doExchange(Object item, boolean timed, long nanos) {
         addTaint(nanos);
@@ -88,6 +90,7 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.453 -0400", hash_original_method = "81A7A8FE33AEB39DC2465115E332A8B2", hash_generated_method = "3F0AE4AEB028A9539B0CA2887F306CA8")
     private final int hashIndex() {
         long id = Thread.currentThread().getId();
@@ -117,6 +120,7 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.458 -0400", hash_original_method = "710CA77564EC78E634B8090E5C600333", hash_generated_method = "03DCC27059DA711C525C070285FB60CE")
     private void createSlot(int index) {
         addTaint(index);
@@ -137,7 +141,8 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
     }
 
     
-        private static boolean tryCancel(Node node, Slot slot) {
+        @DSModeled(DSC.BAN)
+    private static boolean tryCancel(Node node, Slot slot) {
         if (!node.compareAndSet(null, CANCEL))
             return false;
         if (slot.get() == node) 
@@ -146,7 +151,8 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
     }
 
     
-        private static Object spinWait(Node node, Slot slot) {
+        @DSModeled(DSC.BAN)
+    private static Object spinWait(Node node, Slot slot) {
         int spins = SPINS;
         for (;;) {
             Object v = node.get();
@@ -160,7 +166,8 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
     }
 
     
-        private static Object await(Node node, Slot slot) {
+        @DSModeled(DSC.BAN)
+    private static Object await(Node node, Slot slot) {
         Thread w = Thread.currentThread();
         int spins = SPINS;
         for (;;) {
@@ -179,6 +186,7 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.473 -0400", hash_original_method = "B05B09390509B455A836B09E2A65E5D4", hash_generated_method = "EE0B136210EEECC2D90CB088E18C1C61")
     private Object awaitNanos(Node node, Slot slot, long nanos) {
         addTaint(nanos);
@@ -228,6 +236,7 @@ Object var9284ED8317C59E844C0B5D919DAE1270_2099374579 =             scanOnTimeou
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.478 -0400", hash_original_method = "968A2928C62BC7FCD22DA53EF68519F2", hash_generated_method = "490B77187B229AC26FC24E93CA533DD1")
     private Object scanOnTimeout(Node node) {
         addTaint(node.getTaint());
@@ -426,6 +435,7 @@ V varB8DCCF40993CFCDCE8F471B3D2A68034_665862429 =             (V)v;
 
         long qe;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.518 -0400", hash_original_method = "EA0EDCFF10F8D9E7849DBDB76AB4743F", hash_generated_method = "EA0EDCFF10F8D9E7849DBDB76AB4743F")
         public Slot ()
         {

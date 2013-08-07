@@ -1,12 +1,13 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SyncStats implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.753 -0400", hash_original_field = "4D71AE137C8B2E7A14525A08368B1901", hash_generated_field = "BDB1B90CA7DB793AAF5432BA8C758FAF")

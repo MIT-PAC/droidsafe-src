@@ -1,11 +1,12 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Enumeration;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 final class AllPermissionCollection extends PermissionCollection {
     

@@ -1,6 +1,7 @@
 package org.apache.harmony.xml.parsers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -31,10 +32,10 @@ import org.xml.sax.helpers.LocatorImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class DocumentBuilderImpl extends DocumentBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.765 -0400", hash_original_field = "B795440B9ADE4378FEF3486B241378BC", hash_generated_field = "4A9121F2D482493F3BEB1C30E72C76AA")
@@ -224,6 +225,7 @@ Document var9F9AB3CBBE8887A0E88ED511758C258B_1075768049 =         document;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.776 -0400", hash_original_method = "608502985E1CF48EAA100E44A7EF5256", hash_generated_method = "F0444D0A9DF121854727C26191B61C8F")
     private void parse(KXmlParser parser, DocumentImpl document, Node node,
             int endToken) throws XmlPullParserException, IOException {
@@ -349,7 +351,7 @@ for(int i = 0;i < parser.getAttributeCount();i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.778 -0400", hash_original_method = "691ECF0A6ABC696CF83421ACD1A425FF", hash_generated_method = "9EF31ABECB655827FA78C6FB54438805")
     private void appendText(DocumentImpl document, Node parent, int token, String text) {
         addTaint(text.getTaint());
@@ -447,6 +449,7 @@ for(int i = 0;i < parser.getAttributeCount();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.781 -0400", hash_original_method = "73F7C79343F86EF391295D82FA5B5401", hash_generated_method = "ADB500D697CCCB959A846EC35C578203")
     private String resolvePredefinedOrCharacterEntity(String entityName) {
         addTaint(entityName.getTaint());
@@ -525,6 +528,7 @@ String var540C13E9E156B687226421B24F2DF178_533687365 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.782 -0400", hash_original_method = "F0F9BC1451B812F6B38C0D286F9C9978", hash_generated_method = "CA22EA648FA7945B20376C4BADE83673")
     private String resolveCharacterReference(String value, int base) {
         addTaint(base);

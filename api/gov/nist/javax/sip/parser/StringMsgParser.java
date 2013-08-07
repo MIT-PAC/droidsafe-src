@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostNameParser;
 import gov.nist.javax.sip.SIPConstants;
@@ -20,10 +21,10 @@ import gov.nist.javax.sip.message.SIPResponse;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StringMsgParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.869 -0400", hash_original_field = "F6A0B614A3E3F2033445BCEBD36D070B", hash_generated_field = "7E0AA0556EE34EDC1E14E7271C2271D7")
@@ -304,7 +305,7 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_257790948 =         message;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.875 -0400", hash_original_method = "790601CAF711B74124A1DBA9FDFB3A7B", hash_generated_method = "C1E416BD22558099882D35E77AFC6CDC")
     private String trimEndOfLine(String line) {
         addTaint(line.getTaint());
@@ -347,6 +348,7 @@ String varE97A29D7786D12C0606A8113DDE9DC15_1888224737 =         line.substring(0
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.876 -0400", hash_original_method = "E1A152A7092436D65484E6472132234E", hash_generated_method = "9037E95ECA36DCCB0C80CBA36BB3C2DE")
     private SIPMessage processFirstLine(String firstLine) throws ParseException {
         addTaint(firstLine.getTaint());
@@ -402,7 +404,7 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_649030540 =         message;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.877 -0400", hash_original_method = "825D9502572A55E55AC5E33884E71C29", hash_generated_method = "5AC354A9CF877E28FAC2D711E8B9250D")
     private void processHeader(String header, SIPMessage message) throws ParseException {
         addTaint(message.getTaint());

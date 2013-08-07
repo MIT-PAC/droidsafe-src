@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 import android.app.ActivityManagerNative;
 import android.app.ActivityThread;
@@ -9,10 +10,10 @@ import android.app.QueuedWork;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class BroadcastReceiver {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.475 -0400", hash_original_field = "6DD50A78846A573507CD3027E97E1EA6", hash_generated_field = "56CC6D10D54B274449EA4D95649A29AE")
@@ -242,7 +243,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.487 -0400", hash_original_method = "D4C333B718143025A27C15902000FB77", hash_generated_method = "D9AD103DE2626E233CF20E2D5E772BFB")
     public final void setPendingResult(PendingResult result) {
         mPendingResult = result;
@@ -251,7 +252,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.487 -0400", hash_original_method = "DB63B22B6D1F06710FF3BD6349434467", hash_generated_method = "679D54BC127BA76F1E925A2784F83AC3")
     public final PendingResult getPendingResult() {
 PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingResult;
@@ -340,6 +341,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
 
         boolean mFinished;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.492 -0400", hash_original_method = "A092172050E6E1EA8E89A6BB2F65A5D7", hash_generated_method = "7104FB540206A2CEFCEAF057A7D40607")
         public  PendingResult(int resultCode, String resultData, Bundle resultExtras,
                 int type, boolean ordered, boolean sticky, IBinder token) {
@@ -530,6 +532,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.507 -0400", hash_original_method = "AADF9DDAF1334800EDC66F9968E01FC0", hash_generated_method = "537DD9B6578B3F4D2391CFBA18FC3A11")
         public void sendFinished(IActivityManager am) {
             addTaint(am.getTaint());

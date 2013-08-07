@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.NumberFormat;
 
 import android.content.Context;
@@ -15,10 +16,10 @@ import android.widget.RemoteViews;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Notification implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.252 -0400", hash_original_field = "DF491A4DE50739FA9CFFDBD4E3F4B4BB", hash_generated_field = "F82DA8012E916756399BAA33930FB695")
@@ -87,7 +88,7 @@ public class Notification implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.257 -0400", hash_original_method = "F912A2DECFC167F58680F860007D2BB5", hash_generated_method = "3B18C5842AE1AC8C6EE94277514E87EA")
     public  Notification(Context context, int icon, CharSequence tickerText, long when,
             CharSequence contentTitle, CharSequence contentText, Intent contentIntent) {
@@ -853,7 +854,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1544423009 =             this;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.307 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "8A7BB69AA36E9A4190E2455BA21998A6")
         private void setFlag(int mask, boolean value) {
             addTaint(value);
@@ -874,6 +875,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1544423009 =             this;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.309 -0400", hash_original_method = "874AA4550BEDC5FDB0E26F145D0FEF64", hash_generated_method = "622CD757E72B07C6EB05AECF9C20BCE9")
         private RemoteViews makeRemoteViews(int resId) {
             addTaint(resId);
@@ -948,6 +950,7 @@ RemoteViews var578C70E4622E1015397CF3599897AE7C_757343269 =             contentV
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.310 -0400", hash_original_method = "BA4EC765F0E429DA930DFC57746DA461", hash_generated_method = "DA736A4E06DFC6D2AC738CCB08B010F6")
         private RemoteViews makeContentView() {
             if(mContentView != null)            
@@ -975,6 +978,7 @@ RemoteViews varE91C3C6A4F8F44D79CCAB685A1AAFA87_1115424496 =                 mak
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.311 -0400", hash_original_method = "E7ABF10FCA5C3841BF6DB5E454736B56", hash_generated_method = "771CBA880CC16FEE75847E54B0CB3C00")
         private RemoteViews makeTickerView() {
             if(mTickerView != null)            

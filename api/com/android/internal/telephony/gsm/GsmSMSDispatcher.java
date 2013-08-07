@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -31,10 +32,10 @@ import com.android.internal.telephony.SmsStorageMonitor;
 import com.android.internal.telephony.SmsUsageMonitor;
 import com.android.internal.telephony.TelephonyProperties;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class GsmSMSDispatcher extends SMSDispatcher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.126 -0400", hash_original_field = "D23A9A1E20D1A7A9C562EB626C5216B0", hash_generated_field = "FB0C4AC891EDC21FFB7A5101DD66CA15")
@@ -122,6 +123,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.129 -0400", hash_original_method = "4DDABCDA44FFF28C561B2585B61E25F7", hash_generated_method = "3CBFFFA97C91039BCC7EF23191E09A11")
     private void handleStatusReport(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -397,7 +399,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_992691367 =         SmsM
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int resultToCause(int rc) {
         switch (rc) {
             case Activity.RESULT_OK:
@@ -412,7 +414,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_992691367 =         SmsM
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.136 -0400", hash_original_method = "4513E8DEDD790BB664A98AD56B29A135", hash_generated_method = "CDC955E6ACC4186F2A822E4F427C0839")
     private void handleBroadcastSms(AsyncResult ar) {
         addTaint(ar.getTaint());

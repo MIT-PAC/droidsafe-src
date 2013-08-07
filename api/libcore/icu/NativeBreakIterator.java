@@ -1,14 +1,15 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import java.util.Locale;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class NativeBreakIterator implements Cloneable {
@@ -22,6 +23,7 @@ public final class NativeBreakIterator implements Cloneable {
 
     private CharacterIterator charIter;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.960 -0400", hash_original_method = "9ED5AD4E2E4E4D0EFB32A4F0D669C323", hash_generated_method = "98E6F9885885A27CBEB93ABA0757BDC5")
     private  NativeBreakIterator(int address, int type) {
         this.address = address;
@@ -229,6 +231,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.967 -0400", hash_original_method = "5F9AC84894F083D607B365AEC97D7D28", hash_generated_method = "703E9C5AD734077DBB9A7B9A6C292C13")
     private void setText(String s, CharacterIterator it) {
         addTaint(s.getTaint());

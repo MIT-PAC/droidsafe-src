@@ -1,6 +1,7 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
@@ -15,26 +16,27 @@ import org.apache.harmony.xnet.provider.jsse.SSLParametersImpl;
 
 import com.android.internal.net.DomainNameValidator;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class CertificateChainValidator {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.818 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
     private  CertificateChainValidator() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static CertificateChainValidator getInstance() {
         return sInstance;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.819 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "9517332374590B36965353B44FC1C720")
     public SslError doHandshakeAndValidateServerCertificates(
             HttpsConnection connection, SSLSocket sslSocket, String domain) throws IOException {
@@ -84,6 +86,7 @@ SslError var5995AA76FBBB5331C788BBF94383B022_758865090 =         verifyServerDom
     }
 
     
+    @DSModeled(DSC.BAN)
     private static SslError verifyServerDomainAndCertificates(
             X509Certificate[] chain, String domain, String authType) throws IOException {
         X509Certificate currCertificate = chain[0];
@@ -109,7 +112,7 @@ SslError var5995AA76FBBB5331C788BBF94383B022_758865090 =         verifyServerDom
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.820 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "05E0FE804B6759B78541079DC94C2EE6")
     private void closeSocketThrowException(
             SSLSocket socket, String errorMessage, String defaultErrorMessage) throws IOException {
@@ -124,7 +127,7 @@ SslError var5995AA76FBBB5331C788BBF94383B022_758865090 =         verifyServerDom
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.821 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "FA44059FF83F8D6ACDDB4D15F416CA03")
     private void closeSocketThrowException(SSLSocket socket,
             String errorMessage) throws IOException {

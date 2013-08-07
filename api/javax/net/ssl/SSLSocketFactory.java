@@ -1,6 +1,7 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.Socket;
 import java.security.NoSuchAlgorithmException;
@@ -8,10 +9,10 @@ import java.security.Security;
 
 import javax.net.SocketFactory;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class SSLSocketFactory extends SocketFactory {
     

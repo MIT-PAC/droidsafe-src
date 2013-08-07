@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,10 +15,10 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class PreferenceScreen extends PreferenceGroup implements AdapterView.OnItemClickListener, DialogInterface.OnDismissListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.837 -0400", hash_original_field = "E6D527FD4A6C76D5C6A6EF8043635381", hash_generated_field = "4B36ACD05D99FE341A50201EADA8B6CA")
@@ -30,6 +31,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
 
     private ListView mListView;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.837 -0400", hash_original_method = "B5AE397FE837A4F80688406C82668EB0", hash_generated_method = "56B7C8C1B773D61A49C2CCCD099A7C1B")
     public  PreferenceScreen(Context context, AttributeSet attrs) {
         super(context, attrs, com.android.internal.R.attr.preferenceScreenStyle);
@@ -97,6 +99,7 @@ ListAdapter var99AA28967D3A2946B59C82F1D9ABEEE0_71313853 =         new Preferenc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.839 -0400", hash_original_method = "D7F699A89F8BCF859CD843DF375163A1", hash_generated_method = "D5A04764D634B483F11D81A9799FE58F")
     private void showDialog(Bundle state) {
         addTaint(state.getTaint());

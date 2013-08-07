@@ -1,10 +1,11 @@
 package android.net.wifi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public enum SupplicantState implements Parcelable {
     DISCONNECTED,
@@ -87,10 +88,11 @@ public enum SupplicantState implements Parcelable {
                 throw new IllegalArgumentException("Unknown supplicant state");
         }
     }
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public int describeContents() {
         return 0;
     }
+    @DSModeled(DSC.BAN)
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name());
     }

@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.Principal;
 import java.security.cert.Certificate;
@@ -16,10 +17,10 @@ import javax.net.ssl.SSLSessionBindingListener;
 import javax.net.ssl.SSLSessionContext;
 import javax.security.cert.CertificateException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class OpenSSLSessionImpl implements SSLSession {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.800 -0400", hash_original_field = "5DED728EB700D850EA04B789FE21E2A0", hash_generated_field = "269D1908AAA6996EA79A385B96B8D46B")
@@ -257,6 +258,7 @@ javax.security.cert.X509Certificate[] varDC838461EE2FA0CA4C9BBB70A15456B0_364534
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.808 -0400", hash_original_method = "95455CDE829A27B48DAF238C4403FA5A", hash_generated_method = "8FE6235DF5F3F785C5C0F911D2C49F69")
     private javax.security.cert.X509Certificate[] createPeerCertificateChain() throws SSLPeerUnverifiedException {
         try 
@@ -303,6 +305,7 @@ Certificate[] varF937CE92F117196F80CD35B09BCDC7EA_1429103444 =         peerCerti
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.809 -0400", hash_original_method = "4A7519F376EC7B19E89A23705C5BAAD6", hash_generated_method = "6EF810108CC956F014272DF61E60AD4B")
     private void checkPeerCertificatesPresent() throws SSLPeerUnverifiedException {
         if(peerCertificates == null || peerCertificates.length == 0)        

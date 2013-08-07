@@ -1,11 +1,12 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Paint;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TextPaint extends Paint {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.931 -0400", hash_original_field = "F4E054AD68D86FAA3DE848C731B7ADD9", hash_generated_field = "EB7BBC6E5D9DF7183393887C906C4F9C")
@@ -79,7 +80,7 @@ public class TextPaint extends Paint {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.934 -0400", hash_original_method = "398799A16623F5BF0623CBD73B973047", hash_generated_method = "3690268F0ABD1784A1E205BC780E2E16")
     public void setUnderlineText(int color, float thickness) {
         underlineColor = color;

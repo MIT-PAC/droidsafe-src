@@ -1,6 +1,7 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Message;
 import android.util.Log;
 import android.util.Patterns;
@@ -11,10 +12,10 @@ import com.android.internal.telephony.PhoneBase;
 import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.RetryManager;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GsmDataConnection extends DataConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.319 -0400", hash_original_field = "285E977A3F24171DCF659128908B0B5A", hash_generated_field = "4B86B7A6BB3954D8A0D6116E4CC1760F")
@@ -24,6 +25,7 @@ public class GsmDataConnection extends DataConnection {
 
     protected String mActiveApnType = Phone.APN_TYPE_DEFAULT;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.320 -0400", hash_original_method = "D7C479FF4503363D3DB56494C7CC433A", hash_generated_method = "72FAAAEFC1DE62C211506493411F6478")
     private  GsmDataConnection(PhoneBase phone, String name, int id, RetryManager rm) {
         super(phone, name, id, rm);
@@ -35,6 +37,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.BAN)
     static GsmDataConnection makeDataConnection(PhoneBase phone, int id, RetryManager rm) {
         synchronized (mCountLock) {
             mCount += 1;
@@ -46,6 +49,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.336 -0400", hash_original_method = "B9699B49BCC7654BF74B38BF9D177791", hash_generated_method = "F6E635B2039B55317FF4BC305148AE05")
     @Override
     protected void onConnect(ConnectionParams cp) {
@@ -87,7 +91,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.336 -0400", hash_original_method = "A22DEA53C24C8CD549338E7FA6E130EF", hash_generated_method = "727F58AE6FDA84B9FCAE25982BC0A444")
     public void setProfileId(int profileId) {
         mProfileId = profileId;
@@ -96,7 +100,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.336 -0400", hash_original_method = "F4D053905D2BF654ACB2CC18D573B985", hash_generated_method = "28ABDB85E3B3870D3002F9784A3387A4")
     public int getProfileId() {
         int varAD5F16B5D45AD9FEEE13E88B2059EC91_1438796952 = (mProfileId);
@@ -107,7 +111,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.336 -0400", hash_original_method = "49E60EF07FF1E574F2B5B752F6A3111C", hash_generated_method = "6098E4E3C54C8A106210FF605DE9D6C0")
     public void setActiveApnType(String apnType) {
         mActiveApnType = apnType;
@@ -116,6 +120,7 @@ public class GsmDataConnection extends DataConnection {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.336 -0400", hash_original_method = "E1755C32D3A976D9153A9C990E44F94A", hash_generated_method = "4E0FF062BCE60A0F99A7DFE8C4BD9ED6")
     @Override
     public String toString() {
@@ -131,7 +136,7 @@ String var4AD72B987A838A37F68883A3F1D1CCD2_1639805727 =         "State=" + getCu
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.336 -0400", hash_original_method = "0657EF2F9C80323FA50A03320BF221A9", hash_generated_method = "430D60DEDDE9CE1C40626402F0048520")
     @Override
     protected boolean isDnsOk(String[] domainNameServers) {
@@ -170,6 +175,7 @@ String var4AD72B987A838A37F68883A3F1D1CCD2_1639805727 =         "State=" + getCu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.337 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "3D39A3641D1F679267312BB4AD7C571C")
     @Override
     protected void log(String s) {
@@ -180,6 +186,7 @@ String var4AD72B987A838A37F68883A3F1D1CCD2_1639805727 =         "State=" + getCu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.337 -0400", hash_original_method = "0EBFCAAE2D7BDF5375234415A0DA2D8D", hash_generated_method = "4C5D0582A22A6A5808AD00FB03C5B54E")
     private boolean isIpAddress(String address) {
         addTaint(address.getTaint());

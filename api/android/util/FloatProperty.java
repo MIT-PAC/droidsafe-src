@@ -1,12 +1,13 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
 
 public abstract class FloatProperty<T> extends Property<T, Float> {
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public FloatProperty(String name) {
         super(Float.class, name);
     }

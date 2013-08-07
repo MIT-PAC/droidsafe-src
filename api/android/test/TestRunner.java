@@ -1,6 +1,7 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -19,10 +20,10 @@ import android.util.Log;
 
 import com.google.android.collect.Lists;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TestRunner implements PerformanceTestCase.Intermediates {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.027 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -95,6 +96,7 @@ public class TestRunner implements PerformanceTestCase.Intermediates {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.029 -0400", hash_original_method = "8C5BFDCF70A85F458A74E20506CDCA9E", hash_generated_method = "7F30D9C133AD14A59581E5576BFE7D1F")
     private void started(String className) {
         addTaint(className.getTaint());
@@ -111,6 +113,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.029 -0400", hash_original_method = "9B2F60619B845977C468209ECD59C4E6", hash_generated_method = "A37A196601166E52929D5B5468BAABAC")
     private void finished(String className) {
         addTaint(className.getTaint());
@@ -127,6 +130,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.029 -0400", hash_original_method = "5B73476158BD043DA3960AAE5CE325A6", hash_generated_method = "C95FBD16B6756A0AC595F9A0D21108D6")
     private void performance(String className,
             long itemTimeNS,
@@ -305,6 +309,7 @@ for(String cl : classes)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.033 -0400", hash_original_method = "A32FEAB2DFA07740C77FDABE5769E691", hash_generated_method = "74E98EC51E88FEEADB0A5CA41DCB20EE")
     private void missingTest(String className, Throwable e) {
         addTaint(e.getTaint());
@@ -778,6 +783,7 @@ for(int i = 0;i < iterations;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isTestMethod(Method m) {
         return m.getName().startsWith("test") &&
                 m.getReturnType() == void.class &&

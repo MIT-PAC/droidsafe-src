@@ -1,6 +1,7 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,10 +17,10 @@ import java.util.TimeZone;
 
 import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SimpleDateFormat extends DateFormat {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.265 -0400", hash_original_field = "240BF022E685B0EE30AD9FE9E1FB5D5B", hash_generated_field = "8AE769BFE2CAD1B10C494CCD4D4D489A")
@@ -84,7 +85,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.266 -0400", hash_original_method = "F464E2338695834D875FCA6185F1E83B", hash_generated_method = "E5454081FE896EFEC960EA2EC9ACCD73")
     private  SimpleDateFormat(Locale locale) {
         addTaint(locale.getTaint());
@@ -106,7 +107,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.266 -0400", hash_original_method = "411C0D5D8AD5CB18D4C2CE04A3CEEBF0", hash_generated_method = "D1D1D87600C3796325C07668E792134B")
     private void validateFormat(char format) {
         addTaint(format);
@@ -125,7 +126,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.266 -0400", hash_original_method = "49C9E23BED9AC71209F0210F812D9D37", hash_generated_method = "ED818A6FC69608BB5A097E817E7FEA0C")
     private void validatePattern(String template) {
         addTaint(template.getTaint());
@@ -235,7 +236,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_762188000 =         clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String defaultPattern() {
         LocaleData localeData = LocaleData.get(Locale.getDefault());
         return localeData.getDateFormat(SHORT) + " " + localeData.getTimeFormat(SHORT);
@@ -317,7 +318,7 @@ AttributedCharacterIterator var5A5CEE3F758E980FD8115C3D54EE8214_708224925 =     
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.267 -0400", hash_original_method = "39C7DAF020DB077C56334C25B45C6758", hash_generated_method = "29C61FE8DFBF4ECB4F3E07687219583E")
     private AttributedCharacterIterator formatToCharacterIteratorImpl(Date date) {
         addTaint(date.getTaint());
@@ -346,7 +347,7 @@ AttributedCharacterIterator varE3ABF6B4C0DDC070CF0843A4557F5D73_1783374642 =    
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.268 -0400", hash_original_method = "1377B288F93939E9FA031027B23EE480", hash_generated_method = "98B0E2D984CED8D778A83E98930AA13C")
     private StringBuffer formatImpl(Date date, StringBuffer buffer,
             FieldPosition field, List<FieldPosition> fields) {
@@ -426,7 +427,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_435617145 =         buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.270 -0400", hash_original_method = "60C88CC31EC17788C6D13B63E0E097AB", hash_generated_method = "A0A0F57DB4805571C2014D05F3EB106E")
     private void append(StringBuffer buffer, FieldPosition position,
             List<FieldPosition> fields, char format, int count) {
@@ -567,7 +568,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.270 -0400", hash_original_method = "DD478E87C0FA9016B83D28121FBA02DB", hash_generated_method = "DFBA177F2BF00EE30DFF847F56929191")
     private void appendDayOfWeek(StringBuffer buffer, int count, String[] longs, String[] shorts) {
         addTaint(shorts[0].getTaint());
@@ -584,7 +585,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.271 -0400", hash_original_method = "7A41E7167A1A13C1027D42A61A5B401C", hash_generated_method = "EB2EA5D62C887563BFD133F4E31229D4")
     private void appendMonth(StringBuffer buffer, int count, String[] longs, String[] shorts) {
         addTaint(shorts[0].getTaint());
@@ -612,7 +613,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.271 -0400", hash_original_method = "D7241707B86764AD36DA13023C5322B5", hash_generated_method = "28322BC22B56F57D563815353F3303A9")
     private void appendTimeZone(StringBuffer buffer, int count, boolean generalTimeZone) {
         addTaint(generalTimeZone);
@@ -655,7 +656,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.271 -0400", hash_original_method = "E1D84DE5BC6EBCC18019540ED725D9AE", hash_generated_method = "DEBFC761BED26E5BE4355BF3D1A5CCAE")
     private void appendNumericTimeZone(StringBuffer buffer, boolean generalTimeZone) {
         addTaint(generalTimeZone);
@@ -697,7 +698,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.271 -0400", hash_original_method = "9FC1BA4007CF5C77F0A2B74AE6FBC98F", hash_generated_method = "594FDB6FE657F4C8BA35C742EF63CD55")
     private void appendNumber(StringBuffer buffer, int count, int value) {
         addTaint(value);
@@ -715,7 +716,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.271 -0400", hash_original_method = "332B10C296E05CECE855CC96158B0A61", hash_generated_method = "D3015D76BED1C07C787CC9073B73F8D1")
     private Date error(ParsePosition position, int offset, TimeZone zone) {
         addTaint(zone.getTaint());
@@ -782,7 +783,7 @@ DateFormatSymbols var1D299C2B14400BA87F207ABC1470D595_1566153863 =         (Date
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.273 -0400", hash_original_method = "308621012329CC130ED3BC1A1EBA54C1", hash_generated_method = "42988500246921E2F8E7A8CE033E98D8")
     private int parse(String string, int offset, char format, int count) {
         addTaint(count);
@@ -948,7 +949,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.274 -0400", hash_original_method = "4C5DAB8F3090E0FED455AF9657387367", hash_generated_method = "64B16A13B418D624B442A8F9F4808DC6")
     private int parseDayOfWeek(String string, int offset, String[] longs, String[] shorts) {
         addTaint(shorts[0].getTaint());
@@ -972,7 +973,7 @@ switch(index){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.274 -0400", hash_original_method = "2749F9959CF57ED8E7DF53A146C2F50E", hash_generated_method = "A2B344597D69ED74346EB54BC5B8AA6F")
     private int parseMonth(String string, int offset, int count, int absolute, String[] longs, String[] shorts) {
         addTaint(shorts[0].getTaint());
@@ -1129,7 +1130,7 @@ Date var1F31043EE3B8C862CA53EA8B99691F13_417919209 =         date;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.276 -0400", hash_original_method = "21C7D4A169609BA40C676EFC62A50E23", hash_generated_method = "9DCF417758D20D9166948CA3CBFF9DBF")
     private Number parseNumber(int max, String string, ParsePosition position) {
         addTaint(position.getTaint());
@@ -1179,7 +1180,7 @@ Number var784000E4696DA9110EFC21DABAA27F83_271083690 =         Integer.valueOf(r
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.276 -0400", hash_original_method = "D6F7D67552A406D8EA22E8B872F7B057", hash_generated_method = "42F7B7E47FA1F74DF2BBEFBB1A4ADC1C")
     private int parseNumber(int max, String string, int offset, int field, int skew) {
         addTaint(skew);
@@ -1210,7 +1211,7 @@ Number var784000E4696DA9110EFC21DABAA27F83_271083690 =         Integer.valueOf(r
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.277 -0400", hash_original_method = "6091F52EF6DC933856441BD49E0F31F1", hash_generated_method = "CF4F391A065679DB48F80CE493E0E6BB")
     private int parseText(String string, int offset, String[] text, int field) {
         addTaint(field);
@@ -1262,7 +1263,7 @@ for(int i = 0;i < text.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.278 -0400", hash_original_method = "C11BF6380CD6AEFF5BAB825547AF7C4A", hash_generated_method = "C4824E0BFC421A0216231F47BBE804D2")
     private int parseTimeZone(String string, int offset) {
         addTaint(offset);
@@ -1390,7 +1391,7 @@ String var240EBD5AC8EFFE1F951B588542F8A189_124149350 =         convertPattern(pa
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String convertPattern(String template, String fromChars, String toChars, boolean check) {
         if (!check && fromChars.equals(toChars)) {
             return template;
@@ -1430,7 +1431,7 @@ String var407D32260E541B695CF3FD3F7EFB76AB_1376843696 =         pattern;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.279 -0400", hash_original_method = "C5F79137BB7206158B23593D7F9B176B", hash_generated_method = "08F97FDF950A558BEF6E2FC112777087")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1450,7 +1451,7 @@ String var407D32260E541B695CF3FD3F7EFB76AB_1376843696 =         pattern;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.280 -0400", hash_original_method = "8B9631F89FAD33D3B003933051524309", hash_generated_method = "488B9FEB0505C151FEB961C02318E656")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

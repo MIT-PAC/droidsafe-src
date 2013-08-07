@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,10 +18,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AdapterViewAnimator extends AdapterView<Adapter> implements RemoteViewsAdapter.RemoteAdapterConnectionCallback, Advanceable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.506 -0400", hash_original_field = "EA21F533229388AA4B2EFE079FA29356", hash_generated_field = "A4199CA8B30F98AAF67F6FDF10E09266")
@@ -149,7 +150,7 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.509 -0400", hash_original_method = "4508B464C0C2084478BE2A642B32436E", hash_generated_method = "0AEEC796AE042A1371E848170F3AEF4C")
     private void initViewAnimator() {
         mPreviousViews = new ArrayList<Integer>();
@@ -254,7 +255,7 @@ ObjectAnimator var6E2178F33F884BED37C5DEBCD18F9A96_237627922 =         anim;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.513 -0400", hash_original_method = "91CB6634BDE3355704A6B2B246DAA7A9", hash_generated_method = "2611AE739E240D7A76D87C75CA154E0C")
     private void setDisplayedChild(int whichChild, boolean animate) {
         addTaint(animate);
@@ -449,7 +450,7 @@ View var540C13E9E156B687226421B24F2DF178_3953466 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.516 -0400", hash_original_method = "1D56DD893F980F245C60382C98FF1278", hash_generated_method = "103DCADC8D3F640E1E275400926AD72D")
     private ViewAndMetaData getMetaDataForChild(View child) {
         addTaint(child.getTaint());
@@ -661,7 +662,7 @@ for(int i = newWindowStart;i <= newWindowEnd;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.521 -0400", hash_original_method = "CF7E9270D6A781D39501E4BBAEBB3A13", hash_generated_method = "C23055D9A605ECD16C59A605EBC3401D")
     private void addChild(View child) {
         addViewInLayout(child, -1, createOrReuseLayoutParams(child));
@@ -830,7 +831,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.524 -0400", hash_original_method = "CF7CC5DB55CCFC095F8C480C67A97670", hash_generated_method = "36306F17917E67726131EEBB4DDE9153")
     private void measureChildren() {
         final int count = getChildCount();
@@ -1405,7 +1406,7 @@ View varD83D48D5932ACB235CE655A1204CCB70_1342803512 =         getViewAtRelativeI
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.535 -0400", hash_original_method = "392EDFCBBF619540219C8F70BEB96B16", hash_generated_method = "D17CD0B9598104FED0F460078284E1DD")
         private  SavedState(Parcel in) {
             super(in);

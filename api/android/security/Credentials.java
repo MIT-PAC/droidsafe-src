@@ -1,6 +1,7 @@
 package android.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -19,8 +20,8 @@ import org.bouncycastle.openssl.PEMWriter;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class Credentials {
     
@@ -43,6 +44,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static List<Object> convertFromPem(byte[] bytes) throws IOException {
         ByteArrayInputStream bai = new ByteArrayInputStream(bytes);
         Reader reader = new InputStreamReader(bai, Charsets.US_ASCII);
@@ -57,6 +59,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Credentials getInstance() {
         if (singleton == null) {
             singleton = new Credentials();
@@ -65,6 +68,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.932 -0400", hash_original_method = "E5CB597E19A699BEE6BE3111711F0E73", hash_generated_method = "996BF821DC9F1F7D522F9DD418C16CFE")
     public void unlock(Context context) {
         addTaint(context.getTaint());
@@ -86,6 +90,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.932 -0400", hash_original_method = "495C1AA770D3E4C1428A37EE08C3D570", hash_generated_method = "C11F41E67AD2858A0FFCDAEF7D0E2708")
     public void install(Context context) {
         addTaint(context.getTaint());
@@ -107,6 +112,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.932 -0400", hash_original_method = "37483F7105DB6C05B518E1F3D82A6DB5", hash_generated_method = "6D1AC5EACDD00255E33E10DAE0B558F8")
     public void install(Context context, KeyPair pair) {
         addTaint(pair.getTaint());
@@ -133,6 +139,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_method = "CC15ACCAB16387C45A58B01F639D7908", hash_generated_method = "95818ACAC06CC229F691306D0D70550A")
     public void install(Context context, String type, byte[] value) {
         addTaint(value[0]);

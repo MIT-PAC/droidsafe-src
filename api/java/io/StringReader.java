@@ -1,12 +1,13 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class StringReader extends Reader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.755 -0400", hash_original_field = "341BE97D9AFF90C9978347F66F945B77", hash_generated_field = "787A2B4D426AC144FB23E0D0502FE70E")
@@ -42,7 +43,7 @@ public class StringReader extends Reader {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.756 -0400", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "1F3F18D6AA999E38860EAD4B0D88C829")
     private boolean isClosed() {
         boolean varC50A9EEEAF6FD0E2520283BE0DB184F5_1244640365 = (str == null);
@@ -79,7 +80,7 @@ public class StringReader extends Reader {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.757 -0400", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "42A2FE3EDE053CD449DBAE926D9F987C")
     private void checkNotClosed() throws IOException {
         if(isClosed())        

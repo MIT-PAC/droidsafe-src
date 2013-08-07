@@ -1,12 +1,13 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.BasicPermission;
 import java.security.Permission;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public final class RuntimePermission extends BasicPermission {
     

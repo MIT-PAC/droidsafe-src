@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.sip.header.Header;
 
 public interface PAssertedServiceHeader extends Header{

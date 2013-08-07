@@ -1,13 +1,14 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.WeakHashMap;
 
 import android.app.Activity;
 import android.os.RemoteException;
 import android.util.Log;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class NfcActivityManager extends INdefPushCallback.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.151 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "278F7851F6317C51C418D85323A63D34")
@@ -20,6 +21,7 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
 
     NfcEvent mDefaultEvent;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.153 -0400", hash_original_method = "38A6693B00F3F4C308A1D8C73B4DA266", hash_generated_method = "DB43FC8DD9E41252D6AFD9823834C23B")
     public  NfcActivityManager(NfcAdapter adapter) {
         mAdapter = adapter;
@@ -32,6 +34,7 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.154 -0400", hash_original_method = "5C41D3987D5608A9FF91B81AF91F1E3A", hash_generated_method = "8CBA06F59E64FC7A1AC23E007E5E78E0")
     public synchronized void onResume(Activity activity) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -54,6 +57,7 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.155 -0400", hash_original_method = "D5BF387644292151C2CC3D8E2C24ADB4", hash_generated_method = "EEE278893F4035E574858BA9B64B2E13")
     public synchronized void onPause(Activity activity) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -76,6 +80,7 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.156 -0400", hash_original_method = "24F6BFACBC4EE2930906E276E667EC5B", hash_generated_method = "4A8123AC391525294F63D26E628E0F01")
     public void onDestroy(Activity activity) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -86,6 +91,7 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.157 -0400", hash_original_method = "571064E533016906493F5781A338B8A8", hash_generated_method = "F0D88C943721FE5BC1026FA4231035BC")
     public synchronized void setNdefPushMessage(Activity activity, NdefMessage message) {
         addTaint(message.getTaint());
@@ -187,6 +193,7 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.162 -0400", hash_original_method = "85DEBB165D0E03A5E3758750DB067F77", hash_generated_method = "9EB1CD69C6A8EAFB6E51A98886AFEFB1")
     synchronized NfcActivityState getOrCreateState(Activity activity, boolean create) {
         addTaint(create);
@@ -215,6 +222,7 @@ NfcActivityState var37C56C9D63C623261861C16DCFB73F6D_733349524 =         state;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.163 -0400", hash_original_method = "6C42916FD841C6EAFF0C495955BCFCAE", hash_generated_method = "9C3B331A29A3BDB060F715EA3421E2C9")
     synchronized void maybeRemoveState(Activity activity, NfcActivityState state) {
         addTaint(state.getTaint());
@@ -234,6 +242,7 @@ NfcActivityState var37C56C9D63C623261861C16DCFB73F6D_733349524 =         state;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.164 -0400", hash_original_method = "6FB81CDE896F299C5469DD3DD94C1A99", hash_generated_method = "9E2929CF5018CC8542F029BF8E368F73")
     synchronized void updateNfcService(NfcActivityState state) {
         addTaint(state.getTaint());
@@ -260,6 +269,7 @@ NfcActivityState var37C56C9D63C623261861C16DCFB73F6D_733349524 =         state;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.165 -0400", hash_original_method = "3FF4E80952B14CA972EE064B02088076", hash_generated_method = "3CE66222EE896E03F54A12AB1B6D9867")
     @Override
     public NdefMessage createMessage() {
@@ -299,6 +309,7 @@ NdefMessage var540C13E9E156B687226421B24F2DF178_167707578 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.165 -0400", hash_original_method = "CE2F7F897A262F67EB6F40C6D613EBB1", hash_generated_method = "F8393249C67CA1BE55BE9BF79A15BB10")
     @Override
     public void onNdefPushComplete() {
@@ -354,6 +365,7 @@ for(NfcActivityState state : mNfcState.values())
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.167 -0400", hash_original_method = "0458F1EA3F9A5785CA2A5D797EF2D2B7", hash_generated_method = "5EBC3CCF76FB66D0AC6999C181441CD2")
         @Override
         public String toString() {

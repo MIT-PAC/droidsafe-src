@@ -1,12 +1,13 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class BerTlv {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.656 -0400", hash_original_field = "585F79BD9B4089B48441D6A5455747E1", hash_generated_field = "39FE9CD97B9AFEAEBF1F07C1BE8432FF")
@@ -16,6 +17,7 @@ class BerTlv {
 
     private List<ComprehensionTlv> mCompTlvs = null;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.657 -0400", hash_original_method = "5C874FE61091A7FA99CA633BD5413E3E", hash_generated_method = "07694EC6CD4A63F924055EE17B7B86F1")
     private  BerTlv(int tag, List<ComprehensionTlv> ctlvs) {
         mTag = tag;
@@ -26,7 +28,7 @@ class BerTlv {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.658 -0400", hash_original_method = "4DB54AB9F503DA894E5725BF1F0BC01C", hash_generated_method = "5F87E2A79FB0FDE0420251F34D16BA64")
     public List<ComprehensionTlv> getComprehensionTlvs() {
 List<ComprehensionTlv> varEED3324DF316BCB609D1536A9D775114_540080039 =         mCompTlvs;
@@ -37,7 +39,7 @@ List<ComprehensionTlv> varEED3324DF316BCB609D1536A9D775114_540080039 =         m
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.658 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "0C2BBFC8C3F27DC217B84BECB9B630B5")
     public int getTag() {
         int var07496860B5C53FDD66588727158D5F73_1646734871 = (mTag);
@@ -48,6 +50,7 @@ List<ComprehensionTlv> varEED3324DF316BCB609D1536A9D775114_540080039 =         m
     }
 
     
+    @DSModeled(DSC.BAN)
     public static BerTlv decode(byte[] data) throws ResultException {
         int curIndex = 0;
         int endIndex = data.length;

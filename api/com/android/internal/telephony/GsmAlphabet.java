@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static android.telephony.SmsMessage.ENCODING_7BIT;
 import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS;
 import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS_WITH_HEADER;
@@ -17,20 +18,21 @@ import android.util.SparseIntArray;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GsmAlphabet {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.337 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
     private  GsmAlphabet() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int charToGsm(char c) {
         try {
             return charToGsm(c, false);
@@ -40,6 +42,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int charToGsm(char c, boolean throwException) throws EncodeException {
         int ret;
         ret = sCharsToGsmTables[0].get(c, -1);
@@ -59,7 +62,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int charToGsmExtended(char c) {
         int ret;
         ret = sCharsToShiftTables[0].get(c, -1);
@@ -70,7 +73,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static char gsmToChar(int gsmChar) {
         if (gsmChar >= 0 && gsmChar < 128) {
             return sLanguageTables[0].charAt(gsmChar);
@@ -80,6 +83,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static char gsmExtendedToChar(int gsmChar) {
         if (gsmChar == GSM_EXTENDED_ESCAPE) {
             return ' ';
@@ -96,11 +100,13 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header) throws EncodeException {
         return stringToGsm7BitPackedWithHeader(data, header, 0, 0);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
             int languageTable, int languageShiftTable) throws EncodeException {
         if (header == null || header.length == 0) {
@@ -116,17 +122,20 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static byte[] stringToGsm7BitPacked(String data) throws EncodeException {
         return stringToGsm7BitPacked(data, 0, true, 0, 0);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static byte[] stringToGsm7BitPacked(String data, int languageTable,
             int languageShiftTable) throws EncodeException {
         return stringToGsm7BitPacked(data, 0, true, languageTable, languageShiftTable);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
             boolean throwException, int languageTable, int languageShiftTable) throws EncodeException {
         int dataLen = data.length();
@@ -170,7 +179,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
         int byteOffset = bitOffset / 8;
         int shift = bitOffset % 8;
@@ -181,13 +190,14 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String gsm7BitPackedToString(byte[] pdu, int offset,
             int lengthSeptets) {
         return gsm7BitPackedToString(pdu, offset, lengthSeptets, 0, 0, 0);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String gsm7BitPackedToString(byte[] pdu, int offset,
             int lengthSeptets, int numPaddingBits, int languageTable, int shiftTable) {
         StringBuilder ret = new StringBuilder(lengthSeptets);
@@ -247,11 +257,13 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String gsm8BitUnpackedToString(byte[] data, int offset, int length) {
         return gsm8BitUnpackedToString(data, offset, length, "");
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String gsm8BitUnpackedToString(byte[] data, int offset, int length, String characterset) {
         boolean isMbcs = false;
         Charset charset = null;
@@ -303,6 +315,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static byte[] stringToGsm8BitPacked(String s) {
         byte[] ret;
         int septets = countGsmSeptetsUsingTables(s, true, 0, 0);
@@ -341,6 +354,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int countGsmSeptets(char c) {
         try {
             return countGsmSeptets(c, false);
@@ -350,6 +364,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int countGsmSeptets(char c, boolean throwsException) throws EncodeException {
         if (sCharsToGsmTables[0].get(c, -1) != -1) {
             return 1;
@@ -365,6 +380,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int countGsmSeptetsUsingTables(CharSequence s, boolean use7bitOnly,
             int languageTable, int languageShiftTable) {
         int count = 0;
@@ -391,6 +407,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static SmsMessageBase.TextEncodingDetails countGsmSeptets(CharSequence s, boolean use7bitOnly) {
         if (sEnabledSingleShiftTables.length + sEnabledLockingShiftTables.length == 0) {
             SmsMessageBase.TextEncodingDetails ted = new SmsMessageBase.TextEncodingDetails();
@@ -510,6 +527,7 @@ public class GsmAlphabet {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static int findGsmSeptetLimitIndex(String s, int start, int limit, int langTable, int langShiftTable) {
         int accumulator = 0;
         int size = s.length();
@@ -535,7 +553,7 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static synchronized void setEnabledSingleShiftTables(int[] tables) {
         sEnabledSingleShiftTables = tables;
         if (tables.length > 0) {
@@ -546,19 +564,19 @@ public class GsmAlphabet {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static synchronized void setEnabledLockingShiftTables(int[] tables) {
         sEnabledLockingShiftTables = tables;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static synchronized int[] getEnabledSingleShiftTables() {
         return sEnabledSingleShiftTables;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static synchronized int[] getEnabledLockingShiftTables() {
         return sEnabledLockingShiftTables;
     }
@@ -575,6 +593,7 @@ public class GsmAlphabet {
 
         int[] unencodableCounts;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.341 -0400", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "BC5E116F55ACA8D55FEDED7E37C12C4B")
           LanguagePairCount(int code) {
             this.languageCode = code;

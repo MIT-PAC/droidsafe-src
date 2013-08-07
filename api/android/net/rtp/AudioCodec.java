@@ -1,10 +1,11 @@
 package android.net.rtp;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class AudioCodec {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.990 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "6AC5CE4BE311ED1283E9BD812937901E")
@@ -17,6 +18,7 @@ public class AudioCodec {
 
     public String fmtp;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.991 -0400", hash_original_method = "9592639532530D98F97A4B6F44806F64", hash_generated_method = "BE4A1A43B4CCD88E252F67215DEEEE0E")
     private  AudioCodec(int type, String rtpmap, String fmtp) {
         this.type = type;

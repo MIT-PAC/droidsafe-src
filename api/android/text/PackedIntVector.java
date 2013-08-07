@@ -1,12 +1,13 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class PackedIntVector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.061 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
@@ -122,7 +123,7 @@ class PackedIntVector {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.067 -0400", hash_original_method = "339196B1319A98FF890A6A44D9B8F936", hash_generated_method = "A890ACBC1CA8B56AC017771E7ACC54FE")
     private void setValueInternal(int row, int column, int value) {
         if(row >= mRowGapStart)        
@@ -283,6 +284,7 @@ for(int i = mColumns - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.072 -0400", hash_original_method = "B5C941269BF1E9CDD155EBF5B7D0DBA9", hash_generated_method = "96CC886EC5F83DB4FD4670263D01A615")
     private final void growBuffer() {
         final int columns = mColumns;
@@ -318,7 +320,7 @@ for(int i = 0;i < columns;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.075 -0400", hash_original_method = "6D74A2161397D319519D26FF483664C7", hash_generated_method = "3AB19E5EF5F4BDA3FC54AB9BB6B39235")
     private final void moveValueGapTo(int column, int where) {
         addTaint(where);
@@ -365,7 +367,7 @@ for(int i = where;i < valuegap[column];i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.079 -0400", hash_original_method = "6D396DEEC3DAD541F2D5DA5D46CC7D37", hash_generated_method = "A2F11BF6138504881F84DB80D0E37A77")
     private final void moveRowGapTo(int where) {
         if(where == mRowGapStart)        

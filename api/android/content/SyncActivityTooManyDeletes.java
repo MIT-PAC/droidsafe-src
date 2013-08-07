@@ -1,6 +1,7 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.accounts.Account;
 import android.app.Activity;
 import android.os.Bundle;
@@ -15,8 +16,8 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class SyncActivityTooManyDeletes extends Activity implements AdapterView.OnItemClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.846 -0400", hash_original_field = "9396EDC1B0203C3E8377092DF4A9DD0F", hash_generated_field = "86D230D989C0289FA38126BD15162121")
@@ -39,6 +40,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.849 -0400", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "98A3E22FF15ABDA25FA8ABF6512F6333")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +106,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.855 -0400", hash_original_method = "8359BAD844441D7FEC2F631DA63D9ED3", hash_generated_method = "BEB460FCC20AE15F75E9651C3BDE0BA8")
     private void startSyncReallyDelete() {
         Bundle extras = new Bundle();
@@ -122,6 +125,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.857 -0400", hash_original_method = "CE7FC2B344B122C88B585FB58EADCEB6", hash_generated_method = "08C2B21588698550CD7D4D9DB4254D98")
     private void startSyncUndoDeletes() {
         Bundle extras = new Bundle();

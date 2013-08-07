@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.AF_INET;
 import static libcore.io.OsConstants.AF_UNSPEC;
 import static libcore.io.OsConstants.AI_ADDRCONFIG;
@@ -31,10 +32,10 @@ import libcore.io.Libcore;
 import libcore.io.Memory;
 import libcore.io.StructAddrinfo;
 import dalvik.system.BlockGuard;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class InetAddress implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.661 -0400", hash_original_field = "0D3FDA0BDBB9D619E09CDF3EECBA7999", hash_generated_field = "630495C0099FA460C912B67A0FCAD3C7")
@@ -93,7 +94,7 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress[] bytesToInetAddresses(byte[][] rawAddresses, String hostName) throws UnknownHostException {
         InetAddress[] returnedAddresses = new InetAddress[rawAddresses.length];
         for (int i = 0; i < rawAddresses.length; i++) {
@@ -108,6 +109,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static InetAddress[] getAllByNameImpl(String host) throws UnknownHostException {
         if (host == null || host.isEmpty()) {
             return loopbackAddresses();
@@ -124,7 +126,7 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress makeInetAddress(byte[] bytes, String hostName) throws UnknownHostException {
         if (bytes.length == 4) {
             return new Inet4Address(bytes, hostName);
@@ -136,6 +138,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static InetAddress disallowDeprecatedFormats(String address, InetAddress inetAddress) {
         if (!(inetAddress instanceof Inet4Address) || address.indexOf(':') != -1) {
             return inetAddress;
@@ -144,7 +147,7 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress parseNumericAddressNoThrow(String address) {
         if (address.startsWith("[") && address.endsWith("]") && address.indexOf(':') != -1) {
             address = address.substring(1, address.length() - 1);
@@ -246,6 +249,7 @@ String varE0844D2E3199657F6D45A77AB24C4989_1837194654 =             getHostAddre
     }
 
     
+    @DSModeled(DSC.BAN)
     private static InetAddress[] lookupHostByName(String host) throws UnknownHostException {
         BlockGuard.getThreadPolicy().onNetwork();
         Object cachedResult = addressCache.get(host);
@@ -275,12 +279,13 @@ String varE0844D2E3199657F6D45A77AB24C4989_1837194654 =             getHostAddre
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void clearDnsCache() {
         addressCache.clear();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress getHostByAddrImpl(InetAddress address) throws UnknownHostException {
         BlockGuard.getThreadPolicy().onNetwork();
         try {
@@ -304,12 +309,14 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_937533407 =         (hostName == null
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isNumeric(String address) {
         InetAddress inetAddress = parseNumericAddressNoThrow(address);
         return inetAddress != null && disallowDeprecatedFormats(address, inetAddress) != null;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static InetAddress parseNumericAddress(String numericAddress) {
         if (numericAddress == null || numericAddress.isEmpty()) {
             return Inet6Address.LOOPBACK;
@@ -323,13 +330,13 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_937533407 =         (hostName == null
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress[] loopbackAddresses() {
         return new InetAddress[] { Inet6Address.LOOPBACK, Inet4Address.LOOPBACK };
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static InetAddress getLoopbackAddress() {
         return Inet6Address.LOOPBACK;
     }
@@ -535,6 +542,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.669 -0400", hash_original_method = "296F60C65F61166BD9A8DF4CB4E70272", hash_generated_method = "3735180CC123ED5B80CD4FD6CB42D170")
     private boolean isReachable(InetAddress destination, InetAddress source, int timeout) throws IOException {
         addTaint(timeout);
@@ -592,6 +600,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static InetAddress getByAddress(String hostName, byte[] ipAddress, int scopeId) throws UnknownHostException {
         if (ipAddress == null) {
             throw new UnknownHostException("ipAddress == null");
@@ -610,13 +619,13 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static UnknownHostException badAddressLength(byte[] bytes) throws UnknownHostException {
         throw new UnknownHostException("Address is neither 4 or 16 bytes: " + Arrays.toString(bytes));
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isIPv4MappedAddress(byte[] ipAddress) {
         if (ipAddress == null || ipAddress.length != 16) {
             return false;
@@ -633,7 +642,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
         byte[] ipv4Address = new byte[4];
         for (int i = 0; i < 4; i++) {
@@ -643,7 +652,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.670 -0400", hash_original_method = "EA85F511D24184DD59F5742DCBE8C620", hash_generated_method = "83A9B893A905C564398789A8BC9F3B76")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -672,7 +681,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.670 -0400", hash_original_method = "8E54F0F7AE1E424107F71EAAF0F6F90C", hash_generated_method = "272B148085B5A64AE6603FF5D112E1D3")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());
@@ -692,7 +701,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.670 -0400", hash_original_method = "08DCB3CBD406BD7814E8362202DC0D50", hash_generated_method = "EFAEFD7616AC948ED0A11726BE0068DD")
     private Object readResolve() throws ObjectStreamException {
 Object var018746D7CDD66E0C0F2B4CEA8F394772_156095607 =         new Inet4Address(ipaddress, hostName);

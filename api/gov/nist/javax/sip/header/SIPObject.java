@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.GenericObject;
 import gov.nist.core.GenericObjectList;
 import gov.nist.core.InternalErrorHandler;
@@ -8,9 +9,9 @@ import gov.nist.core.InternalErrorHandler;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class SIPObject extends GenericObject {
     

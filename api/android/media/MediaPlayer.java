@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -20,10 +21,10 @@ import android.os.PowerManager;
 import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class MediaPlayer {
@@ -112,6 +113,7 @@ public class MediaPlayer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.660 -0400", hash_original_method = "9BA2A59C2D2CF14D2B23AE59BE37DCE6", hash_generated_method = "75214D1074B5857900F45259302E34D8")
     public Parcel newRequest() {
         Parcel parcel = Parcel.obtain();
@@ -126,6 +128,7 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_1491803316 =         parcel;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.660 -0400", hash_original_method = "F1F9A39481AD241B93A7EFA7B112C8A9", hash_generated_method = "3420D1E138400DB218104B4C489B82D7")
     public int invoke(Parcel request, Parcel reply) {
         addTaint(reply.getTaint());
@@ -481,6 +484,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.670 -0400", hash_original_method = "02316AFDA0A1E822630D7CE99583BEE5", hash_generated_method = "E81B31E4072B6C9972042DCDB32723AD")
     private void stayAwake(boolean awake) {
         if(mWakeLock != null)        
@@ -510,6 +514,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.670 -0400", hash_original_method = "D56BBB45DF467B2DAD5698BBF1920DD6", hash_generated_method = "1095DB7E71289C67CD32176EB14BB102")
     private void updateSurfaceScreenOn() {
         if(mSurfaceHolder != null)        
@@ -764,6 +769,7 @@ for(Integer t : block)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.676 -0400", hash_original_method = "007895DA6F9E8604D81FFE810C3D87FB", hash_generated_method = "B357CFC576872AE2C3E7C9B57DE602C9")
     public boolean setParameter(int key, String value) {
         addTaint(value.getTaint());
@@ -784,6 +790,7 @@ for(Integer t : block)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.677 -0400", hash_original_method = "42E72BE22D4EC0A8F92EA2FFF9A1B8CD", hash_generated_method = "DF57579023AA2F1E15559034E1B5FF4B")
     public boolean setParameter(int key, int value) {
         addTaint(value);
@@ -810,6 +817,7 @@ for(Integer t : block)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.677 -0400", hash_original_method = "5EBE9A62BAE86EE2E5C065958EFCD9CF", hash_generated_method = "8D1EBAA6C75998470C9D4F00B1BDAD5C")
     public Parcel getParcelParameter(int key) {
         addTaint(key);
@@ -825,6 +833,7 @@ Parcel var74E4690D9F2A026504928C017944E149_451177843 =         p;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.684 -0400", hash_original_method = "E362F946FCE7F90CCCD629666B73E43A", hash_generated_method = "73F69F0BD39E909AD63820174094AF4F")
     public String getStringParameter(int key) {
         addTaint(key);
@@ -844,6 +853,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.687 -0400", hash_original_method = "6CEECAB43DB86BAC5EC65D39A3A924D5", hash_generated_method = "0395D87FEB53F3EB9E6CC2059DEC9FAB")
     public int getIntParameter(int key) {
         addTaint(key);
@@ -912,6 +922,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.691 -0400", hash_original_method = "BB295A571473D1F777DD0CCBCDDABC95", hash_generated_method = "933B718EB95D928436886DEE2E4A6A77")
     public boolean enableTimedTextTrackIndex(int index) {
         addTaint(index);
@@ -932,6 +943,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.691 -0400", hash_original_method = "74C1C7D2920140BDBE1C5FB72709063E", hash_generated_method = "A18B5645C8E665B333994C8B0C52F664")
     public boolean enableTimedText() {
         boolean varA25F83339352E8D1308780CF786FBF5C_1063865487 = (enableTimedTextTrackIndex(0));
@@ -942,6 +954,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.694 -0400", hash_original_method = "D4D5A570D263843DA145431C05408526", hash_generated_method = "7821B5A2FE931CD8B5DEB73258BD35BF")
     public boolean disableTimedText() {
         boolean varBF138E6E82C5C2C93AC9D2604652D7B0_764570632 = (setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, -1));
@@ -968,6 +981,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void postEventFromNative(Object mediaplayer_ref,
                                             int what, int arg1, int arg2, Object obj) {
         MediaPlayer mp = (MediaPlayer)((WeakReference)mediaplayer_ref).get();

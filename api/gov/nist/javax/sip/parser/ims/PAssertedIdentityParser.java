@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.ims.PAssertedIdentity;
 import gov.nist.javax.sip.header.ims.PAssertedIdentityList;
@@ -11,7 +12,7 @@ import gov.nist.javax.sip.parser.TokenTypes;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class PAssertedIdentityParser extends AddressParametersParser implements TokenTypes {
     

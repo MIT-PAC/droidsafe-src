@@ -1,6 +1,7 @@
 package javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.text.ParseException;
 

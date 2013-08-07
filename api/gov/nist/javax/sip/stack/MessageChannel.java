@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.InternalErrorHandler;
@@ -29,10 +30,10 @@ import javax.sip.header.ServerHeader;
 import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class MessageChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.466 -0400", hash_original_field = "A771D64D63DE5E52A6605CCC6FAC3F7C", hash_generated_field = "8B62D61316200E61EA0A60A5551D82D6")
@@ -471,7 +472,7 @@ String var4FC680801218E6372BC708D6FA44AE60_366987094 =         buf.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final boolean copyHeader(String name, String fromReq, StringBuffer buf) {
         int start = fromReq.indexOf(name);
         if (start != -1) {
@@ -485,7 +486,7 @@ String var4FC680801218E6372BC708D6FA44AE60_366987094 =         buf.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static final boolean copyViaHeaders(String fromReq, StringBuffer buf) {
         int start = fromReq.indexOf(ViaHeader.NAME);
         boolean found = false;

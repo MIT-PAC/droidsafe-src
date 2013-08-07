@@ -1,6 +1,7 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 import java.util.Random;
 
@@ -11,10 +12,10 @@ import org.apache.harmony.security.fortress.Engine;
 import org.apache.harmony.security.fortress.Services;
 import org.apache.harmony.security.provider.crypto.SHA1PRNG_SecureRandomImpl;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SecureRandom extends Random {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.352 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
@@ -92,6 +93,7 @@ public class SecureRandom extends Random {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.355 -0400", hash_original_method = "8ED38FDA0C5F7DDB2E6327092A1339E9", hash_generated_method = "C16B4A5D340303DC7C3B28F2F7D9E05B")
     private  SecureRandom(SecureRandomSpi secureRandomSpi,
                          Provider provider,

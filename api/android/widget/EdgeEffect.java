@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -11,10 +12,10 @@ import android.view.animation.Interpolator;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class EdgeEffect {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.244 -0400", hash_original_field = "F314C72E2C97B21F27CA1E6DFA1CE41B", hash_generated_field = "05964103E2640D266736C21291ED963A")
@@ -298,7 +299,7 @@ public class EdgeEffect {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.254 -0400", hash_original_method = "217F98194ACCE474266C15D1EE978E29", hash_generated_method = "E9B9E83683AE651BF936417EAAC0E4BA")
     private void update() {
         final long time = AnimationUtils.currentAnimationTimeMillis();

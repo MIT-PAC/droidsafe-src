@@ -1,15 +1,16 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import android.graphics.Rect;
 import android.graphics.Region;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class ViewTreeObserver {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.873 -0400", hash_original_field = "E2253A00D2C191692AC03B2939EC7FDB", hash_generated_field = "04A11831DF9DCFA97CB002FC90812073")
@@ -321,6 +322,7 @@ public final class ViewTreeObserver {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.880 -0400", hash_original_method = "09DE926E739DABD1095FDB2AAECCB187", hash_generated_method = "3088AF6132E7110CDCBD60CE9D243E4D")
     private void checkIsAlive() {
         if(!mAlive)        
@@ -349,7 +351,7 @@ public final class ViewTreeObserver {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.881 -0400", hash_original_method = "CE15D88AAF79A195F4E8949632256817", hash_generated_method = "ADAC88CFF01E50F749BE8EE5F2A18844")
     private void kill() {
         mAlive = false;

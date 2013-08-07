@@ -1,14 +1,15 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.EnumMap;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class NetworkInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.397 -0400", hash_original_field = "9761905E68D80D41E55047BFA13A52C2", hash_generated_field = "60BE94F590B2B55E7F16606AE64523A2")
@@ -45,6 +46,7 @@ public class NetworkInfo implements Parcelable {
 
     private boolean mIsAvailable;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.398 -0400", hash_original_method = "E0E0B5DCE71AAA01C628F35001B06F62", hash_generated_method = "EFE69ABEC541A13B58B9BCC4C8E2BBA7")
     public  NetworkInfo(int type) {
         addTaint(type);
@@ -52,6 +54,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.400 -0400", hash_original_method = "D80B4D4DAAC5235D04ECA009868EE265", hash_generated_method = "344934C9E51743F0C47B42CD9435C650")
     public  NetworkInfo(int type, int subtype, String typeName, String subtypeName) {
         if(!ConnectivityManager.isNetworkTypeValid(type))        
@@ -83,6 +86,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.402 -0400", hash_original_method = "5A3F7321AA4C57E32E1DFB9D40F8D226", hash_generated_method = "F690B14894160AC70373D2F5628CD992")
     public  NetworkInfo(NetworkInfo source) {
         if(source != null)        
@@ -244,7 +248,7 @@ String var9853BDE3D68EC39045135DFC6FA71950_223398304 =             mSubtypeName;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.406 -0400", hash_original_method = "939E32860F0B0F06BDBD0E17663153C9", hash_generated_method = "03778C8E21993ADE9A96CC553A347AE7")
     public void setIsAvailable(boolean isAvailable) {
         synchronized
@@ -274,7 +278,7 @@ String var9853BDE3D68EC39045135DFC6FA71950_223398304 =             mSubtypeName;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.407 -0400", hash_original_method = "F833C30ECD57DCF99CA2522188FA2C07", hash_generated_method = "91F2D1762787A05AAC8F1342F228A08A")
     public void setFailover(boolean isFailover) {
         synchronized
@@ -350,6 +354,7 @@ DetailedState var824FE49BF4029232CF22A03E7D5285D6_703343392 =             mDetai
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.409 -0400", hash_original_method = "F9B4E8192C3BAB2B942149B3B4357918", hash_generated_method = "150DE1F5E762DF8A96EC3EBD63BF8B11")
     public void setDetailedState(DetailedState detailedState, String reason, String extraInfo) {
         synchronized
@@ -434,7 +439,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_898918148 =             builder.toStr
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.411 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "23FD66E174BE71BB22D98804EE2562AC")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1530363441 = (0);
@@ -445,7 +450,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_898918148 =             builder.toStr
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.411 -0400", hash_original_method = "EF9852F5CC5A1C9C509E333ACBA9ED14", hash_generated_method = "AAA1CE22A6902C6CCD845A91BBD53F7D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

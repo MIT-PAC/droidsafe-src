@@ -1,6 +1,7 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.lang.ref.SoftReference;
 import java.security.PublicKey;
@@ -11,10 +12,10 @@ import java.util.Arrays;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Signature implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.778 -0400", hash_original_field = "FC75508A279D3A4B73839B9A1CF5EE55", hash_generated_field = "82FF487F3BC72CD61B5A92D15C282FF7")
@@ -75,6 +76,7 @@ for(int i = 0;i < N;)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.783 -0400", hash_original_method = "BBC65E3379EE4CCA92F27F7F3813E8E5", hash_generated_method = "35AE48A1EC65609E4DC5E52450D21B19")
     private  Signature(Parcel source) {
         mSignature = source.createByteArray();
@@ -83,6 +85,7 @@ for(int i = 0;i < N;)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final int parseHexDigit(int nibble) {
         if ('0' <= nibble && nibble <= '9') {
             return nibble - '0';
@@ -189,6 +192,7 @@ String var061B89662D09DE43FE2A2D88636258A2_1993221826 =         str;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.788 -0400", hash_original_method = "E5DE629FEFDBE513EC2140BEFF8592A6", hash_generated_method = "F4C64CE033CAE4BD3C3302C2A96294BC")
     public PublicKey getPublicKey() throws CertificateException {
         final CertificateFactory certFactory = CertificateFactory.getInstance("X.509");

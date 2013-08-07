@@ -1,13 +1,14 @@
 package org.bouncycastle.util.encoders;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HexEncoder implements Encoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.333 -0400", hash_original_field = "9FFAC4C14B6083B206E70065A3584771", hash_generated_field = "A8D4DC408DE84610D910B7400C27CA50")
@@ -86,7 +87,7 @@ for(int i = off;i < (off + length);i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.336 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "129DF6EF0FBDE4F8BD371A5BD9C2E345")
     private boolean ignore(
         char    c) {

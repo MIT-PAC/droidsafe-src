@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.nist;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
@@ -10,8 +11,8 @@ import org.bouncycastle.asn1.sec.SECObjectIdentifiers;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.util.Strings;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class NISTNamedCurves {
     

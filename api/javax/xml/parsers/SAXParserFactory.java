@@ -1,6 +1,7 @@
 package javax.xml.parsers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.xml.validation.Schema;
 
 import org.apache.harmony.xml.parsers.SAXParserFactoryImpl;
@@ -8,10 +9,10 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class SAXParserFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.983 -0400", hash_original_field = "45184E952A59E6FFF7C397E5631D95CE", hash_generated_field = "5A58AB4C6A46398C035EC9B72D104783")

@@ -1,6 +1,7 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants._SC_NPROCESSORS_ONLN;
 
 import java.io.File;
@@ -15,10 +16,10 @@ import java.util.StringTokenizer;
 import libcore.io.Libcore;
 import dalvik.system.VMDebug;
 import dalvik.system.VMStack;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Runtime {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.558 -0400", hash_original_field = "6B000CDB16A1C13D718033E4DCCD85DA", hash_generated_field = "873422259A0094C2F3A569B7BBF35F19")
@@ -34,7 +35,7 @@ public class Runtime {
 
     private boolean tracingMethods;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.559 -0400", hash_original_method = "F82AC05B2B9BDA560435929D86D5DD16", hash_generated_method = "AAB21F2EDBE02CAE189D3D873254E410")
     private  Runtime() {
         String pathList = System.getProperty("java.library.path", ".");
@@ -241,7 +242,7 @@ for(Thread hook : hooks)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.566 -0400", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "38D7372B6B3BDE5BCAD502C4E596DD44")
      void load(String filename, ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -280,7 +281,7 @@ for(Thread hook : hooks)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.567 -0400", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "617AEABE8EAE96BD2E4141A3A959837B")
      void loadLibrary(String libraryName, ClassLoader loader) {
         addTaint(loader.getTaint());

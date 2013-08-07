@@ -1,10 +1,11 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 class Grego {
     
@@ -116,7 +117,7 @@ class Grego {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static long floorDivide(long numerator, long denominator, long[] remainder) {
         if (numerator >= 0) {
             remainder[0] = numerator % denominator;

@@ -1,10 +1,11 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 public class Matrix {
     public int native_instance;
@@ -419,7 +420,7 @@ public class Matrix {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkPointArrays(float[] src, int srcIndex,
                                          float[] dst, int dstIndex,
                                          int pointCount){
@@ -652,7 +653,7 @@ public class Matrix {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void toShortString(StringBuilder sb){
 		// Original method
 		/*
@@ -672,7 +673,7 @@ public class Matrix {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public void printShortString(PrintWriter pw){
 		// Original method
 		/*

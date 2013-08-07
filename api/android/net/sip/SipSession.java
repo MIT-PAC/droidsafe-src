@@ -1,11 +1,12 @@
 package android.net.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SipSession {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.692 -0400", hash_original_field = "585864B1433B33593F88424BEC9E09EF", hash_generated_field = "B127E608132911BCC4FB99E4A8F915FC")
@@ -332,6 +333,7 @@ ISipSession var4330E14CA251960F6A23F8F7761A1A41_1987203933 =         mSession;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.710 -0400", hash_original_method = "346C5E2A278D0A9A8B61352C5712D581", hash_generated_method = "BA737F97F1F0E8C104252261B2FAAAF0")
     private ISipSessionListener createListener() {
 ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_1331443629 =         new ISipSessionListener.Stub() {        
@@ -542,6 +544,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_1331443629 =         new
     
     public static class State {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.711 -0400", hash_original_method = "1314C653F2455ACB4C7CC9637DF86BCF", hash_generated_method = "362016197A85F3060127375CB2C169F9")
         private  State() {
             // ---------- Original Method ----------
@@ -685,7 +688,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_1331443629 =         new
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.726 -0400", hash_original_method = "BA5AD9CB5800C0FF06E65720317D213F", hash_generated_method = "4EC63AE57CEAA7272E7AAD95E1142F4F")
         public void onCallTransferring(SipSession newSession,
                 String sessionDescription) {

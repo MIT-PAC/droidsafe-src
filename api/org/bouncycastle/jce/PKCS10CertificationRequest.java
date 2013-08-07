@@ -1,6 +1,7 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
 import java.security.GeneralSecurityException;
@@ -44,10 +45,10 @@ import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.util.Strings;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PKCS10CertificationRequest extends CertificationRequest {
     
@@ -222,7 +223,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
         return new RSASSAPSSparams(
             hashAlgId,
@@ -232,7 +233,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static ASN1Sequence toDERSequence(
         byte[]  bytes) {
         try
@@ -247,7 +248,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static X509Name convertName(
         X500Principal    name) {
         try
@@ -441,7 +442,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                      
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.259 -0400", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "ECA18CCBBB9FF4A7FC3B8B40F1D1D462")
     private void setSignatureParameters(
         Signature signature,
@@ -496,6 +497,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                      
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String getDigestAlgName(
         DERObjectIdentifier digestAlgOID) {
         if (PKCSObjectIdentifiers.md5.equals(digestAlgOID))

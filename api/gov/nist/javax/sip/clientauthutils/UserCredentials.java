@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.clientauthutils;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface UserCredentials
 {

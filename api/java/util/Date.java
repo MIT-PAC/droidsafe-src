@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -10,10 +11,10 @@ import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 
 import libcore.icu.LocaleData;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Date implements Serializable, Cloneable, Comparable<Date> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.071 -0400", hash_original_field = "C50C3B1CA82BA7B7AB55AFDF66A2F6C9", hash_generated_field = "6BC5295E2736F8077860853450F996C9")
@@ -318,7 +319,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_858302775 =             super.clone()
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int parse(String string, String[] array) {
         for (int i = 0, alength = array.length, slength = string.length(); i < alength; i++) {
             if (string.regionMatches(true, 0, array[i], 0, slength)) {
@@ -672,7 +673,7 @@ String varE65B3A02759122992CB82C0E651AD408_1060799798 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void appendTwoDigits(StringBuilder sb, int n) {
         if (n < 10) {
             sb.append('0');
@@ -692,7 +693,7 @@ String varE65B3A02759122992CB82C0E651AD408_1060799798 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int zone(String text) {
         if (text.equals("EST")) {
             return -5;
@@ -722,7 +723,7 @@ String varE65B3A02759122992CB82C0E651AD408_1060799798 =         result.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.086 -0400", hash_original_method = "A8D1E2059FF037BF4B3478BBC82EA0DD", hash_generated_method = "0AC5220109B8F6AD62B51D88635F7C8C")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -734,7 +735,7 @@ String varE65B3A02759122992CB82C0E651AD408_1060799798 =         result.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.086 -0400", hash_original_method = "59F27179ED4F1C5D53DD2971937048C1", hash_generated_method = "BE1A0AEAD9A5F8FAF1B8C4997D3688D3")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

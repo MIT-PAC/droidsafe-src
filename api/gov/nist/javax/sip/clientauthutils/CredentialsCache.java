@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.clientauthutils;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,8 +12,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.sip.header.AuthorizationHeader;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class CredentialsCache {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.452 -0400", hash_original_field = "D81018253725EE02665AA28ECF9FB59A", hash_generated_field = "D736F54F12D200A8D25CC8A65E13F0DE")

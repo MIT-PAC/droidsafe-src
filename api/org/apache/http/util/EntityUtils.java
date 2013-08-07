@@ -1,6 +1,7 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,13 +13,13 @@ import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
 import org.apache.http.protocol.HTTP;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public final class EntityUtils {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.521 -0400", hash_original_method = "A25F629EA0AE9AB637DBB7282029CCE6", hash_generated_method = "DF638A820C62149FB3BD6CF8B6EF2106")
     private  EntityUtils() {
         // ---------- Original Method ----------

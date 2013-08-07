@@ -1,6 +1,7 @@
 package android.security;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IKeyChainAliasCallback extends android.os.IInterface
 {

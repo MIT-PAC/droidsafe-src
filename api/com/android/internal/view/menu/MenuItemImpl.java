@@ -1,6 +1,7 @@
 package com.android.internal.view.menu;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +14,10 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewDebug;
 import android.widget.LinearLayout;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class MenuItemImpl implements MenuItem {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.488 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")

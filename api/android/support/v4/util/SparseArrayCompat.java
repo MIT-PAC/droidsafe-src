@@ -1,10 +1,11 @@
 package android.support.v4.util;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public class SparseArrayCompat<E> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.110 -0400", hash_original_field = "09A7D01F9A4EF2933D39C68D27937238", hash_generated_field = "3E9E77485A77FB735B3D2728BEADA3A6")
@@ -146,6 +147,7 @@ for(int i = index;i < end;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.115 -0400", hash_original_method = "7868047E3541D358CB50D9A842861F65", hash_generated_method = "CA3EB3DE5B4A330ED8C8F6988D7EE3A9")
     private void gc() {
         int n = mSize;
@@ -350,6 +352,7 @@ for(int i = 0;i < mSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.123 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "61ED33368900ED20EB0D15BBCF4A009A")
     public void clear() {
         int n = mSize;
@@ -420,6 +423,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {
@@ -438,6 +442,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int idealByteArraySize(int need) {
         for (int i = 4; i < 32; i++)
             if (need <= (1 << i) - 12)

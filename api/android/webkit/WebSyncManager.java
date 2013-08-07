@@ -1,15 +1,16 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class WebSyncManager implements Runnable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.836 -0400", hash_original_field = "CE9AFA79AB3BED4D3F782109816DD7DF", hash_generated_field = "2A2EDBD898ACE1E88CC70BC46F6934B8")

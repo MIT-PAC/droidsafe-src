@@ -1,6 +1,7 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -16,7 +17,7 @@ import junit.runner.BaseTestRunner;
 
 import com.google.android.collect.Lists;
 
-import droidsafe.annotations.*;
+
 
 public class TestCaseUtil {
     
@@ -45,6 +46,7 @@ public class TestCaseUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static List<? extends Test> getTests(Test test, boolean flatten,
             Set<Class<?>> seen) {
         List<Test> testCases = Lists.newArrayList();
@@ -77,6 +79,7 @@ public class TestCaseUtil {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Test invokeSuiteMethodIfPossible(Class testClass,
             Set<Class<?>> seen) {
         try {

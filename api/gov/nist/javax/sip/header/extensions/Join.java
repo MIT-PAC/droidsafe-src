@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.header.extensions;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.CallIdentifier;
 import gov.nist.javax.sip.header.ParameterNames;
 import gov.nist.javax.sip.header.ParametersHeader;
@@ -9,10 +10,10 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Join extends ParametersHeader implements ExtensionHeader, JoinHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.791 -0400", hash_original_field = "88C34851730939F0BFDB6F7071BED407", hash_generated_field = "64120D09C2B0721B310316A22E4103F4")

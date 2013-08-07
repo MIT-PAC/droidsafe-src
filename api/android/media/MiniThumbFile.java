@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -11,10 +12,10 @@ import java.util.Hashtable;
 
 import android.net.Uri;
 import android.os.Environment;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MiniThumbFile {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.915 -0400", hash_original_field = "5FBE3730DCFF234F97B15868D5CE649D", hash_generated_field = "04FA8EB5D9FB8AC4AAE6453BCF1BBF82")
@@ -30,7 +31,7 @@ public class MiniThumbFile {
 
     private ByteBuffer mBuffer;
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.916 -0400", hash_original_method = "4830D2FF2BD59004BFED5BEAD8B6AF84", hash_generated_method = "434CCADDBD0B76ADF3CB67EA4913C9CF")
     public  MiniThumbFile(Uri uri) {
         mUri = uri;
@@ -41,6 +42,7 @@ public class MiniThumbFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static synchronized void reset() {
         for (MiniThumbFile file : sThumbFiles.values()) {
             file.deactivate();
@@ -49,7 +51,7 @@ public class MiniThumbFile {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static synchronized MiniThumbFile instance(Uri uri) {
         String type = uri.getPathSegments().get(1);
         MiniThumbFile file = sThumbFiles.get(type);
@@ -62,6 +64,7 @@ public class MiniThumbFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.917 -0400", hash_original_method = "83138AD8D526C72B89B2911A4A5BD2FA", hash_generated_method = "5C9BD13618A08FCFAC24D7DC7E2851C8")
     private String randomAccessFilePath(int version) {
         addTaint(version);
@@ -78,6 +81,7 @@ String var2C0F3AB1B0D21A590BACE6375CC48A8C_1086855637 =         directoryName + 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.918 -0400", hash_original_method = "4E94300706FF7803E0D91C5BAD686F7F", hash_generated_method = "5FE508C1BC818E3186F2070544F07133")
     private void removeOldFile() {
         String oldPath = randomAccessFilePath(MINI_THUMB_DATA_FILE_VERSION - 1);
@@ -104,6 +108,7 @@ String var2C0F3AB1B0D21A590BACE6375CC48A8C_1086855637 =         directoryName + 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.919 -0400", hash_original_method = "E122935DF7BCC080EF63276C2CD73A77", hash_generated_method = "76FE9256F4504A6A4F6E7CE779A3CE5A")
     private RandomAccessFile miniThumbDataFile() {
         if(mMiniThumbFile == null)        
@@ -145,6 +150,7 @@ RandomAccessFile var1F0510D6271C21B4187DB92369D83034_1373015443 =         mMiniT
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.921 -0400", hash_original_method = "5481B8A4C78F6F60D852A9A55F0BEBDF", hash_generated_method = "572CF4CC775C35D5575054915D3E69DB")
     public synchronized void deactivate() {
         if(mMiniThumbFile != null)        
@@ -169,6 +175,7 @@ RandomAccessFile var1F0510D6271C21B4187DB92369D83034_1373015443 =         mMiniT
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.923 -0400", hash_original_method = "30677CE09F50871FBAF560D52310B443", hash_generated_method = "A96AC93692D2F711AB3D7098B20B317A")
     public synchronized long getMagic(long id) {
         addTaint(id);
@@ -219,6 +226,7 @@ RandomAccessFile var1F0510D6271C21B4187DB92369D83034_1373015443 =         mMiniT
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.928 -0400", hash_original_method = "5902848FBDD417107FA8B8FF465E242F", hash_generated_method = "CD42F22EB95DA067935FCCB7C7D10608")
     public synchronized void saveMiniThumbToFile(byte[] data, long id, long magic) throws IOException {
         addTaint(magic);

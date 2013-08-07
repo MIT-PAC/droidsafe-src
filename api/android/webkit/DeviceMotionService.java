@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
 import android.content.Context;
@@ -9,10 +10,10 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Handler;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class DeviceMotionService implements SensorEventListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.245 -0400", hash_original_field = "1D4FD4FBF6080AF66D4D90562FE06036", hash_generated_field = "66D108DFC043A6E0A2844E4843186070")
@@ -102,7 +103,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.251 -0400", hash_original_method = "CDFAD74C98E46044259B3BCC3613C4C6", hash_generated_method = "F6673588861920BB3F8ACB24E093A5CF")
     private void sendErrorEvent() {
         if(mHaveSentErrorEvent)        
@@ -142,7 +143,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.253 -0400", hash_original_method = "9B63FE7EDAA2DFAC9F6DE1381BA682EF", hash_generated_method = "21DA2D48BEC8ECE8B7D81DAFA0B2E3A7")
     private void createHandler() {
         if(mHandler != null)        
@@ -187,6 +188,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.254 -0400", hash_original_method = "A3A2E2444DD47EDD24E157A7D990CD47", hash_generated_method = "9D2E6C8D82D655D950CB0FEE1EEC48AE")
     private void startSendingUpdates() {
         createHandler();
@@ -197,6 +199,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.254 -0400", hash_original_method = "C91FFFB25BA3A01D4AF61CC044FBC20A", hash_generated_method = "BCE08908D6D1E37280656543AC394DA7")
     private void stopSendingUpdates() {
         mHandler.removeCallbacks(mUpdateRunnable);
@@ -207,6 +210,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.254 -0400", hash_original_method = "8EA92813CD5F00D63229FB53D6348E72", hash_generated_method = "DD806532E32A7FC7B7B8BDCBE57C9E83")
     private void registerForSensor() {
         if(!registerForAccelerometerSensor())        
@@ -220,6 +224,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.255 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "5E64F3DDAC074E95705F22FC795F518F")
     private SensorManager getSensorManager() {
         if(mSensorManager == null)        
@@ -238,6 +243,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_627056264 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.255 -0400", hash_original_method = "132C72132CB3FECC364192FB60290F0C", hash_generated_method = "1240F5FD566FD4F2D1858F07DEBE75C7")
     private boolean registerForAccelerometerSensor() {
         List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
@@ -263,6 +269,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_627056264 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.255 -0400", hash_original_method = "8F0ED17D95B5480F975ECDA7EDF68357", hash_generated_method = "9047F07B49AB7461A60D1DD86FDABEAE")
     private void unregisterFromSensor() {
         getSensorManager().unregisterListener(this);

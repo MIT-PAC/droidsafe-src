@@ -1,6 +1,7 @@
 package android.net.wifi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -10,10 +11,10 @@ import android.net.NetworkInfo.DetailedState;
 import android.net.NetworkUtils;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WifiInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.284 -0400", hash_original_field = "70A98F8E3B025E9E336D67915E7E13CE", hash_generated_field = "53C0C50586977D30F50A38A02FF5AA68")
@@ -69,6 +70,7 @@ public class WifiInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.289 -0400", hash_original_method = "405CB5D945A11DFB599C76C83B7C3513", hash_generated_method = "3843368E6984CF646894020EF871F750")
     public  WifiInfo(WifiInfo source) {
         if(source != null)        
@@ -211,7 +213,7 @@ String var056FBC3AF3DC72B5E04E175B4CD32899_269344299 =         mMacAddress;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.295 -0400", hash_original_method = "1123FC1D4BB4576127DCFBEFE95B45B2", hash_generated_method = "83806D6F0CA170AB702BF56388FA977B")
     public boolean isExplicitConnect() {
         boolean varB89633D2CCA7286F7A10098841F72B41_345365900 = (mExplicitConnect);
@@ -222,7 +224,7 @@ String var056FBC3AF3DC72B5E04E175B4CD32899_269344299 =         mMacAddress;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.296 -0400", hash_original_method = "3A4A87F80F04538D566E1F3D87FB9121", hash_generated_method = "419BFD214B5C4008C8900EF6C9DFFFC6")
     public void setExplicitConnect(boolean explicitConnect) {
         this.mExplicitConnect = explicitConnect;
@@ -300,7 +302,7 @@ SupplicantState var5CE7AE56112F2A1F3C0B8B3EBEFBA250_1017078318 =         mSuppli
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.299 -0400", hash_original_method = "FC84BEFBD9B7D8BF135E20B2EE1BDB16", hash_generated_method = "86ED33E9FF91B448E715AC8EE3AB36F5")
     public void setHiddenSSID(boolean hiddenSSID) {
         mHiddenSSID = hiddenSSID;
@@ -371,7 +373,7 @@ String var2460B846747F8B22185AD8BE722266A5_2074743259 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.304 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "75FE54AB15C10455037302467BCCBB55")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1098936012 = (0);
@@ -382,7 +384,7 @@ String var2460B846747F8B22185AD8BE722266A5_2074743259 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.305 -0400", hash_original_method = "D24857F81D2FD5D48ED12D74EE96B85F", hash_generated_method = "B1D2309BBA76C2A9A1A64D80695A4C27")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

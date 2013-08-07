@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -10,10 +11,10 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SimpleAdapter extends BaseAdapter implements Filterable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.970 -0400", hash_original_field = "6F69D0C4D879F039DD614BB6C1B21419", hash_generated_field = "4C75B27E9A59CA7EBF688E20590B2441")
@@ -110,7 +111,7 @@ View varC7C74D1A1F888482D2EEA96BBD632B6B_656653800 =         createViewFromResou
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.975 -0400", hash_original_method = "9F7D1FC25501C8F0267FBA100FA00D09", hash_generated_method = "4DC7E393E81D0377B77BB87DD66B7F86")
     private View createViewFromResource(int position, View convertView,
             ViewGroup parent, int resource) {
@@ -167,7 +168,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_237151036 =         createViewFromResou
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.977 -0400", hash_original_method = "BE6FDCE3CF7BF2397C7FC2DCDCAE8C07", hash_generated_method = "CBD8BF588B60C8D94EB99BBC2BEC45BB")
     private void bindView(int position, View view) {
         addTaint(view.getTaint());

@@ -1,16 +1,17 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.CacheRequest;
 import java.util.Arrays;
 
 import libcore.io.Streams;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class ChunkedInputStream extends AbstractHttpInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.908 -0400", hash_original_field = "837B811620D66AECDECD9FB207F3D4F7", hash_generated_field = "FDB0DA7DADF9682B7A13CAE6AF74D826")
@@ -98,7 +99,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.912 -0400", hash_original_method = "140E1DA8E8861D1C317B4255A250B320", hash_generated_method = "E9834B1059216BF5E6ABECF6E3AD1FC5")
     private void readChunkSize() throws IOException {
         if(bytesRemainingInChunk != NO_CHUNK_YET)        

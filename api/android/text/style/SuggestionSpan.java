@@ -1,6 +1,7 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -13,10 +14,10 @@ import android.os.SystemClock;
 import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.208 -0400", hash_original_field = "9C3CD7D37D3E1E66BE9B3B005FC98B3A", hash_generated_field = "43F71E9173849705E01112D0229448B4")
@@ -148,7 +149,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.219 -0400", hash_original_method = "BA5838B3AC67A7A883D23FDD23135D12", hash_generated_method = "70621487F43C248E57A43D38FEA487D4")
     private void initStyle(Context context) {
         addTaint(context.getTaint());
@@ -210,7 +211,7 @@ String varB2660BACB674CEB63470DD0D45A8D0D5_1443463175 =         mLocaleString;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.220 -0400", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "C29CE8B67C4ACCD4E8656207C445F7C0")
     public String getNotificationTargetClassName() {
 String varFA0CC82C3EC85485A38A003386BB68C9_1468753206 =         mNotificationTargetClassName;
@@ -331,7 +332,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_1468753206 =         mNotificationTar
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int hashCodeInternal(String[] suggestions, String locale,
             String notificationTargetClassName) {
         return Arrays.hashCode(new Object[] {Long.valueOf(SystemClock.uptimeMillis()), suggestions,
@@ -380,7 +381,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_1468753206 =         mNotificationTar
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.223 -0400", hash_original_method = "6F69CCF79C26CDB5AAE1758554866B40", hash_generated_method = "6AC4B3DACE7236D7B7C099B6201B8C38")
     public int getUnderlineColor() {
         final boolean misspelled = (mFlags & FLAG_MISSPELLED) != 0;

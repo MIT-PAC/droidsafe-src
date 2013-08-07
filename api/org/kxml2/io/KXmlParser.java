@@ -1,6 +1,7 @@
 package org.kxml2.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,10 +15,10 @@ import libcore.internal.StringPool;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class KXmlParser implements XmlPullParser, Closeable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.998 -0400", hash_original_field = "D5189DE027922F81005951E6EFE0EFD5", hash_generated_field = "CE74502D5DD419367E637D11E946AE48")
@@ -148,7 +149,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.005 -0400", hash_original_method = "F08928441827C23946744248151D18D9", hash_generated_method = "873EFD7690BD62772E8E3CF4ECA9E465")
     private boolean adjustNsp() throws XmlPullParserException {
         boolean any = false;
@@ -262,7 +263,7 @@ for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.007 -0400", hash_original_method = "49B8B44C0E7574021385F3D8BD03186C", hash_generated_method = "99757D704AC7EE006CB8990F9F036320")
     private String[] ensureCapacity(String[] arr, int required) {
         addTaint(required);
@@ -288,7 +289,7 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2001091830 =         bigger;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.007 -0400", hash_original_method = "4A7BCCF6DFE9CB9D8E85D47BF7F54B1D", hash_generated_method = "A7A98A80C9355ACB7E6571B8004EE403")
     private void checkRelaxed(String errorMessage) throws XmlPullParserException {
         if(!relaxed)        
@@ -333,7 +334,7 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2001091830 =         bigger;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.010 -0400", hash_original_method = "55251A1079E5B9F4E3B9F053CFE6FD44", hash_generated_method = "64D58D37EAC172067F71E0CB0B12250B")
     private int next(boolean justOneToken) throws IOException, XmlPullParserException {
         if(reader == null)        
@@ -473,6 +474,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.012 -0400", hash_original_method = "C492543C28BFA45A4A603454FE30EBBB", hash_generated_method = "5FD1C41E03BCF93BCE6A3BA7424D8A3D")
     private String readUntil(char[] delimiter, boolean returnText) throws IOException, XmlPullParserException {
         addTaint(returnText);
@@ -544,6 +546,7 @@ String varE65B3A02759122992CB82C0E651AD408_1039798498 =             result.toStr
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.014 -0400", hash_original_method = "79737DD70253BC976180BA8757B427A8", hash_generated_method = "61031D594469041A856CFF09E84624AA")
     private void readXmlDeclaration() throws IOException, XmlPullParserException {
         if(bufferStartLine != 0 || bufferStartColumn != 0 || position != 0)        
@@ -592,7 +595,7 @@ String varE65B3A02759122992CB82C0E651AD408_1039798498 =             result.toStr
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.015 -0400", hash_original_method = "15C58CE8BC29A2518B63BEC83A754E2C", hash_generated_method = "83C6F72A42277B979ABE86106094A879")
     private String readComment(boolean returnText) throws IOException, XmlPullParserException {
         addTaint(returnText);
@@ -628,6 +631,7 @@ String varE26F82105FF0C27B3E7345DB912CF13C_196051503 =         commentText;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.016 -0400", hash_original_method = "39B79927E64E599404174E0314CB7C82", hash_generated_method = "F41F536FD5EE3EC03341A915D8D502E9")
     private void readDoctype(boolean saveDtdText) throws IOException, XmlPullParserException {
         addTaint(saveDtdText);
@@ -689,6 +693,7 @@ String varE26F82105FF0C27B3E7345DB912CF13C_196051503 =         commentText;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.017 -0400", hash_original_method = "5A46FF78EB6898EF0CABAC45E530C34E", hash_generated_method = "74F2C3353B43D1377D86E75D6F1F0A7C")
     private boolean readExternalId(boolean requireSystemName, boolean assignFields) throws IOException, XmlPullParserException {
         addTaint(assignFields);
@@ -773,7 +778,7 @@ String varE26F82105FF0C27B3E7345DB912CF13C_196051503 =         commentText;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.018 -0400", hash_original_method = "4B3A97D73E48F79754EA5A86D4C2409D", hash_generated_method = "E7B7B2E4DC57E8DC1E6E406F8ACD2765")
     private String readQuotedId(boolean returnText) throws IOException, XmlPullParserException {
         addTaint(returnText);
@@ -813,7 +818,7 @@ String varA5E0B5AD4D45D338445123EC5807E7E2_1877518067 =         readUntil(delimi
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.019 -0400", hash_original_method = "065EAF2A999BF53AAEE6E5D55221F190", hash_generated_method = "17FCA9BA342BBABE0AB539055C16BF79")
     private void readInternalSubset() throws IOException, XmlPullParserException {
         read('[');
@@ -863,6 +868,7 @@ switch(declarationType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.019 -0400", hash_original_method = "E2914311E18C41738022F5D7A73FEC8A", hash_generated_method = "B007A3013AF59F7ED63C93EACA164CDF")
     private void readElementDeclaration() throws IOException, XmlPullParserException {
         read(START_ELEMENT);
@@ -881,6 +887,7 @@ switch(declarationType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.019 -0400", hash_original_method = "A45115A32F8DEBE95546FC38EF8925EC", hash_generated_method = "0C71F8357E3153F75C5D172C83660BC0")
     private void readContentSpec() throws IOException, XmlPullParserException {
         skip();
@@ -951,6 +958,7 @@ switch(declarationType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.021 -0400", hash_original_method = "04CF7BEB7F762D6DB023733A3E9A3C83", hash_generated_method = "22D2B3122DC436D1481B59047CF9E4F5")
     private void readAttributeListDeclaration() throws IOException, XmlPullParserException {
         read(START_ATTLIST);
@@ -1054,7 +1062,7 @@ switch(declarationType){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.021 -0400", hash_original_method = "CFB39B3ED48D8CD145E96E2E6FC1A186", hash_generated_method = "08B83FD8739A4555F12625400DB45B51")
     private void defineAttributeDefault(String elementName, String attributeName, String value) {
         addTaint(value.getTaint());
@@ -1084,6 +1092,7 @@ switch(declarationType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.022 -0400", hash_original_method = "3ECF3BA7E150644C3EFC98E620B12B73", hash_generated_method = "EAC6A80F4B1FDFCBBFADC9A622EF2E46")
     private void readEntityDeclaration() throws IOException, XmlPullParserException {
         read(START_ENTITY);
@@ -1138,7 +1147,7 @@ switch(declarationType){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.022 -0400", hash_original_method = "0A96EF478D2162A2E48AFFA05F705C17", hash_generated_method = "3400623DDB708A2F500C0B3336070231")
     private void readNotationDeclaration() throws IOException, XmlPullParserException {
         read(START_NOTATION);
@@ -1166,6 +1175,7 @@ switch(declarationType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.023 -0400", hash_original_method = "8099A7EBC5B0B16E684058778DE6A29B", hash_generated_method = "E7230A6EEFDE515C34F88DB90E33F41A")
     private void readEndTag() throws IOException, XmlPullParserException {
         read('<');
@@ -1217,6 +1227,7 @@ switch(declarationType){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.024 -0400", hash_original_method = "06A44958C70A8BD5DE7481C49C8C3731", hash_generated_method = "31B84D0FF0D6A07750F52A7A734CFB3B")
     private int peekType(boolean inDeclaration) throws IOException, XmlPullParserException {
         addTaint(inDeclaration);
@@ -1314,7 +1325,7 @@ switch(buffer[position + 3]){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.028 -0400", hash_original_method = "2D33E593F3270AF80057D4A47B14E7B9", hash_generated_method = "F7BF6FE76A58C329154E300AA6733379")
     private void parseStartTag(boolean xmldecl, boolean throwOnResolveFailure) throws IOException, XmlPullParserException {
         addTaint(xmldecl);
@@ -1461,6 +1472,7 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.030 -0400", hash_original_method = "C79463E087C57C46760693ABFA80BBC0", hash_generated_method = "35C797A3DC4B4A57BAAC89AACC71A2D5")
     private void readEntity(StringBuilder out, boolean isEntityToken, boolean throwOnResolveFailure,
             ValueContext valueContext) throws IOException, XmlPullParserException {
@@ -1582,6 +1594,7 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.031 -0400", hash_original_method = "645533039846ABF2603AD0F9C774FE0D", hash_generated_method = "1865C490291324C3CCD89D00A8363CFE")
     private String readValue(char delimiter, boolean resolveEntities, boolean throwOnResolveFailure,
             ValueContext valueContext) throws IOException, XmlPullParserException {
@@ -1716,7 +1729,7 @@ String varE65B3A02759122992CB82C0E651AD408_84125687 =             result.toStrin
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.032 -0400", hash_original_method = "3B69F4FA17F01509E096A0868A2528ED", hash_generated_method = "A9EF75823E082D4A1604DF904C2F3187")
     private void read(char expected) throws IOException, XmlPullParserException {
         addTaint(expected);
@@ -1735,6 +1748,7 @@ String varE65B3A02759122992CB82C0E651AD408_84125687 =             result.toStrin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.032 -0400", hash_original_method = "A7E267F0C0CB0F12A0F03D9AFED00521", hash_generated_method = "3A1D8EA9D7D4C423DE4EA39E63098311")
     private void read(char[] chars) throws IOException, XmlPullParserException {
         if(position + chars.length >= limit && !fillBuffer(chars.length))        
@@ -1766,7 +1780,7 @@ for(int i = 0;i < chars.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.032 -0400", hash_original_method = "902B3F7EB34CE06CF1D7162085CB95DC", hash_generated_method = "CE91DDFB7B6F85A010ADAA6D21E309BA")
     private int peekCharacter() throws IOException, XmlPullParserException {
         if(position < limit || fillBuffer(1))        
@@ -1786,7 +1800,7 @@ for(int i = 0;i < chars.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.033 -0400", hash_original_method = "DC49987172506F0F8D59FF3F96E536A7", hash_generated_method = "B881E9FE04A0968AC29ABD6BD7444B0E")
     private boolean fillBuffer(int minimum) throws IOException, XmlPullParserException {
         addTaint(minimum);
@@ -1853,7 +1867,7 @@ for(int i = 0;i < position;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.034 -0400", hash_original_method = "35E0733B1286860BF21842013F8FFA5F", hash_generated_method = "F4EA8F72AF92DD22C58A2E1F9217FFFC")
     private String readName() throws IOException, XmlPullParserException {
         if(position >= limit && !fillBuffer(1))        
@@ -1932,7 +1946,7 @@ String varE65B3A02759122992CB82C0E651AD408_1863676417 =                 result.t
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.034 -0400", hash_original_method = "7FC6A162788F62EDDD44981BAC207FA9", hash_generated_method = "8876F0C598145F0C5EF9046CFF874628")
     private void skip() throws IOException, XmlPullParserException {
         while
@@ -3028,7 +3042,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_347595261 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.066 -0400", hash_original_method = "8F280A3CDA5A3533C9FB5C99B2A6A6C2", hash_generated_method = "1875E14C2FF645B516B31839CE1AE2FD")
     private void pushContentSource(char[] newBuffer) {
         nextContentSource = new ContentSource(nextContentSource, buffer, position, limit);
@@ -3043,7 +3057,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_347595261 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.067 -0400", hash_original_method = "E5A180E871F653CC9F75C9B7A9F73687", hash_generated_method = "AB3CB35729064AF57103D5354FFFA23D")
     private void popContentSource() {
         buffer = nextContentSource.buffer;

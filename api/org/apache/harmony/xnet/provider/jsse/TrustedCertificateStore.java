@@ -1,6 +1,7 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,8 +20,8 @@ import java.util.Set;
 import javax.security.auth.x500.X500Principal;
 
 import libcore.io.IoUtils;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class TrustedCertificateStore {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.041 -0400", hash_original_field = "EA6CB6E8AA3DB1078A9395155B71EEC3", hash_generated_field = "1804575DE1991A78118271CC161871B9")
@@ -111,6 +112,7 @@ Certificate var0676091B2EE61AF2C17793D245ACD3DD_589615453 =         cert;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.045 -0400", hash_original_method = "BD13BF64CDF62ABC225832ACDAE55EEB", hash_generated_method = "42C7D9D652B50AD32EC162BA1852FF35")
     private File fileForAlias(String alias) {
         addTaint(alias.getTaint());
@@ -164,6 +166,7 @@ File varADCB75793FA1DABACC5DEBFFAE466050_1875326832 =         file;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.046 -0400", hash_original_method = "C0CC358A113978AA5962E41C2E3971C3", hash_generated_method = "796A879268E4FECFEA2BA6EF31409067")
     private boolean isTombstone(File file) {
         addTaint(file.getTaint());
@@ -175,6 +178,7 @@ File varADCB75793FA1DABACC5DEBFFAE466050_1875326832 =         file;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.046 -0400", hash_original_method = "8510D8C420703F5BE76FCD04B0D510F3", hash_generated_method = "16A286ACF91C598EFE3D5EE1A270F2DA")
     private X509Certificate readCertificate(File file) {
         addTaint(file.getTaint());
@@ -226,6 +230,7 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_1620562573 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.047 -0400", hash_original_method = "109D07F89CD9540F28E2544DA7036A76", hash_generated_method = "96AEE19DCB9D1C59BA50477BC52A675A")
     private void writeCertificate(File file, X509Certificate cert) throws IOException, CertificateException {
         addTaint(cert.getTaint());
@@ -261,6 +266,7 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_1620562573 =             nul
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.048 -0400", hash_original_method = "687C2EEF2D383D4BDFC0BC0824D70D25", hash_generated_method = "BE7BF97E15C820C780CE72C21EDEF3A4")
     private boolean isDeletedSystemCertificate(X509Certificate x) {
         addTaint(x.getTaint());
@@ -344,6 +350,7 @@ Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1864919368 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.049 -0400", hash_original_method = "BF0B38E159AD70D54A581822F625340B", hash_generated_method = "9BB79BDCF6D7342E994F2D43F813EF7B")
     private void addAliases(Set<String> result, String prefix, File dir) {
         addTaint(dir.getTaint());
@@ -424,6 +431,7 @@ Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1662316321 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.050 -0400", hash_original_method = "63CEC7C48C1DF35A32FA8773B953555D", hash_generated_method = "233DC43EF2B1D4FE0858A0EBD3FF669D")
     private boolean containsAlias(String alias, boolean includeDeletedSystem) {
         addTaint(includeDeletedSystem);
@@ -680,6 +688,7 @@ T varF370AF19C57A14797EFDE924F649B8A2_1961021583 =                     (T) file;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.055 -0400", hash_original_method = "90B2D041BE6875A6E09EF80BBE557D3F", hash_generated_method = "F4CC3DB0F1AC761B7AB7A54106109C3E")
     private String hash(X500Principal name) {
         addTaint(name.getTaint());
@@ -693,6 +702,7 @@ String var8E81D6965289FBD7A7179D30AB2A8DC2_778014896 =         IntegralToString.
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.055 -0400", hash_original_method = "0B663A316D5F1EC956CA42A84A17EC6A", hash_generated_method = "DC15CA1208160858CBCD141BD681EB3A")
     private File file(File dir, String hash, int index) {
         addTaint(index);
@@ -821,6 +831,7 @@ File var7052B15222CCC1779653D77CA0B77A2A_372106584 =         new File(dir, hash 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.058 -0400", hash_original_method = "728256A42E564BAD8F0CB50A75981023", hash_generated_method = "439692E091AFF088A74475887DECF2FF")
     private void removeUnnecessaryTombstones(String alias) throws IOException {
         addTaint(alias.getTaint());

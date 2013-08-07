@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -22,10 +23,10 @@ import android.view.View.OnClickListener;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class QuickContactBadge extends ImageView implements OnClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.148 -0400", hash_original_field = "BA420FA571B7EC31BB499073241D6F9F", hash_generated_field = "DE36A63479C290388AC419A19DF1934A")
@@ -171,7 +172,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.152 -0400", hash_original_method = "FCE3B5086AEC0F336253CCDCDE531810", hash_generated_method = "437F388ACEC73B9782E0E94B061D44B1")
     private boolean isAssigned() {
         boolean var5B311DB59956F2A2D93DB75AFB520017_133401385 = (mContactUri != null || mContactEmail != null || mContactPhone != null);
@@ -271,7 +272,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.156 -0400", hash_original_method = "8712FDD692B08E6979A43AB02ED73539", hash_generated_method = "9332C53BC9532EB272CB981FE68B7B39")
     private void onContactUriChanged() {
         setEnabled(isAssigned());

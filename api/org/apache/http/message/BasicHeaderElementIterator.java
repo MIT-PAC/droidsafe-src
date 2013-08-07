@@ -1,8 +1,9 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.util.NoSuchElementException;
 import org.apache.http.FormattedHeader;
@@ -67,6 +68,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.528 -0400", hash_original_method = "C8E28B138A9C5D591B033922ABD8E30E", hash_generated_method = "8F2F876AF752B9ADC10C142F9ABFBDF1")
     private void bufferHeaderValue() {
         this.cursor = null;
@@ -117,6 +119,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.530 -0400", hash_original_method = "AD9B9B018316D22B2D55EF0E8A1D3706", hash_generated_method = "22D94DDDC1F4B1D6BB338DADEDCB106B")
     private void parseNextElement() {
         while

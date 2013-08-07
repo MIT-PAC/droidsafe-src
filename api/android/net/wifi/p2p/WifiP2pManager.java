@@ -1,6 +1,7 @@
 package android.net.wifi.p2p;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
 import android.annotation.SdkConstant;
@@ -16,14 +17,15 @@ import android.util.Log;
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class WifiP2pManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.775 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "BD8FB108D640F5B5A5EE463CD27A6D68")
 
     IWifiP2pManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.775 -0400", hash_original_method = "E626A45256220AE3F4AF9F0577D669AE", hash_generated_method = "AE4DAB67531AE0D3DD7CB41C112DC312")
     public  WifiP2pManager(IWifiP2pManager service) {
         mService = service;

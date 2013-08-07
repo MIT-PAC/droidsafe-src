@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -19,10 +20,10 @@ import android.widget.ExpandableListConnector.PositionMetadata;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ExpandableListView extends ListView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.490 -0400", hash_original_field = "9D9CB65A7ACD5364D5BD2C2074539F97", hash_generated_field = "FE34358DF167C9E1E63AC77E2A37F15F")
@@ -216,7 +217,7 @@ for(int i = 0, childFlPos = mFirstPosition - headerViewsCount;i < childCount;i++
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.498 -0400", hash_original_method = "D5F058A591B90F6E54D4D617313791EB", hash_generated_method = "610C1668F743DEAA4C486876FA99DCC4")
     private Drawable getIndicator(PositionMetadata pos) {
         addTaint(pos.getTaint());
@@ -379,7 +380,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "A9D0233B5C169CC66750AD88D31A38E9", hash_generated_method = "F96CE6C85C444F7E1EFF067C454C8380")
     private boolean isHeaderOrFooterPosition(int position) {
         addTaint(position);
@@ -393,7 +394,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "8FB53CC37B504290AC6948A7A815A683", hash_generated_method = "990A2CC506EF5A76BF28C4AE27229175")
     private int getFlatPositionForConnector(int flatListPosition) {
         addTaint(flatListPosition);
@@ -405,7 +406,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "D8821ADD18913687E76F2B3166416BE8", hash_generated_method = "2F97073096076724328AF199A0B418BE")
     private int getAbsoluteFlatPosition(int flatListPosition) {
         addTaint(flatListPosition);
@@ -864,6 +865,7 @@ ContextMenuInfo varAD01B31C4FD33D13A307745D9F704A68_2037856201 =         new Exp
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.518 -0400", hash_original_method = "FEE5EC0BA8444C3E23B9BF5AFE8AF9D9", hash_generated_method = "1E9986FCC8888D06CD160B9FF40FC3C4")
     private long getChildOrGroupId(ExpandableListPosition position) {
         addTaint(position.getTaint());
@@ -1023,6 +1025,7 @@ Parcelable varF3C1361E263DF410FF171DFF16AA2606_949496709 =         new SavedStat
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.520 -0400", hash_original_method = "D29B1E3F2DF62BC80E56BCC4A8E9B099", hash_generated_method = "D43AAB2C77889FFAA82FF5428751E6BE")
         private  SavedState(Parcel in) {
             super(in);

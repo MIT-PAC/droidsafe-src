@@ -1,16 +1,17 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketOptions;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LocalSocket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.209 -0400", hash_original_field = "86CCEC3D9FF0E9C0514506E982CDC08B", hash_generated_field = "9FC425CCAE80D9162FEB6CEC3E95B3C0")
@@ -63,6 +64,7 @@ String varB72CC91AEA19C7FA7F561237F68286D5_955232733 =         super.toString() 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.231 -0400", hash_original_method = "49E5C1FBB8FADEED10B26703F569758C", hash_generated_method = "E97F390D5B90898224E50DEC51FEE172")
     private void implCreateIfNeeded() throws IOException {
         if(!implCreated)        

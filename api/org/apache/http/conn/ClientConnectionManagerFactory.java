@@ -1,6 +1,7 @@
 package org.apache.http.conn;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.params.HttpParams;
 

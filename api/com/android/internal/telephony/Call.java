@@ -1,12 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Call {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.400 -0400", hash_original_field = "1A5BE9871FF7E0AB5805D64E8617FA11", hash_generated_field = "682AB4A75DC1B6B1A2EFDFBB9B599B89")
@@ -42,6 +43,7 @@ public abstract class Call {
     public abstract void hangup() throws CallStateException;
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.401 -0400", hash_original_method = "2FDAA23821BA4C24A2BE1E56579DB7F5", hash_generated_method = "A432F0B23FA63583077EF7072F9C8E74")
     public boolean hasConnection(Connection c) {
         addTaint(c.getTaint());
@@ -53,7 +55,7 @@ public abstract class Call {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.401 -0400", hash_original_method = "2C555626402D649349C7BBEAA2F56B58", hash_generated_method = "AF31948EE0CC6D2970F09233C997A098")
     public boolean hasConnections() {
         List connections = getConnections();
@@ -75,7 +77,7 @@ public abstract class Call {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.401 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "36AED765918A785CA984A1B88A57B154")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_590701294 =         state;
@@ -86,7 +88,7 @@ State var37C56C9D63C623261861C16DCFB73F6D_590701294 =         state;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.402 -0400", hash_original_method = "647027C18C356B0A148CD756E9A6C1F9", hash_generated_method = "87F61A60DE801F8CA836BEBD99FA0BEA")
     public boolean isIdle() {
         boolean var61C8D6A3C0D4E365494B575547857403_935213119 = (!getState().isAlive());
@@ -97,6 +99,7 @@ State var37C56C9D63C623261861C16DCFB73F6D_590701294 =         state;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.402 -0400", hash_original_method = "EADA1B2297DA3CAB3CFE5B591670DF74", hash_generated_method = "9248AAB924CF4BDDBA1D7208620F69AE")
     public Connection getEarliestConnection() {
         List l;
@@ -146,6 +149,7 @@ Connection var08C156C8405B8BDA5372F9AB088F4AC3_561090970 =         earliest;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.402 -0400", hash_original_method = "259AE56D0CCB8C7D336EA51014BAFBD4", hash_generated_method = "9A59452D71A1DA1B97F777120E2D5A30")
     public long getEarliestCreateTime() {
         List l;
@@ -184,6 +188,7 @@ for(int i = 0, s = l.size();i < s;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.403 -0400", hash_original_method = "4FCBF4743EBF22DA857FFD7B3BA209EB", hash_generated_method = "3641F79E9A74B465E247AF31E77E5998")
     public long getEarliestConnectTime() {
         long time = Long.MAX_VALUE;
@@ -220,6 +225,7 @@ for(int i = 0, s = l.size();i < s;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.403 -0400", hash_original_method = "0639B31F7C82A2CFB39F855F1440727E", hash_generated_method = "9660EB084B60FA1CEFE4B79994BC8EA0")
     public boolean isDialingOrAlerting() {
         boolean var34F2B9FD0C38D520E0A06319B251A34B_351587727 = (getState().isDialing());
@@ -230,6 +236,7 @@ for(int i = 0, s = l.size();i < s;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.403 -0400", hash_original_method = "96B3DDBB3E5543868B63A237A2C7B56D", hash_generated_method = "C1A6F1F45ECEF09D758EFE95C6DA91F0")
     public boolean isRinging() {
         boolean varE5A9397BC8DB5D2D7096BFF8E63CC3A1_736909542 = (getState().isRinging());
@@ -240,6 +247,7 @@ for(int i = 0, s = l.size();i < s;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.478 -0400", hash_original_method = "D3D12A7045E5E26EBF89650CB45460A7", hash_generated_method = "EAE04E3DBAB3BCE210DFF1EAE87007ED")
     public Connection getLatestConnection() {
         List l = getConnections();
@@ -283,7 +291,7 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_103872785 =         latest;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.478 -0400", hash_original_method = "26476B959AA4096CC4669AF0A1E29ED1", hash_generated_method = "5D54331D30B7216EC440CD1B03E60221")
     public boolean isGeneric() {
         boolean varF023E590C1EFC66385B243FFA97DE5FF_1431863371 = (isGeneric);
@@ -294,7 +302,7 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_103872785 =         latest;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.478 -0400", hash_original_method = "3EA9E9B35830CEB0D3B80D105DCC59E2", hash_generated_method = "514423FE597FCFBA9E7023F2C6BFEFDF")
     public void setGeneric(boolean generic) {
         isGeneric = generic;
@@ -303,6 +311,7 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_103872785 =         latest;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.478 -0400", hash_original_method = "595BC30A45DB7D292DF19DA7A823683F", hash_generated_method = "0D68816A75687EB3E8BD81C8D179F1F1")
     public void hangupIfAlive() {
         if(getState().isAlive())        
@@ -328,15 +337,15 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_103872785 =         latest;
     
     public enum State {
         IDLE, ACTIVE, HOLDING, DIALING, ALERTING, INCOMING, WAITING, DISCONNECTED, DISCONNECTING;
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public boolean isAlive() {
             return !(this == IDLE || this == DISCONNECTED || this == DISCONNECTING);
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public boolean isRinging() {
             return this == INCOMING || this == WAITING;
         }
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public boolean isDialing() {
             return this == DIALING || this == ALERTING;
         }

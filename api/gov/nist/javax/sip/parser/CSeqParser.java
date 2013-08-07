@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Debug;
 import gov.nist.javax.sip.header.CSeq;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -10,9 +11,9 @@ import java.text.ParseException;
 
 import javax.sip.InvalidArgumentException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public class CSeqParser extends HeaderParser {
     

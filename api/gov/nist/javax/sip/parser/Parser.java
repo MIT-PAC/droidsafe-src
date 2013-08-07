@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.Debug;
 import gov.nist.core.LexerCore;
 import gov.nist.core.ParserCore;
@@ -8,9 +9,9 @@ import gov.nist.core.Token;
 
 import java.text.ParseException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class Parser extends ParserCore implements TokenTypes {
     

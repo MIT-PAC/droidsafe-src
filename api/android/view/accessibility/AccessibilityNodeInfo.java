@@ -1,6 +1,7 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,10 +11,10 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.SparseIntArray;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AccessibilityNodeInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.384 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "C62243493B3195CCB3CA5EBD27BBE8A1")
@@ -65,7 +66,7 @@ public class AccessibilityNodeInfo implements Parcelable {
 
     private int mConnectionId = UNDEFINED;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.385 -0400", hash_original_method = "EB9F4328D2282B04E1BD31B0186E73D5", hash_generated_method = "176EFD0A62B716335FDF7CEAA647EEC5")
     private  AccessibilityNodeInfo() {
         // ---------- Original Method ----------
@@ -613,7 +614,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_1586228216 =         mContentDe
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.396 -0400", hash_original_method = "08ED9648E2048980BB715C0F95464D97", hash_generated_method = "9D2983288BEEA98AF48C43DECADB2BD9")
     private boolean getBooleanProperty(int property) {
         addTaint(property);
@@ -625,7 +626,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_1586228216 =         mContentDe
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.397 -0400", hash_original_method = "AF4B29064CFE4EC4A14EBB7B9CA58D1B", hash_generated_method = "65624F481E0F4E60D4A401EB502142E3")
     private void setBooleanProperty(int property, boolean value) {
         addTaint(value);
@@ -648,7 +649,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_1586228216 =         mContentDe
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.397 -0400", hash_original_method = "0D9114E83A94DAB2C664FA6E45C487C9", hash_generated_method = "F7C7CF110AFA05BD358D80D700ADEDC6")
     public void setConnectionId(int connectionId) {
         enforceNotSealed();
@@ -670,7 +671,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_1586228216 =         mContentDe
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.397 -0400", hash_original_method = "7730BDD0DFF4FE8B243CA8BC305ED86E", hash_generated_method = "0D7B5E4D59CD0A6DD9DDC234474696D4")
     public void setSealed(boolean sealed) {
         mSealed = sealed;
@@ -679,7 +680,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_1586228216 =         mContentDe
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.397 -0400", hash_original_method = "AF3422E1C079F6B2A15130B45797502F", hash_generated_method = "2D58CB732AC163B21BF04D0628194F0F")
     public boolean isSealed() {
         boolean var61DB78BD493651DCACB5FB89D74B835B_1011956767 = (mSealed);
@@ -690,7 +691,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_1586228216 =         mContentDe
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.397 -0400", hash_original_method = "0309B89A8A5C20FB439CB65AA9DE3FAA", hash_generated_method = "2CC82539D951B611ABE4609F734F0292")
     protected void enforceSealed() {
         if(!isSealed())        
@@ -708,7 +709,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_1586228216 =         mContentDe
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.398 -0400", hash_original_method = "9B7C20934D3E00C37812C7E94DAAB15E", hash_generated_method = "FF1346978F4D4BDE72338E78A54B1EAE")
     protected void enforceNotSealed() {
         if(isSealed())        
@@ -831,7 +832,7 @@ for(int i = 0;i < childIdsSize;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.401 -0400", hash_original_method = "84525B5DDEB8A0E58F9024DAD2E7A518", hash_generated_method = "F71AB9EF3C0B3B92859569069D17129D")
     private void init(AccessibilityNodeInfo other) {
         mSealed = other.mSealed;
@@ -866,7 +867,7 @@ for(int i = 0;i < childIdsSize;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.403 -0400", hash_original_method = "98923D5E356E47505C0A26C0C57920A8", hash_generated_method = "7CD998505F9549607B916B52A1EC0A74")
     private void initFromParcel(Parcel parcel) {
         mSealed = (parcel.readInt()  == 1);
@@ -900,7 +901,7 @@ for(int i = 0;i < childrenSize;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.404 -0400", hash_original_method = "566B1830900B4F3B865C25C43FCDC943", hash_generated_method = "5FE2D15D610736AC6C78827AD3CDAC8C")
     private void clear() {
         mSealed = false;
@@ -935,7 +936,7 @@ for(int i = 0;i < childrenSize;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String getActionSymbolicName(int action) {
         switch (action) {
             case ACTION_FOCUS:
@@ -952,7 +953,7 @@ for(int i = 0;i < childrenSize;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.404 -0400", hash_original_method = "554416B444549B4EB33FDEE3DD8518FA", hash_generated_method = "9A5A8FF01BEDD95680DE60C538C690A8")
     private boolean canPerformRequestOverConnection(int accessibilityViewId) {
         addTaint(accessibilityViewId);

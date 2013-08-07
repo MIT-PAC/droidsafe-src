@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -9,8 +10,8 @@ import java.util.Map;
 import android.content.ContentResolver;
 import android.provider.Settings;
 import android.util.Log;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class SmsUsageMonitor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.440 -0400", hash_original_field = "7D2C0C2BF475877740FC4F4370379B27", hash_generated_field = "8251D8E7267A3EFD6EC445592CA97E50")
@@ -79,6 +80,7 @@ public class SmsUsageMonitor {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.443 -0400", hash_original_method = "0C89C3F43D481EBAFC32AEEAE6183BD3", hash_generated_method = "22A7CA82B7C0B6DA7E9E6D6BE6F1D6C9")
     private void removeExpiredTimestamps() {
         long beginCheckPeriod = System.currentTimeMillis() - mCheckPeriod;
@@ -111,6 +113,7 @@ public class SmsUsageMonitor {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.444 -0400", hash_original_method = "FED252455D0F59F9866280B84F72F407", hash_generated_method = "8FEF8E0B3CBBCE19E9A4CF91D4D9A39E")
     private boolean isUnderLimit(ArrayList<Long> sent, int smsWaiting) {
         addTaint(smsWaiting);

@@ -1,6 +1,7 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -20,10 +21,10 @@ import android.text.GraphicsOperations;
 import android.text.SpannableString;
 import android.text.SpannedString;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 class GLES20Canvas extends HardwareCanvas {
@@ -114,7 +115,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.090 -0400", hash_original_method = "C5F1546049F1B2879B50EF00176E7660", hash_generated_method = "ADEDB69734FF0455E767D4C03943CC39")
     private void setupFinalizer() {
         if(mRenderer == 0)        
@@ -308,7 +309,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean preserveBackBuffer() {
         return nPreserveBackBuffer();
     }
@@ -320,7 +321,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isBackBufferPreserved() {
         return nIsBackBufferPreserved();
     }
@@ -332,7 +333,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void disableVsync() {
         nDisableVsync();
     }
@@ -412,7 +413,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void flushCaches(int level) {
         nFlushCaches(level);
     }
@@ -423,7 +424,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void terminateCaches() {
         nTerminateCaches();
     }
@@ -434,7 +435,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void initCaches() {
         nInitCaches();
     }
@@ -2289,7 +2290,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_1497114952 =         mFilter;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.142 -0400", hash_original_method = "5D6688C2A74D4FFF4670B4EAAE2F407B", hash_generated_method = "84F0683C6F86D677D7CA4C21EFB15C14")
     private int setupModifiers(Bitmap b, Paint paint) {
         addTaint(paint.getTaint());
@@ -2324,7 +2325,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_1497114952 =         mFilter;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.143 -0400", hash_original_method = "7663D59B2E312EB2A24D959BD08A0BC2", hash_generated_method = "AE45222CE9E7C0DABC13DDF4FC709B66")
     private int setupModifiers(Paint paint) {
         addTaint(paint.getTaint());
@@ -2371,7 +2372,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_1497114952 =         mFilter;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.143 -0400", hash_original_method = "8D8D130B420F7BDB77245347422EB674", hash_generated_method = "A82B04023BE27F03E9F8FC2943A68AF9")
     private int setupColorFilter(Paint paint) {
         addTaint(paint.getTaint());

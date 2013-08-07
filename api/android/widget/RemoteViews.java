@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -31,10 +32,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView.OnItemClickListener;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RemoteViews implements Parcelable, Filter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.760 -0400", hash_original_field = "089616237F5DED8B7A7F9A618C4FC032", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
@@ -177,7 +178,7 @@ String varD0D543EB218BC9E16C17B23C08BC19C7_1241124719 =         mPackage;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.764 -0400", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "94027C00C143FC7879CEA2922EE72FA6")
     private void recalculateMemoryUsage() {
         mMemoryUsageCounter.clear();
@@ -211,7 +212,7 @@ for(int i= 0;i < count;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "41AB35E6CD13F07C492006A4E07CF7C3")
     private void addAction(Action a) {
         addTaint(a.getTaint());
@@ -717,7 +718,7 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_1588690019 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.772 -0400", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "98B120172AB8CDD4F398848FD6B7F5E5")
     private void performApply(View v, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -742,7 +743,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.779 -0400", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "08C29A90C911E4D6BE4977DA08781EE3")
     private Context prepareContext(Context context) {
         addTaint(context.getTaint());
@@ -874,6 +875,7 @@ for(int i=0;i<count;i++)
     
     private abstract static class Action implements Parcelable {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "6EEA56B449227AEBD2AEF88874F9C864", hash_generated_method = "6EEA56B449227AEBD2AEF88874F9C864")
         public Action ()
         {
@@ -1924,7 +1926,7 @@ switch(this.type){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "AFCBBF8215F29328E313DFA6FA79BBCD")
         private Class getParameterType() {
 switch(this.type){

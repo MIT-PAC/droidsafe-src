@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -9,10 +10,10 @@ import android.view.View.OnClickListener;
 import android.view.ViewConfiguration;
 import android.view.animation.AlphaAnimation;
 import android.widget.FrameLayout;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ZoomControlExternal implements ZoomControlBase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.606 -0400", hash_original_field = "328324C4FD660040B497FF681C21CB4D", hash_generated_field = "2F37B0CB5883AB138CD26F172FE3C9FB")
@@ -144,7 +145,7 @@ ExtendedZoomControls var81227494FA945C379941C3696371DB2A_1770069564 =         mZ
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.611 -0400", hash_original_method = "3D12A1B47B98985E80612C99D260C6E1", hash_generated_method = "82DB0B168C7B78BCFAD12DF07650E5C6")
     private ExtendedZoomControls createZoomControls() {
         ExtendedZoomControls zoomControls = new ExtendedZoomControls(mWebView.getContext());
@@ -230,7 +231,7 @@ ExtendedZoomControls var15711BF4EB3B131E4CFE980AA922F862_2126832890 =         zo
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.613 -0400", hash_original_method = "9BED0A47A1FCF93930F77C8CDDC09D0D", hash_generated_method = "1E5CB067E3CEB98E43F612AE3706CF55")
         private void fade(int visibility, float startAlpha, float endAlpha) {
             addTaint(endAlpha);

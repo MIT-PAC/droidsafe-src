@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 import java.util.Map;
 
@@ -8,10 +9,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.047 -0400", hash_original_field = "035E16F29CDA719D867DE29B4F5284B7", hash_generated_field = "611E54FE69D6A51734B23ACE9D45487D")
@@ -198,7 +199,7 @@ View varE89DA9D9E61A89C376400D709F3C6A62_1740522209 =         mInflater.inflate(
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.055 -0400", hash_original_method = "8C1FB274099C6E014BD8D472B7606CCC", hash_generated_method = "35157A1CF793A1EDF5DDB9E3DB4D07CA")
     private void bindView(View view, Map<String, ?> data, String[] from, int[] to) {
         addTaint(to[0]);

@@ -1,12 +1,13 @@
 package android.accounts;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class AuthenticatorDescription implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.464 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "7BA709B14E744AD5C81755E81EB9D05D")
@@ -80,6 +81,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.494 -0400", hash_original_method = "4037EB3A36670641FC6DEBBB390D3E87", hash_generated_method = "5086636F6C4E6395A933FB3675CB53B6")
     private  AuthenticatorDescription(String type) {
         this.type = type;
@@ -100,6 +102,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.505 -0400", hash_original_method = "C10BAC93BE842F654B6DBE8A81B18B55", hash_generated_method = "7D5F83D489164E5D801A0271260284B5")
     private  AuthenticatorDescription(Parcel source) {
         this.type = source.readString();

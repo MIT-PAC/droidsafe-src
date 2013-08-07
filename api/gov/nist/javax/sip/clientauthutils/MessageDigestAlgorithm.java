@@ -1,13 +1,14 @@
 package gov.nist.javax.sip.clientauthutils;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.StackLogger;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class MessageDigestAlgorithm {
     
@@ -105,6 +106,7 @@ public class MessageDigestAlgorithm {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String H(String data) {
         try {
             MessageDigest digest = MessageDigest.getInstance("MD5");
@@ -115,6 +117,7 @@ public class MessageDigestAlgorithm {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String KD(String secret, String data) {
         return H(secret + ":" + data);
     }

@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.lang.ref.WeakReference;
@@ -13,10 +14,10 @@ import android.os.Message;
 import android.os.ParcelFileDescriptor;
 import android.util.AndroidRuntimeException;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class SoundPool {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.174 -0400", hash_original_field = "20E813A614226843849BF2E571A8EBCA", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
@@ -321,6 +322,7 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void postEventFromNative(Object weakRef, int msg, int arg1, int arg2, Object obj) {
         SoundPool soundPool = (SoundPool)((WeakReference)weakRef).get();
         if (soundPool == null)

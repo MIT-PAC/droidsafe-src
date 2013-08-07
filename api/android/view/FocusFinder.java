@@ -1,15 +1,16 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 import android.graphics.Rect;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class FocusFinder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.973 -0400", hash_original_field = "27595994279845FC545647F94FEFBC2A", hash_generated_field = "AA91269DE4CB12CC630B33741200666D")
@@ -25,7 +26,7 @@ public class FocusFinder {
 
     SequentialFocusComparator mSequentialFocusComparator = new SequentialFocusComparator();
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.973 -0400", hash_original_method = "DC255E332B77A13B263C537BB61FEC63", hash_generated_method = "F16241C74771068F25916AC2FC4602F5")
     private  FocusFinder() {
         // ---------- Original Method ----------
@@ -101,7 +102,7 @@ View varA971D394BC5F19CBC9FFD1F74ED9A7F7_278415857 =         findNextFocus(root,
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.975 -0400", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "C3876691437B9DA2B45016F11E9F10D9")
     private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
         addTaint(direction);
@@ -575,7 +576,7 @@ View var65F842BF8DD12196C017063DB033EAE1_1032032736 =         closest;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.985 -0400", hash_original_method = "4EDA0197C585E6B2A33216D89691E993", hash_generated_method = "1E5BB17A94169B4C25D24EE850CDD05F")
     private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
         addTaint(direction);
@@ -630,6 +631,7 @@ switch(direction){
 
         private ViewGroup mRoot;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.985 -0400", hash_original_method = "0E280D788A863FD723521B8D9E30F8E5", hash_generated_method = "0E280D788A863FD723521B8D9E30F8E5")
         public SequentialFocusComparator ()
         {
@@ -734,7 +736,7 @@ switch(direction){
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.989 -0400", hash_original_method = "CE5638677B07104C355FE3EB975CEDE8", hash_generated_method = "4D156730D84C1DA4646602251AB36489")
         private void getRect(View view, Rect rect) {
             addTaint(rect.getTaint());

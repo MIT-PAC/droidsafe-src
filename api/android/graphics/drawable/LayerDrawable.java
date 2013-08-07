@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -14,10 +15,10 @@ import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LayerDrawable extends Drawable implements Drawable.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.175 -0400", hash_original_field = "FBD5C16B0695BD8A1AF4AF03C1997413", hash_generated_field = "053037057B7FC4B2D43393B0DA597B94")
@@ -199,7 +200,7 @@ LayerState var48999977F4D50086962FDA584D65F4D3_597084753 =         new LayerStat
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.187 -0400", hash_original_method = "F6995F9609496F6742CAB01EE3CD1860", hash_generated_method = "27A9582AD0F787BE2FBB54959446C43C")
     private void addLayer(Drawable layer, int id, int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -888,7 +889,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.213 -0400", hash_original_method = "41F739441798A70C5E037E0F4FC43A10", hash_generated_method = "856BAF6DFC736020FF53BB12B36D3FF0")
     private boolean reapplyPadding(int i, ChildDrawable r) {
         addTaint(r.getTaint());
@@ -923,7 +924,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.213 -0400", hash_original_method = "6FB87F17A7189073B9E72073B203E52E", hash_generated_method = "544A3317EF67F08BD7EA8CD1BDA0B95A")
     private void ensurePadding() {
         final int N = mLayerState.mNum;

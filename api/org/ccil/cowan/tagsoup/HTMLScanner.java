@@ -1,6 +1,7 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,10 +13,10 @@ import java.io.Writer;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HTMLScanner implements Scanner, Locator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.834 -0400", hash_original_field = "BD3C6DEEF8852BB42141E913BBA840E8", hash_generated_field = "5DE7612FB52B4C7CD7CF6BE3E02E09B6")
@@ -63,7 +64,7 @@ public class HTMLScanner implements Scanner, Locator {
     }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.835 -0400", hash_original_method = "7BF7C7D5830ADAF76FEF60D8F3F10567", hash_generated_method = "890AFDC0362A983D917AD9F3C0B327CD")
     private void unread(PushbackReader r, int c) throws IOException {
         addTaint(c);
@@ -439,7 +440,7 @@ Integer.toString(theState));
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.846 -0400", hash_original_method = "5C668F99FD089E189A03C18C500CC1BE", hash_generated_method = "184BAEB313A1690D7B9F3C377B2C05BA")
     private void mark() {
         theLastColumn = theCurrentColumn;
@@ -459,6 +460,7 @@ Integer.toString(theState));
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.847 -0400", hash_original_method = "84101FD8AB96FAF4340E309879AEA5A7", hash_generated_method = "BDB56D4C31FAEB51F43AB1DF40590216")
     private void save(int ch, ScanHandler h) throws IOException, SAXException {
         addTaint(h.getTaint());
@@ -503,7 +505,7 @@ Integer.toString(theState));
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String nicechar(int in) {
         if (in == '\n') return "\\n";
         if (in < 32) return "0x"+Integer.toHexString(in);

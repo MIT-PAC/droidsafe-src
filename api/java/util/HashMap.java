@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -9,10 +10,10 @@ import java.io.ObjectStreamField;
 import java.io.Serializable;
 
 import libcore.util.Objects;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.962 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "5BCDF9B3CCDE8C26B422211A63786F6F")
@@ -607,7 +608,7 @@ HashMapEntry<K, V> var32D4351C727AE69E15ACD6733FAC472C_991963906 =         new H
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.974 -0400", hash_original_method = "4BE6F38D6656B87B29773B0AAEA75993", hash_generated_method = "BA99B5709024C608E4A1123BBC665ACB")
     private void ensureCapacity(int numMappings) {
         addTaint(numMappings);
@@ -878,7 +879,7 @@ Set<Entry<K, V>> var25D080FAAE722B04AA5C8EBDE33DD606_1917910008 =         (es !=
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "DB078B96D3A026778ABE08AF9188B4AF", hash_generated_method = "B269550FE5C2A2D1F2C81140D8484158")
     private boolean containsMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -922,7 +923,7 @@ for(HashMapEntry<K, V> e = tab[index];e != null;e = e.next)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.978 -0400", hash_original_method = "6968B8C772086C45A00DBEEB8B4680E5", hash_generated_method = "BEE430F59B713CD8A30EDB0CD086608A")
     private boolean removeMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -1014,14 +1015,14 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_72655629 =         new
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int secondaryHash(int h) {
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int roundUpToPowerOfTwo(int i) {
         i--;
         i |= i >>>  1;
@@ -1033,7 +1034,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_72655629 =         new
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.978 -0400", hash_original_method = "04BAFB4D83496263E755E7BD0F7C13FF", hash_generated_method = "52C658DC0E2F13C5A057F812129BFFD0")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1060,7 +1061,7 @@ for(Entry<K, V> e : entrySet())
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.979 -0400", hash_original_method = "332DDC73CD162DC81E3D2D410CF74F29", hash_generated_method = "084A0B9A938F9631A78FC483203ED3E4")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

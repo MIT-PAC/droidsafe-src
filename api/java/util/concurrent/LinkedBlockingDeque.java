@@ -1,8 +1,9 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.util.AbstractQueue;
 import java.util.Collection;
@@ -100,6 +101,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.720 -0400", hash_original_method = "F1FEA35FDC461C140B4532DA56C7987F", hash_generated_method = "189573407A78815D1D5FA47C990276CF")
     private boolean linkFirst(Node<E> node) {
         if(count >= capacity)        
@@ -136,6 +138,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.729 -0400", hash_original_method = "A7FA4F0AF7ECA6F754653DE93F8ED423", hash_generated_method = "00E24EF7B726C9A205C9D413BE809E13")
     private boolean linkLast(Node<E> node) {
         if(count >= capacity)        
@@ -1500,6 +1503,7 @@ Iterator<E> varD71DCCF07C208773CB9A425C9B28D734_1061259920 =         new Descend
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.973 -0400", hash_original_method = "00D32B8E76B917A114B33777EC6C582C", hash_generated_method = "4278E6237DCE8BF6B1E001C5333C7FB0")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         addTaint(s.getTaint());
@@ -1530,6 +1534,7 @@ for(Node<E> p = first;p != null;p = p.next)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.977 -0400", hash_original_method = "56ED7CDA4A1F5E7C2D4B953EF10E899A", hash_generated_method = "5FC864D0A1897AC0AF28A7A3C8951862")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         addTaint(s.getTaint());
@@ -1624,6 +1629,7 @@ for(;;)
         abstract Node<E> nextNode(Node<E> n);
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.996 -0400", hash_original_method = "D73368529643E6DA5D3CCB05A337F2C2", hash_generated_method = "7F945041346F2B7D0377B0DB3DA09CE3")
         private Node<E> succ(Node<E> n) {
             addTaint(n.getTaint());
@@ -1693,6 +1699,7 @@ Node<E> varF5CD8D7CA701CEA2223F30343E08C456_1806713055 =                 firstNo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.003 -0400", hash_original_method = "5C1B7B0DA20667590A4D5C5559468A28", hash_generated_method = "C899AD311135FB37ECE9EB8CC4F3413B")
         public boolean hasNext() {
             boolean var1D0482B34E42F032728DF2F52373E7A2_1791548933 = (next != null);
@@ -1777,6 +1784,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_1343687515 =             x;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.017 -0400", hash_original_method = "F5496DA38BC198471A9339E337F6A141", hash_generated_method = "3AAE4E6FEA5FEBEB8D5876E1965B07F8")
          Node<E> firstNode() {
 Node<E> varE482A44025F9BB049EB1ED87F45C5909_653192742 =             first;
@@ -1787,6 +1795,7 @@ Node<E> varE482A44025F9BB049EB1ED87F45C5909_653192742 =             first;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.021 -0400", hash_original_method = "7337A72D0DFE873C08C820C315C83AB4", hash_generated_method = "F7F988BC9D7131E30890D535CFF9DC0E")
          Node<E> nextNode(Node<E> n) {
             addTaint(n.getTaint());
@@ -1811,6 +1820,7 @@ Node<E> varA19CA4987492BF572DBA7DC0930E79F5_302681239 =             n.next;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.026 -0400", hash_original_method = "935F8554484A3F626F85F03E205FB5CA", hash_generated_method = "B0C30A522AB680A3E253D86372864B11")
          Node<E> firstNode() {
 Node<E> var3D331EA760A7BCD3BF7E380A6C79C638_409110253 =             last;
@@ -1821,6 +1831,7 @@ Node<E> var3D331EA760A7BCD3BF7E380A6C79C638_409110253 =             last;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.029 -0400", hash_original_method = "A98E9809BC87B643D4F952FCC7CB50C4", hash_generated_method = "DA0191C6BBAB1FD9AEA605F67635767A")
          Node<E> nextNode(Node<E> n) {
             addTaint(n.getTaint());

@@ -1,6 +1,7 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,10 +11,10 @@ import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class FullBackup {
@@ -32,6 +33,7 @@ public class FullBackup {
     }
 
     
+    @DSModeled(DSC.BAN)
     static public void restoreFile(ParcelFileDescriptor data,
             long size, int type, long mode, long mtime, File outFile) throws IOException {
         if (type == BackupAgent.TYPE_DIRECTORY) {

@@ -1,6 +1,7 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,10 +10,10 @@ import java.util.HashMap;
 
 import android.os.ParcelFileDescriptor;
 import android.util.TypedValue;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class AssetManager {
@@ -41,6 +42,7 @@ public class AssetManager {
 
     private HashMap<Integer, RuntimeException> mRefStacks;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.994 -0400", hash_original_method = "59A199C9627818EA5BC55C2223B1B671", hash_generated_method = "F6A2FF377C5B97CB030AC199B929F026")
     public  AssetManager() {
         synchronized
@@ -66,6 +68,7 @@ public class AssetManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.994 -0400", hash_original_method = "517E3FEC19C254F005880DBF363FE7AF", hash_generated_method = "D5A8F5A0591D64A570A79AD2A6A1E787")
     private  AssetManager(boolean isSystem) {
         addTaint(isSystem);
@@ -91,6 +94,7 @@ public class AssetManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void ensureSystemAssets() {
         synchronized (sSync) {
             if (sSystem == null) {
@@ -102,6 +106,7 @@ public class AssetManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static AssetManager getSystem() {
         ensureSystemAssets();
         return sSystem;
@@ -503,6 +508,7 @@ AssetFileDescriptor varBF59062CA5609D0A51AB7CA763EFD373_1903399915 =            
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.006 -0400", hash_original_method = "B416CA2D934FFC444AFFEA95F80C0673", hash_generated_method = "F691DA631962E4003892C665A9FF6475")
     public final InputStream openNonAsset(String fileName) throws IOException {
         addTaint(fileName.getTaint());
@@ -514,6 +520,7 @@ InputStream var1978765D6D5CAEBB79282DC978C7C36C_1178174065 =         openNonAsse
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.006 -0400", hash_original_method = "6F98937B657C3DF287FD2A6608D5C403", hash_generated_method = "C12809F2FA58A1D7AC561580BC7C5913")
     public final InputStream openNonAsset(String fileName, int accessMode) throws IOException {
         addTaint(accessMode);
@@ -526,6 +533,7 @@ InputStream varB0D157343C35C04E44909221F6AD2640_622697741 =         openNonAsset
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.007 -0400", hash_original_method = "DECD09E6B1808DA43562160A03482F49", hash_generated_method = "4D4216FDC09D5507C43ACBFF73A3D70F")
     public final InputStream openNonAsset(int cookie, String fileName) throws IOException {
         addTaint(fileName.getTaint());
@@ -538,6 +546,7 @@ InputStream var80B26222AE1DD66F85CDD73D459781A0_1829670611 =         openNonAsse
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.008 -0400", hash_original_method = "5BC280B3003CA7B8CFB3A2FB67C4E385", hash_generated_method = "C7A371E22F7ADA6667B22E80EA55AD05")
     public final InputStream openNonAsset(int cookie, String fileName, int accessMode) throws IOException {
         addTaint(accessMode);
@@ -661,6 +670,7 @@ XmlResourceParser var94881A9110223122354D848EDB699834_1042753953 =         rp;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.010 -0400", hash_original_method = "675415F1EB93293576759C69BAEA6DCB", hash_generated_method = "8CF4462D764A6D142FD60469263E0365")
     final XmlBlock openXmlBlockAsset(String fileName) throws IOException {
         addTaint(fileName.getTaint());
@@ -672,6 +682,7 @@ XmlBlock varD782855715D61EF8E08F4443A4672770_928822721 =         openXmlBlockAss
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.011 -0400", hash_original_method = "9588BC172FA11EB2767F6277EAB2B09E", hash_generated_method = "0C62CA0CE8E01B2B6DDA65664D351E29")
     final XmlBlock openXmlBlockAsset(int cookie, String fileName) throws IOException {
         addTaint(fileName.getTaint());
@@ -816,6 +827,7 @@ for(RuntimeException e : mRefStacks.values())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.016 -0400", hash_original_method = "22EE91EE70E10361F8012967A8F2990A", hash_generated_method = "8E05735C1459B74A16B52FF1833E8B8F")
     public final int[] addAssetPaths(String[] paths) {
         addTaint(paths[0].getTaint());
@@ -1167,7 +1179,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.035 -0400", hash_original_method = "8CCD44610E895D23EA7CFE3FA359ACA0", hash_generated_method = "DE1751660204E7F09A57FDCA36D93D5A")
     private final void incRefsLocked(int id) {
         addTaint(id);
@@ -1195,6 +1207,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.035 -0400", hash_original_method = "5BE87735DD6C438E2E8B68210C5CE018", hash_generated_method = "E8EF9F6E959871F8E8B796CA487874EB")
     private final void decRefsLocked(int id) {
         addTaint(id);

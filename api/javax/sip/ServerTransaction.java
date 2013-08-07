@@ -1,6 +1,7 @@
 package javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.sip.message.Response;
 
 public interface ServerTransaction extends Transaction {

@@ -1,6 +1,7 @@
 package com.android.internal.textservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ITextServicesSessionListener extends android.os.IInterface
 {

@@ -1,11 +1,13 @@
 package libcore.math;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 public final class MathUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.813 -0400", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "DED0A2D08FDE4310446B2635C520DAE6")
     private  MathUtils() {
         // ---------- Original Method ----------

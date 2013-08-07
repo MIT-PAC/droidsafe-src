@@ -1,17 +1,19 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.regex.Pattern;
 
 import libcore.net.MimeUtils;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MimeTypeMap {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "3813AC6B5CB9CE0F32CF63BF21EAB5DA")
     private  MimeTypeMap() {
         // ---------- Original Method ----------
@@ -65,6 +67,7 @@ String var4DAE02CC55ADD03932C065B04B888027_1664912111 =         MimeUtils.guessM
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String mimeTypeFromExtension(String extension) {
         return MimeUtils.guessMimeTypeFromExtension(extension);
     }

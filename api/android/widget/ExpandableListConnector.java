@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -10,10 +11,10 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ExpandableListConnector extends BaseAdapter implements Filterable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.380 -0400", hash_original_field = "8DBF5674055609276EEC97573F22FB4C", hash_generated_field = "18A81DFA989CC3FAA8A107E272992504")
@@ -485,7 +486,7 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_177848195 =         retValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.391 -0400", hash_original_method = "E23B4E2A713C93A88E352378F7DC6B9B", hash_generated_method = "A7CAF66E68CF82BE5509A3C225FE49D6")
     @SuppressWarnings("unchecked")
     private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
@@ -926,7 +927,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
 
         long gId;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.396 -0400", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "DE6C626044B8E9CC58838E683EF276B1")
         private  GroupMetadata() {
             // ---------- Original Method ----------
@@ -1044,14 +1045,14 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
 
         public int groupInsertIndex;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.397 -0400", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "72FA864FA9C855DE015B0EDB93BB6462")
         private  PositionMetadata() {
             // ---------- Original Method ----------
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.397 -0400", hash_original_method = "5AD4B913B9726C3345D273778B3773BA", hash_generated_method = "C2D78B097428DD4DBD267482388DC1E9")
         private void resetState() {
             position = null;
@@ -1075,7 +1076,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static PositionMetadata getRecycledOrCreate() {
             PositionMetadata pm;
             synchronized (sPool) {

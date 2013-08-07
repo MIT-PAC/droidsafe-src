@@ -1,6 +1,7 @@
 package org.bouncycastle.asn1.x500;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Enumeration;
 
 import org.bouncycastle.asn1.ASN1Choice;
@@ -14,10 +15,10 @@ import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.x500.style.BCStyle;
 import org.bouncycastle.asn1.x509.X509Name;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class X500Name extends ASN1Encodable implements ASN1Choice {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.333 -0400", hash_original_field = "DE525AA08E2B8CBA006E16ED96D38FAC", hash_generated_field = "FFD3E18FB59EA084D3FD8E8945E2AACA")
@@ -44,6 +45,7 @@ public class X500Name extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.334 -0400", hash_original_method = "90B05234255C50E94C255BAB8A26A1D2", hash_generated_method = "4DB22E6019187943E3BB415B7274E1D4")
     private  X500Name(
         ASN1Sequence  seq) {
@@ -53,6 +55,7 @@ public class X500Name extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.335 -0400", hash_original_method = "8A5D5B23394E3163B760506B172464EC", hash_generated_method = "1ADD0A41D24D5FA136503581204D2FE1")
     private  X500Name(
         X500NameStyle style,

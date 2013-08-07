@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
@@ -14,10 +15,10 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.utils.AlgNameMapper;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SubjectPublicKeyInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.727 -0400", hash_original_field = "BAD9A1E8834FE6320A309045B8A95343", hash_generated_field = "FD325ED8A60C5BD558CCCC00BB18BE1E")
@@ -57,7 +58,7 @@ public final class SubjectPublicKeyInfo {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.730 -0400", hash_original_method = "78E5942A2DBBC7DA4B73868B62747270", hash_generated_method = "55B3A45EAE77C42BF8DBEEB82A2A5BF7")
     private  SubjectPublicKeyInfo(AlgorithmIdentifier algID,
                                  byte[] subjectPublicKey, int unused,

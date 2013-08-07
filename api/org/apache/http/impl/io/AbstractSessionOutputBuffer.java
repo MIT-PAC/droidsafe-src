@@ -1,6 +1,7 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -12,10 +13,10 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.ByteArrayBuffer;
 import org.apache.http.util.CharArrayBuffer;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.461 -0400", hash_original_field = "90EFB1EA4F8636AD314AC4EEE074045F", hash_generated_field = "2BD7176B9CB0EEA2FAA19D55872406A1")

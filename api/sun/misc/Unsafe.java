@@ -1,18 +1,20 @@
 package sun.misc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 import dalvik.system.VMStack;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Unsafe {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.587 -0400", hash_original_method = "50D30E2F10A8434CB2B5A99A7DA391C8", hash_generated_method = "9AEC98E2560FBA06F6783E528E234F06")
     private  Unsafe() {
         // ---------- Original Method ----------

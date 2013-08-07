@@ -1,12 +1,13 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BufferedInputStream extends FilterInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.226 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "C53666C61D704ACE793D3D98401D06E0")
@@ -74,6 +75,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.241 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "5AA9CFA9376539DB00F5A5D78696581C")
     private IOException streamClosed() throws IOException {
         IOException var89916D241EE2238C12187BD738C2B6DE_507137193 = new IOException("BufferedInputStream is closed");
@@ -104,6 +106,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.243 -0400", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "3680F9739C189BD077973F250B4FA91E")
     private int fillbuf(InputStream localIn, byte[] localBuf) throws IOException {
         addTaint(localBuf[0]);

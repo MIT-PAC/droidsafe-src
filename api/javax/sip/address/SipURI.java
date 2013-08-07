@@ -1,6 +1,7 @@
 package javax.sip.address;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.util.Iterator;
 

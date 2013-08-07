@@ -1,6 +1,7 @@
 package com.android.internal.textservice;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface ITextServicesManager extends android.os.IInterface
 {

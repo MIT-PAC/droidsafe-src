@@ -1,7 +1,8 @@
 package android.net.sip;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class SipException extends Exception {
     

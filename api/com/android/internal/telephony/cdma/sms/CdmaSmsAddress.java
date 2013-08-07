@@ -1,15 +1,16 @@
 package com.android.internal.telephony.cdma.sms;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.SparseBooleanArray;
 
 import com.android.internal.telephony.SmsAddress;
 import com.android.internal.util.HexDump;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class CdmaSmsAddress extends SmsAddress {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_field = "49524A0E3EE6F35DABACF2EE847F7934", hash_generated_field = "84D708851062F6247553AB01A32917F4")
@@ -62,6 +63,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString(
     }
 
     
+    @DSModeled(DSC.BAN)
     private static byte[] parseToDtmf(String address) {
         int digits = address.length();
         byte[] result = new byte[digits];
@@ -79,6 +81,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString(
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String filterNumericSugar(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
@@ -93,7 +96,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString(
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String filterWhitespace(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();

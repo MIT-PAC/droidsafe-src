@@ -1,14 +1,15 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Closeable;
 import java.io.IOException;
 
 import android.os.Handler;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class BluetoothServerSocket implements Closeable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.630 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "F88CEEEA2A0982472DB6E6356FAA58B9")
@@ -88,7 +89,7 @@ BluetoothSocket var0E890385DCEFB41350BE22388B55AC0F_131632289 =         mSocket.
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.637 -0400", hash_original_method = "87CE95BB5407CF3970CFD04437A2E7B9", hash_generated_method = "E4160E735C966B8E38F1B86BF149A466")
     public int getChannel() {
         int var8E934369C1BCE6316A2C1FFFF8C383AB_405583426 = (mChannel);

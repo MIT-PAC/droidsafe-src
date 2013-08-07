@@ -1,6 +1,7 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.Hashtable;
@@ -11,7 +12,7 @@ import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.x509.X509Name;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class X509Principal extends X509Name implements Principal {
     
@@ -97,6 +98,7 @@ public class X509Principal extends X509Name implements Principal {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ASN1Sequence readSequence(
         ASN1InputStream aIn) throws IOException {
         try

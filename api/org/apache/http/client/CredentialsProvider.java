@@ -1,6 +1,7 @@
 package org.apache.http.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;
 

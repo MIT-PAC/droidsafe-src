@@ -1,6 +1,7 @@
 package android.content.res;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -11,10 +12,10 @@ import android.util.TypedValue;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 final class XmlBlock {
@@ -34,7 +35,7 @@ final class XmlBlock {
 
     private int mOpenCount = 1;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.271 -0400", hash_original_method = "A22EEB27BFE227BD171CA1655E28A01F", hash_generated_method = "4AE7DDE59497735C74D31FB0EB379F5F")
     public  XmlBlock(byte[] data) {
         mAssets = null;
@@ -47,7 +48,7 @@ final class XmlBlock {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.272 -0400", hash_original_method = "B1D68A7ECB78CEADC57D198A6FDBCA28", hash_generated_method = "AB11E1FEA4E4C63AD257E940DE94AF11")
     public  XmlBlock(byte[] data, int offset, int size) {
         mAssets = null;
@@ -60,6 +61,7 @@ final class XmlBlock {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.273 -0400", hash_original_method = "2D0B3C5ECC15AA5F78B0AD70805A049B", hash_generated_method = "2E005A9D8EA3DF78882014B9F5C7AE35")
       XmlBlock(AssetManager assets, int xmlBlock) {
         mAssets = assets;
@@ -72,7 +74,7 @@ final class XmlBlock {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.274 -0400", hash_original_method = "92B3E7DBAA5D8D51C162522636FE2570", hash_generated_method = "EBE550FE58E4C1BD64043333E00F8921")
     public void close() {
         synchronized
@@ -93,7 +95,7 @@ final class XmlBlock {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.275 -0400", hash_original_method = "017FB1456432C4B45E3EDBB9E5F1A65C", hash_generated_method = "84D1C4F049C7E2AADFC14B118EC48977")
     private void decOpenCountLocked() {
         mOpenCount--;
@@ -116,7 +118,7 @@ final class XmlBlock {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.276 -0400", hash_original_method = "36FE28CA3339B97C4303841D21F6E4EF", hash_generated_method = "636BDD3B49D0686581C4A39282EB6F44")
     public XmlResourceParser newParser() {
         synchronized
@@ -141,7 +143,7 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1175030277 =             n
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.277 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
     protected void finalize() throws Throwable {
         close();
@@ -309,7 +311,7 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1175030277 =             n
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.289 -0400", hash_original_method = "C272D7923F75EBE1BE9678831233D06B", hash_generated_method = "B60350E48D5803A22D12A268DC8B16F4")
         public void setFeature(String name, boolean state) throws XmlPullParserException {
             addTaint(state);
@@ -336,7 +338,7 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1175030277 =             n
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.290 -0400", hash_original_method = "AB43D5F41C6A1AAA22A1C5749D672E40", hash_generated_method = "01CE5D6CD03FDE071632FE80E20BA112")
         public boolean getFeature(String name) {
             addTaint(name.getTaint());
@@ -366,7 +368,7 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1175030277 =             n
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.290 -0400", hash_original_method = "B8013E7A09E481D305959C445CAA259A", hash_generated_method = "34DB97DFA16F8F63C2825C72DDE4CAA5")
         public void setProperty(String name, Object value) throws XmlPullParserException {
             addTaint(value.getTaint());
@@ -379,7 +381,7 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1175030277 =             n
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.290 -0400", hash_original_method = "5175B2315D9AD451CFA017AE30114E6D", hash_generated_method = "D64F525D1FA7340836CFE9E8AC166CA6")
         public Object getProperty(String name) {
             addTaint(name.getTaint());
@@ -391,7 +393,7 @@ Object var540C13E9E156B687226421B24F2DF178_99505555 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.291 -0400", hash_original_method = "C407C4DE5B4382B09BED3CBFBB5B2FE9", hash_generated_method = "E51D84B71D513FA7010D04246DF7517A")
         public void setInput(Reader in) throws XmlPullParserException {
             addTaint(in.getTaint());
@@ -403,7 +405,7 @@ Object var540C13E9E156B687226421B24F2DF178_99505555 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.291 -0400", hash_original_method = "2056A33FA2E1F0F175E1EBF8A8F56238", hash_generated_method = "AB6FC491C3B599759F079F554DE2F1EE")
         public void setInput(InputStream inputStream, String inputEncoding) throws XmlPullParserException {
             addTaint(inputEncoding.getTaint());
@@ -416,7 +418,7 @@ Object var540C13E9E156B687226421B24F2DF178_99505555 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.292 -0400", hash_original_method = "523C048AE61D8B3E324838EE2E3CB0C0", hash_generated_method = "8D7842357202BDEC6F1B5FD5A1E00756")
         public void defineEntityReplacementText(String entityName, String replacementText) throws XmlPullParserException {
             addTaint(replacementText.getTaint());
@@ -429,7 +431,7 @@ Object var540C13E9E156B687226421B24F2DF178_99505555 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.292 -0400", hash_original_method = "A5499422039640FD4F9D5601F1C55CCA", hash_generated_method = "D262C262B42CCDDF418AB41099A3FAFD")
         public String getNamespacePrefix(int pos) throws XmlPullParserException {
             addTaint(pos);
@@ -441,7 +443,7 @@ Object var540C13E9E156B687226421B24F2DF178_99505555 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.292 -0400", hash_original_method = "5C999184AAA0F0E674F1363E90C0FD13", hash_generated_method = "3E080F425D20F78CCD9FBCD6981A3F32")
         public String getInputEncoding() {
 String var540C13E9E156B687226421B24F2DF178_338009275 =             null;
@@ -452,7 +454,7 @@ String var540C13E9E156B687226421B24F2DF178_338009275 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.293 -0400", hash_original_method = "AE6D93E7ABBCC0A1FA148BC6AE95DD76", hash_generated_method = "296DB28777E01E117D5D352C005AB674")
         public String getNamespace(String prefix) {
             addTaint(prefix.getTaint());
@@ -464,7 +466,7 @@ String var540C13E9E156B687226421B24F2DF178_338009275 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.293 -0400", hash_original_method = "A423E278D1BE175DD386F3DED425ED1E", hash_generated_method = "7739141F1FB3AA5F83B6B5B0B7F716AA")
         public int getNamespaceCount(int depth) throws XmlPullParserException {
             addTaint(depth);
@@ -476,7 +478,7 @@ String var540C13E9E156B687226421B24F2DF178_338009275 =             null;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.293 -0400", hash_original_method = "D2403D5573FCC08ECC8A73989B7EFE93", hash_generated_method = "DA85000A8EB6BFAEF4A6DCFE0E16BB6B")
         public String getPositionDescription() {
 String varA8A936FAF2F1582A5549DC73887E1742_343817149 =             "Binary XML file line #" + getLineNumber();
@@ -487,7 +489,7 @@ String varA8A936FAF2F1582A5549DC73887E1742_343817149 =             "Binary XML f
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.294 -0400", hash_original_method = "0BA86538E6BFE859243D39CD091AF1CC", hash_generated_method = "9F3D241593480BBC957CA87F7660F46A")
         public String getNamespaceUri(int pos) throws XmlPullParserException {
             addTaint(pos);
@@ -499,7 +501,7 @@ String varA8A936FAF2F1582A5549DC73887E1742_343817149 =             "Binary XML f
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.294 -0400", hash_original_method = "8861CD3D81AD120598D5847E998DCDDD", hash_generated_method = "B93ECE0EF7B4184E8C7D58269DBA934D")
         public int getColumnNumber() {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1772192950 = (-1);
@@ -510,7 +512,7 @@ String varA8A936FAF2F1582A5549DC73887E1742_343817149 =             "Binary XML f
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.294 -0400", hash_original_method = "DE1021F4C2B2A1E4D5CF36677B434DEA", hash_generated_method = "8C075B480A33A0952F76CCD018D89ABE")
         public int getDepth() {
             int var67EB95621332D6338FBDBCE544F839EC_1426195450 = (mDepth);
@@ -521,7 +523,7 @@ String varA8A936FAF2F1582A5549DC73887E1742_343817149 =             "Binary XML f
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.295 -0400", hash_original_method = "9AA17B3C306C694E2A4C941D5BD64364", hash_generated_method = "53EF4A16B605F014343378EC4FCD7F54")
         public String getText() {
             int id = nativeGetText(mParseState);
@@ -534,7 +536,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1942560033 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.295 -0400", hash_original_method = "D6658BAD08E09D6B5CC695C7702E23C1", hash_generated_method = "7280566E12B443BC4881008273EEF8DE")
         public int getLineNumber() {
             int var9E3B6725FD649218AC1817BECBC5A43E_692757206 = (nativeGetLineNumber(mParseState));
@@ -545,7 +547,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1942560033 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.296 -0400", hash_original_method = "8A2CD03AAFDD20222A8759980FBB28AE", hash_generated_method = "63FD1DCD6C38631B12DC33FA7A85996F")
         public int getEventType() throws XmlPullParserException {
             int varC7C43C278E8643FF27A9474560193A6F_1731386258 = (mEventType);
@@ -556,7 +558,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1942560033 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.296 -0400", hash_original_method = "926F3413D3806C4A183D059B4FD2543E", hash_generated_method = "A57B2A34629832D5A83DBFC7507669BF")
         public boolean isWhitespace() throws XmlPullParserException {
             boolean var68934A3E9455FA72420237EB05902327_808761400 = (false);
@@ -567,7 +569,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1942560033 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.296 -0400", hash_original_method = "692B884A81B63C3B5FA2E5F7E1379D3F", hash_generated_method = "CD1B87E2EB9AABB5325B83CDF5CF8399")
         public String getPrefix() {
             RuntimeException var18578E829D598674630F7F501652FBAE_792796568 = new RuntimeException("getPrefix not supported");
@@ -578,7 +580,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1942560033 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.297 -0400", hash_original_method = "03AC06D9FB54ABC98AEB5C7372B8DFCE", hash_generated_method = "09C06260CA688352AD16E0540E2E44C1")
         public char[] getTextCharacters(int[] holderForStartAndLength) {
             addTaint(holderForStartAndLength[0]);
@@ -607,7 +609,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1942560033 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.298 -0400", hash_original_method = "53E841A7D41D7C8EC6230F47D159F5F8", hash_generated_method = "C9445E81D39F64692D6B2E84B1A89226")
         public String getNamespace() {
             int id = nativeGetNamespace(mParseState);
@@ -620,7 +622,7 @@ String var0DB8E8DA55A048D8C582FCA9C8A1CDAF_1903184832 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.298 -0400", hash_original_method = "5E952CADD7A547B8BBE8593EB2804E3F", hash_generated_method = "A287A027BD0F69B5CB5348691F28B828")
         public String getName() {
             int id = nativeGetName(mParseState);
@@ -633,7 +635,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1328303245 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.299 -0400", hash_original_method = "C5B0A5333E9C04C4ABC345C16B794494", hash_generated_method = "AC478CE14952EB8075CCD80797AB8B14")
         public String getAttributeNamespace(int index) {
             addTaint(index);
@@ -665,7 +667,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_909229059 =             "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.300 -0400", hash_original_method = "84AEB345F706FFE756390519A4CE900D", hash_generated_method = "A7CC5D318B14E45496D6EB708FAE3BB5")
         public String getAttributeName(int index) {
             addTaint(index);
@@ -689,7 +691,7 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_1373232981 =             mStrings.get
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.300 -0400", hash_original_method = "50B51A25D0464B8FD90EECF499D60B48", hash_generated_method = "EDF20C508E5D8150AB97F3EAFE40295F")
         public String getAttributePrefix(int index) {
             addTaint(index);
@@ -701,7 +703,7 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_1373232981 =             mStrings.get
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.301 -0400", hash_original_method = "860332C2A14F44509730B84BDA1621A5", hash_generated_method = "B275EADD8DD16AB07B10CED26CD03ED4")
         public boolean isEmptyElementTag() throws XmlPullParserException {
             boolean var68934A3E9455FA72420237EB05902327_1443982175 = (false);
@@ -712,7 +714,7 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_1373232981 =             mStrings.get
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.301 -0400", hash_original_method = "AF6A401047A56BD2769A9CCD0765487F", hash_generated_method = "2F220516488419CD354C34093F9611A9")
         public int getAttributeCount() {
             int varA684D62E66CE7CA72731D6D7CD33556F_1149967238 = (mEventType == START_TAG ? nativeGetAttributeCount(mParseState) : -1);
@@ -723,6 +725,7 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_1373232981 =             mStrings.get
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.301 -0400", hash_original_method = "F4E9CDB9F128BA6177C44CACB76DA2CC", hash_generated_method = "13B86FA56A9FD208B0E8CCEC48BF56B5")
         public String getAttributeValue(int index) {
             addTaint(index);
@@ -759,7 +762,7 @@ String var917B89ADD92DCC9B7E6E4C601918A285_1112578590 =             TypedValue.c
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.302 -0400", hash_original_method = "D075B222334138AA51A395211AD5E8BA", hash_generated_method = "9375BCD4B6FB7932DF29AE33A2FBE286")
         public String getAttributeType(int index) {
             addTaint(index);
@@ -771,7 +774,7 @@ String var51FC5D2EB0F14BB856F2382E944EB3B9_175305746 =             "CDATA";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.302 -0400", hash_original_method = "506EE66AC609639C08948796E644B012", hash_generated_method = "F49C57CFF7DD8742E3658B6CFAA60E1F")
         public boolean isAttributeDefault(int index) {
             addTaint(index);
@@ -783,7 +786,7 @@ String var51FC5D2EB0F14BB856F2382E944EB3B9_175305746 =             "CDATA";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.303 -0400", hash_original_method = "F3E3F86FBCCE797A7D99504582A16A5E", hash_generated_method = "7328298F784C19AD5463C9C1EE6B8D7A")
         public int nextToken() throws XmlPullParserException,IOException {
             int var664F8784E379383402F73AEB98BCA97F_73670756 = (next());
@@ -794,7 +797,7 @@ String var51FC5D2EB0F14BB856F2382E944EB3B9_175305746 =             "CDATA";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.304 -0400", hash_original_method = "8127D80C9F5EEB177072DC0AE91ACB4C", hash_generated_method = "D7F57E92D63A8E62E68B95620B850C1B")
         public String getAttributeValue(String namespace, String name) {
             addTaint(name.getTaint());
@@ -832,6 +835,7 @@ String var540C13E9E156B687226421B24F2DF178_2068503146 =             null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.306 -0400", hash_original_method = "2DA88A175068BC957038D4798DAD0AF9", hash_generated_method = "74542622754FF56E95CA30EB16344300")
         public int next() throws XmlPullParserException,IOException {
             if(!mStarted)            
@@ -897,6 +901,7 @@ switch(ev){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.307 -0400", hash_original_method = "A600298A9B2D06DCD3FD708D87D4E435", hash_generated_method = "E1A000F5D8EC43918569BBF1F827F276")
         public void require(int type, String namespace, String name) throws XmlPullParserException,IOException {
             addTaint(name.getTaint());
@@ -918,6 +923,7 @@ switch(ev){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.308 -0400", hash_original_method = "0387CD391BE287242825F05D1B5C07FC", hash_generated_method = "8503BEE39902841A42C99D8A9A5E032C")
         public String nextText() throws XmlPullParserException,IOException {
             if(getEventType() != START_TAG)            
@@ -965,6 +971,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.309 -0400", hash_original_method = "86ECF63697C3285DB17A648F53C02562", hash_generated_method = "BAA327299A29F8C6481891D829717B6A")
         public int nextTag() throws XmlPullParserException,IOException {
             int eventType = next();
@@ -997,7 +1004,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.309 -0400", hash_original_method = "F89E8721AF5486B49BDF02DB68EDEEE5", hash_generated_method = "753F5551D38CD9F1AB2042115E4E69A1")
         public int getAttributeNameResource(int index) {
             addTaint(index);
@@ -1009,7 +1016,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.309 -0400", hash_original_method = "1215FB5AAEE746C41F9FA8271AAF1E60", hash_generated_method = "A0E34D2906DDC5487227C3BE8E32E669")
         public int getAttributeListValue(String namespace, String attribute,
                 String[] options, int defaultValue) {
@@ -1036,7 +1043,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.310 -0400", hash_original_method = "B01E2E5CC96F6EF51E59D8D07AB9873A", hash_generated_method = "8E6CACC887C3C9DC41CE2DD818A0E344")
         public boolean getAttributeBooleanValue(String namespace, String attribute,
                 boolean defaultValue) {
@@ -1062,7 +1069,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.311 -0400", hash_original_method = "CB3F64435C40C20F84A081F8E49D1C0C", hash_generated_method = "F30336E29C85789FA1A59FEF944D365F")
         public int getAttributeResourceValue(String namespace, String attribute,
                 int defaultValue) {
@@ -1088,7 +1095,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.311 -0400", hash_original_method = "8EF5A68420C37BD2779707A79B9C3811", hash_generated_method = "0D00479E2BAFE659B280B48AF0599D8F")
         public int getAttributeIntValue(String namespace, String attribute,
                 int defaultValue) {
@@ -1114,7 +1121,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.312 -0400", hash_original_method = "133F9E0C363583A7982FF4EDA455C0C4", hash_generated_method = "5496CB767649F95181CE33EC253B3C55")
         public int getAttributeUnsignedIntValue(String namespace, String attribute,
                                                 int defaultValue) {
@@ -1140,7 +1147,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.313 -0400", hash_original_method = "91D09444FE7CF8F77D4AFF725E1E8970", hash_generated_method = "2B624C2E8A2E30B3EBA6F55F0C0EE12B")
         public float getAttributeFloatValue(String namespace, String attribute,
                 float defaultValue) {
@@ -1166,7 +1173,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.314 -0400", hash_original_method = "2BA8E9098E1E3526495883648F7DEF5F", hash_generated_method = "03A7795E239C0BF9662DEF1417481FBA")
         public int getAttributeListValue(int idx,
                 String[] options, int defaultValue) {
@@ -1196,6 +1203,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.315 -0400", hash_original_method = "9FDDF9436ABA275F049CE63B7297D004", hash_generated_method = "3B6645CA4EE4033EACD9E524F89A895C")
         public boolean getAttributeBooleanValue(int idx,
                 boolean defaultValue) {
@@ -1222,6 +1230,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.315 -0400", hash_original_method = "0D4A13949891098942D2BD0FE4681BA9", hash_generated_method = "EE08886C57B74500BCBED848C110E9EF")
         public int getAttributeResourceValue(int idx, int defaultValue) {
             addTaint(defaultValue);
@@ -1245,6 +1254,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.316 -0400", hash_original_method = "76347FF1C756B55868935018572B3748", hash_generated_method = "1D33E83135925F101007C6E6B5F87B46")
         public int getAttributeIntValue(int idx, int defaultValue) {
             addTaint(defaultValue);
@@ -1270,6 +1280,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.316 -0400", hash_original_method = "10FB8704E5561F244AB5AE7B4EFD0C1E", hash_generated_method = "60343E7A84ADA2FBA8299DB57C834CAA")
         public int getAttributeUnsignedIntValue(int idx, int defaultValue) {
             addTaint(defaultValue);
@@ -1295,6 +1306,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.317 -0400", hash_original_method = "BBF18D629EB0696226FD45DB0C0888CC", hash_generated_method = "CF5AE25AC80E4ACDA08F915F4459483C")
         public float getAttributeFloatValue(int idx, float defaultValue) {
             addTaint(defaultValue);
@@ -1320,7 +1332,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352454190 =                 "";
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.317 -0400", hash_original_method = "459DE28869C0476D8004C0FC89A0FAA3", hash_generated_method = "B6C528AEA64D3A87D6959BA3FE6AA66B")
         public String getIdAttribute() {
             int id = nativeGetIdAttribute(mParseState);
@@ -1333,7 +1345,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_860112537 =             id >= 0 ? mSt
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.317 -0400", hash_original_method = "6EA4969C84EC91743C886113DBDA4AC3", hash_generated_method = "6A71BDDAB391BD9D5E9A1A86918C8AC5")
         public String getClassAttribute() {
             int id = nativeGetClassAttribute(mParseState);
@@ -1346,6 +1358,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_2083408881 =             id >= 0 ? mS
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.318 -0400", hash_original_method = "BE1A0DA79A6356AD791A8CD183D22590", hash_generated_method = "FED2C1F315D38629814840C464B38CF2")
         public int getIdAttributeResourceValue(int defaultValue) {
             addTaint(defaultValue);
@@ -1357,7 +1370,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_2083408881 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.318 -0400", hash_original_method = "34AB6D031D153719912E2897914AFEED", hash_generated_method = "B240FFF78DC0C7FC77396E210394B6B3")
         public int getStyleAttribute() {
             int var672FF0DE58331DB878C91499A9F3541B_497630810 = (nativeGetStyleAttribute(mParseState));
@@ -1368,7 +1381,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_2083408881 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.318 -0400", hash_original_method = "283F7DAAD4F2484127D9024B5883A661", hash_generated_method = "919549817098AD6C7430CF4A6B84686E")
         public void close() {
             synchronized
@@ -1391,7 +1404,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_2083408881 =             id >= 0 ? mS
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.319 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
         protected void finalize() throws Throwable {
             close();
@@ -1400,7 +1413,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_2083408881 =             id >= 0 ? mS
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.319 -0400", hash_original_method = "E55719651A1187D6CF490013E1512769", hash_generated_method = "9490D998B3ACF2F1F42AF65D4CB21769")
         final CharSequence getPooledString(int id) {
             addTaint(id);

@@ -1,11 +1,12 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class LocationProvider {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.732 -0400", hash_original_field = "311C2C8498DF6A626CBDB8AA4193499C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
@@ -15,6 +16,7 @@ public abstract class LocationProvider {
 
     private ILocationManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.732 -0400", hash_original_method = "BAF0DB5834B7193F7ED3616F680059B0", hash_generated_method = "BE44554458ECB35F08F7618724B22ACA")
     public  LocationProvider(String name, ILocationManager service) {
         if(name.matches(BAD_CHARS_REGEX))        

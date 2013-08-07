@@ -2,14 +2,16 @@ package droidsafe.concrete;
 
 import java.util.Map;
 
+//Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.IContentProvider;
 import android.database.ContentObserver;
 import android.net.Uri;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+
+
 
 /**
  * Started with android.test.mock.MockContentResolver;

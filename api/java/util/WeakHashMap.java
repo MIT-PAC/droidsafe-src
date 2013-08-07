@@ -1,13 +1,14 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "4B551E83AB7D0C8C6FE6D2A3C3F57121", hash_generated_field = "DA4F581341DFFC093DAB2ED377CF1682")
@@ -139,7 +140,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.113 -0400", hash_original_method = "85D93BA99AF40F5CDC3F42570A89C9FC", hash_generated_method = "BE619D13CAF85822181B65989DC845A9")
     private void computeMaxSize() {
         threshold = (int) ((long) elementData.length * loadFactor / 10000);
@@ -782,7 +783,7 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_1465915584 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.120 -0400", hash_original_method = "2B64F6E6AE3910B09507F9013DEACFFD", hash_generated_method = "43B89B9AE4AF91AB4CC60A9D77FCB8CD")
     private void rehash() {
         int length = elementData.length * 2;
@@ -907,7 +908,7 @@ V var540C13E9E156B687226421B24F2DF178_1886479484 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_method = "F23833AECC848C129604A1D671C10BB2", hash_generated_method = "271754B42238C56180B1CCD533B129AC")
     private void putAllImpl(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());

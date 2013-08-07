@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -10,10 +11,10 @@ import java.text.DateFormatSymbols;
 
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class Calendar implements Serializable, Cloneable, Comparable<Calendar> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.225 -0400", hash_original_field = "968371C4AF5AE99403612957ADE12B5F", hash_generated_field = "CE3F9942C85635B6DB1739E7DBF40F0C")
@@ -842,7 +843,7 @@ String varBE80B03BFDF52EE6C9453F245B3DB27C_308948707 =         (array != null) ?
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.240 -0400", hash_original_method = "23B9DFD5A49D248BECD0B5B67B00C262", hash_generated_method = "FE2370B62952E0EE248F6AFB061DD3BB")
     private String[] getDisplayNameArray(int field, int style, Locale locale) {
         addTaint(locale.getTaint());
@@ -896,7 +897,7 @@ String[] var02443F3A76AE487EA27B8DD484E529A8_142271410 =         (style == LONG)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkStyle(int style) {
         if (style != ALL_STYLES && style != SHORT && style != LONG) {
             throw new IllegalArgumentException("bad style " + style);
@@ -938,7 +939,7 @@ Map<String, Integer> varB60C0CCEE522AFD4A5CF89ECA4EFF4A9_1405135466 =         re
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void insertValuesInMap(Map<String, Integer> map, String[] values) {
         if (values == null) {
             return;
@@ -951,7 +952,7 @@ Map<String, Integer> varB60C0CCEE522AFD4A5CF89ECA4EFF4A9_1405135466 =         re
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.241 -0400", hash_original_method = "B466F6EE281116CF7ABF0D209ADAF19B", hash_generated_method = "4E7102DAF281A059419DE4BA790DAD0B")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -987,7 +988,7 @@ Map<String, Integer> varB60C0CCEE522AFD4A5CF89ECA4EFF4A9_1405135466 =         re
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.241 -0400", hash_original_method = "8FB104B0DF4EC943895E45AF22309DC6", hash_generated_method = "B3ECB270A155681BF1211E2A8EED4CE4")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

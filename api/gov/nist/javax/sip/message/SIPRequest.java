@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.address.GenericURI;
 import gov.nist.javax.sip.address.SipUri;
@@ -47,10 +48,10 @@ import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class SIPRequest extends SIPMessage implements javax.sip.message.Request, RequestExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.358 -0400", hash_original_field = "12492E2615AAEE902567F83B53B51169", hash_generated_field = "35845A8B5E63218306C5DA0C937C70A8")
@@ -74,7 +75,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void putName(String name) {
         nameTable.put(name, name);
     }
@@ -870,7 +871,7 @@ SIPResponse var2036E7FD3A3D966BDBCD4AA1915E2AF6_901504981 =         newResponse;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.375 -0400", hash_original_method = "B9BF2BAEBA19E8A2F042C98E4A2B8D22", hash_generated_method = "7FFC272B997F1412228FABC073822499")
     private final boolean mustCopyRR( int code ) {
         addTaint(code);

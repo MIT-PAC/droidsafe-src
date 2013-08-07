@@ -1,12 +1,13 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class PerformanceCollector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.281 -0400", hash_original_field = "26B1BECD2B69E5E2482C90E44053F874", hash_generated_field = "2E6B5EF6C826CFAA09973D53DE7A3FDC")
@@ -187,6 +188,7 @@ Bundle var7A67D04CE06B73A2030582AAED59B33A_1721145295 =         mPerfMeasurement
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.288 -0400", hash_original_method = "1B503104185A94AFFC2FCF84AFCEABAE", hash_generated_method = "CC4E871031E8AFC093D512518412F8BC")
     private void startPerformanceSnapshot() {
         mPerfSnapshot = new Bundle();
@@ -210,6 +212,7 @@ for(String key : binderCounts.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.289 -0400", hash_original_method = "41A01DA3C680B16D19143811CC413B1E", hash_generated_method = "F225CDE2FD38074D4C85DFDAF27B3887")
     private void endPerformanceSnapshot() {
         mSnapshotCpuTime = Process.getElapsedCpuTime() - mSnapshotCpuTime;
@@ -256,6 +259,7 @@ for(String key : allocCounts.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void startAllocCounting() {
         Runtime.getRuntime().gc();
         Runtime.getRuntime().runFinalization();
@@ -265,6 +269,7 @@ for(String key : allocCounts.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void stopAllocCounting() {
         Runtime.getRuntime().gc();
         Runtime.getRuntime().runFinalization();
@@ -273,6 +278,7 @@ for(String key : allocCounts.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Bundle getAllocCounts() {
         Bundle results = new Bundle();
         results.putLong(METRIC_KEY_GLOBAL_ALLOC_COUNT, Debug.getGlobalAllocCount());
@@ -284,6 +290,7 @@ for(String key : allocCounts.keySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Bundle getBinderCounts() {
         Bundle results = new Bundle();
         results.putLong(METRIC_KEY_SENT_TRANSACTIONS, Debug.getBinderSentTransactions());

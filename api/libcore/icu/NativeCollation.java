@@ -1,14 +1,15 @@
 package libcore.icu;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class NativeCollation {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.973 -0400", hash_original_method = "16B47962CFF99F85D0E598C53BC7328E", hash_generated_method = "FF71B9CC7F83E39BD5165BFFBBD0AADB")
     private  NativeCollation() {
         // ---------- Original Method ----------

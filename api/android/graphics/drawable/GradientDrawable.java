@@ -1,6 +1,7 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -22,10 +23,10 @@ import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GradientDrawable extends Drawable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.912 -0400", hash_original_field = "7A93543FFB4741C41CAFDAC91FC3D12D", hash_generated_field = "F8FC523C37AC4F355E3A52C1D395B9CA")
@@ -89,7 +90,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.916 -0400", hash_original_method = "11AB49F3A166C4EC986EE8723C09CE3C", hash_generated_method = "EB17AAEC21D5CB5883C8C3AB3D6841B1")
     private  GradientDrawable(GradientState state) {
         mGradientState = state;
@@ -295,7 +296,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.925 -0400", hash_original_method = "0886E73CB45EE282B3AFC0BE37F5BE6C", hash_generated_method = "74D4D9CF7D29B0A87EB374626A553EF7")
     private int modulateAlpha(int alpha) {
         addTaint(alpha);
@@ -434,7 +435,7 @@ switch(st.mShape){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.931 -0400", hash_original_method = "FA54FBF5F964BB48C4F923A57A9FF840", hash_generated_method = "3A2320D84374BE4E48C3ED4FA9A11579")
     private Path buildRing(GradientState st) {
         addTaint(st.getTaint());
@@ -619,7 +620,7 @@ Path var519CAB76968E93D45E4C92AC8B95C0FE_868776541 =         ringPath;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.955 -0400", hash_original_method = "A926FB4015A038016094FA9870012FFA", hash_generated_method = "F2660366EE8033248A033B710F3E91F3")
     private boolean ensureValidRect() {
         if(mRectIsDirty)        
@@ -1010,7 +1011,7 @@ switch(angle){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static float getFloatOrFraction(TypedArray a, int index, float defaultValue) {
         TypedValue tv = a.peekValue(index);
         float v = defaultValue;
@@ -1083,7 +1084,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_114024204 =         this;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.959 -0400", hash_original_method = "7FA7686AE1E8AEF57BBE0E6293CFBCA1", hash_generated_method = "6B6856A93466D0993964E963504AF22D")
     private void initializeWithState(GradientState state) {
         if(state.mHasSolidColor)        

@@ -1,12 +1,13 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.103 -0400", hash_original_field = "902CE642754F5EF10E3B0BAE67BA3A9F", hash_generated_field = "9C75B713060FA6BE08EF6725E9B4E7D0")
@@ -58,6 +59,7 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.105 -0400", hash_original_method = "2F2A6843358187D56B8BE4AE48B0B4F7", hash_generated_method = "A988E544A6BD820A11207748418CB6BB")
     private  InstrumentationInfo(Parcel source) {
         super(source);

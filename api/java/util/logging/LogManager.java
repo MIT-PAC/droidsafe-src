@@ -1,6 +1,7 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.BufferedInputStream;
@@ -15,10 +16,10 @@ import java.util.Properties;
 import java.util.StringTokenizer;
 
 import libcore.io.IoUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class LogManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.193 -0400", hash_original_field = "E3744F330069AC8D2BE40C0CB5EFBDB6", hash_generated_field = "AD370BFFC6E9AB83396CFA02133C2A08")
@@ -100,7 +101,7 @@ public class LogManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.196 -0400", hash_original_method = "0070D539A38F64AFDE25421AB7DE8DFA", hash_generated_method = "76C1DB2B184826FDB1C78E29D45926F7")
     private void addToFamilyTree(Logger logger, String name) {
         addTaint(name.getTaint());
@@ -249,7 +250,7 @@ String varCAC2FB4F16F751F82616E09DB74CE99D_1727822386 =         props.getPropert
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.201 -0400", hash_original_method = "5AA730DC7CE7051A789AED9B260AEA08", hash_generated_method = "91EE07B56353B3774C117594F5E2D583")
     private synchronized void readConfigurationImpl(InputStream ins) throws IOException {
         addTaint(ins.getTaint());

@@ -1,6 +1,7 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Locale;
 
 import org.apache.http.HttpEntity;
@@ -9,10 +10,10 @@ import org.apache.http.ProtocolVersion;
 import org.apache.http.ReasonPhraseCatalog;
 import org.apache.http.StatusLine;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class BasicHttpResponse extends AbstractHttpMessage implements HttpResponse {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.893 -0400", hash_original_field = "AA0D4A4A699CB2EF82685419DB641FCD", hash_generated_field = "4CCD72942F5376DF30647BDBD097E9E4")

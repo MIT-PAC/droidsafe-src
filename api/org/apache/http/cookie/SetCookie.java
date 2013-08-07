@@ -1,6 +1,7 @@
 package org.apache.http.cookie;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Date;
 
 public interface SetCookie extends Cookie {

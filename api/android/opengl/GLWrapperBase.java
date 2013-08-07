@@ -1,6 +1,7 @@
 package android.opengl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import javax.microedition.khronos.opengles.GL;
 import javax.microedition.khronos.opengles.GL10;
 import javax.microedition.khronos.opengles.GL10Ext;
@@ -8,8 +9,8 @@ import javax.microedition.khronos.opengles.GL11;
 import javax.microedition.khronos.opengles.GL11Ext;
 import javax.microedition.khronos.opengles.GL11ExtensionPack;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 abstract class GLWrapperBase implements GL, GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.387 -0400", hash_original_field = "738F144B1775BE154D22E9640CE970EF", hash_generated_field = "E6EDB2FCF74C86CBA0CF1495E76DD1BA")

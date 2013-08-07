@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -20,10 +21,10 @@ import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.text.TextUtils;
 import android.util.Pair;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DownloadManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.000 -0400", hash_original_field = "CF849E3C15214EFD093D4303B542BF44", hash_generated_field = "2ABF989C5B8F051BCBEE638ED1EA2586")
@@ -36,6 +37,7 @@ public class DownloadManager {
 
     private Uri mBaseUri = Downloads.Impl.CONTENT_URI;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.001 -0400", hash_original_method = "E62D0E970789924902081BF03F031FF8", hash_generated_method = "7F4F9C5FA27047A7434D2EC70ADE844E")
     public  DownloadManager(ContentResolver resolver, String packageName) {
         mResolver = resolver;
@@ -46,7 +48,7 @@ public class DownloadManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.002 -0400", hash_original_method = "93AAF1C0A18C9EFC24526B178CE628E3", hash_generated_method = "F58E623A8B3CC778D0FE745DFD0F353B")
     public void setAccessAllDownloads(boolean accessAllDownloads) {
         addTaint(accessAllDownloads);
@@ -379,6 +381,7 @@ for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext())
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void validateArgumentIsNonEmpty(String paramName, String val) {
         if (TextUtils.isEmpty(val)) {
             throw new IllegalArgumentException(paramName + " can't be null");
@@ -510,7 +513,7 @@ Request var72A74007B2BE62B849F475C7BDA4658B_12990689 =             this;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.028 -0400", hash_original_method = "D82AD486A04E11ACCF6C157FAE4ED191", hash_generated_method = "48634F2ADA35A20296466ECF34DAC7A9")
         public Request setDestinationToSystemCache() {
             mUseSystemCache = true;
@@ -586,6 +589,7 @@ Request var72A74007B2BE62B849F475C7BDA4658B_801762319 =             this;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.030 -0400", hash_original_method = "53900E0DE3709F8E65CE6AB9A613EA7C", hash_generated_method = "D11B10B79F02AA04BBDA2AF83864997B")
         private void setDestinationFromBase(File base, String subPath) {
             if(subPath == null)            
@@ -796,6 +800,7 @@ ContentValues var674B10C763DBAAF9696AD9A3DDAE07B3_1370015000 =             value
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.050 -0400", hash_original_method = "26D27F1BE5E3A68003877A062F0DAD99", hash_generated_method = "D33449BBE219982BDFC88623DDD51572")
         private void encodeHttpHeaders(ContentValues values) {
             addTaint(values.getTaint());
@@ -816,6 +821,7 @@ for(Pair<String, String> header : mRequestHeaders)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.051 -0400", hash_original_method = "19BA5B9D42AC58D8841CDF02C796EE38", hash_generated_method = "8AAA05226FC3A7C21CAD91BD68253EE9")
         private void putIfNonNull(ContentValues contentValues, String key, Object value) {
             addTaint(value.getTaint());
@@ -908,7 +914,7 @@ Query var72A74007B2BE62B849F475C7BDA4658B_746297883 =             this;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.057 -0400", hash_original_method = "9600119EF208E670C5EE47F5F776ED3A", hash_generated_method = "5A0F71A40F995BFA5BA46D0B8AB95F33")
         public Query setOnlyIncludeVisibleInDownloadsUi(boolean value) {
             mOnlyIncludeVisibleInDownloadsUi = value;
@@ -921,6 +927,7 @@ Query var72A74007B2BE62B849F475C7BDA4658B_816568544 =             this;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.058 -0400", hash_original_method = "969F069748FB75BDEDE2897D8F038415", hash_generated_method = "F1E025493B0826B9A19F519DBB52FD08")
         public Query orderBy(String column, int direction) {
             addTaint(column.getTaint());
@@ -1024,6 +1031,7 @@ Cursor varED0136AE3D1D451722AEDAE7CBDBB4AC_2145821061 =             resolver.que
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.062 -0400", hash_original_method = "E982889F0CE13C731CA9D89AB5FD3B78", hash_generated_method = "D9B5D6FD5323518C1AD51520384433C5")
         private String joinStrings(String joiner, Iterable<String> parts) {
             addTaint(parts.getTaint());
@@ -1056,6 +1064,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_605418604 =             builder.toStr
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.063 -0400", hash_original_method = "F1C2C126003D565FB51A9C1A25E86357", hash_generated_method = "4C7C150A4870D8684A39C6907282A33A")
         private String statusClause(String operator, int value) {
             addTaint(value);
@@ -1154,6 +1163,7 @@ String varE33FF2323B78F36FA3951A6E8D3B7DBC_1696337961 =             (getColumnNa
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.068 -0400", hash_original_method = "C2F388AD18BA84031DEC0607FBEAB7C5", hash_generated_method = "A4EE4D12FAE1DE706703B0A7DFD85A03")
         private String getLocalUri() {
             long destinationType = getLong(getColumnIndex(Downloads.Impl.COLUMN_DESTINATION));
@@ -1192,6 +1202,7 @@ String var1D634E7EDE0A065AC76D9E1BA7D6C3B8_1181273920 =             ContentUris.
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.069 -0400", hash_original_method = "A69C93787DF2FD0B667931CA82E74881", hash_generated_method = "24CD12CECB01D0ADBD5CCE9792004ED1")
         private long getReason(int status) {
             addTaint(status);
@@ -1221,7 +1232,7 @@ switch(translateStatus(status)){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.070 -0400", hash_original_method = "8BF9F68328111BA50CCB78B1792F76F0", hash_generated_method = "33F6A46429B52AEE38B8264AC2A9BF42")
         private long getPausedReason(int status) {
             addTaint(status);
@@ -1257,7 +1268,7 @@ switch(status){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.071 -0400", hash_original_method = "A27080D0C32BDBDFED7217EFE39DC72F", hash_generated_method = "9ED7B747A3F92F2556AFE72458034837")
         private long getErrorCode(int status) {
             addTaint(status);
@@ -1316,6 +1327,7 @@ switch(status){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.072 -0400", hash_original_method = "AC0B465D7BF7B10F5608906AFAA7CE72", hash_generated_method = "661C2426898DD14C3A604D84811C4A3B")
         private int translateStatus(int status) {
             addTaint(status);

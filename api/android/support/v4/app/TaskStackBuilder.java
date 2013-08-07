@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -11,10 +12,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.support.v4.content.IntentCompat;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TaskStackBuilder implements Iterable<Intent> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.724 -0400", hash_original_field = "A18F378A1546FFE00B0A7F55021D9E9D", hash_generated_field = "FC01997BAF44874B9D67B78786DC6A66")
@@ -24,6 +25,7 @@ public class TaskStackBuilder implements Iterable<Intent> {
 
     private Context mSourceContext;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.725 -0400", hash_original_method = "D42A6E80ABDCC8C3AC78797ED9ABE957", hash_generated_method = "970E403029151A4E9DDC271056142D70")
     private  TaskStackBuilder(Context a) {
         mSourceContext = a;

@@ -1,17 +1,18 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Arrays {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.970 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
     private  Arrays() {
         // ---------- Original Method ----------
@@ -283,7 +284,7 @@ public class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkBinarySearchBounds(int startIndex, int endIndex, int length) {
         if (startIndex > endIndex) {
             throw new IllegalArgumentException();
@@ -586,7 +587,7 @@ public class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int deepHashCodeElement(Object element) {
         Class<?> cl;
         if (element == null) {
@@ -798,7 +799,7 @@ public class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean deepEqualsElements(Object e1, Object e2) {
         Class<?> cl1, cl2;
         if (e1 == e2) {
@@ -855,7 +856,7 @@ public class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
         if ((offset | count) < 0 || offset > arrayLength || arrayLength - offset < count) {
             throw new ArrayIndexOutOfBoundsException(arrayLength, offset,
@@ -864,7 +865,7 @@ public class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void checkStartAndEnd(int len, int start, int end) {
         if (start < 0 || end > len) {
             throw new ArrayIndexOutOfBoundsException("start < 0 || end > len."
@@ -1163,7 +1164,7 @@ public class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void deepToStringImpl(Object[] array, Object[] origArrays,
             StringBuilder sb) {
         if (array == null) {
@@ -1224,7 +1225,7 @@ public class Arrays {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean deepToStringImplContains(Object[] origArrays,
             Object array) {
         if (origArrays == null || origArrays.length == 0) {

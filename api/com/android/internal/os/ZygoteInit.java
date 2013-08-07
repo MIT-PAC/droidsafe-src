@@ -1,6 +1,7 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -25,10 +26,10 @@ import android.util.EventLog;
 import android.util.Log;
 import dalvik.system.VMRuntime;
 import dalvik.system.Zygote;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class ZygoteInit {

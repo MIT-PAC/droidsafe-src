@@ -1,8 +1,9 @@
 package org.apache.http.client.entity;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 import droidsafe.runtime.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;

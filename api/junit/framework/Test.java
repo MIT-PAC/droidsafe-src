@@ -1,6 +1,7 @@
 package junit.framework;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface Test {
     

@@ -1,12 +1,13 @@
 package java.sql;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Date;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Time extends Date {
     
@@ -157,7 +158,7 @@ String var2460B846747F8B22185AD8BE722266A5_50684734 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.178 -0400", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "3B6BC052A730CD4CC839ACA88FCF6674")
     private void format(int date, int digits, StringBuilder sb) {
         addTaint(sb.getTaint());

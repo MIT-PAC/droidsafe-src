@@ -1,11 +1,12 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.util.LocaleUtil;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TextDirectionHeuristics {
     
@@ -16,7 +17,7 @@ public class TextDirectionHeuristics {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static TriState isRtlText(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
@@ -30,7 +31,7 @@ public class TextDirectionHeuristics {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static TriState isRtlTextOrFormat(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
@@ -58,6 +59,7 @@ public class TextDirectionHeuristics {
 
         private TextDirectionAlgorithm mAlgorithm;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.746 -0400", hash_original_method = "78BC1D5C61B057EE1329E0F2DC6F9F5C", hash_generated_method = "05B6DD8753C7F8E313E2DF2F8649E7E1")
         public  TextDirectionHeuristicImpl(TextDirectionAlgorithm algorithm) {
             mAlgorithm = algorithm;
@@ -70,6 +72,7 @@ public class TextDirectionHeuristics {
         abstract protected boolean defaultIsRtl();
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.747 -0400", hash_original_method = "B61CE3C920740D11C38763E0606997ED", hash_generated_method = "9D33E584F0529D0307B0980BAB99DDD4")
         @Override
         public boolean isRtl(char[] chars, int start, int count) {
@@ -102,6 +105,7 @@ public class TextDirectionHeuristics {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.748 -0400", hash_original_method = "F9BBF1A80AA076481C35E4EEAF375E25", hash_generated_method = "FC340C4380C8AA584FE79B3381C89BC1")
         private boolean doCheck(char[] chars, int start, int count) {
             addTaint(count);
@@ -142,6 +146,7 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
 
         private boolean mDefaultIsRtl;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.749 -0400", hash_original_method = "DF39989E195592DC6431878B17C9155B", hash_generated_method = "1C0C94CAFACB26E5AAF7AB15601AF2EB")
         private  TextDirectionHeuristicInternal(TextDirectionAlgorithm algorithm,
                 boolean defaultIsRtl) {
@@ -153,7 +158,7 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.750 -0400", hash_original_method = "F33559B09616EA1059BD515D9BD28DCA", hash_generated_method = "3B84FEBF18F0D69B3FB54637BCA36559")
         @Override
         protected boolean defaultIsRtl() {
@@ -171,6 +176,7 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
     
     public static class FirstStrong implements TextDirectionAlgorithm {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.750 -0400", hash_original_method = "77800305F201A2CE86A750D63435A8FC", hash_generated_method = "BD69D77294A463FBAD983B34950F9BCE")
         private  FirstStrong() {
             // ---------- Original Method ----------
@@ -212,6 +218,7 @@ TriState varDC838461EE2FA0CA4C9BBB70A15456B0_770460623 =             result;
 
         private boolean mLookForRtl;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.753 -0400", hash_original_method = "CE1C7FC082B7BD7DCEB5DEACBA006400", hash_generated_method = "FBA640D39B46307F538717C3F8D5574E")
         private  AnyStrong(boolean lookForRtl) {
             this.mLookForRtl = lookForRtl;

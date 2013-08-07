@@ -1,6 +1,7 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.HashMap;
@@ -24,13 +25,14 @@ import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ApplicationThreadNative extends Binder implements IApplicationThread {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.741 -0400", hash_original_method = "94F554AA12869316A649B35CDD2C48B7", hash_generated_method = "7133F8D8ECAF77EA1D7A82265BA8BB74")
     public  ApplicationThreadNative() {
         attachInterface(this, descriptor);
@@ -39,6 +41,7 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
     }
 
     
+    @DSModeled(DSC.BAN)
     static public IApplicationThread asInterface(IBinder obj) {
         if (obj == null) {
             return null;
@@ -52,7 +55,7 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.754 -0400", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "9D01222C3F4FF1949B4F57900166ED54")
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
@@ -620,7 +623,7 @@ switch(code){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.760 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "7B20D4AB0ACCBF3697537E4F27639500")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_754923137 =         this;

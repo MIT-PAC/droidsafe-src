@@ -1,13 +1,14 @@
 package org.bouncycastle.util.encoders;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Base64Encoder implements Encoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.285 -0400", hash_original_field = "26679137600502689C8A177F50F164AC", hash_generated_field = "477367DCA11A991FB18CE4EB6F2C01EF")
@@ -118,7 +119,7 @@ switch(modulus){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.288 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "E892F4AC16155E798D32FE2FE0958F14")
     private boolean ignore(
         char    c) {
@@ -184,6 +185,7 @@ switch(modulus){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.291 -0400", hash_original_method = "1225BA5A886EEC007862013ADD842450", hash_generated_method = "A1787F1CEBC703C244CCB67761E928AE")
     private int nextI(byte[] data, int i, int finish) {
         addTaint(finish);
@@ -256,6 +258,7 @@ switch(modulus){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.295 -0400", hash_original_method = "9E52D5CA91DB497317BE2B1E69827671", hash_generated_method = "1B4D8C574A35758920D159D0A2D80974")
     private int decodeLastBlock(OutputStream out, char c1, char c2, char c3, char c4) throws IOException {
         addTaint(c4);
@@ -306,6 +309,7 @@ switch(modulus){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.295 -0400", hash_original_method = "4A002F2B2C5A42BB007C07A5E9BC2D50", hash_generated_method = "DC06BE4C832B9D28A3C0F6E8E1180A09")
     private int nextI(String data, int i, int finish) {
         addTaint(finish);

@@ -1,6 +1,7 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.SocketException;
@@ -9,8 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import dalvik.system.SocketTagger;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 final class HttpConnectionPool {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.089 -0400", hash_original_field = "1ACBA9188A93F77D3F78F321F92C1912", hash_generated_field = "071E397744914F08240B3CDE573A9670")
@@ -20,6 +21,7 @@ final class HttpConnectionPool {
 
     private final HashMap<HttpConnection.Address, List<HttpConnection>> connectionPool = new HashMap<HttpConnection.Address, List<HttpConnection>>();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.089 -0400", hash_original_method = "40F2B2B572ACE3BCAAEC11C8662EC74A", hash_generated_method = "49065ACC2CF51AB84FE4EA2E33DE95CA")
     private  HttpConnectionPool() {
         String keepAlive = System.getProperty("http.keepAlive");

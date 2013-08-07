@@ -1,8 +1,9 @@
 package javax.xml.transform.stream;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
+
 
 class FilePathToURI {
     

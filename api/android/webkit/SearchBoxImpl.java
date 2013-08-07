@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,8 +14,8 @@ import org.json.JSONStringer;
 import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.WebViewCore.EventHub;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 final class SearchBoxImpl implements SearchBox {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.889 -0400", hash_original_field = "2F2828353527044AFD6820F84A8A1FAB", hash_generated_field = "4C7B3AD4D5F853385EAEBF459FCD952D")
@@ -149,6 +150,7 @@ final class SearchBoxImpl implements SearchBox {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.891 -0400", hash_original_method = "0E7A74EC5A809F6DFBB442DC7E16E1A0", hash_generated_method = "13865A76F2C331542A3537D969ED4FCC")
     private void dispatchEvent(String eventName, SearchBoxListener callback) {
         addTaint(callback.getTaint());
@@ -183,6 +185,7 @@ final class SearchBoxImpl implements SearchBox {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.891 -0400", hash_original_method = "5370F8C01605302B1467DBB9DF339726", hash_generated_method = "37AF8CFF5863D5F32B3AE6B870433E33")
     private void dispatchJs(String js) {
         addTaint(js.getTaint());
@@ -329,6 +332,7 @@ final class SearchBoxImpl implements SearchBox {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String jsonSerialize(String query) {
         JSONStringer stringer = new JSONStringer();
         try {

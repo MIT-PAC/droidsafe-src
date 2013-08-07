@@ -1,10 +1,11 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.SystemClock;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 class ConnectionThread extends Thread {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.009 -0400", hash_original_field = "793D188D0FFF23A6E7CC768DA7F9B840", hash_generated_field = "E966A0C9EF7AB198CDE57AFDD0799F34")
@@ -55,6 +56,7 @@ class ConnectionThread extends Thread {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.011 -0400", hash_original_method = "A5666AE0946DEF68E8FF606C0FDBCF6D", hash_generated_method = "675E9DAA678FFBEB722D5811FBE321FA")
      void requestStop() {
         synchronized
@@ -70,6 +72,7 @@ class ConnectionThread extends Thread {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.013 -0400", hash_original_method = "CA4464BE27725D08DF2A2ECD7DD50C0A", hash_generated_method = "321CAEEC0AA72FE52E3C35F0897689E5")
     public void run() {
         android.os.Process.setThreadPriority(
@@ -141,6 +144,7 @@ class ConnectionThread extends Thread {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.014 -0400", hash_original_method = "E5691DA5C4D558B8174DB10F2BE5CF59", hash_generated_method = "EFB5FC216A70EBE23328036651E18469")
     public synchronized String toString() {
         String con = mConnection == null ? "" : mConnection.toString();

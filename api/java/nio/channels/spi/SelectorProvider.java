@@ -1,6 +1,7 @@
 package java.nio.channels.spi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.SelectorProviderImpl;
 import java.nio.channels.Channel;
@@ -10,10 +11,10 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.ServiceLoader;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class SelectorProvider {
     
@@ -37,6 +38,7 @@ public abstract class SelectorProvider {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static SelectorProvider loadProviderByJar() {
         for (SelectorProvider provider : ServiceLoader.load(SelectorProvider.class)) {
             return provider;

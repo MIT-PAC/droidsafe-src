@@ -1,14 +1,15 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class TransceiveResult implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.443 -0400", hash_original_field = "313AEF43C06545BCEAC152A1C285EBE1", hash_generated_field = "898029569E5207542E445F1B5791BBF2")
@@ -28,7 +29,7 @@ public final class TransceiveResult implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.445 -0400", hash_original_method = "B3157A12430DB97B40C44B33A50DEAC2", hash_generated_method = "EE76566F72F9F0420B6A9ED80F9EF1D4")
     public byte[] getResponseOrThrow() throws IOException {
 switch(mResult){
@@ -63,7 +64,7 @@ switch(mResult){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.446 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "102967875BB0B1FDE07E55926254A156")
     @Override
     public int describeContents() {
@@ -75,7 +76,7 @@ switch(mResult){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.446 -0400", hash_original_method = "561D73418397BF7826CB5BA2EBF58A4C", hash_generated_method = "F395845E4EEF769009C9B78FC7A0C13B")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

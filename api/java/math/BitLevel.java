@@ -1,12 +1,14 @@
 package java.math;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
 
 class BitLevel {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.834 -0400", hash_original_method = "128537E4DA15C667DA21928E26685CE7", hash_generated_method = "8EBB079821786F638DB2E6786CCDDD62")
     private  BitLevel() {
         // ---------- Original Method ----------

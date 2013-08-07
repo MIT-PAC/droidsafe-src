@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public final class Integer extends Number implements Comparable<Integer> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.131 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
@@ -53,13 +54,13 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int compare(int lhs, int rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static NumberFormatException invalidInt(String s) {
         throw new NumberFormatException("Invalid int: \"" + s + "\"");
     }
@@ -253,7 +254,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int parse(String string, int offset, int radix, boolean negative) throws NumberFormatException {
         int max = Integer.MIN_VALUE / radix;
         int result = 0, length = string.length();

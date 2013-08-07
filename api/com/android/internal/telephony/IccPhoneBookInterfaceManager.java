@@ -1,6 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -10,10 +11,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.ServiceManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.208 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
@@ -318,6 +319,7 @@ List<AdnRecord> varFE65894448998F2F8382F47C41BDE1F8_2011139694 =         records
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.213 -0400", hash_original_method = "6710BA71BBE2AF73325E69DE756B39B5", hash_generated_method = "11D28AF2DF48BC47A168B773F3050490")
     private int updateEfForIccType(int efid) {
         addTaint(efid);

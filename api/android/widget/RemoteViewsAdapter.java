@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -23,10 +24,10 @@ import android.view.ViewGroup;
 import com.android.internal.widget.IRemoteViewsAdapterConnection;
 import com.android.internal.widget.IRemoteViewsFactory;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -122,6 +123,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.897 -0400", hash_original_method = "34DA0EC600A8592A38E8BB75F944416C", hash_generated_method = "350ABD5DD82BCF2104E98A765693617E")
     private void loadNextIndexInBackground() {
         mWorkerQueue.post(new Runnable() {        
@@ -171,6 +173,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.897 -0400", hash_original_method = "E1B2571B376275F4805513EEE2D5A305", hash_generated_method = "7603A905450E58DDDDCFCBA113D1DED7")
     private void processException(String method, Exception e) {
         addTaint(e.getTaint());
@@ -211,6 +214,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.899 -0400", hash_original_method = "49F084C42EF1DBBC4522A49655FF79A1", hash_generated_method = "C94DF60BDA17E5A3472086883E948346")
     private void updateTemporaryMetaData() {
         IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
@@ -398,6 +402,7 @@ Object var540C13E9E156B687226421B24F2DF178_1383272812 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.904 -0400", hash_original_method = "A43180B0154FDAA6CD8755A8245F56F8", hash_generated_method = "8F9BB20FF8DBA4D79EA273A4BEF92B49")
     private int getConvertViewTypeId(View convertView) {
         addTaint(convertView.getTaint());
@@ -567,6 +572,7 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_1382011465 =                 loadingVie
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.907 -0400", hash_original_method = "2DAA079F2CA383CBC7C346F3BCA57054", hash_generated_method = "EF732E814BD0FA51CFF73A21F74E2D03")
     private void onNotifyDataSetChanged() {
         IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
@@ -694,6 +700,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.911 -0400", hash_original_method = "D880D88722499DDF7E3D229A00764CBB", hash_generated_method = "8943C3C3F64C9B76CBBF6A8AA4DF52C7")
     private void enqueueDeferredUnbindServiceMessage() {
         mMainQueue.removeMessages(sUnbindServiceMessageType);
@@ -704,6 +711,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.911 -0400", hash_original_method = "FD0BDD14354B6205FD4E5E773D9BDB6D", hash_generated_method = "9077FE2114AEA08C6DBF9D5A81F431FA")
     private boolean requestBindService() {
         if(!mServiceConnection.isConnected())        
@@ -1190,6 +1198,7 @@ for(RemoteViewsFrameLayout ref : refs)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.920 -0400", hash_original_method = "6B923D58C715B2F45FA359F8E18C8A1F", hash_generated_method = "39A0A2CF4AC79563FBCD637BAF27486D")
         private RemoteViewsFrameLayout createLoadingView(int position, View convertView,
                 ViewGroup parent) {
@@ -1474,6 +1483,7 @@ RemoteViewsIndexMetaData var540C13E9E156B687226421B24F2DF178_267245487 =        
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.923 -0400", hash_original_method = "1379738D9DE8B74BE60C7743F79F9609", hash_generated_method = "3314531A2D749D7A14602A62DF96502B")
         private int getRemoteViewsBitmapMemoryUsage() {
             int mem = 0;
@@ -1500,6 +1510,7 @@ for(Integer i : mIndexRemoteViews.keySet())
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.923 -0400", hash_original_method = "61B11826B25E039221975DE702D21975", hash_generated_method = "B2AED4713EE0E13BE3D6BF851634E470")
         private int getFarthestPositionFrom(int pos) {
             addTaint(pos);

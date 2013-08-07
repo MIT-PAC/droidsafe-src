@@ -1,14 +1,16 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 
 import org.apache.http.protocol.HTTP;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public final class EncodingUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.507 -0400", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "82860B6827C330C84D8DCE75D0CA6840")
     private  EncodingUtils() {
         // ---------- Original Method ----------

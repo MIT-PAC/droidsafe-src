@@ -1,17 +1,19 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class NfcManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.311 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "ED79E91C532F555A55D38CC488E317EF")
 
     private NfcAdapter mAdapter;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.312 -0400", hash_original_method = "5612BA010CEBE1CDB104E5EE130CB87B", hash_generated_method = "F66E5EB895C65AEF98AEB29DE59572AC")
     public  NfcManager(Context context) {
         addTaint(context.getTaint());

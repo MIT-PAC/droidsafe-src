@@ -1,6 +1,7 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,10 +9,10 @@ import java.util.Map;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.Bundle;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class AbstractCursor implements CrossProcessCursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.362 -0400", hash_original_field = "DEB4CF927428CCF05DDA4EF4FEB1005E", hash_generated_field = "6D0681B9CC29887CCBA4001347A5783B")
@@ -156,6 +157,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.374 -0400", hash_original_method = "5696E4CEEE521AD3C05FDA1D1F1B30F5", hash_generated_method = "74E4CAB50C46EC8E9A050BD6E92262EB")
     protected void onDeactivateOrClose() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -577,6 +579,7 @@ String var8C8536068CF525DD3D9E0466509BC4FE_1398613511 =         getColumnNames()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.393 -0400", hash_original_method = "C09BE1AB0F1EB5BF63EC2A314B1EC0E8", hash_generated_method = "362A8921CADC3161CC20FD83BD5E4602")
     protected void notifyDataSetChange() {
         mDataSetObservable.notifyChanged();
@@ -585,7 +588,7 @@ String var8C8536068CF525DD3D9E0466509BC4FE_1398613511 =         getColumnNames()
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.394 -0400", hash_original_method = "9CE71984FA039D61518575C1361CCA79", hash_generated_method = "B19699EA932930F5D24E429E21429FF5")
     protected DataSetObservable getDataSetObservable() {
 DataSetObservable var1889C2832C6671EE87AE3F20070859ED_1280497981 =         mDataSetObservable;
@@ -688,7 +691,7 @@ Uri var2BA43AFCFCD662CAFF1EE24368377DEE_1842729680 =         mNotifyUri;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.400 -0400", hash_original_method = "FFD927D835EC033CA0D5789154520D3B", hash_generated_method = "598746C945848452E29BDC82DB3737FA")
     public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? Bundle.EMPTY : extras;

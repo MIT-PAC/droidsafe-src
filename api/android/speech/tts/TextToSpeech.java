@@ -1,6 +1,7 @@
 package android.speech.tts;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -22,10 +23,10 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.text.TextUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TextToSpeech {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.470 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -120,7 +121,7 @@ public class TextToSpeech {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.472 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "5AF6905AA3044CDEF025D22B7C1CEDD0")
     private String getPackageName() {
 String var5601F77C1E784C31FA233AB799182FA6_1643098705 =         mPackageName;
@@ -186,6 +187,7 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_843365152 =             mServiceConnection
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.473 -0400", hash_original_method = "001A57975E2E50499F283478CA48737A", hash_generated_method = "99FA7B56A0A7DF121F6A686013D0F9D7")
     private int initTts() {
         if(mRequestedEngine != null && mEnginesHelper.isEngineInstalled(mRequestedEngine))        
@@ -231,6 +233,7 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_843365152 =             mServiceConnection
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.474 -0400", hash_original_method = "5177E4BA973A00FB9C33DC0A5DBEACDB", hash_generated_method = "C8D474BC54338265C8795A39BD2C1210")
     private boolean connectToEngine(String engine) {
         addTaint(engine.getTaint());
@@ -265,6 +268,7 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_843365152 =             mServiceConnection
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.474 -0400", hash_original_method = "16B0CCB3D7329F5127962CE558D4D17C", hash_generated_method = "E21FFB2444D259D2156403B08D3C8F87")
     private void dispatchOnInit(int result) {
         addTaint(result);
@@ -403,7 +407,7 @@ Void var540C13E9E156B687226421B24F2DF178_1214196210 =             null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.477 -0400", hash_original_method = "276BC175828DCE484EB0703A6A0D8E9B", hash_generated_method = "A29D91D66E98AD3A3417E4FF58164A5F")
     private Uri makeResourceUri(String packageName, int resourceId) {
         addTaint(resourceId);
@@ -889,6 +893,7 @@ Integer varC17144DAEB3B66EB3DD5823B0FC8BDAB_1073849130 =             service.syn
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.484 -0400", hash_original_method = "F4A729CBEB92036D830EC51C9E6B27A9", hash_generated_method = "9309CF08BD54BD7F6007A875E3D93999")
     private Bundle getParams(HashMap<String, String> params) {
         addTaint(params.getTaint());
@@ -927,6 +932,7 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_195731346 =             mParams;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.484 -0400", hash_original_method = "CA756292003AA5F2AACD5FD8062D880F", hash_generated_method = "83FC21CCF2FEF6EF908F8F8C5B3944CF")
     private void copyStringParam(Bundle bundle, HashMap<String, String> params, String key) {
         addTaint(key.getTaint());
@@ -945,6 +951,7 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_195731346 =             mParams;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.484 -0400", hash_original_method = "D148C993B4D17B611EC6A14A9B3B3D7B", hash_generated_method = "0BAF632F1BCB4B1B2EB236F5BF94314F")
     private void copyIntParam(Bundle bundle, HashMap<String, String> params, String key) {
         addTaint(key.getTaint());
@@ -974,6 +981,7 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_195731346 =             mParams;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.484 -0400", hash_original_method = "335CA474B2AA628361250A653672DD72", hash_generated_method = "0F4C694C627AD9B09B48050637C517F4")
     private void copyFloatParam(Bundle bundle, HashMap<String, String> params, String key) {
         addTaint(key.getTaint());

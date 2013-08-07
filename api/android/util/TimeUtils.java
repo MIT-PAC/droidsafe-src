@@ -1,6 +1,7 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -16,13 +17,14 @@ import android.content.res.XmlResourceParser;
 
 import com.android.internal.util.XmlUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TimeUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.275 -0400", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "011199797FD3B540ED86DA17205AFF1D")
     public  TimeUtils() {
         // ---------- Original Method ----------
@@ -85,7 +87,7 @@ public class TimeUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private int accumField(int amt, int suffix, boolean always, int zeropad) {
         if (amt > 99 || (always && zeropad >= 3)) {
             return 3+suffix;
@@ -100,7 +102,7 @@ public class TimeUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private int printField(char[] formatStr, int amt, char suffix, int pos,
             boolean always, int zeropad) {
         if (always || amt > 0) {
@@ -126,6 +128,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int formatDurationLocked(long duration, int fieldLen) {
         if (sFormatStr.length < fieldLen) {
             sFormatStr = new char[fieldLen];
@@ -189,6 +192,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long duration, StringBuilder builder) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, 0);
@@ -197,6 +201,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, fieldLen);
@@ -205,11 +210,13 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long duration, PrintWriter pw) {
         formatDuration(duration, pw, 0);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void formatDuration(long time, long now, PrintWriter pw) {
         if (time == 0) {
             pw.print("--");

@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -9,10 +10,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TableRow extends LinearLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.907 -0400", hash_original_field = "94828D8F312B8AB3147B78D966A52731", hash_generated_field = "D9A8A35CE61AAB048FD0AED37F8CBEEB")
@@ -54,7 +55,7 @@ public class TableRow extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.908 -0400", hash_original_method = "B661864F11557636EAA2570C7969C441", hash_generated_method = "E395E78C0A9DF3EE12C41B6902B70F99")
     private void initTableRow() {
         OnHierarchyChangeListener oldListener = mOnHierarchyChangeListener;
@@ -85,7 +86,7 @@ public class TableRow extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.909 -0400", hash_original_method = "2321E3900029B8CC8621E7719358502D", hash_generated_method = "B21CC0B2CFDC5618A00642534AB09F2F")
      void setColumnCollapsed(int columnIndex, boolean collapsed) {
         addTaint(collapsed);
@@ -182,7 +183,7 @@ View var540C13E9E156B687226421B24F2DF178_795791513 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.912 -0400", hash_original_method = "4E55577CF2059CB35F704B8E869B19CD", hash_generated_method = "DFBA4D5337AB401D5827AF7467BF4E0D")
     private void mapIndexAndColumns() {
         if(mColumnToChildIndex == null)        
@@ -350,7 +351,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.918 -0400", hash_original_method = "F97D9B3BAD7BE3BFEC03988909D08EE2", hash_generated_method = "289734CBD943B093CFD3A0D92535F3B8")
      int[] getColumnsWidths(int widthMeasureSpec) {
         addTaint(widthMeasureSpec);
@@ -401,7 +402,7 @@ switch(layoutParams.width){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.919 -0400", hash_original_method = "00077407B55623ED0FDC934F0F688424", hash_generated_method = "B465DB1BE82009FAFB6CD098F66B2E3D")
      void setColumnsWidthConstraints(int[] columnWidths) {
         if(columnWidths == null || columnWidths.length < getVirtualChildCount())        
@@ -639,7 +640,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.923 -0400", hash_original_method = "366CDDD217CE23168243D85764F583BC", hash_generated_method = "DDC70C8E2E013ACEDF81D1F8C000792F")
         private void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
             this.listener = listener;

@@ -1,6 +1,7 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.net.Socket;
 import java.net.SocketException;
 
@@ -12,10 +13,10 @@ import android.os.ServiceManager;
 import com.android.server.NetworkManagementSocketTagger;
 
 import dalvik.system.SocketTagger;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class TrafficStats {
@@ -42,11 +43,13 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void setThreadStatsUid(int uid) {
         NetworkManagementSocketTagger.setThreadSocketStatsUid(uid);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void clearThreadStatsUid() {
         NetworkManagementSocketTagger.setThreadSocketStatsUid(-1);
     }
@@ -64,6 +67,7 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void startDataProfiling(Context context) {
         synchronized (sProfilingLock) {
             if (sActiveProfilingStart != null) {
@@ -74,6 +78,7 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkStats stopDataProfiling(Context context) {
         synchronized (sProfilingLock) {
             if (sActiveProfilingStart == null) {
@@ -253,6 +258,7 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static NetworkStats getDataLayerSnapshotForUid(Context context) {
         final INetworkStatsService statsService = INetworkStatsService.Stub.asInterface(
                 ServiceManager.getService(Context.NETWORK_STATS_SERVICE));

@@ -1,10 +1,12 @@
 package java.math;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 class Logical {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.108 -0400", hash_original_method = "E0A3DE35724A26B6DFF41660E2732E13", hash_generated_method = "F49FF7A55DC565304B6F8190D337CD80")
     private  Logical() {
         // ---------- Original Method ----------

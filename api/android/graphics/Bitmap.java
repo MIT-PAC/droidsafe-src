@@ -1,6 +1,7 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.OutputStream;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
@@ -10,10 +11,10 @@ import java.nio.ShortBuffer;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.DisplayMetrics;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Bitmap implements Parcelable {
@@ -79,7 +80,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void setDefaultDensity(int density) {
         sDefaultDensity = density;
     }
@@ -109,7 +110,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.790 -0400", hash_original_method = "30CA035C727F2D2385273CE8F87AAA35", hash_generated_method = "84E478FF6E7328C663D71E05433F8696")
     public void setNinePatchChunk(byte[] chunk) {
         mNinePatchChunk = chunk;
@@ -160,7 +161,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.791 -0400", hash_original_method = "C3E161F555FEE180C4B024634334055B", hash_generated_method = "074A2EEFAA984114CE0F94EC4EDE71B9")
     private void checkRecycled(String errorMessage) {
         addTaint(errorMessage.getTaint());
@@ -177,7 +178,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkXYSign(int x, int y) {
         if (x < 0) {
             throw new IllegalArgumentException("x must be >= 0");
@@ -188,7 +189,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void checkWidthHeight(int width, int height) {
         if (width <= 0) {
             throw new IllegalArgumentException("width must be > 0");
@@ -455,7 +456,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
 	private static Bitmap createBitmap(int width, int height, Config config, boolean hasAlpha) {
         Bitmap bm = new Bitmap();
         bm.setHeight(height);
@@ -649,7 +650,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static public int scaleFromDensity(int size, int sdensity, int tdensity) {
         if (sdensity == DENSITY_NONE || sdensity == tdensity) {
             return size;
@@ -773,7 +774,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.804 -0400", hash_original_method = "F09D942FEC4FE9E75A7F8BD6FD9F7E4F", hash_generated_method = "B88B455EFD345BABB707C580458C9DD9")
     private void checkPixelAccess(int x, int y) {
         addTaint(y);

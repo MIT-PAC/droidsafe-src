@@ -1,10 +1,11 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import droidsafe.annotations.*;
+
 
 public class RotateAnimation extends Animation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "A15722F5083687A94AEBECFD3C44711E", hash_generated_field = "F09C4FDC9F6C8A1D9CB749F5F6E5EB01")

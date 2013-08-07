@@ -1,12 +1,13 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class QueuedWork {
     
@@ -17,6 +18,7 @@ public class QueuedWork {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static ExecutorService singleThreadExecutor() {
         synchronized (QueuedWork.class) {
             if (sSingleThreadExecutor == null) {
@@ -27,16 +29,19 @@ public class QueuedWork {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void add(Runnable finisher) {
         sPendingWorkFinishers.add(finisher);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void remove(Runnable finisher) {
         sPendingWorkFinishers.remove(finisher);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void waitToFinish() {
         Runnable toFinish;
         while ((toFinish = sPendingWorkFinishers.poll()) != null) {
@@ -45,6 +50,7 @@ public class QueuedWork {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean hasPendingWork() {
         return !sPendingWorkFinishers.isEmpty();
     }

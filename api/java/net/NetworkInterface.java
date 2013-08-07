@@ -1,6 +1,7 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.AF_INET;
 import static libcore.io.OsConstants.EADDRNOTAVAIL;
 import static libcore.io.OsConstants.IFF_LOOPBACK;
@@ -26,10 +27,10 @@ import java.util.List;
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class NetworkInterface extends Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.890 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -72,7 +73,7 @@ public final class NetworkInterface extends Object {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.893 -0400", hash_original_method = "BFC291A64FD07504405088442BFF58AA", hash_generated_method = "DAE52D04EDB6774999043A3A733EAD6B")
     public int getIndex() {
         int varFE04D40BAE669C85DC9915B41E74EBC1_1959380206 = (interfaceIndex);
@@ -185,6 +186,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isValidInterfaceName(String interfaceName) {
         for (String validName : new File("/sys/class/net").list()) {
             if (interfaceName.equals(validName)) {
@@ -195,6 +197,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int readIntFile(String path) throws SocketException {
         try {
             String s = IoUtils.readFileAsString(path).trim();
@@ -209,6 +212,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static SocketException rethrowAsSocketException(Exception ex) throws SocketException {
         SocketException result = new SocketException();
         result.initCause(ex);
@@ -229,6 +233,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     public static NetworkInterface getByIndex(int index) throws SocketException {
         String name = Libcore.os.if_indextoname(index);
         if (name == null) {
@@ -243,6 +248,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static List<NetworkInterface> getNetworkInterfacesList() throws SocketException {
         String[] interfaceNames = new File("/sys/class/net").list();
         NetworkInterface[] interfaces = new NetworkInterface[interfaceNames.length];
@@ -426,6 +432,7 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_686297012 =         parent;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.897 -0400", hash_original_method = "D18447285D6021856765D65DFF4990EE", hash_generated_method = "480A56EB1B5B33DBF44FE84F30D90341")
     private boolean hasFlag(int mask) throws SocketException {
         addTaint(mask);

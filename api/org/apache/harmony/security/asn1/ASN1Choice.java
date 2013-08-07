@@ -1,6 +1,7 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -8,10 +9,10 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class ASN1Choice extends ASN1Type {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.226 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "24AC453E9AFABA0FC5B4FCBCBDACD1C1")
@@ -75,6 +76,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.229 -0400", hash_original_method = "781B2DE1C4956E14672C3431AF37B058", hash_generated_method = "CE9E4D9FF3204FDE1CAB8CDBA60E3153")
     private void addIdentifier(TreeMap<BigInteger, BigInteger> map, int identifier, int index) {
         addTaint(index);

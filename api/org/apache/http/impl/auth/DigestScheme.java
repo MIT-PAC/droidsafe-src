@@ -1,6 +1,7 @@
 package org.apache.http.impl.auth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +20,10 @@ import org.apache.http.message.BufferedHeader;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EncodingUtils;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DigestScheme extends RFC2617Scheme {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.447 -0400", hash_original_field = "D9A22D7A8178D5B42A8750123CBFE5B1", hash_generated_field = "F226924E4DACD94115C3FB4783C05FA4")
@@ -157,6 +158,7 @@ String varFD1934E0BA3A06FC5A424DB3DDD067C8_1414291662 =         "digest";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.448 -0400", hash_original_method = "9DF20B77158B98071C5FA39937248DA7", hash_generated_method = "A164DA1D8E604CABAA181CEBF83CD76A")
     private String getCnonce() {
         if(this.cnonce == null)        
@@ -418,7 +420,7 @@ Header varA538F19AF489509DED0A3819B3004747_1672079264 =         new BufferedHead
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.450 -0400", hash_original_method = "4B7F5D1CEF78CAAD9B937EECFEA67886", hash_generated_method = "E984C935B3A33A2414CB78D57A342B79")
     private String getQopVariantString() {
         String qopOption;
@@ -444,6 +446,7 @@ String varA9B2AEB85CC9079FF2659ECC6AA29225_437063021 =         qopOption;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String encode(byte[] binaryData) {
         if (binaryData.length != 16) {
             return null;

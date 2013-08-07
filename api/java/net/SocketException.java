@@ -1,10 +1,11 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class SocketException extends IOException {
     
@@ -22,6 +23,7 @@ public class SocketException extends IOException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.512 -0400", hash_original_method = "001E874571014D08FBFC41C7A23D02C6", hash_generated_method = "DE0A9D899FEC1F14602A6840D8DD9661")
     public  SocketException(Throwable cause) {
         super(cause);
@@ -30,6 +32,7 @@ public class SocketException extends IOException {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.512 -0400", hash_original_method = "1ACC59770DF5E02FD5C6C8AE56F288AE", hash_generated_method = "91816ADDDBE039F2CBDBF57FB638A916")
     public  SocketException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

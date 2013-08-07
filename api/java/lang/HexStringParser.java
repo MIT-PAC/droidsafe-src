@@ -1,13 +1,14 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class HexStringParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.996 -0400", hash_original_field = "94B91A0CFAEF3637DD641B0B0FB4F9B1", hash_generated_field = "3D1EE3F91B74E8DB430F2C1AC83A33D3")
@@ -73,6 +74,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.999 -0400", hash_original_method = "596249BB373F56930CF8BA31CC9F5A97", hash_generated_method = "28D2258EAD90CB1AE1E332ED006DECA3")
     private long parse(String hexString, boolean isDouble) {
         addTaint(isDouble);
@@ -114,6 +116,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.999 -0400", hash_original_method = "974D688FE86E3244D16C6508E4669FC6", hash_generated_method = "13BFEC942BAEF96FE6E364B15622A4E9")
     private void parseHexSign(String signStr) {
         this.sign = signStr.equals("-") ? 1 : 0;
@@ -122,6 +125,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.000 -0400", hash_original_method = "F54ED53D7D015179F6121F71E1763DC9", hash_generated_method = "687BB5993F994A771E1EE49922F291B5")
     private void parseExponent(String exponentStr) {
         char leadingChar = exponentStr.charAt(0);
@@ -154,7 +158,7 @@ final class HexStringParser {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.001 -0400", hash_original_method = "661AC685F2EB81E51AC0AC93731FE290", hash_generated_method = "494D9E2219A5FCF5279A3BB5E5CD4B13")
     private void parseMantissa(String significantStr) {
         addTaint(significantStr.getTaint());
@@ -198,7 +202,7 @@ final class HexStringParser {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.002 -0400", hash_original_method = "E5B2CE5158E0191EB1B4342B503B503C", hash_generated_method = "79359CB12970F2F3F56D34C9271ED5F0")
     private void setInfinite() {
         exponent = MAX_EXPONENT;
@@ -209,7 +213,7 @@ final class HexStringParser {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.002 -0400", hash_original_method = "B9AC8BA0C31319FE099B6A6C8A6F4144", hash_generated_method = "243374FBE0863DE96BE7168DB3C6FD32")
     private void setZero() {
         exponent = 0;
@@ -220,6 +224,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.003 -0400", hash_original_method = "C2A5C13C47CD41059D53CDBF46698CF7", hash_generated_method = "29DEE53CB7C05699741B7C9542535030")
     private void checkedAddExponent(long offset) {
         addTaint(offset);
@@ -244,6 +249,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.003 -0400", hash_original_method = "9CA1C86CDD20337336DE019762D1A2F8", hash_generated_method = "B10F16C2067DCAF25262DC6DD14D5AE6")
     private void processNormalNumber() {
         int desiredWidth = MANTISSA_WIDTH + 2;
@@ -258,7 +264,7 @@ final class HexStringParser {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.004 -0400", hash_original_method = "C617BA86E331FAE3F2D53918109E2E13", hash_generated_method = "22ECB6F94BDF27D309EAC69063F53844")
     private void processSubNormalNumber() {
         int desiredWidth = MANTISSA_WIDTH + 1;
@@ -277,6 +283,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.004 -0400", hash_original_method = "330648F0D53116AAA430ECFB8E97D2A6", hash_generated_method = "D0FDCACB458D0A3BF4184F253BE06D53")
     private void fitMantissaInDesiredWidth(int desiredWidth) {
         int bitLength = countBitsLength(mantissa);
@@ -298,7 +305,7 @@ final class HexStringParser {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.005 -0400", hash_original_method = "40C79332802B26AD9210D4E26ECE1852", hash_generated_method = "AD3A7BE7F7E60A8AA641A809F1477C0B")
     private void discardTrailingBits(long num) {
         long mask = ~(-1L << num);
@@ -311,7 +318,7 @@ final class HexStringParser {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.005 -0400", hash_original_method = "BE1368BC0340B1F1D2FFF04FBC3A9E13", hash_generated_method = "3EB605AE18A4F8B425B8E1B5B168B3CB")
     private void round() {
         String result = abandonedNumber.replaceAll("0+", "");
@@ -346,6 +353,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.006 -0400", hash_original_method = "D2C62D141CD2F22FD7386D5422E8C46E", hash_generated_method = "F262249B57BF8EC24B2AF5A8C34E33CB")
     private String getNormalizedSignificand(String strIntegerPart, String strDecimalPart) {
         addTaint(strDecimalPart.getTaint());
@@ -369,7 +377,7 @@ String var41AB4756B20347E39831A25B31A6008E_1666985314 =         significand;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.007 -0400", hash_original_method = "08762480F158FA197B11D4959C7DC334", hash_generated_method = "CD14C00A3CB6B30882F604A361008FEC")
     private int getOffset(String strIntegerPart, String strDecimalPart) {
         addTaint(strDecimalPart.getTaint());
@@ -411,6 +419,7 @@ for(i = 0;i < strDecimalPart.length() && strDecimalPart.charAt(i) == '0';i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.007 -0400", hash_original_method = "20FEBC548021CA37C4B86DB718571102", hash_generated_method = "7C4CE8C7761EFE14FFFD99DDE3DD7199")
     private int countBitsLength(long value) {
         addTaint(value);

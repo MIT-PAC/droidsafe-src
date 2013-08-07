@@ -1,6 +1,7 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Random;
 
 import android.content.Context;
@@ -8,10 +9,10 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class GridLayoutAnimationController extends LayoutAnimationController {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.979 -0400", hash_original_field = "29CD4D8FF8E5FB724D956AFF9C7C34F0", hash_generated_field = "629BDB9D286507ADB5AC44CEFC58428A")
@@ -227,7 +228,7 @@ switch(mDirectionPriority){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.986 -0400", hash_original_method = "C50C7512E3339F2A41AD9697D8F57632", hash_generated_method = "1A7FDF04EDEAD4BE994FA425ED034705")
     private int getTransformedColumnIndex(AnimationParameters params) {
         addTaint(params.getTaint());
@@ -280,7 +281,7 @@ switch(getOrder()){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.987 -0400", hash_original_method = "B94231C9BBDDC40F852ECD0311BD9DAC", hash_generated_method = "F0B46A70D1739178918832BF7AC50BD4")
     private int getTransformedRowIndex(AnimationParameters params) {
         addTaint(params.getTaint());

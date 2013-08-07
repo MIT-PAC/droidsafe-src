@@ -1,6 +1,7 @@
 package com.android.internal.telephony.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.net.sip.SipAudioCall;
 import android.os.SystemClock;
 import android.telephony.PhoneNumberUtils;
@@ -11,10 +12,10 @@ import com.android.internal.telephony.Connection;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.UUSInfo;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 abstract class SipConnectionBase extends Connection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.160 -0400", hash_original_field = "DF701BED26C9A6E82B434D3ADA19F19A", hash_generated_field = "D1359B5A0587476130FC171DA764AC68")
@@ -290,7 +291,7 @@ String var1129EB08E954CD256D4EF667275C80A7_1038300088 =         postDialString.s
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.164 -0400", hash_original_method = "780D5AE6347C99C37A99BA1F1D4E1D8E", hash_generated_method = "A88AD19EFB9A9466F8AF36631B462DDA")
     private void log(String msg) {
         addTaint(msg.getTaint());

@@ -1,16 +1,17 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import libcore.util.CollectionUtils;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.513 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -81,6 +82,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.516 -0400", hash_original_method = "2C0349D8A755A992C407F37169B24D0C", hash_generated_method = "2023BF93A9F5BDCA687CAB745D1EC815")
     private  ThreadGroup() {
         this.name = "system";
@@ -156,6 +158,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.517 -0400", hash_original_method = "0DD772AEDB7C823C2E91BB6377F03397", hash_generated_method = "0490A50F6656BEF7A83869C88610E98B")
     private void add(ThreadGroup g) throws IllegalThreadStateException {
         addTaint(g.getTaint());
@@ -238,6 +241,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.519 -0400", hash_original_method = "CD7DBC672D59D1FAACCF6E53D785D515", hash_generated_method = "3ECD5C24D4B58AAD907F74000FD3A576")
     private void destroyIfEmptyDaemon() {
         synchronized
@@ -312,6 +316,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.522 -0400", hash_original_method = "7CEEE4341262A9B70C3A153644CFBA1A", hash_generated_method = "21357B32E23258070B1C32053BACA1C8")
     private int enumerateGeneric(Object[] enumeration, boolean recurse, int enumerationIndex,
             boolean enumeratingThreads) {
@@ -475,6 +480,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.525 -0400", hash_original_method = "38F7DBD37EF32F68FFB89F20FFE0F443", hash_generated_method = "E2BD07B0F9BBC705A50C049F9A6B8FED")
     private void list(int levels) {
         addTaint(levels);
@@ -514,6 +520,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.525 -0400", hash_original_method = "074D68FF209CFCAF4851113378206A39", hash_generated_method = "08A3D3C98405AB643B339EE874F88F51")
     private void indent(int levels) {
         addTaint(levels);
@@ -557,6 +564,7 @@ for(int i = 0;i < levels;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.526 -0400", hash_original_method = "7E8DD532FE0D28207249CA86D60AFD62", hash_generated_method = "E8F8F23876D2A1A5C1BAA9519A159170")
     private void remove(ThreadGroup g) {
         addTaint(g.getTaint());
@@ -677,6 +685,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.527 -0400", hash_original_method = "F86867FC41FDF8B0075237470EA8A18F", hash_generated_method = "4E9F3AE5DA6B4C2A19AD6408D2E86676")
     @SuppressWarnings("deprecation")
     private boolean stopHelper() {
@@ -742,6 +751,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.528 -0400", hash_original_method = "664C597F1857BDEBDBE75F13D3F147B7", hash_generated_method = "252FC4AD2ED1E1FB76DF5E8EC6620BC5")
     @SuppressWarnings("deprecation")
     private boolean suspendHelper() {

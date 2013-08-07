@@ -1,11 +1,12 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.view.KeyEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class KeyEventCompat {
     
@@ -50,6 +51,7 @@ public class KeyEventCompat {
         }
 
 
+        @DSModeled(DSC.BAN)
         private static int metaStateFilterDirectionalModifiers(int metaState,
                 int modifiers, int basic, int left, int right) {
             final boolean wantBasic = (modifiers & basic) != 0;

@@ -1,10 +1,11 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 public abstract class ActionMode {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.413 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "EE550655758D5D3DEE98B11CF176B67D")
@@ -86,7 +87,7 @@ Object varD6A25044F8E609F6CD67330C1523D33D_2083384432 =         mTag;
     public abstract MenuInflater getMenuInflater();
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.414 -0400", hash_original_method = "57D435E5DB9DAA5D06EB98D67411AC43", hash_generated_method = "6546395DC165CF5BEA2F074A5C4C79AB")
     public boolean isUiFocusable() {
         boolean varB326B5062B2F0E69046810717534CB09_1618027070 = (true);

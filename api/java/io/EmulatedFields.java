@@ -1,10 +1,11 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 
 class EmulatedFields {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.668 -0400", hash_original_field = "08BC91839408FD76B328A7D66B1893BD", hash_generated_field = "A5B1B9594264127836B75E232C6A005F")
@@ -66,6 +67,7 @@ for(int i = 0;i < fields.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.672 -0400", hash_original_method = "713D4075A7BFE1E9122D10F9179E2FD5", hash_generated_method = "2F55600566B109B65C8856341C9A4A49")
     private ObjectSlot findSlot(String fieldName, Class<?> fieldType) {
         addTaint(fieldType.getTaint());
@@ -130,6 +132,7 @@ ObjectSlot var540C13E9E156B687226421B24F2DF178_756942416 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.673 -0400", hash_original_method = "088986B40FCEDC0703EB00DECCCFDC49", hash_generated_method = "C7B68ECC315EDBA893A484BCCE7C9F30")
     private ObjectSlot findMandatorySlot(String name, Class<?> type) {
         addTaint(type.getTaint());

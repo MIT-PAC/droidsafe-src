@@ -1,6 +1,7 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -12,10 +13,10 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class NameConstraints extends ExtensionValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.536 -0400", hash_original_field = "6BD8EF16E6DBD287528E2D9E158E918B", hash_generated_field = "7C183FAE1C4A852E4C170F871CE896DE")
@@ -78,7 +79,7 @@ public final class NameConstraints extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.537 -0400", hash_original_method = "0B4FF50B5EED3F81B51F891413D3BBDC", hash_generated_method = "582E2E363AE87AB58D993B6DB1CE1EF6")
     private  NameConstraints(GeneralSubtrees permittedSubtrees,
                             GeneralSubtrees excludedSubtrees, byte[] encoding) {
@@ -116,7 +117,7 @@ public final class NameConstraints extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.540 -0400", hash_original_method = "D5B90ECD7CBCC97B9564754E474A01DA", hash_generated_method = "68F2E6CC77406B2CC339C3449F94A293")
     private void prepareNames() {
         permitted_names = new ArrayList[9];
@@ -152,7 +153,7 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.541 -0400", hash_original_method = "7F050A55683D0AA0C8EC41E810522931", hash_generated_method = "ABFD22D1E38ED5B9C71EEBF271EF4772")
     private byte[] getExtensionValue(X509Certificate cert, String OID) {
         addTaint(OID.getTaint());

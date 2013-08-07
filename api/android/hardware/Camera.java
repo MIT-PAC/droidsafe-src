@@ -1,6 +1,7 @@
 package android.hardware;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -19,10 +20,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class Camera {
@@ -328,6 +329,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.088 -0400", hash_original_method = "391D3A52EC92D78C4E563BC291F66937", hash_generated_method = "65B2FAC608BA8B2C7D9F97850E97E64C")
     private final void addCallbackBuffer(byte[] callbackBuffer, int msgType) {
         addTaint(msgType);
@@ -358,6 +360,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void postEventFromNative(Object camera_ref,
                                             int what, int arg1, int arg2, Object obj) {
         Camera c = (Camera)((WeakReference)camera_ref).get();
@@ -1002,6 +1005,7 @@ String var9557D146B68D5206BC412EBE575062A0_1011243323 =             flattened.to
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.115 -0400", hash_original_method = "FA0E250AABDDF6BDEB5118FEC7A9E23B", hash_generated_method = "50522582FBFBDAFF0EA06ADE679BED2F")
         private void set(String key, List<Area> areas) {
             addTaint(areas.getTaint());
@@ -1422,7 +1426,7 @@ List<Integer> varA6C147B71359DA5475968801A9984115_623042169 =             format
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.160 -0400", hash_original_method = "0D21EA7C9C6F68B56031C051598A724A", hash_generated_method = "BB593CA068FEE6FF62B400F61EAC83E7")
         private String cameraFormatForPixelFormat(int pixel_format) {
             addTaint(pixel_format);
@@ -1474,6 +1478,7 @@ String var540C13E9E156B687226421B24F2DF178_2088888571 =             null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.167 -0400", hash_original_method = "0B875F69B968394282E409325FD17632", hash_generated_method = "2A9807C3D864907ADC7DC905D9EAD9A3")
         private int pixelFormatForCameraFormat(String format) {
             addTaint(format.getTaint());
@@ -2171,6 +2176,7 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_684447347 =             splitArea
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.230 -0400", hash_original_method = "7DB6EA73F79E9017B4C9B1640096A943", hash_generated_method = "A3F7C4887EA06B2C350F14B6F4BBDC5C")
         private ArrayList<String> split(String str) {
             addTaint(str.getTaint());
@@ -2201,6 +2207,7 @@ ArrayList<String> varF0ABD9677D3E9B56568CE72C8E5EBEE5_414649150 =             su
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.232 -0400", hash_original_method = "5A3E8F077877CF7C521516BE6C2EF1CA", hash_generated_method = "51C3E8B5444A4D1C4C0E348947EDAAAE")
         private ArrayList<Integer> splitInt(String str) {
             addTaint(str.getTaint());
@@ -2240,6 +2247,7 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1127050585 =             
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.234 -0400", hash_original_method = "DBE0F4460205976847C38EA4BE2E4232", hash_generated_method = "F1A5A4F3FEDFD60C15A2BC22FAC21662")
         private void splitInt(String str, int[] output) {
             addTaint(output[0]);
@@ -2265,6 +2273,7 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1127050585 =             
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.235 -0400", hash_original_method = "2EDF646B69F6A8ADE910B245928A49CF", hash_generated_method = "705C7A4CD08E5D5E4024B1AA974372AD")
         private void splitFloat(String str, float[] output) {
             addTaint(output[0]);
@@ -2290,6 +2299,7 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1127050585 =             
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.236 -0400", hash_original_method = "32BB9C0678FCAB5D5E885CB3C8B58074", hash_generated_method = "A18D555CEBC59DF354CD90DC66924FD6")
         private float getFloat(String key, float defaultValue) {
             addTaint(defaultValue);
@@ -2315,6 +2325,7 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1127050585 =             
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.237 -0400", hash_original_method = "E02D965FA231D61DD75FA13C6C4B926A", hash_generated_method = "CF612279903AB3A98CFFC4D9687080C6")
         private int getInt(String key, int defaultValue) {
             addTaint(defaultValue);
@@ -2340,6 +2351,7 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1127050585 =             
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.238 -0400", hash_original_method = "E566E7E786C257334A0A0BEDDD18D728", hash_generated_method = "BA8B72A23D6B72B0C06E24860483BD81")
         private ArrayList<Size> splitSize(String str) {
             addTaint(str.getTaint());
@@ -2380,6 +2392,7 @@ ArrayList<Size> var0109ED1127796FF3F24C24AF57D9DD4A_1003417565 =             siz
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.239 -0400", hash_original_method = "864DD200C5D193B819BF575556422CF5", hash_generated_method = "382945FABDE4B8112AF601CA81FCD28A")
         private Size strToSize(String str) {
             addTaint(str.getTaint());
@@ -2416,6 +2429,7 @@ Size var540C13E9E156B687226421B24F2DF178_1108386558 =             null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.241 -0400", hash_original_method = "F39DEDF83E61AF664CA09AF99218A1A8", hash_generated_method = "A792FF89920F99DE024D0A8B8B333E94")
         private ArrayList<int[]> splitRange(String str) {
             addTaint(str.getTaint());
@@ -2470,6 +2484,7 @@ ArrayList<int[]> var747F178C24DED81A7324DAF447AA8FF7_1599427296 =             ra
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.243 -0400", hash_original_method = "9274EBB4EF409FF45187E570A4176C77", hash_generated_method = "7BBDCF60457C5518B3A37AC16041CB49")
         private ArrayList<Area> splitArea(String str) {
             addTaint(str.getTaint());
@@ -2521,6 +2536,7 @@ ArrayList<Area> varDC838461EE2FA0CA4C9BBB70A15456B0_1964382350 =             res
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.244 -0400", hash_original_method = "B277D938849565024C8C9B7FCA3C644C", hash_generated_method = "8F9FD361C18E774F22E3F953A1778AFB")
         private boolean same(String s1, String s2) {
             addTaint(s2.getTaint());

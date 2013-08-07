@@ -1,6 +1,7 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +13,10 @@ import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public abstract class PreferenceFragment extends Fragment implements PreferenceManager.OnPreferenceTreeClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.553 -0400", hash_original_field = "D1487CA8252F4AA0A95324AB4DDD5316", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
@@ -382,6 +383,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1749886173 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.557 -0400", hash_original_method = "F3FAECD811389BDC2E843E71360C928C", hash_generated_method = "F349548BD163925B029C749E56837C40")
     private void requirePreferenceManager() {
         if(mPreferenceManager == null)        
@@ -397,6 +399,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1749886173 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.557 -0400", hash_original_method = "6C1825C42631AE6FCE57D0240C5D762E", hash_generated_method = "62DE4FD95EC2A6D210170DB16FB47120")
     private void postBindPreferences() {
         if(mHandler.hasMessages(MSG_BIND_PREFERENCES))        
@@ -408,6 +411,7 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1749886173 =         mPreferenceM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.558 -0400", hash_original_method = "C0B8E456E30D2EFCEB5004C31E6B868F", hash_generated_method = "A1B59C19F26D008A601E442F66DB1A4A")
     private void bindPreferences() {
         final PreferenceScreen preferenceScreen = getPreferenceScreen();
@@ -435,6 +439,7 @@ ListView var344AE622895130273F3D062543816FEE_493275436 =         mList;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.558 -0400", hash_original_method = "E40145CD20E8491E945AD408A8CD6C13", hash_generated_method = "D448D1A003DA61678F64FFBF4055B7C3")
     private void ensureList() {
         if(mList != null)        

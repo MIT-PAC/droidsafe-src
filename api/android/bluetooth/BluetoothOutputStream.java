@@ -1,20 +1,21 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 final class BluetoothOutputStream extends OutputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.560 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
 
     private BluetoothSocket mSocket;
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.562 -0400", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "0A5737DCA899319336946825E00B057E")
       BluetoothOutputStream(BluetoothSocket s) {
         mSocket = s;
@@ -23,6 +24,7 @@ final class BluetoothOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.563 -0400", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "FD4CC8D718C262BFF2A44C717A5A00BB")
     public void close() throws IOException {
         mSocket.close();
@@ -31,6 +33,7 @@ final class BluetoothOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.565 -0400", hash_original_method = "B2E185518772C6191E25665E6AAA6FD5", hash_generated_method = "DB7D3D348BD69B0B7267AB6966C95701")
     public void write(int oneByte) throws IOException {
         addTaint(oneByte);
@@ -44,7 +47,7 @@ final class BluetoothOutputStream extends OutputStream {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.566 -0400", hash_original_method = "DFA6C29609C7324702E3356FC466F21E", hash_generated_method = "5EE4EFCE06D4A71690600266B069FD77")
     public void write(byte[] b, int offset, int count) throws IOException {
         addTaint(count);

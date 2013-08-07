@@ -1,6 +1,7 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IAudioService extends android.os.IInterface
 {

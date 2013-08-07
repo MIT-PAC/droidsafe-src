@@ -5,8 +5,13 @@ import android.content.Context;
 import android.view.FallbackEventHandler;
 import android.view.LayoutInflater;
 import android.view.Window;
+import android.view.WindowImpl;
 import android.view.WindowManagerPolicy;
-import droidsafe.annotations.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 
 public final class PolicyManager {
     
@@ -19,7 +24,9 @@ public final class PolicyManager {
     
     @DSModeled(DSC.BAN)
     public static Window makeNewWindow(Context context) {
-        return sPolicy.makeNewWindow(context);
+    	return new WindowImpl(context);
+    	//return new PhoneWindow(context);
+        //return sPolicy.makeNewWindow(context);
     }
 
     

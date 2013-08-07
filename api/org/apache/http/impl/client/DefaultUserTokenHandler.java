@@ -1,6 +1,7 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.security.Principal;
 
 import javax.net.ssl.SSLSession;
@@ -14,7 +15,7 @@ import org.apache.http.conn.ManagedClientConnection;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class DefaultUserTokenHandler implements UserTokenHandler {
     

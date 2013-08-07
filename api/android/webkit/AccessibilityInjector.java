@@ -1,6 +1,7 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -12,10 +13,10 @@ import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.webkit.WebViewCore.EventHub;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class AccessibilityInjector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
@@ -152,6 +153,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.109 -0400", hash_original_method = "3B116BB7452CBE6872A5E570E7D08041", hash_generated_method = "9C005923B78F09727FF20186EF2353DE")
     private void setCurrentAxis(int axis, boolean sendEvent, String contentDescription) {
         addTaint(contentDescription.getTaint());
@@ -175,6 +177,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.109 -0400", hash_original_method = "60CFCAC68A8E46E83373A5BD6B186EBB", hash_generated_method = "6F06C03EC59681E59269B33F0E12B5A7")
     private void prefromAxisTransition(int fromAxis, int toAxis, boolean sendEvent,
             String contentDescription) {
@@ -193,6 +196,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.110 -0400", hash_original_method = "FD1B61A72867CD7ABA9E4FFEC34475BF", hash_generated_method = "DCB68D1D900D15B9AEBD250E6D5F6F9A")
     private boolean traverseCurrentAxis(int direction, boolean sendEvent,
             String contentDescription) {
@@ -207,6 +211,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.111 -0400", hash_original_method = "D76A1821B2762F1F39CCFC0B2614F6FE", hash_generated_method = "ED4E3FD4F974992F714BF63331164651")
     private boolean traverseGivenAxis(int direction, int axis, boolean sendEvent,
             String contentDescription) {
@@ -291,6 +296,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.113 -0400", hash_original_method = "A93E1B734733D18B27A729FA6BA2D3D4", hash_generated_method = "3EC130305D7F73985F55B3A610D4C3C7")
     private void sendAccessibilityEvent(AccessibilityEvent event) {
         addTaint(event.getTaint());
@@ -315,6 +321,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.113 -0400", hash_original_method = "97CE5C613C0F00A9204AE55F86D0A1E4", hash_generated_method = "F838313C005872AA74D57321ADDC571A")
     private AccessibilityEvent getPartialyPopulatedAccessibilityEvent() {
         AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_SELECTED);
@@ -333,6 +340,7 @@ AccessibilityEvent var3162E7A4A1E5D72F1058A9B39A6A8738_1864484490 =         even
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.114 -0400", hash_original_method = "391E7039B2527FA351ED94B9C1004246", hash_generated_method = "AFAA3A8DCCCF3CD9C3FC40E66BD0B862")
     private void ensureWebContentKeyBindings() {
         if(sBindings.size() > 0)        
@@ -377,7 +385,7 @@ for(int i = 0, count = actions.length;i < count;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_method = "6AB19E93948D2A1BBE98A475D0E38626", hash_generated_method = "A5B0E6E5FFC63D354665BB588A337B75")
     private boolean isEnterActionKey(int keyCode) {
         addTaint(keyCode);

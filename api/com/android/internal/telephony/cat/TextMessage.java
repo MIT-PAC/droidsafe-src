@@ -1,13 +1,14 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TextMessage implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.628 -0400", hash_original_field = "E2DC2962A3400D07C1E73970CD6088E9", hash_generated_field = "89D5663AAD817AD059982BDCE7E515F8")
@@ -41,6 +42,7 @@ public class TextMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.630 -0400", hash_original_method = "3799DABAA0CF60B82958F76005DE5116", hash_generated_method = "58BF70938726D0FF39CF9E007FA074C7")
     private  TextMessage(Parcel in) {
         title = in.readString();

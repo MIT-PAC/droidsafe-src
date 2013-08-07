@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static java.util.TreeMap.Bound.EXCLUSIVE;
 import static java.util.TreeMap.Bound.INCLUSIVE;
 import static java.util.TreeMap.Bound.NO_BOUND;
@@ -18,10 +19,10 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 import libcore.util.Objects;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>, NavigableMap<K, V>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_field = "4092F21BD0E2CC3C9CA971DF59AA8608", hash_generated_field = "10E826BC31BCAB9BF3EF3CC29146C2D4")
@@ -545,7 +546,7 @@ Node<K, V> var1924C94B76524D1C3D7310EA17B0EF94_483797481 =         node;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.380 -0400", hash_original_method = "DE22B63E2A021BAF8A5DCC142FCC4B40", hash_generated_method = "493B1AC789FA627753B6464BC00715EE")
     private void rebalance(Node<K, V> unbalanced, boolean insert) {
         addTaint(insert);
@@ -623,7 +624,7 @@ for(Node<K, V> node = unbalanced;node != null;node = node.parent)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.382 -0400", hash_original_method = "6326CB79DBF89391F00F9AB13B0E81D9", hash_generated_method = "685523E676E56BFF33243B0EB971ECC7")
     private void rotateLeft(Node<K, V> root) {
         Node<K, V> left = root.left;
@@ -661,7 +662,7 @@ for(Node<K, V> node = unbalanced;node != null;node = node.parent)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.383 -0400", hash_original_method = "DF035E309292DEA6067E726F513C85C3", hash_generated_method = "4A8DF272658781BA2B1B74BBEFBED10F")
     private void rotateRight(Node<K, V> root) {
         Node<K, V> pivot = root.left;
@@ -699,7 +700,7 @@ for(Node<K, V> node = unbalanced;node != null;node = node.parent)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.384 -0400", hash_original_method = "E2F61A98BB539F90A11465C6A8354CE5", hash_generated_method = "36A8E8F7C8F1548B797F92A82E79587A")
     private SimpleImmutableEntry<K, V> immutableCopy(Entry<K, V> entry) {
         addTaint(entry.getTaint());
@@ -722,7 +723,7 @@ Entry<K, V> var79CE0C1FA3610C2C3C5116B38C8243BB_809308155 =         immutableCop
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.384 -0400", hash_original_method = "2730A7A2197248AC3B653DF430BA3F4A", hash_generated_method = "765C84295E7A812C5689B97EF7D348DA")
     private Entry<K, V> internalPollFirstEntry() {
         if(root == null)        
@@ -788,7 +789,7 @@ Entry<K, V> varB7DBB4F9C12E716C4523A7BCAD68DA7B_980612346 =         immutableCop
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.385 -0400", hash_original_method = "A726E2736A4C282A51BDD8062FE5CCFA", hash_generated_method = "2C0243DBF384000A2D892057D6A4EDC1")
     private Entry<K, V> internalPollLastEntry() {
         if(root == null)        
@@ -1118,7 +1119,7 @@ NavigableSet<K> var147103AFA753373FDDCF430FA02E998F_84879498 =         new Bound
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "BF81D129CE69F9BEB40CAD27F974F3C8", hash_generated_method = "913EA14829CB66885A0D07F3ADF68B3F")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1141,7 +1142,7 @@ for(Map.Entry<K, V> entry : entrySet())
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "4DE82E48A11AFCCB2DCFEAE704B1F475", hash_generated_method = "14915F7022307C7DC1B494E04297B335")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
@@ -2222,7 +2223,7 @@ V var2D26847273D18E896AF5F18CD64B937E_1133931004 =             isInBounds(key) ?
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.405 -0400", hash_original_method = "CBDDB4BBE438A9DB233DEA58A1C969FA", hash_generated_method = "8EDF25B3F305EDC0E18B84933E902E62")
         @SuppressWarnings("unchecked")
         private boolean isInBounds(Object key) {
@@ -2305,7 +2306,7 @@ V var2D26847273D18E896AF5F18CD64B937E_1133931004 =             isInBounds(key) ?
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "CAAC4C1A33B13586569CF07F541A55C7", hash_generated_method = "193C777DCD9C779DE5039B971645D83B")
         private Node<K, V> bound(Node<K, V> node, Bound fromBound, Bound toBound) {
             addTaint(toBound.getTaint());
@@ -2425,7 +2426,7 @@ K varE5CD6225CB16CF7AEFEC373E217B052C_1394501131 =             entry.getKey();
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.407 -0400", hash_original_method = "83D48F5C9D4926E1668CDBC652A8BB3D", hash_generated_method = "DB02F5EF128473C0A5555C361CAF76D6")
         private Node<K, V> endpoint(boolean first) {
             addTaint(first);
@@ -2851,7 +2852,7 @@ NavigableMap<K, V> varEC04A97C55B7258B88C9CBFBFF445575_3340594 =             new
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.439 -0400", hash_original_method = "65FB71F2A366D35F7884C2869AFAA6ED", hash_generated_method = "5D2BA88D46418ACDF68911C9EF8B0901")
         private IllegalArgumentException outOfBounds(Object value, Bound fromBound, Bound toBound) {
             addTaint(toBound.getTaint());

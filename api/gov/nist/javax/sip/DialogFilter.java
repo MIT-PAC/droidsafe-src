@@ -1,6 +1,7 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.address.SipUri;
 import gov.nist.javax.sip.header.Contact;
@@ -35,10 +36,10 @@ import javax.sip.header.ServerHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.297 -0400", hash_original_field = "7C7B65A13B3BC773CE866BFD592AC7E7", hash_generated_field = "B58F2862CC3FB933DFE2CD13D62E4F29")
@@ -59,6 +60,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.298 -0400", hash_original_method = "07FCA8BF1CB05FED9E9EE5BE5B9D0DF8", hash_generated_method = "C2991BF5741F1BF5E19981744A53DAB0")
     private void sendRequestPendingResponse(SIPRequest sipRequest,
             SIPServerTransaction transaction) {
@@ -93,6 +95,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.299 -0400", hash_original_method = "C4ABF2148AD4585DF588E0AB365097FF", hash_generated_method = "3C45A442134062488CB3C1E5FEC61B20")
     private void sendBadRequestResponse(SIPRequest sipRequest, SIPServerTransaction transaction,
             String reasonPhrase) {
@@ -144,6 +147,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.299 -0400", hash_original_method = "D6292ED26CFFFD47381D5C093FDBF969", hash_generated_method = "8D842766B6A0D5FC56C70A65B0D3FEFC")
     private void sendCallOrTransactionDoesNotExistResponse(SIPRequest sipRequest,
             SIPServerTransaction transaction) {
@@ -192,6 +196,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.300 -0400", hash_original_method = "3FDF2D179E068B8AD4629A716A32BCF6", hash_generated_method = "7C3E3BB5D0AED9482BDC21A4564D35AF")
     private void sendLoopDetectedResponse(SIPRequest sipRequest, SIPServerTransaction transaction) {
         addTaint(transaction.getTaint());
@@ -232,6 +237,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.301 -0400", hash_original_method = "1BAB8A1EF49695D9BD2CE878014B3A7C", hash_generated_method = "427025AD73609E2016D48BA2C79DE31D")
     private void sendServerInternalErrorResponse(SIPRequest sipRequest,
             SIPServerTransaction transaction) {

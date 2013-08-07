@@ -1,6 +1,7 @@
 package org.apache.harmony.xml;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -20,10 +21,10 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.ext.LexicalHandler;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 class ExpatParser {
@@ -82,7 +83,7 @@ class ExpatParser {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.069 -0400", hash_original_method = "289A44034A9CB52BBF40849A78C9DFF1", hash_generated_method = "47EBBABB3D8A8C4F0157E597541AEEB9")
     private  ExpatParser(String encoding, ExpatReader xmlReader, int pointer,
             String publicId, String systemId) {
@@ -418,6 +419,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.079 -0400", hash_original_method = "0D6C1F8897C50F2325542C54551DAF6A", hash_generated_method = "58F38019E663EA07AB0DA7DF0C99DED8")
     private String pickEncoding(InputSource inputSource) {
         addTaint(inputSource.getTaint());
@@ -442,6 +444,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.079 -0400", hash_original_method = "43999A16FC6A2BCB60CE78FA610F37AD", hash_generated_method = "6DCBF4659678D44A1CC8B84AD159276F")
     private void parseExternalEntity(ExpatParser entityParser,
             InputSource inputSource) throws IOException, SAXException {
@@ -642,7 +645,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.082 -0400", hash_original_method = "0C2DA7F13CAAE321089EB28883C484D4", hash_generated_method = "D2E1D82888F44607B588167891567E09")
     private void parseFragment(Reader in) throws IOException, SAXException {
         addTaint(in.getTaint());
@@ -675,7 +678,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.083 -0400", hash_original_method = "3CA57F292A4B96862265187DF8ED7F28", hash_generated_method = "4898594A50634C867DD93B9EEA41395C")
     private void parseFragment(InputStream in) throws IOException, SAXException {
         addTaint(in.getTaint());
@@ -708,7 +711,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.083 -0400", hash_original_method = "E29A8B5517BB7A594660A4782169D49D", hash_generated_method = "9082BB672490F86100BA9541DBCF9A01")
     private void startDocument() throws SAXException {
         ContentHandler contentHandler = xmlReader.contentHandler;
@@ -726,7 +729,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.083 -0400", hash_original_method = "539A01ACC13B65DFCB758F0CE94D0284", hash_generated_method = "BEED0EE47E42C45D151E9654AE49D61A")
     private void endDocument() throws SAXException {
         ContentHandler contentHandler;
@@ -809,7 +812,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.084 -0400", hash_original_method = "06014D7BF95F9BC6196F9727E94F85D2", hash_generated_method = "E9AD157EB631F6A07F16F9EE729BC9A9")
     private int line() {
         int var2CF1EB87B15DEA47CFCC310700ADEDDC_642351497 = (line(this.pointer));
@@ -826,7 +829,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.084 -0400", hash_original_method = "F3C5081F1B5CC0FD86B00194F6A2466A", hash_generated_method = "3D911525EC90364A26D3F3C37D0D5B1A")
     private int column() {
         int varA078BC8EBE234197D458536C795E9041_2085846976 = (column(this.pointer));
@@ -908,6 +911,7 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_1148865376 =         new ClonedAt
 
         private int length;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.085 -0400", hash_original_method = "045E6201A2106A3289C0B2900185AAE3", hash_generated_method = "6C77683241D4DF0E15710C2B79C48263")
         private  ClonedAttributes(int parserPointer, int pointer, int length) {
             this.parserPointer = parserPointer;
@@ -1130,7 +1134,7 @@ String varA2481285DD560B3E99E863747DEB930A_2053928167 =             "Locator[pub
     
     private static class ParseException extends SAXParseException {
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.088 -0400", hash_original_method = "35DD174A2C7D975B531B73E3C242E751", hash_generated_method = "F57BF8D512BAB9CF24877CE28ADF0506")
         private  ParseException(String message, Locator locator) {
             super(makeMessage(message, locator), locator);
@@ -1140,14 +1144,14 @@ String varA2481285DD560B3E99E863747DEB930A_2053928167 =             "Locator[pub
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static String makeMessage(String message, Locator locator) {
             return makeMessage(message, locator.getLineNumber(),
                     locator.getColumnNumber());
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         private static String makeMessage(
                 String message, int line, int column) {
             return "At line " + line + ", column "
@@ -1164,7 +1168,7 @@ String varA2481285DD560B3E99E863747DEB930A_2053928167 =             "Locator[pub
 
         private int depth = 0;
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.088 -0400", hash_original_method = "CA2C59BC199DD9BEE0B3FBB1838981DE", hash_generated_method = "304F75BD6E09BF3F4296D90ADF901ECA")
         private  EntityParser(String encoding, ExpatReader xmlReader,
                 int pointer, String publicId, String systemId) {

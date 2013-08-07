@@ -1,6 +1,7 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Map;
 
 import org.apache.http.Header;
@@ -10,7 +11,7 @@ import org.apache.http.auth.AUTH;
 import org.apache.http.auth.MalformedChallengeException;
 import org.apache.http.protocol.HttpContext;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHandler {
     

@@ -1,12 +1,13 @@
 package com.android.i18n.phonenumbers;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import droidsafe.annotations.DSGenerator;
+
 
 public class CountryCodeToRegionCodeMap {
     

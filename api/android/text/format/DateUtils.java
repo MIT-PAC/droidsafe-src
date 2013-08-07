@@ -1,6 +1,7 @@
 package android.text.format;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
@@ -14,10 +15,10 @@ import android.content.res.Resources;
 
 import com.android.internal.R;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class DateUtils {
     
@@ -64,6 +65,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String getStandaloneMonthString(int month, int abbrev) {
         int[] list;
         switch (abbrev) {
@@ -167,7 +169,7 @@ public class DateUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private synchronized static long getNumberOfDaysPassed(long date1, long date2) {
         if (sThenTime == null) {
             sThenTime = new Time();
@@ -203,6 +205,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final String getRelativeDayString(Resources r, long day, long today) {
         Time startTime = new Time();
         startTime.set(day);
@@ -232,6 +235,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void initFormatStrings() {
         synchronized (sLock) {
             initFormatStringsLocked();
@@ -239,6 +243,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void initFormatStringsLocked() {
         Resources r = Resources.getSystem();
         Configuration cfg = r.getConfiguration();
@@ -251,6 +256,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final CharSequence timeString(long millis) {
         synchronized (sLock) {
             initFormatStringsLocked();
@@ -287,6 +293,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String formatElapsedTime(StringBuilder recycle, String format, long hours,
             long minutes, long seconds) {
         if (FAST_FORMAT_HMMSS.equals(format)) {
@@ -318,7 +325,7 @@ public class DateUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String formatElapsedTime(StringBuilder recycle, String format, long minutes,
             long seconds) {
         if (FAST_FORMAT_MMSS.equals(format)) {
@@ -348,7 +355,7 @@ public class DateUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static char toDigitChar(long digit) {
         return (char) (digit + '0');
     }
@@ -373,6 +380,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Calendar newCalendar(boolean zulu) {
         if (zulu)
             return Calendar.getInstance(TimeZone.getTimeZone("GMT"));
@@ -393,6 +401,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static boolean isUTC(String s) {
         if (s.length() == 16 && s.charAt(15) == 'Z') {
             return true;
@@ -404,6 +413,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String writeDateTime(Calendar cal) {
         TimeZone tz = TimeZone.getTimeZone("GMT");
         GregorianCalendar c = new GregorianCalendar(tz);
@@ -412,6 +422,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String writeDateTime(Calendar cal, boolean zulu) {
         StringBuilder sb = new StringBuilder();
         sb.ensureCapacity(16);
@@ -425,6 +436,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static String writeDateTime(Calendar cal, StringBuilder sb) {
         int n;
         n = cal.get(Calendar.YEAR);
@@ -460,6 +472,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void assign(Calendar lval, Calendar rval) {
         lval.clear();
         lval.setTimeInMillis(rval.getTimeInMillis());

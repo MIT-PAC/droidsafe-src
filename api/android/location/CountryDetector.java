@@ -1,13 +1,14 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class CountryDetector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.930 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "586490950C196F388A8EA4D62FE86E5C")
@@ -17,6 +18,7 @@ public class CountryDetector {
 
     private HashMap<CountryListener, ListenerTransport> mListeners;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.931 -0400", hash_original_method = "1A7B373E04EF53B30E08B7B8CC03780E", hash_generated_method = "D989B224CC275E8895828F0A793F6A43")
     public  CountryDetector(ICountryDetector service) {
         mService = service;
@@ -27,6 +29,7 @@ public class CountryDetector {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.931 -0400", hash_original_method = "8394DE101C334DCA17E1726BC4AA658C", hash_generated_method = "F9759DDC29A257DD54750E89238CF667")
     public Country detectCountry() {
         try 
@@ -51,6 +54,7 @@ Country var540C13E9E156B687226421B24F2DF178_1357408776 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.932 -0400", hash_original_method = "BC3AED2375940B210F4240F1B5BF489C", hash_generated_method = "EB2C37E8DA52A78DBC61A09D959779C9")
     public void addCountryListener(CountryListener listener, Looper looper) {
         addTaint(looper.getTaint());
@@ -85,6 +89,7 @@ Country var540C13E9E156B687226421B24F2DF178_1357408776 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.933 -0400", hash_original_method = "956D6A58CF004E8191495221FE8E06DD", hash_generated_method = "E6087B886F6F040EBA7A2A6E97E5B538")
     public void removeCountryListener(CountryListener listener) {
         addTaint(listener.getTaint());
@@ -126,6 +131,7 @@ Country var540C13E9E156B687226421B24F2DF178_1357408776 =             null;
 
         private Handler mHandler;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.936 -0400", hash_original_method = "B76186AFC83B6C77A78C283544EECE09", hash_generated_method = "4159405EEFEEC31A8DF84904495E69EA")
         public  ListenerTransport(CountryListener listener, Looper looper) {
             mListener = listener;

@@ -1,13 +1,14 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 final class SslClientCertLookupTable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.932 -0400", hash_original_field = "73C6E03F39A61AD78C4635846B1CD52F", hash_generated_field = "AF223C6357D0802EB3E145576B4B5EAA")
@@ -20,6 +21,7 @@ final class SslClientCertLookupTable {
 
     private Set<String> denied;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.933 -0400", hash_original_method = "C6A28623CA4FEF2D114418C70282C212", hash_generated_method = "FAE9CFE8528E4732B681D7FF4194F30D")
     private  SslClientCertLookupTable() {
         privateKeys = new HashMap<String, byte[]>();

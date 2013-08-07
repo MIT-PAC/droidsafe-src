@@ -1,13 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.channels.ServerSocketChannel;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ServerSocket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.397 -0400", hash_original_field = "86CCEC3D9FF0E9C0514506E982CDC08B", hash_generated_field = "E5435F593B4B4C544AAC5D578CFF6639")
@@ -93,7 +94,7 @@ public class ServerSocket {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.400 -0400", hash_original_method = "847F07D140851DC7DF04F3DA230B7EED", hash_generated_method = "A201778D2E5385B4A76F7006FAAAB8D9")
     public SocketImpl getImpl$() {
 SocketImpl var74FA8C26D7EF8FBF7B1B8FAD3221C166_1570641916 =         impl;
@@ -144,6 +145,7 @@ Socket varDBA8EAD1551D6943828EF63869B4FDF3_605925506 =         aSocket;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.401 -0400", hash_original_method = "C273B8F533783A3DE90657F5715801E0", hash_generated_method = "7AC3B5B4DE9FBD5303205AD6FB6F5CEA")
     private void checkListen(int aPort) {
         addTaint(aPort);
@@ -400,6 +402,7 @@ SocketAddress var71FAAB01987C8CA7A40E22DA9ADD06A6_549007986 =         new InetSo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.408 -0400", hash_original_method = "8DC54C39C6445BAF3181407C830C5887", hash_generated_method = "F90C8ADFD3E758F9CE8E995684A96197")
     private void checkOpen() throws SocketException {
         if(isClosed())        

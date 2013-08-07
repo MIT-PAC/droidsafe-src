@@ -1,12 +1,13 @@
 package org.apache.harmony.luni.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public final class ListOfTypes {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.018 -0400", hash_original_field = "D14A8022B085F9EF19D479CBDD581127", hash_generated_field = "8892A3AAA12E491FA3A203DD834955E2")
@@ -79,6 +80,7 @@ Type[] var4FC3DD720A833DD110402A8E8C2EB61B_1447751666 =         result != null ?
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.020 -0400", hash_original_method = "F2767C6141E0603586233C8F8B50B3D9", hash_generated_method = "99D69BE185BDF5F295E6B90B7D9915BC")
     private Type[] resolveTypes(List<Type> unresolved) {
         addTaint(unresolved.getTaint());

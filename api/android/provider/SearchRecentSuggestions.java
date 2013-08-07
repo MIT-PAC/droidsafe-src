@@ -1,6 +1,7 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.util.concurrent.Semaphore;
 
 import android.content.ContentResolver;
@@ -9,8 +10,8 @@ import android.content.Context;
 import android.content.SearchRecentSuggestionsProvider;
 import android.net.Uri;
 import android.text.TextUtils;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public class SearchRecentSuggestions {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.502 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -107,6 +108,7 @@ public class SearchRecentSuggestions {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.508 -0400", hash_original_method = "9709D87DB23792EAEE277FC562FC04A5", hash_generated_method = "CDF09F4156F281117FB3595CD621FAAC")
     private void saveRecentQueryBlocking(String queryString, String line2) {
         addTaint(line2.getTaint());
@@ -204,6 +206,7 @@ public class SearchRecentSuggestions {
     
     private static class SuggestionColumns implements BaseColumns {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.510 -0400", hash_original_method = "BB858C1043D81D8CD66DDE6CA07AE15D", hash_generated_method = "BB858C1043D81D8CD66DDE6CA07AE15D")
         public SuggestionColumns ()
         {

@@ -1,22 +1,24 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import android.nfc.ErrorCodes;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class MifareUltralight extends BasicTagTechnology {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.592 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
 
     private int mType;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.595 -0400", hash_original_method = "3735B86C07F91E8515EC1CC320AAC040", hash_generated_method = "3C72592533B102A1DF1BFDAACD562651")
     public  MifareUltralight(Tag tag) throws RemoteException {
         super(tag, TagTechnology.MIFARE_ULTRALIGHT);
@@ -184,6 +186,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void validatePageIndex(int pageIndex) {
         if (pageIndex < 0 || pageIndex >= MAX_PAGE_COUNT) {
             throw new IndexOutOfBoundsException("page out of bounds: " + pageIndex);

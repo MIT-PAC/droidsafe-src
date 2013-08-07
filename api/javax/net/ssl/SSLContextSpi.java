@@ -1,13 +1,14 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.SecureRandom;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class SSLContextSpi {
     
@@ -66,6 +67,7 @@ javax.net.ssl.SSLParameters varFE76CDC4E3DE17434647E2DDA62A2469_1739572272 =    
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.679 -0400", hash_original_method = "511D5113A1843E08B751FF4FDB4F02E4", hash_generated_method = "E8E626D7AA884C3764AAAF0B3C5E2EFE")
     private javax.net.ssl.SSLParameters createSSLParameters(boolean supported) {
         addTaint(supported);

@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.Accept;
 import gov.nist.javax.sip.header.AcceptEncoding;
 import gov.nist.javax.sip.header.AcceptEncodingList;
@@ -74,10 +75,10 @@ import gov.nist.javax.sip.header.ims.ServiceRouteList;
 
 import java.util.Hashtable;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 class ListMap {
     
@@ -88,7 +89,7 @@ class ListMap {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private void initializeListMap() {
         headerListTable = new Hashtable<Class<?>, Class<?>>();
         headerListTable.put(ExtensionHeaderImpl.class, ExtensionHeaderList.class);

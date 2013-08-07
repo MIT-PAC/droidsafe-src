@@ -1,6 +1,7 @@
 package junit.textui;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.PrintStream;
 import java.util.Enumeration;
 
@@ -10,10 +11,10 @@ import junit.framework.TestFailure;
 import junit.framework.TestListener;
 import junit.framework.TestResult;
 import junit.runner.BaseTestRunner;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ResultPrinter implements TestListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.480 -0400", hash_original_field = "EE28240FCFC3A19747E3D5464517BD00", hash_generated_field = "90CE234F29B6C3026D5A6A62F5D28F59")

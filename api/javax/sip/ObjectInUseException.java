@@ -1,7 +1,8 @@
 package javax.sip;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
+
 
 public class ObjectInUseException extends SipException {
     

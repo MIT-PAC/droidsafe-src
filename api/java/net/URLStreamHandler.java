@@ -1,13 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.IOException;
 
 import libcore.net.url.UrlUtils;
 import libcore.util.Objects;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
 
 public abstract class URLStreamHandler {
     
@@ -158,6 +159,7 @@ switch(spec.charAt(pos)){
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String relativePath(String base, String path) {
         if (path.startsWith("/")) {
             return UrlUtils.canonicalizePath(path, true);

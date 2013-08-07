@@ -1,6 +1,7 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
@@ -30,10 +31,10 @@ import org.apache.harmony.luni.lang.reflect.GenericSignatureParser;
 import org.apache.harmony.luni.lang.reflect.Types;
 
 import dalvik.system.VMStack;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public final class Class<T> implements Serializable, AnnotatedElement, GenericDeclaration, Type {
@@ -48,6 +49,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.624 -0400", hash_original_method = "D48BE9AB17D8906757B56E4D680A2C57", hash_generated_method = "F381E7F26C23D7611FE4A21954F45510")
     private String getSignatureAttribute() {
         Object[] annotation = getSignatureAnnotation();
@@ -813,6 +815,7 @@ Field[] varF97ABECB072F72F32D1A6FDB275E9804_821689451 =         fields.toArray(n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.635 -0400", hash_original_method = "CCD964C4509A9C827773CB1F1BD75566", hash_generated_method = "361118F139993F02EF5C2AEF8822592C")
     private void getPublicFieldsRecursive(List<Field> result) {
         addTaint(result.getTaint());
@@ -922,6 +925,7 @@ Method[] var1C3E257A090AB3A7E4DC4AC6985BC9FB_1683180750 =         methods.toArra
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "99CBF7E189E92697D7579B92856775ED", hash_generated_method = "3CEF07DB9400012F26BC5401CF6AD7DB")
     private void getPublicMethodsRecursive(List<Method> result) {
         addTaint(result.getTaint());

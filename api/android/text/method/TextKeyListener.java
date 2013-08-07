@@ -1,6 +1,7 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 
 import android.content.ContentResolver;
@@ -19,10 +20,10 @@ import android.text.TextUtils;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.766 -0400", hash_original_field = "7B00CDF214A58D964DB1FD6D561A182A", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
@@ -219,7 +220,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.772 -0400", hash_original_method = "AD20E29A89E7D41F4894A2F9AC99B4E0", hash_generated_method = "A3D05C6848BB2B4D166D84ED65392CD4")
     private KeyListener getKeyListener(KeyEvent event) {
         addTaint(event.getTaint());
@@ -293,7 +294,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1739274097 =         NullKeyList
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.773 -0400", hash_original_method = "083A24B7721BE4E40A2817E04F6CDAB7", hash_generated_method = "00AB2605517572F6562DBB762AE5F875")
     private void initPrefs(Context context) {
         addTaint(context.getTaint());
@@ -318,7 +319,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1739274097 =         NullKeyList
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.774 -0400", hash_original_method = "4FB87B933010A67FA68BED5325D02530", hash_generated_method = "522ADEEB7422FF7A8B03B3141DD0B48B")
     private void updatePrefs(ContentResolver resolver) {
         addTaint(resolver.getTaint());
@@ -373,6 +374,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1739274097 =         NullKeyList
     
     private static class NullKeyListener implements KeyListener {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.774 -0400", hash_original_method = "F358F3B966187D3EEEEBD171D03A4696", hash_generated_method = "F358F3B966187D3EEEEBD171D03A4696")
         public NullKeyListener ()
         {

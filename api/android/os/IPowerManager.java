@@ -1,6 +1,7 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 
 public interface IPowerManager extends android.os.IInterface
 {

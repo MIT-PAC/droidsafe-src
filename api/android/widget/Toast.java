@@ -1,6 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.app.INotificationManager;
 import android.app.ITransientNotification;
 import android.content.Context;
@@ -14,10 +15,10 @@ import android.view.WindowManager;
 import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class Toast {
     final Context mContext;
@@ -182,7 +183,7 @@ public class Toast {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static private INotificationManager getService() {
         if (sService != null) {
             return sService;
@@ -331,7 +332,7 @@ public class Toast {
         }
 
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.959 -0400", hash_original_method = "D907D354027470BBEF302644D06948FD", hash_generated_method = "77A17536CC0EA3BEEAF27FC774321779")
         private void trySendAccessibilityEvent() {
             AccessibilityManager accessibilityManager = AccessibilityManager.getInstance(mView.getContext());

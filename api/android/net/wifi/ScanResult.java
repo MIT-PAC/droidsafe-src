@@ -1,12 +1,13 @@
 package android.net.wifi;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class ScanResult implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.921 -0400", hash_original_field = "0D09D7B23E604623465E83B0DC113F4D", hash_generated_field = "F7FE1695EF676C936EDB74F734CEDF60")
@@ -25,6 +26,7 @@ public class ScanResult implements Parcelable {
 
     public int frequency;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.923 -0400", hash_original_method = "B81746E5555BB1C130130EC15E62207F", hash_generated_method = "719C1669155F4840ADC34BB00169FF8E")
     public  ScanResult(String SSID, String BSSID, String caps, int level, int frequency) {
         this.SSID = SSID;
@@ -76,7 +78,7 @@ String var2460B846747F8B22185AD8BE722266A5_611380921 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.924 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8C2AC82D3BE8AABC2F156DA422740453")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_428149901 = (0);
@@ -87,6 +89,7 @@ String var2460B846747F8B22185AD8BE722266A5_611380921 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.924 -0400", hash_original_method = "8ED27770F672F68987FCE9C19DB9995F", hash_generated_method = "21B7DD015A7D63165F89B57520768D45")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

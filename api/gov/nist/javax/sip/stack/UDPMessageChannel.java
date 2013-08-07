@@ -1,6 +1,7 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.ServerLogger;
 import gov.nist.core.StackLogger;
@@ -32,10 +33,10 @@ import java.util.TimerTask;
 
 import javax.sip.address.Hop;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class UDPMessageChannel extends MessageChannel implements ParseExceptionListener, Runnable, RawMessageChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "3233C5012C49C796F9D6BBC8E02EAB41")
@@ -221,6 +222,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.063 -0400", hash_original_method = "2D23A147968127857F47AE9C2F0B0301", hash_generated_method = "2CA7A331983DDF57027DA579105AD0C0")
     private void processIncomingDataPacket(DatagramPacket packet) throws Exception {
         this.peerAddress = packet.getAddress();

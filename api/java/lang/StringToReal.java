@@ -1,10 +1,11 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 final class StringToReal {
@@ -28,11 +29,13 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static NumberFormatException invalidReal(String s, boolean isDouble) {
         throw new NumberFormatException("Invalid " + (isDouble ? "double" : "float") + ": \"" + s + "\"");
     }
 
     
+    @DSModeled(DSC.BAN)
     private static StringExponentPair initialParse(String s, int length, boolean isDouble) {
         StringExponentPair result = new StringExponentPair();
         if (length == 0) {
@@ -142,6 +145,7 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static float parseName(String name, boolean isDouble) {
         boolean negative = false;
         int i = 0;
@@ -165,6 +169,7 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static double parseDouble(String s) {
         s = s.trim();
         int length = s.length();
@@ -190,6 +195,7 @@ final class StringToReal {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static float parseFloat(String s) {
         s = s.trim();
         int length = s.length();
@@ -232,6 +238,7 @@ final class StringToReal {
 
         boolean zero;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
         public StringExponentPair ()
         {
@@ -239,7 +246,7 @@ final class StringToReal {
         }
 
 
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.331 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "1E22A1725F128CCFFEE3AEAD8B8D97DE")
         public float specialValue() {
             if(infinity)            

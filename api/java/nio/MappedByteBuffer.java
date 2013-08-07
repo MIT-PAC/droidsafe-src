@@ -1,6 +1,7 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import static libcore.io.OsConstants.MS_SYNC;
 import static libcore.io.OsConstants._SC_PAGE_SIZE;
 
@@ -8,8 +9,8 @@ import java.nio.channels.FileChannel.MapMode;
 
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+
+
 
 public abstract class MappedByteBuffer extends ByteBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.313 -0400", hash_original_field = "D6ABAEBF6F398D52A8B336BB018AF0B8", hash_generated_field = "D7679EF467A9ABFED1C67E3C246585AB")

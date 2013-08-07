@@ -1,15 +1,16 @@
 package gov.nist.javax.sip.address;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import gov.nist.core.HostPort;
 
 import javax.sip.address.Address;
 import javax.sip.address.URI;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public final class AddressImpl extends NetObject implements javax.sip.address.Address {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.947 -0400", hash_original_field = "40179AAEEFAA5FF10EF85408F632A065", hash_generated_field = "86D11EC31389BCB4DD7EA8E060BE2214")

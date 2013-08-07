@@ -1,11 +1,12 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
 import android.view.MotionEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+
+
+
+
 
 public class MotionEventCompat {
     
@@ -150,6 +151,7 @@ public class MotionEventCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.294 -0400", hash_original_method = "F1B2637001FBFFCBD7AA64840D270091", hash_generated_method = "CE09DC14B3B952464B06CD872A75D93C")
         @Override
         public int getPointerCount(MotionEvent event) {

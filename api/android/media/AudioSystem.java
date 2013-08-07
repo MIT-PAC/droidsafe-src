@@ -1,10 +1,11 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+
+
+
+
 import droidsafe.helpers.DSUtils;
 
 public class AudioSystem {
@@ -16,7 +17,7 @@ public class AudioSystem {
     }
 
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static final int getNumStreamTypes() {
         return NUM_STREAM_TYPES;
     }
@@ -64,6 +65,7 @@ public class AudioSystem {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void errorCallbackFromNative(int error) {
         ErrorCallback errorCallback = null;
         synchronized (AudioSystem.class) {
