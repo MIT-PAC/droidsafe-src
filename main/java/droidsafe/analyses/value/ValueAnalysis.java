@@ -270,10 +270,12 @@ public class ValueAnalysis {
     /** run the analysis to fixed point */
     public static void run() {
         runOnce();
-        while(runAgain) {
+        int count = 0;
+        while(runAgain && count < 2) {
             System.out.println("\nValue Analysis Progress: fixed point not reached, re-running");
             runAgain = false;
             runOnce();
+            count++;
         } 
         System.out.print("\n");
 

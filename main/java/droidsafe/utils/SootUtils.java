@@ -336,6 +336,35 @@ public class SootUtils {
         //now check the parents
         return resolveMethod(clz.getSuperclass(), signature);
     }
+    
+    /**
+     * Matching a callback method.  We ignore return type as it is not important in callback
+     * @param clz
+     * @param signature
+     * @return
+     */
+    public static SootMethod resolveCallbackMethod(SootClass clz, String signature) {
+    	 if (Scene.v().containsMethod(signature)) 
+             return Scene.v().getMethod(signature);
+
+         //check this class for the method with polymorpism
+         String mName = grabName(signature);
+         String[] args = grabArgs(signature);
+         String rtype = grabReturnType(signature);
+
+         for (SootMethod curr : clz.getMethods()) {
+             if (!curr.getName().equals(mName) || curr.getParameterCount() != args.length)
+                 continue;
+
+             for (int i = 0; i < args.length; i++) 
+                 if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i)))
+                     continue;
+
+             //if we got here all is well and we found a method that matches!
+             return curr;
+         }
+         return null;
+    }
 
     /**
      * Grab the args string from the method signature 
