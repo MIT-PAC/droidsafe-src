@@ -572,14 +572,15 @@ public class ResourcesSoot {
         
         SootMethod method = null;
         
-        try {
-            method = Scene.v().getMethod(onClickSignature); 
-        }
-        catch (Exception ex) {
-            logger.warn("Cannot locate method {} ", onClickSignature);
-            return false;
-        }
+    	String className = onClickSignature.substring(1, onClickSignature.indexOf(":"));
+    	SootClass clz = Scene.v().getSootClass(className);
+        method = SootUtils.resolveCallbackMethod(clz, onClickSignature);
         
+        if (method == null) {
+        	logger.warn("Cannot locate method {} ", onClickSignature);
+        	return false;
+        }
+                       
         // Two things we need when performing the callback:
         // 1. owning object of the callback (activity) => mArgContext
         // 2. 
