@@ -278,16 +278,13 @@ public class ValueAnalysis {
 
         // Run the analysis once to figure out which methods we are able to simulate, discarding results afterwards.
         runOnce();
-        am.objectToModelMap = new LinkedHashMap<AllocNode, ValueAnalysisModeledObject>();
-        am.valueToModelAttrMap = new HashMap<Value, Object>();
-
-        // Now run the analysis to fixed point, not stepping through the methods that we simulate.
-        do {
+        int count = 0;
+        while(runAgain && count < 2) {
             System.out.println("\nValue Analysis Progress: fixed point not reached, re-running");
             runAgain = false;
             runOnce();
-        } while(runAgain);
- 
+            count++;
+        } 
         System.out.print("\n");
  
         // log the results and statistics    
