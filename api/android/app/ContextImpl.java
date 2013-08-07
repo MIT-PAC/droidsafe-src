@@ -104,11 +104,7 @@ class ReceiverRestrictedContext extends ContextWrapper {
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-    	// Generate Intents based on filter
-    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
-    	for (Intent intent : intents) {
-			receiver.onReceive(this, intent);
-		}
+    	
 
         addTaint(filter.getTaint());
         addTaint(receiver.getTaint());
@@ -126,12 +122,7 @@ Intent varD535A24B470170C9E7EA08ED846B5DCB_39836133 =         registerReceiver(r
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-    	// Generate Intents based on filter
-    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
-    	for (Intent intent : intents) {
-			receiver.onReceive(this, intent);
-		}
-
+    	
         addTaint(scheduler.getTaint());
         addTaint(broadcastPermission.getTaint());
         addTaint(filter.getTaint());
@@ -663,7 +654,11 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-    	receiver.onReceive(this, new Intent());
+    	// Generate Intents based on filter
+    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
+    	for (Intent intent : intents) {
+			receiver.onReceive(this, intent);
+		}
     	return null; // no 'sticky' intents need to be modeled for coverage
     }
 
@@ -672,7 +667,12 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
-        throw new UnsupportedOperationException();
+    	// Generate Intents based on filter
+    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
+    	for (Intent intent : intents) {
+			receiver.onReceive(this, intent);
+		}
+    	return null; // no 'sticky' intents need to be modeled for coverage
     }
 
     
