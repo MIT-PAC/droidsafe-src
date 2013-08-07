@@ -14,6 +14,7 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 import libcore.util.EmptyArray;
+
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
