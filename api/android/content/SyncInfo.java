@@ -90,6 +90,7 @@ public class SyncInfo implements Parcelable {
             return new SyncInfo(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public SyncInfo[] newArray(int size) {
             return new SyncInfo[size];
         }

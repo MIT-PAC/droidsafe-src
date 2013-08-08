@@ -83,10 +83,12 @@ public class RestoreSet implements Parcelable {
 
     public static final Parcelable.Creator<RestoreSet> CREATOR
             = new Parcelable.Creator<RestoreSet>() {
+        @DSModeled(DSC.BAN)
         public RestoreSet createFromParcel(Parcel in) {
             return new RestoreSet(in);
         }
 
+        @DSModeled(DSC.BAN)
         public RestoreSet[] newArray(int size) {
             return new RestoreSet[size];
         }

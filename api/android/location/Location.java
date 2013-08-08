@@ -851,6 +851,7 @@ String var6F3A800E12E4FDE656C7E8769F254149_285689635 =         "Location[mProvid
             return l;
         }
 
+        @DSModeled(DSC.SAFE)
         public Location[] newArray(int size) {
             return new Location[size];
         }

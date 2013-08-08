@@ -225,6 +225,7 @@ final class FragmentManagerState implements Parcelable {
             return new FragmentManagerState(in);
         }
         
+        @DSModeled(DSC.SAFE)
         public FragmentManagerState[] newArray(int size) {
             return new FragmentManagerState[size];
         }
@@ -1244,6 +1245,7 @@ switch(f.mState){
                                                     //0, 0, false);
                                         //}
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.362 -0400", hash_original_method = "C6539FC3721A6B610C21747FF87D7A97", hash_generated_method = "58C626A9D98C5CFBF993A93EFEF59553")
         @Override
         public void onAnimationRepeat(Animation animation) {
@@ -1251,6 +1253,7 @@ switch(f.mState){
             addTaint(animation.getTaint());
             // ---------- Original Method ----------
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.362 -0400", hash_original_method = "72AD432A5D6B612A6CC4174C0C1E057D", hash_generated_method = "E455F4DC332660DC5ADFD15AC2AD6C17")
         @Override
         public void onAnimationStart(Animation animation) {

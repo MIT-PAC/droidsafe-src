@@ -698,6 +698,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.705 -0400", hash_original_method = "D138EB87670EDA5FF4AD9A96EB7F8CD0", hash_generated_method = "532BFD017F30B7F2929B9C12E960B0B4")
         public  IntPropertyValuesHolder(String propertyName, int... values) {
             super(propertyName);
@@ -709,6 +710,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.707 -0400", hash_original_method = "EF8A3E59A9590685EEFC24C3E37051A8", hash_generated_method = "C2EFCE5E7F9746C9668FB087F69B4335")
         public  IntPropertyValuesHolder(Property property, int... values) {
             super(property);
@@ -727,6 +729,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.709 -0400", hash_original_method = "36FED796688BFE2861C8D1DF18289634", hash_generated_method = "01AE1DF0BE62DDBBE13D52476B0C8687")
         @Override
         public void setIntValues(int... values) {
@@ -929,6 +932,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.757 -0400", hash_original_method = "C77EAEA380E6CBE61D90EF78014D158B", hash_generated_method = "EB7373B06A0F202E717672B41B3483C0")
         public  FloatPropertyValuesHolder(String propertyName, float... values) {
             super(propertyName);
@@ -940,6 +944,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.760 -0400", hash_original_method = "91C83497360B006516EF522F9EB49209", hash_generated_method = "C75E92C8020AF69AF06A27711692A923")
         public  FloatPropertyValuesHolder(Property property, float... values) {
             super(property);
@@ -958,6 +963,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.763 -0400", hash_original_method = "4C7839391C0E614BE090BEA208DAADC2", hash_generated_method = "E3019C45C896254CDB01DFA68E65398E")
         @Override
         public void setFloatValues(float... values) {

@@ -159,6 +159,7 @@ String var13128EA151E3C5F956747C86A400AE3E_1277924288 =         "PermissionInfo{
         public PermissionInfo createFromParcel(Parcel source) {
             return new PermissionInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public PermissionInfo[] newArray(int size) {
             return new PermissionInfo[size];
         }

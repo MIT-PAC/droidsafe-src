@@ -89,6 +89,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static ThreadSet newArrayThreadSet(Thread... threads) {
         return new ArrayThreadSet(threads);
     }

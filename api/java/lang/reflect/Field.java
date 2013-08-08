@@ -746,6 +746,7 @@ String varE65B3A02759122992CB82C0E651AD408_1830058780 =         result.toString(
 
     public static final Comparator<Field> ORDER_BY_NAME_AND_DECLARING_CLASS
             = new Comparator<Field>() {
+        @DSModeled(DSC.BAN)
         @Override public int compare(Field a, Field b) {
             int comparison = a.name.compareTo(b.name);
             if (comparison != 0) {

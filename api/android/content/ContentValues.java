@@ -765,6 +765,7 @@ String var2460B846747F8B22185AD8BE722266A5_2112658735 =         sb.toString();
             return new ContentValues(values);
         }
 
+        @DSModeled(DSC.SAFE)
         public ContentValues[] newArray(int size) {
             return new ContentValues[size];
         }

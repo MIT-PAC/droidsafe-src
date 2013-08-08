@@ -125,6 +125,7 @@ public class VpnConfig implements Parcelable {
 
     public static final Parcelable.Creator<VpnConfig> CREATOR =
             new Parcelable.Creator<VpnConfig>() {
+        @DSModeled(DSC.BAN)
         @Override
         public VpnConfig createFromParcel(Parcel in) {
             VpnConfig config = new VpnConfig();
@@ -141,6 +142,7 @@ public class VpnConfig implements Parcelable {
             return config;
         }
 
+        @DSModeled(DSC.BAN)
         @Override
         public VpnConfig[] newArray(int size) {
             return new VpnConfig[size];

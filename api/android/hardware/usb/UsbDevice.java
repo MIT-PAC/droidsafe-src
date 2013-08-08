@@ -289,6 +289,7 @@ String var698D883E8B5EB48E4AB16093FCE6D05D_2046203710 =         "UsbDevice[mName
             return new UsbDevice(name, vendorId, productId, clasz, subClass, protocol, interfaces);
         }
 
+        @DSModeled(DSC.SAFE)
         public UsbDevice[] newArray(int size) {
             return new UsbDevice[size];
         }

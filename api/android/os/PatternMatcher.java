@@ -218,6 +218,7 @@ switch(mType){
             return new PatternMatcher(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public PatternMatcher[] newArray(int size) {
             return new PatternMatcher[size];
         }

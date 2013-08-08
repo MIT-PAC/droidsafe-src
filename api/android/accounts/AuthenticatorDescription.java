@@ -219,6 +219,7 @@ String var645F2244FF2137377AF0777536CDDC2B_1363612991 =         "AuthenticatorDe
         }
 
         
+        @DSModeled(DSC.SAFE)
         public AuthenticatorDescription[] newArray(int size) {
             return new AuthenticatorDescription[size];
         }

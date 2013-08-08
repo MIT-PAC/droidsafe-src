@@ -167,6 +167,7 @@ String var6A343BAC9DFF10320F68B5A4D553C4E8_1352967110 =         "UsbEndpoint[mAd
             return new UsbEndpoint(address, attributes, maxPacketSize, interval);
         }
 
+        @DSModeled(DSC.SAFE)
         public UsbEndpoint[] newArray(int size) {
             return new UsbEndpoint[size];
         }

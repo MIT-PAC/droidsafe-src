@@ -122,7 +122,8 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1635168046 =         sbuf.toString();
                 return info;
             }
 
-            public WifiP2pInfo[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public WifiP2pInfo[] newArray(int size) {
                 return new WifiP2pInfo[size];
             }
         };

@@ -35,6 +35,7 @@ public final class SmsStorageMonitor extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.003 -0400", hash_original_field = "BC56B8F1C1A0861751BBE78333C8BDF8", hash_generated_field = "7712C2BDAAF354E20E58C1731007D923")
 
     private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.003 -0400", hash_original_method = "5F38BA022ACD3718858B6FAF49C82F2C", hash_generated_method = "433F6D8B0AF631BD6BC6DCF023E72652")
         @Override
         public void onReceive(Context context, Intent intent) {

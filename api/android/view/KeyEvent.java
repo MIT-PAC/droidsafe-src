@@ -2539,6 +2539,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_442643712 =         msg.toString();
             return KeyEvent.createFromParcelBody(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public KeyEvent[] newArray(int size) {
             return new KeyEvent[size];
         }

@@ -101,7 +101,8 @@ public enum SupplicantState implements Parcelable {
             public SupplicantState createFromParcel(Parcel in) {
                 return SupplicantState.valueOf(in.readString());
             }
-            public SupplicantState[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public SupplicantState[] newArray(int size) {
                 return new SupplicantState[size];
             }
         };

@@ -1302,7 +1302,8 @@ String varF3DAD022EBABA935DC888B174E45C206_1407681354 =         getRawResFilenam
         addTaint(host.getTaint());
         addTaint(handle);
         HttpAuthHandler handler = new HttpAuthHandler() {
-            @Override
+            @DSModeled(DSC.SAFE)
+        @Override
             public boolean useHttpAuthUsernamePassword() {
                 return useCachedCredentials;
             }
@@ -1314,7 +1315,8 @@ String varF3DAD022EBABA935DC888B174E45C206_1407681354 =         getRawResFilenam
             public void cancel() {
                 nativeAuthenticationCancel(handle);
             }
-            @Override
+            @DSModeled(DSC.SAFE)
+        @Override
             public boolean suppressDialog() {
                 return suppressDialog;
             }

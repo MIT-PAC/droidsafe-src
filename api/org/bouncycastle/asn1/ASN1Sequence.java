@@ -137,6 +137,7 @@ DEREncodable var2FDE1120F80AA4E8798ECDBDB1C0E85C_1694734405 =             obj;
                 //}
             //return obj;
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.777 -0400", hash_original_method = "D852EEAF1DA4AF081125D411C2A8F904", hash_generated_method = "122E8A36451112778C63B73E94D842D4")
         public DERObject getLoadedObject() {
 DERObject var9F6A5CC5D0E8FDBA0198C27DF56526D2_2023305039 =             outer;
@@ -145,6 +146,7 @@ DERObject var9F6A5CC5D0E8FDBA0198C27DF56526D2_2023305039 =             outer;
             // ---------- Original Method ----------
             //return outer;
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.777 -0400", hash_original_method = "4FE555C2610E9C432E83EB0CA479A77A", hash_generated_method = "304D8E9F1A4D2ECF8A4ABFE251237D64")
         public DERObject getDERObject() {
 DERObject var9F6A5CC5D0E8FDBA0198C27DF56526D2_1793505502 =             outer;

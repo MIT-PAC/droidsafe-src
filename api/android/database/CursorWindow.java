@@ -983,6 +983,7 @@ String var3E9B70506FB423FE6C7A32E2D683FA47_1785310248 =         getName() + " {"
             return new CursorWindow(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public CursorWindow[] newArray(int size) {
             return new CursorWindow[size];
         }

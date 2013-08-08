@@ -396,9 +396,12 @@ String[] varD975358FAC88FC1B03513CAC9775EB14_273467073 =         getDelegate().g
 
     private static final TrustManager[] INSECURE_TRUST_MANAGER = new TrustManager[] {
         new X509TrustManager() {
-            public X509Certificate[] getAcceptedIssuers() { return null; }
-            public void checkClientTrusted(X509Certificate[] certs, String authType) { }
-            public void checkServerTrusted(X509Certificate[] certs, String authType) { }
+            @DSModeled(DSC.SAFE)
+        public X509Certificate[] getAcceptedIssuers() { return null; }
+            @DSModeled(DSC.SAFE)
+        public void checkClientTrusted(X509Certificate[] certs, String authType) { }
+            @DSModeled(DSC.SAFE)
+        public void checkServerTrusted(X509Certificate[] certs, String authType) { }
         }
     };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.316 -0400", hash_original_field = "6343101D0F76EABC0D4977BB28AE6A22", hash_generated_field = "381FF51A80ACF1B95AF4D1EAD812AEC8")

@@ -148,6 +148,7 @@ String var53423E0996054EE339CEF146F3A9158D_352982877 =         String.valueOf(ma
         public ConfigurationInfo createFromParcel(Parcel source) {
             return new ConfigurationInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public ConfigurationInfo[] newArray(int size) {
             return new ConfigurationInfo[size];
         }

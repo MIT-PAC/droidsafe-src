@@ -236,6 +236,7 @@ String var09A13D800FB7522D7DD400180F60E984_233857354 =         mSuggestions[i];
             return new SuggestionsInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public SuggestionsInfo[] newArray(int size) {
             return new SuggestionsInfo[size];

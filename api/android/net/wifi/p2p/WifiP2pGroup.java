@@ -385,7 +385,8 @@ for(WifiP2pDevice client : mClients)
                 return group;
             }
 
-            public WifiP2pGroup[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public WifiP2pGroup[] newArray(int size) {
                 return new WifiP2pGroup[size];
             }
         };

@@ -226,6 +226,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
         public ActivityInfo createFromParcel(Parcel source) {
             return new ActivityInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public ActivityInfo[] newArray(int size) {
             return new ActivityInfo[size];
         }

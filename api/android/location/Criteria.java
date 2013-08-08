@@ -428,6 +428,7 @@ public class Criteria implements Parcelable {
             return c;
         }
 
+        @DSModeled(DSC.SAFE)
         public Criteria[] newArray(int size) {
             return new Criteria[size];
         }

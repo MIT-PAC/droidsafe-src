@@ -890,6 +890,7 @@ for(Pair<String, String> header : mRequestHeaders)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.055 -0400", hash_original_method = "782D3BAE9A57AE7F89D5C5E0BBC212BD", hash_generated_method = "50CF13C07CF605BE20A49E12437C8401")
         public Query setFilterById(long... ids) {
             mIds = ids;

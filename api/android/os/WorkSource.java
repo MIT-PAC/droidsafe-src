@@ -548,6 +548,7 @@ for(int i2=0;i2<N2;i2++)
         public WorkSource createFromParcel(Parcel in) {
             return new WorkSource(in);
         }
+        @DSModeled(DSC.SAFE)
         public WorkSource[] newArray(int size) {
             return new WorkSource[size];
         }

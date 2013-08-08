@@ -746,6 +746,7 @@ for(Map.Entry<Integer, String> e : entries)
             return a;
         }
 
+        @DSModeled(DSC.SAFE)
         public Address[] newArray(int size) {
             return new Address[size];
         }

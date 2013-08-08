@@ -145,6 +145,7 @@ for(int i = 0;i < columnNames.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int compareStrings(String... values) {
         if ((values.length % 2) != 0) {
             throw new IllegalArgumentException("you must specify an even number of values");

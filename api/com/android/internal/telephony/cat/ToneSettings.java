@@ -77,6 +77,7 @@ public class ToneSettings implements Parcelable {
             return new ToneSettings(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public ToneSettings[] newArray(int size) {
             return new ToneSettings[size];
         }

@@ -266,6 +266,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.295 -0400", hash_original_field = "BF2765A7DF728F4D51D697E315A27D1E", hash_generated_field = "0EB899EA628BF1BD4CA4D632F2A8D506")
 
     BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.295 -0400", hash_original_method = "2E7815AD99D182A9CFAEBA30A64F6122", hash_generated_method = "553AEA2DBD1EADB4B4CC318E4F64ACC6")
         @Override
         public void onReceive(Context context, Intent intent) {

@@ -1036,10 +1036,12 @@ String varEF986DCEFABA18330D92CD8C42EF636E_57168861 =         writer.toString();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.939 -0400", hash_original_field = "048BF4BBB96644622132F9F51E1DB96F", hash_generated_field = "D81F6106977C71918B1EF6EAB4131577")
 
     public static final Creator<NetworkStatsHistory> CREATOR = new Creator<NetworkStatsHistory>() {
+        @DSModeled(DSC.BAN)
         public NetworkStatsHistory createFromParcel(Parcel in) {
             return new NetworkStatsHistory(in);
         }
 
+        @DSModeled(DSC.BAN)
         public NetworkStatsHistory[] newArray(int size) {
             return new NetworkStatsHistory[size];
         }

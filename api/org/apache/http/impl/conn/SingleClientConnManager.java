@@ -139,6 +139,7 @@ ClientConnectionOperator var5302AB2ADD1B4945976DC003AFE0BD75_751159360 =        
         addTaint(state.getTaint());
         addTaint(route.getTaint());
 ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_529814248 =         new ClientConnectionRequest() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.234 -0400", hash_original_method = "59B8F54C56EBECF9DD50C78DE5B52C0B", hash_generated_method = "9DC48F8D0136273714585B8035E22ED8")
         public void abortRequest() {
             // ---------- Original Method ----------

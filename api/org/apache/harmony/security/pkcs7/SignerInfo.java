@@ -217,7 +217,8 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_630185994 =         res.toString();
             })
         {
             
-            @Override public void getValues(Object object, Object[] values) {
+            @DSModeled(DSC.SAFE)
+        @Override public void getValues(Object object, Object[] values) {
                 Object [] issAndSerial = (Object[])object;
                 values[0] = issAndSerial[0];
                 values[1] = issAndSerial[1];

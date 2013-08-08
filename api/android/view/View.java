@@ -7813,10 +7813,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                             return new InvalidateInfo();
                         }
 
-                        public void onAcquired(InvalidateInfo element) {
+                        @DSModeled(DSC.SAFE)
+                public void onAcquired(InvalidateInfo element) {
                         }
 
-                        public void onReleased(InvalidateInfo element) {
+                        @DSModeled(DSC.SAFE)
+                public void onReleased(InvalidateInfo element) {
                             element.target = null;
                         }
                     }, POOL_LIMIT)

@@ -201,6 +201,7 @@ Fragment var01A4E1572BEF98558ED7F4E845C07CFE_642766112 =             mInstance;
             return new FragmentState(in);
         }
         
+        @DSModeled(DSC.SAFE)
         public FragmentState[] newArray(int size) {
             return new FragmentState[size];
         }

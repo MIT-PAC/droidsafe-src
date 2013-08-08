@@ -2300,6 +2300,7 @@ switch(c){
             return new RemoteViews(parcel);
         }
 
+        @DSModeled(DSC.SAFE)
         public RemoteViews[] newArray(int size) {
             return new RemoteViews[size];
         }

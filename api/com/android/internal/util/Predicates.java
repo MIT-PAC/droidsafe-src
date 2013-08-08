@@ -25,6 +25,7 @@ public class Predicates {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static <T> Predicate<T> or(Predicate<? super T>... components) {
         return or(Arrays.asList(components));
     }

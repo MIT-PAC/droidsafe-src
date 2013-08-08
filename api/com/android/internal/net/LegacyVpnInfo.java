@@ -78,6 +78,7 @@ public class LegacyVpnInfo implements Parcelable {
 
     public static final Parcelable.Creator<LegacyVpnInfo> CREATOR =
             new Parcelable.Creator<LegacyVpnInfo>() {
+        @DSModeled(DSC.BAN)
         @Override
         public LegacyVpnInfo createFromParcel(Parcel in) {
             LegacyVpnInfo info = new LegacyVpnInfo();
@@ -87,6 +88,7 @@ public class LegacyVpnInfo implements Parcelable {
             return info;
         }
 
+        @DSModeled(DSC.BAN)
         @Override
         public LegacyVpnInfo[] newArray(int size) {
             return new LegacyVpnInfo[size];

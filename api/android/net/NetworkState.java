@@ -97,10 +97,12 @@ public class NetworkState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_field = "639231E2CF24AC818C14B1454EE59F27", hash_generated_field = "8B25ACE201431313251FD6C8326EA110")
 
     public static final Creator<NetworkState> CREATOR = new Creator<NetworkState>() {
+        @DSModeled(DSC.BAN)
         public NetworkState createFromParcel(Parcel in) {
             return new NetworkState(in);
         }
 
+        @DSModeled(DSC.BAN)
         public NetworkState[] newArray(int size) {
             return new NetworkState[size];
         }

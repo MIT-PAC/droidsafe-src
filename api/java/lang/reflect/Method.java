@@ -525,6 +525,7 @@ Class<?> varDC9AC92D1699491F328099759E5C37AE_2007676233 =         returnType;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.126 -0400", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "3E88E9D7D2EE8FD41AF42323F36D233B")
     public Object invoke(Object receiver, Object... args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         addTaint(args[0].getTaint());

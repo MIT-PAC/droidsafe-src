@@ -38,6 +38,7 @@ public class ViewFlipper extends ViewAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.242 -0400", hash_original_field = "222E91439CEAD2DB1901D5AA0C5663AF", hash_generated_field = "8570C3C2B40A1C3E01F5D2029A49DFD5")
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.242 -0400", hash_original_method = "42FB9B1799748BE0453D66D785C793D7", hash_generated_method = "7CF62093314DB968F107DD7907FD4417")
         @Override
         public void onReceive(Context context, Intent intent) {

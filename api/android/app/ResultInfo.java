@@ -124,10 +124,12 @@ String var503AE12A5260321A6845A1C1B1307BB1_96201398 =         "ResultInfo{who=" 
 
     public static final Parcelable.Creator<ResultInfo> CREATOR
             = new Parcelable.Creator<ResultInfo>() {
+        @DSModeled(DSC.BAN)
         public ResultInfo createFromParcel(Parcel in) {
             return new ResultInfo(in);
         }
 
+        @DSModeled(DSC.BAN)
         public ResultInfo[] newArray(int size) {
             return new ResultInfo[size];
         }

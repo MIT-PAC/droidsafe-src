@@ -88,6 +88,7 @@ String var59D1027D8312A72F6CBAE99932E8098B_828529643 =         mWritePermission;
             return new PathPermission(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public PathPermission[] newArray(int size) {
             return new PathPermission[size];
         }

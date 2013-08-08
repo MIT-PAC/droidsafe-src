@@ -514,6 +514,7 @@ String var46A8C37BD18223DBA7F7BB5E017FE828_810412377 =         "InputMethodInfo{
             return new InputMethodInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public InputMethodInfo[] newArray(int size) {
             return new InputMethodInfo[size];

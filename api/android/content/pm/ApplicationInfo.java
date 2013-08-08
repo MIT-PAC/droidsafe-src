@@ -515,6 +515,7 @@ ApplicationInfo var72A74007B2BE62B849F475C7BDA4658B_1788161570 =         this;
         public ApplicationInfo createFromParcel(Parcel source) {
             return new ApplicationInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public ApplicationInfo[] newArray(int size) {
             return new ApplicationInfo[size];
         }

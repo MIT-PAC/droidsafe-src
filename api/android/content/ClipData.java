@@ -493,7 +493,8 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1202350329 =             "";
                 return new ClipData(source);
             }
 
-            public ClipData[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public ClipData[] newArray(int size) {
                 return new ClipData[size];
             }
         };

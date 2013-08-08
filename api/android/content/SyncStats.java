@@ -188,6 +188,7 @@ String var2460B846747F8B22185AD8BE722266A5_1409143485 =         sb.toString();
             return new SyncStats(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public SyncStats[] newArray(int size) {
             return new SyncStats[size];
         }

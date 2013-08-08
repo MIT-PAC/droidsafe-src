@@ -134,6 +134,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_924572809 =         mText;
             return new TextInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public TextInfo[] newArray(int size) {
             return new TextInfo[size];

@@ -122,7 +122,8 @@ String var2460B846747F8B22185AD8BE722266A5_611380921 =         sb.toString();
                 );
             }
 
-            public ScanResult[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public ScanResult[] newArray(int size) {
                 return new ScanResult[size];
             }
         };

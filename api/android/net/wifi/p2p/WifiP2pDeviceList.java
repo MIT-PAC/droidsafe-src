@@ -204,7 +204,8 @@ for(WifiP2pDevice device : mDevices)
                 return deviceList;
             }
 
-            public WifiP2pDeviceList[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public WifiP2pDeviceList[] newArray(int size) {
                 return new WifiP2pDeviceList[size];
             }
         };

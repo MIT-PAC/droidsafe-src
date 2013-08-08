@@ -229,7 +229,8 @@ public final class StrictMode {
         }
         if (LOG_V) Log.d(TAG, "Dropboxing async; in-flight=" + outstanding);
         new Thread("callActivityManagerForStrictModeDropbox") {
-            public void run() {
+            @DSModeled(DSC.BAN)
+        public void run() {
                 Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
                 try {
                     IActivityManager am = ActivityManagerNative.getDefault();
@@ -1341,6 +1342,7 @@ String var88FE0C10C841ADC188489DE26D480D44_1591693979 =             "AndroidBloc
                 } //End block
             } //End block
             threadHandler.get().post(new Runnable() {            
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.760 -0400", hash_original_method = "13A73E46BCAE9FB3F25E0C7CB59DBB78", hash_generated_method = "CC200B3D14D759E46EE269E659AE6050")
             public void run() {
                 long loopFinishTime = SystemClock.uptimeMillis();
@@ -2100,6 +2102,7 @@ for(String tag : tags)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.374 -0400", hash_original_field = "032D1DB3AC7977666A8FEE9196953B73", hash_generated_field = "A9537943E12E1BE66F65A9E047340B84")
 
     private static final ThreadLocal<ArrayList<ViolationInfo>> gatheredViolations = new ThreadLocal<ArrayList<ViolationInfo>>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.374 -0400", hash_original_method = "3F7643CB826EF0CE042B1409C79A26FA", hash_generated_method = "17F9046DABF4760439BFBA0AF9FA6792")
         @Override
         protected ArrayList<ViolationInfo> initialValue() {
@@ -2116,6 +2119,7 @@ for(String tag : tags)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.375 -0400", hash_original_field = "715B49E3F5CF23D0F2283607FFE671D2", hash_generated_field = "468766B1185D36E3C34C6CC8132A3BBA")
 
     private static final ThreadLocal<ArrayList<ViolationInfo>> violationsBeingTimed = new ThreadLocal<ArrayList<ViolationInfo>>() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.375 -0400", hash_original_method = "CB5695702D478EAB2FBBE8373134ED39", hash_generated_method = "DD5545FE6BD3BC5EEFC9A9B56ECE011C")
         @Override
         protected ArrayList<ViolationInfo> initialValue() {

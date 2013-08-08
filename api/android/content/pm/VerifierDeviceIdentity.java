@@ -222,10 +222,12 @@ String var07D462A050FE03B4C86B74A2A5E47504_1066338075 =         mIdentityString;
 
     public static final Parcelable.Creator<VerifierDeviceIdentity> CREATOR
             = new Parcelable.Creator<VerifierDeviceIdentity>() {
+        @DSModeled(DSC.BAN)
         public VerifierDeviceIdentity createFromParcel(Parcel source) {
             return new VerifierDeviceIdentity(source);
         }
 
+        @DSModeled(DSC.BAN)
         public VerifierDeviceIdentity[] newArray(int size) {
             return new VerifierDeviceIdentity[size];
         }

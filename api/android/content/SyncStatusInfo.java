@@ -286,10 +286,12 @@ for(int i = periodicSyncTimes.size();i < requiredSize;i++)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.818 -0400", hash_original_field = "4B380E2AA31D16D86BF89F8EE0A58282", hash_generated_field = "34F7BA97EC5F779445C9A58D21D7DF7D")
 
     public static final Creator<SyncStatusInfo> CREATOR = new Creator<SyncStatusInfo>() {
+        @DSModeled(DSC.BAN)
         public SyncStatusInfo createFromParcel(Parcel in) {
             return new SyncStatusInfo(in);
         }
 
+        @DSModeled(DSC.BAN)
         public SyncStatusInfo[] newArray(int size) {
             return new SyncStatusInfo[size];
         }

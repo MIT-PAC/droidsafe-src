@@ -375,6 +375,7 @@ public final class Message implements Parcelable {
             return msg;
         }
         
+        @DSModeled(DSC.SAFE)
         public Message[] newArray(int size) {
             return new Message[size];
         }

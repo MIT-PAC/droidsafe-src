@@ -1812,10 +1812,12 @@ Node varA29C6A1F0F29A0F3732076BE541D5DCD_1367590680 =                 mNext;
                             return new Node();
                         }
 
-                        public void onAcquired(Node element) {
+                        @DSModeled(DSC.SAFE)
+                public void onAcquired(Node element) {
                         }
 
-                        public void onReleased(Node element) {
+                        @DSModeled(DSC.SAFE)
+                public void onReleased(Node element) {
                         }
                     }, POOL_LIMIT)
             );

@@ -680,7 +680,8 @@ SipProfile var2628D2F9765045D198E63F41D85B8E30_1112191072 =             mProfile
                     return new SipProfile(in);
                 }
 
-                public SipProfile[] newArray(int size) {
+                @DSModeled(DSC.SAFE)
+        public SipProfile[] newArray(int size) {
                     return new SipProfile[size];
                 }
             };

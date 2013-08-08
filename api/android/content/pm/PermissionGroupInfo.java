@@ -129,6 +129,7 @@ String var72C53EB254ECB0D5467E66B7861D8A47_42115256 =         "PermissionGroupIn
         public PermissionGroupInfo createFromParcel(Parcel source) {
             return new PermissionGroupInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public PermissionGroupInfo[] newArray(int size) {
             return new PermissionGroupInfo[size];
         }

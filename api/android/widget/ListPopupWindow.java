@@ -1125,6 +1125,7 @@ switch(keyCode){
                         //}
                     //}
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.723 -0400", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "12A103C6C860E1CA8C576C5166DA4783")
         public void onNothingSelected(AdapterView<?> parent) {
             //DSFIXME:  CODE0009: Possible callback target function detected

@@ -168,6 +168,7 @@ String var03783B3D2CD3446423B1AFCBB32FF247_2127091 =         "UsbInterface[mId="
             return new UsbInterface(id, Class, subClass, protocol, endpoints);
         }
 
+        @DSModeled(DSC.SAFE)
         public UsbInterface[] newArray(int size) {
             return new UsbInterface[size];
         }

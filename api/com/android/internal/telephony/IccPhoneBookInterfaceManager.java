@@ -88,6 +88,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.989 -0400", hash_original_method = "AEA2E9D2067E99FB1331FC981CC14937", hash_generated_method = "A9B77AF35C7BC8F11854E73C8BE49190")
         private void notifyPending(AsyncResult ar) {
             AtomicBoolean status = (AtomicBoolean) ar.userObj;

@@ -340,6 +340,7 @@ for(int i=0;i<N;i++)
 
     public static final Parcelable.Creator<ColorStateList> CREATOR =
             new Parcelable.Creator<ColorStateList>() {
+        @DSModeled(DSC.SAFE)
         public ColorStateList[] newArray(int size) {
             return new ColorStateList[size];
         }

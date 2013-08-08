@@ -150,9 +150,11 @@ String varAE9EAD1C92DCAF55B077936E6231CB03_967962673 =         "UserInfo{" + id 
 
     public static final Parcelable.Creator<UserInfo> CREATOR
             = new Parcelable.Creator<UserInfo>() {
+        @DSModeled(DSC.BAN)
         public UserInfo createFromParcel(Parcel source) {
             return new UserInfo(source);
         }
+        @DSModeled(DSC.BAN)
         public UserInfo[] newArray(int size) {
             return new UserInfo[size];
         }

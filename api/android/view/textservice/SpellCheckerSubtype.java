@@ -269,6 +269,7 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1831196585 =             locale
             return new SpellCheckerSubtype(source);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public SpellCheckerSubtype[] newArray(int size) {
             return new SpellCheckerSubtype[size];

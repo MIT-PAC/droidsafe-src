@@ -1110,6 +1110,7 @@ Notification var041154653C812B0D1663EC287BE4C757_1580152631 =             n;
             return new Notification(parcel);
         }
 
+        @DSModeled(DSC.SAFE)
         public Notification[] newArray(int size)
         {
             return new Notification[size];

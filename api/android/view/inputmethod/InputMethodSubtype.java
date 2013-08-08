@@ -465,6 +465,7 @@ String var668958CC928CE427869ECE8B61534E65_564572761 =         getExtraValueHash
             return new InputMethodSubtype(source);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public InputMethodSubtype[] newArray(int size) {
             return new InputMethodSubtype[size];

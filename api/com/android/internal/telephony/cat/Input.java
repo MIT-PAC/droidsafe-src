@@ -172,6 +172,7 @@ public class Input implements Parcelable {
             return new Input(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public Input[] newArray(int size) {
             return new Input[size];
         }

@@ -46,7 +46,8 @@ final class ProcessManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.453 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
     private  ProcessManager() {
         Thread reaperThread = new Thread(ProcessManager.class.getName()) {
-            @Override public void run() {
+            @DSModeled(DSC.BAN)
+        @Override public void run() {
                 watchChildren();
             }
         };

@@ -158,6 +158,7 @@ String varD6FD82BF3DAE7A6B9B51563B3E18074B_1393481245 =         "ContentProvider
             return new ProviderInfo(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public ProviderInfo[] newArray(int size) {
             return new ProviderInfo[size];
         }

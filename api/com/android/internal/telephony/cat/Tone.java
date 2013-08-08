@@ -63,9 +63,11 @@ public enum Tone implements Parcelable {
         return 0;
     }
     public static final Parcelable.Creator<Tone> CREATOR = new Parcelable.Creator<Tone>() {
+        @DSModeled(DSC.BAN)
         public Tone createFromParcel(Parcel in) {
             return Tone.values()[in.readInt()];
         }
+        @DSModeled(DSC.BAN)
         public Tone[] newArray(int size) {
             return new Tone[size];
         }

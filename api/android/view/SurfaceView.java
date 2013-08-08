@@ -217,6 +217,7 @@ public class SurfaceView extends View {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.962 -0400", hash_original_field = "6FDAAEDC4A7B9F01F100A9951CA155B8", hash_generated_field = "530D605DB6C75935065881CA57601D54")
 
     private SurfaceHolder mSurfaceHolder = new SurfaceHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.955 -0400", hash_original_method = "FBEC596A43003FDD0C674BF719352967", hash_generated_method = "0AE8C164963D9154C5373545011D347E")
         public boolean isCreating() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2145375023 = getTaintBoolean();
@@ -309,6 +310,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.958 -0400", hash_original_method = "B37A48D0CAD6F4AF8C78DA1B2A495A29", hash_generated_method = "6068068249DD588BA4B94775BE4C5DEA")
         @Deprecated
         public void setType(int type) {
@@ -353,6 +355,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.960 -0400", hash_original_method = "4B95DCD02F9C44A8215403B28FBCC461", hash_generated_method = "E2365ED314FD823C889E68CD4EC4E0E5")
         private final Canvas internalLockCanvas(Rect dirty) {
             Canvas varB4EAC82CA7396A68D541C85D26508E83_1001906738 = null; 
@@ -420,6 +423,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.961 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "EAE603A661341677B1E1442890212909")
         public Surface getSurface() {
             Surface varB4EAC82CA7396A68D541C85D26508E83_993699055 = null; 
@@ -431,6 +435,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.962 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "E910481C9324FAFBE5C38994E3533063")
         public Rect getSurfaceFrame() {
             Rect varB4EAC82CA7396A68D541C85D26508E83_1622396157 = null; 

@@ -6389,15 +6389,18 @@ for(int i = 0;i < count;i++)
 
         private final Pool<SomeArgs> mPool = Pools.synchronizedPool(Pools.finitePool(
                 new PoolableManager<SomeArgs>() {
-                    public SomeArgs newInstance() {
+                    @DSModeled(DSC.BAN)
+            public SomeArgs newInstance() {
                         return new SomeArgs();
                     }
 
-                    public void onAcquired(SomeArgs info) {
+                    @DSModeled(DSC.BAN)
+            public void onAcquired(SomeArgs info) {
                         
                     }
 
-                    public void onReleased(SomeArgs info) {
+                    @DSModeled(DSC.BAN)
+            public void onReleased(SomeArgs info) {
                         info.clear();
                     }
                 }, POOL_SIZE)

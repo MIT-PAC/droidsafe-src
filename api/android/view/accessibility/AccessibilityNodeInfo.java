@@ -1175,6 +1175,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1482787541 =         builder.toString
             return info;
         }
 
+        @DSModeled(DSC.SAFE)
         public AccessibilityNodeInfo[] newArray(int size) {
             return new AccessibilityNodeInfo[size];
         }

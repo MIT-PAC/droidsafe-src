@@ -191,6 +191,7 @@ String var2460B846747F8B22185AD8BE722266A5_1177952771 =         sb.toString();
             return new PackageStats(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public PackageStats[] newArray(int size) {
             return new PackageStats[size];
         }

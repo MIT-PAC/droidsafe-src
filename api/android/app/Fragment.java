@@ -200,6 +200,7 @@ Fragment var01A4E1572BEF98558ED7F4E845C07CFE_852537653 =         mInstance;
             return new FragmentState(in);
         }
         
+        @DSModeled(DSC.SAFE)
         public FragmentState[] newArray(int size) {
             return new FragmentState[size];
         }
@@ -1547,6 +1548,7 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1645929206 =         mView;
                 return new SavedState(in, null);
             }
 
+            @DSModeled(DSC.BAN)
             public SavedState createFromParcel(Parcel in, ClassLoader loader) {
                 return new SavedState(in, loader);
             }

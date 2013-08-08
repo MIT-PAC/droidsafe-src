@@ -670,6 +670,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
             return null;
         }
 
+        @DSModeled(DSC.SAFE)
         public Surface[] newArray(int size) {
             return new Surface[size];
         }

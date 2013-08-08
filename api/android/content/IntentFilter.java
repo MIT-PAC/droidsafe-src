@@ -1645,6 +1645,7 @@ String var0F8BF6F5C2827A165225109D7A5D92E0_1845557654 =             mOrigHost;
             return new IntentFilter(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public IntentFilter[] newArray(int size) {
             return new IntentFilter[size];
         }

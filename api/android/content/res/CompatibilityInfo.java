@@ -755,10 +755,12 @@ Region var897F85AD4AAD10E23518A1C6E002613F_1642350196 =             mTouchableAr
 
     public static final Parcelable.Creator<CompatibilityInfo> CREATOR
             = new Parcelable.Creator<CompatibilityInfo>() {
+        @DSModeled(DSC.BAN)
         public CompatibilityInfo createFromParcel(Parcel source) {
             return new CompatibilityInfo(source);
         }
 
+        @DSModeled(DSC.BAN)
         public CompatibilityInfo[] newArray(int size) {
             return new CompatibilityInfo[size];
         }

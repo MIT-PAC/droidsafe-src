@@ -305,6 +305,7 @@ SpellCheckerSubtype var20D9F29322B7A583A76DDB79ACEBD923_586033217 =         mSub
             return new SpellCheckerInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public SpellCheckerInfo[] newArray(int size) {
             return new SpellCheckerInfo[size];

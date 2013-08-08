@@ -136,6 +136,7 @@ String var53423E0996054EE339CEF146F3A9158D_1742494999 =         String.valueOf(m
         public FeatureInfo createFromParcel(Parcel source) {
             return new FeatureInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public FeatureInfo[] newArray(int size) {
             return new FeatureInfo[size];
         }

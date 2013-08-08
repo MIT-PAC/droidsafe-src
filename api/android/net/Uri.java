@@ -3032,6 +3032,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
 
     public static final Parcelable.Creator<Uri> CREATOR
             = new Parcelable.Creator<Uri>() {
+        @DSModeled(DSC.SPEC)
         public Uri createFromParcel(Parcel in) {
             int type = in.readInt();
             switch (type) {
@@ -3045,6 +3046,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
             throw new IllegalArgumentException("Unknown URI type: " + type);
         }
 
+        @DSModeled(DSC.SAFE)
         public Uri[] newArray(int size) {
             return new Uri[size];
         }

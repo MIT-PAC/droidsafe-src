@@ -405,6 +405,7 @@ String var2E81D21F4BB04749CB49DF2B60E0DD5F_559868828 =         "ResolveInfo{"
         public ResolveInfo createFromParcel(Parcel source) {
             return new ResolveInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public ResolveInfo[] newArray(int size) {
             return new ResolveInfo[size];
         }

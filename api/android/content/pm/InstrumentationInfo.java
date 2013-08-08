@@ -137,6 +137,7 @@ String var2ACCEFA985DAEFA3B14D26B03FD6229E_266521971 =         "InstrumentationI
         public InstrumentationInfo createFromParcel(Parcel source) {
             return new InstrumentationInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public InstrumentationInfo[] newArray(int size) {
             return new InstrumentationInfo[size];
         }

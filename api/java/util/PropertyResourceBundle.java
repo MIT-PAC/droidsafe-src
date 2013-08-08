@@ -88,6 +88,7 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_1061038075 =         new
         Enumeration<String> pEnum = parent.getKeys();
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.508 -0400", hash_original_field = "597A00560349D4451A3F2269B8E761F0", hash_generated_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F")
         String nextElement;
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.508 -0400", hash_original_method = "7E529D209593DF12DACEC799F2DDAEB1", hash_generated_method = "A7E8C01149F02276671393F6572A7041")
         private boolean findNext() {
             if(nextElement != null)            

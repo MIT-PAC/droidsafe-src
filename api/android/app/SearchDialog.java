@@ -89,6 +89,7 @@ public class SearchDialog extends Dialog {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.068 -0400", hash_original_field = "4C8632D0626D11A25D8014E79CAA4E06", hash_generated_field = "078A814FD4991378BDB28FB48F12B0ED")
 
     private BroadcastReceiver mConfChangeListener = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.068 -0400", hash_original_method = "61FB59FECA93F3EDF27E6A33F699149F", hash_generated_method = "98EAE8A6AA366027995AA3D63178677D")
         @Override
         public void onReceive(Context context, Intent intent) {

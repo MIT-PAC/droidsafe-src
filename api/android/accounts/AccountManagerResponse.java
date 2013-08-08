@@ -103,10 +103,12 @@ public class AccountManagerResponse implements Parcelable {
 
     public static final Creator<AccountManagerResponse> CREATOR =
             new Creator<AccountManagerResponse>() {
+        @DSModeled(DSC.BAN)
         public AccountManagerResponse createFromParcel(Parcel source) {
             return new AccountManagerResponse(source);
         }
 
+        @DSModeled(DSC.BAN)
         public AccountManagerResponse[] newArray(int size) {
             return new AccountManagerResponse[size];
         }

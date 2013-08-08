@@ -126,6 +126,7 @@ String var9F600BFBE887033823CFD91DDDB01734_1344950003 =         "CorrectionInfo{
             return new CorrectionInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public CorrectionInfo[] newArray(int size) {
             return new CorrectionInfo[size];
         }

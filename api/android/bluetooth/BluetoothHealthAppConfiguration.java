@@ -204,6 +204,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_2024313670 =         mName;
                 channelType);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public BluetoothHealthAppConfiguration[] newArray(int size) {
             return new BluetoothHealthAppConfiguration[size];

@@ -217,12 +217,14 @@ String var674CAC8E34E5C6C4D042792BFADA198C_522387628 =         getName();
 
     public static final Parcelable.Creator<InputChannel> CREATOR
             = new Parcelable.Creator<InputChannel>() {
+        @DSModeled(DSC.BAN)
         public InputChannel createFromParcel(Parcel source) {
             InputChannel result = new InputChannel();
             result.readFromParcel(source);
             return result;
         }
         
+        @DSModeled(DSC.BAN)
         public InputChannel[] newArray(int size) {
             return new InputChannel[size];
         }

@@ -365,7 +365,8 @@ for(int i = 0;i <= degree;i++)
                     return new VelocityTracker();
                 }
 
-                public void onAcquired(VelocityTracker element) {
+                @DSModeled(DSC.SAFE)
+        public void onAcquired(VelocityTracker element) {
                 }
 
                 public void onReleased(VelocityTracker element) {

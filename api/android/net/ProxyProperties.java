@@ -408,7 +408,8 @@ String var2460B846747F8B22185AD8BE722266A5_986218408 =         sb.toString();
 
     public static final Creator<ProxyProperties> CREATOR =
         new Creator<ProxyProperties>() {
-            public ProxyProperties createFromParcel(Parcel in) {
+            @DSModeled(DSC.BAN)
+        public ProxyProperties createFromParcel(Parcel in) {
                 String host = null;
                 int port = 0;
                 if (in.readByte() == 1) {
@@ -422,7 +423,8 @@ String var2460B846747F8B22185AD8BE722266A5_986218408 =         sb.toString();
                 return proxyProperties;
             }
 
-            public ProxyProperties[] newArray(int size) {
+            @DSModeled(DSC.BAN)
+        public ProxyProperties[] newArray(int size) {
                 return new ProxyProperties[size];
             }
         };

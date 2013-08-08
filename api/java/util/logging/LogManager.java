@@ -39,6 +39,7 @@ public class LogManager {
         props = new Properties();
         listeners = new PropertyChangeSupport(this);
         Runtime.getRuntime().addShutdownHook(new Thread() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.194 -0400", hash_original_method = "1836317CB8E0A5E5B172790642D1742E", hash_generated_method = "59D9E72089082C0A3CB03237A4A6EC42")
         @Override
         public void run() {

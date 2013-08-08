@@ -92,6 +92,7 @@ String var5601F77C1E784C31FA233AB799182FA6_1988991985 =         mPackageName;
 
     public static final Parcelable.Creator<GeocoderParams> CREATOR =
         new Parcelable.Creator<GeocoderParams>() {
+        @DSModeled(DSC.BAN)
         public GeocoderParams createFromParcel(Parcel in) {
             GeocoderParams gp = new GeocoderParams();
             String language = in.readString();
@@ -102,6 +103,7 @@ String var5601F77C1E784C31FA233AB799182FA6_1988991985 =         mPackageName;
             return gp;
         }
 
+        @DSModeled(DSC.BAN)
         public GeocoderParams[] newArray(int size) {
             return new GeocoderParams[size];
         }

@@ -719,10 +719,12 @@ GLES20RecordingCanvas var5612CC1D0E3746BA465EFD9B27DD0183_174639344 =         mN
                 public GLES20RecordingCanvas newInstance() {
                     return new GLES20RecordingCanvas();
                 }
-                @Override
+                @DSModeled(DSC.SAFE)
+        @Override
                 public void onAcquired(GLES20RecordingCanvas element) {
                 }
-                @Override
+                @DSModeled(DSC.SAFE)
+        @Override
                 public void onReleased(GLES20RecordingCanvas element) {
                 }
             }, POOL_LIMIT));

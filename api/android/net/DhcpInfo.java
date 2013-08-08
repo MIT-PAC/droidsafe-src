@@ -160,7 +160,8 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1611793050 =         str.toString();
                 return info;
             }
 
-            public DhcpInfo[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public DhcpInfo[] newArray(int size) {
                 return new DhcpInfo[size];
             }
         };

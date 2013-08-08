@@ -99,7 +99,8 @@ public abstract class RegisteredServicesCache<V> {
         mPersistentServicesFile = new AtomicFile(new File(syncDir, interfaceName + ".xml"));
         generateServicesMap();
         final BroadcastReceiver receiver = new BroadcastReceiver() {
-            @Override
+            @DSModeled(DSC.SPEC)
+        @Override
             public void onReceive(Context context1, Intent intent) {
                 generateServicesMap();
             }

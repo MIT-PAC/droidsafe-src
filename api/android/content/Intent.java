@@ -3830,9 +3830,11 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_894788610 =             mIntent;
 
     public static final Parcelable.Creator<Intent> CREATOR
             = new Parcelable.Creator<Intent>() {
+        @DSModeled(DSC.SPEC)
         public Intent createFromParcel(Parcel in) {
             return new Intent(in);
         }
+        @DSModeled(DSC.SAFE)
         public Intent[] newArray(int size) {
             return new Intent[size];
         }

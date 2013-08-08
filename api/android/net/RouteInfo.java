@@ -366,6 +366,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
 
     public static final Creator<RouteInfo> CREATOR =
         new Creator<RouteInfo>() {
+        @DSModeled(DSC.BAN)
         public RouteInfo createFromParcel(Parcel in) {
             InetAddress destAddr = null;
             int prefix = 0;
@@ -397,6 +398,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
             return new RouteInfo(dest, gateway);
         }
 
+        @DSModeled(DSC.BAN)
         public RouteInfo[] newArray(int size) {
             return new RouteInfo[size];
         }

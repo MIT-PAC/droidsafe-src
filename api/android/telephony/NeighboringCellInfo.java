@@ -285,6 +285,7 @@ String var2460B846747F8B22185AD8BE722266A5_1421670504 =         sb.toString();
             return new NeighboringCellInfo(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public NeighboringCellInfo[] newArray(int size) {
             return new NeighboringCellInfo[size];
         }

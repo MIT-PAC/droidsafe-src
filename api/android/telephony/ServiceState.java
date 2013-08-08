@@ -872,6 +872,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
             return new ServiceState(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public ServiceState[] newArray(int size) {
             return new ServiceState[size];
         }

@@ -200,6 +200,7 @@ public class ResultReceiver implements Parcelable {
         public ResultReceiver createFromParcel(Parcel in) {
             return new ResultReceiver(in);
         }
+        @DSModeled(DSC.SAFE)
         public ResultReceiver[] newArray(int size) {
             return new ResultReceiver[size];
         }

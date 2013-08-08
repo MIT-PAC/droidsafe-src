@@ -118,7 +118,8 @@ public class Collections {
         final Collection<T> c = collection;
         return new Enumeration<T>() {
             Iterator<T> it = c.iterator();
-            @Override public boolean hasMoreElements() {
+            @DSModeled(DSC.SAFE)
+        @Override public boolean hasMoreElements() {
                 return it.hasNext();
             }
             @Override public T nextElement() {
@@ -1230,6 +1231,7 @@ Object var30C80D8445A0CA6A7769041AAD00A443_1340467786 =             INSTANCE;
         public Iterator<E> iterator() {
 Iterator<E> varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739 =             new Iterator<E>() {            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.644 -0400", hash_original_field = "42ADDF4753B3ACA32EE339265163027B", hash_generated_field = "DE9DC7F145F778F316047B4F4AEC3B9B")
             boolean hasNext = true;
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.644 -0400", hash_original_method = "1FFE1DD028DACE64CCBE65BDB363D72C", hash_generated_method = "2A98214D57023A09402BB808AED6A9DC")
             @Override
             public boolean hasNext() {
@@ -3093,6 +3095,7 @@ SortedSet<E> var6F7D9083A65424D18B09B8597111017E_923391220 =                 new
         public Iterator<E> iterator() {
 Iterator<E> var17584F965577555F1B3BEAB9FFD781E4_1722746458 =             new Iterator<E>() {            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.731 -0400", hash_original_field = "8EFDCD9E60E16BF9DA2CF814FA6A227A", hash_generated_field = "BFAA84E4781D6E7F7943DE789C19AEAB")
             Iterator<E> iterator = c.iterator();
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.731 -0400", hash_original_method = "AA3B17E619A4DDCE5FFF27C1294FF431", hash_generated_method = "61B452FE88E2B53DA264328736C4E75C")
             @Override
             public boolean hasNext() {
@@ -3778,6 +3781,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_163713358 =             m.toString();
             public Iterator<Map.Entry<K, V>> iterator() {
 Iterator<Map.Entry<K, V>> var95D309287220EAC9AA0261E09FAD4D41_1872266644 =                 new Iterator<Map.Entry<K, V>>() {                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.755 -0400", hash_original_field = "8EFDCD9E60E16BF9DA2CF814FA6A227A", hash_generated_field = "5453FE1747389AC528B71FA32FDEB84E")
                 Iterator<Map.Entry<K, V>> iterator = c.iterator();
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.755 -0400", hash_original_method = "AA3B17E619A4DDCE5FFF27C1294FF431", hash_generated_method = "790B8EF54A092AB0CB166BE909AE45ED")
                 @Override
                 public boolean hasNext() {
@@ -6150,6 +6154,7 @@ K varC4E8101F3F71352235F4E401D4498536_249888266 =             sm.lastKey();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_field = "A240022D45397AD0FD0431DDDFAF666B", hash_generated_field = "D0EAF21E918FB32348AF27B109DA8409")
 
     private static final Iterator<?> EMPTY_ITERATOR = new Iterator<Object>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.457 -0400", hash_original_method = "28E75D14A5D2234D3702D9638A8D3094", hash_generated_method = "B2F402CD4B1F330E1194A5FAF66FE3C9")
         @Override
         public boolean hasNext() {
@@ -6182,6 +6187,7 @@ K varC4E8101F3F71352235F4E401D4498536_249888266 =             sm.lastKey();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.459 -0400", hash_original_field = "BF19162ABA3425F946F5D9B6685AC2EC", hash_generated_field = "66C8EDF172F44B1C185312659E6B7E7F")
 
     private static final Enumeration<?> EMPTY_ENUMERATION = new Enumeration<Object>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "50CD0E92886EDA5BEE0164B092B351EC", hash_generated_method = "5846EE9EB8DDDDC0896316CB4D84FA05")
         @Override
         public boolean hasMoreElements() {

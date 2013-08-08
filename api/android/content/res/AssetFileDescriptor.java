@@ -516,6 +516,7 @@ String varBCC72A648A1B956D0D083D4BD8697C29_719345300 =         "{AssetFileDescri
         public AssetFileDescriptor createFromParcel(Parcel in) {
             return new AssetFileDescriptor(in);
         }
+        @DSModeled(DSC.SAFE)
         public AssetFileDescriptor[] newArray(int size) {
             return new AssetFileDescriptor[size];
         }

@@ -952,6 +952,7 @@ BluetoothSocket varCBE45E1CC339E38D120332CED93F6CAC_1207411206 =         new Blu
         public BluetoothDevice createFromParcel(Parcel in) {
             return new BluetoothDevice(in.readString());
         }
+        @DSModeled(DSC.SAFE)
         public BluetoothDevice[] newArray(int size) {
             return new BluetoothDevice[size];
         }

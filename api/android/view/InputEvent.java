@@ -92,6 +92,7 @@ InputDevice var6CAF134A410F580D974FCD91E6F3C893_1344692404 =         InputDevice
             }
         }
         
+        @DSModeled(DSC.SAFE)
         public InputEvent[] newArray(int size) {
             return new InputEvent[size];
         }

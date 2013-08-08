@@ -630,7 +630,8 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_593256382 =         nativeToString(mN
                 }
                 return new Region(ni);
             }
-            public Region[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public Region[] newArray(int size) {
                 return new Region[size];
             }
     };

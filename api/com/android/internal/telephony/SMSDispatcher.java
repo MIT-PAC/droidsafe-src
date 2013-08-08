@@ -124,6 +124,7 @@ public abstract class SMSDispatcher extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.796 -0400", hash_original_field = "3BD1FD2D59441EC9D67424C813CB8822", hash_generated_field = "6836B0FA743263ABE1B2C701A5021A92")
 
     private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.796 -0400", hash_original_method = "DB25CB42F24A1F0004F16056EEBCBE73", hash_generated_method = "2EB066921744C6644579A933780E2AC4")
         @Override
         public void onReceive(Context context, Intent intent) {

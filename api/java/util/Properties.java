@@ -656,6 +656,7 @@ for(Map.Entry<Object, Object> entry : entrySet())
                 throw varD7D5CC05F351C45F26A7F84C2C962F04_883337655;
             } //End block
             builder.setErrorHandler(new ErrorHandler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.435 -0400", hash_original_method = "A780B405018C6E806DD90859BE935681", hash_generated_method = "A585F38429FF8D5BBD722B25895B6137")
         public void warning(SAXParseException e) throws SAXException {
             addTaint(e.getTaint());
@@ -664,6 +665,7 @@ for(Map.Entry<Object, Object> entry : entrySet())
             // ---------- Original Method ----------
             //throw e;
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.435 -0400", hash_original_method = "1BA627FA566198BCA8957A882673AC06", hash_generated_method = "377AAD29C1633EC96EC6B447775EDD25")
         public void error(SAXParseException e) throws SAXException {
             addTaint(e.getTaint());
@@ -672,6 +674,7 @@ for(Map.Entry<Object, Object> entry : entrySet())
             // ---------- Original Method ----------
             //throw e;
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.435 -0400", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "0179C6E37915287522939865529DEE7D")
         public void fatalError(SAXParseException e) throws SAXException {
             addTaint(e.getTaint());

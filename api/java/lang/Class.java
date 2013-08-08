@@ -322,6 +322,7 @@ ClassLoader varCF4789975F8C078EDDC0A2EE6321BC19_697004622 =         loader == nu
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.628 -0400", hash_original_method = "F0845B6DA735A4C36F51E7CB08D1D9A7", hash_generated_method = "AF3BF7D2847B87E92369F3E0FA377EFE")
     @SuppressWarnings("unchecked")
     public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMethodException {
@@ -520,6 +521,7 @@ Class<?>[] varDC838461EE2FA0CA4C9BBB70A15456B0_2086192930 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.632 -0400", hash_original_method = "BE852690AE0E27D0B9CC0DDC2FD443E4", hash_generated_method = "A036CE7F889C5B8983F5CC2ED85B9E7D")
     @SuppressWarnings("unchecked")
     public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes) throws NoSuchMethodException {
@@ -613,6 +615,7 @@ Field[] varB13318B8B62F8154F0AA694406899EAD_732481342 =         getDeclaredField
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.633 -0400", hash_original_method = "03F26499B4401EE2D953FCB368DE68F4", hash_generated_method = "D0CF2093E4AA413D9F87759F13C74310")
     public Method getDeclaredMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
         addTaint(parameterTypes[0].getTaint());
@@ -886,6 +889,7 @@ Type var71A5E1DE09D6EE3F5949C6CCEFB94DA4_1863108335 =         Types.getType(pars
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.635 -0400", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "28768E7A161FD8044CABECEE1834BDEF")
     public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
         addTaint(parameterTypes[0].getTaint());

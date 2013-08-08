@@ -549,6 +549,7 @@ public class RectF implements Parcelable {
         }
         
         
+        @DSModeled(DSC.SAFE)
         public RectF[] newArray(int size) {
             return new RectF[size];
         }

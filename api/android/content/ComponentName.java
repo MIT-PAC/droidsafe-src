@@ -344,6 +344,7 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_357204788 =         "ComponentInfo{" 
             return new ComponentName(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public ComponentName[] newArray(int size) {
             return new ComponentName[size];
         }

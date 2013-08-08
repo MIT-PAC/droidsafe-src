@@ -462,6 +462,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_1468753206 =         mNotificationTar
             return new SuggestionSpan(source);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public SuggestionSpan[] newArray(int size) {
             return new SuggestionSpan[size];

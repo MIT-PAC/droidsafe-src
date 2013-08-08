@@ -1290,6 +1290,7 @@ E var9AC0307A5A079FF49EDDEA7AAD7008A5_471513423 =             type.get(new Entry
         public Iterator<Map.Entry<KT, VT>> iterator() {
 Iterator<Map.Entry<KT, VT>> varFE22973482D44A4465B49DBA0D13776B_1643986750 =             new EnumMapEntryIterator<Map.Entry<KT, VT>, KT, VT>(
                     new MapEntry.Type<Map.Entry<KT, VT>, KT, VT>() {            
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.639 -0400", hash_original_method = "E6C5689ECDF5DCF09D122C660DDB94F0", hash_generated_method = "3561F848BD9F6372D59C8CBD9F75D8B2")
             public Map.Entry<KT, VT> get(MapEntry<KT, VT> entry) {
                 addTaint(entry.getTaint());

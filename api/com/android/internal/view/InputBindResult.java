@@ -96,6 +96,7 @@ String var7FC001ADC5B990238F8DB3504F6EAF2D_5655788 =         "InputBindResult{" 
             return new InputBindResult(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public InputBindResult[] newArray(int size) {
             return new InputBindResult[size];
         }

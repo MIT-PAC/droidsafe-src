@@ -2574,7 +2574,8 @@ String var8ED90389504921227F61E87718C80D36_1095126002 =             "FragmentPag
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>() {
-                    @Override
+                    @DSModeled(DSC.BAN)
+            @Override
                     public SavedState createFromParcel(Parcel in, ClassLoader loader) {
                         return new SavedState(in, loader);
                     }
@@ -2698,6 +2699,7 @@ String var8ED90389504921227F61E87718C80D36_1095126002 =             "FragmentPag
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.094 -0400", hash_original_field = "4202665155CA1C6B56FDDCABB0AF2DC1", hash_generated_field = "5E6A95D139D1F8AE27D3F1637C286AA4")
 
     private static final Comparator<ItemInfo> COMPARATOR = new Comparator<ItemInfo>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.094 -0400", hash_original_method = "E78668ADB8BEA86BCE0E7FA19199ECBB", hash_generated_method = "21DE610755713DA1A41859ACA1CC340A")
         @Override
         public int compare(ItemInfo lhs, ItemInfo rhs) {
@@ -2714,6 +2716,7 @@ String var8ED90389504921227F61E87718C80D36_1095126002 =             "FragmentPag
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.096 -0400", hash_original_field = "3DAA3CA73C29E9EEE6C4A07C4D95803A", hash_generated_field = "AAFB3424C4E3B805B840EED16A117C87")
 
     private static final Interpolator sInterpolator = new Interpolator() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.096 -0400", hash_original_method = "11FE6ADED2EE7422CCA03C14DA065BC8", hash_generated_method = "53761C327FF8A4A7EA67EF20258337B8")
         public float getInterpolation(float t) {
             t -= 1.0f;

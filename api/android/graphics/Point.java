@@ -171,6 +171,7 @@ public class Point implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public Point[] newArray(int size) {
             return new Point[size];
         }

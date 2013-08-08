@@ -2012,6 +2012,7 @@ public final class Parcel {
         public String createFromParcel(Parcel source) {
             return source.readString();
         }
+        @DSModeled(DSC.SAFE)
         public String[] newArray(int size) {
             return new String[size];
         }

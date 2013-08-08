@@ -437,7 +437,8 @@ String var061B89662D09DE43FE2A2D88636258A2_1452513810 =         str;
                 return device;
             }
 
-            public WifiP2pDevice[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public WifiP2pDevice[] newArray(int size) {
                 return new WifiP2pDevice[size];
             }
         };

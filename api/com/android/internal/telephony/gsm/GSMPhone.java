@@ -167,6 +167,7 @@ public class GSMPhone extends PhoneBase {
                 debugPortThread
                     = new Thread(
                         new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.887 -0400", hash_original_method = "4E77C2C2171044E4A2A86AC9695E0AD3", hash_generated_method = "14575FDF60F9A6B5E330FF1BF6380000")
         public void run() {
 for(;;)

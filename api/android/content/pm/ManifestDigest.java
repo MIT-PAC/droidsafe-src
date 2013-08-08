@@ -162,10 +162,12 @@ String var2460B846747F8B22185AD8BE722266A5_626166886 =         sb.toString();
 
     public static final Parcelable.Creator<ManifestDigest> CREATOR
             = new Parcelable.Creator<ManifestDigest>() {
+        @DSModeled(DSC.BAN)
         public ManifestDigest createFromParcel(Parcel source) {
             return new ManifestDigest(source);
         }
 
+        @DSModeled(DSC.BAN)
         public ManifestDigest[] newArray(int size) {
             return new ManifestDigest[size];
         }

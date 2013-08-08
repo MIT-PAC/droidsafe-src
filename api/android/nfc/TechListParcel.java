@@ -71,6 +71,7 @@ for(int i = 0;i < count;i++)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.415 -0400", hash_original_field = "3EF1D37F275B16491C644A6C6C17DFAE", hash_generated_field = "26E56EC2A9AB9ADBEAAD9C9C0A9E8ECF")
 
     public static final Creator<TechListParcel> CREATOR = new Creator<TechListParcel>() {
+        @DSModeled(DSC.BAN)
         @Override
         public TechListParcel createFromParcel(Parcel source) {
             int count = source.readInt();
@@ -81,6 +82,7 @@ for(int i = 0;i < count;i++)
             return new TechListParcel(techLists);
         }
 
+        @DSModeled(DSC.BAN)
         @Override
         public TechListParcel[] newArray(int size) {
             return new TechListParcel[size];
