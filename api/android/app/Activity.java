@@ -1776,7 +1776,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     
     public boolean onSearchRequested(){
 		startSearch(null, false, null, false); 
-        return true;
+        return getTaintBoolean();
 		// Original method
 		/*
 		{
@@ -1790,6 +1790,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSModeled(DSC.SAFE)
     public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
+    	addTaint(initialQuery.getTaint());
+    	addTaint(selectInitialQuery);
+    	addTaint(appSearchData.getTaint());
+    	addTaint(globalSearch);
 		ensureSearchManager();
 		mSearchManager.startSearch(initialQuery, selectInitialQuery, getComponentName(),
                 appSearchData, globalSearch); 

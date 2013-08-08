@@ -1849,8 +1849,8 @@ IBinder var72A74007B2BE62B849F475C7BDA4658B_589252078 =         this;
     static boolean sSystemReady = false;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_field = "1DDB5338697F4F4D1F4EBEBCBCA04F09", hash_generated_field = "C4820EDCAE5178FFFBC23811D56B7F74")
 
-    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {        
-        @DSModeled(DSC.BAN)
+    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {  
+    	@DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "C2B8BA082758343987D3AD39EBC6D0DC")
         protected IActivityManager create() {
             IActivityManager varB4EAC82CA7396A68D541C85D26508E83_1441821956 = null; 
