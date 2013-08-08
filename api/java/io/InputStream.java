@@ -59,6 +59,7 @@ public abstract class InputStream extends Object implements Closeable {
     public abstract int read() throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.063 -0400", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "8FA11D778A0BC09022771B222E274F24")
     public int read(byte[] buffer) throws IOException {
         addTaint(buffer[0]);
@@ -124,6 +125,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.064 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "0D21E87B111B3E3B574D728230AD73AE")
     public synchronized void reset() throws IOException {
         IOException var1508E3FDF27FD56D4E1051DB16DE1816_455899888 = new IOException();
@@ -134,6 +136,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.065 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "4D77D01408C35C66FB16583C2C4653E9")
     public long skip(long byteCount) throws IOException {
         addTaint(byteCount);

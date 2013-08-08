@@ -15,6 +15,7 @@ class BitLevel {
     }
 
     
+    @DSModeled(DSC.BAN)
     static int bitLength(BigInteger val) {
         val.prepareJavaRepresentation();
         if (val.sign == 0) {
@@ -87,6 +88,7 @@ class BitLevel {
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInteger shiftLeftOneBit(BigInteger source) {
         source.prepareJavaRepresentation();
         int srcLen = source.numberLength;
@@ -97,6 +99,7 @@ class BitLevel {
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInteger shiftRight(BigInteger source, int count) {
         source.prepareJavaRepresentation();
         int intCount = count >> 5;
@@ -127,6 +130,7 @@ class BitLevel {
     }
 
     
+    @DSModeled(DSC.BAN)
     static boolean shiftRight(int[] result, int resultLen, int[] source, int intCount, int count) {
         int i;
         boolean allZero = true;

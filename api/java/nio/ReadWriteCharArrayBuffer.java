@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 final class ReadWriteCharArrayBuffer extends CharArrayBuffer {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.616 -0400", hash_original_method = "0630B531F09F4BDCAC95566C749465B0", hash_generated_method = "B6FB4023B182229615CC0744C948C988")
       ReadWriteCharArrayBuffer(char[] array) {
         super(array);
@@ -16,6 +17,7 @@ final class ReadWriteCharArrayBuffer extends CharArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.617 -0400", hash_original_method = "818D04612A5488A8EF47518DF8152754", hash_generated_method = "6F7DBD898BDA1001DEF746EF80CCC230")
       ReadWriteCharArrayBuffer(int capacity) {
         super(capacity);
@@ -44,6 +46,7 @@ final class ReadWriteCharArrayBuffer extends CharArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.619 -0400", hash_original_method = "ACF2009427E3EF6DAD4B7F3E78A7296D", hash_generated_method = "783C96543A959039AF74FED0D297D7AB")
     @Override
     public CharBuffer asReadOnlyBuffer() {
@@ -133,6 +136,7 @@ CharBuffer var6ED4708F04CD11720ECFFDBFD927116F_1709765235 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.624 -0400", hash_original_method = "BCF668C88F0582882A83FAE19696C98E", hash_generated_method = "38286CA5BB52F482C47E6D98FB0CAC83")
     @Override
     public CharBuffer put(char c) {
@@ -173,6 +177,7 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_715255171 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.626 -0400", hash_original_method = "F185C844C40257FD948EFFAB7DA8DE68", hash_generated_method = "A839D21B14293CB9CE03B87822ABABAE")
     @Override
     public CharBuffer put(char[] src, int srcOffset, int charCount) {

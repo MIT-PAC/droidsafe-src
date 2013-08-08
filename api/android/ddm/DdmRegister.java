@@ -16,6 +16,7 @@ public class DdmRegister {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void registerHandlers() {
         if (false)
             Log.v("ddm", "Registering DDM message handlers");

@@ -33,6 +33,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.398 -0400", hash_original_method = "17E5A7EAB5FF74551872A5C22051BFB5", hash_generated_method = "8188B0E7B9ACD2CC1652950807628542")
     public  ServerSocket(int port) throws IOException {
         this(port, DEFAULT_BACKLOG, Inet4Address.ANY);
@@ -50,6 +51,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.400 -0400", hash_original_method = "6BB36DC8E15E305D7407A47C7739996C", hash_generated_method = "8B35ED605D06BC9EBDBD3C7169A90016")
     public  ServerSocket(int port, int backlog, InetAddress localAddress) throws IOException {
         addTaint(localAddress.getTaint());
@@ -162,6 +164,7 @@ Socket varDBA8EAD1551D6943828EF63869B4FDF3_605925506 =         aSocket;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.402 -0400", hash_original_method = "8636C7CEC5FFD33F6CBF2C75F9E6A135", hash_generated_method = "09C692F3B9ABE75F75305B3C4044C0D5")
     public void close() throws IOException {
         isClosed = true;
@@ -191,6 +194,7 @@ InetAddress var521AFCEA60D8F5BBF63C4443E3C3E08B_405509798 =         impl.getInet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.402 -0400", hash_original_method = "F5BB694DF3469EBFBD82064FFB1FEAE0", hash_generated_method = "DFB6974D60386D379D24FCEA4A317BD2")
     public int getLocalPort() {
         if(!isBound())        
@@ -247,6 +251,7 @@ InetAddress var521AFCEA60D8F5BBF63C4443E3C3E08B_405509798 =         impl.getInet
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.403 -0400", hash_original_method = "E2A5F03981AB4BF932E59A553E83FA6F", hash_generated_method = "900719D57DB285EA0B463FBF3D9662CB")
     public synchronized void setSoTimeout(int timeout) throws SocketException {
         addTaint(timeout);

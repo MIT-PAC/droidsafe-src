@@ -564,6 +564,7 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_221820327 =         IMPL.getCon
     
     static class AccessibilityNodeInfoStubImpl implements AccessibilityNodeInfoImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.913 -0400", hash_original_method = "D9A4AFBF5AD5A775B6C1281730E5BA11", hash_generated_method = "D9A4AFBF5AD5A775B6C1281730E5BA11")
         public AccessibilityNodeInfoStubImpl ()
         {
@@ -1072,6 +1073,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_426406822 =             null;
     
     static class AccessibilityNodeInfoIcsImpl extends AccessibilityNodeInfoStubImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "21FE378E79CF4BF2260F84D20D666AC8", hash_generated_method = "21FE378E79CF4BF2260F84D20D666AC8")
         public AccessibilityNodeInfoIcsImpl ()
         {

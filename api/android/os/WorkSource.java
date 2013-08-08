@@ -53,7 +53,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.855 -0400", hash_original_method = "98AF9D8E14FDBDB8400169325402879B", hash_generated_method = "70A6251886E48ABB203ED54B374D6A2A")
     public  WorkSource(int uid) {
         addTaint(uid);

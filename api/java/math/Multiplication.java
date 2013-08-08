@@ -14,6 +14,7 @@ class Multiplication {
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInteger multiplyByPositiveInt(BigInteger val, int factor) {
         BigInt bi = val.getBigInt().copy();
         bi.multiplyByPositiveInt(factor);
@@ -21,6 +22,7 @@ class Multiplication {
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInteger multiplyByTenPow(BigInteger val, long exp) {
         return ((exp < tenPows.length)
         ? multiplyByPositiveInt(val, tenPows[(int)exp])
@@ -28,6 +30,7 @@ class Multiplication {
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInteger powerOf10(long exp) {
         int intExp = (int)exp;
         if (exp < bigTenPows.length) {
@@ -64,6 +67,7 @@ class Multiplication {
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInteger multiplyByFivePow(BigInteger val, int exp) {
         if (exp < fivePows.length) {
             return multiplyByPositiveInt(val, fivePows[exp]);

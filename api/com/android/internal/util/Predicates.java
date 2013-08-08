@@ -30,11 +30,13 @@ public class Predicates {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static <T> Predicate<T> or(Iterable<? extends Predicate<? super T>> components) {
         return new OrPredicate(components);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static <T> Predicate<T> not(Predicate<? super T> predicate) {
         return new NotPredicate<T>(predicate);
     }

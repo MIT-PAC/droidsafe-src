@@ -56,6 +56,7 @@ final class FileChannelImpl extends FileChannel {
 
     private final SortedSet<FileLock> locks = new TreeSet<FileLock>(LOCK_COMPARATOR);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_method = "2735A1029D285B5D3DE10DB0E230E666", hash_generated_method = "F6F44BF98254D27848329B7C58999156")
     public  FileChannelImpl(Object stream, FileDescriptor fd, int mode) {
         this.fd = fd;

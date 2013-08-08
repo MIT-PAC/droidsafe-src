@@ -81,7 +81,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void finalizeAllEnqueued() throws InterruptedException {
         Sentinel sentinel = new Sentinel();
         FinalizerReference<Object> reference = new FinalizerReference<Object>(null, queue);

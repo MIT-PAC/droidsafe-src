@@ -118,6 +118,7 @@ Object var24F833124FC4728CF66CDDC6D3B2FC56_2038921256 =         mBridge;
     
     static class AccessibilityDelegateStubImpl implements AccessibilityDelegateImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.190 -0400", hash_original_method = "DD5FA6B7DB30F302274C6D21593F2A63", hash_generated_method = "DD5FA6B7DB30F302274C6D21593F2A63")
         public AccessibilityDelegateStubImpl ()
         {
@@ -243,6 +244,7 @@ Object var540C13E9E156B687226421B24F2DF178_1598583326 =             null;
     
     static class AccessibilityDelegateIcsImpl extends AccessibilityDelegateStubImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.196 -0400", hash_original_method = "001B0205D9FC59E8AC4A7BF341AF74E0", hash_generated_method = "001B0205D9FC59E8AC4A7BF341AF74E0")
         public AccessibilityDelegateIcsImpl ()
         {
@@ -250,6 +252,7 @@ Object var540C13E9E156B687226421B24F2DF178_1598583326 =             null;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.196 -0400", hash_original_method = "ADAF22ACD619CA057B205743038B9CB6", hash_generated_method = "C100AE14AE2A98D59BC29825D5963EB5")
         @Override
         public Object newAccessiblityDelegateDefaultImpl() {

@@ -18,6 +18,7 @@ class AccessibilityDelegateCompatIcs {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Object newAccessibilityDelegateDefaultImpl() {
         return new AccessibilityDelegate();
     }

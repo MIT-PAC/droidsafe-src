@@ -18,6 +18,7 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
 
     private String errMessage;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.569 -0400", hash_original_method = "75914460F849F70EB9C61E69E22A6D0F", hash_generated_method = "D44D9734EF6EA12716A4A51DD204BD62")
       DefaultSSLServerSocketFactory(String mes) {
         errMessage = mes;

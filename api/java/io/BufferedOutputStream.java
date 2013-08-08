@@ -23,6 +23,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.316 -0400", hash_original_method = "D77D548D42DBDD230976FC72C0A9CFDA", hash_generated_method = "D7E5266AD0B89A6C52E69533BFEE5F1A")
     public  BufferedOutputStream(OutputStream out, int size) {
         super(out);
@@ -42,6 +43,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.316 -0400", hash_original_method = "1ACC3FF49FD09C78DA86C982A642A64A", hash_generated_method = "5BF171C333DC6B7D2DE5007FBC651EFA")
     @Override
     public synchronized void flush() throws IOException {
@@ -55,7 +57,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.317 -0400", hash_original_method = "E23D99313D714FF4FE33BC33C5A12E3B", hash_generated_method = "D8FD0801B6E456AE5F329DE44381A8CC")
     private void checkNotClosed() throws IOException {
         if(buf == null)        
@@ -71,6 +73,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.319 -0400", hash_original_method = "EC14898AF1C6D500DEF61C098384315C", hash_generated_method = "056EEFC2CFD24F3FE74AD94037D7003F")
     @Override
     public synchronized void write(byte[] buffer, int offset, int length) throws IOException {
@@ -164,7 +167,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.321 -0400", hash_original_method = "AAC3F75032624F788E22A2E407A017DD", hash_generated_method = "B666C8C1C7135EA8F14F583F8FCB7409")
     private void flushInternal() throws IOException {
         if(count > 0)        

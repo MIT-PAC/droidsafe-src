@@ -17,6 +17,7 @@ public class ByteArrayOutputStream extends OutputStream {
 
     protected int count;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.465 -0400", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "269B013234340EC0E9870BCC0641CB1F")
     public  ByteArrayOutputStream() {
         buf = new byte[32];
@@ -25,6 +26,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.466 -0400", hash_original_method = "931B663776F41DA70E9677006016F16F", hash_generated_method = "109FDE0F61DF78A99222AB72BE070E82")
     public  ByteArrayOutputStream(int size) {
         if(size >= 0)        
@@ -46,6 +48,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.467 -0400", hash_original_method = "04777FE12371C5E12A689BB328BF05B3", hash_generated_method = "56FC2307CB6D5F5D1217DE945E7131B9")
     @Override
     public void close() throws IOException {
@@ -55,7 +58,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.468 -0400", hash_original_method = "D6EC9446F27E74EA041BF330AAB72CEF", hash_generated_method = "B52DA47CB0E5954795B9200C0FED4F41")
     private void expand(int i) {
         addTaint(i);
@@ -96,6 +99,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.471 -0400", hash_original_method = "F52D84F15F793E7D52B479C7891604F2", hash_generated_method = "D4C3C3BC6F80C9DBDF114717DF06E0A4")
     public synchronized byte[] toByteArray() {
         byte[] newArray = new byte[count];
@@ -178,6 +182,7 @@ String var5E21685371F07E75C95D47BDF9CF6168_777958475 =         new String(buf, 0
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.477 -0400", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "BE160943C7DF044D7B8FE8E01BF770C8")
     @Override
     public synchronized void write(int oneByte) {
@@ -194,6 +199,7 @@ String var5E21685371F07E75C95D47BDF9CF6168_777958475 =         new String(buf, 0
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.478 -0400", hash_original_method = "19AD6C910070CA1BF00692AA88EF7627", hash_generated_method = "BC4F34D67DFB39ED5B878BDE02A99196")
     public synchronized void writeTo(OutputStream out) throws IOException {
         addTaint(out.getTaint());

@@ -317,6 +317,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static final void killProcess(int pid) {
         sendSignal(pid, SIGNAL_KILL);
     }

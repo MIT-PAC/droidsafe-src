@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class BufferUnderflowException extends RuntimeException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.229 -0400", hash_original_method = "52A66BBF915242889BB101508CB3752C", hash_generated_method = "B526CE9C6712457BD4357766BCDED295")
     public  BufferUnderflowException() {
         // ---------- Original Method ----------

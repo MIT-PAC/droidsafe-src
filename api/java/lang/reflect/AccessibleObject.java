@@ -17,6 +17,7 @@ public class AccessibleObject implements AnnotatedElement {
 
     boolean flag = false;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.852 -0400", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "846450B6CD756FC6E1311C471B3C4B56")
     protected  AccessibleObject() {
         // ---------- Original Method ----------

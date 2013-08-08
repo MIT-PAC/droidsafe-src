@@ -14,6 +14,7 @@ import java.net.SocketException;
 
 public abstract class ServerSocketFactory {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.522 -0400", hash_original_method = "50A5AD4489C33A1F5479F4B6ACCE6C5A", hash_generated_method = "93523426EE53B436B1AC84C7AA84A8F5")
     protected  ServerSocketFactory() {
         // ---------- Original Method ----------

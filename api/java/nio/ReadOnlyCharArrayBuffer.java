@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.471 -0400", hash_original_method = "45CC985A35F0F1494520573D6ACE292A", hash_generated_method = "E0CD24D707F7BE3AA0365D9E8B599616")
       ReadOnlyCharArrayBuffer(int capacity, char[] backingArray, int arrayOffset) {
         super(capacity, backingArray, arrayOffset);
@@ -18,6 +19,7 @@ final class ReadOnlyCharArrayBuffer extends CharArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ReadOnlyCharArrayBuffer copy(CharArrayBuffer other, int markOfOther) {
         ReadOnlyCharArrayBuffer buf =
                 new ReadOnlyCharArrayBuffer(other.capacity(), other.backingArray, other.offset);

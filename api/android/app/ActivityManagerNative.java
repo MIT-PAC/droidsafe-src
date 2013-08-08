@@ -1879,6 +1879,7 @@ class ActivityManagerProxy implements IActivityManager {
 
     private IBinder mRemote;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:41.927 -0400", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "45B8F41C62FE771FA42BECD8E8563D23")
     public  ActivityManagerProxy(IBinder remote) {
         mRemote = remote;

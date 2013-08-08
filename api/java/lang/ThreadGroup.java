@@ -47,6 +47,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.514 -0400", hash_original_method = "E77CFC99E1E2014F4D8FD3506A5DB87B", hash_generated_method = "FDD61B9457A11601D166AF303D682565")
     public  ThreadGroup(ThreadGroup parent, String name) {
         if(parent == null)        
@@ -82,7 +83,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.516 -0400", hash_original_method = "2C0349D8A755A992C407F37169B24D0C", hash_generated_method = "2023BF93A9F5BDCA687CAB745D1EC815")
     private  ThreadGroup() {
         this.name = "system";
@@ -158,7 +159,7 @@ for(ThreadGroup group : groups)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.517 -0400", hash_original_method = "0DD772AEDB7C823C2E91BB6377F03397", hash_generated_method = "0490A50F6656BEF7A83869C88610E98B")
     private void add(ThreadGroup g) throws IllegalThreadStateException {
         addTaint(g.getTaint());
@@ -636,6 +637,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.527 -0400", hash_original_method = "271C3F89CA43821F381115CC8E2996B2", hash_generated_method = "31CDE7ECEB308F5619C0D1789D52D23A")
     public final void setMaxPriority(int newMax) {
         if(newMax <= this.maxPriority)        
@@ -802,6 +804,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.529 -0400", hash_original_method = "54318ADB79169F8C74CBC002CF89020D", hash_generated_method = "540BF2BCAFD570FB2218D7F6B0525411")
     @Override
     public String toString() {

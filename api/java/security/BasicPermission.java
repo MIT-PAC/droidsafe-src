@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 public abstract class BasicPermission extends Permission implements Serializable {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.793 -0400", hash_original_method = "D7C15085897CB0E8D87B48429476636B", hash_generated_method = "EBDBEF6EF7CE8B0F1566EF95CE070D5E")
     public  BasicPermission(String name) {
         super("");
@@ -18,6 +19,7 @@ public abstract class BasicPermission extends Permission implements Serializable
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.794 -0400", hash_original_method = "70983AE2C4FC471A8D797105AE850E32", hash_generated_method = "892449386B6D940740DFA727AE8EEB57")
     public  BasicPermission(String name, String action) {
         super("");

@@ -172,6 +172,7 @@ public final class Array {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Object newInstance(Class<?> componentType, int size) throws NegativeArraySizeException {
         if (!componentType.isPrimitive()) {
             return createObjectArray(componentType, size);

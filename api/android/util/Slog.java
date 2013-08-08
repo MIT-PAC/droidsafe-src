@@ -77,7 +77,7 @@ public final class Slog {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static int e(String tag, String msg, Throwable tr) {
         return Log.println_native(Log.LOG_ID_SYSTEM, Log.ERROR, tag,
                 msg + '\n' + Log.getStackTraceString(tr));

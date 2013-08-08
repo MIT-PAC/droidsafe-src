@@ -16,6 +16,7 @@ class Socks4Message {
 
     protected byte[] buffer;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.553 -0400", hash_original_method = "B36A7D8FEC73E76C782613C0576445D4", hash_generated_method = "E9318A5E21073D72E3A92D6D1199A0E3")
     public  Socks4Message() {
         buffer = new byte[BUFFER_LENGTH];

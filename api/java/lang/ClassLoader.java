@@ -86,6 +86,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static InputStream getSystemResourceAsStream(String resName) {
         return SystemClassLoader.loader.getResourceAsStream(resName);
     }
@@ -164,6 +165,7 @@ Class<?> varF16E0AF58C9D8813D6BD96651FAEEFAF_1080563917 =         defineClass(na
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "1BCB441A83D111A7AA8FEC24C2456543", hash_generated_method = "42E8C5B5B0BADFE99B77204DE172C4A9")
     protected final Class<?> findLoadedClass(String className) {
         addTaint(className.getTaint());
@@ -228,6 +230,7 @@ URL var43E8B6A4B99FCF378B49FF1E374C713F_1255918878 =         resource;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "A1AC2BF370A36ABB9B1EEF5C25CA87C9", hash_generated_method = "F0D0407482C0AD8D3AC0D70DE6D76D4A")
     @SuppressWarnings("unchecked")
     public Enumeration<URL> getResources(String resName) throws IOException {
@@ -244,6 +247,7 @@ Enumeration<URL> var29FC63E53C593F544CA2665302A605B4_1253472890 =         new Tw
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "D8955CCF86190424763C439F9FDF42B6", hash_generated_method = "1709682A6BDCC90C15680CEC6CBA02F7")
     public InputStream getResourceAsStream(String resName) {
         addTaint(resName.getTaint());
@@ -275,6 +279,7 @@ InputStream var540C13E9E156B687226421B24F2DF178_1103630469 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "B81E0F32DC432F0B3276D4B4E41F12D0", hash_generated_method = "189415F4E46C66B846623C61F62D65D1")
     public Class<?> loadClass(String className) throws ClassNotFoundException {
         addTaint(className.getTaint());
@@ -286,6 +291,7 @@ Class<?> varDABA5CC5243A82A517BB6B8B0E854144_992398354 =         loadClass(class
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "733CC3AC678FE7D7ABDA5F1E7A258EB2", hash_generated_method = "385A52E6B9D022D93C6D62A18789D0F6")
     protected Class<?> loadClass(String className, boolean resolve) throws ClassNotFoundException {
         addTaint(resolve);
@@ -525,6 +531,7 @@ class TwoEnumerationsInOne implements Enumeration<URL> {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "B34DCB72B1A55025C195F65FCCD0FE9D", hash_generated_method = "86D8C6108AD85E4344FBE732C19BAF6C")
     public boolean hasMoreElements() {
         boolean varFA7BD4A162C8C063F79F4353F346F180_2070585027 = (first.hasMoreElements() || second.hasMoreElements());
@@ -580,6 +587,7 @@ class BootClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "0FBC8B1C710D0CE61299895128455485", hash_generated_method = "6CE0A2DF6021DB4AB914574D7ACAAC74")
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
@@ -605,6 +613,7 @@ URL var7466CD68AA25041A670649C7835F7FDA_590254161 =         VMClassLoader.getRes
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "16CE054D9A07227EFDD5E4525389B0A1", hash_generated_method = "7C0130BB41200D65DE97F2A95A0426F3")
     @SuppressWarnings("unused")
     @Override
@@ -668,6 +677,7 @@ URL var5AA152384FEC6ED20C323D9BD1349753_1871325198 =         findResource(resNam
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "0851F7C9918489BAFB5B84B48223EC31", hash_generated_method = "22D84E54FB87D6295FB88CD1B589541C")
     @Override
     protected Class<?> loadClass(String className, boolean resolve) throws ClassNotFoundException {
@@ -690,6 +700,7 @@ Class<?> var3E303968598B6EE307EE3739CE40F332_457242761 =         clazz;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "606DC58E52051EDCF71806278059C734", hash_generated_method = "682994CA1C7552D1A55DA6D12F58423A")
     @Override
     public Enumeration<URL> getResources(String resName) throws IOException {

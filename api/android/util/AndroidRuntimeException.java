@@ -12,6 +12,7 @@ public class AndroidRuntimeException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.493 -0400", hash_original_method = "8B3545FC9B2683E7AFCB1B7C9932589B", hash_generated_method = "1D7FD430E80B4B3FE1A4A2D245C35C11")
     public  AndroidRuntimeException(String name) {
         super(name);

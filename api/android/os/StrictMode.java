@@ -74,7 +74,7 @@ public final class StrictMode {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static int getThreadPolicyMask() {
         return BlockGuard.getThreadPolicy().getPolicyMask();
     }
@@ -184,7 +184,7 @@ public final class StrictMode {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static int parseViolationFromMessage(String message) {
         if (message == null) {
             return 0;
@@ -207,7 +207,7 @@ public final class StrictMode {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static boolean tooManyViolationsThisLoop() {
         return violationsBeingTimed.get().size() >= MAX_OFFENSES_PER_LOOP;
     }
@@ -256,6 +256,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     static void clearGatheredViolations() {
         gatheredViolations.set(null);
     }
@@ -1050,6 +1051,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     public static class StrictModeViolation extends BlockGuard.BlockGuardPolicyException {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "E7438DD65D448EA29E2BF1E2E7B9AF17", hash_generated_method = "A50A194961232A2B4D645FB225F1D1B2")
         public  StrictModeViolation(int policyState, int policyViolated, String message) {
             super(policyState, policyViolated, message);
@@ -1066,6 +1068,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     public static class StrictModeNetworkViolation extends StrictModeViolation {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "DBBD717A236AEADDFBDE9EEC846203D0", hash_generated_method = "67817CB14B73DDA8A675A65BE03ACCB8")
         public  StrictModeNetworkViolation(int policyMask) {
             super(policyMask, DETECT_NETWORK, null);
@@ -1080,6 +1083,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     private static class StrictModeDiskReadViolation extends StrictModeViolation {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "50FAC78594B32A364EC38A7051A6D828", hash_generated_method = "45037306A9E5DF86F945894246B125E2")
         public  StrictModeDiskReadViolation(int policyMask) {
             super(policyMask, DETECT_DISK_READ, null);
@@ -1094,6 +1098,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     private static class StrictModeDiskWriteViolation extends StrictModeViolation {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "3E79DB089B8A8B103215C527DD70DC9D", hash_generated_method = "FC816BAC3953BE8E9F2D0633D3D74C62")
         public  StrictModeDiskWriteViolation(int policyMask) {
             super(policyMask, DETECT_DISK_WRITE, null);
@@ -1159,6 +1164,7 @@ String var88FE0C10C841ADC188489DE26D480D44_1591693979 =             "AndroidBloc
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.758 -0400", hash_original_method = "0D85458AC3FF96FC22E8C3819C12EFAB", hash_generated_method = "939C668F45930394A597ACFF2F9393D0")
         public void onWriteToDisk() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1214,6 +1220,7 @@ String var88FE0C10C841ADC188489DE26D480D44_1591693979 =             "AndroidBloc
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.758 -0400", hash_original_method = "DC9910586B30548E82E107CFA3542EA2", hash_generated_method = "642E6787E527A9CDB18531D1EA1315C7")
         public void onReadFromDisk() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1241,6 +1248,7 @@ String var88FE0C10C841ADC188489DE26D480D44_1591693979 =             "AndroidBloc
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.758 -0400", hash_original_method = "D41EA35CCA984A26E96A9AAEEE4BCF1E", hash_generated_method = "32F3AE735719B3528EB05968E487918A")
         public void onNetwork() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1547,6 +1555,7 @@ for(ViolationInfo previous : violations)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.765 -0400", hash_original_method = "35ECB8DB5D2E2401D23EA00A0B49C3B0", hash_generated_method = "9BA85CCA4EAE21C800E5947B396A9A75")
         protected  Span() {
             mContainerState = null;
@@ -1665,6 +1674,7 @@ for(ViolationInfo previous : violations)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.769 -0400", hash_original_method = "B97F48EA0F14252413142D91DE4A3BFA", hash_generated_method = "576322EE9889180031D8E2C24FEFD5E0")
         public  ViolationInfo(Throwable tr, int policy) {
             crashInfo = new ApplicationErrorReport.CrashInfo(tr);
@@ -1753,6 +1763,7 @@ for(ViolationInfo previous : violations)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.774 -0400", hash_original_method = "C167EFD1AA966CEFAC170AF811F6D4AF", hash_generated_method = "4B01C4C0395510C5E101C576071D637F")
         @Override
         public int hashCode() {
@@ -1794,6 +1805,7 @@ for(String tag : tags)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.774 -0400", hash_original_method = "4C68F89668EEC8ACA3036C864AE1DCBA", hash_generated_method = "84046AAF389AEEFD3DD5880FCF7A73E5")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);

@@ -53,6 +53,7 @@ String varF4EEEB4C20BC8ED70835679C92A2BBC0_385646869 =         convertDouble(nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.520 -0400", hash_original_method = "60FFADFBFC8614534238C3F90209FDC5", hash_generated_method = "96B881292F90283D20AB0751FFC15BEC")
     public void appendDouble(AbstractStringBuilder sb, double d) {
         addTaint(d);
@@ -63,7 +64,7 @@ String varF4EEEB4C20BC8ED70835679C92A2BBC0_385646869 =         convertDouble(nul
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.522 -0400", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "89C00D0EA8D7927F106521A3B3D5A8DE")
     private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
         addTaint(inputNumber);

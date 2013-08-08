@@ -394,6 +394,7 @@ String var1E9B509EA010A811781E44EEDFCE69A1_1577623421 =         "DeviceAdminInfo
 
         public int description;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.571 -0400", hash_original_method = "A90CA239E6D53FEA8EFED1E11D7512A4", hash_generated_method = "E3787431209518667B6BC2676B74AB95")
         public  PolicyInfo(int identIn, String tagIn, int labelIn, int descriptionIn) {
             ident = identIn;

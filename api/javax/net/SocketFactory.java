@@ -15,6 +15,7 @@ import java.net.UnknownHostException;
 
 public abstract class SocketFactory {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.527 -0400", hash_original_method = "558E5CF77A92B4D322EAE73AA7FC9ED5", hash_generated_method = "49A83C6EA0E2C7D8DB87841B35CCED46")
     protected  SocketFactory() {
         // ---------- Original Method ----------

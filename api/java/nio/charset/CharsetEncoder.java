@@ -42,6 +42,7 @@ public abstract class CharsetEncoder {
 
     private CharsetDecoder decoder;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.579 -0400", hash_original_method = "5E9CA4841A80C315BA24674061FE2949", hash_generated_method = "1FEA4E4A4F77EE54BC584F94561FDC37")
     protected  CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar) {
         this(cs, averageBytesPerChar, maxBytesPerChar, new byte[] { (byte) '?' });
@@ -52,6 +53,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.580 -0400", hash_original_method = "33500150E00A96E14E2810282423268E", hash_generated_method = "B90E8851D4DB976E8E3D3DF4119BA4DF")
     protected  CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement) {
         this(cs, averageBytesPerChar, maxBytesPerChar, replacement, false);
@@ -63,6 +65,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.582 -0400", hash_original_method = "173A83611BD70B9738420414876CE0BB", hash_generated_method = "64DDCBF6D5127DFC9B8D082FC5A94D61")
       CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar, byte[] replacement, boolean trusted) {
         addTaint(trusted);
@@ -229,6 +232,7 @@ Charset varE661418CFE0D2CECDB5DF6FE0739403D_215751605 =         cs;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.586 -0400", hash_original_method = "6617ED92398FABBB6F1186A03F59422C", hash_generated_method = "6AACBD5A05E0FE2CCFBC5D41EBFD8A04")
     public final ByteBuffer encode(CharBuffer in) throws CharacterCodingException {
         addTaint(in.getTaint());
@@ -302,7 +306,7 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_383822937 =         output;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.586 -0400", hash_original_method = "AAF7B17852C8827C6D375001E4EF8669", hash_generated_method = "5DF2108BB45D3910757D0C884F125EAF")
     private void checkCoderResult(CoderResult result) throws CharacterCodingException {
         addTaint(result.getTaint());
@@ -328,7 +332,7 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_383822937 =         output;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.587 -0400", hash_original_method = "46B614F003BDECDBAF0C028FA8A61DD7", hash_generated_method = "8DDBB17C34A936C6C9E576BB5EB1F5FE")
     private ByteBuffer allocateMore(ByteBuffer output) {
         addTaint(output.getTaint());
@@ -355,6 +359,7 @@ ByteBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_141453591 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.588 -0400", hash_original_method = "F53B4856D46D71BB987D9EC6F2ED08EE", hash_generated_method = "FA3DEB636F82E3CBC28BB17B4D9DD5B9")
     public final CoderResult encode(CharBuffer in, ByteBuffer out, boolean endOfInput) {
         addTaint(out.getTaint());
@@ -458,6 +463,7 @@ CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_378050707 =                     
     protected abstract CoderResult encodeLoop(CharBuffer in, ByteBuffer out);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.590 -0400", hash_original_method = "7DF66453B2225F37798DBF2842A3A344", hash_generated_method = "BF5707D3BB2E0138A7D8E51840B7B2FC")
     public final CoderResult flush(ByteBuffer out) {
         addTaint(out.getTaint());
@@ -530,6 +536,7 @@ CoderResult var4757652C33DAD6EF5B43FF5968DA807C_847899744 =         CoderResult.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.591 -0400", hash_original_method = "0E6BADBD5D3BB826133FA0CE0CAA8F2B", hash_generated_method = "DE57A9CFF36E2EAD284C69FA559D7B6F")
     public boolean isLegalReplacement(byte[] replacement) {
         addTaint(replacement[0]);
@@ -580,6 +587,7 @@ CodingErrorAction var84571F1E1ACF9C5432CDAA5F78A66531_944092079 =         malfor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.592 -0400", hash_original_method = "9AA0403DB22EF3A510B565026DCE2424", hash_generated_method = "1044ECB5288FF3117BC69E2EDD7A0385")
     public final CharsetEncoder onMalformedInput(CodingErrorAction newAction) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -604,6 +612,7 @@ CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_1838487532 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.592 -0400", hash_original_method = "8F9E9A5BA6AED0663F62AB88ADE1A1B8", hash_generated_method = "072425FD11797DEA310885FAF26CDAC3")
     public final CharsetEncoder onUnmappableCharacter(CodingErrorAction newAction) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -639,6 +648,7 @@ CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_1697650201 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.593 -0400", hash_original_method = "267C7D54312382305679F98E9AD49DA0", hash_generated_method = "9B05131CA52EBC3A631E8C6494686C52")
     public final CharsetEncoder replaceWith(byte[] replacement) {
         if(replacement == null)        
@@ -691,6 +701,7 @@ CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_1924077259 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.594 -0400", hash_original_method = "939E78B196C94EAC65CBC7206A9E1DD0", hash_generated_method = "FDBAE3F76301D706B1EBD93B2C441533")
     public final CharsetEncoder reset() {
         status = INIT;

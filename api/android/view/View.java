@@ -7947,6 +7947,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     public static class AccessibilityDelegate {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.663 -0400", hash_original_method = "B81C1E38B66B1195ED1D00E194D402D3", hash_generated_method = "B81C1E38B66B1195ED1D00E194D402D3")
         public AccessibilityDelegate ()
         {

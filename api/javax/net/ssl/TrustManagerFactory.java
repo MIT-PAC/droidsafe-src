@@ -28,6 +28,7 @@ public class TrustManagerFactory {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.834 -0400", hash_original_method = "81FA874689999FD0B2AD42BDFAAB958E", hash_generated_method = "2D5C3C05CC2E3E097EAF8178DBC90951")
     protected  TrustManagerFactory(TrustManagerFactorySpi factorySpi, Provider provider,
             String algorithm) {
@@ -41,11 +42,13 @@ public class TrustManagerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String getDefaultAlgorithm() {
         return Security.getProperty(PROPERTYNAME);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final TrustManagerFactory getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException("algorithm is null");
@@ -101,6 +104,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1232121125 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.838 -0400", hash_original_method = "1CCCB741740FE2D73909FD97A8BDB662", hash_generated_method = "5A0769B251699DA4A7936857E97932CE")
     public final void init(KeyStore ks) throws KeyStoreException {
         addTaint(ks.getTaint());
@@ -119,6 +123,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1232121125 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.839 -0400", hash_original_method = "9A37AD00FB926A5C41BF7A3778BB3A49", hash_generated_method = "ACE5D8E7FE84D58C03EE0B3BCCA4B5E4")
     public final TrustManager[] getTrustManagers() {
 TrustManager[] var864DD8A2A9CEA759F4550FE28D6AA441_1222104352 =         spiImpl.engineGetTrustManagers();

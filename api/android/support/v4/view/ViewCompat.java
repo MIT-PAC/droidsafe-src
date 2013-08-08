@@ -64,6 +64,7 @@ public class ViewCompat {
     
     static class BaseViewCompatImpl implements ViewCompatImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.378 -0400", hash_original_method = "41ADABC234167BF75948986C00D7164F", hash_generated_method = "41ADABC234167BF75948986C00D7164F")
         public BaseViewCompatImpl ()
         {
@@ -163,6 +164,7 @@ public class ViewCompat {
     
     static class GBViewCompatImpl extends BaseViewCompatImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.379 -0400", hash_original_method = "B29ABB75D45C38E68F6507295346B5B9", hash_generated_method = "B29ABB75D45C38E68F6507295346B5B9")
         public GBViewCompatImpl ()
         {
@@ -199,6 +201,7 @@ public class ViewCompat {
     
     static class ICSViewCompatImpl extends GBViewCompatImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.379 -0400", hash_original_method = "F82CC7286340E827BB3F02C5F17E58C8", hash_generated_method = "F82CC7286340E827BB3F02C5F17E58C8")
         public ICSViewCompatImpl ()
         {

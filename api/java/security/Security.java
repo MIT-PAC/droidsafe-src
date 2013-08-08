@@ -89,6 +89,7 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static synchronized Provider[] getProviders() {
         return Services.getProviders();
     }
@@ -179,6 +180,7 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getProperty(String key) {
         if (key == null) {
             throw new NullPointerException("key == null");
@@ -223,7 +225,7 @@ public final class Security {
     
     private static class SecurityDoor implements SecurityAccess {
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {
@@ -231,6 +233,7 @@ public final class Security {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
         public void renumProviders() {
             Security.renumProviders();

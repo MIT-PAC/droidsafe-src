@@ -27,6 +27,7 @@ public class VelocityTrackerCompat {
     
     static class BaseVelocityTrackerVersionImpl implements VelocityTrackerVersionImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.333 -0400", hash_original_method = "E207FC5896FAF2D7F355008464495FF2", hash_generated_method = "E207FC5896FAF2D7F355008464495FF2")
         public BaseVelocityTrackerVersionImpl ()
         {
@@ -66,6 +67,7 @@ public class VelocityTrackerCompat {
     
     static class HoneycombVelocityTrackerVersionImpl implements VelocityTrackerVersionImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.334 -0400", hash_original_method = "C45D4DE867C130E838448AE2BF37BBAC", hash_generated_method = "C45D4DE867C130E838448AE2BF37BBAC")
         public HoneycombVelocityTrackerVersionImpl ()
         {

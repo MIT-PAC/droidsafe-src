@@ -45,7 +45,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static String intToString(int i) {
         return convertInt(null, i);
     }
@@ -152,7 +152,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static String longToString(long l) {
         return convertLong(null, l);
     }
@@ -272,7 +272,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static String byteToHexString(byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[2];
@@ -308,7 +308,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static String longToHexString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
@@ -324,7 +324,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static String intToOctalString(int i) {
         int bufLen = 11;
         char[] buf = new char[bufLen];
@@ -336,7 +336,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static String longToOctalString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {

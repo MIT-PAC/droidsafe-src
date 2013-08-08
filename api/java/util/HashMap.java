@@ -1587,6 +1587,7 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_1378350570 =             newValu
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.983 -0400", hash_original_method = "D7164BC97FFDCB587AB273006C953E50", hash_generated_method = "9DF67A7DAAC77FA18F8D749B65626382")
         public Iterator<Entry<K, V>> iterator() {
 Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1688390063 =             newEntryIterator();

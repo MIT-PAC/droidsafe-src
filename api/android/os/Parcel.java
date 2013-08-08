@@ -21,7 +21,7 @@ public final class Parcel {
     private int mOwnObject;
     private RuntimeException mStack;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private Parcel(int obj){
 		init(obj);
 		/*
@@ -33,6 +33,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static Parcel obtain(){
 		return new Parcel(0);
 		// Original method
@@ -58,6 +59,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void recycle(){
 		// Original method
 		/*
@@ -815,6 +817,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeStringArray(String[] val){
 		mValueStringArray = val;
 		// Original method
@@ -1139,6 +1142,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeNoException(){
 		// Original method
 		/*
@@ -1161,6 +1165,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void readException(){
 		// Original method
 		/*
@@ -1276,6 +1281,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final ParcelFileDescriptor readFileDescriptor(){
 		return new ParcelFileDescriptor(mValueFileDescriptor);
 		// Original method
@@ -1439,7 +1445,7 @@ public final class Parcel {
 	}
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public final String[] readStringArray(){
 		return mValueStringArray;
 		// Original method
@@ -1839,6 +1845,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void finalize(){
 		destroy();
 		// Original method

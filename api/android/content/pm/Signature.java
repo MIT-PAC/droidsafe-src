@@ -39,6 +39,7 @@ public class Signature implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.782 -0400", hash_original_method = "D3C2556D1F2D5F06D4836CF4CB37FB62", hash_generated_method = "DF481BF54252713D3854BD502773F2F6")
     public  Signature(String text) {
         addTaint(text.getTaint());

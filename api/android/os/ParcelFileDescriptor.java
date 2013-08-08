@@ -38,6 +38,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.081 -0400", hash_original_method = "5987A31E1ECCB1911B1BA6CC4EEF72A2", hash_generated_method = "DEA258586F6A251A1D9F6010DC08FD9D")
       ParcelFileDescriptor(FileDescriptor descriptor) {
         super();
@@ -250,6 +251,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_1769834910 =         mFileDes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.096 -0400", hash_original_method = "39939000D7522F3E727F0E3243089AE5", hash_generated_method = "63241076498E671C9DEAB1B1F4F29A6F")
     public void close() throws IOException {
         synchronized
@@ -290,6 +292,7 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1250576866 =         "{ParcelFileDesc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.097 -0400", hash_original_method = "47AC631E45892E7E44A62B81BC7ACB91", hash_generated_method = "2C95303D396852E98F94E126879F65B0")
     @Override
     protected void finalize() throws Throwable {

@@ -12,6 +12,7 @@ final class BigInt {
 
     transient int bignum = 0;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.670 -0400", hash_original_method = "1310F12C90284BE28EAEC322C36620BE", hash_generated_method = "1310F12C90284BE28EAEC322C36620BE")
     public BigInt ()
     {
@@ -19,6 +20,7 @@ final class BigInt {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.670 -0400", hash_original_method = "BE6B93B7FDC95635F38722D58894F3B6", hash_generated_method = "79F2A5564B5CFEB540C376A4B1096DBB")
     @Override
     protected void finalize() throws Throwable {
@@ -68,6 +70,7 @@ String varEE38A904DF70C757D780CC0689FFC426_1453104462 =         this.decString()
     }
 
     
+    @DSModeled(DSC.BAN)
     static int consumeErrors(StringBuilder sb) {
         int cnt = 0;
         int e, reason;
@@ -132,6 +135,7 @@ String varEE38A904DF70C757D780CC0689FFC426_1453104462 =         this.decString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.673 -0400", hash_original_method = "8941EBA58E329563221FF533A53A6CC6", hash_generated_method = "A53C2B47BE13DFD41D834C00E3021F6F")
      void putCopy(BigInt from) {
         addTaint(from.getTaint());
@@ -143,6 +147,7 @@ String varEE38A904DF70C757D780CC0689FFC426_1453104462 =         this.decString()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.673 -0400", hash_original_method = "05F85FC1363853C2D04A531626254DA4", hash_generated_method = "B2AEE7E8AB741AE5163C78B0772CFB77")
      BigInt copy() {
         BigInt bi = new BigInt();
@@ -157,6 +162,7 @@ BigInt var87B0A797C42126F3585C9636042C24CE_2137102410 =         bi;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.674 -0400", hash_original_method = "30A332A63D32AA82B1909AFA5FBB53FE", hash_generated_method = "39852ED1DDA1E2E553C1A24019D48134")
      void putLongInt(long val) {
         addTaint(val);
@@ -168,6 +174,7 @@ BigInt var87B0A797C42126F3585C9636042C24CE_2137102410 =         bi;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.674 -0400", hash_original_method = "2D149BF96A898165FFEB2983CC63FA56", hash_generated_method = "C9A6AD284B168BEDD5EEB59097BA5447")
      void putULongInt(long val, boolean neg) {
         addTaint(neg);
@@ -192,6 +199,7 @@ BigInt var87B0A797C42126F3585C9636042C24CE_2137102410 =         bi;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.679 -0400", hash_original_method = "6076EA670724B5FC9E7D900E17BB8270", hash_generated_method = "37223B8298FCCAA8DA9241EA1E52D520")
      void putDecString(String original) {
         addTaint(original.getTaint());
@@ -240,6 +248,7 @@ BigInt var87B0A797C42126F3585C9636042C24CE_2137102410 =         bi;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.694 -0400", hash_original_method = "509B8D432808DFEEDB9A2530ACB4E595", hash_generated_method = "E8812625B2228D52FFAFF42E259A5325")
      String checkString(String s, int base) {
         addTaint(base);
@@ -323,6 +332,7 @@ String varF5914D263E7A63078B23C8BE55D5C92B_1514872935 =         nonAscii ? toAsc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.695 -0400", hash_original_method = "F46F553C794EFAECC5CBB83791E423EA", hash_generated_method = "AD2BEF5A0E1E3E4B92D2B35F3163C829")
      void putLittleEndianInts(int[] a, boolean neg) {
         addTaint(neg);
@@ -335,6 +345,7 @@ String varF5914D263E7A63078B23C8BE55D5C92B_1514872935 =         nonAscii ? toAsc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.696 -0400", hash_original_method = "78A05CDDAF5055249AF6E8FAF4BFB01A", hash_generated_method = "55FFBF4EAA47D256331278B9CAE1E099")
      void putBigEndianTwosComplement(byte[] a) {
         addTaint(a[0]);
@@ -346,6 +357,7 @@ String varF5914D263E7A63078B23C8BE55D5C92B_1514872935 =         nonAscii ? toAsc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.696 -0400", hash_original_method = "27EA3CFBEF77EFE881C6E2FB553F4CC2", hash_generated_method = "759E8602730CEEA37802D27F7F54DC9A")
      long longInt() {
         long varC55BA8B2B9A00B1323A548E5B86AFCBA_263961541 = (NativeBN.longInt(this.bignum));
@@ -356,6 +368,7 @@ String varF5914D263E7A63078B23C8BE55D5C92B_1514872935 =         nonAscii ? toAsc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.696 -0400", hash_original_method = "91D15DC45533D4FB86FF476EA9D84EB9", hash_generated_method = "789BF990BCC431A24780BD2A909911D1")
      String decString() {
 String varCCF863F4D48E2DE62C695A86A66040EF_913052956 =         NativeBN.BN_bn2dec(this.bignum);
@@ -386,6 +399,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.697 -0400", hash_original_method = "9306CD68F08E506A6F565B6B5DE53B97", hash_generated_method = "D9779E9E54975D9AC237B7115EE6E42B")
      int[] littleEndianIntsMagnitude() {
         int[] var4B84E68D8CDD0E00B539C5BBDD3C0297_1129725257 = (NativeBN.bn2litEndInts(this.bignum));
@@ -396,6 +410,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.697 -0400", hash_original_method = "20C3F9921E8308474D657B401A5C4926", hash_generated_method = "5FB7C7563484C4BE47DF7DF6CD26BDDE")
      int sign() {
         int var30B6F63E32027C8A1E184493509869A6_1383626099 = (NativeBN.sign(this.bignum));
@@ -406,6 +421,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.698 -0400", hash_original_method = "D1EC3F455E1B2B87D60E54F4D60552ED", hash_generated_method = "3B3C7CC6824D931061A89A493C908DEF")
      void setSign(int val) {
         addTaint(val);
@@ -427,6 +443,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.698 -0400", hash_original_method = "0C4139075DA080C92B767C8D6DDC4F59", hash_generated_method = "021E31A648D0AB4EB1C5BAC4A783D5CE")
      boolean twosCompFitsIntoBytes(int desiredByteCount) {
         addTaint(desiredByteCount);
@@ -440,6 +457,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.698 -0400", hash_original_method = "06E4028740CFBC5E8F4DC5B6A30B93E1", hash_generated_method = "69F501C54223066EA2B51CB5D877F4C6")
      int bitLength() {
         int var0F9DE3413157B0BF360CFE49C565F557_823516046 = (NativeBN.bitLength(this.bignum));
@@ -450,6 +468,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.699 -0400", hash_original_method = "7AF9A4C10272398CEA0DB42D124E2F09", hash_generated_method = "1B4DF630FB2058A6B297451419A25C34")
      boolean isBitSet(int n) {
         addTaint(n);
@@ -461,6 +480,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInt shift(BigInt a, int n) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_shift(r.bignum, a.bignum, n));
@@ -468,6 +488,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.699 -0400", hash_original_method = "E387E2D423D242DA7510EDC2247E6A5C", hash_generated_method = "C8DF347BD2BF9D83FFF9D24E2BD4B4CE")
      void shift(int n) {
         addTaint(n);
@@ -486,6 +507,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.700 -0400", hash_original_method = "5EBBBBFBA0490D7B09CF7B986217857B", hash_generated_method = "17F41774B8FE3ABEA78B4E49B7979DF3")
      void multiplyByPositiveInt(int w) {
         addTaint(w);
@@ -502,6 +524,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInt addition(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_add(r.bignum, a.bignum, b.bignum));
@@ -532,6 +555,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInt product(BigInt a, BigInt b) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_mul(r.bignum, a.bignum, b.bignum));
@@ -539,6 +563,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInt bigExp(BigInt a, BigInt p) {
         BigInt r = newBigInt();
         Check(NativeBN.BN_exp(r.bignum, a.bignum, p.bignum));
@@ -546,6 +571,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     static BigInt exp(BigInt a, int p) {
         BigInt power = new BigInt();
         power.putLongInt(p);
@@ -553,6 +579,7 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_1353313643 =         NativeBN.BN_bn2h
     }
 
     
+    @DSModeled(DSC.BAN)
     static void division(BigInt dividend, BigInt divisor,
             BigInt quotient, BigInt remainder) {
         int quot, rem;

@@ -9,12 +9,14 @@ import java.io.IOException;
 
 public class MalformedURLException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.759 -0400", hash_original_method = "6F3415F478603350217F65D672585814", hash_generated_method = "AD568FEDA3A16AFE9C14138F3CCC4B4D")
     public  MalformedURLException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.759 -0400", hash_original_method = "1BAAD892782075B201BE55BD9DAC535A", hash_generated_method = "2B443BF0D497DC20D8C94025C945071B")
     public  MalformedURLException(String detailMessage) {
         super(detailMessage);

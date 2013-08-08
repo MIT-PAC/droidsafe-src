@@ -19,6 +19,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.076 -0400", hash_original_method = "DA3220D378CF53A8E8D20808A7040AB6", hash_generated_method = "399C27BF3F6D93A48DF8AFC793FD14ED")
     protected  MessageDigest(String algorithm) {
         this.algorithm = algorithm;
@@ -27,6 +28,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MessageDigest getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -91,6 +93,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.078 -0400", hash_original_method = "4F50D6AF2B6F6CC75F087F1B36C7BEE9", hash_generated_method = "AFE97CF4DF63F15FF83690CC61E5BF0E")
     public void update(byte[] input, int offset, int len) {
         addTaint(len);
@@ -113,6 +116,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.079 -0400", hash_original_method = "2D0F4C2E65A537F2694C1C3FF3BB32CC", hash_generated_method = "E675E2424596BF6422284B3D13BC2B0B")
     public void update(byte[] input) {
         addTaint(input[0]);
@@ -131,6 +135,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.079 -0400", hash_original_method = "BFC8812962D9635EA2DD9DD3F9DF8CCE", hash_generated_method = "2F3B959E95A57AA89AABA002E73A03FD")
     public byte[] digest() {
         byte[] varF6CE38F9D4ECC452155A563399B35C32_1758176272 = (engineDigest());
@@ -165,6 +170,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.080 -0400", hash_original_method = "C04191B06E52578EA4C996F47114224E", hash_generated_method = "7462C4325466AEFE47FCB95B7D6F3492")
     public byte[] digest(byte[] input) {
         addTaint(input[0]);
@@ -304,7 +310,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
 
         private MessageDigestSpi spiImpl;
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.085 -0400", hash_original_method = "AF4F6C5934F11306EFBE5B299B5A2B9A", hash_generated_method = "A429A5B998EC05778C035C93FB935975")
         private  MessageDigestImpl(MessageDigestSpi messageDigestSpi,
                 Provider provider, String algorithm) {
@@ -328,6 +334,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.085 -0400", hash_original_method = "F90FDD38A509FFE526728E64881BF6E1", hash_generated_method = "D1880D27A47BE5CBA2C8AC5297811B73")
         @Override
         protected byte[] engineDigest() {
@@ -360,6 +367,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.087 -0400", hash_original_method = "A2CCF3CCE76988A3320BAC87F00B4D63", hash_generated_method = "960D27DB9457D5DF1B7EF85FBFFFEDD5")
         @Override
         protected void engineUpdate(byte[] arg0, int arg1, int arg2) {

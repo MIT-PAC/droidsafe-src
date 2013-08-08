@@ -23,6 +23,7 @@ public class KeyFactory {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.894 -0400", hash_original_method = "8C178BBFD1FCE7A7C88CEB58B900756B", hash_generated_method = "3407D7ACC3A5FF64588D5A45D63E15AB")
     protected  KeyFactory(KeyFactorySpi keyFacSpi,
                          Provider provider,
@@ -37,6 +38,7 @@ public class KeyFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyFactory getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -92,6 +94,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_1637404213 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.897 -0400", hash_original_method = "D16F4EDBCE8E03F680EB7C937E0DCCC9", hash_generated_method = "DA067B39DEDDEE40DACBE429062F34EB")
     public final PublicKey generatePublic(KeySpec keySpec) throws InvalidKeySpecException {
         addTaint(keySpec.getTaint());

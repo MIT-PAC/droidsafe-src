@@ -196,6 +196,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.220 -0400", hash_original_method = "43C4845D6E61D29AF25E893F4FEF10C8", hash_generated_method = "E2F7CC8B487840533B4E8A43E9964DDF")
     @Override
     public synchronized void close() {
@@ -225,6 +226,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.221 -0400", hash_original_method = "02B2E054E74BF295FB5EB637205E6B35", hash_generated_method = "3D3C502D61EAE66EEA9600FED466DC0A")
     @Override
     public synchronized void flush() {
@@ -385,6 +387,7 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_630601426 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.227 -0400", hash_original_method = "EC0BC9FFC97B234EE7DA16C4D893B8BD", hash_generated_method = "C6E1AB81C2AD5C7E6C902ABECE000227")
     public synchronized void print(String str) {
         addTaint(str.getTaint());
@@ -505,6 +508,7 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_630601426 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.232 -0400", hash_original_method = "320F49F677524EBEDCEEC6E202E646D4", hash_generated_method = "4DD07632C48EAE0E82D346837F8CC7F3")
     public void println(Object o) {
         addTaint(o.getTaint());
@@ -514,6 +518,7 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_630601426 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.232 -0400", hash_original_method = "0E73500566456C691BD3FFBE8C8D630F", hash_generated_method = "95F2008FB2611F79E53BE2C405EDF08F")
     public synchronized void println(String str) {
         addTaint(str.getTaint());
@@ -644,6 +649,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1665963805 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.233 -0400", hash_original_method = "FC28086FFC8546AD8E2DD12638EADD5B", hash_generated_method = "1846888D299550A416329916E5784AFF")
     public PrintStream append(CharSequence charSequence) {
         addTaint(charSequence.getTaint());

@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 public class X509EncodedKeySpec extends EncodedKeySpec {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.127 -0400", hash_original_method = "653C2DD285722882E5BF9CD68F7E16B1", hash_generated_method = "ECC9E13798F16EAF312A2831A733D588")
     public  X509EncodedKeySpec(byte[] encodedKey) {
         super(encodedKey);

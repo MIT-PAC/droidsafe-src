@@ -10,6 +10,7 @@ import libcore.io.SizeOf;
 
 final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.735 -0400", hash_original_method = "698A4093B5D08261CD10BBA0DD254D03", hash_generated_method = "7756D1F29F9F9FC140DF9D48F9915E81")
       ReadWriteHeapByteBuffer(byte[] backingArray) {
         super(backingArray);
@@ -18,6 +19,7 @@ final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.736 -0400", hash_original_method = "39FF2878164033A82C16A4024A20F407", hash_generated_method = "AD1FEB69B137DF12FC0B9C8A7EE53C15")
       ReadWriteHeapByteBuffer(int capacity) {
         super(capacity);
@@ -57,6 +59,7 @@ ByteBuffer varCA612679CD85B02158BA6D776D286658_716426796 =         ReadOnlyHeapB
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.737 -0400", hash_original_method = "E8B47769CA0E36E125D00B7BF0C31D0B", hash_generated_method = "65E55A50112A8667211E7BBD76098326")
     @Override
     public ByteBuffer compact() {
@@ -175,6 +178,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1808839362 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.740 -0400", hash_original_method = "B19EE749C09ADF1A37CE1094243997D4", hash_generated_method = "29426A25DA0C33A73A917D517779FCA0")
     @Override
     public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {

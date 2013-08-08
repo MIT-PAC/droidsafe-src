@@ -23,6 +23,7 @@ public class PropertyChangeEvent extends EventObject {
 
     Object propagationId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.128 -0400", hash_original_method = "6BC761D29E61B2DA2BCFDF9B41EBE38E", hash_generated_method = "79EA52EBA18099D1FB7ACA8506163AB9")
     public  PropertyChangeEvent(Object source, String propertyName,
             Object oldValue, Object newValue) {

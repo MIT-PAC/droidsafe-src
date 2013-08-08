@@ -30,6 +30,7 @@ public abstract class Charset implements Comparable<Charset> {
 
     private HashSet<String> aliasesSet;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.415 -0400", hash_original_method = "70538FAF149E20AD4492F643DB83EDCB", hash_generated_method = "9AB45971258C835EC347CCE65D82FCE0")
     protected  Charset(String canonicalName, String[] aliases) {
         addTaint(aliases[0].getTaint());
@@ -57,7 +58,7 @@ for(String alias : aliases)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static void checkCharsetName(String name) {
         if (name.isEmpty()) {
             throw new IllegalCharsetNameException(name);
@@ -97,7 +98,7 @@ for(String alias : aliases)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Charset cacheCharset(String charsetName, Charset cs) {
         synchronized (CACHED_CHARSETS) {
             String canonicalName = cs.name();
@@ -115,6 +116,7 @@ for(String alias : aliases)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Charset forName(String charsetName) {
         Charset cs;
         synchronized (CACHED_CHARSETS) {
@@ -141,7 +143,7 @@ for(String alias : aliases)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static Charset forNameUEE(String charsetName) throws UnsupportedEncodingException {
         try {
             return Charset.forName(charsetName);
@@ -240,6 +242,7 @@ String var10DFEB18F9F7F9CEB3FED88506D04E0A_656829139 =         this.canonicalNam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.419 -0400", hash_original_method = "0107CD00701D9024191BE26A03E59733", hash_generated_method = "B2C1A0F0BA88D04AD915EEC4889B886D")
     public final ByteBuffer encode(CharBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -281,6 +284,7 @@ ByteBuffer varCA7411AD321AC1B671CDFFE1D3D2FACB_1750751838 =         encode(CharB
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.420 -0400", hash_original_method = "126EFF7550A1ED9E8429CF707F327D0E", hash_generated_method = "0328300E1D0A6D2F56C27C9B0E5B9C26")
     public final CharBuffer decode(ByteBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -343,6 +347,7 @@ CharBuffer var7F334E4D9C3050DD54B4BE69BB9C005E_601533220 =             newDecode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.421 -0400", hash_original_method = "D44320DAEF5566E6C5C975F4AAC84659", hash_generated_method = "E173D59B9A4E90F1837CCAA35FEACDBA")
     @Override
     public final int hashCode() {
@@ -354,6 +359,7 @@ CharBuffer var7F334E4D9C3050DD54B4BE69BB9C005E_601533220 =             newDecode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.421 -0400", hash_original_method = "D15E03733F40849FC8BB6457075A7CA1", hash_generated_method = "CADCB845A81A6F3317D12F9ACDB17E7C")
     @Override
     public final String toString() {
@@ -371,7 +377,7 @@ String varAE5877D4DAD502DC1B608A0F13648963_1971865224 =         getClass().getNa
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Charset getDefaultCharset() {
         String encoding = System.getProperty("file.encoding", "UTF-8");
         try {

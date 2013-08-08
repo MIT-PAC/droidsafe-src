@@ -30,6 +30,7 @@ public class MenuItemCompat {
     
     static class BaseMenuVersionImpl implements MenuVersionImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.258 -0400", hash_original_method = "BFDC30535AAA3E19A04AFADFFD50E16A", hash_generated_method = "BFDC30535AAA3E19A04AFADFFD50E16A")
         public BaseMenuVersionImpl ()
         {
@@ -71,6 +72,7 @@ MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_362247719 =             item;
     
     static class HoneycombMenuVersionImpl implements MenuVersionImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.259 -0400", hash_original_method = "1A0F236AE805B2AE3CB14132D083E8D6", hash_generated_method = "1A0F236AE805B2AE3CB14132D083E8D6")
         public HoneycombMenuVersionImpl ()
         {

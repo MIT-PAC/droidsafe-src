@@ -19,7 +19,7 @@ public class CoderResult {
 
     private int length;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.628 -0400", hash_original_method = "720E366141B1E6A3092F9CE363C44766", hash_generated_method = "D851FBA0928E192998BF1AF90BB4D1C7")
     private  CoderResult(int type, int length) {
         this.type = type;
@@ -30,6 +30,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized CoderResult malformedForLength(int length) throws IllegalArgumentException {
         if (length > 0) {
             Integer key = Integer.valueOf(length);
@@ -46,6 +47,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized CoderResult unmappableForLength(int length) throws IllegalArgumentException {
         if (length > 0) {
             Integer key = Integer.valueOf(length);
@@ -119,6 +121,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.632 -0400", hash_original_method = "9DF3E8EF203785D8A82D753745232C5B", hash_generated_method = "D606862810A1E68EBE01265E0FC4443B")
     public int length() throws UnsupportedOperationException {
         if(this.type == TYPE_MALFORMED_INPUT || this.type == TYPE_UNMAPPABLE_CHAR)        
@@ -138,6 +141,7 @@ public class CoderResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.632 -0400", hash_original_method = "8994A4AB686221398F6DD6413AEB03CF", hash_generated_method = "6965410F1F783CF3875ADF465ADC6E62")
     public void throwException() throws BufferUnderflowException,
             BufferOverflowException, UnmappableCharacterException,
@@ -180,6 +184,7 @@ switch(this.type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.634 -0400", hash_original_method = "1AD631AC990AF6BF0D5460B8B5F54BE7", hash_generated_method = "FD884154715B12A9A14B6221F9D056AC")
     @Override
     public String toString() {

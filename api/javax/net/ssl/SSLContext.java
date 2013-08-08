@@ -27,6 +27,7 @@ public class SSLContext {
 
     private String protocol;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.658 -0400", hash_original_method = "C804D9011355FC1C1182E28B9F55F9CC", hash_generated_method = "088B0261D1EFCD8A932AF0AD4ED02EB8")
     protected  SSLContext(SSLContextSpi contextSpi, Provider provider, String protocol) {
         this.provider = provider;
@@ -39,6 +40,7 @@ public class SSLContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLContext getDefault() throws NoSuchAlgorithmException {
         synchronized (ENGINE) {
             if (DEFAULT == null) {
@@ -59,6 +61,7 @@ public class SSLContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLContext getInstance(String protocol) throws NoSuchAlgorithmException {
         if (protocol == null) {
             throw new NullPointerException("protocol is null");
@@ -128,6 +131,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1853891129 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.661 -0400", hash_original_method = "B0765B951456A1F8D049DA95DEF67C61", hash_generated_method = "BAB4A9BB7709BE7446D49C8FF648C0D9")
     public final SSLSocketFactory getSocketFactory() {
 SSLSocketFactory var2D18C46B5E469E561E5021C32B0BF794_1294578107 =         spiImpl.engineGetSocketFactory();
@@ -138,6 +142,7 @@ SSLSocketFactory var2D18C46B5E469E561E5021C32B0BF794_1294578107 =         spiImp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.662 -0400", hash_original_method = "6B854724B17F4BE278032C18BCD40494", hash_generated_method = "CA2A1FE92DCC61560F6DA55C7657632C")
     public final SSLServerSocketFactory getServerSocketFactory() {
 SSLServerSocketFactory var7E9BC44DA92239FF15F8006EC182721D_846160262 =         spiImpl.engineGetServerSocketFactory();

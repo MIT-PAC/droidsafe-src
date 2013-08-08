@@ -24,6 +24,7 @@ public abstract class Certificate implements Serializable {
 
     private String type;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.637 -0400", hash_original_method = "244ADEDBEBB96EF97070F535965BB014", hash_generated_method = "091FFA48FFD653C349D8D45027C4C179")
     protected  Certificate(String type) {
         this.type = type;

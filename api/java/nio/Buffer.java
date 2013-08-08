@@ -30,6 +30,7 @@ public abstract class Buffer {
 
     MemoryBlock block;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.210 -0400", hash_original_method = "2FDB6310072AD349AB73186351A07476", hash_generated_method = "C95F234BA0C2821AC6A3116D9CA2D382")
       Buffer(int elementSizeShift, int capacity, MemoryBlock block) {
         this._elementSizeShift = elementSizeShift;
@@ -291,6 +292,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_2113616573 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.220 -0400", hash_original_method = "44A9FE5FA1BE9CFEEC46842C8860150F", hash_generated_method = "242146ABFA1861F6B35098E2112B71C3")
     public final Buffer limit(int newLimit) {
         addTaint(newLimit);
@@ -304,6 +306,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_859251701 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.220 -0400", hash_original_method = "513739890B0FB1849008B6B4DB830FEC", hash_generated_method = "C7E63BF741100C9481A05E6C57AD7203")
      void limitImpl(int newLimit) {
         if(newLimit < 0 || newLimit > capacity)        

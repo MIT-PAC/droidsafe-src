@@ -17,6 +17,7 @@ public class HttpRetryException extends IOException {
 
     private String location = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.443 -0400", hash_original_method = "D66D6037990D1320EE8F2B514BE7C80E", hash_generated_method = "B68D8B5D0CA30FB7D2135CDDCF208B7E")
     public  HttpRetryException(String detail, int code) {
         super(detail);

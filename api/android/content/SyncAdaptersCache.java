@@ -71,6 +71,7 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_863138875 =             new 
     
     static class MySerializer implements XmlSerializerAndParser<SyncAdapterType> {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.933 -0400", hash_original_method = "6E1FAE6E6E9693B60CA712A8476AA1E6", hash_generated_method = "6E1FAE6E6E9693B60CA712A8476AA1E6")
         public MySerializer ()
         {

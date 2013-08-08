@@ -29,6 +29,7 @@ public class InputStreamReader extends Reader {
 
     private final ByteBuffer bytes = ByteBuffer.allocate(8192);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.110 -0400", hash_original_method = "3590A2EED02D10C52AB0172AD4BE22C4", hash_generated_method = "C11E1C8740A43C21BC55AB18059CCFB4")
     public  InputStreamReader(InputStream in) {
         this(in, Charset.defaultCharset());
@@ -93,6 +94,7 @@ public class InputStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.113 -0400", hash_original_method = "F689BDB30C937E91D3C146F93A07A4B9", hash_generated_method = "638E03BD1AF4CDE5E50D3D3938B8A100")
     public  InputStreamReader(InputStream in, Charset charset) {
         super(in);
@@ -110,6 +112,7 @@ public class InputStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.113 -0400", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "FD7FB0415BB06C755E2B8C451E4BC414")
     @Override
     public void close() throws IOException {
@@ -186,6 +189,7 @@ String var0CAEB9C5EE04F06514583664597031A5_2023730002 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.116 -0400", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "033061A0E1CAFDD8A4CC48A23C72B74C")
     @Override
     public int read(char[] buffer, int offset, int length) throws IOException {

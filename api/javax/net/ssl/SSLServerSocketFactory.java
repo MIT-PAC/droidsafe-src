@@ -14,12 +14,14 @@ import javax.net.ServerSocketFactory;
 
 public abstract class SSLServerSocketFactory extends ServerSocketFactory {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.774 -0400", hash_original_method = "BC3ACB83646E5282AC0839BB4C043770", hash_generated_method = "84A6B101064020819BA93021BE097E95")
     protected  SSLServerSocketFactory() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized ServerSocketFactory getDefault() {
         if (defaultServerSocketFactory != null) {
             return defaultServerSocketFactory;

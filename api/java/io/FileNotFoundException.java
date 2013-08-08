@@ -13,6 +13,7 @@ public class FileNotFoundException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.917 -0400", hash_original_method = "84F2811DBCCBCE4B9E51EB4FDB1C21D5", hash_generated_method = "76951E823D18CCDEC2FBD41D5844B891")
     public  FileNotFoundException(String detailMessage) {
         super(detailMessage);

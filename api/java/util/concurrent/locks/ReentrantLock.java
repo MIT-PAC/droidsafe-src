@@ -298,6 +298,7 @@ String var712A538455E0066CABFC7E39FF5F51C3_421383218 =         super.toString() 
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.504 -0400", hash_original_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7", hash_generated_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7")
         public Sync ()
         {
@@ -474,6 +475,7 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_1190475811 =             getState() =
     
     static final class NonfairSync extends Sync {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.506 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {

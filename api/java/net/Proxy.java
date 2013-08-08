@@ -34,7 +34,7 @@ public class Proxy {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.315 -0400", hash_original_method = "D66A32319FBF400033B05D10E8B8C304", hash_generated_method = "3B8506530C1D1E82DA5460F730015C73")
     private  Proxy() {
         type = Type.DIRECT;
@@ -67,6 +67,7 @@ SocketAddress var814577DDD37BAFB17E08CBEFDB411BAE_110786773 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.315 -0400", hash_original_method = "15D85DA96A49804E7A6DD9EB58950877", hash_generated_method = "5D04DBCD05E74C42010542C6B6514480")
     @Override
     public String toString() {
@@ -96,6 +97,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_388580493 =         builder.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.316 -0400", hash_original_method = "0AADE3011667515449A8CD7BE7CB43B7", hash_generated_method = "FDC2D51ABBF5273538231578A9A4266F")
     @Override
     public final boolean equals(Object obj) {
@@ -128,6 +130,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_388580493 =         builder.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.317 -0400", hash_original_method = "AFEB3E9B74402AACB68FC4AD63CE261F", hash_generated_method = "96041993D1A5834DF9D900C0C93A641F")
     @Override
     public final int hashCode() {

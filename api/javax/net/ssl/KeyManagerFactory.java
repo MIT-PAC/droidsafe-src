@@ -29,6 +29,7 @@ public class KeyManagerFactory {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.637 -0400", hash_original_method = "70F84550962AE46163866D0A34314F54", hash_generated_method = "5C23709F478D6E8DB18309E3BC6E3412")
     protected  KeyManagerFactory(KeyManagerFactorySpi factorySpi, Provider provider,
                                 String algorithm) {
@@ -42,11 +43,13 @@ public class KeyManagerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String getDefaultAlgorithm() {
         return Security.getProperty(PROPERTY_NAME);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyManagerFactory getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException("algorithm is null");
@@ -102,6 +105,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1227211053 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.639 -0400", hash_original_method = "4FB19D2B9D9DA541468809C3D1BCD49A", hash_generated_method = "A92F5467E8AD0998DF83B09295BABF15")
     public final void init(KeyStore ks, char[] password) throws KeyStoreException,
             NoSuchAlgorithmException, UnrecoverableKeyException {
@@ -122,6 +126,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1227211053 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.640 -0400", hash_original_method = "B9A1EAEE9A7433E4D131EF6C1483617B", hash_generated_method = "86A8F30358E9A68976012ECC5FDF06F7")
     public final KeyManager[] getKeyManagers() {
 KeyManager[] var955490AC7A1924D012F4879486E1856B_963617442 =         spiImpl.engineGetKeyManagers();

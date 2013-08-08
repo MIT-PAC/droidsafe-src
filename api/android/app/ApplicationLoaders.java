@@ -16,6 +16,7 @@ class ApplicationLoaders {
 
     private final Map<String, ClassLoader> mLoaders = new HashMap<String, ClassLoader>();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.316 -0400", hash_original_method = "B28ECCCB6DE1A645261BEF05FE1982E7", hash_generated_method = "B28ECCCB6DE1A645261BEF05FE1982E7")
     public ApplicationLoaders ()
     {

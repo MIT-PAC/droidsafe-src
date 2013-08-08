@@ -12,6 +12,7 @@ public class MGF1ParameterSpec implements AlgorithmParameterSpec {
 
     private String mdName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.068 -0400", hash_original_method = "D3C3EAC31B08596AB735332742664A5B", hash_generated_method = "D9FAF55DDCC7A8321E256DE6BCDFF660")
     public  MGF1ParameterSpec(String mdName) {
         this.mdName = mdName;

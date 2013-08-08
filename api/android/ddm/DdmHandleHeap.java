@@ -26,6 +26,7 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void register() {
         DdmServer.registerHandler(CHUNK_HPIF, mInstance);
         DdmServer.registerHandler(CHUNK_HPSG, mInstance);

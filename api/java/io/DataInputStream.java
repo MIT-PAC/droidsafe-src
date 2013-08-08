@@ -16,6 +16,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
 
     private final byte[] scratch = new byte[8];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.594 -0400", hash_original_method = "AECD3C5985C6EE616C4F48FE6E0C81F1", hash_generated_method = "17F9689D72B0B78F1037BD70D626285A")
     public  DataInputStream(InputStream in) {
         super(in);
@@ -220,6 +221,7 @@ String var212D8FC412CCB2BE0F33E17280622756_1830903830 =                 line.toS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.601 -0400", hash_original_method = "F2D7E122731E959B896496A8F1F12120", hash_generated_method = "C782A24A91B72B0BC1DBA0BFFE4A2152")
     public final short readShort() throws IOException {
         Streams.readFully(in, scratch, 0, SizeOf.SHORT);

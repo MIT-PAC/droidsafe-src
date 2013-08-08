@@ -709,6 +709,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
 
         public int mCursorCapsMode;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "C2F7B541292D8E4E042270C21CD2A858", hash_generated_method = "C2F7B541292D8E4E042270C21CD2A858")
         public InputContextCallback ()
         {

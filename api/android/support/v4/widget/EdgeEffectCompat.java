@@ -99,6 +99,7 @@ public class EdgeEffectCompat {
     
     static class BaseEdgeEffectImpl implements EdgeEffectImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.020 -0400", hash_original_method = "E93AF950D68741CBF25DC67984C27D7B", hash_generated_method = "E93AF950D68741CBF25DC67984C27D7B")
         public BaseEdgeEffectImpl ()
         {
@@ -208,6 +209,7 @@ Object var540C13E9E156B687226421B24F2DF178_243645892 =             null;
     
     static class EdgeEffectIcsImpl implements EdgeEffectImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.021 -0400", hash_original_method = "722DC077141274393C35BB912CA199C0", hash_generated_method = "722DC077141274393C35BB912CA199C0")
         public EdgeEffectIcsImpl ()
         {

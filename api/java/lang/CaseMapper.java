@@ -19,6 +19,7 @@ class CaseMapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toLowerCase(Locale locale, String s, char[] value, int offset, int count) {
         String languageCode = locale.getLanguage();
         if (languageCode.equals("tr") || languageCode.equals("az") || languageCode.equals("lt")) {
@@ -49,7 +50,7 @@ class CaseMapper {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static boolean isFinalSigma(char[] value, int offset, int count, int index) {
         if (index <= offset) {
             return false;
@@ -103,6 +104,7 @@ class CaseMapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toUpperCase(Locale locale, String s, char[] value, int offset, int count) {
         String languageCode = locale.getLanguage();
         if (languageCode.equals("tr") || languageCode.equals("az") || languageCode.equals("lt")) {

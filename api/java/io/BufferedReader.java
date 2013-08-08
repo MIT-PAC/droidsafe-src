@@ -29,6 +29,7 @@ public class BufferedReader extends Reader {
 
     private int markLimit = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_method = "942CB30D704BB0D453BC7285AF3F8F63", hash_generated_method = "1E283231B6628C9D10DDED98EF8AEFDD")
     public  BufferedReader(Reader in) {
         this(in, 8192);
@@ -37,6 +38,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.361 -0400", hash_original_method = "14FDA92282030C83FA853ED51BF21EF3", hash_generated_method = "7DE0FD15C8CD0BAD03F36B0F0B624B9B")
     public  BufferedReader(Reader in, int size) {
         super(in);
@@ -57,6 +59,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.362 -0400", hash_original_method = "B09EB233D31BD7460B333EC44F947FB5", hash_generated_method = "24027C403C7C0374B7EA2222DB95D040")
     @Override
     public void close() throws IOException {
@@ -78,7 +81,7 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.363 -0400", hash_original_method = "CF9579814E96BB14759649D94186035A", hash_generated_method = "8C7FECA201D8681A9AB4B4F7E63A1605")
     private int fillBuf() throws IOException {
         if(mark == -1 || (pos - mark >= markLimit))        
@@ -192,6 +195,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.365 -0400", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "74044E9BFBE1831F5E6C4CF5B1AB73E9")
     @Override
     public int read() throws IOException {
@@ -286,6 +290,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.372 -0400", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "BA927ABE7EE6D520F24F9370A9FD6B22")
     public String readLine() throws IOException {
         synchronized

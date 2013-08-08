@@ -22,6 +22,7 @@ public class DdmHandleExit extends ChunkHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void register() {
         DdmServer.registerHandler(CHUNK_EXIT, mInstance);
     }

@@ -15,6 +15,7 @@ public class URISyntaxException extends Exception {
 
     private int index;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.869 -0400", hash_original_method = "97528CB9DDAE82ED090B6E0F20E64C52", hash_generated_method = "6AA90214C9929DF4BA504F63570DAC48")
     public  URISyntaxException(String input, String reason, int index) {
         super(reason);
@@ -45,6 +46,7 @@ public class URISyntaxException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.869 -0400", hash_original_method = "9E8506F7D035742973E1D45F72C781FB", hash_generated_method = "85D864DCE56CA49E85233E322331C2E7")
     public  URISyntaxException(String input, String reason) {
         super(reason);
@@ -98,6 +100,7 @@ String var5B0B1B23FE12EB4FF686B5A845BE063F_1442527160 =         input;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.870 -0400", hash_original_method = "2C0C7C544BFDCEB0F806A466417CE15E", hash_generated_method = "9D14FA1997AF18AEC153A037BEC9BC4E")
     @Override
     public String getMessage() {

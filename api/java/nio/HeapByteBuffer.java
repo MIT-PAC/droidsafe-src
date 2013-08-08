@@ -17,6 +17,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
 
     int offset;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.086 -0400", hash_original_method = "E17EA7652E4F5A67C65770DE13DD4AE3", hash_generated_method = "4FA8540A9DD1600A999EF445349CC6BD")
       HeapByteBuffer(byte[] backingArray) {
         this(backingArray, backingArray.length, 0);
@@ -25,6 +26,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.087 -0400", hash_original_method = "720B251A66EBAD61E39D94F5757C7908", hash_generated_method = "64F667538DCF04571002FE958EFD5EA7")
       HeapByteBuffer(int capacity) {
         this(new byte[capacity], capacity, 0);
@@ -33,6 +35,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.088 -0400", hash_original_method = "7E0C48043B88A8991A81994678604015", hash_generated_method = "129CE4FF3CBF7E5558DF0B267E8A3215")
       HeapByteBuffer(byte[] backingArray, int capacity, int offset) {
         super(capacity, null);
@@ -56,6 +59,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.089 -0400", hash_original_method = "A92B26D30665425608E93AFD3985B529", hash_generated_method = "3C279E6EC6713684AECACF8A02BF71E8")
     @Override
     public final ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {

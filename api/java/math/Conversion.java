@@ -234,6 +234,7 @@ class Conversion {
     }
 
     
+    @DSModeled(DSC.BAN)
     static String toDecimalScaledString(long value, int scale) {
         int resLengthInChars;
         int currentChar;

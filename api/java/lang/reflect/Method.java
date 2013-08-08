@@ -660,6 +660,7 @@ String varE65B3A02759122992CB82C0E651AD408_1455360506 =         result.toString(
 
     private static final Annotation[] NO_ANNOTATIONS = new Annotation[0];
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public Method() {
 
 	}

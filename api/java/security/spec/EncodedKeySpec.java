@@ -12,6 +12,7 @@ public abstract class EncodedKeySpec implements KeySpec {
 
     private byte[] encodedKey;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.043 -0400", hash_original_method = "AB5BB16CE68A0965872FC49BB9877C19", hash_generated_method = "31248C080AE7561C6892218AC4D58C46")
     public  EncodedKeySpec(byte[] encodedKey) {
         this.encodedKey = new byte[encodedKey.length];

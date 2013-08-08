@@ -872,6 +872,7 @@ String var6A8B79AC21D46F64E8FA95BADFC3BF6A_1737255838 =         getClass().getNa
     
     static class DefaultContentHandler extends java.net.ContentHandler {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.078 -0400", hash_original_method = "D9C7FF4AC457B32D0DB70E56925850DE", hash_generated_method = "D9C7FF4AC457B32D0DB70E56925850DE")
         public DefaultContentHandler ()
         {

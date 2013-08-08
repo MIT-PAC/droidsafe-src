@@ -15,6 +15,7 @@ abstract class CharArrayBuffer extends CharBuffer {
 
     protected int offset;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.297 -0400", hash_original_method = "A72F78A13989965B326E51B9BE40A191", hash_generated_method = "5AC0B4427BA97C90E4967231E10723CD")
       CharArrayBuffer(char[] array) {
         this(array.length, array, 0);
@@ -23,6 +24,7 @@ abstract class CharArrayBuffer extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.298 -0400", hash_original_method = "1D86BFBD657FBEBE6746E0A26E3B60D6", hash_generated_method = "60046133E972094317BD5C36FB3E9514")
       CharArrayBuffer(int capacity) {
         this(capacity, new char[capacity], 0);
@@ -31,6 +33,7 @@ abstract class CharArrayBuffer extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.298 -0400", hash_original_method = "C3B2650154B809A9DCA4173590E7D6FB", hash_generated_method = "73897A527583E88EF7E6726116CBC18B")
       CharArrayBuffer(int capacity, char[] backingArray, int offset) {
         super(capacity);
@@ -77,6 +80,7 @@ abstract class CharArrayBuffer extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.299 -0400", hash_original_method = "7C08804A3C6FF079C168DF2ED7D4D9F5", hash_generated_method = "FB9AE7F8234E21678538CCEC8DED4EDB")
     @Override
     public final CharBuffer get(char[] dst, int srcOffset, int charCount) {

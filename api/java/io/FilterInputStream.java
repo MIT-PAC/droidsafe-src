@@ -10,6 +10,7 @@ public class FilterInputStream extends InputStream {
 
     protected volatile InputStream in;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.981 -0400", hash_original_method = "28F38498A0B180D5BCC888F2248F3934", hash_generated_method = "5A27BC4A52A8F095F38D366D78918442")
     protected  FilterInputStream(InputStream in) {
         this.in = in;
@@ -18,6 +19,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.981 -0400", hash_original_method = "0AD8415E97210126520B7235309B4152", hash_generated_method = "14B5D4493E92C9E3A2E4B5103B70FD6A")
     @Override
     public int available() throws IOException {
@@ -29,6 +31,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.982 -0400", hash_original_method = "8853C25F592811C3C813B7E0334D3C5F", hash_generated_method = "9CF60855AD0CE7D671F0019EA0CE4A52")
     @Override
     public void close() throws IOException {
@@ -70,6 +73,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.983 -0400", hash_original_method = "77ABDF7CA6BAECB9E04E38AE745E4AA8", hash_generated_method = "2B108C8ACE67D66B28D62885BAE02134")
     @Override
     public int read(byte[] buffer, int offset, int count) throws IOException {

@@ -18,6 +18,7 @@ public class InterfaceAddress {
 
     private short prefixLength;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.726 -0400", hash_original_method = "A47E632924417AF09C6FD6A35089DC11", hash_generated_method = "6C7401FF4356D724F85FF65FCAB96BE1")
       InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Address mask) {
         this.address = address;
@@ -30,6 +31,7 @@ public class InterfaceAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.727 -0400", hash_original_method = "48C591F4E78B8661DAF333100DFF1834", hash_generated_method = "D149CCD7CE2B4038970F458D9B70116C")
       InterfaceAddress(Inet6Address address, short prefixLength) {
         this.address = address;
@@ -56,6 +58,7 @@ public class InterfaceAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.729 -0400", hash_original_method = "C2F63B53807D79A96FCD6544A2D6E3D6", hash_generated_method = "AA0B42F70246EA8181C46121635B206F")
     @Override
     public boolean equals(Object obj) {
@@ -92,6 +95,7 @@ public class InterfaceAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.730 -0400", hash_original_method = "2A9C5EEED856061F72C9734D5432AB47", hash_generated_method = "ADCBD5CD8D152C1A33EF2E40DC2030FC")
     @Override
     public int hashCode() {
@@ -109,6 +113,7 @@ public class InterfaceAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.730 -0400", hash_original_method = "1F9308CDA843BEB3E12C5EE04150EA0F", hash_generated_method = "F384F67343B6AC6DAA273255DCFFE17B")
     @Override
     public String toString() {

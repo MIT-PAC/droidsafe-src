@@ -116,6 +116,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkInterface getByName(String interfaceName) throws SocketException {
         if (interfaceName == null) {
             throw new NullPointerException("interfaceName == null");
@@ -212,7 +213,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static SocketException rethrowAsSocketException(Exception ex) throws SocketException {
         SocketException result = new SocketException();
         result.initCause(ex);
@@ -220,6 +221,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NetworkInterface getByInetAddress(InetAddress address) throws SocketException {
         if (address == null) {
             throw new NullPointerException("address == null");
@@ -248,7 +250,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static List<NetworkInterface> getNetworkInterfacesList() throws SocketException {
         String[] interfaceNames = new File("/sys/class/net").list();
         NetworkInterface[] interfaces = new NetworkInterface[interfaceNames.length];
@@ -280,6 +282,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.895 -0400", hash_original_method = "BC7B763A69F6C3BA5344751878C41BC9", hash_generated_method = "AF2E7640E673B5F48D5FC87DDEA36A32")
     @Override
     public boolean equals(Object obj) {
@@ -316,6 +319,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "684440426377BDE06C71474F97DEF18F")
     @Override
     public int hashCode() {
@@ -327,6 +331,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "620D41077AD7BF09E0A41C54CA4C93E4", hash_generated_method = "23C26006B5C51C135C1E6D238A1713AA")
     @Override
     public String toString() {

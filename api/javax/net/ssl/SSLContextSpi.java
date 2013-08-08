@@ -12,6 +12,7 @@ import java.security.SecureRandom;
 
 public abstract class SSLContextSpi {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.676 -0400", hash_original_method = "C071A8DB81BAA2AB9BA30E20CDF7E4D3", hash_generated_method = "540369CB178536FB780D6C1CC0EB32F7")
     public  SSLContextSpi() {
         // ---------- Original Method ----------

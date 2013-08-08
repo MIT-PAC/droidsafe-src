@@ -45,6 +45,7 @@ public class WindowManagerImpl implements WindowManager {
 
     private WindowManager.LayoutParams[] mParams;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.125 -0400", hash_original_method = "3EABCF2A614A6DEC3CA7FC91E47982AB", hash_generated_method = "3EABCF2A614A6DEC3CA7FC91E47982AB")
     public WindowManagerImpl ()
     {

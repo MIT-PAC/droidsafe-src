@@ -285,6 +285,7 @@ TriState var485D0EAC5426E5CF6B2DFC2FF63C06FB_1452865964 =             TriState.U
     
     public static class TextDirectionHeuristicLocale extends TextDirectionHeuristicImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.755 -0400", hash_original_method = "CBB334D6CA70EC7E7043C3529CC3BCF6", hash_generated_method = "58F00443FB0688075F58A0CB5CD3BD72")
         public  TextDirectionHeuristicLocale() {
             super(null);

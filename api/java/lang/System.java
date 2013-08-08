@@ -72,6 +72,7 @@ public final class System {
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public static void exit(int code) {
         Runtime.getRuntime().exit(code);
     }
@@ -260,6 +261,7 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void loadLibrary(String libName) {
         Runtime.getRuntime().loadLibrary(libName, VMStack.getCallingClassLoader());
     }
@@ -271,25 +273,25 @@ public final class System {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void logE(String message, Throwable th) {
         log('E', message, th);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void logI(String message) {
         log('I', message, null);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void logI(String message, Throwable th) {
         log('I', message, th);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void logW(String message) {
         log('W', message, null);
     }

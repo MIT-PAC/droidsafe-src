@@ -26,6 +26,7 @@ public class PropertyChangeSupport implements Serializable {
 
     private transient List<PropertyChangeListener> listeners = new CopyOnWriteArrayList<PropertyChangeListener>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.182 -0400", hash_original_method = "09D4558045FC0782254B0D972DDA4620", hash_generated_method = "85510C3ADE807BE52C694DB0EDED7C22")
     public  PropertyChangeSupport(Object sourceBean) {
         if(sourceBean == null)        
@@ -43,6 +44,7 @@ public class PropertyChangeSupport implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.182 -0400", hash_original_method = "D1E4CD5A5886FF38C6EBB02BBA228540", hash_generated_method = "6D9D5F96AB343F4C70381CC74E1BC1DF")
     public void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
         addTaint(newValue.getTaint());
@@ -394,6 +396,7 @@ for(PropertyChangeListener p : entry.getValue().listeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.190 -0400", hash_original_method = "DE96EEBF0F3556789E0EE7EC3C8C89E3", hash_generated_method = "FF40E0C70B70131388F2D6A0BB7132CE")
     public void firePropertyChange(PropertyChangeEvent event) {
         addTaint(event.getTaint());

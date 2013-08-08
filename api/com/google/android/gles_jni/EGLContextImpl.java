@@ -18,6 +18,7 @@ public class EGLContextImpl extends EGLContext {
 
     int mEGLContext;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.509 -0400", hash_original_method = "FEF1413AB5716E2F3C8722DC6F3C138C", hash_generated_method = "6F759B313A4FF8D0425A40E2FEC2A0FE")
     public  EGLContextImpl(int ctx) {
         mEGLContext = ctx;

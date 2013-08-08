@@ -24,6 +24,7 @@ public class OutputStreamWriter extends Writer {
 
     private ByteBuffer bytes = ByteBuffer.allocate(8192);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.107 -0400", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "A65923CB537A3E6CFE8AB882E44ABF1A")
     public  OutputStreamWriter(OutputStream out) {
         this(out, Charset.defaultCharset());
@@ -69,6 +70,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.110 -0400", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "B1E3E8C23C37F25FE6C0A3EDCFDF5EE6")
     public  OutputStreamWriter(OutputStream out, Charset cs) {
         super(out);
@@ -124,6 +126,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.112 -0400", hash_original_method = "E89503CD667F6DF7A02E3D218DF666E8", hash_generated_method = "27D5E48695D4DA71C3C79EED49114041")
     @Override
     public void flush() throws IOException {
@@ -133,7 +136,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.112 -0400", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "9B8F3591AAECFA2B0C088EDC2C48457E")
     private void flushBytes(boolean flushUnderlyingStream) throws IOException {
         addTaint(flushUnderlyingStream);
@@ -260,7 +263,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.116 -0400", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "E2652E8AED0EF44CFD1E8F419F72C9C6")
     private void checkStatus() throws IOException {
         if(encoder == null)        

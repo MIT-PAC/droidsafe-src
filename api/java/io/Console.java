@@ -19,7 +19,7 @@ public final class Console implements Flushable {
 
     private PrintWriter writer;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.570 -0400", hash_original_method = "4BB1B19487B7F99D445DFF44E768497C", hash_generated_method = "F63CBA47110CFE9BD3FA9E844BE04033")
     private  Console(InputStream in, OutputStream out) throws IOException {
         this.reader = new ConsoleReader(in);
@@ -36,7 +36,7 @@ public final class Console implements Flushable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Console makeConsole() {
         if (!Libcore.os.isatty(FileDescriptor.in) || !Libcore.os.isatty(FileDescriptor.out)) {
             return null;
@@ -220,6 +220,7 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1498134434 =         writer;
     
     private static class ConsoleReader extends BufferedReader {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_method = "3E2241309C439E282539AD753E3DFD21", hash_generated_method = "0644BC6EE196A5609954302B5CBEC9D5")
         public  ConsoleReader(InputStream in) throws IOException {
             super(new InputStreamReader(in, System.getProperty("file.encoding")), 256);
@@ -244,6 +245,7 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1498134434 =         writer;
     
     private static class ConsoleWriter extends PrintWriter {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_method = "FA093E69A8E73F56316EC18ECB712B0D", hash_generated_method = "FECF41157503BFF0E243D80A4D189A41")
         public  ConsoleWriter(OutputStream out) {
             super(out, true);

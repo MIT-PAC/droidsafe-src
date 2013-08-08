@@ -930,6 +930,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void flushLayoutCache(){
 		// Original method
 		/*

@@ -215,6 +215,7 @@ PendingIntent var8C66BCFAD345254529DBEC59C73D54DE_2056895776 =         IMPL.getP
     
     static class TaskStackBuilderImplBase implements TaskStackBuilderImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.732 -0400", hash_original_method = "A4B09A1D14221C9A079C3523AB777622", hash_generated_method = "A4B09A1D14221C9A079C3523AB777622")
         public TaskStackBuilderImplBase ()
         {
@@ -247,6 +248,7 @@ PendingIntent var78B913836D3EA934C43638960253A32F_216802101 =             Pendin
     
     static class TaskStackBuilderImplHoneycomb implements TaskStackBuilderImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.733 -0400", hash_original_method = "A254BA88AEF3ECF74695EB22288FD591", hash_generated_method = "A254BA88AEF3ECF74695EB22288FD591")
         public TaskStackBuilderImplHoneycomb ()
         {

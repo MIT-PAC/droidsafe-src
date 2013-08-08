@@ -6,6 +6,7 @@ import droidsafe.annotations.*;
 
 abstract class BaseByteBuffer extends ByteBuffer {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.177 -0400", hash_original_method = "ACB8CCD9F99597647E3D3BC8A43B28AD", hash_generated_method = "C94DE637A62A36C14B152011F022CD27")
     protected  BaseByteBuffer(int capacity, MemoryBlock block) {
         super(capacity, block);

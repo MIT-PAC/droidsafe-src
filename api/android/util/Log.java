@@ -33,6 +33,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int d(String tag, String msg) {
         return println_native(LOG_ID_MAIN, DEBUG, tag, msg);
     }
@@ -43,6 +44,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int i(String tag, String msg) {
         return println_native(LOG_ID_MAIN, INFO, tag, msg);
     }
@@ -53,6 +55,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int w(String tag, String msg) {
         return println_native(LOG_ID_MAIN, WARN, tag, msg);
     }
@@ -74,16 +77,19 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int e(String tag, String msg) {
         return println_native(LOG_ID_MAIN, ERROR, tag, msg);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int e(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, ERROR, tag, msg + '\n' + getStackTraceString(tr));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int wtf(String tag, String msg) {
         return wtf(tag, msg, null);
     }
@@ -94,6 +100,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int wtf(String tag, String msg, Throwable tr) {
         TerribleFailure what = new TerribleFailure(msg, tr);
         int bytes = println_native(LOG_ID_MAIN, ASSERT, tag, msg + '\n' + getStackTraceString(tr));
@@ -112,6 +119,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getStackTraceString(Throwable tr) {
         if (tr == null) {
             return "";
@@ -144,6 +152,7 @@ public final class Log {
     
     private static class TerribleFailure extends Exception {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "D4E9593549451B34CCC4854683CBFDE8")
           TerribleFailure(String msg, Throwable cause) {
             super(msg, cause);

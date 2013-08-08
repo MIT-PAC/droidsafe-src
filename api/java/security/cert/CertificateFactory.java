@@ -29,6 +29,7 @@ public class CertificateFactory {
 
     private String type;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "8F22BB9FD67741B57F6E16F313DC406A", hash_generated_method = "48FF456B73A12C26B39567DE9F0035F0")
     protected  CertificateFactory(CertificateFactorySpi certFacSpi,
             Provider provider, String type) {
@@ -42,6 +43,7 @@ public class CertificateFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final CertificateFactory getInstance(String type) throws CertificateException {
         if (type == null) {
             throw new NullPointerException();

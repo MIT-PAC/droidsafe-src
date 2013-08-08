@@ -13,7 +13,7 @@ import android.text.TextUtils;
 
 public class MimeTypeMap {
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "3813AC6B5CB9CE0F32CF63BF21EAB5DA")
     private  MimeTypeMap() {
         // ---------- Original Method ----------

@@ -29,6 +29,7 @@ public class ParcelableCompat {
 
         ParcelableCompatCreatorCallbacks<T> mCallbacks;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.016 -0400", hash_original_method = "89A37E66A919C0F4D6C87A6FE2ED98DC", hash_generated_method = "80CA192AA1E9F07F13E9C5A1CFD882FF")
         public  CompatCreator(ParcelableCompatCreatorCallbacks<T> callbacks) {
             mCallbacks = callbacks;

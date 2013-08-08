@@ -242,7 +242,7 @@ public class ActivityManager {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static public boolean isLargeRAM() {
         MemInfoReader reader = new MemInfoReader();
         reader.readMemInfo();

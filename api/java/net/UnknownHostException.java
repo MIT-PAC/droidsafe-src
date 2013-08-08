@@ -15,6 +15,7 @@ public class UnknownHostException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.162 -0400", hash_original_method = "F0919D76ED897260C338F2959B098923", hash_generated_method = "9045703C089BF97EAAEEC7A5A1D5FCBC")
     public  UnknownHostException(String detailMessage) {
         super(detailMessage);

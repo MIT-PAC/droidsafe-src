@@ -498,6 +498,7 @@ String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_227385180 =             "Process[pid=
     
     static class ProcessReferenceQueue extends ReferenceQueue<ProcessImpl> {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.465 -0400", hash_original_method = "862B9F300CC2459FB61E8AEDFA0DE051", hash_generated_method = "862B9F300CC2459FB61E8AEDFA0DE051")
         public ProcessReferenceQueue ()
         {

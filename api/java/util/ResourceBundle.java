@@ -500,6 +500,7 @@ Set<String> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1416478491 =         ret;
     
     static class MissingBundle extends ResourceBundle {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.660 -0400", hash_original_method = "5BE09748C47EC015C065AB0FE98F6425", hash_generated_method = "5BE09748C47EC015C065AB0FE98F6425")
         public MissingBundle ()
         {

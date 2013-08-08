@@ -32,6 +32,7 @@ public class PerformanceCollector {
 
     private long mExecTime;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.282 -0400", hash_original_method = "405D2609A0193176D2AFC5D34E96663C", hash_generated_method = "3B2002EB63933A95B11D5472AF645642")
     public  PerformanceCollector() {
         // ---------- Original Method ----------

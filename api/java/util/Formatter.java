@@ -2106,7 +2106,7 @@ NativeDecimalFormat var786B68CE85DDA5DF40C19A5AF9A0EE7F_1862518083 =            
 
         private StringBuilder strFlags;
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.346 -0400", hash_original_method = "98998A93ECCA1CEE378BE6F5FF82B45F", hash_generated_method = "98998A93ECCA1CEE378BE6F5FF82B45F")
         public FormatToken ()
         {

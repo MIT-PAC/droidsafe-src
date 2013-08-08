@@ -27,6 +27,7 @@ public class EGLSurfaceImpl extends EGLSurface {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.561 -0400", hash_original_method = "547A9AA0BBA76A5D7ACA46BEF8F827CB", hash_generated_method = "5F6E2499529C43EEA5E7AD98D02539E6")
     public  EGLSurfaceImpl(int surface) {
         mEGLSurface = surface;

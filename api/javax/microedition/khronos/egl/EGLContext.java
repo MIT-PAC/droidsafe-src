@@ -11,6 +11,7 @@ import javax.microedition.khronos.opengles.GL;
 
 public abstract class EGLContext {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.456 -0400", hash_original_method = "08AE013F5F70C27B6C3BCCA082C95AAF", hash_generated_method = "08AE013F5F70C27B6C3BCCA082C95AAF")
     public EGLContext ()
     {

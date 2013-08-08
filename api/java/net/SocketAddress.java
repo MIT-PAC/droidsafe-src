@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 public abstract class SocketAddress implements Serializable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.503 -0400", hash_original_method = "7876B00BF6CEE58D0112D8D2CAE92ABE", hash_generated_method = "0C0D9A13CAD2C73F2AC7498322158458")
     public  SocketAddress() {
         // ---------- Original Method ----------

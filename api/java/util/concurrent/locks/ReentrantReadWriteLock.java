@@ -895,6 +895,7 @@ Thread var968C91F9D0BAAE3E440CA3AE2A5B5090_25571564 =             ((exclusiveCou
         
         static final class ThreadLocalHoldCounter extends ThreadLocal<HoldCounter> {
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.604 -0400", hash_original_method = "2811BFD99460ECBD8E7948B925FFB736", hash_generated_method = "2811BFD99460ECBD8E7948B925FFB736")
             public ThreadLocalHoldCounter ()
             {
@@ -938,6 +939,7 @@ HoldCounter varDEF0919C35A2158C32922614479824E5_372717066 =                 new 
     
     static final class NonfairSync extends Sync {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.605 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
@@ -976,6 +978,7 @@ HoldCounter varDEF0919C35A2158C32922614479824E5_372717066 =                 new 
     
     static final class FairSync extends Sync {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.606 -0400", hash_original_method = "76BFFA90730B34917875BAE48AE8B396", hash_generated_method = "76BFFA90730B34917875BAE48AE8B396")
         public FairSync ()
         {

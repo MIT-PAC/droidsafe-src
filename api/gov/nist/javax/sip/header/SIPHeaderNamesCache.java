@@ -18,6 +18,7 @@ public abstract class SIPHeaderNamesCache {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String toLowerCase(String headerName) {
         String lowerCase = (String) lowercaseMap.get(headerName);
         if (lowerCase == null) {

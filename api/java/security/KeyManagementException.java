@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class KeyManagementException extends KeyException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.917 -0400", hash_original_method = "C1C9437036F95280A4529C1CBB03A96B", hash_generated_method = "12290799FE758A646DD4BBABC191F2F2")
     public  KeyManagementException(String msg) {
         super(msg);

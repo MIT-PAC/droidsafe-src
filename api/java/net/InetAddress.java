@@ -104,12 +104,13 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress[] getAllByName(String host) throws UnknownHostException {
         return getAllByNameImpl(host).clone();
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static InetAddress[] getAllByNameImpl(String host) throws UnknownHostException {
         if (host == null || host.isEmpty()) {
             return loopbackAddresses();
@@ -138,7 +139,7 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static InetAddress disallowDeprecatedFormats(String address, InetAddress inetAddress) {
         if (!(inetAddress instanceof Inet4Address) || address.indexOf(':') != -1) {
             return inetAddress;
@@ -163,6 +164,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress getByName(String host) throws UnknownHostException {
         return getAllByNameImpl(host)[0];
     }
@@ -179,6 +181,7 @@ String var838FEAF92DF51A1B9F4858C49A1A49FB_51188697 =         Libcore.os.getname
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.664 -0400", hash_original_method = "4F443763E78EE7A4BDC306A79DFCDBBC", hash_generated_method = "8B4A40B063B7310B1216CC82DB4F0576")
     public String getHostName() {
         if(hostName == null)        
@@ -231,6 +234,7 @@ String varE0844D2E3199657F6D45A77AB24C4989_1837194654 =             getHostAddre
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress getLocalHost() throws UnknownHostException {
         String host = Libcore.os.uname().nodename;
         return lookupHostByName(host)[0];
@@ -249,7 +253,7 @@ String varE0844D2E3199657F6D45A77AB24C4989_1837194654 =             getHostAddre
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static InetAddress[] lookupHostByName(String host) throws UnknownHostException {
         BlockGuard.getThreadPolicy().onNetwork();
         Object cachedResult = addressCache.get(host);
@@ -309,14 +313,14 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_937533407 =         (hostName == null
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static boolean isNumeric(String address) {
         InetAddress inetAddress = parseNumericAddressNoThrow(address);
         return inetAddress != null && disallowDeprecatedFormats(address, inetAddress) != null;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static InetAddress parseNumericAddress(String numericAddress) {
         if (numericAddress == null || numericAddress.isEmpty()) {
             return Inet6Address.LOOPBACK;
@@ -595,12 +599,13 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress getByAddress(String hostName, byte[] ipAddress) throws UnknownHostException {
         return getByAddress(hostName, ipAddress, 0);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static InetAddress getByAddress(String hostName, byte[] ipAddress, int scopeId) throws UnknownHostException {
         if (ipAddress == null) {
             throw new UnknownHostException("ipAddress == null");

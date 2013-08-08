@@ -44,6 +44,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.315 -0400", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "06F598EF6A4A993889CD9DF449D06062")
     protected  AbstractInterruptibleChannel() {
         // ---------- Original Method ----------
@@ -62,6 +63,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.316 -0400", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "8287E10D9F12C89A1439F431F5E5D42D")
     @Override
     public final void close() throws IOException {

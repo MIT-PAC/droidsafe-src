@@ -13,6 +13,7 @@ public class ProtocolException extends java.io.IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.298 -0400", hash_original_method = "8A7B1748C796BD03C7089BCC55139778", hash_generated_method = "8CC4C616FF643B0D0AA5D9A66BC2BFAD")
     public  ProtocolException(String detailMessage) {
         super(detailMessage);

@@ -21,6 +21,7 @@ public class PrintWriter extends Writer {
 
     private boolean autoFlush;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.273 -0400", hash_original_method = "009ECF78166A7569006BEB577877B2F6", hash_generated_method = "05AE4D4E6FBDCE7DFE3FD0B82EBAE392")
     public  PrintWriter(OutputStream out) {
         this(new OutputStreamWriter(out), false);
@@ -39,6 +40,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.273 -0400", hash_original_method = "7F68156580476879DAEA9DC9BCB75B06", hash_generated_method = "C6FFE76650824927030A4AE92F8987D0")
     public  PrintWriter(Writer wr) {
         this(wr, false);
@@ -166,6 +168,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.278 -0400", hash_original_method = "3747E1B1C7FB1936BAC6943C89A67163", hash_generated_method = "8C3F08D2CC22D5B937A4AA00C111DFAC")
     @Override
     public void flush() {

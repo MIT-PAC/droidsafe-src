@@ -12,6 +12,7 @@ public class UnsupportedCharsetException extends IllegalArgumentException {
 
     private String charsetName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.706 -0400", hash_original_method = "EF2B407E9854D147BA5248D252ABFDC1", hash_generated_method = "A83122F7BD490B03278E1192423B7D70")
     public  UnsupportedCharsetException(String charsetName) {
         super((charsetName != null) ? charsetName : "null");

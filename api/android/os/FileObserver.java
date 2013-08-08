@@ -90,6 +90,7 @@ public abstract class FileObserver {
 
         private int m_fd;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.065 -0400", hash_original_method = "3824F66F79A638103BDBC3E2FF39A85C", hash_generated_method = "83B8653B1FC4B33B9768F5319DAA9E21")
         public  ObserverThread() {
             super("FileObserver");
@@ -99,6 +100,7 @@ public abstract class FileObserver {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.066 -0400", hash_original_method = "1D431AF3E47E4C831FAF412598272832", hash_generated_method = "1AC225FF31C20B65F9280920FBE577FF")
         public void run() {
             observe(m_fd);

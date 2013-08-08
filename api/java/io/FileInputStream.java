@@ -85,6 +85,7 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.892 -0400", hash_original_method = "EBD7B964937B6AA7FA3657DA1AAC30BC", hash_generated_method = "DD520337530E5AD7C59986226E7508D1")
     @Override
     public int available() throws IOException {
@@ -216,6 +217,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1259137338 =         fd;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.897 -0400", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "FC89F46A1F4AE6BE548DA72760B10C3B")
     @Override
     public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {

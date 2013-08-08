@@ -51,6 +51,7 @@ public class IntentFilter implements Parcelable {
 
     private boolean mHasPartialTypes = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.476 -0400", hash_original_method = "E570235BD10D63A46D952627D4823B55", hash_generated_method = "7B0E4140638D2A4CB4A4CCA023BAD3B0")
     public  IntentFilter() {
         mPriority = 0;
@@ -270,6 +271,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.493 -0400", hash_original_method = "FFF5B803FCB58F324812D605B6C9CE62", hash_generated_method = "4231B743ACAAD337723CCDB30D43BD00")
     public final void addAction(String action) {
         addTaint(action.getTaint());
@@ -431,6 +433,7 @@ Iterator<String> var96354E09389D28803D7828FF9EBA18A2_854719773 =         mDataTy
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.511 -0400", hash_original_method = "5610D5819C8C8974F702B3F76798B195", hash_generated_method = "6FA9F4BD3DF9B24F213A90CEC890633C")
     public final void addDataScheme(String scheme) {
         addTaint(scheme.getTaint());
@@ -774,6 +777,7 @@ for(int i = 0;i < numDataAuthorities;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.536 -0400", hash_original_method = "740A58E186A747CF3BBDAB4A3568B004", hash_generated_method = "E88B93F0E486B2124F7689C225D7A958")
     public final void addCategory(String category) {
         addTaint(category.getTaint());

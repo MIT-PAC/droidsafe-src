@@ -21,7 +21,7 @@ public class BindException extends SocketException {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.290 -0400", hash_original_method = "C8F93BE3A806C12732DAADB48D8791E4", hash_generated_method = "7529504FC975453FD409C06506129ECE")
     public  BindException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

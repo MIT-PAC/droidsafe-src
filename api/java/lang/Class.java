@@ -80,6 +80,7 @@ String var2F8E51633C4B934C6A6871930033C26B_2107392196 =         StringUtils.comb
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Class<?> forName(String className) throws ClassNotFoundException {
         return forName(className, true, VMStack.getCallingClassLoader());
     }
@@ -1122,6 +1123,7 @@ URL var5BCE521397D83220649EE68F62831709_334750405 =             ClassLoader.getS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.646 -0400", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "041C4A1EA1C56CA85BCF1EBC8F140785")
     public InputStream getResourceAsStream(String resName) {
         addTaint(resName.getTaint());
@@ -1394,6 +1396,7 @@ T varDABAB645F82D7DAC0FD72FFCF9059689_912412957 =         newInstanceImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "EB1BF1C423B147859F4E7C903D1661B8", hash_generated_method = "469F8D9AE5FCC2ADC6D3AE301CEE963C")
     @Override
     public String toString() {

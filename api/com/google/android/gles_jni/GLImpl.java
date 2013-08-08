@@ -58,6 +58,7 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
 
     private boolean have_OES_texture_cube_map;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.611 -0400", hash_original_method = "B8D773F1A7CFA96D2497C742B1D0AB9A", hash_generated_method = "11F556B43317BDD2203C73CA96CCDB1C")
     public  GLImpl() {
         // ---------- Original Method ----------

@@ -288,6 +288,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.273 -0400", hash_original_method = "8E877A457FA4EF293EE7618CA0C5075F", hash_generated_method = "7BD09FE4C2E956045D960E9258FC8D36")
         public  CrashInfo(Throwable tr) {
             StringWriter sw = new StringWriter();
@@ -350,6 +351,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.279 -0400", hash_original_method = "7B93ED55B73724A8D927AFB13EC86251", hash_generated_method = "E02EC02B6BCFED976B1CD096CBA2C578")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);

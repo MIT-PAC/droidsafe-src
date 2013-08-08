@@ -13,6 +13,7 @@ class AddressCache {
 
     private final BasicLruCache<String, AddressCacheEntry> cache = new BasicLruCache<String, AddressCacheEntry>(MAX_ENTRIES);
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.250 -0400", hash_original_method = "FAF57634870A3B339F1CC57081189EF2", hash_generated_method = "FAF57634870A3B339F1CC57081189EF2")
     public AddressCache ()
     {
@@ -28,6 +29,7 @@ class AddressCache {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.252 -0400", hash_original_method = "C8196E240B99FD0E66DB7F26CD4EF8D1", hash_generated_method = "7262A79B31F08AAE19B76C88F7279945")
     public Object get(String hostname) {
         addTaint(hostname.getTaint());
@@ -50,6 +52,7 @@ Object var540C13E9E156B687226421B24F2DF178_1502061580 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.253 -0400", hash_original_method = "BAB205076FF7DD8DB52E2A3E48EC287C", hash_generated_method = "F8B4454ED081510486FE9BED788DDA0F")
     public void put(String hostname, InetAddress[] addresses) {
         addTaint(addresses[0].getTaint());
@@ -60,6 +63,7 @@ Object var540C13E9E156B687226421B24F2DF178_1502061580 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.253 -0400", hash_original_method = "BE11705FB1BB92402BBB6B9F4331FB04", hash_generated_method = "DFCA78BD850711BCB96A45C8F290A0AE")
     public void put(String hostname, String detailMessage) {
         addTaint(detailMessage.getTaint());
@@ -70,6 +74,7 @@ Object var540C13E9E156B687226421B24F2DF178_1502061580 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.254 -0400", hash_original_method = "DDAF9FE3FD0F9348B3B8E9E8698F0E22", hash_generated_method = "44D00E73C96045930F89B772F1884EED")
     public void put(String hostname, Object value, boolean isPositive) {
         addTaint(isPositive);
@@ -87,6 +92,7 @@ Object var540C13E9E156B687226421B24F2DF178_1502061580 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.254 -0400", hash_original_method = "9E6C3A8E77106C45FBFB86AD320286A9", hash_generated_method = "5D68100CA4449BE8F012E7B7A3EF0263")
     public void putUnknownHost(String hostname, String detailMessage) {
         addTaint(detailMessage.getTaint());

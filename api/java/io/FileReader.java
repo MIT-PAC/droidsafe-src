@@ -22,6 +22,7 @@ public class FileReader extends InputStreamReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.959 -0400", hash_original_method = "4AC2E8EE80FFC4D42725FA480AA6947B", hash_generated_method = "91630CB4DF8A8DF6EA83C591D4B2EE03")
     public  FileReader(String filename) throws FileNotFoundException {
         super(new FileInputStream(filename));

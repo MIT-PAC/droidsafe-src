@@ -491,11 +491,13 @@ String var540C13E9E156B687226421B24F2DF178_1669367434 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encode(String s) {
         return encode(s, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encode(String s, String allow) {
         if (s == null) {
             return null;
@@ -2739,6 +2741,7 @@ String varF9DE9787DBBABACF674820C53FE77B7A_1079625040 =             hasDecoded ?
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.162 -0400", hash_original_method = "74B8C999E422A266FD890BA259F6B43C", hash_generated_method = "FE8EA5D3C0D4BD66290C98088E381CE5")
          String getEncoded() {
             @SuppressWarnings("StringEquality") boolean hasEncoded = encoded != NOT_CACHED;
@@ -2853,6 +2856,7 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_693571054 =             hasEncoded ? 
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.186 -0400", hash_original_method = "EEE1C5D1C73794B2424FF9B6A794D8BE", hash_generated_method = "4B0F67434D8457DAFD58D4166208573C")
          String getEncoded() {
             @SuppressWarnings("StringEquality") boolean hasEncoded = encoded != NOT_CACHED;

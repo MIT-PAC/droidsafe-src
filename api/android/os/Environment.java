@@ -159,6 +159,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.BAN)
     static File getDirectory(String variableName, String defaultPath) {
         String path = System.getenv(variableName);
         return path == null ? new File(defaultPath) : new File(path);

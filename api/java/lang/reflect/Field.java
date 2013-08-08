@@ -288,6 +288,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.010 -0400", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "4B7B83C96E7AA37593001CF2DB5E01DC")
     public Object get(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -366,6 +367,7 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_391083683 =         declaringClass;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.012 -0400", hash_original_method = "5CB83BC53ADA020FA0FD37C15AAD9E62", hash_generated_method = "6E585F118CDEFD514651ECA4CC7C6BC0")
     public int getInt(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -388,6 +390,7 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_391083683 =         declaringClass;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.012 -0400", hash_original_method = "5A676A538E8952F6729F0D8423178A33", hash_generated_method = "985A2FD607479EF30EABA9B14A6A727E")
     public int getModifiers() {
         int var5A21DFF9A4E45BEE9AF69069B6808DEF_1724906113 = (getFieldModifiers(declaringClass, slot));
@@ -777,6 +780,7 @@ String varE65B3A02759122992CB82C0E651AD408_1830058780 =         result.toString(
 
     private static final char TYPE_DOUBLE = 'D';
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public Field() {
     	
     }

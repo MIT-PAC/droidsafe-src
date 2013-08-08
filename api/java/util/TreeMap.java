@@ -1639,6 +1639,7 @@ Node<K, V> var3D331EA760A7BCD3BF7E380A6C79C638_738207279 =             last;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.394 -0400", hash_original_method = "B4D4FA13F54A295418FF58C47A14DDE9", hash_generated_method = "08B1384F60C9BE44161E455AA60B25B9")
         @Override
         public Iterator<Entry<K, V>> iterator() {

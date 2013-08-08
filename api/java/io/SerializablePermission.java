@@ -11,6 +11,7 @@ import java.security.Permission;
 
 public final class SerializablePermission extends BasicPermission {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.594 -0400", hash_original_method = "059CB3A47A80651C55222CAAC7D4899E", hash_generated_method = "8977553150B52363546EFB53D9BA8F9C")
     public  SerializablePermission(String permissionName) {
         super("");

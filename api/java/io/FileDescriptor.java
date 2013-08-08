@@ -24,6 +24,7 @@ public final class FileDescriptor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.868 -0400", hash_original_method = "84EEC9A137856593BBF0A90E4A96E319", hash_generated_method = "C2587BEEF8DEA4653584F96F41AABBE4")
     public void sync() throws SyncFailedException {
         try 

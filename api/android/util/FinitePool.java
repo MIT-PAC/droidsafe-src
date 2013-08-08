@@ -34,6 +34,7 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.704 -0400", hash_original_method = "1F77D1F43E03D174D17C1D886C3B593A", hash_generated_method = "3F40A5298150AB239A751FD9CB3A225A")
       FinitePool(PoolableManager<T> manager, int limit) {
         if(limit <= 0)        

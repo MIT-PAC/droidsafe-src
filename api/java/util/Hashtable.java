@@ -1769,6 +1769,7 @@ T[] var8B3B9EE2A35763F71C420B8875277B7C_1513763010 =                 super.toArr
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.387 -0400", hash_original_method = "D7164BC97FFDCB587AB273006C953E50", hash_generated_method = "60E02584A3D445DC5936F712B55DE26F")
         public Iterator<Entry<K, V>> iterator() {
 Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1398284402 =             new EntryIterator();

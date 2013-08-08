@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 public abstract class Permission implements Guard, Serializable {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.118 -0400", hash_original_method = "A3ABD4D844A912132701BDB49CC172D4", hash_generated_method = "60BBD61DE20E08273982FAC06D418A9B")
     public  Permission(String name) {
         addTaint(name.getTaint());

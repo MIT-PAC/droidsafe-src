@@ -21,7 +21,7 @@ public class ConnectException extends SocketException {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.305 -0400", hash_original_method = "4C12D3BC3A1875DEC95F9E2E6B90AD5C", hash_generated_method = "3EE1AF0600883E8FACB98FDB14E558A7")
     public  ConnectException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

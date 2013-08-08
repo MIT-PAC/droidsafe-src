@@ -15,6 +15,7 @@ import libcore.io.Memory;
 
 public final class Inet4Address extends InetAddress {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.523 -0400", hash_original_method = "456618C96C185AE7EE8C57F26D0D0668", hash_generated_method = "B3BA681148AA3724D8AFB0122BA5E92A")
       Inet4Address(byte[] ipaddress, String hostName) {
         super(AF_INET, ipaddress, hostName);

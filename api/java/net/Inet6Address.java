@@ -30,6 +30,7 @@ public final class Inet6Address extends InetAddress {
 
     private String ifname;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.574 -0400", hash_original_method = "FCC74B21AAC45508B8719673A0766005", hash_generated_method = "CC74BD41AB3E931080E766B9DDC712C4")
       Inet6Address(byte[] ipaddress, String hostName, int scope_id) {
         super(AF_INET6, ipaddress, hostName);
@@ -43,6 +44,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Inet6Address getByAddress(String host, byte[] addr, int scope_id) throws UnknownHostException {
         if (addr == null || addr.length != 16) {
             throw new UnknownHostException("Not an IPv6 address: " + Arrays.toString(addr));
@@ -121,6 +123,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.577 -0400", hash_original_method = "CB6B527FFA2A204FDEA9D4C37A9B03D5", hash_generated_method = "8C87B13A0991AAC082E0EEE73AA3136F")
     @Override
     public boolean isAnyLocalAddress() {
@@ -351,6 +354,7 @@ NetworkInterface var540C13E9E156B687226421B24F2DF178_114362307 =             nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.589 -0400", hash_original_method = "3CCDE4F93DD898D7C7483D8BBE2EDADA", hash_generated_method = "020C88E99F76B861A0E9A6EE8411745E")
     @Override
     public String toString() {

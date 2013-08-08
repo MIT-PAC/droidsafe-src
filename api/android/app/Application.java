@@ -51,7 +51,7 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.120 -0400", hash_original_method = "2D485B4C1AE5E3664AA314F747191250", hash_generated_method = "AEFEA1D90204291476E47CF244B9B67E")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newConfig.getTaint());
@@ -238,6 +238,7 @@ for(int i=0;i<callbacks.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.133 -0400", hash_original_method = "7639D676E3D6026BF188B6D74D0066A2", hash_generated_method = "8C4F6FE82CF971BD8F4A184621803236")
      void dispatchActivityResumed(Activity activity) {
         addTaint(activity.getTaint());
@@ -280,6 +281,7 @@ for(int i=0;i<callbacks.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.135 -0400", hash_original_method = "F8E6CA2DBF83F739D06FE3A12F2BF88C", hash_generated_method = "E8B19A22DDC8F1EC6FC4D52D2DD4C8BD")
      void dispatchActivityStopped(Activity activity) {
         addTaint(activity.getTaint());

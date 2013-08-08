@@ -43,6 +43,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ByteBuffer wrap(byte[] array) {
         return new ReadWriteHeapByteBuffer(array);
     }

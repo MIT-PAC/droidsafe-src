@@ -38,6 +38,7 @@ public class SyncStats implements Parcelable {
 
     public long numSkippedEntries;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.757 -0400", hash_original_method = "AD75EEB91F0DE3327218E1B3E5E5D264", hash_generated_method = "5F01C26B38FCDD2B4D2DAB5F51DAB603")
     public  SyncStats() {
         numAuthExceptions = 0;

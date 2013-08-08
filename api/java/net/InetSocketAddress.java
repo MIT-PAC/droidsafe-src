@@ -21,7 +21,7 @@ public class InetSocketAddress extends SocketAddress {
 
     private int port;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.695 -0400", hash_original_method = "E61EEABC5DF9527410338B11302226FE", hash_generated_method = "D6A8A6FF7A7F9DF0030B1E8520AD5301")
     public  InetSocketAddress() {
         this.addr = null;
@@ -42,6 +42,7 @@ public class InetSocketAddress extends SocketAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.697 -0400", hash_original_method = "9F6BF484BF454F89FD6A310ADFCD9122", hash_generated_method = "24D4F5688495039847A193F72239DB29")
     public  InetSocketAddress(InetAddress address, int port) {
         if(port < 0 || port > 65535)        
@@ -63,6 +64,7 @@ public class InetSocketAddress extends SocketAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.697 -0400", hash_original_method = "6C9F5B77CD6EF4C5F038F88B12F1FECD", hash_generated_method = "AAE39BB1651B916EC3C89DB87B8FB535")
     public  InetSocketAddress(String host, int port) {
         this(host, port, true);
@@ -72,6 +74,7 @@ public class InetSocketAddress extends SocketAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.699 -0400", hash_original_method = "10794513C1E3AAEE9C124882A7C67C11", hash_generated_method = "EA0B2876AF6FA286FA924CF3262C5FED")
       InetSocketAddress(String hostname, int port, boolean needResolved) {
         addTaint(needResolved);
@@ -114,6 +117,7 @@ public class InetSocketAddress extends SocketAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetSocketAddress createUnresolved(String host, int port) {
         return new InetSocketAddress(host, port, false);
     }
@@ -141,6 +145,7 @@ InetAddress var93F8352EAB50DBA73F526833D82E48F9_659594681 =         addr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.701 -0400", hash_original_method = "6B2BE268DC286B10AABA01E5C61B1025", hash_generated_method = "182ABDE68546DECC752CD70F20A26CF1")
     public final String getHostName() {
 String varAC60CAEE0ED0B1E182673A2E3E7A6307_1567749775 =         (addr != null) ? addr.getHostName() : hostname;
@@ -173,6 +178,7 @@ String varA176FBB649535D87C7C729399E998756_1767560490 =         (hostname != nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.702 -0400", hash_original_method = "B37E37F388D00532D9BE005F391E9AE5", hash_generated_method = "40006086B41EA0656E88A7CC9ADA615B")
     @Override
     public String toString() {
@@ -184,6 +190,7 @@ String var1B7CAFC033DE18D29F647AE499B2444D_593277045 =         ((addr != null) ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.703 -0400", hash_original_method = "A55E654199D420BD447FD45C56E388DE", hash_generated_method = "B6453D233C2695912BF9A7AA2605051E")
     @Override
     public final boolean equals(Object socketAddr) {
@@ -243,6 +250,7 @@ String var1B7CAFC033DE18D29F647AE499B2444D_593277045 =         ((addr != null) ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.705 -0400", hash_original_method = "65AE406344FAC31F9ADA9FAD1BC1AA72", hash_generated_method = "0A5AECDD2FC9A80B1DADBBCEE8A4EEBE")
     @Override
     public final int hashCode() {

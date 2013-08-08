@@ -66,6 +66,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.827 -0400", hash_original_method = "81BA8F3B1394F61F87D69C567F9782CA", hash_generated_method = "14D9F285EF0C4143A3F21833924D8EC8")
     public  URI(String spec) throws URISyntaxException {
         addTaint(spec.getTaint());
@@ -1189,7 +1190,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_2069881997 =         host;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.843 -0400", hash_original_method = "06FADD20E42E3EC8160E0651D1C1C356", hash_generated_method = "50A54364BC122DB830BF80D6A12DE343")
     public int getEffectivePort() {
         int varCF83DA2DFAE878CA65F5EB1895EB625B_1667528691 = (getEffectivePort(scheme, port));
@@ -1200,7 +1201,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_2069881997 =         host;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static int getEffectivePort(String scheme, int specifiedPort) {
         if (specifiedPort != -1) {
             return specifiedPort;
@@ -1746,6 +1747,7 @@ URL varDABA914D840E6D43A1E159EFF2D2A3B3_662114510 =         new URL(toString());
 
         private String extraLegalCharacters;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.847 -0400", hash_original_method = "4347DCA156D9FED6289ADFF2BB08A2D3", hash_generated_method = "A3E69B2622C1BE064BB82D32FBDEA2CF")
           PartEncoder(String extraLegalCharacters) {
             this.extraLegalCharacters = extraLegalCharacters;
@@ -1754,6 +1756,7 @@ URL varDABA914D840E6D43A1E159EFF2D2A3B3_662114510 =         new URL(toString());
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.848 -0400", hash_original_method = "AEEAAE9B7BA17A8A3158EAAD8BCDF90F", hash_generated_method = "B5E6D40559371DEDD5E2E439933412D8")
         @Override
         protected boolean isRetained(char c) {

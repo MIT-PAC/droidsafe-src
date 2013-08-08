@@ -23,6 +23,7 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void register() {
         DdmServer.registerHandler(CHUNK_HELO, mInstance);
         DdmServer.registerHandler(CHUNK_FEAT, mInstance);

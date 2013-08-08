@@ -23,6 +23,7 @@ public class DdmHandleProfiling extends ChunkHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void register() {
         DdmServer.registerHandler(CHUNK_MPRS, mInstance);
         DdmServer.registerHandler(CHUNK_MPRE, mInstance);

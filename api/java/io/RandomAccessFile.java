@@ -47,6 +47,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
 
     private final byte[] scratch = new byte[8];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.471 -0400", hash_original_method = "C0E3F3B9285851822189430A61815E02", hash_generated_method = "465E9A8CDD50C3016093326C69210E37")
     public  RandomAccessFile(File file, String mode) throws FileNotFoundException {
         int flags;
@@ -113,6 +114,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.472 -0400", hash_original_method = "1B258B17ED328999F6B21E961C189B35", hash_generated_method = "096D189D3D240EF0694FBE4643512F81")
     public  RandomAccessFile(String fileName, String mode) throws FileNotFoundException {
         this(new File(fileName), mode);
@@ -122,6 +124,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.473 -0400", hash_original_method = "884D49058FBF3FAB457C152EAAE74126", hash_generated_method = "C4477A007885E636F86C086FE42B2A22")
     public void close() throws IOException {
         guard.close();
@@ -146,6 +149,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.473 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "271B01A0C286411ADC3A779686EF67E4")
     @Override
     protected void finalize() throws Throwable {
@@ -224,6 +228,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.489 -0400", hash_original_method = "E8687801225ADA3B0E63B61937B0020C", hash_generated_method = "2CEF761C457B6E3083191EE27F5B6D33")
     public long length() throws IOException {
         try 
@@ -257,6 +262,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.490 -0400", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "558363FB0EA6949E423A6166292C2397")
     public int read(byte[] buffer) throws IOException {
         addTaint(buffer[0]);
@@ -268,6 +274,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.491 -0400", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "5B2A004C641F54DBC34878FE4AF3966F")
     public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
         addTaint(byteCount);
@@ -353,6 +360,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.493 -0400", hash_original_method = "FD74F944C9A8F422C55042589648B5E4", hash_generated_method = "2444EFC16C3B6FEB5364E7D874F2DA2F")
     public final void readFully(byte[] dst) throws IOException {
         addTaint(dst[0]);
@@ -362,6 +370,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.494 -0400", hash_original_method = "35386938706C6610A66A6C02D11FE342", hash_generated_method = "C776764C30EF9B0BF7646E5F7010372C")
     public final void readFully(byte[] dst, int offset, int byteCount) throws IOException {
         addTaint(byteCount);
@@ -394,6 +403,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.494 -0400", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "2C5038C59CE130787C0FA6B5BFD4E89A")
     public final int readInt() throws IOException {
         readFully(scratch, 0, SizeOf.INT);
@@ -538,6 +548,7 @@ String var53043956345A52F3FC57178FAAB3FC3C_1476127053 =         ModifiedUtf8.dec
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.513 -0400", hash_original_method = "92812216A189B62C22C36FA4ABFCEF90", hash_generated_method = "E426E9F52179D8F0A8BF4C5CB70DDCCA")
     public void seek(long offset) throws IOException {
         addTaint(offset);

@@ -14,6 +14,7 @@ public class EGLDisplayImpl extends EGLDisplay {
 
     int mEGLDisplay;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.517 -0400", hash_original_method = "B0322934834DBEC13FC1DFBB79B301E2", hash_generated_method = "EA529739750644A061A0822664F2C9E8")
     public  EGLDisplayImpl(int dpy) {
         mEGLDisplay = dpy;

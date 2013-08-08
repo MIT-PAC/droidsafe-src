@@ -28,6 +28,7 @@ public class SecureRandom extends Random {
 
     private String algorithm;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.354 -0400", hash_original_method = "33F8886B5EAC6FEC4DE9DFB0ACBA3485", hash_generated_method = "29048687EE25D7D4906D69AA4CC00F6A")
     public  SecureRandom() {
         super(0);
@@ -165,6 +166,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_124656861 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.355 -0400", hash_original_method = "8CEEFEAA85939144164B3CD7D68FA666", hash_generated_method = "C305C24A0BDACA76013F2E18E9D375BB")
     public synchronized void setSeed(byte[] seed) {
         addTaint(seed[0]);
@@ -174,6 +176,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_124656861 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.355 -0400", hash_original_method = "9FF68F20EA17830E094095398C2F5999", hash_generated_method = "6A47EE20B63FBB6F25D4EC6D49EAB781")
     @Override
     public void setSeed(long seed) {

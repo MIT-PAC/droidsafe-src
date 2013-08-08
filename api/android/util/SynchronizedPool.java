@@ -13,6 +13,7 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
 
     private Object mLock;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.232 -0400", hash_original_method = "5C8F49372B1FEAE144C54A4EE1C5257C", hash_generated_method = "08AD1B277A66B454B7C2A97FDADFDCDA")
     public  SynchronizedPool(Pool<T> pool) {
         mPool = pool;

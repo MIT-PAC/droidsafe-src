@@ -40,6 +40,7 @@ public class Cipher {
 
     private String transformation;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.990 -0400", hash_original_method = "169E8725E31AA026BEEB43CC41C0DB25", hash_generated_method = "B05BA09447ED428EFE97C4A24173D5B2")
     protected  Cipher(CipherSpi cipherSpi, Provider provider,
             String transformation) {
@@ -71,6 +72,7 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Cipher getInstance(String transformation) throws NoSuchAlgorithmException, NoSuchPaddingException {
         return getCipher(transformation, null);
     }
@@ -101,13 +103,13 @@ public class Cipher {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static NoSuchAlgorithmException invalidTransformation(String transformation) throws NoSuchAlgorithmException {
         throw new NoSuchAlgorithmException("Invalid transformation: " + transformation);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static synchronized Cipher getCipher(String transformation, Provider provider) throws NoSuchAlgorithmException, NoSuchPaddingException {
         if (transformation == null || transformation.isEmpty()) {
             throw invalidTransformation(transformation);
@@ -179,7 +181,7 @@ public class Cipher {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static String[] checkTransformation(String transformation) throws NoSuchAlgorithmException {
         if (transformation.startsWith("/")) {
             transformation = transformation.substring(1);

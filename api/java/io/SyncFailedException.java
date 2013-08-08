@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class SyncFailedException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.786 -0400", hash_original_method = "B401EEC06D6A312F5D3599A2F76A49BA", hash_generated_method = "EC4259B586D633B9BBB81D8C9A90A2FA")
     public  SyncFailedException(String detailMessage) {
         super(detailMessage);

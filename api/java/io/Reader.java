@@ -22,6 +22,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.560 -0400", hash_original_method = "841CA56D08654DE62644A6941CD75AE9", hash_generated_method = "6ACC0117984130FEF270F8A8B65EEA39")
     protected  Reader(Object lock) {
         if(lock == null)        

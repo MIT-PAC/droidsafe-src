@@ -27,6 +27,7 @@ public class Binder implements IBinder {
 
     private String mDescriptor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.675 -0400", hash_original_method = "E9C0CAF28240B0B259339EF455808C3F", hash_generated_method = "07296B8B833E8B9FAEFB65A7E920A6A3")
     public  Binder() {
         init();
@@ -143,6 +144,7 @@ String var180132377E6787EAA700529A4FAEA05D_1592533828 =         mDescriptor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.679 -0400", hash_original_method = "5F53634C89FC8CF0041CE9B2B1E024B8", hash_generated_method = "284303DCC240B49B6CFEC7D736B67898")
     public IInterface queryLocalInterface(String descriptor) {
         addTaint(descriptor.getTaint());
@@ -163,6 +165,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_1703837821 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.680 -0400", hash_original_method = "0CF6D9F1E08225F80F6CBB6DE559E3A9", hash_generated_method = "DE0928A7DC2600F181BE28A66E84C301")
     protected boolean onTransact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
@@ -220,6 +223,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_1703837821 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.681 -0400", hash_original_method = "062423BD3F619586ADD6FBBF398B1A78", hash_generated_method = "3B899D1EA7118170BAC1FB60B2973AB7")
     public void dump(FileDescriptor fd, String[] args) {
         addTaint(args[0].getTaint());
@@ -287,6 +291,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_1703837821 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.682 -0400", hash_original_method = "45A6F1E38538846BA699CFB220CE3AE3", hash_generated_method = "F1195C8E53319897CBB2331A495EF341")
     public final boolean transact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
@@ -341,6 +346,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_1703837821 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.683 -0400", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "76851C627F983C777A1DF401ACFAAC11")
     protected void finalize() throws Throwable {
         try 

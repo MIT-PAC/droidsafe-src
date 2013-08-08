@@ -38,6 +38,7 @@ public class IntentCompat {
     
     static class IntentCompatImplBase implements IntentCompatImpl {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.831 -0400", hash_original_method = "6D338D1BF47181449ED1EB8AE28F9864", hash_generated_method = "6D338D1BF47181449ED1EB8AE28F9864")
         public IntentCompatImplBase ()
         {
@@ -108,6 +109,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_286079698 =             intent;
     
     static class IntentCompatImplHC extends IntentCompatImplBase {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.833 -0400", hash_original_method = "771759B32AFF7941C560E51066B77792", hash_generated_method = "771759B32AFF7941C560E51066B77792")
         public IntentCompatImplHC ()
         {
@@ -147,6 +149,7 @@ Intent var0DF19734A7165BB16E7A28B8E7E316CC_1804808759 =             IntentCompat
     
     static class IntentCompatImplIcsMr1 extends IntentCompatImplHC {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.834 -0400", hash_original_method = "26768481DD7BD2C237C8D66F6E165213", hash_generated_method = "26768481DD7BD2C237C8D66F6E165213")
         public IntentCompatImplIcsMr1 ()
         {

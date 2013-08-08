@@ -12,6 +12,7 @@ import java.util.List;
 
 final class ProxySelectorImpl extends ProxySelector {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.346 -0400", hash_original_method = "132D2379FE75BA7CC4F9F650D388CD2E", hash_generated_method = "132D2379FE75BA7CC4F9F650D388CD2E")
     public ProxySelectorImpl ()
     {

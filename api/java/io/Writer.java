@@ -12,6 +12,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
 
     protected Object lock;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.824 -0400", hash_original_method = "673B7AADE5290DAEA83488F65491132B", hash_generated_method = "A151A94197A0C9FE391BFFF503DB9D13")
     protected  Writer() {
         lock = this;
@@ -20,6 +21,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.825 -0400", hash_original_method = "D96C97132BD2547E52536C41B19A9E8C", hash_generated_method = "D90C7BB8E7BC0A8FEA367EC572EDF19C")
     protected  Writer(Object lock) {
         if(lock == null)        

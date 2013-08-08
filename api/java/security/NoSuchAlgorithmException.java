@@ -9,6 +9,7 @@ import droidsafe.annotations.*;
 
 public class NoSuchAlgorithmException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.108 -0400", hash_original_method = "8378123FC231FFDF9C6899E890D8DBB0", hash_generated_method = "3A8D9EE1098E6C39699D65C685A657C2")
     public  NoSuchAlgorithmException(String msg) {
         super(msg);
@@ -24,6 +25,7 @@ public class NoSuchAlgorithmException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.108 -0400", hash_original_method = "738326F937D05503D0FB4C9FA84CE359", hash_generated_method = "2F050E61EA34B409AB1699CEB6E3E572")
     public  NoSuchAlgorithmException(String message, Throwable cause) {
         super(message, cause);

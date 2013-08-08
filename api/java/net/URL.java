@@ -55,6 +55,7 @@ public final class URL implements Serializable {
 
     private transient int hashCode;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.956 -0400", hash_original_method = "121BE8263BD1C356B2FE90A678407E92", hash_generated_method = "13BE7CC69BC37CEBA9C3D962CB708488")
     public  URL(String spec) throws MalformedURLException {
         this((URL) null, spec, null);
@@ -135,6 +136,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.959 -0400", hash_original_method = "216BAC89605FCA377BB0AADBB6E2A8AC", hash_generated_method = "0E9F554FB84574D8E27EEE538B96C945")
     public  URL(String protocol, String host, String file) throws MalformedURLException {
         this(protocol, host, -1, file, null);
@@ -156,6 +158,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.963 -0400", hash_original_method = "D56485CA0554FF67A28005CBDB936EDB", hash_generated_method = "E928D41A7DD15A7B2279843394690596")
     public  URL(String protocol, String host, int port, String file,
             URLStreamHandler handler) throws MalformedURLException {
@@ -218,6 +221,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.966 -0400", hash_original_method = "0200B051ED19728512FC68E42BCAEC0F", hash_generated_method = "697FAB6A8DB5B2F1D870F4835D2B3AE3")
      void fixURL(boolean fixHost) {
         addTaint(fixHost);
@@ -278,6 +282,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.968 -0400", hash_original_method = "2A0889AB616D5EC9F0D1FFB4406777A2", hash_generated_method = "885E3D258598513E84F5DD5D07FD6D0C")
     protected void set(String protocol, String host, int port, String file, String ref) {
         if(this.protocol == null)        
@@ -303,6 +308,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.969 -0400", hash_original_method = "90B240523657DD4FC87B9440FE931EC1", hash_generated_method = "3BC4C463C74503F0CF99105BB749A766")
     @Override
     public boolean equals(Object o) {
@@ -354,6 +360,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.970 -0400", hash_original_method = "83584D9C6686BC529C911ABE882D39AB", hash_generated_method = "89887402CB71CAD3413C7E9D77F1AA22")
     @Override
     public int hashCode() {
@@ -372,6 +379,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.973 -0400", hash_original_method = "7ED1A4A4DB26C9983DC69C2C091F1C50", hash_generated_method = "A2C53839A7F258C30A8E0D3B86BAAE4B")
      void setupStreamHandler() {
         streamHandler = streamHandlers.get(protocol);
@@ -471,6 +479,7 @@ Object var6F18832B08F01BFE5F09D74E11F75FF3_2064874730 =         openConnection()
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "78801A6092FC374B64CA0EB1A9832472")
     public final InputStream openStream() throws IOException {
 InputStream var87790969037245FCECE93EB13FB59F9E_458691682 =         openConnection().getInputStream();
@@ -481,6 +490,7 @@ InputStream var87790969037245FCECE93EB13FB59F9E_458691682 =         openConnecti
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "DDCF57687ACF51357E563F1083DC4261", hash_generated_method = "59A0D749A7D681DCF183E55E7A4985AB")
     public URLConnection openConnection() throws IOException {
 URLConnection var8582ACACD5693CAF10280320B49B91CB_74152353 =         streamHandler.openConnection(this);
@@ -491,6 +501,7 @@ URLConnection var8582ACACD5693CAF10280320B49B91CB_74152353 =         streamHandl
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "CB72409718452D46955A0A85FC179645", hash_generated_method = "562A3F5A8E96C4C5ED979B90685726A4")
     public URLConnection openConnection(Proxy proxy) throws IOException {
         addTaint(proxy.getTaint());
@@ -542,6 +553,7 @@ URI var0E4EEE42069389967BAFD78A4351D211_204176553 =         new URI(streamHandle
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "9D75BD75136BEBAB4AE2F806E85803AD", hash_generated_method = "EEF37F53EDEA99043DA9AEB95F169ED8")
     @Override
     public String toString() {
@@ -553,6 +565,7 @@ String varF1450660D1DB6B63C9B83A42FD23AFF4_1089094139 =         toExternalForm()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.975 -0400", hash_original_method = "6763BB94BC9C65378EF7195BF94F5BED", hash_generated_method = "ACF3E5B31DE51D0A38B73B367D8CC436")
     public String toExternalForm() {
         if(streamHandler == null)        
@@ -631,7 +644,7 @@ String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toE
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.976 -0400", hash_original_method = "89A7E9DBD8F7AF35FA9A39C4922A8C55", hash_generated_method = "8F7B1D3003452A9A142C344C81F71116")
     public int getEffectivePort() {
         int varE15514297653782693CCA4CFFA420DFA_1753444195 = (URI.getEffectivePort(protocol, port));
@@ -751,6 +764,7 @@ String varEFC1DBC79AB9D4D6FF46C815132543A5_425696635 =         ref;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.978 -0400", hash_original_method = "1BAF8E8ECD99ADEA9022FFFFA6473F49", hash_generated_method = "28782146E8A5E535E621C73BE398F329")
     protected void set(String protocol, String host, int port, String authority, String userInfo,
             String path, String query, String ref) {

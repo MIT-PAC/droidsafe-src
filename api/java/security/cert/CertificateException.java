@@ -32,6 +32,7 @@ public class CertificateException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.722 -0400", hash_original_method = "E2FE45CCAA1ECBB72042149ECF15B312", hash_generated_method = "5E7EB8DD5D990BB5CAF5F8E63796DEC0")
     public  CertificateException(Throwable cause) {
         super(cause);

@@ -46,6 +46,7 @@ public class Socket {
 
     private final Object connectLock = new Object();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.486 -0400", hash_original_method = "DE6B6B5588954C6A35AB00A23B1617FE", hash_generated_method = "F670CC532C7B774247714814201AF5CC")
     public  Socket() {
         this.impl = factory != null ? factory.createSocketImpl() : new PlainSocketImpl();
@@ -56,6 +57,7 @@ public class Socket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.487 -0400", hash_original_method = "903F698227E2205A08AC4EC3E6D912C3", hash_generated_method = "56804D49D823BC2B4B372BD735FD4487")
     public  Socket(Proxy proxy) {
         if(proxy == null || proxy.type() == Proxy.Type.HTTP)        
@@ -227,6 +229,7 @@ for(int i = 0;i < dstAddresses.length - 1;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.491 -0400", hash_original_method = "6609A304DB40C6FFC8F6AC783F01FDAC", hash_generated_method = "BEF433D9A28470F041DB000F7F9A5B35")
     public synchronized void close() throws IOException {
         isClosed = true;
@@ -258,6 +261,7 @@ InetAddress var521AFCEA60D8F5BBF63C4443E3C3E08B_1915196932 =         impl.getIne
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.491 -0400", hash_original_method = "83F4AB21434B41B13879E1F39D268878", hash_generated_method = "9753DA3293E2503802F500DD217F52F9")
     public InputStream getInputStream() throws IOException {
         checkOpenAndCreate(false);
@@ -321,6 +325,7 @@ InetAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_2069151598 =         localAddres
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.492 -0400", hash_original_method = "0AB25EAA0774AA81766D4356986FC34F", hash_generated_method = "E9E350B009D0C2E941AC73EAF446736F")
     public OutputStream getOutputStream() throws IOException {
         checkOpenAndCreate(false);
@@ -413,6 +418,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1515464079 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.493 -0400", hash_original_method = "7DAE79431B5F9BEF40635CDD183C2B59", hash_generated_method = "89C8CAD13FE448BFECD77377103CE1C6")
     public synchronized int getSoTimeout() throws SocketException {
         checkOpenAndCreate(true);
@@ -534,6 +540,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1515464079 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.494 -0400", hash_original_method = "EA919996CC1899AC4E781314DA47161A", hash_generated_method = "F0DF1A2DDD46772C60381116BEA197E2")
     public synchronized void setSoTimeout(int timeout) throws SocketException {
         addTaint(timeout);
@@ -906,6 +913,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_480002091 =         new InetSo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.498 -0400", hash_original_method = "45EED4DE787227F7BEC68E335C7AA6E7", hash_generated_method = "5415D73233DD7BAACA7457D4C122D90A")
     public void connect(SocketAddress remoteAddr, int timeout) throws IOException {
         addTaint(timeout);
@@ -1083,6 +1091,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_480002091 =         new InetSo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.499 -0400", hash_original_method = "21E3234EAE6C3F4479E6E7944641B8BE", hash_generated_method = "7AA833B05FB6D1983035B8C7720A9AD2")
      void accepted() {
         isCreated = isBound = isConnected = true;

@@ -24,6 +24,7 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
 
     private int saltLen;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.089 -0400", hash_original_method = "DF0A0B659FB6696FF8FDF8F1667A2EB8", hash_generated_method = "08FEC0CAF10307C66602DA9D78CC2334")
     public  PSSParameterSpec(int saltLen) {
         if(saltLen < 0)        

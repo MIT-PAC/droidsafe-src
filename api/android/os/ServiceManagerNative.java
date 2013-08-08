@@ -123,6 +123,7 @@ class ServiceManagerProxy implements IServiceManager {
 
     private IBinder mRemote;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.578 -0400", hash_original_method = "84032B28A83A581245FB022389F526C9", hash_generated_method = "9C93C75DE81E92FB068744B3E68A0310")
     public  ServiceManagerProxy(IBinder remote) {
         mRemote = remote;
@@ -142,6 +143,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1937410119 =         mRemote;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.580 -0400", hash_original_method = "02C17092CC4D0E934B4324BDE37272C4", hash_generated_method = "0E08383D4DE96D1F2EDEBDC808CD074F")
     public IBinder getService(String name) throws RemoteException {
         addTaint(name.getTaint());
