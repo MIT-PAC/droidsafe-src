@@ -66,7 +66,7 @@ public class DroidSafeAndroidRuntime {
 			activity.onCreateDescription();
 			activity.onLowMemory();
 			activity.onRetainNonConfigurationInstance();
-			//activity.onSearchRequested();
+			activity.onSearchRequested();
 			activity.onUserInteraction();
 			
 			activity.droidsafeOnSavedInstanceState(new Bundle());

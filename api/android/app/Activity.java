@@ -108,12 +108,12 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     private Thread mUiThread;
     final Handler mHandler = new Handler();
     
-@DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Activity() {
 		super();
-		// RLJ - trying this to stop PTA errors
-		//mWindow = PolicyManager.makeNewWindow((Context)this);
+		mWindow = PolicyManager.makeNewWindow((Context)this);
 	}
+
     @DSModeled(DSC.SPEC)
     public Intent getIntent(){
 		return mIntent;
@@ -3121,7 +3121,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
         addTaint(icicle.getTaint());
-        //mWindow = PolicyManager.makeNewWindow(this);
         mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
         mFragments.dispatchActivityCreated();

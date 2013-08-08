@@ -1003,6 +1003,7 @@ ValueAnimator var6E2178F33F884BED37C5DEBCD18F9A96_1340890812 =         anim;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void clearAllAnimations() {
         sAnimations.get().clear();
         sPendingAnimations.get().clear();
@@ -1010,6 +1011,7 @@ ValueAnimator var6E2178F33F884BED37C5DEBCD18F9A96_1340890812 =         anim;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.109 -0400", hash_original_method = "533F41B1624628F4A2CEF95F44B8AA6B", hash_generated_method = "F7FCEDC8B48700AF369CA86456566F17")
     @Override
     public String toString() {
