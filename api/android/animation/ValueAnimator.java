@@ -996,9 +996,10 @@ ValueAnimator var6E2178F33F884BED37C5DEBCD18F9A96_1340890812 =         anim;
         // Original Method Too Long, Refer to Original Implementation
     }
 
-    
+    @DSModeled(DSC.SAFE)
     public static int getCurrentAnimationsCount() {
-        return sAnimations.get().size();
+    	return sAnimations.get().getTaintInt();
+        //return sAnimations.get().size();
     }
 
     
