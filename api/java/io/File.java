@@ -237,7 +237,7 @@ public class File implements Serializable, Comparable<File> {
         //}
     }
 
-    
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "B9E553F90A7CDA44D1E185A0919015AC", hash_generated_method = "FC10B56EE7FABDB836C50D11602DF524")
     public int compareTo(File another) {
         addTaint(another.getTaint());
