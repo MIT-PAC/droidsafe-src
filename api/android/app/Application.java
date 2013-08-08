@@ -27,6 +27,7 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     public LoadedApk mLoadedApk;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.118 -0400", hash_original_method = "C931B33981954029459F423E4A87FAC0", hash_generated_method = "7C12002EA4BAD91EC04D0ADCB77C2679")
+    @DSModeled(DSC.SAFE)
     public  Application() {
         super(null);
         // ---------- Original Method ----------
@@ -50,6 +51,7 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.120 -0400", hash_original_method = "2D485B4C1AE5E3664AA314F747191250", hash_generated_method = "AEFEA1D90204291476E47CF244B9B67E")
+    @DSModeled(DSC.SAFE)
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newConfig.getTaint());
@@ -71,6 +73,7 @@ for(int i=0;i<callbacks.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.121 -0400", hash_original_method = "32ED3A67A5037221704DD520024E5B9C", hash_generated_method = "7F3EFF6132761A9955B72A1075C77A3C")
     public void onLowMemory() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -92,6 +95,7 @@ for(int i=0;i<callbacks.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.122 -0400", hash_original_method = "5BCB587BF7423BC0B6C7061FE2EAADB1", hash_generated_method = "ECAB3F97BE68251A463890763CCDDA9C")
     public void onTrimMemory(int level) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -403,14 +407,17 @@ Object[] var7E06ACD9C2C819F377F4C0B98904AB11_888661499 =         callbacks;
     }
     
 	// ------------- Droidsafe Hooks -------------
+    @DSModeled(DSC.BAN)
 	public void droidsafeOnCreate() {
 		onCreate();
 	}
 	
+    @DSModeled(DSC.BAN)
 	public void droidsafeOnTerminate() {
 		onTerminate();
 	}
 	
+    @DSModeled(DSC.BAN)
 	public void droidsafeOnEverythingElse() {
 		onTrimMemory(getTaintInt());
 		onLowMemory();
