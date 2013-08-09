@@ -152,7 +152,8 @@ IBinder var540C13E9E156B687226421B24F2DF178_1575286293 =         null;
         
     }
 
-
-    
+    public void __ds__onHandleIntent(Intent intent) {
+    	onHandleIntent(intent);
+    }
 }
 
