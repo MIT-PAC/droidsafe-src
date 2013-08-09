@@ -134,7 +134,7 @@ public class Handler {
         return Message.obtain(this);
     }
 		*/
-		return null;
+    	return Message.obtain(this);
 	}
 
     
@@ -145,7 +145,8 @@ public class Handler {
         return Message.obtain(this, what);
     }
 		*/
-		return null;
+    	addTaint(what);
+    	return Message.obtain(this, what);
 	}
 
     
@@ -156,7 +157,9 @@ public class Handler {
         return Message.obtain(this, what, obj);
     }
 		*/
-		return null;
+    	addTaint(what);
+    	addTaint(obj.getTaint());
+    	return Message.obtain(this, what, obj);
 	}
 
     
@@ -167,7 +170,10 @@ public class Handler {
         return Message.obtain(this, what, arg1, arg2);
     }
 		*/
-		return null;
+    	addTaint(what);
+    	addTaint(arg1);
+    	addTaint(arg2);
+    	return Message.obtain(this, what, arg1, arg2);
 	}
 
     
@@ -178,7 +184,11 @@ public class Handler {
         return Message.obtain(this, what, arg1, arg2, obj);
     }
 		*/
-		return null;
+    	addTaint(what);
+    	addTaint(arg1);
+    	addTaint(arg2);
+    	addTaint(obj.getTaint());
+    	return Message.obtain(this, what, arg1, arg2, obj);
 	}
 
     
@@ -190,6 +200,7 @@ public class Handler {
        return  sendMessageDelayed(getPostMessage(r), 0);
     }
 		*/
+    	addTaint(r.getTaint());
        return  sendMessageDelayed(getPostMessage(r), 0);
 	}
 
@@ -201,7 +212,9 @@ public class Handler {
         return sendMessageAtTime(getPostMessage(r), uptimeMillis);
     }
 		*/
-		return false;
+    	addTaint(r.getTaint());
+    	addTaint(uptimeMillis);
+    	return sendMessageAtTime(getPostMessage(r), uptimeMillis);
 	}
 
     
@@ -212,7 +225,10 @@ public class Handler {
         return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
     }
 		*/
-		return false;
+    	addTaint(r.getTaint());
+    	addTaint(token.getTaint());
+    	addTaint(uptimeMillis);
+    	return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
 	}
 
     
@@ -223,7 +239,9 @@ public class Handler {
         return sendMessageDelayed(getPostMessage(r), delayMillis);
     }
 		*/
-		return false;
+    	addTaint(r.getTaint());
+    	addTaint(delayMillis);
+    	return sendMessageDelayed(getPostMessage(r), delayMillis);
 	}
 
     
@@ -234,7 +252,8 @@ public class Handler {
         return sendMessageAtFrontOfQueue(getPostMessage(r));
     }
 		*/
-		return false;
+    	addTaint(r.getTaint());
+    	return sendMessageAtFrontOfQueue(getPostMessage(r));
 	}
 
     
@@ -246,6 +265,8 @@ public class Handler {
     }
 		*/
 		//Return nothing
+    	addTaint(r.getTaint());
+    	mQueue.removeMessages(this, r, null);
 	}
 
     
@@ -257,6 +278,9 @@ public class Handler {
     }
 		*/
 		//Return nothing
+    	addTaint(r.getTaint());
+    	addTaint(token.getTaint());
+    	mQueue.removeMessages(this, r, token);
 	}
 
     
@@ -268,6 +292,7 @@ public class Handler {
         return sendMessageDelayed(msg, 0);
     }
 		*/
+    	addTaint(msg.getTaint());
         return sendMessageDelayed(msg, 0);
 	}
 
@@ -280,6 +305,7 @@ public class Handler {
         return sendEmptyMessageDelayed(what, 0);
     }
 		*/
+    	addTaint(what);
         return sendEmptyMessageDelayed(what, 0);
 	}
 
@@ -294,6 +320,8 @@ public class Handler {
         return sendMessageDelayed(msg, delayMillis);
     }
 		*/
+    	addTaint(what);
+    	addTaint(delayMillis);
         Message msg = Message.obtain();
         msg.what = what;
         return sendMessageDelayed(msg, delayMillis);
@@ -310,6 +338,8 @@ public class Handler {
         return sendMessageAtTime(msg, uptimeMillis);
     }
 		*/
+    	addTaint(what);
+    	addTaint(uptimeMillis);
         Message msg = Message.obtain();
         msg.what = what;
         return sendMessageAtTime(msg, uptimeMillis);
@@ -327,6 +357,8 @@ public class Handler {
         return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
     }
 		*/
+    	addTaint(msg.getTaint());
+    	addTaint(delayMillis);
         return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
 	}
 
@@ -351,6 +383,7 @@ public class Handler {
     }
 		*/
 		// DSModeled - "sending" message without need for MessageQueue by calling handler directly.
+    	addTaint(msg.getTaint());
 		addTaint(uptimeMillis);
 		msg.callback.run();
 		return true;
@@ -375,7 +408,18 @@ public class Handler {
         return sent;
     }
 		*/
-		return false;
+    	addTaint(msg.getTaint());
+    	boolean sent = false;
+        MessageQueue queue = mQueue;
+        if (queue != null) {
+            msg.target = this;
+            sent = queue.enqueueMessage(msg, 0);
+        }
+        else {
+            RuntimeException e = new RuntimeException(
+                this + " sendMessageAtTime() called with no mQueue");
+        }
+		return getTaintBoolean();
 	}
 
     
@@ -387,6 +431,8 @@ public class Handler {
     }
 		*/
 		//Return nothing
+    	addTaint(what);
+    	mQueue.removeMessages(this, what, null, true);
 	}
 
     
@@ -398,6 +444,9 @@ public class Handler {
     }
 		*/
 		//Return nothing
+    	addTaint(what);
+    	addTaint(object.getTaint());
+    	mQueue.removeMessages(this, what, object, true);
 	}
 
     
@@ -409,6 +458,8 @@ public class Handler {
     }
 		*/
 		//Return nothing
+    	addTaint(token.getTaint());
+    	mQueue.removeCallbacksAndMessages(this, token);
 	}
 
     
@@ -419,7 +470,8 @@ public class Handler {
         return mQueue.removeMessages(this, what, null, false);
     }
 		*/
-		return false;
+    	mQueue.removeMessages(this, what, null, false);
+		return getTaintBoolean();
 	}
 
     
@@ -430,7 +482,8 @@ public class Handler {
         return mQueue.removeMessages(this, what, object, false);
     }
 		*/
-		return false;
+    	mQueue.removeMessages(this, what, object, false);
+		return getTaintBoolean();
 	}
 
     
@@ -459,6 +512,14 @@ public class Handler {
     }
 		*/
 		//Return nothing
+    	addTaint(pw.getTaint());
+    	addTaint(prefix.getTaint());
+    	pw.println(prefix + this + " @ " + SystemClock.uptimeMillis());
+        if (mLooper == null) {
+            pw.println(prefix + "looper uninitialized");
+        } else {
+            mLooper.dump(pw, prefix + "  ");
+        }
 	}
 
     
@@ -471,7 +532,11 @@ public class Handler {
         + "}";
     }
 		*/
-		return "";
+    	String retVal = "Handler (" + getClass().getName() + ") {"
+    	        + Integer.toHexString(System.identityHashCode(this))
+    	        + "}";
+    	retVal.addTaint(getTaint());
+		return retVal;
 	}
 
     
@@ -488,14 +553,25 @@ public class Handler {
         }
     }
 		*/
-		return null;
+    	IMessenger retVal;
+    	synchronized (mQueue) {
+            if (mMessenger != null) {
+                retVal = mMessenger;
+            }
+            mMessenger = new MessengerImpl();
+            retVal = mMessenger;
+        }
+    	retVal.addTaint(getTaint());
+    	return retVal;
 	}
 
     
     @DSModeled(DSC.BAN)
 	private final Message getPostMessage(Runnable r) {
+    	addTaint(r.getTaint());
         Message m = new Message();
         m.callback = r;
+        m.addTaint(getTaint());
         return m;
     }
 

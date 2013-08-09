@@ -60,6 +60,7 @@ Namespace varF28472CCCF41AB611991133D8001D83B_1341393879 =         namespace;
         RESERVED(1),
         FILESYSTEM(2);
         private int id;
+        @DSModeled(DSC.SAFE)
         Namespace (int id) {
             this.id = id;
         }

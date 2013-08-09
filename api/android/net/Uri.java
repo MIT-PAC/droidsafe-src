@@ -2928,13 +2928,19 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
             } else {
                 newPath = oldPath + "/" + newSegment;
             }
-            return fromEncoded(newPath);
+            PathPart retVal = fromEncoded(newPath);
+            retVal.addTaint(oldPart.getTaint());
+            retVal.addTaint(newSegment.getTaint());
+            return retVal;
         }
 
         
         static PathPart appendDecodedSegment(PathPart oldPart, String decoded) {
             String encoded = encode(decoded);
-            return appendEncodedSegment(oldPart, encoded);
+            PathPart retVal = appendEncodedSegment(oldPart, encoded);
+            retVal.addTaint(oldPart.getTaint());
+            retVal.addTaint(decoded.getTaint());
+            return retVal;
         }
 
         
@@ -2954,7 +2960,9 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
 
         
         static PathPart fromEncoded(String encoded) {
-            return from(encoded, NOT_CACHED);
+        	PathPart retVal = from(encoded, NOT_CACHED);
+        	retVal.addTaint(encoded.getTaint());
+            return retVal;
         }
 
         
@@ -2989,7 +2997,9 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
             String newDecoded = decodedCached
                     ? "/" + oldPart.decoded
                     : NOT_CACHED;
-            return new PathPart(newEncoded, newDecoded);
+            PathPart retVal = new PathPart(newEncoded, newDecoded);
+            retVal.addTaint(oldPart.getTaint());
+            return retVal;
         }
 
         
