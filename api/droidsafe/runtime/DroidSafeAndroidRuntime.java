@@ -69,6 +69,8 @@ public class DroidSafeAndroidRuntime {
 			activity.onSearchRequested();
 			activity.onUserInteraction();
 			
+			activity.onConfigurationChanged(new Configuration());
+			
 			activity.droidsafeOnSavedInstanceState(new Bundle());
 			
 			activity.droidsafeOnResume();

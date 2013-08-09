@@ -908,6 +908,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1621274485 =         new Pkg
         public CharSequence description;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.896 -0400", hash_original_method = "C08B7337C6B109635FE340903513A97B", hash_generated_method = "3151CC50C901E54C1039F8A4558613C1")
+        @DSModeled(DSC.SAFE)
         public  RecentTaskInfo() {
             // ---------- Original Method ----------
         }
@@ -1072,6 +1073,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1621274485 =         new Pkg
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.913 -0400", hash_original_method = "224D236A6A210D9CABF5D7D423C96E97", hash_generated_method = "3FBD53DC6DEC0BF6D2B6B899EA7DF3FA")
+        @DSModeled(DSC.SAFE)
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
             addTaint(dest.getTaint());
@@ -1109,6 +1111,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1621274485 =         new Pkg
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.917 -0400", hash_original_method = "1A58A87C00619395DA7F7A454E1E03D5", hash_generated_method = "923FADAABBFA979BD57174D14049CF75")
+        @DSModeled(DSC.SAFE)
         public void readFromParcel(Parcel source) {
             id = source.readInt();
             baseActivity = ComponentName.readFromParcel(source);
@@ -1142,9 +1145,11 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1621274485 =         new Pkg
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.919 -0400", hash_original_field = "B9911C96575F25BA7EB7A3422AE8B6F1", hash_generated_field = "8DCFCF5E1FAAD8B612615CB5CB186FEC")
 
         public static final Creator<RunningTaskInfo> CREATOR = new Creator<RunningTaskInfo>() {
+        	@DSModeled(DSC.SAFE)
             public RunningTaskInfo createFromParcel(Parcel source) {
                 return new RunningTaskInfo(source);
             }
+        	@DSModeled(DSC.SAFE)
             public RunningTaskInfo[] newArray(int size) {
                 return new RunningTaskInfo[size];
             }
@@ -1348,6 +1353,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
         public int clientLabel;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.941 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "822CEFC1BD8FA9077CAB00884D317765")
+        @DSModeled(DSC.SAFE)
         public  RunningServiceInfo() {
             // ---------- Original Method ----------
         }
@@ -1506,6 +1512,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
         public long foregroundAppThreshold;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.955 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
+        @DSModeled(DSC.SAFE)
         public  MemoryInfo() {
             // ---------- Original Method ----------
         }
@@ -1631,6 +1638,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
         public byte[] crashData = null;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.970 -0400", hash_original_method = "5ED73996FC5896C9F894604FFBFF8609", hash_generated_method = "3E55B7B14A298521D7B421AC3B025230")
+        @DSModeled(DSC.SAFE)
         public  ProcessErrorStateInfo() {
             // ---------- Original Method ----------
         }
@@ -1774,7 +1782,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
 
         public int importanceReasonImportance;
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.984 -0400", hash_original_method = "037D75A14244F6412C20718AD220CDB7", hash_generated_method = "EBA9A2537661CB41AD3E24299B24227D")
         public  RunningAppProcessInfo() {
             importance = IMPORTANCE_FOREGROUND;
@@ -1786,6 +1794,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.986 -0400", hash_original_method = "09307CF5135B482F1E6BA3C6F777D6D1", hash_generated_method = "BB2D23B80AE96EA10DC760D829F3AF98")
+        @DSModeled(DSC.SAFE)
         public  RunningAppProcessInfo(String pProcessName, int pPid, String pArr[]) {
             processName = pProcessName;
             pid = pPid;

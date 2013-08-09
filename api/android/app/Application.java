@@ -261,6 +261,7 @@ for(int i=0;i<callbacks.length;i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.134 -0400", hash_original_method = "5DB331CA50D721A0DDEB1A6DEFCCACF3", hash_generated_method = "859C618097265A4E566506791253AD73")
+    @DSModeled(DSC.BAN)
      void dispatchActivityPaused(Activity activity) {
         addTaint(activity.getTaint());
         Object[] callbacks = collectActivityLifecycleCallbacks();

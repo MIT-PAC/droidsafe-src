@@ -507,6 +507,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onPause(){
 		getApplication().dispatchActivityPaused(this);
 		// Original method
@@ -579,6 +580,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onConfigurationChanged(Configuration newConfig){
 		mFragments.dispatchConfigurationChanged(newConfig);
 		mWindow.onConfigurationChanged(newConfig);
@@ -1774,6 +1776,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onSearchRequested(){
 		startSearch(null, false, null, false); 
         return getTaintBoolean();
