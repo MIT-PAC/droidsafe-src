@@ -159,7 +159,9 @@ String var589E935FF15E9B2705C963D280AA9F32_1477591424 =         "CompletionInfo{
 
     public static final Parcelable.Creator<CompletionInfo> CREATOR
             = new Parcelable.Creator<CompletionInfo>() {
+    	@DSModeled(DSC.SAFE)
         public CompletionInfo createFromParcel(Parcel source) {
+        	addTaint(source.getTaint());
             return new CompletionInfo(source);
         }
 
@@ -168,6 +170,7 @@ String var589E935FF15E9B2705C963D280AA9F32_1477591424 =         "CompletionInfo{
             return new CompletionInfo[size];
         }
     };
+    /*
     // orphaned legacy method
     public CompletionInfo createFromParcel(Parcel source) {
             return new CompletionInfo(source);
@@ -177,6 +180,6 @@ String var589E935FF15E9B2705C963D280AA9F32_1477591424 =         "CompletionInfo{
     public CompletionInfo[] newArray(int size) {
             return new CompletionInfo[size];
         }
-    
+    */
 }
 

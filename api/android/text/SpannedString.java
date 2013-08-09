@@ -50,6 +50,33 @@ CharSequence var8E256BFE79DDBC5B54C96C6CCB48784A_931240530 =         new Spanned
         }
     }
 
+    public int getSpanEnd(Object what) {
+    	addTaint(what.getTaint());
+    	return super.getSpanEnd(what);
+    }
     
+    public int getSpanFlags(Object what) {
+    	addTaint(what.getTaint());
+    	return super.getSpanFlags(what);
+    }
+    
+    public int getSpanStart(Object what) {
+    	addTaint(what.getTaint());
+    	return super.getSpanStart(what);
+    }
+    
+    public int nextSpanTransition(int start, int limit, Class kind) {
+    	addTaint(start);
+    	addTaint(limit);
+    	addTaint(kind.getTaint());
+    	return super.nextSpanTransition(start, limit, kind);
+    }
+    
+    public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
+    	addTaint(queryStart);
+    	addTaint(queryEnd);
+    	addTaint(kind.getTaint());
+    	return super.getSpans(queryStart, queryEnd, kind);
+    }
 }
 

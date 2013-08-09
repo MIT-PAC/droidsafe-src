@@ -220,8 +220,11 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
 
     
     static CompatibilityInfoHolder getCompatInfo(Context context) {
+    	CompatibilityInfoHolder retVal;
         Application app = (Application)context.getApplicationContext();
-        return app != null ? app.mLoadedApk.mCompatibilityInfo : new CompatibilityInfoHolder();
+        retVal = app != null ? app.mLoadedApk.mCompatibilityInfo : new CompatibilityInfoHolder();
+        retVal.addTaint(context.getTaint());
+        return retVal;
     }
 
     

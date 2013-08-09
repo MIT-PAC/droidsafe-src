@@ -598,6 +598,7 @@ String var748F562E35834E3B11BDA296A09FD9A8_1307843716 =         description.toSt
 
     public static final Parcelable.Creator<InputDevice> CREATOR
             = new Parcelable.Creator<InputDevice>() {
+    	@DSModeled(DSC.SAFE)
         public InputDevice createFromParcel(Parcel in) {
             InputDevice result = new InputDevice();
             result.readFromParcel(in);

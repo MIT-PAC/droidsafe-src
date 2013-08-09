@@ -18,15 +18,21 @@ this.attachInterface(this, DESCRIPTOR);
 
 public static android.view.IWindowManager asInterface(android.os.IBinder obj)
 {
-if ((obj==null)) {
-return null;
+	android.view.IWindowManager retVal;
+	if ((obj==null)) {
+		retVal = null;
+	} else {
+		android.os.IInterface iin = (android.os.IInterface)obj.queryLocalInterface(DESCRIPTOR);
+		if (((iin!=null)&&(iin instanceof android.view.IWindowManager))) {
+			retVal = ((android.view.IWindowManager)iin);
+		} else {
+			retVal = new android.view.IWindowManager.Stub.Proxy(obj);
+		}
+	}
+	retVal.addTaint(obj.getTaint());
+	return retVal;
 }
-android.os.IInterface iin = (android.os.IInterface)obj.queryLocalInterface(DESCRIPTOR);
-if (((iin!=null)&&(iin instanceof android.view.IWindowManager))) {
-return ((android.view.IWindowManager)iin);
-}
-return new android.view.IWindowManager.Stub.Proxy(obj);
-}
+
 public android.os.IBinder asBinder()
 {
 return this;
@@ -924,21 +930,22 @@ return true;
 }
 return super.onTransact(code, data, reply, flags);
 }
+
 private static class Proxy implements android.view.IWindowManager
 {
-private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
-{
-mRemote = remote;
-}
-public android.os.IBinder asBinder()
-{
-return mRemote;
-}
-public java.lang.String getInterfaceDescriptor()
-{
-return DESCRIPTOR;
-}
+	private android.os.IBinder mRemote;
+	Proxy(android.os.IBinder remote)
+	{
+		mRemote = remote;
+	}
+	public android.os.IBinder asBinder()
+	{
+		return mRemote;
+	}
+	public java.lang.String getInterfaceDescriptor()
+	{
+		return DESCRIPTOR;
+	}
 
 
 public boolean startViewServer(int port) throws android.os.RemoteException
@@ -1121,20 +1128,20 @@ _data.recycle();
 
 public boolean canStatusBarHide() throws android.os.RemoteException
 {
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-boolean _result;
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-mRemote.transact(Stub.TRANSACTION_canStatusBarHide, _data, _reply, 0);
-_reply.readException();
-_result = (0!=_reply.readInt());
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-return _result;
+	android.os.Parcel _data = android.os.Parcel.obtain();
+	android.os.Parcel _reply = android.os.Parcel.obtain();
+	boolean _result;
+	try {
+		_data.writeInterfaceToken(DESCRIPTOR);
+		mRemote.transact(Stub.TRANSACTION_canStatusBarHide, _data, _reply, 0);
+		_reply.readException();
+		_result = (0!=_reply.readInt());
+	}
+	finally {
+		_reply.recycle();
+		_data.recycle();
+	}
+	return getTaintBoolean();
 }
 
 
@@ -2109,30 +2116,32 @@ _data.recycle();
 return _result;
 }
 
-
 public android.view.InputDevice getInputDevice(int deviceId) throws android.os.RemoteException
 {
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-android.view.InputDevice _result;
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(deviceId);
-mRemote.transact(Stub.TRANSACTION_getInputDevice, _data, _reply, 0);
-_reply.readException();
-if ((0!=_reply.readInt())) {
-_result = android.view.InputDevice.CREATOR.createFromParcel(_reply);
+	addTaint(deviceId);
+	android.os.Parcel _data = android.os.Parcel.obtain();
+	android.os.Parcel _reply = android.os.Parcel.obtain();
+	android.view.InputDevice _result;
+	try {
+		_data.writeInterfaceToken(DESCRIPTOR);
+		_data.writeInt(deviceId);
+		mRemote.transact(Stub.TRANSACTION_getInputDevice, _data, _reply, 0);
+		_reply.readException();
+		if ((0!=_reply.readInt())) {
+			_result = android.view.InputDevice.CREATOR.createFromParcel(_reply);
+		}
+		else {
+			_result = null;
+		}
+	}
+	finally {
+		_reply.recycle();
+		_data.recycle();
+	}
+	_result.addTaint(taint);
+	return _result;
 }
-else {
-_result = null;
-}
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-return _result;
-}
+
 public int[] getInputDeviceIds() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
@@ -2168,30 +2177,22 @@ _data.recycle();
 }
 }
 
-
-
-
-
-
 public void showStrictModeViolation(boolean on) throws android.os.RemoteException
 {
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(((on)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_showStrictModeViolation, _data, _reply, 0);
-_reply.readException();
+	addTaint(on);
+	android.os.Parcel _data = android.os.Parcel.obtain();
+	android.os.Parcel _reply = android.os.Parcel.obtain();
+	try {
+		_data.writeInterfaceToken(DESCRIPTOR);
+		_data.writeInt(((on)?(1):(0)));
+		mRemote.transact(Stub.TRANSACTION_showStrictModeViolation, _data, _reply, 0);
+		_reply.readException();
+	}
+	finally {
+		_reply.recycle();
+		_data.recycle();
+	}
 }
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-
-
-
-
 
 public void setStrictModeVisualIndicatorPreference(java.lang.String enabled) throws android.os.RemoteException
 {
@@ -2389,21 +2390,22 @@ _data.recycle();
 
 public boolean hasNavigationBar() throws android.os.RemoteException
 {
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-boolean _result;
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-mRemote.transact(Stub.TRANSACTION_hasNavigationBar, _data, _reply, 0);
-_reply.readException();
-_result = (0!=_reply.readInt());
+	android.os.Parcel _data = android.os.Parcel.obtain();
+	android.os.Parcel _reply = android.os.Parcel.obtain();
+	boolean _result;
+	try {
+		_data.writeInterfaceToken(DESCRIPTOR);
+		mRemote.transact(Stub.TRANSACTION_hasNavigationBar, _data, _reply, 0);
+		_reply.readException();
+		_result = (0!=_reply.readInt());
+	}
+	finally {
+		_reply.recycle();
+		_data.recycle();
+	}
+	return getTaintBoolean();
 }
-finally {
-_reply.recycle();
-_data.recycle();
-}
-return _result;
-}
+
 }
 static final int TRANSACTION_startViewServer = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
 static final int TRANSACTION_stopViewServer = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);

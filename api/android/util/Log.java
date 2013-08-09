@@ -190,7 +190,8 @@ public final class Log {
     public static final int ASSERT = 7;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_field = "1A1695BDB6E58ED53BC49925AFADC824", hash_generated_field = "EB9AD5727A6FE358590060E6265767B7")
 
-    private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {        
+    private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {  
+    	@DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_method = "90BA23F8182E406DC4D5C312FC444694", hash_generated_method = "4C8A9452FEB3740EEFD06B4E1BFB8698")
         public void onTerribleFailure(String tag, TerribleFailure what) {
             
