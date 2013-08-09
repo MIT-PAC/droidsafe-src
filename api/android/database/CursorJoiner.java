@@ -170,7 +170,12 @@ for(int i = 0;i < columnNames.length;i++)
     public enum Result {
         RIGHT,
         LEFT,
-        BOTH
+        BOTH;
+        
+        @DSModeled(DSC.SAFE)
+        Result() {
+        	
+        }
     }
 
     

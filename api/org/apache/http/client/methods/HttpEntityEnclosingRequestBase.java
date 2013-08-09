@@ -18,7 +18,7 @@ import org.apache.http.protocol.HTTP;
 public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase implements HttpEntityEnclosingRequest {
     private HttpEntity entity;
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public HttpEntityEnclosingRequestBase() {
         super();
     }
@@ -31,7 +31,7 @@ public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase imp
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	@Override
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;
@@ -64,45 +64,5 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_777496266 =         clone;
         //}
         //return clone;
     }
-
-    
-
-    
-    // orphaned legacy method
-    @Override
-	public boolean isAborted() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-    
-    // orphaned legacy method
-    @Override
-	public void setReleaseTrigger(ConnectionReleaseTrigger arg0)
-			throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-    
-    // orphaned legacy method
-    @Override
-	public void abort() throws UnsupportedOperationException {
-		// TODO Auto-generated method stub
-		
-	}
-    
-    // orphaned legacy method
-    @Override
-	public URI getURI() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-    
-    // orphaned legacy method
-    @Override
-	public String getMethod() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-    
 }
 

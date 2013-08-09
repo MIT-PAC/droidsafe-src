@@ -2,9 +2,13 @@ package droidsafe.runtime;
 
 import java.util.Random;
 
+
+
 //Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.helpers.DSUtils;
 import android.app.ContextImpl;
+import android.app.IntentService;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -88,16 +92,22 @@ public class DroidSafeAndroidRuntime {
 			service.setApplication(mApplication);
 
 		service.onCreate();
-		Intent bindIntent = new Intent();
-		service.onBind(bindIntent);
+		for (IntentFilter filter : service.__ds__intentFilters) {
+			for (Intent intent : DSUtils.getIntentFromFilter(filter)) {
+				service.onBind(intent);
+				service.onRebind(intent);
+				service.onStart(intent, 0);
+				service.onTaskRemoved(intent);
+				service.onStartCommand(intent, 0, 0);
+				service.onUnbind(intent);
+				if (service instanceof IntentService) {
+					((IntentService) service).__ds__onHandleIntent(intent);
+				}
+			}
+		}
 		service.onConfigurationChanged(new Configuration());
-		service.onRebind(new Intent());
-		service.onStart(new Intent(), 0);
-		service.onStartCommand(new Intent(), 0, 0);
-		service.onTaskRemoved(new Intent());
 		service.onLowMemory();
 		service.onTrimMemory(0);
-		service.onUnbind(bindIntent);
 		service.stopSelf(0);
 		service.onDestroy();
 	}
