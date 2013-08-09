@@ -53,6 +53,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.687 -0400", hash_original_field = "68EB667E7E7B7993A857B9AAE78D0D14", hash_generated_field = "27B43CDF8D3F1F6F3904923441B9E353")
 
     private Runnable mPollNetStat = new Runnable() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.687 -0400", hash_original_method = "2461514E52B21E636B4BA6EEA10AC2AC", hash_generated_method = "123F17F6A359605D3CB3DF7D7D153FFC")
         public void run() {
             long sent;

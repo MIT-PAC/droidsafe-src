@@ -193,6 +193,7 @@ String var9D4D38907310CF3324EC3BF27408EE69_58181118 =         "PackageInfo{"
             return new PackageInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public PackageInfo[] newArray(int size) {
             return new PackageInfo[size];
         }

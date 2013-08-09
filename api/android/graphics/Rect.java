@@ -616,6 +616,7 @@ public final class Rect implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public Rect[] newArray(int size) {
             return new Rect[size];
         }

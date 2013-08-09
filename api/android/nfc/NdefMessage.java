@@ -163,6 +163,7 @@ for(int i = 0;i < mRecords.length;i++)
             in.readTypedArray(records, NdefRecord.CREATOR);
             return new NdefMessage(records);
         }
+        @DSModeled(DSC.SAFE)
         @Override
         public NdefMessage[] newArray(int size) {
             return new NdefMessage[size];

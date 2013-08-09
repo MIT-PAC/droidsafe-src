@@ -361,7 +361,8 @@ public class ViewDebug {
                                 forceLayout(view);
                                 return null;
                             }
-                            private void forceLayout(View view) {
+                            @DSModeled(DSC.BAN)
+        private void forceLayout(View view) {
                                 view.forceLayout();
                                 if (view instanceof ViewGroup) {
                                     ViewGroup group = (ViewGroup) view;
@@ -374,20 +375,23 @@ public class ViewDebug {
                             public void run(Void... data) {
                                 view.measure(view.mOldWidthMeasureSpec, view.mOldHeightMeasureSpec);
                             }
-                            public void post(Void... data) {
+                            @DSModeled(DSC.SAFE)
+        public void post(Void... data) {
                             }
                         })
                         : 0;
         long durationLayout =
                 (root || (view.mPrivateFlags & View.LAYOUT_REQUIRED) != 0) ? profileViewOperation(
                         view, new ViewOperation<Void>() {
-                            public Void[] pre() {
+                            @DSModeled(DSC.SAFE)
+        public Void[] pre() {
                                 return null;
                             }
                             public void run(Void... data) {
                                 view.layout(view.mLeft, view.mTop, view.mRight, view.mBottom);
                             }
-                            public void post(Void... data) {
+                            @DSModeled(DSC.SAFE)
+        public void post(Void... data) {
                             }
                         }) : 0;
         long durationDraw =

@@ -1146,10 +1146,12 @@ String varF4CF030572656354ACFDF83FEE21D7A6_2085410194 =             builder.toSt
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.747 -0400", hash_original_field = "3469CD7C405D7C574C3592A9EE21FD10", hash_generated_field = "C59D2B9A15468765CA55EEA88C603BE5")
 
     public static final Creator<NetworkStats> CREATOR = new Creator<NetworkStats>() {
+        @DSModeled(DSC.BAN)
         public NetworkStats createFromParcel(Parcel in) {
             return new NetworkStats(in);
         }
 
+        @DSModeled(DSC.BAN)
         public NetworkStats[] newArray(int size) {
             return new NetworkStats[size];
         }

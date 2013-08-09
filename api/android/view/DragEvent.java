@@ -372,6 +372,7 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_547976154 =         "DragEvent{" + In
             return event;
         }
 
+        @DSModeled(DSC.SAFE)
         public DragEvent[] newArray(int size) {
             return new DragEvent[size];
         }

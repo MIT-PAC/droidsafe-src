@@ -842,6 +842,7 @@ Map<String, List<String>> var0919DB83F382E960ABF31AD5831D30F0_1191530737 =      
                 // ---------- Original Method ----------
                 //return responseHeaders.toMultimap();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.414 -0400", hash_original_method = "6B131586E425295B4C3DC3AE43124EB2", hash_generated_method = "FCEC48E4E1933FF23D742E335F596E6C")
             @Override
             public InputStream getBody() {
@@ -879,6 +880,7 @@ Map<String, List<String>> var0919DB83F382E960ABF31AD5831D30F0_1346796912 =      
                 // ---------- Original Method ----------
                 //return responseHeaders.toMultimap();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.416 -0400", hash_original_method = "6B131586E425295B4C3DC3AE43124EB2", hash_generated_method = "E0EC3166B0280ABC71C86E6E3C87F45B")
             @Override
             public InputStream getBody() {

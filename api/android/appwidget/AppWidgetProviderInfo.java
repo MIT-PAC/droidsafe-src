@@ -203,6 +203,7 @@ String var86602826B3CB97BCAACAB7E54F86BD12_966471763 =         "AppWidgetProvide
             return new AppWidgetProviderInfo(parcel);
         }
 
+        @DSModeled(DSC.SAFE)
         public AppWidgetProviderInfo[] newArray(int size)
         {
             return new AppWidgetProviderInfo[size];

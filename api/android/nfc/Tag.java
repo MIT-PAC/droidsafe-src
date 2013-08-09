@@ -448,6 +448,7 @@ String var2460B846747F8B22185AD8BE722266A5_1414232147 =         sb.toString();
             return new Tag(id, techList, techExtras, serviceHandle, tagService);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override
         public Tag[] newArray(int size) {
             return new Tag[size];

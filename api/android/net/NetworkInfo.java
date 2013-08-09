@@ -543,7 +543,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_898918148 =             builder.toStr
                 return netInfo;
             }
 
-            public NetworkInfo[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public NetworkInfo[] newArray(int size) {
                 return new NetworkInfo[size];
             }
         };

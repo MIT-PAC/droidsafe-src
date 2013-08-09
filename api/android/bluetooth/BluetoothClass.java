@@ -514,6 +514,7 @@ switch(getDeviceClass()){
         public BluetoothClass createFromParcel(Parcel in) {
             return new BluetoothClass(in.readInt());
         }
+        @DSModeled(DSC.SAFE)
         public BluetoothClass[] newArray(int size) {
             return new BluetoothClass[size];
         }

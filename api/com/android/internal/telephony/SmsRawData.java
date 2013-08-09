@@ -68,6 +68,7 @@ public class SmsRawData implements Parcelable {
             return new SmsRawData(data);
         }
 
+        @DSModeled(DSC.SAFE)
         public SmsRawData[] newArray(int size) {
             return new SmsRawData[size];
         }

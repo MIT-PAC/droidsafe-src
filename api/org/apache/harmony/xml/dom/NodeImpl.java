@@ -1090,6 +1090,7 @@ Object var0B7881AA1F8DD69A4EC48032632042A1_506108637 =         userData != null 
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.373 -0400", hash_original_field = "50B55FD6A8E5705F66BF71830D3227D1", hash_generated_field = "9BE656944A6DBF09637C80D55E352920")
 
     static final TypeInfo NULL_TYPE_INFO = new TypeInfo() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.372 -0400", hash_original_method = "D6670B1956B399E1F4484C7409D24E32", hash_generated_method = "B4051AD4FF44AD338624469365B280F8")
         public String getTypeName() {
             String varB4EAC82CA7396A68D541C85D26508E83_366710541 = null; 
@@ -1101,6 +1102,7 @@ Object var0B7881AA1F8DD69A4EC48032632042A1_506108637 =         userData != null 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.373 -0400", hash_original_method = "076EDBD720D64B1CD58A3E3161F3A408", hash_generated_method = "83D91F2300DCAB76D6EC29A18904FFB6")
         public String getTypeNamespace() {
             String varB4EAC82CA7396A68D541C85D26508E83_2015477207 = null; 
@@ -1112,6 +1114,7 @@ Object var0B7881AA1F8DD69A4EC48032632042A1_506108637 =         userData != null 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.373 -0400", hash_original_method = "C5EC47855C2BF530753D3BD268C04AD2", hash_generated_method = "7E85F18F923F01A529081C723FC951EF")
         public boolean isDerivedFrom(
                 String typeNamespaceArg, String typeNameArg, int derivationMethod) {

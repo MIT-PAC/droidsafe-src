@@ -264,7 +264,8 @@ for(int i=0;i<mMimeTypes.length;i++)
                 return new ClipDescription(source);
             }
 
-            public ClipDescription[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public ClipDescription[] newArray(int size) {
                 return new ClipDescription[size];
             }
         };

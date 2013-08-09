@@ -2521,6 +2521,7 @@ switch(axis){
             return MotionEvent.createFromParcelBody(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public MotionEvent[] newArray(int size) {
             return new MotionEvent[size];
         }

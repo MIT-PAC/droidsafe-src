@@ -31,6 +31,7 @@ public class MediaScannerConnection implements ServiceConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.818 -0400", hash_original_field = "32E089CCEEBCB20211A6736666324364", hash_generated_field = "08875F2CE3C391FDC01CF4BC15F196A4")
 
     private IMediaScannerListener.Stub mListener = new IMediaScannerListener.Stub() {        
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.817 -0400", hash_original_method = "C8B58EDBD06F8EA7FBE41DD6A9CB7A63", hash_generated_method = "AFB977E21F05FF98EA1DDDD1D9573C80")
         public void scanCompleted(String path, Uri uri) {
             addTaint(uri.getTaint());

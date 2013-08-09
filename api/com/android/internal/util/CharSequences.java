@@ -17,10 +17,12 @@ public class CharSequences {
 
     public static CharSequence forAsciiBytes(final byte[] bytes) {
         return new CharSequence() {
-            public char charAt(int index) {
+            @DSModeled(DSC.SAFE)
+        public char charAt(int index) {
                 return (char) bytes[index];
             }
-            public int length() {
+            @DSModeled(DSC.SAFE)
+        public int length() {
                 return bytes.length;
             }
             public CharSequence subSequence(int start, int end) {
@@ -37,10 +39,12 @@ public class CharSequences {
             final int start, final int end) {
         validate(start, end, bytes.length);
         return new CharSequence() {
-            public char charAt(int index) {
+            @DSModeled(DSC.SAFE)
+        public char charAt(int index) {
                 return (char) bytes[index + start];
             }
-            public int length() {
+            @DSModeled(DSC.SAFE)
+        public int length() {
                 return end - start;
             }
             public CharSequence subSequence(int newStart, int newEnd) {

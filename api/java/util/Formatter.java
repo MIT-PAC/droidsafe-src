@@ -377,6 +377,7 @@ IOException var1C9C3579611AFFB9BDE735EED6EBCBD7_538715635 =         lastIOExcept
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.217 -0400", hash_original_method = "EE9FCF62B0D200225753D8BA586AA3F5", hash_generated_method = "442BE4C26CD1B8333E3433925679CD5D")
     public Formatter format(String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -389,6 +390,7 @@ Formatter var8E35EA3485BA181532EAD8B41057C295_529223569 =         format(this.lo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.217 -0400", hash_original_method = "F45273151F6DD69ACB6CCC03C59753A4", hash_generated_method = "B13ABCB424566846B48710FF5ACEFD27")
     public Formatter format(Locale l, String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -420,6 +422,7 @@ Formatter var72A74007B2BE62B849F475C7BDA4658B_823154557 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.217 -0400", hash_original_method = "960E24FB807777DEBBE8328729AF6A3F", hash_generated_method = "8DFF86604E32DA382D5DAC4BDAD8027D")
     private void doFormat(String format, Object... args) {
         addTaint(args[0].getTaint());

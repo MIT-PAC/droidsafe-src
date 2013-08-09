@@ -218,6 +218,7 @@ BackStackRecord varF02DDB74F3AB452E2C7DEEBC20BFE154_1673317173 =         bse;
             return new BackStackState(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public BackStackState[] newArray(int size) {
             return new BackStackState[size];
         }

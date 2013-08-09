@@ -95,6 +95,7 @@ public class ExtractedText implements Parcelable {
             return res;
         }
 
+        @DSModeled(DSC.SAFE)
         public ExtractedText[] newArray(int size) {
             return new ExtractedText[size];
         }

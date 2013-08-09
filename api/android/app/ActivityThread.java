@@ -4418,11 +4418,13 @@ IContentProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1938511820 =         provid
                     //}
                 //}
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.586 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
         public void onLowMemory() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             // ---------- Original Method ----------
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.587 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
         public void onTrimMemory(int level) {
             //DSFIXME:  CODE0009: Possible callback target function detected

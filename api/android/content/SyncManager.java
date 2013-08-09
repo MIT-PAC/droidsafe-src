@@ -111,6 +111,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_field = "BC6CA2320CEE3F5B1EE825BA50C5DBFE", hash_generated_field = "F3C421D42F701067D82ECB839BBBBFFC")
 
     private BroadcastReceiver mStorageIntentReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_method = "BC3DE36BD414D1E0AC1A290F3F999B72", hash_generated_method = "616D5C14DDD1CB50F92E18BD4160FC5A")
         public void onReceive(Context context, Intent intent) {
             
@@ -159,6 +160,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_field = "762F4D83742CECA3BECA29EC7B3D6902", hash_generated_field = "A2DFA1AE374B8819F333CB3258CB34F7")
 
     private BroadcastReceiver mBootCompletedReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_method = "48002FD0F3001594E3DAE34911FFCE18", hash_generated_method = "4B23DC7E7458A7DE52CE4CB804B826DF")
         public void onReceive(Context context, Intent intent) {
             
@@ -174,6 +176,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.956 -0400", hash_original_field = "3348FFF7144827BFF9601B956A07D2A8", hash_generated_field = "C2A7D0DEE55BB4951D3B8B5FC801E1CF")
 
     private BroadcastReceiver mBackgroundDataSettingChanged = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.956 -0400", hash_original_method = "8D0265854014D0DAAECDD8BFDBAC7B99", hash_generated_method = "91E3B3E5AC55482EA87CB637D007CF4E")
         public void onReceive(Context context, Intent intent) {
             
@@ -201,6 +204,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.957 -0400", hash_original_field = "AC08B54B30FB8D73D889BBE2EA8215E3", hash_generated_field = "B2960293B47A62F0FF9FAFC3CCB37638")
 
     private BroadcastReceiver mConnectivityIntentReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.957 -0400", hash_original_method = "252074B4EB0924016B2ADBE10E34C1F3", hash_generated_method = "5BF35A17A472123D83FE2028E7EC7098")
         public void onReceive(Context context, Intent intent) {
             
@@ -236,6 +240,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.958 -0400", hash_original_field = "4F7A3BC34E44876836A051C01D24E148", hash_generated_field = "5C19689F925230FE4696D22A8D7D74C2")
 
     private BroadcastReceiver mShutdownIntentReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.958 -0400", hash_original_method = "C2982D871DFCE85BA68BED52BCB115FD", hash_generated_method = "4E850BAD6B340846E6D2CD9FCE56EC3A")
         public void onReceive(Context context, Intent intent) {
             

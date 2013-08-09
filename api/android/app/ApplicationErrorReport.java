@@ -612,6 +612,7 @@ switch(type){
             return new ApplicationErrorReport(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public ApplicationErrorReport[] newArray(int size) {
             return new ApplicationErrorReport[size];
         }

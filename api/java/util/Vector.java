@@ -319,6 +319,7 @@ E var68EF0BD40932FF2807234701D0B595C2_393938178 =             (E) elementData[lo
     public Enumeration<E> elements() {
 Enumeration<E> varBE1AF8000F96BB9037958F34C83E40EA_1239515166 =         new Enumeration<E>() {        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.798 -0400", hash_original_field = "30905E6E8D02502121446F7E78ED3C72", hash_generated_field = "BEC7A604E336F37C0CC9A9336799291F")
         int pos = 0;
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.799 -0400", hash_original_method = "BE1470CA1AE3A8E761558BC585309C9C", hash_generated_method = "9F02CF1DB09C1E75313C933287122881")
         public boolean hasMoreElements() {
             boolean varE2C04D119C3740B4B44C2924A8601E86_922556880 = (pos < elementCount);

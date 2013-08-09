@@ -83,6 +83,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.069 -0400", hash_original_field = "DD59E98DD00850A7DCC1DD983A709C49", hash_generated_field = "31C4DE057B93401DBCAF299288501B61")
 
     private static final ConnPerRoute DEFAULT_CONN_PER_ROUTE = new ConnPerRoute() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.069 -0400", hash_original_method = "BC1F672F46BDFCECD4BF3D32787E67D5", hash_generated_method = "8A95F28D3AD48F3D120597EE4D0EC8E5")
         public int getMaxForRoute(HttpRoute route) {
             addTaint(route.getTaint());

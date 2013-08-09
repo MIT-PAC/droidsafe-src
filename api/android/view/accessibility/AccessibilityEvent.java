@@ -589,6 +589,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1268443026 =         builder.toString
             return event;
         }
 
+        @DSModeled(DSC.SAFE)
         public AccessibilityEvent[] newArray(int size) {
             return new AccessibilityEvent[size];
         }

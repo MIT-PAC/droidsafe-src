@@ -147,6 +147,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_field = "AB74790817CE8598B3B84738E53E435A", hash_generated_field = "829A6BC80DDB03BAE60150DE88BC0EA8")
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_method = "7D33A0984FFB123C6674B46896DDEB1E", hash_generated_method = "CF369C8FCB5C79AAA993EA2D6A6CBEC9")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -170,6 +171,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_field = "DE088C6BF9EC1AFE67E7551680F21C7E", hash_generated_field = "EEAFB5DE9D002A7C986305AE1C501C25")
 
     private ContentObserver mAutoTimeObserver = new ContentObserver(new Handler()) {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_method = "227D40A344094AD4B591040BC6F6DC3D", hash_generated_method = "F4315810E745D16A27460B49034466AB")
         @Override
         public void onChange(boolean selfChange) {
@@ -186,6 +188,7 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.698 -0400", hash_original_field = "160828814E36CFDE204FECD88170AF0C", hash_generated_field = "B61F354992F7CF3E33A4CCB97A3FF08A")
 
     private ContentObserver mAutoTimeZoneObserver = new ContentObserver(new Handler()) {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.698 -0400", hash_original_method = "CFFF91BA86D25926B76415F80D2C8421", hash_generated_method = "E308D52C44EEB3156885DEEED1F0C5D9")
         @Override
         public void onChange(boolean selfChange) {

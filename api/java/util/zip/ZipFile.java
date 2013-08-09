@@ -190,6 +190,7 @@ public class ZipFile implements ZipConstants {
         checkNotClosed();
         final Iterator<ZipEntry> iterator = mEntries.values().iterator();
 Enumeration<? extends ZipEntry> var5C2492AEF6429BB2452507D2F1DD320A_330051403 =         new Enumeration<ZipEntry>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.804 -0400", hash_original_method = "E86ACDCD19145E338744AC3C77C30364", hash_generated_method = "FAF73DA34D256C51A927442667C53721")
         public boolean hasMoreElements() {
             checkNotClosed();
@@ -200,6 +201,7 @@ Enumeration<? extends ZipEntry> var5C2492AEF6429BB2452507D2F1DD320A_330051403 = 
             //checkNotClosed();
             //return iterator.hasNext();
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.805 -0400", hash_original_method = "0AFF9A2DED00798BA27B7711FA7E95F7", hash_generated_method = "173F819AB1421D72D972527771B8B9A7")
         public ZipEntry nextElement() {
             checkNotClosed();

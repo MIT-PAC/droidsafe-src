@@ -134,6 +134,7 @@ String var1437308D17F62188830CE1DADAF18CCF_1437087911 =         "ContentProvider
             return new ContentProviderResult(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public ContentProviderResult[] newArray(int size) {
             return new ContentProviderResult[size];
         }

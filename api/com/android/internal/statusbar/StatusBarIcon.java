@@ -146,6 +146,7 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_936681904 =         that;
             return new StatusBarIcon(parcel);
         }
 
+        @DSModeled(DSC.SAFE)
         public StatusBarIcon[] newArray(int size)
         {
             return new StatusBarIcon[size];

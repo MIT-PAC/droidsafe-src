@@ -353,6 +353,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1416135643 =         mTarget;
             return target != null ? new IntentSender(target) : null;
         }
 
+        @DSModeled(DSC.SAFE)
         public IntentSender[] newArray(int size) {
             return new IntentSender[size];
         }

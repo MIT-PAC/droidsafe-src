@@ -482,7 +482,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
             public void set(DOMConfigurationImpl config, Object value) {
                 config.errorHandler = (DOMErrorHandler) value;
             }
-            public boolean canSet(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public boolean canSet(DOMConfigurationImpl config, Object value) {
                 return value == null || value instanceof DOMErrorHandler;
             }
         });
@@ -523,7 +524,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
             public void set(DOMConfigurationImpl config, Object value) {
                 config.schemaLocation = (String) value;
             }
-            public boolean canSet(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public boolean canSet(DOMConfigurationImpl config, Object value) {
                 return value == null || value instanceof String;
             }
         });
@@ -534,7 +536,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
             public void set(DOMConfigurationImpl config, Object value) {
                 config.schemaType = (String) value;
             }
-            public boolean canSet(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public boolean canSet(DOMConfigurationImpl config, Object value) {
                 return value == null || value instanceof String;
             }
         });

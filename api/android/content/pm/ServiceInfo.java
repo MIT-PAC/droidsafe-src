@@ -113,6 +113,7 @@ String var4EC24595A80F5D9095B74DE6B798A232_1449727823 =         "ServiceInfo{"
         public ServiceInfo createFromParcel(Parcel source) {
             return new ServiceInfo(source);
         }
+        @DSModeled(DSC.SAFE)
         public ServiceInfo[] newArray(int size) {
             return new ServiceInfo[size];
         }

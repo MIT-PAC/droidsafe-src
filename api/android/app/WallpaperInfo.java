@@ -386,6 +386,7 @@ String var74D6B0CBF1B60D7089F268183AE6E814_1616513075 =         "WallpaperInfo{"
             return new WallpaperInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public WallpaperInfo[] newArray(int size) {
             return new WallpaperInfo[size];
         }

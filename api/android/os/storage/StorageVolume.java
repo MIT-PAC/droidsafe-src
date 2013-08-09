@@ -276,6 +276,7 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_1036925601 =         "StorageVolume [
 
     public static final Parcelable.Creator<StorageVolume> CREATOR =
         new Parcelable.Creator<StorageVolume>() {
+        @DSModeled(DSC.BAN)
         public StorageVolume createFromParcel(Parcel in) {
             String path = in.readString();
             String description = in.readString();
@@ -290,6 +291,7 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_1036925601 =         "StorageVolume [
                     storageId, allowMassStorage == 1, maxFileSize);
         }
 
+        @DSModeled(DSC.BAN)
         public StorageVolume[] newArray(int size) {
             return new StorageVolume[size];
         }

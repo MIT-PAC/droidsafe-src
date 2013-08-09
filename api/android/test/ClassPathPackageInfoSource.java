@@ -25,6 +25,7 @@ public class ClassPathPackageInfoSource {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.551 -0400", hash_original_field = "5B48EC82264433BE164C825255AA2E2A", hash_generated_field = "B2EB813D257A6C0FCC00AC001736957A")
 
     private final SimpleCache<String, ClassPathPackageInfo> cache = new SimpleCache<String, ClassPathPackageInfo>() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.551 -0400", hash_original_method = "C51B16E1A4E4D11F95C896FC8BD4A403", hash_generated_method = "6863500B747D215B096BF7B9066E303E")
         @Override
         protected ClassPathPackageInfo load(String pkgName) {

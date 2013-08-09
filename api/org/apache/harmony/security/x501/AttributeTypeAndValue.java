@@ -335,6 +335,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
 
     public static final ASN1Type attributeValue = new ASN1Type(ASN1Constants.TAG_PRINTABLESTRING) {
 
+        @DSModeled(DSC.SAFE)
         public boolean checkTag(int tag) {
             return true;
         }

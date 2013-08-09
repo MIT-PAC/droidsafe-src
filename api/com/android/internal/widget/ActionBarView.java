@@ -166,6 +166,7 @@ public class ActionBarView extends AbsActionBarView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.063 -0400", hash_original_field = "6570369C5D002BA40F3205CA42EDA077", hash_generated_field = "44876E5A80146202CAC9FD16865181DF")
 
     private final AdapterView.OnItemSelectedListener mNavItemSelectedListener = new AdapterView.OnItemSelectedListener() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.063 -0400", hash_original_method = "1DD2DCAB9C51672A3484006095504705", hash_generated_method = "546EE63100CD77A2ECCDAFF19BF96005")
         public void onItemSelected(AdapterView parent, View view, int position, long id) {
             
@@ -183,6 +184,7 @@ public class ActionBarView extends AbsActionBarView {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.063 -0400", hash_original_method = "B71B11696BC75696BC2C4386B1729546", hash_generated_method = "CCFF701FC5F6240EA1EEF39B88699599")
         public void onNothingSelected(AdapterView parent) {
             
@@ -195,6 +197,7 @@ public class ActionBarView extends AbsActionBarView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_field = "130B48D14DC4F38293644D9F1154245C", hash_generated_field = "0D17A254F68203FB51BBDB9F44323A0B")
 
     private final OnClickListener mExpandedActionViewUpListener = new OnClickListener() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_method = "71D7F82DC843779588A8591EEB5DDE73", hash_generated_method = "A5749FE279B69BB32FF6085A90DA41DC")
         @Override
         public void onClick(View v) {
@@ -216,6 +219,7 @@ public class ActionBarView extends AbsActionBarView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_field = "4C4D79526CBF782D76A61735F6EF945A", hash_generated_field = "EA0963BA46506750424A660F31C059CE")
 
     private final OnClickListener mUpClickListener = new OnClickListener() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_method = "19F57545305850BD0BBBD46104CC0B01", hash_generated_method = "7301E7CA22EE1FF39CCAA39323935474")
         public void onClick(View v) {
             

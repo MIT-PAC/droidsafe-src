@@ -555,6 +555,7 @@ for(Node node : nodesToStart)
             mDelayAnim.setDuration(mStartDelay);
             mDelayAnim.addListener(new AnimatorListenerAdapter() {        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.340 -0400", hash_original_field = "990982D89CFB60D5939A88FB81C4FE88", hash_generated_field = "41402EB62AB9E9D5CBE01FDA6E9433EB")
         boolean canceled = false;
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.342 -0400", hash_original_method = "BE87F1813CBA8EA740D5C2234F834512", hash_generated_method = "EA8E6D839DDAAE296AD06F3B683EC7FB")
         public void onAnimationCancel(Animator anim) {
             //DSFIXME:  CODE0009: Possible callback target function detected

@@ -175,7 +175,8 @@ String varDA2EAB669D8286E1B66AAEFC8A7FAD34_1571873580 =         "OperatorInfo " 
 
     public static final Creator<OperatorInfo> CREATOR =
         new Creator<OperatorInfo>() {
-            public OperatorInfo createFromParcel(Parcel in) {
+            @DSModeled(DSC.BAN)
+        public OperatorInfo createFromParcel(Parcel in) {
                 OperatorInfo opInfo = new OperatorInfo(
                         in.readString(), 
                         in.readString(), 
@@ -184,7 +185,8 @@ String varDA2EAB669D8286E1B66AAEFC8A7FAD34_1571873580 =         "OperatorInfo " 
                 return opInfo;
             }
 
-            public OperatorInfo[] newArray(int size) {
+            @DSModeled(DSC.BAN)
+        public OperatorInfo[] newArray(int size) {
                 return new OperatorInfo[size];
             }
         };

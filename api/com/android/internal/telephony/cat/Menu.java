@@ -161,6 +161,7 @@ for(int i=0;i<size;i++)
             return new Menu(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public Menu[] newArray(int size) {
             return new Menu[size];
         }

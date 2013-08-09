@@ -139,10 +139,12 @@ for(Map.Entry<String, Long> ent : componentResumeTimes.entrySet())
 
     public static final Parcelable.Creator<PkgUsageStats> CREATOR
     = new Parcelable.Creator<PkgUsageStats>() {
+        @DSModeled(DSC.BAN)
         public PkgUsageStats createFromParcel(Parcel in) {
             return new PkgUsageStats(in);
         }
 
+        @DSModeled(DSC.BAN)
         public PkgUsageStats[] newArray(int size) {
             return new PkgUsageStats[size];
         }

@@ -164,6 +164,7 @@ String var97082D0AA9ABA58D7744A7D0780CB658_1013244048 =         "InputBinding{" 
             return new InputBinding(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public InputBinding[] newArray(int size) {
             return new InputBinding[size];
         }

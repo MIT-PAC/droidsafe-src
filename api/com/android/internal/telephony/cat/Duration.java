@@ -81,10 +81,12 @@ public class Duration implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.245 -0400", hash_original_field = "A45E48454A5718B4D58B745F8A75DBD7", hash_generated_field = "3313211CC65C61401C6638CF5336E71F")
 
     public static final Parcelable.Creator<Duration> CREATOR = new Parcelable.Creator<Duration>() {
+        @DSModeled(DSC.BAN)
         public Duration createFromParcel(Parcel in) {
             return new Duration(in);
         }
 
+        @DSModeled(DSC.BAN)
         public Duration[] newArray(int size) {
             return new Duration[size];
         }

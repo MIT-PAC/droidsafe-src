@@ -137,6 +137,7 @@ String var3DBA5581A50FF6A029E224F01A569D9E_148096710 =         mUuid.toString();
             return new ParcelUuid(uuid);
         }
 
+        @DSModeled(DSC.SAFE)
         public ParcelUuid[] newArray(int size) {
             return new ParcelUuid[size];
         }

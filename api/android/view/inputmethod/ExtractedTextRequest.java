@@ -71,6 +71,7 @@ public class ExtractedTextRequest implements Parcelable {
             return res;
         }
 
+        @DSModeled(DSC.SAFE)
         public ExtractedTextRequest[] newArray(int size) {
             return new ExtractedTextRequest[size];
         }

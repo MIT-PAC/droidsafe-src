@@ -248,6 +248,7 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
             return res;
         }
 
+        @DSModeled(DSC.SAFE)
         public EditorInfo[] newArray(int size) {
             return new EditorInfo[size];
         }

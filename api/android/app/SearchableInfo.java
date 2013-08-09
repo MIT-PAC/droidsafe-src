@@ -954,6 +954,7 @@ String varFAE79A011350566B7695A9C4A2BF8223_578683508 =             mSuggestActio
             return new SearchableInfo(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public SearchableInfo[] newArray(int size) {
             return new SearchableInfo[size];
         }

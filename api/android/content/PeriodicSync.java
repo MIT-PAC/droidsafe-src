@@ -111,6 +111,7 @@ public class PeriodicSync implements Parcelable {
                     source.readString(), source.readBundle(), source.readLong());
         }
 
+        @DSModeled(DSC.SAFE)
         public PeriodicSync[] newArray(int size) {
             return new PeriodicSync[size];
         }

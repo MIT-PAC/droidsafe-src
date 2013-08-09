@@ -34,6 +34,7 @@ public class Proxy implements Serializable {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Class<?> getProxyClass(ClassLoader loader,
             Class<?>... interfaces) throws IllegalArgumentException {
         if (interfaces == null) {

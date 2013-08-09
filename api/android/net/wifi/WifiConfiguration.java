@@ -723,7 +723,8 @@ String varAF280DA2BC37D8BE783D8499160168DE_800297803 =             value;
                 return config;
             }
 
-            public WifiConfiguration[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public WifiConfiguration[] newArray(int size) {
                 return new WifiConfiguration[size];
             }
         };

@@ -208,10 +208,12 @@ String varFA46F86AB5F1A50C4B2CF392C6DDF73C_428073831 =         "NetworkPolicy[" 
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.457 -0400", hash_original_field = "C2409146E6E4B9061F56D86265B2F3B2", hash_generated_field = "180EDC3370D1E5C9B6946B64927B3249")
 
     public static final Creator<NetworkPolicy> CREATOR = new Creator<NetworkPolicy>() {
+        @DSModeled(DSC.BAN)
         public NetworkPolicy createFromParcel(Parcel in) {
             return new NetworkPolicy(in);
         }
 
+        @DSModeled(DSC.BAN)
         public NetworkPolicy[] newArray(int size) {
             return new NetworkPolicy[size];
         }

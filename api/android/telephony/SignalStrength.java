@@ -1089,6 +1089,7 @@ String var3AB1774E337C2A164F26B8C12AE948E0_1668494751 =         ("SignalStrength
             return new SignalStrength(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public SignalStrength[] newArray(int size) {
             return new SignalStrength[size];
         }

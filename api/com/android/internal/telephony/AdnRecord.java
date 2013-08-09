@@ -423,6 +423,7 @@ for(int i = 0;i < recordSize;i++)
 
     public static final Parcelable.Creator<AdnRecord> CREATOR
             = new Parcelable.Creator<AdnRecord>() {
+        @DSModeled(DSC.BAN)
         public AdnRecord createFromParcel(Parcel source) {
             int efid;
             int recordNumber;
@@ -439,6 +440,7 @@ for(int i = 0;i < recordSize;i++)
             return new AdnRecord(efid, recordNumber, alphaTag, number, emails);
         }
 
+        @DSModeled(DSC.BAN)
         public AdnRecord[] newArray(int size) {
             return new AdnRecord[size];
         }

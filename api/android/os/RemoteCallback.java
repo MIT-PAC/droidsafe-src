@@ -197,12 +197,14 @@ public abstract class RemoteCallback implements Parcelable {
 
     public static final Parcelable.Creator<RemoteCallback> CREATOR
             = new Parcelable.Creator<RemoteCallback>() {
+        @DSModeled(DSC.BAN)
         public RemoteCallback createFromParcel(Parcel in) {
             IBinder target = in.readStrongBinder();
             return target != null ? new RemoteCallbackProxy(
                     IRemoteCallback.Stub.asInterface(target)) : null;
         }
 
+        @DSModeled(DSC.BAN)
         public RemoteCallback[] newArray(int size) {
             return new RemoteCallback[size];
         }

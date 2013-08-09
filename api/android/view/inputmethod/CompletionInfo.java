@@ -163,6 +163,7 @@ String var589E935FF15E9B2705C963D280AA9F32_1477591424 =         "CompletionInfo{
             return new CompletionInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public CompletionInfo[] newArray(int size) {
             return new CompletionInfo[size];
         }

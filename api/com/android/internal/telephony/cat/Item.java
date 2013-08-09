@@ -87,10 +87,12 @@ String var79CC641C1148018540A26F7ADC424893_1948426721 =         text;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.389 -0400", hash_original_field = "222EFCE28F204A0D4C7EF9490F5602EB", hash_generated_field = "D69DEFD9515459FCA84CC8CDF18F4564")
 
     public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
+        @DSModeled(DSC.BAN)
         public Item createFromParcel(Parcel in) {
             return new Item(in);
         }
 
+        @DSModeled(DSC.BAN)
         public Item[] newArray(int size) {
             return new Item[size];
         }

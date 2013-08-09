@@ -81,6 +81,7 @@ public class RequestQueue implements RequestFeeder {
         {
             mProxyChangeReceiver =
                     new BroadcastReceiver() {        
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.852 -0400", hash_original_method = "3CB2B7FAEA507C11972A385D868E1E52", hash_generated_method = "39B2053AFDC104DA6EED7A6360A4419B")
         @Override
         public void onReceive(Context ctx, Intent intent) {

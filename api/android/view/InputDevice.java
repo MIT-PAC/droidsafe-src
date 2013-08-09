@@ -604,6 +604,7 @@ String var748F562E35834E3B11BDA296A09FD9A8_1307843716 =         description.toSt
             return result;
         }
         
+        @DSModeled(DSC.SAFE)
         public InputDevice[] newArray(int size) {
             return new InputDevice[size];
         }

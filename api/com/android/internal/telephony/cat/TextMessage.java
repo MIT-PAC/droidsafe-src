@@ -107,6 +107,7 @@ public class TextMessage implements Parcelable {
             return new TextMessage(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public TextMessage[] newArray(int size) {
             return new TextMessage[size];
         }

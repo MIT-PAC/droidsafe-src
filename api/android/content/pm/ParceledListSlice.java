@@ -168,6 +168,7 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_1359745589 =         item;
     @SuppressWarnings("unchecked")
     public static final Parcelable.Creator<ParceledListSlice> CREATOR =
             new Parcelable.Creator<ParceledListSlice>() {
+        @DSModeled(DSC.BAN)
         public ParceledListSlice createFromParcel(Parcel in) {
             final int numItems = in.readInt();
             final boolean lastSlice = in.readInt() == 1;
@@ -190,6 +191,7 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_1359745589 =         item;
             }
         }
 
+        @DSModeled(DSC.BAN)
         public ParceledListSlice[] newArray(int size) {
             return new ParceledListSlice[size];
         }

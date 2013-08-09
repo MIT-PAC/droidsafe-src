@@ -421,10 +421,12 @@ switch(getNetworkClass(ident.mSubType)){
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.014 -0400", hash_original_field = "88BA2DACBA38DAF918A0D3C1F5E00E22", hash_generated_field = "6C4E6CCCA93A0F55B381916949674798")
 
     public static final Creator<NetworkTemplate> CREATOR = new Creator<NetworkTemplate>() {
+        @DSModeled(DSC.BAN)
         public NetworkTemplate createFromParcel(Parcel in) {
             return new NetworkTemplate(in);
         }
 
+        @DSModeled(DSC.BAN)
         public NetworkTemplate[] newArray(int size) {
             return new NetworkTemplate[size];
         }

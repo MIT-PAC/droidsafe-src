@@ -187,10 +187,12 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.923 -0400", hash_original_field = "48FE3108061C8FB14165724DC6609E10", hash_generated_field = "2CCF073B8A235B66F6A4E81108680C92")
 
     public static final Parcelable.Creator<Country> CREATOR = new Parcelable.Creator<Country>() {
+        @DSModeled(DSC.BAN)
         public Country createFromParcel(Parcel in) {
             return new Country(in.readString(), in.readInt());
         }
 
+        @DSModeled(DSC.BAN)
         public Country[] newArray(int size) {
             return new Country[size];
         }

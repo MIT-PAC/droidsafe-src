@@ -541,6 +541,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1222167777 =         mTarget;
             return target != null ? new PendingIntent(target) : null;
         }
 
+        @DSModeled(DSC.SAFE)
         public PendingIntent[] newArray(int size) {
             return new PendingIntent[size];
         }

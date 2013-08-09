@@ -89,10 +89,12 @@ public class VerifierInfo implements Parcelable {
 
     public static final Parcelable.Creator<VerifierInfo> CREATOR
             = new Parcelable.Creator<VerifierInfo>() {
+        @DSModeled(DSC.BAN)
         public VerifierInfo createFromParcel(Parcel source) {
             return new VerifierInfo(source);
         }
 
+        @DSModeled(DSC.BAN)
         public VerifierInfo[] newArray(int size) {
             return new VerifierInfo[size];
         }

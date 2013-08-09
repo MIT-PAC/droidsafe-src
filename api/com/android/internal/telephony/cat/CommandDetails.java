@@ -119,10 +119,12 @@ ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_1892808642 =         Com
 
     public static final Parcelable.Creator<CommandDetails> CREATOR =
                                 new Parcelable.Creator<CommandDetails>() {
+        @DSModeled(DSC.BAN)
         public CommandDetails createFromParcel(Parcel in) {
             return new CommandDetails(in);
         }
 
+        @DSModeled(DSC.BAN)
         public CommandDetails[] newArray(int size) {
             return new CommandDetails[size];
         }

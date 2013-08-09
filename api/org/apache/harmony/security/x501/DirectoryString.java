@@ -27,11 +27,13 @@ public final class DirectoryString {
            ASN1StringType.UTF8STRING,
            ASN1StringType.BMPSTRING }) {
 
+        @DSModeled(DSC.SAFE)
         public int getIndex(java.lang.Object object) {
             return 1; 
             
         }
 
+        @DSModeled(DSC.SAFE)
         public Object getObjectToEncode(Object object) {
             return  object;
         }

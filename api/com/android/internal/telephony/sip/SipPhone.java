@@ -1361,6 +1361,7 @@ AudioGroup var569EB16657C1B5E9168B4C31CFEA6BA5_117546359 =             ((SipConn
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.299 -0400", hash_original_field = "AC67C5E32EF946C45E856E56B7F86834", hash_generated_field = "244547A11EB2D0F43D69ADE82125A7FA")
 
         private SipAudioCallAdapter mAdapter = new SipAudioCallAdapter() {            
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.295 -0400", hash_original_method = "B8BAADEA0DE266294E2369B45E53A7F4", hash_generated_method = "44D1590CD550569A3F447EA35B336364")
             @Override
             protected void onCallEnded(DisconnectCause cause) {
@@ -1394,6 +1395,7 @@ AudioGroup var569EB16657C1B5E9168B4C31CFEA6BA5_117546359 =             ((SipConn
             }
 
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.295 -0400", hash_original_method = "52733E1CC76DBF11A64B0250C617E7AC", hash_generated_method = "F34A5EF95CCC3389960527B60C4F7AE9")
             @Override
             public void onCallEstablished(SipAudioCall call) {
@@ -1407,6 +1409,7 @@ AudioGroup var569EB16657C1B5E9168B4C31CFEA6BA5_117546359 =             ((SipConn
             }
 
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.296 -0400", hash_original_method = "AC053A33592EEF445C9BE357836B4C16", hash_generated_method = "A5F097A8319E3CB02B505B72B427FB45")
             @Override
             public void onCallHeld(SipAudioCall call) {
@@ -1420,6 +1423,7 @@ AudioGroup var569EB16657C1B5E9168B4C31CFEA6BA5_117546359 =             ((SipConn
             }
 
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.298 -0400", hash_original_method = "9E9163C05D7336A6FE9DFAB379443860", hash_generated_method = "819342FBC5A8298A2BD476438672EE18")
             @Override
             public void onChanged(SipAudioCall call) {
@@ -1456,6 +1460,7 @@ AudioGroup var569EB16657C1B5E9168B4C31CFEA6BA5_117546359 =             ((SipConn
             }
 
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.299 -0400", hash_original_method = "C52D3E5DC20D7F0420DDF7517152D94F", hash_generated_method = "22119F567079DA28DBBFC4AA0120E473")
             @Override
             protected void onError(DisconnectCause cause) {

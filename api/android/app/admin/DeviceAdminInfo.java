@@ -495,6 +495,7 @@ String var1E9B509EA010A811781E44EEDFCE69A1_1577623421 =         "DeviceAdminInfo
             return new DeviceAdminInfo(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public DeviceAdminInfo[] newArray(int size) {
             return new DeviceAdminInfo[size];
         }

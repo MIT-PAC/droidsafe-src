@@ -53,6 +53,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.785 -0400", hash_original_field = "1FB69BD30A94387173B150B37758527C", hash_generated_field = "C179BAE9DE0AFC3D1C34EC4DFE285114")
 
     SurfaceHolder.Callback mSHCallback = new SurfaceHolder.Callback() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.785 -0400", hash_original_method = "3F198B15E26BAFE43EE75044605DFD16", hash_generated_method = "3D802BD1DDECA265426C324D9430E94A")
         public void surfaceChanged(SurfaceHolder holder, int format,
                                     int w, int h) {
@@ -80,6 +81,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.785 -0400", hash_original_method = "94E02A68EADA9CB33F96FB8AB670115A", hash_generated_method = "1E0535E0C877A1119FDCC584F158C234")
         public void surfaceCreated(SurfaceHolder holder) {
             mSurfaceHolder = holder;
@@ -93,6 +95,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.785 -0400", hash_original_method = "0F8144483E9FB8C5272FCB0807695B13", hash_generated_method = "449A2875ABE8A5FBDB1957D6E4144E03")
         public void surfaceDestroyed(SurfaceHolder holder) {
             pauseAndDispatch(mProxy);
@@ -116,6 +119,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.786 -0400", hash_original_field = "55FFCA4751537187A8982D3E5A69F88A", hash_generated_field = "C4A3583ED72DBDCEC29E2759A4D2C518")
 
     private final WebChromeClient.CustomViewCallback mCallback = new WebChromeClient.CustomViewCallback() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.786 -0400", hash_original_method = "5310CBE0D16478795A0BF544D70BB888", hash_generated_method = "3659616311AB6104A720F2EA1CD580E8")
         public void onCustomViewHidden() {
             
@@ -149,6 +153,7 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.786 -0400", hash_original_field = "586F4A1CD959A521D8527F9D0DB7C837", hash_generated_field = "05BD4E082473F28F5FFEEC2BBBEB8ECF")
 
     private MediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener = new MediaPlayer.OnBufferingUpdateListener() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.786 -0400", hash_original_method = "16726F937605C6D0A73F251CECEE924B", hash_generated_method = "FD12763B931B9411DD8FAD196940204B")
         public void onBufferingUpdate(MediaPlayer mp, int percent) {
             

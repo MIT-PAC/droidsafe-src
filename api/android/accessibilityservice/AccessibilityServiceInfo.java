@@ -453,6 +453,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toS
             return info;
         }
 
+        @DSModeled(DSC.SAFE)
         public AccessibilityServiceInfo[] newArray(int size) {
             return new AccessibilityServiceInfo[size];
         }

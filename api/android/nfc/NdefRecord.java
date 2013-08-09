@@ -400,6 +400,7 @@ public final class NdefRecord implements Parcelable {
 
             return new NdefRecord(tnf, type, id, payload, flags);
         }
+        @DSModeled(DSC.SAFE)
         public NdefRecord[] newArray(int size) {
             return new NdefRecord[size];
         }

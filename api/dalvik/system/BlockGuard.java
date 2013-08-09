@@ -144,16 +144,21 @@ String varF29D773CC11975C29C8B08D549DF4902_1427760421 =             "policy=" + 
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.695 -0400", hash_original_field = "E0D7D8362D54E1FE8526FC9BC7628CBD", hash_generated_field = "4AA8094D0A870BF58F179845EAB966A1")
 
     public static final Policy LAX_POLICY = new Policy() {
-            public void onWriteToDisk() {}
-            public void onReadFromDisk() {}
-            public void onNetwork() {}
-            public int getPolicyMask() {
+            @DSModeled(DSC.BAN)
+        public void onWriteToDisk() {}
+            @DSModeled(DSC.BAN)
+        public void onReadFromDisk() {}
+            @DSModeled(DSC.BAN)
+        public void onNetwork() {}
+            @DSModeled(DSC.BAN)
+        public int getPolicyMask() {
                 return 0;
             }
         };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.592 -0400", hash_original_field = "FA0644FE78DE29FC3B6373BBD0514481", hash_generated_field = "D74F07E1FC56C17661F0BEB3EE20011C")
 
     private static ThreadLocal<Policy> threadPolicy = new ThreadLocal<Policy>() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.592 -0400", hash_original_method = "DA8783B28EC2A21BB8B273AEAF0100E1", hash_generated_method = "FECE05391A71714F72ACFF49F2BE0BBC")
         @Override
         protected Policy initialValue() {

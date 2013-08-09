@@ -429,6 +429,7 @@ String var2060563EFD93E4F59770E183A15C5E49_324604312 =             "SyncAdapterT
             return new SyncAdapterType(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public SyncAdapterType[] newArray(int size) {
             return new SyncAdapterType[size];
         }

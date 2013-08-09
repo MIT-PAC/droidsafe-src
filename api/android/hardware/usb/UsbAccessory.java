@@ -264,6 +264,7 @@ String var1683DFD77A14FECD8D736DE9F8F7443E_35388079 =         "UsbAccessory[mMan
             return new UsbAccessory(manufacturer, model, description, version, uri, serial);
         }
 
+        @DSModeled(DSC.SAFE)
         public UsbAccessory[] newArray(int size) {
             return new UsbAccessory[size];
         }

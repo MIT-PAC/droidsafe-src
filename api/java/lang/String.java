@@ -2206,11 +2206,13 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_1649835730 =         substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String format(String format, Object... args) {
         return format(Locale.getDefault(), format, args);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String format(Locale locale, String format, Object... args) {
         if (format == null) {
             throw new NullPointerException("null format argument");

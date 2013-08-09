@@ -102,6 +102,7 @@ Parcelable var24424C2D2EF752A9D21649F03626A4B3_1982536297 =         mSuperState;
             return EMPTY_STATE;
         }
 
+        @DSModeled(DSC.SAFE)
         public AbsSavedState[] newArray(int size) {
             return new AbsSavedState[size];
         }

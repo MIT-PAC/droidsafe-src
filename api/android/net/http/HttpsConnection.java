@@ -76,13 +76,16 @@ public class HttpsConnection extends Connection {
             OpenSSLContextImpl sslContext = new OpenSSLContextImpl();
             TrustManager[] trustManagers = new TrustManager[] {
                 new X509TrustManager() {
-                    public X509Certificate[] getAcceptedIssuers() {
+                    @DSModeled(DSC.SAFE)
+        public X509Certificate[] getAcceptedIssuers() {
                         return null;
                     }
-                    public void checkClientTrusted(
+                    @DSModeled(DSC.SAFE)
+        public void checkClientTrusted(
                         X509Certificate[] certs, String authType) {
                     }
-                    public void checkServerTrusted(
+                    @DSModeled(DSC.SAFE)
+        public void checkServerTrusted(
                         X509Certificate[] certs, String authType) {
                     }
                 }

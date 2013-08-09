@@ -145,6 +145,7 @@ String var88C3A4BDB947BCD23BACD4E0029C901F_782468687 =         "Account {name=" 
             return new Account(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public Account[] newArray(int size) {
             return new Account[size];
         }

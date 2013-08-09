@@ -172,7 +172,8 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_2079745846 =         address;
 
     public static final Creator<LinkAddress> CREATOR =
         new Creator<LinkAddress>() {
-            public LinkAddress createFromParcel(Parcel in) {
+            @DSModeled(DSC.BAN)
+        public LinkAddress createFromParcel(Parcel in) {
                 InetAddress address = null;
                 int prefixLength = 0;
                 if (in.readByte() == 1) {
@@ -184,7 +185,8 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_2079745846 =         address;
                 return new LinkAddress(address, prefixLength);
             }
 
-            public LinkAddress[] newArray(int size) {
+            @DSModeled(DSC.BAN)
+        public LinkAddress[] newArray(int size) {
                 return new LinkAddress[size];
             }
         };

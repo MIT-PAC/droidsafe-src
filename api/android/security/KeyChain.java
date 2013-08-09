@@ -171,7 +171,8 @@ public final class KeyChain {
                     }
                 }
             }
-            @Override public void onServiceDisconnected(ComponentName name) {}
+            @DSModeled(DSC.SAFE)
+        @Override public void onServiceDisconnected(ComponentName name) {}
         };
         boolean isBound = context.bindService(new Intent(IKeyChainService.class.getName()),
                                               keyChainServiceConnection,

@@ -229,6 +229,7 @@ final class FragmentManagerState implements Parcelable {
             return new FragmentManagerState(in);
         }
         
+        @DSModeled(DSC.SAFE)
         public FragmentManagerState[] newArray(int size) {
             return new FragmentManagerState[size];
         }

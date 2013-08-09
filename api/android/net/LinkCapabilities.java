@@ -344,7 +344,8 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
 
     public static final Creator<LinkCapabilities> CREATOR =
         new Creator<LinkCapabilities>() {
-            public LinkCapabilities createFromParcel(Parcel in) {
+            @DSModeled(DSC.BAN)
+        public LinkCapabilities createFromParcel(Parcel in) {
                 LinkCapabilities capabilities = new LinkCapabilities();
                 int size = in.readInt();
                 while (size-- != 0) {
@@ -355,7 +356,8 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
                 return capabilities;
             }
 
-            public LinkCapabilities[] newArray(int size) {
+            @DSModeled(DSC.BAN)
+        public LinkCapabilities[] newArray(int size) {
                 return new LinkCapabilities[size];
             }
         };

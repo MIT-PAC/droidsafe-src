@@ -1287,6 +1287,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
             }
             return bm;
         }
+        @DSModeled(DSC.SAFE)
         public Bitmap[] newArray(int size) {
             return new Bitmap[size];
         }

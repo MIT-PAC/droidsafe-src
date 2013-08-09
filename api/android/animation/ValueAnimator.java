@@ -210,6 +210,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.985 -0400", hash_original_method = "D9E3FD9EEAA02CD647DC7AEFD5007E3A", hash_generated_method = "1A154C130D5833B4D25F9C35C150A8A3")
     public void setValues(PropertyValuesHolder... values) {
         int numValues = values.length;

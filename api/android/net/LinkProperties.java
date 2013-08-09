@@ -598,7 +598,8 @@ String var906583DF257E5B26DD99AC8582D137B0_1178724127 =             retVal;
 
     public static final Creator<LinkProperties> CREATOR =
         new Creator<LinkProperties>() {
-            public LinkProperties createFromParcel(Parcel in) {
+            @DSModeled(DSC.BAN)
+        public LinkProperties createFromParcel(Parcel in) {
                 LinkProperties netProp = new LinkProperties();
                 String iface = in.readString();
                 if (iface != null) {
@@ -628,7 +629,8 @@ String var906583DF257E5B26DD99AC8582D137B0_1178724127 =             retVal;
                 return netProp;
             }
 
-            public LinkProperties[] newArray(int size) {
+            @DSModeled(DSC.BAN)
+        public LinkProperties[] newArray(int size) {
                 return new LinkProperties[size];
             }
         };

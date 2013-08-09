@@ -292,6 +292,7 @@ CallSettings var8E0FC694A78A0D1D49799D2C92B59218_1409456622 =         mCallSetti
             return new CatCmdMessage(in);
         }
 
+        @DSModeled(DSC.SAFE)
         public CatCmdMessage[] newArray(int size) {
             return new CatCmdMessage[size];
         }

@@ -462,6 +462,7 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1250576866 =         "{ParcelFileDesc
         public ParcelFileDescriptor createFromParcel(Parcel in) {
             return in.readFileDescriptor();
         }
+        @DSModeled(DSC.SAFE)
         public ParcelFileDescriptor[] newArray(int size) {
             return new ParcelFileDescriptor[size];
         }

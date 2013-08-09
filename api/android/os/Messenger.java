@@ -139,6 +139,7 @@ IBinder varE29672B36B312FCEF89F2650279B2AD2_38271713 =         mTarget.asBinder(
             return target != null ? new Messenger(target) : null;
         }
 
+        @DSModeled(DSC.SAFE)
         public Messenger[] newArray(int size) {
             return new Messenger[size];
         }

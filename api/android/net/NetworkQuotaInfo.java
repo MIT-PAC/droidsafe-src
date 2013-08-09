@@ -111,10 +111,12 @@ public class NetworkQuotaInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.512 -0400", hash_original_field = "C30C13B2174CCA474AC0B4E26A8A8887", hash_generated_field = "10C90A69725B1168CB9C00401EAC67D7")
 
     public static final Creator<NetworkQuotaInfo> CREATOR = new Creator<NetworkQuotaInfo>() {
+        @DSModeled(DSC.BAN)
         public NetworkQuotaInfo createFromParcel(Parcel in) {
             return new NetworkQuotaInfo(in);
         }
 
+        @DSModeled(DSC.BAN)
         public NetworkQuotaInfo[] newArray(int size) {
             return new NetworkQuotaInfo[size];
         }

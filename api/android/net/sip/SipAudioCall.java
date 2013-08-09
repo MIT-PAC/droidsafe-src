@@ -615,6 +615,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
             // ---------- Original Method ----------
             //SipAudioCall.this.onError(errorCode, message);
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.483 -0400", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "F300F8563E2587C43E9A378D2BD8E08B")
         @Override
         public void onRegistering(SipSession session) {
@@ -622,6 +623,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
             addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.483 -0400", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "86A86E3C8876E69F7313F986859C72AD")
         @Override
         public void onRegistrationTimeout(SipSession session) {
@@ -629,6 +631,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
             addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.483 -0400", hash_original_method = "E69FEDA3BC0AF93EB01ADFD4BE332B13", hash_generated_method = "3AEC36D4EFA6F63878CA08B8E3AF5556")
         @Override
         public void onRegistrationFailed(SipSession session, int errorCode,
@@ -639,6 +642,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
             addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.484 -0400", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "CAF2CF01272249C84CB83D8CFB4868BD")
         @Override
         public void onRegistrationDone(SipSession session, int duration) {

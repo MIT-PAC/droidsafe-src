@@ -298,6 +298,7 @@ PublicKey varA6AF97A9DA9E3D7762300A5338BFE054_416831250 =         cert.getPublic
             return new Signature(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public Signature[] newArray(int size) {
             return new Signature[size];
         }

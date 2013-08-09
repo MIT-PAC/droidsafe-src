@@ -865,6 +865,7 @@ for(Map.Entry<String, Object> entry : nameValuePairs.entrySet())
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.299 -0400", hash_original_field = "69D6A2BFA9970459DEF9916A4A819505", hash_generated_field = "3F3D3946D0FBB086C49E80D158F100D9")
 
     public static final Object NULL = new Object() {
+        @DSModeled(DSC.SAFE)
         @Override public boolean equals(Object o) {
             return o == this || o == null; 
         }

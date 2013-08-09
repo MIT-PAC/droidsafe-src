@@ -911,6 +911,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_114518138 =             this;
             return new ContentProviderOperation(source);
         }
 
+        @DSModeled(DSC.SAFE)
         public ContentProviderOperation[] newArray(int size) {
             return new ContentProviderOperation[size];
         }

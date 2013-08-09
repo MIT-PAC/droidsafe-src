@@ -230,6 +230,7 @@ String var2D40DE0DA00F138A6FA942140A54F410_1158396944 =         "StatusBarNotifi
             return new StatusBarNotification(parcel);
         }
 
+        @DSModeled(DSC.SAFE)
         public StatusBarNotification[] newArray(int size)
         {
             return new StatusBarNotification[size];

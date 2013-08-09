@@ -85,6 +85,7 @@ X500Principal var8EF52627413B91AB97DB59853805E979_2078625217 =         issuer;
                     .getName()).getX500Principal();
         }
 
+        @DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             values[0] = object;
         }

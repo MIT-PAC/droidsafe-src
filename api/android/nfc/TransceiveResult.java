@@ -113,6 +113,7 @@ switch(mResult){
 
     public static final Parcelable.Creator<TransceiveResult> CREATOR =
             new Parcelable.Creator<TransceiveResult>() {
+        @DSModeled(DSC.BAN)
         @Override
         public TransceiveResult createFromParcel(Parcel in) {
             int result = in.readInt();
@@ -128,6 +129,7 @@ switch(mResult){
             return new TransceiveResult(result, responseData);
         }
 
+        @DSModeled(DSC.BAN)
         @Override
         public TransceiveResult[] newArray(int size) {
             return new TransceiveResult[size];

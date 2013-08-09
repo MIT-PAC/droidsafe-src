@@ -315,6 +315,7 @@ for(int i=0;i<N;i++)
             return new StatusBarIconList(parcel);
         }
 
+        @DSModeled(DSC.SAFE)
         public StatusBarIconList[] newArray(int size)
         {
             return new StatusBarIconList[size];
