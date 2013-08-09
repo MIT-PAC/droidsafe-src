@@ -949,6 +949,7 @@ String varFAE79A011350566B7695A9C4A2BF8223_578683508 =             mSuggestActio
 
     public static final Parcelable.Creator<SearchableInfo> CREATOR
     = new Parcelable.Creator<SearchableInfo>() {
+    	@DSModeled(DSC.SAFE)
         public SearchableInfo createFromParcel(Parcel in) {
             return new SearchableInfo(in);
         }

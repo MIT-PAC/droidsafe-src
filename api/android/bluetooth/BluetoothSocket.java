@@ -511,7 +511,12 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1911228897 =             acc
     private enum SocketState {
         INIT,
         CONNECTED,
-        CLOSED
+        CLOSED;
+        
+        @DSModeled(DSC.SAFE)
+        SocketState() {
+        	
+        }
     }
 
     
