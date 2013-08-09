@@ -93,4 +93,20 @@ public class Replace1 extends UnaryOperation {
             return false;
         }
     }
+
+	public char getC() {
+		return c;
+	}
+
+	public void setC(char c) {
+		this.c = c;
+	}
+
+	public char getD() {
+		return d;
+	}
+
+	public void setD(char d) {
+		this.d = d;
+	}
 }
