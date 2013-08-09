@@ -62,20 +62,25 @@ public class ExtractedTextRequest implements Parcelable {
 
     public static final Parcelable.Creator<ExtractedTextRequest> CREATOR
             = new Parcelable.Creator<ExtractedTextRequest>() {
+    	@DSModeled(DSC.SAFE)
         public ExtractedTextRequest createFromParcel(Parcel source) {
+    		addTaint(source.getTaint());
             ExtractedTextRequest res = new ExtractedTextRequest();
             res.token = source.readInt();
             res.flags = source.readInt();
             res.hintMaxLines = source.readInt();
             res.hintMaxChars = source.readInt();
+            res.addTaint(taint);
             return res;
         }
 
         @DSModeled(DSC.SAFE)
         public ExtractedTextRequest[] newArray(int size) {
+        	addTaint(size);
             return new ExtractedTextRequest[size];
         }
     };
+    /*
     // orphaned legacy method
     public ExtractedTextRequest createFromParcel(Parcel source) {
             ExtractedTextRequest res = new ExtractedTextRequest();
@@ -90,6 +95,6 @@ public class ExtractedTextRequest implements Parcelable {
     public ExtractedTextRequest[] newArray(int size) {
             return new ExtractedTextRequest[size];
         }
-    
+    */
 }
 

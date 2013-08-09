@@ -73,6 +73,33 @@ CharSequence var27949C1B6C468F63F8F1B1AFE2B5C1F4_1601050839 =         new Spanna
         //return new SpannableString(this, start, end);
     }
 
+    public int getSpanEnd(Object what) {
+    	addTaint(what.getTaint());
+    	return super.getSpanEnd(what);
+    }
     
+    public int getSpanFlags(Object what) {
+    	addTaint(what.getTaint());
+    	return super.getSpanFlags(what);
+    }
+    
+    public int getSpanStart(Object what) {
+    	addTaint(what.getTaint());
+    	return super.getSpanStart(what);
+    }
+    
+    public int nextSpanTransition(int start, int limit, Class kind) {
+    	addTaint(start);
+    	addTaint(limit);
+    	addTaint(kind.getTaint());
+    	return super.nextSpanTransition(start, limit, kind);
+    }
+    
+    public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
+    	addTaint(queryStart);
+    	addTaint(queryEnd);
+    	addTaint(kind.getTaint());
+    	return super.getSpans(queryStart, queryEnd, kind);
+    }
 }
 

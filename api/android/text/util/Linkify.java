@@ -240,6 +240,7 @@ public class Linkify {
     @DSModeled(DSC.BAN)
     private static final void pruneOverlaps(ArrayList<LinkSpec> links) {
         Comparator<LinkSpec>  c = new Comparator<LinkSpec>() {
+        	@DSModeled(DSC.BAN)
             public final int compare(LinkSpec a, LinkSpec b) {
                 if (a.start < b.start) {
                     return -1;
@@ -255,6 +256,7 @@ public class Linkify {
                 }
                 return 0;
             }
+        	@DSModeled(DSC.BAN)
             public final boolean equals(Object o) {
                 return false;
             }
@@ -316,6 +318,7 @@ public class Linkify {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.483 -0400", hash_original_field = "6B88F88D64011199D23480B3B784D6FC", hash_generated_field = "008D1D2B5A7B2E7FD037B74448FC9CE8")
 
     public static final MatchFilter sUrlMatchFilter = new MatchFilter() {
+    	@DSModeled(DSC.SAFE)
         public final boolean acceptMatch(CharSequence s, int start, int end) {
             if (start == 0) {
                 return true;
@@ -331,6 +334,7 @@ public class Linkify {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.483 -0400", hash_original_field = "F9493765D21ABAB52702E4974A1B1708", hash_generated_field = "B2CCB2AB7A7BFE05D0DBC4E5E2C9C4F7")
 
     public static final MatchFilter sPhoneNumberMatchFilter = new MatchFilter() {
+    	@DSModeled(DSC.SAFE)
         public final boolean acceptMatch(CharSequence s, int start, int end) {
             int digitCount = 0;
 
@@ -348,6 +352,7 @@ public class Linkify {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.483 -0400", hash_original_field = "56A5F9993C0C7AC35957D43FBEFB0D1F", hash_generated_field = "EC888D0C5984A0BF717AAA49789F16EB")
 
     public static final TransformFilter sPhoneNumberTransformFilter = new TransformFilter() {
+    	@DSModeled(DSC.SAFE)
         public final String transformUrl(final Matcher match, String url) {
             return Patterns.digitsAndPlusOnly(match);
         }

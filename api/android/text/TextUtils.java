@@ -1005,6 +1005,7 @@ public class TextUtils {
     
     @SuppressWarnings("unchecked")
     public static <T> T[] removeEmptySpans(T[] spans, Spanned spanned, Class<T> klass) {
+    	T[] retVal;
         T[] copy = null;
         int count = 0;
         for (int i = 0; i < spans.length; i++) {
@@ -1027,10 +1028,14 @@ public class TextUtils {
         if (copy != null) {
             T[] result = (T[]) Array.newInstance(klass, count);
             System.arraycopy(copy, 0, result, 0, count);
-            return result;
+            retVal = result;
         } else {
-            return spans;
+            retVal = spans;
         }
+        retVal.addTaint(spans[0].getTaint());
+        retVal.addTaint(spanned.getTaint());
+        retVal.addTaint(klass.getTaint());
+        return retVal;
     }
 
     

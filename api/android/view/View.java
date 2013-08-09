@@ -4411,7 +4411,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return handler.post(action);
     }
 		*/
-		return false;
+    	addTaint(action.getTaint());
+    	Handler handler;
+        AttachInfo attachInfo = mAttachInfo;
+        if (attachInfo != null) {
+            handler = attachInfo.mHandler;
+            handler.post(action);
+        } else {
+            ViewRootImpl.getRunQueue().post(action);
+        }
+        return getTaintBoolean();
 	}
 
     
@@ -4450,7 +4459,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return true;
     }
 		*/
-		return false;
+    	addTaint(action.getTaint());
+    	Handler handler;
+        AttachInfo attachInfo = mAttachInfo;
+        if (attachInfo != null) {
+            handler = attachInfo.mHandler;
+            handler.removeCallbacks(action);
+        } else {
+            ViewRootImpl.getRunQueue().removeCallbacks(action);
+        }
+        
+        return getTaintBoolean();
 	}
 
     
@@ -4572,6 +4591,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 		*/
 		//Return nothing
+    	addTaint(horizontalFadingEdgeEnabled);
+    	if (isHorizontalFadingEdgeEnabled() != horizontalFadingEdgeEnabled) {
+            if (horizontalFadingEdgeEnabled) {
+                initScrollCache();
+            }
+            mViewFlags ^= FADING_EDGE_HORIZONTAL;
+        }
 	}
 
     
@@ -5897,7 +5923,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
     }
 		*/
-		return null;
+    	if ((mDrawableState != null) && ((mPrivateFlags & DRAWABLE_STATE_DIRTY) == 0)) {
+            return mDrawableState;
+        } else {
+            mDrawableState = onCreateDrawableState(0);
+            mPrivateFlags &= ~DRAWABLE_STATE_DIRTY;
+            return mDrawableState;
+        }
 	}
 
     
@@ -6600,6 +6632,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 		*/
 		//Return nothing
+    	if (ViewDebug.TRACE_HIERARCHY) {
+            ViewDebug.trace(this, ViewDebug.HierarchyTraceType.REQUEST_LAYOUT);
+        }
+        mPrivateFlags |= FORCE_LAYOUT;
+        mPrivateFlags |= INVALIDATED;
+        if (mParent != null) {
+            if (mLayoutParams != null) {
+                mLayoutParams.resolveWithDirection(getResolvedLayoutDirection());
+            }
+            if (!mParent.isLayoutRequested()) {
+                mParent.requestLayout();
+            }
+        }
 	}
 
     
@@ -7226,7 +7271,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 
     
     public int getResolvedTextDirection(){
-		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -7236,6 +7280,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return mResolvedTextDirection;
     }
 		*/
+    	if (mResolvedTextDirection == TEXT_DIRECTION_INHERIT) {
+            resolveTextDirection();
+        }
+        return mResolvedTextDirection;
 	}
 
     
@@ -7255,6 +7303,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 		*/
 		//Return nothing
+    	if (mTextDirection != TEXT_DIRECTION_INHERIT) {
+            mResolvedTextDirection = mTextDirection;
+            return;
+        }
+        if (mParent != null && mParent instanceof ViewGroup) {
+            mResolvedTextDirection = ((ViewGroup) mParent).getResolvedTextDirection();
+            return;
+        }
+        mResolvedTextDirection = TEXT_DIRECTION_FIRST_STRONG;
 	}
 
     

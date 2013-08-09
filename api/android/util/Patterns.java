@@ -40,7 +40,9 @@ public class Patterns {
                 buffer.append(character);
             }
         }
-        return buffer.toString();
+        String retVal = buffer.toString();
+        retVal.addTaint(matcher.getTaint());
+        return retVal;
     }
 
     

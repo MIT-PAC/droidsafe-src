@@ -2534,9 +2534,13 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_442643712 =         msg.toString();
 
     public static final Parcelable.Creator<KeyEvent> CREATOR
             = new Parcelable.Creator<KeyEvent>() {
+    	@DSModeled(DSC.SAFE)
         public KeyEvent createFromParcel(Parcel in) {
+    		addTaint(in.getTaint());
             in.readInt(); 
-            return KeyEvent.createFromParcelBody(in);
+            KeyEvent retVal = KeyEvent.createFromParcelBody(in);
+    		retVal.addTaint(taint);
+            return retVal;
         }
 
         @DSModeled(DSC.SAFE)
@@ -2544,6 +2548,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_442643712 =         msg.toString();
             return new KeyEvent[size];
         }
     };
+    /*
     // orphaned legacy method
     public KeyEvent[] newArray(int size) {
             return new KeyEvent[size];
@@ -2554,6 +2559,6 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_442643712 =         msg.toString();
             in.readInt(); 
             return KeyEvent.createFromParcelBody(in);
         }
-    
+    */
 }
 

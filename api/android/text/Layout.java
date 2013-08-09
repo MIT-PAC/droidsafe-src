@@ -1963,10 +1963,16 @@ for(int i = 0;i < spans.length;i++)
 
     
     static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
+    	T[] retVal;
         if (start == end && start > 0) {
-            return (T[]) ArrayUtils.emptyArray(type);
+            retVal = (T[]) ArrayUtils.emptyArray(type);
         }
-        return text.getSpans(start, end, type);
+        retVal = text.getSpans(start, end, type);
+        retVal.addTaint(text.getTaint());
+        retVal.addTaint(start);
+        retVal.addTaint(end);
+        retVal.addTaint(type.getTaint());
+        return retVal;
     }
 
     

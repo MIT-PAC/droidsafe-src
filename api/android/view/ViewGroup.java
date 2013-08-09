@@ -3221,6 +3221,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 			this.width = width;
 			this.height = height;
 			*/
+        	this.width = width;
+			this.height = height;
 		}
 
         
@@ -3229,6 +3231,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 			this.width = source.width;
 			this.height = source.height;
 			*/
+        	this.width = source.width;
+			this.height = source.height;
 		}
 
         

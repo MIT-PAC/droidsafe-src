@@ -122,15 +122,22 @@ String var9F600BFBE887033823CFD91DDDB01734_1344950003 =         "CorrectionInfo{
 
     public static final Parcelable.Creator<CorrectionInfo> CREATOR
             = new Parcelable.Creator<CorrectionInfo>() {
+    	@DSModeled(DSC.SAFE)
         public CorrectionInfo createFromParcel(Parcel source) {
-            return new CorrectionInfo(source);
+    		addTaint(source.getTaint());
+    		CorrectionInfo retVal = new CorrectionInfo(source);
+    		retVal.addTaint(taint);
+            return retVal;
         }
 
         @DSModeled(DSC.SAFE)
         public CorrectionInfo[] newArray(int size) {
+        	addTaint(size);
             return new CorrectionInfo[size];
         }
     };
+    
+    /*
     // orphaned legacy method
     public CorrectionInfo createFromParcel(Parcel source) {
             return new CorrectionInfo(source);
@@ -140,6 +147,6 @@ String var9F600BFBE887033823CFD91DDDB01734_1344950003 =         "CorrectionInfo{
     public CorrectionInfo[] newArray(int size) {
             return new CorrectionInfo[size];
         }
-    
+    */
 }
 

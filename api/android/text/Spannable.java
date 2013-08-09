@@ -15,6 +15,10 @@ extends Spanned
     
     public static class Factory {
         private static Spannable.Factory sInstance = new Spannable.Factory();
+        
+        private Factory() {
+        	//Synthetic method
+        }
 
          
         public static Spannable.Factory getInstance() {

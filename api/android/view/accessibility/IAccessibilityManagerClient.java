@@ -32,23 +32,30 @@ return this;
 }
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
-switch (code)
-{
-case INTERFACE_TRANSACTION:
-{
-reply.writeString(DESCRIPTOR);
-return true;
-}
-case TRANSACTION_setState:
-{
-data.enforceInterface(DESCRIPTOR);
-int _arg0;
-_arg0 = data.readInt();
-this.setState(_arg0);
-return true;
-}
-}
-return super.onTransact(code, data, reply, flags);
+	addTaint(code);
+	addTaint(data.getTaint());
+	addTaint(reply.getTaint());
+	addTaint(flags);
+	reply.addTaint(taint);
+	switch (code)
+	{
+		case INTERFACE_TRANSACTION:
+		{
+			reply.writeString(DESCRIPTOR);
+		}
+		case TRANSACTION_setState:
+		{
+			data.enforceInterface(DESCRIPTOR);
+			int _arg0;
+			_arg0 = data.readInt();
+			this.setState(_arg0);
+		}
+		default:
+		{
+			super.onTransact(code, data, reply, flags);
+		}
+	}
+	return getTaintBoolean();
 }
 private static class Proxy implements android.view.accessibility.IAccessibilityManagerClient
 {
