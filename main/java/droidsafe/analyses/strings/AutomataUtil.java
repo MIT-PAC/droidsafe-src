@@ -15,10 +15,49 @@ import org.slf4j.LoggerFactory;
 import dk.brics.automaton.Automaton;
 import dk.brics.automaton.State;
 import dk.brics.automaton.Transition;
+import dk.brics.string.stringoperations.AssertContainedInOther;
+import dk.brics.string.stringoperations.AssertContainsOther;
+import dk.brics.string.stringoperations.AssertEmpty;
+import dk.brics.string.stringoperations.AssertEndsWith;
+import dk.brics.string.stringoperations.AssertEquals;
+import dk.brics.string.stringoperations.AssertHasLength;
+import dk.brics.string.stringoperations.AssertHasNotLength;
+import dk.brics.string.stringoperations.AssertInLanguage;
+import dk.brics.string.stringoperations.AssertNotContainsOther;
+import dk.brics.string.stringoperations.AssertNotEmpty;
+import dk.brics.string.stringoperations.AssertNotEquals;
+import dk.brics.string.stringoperations.AssertPrefixOf;
+import dk.brics.string.stringoperations.AssertStartsWith;
+import dk.brics.string.stringoperations.AssertSuffixOf;
+import dk.brics.string.stringoperations.Basic;
 import dk.brics.string.stringoperations.BinaryOperation;
+import dk.brics.string.stringoperations.BooleanToString;
+import dk.brics.string.stringoperations.CharAt1;
+import dk.brics.string.stringoperations.CharAt2;
+import dk.brics.string.stringoperations.Contains;
+import dk.brics.string.stringoperations.Delete;
+import dk.brics.string.stringoperations.DeleteCharAt;
+import dk.brics.string.stringoperations.Insert;
 import dk.brics.string.stringoperations.Operation;
+import dk.brics.string.stringoperations.Postfix;
 import dk.brics.string.stringoperations.Postfix2;
+import dk.brics.string.stringoperations.Prefix;
+import dk.brics.string.stringoperations.Replace1;
+import dk.brics.string.stringoperations.Replace2;
+import dk.brics.string.stringoperations.Replace3;
+import dk.brics.string.stringoperations.Replace4;
+import dk.brics.string.stringoperations.Replace5;
+import dk.brics.string.stringoperations.Replace6;
+import dk.brics.string.stringoperations.Reverse;
+import dk.brics.string.stringoperations.SetCharAt1;
+import dk.brics.string.stringoperations.SetCharAt2;
+import dk.brics.string.stringoperations.SetLength;
+import dk.brics.string.stringoperations.Split;
+import dk.brics.string.stringoperations.Substring;
 import dk.brics.string.stringoperations.Substring2;
+import dk.brics.string.stringoperations.ToLowerCase;
+import dk.brics.string.stringoperations.ToUpperCase;
+import dk.brics.string.stringoperations.Trim;
 import dk.brics.string.stringoperations.UnaryOperation;
 
 /*
@@ -137,7 +176,31 @@ public class AutomataUtil {
         public static final RE epsilon = new RE(ReOp.EPSILON);
         /** The empty language. **/
         public static final RE empty = new RE(ReOp.EMPTY);
+        
+        public RE anyString() {
+            RE res = mkRange('\u0000','\uffff');
+            res =  res.star();
+            res.meta = "<any string>";
+            return res;
+        }
+        
+        
+        public boolean isAnyString() {
+            return "<any string>".equals(meta);
+        }
 
+        public boolean isLiteral() {
+            return (op == ReOp.STRING);
+        }
+        
+        public boolean isConcat() {
+            return (op == ReOp.CONCAT); 
+        }
+        
+        public boolean isUnion() {
+            return (op == ReOp.UNION); 
+        }
+        
         /** Constructor. **/
         public RE(ReOp argOp) {
             this.op = argOp;
@@ -149,6 +212,18 @@ public class AutomataUtil {
             alts = null;
             strOp = null;
             meta = null;
+        }
+
+        public RE(RE other) {
+            this.op = other.op;
+            this.low = other.low;
+            this.high = other.high;
+            this.lit = other.lit;
+            this.unaryArg = other.unaryArg;
+            this.alts = other.alts;
+            this.cats = other.cats;
+            this.strOp = other.strOp;
+            this.meta = other.meta;
         }
 
         /**
@@ -754,7 +829,12 @@ public class AutomataUtil {
 
                 case BINOP:
                 case UNOP:
-                    return interpretOp();
+                    res = new RE(this);
+                    res.cats = new LinkedList<RE>();
+                    for (RE arg : cats) {
+                        res.cats.add(arg.simplifyOps());
+                    }                    
+                    return res.interpretOp();
                 default:
                     return this;
             }
@@ -773,16 +853,106 @@ public class AutomataUtil {
          * @return
          */
         private RE interpretOp() {
-
             RE out = null;
-            if (strOp instanceof Substring2) {
-                out = substring2();
+            if (strOp instanceof AssertContainedInOther) {
+                out = assertContainedInOther();
+            } else if (strOp instanceof AssertContainsOther) {
+                out = assertContainsOther();
+            } else if (strOp instanceof AssertEmpty) {
+                out = assertEmpty();
+            } else if (strOp instanceof AssertEndsWith) {
+                out = assertEndsWith();
+            } else if (strOp instanceof AssertEquals) {
+                out = assertEquals();
+            } else if (strOp instanceof AssertHasLength) {
+                out = assertHasLength();
+            } else if (strOp instanceof AssertHasNotLength) {
+                out = assertHasNotLength();
+            } else if (strOp instanceof AssertInLanguage) {
+                out = assertInLanguage();
+            } else if (strOp instanceof AssertNotContainsOther) {
+                out = assertNotContainsOther();
+            } else if (strOp instanceof AssertNotEmpty) {
+                out = assertNotEmpty();
+            } else if (strOp instanceof AssertNotEquals) {
+                out = assertNotEquals();
+            } else if (strOp instanceof AssertPrefixOf) {
+                out = assertPrefixOf();
+            } else if (strOp instanceof AssertStartsWith) {
+                out = assertStartsWith();
+            } else if (strOp instanceof AssertSuffixOf) {
+                out = assertSuffixOf();
+            } else if (strOp instanceof BooleanToString) {
+                out = booleanToString();
+            } else if (strOp instanceof CharAt1) {
+                out = charAt1();
+            } else if (strOp instanceof CharAt2) {
+                out = charAt2();
+            } else if (strOp instanceof Contains) {
+                out = contains();
+            } else if (strOp instanceof Delete) {
+                out = delete();
+            } else if (strOp instanceof DeleteCharAt) {
+                out = deleteCharAt();
+            } else if (strOp instanceof Insert) {
+                out = insert();
+            } else if (strOp instanceof Postfix) {
+                out = postfix();
             } else if (strOp instanceof Postfix2) {
-                out = postfix2();
+                out = postfix2();                
+            } else if (strOp instanceof Prefix) {
+                out = prefix();
+            } else if (strOp instanceof Replace1) {
+                out = replace1();
+            } else if (strOp instanceof Replace2) {
+                out = replace2();
+            } else if (strOp instanceof Replace3) {
+                out = replace3();
+            } else if (strOp instanceof Replace4) {
+                out = replace4();
+            } else if (strOp instanceof Replace5) {
+                out = replace5();
+            } else if (strOp instanceof Replace6) {
+                out = replace6();
+            } else if (strOp instanceof Reverse) {
+                out = reverse();
+            } else if (strOp instanceof SetCharAt1) {
+                out = setCharAt2();
+            } else if (strOp instanceof SetCharAt2) {
+                out = setCharAt2();
+            } else if (strOp instanceof SetLength) {
+                out = setLength();
+            } else if (strOp instanceof Split) {
+                out = split();
+            } else if (strOp instanceof Substring) {
+                out = substring();
+            } else if (strOp instanceof Substring2) {
+                out = substring2();                
+            } else if (strOp instanceof ToLowerCase) {
+                out = toLowerCase();
+            } else if (strOp instanceof ToUpperCase) {
+                out = toUpperCase();
+            } else if (strOp instanceof Trim) {
+                out = trim();
+            } else if (strOp instanceof UnaryOperation) {
+                // Dummy
+            } else if (strOp instanceof BinaryOperation) {
+                // DUMMY
+            } else if (strOp instanceof Operation) {
+                // DUMMY
+            } 
+            
+            logger.debug(String.format("StringOperation: %s",strOp.getClass()));
+            int i = 0;
+            for (RE arg : cats) {
+                logger.debug(String.format("StringOperation Arg %s: %s", i, arg));
+                i++;
             }
-
             if (out != null) {
+                logger.debug(String.format("StringOperation simplified to %s", out));
                 return out;
+            } else {
+                logger.debug("StringOperation no simplification.");
             }
 
             List<RE> args = new LinkedList<RE>();
@@ -808,6 +978,317 @@ public class AutomataUtil {
         }
 
 
+
+        private RE assertEquals() {
+            RE arg1 = this.cats.get(0); // The inferred REGEX
+            RE arg2 = this.cats.get(1); // The constrained REGEX
+
+            
+            if (arg1.equals(epsilon) && ! arg2.equals(epsilon)) {
+                return empty;
+            }
+            
+            if (arg1.op == ReOp.STAR && arg2.equals(epsilon)) {
+                return epsilon;
+            }
+            
+            if (arg1.op == ReOp.STRING && arg2.op == ReOp.STRING) {
+                if (arg1.lit.equals(arg2.lit)) {
+                    return arg1;
+                } else {
+                    return empty;
+                }
+            }
+            
+            if (arg1.op == ReOp.UNION) {
+                RE acc = empty;
+                for (RE a : arg1.alts) {
+                    RE tmp = new RE(ReOp.BINOP);
+                    tmp.strOp = this.strOp;
+                    tmp.cats = new LinkedList<RE>();
+                    tmp.cats.add(a);
+                    tmp.cats.add(arg2);
+                    RE res = tmp.interpretOp();
+                    if (res == null) {
+                        return null;
+                    }   
+                    acc = acc.union(tmp.interpretOp());
+                }
+                return acc;
+            }
+            
+            if (arg1.isAnyString()) {
+                return arg2;
+            }
+                
+            return null;
+        }
+
+        private RE contains() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE charAt2() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE charAt1() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE booleanToString() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertInLanguage() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertHasNotLength() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertHasLength() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertEndsWith() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertContainsOther() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertContainedInOther() {
+            return null;
+        }
+
+        private RE assertEmpty() {
+            // FIXME:
+            // The op definition in JSA intersects the argument with the empty string, 
+            // which isn't the same thing, because if the argument does not 
+            // accept the empty string, then the empty language will be returned.
+            return RE.epsilon;
+        }
+
+        private RE assertSuffixOf() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertStartsWith() {
+            RE arg1 = this.cats.get(0); // The inferred REGEX
+            RE arg2 = this.cats.get(1); // The constrained REGEX
+
+
+            if (arg1.equals(empty)) {
+                return empty;
+            }
+            
+            if (arg2.equals(epsilon)) {
+                return arg1;
+            }
+            
+            if (arg1.equals(epsilon)) {
+                return empty;
+            }
+
+            if (arg1.isAnyString() && arg2.isLiteral()) {
+                return arg2.concat(anyString());
+            }
+            
+            if (arg1.op == ReOp.UNION) {
+                RE acc = empty;
+                for (RE a : arg1.alts) {
+                    RE tmp = new RE(ReOp.BINOP);
+                    tmp.strOp = this.strOp;
+                    tmp.cats = new LinkedList<RE>();
+                    tmp.cats.add(a);
+                    tmp.cats.add(arg2);
+                    RE res = tmp.interpretOp();
+                    if (res == null) {
+                        return null;
+                    }   
+                    acc = acc.union(tmp.interpretOp());
+                }
+                return acc;
+            }            
+            return null;
+        }
+
+        private RE assertPrefixOf() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertNotEquals() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertNotEmpty() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE assertNotContainsOther() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE delete() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE deleteCharAt() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE insert() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE postfix() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE prefix() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE replace1() {
+            char c = ((Replace1)strOp).getC();
+            char d =  ((Replace1)strOp).getD();
+            // TODO Auto-generated method stub
+            RE arg1 = cats.get(0);
+            if (arg1.equals(empty)) {
+                return empty;
+            }
+            
+            if (arg1.equals(epsilon)) {
+                return epsilon;
+            }
+            
+            if (arg1.isLiteral()) {
+                RE ret = new RE(this);
+                ret.lit = this.lit.replace(c, d);
+            }
+            
+            if (arg1.isConcat()) {
+                RE ret = epsilon;
+                for (RE a : arg1.cats){
+                    RE tmp = new RE(this);
+                    tmp.cats = new LinkedList<RE>();
+                    tmp.cats.add(a);
+                    RE r = tmp.interpretOp();
+                    if (r == null) {
+                        return null;
+                    }
+                    ret = ret.concat(r);
+                }
+                return ret;
+
+            }
+            
+            if (arg1.isUnion()) {
+                RE ret = empty;
+                for (RE a : arg1.alts){
+                    RE tmp = new RE(this);
+                    tmp.cats = new LinkedList<RE>();
+                    tmp.cats.add(a);
+                    RE r = tmp.interpretOp();
+                    if (r == null) {
+                        return null;
+                    }
+                    ret = ret.union(r);
+                }
+                return ret;
+
+            }
+            
+            
+            return null;
+        }
+
+        private RE replace2() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE replace3() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE replace5() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE replace4() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE replace6() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE reverse() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE setCharAt2() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE setLength() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE split() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE substring() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE toLowerCase() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE toUpperCase() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        private RE trim() {
+            // TODO Auto-generated method stub
+            return null;
+        }
 
         /**
          * Take the tail of a regular expression.
