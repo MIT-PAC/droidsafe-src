@@ -16,9 +16,10 @@ import java.util.regex.Pattern;
 
 import libcore.util.EmptyArray;
 
-
-
-
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class String implements Serializable, Comparable<String>, CharSequence {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.792 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
@@ -1930,7 +1931,6 @@ String var354324DED16A0B9E2EC7A1041A7B3943_1600767136 =         new String(start
         return Float.toString(value);
     }
 
-    
     @DSModeled(DSC.SAFE)
     public static String valueOf(int value) {
         return Integer.toString(value);
@@ -2307,6 +2307,5 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_1649835730 =         substring(
             ASCII[i] = (char) i;
         }
     }
-    
 }
 
