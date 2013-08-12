@@ -87,6 +87,7 @@ public abstract class Buffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.212 -0400", hash_original_method = "E27C706F4FA27A5F90FA0BA455FA267B", hash_generated_method = "EE36C7161684EC3EAC8880B933ABB948")
      void checkIndex(int index, int sizeOfType) {
         addTaint(sizeOfType);

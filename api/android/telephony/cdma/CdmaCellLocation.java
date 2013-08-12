@@ -26,6 +26,7 @@ public class CdmaCellLocation extends CellLocation {
 
     private int mNetworkId = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.234 -0400", hash_original_method = "5C896DC446B6DB5EAC37BD66E663CEA5", hash_generated_method = "A6B4E6684301834C9B993D832B63288A")
     public  CdmaCellLocation() {
         this.mBaseStationId = -1;
@@ -176,6 +177,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.244 -0400", hash_original_method = "38D738FF275D66A3A0FE767FC9AC4FB9", hash_generated_method = "BE79CD797BBB3707697564FA536CDC21")
     @Override
     public boolean equals(Object o) {
@@ -224,6 +226,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.244 -0400", hash_original_method = "3AD4832D3A3F9EB2D9CB5CAE1051FD90", hash_generated_method = "FA25BDEC7ACE64D5ACD6716BD1AC74C3")
     @Override
     public String toString() {

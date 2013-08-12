@@ -197,6 +197,7 @@ public class ResultReceiver implements Parcelable {
 
     public static final Parcelable.Creator<ResultReceiver> CREATOR
             = new Parcelable.Creator<ResultReceiver>() {
+        @DSModeled(DSC.SAFE)
         public ResultReceiver createFromParcel(Parcel in) {
             return new ResultReceiver(in);
         }

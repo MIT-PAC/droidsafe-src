@@ -41,6 +41,7 @@ public class JarUtils {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Certificate[] verifySignature(InputStream signature, InputStream
             signatureBlock) throws IOException, GeneralSecurityException {
         BerInputStream bis = new BerInputStream(signatureBlock);

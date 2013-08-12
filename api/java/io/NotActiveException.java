@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class NotActiveException extends ObjectStreamException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.150 -0400", hash_original_method = "04F1D3389F0C6F41AEA2935866CA7222", hash_generated_method = "071F1807AA26DA7AB825233FA3566BF3")
     public  NotActiveException() {
         // ---------- Original Method ----------

@@ -15,6 +15,7 @@ public class BERApplicationSpecificParser implements ASN1ApplicationSpecificPars
 
     private ASN1StreamParser parser;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.907 -0400", hash_original_method = "E0609A70F39E6E6F4E13B827D68F5B4C", hash_generated_method = "1CDD23288A33C70CA68843FF735DD782")
       BERApplicationSpecificParser(int tag, ASN1StreamParser parser) {
         this.tag = tag;
@@ -25,6 +26,7 @@ public class BERApplicationSpecificParser implements ASN1ApplicationSpecificPars
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.908 -0400", hash_original_method = "FC19FBA5450B1E3458DF66BAD498F5C7", hash_generated_method = "44BE4CC0A7DE22EC96AFE206026D3BCD")
     public DEREncodable readObject() throws IOException {
 DEREncodable var09F4702C04B163043983FE2F5378920C_988842123 =         parser.readObject();
@@ -35,6 +37,7 @@ DEREncodable var09F4702C04B163043983FE2F5378920C_988842123 =         parser.read
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.908 -0400", hash_original_method = "B2A8CB4DD75EA6F990011FAB1A0E301F", hash_generated_method = "8766793ED3D5D71BD05548C737BE0CC1")
     public DERObject getLoadedObject() throws IOException {
 DERObject var49C379AB737313FF79147B13CD4AA097_648277679 =         new BERApplicationSpecific(tag, parser.readVector());
@@ -45,6 +48,7 @@ DERObject var49C379AB737313FF79147B13CD4AA097_648277679 =         new BERApplica
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.909 -0400", hash_original_method = "C25B7E6814F316F8AC8F55D830DF862A", hash_generated_method = "DA3E7B6F468DB5F43FA6B7650BDE03AD")
     public DERObject getDERObject() {
         try 

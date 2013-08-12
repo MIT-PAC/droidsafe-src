@@ -13,6 +13,7 @@ public class AuthenticatorException extends AccountsException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.554 -0400", hash_original_method = "46A5D5B214F277AEF0AE05BAEC539569", hash_generated_method = "509877330CE652CF7DE3DFCCB23C34E2")
     public  AuthenticatorException(String message) {
         super(message);

@@ -56,13 +56,13 @@ public class AnimationUtils {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
             AnimationSet parent, AttributeSet attrs) throws XmlPullParserException, IOException {
         Animation anim = null;
@@ -96,7 +96,7 @@ public class AnimationUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
@@ -118,7 +118,7 @@ public class AnimationUtils {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser) throws XmlPullParserException, IOException {
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
@@ -209,7 +209,7 @@ public class AnimationUtils {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         Interpolator interpolator = null;
         int type;

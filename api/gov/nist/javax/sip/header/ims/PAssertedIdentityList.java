@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PAssertedIdentityList extends SIPHeaderList<PAssertedIdentity> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.051 -0400", hash_original_method = "7B547E5D989DEE32A91F605E4D8F2A3B", hash_generated_method = "73CBFC9BA880055E577FD55BB3BE4139")
     public  PAssertedIdentityList() {
         super(PAssertedIdentity.class, PAssertedIdentityHeader.NAME);
@@ -15,6 +16,7 @@ public class PAssertedIdentityList extends SIPHeaderList<PAssertedIdentity> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.057 -0400", hash_original_method = "5563A5DB4245DEBD4AD09019D9E2D95D", hash_generated_method = "FEDC02B5C4874F717829704DAFDDAF05")
     public Object clone() {
         PAssertedIdentityList retval = new PAssertedIdentityList();

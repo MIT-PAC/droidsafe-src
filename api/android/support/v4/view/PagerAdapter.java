@@ -28,6 +28,7 @@ public abstract class PagerAdapter {
     public abstract int getCount();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.318 -0400", hash_original_method = "DCAE5C6F617B7B7CD0D6B0A4179A4B48", hash_generated_method = "84BE4AD075128A51B7363B05F79871FF")
     public void startUpdate(ViewGroup container) {
         addTaint(container.getTaint());
@@ -37,6 +38,7 @@ public abstract class PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.318 -0400", hash_original_method = "118A1191E1E4E1B1DC4CA223C52ECD6D", hash_generated_method = "B35C38DD30FAFBD3C4AC3C1E8BF937F7")
     public Object instantiateItem(ViewGroup container, int position) {
         addTaint(position);
@@ -49,6 +51,7 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1868528150 =         instantiateItem(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.319 -0400", hash_original_method = "81B6B479C89D1904C5A685A128836D6A", hash_generated_method = "B252D9F05A3D203859A562150AAF0134")
     public void destroyItem(ViewGroup container, int position, Object object) {
         addTaint(object.getTaint());
@@ -60,6 +63,7 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1868528150 =         instantiateItem(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.319 -0400", hash_original_method = "C728F6B9404F59904D353F9FF4128613", hash_generated_method = "60FBABCB3A4D8FC55639824D85715593")
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
         addTaint(object.getTaint());
@@ -71,6 +75,7 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1868528150 =         instantiateItem(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.319 -0400", hash_original_method = "D14DC4EE203F14C8F1345C8D2F18FF46", hash_generated_method = "B0F663EFA60BB3B909732E1EE258681A")
     public void finishUpdate(ViewGroup container) {
         addTaint(container.getTaint());
@@ -169,6 +174,7 @@ Parcelable var540C13E9E156B687226421B24F2DF178_606799600 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.322 -0400", hash_original_method = "8C7965DA0630180F14A7491670F343AF", hash_generated_method = "447E40668AD17723D01B3684710E1A4F")
     public void notifyDataSetChanged() {
         mObservable.notifyChanged();
@@ -177,6 +183,7 @@ Parcelable var540C13E9E156B687226421B24F2DF178_606799600 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.323 -0400", hash_original_method = "F0925616C6F47A4BCFCB9E7C14C25F57", hash_generated_method = "360ED7DC7F9F06557A86FF83CFD3E0DA")
      void registerDataSetObserver(DataSetObserver observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -187,6 +194,7 @@ Parcelable var540C13E9E156B687226421B24F2DF178_606799600 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.323 -0400", hash_original_method = "F847CF5B5DF735E7D60F86704B1D73CD", hash_generated_method = "2D4026184382555EDF54EBEA3C9E984E")
      void unregisterDataSetObserver(DataSetObserver observer) {
         addTaint(observer.getTaint());

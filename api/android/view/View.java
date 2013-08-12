@@ -506,7 +506,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public void setOnClickListener(OnClickListener l){
 		l.onClick(this);
 		// Original method
@@ -4396,6 +4396,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean post(Runnable action){
 		// Original method
 		/*
@@ -4443,6 +4444,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean removeCallbacks(Runnable action){
 		// Original method
 		/*
@@ -4578,6 +4580,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setHorizontalFadingEdgeEnabled(boolean horizontalFadingEdgeEnabled){
 		// Original method
 		/*
@@ -5910,6 +5913,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int[] getDrawableState(){
 		// Original method
 		/*
@@ -6211,6 +6215,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ViewTreeObserver getViewTreeObserver(){
 		return mFloatingTreeObserver;
 		// Original method
@@ -6612,6 +6617,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void requestLayout(){
 		// Original method
 		/*
@@ -7270,6 +7276,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getResolvedTextDirection(){
 		// Original method
 		/*
@@ -7287,6 +7294,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.BAN)
     protected void resolveTextDirection(){
 		// Original method
 		/*

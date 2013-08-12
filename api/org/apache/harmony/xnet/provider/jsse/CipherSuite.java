@@ -253,6 +253,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CipherSuite getByCode(byte b1, byte b2, byte b3) {
         int i1 = b1 & 0xff;
         int i2 = b2 & 0xff;
@@ -419,6 +420,7 @@ String var532B354B099E2E3FA7C4A781CD40B9A2_677365674 =         hashName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.094 -0400", hash_original_method = "936867E36B0EB6E36D3CC4941D208DF5", hash_generated_method = "0952BFACCFE5394D204017586606804E")
     public String getServerKeyType() {
 switch(keyExchange){
@@ -483,6 +485,7 @@ String var540C13E9E156B687226421B24F2DF178_862161372 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.094 -0400", hash_original_method = "0C964AFB9ED36BE0A1810A2A5E5F4637", hash_generated_method = "EFCAA31503A5F74F1071C5D17D8877E2")
     public String getAuthType(boolean emphemeral) {
         addTaint(emphemeral);

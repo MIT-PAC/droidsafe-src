@@ -23,6 +23,7 @@ public class IccUtils {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String bcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length*2);
         for (int i = offset ; i < offset + length ; i++) {
@@ -85,6 +86,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String adnStringFieldToString(byte[] data, int offset, int length) {
         if (length == 0) {
             return "";
@@ -155,6 +157,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int hexCharToInt(char c) {
         if (c >= '0' && c <= '9') return (c - '0');
         if (c >= 'A' && c <= 'F') return (c - 'A' + 10);
@@ -192,6 +195,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String networkNameToString(byte[] data, int offset, int length) {
         String ret;
         if ((data[offset] & 0x80) != 0x80 || length < 1) {
@@ -223,6 +227,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToBnW(byte[] data, int length) {
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
@@ -257,6 +262,7 @@ public class IccUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToRGB(byte[] data, int length,
             boolean transparency) {
         int valueIndex = 0;

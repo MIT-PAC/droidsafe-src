@@ -67,6 +67,7 @@ public class SslNetworkLayer implements NetworkLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.816 -0400", hash_original_method = "39DE8B0183FF9C9623367868EEA6CEAD", hash_generated_method = "073FB6BF4DAD9C2D5A0C3F1627CB14B4")
     public ServerSocket createServerSocket(int port, int backlog,
             InetAddress bindAddress) throws IOException {

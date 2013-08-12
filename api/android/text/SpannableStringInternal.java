@@ -308,6 +308,7 @@ for(int i = count - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.792 -0400", hash_original_method = "A79E5C3938B902091EA5DB757C342E2D", hash_generated_method = "8B11A1D83B40723E850120BF22A1B3F9")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
         addTaint(kind.getTaint());

@@ -21,6 +21,7 @@ public class SSLBufferedInput extends SSLInputStream {
 
     private int consumed = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.059 -0400", hash_original_method = "0FA622847329CF4AC911569EF96C37AF", hash_generated_method = "207C02C0F42AD27E2901C37C4EA4E064")
     protected  SSLBufferedInput() {
         // ---------- Original Method ----------
@@ -38,6 +39,7 @@ public class SSLBufferedInput extends SSLInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.060 -0400", hash_original_method = "BB38BB904E493CEE8626853626B4B1AC", hash_generated_method = "7D9FCE9AAD712BC558D44A1DF015C60A")
     @Override
     public int available() throws IOException {
@@ -60,6 +62,7 @@ public class SSLBufferedInput extends SSLInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.061 -0400", hash_original_method = "575079C176E4EB6FD7A12CD67A6942A7", hash_generated_method = "09801FFCB68C87278C5E50367F4B7153")
     @Override
     public int read() throws IOException {

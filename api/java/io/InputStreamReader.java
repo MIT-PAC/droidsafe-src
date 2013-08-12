@@ -79,6 +79,7 @@ public class InputStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.112 -0400", hash_original_method = "A7068E06FC6AB9497581BF79FF6884E3", hash_generated_method = "B08D041F736141AFFE6AB91E312D04A3")
     public  InputStreamReader(InputStream in, CharsetDecoder dec) {
         super(in);
@@ -112,7 +113,7 @@ public class InputStreamReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.113 -0400", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "FD7FB0415BB06C755E2B8C451E4BC414")
     @Override
     public void close() throws IOException {
@@ -143,6 +144,7 @@ public class InputStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.113 -0400", hash_original_method = "4B46B0B3D8C39E950459FB803D7FD65D", hash_generated_method = "DBC8D67D124E424ABBC3028B403BDB5F")
     public String getEncoding() {
         if(!isOpen())        
@@ -162,6 +164,7 @@ String var0CAEB9C5EE04F06514583664597031A5_2023730002 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.114 -0400", hash_original_method = "42220754D208F7633D722D928E4FD163", hash_generated_method = "17B33CF98F9F83760EEDEA554DD1EA50")
     @Override
     public int read() throws IOException {
@@ -189,7 +192,7 @@ String var0CAEB9C5EE04F06514583664597031A5_2023730002 =         HistoricalCharse
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.116 -0400", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "033061A0E1CAFDD8A4CC48A23C72B74C")
     @Override
     public int read(char[] buffer, int offset, int length) throws IOException {
@@ -291,6 +294,7 @@ String var0CAEB9C5EE04F06514583664597031A5_2023730002 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.117 -0400", hash_original_method = "281B3CA6768822BAE894DB2D1EB23921", hash_generated_method = "2866075CC198AD6B58727C357BA8979D")
     @Override
     public boolean ready() throws IOException {

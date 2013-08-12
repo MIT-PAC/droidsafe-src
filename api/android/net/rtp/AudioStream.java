@@ -21,6 +21,7 @@ public class AudioStream extends RtpStream {
 
     private AudioGroup mGroup;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.028 -0400", hash_original_method = "409408EC0859D4060DA7CEF5328B7220", hash_generated_method = "6D79D768C8F6FE3D78AE99145267A775")
     public  AudioStream(InetAddress address) throws SocketException {
         super(address);
@@ -52,6 +53,7 @@ AudioGroup var8FC275F44636F88FF4B87724812634C3_1694241955 =         mGroup;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.029 -0400", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "854D05190E7FE6F03C059E08515C79A6")
     public void join(AudioGroup group) {
         synchronized
@@ -99,6 +101,7 @@ AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_1485196859 =         mCodec;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.030 -0400", hash_original_method = "E0A36AFBD97A7B298B1941948E16CA1A", hash_generated_method = "69D66076D8D3B2BCC1BED98CA5C993BE")
     public void setCodec(AudioCodec codec) {
         if(isBusy())        
@@ -136,6 +139,7 @@ AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_1485196859 =         mCodec;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.031 -0400", hash_original_method = "08CFB9D3491C3CF797064DF404EB556C", hash_generated_method = "4F25C1F0B765B847FA9DFE5E4D7DD1D4")
     public void setDtmfType(int type) {
         if(isBusy())        

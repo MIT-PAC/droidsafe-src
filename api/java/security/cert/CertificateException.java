@@ -9,6 +9,7 @@ import java.security.GeneralSecurityException;
 
 public class CertificateException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.722 -0400", hash_original_method = "B94F5C9247EB09D2A3B5F93CD6C3CCDF", hash_generated_method = "CA8DC42717F9257D4E33DE097DDBCEB4")
     public  CertificateException(String msg) {
         super(msg);
@@ -17,6 +18,7 @@ public class CertificateException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.722 -0400", hash_original_method = "FF458EF7F95F357456B3AFD0871B002E", hash_generated_method = "A2AF1A669908D746BA2B02B73E8AC2C3")
     public  CertificateException() {
         // ---------- Original Method ----------

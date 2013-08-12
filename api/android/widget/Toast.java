@@ -183,7 +183,7 @@ public class Toast {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static private INotificationManager getService() {
         if (sService != null) {
             return sService;
@@ -197,6 +197,7 @@ public class Toast {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_field = "61DCBB3696F6FA4BE5725088AFF4EB28", hash_generated_field = "6AF3C3B4B49A59D6013EE9E0CE06975A")
 
         final Runnable mShow = new Runnable() {            
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_method = "44EABCAA91D08F4C06482A1ED1EE7668", hash_generated_method = "C9938375C8B8C21D868647BA643A9E49")
             public void run() {
                 handleShow();
@@ -209,6 +210,7 @@ public class Toast {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_field = "4A991A7F26DC9B6186AFC4C4EB669FA3", hash_generated_field = "4A646C9F9E760360BE93A3CC889065DC")
 
         final Runnable mHide = new Runnable() {            
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_method = "E71A75E071185259CF3C7ACA95EB5B7E", hash_generated_method = "49C08F8FDD2E9C240F65F014A25A620F")
             public void run() {
                 handleHide();
@@ -332,7 +334,7 @@ public class Toast {
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.959 -0400", hash_original_method = "D907D354027470BBEF302644D06948FD", hash_generated_method = "77A17536CC0EA3BEEAF27FC774321779")
         private void trySendAccessibilityEvent() {
             AccessibilityManager accessibilityManager = AccessibilityManager.getInstance(mView.getContext());

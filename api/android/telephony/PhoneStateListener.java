@@ -183,6 +183,7 @@ public class PhoneStateListener {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "20EF8DCC516BA3C0FC2B58EA0CC3EA6E", hash_generated_method = "D7C1BF839242BC9415BC61355D4D609D")
     public  PhoneStateListener() {
         // ---------- Original Method ----------

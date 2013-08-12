@@ -19,6 +19,7 @@ public class BasicLineParser implements LineParser {
 
     protected ProtocolVersion protocol;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.979 -0400", hash_original_method = "7165DC7A4A8D5E7DFBA683C58AA682D9", hash_generated_method = "D54893D8C2619A0C5763718124450DF6")
     public  BasicLineParser(ProtocolVersion proto) {
         if(proto == null)        
@@ -34,6 +35,7 @@ public class BasicLineParser implements LineParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.980 -0400", hash_original_method = "214300EBA90AB0F87C7DC4ACF56AF3C7", hash_generated_method = "E1AC9D5EDA5F536927594BFCD2962534")
     public  BasicLineParser() {
         this(null);
@@ -41,6 +43,7 @@ public class BasicLineParser implements LineParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static ProtocolVersion parseProtocolVersion(String value,
                                              LineParser parser) throws ParseException {
         if (value == null) {
@@ -443,6 +446,7 @@ StatusLine var7EDDFAD7D61BF3995B3F3AC2FA08033B_1513332169 =         new BasicSta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.989 -0400", hash_original_method = "96877585E3C205FD7438BA36DB87A742", hash_generated_method = "9B7772FC8FE21B8C286408673C74D82F")
     public Header parseHeader(CharArrayBuffer buffer) throws ParseException {
         addTaint(buffer.getTaint());

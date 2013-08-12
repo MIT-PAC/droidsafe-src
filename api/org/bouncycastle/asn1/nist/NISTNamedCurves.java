@@ -23,12 +23,14 @@ public class NISTNamedCurves {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static void defineCurve(String name, DERObjectIdentifier oid) {
         objIds.put(name, oid);
         names.put(oid, name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X9ECParameters getByName(
         String  name) {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toUpperCase(name));
@@ -40,24 +42,28 @@ public class NISTNamedCurves {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X9ECParameters getByOID(
         DERObjectIdentifier  oid) {
         return SECNamedCurves.getByOID(oid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERObjectIdentifier getOID(
         String  name) {
         return (DERObjectIdentifier)objIds.get(Strings.toUpperCase(name));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getName(
         DERObjectIdentifier  oid) {
         return (String)names.get(oid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Enumeration getNames() {
         return objIds.keys();
     }

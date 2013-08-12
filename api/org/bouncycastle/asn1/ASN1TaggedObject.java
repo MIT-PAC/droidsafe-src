@@ -23,6 +23,7 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
 
     DEREncodable obj = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.884 -0400", hash_original_method = "00E51A508FDFE6A586E84CD8A518A30A", hash_generated_method = "DA23F9717F5F756F2361C3E8C1AED031")
     public  ASN1TaggedObject(
         int             tagNo,
@@ -156,6 +157,7 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.889 -0400", hash_original_method = "996889D0C05CC309872B8EE7FF5C4369", hash_generated_method = "D1AE21C6672586BC965EEC7913385B16")
     public int hashCode() {
         int code = tagNo;
@@ -209,6 +211,7 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.890 -0400", hash_original_method = "71996C10B1D68BDB26DD531066806FCB", hash_generated_method = "2D996148AC565275F2DFD9BC6C078261")
     public DERObject getObject() {
         if(obj != null)        
@@ -229,6 +232,7 @@ DERObject var540C13E9E156B687226421B24F2DF178_651167278 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.891 -0400", hash_original_method = "45814A62D9590995EE34A14DC507BC36", hash_generated_method = "A6E2DF0D72CE68306E84DEDA9757147D")
     public DEREncodable getObjectParser(
         int     tag,

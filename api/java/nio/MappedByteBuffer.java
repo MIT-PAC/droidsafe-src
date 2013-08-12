@@ -40,6 +40,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.316 -0400", hash_original_method = "638BC1993DAD17C2741F99B13CBD8BD7", hash_generated_method = "2ABBBCDBFD55D1960409517B4B6C481D")
       MappedByteBuffer(MemoryBlock block, int capacity, int offset, MapMode mapMode) {
         super(capacity, block);
@@ -62,6 +63,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.318 -0400", hash_original_method = "C9D4A4A6949ED0E6DB022AC73D44B615", hash_generated_method = "9DB5031F1299CF692EF15210F5DE388A")
     public final boolean isLoaded() {
         long address = block.toInt();
@@ -126,6 +128,7 @@ for(int i = 0;i < vector.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.319 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "415E34B3562F1E93945823A4E132068D")
     public final MappedByteBuffer load() {
         try 
@@ -149,6 +152,7 @@ MappedByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1289862813 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.320 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "C9ADEFD191F490BC4B3E10D51B57CB8A")
     public final MappedByteBuffer force() {
         if(mapMode == MapMode.READ_WRITE)        

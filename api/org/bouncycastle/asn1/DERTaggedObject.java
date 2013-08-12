@@ -11,6 +11,7 @@ import java.io.IOException;
 
 public class DERTaggedObject extends ASN1TaggedObject {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.585 -0400", hash_original_method = "B8C39F3F8493AE66929508E836F6CEF7", hash_generated_method = "2DE9FE1746D2B15EB2F0349CD8D253B8")
     public  DERTaggedObject(
         int             tagNo,
@@ -22,6 +23,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.585 -0400", hash_original_method = "D15475FEA6616F6A5D6AAE500D0E135A", hash_generated_method = "6CD5A4316BA3B876E55EC2BC08CDDB0E")
     public  DERTaggedObject(
         boolean         explicit,
@@ -45,6 +47,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.587 -0400", hash_original_method = "B5277AF27C85DE4A4669302802507303", hash_generated_method = "B8293AB8DFF12CDDDCC20BEA7E098EE6")
      void encode(
         DEROutputStream  out) throws IOException {

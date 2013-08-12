@@ -15,6 +15,7 @@ public final class PasswordAuthentication {
 
     private char[] password;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.956 -0400", hash_original_method = "5D7214C35F0B8EFCD4776395D10A0F27", hash_generated_method = "25328EA123D9D2C607C2E93AA009C49C")
     public  PasswordAuthentication(String userName, char[] password) {
         this.userName = userName;
@@ -25,6 +26,7 @@ public final class PasswordAuthentication {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.957 -0400", hash_original_method = "79A6CAB64FA4B390A39CA60FAD9B839D", hash_generated_method = "6D5548BA0F2ED4F0AC0DE5E4D0C2AE2B")
     public char[] getPassword() {
         char[] var4344A63B108F14EA871CFA63D8482D53_1055639413 = (password.clone());

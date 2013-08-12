@@ -46,6 +46,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.605 -0400", hash_original_method = "02C18CFA06711D9F4F613D5380036A37", hash_generated_method = "909BFE9476639352818418B9719A67A7")
     public  NameValue(String n, Object v, boolean isFlag) {
         name = n;
@@ -143,6 +144,7 @@ Object var51674C9B3053ECEEFFA7BB6C9E2F189C_554351654 =         isFlagParameter ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.612 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "2C52D7024420C2FBE514DF59E2D21D2B")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_2114848630 =         encode(new StringBuffer()).toString();
@@ -153,6 +155,7 @@ String var678B6FE61D54E5BD4E109D01C318C133_2114848630 =         encode(new Strin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.613 -0400", hash_original_method = "8C352692671CA7B4091AFB32E24F1EAA", hash_generated_method = "A2326B0C3CDD6B968B7671E4F04EC996")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());

@@ -22,6 +22,7 @@ public abstract class SocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized SocketFactory getDefault() {
         if (defaultFactory == null) {
             defaultFactory = new DefaultSocketFactory();
@@ -41,21 +42,21 @@ public abstract class SocketFactory {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Socket createSocket(String host, int port) throws IOException,
             UnknownHostException;
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Socket createSocket(String host, int port, InetAddress localHost, int localPort)
             throws IOException, UnknownHostException;
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Socket createSocket(InetAddress host, int port) throws IOException;
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Socket createSocket(InetAddress address, int port, InetAddress localAddress,
             int localPort) throws IOException;
 

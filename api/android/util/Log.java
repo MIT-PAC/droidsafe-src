@@ -23,6 +23,7 @@ public final class Log {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int v(String tag, String msg) {
         return println_native(LOG_ID_MAIN, VERBOSE, tag, msg);
     }
@@ -152,7 +153,7 @@ public final class Log {
     
     private static class TerribleFailure extends Exception {
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "D4E9593549451B34CCC4854683CBFDE8")
           TerribleFailure(String msg, Throwable cause) {
             super(msg, cause);

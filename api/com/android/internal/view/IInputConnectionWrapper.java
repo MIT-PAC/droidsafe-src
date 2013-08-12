@@ -30,6 +30,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
 
     private Handler mH;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.172 -0400", hash_original_method = "9A20FF15705420E23492BF55DF80DCC1", hash_generated_method = "C3D67277BD877481EBAF63AB4875E775")
     public  IInputConnectionWrapper(Looper mainLooper, InputConnection conn) {
         mInputConnection = new WeakReference<InputConnection>(conn);
@@ -53,6 +54,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.173 -0400", hash_original_method = "BDB79A31B9E7C568F9DA8424F1B2AA88", hash_generated_method = "78EB4A534EB968D823C160C616BCA7BF")
     public void getTextAfterCursor(int length, int flags, int seq, IInputContextCallback callback) {
         addTaint(callback.getTaint());
@@ -65,6 +67,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.174 -0400", hash_original_method = "83476DD996D24314F0D36073D788F8EE", hash_generated_method = "EE0D0BC89C6F9D49F173E0C0250099B5")
     public void getTextBeforeCursor(int length, int flags, int seq, IInputContextCallback callback) {
         addTaint(callback.getTaint());
@@ -77,6 +80,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.174 -0400", hash_original_method = "A721A8133D2DE1034FAEB50C8FE4FD06", hash_generated_method = "402592352EE2E6E8EFB27E622FE2C81C")
     public void getSelectedText(int flags, int seq, IInputContextCallback callback) {
         addTaint(callback.getTaint());
@@ -88,6 +92,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.174 -0400", hash_original_method = "C43DF3E6E3EDAF8991B1451D7C0930B2", hash_generated_method = "D6A5BB3B9FE1A2889D941C57F4D3B8EC")
     public void getCursorCapsMode(int reqModes, int seq, IInputContextCallback callback) {
         addTaint(callback.getTaint());
@@ -99,6 +104,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.175 -0400", hash_original_method = "68CBA214FC59FA44F08B8B86723A4DD0", hash_generated_method = "9ADBC51226181C0443ED689576884E77")
     public void getExtractedText(ExtractedTextRequest request,
             int flags, int seq, IInputContextCallback callback) {
@@ -114,6 +120,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.175 -0400", hash_original_method = "894E006D9CEB98BFF63F2F46F25BC243", hash_generated_method = "ADB8BEBDF346B60B0A687F6BF1501DA1")
     public void commitText(CharSequence text, int newCursorPosition) {
         addTaint(newCursorPosition);
@@ -124,6 +131,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.175 -0400", hash_original_method = "CBF7B83C8E625835F649B99623E30868", hash_generated_method = "6F6D3F8E824EF04F7F91C9ADCAE8AE33")
     public void commitCompletion(CompletionInfo text) {
         addTaint(text.getTaint());
@@ -133,6 +141,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.176 -0400", hash_original_method = "8124D711A8307E610C5DEF0F89DBA666", hash_generated_method = "0D6093C11C9F839F8124EAB3E4BD4877")
     public void commitCorrection(CorrectionInfo info) {
         addTaint(info.getTaint());
@@ -142,6 +151,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.176 -0400", hash_original_method = "E49BA2D7A7A069DD200E49150DD829D6", hash_generated_method = "F3FED3C6E819F89F7779A5CA238E1136")
     public void setSelection(int start, int end) {
         addTaint(end);
@@ -152,6 +162,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.176 -0400", hash_original_method = "21817A9A1C101F9FB118DF43CE4E5A0E", hash_generated_method = "635FD31BE0F520FCBE594DD883A46746")
     public void performEditorAction(int id) {
         addTaint(id);
@@ -161,6 +172,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.176 -0400", hash_original_method = "053D329299E415D96D47FCFD70FD4878", hash_generated_method = "FD2E0620F5C1F6B5199AE31537A0E16A")
     public void performContextMenuAction(int id) {
         addTaint(id);
@@ -170,6 +182,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.177 -0400", hash_original_method = "D0BDE81E935635A3C1E1A2527338BB18", hash_generated_method = "5562A809BECCB541BD8D11FF1FE54CBA")
     public void setComposingRegion(int start, int end) {
         addTaint(end);
@@ -180,6 +193,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.177 -0400", hash_original_method = "FC274EF8C2FF034547500DAA5F2951F1", hash_generated_method = "4F707EC70BE0E8B09C726F8675E0E454")
     public void setComposingText(CharSequence text, int newCursorPosition) {
         addTaint(newCursorPosition);
@@ -190,6 +204,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.177 -0400", hash_original_method = "6F02D8053ECF48E238847A2FABA8F899", hash_generated_method = "0EA1C6FF08BDC7474C1F768E99AC789D")
     public void finishComposingText() {
         dispatchMessage(obtainMessage(DO_FINISH_COMPOSING_TEXT));
@@ -198,6 +213,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.177 -0400", hash_original_method = "60A7447AAE4F39255FF17C7443EAC7D8", hash_generated_method = "5CC57DDB3768D3025E96C6C50E220E34")
     public void sendKeyEvent(KeyEvent event) {
         addTaint(event.getTaint());
@@ -207,6 +223,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.177 -0400", hash_original_method = "CDF50C376207E59459DF05B9EB51603A", hash_generated_method = "9CAD595DA93EBD521E468DD65AA910A7")
     public void clearMetaKeyStates(int states) {
         addTaint(states);
@@ -216,6 +233,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.178 -0400", hash_original_method = "2E4F7757D66A73FD9325207AD0D4F280", hash_generated_method = "C5909086E54D39C0ED88B1C542D33166")
     public void deleteSurroundingText(int leftLength, int rightLength) {
         addTaint(rightLength);
@@ -228,6 +246,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.178 -0400", hash_original_method = "7A31F16907F3D96E10B72B79CABC1C1A", hash_generated_method = "ABE69A11FC08E9E6D9B71FEA871175F2")
     public void beginBatchEdit() {
         dispatchMessage(obtainMessage(DO_BEGIN_BATCH_EDIT));
@@ -236,6 +255,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.178 -0400", hash_original_method = "2DD80BF17B03574DE2AF6B49D0CD84C3", hash_generated_method = "A09066AF166CB53E5DD594379D99093E")
     public void endBatchEdit() {
         dispatchMessage(obtainMessage(DO_END_BATCH_EDIT));
@@ -244,6 +264,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.178 -0400", hash_original_method = "A19C601F9A82D2C4B88A8AB8DFBF0737", hash_generated_method = "A200ADC643B9A1C95E870A852290529A")
     public void reportFullscreenMode(boolean enabled) {
         addTaint(enabled);
@@ -253,6 +274,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.178 -0400", hash_original_method = "14DBCF261CA01A06A7ACE942F825CE65", hash_generated_method = "B9A521CCF16F0CF39F1393974428439A")
     public void performPrivateCommand(String action, Bundle data) {
         addTaint(data.getTaint());
@@ -552,6 +574,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.182 -0400", hash_original_method = "92301CED384526FAE2562FC8E2BD0E1D", hash_generated_method = "F179A7081084D234D1F7F595C4B7DEC8")
      Message obtainMessage(int what) {
         addTaint(what);
@@ -563,6 +586,7 @@ Message var0A074E99CF455DBBC1653B54C1535B52_1107171570 =         mH.obtainMessag
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.182 -0400", hash_original_method = "1D375F3B5B7A421102D544B0D8C99910", hash_generated_method = "DA2B1FD51AF8ADC51D69059DEABEB63C")
      Message obtainMessageII(int what, int arg1, int arg2) {
         addTaint(arg2);
@@ -576,6 +600,7 @@ Message var2005F2BFA3651910E62A138190D96BC6_1024203466 =         mH.obtainMessag
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.183 -0400", hash_original_method = "E41B1E1C050A3613D52D3D6F2431F5B0", hash_generated_method = "B7969944F791623D55D4B331233BA8F8")
      Message obtainMessageO(int what, Object arg1) {
         addTaint(arg1.getTaint());
@@ -588,6 +613,7 @@ Message var12CDD1AFE5E6600F8EC4A70E6284B925_771024121 =         mH.obtainMessage
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.183 -0400", hash_original_method = "C41806B53C46498944BCE998FEC907A1", hash_generated_method = "1B6DF75BC86A3CF71692904DCF79AD58")
      Message obtainMessageISC(int what, int arg1, int seq, IInputContextCallback callback) {
         addTaint(callback.getTaint());
@@ -608,6 +634,7 @@ Message varB613521389A33EC54F8F174F01C6658A_2006310365 =         mH.obtainMessag
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.183 -0400", hash_original_method = "81C8385506FF3623370F9C4C1A9DC229", hash_generated_method = "D7B1651F5BD7218F2DEDD2AFD5F1B3FE")
      Message obtainMessageIISC(int what, int arg1, int arg2, int seq, IInputContextCallback callback) {
         addTaint(callback.getTaint());
@@ -629,6 +656,7 @@ Message var77BF585217243532581F9F8C4041DDF0_678151286 =         mH.obtainMessage
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.183 -0400", hash_original_method = "F0BFCDA04898886ED0BDB255B10E7641", hash_generated_method = "82EDE2C6229286EA627E8DD1E2E115C7")
      Message obtainMessageIOSC(int what, int arg1, Object arg2, int seq,
             IInputContextCallback callback) {
@@ -653,6 +681,7 @@ Message varB613521389A33EC54F8F174F01C6658A_1848853297 =         mH.obtainMessag
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.183 -0400", hash_original_method = "BDB545C9895C4A044C116EE5375794DB", hash_generated_method = "3C32E8CBEADD06C75F587F48494DC41D")
      Message obtainMessageIO(int what, int arg1, Object arg2) {
         addTaint(arg2.getTaint());
@@ -666,6 +695,7 @@ Message var1EA5D3012D434458EE54B63DB011E658_1964259069 =         mH.obtainMessag
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.184 -0400", hash_original_method = "0CCDC84288D426642A6380F76E883191", hash_generated_method = "40514FB275C9D115C08996D9E8520A71")
      Message obtainMessageOO(int what, Object arg1, Object arg2) {
         addTaint(arg2.getTaint());
@@ -699,6 +729,7 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_1244528201 =         mH.obtainMessag
 
         int seq;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.184 -0400", hash_original_method = "C08D0E88500332C6E0DD16EFE525CF46", hash_generated_method = "C08D0E88500332C6E0DD16EFE525CF46")
         public SomeArgs ()
         {

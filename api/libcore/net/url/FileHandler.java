@@ -14,6 +14,7 @@ import java.net.URLStreamHandler;
 
 public class FileHandler extends URLStreamHandler {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.158 -0400", hash_original_method = "6784E94C0D30F3330B20FF566B070BF0", hash_generated_method = "6784E94C0D30F3330B20FF566B070BF0")
     public FileHandler ()
     {

@@ -123,7 +123,8 @@ public final class NativeConverter {
     @DSModeled(DSC.SAFE)
     public static Charset charsetForName(String charsetName) {
     	return new Charset(charsetName, null) {
-			@Override
+			@DSModeled(DSC.SAFE)
+        @Override
 			public CharsetEncoder newEncoder() {
 				return new CharsetEncoder(this, 0, 0) {
 					@Override
@@ -154,7 +155,8 @@ public final class NativeConverter {
 					}
 				};
 			}
-			@Override
+			@DSModeled(DSC.SAFE)
+        @Override
 			public CharsetDecoder newDecoder() {
 				return new CharsetDecoder(this, 0, 0) {
 					@Override

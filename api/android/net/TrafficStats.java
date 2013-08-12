@@ -28,11 +28,13 @@ public class TrafficStats {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void setThreadStatsTag(int tag) {
         NetworkManagementSocketTagger.setThreadSocketStatsTag(tag);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getThreadStatsTag() {
         return NetworkManagementSocketTagger.getThreadSocketStatsTag();
     }
@@ -96,12 +98,14 @@ public class TrafficStats {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void incrementOperationCount(int operationCount) {
         final int tag = getThreadStatsTag();
         incrementOperationCount(tag, operationCount);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void incrementOperationCount(int tag, int operationCount) {
         final INetworkStatsService statsService = INetworkStatsService.Stub.asInterface(
                 ServiceManager.getService(Context.NETWORK_STATS_SERVICE));

@@ -27,6 +27,7 @@ public class DERExternal extends ASN1Object {
 
     private DERObject externalContent;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.220 -0400", hash_original_method = "5B6E321D0FF0F6E358DB9222EA98BCB7", hash_generated_method = "7C489060514DBFE506595DDBA8B956C8")
     public  DERExternal(ASN1EncodableVector vector) {
         addTaint(vector.getTaint());
@@ -70,6 +71,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.221 -0400", hash_original_method = "3E78E5A9498D2FA8094C2F6169A192AD", hash_generated_method = "C8B7E436AF9393081D28F012D9D6AA41")
     public  DERExternal(DERObjectIdentifier directReference, DERInteger indirectReference, ASN1Object dataValueDescriptor, DERTaggedObject externalData) {
         this(directReference, indirectReference, dataValueDescriptor, externalData.getTagNo(), externalData.getDERObject());
@@ -81,6 +83,7 @@ public class DERExternal extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.221 -0400", hash_original_method = "865736B8E6D41CC27E8C4571B72736D6", hash_generated_method = "5604928AE2196C77F710D75F383E7318")
     public  DERExternal(DERObjectIdentifier directReference, DERInteger indirectReference, ASN1Object dataValueDescriptor, int encoding, DERObject externalData) {
         addTaint(externalData.getTaint());
@@ -125,6 +128,7 @@ DERObject varDCE3C524664FF49CD40212ED0922D544_1670966445 =         v.get(index).
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.223 -0400", hash_original_method = "E789B91521559DD1093D7E9087176FAE", hash_generated_method = "5EAB1C7B1BA54E61FA65BD2C57EF5B52")
     public int hashCode() {
         int ret = 0;
@@ -163,6 +167,7 @@ DERObject varDCE3C524664FF49CD40212ED0922D544_1670966445 =         v.get(index).
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.224 -0400", hash_original_method = "95E5CCE7002362171E5372628ECC5970", hash_generated_method = "782669D39489FD0F7C5F2695FAD765BA")
      void encode(DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -202,6 +207,7 @@ DERObject varDCE3C524664FF49CD40212ED0922D544_1670966445 =         v.get(index).
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.224 -0400", hash_original_method = "B6A4F973EBC78A6793C4703762E4E562", hash_generated_method = "44601DEE05D356C69E08687753F19544")
      boolean asn1Equals(DERObject o) {
         addTaint(o.getTaint());

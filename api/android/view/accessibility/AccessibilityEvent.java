@@ -33,7 +33,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
 
     private final ArrayList<AccessibilityRecord> mRecords = new ArrayList<AccessibilityRecord>();
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.214 -0400", hash_original_method = "851763ED22FDC1F823C000B96565E393", hash_generated_method = "6EADCF7C93B43CCEF55BB13CB1733BA7")
     private  AccessibilityEvent() {
         // ---------- Original Method ----------
@@ -55,7 +55,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.215 -0400", hash_original_method = "86DBA4ADDEC94CD24AE35AA90BF3A59E", hash_generated_method = "6492507E6895DD8BD82A9BA2AB3D8559")
     @Override
     public void setSealed(boolean sealed) {
@@ -255,7 +255,7 @@ CharSequence var5601F77C1E784C31FA233AB799182FA6_654879600 =         mPackageNam
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.220 -0400", hash_original_method = "4C3D5B3E8C94F161E20327652A28CA9F", hash_generated_method = "40D7F5600CCCDBA036266DEF93A2D4A8")
     @Override
     protected void clear() {
@@ -315,7 +315,7 @@ for(int i = 0;i < recordCount;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.224 -0400", hash_original_method = "B088070677D65811E863E6E48DBE8540", hash_generated_method = "C727F0677FB9C45A87963606A02277CD")
     private void readAccessibilityRecordFromParcel(AccessibilityRecord record,
             Parcel parcel) {
@@ -379,7 +379,7 @@ for(int i = 0;i < recordCount;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.227 -0400", hash_original_method = "BBBE1FBBDEA55D1C2908EC0443C0F1D0", hash_generated_method = "0549810F49E1A280E36275F51FDF13E6")
     private void writeAccessibilityRecordToParcel(AccessibilityRecord record, Parcel parcel,
             int flags) {
@@ -583,6 +583,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1268443026 =         builder.toString
 
     public static final Parcelable.Creator<AccessibilityEvent> CREATOR =
             new Parcelable.Creator<AccessibilityEvent>() {
+        @DSModeled(DSC.SAFE)
         public AccessibilityEvent createFromParcel(Parcel parcel) {
             AccessibilityEvent event = AccessibilityEvent.obtain();
             event.initFromParcel(parcel);

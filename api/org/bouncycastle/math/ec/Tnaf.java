@@ -59,6 +59,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ZTauElement round(SimpleBigDecimal lambda0,
             SimpleBigDecimal lambda1, byte mu) {
         int scale = lambda0.getScale();
@@ -211,6 +212,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ECPoint.F2m tau(ECPoint.F2m p) {
         if (p.isInfinity())
         {
@@ -222,6 +224,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte getMu(ECCurve.F2m curve) {
         BigInteger a = curve.getA().toBigInteger();
         byte mu;
@@ -242,6 +245,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger[] getLucas(byte mu, int k, boolean doV) {
         if (!((mu == 1) || (mu == -1)))
         {
@@ -280,6 +284,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger getTw(byte mu, int w) {
         if (w == 4)
         {
@@ -304,6 +309,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger[] getSi(ECCurve.F2m curve) {
         if (!curve.isKoblitz())
         {
@@ -350,6 +356,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ZTauElement partModReduction(BigInteger k, int m, byte a,
             BigInteger[] s, byte mu, byte c) {
         BigInteger d0;
@@ -375,6 +382,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ECPoint.F2m multiplyRTnaf(ECPoint.F2m p, BigInteger k) {
         ECCurve.F2m curve = (ECCurve.F2m) p.getCurve();
         int m = curve.getM();
@@ -386,6 +394,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ECPoint.F2m multiplyTnaf(ECPoint.F2m p, ZTauElement lambda) {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();
         byte mu = curve.getMu();
@@ -395,6 +404,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ECPoint.F2m multiplyFromTnaf(ECPoint.F2m p, byte[] u) {
         ECCurve.F2m curve = (ECCurve.F2m)p.getCurve();
         ECPoint.F2m q = (ECPoint.F2m) curve.getInfinity();
@@ -414,6 +424,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] tauAdicWNaf(byte mu, ZTauElement lambda,
             byte width, BigInteger pow2w, BigInteger tw, ZTauElement[] alpha) {
         if (!((mu == 1) || (mu == -1)))
@@ -481,6 +492,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ECPoint.F2m[] getPreComp(ECPoint.F2m p, byte a) {
         ECPoint.F2m[] pu;
         pu = new ECPoint.F2m[16];

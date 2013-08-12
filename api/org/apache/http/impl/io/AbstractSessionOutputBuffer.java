@@ -174,6 +174,7 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.464 -0400", hash_original_method = "3A892F1772116DEABF593C96C9FE9CC0", hash_generated_method = "0AEA9EC75E1CE578F9F9156CEEDB0906")
     public void write(int b) throws IOException {
         addTaint(b);

@@ -43,6 +43,7 @@ public class KeyStore {
 
     private String type;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.002 -0400", hash_original_method = "108D8AEC9F3364E92BCBB521C1482782", hash_generated_method = "43EAB562F81BE84BE93B196DD6366E9C")
     protected  KeyStore(KeyStoreSpi keyStoreSpi, Provider provider, String type) {
         this.type = type;
@@ -63,6 +64,7 @@ public class KeyStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyStore getInstance(String type) throws KeyStoreException {
         if (type == null) {
             throw new NullPointerException();
@@ -76,6 +78,7 @@ public class KeyStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyStore getInstance(String type, String provider) throws KeyStoreException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
@@ -92,6 +95,7 @@ public class KeyStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyStore getInstance(String type, Provider provider) throws KeyStoreException {
         if (provider == null) {
             throw new IllegalArgumentException();
@@ -108,6 +112,7 @@ public class KeyStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String getDefaultType() {
         String dt = Security.getProperty(PROPERTYNAME);
         return (dt == null ? DEFAULT_KEYSTORE_TYPE : dt);
@@ -136,6 +141,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_1270912175 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.004 -0400", hash_original_method = "F59E459BECAEDEBCB13476A41CDEA779", hash_generated_method = "A8BA147375EA70A3D350760599881933")
     public final Key getKey(String alias, char[] password) throws KeyStoreException, NoSuchAlgorithmException,
             UnrecoverableKeyException {
@@ -156,6 +162,7 @@ Key var22386E2414BBD1C9031BE4204BE576F1_664973306 =         implSpi.engineGetKey
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.005 -0400", hash_original_method = "504D1BEC6FF8E94C83F90A431D916244", hash_generated_method = "DC23365F80F60C9D0412A2ED228BC72F")
     public final Certificate[] getCertificateChain(String alias) throws KeyStoreException {
         addTaint(alias.getTaint());
@@ -174,6 +181,7 @@ Certificate[] varC7394969E6E4373B9A6832CF44A56F10_524198516 =         implSpi.en
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.005 -0400", hash_original_method = "7FA5F9282816EB62AB780CC8E8ACBC45", hash_generated_method = "9F9E75F2880A17FF456CF062E07F9C5B")
     public final Certificate getCertificate(String alias) throws KeyStoreException {
         addTaint(alias.getTaint());
@@ -192,6 +200,7 @@ Certificate var833CCAA86CBB384E871E474F89E2D680_1556446960 =         implSpi.eng
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.005 -0400", hash_original_method = "0EAF8EB6AFEC620E9CCB79F4CF9FFE6B", hash_generated_method = "C2531AFBA84C79EBDCFD3E90F3988116")
     public final Date getCreationDate(String alias) throws KeyStoreException {
         addTaint(alias.getTaint());
@@ -239,6 +248,7 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_575797583 =         implSpi.engineGetCr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.007 -0400", hash_original_method = "E913EA9574669F2A71A3CC096B53E0CC", hash_generated_method = "1BF0D5A30336E7DF3867AA3CC801AFC9")
     public final void setKeyEntry(String alias, byte[] key, Certificate[] chain) throws KeyStoreException {
         addTaint(chain[0].getTaint());
@@ -257,6 +267,7 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_575797583 =         implSpi.engineGetCr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.007 -0400", hash_original_method = "219C504E98378892F0A1CF69789298BA", hash_generated_method = "40A1CF7A595C345CD78B2A9636D9CE62")
     public final void setCertificateEntry(String alias, Certificate cert) throws KeyStoreException {
         addTaint(cert.getTaint());
@@ -274,6 +285,7 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_575797583 =         implSpi.engineGetCr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.007 -0400", hash_original_method = "D120E113CB97F6A9A6BAA6717070A8E9", hash_generated_method = "C11E69B8678F6C6748AB3E61467BA3A6")
     public final void deleteEntry(String alias) throws KeyStoreException {
         addTaint(alias.getTaint());
@@ -345,6 +357,7 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_1877496336 =         imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.008 -0400", hash_original_method = "BA6657A192671EAB1AD9A79410689C41", hash_generated_method = "CD490002E4E5BF892BDFA6E5B7D7F728")
     public final boolean isKeyEntry(String alias) throws KeyStoreException {
         addTaint(alias.getTaint());
@@ -363,6 +376,7 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_1877496336 =         imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.008 -0400", hash_original_method = "1EB6026F3AFD92595C3B35AB93369F7A", hash_generated_method = "EE95A1B2F447C2CC3C76EDAA9119F46F")
     public final boolean isCertificateEntry(String alias) throws KeyStoreException {
         addTaint(alias.getTaint());
@@ -381,6 +395,7 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_1877496336 =         imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.009 -0400", hash_original_method = "2386A451870E6EF1C02A8B8C98B7CB68", hash_generated_method = "C54AFB4748DCFA60166EC3EE6D9B10D1")
     public final String getCertificateAlias(Certificate cert) throws KeyStoreException {
         addTaint(cert.getTaint());
@@ -399,6 +414,7 @@ String varE0168F4163D76C5D386E3314C17ABA86_787640960 =         implSpi.engineGet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.009 -0400", hash_original_method = "50BCB00A432CC31F15CE3B2C3DE7D43E", hash_generated_method = "5AE4CEA311AAA8EACDFBAFB770973281")
     public final void store(OutputStream stream, char[] password) throws KeyStoreException, IOException, NoSuchAlgorithmException, CertificateException {
         addTaint(password[0]);
@@ -416,6 +432,7 @@ String varE0168F4163D76C5D386E3314C17ABA86_787640960 =         implSpi.engineGet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.009 -0400", hash_original_method = "C17746DBABB17F3EC34FB6DF10AE6233", hash_generated_method = "AFBE32289BBC498D00153EEAC0FB3DAD")
     public final void store(LoadStoreParameter param) throws KeyStoreException,
             IOException, NoSuchAlgorithmException, CertificateException {
@@ -433,6 +450,7 @@ String varE0168F4163D76C5D386E3314C17ABA86_787640960 =         implSpi.engineGet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.009 -0400", hash_original_method = "E81C77E0001BACB83F4AF42B434C83C2", hash_generated_method = "978A59A0D58630ACCA9CB4045DF40E4B")
     public final void load(InputStream stream, char[] password) throws IOException, NoSuchAlgorithmException, CertificateException {
         addTaint(password[0]);
@@ -445,6 +463,7 @@ String varE0168F4163D76C5D386E3314C17ABA86_787640960 =         implSpi.engineGet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.009 -0400", hash_original_method = "C4F6682CFB8856C5C1A14F5939BD3C2A", hash_generated_method = "390B826EC37D9C73290B63DADC1714BC")
     public final void load(LoadStoreParameter param) throws IOException,
             NoSuchAlgorithmException, CertificateException {
@@ -457,6 +476,7 @@ String varE0168F4163D76C5D386E3314C17ABA86_787640960 =         implSpi.engineGet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.009 -0400", hash_original_method = "545D5A95E5DE487291148190C6871E3B", hash_generated_method = "F2312424DDCAA4580D6D8B50D9439559")
     public final Entry getEntry(String alias, ProtectionParameter param) throws NoSuchAlgorithmException, UnrecoverableEntryException, KeyStoreException {
         addTaint(param.getTaint());
@@ -522,6 +542,7 @@ Entry var701895B2E8389D95272372ED4DA24D57_337376656 =         implSpi.engineGetE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.010 -0400", hash_original_method = "F0D9850AE080958F26BEB4963CD5F0EF", hash_generated_method = "E1184717443DD5F46A860189CFDDCDD0")
     public final boolean entryInstanceOf(String alias,
             Class<? extends KeyStore.Entry> entryClass) throws KeyStoreException {
@@ -562,6 +583,7 @@ Entry var701895B2E8389D95272372ED4DA24D57_337376656 =         implSpi.engineGetE
     
     public abstract static class Builder {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.010 -0400", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "6A2D7D49B1C0B8CFA567F3789BFA22DC")
         protected  Builder() {
             // ---------- Original Method ----------
@@ -577,6 +599,7 @@ Entry var701895B2E8389D95272372ED4DA24D57_337376656 =         implSpi.engineGetE
                 throws KeyStoreException;
 
         
+        @DSModeled(DSC.SAFE)
         public static Builder newInstance(KeyStore keyStore,
                 ProtectionParameter protectionParameter) {
             if (keyStore == null) {
@@ -592,6 +615,7 @@ Entry var701895B2E8389D95272372ED4DA24D57_337376656 =         implSpi.engineGetE
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static Builder newInstance(String type, Provider provider,
                 File file, ProtectionParameter protectionParameter) {
             if (type == null) {
@@ -618,6 +642,7 @@ Entry var701895B2E8389D95272372ED4DA24D57_337376656 =         implSpi.engineGetE
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static Builder newInstance(String type, Provider provider,
                 ProtectionParameter protectionParameter) {
             if (type == null) {
@@ -653,6 +678,7 @@ Entry var701895B2E8389D95272372ED4DA24D57_337376656 =         implSpi.engineGetE
 
             private KeyStoreException lastException;
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.012 -0400", hash_original_method = "3CD3C55013D5D374D36888ABFD4145EB", hash_generated_method = "A33DE3B99A825C2C1ED4DAF99C6BF9F8")
               BuilderImpl(KeyStore ks, ProtectionParameter pp, File file,
                         String type, Provider provider) {
@@ -753,6 +779,7 @@ KeyStore var4EA107C714DD2FEC6BD5E5FECFE3866C_2057391778 =                     ks
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.013 -0400", hash_original_method = "061E86DD88FD52DC90E5A1CECB03A11C", hash_generated_method = "C82F766DEEAF557DAAB1E74B2E8176C3")
             @Override
             public synchronized ProtectionParameter getProtectionParameter(
@@ -793,6 +820,7 @@ ProtectionParameter var2316ED0B587143554FCBF2DD4DB7A565_678966893 =             
 
             private ProtectionParameter protPar;
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.013 -0400", hash_original_method = "418DF9EAB7B4417735B80C8244C9AAA5", hash_generated_method = "98B7F8D22C8521F8F173B8F76A0B9B73")
             public  TmpLSParameter(ProtectionParameter protPar) {
                 this.protPar = protPar;
@@ -825,6 +853,7 @@ ProtectionParameter varB96525DB79F204E71157168F35C67FD8_1273559453 =            
 
         private CallbackHandler callbackHandler;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.013 -0400", hash_original_method = "082187234AF211B1FD0C2CCB255E95A4", hash_generated_method = "E167AAC35323F7C3F6A3BCC21CA72AD5")
         public  CallbackHandlerProtection(CallbackHandler handler) {
             if(handler == null)            

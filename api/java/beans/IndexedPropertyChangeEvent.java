@@ -12,6 +12,7 @@ public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
 
     private int index;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.119 -0400", hash_original_method = "860D1012434BA4F5294622CC094A8203", hash_generated_method = "A5A5FFDCF3878C5EE1A0BFFED9169421")
     public  IndexedPropertyChangeEvent(Object source, String propertyName,
             Object oldValue, Object newValue, int index) {

@@ -41,7 +41,7 @@ public final class VMStack {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static int fillStackTraceElements(Thread t,
         StackTraceElement[] stackTraceElements) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_892665896 = DSUtils.UNKNOWN_INT;

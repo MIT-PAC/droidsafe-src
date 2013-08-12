@@ -87,6 +87,7 @@ for(Cookie cooky : cookies)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_method = "4518D291A6406FB94614916CA57C71BE", hash_generated_method = "1AA9649152ACC792BF01A9854F8753F5")
     public synchronized List<Cookie> getCookies() {
 List<Cookie> varCBE2F43F7F720C22A8D82FB98D41DC23_314871575 =         Collections.unmodifiableList(this.cookies);
@@ -133,6 +134,7 @@ for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.612 -0400", hash_original_method = "3BF0AB240A348C3188E3D51149860C91", hash_generated_method = "71AA275ED67492ACB50135EF181F0AE4")
     @Override
     public String toString() {

@@ -34,6 +34,7 @@ public class ProxyRequireParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.372 -0400", hash_original_method = "3B22313394D07BEF3A6E95D38DEA0C1A", hash_generated_method = "3D4F30A23B15BF32E751B1AF205791AF")
     public SIPHeader parse() throws ParseException {
         ProxyRequireList list = new ProxyRequireList();

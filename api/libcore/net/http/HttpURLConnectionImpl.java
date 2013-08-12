@@ -70,6 +70,7 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.568 -0400", hash_original_method = "07B4C440A95D9405D35DB78948CBC089", hash_generated_method = "E1FD78B75D60F97B5383D361BAFF6510")
     @Override
     public final void connect() throws IOException {
@@ -95,6 +96,7 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.569 -0400", hash_original_method = "4F701A35ACBE562FB824E28633AD60E1", hash_generated_method = "0AFE0B763AD05292C20589E8E763F275")
     @Override
     public final void disconnect() {
@@ -146,6 +148,7 @@ InputStream var540C13E9E156B687226421B24F2DF178_1843342528 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.570 -0400", hash_original_method = "2FDBF8E663ECDF1396771B3FB2E938AE", hash_generated_method = "43E173686522F94B29C7C03B592D671B")
     @Override
     public final String getHeaderField(int position) {
@@ -171,6 +174,7 @@ String var540C13E9E156B687226421B24F2DF178_1991847000 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.570 -0400", hash_original_method = "8E358A78EB7A8F16DBAC360C5AE52593", hash_generated_method = "9A91279053A7CBA7ED303E076672E2DC")
     @Override
     public final String getHeaderField(String fieldName) {
@@ -202,6 +206,7 @@ String var540C13E9E156B687226421B24F2DF178_733283608 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.571 -0400", hash_original_method = "6CE04EB06299A563E0E12D5A9A984EA5", hash_generated_method = "315D1BC9D20C0D6527C9E014720C3FFA")
     @Override
     public final String getHeaderFieldKey(int position) {
@@ -273,6 +278,7 @@ Map<String, List<String>> var83478CF7F4DB10649ACA2AF3BD1940B5_530067518 =       
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.572 -0400", hash_original_method = "45F412B75FA838EAF632FEA7E5AD9CE7", hash_generated_method = "1656259AE8A111AA1D5EE0A636EC1679")
     @Override
     public final InputStream getInputStream() throws IOException {
@@ -393,6 +399,7 @@ String varD98A48BB4EDCF32A414442F1174BE9A0_1904973355 =         usingProxy()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.574 -0400", hash_original_method = "8A514716C0CABE10C77E4E0516E7C928", hash_generated_method = "23B406B859E77395AAB236F8F5847EAD")
     @Override
     public final String getRequestProperty(String field) {
@@ -475,6 +482,7 @@ String varCFA12E4FF31F6BDF669A47CB12D4A809_275751690 =         rawRequestHeaders
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.576 -0400", hash_original_method = "AFF3FB19470EAA9A5BE239431B6A906A", hash_generated_method = "1E92BABCEEB9BB2FD6C94980AE4CA5D0")
     protected HttpEngine newHttpEngine(String method, RawHeaders requestHeaders,
             HttpConnection connection, RetryableOutputStream requestBody) throws IOException {
@@ -635,6 +643,7 @@ Retry var261310BD8E5C3519A25312A7E432722D_1155042667 =         Retry.NONE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.578 -0400", hash_original_method = "823D52F347E7C18D3A6EC0D6C7FA9FFF", hash_generated_method = "35D998B06FF7B67D655130E4272570D8")
     final boolean processAuthHeader(int responseCode, ResponseHeaders response,
             RawHeaders successorRequestHeaders) throws IOException {
@@ -801,6 +810,7 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_1433572373 =         proxy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.587 -0400", hash_original_method = "A58A957A50BCFC01E0E67FBE67235F98", hash_generated_method = "3A26130110C33A63C711632A32D84AB6")
     @Override
     public final boolean usingProxy() {
@@ -812,6 +822,7 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_1433572373 =         proxy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.587 -0400", hash_original_method = "9D8B4374AC98844408DFFFE370FDA266", hash_generated_method = "52DBF146C31D9BEEF7E9E5EB08D74216")
     @Override
     public String getResponseMessage() throws IOException {
@@ -823,6 +834,7 @@ String varE8C6F6C86B5FB2D3EECAF34E66264D0E_344923923 =         getResponse().get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.588 -0400", hash_original_method = "721B81AA4282A5EC0FCB04AA341634A3", hash_generated_method = "8042BF52895D8B2D16831B2C663DEFA9")
     @Override
     public final int getResponseCode() throws IOException {
@@ -863,6 +875,7 @@ String varE8C6F6C86B5FB2D3EECAF34E66264D0E_344923923 =         getResponse().get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.588 -0400", hash_original_method = "7F83225C975C5F17C1596781844ADD1B", hash_generated_method = "4EBA2E5E56F333BB94A019CD1835C6F8")
     @Override
     public final void addRequestProperty(String field, String value) {

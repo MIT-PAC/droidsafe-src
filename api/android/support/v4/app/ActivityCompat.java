@@ -16,6 +16,7 @@ public class ActivityCompat {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static boolean invalidateOptionsMenu(Activity activity) {
         if (Build.VERSION.SDK_INT >= 11) {
             ActivityCompatHoneycomb.invalidateOptionsMenu(activity);
@@ -25,6 +26,7 @@ public class ActivityCompat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean startActivities(Activity activity, Intent[] intents) {
         if (Build.VERSION.SDK_INT >= 11) {
             ActivityCompatHoneycomb.startActivities(activity, intents);

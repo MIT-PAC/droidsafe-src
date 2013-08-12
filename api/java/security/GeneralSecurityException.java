@@ -16,6 +16,7 @@ public class GeneralSecurityException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.836 -0400", hash_original_method = "F9327F749082DE23B0685F6DD902B858", hash_generated_method = "CD715F134D1B1C417AE32EC947980940")
     public  GeneralSecurityException() {
         // ---------- Original Method ----------

@@ -24,6 +24,7 @@ import java.util.Properties;
 
 public abstract class LogFactory {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.804 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
     protected  LogFactory() {
         // ---------- Original Method ----------
@@ -87,6 +88,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LogFactory getFactory() throws LogConfigurationException {
         ClassLoader contextClassLoader = getContextClassLoader();
         if (contextClassLoader == null) {
@@ -255,11 +257,13 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Log getLog(Class clazz) throws LogConfigurationException {
         return getLog(clazz.getName());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Log getLog(String name) throws LogConfigurationException {
         return new org.apache.commons.logging.impl.Jdk14Logger(name);
     }
@@ -822,6 +826,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String objectId(Object o) {
         if (o == null) {
             return "null";

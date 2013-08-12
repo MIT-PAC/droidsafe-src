@@ -52,6 +52,7 @@ public final class SipSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.694 -0400", hash_original_method = "E9A721906097EBC1FEB98095FAB057F5", hash_generated_method = "7F39C80E5E6F0A5EF0ED1EC0EFA04476")
     public String getLocalIp() {
         try 
@@ -100,6 +101,7 @@ SipProfile var540C13E9E156B687226421B24F2DF178_1654891780 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.694 -0400", hash_original_method = "D61110CB083F8C813E52FD778D269E44", hash_generated_method = "E2D08FB11BCADE2909047BCA107499A8")
     public SipProfile getPeerProfile() {
         try 
@@ -124,6 +126,7 @@ SipProfile var540C13E9E156B687226421B24F2DF178_310759214 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.695 -0400", hash_original_method = "9EA9E21B58E34C7FB49C45688377E72F", hash_generated_method = "A291469F2DDA51DA542D8C9797588DD9")
     public int getState() {
         try 
@@ -148,6 +151,7 @@ SipProfile var540C13E9E156B687226421B24F2DF178_310759214 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.696 -0400", hash_original_method = "9EAE3F24E2C650B2D541A86A9F9A7795", hash_generated_method = "F878BDB0C5A550F9293B884A7E696A79")
     public boolean isInCall() {
         try 
@@ -172,6 +176,7 @@ SipProfile var540C13E9E156B687226421B24F2DF178_310759214 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.696 -0400", hash_original_method = "A52F1B195D0D0A598BE5EAF9C188D1E2", hash_generated_method = "87F6EEF2072C5A840DD5FC5D10B54E26")
     public String getCallId() {
         try 
@@ -205,6 +210,7 @@ String var540C13E9E156B687226421B24F2DF178_1575162473 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.697 -0400", hash_original_method = "8D2FD08823732E1C2D815A7E90C0FC77", hash_generated_method = "066339541D7449ABCA80A13BF6FD001B")
     public void register(int duration) {
         addTaint(duration);
@@ -224,6 +230,7 @@ String var540C13E9E156B687226421B24F2DF178_1575162473 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.698 -0400", hash_original_method = "E4AB4EE14705E79FAB12EC8A1515405F", hash_generated_method = "A6AD433C825E3D3860D4475E9C56E54F")
     public void unregister() {
         try 
@@ -302,6 +309,7 @@ String var540C13E9E156B687226421B24F2DF178_1575162473 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.701 -0400", hash_original_method = "0DCF9DE8E2729C90E933890D545801E4", hash_generated_method = "79AC994AED6E9C475B3495ED30943CBA")
     public void changeCall(String sessionDescription, int timeout) {
         addTaint(timeout);

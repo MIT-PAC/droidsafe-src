@@ -18,6 +18,7 @@ public class HandshakeCompletedListenerImpl implements HandshakeCompletedListene
 
     private TLSMessageChannel tlsMessageChannel;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.262 -0400", hash_original_method = "B5E680A19EE8E4EFEF04423A96C79BDB", hash_generated_method = "9BC0DD7FA2706743A5F3BBCFA4894CC5")
     public  HandshakeCompletedListenerImpl(TLSMessageChannel tlsMessageChannel) {
         this.tlsMessageChannel = tlsMessageChannel;

@@ -21,6 +21,7 @@ public class BufferedWriter extends Writer {
 
     private int pos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.401 -0400", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "4374D4B84A8E9BB7E975D27D1D8AB4A2")
     public  BufferedWriter(Writer out) {
         this(out, 8192);
@@ -29,6 +30,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.402 -0400", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "D3848D9212D30220CDC9B62D4D4045E8")
     public  BufferedWriter(Writer out, int size) {
         super(out);
@@ -49,6 +51,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.404 -0400", hash_original_method = "1FFBADE50F933DAEBE6B8AB97A0787F1", hash_generated_method = "90322F3E471EEF794EA7FCC03D7AE5BA")
     @Override
     public void close() throws IOException {
@@ -112,6 +115,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.405 -0400", hash_original_method = "CDBC99BDF3D706FE5CF6000E4273C9D9", hash_generated_method = "2B3DF9BABC6BACEA379ABCDCC553578E")
     @Override
     public void flush() throws IOException {
@@ -173,6 +177,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.408 -0400", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "95268A8136CFE30ED36AA1BE72C081F8")
     public void newLine() throws IOException {
         write(System.lineSeparator());
@@ -181,6 +186,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.410 -0400", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "E76072C2E28CDF0AF593A3B635EA15B5")
     @Override
     public void write(char[] cbuf, int offset, int count) throws IOException {
@@ -235,6 +241,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.412 -0400", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "819489A921CCAB1BD8545F2FAEBA3480")
     @Override
     public void write(int oneChar) throws IOException {
@@ -260,6 +267,7 @@ public class BufferedWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.415 -0400", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "F1C43EE76940DE3E454E83A3638FDBE9")
     @Override
     public void write(String str, int offset, int count) throws IOException {

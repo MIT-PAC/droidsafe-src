@@ -18,6 +18,7 @@ public class MultiValueMapImpl<V> implements MultiValueMap<String, V>, Cloneable
 
     private HashMap<String, ArrayList<V>> map = new HashMap<String, ArrayList<V>>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.550 -0400", hash_original_method = "92FBF841CDA8BB538E9BCFC9D2E80E36", hash_generated_method = "BBAE31DA49C30209803972329341FA59")
     public  MultiValueMapImpl() {
         super();
@@ -25,6 +26,7 @@ public class MultiValueMapImpl<V> implements MultiValueMap<String, V>, Cloneable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.551 -0400", hash_original_method = "015B36338D34B6EBF400464F225017F7", hash_generated_method = "1C0B2B13F4366A8EFD0D2282684937FF")
     public List<V> put(String key, V value) {
         addTaint(value.getTaint());
@@ -50,6 +52,7 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_169550543 =         keyList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.551 -0400", hash_original_method = "DB86C9FAE576BDCBCAB6ACEF27E24DCF", hash_generated_method = "69852D00D48587D96481C2987F55E96C")
     public boolean containsValue(Object value) {
         addTaint(value.getTaint());
@@ -91,6 +94,7 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_169550543 =         keyList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.552 -0400", hash_original_method = "ACD58D82904FAC9C1E105DF6132F728F", hash_generated_method = "FF8067C1BE23B04FD9994F427CB86C7B")
     public void clear() {
         Set pairs = map.entrySet();
@@ -115,6 +119,7 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_169550543 =         keyList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.552 -0400", hash_original_method = "9D94995CB4905B7A6A15BF37AA0AF804", hash_generated_method = "FD6771849D78D38234823819780D6055")
     public Collection values() {
         ArrayList returnList = new ArrayList(map.size());
@@ -150,6 +155,7 @@ Collection var195207CFC264788B20A079C8C3E1371E_1769858331 =         returnList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.553 -0400", hash_original_method = "7FD8976C5EB94AF5BEDA5274AB7D4960", hash_generated_method = "E884E58C8941027381D67221D0F56C96")
     public Object clone() {
         MultiValueMapImpl obj = new MultiValueMapImpl<V>();
@@ -164,6 +170,7 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_989861187 =         obj;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.554 -0400", hash_original_method = "5426196537489B9F267A5D92E091E0D1", hash_generated_method = "C30BB07F0E84EC3D2D26EB0E37E9A4B2")
     public int size() {
         int varF2202A8501CD0EEDB2506BC8F112F883_597054500 = (this.map.size());
@@ -174,6 +181,7 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_989861187 =         obj;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.555 -0400", hash_original_method = "51FDEF8A21E6EA5E0FB4715F8113FE74", hash_generated_method = "AC99E0989B854DF534FF8AE5E5ACB5CF")
     public boolean containsKey(Object key) {
         addTaint(key.getTaint());
@@ -185,6 +193,7 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_989861187 =         obj;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.555 -0400", hash_original_method = "A7117DE6FDE9AB582C79C19A4704EAC3", hash_generated_method = "1899965AEBD733CE71042BE83C55B6CE")
     public Set entrySet() {
 Set varD70A818A9C24919C79B0A6854ED78BA4_1775642719 =         map.entrySet();
@@ -195,6 +204,7 @@ Set varD70A818A9C24919C79B0A6854ED78BA4_1775642719 =         map.entrySet();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.555 -0400", hash_original_method = "193F4487BCC4A9B88FB28866363E7ABF", hash_generated_method = "A0F7062A9E0CADEF6BCD423DD898ABAE")
     public boolean isEmpty() {
         boolean varAF143B23ABB0913809523AA7F6DBE946_507651432 = (map.isEmpty());
@@ -205,6 +215,7 @@ Set varD70A818A9C24919C79B0A6854ED78BA4_1775642719 =         map.entrySet();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.556 -0400", hash_original_method = "6CB9892D3A46557FDBF8DC408603010A", hash_generated_method = "11FE6A27793C8E8405EB256AE0F15D64")
     public Set<String> keySet() {
 Set<String> varF820A78B2E5CB85B7FD62FD1DAFAA525_1491861802 =         this.map.keySet();
@@ -215,6 +226,7 @@ Set<String> varF820A78B2E5CB85B7FD62FD1DAFAA525_1491861802 =         this.map.ke
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.556 -0400", hash_original_method = "7F32EDF5FAFC7BC56577B23C28284BD1", hash_generated_method = "967D742B484872F8723580E12F0EEE62")
     public Object remove(String key, V item) {
         addTaint(item.getTaint());
@@ -253,6 +265,7 @@ List<V> var97156AACD411ADC83FECC30C065B5B0C_71251643 =         map.get(key);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.557 -0400", hash_original_method = "23A91A040F7CE5CCEDDB4E75AB426F56", hash_generated_method = "D6D85735ED78922D51F8B2CB0E3E24F4")
     public List<V> put(String key, List<V> value) {
         addTaint(value.getTaint());
@@ -265,6 +278,7 @@ List<V> var02481C24BCFA11D91CC01A5BB2621143_1868674711 =         this.map.put(ke
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.558 -0400", hash_original_method = "7B07E9B7FC8B36A67A63DC78734F6C09", hash_generated_method = "0B893344ABB70D7D6A98A32CBA9DB888")
     public List<V> remove(Object key) {
         addTaint(key.getTaint());

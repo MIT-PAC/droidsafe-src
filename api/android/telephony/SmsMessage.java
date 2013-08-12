@@ -34,6 +34,7 @@ public class SmsMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SmsMessage createFromPdu(byte[] pdu) {
         int activePhone = TelephonyManager.getDefault().getCurrentPhoneType();
         String format = (PHONE_TYPE_CDMA == activePhone) ? FORMAT_3GPP2 : FORMAT_3GPP;
@@ -87,6 +88,7 @@ public class SmsMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getTPLayerLengthForPDU(String pdu) {
         int activePhone = TelephonyManager.getDefault().getCurrentPhoneType();
         if (PHONE_TYPE_CDMA == activePhone) {
@@ -168,11 +170,13 @@ public class SmsMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] calculateLength(String messageBody, boolean use7bitOnly) {
         return calculateLength((CharSequence)messageBody, use7bitOnly);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SubmitPdu getSubmitPdu(String scAddress,
             String destinationAddress, String message, boolean statusReportRequested) {
         SubmitPduBase spb;
@@ -204,7 +208,7 @@ public class SmsMessage {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "918A2835DDADF3191B8B6CF8127F286C", hash_generated_method = "FD26FA1ED6EC71F26265576EF8E7777D")
     public String getServiceCenterAddress() {
 String var925E36433672E3787EB66016D3EC0AE0_2050897992 =         mWrappedSmsMessage.getServiceCenterAddress();
@@ -215,6 +219,7 @@ String var925E36433672E3787EB66016D3EC0AE0_2050897992 =         mWrappedSmsMessa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "E9EFC86835C6B2F047600D750A41AA1C", hash_generated_method = "8F335C34B4C380E2C235B6C5E302925E")
     public String getOriginatingAddress() {
 String var49AF36764A3915031147328D13EC74EE_662320843 =         mWrappedSmsMessage.getOriginatingAddress();
@@ -225,6 +230,7 @@ String var49AF36764A3915031147328D13EC74EE_662320843 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "A66BB5C1A20948050FC14BD05462FCCC", hash_generated_method = "07A01C1FA351849ACC596E6E0AC54246")
     public String getDisplayOriginatingAddress() {
 String var396DE6F0D854D262064C40FA2AC292EB_1616969922 =         mWrappedSmsMessage.getDisplayOriginatingAddress();
@@ -235,6 +241,7 @@ String var396DE6F0D854D262064C40FA2AC292EB_1616969922 =         mWrappedSmsMessa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "11C71A7ADD8F40537023F3C9896D9F41", hash_generated_method = "F0366498430E45AA76A00BF0CFC1B75B")
     public String getMessageBody() {
 String var0E1B253B3A7C288458E5036AB1FC4915_998167276 =         mWrappedSmsMessage.getMessageBody();
@@ -245,6 +252,7 @@ String var0E1B253B3A7C288458E5036AB1FC4915_998167276 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "099557EF4A3D1E47FF142271693B3FFE", hash_generated_method = "687512ED130DB2BBB2E3E78C61121EBA")
     public MessageClass getMessageClass() {
 MessageClass varFEC2C330D72D70FD4F363F58E2613062_1454703782 =         mWrappedSmsMessage.getMessageClass();
@@ -255,6 +263,7 @@ MessageClass varFEC2C330D72D70FD4F363F58E2613062_1454703782 =         mWrappedSm
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "DDB62DAFB6CA28A8B02386170905555B", hash_generated_method = "E8118B5A2C2A5C7A6E4482BDE9DA11BC")
     public String getDisplayMessageBody() {
 String var99CD2E836DDD081526689EFA5A3D13FD_1859191358 =         mWrappedSmsMessage.getDisplayMessageBody();
@@ -265,6 +274,7 @@ String var99CD2E836DDD081526689EFA5A3D13FD_1859191358 =         mWrappedSmsMessa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "A55B37ECD2D988C3EC358C7240F7EDE2", hash_generated_method = "94C7466BBC94AF619963365E8A53C42D")
     public String getPseudoSubject() {
 String var678AD1F33CD9A4D7B1E9CB845197D6D6_80980550 =         mWrappedSmsMessage.getPseudoSubject();
@@ -275,6 +285,7 @@ String var678AD1F33CD9A4D7B1E9CB845197D6D6_80980550 =         mWrappedSmsMessage
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.084 -0400", hash_original_method = "A397C7F820656CEADBC57751F7E32997", hash_generated_method = "769E6F680B26FA39ADDF195AA7DFF304")
     public long getTimestampMillis() {
         long var6092B16D96793A76A598DA9FEA7F3867_526910587 = (mWrappedSmsMessage.getTimestampMillis());
@@ -285,7 +296,7 @@ String var678AD1F33CD9A4D7B1E9CB845197D6D6_80980550 =         mWrappedSmsMessage
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.085 -0400", hash_original_method = "A5B6E1F6D425F99E0AE9246791CF1B08", hash_generated_method = "CB401BF314E51DEB4C54C95ABD64EB1E")
     public boolean isEmail() {
         boolean var4E1F5C64E20847E31953992E560A1C78_766368546 = (mWrappedSmsMessage.isEmail());
@@ -296,6 +307,7 @@ String var678AD1F33CD9A4D7B1E9CB845197D6D6_80980550 =         mWrappedSmsMessage
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.085 -0400", hash_original_method = "1B76815865383567D84D772FA102258B", hash_generated_method = "006E0531EE43DA4646EAEFDDC94AB49D")
     public String getEmailBody() {
 String var67A1D8B8DD5E36D76DD3DF492B86B2D9_1399422760 =         mWrappedSmsMessage.getEmailBody();
@@ -306,6 +318,7 @@ String var67A1D8B8DD5E36D76DD3DF492B86B2D9_1399422760 =         mWrappedSmsMessa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.085 -0400", hash_original_method = "CF41F1C32C92AADB2191A6AB99FD49D6", hash_generated_method = "389687F052999998622241A381ACCC41")
     public String getEmailFrom() {
 String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessage.getEmailFrom();
@@ -316,6 +329,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.085 -0400", hash_original_method = "642EF36AD67598AD564965134BACF8A1", hash_generated_method = "CCCB6D23BA3A780D1028E8C24CBB0E81")
     public int getProtocolIdentifier() {
         int varAD2233615CF88E8755DD6227D5F9F05E_100128480 = (mWrappedSmsMessage.getProtocolIdentifier());
@@ -326,6 +340,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.085 -0400", hash_original_method = "36F360B7C447980FEF01C7653F551835", hash_generated_method = "AC1ED7D601FC1164C26FA11ABC9FD541")
     public boolean isReplace() {
         boolean var06FECE350D4286FB19C9957C5A58184C_242077697 = (mWrappedSmsMessage.isReplace());
@@ -346,6 +361,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.085 -0400", hash_original_method = "129EA72B0C9F078142A2BC814FB30CFA", hash_generated_method = "2B1E07DFC0377464B9B9A2A9F9F6360A")
     public boolean isMWIClearMessage() {
         boolean var585E54B2A33AB110879B00E57A8DA3AC_80439861 = (mWrappedSmsMessage.isMWIClearMessage());
@@ -356,6 +372,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "5602B112C459EA0AD88653A254825A5D", hash_generated_method = "E38327A142F278757B02A0B151C56BE9")
     public boolean isMWISetMessage() {
         boolean varD5BCFAED004ACF905D1919AA002AA2D6_981566965 = (mWrappedSmsMessage.isMWISetMessage());
@@ -366,6 +383,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "0ACB85E19D1AFC6F8EA2F470F677C800", hash_generated_method = "092850750C99E7E3266C8EB49702BE2A")
     public boolean isMwiDontStore() {
         boolean varC52B74AF143B5C422B7F5834D68C697B_1528247241 = (mWrappedSmsMessage.isMwiDontStore());
@@ -376,6 +394,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "251D6D0F20B7389DF3878BB8173A6B0A", hash_generated_method = "531D0391D69A2C715A7BAA5834FA82FD")
     public byte[] getUserData() {
         byte[] varAE688663295359FE46DD9965D5DEA56C_210234777 = (mWrappedSmsMessage.getUserData());
@@ -386,6 +405,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "F61520780332A4249272ED211A1EBC6F", hash_generated_method = "35321A0A1A3D09E25A3AEF2CC637A4EA")
     public byte[] getPdu() {
         byte[] var6023B6186A54154A7A7D4B28633F6539_1672932151 = (mWrappedSmsMessage.getPdu());
@@ -396,6 +416,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "43D7E194BC6DB0E7804F1B1454D5CCBF", hash_generated_method = "213C5B165DC6283314F61588B87801D1")
     @Deprecated
     public int getStatusOnSim() {
@@ -407,6 +428,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "F41186F27A3FFD01878B6A79ACBBD00F", hash_generated_method = "62C415ED7DC321E133F76121C6BCA470")
     public int getStatusOnIcc() {
         int var6705C6C34F6F35245059CF05D5A30A79_1959569010 = (mWrappedSmsMessage.getStatusOnIcc());
@@ -417,6 +439,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "150B1A5BD8253701A69C723196BA6DF9", hash_generated_method = "28BCFF914C283F381131DE5F2EF5738C")
     @Deprecated
     public int getIndexOnSim() {
@@ -428,6 +451,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.086 -0400", hash_original_method = "4C0DE2049D9873C839084BE4DC285920", hash_generated_method = "F2FED8BD71C4DE6241C7E63FB77B96AA")
     public int getIndexOnIcc() {
         int var271A3E7297F00EC935218314ED9D7914_534356713 = (mWrappedSmsMessage.getIndexOnIcc());
@@ -438,6 +462,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.087 -0400", hash_original_method = "BAA167F31D67CF27268081CFB0D79A6E", hash_generated_method = "2ACAAFF05DE70C5FBBC12207576A53FE")
     public int getStatus() {
         int varC7235C304F4004D9DB17AB9D2508C3F8_369384473 = (mWrappedSmsMessage.getStatus());
@@ -448,6 +473,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.087 -0400", hash_original_method = "D10C36D7B6CDC51D018139E7A34B7076", hash_generated_method = "C35FAE25C9AAB06457805D13B0C5D5E7")
     public boolean isStatusReportMessage() {
         boolean varF6F4855214EC06155F20F1677431168C_1733191194 = (mWrappedSmsMessage.isStatusReportMessage());
@@ -458,6 +484,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.087 -0400", hash_original_method = "F508F532A25EB5B4727057181F2BF528", hash_generated_method = "337B907CEBCDD67CBED893DA83CBAFEE")
     public boolean isReplyPathPresent() {
         boolean varE830695720B1EA9A9595E946A69A7A07_1563503530 = (mWrappedSmsMessage.isReplyPathPresent());
@@ -492,7 +519,7 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_329127764 =         mWrappedSmsMessag
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.088 -0400", hash_original_method = "A866707516A0999C629C71FD5B45C6F7", hash_generated_method = "AB3F36C76C50625334AD3277F3460279")
         public String toString() {
 String var7D8267AB38F2C416692BE7250E9741D6_985486987 =             "SubmitPdu: encodedScAddress = "

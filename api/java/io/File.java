@@ -115,7 +115,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String fixSlashes(String origPath) {
         boolean lastWasSlash = false;
         char[] newPath = origPath.toCharArray();
@@ -140,7 +140,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String join(String prefix, String suffix) {
         int prefixLength = prefix.length();
         boolean haveSlash = (prefixLength > 0 && prefix.charAt(prefixLength - 1) == separatorChar);
@@ -177,11 +177,13 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File[] listRoots() {
         return new File[] { new File("/") };
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.819 -0400", hash_original_method = "69AF6799D7AA8E2E8441037938ACC088", hash_generated_method = "C20713A48A28F945820A1792C2989DA2")
     public boolean canExecute() {
         boolean varC901E9B79BA5577EEE7F81ECCABA7C1D_2086521049 = (doAccess(X_OK));
@@ -192,7 +194,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.820 -0400", hash_original_method = "7B792954ECFC131D8AE4D0E193C4885E", hash_generated_method = "3638B595A25C0F8780370B48CA94F454")
     public boolean canRead() {
         boolean var16CC90803A133688E46C28059E79DEE7_841380928 = (doAccess(R_OK));
@@ -203,6 +205,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.820 -0400", hash_original_method = "80B9F14946D459E582021E9E2F6280AD", hash_generated_method = "19A49A44770368D47E061C51C5D15838")
     public boolean canWrite() {
         boolean varBEFAAAD5410F30F686A9D9145A271872_637281649 = (doAccess(W_OK));
@@ -213,7 +216,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.820 -0400", hash_original_method = "66AEEE703F2A5FBBF7F14BCD3C8F63B9", hash_generated_method = "0C44B19CE2464D4E09DE0B876EE2BC5F")
     private boolean doAccess(int mode) {
         addTaint(mode);
@@ -249,7 +252,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "5CDCBB522AFEF90E14CEC34C413E4DF5", hash_generated_method = "5EAF3499FCEAD1057DC1A1746F2BFBB1")
     public boolean delete() {
         try 
@@ -275,7 +278,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "CB1935EF5F2FD9C7C5DF0BCD9272AB92", hash_generated_method = "1DCAE6528A5E92D9050119D34A45FB7D")
     public void deleteOnExit() {
         DeleteOnExit.getInstance().addFile(getAbsolutePath());
@@ -306,7 +309,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "D48176638CA08E926D8083B62CC7EB27", hash_generated_method = "0448AED004B637B9105ADE023E8782A8")
     public boolean exists() {
         boolean varF8AC394411A576A02E0863588CE659D9_1309869741 = (doAccess(F_OK));
@@ -317,7 +320,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "8F2B41FC4DF09EBF8497AC74B170E125", hash_generated_method = "C12A6EDB79539AA71068DD1E144D2E98")
     public String getAbsolutePath() {
         if(isAbsolute())        
@@ -339,6 +342,7 @@ String var4F090B9F25B3E37BF995BFA6769B0207_1493143672 =         path.isEmpty() ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.823 -0400", hash_original_method = "C817D7800025B01E09F67B96128B6FD2", hash_generated_method = "80B87A604E4F59841DD4FDA8F461E256")
     public File getAbsoluteFile() {
 File var91C0F04A5F15A2E39EBA9EBFE05CB3F9_834863206 =         new File(getAbsolutePath());
@@ -349,6 +353,7 @@ File var91C0F04A5F15A2E39EBA9EBFE05CB3F9_834863206 =         new File(getAbsolut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.823 -0400", hash_original_method = "2353D6268FF62C4AA3E4D2A85DA0DDFF", hash_generated_method = "1F14285CBCDC99E0C75610519F2D481D")
     public String getCanonicalPath() throws IOException {
 String var5E4E102EA6F7E6699A26045AE0D4A4C0_524579559 =         realpath(getAbsolutePath());
@@ -371,6 +376,7 @@ String var5E4E102EA6F7E6699A26045AE0D4A4C0_524579559 =         realpath(getAbsol
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.824 -0400", hash_original_method = "703FA6965000EF35DC5F6EF68FCCB383", hash_generated_method = "C4AB9CE5317602355DB440721A181D13")
     public File getCanonicalFile() throws IOException {
 File var1398763BFC9F15F6CE7A7CED1F2E0123_106908479 =         new File(getCanonicalPath());
@@ -444,6 +450,7 @@ String varB5FC3A328A09035853AC34C6C06DC9DC_2004756439 =         path.substring(0
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.825 -0400", hash_original_method = "05B6D7D4A7E04D12316D2DAB95CF61C6", hash_generated_method = "E718C2D61D04FFF97E136FB4D99DC4A1")
     public File getParentFile() {
         String tempParent = getParent();
@@ -488,7 +495,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.826 -0400", hash_original_method = "9F2931F68825A4578F9E89212BCAE059", hash_generated_method = "CE3D9E77162603CF34658C00D7D1B4B1")
     public boolean isAbsolute() {
         boolean var7FA6955EF77820B7CB434F8F4B9C1BA0_1662966708 = (path.length() > 0 && path.charAt(0) == separatorChar);
@@ -499,7 +506,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.826 -0400", hash_original_method = "5A1A5CA8E31989238D097F162F5C184C", hash_generated_method = "096D316934B9E3069C6E5D59C2B49B87")
     public boolean isDirectory() {
         try 
@@ -523,7 +530,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.827 -0400", hash_original_method = "B5DE2229663641D636EF433E62C83E7A", hash_generated_method = "22C8D7C2618E17F2A751D2247ECD40BA")
     public boolean isFile() {
         try 
@@ -547,6 +554,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.827 -0400", hash_original_method = "8D5680EC06296245D4F0DE9A90486B91", hash_generated_method = "101066F72192F27DB69DF4B83A7207D8")
     public boolean isHidden() {
         if(path.isEmpty())        
@@ -566,6 +574,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.827 -0400", hash_original_method = "0921E33485CFCA34C1412D0CC74585F6", hash_generated_method = "C0C5C43D8882F30FC861CF9B295C3968")
     public long lastModified() {
         try 
@@ -589,6 +598,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.828 -0400", hash_original_method = "9B75702C13A04EF9D2AD1E246C28DD45", hash_generated_method = "5C63C7CAD7A8011E56A7510B9B1F342F")
     public boolean setLastModified(long time) {
         addTaint(time);
@@ -616,6 +626,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.829 -0400", hash_original_method = "A10D7182120D225C8A5565403EC4EFFE", hash_generated_method = "F3A963AA8516C60484A31F0AE51A81E1")
     public boolean setReadOnly() {
         boolean varA56C101F7C066CC2FB2A405D5121B78E_112178093 = (setWritable(false, false));
@@ -626,7 +637,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.829 -0400", hash_original_method = "6BD52A034BD79C942DD6922B1E4C88BF", hash_generated_method = "31C86FC721DEA35F47ABCE24D0A7F186")
     public boolean setExecutable(boolean executable, boolean ownerOnly) {
         addTaint(ownerOnly);
@@ -650,6 +661,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "4618439ECB899A21431C9885F3874F0C", hash_generated_method = "79CE09BB86E1B1909B9CCE38678198E1")
     public boolean setReadable(boolean readable, boolean ownerOnly) {
         addTaint(ownerOnly);
@@ -662,6 +674,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "25CECE784879D9A6F63C12E2E495084D", hash_generated_method = "2BDB29718C4BBAD0CAD6159405029376")
     public boolean setReadable(boolean readable) {
         addTaint(readable);
@@ -673,7 +686,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "C7C84CA2ADD923BB8D9E9EBE2B4AA50C", hash_generated_method = "B8B461869391E871C9E66F2C47F96B35")
     public boolean setWritable(boolean writable, boolean ownerOnly) {
         addTaint(ownerOnly);
@@ -686,6 +699,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "0112F87387A0225E67147890BEDE5131", hash_generated_method = "4A0976E7061D4C9E9D239FD3CCA4A3C3")
     public boolean setWritable(boolean writable) {
         addTaint(writable);
@@ -697,7 +711,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.831 -0400", hash_original_method = "1AE2CD7860321C46BB79C9D3B3E6342E", hash_generated_method = "CCBC0E0AD218637FD8B7E581464D48BB")
     private boolean doChmod(int mask, boolean set) {
         addTaint(set);
@@ -729,7 +743,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.831 -0400", hash_original_method = "6E1602EC51AE975F6EDA687DC2872422", hash_generated_method = "1C22129B8BC332243B00551D74991963")
     public long length() {
         try 
@@ -753,7 +767,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.831 -0400", hash_original_method = "DC3A6B837A6CEBDAA6FC05976EEFEE9C", hash_generated_method = "7484DCC314016383ACAB77C7B1420B73")
     public String[] list() {
 String[] var4F4C7F90EA62B6A2861763194713B35C_815412095 =         listImpl(path);
@@ -770,6 +784,7 @@ String[] var4F4C7F90EA62B6A2861763194713B35C_815412095 =         listImpl(path);
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.832 -0400", hash_original_method = "9DF6733463E25DE92688E347FBBAD22E", hash_generated_method = "29CF3B6C15F77B477933B63CC31D14A6")
     public String[] list(FilenameFilter filter) {
         addTaint(filter.getTaint());
@@ -816,6 +831,7 @@ File[] var1B7983DA994F07FB8F700D410235399C_1818608247 =         filenamesToFiles
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.833 -0400", hash_original_method = "94A37D22B56FB881F333055CF5969013", hash_generated_method = "9B8EA342E363C18C05A1904594297F8D")
     public File[] listFiles(FilenameFilter filter) {
         addTaint(filter.getTaint());
@@ -827,6 +843,7 @@ File[] var5324373AF7B0AF1EB8D446F24EE9274B_1501053947 =         filenamesToFiles
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.833 -0400", hash_original_method = "1FB8ED2C60AA91150D4C3211C8CB2AD8", hash_generated_method = "3DE09770B2E6F03F59F695EE205D82D7")
     public File[] listFiles(FileFilter filter) {
         addTaint(filter.getTaint());
@@ -895,7 +912,7 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741 =         result;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.834 -0400", hash_original_method = "9AA9A2328E77BE45E90F159A380326D5", hash_generated_method = "82D46EC287CE95186779BCC73A76A390")
     public boolean mkdir() {
         try 
@@ -921,7 +938,7 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741 =         result;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.834 -0400", hash_original_method = "0ED75208E22CDF6376FEADF6E55B44EF", hash_generated_method = "7019C26F4D561A7F6A0CD3F0EC757694")
     public boolean mkdirs() {
         if(exists())        
@@ -961,7 +978,7 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741 =         result;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.855 -0400", hash_original_method = "B6F8DC1B8131115DA0E4E46657B89E08", hash_generated_method = "769978219FB45E4ACC9BDEE7C1C1FCE1")
     public boolean createNewFile() throws IOException {
         FileDescriptor fd = null;
@@ -1004,12 +1021,13 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static File createTempFile(String prefix, String suffix) throws IOException {
         return createTempFile(prefix, suffix, null);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static File createTempFile(String prefix, String suffix, File directory) throws IOException {
         if (prefix.length() < 3) {
             throw new IllegalArgumentException("prefix must be at least 3 characters");
@@ -1030,6 +1048,7 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.856 -0400", hash_original_method = "FDC5D6D625B3CE9B182F17F4E03581A9", hash_generated_method = "954172FEAF73143795C6A3F56A16F60B")
     public boolean renameTo(File newPath) {
         addTaint(newPath.getTaint());
@@ -1199,6 +1218,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_248740100 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "585308EC98C018F35D8810C372CB8328", hash_generated_method = "C1E2AE925C07B7F3C31099A888CBEF5C")
     public long getTotalSpace() {
         try 
@@ -1224,6 +1244,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_248740100 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "14D64E7B25BCE5C0F5FB20D43EB644E7", hash_generated_method = "BE1F4A9E1EA8161B98813A555AEA1914")
     public long getUsableSpace() {
         try 
@@ -1249,6 +1270,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_248740100 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_method = "23B4E27185BC412B65C1DC7422116A5E", hash_generated_method = "83DA5210CFBABD4E93F75FD3C51A9C8C")
     public long getFreeSpace() {
         try 

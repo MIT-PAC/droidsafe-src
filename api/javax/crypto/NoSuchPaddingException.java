@@ -9,6 +9,7 @@ import java.security.GeneralSecurityException;
 
 public class NoSuchPaddingException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.292 -0400", hash_original_method = "CC6456B5182239A839E31575FEF026A1", hash_generated_method = "4E7817D83D10A7B50450659AE3E32293")
     public  NoSuchPaddingException(String msg) {
         super(msg);
@@ -17,6 +18,7 @@ public class NoSuchPaddingException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.293 -0400", hash_original_method = "5F9DD48C6EA25CAA15AA1C916D0EC0F1", hash_generated_method = "B8D5082D9F33AC5995CD41DEC14F9A50")
     public  NoSuchPaddingException() {
         // ---------- Original Method ----------

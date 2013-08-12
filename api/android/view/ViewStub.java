@@ -91,7 +91,7 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.820 -0400", hash_original_method = "7D8DDEBB17ED3180A708C3B6F0212F68", hash_generated_method = "CCF3516282D357CF9B0D0F281C26EB81")
     private void initialize(Context context) {
         addTaint(context.getTaint());

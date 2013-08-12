@@ -42,7 +42,7 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.347 -0400", hash_original_method = "1EBAB3737DE9FB9DF9CC42BB4FE509FE", hash_generated_method = "6AF4181ED45907D0406E9C990D8CA19C")
     public long getReceivedBytesCount() {
         if(this.inTransportMetric != null)        
@@ -66,7 +66,7 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.347 -0400", hash_original_method = "F08F23EEAF6902947D0550EC2D19F62A", hash_generated_method = "FA2441152660FEABF93E04D92470D4AF")
     public long getSentBytesCount() {
         if(this.outTransportMetric != null)        

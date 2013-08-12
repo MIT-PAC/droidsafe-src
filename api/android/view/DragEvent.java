@@ -43,7 +43,7 @@ public class DragEvent implements Parcelable {
 
     private boolean mRecycled;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.609 -0400", hash_original_method = "5492E1A6EF7C89CB56D8B22EE2854B8B", hash_generated_method = "C325B7A5D23661790703116059A6FDC6")
     private  DragEvent() {
         // ---------- Original Method ----------
@@ -78,7 +78,7 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static DragEvent obtain(int action, float x, float y, Object localState,
             ClipDescription description, ClipData data, boolean result) {
         final DragEvent ev;
@@ -100,7 +100,7 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static DragEvent obtain(DragEvent source) {
         return obtain(source.mAction, source.mX, source.mY, source.mLocalState,
                 source.mClipDescription, source.mClipData, source.mDragResult);
@@ -184,7 +184,7 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_960813999 =         mLocalState;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.610 -0400", hash_original_method = "BFE96ED2CE5B148D8BC4E31880D4A75D", hash_generated_method = "EF856474A04634086C4B2C34FDF3EF9B")
     public final void recycle() {
         if(TRACK_RECYCLED_LOCATION)        
@@ -357,6 +357,7 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_547976154 =         "DragEvent{" + In
 
     public static final Parcelable.Creator<DragEvent> CREATOR =
         new Parcelable.Creator<DragEvent>() {
+        @DSModeled(DSC.SAFE)
         public DragEvent createFromParcel(Parcel in) {
             DragEvent event = DragEvent.obtain();
             event.mAction = in.readInt();

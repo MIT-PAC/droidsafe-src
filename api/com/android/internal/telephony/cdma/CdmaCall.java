@@ -36,6 +36,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static State stateFromDCState(DriverCall.State dcState) {
         switch (dcState) {
             case ACTIVE:        return State.ACTIVE;

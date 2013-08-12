@@ -73,7 +73,7 @@ class VMClassLoader {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError {
     	Class ret = (Class)new Object();
     	ret.addTaint(cl.taint);

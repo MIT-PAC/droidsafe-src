@@ -16,6 +16,7 @@ public abstract class ASN1Sequence extends ASN1Object {
 
     private Vector seq = new Vector();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.775 -0400", hash_original_method = "A2B39ADE0CCBD8FB2D75DB3228C401C7", hash_generated_method = "A2B39ADE0CCBD8FB2D75DB3228C401C7")
     public ASN1Sequence ()
     {
@@ -23,6 +24,7 @@ public abstract class ASN1Sequence extends ASN1Object {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static ASN1Sequence getInstance(
         Object  obj) {
         if (obj == null || obj instanceof ASN1Sequence)
@@ -44,6 +46,7 @@ public abstract class ASN1Sequence extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1Sequence getInstance(
         ASN1TaggedObject    obj,
         boolean             explicit) {
@@ -90,6 +93,7 @@ Enumeration var6402A8306CC01C7C438AB9A6E14F53B6_721265775 =         seq.elements
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.778 -0400", hash_original_method = "43ADC5A8CCFA8153E5DA918392680258", hash_generated_method = "688B3E7DD00954858DC6DB9A210BD8C5")
     public ASN1SequenceParser parser() {
         final ASN1Sequence outer = this;
@@ -176,6 +180,7 @@ DEREncodable varD80E22438A65327AC831683B7CA408E3_1763743089 =         (DEREncoda
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.779 -0400", hash_original_method = "18AB5743B6289573A8FB502D4D80C9A6", hash_generated_method = "510AD34A15C116F918E9CDD6C6101A7F")
     public int size() {
         int var5EFC25CE1E8361D0828BA092FBAD16A7_658499223 = (seq.size());
@@ -186,6 +191,7 @@ DEREncodable varD80E22438A65327AC831683B7CA408E3_1763743089 =         (DEREncoda
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.780 -0400", hash_original_method = "169312DEA8D054B4F83730CF694439C2", hash_generated_method = "D7F2D087E5F9F4161358281F3C34D236")
     public int hashCode() {
         Enumeration e = this.getObjects();
@@ -213,6 +219,7 @@ DEREncodable varD80E22438A65327AC831683B7CA408E3_1763743089 =         (DEREncoda
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.781 -0400", hash_original_method = "736827C8F8F39EC68A9619F02A5000FC", hash_generated_method = "ABB69871DF021FF0626D2DF77A89539E")
      boolean asn1Equals(
         DERObject  o) {
@@ -317,6 +324,7 @@ DEREncodable var142E4525AFF6FB7F5C03BA975A3F000D_80569021 =         encObj;
         throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.783 -0400", hash_original_method = "467BC9BFB84385F84F9590AA6DD6E2BE", hash_generated_method = "E2CDFBE245FDBB1BC6EB6C22F7E6D07B")
     public String toString() {
 String var43DF3944A9E5E6474F85343D56AB8D4F_1580012001 =         seq.toString();

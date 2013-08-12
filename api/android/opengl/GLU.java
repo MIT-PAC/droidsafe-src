@@ -41,6 +41,7 @@ public class GLU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void gluLookAt(GL10 gl, float eyeX, float eyeY, float eyeZ,
             float centerX, float centerY, float centerZ, float upX, float upY,
             float upZ) {
@@ -53,12 +54,14 @@ public class GLU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void gluOrtho2D(GL10 gl, float left, float right,
             float bottom, float top) {
         gl.glOrthof(left, right, bottom, top, -1.0f, 1.0f);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void gluPerspective(GL10 gl, float fovy, float aspect,
             float zNear, float zFar) {
         float top = zNear * (float) Math.tan(fovy * (Math.PI / 360.0));
@@ -69,6 +72,7 @@ public class GLU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int gluProject(float objX, float objY, float objZ,
             float[] model, int modelOffset, float[] project, int projectOffset,
             int[] view, int viewOffset, float[] win, int winOffset) {
@@ -103,6 +107,7 @@ public class GLU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int gluUnProject(float winX, float winY, float winZ,
             float[] model, int modelOffset, float[] project, int projectOffset,
             int[] view, int viewOffset, float[] obj, int objOffset) {

@@ -67,6 +67,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.477 -0400", hash_original_method = "6A5015CF78D45503CE00711383685F95", hash_generated_method = "C3F2B4BDA10BD5E8E3576D3B82282BC8")
      void writeEncoded(
         int     tag,
@@ -83,6 +84,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.478 -0400", hash_original_method = "ED4E90E4B3DD7ED52782F2B0BBD7912E", hash_generated_method = "0FDB1AD5CE01895F0C1BD2B3470D8BDA")
      void writeTag(int flags, int tagNo) throws IOException {
         addTaint(tagNo);
@@ -141,6 +143,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.479 -0400", hash_original_method = "7680EF084FC261D5865A989D21C79F36", hash_generated_method = "63FA737404C7B1FD6797BC2D7EBE0D58")
      void writeEncoded(int flags, int tagNo, byte[] bytes) throws IOException {
         addTaint(bytes[0]);
@@ -156,6 +159,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.480 -0400", hash_original_method = "42317E86533FAE5B23E236AC0365BD25", hash_generated_method = "F9103E21E41CA9234FA57E1DA6B62BE5")
     protected void writeNull() throws IOException {
         write(NULL);
@@ -166,6 +170,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.483 -0400", hash_original_method = "1AF5A1D8916987DB77C7DD8735718172", hash_generated_method = "3CBD9648A0867717D0D4F498C034076B")
     public void write(byte[] buf) throws IOException {
         addTaint(buf[0]);
@@ -175,6 +180,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.486 -0400", hash_original_method = "C3C674084F8E21E9786EAC52DFF53A81", hash_generated_method = "08DB4CD72E0EA53D6D53240610079F3B")
     public void write(byte[] buf, int offSet, int len) throws IOException {
         addTaint(len);
@@ -186,7 +192,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.487 -0400", hash_original_method = "F19F4C73BB689B28C331EE3D14B18253", hash_generated_method = "227FC2B7D7E144B6A200693FE364CDC9")
     public void writeObject(
         Object    obj) throws IOException {

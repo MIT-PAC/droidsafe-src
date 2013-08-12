@@ -53,6 +53,7 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.177 -0400", hash_original_method = "E1F98F0EB3621DC5A63042A4ACC9BAA2", hash_generated_method = "2975E26FC4314F9AF61208A93C85333D")
     public int load(String path, int priority) {
         addTaint(priority);

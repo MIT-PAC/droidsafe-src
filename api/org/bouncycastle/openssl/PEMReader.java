@@ -80,6 +80,7 @@ public class PEMReader extends PemReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.063 -0400", hash_original_method = "264D7373D1280C46B7B3C63F3DA0F057", hash_generated_method = "705B33BAACE1A8A98B2560263763B8D5")
     public  PEMReader(
         Reader reader,
@@ -135,6 +136,7 @@ public class PEMReader extends PemReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.065 -0400", hash_original_method = "127E22226D67F5F9289AA2863D2E5AFD", hash_generated_method = "B6937B370CAF564D03458A1EF8C893E2")
     public Object readObject() throws IOException {
         PemObject obj = readPemObject();
@@ -188,6 +190,7 @@ Object var540C13E9E156B687226421B24F2DF178_620129068 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.066 -0400", hash_original_method = "D2B938CFC8BBB876E5EB510A00C9CCB3", hash_generated_method = "A3DBB722D66ADF3E690A0F5932387A7D")
         protected ASN1Sequence readKeyPair(
             PemObject obj) throws IOException {
@@ -276,6 +279,7 @@ ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_1310034899 =                 (A
     
     private class DSAKeyPairParser extends KeyPairParser {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.067 -0400", hash_original_method = "ADBD617F929757840A0FD32FA3C710F1", hash_generated_method = "98E9B2A9DBB6C5434EE239E1D433E12C")
         public  DSAKeyPairParser(String provider) {
             super(provider);
@@ -345,6 +349,7 @@ Object varEAE0B1873A9922293A96783FD42EB56C_49954851 =                 new KeyPai
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.069 -0400", hash_original_method = "C19C67ADBE6E6117AD29F18C950B281B", hash_generated_method = "61C9A8506EEF6890DA67120A6E023008")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -395,6 +400,7 @@ Object varEAE0B1873A9922293A96783FD42EB56C_1782388867 =                 new KeyP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.070 -0400", hash_original_method = "C48B53F279450A4E2A5829BDF7A98326", hash_generated_method = "55AC1E1EB0702224B0BA9CBCF41409E5")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -463,6 +469,7 @@ Object varEAE0B1873A9922293A96783FD42EB56C_984859776 =                 new KeyPa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.071 -0400", hash_original_method = "5FFFDE03CF0C93B31D80B463283D2455", hash_generated_method = "77C800E576CDED1194DFB0B0FBEBA794")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -516,6 +523,7 @@ Object var540C13E9E156B687226421B24F2DF178_569905279 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.072 -0400", hash_original_method = "2B7340E6F342A11B50254F4EBFCAD61E", hash_generated_method = "5143A3D4D2CD6E3AA344D2CE79690CD0")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -572,6 +580,7 @@ Object var94012F6C458E41964D9D2A9EDC7EEEAB_220062019 =                 keyFact.g
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.073 -0400", hash_original_method = "E970ED81058B7D7B34834ED92B99A71B", hash_generated_method = "8879BBA40A5296B8F7D90FCE0797AEE2")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -621,6 +630,7 @@ Object var3EC6CBB1AD67E157BDCC0ED4E890A225_1433313601 =                 certFact
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.074 -0400", hash_original_method = "FC6031BD5FB1B476FDF70740E2B2704D", hash_generated_method = "3348AC59C4576ECBBD3848BC467CAF4E")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -666,6 +676,7 @@ Object var13675BEC202B29D0EFD6471DB06EE52F_802225166 =                 certFact.
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.075 -0400", hash_original_method = "CDCCA4D777F3AF625C0928D23D03AC75", hash_generated_method = "CCB2E4B2667CF51FCBA2FFA66609034E")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -706,6 +717,7 @@ Object varB794FF0D3385F65F500FAC6419C1B46C_642344932 =                 new PKCS1
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.076 -0400", hash_original_method = "349205E9CFEFFD40FE2D93E7DAF8E867", hash_generated_method = "EC14FD8B25222FC3BC4FDFA740CF0EDA")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());
@@ -952,6 +964,7 @@ Object varE1F9B715DB83CAAF9524B7CFB020968C_108232674 =                     keyFa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.085 -0400", hash_original_method = "2553B1C8B63939D2139C3EAA36C566E7", hash_generated_method = "B4061E09CB146B2320CD6A721192A8E0")
         public Object parseObject(PemObject obj) throws IOException {
             addTaint(obj.getTaint());

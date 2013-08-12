@@ -12,6 +12,7 @@ public class DrmRights {
 
     private String roId = "";
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.427 -0400", hash_original_method = "C823F603778B510E6D7C1D7E58C253FF", hash_generated_method = "7747E3FF1838963B8DAE3D1FE5AF77B8")
     public  DrmRights() {
         // ---------- Original Method ----------

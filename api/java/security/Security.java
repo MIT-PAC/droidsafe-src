@@ -40,6 +40,7 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static String getAlgorithmProperty(String algName, String propName) {
         if (algName == null || propName == null) {
@@ -59,6 +60,7 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized int insertProviderAt(Provider provider, int position) {
         if (getProvider(provider.getName()) != null) {
             return -1;
@@ -69,6 +71,7 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int addProvider(Provider provider) {
         return insertProviderAt(provider, 0);
     }
@@ -95,11 +98,13 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized Provider getProvider(String name) {
         return Services.getProvider(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Provider[] getProviders(String filter) {
         if (filter == null) {
             throw new NullPointerException();
@@ -198,6 +203,7 @@ public final class Security {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Set<String> getAlgorithms(String serviceName) {
         Set<String> result = new HashSet<String>();
         if (serviceName == null) {
@@ -225,7 +231,7 @@ public final class Security {
     
     private static class SecurityDoor implements SecurityAccess {
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {
@@ -242,6 +248,7 @@ public final class Security {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "EC338BCCD526D5A587138022C8E1100D")
         public List<String> getAliases(Provider.Service s) {
             addTaint(s.getTaint());
@@ -253,6 +260,7 @@ List<String> varFB798771B5D9FDB202B7BDE0A3A47609_1920516095 =             s.getA
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "DC564837117BFAF8DA49F16A0BCD6E39")
         public Provider.Service getService(Provider p, String type) {
             addTaint(type.getTaint());

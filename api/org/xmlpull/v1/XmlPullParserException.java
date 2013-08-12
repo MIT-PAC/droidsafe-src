@@ -18,6 +18,7 @@ public class XmlPullParserException extends Exception {
 
     protected int column = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.535 -0400", hash_original_method = "81C346207A813FD28C849879E7041B6E", hash_generated_method = "B09839E492214B3948379BFD0CEB6868")
     public  XmlPullParserException(String s) {
         super(s);
@@ -80,6 +81,7 @@ Throwable var7D32F5AE0FDCBBF6DD3F34C021592055_1842659053 =         detail;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.537 -0400", hash_original_method = "5154476310B69FA819C717F88BC0BDF0", hash_generated_method = "36A73D63E2EC7B0A992B319411FE8940")
     public void printStackTrace() {
         if(detail == null)        

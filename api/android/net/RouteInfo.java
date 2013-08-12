@@ -345,6 +345,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RouteInfo selectBestRoute(Collection<RouteInfo> routes, InetAddress dest) {
         if ((routes == null) || (dest == null)) return null;
         RouteInfo bestRoute = null;

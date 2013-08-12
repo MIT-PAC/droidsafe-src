@@ -15,6 +15,7 @@ import java.nio.channels.spi.SelectorProvider;
 
 public abstract class DatagramChannel extends AbstractSelectableChannel implements ByteChannel, ScatteringByteChannel, GatheringByteChannel {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.157 -0400", hash_original_method = "CB53873E4EB950556D4A1D46A395181D", hash_generated_method = "3892A14533B0657644D04485F31DC036")
     protected  DatagramChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
@@ -23,6 +24,7 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DatagramChannel open() throws IOException {
         return SelectorProvider.provider().openDatagramChannel();
     }
@@ -69,10 +71,12 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     public abstract int read(ByteBuffer target) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long read(ByteBuffer[] targets, int offset, int length)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.161 -0400", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "5185C2CBAE1EA96D68D622F105712235")
     public synchronized final long read(ByteBuffer[] targets) throws IOException {
         addTaint(targets[0].getTaint());
@@ -88,10 +92,12 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     public abstract int write(ByteBuffer source) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long write(ByteBuffer[] sources, int offset, int length)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.162 -0400", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "EE12C9858F6C1C2038752454B2E4DA06")
     public synchronized final long write(ByteBuffer[] sources) throws IOException {
         addTaint(sources[0].getTaint());

@@ -61,6 +61,7 @@ JSONStringer var3421C3B880CB17BF1CEF0BB32AD70DA2_308428233 =         close(Scope
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.472 -0400", hash_original_method = "CFE0E3CA762AC926F745749CF2134248", hash_generated_method = "0DFCC20CE95FECCF33EBC88F74A7DC95")
     public JSONStringer object() throws JSONException {
 JSONStringer var9F1003779294EC55D6DFAE23766A46CF_181565642 =         open(Scope.EMPTY_OBJECT, "{");
@@ -71,6 +72,7 @@ JSONStringer var9F1003779294EC55D6DFAE23766A46CF_181565642 =         open(Scope.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.473 -0400", hash_original_method = "04277D36A4D54D9CF9D1FF565E2D8229", hash_generated_method = "B543677342C6C0EF664E5C9C8EE5FA56")
     public JSONStringer endObject() throws JSONException {
 JSONStringer varAF20B7BEA60954198642AE0B7AD4210A_1066273154 =         close(Scope.EMPTY_OBJECT, Scope.NONEMPTY_OBJECT, "}");
@@ -241,6 +243,7 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_272329991 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.477 -0400", hash_original_method = "FCFB4EBC72F92C82B8A5BB74120390AB", hash_generated_method = "577F90945C291BC4404CC414C3584EF4")
     public JSONStringer value(boolean value) throws JSONException {
         addTaint(value);
@@ -265,6 +268,7 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_391662208 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.477 -0400", hash_original_method = "B92957EDC8605AA2DADE9F77E64B9066", hash_generated_method = "EF2263FE4A51240D9B48295ECF7218A6")
     public JSONStringer value(double value) throws JSONException {
         addTaint(value);
@@ -289,6 +293,7 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_2147399236 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.478 -0400", hash_original_method = "9F8BADDEDC1CE205B7B8CDF7A0DB9A85", hash_generated_method = "E819688C83E5531DBC30C8DF8B410179")
     public JSONStringer value(long value) throws JSONException {
         addTaint(value);
@@ -383,6 +388,7 @@ for(int i = 0;i < stack.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.480 -0400", hash_original_method = "473489656459EE056EBCFF443DF4BB5C", hash_generated_method = "C7FCF24390817A50CB2CB2E76A047217")
     public JSONStringer key(String name) throws JSONException {
         addTaint(name.getTaint());

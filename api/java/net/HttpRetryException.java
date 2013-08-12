@@ -51,6 +51,7 @@ String var96C70FF298E5697493B0D776E54760A4_1647804286 =         location;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.445 -0400", hash_original_method = "8E1778B505008D9459C329AADF141931", hash_generated_method = "DA0740696703D4CCEECBBCF1CEA53E81")
     public String getReason() {
 String var161DE919C6E3D4B838448EC95B86CE9B_1321505818 =         getMessage();

@@ -45,7 +45,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String intToString(int i) {
         return convertInt(null, i);
     }
@@ -152,7 +152,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String longToString(long l) {
         return convertLong(null, l);
     }
@@ -272,7 +272,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String byteToHexString(byte b, boolean upperCase) {
         char[] digits = upperCase ? UPPER_CASE_DIGITS : DIGITS;
         char[] buf = new char[2];
@@ -308,7 +308,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String longToHexString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
@@ -324,7 +324,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String intToOctalString(int i) {
         int bufLen = 11;
         char[] buf = new char[bufLen];
@@ -336,7 +336,7 @@ public final class IntegralToString {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static String longToOctalString(long v) {
         int i = (int) v;
         if (v >= 0 && i == v) {
@@ -361,7 +361,7 @@ public final class IntegralToString {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "AB280E60F0CF35D4F468078DFDA43178", hash_generated_field = "425773BE567620BA8858A8C9A806C3AB")
 
     private static final ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {        
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_method = "2EBCA8DA39A849AFE3E3749C7F49BA79", hash_generated_method = "DD3C6EC86D330D1AF7830345AF558804")
         @Override
         protected char[] initialValue() {

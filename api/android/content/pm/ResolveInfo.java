@@ -283,7 +283,7 @@ Drawable varAC1ABD151EC02B2A0CF6C484334129EB_1898309786 =         ci.loadIcon(pm
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.672 -0400", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "1D09FCEA9B30467EEBDF616BA27A773F")
     public String toString() {
         ComponentInfo ci = activityInfo != null ? activityInfo : serviceInfo;

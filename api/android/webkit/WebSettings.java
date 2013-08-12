@@ -222,6 +222,7 @@ public class WebSettings {
 
     private boolean mUseWebViewBackgroundForOverscroll = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.569 -0400", hash_original_method = "C5F77054875E8CE16379FFA130433105", hash_generated_method = "1CA31199F185959AAA4CAC977BC6EA45")
       WebSettings(Context context, WebView webview) {
         mEventHandler = new EventHandler();
@@ -430,6 +431,7 @@ String varE72B15D0FE2364B4652A376ACAFBA38E_1810850022 =         String.format(ba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.570 -0400", hash_original_method = "6B7C7B097AE4AF077C4ED1E2A5D10429", hash_generated_method = "EE55224A930804935CDBC9F3AB3F3778")
     public void setSupportZoom(boolean support) {
         mSupportZoom = support;
@@ -451,6 +453,7 @@ String varE72B15D0FE2364B4652A376ACAFBA38E_1810850022 =         String.format(ba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.571 -0400", hash_original_method = "16CDF55EE98C899167571FFC15609D2B", hash_generated_method = "29D331EEE75AE04FE358F9041FDC9D4D")
     public void setBuiltInZoomControls(boolean enabled) {
         mBuiltInZoomControls = enabled;
@@ -635,6 +638,7 @@ String varE72B15D0FE2364B4652A376ACAFBA38E_1810850022 =         String.format(ba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.580 -0400", hash_original_method = "C5C41A533FE351F2D45D268D5D267050", hash_generated_method = "F1ADB5AC3FF31784521C0307BCC0965A")
     public synchronized void setTextZoom(int textZoom) {
         if(mTextSize != textZoom)        
@@ -670,6 +674,7 @@ String varE72B15D0FE2364B4652A376ACAFBA38E_1810850022 =         String.format(ba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.581 -0400", hash_original_method = "D3E0150ED5C00CC3B22240870480363B", hash_generated_method = "E65696AA4DF9F8E14B9F03A2E6BDDE5A")
     public synchronized void setTextSize(TextSize t) {
         addTaint(t.getTaint());
@@ -745,6 +750,7 @@ TextSize varA667F0019A139609606DB37BCD641C93_1762892690 =         closestSize !=
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.581 -0400", hash_original_method = "E4C2219CCE12A9777A4354402A44D34B", hash_generated_method = "3BE66571F0DC55B262AB1E0A66B4A9FB")
     public void setDefaultZoom(ZoomDensity zoom) {
         if(mDefaultZoom != zoom)        
@@ -814,6 +820,7 @@ ZoomDensity varADD2946A80182532484870CA33B16E4C_498049753 =         mDefaultZoom
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.582 -0400", hash_original_method = "85DE35A00A5168FE5C8491B5E07C3BBE", hash_generated_method = "83A18675D250A2D60ACEA9271EE0AAC7")
     @Deprecated
     public synchronized void setUserAgent(int ua) {
@@ -869,6 +876,7 @@ ZoomDensity varADD2946A80182532484870CA33B16E4C_498049753 =         mDefaultZoom
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.583 -0400", hash_original_method = "622085E3817D576D67ED6E0D62241C79", hash_generated_method = "CB21D01C15E63C20A133AD09E8ABACFF")
     @Deprecated
     public synchronized int getUserAgent() {
@@ -907,6 +915,7 @@ ZoomDensity varADD2946A80182532484870CA33B16E4C_498049753 =         mDefaultZoom
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.583 -0400", hash_original_method = "6232B93EE163514DA7A8F2A20C0E8296", hash_generated_method = "8FB4C239CC17E89B66B686DAE2CD068E")
     public synchronized void setUseWideViewPort(boolean use) {
         if(mUseWideViewport != use)        
@@ -933,6 +942,7 @@ ZoomDensity varADD2946A80182532484870CA33B16E4C_498049753 =         mDefaultZoom
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.583 -0400", hash_original_method = "961D9442BDC4ECD4A72AED0ECCABFF49", hash_generated_method = "A62E95927C47DFDAC7DBD2A61E99317F")
     public synchronized void setSupportMultipleWindows(boolean support) {
         if(mSupportMultipleWindows != support)        
@@ -959,6 +969,7 @@ ZoomDensity varADD2946A80182532484870CA33B16E4C_498049753 =         mDefaultZoom
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.583 -0400", hash_original_method = "CF796A65BC60375130249D0138E0D269", hash_generated_method = "4D215C334C6E01F80F7C88BA91724002")
     public synchronized void setLayoutAlgorithm(LayoutAlgorithm l) {
         if(mLayoutAlgorithm != l)        
@@ -985,6 +996,7 @@ LayoutAlgorithm var204CDD3DC144FE754C7AA775EBA06CC5_1845393278 =         mLayout
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.583 -0400", hash_original_method = "80141FBB7709CEF61745CB878BA8248B", hash_generated_method = "724B663B9FD12E5AE5FA99728C1335D4")
     public synchronized void setStandardFontFamily(String font) {
         if(font != null && !font.equals(mStandardFontFamily))        
@@ -1011,6 +1023,7 @@ String varC2323C1961CCC92FBE9666D2F620C295_1844860324 =         mStandardFontFam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.584 -0400", hash_original_method = "85832E987C30A09FD65E322D8A53532D", hash_generated_method = "CB184341EA1E9A3A9A7987844387EA0F")
     public synchronized void setFixedFontFamily(String font) {
         if(font != null && !font.equals(mFixedFontFamily))        
@@ -1063,6 +1076,7 @@ String var0951E059DBC0E72E6FB78569D216234E_842020880 =         mSansSerifFontFam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.597 -0400", hash_original_method = "B0B03F3832ADF5F3F163E426E788DEB1", hash_generated_method = "88CF7D908E70EAAC6D322B47C50516B6")
     public synchronized void setSerifFontFamily(String font) {
         if(font != null && !font.equals(mSerifFontFamily))        
@@ -1089,6 +1103,7 @@ String var5BE2E40B500827616D5F1DACA1DE414C_620387861 =         mSerifFontFamily;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.597 -0400", hash_original_method = "8334AD5BA97572A472DE2E88CF457E83", hash_generated_method = "C683BC8A9E3A52AEA5BE4427B5AB4D92")
     public synchronized void setCursiveFontFamily(String font) {
         if(font != null && !font.equals(mCursiveFontFamily))        
@@ -1115,6 +1130,7 @@ String var4268F048F8F465953A322CC0EA3072E4_1427071900 =         mCursiveFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.598 -0400", hash_original_method = "3BEE212C0CAB12BA1830E10645682B81", hash_generated_method = "DA2766F02C11CAF107FA3DEA5FF1DAF7")
     public synchronized void setFantasyFontFamily(String font) {
         if(font != null && !font.equals(mFantasyFontFamily))        
@@ -1141,6 +1157,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.598 -0400", hash_original_method = "5B2F36FEBD6497C3F70A8544117DF67F", hash_generated_method = "D0C03ED65D32A9D0B10CBA4AF9963EE2")
     public synchronized void setMinimumFontSize(int size) {
         size = pin(size);
@@ -1169,6 +1186,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.599 -0400", hash_original_method = "979D72ED8DED37C47A363976CA577A0C", hash_generated_method = "CC8304D57BC9F2254F129246B799A31C")
     public synchronized void setMinimumLogicalFontSize(int size) {
         size = pin(size);
@@ -1197,6 +1215,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.600 -0400", hash_original_method = "F015D29DAD166EF30FCB62EA8F22BD34", hash_generated_method = "771AC0EFA70AE45800781712A93198E0")
     public synchronized void setDefaultFontSize(int size) {
         size = pin(size);
@@ -1225,6 +1244,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.601 -0400", hash_original_method = "F38EE7285BA7C36F298A402033D20C39", hash_generated_method = "0FB29AC3C80E3B44A0146BA96FBFA62B")
     public synchronized void setDefaultFixedFontSize(int size) {
         size = pin(size);
@@ -1275,6 +1295,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.606 -0400", hash_original_method = "4253364D9E80624081FA0E0F6FDC86F7", hash_generated_method = "006ECAE2613F23BD4DADA78790AF2980")
     public synchronized void setLoadsImagesAutomatically(boolean flag) {
         if(mLoadsImagesAutomatically != flag)        
@@ -1301,6 +1322,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.606 -0400", hash_original_method = "D93A9FC6AE1462BC3A72CE8E390FD0F6", hash_generated_method = "A8BA1197A5F0C97B3BD5B7B777C0DBD5")
     public synchronized void setBlockNetworkImage(boolean flag) {
         if(mBlockNetworkImage != flag)        
@@ -1327,6 +1349,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.607 -0400", hash_original_method = "244EC0C47571696247D156D16BFFBF27", hash_generated_method = "1DB492CB4004AF02C30F39711C6F4E86")
     public synchronized void setBlockNetworkLoads(boolean flag) {
         if(mBlockNetworkLoads != flag)        
@@ -1384,6 +1407,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.609 -0400", hash_original_method = "0BBFCDC224ADE5D71512B3B9C5FED4DC", hash_generated_method = "B76E7C530464C07FD00CE283FE1B79CB")
     public synchronized void setJavaScriptEnabled(boolean flag) {
         if(mJavaScriptEnabled != flag)        
@@ -1453,6 +1477,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.609 -0400", hash_original_method = "05BB2A888D33554F620DCC4B01FA7575", hash_generated_method = "111033F6059DDDD53D879E0C4C968AEA")
     @Deprecated
     public synchronized void setPluginsEnabled(boolean flag) {
@@ -1463,6 +1488,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.609 -0400", hash_original_method = "DB94ACE3494108D6193A811AD96FC597", hash_generated_method = "D3E8ECEF7C81240D8520E3D7DC7A5A88")
     public synchronized void setPluginState(PluginState state) {
         if(mPluginState != state)        
@@ -1487,6 +1513,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.610 -0400", hash_original_method = "AF758F2CA723722CB4C8BF68969FC2D2", hash_generated_method = "FE951B42DADBE726FC6298063497D7B7")
     public synchronized void setDatabasePath(String databasePath) {
         if(databasePath != null && !mDatabasePathHasBeenSet)        
@@ -1504,6 +1531,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.610 -0400", hash_original_method = "BC0F324C7AC101E200A0E358BDBC7AB1", hash_generated_method = "BF69870B320812A112DB079CC8951211")
     public synchronized void setGeolocationDatabasePath(String databasePath) {
         if(databasePath != null
@@ -1536,6 +1564,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.610 -0400", hash_original_method = "C7AB159C419EE425C63EEE7B4C162DEF", hash_generated_method = "B40AB22D7676452A82ACE26F8989F28F")
     public synchronized void setAppCachePath(String appCachePath) {
         if(appCachePath != null && !appCachePath.equals(mAppCachePath))        
@@ -1551,6 +1580,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.611 -0400", hash_original_method = "55D93840C546554373F35F660C5755AC", hash_generated_method = "DA4779B6CAFAEFA48DF6C010F725D898")
     public synchronized void setAppCacheMaxSize(long appCacheMaxSize) {
         if(appCacheMaxSize != mAppCacheMaxSize)        
@@ -1566,6 +1596,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.611 -0400", hash_original_method = "869B3AB9767C9688E84644FF6FE71246", hash_generated_method = "8D8E3B449B60932E27E339F26C7BA1DE")
     public synchronized void setDatabaseEnabled(boolean flag) {
         if(mDatabaseEnabled != flag)        
@@ -1581,6 +1612,7 @@ String varB11A6B5782C3062153801D3970A8B2B3_1837319857 =         mFantasyFontFami
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.611 -0400", hash_original_method = "1833A47C66872FD150B68FE6759B0625", hash_generated_method = "82E041B98A1C87FED6913F44E0A0281B")
     public synchronized void setDomStorageEnabled(boolean flag) {
         if(mDomStorageEnabled != flag)        
@@ -1722,6 +1754,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1944020781 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.616 -0400", hash_original_method = "4CDCF2B2AC7A9689B491AFCE4B80F0EB", hash_generated_method = "931C629023BFB895281F385B1BF9B198")
     public synchronized void setJavaScriptCanOpenWindowsAutomatically(
             boolean flag) {
@@ -1749,6 +1782,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1944020781 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.617 -0400", hash_original_method = "A24B805E1ED21576385EF437050E004D", hash_generated_method = "EB125807562DD6A96C8FC5B9FC6B1CF8")
     public synchronized void setDefaultTextEncodingName(String encoding) {
         if(encoding != null && !encoding.equals(mDefaultTextEncoding))        
@@ -1775,6 +1809,7 @@ String varFBF8D4E5D31D3452180EB440EBF187F9_1767966872 =         mDefaultTextEnco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.623 -0400", hash_original_method = "EF76B53D37FAD17B99E355E5158D3AE3", hash_generated_method = "4096CC9F38B94167C96CFC9D088EF85B")
     public synchronized void setUserAgentString(String ua) {
         if(ua == null || ua.length() == 0)        
@@ -1821,6 +1856,7 @@ String varFBF8D4E5D31D3452180EB440EBF187F9_1767966872 =         mDefaultTextEnco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.623 -0400", hash_original_method = "2522780DB5B181D072BE72836FEE2179", hash_generated_method = "A48D97326FD726ECADC740DCD2DDAE74")
     public synchronized String getUserAgentString() {
         if(DESKTOP_USERAGENT.equals(mUserAgent) ||
@@ -1873,6 +1909,7 @@ String var335897D5BF56D3EA7F3758538DEBFEFF_475522875 =         mUserAgent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.623 -0400", hash_original_method = "D20FFE724413B630D767FC3330D85D9B", hash_generated_method = "25BC0CB051D3982A517777F6F1794800")
     synchronized String getAcceptLanguage() {
         synchronized
@@ -1899,6 +1936,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.628 -0400", hash_original_method = "1949FADEB987BBB9FFD42544F3D5731B", hash_generated_method = "05829049C5EFC50B4F163B02BBA6B8B7")
      boolean isNarrowColumnLayout() {
         boolean var99A4DD0BA17C4D3916FB39A801BD55DD_463889166 = (getLayoutAlgorithm() == LayoutAlgorithm.NARROW_COLUMNS);
@@ -1934,6 +1972,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.628 -0400", hash_original_method = "ADE96AEA7507FA885C654AF6A7AF6825", hash_generated_method = "797489A82414FABADB8B85D2C13B14AC")
     public synchronized void setRenderPriority(RenderPriority priority) {
         if(mRenderPriority != priority)        
@@ -1951,6 +1990,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.629 -0400", hash_original_method = "C16F91A0BF5BCFC94071B85F47E4B2E9", hash_generated_method = "D970A1AF8762DC7784F4CF34C3544E3B")
     public void setCacheMode(int mode) {
         if(mode != mOverrideCacheMode)        
@@ -2009,6 +2049,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.633 -0400", hash_original_method = "37CD2CB6E6E70B184FA7FDB5F22FF522", hash_generated_method = "5EB3E7BB9B85E3C590994B3612286A63")
      boolean getUseFixedViewport() {
         boolean varA51C20A0FE1B2ECC6101FEF8C98C549F_1881980950 = (getUseWideViewPort());
@@ -2030,6 +2071,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.633 -0400", hash_original_method = "34042B5DCA297E4EBEB0CC9227844924", hash_generated_method = "D55DA92CCE574D999F3216C3F666458F")
     synchronized void setPrivateBrowsingEnabled(boolean flag) {
         if(mPrivateBrowsingEnabled != flag)        
@@ -2067,6 +2109,7 @@ String var4F4D12599D633053CBC85A8AA103D90E_1309646304 =         mAcceptLanguage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.637 -0400", hash_original_method = "5D9DAFAFBF77CCE3ED840C406B6898AF", hash_generated_method = "DAD7E3131EFE7AC3635DB02DE70DE0E1")
     synchronized void setSyntheticLinksEnabled(boolean flag) {
         if(mSyntheticLinksEnabled != flag)        
@@ -2150,6 +2193,7 @@ AutoFillProfile varDCF553BB5F5743139326AD6AFF33B6D4_449259077 =         mAutoFil
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.640 -0400", hash_original_method = "3B766C36F75F383AEAB183DB6ECCA431", hash_generated_method = "748D32156F971838C8466AB83CD0C4D1")
      void setDoubleTapToastCount(int count) {
         addTaint(count);
@@ -2304,6 +2348,7 @@ String var953EAE7B2F85C0E869D0F2008318D845_728848379 =         mWebView.nativeGe
         NORMAL(100),
         LARGER(150),
         LARGEST(200);
+        @DSModeled(DSC.SAFE)
         TextSize(int size) {
             value = size;
         }
@@ -2315,6 +2360,7 @@ String var953EAE7B2F85C0E869D0F2008318D845_728848379 =         mWebView.nativeGe
         FAR(150),      
         MEDIUM(100),    
         CLOSE(75);     
+        @DSModeled(DSC.SAFE)
         ZoomDensity(int size) {
             value = size;
         }

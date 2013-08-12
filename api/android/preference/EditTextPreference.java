@@ -56,6 +56,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.099 -0400", hash_original_method = "CEF16EBC31082C193A3B95CCEE8E6067", hash_generated_method = "08798DA0F4FB40C12FA0493F975C5920")
     public void setText(String text) {
         final boolean wasBlocking = shouldDisableDependents();
@@ -88,6 +89,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_931637996 =         mText;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.107 -0400", hash_original_method = "D07B0890C399F21AD31B9014C9722593", hash_generated_method = "2E8257ED009A75E674824EAF80287BB1")
     @Override
     protected void onBindDialogView(View view) {
@@ -141,6 +143,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_931637996 =         mText;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.115 -0400", hash_original_method = "72D88295ED5747003A75C3EC7A0816A7", hash_generated_method = "62B28E49042F5E300CB5CAF0CA1601E6")
     @Override
     protected void onDialogClosed(boolean positiveResult) {
@@ -166,6 +169,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_931637996 =         mText;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.122 -0400", hash_original_method = "617E38A3300A64CD810B1ADC15B8238E", hash_generated_method = "F2531A065F0B40C2CF202DDB939A90CF")
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
@@ -180,6 +184,7 @@ Object var0AC0FFFECD61C5D7F483CEEBDC224FAC_1016672297 =         a.getString(inde
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.125 -0400", hash_original_method = "5BF4BAC56AB2C13ADD22317FD43163DE", hash_generated_method = "2A4F287573259A9E5010D7168EE4EBBA")
     @Override
     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
@@ -253,6 +258,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_660847683 =         myState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.145 -0400", hash_original_method = "FDF67462F1789AF80412C105807187A6", hash_generated_method = "E3D2F56C4CDE6490026C81D0342CAD28")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
@@ -320,6 +326,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_660847683 =         myState;
                 return new SavedState(in);
             }
 
+            @DSModeled(DSC.SAFE)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

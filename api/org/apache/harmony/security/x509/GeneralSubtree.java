@@ -104,6 +104,7 @@ GeneralName var530A7BC087253E083043013B3EB0C6E6_1266456447 =         base;
             setOptional(2);                 
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             int maximum = -1; 

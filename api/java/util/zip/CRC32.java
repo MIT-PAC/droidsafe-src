@@ -64,7 +64,7 @@ public class CRC32 implements Checksum {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.488 -0400", hash_original_method = "FA32CF22527C3BE95E419FDEDA807F82", hash_generated_method = "546EBE55CF74EE123A00022A57002A43")
     public void update(byte[] buf, int offset, int byteCount) {
         Arrays.checkOffsetAndCount(buf.length, offset, byteCount);

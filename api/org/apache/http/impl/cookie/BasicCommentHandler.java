@@ -9,6 +9,7 @@ import org.apache.http.cookie.SetCookie;
 
 public class BasicCommentHandler extends AbstractCookieAttributeHandler {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.582 -0400", hash_original_method = "753BC5BDDB6B9E5E273FEAA2E3B0731A", hash_generated_method = "FE8BA2DCEA8CC629CBFD2093BB214103")
     public  BasicCommentHandler() {
         super();

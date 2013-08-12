@@ -222,7 +222,7 @@ public class Timer {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.863 -0400", hash_original_method = "163F6B0C6203677A1F058E56FE2F9B83", hash_generated_method = "A1323558EDE40B3D1F476C46C515AD93")
     private void scheduleImpl(TimerTask task, long delay, long period, boolean fixed) {
         addTaint(fixed);
@@ -402,7 +402,7 @@ public class Timer {
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.867 -0400", hash_original_method = "1179C8665DD7C88A3DCD4C96D03B447E", hash_generated_method = "9E89276722C17DD5D648647E5CE84B00")
         private void insertTask(TimerTask newTask) {
             addTaint(newTask.getTaint());

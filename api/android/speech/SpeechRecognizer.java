@@ -117,6 +117,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.220 -0400", hash_original_method = "F27BB062A778ED5EBCB2B3B868E059E6", hash_generated_method = "E70E29B7E155AD2AA2823CB3C1C213AF")
     public void setRecognitionListener(RecognitionListener listener) {
         addTaint(listener.getTaint());
@@ -171,6 +172,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.222 -0400", hash_original_method = "A8390EFF2DA1FBF4056A47F4A80E1574", hash_generated_method = "86ABC8C869016D540049C9BB479FE5C4")
     public void stopListening() {
         checkIsCalledFromMainThread();
@@ -181,6 +183,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.223 -0400", hash_original_method = "10AA7C6E429E5CC79EFBF134B39CD4DB", hash_generated_method = "8E4782DC5673E8AFB7EA3829DBEBA064")
     public void cancel() {
         checkIsCalledFromMainThread();
@@ -350,7 +353,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.228 -0400", hash_original_method = "B539A3FDAD7DAFC2710B42A201C294A5", hash_generated_method = "DC94C10E74AC8EABFF4D6BA6CA2867D1")
     public void destroy() {
         if(mConnection != null)        
@@ -431,6 +434,7 @@ switch(msg.what){
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.231 -0400", hash_original_field = "3E97CA0845357386ACA7B60ED6A59B83", hash_generated_field = "975920C3BABDF4247819CC8A88C87909")
 
         private final Handler mInternalHandler = new Handler() {            
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.231 -0400", hash_original_method = "719D3C46325B87A1A9440CA0A4F7745E", hash_generated_method = "D4BAC621DAE131CEEBE025F02B08B36B")
             @Override
             public void handleMessage(Message msg) {
@@ -482,6 +486,7 @@ switch(msg.what){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.232 -0400", hash_original_method = "423C75D37126FCE97656F1DAA5EC9589", hash_generated_method = "4E86798820D6846FF74D13277248EEBA")
         public void onBeginningOfSpeech() {
             //DSFIXME:  CODE0009: Possible callback target function detected

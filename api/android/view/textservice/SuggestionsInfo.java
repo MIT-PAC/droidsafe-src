@@ -231,6 +231,7 @@ String var09A13D800FB7522D7DD400180F60E984_233857354 =         mSuggestions[i];
 
     public static final Parcelable.Creator<SuggestionsInfo> CREATOR
             = new Parcelable.Creator<SuggestionsInfo>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public SuggestionsInfo createFromParcel(Parcel source) {
             return new SuggestionsInfo(source);

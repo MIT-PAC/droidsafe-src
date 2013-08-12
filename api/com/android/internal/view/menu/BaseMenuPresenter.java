@@ -59,6 +59,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.147 -0400", hash_original_method = "132A0398F4F3F28C73E120DA24E1764B", hash_generated_method = "E01E7C26740154C462790FD515E64B6D")
     @Override
     public void initForMenu(Context context, MenuBuilder menu) {
@@ -72,6 +73,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.148 -0400", hash_original_method = "5077062D5DDD15E91EAE389A4058EA7D", hash_generated_method = "2EAA2587D85BA2E4BB4CFEAE6E987F06")
     @Override
     public MenuView getMenuView(ViewGroup root) {
@@ -94,6 +96,7 @@ MenuView var7E140BC01DB9AC7A99D01C4BFF6F142B_1180237723 =         mMenuView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.149 -0400", hash_original_method = "F8C2A52598BC4F88A553A5E9C0F208E1", hash_generated_method = "B0A9DCAB9E0324778FAD4CBE867821DD")
     public void updateMenuView(boolean cleared) {
         addTaint(cleared);
@@ -160,6 +163,7 @@ for(int i = 0;i < itemCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.151 -0400", hash_original_method = "2A7E19722F4165D83150E5278582AE5B", hash_generated_method = "AE2747C33CB663FDA188E13722D9EB33")
     protected boolean filterLeftoverView(ViewGroup parent, int childIndex) {
         addTaint(childIndex);
@@ -194,6 +198,7 @@ MenuView.ItemView varEEF290D4AF2FD2B99EA512C39FD6E4DC_197011519 =         (MenuV
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.153 -0400", hash_original_method = "4524E542CCB3CEBB00AD430A4F472D75", hash_generated_method = "A74DFC3D06A716D50AF1896254DF5309")
     public View getItemView(MenuItemImpl item, View convertView, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -241,6 +246,7 @@ View var71C21EAF51F71E74CDDCB5F8C6AA9443_1843933953 =         (View) itemView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.154 -0400", hash_original_method = "722067599CD4502E441718E90CBC0EB7", hash_generated_method = "14AC8FDD08577D1D1AB5D57A2105137A")
     public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -257,6 +263,7 @@ View var71C21EAF51F71E74CDDCB5F8C6AA9443_1843933953 =         (View) itemView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.154 -0400", hash_original_method = "A5E8641CBC0C1B6BF90AAD3ACE718984", hash_generated_method = "4850AE6F435E97FF120579232FE82D0B")
     public boolean onSubMenuSelected(SubMenuBuilder menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected

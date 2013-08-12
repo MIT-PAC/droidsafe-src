@@ -522,6 +522,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1975399395 =         mObjects.get
 
         private WeakReference<DynamicLayout> mLayout;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.539 -0400", hash_original_method = "5B008785D1A2C7A00F27EBFB90B5E73C", hash_generated_method = "B82CCE3403554F8EA355C68CA40E1262")
         public  ChangeWatcher(DynamicLayout layout) {
             mLayout = new WeakReference<DynamicLayout>(layout);
@@ -563,6 +564,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1975399395 =         mObjects.get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.539 -0400", hash_original_method = "64CFCAB8C5BCD960BA37993088223F2C", hash_generated_method = "A8739152EF2C15946763111B38CA8B59")
         public void onTextChanged(CharSequence s, int where, int before, int after) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -599,6 +601,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1975399395 =         mObjects.get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.540 -0400", hash_original_method = "A697CB019B21FC660F8DBD66680C7AE1", hash_generated_method = "6DEA0B8A2E4DAE68C14C9D428655CE32")
         public void onSpanRemoved(Spannable s, Object o, int start, int end) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -614,6 +617,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1975399395 =         mObjects.get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.540 -0400", hash_original_method = "003DE2DC22FE06A8925B46C1AFC5A2FC", hash_generated_method = "5B30F8789C863E965657E3935EDC2B0F")
         public void onSpanChanged(Spannable s, Object o, int start, int end, int nstart, int nend) {
             //DSFIXME:  CODE0009: Possible callback target function detected

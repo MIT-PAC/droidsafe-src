@@ -669,6 +669,7 @@ for(int j = spanStart;j < spanEnd;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.707 -0400", hash_original_method = "478F3FA593939ABCBF542030DE605E96", hash_generated_method = "89CEF3576D47C9CD0D28C5165F6D1E4A")
     private int out(CharSequence text, int start, int end,
                       int above, int below, int top, int bottom, int v,

@@ -54,7 +54,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.272 -0400", hash_original_method = "2F837EEA33DB685519494240B032A81B", hash_generated_method = "C11433F17D9EF2D0AE8DAB57B3FD60E2")
     private  CompletionInfo(Parcel source) {
         mId = source.readLong();
@@ -113,7 +113,7 @@ CharSequence var21E4126FD2EB7A90E0B7B540C066F29D_1994638552 =         mLabel;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.273 -0400", hash_original_method = "3B6D1C61D70E52042FDD9DC9240A1E79", hash_generated_method = "48811115C9C8C70DEB414BDE7E79042C")
     @Override
     public String toString() {
@@ -127,7 +127,7 @@ String var589E935FF15E9B2705C963D280AA9F32_1477591424 =         "CompletionInfo{
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.273 -0400", hash_original_method = "9E5F84EC05F73AE374617C14B6E91B86", hash_generated_method = "9879AA80B6B83FF505E7B4F125A8C8EE")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

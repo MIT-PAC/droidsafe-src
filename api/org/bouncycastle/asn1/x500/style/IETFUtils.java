@@ -32,7 +32,7 @@ public class IETFUtils {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static RDN[] rDNsFromString(String name, X500NameStyle x500Style) {
         X500NameTokenizer nTok = new X500NameTokenizer(name);
         X500NameBuilder builder = new X500NameBuilder(x500Style);
@@ -97,6 +97,7 @@ public class IETFUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1ObjectIdentifier decodeAttrName(
         String      name,
         Hashtable   lookUp) {
@@ -117,7 +118,7 @@ public class IETFUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static ASN1Encodable valueFromHexString(
         String  str,
         int     off) throws IOException {
@@ -148,6 +149,7 @@ public class IETFUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void appendTypeAndValue(
         StringBuffer          buf,
         AttributeTypeAndValue typeAndValue,
@@ -166,7 +168,7 @@ public class IETFUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String valueToString(ASN1Encodable value) {
         StringBuffer vBuf = new StringBuffer();
         if (value instanceof ASN1String && !(value instanceof DERUniversalString))
@@ -224,6 +226,7 @@ public class IETFUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String canonicalize(String s) {
         String value = Strings.toLowerCase(s.trim());
         if (value.length() > 0 && value.charAt(0) == '#')
@@ -252,6 +255,7 @@ public class IETFUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stripInternalSpaces(
         String str) {
         StringBuffer res = new StringBuffer();

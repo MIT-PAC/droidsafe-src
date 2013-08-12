@@ -20,6 +20,7 @@ public final class GpsStatus {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.273 -0400", hash_original_field = "2DF85302EF31B22A6E1E6CB995BF0173", hash_generated_field = "4E2BE773D59F171305B1D8BC86C6191A")
 
     private Iterable<GpsSatellite> mSatelliteList = new Iterable<GpsSatellite>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.273 -0400", hash_original_method = "9983CD5442E4C518DD699220FBA30311", hash_generated_method = "D802BB52D632FD31E6502E4338BAE5D2")
         public Iterator<GpsSatellite> iterator() {
             Iterator<GpsSatellite> varB4EAC82CA7396A68D541C85D26508E83_399552892 = null; 
@@ -201,6 +202,7 @@ for(int i = mIndex;i < mSatellites.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.150 -0400", hash_original_method = "2172205C4F18481DAEA9224F778B255B", hash_generated_method = "CE86E1477FE66DEAEB111AABD1FDFAD7")
         public GpsSatellite next() {
             while
@@ -228,6 +230,7 @@ GpsSatellite var8CA29B14779F45CBE6C9A07E84A36A9D_112372875 =                    
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.151 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "CA5F1F4803F67020FF6133F9DACD5199")
         public void remove() {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2000569704 = new UnsupportedOperationException();

@@ -29,6 +29,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.307 -0400", hash_original_method = "34395E14B37CB09607BC1384911068DF", hash_generated_method = "4730855AD6D722A19B03FA23E3955A1C")
     public  RDN(ASN1ObjectIdentifier oid, ASN1Encodable value) {
         addTaint(value.getTaint());
@@ -45,6 +46,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.308 -0400", hash_original_method = "70441AB748507844E6B6BCC428FBB7E0", hash_generated_method = "7BBD5B09B6231808260E121EB4C29BD7")
     public  RDN(AttributeTypeAndValue attrTAndV) {
         this.values = new DERSet(attrTAndV);
@@ -53,6 +55,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.308 -0400", hash_original_method = "64FFFA196C50B73DE4BDB139C105E877", hash_generated_method = "FE3A4F5D64F6663C43C30F2372D32E20")
     public  RDN(AttributeTypeAndValue[] aAndVs) {
         this.values = new DERSet(aAndVs);
@@ -61,6 +64,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RDN getInstance(Object obj) {
         if (obj instanceof RDN)
         {
@@ -74,6 +78,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.309 -0400", hash_original_method = "8A639F09C3F110E6BEBA76653F26863C", hash_generated_method = "C4BCA3A97BCF1359FC215A38B5548E2C")
     public boolean isMultiValued() {
         boolean var4BD1DF8E036A3E994525BA373DB11683_91546325 = (this.values.size() > 1);
@@ -84,6 +89,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.310 -0400", hash_original_method = "C47887FAFD60151A3B1C3C44B7665548", hash_generated_method = "75184A2153212FEF2CDCB303CAC7F131")
     public AttributeTypeAndValue getFirst() {
         if(this.values.size() == 0)        
@@ -104,6 +110,7 @@ AttributeTypeAndValue var3E668B3FBD36C203E122F3AF63D5393B_1307873572 =         A
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.311 -0400", hash_original_method = "BEE890DAA6519CDB424A36294BC48156", hash_generated_method = "E22DBFA6AD6E5E1DC2707233EBC4C04E")
     public AttributeTypeAndValue[] getTypesAndValues() {
         AttributeTypeAndValue[] tmp = new AttributeTypeAndValue[values.size()];

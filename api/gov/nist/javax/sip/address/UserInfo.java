@@ -164,6 +164,7 @@ String var8371B008E722D01F0CA3A116DA23853F_1318815884 =         password;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.331 -0400", hash_original_method = "3D02333C0789FC569CF57CEE9E3D36D7", hash_generated_method = "ABA2B06BD258D22F296622B437D308ED")
     public void setUser(String user) {
         this.user = user;

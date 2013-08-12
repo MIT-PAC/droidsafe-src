@@ -17,6 +17,7 @@ public class ParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Parser makeParser() throws ClassNotFoundException,
     IllegalAccessException,
     InstantiationException,
@@ -31,6 +32,7 @@ public class ParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Parser makeParser(String className) throws ClassNotFoundException,
     IllegalAccessException,
     InstantiationException,

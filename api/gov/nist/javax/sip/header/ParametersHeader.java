@@ -119,6 +119,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1614733325 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.652 -0400", hash_original_method = "DC6AABD6CB8C91F923D2D5F7703B6CF1", hash_generated_method = "86403B3A66D4B6EEBA4A6D8C1DE78B17")
     public void setParameter(String name, String value) throws ParseException {
         addTaint(value.getTaint());
@@ -144,6 +145,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1614733325 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.652 -0400", hash_original_method = "982C7BF5F52C5CB066896B5A4FF02FB5", hash_generated_method = "3F2F907D08715BCCDDC137A4243D9384")
     public void setQuotedParameter(String name, String value) throws ParseException {
         addTaint(value.getTaint());
@@ -173,6 +175,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1614733325 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.653 -0400", hash_original_method = "8F6FACDCF2BE80409FBAB3E7E4602B1E", hash_generated_method = "C5AA3A51996199F1EDD14512F2328A4B")
     protected void setParameter(String name, int value) {
         addTaint(value);
@@ -185,6 +188,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1614733325 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.653 -0400", hash_original_method = "A43053EB8AE25416B5AFA5C2C0F13D2F", hash_generated_method = "FF8208D1A6A68346CF4B4BE17B86D984")
     protected void setParameter(String name, boolean value) {
         addTaint(value);
@@ -197,6 +201,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1614733325 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.654 -0400", hash_original_method = "9588AB5C73A4CC192FA4DE06D052A58D", hash_generated_method = "31F80637715B0377779C13FC4463CB6D")
     protected void setParameter(String name, float value) {
         addTaint(value);
@@ -224,6 +229,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1614733325 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.654 -0400", hash_original_method = "69DF71CB140C2C1EC9DCD8B4F4E0A5EC", hash_generated_method = "0ACEA7F53073B73B19BEA9AAB3724081")
     protected void setParameter(String name, Object value) {
         addTaint(value.getTaint());
@@ -610,6 +616,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_1422372864 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.703 -0400", hash_original_method = "386D6A280C48B0DE53357DBAEAE91419", hash_generated_method = "9D0AE3B447F81E94CEDBA426796E5C2E")
     public void setMultiParameter(String name, String value) {
         addTaint(value.getTaint());
@@ -724,6 +731,7 @@ Iterator<String> var5015060E52232B6144F92024DB04D587_757326116 =         duplica
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.704 -0400", hash_original_method = "A37B23ECE5B3E77BF1561677FE6ED233", hash_generated_method = "37F979930D8A5C957F0D3F0E8D3B6DD4")
     @SuppressWarnings("unchecked")
     protected final boolean equalParameters( Parameters other ) {

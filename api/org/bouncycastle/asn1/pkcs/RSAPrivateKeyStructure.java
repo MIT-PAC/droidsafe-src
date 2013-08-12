@@ -50,6 +50,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
 
     private ASN1Sequence otherPrimeInfos = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.085 -0400", hash_original_method = "CBF376BA3B510254060235C0D7FBAB4E", hash_generated_method = "31188D1BC3205E4C4EF73CDBDCAB4094")
     public  RSAPrivateKeyStructure(
         BigInteger  modulus,
@@ -82,6 +83,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.089 -0400", hash_original_method = "7CCE248335D08B10FB2A36728BE792D2", hash_generated_method = "B7CB006BB0E56524B53ECAD683785A2D")
     public  RSAPrivateKeyStructure(
         ASN1Sequence  seq) {
@@ -112,6 +114,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RSAPrivateKeyStructure getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -119,6 +122,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RSAPrivateKeyStructure getInstance(
         Object  obj) {
         if (obj instanceof RSAPrivateKeyStructure)
@@ -232,6 +236,7 @@ BigInteger varA44CB2A7DC1E45A055C8AC9C497560AF_877986644 =         coefficient;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.094 -0400", hash_original_method = "B4123323DA5D54F0794A6EC8CDF9F726", hash_generated_method = "5C6A2DAA9791A575E6B59F5CBB224D02")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

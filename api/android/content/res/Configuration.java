@@ -48,13 +48,13 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     public int textLayoutDirection;
     public int seq;
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Configuration() {
         setToDefaults();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Configuration(Configuration o) {
         setTo(o);
     }
@@ -241,6 +241,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void readFromParcel(Parcel source) {
         fontScale = source.readFloat();
         mcc = source.readInt();
@@ -270,6 +271,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int compareTo(Configuration that) {
         int n;
         float a = this.fontScale;
@@ -319,6 +321,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean equals(Configuration that) {
         if (that == null) return false;
         if (that == this) return true;

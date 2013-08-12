@@ -31,6 +31,7 @@ public class SubjectParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.888 -0400", hash_original_method = "F2D8E65DBCC7717EF7411B874638ABFB", hash_generated_method = "AC9C0E5B36F656DFF94C5D54FB0E7697")
     public SIPHeader parse() throws ParseException {
         Subject subject = new Subject();

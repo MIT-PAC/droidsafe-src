@@ -469,6 +469,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1739274097 =         NullKeyList
     
     private class SettingsObserver extends ContentObserver {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.775 -0400", hash_original_method = "3A67C3C9DA9AFE8F3EB6304BC772D062", hash_generated_method = "EDD4606589505CE8A23486C182973460")
         public  SettingsObserver() {
             super(new Handler());

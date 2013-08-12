@@ -197,6 +197,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.818 -0400", hash_original_method = "A67B583D0E7AD982D1504BFCE2629D2E", hash_generated_method = "BEDCB5FF8597F24B8FA617470519D827")
     public void put(long key, E value) {
         int i = binarySearch(mKeys, 0, mSize, key);

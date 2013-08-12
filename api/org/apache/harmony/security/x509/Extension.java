@@ -678,7 +678,8 @@ BasicConstraints var540C13E9E156B687226421B24F2DF178_1731560724 =             nu
             ASN1Oid.getInstance(),
             ASN1Boolean.getInstance(),
             new ASN1OctetString() {
-                @Override public Object getDecodedObject(BerInputStream in) throws IOException {
+                @DSModeled(DSC.SAFE)
+            @Override public Object getDecodedObject(BerInputStream in) throws IOException {
                     
                     
                     return new Object[]
@@ -690,6 +691,7 @@ BasicConstraints var540C13E9E156B687226421B24F2DF178_1731560724 =             nu
             setDefault(Boolean.FALSE, 1);
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
 

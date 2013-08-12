@@ -69,6 +69,7 @@ public abstract class JarURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.749 -0400", hash_original_method = "42C141A19D7A99858D326914023176B3", hash_generated_method = "CC8DBD598E46F4465D175F1D9326E070")
     public Attributes getAttributes() throws java.io.IOException {
         JarEntry jEntry = getJarEntry();
@@ -81,6 +82,7 @@ Attributes var397D1096BF67692CA492F7FA250DB59A_442490671 =         (jEntry == nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.749 -0400", hash_original_method = "D9106FD6CB62E572A0AA8ED3E04C3C09", hash_generated_method = "6061D25C9380775FF640D699B6BEC421")
     public Certificate[] getCertificates() throws java.io.IOException {
         JarEntry jEntry = getJarEntry();
@@ -113,6 +115,7 @@ String varF3E8D7D8476436F75D1BE6BA494262B0_1963409154 =         entryName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.750 -0400", hash_original_method = "61250D8DAC5E4F2D4FA4FA4B1B6B705C", hash_generated_method = "70CED931FBC16C41C3C7A6A711CCD913")
     public JarEntry getJarEntry() throws IOException {
         if(!connected)        
@@ -139,6 +142,7 @@ JarEntry varF75877B5990554D5010042B3CE857FC6_2000728628 =         getJarFile().g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.751 -0400", hash_original_method = "EC6192B3278FED11B844B429A38C32F1", hash_generated_method = "1C7EA6703911A13F2002EFFE6079429C")
     public Manifest getManifest() throws java.io.IOException {
 Manifest varD6A473F34A9B589697EE5BB39DA55A84_413545800 =         (Manifest)getJarFile().getManifest().clone();
@@ -164,6 +168,7 @@ URL var8B7F9BD78C6186977C46D48EA3629742_1428480114 =         fileURL;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.751 -0400", hash_original_method = "392ECCC5BDE098E1298FE9F5D5A5083C", hash_generated_method = "AC734A1CF820EE9417249DC72BB974ED")
     public Attributes getMainAttributes() throws java.io.IOException {
         Manifest m = getJarFile().getManifest();

@@ -14,6 +14,7 @@ public class PropertyChangeListenerProxy extends EventListenerProxy implements P
 
     String propertyName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.139 -0400", hash_original_method = "0B942B492C5F8BB18EE120311A2A0D6B", hash_generated_method = "3F85D01D8D9BC4DC92208A056D62ADE1")
     public  PropertyChangeListenerProxy(String propertyName,
             PropertyChangeListener listener) {

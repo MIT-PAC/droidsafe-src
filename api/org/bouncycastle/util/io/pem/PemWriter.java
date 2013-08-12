@@ -22,6 +22,7 @@ public class PemWriter extends BufferedWriter {
 
     private char[] buf = new char[LINE_LENGTH];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.461 -0400", hash_original_method = "FE3DCCF7A57AE41AA2B9ABB8B6650E80", hash_generated_method = "489E82C32FF6260E4BFBFDF3ADC927DC")
     public  PemWriter(Writer out) {
         super(out);

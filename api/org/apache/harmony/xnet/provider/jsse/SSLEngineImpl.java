@@ -395,6 +395,7 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_808740905 =         sslParameters.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.179 -0400", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "A37646735CAB0E4F53E4416B32F2C8D1")
     @Override
     public boolean getEnableSessionCreation() {
@@ -406,6 +407,7 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_808740905 =         sslParameters.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.180 -0400", hash_original_method = "74D7DA825347EF6AE406AA95D0E4A742", hash_generated_method = "CDB4C6EE001834A57A7BF074298A59A4")
     @Override
     public SSLEngineResult.HandshakeStatus getHandshakeStatus() {
@@ -489,6 +491,7 @@ SSLSession var33266EACB2455415ED08B160E2815F03_1944842493 =         SSLSessionIm
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.226 -0400", hash_original_method = "F6CF6D1723C677ECF3CA7B0D6EA7AC86", hash_generated_method = "9080C0B8683922F6FC0EA5D94D832B94")
     @Override
     public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer[] dsts,
@@ -682,6 +685,7 @@ SSLEngineResult var3ABD5BF379F67729A0D0FC3A24A9D2C8_2007142426 =             new
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.263 -0400", hash_original_method = "4D503F6FEFF5A6DB6E7618C8A28327D4", hash_generated_method = "6FF4BBE7D0D1267DBCA195A9A9B7E928")
     @Override
     public SSLEngineResult wrap(ByteBuffer[] srcs, int offset,

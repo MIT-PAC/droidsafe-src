@@ -75,6 +75,7 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.683 -0400", hash_original_method = "F3188887919A2B1ED3E7B00286A01B52", hash_generated_method = "136CA60377803D92BB9B27742B07AD7B")
     @SuppressWarnings({"UnusedDeclaration"})
     public  AppWidgetHostView(Context context, int animationIn, int animationOut) {
@@ -89,6 +90,7 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.684 -0400", hash_original_method = "F21DF7E5FB86A76CA26E20C03A95533E", hash_generated_method = "CB32FD585665C34317E58443DFC5277A")
     public void setAppWidget(int appWidgetId, AppWidgetProviderInfo info) {
         mAppWidgetId = appWidgetId;
@@ -108,6 +110,7 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Rect getDefaultPaddingForWidget(Context context, ComponentName component,
             Rect padding) {
         PackageManager packageManager = context.getPackageManager();
@@ -186,6 +189,7 @@ AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1895509295 =         m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.689 -0400", hash_original_method = "9249C138593FE1EB2CAEA94EA5A08B6D", hash_generated_method = "9EED3A07DF2D60350D873DECA095B554")
     @Override
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
@@ -210,6 +214,7 @@ AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1895509295 =         m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.689 -0400", hash_original_method = "C318CB495524FCFBB782D4C68E4F0A8D", hash_generated_method = "3B6C1FF9962D152A17123008BD0260B8")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
@@ -224,6 +229,7 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_1492782215 =         new FrameL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.690 -0400", hash_original_method = "8BE5160C40379A67738659300BC656A4", hash_generated_method = "C2BA029743BA7CC450F552DD98EB0229")
      void resetAppWidget(AppWidgetProviderInfo info) {
         mInfo = info;
@@ -236,6 +242,7 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_1492782215 =         new FrameL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.693 -0400", hash_original_method = "25975B2F0B8D4567FA791238963D6584", hash_generated_method = "9CC357C07B547EFE3EBF84CA9F9490D4")
     public void updateAppWidget(RemoteViews remoteViews) {
         if(LOGD)        
@@ -342,6 +349,7 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_1492782215 =         new FrameL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.694 -0400", hash_original_method = "8A7676901BF746B47397B4739377B887", hash_generated_method = "CE87891831F789C70C7918C4DB4BE3A8")
      void viewDataChanged(int viewId) {
         addTaint(viewId);
@@ -494,6 +502,7 @@ Context var178E2AD52D6FBBB503F908168856B574_1164507931 =             mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.702 -0400", hash_original_method = "7ABED6F7F1F9E200368B812F1C939889", hash_generated_method = "D6CF5B524D3EC24BFC75E8E9E63013AA")
     protected View getDefaultView() {
         if(LOGD)        
@@ -544,6 +553,7 @@ View varDA032537A4C8F9680067866F46EBAF02_152493046 =         defaultView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.703 -0400", hash_original_method = "BCED01C90A318EA661B2B3B116D10B95", hash_generated_method = "6AE12B065B66035AEEFA1953CB41D6D9")
     protected View getErrorView() {
         TextView tv = new TextView(mContext);
@@ -606,7 +616,8 @@ for(int i = 0;i < count;i++)
 
         public static final Parcelable.Creator<ParcelableSparseArray> CREATOR =
                 new Parcelable.Creator<ParcelableSparseArray>() {
-                    public ParcelableSparseArray createFromParcel(Parcel source) {
+                    @DSModeled(DSC.SAFE)
+            public ParcelableSparseArray createFromParcel(Parcel source) {
                         final ParcelableSparseArray array = new ParcelableSparseArray();
                         final ClassLoader loader = array.getClass().getClassLoader();
                         final int count = source.readInt();
@@ -616,7 +627,8 @@ for(int i = 0;i < count;i++)
                         return array;
                     }
 
-                    public ParcelableSparseArray[] newArray(int size) {
+                    @DSModeled(DSC.SAFE)
+            public ParcelableSparseArray[] newArray(int size) {
                         return new ParcelableSparseArray[size];
                     }
                 };

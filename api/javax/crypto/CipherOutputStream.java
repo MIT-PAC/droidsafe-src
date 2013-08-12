@@ -15,6 +15,7 @@ public class CipherOutputStream extends FilterOutputStream {
 
     private Cipher cipher;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.033 -0400", hash_original_method = "F0906B408310381889BAAA52B967EE5F", hash_generated_method = "57240CA476F2FB73AFC71C5CFA33B19D")
     public  CipherOutputStream(OutputStream os, Cipher c) {
         super(os);
@@ -25,6 +26,7 @@ public class CipherOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.034 -0400", hash_original_method = "1AEB5C9039E95E13C9B65FD65F4D37C9", hash_generated_method = "2452D155566C590B8303E81F27321ACD")
     protected  CipherOutputStream(OutputStream os) {
         this(os, new NullCipher());
@@ -33,6 +35,7 @@ public class CipherOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.034 -0400", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "A356673BF18A00CFAC4BA54C535E65CE")
     @Override
     public void write(int b) throws IOException {
@@ -43,6 +46,7 @@ public class CipherOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.035 -0400", hash_original_method = "5836CE17B48698DBC2254777B1086E69", hash_generated_method = "629B78E12011F9B7558D0465B289DCCF")
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
@@ -69,6 +73,7 @@ public class CipherOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.036 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "A2EF74EEF7203CB573D4B22064D57305")
     @Override
     public void flush() throws IOException {
@@ -78,6 +83,7 @@ public class CipherOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.037 -0400", hash_original_method = "C8083FF618F908C15CB2AD663C443A1B", hash_generated_method = "71A8B3D36E46173846F1C6A0A87868B2")
     @Override
     public void close() throws IOException {

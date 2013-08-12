@@ -224,6 +224,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.902 -0400", hash_original_method = "BB6B5E7B63E7D5F5261B5E5C8991DA1B", hash_generated_method = "4CC00D3C8B5544FAD76445138E7AF03E")
     public boolean allowParallelSyncs() {
         if(isKey)        
@@ -245,6 +246,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.903 -0400", hash_original_method = "3EF9FB902D552C4056546E3547411F1A", hash_generated_method = "A82DA67525190EC8C88AAA47FA784577")
     public boolean isAlwaysSyncable() {
         if(isKey)        
@@ -293,6 +295,7 @@ String var99638EA45B20928CF2245440E0728CEF_977333460 =         settingsActivity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.907 -0400", hash_original_method = "A1CF6D87DAC8D16BD1DD7945C12C597D", hash_generated_method = "B712E5BE38DA2B551C353244C7235978")
     public boolean equals(Object o) {
         addTaint(o.getTaint());

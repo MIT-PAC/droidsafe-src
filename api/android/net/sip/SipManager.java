@@ -35,6 +35,7 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SipManager newInstance(Context context) {
         return (isApiSupported(context) ? new SipManager(context) : null);
     }
@@ -46,12 +47,14 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isVoipSupported(Context context) {
         return context.getPackageManager().hasSystemFeature(
                 PackageManager.FEATURE_SIP_VOIP) && isApiSupported(context);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSipWifiOnly(Context context) {
         return context.getResources().getBoolean(
                 com.android.internal.R.bool.config_sip_wifi_only);
@@ -178,6 +181,7 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.570 -0400", hash_original_method = "360E1B00872B2424D301125F3BB142C6", hash_generated_method = "4AACCEDE3E79C83DF4767255F624906B")
     public boolean isOpened(String localProfileUri) throws SipException {
         addTaint(localProfileUri.getTaint());
@@ -202,6 +206,7 @@ public class SipManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.571 -0400", hash_original_method = "5A38205B94FE9DB78D17F700EB0D1FB0", hash_generated_method = "60E5BA162561FD7970E9AEB950309461")
     public boolean isRegistered(String localProfileUri) throws SipException {
         addTaint(localProfileUri.getTaint());
@@ -258,6 +263,7 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1821670955 =         call;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.574 -0400", hash_original_method = "7876146B456607658E8063AE5100AB4E", hash_generated_method = "BB9FA4706FD68C5DB46A7B197527EA6E")
     public SipAudioCall makeAudioCall(String localProfileUri,
             String peerProfileUri, SipAudioCall.Listener listener, int timeout) throws SipException {
@@ -427,6 +433,7 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_140590857 =             call;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.578 -0400", hash_original_method = "4CCD1E71A8A3F25E13404A132CF88582", hash_generated_method = "3A884235150C3A84A2D4CB9D51153A5A")
     public void unregister(SipProfile localProfile,
             SipRegistrationListener listener) throws SipException {
@@ -502,6 +509,7 @@ SipSession varCDEBB4B2D7C9C11FEA72AC760BD9229E_738791754 =             ((s == nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.579 -0400", hash_original_method = "EE079117FAD2E68EE193F65B6013BB2B", hash_generated_method = "C2084A87620A52507C71DAC131D4926C")
     public SipSession createSipSession(SipProfile localProfile,
             SipSession.Listener listener) throws SipException {

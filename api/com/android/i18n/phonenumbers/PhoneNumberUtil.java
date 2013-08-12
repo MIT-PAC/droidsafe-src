@@ -156,6 +156,7 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String extractPossibleNumber(String number) {
         Matcher m = VALID_START_CHAR_PATTERN.matcher(number);
         if (m.find()) {
@@ -176,6 +177,7 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isViablePhoneNumber(String number) {
         if (number.length() < MIN_LENGTH_FOR_NSN) {
       return false;
@@ -185,6 +187,7 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String normalize(String number) {
         Matcher m = VALID_ALPHA_PHONE_PATTERN.matcher(number);
         if (m.matches()) {
@@ -201,6 +204,7 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalizeDigitsOnly(String number) {
         return normalizeDigits(number, false ).toString();
     }
@@ -221,11 +225,13 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String convertAlphaCharactersInNumber(String number) {
         return normalizeHelper(number, ALPHA_PHONE_MAPPINGS, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.057 -0400", hash_original_method = "E944B5FE31AE1466662F85766A880CA9", hash_generated_method = "EF314F17F9A7C802074A710C2ADE06E7")
     public int getLengthOfGeographicalAreaCode(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -272,6 +278,7 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.058 -0400", hash_original_method = "8F375C460DFE06AB35507021B2E67F57", hash_generated_method = "0BF1DF70F752F2965CE86CA9477E4381")
     public int getLengthOfNationalDestinationCode(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -375,6 +382,7 @@ Set<String> varEF2FC022A937149A8AA0A9F71AA1B744_1892158939 =         supportedRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized PhoneNumberUtil getInstance() {
         if (instance == null) {
       return getInstance(META_DATA_FILE_PREFIX,
@@ -426,6 +434,7 @@ Set<String> varEF2FC022A937149A8AA0A9F71AA1B744_1892158939 =         supportedRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.059 -0400", hash_original_method = "92F92B14F8645805E8F2936964CC9FBD", hash_generated_method = "63A94607DD9ED503FE3EAE344E0F09A4")
     public String format(PhoneNumber number, PhoneNumberFormat numberFormat) {
         addTaint(numberFormat.getTaint());
@@ -458,6 +467,7 @@ String varC697D710133C8B631DE8A735C68AF0F9_577166546 =         formattedNumber.t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.060 -0400", hash_original_method = "0E0E29DD0B07020C65FE41B70E3EF74E", hash_generated_method = "4D79896A71F76D416203504EF8151E79")
     public void format(PhoneNumber number, PhoneNumberFormat numberFormat,
                      StringBuilder formattedNumber) {
@@ -488,6 +498,7 @@ String varC697D710133C8B631DE8A735C68AF0F9_577166546 =         formattedNumber.t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.061 -0400", hash_original_method = "9F9F17BED2EE6CF557E830A9924BD1F5", hash_generated_method = "84FE2190505046012D0211CE0BEF0FD2")
     public String formatByPattern(PhoneNumber number,
                                 PhoneNumberFormat numberFormat,
@@ -545,6 +556,7 @@ String varC697D710133C8B631DE8A735C68AF0F9_1562628155 =         formattedNumber.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.062 -0400", hash_original_method = "91C4446CD1D629D514A31D665364644B", hash_generated_method = "72EB221CAF8917C6F5CAD7086A3398F1")
     public String formatNationalNumberWithCarrierCode(PhoneNumber number, String carrierCode) {
         addTaint(carrierCode.getTaint());
@@ -573,6 +585,7 @@ String varC697D710133C8B631DE8A735C68AF0F9_559811857 =         formattedNumber.t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.062 -0400", hash_original_method = "4CA1ACD2C86EAA8A1981D39B6D2FA7BC", hash_generated_method = "083700446B0B356D252C7DAC6818CC78")
     public String formatNationalNumberWithPreferredCarrierCode(PhoneNumber number,
                                                              String fallbackCarrierCode) {
@@ -590,6 +603,7 @@ String var522347F2D7718BC2C7351CAF03CEBADC_1866428058 =         formatNationalNu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.062 -0400", hash_original_method = "F62393BCCF4A49D66E11EE7D750D9FD1", hash_generated_method = "D524040E98B3D4612AB001170660A204")
     public String formatOutOfCountryCallingNumber(PhoneNumber number,
                                                 String regionCallingFrom) {
@@ -662,6 +676,7 @@ String varC697D710133C8B631DE8A735C68AF0F9_705745304 =         formattedNumber.t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.063 -0400", hash_original_method = "DB42BF938772B1A7D3909F64DD7B67BB", hash_generated_method = "52C16A04FB1C78D2E75956429AAFD728")
     public String formatInOriginalFormat(PhoneNumber number, String regionCallingFrom) {
         addTaint(regionCallingFrom.getTaint());
@@ -736,6 +751,7 @@ String var196F130A6783E3B2F18363B11440E834_2099172318 =         (formattedNumber
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.064 -0400", hash_original_method = "4891B65BEA4A6D1403DAAAE11CCEEA80", hash_generated_method = "B5097B5D8A82FF1FACD66FFDD13D4F31")
     public String formatOutOfCountryKeepingAlphaChars(PhoneNumber number,
                                                     String regionCallingFrom) {
@@ -818,6 +834,7 @@ String varC697D710133C8B631DE8A735C68AF0F9_244798705 =         formattedNumber.t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.064 -0400", hash_original_method = "D5C4512E5E6006B319585FD039F0D2D2", hash_generated_method = "9C1210406EC2B79641C23E89297F485B")
     public String getNationalSignificantNumber(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -1048,6 +1065,7 @@ String varDBE12C087DF4B88CF992CDC1568A8C91_1546774398 =         nationalNumber;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.066 -0400", hash_original_method = "B3C328ACE4FF3869EFF5C65F569BC538", hash_generated_method = "8706C5D4BE042AE01384C747201A7316")
     public PhoneNumber getExampleNumber(String regionCode) {
         addTaint(regionCode.getTaint());
@@ -1059,6 +1077,7 @@ PhoneNumber var170931E3CA73B9CE6B96AC4128B63472_567443340 =         getExampleNu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.066 -0400", hash_original_method = "B7676779AEFA9EF56CC59B101D8DF6C5", hash_generated_method = "44282093DDC8F3FC7C715E7517565FDC")
     public PhoneNumber getExampleNumberForType(String regionCode, PhoneNumberType type) {
         addTaint(type.getTaint());
@@ -1161,6 +1180,7 @@ PhoneNumber var540C13E9E156B687226421B24F2DF178_1503841095 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.067 -0400", hash_original_method = "B508A0D4C9257AABA72DD1888D64C9E3", hash_generated_method = "2F8EDF489773C45A97F99CED5C6CB0F3")
      PhoneNumberDesc getNumberDescByType(PhoneMetadata metadata, PhoneNumberType type) {
         addTaint(type.getTaint());
@@ -1235,6 +1255,7 @@ PhoneNumberDesc var10EF8F54415B73A4F993ACB466BF3BE3_624455029 =         metadata
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.067 -0400", hash_original_method = "261D2E3780968B6A389AA5653D83C66D", hash_generated_method = "38EFE4C3DEDB43A57E0F6CEA0597C0E7")
     public PhoneNumberType getNumberType(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -1404,6 +1425,7 @@ PhoneMetadata var0F8C83A42CB9DCAAA31C5E42CBD29E40_1691340749 =         regionToM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.068 -0400", hash_original_method = "31ADC24E14E9CE703FF2777ACEC876BF", hash_generated_method = "9591CC742B4BE835F832CA2D3465DA77")
     public boolean isValidNumber(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -1417,6 +1439,7 @@ PhoneMetadata var0F8C83A42CB9DCAAA31C5E42CBD29E40_1691340749 =         regionToM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.068 -0400", hash_original_method = "C701813EA11D8E6ADA1ECC6BB90E9747", hash_generated_method = "B29F9E018C9D65BD5D4E36A07E99DED5")
     public boolean isValidNumberForRegion(PhoneNumber number, String regionCode) {
         addTaint(regionCode.getTaint());
@@ -1455,6 +1478,7 @@ PhoneMetadata var0F8C83A42CB9DCAAA31C5E42CBD29E40_1691340749 =         regionToM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.068 -0400", hash_original_method = "C5C9CB0E93474118DAA9D7A65CA1060A", hash_generated_method = "E0DE07A6C988F9BF6B213A31BCE75B86")
     public String getRegionCodeForNumber(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -1540,6 +1564,7 @@ String var540C13E9E156B687226421B24F2DF178_1346716495 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.069 -0400", hash_original_method = "DA9951AEFEAF4242112AA6281301B32F", hash_generated_method = "30B89453B23750355FE5ED4E5342D232")
     public String getRegionCodeForCountryCode(int countryCallingCode) {
         addTaint(countryCallingCode);
@@ -1553,6 +1578,7 @@ String var9E2A9FB86E690D2E298F82B3CDEAF508_2051243033 =         regionCodes == n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.069 -0400", hash_original_method = "D7076C7EB39C8978E29A5CA27F40EEC9", hash_generated_method = "1831DFEFDAB2CAF0AE38F18DBF314F43")
     public int getCountryCodeForRegion(String regionCode) {
         addTaint(regionCode.getTaint());
@@ -1575,6 +1601,7 @@ String var9E2A9FB86E690D2E298F82B3CDEAF508_2051243033 =         regionCodes == n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.069 -0400", hash_original_method = "E58B423D76AD6194B45901E123DB6EBF", hash_generated_method = "36D58D0109A680F4858FDF662CA10CAD")
     public String getNddPrefixForRegion(String regionCode, boolean stripNonDigits) {
         addTaint(stripNonDigits);
@@ -1618,6 +1645,7 @@ String var125CF9795C3A3714DEB83D441B501587_890564875 =         nationalPrefix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.069 -0400", hash_original_method = "7B63C50F103D8DC60E8A2B15ED73A093", hash_generated_method = "C61AFCC3570F6C22FBA59A26C1B80A21")
     public boolean isNANPACountry(String regionCode) {
         addTaint(regionCode.getTaint());
@@ -1629,6 +1657,7 @@ String var125CF9795C3A3714DEB83D441B501587_890564875 =         nationalPrefix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.070 -0400", hash_original_method = "996B7AC837898451564E65CADA674F54", hash_generated_method = "1D089990973282799F543AE9E2C17A7A")
      boolean isLeadingZeroPossible(int countryCallingCode) {
         addTaint(countryCallingCode);
@@ -1653,6 +1682,7 @@ String var125CF9795C3A3714DEB83D441B501587_890564875 =         nationalPrefix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.070 -0400", hash_original_method = "4B80DFBB3D3B298395671B1C8C6F67DA", hash_generated_method = "A902A72E91E2C1BAB8897A74DA5424A9")
     public boolean isAlphaNumber(String number) {
         addTaint(number.getTaint());
@@ -1677,6 +1707,7 @@ String var125CF9795C3A3714DEB83D441B501587_890564875 =         nationalPrefix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.070 -0400", hash_original_method = "86FEA4033CCC520A9BCC7CD67C884B0D", hash_generated_method = "8F05DDAB3BA207C2231A398E7E7A46DA")
     public boolean isPossibleNumber(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -1725,6 +1756,7 @@ ValidationResult var6E042EA234D0A69A19D4BD6F063A05C7_2093801574 =             Va
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.070 -0400", hash_original_method = "5E4449198019FBA49E61EB3BB2D3E7CD", hash_generated_method = "6A1BEB5BC960B50B3F97A4E4BF25AACC")
     public ValidationResult isPossibleNumberWithReason(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -1771,6 +1803,7 @@ ValidationResult varE8D2AC83E76431FAC265E667B2C4E5DC_1197804340 =         testNu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.071 -0400", hash_original_method = "ABB46ACB6DF1697743B661541AD5E166", hash_generated_method = "E5E73982EFB5523045E8F14EE46A333A")
     public boolean isPossibleNumber(String number, String regionDialingFrom) {
         addTaint(regionDialingFrom.getTaint());
@@ -1796,6 +1829,7 @@ ValidationResult varE8D2AC83E76431FAC265E667B2C4E5DC_1197804340 =         testNu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.071 -0400", hash_original_method = "763BBE034FB297BC9C435FECAC40F4A1", hash_generated_method = "FAC07398C53EE482EAF54426696B89FE")
     public boolean truncateTooLongNumber(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -1845,6 +1879,7 @@ ValidationResult varE8D2AC83E76431FAC265E667B2C4E5DC_1197804340 =         testNu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.071 -0400", hash_original_method = "719F2F8970F4EB169BEDB2820A702606", hash_generated_method = "4FCDEA15799C0BB89F10E3AD7FD9A8A7")
     public AsYouTypeFormatter getAsYouTypeFormatter(String regionCode) {
         addTaint(regionCode.getTaint());
@@ -1856,6 +1891,7 @@ AsYouTypeFormatter var2BA79AFFF62B3719E707A1AD27F0FC82_1749152475 =         new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.071 -0400", hash_original_method = "2A48039CFC05A878E1A34077CDECE0D5", hash_generated_method = "4490E2A6E329AFC3DB4AC642405D24B7")
      int extractCountryCode(StringBuilder fullNumber, StringBuilder nationalNumber) {
         addTaint(nationalNumber.getTaint());
@@ -1890,6 +1926,7 @@ for(int i = 1;i <= MAX_LENGTH_COUNTRY_CODE && i <= numberLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.072 -0400", hash_original_method = "8166FB521487034FA9E8BD7575A0612F", hash_generated_method = "D991B9E749A7ACF1056516C758EDB213")
      int maybeExtractCountryCode(String number, PhoneMetadata defaultRegionMetadata,
                               StringBuilder nationalNumber, boolean keepRawInput,
@@ -2024,6 +2061,7 @@ for(int i = 1;i <= MAX_LENGTH_COUNTRY_CODE && i <= numberLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.073 -0400", hash_original_method = "8865CBB50A1D9F6F8472F699DBF16350", hash_generated_method = "A94226C7DD8EE8719E3C0E5369388382")
      CountryCodeSource maybeStripInternationalPrefixAndNormalize(
       StringBuilder number,
@@ -2081,6 +2119,7 @@ CountryCodeSource varB7ADE8109FFBEE34E61EFCAB380B652A_826575758 =         parseP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.073 -0400", hash_original_method = "8024CAA7B81A99B980BA01FE387839A1", hash_generated_method = "DD60ED497FAA9E40DF88BF71A5B40B48")
      String maybeStripNationalPrefixAndCarrierCode(StringBuilder number, PhoneMetadata metadata) {
         addTaint(metadata.getTaint());
@@ -2143,6 +2182,7 @@ String var11F797CD50213A512D32FF93510BFF1B_742463984 =         carrierCode;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.074 -0400", hash_original_method = "D072FBB7A4080E317A5210E0DF61655A", hash_generated_method = "4D9A276FCAC7B360C26BF2C8F956EA26")
      String maybeStripExtension(StringBuilder number) {
         addTaint(number.getTaint());
@@ -2208,6 +2248,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_174694629 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.074 -0400", hash_original_method = "6012972DF706A584D5C83C6971CF9392", hash_generated_method = "6AF2E42B31E4F7EFD66968A9AA885614")
     public PhoneNumber parse(String numberToParse, String defaultRegion) throws NumberParseException {
         addTaint(defaultRegion.getTaint());
@@ -2224,6 +2265,7 @@ PhoneNumber var80A2B48412D7084FC222C283D090147C_727799162 =         phoneNumber;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.075 -0400", hash_original_method = "6ECDB36C19DB49774718F5C4BA94B539", hash_generated_method = "B80A11162B75AC3A1A7BCA4C170B6651")
     public void parse(String numberToParse, String defaultRegion, PhoneNumber phoneNumber) throws NumberParseException {
         addTaint(phoneNumber.getTaint());
@@ -2235,6 +2277,7 @@ PhoneNumber var80A2B48412D7084FC222C283D090147C_727799162 =         phoneNumber;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.075 -0400", hash_original_method = "19CBF359D0DD4BA30476F5C26D54CCE4", hash_generated_method = "0397C0E7642E1AE4CD6F0B716DDCE046")
     public PhoneNumber parseAndKeepRawInput(String numberToParse, String defaultRegion) throws NumberParseException {
         addTaint(defaultRegion.getTaint());
@@ -2251,6 +2294,7 @@ PhoneNumber var80A2B48412D7084FC222C283D090147C_1951126294 =         phoneNumber
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.075 -0400", hash_original_method = "56F5D9940BB01A0D66986596B5A9CF6E", hash_generated_method = "93230E90F67038FDB64A35A94CB61E5A")
     public void parseAndKeepRawInput(String numberToParse, String defaultRegion,
                                    PhoneNumber phoneNumber) throws NumberParseException {
@@ -2263,6 +2307,7 @@ PhoneNumber var80A2B48412D7084FC222C283D090147C_1951126294 =         phoneNumber
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.075 -0400", hash_original_method = "FC749C2F4DF483D491476DD9FB58E6D5", hash_generated_method = "E0276D50B1AB408EA26005B9EBE3993C")
     public Iterable<PhoneNumberMatch> findNumbers(CharSequence text, String defaultRegion) {
         addTaint(defaultRegion.getTaint());
@@ -2509,6 +2554,7 @@ MatchType varBB3E55B2BDC8BE4834676607A9C4DE63_124738268 =         MatchType.NO_M
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.080 -0400", hash_original_method = "3C9E8BD2D7E8FA6C3BECA5B02E481416", hash_generated_method = "07DBD826E5562489E42C7091E9C9A19A")
     public MatchType isNumberMatch(String firstNumber, String secondNumber) {
         addTaint(secondNumber.getTaint());
@@ -2560,6 +2606,7 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_927901273 =         MatchType.NOT_
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.080 -0400", hash_original_method = "FA442F82D618375A0E3FFC54DA76D9E3", hash_generated_method = "544878F756B60C40EABA12CF0BF33C51")
     public MatchType isNumberMatch(PhoneNumber firstNumber, String secondNumber) {
         addTaint(secondNumber.getTaint());
@@ -2614,6 +2661,7 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_1129257199 =         MatchType.NOT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.081 -0400", hash_original_method = "93167700613734CAFA37F508460EB7E3", hash_generated_method = "696A95D926BE92DF6D03557B698CCC2A")
      boolean canBeInternationallyDialled(PhoneNumber number) {
         addTaint(number.getTaint());

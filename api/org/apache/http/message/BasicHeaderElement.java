@@ -90,6 +90,7 @@ String varD64EF4B55BF21CB8765EC6BE5560B5B8_1779877111 =         this.value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.732 -0400", hash_original_method = "3731305FA78433D69AC55713BB946E12", hash_generated_method = "A64F7FA5415F963E9A6FF0DA12A620C5")
     public NameValuePair[] getParameters() {
 NameValuePair[] varCBFB6E66E9BA858BA07B15CDA982B151_305631756 =         (NameValuePair[])this.parameters.clone();

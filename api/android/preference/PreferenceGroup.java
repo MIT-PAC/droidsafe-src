@@ -90,6 +90,7 @@ public abstract class PreferenceGroup extends Preference implements GenericInfla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.585 -0400", hash_original_method = "389AB97985CD6F44D465D155E8399BE9", hash_generated_method = "C2062EB5385267385B88AD83A36CA03C")
     public int getPreferenceCount() {
         int varC421430EA712BB31552DDD51082F5040_920431253 = (mPreferenceList.size());
@@ -100,6 +101,7 @@ public abstract class PreferenceGroup extends Preference implements GenericInfla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.585 -0400", hash_original_method = "109559B57B2B04AB981EEA935073C7C0", hash_generated_method = "751D0AC86407E72D23F6EF226FE22501")
     public Preference getPreference(int index) {
         addTaint(index);
@@ -160,6 +162,7 @@ Preference var96B1561EF6B3618DA693F1BA358F1ABA_439023261 =         mPreferenceLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.586 -0400", hash_original_method = "72E836216B00BC7CD61ADE8B9836B308", hash_generated_method = "D79D46D10DB02E009965E335C9AE7CA3")
     public boolean removePreference(Preference preference) {
         addTaint(preference.getTaint());
@@ -216,6 +219,7 @@ for(int i = preferenceList.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.587 -0400", hash_original_method = "6AE303446925DAEA15C349B1AB59000B", hash_generated_method = "3024F5DC57BCCD9DC9AD6C29264FBD05")
     protected boolean onPrepareAddPreference(Preference preference) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -337,6 +341,7 @@ for(int i = 0;i < preferenceCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.591 -0400", hash_original_method = "10614F6B57E80AB6C964E551AE06AF94", hash_generated_method = "39BE01D538FACB38C87A7BE85A499456")
     @Override
     public void setEnabled(boolean enabled) {

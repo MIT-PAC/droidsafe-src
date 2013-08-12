@@ -37,7 +37,7 @@ public abstract class ResponseCache {
             Map<String, List<String>> requestHeaders) throws IOException;
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract CacheRequest put(URI uri, URLConnection connection) throws IOException;
 
     

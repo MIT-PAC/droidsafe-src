@@ -132,6 +132,7 @@ public final class LocaleData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LocaleData get(Locale locale) {
         if (locale == null) {
             locale = Locale.getDefault();
@@ -173,6 +174,7 @@ public final class LocaleData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.935 -0400", hash_original_method = "784F7240396B6696F26C45143188C28A", hash_generated_method = "AE4043A7E6DDEB1C39AC3DA292D40FB1")
     @Override
     public String toString() {
@@ -415,6 +417,7 @@ String var4634C217D946CAB44464F86454585E44_1729294978 =         fullDateFormat;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.941 -0400", hash_original_method = "381AB0475AE772D0631EAF7DD6B1FBEE", hash_generated_method = "C5997EB424C8F6655A701FD8F1F46D67")
     public String getTimeFormat(int style) {
         addTaint(style);

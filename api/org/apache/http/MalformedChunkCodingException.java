@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class MalformedChunkCodingException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.171 -0400", hash_original_method = "FCD38A0808C3727AA87EA7F46AEF4310", hash_generated_method = "D8DAA721D0F103887C1D4E860770EBE7")
     public  MalformedChunkCodingException() {
         super();

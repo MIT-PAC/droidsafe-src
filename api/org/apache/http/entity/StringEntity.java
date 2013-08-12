@@ -69,6 +69,7 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public InputStream getContent() throws IOException, IllegalStateException {
 		// TODO Auto-generated method stub

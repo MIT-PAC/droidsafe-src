@@ -87,11 +87,13 @@ public final class DistributionPointName {
             new ASN1Implicit(0, GeneralNames.ASN1),
             new ASN1Implicit(1, Name.ASN1_RDN) }) {
 
+        @DSModeled(DSC.SAFE)
         public int getIndex(java.lang.Object object) {
             DistributionPointName dpn = (DistributionPointName) object;
             return (dpn.fullName == null) ? 1 : 0;
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             DistributionPointName result = null;
             if (in.choiceIndex == 0) {
@@ -104,6 +106,7 @@ public final class DistributionPointName {
             return result;
         }
 
+        @DSModeled(DSC.SAFE)
         public Object getObjectToEncode(Object object) {
             DistributionPointName dpn = (DistributionPointName) object;
             if (dpn.fullName == null) {

@@ -20,25 +20,25 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Object obtain() {
         return AccessibilityNodeInfo.obtain();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Object obtain(View source) {
         return AccessibilityNodeInfo.obtain(source);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Object obtain(Object info) {
         return AccessibilityNodeInfo.obtain((AccessibilityNodeInfo) info);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void addAction(Object info, int action) {
         ((AccessibilityNodeInfo) info).addAction(action);
     }
@@ -50,6 +50,7 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
         Object result = ((AccessibilityNodeInfo) info).findAccessibilityNodeInfosByText(text);
@@ -57,133 +58,133 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int getActions(Object info) {
         return ((AccessibilityNodeInfo) info).getActions();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void getBoundsInParent(Object info, Rect outBounds) {
         ((AccessibilityNodeInfo) info).getBoundsInParent(outBounds);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void getBoundsInScreen(Object info, Rect outBounds) {
         ((AccessibilityNodeInfo) info).getBoundsInScreen(outBounds);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Object getChild(Object info, int index) {
         return ((AccessibilityNodeInfo) info).getChild(index);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int getChildCount(Object info) {
         return ((AccessibilityNodeInfo) info).getChildCount();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static CharSequence getClassName(Object info) {
         return ((AccessibilityNodeInfo) info).getClassName();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static CharSequence getContentDescription(Object info) {
         return ((AccessibilityNodeInfo) info).getContentDescription();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static CharSequence getPackageName(Object info) {
         return ((AccessibilityNodeInfo) info).getPackageName();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Object getParent(Object info) {
         return ((AccessibilityNodeInfo) info).getParent();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static CharSequence getText(Object info) {
         return ((AccessibilityNodeInfo) info).getText();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int getWindowId(Object info) {
         return ((AccessibilityNodeInfo) info).getWindowId();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isCheckable(Object info) {
         return ((AccessibilityNodeInfo) info).isCheckable();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isChecked(Object info) {
         return ((AccessibilityNodeInfo) info).isChecked();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isClickable(Object info) {
         return ((AccessibilityNodeInfo) info).isClickable();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isEnabled(Object info) {
         return ((AccessibilityNodeInfo) info).isEnabled();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isFocusable(Object info) {
         return ((AccessibilityNodeInfo) info).isFocusable();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isFocused(Object info) {
         return ((AccessibilityNodeInfo) info).isFocused();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isLongClickable(Object info) {
         return ((AccessibilityNodeInfo) info).isLongClickable();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isPassword(Object info) {
         return ((AccessibilityNodeInfo) info).isPassword();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isScrollable(Object info) {
         return ((AccessibilityNodeInfo) info).isScrollable();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isSelected(Object info) {
         return ((AccessibilityNodeInfo) info).isSelected();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean performAction(Object info, int action) {
         return ((AccessibilityNodeInfo) info).performAction(action);
     }
@@ -195,7 +196,7 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setBoundsInScreen(Object info, Rect bounds) {
         ((AccessibilityNodeInfo) info).setBoundsInScreen(bounds);
     }
@@ -213,7 +214,7 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setClassName(Object info, CharSequence className) {
         ((AccessibilityNodeInfo) info).setClassName(className);
     }
@@ -225,25 +226,25 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setContentDescription(Object info, CharSequence contentDescription) {
         ((AccessibilityNodeInfo) info).setContentDescription(contentDescription);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setEnabled(Object info, boolean enabled) {
         ((AccessibilityNodeInfo) info).setEnabled(enabled);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setFocusable(Object info, boolean focusable) {
         ((AccessibilityNodeInfo) info).setFocusable(focusable);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setFocused(Object info, boolean focused) {
         ((AccessibilityNodeInfo) info).setFocused(focused);
     }
@@ -255,7 +256,7 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setPackageName(Object info, CharSequence packageName) {
         ((AccessibilityNodeInfo) info).setPackageName(packageName);
     }
@@ -267,31 +268,31 @@ class AccessibilityNodeInfoCompatIcs {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setPassword(Object info, boolean password) {
         ((AccessibilityNodeInfo) info).setPassword(password);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setScrollable(Object info, boolean scrollable) {
         ((AccessibilityNodeInfo) info).setScrollable(scrollable);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setSelected(Object info, boolean selected) {
         ((AccessibilityNodeInfo) info).setSelected(selected);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setSource(Object info, View source) {
         ((AccessibilityNodeInfo) info).setSource(source);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void setText(Object info, CharSequence text) {
         ((AccessibilityNodeInfo) info).setText(text);
     }

@@ -40,6 +40,7 @@ public class BufferedHttpEntity extends HttpEntityWrapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "26AA3A162E430A9FEBBBBE7476A32626", hash_generated_method = "89CF2D207425D2C8DEF1667333A09AE8")
     public long getContentLength() {
         if(this.buffer != null)        
@@ -63,6 +64,7 @@ public class BufferedHttpEntity extends HttpEntityWrapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "C66624A0F56D5B3373911F6483E82581", hash_generated_method = "665E98BF087D054D5E1EB52B4CB85DE1")
     public InputStream getContent() throws IOException {
         if(this.buffer != null)        
@@ -136,6 +138,7 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_824349158 =             wrappedE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "298A03178432926E5E6E7F0EA9A50E03", hash_generated_method = "1C06E706B10A826BA8C9341133FBF1B9")
     public boolean isStreaming() {
         boolean var3E6A1689093D41868EEEA62EB3AFDCAD_436194721 = ((buffer == null) && wrappedEntity.isStreaming());

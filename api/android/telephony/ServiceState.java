@@ -325,6 +325,7 @@ String var943DC28A2B14FE8AE17153FF6F969ACF_680350636 =         mOperatorNumeric;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.541 -0400", hash_original_method = "4FC9291B326FDF96318315E16F56658C", hash_generated_method = "F76BA6A10C87F222A5B155D29AFCBBD5")
     @Override
     public int hashCode() {
@@ -352,6 +353,7 @@ String var943DC28A2B14FE8AE17153FF6F969ACF_680350636 =         mOperatorNumeric;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.542 -0400", hash_original_method = "5AB9F404C745D33B000995514C8414B5", hash_generated_method = "9F9562BBE20C426592211CBE69E7F9DA")
     @Override
     public boolean equals(Object o) {
@@ -455,6 +457,7 @@ String var943DC28A2B14FE8AE17153FF6F969ACF_680350636 =         mOperatorNumeric;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.543 -0400", hash_original_method = "8261C946B0851B9612BB2224B1BDDEEE", hash_generated_method = "BAF93CCD32ACDD7FEBC6CABC29F8F99D")
     @Override
     public String toString() {
@@ -868,6 +871,7 @@ String var987F59476831B446FD002758DB059207_1114192309 =         (mState + " " + 
 
     public static final Parcelable.Creator<ServiceState> CREATOR =
             new Parcelable.Creator<ServiceState>() {
+        @DSModeled(DSC.SAFE)
         public ServiceState createFromParcel(Parcel in) {
             return new ServiceState(in);
         }

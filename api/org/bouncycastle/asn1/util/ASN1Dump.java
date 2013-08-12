@@ -53,6 +53,7 @@ public class ASN1Dump {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static void _dumpAsString(
         String      indent,
         boolean     verbose,
@@ -328,13 +329,14 @@ public class ASN1Dump {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String dumpAsString(
         Object   obj) {
         return dumpAsString(obj, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dumpAsString(
         Object   obj,
         boolean  verbose) {

@@ -133,6 +133,7 @@ String varE65B3A02759122992CB82C0E651AD408_1863074237 =         result.toString(
                 {TBSCertList.ASN1, AlgorithmIdentifier.ASN1,
                     ASN1BitString.getInstance()}) {
 
+        @DSModeled(DSC.SPEC)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new CertificateList(
@@ -143,6 +144,7 @@ String varE65B3A02759122992CB82C0E651AD408_1863074237 =         result.toString(
                     );
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             CertificateList certificateList = (CertificateList) object;
             values[0] = certificateList.tbsCertList;

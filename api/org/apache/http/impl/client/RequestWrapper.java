@@ -164,6 +164,7 @@ URI varF8A43570A6D9CE873AAA24BBE28B6265_1249197207 =         this.uri;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.923 -0400", hash_original_method = "ED6274B1F39BF31330A4BAC92EA0A101", hash_generated_method = "E8F347F709FEFF4AB00B362F8BC9D78E")
     public RequestLine getRequestLine() {
         String method = getMethod();

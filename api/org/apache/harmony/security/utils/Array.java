@@ -26,6 +26,7 @@ public class Array {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String toString(byte[] array, String prefix) {
         final String[] offsetPrefix = {
                 "",

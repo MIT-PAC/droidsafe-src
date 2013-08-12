@@ -27,6 +27,7 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.929 -0400", hash_original_method = "D716B8B267E7C915523592278E20949F", hash_generated_method = "DC168B067E61EC34E3696FA9D6B2308B")
     public  PMediaAuthorizationParser(Lexer lexer) {
         super(lexer);
@@ -35,6 +36,7 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.960 -0400", hash_original_method = "C50B4E6383FAF29D7342642FAF098C0C", hash_generated_method = "F9603AEF00FC7A69DC5B6194A8B5483F")
     public SIPHeader parse() throws ParseException {
         PMediaAuthorizationList mediaAuthorizationList = new PMediaAuthorizationList();

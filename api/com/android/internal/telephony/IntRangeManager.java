@@ -21,6 +21,7 @@ public abstract class IntRangeManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.470 -0400", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "F64EC28FF5201D94D5E25E08911CDDFE")
     public synchronized boolean enableRange(int startId, int endId, String client) {
         addTaint(client.getTaint());
@@ -249,6 +250,7 @@ for(int i = joinIndex;i < endIndex;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.475 -0400", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "B7785574D488F25318E6F263EFE2ED47")
     public synchronized boolean disableRange(int startId, int endId, String client) {
         addTaint(client.getTaint());
@@ -409,6 +411,7 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.477 -0400", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "BB2AFD05EF20B51EE006D7C0CDDE52BF")
     public boolean updateRanges() {
         startUpdate();
@@ -484,6 +487,7 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.478 -0400", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "AB450A5AE37EB5595FC3FD76B5423B4F")
     public boolean isEmpty() {
         boolean var4A182B3170A47CB458F8C45AB3739898_2117226749 = (mRanges.isEmpty());
@@ -566,6 +570,7 @@ for(int i=0;i < numElements;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "5E2FBB55D30010C4D5AE540EBBAC773C", hash_generated_method = "FCC2076617B797DAE19D182A91CC8E0E")
          void insert(ClientRange range) {
             addTaint(range.getTaint());
@@ -625,6 +630,7 @@ for(int i=0;i < len;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "D28323F08164C1046E14F8271E492993")
         @Override
         public boolean equals(Object o) {
@@ -656,6 +662,7 @@ for(int i=0;i < len;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.482 -0400", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "6623FA6D786FE85C76A7E9EF1204D982")
         @Override
         public int hashCode() {

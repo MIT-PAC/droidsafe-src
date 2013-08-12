@@ -66,6 +66,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1352656028 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.915 -0400", hash_original_method = "0EB91F28C0A2FB6299B3C615FC2DAB8F", hash_generated_method = "5630FE0ADFE3465E4ECEBC1D63177AB6")
     public int getDeviceId() {
         int varD16BE95D43BBDC17821928ECA9EA5B22_743367737 = (getDeviceId(mName));
@@ -154,6 +155,7 @@ UsbInterface varE38340EB36987638594051ED4588C1E3_1171252426 =         (UsbInterf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.919 -0400", hash_original_method = "053D020F017F8544B1264C0EDF41C58B", hash_generated_method = "38DCE4447F32AA302CD8903DEEC3E362")
     @Override
     public boolean equals(Object o) {
@@ -249,11 +251,13 @@ String var698D883E8B5EB48E4AB16093FCE6D05D_2046203710 =         "UsbDevice[mName
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDeviceId(String name) {
         return native_get_device_id(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDeviceName(int id) {
         return native_get_device_name(id);
     }
@@ -278,6 +282,7 @@ String var698D883E8B5EB48E4AB16093FCE6D05D_2046203710 =         "UsbDevice[mName
 
     public static final Parcelable.Creator<UsbDevice> CREATOR =
         new Parcelable.Creator<UsbDevice>() {
+        @DSModeled(DSC.SAFE)
         public UsbDevice createFromParcel(Parcel in) {
             String name = in.readString();
             int vendorId = in.readInt();

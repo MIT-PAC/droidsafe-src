@@ -56,6 +56,7 @@ public class OpenSSLSignature extends Signature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static OpenSSLSignature getInstance(String algorithm) throws NoSuchAlgorithmException {
         Class <? extends OpenSSLSignature> clazz = jdkToOpenSsl.get(algorithm);
         if (clazz == null) {
@@ -82,6 +83,7 @@ public class OpenSSLSignature extends Signature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.846 -0400", hash_original_method = "781B79B8126ED66671017896416B5787", hash_generated_method = "199D18E8368D3530838ADA6E22327C55")
     @Override
     protected void engineUpdate(byte[] input, int offset, int len) {
@@ -201,6 +203,7 @@ Object var540C13E9E156B687226421B24F2DF178_1222767903 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.848 -0400", hash_original_method = "1867E471CA5CA87F27F3477ACB97988E", hash_generated_method = "2E68720082C1CD0DDC58FCD1AD7F5DB3")
     @Override
     protected byte[] engineSign() throws SignatureException {
@@ -212,6 +215,7 @@ Object var540C13E9E156B687226421B24F2DF178_1222767903 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.849 -0400", hash_original_method = "5335767B8D128F26CEBBB21EFAF129A4", hash_generated_method = "CD65A4D764FE9570833C19389FE29D83")
     @Override
     protected boolean engineVerify(byte[] sigBytes) throws SignatureException {
@@ -291,6 +295,7 @@ Object var540C13E9E156B687226421B24F2DF178_1222767903 =         null;
     
     public static final class MD5RSA extends OpenSSLSignature {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.850 -0400", hash_original_method = "B1183C6C9886C7590F89656BAE25BECA", hash_generated_method = "DE94EFB383F6D56E1927946DBDFD1608")
         public  MD5RSA() throws NoSuchAlgorithmException {
             super("RSA-MD5");

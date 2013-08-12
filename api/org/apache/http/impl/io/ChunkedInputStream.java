@@ -64,6 +64,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.494 -0400", hash_original_method = "5987C40EBD16187447E09174CE17A1D5", hash_generated_method = "CF70092E5AF63F34AF81423C88726984")
     public int read() throws IOException {
         if(this.closed)        
@@ -110,6 +111,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.496 -0400", hash_original_method = "3658228930DC027E604760F33BD6E163", hash_generated_method = "915116D6286E0B2225323B7E94C4F8DD")
     public int read(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -163,6 +165,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.497 -0400", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "E7ADAB211096714EB964A975486A2D7E")
     public int read(byte[] b) throws IOException {
         addTaint(b[0]);
@@ -311,6 +314,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.503 -0400", hash_original_method = "7163A37F445D9A153E08F6B88D28A6E4", hash_generated_method = "F007D61CA6F82A9AB656A1141649D0E0")
     public Header[] getFooters() {
 Header[] var9FFC098F6658A5A943CD9CFF2C06B71C_12854951 =         (Header[])this.footers.clone();

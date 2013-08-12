@@ -161,6 +161,7 @@ DERBitString var1128EBB681DA936639CDE82641A6C31D_1838698614 =         objectDige
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.795 -0400", hash_original_method = "2916DBD20BE914B0B076A9BFA9563581", hash_generated_method = "227923D6FCB358E80F3547E3942AF8A9")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class SSLHandshakeException extends SSLException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.725 -0400", hash_original_method = "82B36E212F934FE090A9654C18E5A390", hash_generated_method = "86E9F925F24EF66E8D14EE055E3C99F9")
     public  SSLHandshakeException(String reason) {
         super(reason);

@@ -12,6 +12,7 @@ public class ActivityNotFoundException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.382 -0400", hash_original_method = "8587D789BC6C40698A73B5C613EDE1A6", hash_generated_method = "3FC941F31BDBB63A56CF0164D895B2A3")
     public  ActivityNotFoundException(String name) {
         super(name);

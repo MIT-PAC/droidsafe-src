@@ -31,6 +31,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.309 -0400", hash_original_method = "7CE2C444F0201136E21AAFE741F28564", hash_generated_method = "8137D1347458B5EAD10BE3F3864D82C8")
     @Override
     public int read() throws IOException {
@@ -42,6 +43,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.309 -0400", hash_original_method = "67E478B38D83ABBBB81FEA8967B3C884", hash_generated_method = "8F1404FCC1F02ADA01DDB05A6247293D")
     @Override
     public int read(byte[] buf, int off, int nbytes) throws IOException {
@@ -56,6 +58,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.309 -0400", hash_original_method = "89E5476D453B2D196750B37DB629C073", hash_generated_method = "45391AFBD0C211FDDC96145EFEBA9BB1")
     @Override
     public synchronized void reset() throws IOException {
@@ -65,6 +68,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.309 -0400", hash_original_method = "637EB2252F3D6A06954BF23A791270C0", hash_generated_method = "21DF34A4F4913D4F9064DF69CE5E07E2")
     @Override
     public synchronized void mark(int limit) {
@@ -75,6 +79,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.310 -0400", hash_original_method = "ACFDCFE3673D14E8936992CE0181818A", hash_generated_method = "136186B728BF233415FDE2EF5E709F3A")
     @Override
     public boolean markSupported() {
@@ -86,6 +91,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.310 -0400", hash_original_method = "AA12D47EE60CC78A392E105684A425D9", hash_generated_method = "79695BFC8B630F0EDF09239FC6DD1941")
     @Override
     public void close() {
@@ -97,6 +103,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.310 -0400", hash_original_method = "D9F2C32897BF6671DFA8E2E4EE31F66E", hash_generated_method = "0749CDF20FF64AC981FAB5C48DAAFA89")
     @Override
     public int available() throws IOException {
@@ -108,6 +115,7 @@ class FtpURLInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.310 -0400", hash_original_method = "E4EF9B11E6886DE5F69F77BED2D5F0AB", hash_generated_method = "3025CA9FADD4A7DBCC02D62F92B0B85B")
     @Override
     public long skip(long byteCount) throws IOException {

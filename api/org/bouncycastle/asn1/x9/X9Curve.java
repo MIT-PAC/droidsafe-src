@@ -60,6 +60,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.317 -0400", hash_original_method = "7B136525ED7EAC50EDEE818CB871C643", hash_generated_method = "F8E1C5ADB8C441E4E6094FF797F80A12")
     public  X9Curve(
         X9FieldID     fieldID,

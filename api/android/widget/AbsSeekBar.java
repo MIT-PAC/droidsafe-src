@@ -292,7 +292,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.779 -0400", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "EEBA0758A06700BC917CD7B6307F35F7")
     private void updateThumbPos(int w, int h) {
         addTaint(h);
@@ -335,7 +335,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.780 -0400", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "F30533D5251F0D11C8B4CFD2FF36B697")
     private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
         addTaint(gap);
@@ -407,6 +407,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.781 -0400", hash_original_method = "6FE23FC5494DD28976118E3A2B4F8E1A", hash_generated_method = "A3D058C3B4CEA7DF4969518711C4F2C6")
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -525,7 +526,7 @@ switch(event.getAction()){
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.783 -0400", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "F2D8B3C76143D4B3CDE1BEDEB49AFE66")
     private void trackTouchEvent(MotionEvent event) {
         addTaint(event.getTaint());
@@ -571,7 +572,7 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.784 -0400", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "8A968C4896AB12821206CFEA1423C0BB")
     private void attemptClaimDrag() {
         if(mParent != null)        

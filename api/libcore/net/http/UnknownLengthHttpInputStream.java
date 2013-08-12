@@ -15,6 +15,7 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
 
     private boolean inputExhausted;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.138 -0400", hash_original_method = "03287555569090C6D887554C44738812", hash_generated_method = "3A1D8FEE56FB11BB824DDC82215FC7FD")
       UnknownLengthHttpInputStream(InputStream is, CacheRequest cacheRequest,
             HttpEngine httpEngine) throws IOException {
@@ -26,6 +27,7 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.139 -0400", hash_original_method = "E2336783F7D37948479E1E76BEFE0EF2", hash_generated_method = "680CBC63CE2145942EBB7E8EBD0F701A")
     @Override
     public int read(byte[] buffer, int offset, int count) throws IOException {
@@ -70,6 +72,7 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.140 -0400", hash_original_method = "10BF8275103D8B9D888D9077AFBF2526", hash_generated_method = "818BCD87C572D8CDD7F33F740A6858A7")
     @Override
     public int available() throws IOException {
@@ -83,6 +86,7 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.141 -0400", hash_original_method = "EFD48677D2EFEA5B0824ED8113A97C5A", hash_generated_method = "1644A54C1517C92C491CDA334BF02BBB")
     @Override
     public void close() throws IOException {

@@ -27,6 +27,7 @@ public class NamespaceSupport {
 
     private boolean namespaceDeclUris;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.379 -0400", hash_original_method = "1F62AD2938072A93E19EAFFCDA555D07", hash_generated_method = "5851AF68D843BB425B4FF66193756222")
     public  NamespaceSupport() {
         reset();
@@ -35,6 +36,7 @@ public class NamespaceSupport {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.380 -0400", hash_original_method = "2A27A75937E4BE02DA5FD7B031C4079A", hash_generated_method = "AD54F05B2FA16CFBF38021AFA9C2A42C")
     public void reset() {
         contexts = new Context[32];
@@ -51,6 +53,7 @@ public class NamespaceSupport {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.382 -0400", hash_original_method = "B186F7F0BF353B1A746862E337C50A69", hash_generated_method = "D108F0539C2F4DB4D6D6946CC349EC15")
     public void pushContext() {
         int max = contexts.length;
@@ -92,6 +95,7 @@ public class NamespaceSupport {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.383 -0400", hash_original_method = "D28ACF4ED7DED6C7ED370F52380381BA", hash_generated_method = "AE7EEDA9A46D22AD36CC753FABE44EE3")
     public void popContext() {
         contexts[contextPos].clear();
@@ -113,6 +117,7 @@ public class NamespaceSupport {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.383 -0400", hash_original_method = "90A3EE210CAE689DFC3CD58893529A76", hash_generated_method = "CB334FD5CBDB89E1420D420C3EA4C695")
     public boolean declarePrefix(String prefix, String uri) {
         addTaint(uri.getTaint());
@@ -175,6 +180,7 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_818011757 =             parts;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.385 -0400", hash_original_method = "AC6673E983BE229DBE393CCBB4A72E75", hash_generated_method = "438AEFC54142801C0A001191A8C617F9")
     public String getURI(String prefix) {
         addTaint(prefix.getTaint());
@@ -186,6 +192,7 @@ String varD3CF03DF424233A5E957366D467BAD2C_929413427 =         currentContext.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.385 -0400", hash_original_method = "A5B18FED447546E052ABC48FA9E4C291", hash_generated_method = "3E0B50544CF66619F0AEC531F0E868FF")
     public Enumeration getPrefixes() {
 Enumeration var3CA484C1F7A55DC8EC9DBC77D6F685ED_352741770 =         currentContext.getPrefixes();
@@ -196,6 +203,7 @@ Enumeration var3CA484C1F7A55DC8EC9DBC77D6F685ED_352741770 =         currentConte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.385 -0400", hash_original_method = "EEA9ABC8ACBC17B2454F5F5D40E93A34", hash_generated_method = "9CF3FAA16C8F381DAF8693380C722CCC")
     public String getPrefix(String uri) {
         addTaint(uri.getTaint());
@@ -207,6 +215,7 @@ String varE7C2CB7CEAA80FA05F8C25692B7C653A_1176252777 =         currentContext.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.385 -0400", hash_original_method = "E9FAC6924E2013A13EA977C97AEA2AF7", hash_generated_method = "B5A63C600676D28CB29DD3CF296CE97E")
     public Enumeration getPrefixes(String uri) {
         addTaint(uri.getTaint());
@@ -237,6 +246,7 @@ Enumeration var5FC42751E2C21DAF9B65440664E8FC85_476280383 =         Collections.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.386 -0400", hash_original_method = "410BA98433560BB4462E66EC18960649", hash_generated_method = "105399FDE031B6E2B4FD41E5B757816E")
     public Enumeration getDeclaredPrefixes() {
 Enumeration varA9270AE0813CF099F45329C62E1BFAD9_1246405229 =         currentContext.getDeclaredPrefixes();
@@ -247,6 +257,7 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_1246405229 =         currentCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.387 -0400", hash_original_method = "D57A861BE58AF20E8C88DE55C319347D", hash_generated_method = "70428577D626EE585067EEDCC3DC97E8")
     public void setNamespaceDeclUris(boolean value) {
         if(contextPos != 0)        
@@ -372,6 +383,7 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_1246405229 =         currentCont
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.391 -0400", hash_original_method = "4549801F41C68E0A6A490696C062C72D", hash_generated_method = "A7925609F3D570A8AE7DCD57764F0089")
          void declarePrefix(String prefix, String uri) {
             addTaint(prefix.getTaint());
@@ -511,6 +523,7 @@ String [] varB017984728AC60AD1F0BF8734F33F15C_448613795 =             name;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.392 -0400", hash_original_method = "33F968ABABCEBD2BA0661937EB8377F0", hash_generated_method = "C46FAD826D5389A689DD1985E70C8EB8")
          String getURI(String prefix) {
             addTaint(prefix.getTaint());
@@ -544,6 +557,7 @@ String var4ADD76D79BB28EDB1A2636B311F90B44_776949412 =                 (String)p
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.393 -0400", hash_original_method = "62121EA4CFF0891BFB2032F7AF8FE7A1", hash_generated_method = "BE01E56B10105C60EA5147DFF2D84D84")
          String getPrefix(String uri) {
             addTaint(uri.getTaint());
@@ -568,6 +582,7 @@ String varD66BEA98E2A9549F3CCA4F534E7D70AE_1816154355 =                 (String)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.393 -0400", hash_original_method = "B116CF358C1D0DA8CF46DFF106939FC0", hash_generated_method = "054C1BDCC81059B6EDDA1E9676572DF4")
          Enumeration getDeclaredPrefixes() {
 Enumeration var6D101BA062498AE3A785D3901BC4F2E7_1672731038 =             (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
@@ -578,6 +593,7 @@ Enumeration var6D101BA062498AE3A785D3901BC4F2E7_1672731038 =             (declar
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.393 -0400", hash_original_method = "D02303EBFA8DB4A97AF291339C2FB52B", hash_generated_method = "71817DA427A31E18380386F96EDB6EB0")
          Enumeration getPrefixes() {
             if(prefixTable == null)            

@@ -368,6 +368,7 @@ String var09CEB08BD4344BF0DF3CD0571C30EE3D_2147363592 =         template;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.521 -0400", hash_original_method = "F7260472EF36A540999D13D4CAA6ECE9", hash_generated_method = "BD5886E68113E716ECC0752BE40081DF")
     public String inputDigit(char nextChar) {
         currentOutput = inputDigitWithOptionToRememberPosition(nextChar, false);
@@ -380,6 +381,7 @@ String var6D28BBF6C3B5B42D7B24DF7C977E5CFB_1900589315 =         currentOutput;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.521 -0400", hash_original_method = "5CF2674AEE53F09D43FB9E46A011FFC0", hash_generated_method = "C28AA6AD9E16EB898899AA00EE924AC1")
     public String inputDigitAndRememberPosition(char nextChar) {
         currentOutput = inputDigitWithOptionToRememberPosition(nextChar, true);

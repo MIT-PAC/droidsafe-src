@@ -53,6 +53,7 @@ public abstract class ASN1TypeCollection extends ASN1Constructed {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.470 -0400", hash_original_method = "C805E3FBD50230AA52139BF018AC9872", hash_generated_method = "F18CA42582C9209C967FC6D6F31BF898")
     protected void getValues(Object object, Object[] values) {
         addTaint(values[0].getTaint());

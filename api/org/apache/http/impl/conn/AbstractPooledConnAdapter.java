@@ -56,6 +56,7 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.033 -0400", hash_original_method = "AC84258A505CCE105FD230876F787C36", hash_generated_method = "DAB7957F731169BED8CD48114B5C8AB0")
     public HttpRoute getRoute() {
         assertAttached();
@@ -159,6 +160,7 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_594532148 =         (poolEntry.tra
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.035 -0400", hash_original_method = "C5C538BA26E5B2F7103C95948BE64C97", hash_generated_method = "07ACD9B2EF238BD9C9684EA1EC0BAE41")
     public Object getState() {
         assertAttached();

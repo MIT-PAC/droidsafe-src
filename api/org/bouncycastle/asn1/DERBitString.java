@@ -20,6 +20,7 @@ public class DERBitString extends ASN1Object implements DERString {
 
     protected int padBits;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.137 -0400", hash_original_method = "26EE121790982A47721F4E882F2E6D1B", hash_generated_method = "F9659D794398D2062248EB34A4C3BF44")
     protected  DERBitString(
         byte    data,
@@ -34,6 +35,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.138 -0400", hash_original_method = "FFBC3727DD76CEA695B58D8154C3FE06", hash_generated_method = "CADEBBFE8908BA669336E0DD7B955C29")
     public  DERBitString(
         byte[]  data,
@@ -46,6 +48,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.138 -0400", hash_original_method = "B944CF7FA9085EE991D9A8B7F428DA93", hash_generated_method = "BFADE815C0FBA5F064F9CAC679789DB8")
     public  DERBitString(
         byte[]  data) {
@@ -55,6 +58,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.139 -0400", hash_original_method = "CADA9C81F27161B70BDA506AB461E094", hash_generated_method = "73D5B8F6AD3043AE4C09F29717FD661D")
     public  DERBitString(
         DEREncodable  obj) {
@@ -149,6 +153,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERBitString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -207,7 +212,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.142 -0400", hash_original_method = "CB83D166557B7D270FFD9D836925EA70", hash_generated_method = "1632A7601780DEFAB2394AB3BFE8EBE7")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -224,6 +229,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.142 -0400", hash_original_method = "0FA775A3BA483D59A323D752B0FD6DA8", hash_generated_method = "48E94FA1F059E41DEB013780380E5CEC")
     public int hashCode() {
         int var7471FC882F94143252B8475D94AA8371_1529048950 = (padBits ^ Arrays.hashCode(data));
@@ -234,6 +240,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.142 -0400", hash_original_method = "6A45C831F2BEA87730EF6E467856CBF1", hash_generated_method = "8B4C6459915F063EAD4F0B813594C3A9")
     protected boolean asn1Equals(
         DERObject  o) {
@@ -260,7 +267,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.143 -0400", hash_original_method = "C8AC92EF6B951363C15B3CD0868FB9EA", hash_generated_method = "626E493780AE1E74185926C935326D86")
     public String getString() {
         StringBuffer buf = new StringBuffer("#");
@@ -307,6 +314,7 @@ String var4FC680801218E6372BC708D6FA44AE60_934514628 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.143 -0400", hash_original_method = "79F534E26CC8382FAA66B4080878D117", hash_generated_method = "60725DD70024E37AC8F6C63D227C5E00")
     public String toString() {
 String var8DB59AA9A0821BE4812A8E2F6919F1D5_644269756 =         getString();
@@ -317,6 +325,7 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_644269756 =         getString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     static DERBitString fromOctetString(byte[] bytes) {
         if (bytes.length < 1)
         {

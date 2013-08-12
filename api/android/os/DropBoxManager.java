@@ -113,6 +113,7 @@ public class DropBoxManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.035 -0400", hash_original_method = "0FE06F2CE6966672337D3755F0FF0CD0", hash_generated_method = "87BC025C4CC66EEA3F330C5CC0FDA0C3")
     public boolean isTagEnabled(String tag) {
         addTaint(tag.getTaint());
@@ -366,6 +367,7 @@ String varD6A25044F8E609F6CD67330C1523D33D_132580768 =             mTag;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.038 -0400", hash_original_method = "5115D4296A1E9A49B9B7627B57AD3F2E", hash_generated_method = "1AF9A17E151E981353B26297AE4654B4")
         public String getText(int maxBytes) {
             addTaint(maxBytes);
@@ -442,6 +444,7 @@ String var540C13E9E156B687226421B24F2DF178_1186446105 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.039 -0400", hash_original_method = "1138A2AC2CDA63F5FD2C1DAD635BB1B0", hash_generated_method = "F4031678DF72BA5ED94E7B176B74DAED")
         public InputStream getInputStream() throws IOException {
             InputStream is;
@@ -519,6 +522,7 @@ InputStream varE0596AA8DDE6DE71669BCED4AEBB387A_1587454095 =             (mFlags
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.039 -0400", hash_original_field = "A8DC184895BB5B5BEE6BB5E9D72AA17F", hash_generated_field = "329A53A95C2F0B54BB6DBA5A539F5907")
 
         public static final Parcelable.Creator<Entry> CREATOR = new Parcelable.Creator() {
+            @DSModeled(DSC.SAFE)
             public Entry[] newArray(int size) { return new Entry[size]; }
             public Entry createFromParcel(Parcel in) {
                 String tag = in.readString();

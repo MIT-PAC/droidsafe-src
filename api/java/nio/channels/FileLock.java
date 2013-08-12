@@ -23,6 +23,7 @@ public abstract class FileLock {
 
     private boolean shared;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.191 -0400", hash_original_method = "CD9224B029C4E22DF1D36B9A88EF4582", hash_generated_method = "F5ABF1CB705B458A35B898221DEDA719")
     protected  FileLock(FileChannel channel, long position, long size, boolean shared) {
         if(position < 0 || size < 0 || position + size < 0)        
@@ -124,6 +125,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
     public abstract void release() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.193 -0400", hash_original_method = "1F1F0B30DE920C1569E46FCBBEE46A56", hash_generated_method = "D6B80064B4F48A7E2D7760A497203E2D")
     @Override
     public final String toString() {

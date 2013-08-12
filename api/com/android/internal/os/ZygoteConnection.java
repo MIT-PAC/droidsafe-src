@@ -42,6 +42,7 @@ class ZygoteConnection {
 
     private Credentials peer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.778 -0400", hash_original_method = "7184EAAE07D7B6F9BEC01EBE5F329335", hash_generated_method = "32172E099DE9BCF8575C851672103C15")
       ZygoteConnection(LocalSocket socket) throws IOException {
         mSocket = socket;
@@ -75,6 +76,7 @@ class ZygoteConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.778 -0400", hash_original_method = "D031047267A17F3FBDEAA6E5A25F7FEC", hash_generated_method = "09783FE0886A60A0CA614219E35E3364")
      FileDescriptor getFileDesciptor() {
 FileDescriptor varB4DE187B48E9D304340996C59BDD1FA8_1140419984 =         mSocket.getFileDescriptor();
@@ -344,6 +346,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_1151888769 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void applyDebuggerSystemProperty(Arguments args) {
         if ("1".equals(SystemProperties.get("ro.debuggable"))) {
             args.debugFlags |= Zygote.DEBUG_ENABLE_DEBUGGER;
@@ -403,6 +406,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_1151888769 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void applyInvokeWithSystemProperty(Arguments args) {
         if (args.invokeWith == null && args.niceName != null) {
             if (args.niceName != null) {

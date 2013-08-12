@@ -17,6 +17,7 @@ import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class CipherSpi {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.058 -0400", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "B175E18BC1028895593001486C8188AB")
     public  CipherSpi() {
         // ---------- Original Method ----------
@@ -77,6 +78,7 @@ public abstract class CipherSpi {
             throws ShortBufferException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.063 -0400", hash_original_method = "A2736EFE3A54B9C2C8D99150445AC571", hash_generated_method = "F3245D2AC5AC77D6E8E531EEE2669F5A")
     protected int engineUpdate(ByteBuffer input, ByteBuffer output) throws ShortBufferException {
         addTaint(output.getTaint());
@@ -158,6 +160,7 @@ public abstract class CipherSpi {
             BadPaddingException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.066 -0400", hash_original_method = "EB2370CFCF7CAD7D2D42FF2FD39E8FD0", hash_generated_method = "F9087688E3F2B60BDC96AECE2B884F16")
     protected int engineDoFinal(ByteBuffer input, ByteBuffer output) throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException {
@@ -222,6 +225,7 @@ public abstract class CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.067 -0400", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "211BC753C9C2DBAB9121D742EAD5273E")
     protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
         addTaint(key.getTaint());
@@ -233,6 +237,7 @@ public abstract class CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.068 -0400", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "06950BED5A9FFC2116A53E496727C4E7")
     protected Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException, NoSuchAlgorithmException {
@@ -247,6 +252,7 @@ public abstract class CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.068 -0400", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "16A7ACBD76345828A0E50C37FB3EDD50")
     protected int engineGetKeySize(Key key) throws InvalidKeyException {
         addTaint(key.getTaint());

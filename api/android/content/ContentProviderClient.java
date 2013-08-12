@@ -185,7 +185,7 @@ ContentProviderResult[] varA5792D8F2DF3492C001E17A78FA6D47B_135450640 =         
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.862 -0400", hash_original_method = "6D0FD87E467E88469A71D9D6FF407FC5", hash_generated_method = "4A393CF0BE663855A9B04AD1345729B3")
     public boolean release() {
         boolean var0E13907596B373C827F95A0D4B9A5F8F_638155931 = (mContentResolver.releaseProvider(mContentProvider));
@@ -196,6 +196,7 @@ ContentProviderResult[] varA5792D8F2DF3492C001E17A78FA6D47B_135450640 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.863 -0400", hash_original_method = "50EB5374A057DC07A98B18D14BEE701F", hash_generated_method = "105234CB34E923A779C46BC392B49503")
     public ContentProvider getLocalContentProvider() {
 ContentProvider var240B8D085C8DCA342CD42B9D339190A2_1939896573 =         ContentProvider.coerceToLocalContentProvider(mContentProvider);

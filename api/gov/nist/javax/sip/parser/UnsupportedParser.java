@@ -34,6 +34,7 @@ public class UnsupportedParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.445 -0400", hash_original_method = "9F68B71E39A8D368C1910EB63F18B506", hash_generated_method = "AB52FC0E091CDBC498162234C0FD5DB1")
     public SIPHeader parse() throws ParseException {
         UnsupportedList unsupportedList = new UnsupportedList();

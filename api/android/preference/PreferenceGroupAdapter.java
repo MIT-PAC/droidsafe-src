@@ -188,6 +188,7 @@ PreferenceLayout var08A2C4A72E6D9753FFB2150962070B4D_959762402 =         pl;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.632 -0400", hash_original_method = "B1551AF468D615637FECD6277399376D", hash_generated_method = "11D4E095D4C707ECEB591312A6836347")
     public Preference getItem(int position) {
         addTaint(position);
@@ -206,6 +207,7 @@ Preference varC00C7940BC9F3D49E69E634FDBA25534_1563310662 =         mPreferenceL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.632 -0400", hash_original_method = "C2BB649F8AE8B2BA22DD6170BF8090F3", hash_generated_method = "616E262164316CE57165895EBFB5FC1D")
     public long getItemId(int position) {
         addTaint(position);
@@ -224,6 +226,7 @@ Preference varC00C7940BC9F3D49E69E634FDBA25534_1563310662 =         mPreferenceL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.633 -0400", hash_original_method = "0A6038B272F94F277CAFD95B96B15A1A", hash_generated_method = "4F88FE597FF9993C2EE8DA4F2A156131")
     public View getView(int position, View convertView, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -248,6 +251,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_1628782937 =         preference.getView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.633 -0400", hash_original_method = "ED75A4DEF716F8048DFD61CCEF0A4510", hash_generated_method = "753153818B4D45B9E00A94F853B45BEC")
     @Override
     public boolean isEnabled(int position) {
@@ -313,6 +317,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_1628782937 =         preference.getView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.635 -0400", hash_original_method = "95969FB891958AA0335CF8E62A1ABF37", hash_generated_method = "1D0A9ECAAEC7CCBE9C06E73E809B4C76")
     @Override
     public int getItemViewType(int position) {
@@ -360,6 +365,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_1628782937 =         preference.getView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.635 -0400", hash_original_method = "C26A2133E7F568EC0AF4EC87BB082A79", hash_generated_method = "760C45B260063E29B8851C0F0C8A868B")
     @Override
     public int getViewTypeCount() {
@@ -397,6 +403,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_1628782937 =         preference.getView
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.636 -0400", hash_original_method = "0A98309F64E867E673B1B3CFC2DB79CE", hash_generated_method = "64FB0F323E87440ACC46A822E55229EE")
         public int compareTo(PreferenceLayout other) {
             addTaint(other.getTaint());

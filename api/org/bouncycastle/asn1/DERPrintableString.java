@@ -14,6 +14,7 @@ public class DERPrintableString extends ASN1Object implements DERString {
 
     private String string;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.511 -0400", hash_original_method = "D997DB152CB96E2AA3DC66ADB95C73B5", hash_generated_method = "D16BF1940FE575B97E8AB0D562B258D3")
     public  DERPrintableString(
         byte[]   string) {
@@ -33,6 +34,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.512 -0400", hash_original_method = "6FDBF9EC620F477F9D8DC023E90C58AD", hash_generated_method = "511B5423ACF1B90912179FC61A8F5833")
     public  DERPrintableString(
         String   string) {
@@ -42,6 +44,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.513 -0400", hash_original_method = "884AB42617499DD6D6AA2A57724A994F", hash_generated_method = "2A13634C02F9DEF508EABAB7DA3319A6")
     public  DERPrintableString(
         String   string,
@@ -63,6 +66,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERPrintableString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERPrintableString)
@@ -73,6 +77,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERPrintableString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -99,6 +104,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1293376740 =         string;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.514 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "3AD0A7E3BE331859041B67DAA8A1E78D")
     public byte[] getOctets() {
         char[] cs = string.toCharArray();
@@ -121,6 +127,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.515 -0400", hash_original_method = "84DAFF7719AC505908CDD70F6E92DE78", hash_generated_method = "73FCDE4E9E1C70C7AD9BAC8132114FCA")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -131,6 +138,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.515 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "64D6669A1E33E19AE28EA2CD40925D3C")
     public int hashCode() {
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_131188583 = (this.getString().hashCode());
@@ -141,6 +149,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.516 -0400", hash_original_method = "356EB8B61A96F4A47C607B567EAD3298", hash_generated_method = "E15E81F99CA3432635A7D73185EE237C")
      boolean asn1Equals(
         DERObject  o) {
@@ -176,6 +185,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1288841176 =         string;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPrintableString(
         String  str) {
         for (int i = str.length() - 1; i >= 0; i--)

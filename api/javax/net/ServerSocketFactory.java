@@ -21,6 +21,7 @@ public abstract class ServerSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized ServerSocketFactory getDefault() {
         if (defaultFactory == null) {
             defaultFactory = new DefaultServerSocketFactory();
@@ -29,6 +30,7 @@ public abstract class ServerSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.523 -0400", hash_original_method = "698CB8A5B4145A1BDB9AB7D216CE6832", hash_generated_method = "A4E9DCD28527F79AB4C13588CDEC8E45")
     public ServerSocket createServerSocket() throws IOException {
         SocketException varDA6818F72EC9252110B74ED429FAE910_224585077 = new SocketException("Unbound server sockets not implemented");

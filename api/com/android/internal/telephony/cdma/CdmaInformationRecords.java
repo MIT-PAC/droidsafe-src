@@ -95,6 +95,7 @@ switch(id){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.651 -0400", hash_original_method = "086C7141CE5438F46B273808409370D3", hash_generated_method = "5A3733FEE3EDECBA3F3B4D069806D900")
         public  CdmaSignalInfoRec(int isPresent, int signalType, int alertPitch, int signal) {
             this.isPresent = isPresent != 0;
@@ -109,6 +110,7 @@ switch(id){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.652 -0400", hash_original_method = "7B06985E180C621ECAFE7B9C193EA068", hash_generated_method = "A9D2DEF81AD4A69180668F9572D900FB")
         @Override
         public String toString() {
@@ -152,7 +154,7 @@ String varF6116CCA8A1591B4E776780FC5B28B16_1179548820 =             "CdmaSignalI
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.653 -0400", hash_original_method = "CF7F6486CAA3B052EADF0380EBB958B2", hash_generated_method = "75F250D5F6BDDEEEDE35761AF8FDF0DA")
         @Override
         public String toString() {
@@ -212,6 +214,7 @@ String var66540B1AE234D793CAEEAF96CB8FC5D5_1887449666 =             "CdmaDisplay
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.657 -0400", hash_original_method = "AA45E08965936A74DE899E6F859B6FCB", hash_generated_method = "3F4BE1B9BBAA481DD0D497C0BE181D44")
         @Override
         public String toString() {
@@ -262,6 +265,7 @@ String var17B573EFFC9D62D8F334884A496125D8_1636563528 =             "CdmaNumberI
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.659 -0400", hash_original_method = "D87DB983AB005EF9C7C06219E3B89A0C", hash_generated_method = "2A05C36F57936B161C562C950B9EC495")
         @Override
         public String toString() {
@@ -330,7 +334,7 @@ String varDB93CB209FBF5516784CF592BF288EC8_871259282 =             "CdmaNumberIn
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.662 -0400", hash_original_method = "31B594EC48675C621293EE1C64F7F9A1", hash_generated_method = "A7CF75EAE20DC29A45316B59B04D944C")
         @Override
         public String toString() {
@@ -369,7 +373,7 @@ String var77B1AD702290CF500DD6732098282B5C_1841983094 =             "CdmaLineCon
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.663 -0400", hash_original_method = "74C570B6C9610C7A851D818E47741A96", hash_generated_method = "BEA415F4B88844FE5E8FE4385967D0C3")
         @Override
         public String toString() {
@@ -397,6 +401,7 @@ String var97773021324657564F331D4E382DBD0B_1443956746 =             "CdmaT53Clir
 
         public byte downlink;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.665 -0400", hash_original_method = "50F8C49F080380C1715EB0BA46949181", hash_generated_method = "E9EA2FB2EFC618036683820BD1761210")
         public  CdmaT53AudioControlInfoRec(int uplink, int downlink) {
             this.uplink = (byte) uplink;
@@ -407,7 +412,7 @@ String var97773021324657564F331D4E382DBD0B_1443956746 =             "CdmaT53Clir
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.665 -0400", hash_original_method = "2D0051C7D271A045193565807D73F90A", hash_generated_method = "B41550FD561921E39E6863943363C559")
         @Override
         public String toString() {

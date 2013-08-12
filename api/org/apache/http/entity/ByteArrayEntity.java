@@ -57,6 +57,7 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.252 -0400", hash_original_method = "004C3F78EC3F500E7D7F762D94BAEB0E", hash_generated_method = "6E374596836A3D418E02104954FC3291")
     public InputStream getContent() {
 InputStream varEFD22E670A1626295FDBD437906D30FE_748342161 =         new ByteArrayInputStream(this.content);

@@ -23,6 +23,7 @@ public class DrmConstraintInfo {
 
     private long interval;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.327 -0400", hash_original_method = "9EDFB4E9C7052BBC86DC69FD90E3B91B", hash_generated_method = "6868DD6A933BD4B25D0381AE441C3DEC")
       DrmConstraintInfo() {
         count = -1;
@@ -48,6 +49,7 @@ public class DrmConstraintInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.328 -0400", hash_original_method = "EF2100393B586A67476383923E9A11D6", hash_generated_method = "E98C35B1AD656EB6EA3D94D83EA94509")
     public Date getStartDate() {
         if(startDate == -1)        

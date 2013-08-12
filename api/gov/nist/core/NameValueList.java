@@ -233,6 +233,7 @@ String varB17575D7C845B2C662583710539AAEBB_385451685 =         this.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.666 -0400", hash_original_method = "DE074F80660571F2D9A0EA59E951198A", hash_generated_method = "61AAA1B822C2E4A60F06007182E4D72C")
     public Object getValue(String name) {
         addTaint(name.getTaint());

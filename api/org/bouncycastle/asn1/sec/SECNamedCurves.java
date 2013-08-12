@@ -36,6 +36,7 @@ public class SECNamedCurves {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
         objIds.put(name, oid);
         names.put(oid, name);
@@ -43,6 +44,7 @@ public class SECNamedCurves {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X9ECParameters getByName(
         String name) {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
@@ -54,6 +56,7 @@ public class SECNamedCurves {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X9ECParameters getByOID(
         DERObjectIdentifier oid) {
         X9ECParametersHolder holder = (X9ECParametersHolder)curves.get(oid);
@@ -65,19 +68,21 @@ public class SECNamedCurves {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static DERObjectIdentifier getOID(
         String name) {
         return (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getName(
         DERObjectIdentifier oid) {
         return (String)names.get(oid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Enumeration getNames() {
         return objIds.keys();
     }
@@ -86,6 +91,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.315 -0400", hash_original_field = "B41E146BA8C164111B1645919735CC9D", hash_generated_field = "F4BC0D0D43072A7219EB86246FE8C670")
 
     static X9ECParametersHolder secp112r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.315 -0400", hash_original_method = "8E448402047C0F11C87A90E5BD1B04E9", hash_generated_method = "613B2396B34482F9EDE8733A8F153B0A")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_785622001 = null; 
@@ -121,6 +127,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.316 -0400", hash_original_field = "5F969404F8070F5465E28F29946123AE", hash_generated_field = "CEE75A1FF268FBB0CD8B177891EEEF57")
 
     static X9ECParametersHolder secp112r2 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.316 -0400", hash_original_method = "468E53769BA5ED2EE03D54A96E907092", hash_generated_method = "8C626EA99619A9A57150E0C5C67442D0")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1435100480 = null; 
@@ -156,6 +163,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.318 -0400", hash_original_field = "E982AF317A03346C433CBBD4EFEA7088", hash_generated_field = "1474C875E6520B8095F5B0330CD2B8E2")
 
     static X9ECParametersHolder secp128r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.318 -0400", hash_original_method = "97C5E2A90B849D3523C9EEADC16D1AF8", hash_generated_method = "4D79822F12C258B4DC924A8AFA296C94")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_2025222169 = null; 
@@ -191,6 +199,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.319 -0400", hash_original_field = "71CFAF22C17BF0EAEAE13BF3AA8F25BA", hash_generated_field = "0813BA3889D9854EA34ADD9374E366C9")
 
     static X9ECParametersHolder secp128r2 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.319 -0400", hash_original_method = "43319354EF5C174017C8409BB24C6E19", hash_generated_method = "166AA3512AA7D04DB84F2A950C07CC21")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_2046257864 = null; 
@@ -226,6 +235,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.320 -0400", hash_original_field = "3398576FAC09240EC283C0AAED3D54E4", hash_generated_field = "A1ADBD33142C3DC157603602ECE87EF5")
 
     static X9ECParametersHolder secp160k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.320 -0400", hash_original_method = "E719BBEAA068ED10BCA6A033D327153E", hash_generated_method = "5965575BD4BD1F388E2D6862C9653305")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_26125386 = null; 
@@ -261,6 +271,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.321 -0400", hash_original_field = "2AB110EC9C12A8F9175994736FD5B02C", hash_generated_field = "F2F24FDE125BD3D7DBB8A6F4EA5E33B9")
 
     static X9ECParametersHolder secp160r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.321 -0400", hash_original_method = "DDB2B363945B5490D694A386BE4E5F03", hash_generated_method = "D7077CCA41A2AC08A1B3B3053B61991D")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1930725171 = null; 
@@ -296,6 +307,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.322 -0400", hash_original_field = "B801768A876AB9E1A06D46266D7736B2", hash_generated_field = "43815546B26487E13C05C957F588ECFC")
 
     static X9ECParametersHolder secp160r2 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.322 -0400", hash_original_method = "9950719937522ACF7448267AEFDF006A", hash_generated_method = "9C708DC41AE7C7B052680C472E1D76BE")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_313160129 = null; 
@@ -331,6 +343,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.323 -0400", hash_original_field = "F443BB334E744D1AB628BBE229667AD4", hash_generated_field = "B2EF70B5558C601FE83BB578D74256D5")
 
     static X9ECParametersHolder secp192k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.323 -0400", hash_original_method = "350F010EB26B45C92F40BBB1CD103BA0", hash_generated_method = "B10A079BCD9E288E6E739FB20E9D56CD")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_746527845 = null; 
@@ -366,6 +379,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.323 -0400", hash_original_field = "EAE018F0751BB0735BBC6EC2AE3488A4", hash_generated_field = "309F782E4AA6F4820790D85F9A9AEA2B")
 
     static X9ECParametersHolder secp192r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.323 -0400", hash_original_method = "CD250B58B5465DF0C8A18821FB3F1924", hash_generated_method = "25C7143F3A8AD3A4552E59EC9CB21B49")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_497926718 = null; 
@@ -401,6 +415,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.324 -0400", hash_original_field = "2F386C09373029D02D0FBA1D3B6F8156", hash_generated_field = "C35C1B34548FF694F81E083E9E8663EB")
 
     static X9ECParametersHolder secp224k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.324 -0400", hash_original_method = "F8EE21E6B1A0FBC8F145CBF3D8CE3CFB", hash_generated_method = "4D93A9E5C1E49362250D78DD91480DC6")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1778344526 = null; 
@@ -436,6 +451,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.325 -0400", hash_original_field = "9A597036873E73DC6A72FECE6D6F5712", hash_generated_field = "86818A43CE99FD86B1F53268405D237E")
 
     static X9ECParametersHolder secp224r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.325 -0400", hash_original_method = "5E3CCE2D1D9CAA16108BE66F878E85CC", hash_generated_method = "E88FDB25015084E206F721640A4E17B1")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_2103702843 = null; 
@@ -461,6 +477,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.327 -0400", hash_original_field = "72DBCB5F9A9BF55575D44A2633460D5E", hash_generated_field = "2C203AAF45588112EF126E28FD967C00")
 
     static X9ECParametersHolder secp256k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.326 -0400", hash_original_method = "B753204968CAC07BB57DEF24BE54279B", hash_generated_method = "95ACE378B5CA9B59A7E79C4ADBB05EFB")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1275202157 = null; 
@@ -496,6 +513,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.329 -0400", hash_original_field = "B7DD68ECBDD670A7A3083EBD0DEFDC1D", hash_generated_field = "9334994BC98978D196B5954DDC995166")
 
     static X9ECParametersHolder secp256r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.328 -0400", hash_original_method = "2DCCFFE65BEEA022E61A31B0B196D486", hash_generated_method = "6D7D636724C810AB91539BC31DBAC04D")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_2041568839 = null; 
@@ -521,6 +539,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.331 -0400", hash_original_field = "6F65A1874614B834E202673B82D898EF", hash_generated_field = "DE117EE5A599A2DCE6F433F1BA79FF73")
 
     static X9ECParametersHolder secp384r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.330 -0400", hash_original_method = "80CF03327EF6750927A129BF16E6D681", hash_generated_method = "BD1F18B5C93127D8A1E60EAB0BDE1E53")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_345489014 = null; 
@@ -546,6 +565,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.332 -0400", hash_original_field = "CAECA391B2C0E3AB57B20BCD41B2FA41", hash_generated_field = "FE6CDE7DA696B48BA19F4946F2138435")
 
     static X9ECParametersHolder secp521r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.332 -0400", hash_original_method = "79B36F90B44C85A48A3830602FF806E1", hash_generated_method = "0DF13B1A22B958CDB9DCAB5FBB943047")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1264110525 = null; 
@@ -571,6 +591,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.333 -0400", hash_original_field = "96976F6E4812D761893BE97B1B87D455", hash_generated_field = "147797A8C4FD494D9DA809BC5B313E48")
 
     static X9ECParametersHolder sect113r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.333 -0400", hash_original_method = "B885FC73F0F72CED8886BA74AFEBBC53", hash_generated_method = "E7489C6F6EE8905BB787A319FD8CFC86")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1966972733 = null; 
@@ -608,6 +629,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.334 -0400", hash_original_field = "5D8133664447D1E4F7D13552E917DBCA", hash_generated_field = "F3C1699B26AAC81BC56471E07428CD53")
 
     static X9ECParametersHolder sect113r2 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.334 -0400", hash_original_method = "873F3FA5CF8FBCF68530771A6DC5B094", hash_generated_method = "309F611820B7822A4612DDFB56A05FBA")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_453385778 = null; 
@@ -645,6 +667,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.336 -0400", hash_original_field = "FD21318D509A0E36D13A1509FAD7B04F", hash_generated_field = "EB3435AAC4119C20AEA2A90B06499A14")
 
     static X9ECParametersHolder sect131r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.336 -0400", hash_original_method = "F86DF6B8541CFA01E108050621442C1B", hash_generated_method = "DCD27B5CB2CA18A9AC0F18B8C85D5584")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_184046326 = null; 
@@ -686,6 +709,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.341 -0400", hash_original_field = "BA0312C18913DAAADA2CACCFE9A525D2", hash_generated_field = "17531D55CA49C309DE3DA2F72F547B86")
 
     static X9ECParametersHolder sect131r2 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.341 -0400", hash_original_method = "3FB83B1C3F4DA9E5D14CA9119EF956F4", hash_generated_method = "09FBC138D7A6DBA0BE5EC354E25B6805")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1629957710 = null; 
@@ -727,6 +751,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.344 -0400", hash_original_field = "9004BA76FDCCD3F7DA3C9C45C1F2A011", hash_generated_field = "E503CA821D39D82F8C6D8517DF432B0F")
 
     static X9ECParametersHolder sect163k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.344 -0400", hash_original_method = "1CF51518AB8E48426A23D017265CEAC7", hash_generated_method = "F48B630D44065EDA3DD4B46A3D2829DA")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_2100698639 = null; 
@@ -768,6 +793,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.346 -0400", hash_original_field = "A4AE2827500BB3211DBFD4C05C50BF0C", hash_generated_field = "E3A9497B57269C6A6DC23FBEA0CA4C69")
 
     static X9ECParametersHolder sect163r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.346 -0400", hash_original_method = "013C492C11913727E576250A34DE6343", hash_generated_method = "7CE3DD23B30B7313B5CEC93A7D697D52")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1620768688 = null; 
@@ -809,6 +835,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.347 -0400", hash_original_field = "26858ADA101044B87D434E72AFF01645", hash_generated_field = "9FEADBA58C26885735F784BD01DE2CCB")
 
     static X9ECParametersHolder sect163r2 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.347 -0400", hash_original_method = "C131801BB1AAB755950E30E9E4DF8097", hash_generated_method = "D00D3FD5CA36B8658DF30F0EE584CEC4")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1840293802 = null; 
@@ -850,6 +877,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.349 -0400", hash_original_field = "B27C1E9C9FC0E59F088154F71EB84104", hash_generated_field = "5E7BE81556918CFD1259B0A2E2136860")
 
     static X9ECParametersHolder sect193r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.349 -0400", hash_original_method = "DF7F450FEF1B3A3B560CA3A0C0318C1E", hash_generated_method = "BA03B065732DEA143057C00261ED4597")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1651061036 = null; 
@@ -887,6 +915,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.351 -0400", hash_original_field = "4172B89402E1709FC853FE657C799BCF", hash_generated_field = "637E958F5E403A22BACA6D769D9D85E2")
 
     static X9ECParametersHolder sect193r2 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.351 -0400", hash_original_method = "34B8DF7527F877746E2AB9998BD4D9A0", hash_generated_method = "309D227AE6F19202CA75FA73C5876AB4")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_742241245 = null; 
@@ -924,6 +953,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.353 -0400", hash_original_field = "42122C3E2C7D15193577FF307AFCB45B", hash_generated_field = "6F00DAD773C265155A393E020B157CA2")
 
     static X9ECParametersHolder sect233k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.353 -0400", hash_original_method = "6C906D6006DB2DE7B23F0152BF31DEF1", hash_generated_method = "F707D7E241A6778B7C9D1889CC2A9DC4")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_134072211 = null; 
@@ -961,6 +991,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.353 -0400", hash_original_field = "03448A32F413239402A1F40C88D1DBFA", hash_generated_field = "CD1DA575EC84AD8093F4AA3152ADBF85")
 
     static X9ECParametersHolder sect233r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.353 -0400", hash_original_method = "07B356EC1DCC67D8B9E57B61206404AD", hash_generated_method = "988FA5C1D8696E711C789EF1572FA8E2")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1073805690 = null; 
@@ -998,6 +1029,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.354 -0400", hash_original_field = "9F5207DA0C09CF6E21210F852E286FBD", hash_generated_field = "ACD12BD3058248FE3F0B76911A79C135")
 
     static X9ECParametersHolder sect239k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.354 -0400", hash_original_method = "1BB274E6633447AD0C198E0CE77AB80A", hash_generated_method = "E561A6986344ED9BB23AA40B938B8F34")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_16550228 = null; 
@@ -1035,6 +1067,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.355 -0400", hash_original_field = "01C632D50489CF8783D08FE400DC5BD7", hash_generated_field = "988EB13BE0C7635A24ED34A4CAE0E382")
 
     static X9ECParametersHolder sect283k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.355 -0400", hash_original_method = "43320E8AD6889EF9FF9FAB4C50D6D1E9", hash_generated_method = "C6484153BC931E4B67BF045D7BBC671D")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_903614154 = null; 
@@ -1076,6 +1109,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.356 -0400", hash_original_field = "C716D1BCBE97916232929F17CE42E976", hash_generated_field = "8172BCFDC05F2245822EF42CFA902FC7")
 
     static X9ECParametersHolder sect283r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.356 -0400", hash_original_method = "BAFFAB3DD59BCB7DBF6C1389579B2C9B", hash_generated_method = "6ECD615F18253F4D61C2CD7B57ADFEC2")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_62968838 = null; 
@@ -1104,6 +1138,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.357 -0400", hash_original_field = "33088EFD1988036D661BD9EF34E5BD6D", hash_generated_field = "4BDACA69A0F9DB352ABD0E9C3AA573F2")
 
     static X9ECParametersHolder sect409k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.357 -0400", hash_original_method = "7D19DAE4DBEC48E74839F2C6F3BE1E30", hash_generated_method = "FAFBF1FE9BA32590D5AE2431170541BA")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_468454975 = null; 
@@ -1141,6 +1176,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.359 -0400", hash_original_field = "CC270FB9105A33F5B97941DBE3D98160", hash_generated_field = "A9068B79322A6C4ACBD2D35982E3F3AB")
 
     static X9ECParametersHolder sect409r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.358 -0400", hash_original_method = "813243EC1F2EF186FEEB8FDBF8EFAEA1", hash_generated_method = "912017FDC6A8BABEC5F33E1CBAFD5B20")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_1204196007 = null; 
@@ -1167,6 +1203,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.360 -0400", hash_original_field = "F8FB64609BFCAE8520DC3805742F2442", hash_generated_field = "D73C8F608973BA84391396C6A5607580")
 
     static X9ECParametersHolder sect571k1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.360 -0400", hash_original_method = "CBB599AB4E1E60D840DD23D28030C0A4", hash_generated_method = "18BABBAB481531AF276F511C8611AE16")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_716931683 = null; 
@@ -1195,6 +1232,7 @@ public class SECNamedCurves {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.361 -0400", hash_original_field = "D4444F3B372733CD71070BB10F372BBF", hash_generated_field = "F9AC2967F3111C5459473A2C3D7082CA")
 
     static X9ECParametersHolder sect571r1 = new X9ECParametersHolder() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:44.361 -0400", hash_original_method = "1723E2241C5F8371AAE0510851FF7E06", hash_generated_method = "0EA13E244FE85ADC2B6D521CDC0FDF2B")
         protected X9ECParameters createParameters() {
             X9ECParameters varB4EAC82CA7396A68D541C85D26508E83_550234394 = null; 

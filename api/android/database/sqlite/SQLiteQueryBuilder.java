@@ -77,6 +77,7 @@ String varDFAC709EF682E7EE77A36551B3D5FA40_753282632 =         mTables;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.997 -0400", hash_original_method = "4066C27D90FD6AEEDB747E2D0A255B82", hash_generated_method = "B25AAE77F970461803CCD21018C846A5")
     public void appendWhere(CharSequence inWhere) {
         if(mWhereClause == null)        
@@ -99,6 +100,7 @@ String varDFAC709EF682E7EE77A36551B3D5FA40_753282632 =         mTables;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.999 -0400", hash_original_method = "CD89033A6A424354FBAEE4A7B7BB0312", hash_generated_method = "450FEC29316E94980C9763526705C9D9")
     public void appendWhereEscapeString(String inWhere) {
         if(mWhereClause == null)        
@@ -148,6 +150,7 @@ String varDFAC709EF682E7EE77A36551B3D5FA40_753282632 =         mTables;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String buildQueryString(
             boolean distinct, String tables, String[] columns, String where,
             String groupBy, String having, String orderBy, String limit) {
@@ -308,7 +311,7 @@ Cursor var12E0F7DE1781C915D060A2E700D32EBB_1666779604 =         db.rawQueryWithF
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.011 -0400", hash_original_method = "131EA8692C493A86BCD7B59A8B1306F4", hash_generated_method = "F1B554E9B2FE1904A1F0F88850C8BF72")
     public String buildQuery(
             String[] projectionIn, String selection, String groupBy,
@@ -364,6 +367,7 @@ String var236D2A0B1C8E8F9FF2BF69EB168E582B_1878519692 =         buildQueryString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.013 -0400", hash_original_method = "D5409D707055983A8E689AC969CBA872", hash_generated_method = "FD18287CEF40C00DF1EC59E26BACFB07")
     @Deprecated
     public String buildQuery(
@@ -384,6 +388,7 @@ String var27F7D9905AFAE2B7B4A780252CB654AE_1075803890 =         buildQuery(proje
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.017 -0400", hash_original_method = "579B4F5DF75F7C70B58361D381AB3677", hash_generated_method = "8A61C2E7F651C12E8406B5329DE94EAC")
     public String buildUnionSubQuery(
             String typeDiscriminatorColumn,
@@ -451,6 +456,7 @@ String var097A97A35346D121779DBBE760699D3E_1633216606 =         buildQuery(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.020 -0400", hash_original_method = "6C4D740E5B06C8AB5B016A4D8B83E2C6", hash_generated_method = "AC55D29F2830AEA8FE61D66641E7B06D")
     @Deprecated
     public String buildUnionSubQuery(
@@ -486,7 +492,7 @@ String var0743EC5E411E1095EAA717524958A67B_781902671 =         buildUnionSubQuer
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.021 -0400", hash_original_method = "870E9211222A33CDF50FFEE42B5AEA84", hash_generated_method = "16EB7ABED132667D23CDEC32727B8EE1")
     public String buildUnionQuery(String[] subQueries, String sortOrder, String limit) {
         addTaint(limit.getTaint());

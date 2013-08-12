@@ -179,6 +179,7 @@ for(int i = 0;i < source.enterpriseFields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.177 -0400", hash_original_method = "97D3C3FCC664C1BBD8134CCAC12AD4F6", hash_generated_method = "E43D95F7000BA5B60E9B40AE493CE6DC")
     @Override
     public String toString() {

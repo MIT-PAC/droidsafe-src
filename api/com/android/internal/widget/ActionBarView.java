@@ -1633,6 +1633,7 @@ ViewGroup.LayoutParams var4623C1ABA202AD3CC8A876401C6F2166_162882526 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.059 -0400", hash_original_method = "19310F391EC0B469A38234970BA36DD5", hash_generated_method = "A05B227302B47D2BA068999249BF793B")
     @Override
     public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams lp) {

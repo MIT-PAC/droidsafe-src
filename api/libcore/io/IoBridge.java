@@ -83,6 +83,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int available(FileDescriptor fd) throws IOException {
         try {
             MutableInt available = new MutableInt(0);
@@ -100,6 +101,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void bind(FileDescriptor fd, InetAddress address, int port) throws SocketException {
         if (address instanceof Inet6Address && ((Inet6Address) address).getScopeId() == 0) {
             NetworkInterface nif = NetworkInterface.getByInetAddress(address);
@@ -120,6 +122,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static boolean connect(FileDescriptor fd, InetAddress inetAddress, int port) throws SocketException {
         try {
             return IoBridge.connect(fd, inetAddress, port, 0);
@@ -129,6 +132,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static boolean connect(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs) throws SocketException, SocketTimeoutException {
         try {
             return connectErrno(fd, inetAddress, port, timeoutMs);
@@ -188,6 +192,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeSocket(FileDescriptor fd) throws IOException {
         if (!fd.valid()) {
             return;
@@ -204,6 +209,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static boolean isConnected(FileDescriptor fd, InetAddress inetAddress, int port, int timeoutMs, int remainingTimeoutMs) throws IOException {
         ErrnoException cause;
         try {
@@ -240,6 +246,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Object getSocketOption(FileDescriptor fd, int option) throws SocketException {
         try {
             return getSocketOptionErrno(fd, option);
@@ -302,6 +309,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void setSocketOption(FileDescriptor fd, int option, Object value) throws SocketException {
         try {
             setSocketOptionErrno(fd, option, value);
@@ -381,6 +389,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static FileDescriptor open(String path, int flags) throws FileNotFoundException {
         FileDescriptor fd = null;
         try {
@@ -406,6 +415,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(bytes.length, byteOffset, byteCount);
         if (byteCount == 0) {
@@ -426,6 +436,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws IOException {
         Arrays.checkOffsetAndCount(bytes.length, byteOffset, byteCount);
         if (byteCount == 0) {
@@ -554,6 +565,7 @@ public final class IoBridge {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static FileDescriptor socket(boolean stream) throws SocketException {
         FileDescriptor fd;
         try {

@@ -168,7 +168,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.803 -0400", hash_original_method = "65CE3BC8A7A8514DBA7266C40E446CDF", hash_generated_method = "E96096CD3D634EA32310C62E9635D487")
     private void checkNotClosed() {
         if(mRaf == null)        
@@ -326,7 +326,7 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_1691297042 =         fileName;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.809 -0400", hash_original_method = "C4C5F4E81B860F4CAE8325550F47061B", hash_generated_method = "9EBD72DA5C0407FD5E5451555296B023")
     private void readCentralDir() throws IOException {
         long scanOffset = mRaf.length() - ENDHDR;

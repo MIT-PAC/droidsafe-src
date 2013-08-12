@@ -91,7 +91,7 @@ public class MenuInflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.601 -0400", hash_original_method = "9930459085CDC2417094A7A8585D74E6", hash_generated_method = "9E550D96C1C39C96FD598F9D22D1E271")
     private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu) throws XmlPullParserException, IOException {
         addTaint(menu.getTaint());
@@ -463,7 +463,7 @@ switch(eventType){
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.615 -0400", hash_original_method = "68CBADC6295F8D47EFE8794BDB31E4A9", hash_generated_method = "176B7A7759B5712327F67AB093FCD8CA")
         private char getShortcut(String shortcutString) {
             addTaint(shortcutString.getTaint());
@@ -488,7 +488,7 @@ switch(eventType){
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.616 -0400", hash_original_method = "AD827357C34932CC0921A74B0CE8A3EF", hash_generated_method = "B556BCB318CD3DC4261EA35B78B0E677")
         private void setItem(MenuItem item) {
             addTaint(item.getTaint());

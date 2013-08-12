@@ -537,6 +537,7 @@ LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_1423980862 =         new Layout
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.112 -0400", hash_original_method = "6543FCE3043AA8E09E4AB46D137D1290", hash_generated_method = "09A8456DD5DB902BFAF3E4AF64C82313")
     @Override
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {

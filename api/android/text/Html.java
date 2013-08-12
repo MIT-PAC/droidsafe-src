@@ -941,7 +941,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static HashMap<String,Integer> buildColorMap() {
         HashMap<String,Integer> map = new HashMap<String,Integer>();
         map.put("aqua", 0x00FFFF);

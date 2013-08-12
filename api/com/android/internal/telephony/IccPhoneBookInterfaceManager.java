@@ -107,6 +107,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.209 -0400", hash_original_method = "A61AB5A9E61C78C524F0A299EDDA8B31", hash_generated_method = "F8239CE1F53CC35117D554BE23C34DE0")
     public  IccPhoneBookInterfaceManager(PhoneBase phone) {
         this.phone = phone;
@@ -138,6 +139,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     protected abstract void loge(String msg);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.210 -0400", hash_original_method = "6BE84EAB1F25CDC10E8188E3A1C3A959", hash_generated_method = "970646052775587307E1D65C55FFD26D")
     public boolean updateAdnRecordsInEfBySearch(int efid,
             String oldTag, String oldPhoneNumber,
@@ -181,6 +183,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.211 -0400", hash_original_method = "102FC1C0583C00426ED85686CB9EA64E", hash_generated_method = "9DEC6E51D667C0A333866F2D6ECE81E5")
     public boolean updateAdnRecordsInEfByIndex(int efid, String newTag,
             String newPhoneNumber, int index, String pin2) {
@@ -270,6 +273,7 @@ List<AdnRecord> varFE65894448998F2F8382F47C41BDE1F8_2011139694 =         records
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.212 -0400", hash_original_method = "323B98E2749A47EA83AB3530A004F85D", hash_generated_method = "89936126D540B6F90657582638FD3F94")
     protected void checkThread() {
         if(!ALLOW_SIM_OP_IN_UI_THREAD)        

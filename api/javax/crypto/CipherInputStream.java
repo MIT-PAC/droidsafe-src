@@ -30,6 +30,7 @@ public class CipherInputStream extends FilterInputStream {
 
     private boolean finished;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.016 -0400", hash_original_method = "EC8926C4C5D7C4B05365DF92BFAEAD8D", hash_generated_method = "A61B5C4D00E8183E333A03FBE9C75319")
     public  CipherInputStream(InputStream is, Cipher c) {
         super(is);
@@ -40,6 +41,7 @@ public class CipherInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.016 -0400", hash_original_method = "3F50D5CECF426A3B563FBE87D10C056C", hash_generated_method = "2FF9A740F35195A4ED096B5DB6CBA1D4")
     protected  CipherInputStream(InputStream is) {
         this(is, new NullCipher());
@@ -48,6 +50,7 @@ public class CipherInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.018 -0400", hash_original_method = "352555B7350AF9FC6F75FE9A04D77107", hash_generated_method = "4C7E522DB5A7FD20D24E03E4FE1AD49E")
     @Override
     public int read() throws IOException {
@@ -96,6 +99,7 @@ public class CipherInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.019 -0400", hash_original_method = "B8FB2A7CB3FB3DB7D0751D6D604C7303", hash_generated_method = "6FB8C976FE51452812BC41E182E656C1")
     @Override
     public int read(byte[] buf, int off, int len) throws IOException {
@@ -144,6 +148,7 @@ for(i = 0;i < len;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.020 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "3B56F193734F401210EE8437BA56325A")
     @Override
     public long skip(long byteCount) throws IOException {
@@ -168,6 +173,7 @@ for(i = 0;i < len;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.021 -0400", hash_original_method = "6325F2669A2E29C02EEAA5CF85C35B84", hash_generated_method = "115CDDC28840CEF197601EFC797FBC94")
     @Override
     public void close() throws IOException {

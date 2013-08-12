@@ -549,6 +549,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_1525190307 =             mKeyObjectMa
 
         public int endChar = -1;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.338 -0400", hash_original_method = "B16942A4D6AA45C219307E42B3F01C5E", hash_generated_method = "F71D3E39F8F9FA0E1A28D452EF3FE562")
         public  CharPos() {
             // ---------- Original Method ----------
@@ -573,6 +574,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_1525190307 =             mKeyObjectMa
 
         public int right = -1;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.339 -0400", hash_original_method = "533CD86BF5A1B326154330F052078462", hash_generated_method = "3152B4C699CD5F269C29FE4769308AF8")
         public  TextPos() {
             // ---------- Original Method ----------
@@ -645,6 +647,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_1525190307 =             mKeyObjectMa
 
         public String name;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.340 -0400", hash_original_method = "9DB8E4889CA776938A054F1FA406F93D", hash_generated_method = "42C8369941244D1B2850DE898FCFF61F")
         public  Font() {
             // ---------- Original Method ----------
@@ -669,6 +672,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_1525190307 =             mKeyObjectMa
 
         public int endChar = -1;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.340 -0400", hash_original_method = "20387F8DBBE28B02B4D4A333BCD1DC01", hash_generated_method = "ECDF11726A4CDE2B715F6BEE4C8BE9B0")
         public  Karaoke() {
             // ---------- Original Method ----------
@@ -693,6 +697,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_1525190307 =             mKeyObjectMa
 
         public String altString;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.340 -0400", hash_original_method = "B6B5545C3ABD1F1E6601A7A1C2669923", hash_generated_method = "E874923A6E6E7A9905BA6F463A66E5CE")
         public  HyperText() {
             // ---------- Original Method ----------

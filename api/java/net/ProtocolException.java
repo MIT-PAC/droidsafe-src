@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class ProtocolException extends java.io.IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.297 -0400", hash_original_method = "F33E95B361A636BB80AA643BEE16494D", hash_generated_method = "E9DEBF640D79AE700FB76DD1B00C9C48")
     public  ProtocolException() {
         // ---------- Original Method ----------

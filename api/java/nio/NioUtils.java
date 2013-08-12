@@ -45,7 +45,7 @@ public final class NioUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static FileChannel newFileChannel(Object stream, FileDescriptor fd, int mode) {
         return new FileChannelImpl(stream, fd, mode);
     }

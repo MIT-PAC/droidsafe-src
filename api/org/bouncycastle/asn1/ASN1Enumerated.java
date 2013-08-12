@@ -8,6 +8,7 @@ import java.math.BigInteger;
 
 public class ASN1Enumerated extends DEREnumerated {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.619 -0400", hash_original_method = "21C60C1A5AA0865B59F345279A6EA8BF", hash_generated_method = "BDC61776DDBF1B8B80A4007221CFF0B9")
       ASN1Enumerated(byte[] bytes) {
         super(bytes);
@@ -24,6 +25,7 @@ public class ASN1Enumerated extends DEREnumerated {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.620 -0400", hash_original_method = "AB030E25D9BC2A8CAF201556A98FD5C6", hash_generated_method = "91D1C94BD409E230DB9487E991D23405")
     public  ASN1Enumerated(int value) {
         super(value);

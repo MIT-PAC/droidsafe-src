@@ -244,7 +244,7 @@ CharSequence var081817866C3B88B7C446C3ACFBAD57D7_1158493341 =         super.conv
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.017 -0400", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "1CEB9E15C6F76DE34215B06CC30C3FD7")
     private void findColumns(String[] from) {
         if(mCursor != null)        

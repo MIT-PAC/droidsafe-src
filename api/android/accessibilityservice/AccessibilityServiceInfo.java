@@ -58,6 +58,7 @@ public class AccessibilityServiceInfo implements Parcelable {
 
     private String mDescription;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.846 -0400", hash_original_method = "32AC306673DA52F864FB7CE370FDF901", hash_generated_method = "96C87DCFF62BE612814976BB93D4DE38")
     public  AccessibilityServiceInfo() {
         // ---------- Original Method ----------
@@ -228,6 +229,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_1598126750 =         mDescription;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.914 -0400", hash_original_method = "D1D2BA1A1EB65F368E7D0CDDBF151C6C", hash_generated_method = "B8E66243677FC74C65A28839BF82C037")
     public void writeToParcel(Parcel parcel, int flagz) {
         addTaint(flagz);
@@ -283,6 +285,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_1598126750 =         mDescription;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.950 -0400", hash_original_method = "854D12839280F599645F8CCCA5C3093D", hash_generated_method = "A02AD7FCC6DF31BF092757132CB35BBE")
     @Override
     public String toString() {
@@ -328,6 +331,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toS
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void appendPackageNames(StringBuilder stringBuilder, String[] packageNames) {
         stringBuilder.append("packageNames:");
         stringBuilder.append("[");
@@ -376,6 +380,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toS
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String feedbackTypeToString(int feedbackType) {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
@@ -447,6 +452,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toS
 
     public static final Parcelable.Creator<AccessibilityServiceInfo> CREATOR =
             new Parcelable.Creator<AccessibilityServiceInfo>() {
+        @DSModeled(DSC.SAFE)
         public AccessibilityServiceInfo createFromParcel(Parcel parcel) {
             AccessibilityServiceInfo info = new AccessibilityServiceInfo();
             info.initFromParcel(parcel);

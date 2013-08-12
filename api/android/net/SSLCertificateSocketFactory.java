@@ -77,21 +77,25 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SocketFactory getDefault(int handshakeTimeoutMillis) {
         return new SSLCertificateSocketFactory(handshakeTimeoutMillis, null, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLSocketFactory getDefault(int handshakeTimeoutMillis, SSLSessionCache cache) {
         return new SSLCertificateSocketFactory(handshakeTimeoutMillis, cache, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SSLSocketFactory getInsecure(int handshakeTimeoutMillis, SSLSessionCache cache) {
         return new SSLCertificateSocketFactory(handshakeTimeoutMillis, cache, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static org.apache.http.conn.ssl.SSLSocketFactory getHttpSocketFactory(
             int handshakeTimeoutMillis, SSLSessionCache cache) {
         return new org.apache.http.conn.ssl.SSLSocketFactory(
@@ -118,6 +122,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.281 -0400", hash_original_method = "EA6C3E571993A79CC59A9005D7F049FF", hash_generated_method = "A6EA9C787328BF15726A3B4AC5A7FB66")
     private SSLSocketFactory makeSocketFactory(
             KeyManager[] keyManagers, TrustManager[] trustManagers) {
@@ -367,6 +372,7 @@ Socket var0478718F0636FB61899C13801CE9FE09_2066733526 =         s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.316 -0400", hash_original_method = "6359CF219DCC414C7F8837CF1055EDC0", hash_generated_method = "A063711403E908F9334297582C2A499C")
     @Override
     public String[] getDefaultCipherSuites() {
@@ -378,6 +384,7 @@ String[] varD975358FAC88FC1B03513CAC9775EB14_1112147999 =         getDelegate().
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.316 -0400", hash_original_method = "51E2A3335139F25255D5BC1DBCD2892E", hash_generated_method = "E677D6204C330294DDB4D384E5F42B0E")
     @Override
     public String[] getSupportedCipherSuites() {

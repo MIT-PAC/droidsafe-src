@@ -36,6 +36,7 @@ public class TextMessage implements Parcelable {
 
     public Duration duration = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.628 -0400", hash_original_method = "9D0AB1B2CC05C1155E2594BD69FE3EC1", hash_generated_method = "83409D8B2575D0083E782346223705C9")
       TextMessage() {
         // ---------- Original Method ----------
@@ -76,6 +77,7 @@ public class TextMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.631 -0400", hash_original_method = "5C9745DEA7F97922AFA0A354D69593A3", hash_generated_method = "7FC5FE048FDA7617055CDEC519229BD4")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -103,6 +105,7 @@ public class TextMessage implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.631 -0400", hash_original_field = "EF3F1EB675921B9F7D12DA9545573B3F", hash_generated_field = "7AB7AD3116D6E3A5A4512A3A97E00765")
 
     public static final Parcelable.Creator<TextMessage> CREATOR = new Parcelable.Creator<TextMessage>() {
+        @DSModeled(DSC.SAFE)
         public TextMessage createFromParcel(Parcel in) {
             return new TextMessage(in);
         }

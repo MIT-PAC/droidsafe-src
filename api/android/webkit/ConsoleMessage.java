@@ -21,6 +21,7 @@ public class ConsoleMessage {
 
     private int mLineNumber;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.943 -0400", hash_original_method = "054E47655FB4B805E39E1B05003FB12B", hash_generated_method = "DDCC7C334FAE0D07349B61B820D51D6B")
     public  ConsoleMessage(String message, String sourceId, int lineNumber, MessageLevel msgLevel) {
         mMessage = message;

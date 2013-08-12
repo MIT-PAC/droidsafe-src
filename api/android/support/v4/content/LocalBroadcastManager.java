@@ -78,6 +78,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static LocalBroadcastManager getInstance(Context context) {
         synchronized (mLock) {
             if (mInstance == null) {
@@ -88,6 +89,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.924 -0400", hash_original_method = "D32BC0D25E86F605EE68EB4056334640", hash_generated_method = "DEB5CCDAF9907A914B6D32E8A8C076EB")
     public void registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -137,6 +139,7 @@ for(int i=0;i<filter.countActions();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.925 -0400", hash_original_method = "8566D0E7C4974CA9CB93E779F651E45B", hash_generated_method = "3625ED483570B46782C4A5B100AE37DF")
     public void unregisterReceiver(BroadcastReceiver receiver) {
         addTaint(receiver.getTaint());

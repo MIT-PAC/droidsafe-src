@@ -98,6 +98,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.701 -0400", hash_original_method = "311D2B5BD14C46D52A18F5FB7D46A7CD", hash_generated_method = "1024BFAB78D99A8147D261236AF8469F")
     private int getIDSafe() {
         if(mAdaptedAllocation != null)        
@@ -117,6 +118,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.723 -0400", hash_original_method = "88EDB22B03764ACCBD1FBAF2EA2911C8", hash_generated_method = "7863CC3F71A0F93164267F42D93DEA05")
     private void updateCacheInfo(Type t) {
         mCurrentDimX = t.getX();
@@ -145,6 +147,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.733 -0400", hash_original_method = "65C711257F94F3105DCE4FED6B46495C", hash_generated_method = "52A09DCAE0270638B7B20A6858CF192F")
     private void validateIsInt32() {
         if((mType.mElement.mType == Element.DataType.SIGNED_32) ||
@@ -166,6 +169,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.745 -0400", hash_original_method = "6E4F71EB18D2F00682465DF6305D48C6", hash_generated_method = "D553438AAC765CF3893921147FF11FC5")
     private void validateIsInt16() {
         if((mType.mElement.mType == Element.DataType.SIGNED_16) ||
@@ -187,6 +191,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.755 -0400", hash_original_method = "ED6CF93005996273EC0803DD9A6B2BBC", hash_generated_method = "B286F3C3D7D5E059D2F0BEB09B3C1177")
     private void validateIsInt8() {
         if((mType.mElement.mType == Element.DataType.SIGNED_8) ||
@@ -208,6 +213,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.762 -0400", hash_original_method = "22DC03BEB0D64704815FAFAD8DD448C1", hash_generated_method = "A4BAA085162676C3B4E9BEC2910C1A7D")
     private void validateIsFloat32() {
         if(mType.mElement.mType == Element.DataType.FLOAT_32)        
@@ -227,6 +233,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.783 -0400", hash_original_method = "0F7CA754806BFED6B25F7C22657938DC", hash_generated_method = "55D874907951C4BF05A73AB5DAF785DF")
     private void validateIsObject() {
         if((mType.mElement.mType == Element.DataType.RS_ELEMENT) ||
@@ -273,6 +280,7 @@ public class Allocation extends BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.802 -0400", hash_original_method = "9C32C8CB3047BF2C1A7EE0D985A901B5", hash_generated_method = "ED948FEAC694DBA627CE11FB4A29ABD4")
     public Type getType() {
 Type var4BA7381699FCDF343F6526506FD5D65C_222779120 =         mType;
@@ -346,6 +354,7 @@ for(int ct=0;ct < d.length;ct++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.837 -0400", hash_original_method = "68F022BD518BF34A861F2C9F1854EE2C", hash_generated_method = "318B067578F9516C35C04D32C57C2184")
     private void validateBitmapFormat(Bitmap b) {
         addTaint(b.getTaint());
@@ -408,6 +417,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.850 -0400", hash_original_method = "EA8D3B5F0BE6DABF77176C0C9533D70D", hash_generated_method = "AB062425B71D3291ABA944B726F51778")
     private void validateBitmapSize(Bitmap b) {
         addTaint(b.getTaint());
@@ -424,6 +434,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.855 -0400", hash_original_method = "407334247B0770162522DC9F49AB59F1", hash_generated_method = "F7275EDD48F1504B73F65F54C2D09DB2")
     public void copyFromUnchecked(int[] d) {
         addTaint(d[0]);
@@ -435,6 +446,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.863 -0400", hash_original_method = "54011F5D28450E17A088B23862CB14CB", hash_generated_method = "9F624BA7DB560285154E759363F628D1")
     public void copyFromUnchecked(short[] d) {
         addTaint(d[0]);
@@ -446,6 +458,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.867 -0400", hash_original_method = "C30FE6183FA56AAB4D4D014829EBBFDC", hash_generated_method = "D66B5F0533580AA467DC97F80FF655E1")
     public void copyFromUnchecked(byte[] d) {
         addTaint(d[0]);
@@ -457,6 +470,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.872 -0400", hash_original_method = "8F953C76C1FB41C208B15E25F4581FF5", hash_generated_method = "8F88BEE20C101A0ED4B19CFA55708EAB")
     public void copyFromUnchecked(float[] d) {
         addTaint(d[0]);
@@ -468,6 +482,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.878 -0400", hash_original_method = "82E8721F348356C043C685C43214068C", hash_generated_method = "3EF89F52F34987833E2B5F77ACD2DAC8")
     public void copyFrom(int[] d) {
         addTaint(d[0]);
@@ -479,6 +494,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.883 -0400", hash_original_method = "E045B23C5646055DFC50B85B83A4F6FC", hash_generated_method = "D5E5FFD6B8F5F7F46482DD3BBDECB45C")
     public void copyFrom(short[] d) {
         addTaint(d[0]);
@@ -490,6 +506,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.890 -0400", hash_original_method = "F54BC10B0D60AEAE0067D3AFD674BB35", hash_generated_method = "321A021ECB8E78A103DEAD0EB7B062F0")
     public void copyFrom(byte[] d) {
         addTaint(d[0]);
@@ -501,6 +518,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.899 -0400", hash_original_method = "0C41419913B85ADFA42D345CEAE65A53", hash_generated_method = "95217CA840AA931C942DAA5F8F31B654")
     public void copyFrom(float[] d) {
         addTaint(d[0]);
@@ -527,6 +545,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.912 -0400", hash_original_method = "E70E78EB3719016B4E6FB42A9EB5810C", hash_generated_method = "239BB1AFB7763D6AC6D89DF1B857C4EC")
     public void setFromFieldPacker(int xoff, FieldPacker fp) {
         addTaint(fp.getTaint());
@@ -554,6 +573,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.925 -0400", hash_original_method = "507EA1A1B860EC041E68F02818C67D1F", hash_generated_method = "D82D2E67C6C66569E702B2F1B0A96AF5")
     public void setFromFieldPacker(int xoff, int component_number, FieldPacker fp) {
         addTaint(fp.getTaint());
@@ -600,6 +620,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.936 -0400", hash_original_method = "C280AAD194909DEEA802F55F051EEFEF", hash_generated_method = "4A8ECBAB02592F7336664962A7A38B1D")
     private void data1DChecks(int off, int count, int len, int dataSize) {
         addTaint(dataSize);
@@ -650,6 +671,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.945 -0400", hash_original_method = "6F3414BDFDCAE5A0099FF42DC9162024", hash_generated_method = "EC3EDFD04FC1B1E37CB6D075055FD736")
     public void generateMipmaps() {
         mRS.nAllocationGenerateMipmaps(getID());
@@ -658,6 +680,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.953 -0400", hash_original_method = "9BD1F31EAB786A33FC8D6DD03AC7DD13", hash_generated_method = "C6A811C67E40A3FB1FC830F181D4240D")
     public void copy1DRangeFromUnchecked(int off, int count, int[] d) {
         addTaint(d[0]);
@@ -673,6 +696,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.960 -0400", hash_original_method = "76B5FD8D10654A26BCBBF314A697FBF8", hash_generated_method = "A4B1EB17FA05BA4250B111F933C958E6")
     public void copy1DRangeFromUnchecked(int off, int count, short[] d) {
         addTaint(d[0]);
@@ -688,6 +712,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.966 -0400", hash_original_method = "C68391FBBAF4E4C2759F231D9BB3CE56", hash_generated_method = "5DAA22E737B6C02EE4141ADFF1C54E8A")
     public void copy1DRangeFromUnchecked(int off, int count, byte[] d) {
         addTaint(d[0]);
@@ -703,6 +728,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.971 -0400", hash_original_method = "0F7A0E2393C34E90AEC2D039DA3C1483", hash_generated_method = "0BB34BEA43C6D61147625BAAAF7E150B")
     public void copy1DRangeFromUnchecked(int off, int count, float[] d) {
         addTaint(d[0]);
@@ -718,6 +744,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.977 -0400", hash_original_method = "D55849C3A95A52797F56CE21D0AC9A77", hash_generated_method = "6A5A04307EB278B8A3C67F606EB102AF")
     public void copy1DRangeFrom(int off, int count, int[] d) {
         addTaint(d[0]);
@@ -731,6 +758,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.984 -0400", hash_original_method = "1EAA6FDE909AE941C837793DE6358EFA", hash_generated_method = "9B978EB9C27825FC7CB29CE4A6BE970F")
     public void copy1DRangeFrom(int off, int count, short[] d) {
         addTaint(d[0]);
@@ -744,6 +772,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.989 -0400", hash_original_method = "3469D95A9F285D7729B7F7DF2EEF92C2", hash_generated_method = "A5F9453CBC38B4C571882745F0F21C86")
     public void copy1DRangeFrom(int off, int count, byte[] d) {
         addTaint(d[0]);
@@ -757,6 +786,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:04.994 -0400", hash_original_method = "E6965F1E2FB321FAD1F4EA1126484F16", hash_generated_method = "8F8C6712C4559623E489A9354BC79ED8")
     public void copy1DRangeFrom(int off, int count, float[] d) {
         addTaint(d[0]);
@@ -788,6 +818,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.007 -0400", hash_original_method = "549AEF19696CDA0CE15593CF21BCB97B", hash_generated_method = "09D14C980213800C8C31DB3566BA46FC")
     private void validate2DRange(int xoff, int yoff, int w, int h) {
         addTaint(h);
@@ -834,6 +865,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.020 -0400", hash_original_method = "B5CF3549C87A0C7A6D468F5569934765", hash_generated_method = "77932622724119EC0D85881CB638DD0A")
     public void copy2DRangeFrom(int xoff, int yoff, int w, int h, byte[] data) {
         addTaint(data[0]);
@@ -853,6 +885,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.025 -0400", hash_original_method = "1E0366E42882BACDF313C59C4D74B054", hash_generated_method = "BFA47A51E20F798EC66823D278468176")
     public void copy2DRangeFrom(int xoff, int yoff, int w, int h, short[] data) {
         addTaint(data[0]);
@@ -872,6 +905,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.031 -0400", hash_original_method = "121F440BD580F4A6EA04D352E792872F", hash_generated_method = "70C7F7172E2660B05D175591A0F67A5E")
     public void copy2DRangeFrom(int xoff, int yoff, int w, int h, int[] data) {
         addTaint(data[0]);
@@ -891,6 +925,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.039 -0400", hash_original_method = "6CE72D2F101545C9487F397B5DC7D5E4", hash_generated_method = "088F6A93BA764D475D6046C28017893E")
     public void copy2DRangeFrom(int xoff, int yoff, int w, int h, float[] data) {
         addTaint(data[0]);
@@ -910,6 +945,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.046 -0400", hash_original_method = "2D47F9E4EEBA0DDD1F9AB9C826991FF7", hash_generated_method = "206DA1A62661683395F8FF4F76B916FF")
     public void copy2DRangeFrom(int xoff, int yoff, int w, int h,
                                 Allocation data, int dataXoff, int dataYoff) {
@@ -936,6 +972,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.054 -0400", hash_original_method = "E9C60CA998422120B69758A8DCF01F28", hash_generated_method = "0750DE9E9C1CA4671F9D7A33159CE7C8")
     public void copy2DRangeFrom(int xoff, int yoff, Bitmap data) {
         addTaint(data.getTaint());
@@ -953,6 +990,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.058 -0400", hash_original_method = "5E3CAA2F54821F9B5D4C289C7A8559A4", hash_generated_method = "7533EEA4AC4DB7AAFDEAA8193959EDDB")
     public void copyTo(Bitmap b) {
         addTaint(b.getTaint());
@@ -968,6 +1006,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.062 -0400", hash_original_method = "25DC8075DF7374531478BAA131CB7343", hash_generated_method = "D96C85B621AC34B82BE7615ED29524B1")
     public void copyTo(byte[] d) {
         addTaint(d[0]);
@@ -981,6 +1020,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.066 -0400", hash_original_method = "9D52040F814FD0C684C6F66DC8E8CB93", hash_generated_method = "50FA690F2A7BD81F34AB8C7B2931C6B7")
     public void copyTo(short[] d) {
         addTaint(d[0]);
@@ -994,6 +1034,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.072 -0400", hash_original_method = "379200F1BB84BA87FFEA29C22000A4D9", hash_generated_method = "2EA225A5BDD77F033D02757875FA0562")
     public void copyTo(int[] d) {
         addTaint(d[0]);
@@ -1007,6 +1048,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.077 -0400", hash_original_method = "5FBBCE58245F93A1688AB0878EC30A26", hash_generated_method = "0DE01F6D3942F8ED73480B081B5E9D8C")
     public void copyTo(float[] d) {
         addTaint(d[0]);
@@ -1020,6 +1062,7 @@ switch(bc){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:05.085 -0400", hash_original_method = "4D8212FF39765998C2ACC0C3F633686C", hash_generated_method = "32FF374DEC582212A7CD21D1202E81F3")
     public synchronized void resize(int dimX) {
         addTaint(dimX);
@@ -1048,7 +1091,8 @@ switch(bc){
     }
 
     
-        static public Allocation createTyped(RenderScript rs, Type type, MipmapControl mips, int usage) {
+        @DSModeled(DSC.SAFE)
+    static public Allocation createTyped(RenderScript rs, Type type, MipmapControl mips, int usage) {
         rs.validate();
         if (type.getID() == 0) {
             throw new RSInvalidStateException("Bad Type");
@@ -1061,17 +1105,20 @@ switch(bc){
     }
 
     
-        static public Allocation createTyped(RenderScript rs, Type type, int usage) {
+        @DSModeled(DSC.SAFE)
+    static public Allocation createTyped(RenderScript rs, Type type, int usage) {
         return createTyped(rs, type, MipmapControl.MIPMAP_NONE, usage);
     }
 
     
-        static public Allocation createTyped(RenderScript rs, Type type) {
+        @DSModeled(DSC.SAFE)
+    static public Allocation createTyped(RenderScript rs, Type type) {
         return createTyped(rs, type, MipmapControl.MIPMAP_NONE, USAGE_SCRIPT);
     }
 
     
-        static public Allocation createSized(RenderScript rs, Element e,
+        @DSModeled(DSC.SAFE)
+    static public Allocation createSized(RenderScript rs, Element e,
                                          int count, int usage) {
         rs.validate();
         Type.Builder b = new Type.Builder(rs, e);
@@ -1119,7 +1166,8 @@ switch(bc){
     }
 
     
-        static public Allocation createFromBitmap(RenderScript rs, Bitmap b,
+        @DSModeled(DSC.SAFE)
+    static public Allocation createFromBitmap(RenderScript rs, Bitmap b,
                                               MipmapControl mips,
                                               int usage) {
         rs.validate();
@@ -1132,13 +1180,15 @@ switch(bc){
     }
 
     
-        static public Allocation createFromBitmap(RenderScript rs, Bitmap b) {
+        @DSModeled(DSC.SAFE)
+    static public Allocation createFromBitmap(RenderScript rs, Bitmap b) {
         return createFromBitmap(rs, b, MipmapControl.MIPMAP_NONE,
                                 USAGE_GRAPHICS_TEXTURE);
     }
 
     
-        static public Allocation createCubemapFromBitmap(RenderScript rs, Bitmap b,
+        @DSModeled(DSC.SAFE)
+    static public Allocation createCubemapFromBitmap(RenderScript rs, Bitmap b,
                                                      MipmapControl mips,
                                                      int usage) {
         rs.validate();
@@ -1176,7 +1226,8 @@ switch(bc){
     }
 
     
-        static public Allocation createCubemapFromCubeFaces(RenderScript rs,
+        @DSModeled(DSC.SAFE)
+    static public Allocation createCubemapFromCubeFaces(RenderScript rs,
                                                         Bitmap xpos,
                                                         Bitmap xneg,
                                                         Bitmap ypos,
@@ -1223,7 +1274,8 @@ switch(bc){
     }
 
     
-        static public Allocation createCubemapFromCubeFaces(RenderScript rs,
+        @DSModeled(DSC.SAFE)
+    static public Allocation createCubemapFromCubeFaces(RenderScript rs,
                                                         Bitmap xpos,
                                                         Bitmap xneg,
                                                         Bitmap ypos,
@@ -1249,7 +1301,8 @@ switch(bc){
     }
 
     
-        static public Allocation createFromBitmapResource(RenderScript rs,
+        @DSModeled(DSC.SAFE)
+    static public Allocation createFromBitmapResource(RenderScript rs,
                                                       Resources res,
                                                       int id) {
         return createFromBitmapResource(rs, res, id,
@@ -1258,7 +1311,8 @@ switch(bc){
     }
 
     
-        static public Allocation createFromString(RenderScript rs,
+        @DSModeled(DSC.SAFE)
+    static public Allocation createFromString(RenderScript rs,
                                               String str,
                                               int usage) {
         rs.validate();

@@ -15,6 +15,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.ParametersHeader implements PChargingFunctionAddressesHeader, SIPHeaderNamesIms, ExtensionHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.152 -0400", hash_original_method = "8D7038EECA0B07E6CABE7C4563FEE1B0", hash_generated_method = "85C85690ED146B961192627A81D00D75")
     public  PChargingFunctionAddresses() {
         super(P_CHARGING_FUNCTION_ADDRESSES);
@@ -22,6 +23,7 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.153 -0400", hash_original_method = "B754CD465EC1221F70524778BEB24E59", hash_generated_method = "485119BD7C61BA13D95416DC319E769B")
     protected String encodeBody() {
         StringBuffer encoding = new StringBuffer();
@@ -42,6 +44,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1451998674 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.153 -0400", hash_original_method = "04146A3594153EB2EF0E88997B90AD38", hash_generated_method = "71D57EA573554E238F5F38277AB3921B")
     public void setChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
         addTaint(ccfAddress.getTaint());
@@ -63,6 +66,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1451998674 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.154 -0400", hash_original_method = "4EBC089EFA4A412FF008399341976E93", hash_generated_method = "A0FFD626C77055CDD54C2BCA3767DF4F")
     public void addChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
         addTaint(ccfAddress.getTaint());
@@ -84,6 +88,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1451998674 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.155 -0400", hash_original_method = "E4304895721C991E07562D8775709E0E", hash_generated_method = "A9924862E06D616648A2AB2C3C76298B")
     public void removeChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
         addTaint(ccfAddress.getTaint());
@@ -112,6 +117,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1451998674 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.156 -0400", hash_original_method = "3FA3BC1EE35C4A614E59F8D80CF072BA", hash_generated_method = "C464BAF2A4A21CFF9922913AD164A634")
     public ListIterator getChargingCollectionFunctionAddresses() {
         Iterator li = this.parameters.iterator();
@@ -149,6 +155,7 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1902549090 =         ccfLIST.li
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.156 -0400", hash_original_method = "E0FB708D70424943E5DFB76554EEFAC9", hash_generated_method = "A9FB3BA4F778D68E04F09438B092D2E0")
     public void setEventChargingFunctionAddress(String ecfAddress) throws ParseException {
         addTaint(ecfAddress.getTaint());
@@ -170,6 +177,7 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1902549090 =         ccfLIST.li
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.157 -0400", hash_original_method = "A5F62C761E9F9A46D1D6185CEC65084F", hash_generated_method = "63058EF8697C54232544BC98D259A6F2")
     public void addEventChargingFunctionAddress(String ecfAddress) throws ParseException {
         addTaint(ecfAddress.getTaint());
@@ -191,6 +199,7 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1902549090 =         ccfLIST.li
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.157 -0400", hash_original_method = "55FFD36C944B472AFBDD2C5B98B03BCA", hash_generated_method = "ADE8221672E2488BAD72C19E98731B5A")
     public void removeEventChargingFunctionAddress(String ecfAddress) throws ParseException {
         addTaint(ecfAddress.getTaint());
@@ -219,6 +228,7 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1902549090 =         ccfLIST.li
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.158 -0400", hash_original_method = "1CFCD9DC9A311745B4AD8E988ADAF97A", hash_generated_method = "F59BA27740A8D8F53839D4A81F28BBD2")
     public ListIterator<NameValue> getEventChargingFunctionAddresses() {
         LinkedList<NameValue> listw = new LinkedList<NameValue>();
@@ -260,6 +270,7 @@ ListIterator<NameValue> varE121826118567FAC0BD5D1878DD1BAB8_897224292 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.159 -0400", hash_original_method = "CC3F97A616116EB8BC182A6988C81981", hash_generated_method = "45175A86277F58BABEF32314A4EDC808")
     public boolean delete(String value, String name) {
         addTaint(name.getTaint());
@@ -295,6 +306,7 @@ ListIterator<NameValue> varE121826118567FAC0BD5D1878DD1BAB8_897224292 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.159 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "30622AC1B972893212A085D3B763757E")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

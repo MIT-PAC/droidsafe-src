@@ -32,6 +32,7 @@ public class PathDashPathEffect extends PathEffect {
         TRANSLATE(0),   
         ROTATE(1),      
         MORPH(2);       
+        @DSModeled(DSC.SAFE)
         Style(int value) {
             native_style = value;
         }

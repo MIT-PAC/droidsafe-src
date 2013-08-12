@@ -28,13 +28,13 @@ import android.os.Looper;
 public class ContextWrapper extends Context {
     private Context mBase;
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public ContextWrapper(Context base) {
         mBase = base;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     protected void attachBaseContext(Context base) {
         mBase = base;
     }
@@ -61,6 +61,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public PackageManager getPackageManager() {
         return mBase.getPackageManager();
@@ -80,6 +81,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public Context getApplicationContext() {
         return mBase.getApplicationContext();
@@ -112,18 +114,21 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageName() {
         return mBase.getPackageName();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public ApplicationInfo getApplicationInfo() {
         return mBase.getApplicationInfo();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageResourcePath() {
         return mBase.getPackageResourcePath();
@@ -156,6 +161,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public FileOutputStream openFileOutput(String name, int mode)
         throws FileNotFoundException {
@@ -163,6 +169,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public boolean deleteFile(String name) {
         return mBase.deleteFile(name);
@@ -187,12 +194,14 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public File getExternalFilesDir(String type) {
         return mBase.getExternalFilesDir(type);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public File getObbDir() {
         return mBase.getObbDir();
@@ -230,12 +239,14 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public boolean deleteDatabase(String name) {
         return mBase.deleteDatabase(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public File getDatabasePath(String name) {
         return mBase.getDatabasePath(name);
@@ -260,6 +271,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public int getWallpaperDesiredMinimumWidth() {
         return mBase.getWallpaperDesiredMinimumWidth();
@@ -284,6 +296,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public void clearWallpaper() throws IOException {
         mBase.clearWallpaper();
@@ -433,7 +446,7 @@ public class ContextWrapper extends Context {
 
     
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Object getSystemService(String name) {
         return mBase.getSystemService(name);
     }
@@ -556,6 +569,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public Context createPackageContext(String packageName, int flags)
         throws PackageManager.NameNotFoundException {
@@ -563,6 +577,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public boolean isRestricted() {
         return mBase.isRestricted();

@@ -202,7 +202,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.028 -0400", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "02BFF61AA3D9E1FA9C55929FA1EDF318")
     private void initScrollView() {
         mScroller = new OverScroller(getContext());
@@ -313,7 +313,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.030 -0400", hash_original_method = "3DE53F922B0BEA48963A7A11A88BC712", hash_generated_method = "E87F59BE260A474256EF66875466193A")
     private boolean canScroll() {
         View child = getChildAt(0);
@@ -494,7 +494,7 @@ switch(event.getKeyCode()){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.033 -0400", hash_original_method = "9319BD4BC402BC56524E94C60EDF0AE3", hash_generated_method = "D53575D646C0818E5680B417B31608D8")
     private boolean inChild(int x, int y) {
         addTaint(y);
@@ -526,7 +526,7 @@ switch(event.getKeyCode()){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.033 -0400", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "E6A2459F70C94EEE4F8E0DC05B01F193")
     private void initOrResetVelocityTracker() {
         if(mVelocityTracker == null)        
@@ -546,7 +546,7 @@ switch(event.getKeyCode()){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.033 -0400", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "2B8D7737D5D71D4902AEB864DE542716")
     private void initVelocityTrackerIfNotExists() {
         if(mVelocityTracker == null)        
@@ -560,7 +560,7 @@ switch(event.getKeyCode()){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.033 -0400", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "701A7C43D055D340A0D18EE9D957EDFF")
     private void recycleVelocityTracker() {
         if(mVelocityTracker != null)        
@@ -804,7 +804,7 @@ switch(action & MotionEvent.ACTION_MASK){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.036 -0400", hash_original_method = "15678E7D87FCB5B2E2A6D15F2CBAE390", hash_generated_method = "6E8CEB267E5C94F79FF4514B7A7BA1AE")
     private void onSecondaryPointerUp(MotionEvent ev) {
         final int pointerIndex = (ev.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK) >>
@@ -980,7 +980,7 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.037 -0400", hash_original_method = "6035917F8C30F3A1C02AFED333ACB352", hash_generated_method = "C775CA46316448D87412B344B7CC0CD0")
     private int getScrollRange() {
         int scrollRange = 0;
@@ -1039,7 +1039,7 @@ View var3C5DAB17BC904AC109467AE0B923004B_1564733784 =         findFocusableViewI
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.038 -0400", hash_original_method = "CFAC89DA51B9853AC14992D421225DFD", hash_generated_method = "546DAEEDCFA797C1904C5FD7FA364545")
     private View findFocusableViewInBounds(boolean leftFocus, int left, int right) {
         addTaint(right);
@@ -1190,7 +1190,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1376189816 =         focusCandidate;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.039 -0400", hash_original_method = "DF3968C57E4B66E8EEB56F2D4C42BFD9", hash_generated_method = "2A49F671E1B677EBBD647087544D544B")
     private boolean scrollAndFocus(int direction, int left, int right) {
         addTaint(right);
@@ -1299,7 +1299,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1376189816 =         focusCandidate;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.040 -0400", hash_original_method = "E39461866A28C70AD36F56E791C6BE3B", hash_generated_method = "E8BFA9086996ADBF82175D50F4B7B1F8")
     private boolean isOffScreen(View descendant) {
         addTaint(descendant.getTaint());
@@ -1311,7 +1311,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1376189816 =         focusCandidate;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.040 -0400", hash_original_method = "47CB02AABD47C9E7AF2DCBC38CD370E2", hash_generated_method = "5A0C888EC9092E173FB40552601C8038")
     private boolean isWithinDeltaOfScreen(View descendant, int delta) {
         addTaint(delta);
@@ -1330,7 +1330,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1376189816 =         focusCandidate;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.040 -0400", hash_original_method = "3F16B27E18A709EC962C39AF363F3965", hash_generated_method = "C93A97A668F634FF7B4DA6D35A07845F")
     private void doScrollX(int delta) {
         addTaint(delta);
@@ -1551,7 +1551,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1376189816 =         focusCandidate;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.042 -0400", hash_original_method = "988A7EC33B56EE551974E7C841966101", hash_generated_method = "DAB03F10A57CC9C2AB456DEEDA3A40B2")
     private void scrollToChild(View child) {
         addTaint(child.getTaint());
@@ -1572,7 +1572,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1376189816 =         focusCandidate;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.042 -0400", hash_original_method = "07633DDCD66F05F9C6104D95040C4376", hash_generated_method = "57D86FB366FE716BA853C45A5916A846")
     private boolean scrollToChildRect(Rect rect, boolean immediate) {
         addTaint(immediate);
@@ -1842,7 +1842,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1376189816 =         focusCandidate;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.044 -0400", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "ABFA9F164CB9A83B4C98E5D62CD7EC94")
     private boolean isViewDescendantOf(View child, View parent) {
         addTaint(parent.getTaint());

@@ -12,6 +12,7 @@ public class InvalidArgumentException extends SipException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.255 -0400", hash_original_method = "6CFB0BD92581CA0A67925F5045802025", hash_generated_method = "AF1F3E7CDF7F73C0B5C53D3C8080E36B")
     public  InvalidArgumentException(String message) {
         super(message);

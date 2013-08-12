@@ -29,6 +29,7 @@ public class Holder extends ASN1Encodable {
 
     private int version = 1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.741 -0400", hash_original_method = "0F23F9566CA8F1263E212152AA97F735", hash_generated_method = "BF4672456AF8F4A05CE3BFE40EA306D3")
     public  Holder(ASN1TaggedObject tagObj) {
 switch(tagObj.getTagNo()){
@@ -59,6 +60,7 @@ switch(tagObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.742 -0400", hash_original_method = "D380E7678EAEF340CE1A336F4F6AC8E9", hash_generated_method = "25B02E467AEEFCB04B62A3E55E209725")
     public  Holder(ASN1Sequence seq) {
         addTaint(seq.getTaint());
@@ -95,6 +97,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.743 -0400", hash_original_method = "1AE14655F315618D60A29B1C084D2DBC", hash_generated_method = "077E89BAB23042BA20FF3CEB93E06142")
     public  Holder(IssuerSerial baseCertificateID) {
         this.baseCertificateID = baseCertificateID;
@@ -103,6 +106,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.743 -0400", hash_original_method = "DC30675D3133B7CA95C65C37FD001058", hash_generated_method = "8DAAFFADA025829FBF2AA37838285F49")
     public  Holder(IssuerSerial baseCertificateID, int version) {
         this.baseCertificateID = baseCertificateID;
@@ -113,6 +117,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.744 -0400", hash_original_method = "4B8FAF3FE0CCE05E8194125D3D22989E", hash_generated_method = "275B12FB499CE8562859E5B2CB2594A6")
     public  Holder(GeneralNames entityName) {
         this.entityName = entityName;
@@ -121,6 +126,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.744 -0400", hash_original_method = "1B9818A91692B880BC908F5EBF39CBC8", hash_generated_method = "D296E5F293EFCF5762839FE906774F0D")
     public  Holder(GeneralNames entityName, int version) {
         this.entityName = entityName;
@@ -131,6 +137,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.745 -0400", hash_original_method = "182191B1D77BB818CFC68B7BA957F59F", hash_generated_method = "83F615D970F0F8CB7C7C8709100B410C")
     public  Holder(ObjectDigestInfo objectDigestInfo) {
         this.objectDigestInfo = objectDigestInfo;
@@ -139,6 +146,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Holder getInstance(Object obj) {
         if (obj instanceof Holder)
         {
@@ -200,6 +208,7 @@ ObjectDigestInfo var8645E6823C16465BE8DE456BAC146566_1835127253 =         object
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.746 -0400", hash_original_method = "C4BE7581245F31D733ECA6F34E47D83B", hash_generated_method = "A5ABEE94C25BEA490C9EA95BBDCD6C21")
     public DERObject toASN1Object() {
         if(version == 1)        

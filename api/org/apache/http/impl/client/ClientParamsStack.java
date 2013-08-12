@@ -175,6 +175,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1139863586 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "2A511DFE1F081488F4D79D3E78FD00A2", hash_generated_method = "259EBF2AF4F46AC51A3AA4D995D39E5C")
     public HttpParams setParameter(String name, Object value) throws UnsupportedOperationException {
         addTaint(value.getTaint());
@@ -189,6 +190,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1139863586 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "91EEF8AA1623C8BE2C536A6D8B3A0F15", hash_generated_method = "215EE401F742DCFDB8878699705345FF")
     public boolean removeParameter(String name) {
         addTaint(name.getTaint());

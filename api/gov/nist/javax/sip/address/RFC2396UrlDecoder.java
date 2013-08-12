@@ -15,6 +15,7 @@ public class RFC2396UrlDecoder {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String decode(String uri) {
         StringBuffer translatedUri = new StringBuffer(uri.length());
         byte[] encodedchars = new byte[uri.length() / 3];

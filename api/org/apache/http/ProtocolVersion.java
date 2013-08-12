@@ -22,6 +22,7 @@ public class ProtocolVersion implements Serializable, Cloneable {
 
     protected int minor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.211 -0400", hash_original_method = "487CD3731F38F990825B550D79A7F010", hash_generated_method = "F6BF09776FBA402BEDE198CFEC853CB6")
     public  ProtocolVersion(String protocol, int major, int minor) {
         if(protocol == null)        
@@ -100,6 +101,7 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_569888432 =         protocol;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.213 -0400", hash_original_method = "B388FCA8F9FE298631CFCA77574E3195", hash_generated_method = "0579DC2780A6B8110286567320C87D4C")
     public ProtocolVersion forVersion(int major, int minor) {
         addTaint(minor);
@@ -121,6 +123,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_1426086785 =         new Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.214 -0400", hash_original_method = "A7F4A91DFB541B4D61B848B18DDC1A50", hash_generated_method = "916F208B023C5AC5102A3F1ABF0B063E")
     public final int hashCode() {
         int varD183A6D7752C69C399F68A158B5DFDD4_1104332375 = (this.protocol.hashCode() ^ (this.major * 100000) ^ this.minor);
@@ -131,6 +134,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_1426086785 =         new Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.214 -0400", hash_original_method = "316EA3FE02F120244DD49AEBA8B051C7", hash_generated_method = "06814D925C2DD8881F71E6486F6763B9")
     public final boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -166,6 +170,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_1426086785 =         new Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.215 -0400", hash_original_method = "D2B2F5148427A04314DDBDF38EFDB134", hash_generated_method = "0D59E7F427868203CD220FDDD52673FC")
     public boolean isComparable(ProtocolVersion that) {
         addTaint(that.getTaint());
@@ -177,6 +182,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_1426086785 =         new Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.215 -0400", hash_original_method = "3ABC84C7DCB5005CDC448A9D130CFC4F", hash_generated_method = "26717D5AB2340A41BD8F35AAF3C7D8D7")
     public int compareToVersion(ProtocolVersion that) {
         addTaint(that.getTaint());
@@ -221,6 +227,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_1426086785 =         new Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.216 -0400", hash_original_method = "7494058829006BF7A7CEB593562FC10D", hash_generated_method = "2E2CCF220B7F85C71DEA8C4B83BE5A93")
     public final boolean greaterEquals(ProtocolVersion version) {
         addTaint(version.getTaint());
@@ -232,6 +239,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_1426086785 =         new Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.216 -0400", hash_original_method = "251CBAD879CC81CB8B0B43DA249F7406", hash_generated_method = "958366AB91502D66C5F9347508410CD9")
     public final boolean lessEquals(ProtocolVersion version) {
         addTaint(version.getTaint());
@@ -243,6 +251,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_1426086785 =         new Pro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.216 -0400", hash_original_method = "1AC3EEF7BC77C90C94CB72A8DD95F4D1", hash_generated_method = "440288EFFB29E404298682A9CFA7DD14")
     public String toString() {
         CharArrayBuffer buffer = new CharArrayBuffer(16);

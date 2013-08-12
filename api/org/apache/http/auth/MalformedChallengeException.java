@@ -9,6 +9,7 @@ import org.apache.http.ProtocolException;
 
 public class MalformedChallengeException extends ProtocolException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.332 -0400", hash_original_method = "67DFA658E3AD1AB9DCC34A02D12F48C7", hash_generated_method = "DD7135A6F0879132601ED482F5246AAD")
     public  MalformedChallengeException() {
         super();
@@ -16,6 +17,7 @@ public class MalformedChallengeException extends ProtocolException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.332 -0400", hash_original_method = "E77F68EE2D3DB39201883D122D0ED2C1", hash_generated_method = "2D5079BD2A0C5F31137F37D6E8E74ECD")
     public  MalformedChallengeException(String message) {
         super(message);

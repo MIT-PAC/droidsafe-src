@@ -12,6 +12,7 @@ public class DataLengthException extends RuntimeCryptoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.440 -0400", hash_original_method = "DC74BD7370354E956783B762D3A498AE", hash_generated_method = "8825DFBF11F788E13B04C37E19C59FC9")
     public  DataLengthException(
         String  message) {

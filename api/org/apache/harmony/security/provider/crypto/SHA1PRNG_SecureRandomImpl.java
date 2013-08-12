@@ -80,6 +80,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.341 -0400", hash_original_method = "D3CE71F13CE971E436333BDFEF7BBD46", hash_generated_method = "FD585A63D380F9C2C22B0A82308A4C40")
     protected synchronized void engineSetSeed(byte[] seed) {
         addTaint(seed[0]);
@@ -114,6 +115,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.342 -0400", hash_original_method = "DD8EBB0EDF44ABE263687E4C98AB74A0", hash_generated_method = "A1EBF634C212D15A1285D3C24532FAFB")
     protected synchronized byte[] engineGenerateSeed(int numBytes) {
         addTaint(numBytes);

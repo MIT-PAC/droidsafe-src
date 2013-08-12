@@ -17,6 +17,7 @@ public final class ASN1Implicit extends ASN1Type {
 
     private int taggingType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.319 -0400", hash_original_method = "885EAD88CE0EDAA6AE8B231FCD302B70", hash_generated_method = "EE0334A70E2F7916172C75D0B2C91EB7")
     public  ASN1Implicit(int tagNumber, ASN1Type type) {
         super(CLASS_CONTEXTSPECIFIC, tagNumber);

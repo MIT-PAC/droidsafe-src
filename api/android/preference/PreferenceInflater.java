@@ -44,6 +44,7 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.655 -0400", hash_original_method = "FF1F94752C869BA06052B7A67A109910", hash_generated_method = "E8A0CDC6F7C7DD633F9FF716A090F16A")
     @Override
     public GenericInflater<Preference, PreferenceGroup> cloneInContext(Context newContext) {
@@ -67,6 +68,7 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.657 -0400", hash_original_method = "295C055EC64DF7189FE6DF67209CBBC4", hash_generated_method = "46BD23B1206B2ED50D6BC343F35C4E98")
     @Override
     protected boolean onCreateCustomFromTag(XmlPullParser parser, Preference parentPreference,

@@ -18,7 +18,7 @@ public class EGLContextImpl extends EGLContext {
 
     int mEGLContext;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.509 -0400", hash_original_method = "FEF1413AB5716E2F3C8722DC6F3C138C", hash_generated_method = "6F759B313A4FF8D0425A40E2FEC2A0FE")
     public  EGLContextImpl(int ctx) {
         mEGLContext = ctx;
@@ -41,6 +41,7 @@ GL var70A52609CF58EAE7203DCD79F70642FE_1688549917 =         mGLContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.510 -0400", hash_original_method = "BBF69D7F309BD2893B1B10431DBDEB60", hash_generated_method = "8CDD525A04B0315B860AE03F9092186C")
     @Override
     public boolean equals(Object o) {

@@ -143,6 +143,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.532 -0400", hash_original_method = "B4766721E168BC843A6EA06CFE59500E", hash_generated_method = "928450B8D7368B8EFBED1CDD7867A1D1")
     public  AttributedString(AttributedCharacterIterator iterator, int start,
             int end, AttributedCharacterIterator.Attribute[] attributes) {
@@ -444,6 +445,7 @@ AttributedCharacterIterator var52C3F1C9CCF48C54D0F98704FFC0C943_403331709 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.540 -0400", hash_original_method = "EF8FB9411A496C9D99CDE8B83C48CE6B", hash_generated_method = "0BC40C6AC1F0127AEC45AC157B38962C")
     public AttributedCharacterIterator getIterator(
             AttributedCharacterIterator.Attribute[] attributes, int start,
@@ -503,6 +505,7 @@ AttributedCharacterIterator var04CD81DC23CA8D46DA7FC302651498EC_1728950227 =    
 
         private HashSet<Attribute> attributesAllowed;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.542 -0400", hash_original_method = "E441422DE6FDEDB0F1BB74606A67171C", hash_generated_method = "7AE495FC46AA7C0AB1D4C3ED30DBE5AF")
           AttributedIterator(AttributedString attrString) {
             this.attrString = attrString;
@@ -561,6 +564,7 @@ for(int i = attributes.length;--i >= 0;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.543 -0400", hash_original_method = "CC2190075ADAC44CCBDC93141CA9BE6C", hash_generated_method = "1EDC0ED4D4A27930241BD0A6204FB34C")
         @Override
         @SuppressWarnings("unchecked")
@@ -597,7 +601,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_932780858 =                 clone;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.543 -0400", hash_original_method = "81A9D498AF1F73C3D962F8C3EDD6D3D9", hash_generated_method = "190EC57A6B933097C68D21C51A5DD8EC")
         public char current() {
             if(offset == end)            
@@ -617,7 +621,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_932780858 =                 clone;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.544 -0400", hash_original_method = "4AF9D055D17E58470820B415A8EBAFA4", hash_generated_method = "C46A08D99628B74D125A157718C354A1")
         public char first() {
             if(begin == end)            
@@ -805,6 +809,7 @@ Object var540C13E9E156B687226421B24F2DF178_1783333192 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "9256DFDAE9CB8C43C18A44C8B3AC6DAC", hash_generated_method = "74C2393D775666E348A871E22FC94CFC")
         public Object getAttribute(
                 AttributedCharacterIterator.Attribute attribute) {
@@ -883,7 +888,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "B67CDF67136100A9ADF2991D47BD9A14", hash_generated_method = "3F322BF505FE36B659F53178032F0A0E")
         public int getRunLimit() {
             int varF48E71281B9957BEF8C9D8BC031D9F77_1372122685 = (getRunLimit(getAllAttributeKeys()));
@@ -943,6 +948,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "F819F4AC98ED7B00F15856104CEA6D7F", hash_generated_method = "05D829CADAB60820BD5A2FDCFCAE40F0")
         public int getRunLimit(AttributedCharacterIterator.Attribute attribute) {
             addTaint(attribute.getTaint());
@@ -1070,6 +1076,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "D8F9F8B7D0C4F74D05FEF10E27E7F588", hash_generated_method = "1F724F50844537700EA6DEBC93CF3EAF")
         public int getRunStart(AttributedCharacterIterator.Attribute attribute) {
             addTaint(attribute.getTaint());
@@ -1105,6 +1112,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "62E2E3A1AAFB276945B722FDB547D45B", hash_generated_method = "2BF0CAC4E4BEF9F74EBD2610FCBA4E78")
         public int getRunStart(Set<? extends Attribute> attributes) {
             addTaint(attributes.getTaint());
@@ -1137,7 +1145,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "6CAD62DAB178D2919A2036BE42DEC497", hash_generated_method = "DA4931286B580DE064422EC7BFC82844")
         public char last() {
             if(begin == end)            
@@ -1159,7 +1167,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "B623F272BE854A8CF15368B2FE2B8A97", hash_generated_method = "CF7166F5EEEBA855EEFFA40520B57578")
         public char next() {
             if(offset >= (end - 1))            
@@ -1181,7 +1189,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "E77E60DF0F891730B03F44D98923AB66", hash_generated_method = "2BC3A18D915BE1C9FB958E2CE6E65C53")
         public char previous() {
             if(offset == begin)            
@@ -1201,7 +1209,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =         
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "C542CEFF91217DDB3083AD983C51F194", hash_generated_method = "C69BB1AD4474917F75F42637EF18114B")
         public char setIndex(int location) {
             if(location < begin || location > end)            

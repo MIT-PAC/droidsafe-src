@@ -16,6 +16,7 @@ import java.io.IOException;
 import android.content.res.Resources;
 public class Font extends BaseObj {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:43.874 -0400", hash_original_method = "CEBF3BB0FBFA1185414632BE38CC53FE", hash_generated_method = "B0A91AB37DDDDB03FFE5C45B734C8AA5")
       Font(int id, RenderScript rs) {
         super(id, rs);
@@ -25,14 +26,16 @@ public class Font extends BaseObj {
     }
 
     
-        private static void addFamilyToMap(FontFamily family) {
+        @DSModeled(DSC.BAN)
+    private static void addFamilyToMap(FontFamily family) {
         for(int i = 0; i < family.mNames.length; i ++) {
             sFontFamilyMap.put(family.mNames[i], family);
         }
     }
 
     
-        private static void initFontFamilyMap() {
+        @DSModeled(DSC.BAN)
+    private static void initFontFamilyMap() {
         sFontFamilyMap = new HashMap<String, FontFamily>();
         FontFamily sansFamily = new FontFamily();
         sansFamily.mNames = sSansNames;
@@ -131,7 +134,8 @@ public class Font extends BaseObj {
     }
 
     
-        static public Font create(RenderScript rs, Resources res, String familyName, Style fontStyle, float pointSize) {
+        @DSModeled(DSC.SAFE)
+    static public Font create(RenderScript rs, Resources res, String familyName, Style fontStyle, float pointSize) {
         String fileName = getFontFileName(familyName, fontStyle);
         String fontPath = Environment.getRootDirectory().getAbsolutePath();
         fontPath += "/fonts/" + fileName;
@@ -156,6 +160,7 @@ public class Font extends BaseObj {
 
         String mBoldItalicFileName;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:43.961 -0400", hash_original_method = "4B1D119D7774A95910A46246D7100E2A", hash_generated_method = "4B1D119D7774A95910A46246D7100E2A")
         public FontFamily ()
         {

@@ -130,6 +130,7 @@ Authority var5CCAD38430CC6AF5F53A9FDF4E031259_1203710205 =         this.authorit
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.249 -0400", hash_original_method = "9EAD5694A977A9D6081FC9F5B163E148", hash_generated_method = "2CD887DDABF2D5079289E645161E63A0")
     @SuppressWarnings("unchecked")
     @Override
@@ -644,6 +645,7 @@ String varE1F15250491F87E8943C750256671D6A_2131275740 =         authority.getHos
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.256 -0400", hash_original_method = "56CDDCF4149582CE88DAE7137BB51FB6", hash_generated_method = "15F82EDCEAAA11FE24506F1EBB6F87C6")
     public boolean isUserTelephoneSubscriber() {
         String usrtype = (String) uriParms.getValue(USER);
@@ -749,6 +751,7 @@ String varE1F15250491F87E8943C750256671D6A_2131275740 =         authority.getHos
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.258 -0400", hash_original_method = "8653C52476DAA9902FEC7B8799779AA0", hash_generated_method = "612DB2F05990B720BE28472E9052A1DD")
     public void setUser(String uname) {
         addTaint(uname.getTaint());
@@ -1254,6 +1257,7 @@ String varB766A224519300F0F3A9053E67C813E9_347762781 =         authority.getUser
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.266 -0400", hash_original_method = "DD9F3D6DD0A955FE88B26C596147A545", hash_generated_method = "FFD1D37F482D6599B51331C19EAD3783")
     public void setLrParam() {
         this.uriParms.set("lr",null);
@@ -1290,6 +1294,7 @@ String varB766A224519300F0F3A9053E67C813E9_347762781 =         authority.getUser
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.267 -0400", hash_original_method = "B29E45FE1B913173FAF4035EBB51958B", hash_generated_method = "65F893632F19B1E63DB4362961D5D32F")
     public void setParameter(String name, String value) throws ParseException {
         addTaint(value.getTaint());
@@ -1361,6 +1366,7 @@ String varB766A224519300F0F3A9053E67C813E9_347762781 =         authority.getUser
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.268 -0400", hash_original_method = "D4B3823C982965112DA168F305C25048", hash_generated_method = "9553E2BD3B9161DB4F245525D3A17C7F")
     public void setTransportParam(String transport) throws ParseException {
         addTaint(transport.getTaint());

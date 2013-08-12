@@ -1175,6 +1175,7 @@ for(AuthorityInfo auth : acc.authorities.values())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.102 -0400", hash_original_method = "1CDF6C9A1F9F2098201F4D7433D51EE7", hash_generated_method = "277B9262A1135396E45DE8D05C5367C3")
     public SyncInfo addActiveSync(SyncManager.ActiveSyncContext activeSyncContext) {
         addTaint(activeSyncContext.getTaint());
@@ -1636,6 +1637,7 @@ ArrayList<SyncHistoryItem> varDD8CA3856F2D10CFF8B78751200A576D_916991367 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.109 -0400", hash_original_method = "3EC13B6BE37070366668DCFEFC381135", hash_generated_method = "386287FB363504023B1F8C71DC87B898")
     public DayStats[] getDayStatistics() {
         synchronized

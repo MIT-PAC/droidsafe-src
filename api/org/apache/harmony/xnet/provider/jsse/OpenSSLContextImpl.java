@@ -12,6 +12,7 @@ import javax.net.ssl.SSLSocketFactory;
 
 public class OpenSSLContextImpl extends SSLContextImpl {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.727 -0400", hash_original_method = "AC85303C5261AE8C561C9D0D813887D0", hash_generated_method = "BA56A83C11C4D548CDA5AAC3BEDBB357")
     public  OpenSSLContextImpl() {
         // ---------- Original Method ----------
@@ -26,6 +27,7 @@ public class OpenSSLContextImpl extends SSLContextImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.727 -0400", hash_original_method = "A469C9A4B5A6A159DDADCF53650EE287", hash_generated_method = "4AD6452DB0275539DC96252564A0CB94")
     @Override
     public SSLSocketFactory engineGetSocketFactory() {
@@ -46,6 +48,7 @@ SSLSocketFactory var82CD0BF44F938BA1AC3328FDCC51399C_1695954829 =         new Op
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.727 -0400", hash_original_method = "7F20F3D24E73FCFDF0CE368826678110", hash_generated_method = "08CF8AB2DBA652203155B63033A07980")
     @Override
     public SSLServerSocketFactory engineGetServerSocketFactory() {

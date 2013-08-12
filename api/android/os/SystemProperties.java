@@ -82,7 +82,7 @@ public class SystemProperties {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static long getLong(String key, long def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -91,7 +91,7 @@ public class SystemProperties {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean getBoolean(String key, boolean def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);

@@ -23,7 +23,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
 
     private boolean mIsPooled;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.274 -0400", hash_original_method = "F7334C8DF7CFD0702F8B319FC0AAEBEC", hash_generated_method = "D85E3DAABC499710A355B9A59E327BBA")
     private  VelocityTracker() {
         mPtr = nativeInitialize();
@@ -255,7 +255,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.285 -0400", hash_original_method = "53182452353A9C74BE3B46A3229E5647", hash_generated_method = "25FAD989A83856E77552CF916EE74520")
     public boolean getEstimator(int id, int degree, int horizonMillis, Estimator outEstimator) {
         addTaint(outEstimator.getTaint());
@@ -361,7 +361,8 @@ for(int i = 0;i <= degree;i++)
 
     private static final Pool<VelocityTracker> sPool = Pools.synchronizedPool(
             Pools.finitePool(new PoolableManager<VelocityTracker>() {
-                public VelocityTracker newInstance() {
+                @DSModeled(DSC.SAFE)
+        public VelocityTracker newInstance() {
                     return new VelocityTracker();
                 }
 
@@ -369,7 +370,8 @@ for(int i = 0;i <= degree;i++)
         public void onAcquired(VelocityTracker element) {
                 }
 
-                public void onReleased(VelocityTracker element) {
+                @DSModeled(DSC.SAFE)
+        public void onReleased(VelocityTracker element) {
                     element.clear();
                 }
             }, 2));

@@ -29,6 +29,7 @@ class ZoomControlExternal implements ZoomControlBase {
 
     private WebView mWebView;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.607 -0400", hash_original_method = "703B91782EEFAD1D42516E3C0CEC522E", hash_generated_method = "D555F9AE790609D762783FBBEA058A92")
     public  ZoomControlExternal(WebView webView) {
         mWebView = webView;
@@ -75,6 +76,7 @@ class ZoomControlExternal implements ZoomControlBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.608 -0400", hash_original_method = "A600F87081FF5BCBF1AA139788799BF8", hash_generated_method = "1AB2635CD519F31F4ABF6D0D7762C508")
     public boolean isVisible() {
         boolean varEAF73EA866E63D08864C5A42586A17C2_279142261 = (mZoomControls != null && mZoomControls.isShown());
@@ -212,6 +214,7 @@ ExtendedZoomControls var15711BF4EB3B131E4CFE980AA922F862_2126832890 =         zo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.612 -0400", hash_original_method = "30ACE5BE88DEDA244C3104B68E509E28", hash_generated_method = "0B33913D3027AA5B07DDAEB31514ACA5")
         public void show(boolean showZoom) {
             addTaint(showZoom);
@@ -223,6 +226,7 @@ ExtendedZoomControls var15711BF4EB3B131E4CFE980AA922F862_2126832890 =         zo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.613 -0400", hash_original_method = "E5A5304131EA7BA6BF2FB03B8454E0A2", hash_generated_method = "1763705770489D0C249161FFFC62FF0D")
         public void hide() {
             fade(View.GONE, 1.0f, 0.0f);
@@ -249,6 +253,7 @@ ExtendedZoomControls var15711BF4EB3B131E4CFE980AA922F862_2126832890 =         zo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.613 -0400", hash_original_method = "686B76CDD5825DB5445B0AA599284809", hash_generated_method = "14C80F6E6D1CB4831AB3893BB447C768")
         public boolean hasFocus() {
             boolean varE89B3807F85677B1CDB6B89D1A414C86_1835825873 = (mPlusMinusZoomControls.hasFocus());
@@ -259,6 +264,7 @@ ExtendedZoomControls var15711BF4EB3B131E4CFE980AA922F862_2126832890 =         zo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.614 -0400", hash_original_method = "BA80E2ADFBC1D35C24B9AA9216D670A5", hash_generated_method = "1854C645B6E56BECA6F3D400BD117CDD")
         public void setOnZoomInClickListener(OnClickListener listener) {
             addTaint(listener.getTaint());
@@ -268,6 +274,7 @@ ExtendedZoomControls var15711BF4EB3B131E4CFE980AA922F862_2126832890 =         zo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.614 -0400", hash_original_method = "E61ACB01329E1401C1A0699266CEDE01", hash_generated_method = "843C7E9462607F5092F1B6944A201D3F")
         public void setOnZoomOutClickListener(OnClickListener listener) {
             addTaint(listener.getTaint());

@@ -107,6 +107,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());
@@ -223,6 +224,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     public static final int UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW = 1;
     public static final Parcelable.Creator<ActivityInfo> CREATOR
             = new Parcelable.Creator<ActivityInfo>() {
+        @DSModeled(DSC.SAFE)
         public ActivityInfo createFromParcel(Parcel source) {
             return new ActivityInfo(source);
         }

@@ -160,6 +160,7 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_2065138617 =         this.socket;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.355 -0400", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "D55D58F15601494579C14E36CFF1D137")
     public InetAddress getLocalAddress() {
         if(this.socket != null)        
@@ -183,6 +184,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_296653218 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.355 -0400", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "C919276390678776C9940C41C3BA03F9")
     public int getLocalPort() {
         if(this.socket != null)        
@@ -206,6 +208,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_296653218 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.355 -0400", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "4ABCC88D9B34E6EA9D11436D78A6A441")
     public InetAddress getRemoteAddress() {
         if(this.socket != null)        

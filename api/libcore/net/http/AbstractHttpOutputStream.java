@@ -13,6 +13,7 @@ abstract class AbstractHttpOutputStream extends OutputStream {
 
     protected boolean closed;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.894 -0400", hash_original_method = "2835FA09B3F183CC926451AC7D6D78D7", hash_generated_method = "2835FA09B3F183CC926451AC7D6D78D7")
     public AbstractHttpOutputStream ()
     {
@@ -20,6 +21,7 @@ abstract class AbstractHttpOutputStream extends OutputStream {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.894 -0400", hash_original_method = "BEB37A4CC4B7ECAA5E509CB7A19DC490", hash_generated_method = "5D54B0DD1123451877E2B94FE771801B")
     @Override
     public final void write(int data) throws IOException {
@@ -30,6 +32,7 @@ abstract class AbstractHttpOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.895 -0400", hash_original_method = "9C8C395306DF0EF2B124A9030249421B", hash_generated_method = "0A739AAA2F448DA9623927F8026ADDD1")
     protected final void checkNotClosed() throws IOException {
         if(closed)        

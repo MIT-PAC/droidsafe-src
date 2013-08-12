@@ -55,6 +55,7 @@ public class AndroidTestRunner extends BaseTestRunner {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.343 -0400", hash_original_method = "C1F9E85AE774BF3AF2496CEC49DDE295", hash_generated_method = "76EDE852B8EB8625361EFA4F5CC3129B")
     @SuppressWarnings("unchecked")
     public void setTestClassName(String testClassName, String testMethodName) {
@@ -328,6 +329,7 @@ TestResult var437D81FF8A497B3A9605171F4D29C8AB_12986752 =         mTestResult;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.351 -0400", hash_original_method = "ED862A4D59493014B8A195EE02B51D32", hash_generated_method = "A5EF62A37F4659DF1F164432950B98F3")
     public void runTest(TestResult testResult) {
         mTestResult = testResult;

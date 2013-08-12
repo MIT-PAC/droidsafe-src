@@ -173,6 +173,7 @@ ManagedClientConnection var3E69174ACEA1CF1786ED4F87EE0B3E2A_795684114 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.236 -0400", hash_original_method = "781D1E313D4AFDE231A72D7CBA370F5D", hash_generated_method = "C36F53E267D37F8C4CB91EAF07832A28")
     public ManagedClientConnection getConnection(HttpRoute route, Object state) {
         addTaint(state.getTaint());
@@ -361,6 +362,7 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_980550794 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.240 -0400", hash_original_method = "3B23C31C02DC0AC3A698CF8CD25A20B9", hash_generated_method = "A7BA68780740FF17BA19B4FD51517DF3")
     public void shutdown() {
         this.isShutDown = true;
@@ -394,6 +396,7 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_980550794 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.241 -0400", hash_original_method = "A0A03885E6FE7F03CE9159285B1CDEFC", hash_generated_method = "557F5CF728EB0934EB84B187017182EB")
     protected void revokeConnection() {
         if(managedConn == null)        

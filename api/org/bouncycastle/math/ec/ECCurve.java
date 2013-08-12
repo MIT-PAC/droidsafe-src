@@ -140,6 +140,7 @@ ECPoint var6A2F883B690EF7F35DBD24DC6932AC49_2123605381 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.439 -0400", hash_original_method = "1737D5EF0BE777F7A805235738F1CA68", hash_generated_method = "2AE97644CAB52E47F6979C14B95D4C61")
         public ECPoint decodePoint(byte[] encoded) {
             addTaint(encoded[0]);
@@ -310,6 +311,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_975666561 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.442 -0400", hash_original_method = "F2139B4AB6C86388E7E3C9323DB40384", hash_generated_method = "8099BBA63F992C4F8A19596D2E64CCF7")
         public  F2m(
             int m, 
@@ -329,6 +331,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_975666561 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.442 -0400", hash_original_method = "5E11630AFDD86B3E6F25DD938FDF4713", hash_generated_method = "42C4937A5C138EF07EEA09F0D15B42F9")
         public  F2m(
             int m,
@@ -348,6 +351,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_975666561 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.443 -0400", hash_original_method = "DFE62FA9A40BB48176925A509A87D7E7", hash_generated_method = "89E4D73FAAB960F27F829D4403F90BDD")
         public  F2m(
             int m, 
@@ -541,6 +545,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_323637672 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.447 -0400", hash_original_method = "C02001236D393BDCA3D2D65CC0F3FCD6", hash_generated_method = "69900187309E568E7D56831B56D9995D")
         synchronized BigInteger[] getSi() {
             if(si == null)            

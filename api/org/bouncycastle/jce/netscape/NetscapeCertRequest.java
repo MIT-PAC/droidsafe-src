@@ -219,6 +219,7 @@ PublicKey varF4E785CAC4E37DDA6682AE974579280B_1178187371 =         pubkey;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.323 -0400", hash_original_method = "E3E7D887F34AE4BB0FD59D717AA1E296", hash_generated_method = "30131091EAAEA79BA67ED2485E88DC3F")
     public boolean verify(String challenge) throws NoSuchAlgorithmException,
             InvalidKeyException, SignatureException, NoSuchProviderException {

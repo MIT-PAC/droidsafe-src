@@ -23,6 +23,7 @@ public class KeyParameter implements CipherParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.113 -0400", hash_original_method = "B61F1FEDEF5D4C73DB3CB7494F513C96", hash_generated_method = "083676695D6245357A44262794731790")
     public  KeyParameter(
         byte[]  key,

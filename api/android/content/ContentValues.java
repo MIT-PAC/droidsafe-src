@@ -52,7 +52,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.356 -0400", hash_original_method = "B119129681FC05E44686163A6A753063", hash_generated_method = "84025BAD1691735AC20DB72EF88B6017")
     @Override
     public boolean equals(Object object) {
@@ -74,7 +74,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.357 -0400", hash_original_method = "61C7B1D258FDF4A8DE4F58009B844658", hash_generated_method = "8DEDADB29C6F45EDDF6635C5D679F4FE")
     @Override
     public int hashCode() {
@@ -86,6 +86,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.357 -0400", hash_original_method = "65B11A528910ED48D0A8C0B3A81DCA11", hash_generated_method = "A311EC41908D74965B9A3783F21F60CA")
     public void put(String key, String value) {
         addTaint(value.getTaint());
@@ -96,6 +97,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.358 -0400", hash_original_method = "0A271D2A4C7890E9466C28EF447DC416", hash_generated_method = "B346E26643B9DD026AF820D04972636E")
     public void putAll(ContentValues other) {
         addTaint(other.getTaint());
@@ -105,6 +107,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.359 -0400", hash_original_method = "46309CD6AABC048E549ED8D367B97222", hash_generated_method = "6EF8D9F05335EFB7C22B6E2916EC2637")
     public void put(String key, Byte value) {
         addTaint(value.getTaint());
@@ -115,6 +118,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.359 -0400", hash_original_method = "19B45CF10C6274AA18ED4281EBB4A7D5", hash_generated_method = "A09C309C71E6FA7C97065C98B5076ACF")
     public void put(String key, Short value) {
         addTaint(value.getTaint());
@@ -125,6 +129,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.360 -0400", hash_original_method = "519D763DA29CBC7E3659F73066396076", hash_generated_method = "60EAE28D24A02E493501B3D3CE7A6252")
     public void put(String key, Integer value) {
         addTaint(value.getTaint());
@@ -135,6 +140,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.360 -0400", hash_original_method = "68C6754D41E6DE24B60EFC88A41FDF20", hash_generated_method = "AFE481AE7E8725D3621FBEE7B63ABDD0")
     public void put(String key, Long value) {
         addTaint(value.getTaint());
@@ -145,6 +151,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.361 -0400", hash_original_method = "66DA1C106B1B7F2AFB03D110B785A501", hash_generated_method = "B60C142835577C98617D6A91FDCE3B23")
     public void put(String key, Float value) {
         addTaint(value.getTaint());
@@ -155,6 +162,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.361 -0400", hash_original_method = "1050A4E9D6DF2BBB4B07F9E50B35502F", hash_generated_method = "82E4505D1677DDDD49ACE1A8FD854F33")
     public void put(String key, Double value) {
         addTaint(value.getTaint());
@@ -165,6 +173,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.362 -0400", hash_original_method = "C35988B4D54806692C616FB01B8C7793", hash_generated_method = "15F5BA25AA3D7B32E890DE55AAC81AE2")
     public void put(String key, Boolean value) {
         addTaint(value.getTaint());
@@ -175,6 +184,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.363 -0400", hash_original_method = "79D16814F7AC00D5B324C095EC421557", hash_generated_method = "FDEC73EBF4CCF90C899EC0CF616C23A2")
     public void put(String key, byte[] value) {
         addTaint(value[0]);
@@ -185,6 +195,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.363 -0400", hash_original_method = "8F0D800F5C28B5CCC219C4767FE49E89", hash_generated_method = "43E6BE0B90F8E540D4D84F700611417D")
     public void putNull(String key) {
         addTaint(key.getTaint());
@@ -194,7 +205,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.364 -0400", hash_original_method = "C7AE6CE1280D5E080A32F66907E851BD", hash_generated_method = "AED507150AEA2F091E1BD190503AFE27")
     public int size() {
         int var6EC976456B1A0FB390548E70FCD4762F_1317236072 = (mValues.size());
@@ -205,6 +216,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.364 -0400", hash_original_method = "377B4DB42071C90137241E64BA4CBF0D", hash_generated_method = "65BC75D41DE250604F7F5F0BE339EFB6")
     public void remove(String key) {
         addTaint(key.getTaint());
@@ -214,7 +226,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.365 -0400", hash_original_method = "08286611C689211C8F9484889D0FA29C", hash_generated_method = "BF85B5F668E6CB7B60B49325EA514CB6")
     public void clear() {
         mValues.clear();
@@ -235,6 +247,7 @@ public final class ContentValues implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.366 -0400", hash_original_method = "F0AF95EE9AB5B022FDA3C4DAA44F68C1", hash_generated_method = "BFAFAB82F51D4CDACC791CB75E2D043F")
     public Object get(String key) {
         addTaint(key.getTaint());
@@ -246,6 +259,7 @@ Object varA876F1864284E1684A5A68837AB4BB72_2086853917 =         mValues.get(key)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.367 -0400", hash_original_method = "FD6B0B33BC77B5F3D2D2C6DE92834A83", hash_generated_method = "3040EF3645128215FDBECC3D8E959B9C")
     public String getAsString(String key) {
         addTaint(key.getTaint());
@@ -259,6 +273,7 @@ String var569675D405C8FA1F566AE9E18776E3B0_940920092 =         value != null ? v
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.368 -0400", hash_original_method = "50D64D5E49DC2F013CFC471F23AA3A1E", hash_generated_method = "1CF8FB9DB8CB7D09A536B0ABCD540C5A")
     public Long getAsLong(String key) {
         addTaint(key.getTaint());
@@ -313,6 +328,7 @@ Long var540C13E9E156B687226421B24F2DF178_213419843 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.369 -0400", hash_original_method = "C11C55EBF0D230069C8558AD456DF6B2", hash_generated_method = "0D9892DEEA29253B4C2768B87B7D3E20")
     public Integer getAsInteger(String key) {
         addTaint(key.getTaint());
@@ -421,6 +437,7 @@ Short var540C13E9E156B687226421B24F2DF178_1935513971 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.375 -0400", hash_original_method = "10A45AB5E2B4A25109E88A986B8ABD1E", hash_generated_method = "F1F0F8915F39CD08B515CC184D2D8E5B")
     public Byte getAsByte(String key) {
         addTaint(key.getTaint());
@@ -475,6 +492,7 @@ Byte var540C13E9E156B687226421B24F2DF178_871551507 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.376 -0400", hash_original_method = "43D54EF438725B45BE89593CD2466062", hash_generated_method = "ACA9BC0BE2789194A3D88EBDC637EA38")
     public Double getAsDouble(String key) {
         addTaint(key.getTaint());
@@ -529,6 +547,7 @@ Double var540C13E9E156B687226421B24F2DF178_1029660714 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.378 -0400", hash_original_method = "72E58B472E78C1EB7239E330F6CA9313", hash_generated_method = "2E152B8058D1A4F03A3A84DE398758EC")
     public Float getAsFloat(String key) {
         addTaint(key.getTaint());
@@ -583,6 +602,7 @@ Float var540C13E9E156B687226421B24F2DF178_1671523687 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.379 -0400", hash_original_method = "26BA447DF201321FA24067450431D916", hash_generated_method = "6C0912758B25F4B3FAFB6E04FC64AF82")
     public Boolean getAsBoolean(String key) {
         addTaint(key.getTaint());
@@ -668,6 +688,7 @@ Set<Map.Entry<String, Object>> var2356B3E490A7637662D7C9F72E2A4B6E_1605312915 = 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.382 -0400", hash_original_method = "424C133E0D7FEE4B423B7AD7977A2226", hash_generated_method = "B6E7B466AB7EDA7882D48EB428892712")
     public Set<String> keySet() {
 Set<String> var3563EE38FE64D76F70F52DD9D1FB041A_613255004 =         mValues.keySet();
@@ -689,7 +710,7 @@ Set<String> var3563EE38FE64D76F70F52DD9D1FB041A_613255004 =         mValues.keyS
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.383 -0400", hash_original_method = "2C0F18C86DFE76C8F92DFC9EBC596E26", hash_generated_method = "ADB5402C00ACED0EB9EE1CBE16D051AD")
     @SuppressWarnings("deprecation")
     public void writeToParcel(Parcel parcel, int flags) {
@@ -701,6 +722,7 @@ Set<String> var3563EE38FE64D76F70F52DD9D1FB041A_613255004 =         mValues.keyS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.384 -0400", hash_original_method = "F9E2AE250F36F443A2E1239B6C3C3E6F", hash_generated_method = "2B3868940708E58F37C04CA237293755")
     @Deprecated
     public void putStringArrayList(String key, ArrayList<String> value) {
@@ -726,6 +748,7 @@ ArrayList<String> varEA5289862F960A8FC777CD59A190A353_1659658204 =         (Arra
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.385 -0400", hash_original_method = "7B4B42E004B10F53CC96D4FD27076B59", hash_generated_method = "E6D6006C1599658C27A79DC9FDA22603")
     @Override
     public String toString() {
@@ -758,6 +781,7 @@ String var2460B846747F8B22185AD8BE722266A5_2112658735 =         sb.toString();
 
     public static final Parcelable.Creator<ContentValues> CREATOR =
             new Parcelable.Creator<ContentValues>() {
+        @DSModeled(DSC.SAFE)
         @SuppressWarnings({"deprecation", "unchecked"})
         public ContentValues createFromParcel(Parcel in) {
             

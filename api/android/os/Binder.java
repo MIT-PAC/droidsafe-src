@@ -456,6 +456,7 @@ final class BinderProxy implements IBinder {
 
     private int mOrgue;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.685 -0400", hash_original_method = "6F2DE2B0944C9F00778B80C418D11418", hash_generated_method = "25943465C34F7314EF91831B1A064961")
       BinderProxy() {
         mSelf = new WeakReference(this);
@@ -524,6 +525,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_610493722 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.694 -0400", hash_original_method = "C4F8E51C715A0CBA59E063E00B1AFC6F", hash_generated_method = "DD29D45FC0FE4908A7A5C6CC6E587981")
     public void dump(FileDescriptor fd, String[] args) throws RemoteException {
         addTaint(args[0].getTaint());
@@ -557,6 +559,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_610493722 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.695 -0400", hash_original_method = "07563DCFF6B89513E8E1D1CEF9639FFA", hash_generated_method = "2870CB085FDBF3EAA142B36322543782")
     public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {
         addTaint(args[0].getTaint());
@@ -590,6 +593,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_610493722 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.695 -0400", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "633A9FB0E3D5B8AFD29FD7AA36FE9AB1")
     @Override
     protected void finalize() throws Throwable {

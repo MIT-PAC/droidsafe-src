@@ -748,7 +748,7 @@ for(TransitionListener listener : mListeners)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.262 -0400", hash_original_method = "7222BE89A56886A0CF62DC8766C00475", hash_generated_method = "58EB62EC444DDE7276F344F5BFB5B913")
     public void startChangingAnimations() {
         LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
@@ -772,7 +772,7 @@ for(Animator anim : currentAnimCopy.values())
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.264 -0400", hash_original_method = "7BA742550F1E1298AB8FE77F45C4383D", hash_generated_method = "18E4A07428D8738302E55F2CA66BB0BD")
     public void endChangingAnimations() {
         LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
@@ -815,7 +815,7 @@ for(Animator anim : currentAnimCopy.values())
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.273 -0400", hash_original_method = "2E46A59670A61A0AF64FD97BDAF7B728", hash_generated_method = "1D55E8979FD40241915B035DFE60288E")
     public void cancel() {
         if(currentChangingAnimations.size() > 0)        
@@ -850,7 +850,7 @@ for(Animator anim : currentAnimCopy.values())
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.278 -0400", hash_original_method = "19B870791205108BA3B602A2E8CB5138", hash_generated_method = "E0E967CC19174281F40087590A5817C5")
     public void cancel(int transitionType) {
         addTaint(transitionType);

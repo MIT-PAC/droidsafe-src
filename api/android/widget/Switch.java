@@ -114,6 +114,7 @@ public class Switch extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.981 -0400", hash_original_method = "0FB069D8C375377E937B40F8D8C213ED", hash_generated_method = "F49ABE52E58F4D1E621DE50EAAB7078B")
     public  Switch(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.switchStyle);
@@ -123,6 +124,7 @@ public class Switch extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.001 -0400", hash_original_method = "7052304410F6ACDD18F00D1DE979132C", hash_generated_method = "881A214A64681322518769C468F5AC13")
     public  Switch(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -162,6 +164,7 @@ public class Switch extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.017 -0400", hash_original_method = "D688751389B30165717277DD9DF1E478", hash_generated_method = "DFB35D25EB7B121FADC488F32CDE61EE")
     public void setSwitchTextAppearance(Context context, int resid) {
         addTaint(resid);
@@ -237,6 +240,7 @@ switch(typefaceIndex){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.032 -0400", hash_original_method = "C023070590A87D2CA3EA267526ED6F0D", hash_generated_method = "E6DA1F171F64558C344DDAFB9DB7EE06")
     public void setSwitchTypeface(Typeface tf, int style) {
         addTaint(style);
@@ -283,6 +287,7 @@ switch(typefaceIndex){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.039 -0400", hash_original_method = "543DA1ECFCDDAA3B3698B41BEC9D49BA", hash_generated_method = "13D266621D0F0AC3E13B5F11A90F1CE5")
     public void setSwitchTypeface(Typeface tf) {
         addTaint(tf.getTaint());
@@ -312,6 +317,7 @@ CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_1391447410 =         mTextOn;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.047 -0400", hash_original_method = "6FFD0F84C29886200B9EFC80768CA614", hash_generated_method = "724A867E451862DC0A3CA1C1D8C6919B")
     public void setTextOn(CharSequence textOn) {
         mTextOn = textOn;
@@ -333,6 +339,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_265359710 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.053 -0400", hash_original_method = "D6EC5A221EB0AF6C7F25B9FE392EF4CC", hash_generated_method = "F5AAA7F178CC8D6FF87FECD348C53768")
     public void setTextOff(CharSequence textOff) {
         mTextOff = textOff;
@@ -343,6 +350,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_265359710 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.067 -0400", hash_original_method = "13BAC45BF6F94061A5C888CE492B7F47", hash_generated_method = "AF4B286D739706D551E591E4CD660C42")
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -398,6 +406,7 @@ switch(widthMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.074 -0400", hash_original_method = "48254B36708A3254CD52161026ABD6F4", hash_generated_method = "CF993C9605D0B73F7C11BE7AA3A5D8F7")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -481,6 +490,7 @@ Layout varCE2BB04DC870A298373702A783739055_1467233509 =         new StaticLayout
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.111 -0400", hash_original_method = "BEA9271A473068780C9D1CF1D0CB8717", hash_generated_method = "F3FAAD9610488232DEAF30E3B93499B2")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
@@ -646,6 +656,7 @@ switch(mTouchMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.142 -0400", hash_original_method = "523B4C6A0F0C2AD264BC263A9EEF64F2", hash_generated_method = "57E9296DAAE1C6587AFD72472D55FCDC")
     @Override
     public void setChecked(boolean checked) {
@@ -659,6 +670,7 @@ switch(mTouchMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.157 -0400", hash_original_method = "12EE2ABDB63D99AE62C7AA4AFB810394", hash_generated_method = "EE163C12D80A7BF8752798E65D5032DF")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -698,6 +710,7 @@ switch(getGravity() & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.165 -0400", hash_original_method = "8EF5F4DDEE2B0F2714B687B8F02D0637", hash_generated_method = "E9093B006E6229B8E68F8B11F2A5D7A5")
     @Override
     protected void onDraw(Canvas canvas) {
@@ -739,6 +752,7 @@ switch(getGravity() & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.172 -0400", hash_original_method = "C22AF595E85F3FD93263583BC3DF92ED", hash_generated_method = "9B35A8F62B4BF887F79A5FBD3DC1C121")
     @Override
     public int getCompoundPaddingRight() {
@@ -803,6 +817,7 @@ switch(getGravity() & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.191 -0400", hash_original_method = "DBFC9AA6074AC9C1F36B3AF225F67863", hash_generated_method = "B01A6B758EC1317E328A67B2FF2DE8A3")
     @Override
     protected void drawableStateChanged() {
@@ -822,6 +837,7 @@ switch(getGravity() & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.197 -0400", hash_original_method = "1DDC7918114D3BA198855AEA4718194D", hash_generated_method = "294B25882317C2DB325A2A0E00B3FF2A")
     @Override
     protected boolean verifyDrawable(Drawable who) {
@@ -834,6 +850,7 @@ switch(getGravity() & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.203 -0400", hash_original_method = "B8A29477D7D79C90248691E663D147EB", hash_generated_method = "ADDA229C5AD62D1E4F9B04ED39B0DD3F")
     @Override
     public void jumpDrawablesToCurrentState() {

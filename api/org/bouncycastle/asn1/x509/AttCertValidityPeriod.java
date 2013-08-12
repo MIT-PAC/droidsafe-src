@@ -22,6 +22,7 @@ public class AttCertValidityPeriod extends ASN1Encodable {
 
     DERGeneralizedTime notAfterTime;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.557 -0400", hash_original_method = "4935F5EA06A87E5EB822F7F5CCD2C830", hash_generated_method = "6D9800B66F3A1A9FED45EB94499B289F")
     public  AttCertValidityPeriod(
         ASN1Sequence    seq) {
@@ -45,6 +46,7 @@ public class AttCertValidityPeriod extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.558 -0400", hash_original_method = "EE3E4821B31B071C83A5954362B6FCF9", hash_generated_method = "78645F960C6BB66568007E45DEE436B1")
     public  AttCertValidityPeriod(
         DERGeneralizedTime notBeforeTime,
@@ -57,6 +59,7 @@ public class AttCertValidityPeriod extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttCertValidityPeriod getInstance(
             Object  obj) {
         if (obj instanceof AttCertValidityPeriod)
@@ -93,6 +96,7 @@ DERGeneralizedTime varA4D5BDCFF20FBB2AB9CF4A743D5EF45E_1843085765 =         notA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.559 -0400", hash_original_method = "F304C055A3AB57005A726D651B674F2F", hash_generated_method = "B861C31E1C11C0A3BC84AE25640B767B")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

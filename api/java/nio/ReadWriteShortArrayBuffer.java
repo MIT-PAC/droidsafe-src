@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.797 -0400", hash_original_method = "8E9D34BCCAE8E429C96FDCF9DF5CAB41", hash_generated_method = "55B4923DA3F935D80CF9E9294A9995E3")
       ReadWriteShortArrayBuffer(short[] array) {
         super(array);
@@ -24,6 +25,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.798 -0400", hash_original_method = "9C56AF79FD26FC5F344A35E3553FC338", hash_generated_method = "C614BAC9B583D7A545AC4CCCA4360A3D")
       ReadWriteShortArrayBuffer(int capacity, short[] backingArray,
             int arrayOffset) {
@@ -35,6 +37,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ReadWriteShortArrayBuffer copy(ShortArrayBuffer other, int markOfOther) {
         ReadWriteShortArrayBuffer buf =
                 new ReadWriteShortArrayBuffer(other.capacity(), other.backingArray, other.offset);
@@ -45,6 +48,7 @@ final class ReadWriteShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.799 -0400", hash_original_method = "462C3B568A7739CEDBF963B6B469485C", hash_generated_method = "C8D31DEBEC0A7E0BA098E7094A2704B1")
     @Override
     public ShortBuffer asReadOnlyBuffer() {
@@ -56,6 +60,7 @@ ShortBuffer var8D30BF4939C2BDE4EA402152883AE49A_1699728884 =         ReadOnlySho
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.800 -0400", hash_original_method = "36F9748654A1F1F28EBEE4901281019B", hash_generated_method = "08D51638C025A6233B7C97E9A953E0F3")
     @Override
     public ShortBuffer compact() {
@@ -75,6 +80,7 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_151436295 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.800 -0400", hash_original_method = "F49238B32F318D341B9FD2839B701A87", hash_generated_method = "B20FB448653EEA9D96E085CD088A7DA8")
     @Override
     public ShortBuffer duplicate() {
@@ -134,6 +140,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_568795348 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.802 -0400", hash_original_method = "54E323A30539354E0A95916606A58A4C", hash_generated_method = "8A7C8EDF9637482860014CBBD3B7A8D2")
     @Override
     public ShortBuffer put(short c) {
@@ -157,6 +164,7 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1132900415 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.803 -0400", hash_original_method = "40ADB3B61FB69E1E8C75AAC651E43068", hash_generated_method = "0CEFF9ADB985504DAE4BB582D8FDE67C")
     @Override
     public ShortBuffer put(int index, short c) {
@@ -174,6 +182,7 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_406692862 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.804 -0400", hash_original_method = "2F2CA14AF95FC5682B6555E8CB32AB80", hash_generated_method = "1B87BBCBB0DB0F2D1B4024BA53063099")
     @Override
     public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
@@ -201,6 +210,7 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_860947246 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.804 -0400", hash_original_method = "295BE67A092E5DAA08585681B1E9120C", hash_generated_method = "1229A572C8982C60272D4D8D13F4601E")
     @Override
     public ShortBuffer slice() {

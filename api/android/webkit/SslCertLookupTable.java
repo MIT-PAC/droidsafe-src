@@ -26,7 +26,7 @@ final class SslCertLookupTable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static SslCertLookupTable getInstance() {
         if (sTable == null) {
             sTable = new SslCertLookupTable();

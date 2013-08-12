@@ -101,7 +101,7 @@ public class ViewConfiguration {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.790 -0400", hash_original_method = "815441BD896E00C6B865EAF3CE23B912", hash_generated_method = "741E1AEA6E1447EBEF97500CA42EEC3A")
     private  ViewConfiguration(Context context) {
         addTaint(context.getTaint());

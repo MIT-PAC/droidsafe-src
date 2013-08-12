@@ -11,6 +11,7 @@ import java.io.IOException;
 
 public class ASN1Oid extends ASN1Primitive {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.376 -0400", hash_original_method = "8EE7336DC066715E76590AA2BFCE7307", hash_generated_method = "5EE615B9F25ED765F08A7690EA0EA432")
     public  ASN1Oid() {
         super(TAG_OID);

@@ -15,6 +15,7 @@ public class OIDTokenizer {
 
     private int index;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.797 -0400", hash_original_method = "88D58AFE0405FCD9AB8F5CA4BE2D1534", hash_generated_method = "6B1A3C9995A277DCE6532E1EED87F5DC")
     public  OIDTokenizer(
         String oid) {
@@ -37,6 +38,7 @@ public class OIDTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.798 -0400", hash_original_method = "4BAC87A2A9C681CC296BE2241CAA6D87", hash_generated_method = "820050E3CCE0AE69CE398440A2A3220C")
     public String nextToken() {
         if(index == -1)        

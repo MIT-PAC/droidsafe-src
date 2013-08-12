@@ -74,17 +74,19 @@ public final class StrictMode {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static int getThreadPolicyMask() {
         return BlockGuard.getThreadPolicy().getPolicyMask();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ThreadPolicy getThreadPolicy() {
         return new ThreadPolicy(getThreadPolicyMask());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ThreadPolicy allowThreadDiskWrites() {
         int oldPolicyMask = getThreadPolicyMask();
         int newPolicyMask = oldPolicyMask & ~(DETECT_DISK_WRITE | DETECT_DISK_READ);
@@ -95,6 +97,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ThreadPolicy allowThreadDiskReads() {
         int oldPolicyMask = getThreadPolicyMask();
         int newPolicyMask = oldPolicyMask & ~(DETECT_DISK_READ);
@@ -184,7 +187,7 @@ public final class StrictMode {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int parseViolationFromMessage(String message) {
         if (message == null) {
             return 0;
@@ -207,7 +210,7 @@ public final class StrictMode {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean tooManyViolationsThisLoop() {
         return violationsBeingTimed.get().size() >= MAX_OFFENSES_PER_LOOP;
     }
@@ -252,6 +255,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean hasGatheredViolations() {
         return gatheredViolations.get() != null;
     }
@@ -312,6 +316,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void enableDefaults() {
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                                    .detectAll()
@@ -574,6 +579,7 @@ public final class StrictMode {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.750 -0400", hash_original_method = "AE05BE3A66BEE06993F7653F4CB681EB", hash_generated_method = "2422CBCDB661511AE3AA16A2CCD42659")
         @Override
         public String toString() {
@@ -606,6 +612,7 @@ String varEA020F0794DC249B4DFA91451430514A_1897088837 =             "[StrictMode
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "399752AE3320783E8BC4077BF2BAABAB", hash_generated_method = "07C1C26EAD19A72D87AB0C27B2E49029")
             public Builder detectAll() {
 Builder varF8028DE273C96D9B4307CF88AD033CC0_970729084 =                 enable(ALL_THREAD_DETECT_BITS);
@@ -616,6 +623,7 @@ Builder varF8028DE273C96D9B4307CF88AD033CC0_970729084 =                 enable(A
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "3E31B254E1B4E9A5234881E68AADF1C7", hash_generated_method = "70E5FA0ED9A0D7E62A31BA148947946D")
             public Builder permitAll() {
 Builder var127B5FA52E24BFBDE16E8DA40A786827_471918344 =                 disable(ALL_THREAD_DETECT_BITS);
@@ -626,6 +634,7 @@ Builder var127B5FA52E24BFBDE16E8DA40A786827_471918344 =                 disable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "8F1CC5D4BDA427578EB68B001E341FDD", hash_generated_method = "0CD136C19682D1F5FB1B27795853E777")
             public Builder detectNetwork() {
 Builder var060B56A9EE6E877186348768E1026203_496671497 =                 enable(DETECT_NETWORK);
@@ -636,6 +645,7 @@ Builder var060B56A9EE6E877186348768E1026203_496671497 =                 enable(D
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "2A4244001D1666DDAFB3F602ED8EC7EA", hash_generated_method = "9C21C84799D74CEA7071CD454128C5CA")
             public Builder permitNetwork() {
 Builder var11897196A9FAF00B1E55698E6825D150_1488759416 =                 disable(DETECT_NETWORK);
@@ -646,6 +656,7 @@ Builder var11897196A9FAF00B1E55698E6825D150_1488759416 =                 disable
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "75C524432F954C01B0149630CE54DDB4", hash_generated_method = "5D48DD135E72B972FF40F3AA53812743")
             public Builder detectDiskReads() {
 Builder var3F063EB9BA6514A4587A93DCF87C0A3F_1112233187 =                 enable(DETECT_DISK_READ);
@@ -656,6 +667,7 @@ Builder var3F063EB9BA6514A4587A93DCF87C0A3F_1112233187 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "1BD98C02F9A11EE892D0098B20BDD8BD", hash_generated_method = "1308C47E3D0C647F8B68CB2FE126EBC9")
             public Builder permitDiskReads() {
 Builder var12A35DDA5597598C86F385006473D33F_742670652 =                 disable(DETECT_DISK_READ);
@@ -666,6 +678,7 @@ Builder var12A35DDA5597598C86F385006473D33F_742670652 =                 disable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "0F761933C6E4A91421ABB8964A4D9EB8", hash_generated_method = "3D92E7A58F1CE88ECE753B17BF8239CC")
             public Builder detectCustomSlowCalls() {
 Builder varB551A65CDB5E9D4D674BF0E51A845100_914489296 =                 enable(DETECT_CUSTOM);
@@ -676,6 +689,7 @@ Builder varB551A65CDB5E9D4D674BF0E51A845100_914489296 =                 enable(D
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "1F5E52FF134E5A595D9B4F3AD9EF805B", hash_generated_method = "7029BDB3930F98A5DD39908427651579")
             public Builder permitCustomSlowCalls() {
 Builder varB551A65CDB5E9D4D674BF0E51A845100_1863351094 =                 enable(DETECT_CUSTOM);
@@ -686,6 +700,7 @@ Builder varB551A65CDB5E9D4D674BF0E51A845100_1863351094 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "583E0D5D228DC11F4F3B1B541EE8393C", hash_generated_method = "D51D94EA353CAFF60F2EC84B55B81EDA")
             public Builder detectDiskWrites() {
 Builder varDD77C3520ED2D64CC1AB70214F6E6110_1853935928 =                 enable(DETECT_DISK_WRITE);
@@ -696,6 +711,7 @@ Builder varDD77C3520ED2D64CC1AB70214F6E6110_1853935928 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.751 -0400", hash_original_method = "A37C6D388BF979AC5AEB871BAB2E0B6F", hash_generated_method = "E8801E98186E200CDE2B15C8AA4497B9")
             public Builder permitDiskWrites() {
 Builder var24EE8F4D13A53650B5D44898DCAA4E34_181589665 =                 disable(DETECT_DISK_WRITE);
@@ -706,6 +722,7 @@ Builder var24EE8F4D13A53650B5D44898DCAA4E34_181589665 =                 disable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "8766DB09D651E2B3541ACB0418FFA365", hash_generated_method = "469F172247834C12102BA9DE61DB92D3")
             public Builder penaltyDialog() {
 Builder var4FB3EC1CFDBDC4DC0249B9B2B8BFFEAB_974043980 =                 enable(PENALTY_DIALOG);
@@ -716,6 +733,7 @@ Builder var4FB3EC1CFDBDC4DC0249B9B2B8BFFEAB_974043980 =                 enable(P
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "609E0F3274E1E7CDB20C8C1214B54E39")
             public Builder penaltyDeath() {
 Builder var6F115A07D237A33880541F25719D67B0_2002099028 =                 enable(PENALTY_DEATH);
@@ -726,6 +744,7 @@ Builder var6F115A07D237A33880541F25719D67B0_2002099028 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "3B3840DC05B4A1C1129369D4324CF6E7", hash_generated_method = "3D5AC88C889441FB478F87F175763419")
             public Builder penaltyDeathOnNetwork() {
 Builder var4D622F4AC95636106DBB9B4371461C0F_751186870 =                 enable(PENALTY_DEATH_ON_NETWORK);
@@ -736,6 +755,7 @@ Builder var4D622F4AC95636106DBB9B4371461C0F_751186870 =                 enable(P
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "D2175CC28C327D3A1AEA760A679D2369", hash_generated_method = "8F9C88FFD1E949E24AB369C90C4296FB")
             public Builder penaltyFlashScreen() {
 Builder var7AEBB7BE9C233214B8A8E14BB80D42F5_1988865061 =                 enable(PENALTY_FLASH);
@@ -746,6 +766,7 @@ Builder var7AEBB7BE9C233214B8A8E14BB80D42F5_1988865061 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "1CC4D4A210E00B6613436E78672F1FE6")
             public Builder penaltyLog() {
 Builder var7C46BCB224406F4BC478971CF4360D87_1331381772 =                 enable(PENALTY_LOG);
@@ -756,6 +777,7 @@ Builder var7C46BCB224406F4BC478971CF4360D87_1331381772 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.752 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "2C3BD61C95D9EE847E2B40DEE3DDB588")
             public Builder penaltyDropBox() {
 Builder varC3126CEB2524227BCB28FCD226FE486C_1747300594 =                 enable(PENALTY_DROPBOX);
@@ -792,6 +814,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_2078753159 =                 this;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.753 -0400", hash_original_method = "3E686B94A275CF17A4C5CE0839D3E8D1", hash_generated_method = "0ABF8621E457633E1FD59B25E1C65592")
             public ThreadPolicy build() {
                 if(mMask != 0 &&
@@ -852,6 +875,7 @@ ThreadPolicy varEBA1A0201E5503996C968AF363927B41_1318457206 =                 ne
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.753 -0400", hash_original_method = "338C4A4B8F91E885EB5A5562BE10EA45", hash_generated_method = "BEBFFB7DC503947BF6A3A5B3E6B556B4")
         @Override
         public String toString() {
@@ -931,6 +955,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1904288568 =                 this;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "1E52C56D15D33FA545E602A30D1B7293", hash_generated_method = "56E21CC43B28853CA1326D5674BFAB2E")
             public Builder detectActivityLeaks() {
 Builder var8524FF6E5F58BD95313BDC3DEBCA1C6C_315409102 =                 enable(DETECT_VM_ACTIVITY_LEAKS);
@@ -941,6 +966,7 @@ Builder var8524FF6E5F58BD95313BDC3DEBCA1C6C_315409102 =                 enable(D
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "CEAA7924A62774EE9F1DB0EAFC23F606", hash_generated_method = "5F954BEE109498F2781F9EEB0D5AE57A")
             public Builder detectAll() {
 Builder var1CCC29012BEF03C8B2CAA346F1691BB7_203819372 =                 enable(DETECT_VM_ACTIVITY_LEAKS |
@@ -963,6 +989,7 @@ Builder var299E070569B7903CA6AB30AF17C33B96_255832132 =                 enable(D
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "76FD4F08E7705E8F66E31708D9A399EA", hash_generated_method = "E32FFE8A02A294B784D30CDB11F62F91")
             public Builder detectLeakedClosableObjects() {
 Builder var97E97BCCFDD5CCC88D830C9545A76C50_642377558 =                 enable(DETECT_VM_CLOSABLE_LEAKS);
@@ -973,6 +1000,7 @@ Builder var97E97BCCFDD5CCC88D830C9545A76C50_642377558 =                 enable(D
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "70D58CB86738E652D64572B273F4DEEA")
             public Builder penaltyDeath() {
 Builder var6F115A07D237A33880541F25719D67B0_1559101226 =                 enable(PENALTY_DEATH);
@@ -983,6 +1011,7 @@ Builder var6F115A07D237A33880541F25719D67B0_1559101226 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "500E5F189D822DE77B9BA7533BD281D3")
             public Builder penaltyLog() {
 Builder var7C46BCB224406F4BC478971CF4360D87_1946014504 =                 enable(PENALTY_LOG);
@@ -993,6 +1022,7 @@ Builder var7C46BCB224406F4BC478971CF4360D87_1946014504 =                 enable(
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "534BBD6BF05727FEE3669BE78D059282")
             public Builder penaltyDropBox() {
 Builder varC3126CEB2524227BCB28FCD226FE486C_1272195904 =                 enable(PENALTY_DROPBOX);
@@ -1016,6 +1046,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_2113603366 =                 this;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "6432BC9C97797DD02AE9BFA4A7F87D54", hash_generated_method = "05E1581C7328C92BCADD8F8C1C68EE97")
             public VmPolicy build() {
                 if(mMask != 0 &&
@@ -1052,7 +1083,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     public static class StrictModeViolation extends BlockGuard.BlockGuardPolicyException {
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "E7438DD65D448EA29E2BF1E2E7B9AF17", hash_generated_method = "A50A194961232A2B4D645FB225F1D1B2")
         public  StrictModeViolation(int policyState, int policyViolated, String message) {
             super(policyState, policyViolated, message);
@@ -1069,7 +1100,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     public static class StrictModeNetworkViolation extends StrictModeViolation {
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "DBBD717A236AEADDFBDE9EEC846203D0", hash_generated_method = "67817CB14B73DDA8A675A65BE03ACCB8")
         public  StrictModeNetworkViolation(int policyMask) {
             super(policyMask, DETECT_NETWORK, null);
@@ -1099,7 +1130,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     private static class StrictModeDiskWriteViolation extends StrictModeViolation {
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "3E79DB089B8A8B103215C527DD70DC9D", hash_generated_method = "FC816BAC3953BE8E9F2D0633D3D74C62")
         public  StrictModeDiskWriteViolation(int policyMask) {
             super(policyMask, DETECT_DISK_WRITE, null);
@@ -1114,6 +1145,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
     
     private static class StrictModeCustomViolation extends StrictModeViolation {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.756 -0400", hash_original_method = "D9775B5587EA33BC7CC7CE8D67F82D3A", hash_generated_method = "5C43A99AC1E40725AB9B9C38176D456C")
         public  StrictModeCustomViolation(int policyMask, String name) {
             super(policyMask, DETECT_CUSTOM, name);
@@ -1143,6 +1175,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.757 -0400", hash_original_method = "EC02A08C2D3910C2DE1DA94FE738CE60", hash_generated_method = "BF991861DFB4A36D720433980D173AD7")
         @Override
         public String toString() {
@@ -1549,6 +1582,7 @@ for(ViolationInfo previous : violations)
 
         private ThreadSpanState mContainerState;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.765 -0400", hash_original_method = "858C7F08B86E9ABCC5108174CEDFA974", hash_generated_method = "46A08256E701EE28F27EFDCC6EA7A311")
           Span(ThreadSpanState threadState) {
             mContainerState = threadState;
@@ -1983,6 +2017,7 @@ for(String tag : tags)
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static int getInstanceCount(Class<?> klass) {
             synchronized (sInstanceCounts) {
                 final Integer value = sInstanceCounts.get(klass);
@@ -2102,7 +2137,7 @@ for(String tag : tags)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.374 -0400", hash_original_field = "032D1DB3AC7977666A8FEE9196953B73", hash_generated_field = "A9537943E12E1BE66F65A9E047340B84")
 
     private static final ThreadLocal<ArrayList<ViolationInfo>> gatheredViolations = new ThreadLocal<ArrayList<ViolationInfo>>() {        
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.374 -0400", hash_original_method = "3F7643CB826EF0CE042B1409C79A26FA", hash_generated_method = "17F9046DABF4760439BFBA0AF9FA6792")
         @Override
         protected ArrayList<ViolationInfo> initialValue() {
@@ -2136,7 +2171,7 @@ for(String tag : tags)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.376 -0400", hash_original_field = "04600256D4F94A088BAF90F3ED687D15", hash_generated_field = "9E72204DB7595403D8ED153039D502F7")
 
     private static final ThreadLocal<Handler> threadHandler = new ThreadLocal<Handler>() {        
-    	@DSModeled(DSC.BAN)
+    	@DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.376 -0400", hash_original_method = "AFD0CE5945D0E9D14EE2FF5512B9324A", hash_generated_method = "785B4A8F3F59814D3C58DE7CA9CDAA9D")
         @Override
         protected Handler initialValue() {

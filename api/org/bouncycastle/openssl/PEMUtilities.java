@@ -40,6 +40,7 @@ final class PEMUtilities {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static int getKeySize(String algorithm) {
         if (!KEYSIZES.containsKey(algorithm))
         {
@@ -49,21 +50,25 @@ final class PEMUtilities {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isPKCS5Scheme1(DERObjectIdentifier algOid) {
         return PKCS5_SCHEME_1.contains(algOid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isPKCS5Scheme2(DERObjectIdentifier algOid) {
         return PKCS5_SCHEME_2.contains(algOid);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isPKCS12(DERObjectIdentifier algOid) {
         return algOid.getId().startsWith(PKCSObjectIdentifiers.pkcs_12PbeIds.getId());
     }
 
     
+    @DSModeled(DSC.SAFE)
     static SecretKey generateSecretKeyForPKCS5Scheme2(String algorithm, char[] password, byte[] salt, int iterationCount) {
         PBEParametersGenerator generator = new PKCS5S2ParametersGenerator();
         generator.init(
@@ -74,6 +79,7 @@ final class PEMUtilities {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] crypt(
         boolean encrypt,
         String provider,
@@ -94,7 +100,7 @@ final class PEMUtilities {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static byte[] crypt(
         boolean encrypt,
         Provider provider,

@@ -28,6 +28,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getISOCountries() {
         if (isoCountries == null) {
             isoCountries = getISOCountriesNative();
@@ -36,6 +37,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Locale localeFromString(String localeName) {
         int first = localeName.indexOf('_');
         int second = localeName.indexOf('_', first + 1);
@@ -49,7 +51,7 @@ public final class ICU {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Locale[] localesFromStrings(String[] localeNames) {
         LinkedHashSet<Locale> set = new LinkedHashSet<Locale>();
         for (String localeName : localeNames) {
@@ -67,6 +69,7 @@ public final class ICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Locale[] getAvailableBreakIteratorLocales() {
         return localesFromStrings(getAvailableBreakIteratorLocalesNative());
     }

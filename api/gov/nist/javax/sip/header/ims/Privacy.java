@@ -18,6 +18,7 @@ public class Privacy extends SIPHeader implements PrivacyHeader, SIPHeaderNamesI
 
     private String privacy;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.381 -0400", hash_original_method = "A1E2C85381DFB17E59FB5DEA35C141AD", hash_generated_method = "F41CC28F77299CAB879B24173C4441D3")
     public  Privacy() {
         super(PRIVACY);
@@ -25,6 +26,7 @@ public class Privacy extends SIPHeader implements PrivacyHeader, SIPHeaderNamesI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.381 -0400", hash_original_method = "B120CF39D581439EB005580774DE8E96", hash_generated_method = "70A02CA92965B26C83EFFD5CBEE38258")
     public  Privacy(String privacy) {
         this();
@@ -56,6 +58,7 @@ String var28A65DCE41136C6290258CACACAD7232_114504514 =         privacy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.382 -0400", hash_original_method = "B856482BE8E8039B726BD615DE62F5D9", hash_generated_method = "442B561DBB460C310D770304144D36C5")
     public void setPrivacy(String privacy) throws ParseException {
         if(privacy == null || privacy == "")        
@@ -76,6 +79,7 @@ String var28A65DCE41136C6290258CACACAD7232_114504514 =         privacy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.383 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "D7D01E173A867485BAC9966E551BDA21")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -87,6 +91,7 @@ String var28A65DCE41136C6290258CACACAD7232_114504514 =         privacy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.383 -0400", hash_original_method = "DB811FF594B6D6915B4D573130CCABF1", hash_generated_method = "E2EEB7CF2121C4D25B286461CC14F1EB")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -110,6 +115,7 @@ String var28A65DCE41136C6290258CACACAD7232_114504514 =         privacy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.384 -0400", hash_original_method = "6120A3F29636BB071828910A14D394C6", hash_generated_method = "13FF48AA8592A5011A8132D7D23420CF")
     public Object clone() {
         Privacy retval = (Privacy) super.clone();

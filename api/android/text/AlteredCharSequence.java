@@ -159,6 +159,7 @@ T[] varD00095851380FE9BCE207689FFB0CC5E_1799231042 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.105 -0400", hash_original_method = "7CE849A7A16F0CCCC619619755312E08", hash_generated_method = "59D19B5461E0DACF52E3D1E97120311E")
         public int getSpanStart(Object span) {
             addTaint(span.getTaint());
@@ -170,6 +171,7 @@ T[] varD00095851380FE9BCE207689FFB0CC5E_1799231042 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.105 -0400", hash_original_method = "1F1DC02FFE47F69DB6EF73E4FCC39BE3", hash_generated_method = "B2DC2A03B037B37699FFD94A098186EB")
         public int getSpanEnd(Object span) {
             addTaint(span.getTaint());
@@ -181,6 +183,7 @@ T[] varD00095851380FE9BCE207689FFB0CC5E_1799231042 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.106 -0400", hash_original_method = "5D2DFFED867D574BA0228B8E90183DDC", hash_generated_method = "1B9A8B405F398E4C900EEC438564468D")
         public int getSpanFlags(Object span) {
             addTaint(span.getTaint());
@@ -192,6 +195,7 @@ T[] varD00095851380FE9BCE207689FFB0CC5E_1799231042 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.106 -0400", hash_original_method = "7CFB314096BED579DE27CABBD0A10183", hash_generated_method = "10C9B4A5B20FF59E70022EB4309964CD")
         public int nextSpanTransition(int start, int end, Class kind) {
             addTaint(kind.getTaint());

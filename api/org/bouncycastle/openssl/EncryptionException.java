@@ -14,6 +14,7 @@ public class EncryptionException extends IOException {
 
     private Throwable cause;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.937 -0400", hash_original_method = "0A5225B15FFCBBF051BE0F84A5007C61", hash_generated_method = "89AC63CD9CB583D280CD505887C5F8E6")
     public  EncryptionException(String msg) {
         super(msg);

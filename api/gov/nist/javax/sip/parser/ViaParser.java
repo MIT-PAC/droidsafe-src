@@ -128,6 +128,7 @@ public class ViaParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.548 -0400", hash_original_method = "5AA78E39B6EC64AD2F4CBC59769995CB", hash_generated_method = "18C0572B76BE5E89CC52AA975EC72351")
     protected NameValue nameValue() throws ParseException {
         if(debug)        
@@ -197,6 +198,7 @@ NameValue varAA6B0F6934A3DB1618778075C32053F2_1074837908 =                 new N
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.549 -0400", hash_original_method = "2B03679359A52BF0E5FCCEF061A24457", hash_generated_method = "C171ABABC73DC6DB9C3C761EEA01B0BF")
     public SIPHeader parse() throws ParseException {
         if(debug)        

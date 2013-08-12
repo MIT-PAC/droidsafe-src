@@ -34,6 +34,7 @@ public class RequireParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.565 -0400", hash_original_method = "3025739AB5329DC0A390687D4C2BFD5B", hash_generated_method = "35DEF8F03ABF979436095FECB8A4E4D0")
     public SIPHeader parse() throws ParseException {
         RequireList requireList = new RequireList();

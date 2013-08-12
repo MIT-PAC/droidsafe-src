@@ -76,6 +76,7 @@ Thread var760B1EA155F5CA2BBA827AEB44D8EA68_282244282 =         this.waiter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.502 -0400", hash_original_method = "7B6DA174509B07DB7E171D838B6C3551", hash_generated_method = "4EE06FD4F867CAA9991ABA9C8829311B")
     public boolean await(Date deadline) throws InterruptedException {
         addTaint(deadline.getTaint());

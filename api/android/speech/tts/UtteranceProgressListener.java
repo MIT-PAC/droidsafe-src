@@ -27,6 +27,7 @@ public abstract class UtteranceProgressListener {
     public abstract void onError(String utteranceId);
 
     
+    @DSModeled(DSC.SAFE)
     static UtteranceProgressListener from(
             final TextToSpeech.OnUtteranceCompletedListener listener) {
         return new UtteranceProgressListener() {

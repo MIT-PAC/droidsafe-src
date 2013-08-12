@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class EndOfBufferException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.491 -0400", hash_original_method = "B387D76A75821C43CC4EBF5308FC51E5", hash_generated_method = "6DCE126A7E1ADDC6C23BC29B82C20CEE")
     public  EndOfBufferException() {
         // ---------- Original Method ----------

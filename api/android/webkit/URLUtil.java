@@ -24,7 +24,7 @@ public final class URLUtil {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String guessUrl(String inUrl) {
         String retVal = inUrl;
         WebAddress webAddress;
@@ -52,7 +52,7 @@ public final class URLUtil {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String composeSearchUrl(String inQuery, String template,
                                           String queryPlaceHolder) {
         int placeHolderIndex = template.indexOf(queryPlaceHolder);
@@ -159,7 +159,7 @@ public final class URLUtil {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isAboutUrl(String url) {
         return (null != url) && url.startsWith("about:");
     }
@@ -223,7 +223,7 @@ public final class URLUtil {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String stripAnchor(String url) {
         int anchorIndex = url.indexOf('#');
         if (anchorIndex != -1) {
@@ -233,6 +233,7 @@ public final class URLUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String guessFileName(
             String url,
             String contentDisposition,
@@ -306,7 +307,7 @@ public final class URLUtil {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static String parseContentDisposition(String contentDisposition) {
         try {
             Matcher m = CONTENT_DISPOSITION_PATTERN.matcher(contentDisposition);

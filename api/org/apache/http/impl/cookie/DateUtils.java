@@ -34,6 +34,7 @@ public final class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Date parseDate(
         String dateValue, 
         String[] dateFormats,
@@ -66,11 +67,13 @@ public final class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDate(Date date) {
         return formatDate(date, PATTERN_RFC1123);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDate(Date date, String pattern) {
         if (date == null) throw new IllegalArgumentException("date is null");
         if (pattern == null) throw new IllegalArgumentException("pattern is null");
@@ -88,6 +91,7 @@ public final class DateUtils {
         }
 
 
+        @DSModeled(DSC.SAFE)
         public static SimpleDateFormat formatFor(String pattern) {
             SoftReference<Map<String, SimpleDateFormat>> ref = THREADLOCAL_FORMATS.get();
             Map<String, SimpleDateFormat> formats = ref.get();

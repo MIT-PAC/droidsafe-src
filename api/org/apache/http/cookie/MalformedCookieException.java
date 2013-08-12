@@ -9,6 +9,7 @@ import org.apache.http.ProtocolException;
 
 public class MalformedCookieException extends ProtocolException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.177 -0400", hash_original_method = "FA8D422BA92412355CA6BC772A1072B7", hash_generated_method = "CA497B5D0BB2E41B59B40607BC68553B")
     public  MalformedCookieException() {
         super();
@@ -16,6 +17,7 @@ public class MalformedCookieException extends ProtocolException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.177 -0400", hash_original_method = "5C17F0343C6E509718E3D350EB6D1C4E", hash_generated_method = "6687D08DEE35BA89303C455BD4909695")
     public  MalformedCookieException(String message) {
         super(message);

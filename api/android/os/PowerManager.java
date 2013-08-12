@@ -34,6 +34,7 @@ public class PowerManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.326 -0400", hash_original_method = "93AAF5370B6BA4BEAC029A2F72D16576", hash_generated_method = "FC1BD0A28A2223AF1784DFF0FB7FBE8B")
     public WakeLock newWakeLock(int flags, String tag) {
         addTaint(tag.getTaint());
@@ -135,6 +136,7 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_340718386 =         new WakeLock(fl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.329 -0400", hash_original_method = "50478742CDFBDF2C875183424E636D44", hash_generated_method = "37AB494BC7D68609F9B08376C06FF997")
     public boolean isScreenOn() {
         try 
@@ -418,6 +420,7 @@ switch(flags & LOCK_MASK){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.339 -0400", hash_original_method = "8262D389F7698AE191F8346E629CED2D", hash_generated_method = "9ACF05A7E21A794E3EF4DA52A644640A")
         public String toString() {
             synchronized

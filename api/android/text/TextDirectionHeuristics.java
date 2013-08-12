@@ -293,6 +293,7 @@ TriState var485D0EAC5426E5CF6B2DFC2FF63C06FB_1452865964 =             TriState.U
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.756 -0400", hash_original_method = "CD13B75E835D71E46C5AAA6D1CEDF13D", hash_generated_method = "895ACB0F9FE7ED48F9C92F1749A85710")
         @Override
         protected boolean defaultIsRtl() {

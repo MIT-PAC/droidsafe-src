@@ -205,6 +205,7 @@ Extension varD544C9E50790C376615EA57A8A783338_937163666 =         oidMap.get(oid
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.220 -0400", hash_original_method = "67C71F044BBB9B405BEFA4564A602892", hash_generated_method = "2C6CCA03FAC8D31B0616FB7E72383950")
     public boolean[] valueOfKeyUsage() {
         Extension extension = getExtensionByOID("2.5.29.15");
@@ -442,10 +443,12 @@ for(Extension extension : extensions)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.224 -0400", hash_original_field = "9F138981CD4E842F83065885738EAA09", hash_generated_field = "325D4B839B8846AF06D5B6C75FEBE62A")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(Extension.ASN1) {
+        @DSModeled(DSC.BAN)
         @Override public Object getDecodedObject(BerInputStream in) {
             return new Extensions((List<Extension>) in.content);
         }
 
+        @DSModeled(DSC.BAN)
         @Override public Collection getValues(Object object) {
             Extensions extensions = (Extensions) object;
             return (extensions.extensions == null) ? new ArrayList() : extensions.extensions;

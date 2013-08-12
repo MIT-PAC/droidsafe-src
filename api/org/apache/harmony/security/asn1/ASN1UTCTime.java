@@ -14,6 +14,7 @@ import java.util.TimeZone;
 
 public final class ASN1UTCTime extends ASN1Time {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.485 -0400", hash_original_method = "26950815C4CFBBF28A3CFECAD840C50B", hash_generated_method = "EF7C489E04E77EFC692BF121C27E795F")
     public  ASN1UTCTime() {
         super(TAG_UTCTIME);

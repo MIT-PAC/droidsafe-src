@@ -37,7 +37,7 @@ public class Predicates {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static <T> Predicate<T> not(Predicate<? super T> predicate) {
         return new NotPredicate<T>(predicate);
     }
@@ -57,6 +57,7 @@ public class Predicates {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.804 -0400", hash_original_method = "6D31A308B444A1244C8D9BB7EDA35AF5", hash_generated_method = "3037D658882A5CEFDBB8CC95E2B1DA6A")
         public boolean apply(T t) {
             addTaint(t.getTaint());

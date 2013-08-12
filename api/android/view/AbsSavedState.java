@@ -14,7 +14,7 @@ public abstract class AbsSavedState implements Parcelable {
 
     private Parcelable mSuperState;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.391 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
     private  AbsSavedState() {
         mSuperState = null;
@@ -94,6 +94,7 @@ Parcelable var24424C2D2EF752A9D21649F03626A4B3_1982536297 =         mSuperState;
     public static final Parcelable.Creator<AbsSavedState> CREATOR 
         = new Parcelable.Creator<AbsSavedState>() {
         
+        @DSModeled(DSC.SAFE)
         public AbsSavedState createFromParcel(Parcel in) {
             Parcelable superState = in.readParcelable(null);
             if (superState != null) {

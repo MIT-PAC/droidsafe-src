@@ -124,6 +124,7 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_1660152606 =         new IInputMetho
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.084 -0400", hash_original_method = "79971C84DD1A2F851BEBA1D6EABE42F6", hash_generated_method = "7479F87AFCA01C6E1D2381D9D534649E")
         public void revokeSession(InputMethodSession session) {
             addTaint(session.getTaint());
@@ -199,6 +200,7 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_1660152606 =         new IInputMetho
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.086 -0400", hash_original_method = "352A951CCD835CDBB0D749381932ADC2", hash_generated_method = "01BD208C14DF5DA2CB65D3D01FFE5C47")
         public void dispatchKeyEvent(int seq, KeyEvent event, EventCallback callback) {
             addTaint(callback.getTaint());
@@ -219,6 +221,7 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_1660152606 =         new IInputMetho
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.087 -0400", hash_original_method = "D1FB978C0FC3E262298A1F84CE672B17", hash_generated_method = "0CB3207D059412BDC8273C31264D6C98")
         public void dispatchTrackballEvent(int seq, MotionEvent event, EventCallback callback) {
             addTaint(callback.getTaint());

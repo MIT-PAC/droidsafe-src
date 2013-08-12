@@ -62,7 +62,7 @@ class JarVerifier {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.956 -0400", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "93BFD21D7924EA8FE59FB04CA20FCFCB")
     private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
         addTaint(jarName.getTaint());
@@ -78,7 +78,7 @@ class JarVerifier {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.956 -0400", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "E9909EEE094ED6D89F21516608369B7F")
     private SecurityException failedVerification(String jarName, String signatureFile) {
         addTaint(signatureFile.getTaint());
@@ -222,7 +222,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.980 -0400", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "FC84297C5D9DEF715DDA943B6B2FFCD4")
     private void verifyCertificate(String certFile) {
         addTaint(certFile.getTaint());
@@ -342,7 +342,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.983 -0400", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "B28343B8C08B32EFE1B70558CF0E5DC6")
     private boolean verify(Attributes attributes, String entry, byte[] data,
             int start, int end, boolean ignoreSecondEndline, boolean ignorable) {

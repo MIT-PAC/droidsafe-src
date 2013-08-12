@@ -16,6 +16,7 @@ public final class ORAddress {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.553 -0400", hash_original_method = "522F011D4D6C75313C82A000AA454708", hash_generated_method = "522F011D4D6C75313C82A000AA454708")
     public ORAddress ()
     {
@@ -48,13 +49,14 @@ public final class ORAddress {
                 @Override protected void getValues(Object object, Object[] values) {}
             }}) {
 
+        @DSModeled(DSC.SAFE)
         @Override protected Object getDecodedObject(BerInputStream in) {
             return new ORAddress();
         }
 
         private final Object foo = new Object();
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             values[0] = foo;
         }

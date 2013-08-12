@@ -58,6 +58,7 @@ public final class TrustedCertificateStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean isUser(String alias) {
         return alias.startsWith(PREFIX_USER);
     }
@@ -278,6 +279,7 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_1620562573 =             nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.048 -0400", hash_original_method = "CCEB88AE1C59EF9C3585E776EAD03DC2", hash_generated_method = "BC5D048C97255D4A5081738ADEBDBD9F")
     public Date getCreationDate(String alias) {
         addTaint(alias.getTaint());
@@ -320,6 +322,7 @@ Date var896776638DD62A3893EDE2E435DD8281_1177199992 =         new Date(time);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.048 -0400", hash_original_method = "08CEADDFFE08C3DC9E367E6EE1C8514A", hash_generated_method = "F6AD6F2815027C27F285DB7D9C6B7525")
     public Set<String> aliases() {
         Set<String> result = new HashSet<String>();
@@ -383,6 +386,7 @@ for(String filename : files)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.049 -0400", hash_original_method = "43549AE16FD66ED845B02A525540D973", hash_generated_method = "82B9DCD276E074C06D36637DC46CE1C7")
     public Set<String> allSystemAliases() {
         Set<String> result = new HashSet<String>();

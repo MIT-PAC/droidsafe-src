@@ -29,7 +29,7 @@ public class InputConnectionWrapper implements InputConnection {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.773 -0400", hash_original_method = "E5D9808718D85F214F56B5C74559D92A", hash_generated_method = "24D993B364CEBE6B56EBD339CF8E80F3")
     public CharSequence getTextAfterCursor(int length, int flags) {
         addTaint(flags);
@@ -77,7 +77,7 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_1742729519 =         value;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.774 -0400", hash_original_method = "161B1891DB80E123B2A48225941EF408", hash_generated_method = "4AC02A1EE419D1812E1172F3A44AF356")
     public CharSequence getTextBeforeCursor(int length, int flags) {
         addTaint(flags);
@@ -125,7 +125,7 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_1916440754 =         value;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.775 -0400", hash_original_method = "07C2D6CA43F82EBF9A41822F1A0D86D8", hash_generated_method = "01E74F3264A46C181519C10EDCDAC262")
     public CharSequence getSelectedText(int flags) {
         addTaint(flags);
@@ -172,7 +172,7 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_392809897 =         value;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.776 -0400", hash_original_method = "42EA416764DB4DFF051E9040CF49BB73", hash_generated_method = "BF48C18ACDA801E11DCB95A355F26F5F")
     public int getCursorCapsMode(int reqModes) {
         addTaint(reqModes);
@@ -219,7 +219,7 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_392809897 =         value;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.777 -0400", hash_original_method = "305E28329FA220003F7366DA2A6BF238", hash_generated_method = "07B816D297C939FC6032E78E76D73445")
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
         addTaint(flags);
@@ -294,6 +294,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.778 -0400", hash_original_method = "EAB5E616D3D3B282F88520753342CC96", hash_generated_method = "B6722BC94A79237954E9F04FEDEA3D4E")
     public boolean commitCompletion(CompletionInfo text) {
         addTaint(text.getTaint());
@@ -346,6 +347,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.779 -0400", hash_original_method = "7022EC7ED2F239685C7BD3195B6CEAE9", hash_generated_method = "9891778ED56331102E97BCC2ED1853D0")
     public boolean setSelection(int start, int end) {
         addTaint(end);
@@ -399,6 +401,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.780 -0400", hash_original_method = "F7AEA38F9035D01924C8EE6C58DE4221", hash_generated_method = "D004F4F152687868EA94B5DEFB3385D3")
     public boolean performContextMenuAction(int id) {
         addTaint(id);
@@ -425,6 +428,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.780 -0400", hash_original_method = "D57326DB6E974535AC174E0CB4F4F72D", hash_generated_method = "229739719DFA7CA36CE2341A45368089")
     public boolean setComposingRegion(int start, int end) {
         addTaint(end);
@@ -452,6 +456,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.781 -0400", hash_original_method = "DE2855A916E2A0C96139F9B28AC632EF", hash_generated_method = "B6D855407A29FAD8139E8AAFDA03317F")
     public boolean setComposingText(CharSequence text, int newCursorPosition) {
         addTaint(newCursorPosition);
@@ -479,6 +484,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.781 -0400", hash_original_method = "654CA187A88EAE1F2AB6640B00B6686A", hash_generated_method = "889678409D3160A80CCD5EEEC782FBB7")
     public boolean finishComposingText() {
         try 
@@ -529,6 +535,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.782 -0400", hash_original_method = "FFD20A357B6026C06481613009C9A85C", hash_generated_method = "B90B27A038045B6245A97C24822B8949")
     public boolean endBatchEdit() {
         try 
@@ -554,6 +561,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.783 -0400", hash_original_method = "BDB80433761F466B2EC1080474660009", hash_generated_method = "DB6FFA7C0A24DE43C480DDA99798EC1A")
     public boolean sendKeyEvent(KeyEvent event) {
         addTaint(event.getTaint());
@@ -606,6 +614,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.784 -0400", hash_original_method = "A0EA155ACF6A2B88254811510DB0CC9C", hash_generated_method = "90F74F2B898ED2DC418A58FEC1836387")
     public boolean deleteSurroundingText(int leftLength, int rightLength) {
         addTaint(rightLength);

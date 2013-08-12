@@ -59,7 +59,7 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.362 -0400", hash_original_method = "B09EB233D31BD7460B333EC44F947FB5", hash_generated_method = "24027C403C7C0374B7EA2222DB95D040")
     @Override
     public void close() throws IOException {
@@ -81,7 +81,7 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.363 -0400", hash_original_method = "CF9579814E96BB14759649D94186035A", hash_generated_method = "8C7FECA201D8681A9AB4B4F7E63A1605")
     private int fillBuf() throws IOException {
         if(mark == -1 || (pos - mark >= markLimit))        
@@ -140,6 +140,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.364 -0400", hash_original_method = "EDD7C6600C30549E606135C51354C55D", hash_generated_method = "A1C696FA5A919D72C261A94906419DC9")
     @Override
     public void mark(int markLimit) throws IOException {
@@ -195,7 +196,7 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.365 -0400", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "74044E9BFBE1831F5E6C4CF5B1AB73E9")
     @Override
     public int read() throws IOException {
@@ -223,6 +224,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.367 -0400", hash_original_method = "EFCE29DD70FA840EFC7C884DCFC84327", hash_generated_method = "370D0F50776AA01CD4857D0F2D671255")
     @Override
     public int read(char[] buffer, int offset, int length) throws IOException {
@@ -275,6 +277,7 @@ public class BufferedReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.368 -0400", hash_original_method = "5E2706ACF0BEEE9ADCFD58329E615807", hash_generated_method = "CFB7A766D5BADFE9817321AF207EA165")
     final void chompNewline() throws IOException {
         if((pos != end || fillBuf() != -1)
@@ -290,7 +293,7 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.372 -0400", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "BA927ABE7EE6D520F24F9370A9FD6B22")
     public String readLine() throws IOException {
         synchronized
@@ -402,6 +405,7 @@ String varE65B3A02759122992CB82C0E651AD408_1552686172 =                         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.373 -0400", hash_original_method = "8DBFD5F046457CCDE72CB0FF01FB7E1A", hash_generated_method = "0D8D73EB2CCE05939B396A7397D9A55B")
     @Override
     public boolean ready() throws IOException {
@@ -420,6 +424,7 @@ String varE65B3A02759122992CB82C0E651AD408_1552686172 =                         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.373 -0400", hash_original_method = "CFE9F55B11CEBEA9E9DFCD46210902F2", hash_generated_method = "06CD05105F50E066B4FE16C10FB3A80C")
     @Override
     public void reset() throws IOException {
@@ -445,6 +450,7 @@ String varE65B3A02759122992CB82C0E651AD408_1552686172 =                         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.374 -0400", hash_original_method = "6635225943CAECFE84E5456D76E9313A", hash_generated_method = "D0C993DFFF038AEC6B34DD7A7B9BE1DE")
     @Override
     public long skip(long byteCount) throws IOException {

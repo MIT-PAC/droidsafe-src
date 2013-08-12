@@ -17,6 +17,7 @@ public final class KeyUsage extends ExtensionValue {
 
     private boolean[] keyUsage;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.469 -0400", hash_original_method = "DB6BBF789AE77B5AE6E5E06EC389C87F", hash_generated_method = "93E839BBB32F603F214F35D4E964F3AE")
     public  KeyUsage(byte[] encoding) throws IOException {
         super(encoding);

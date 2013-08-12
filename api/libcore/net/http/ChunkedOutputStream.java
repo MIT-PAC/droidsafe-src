@@ -26,6 +26,7 @@ final class ChunkedOutputStream extends AbstractHttpOutputStream {
 
     private ByteArrayOutputStream bufferedChunk;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.936 -0400", hash_original_method = "B36B9312ECC7FB1AB37744B06B5B016C", hash_generated_method = "C3EA4EBC4FB1FF0DE80B4F438FCA04E4")
     public  ChunkedOutputStream(OutputStream socketOut, int maxChunkLength) {
         this.socketOut = socketOut;
@@ -59,6 +60,7 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.940 -0400", hash_original_method = "B30C627643BAEC8E45C685D7AFD0614D", hash_generated_method = "04267AF2DDC7DBAFF466735A5B6D2235")
     @Override
     public synchronized void write(byte[] buffer, int offset, int count) throws IOException {
@@ -114,6 +116,7 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.940 -0400", hash_original_method = "2122C1B33A3B975810DFF4F0E39E0DD1", hash_generated_method = "87B38B1D73F667F1C1ECE6667444F550")
     @Override
     public synchronized void flush() throws IOException {
@@ -132,6 +135,7 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.941 -0400", hash_original_method = "319458C7344F8B27CFA895D3D7B87CF0", hash_generated_method = "549260384737FE78FE20A34EF4BAA109")
     @Override
     public synchronized void close() throws IOException {

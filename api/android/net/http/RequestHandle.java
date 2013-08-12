@@ -180,6 +180,7 @@ public class RequestHandle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.505 -0400", hash_original_method = "44F47D5B04481BCE428881C329B8D0F8", hash_generated_method = "FBA471C8EC30A224BA91F15E39CF5536")
     public boolean setupRedirect(String redirectTo, int statusCode,
             Map<String, String> cacheHeaders) {

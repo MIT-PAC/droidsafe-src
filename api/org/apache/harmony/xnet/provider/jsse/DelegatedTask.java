@@ -13,6 +13,7 @@ public class DelegatedTask implements Runnable {
 
     private Runnable action;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.440 -0400", hash_original_method = "E66EF7E710B4ECD724343E3A45657AE3", hash_generated_method = "C6ABFC00EC20811487B396BC56BE59FB")
     public  DelegatedTask(Runnable action, HandshakeProtocol handshaker) {
         this.action = action;
@@ -23,6 +24,7 @@ public class DelegatedTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.440 -0400", hash_original_method = "BC92620C95DC261FCD2ED821B8965098", hash_generated_method = "AD56B8ACB7D488EFD6FCC505AFCBECDD")
     public void run() {
         synchronized

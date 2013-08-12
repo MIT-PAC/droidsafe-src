@@ -17,6 +17,7 @@ public class SequenceInputStream extends InputStream {
 
     private InputStream in;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.581 -0400", hash_original_method = "29105F0198123C3B47FC811BDEDF639D", hash_generated_method = "EEC6EE1431DEE67F724DF43842662A1C")
     public  SequenceInputStream(InputStream s1, InputStream s2) {
         addTaint(s2.getTaint());
@@ -41,6 +42,7 @@ public class SequenceInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.583 -0400", hash_original_method = "4836B5679700B3654AB08A07E2FBBEF0", hash_generated_method = "474EF89E48A00FA50394E51566937285")
     public  SequenceInputStream(Enumeration<? extends InputStream> e) {
         this.e = e;
@@ -65,6 +67,7 @@ public class SequenceInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.584 -0400", hash_original_method = "989AE899244AE453B2C16F0363EA8BF3", hash_generated_method = "BCB0AA11875FABFBD393D0645B438A3D")
     @Override
     public int available() throws IOException {
@@ -85,6 +88,7 @@ public class SequenceInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.584 -0400", hash_original_method = "1749070D39A948E7280B7E9ED33867CE", hash_generated_method = "2B90943E030B1A00BD1A5769357CB8FA")
     @Override
     public void close() throws IOException {
@@ -138,6 +142,7 @@ public class SequenceInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.586 -0400", hash_original_method = "2AFBD8CC3EA20986AC27924C0AD5D7EE", hash_generated_method = "52BA9671FFCCD6C826B8699278D376A3")
     @Override
     public int read() throws IOException {
@@ -168,6 +173,7 @@ public class SequenceInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.587 -0400", hash_original_method = "D0BE57C4BCBFEEAAABF8F255E34909BC", hash_generated_method = "22DF33D22A83C0F99910FAB1E44FC6F4")
     @Override
     public int read(byte[] buffer, int offset, int count) throws IOException {

@@ -7,6 +7,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PathList extends SIPHeaderList<Path> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.371 -0400", hash_original_method = "BE055353B660F0216B962EBC93C5926E", hash_generated_method = "549B6DD9125FAA9EA2320C528E76BA26")
     public  PathList() {
         super(Path.class, PathHeader.NAME);
@@ -14,6 +15,7 @@ public class PathList extends SIPHeaderList<Path> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.371 -0400", hash_original_method = "1C195C24352DB076547F3A62B5CD27D2", hash_generated_method = "FDF7075EE2291FF4260464C14631B340")
     public Object clone() {
         PathList retval = new PathList();

@@ -6165,6 +6165,7 @@ K varC4E8101F3F71352235F4E401D4498536_249888266 =             sm.lastKey();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "243C3D15209D9BF28572CB29FC9F3DF7", hash_generated_method = "3613EA17897DB540D203CDF04CC84004")
         @Override
         public Object next() {
@@ -6174,6 +6175,7 @@ K varC4E8101F3F71352235F4E401D4498536_249888266 =             sm.lastKey();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "45CE80048748F3BC523226127E4746F5", hash_generated_method = "FC031BE6A6E094CAC267938D912798A0")
         @Override
         public void remove() {
@@ -6198,6 +6200,7 @@ K varC4E8101F3F71352235F4E401D4498536_249888266 =             sm.lastKey();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.459 -0400", hash_original_method = "82381D9C34AF9F2E88B673FB4A4E6DDE", hash_generated_method = "C451DB608AE3B7FAE82365C2FA63C59D")
         @Override
         public Object nextElement() {

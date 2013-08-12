@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class ProviderException extends RuntimeException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.337 -0400", hash_original_method = "4F6DF0DF8572865516F19A786749BA2D", hash_generated_method = "2AC577969C19328440ED86758D795C53")
     public  ProviderException(String msg) {
         super(msg);
@@ -15,6 +16,7 @@ public class ProviderException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.337 -0400", hash_original_method = "C6FD128032A25223FCE8DF59B6440EFD", hash_generated_method = "AE2C6FE8FA1DD7754D6AAA9F0ABC68D7")
     public  ProviderException() {
         // ---------- Original Method ----------

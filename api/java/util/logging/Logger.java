@@ -1342,6 +1342,7 @@ for(Handler handler : handlers)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.541 -0400", hash_original_field = "C11C2AFA3BE2E8C2EACE37E50E80D018", hash_generated_field = "4D6D3020B80CE3D35D2F8F928539DCF2")
 
     private static final DalvikLogHandler GENERAL_LOG_HANDLER = new DalvikLogHandler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.541 -0400", hash_original_method = "EC3A1A4621BA8EF22A571BDE68197799", hash_generated_method = "6101897D1D7337D250B83AA802BFD691")
         public void publish(Logger source, String tag, Level level, String message) {
             LogRecord record = new LogRecord(level, message);

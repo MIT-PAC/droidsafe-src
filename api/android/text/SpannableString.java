@@ -73,21 +73,25 @@ CharSequence var27949C1B6C468F63F8F1B1AFE2B5C1F4_1601050839 =         new Spanna
         //return new SpannableString(this, start, end);
     }
 
+    @DSModeled(DSC.SAFE)
     public int getSpanEnd(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanEnd(what);
     }
     
+    @DSModeled(DSC.SAFE)
     public int getSpanFlags(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanFlags(what);
     }
     
+    @DSModeled(DSC.SAFE)
     public int getSpanStart(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanStart(what);
     }
     
+    @DSModeled(DSC.SAFE)
     public int nextSpanTransition(int start, int limit, Class kind) {
     	addTaint(start);
     	addTaint(limit);

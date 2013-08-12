@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class UnsupportedAddressTypeException extends IllegalArgumentException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.310 -0400", hash_original_method = "BEA2635FD89D2F30543F23AA8536EBB6", hash_generated_method = "8166549E54A4122D51148A1ADA7B87D3")
     public  UnsupportedAddressTypeException() {
         // ---------- Original Method ----------

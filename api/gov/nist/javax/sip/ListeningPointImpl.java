@@ -100,6 +100,7 @@ String var60CEE2B145F0330389F8BAFBF53C9928_99919526 =         makeKey(this.getIP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.450 -0400", hash_original_method = "641C5C66572DBEDEF9FDF97C1A945C27", hash_generated_method = "C56AED480FF799E0385256739A5FBB55")
     public Object clone() {
         ListeningPointImpl lip = new ListeningPointImpl(this.sipStack, this.port, null);
@@ -115,6 +116,7 @@ Object var258B3606D2892CBE12D92EDF68F0CCA7_1078657806 =         lip;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.450 -0400", hash_original_method = "9099990124C6005A8102A71CBA5F7A65", hash_generated_method = "2B00D5117598D7766A72FEFE467515DA")
     public int getPort() {
         int varA0F7AE011F3DB3D236378CBBE885612E_1514071496 = (messageProcessor.getPort());

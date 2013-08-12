@@ -86,6 +86,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.111 -0400", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "626EF98BAB75BECB16EB0021472230A0")
     public  OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
         super(out);
@@ -99,6 +100,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.111 -0400", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "9BB6B78E0078247D5B602E80254488F7")
     @Override
     public void close() throws IOException {
@@ -136,7 +138,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.112 -0400", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "9B8F3591AAECFA2B0C088EDC2C48457E")
     private void flushBytes(boolean flushUnderlyingStream) throws IOException {
         addTaint(flushUnderlyingStream);
@@ -263,7 +265,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.116 -0400", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "E2652E8AED0EF44CFD1E8F419F72C9C6")
     private void checkStatus() throws IOException {
         if(encoder == null)        
@@ -279,6 +281,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.116 -0400", hash_original_method = "A69A1F1EB2BFDD0474AAD9460630967D", hash_generated_method = "A9D9F06ACF866CB1767FD599B418D922")
     public String getEncoding() {
         if(encoder == null)        
@@ -298,6 +301,7 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_2117172348 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.117 -0400", hash_original_method = "A1014AE81A36DB02C830992F3B254644", hash_generated_method = "E11BE7F2D0470029EFFE44EFB15AEC03")
     @Override
     public void write(char[] buffer, int offset, int count) throws IOException {
@@ -321,6 +325,7 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_2117172348 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.117 -0400", hash_original_method = "9F78C67C90A8F7A084F2E3084DB157FE", hash_generated_method = "BE6B916A0A42986838300D21100AB7C7")
     @Override
     public void write(int oneChar) throws IOException {
@@ -340,6 +345,7 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_2117172348 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.118 -0400", hash_original_method = "720362548945B36884470AD2C6B99C23", hash_generated_method = "7D84CD7B853928DE4C859B2F858FF82F")
     @Override
     public void write(String str, int offset, int count) throws IOException {
@@ -388,6 +394,7 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_2117172348 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.118 -0400", hash_original_method = "E279B5931B3E4ADEA2A691FE75B2536D", hash_generated_method = "83F612CAE56821D092CFCA14D6A8B523")
     @Override
      boolean checkError() {

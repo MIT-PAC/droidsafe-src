@@ -32,6 +32,7 @@ public class RouteParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.683 -0400", hash_original_method = "E0D86A54342F3A96677BD3492DB07E61", hash_generated_method = "6B8641303B4C81E6B1C7044BD5ED8D2B")
     public SIPHeader parse() throws ParseException {
         RouteList routeList = new RouteList();

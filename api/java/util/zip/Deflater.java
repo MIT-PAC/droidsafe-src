@@ -105,7 +105,7 @@ public class Deflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.531 -0400", hash_original_method = "0DC5FF46D79769AAEF0B4E5EA32BA58D", hash_generated_method = "038B08E91880A6788944C9A612067B3F")
     public synchronized int deflate(byte[] buf, int offset, int byteCount, int flush) {
         addTaint(flush);
@@ -129,7 +129,7 @@ public class Deflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.531 -0400", hash_original_method = "CF6CE2BCD1B535E0E9CC69A73F69BC28", hash_generated_method = "8FC3DDB743C68B6A52E8EF3C9DB27BBA")
     private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int flush) {
         addTaint(flush);
@@ -174,7 +174,7 @@ public class Deflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.533 -0400", hash_original_method = "4DA7D037A1FCD4109F30526C6DE57D1C", hash_generated_method = "8911A22A5517BD371D1F518C6E8C1FBA")
     private void endImpl() {
         if(streamHandle != -1)        
@@ -541,7 +541,7 @@ public class Deflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.545 -0400", hash_original_method = "367A42A5784C609E2D8E37BE922AB4A4", hash_generated_method = "A80896747C9B0F2B6DE5780AB15EB009")
     private void checkOpen() {
         if(streamHandle == -1)        

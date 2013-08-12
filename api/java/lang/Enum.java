@@ -104,6 +104,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_260720592 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.885 -0400", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "E0B302E8443D845F17BB1335C3F8C851")
     public final int compareTo(E o) {
         addTaint(o.getTaint());
@@ -156,6 +157,7 @@ Class<E> var8F6953680D8F9BB6E774268F02FC3AA7_2002885057 =         (Class<E>)mySu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T extends Enum<T>> T[] getSharedConstants(Class<T> enumType) {
         return (T[]) sharedConstantsCache.get(enumType);

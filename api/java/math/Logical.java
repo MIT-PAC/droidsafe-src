@@ -13,6 +13,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger not(BigInteger val) {
         if (val.sign == 0) {
             return BigInteger.MINUS_ONE;
@@ -49,6 +50,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger and(BigInteger val, BigInteger that) {
         if (that.sign == 0 || val.sign == 0) {
             return BigInteger.ZERO;
@@ -77,6 +79,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andPositive(BigInteger val, BigInteger that) {
         int resLength = Math.min(val.numberLength, that.numberLength);
         int i = Math.max(val.getFirstNonzeroDigit(), that.getFirstNonzeroDigit());
@@ -91,6 +94,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andDiffSigns(BigInteger positive, BigInteger negative) {
         int iPos = positive.getFirstNonzeroDigit();
         int iNeg = negative.getFirstNonzeroDigit();
@@ -117,6 +121,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andNegative(BigInteger longer, BigInteger shorter) {
         int iLonger = longer.getFirstNonzeroDigit();
         int iShorter = shorter.getFirstNonzeroDigit();
@@ -161,6 +166,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andNot(BigInteger val, BigInteger that) {
         if (that.sign == 0 ) {
             return val;
@@ -190,6 +196,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andNotPositive(BigInteger val, BigInteger that) {
         int[] resDigits = new int[val.numberLength];
         int limit = Math.min(val.numberLength, that.numberLength);
@@ -204,6 +211,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andNotPositiveNegative(BigInteger positive, BigInteger negative) {
         int iNeg = negative.getFirstNonzeroDigit();
         int iPos = positive.getFirstNonzeroDigit();
@@ -227,6 +235,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andNotNegativePositive(BigInteger negative, BigInteger positive) {
         int resLength;
         int[] resDigits;
@@ -287,6 +296,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger andNotNegative(BigInteger val, BigInteger that) {
         int iVal = val.getFirstNonzeroDigit();
         int iThat = that.getFirstNonzeroDigit();
@@ -327,6 +337,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger or(BigInteger val, BigInteger that) {
         if (that.equals(BigInteger.MINUS_ONE) || val.equals(BigInteger.MINUS_ONE)) {
             return BigInteger.MINUS_ONE;
@@ -359,6 +370,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger orPositive(BigInteger longer, BigInteger shorter) {
         int resLength = longer.numberLength;
         int[] resDigits = new int[resLength];
@@ -373,6 +385,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger orNegative(BigInteger val, BigInteger that) {
         int iThat = that.getFirstNonzeroDigit();
         int iVal = val.getFirstNonzeroDigit();
@@ -400,6 +413,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger orDiffSigns(BigInteger positive, BigInteger negative) {
         int iNeg = negative.getFirstNonzeroDigit();
         int iPos = positive.getFirstNonzeroDigit();
@@ -446,6 +460,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger xor(BigInteger val, BigInteger that) {
         if (that.sign == 0) {
             return val;
@@ -481,6 +496,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger xorPositive(BigInteger longer, BigInteger shorter) {
         int resLength = longer.numberLength;
         int[] resDigits = new int[resLength];
@@ -495,6 +511,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger xorNegative(BigInteger val, BigInteger that) {
         int resLength = Math.max(val.numberLength, that.numberLength);
         int[] resDigits = new int[resLength];
@@ -533,6 +550,7 @@ class Logical {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger xorDiffSigns(BigInteger positive, BigInteger negative) {
         int resLength = Math.max(negative.numberLength, positive.numberLength);
         int[] resDigits;

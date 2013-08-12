@@ -73,6 +73,7 @@ for(int i=0;i<flags.length;i++)
 
     public static final ASN1BitString ASN1 =
                             new ASN1BitString.ASN1NamedBitList(REASONS.length) {
+        @DSModeled(DSC.SPEC)
         public Object getDecodedObject(BerInputStream in) throws IOException {
             return new ReasonFlags((boolean[]) super.getDecodedObject(in));
         }

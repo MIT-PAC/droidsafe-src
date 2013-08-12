@@ -254,6 +254,7 @@ public class RenderScript {
 
     RSErrorHandler mErrorCallback = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.309 -0400", hash_original_method = "392EBD552CF287854C96DEE5F4403E62", hash_generated_method = "BBFE7671C92B1307777D77A42F0CAA66")
       RenderScript(Context ctx) {
         mApplicationContext = ctx.getApplicationContext();
@@ -262,7 +263,8 @@ public class RenderScript {
     }
 
     
-        static void _nInit() {
+        @DSModeled(DSC.SAFE)
+    static void _nInit() {
     }
 
     
@@ -283,6 +285,7 @@ public class RenderScript {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.329 -0400", hash_original_method = "3523058A47E8BE15ED01358E8A9C1317", hash_generated_method = "3443034403B40760A4ABC0BA8D0D1573")
      int nContextGetUserMessage(int con, int[] data) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_72721460 = getTaintInt();
@@ -290,6 +293,7 @@ public class RenderScript {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.333 -0400", hash_original_method = "A170821D17F63D9EDF5AAFFF93CB7028", hash_generated_method = "1C435B28B274730163B2755B3AC76CDA")
      String nContextGetErrorMessage(int con) {
     	taint.addTaint(con);
@@ -328,6 +332,7 @@ public class RenderScript {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.367 -0400", hash_original_method = "C173B3C3D5C34C342E9D2D41CD367CF5", hash_generated_method = "C7C2BB3D526672D77B7AD34E705229E8")
     synchronized int nContextCreateGL(int dev, int ver, int sdkVer,
                  int colorMin, int colorPref,
@@ -371,6 +376,7 @@ public class RenderScript {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.380 -0400", hash_original_method = "F258E8147FC7C8BED48B75E7E07A1B28", hash_generated_method = "036D1D0821005BC1281AC164578EA55C")
     synchronized int nContextCreate(int dev, int ver, int sdkVer) {
         addTaint(sdkVer);
@@ -536,6 +542,7 @@ public class RenderScript {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.478 -0400", hash_original_method = "1F420C5E57E15F5EA59327C192955502", hash_generated_method = "43D6400CF7A10E74C61F7D21492BFEFF")
     synchronized void nContextBindProgramFragment(int pf) {
         addTaint(pf);
@@ -568,6 +575,7 @@ public class RenderScript {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.494 -0400", hash_original_method = "A0B057C7956173D5D797DAE35AD47DB0", hash_generated_method = "8111F99C345A942FC942D74FA5109ED1")
     synchronized void nContextBindProgramRaster(int pr) {
         addTaint(pr);
@@ -626,6 +634,7 @@ public class RenderScript {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.519 -0400", hash_original_method = "6CFEA087E7A290E3C39BE13FE6867185", hash_generated_method = "E4F6A8A0464E8FFDD20E28A294151A61")
      String rsnGetName(int con, int obj) {
     	addTaint(con);
@@ -654,6 +663,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.529 -0400", hash_original_method = "3CD43707F03704504C516530F93524E9", hash_generated_method = "1494140782E6C49CC50653D4D3BF1D09")
     synchronized void nObjDestroy(int id) {
         addTaint(id);
@@ -698,6 +708,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.558 -0400", hash_original_method = "0F9A5A9DC528909436C7DAB5B96B0A92", hash_generated_method = "8FB41A3B884E9A8222075AFC5ABBC7A9")
     synchronized int nElementCreate2(int[] elements, String[] names, int[] arraySizes) {
         addTaint(arraySizes[0]);
@@ -736,6 +747,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.576 -0400", hash_original_method = "EF8F1F438E62125221A12E7AB1122C9E", hash_generated_method = "42BD8825FD4F77BAEFB3BE3FAD4278D7")
     synchronized void nElementGetSubElements(int id, int[] IDs, String[] names, int[] arraySizes) {
         addTaint(arraySizes[0]);
@@ -757,6 +769,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.587 -0400", hash_original_method = "5BC12238B0743B47577319FCBD22C49B", hash_generated_method = "D62981E26D029F3CB24F9CA312B066BB")
     synchronized int nTypeCreate(int eid, int x, int y, int z, boolean mips, boolean faces) {
         addTaint(faces);
@@ -780,6 +793,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.595 -0400", hash_original_method = "14DE3B66A3D39638378078881D754C6E", hash_generated_method = "E589096FDACFBCDBCBD5344BDAFA353B")
     synchronized void nTypeGetNativeData(int id, int[] typeData) {
         addTaint(typeData[0]);
@@ -844,6 +858,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.629 -0400", hash_original_method = "1C76695BCAC6B196308AF162882963A2", hash_generated_method = "52534C766C9D82B3C8A1047FA3DE83DF")
     synchronized int nAllocationCubeCreateFromBitmap(int type, int mip, Bitmap bmp, int usage) {
         addTaint(usage);
@@ -860,6 +875,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.634 -0400", hash_original_method = "180A66856BA5C89E33ED9E70F522DAF8", hash_generated_method = "7BF45D927EB52F44B8FD7D41B94492C3")
      int rsnAllocationCreateBitmapRef(int con, int type, Bitmap bmp) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_605271202 = getTaintInt();
@@ -942,6 +958,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.677 -0400", hash_original_method = "80A37887BF534CD573848EE87B5881CB", hash_generated_method = "070B5A7157786750F03F823BBD81DA59")
     synchronized void nAllocationGenerateMipmaps(int alloc) {
         addTaint(alloc);
@@ -953,6 +970,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.681 -0400", hash_original_method = "90AF2E8BDCC3B2A5C7CEEAB496515689", hash_generated_method = "58CF2055C7C1CDC39C71211090E0ED0C")
      void rsnAllocationCopyFromBitmap(int con, int alloc, Bitmap bmp) {
     }
@@ -975,6 +993,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.697 -0400", hash_original_method = "5856F0672F738C4E210FC0F2E55D57A5", hash_generated_method = "8CC880BB5B09BDAB8E7CCB5F41F625F3")
     synchronized void nAllocationData1D(int id, int off, int mip, int count, int[] d, int sizeBytes) {
         addTaint(sizeBytes);
@@ -996,6 +1015,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.707 -0400", hash_original_method = "E0E3C0B0ECD98F97C6BCBD38CE726044", hash_generated_method = "137A30707FB455E22DAA5D049718FEC7")
     synchronized void nAllocationData1D(int id, int off, int mip, int count, short[] d, int sizeBytes) {
         addTaint(sizeBytes);
@@ -1038,6 +1058,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.730 -0400", hash_original_method = "722C4C8DF700A391C4018926795A6887", hash_generated_method = "E0DE510D206C12274D8E4A5575026E91")
     synchronized void nAllocationData1D(int id, int off, int mip, int count, float[] d, int sizeBytes) {
         addTaint(sizeBytes);
@@ -1085,6 +1106,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.752 -0400", hash_original_method = "466039336F12CBCD5A6796B706C69F57", hash_generated_method = "B6BF9441FFBC701579E7F6AB5EEC77AD")
     synchronized void nAllocationData2D(int dstAlloc, int dstXoff, int dstYoff,
                                         int dstMip, int dstFace,
@@ -1150,6 +1172,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.776 -0400", hash_original_method = "9BA3D71C4DAE136A278E0FEE1F9ABC46", hash_generated_method = "80E0665E85A9B594077D5669E4BE79AC")
     synchronized void nAllocationData2D(int id, int xoff, int yoff, int mip, int face, int w, int h, short[] d, int sizeBytes) {
         addTaint(sizeBytes);
@@ -1198,6 +1221,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.800 -0400", hash_original_method = "5B0B36C68109F844B2872F22AC2A0713", hash_generated_method = "2F436852D5CF6714E620B6E291EC4C00")
     synchronized void nAllocationData2D(int id, int xoff, int yoff, int mip, int face, int w, int h, float[] d, int sizeBytes) {
         addTaint(sizeBytes);
@@ -1260,6 +1284,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.826 -0400", hash_original_method = "70B197E638C9B33B94B98D696E0DF1EE", hash_generated_method = "E8F7D5A0904A940585E743BA3E5F0575")
     synchronized void nAllocationRead(int id, short[] d) {
         addTaint(d[0]);
@@ -1294,6 +1319,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.862 -0400", hash_original_method = "7BE8098A69829EC69DAFD2BED79C8C96", hash_generated_method = "7FEDD9E63E8BE8D78734A845F2D54EB4")
     synchronized void nAllocationRead(int id, float[] d) {
         addTaint(d[0]);
@@ -1368,6 +1394,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.889 -0400", hash_original_method = "CE06132BC9BE17513589F52D66BB7BA4", hash_generated_method = "3C5FA25EA26C5B6FFDDF21942C81577B")
     synchronized int nFileA3DCreateFromAssetStream(int assetStream) {
         addTaint(assetStream);
@@ -1408,6 +1435,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.903 -0400", hash_original_method = "78D008846307EDF4BB828507DB4375FC", hash_generated_method = "060E6E6F5658E992C95EEC790DBF9CD1")
     synchronized int nFileA3DCreateFromAsset(AssetManager mgr, String path) {
         addTaint(path.getTaint());
@@ -1422,6 +1450,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.907 -0400", hash_original_method = "E83515FA6039EB0E25B32B02E6CEB77F", hash_generated_method = "196C0C89B61C71044AFE39A17EF70318")
      int rsnFileA3DGetNumIndexEntries(int con, int fileA3D) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1398168911 = getTaintInt();
@@ -1429,6 +1458,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.911 -0400", hash_original_method = "99F99C35E73D8D693E61A61415FFF9EA", hash_generated_method = "132C572774CE12874515A3BE5F38614C")
     synchronized int nFileA3DGetNumIndexEntries(int fileA3D) {
         addTaint(fileA3D);
@@ -1442,11 +1472,13 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.914 -0400", hash_original_method = "083FBBD551DC759D09A4D41AFC623D49", hash_generated_method = "53D32C18633FE8A1AF06F91D64D477A6")
      void rsnFileA3DGetIndexEntries(int con, int fileA3D, int numEntries, int[] IDs, String[] names) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.917 -0400", hash_original_method = "085782AB2C8843757607A11D98246CAF", hash_generated_method = "635B2E56DA56E26A1B7C3373C772C3D4")
     synchronized void nFileA3DGetIndexEntries(int fileA3D, int numEntries, int[] IDs, String[] names) {
         addTaint(names[0].getTaint());
@@ -1511,6 +1543,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.942 -0400", hash_original_method = "B968FFC0200F2C5E93F70FBA02BD6807", hash_generated_method = "B9F15B995D8DD9C8598ECAB27339B1CC")
     synchronized int nFontCreateFromAssetStream(String name, float size, int dpi, int assetStream) {
         addTaint(assetStream);
@@ -1534,6 +1567,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.951 -0400", hash_original_method = "C697253A4D3C38A6CFB3ACB5EE2CAD91", hash_generated_method = "7A94F4D994D9550E6B07CC5AF3623726")
     synchronized int nFontCreateFromAsset(AssetManager mgr, String path, float size, int dpi) {
         addTaint(dpi);
@@ -1573,6 +1607,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.961 -0400", hash_original_method = "48BAAAF24107E03AA3257E0376F915FC", hash_generated_method = "1D12463CB87D449F738A48E6F4D9C3E9")
     synchronized void nScriptSetTimeZone(int script, byte[] timeZone) {
         addTaint(timeZone[0]);
@@ -1590,6 +1625,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.969 -0400", hash_original_method = "7C1247C571044789B0C33D555F9DF160", hash_generated_method = "9CD4626814F8A18990B3419A1FA5551F")
     synchronized void nScriptInvoke(int id, int slot) {
         addTaint(slot);
@@ -1661,6 +1697,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.998 -0400", hash_original_method = "63E8F5B280969990BEAC43D4E0EF38F8", hash_generated_method = "F0151F29455CCA11EE8EAF370A3AEF1D")
     synchronized void nScriptSetVarI(int id, int slot, int val) {
         addTaint(val);
@@ -1715,6 +1752,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.019 -0400", hash_original_method = "904F50593DCA228E32CBF04970112136", hash_generated_method = "92886F5ABB862999AC3E4093079BF35C")
     synchronized void nScriptSetVarD(int id, int slot, double val) {
         addTaint(val);
@@ -1772,6 +1810,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.043 -0400", hash_original_method = "4F8B925AC1F308D7AD1224364C3D3B15", hash_generated_method = "03891B13D9406FEF524B217DD4798B71")
     synchronized int nScriptCCreate(String resName, String cacheDir, byte[] script, int length) {
         addTaint(length);
@@ -1824,6 +1863,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.066 -0400", hash_original_method = "C24E51CD5756A917243C92AD71BD6904", hash_generated_method = "67622FA8F8E413F501714656F5EEB210")
     synchronized int nProgramStoreCreate(boolean r, boolean g, boolean b, boolean a,
                                          boolean depthMask, boolean dither,
@@ -1931,6 +1971,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.100 -0400", hash_original_method = "7F7692EDFB515ECAB003706ED08D9F8F", hash_generated_method = "359F793E9FB8436E74EE6A1C4B242766")
     synchronized int nProgramFragmentCreate(String shader, int[] params) {
         addTaint(params[0]);
@@ -1952,6 +1993,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.105 -0400", hash_original_method = "B69763FC594958BE82AD97B79A28F61B", hash_generated_method = "627AB5F1CAE4DE2A476AE53ADDA81A4F")
     synchronized int nProgramVertexCreate(String shader, int[] params) {
         addTaint(params[0]);
@@ -1973,6 +2015,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.112 -0400", hash_original_method = "929E2A8C64A9DBA6124E7BFD301DDFCC", hash_generated_method = "AA81F0174D10EAD74062C310746219B1")
     synchronized int nMeshCreate(int[] vtx, int[] idx, int[] prim) {
         addTaint(prim[0]);
@@ -1995,6 +2038,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.120 -0400", hash_original_method = "875C46919B8ED204A3CE3A9CCDF94192", hash_generated_method = "C0C4349A50C0AC14F559F7C9FD528C8E")
     synchronized int nMeshGetVertexBufferCount(int id) {
         addTaint(id);
@@ -2015,6 +2059,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.127 -0400", hash_original_method = "FE806BF77D2052883B37B5F96DE92297", hash_generated_method = "32EC12091F96D9BC11E8F3FEA91943B1")
     synchronized int nMeshGetIndexCount(int id) {
         addTaint(id);
@@ -2033,6 +2078,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.133 -0400", hash_original_method = "30F5280204C1F68BA9056A749144827E", hash_generated_method = "29E4EED772AA2543C910087B3D5844E8")
     synchronized void nMeshGetVertices(int id, int[] vtxIds, int vtxIdCount) {
         addTaint(vtxIdCount);
@@ -2065,6 +2111,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.142 -0400", hash_original_method = "CF72E2BDE12484DABE239AEA560D3CB7", hash_generated_method = "96352817DC99DF34A4D0E9FC4C5E469F")
     public void setMessageHandler(RSMessageHandler msg) {
         mMessageCallback = msg;
@@ -2073,6 +2120,7 @@ String var9CDC149B46767D0165FA75FFC9A1A976_1451987286 =         rsnGetName(mCont
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.145 -0400", hash_original_method = "82D97F3970F404AFF823D5438797134A", hash_generated_method = "6DCF304D53D175E5CFED057D45132ADE")
     public RSMessageHandler getMessageHandler() {
 RSMessageHandler var9B539E83F365A4F09C8E2B69C18CC438_2029753803 =         mMessageCallback;
@@ -2083,6 +2131,7 @@ RSMessageHandler var9B539E83F365A4F09C8E2B69C18CC438_2029753803 =         mMessa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.149 -0400", hash_original_method = "4877C344E3780CDA73E2F7D1DEF2ACC3", hash_generated_method = "F8A2A0B8B025FA82FB15B97076336AA6")
     public void setErrorHandler(RSErrorHandler msg) {
         mErrorCallback = msg;
@@ -2091,6 +2140,7 @@ RSMessageHandler var9B539E83F365A4F09C8E2B69C18CC438_2029753803 =         mMessa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.152 -0400", hash_original_method = "ADE7ED7BE0087974A98B5046E26EDD87", hash_generated_method = "90444216DB86D5C677ADBFEEB972CBA3")
     public RSErrorHandler getErrorHandler() {
 RSErrorHandler var1F5754A1B349282E71CA62D3147F81C9_1960579285 =         mErrorCallback;
@@ -2101,6 +2151,7 @@ RSErrorHandler var1F5754A1B349282E71CA62D3147F81C9_1960579285 =         mErrorCa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.155 -0400", hash_original_method = "B11FCBCEEF16462E5ED7B31A808EFF86", hash_generated_method = "CE016D29B619E3B2A656946AA27182A7")
      void validate() {
         if(mContext == 0)        
@@ -2116,6 +2167,7 @@ RSErrorHandler var1F5754A1B349282E71CA62D3147F81C9_1960579285 =         mErrorCa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.158 -0400", hash_original_method = "825B7EB852BA71F680F1CE64DECBD5CC", hash_generated_method = "DD8F6D0DB118DC5950BF9F9C45A94DAE")
     public void setPriority(Priority p) {
         addTaint(p.getTaint());
@@ -2127,6 +2179,7 @@ RSErrorHandler var1F5754A1B349282E71CA62D3147F81C9_1960579285 =         mErrorCa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.161 -0400", hash_original_method = "212FB98379B009D6F1B7FAC8BEC777BD", hash_generated_method = "215231A8EF33407EEA148D289617080C")
     public final Context getApplicationContext() {
 Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationContext;
@@ -2137,7 +2190,8 @@ Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationCon
     }
 
     
-        static int getTargetSdkVersion(Context ctx) {
+        @DSModeled(DSC.SAFE)
+    static int getTargetSdkVersion(Context ctx) {
         return ctx.getApplicationInfo().targetSdkVersion;
     }
 
@@ -2205,6 +2259,7 @@ Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationCon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.180 -0400", hash_original_method = "A43F31159E3962997DEA8993C2ED3F03", hash_generated_method = "7CD864895F425E9EC322955EE2DECA71")
      boolean isAlive() {
         boolean var8879B8CF0C39447D29F535C6F77F6403_362832684 = (mContext != 0);
@@ -2253,6 +2308,7 @@ Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationCon
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.192 -0400", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "A2E5AE58616EECC7176440E5139E1684")
         public void run() {
             // ---------- Original Method ----------
@@ -2278,6 +2334,7 @@ Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationCon
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.197 -0400", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "A2E5AE58616EECC7176440E5139E1684")
         public void run() {
             // ---------- Original Method ----------
@@ -2292,6 +2349,7 @@ Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationCon
         LOW (Process.THREAD_PRIORITY_BACKGROUND + (5 * Process.THREAD_PRIORITY_LESS_FAVORABLE)),
         NORMAL (Process.THREAD_PRIORITY_DISPLAY);
         int mID;
+        @DSModeled(DSC.SAFE)
         Priority(int id) {
             mID = id;
         }
@@ -2309,6 +2367,7 @@ Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationCon
 
         int[] mAuxData = new int[2];
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.204 -0400", hash_original_method = "79018AA2643FA8D0F3347744AA1B7202", hash_generated_method = "0A2DD55549386E0BEF1D448A6847B713")
           MessageThread(RenderScript rs) {
             super("RSMessageThread");
@@ -2318,6 +2377,7 @@ Context var6B4648A08B12DFB77FAB8FC464E2263F_2009422266 =         mApplicationCon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.214 -0400", hash_original_method = "44BE69ACBAD20FBF8ED2712E597F95F7", hash_generated_method = "FC1695F22AFA3A7AB5EF9F3BF7BB17A2")
         public void run() {
             int[] rbuf = new int[16];

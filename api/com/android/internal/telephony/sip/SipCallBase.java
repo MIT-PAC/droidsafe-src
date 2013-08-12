@@ -41,6 +41,7 @@ List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_1670422350 =         connec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.072 -0400", hash_original_method = "E944BDEAA6C46A001782606E74F9EFB0", hash_generated_method = "51372B373F5D8E4E007C0BAF396FCF08")
     public boolean isMultiparty() {
         boolean var29D4E14E3A46A0A5CCEDD95593D030FA_2087115458 = (connections.size() > 1);
@@ -51,6 +52,7 @@ List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_1670422350 =         connec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.073 -0400", hash_original_method = "7D1F122E9D021AC073DB09CCD6084B65", hash_generated_method = "4DD15297FD07231E1140C585BDA7EA0A")
     public String toString() {
 String varB1A957162262627393F3B354A09765F0_1384313610 =         state.toString() + ":" + super.toString();

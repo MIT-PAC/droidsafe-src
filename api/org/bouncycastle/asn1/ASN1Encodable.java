@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public abstract class ASN1Encodable implements DEREncodable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.598 -0400", hash_original_method = "821D90F216C7C1EC15D73655F548D7FA", hash_generated_method = "821D90F216C7C1EC15D73655F548D7FA")
     public ASN1Encodable ()
     {
@@ -19,6 +20,7 @@ public abstract class ASN1Encodable implements DEREncodable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.598 -0400", hash_original_method = "C8FCAC6682497FE618C0D5AA310E3FD0", hash_generated_method = "F1EDEA5E7BF01DBE19522C48C22CB203")
     public byte[] getEncoded() throws IOException {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
@@ -35,6 +37,7 @@ public abstract class ASN1Encodable implements DEREncodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.599 -0400", hash_original_method = "0EE5AC212F5921A1423603D1CACD3165", hash_generated_method = "14522D6D6CEB59D366748BC998C37EF1")
     public byte[] getEncoded(
         String encoding) throws IOException {
@@ -89,6 +92,7 @@ public abstract class ASN1Encodable implements DEREncodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.600 -0400", hash_original_method = "E92DD8C6A04F1DEE3C1D21F3A4F15F7B", hash_generated_method = "011AD74E4C0ED2975699A2B0FC81D699")
     public int hashCode() {
         int varDF1C8DD71A594A916AF740C69638FD5A_665790304 = (this.toASN1Object().hashCode());
@@ -99,6 +103,7 @@ public abstract class ASN1Encodable implements DEREncodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.600 -0400", hash_original_method = "234E7FC050F6E9ED95377E5CED033E83", hash_generated_method = "AB2C5612056E76BE8B803A3C209D8A7C")
     public boolean equals(
         Object  o) {
@@ -133,6 +138,7 @@ public abstract class ASN1Encodable implements DEREncodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.601 -0400", hash_original_method = "AC000C3F3D93D2894978F92780762A2E", hash_generated_method = "F80DB3490B8E9958523EECE7C54FA64A")
     public DERObject getDERObject() {
 DERObject var15B299BB545D52AE6F55579E211C4634_554182251 =         this.toASN1Object();

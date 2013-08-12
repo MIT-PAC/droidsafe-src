@@ -14,6 +14,7 @@ public class ConnectionPoolTimeoutException extends ConnectTimeoutException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.665 -0400", hash_original_method = "6FAEC3D93E1C94116A1DCC64CCDF43BD", hash_generated_method = "3EBF732B8E5E87EE56ADABE1CAC4B953")
     public  ConnectionPoolTimeoutException(String message) {
         super(message);

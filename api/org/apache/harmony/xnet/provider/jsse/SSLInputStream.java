@@ -28,6 +28,7 @@ public abstract int available() throws IOException;
 public abstract int read() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.275 -0400", hash_original_method = "4E61964AC41EB7FF0B969F3A0D2A867E", hash_generated_method = "9762D204EB12B4AFFE16061E1BCDCF9C")
     public int readUint8() throws IOException {
         int varDE564EBA10F50982773C535F5DD0C71C_981688323 = (read() & 0x00FF);
@@ -38,6 +39,7 @@ public abstract int read() throws IOException;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.275 -0400", hash_original_method = "0E243896410AF2472245902D7F89ED82", hash_generated_method = "A4F203D275815E04E05079BCA940CDA6")
     public int readUint16() throws IOException {
         int varE92D816B59C876C1E075FB7408EC5632_1231032009 = ((read() << 8) | (read() & 0x00FF));
@@ -48,6 +50,7 @@ public abstract int read() throws IOException;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.276 -0400", hash_original_method = "B71B56A9E36B8A8CD4C9FE0969EFEC79", hash_generated_method = "0F2BAF2ADB15238AC1A8FDCD9ADE9C1D")
     public int readUint24() throws IOException {
         int var3B1BC9CE46E8D9ABE7F7ADDE655F6975_1020621217 = ((read() << 16) | (read() << 8) | (read() & 0x00FF));
@@ -58,6 +61,7 @@ public abstract int read() throws IOException;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.276 -0400", hash_original_method = "18D59391AE7948DA8080AA965DB6CE79", hash_generated_method = "BF72E0ACAB5C87BFEA0F47CB9ACBCCFD")
     public long readUint32() throws IOException {
         long var52385B0F5BA643C7B7E882733711900E_1096688019 = ((read() << 24) | (read() << 16)
@@ -70,6 +74,7 @@ public abstract int read() throws IOException;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.276 -0400", hash_original_method = "85B7C4B5BFF5E58A56D479C7E3A9AABB", hash_generated_method = "82F2221D734F10AB2F932D39D3FD3BBF")
     public long readUint64() throws IOException {
         long hi = readUint32();
@@ -84,6 +89,7 @@ public abstract int read() throws IOException;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.277 -0400", hash_original_method = "22A07573F54A4BDDEECBBE8A8D080BB9", hash_generated_method = "C6BCBF33B8D75C1DA11D0F9C550CAA05")
     public byte[] read(int length) throws IOException {
         addTaint(length);
@@ -104,6 +110,7 @@ for(int i=0;i<length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.278 -0400", hash_original_method = "50426CF7D6642F19D28119E1D947BED8", hash_generated_method = "B11FB0B7570F13F0F9A443529AB52084")
     @Override
     public int read(byte[] b, int off, int len) throws IOException {

@@ -325,6 +325,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_861255321 =         this.peerProtocol
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.644 -0400", hash_original_method = "05F3A695AC32E3040A89EFF8F81F947F", hash_generated_method = "B676ADEA8367A850F76CEC88B8F4E236")
     public void sendMessage(SIPMessage sipMessage) throws IOException {
         addTaint(sipMessage.getTaint());
@@ -415,6 +416,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_861255321 =         this.peerProtocol
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.646 -0400", hash_original_method = "10E78FE9041FD1B7C26A106A739E4ED8", hash_generated_method = "9AB52A3F88966B0E20D117752474CBD7")
     public void handleException(ParseException ex, SIPMessage sipMessage, Class hdrClass,
             String header, String message) throws ParseException {
@@ -478,6 +480,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_861255321 =         this.peerProtocol
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.648 -0400", hash_original_method = "688E2F52AD2D71AD93C4E5B7CEC68AD5", hash_generated_method = "314B3EC80893570C0475EA0BA2156268")
     public void processMessage(SIPMessage sipMessage) throws Exception {
         addTaint(sipMessage.getTaint());

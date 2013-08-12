@@ -28,6 +28,7 @@ public final class HostPort extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.391 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "A382DEE829A2CE27BC57E57BD513EBEE")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_1009216447 =         encode(new StringBuffer()).toString();
@@ -146,6 +147,7 @@ Host var872E07117C05F1A34EC24B57B694B8E3_810632837 =         host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.394 -0400", hash_original_method = "1454562F409CD451F70F3E17F975E5B5", hash_generated_method = "A5C6FF8F9D4DBC2F4737CF0EED7AE7E1")
     public InetAddress getInetAddress() throws java.net.UnknownHostException {
         if(host == null)        

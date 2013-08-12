@@ -10,12 +10,14 @@ import java.util.Enumeration;
 
 public class DERSet extends ASN1Set {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.544 -0400", hash_original_method = "80B25DE2FCBFBCCF6E0A2A88A3316812", hash_generated_method = "E2F348A362CEF042606CF762BF3B5EB7")
     public  DERSet() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.545 -0400", hash_original_method = "80662AFE581998795E7545830F255DD3", hash_generated_method = "1AF6D4C764D9D30686464052997CC1BD")
     public  DERSet(
         DEREncodable   obj) {
@@ -26,6 +28,7 @@ public class DERSet extends ASN1Set {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.546 -0400", hash_original_method = "A9BFF2B058FC769C1F8C48EB1BA33880", hash_generated_method = "D4AE1ADA836B997AEC7153AB13E423E0")
     public  DERSet(
         ASN1EncodableVector   v) {
@@ -35,6 +38,7 @@ public class DERSet extends ASN1Set {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.546 -0400", hash_original_method = "DFBC1065284BB1C2F3C0505C2EF2AEEC", hash_generated_method = "38CD7E0272B0BA2FF8EC000C6FE99F1B")
     public  DERSet(
         ASN1Encodable[]   a) {
@@ -53,6 +57,7 @@ for(int i = 0;i != a.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.547 -0400", hash_original_method = "90B6A9A913780E80B577423E4251EEF7", hash_generated_method = "0320FB5F86DB4E0FC5C9616BE7D79277")
       DERSet(
         ASN1EncodableVector  v,
@@ -79,6 +84,7 @@ for(int i = 0;i != v.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.548 -0400", hash_original_method = "0C0574F6B6AA5F6F63D97835BA3FFE58", hash_generated_method = "ACCF67678B0977E96B7C0E12CF3AFBB4")
      void encode(
         DEROutputStream out) throws IOException {

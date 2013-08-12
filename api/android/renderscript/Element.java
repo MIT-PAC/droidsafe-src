@@ -97,6 +97,7 @@ for(int ct = 0;ct < mElements.length;ct++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.208 -0400", hash_original_method = "C4EFD6253604440679EF13CF69D2FF93", hash_generated_method = "30D29169204F7BA0FD51CFBBE19BD7A1")
       Element(int id, RenderScript rs) {
         super(id, rs);
@@ -106,6 +107,7 @@ for(int ct = 0;ct < mElements.length;ct++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.213 -0400", hash_original_method = "0A9009DB77E5CAA409A88E1F9233C5BB", hash_generated_method = "226DBE09E1C0C94BCF68E5340320ADA0")
     public int getSizeBytes() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_1263664508 = (mSize);
@@ -116,6 +118,7 @@ for(int ct = 0;ct < mElements.length;ct++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.226 -0400", hash_original_method = "62F3D976050C390A4D28EE7C5F1BA715", hash_generated_method = "130FE49B10F3C1358AE34D5763958F38")
     public boolean isComplex() {
         if(mElements == null)        
@@ -149,6 +152,7 @@ for(int ct=0;ct < mElements.length;ct++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.238 -0400", hash_original_method = "D2C3182AD613A846205329B1E6C8F2DD", hash_generated_method = "E170803E5449688591A4E83F75A57C49")
     public int getSubElementCount() {
         if(mElements == null)        
@@ -168,6 +172,7 @@ for(int ct=0;ct < mElements.length;ct++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.245 -0400", hash_original_method = "14503E907986F4FAF260BC78C8B9B60E", hash_generated_method = "7657982606455F339312064001A7A68C")
     public Element getSubElement(int index) {
         addTaint(index);
@@ -197,6 +202,7 @@ Element var01634E1010C71CE7AF89626E37E0002C_180239634 =         mElements[index]
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.253 -0400", hash_original_method = "E8F6A160EAF7D73719B978688CDD0426", hash_generated_method = "1188009D492A8873F88E4F17A6037D7D")
     public String getSubElementName(int index) {
         addTaint(index);
@@ -226,6 +232,7 @@ String var9EBA82020782C4E7141C35B9A8C03EC7_321162436 =         mElementNames[ind
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.260 -0400", hash_original_method = "19B70985107F13C23CD2C2D21B16BDB6", hash_generated_method = "6EDCEA05FCE1D815A8241E240C049FF4")
     public int getSubElementArraySize(int index) {
         addTaint(index);
@@ -255,6 +262,7 @@ String var9EBA82020782C4E7141C35B9A8C03EC7_321162436 =         mElementNames[ind
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.280 -0400", hash_original_method = "1AC48AE3A04EA0A2E41E968266E6585D", hash_generated_method = "5471ADEF5D725ACA42AF30A69E13CFB6")
     public int getSubElementOffsetBytes(int index) {
         addTaint(index);
@@ -372,7 +380,8 @@ String var9EBA82020782C4E7141C35B9A8C03EC7_321162436 =         mElementNames[ind
     }
 
     
-        public static Element ELEMENT(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static Element ELEMENT(RenderScript rs) {
         if(rs.mElement_ELEMENT == null) {
             rs.mElement_ELEMENT = createUser(rs, DataType.RS_ELEMENT);
         }
@@ -388,7 +397,8 @@ String var9EBA82020782C4E7141C35B9A8C03EC7_321162436 =         mElementNames[ind
     }
 
     
-        public static Element ALLOCATION(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static Element ALLOCATION(RenderScript rs) {
         if(rs.mElement_ALLOCATION == null) {
             rs.mElement_ALLOCATION = createUser(rs, DataType.RS_ALLOCATION);
         }
@@ -548,7 +558,8 @@ String var9EBA82020782C4E7141C35B9A8C03EC7_321162436 =         mElementNames[ind
     }
 
     
-        public static Element U8_2(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static Element U8_2(RenderScript rs) {
         if(rs.mElement_UCHAR_2 == null) {
             rs.mElement_UCHAR_2 = createVector(rs, DataType.UNSIGNED_8, 2);
         }
@@ -572,7 +583,8 @@ String var9EBA82020782C4E7141C35B9A8C03EC7_321162436 =         mElementNames[ind
     }
 
     
-        public static Element I8_2(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static Element I8_2(RenderScript rs) {
         if(rs.mElement_CHAR_2 == null) {
             rs.mElement_CHAR_2 = createVector(rs, DataType.SIGNED_8, 2);
         }
@@ -815,7 +827,8 @@ for(int i = 0;i < numSubElements;i ++)
     }
 
     
-        static Element createUser(RenderScript rs, DataType dt) {
+        @DSModeled(DSC.SAFE)
+    static Element createUser(RenderScript rs, DataType dt) {
         DataKind dk = DataKind.USER;
         boolean norm = false;
         int vecSize = 1;
@@ -824,7 +837,8 @@ for(int i = 0;i < numSubElements;i ++)
     }
 
     
-        public static Element createVector(RenderScript rs, DataType dt, int size) {
+        @DSModeled(DSC.SAFE)
+    public static Element createVector(RenderScript rs, DataType dt, int size) {
         if (size < 2 || size > 4) {
             throw new RSIllegalArgumentException("Vector size out of range 2-4.");
         }
@@ -885,6 +899,7 @@ for(int i = 0;i < numSubElements;i ++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.526 -0400", hash_original_method = "10DB51484387728F55F8C48219903602", hash_generated_method = "BC1AD983DE9F581843F62A938B43F1A3")
     public boolean isCompatible(Element e) {
         addTaint(e.getTaint());
@@ -980,6 +995,7 @@ for(int i = 0;i < numSubElements;i ++)
 
         int mCount;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:20.546 -0400", hash_original_method = "728E8165442E638E6B663EFB1CAFAD98", hash_generated_method = "B53B1552DDFD01DAA6F10BE491EA7758")
         public  Builder(RenderScript rs) {
             mRS = rs;

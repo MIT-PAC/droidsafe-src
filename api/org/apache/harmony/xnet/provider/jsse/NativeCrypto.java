@@ -147,7 +147,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int X509_NAME_hash(X500Principal principal) {
         return X509_NAME_hash(principal, "SHA1");
     }
@@ -226,7 +226,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String[] getSupportedCipherSuites() {
         return SUPPORTED_CIPHER_SUITES.clone();
     }
@@ -244,7 +244,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static byte[][] encodeCertificates(Certificate[] certificates) throws CertificateEncodingException {
         byte[][] certificateBytes = new byte[certificates.length][];
         for (int i = 0; i < certificates.length; i++) {
@@ -354,7 +354,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String[] checkEnabledProtocols(String[] protocols) {
         if (protocols == null) {
             throw new IllegalArgumentException("protocols == null");
@@ -396,6 +396,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] checkEnabledCipherSuites(String[] cipherSuites) {
         if (cipherSuites == null) {
             throw new IllegalArgumentException("cipherSuites == null");
@@ -432,7 +433,7 @@ public final class NativeCrypto {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String[] checkEnabledCompressionMethods(String[] methods) {
         if (methods == null) {
             throw new IllegalArgumentException("methods == null");

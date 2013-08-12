@@ -19,6 +19,7 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.942 -0400", hash_original_method = "5546FFAC9B42B6F49AEA710C665EF80A", hash_generated_method = "934C359343DE9AB631BA86A99151E869")
     protected  KeyPairGenerator(String algorithm) {
         this.algorithm = algorithm;
@@ -38,6 +39,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_738953698 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyPairGenerator getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -55,6 +57,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_738953698 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyPairGenerator getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
@@ -67,6 +70,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_738953698 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyPairGenerator getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -97,6 +101,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2145995178 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.945 -0400", hash_original_method = "63D58B7A783E5CA62351478BDCD64960", hash_generated_method = "5D488A6D8ED37B8C596F1608602ABECF")
     public void initialize(int keysize) {
         addTaint(keysize);
@@ -106,6 +111,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2145995178 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.945 -0400", hash_original_method = "505B12303F8A8E9420867471775AD0AC", hash_generated_method = "5D2148C8BF7941483E8F1F8874FCA211")
     public void initialize(AlgorithmParameterSpec param) throws InvalidAlgorithmParameterException {
         addTaint(param.getTaint());
@@ -115,6 +121,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2145995178 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.946 -0400", hash_original_method = "0A0D3545CE028F03545250CE4A841A43", hash_generated_method = "7F67EE7919A376E79F73FB81C960D1DA")
     public final KeyPair genKeyPair() {
 KeyPair var7EF0CBCA1B0CA80E47B1AE4032BB7E5C_697940814 =         generateKeyPair();
@@ -177,6 +184,7 @@ KeyPair var540C13E9E156B687226421B24F2DF178_1490885900 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.948 -0400", hash_original_method = "A4E5201D8A18A75F2C72ED6B7363B7D6", hash_generated_method = "99F29767E1EFAD8AD355A16C70513F13")
         @Override
         public void initialize(int keysize, SecureRandom random) {
@@ -188,6 +196,7 @@ KeyPair var540C13E9E156B687226421B24F2DF178_1490885900 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.948 -0400", hash_original_method = "44E6103A9DEB6D889A2EDBD2D91F5661", hash_generated_method = "F223D83E3F84EA2E23F6A7E0B9E2C89B")
         @Override
         public KeyPair generateKeyPair() {
@@ -199,6 +208,7 @@ KeyPair var7EFEDE5F49B93533C358711F7FDA93A1_99617471 =             spiImpl.gener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.949 -0400", hash_original_method = "4494520DAC0042C0E4EFE59D1D9956AB", hash_generated_method = "BB09A91F704409875F06B7B681529C33")
         @Override
         public void initialize(AlgorithmParameterSpec param, SecureRandom random) throws InvalidAlgorithmParameterException {

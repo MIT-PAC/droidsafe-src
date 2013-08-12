@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class UTFDataFormatException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.793 -0400", hash_original_method = "3EA36195962A4C2ABB96F147659089B7", hash_generated_method = "4F6021DB90D836B7A73C5500EB8CC7F8")
     public  UTFDataFormatException() {
         // ---------- Original Method ----------

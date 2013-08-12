@@ -96,10 +96,12 @@ for(DistributionPoint distributionPoint : distributionPoints)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.859 -0400", hash_original_field = "62B1FBBD0D0E4A202BE41C11512F1F03", hash_generated_field = "102F29B1A82B7676F643B080296B8FC7")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(DistributionPoint.ASN1) {
+        @DSModeled(DSC.BAN)
         @Override public Object getDecodedObject(BerInputStream in) {
             return new CRLDistributionPoints((List<DistributionPoint>) in.content, in.getEncoded());
         }
 
+        @DSModeled(DSC.SAFE)
         @Override public Collection<?> getValues(Object object) {
             CRLDistributionPoints dps = (CRLDistributionPoints) object;
             return dps.distributionPoints;

@@ -70,6 +70,7 @@ public class HostNameParser extends ParserCore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.365 -0400", hash_original_method = "12990E16E23A1648F6B6EE2410C75196", hash_generated_method = "194DC6C5237046C4DCF790E9780BDE84")
     protected String ipv6Reference() throws ParseException {
         StringBuffer retval = new StringBuffer();
@@ -163,6 +164,7 @@ String var1B324365A764C077A55854483509F4AB_1768909437 =                         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.368 -0400", hash_original_method = "59E4521A394425B7E70180091A99EC01", hash_generated_method = "DA27DCB9B83E5C572753EDDC414AAF34")
     public Host host() throws ParseException {
         if(debug)        
@@ -264,6 +266,7 @@ Host varF0B534F137321120478D6E10D568F47B_1490071819 =             new Host(hostn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.371 -0400", hash_original_method = "E96E49B49C2326325B1DB743C3D726B3", hash_generated_method = "A09835A8C007807A75B44A092743A5A3")
     public HostPort hostPort( boolean allowWS ) throws ParseException {
         addTaint(allowWS);

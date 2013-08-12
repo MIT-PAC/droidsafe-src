@@ -12,6 +12,7 @@ public class ObjectInUseException extends SipException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.271 -0400", hash_original_method = "DD9CAB8B2E3E5148E8AE5B5B0A2DE7DC", hash_generated_method = "1A4FB7D54C92ED629FC4D0715DEFC092")
     public  ObjectInUseException(String message) {
         super(message);

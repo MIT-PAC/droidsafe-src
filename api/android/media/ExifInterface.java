@@ -44,7 +44,7 @@ public class ExifInterface {
     }
 
     
-    @DSModeled(value = DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public String getAttribute(String tag) {
         String str = new String();
         str.addTaint(getTaint());
@@ -58,6 +58,7 @@ public class ExifInterface {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:44.173 -0400", hash_original_method = "2C50E27E79C50FB255BC7327C78A0595", hash_generated_method = "F17D71295901622B0CD3DD84EBDF6AD3")
     public double getAttributeDouble(String tag, double defaultValue) {
         addTaint(defaultValue);

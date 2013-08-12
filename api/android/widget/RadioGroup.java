@@ -76,7 +76,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.205 -0400", hash_original_method = "BF04917C1358A32EDE5746B4072D7D20", hash_generated_method = "2A140ABC2C96227F957D97D7A9C8FD90")
     private void init() {
         mChildOnCheckedChangeListener = new CheckedStateTracker();
@@ -192,7 +192,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.208 -0400", hash_original_method = "5FA05BD652ABFE7F3AF547784FD6946B", hash_generated_method = "B97F800B9977A6A9C7F55A446C7F3D8E")
     private void setCheckedId(int id) {
         mCheckedId = id;
@@ -208,7 +208,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.208 -0400", hash_original_method = "C9C9D7D4FE388186AB4F88F5226CFA81", hash_generated_method = "4B27C4883D03C940AFBC001E8032FDA5")
     private void setCheckedStateForView(int viewId, boolean checked) {
         addTaint(checked);

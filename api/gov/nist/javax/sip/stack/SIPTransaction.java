@@ -160,6 +160,7 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
 
     private boolean terminatedEventDelivered;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.218 -0400", hash_original_method = "5F08F1F6762C0D715B46AA0C57E5FACB", hash_generated_method = "507DFA64D167D2D1C4A77A984FABE7F2")
     protected  SIPTransaction(SIPTransactionStack newParentStack,
             MessageChannel newEncapsulatedChannel) {
@@ -205,6 +206,7 @@ String var69A3716B085C70456FAF3B1C9676E91B_984820405 =         this.branch;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.220 -0400", hash_original_method = "55609707D0B67BA3A76250F409DE303B", hash_generated_method = "5A3E7EB96C64D9DB1B9AB1F3F4E85EE7")
     public void setOriginalRequest(SIPRequest newOriginalRequest) {
         String newBranch;
@@ -469,6 +471,7 @@ TransactionState varE1BA4AD4226305F575CAC15460243810_1926058949 =         this.c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.224 -0400", hash_original_method = "CB8F1BD04D54E1B61EA5D28A66348AD3", hash_generated_method = "C79035BE2AEA44B6782CA9EC67B65A42")
     final void fireTimer() {
         if(timeoutTimerTicksLeft != -1)        
@@ -644,6 +647,7 @@ String var8B69557C59C7CB5255C13E623A252A06_858680985 =         encapsulatedChann
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.226 -0400", hash_original_method = "088E950799411477D094809B385ED56E", hash_generated_method = "EE9B5B02B51A6E51F4A58E1E51119555")
     public Via getViaHeader() {
         Via channelViaHeader;
@@ -669,6 +673,7 @@ Via var35DB1238D58BA2159EC3B88E973131F6_1492783654 =         channelViaHeader;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.226 -0400", hash_original_method = "937EBFADC181BFE1D9D7AD4237E3287B", hash_generated_method = "CA951E3974C9E074CA09C8C0C0DCCBEE")
     public void sendMessage(SIPMessage messageToSend) throws IOException {
         addTaint(messageToSend.getTaint());
@@ -691,6 +696,7 @@ Via var35DB1238D58BA2159EC3B88E973131F6_1492783654 =         channelViaHeader;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.226 -0400", hash_original_method = "40115A27A95909E2CE679A790D4014C9", hash_generated_method = "0106B00AC19E16B5494CA41AD246C0D5")
     protected void sendMessage(byte[] messageBytes,
             InetAddress receiverAddress, int receiverPort, boolean retry) throws IOException {
@@ -728,6 +734,7 @@ Via var35DB1238D58BA2159EC3B88E973131F6_1492783654 =         channelViaHeader;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.227 -0400", hash_original_method = "38D8606DEF077947D947856564D84874", hash_generated_method = "FB3E46969BC11E9DB17EFD0A1500F153")
     protected void raiseErrorEvent(int errorEventID) {
         addTaint(errorEventID);
@@ -868,6 +875,7 @@ String varB269BC87F0BB8E052BA29C2E89E50CF0_343544177 =         this.transactionI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.229 -0400", hash_original_method = "4C1135E1FB3652D771084DD3A5E7B7E8", hash_generated_method = "EB35FAFFB7E5331AB787AC8C7F993A48")
     public boolean doesCancelMatchTransaction(SIPRequest requestToTest) {
         addTaint(requestToTest.getTaint());
@@ -941,6 +949,7 @@ String varB269BC87F0BB8E052BA29C2E89E50CF0_343544177 =         this.transactionI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.230 -0400", hash_original_method = "348CFFAB37D4D83E29A04C573F3FF487", hash_generated_method = "F0977B055C501C63EC0479A1D139D657")
     public void setRetransmitTimer(int retransmitTimer) {
         if(retransmitTimer <= 0)        
@@ -1376,6 +1385,7 @@ java.security.cert.Certificate[] varA18727BD0A08AB36BEAE20E808F1D430_1084332265 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.234 -0400", hash_original_method = "14B41A6E0BE7E84E900DADE7EB6E3A9A", hash_generated_method = "0C253FD0E6C3B311B4F43D2ABDD28E37")
         protected void runTask() {
             SIPTransaction transaction = SIPTransaction.this;

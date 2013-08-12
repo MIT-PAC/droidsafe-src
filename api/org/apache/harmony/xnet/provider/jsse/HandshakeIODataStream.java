@@ -99,6 +99,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.586 -0400", hash_original_method = "86BACF12AABDF1D79A57ADD37C52BB94", hash_generated_method = "933DD4A682E7CABF050D3BCA5C001EEF")
     protected void removeFromMarkedPosition() {
         System.arraycopy(buffer, read_pos,
@@ -113,6 +114,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.586 -0400", hash_original_method = "0824C344C7EF76E18DAFC5A0824644C2", hash_generated_method = "5ECBAF2284737D8BCFFB957389C1C791")
     @Override
     public int read() throws IOException {
@@ -133,6 +135,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.587 -0400", hash_original_method = "91CEDBDE7A81F4DCE85242430A46DCF1", hash_generated_method = "2F0832E4C9E8D1E6DA24572D9070C2D6")
     @Override
     public byte[] read(int length) throws IOException {
@@ -159,6 +162,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.588 -0400", hash_original_method = "2AC89109B1F5C21FC0020B1393568717", hash_generated_method = "AE68D7BD920D175F3AD30AF6C67BAD36")
     @Override
     public int read(byte[] dst, int offset, int length) throws IOException {
@@ -185,6 +189,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.588 -0400", hash_original_method = "AF6CB8DBEC021FC7528B8ED3F8431D0F", hash_generated_method = "2ACDA3F035E3A9FC3DD5633D9B6E6743")
     public void append(byte[] src) {
         addTaint(src[0]);
@@ -264,6 +269,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.591 -0400", hash_original_method = "B556221995277C3C7246E0F0C5588CBB", hash_generated_method = "BCBCCE972316FCF6E3ED61C98EDA9548")
     protected void clearBuffer() {
         read_pos = 0;
@@ -326,6 +332,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.593 -0400", hash_original_method = "585ADF2190C2ED18E311DC7717079D3E", hash_generated_method = "50E8F06F9B2EC6BE2FD6E36ABAB0E9B3")
     public void write(byte b) {
         check(1);
@@ -336,6 +343,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.594 -0400", hash_original_method = "D10825FCC1F6D574D203B7119B0DE21D", hash_generated_method = "746FA1D852B4462B02D4B11DE4F038B2")
     public void writeUint8(long n) {
         check(1);
@@ -346,6 +354,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.594 -0400", hash_original_method = "BC95F3A9D20B746C785DDB55CCD0B371", hash_generated_method = "5866BECFA5BEC5BCACD7708A89B8E0C2")
     public void writeUint16(long n) {
         check(2);
@@ -358,6 +367,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.595 -0400", hash_original_method = "5F803054AD541DA3DFDDE2CF3FE59841", hash_generated_method = "B27E2A86274DAC461A04AD89C4AE2BC0")
     public void writeUint24(long n) {
         check(3);
@@ -372,6 +382,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.595 -0400", hash_original_method = "F5CBF84A3DE853E04B44967F882D7399", hash_generated_method = "9F56E6BFB9DCC5E8C9071586A6904FDB")
     public void writeUint32(long n) {
         check(4);
@@ -388,6 +399,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.596 -0400", hash_original_method = "9B394B4CCC83FB2B8DCA345D732654D8", hash_generated_method = "C9F7F02983D8E0AD1829D109FA43876B")
     public void writeUint64(long n) {
         check(8);
@@ -412,6 +424,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.596 -0400", hash_original_method = "E2E038DF81C8876BEF1DC650925A08F9", hash_generated_method = "62CE06DF1672F4376F05B684697D9A29")
     public void write(byte[] vector) {
         check(vector.length);
@@ -435,6 +448,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.597 -0400", hash_original_method = "E6D2A8CE9FA7080A42A1984AB4D903A3", hash_generated_method = "A22F270A9ECC3F00593DBBE6BF9FA8A9")
     public byte[] getData(int length) {
         byte[] res;
@@ -470,6 +484,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.597 -0400", hash_original_method = "9B1F555F297B463533438E17CA1DA8BA", hash_generated_method = "7A501DD19EDEEAFA07CB761167D2C0D6")
     protected byte[] getDigestMD5() {
         synchronized
@@ -493,6 +508,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.597 -0400", hash_original_method = "74B8780B4340381F62E79DEE30B1C1C3", hash_generated_method = "2F9444675C465294EBFAFA5453214FAC")
     protected byte[] getDigestSHA() {
         synchronized
@@ -516,6 +532,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.597 -0400", hash_original_method = "DDBF067C5B2E3F42A7068CF9EE336859", hash_generated_method = "6F518251EF25EFF7B7DE605C5AC85F14")
     protected byte[] getDigestMD5withoutLast() {
         synchronized
@@ -533,6 +550,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.597 -0400", hash_original_method = "BE851090505272B625E52E095FDF236D", hash_generated_method = "2CCF85B1D897B909B27E6D4FC82C393A")
     protected byte[] getDigestSHAwithoutLast() {
         synchronized
@@ -550,6 +568,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.597 -0400", hash_original_method = "B51805E12EB2284C59279E2C362DB00D", hash_generated_method = "8C68ED1B7E8EB4F7DE27E6363CB4D273")
     protected byte[] getMessages() {
         int len = (read_pos_end > write_pos) ? read_pos_end : write_pos;

@@ -241,6 +241,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.237 -0400", hash_original_method = "CD8081B759B90CE7833F86EB66B232F5", hash_generated_method = "7242DABCF1140FEF7030451403C108CC")
     public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -301,6 +302,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.239 -0400", hash_original_method = "BA8526BB1455076706AECC9BAC06F7D3", hash_generated_method = "EEEF17D74A45FA575A5D380C8A81EE0B")
     public Map<String, ?> getAll() {
         synchronized
@@ -339,6 +341,7 @@ String varDC36D6273750D8A228089F7A132C2536_1665326309 =             v != null ? 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.240 -0400", hash_original_method = "66BFB743F0303E06F65F01D81F24C82B", hash_generated_method = "44C3B017FB269ABE054E4E8AE6AD813F")
     public Set<String> getStringSet(String key, Set<String> defValues) {
         addTaint(defValues.getTaint());
@@ -381,6 +384,7 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_818564119 =             v != nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.242 -0400", hash_original_method = "44BE6AE8D3AB2ABE731A78B854B12E07", hash_generated_method = "116EDA5B23D81455DFD06232C18ABA2A")
     public long getLong(String key, long defValue) {
         addTaint(defValue);
@@ -402,6 +406,7 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_818564119 =             v != nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.243 -0400", hash_original_method = "E216C3CDDFA2EB08E1EA436EA866244B", hash_generated_method = "BE6183EAD4FADFC0FF9FF680C1742B67")
     public float getFloat(String key, float defValue) {
         addTaint(defValue);
@@ -743,6 +748,7 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_1516801441 =                 this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.261 -0400", hash_original_method = "913478FEA634AAED5778EE46C57EEF5E", hash_generated_method = "17916080B855A2F2C9F7BE76BE9CD404")
         public Editor putFloat(String key, float value) {
             addTaint(value);
@@ -762,6 +768,7 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_1078314449 =                 this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.261 -0400", hash_original_method = "FBC14C4FFFA5A0EBC88C6D503172C819", hash_generated_method = "23828A7773B978701F64580B4EFCECD4")
         public Editor putBoolean(String key, boolean value) {
             addTaint(value);
@@ -932,7 +939,7 @@ MemoryCommitResult var154B51BCE99D10E07062079308329222_607911735 =             m
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.268 -0400", hash_original_method = "23D73852609E646C4CF9B990F4BA7C23", hash_generated_method = "5EEF3D6974A1B7E78D3D519CA00560B0")
         public boolean commit() {
             MemoryCommitResult mcr = commitToMemory();

@@ -45,6 +45,7 @@ public class AttributeCertificateInfo extends ASN1Encodable {
 
     private X509Extensions extensions;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.631 -0400", hash_original_method = "C35C344C6189D0B2CCFCB8B319FD5953", hash_generated_method = "B42C2C68F00FC403955D82451F78DCD4")
     public  AttributeCertificateInfo(
         ASN1Sequence   seq) {
@@ -79,6 +80,7 @@ for(int i = 7;i < seq.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttributeCertificateInfo getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -86,6 +88,7 @@ for(int i = 7;i < seq.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttributeCertificateInfo getInstance(
         Object  obj) {
         if (obj instanceof AttributeCertificateInfo)
@@ -199,6 +202,7 @@ X509Extensions varD5DA799FFC3665A23EF170042DC373AD_1131253428 =         extensio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.634 -0400", hash_original_method = "AEBC8D50EAAC05A83CB6DB0736727739", hash_generated_method = "CE69D09B573B8F47511553F1D92264E4")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

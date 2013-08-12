@@ -47,6 +47,7 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int interpretType(String typeName) {
         if ("unset".equals(typeName)) {
             return TYPE_UNSET;
@@ -71,6 +72,7 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void parse(Reader r, Map<String, Object> map) throws ParseException, IOException {
         final StreamTokenizer st = initTokenizer(r);
         final String identifierPattern = "[a-zA-Z_$][0-9a-zA-Z_$]*";
@@ -215,6 +217,7 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.006 -0400", hash_original_method = "DEE9183B66993F47A34635E71D1E1A05", hash_generated_method = "69300B76275FA1D07475FDA099F68801")
     public void load(Reader r) throws IOException {
         addTaint(r.getTaint());
@@ -248,6 +251,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.007 -0400", hash_original_method = "6663F38CAE0A0F250100A85B4A9042B2", hash_generated_method = "EED3ECB1EDE88E3F7D9FA2E6AE570EE5")
     public boolean getBoolean(String property, boolean def) {
         addTaint(def);
@@ -280,6 +284,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.007 -0400", hash_original_method = "C59AE35C77F78F452B75D7268F0F89E8", hash_generated_method = "1FA0A6C014782CB1E4D5AF732C98795A")
     public byte getByte(String property, byte def) {
         addTaint(def);
@@ -312,6 +317,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.008 -0400", hash_original_method = "B3F410F783F41DCDA5B135E26EFE8189", hash_generated_method = "05CE8A8BB62ACF970DC4039235F1606C")
     public short getShort(String property, short def) {
         addTaint(def);
@@ -344,6 +350,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.008 -0400", hash_original_method = "81A20114A7AF0172426C6E77D3C9CCF3", hash_generated_method = "B201FC2CF1F5F820356ABD381061D930")
     public int getInt(String property, int def) {
         addTaint(def);
@@ -376,6 +383,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.009 -0400", hash_original_method = "4BF2AEC507B97708CFEE1BE095F3CD54", hash_generated_method = "A07E78559422DD5C21B234D7683A4C3E")
     public long getLong(String property, long def) {
         addTaint(def);
@@ -408,6 +416,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.009 -0400", hash_original_method = "173DB4357D41B8C372C6266493A88C42", hash_generated_method = "F556B682D6F9C9038D7BE990249E69F4")
     public float getFloat(String property, float def) {
         addTaint(def);
@@ -440,6 +449,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.009 -0400", hash_original_method = "319F68DA9A588357DEFC3D0ED78EA71B", hash_generated_method = "13F0BEC11F1E546F3FC974231C7AABCD")
     public double getDouble(String property, double def) {
         addTaint(def);
@@ -472,6 +482,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1097815022 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.010 -0400", hash_original_method = "3AAFD700C2ABAD81E6BE42DE7BFF48B2", hash_generated_method = "8288FA61AE0AD529DC80D51BD04095A3")
     public String getString(String property, String def) {
         addTaint(def.getTaint());
@@ -524,6 +535,7 @@ String var39E2DC4C41DC437ADA614281BF13F76E_1442057523 =             (String)valu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.011 -0400", hash_original_method = "370EA3A899989D3F86644B48EA45FC9B", hash_generated_method = "684A53494EC477EE686BEA98A1EC0B58")
     public byte getByte(String property) {
         addTaint(property.getTaint());
@@ -535,6 +547,7 @@ String var39E2DC4C41DC437ADA614281BF13F76E_1442057523 =             (String)valu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.012 -0400", hash_original_method = "FA3A5E6826A1DDB74D3D7C867E30B692", hash_generated_method = "197A7681C71336DF60793487AA3D029E")
     public short getShort(String property) {
         addTaint(property.getTaint());
@@ -546,6 +559,7 @@ String var39E2DC4C41DC437ADA614281BF13F76E_1442057523 =             (String)valu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.012 -0400", hash_original_method = "01591AA36D981ABFF3C80720671DB519", hash_generated_method = "8CD3686892BD6A3843C47FC8C3F58BAD")
     public int getInt(String property) {
         addTaint(property.getTaint());
@@ -557,6 +571,7 @@ String var39E2DC4C41DC437ADA614281BF13F76E_1442057523 =             (String)valu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.012 -0400", hash_original_method = "6768A5BD1563E9807D6B08281CAC66B5", hash_generated_method = "5A18EEC9A3BD6AFE5D8939F91A50696F")
     public long getLong(String property) {
         addTaint(property.getTaint());
@@ -568,6 +583,7 @@ String var39E2DC4C41DC437ADA614281BF13F76E_1442057523 =             (String)valu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.013 -0400", hash_original_method = "EF3DC0C356750228212346284358116F", hash_generated_method = "F406A76A92D7DE17E0DA3E9D4B1843E9")
     public float getFloat(String property) {
         addTaint(property.getTaint());
@@ -579,6 +595,7 @@ String var39E2DC4C41DC437ADA614281BF13F76E_1442057523 =             (String)valu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.013 -0400", hash_original_method = "C54C18DE732B31DF63D9F3187CBED443", hash_generated_method = "38FE2A40BA1835C84BF96526AAEAA3C9")
     public double getDouble(String property) {
         addTaint(property.getTaint());
@@ -590,6 +607,7 @@ String var39E2DC4C41DC437ADA614281BF13F76E_1442057523 =             (String)valu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.014 -0400", hash_original_method = "1EC3769C452BFA246F7089382554F763", hash_generated_method = "99FC8D31917085147AB34B61EC93D650")
     public String getString(String property) {
         addTaint(property.getTaint());
@@ -601,6 +619,7 @@ String var7A5DD373B6F6A93BF1E779B195389AB3_293584381 =         getString(propert
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.014 -0400", hash_original_method = "56B937E7FCE24CC3D04453B96CCA1E2A", hash_generated_method = "9E9C49599682E8F4D5CC3E99F00E8C1A")
     public int getStringInfo(String property) {
         addTaint(property.getTaint());
@@ -658,6 +677,7 @@ String var7A5DD373B6F6A93BF1E779B195389AB3_293584381 =         getString(propert
     
     public static class TypeException extends IllegalArgumentException {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.015 -0400", hash_original_method = "869ADEB9A2A381133512C58E64F92EC9", hash_generated_method = "D8A96D8861D95E88CC89251CEBCEE702")
           TypeException(String property, Object value, String requestedType) {
             super(property + " has type " + value.getClass().getName() +

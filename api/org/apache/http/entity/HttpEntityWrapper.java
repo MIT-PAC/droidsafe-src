@@ -17,6 +17,7 @@ public class HttpEntityWrapper implements HttpEntity {
 
     protected HttpEntity wrappedEntity;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.258 -0400", hash_original_method = "33160DF8469148C6436960E1E1B046E8", hash_generated_method = "6C37F122ED33968AC986F7F761C17BB6")
     public  HttpEntityWrapper(HttpEntity wrapped) {
         super();
@@ -37,6 +38,7 @@ public class HttpEntityWrapper implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.258 -0400", hash_original_method = "66A5D6AE1E6AB86EE56321AB2307DFBE", hash_generated_method = "CA7C01566F5D9EEBD363A52D721E1E6E")
     public boolean isRepeatable() {
         boolean var9B05981995E2CC50F5B2959ADB42FEAD_829023517 = (wrappedEntity.isRepeatable());
@@ -47,6 +49,7 @@ public class HttpEntityWrapper implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.258 -0400", hash_original_method = "9378790138EC2F8EEF6B9F1F6E40BE95", hash_generated_method = "E67E8CF61AD5D5F59E8E6DDFC1C6A023")
     public boolean isChunked() {
         boolean varC45756BB83310DF83D8CA2EF7D5FA04A_1502684085 = (wrappedEntity.isChunked());
@@ -57,6 +60,7 @@ public class HttpEntityWrapper implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.259 -0400", hash_original_method = "0FBEEBE2CCF30C86364D7AFCA680099F", hash_generated_method = "EBE428CF7707776648B16FAEF01A97E1")
     public long getContentLength() {
         long varE16A3D9A28884C197B737656D3267561_1346499934 = (wrappedEntity.getContentLength());
@@ -67,6 +71,7 @@ public class HttpEntityWrapper implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.259 -0400", hash_original_method = "FA7C53183DDD1E469C3D069CC9C24FBF", hash_generated_method = "9A96628CEA464001A147F28C205DE6E0")
     public Header getContentType() {
 Header var590535281942B049533B59980AFA506D_516971484 =         wrappedEntity.getContentType();
@@ -77,6 +82,7 @@ Header var590535281942B049533B59980AFA506D_516971484 =         wrappedEntity.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.259 -0400", hash_original_method = "09414FECE5ABE9B3537B6C0C8466B754", hash_generated_method = "CEBA331F04C4EB923543488AFB9C31B1")
     public Header getContentEncoding() {
 Header var0AA5129D0D17831211E9BEAEA729D4E5_1010119539 =         wrappedEntity.getContentEncoding();
@@ -87,6 +93,7 @@ Header var0AA5129D0D17831211E9BEAEA729D4E5_1010119539 =         wrappedEntity.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.259 -0400", hash_original_method = "DDB93A3EE1E007696449240BA2D658FB", hash_generated_method = "F079B130AD74734E1E64CAE148CA1E9A")
     public InputStream getContent() throws IOException {
 InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_209149113 =         wrappedEntity.getContent();
@@ -106,6 +113,7 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_209149113 =         wrappedEntit
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.260 -0400", hash_original_method = "0A035D35D476DBE850196C054D458020", hash_generated_method = "121E7689700A62C0A440A7A4C8F49360")
     public boolean isStreaming() {
         boolean varA1379DC23CA041DAFBB19393B6C62948_795102101 = (wrappedEntity.isStreaming());
@@ -116,6 +124,7 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_209149113 =         wrappedEntit
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.260 -0400", hash_original_method = "D38253ACE34121886ACB6BC0EC310CC5", hash_generated_method = "B8262C4ECF5B4F1C60F7AA5E1B2551F2")
     public void consumeContent() throws IOException {
         wrappedEntity.consumeContent();

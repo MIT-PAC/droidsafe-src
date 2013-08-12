@@ -199,7 +199,7 @@ View varE89DA9D9E61A89C376400D709F3C6A62_1740522209 =         mInflater.inflate(
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.055 -0400", hash_original_method = "8C1FB274099C6E014BD8D472B7606CCC", hash_generated_method = "35157A1CF793A1EDF5DDB9E3DB4D07CA")
     private void bindView(View view, Map<String, ?> data, String[] from, int[] to) {
         addTaint(to[0]);

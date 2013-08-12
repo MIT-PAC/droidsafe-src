@@ -28,6 +28,7 @@ public class KeyGenerator {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.228 -0400", hash_original_method = "CDE5B5D4C1159ABF8B3201BF166F4FB3", hash_generated_method = "C1D3A09E78029A99A573BDB52F727B3D")
     protected  KeyGenerator(KeyGeneratorSpi keyGenSpi, Provider provider,
             String algorithm) {
@@ -63,6 +64,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_859127114 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyGenerator getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -72,6 +74,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_859127114 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyGenerator getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
@@ -85,6 +88,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_859127114 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyGenerator getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -109,6 +113,7 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_1364054525 =         spiImpl.engin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.230 -0400", hash_original_method = "17294700B35C898F2BBCFAFBE5495088", hash_generated_method = "151AD8CE99BCD6170849BA7DAF24FFCE")
     public final void init(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
@@ -118,6 +123,7 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_1364054525 =         spiImpl.engin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.231 -0400", hash_original_method = "EA2F3DD217CBA336387110AFDED2F185", hash_generated_method = "4FE66B8FE0F3351B93E523D8192CBA85")
     public final void init(AlgorithmParameterSpec params, SecureRandom random) throws InvalidAlgorithmParameterException {
         addTaint(random.getTaint());
@@ -128,6 +134,7 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_1364054525 =         spiImpl.engin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.231 -0400", hash_original_method = "6A1F56561EFECC925D99D4402BD46267", hash_generated_method = "96DD3488C617B60A55C2BF79B7E31CDE")
     public final void init(int keysize) {
         addTaint(keysize);
@@ -148,6 +155,7 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_1364054525 =         spiImpl.engin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.231 -0400", hash_original_method = "E0B65F149BDE3033A715A5DC9A4C8256", hash_generated_method = "ED1DDC5161924C8D115C0DFA49BEB934")
     public final void init(SecureRandom random) {
         addTaint(random.getTaint());

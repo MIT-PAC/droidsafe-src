@@ -37,6 +37,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.310 -0400", hash_original_method = "C956079DDC347F2EE85C1D1E44860715", hash_generated_method = "51235193447C0D5C365999E9B5547A62")
     protected  SIPHeaderList(Class<HDR> objclass, String hname) {
         this();
@@ -60,6 +61,7 @@ String var2D0A9E749E9205038C7691483855DB68_1200055251 =         this.headerName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.310 -0400", hash_original_method = "45FF804DBFA2BB4F4071CDF27CE28633", hash_generated_method = "E5619B43F23B89BE7768660E40174F67")
     public boolean add(HDR objectToAdd) {
         addTaint(objectToAdd.getTaint());
@@ -99,6 +101,7 @@ String var2D0A9E749E9205038C7691483855DB68_1200055251 =         this.headerName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.312 -0400", hash_original_method = "2C5EDAC0235777863EFD087B4072277C", hash_generated_method = "D4AD0D90F9A0DB1B91A4CC16A1AF54E3")
     public void concatenate(SIPHeaderList<HDR> other, boolean topFlag) throws IllegalArgumentException {
         addTaint(topFlag);
@@ -120,6 +123,7 @@ String var2D0A9E749E9205038C7691483855DB68_1200055251 =         this.headerName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.312 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "C16A1F021C6D139585167C20C9B322E2")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_33171039 =         encode(new StringBuffer()).toString();
@@ -130,6 +134,7 @@ String var678B6FE61D54E5BD4E109D01C318C133_33171039 =         encode(new StringB
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.313 -0400", hash_original_method = "4452028BB43CC449CBD4FD5523C455CD", hash_generated_method = "78B9AF9DF35DC4CBA04BF25C1B2CA180")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -170,6 +175,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_978429764 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.314 -0400", hash_original_method = "3A5F29F99CF35D16AD0C376ECAFA4E44", hash_generated_method = "DB27A59A1B371D6F9DF56F29A84831C6")
     public List<String> getHeadersAsEncodedStrings() {
         List<String> retval = new LinkedList<String>();
@@ -347,6 +353,7 @@ ListIterator<HDR> varB6858C2A0A5D5DA33796D38FD73E73F3_35324220 =         hlist.l
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.319 -0400", hash_original_method = "CC42CBF49D5975143777F4A2B14A482C", hash_generated_method = "795D1C84413F298102C50C7709DD7D33")
     public String debugDump(int indentation) {
         addTaint(indentation);
@@ -564,6 +571,7 @@ Object varF627329B9209466293A1BF71D9AF7B2B_2023925332 =             retval.clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.326 -0400", hash_original_method = "CA032BB58CFE2AE5C2CC307C2E78224F", hash_generated_method = "BE69EB21D0E78EB885DBDEE38E05C965")
     protected final SIPHeaderList<HDR> clonehlist(List<HDR> hlistToClone) {
         addTaint(hlistToClone.getTaint());
@@ -611,6 +619,7 @@ SIPHeaderList<HDR> var72A74007B2BE62B849F475C7BDA4658B_282590313 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.328 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "8C59B77E402AD1E685C96CAAE7F427CD")
     protected String encodeBody() {
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_1856150876 =         encodeBody(new StringBuffer()).toString();
@@ -621,6 +630,7 @@ String varB9AAF3B320DC07C68A40DABE06BFAFD1_1856150876 =         encodeBody(new S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.329 -0400", hash_original_method = "8EFAAECA9CE0AC45762D4D910A6D9585", hash_generated_method = "5263EB1F5D2EFDCEDC208A3899E4C414")
     protected StringBuffer encodeBody(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -739,6 +749,7 @@ HDR varE814669528E94208DB851E0203603324_397239305 =         this.hlist.get(index
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.333 -0400", hash_original_method = "9C1A1055EA03DFB32FF882EA4FC9149D", hash_generated_method = "835DDB2C5CB55343B9DB28FE8285DAC1")
     public int indexOf(Object obj) {
         addTaint(obj.getTaint());
@@ -750,6 +761,7 @@ HDR varE814669528E94208DB851E0203603324_397239305 =         this.hlist.get(index
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.334 -0400", hash_original_method = "84FF645EE0B76DB0D5B552F9A7A0DC94", hash_generated_method = "8A35D19C6E2A74C515AE10FE00DE3B11")
     public java.util.Iterator<HDR> iterator() {
 java.util.Iterator<HDR> var96DA5F4DE476CD2881BA1D682D0C27E7_450788592 =         this.hlist.listIterator();
@@ -760,6 +772,7 @@ java.util.Iterator<HDR> var96DA5F4DE476CD2881BA1D682D0C27E7_450788592 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.334 -0400", hash_original_method = "05A7D65C6D911E0B1F3261A66888CB52", hash_generated_method = "D197E61CA3A57DAF5A1091436CCD923E")
     public int lastIndexOf(Object obj) {
         addTaint(obj.getTaint());
@@ -771,6 +784,7 @@ java.util.Iterator<HDR> var96DA5F4DE476CD2881BA1D682D0C27E7_450788592 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.335 -0400", hash_original_method = "FB49499CFAFE2E72F27390E6807CB034", hash_generated_method = "145CAD7562C72C0047D44ECA15146BA6")
     public boolean remove(Object obj) {
         addTaint(obj.getTaint());
@@ -794,6 +808,7 @@ HDR var2AFA8B7520708C0D013D76A45AB5CB74_23727402 =         this.hlist.remove(ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.336 -0400", hash_original_method = "5A03B3005777615BF04A1D43320D1AA1", hash_generated_method = "8631B82C294379B71B839BC20A5F244C")
     public boolean removeAll(java.util.Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -805,6 +820,7 @@ HDR var2AFA8B7520708C0D013D76A45AB5CB74_23727402 =         this.hlist.remove(ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.337 -0400", hash_original_method = "4FD342E6A050272CE06CEE9969944C1B", hash_generated_method = "7A49F4483B2A46BE51BD048B8F1B43E6")
     public boolean retainAll(java.util.Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -816,6 +832,7 @@ HDR var2AFA8B7520708C0D013D76A45AB5CB74_23727402 =         this.hlist.remove(ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.337 -0400", hash_original_method = "894CB5A5FAD7AFC5CD5A3389B3F77AB4", hash_generated_method = "6DA6E7ABCB0B8022566B2D641884D908")
     public java.util.List<HDR> subList(int index1, int index2) {
         addTaint(index2);

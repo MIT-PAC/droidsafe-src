@@ -41,6 +41,7 @@ public abstract class OutputStream implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.071 -0400", hash_original_method = "F6CDEA64748F80FE862CBAFFE4725DDE", hash_generated_method = "E5728D1F2D8DFD725F7F880C874F1A96")
     public void write(byte[] buffer, int offset, int count) throws IOException {
         addTaint(count);

@@ -23,6 +23,7 @@ public abstract class X509NameEntryConverter {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.226 -0400", hash_original_method = "0820E5B6790D0EF76EEAF699A8A71CD6", hash_generated_method = "8477775AC7080D7C945B87A2E3A8E21A")
     protected DERObject convertHexEncoded(
         String  str,
@@ -61,6 +62,7 @@ DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_1588751565 =         aIn.readObjec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.226 -0400", hash_original_method = "499FF8BD25CE956701C5B1F46FEEC51A", hash_generated_method = "36BB837EE06C3E79A237C8D0C2E4C78C")
     protected boolean canBePrintable(
         String  str) {

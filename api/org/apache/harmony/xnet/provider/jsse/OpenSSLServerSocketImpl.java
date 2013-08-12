@@ -75,6 +75,7 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.753 -0400", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "D4475521A8A63F39341A5465C775C3BC")
     @Override
     public boolean getEnableSessionCreation() {
@@ -96,6 +97,7 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.753 -0400", hash_original_method = "B10F1AAC80A139AD997D0D8B0338DD89", hash_generated_method = "9FBAD537F1C00A6304E7F72B9294732C")
     @Override
     public String[] getSupportedProtocols() {
@@ -107,6 +109,7 @@ String[] varA2CB83838D3C3E6CB428AFD2FA549124_775812187 =         NativeCrypto.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.754 -0400", hash_original_method = "26510D7872AB5791B4C2075CD3368FCD", hash_generated_method = "B3E8AD92A8D32F49380ADDB3902D4CB7")
     @Override
     public String[] getEnabledProtocols() {
@@ -127,6 +130,7 @@ String[] var7F784EE3631AE57BC482259F3F556633_2019895081 =         enabledProtoco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.754 -0400", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "58D33715D5C925E68B207DFC33F93CBA")
     @Override
     public String[] getSupportedCipherSuites() {
@@ -138,6 +142,7 @@ String[] var0633111015CD199BA68A1C170162F6EA_1638829873 =         NativeCrypto.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.754 -0400", hash_original_method = "5CCACD4A046B80B9464615B5EFBE522F", hash_generated_method = "B599E2D0B545BF348AD9C241EEB7BACC")
     @Override
     public String[] getEnabledCipherSuites() {
@@ -158,6 +163,7 @@ String[] var45BDDDD9D941A372292490884D2E3BF9_1784671873 =         enabledCipherS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.754 -0400", hash_original_method = "375DD2648264EE3CAE4788D31A756EC5", hash_generated_method = "952C1E7A359DBD7E5A94F7B15EF7736A")
     public String[] getSupportedCompressionMethods() {
 String[] varBE8CCF8BFA8321AAC102544B2EEE72A0_1564879359 =         NativeCrypto.getSupportedCompressionMethods();
@@ -168,6 +174,7 @@ String[] varBE8CCF8BFA8321AAC102544B2EEE72A0_1564879359 =         NativeCrypto.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.754 -0400", hash_original_method = "1BCE54E87A889265E8FA0E0B8689F62E", hash_generated_method = "6E991EFABE9C6BDF979805256A0E6CB5")
     public String[] getEnabledCompressionMethods() {
 String[] varB18894ACCABD95AE01B6F73BD5F6D994_512280122 =         enabledCompressionMethods.clone();
@@ -178,6 +185,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_512280122 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.754 -0400", hash_original_method = "8EA4CA69B5E5586515E70C8BB15F1DC8", hash_generated_method = "F6E8AD11719A044F802E33A113589650")
     public void setEnabledCompressionMethods(String[] methods) {
         enabledCompressionMethods = NativeCrypto.checkEnabledCompressionMethods(methods);

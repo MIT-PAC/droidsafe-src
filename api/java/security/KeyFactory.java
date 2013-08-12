@@ -48,6 +48,7 @@ public class KeyFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyFactory getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
@@ -60,6 +61,7 @@ public class KeyFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyFactory getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException();
@@ -106,6 +108,7 @@ PublicKey var5E879E50CE0F0CDD91A45B72CABFD196_1788748134 =         spiImpl.engin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.897 -0400", hash_original_method = "56D108179E38B3C9859C6FCAEB589129", hash_generated_method = "2EF1D179CA225611E4E6B3E6B281AF81")
     public final PrivateKey generatePrivate(KeySpec keySpec) throws InvalidKeySpecException {
         addTaint(keySpec.getTaint());
@@ -117,6 +120,7 @@ PrivateKey var3A6E9948BD01B3D0F48394C49C404E2F_434179085 =         spiImpl.engin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.898 -0400", hash_original_method = "7B77F80B2A4A2C9E7EABE7EB820F4781", hash_generated_method = "2C9D88F6A5AEBE43B5C8DFAB3749E023")
     public final <T extends KeySpec> T getKeySpec(Key key,
                                     Class<T> keySpec) throws InvalidKeySpecException {
@@ -130,6 +134,7 @@ T var8F4D81791C8180D9CBCF44423DBEC0F6_77754240 =         spiImpl.engineGetKeySpe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.898 -0400", hash_original_method = "23F9E5F6A6B9FC183E94A65D97880068", hash_generated_method = "857D7400C29CE7FE9B4349AD8D460396")
     public final Key translateKey(Key key) throws InvalidKeyException {
         addTaint(key.getTaint());

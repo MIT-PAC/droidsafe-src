@@ -24,6 +24,7 @@ public class MediaMetadataRetriever {
 
     @SuppressWarnings("unused") private int mNativeContext;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.536 -0400", hash_original_method = "38580FA1CFCA0A8BC70F7859DD8ED432", hash_generated_method = "2AB8306B5DA12B671F5FB6B56B3C1E94")
     public  MediaMetadataRetriever() {
         native_setup();
@@ -172,6 +173,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.541 -0400", hash_original_method = "D44D6BE7DFFCAE11832F13741FBDA1F8", hash_generated_method = "94A88F64CC2F168A4D38BC354E7B0386")
     public Bitmap getFrameAtTime(long timeUs, int option) {
         addTaint(option);
@@ -195,6 +197,7 @@ Bitmap varAB1C2407842D2F107CAF6F34F7AFC9D8_1078527858 =         _getFrameAtTime(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.542 -0400", hash_original_method = "F77381ED452E3EC1B4D9E71ECA218C76", hash_generated_method = "8348EC56FBEA42EEC17FC881EDB044E3")
     public Bitmap getFrameAtTime(long timeUs) {
         addTaint(timeUs);

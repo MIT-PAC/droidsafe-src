@@ -133,6 +133,7 @@ public final class BearerData {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.682 -0400", hash_original_method = "E225AAC9CA93385B8BA6F6A4FE181F4E", hash_generated_method = "FD275FCB3723E98BBC0843F348215035")
     @Override
     public String toString() {
@@ -199,6 +200,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1373617065 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TextEncodingDetails calcTextEncodingDetails(CharSequence msg,
             boolean force7BitEncoding) {
         TextEncodingDetails ted;
@@ -549,6 +551,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1373617065 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(BearerData bData) {
         bData.hasUserDataHeader = ((bData.userData != null) &&
                 (bData.userData.userDataHeader != null));
@@ -1355,6 +1358,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1373617065 =         builder.toString
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static TimeStamp fromByteArray(byte[] data) {
             TimeStamp ts = new TimeStamp();
             int year = IccUtils.cdmaBcdByteToInt(data[0]);
@@ -1379,7 +1383,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1373617065 =         builder.toString
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.708 -0400", hash_original_method = "ED297E11B9020980F3FCB379731AD215", hash_generated_method = "E52D56DADF03CDD039DD5E8D9F605F78")
         @Override
         public String toString() {
@@ -1415,6 +1419,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_156165918 =             builder.toStr
     
     private static class CodingException extends Exception {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.708 -0400", hash_original_method = "7A2C15A084F2DA50BCA20CD284E89E4B", hash_generated_method = "BC6A3BF10D682888E50FB691D94A6109")
         public  CodingException(String s) {
             super(s);

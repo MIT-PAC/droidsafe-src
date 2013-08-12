@@ -60,7 +60,7 @@ public class CharSequences {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static void validate(int start, int end, int length) {
         if (start < 0) throw new IndexOutOfBoundsException();
         if (end < 0) throw new IndexOutOfBoundsException();
@@ -84,6 +84,7 @@ public class CharSequences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int compareToIgnoreCase(CharSequence me, CharSequence another) {
         int myLen = me.length(), anotherLen = another.length();
         int myPos = 0, anotherPos = 0, result;

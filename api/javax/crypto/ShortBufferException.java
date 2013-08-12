@@ -11,6 +11,7 @@ import java.security.GeneralSecurityException;
 
 public class ShortBufferException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.327 -0400", hash_original_method = "B367994EA3C91134C8AE078ED740A290", hash_generated_method = "923FC6F005F9993CF73822E290DD331A")
     public  ShortBufferException(String msg) {
         super(msg);

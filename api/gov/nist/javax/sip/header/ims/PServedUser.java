@@ -14,6 +14,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class PServedUser extends AddressParametersHeader implements PServedUserHeader, SIPHeaderNamesIms, ExtensionHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.284 -0400", hash_original_method = "CE4E031625CF531C1B85FA453494B504", hash_generated_method = "9BF427C5F7D6858A9FE3465C4BC3EB51")
     public  PServedUser(AddressImpl address) {
         super(P_SERVED_USER);
@@ -24,6 +25,7 @@ public class PServedUser extends AddressParametersHeader implements PServedUserH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.285 -0400", hash_original_method = "88679C40290AB234E035EF50535B4D0D", hash_generated_method = "9DF219AB55C86B79DEECEA502C213C52")
     public  PServedUser() {
         super(NAME);
@@ -31,6 +33,7 @@ public class PServedUser extends AddressParametersHeader implements PServedUserH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.285 -0400", hash_original_method = "060F42FFBCCB73E6969A6CFC80051047", hash_generated_method = "2D0EF5057F6AE8952FD25126F876D7F4")
     public String getRegistrationState() {
 String varBFDAF6B74805E26E8C7CDA2F4F0F5708_633198051 =         getParameter(ParameterNamesIms.REGISTRATION_STATE);
@@ -41,6 +44,7 @@ String varBFDAF6B74805E26E8C7CDA2F4F0F5708_633198051 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.285 -0400", hash_original_method = "86F2D3309EA08C107052AE36BBC425BC", hash_generated_method = "FECDB82F7D6E24E51703A2A125E1D0BC")
     public String getSessionCase() {
 String var473848B19B95BAF1BACF7CC72F827365_1266415076 =         getParameter(ParameterNamesIms.SESSION_CASE);
@@ -51,6 +55,7 @@ String var473848B19B95BAF1BACF7CC72F827365_1266415076 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.286 -0400", hash_original_method = "8A05E91630AB7D0557A40B65641F2C82", hash_generated_method = "269B067FEAEC03B2F96B7B687988F745")
     public void setRegistrationState(String registrationState) {
         addTaint(registrationState.getTaint());
@@ -114,6 +119,7 @@ String var473848B19B95BAF1BACF7CC72F827365_1266415076 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.287 -0400", hash_original_method = "B96D543F72B1B5850C059C4E8A513320", hash_generated_method = "B2CEA0CF2EBF442CCDB337A971BF90D4")
     public void setSessionCase(String sessionCase) {
         addTaint(sessionCase.getTaint());
@@ -177,6 +183,7 @@ String var473848B19B95BAF1BACF7CC72F827365_1266415076 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.288 -0400", hash_original_method = "5C1FD3ED8946938E44DEC9CB0584970B", hash_generated_method = "470DE98F2F9B006921FE1F2CA5DF3C79")
     @Override
     protected String encodeBody() {
@@ -204,6 +211,7 @@ String var1B324365A764C077A55854483509F4AB_1733757118 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.289 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "1759F21EB763CCF029E05891777BAD5F")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -215,6 +223,7 @@ String var1B324365A764C077A55854483509F4AB_1733757118 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.289 -0400", hash_original_method = "5DE7CF1B2BFD7CED31E376D58425CB92", hash_generated_method = "D49FE7DB80DF402BA99ECF63C4B4B576")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -238,6 +247,7 @@ String var1B324365A764C077A55854483509F4AB_1733757118 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.290 -0400", hash_original_method = "E31F82669EB953245AD29DB03C98C513", hash_generated_method = "CEADEF459DF3863E7CB92E305A805E4C")
     public Object clone() {
         PServedUser retval = (PServedUser) super.clone();

@@ -78,6 +78,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CharSequence getText(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -136,6 +137,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String getNonResourceString(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -197,6 +199,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getInt(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -225,6 +228,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getFloat(int index, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -232,6 +236,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getColor(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -254,6 +259,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getInteger(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -275,6 +281,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getDimension(int index, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -296,6 +303,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getDimensionPixelOffset(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -317,6 +325,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getDimensionPixelSize(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -338,6 +347,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getLayoutDimension(int index, String name){
 		return getTaintInt();
 		// Original method
@@ -360,6 +370,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getLayoutDimension(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -381,6 +392,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getFraction(int index, int base, int pbase, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -422,6 +434,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Drawable getDrawable(int index){
 		return mResources.loadDrawable(mValue, mValue.resourceId);
 		// Original method
@@ -446,6 +459,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CharSequence[] getTextArray(int index){
 		return mResources.getTextArray(mValue.resourceId);
 		// Original method
@@ -470,6 +484,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean getValue(int index, TypedValue outValue){
 		return getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue);
 		// Original method
@@ -496,6 +511,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public TypedValue peekValue(int index){
 		return mValue;
 		// Original method
@@ -511,6 +527,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String getPositionDescription(){
         String str = new String();
         str.addTaint(getTaint());
@@ -598,6 +615,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());

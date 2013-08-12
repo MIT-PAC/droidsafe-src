@@ -51,6 +51,7 @@ public class FeatureInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.466 -0400", hash_original_method = "CEFF2831199A05D6B9B0449BE07C0CC4", hash_generated_method = "511465BFBFCEA4A16F2A6404E03BDFEB")
     public String toString() {
         if(name != null)        
@@ -109,6 +110,7 @@ String var33136C0B98D667EDEA5CF1AE6E0FF7BF_2121854875 =             "FeatureInfo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.469 -0400", hash_original_method = "6B16AB9E297007D3C91B331171401C71", hash_generated_method = "48F2C9796A5F2C1C662766DC75EDF214")
     public String getGlEsVersion() {
         int major = ((reqGlEsVersion & 0xffff0000) >> 16);

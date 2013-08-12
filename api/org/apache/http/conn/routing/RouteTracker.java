@@ -34,6 +34,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
 
     private boolean secure;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.916 -0400", hash_original_method = "225F1E2FD25662F69AE6A7484F5A3DE6", hash_generated_method = "E9D21B01112E8BD7B2331CD92A121978")
     public  RouteTracker(HttpHost target, InetAddress local) {
         if(target == null)        
@@ -57,6 +58,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.916 -0400", hash_original_method = "9F2302B948E2DACBF43BEB44AB6E1806", hash_generated_method = "1431D61C28009DA2526CE6306C32B6F9")
     public  RouteTracker(HttpRoute route) {
         this(route.getTargetHost(), route.getLocalAddress());
@@ -65,6 +67,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.917 -0400", hash_original_method = "BF1F9DC8D5382B51655F853917583FAE", hash_generated_method = "E3876B31315E201209DE930C9A7AF9B7")
     public final void connectTarget(boolean secure) {
         if(this.connected)        
@@ -84,6 +87,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.918 -0400", hash_original_method = "3003DC7DA59FD970800BABF8F86CE4CE", hash_generated_method = "BA7CC4B8DAFFCBF4D391FEAB7D84D0DB")
     public final void connectProxy(HttpHost proxy, boolean secure) {
         addTaint(proxy.getTaint());
@@ -144,6 +148,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.921 -0400", hash_original_method = "F92C099980BF3075944300484370C03E", hash_generated_method = "1CB086EE439B6BF9752AC7267F8E0EF5")
     public final void tunnelProxy(HttpHost proxy, boolean secure) {
         addTaint(proxy.getTaint());
@@ -190,6 +195,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.922 -0400", hash_original_method = "54E7131A3C39BD59A18A0ED51B306BB3", hash_generated_method = "E52496B5E844C902EC2CF66533D477E5")
     public final void layerProtocol(boolean secure) {
         if(!this.connected)        
@@ -383,6 +389,7 @@ LayerType var0B365440B9E6602F90569354BDD2D5AF_1530682020 =         this.layered;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.929 -0400", hash_original_method = "F708D9F908B17C9085BF9A499A01375A", hash_generated_method = "0D404DF0E7CE9CAD5B229EBD14E6B988")
     public final HttpRoute toRoute() {
 HttpRoute varE41698FEE7663C0A9148DADE09262853_705790838 =         !this.connected ?
@@ -399,6 +406,7 @@ HttpRoute varE41698FEE7663C0A9148DADE09262853_705790838 =         !this.connecte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.930 -0400", hash_original_method = "63363EB4B4D28F766A23B83B48599393", hash_generated_method = "FB2FD647993FAE33C0B3D6BE68E28E20")
     @Override
     public final boolean equals(Object o) {
@@ -444,6 +452,7 @@ for(int i=0;equal && (i<this.proxyChain.length);i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.931 -0400", hash_original_method = "DF8EA32EAB4DFA40B45F048298D9408F", hash_generated_method = "3148F00990B841041F1DF4131E7FBD88")
     @Override
     public final int hashCode() {
@@ -484,6 +493,7 @@ for(int i=0;i<proxyChain.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.932 -0400", hash_original_method = "B9AFE31805DA49D5CF66B21B19FA6A72", hash_generated_method = "EEB4524CC6602E0C43EC8653194030E8")
     @Override
     public final String toString() {

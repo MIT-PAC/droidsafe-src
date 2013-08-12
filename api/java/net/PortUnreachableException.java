@@ -7,12 +7,14 @@ import droidsafe.annotations.*;
 
 public class PortUnreachableException extends SocketException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.278 -0400", hash_original_method = "A9512F39350C94C0C69735359EF3AADA", hash_generated_method = "833DA25EB598A13A50D06C4855FB8EF4")
     public  PortUnreachableException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.280 -0400", hash_original_method = "5D984FCFBC4DFCA56D23D59535D24C8C", hash_generated_method = "0F6D5D7C455854373B8D928BD38623F2")
     public  PortUnreachableException(String detailMessage) {
         super(detailMessage);
@@ -21,7 +23,7 @@ public class PortUnreachableException extends SocketException {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.281 -0400", hash_original_method = "3045F383C8CE75FC18DF1FE38D9A0FBC", hash_generated_method = "4292B25864E56DF091B40D51645DFA7E")
     public  PortUnreachableException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

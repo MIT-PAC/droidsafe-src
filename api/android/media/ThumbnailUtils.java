@@ -79,6 +79,7 @@ public class ThumbnailUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap createVideoThumbnail(String filePath, int kind) {
         Bitmap bitmap = null;
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
@@ -114,12 +115,14 @@ public class ThumbnailUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap extractThumbnail(
             Bitmap source, int width, int height) {
         return extractThumbnail(source, width, height, OPTIONS_NONE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap extractThumbnail(
             Bitmap source, int width, int height, int options) {
         if (source == null) {

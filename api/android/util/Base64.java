@@ -18,16 +18,19 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(String str, int flags) {
         return decode(str.getBytes(), flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] input, int flags) {
         return decode(input, 0, input.length, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] input, int offset, int len, int flags) {
         Decoder decoder = new Decoder(flags, new byte[len*3/4]);
         if (!decoder.process(input, offset, len, true)) {
@@ -42,6 +45,7 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encodeToString(byte[] input, int flags) {
         try {
             return new String(encode(input, flags), "US-ASCII");
@@ -51,6 +55,7 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encodeToString(byte[] input, int offset, int len, int flags) {
         try {
             return new String(encode(input, offset, len, flags), "US-ASCII");
@@ -60,11 +65,13 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(byte[] input, int flags) {
         return encode(input, 0, input.length, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(byte[] input, int offset, int len, int flags) {
         Encoder encoder = new Encoder(flags, null);
         int output_len = len / 3 * 4;
@@ -450,6 +457,7 @@ switch(state){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.581 -0400", hash_original_method = "551D84DD57FDEAF562D9C2C55207FB04", hash_generated_method = "10A561BCDE94230FE0BBE95759C56831")
         public boolean process(byte[] input, int offset, int len, boolean finish) {
             addTaint(finish);

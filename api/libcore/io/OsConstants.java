@@ -76,21 +76,25 @@ public final class OsConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int WSTOPSIG(int status) {
         return WEXITSTATUS(status);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean WIFEXITED(int status) {
         return (WTERMSIG(status) == 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean WIFSTOPPED(int status) {
         return (WTERMSIG(status) == 0x7f);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean WIFSIGNALED(int status) {
         return (WTERMSIG(status + 1) >= 2);
     }

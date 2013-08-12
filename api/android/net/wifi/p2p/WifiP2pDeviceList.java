@@ -143,6 +143,7 @@ Collection<WifiP2pDevice> var24D252EDC5D3BF4B65D91841154ED408_844557355 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.655 -0400", hash_original_method = "5A8D6CF28770F332159DA6A027ABEE59", hash_generated_method = "6B789010F198D4BCACD7A16CAD3E3E93")
     public String toString() {
         StringBuffer sbuf = new StringBuffer();

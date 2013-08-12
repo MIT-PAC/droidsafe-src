@@ -17,6 +17,7 @@ public abstract class SSLEngine {
 
     private int peerPort;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.691 -0400", hash_original_method = "4DB69FC0D6B2C4EA5754BFEC7A5A4921", hash_generated_method = "6C354AD4901187F011888EBB5BDEB711")
     protected  SSLEngine() {
         peerHost = null;
@@ -27,6 +28,7 @@ public abstract class SSLEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.692 -0400", hash_original_method = "EEA000A850DD4012FB53C4A935EA52C0", hash_generated_method = "A5F53C24279159BD08B9BD851D5512FB")
     protected  SSLEngine(String host, int port) {
         this.peerHost = host;
@@ -153,6 +155,7 @@ String varFEF815055C97D4B621404BF729E85DA2_1991946637 =         peerHost;
                                            int length) throws SSLException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SSLEngineResult wrap(ByteBuffer[] srcs, int offset, int length, ByteBuffer dst)
             throws SSLException;
 
@@ -169,6 +172,7 @@ SSLEngineResult varDD78561FBD283269B6DD42AF139A709B_1949057943 =         unwrap(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.697 -0400", hash_original_method = "9736EBF4FA9EEB1C5129AD63480700AA", hash_generated_method = "011C33EA172C2970DF8DF65B8879CBDA")
     public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer[] dsts) throws SSLException {
         addTaint(dsts[0].getTaint());
@@ -190,6 +194,7 @@ SSLEngineResult varF59CCEEF71B0ADC2DE10A862EA422DCB_41769481 =         unwrap(sr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.698 -0400", hash_original_method = "2CCA444D00129DF62214EE036E36E4DD", hash_generated_method = "D79D7DD71F8AD612B9D3A37B26124E5E")
     public SSLEngineResult wrap(ByteBuffer[] srcs, ByteBuffer dst) throws SSLException {
         addTaint(dst.getTaint());
@@ -211,6 +216,7 @@ SSLEngineResult varF785702831660251D276B1204D3A4B36_428685625 =         wrap(src
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.698 -0400", hash_original_method = "15A7413E97A8CAC06D2DFD60F87EA34E", hash_generated_method = "80A948E13203D56F39FF5E63838D30C7")
     public SSLEngineResult wrap(ByteBuffer src, ByteBuffer dst) throws SSLException {
         addTaint(dst.getTaint());
@@ -223,6 +229,7 @@ SSLEngineResult var8990D21D724771169EEA983129118039_1874881374 =         wrap(ne
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.698 -0400", hash_original_method = "B1069FA99460064F4DAFA14459B677AD", hash_generated_method = "BC38D9D8EF28A51DE57E57DF31EF3AAB")
     public SSLParameters getSSLParameters() {
         SSLParameters p = new SSLParameters();
@@ -243,6 +250,7 @@ SSLParameters var74E4690D9F2A026504928C017944E149_398228783 =         p;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.698 -0400", hash_original_method = "886AE080148D5E5D7C66238C628CC678", hash_generated_method = "27EFFE024357E2EEA5E53D9F242DF898")
     public void setSSLParameters(SSLParameters p) {
         addTaint(p.getTaint());

@@ -84,12 +84,14 @@ public final class OtherName {
             ASN1Oid.getInstance(),
             new ASN1Explicit(0, ASN1Any.getInstance()) }) {
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new OtherName(ObjectIdentifier.toString((int[]) values[0]),
                     (byte[]) values[1], in.getEncoded());
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             OtherName on = (OtherName) object;
             values[0] = ObjectIdentifier.toIntArray(on.typeID);

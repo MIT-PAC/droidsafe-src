@@ -242,6 +242,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IntentFilter create(String action, String dataType) {
         try {
             return new IntentFilter(action, dataType);
@@ -296,6 +297,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.495 -0400", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "908A20CE79EC17D4E1A4AC9BF55CB7CB")
     public final String getAction(int index) {
         addTaint(index);
@@ -307,6 +309,7 @@ String varDCAE7AC319C94BC62A244B841685A798_142570053 =         mActions.get(inde
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.496 -0400", hash_original_method = "9D48CC1056269867443B9FC005D01764", hash_generated_method = "B03D2393E2334825653C18629179FB7E")
     public final boolean hasAction(String action) {
         addTaint(action.getTaint());
@@ -329,6 +332,7 @@ String varDCAE7AC319C94BC62A244B841685A798_142570053 =         mActions.get(inde
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.500 -0400", hash_original_method = "91B40E19A4EE68D85BFA3F1F256EBA72", hash_generated_method = "B7D6889D6EC5191C05C1F0A8C19F2BA9")
     public final Iterator<String> actionsIterator() {
 Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_2138402361 =         mActions != null ? mActions.iterator() : null;
@@ -391,6 +395,7 @@ Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_2138402361 =         mActio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.505 -0400", hash_original_method = "9AF334B8B7AF494EC1E65710EFD1F300", hash_generated_method = "4934438D8679C936362CA9D8BC4261D1")
     public final boolean hasDataType(String type) {
         addTaint(type.getTaint());
@@ -412,6 +417,7 @@ Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_2138402361 =         mActio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.508 -0400", hash_original_method = "1020E9310C4CEB3D9A899FFC3406F498", hash_generated_method = "763537BA348B52E9622F1E2EB7ED0D18")
     public final String getDataType(int index) {
         addTaint(index);
@@ -461,6 +467,7 @@ Iterator<String> var96354E09389D28803D7828FF9EBA18A2_854719773 =         mDataTy
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.512 -0400", hash_original_method = "F55C42908F22C2BF6411521C019E1E71", hash_generated_method = "2A5597354AD09DC5D0AA7995673DA257")
     public final String getDataScheme(int index) {
         addTaint(index);
@@ -472,6 +479,7 @@ String var5F20608E7C30703FEA01C3CDD2745DC8_1710835313 =         mDataSchemes.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.513 -0400", hash_original_method = "6D8F15A80747973FB96EA7F310404F85", hash_generated_method = "7413279ADF9F3000786553B7CAE8BB90")
     public final boolean hasDataScheme(String scheme) {
         addTaint(scheme.getTaint());
@@ -521,6 +529,7 @@ Iterator<String> varCBC2BE663D2FF6EB9BE185207497F024_624935462 =         mDataSc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.517 -0400", hash_original_method = "5C821D7ECF8B0A79E64F1031BF4C37BB", hash_generated_method = "953973CAA9C32507A022B561D7ADC19E")
     public final AuthorityEntry getDataAuthority(int index) {
         addTaint(index);
@@ -544,6 +553,7 @@ AuthorityEntry var076CFD4C7379FAFE5C8D80E40F849198_1595085958 =         mDataAut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.523 -0400", hash_original_method = "104889BB491104C94E7C1142A3F4BAAD", hash_generated_method = "CFEBCF15E589437143791A81BEF4B661")
     public final Iterator<AuthorityEntry> authoritiesIterator() {
 Iterator<AuthorityEntry> varED18BAD1BD7A5FE27CC656E83062FEE5_1920459637 =         mDataAuthorities != null ? mDataAuthorities.iterator() : null;
@@ -588,6 +598,7 @@ PatternMatcher varD20C4A93C9FDA178B6928DD8A0698977_1662105680 =         mDataPat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.528 -0400", hash_original_method = "8A8BB0EA1E4D89E1A8E627888FCA29D4", hash_generated_method = "56D48583DD80690264D202F0C36F69EB")
     public final boolean hasDataPath(String data) {
         addTaint(data.getTaint());
@@ -795,6 +806,7 @@ for(int i = 0;i < numDataAuthorities;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.536 -0400", hash_original_method = "D5AF5503C90FCC35F15F05FB572F3FAB", hash_generated_method = "F22D839305C2D027D61B1E7D8E090888")
     public final int countCategories() {
         int var73EE7D12BF483094EF03E36D4B5EC7CB_76113934 = (mCategories != null ? mCategories.size() : 0);
@@ -805,6 +817,7 @@ for(int i = 0;i < numDataAuthorities;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.537 -0400", hash_original_method = "9221063C5ACD71C55B9DBC6F8D5B18B1", hash_generated_method = "1CFABA709F7F0D3CACBE0E974DFCB945")
     public final String getCategory(int index) {
         addTaint(index);
@@ -816,6 +829,7 @@ String var5CFFBAE79CCBE33E2FF89927347E3947_138674629 =         mCategories.get(i
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.537 -0400", hash_original_method = "3612221F73372432993CCD6954A20D1D", hash_generated_method = "D858001B28E0070AB4C5C1CBB2599635")
     public final boolean hasCategory(String category) {
         addTaint(category.getTaint());
@@ -837,6 +851,7 @@ Iterator<String> varD9F5E65171F1E2E2FC1CBC221EB9DF4E_658676261 =         mCatego
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.539 -0400", hash_original_method = "64ACE3DFA3E244FA74278C4A66D2BC47", hash_generated_method = "13AF5B4F80A87C1DE037DBD210148519")
     public final String matchCategories(Set<String> categories) {
         addTaint(categories.getTaint());
@@ -1387,12 +1402,14 @@ for(int i = 0;i < numTypes;i++)
     
     public static class MalformedMimeTypeException extends AndroidException {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.556 -0400", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "76D07A54CDCC210EFF1FE4C037CB3505")
         public  MalformedMimeTypeException() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.557 -0400", hash_original_method = "E06B6BA43D42AE50E4C9A14EEBF56FAC", hash_generated_method = "E089FA8DF2043AF9848D19DB7BA10CF1")
         public  MalformedMimeTypeException(String name) {
             super(name);
@@ -1419,6 +1436,7 @@ for(int i = 0;i < numTypes;i++)
 
         private int mPort;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.559 -0400", hash_original_method = "FAC1F38311ACA5CF1D84B9DFACCAD236", hash_generated_method = "7BCC3206A85976AB9748D889DCD74284")
         public  AuthorityEntry(String host, String port) {
             mOrigHost = host;
@@ -1433,6 +1451,7 @@ for(int i = 0;i < numTypes;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.559 -0400", hash_original_method = "9AA41EA6C96E16AD56B52F388CEAC244", hash_generated_method = "C25EE71C4F905DDEC436619875DD7883")
           AuthorityEntry(Parcel src) {
             mOrigHost = src.readString();
@@ -1447,6 +1466,7 @@ for(int i = 0;i < numTypes;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.560 -0400", hash_original_method = "3FD27104A5CDDCA498D8F62DC306DFFB", hash_generated_method = "7A3D8254F7D2D3E265A8165B8858586B")
          void writeToParcel(Parcel dest) {
             addTaint(dest.getTaint());
@@ -1641,6 +1661,7 @@ String var0F8BF6F5C2827A165225109D7A5D92E0_1845557654 =             mOrigHost;
 
     public static final Parcelable.Creator<IntentFilter> CREATOR
             = new Parcelable.Creator<IntentFilter>() {
+        @DSModeled(DSC.SAFE)
         public IntentFilter createFromParcel(Parcel source) {
             return new IntentFilter(source);
         }

@@ -166,7 +166,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.281 -0400", hash_original_method = "47627FAA36D08729C94EAD6CAAA95F6C", hash_generated_method = "B72324DC5BF99CE998CCD4E6FD3A5032")
     public void run() {
         mCurrentDegrees += mIncrement;

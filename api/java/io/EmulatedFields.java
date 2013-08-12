@@ -15,6 +15,7 @@ class EmulatedFields {
 
     private ObjectStreamField[] declaredFields;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.669 -0400", hash_original_method = "0D8BD958281DF75319EA682F9725E83E", hash_generated_method = "0F804F44801AA3E5A0684B5A9D4837D9")
     public  EmulatedFields(ObjectStreamField[] fields, ObjectStreamField[] declared) {
         addTaint(fields[0].getTaint());
@@ -45,6 +46,7 @@ for(int i = 0;i < fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.670 -0400", hash_original_method = "1C69260A170F4832C171F7666BEC6CDB", hash_generated_method = "5AF245349A6A487BB7C76478EC914244")
     public boolean defaulted(String name) throws IllegalArgumentException {
         addTaint(name.getTaint());
@@ -156,6 +158,7 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1950914370 =         slot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.673 -0400", hash_original_method = "ACF5260920B1F0F677513369F3D8C323", hash_generated_method = "78B349251889181A4D2FB0FCC7725854")
     public byte get(String name, byte defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -170,6 +173,7 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1950914370 =         slot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.674 -0400", hash_original_method = "97CAA651EBA3FEB1DEF47882147E3EE9", hash_generated_method = "02AEE23BF390E2ABAA9D649F4A8C1B8D")
     public char get(String name, char defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -184,6 +188,7 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1950914370 =         slot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.674 -0400", hash_original_method = "8A61E03E38631E405F30500DFE3A2EED", hash_generated_method = "0F088AC9C298CE5748FC94C7703AAE3A")
     public double get(String name, double defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -198,6 +203,7 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1950914370 =         slot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.675 -0400", hash_original_method = "2A99383382827F229576C5D7E3624FBA", hash_generated_method = "4C82FDDAF624159BF744BF5CFD82FFEE")
     public float get(String name, float defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -212,6 +218,7 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1950914370 =         slot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.675 -0400", hash_original_method = "348173917C5323C10E5D8A71A480A22F", hash_generated_method = "145B66C4EB45865DD1EC187713647779")
     public int get(String name, int defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -226,6 +233,7 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1950914370 =         slot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.676 -0400", hash_original_method = "57601B1EFC99CB5F2500857C9C4A7300", hash_generated_method = "9567A0CE0873637CE2FF1E30913AADA4")
     public long get(String name, long defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -254,6 +262,7 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1233947472 =         slot.defaulted ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.676 -0400", hash_original_method = "EA3C9F151A3984D516E6CE85AC2BDF4D", hash_generated_method = "88080F553279F17239944B97225859A1")
     public short get(String name, short defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -268,6 +277,7 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1233947472 =         slot.defaulted ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.677 -0400", hash_original_method = "72E0CD60A94F0F11C444AC99B11C64E2", hash_generated_method = "34AEF86E7303724427B49A46A0D7E4BC")
     public boolean get(String name, boolean defaultValue) throws IllegalArgumentException {
         addTaint(defaultValue);
@@ -338,6 +348,7 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1233947472 =         slot.defaulted ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.680 -0400", hash_original_method = "C7B64C133814D04EB5CE7945AB5C3FD6", hash_generated_method = "01A5F6CFF06B8BE71BE0DE1F63DCEEDF")
     public void put(String name, int value) throws IllegalArgumentException {
         addTaint(value);
@@ -352,6 +363,7 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1233947472 =         slot.defaulted ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.680 -0400", hash_original_method = "4164B16D12FE76E9A5204CEE3F8D4A11", hash_generated_method = "B6876F79EA66A943DC9166C43744754E")
     public void put(String name, long value) throws IllegalArgumentException {
         addTaint(value);

@@ -202,6 +202,7 @@ final class BulkCursorProxy implements IBulkCursor {
 
     private Bundle mExtras;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.479 -0400", hash_original_method = "D55E49E568C2A68373E38CCE4CBFBB39", hash_generated_method = "F4E2E7A3DCF84063D978A8615FEA3A5E")
     public  BulkCursorProxy(IBinder remote) {
         mRemote = remote;
@@ -269,6 +270,7 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_1737347589 =             window
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.483 -0400", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "3A25E2CA29C678C2E9117CFABCC86AAD")
     public void onMove(int position) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -302,6 +304,7 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_1737347589 =             window
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.484 -0400", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "D346D44AF79D31E2D5D4DC0BA5F031D3")
     public int count() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -350,6 +353,7 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_1737347589 =             window
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.485 -0400", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "AA0905F70F23CA32C0F286E377C858D4")
     public String[] getColumnNames() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -396,6 +400,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_112267419 =             columnNames
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.486 -0400", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "B5795C1CD612DC57C918E50A35075092")
     public void deactivate() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -425,6 +430,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_112267419 =             columnNames
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.486 -0400", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "794ECD036839A74A6AE936598DC14BB4")
     public void close() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -454,7 +460,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_112267419 =             columnNames
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.487 -0400", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "E6DCD61483FCDCC5503A76E0E222C69F")
     public int requery(IContentObserver observer) throws RemoteException {
         addTaint(observer.getTaint());
@@ -543,6 +549,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_112267419 =             columnNames
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.491 -0400", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "90574E105F06E699FEB1DB0BC78E2399")
     public Bundle getExtras() throws RemoteException {
         if(mExtras == null)        
@@ -583,6 +590,7 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_893179817 =         mExtras;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.492 -0400", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "7C31DD47122CC5C593434C8F5DC2702E")
     public Bundle respond(Bundle extras) throws RemoteException {
         addTaint(extras.getTaint());

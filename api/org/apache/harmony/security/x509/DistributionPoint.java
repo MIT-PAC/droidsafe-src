@@ -108,6 +108,7 @@ public final class DistributionPoint {
             setOptional(2);
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
             return new DistributionPoint((DistributionPointName) values[0],

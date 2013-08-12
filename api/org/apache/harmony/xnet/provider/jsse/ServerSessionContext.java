@@ -14,6 +14,7 @@ public class ServerSessionContext extends AbstractSessionContext {
 
     private SSLServerSessionCache persistentCache;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.956 -0400", hash_original_method = "9FA739694DBACEAA071D2AEDBA51A05E", hash_generated_method = "519FB45F9A385F0AC73A51E91875A433")
     public  ServerSessionContext() {
         super(100, 0);

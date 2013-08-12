@@ -586,7 +586,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.494 -0400", hash_original_method = "0D9114E83A94DAB2C664FA6E45C487C9", hash_generated_method = "F7C7CF110AFA05BD358D80D700ADEDC6")
     public void setConnectionId(int connectionId) {
         enforceNotSealed();

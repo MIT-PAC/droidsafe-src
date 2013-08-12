@@ -31,6 +31,7 @@ class PluginFullScreenHolder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.362 -0400", hash_original_field = "C38F623FA144FAC5E071C48A78CE544C", hash_generated_field = "284DEB13BE43A32C1123FC3056C8BC7C")
 
     private final WebChromeClient.CustomViewCallback mCallback = new WebChromeClient.CustomViewCallback() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.362 -0400", hash_original_method = "7559615123D16B3285B6BD8B271A29E1", hash_generated_method = "BD33C753C20DB6DE78D6B94FE6CCA305")
         public void onCustomViewHidden() {
             
@@ -103,7 +104,7 @@ class PluginFullScreenHolder {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.786 -0400", hash_original_method = "DD5335755EAD0F04B1B63E259CD22224", hash_generated_method = "F1CC204936B18406E5F95BDAFF3A0E26")
     public void show() {
         if(mWebView.getViewManager() != null)        
@@ -118,6 +119,7 @@ class PluginFullScreenHolder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.786 -0400", hash_original_method = "AB5ED812B0D51EA9DC95D08A130CF1D1", hash_generated_method = "A618316A6F188F354FA11FDA59D5DF4D")
     public void hide() {
         WebChromeClient client = mWebView.getWebChromeClient();
@@ -164,7 +166,7 @@ class PluginFullScreenHolder {
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.786 -0400", hash_original_method = "5F021E74A22E2DE8FA3FAB6B663A24D2", hash_generated_method = "DED701CE76BC329C53381161B631A307")
         @Override
         public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -204,7 +206,7 @@ class PluginFullScreenHolder {
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.787 -0400", hash_original_method = "B00867DA6E98462A97CBDDC40208DF51", hash_generated_method = "56950DD61EA7BF8B98D18977E8A087E7")
         @Override
         public boolean onTrackballEvent(MotionEvent event) {

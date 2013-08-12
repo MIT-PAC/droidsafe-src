@@ -15,6 +15,7 @@ public class Proxy {
 
     private SocketAddress address;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.314 -0400", hash_original_method = "16752A487C0930093F66EAD9AA8B14F8", hash_generated_method = "608B138C06962BF757719FBD1B9B394F")
     public  Proxy(Proxy.Type type, SocketAddress sa) {
         if(type == Type.DIRECT || sa == null)        
@@ -34,7 +35,7 @@ public class Proxy {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.315 -0400", hash_original_method = "D66A32319FBF400033B05D10E8B8C304", hash_generated_method = "3B8506530C1D1E82DA5460F730015C73")
     private  Proxy() {
         type = Type.DIRECT;

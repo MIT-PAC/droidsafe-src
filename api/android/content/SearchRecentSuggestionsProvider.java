@@ -46,6 +46,7 @@ public class SearchRecentSuggestionsProvider extends ContentProvider {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.789 -0400", hash_original_method = "E16CA3DFE54EBEC32586C921FDE66A1B", hash_generated_method = "9FEFF2961B2F4BBD03A4AA7D913329B1")
     protected void setupSuggestions(String authority, int mode) {
         if(TextUtils.isEmpty(authority) || 
@@ -259,6 +260,7 @@ Uri var6313300DCD5E35AA1F8DE70965D30D12_1163957393 =         newUri;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.796 -0400", hash_original_method = "B13C0C999B2C074C09328C18BB8361D9", hash_generated_method = "D266AED5ADADF1B8B12AC4E29B310E56")
     @Override
     public boolean onCreate() {
@@ -435,6 +437,7 @@ Cursor var807FB10045EE51C06BDB74744A6714DF_1612159326 =         c;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.810 -0400", hash_original_method = "2B559659D3FF90972195D37AA84A3E73", hash_generated_method = "B65439C8FDD9D5D3839140878856D122")
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

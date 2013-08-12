@@ -24,6 +24,7 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setAccessible(AccessibleObject[] objects, boolean flag) {
         synchronized(AccessibleObject.class) {
             for (AccessibleObject object : objects) {
@@ -53,6 +54,7 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "1600934FB3C06B4EFCA75CF6D9ABC18E")
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         addTaint(annotationType.getTaint());
@@ -64,6 +66,7 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "866C21F9DC66E2705DDD59B9AC495F42")
     public Annotation[] getDeclaredAnnotations() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_110590247 = new UnsupportedOperationException();
@@ -74,6 +77,7 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "8DA0542F1FD48E720A95190061CB7FD4")
     public Annotation[] getAnnotations() {
 Annotation[] var47CFE6C4A705F42D2CD6EF6EAC843F8E_396237079 =         getDeclaredAnnotations();
@@ -84,6 +88,7 @@ Annotation[] var47CFE6C4A705F42D2CD6EF6EAC843F8E_396237079 =         getDeclared
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "E854D6B6A4F110252592FEF88B9AB0AA", hash_generated_method = "3568A964D8BA23EB6D5CB01D72AE6A5D")
     public <T extends Annotation> T getAnnotation(Class<T> annotationType) {
         addTaint(annotationType.getTaint());
@@ -95,6 +100,7 @@ Annotation[] var47CFE6C4A705F42D2CD6EF6EAC843F8E_396237079 =         getDeclared
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.855 -0400", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "63C21D3D052350C47BBA0A6CEC6D7662")
      String getSignature(Class<?> clazz) {
         addTaint(clazz.getTaint());
@@ -134,6 +140,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1779165241 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.857 -0400", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "D597D722AC3B7DB64B48427AEBF037C0")
      String toString(Class<?>[] types) {
         addTaint(types[0].getTaint());
@@ -163,6 +170,7 @@ String varE65B3A02759122992CB82C0E651AD408_764910252 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.858 -0400", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "7B004C4FD903D6DE09EEABB79285DA58")
      String getSignatureAttribute() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_455306643 = new UnsupportedOperationException();
@@ -190,6 +198,7 @@ String varE65B3A02759122992CB82C0E651AD408_764910252 =         result.toString()
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.859 -0400", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "EE7D264E102222A929FE18E054D1837D")
      void appendArrayType(StringBuilder sb, Class<?> obj) {
         addTaint(obj.getTaint());
@@ -243,6 +252,7 @@ for(int i = 1;i < types.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.861 -0400", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "3702F5CF2AAC15B2E8B7485A23159E53")
      void appendGenericType(StringBuilder sb, Type obj) {
         addTaint(obj.getTaint());

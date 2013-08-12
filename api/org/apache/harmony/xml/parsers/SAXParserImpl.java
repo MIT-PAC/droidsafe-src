@@ -92,6 +92,7 @@ for(Map.Entry<String,Boolean> entry : initialFeatures.entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.812 -0400", hash_original_method = "18862164328B5438252F399ABE567B5E", hash_generated_method = "690918B10F282A1C7BA0BE6437DBD438")
     @Override
     public Parser getParser() {
@@ -135,6 +136,7 @@ XMLReader var681AFDDDB48FD166DFCBFA04C65E6269_1842155731 =         reader;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.814 -0400", hash_original_method = "4C988836598C02053146886655E4EB88", hash_generated_method = "5614AF223E7F379B9355021058B06156")
     @Override
     public boolean isNamespaceAware() {

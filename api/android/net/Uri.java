@@ -275,6 +275,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1293281338 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:30.995 -0400", hash_original_method = "966FC11B97976C170B352F408FA2783F", hash_generated_method = "7CC4BF4539F1E5CE9003E1D03B910129")
     public Set<String> getQueryParameterNames() {
         if(isOpaque())        
@@ -314,6 +315,7 @@ Set<String> varDD12C3B8A2F9B14F672A88549FBB956F_1855633732 =         Collections
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:30.996 -0400", hash_original_method = "9E05603A6F44EBCC73536B2584976016", hash_generated_method = "6D87AD0C7DB56ECB6CB7F471F5142FDE")
     public List<String> getQueryParameters(String key) {
         addTaint(key.getTaint());
@@ -456,6 +458,7 @@ String var540C13E9E156B687226421B24F2DF178_1669367434 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:30.998 -0400", hash_original_method = "67BE774C17CDAC836698DE4D6D994F1B", hash_generated_method = "F7872A63696B4ADA497FE173FBB8C675")
     public boolean getBooleanQueryParameter(String key, boolean defaultValue) {
         addTaint(defaultValue);
@@ -560,6 +563,7 @@ String var540C13E9E156B687226421B24F2DF178_1669367434 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String decode(String s) {
         if (s == null) {
             return null;
@@ -687,6 +691,7 @@ String var540C13E9E156B687226421B24F2DF178_1669367434 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.004 -0400", hash_original_method = "C73A8428F9DA44091DF96EEDC1E3D3EF", hash_generated_method = "324EBC5AEA4A8D0023485D42B57F178D")
         public void writeToParcel(Parcel parcel, int flags) {
             addTaint(flags);
@@ -769,6 +774,7 @@ String var540C13E9E156B687226421B24F2DF178_1669367434 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.008 -0400", hash_original_method = "96667B7E38635C26F17AC80DC91F9ADB", hash_generated_method = "27ACBDD87F5D51143EC4B75757645650")
         public String getScheme() {
             @SuppressWarnings("StringEquality") boolean cached = (scheme != NOT_CACHED);
@@ -806,6 +812,7 @@ Part var09914C8DC28309112B8F11C48A2310A0_1339336635 =             ssp == null ? 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.010 -0400", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "19422696D4EE9F24202A4614A498DE70")
         public String getEncodedSchemeSpecificPart() {
 String var393D011CD485FB233FC4BE4326461491_404763565 =             getSsp().getEncoded();
@@ -816,6 +823,7 @@ String var393D011CD485FB233FC4BE4326461491_404763565 =             getSsp().getE
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.010 -0400", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "9898CBA299C423413C7D776CBD8265BC")
         public String getSchemeSpecificPart() {
 String varDEA78A046E5755E6A172773CC85259A6_551791302 =             getSsp().getDecoded();
@@ -868,6 +876,7 @@ Part var9A4A00E403B4898E9807F68E9EBE5A8B_433007366 =             authority;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.012 -0400", hash_original_method = "B783FB869F9CE6B897E37C2A9B9B4259", hash_generated_method = "9A89BA81684390B6AE303A0156713C55")
         public String getEncodedAuthority() {
 String var4F2DF47BEB24727A66BE79DC91AEECC0_277821908 =             getAuthorityPart().getEncoded();
@@ -878,6 +887,7 @@ String var4F2DF47BEB24727A66BE79DC91AEECC0_277821908 =             getAuthorityP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.013 -0400", hash_original_method = "F4404025FB90C68980598D2895AF9578", hash_generated_method = "9EE649F67445BC5EE518AE8BAD4A2C0A")
         public String getAuthority() {
 String var039061F12DF25903DB753BE4C77CEE48_2111102001 =             getAuthorityPart().getDecoded();
@@ -903,6 +913,7 @@ PathPart varD78256BB83A04B0BB00412684FCFB6CE_432328209 =             path == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.023 -0400", hash_original_method = "E8759FDECF433DBBFF0BA03CF3576CC0", hash_generated_method = "84940FDDB7645CEFB55D78E6CD16EFBF")
         public String getPath() {
 String varEADC8740E16239A469558240BCE0C192_326774278 =             getPathPart().getDecoded();
@@ -913,6 +924,7 @@ String varEADC8740E16239A469558240BCE0C192_326774278 =             getPathPart()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.024 -0400", hash_original_method = "D26AFC1B9D9DFA82513D9A4C50DD2F0F", hash_generated_method = "471CA07C8B54471FE9ABE4E5888AB43D")
         public String getEncodedPath() {
 String var5763B1F1953626A1B4119C83521EC238_125143572 =             getPathPart().getEncoded();
@@ -990,6 +1002,7 @@ Part varF5F740948841E62E50DE94DCB962384D_1611442754 =             query == null
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.026 -0400", hash_original_method = "61892B739321CB796D242E9E13C1F033", hash_generated_method = "D77062F2A289BA98D2A091742A7C3A51")
         public String getEncodedQuery() {
 String var592BAA78F9680D5D07BEE2DE945A79E3_1217048749 =             getQueryPart().getEncoded();
@@ -1042,6 +1055,7 @@ String varCEC45AD9CB71F2C97FE02CF3CA3FEDB4_482490620 =             uriString.sub
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.028 -0400", hash_original_method = "31EC40ABD8B86D0064329950E060BFBD", hash_generated_method = "220035C8F0A535147BF0E0652AD05D7C")
         public String getQuery() {
 String varF32257C5D28B6286E14CC639F868B333_832508055 =             getQueryPart().getDecoded();
@@ -1065,6 +1079,7 @@ Part var8550B3AFC925290D75F2A324FFCC8703_415127987 =             fragment == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.030 -0400", hash_original_method = "C2884F3C25114B1CD652E8CCEF7D7F10", hash_generated_method = "F399F17B114CB3DF2F04969A855DEC13")
         public String getEncodedFragment() {
 String var15356DF640E39A7E16838423CF95944B_1978300904 =             getFragmentPart().getEncoded();
@@ -1088,6 +1103,7 @@ String varDFC5047C05E36D10FFCD890F81F09AE9_1010739627 =             fsi == NOT_F
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.031 -0400", hash_original_method = "4E8163B4F7FDF9829581A99F6274656D", hash_generated_method = "D59959ACFAA950431A109E24319E5132")
         public String getFragment() {
 String var93BCD471CAA5DE221487CFBAAF871060_581464693 =             getFragmentPart().getDecoded();
@@ -1109,6 +1125,7 @@ String varA4F4B44693A1936015581C1F7D6F4DAF_1061034407 =             uriString;
         }
 
         
+        @DSModeled(DSC.SAFE)
         static String parseAuthority(String uriString, int ssi) {
             int length = uriString.length();
             if (length > ssi + 2
@@ -1131,6 +1148,7 @@ String varA4F4B44693A1936015581C1F7D6F4DAF_1061034407 =             uriString;
         }
 
         
+        @DSModeled(DSC.SAFE)
         static String parsePath(String uriString, int ssi) {
             int length = uriString.length();
             int pathStart;
@@ -1307,6 +1325,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_721707593 =             this.scheme;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.050 -0400", hash_original_method = "3C55B6D4F736410AF7A2ACAB5CCC51ED", hash_generated_method = "FE22B2652046FA02D2F381F4C6954EBE")
         public String getEncodedSchemeSpecificPart() {
 String varD902B0CDE27092B0A8D653D3A1CAB3D2_2141627697 =             ssp.getEncoded();
@@ -1317,6 +1336,7 @@ String varD902B0CDE27092B0A8D653D3A1CAB3D2_2141627697 =             ssp.getEncod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.051 -0400", hash_original_method = "ED3540C8D06E41CD645C58A620F36381", hash_generated_method = "BA921490D48924EC18FE3E45EE1FD05D")
         public String getSchemeSpecificPart() {
 String var754BC27394ACBF326C1E9A754D8A46C9_1154205437 =             ssp.getDecoded();
@@ -1393,6 +1413,7 @@ String var540C13E9E156B687226421B24F2DF178_1039604194 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.061 -0400", hash_original_method = "9F53DDCB73E71AFF4CF207B49D0689B3", hash_generated_method = "9D338AC47E3B94682F777FAB1A5AD7C5")
         public String getFragment() {
 String varAF7E6EDA3A17E940567231584A0703A7_766359486 =             fragment.getDecoded();
@@ -1403,6 +1424,7 @@ String varAF7E6EDA3A17E940567231584A0703A7_766359486 =             fragment.getD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.061 -0400", hash_original_method = "2FF982E252638134744EE32C0D7F6950", hash_generated_method = "58B9ED27851AAF27D4DCE21B2F727718")
         public String getEncodedFragment() {
 String varC670092882988D295A0AFA2F86B4E2AC_1810866594 =             fragment.getEncoded();
@@ -1478,6 +1500,7 @@ String var540C13E9E156B687226421B24F2DF178_1006019564 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.064 -0400", hash_original_method = "ACF28BE5516AF44175C2E6962FB03404", hash_generated_method = "77D1888EADBAD504CC77895E0518AD7A")
         public String toString() {
             @SuppressWarnings("StringEquality") boolean cached = cachedString != NOT_CACHED;
@@ -1555,6 +1578,7 @@ Builder varB0D57715B2E1FC2447B5F7A2D1E9683B_339072280 =             new Builder(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.067 -0400", hash_original_method = "043CF25E38E9D3A71BE4CC7B6371568E", hash_generated_method = "985004B1447161B4BA971EBE76EF7B28")
         public String get(int index) {
             addTaint(index);
@@ -1609,6 +1633,7 @@ String var0670CDC624AB38F74C6CE6D645099017_1187855771 =             segments[ind
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.069 -0400", hash_original_method = "F05B9B5ECB44DE7CFF27782486F28CF3", hash_generated_method = "57396C99D23B797B3C467EFAA3744A8B")
          void add(String segment) {
             if(segments == null)            
@@ -1688,6 +1713,7 @@ PathSegments varF93FC2B9FE269AF50DE5689CD2FB3B65_2002378793 =                 ne
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.072 -0400", hash_original_method = "D5E71CFA6EED35AEB9B5F4AEC5287C3B", hash_generated_method = "A004B3158E3193D5D8F4332CABCEE94B")
         public String getLastPathSegment() {
             List<String> segments = getPathSegments();
@@ -1724,6 +1750,7 @@ Part varF7E738A42E6D63EB0326855BC730BADF_283795157 =             userInfo == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.074 -0400", hash_original_method = "EADAAD26DC8689BCA10DCA33883B9323", hash_generated_method = "90D052C454337410BF4F159A425FE6B2")
         public final String getEncodedUserInfo() {
 String var09E3B0803DBA809E674A74FBBA3FD409_137253196 =             getUserInfoPart().getEncoded();
@@ -1758,6 +1785,7 @@ String var9D68F14379A550242867922C161646A9_1957311184 =             end == NOT_F
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.083 -0400", hash_original_method = "575ECF6860F7EEFE5055BF56F2601A0E", hash_generated_method = "521A80EE3A5F1B2A931821EB1F683FDF")
         public String getUserInfo() {
 String varB4A42524A46C4FAD7FBAC514070D2A61_422818221 =             getUserInfoPart().getDecoded();
@@ -1768,6 +1796,7 @@ String varB4A42524A46C4FAD7FBAC514070D2A61_422818221 =             getUserInfoPa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.083 -0400", hash_original_method = "2FC22A6CCA0A3F4C0B9E4C09F79A556D", hash_generated_method = "2AB9F607AE11845C83D474DB63B07F9D")
         public String getHost() {
             @SuppressWarnings("StringEquality") boolean cached = (host != NOT_CACHED);
@@ -1815,6 +1844,7 @@ String var608417B3BC2F90A7AFAAFAF8F1F376E0_85359202 =             decode(encoded
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.084 -0400", hash_original_method = "A497EF38F72042FD9397DCB617BC4BBC", hash_generated_method = "1736AEE52C24AE0AE8EA70700C42B37E")
         public int getPort() {
             int var7D5469D2554BBE8BEA01480744CB64B8_1833004327 = (port == NOT_CALCULATED
@@ -2014,6 +2044,7 @@ Part var612ADADF05B7551B37A539180151D856_1864340048 =             ssp == null
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.092 -0400", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "C137C2E39F63AA6A2A59EC22B74A82AC")
         public String getEncodedSchemeSpecificPart() {
 String var393D011CD485FB233FC4BE4326461491_1839085107 =             getSsp().getEncoded();
@@ -2024,6 +2055,7 @@ String var393D011CD485FB233FC4BE4326461491_1839085107 =             getSsp().get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.092 -0400", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "D9D09D9974A829F7D16E76951B106BD7")
         public String getSchemeSpecificPart() {
 String varDEA78A046E5755E6A172773CC85259A6_492389728 =             getSsp().getDecoded();
@@ -2092,6 +2124,7 @@ String varDD511262F0E7679CA44A2E8218470028_1715053174 =             this.authori
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.094 -0400", hash_original_method = "02F0907154122B499105718EFAFFB12D", hash_generated_method = "A30DA0D724887B21979820F2CEFABB81")
         public String getEncodedAuthority() {
 String var19AE63614558C7149808DBD062B65B6B_1737801250 =             this.authority.getEncoded();
@@ -2102,6 +2135,7 @@ String var19AE63614558C7149808DBD062B65B6B_1737801250 =             this.authori
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.094 -0400", hash_original_method = "C2F72FED192DF0C1254C49B5EAFF6B37", hash_generated_method = "F8E4214CD5A4FF81C0E6DA310D836CE9")
         public String getEncodedPath() {
 String varEEAD1A4B4F429D96FD5A6ADB3BF1FFE5_947160269 =             this.path.getEncoded();
@@ -2112,6 +2146,7 @@ String varEEAD1A4B4F429D96FD5A6ADB3BF1FFE5_947160269 =             this.path.get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.095 -0400", hash_original_method = "6081DF09BF7A0319CE8B8794EF03DD3D", hash_generated_method = "667D8E2B32336376946BC31CB8EF32D4")
         public String getPath() {
 String var83F9CE5C9BAF5C5C429C86F8D8178641_1050424861 =             this.path.getDecoded();
@@ -2122,6 +2157,7 @@ String var83F9CE5C9BAF5C5C429C86F8D8178641_1050424861 =             this.path.ge
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.095 -0400", hash_original_method = "BB14E9B85B4B70FE8537ADEAEA0F30F8", hash_generated_method = "76C6628A29EE99E4A1B514CE59D97840")
         public String getQuery() {
 String var0FC25D767B999B6312889F23BA6B3E21_91451011 =             this.query.getDecoded();
@@ -2132,6 +2168,7 @@ String var0FC25D767B999B6312889F23BA6B3E21_91451011 =             this.query.get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.096 -0400", hash_original_method = "4E4841C1D3AAC7E9E3EC5666E1D3BDC7", hash_generated_method = "EB4AB9176B0F29C8DA2021911A867D75")
         public String getEncodedQuery() {
 String varD80217C924F7F40BAC074946FDBADEEC_905534879 =             this.query.getEncoded();
@@ -2142,6 +2179,7 @@ String varD80217C924F7F40BAC074946FDBADEEC_905534879 =             this.query.ge
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.096 -0400", hash_original_method = "BC71EA5136922A2C431D19FA4D7E797E", hash_generated_method = "C9F3E4B5BEE195B431B60F211DD7F90C")
         public String getFragment() {
 String varD91F6287F55E70D82879F259060BB4F7_1180400820 =             this.fragment.getDecoded();
@@ -2152,6 +2190,7 @@ String varD91F6287F55E70D82879F259060BB4F7_1180400820 =             this.fragmen
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.096 -0400", hash_original_method = "D0BDA4E24821D7C40932E823B160DCAD", hash_generated_method = "B7110403967EF5A991C997DB917F1100")
         public String getEncodedFragment() {
 String var9BE81904ABD2B0EBFE2214CE0EE4BBFD_186588106 =             this.fragment.getEncoded();
@@ -2172,6 +2211,7 @@ List<String> varA8049C752B325D0BCB78F1A90EC0D736_10837507 =             this.pat
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.099 -0400", hash_original_method = "2FFEEC7D33EBEEF04178DF9D921CBC02", hash_generated_method = "FC2C629EF938EA81F1B52290C3B3BB28")
         @Override
         public String toString() {
@@ -2629,6 +2669,7 @@ String var83CCC8E6DBC69F3499A1E5AC609A34CF_1617177443 =             build().toSt
         abstract String getEncoded();
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.160 -0400", hash_original_method = "06323BBC323E7F59CEDDE1FAA04ED1F6", hash_generated_method = "1539184D269B68795EE5C8E7CFB00FD4")
         final String getDecoded() {
             @SuppressWarnings("StringEquality") boolean hasDecoded = decoded != NOT_CACHED;
@@ -2741,7 +2782,7 @@ String varF9DE9787DBBABACF674820C53FE77B7A_1079625040 =             hasDecoded ?
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.162 -0400", hash_original_method = "74B8C999E422A266FD890BA259F6B43C", hash_generated_method = "FE8EA5D3C0D4BD66290C98088E381CE5")
          String getEncoded() {
             @SuppressWarnings("StringEquality") boolean hasEncoded = encoded != NOT_CACHED;
@@ -2755,6 +2796,7 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_693571054 =             hasEncoded ? 
         }
 
         
+        @DSModeled(DSC.SAFE)
         static Part readFrom(Parcel parcel) {
             int representation = parcel.readInt();
             switch (representation) {
@@ -2777,16 +2819,19 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_693571054 =             hasEncoded ? 
         }
 
         
+        @DSModeled(DSC.SAFE)
         static Part fromEncoded(String encoded) {
             return from(encoded, NOT_CACHED);
         }
 
         
+        @DSModeled(DSC.SAFE)
         static Part fromDecoded(String decoded) {
             return from(NOT_CACHED, decoded);
         }
 
         
+        @DSModeled(DSC.SAFE)
         static Part from(String encoded, String decoded) {
             if (encoded == null) {
                 return NULL;
@@ -2856,7 +2901,7 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_693571054 =             hasEncoded ? 
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.186 -0400", hash_original_method = "EEE1C5D1C73794B2424FF9B6A794D8BE", hash_generated_method = "4B0F67434D8457DAFD58D4166208573C")
          String getEncoded() {
             @SuppressWarnings("StringEquality") boolean hasEncoded = encoded != NOT_CACHED;
@@ -2870,6 +2915,7 @@ String varEFDAC2AC5D53E9CE24C648C5C33F0808_1967545914 =             hasEncoded ?
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.187 -0400", hash_original_method = "BB12DAE5001652F9E9419E41FB496BCF", hash_generated_method = "8CFE3E49AD6DEBC7E990871E0E3646C1")
          PathSegments getPathSegments() {
             if(pathSegments != null)            
@@ -2910,6 +2956,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PathPart appendEncodedSegment(PathPart oldPart,
                 String newSegment) {
             if (oldPart == null) {
@@ -2935,6 +2982,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PathPart appendDecodedSegment(PathPart oldPart, String decoded) {
             String encoded = encode(decoded);
             PathPart retVal = appendEncodedSegment(oldPart, encoded);
@@ -2944,6 +2992,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PathPart readFrom(Parcel parcel) {
             int representation = parcel.readInt();
             switch (representation) {
@@ -2959,6 +3008,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PathPart fromEncoded(String encoded) {
         	PathPart retVal = from(encoded, NOT_CACHED);
         	retVal.addTaint(encoded.getTaint());
@@ -2966,11 +3016,13 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PathPart fromDecoded(String decoded) {
             return from(NOT_CACHED, decoded);
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PathPart from(String encoded, String decoded) {
             if (encoded == null) {
                 return NULL;
@@ -2982,6 +3034,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PathPart makeAbsolute(PathPart oldPart) {
             @SuppressWarnings("StringEquality")
             boolean encodedCached = oldPart.encoded != NOT_CACHED;

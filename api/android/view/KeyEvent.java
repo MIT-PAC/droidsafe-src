@@ -139,6 +139,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.321 -0400", hash_original_method = "8535C41697CC0C68061B8A72D476CEA4", hash_generated_method = "7D4CDB10B03A10C0F62150208FD4918C")
     public  KeyEvent(long downTime, long eventTime, int action,
                     int code, int repeat, int metaState,
@@ -193,6 +194,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.322 -0400", hash_original_method = "6373116C9B5FF479EB0DF8409EEE5FFB", hash_generated_method = "F95BA2D7C1145285F19A2911AC9FDE5D")
     public  KeyEvent(long time, String characters, int deviceId, int flags) {
         mDownTime = time;
@@ -328,7 +330,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static void populateKeycodeSymbolicNames() {
         SparseArray<String> names = KEYCODE_SYMBOLIC_NAMES;
         names.append(KEYCODE_UNKNOWN, "KEYCODE_UNKNOWN");
@@ -1489,6 +1491,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_442643712 =         msg.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyEvent createFromParcelBody(Parcel in) {
         return new KeyEvent(in);
     }

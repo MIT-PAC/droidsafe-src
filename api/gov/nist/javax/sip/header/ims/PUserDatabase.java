@@ -16,6 +16,7 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
 
     private String databaseName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.312 -0400", hash_original_method = "7F14AD9E055B0EDA573715DABAF69E4A", hash_generated_method = "D92B52698CB02D38DCC6FEC6BDD40EC8")
     public  PUserDatabase(String databaseName) {
         super(NAME);
@@ -25,6 +26,7 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.313 -0400", hash_original_method = "E39FCB193BD9E02D223AAEA09A512240", hash_generated_method = "7ADBEBC1D5F5E2626F7290454A00780A")
     public  PUserDatabase() {
         super(P_USER_DATABASE);
@@ -43,6 +45,7 @@ String var851A3104A174A0317C1CB008C48A1898_1816861506 =         this.databaseNam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.314 -0400", hash_original_method = "D51F20AACD3B656F6DA8A7AF0FAAC017", hash_generated_method = "91E5237D80F9174CB1590C4B10B03A2D")
     public void setDatabaseName(String databaseName) {
         if((databaseName==null)||(databaseName.equals(" ")))        
@@ -67,6 +70,7 @@ String var851A3104A174A0317C1CB008C48A1898_1816861506 =         this.databaseNam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.315 -0400", hash_original_method = "C5A419AE4F54D4DB306D1B917A489A39", hash_generated_method = "BEBA6C18DDCC85E39E5FF2F53C7E119B")
     protected String encodeBody() {
         StringBuffer retval = new StringBuffer();
@@ -91,6 +95,7 @@ String var1B324365A764C077A55854483509F4AB_1568807094 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.315 -0400", hash_original_method = "E720B3A09C72EF9AD917691C9271EB0A", hash_generated_method = "B3322184744010EEF7D53A92350244ED")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -102,6 +107,7 @@ String var1B324365A764C077A55854483509F4AB_1568807094 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.316 -0400", hash_original_method = "0C530D20B34B6FA1A3EDDB9B09D02FD1", hash_generated_method = "ACF42A12B145A985EA606CF7A8E3892E")
     public Object clone() {
         PUserDatabase retval = (PUserDatabase) super.clone();
@@ -114,6 +120,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_1478173343 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.316 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "428B4B9CDB575F17D579EF393C70DE47")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

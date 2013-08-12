@@ -12,6 +12,7 @@ public class ECKeyParameters extends AsymmetricKeyParameter {
 
     ECDomainParameters params;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.092 -0400", hash_original_method = "E2FB354EFDC926847445A1310061C03E", hash_generated_method = "278C2837D59666701ED80499EDC9B6F5")
     protected  ECKeyParameters(
         boolean             isPrivate,

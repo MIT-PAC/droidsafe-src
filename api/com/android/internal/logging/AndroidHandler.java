@@ -109,6 +109,7 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int getAndroidLevel(Level level) {
         int value = level.intValue();
         if (value >= 1000) { 
@@ -126,6 +127,7 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.231 -0400", hash_original_field = "05CB8D5FA80AAAD88471EF57C0EC546F", hash_generated_field = "006C8788F0F47E8A210E001196024E69")
 
     private static final Formatter THE_FORMATTER = new Formatter() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.231 -0400", hash_original_method = "5552BF51EFD27F1F4C5C7AE17D37E3F1", hash_generated_method = "F7BE88C6E38E8155E09EE006CC13CD65")
         @Override
         public String format(LogRecord r) {

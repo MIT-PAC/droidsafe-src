@@ -23,6 +23,7 @@ public class PrincipalUtil {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static X509Principal getIssuerX509Principal(
         X509Certificate cert) throws CertificateEncodingException {
         try
@@ -38,6 +39,7 @@ public class PrincipalUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X509Principal getSubjectX509Principal(
         X509Certificate cert) throws CertificateEncodingException {
         try
@@ -53,6 +55,7 @@ public class PrincipalUtil {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X509Principal getIssuerX509Principal(
         X509CRL crl) throws CRLException {
         try

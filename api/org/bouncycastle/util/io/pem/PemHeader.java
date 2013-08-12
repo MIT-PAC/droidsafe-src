@@ -47,6 +47,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_241523726 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.378 -0400", hash_original_method = "D2F99D4FA1F9F9DCD18FFC2807839B4D", hash_generated_method = "BD8A7C116FCA6EBC130CB8715765BB1A")
     public int hashCode() {
         int varB55AA251EA7EFA452366B12918988F86_1605988791 = (getHashCode(this.name) + 31 * getHashCode(this.value));
@@ -57,6 +58,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_241523726 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.379 -0400", hash_original_method = "008350332C23D1093274CD2597D3DC3D", hash_generated_method = "262B7C8B200C220499836D78E6869BA3")
     public boolean equals(Object o) {
         addTaint(o.getTaint());

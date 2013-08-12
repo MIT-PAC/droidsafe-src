@@ -9,6 +9,7 @@ import java.security.GeneralSecurityException;
 
 public class BadPaddingException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.880 -0400", hash_original_method = "09CEF21DE4AE127050E57B3AC6E4EB54", hash_generated_method = "F7E799E6576C2B1A6A5BFBA4E1F45A42")
     public  BadPaddingException(String msg) {
         super(msg);
@@ -17,6 +18,7 @@ public class BadPaddingException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.881 -0400", hash_original_method = "93AC86C418E78DB07C3A1E0229C09FBC", hash_generated_method = "BEC10E384823F5A0EB6660587E005727")
     public  BadPaddingException() {
         // ---------- Original Method ----------

@@ -14,6 +14,7 @@ import java.text.ParseException;
 
 public class PCalledPartyIDParser extends AddressParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.888 -0400", hash_original_method = "5A210D10F0DA09D81C9A40BA3A0E0BA0", hash_generated_method = "BBD7965D346BF1D7806D7ABC42DEB4ED")
     public  PCalledPartyIDParser(String calledPartyID) {
         super(calledPartyID);
@@ -22,6 +23,7 @@ public class PCalledPartyIDParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.888 -0400", hash_original_method = "A63723B4A16B3DEC36752AB85CAA4736", hash_generated_method = "1A433AD9ED26F8AC88F7689284675C35")
     protected  PCalledPartyIDParser(Lexer lexer) {
         super(lexer);
@@ -30,6 +32,7 @@ public class PCalledPartyIDParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.888 -0400", hash_original_method = "C43CF84ED746DD134AB177C7FEFB3286", hash_generated_method = "163F44A407A4C9510A65BBC7112614A3")
     public SIPHeader parse() throws ParseException {
         if(debug)        

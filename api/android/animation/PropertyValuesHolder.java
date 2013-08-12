@@ -50,7 +50,7 @@ public class PropertyValuesHolder implements Cloneable {
     private Object mAnimatedValue;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.608 -0400", hash_original_method = "73C53AD6C55F8F35D3899F0ADDC03638", hash_generated_method = "173B3BF84BCAAD759EC1E53526977EB5")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private  PropertyValuesHolder(String propertyName) {
         mPropertyName = propertyName;
         // ---------- Original Method ----------
@@ -59,7 +59,7 @@ public class PropertyValuesHolder implements Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.610 -0400", hash_original_method = "BDE609B5B8790707A2E7C7F2E71E73EE", hash_generated_method = "0E856EB53E72B16051B207D87A59ECAC")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private  PropertyValuesHolder(Property property) {
         mProperty = property;
         if(property != null)        
@@ -201,7 +201,7 @@ for(int i = 0;i < numKeyframes;++i)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.637 -0400", hash_original_method = "13DE02BBE5B8605736F61BF53DFAC872", hash_generated_method = "90FB1DA9730A6568BFDAB3750C165C48")
     private Method getPropertyFunction(Class targetClass, String prefix, Class valueType) {
         addTaint(valueType.getTaint());
@@ -317,7 +317,7 @@ Method var72DEA74FB2F1F2EAE5BFBBD9D6D5878A_1972707809 =         setterOrGetter;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.646 -0400", hash_original_method = "8511F8F7AD8858B7DCF32F8ED21ED093", hash_generated_method = "AD073233B0C810F579053BFA42B447EA")
     private void setupGetter(Class targetClass) {
         mGetter = setupSetterOrGetter(targetClass, sGetterPropertyMap, "get", null);
@@ -379,7 +379,7 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.659 -0400", hash_original_method = "FD1A4547C57F636637D228B97E0E8D50", hash_generated_method = "BF228A1FFB36B0FC80C97497F9CCEB87")
     private void setupValue(Object target, Keyframe kf) {
         addTaint(kf.getTaint());

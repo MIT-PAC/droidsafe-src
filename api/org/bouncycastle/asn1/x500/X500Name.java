@@ -124,6 +124,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X500Name getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -150,6 +151,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.337 -0400", hash_original_method = "075988A0D732A4D3EE3D4A08C1D0111C", hash_generated_method = "E68A61EFF663EEDCCC8FA7DB9018F4DA")
     public RDN[] getRDNs() {
         RDN[] tmp = new RDN[this.rdns.length];
@@ -164,6 +166,7 @@ RDN[] var3F12A0424932F6B5155AA6C49B63FE6E_990329292 =         tmp;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.338 -0400", hash_original_method = "58CE63756668BEA23514975180A77707", hash_generated_method = "6D0FA1CBB0388E52A534689048146445")
     public RDN[] getRDNs(ASN1ObjectIdentifier oid) {
         addTaint(oid.getTaint());
@@ -238,6 +241,7 @@ DERObject varC9775E03431426A026E62F2D736073FB_1479882083 =         new DERSequen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.341 -0400", hash_original_method = "75F09C9D81AE7E21861BB145326A0585", hash_generated_method = "208F5B1D69E4D80A58E2AE040F9D79D1")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -308,6 +312,7 @@ String var5C06B59BC1D23B5BBA16F9412A6A7844_758939931 =         style.toString(th
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultStyle(X500NameStyle style) {
         if (style == null)
         {

@@ -32,6 +32,7 @@ public class AlgNameMapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String map2AlgName(String oid) {
         String algUC = oid2AlgMap.get(oid);
         return algUC == null ? null : algAliasesMap.get(algUC);
@@ -85,6 +86,7 @@ public class AlgNameMapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalize(String oid) {
         return oid.startsWith("OID.")
             ? oid.substring(4)

@@ -71,7 +71,8 @@ public class ProviderUtil {
     }
 
     
-        public static ECParameterSpec getEcImplicitlyCa() {
+        @DSModeled(DSC.SAFE)
+    public static ECParameterSpec getEcImplicitlyCa() {
         ECParameterSpec spec = (ECParameterSpec)threadSpec.get();
         if (spec != null)
         {

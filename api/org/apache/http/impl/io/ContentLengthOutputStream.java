@@ -55,6 +55,7 @@ public class ContentLengthOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.568 -0400", hash_original_method = "5088685B92B0533111B1789635B9B452", hash_generated_method = "2038C15770562F52AE4CF227B046AE2D")
     public void close() throws IOException {
         if(!this.closed)        

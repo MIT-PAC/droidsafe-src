@@ -20,6 +20,7 @@ public class SAXException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.220 -0400", hash_original_method = "0B6772DEF84C5953639B673A22CD2D87", hash_generated_method = "95FCD2A8DBFB1DEEBF93EE10C63F4975")
     public  SAXException(String message) {
         super(message);
@@ -30,6 +31,7 @@ public class SAXException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.221 -0400", hash_original_method = "6C46F13EAE6D974667959E2EC15AB51C", hash_generated_method = "55130B653035BD76E425D4A793596D27")
     public  SAXException(Exception e) {
         this.exception = e;
@@ -48,6 +50,7 @@ public class SAXException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.222 -0400", hash_original_method = "7F1A7B3B4DC8BE54F069CECA78CE108B", hash_generated_method = "A0FFAA7B8E4ADF385172AF09A052629E")
     public String getMessage() {
         String message = super.getMessage();
@@ -84,6 +87,7 @@ Exception varB0A8CAD4B1C89FFC19A72F5757E92C21_964451098 =         exception;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.223 -0400", hash_original_method = "0BE493810C06D201F4519F1260F94FAA", hash_generated_method = "0780AB060625F2C3A1AA47D2E6AE3293")
     public String toString() {
         if(exception != null)        

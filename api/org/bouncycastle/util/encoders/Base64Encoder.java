@@ -34,6 +34,7 @@ public class Base64Encoder implements Encoder {
 
     protected final byte[] decodingTable = new byte[128];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.285 -0400", hash_original_method = "680D3875922DD4E67C0EE2E950D928BD", hash_generated_method = "AABF19D4D0BC5EA370D8438ED4D196CF")
     public  Base64Encoder() {
         initialiseDecodingTable();
@@ -57,7 +58,7 @@ for(int i = 0;i < encodingTable.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.287 -0400", hash_original_method = "9CA1F48AAB7841E0E0CBD16E0BA7D360", hash_generated_method = "51BDB6C475D34FEB03E40A5A0D85396A")
     public int encode(
         byte[]                data,
@@ -132,6 +133,7 @@ switch(modulus){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.291 -0400", hash_original_method = "211C1414D28F35039504B68D95AB9ED9", hash_generated_method = "B4DC106BB9967A4D274C97608644B113")
     public int decode(
         byte[]          data,
@@ -208,7 +210,7 @@ switch(modulus){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.293 -0400", hash_original_method = "304E01512ABEE5D32E29AD105C8F9759", hash_generated_method = "7162470B5BBAC047DAD0E4ABD69057E2")
     public int decode(
         String          data,

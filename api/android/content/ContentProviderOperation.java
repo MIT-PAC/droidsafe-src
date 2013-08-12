@@ -345,6 +345,7 @@ ContentProviderResult var6E113893A689DEDF404C7D4BD6D35874_877623163 =         ne
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.050 -0400", hash_original_method = "A962F701648C4B4117BD0A815ABD46EE", hash_generated_method = "EE4F94500D82F72D316A0062F2F15C18")
     public ContentValues resolveValueBackReferences(
             ContentProviderResult[] backRefs, int numBackRefs) {
@@ -403,6 +404,7 @@ ContentValues var674B10C763DBAAF9696AD9A3DDAE07B3_1737302308 =         values;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.053 -0400", hash_original_method = "AA4B64F522D451BE6AD1A7AFC7A63956", hash_generated_method = "6AF5700D700676FDD35C972BA6F9051E")
     public String[] resolveSelectionArgsBackReferences(
             ContentProviderResult[] backRefs, int numBackRefs) {
@@ -570,7 +572,7 @@ String var5437924A98110F3BAD119BEF211F2BFE_2052902349 =         "mType: " + mTyp
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.062 -0400", hash_original_method = "52DF5CD1F3EDB944F65D1FF1857828C4", hash_generated_method = "10DC9F0B7D9FF58492BEE3947F45D3FC")
         public ContentProviderOperation build() {
             if(mType == TYPE_UPDATE)            
@@ -615,6 +617,7 @@ ContentProviderOperation var8F6B2413C892A7178518BAA0272AF02D_1575096131 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.063 -0400", hash_original_method = "48DEB08B58C335127E8366C72D237182", hash_generated_method = "B2298AAD53FE6424B7A14FB900977A93")
         public Builder withValueBackReferences(ContentValues backReferences) {
             if(mType != TYPE_INSERT && mType != TYPE_UPDATE && mType != TYPE_ASSERT)            
@@ -638,6 +641,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1031482550 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.064 -0400", hash_original_method = "9B7E0512DF416F22106A40FEC0A8A4AE", hash_generated_method = "3E3D34F8E0967E484F5780BB69C0848D")
         public Builder withValueBackReference(String key, int previousResult) {
             addTaint(previousResult);
@@ -670,6 +674,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_753496008 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.066 -0400", hash_original_method = "0B4CE4049FC576DCE44E5153CA371A5B", hash_generated_method = "DA358AD9AD3F5B1BEC31803FD319A487")
         public Builder withSelectionBackReference(int selectionArgIndex, int previousResult) {
             addTaint(previousResult);
@@ -702,6 +707,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_13685910 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.067 -0400", hash_original_method = "F7B8F8808C4F5F5C0301B85A5CF2FD8A", hash_generated_method = "ABD6823625101A69B06F6D5DC353049F")
         public Builder withValues(ContentValues values) {
             addTaint(values.getTaint());
@@ -733,6 +739,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_614193969 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.068 -0400", hash_original_method = "E35FC6F92508151B3604E11EFF6133FA", hash_generated_method = "F0E931CDB6979EFE5A4B9A488269AEAC")
         public Builder withValue(String key, Object value) {
             addTaint(value.getTaint());
@@ -810,6 +817,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_986716502 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.072 -0400", hash_original_method = "26D13871C486DC34FECD72252582D17D", hash_generated_method = "372E83ABEAF5C11328AD9950AF7270CB")
         public Builder withSelection(String selection, String[] selectionArgs) {
             if(mType != TYPE_UPDATE && mType != TYPE_DELETE && mType != TYPE_ASSERT)            
@@ -848,6 +856,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1579852842 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.073 -0400", hash_original_method = "70A8F698538BA5C44D08715766038CFE", hash_generated_method = "DAAA116C5B24C0F7F3288DFFD659DD76")
         public Builder withExpectedCount(int count) {
             if(mType != TYPE_UPDATE && mType != TYPE_DELETE && mType != TYPE_ASSERT)            
@@ -907,6 +916,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_114518138 =             this;
 
     public static final Creator<ContentProviderOperation> CREATOR =
             new Creator<ContentProviderOperation>() {
+        @DSModeled(DSC.SAFE)
         public ContentProviderOperation createFromParcel(Parcel source) {
             return new ContentProviderOperation(source);
         }

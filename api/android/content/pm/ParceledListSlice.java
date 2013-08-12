@@ -87,6 +87,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.319 -0400", hash_original_method = "1E56C806D3B84E35689447C22D535D39", hash_generated_method = "35F4B72F6EA9621C827C2AC1D981BB54")
     public boolean append(T item) {
         addTaint(item.getTaint());

@@ -86,6 +86,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.852 -0400", hash_original_method = "87A49239DD26172CC00A29DE94A05FAE", hash_generated_method = "6C2ECF414388A6290117C4C87D97E6B3")
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected

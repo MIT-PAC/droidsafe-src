@@ -96,6 +96,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.143 -0400", hash_original_field = "1A7718F51A40911C6FE34A2288BFE12E", hash_generated_field = "CD2EDE786D0496A44DCE542DE41FFB17")
 
     MediaPlayer.OnVideoSizeChangedListener mSizeChangedListener = new MediaPlayer.OnVideoSizeChangedListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.143 -0400", hash_original_method = "65C1900C93D820BA1B5709EC480BC8B9", hash_generated_method = "5A0376C9D05473741310A687D0A1D905")
         public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -121,6 +122,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.146 -0400", hash_original_field = "6FA998399DAAAB96682C792379375439", hash_generated_field = "A6C46A6F86887F5A8FF30D809BE323AE")
 
     MediaPlayer.OnPreparedListener mPreparedListener = new MediaPlayer.OnPreparedListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.145 -0400", hash_original_method = "0EF132CA9B43E797B9141E33932ED66A", hash_generated_method = "AF4648378D610AEF2F0F11C8233E2476")
         public void onPrepared(MediaPlayer mp) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -196,6 +198,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.148 -0400", hash_original_field = "ED3CF789A31884E6ADAFA1D223558FAA", hash_generated_field = "2F31C8D08A7A8EEB4881A3B657E505CB")
 
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.148 -0400", hash_original_method = "ED920C0310CF61207D5F50C29A8DA263", hash_generated_method = "ABC2887D7206852167C55B84DACFB566")
         public void onCompletion(MediaPlayer mp) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -226,6 +229,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.151 -0400", hash_original_field = "3E68D0EC14257091AA025E7697E4D6A5", hash_generated_field = "363D54F68F59F0A0A38E0ABC176EF573")
 
     private MediaPlayer.OnErrorListener mErrorListener = new MediaPlayer.OnErrorListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.151 -0400", hash_original_method = "184ED7C09E4A303ABD8AE77B83A95A83", hash_generated_method = "34A7333DF3E85D757A358398D8CCB8B5")
         public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -295,6 +299,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.152 -0400", hash_original_field = "586F4A1CD959A521D8527F9D0DB7C837", hash_generated_field = "C6CDD3D40A42176310D2EA261BFD0698")
 
     private MediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener = new MediaPlayer.OnBufferingUpdateListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.152 -0400", hash_original_method = "16726F937605C6D0A73F251CECEE924B", hash_generated_method = "CAC6A4464B81DB183B5DDB584F5B66EB")
         public void onBufferingUpdate(MediaPlayer mp, int percent) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -310,6 +315,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.155 -0400", hash_original_field = "95FF723B307E523297040401AEF7D7E6", hash_generated_field = "0369BDB4F6FE064FC2DACE8B422983D1")
 
     SurfaceHolder.Callback mSHCallback = new SurfaceHolder.Callback() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.153 -0400", hash_original_method = "59E6557DD0B959EA22EB5495D7EEA0EC", hash_generated_method = "3075542F7EFFC0339A991CD787F55263")
         public void surfaceChanged(SurfaceHolder holder, int format,
                                     int w, int h) {
@@ -343,6 +349,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.154 -0400", hash_original_method = "3EDB4DEF9F778EE739B69F60EF0D2C92", hash_generated_method = "7AF4F5551ED1F6DB75C8A30B536A4699")
         public void surfaceCreated(SurfaceHolder holder) {
             addTaint(holder.getTaint());
@@ -354,6 +361,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.154 -0400", hash_original_method = "C2C5AB5140CC805E21FE518BD1FAEE6B", hash_generated_method = "03BE065F14AB47B609E741B9D5B60644")
         public void surfaceDestroyed(SurfaceHolder holder) {
             addTaint(holder.getTaint());
@@ -486,7 +494,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.158 -0400", hash_original_method = "BE85099A7AB9FDC5F9372F356FE70764", hash_generated_method = "D4EE1143999D59A12455EFD43719BE38")
     private void initVideoView() {
         mVideoWidth = 0;
@@ -572,7 +580,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.160 -0400", hash_original_method = "4401AC32A9DAF43DD0875A239764A2D5", hash_generated_method = "750156031A414222D79F960D9F7906CC")
     private void openVideo() {
         if(mUri == null || mSurfaceHolder == null)        
@@ -638,7 +646,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.161 -0400", hash_original_method = "4E9048D91253AD27AA53E4E66A36C9AD", hash_generated_method = "ACA4BFB4AF95A8F19B01F050AE7E0D1F")
     private void attachMediaController() {
         if(mMediaPlayer != null && mMediaController != null)        
@@ -687,7 +695,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.163 -0400", hash_original_method = "99FF896B381D47748A631FF0CD5A79C0", hash_generated_method = "A79F037E170175C4699A27FB73531204")
     private void release(boolean cleartargetstate) {
         addTaint(cleartargetstate);
@@ -828,7 +836,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.165 -0400", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "3FD9697155F837AC56FFFC09091C9312")
     private void toggleMediaControlsVisiblity() {
         if(mMediaController.isShowing())        

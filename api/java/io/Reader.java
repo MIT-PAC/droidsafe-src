@@ -14,6 +14,7 @@ public abstract class Reader implements Readable, Closeable {
 
     protected Object lock;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.559 -0400", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "34ED878B44B0872C50C8F22A6EAAAA08")
     protected  Reader() {
         lock = this;
@@ -44,6 +45,7 @@ public abstract class Reader implements Readable, Closeable {
     public abstract void close() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.560 -0400", hash_original_method = "2066C142E0E9A9BCC65518E0FCDDA1D6", hash_generated_method = "2FA2C63572C6BB3E092699AC1428BB82")
     public void mark(int readLimit) throws IOException {
         addTaint(readLimit);
@@ -66,6 +68,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.561 -0400", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "53FD29739C2536D59A3E4D34635FC8EF")
     public int read() throws IOException {
         synchronized
@@ -92,6 +95,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.562 -0400", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "C34F63961F0884DC63CA06ADEC1498AE")
     public int read(char[] buf) throws IOException {
         addTaint(buf[0]);
@@ -118,6 +122,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.563 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "A59EB893AD90CAFAE7C8C9BB0ECEF97C")
     public void reset() throws IOException {
         IOException var1508E3FDF27FD56D4E1051DB16DE1816_2032160395 = new IOException();
@@ -128,6 +133,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.563 -0400", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "DF34705AF9DA8AD14EA1CCC68B333D82")
     public long skip(long charCount) throws IOException {
         addTaint(charCount);
@@ -194,6 +200,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.564 -0400", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "AF72018FA5B2DB253969FA2595202A0F")
     public int read(CharBuffer target) throws IOException {
         addTaint(target.getTaint());

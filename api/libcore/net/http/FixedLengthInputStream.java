@@ -17,6 +17,7 @@ final class FixedLengthInputStream extends AbstractHttpInputStream {
 
     private int bytesRemaining;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.955 -0400", hash_original_method = "049E0503B3705DE79405E1FD5D2A2E5D", hash_generated_method = "8F023DCAA6C183FA9A2712E8971AE35B")
     public  FixedLengthInputStream(InputStream is, CacheRequest cacheRequest,
             HttpEngine httpEngine, int length) throws IOException {
@@ -37,7 +38,7 @@ final class FixedLengthInputStream extends AbstractHttpInputStream {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.956 -0400", hash_original_method = "5B284B9FC407E028AC176D716362F3C7", hash_generated_method = "C117339E9A715AEE78864BC71813B377")
     @Override
     public int read(byte[] buffer, int offset, int count) throws IOException {
@@ -89,6 +90,7 @@ final class FixedLengthInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.956 -0400", hash_original_method = "7AFD793A00CEC972BF0DC212CD2F3F7C", hash_generated_method = "1928E76A94A31C02549312E2911FDF16")
     @Override
     public int available() throws IOException {
@@ -102,6 +104,7 @@ final class FixedLengthInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.957 -0400", hash_original_method = "D3AA3AF2615FFDD211E9642D1EBA797E", hash_generated_method = "3FEC6778DB5C069EC99BAEF3219E375C")
     @Override
     public void close() throws IOException {

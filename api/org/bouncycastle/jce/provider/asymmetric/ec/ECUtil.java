@@ -34,7 +34,8 @@ public class ECUtil {
     }
 
 
-        static int[] convertMidTerms(
+        @DSModeled(DSC.SAFE)
+    static int[] convertMidTerms(
         int[] k) {
         int[] res = new int[3];
         if (k.length == 1)
@@ -94,7 +95,8 @@ public class ECUtil {
     }
 
     
-        public static AsymmetricKeyParameter generatePublicKeyParameter(
+        @DSModeled(DSC.SAFE)
+    public static AsymmetricKeyParameter generatePublicKeyParameter(
         PublicKey    key) throws InvalidKeyException {
         if (key instanceof ECPublicKey)
         {
@@ -145,7 +147,8 @@ public class ECUtil {
     }
 
     
-        public static DERObjectIdentifier getNamedCurveOid(
+        @DSModeled(DSC.SAFE)
+    public static DERObjectIdentifier getNamedCurveOid(
         String name) {
         DERObjectIdentifier oid = X962NamedCurves.getOID(name);
         if (oid == null)
@@ -160,7 +163,8 @@ public class ECUtil {
     }
 
     
-        public static X9ECParameters getNamedCurveByOid(
+        @DSModeled(DSC.SAFE)
+    public static X9ECParameters getNamedCurveByOid(
         DERObjectIdentifier oid) {
         X9ECParameters params = X962NamedCurves.getByOID(oid);
         if (params == null)
@@ -175,7 +179,8 @@ public class ECUtil {
     }
 
     
-        public static String getCurveName(
+        @DSModeled(DSC.SAFE)
+    public static String getCurveName(
         DERObjectIdentifier oid) {
         String name = X962NamedCurves.getName(oid);
         if (name == null)

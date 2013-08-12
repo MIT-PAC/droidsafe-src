@@ -18,6 +18,7 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ReadOnlyShortArrayBuffer copy(ShortArrayBuffer other, int markOfOther) {
         ReadOnlyShortArrayBuffer buf =
                 new ReadOnlyShortArrayBuffer(other.capacity(), other.backingArray, other.offset);
@@ -28,6 +29,7 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.599 -0400", hash_original_method = "293D70534F08F1337102FFA8FF94EA93", hash_generated_method = "4A11CB52DA9622A3642336D955F092DF")
     @Override
     public ShortBuffer asReadOnlyBuffer() {
@@ -39,6 +41,7 @@ ShortBuffer var398C146492D42068C7FF67EDC7FA3DFF_1567205792 =         duplicate()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.599 -0400", hash_original_method = "1358DD6DB518D15E9F2A390375DC21ED", hash_generated_method = "21F705D5C629140FB81BB3FCB4F4817F")
     @Override
     public ShortBuffer compact() {
@@ -50,6 +53,7 @@ ShortBuffer var398C146492D42068C7FF67EDC7FA3DFF_1567205792 =         duplicate()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.599 -0400", hash_original_method = "F49238B32F318D341B9FD2839B701A87", hash_generated_method = "64DC678BB14C365745AEC83CFE03A2C6")
     @Override
     public ShortBuffer duplicate() {
@@ -73,6 +77,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_623199441 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.600 -0400", hash_original_method = "AFBE97926DC7C5B917D9DD29C0718A4F", hash_generated_method = "1172E9EA4AAD3B3B5383CB69A9F200AC")
     @Override
     protected short[] protectedArray() {
@@ -84,6 +89,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_623199441 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.600 -0400", hash_original_method = "0ABFB09F32C9F0D211E0D26315A037E6", hash_generated_method = "A1252189758C248205E7775627C6743B")
     @Override
     protected int protectedArrayOffset() {
@@ -107,6 +113,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_623199441 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.600 -0400", hash_original_method = "5592BDB3AAC352212C254B47F1811E27", hash_generated_method = "4C997E67C5E24CBB6D5E7F4D1755415D")
     @Override
     public ShortBuffer put(ShortBuffer buf) {
@@ -119,6 +126,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_623199441 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.601 -0400", hash_original_method = "499D2BB8AE90111A3249031C62268D84", hash_generated_method = "9F0646F42E18A0630A38FF904EA04FF7")
     @Override
     public ShortBuffer put(short c) {
@@ -131,6 +139,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_623199441 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.601 -0400", hash_original_method = "617A2BE3714A70A7C820CD4B75072087", hash_generated_method = "545AC4D4390540DB59E1C65D9E6B6E48")
     @Override
     public ShortBuffer put(int index, short c) {
@@ -144,6 +153,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_623199441 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.601 -0400", hash_original_method = "1E52CD3CC46ECF6ADC15EFA5E594FA46", hash_generated_method = "3595F80F34F182A172A477D5E8D23F45")
     @Override
     public final ShortBuffer put(short[] src, int srcOffset, int shortCount) {
@@ -158,6 +168,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_623199441 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.602 -0400", hash_original_method = "1014849B0415FF72B64D3271FAB61336", hash_generated_method = "EAE1CC82478C1B58C4519B692FC8E1A7")
     @Override
     public ShortBuffer slice() {

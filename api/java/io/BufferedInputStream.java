@@ -55,6 +55,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.240 -0400", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "B05545DDDCE9E193B3A1242967BEC7C2")
     @Override
     public synchronized int available() throws IOException {
@@ -77,7 +78,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.241 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "5AA9CFA9376539DB00F5A5D78696581C")
     private IOException streamClosed() throws IOException {
         IOException var89916D241EE2238C12187BD738C2B6DE_507137193 = new IOException("BufferedInputStream is closed");
@@ -88,7 +89,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.241 -0400", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "B0805CE5B8110FDCECC2334E181CC143")
     @Override
     public void close() throws IOException {
@@ -109,7 +110,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.243 -0400", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "3680F9739C189BD077973F250B4FA91E")
     private int fillbuf(InputStream localIn, byte[] localBuf) throws IOException {
         addTaint(localBuf[0]);
@@ -180,7 +181,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.257 -0400", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "46974C7D647CF9CEF2FCF1144E6FA7A2")
     @Override
     public synchronized int read() throws IOException {
@@ -239,7 +240,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.284 -0400", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "A797C94A79E0360AC2C69A8877F1ADFB")
     @Override
     public synchronized int read(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -342,7 +343,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.285 -0400", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "DAB59114C74A955AA2A11F71E00A3278")
     @Override
     public synchronized void reset() throws IOException {
@@ -370,6 +371,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.305 -0400", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "0B21355ADA4328DAAB8267621925C821")
     @Override
     public synchronized long skip(long byteCount) throws IOException {

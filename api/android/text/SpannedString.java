@@ -50,21 +50,25 @@ CharSequence var8E256BFE79DDBC5B54C96C6CCB48784A_931240530 =         new Spanned
         }
     }
 
+    @DSModeled(DSC.SAFE)
     public int getSpanEnd(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanEnd(what);
     }
     
+    @DSModeled(DSC.SAFE)
     public int getSpanFlags(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanFlags(what);
     }
     
+    @DSModeled(DSC.SAFE)
     public int getSpanStart(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanStart(what);
     }
     
+    @DSModeled(DSC.SAFE)
     public int nextSpanTransition(int start, int limit, Class kind) {
     	addTaint(start);
     	addTaint(limit);

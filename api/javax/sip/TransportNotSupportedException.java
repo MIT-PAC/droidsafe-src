@@ -12,6 +12,7 @@ public class TransportNotSupportedException extends SipException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.397 -0400", hash_original_method = "72633799E19427EF47046C691F2C9C95", hash_generated_method = "6B49829F6267E8EEEBF96FAAF00AF27A")
     public  TransportNotSupportedException(String message) {
         super(message);

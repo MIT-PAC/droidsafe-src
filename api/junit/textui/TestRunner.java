@@ -36,6 +36,7 @@ public class TestRunner extends BaseTestRunner {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.505 -0400", hash_original_method = "2848E9F20BA335B73212BD50EFFC0121", hash_generated_method = "DCF090D6D6C1F4472DBC28F1B3033F91")
     public  TestRunner(ResultPrinter printer) {
         fPrinter= printer;
@@ -44,11 +45,13 @@ public class TestRunner extends BaseTestRunner {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public void run(Class testClass) {
         run(new TestSuite(testClass));
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public TestResult run(Test test) {
         TestRunner runner= new TestRunner();
         return runner.doRun(test);
@@ -97,6 +100,7 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_1963887528 =         new Sta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.507 -0400", hash_original_method = "F1E314C8F9D29ADD33998DDD6715BE9D", hash_generated_method = "B0DAB307B53383C244D460611FBE8B59")
     protected TestResult createTestResult() {
 TestResult varB1D52DB2FC7B844B35F46763F5119AF7_2046008519 =         new TestResult();
@@ -107,6 +111,7 @@ TestResult varB1D52DB2FC7B844B35F46763F5119AF7_2046008519 =         new TestResu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.507 -0400", hash_original_method = "E9ED9E1F54A13460645321D92F32FF82", hash_generated_method = "12BBF2E855A014662315377412722E75")
     public TestResult doRun(Test test) {
         addTaint(test.getTaint());
@@ -118,6 +123,7 @@ TestResult varAD3C693A58B55E712F6018BE46B06B59_2059490536 =         doRun(test, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.508 -0400", hash_original_method = "4199667EF91635F0F91F74C7907DF83D", hash_generated_method = "2B19466D0B07386CCD905F70FB987D0A")
     public TestResult doRun(Test suite, boolean wait) {
         addTaint(wait);

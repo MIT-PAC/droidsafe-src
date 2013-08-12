@@ -15,6 +15,7 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHandler {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.851 -0400", hash_original_method = "83B142C3BB9A0955DF4A02493E658347", hash_generated_method = "4FACE08269B9BC298D130C2482F30092")
     public  DefaultTargetAuthenticationHandler() {
         super();

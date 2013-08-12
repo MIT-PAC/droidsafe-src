@@ -114,7 +114,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.855 -0400", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "95F290FF3D8900B1A5D05DB6AC9E34A4")
     private void initAbsSpinner() {
         setFocusable(true);
@@ -571,7 +571,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_382991945 =         ss;
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.869 -0400", hash_original_method = "65E5A0CAB50633949DC788A62A186FA9", hash_generated_method = "5605444F121F9896A1C4C86DC8A5C0CA")
         private  SavedState(Parcel in) {
             super(in);
@@ -621,10 +621,12 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_1824766963 =             "AbsSpinner.
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
+            @DSModeled(DSC.SAFE)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
 
+            @DSModeled(DSC.SAFE)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

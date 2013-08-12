@@ -35,6 +35,7 @@ public abstract class MessageObject extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.852 -0400", hash_original_method = "0442EC30A54A551F3B539049CBAE5178", hash_generated_method = "92498D6521BBA8D130FEC02EB44D0EB3")
     public String debugDump() {
         stringRepresentation = "";

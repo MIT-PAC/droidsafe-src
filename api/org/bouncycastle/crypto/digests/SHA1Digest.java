@@ -85,6 +85,7 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_1365715195 =         "SHA-1";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.947 -0400", hash_original_method = "54433F6F6E3BCA59AD49A11DE4A21224", hash_generated_method = "29503015AD4EFA8217936FFFB1E2D1FF")
     protected void processWord(
         byte[]  in,
@@ -242,6 +243,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.957 -0400", hash_original_method = "9525843836346F2F7CCC2D59A953FC80", hash_generated_method = "5208E780E7CAFED87B904408C16A445C")
     protected void processBlock() {
 for(int i = 16;i < 80;i++)

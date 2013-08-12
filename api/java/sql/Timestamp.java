@@ -17,6 +17,7 @@ public class Timestamp extends Date {
 
     private int nanos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.220 -0400", hash_original_method = "48500113F421714EC43BE387D502DA70", hash_generated_method = "BF2AB5EB539294F91593391AFD12BBBD")
     @SuppressWarnings("deprecation")
     @Deprecated
@@ -44,6 +45,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.221 -0400", hash_original_method = "86C700BF2C693DDDD6950F4A0D10E64A", hash_generated_method = "84330280926F7AD4D6E75A5D229E7A6E")
     public  Timestamp(long theTime) {
         super(theTime);
@@ -54,6 +56,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.232 -0400", hash_original_method = "BA6D499959EBEE9331B456EE3E086445", hash_generated_method = "88DD815B8269F71D8161AC11EBBA1712")
     public boolean after(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
@@ -102,6 +105,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.264 -0400", hash_original_method = "C18CB1ECE736F4CE544A02EE2F0A015C", hash_generated_method = "367E9C64307C8E994B1AABB118D5DA35")
     public boolean before(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
@@ -150,6 +154,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.264 -0400", hash_original_method = "05A91DEA116C3E2F5603F3F0D29353F9", hash_generated_method = "F1A2421495770EF3CF7EA772D467DA8B")
     @Override
     public int compareTo(Date theObject) throws ClassCastException {
@@ -162,6 +167,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.264 -0400", hash_original_method = "5F716ED3C44AF0E8E5B469B5E8E10C8F", hash_generated_method = "5B16723A407B4535D42A246088D1959B")
     public int compareTo(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
@@ -210,6 +216,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "94CEF17B9A7A2098B0DD6F205E7F606C", hash_generated_method = "31C6AB0C5A5E9B54A0950ADA6B39E3A5")
     @Override
     public boolean equals(Object theObject) {
@@ -231,6 +238,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "42296DC9EADFEA8A232AFEC4CE089FE4", hash_generated_method = "58AE621BA3BDB06B5F2FBE2C7DF9129B")
     public boolean equals(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
@@ -264,6 +272,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "66C377BC30C9278F77FB30382314DC3B", hash_generated_method = "0A36C16872D2F7D911ED6C9EB14B57A9")
     @Override
     public long getTime() {
@@ -279,6 +288,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "37C2FDD9B2CBC513E6901A3C5AB99296", hash_generated_method = "C7B115E3FDC6D59D077C52C31DD920E3")
     public void setNanos(int n) throws IllegalArgumentException {
         if((n < 0) || (n > 999999999))        
@@ -296,6 +306,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "3EB39E1DE2409F6F629FCF4F69DCED8F", hash_generated_method = "87402F5134D21F7283A10FB9F5092411")
     @Override
     public void setTime(long theTime) {
@@ -331,6 +342,7 @@ public class Timestamp extends Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.266 -0400", hash_original_method = "2B0509572F21FC3F2C9AAE0AC4AFD2F5", hash_generated_method = "294C67EF0ADA1EB046B3D441E6E81E19")
     @SuppressWarnings("deprecation")
     @Override

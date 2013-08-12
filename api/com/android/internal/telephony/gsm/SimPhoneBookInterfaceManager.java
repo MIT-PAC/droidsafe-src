@@ -14,6 +14,7 @@ import com.android.internal.telephony.IccPhoneBookInterfaceManager;
 
 public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.603 -0400", hash_original_method = "EB9FF0C7D9857B55B5A29EA1164E80F0", hash_generated_method = "6585ACE95180A35F68530DD9DA965B83")
     public  SimPhoneBookInterfaceManager(GSMPhone phone) {
         super(phone);
@@ -24,6 +25,7 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.603 -0400", hash_original_method = "9B378D368B78D2E2F938DA57C729E6B5", hash_generated_method = "9A4F77B4E25F9CFE2D71D8AC605A621B")
     public void dispose() {
         super.dispose();
@@ -32,6 +34,7 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.604 -0400", hash_original_method = "11E9A9A4D579433D0F36A7564F8CD864", hash_generated_method = "AB85FE4F4EC33DBF876C82D38D5CD187")
     protected void finalize() {
         try 
@@ -53,6 +56,7 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.604 -0400", hash_original_method = "F8C8B1EC8901BE31BE40309AF8515A8A", hash_generated_method = "CD8775984EF3A557C8C68ED50F20AB29")
     public int[] getAdnRecordsSize(int efid) {
         addTaint(efid);
@@ -84,6 +88,7 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.604 -0400", hash_original_method = "7E6B689FB87F8B4FC5FFEDD55BD71E24", hash_generated_method = "782D6147A8D9739BD339E04B74B3AA9E")
     protected void logd(String msg) {
         addTaint(msg.getTaint());
@@ -93,6 +98,7 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.604 -0400", hash_original_method = "3C81ED33713B877CE55C1136EDE4985A", hash_generated_method = "9F7B016C36DFFE84C1135F8325127F9A")
     protected void loge(String msg) {
         addTaint(msg.getTaint());

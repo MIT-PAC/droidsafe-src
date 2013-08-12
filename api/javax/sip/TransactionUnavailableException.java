@@ -12,6 +12,7 @@ public class TransactionUnavailableException extends SipException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.392 -0400", hash_original_method = "037265DD61866BF76BF55F595E642E2B", hash_generated_method = "D68069B79DA09A4434B8BF68EFC45F48")
     public  TransactionUnavailableException(String message) {
         super(message);

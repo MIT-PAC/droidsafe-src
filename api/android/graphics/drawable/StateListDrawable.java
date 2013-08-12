@@ -349,7 +349,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_821147901 =         this;
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.720 -0400", hash_original_method = "A182AEBDD3B8E6EFB499434DA2A68669", hash_generated_method = "9C7BA2243DE254CEFA414D626EEAC422")
         private int indexOfStateSet(int[] stateSet) {
             addTaint(stateSet[0]);

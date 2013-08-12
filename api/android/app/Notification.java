@@ -174,6 +174,7 @@ public class Notification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.271 -0400", hash_original_method = "6AF2D89F1A077EC9692C07FAE6A31E51", hash_generated_method = "8F3CDA2113E190E89B3210761543DBBB")
     @Override
     public Notification clone() {
@@ -234,6 +235,7 @@ Notification varF9965B73D80F3C31BC4764828F08696D_1070029900 =         that;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.274 -0400", hash_original_method = "2E97C8DA884DBA934FB3E6EBE25C30F5", hash_generated_method = "6E9EEDC14FE058AEB037FD9AA8ABFD77")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);
@@ -327,6 +329,7 @@ Notification varF9965B73D80F3C31BC4764828F08696D_1070029900 =         that;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.277 -0400", hash_original_method = "15C64B5C143E30BF8DB14A898F7C5E53", hash_generated_method = "B64A396887A5B873E642C0CDD214CA1A")
     @Deprecated
     public void setLatestEventInfo(Context context,
@@ -686,6 +689,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_288132914 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.294 -0400", hash_original_method = "CE5C618F1F516DEBBF5EC70FA84B35B1", hash_generated_method = "0E0466ED3AAAA60B58426A5FFB4FCD01")
         public Builder setFullScreenIntent(PendingIntent intent, boolean highPriority) {
             addTaint(highPriority);
@@ -802,6 +806,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1268897869 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.304 -0400", hash_original_method = "4EE6022E7B7D173E4F9ABC4B52771BC1", hash_generated_method = "B660940E7AA1A9A4700E7DCC6741CA18")
         public Builder setOngoing(boolean ongoing) {
             addTaint(ongoing);
@@ -815,6 +820,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_182979646 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.304 -0400", hash_original_method = "19CD7AC7B316FEB13981077CC28EC4D6", hash_generated_method = "9C6F7E9663ED0FD09570147D3EEC7CA5")
         public Builder setOnlyAlertOnce(boolean onlyAlertOnce) {
             addTaint(onlyAlertOnce);
@@ -1019,6 +1025,7 @@ RemoteViews var540C13E9E156B687226421B24F2DF178_1694393353 =                    
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.315 -0400", hash_original_method = "ACBCD2459BD592E66E9A1B94FF396B6B", hash_generated_method = "76E27D4038399617D75629C4806725ED")
         public Notification getNotification() {
             Notification n = new Notification();
@@ -1105,6 +1112,7 @@ Notification var041154653C812B0D1663EC287BE4C757_1580152631 =             n;
     public static final Parcelable.Creator<Notification> CREATOR
             = new Parcelable.Creator<Notification>()
     {
+        @DSModeled(DSC.SAFE)
         public Notification createFromParcel(Parcel parcel)
         {
             return new Notification(parcel);

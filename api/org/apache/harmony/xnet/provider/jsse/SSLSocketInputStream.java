@@ -72,6 +72,7 @@ public final class SSLSocketInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.575 -0400", hash_original_method = "92F5EAFF00040EF543528D1059933772", hash_generated_method = "608F802D2CF8EB773069D0542D84D209")
     @Override
     public int read() throws IOException {
@@ -109,6 +110,7 @@ public final class SSLSocketInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.576 -0400", hash_original_method = "50426CF7D6642F19D28119E1D947BED8", hash_generated_method = "1B9506CF8F2021D69F3D11F4CF48D7D1")
     @Override
     public int read(byte[] b, int off, int len) throws IOException {

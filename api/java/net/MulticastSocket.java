@@ -15,6 +15,7 @@ public class MulticastSocket extends DatagramSocket {
 
     private InetAddress setAddress;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.798 -0400", hash_original_method = "E00E381299DD101E8388BF5692519367", hash_generated_method = "6344D883D7E184B34B1618995D02B96E")
     public  MulticastSocket() throws IOException {
         setReuseAddress(true);
@@ -43,6 +44,7 @@ public class MulticastSocket extends DatagramSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.799 -0400", hash_original_method = "467AD7DD9552F52C52E1B541B5F40FE0", hash_generated_method = "5E048C8BD989ABFA031EECA1C3D761C6")
     public InetAddress getInterface() throws SocketException {
         checkOpen();
@@ -83,6 +85,7 @@ InetAddress var44E9082E21DD4D2A51E79570976A7A8A_24402108 =         ipvXaddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.800 -0400", hash_original_method = "9619F0CC924DAE776456EC0CB550E95C", hash_generated_method = "20C0ABC3CFBF17823D8C630585E78E1B")
     public NetworkInterface getNetworkInterface() throws SocketException {
         checkOpen();
@@ -106,6 +109,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.801 -0400", hash_original_method = "115D2F8953DD08E8766DFC64CC7C212D", hash_generated_method = "7DD13CF6B14B02BC5714ABA5B5FDFFB5")
     public int getTimeToLive() throws IOException {
         checkOpen();
@@ -118,6 +122,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.802 -0400", hash_original_method = "2ED04886DDF130567B09FF7DB10BF58C", hash_generated_method = "EC722B94B96325C2B31CAE10F3342CAE")
     @Deprecated
     public byte getTTL() throws IOException {
@@ -239,6 +244,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.807 -0400", hash_original_method = "B2C00FA361C879157E99EDF94577EB31", hash_generated_method = "898B80A0BD1A14FEBDF10D8C37D725C2")
     @Deprecated
     public void send(DatagramPacket packet, byte ttl) throws IOException {
@@ -280,6 +286,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.809 -0400", hash_original_method = "89C8198F5D22E8812FC96CB1AE49CBE2", hash_generated_method = "A0246EC2041EEBBBE0DD27C4801FDB87")
     public void setInterface(InetAddress address) throws SocketException {
         checkOpen();
@@ -312,6 +319,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.810 -0400", hash_original_method = "103D9F8CED47CA1D8B78CD3F071983B8", hash_generated_method = "B86E5945E2F298FBAD0E0A76D48795E2")
     public void setNetworkInterface(NetworkInterface networkInterface) throws SocketException {
         addTaint(networkInterface.getTaint());
@@ -334,6 +342,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.811 -0400", hash_original_method = "87E1DCD7CA258C3733B679C47E824196", hash_generated_method = "6C27278E51B987BF9BB7512A7C033CFE")
     public void setTimeToLive(int ttl) throws IOException {
         addTaint(ttl);
@@ -354,6 +363,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.812 -0400", hash_original_method = "5513CDD24FF579269A679F40508B01F6", hash_generated_method = "E8221AE49B47B8A996466933E1CBF6B0")
     @Deprecated
     public void setTTL(byte ttl) throws IOException {
@@ -400,6 +410,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.814 -0400", hash_original_method = "DC4B33B8ADF09E78AF384B12E0911A9B", hash_generated_method = "4BC6A13C4609C6658C10C0844BFEB84A")
     public boolean getLoopbackMode() throws SocketException {
         checkOpen();
@@ -412,6 +423,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_2106636668 =         Networ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.814 -0400", hash_original_method = "3AC1197302083655B98FC683162962C9", hash_generated_method = "67F609CD3A59A6BCB90429A5AFB0DBDC")
     public void setLoopbackMode(boolean disable) throws SocketException {
         addTaint(disable);

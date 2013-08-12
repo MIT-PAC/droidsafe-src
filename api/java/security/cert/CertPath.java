@@ -20,6 +20,7 @@ public abstract class CertPath implements Serializable {
 
     private String type;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.619 -0400", hash_original_method = "302897E6BB0E40528F36909A6049B176", hash_generated_method = "32FAE556A05A6016667B95DE68F07950")
     protected  CertPath(String type) {
         this.type = type;
@@ -39,6 +40,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_1160410815 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.620 -0400", hash_original_method = "8F841F69BEA866198CC0B2087E3E8CE8", hash_generated_method = "8D4806A1193367F3DF0F31EE17F74935")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -80,6 +82,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_1160410815 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.621 -0400", hash_original_method = "E8BB667E09C60EB11FBFEAA1F9E519B1", hash_generated_method = "24C52F000BA8340F32C2EF9C6DD402AB")
     public int hashCode() {
         int hash = getType().hashCode();
@@ -94,6 +97,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_1160410815 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.621 -0400", hash_original_method = "476AF39C272D39EAE140D33789265072", hash_generated_method = "3729E237A84A54874DAC8CED89C85EBE")
     public String toString() {
         StringBuilder sb = new StringBuilder(getType());
@@ -147,6 +151,7 @@ String var2460B846747F8B22185AD8BE722266A5_891863046 =         sb.toString();
     public abstract Iterator<String> getEncodings();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.623 -0400", hash_original_method = "52819054EFF055A3D86733F1F32E0BA5", hash_generated_method = "B608B58785A9F121248EA00CD765020A")
     protected Object writeReplace() throws ObjectStreamException {
         try 
@@ -178,6 +183,7 @@ Object varF32523CCB977B1DE0F6996279C4CFB92_2089604252 =             new CertPath
 
         private byte[] data;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.623 -0400", hash_original_method = "306F916982958535E78B2E37AF24DE52", hash_generated_method = "19372CAD6BE4BFEBCEC4EB919465B09C")
         protected  CertPathRep(String type, byte[] data) {
             this.type = type;
@@ -188,6 +194,7 @@ Object varF32523CCB977B1DE0F6996279C4CFB92_2089604252 =             new CertPath
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.624 -0400", hash_original_method = "901613A0C14C6295CBB5D8B0F4F8E8BD", hash_generated_method = "4AE8F69DEC71F391F69CE3ABEFEC8A62")
         protected Object readResolve() throws ObjectStreamException {
             try 

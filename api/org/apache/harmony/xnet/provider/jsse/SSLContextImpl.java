@@ -30,6 +30,7 @@ public class SSLContextImpl extends SSLContextSpi {
 
     protected SSLParametersImpl sslParameters;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.076 -0400", hash_original_method = "BB3D0F5B2222977574D305A8CAD6912B", hash_generated_method = "C2EBBF6280DAA1C2D96BF5ECCA7861E1")
     public  SSLContextImpl() {
         clientSessionContext = new ClientSessionContext();
@@ -67,6 +68,7 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.078 -0400", hash_original_method = "0824770EA02EDCBB315A7517C68CBF9B", hash_generated_method = "5ED612AF34CD0AC820A10D3E7C4E5A8B")
     @Override
     public void engineInit(KeyManager[] kms, TrustManager[] tms,

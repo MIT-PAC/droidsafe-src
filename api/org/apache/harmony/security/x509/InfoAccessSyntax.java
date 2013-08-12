@@ -131,10 +131,12 @@ for(Object accessDescription : accessDescriptions)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.403 -0400", hash_original_field = "E611BBC850EAC486F3CEF9633B2E6F73", hash_generated_field = "5FA1DEAA374D887C0615B0A6E5AC612B")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(AccessDescription.ASN1) {
+        @DSModeled(DSC.SPEC)
         @Override public Object getDecodedObject(BerInputStream in) throws IOException {
             return new InfoAccessSyntax((List<?>) in.content, in.getEncoded());
         }
 
+        @DSModeled(DSC.SAFE)
         @Override public Collection getValues(Object object) {
             return ((InfoAccessSyntax) object).accessDescriptions;
         }

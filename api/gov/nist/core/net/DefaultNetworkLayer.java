@@ -42,6 +42,7 @@ public class DefaultNetworkLayer implements NetworkLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.790 -0400", hash_original_method = "39DE8B0183FF9C9623367868EEA6CEAD", hash_generated_method = "267ED68E8F87E8B582A136D9AAB1AD73")
     public ServerSocket createServerSocket(int port, int backlog,
             InetAddress bindAddress) throws IOException {

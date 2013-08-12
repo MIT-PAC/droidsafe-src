@@ -21,6 +21,7 @@ class DefiniteLengthInputStream extends LimitedInputStream {
 
     private int _remaining;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.723 -0400", hash_original_method = "5BF1A7CDEE13BEE461E5AA1DCC1B1E57", hash_generated_method = "4E2FF82658553616F2081ECB534E34A2")
       DefiniteLengthInputStream(
         InputStream in,
@@ -64,6 +65,7 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.724 -0400", hash_original_method = "472AD8364CD714087B8FB4AA07B9D0D1", hash_generated_method = "505C76C4ED1C425FDEF800C7C076779D")
     public int read() throws IOException {
         if(_remaining == 0)        
@@ -104,7 +106,7 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.725 -0400", hash_original_method = "A08D5ADC8470447FAA8F1F7D6ED59D8F", hash_generated_method = "7D65EB114736D6687F35DB6371285B68")
     public int read(byte[] buf, int off, int len) throws IOException {
         addTaint(len);
@@ -150,6 +152,7 @@ class DefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.726 -0400", hash_original_method = "2B4E4858B5FC3F43B2D34DE081975A19", hash_generated_method = "E434023C2815704509C709B5CB460DA0")
      byte[] toByteArray() throws IOException {
         if(_remaining == 0)        

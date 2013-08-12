@@ -24,6 +24,7 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
 
     private EncryptionScheme scheme;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.979 -0400", hash_original_method = "CA68BEDA74AC2397C06F19E0885D4A85", hash_generated_method = "10660CE61E8D14983DE31523BE450E9A")
     public  PBES2Parameters(
         ASN1Sequence  obj) {
@@ -54,6 +55,7 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PBES2Parameters getInstance(
         Object  obj) {
         if (obj== null || obj instanceof PBES2Parameters)
@@ -90,6 +92,7 @@ EncryptionScheme varFD3305CF8340E40F0AC0AB554909AEBC_1227690705 =         scheme
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.981 -0400", hash_original_method = "489B41034DC44CEDA69ABA933292B2BB", hash_generated_method = "34E1C07BBC174AE9C0AC5E1F09D9B499")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

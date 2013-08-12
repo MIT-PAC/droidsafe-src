@@ -10,6 +10,7 @@ import java.util.Properties;
 
 public abstract class Transformer {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.047 -0400", hash_original_method = "962E0FC22D29E2A2CD7F27A68548CC24", hash_generated_method = "CCED2B9E561763560F0FF6AAF0DC8DE8")
     protected  Transformer() {
         // ---------- Original Method ----------

@@ -12,6 +12,7 @@ public class FactoryConfigurationError extends Error {
 
     private Exception exception;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.787 -0400", hash_original_method = "6620C9D65D7B9B8AED04F1E2286BE37D", hash_generated_method = "3197EEE679B539DCD98F16DC71478ECF")
     public  FactoryConfigurationError() {
         this.exception = null;
@@ -39,6 +40,7 @@ public class FactoryConfigurationError extends Error {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.789 -0400", hash_original_method = "6DA0E2DE853AFE92CEEE23D7625EA5CB", hash_generated_method = "657D61BA3640D975C04CF28B971A83F3")
     public  FactoryConfigurationError(Exception e, String msg) {
         super(msg);
@@ -49,6 +51,7 @@ public class FactoryConfigurationError extends Error {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.789 -0400", hash_original_method = "3CFCD04CF304E9364ADFC7DBDB377B80", hash_generated_method = "7A1FE3743556795D29B62AADA8020D90")
     public String getMessage() {
         String message = super.getMessage ();

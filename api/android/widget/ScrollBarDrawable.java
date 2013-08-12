@@ -129,7 +129,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.969 -0400", hash_original_method = "1E3ED238DD8B93FF3896611B5226DF40", hash_generated_method = "7FC42AA310962CD54762D96DDE90EB04")
     @Override
     public void draw(Canvas canvas) {
@@ -430,7 +430,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.971 -0400", hash_original_method = "C5352C5923C905107C68A18CC8B889AA", hash_generated_method = "20768016CBF8DF57CA6D721F9C33B923")
     @Override
     public String toString() {

@@ -118,7 +118,7 @@ Class varC24D0AC4FF8441C0BBB3D1483BDE602C_1783661781 =         defineClass(name,
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Class defineClass(String name, ClassLoader loader, int cookie) {
     	Class clazz = new Class();
     	clazz.addTaint(name.taint);
@@ -175,7 +175,7 @@ Enumeration<String> varF0AC681DBC38559533F072C2E2850F9B_1493649008 =         new
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static int openDexFile(String sourceName, String outputName,
         int flags) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097 = DSUtils.UNKNOWN_INT;
@@ -183,19 +183,19 @@ Enumeration<String> varF0AC681DBC38559533F072C2E2850F9B_1493649008 =         new
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static int openDexFile(byte[] fileContents) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static void closeDexFile(int cookie) {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static boolean isDexOptNeeded(String fileName) throws FileNotFoundException, IOException {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446;
@@ -210,6 +210,7 @@ Enumeration<String> varF0AC681DBC38559533F072C2E2850F9B_1493649008 =         new
 
         private String[] mNameList;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.727 -0400", hash_original_method = "4F1898FBD60AA29C9B2370CB647FB74F", hash_generated_method = "035F17F3606497FC41CDF82ED9451BA6")
           DFEnum(DexFile df) {
             addTaint(df.getTaint());

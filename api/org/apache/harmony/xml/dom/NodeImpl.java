@@ -333,6 +333,7 @@ switch(getNodeType()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String validatePrefix(String prefix, boolean namespaceAware, String namespaceURI) {
         if (!namespaceAware) {
             throw new DOMException(DOMException.NAMESPACE_ERR, prefix);
@@ -349,6 +350,7 @@ switch(getNodeType()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void setNameNS(NodeImpl node, String namespaceURI, String qualifiedName) {
         if (qualifiedName == null) {
             throw new DOMException(DOMException.NAMESPACE_ERR, qualifiedName);
@@ -418,6 +420,7 @@ switch(getNodeType()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.664 -0400", hash_original_method = "DD28C7A733028F46F0F8ECAE2D47C2BC", hash_generated_method = "D5F1AA75A751F62DFBA88F7DF6AFE239")
     public final String getBaseURI() {
 switch(getNodeType()){
@@ -700,6 +703,7 @@ NodeImpl var540C13E9E156B687226421B24F2DF178_1885668922 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.668 -0400", hash_original_method = "7FA28D24E20CD6244334CF1DE396DB62", hash_generated_method = "60503655F2339FC121D79DD201DAD826")
     public final String lookupPrefix(String namespaceURI) {
         addTaint(namespaceURI.getTaint());
@@ -749,6 +753,7 @@ String var540C13E9E156B687226421B24F2DF178_259019385 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.668 -0400", hash_original_method = "AA07F6405A8EB7821F818F6C760FCB2D", hash_generated_method = "1D9CA2B76229798F71F83B6CA3511C32")
      boolean isPrefixMappedToUri(String prefix, String uri) {
         addTaint(uri.getTaint());
@@ -790,6 +795,7 @@ String var540C13E9E156B687226421B24F2DF178_259019385 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.669 -0400", hash_original_method = "4BD06F1D22ADF3EA57842F923303423E", hash_generated_method = "3A8219EC4D8C25D4EF07DEE01CDFB7AB")
     public final String lookupNamespaceURI(String prefix) {
         addTaint(prefix.getTaint());

@@ -471,6 +471,7 @@ ContactHeader var695F7F01550A7C9445656119C31590B1_521016035 =         contact;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.495 -0400", hash_original_method = "5873C88FB18B86DA11D334099F5AE064", hash_generated_method = "B2514BCDD1CA6D7FF83FF7072505E261")
     public ContactHeader createContactHeader() {
         Contact contact = new Contact();
@@ -1442,6 +1443,7 @@ UserAgentHeader varB90BAE9CF13799DF66AC7440F5DAE3DA_714867499 =         userAgen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.508 -0400", hash_original_method = "B7A9F5DC521617567AEB2EDF2366DE24", hash_generated_method = "86D5BD46026F1D0231FB0027514D1AF4")
     public ViaHeader createViaHeader(
         String host,

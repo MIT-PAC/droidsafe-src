@@ -129,6 +129,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_116923122 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized PasswordAuthentication requestPasswordAuthentication(
             String rHost, InetAddress rAddr, int rPort, String rProtocol,
             String rPrompt, String rScheme) {

@@ -35,6 +35,7 @@ public class SubscriptionStateParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.974 -0400", hash_original_method = "0E07F05FFE6C1C2F83533D7132328ECC", hash_generated_method = "E43C436C1C34DEE18B01E15A42B9CF8B")
     public SIPHeader parse() throws ParseException {
         if(debug)        

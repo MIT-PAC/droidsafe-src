@@ -34,6 +34,7 @@ public class RSeqParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.449 -0400", hash_original_method = "AB1A0262C7314394004DEB16F5DFE46A", hash_generated_method = "A1AAF21B38D85098E08C0E0D400521EB")
     public SIPHeader parse() throws ParseException {
         if(debug)        

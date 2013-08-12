@@ -17,6 +17,7 @@ public final class ListOfTypes {
 
     private Type[] resolvedTypes;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.018 -0400", hash_original_method = "1B717CC03BB3C0AEB2AD5F80BAEDAB75", hash_generated_method = "4DC1BA96B5060DA9D761A0767EF562F5")
       ListOfTypes(int capacity) {
         types = new ArrayList<Type>(capacity);
@@ -25,6 +26,7 @@ public final class ListOfTypes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.018 -0400", hash_original_method = "A3B43C45442B7BC58B3D5A9B17362DF9", hash_generated_method = "33409140B4A821F97F1F5460E3F14A2E")
       ListOfTypes(Type[] types) {
         this.types = new ArrayList<Type>(types.length);
@@ -40,6 +42,7 @@ for(Type type : types)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.019 -0400", hash_original_method = "521B9354050D45CFE1C9313A9C3FFED0", hash_generated_method = "1B3BBA3308738F380FE859F4E1969C35")
      void add(Type type) {
         addTaint(type.getTaint());
@@ -58,6 +61,7 @@ for(Type type : types)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.019 -0400", hash_original_method = "5C54E587FAEC26FCFBB8E0F344888E86", hash_generated_method = "E1DD4210AD01A5212F9A69FC36C2E2A3")
      int length() {
         int var09DE4273DF28F413F1060AF72C4E73F0_1467581330 = (types.size());
@@ -114,6 +118,7 @@ Type[] varDC838461EE2FA0CA4C9BBB70A15456B0_69069729 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.021 -0400", hash_original_method = "E058D2B2430FADEC45CDF66AF212F70E", hash_generated_method = "E0D0D1B23EEEFBE8DA087A55D3644901")
     @Override
     public String toString() {

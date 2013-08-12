@@ -24,6 +24,7 @@ public class ContentImpl implements Content {
 
     private ContentDispositionHeader contentDispositionHeader;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.540 -0400", hash_original_method = "BFB297926685FC1F358C134CE06B2B50", hash_generated_method = "830F598434B90B9D84711FB0ED686CDB")
     public  ContentImpl( String content, String boundary ) {
         this.content = content;
@@ -65,7 +66,7 @@ Object var5B4E22E160A1A738CCEDC8C85B064397_279423986 =         this.content;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.542 -0400", hash_original_method = "F6C29ED2FF7A16DDC103A61DA5684884", hash_generated_method = "51357B322E846BA2019C8AA89FDB45C2")
     public String toString() {
         if(boundary == null)        

@@ -22,6 +22,7 @@ import javax.security.auth.x500.X500Principal;
 
 public abstract class X509CRL extends CRL implements X509Extension {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.976 -0400", hash_original_method = "2D9BCEC4939C6B2A16B59D950D508E2F", hash_generated_method = "6B0685A70028A2CF56FAA3D7A0C4B658")
     protected  X509CRL() {
         super("X.509");
@@ -74,6 +75,7 @@ public abstract class X509CRL extends CRL implements X509Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.977 -0400", hash_original_method = "A943E96C731BD94967EC1AD73CB7A230", hash_generated_method = "5602D9B87DA2FDBD37FEF050F4145F5C")
     public int hashCode() {
         try 
@@ -134,6 +136,7 @@ for(int i=0;i<array.length;i++)
     public abstract Principal getIssuerDN();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.978 -0400", hash_original_method = "7A37B67299F05C8453FDB868F4BBC1A9", hash_generated_method = "8AA5CE2604E4B928D243DB1F3C2F22DA")
     public X500Principal getIssuerX500Principal() {
         try 
@@ -177,6 +180,7 @@ X500Principal varC2B70E1034A0A004A96CFD5C2CC4F856_1986954215 =             crl.g
     public abstract X509CRLEntry getRevokedCertificate(BigInteger serialNumber);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.979 -0400", hash_original_method = "22BEF0D3299982E1A7A804A3A397C4D3", hash_generated_method = "861DD58ED9FD8CF71ED5FD2F5DCE83DC")
     public X509CRLEntry getRevokedCertificate(X509Certificate certificate) {
         addTaint(certificate.getTaint());

@@ -25,6 +25,7 @@ final class WebViewWorker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized WebViewWorker getHandler() {
         if (sWorkerHandler == null) {
             HandlerThread thread = new HandlerThread(THREAD_NAME,

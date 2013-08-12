@@ -19,6 +19,7 @@ public class BasicPoolEntry extends AbstractPoolEntry {
 
     private BasicPoolEntryRef reference;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.318 -0400", hash_original_method = "9CCB47DAF369299C60002AA9C328CEC6", hash_generated_method = "9BBF9EA52E762ED81E1C10784C4E98BD")
     public  BasicPoolEntry(ClientConnectionOperator op,
                           HttpRoute route,

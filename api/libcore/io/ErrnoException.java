@@ -16,6 +16,7 @@ public final class ErrnoException extends Exception {
 
     public int errno;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.160 -0400", hash_original_method = "0DF4193C9C2664F33DC38063504784DA", hash_generated_method = "3D8190007CF210EB668925FD8B43A62F")
     public  ErrnoException(String functionName, int errno) {
         this.functionName = functionName;
@@ -26,6 +27,7 @@ public final class ErrnoException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.162 -0400", hash_original_method = "BE4619378388F8812C9CF2AE8895CE85", hash_generated_method = "1C95F3F0A3540A5B91F0986792E8A559")
     public  ErrnoException(String functionName, int errno, Throwable cause) {
         super(cause);
@@ -38,6 +40,7 @@ public final class ErrnoException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.163 -0400", hash_original_method = "911EB712B1CEA729911922ADFC942179", hash_generated_method = "5011E4EDA3DEF9338AF97EB52C4309B2")
     @Override
     public String getMessage() {
@@ -60,6 +63,7 @@ String var369F48B7B1F222C81180E74744106A24_1047021998 =         functionName + "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.163 -0400", hash_original_method = "F39DB956D71AD491CF421ED6963B5FCE", hash_generated_method = "574E1E0D543774C29845C24687064B3C")
     public IOException rethrowAsIOException() throws IOException {
         IOException newException = new IOException(getMessage());
@@ -73,6 +77,7 @@ String var369F48B7B1F222C81180E74744106A24_1047021998 =         functionName + "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.164 -0400", hash_original_method = "8BB4A81BC702A752206578FEF42C6BB1", hash_generated_method = "F0E94EC06E69CB51834E28928178A1CF")
     public SocketException rethrowAsSocketException() throws SocketException {
         SocketException var8159138B8EC3EF5E2E6E61C739DFD5D9_10973751 = new SocketException(getMessage(), this);

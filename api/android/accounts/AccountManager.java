@@ -181,6 +181,7 @@ String varB6E12DC381BC7D4C78B95DD144A437FD_224410325 =             mService.getU
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.835 -0400", hash_original_method = "CE81752A69974A848970631715E35659", hash_generated_method = "23423FA4C366823E9B3EEF77F3776FBA")
     public AuthenticatorDescription[] getAuthenticatorTypes() {
         try 
@@ -204,6 +205,7 @@ AuthenticatorDescription[] var72B248AAB2E560F9BE7F0C8BB51E605E_1858779447 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.842 -0400", hash_original_method = "CBAE32CDB06D92C44980C30430EF1CC0", hash_generated_method = "D7D90327F5BB6BCCDC5D26574162FEED")
     public Account[] getAccounts() {
         try 
@@ -227,6 +229,7 @@ Account[] varC591FC5C8C08716D5E3035B51846A437_1061328503 =             mService.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.847 -0400", hash_original_method = "182706774272102452F63339D769DBB2", hash_generated_method = "E9C83AF8E42816DD9CC8557374FED97B")
     public Account[] getAccountsByType(String type) {
         addTaint(type.getTaint());
@@ -374,6 +377,7 @@ Account[] var8AFC8F239FAF32249C1DA5BD5D6C508A_259823908 =             descs;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.896 -0400", hash_original_method = "757D4D500E44E3A8DF2EF3DE74D56199", hash_generated_method = "F72ED6D765740E30CC13B331B40E005F")
     public boolean addAccountExplicitly(Account account, String password, Bundle userdata) {
         addTaint(userdata.getTaint());
@@ -672,6 +676,7 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1250779985 =             mService.pee
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.959 -0400", hash_original_method = "51CDD8704FBB21791536BE5C26E3F85E", hash_generated_method = "640E5A9CBF81A8BFC89D83529AC81EA1")
     public String blockingGetAuthToken(Account account, String authTokenType,
             boolean notifyAuthFailure) throws OperationCanceledException, IOException, AuthenticatorException {
@@ -1206,7 +1211,7 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_14640056 =     
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static public Intent newChooseAccountIntent(Account selectedAccount,
             ArrayList<Account> allowableAccounts,
             String[] allowableAccountTypes,
@@ -1276,6 +1281,7 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_14640056 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.078 -0400", hash_original_method = "66F9A18B2BBFAE47B027D9D23A795F11", hash_generated_method = "AF3780A7EFBE5E70C47E4B4640680E9E")
     public void removeOnAccountsUpdatedListener(OnAccountsUpdateListener listener) {
         addTaint(listener.getTaint());

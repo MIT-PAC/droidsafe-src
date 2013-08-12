@@ -249,6 +249,7 @@ String var577A52C8E78ECD1A00142262F8742918_1810945317 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.290 -0400", hash_original_method = "4DB46F10EA63A90C886405E235BD3A38", hash_generated_method = "E9253174B2F8808D2EA462908525728D")
     public void goBackOrForward(int steps) {
         addTaint(steps);
@@ -503,7 +504,7 @@ String var577A52C8E78ECD1A00142262F8742918_1810945317 =         nativeSaveWebArc
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.295 -0400", hash_original_method = "08B10BC0FD4D849356EF434C4A57C456", hash_generated_method = "0937123E172E47DD7D9D9837FB417A57")
     @Override
     public void handleMessage(Message msg) {
@@ -568,6 +569,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.295 -0400", hash_original_method = "DC38D0601A6CA8B3CA54AD6CF11C8ED7", hash_generated_method = "00D56D1D2CF0A5217865A490ACC1B7F5")
     public void externalRepresentation(Message callback) {
         addTaint(callback.getTaint());
@@ -590,6 +592,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.295 -0400", hash_original_method = "769B7E21D870172A915EE6F0EB6B2D2C", hash_generated_method = "B12B908FCAC267BD3EA1A3138A6115A6")
     public void documentAsText(Message callback) {
         addTaint(callback.getTaint());
@@ -668,7 +671,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.296 -0400", hash_original_method = "2FB67C52CD526BE2C970DC0DB75D361F", hash_generated_method = "9DD093FFCBC6C94A04A4E205B430A7B6")
     public boolean handleUrl(String url) {
         addTaint(url.getTaint());
@@ -1214,7 +1217,7 @@ CallbackProxy var2EB9D6A50345F28BE7711CCFE90E59AC_314996413 =         mCallbackP
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.299 -0400", hash_original_method = "F09A8DE53C03EAD5D6B2D7442C92246E", hash_generated_method = "14169E184AB054ABF348A5708CFFFA42")
      String getUserAgentString() {
 String var0BAA1D2A3FE338F0474DA7205A0542F3_634307353 =         mSettings.getUserAgentString();
@@ -1738,6 +1741,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_1515375469 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.303 -0400", hash_original_method = "154F1DF98163CFE18EB2585F133E4CD5", hash_generated_method = "A3A20DACAB5C1145EF7B71CF57819C56")
      boolean getShouldStartScrolledRight() {
         boolean var7FB4B4F6A6E5C7A93190CE945C2F26A4_744329420 = (nativeGetShouldStartScrolledRight(mNativeFrame));
@@ -1764,6 +1768,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_1515375469 =         mSearchBox;
 
         private WindowManager mWindowManager;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.304 -0400", hash_original_method = "049F58B9ED595813037671BB1DAC0333", hash_generated_method = "0990D6314CA4E2ACF77F7549B870C8E3")
           ConfigCallback(WindowManager wm) {
             mWindowManager = wm;

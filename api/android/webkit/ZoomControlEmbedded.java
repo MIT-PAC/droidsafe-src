@@ -70,6 +70,7 @@ class ZoomControlEmbedded implements ZoomControlBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.582 -0400", hash_original_method = "01D9936CB3AEEFE463F6049C6D59A6E4", hash_generated_method = "912A6ED3B2CAD76F92BF6854B868239B")
     public void hide() {
         if(mZoomButtonsController != null)        
@@ -166,7 +167,7 @@ ZoomButtonsController var63565BB54144B4ECD496B8D8A0409C92_991097420 =         mZ
         }
 
 
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.585 -0400", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "D1B2D1C2CFDE0020D266B7E083F173E5")
         public void onVisibilityChanged(boolean visible) {
             //DSFIXME:  CODE0009: Possible callback target function detected

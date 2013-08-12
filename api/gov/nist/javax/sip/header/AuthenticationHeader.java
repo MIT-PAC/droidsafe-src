@@ -139,6 +139,7 @@ String varFD3305CF8340E40F0AC0AB554909AEBC_1489726121 =         scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.951 -0400", hash_original_method = "389B06AAD21713BEFD607954CE113A50", hash_generated_method = "03BA99A4C5873F0395A1F2A89555671C")
     public void setRealm(String realm) throws ParseException {
         addTaint(realm.getTaint());

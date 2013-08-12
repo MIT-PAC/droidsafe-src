@@ -117,7 +117,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static UUID makeUuid(byte[] hash, int version) {
         long msb = Memory.peekLong(hash, 0, ByteOrder.BIG_ENDIAN);
         long lsb = Memory.peekLong(hash, 8, ByteOrder.BIG_ENDIAN);
@@ -416,7 +416,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1985289829 =         builder.toString
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.661 -0400", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "9B727D193306F40CE5A6C46DD735C1D4")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {

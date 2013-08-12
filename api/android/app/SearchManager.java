@@ -46,6 +46,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
 
     private SearchDialog mSearchDialog;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.794 -0400", hash_original_method = "A1F4172E8F505D7306645B5F1AC929D8", hash_generated_method = "F05F150BE019641B04039B46F0EE369B")
       SearchManager(Context context, Handler handler) {
         mContext = context;
@@ -60,6 +61,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.795 -0400", hash_original_method = "A99B2740D078AE52E51C31205C7D1808", hash_generated_method = "3CB0CF6ED5CEC8FE73899735BE4DAB05")
     public void startSearch(String initialQuery,
                             boolean selectInitialQuery,
@@ -128,7 +130,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.799 -0400", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "CC23D6BF5B25438BEBF5792F4443E835")
      void startGlobalSearch(String initialQuery, boolean selectInitialQuery,
             Bundle appSearchData, Rect sourceBounds) {
@@ -289,6 +291,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_127232092 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.804 -0400", hash_original_method = "2F7F67ABA80342A48040CFA5F163FF23", hash_generated_method = "8FA588D029595E43A7218B88E431B62C")
     public void stopSearch() {
         if(mSearchDialog != null)        
@@ -362,6 +365,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_127232092 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.809 -0400", hash_original_method = "BECD96EDDDF4DA2CCA14D2ABA4ED0EE3", hash_generated_method = "30324CA7BC4B3AA74B3F268F00769615")
     public SearchableInfo getSearchableInfo(ComponentName componentName) {
         addTaint(componentName.getTaint());

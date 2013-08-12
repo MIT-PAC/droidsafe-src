@@ -83,7 +83,7 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.749 -0400", hash_original_method = "5E4C46F83EA6D4798D78ECC8F00428E0", hash_generated_method = "49BBEAB3370D2935A59DF6D1717FD311")
     public int read(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -147,7 +147,7 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.750 -0400", hash_original_method = "2ACBDCB4D97DF4112755C3E9E6B4B6A1", hash_generated_method = "80D882C62A6738CCF2A7523FB1B082AA")
     public int read() throws IOException {
         if(checkForEof())        

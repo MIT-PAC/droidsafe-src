@@ -79,6 +79,7 @@ public class SamplingProfilerIntegration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void writeZygoteSnapshot() {
         if (!enabled) {
             return;

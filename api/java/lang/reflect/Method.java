@@ -53,6 +53,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 
     private volatile boolean genericTypesAreInitialized = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_method = "70F1F77231BFE73E3138A8A58A15C35C", hash_generated_method = "5EF4B9B8E33D0C3D9148CA2297534CC4")
       Method(Method orig) {
         this(orig.declaringClass, orig.parameterTypes, orig.exceptionTypes,
@@ -129,7 +130,7 @@ TypeVariable<Method>[] var530714F4AE8FC705F00A16C33AA9F354_761256114 =         f
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.115 -0400", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "A0D67ED9337C81F3DC4D86FA254770C3")
     @Override
      String getSignatureAttribute() {
@@ -161,7 +162,7 @@ String var2F8E51633C4B934C6A6871930033C26B_192298750 =         StringUtils.combi
 	}
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.117 -0400", hash_original_method = "060018D8556E7858267AA04DC5F84FE8", hash_generated_method = "42BB2CFEB68D1EC7847543FD95859006")
     public String toGenericString() {
         StringBuilder sb = new StringBuilder(80);
@@ -208,6 +209,7 @@ String var2460B846747F8B22185AD8BE722266A5_853559711 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.117 -0400", hash_original_method = "A9CCE739D5419EE3EB1324AC76C431BA", hash_generated_method = "764DD15D78CD7E1B5FA1F96C17C0AD3B")
     public Type[] getGenericParameterTypes() {
         initGenericTypes();
@@ -220,6 +222,7 @@ Type[] var5CB4FE98CE4670BB8FD40D4DEBE96905_1540034169 =         Types.getClonedT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.117 -0400", hash_original_method = "D98F12BC8A74E89DDBE36E53E80FD275", hash_generated_method = "A428A35994942F6A97141F5E38FEE37F")
     public Type[] getGenericExceptionTypes() {
         initGenericTypes();
@@ -232,6 +235,7 @@ Type[] var5B58D007921425E5297F5C75058387B8_134221316 =         Types.getClonedTy
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.118 -0400", hash_original_method = "83125796E1541F4C47F8F2176AE50053", hash_generated_method = "D9D20CADA77B07A43A1599A4BB0EA8F1")
     public Type getGenericReturnType() {
         initGenericTypes();
@@ -296,6 +300,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_629409244 =         getAnnotation(declarin
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.119 -0400", hash_original_method = "D8B142EB73E138FF5927E6AE1DAD56D2", hash_generated_method = "DBF29A58AEAE77921988590CE976282E")
     @Override
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
@@ -334,6 +339,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_629409244 =         getAnnotation(declarin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.121 -0400", hash_original_method = "72FC508AEB582DBA9794440813C3A8B1", hash_generated_method = "100B060FF71A8EC82F8E4B4330232EF0")
     public Annotation[][] getParameterAnnotations() {
         Annotation[][] parameterAnnotations = getParameterAnnotations(declaringClass, slot);
@@ -365,6 +371,7 @@ Annotation[][] varAD240742A5BFADFDA08547188EAD9960_1940681231 =         paramete
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.122 -0400", hash_original_method = "47D8C519D80AD7FA8ACDBB9291AF9C1F", hash_generated_method = "B7578A5FC3F2FB86BC61616D527AAF37")
     public boolean isVarArgs() {
         int modifiers = getMethodModifiers(declaringClass, slot);
@@ -389,6 +396,7 @@ Annotation[][] varAD240742A5BFADFDA08547188EAD9960_1940681231 =         paramete
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.123 -0400", hash_original_method = "B698BCB06B0A737FF1A228493D2DEAD0", hash_generated_method = "56F15025FA73FD20F7F1A3FA63828DF2")
     public boolean isSynthetic() {
         int modifiers = getMethodModifiers(declaringClass, slot);
@@ -420,7 +428,7 @@ Object var2050B6E3550B605C703FF0CF43049C54_299126770 =         getDefaultValue(d
 	}
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.123 -0400", hash_original_method = "AF56E5F5402F800187126545ABE1F97F", hash_generated_method = "C8BBA5340257B713151F45834E7D4D13")
     @Override
     public boolean equals(Object object) {
@@ -513,7 +521,7 @@ Class<?> varDC9AC92D1699491F328099759E5C37AE_2007676233 =         returnType;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.126 -0400", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "7F89D5DB5582D921290FCC9031635F2D")
     @Override
     public int hashCode() {
@@ -561,6 +569,7 @@ Object var928BD79CB12005B507BD2576AE0166BF_1517613077 =         invokeNative(rec
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.127 -0400", hash_original_method = "20379CC138163D24505D982E1BF3267A", hash_generated_method = "256C72828D8D9F5981AF7BC4A67CB206")
     @Override
     public String toString() {
@@ -633,6 +642,7 @@ String varE65B3A02759122992CB82C0E651AD408_1455360506 =         result.toString(
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.128 -0400", hash_original_field = "6D5C49EE7CEF5783A42FC1C7653D6955", hash_generated_field = "3465881694FBE3BA7144100AF6865EE1")
 
     public static final Comparator<Method> ORDER_BY_SIGNATURE = new Comparator<Method>() {
+        @DSModeled(DSC.SAFE)
         public int compare(Method a, Method b) {
             int comparison = a.name.compareTo(b.name);
             if (comparison != 0) {

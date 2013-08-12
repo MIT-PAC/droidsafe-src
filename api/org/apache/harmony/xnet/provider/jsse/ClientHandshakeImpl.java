@@ -632,6 +632,7 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.204 -0400", hash_original_method = "EC675B353AC97965B98DB90ABCC2C0E4", hash_generated_method = "CBC1E69E18C206F9C2C0CDAD2D5ECA7A")
     @Override
     public void receiveChangeCipherSpec() {

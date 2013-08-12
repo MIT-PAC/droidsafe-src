@@ -54,6 +54,7 @@ public class DevicePolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.709 -0400", hash_original_method = "DEBAA688BC0765F8640468141F520924", hash_generated_method = "A04D397B65DBA61A10319C9B1CF6C58A")
     public boolean isAdminActive(ComponentName who) {
         addTaint(who.getTaint());
@@ -84,6 +85,7 @@ public class DevicePolicyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.710 -0400", hash_original_method = "304202BD61CAAFAF35BBB8D3C8BC6AB8", hash_generated_method = "EA75E84C39030EA46F6BEE30DD2C8B15")
     public List<ComponentName> getActiveAdmins() {
         if(mService != null)        
@@ -820,6 +822,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_2073047090 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.734 -0400", hash_original_method = "EACD63B4064B49538F5A848510A5F41A", hash_generated_method = "E3ECAE695158BE43463C993D4EF9F6BC")
     public int getCurrentFailedPasswordAttempts() {
         if(mService != null)        
@@ -904,6 +907,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_2073047090 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.739 -0400", hash_original_method = "17E6FC8B97A136DE019ACBDDB18AEC37", hash_generated_method = "AC93594F5275F0C149DB961A09796D80")
     public boolean resetPassword(String password, int flags) {
         addTaint(flags);
@@ -990,6 +994,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_2073047090 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.744 -0400", hash_original_method = "1AD41EB1582F6A4A56913D2EEA649B59", hash_generated_method = "6521C5612DE0EB91F088E2AD81CC2BD4")
     public void lockNow() {
         if(mService != null)        
@@ -1144,6 +1149,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1156806914 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.751 -0400", hash_original_method = "17B73A4F954CB746271DADF07BB03245", hash_generated_method = "C335644F23AC0267484CA5E2482F4124")
     public int setStorageEncryption(ComponentName admin, boolean encrypt) {
         addTaint(encrypt);

@@ -128,6 +128,7 @@ class FastScroller {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.853 -0400", hash_original_field = "FDE3D253B193C180C3BB694BFE237899", hash_generated_field = "29B709708C4F13168EDC66CB4D662E67")
 
     private final Runnable mDeferStartDrag = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.853 -0400", hash_original_method = "8A3021930710B16F81DE57976EDC3D0F", hash_generated_method = "121B411EE501440C0B88B56E21D1E2FA")
         public void run() {
             {
@@ -330,7 +331,7 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.673 -0400", hash_original_method = "C32E62B08B27A384339E1BC75CFE4552", hash_generated_method = "D04987BFE1D4AE2E46B9CD42F9227A5A")
     private void resetThumbPos() {
         final int viewWidth = mList.getWidth();
@@ -390,7 +391,7 @@ switch(mPosition){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.677 -0400", hash_original_method = "0A57524C8928F6FDE971C9B9E9D3463C", hash_generated_method = "E00468CD2FA23E91A0693E918DA3AE56")
     private void init(Context context) {
         TypedArray ta = context.getTheme().obtainStyledAttributes(ATTRS);
@@ -870,7 +871,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_330476030 =         mSections;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.693 -0400", hash_original_method = "5B13E30A0127E5E811D3308FC0C54801", hash_generated_method = "FB96DA07DC72742CFC2CA3582237E658")
     private int getThumbPositionForListPosition(int firstVisibleItem, int visibleItemCount,
             int totalItemCount) {

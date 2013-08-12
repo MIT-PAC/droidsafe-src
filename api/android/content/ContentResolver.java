@@ -668,6 +668,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final ContentProviderClient acquireContentProviderClient(String name) {
         IContentProvider provider = acquireProvider(name);
         if (provider != null) {
@@ -689,6 +690,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final void unregisterContentObserver(ContentObserver observer) {
         try {
             IContentObserver contentObserver = observer.releaseContentObserver();
@@ -748,6 +750,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void requestSync(Account account, String authority, Bundle extras) {
         validateSyncExtrasBundle(extras);
         try {
@@ -757,6 +760,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void validateSyncExtrasBundle(Bundle extras) {
         try {
             for (String key : extras.keySet()) {
@@ -787,6 +791,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cancelSync(Account account, String authority) {
         try {
             getContentService().cancelSync(account, authority);
@@ -804,6 +809,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean getSyncAutomatically(Account account, String authority) {
         try {
             return getContentService().getSyncAutomatically(account, authority);
@@ -813,6 +819,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setSyncAutomatically(Account account, String authority, boolean sync) {
         try {
             getContentService().setSyncAutomatically(account, authority, sync);
@@ -850,6 +857,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void removePeriodicSync(Account account, String authority, Bundle extras) {
         validateSyncExtrasBundle(extras);
         if (account == null) {
@@ -866,6 +874,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<PeriodicSync> getPeriodicSyncs(Account account, String authority) {
         if (account == null) {
             throw new IllegalArgumentException("account must not be null");
@@ -890,6 +899,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setIsSyncable(Account account, String authority, int syncable) {
         try {
             getContentService().setIsSyncable(account, authority, syncable);
@@ -900,6 +910,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean getMasterSyncAutomatically() {
         try {
             return getContentService().getMasterSyncAutomatically();
@@ -919,6 +930,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSyncActive(Account account, String authority) {
         try {
             return getContentService().isSyncActive(account, authority);
@@ -928,6 +940,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static SyncInfo getCurrentSync() {
         try {
@@ -988,6 +1001,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void removeStatusChangeListener(Object handle) {
         if (handle == null) {
             throw new IllegalArgumentException("you passed in a null handle");

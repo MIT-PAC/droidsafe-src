@@ -46,6 +46,7 @@ public class SslCertificate {
 
     private X509Certificate mX509Certificate;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.937 -0400", hash_original_method = "C9600F8F1BB8A8C873CC4C3FEC87FEF5", hash_generated_method = "E467D64F4982973298E8C8291C303E5E")
     @Deprecated
     public  SslCertificate(
@@ -59,6 +60,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.938 -0400", hash_original_method = "D87F049394C2BF8E430D24ECC769A568", hash_generated_method = "2DAEC93E0C1798DCF8AD570C64F78238")
     @Deprecated
     public  SslCertificate(
@@ -72,6 +74,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.938 -0400", hash_original_method = "44DDC0F9828E23A0D6B9681282E4B5EC", hash_generated_method = "34D5FAB1DF1CFEF607E2022094F3199A")
     public  SslCertificate(X509Certificate certificate) {
         this(certificate.getSubjectDN().getName(),
@@ -104,6 +107,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bundle saveState(SslCertificate certificate) {
         if (certificate == null) {
             return null;
@@ -124,6 +128,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SslCertificate restoreState(Bundle bundle) {
         if (bundle == null) {
             return null;
@@ -149,6 +154,7 @@ public class SslCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.940 -0400", hash_original_method = "86D829D0BCD4BD19D84EADD31DD5FCE1", hash_generated_method = "789439C1347326062DC142CEA69FDF90")
     public Date getValidNotBeforeDate() {
 Date var888124D2AF52A13A16838979247477EF_1880281343 =         cloneDate(mValidNotBefore);
@@ -159,6 +165,7 @@ Date var888124D2AF52A13A16838979247477EF_1880281343 =         cloneDate(mValidNo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.940 -0400", hash_original_method = "E74141FEB26284E4BA15E02DC99CE923", hash_generated_method = "2D017A2144345BCF4CE0E9767DE9C8D8")
     @Deprecated
     public String getValidNotBefore() {
@@ -170,6 +177,7 @@ String var8EA6787CA3942732667A1A413F7D73D2_839497423 =         formatDate(mValid
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.941 -0400", hash_original_method = "5976F2F67CC4D55E479FF99F5BD66B52", hash_generated_method = "261771B7FC3F862FEFC34518CB70A907")
     public Date getValidNotAfterDate() {
 Date var5B80FBA32B2E5EDCBD83079545420CD6_1518830533 =         cloneDate(mValidNotAfter);
@@ -180,6 +188,7 @@ Date var5B80FBA32B2E5EDCBD83079545420CD6_1518830533 =         cloneDate(mValidNo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.941 -0400", hash_original_method = "8855AE273E27E2CAD00A7550F7D75B05", hash_generated_method = "874E52221374AF4A47CCC51FC52157CE")
     @Deprecated
     public String getValidNotAfter() {
@@ -261,6 +270,7 @@ DName var9A957C3D1EADCF1F564E726204D0B108_890394318 =         mIssuedBy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.944 -0400", hash_original_method = "F16D936F6355F1722DE333F4EC7C4E06", hash_generated_method = "8C0C6305B183201BA8BB48CCA7AC1B32")
     public String toString() {
 String var5BB6BFF63AB3DCE39B416D031BC3D7D9_1577345488 =         ("Issued to: " + mIssuedTo.getDName() + ";\n"

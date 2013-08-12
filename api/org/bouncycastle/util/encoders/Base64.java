@@ -20,7 +20,7 @@ public class Base64 {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(
         byte[]    data) {
         int len = (data.length + 2) / 3 * 4;
@@ -37,7 +37,7 @@ public class Base64 {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int encode(
         byte[]                data,
         OutputStream    out) throws IOException {
@@ -45,7 +45,7 @@ public class Base64 {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int encode(
         byte[]                data,
         int                    off,
@@ -72,6 +72,7 @@ public class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(
         String    data) {
         int len = data.length() / 4 * 3;

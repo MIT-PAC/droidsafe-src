@@ -15,12 +15,14 @@ import java.util.Arrays;
 
 public abstract class Certificate {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.174 -0400", hash_original_method = "EF3B6A1B9C3991494D57A734B30AC9EA", hash_generated_method = "FB5E7E56595969C0BB651408CEF0619D")
     public  Certificate() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.174 -0400", hash_original_method = "7638A14848B991538FCB5E98A2110811", hash_generated_method = "1211A1394726117F6D41395F03854537")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -65,6 +67,7 @@ public abstract class Certificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.175 -0400", hash_original_method = "694012085EC68335A49724253FE100EC", hash_generated_method = "CD24FACB822283F09E454F0EC254ABFF")
     public int hashCode() {
         int res = 0;

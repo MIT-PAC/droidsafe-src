@@ -24,6 +24,7 @@ public class PBEParameter extends ASN1Encodable {
 
     ASN1OctetString salt;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.961 -0400", hash_original_method = "F7EDA5A89282A21C4F04920900A9B0E0", hash_generated_method = "17399259B6DE547A1349F81119817C26")
     public  PBEParameter(
         byte[]      salt,
@@ -46,6 +47,7 @@ public class PBEParameter extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.962 -0400", hash_original_method = "8CC750B4C495B3704F501666A3EEDBD9", hash_generated_method = "26541D40AC632625B229A9B94A06658B")
     public  PBEParameter(
         ASN1Sequence  seq) {
@@ -57,6 +59,7 @@ public class PBEParameter extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PBEParameter getInstance(
         Object  obj) {
         if (obj instanceof PBEParameter)
@@ -71,6 +74,7 @@ public class PBEParameter extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.963 -0400", hash_original_method = "12A862718040CD6821608ED594311F7C", hash_generated_method = "81EDAE5B588F8A4C2DCC7ADA5EE1F5AE")
     public BigInteger getIterationCount() {
 BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_210620194 =         iterations.getValue();
@@ -81,6 +85,7 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_210620194 =         iterations.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.964 -0400", hash_original_method = "54CCD4EF015960D2546AD9BCFDF4FA17", hash_generated_method = "2C1668F091268D758A934C4783AFA2EA")
     public byte[] getSalt() {
         byte[] var3B49B46E31C5F6502835BFC79B7BB43D_370262964 = (salt.getOctets());
@@ -91,6 +96,7 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_210620194 =         iterations.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.964 -0400", hash_original_method = "0DB5FC3A2AA27196084301AD64A15FCF", hash_generated_method = "30D5993EB78B746951D68CCBF1D34FAD")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

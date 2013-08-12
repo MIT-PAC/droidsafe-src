@@ -30,6 +30,7 @@ public class JSONTokener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.549 -0400", hash_original_method = "B349C062BB24F17BF02BDCB43C03970C", hash_generated_method = "B317F31B7C840A568D0F263925987ECB")
     public Object nextValue() throws JSONException {
         int c = nextCleanInternal();
@@ -157,6 +158,7 @@ for(;pos < in.length();pos++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.651 -0400", hash_original_method = "7B01D454BE0369CA1502DDC9AB2083EB", hash_generated_method = "D95371E2441F1B13BCF75E70F6CF023C")
     public String nextString(char quote) throws JSONException {
         addTaint(quote);
@@ -510,6 +512,7 @@ JSONArray varDC838461EE2FA0CA4C9BBB70A15456B0_99328500 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.748 -0400", hash_original_method = "33F4C16D40F1C908E16B89E59A552BE8", hash_generated_method = "1F984DA890CEAE83D2B52E165746F0C9")
     public JSONException syntaxError(String message) {
         addTaint(message.getTaint());
@@ -521,6 +524,7 @@ JSONException var1C6A9F01159463AF7BEB8A6B0954C165_2106695044 =         new JSONE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.748 -0400", hash_original_method = "D61A5D8B8E38C1530E1AB8F6DB368DAC", hash_generated_method = "24901026951446DCA8CB4641505EB750")
     @Override
     public String toString() {
@@ -532,6 +536,7 @@ String varFF4D3465C1564E8B608C0C70E1BC48AA_1485902365 =         " at character "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.749 -0400", hash_original_method = "6281E295952C34947D74AA92CC697B16", hash_generated_method = "1700618446274CED9515CC285360CBA9")
     public boolean more() {
         boolean var00ABE09DB79FC8FBE569A02726AD20CE_88207506 = (pos < in.length());
@@ -542,6 +547,7 @@ String varFF4D3465C1564E8B608C0C70E1BC48AA_1485902365 =         " at character "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.749 -0400", hash_original_method = "213D34FB491711CFF086DB4B25220A73", hash_generated_method = "B6E796D2ACD93D4D85480B1980352931")
     public char next() {
         char var1394684E19C04F7798D7948E9B939256_306522279 = (pos < in.length() ? in.charAt(pos++) : '\0');
@@ -552,6 +558,7 @@ String varFF4D3465C1564E8B608C0C70E1BC48AA_1485902365 =         " at character "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.758 -0400", hash_original_method = "95912FB15799A75254D0EFB27A4965DA", hash_generated_method = "D039848D5EC6B3005463C7075EE4919A")
     public char next(char c) throws JSONException {
         addTaint(c);
@@ -574,6 +581,7 @@ String varFF4D3465C1564E8B608C0C70E1BC48AA_1485902365 =         " at character "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.758 -0400", hash_original_method = "8888AACA46E7314FC33FB1B59D843324", hash_generated_method = "EBBF074904C3205351880F122FA6CA25")
     public char nextClean() throws JSONException {
         int nextCleanInt = nextCleanInternal();
@@ -586,6 +594,7 @@ String varFF4D3465C1564E8B608C0C70E1BC48AA_1485902365 =         " at character "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.769 -0400", hash_original_method = "9816A4D386531BCA80B95E34249E012D", hash_generated_method = "F371456C676B37D847516330A0B81FA1")
     public String next(int length) throws JSONException {
         if(pos + length > in.length())        
@@ -609,6 +618,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_500401354 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.770 -0400", hash_original_method = "EA130CCB3E2CFC0C10CD8E8D4F88F4FA", hash_generated_method = "2E3241E240DAEE872F48464D53951795")
     public String nextTo(String excluded) {
         addTaint(excluded.getTaint());
@@ -629,6 +639,7 @@ String var5CA9FC6F8810FF918657E0703132E0D5_1970049706 =         nextToInternal(e
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.771 -0400", hash_original_method = "9F2D4FCC02E225188C000422795F1B2D", hash_generated_method = "A1F3417DAEDF875EB5AC8DC2A3F43424")
     public String nextTo(char excluded) {
         addTaint(excluded);
@@ -650,6 +661,7 @@ String var1D0F72A80D62E96CEA3D7B6E37C980FA_2117918200 =         nextToInternal(S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.772 -0400", hash_original_method = "A067EA373EE4201A369E9BCAA7E25460", hash_generated_method = "20421B63DF62B607EE93B32428139232")
     public char skipTo(char to) {
         addTaint(to);

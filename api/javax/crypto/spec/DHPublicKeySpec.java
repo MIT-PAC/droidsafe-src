@@ -21,6 +21,7 @@ public class DHPublicKeySpec implements KeySpec {
 
     private BigInteger g;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.346 -0400", hash_original_method = "BEC503CA854BAF195D783D6731B76102", hash_generated_method = "A57F4AD9759F1DE905647BDD55752590")
     public  DHPublicKeySpec(BigInteger y, BigInteger p, BigInteger g) {
         this.y = y;

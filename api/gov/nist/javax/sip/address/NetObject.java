@@ -25,6 +25,7 @@ public abstract class NetObject extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.091 -0400", hash_original_method = "26A4AB68F41643C912C51D77CC375C44", hash_generated_method = "941AFE4DB6196BF6E0472C5608A908FF")
     public boolean equals(Object that) {
         addTaint(that.getTaint());
@@ -179,6 +180,7 @@ for(int i = 0;i < fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.096 -0400", hash_original_method = "8D936CCD11169852B60D86BE02120DB8", hash_generated_method = "0B08F13E934F8B93563C9D11AD4CEB17")
     public boolean match(Object other) {
         addTaint(other.getTaint());
@@ -381,6 +383,7 @@ for(int i = 0;i < fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.126 -0400", hash_original_method = "8F6462E23806D652AB2FB8FE10D0061F", hash_generated_method = "A06086FB1A7FBA01D237EE4E3A341B73")
     public String debugDump() {
         stringRepresentation = "";

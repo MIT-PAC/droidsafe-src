@@ -102,6 +102,7 @@ for(int j = 0;j < numOfLangs;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.622 -0400", hash_original_method = "E326CA0D62F025609F12A4A9B87E4431", hash_generated_method = "7908203CB08C559DD3A7651FC267DF4E")
     public void writeExternal(ObjectOutput objectOutput) throws IOException {
         addTaint(objectOutput.getTaint());
@@ -131,6 +132,7 @@ for(String lang : setOfLangs)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.623 -0400", hash_original_method = "17C0EB7BC2271962455DE53D535BEB5E", hash_generated_method = "274B6CC9A9DF197397968282702EB663")
     @Override
     public String toString() {
@@ -166,6 +168,7 @@ String varEBF0387156E2D98F471F997058C674A5_710308645 =         output.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.624 -0400", hash_original_method = "F40661B16774EA00988010D992802DCB", hash_generated_method = "AF78D503CDD5D24485B08ED0129E9D14")
      String getFileName(int countryCallingCode, String language, String script, String region) {
         addTaint(region.getTaint());

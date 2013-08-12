@@ -47,6 +47,7 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
     public abstract String getMethod();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.203 -0400", hash_original_method = "E43BB65B6EAF4E56B5A8181704221BD7", hash_generated_method = "FC3440A02D7955CD000653C92120C472")
     public ProtocolVersion getProtocolVersion() {
 ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_1354538771 =         HttpProtocolParams.getVersion(getParams());
@@ -68,6 +69,7 @@ URI varF8A43570A6D9CE873AAA24BBE28B6265_1820848507 =         this.uri;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.207 -0400", hash_original_method = "93E6AFEE57EFDA4898CAE2DF347D0D02", hash_generated_method = "943FBA157A05E91D6F6D094FB742AD79")
     public RequestLine getRequestLine() {
         String method = getMethod();
@@ -242,6 +244,7 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_1565140925 =         new BasicRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.224 -0400", hash_original_method = "7E78C92898A9406CD028D56B8CBA9D93", hash_generated_method = "AF2B1D224B33A90EC3509BC6FE887139")
     @Override
     public Object clone() throws CloneNotSupportedException {

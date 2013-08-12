@@ -301,6 +301,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.408 -0400", hash_original_method = "451C86882BCD1F18856FAB1FCF2DF436", hash_generated_method = "5BD5E6A0B049D82C805602A19459792D")
     public boolean hasHeaders() {
         boolean varFB56F84D8FE8412E172376948FE3E514_482765098 = (getListView().getVisibility() == View.VISIBLE
@@ -558,6 +559,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.471 -0400", hash_original_method = "0C226BA6EB709C0B8BDD6989275021F7", hash_generated_method = "775BB6F1CC8D9134BE9D314ED041786D")
     public void setListFooter(View view) {
         addTaint(view.getTaint());
@@ -573,6 +575,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.474 -0400", hash_original_method = "5055AD43F70FAF224ADCBC793E0582D3", hash_generated_method = "0F83034986D090C449BE8ACCE151509A")
     @Override
     protected void onStop() {
@@ -607,6 +610,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.482 -0400", hash_original_method = "1A457C81CAD07F8216A55B906C01B0EE", hash_generated_method = "6A7EE5C03743044FB2FA617489FCC0DE")
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -657,6 +661,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.488 -0400", hash_original_method = "3A902C5AADE0A248676EF9D6166BBE53", hash_generated_method = "B4A71275DB41C1646E4A84B1E8FD82DE")
     @Override
     protected void onRestoreInstanceState(Bundle state) {
@@ -834,6 +839,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.515 -0400", hash_original_method = "7A5ABD7084FE456D2AC9E7363F23F617", hash_generated_method = "0036BC0AB937BEFADE730C357D77A802")
     public void startWithFragment(String fragmentName, Bundle args,
             Fragment resultTo, int resultRequestCode) {
@@ -847,6 +853,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.520 -0400", hash_original_method = "A8702F14B58AAD20058746FC81F4589D", hash_generated_method = "2087FD1F7D29ED6671BD8B81568BEEED")
     public void startWithFragment(String fragmentName, Bundle args,
             Fragment resultTo, int resultRequestCode, int titleRes, int shortTitleRes) {
@@ -875,6 +882,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.527 -0400", hash_original_method = "4F3C5CDBD4880824AF39CB9E5E4A33FC", hash_generated_method = "64FD54591298EBACAE007166EDCB2744")
     public void showBreadCrumbs(CharSequence title, CharSequence shortTitle) {
         addTaint(shortTitle.getTaint());
@@ -925,6 +933,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.532 -0400", hash_original_method = "1549DF3FA5C3B3F8F6931C4E058E1944", hash_generated_method = "D939DE64B78C32A50D36EA4E26D93CF1")
     public void setParentTitle(CharSequence title, CharSequence shortTitle,
             OnClickListener listener) {
@@ -942,6 +951,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.537 -0400", hash_original_method = "6CD55A84320A14788B0DD27C2F943CD9", hash_generated_method = "CACF44D26AC7B617CF3E20E8C1D94157")
      void setSelectedHeader(Header header) {
         mCurHeader = header;
@@ -967,6 +977,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.544 -0400", hash_original_method = "DBABA4F3A7CA13D3BE4599BE843A33E0", hash_generated_method = "B29D58C5AA119ABCCF7A02E2247170CB")
      void showBreadCrumbs(Header header) {
         addTaint(header.getTaint());
@@ -1019,6 +1030,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.553 -0400", hash_original_method = "1F3D49C208A22CE80DD0C39318B7FB91", hash_generated_method = "D2591BAFFB703A5882B8EE0F32D40934")
     public void switchToHeader(String fragmentName, Bundle args) {
         addTaint(args.getTaint());
@@ -1031,6 +1043,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.555 -0400", hash_original_method = "439F40B8AE0DFA06D4CE3EB843023A82", hash_generated_method = "74A23E75163F0D345CCFD106C3007722")
     public void switchToHeader(Header header) {
         addTaint(header.getTaint());
@@ -1057,6 +1070,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_650793812 =         intent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.560 -0400", hash_original_method = "A27B5089D7C34DCC8F697434FD74BDF2", hash_generated_method = "F932D33AA08EF1920645B4789B9C3C6A")
      Header findBestMatchingHeader(Header cur, ArrayList<Header> from) {
         addTaint(from.getTaint());
@@ -1137,6 +1151,7 @@ Header var540C13E9E156B687226421B24F2DF178_928101578 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.566 -0400", hash_original_method = "20FDC2DC66402E55AE5BF59B2D025057", hash_generated_method = "C5FAFD8C993579BA448EA6EDA23BE907")
     public void startPreferenceFragment(Fragment fragment, boolean push) {
         addTaint(push);
@@ -1166,6 +1181,7 @@ Header var540C13E9E156B687226421B24F2DF178_928101578 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.571 -0400", hash_original_method = "E25F9CE570E0BFA743AE6FCAFFB6168D", hash_generated_method = "D2FF75B64855CE1AE0E059C367E33674")
     public void startPreferencePanel(String fragmentClass, Bundle args, int titleRes,
             CharSequence titleText, Fragment resultTo, int resultRequestCode) {
@@ -1339,6 +1355,7 @@ PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_743531044 =         mPrefe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.596 -0400", hash_original_method = "20BEF3079E316F6730A81E488DFA70F2", hash_generated_method = "6B5C2DB60A615141EC233D88147A3BC1")
     @Deprecated
     public void setPreferenceScreen(PreferenceScreen preferenceScreen) {
@@ -1492,6 +1509,7 @@ Button var0A300EA22629DC89E0DD4FA357122FBD_1421989561 =         mNextButton;
 
         private LayoutInflater mInflater;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.632 -0400", hash_original_method = "F02F4C5BC3B955ED93786AEEC10379FE", hash_generated_method = "A60B0B04E9E424ECAFBF90FFB9A5E0F7")
         public  HeaderAdapter(Context context, List<Header> objects) {
             super(context, 0, objects);
@@ -1502,6 +1520,7 @@ Button var0A300EA22629DC89E0DD4FA357122FBD_1421989561 =         mNextButton;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.639 -0400", hash_original_method = "BD15B4EB453F2C74F6031A45FD2B76C2", hash_generated_method = "26757578C3FCD43F8FF32C3523B6A317")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -1617,12 +1636,14 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
 
         public Bundle extras;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.669 -0400", hash_original_method = "CC8692EE42ED9AE9CFD9E664B2A1E936", hash_generated_method = "D78360B1F9ED0AA24422BF34D2B11223")
         public  Header() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.672 -0400", hash_original_method = "3E4088512988FAACC868C0BAC5E638A1", hash_generated_method = "3A1D4F49D71351DF78F288CC07EBC7A2")
           Header(Parcel in) {
             addTaint(in.getTaint());
@@ -1632,6 +1653,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.677 -0400", hash_original_method = "334D1E94CC98A584AC982CEC8D5C3813", hash_generated_method = "2C08691B928D15B9A2EBA7B64EA85531")
         public CharSequence getTitle(Resources res) {
             addTaint(res.getTaint());
@@ -1652,6 +1674,7 @@ CharSequence varCD126D34DD1576383395AEE5945E9C28_2085786960 =             title;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.681 -0400", hash_original_method = "817FA0FA7A0D92830E14FE64024CE8CC", hash_generated_method = "1A372BA310030B219EED35A4F779DE75")
         public CharSequence getSummary(Resources res) {
             addTaint(res.getTaint());
@@ -1672,6 +1695,7 @@ CharSequence var94CF84F5B46450576F294A9E2D95E50C_904404921 =             summary
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.685 -0400", hash_original_method = "AB517FA9C1DC5B1E62910A1ABDCECDD0", hash_generated_method = "44C265B30FD83B746A0151E8B44465E1")
         public CharSequence getBreadCrumbTitle(Resources res) {
             addTaint(res.getTaint());
@@ -1724,6 +1748,7 @@ CharSequence varFFEE091C203152B4B8D9368992F950CE_1043247137 =             breadC
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.705 -0400", hash_original_method = "BB0DBC9520A7E98C1F6BA8AD4772118F", hash_generated_method = "6C5169A1B271D34F0294933C99A03E6B")
         @Override
         public void writeToParcel(Parcel dest, int flags) {
@@ -1774,6 +1799,7 @@ CharSequence varFFEE091C203152B4B8D9368992F950CE_1043247137 =             breadC
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.716 -0400", hash_original_method = "29282A1B26F647059DDF5369C2CB137B", hash_generated_method = "5EBD6735AC3A9D662A04B831C6816001")
         public void readFromParcel(Parcel in) {
             id = in.readLong();
@@ -1816,6 +1842,7 @@ CharSequence varFFEE091C203152B4B8D9368992F950CE_1043247137 =             breadC
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.717 -0400", hash_original_field = "80358CCA6C151B1C75C8F6D01427BC96", hash_generated_field = "0285FC5896D2C8A81AC7F6CCCD215EAF")
 
         public static final Creator<Header> CREATOR = new Creator<Header>() {
+            @DSModeled(DSC.SAFE)
             public Header createFromParcel(Parcel source) {
                 return new Header(source);
             }

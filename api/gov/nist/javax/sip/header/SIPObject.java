@@ -48,6 +48,7 @@ StringBuffer var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_2063165486 =         buffer.app
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.453 -0400", hash_original_method = "C625D56C28F833180267D6A3AE3C9C8E", hash_generated_method = "84602015D339249F758BBFE31456FD09")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -212,6 +213,7 @@ for(int i = 0;i < fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.458 -0400", hash_original_method = "060178C12313F034DC0CE078907A1CE4", hash_generated_method = "4DF1C487ADE3094556FFE899C15CC9E9")
     public boolean match(Object other) {
         addTaint(other.getTaint());
@@ -420,6 +422,7 @@ for(int i = 0;i < fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.461 -0400", hash_original_method = "8C7E8103DEE2671781774C37BABA3BB5", hash_generated_method = "C0CDED104083A96C84619A7CDA54C0CE")
     public String debugDump() {
         stringRepresentation = "";

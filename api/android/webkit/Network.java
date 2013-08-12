@@ -72,7 +72,7 @@ class Network {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static synchronized Network getInstance(Context context) {
         if (sNetwork == null) {
             sNetwork = new Network(context.getApplicationContext());
@@ -85,6 +85,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void enablePlatformNotifications() {
         if (++sPlatformNotificationEnableRefCount == 1) {
             if (sNetwork != null) {
@@ -97,6 +98,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void disablePlatformNotifications() {
         if (--sPlatformNotificationEnableRefCount == 0) {
             if (sNetwork != null) {
@@ -216,6 +218,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.645 -0400", hash_original_method = "A2D65C5EAC5BE051C823D07EA076A5B0", hash_generated_method = "560A0BA4C4222253E404FD2D24C9A51C")
     public String getProxyHostname() {
 String var5E0DBFD0A810C9DF79D4FDF52FBF6DA2_1009116587 =         mRequestQueue.getProxyHost().getHostName();
@@ -380,6 +383,7 @@ String varF4020F95A180D57F86F89B67CE207E73_1521573849 =         mProxyPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.647 -0400", hash_original_method = "B02A8324ABFB3032B553A668B2D564CC", hash_generated_method = "53DEA7F03044D0453282AF3C2D955FBB")
     public void startTiming() {
         mRequestQueue.startTiming();

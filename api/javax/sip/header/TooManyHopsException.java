@@ -13,6 +13,7 @@ public class TooManyHopsException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.562 -0400", hash_original_method = "10941AD8E9E3A8951C3E1FF56EF96A49", hash_generated_method = "4AE550554BDAF63EA77A7DAD0298DFE4")
     public  TooManyHopsException(String message) {
         super(message);

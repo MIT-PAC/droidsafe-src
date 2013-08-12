@@ -23,6 +23,7 @@ public class StringReader extends Reader {
 
     private int count;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.756 -0400", hash_original_method = "FB44DCC8276A9B32CF15DCC88FC63BEE", hash_generated_method = "2BB533358CA78E399DDA1F3F66175075")
     public  StringReader(String str) {
         this.str = str;
@@ -54,6 +55,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.757 -0400", hash_original_method = "F8F979F8EBA759C2F6A839AF0D90FFA4", hash_generated_method = "4144D9B768B12AB9C752DDDADC12E93C")
     @Override
     public void mark(int readLimit) throws IOException {
@@ -205,6 +207,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.759 -0400", hash_original_method = "038BDF0065CA5B8ADE3B96C7C6A96C49", hash_generated_method = "EB41247279EDB6AE8BCF64B337BF9116")
     @Override
     public void reset() throws IOException {
@@ -221,6 +224,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.760 -0400", hash_original_method = "62CF7546C0F2369A3238D86713E4D3AD", hash_generated_method = "BD434A584E11C43F8BDAF4CB7E0433C6")
     @Override
     public long skip(long charCount) throws IOException {

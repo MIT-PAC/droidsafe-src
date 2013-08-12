@@ -46,6 +46,7 @@ public class WallpaperManager {
 
     private Context mContext;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.436 -0400", hash_original_method = "AA9944AB0F8A7F99E0205835B0AC132C", hash_generated_method = "E22DDA2EADD394D8855514A4922CD1B9")
       WallpaperManager(Context context, Handler handler) {
         addTaint(handler.getTaint());
@@ -57,6 +58,7 @@ public class WallpaperManager {
     }
 
     
+    @DSModeled(DSC.BAN)
     static void initGlobals(Looper looper) {
         synchronized (sSync) {
             if (sGlobals == null) {
@@ -66,6 +68,7 @@ public class WallpaperManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static WallpaperManager getInstance(Context context) {
         return (WallpaperManager)context.getSystemService(
                 Context.WALLPAPER_SERVICE);
@@ -108,6 +111,7 @@ Drawable var540C13E9E156B687226421B24F2DF178_2076286107 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.440 -0400", hash_original_method = "EA4956080FAF0CF8E371329CB76D5A40", hash_generated_method = "6FE81A8A927D50FEB88101DED48BB50C")
     public Drawable peekDrawable() {
         Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, false);
@@ -133,6 +137,7 @@ Drawable var540C13E9E156B687226421B24F2DF178_60400103 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.440 -0400", hash_original_method = "8FF7C2E7F253EDCD7E0E3FAE36FB4E5D", hash_generated_method = "156404A82F57F52E763C3FFFD8BD7ADB")
     public Drawable getFastDrawable() {
         Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, true);
@@ -154,6 +159,7 @@ Drawable var540C13E9E156B687226421B24F2DF178_313494845 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.442 -0400", hash_original_method = "8A28F31302CE106CFE820B9CBC0915AE", hash_generated_method = "3B7DE77192860428731672E4EE7BD15C")
     public Drawable peekFastDrawable() {
         Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, false);
@@ -186,6 +192,7 @@ Bitmap varCA837979D68D3CF2EF7A932B9188079C_1940508861 =         sGlobals.peekWal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.443 -0400", hash_original_method = "9DD74CD1F13AD5E4F4CF15160B046494", hash_generated_method = "E137D675DA1C337DD2F3C32778252113")
     public void forgetLoadedWallpaper() {
         sGlobals.forgetLoadedWallpaper();
@@ -194,6 +201,7 @@ Bitmap varCA837979D68D3CF2EF7A932B9188079C_1940508861 =         sGlobals.peekWal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.443 -0400", hash_original_method = "BFBEA651CA003E449BAD7FB6481A127E", hash_generated_method = "2A965A42474769969FF127C43E0827FF")
     public WallpaperInfo getWallpaperInfo() {
         try 
@@ -217,6 +225,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.445 -0400", hash_original_method = "A9B0C110F9B2DD6C9D3DF08018F94DD2", hash_generated_method = "4FDF4953CFC48C9DF6133B59C795090D")
     public void setResource(int resid) throws IOException {
         addTaint(resid);
@@ -381,6 +390,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.452 -0400", hash_original_method = "D1A5F81505B1F3B03FABBA4410A80898", hash_generated_method = "037903C3D6C53821A387D00CDB1A141F")
     public int getDesiredMinimumWidth() {
         try 
@@ -404,6 +414,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.453 -0400", hash_original_method = "B18A5C89DB794D80A7E1B5CE60755D7A", hash_generated_method = "EB35591DD153183C0B34A9DA4E55FC54")
     public int getDesiredMinimumHeight() {
         try 
@@ -427,6 +438,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.454 -0400", hash_original_method = "24150471411E1AC7EC2E370FB5C4066A", hash_generated_method = "E59F0F9B8237A2ABEC8BD8F1B3745DAC")
     public void suggestDesiredDimensions(int minimumWidth, int minimumHeight) {
         addTaint(minimumHeight);
@@ -446,6 +458,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.456 -0400", hash_original_method = "50451375F0F7110E301C30296ACA8A65", hash_generated_method = "247111BB9B93BF1ECFF28D6FA392DA59")
     public void setWallpaperOffsets(IBinder windowToken, float xOffset, float yOffset) {
         addTaint(yOffset);
@@ -531,6 +544,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.461 -0400", hash_original_method = "4003FD7579057D5A21D7509B89350DFE", hash_generated_method = "22EF8AE9FC1287367E46FBEEB6795999")
     public void clearWallpaperOffsets(IBinder windowToken) {
         addTaint(windowToken.getTaint());
@@ -677,6 +691,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.470 -0400", hash_original_method = "51482143A770E9CBA4E27420DA4BB83A", hash_generated_method = "B036C63FEE8D28D4A506E760AE942317")
         @Override
         public void setAlpha(int alpha) {
@@ -689,6 +704,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.471 -0400", hash_original_method = "6EF98891DC00D446E5280E44B83BE80B", hash_generated_method = "3378172AE363C3A4CFF3151873E9D71F")
         @Override
         public void setColorFilter(ColorFilter cf) {
@@ -701,6 +717,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.472 -0400", hash_original_method = "BBAE54C669BC97BDF73F051E3161B7DC", hash_generated_method = "5E4B176023046CF7B623C44D7A17352E")
         @Override
         public void setDither(boolean dither) {
@@ -713,6 +730,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.472 -0400", hash_original_method = "072B9683A9FDD22E6BC18017D9B8BE50", hash_generated_method = "33CF041F7FB5C3CCF96CC0DC647EA0C8")
         @Override
         public void setFilterBitmap(boolean filter) {
@@ -791,6 +809,7 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1967506534 =             null;
 
         private Handler mHandler;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.480 -0400", hash_original_method = "0C6EE30FFC6BD0B5A33D648A5B68FF7C", hash_generated_method = "A2A09AD7B2AB05C41295356F766682E6")
           Globals(Looper looper) {
             IBinder b = ServiceManager.getService(Context.WALLPAPER_SERVICE);

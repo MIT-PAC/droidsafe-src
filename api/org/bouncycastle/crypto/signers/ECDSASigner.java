@@ -81,6 +81,7 @@ public class ECDSASigner implements ECConstants, DSA {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.162 -0400", hash_original_method = "FB5DF316F460707F8207D2FB11462865", hash_generated_method = "193A5E5600BD67E3D04168ED61548346")
     public BigInteger[] generateSignature(
         byte[] message) {
@@ -120,6 +121,7 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_662778947 =         res;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.163 -0400", hash_original_method = "16EB9D1F1ED26940A9147EEAE266AF00", hash_generated_method = "7A1627501787E03B0FC8351007B2F42A")
     public boolean verifySignature(
         byte[]      message,

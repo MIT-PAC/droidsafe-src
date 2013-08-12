@@ -34,6 +34,7 @@ final class SslClientCertLookupTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized SslClientCertLookupTable getInstance() {
         if (sTable == null) {
             sTable = new SslClientCertLookupTable();
@@ -92,6 +93,7 @@ final class SslClientCertLookupTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.935 -0400", hash_original_method = "B4AB5EBE6061C1ABF914FF3078A0616E", hash_generated_method = "B3DA52E34B28134C8E0A1AF3FB6C2E85")
     public byte[] PrivateKey(String host_and_port) {
         addTaint(host_and_port.getTaint());
@@ -103,6 +105,7 @@ final class SslClientCertLookupTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.935 -0400", hash_original_method = "8792305F1FF4CDCE892661D9CA1A58D2", hash_generated_method = "524845DE0350B89F47F0DC75198D851A")
     public byte[][] CertificateChain(String host_and_port) {
         addTaint(host_and_port.getTaint());

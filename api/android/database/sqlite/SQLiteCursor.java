@@ -119,6 +119,7 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_1542224551 =             mQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.305 -0400", hash_original_method = "B4A0D7606429FC274C47739DBFA1C1E0", hash_generated_method = "00D4CDECC411A6C7E745C7842F82712A")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
@@ -142,6 +143,7 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_1542224551 =             mQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.306 -0400", hash_original_method = "D7810D185EEBB48990AE6D5077F6CEAD", hash_generated_method = "2D8118D7D1C87FCBF9148DDEC02FAEDE")
     @Override
     public int getCount() {
@@ -210,6 +212,7 @@ SQLiteQuery varC104E74F3085CDE7E6D7F4CAA0F9BCA1_1727408861 =         mQuery;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.311 -0400", hash_original_method = "96C3F6AE90641303728CA2622AC00A1C", hash_generated_method = "6EBF76DA199327E56D932617C4914243")
     @Override
     public int getColumnIndex(String columnName) {
@@ -290,7 +293,7 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_2011788089 =         mColumns;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.315 -0400", hash_original_method = "EB44A3C249AFFC8E58A7028D8F44463C", hash_generated_method = "93CA8F0576B479C26A07BE5A5E068B0A")
     @Override
     public boolean requery() {

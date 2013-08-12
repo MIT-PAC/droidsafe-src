@@ -188,6 +188,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.852 -0400", hash_original_method = "B7DBD08AF6CFCEAABC628A74B78E8B6F", hash_generated_method = "CBABBF9F9E75DEEDE62104DCD5D0EC75")
     public int getMemoryClass() {
         int var7C0269C7BF81D9BBC3B9645D88A1F7A4_509682652 = (staticGetMemoryClass());
@@ -208,6 +209,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.853 -0400", hash_original_method = "50F084ADAAFF8EB942A9D9EB0C93D87F", hash_generated_method = "EB5F638B4EC28213DF3B5B5CF430840C")
     public int getLargeMemoryClass() {
         int var58F00E58ADDE6235C0F80A2D83E9CE86_1243451807 = (staticGetLargeMemoryClass());
@@ -242,7 +244,7 @@ public class ActivityManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static public boolean isLargeRAM() {
         MemInfoReader reader = new MemInfoReader();
         reader.readMemInfo();
@@ -253,6 +255,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.855 -0400", hash_original_method = "F8BE7228FE8A06DB7E3F7EC0517EBE16", hash_generated_method = "991A83236D5DE11D3A576D58D5E4B6E1")
     public List<RecentTaskInfo> getRecentTasks(int maxNum, int flags) throws SecurityException {
         addTaint(flags);
@@ -307,6 +310,7 @@ List<RunningTaskInfo> var540C13E9E156B687226421B24F2DF178_229990981 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.857 -0400", hash_original_method = "048E08D6499B0F81FA41B243F96225CE", hash_generated_method = "11CA7FFA467161A9586AF4ED3E53DBAB")
     public List<RunningTaskInfo> getRunningTasks(int maxNum) throws SecurityException {
         addTaint(maxNum);
@@ -414,6 +418,7 @@ TaskThumbnails var540C13E9E156B687226421B24F2DF178_1127266236 =             null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.863 -0400", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "B5349C5B51D1A4FFA754636C36217FF0")
     public List<RunningServiceInfo> getRunningServices(int maxNum) throws SecurityException {
         addTaint(maxNum);
@@ -514,6 +519,7 @@ PendingIntent var540C13E9E156B687226421B24F2DF178_1540862078 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.868 -0400", hash_original_method = "F53E97F522CAE83DA0CBCF957085AF2C", hash_generated_method = "A58D388EB960109844F70A74F66D6661")
     public List<ProcessErrorStateInfo> getProcessesInErrorState() {
         try 
@@ -585,6 +591,7 @@ List<RunningAppProcessInfo> var540C13E9E156B687226421B24F2DF178_596871164 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.870 -0400", hash_original_method = "BA29C29542BF4FC0E2178C81FA222823", hash_generated_method = "839515C4AE6AB8404AD863815505DE2A")
     public Debug.MemoryInfo[] getProcessMemoryInfo(int[] pids) {
         addTaint(pids[0]);
@@ -681,6 +688,7 @@ ConfigurationInfo var540C13E9E156B687226421B24F2DF178_25820544 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.878 -0400", hash_original_method = "E6A8DEADBC97DC6A083D1FDDD3BF2E4E", hash_generated_method = "109668A9FEF24367C6D2A9BF60F85D84")
     public int getLauncherLargeIconDensity() {
         final Resources res = mContext.getResources();
@@ -736,6 +744,7 @@ switch(density){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.881 -0400", hash_original_method = "1ABECD33DDCEDD9654A62357CF29D109", hash_generated_method = "59229A1B3DA31F68E42867BF500E96D1")
     public int getLauncherLargeIconSize() {
         final Resources res = mContext.getResources();
@@ -775,7 +784,7 @@ switch(density){
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isUserAMonkey() {
         try {
             return ActivityManagerNative.getDefault().isUserAMonkey();
@@ -785,7 +794,7 @@ switch(density){
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isRunningInTestHarness() {
         return SystemProperties.getBoolean("ro.test_harness", false);
     }
@@ -1001,9 +1010,11 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1621274485 =         new Pkg
 
         public static final Creator<RecentTaskInfo> CREATOR
                 = new Creator<RecentTaskInfo>() {
+            @DSModeled(DSC.SAFE)
             public RecentTaskInfo createFromParcel(Parcel source) {
                 return new RecentTaskInfo(source);
             }
+            @DSModeled(DSC.SAFE)
             public RecentTaskInfo[] newArray(int size) {
                 return new RecentTaskInfo[size];
             }
@@ -1196,7 +1207,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1621274485 =         new Pkg
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.923 -0400", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "3617E8008AFC0DFF660BAAFDF782C2AD")
         public Bitmap getSubThumbnail(int index) {
             addTaint(index);
@@ -1467,9 +1478,11 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.952 -0400", hash_original_field = "AD64936DA7390A375DCEFDC8BEB2A286", hash_generated_field = "45AB20E66E709306D076BBEB8007B79C")
 
         public static final Creator<RunningServiceInfo> CREATOR = new Creator<RunningServiceInfo>() {
+            @DSModeled(DSC.SAFE)
             public RunningServiceInfo createFromParcel(Parcel source) {
                 return new RunningServiceInfo(source);
             }
+            @DSModeled(DSC.SAFE)
             public RunningServiceInfo[] newArray(int size) {
                 return new RunningServiceInfo[size];
             }
@@ -1539,7 +1552,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.961 -0400", hash_original_method = "F89D0A9B79191784D882D224AE236CD7", hash_generated_method = "5DFCC9E4FCFBF20D2556175A8DBE4ABC")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1562,7 +1575,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.964 -0400", hash_original_method = "63344B29322BA9906ACD5F2C274D4AFB", hash_generated_method = "BC66AADD41130FA5D032784C56DC61C2")
         public void readFromParcel(Parcel source) {
             availMem = source.readLong();
@@ -1590,6 +1603,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1581892143 =                 null;
             public MemoryInfo createFromParcel(Parcel source) {
                 return new MemoryInfo(source);
             }
+            @DSModeled(DSC.SAFE)
             public MemoryInfo[] newArray(int size) {
                 return new MemoryInfo[size];
             }

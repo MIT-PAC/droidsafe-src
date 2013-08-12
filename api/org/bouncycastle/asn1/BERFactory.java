@@ -14,16 +14,19 @@ class BERFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static BERSequence createSequence(ASN1EncodableVector v) {
         return v.size() < 1 ? EMPTY_SEQUENCE : new BERSequence(v);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BERSet createSet(ASN1EncodableVector v) {
         return v.size() < 1 ? EMPTY_SET : new BERSet(v);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BERSet createSet(ASN1EncodableVector v, boolean needsSorting) {
         return v.size() < 1 ? EMPTY_SET : new BERSet(v, needsSorting);
     }

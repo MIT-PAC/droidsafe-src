@@ -25,6 +25,7 @@ public class PBEKeySpec implements KeySpec {
 
     private int keyLength;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.373 -0400", hash_original_method = "2E3022EA9F0D00958A95EEBC25ADD120", hash_generated_method = "D24F71780D764A9EAF17B9FB4B315277")
     public  PBEKeySpec(char[] password) {
         if(password == null)        
@@ -52,6 +53,7 @@ public class PBEKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.376 -0400", hash_original_method = "3A4DB6943FB30203AAE55BF43F989AF0", hash_generated_method = "CE9352FB5B160713B6B3B4DC39F9EB33")
     public  PBEKeySpec(char[] password, byte[] salt, int iterationCount,
                       int keyLength) {
@@ -153,6 +155,7 @@ public class PBEKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.380 -0400", hash_original_method = "F4F3467BB97348451E47DFFA6F639AA9", hash_generated_method = "CA41C809F464A252165431EA99C7DB11")
     public final void clearPassword() {
         Arrays.fill(password, '?');
@@ -163,6 +166,7 @@ public class PBEKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.381 -0400", hash_original_method = "E0FB32D7B704A3B37DF97B967BD643AC", hash_generated_method = "44390F8E51516B4D6FB5AEF0ADD25DF1")
     public final char[] getPassword() {
         if(password == null)        
@@ -186,6 +190,7 @@ public class PBEKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.382 -0400", hash_original_method = "D4AADBC0A48F11BB68A855C1713E52DB", hash_generated_method = "805BD4DDBA74C44D1924722EAEA91CDF")
     public final byte[] getSalt() {
         if(salt == null)        

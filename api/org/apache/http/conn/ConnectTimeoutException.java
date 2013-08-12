@@ -9,6 +9,7 @@ import java.io.InterruptedIOException;
 
 public class ConnectTimeoutException extends InterruptedIOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.652 -0400", hash_original_method = "F05E8C7090F12D1341BCD22C7103FC0B", hash_generated_method = "40986EE17DC87DB632A880FBACB481A9")
     public  ConnectTimeoutException() {
         super();

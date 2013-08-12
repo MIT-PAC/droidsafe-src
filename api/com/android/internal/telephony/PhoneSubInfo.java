@@ -63,6 +63,7 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.901 -0400", hash_original_method = "7FB2911E415BAC248B6F7C00F0AD8580", hash_generated_method = "2005FAF5B772DFE6091F3968A9605F75")
     public String getDeviceId() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -75,6 +76,7 @@ String varFA71673B90CF0A8C48C17D503AAD8DD9_1146157189 =         mPhone.getDevice
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.901 -0400", hash_original_method = "47A65D652880A955D13092E25ED0BFA3", hash_generated_method = "BB39C7CD16C6A272EACAFA62E89F8A43")
     public String getDeviceSvn() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -87,6 +89,7 @@ String var435A9281E17FA260B168A9BA3B7DC04A_1165945612 =         mPhone.getDevice
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.901 -0400", hash_original_method = "31029AA63C15ED3BEB918EA2DF9C53C8", hash_generated_method = "CDAC30A30CA7E35A3E22E6107C48CB5E")
     public String getSubscriberId() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -99,6 +102,7 @@ String var72C25F22D2FBA989AA76F4EC603E0F84_1134313876 =         mPhone.getSubscr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.901 -0400", hash_original_method = "F715A558C290BD14ABDE5817D87243CF", hash_generated_method = "5C9A6702A4DCEEAD55A60459CB00B475")
     public String getIccSerialNumber() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -111,6 +115,7 @@ String var882C1614C4BAC433AE1941907CD6ABCB_2008111219 =         mPhone.getIccSer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.901 -0400", hash_original_method = "128FE2451356AD093E7C4FB6D31CED7B", hash_generated_method = "C396EED28BD787D05D1969F0180831BE")
     public String getLine1Number() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -136,6 +141,7 @@ String var915B399E36AD2DC723DDBF2E1EC534D5_1505067923 =         (String) mPhone.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.902 -0400", hash_original_method = "486D3990E5DF065E80D4F34954E57792", hash_generated_method = "89D7EE811FCD2C09A1A32EC1FE61CE56")
     public String getMsisdn() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -148,6 +154,7 @@ String varD1D6F5168E76CE1592036B4FE9F8DF9C_239973480 =         mPhone.getMsisdn(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.902 -0400", hash_original_method = "D6964CF0DD97089F5666548710C28DF3", hash_generated_method = "6357305AA5AA237CC01DD13DEF4D9466")
     public String getVoiceMailNumber() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -183,6 +190,7 @@ String var63E80DF571E08DAA47BEFBF0BD0EEBAD_409384815 =         number;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.902 -0400", hash_original_method = "D600B0CF58C0E649216D70FCBA15089F", hash_generated_method = "A90CAE2975E787D30C8AA98EE5792776")
     public String getVoiceMailAlphaTag() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -195,6 +203,7 @@ String var62E5FB36C0AD7152B2051159B22D2B9A_394494599 =         (String) mPhone.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.902 -0400", hash_original_method = "9F475DD57EA6DFA50165E234C6E8C4F9", hash_generated_method = "F17279D7057919C2C0A5BD5E2E0F1FD0")
     public String getIsimImpi() {
         mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
@@ -224,6 +233,7 @@ String var540C13E9E156B687226421B24F2DF178_49257159 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.902 -0400", hash_original_method = "F4E0E1121A78A263259E537EC507AC3C", hash_generated_method = "F5B7BFFC43AAFE72084205EAB95AB531")
     public String getIsimDomain() {
         mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,

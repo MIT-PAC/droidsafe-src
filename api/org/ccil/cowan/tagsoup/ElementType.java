@@ -36,6 +36,7 @@ public class ElementType {
 
     private Schema theSchema;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.760 -0400", hash_original_method = "B2956F900AF52D9E41A7969852791670", hash_generated_method = "ADF06BFC1D8E1E63059F3A60FA30EF72")
     public  ElementType(String name, int model, int memberOf, int flags, Schema schema) {
         theName = name;
@@ -58,6 +59,7 @@ public class ElementType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.761 -0400", hash_original_method = "4A889710B67B4CF3F628D3945249B60A", hash_generated_method = "8036DA52FB4BA64617C0DA44519E5FF0")
     public String namespace(String name, boolean attribute) {
         addTaint(attribute);
@@ -97,6 +99,7 @@ String varAA673C9A0924498AE38DAA66A4683FC8_1871885814 =             ("urn:x-pref
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.761 -0400", hash_original_method = "76654AC28D619222BBA1A28B5AC8BB60", hash_generated_method = "6B89A2101F79979435FCA494E39E8105")
     public String localName(String name) {
         addTaint(name.getTaint());
@@ -235,6 +238,7 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_1827505716 =         theSchema;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.766 -0400", hash_original_method = "704A404E71DCE2FCDA4DFB645734E42D", hash_generated_method = "8D1670F34BBC76AE3C485BF64C009E88")
     public void setAttribute(AttributesImpl atts, String name, String type, String value) {
         addTaint(value.getTaint());
@@ -288,6 +292,7 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_1827505716 =         theSchema;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String normalize(String value) {
         if (value == null) return value;
         value = value.trim();
@@ -310,6 +315,7 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_1827505716 =         theSchema;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.766 -0400", hash_original_method = "EA247B977CB57294BB68422F3AC78185", hash_generated_method = "E4B5F2E775A00BB422D4DB2FB7840A07")
     public void setAttribute(String name, String type, String value) {
         addTaint(value.getTaint());

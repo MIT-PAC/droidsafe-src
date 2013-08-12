@@ -23,6 +23,7 @@ public class DSAPrivateKeySpec implements KeySpec {
 
     private BigInteger g;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.027 -0400", hash_original_method = "391A7E7DFDE60B2C21A2B29998A00F20", hash_generated_method = "A54F6C07E02005AE26980ACC88E3F268")
     public  DSAPrivateKeySpec(BigInteger x, BigInteger p,
             BigInteger q, BigInteger g) {

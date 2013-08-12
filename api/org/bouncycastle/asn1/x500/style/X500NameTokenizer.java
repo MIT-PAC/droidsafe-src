@@ -19,6 +19,7 @@ class X500NameTokenizer {
 
     private StringBuffer buf = new StringBuffer();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.500 -0400", hash_original_method = "87C1EB4E958A465E857DAC381279FD5A", hash_generated_method = "DB78172E5A3B32C6719388F835122C90")
     public  X500NameTokenizer(
         String  oid) {
@@ -28,6 +29,7 @@ class X500NameTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.501 -0400", hash_original_method = "C3EF91B48B2B40246915FB55098DB430", hash_generated_method = "2A83476EC8A14F59F934BAABCF82CC73")
     public  X500NameTokenizer(
         String  oid,
@@ -42,6 +44,7 @@ class X500NameTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.501 -0400", hash_original_method = "A840AC1B987121BDC7999220A560F7B6", hash_generated_method = "4BEF017BFD7E94CFA05ED44C36748927")
     public boolean hasMoreTokens() {
         boolean var93EB2FC7E0BFEAF90EB3D9B6C402E119_1061816959 = ((index != value.length()));
@@ -52,6 +55,7 @@ class X500NameTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.502 -0400", hash_original_method = "A2F2FA85B4C6A562CE43722C053D9F00", hash_generated_method = "56E3C61B02F89A4E99EE2D12423BC45B")
     public String nextToken() {
         if(index == value.length())        

@@ -18,6 +18,7 @@ public class DefaultAddressResolver implements AddressResolver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.827 -0400", hash_original_method = "A95D8B22A59B30AE2193C9FD49249FF0", hash_generated_method = "8F27B55B1B39256556B352784339F08C")
     public Hop resolveAddress(Hop inputAddress) {
         addTaint(inputAddress.getTaint());

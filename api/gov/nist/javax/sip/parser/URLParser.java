@@ -131,6 +131,7 @@ String varF074B22DABE8C34FEB920DF798AAA748_477964669 =             String.valueO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.233 -0400", hash_original_method = "1041AA48D060026BCCD13967429C5BF3", hash_generated_method = "1EC3134EC950C832CD26D3A3F3EE8337")
     protected String paramNameOrValue() throws ParseException {
         int startIdx = lexer.getPtr();
@@ -271,6 +272,7 @@ NameValue var706F044EA9006DAC45C94A328BE7F814_1490816405 =             new NameV
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.243 -0400", hash_original_method = "FFA1DEBB1A42288CA22D82A97ACC067B", hash_generated_method = "07C878352CD410D77DBBA977A66476AF")
     protected String reserved() throws ParseException {
         char next = lexer.lookAhead(0);
@@ -325,6 +327,7 @@ String var15B8CCCC42482049DA2C2F49F34A1C30_1362384529 =             new StringBu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.266 -0400", hash_original_method = "08A77A9FB0F42402334D6E5EC1EEFB98", hash_generated_method = "63F325503701694FB771CC6454F39763")
     protected String escaped() throws ParseException {
         if(debug)        
@@ -384,6 +387,7 @@ String var1B324365A764C077A55854483509F4AB_807636128 =             retval.toStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.287 -0400", hash_original_method = "743AFD3B213C469742C3C78020E0DBC1", hash_generated_method = "16934D3B8949885A04A46F0B4B8725DA")
     protected String mark() throws ParseException {
         if(debug)        
@@ -427,6 +431,7 @@ String varFAB99D17BFBD92AB851EE2696C7A7BCB_1764854973 =                 new Stri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.287 -0400", hash_original_method = "589C84A9F2E2E16C04FA96C5BE216A43", hash_generated_method = "D31CED0C0DB55F9D539D6A3517BAD27B")
     protected String uric() {
         if(debug)        
@@ -507,6 +512,7 @@ String var540C13E9E156B687226421B24F2DF178_745023102 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.289 -0400", hash_original_method = "C9EA734307D4CD12B7093594DF2E8530", hash_generated_method = "FBDAFB58D6A83F57CB16FB957122529B")
     protected String uricNoSlash() {
         if(debug)        
@@ -564,6 +570,7 @@ String var540C13E9E156B687226421B24F2DF178_1893665915 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.291 -0400", hash_original_method = "F8BFDE8FCAA82A1A34C46F55D7711C6B", hash_generated_method = "60DC5CC75D0590A94EB8CAB819C7DFD6")
     protected String uricString() throws ParseException {
         StringBuffer retval = new StringBuffer();
@@ -608,6 +615,7 @@ String var1B324365A764C077A55854483509F4AB_1358234252 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.328 -0400", hash_original_method = "877793596C03075095766EB10627CE12", hash_generated_method = "C2CA449DC1FE1701E2C26C5CB6B4EF80")
     public GenericURI uriReference( boolean inBrackets ) throws ParseException {
         addTaint(inBrackets);
@@ -793,6 +801,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_882999804 =             s.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.411 -0400", hash_original_method = "DEDDF1126FB4D34419E3541D3DE0EAF4", hash_generated_method = "9AB8E94B06486754A99FF7A821B19A0D")
     public final TelephoneNumber parseTelephoneNumber( boolean inBrackets ) throws ParseException {
         addTaint(inBrackets);
@@ -1073,6 +1082,7 @@ NameValue var4ADDE443C97C638732822930C3F06B26_850228824 =         new NameValue(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.418 -0400", hash_original_method = "73C5F5A1DB2F1724F7BD39D759918D7C", hash_generated_method = "28C98224183E30B81DBB4D1468BBBA9C")
     public TelURLImpl telURL( boolean inBrackets ) throws ParseException {
         addTaint(inBrackets);
@@ -1094,6 +1104,7 @@ TelURLImpl varAED221150EF42577B2F716DF972053BA_603117004 =         telUrl;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.419 -0400", hash_original_method = "7278F7A930851B1FF266754B78180AE2", hash_generated_method = "C08D7A57E3BF4BB5BEA0ED4AE2D3FC5C")
     public SipUri sipURL( boolean inBrackets ) throws ParseException {
         addTaint(inBrackets);
@@ -1197,6 +1208,7 @@ String varFD3305CF8340E40F0AC0AB554909AEBC_1865896343 =         scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.421 -0400", hash_original_method = "8CC59A12163BED34BD1BF794F4FF4839", hash_generated_method = "2714051089B9965A41E6D7CA3118C624")
     protected NameValue qheader() throws ParseException {
         String name = lexer.getNextToken('=');
@@ -1213,6 +1225,7 @@ NameValue var490BC75DB78FF72329C5E669FB8E80F5_1594517134 =         new NameValue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.421 -0400", hash_original_method = "44D1D496E84DF1E5395D6148A081CABE", hash_generated_method = "D7558EA8E2C4353FEC0BA330563A302F")
     protected String hvalue() throws ParseException {
         StringBuffer retval = new StringBuffer();
@@ -1260,6 +1273,7 @@ String var1B324365A764C077A55854483509F4AB_523597078 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.422 -0400", hash_original_method = "ECAD9C42756FF84B730590BF5F3636AE", hash_generated_method = "E61437E10AFE6944E85DE72ADC65769D")
     protected String urlString() throws ParseException {
         StringBuffer retval = new StringBuffer();
@@ -1353,6 +1367,7 @@ String var9A78A74044906F8BA6AB50FB9A7D58A3_1046496927 =             lexer.getBuf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.423 -0400", hash_original_method = "763B089E3F9716D78CD9674F5B515450", hash_generated_method = "9B123CBD790A2E3093CF237ED6D622DC")
     protected String password() throws ParseException {
         int startIdx = lexer.getPtr();
@@ -1407,6 +1422,7 @@ String var9A78A74044906F8BA6AB50FB9A7D58A3_1847833227 =         lexer.getBuffer(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.424 -0400", hash_original_method = "A2F63CC3A1AD0DF2925153B5F3ECB644", hash_generated_method = "C3B784D81790E333AD31D41BDF991C7D")
     public GenericURI parse() throws ParseException {
 GenericURI varAA7B0A69EFD6E6C1F0AECD215B234D62_431677700 =         uriReference( true );

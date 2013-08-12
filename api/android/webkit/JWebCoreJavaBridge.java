@@ -32,6 +32,7 @@ final class JWebCoreJavaBridge extends Handler {
 
     private HashMap<String, String> mContentUriToFilePathMap;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.197 -0400", hash_original_method = "24BC54E57520E50B51FEB9301490242D", hash_generated_method = "9B3CC2C64CF55497F3B6EC76A3A8A00C")
     public  JWebCoreJavaBridge() {
         nativeConstructor();

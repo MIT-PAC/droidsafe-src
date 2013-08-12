@@ -18,6 +18,7 @@ public final class Strings {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String fromUTF8ByteArray(byte[] bytes) {
         int i = 0;
         int length = 0;
@@ -138,6 +139,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toUpperCase(String string) {
         boolean changed = false;
         char[] chars = string.toCharArray();
@@ -158,6 +160,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toLowerCase(String string) {
         boolean changed = false;
         char[] chars = string.toCharArray();
@@ -189,6 +192,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(String string) {
         byte[] bytes = new byte[string.length()];
         for (int i = 0; i != bytes.length; i++)
@@ -200,6 +204,7 @@ public final class Strings {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] split(String input, char delimiter) {
         Vector           v = new Vector();
         boolean moreTokens = true;

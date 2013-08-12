@@ -21,6 +21,7 @@ public class PAssertedService extends SIPHeader implements PAssertedServiceHeade
 
     private String subAppIds;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.081 -0400", hash_original_method = "182ECFD494AF5D51867F4CB3F9E644EB", hash_generated_method = "6A6E160BAB145753731DA292EEC0188E")
     protected  PAssertedService(String name) {
         super(NAME);
@@ -29,6 +30,7 @@ public class PAssertedService extends SIPHeader implements PAssertedServiceHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.082 -0400", hash_original_method = "AA5E567A5261831D339C7F3E134619EA", hash_generated_method = "320063B2C7D78E77D8E4F4C11712E1EC")
     public  PAssertedService() {
         super(P_ASSERTED_SERVICE);
@@ -36,6 +38,7 @@ public class PAssertedService extends SIPHeader implements PAssertedServiceHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.083 -0400", hash_original_method = "13CD5B55BBBCA0548D99A959291FFE7D", hash_generated_method = "3D9A2E2AAAD82D662EBD84AF47744148")
     @Override
     protected String encodeBody() {
@@ -72,6 +75,7 @@ String var1B324365A764C077A55854483509F4AB_57579995 =         retval.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.083 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "B3C9669BDABFF20E430FAAC9AE2F8AA0")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -83,6 +87,7 @@ String var1B324365A764C077A55854483509F4AB_57579995 =         retval.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.084 -0400", hash_original_method = "C9711D50FDDAB1BC6FA9D8BEA3306598", hash_generated_method = "179DA99A5E9FC67848F74A5C9039FFB6")
     public String getApplicationIdentifiers() {
         if(this.subAppIds.charAt(0)=='.')        
@@ -103,6 +108,7 @@ String var0F006A3A2B361F089D6C99C0B6CF0955_1314652607 =         this.subAppIds;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.084 -0400", hash_original_method = "A7D1F6103283AF549702A3BD8A97DA85", hash_generated_method = "5D248B7D01395ED5CD0F2CDB005B75A3")
     public String getSubserviceIdentifiers() {
         if(this.subServiceIds.charAt(0)=='.')        
@@ -141,6 +147,7 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1280464097 =         this.subServiceI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.085 -0400", hash_original_method = "698565353F33C32BACB06EBECCB2189D", hash_generated_method = "D87A3143D225396788D058FBC37ABC4B")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -152,6 +159,7 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1280464097 =         this.subServiceI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.086 -0400", hash_original_method = "3CDC6738E06A7AFD0A34818FC063034A", hash_generated_method = "961CB9D4CC5664E7AE60E6A976AE0200")
     public Object clone() {
         PAssertedService retval = (PAssertedService) super.clone();

@@ -32,7 +32,7 @@ public class ReplacesParser extends ParametersParser {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.809 -0400", hash_original_method = "C779AD4EE203E642C9A6B93773CE1027", hash_generated_method = "F54B39808922AE5F164990DBA90280DD")
     public SIPHeader parse() throws ParseException {
         if(debug)        

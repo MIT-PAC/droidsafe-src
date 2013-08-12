@@ -21,6 +21,7 @@ public final class CharArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.548 -0400", hash_original_method = "40679B6E17B0E065ADE0664E6257B1BF", hash_generated_method = "E397297280709518057C19FD579B0BA7")
     public  CharArrayBuffer(char[] buf) {
         data = buf;

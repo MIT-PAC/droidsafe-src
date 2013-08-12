@@ -88,6 +88,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.688 -0400", hash_original_method = "BD1C6A6330D89BF80F1DBE244E3DBF31", hash_generated_method = "5C57E52D44004D24BE78F0C2181A753D")
     public void run() {
         while

@@ -93,6 +93,7 @@ public class PackageItemInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.246 -0400", hash_original_method = "7587CF1BD2560A6C6F4B753C933F3AB0", hash_generated_method = "19A24B19DE8F094D2FD243A5EBE64B56")
     public CharSequence loadLabel(PackageManager pm) {
         addTaint(pm.getTaint());

@@ -42,6 +42,7 @@ public final class NdefMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.062 -0400", hash_original_method = "482F2AD23FF4C5B364DE9FB97EDDBB64", hash_generated_method = "85F105164155F9745EC94702519D6D87")
     public NdefRecord[] getRecords() {
 NdefRecord[] varF67461EBF6F3AD62E0D22C61B69D5998_699909323 =         mRecords.clone();
@@ -125,6 +126,7 @@ for(int i = 0;i < mRecords.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.066 -0400", hash_original_method = "C32A271878CC7CE5578073C85AE449D6", hash_generated_method = "A9E4C2BFDCA57B53CF9999456C609995")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -156,6 +158,7 @@ for(int i = 0;i < mRecords.length;i++)
 
     public static final Parcelable.Creator<NdefMessage> CREATOR =
             new Parcelable.Creator<NdefMessage>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public NdefMessage createFromParcel(Parcel in) {
             int recordsLength = in.readInt();

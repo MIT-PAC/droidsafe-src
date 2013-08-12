@@ -49,6 +49,7 @@ public abstract class AbsActionBarView extends ViewGroup {
 
     protected final VisibilityAnimListener mVisAnimListener = new VisibilityAnimListener();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.636 -0400", hash_original_method = "824EFC2CD32C0974302E563583F4C727", hash_generated_method = "C31E479B2F20E6B9EB8FC80C3860DE2C")
     public  AbsActionBarView(Context context) {
         super(context);
@@ -57,6 +58,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.636 -0400", hash_original_method = "F88AEDA5B22A6879EF9493B8EB4FB02B", hash_generated_method = "AC9A01860C700EB25FF49AAA1CD5681D")
     public  AbsActionBarView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -66,6 +68,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.636 -0400", hash_original_method = "FEA19398278F8B5B6B30417AB1F0C217", hash_generated_method = "36DEA6CD6EAB18721A345683EAFF7B4E")
     public  AbsActionBarView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -76,6 +79,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.637 -0400", hash_original_method = "A484FDB326818C55D115F236B23DD701", hash_generated_method = "8421EFCC81A17DB87F0ECC5198A416D9")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
@@ -159,6 +163,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.639 -0400", hash_original_method = "460E6C1B19245DB35832909D719B5D88", hash_generated_method = "E6214515A02A8C94417A99B7A94F3EB6")
     public int getAnimatedVisibility() {
         if(mVisibilityAnim != null)        
@@ -178,7 +183,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.639 -0400", hash_original_method = "2B465E314C114C54F186AF3EB05111D9", hash_generated_method = "69252CE66765CF476EB83EF9077D6FBF")
     public void animateToVisibility(int visibility) {
         addTaint(visibility);
@@ -239,6 +244,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.640 -0400", hash_original_method = "E3FDA7CA05E815669691C5C9F461C174", hash_generated_method = "F348BE301D04D3937F0F827432AC70BD")
     @Override
     public void setVisibility(int visibility) {
@@ -256,6 +262,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.641 -0400", hash_original_method = "6ECDD9C0917165AAFEF87E5E5EC8B474", hash_generated_method = "B64DDFC6C0D27220005FF21FDD557025")
     public boolean showOverflowMenu() {
         if(mActionMenuPresenter != null)        
@@ -294,6 +301,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.642 -0400", hash_original_method = "5D05982F33AF24415676BD0317DE2206", hash_generated_method = "63A427DE2FF9D3FBAD14DB779368E1BA")
     public boolean hideOverflowMenu() {
         if(mActionMenuPresenter != null)        
@@ -313,6 +321,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.642 -0400", hash_original_method = "2F838D8CBDDC91E04D7A8F0F52ABF2C8", hash_generated_method = "CFB42ADF00FA9143202802829912892B")
     public boolean isOverflowMenuShowing() {
         if(mActionMenuPresenter != null)        
@@ -332,6 +341,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.643 -0400", hash_original_method = "2716B287AFF500B52D105CE9F72467AF", hash_generated_method = "31FFDB80006EF0F93E4BA798B77AA0DA")
     public boolean isOverflowReserved() {
         boolean var0407F9259A8F0659777734FF7C947718_690182381 = (mActionMenuPresenter != null && mActionMenuPresenter.isOverflowReserved());
@@ -342,6 +352,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.643 -0400", hash_original_method = "E263C11D43E740E059E17F24B3046AB1", hash_generated_method = "0C8CC31443E33B0A3D343683DEADE683")
     public void dismissPopupMenus() {
         if(mActionMenuPresenter != null)        
@@ -355,7 +366,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.644 -0400", hash_original_method = "A00B85663064A0063707CD21F6F98F93", hash_generated_method = "74D5C4ED242C24B1D1B64B1FF2C5F120")
     protected int measureChildView(View child, int availableWidth, int childSpecHeight,
             int spacing) {
@@ -379,6 +390,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.644 -0400", hash_original_method = "231762BB3E313BE1E16BACBDFDC62788", hash_generated_method = "26AEA17446BAAA3EEF82C170A6324489")
     protected int positionChild(View child, int x, int y, int contentHeight) {
         addTaint(contentHeight);
@@ -401,6 +413,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.645 -0400", hash_original_method = "59F436BC9157B56F2D013CC5AD850863", hash_generated_method = "5426C72D5F71D94D48468E217D2AF5D2")
     protected int positionChildInverse(View child, int x, int y, int contentHeight) {
         addTaint(contentHeight);
@@ -466,6 +479,7 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_350013695 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.647 -0400", hash_original_method = "D1281410E67CFC6892364AC0D96A57F2", hash_generated_method = "4A086F0917800DBFFB372EEFD955EEDC")
         @Override
         public void onAnimationEnd(Animator animation) {

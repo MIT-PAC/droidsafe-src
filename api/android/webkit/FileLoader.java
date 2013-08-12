@@ -87,7 +87,7 @@ String varF917352FB1129841F1BC9CC901BB1B99_1636186718 =         errString;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.386 -0400", hash_original_method = "97D1B11BE7CB4BE78107ED00EAAEAEA4", hash_generated_method = "5FC633200B0758C2EA7303DE5673475B")
     @Override
     protected boolean setupStreamAndSendStatus() {

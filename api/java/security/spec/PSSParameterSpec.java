@@ -50,6 +50,7 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.092 -0400", hash_original_method = "2EEF33BA597A16DAC82E184329E7377A", hash_generated_method = "B16A686E510EAEEC344A39F81090D76B")
     public  PSSParameterSpec(String mdName, String mgfName,
             AlgorithmParameterSpec mgfSpec, int saltLen, int trailerField) {

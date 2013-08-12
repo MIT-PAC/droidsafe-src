@@ -34,6 +34,7 @@ public class ProgramStore extends BaseObj {
 
     boolean mDither;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.278 -0400", hash_original_method = "10AC3BE9B8E79A8C066B5A14E3CCD64D", hash_generated_method = "C36EAEBEFF5B17E6B939EB646E785876")
       ProgramStore(int id, RenderScript rs) {
         super(id, rs);
@@ -43,6 +44,7 @@ public class ProgramStore extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.283 -0400", hash_original_method = "E178526BAD510BEC5A50D318A1F97DC1", hash_generated_method = "63A0C7DA01E6F1C28EA78D824FC3D005")
     public DepthFunc getDepthFunc() {
 DepthFunc var69F8AE82356B914D7D19BB87C2E35D80_1885429142 =         mDepthFunc;
@@ -53,6 +55,7 @@ DepthFunc var69F8AE82356B914D7D19BB87C2E35D80_1885429142 =         mDepthFunc;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.291 -0400", hash_original_method = "1F891625D44773A65FB94F9D60624E8A", hash_generated_method = "06090192FC5DA03D1FC09AC7A902D049")
     public boolean getDepthMaskEnabled() {
         boolean varEF5ADB93D9C2E2FD3222AED39318B510_255980358 = (mDepthMask);
@@ -63,6 +66,7 @@ DepthFunc var69F8AE82356B914D7D19BB87C2E35D80_1885429142 =         mDepthFunc;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.295 -0400", hash_original_method = "D81DE2799023369A5B0CF1E2BC6BC18C", hash_generated_method = "A3D0E76C227F3CF0B8955D9697D197DA")
     public boolean getColorMaskREnabled() {
         boolean var6AE2BD0E8D1E8F52233ED950ECBF1A46_751684805 = (mColorMaskR);
@@ -73,6 +77,7 @@ DepthFunc var69F8AE82356B914D7D19BB87C2E35D80_1885429142 =         mDepthFunc;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.301 -0400", hash_original_method = "593F65FDE62B7209CAD6D4F19808F91A", hash_generated_method = "E2F01B274F135C6DC0EE8883C844B448")
     public boolean getColorMaskGEnabled() {
         boolean var1650D5163E2ABCA652BCEE80BBAC713B_145979337 = (mColorMaskG);
@@ -83,6 +88,7 @@ DepthFunc var69F8AE82356B914D7D19BB87C2E35D80_1885429142 =         mDepthFunc;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.307 -0400", hash_original_method = "03C0B53F0CD817F381C212AA9DF64896", hash_generated_method = "82E27DBB36534453FEF42B470E05F805")
     public boolean getColorMaskBEnabled() {
         boolean var6D76CAFA24DBFE2336BB003111671A39_1543212432 = (mColorMaskB);
@@ -93,6 +99,7 @@ DepthFunc var69F8AE82356B914D7D19BB87C2E35D80_1885429142 =         mDepthFunc;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.312 -0400", hash_original_method = "9A2193599E83E8BA9884E0A2E8A26218", hash_generated_method = "1EE5ACF879F018ACAD02262FACB43462")
     public boolean getColorMaskAEnabled() {
         boolean var2E33ED01C925634252F73809AD0F3FDB_1422584771 = (mColorMaskA);
@@ -103,6 +110,7 @@ DepthFunc var69F8AE82356B914D7D19BB87C2E35D80_1885429142 =         mDepthFunc;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.317 -0400", hash_original_method = "357FBEAFF960E5DE9B63C0DF2F2569E1", hash_generated_method = "1291CA8E0401BA82DC685C1D488DAEA3")
     public BlendSrcFunc getBlendSrcFunc() {
 BlendSrcFunc varCE49FF3DFFBCFFA1668C497A73B2FCD9_1652639707 =         mBlendSrc;
@@ -113,6 +121,7 @@ BlendSrcFunc varCE49FF3DFFBCFFA1668C497A73B2FCD9_1652639707 =         mBlendSrc;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.321 -0400", hash_original_method = "0FD248B13178F7E7D7FDD24B8B83E163", hash_generated_method = "38C7E3D4A16EDF91C6B523D8E5B54AA7")
     public BlendDstFunc getBlendDstFunc() {
 BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
@@ -123,6 +132,7 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.326 -0400", hash_original_method = "B3B90DE9FCB53C4AF17446CF7F19CDA0", hash_generated_method = "3427C794FBC6E30440C807169FFDE881")
     public boolean getDitherEnabled() {
         boolean var39F3EFC8FE0445AB43D96028DA65CB34_1574820933 = (mDither);
@@ -133,7 +143,8 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
     }
 
     
-        public static ProgramStore BLEND_NONE_DEPTH_TEST(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static ProgramStore BLEND_NONE_DEPTH_TEST(RenderScript rs) {
         if(rs.mProgramStore_BLEND_NONE_DEPTH_TEST == null) {
             ProgramStore.Builder builder = new ProgramStore.Builder(rs);
             builder.setDepthFunc(ProgramStore.DepthFunc.LESS);
@@ -146,7 +157,8 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
     }
 
     
-        public static ProgramStore BLEND_NONE_DEPTH_NONE(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static ProgramStore BLEND_NONE_DEPTH_NONE(RenderScript rs) {
         if(rs.mProgramStore_BLEND_NONE_DEPTH_NO_DEPTH == null) {
             ProgramStore.Builder builder = new ProgramStore.Builder(rs);
             builder.setDepthFunc(ProgramStore.DepthFunc.ALWAYS);
@@ -159,7 +171,8 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
     }
 
     
-        public static ProgramStore BLEND_ALPHA_DEPTH_TEST(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static ProgramStore BLEND_ALPHA_DEPTH_TEST(RenderScript rs) {
         if(rs.mProgramStore_BLEND_ALPHA_DEPTH_TEST == null) {
             ProgramStore.Builder builder = new ProgramStore.Builder(rs);
             builder.setDepthFunc(ProgramStore.DepthFunc.LESS);
@@ -211,6 +224,7 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
         ONE_MINUS_DST_ALPHA (7),
         SRC_ALPHA_SATURATE (8);
         int mID;
+        @DSModeled(DSC.SAFE)
         BlendSrcFunc(int id) {
             mID = id;
         }
@@ -265,6 +279,7 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
 
         boolean mDither;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.380 -0400", hash_original_method = "265149AB55D37D488388E31C3D90875C", hash_generated_method = "2EDF9856A1AB4572EC4A936A649D73AE")
         public  Builder(RenderScript rs) {
             mRS = rs;
@@ -289,6 +304,7 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.385 -0400", hash_original_method = "077DECC8ABDB24AB85F09F77AF3C34E9", hash_generated_method = "AAAB88D706C767B68C25653BC09AF547")
         public Builder setDepthFunc(DepthFunc func) {
             mDepthFunc = func;
@@ -301,6 +317,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1382784537 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.392 -0400", hash_original_method = "73973CBC15407B8A1D4D695A797EF98B", hash_generated_method = "34E58A5FF4EBB3FA81208B64C0B6456C")
         public Builder setDepthMaskEnabled(boolean enable) {
             mDepthMask = enable;
@@ -313,6 +330,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_273534571 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.403 -0400", hash_original_method = "A842B9DBA01F76FC3765EB18537F0DD4", hash_generated_method = "74922CE295AE746B4A7897541C6F9392")
         public Builder setColorMaskEnabled(boolean r, boolean g, boolean b, boolean a) {
             mColorMaskR = r;
@@ -331,6 +349,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_931895083 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.410 -0400", hash_original_method = "BF6FFFCAA7ABBFD68FA703F185B02D94", hash_generated_method = "1A536671E15415E4E57BFA786B595CEE")
         public Builder setBlendFunc(BlendSrcFunc src, BlendDstFunc dst) {
             mBlendSrc = src;
@@ -345,6 +364,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_793639002 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:11.415 -0400", hash_original_method = "F7A644C4DD22B87998E888BDC808A0FA", hash_generated_method = "74DE629D2639F45BC158A670B58ABDDB")
         public Builder setDitherEnabled(boolean enable) {
             mDither = enable;

@@ -2495,6 +2495,7 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_350611388 =                 "";
 
         final Object[] mArgs = new Object[1];
 
+        @DSModeled(DSC.SAFE)
         public String format(int value) {
             mArgs[0] = value;
             mBuilder.delete(0, mBuilder.length());

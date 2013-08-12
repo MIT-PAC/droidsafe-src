@@ -107,7 +107,7 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void setComposingSpans(Spannable text, int start, int end) {
         final Object[] sps = text.getSpans(start, end, Object.class);
         if (sps != null) {
@@ -797,7 +797,7 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.252 -0400", hash_original_method = "BDE0428D54DBC47996CEC1E4604D5DEE", hash_generated_method = "2CC7DECE65CEF9B9F8DD90BD0E709500")
     private void sendCurrentText() {
         if(!mDummyMode)        
@@ -841,7 +841,7 @@ for(int i=0;i<events.length;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.252 -0400", hash_original_method = "30261E28269E8D45DD173790F761946A", hash_generated_method = "248D883F22823C68A57D8063BAB7D88B")
     private void ensureDefaultComposingSpans() {
         if(mDefaultComposingSpans == null)        
@@ -880,7 +880,7 @@ for(int i=0;i<events.length;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.253 -0400", hash_original_method = "A9689D9BE329300E95AF0BB78D1B0A9D", hash_generated_method = "93444BA3A648A139330CFE8497B05AB9")
     private void replaceText(CharSequence text, int newCursorPosition,
             boolean composing) {

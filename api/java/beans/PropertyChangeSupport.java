@@ -56,6 +56,7 @@ public class PropertyChangeSupport implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.183 -0400", hash_original_method = "A0BCBFEE8B29A622C3E205B05C4F1C89", hash_generated_method = "89491ECC60ECE6D9DEC053DE46F832EC")
     public void fireIndexedPropertyChange(String propertyName, int index,
             Object oldValue, Object newValue) {
@@ -71,6 +72,7 @@ public class PropertyChangeSupport implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.183 -0400", hash_original_method = "0EBF9025D0E458F5C219DE65A639C89B", hash_generated_method = "9C1100870BD815C46324C478361CD17A")
     public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener) {
         addTaint(listener.getTaint());
@@ -150,6 +152,7 @@ for(PropertyChangeListener p : listeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.185 -0400", hash_original_method = "930FBD19A78990F5C4E139AC4C6BB362", hash_generated_method = "2E18155DA94EEAFA64498D8BACADF7DF")
     public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
         addTaint(listener.getTaint());
@@ -165,6 +168,7 @@ for(PropertyChangeListener p : listeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.186 -0400", hash_original_method = "00BBD2172CC9916DE5C9C28A0EEFE748", hash_generated_method = "6CD255F9C5A450FE082494B0D97FE57C")
     public PropertyChangeListener[] getPropertyChangeListeners(String propertyName) {
         addTaint(propertyName.getTaint());
@@ -192,6 +196,7 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_1899880797 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.187 -0400", hash_original_method = "94226D71E0146D875204CC2A0C5CDB43", hash_generated_method = "40DDF6D8D350A3B3156E59F89172B298")
     public void firePropertyChange(String propertyName, boolean oldValue, boolean newValue) {
         addTaint(newValue);
@@ -203,6 +208,7 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_1899880797 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.187 -0400", hash_original_method = "FA6574139DFC76BE59E80FCDD5F143D2", hash_generated_method = "10F9132FED8DCACCC1A074030947780D")
     public void fireIndexedPropertyChange(String propertyName, int index,
             boolean oldValue, boolean newValue) {
@@ -223,6 +229,7 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_1899880797 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.187 -0400", hash_original_method = "4552BA18F0B2B2784BB1DA1C74165B61", hash_generated_method = "A372750564831C34C268A3F8269A25CD")
     public void firePropertyChange(String propertyName, int oldValue, int newValue) {
         addTaint(newValue);
@@ -234,6 +241,7 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_1899880797 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.187 -0400", hash_original_method = "9EC839909A8D5EF002D63B05CCF8C26F", hash_generated_method = "7649C52BA939BE15865F9CD35A0E91A4")
     public void fireIndexedPropertyChange(String propertyName, int index,
             int oldValue, int newValue) {
@@ -254,6 +262,7 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_1899880797 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.188 -0400", hash_original_method = "610737304108759554633F933F40913E", hash_generated_method = "D3F03920FD483AF40C4922E5D75CC334")
     public boolean hasListeners(String propertyName) {
         addTaint(propertyName.getTaint());
@@ -281,6 +290,7 @@ for(PropertyChangeListener p : listeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.189 -0400", hash_original_method = "4F7D9482670A9321D94398F71FD2BB67", hash_generated_method = "BC6E7C4D8BA01B8D08E4CB4989BBEC6B")
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         addTaint(listener.getTaint());
@@ -316,6 +326,7 @@ for(PropertyChangeListener p : listeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.189 -0400", hash_original_method = "20AEE88E0780907A1527FDFF7FD94398", hash_generated_method = "4076F66BC625309D7F7497174F92048E")
     public PropertyChangeListener[] getPropertyChangeListeners() {
 PropertyChangeListener[] var8E8BCC75E96F024B72E78A7CD5C9975D_635972848 =         listeners.toArray(new PropertyChangeListener[0]);

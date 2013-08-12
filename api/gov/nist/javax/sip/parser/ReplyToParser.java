@@ -32,6 +32,7 @@ public class ReplyToParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.532 -0400", hash_original_method = "92CC6877DF7B50AD61B75778CFB22735", hash_generated_method = "9E0ECDE3A79354DFF09ADD206E72161A")
     public SIPHeader parse() throws ParseException {
         ReplyTo replyTo = new ReplyTo();

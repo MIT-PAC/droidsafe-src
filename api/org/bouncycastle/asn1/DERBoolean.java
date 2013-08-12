@@ -14,6 +14,7 @@ public class DERBoolean extends ASN1Object {
 
     private byte value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.157 -0400", hash_original_method = "DE46F6E30E17087250BC7B7B32B3A323", hash_generated_method = "32679D1A7F651A39D96A5F1BE8D9BE83")
     protected  DERBoolean(
         boolean     value) {
@@ -23,7 +24,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static DERBoolean getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERBoolean)
@@ -48,6 +49,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERBoolean getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -74,6 +76,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.160 -0400", hash_original_method = "17536CB7674727E81A6C11BC3F7B5C5B", hash_generated_method = "339736C0392F9DA44B50A766C32B8CD3")
      void encode(
         DEROutputStream out) throws IOException {

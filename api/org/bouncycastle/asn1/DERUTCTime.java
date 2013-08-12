@@ -18,6 +18,7 @@ public class DERUTCTime extends ASN1Object {
 
     String time;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.622 -0400", hash_original_method = "1E3E40D5CDC8E036C03E11512D357967", hash_generated_method = "A0601868DA19978BC74D10E8C93D37A4")
     public  DERUTCTime(
         String  time) {
@@ -59,6 +60,7 @@ public class DERUTCTime extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.623 -0400", hash_original_method = "64E72DE8C26EBEE8B82B8D6629E000CC", hash_generated_method = "363763BB25808D15D47F93A918110CF7")
       DERUTCTime(
         byte[]  bytes) {
@@ -79,6 +81,7 @@ for(int i = 0;i != dateC.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERUTCTime getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERUTCTime)
@@ -89,6 +92,7 @@ for(int i = 0;i != dateC.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERUTCTime getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -104,6 +108,7 @@ for(int i = 0;i != dateC.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.624 -0400", hash_original_method = "BA9EB44B4A66633868FF183B46999299", hash_generated_method = "9194236F81DC9BD5961EF0052A6EEBE0")
     public Date getDate() throws ParseException {
         SimpleDateFormat dateF = new SimpleDateFormat("yyMMddHHmmssz");
@@ -116,6 +121,7 @@ Date var9869773FC2095A9C1BA07B0C752D5651_500316629 =         dateF.parse(getTime
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.625 -0400", hash_original_method = "B4832BCFF9515347D769B05CF978B8C2", hash_generated_method = "8F240DE912FE73F0A744E1EC1E9C424C")
     public Date getAdjustedDate() throws ParseException {
         SimpleDateFormat dateF = new SimpleDateFormat("yyyyMMddHHmmssz");
@@ -130,6 +136,7 @@ Date var3C50E339E97B3792A42581E9E5DF5253_1524666040 =         dateF.parse(getAdj
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.625 -0400", hash_original_method = "01C2B859B7363E454246C04CBB075287", hash_generated_method = "481D6EA6ECB787F44E657987A120CC0E")
     public String getTime() {
         if(time.indexOf('-') < 0 && time.indexOf('+') < 0)        
@@ -229,6 +236,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.629 -0400", hash_original_method = "61B114EE0877AC878307DF8632824910", hash_generated_method = "0118C7A8D6413B02D0AB6B5CFBD2358B")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -239,6 +247,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.630 -0400", hash_original_method = "0AA77B1E8A82CB516C576E10CBE19EDE", hash_generated_method = "3E25B7523E760E6E2304079616C40E9A")
      boolean asn1Equals(
         DERObject  o) {
@@ -261,6 +270,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.630 -0400", hash_original_method = "12943BCCC2961451B97E26F622F40AB3", hash_generated_method = "12AD047F49D9C759C16688E2FDD7633C")
     public int hashCode() {
         int varCE1F3110113ADDA600B9294B4A8B4BC4_280244450 = (time.hashCode());

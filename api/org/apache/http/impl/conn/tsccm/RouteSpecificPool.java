@@ -38,6 +38,7 @@ public class RouteSpecificPool {
 
     protected int numEntries;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.447 -0400", hash_original_method = "CD96C9BBB654EF18C372B5A0EBA556A4", hash_generated_method = "228ECBEAEACE08DBCE16C50514D60B5A")
     public  RouteSpecificPool(HttpRoute route, int maxEntries) {
         this.route = route;
@@ -76,6 +77,7 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_1056331611 =         route;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.449 -0400", hash_original_method = "039A6CD61F0359B07E2C6E71E77BA3EE", hash_generated_method = "42CC9FED38EB249968591F9077F9F1E5")
     public boolean isUnused() {
         boolean varE4D00959D5CE7056280ED4FBD9A29A09_858405426 = ((numEntries < 1) && waitingThreads.isEmpty());
@@ -152,6 +154,7 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_1928359719 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.453 -0400", hash_original_method = "1F2F8066B3FF3FBE25C7998F0003547E", hash_generated_method = "3DFBC9478CC0E660D682F32ED1A9AB31")
     public void freeEntry(BasicPoolEntry entry) {
         addTaint(entry.getTaint());
@@ -183,6 +186,7 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_1928359719 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.454 -0400", hash_original_method = "89E23A0834C1E349262FA5BF4999548A", hash_generated_method = "987F03D59278E6CB9C7FC0C53AB0021E")
     public void createdEntry(BasicPoolEntry entry) {
         addTaint(entry.getTaint());
@@ -243,6 +247,7 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_1928359719 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.455 -0400", hash_original_method = "5F9CEBE3D4D005B8F7D968A4703E6CB7", hash_generated_method = "6593C41D253D707BAF2027CF7C6FB39E")
     public void queueThread(WaitingThread wt) {
         addTaint(wt.getTaint());
@@ -263,6 +268,7 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_1928359719 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.455 -0400", hash_original_method = "C6B8ECCB9FBEF4C7E1D5D0DF0E82610C", hash_generated_method = "AF714CF4BFBC34FC7A35A323AFC8758C")
     public boolean hasThread() {
         boolean var1320EBDABB6286E60BD44B1DF87EF187_1496859035 = (!this.waitingThreads.isEmpty());

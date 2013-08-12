@@ -121,6 +121,7 @@ for(Iterator<?> it = keys.iterator();it.hasNext();)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.100 -0400", hash_original_field = "1C1534A2AA96342A497C51FF8E5360A5", hash_generated_field = "BF598BD805210074FAC5B7D06116F7DE")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(new ASN1Oid() {
+        @DSModeled(DSC.BAN)
         public Object getDecodedObject(BerInputStream in) throws IOException {
             int[] oid = (int[]) super.getDecodedObject(in);
             return ObjectIdentifier.toString(oid);

@@ -53,6 +53,7 @@ public class BasicTokenIterator implements TokenIterator {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public String nextToken() {
 		// TODO Auto-generated method stub
@@ -68,12 +69,14 @@ public class BasicTokenIterator implements TokenIterator {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void remove() {
 		// TODO Auto-generated method stub
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.304 -0400", hash_original_method = "32F5FD491C11EBCEB75A9EB408CEB9C9", hash_generated_method = "ACD3BBE7ACC7EFEC25ED082DEF9C0E74")
     protected int findNext(int from) throws ParseException {
         addTaint(from);
@@ -126,6 +129,7 @@ public class BasicTokenIterator implements TokenIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.308 -0400", hash_original_method = "8A7AB715022476147F81646A7190B2B6", hash_generated_method = "AE5F87E74E38FB39504518776B34183C")
     protected String createToken(String value, int start, int end) {
         addTaint(end);
@@ -139,6 +143,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_1194180939 =         value.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.316 -0400", hash_original_method = "C3C9B07DEC7C1A6A9535E620A84F019D", hash_generated_method = "2B0EB76265BBFADC27CCBA5AA3E70228")
     protected int findTokenStart(int from) {
         addTaint(from);
@@ -197,6 +202,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_1194180939 =         value.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.323 -0400", hash_original_method = "85E1DE95D8123E292DCFF62F7D93B47F", hash_generated_method = "3E2B88A7DC52744EE11CD405168482C6")
     protected int findTokenSeparator(int from) {
         addTaint(from);
@@ -248,6 +254,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_1194180939 =         value.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.327 -0400", hash_original_method = "ED818B78DD519794D8AD6912C0355074", hash_generated_method = "E1773E5AD761E7F9E1DE869ED70A84A8")
     protected int findTokenEnd(int from) {
         addTaint(from);
@@ -294,6 +301,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_1194180939 =         value.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.345 -0400", hash_original_method = "C3B308F031251D57A69A78A18E46CB9C", hash_generated_method = "260688C908EC822742EC99D620A890DC")
     protected boolean isWhitespace(char ch) {
         addTaint(ch);
@@ -305,6 +313,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_1194180939 =         value.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.349 -0400", hash_original_method = "776CFF97F037037124FC98CDEBC144D9", hash_generated_method = "EF3B56DE16B96D936F2C2EEAD5364928")
     protected boolean isTokenChar(char ch) {
         addTaint(ch);
@@ -340,6 +349,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_1194180939 =         value.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.351 -0400", hash_original_method = "8ABD66F1955A5164E5EB5D68E76EE993", hash_generated_method = "A2D366A41F07B813CEE697FC3C5D8F08")
     protected boolean isHttpSeparator(char ch) {
         addTaint(ch);

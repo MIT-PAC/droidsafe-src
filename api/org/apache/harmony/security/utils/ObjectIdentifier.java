@@ -40,6 +40,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.448 -0400", hash_original_method = "383F734F3FE5E01DEDB78CACC2759E14", hash_generated_method = "33487345C0821856A6AC0471484DA3A4")
     public  ObjectIdentifier(int[] oid, String name, Object oidGroup) {
         this(oid);

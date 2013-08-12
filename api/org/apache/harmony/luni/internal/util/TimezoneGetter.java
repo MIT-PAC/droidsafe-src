@@ -22,6 +22,7 @@ public abstract class TimezoneGetter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setInstance(TimezoneGetter getter) {
         if (instance != null) {
             throw new UnsupportedOperationException("TimezoneGetter instance already set");

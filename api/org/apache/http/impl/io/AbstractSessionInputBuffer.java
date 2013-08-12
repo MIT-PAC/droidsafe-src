@@ -90,6 +90,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.428 -0400", hash_original_method = "AED6430DDF1A78B7022960A54C9608D3", hash_generated_method = "4C2767061D115B2C6DB2A008B121B1D2")
     protected int fillBuffer() throws IOException {
         if(this.bufferpos > 0)        
@@ -445,6 +446,7 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.435 -0400", hash_original_method = "40CE76C5D842CFEF27650CABF8F97946", hash_generated_method = "00550DBA5C129E1263CF0D4AFB304A33")
     public String readLine() throws IOException {
         CharArrayBuffer charbuffer = new CharArrayBuffer(64);

@@ -117,6 +117,7 @@ StreamLoader var5DB7DBF28A0F4B000D588BFE2242F8C3_814125059 =         new Loader(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.467 -0400", hash_original_method = "F11F1CED2E6EEAF3CF48BEFB2475FBE1", hash_generated_method = "79A10ADA421993CABFB514C276D7D00B")
         @Override
         protected boolean setupStreamAndSendStatus() {

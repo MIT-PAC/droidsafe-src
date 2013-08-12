@@ -230,6 +230,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_289853322 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.892 -0400", hash_original_method = "B281ECAF166EAE88B310FDB0152ACEB7", hash_generated_method = "3DC820885AF14557B720E752A166D7CE")
     public int getConnectionState(BluetoothDevice device) {
         addTaint(device.getTaint());
@@ -364,6 +365,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_289853322 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.895 -0400", hash_original_method = "0A81AC976D9A0E28DF6B1DEC7E34C5D3", hash_generated_method = "B4C8AE82A7DEE595485B88D8F3987F3B")
     public boolean isA2dpPlaying(BluetoothDevice device) {
         addTaint(device.getTaint());

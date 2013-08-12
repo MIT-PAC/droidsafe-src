@@ -34,7 +34,7 @@ public final class CorrectionInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.291 -0400", hash_original_method = "ACB844101F7B730F0891325C0B2B59C5", hash_generated_method = "B20EB25A9119C4194DCBE441924D46CF")
     private  CorrectionInfo(Parcel source) {
         mOffset = source.readInt();
@@ -80,7 +80,7 @@ CharSequence var4418CD7C5DA1D77AC17AEFF7277BF87B_308432667 =         mNewText;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.292 -0400", hash_original_method = "7D587C528DCE451F3ED32B059F93B063", hash_generated_method = "77F0DB428B705ACC3518738A4236EEB8")
     @Override
     public String toString() {
@@ -92,7 +92,7 @@ String var9F600BFBE887033823CFD91DDDB01734_1344950003 =         "CorrectionInfo{
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.292 -0400", hash_original_method = "4D2AAA8E4AD44FCBAED8BA48A77A4AE0", hash_generated_method = "2CA872B42EA1D19B21FAAF912A382EF1")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

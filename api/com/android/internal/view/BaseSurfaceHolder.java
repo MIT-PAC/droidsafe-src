@@ -154,6 +154,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.118 -0400", hash_original_method = "2E153784742E80414EA6460F2018158D", hash_generated_method = "BC03AF31E335FEEDF36609C2A9166636")
     public SurfaceHolder.Callback[] getCallbacks() {
         if(mHaveGottenCallbacks)        
@@ -228,6 +229,7 @@ SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_1034857724 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.119 -0400", hash_original_method = "3FBBAABB359B15ECFE32A5B65108D82E", hash_generated_method = "102820B7C68EBAAA880C0400C26C6278")
     public void setSizeFromLayout() {
         if(mRequestedWidth != -1 || mRequestedHeight != -1)        
@@ -243,6 +245,7 @@ SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_1034857724 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.120 -0400", hash_original_method = "FD1656C90E0BF9DD59BF1C1951F6D90A", hash_generated_method = "6D399A1395157D1C1B30B10DD37EBD09")
     public void setFormat(int format) {
         if(mRequestedFormat != format)        

@@ -32,6 +32,7 @@ public class SIPIfMatchParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.704 -0400", hash_original_method = "3E32D858B03BB295FC48CF43F0845DFE", hash_generated_method = "2B958C49FC9D4F37E1FD45E829ABF93D")
     public SIPHeader parse() throws ParseException {
         if(debug)        

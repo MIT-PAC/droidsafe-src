@@ -18,6 +18,7 @@ public class RestrictedState {
 
     private boolean mCsEmergencyRestricted;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.589 -0400", hash_original_method = "F727392B3D49E2225FED35B348D7580F", hash_generated_method = "A8B4A6FFAF3230A9E88A369FA2BA6744")
     public  RestrictedState() {
         setPsRestricted(false);
@@ -144,7 +145,7 @@ public class RestrictedState {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.594 -0400", hash_original_method = "845D0E6369A38FB89C7B9C67406A7898", hash_generated_method = "4AEA3B61FD0870DF94E6B44B8F3263EC")
     @Override
     public String toString() {

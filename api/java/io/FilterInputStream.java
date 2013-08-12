@@ -19,7 +19,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.981 -0400", hash_original_method = "0AD8415E97210126520B7235309B4152", hash_generated_method = "14B5D4493E92C9E3A2E4B5103B70FD6A")
     @Override
     public int available() throws IOException {
@@ -31,7 +31,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.982 -0400", hash_original_method = "8853C25F592811C3C813B7E0334D3C5F", hash_generated_method = "9CF60855AD0CE7D671F0019EA0CE4A52")
     @Override
     public void close() throws IOException {
@@ -41,6 +41,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.982 -0400", hash_original_method = "FFAC7C303832D87EA3757F73ECC9CF0F", hash_generated_method = "F56924027E62E4D2B8F7633C4CCD626A")
     @Override
     public synchronized void mark(int readlimit) {
@@ -51,6 +52,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.982 -0400", hash_original_method = "41BA5D3E6CD82551F6C2FAFF3850B986", hash_generated_method = "00F2A93EE923A08DB5E375A6405104F1")
     @Override
     public boolean markSupported() {
@@ -62,6 +64,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.983 -0400", hash_original_method = "E44784058F4742ED0C6AEE646C9728C1", hash_generated_method = "F19EBFE81BE6E79884387D56951EDD14")
     @Override
     public int read() throws IOException {
@@ -73,7 +76,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.983 -0400", hash_original_method = "77ABDF7CA6BAECB9E04E38AE745E4AA8", hash_generated_method = "2B108C8ACE67D66B28D62885BAE02134")
     @Override
     public int read(byte[] buffer, int offset, int count) throws IOException {
@@ -88,6 +91,7 @@ public class FilterInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.984 -0400", hash_original_method = "61478AA9F56747991020142C67580FB8", hash_generated_method = "9EDBB723B02439FE9CA3EA9025D627E0")
     @Override
     public synchronized void reset() throws IOException {

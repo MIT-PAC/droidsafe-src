@@ -26,12 +26,14 @@ public class CdmaSmsAddress extends SmsAddress {
 
     public int numberPlan;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_method = "C14D3E49998397C1BAE29B9693261AA4", hash_generated_method = "D0B7A6B483495AD2F861F207E5EE1740")
     public  CdmaSmsAddress() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_method = "63A53E613DBD8AE7867F216680739B01", hash_generated_method = "AEBDC26D9D9DF4E6B200F71408B57078")
     @Override
     public String toString() {

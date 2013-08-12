@@ -165,6 +165,7 @@ class SQLiteCompiledSql {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.228 -0400", hash_original_method = "F4C9B6A641BE298F80672A4BBE3F197C", hash_generated_method = "7384F014C2A555D9B5CC1F63018DBE21")
     @Override
     public String toString() {

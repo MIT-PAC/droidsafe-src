@@ -271,6 +271,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.499 -0400", hash_original_method = "A950397745137F47AE3797B428EC17A0", hash_generated_method = "A5CD79797A27E8C177A6877B64D8122C")
     @Override
     public void setTheme(int theme) {
@@ -289,6 +290,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.501 -0400", hash_original_method = "A4061C51E6B315B625647A4DAEF1D932", hash_generated_method = "DE550ABE012B963890E5EA21805F7878")
     @Override
     public void onCreate() {
@@ -409,6 +411,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.506 -0400", hash_original_method = "0B7AD8CA788BAE093A6DAEC0C292F050", hash_generated_method = "069D9E9E8C9C71C56C3FCF07911EADF7")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -463,6 +466,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.507 -0400", hash_original_method = "4C23D68F9AF6231E77018CB50F89B333", hash_generated_method = "8AF6BBE4A59B5C3CD3AB86ADD5396802")
     @Override
     public AbstractInputMethodImpl onCreateInputMethodInterface() {
@@ -475,6 +479,7 @@ AbstractInputMethodImpl var08A86260C367C9350A210836476E2AEE_809822128 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.507 -0400", hash_original_method = "A293E788F38BE631F0B24DA3CBEC4EAD", hash_generated_method = "4CC661CC5DA497FD95BEAACA75FD86A8")
     @Override
     public AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface() {
@@ -529,6 +534,7 @@ Dialog var125511BCCBD4CDF7BDF315F5AA8A1CE3_1936304014 =         mWindow;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.509 -0400", hash_original_method = "BF0CCCE3A6DFBF869485401A0C0B52E1", hash_generated_method = "58BABDC4A5883E694CE5A68F732BE720")
     public int getMaxWidth() {
         WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
@@ -650,6 +656,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.512 -0400", hash_original_method = "57F13E10195CB2F326F03FED8DB64B03", hash_generated_method = "FFE0014724DA501F667090D5DBA06455")
     public void onConfigureWindow(Window win, boolean isFullscreen,
             boolean isCandidatesOnly) {
@@ -685,6 +692,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.513 -0400", hash_original_method = "F5927891A0B192B06619C4589486FDC4", hash_generated_method = "0BE7F84B088611D71D3BA5DA97E937A8")
     public boolean onEvaluateFullscreenMode() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -718,6 +726,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.514 -0400", hash_original_method = "D4950711A20DE11BC2C7EA5EC93FE5E0", hash_generated_method = "DF66FB83B011CC20BCA2CB153EA0D0B5")
     public void setExtractViewShown(boolean shown) {
         if(mExtractViewHidden == shown)        
@@ -829,6 +838,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.519 -0400", hash_original_method = "0265E8D9142690DEBAB6C995400C2A87", hash_generated_method = "1FCB171E81D54D406D446551D3AA93EC")
     public void updateInputViewShown() {
         boolean isShown = mShowInputRequested && onEvaluateInputViewShown();
@@ -884,6 +894,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.521 -0400", hash_original_method = "1FE8D4523FDD0EE9294351AC86397C44", hash_generated_method = "AF03F8C1CF58ACAD3CDE1578B2DD4B1B")
     public boolean onEvaluateInputViewShown() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -899,6 +910,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.521 -0400", hash_original_method = "3ADC6F28D6F2E8A9F55D9BD9F82BC8D2", hash_generated_method = "915E2F6CAED711FA919748F746CC0DB9")
     public void setCandidatesViewShown(boolean shown) {
         addTaint(shown);
@@ -926,6 +938,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.522 -0400", hash_original_method = "4164AC2B45DCCBE42C527D3F966F5882", hash_generated_method = "2C7A5718C42FD1BB553C30F6A418966F")
      void updateCandidatesVisibility(boolean shown) {
         addTaint(shown);
@@ -954,6 +967,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.523 -0400", hash_original_method = "09F11407FBE421F2EB35629AC776C29A", hash_generated_method = "DECC09ED0847FD21887B434C8C7A2F55")
     public void showStatusIcon(int iconResId) {
         mStatusIcon = iconResId;
@@ -983,6 +997,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.526 -0400", hash_original_method = "7F30721F4F1DC6518EC25FA69EEA9DD8", hash_generated_method = "5BB12EC3A3622DEE5E148540ED32D6FF")
     public void setExtractView(View view) {
         mExtractFrame.removeAllViews();
@@ -1015,6 +1030,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.527 -0400", hash_original_method = "8648EAF39F078D77783E311D9636B394", hash_generated_method = "DB97C87789E247BEBC292B2ADE91552F")
     public void setCandidatesView(View view) {
         addTaint(view.getTaint());
@@ -1030,6 +1046,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.528 -0400", hash_original_method = "F530779F20B702B2AC3AEE15911FE235", hash_generated_method = "448C234ECEA41219ABFCADD0A5752A31")
     public void setInputView(View view) {
         mInputFrame.removeAllViews();
@@ -1046,6 +1063,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.528 -0400", hash_original_method = "A13C1AA9A5FD5770C02F503628C51194", hash_generated_method = "3620A947197181752D5F259E737C4A08")
     public View onCreateExtractTextView() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1093,6 +1111,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.530 -0400", hash_original_method = "126397FC018D546EBB3D17AA8B426F4F", hash_generated_method = "8F5DFA1DA3E2FD2AABD7C18F4AAB50D9")
     public void onFinishInputView(boolean finishingInput) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1125,6 +1144,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.531 -0400", hash_original_method = "7B21B5BD050EBE81B79EA707D7F10503", hash_generated_method = "9F3065DCD4D8B3D7D39BB911F2740E41")
     public void onFinishCandidatesView(boolean finishingInput) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1147,6 +1167,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.532 -0400", hash_original_method = "7116B74C32B9543E489CB78AF9B82E3D", hash_generated_method = "04BDE745B514B156B1CD00DCFA92D318")
     public boolean onShowInputRequested(int flags, boolean configChange) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1397,6 +1418,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.544 -0400", hash_original_method = "D870334B8409E203BCA5DBA60A032B6F", hash_generated_method = "5035D7365BD613704CD31AE005BCECF2")
      void doFinishInput() {
         if(mInputViewStarted)        
@@ -1437,6 +1459,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.547 -0400", hash_original_method = "D70A8E32EEED9199B71D72D85567D543", hash_generated_method = "25E6AAA4773F5594DDF474F09A751E3D")
      void doStartInput(InputConnection ic, EditorInfo attribute, boolean restarting) {
         addTaint(restarting);
@@ -1469,6 +1492,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.548 -0400", hash_original_method = "E745A863BE4D98B94E02F169B272F08C", hash_generated_method = "F6C0E15496665BA6B8691587C2E83DFB")
     public void onFinishInput() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1493,6 +1517,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.549 -0400", hash_original_method = "CC541C375904CEFCC1DC228363FE0C44", hash_generated_method = "9963C2D13EF5751FB92B0CC7F74F2A39")
     public void onUpdateExtractedText(int token, ExtractedText text) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1522,6 +1547,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.551 -0400", hash_original_method = "08F34B1B106CF5B01DE522670D82A3BC", hash_generated_method = "96089C8F45D4577FE9710747E5B9881D")
     public void onUpdateSelection(int oldSelStart, int oldSelEnd,
             int newSelStart, int newSelEnd,
@@ -1658,6 +1684,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.554 -0400", hash_original_method = "6D39318911C6DEDF33A28EA4D06A473F", hash_generated_method = "254FFC89CB046F4355858CD619FA121D")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1705,6 +1732,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.556 -0400", hash_original_method = "3CC4F52C9B71FCD2A0600FA46D6F06E5", hash_generated_method = "DA38C43504FE30B743212864E4E0FB12")
     public boolean onKeyMultiple(int keyCode, int count, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1719,6 +1747,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.556 -0400", hash_original_method = "BCD4505881DB97C910099D82B7A22807", hash_generated_method = "6C83B26AA1A63AE197904353DCD0CFA6")
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1790,6 +1819,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.558 -0400", hash_original_method = "9C1F09BC7693D3503A84F47A8DD2E9B8", hash_generated_method = "47EA8DAA12928F120D2AE14ED887A6E5")
      void reportExtractedMovement(int keyCode, int count) {
         addTaint(count);
@@ -1830,6 +1860,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.559 -0400", hash_original_method = "CADA6E3534C513A6E5A0D2EB184E3B48", hash_generated_method = "B340CC670FED1B9B6F88CDF2FF7DA7DD")
      boolean doMovementKey(int keyCode, KeyEvent event, int count) {
         addTaint(count);
@@ -1910,6 +1941,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.561 -0400", hash_original_method = "79E896FD8459E186D0AA684976DF9590", hash_generated_method = "D48F2F16FA87A368105E54CA7A29ED43")
     public void sendDownUpKeyEvents(int keyEventCode) {
         addTaint(keyEventCode);
@@ -1936,6 +1968,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.561 -0400", hash_original_method = "84DA6B1414DFECBCA6744FD6285B6A00", hash_generated_method = "5701FD81D71F5DCA454683E030A7BBD2")
     public boolean sendDefaultEditorAction(boolean fromEnterKey) {
         addTaint(fromEnterKey);
@@ -1975,6 +2008,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.562 -0400", hash_original_method = "CB96ACC643B76CE6B3516B92D9424351", hash_generated_method = "27728BF6FD0545DCC7E0E9B0820574E0")
     public void sendKeyChar(char charCode) {
         addTaint(charCode);
@@ -2021,6 +2055,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.562 -0400", hash_original_method = "B848FD2302E48E43854FF3AB55ABE7CC", hash_generated_method = "C5440AA7CDC66462A57805E3CD8FAF16")
     public void onExtractedSelectionChanged(int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2117,6 +2152,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.564 -0400", hash_original_method = "672EAF0A2CC265CDC19E0FE05714B327", hash_generated_method = "704ED5F7F0649703ACF293905E8861B8")
     public void onExtractedTextClicked() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2138,6 +2174,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.567 -0400", hash_original_method = "33B88CC3E792B5DBD4A2FEF9CD5D26B5", hash_generated_method = "D53B0101840BB64D4006C78F5EEFB51E")
     public void onExtractedCursorMovement(int dx, int dy) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2161,6 +2198,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.568 -0400", hash_original_method = "FA4A3D7B1537F03835F5D4F28B4BC905", hash_generated_method = "65B6A1BF3B246A66FF5DF65D7F442CCE")
     public boolean onExtractTextContextMenuItem(int id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2182,6 +2220,7 @@ switch(charCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.569 -0400", hash_original_method = "9F91BE1CB3CE4671D110A2B57AE2570E", hash_generated_method = "0F475338494AD0299C14763EC5C2ABA2")
     public CharSequence getTextForImeAction(int imeOptions) {
         addTaint(imeOptions);
@@ -2224,6 +2263,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.570 -0400", hash_original_method = "8796655A783A46466BACE236BCA7DD97", hash_generated_method = "6D15D443F6DCCA886CA0713181B0E7ED")
     public void onUpdateExtractingVisibility(EditorInfo ei) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2245,6 +2285,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.571 -0400", hash_original_method = "EAD47E132E9ECD3692FAA5C1AB9CEE12", hash_generated_method = "D9131D3AC40071C39F670C5CEBE0A68C")
     public void onUpdateExtractingViews(EditorInfo ei) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2290,6 +2331,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.572 -0400", hash_original_method = "B8550D5274B7AC063AD577912E9B5BF9", hash_generated_method = "DA826CC3DA9DA6E0BBF57CDD3753273F")
     public void onExtractingInputChanged(EditorInfo ei) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2466,6 +2508,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.591 -0400", hash_original_method = "2246D0F0FC59D2518EAEE0F0671903AA", hash_generated_method = "D45DDAA090A30410B38EFDBB46758F14")
         public void attachToken(IBinder token) {
             addTaint(token.getTaint());
@@ -2520,6 +2563,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.624 -0400", hash_original_method = "ABB2165AD965E17C2FE21B1141C40C8F", hash_generated_method = "8E2591220D78C8706A01CACB7AAF1A68")
         public void startInput(InputConnection ic, EditorInfo attribute) {
             addTaint(attribute.getTaint());
@@ -2531,6 +2575,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.628 -0400", hash_original_method = "FBDDF384E0FE523BAEFE6359495BE0E1", hash_generated_method = "3CC0B7BDCCD2E6FF375D420BF7E9A6C7")
         public void restartInput(InputConnection ic, EditorInfo attribute) {
             addTaint(attribute.getTaint());
@@ -2635,6 +2680,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.663 -0400", hash_original_method = "3439BC8F3B3DD615353E38FBC0555505", hash_generated_method = "D487826837656B16131F49B62294F226")
         public void finishInput() {
             if(!isEnabled())            
@@ -2651,6 +2697,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.668 -0400", hash_original_method = "6A0353E151F9F29333A27C5421A53B38", hash_generated_method = "037D94BE198DF9285BF306431E884D76")
         public void displayCompletions(CompletionInfo[] completions) {
             addTaint(completions[0].getTaint());
@@ -2669,6 +2716,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.676 -0400", hash_original_method = "0102DD0EEEDCD27552C577307A27FE88", hash_generated_method = "9341B35BBC6FE6B23F8C9373A4DD3557")
         public void updateExtractedText(int token, ExtractedText text) {
             addTaint(text.getTaint());
@@ -2711,6 +2759,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.682 -0400", hash_original_method = "7D0F3CDF004B0AA88B105A90C3B2EFF2", hash_generated_method = "FADD9EF40FAE28F8407CC82060C40417")
         @Override
         public void viewClicked(boolean focusChanged) {
@@ -2728,6 +2777,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.683 -0400", hash_original_method = "5A756230FCCA173B557966360DF4EF77", hash_generated_method = "8A62272CB28CEDBE4CB0A429CB465DC7")
         public void updateCursor(Rect newCursor) {
             addTaint(newCursor.getTaint());
@@ -2744,6 +2794,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.683 -0400", hash_original_method = "681E840BDEA7B80F2F006F7D9B6B3563", hash_generated_method = "0EDAEDA80081C06DD5173C3170577DAD")
         public void appPrivateCommand(String action, Bundle data) {
             addTaint(data.getTaint());
@@ -2761,6 +2812,7 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.684 -0400", hash_original_method = "F1C4F6A09FBC1E433445388BE149C06F", hash_generated_method = "A96535C15DB70059F025788A63C9C4FF")
         public void toggleSoftInput(int showFlags, int hideFlags) {
             addTaint(hideFlags);

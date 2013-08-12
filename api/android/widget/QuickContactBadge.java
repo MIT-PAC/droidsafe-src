@@ -272,7 +272,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.156 -0400", hash_original_method = "8712FDD692B08E6979A43AB02ED73539", hash_generated_method = "9332C53BC9532EB272CB981FE68B7B39")
     private void onContactUriChanged() {
         setEnabled(isAssigned());

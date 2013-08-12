@@ -201,6 +201,7 @@ Cursor var61A6DC9612A061EF7F8E8FA220F1F6AE_990300085 =         mCursor = new Sor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.133 -0400", hash_original_method = "6FCC5829E72C1DEF0426E1D999C80198", hash_generated_method = "9E55A43DCBFDFF4A221EDF9A4A0788C3")
     public Ringtone getRingtone(int position) {
         if(mStopPreviousRingtone && mPreviousRingtone != null)        

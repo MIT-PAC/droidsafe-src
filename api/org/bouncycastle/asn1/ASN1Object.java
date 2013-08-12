@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public abstract class ASN1Object extends DERObject {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.695 -0400", hash_original_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E", hash_generated_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E")
     public ASN1Object ()
     {
@@ -17,6 +18,7 @@ public abstract class ASN1Object extends DERObject {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static ASN1Object fromByteArray(byte[] data) throws IOException {
         ASN1InputStream aIn = new ASN1InputStream(data);
         try
@@ -30,6 +32,7 @@ public abstract class ASN1Object extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.696 -0400", hash_original_method = "DA81A9CF27CE7E2A8EA2EF36D7C19ED4", hash_generated_method = "E405D2B6B57199E8F5A713C04EAE5F12")
     public final boolean equals(Object o) {
         addTaint(o.getTaint());

@@ -18,6 +18,7 @@ class ContentLoader extends StreamLoader {
 
     private String mContentType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.953 -0400", hash_original_method = "F3A29FB813CE2FB46A21E47C37FE57A3", hash_generated_method = "26E7508488D25213B1E8675E7C066DC3")
       ContentLoader(String rawUrl, LoadListener loadListener) {
         super(loadListener);
@@ -68,7 +69,7 @@ String varF917352FB1129841F1BC9CC901BB1B99_1366998444 =         errString;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.954 -0400", hash_original_method = "F4E0066B6783A6A372AAD1A4891DEB15", hash_generated_method = "D8BA1115B45DB32F5458454EF6980AFF")
     @Override
     protected boolean setupStreamAndSendStatus() {
@@ -111,7 +112,7 @@ String varF917352FB1129841F1BC9CC901BB1B99_1366998444 =         errString;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.954 -0400", hash_original_method = "2D22B97545C25E7E6811FFA13F6C8031", hash_generated_method = "435EAE2EAB5604DA5FDD6019ADE1BF53")
     @Override
     protected void buildHeaders(Headers headers) {

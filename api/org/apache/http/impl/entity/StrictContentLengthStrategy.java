@@ -14,6 +14,7 @@ import org.apache.http.protocol.HTTP;
 
 public class StrictContentLengthStrategy implements ContentLengthStrategy {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.341 -0400", hash_original_method = "A65C37571E3ECC9A929C203280BB89E8", hash_generated_method = "D45C93F906D0EA835886288481D205FA")
     public  StrictContentLengthStrategy() {
         super();

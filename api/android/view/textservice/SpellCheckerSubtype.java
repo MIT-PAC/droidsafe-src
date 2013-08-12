@@ -143,7 +143,7 @@ String varD5103786A790F3D4881070784C5A1DFD_2136825052 =         mSubtypeExtraVal
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Locale constructLocaleFromString(String localeStr) {
         if (TextUtils.isEmpty(localeStr))
             return null;
@@ -264,6 +264,7 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1831196585 =             locale
 
     public static final Parcelable.Creator<SpellCheckerSubtype> CREATOR
             = new Parcelable.Creator<SpellCheckerSubtype>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public SpellCheckerSubtype createFromParcel(Parcel source) {
             return new SpellCheckerSubtype(source);

@@ -27,6 +27,7 @@ public final class ExceptionUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void initCause(Throwable throwable, Throwable cause) {
         if (INIT_CAUSE_METHOD != null) {
             try {

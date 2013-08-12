@@ -23,6 +23,7 @@ public class IdleConnectionHandler {
 
     private Map<HttpConnection,TimeValues> connectionToTimes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.128 -0400", hash_original_method = "3E916BA1101D3583C84AA90CF4FC67D4", hash_generated_method = "4BD14E84E6BEF8BC711F8ACA39C0C62B")
     public  IdleConnectionHandler() {
         super();
@@ -52,6 +53,7 @@ public class IdleConnectionHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.129 -0400", hash_original_method = "1D31D4C3FCFC5F71DF82BB85794AF70A", hash_generated_method = "1E7FAA6D0274B1771F94A091210E3FB2")
     public boolean remove(HttpConnection connection) {
         addTaint(connection.getTaint());

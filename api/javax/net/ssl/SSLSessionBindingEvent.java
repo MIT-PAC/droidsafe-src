@@ -14,6 +14,7 @@ public class SSLSessionBindingEvent extends EventObject {
 
     private String name;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.785 -0400", hash_original_method = "794652F3E2A819204DF4691F4DF3911D", hash_generated_method = "91724F7B9C934561C2C44054F87ACCB2")
     public  SSLSessionBindingEvent(SSLSession session, String name) {
         super(session);

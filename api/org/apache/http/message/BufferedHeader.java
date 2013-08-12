@@ -145,6 +145,7 @@ String var7B8BB72F06E6A8EB72498BA3268BFE1C_1475666670 =         this.buffer.toSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.097 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "B71423223B7F48B4B03AD492B6D06C6D")
     public Object clone() throws CloneNotSupportedException {
 Object var46F3A0D86742C1D6E099C2B166941A33_812798915 =         super.clone();

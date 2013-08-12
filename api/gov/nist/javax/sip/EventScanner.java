@@ -48,6 +48,7 @@ class EventScanner implements Runnable {
 
     private SipStackImpl sipStack;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.413 -0400", hash_original_method = "ABAFBB618BA49E3B8625E32FADC601ED", hash_generated_method = "640AE9DCA3DB4EFBAE34E349BE80A259")
     public  EventScanner(SipStackImpl sipStackImpl) {
         this.pendingEvents = new LinkedList();
@@ -144,6 +145,7 @@ class EventScanner implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.419 -0400", hash_original_method = "1FB221E344118E77FADF803461DF7CDF", hash_generated_method = "469FEA17AA20C391E32C7AED6A530B1E")
     public void deliverEvent(EventWrapper eventWrapper) {
         addTaint(eventWrapper.getTaint());
@@ -453,6 +455,7 @@ class EventScanner implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.422 -0400", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "2529A2AAD0F5D7AA92835BB34E5EE903")
     public void run() {
         try 

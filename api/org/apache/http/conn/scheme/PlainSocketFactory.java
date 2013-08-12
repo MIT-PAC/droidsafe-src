@@ -31,6 +31,7 @@ public final class PlainSocketFactory implements SocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.949 -0400", hash_original_method = "CB0B0698D5F49CD73D676E27B7E3296D", hash_generated_method = "FDFEC9028F67BD2583D543616664390B")
     public  PlainSocketFactory() {
         this(null);
@@ -169,6 +170,7 @@ Socket var947470A701CF490B15CD8DA4BCF73C48_987719783 =         sock;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.953 -0400", hash_original_method = "EE56C51BBF77F8839109E7F97EF2C650", hash_generated_method = "70F2B2D3A6AC6DE1C45930C691644ABD")
     @Override
     public int hashCode() {

@@ -168,10 +168,12 @@ for(GeneralName generalName : generalNames)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.352 -0400", hash_original_field = "F9F6263E38C505EB7173C59BEEA7DE3D", hash_generated_field = "D64C2D3B9F619417B7A91D4BDC12D942")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(GeneralName.ASN1) {
+        @DSModeled(DSC.SPEC)
         @Override public Object getDecodedObject(BerInputStream in) {
             return new GeneralNames((List<GeneralName>) in.content, in.getEncoded());
         }
 
+        @DSModeled(DSC.SAFE)
         @Override public Collection getValues(Object object) {
             GeneralNames gns = (GeneralNames) object;
             return gns.generalNames;

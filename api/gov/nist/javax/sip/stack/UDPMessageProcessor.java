@@ -40,6 +40,7 @@ public class UDPMessageProcessor extends MessageProcessor {
 
     protected boolean isRunning;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.107 -0400", hash_original_method = "B90AB6AB06537F29C47617DE501651D0", hash_generated_method = "DFDEAA70CD4A6FE61DD77994AFC8EE1D")
     protected  UDPMessageProcessor(InetAddress ipAddress,
             SIPTransactionStack sipStack, int port) throws IOException {
@@ -104,6 +105,7 @@ public class UDPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.110 -0400", hash_original_method = "5BA484CD985BE2E9792A2B4863AB23E2", hash_generated_method = "EA6CC3C43F774879BF434881D63A2374")
     public void run() {
         this.messageChannels = new LinkedList();

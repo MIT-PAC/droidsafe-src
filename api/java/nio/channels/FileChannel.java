@@ -25,6 +25,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     public abstract void force(boolean metadata) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.173 -0400", hash_original_method = "DFAB2BF3C1A891B83AFBA77A43B03809", hash_generated_method = "305B70F9C5BF22E186A8AE6108C44FA5")
     public final FileLock lock() throws IOException {
 FileLock var50D39AE14A9D021DC54487D5C205800C_1252566143 =         lock(0L, Long.MAX_VALUE, false);
@@ -62,6 +63,7 @@ FileLock var50D39AE14A9D021DC54487D5C205800C_1252566143 =         lock(0L, Long.
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.175 -0400", hash_original_method = "4118483D5739F1F8B1E72DACCDF365C6", hash_generated_method = "BC5002E6F5156105723E63F8AD97A528")
     public final long read(ByteBuffer[] buffers) throws IOException {
         addTaint(buffers[0].getTaint());
@@ -73,6 +75,7 @@ FileLock var50D39AE14A9D021DC54487D5C205800C_1252566143 =         lock(0L, Long.
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long read(ByteBuffer[] buffers, int start, int number)
             throws IOException;
 
@@ -95,6 +98,7 @@ FileLock var50D39AE14A9D021DC54487D5C205800C_1252566143 =         lock(0L, Long.
     public abstract FileChannel truncate(long size) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.176 -0400", hash_original_method = "F4B810DA7C3314CA042E76DA336480A9", hash_generated_method = "F14073D8395A89426E949890870D2B8A")
     public final FileLock tryLock() throws IOException {
 FileLock varF5D9544336A16D8E74D4CBEA85C52705_1747660477 =         tryLock(0L, Long.MAX_VALUE, false);
@@ -119,6 +123,7 @@ FileLock varF5D9544336A16D8E74D4CBEA85C52705_1747660477 =         tryLock(0L, Lo
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.178 -0400", hash_original_method = "50EBF858502260FDC2F74EB3C865D254", hash_generated_method = "F970143A68C17B45C51FDF5E26C6DFC5")
     public final long write(ByteBuffer[] buffers) throws IOException {
         addTaint(buffers[0].getTaint());
@@ -130,6 +135,7 @@ FileLock varF5D9544336A16D8E74D4CBEA85C52705_1747660477 =         tryLock(0L, Lo
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long write(ByteBuffer[] buffers, int offset, int length)
             throws IOException;
 

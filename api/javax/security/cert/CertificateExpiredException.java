@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class CertificateExpiredException extends CertificateException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.192 -0400", hash_original_method = "695ACDE1E8C2F900ABF7FF7E73A29503", hash_generated_method = "3E035F91FD1EAB99F6CA5B96A6EC5AFC")
     public  CertificateExpiredException(String msg) {
         super(msg);

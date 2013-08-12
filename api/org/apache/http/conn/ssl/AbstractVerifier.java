@@ -29,6 +29,7 @@ import org.apache.http.conn.util.InetAddressUtils;
 
 public abstract class AbstractVerifier implements X509HostnameVerifier {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.042 -0400", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B512B82EB5D4AD689C485137CF7AD9E0")
     public  AbstractVerifier() {
         super();
@@ -184,7 +185,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean acceptableCountryWildcard(String cn) {
         int cnLen = cn.length();
         if(cnLen >= 7 && cnLen <= 9) {
@@ -198,7 +199,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String[] getCNs(X509Certificate cert) {
         LinkedList<String> cnList = new LinkedList<String>();
         String subjectPrincipal = cert.getSubjectX500Principal().toString();
@@ -220,6 +221,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] getDNSSubjectAlts(X509Certificate cert) {
         LinkedList<String> subjectAltList = new LinkedList<String>();
         Collection<List<?>> c = null;

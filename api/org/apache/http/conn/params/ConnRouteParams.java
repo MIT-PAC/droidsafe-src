@@ -64,6 +64,7 @@ public class ConnRouteParams implements ConnRoutePNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InetAddress getLocalAddress(HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("Parameters must not be null.");

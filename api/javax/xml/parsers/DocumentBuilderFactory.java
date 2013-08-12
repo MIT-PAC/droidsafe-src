@@ -31,6 +31,7 @@ public abstract class DocumentBuilderFactory {
 
     private boolean coalescing = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.774 -0400", hash_original_method = "49D4E4D47C8CF413B98AC9B42DF82DC4", hash_generated_method = "E213E77723289B6F2040F5B0C8C9D45D")
     protected  DocumentBuilderFactory() {
         // ---------- Original Method ----------
@@ -211,6 +212,7 @@ public abstract class DocumentBuilderFactory {
         throws ParserConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.779 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "D7DB8F9D67AFEB32036FE62B66FEFCBD")
     public Schema getSchema() {
         UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_498739556 = new UnsupportedOperationException(
@@ -233,6 +235,7 @@ public abstract class DocumentBuilderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.780 -0400", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "AF16520286AB77271CB0EFC762EA280A")
     public void setSchema(Schema schema) {
         addTaint(schema.getTaint());

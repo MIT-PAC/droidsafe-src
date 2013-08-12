@@ -25,6 +25,7 @@ public enum SupplicantState implements Parcelable {
     public static boolean isValidState(SupplicantState state) {
         return state != UNINITIALIZED && state != INVALID;
     }
+    @DSModeled(DSC.SAFE)
     static boolean isHandshakeState(SupplicantState state) {
         switch(state) {
             case AUTHENTICATING:
@@ -67,6 +68,7 @@ public enum SupplicantState implements Parcelable {
                 throw new IllegalArgumentException("Unknown supplicant state");
         }
     }
+    @DSModeled(DSC.SAFE)
     static boolean isDriverActive(SupplicantState state) {
         switch(state) {
             case DISCONNECTED:

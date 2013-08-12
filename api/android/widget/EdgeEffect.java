@@ -299,7 +299,7 @@ public class EdgeEffect {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.254 -0400", hash_original_method = "217F98194ACCE474266C15D1EE978E29", hash_generated_method = "E9B9E83683AE651BF936417EAAC0E4BA")
     private void update() {
         final long time = AnimationUtils.currentAnimationTimeMillis();

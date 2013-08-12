@@ -24,6 +24,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
 
     DERObject time;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.964 -0400", hash_original_method = "01C20E280B683C170EEEF3EFC0766C68", hash_generated_method = "86AEDB52A98DAF180650ABDAA28E6A99")
     public  Time(
         DERObject   time) {
@@ -45,6 +46,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.965 -0400", hash_original_method = "8BBEA010362F5295A61D1C019D01CC8B", hash_generated_method = "9D1EB4E2FF0778DE3B851DE145D48D43")
     public  Time(
         Date    date) {
@@ -79,7 +81,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Time getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -87,6 +89,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Time getInstance(
         Object  obj) {
         if (obj == null || obj instanceof Time)
@@ -105,6 +108,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.967 -0400", hash_original_method = "BF57E645E9DF37568C2EEE61DCF61153", hash_generated_method = "BE0E9DE7FE4501F1C472D45939BCC3C8")
     public String getTime() {
         if(time instanceof DERUTCTime)        
@@ -131,7 +135,7 @@ String varF54206F6C86C22C29E8157882DDD686C_1707747037 =             ((DERGeneral
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.967 -0400", hash_original_method = "FDC0BE61EAA40B266A36758B51B3F270", hash_generated_method = "6CBE6C16C4F40BFEF29BDA3A6432F906")
     public Date getDate() {
         try 
@@ -185,6 +189,7 @@ DERObject varA66D020F4BCAB26A12562312D8A04DED_712409709 =         time;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.968 -0400", hash_original_method = "B1D8E302C2A2168C967B1C035989FAE4", hash_generated_method = "BA1855A097A7E7C43EC34AD04DA41F8C")
     public String toString() {
 String varA2437939C7847B22878509056EAFE1EF_1661126395 =         getTime();

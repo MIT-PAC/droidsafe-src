@@ -24,6 +24,7 @@ public final class NativePluralRules {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.855 -0400", hash_original_method = "FA021A9562CA4E3CEECA6C94C3E7379A", hash_generated_method = "CF596162EA39646094AA7457D60C8B8A")
     @Override
     protected void finalize() throws Throwable {

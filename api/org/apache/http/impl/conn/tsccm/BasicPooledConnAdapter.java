@@ -24,7 +24,7 @@ public class BasicPooledConnAdapter extends AbstractPooledConnAdapter {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.333 -0400", hash_original_method = "278454090484FFAE87CB0693EDFEAA11", hash_generated_method = "1798350658ADBC98F4A550080E9B421C")
     @Override
     protected ClientConnectionManager getManager() {

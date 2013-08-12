@@ -16,6 +16,7 @@ import java.text.ParseException;
 
 public class PAssertedIdentityParser extends AddressParametersParser implements TokenTypes {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.866 -0400", hash_original_method = "C02C6F9EBCA71551D8AF330F3F45B00C", hash_generated_method = "CAB075B76C2EEE3FDBCE822C4D4678EC")
     public  PAssertedIdentityParser(String assertedIdentity) {
         super(assertedIdentity);
@@ -24,6 +25,7 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.866 -0400", hash_original_method = "EBF7927CE1D82A95913A99D5074781DB", hash_generated_method = "8FBB134D8A84A5466095E6E0DF4AFDC2")
     protected  PAssertedIdentityParser(Lexer lexer) {
         super(lexer);
@@ -32,6 +34,7 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.867 -0400", hash_original_method = "F1FB2D5EE9E961EE6E5DF8A2F520567C", hash_generated_method = "6B01C5F756ACECC53826F7DB00401214")
     public SIPHeader parse() throws ParseException {
         if(debug)        

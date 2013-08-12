@@ -35,6 +35,7 @@ public class GLDebugHelper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static EGL wrap(EGL egl, int configFlags, Writer log) {
         if (log != null) {
             egl = new EGLLogWrapper(egl, configFlags, log);

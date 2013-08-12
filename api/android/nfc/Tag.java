@@ -47,6 +47,7 @@ public final class Tag implements Parcelable {
 
     int mConnectedTechnology;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.368 -0400", hash_original_method = "AAC199A9C4358959332D7A7260D2B126", hash_generated_method = "E739A3A64FB1EC0725167C616D6BD644")
     public  Tag(byte[] id, int[] techList, Bundle[] techListExtras, int serviceHandle,
             INfcTag tagService) {
@@ -77,6 +78,7 @@ public final class Tag implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Tag createMockTag(byte[] id, int[] techList, Bundle[] techListExtras) {
         return new Tag(id, techList, techListExtras, 0, null);
     }
@@ -285,6 +287,7 @@ INfcTag varCEA41967F78A032165E0C3EE868F689A_1138768068 =         mTagService;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.376 -0400", hash_original_method = "DF673271FDC7A52A9E2682FF9A4E5D76", hash_generated_method = "FE7DA2ABCEFDB4AE8A3A663B6C4C2E14")
     @Override
     public String toString() {
@@ -318,6 +321,7 @@ String var2460B846747F8B22185AD8BE722266A5_1414232147 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] readBytesWithNull(Parcel in) {
         int len = in.readInt();
         byte[] result = null;
@@ -427,6 +431,7 @@ String var2460B846747F8B22185AD8BE722266A5_1414232147 =         sb.toString();
 
     public static final Parcelable.Creator<Tag> CREATOR =
             new Parcelable.Creator<Tag>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public Tag createFromParcel(Parcel in) {
             INfcTag tagService;

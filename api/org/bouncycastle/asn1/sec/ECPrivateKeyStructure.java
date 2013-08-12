@@ -30,6 +30,7 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
 
     private ASN1Sequence seq;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.144 -0400", hash_original_method = "D12821E856A648EC440CD525D918157C", hash_generated_method = "045B9F4D1DB3350862A92FABEBA11593")
     public  ECPrivateKeyStructure(
         ASN1Sequence  seq) {
@@ -39,6 +40,7 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.145 -0400", hash_original_method = "722B9EB1887267D3DC7C06AD31EE54C1", hash_generated_method = "A0B081E475FC622EA16DAC1E11181514")
     public  ECPrivateKeyStructure(
         BigInteger  key) {
@@ -57,6 +59,7 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.146 -0400", hash_original_method = "407D07F6896B0C0E44D96F389E9D6F27", hash_generated_method = "08D4F82FCED89BC125FD88AFB2E58A75")
     public  ECPrivateKeyStructure(
         BigInteger    key,
@@ -68,6 +71,7 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.147 -0400", hash_original_method = "C18ECEEFE6A75682B0803E3F34C5782F", hash_generated_method = "4DA7CDFAD747334E28197A165FE9466D")
     public  ECPrivateKeyStructure(
         BigInteger    key,
@@ -106,6 +110,7 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.147 -0400", hash_original_method = "3364DFDFDAE0C599569065625E34DFA6", hash_generated_method = "23750B35A714271DEB60A0F227923AB4")
     public BigInteger getKey() {
         ASN1OctetString octs = (ASN1OctetString)seq.getObjectAt(1);
@@ -118,6 +123,7 @@ BigInteger var80DF0B153BA9995164F4B5B25057318A_847397031 =         new BigIntege
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.147 -0400", hash_original_method = "DEBAFCE224E8193448683CCA3427311E", hash_generated_method = "44DA50EAA2E9E8F5EBF12A49BE48930E")
     public DERBitString getPublicKey() {
 DERBitString var04EB087ECDC943C1CF143F46DC90A070_1147330686 =         (DERBitString)getObjectInTag(1);
@@ -128,6 +134,7 @@ DERBitString var04EB087ECDC943C1CF143F46DC90A070_1147330686 =         (DERBitStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.148 -0400", hash_original_method = "6CC550729D926E5F97154297F8F1FBC7", hash_generated_method = "7558D72C90509260DBDEF10A26EA07B6")
     public ASN1Object getParameters() {
 ASN1Object var3FB644C7C242382FECABE32076F66AE1_1196337059 =         getObjectInTag(0);

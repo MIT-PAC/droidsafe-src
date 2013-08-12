@@ -26,6 +26,7 @@ public class ProgramRaster extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.494 -0400", hash_original_method = "F919B6D858DA98A8D6F899FC9949AF17", hash_generated_method = "69AA81AB0EF1B9D5C3F9795015745EE3")
     public boolean getPointSpriteEnabled() {
         boolean var321685E8635454054D49E5C34C7B3BD2_1477994857 = (mPointSprite);
@@ -36,6 +37,7 @@ public class ProgramRaster extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.505 -0400", hash_original_method = "9D9A5D91910AD22DEA2607A5096E0D2B", hash_generated_method = "A7A6D867287F7EEB69B5B097EA7815DF")
     public CullMode getCullMode() {
 CullMode var152C0F26D3190115F1B1B5CD185268F6_1389726823 =         mCullMode;
@@ -110,6 +112,7 @@ CullMode var152C0F26D3190115F1B1B5CD185268F6_1389726823 =         mCullMode;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.545 -0400", hash_original_method = "8E3B02261392357829242E8A2823D9BA", hash_generated_method = "C53C06F0555C6774F447CA44C75247C0")
         public Builder setPointSpriteEnabled(boolean enable) {
             mPointSprite = enable;
@@ -122,6 +125,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_394590042 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.551 -0400", hash_original_method = "5BEDACC205FE11487443D5D48E3468FF", hash_generated_method = "4C945800D30C9C4340E7124ACC3591FD")
         public Builder setCullMode(CullMode m) {
             mCullMode = m;

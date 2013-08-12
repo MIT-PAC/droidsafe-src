@@ -482,6 +482,7 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.627 -0400", hash_original_method = "393A7CD364AF31C5A55C410D9408BF1B", hash_generated_method = "A781EBC5145097C47689343C509D64EA")
     public void setParameter(String parameterName, Object parameter) {
         addTaint(parameter.getTaint());

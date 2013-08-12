@@ -29,6 +29,7 @@ class PackedIntVector {
 
     private int[] mValueGap;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.063 -0400", hash_original_method = "49572B82831972D93E19442EBCB45603", hash_generated_method = "6DCB4BA64977301CCE79D34F3045D8C8")
     public  PackedIntVector(int columns) {
         mColumns = columns;
@@ -148,6 +149,7 @@ class PackedIntVector {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.067 -0400", hash_original_method = "717B6A8B8BE261E23908EA9C8BC6E7EA", hash_generated_method = "02BDA8B7A66CB8B794728D61636047C7")
     public void adjustValuesBelow(int startRow, int column, int delta) {
         addTaint(startRow);
@@ -240,6 +242,7 @@ for(int i = mColumns - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.069 -0400", hash_original_method = "29D77D40DB4AFADA133299814B25205C", hash_generated_method = "BE69E422138A6DDD4FC57369CE2CC731")
     public void deleteAt(int row, int count) {
         addTaint(row);

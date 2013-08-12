@@ -16,6 +16,7 @@ public class GeneralNames extends ASN1Encodable {
 
     private GeneralName[] names;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.717 -0400", hash_original_method = "F51AA332BBC1C75C23F2395E3D593569", hash_generated_method = "AACD523E399433764EB6C8C7D1E5A05B")
     public  GeneralNames(
         GeneralName  name) {
@@ -26,6 +27,7 @@ public class GeneralNames extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.718 -0400", hash_original_method = "6F12A07D09CAFA480B0283A3B9FED616", hash_generated_method = "6B0C6093C710D50C58BB353912FB2203")
     public  GeneralNames(
         ASN1Sequence  seq) {
@@ -43,6 +45,7 @@ for(int i = 0;i != seq.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static GeneralNames getInstance(
         Object  obj) {
         if (obj == null || obj instanceof GeneralNames)
@@ -57,6 +60,7 @@ for(int i = 0;i != seq.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static GeneralNames getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -64,6 +68,7 @@ for(int i = 0;i != seq.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.720 -0400", hash_original_method = "9AED96B400BA543408C9F5E967093153", hash_generated_method = "00BA1A777D88104556142170D818D44C")
     public GeneralName[] getNames() {
         GeneralName[] tmp = new GeneralName[names.length];
@@ -78,6 +83,7 @@ GeneralName[] var3F12A0424932F6B5155AA6C49B63FE6E_1837056744 =         tmp;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.720 -0400", hash_original_method = "04D00D35531AB013A64ACFCEB501C4EE", hash_generated_method = "F948B176B922A1891C7D83C87025FAFB")
     public DERObject toASN1Object() {
 DERObject varFA028EE8512E8E6D5C4DBDCDB27CF46F_1709320671 =         new DERSequence(names);
@@ -88,6 +94,7 @@ DERObject varFA028EE8512E8E6D5C4DBDCDB27CF46F_1709320671 =         new DERSequen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.720 -0400", hash_original_method = "7DDFA5C3E7762D6D39ED7DFFF0863845", hash_generated_method = "17AC37207F0B4CDD5328DC7DB20AAF0E")
     public String toString() {
         StringBuffer buf = new StringBuffer();

@@ -148,6 +148,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getTPLayerLengthForPDU(String pdu) {
         Log.w(LOG_TAG, "getTPLayerLengthForPDU: is not supported in CDMA mode.");
         return 0;
@@ -190,6 +191,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.479 -0400", hash_original_method = "CFC9E8C6C71B803A9382349B0D254790", hash_generated_method = "1F57308214B748BCF5A82A90F93256EE")
     public int getProtocolIdentifier() {
         int varCFCD208495D565EF66E7DFF9F98764DA_977416047 = (0);
@@ -201,6 +203,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.479 -0400", hash_original_method = "95CFCAABC583EA802C704015EAFBF308", hash_generated_method = "63BBF7474C25D11B1B00FBAF88019158")
     public boolean isReplace() {
         boolean var68934A3E9455FA72420237EB05902327_1811186438 = (false);
@@ -212,6 +215,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.479 -0400", hash_original_method = "201DA8455DBB44F9D4BF017BFCDAFF9F", hash_generated_method = "3374A64876A28354F454548299E70D62")
     public boolean isCphsMwiMessage() {
         boolean var68934A3E9455FA72420237EB05902327_235353151 = (false);
@@ -282,6 +286,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.480 -0400", hash_original_method = "0F1242A5312C3945C722AC39BFD87EF2", hash_generated_method = "4A71408FA225E477BB9548BA33F34672")
     public boolean isReplyPathPresent() {
         boolean var68934A3E9455FA72420237EB05902327_1392605559 = (false);
@@ -293,6 +298,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TextEncodingDetails calculateLength(CharSequence messageBody,
             boolean use7bitOnly) {
         return BearerData.calcTextEncodingDetails(messageBody, use7bitOnly);
@@ -496,6 +502,7 @@ for(int index = 0;index < subAddrLen;index++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.484 -0400", hash_original_method = "64AD6AE28B963471C0AF85BE0E89B856", hash_generated_method = "0A17B17D92EE2A3116056BE09D5F7714")
     protected void parseSms() {
         if(mEnvelope.teleService == SmsEnvelope.TELESERVICE_MWI)        

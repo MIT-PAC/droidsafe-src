@@ -90,6 +90,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.200 -0400", hash_original_method = "1B347B27BFF7BB03486A9C3953014010", hash_generated_method = "A69F4BB3139A30AE29048B59041500BE")
     public void cmnt(char [] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -414,6 +415,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.024 -0400", hash_original_method = "3DE0561ECA4CEE2171786A759675C078", hash_generated_method = "0EA5320C8132A0FE57F18FE3130AD8BA")
     public void startElement(String uri, String localname, String qname,
 			Attributes atts) throws SAXException {

@@ -249,6 +249,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.025 -0400", hash_original_method = "A437B9342B9C9807FDB6D5AE81B79F65", hash_generated_method = "6A9D64CD6BA77DAC81C6D9C0F9073172")
     public void adjustSuggestedStreamVolume(int direction, int suggestedStreamType, int flags) {
         addTaint(flags);
@@ -272,7 +273,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.025 -0400", hash_original_method = "A5416468537A862277C3CD80415076F6", hash_generated_method = "7A68AACFCB22D5712BF15297A84118FE")
     public int getRingerMode() {
         IAudioService service = getService();
@@ -308,6 +309,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.026 -0400", hash_original_method = "87CF12BF10581D3FEA634AA8128A64C7", hash_generated_method = "570EBDC507884EF44AF11EEB271C4954")
     public int getStreamMaxVolume(int streamType) {
         addTaint(streamType);
@@ -335,6 +337,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.026 -0400", hash_original_method = "E78E6899167FF196E0675E8746CEB32F", hash_generated_method = "27F1ECE506E1F0A08F0CDAE0E4E4A382")
     public int getStreamVolume(int streamType) {
         addTaint(streamType);
@@ -390,7 +393,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.027 -0400", hash_original_method = "3C2FC6CE4E6D1CA9BA044809D37E86F6", hash_generated_method = "E59AEB05BF9579AA0892C2A61BBDD278")
     public void setRingerMode(int ringerMode) {
         addTaint(ringerMode);
@@ -442,6 +445,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.027 -0400", hash_original_method = "68979401C5E5A9876842A31A718D3CC1", hash_generated_method = "6B581214504FE38AD87EE3E6C42A7479")
     public void setStreamSolo(int streamType, boolean state) {
         addTaint(state);
@@ -464,6 +468,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.027 -0400", hash_original_method = "D5FC01CA83C5AD93EBE0673BD699E427", hash_generated_method = "30F6391D19CF3BFF0EE6A4E8E0DB2236")
     public void setStreamMute(int streamType, boolean state) {
         addTaint(state);
@@ -523,6 +528,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.028 -0400", hash_original_method = "F2CA732281E7EDA686D9C1A3A9E04423", hash_generated_method = "918496E1DFEE6C98C95826AE155878C2")
     public boolean shouldVibrate(int vibrateType) {
         addTaint(vibrateType);
@@ -550,6 +556,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.028 -0400", hash_original_method = "8D15AC5DC8AF10C8514FCDAE7CA188DE", hash_generated_method = "C7E8411C7CA73A2C4E072D5B4610A249")
     public int getVibrateSetting(int vibrateType) {
         addTaint(vibrateType);
@@ -577,7 +584,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.028 -0400", hash_original_method = "1BAA841F73A90E0BDF1DD9E6546FAE92", hash_generated_method = "584CC49EB5B17DAAB16448E74F074959")
     public void setVibrateSetting(int vibrateType, int vibrateSetting) {
         addTaint(vibrateSetting);
@@ -622,6 +629,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.029 -0400", hash_original_method = "87629A828DADB356D60EBD8A4600C927", hash_generated_method = "7E458B404245806CDCEE475E62A7CBC8")
     public boolean isSpeakerphoneOn() {
         IAudioService service = getService();
@@ -648,7 +656,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.029 -0400", hash_original_method = "AE17A85066353D3FDC3B454F62E84055", hash_generated_method = "D1757B33E81CF5677D8157BDB3B5A95B")
     public boolean isBluetoothScoAvailableOffCall() {
         boolean var9129E6DC7332618B5A13D086113FD058_1340362524 = (mContext.getResources().getBoolean(
@@ -661,6 +669,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.029 -0400", hash_original_method = "7A79304FA4E978214D78F6217FAAF967", hash_generated_method = "3A7F1183C7A3F99FAD16F15B0152F3DC")
     public void startBluetoothSco() {
         IAudioService service = getService();
@@ -681,6 +690,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.029 -0400", hash_original_method = "CADB6B26FDAB5A2B15E67AB780A2BFA8", hash_generated_method = "5018E1FDA3C1A6773C39F9CCCF7052E4")
     public void stopBluetoothSco() {
         IAudioService service = getService();
@@ -701,7 +711,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.030 -0400", hash_original_method = "606F2494E176D702B95CCB0A4567DEDE", hash_generated_method = "0ADB8A3D77413B4F11BE689DCB722030")
     public void setBluetoothScoOn(boolean on) {
         addTaint(on);
@@ -723,7 +733,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.030 -0400", hash_original_method = "F2AF5947C2E51F8D76A34ACBB4A97B98", hash_generated_method = "C33BEA438A0E876A177EA9469881970E")
     public boolean isBluetoothScoOn() {
         IAudioService service = getService();
@@ -759,6 +769,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.030 -0400", hash_original_method = "61CE342F240529F54025E3EC55BEFF02", hash_generated_method = "FFD6AEF360E86BC6EF653B3562EDD7EC")
     public boolean isBluetoothA2dpOn() {
         if(AudioSystem.getDeviceConnectionState(DEVICE_OUT_BLUETOOTH_A2DP,"")
@@ -793,6 +804,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.031 -0400", hash_original_method = "602A1375ADE38071033B07AD6C9212C8", hash_generated_method = "57E6DD45D578C7E00FE46E3F8864ED6F")
     public boolean isWiredHeadsetOn() {
         if(AudioSystem.getDeviceConnectionState(DEVICE_OUT_WIRED_HEADSET,"")
@@ -822,7 +834,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.031 -0400", hash_original_method = "5FCC6D659A56B470BF76AF68D12DD9BE", hash_generated_method = "CD038916FD77E44F30B3BA58750D9A8A")
     public void setMicrophoneMute(boolean on) {
         addTaint(on);
@@ -832,6 +844,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.031 -0400", hash_original_method = "82EFB94D4DB567BF9AF21B9F2B827F69", hash_generated_method = "E21D5BFD2AE1AF994728D132AD65C4FB")
     public boolean isMicrophoneMute() {
         boolean var641C621E451DDCF4205ADB892BE116DE_333541732 = (AudioSystem.isMicrophoneMuted());
@@ -842,6 +855,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.031 -0400", hash_original_method = "FB0F50379150B9BD346003DA9FF4B8A5", hash_generated_method = "C63016B41337F8087495D8FAA786F587")
     public void setMode(int mode) {
         addTaint(mode);
@@ -863,7 +877,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.032 -0400", hash_original_method = "F6FC0C8FF20094842E05491DBD00A26F", hash_generated_method = "E5EA1F67F64279E67793CD4FD0A0D4FB")
     public int getMode() {
         IAudioService service = getService();
@@ -914,7 +928,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.032 -0400", hash_original_method = "AF4716567EA0644FB4FB307583193A2C", hash_generated_method = "A473A58BCD2047FA36881674E2293573")
     public boolean isMusicActive() {
         boolean varE4186DB45E39EF5A172D5BF825C8F75A_45707679 = (AudioSystem.isStreamActive(STREAM_MUSIC, 0));
@@ -937,7 +951,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.032 -0400", hash_original_method = "18224FDA7DBAF634E3113700EF6FFA3D", hash_generated_method = "2EE5CEA309CDE85866695CEDE8433D8A")
     public void setParameters(String keyValuePairs) {
         addTaint(keyValuePairs.getTaint());
@@ -947,7 +961,7 @@ switch(keyCode){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.032 -0400", hash_original_method = "9B4E69B0951CD7555E74053B3F2A7F5E", hash_generated_method = "DCCBF771625A733EDAC94D8C1F5DE6D7")
     public String getParameters(String keys) {
         addTaint(keys.getTaint());
@@ -1034,6 +1048,7 @@ String var08287DC451D1CC3521112D759BA21CFC_850931796 =         AudioSystem.getPa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.033 -0400", hash_original_method = "A7E0D93492C6E9A5A55D1B76418A0B14", hash_generated_method = "0559BE889AD089256B3EC2CABAA73EED")
     public void loadSoundEffects() {
         IAudioService service = getService();
@@ -1054,6 +1069,7 @@ String var08287DC451D1CC3521112D759BA21CFC_850931796 =         AudioSystem.getPa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.033 -0400", hash_original_method = "43A5029AD1D52804D92188712F1A67B5", hash_generated_method = "B9994A39F23D3C9FB9B556BA71E4A90C")
     public void unloadSoundEffects() {
         IAudioService service = getService();

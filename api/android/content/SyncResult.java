@@ -220,6 +220,7 @@ public final class SyncResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.722 -0400", hash_original_method = "7124545C2E1A8AB9232718D7A155D522", hash_generated_method = "3D4BDE326BD042CC5DD5F40C0DC058BF")
     @Override
     public String toString() {
@@ -254,6 +255,7 @@ String var2460B846747F8B22185AD8BE722266A5_2037503970 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.725 -0400", hash_original_method = "4BAB8C537F83CAF09BA4245CA1B5A6A2", hash_generated_method = "F1240AE3D92C149AB1DCEC293F9B3444")
     public String toDebugString() {
         StringBuffer sb = new StringBuffer();
@@ -323,6 +325,7 @@ String var2460B846747F8B22185AD8BE722266A5_489761175 =         sb.toString();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.726 -0400", hash_original_field = "78B42CBC7BB00AEC88D972EE0CA8E716", hash_generated_field = "0BFBE4FA78FD3B51E53BE26F718EB099")
 
     public static final Creator<SyncResult> CREATOR = new Creator<SyncResult>() {
+        @DSModeled(DSC.SAFE)
         public SyncResult createFromParcel(Parcel in) {
             return new SyncResult(in);
         }

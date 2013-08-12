@@ -20,7 +20,7 @@ public abstract class URLStreamHandler {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     protected abstract URLConnection openConnection(URL u) throws IOException;
 
     
@@ -160,7 +160,7 @@ switch(spec.charAt(pos)){
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String relativePath(String base, String path) {
         if (path.startsWith("/")) {
             return UrlUtils.canonicalizePath(path, true);

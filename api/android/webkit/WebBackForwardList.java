@@ -36,6 +36,7 @@ public class WebBackForwardList implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.333 -0400", hash_original_method = "5230E69659F0505E7D194D2488C74C74", hash_generated_method = "59F1AC66CF7549F14667DAE5912DCD50")
     public synchronized WebHistoryItem getCurrentItem() {
 WebHistoryItem var2F460A70B42FEDF7C169E372B218C579_127847532 =         getItemAtIndex(mCurrentIndex);
@@ -57,6 +58,7 @@ WebHistoryItem var2F460A70B42FEDF7C169E372B218C579_127847532 =         getItemAt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.333 -0400", hash_original_method = "D9B5D5CD50BAA8A173683EE2BD19F40F", hash_generated_method = "81B8951AA689C266901A422AF049F1F0")
     public synchronized WebHistoryItem getItemAtIndex(int index) {
         addTaint(index);
@@ -213,6 +215,7 @@ WebBackForwardList var792FD495AAD83D144D2F19BF9BB22987_1238368654 =         l;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.335 -0400", hash_original_method = "CB94BF4CFE461E0C4E4AA1BED49D9ED0", hash_generated_method = "848B6222628DB7C6DA7EF60D17A25E36")
     synchronized void setCurrentIndex(int newIndex) {
         mCurrentIndex = newIndex;

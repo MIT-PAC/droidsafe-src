@@ -99,6 +99,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.055 -0400", hash_original_method = "1756885BA9DE2BFD3C0F236D276D29E7", hash_generated_method = "B6119B8D65B92CD937056FF8F4DDCCDC")
     protected  UDPMessageChannel(SIPTransactionStack stack,
             UDPMessageProcessor messageProcessor, DatagramPacket packet) {
@@ -369,6 +370,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.065 -0400", hash_original_method = "DCEA2882E2241B5A52F15EAA80B8F270", hash_generated_method = "809D794932CC21C98A933CAAFC45C586")
     public void processMessage(SIPMessage sipMessage) {
         addTaint(sipMessage.getTaint());
@@ -468,6 +470,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.066 -0400", hash_original_method = "148F3D833D327E61A5116C1FE99BCAC0", hash_generated_method = "016E6D1B68FB40B431353D5431004703")
     public void handleException(ParseException ex, SIPMessage sipMessage,
             Class hdrClass, String header, String message) throws ParseException {
@@ -588,6 +591,7 @@ for(MessageProcessor messageProcessor : sipStack
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.070 -0400", hash_original_method = "E29573D85212414C15B5600ED44221C0", hash_generated_method = "9745BE369FE44CAF7A5A502B2FF7805C")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
             int peerPort, boolean reConnect) throws IOException {
@@ -652,6 +656,7 @@ for(MessageProcessor messageProcessor : sipStack
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.072 -0400", hash_original_method = "38908DF8BAD797C5C3B9904DFAB1ABDF", hash_generated_method = "7A5E49801E96AECF222C89F21FFFCAF3")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
             int peerPort, String peerProtocol, boolean retry) throws IOException {

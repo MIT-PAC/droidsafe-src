@@ -121,6 +121,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.161 -0400", hash_original_method = "84C72ACE5D5A745A5633B3A38CCC072D", hash_generated_method = "1DAC1F75EE9D412FF3BD735FFD89E518")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
@@ -230,6 +231,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_499523437 =         mCursor.getString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.163 -0400", hash_original_method = "E017157A16B41C5A1732268363B588AE", hash_generated_method = "95F9075DD31CE20EC4B832F6B084231F")
     @Override
     public short getShort(int column) {
@@ -242,6 +244,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_499523437 =         mCursor.getString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.164 -0400", hash_original_method = "196BE6610F391149CB98C678C09840A9", hash_generated_method = "710582D1E91A17BA7A2AF788D2EBE19E")
     @Override
     public int getInt(int column) {
@@ -278,6 +281,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_499523437 =         mCursor.getString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.165 -0400", hash_original_method = "977D6BDEB2B1108A87BD2446DF855014", hash_generated_method = "69DD2083D9ED597DF3548BFAFBF32E5D")
     @Override
     public double getDouble(int column) {
@@ -290,6 +294,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_499523437 =         mCursor.getString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.166 -0400", hash_original_method = "EA5E8A29C1728085016D3A247FDA0EC9", hash_generated_method = "3A0405D99E93364BE044B8A1C6022F9D")
     @Override
     public int getType(int column) {

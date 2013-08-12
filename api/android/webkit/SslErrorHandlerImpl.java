@@ -103,6 +103,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.085 -0400", hash_original_method = "6F02B2C09ACF8BBAEA47573C8A17837E", hash_generated_method = "EBEAF775AC9D983FB02B3EE6A50989BF")
     synchronized boolean restoreState(Bundle inState) {
         boolean success = (inState != null);
@@ -129,7 +130,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.086 -0400", hash_original_method = "1C1564A7BC8E1B5AD415E60E6B0CBA09", hash_generated_method = "5E67DCC1BF128A2422A3A2FE824DEC86")
     synchronized void clear() {
         mSslPrefTable.clear();
@@ -138,6 +139,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.087 -0400", hash_original_method = "C8D7B9DA233B276F8D5E9642BE0FE843", hash_generated_method = "AEA7DA25B1C8A43E2B79C774457AE9FB")
     synchronized void handleSslErrorRequest(LoadListener loader) {
         addTaint(loader.getTaint());
@@ -288,6 +290,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.092 -0400", hash_original_method = "5796F22078D6113D133FA1EE0019F75A", hash_generated_method = "F66E3BECF9A78C0EF81DAAA57486DF99")
     synchronized void handleSslErrorResponse(LoadListener loader,
             SslError error, boolean proceed) {

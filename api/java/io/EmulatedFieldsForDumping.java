@@ -80,6 +80,7 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1496459106 =         emulated
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.699 -0400", hash_original_method = "63AD54FC39DDE8BE3BBE5131906AC91A", hash_generated_method = "12C86744459D68CD5AB591052AF540A2")
     @Override
     public void put(String name, int value) {
@@ -91,6 +92,7 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1496459106 =         emulated
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.699 -0400", hash_original_method = "7C91E467656A70134D915DC378A85E85", hash_generated_method = "EAD52746A21E7CA1B444C098DC2BAA16")
     @Override
     public void put(String name, long value) {

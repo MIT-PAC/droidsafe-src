@@ -31,6 +31,7 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
 
     ASN1Encodable form;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.541 -0400", hash_original_method = "BBF050FF37EED8F05F0CD887F679CFE4", hash_generated_method = "8F764C03AD36B828C9A7285A3E1B5206")
     public  AttributeCertificateIssuer(AttCertIssuer issuer) {
         form = issuer.getIssuer();
@@ -39,6 +40,7 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.542 -0400", hash_original_method = "D6A3C71D8C78168F005DD976BB9D460A", hash_generated_method = "C24B960C0D07622B82E720E4F5D99D83")
     public  AttributeCertificateIssuer(X500Principal principal) throws IOException {
         this(new X509Principal(principal.getEncoded()));
@@ -94,6 +96,7 @@ Object[] var6C26F6EC1F7A67F950053C95FE24CCE6_993389672 =         l.toArray(new O
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.544 -0400", hash_original_method = "3DFD2537FFB449B5321668C577E5D216", hash_generated_method = "F3E76D004975A4880378881519A8C4B1")
     public Principal[] getPrincipals() {
         Object[] p = this.getNames();
@@ -173,7 +176,7 @@ for(int i = 0;i != names.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.546 -0400", hash_original_method = "3AF2A857F3C742FB55D3884093F02C4D", hash_generated_method = "F8A4FFB8B9ACA8B145EBAFEAC2E25074")
     public Object clone() {
 Object varDACB60B4A9E3539334B4EC7C8A572E76_1893228147 =         new AttributeCertificateIssuer(AttCertIssuer.getInstance(form));
@@ -184,6 +187,7 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1893228147 =         new AttributeCer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.547 -0400", hash_original_method = "743F0CF49EF8F89EFC9B72FE9124B1C1", hash_generated_method = "C72762E3DF1EB7DAA9055A6BB5483444")
     public boolean match(Certificate cert) {
         addTaint(cert.getTaint());
@@ -230,7 +234,7 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1893228147 =         new AttributeCer
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.548 -0400", hash_original_method = "F6888345D31D77DF02A0F426A3C9D5A0", hash_generated_method = "787ED14296DD4D56455C84BF19687BFE")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -264,7 +268,7 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1893228147 =         new AttributeCer
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.549 -0400", hash_original_method = "0B7A1B2982787E7750666F5D71BB8845", hash_generated_method = "95CE252A6AA1BEF066951B9A6A44C1AB")
     public int hashCode() {
         int var2B374B3BF0704C747879C70CC6564E97_1069490562 = (this.form.hashCode());
@@ -275,7 +279,7 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1893228147 =         new AttributeCer
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.549 -0400", hash_original_method = "A87301CDB1806806ACAD029929062C9D", hash_generated_method = "03C001172413F9A7BABF49E1BC6F263E")
     public boolean match(Object obj) {
         addTaint(obj.getTaint());

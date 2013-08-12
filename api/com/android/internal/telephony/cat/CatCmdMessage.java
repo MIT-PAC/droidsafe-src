@@ -171,6 +171,7 @@ switch(getCmdType()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.710 -0400", hash_original_method = "440B4EFDAC51D17D5534873190E2CFC2", hash_generated_method = "7E3222CB08FF8D8EF561BE4C46ED6BA8")
     public AppInterface.CommandType getCmdType() {
 AppInterface.CommandType varA683FB7A9A13DB88A682BED484FDB4AC_1633541134 =         AppInterface.CommandType.fromInt(mCmdDet.typeOfCommand);

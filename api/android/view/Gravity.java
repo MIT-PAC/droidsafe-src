@@ -23,7 +23,7 @@ public class Gravity {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void apply(int gravity, int w, int h, Rect container,
             Rect outRect, int layoutDirection) {
         int absGravity = getAbsoluteGravity(gravity, layoutDirection);

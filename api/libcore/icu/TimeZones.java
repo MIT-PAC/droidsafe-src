@@ -23,6 +23,7 @@ public final class TimeZones {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getDisplayName(String[][] zoneStrings, String id, boolean daylight, int style) {
         String[] needle = new String[] { id };
         int index = Arrays.binarySearch(zoneStrings, needle, ZONE_STRINGS_COMPARATOR);
@@ -38,6 +39,7 @@ public final class TimeZones {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[][] getZoneStrings(Locale locale) {
         if (locale == null) {
             locale = Locale.getDefault();
@@ -46,6 +48,7 @@ public final class TimeZones {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] forLocale(Locale locale) {
         return forCountryCode(locale.getCountry());
     }
@@ -70,6 +73,7 @@ public final class TimeZones {
 
         private final HashMap<String, String> internTable = new HashMap<String, String>();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.903 -0400", hash_original_method = "8CBB117BE999E006B1D5CB712A559541", hash_generated_method = "5B341770CB1D4B88A6CBDF9D4F397CBB")
         public  ZoneStringsCache() {
             super(availableTimeZones.length);
@@ -77,6 +81,7 @@ public final class TimeZones {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.903 -0400", hash_original_method = "6F2D0ECC0E2349A3B7CCB8E5434A3F26", hash_generated_method = "D45BF04BD3E56808F8598B8319932A95")
         @Override
         protected String[][] create(Locale locale) {
@@ -182,6 +187,7 @@ for(int j = 1;j < NAME_COUNT;++j)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.765 -0400", hash_original_field = "F3D1D931D6D8ABAB0784456286AA6490", hash_generated_field = "20A59513D44FA082881D368B3B779D6D")
 
     private static final Comparator<String[]> ZONE_STRINGS_COMPARATOR = new Comparator<String[]>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.765 -0400", hash_original_method = "78D6A50B25B700B049CBB3B10CFB6A69", hash_generated_method = "BB7DD2368C24C50BAD92DE238733B79C")
         public int compare(String[] lhs, String[] rhs) {
             int var42A7CE75D9634A77D0F9C98CADB948CE_1083735524 = (lhs[OLSON_NAME].compareTo(rhs[OLSON_NAME]));

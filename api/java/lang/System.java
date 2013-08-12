@@ -38,16 +38,19 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setIn(InputStream newIn) {
         setFieldImpl("in", "Ljava/io/InputStream;", newIn);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setOut(PrintStream newOut) {
         setFieldImpl("out", "Ljava/io/PrintStream;", newOut);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setErr(PrintStream newErr) {
         setFieldImpl("err", "Ljava/io/PrintStream;", newErr);
     }
@@ -72,7 +75,7 @@ public final class System {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void exit(int code) {
         Runtime.getRuntime().exit(code);
     }
@@ -83,7 +86,7 @@ public final class System {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String getenv(String name) {
         return getenv(name, null);
     }
@@ -105,7 +108,7 @@ public final class System {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Map<String, String> getenv() {
         Map<String, String> map = new HashMap<String, String>();
         for (String entry : Libcore.os.environ()) {
@@ -221,6 +224,7 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String clearProperty(String key) {
         if (key == null) {
             throw new NullPointerException();
@@ -273,25 +277,25 @@ public final class System {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void logE(String message, Throwable th) {
         log('E', message, th);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void logI(String message) {
         log('I', message, null);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void logI(String message, Throwable th) {
         log('I', message, th);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void logW(String message) {
         log('W', message, null);
     }
@@ -326,6 +330,7 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setSecurityManager(SecurityManager sm) {
         if (sm != null) {
             throw new SecurityException();
@@ -351,6 +356,7 @@ public final class System {
 
         private Map<String, String> map;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.367 -0400", hash_original_method = "B0FD4399CD935BEF9930B0D70FEAF52A", hash_generated_method = "47274EE90A9CC35993F9EE134C77826B")
         public  SystemEnvironment(Map<String, String> map) {
             this.map = Collections.unmodifiableMap(map);
@@ -370,6 +376,7 @@ Set<Entry<String, String>> varD70A818A9C24919C79B0A6854ED78BA4_1539859050 =     
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.368 -0400", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "9EA576DF77B5F403983F2A3522D88874")
         @Override
         public String get(Object key) {
@@ -382,6 +389,7 @@ String var97F01DF1234C7D523320BD81BC314B44_892000716 =             map.get(toNon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.368 -0400", hash_original_method = "5AA47FBF2138F3E35206A54E79436C96", hash_generated_method = "AC1801FF8035667CC08DE19F55467BF9")
         @Override
         public boolean containsKey(Object key) {
@@ -394,6 +402,7 @@ String var97F01DF1234C7D523320BD81BC314B44_892000716 =             map.get(toNon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.368 -0400", hash_original_method = "CC6AE6A57D73BE839427BC40B3BC71D9", hash_generated_method = "359C8666DD89FF26F82DA8A5896686CF")
         @Override
         public boolean containsValue(Object value) {

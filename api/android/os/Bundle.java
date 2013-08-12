@@ -200,6 +200,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public Object clone(){
 		return new Bundle(this);
 		// Original method
@@ -242,6 +243,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int size(){
 		return getTaintInt();
 		// Original method
@@ -281,6 +283,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean containsKey(String key){
 		return getTaintBoolean();
 		// Original method
@@ -317,6 +320,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putAll(Bundle map){
 		addTaint(map.getTaint());
 		// Original method
@@ -333,6 +337,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Set<String> keySet(){
 		Set<String> keys = new HashSet<String>();
 		keys.addTaint(getTaint());
@@ -347,6 +352,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean hasFileDescriptors(){
 		return getTaintBoolean();
 		// Original method
@@ -354,6 +360,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putBoolean(String key, boolean value){
 		mKey = key;
 		addTaint(value);
@@ -382,6 +389,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putChar(String key, char value){
 		mKey = key;
 		addTaint(value);
@@ -410,6 +418,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putInt(String key, int value){
 		mKey = key;
 		addTaint(value);
@@ -424,6 +433,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putLong(String key, long value){
 		mKey = key;
 		addTaint(value);
@@ -452,6 +462,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putDouble(String key, double value){
 		mKey = key;
 		mValueDouble = value; //DSFIXME:  Temporary fix (see below)
@@ -482,6 +493,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putCharSequence(String key, CharSequence value){
 		mKey = key;
 		mValueCharSequence = value;
@@ -496,6 +508,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putParcelable(String key, Parcelable value){
 		mKey = key;
 		mValueParcelable = value;
@@ -542,6 +555,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putSparseParcelableArray(String key,
             SparseArray<? extends Parcelable> value){
 		mKey = key;
@@ -558,6 +572,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putIntegerArrayList(String key, ArrayList<Integer> value){
 		mKey = key;
 		mValueArrayList = value;
@@ -586,6 +601,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putCharSequenceArrayList(String key, ArrayList<CharSequence> value){
 		mKey = key;
 		mValueCharSequenceArrayList = value;
@@ -615,6 +631,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putBooleanArray(String key, boolean[] value){
 		mKey = key;
 		mValueBooleanArray = value;
@@ -685,6 +702,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putLongArray(String key, long[] value){
 		mKey = key;
 		mValueLongArray = value;
@@ -713,6 +731,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putDoubleArray(String key, double[] value){
 		mKey = key;
 		mValueDoubleArray = value;
@@ -741,6 +760,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putCharSequenceArray(String key, CharSequence[] value){
 		mKey = key;
 		mValueCharSequenceArray = value;
@@ -755,6 +775,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void putBundle(String key, Bundle value){
 		mKey = key;
 		mValueBundle = value;
@@ -784,6 +805,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean getBoolean(String key){
 		return getTaintBoolean();
 		// Original method
@@ -833,6 +855,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean getBoolean(String key, boolean defaultValue){
 		return getTaintBoolean();
 		// Original method
@@ -854,6 +877,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public byte getByte(String key){
 		return getTaintByte();
 		// Original method
@@ -866,6 +890,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Byte getByte(String key, byte defaultValue){
 		return getTaintByte();
 		// Original method
@@ -887,6 +912,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public char getChar(String key){
 		return getTaintChar();
 		// Original method
@@ -899,6 +925,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public char getChar(String key, char defaultValue){
 		return getTaintChar();
 		// Original method
@@ -920,6 +947,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public short getShort(String key){
 		return getTaintShort();
 		// Original method
@@ -932,6 +960,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public short getShort(String key, short defaultValue){
 		return getTaintShort();
 		// Original method
@@ -953,6 +982,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getInt(String key){
 		return getTaintInt();
 		// Original method
@@ -965,6 +995,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getInt(String key, int defaultValue){
 		return getTaintInt();
 		// Original method
@@ -986,6 +1017,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public long getLong(String key){
 		return getTaintInt();
 		// Original method
@@ -998,6 +1030,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public long getLong(String key, long defaultValue){
 		return getTaintInt();
 		// Original method
@@ -1019,6 +1052,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getFloat(String key){
 		return getTaintFloat();
 		// Original method
@@ -1031,6 +1065,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getFloat(String key, float defaultValue){
 		return getTaintFloat();
 		// Original method
@@ -1052,6 +1087,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public double getDouble(String key){
 		return getTaintFloat();
 		// Original method
@@ -1064,6 +1100,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public double getDouble(String key, double defaultValue){
 		return getTaintFloat();
 		// Original method
@@ -1085,6 +1122,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String getString(String key){
 		return mValueString;
 		// Original method
@@ -1106,6 +1144,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String getString(String key, String defaultValue){
 		return mValueString;
 		// Original method
@@ -1127,6 +1166,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CharSequence getCharSequence(String key){
 		return mValueCharSequence;
 		// Original method
@@ -1148,6 +1188,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CharSequence getCharSequence(String key, CharSequence defaultValue){
 		return mValueCharSequence;
 		// Original method
@@ -1212,6 +1253,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Parcelable[] getParcelableArray(String key){
 		return mValueParcelableArray;
 		// Original method
@@ -1233,6 +1275,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public <T extends Parcelable> ArrayList<T> getParcelableArrayList(String key) {
         return (ArrayList<T>) mValueParcelableArrayList;
 		// Original method
@@ -1296,6 +1339,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ArrayList<Integer> getIntegerArrayList(String key) {
 		return mValueArrayList;
 		// Original method
@@ -1317,6 +1361,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ArrayList<String> getStringArrayList(String key){
 		return mValueStringArrayList;
 		// Original method
@@ -1338,6 +1383,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ArrayList<CharSequence> getCharSequenceArrayList(String key){
 		return mValueCharSequenceArrayList;
 		// Original method
@@ -1359,6 +1405,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean[] getBooleanArray(String key){
 		return mValueBooleanArray;
 		// Original method
@@ -1380,6 +1427,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public byte[] getByteArray(String key){
 		return mValueByteArray;
 		// Original method
@@ -1401,6 +1449,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public short[] getShortArray(String key){
 		return mValueShortArray;
 		// Original method
@@ -1422,6 +1471,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public char[] getCharArray(String key){
 		return mValueCharArray;
 		// Original method
@@ -1464,6 +1514,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public long[] getLongArray(String key){
 		return mValueLongArray;
 		// Original method
@@ -1485,6 +1536,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float[] getFloatArray(String key){
 		return mValueFloatArray;
 		// Original method
@@ -1527,6 +1579,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String[] getStringArray(String key){
 		return mValueStringArray;
 		// Original method
@@ -1548,6 +1601,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CharSequence[] getCharSequenceArray(String key){
 		return mValueCharSequenceArray;
 		// Original method
@@ -1591,6 +1645,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int describeContents(){
 		return getTaintInt();
 		// Original method
@@ -1656,6 +1711,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public synchronized String toString(){
         String str = new String();
         str.addTaint(getTaint());

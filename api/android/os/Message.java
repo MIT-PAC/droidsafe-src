@@ -256,6 +256,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String toString(){
 		// Original method
 		/*
@@ -267,6 +268,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     String toString(long now){
 		// Original method
 		/*
@@ -308,6 +310,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel dest, int flags){
 		// Original method
 		/*
@@ -369,6 +372,7 @@ public final class Message implements Parcelable {
     private static final int MAX_POOL_SIZE = 10;
     public static final Parcelable.Creator<Message> CREATOR
             = new Parcelable.Creator<Message>() {
+        @DSModeled(DSC.SAFE)
         public Message createFromParcel(Parcel source) {
             Message msg = Message.obtain();
             msg.readFromParcel(source);

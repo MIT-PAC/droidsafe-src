@@ -133,6 +133,7 @@ for(int i = 0;i < oid.length && i < 4;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String toString(int[] oid) {
         StringBuilder sb = new StringBuilder(3 * oid.length);
         for (int i = 0; i < oid.length - 1; ++i) {

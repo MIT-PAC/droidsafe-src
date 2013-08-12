@@ -61,6 +61,7 @@ public final class BluetoothHealth implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.368 -0400", hash_original_method = "03B44160021EEDDFCC6AB190DB37D972", hash_generated_method = "1A2B3CAC6B8A9AB6AA216EC384B406DD")
     public boolean registerSinkAppConfiguration(String name, int dataType,
             BluetoothHealthCallback callback) {
@@ -132,6 +133,7 @@ public final class BluetoothHealth implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.374 -0400", hash_original_method = "5D40895745D5003C2A110228B091A7E7", hash_generated_method = "522760DF396AB6BFC168C75505F02401")
     public boolean unregisterAppConfiguration(BluetoothHealthAppConfiguration config) {
         addTaint(config.getTaint());
@@ -170,6 +172,7 @@ public final class BluetoothHealth implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.385 -0400", hash_original_method = "4C5652381F40D80F378A67E94EAAA0B6", hash_generated_method = "9BCB6D136F67287DA146E687497DA488")
     public boolean connectChannelToSource(BluetoothDevice device,
             BluetoothHealthAppConfiguration config) {
@@ -256,6 +259,7 @@ public final class BluetoothHealth implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.396 -0400", hash_original_method = "8C34D08E0EC2B4EB680B1ECA4FAF1C1B", hash_generated_method = "0BA6B4F46F7CC4EAD7CBE2E10DED1517")
     public boolean disconnectChannel(BluetoothDevice device,
             BluetoothHealthAppConfiguration config, int channelId) {
@@ -299,6 +303,7 @@ public final class BluetoothHealth implements BluetoothProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.397 -0400", hash_original_method = "56EA1CE9CB56305F9C3F6804737421F5", hash_generated_method = "19C55E7BFA3BECB403148A8960D98955")
     public ParcelFileDescriptor getMainChannelFd(BluetoothDevice device,
             BluetoothHealthAppConfiguration config) {

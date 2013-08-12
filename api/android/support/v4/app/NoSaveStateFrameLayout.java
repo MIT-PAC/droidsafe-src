@@ -22,7 +22,7 @@ class NoSaveStateFrameLayout extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static ViewGroup wrap(View child) {
         NoSaveStateFrameLayout wrapper = new NoSaveStateFrameLayout(child.getContext());
         ViewGroup.LayoutParams childParams = child.getLayoutParams();
@@ -47,6 +47,7 @@ class NoSaveStateFrameLayout extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.701 -0400", hash_original_method = "3B9D7DC916535DA1F64238687579C1A4", hash_generated_method = "049C55C9929D94261AAC15AFD146322A")
     @Override
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {

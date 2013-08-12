@@ -141,6 +141,7 @@ public final class SmsBroadcastConfigInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.692 -0400", hash_original_method = "7023ED8B006DA79CC4837559B31EDFCC", hash_generated_method = "E6648AD9AE7EE5C62A2F085E77EAD875")
     @Override
     public String toString() {

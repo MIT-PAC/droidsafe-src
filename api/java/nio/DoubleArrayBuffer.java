@@ -15,6 +15,7 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
 
     protected int offset;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.554 -0400", hash_original_method = "3F3E4A2A5ABE550DAD549AD9F5CD19DE", hash_generated_method = "A2E232E5A375C8A84AC787A356B04DA3")
       DoubleArrayBuffer(double[] array) {
         this(array.length, array, 0);
@@ -43,6 +44,7 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.556 -0400", hash_original_method = "CBBA623098702DBD3F5C6B97B033DEBD", hash_generated_method = "223BE1B4F4E9B6E5329544F4BFA18C5F")
     @Override
     public final double get() {
@@ -63,6 +65,7 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.556 -0400", hash_original_method = "0637023D2B498B1330CE2AA53BD56A5A", hash_generated_method = "A2C9005164CA67FE46CD65B522692928")
     @Override
     public final double get(int index) {
@@ -77,6 +80,7 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.557 -0400", hash_original_method = "DBA28E4E7AFB8E492F1C52FCFBB2DA2D", hash_generated_method = "54FF410BAFC7A3C5D08C807102DADDC7")
     @Override
     public final DoubleBuffer get(double[] dst, int dstOffset, int doubleCount) {
@@ -116,6 +120,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_185333783 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.558 -0400", hash_original_method = "A08DEC6C777D2C1D29E23F2F39FEA4AD", hash_generated_method = "9CCCB7DC6ABF90F8E4308BDF4C496C68")
     @Override
     public final ByteOrder order() {

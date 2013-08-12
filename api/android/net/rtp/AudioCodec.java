@@ -31,6 +31,7 @@ public class AudioCodec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AudioCodec[] getCodecs() {
         return Arrays.copyOf(sCodecs, sCodecs.length);
     }

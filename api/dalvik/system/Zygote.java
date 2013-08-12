@@ -53,7 +53,7 @@ public class Zygote {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static int nativeFork() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -129,7 +129,7 @@ public class Zygote {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static void nativeExecShell(String command) {
     }
 

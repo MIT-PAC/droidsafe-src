@@ -42,6 +42,7 @@ public class MatrixCursor extends AbstractCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.989 -0400", hash_original_method = "520E9D572328080C8A52E1417D8346F4", hash_generated_method = "3BF546AA863074DA52C5D1E020F748F0")
     public  MatrixCursor(String[] columnNames) {
         this(columnNames, 16);
@@ -91,6 +92,7 @@ Object varCE665E50DCCC5F5ACA9B01B763AFAADC_991636679 =         data[mPos * colum
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.991 -0400", hash_original_method = "4585CF8720D3AF6A9C9A961267CD63E3", hash_generated_method = "04A7A1ACEB109A6CAE2BD43BE1DBE880")
     public RowBuilder newRow() {
         rowCount++;
@@ -277,6 +279,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1947735117 =         columnNames;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.996 -0400", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "5629E62E50084D23C2A3015CCFA75B45")
     @Override
     public String getString(int column) {
@@ -298,6 +301,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.997 -0400", hash_original_method = "60FD43E3A8DF3780BF7590D38393B65C", hash_generated_method = "E233E0D6A1853BCE0862CE9905C0F968")
     @Override
     public short getShort(int column) {
@@ -326,6 +330,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.998 -0400", hash_original_method = "20798CD66C6EBCBDA86BE86A1F5C23AA", hash_generated_method = "459FF9A23DD47D237788A579C38CC58D")
     @Override
     public int getInt(int column) {
@@ -354,6 +359,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.999 -0400", hash_original_method = "95E2F837C77BDD8697A8850547DFE4D6", hash_generated_method = "D183A6E6E60437AD70C98395D60A62E5")
     @Override
     public long getLong(int column) {
@@ -382,6 +388,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.000 -0400", hash_original_method = "5F37DCAACCAC42556DC41D90A8D016BB", hash_generated_method = "CCCD7A15D9979EAF9959A7474064113B")
     @Override
     public float getFloat(int column) {
@@ -410,6 +417,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.000 -0400", hash_original_method = "C2298AFC87949D13E5DEC28EBEE5D1A6", hash_generated_method = "FA5D3970491A3FE2D7660C8D590372CB")
     @Override
     public double getDouble(int column) {
@@ -438,6 +446,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.001 -0400", hash_original_method = "9C5D46FB06759EAD0808F8E5E3B27C37", hash_generated_method = "428C7BB70321A2FDC0CA4A72116D776E")
     @Override
     public byte[] getBlob(int column) {
@@ -452,6 +461,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.001 -0400", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "FC99E32A236840F3B757B02BE02707F5")
     @Override
     public int getType(int column) {
@@ -484,6 +494,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
 
         private int endIndex;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.003 -0400", hash_original_method = "5B64B028890135457EF6EA7D7258F6D8", hash_generated_method = "3724B9270867611742E22D9949DEFAE1")
           RowBuilder(int index, int endIndex) {
             this.index = index;
@@ -494,6 +505,7 @@ String var066A638514F2DD1476BFFD2A1D516E60_725935876 =         value.toString();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.004 -0400", hash_original_method = "2C7305D6C3442E9FCBF185523D5AEB72", hash_generated_method = "272EEDF7FF07C7C5122CDFE82A354B19")
         public RowBuilder add(Object columnValue) {
             if(index == endIndex)            

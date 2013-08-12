@@ -121,7 +121,7 @@ public class ZoomControls extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.412 -0400", hash_original_method = "9BED0A47A1FCF93930F77C8CDDC09D0D", hash_generated_method = "1E5CB067E3CEB98E43F612AE3706CF55")
     private void fade(int visibility, float startAlpha, float endAlpha) {
         addTaint(endAlpha);

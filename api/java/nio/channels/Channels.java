@@ -40,6 +40,7 @@ public final class Channels {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ReadableByteChannel newChannel(InputStream inputStream) {
         return new InputStreamChannel(inputStream);
     }
@@ -57,6 +58,7 @@ public final class Channels {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Reader newReader(ReadableByteChannel channel,
             String charsetName) {
         if (charsetName == null) {
@@ -73,6 +75,7 @@ public final class Channels {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Writer newWriter(WritableByteChannel channel,
             String charsetName) {
         if (charsetName == null) {
@@ -95,6 +98,7 @@ public final class Channels {
 
         private ReadableByteChannel channel;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.133 -0400", hash_original_method = "80B02113EE3067DF952BBE67BFAA654C", hash_generated_method = "21C6821F96D8584F022E5D784453F00F")
           ChannelInputStream(ReadableByteChannel channel) {
             if(channel == null)            
@@ -112,6 +116,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.133 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "7381F115258A431FE75CB8A335779D4F")
         @Override
         public synchronized int read() throws IOException {
@@ -123,6 +128,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.134 -0400", hash_original_method = "1AE7B72C96392B3D0D4F989CF18659AC", hash_generated_method = "6515E5C4BE07BCA9B429912D88F691E2")
         @Override
         public synchronized int read(byte[] target, int offset, int length) throws IOException {
@@ -141,6 +147,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.134 -0400", hash_original_method = "8AF6429D1717D8D7E12FE07FE6FDB12A", hash_generated_method = "17A9E2AD3428BF9C084803EC8335BEAD")
         @Override
         public int available() throws IOException {
@@ -187,6 +194,7 @@ public final class Channels {
 
         private WritableByteChannel channel;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.135 -0400", hash_original_method = "1089F5ED21B35830343C54EE52895DB5", hash_generated_method = "16C5657581E860E4AD03240A0877E313")
           ChannelOutputStream(WritableByteChannel channel) {
             if(channel == null)            
@@ -204,6 +212,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.136 -0400", hash_original_method = "976097BC4C10B6759034E4B1EDA42187", hash_generated_method = "4C606B80DE4DA46CEAB43170781F703F")
         @Override
         public synchronized void write(int oneByte) throws IOException {
@@ -216,6 +225,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.136 -0400", hash_original_method = "BF3010B4A99B9EE523BF774883EC19AF", hash_generated_method = "1DAB1B9D53D8EE1B976286C1C07E48AE")
         @Override
         public synchronized void write(byte[] source, int offset, int length) throws IOException {
@@ -258,6 +268,7 @@ public final class Channels {
 
         private InputStream inputStream;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.137 -0400", hash_original_method = "A25A8E5B09A21DDDF92BB065F8D65F54", hash_generated_method = "9FFAA49C1B856070E26C9E747CBFD297")
           InputStreamChannel(InputStream inputStream) {
             if(inputStream == null)            
@@ -275,6 +286,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.138 -0400", hash_original_method = "34EE1F263C45AAE8882B54B20392574C", hash_generated_method = "FECF5BF319814906AC88D51D1A72703E")
         public synchronized int read(ByteBuffer target) throws IOException {
             addTaint(target.getTaint());
@@ -323,6 +335,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.138 -0400", hash_original_method = "1AEDCC092312326A1B846FAEB331BDCE", hash_generated_method = "9DAE26C6AEABA35FBD27E342B3905BDD")
         @Override
         protected void implCloseChannel() throws IOException {
@@ -341,6 +354,7 @@ public final class Channels {
 
         private OutputStream outputStream;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.139 -0400", hash_original_method = "E7CFE65BD19B3A8BD37EE9992015F72E", hash_generated_method = "64C29076C503C82C34902C7B775E41CE")
           OutputStreamChannel(OutputStream outputStream) {
             if(outputStream == null)            
@@ -358,6 +372,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.139 -0400", hash_original_method = "F8CFBFA38C000301E03B217F2F97CA8F", hash_generated_method = "4989C022B2FE43C09D64A4FAB3B3531A")
         public synchronized int write(ByteBuffer source) throws IOException {
             addTaint(source.getTaint());
@@ -408,6 +423,7 @@ public final class Channels {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.140 -0400", hash_original_method = "E7378E9CB2C67269427FA20438587EF6", hash_generated_method = "7C4C50F1CA9FCCC92A8A392AB23C46A3")
         @Override
         protected void implCloseChannel() throws IOException {

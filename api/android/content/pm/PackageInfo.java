@@ -109,7 +109,7 @@ public class PackageInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.205 -0400", hash_original_method = "F32D243E2D05219891E68C55116B54A4", hash_generated_method = "447E8123FBD08FFF4A018CF82E5E0DF1")
     public String toString() {
 String var9D4D38907310CF3324EC3BF27408EE69_58181118 =         "PackageInfo{"
@@ -189,6 +189,7 @@ String var9D4D38907310CF3324EC3BF27408EE69_58181118 =         "PackageInfo{"
 
     public static final Parcelable.Creator<PackageInfo> CREATOR
             = new Parcelable.Creator<PackageInfo>() {
+        @DSModeled(DSC.SAFE)
         public PackageInfo createFromParcel(Parcel source) {
             return new PackageInfo(source);
         }

@@ -9,6 +9,7 @@ import droidsafe.annotations.*;
 
 public class Modifier {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.139 -0400", hash_original_method = "E43AF8EB2B9E0BF3650B46095E57E1B5", hash_generated_method = "5DB3FAFCCB5E5D8BE953CABAA657E0F9")
     public  Modifier() {
         // ---------- Original Method ----------
@@ -117,6 +118,7 @@ public class Modifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static java.lang.String toString(int modifiers) {
         StringBuilder buf = new StringBuilder();
         if (isPublic(modifiers)) {

@@ -34,6 +34,7 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.234 -0400", hash_original_method = "33DD110D68F95CA8E21FED144538609A", hash_generated_method = "E944BF832C2DF92D34AB46AB05D34DA0")
     public T acquire() {
         synchronized

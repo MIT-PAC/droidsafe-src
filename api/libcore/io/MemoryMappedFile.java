@@ -22,6 +22,7 @@ public final class MemoryMappedFile implements AutoCloseable {
 
     private long size;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.641 -0400", hash_original_method = "DB7FD4AAB3D9EFEAFD8D0DCEC168BCAA", hash_generated_method = "91C9353EEAEA7638DF5FBFD8454CF94B")
     public  MemoryMappedFile(long address, long size) {
         this.address = address;
@@ -32,6 +33,7 @@ public final class MemoryMappedFile implements AutoCloseable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MemoryMappedFile mmapRO(String path) throws ErrnoException {
         FileDescriptor fd = Libcore.os.open(path, O_RDONLY, 0);
         long size = Libcore.os.fstat(fd).st_size;
@@ -41,6 +43,7 @@ public final class MemoryMappedFile implements AutoCloseable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.641 -0400", hash_original_method = "306B75FBBEB2593BE41A1551019979E1", hash_generated_method = "E02BB407DCCB37CF3FE71FF4852CBF31")
     public synchronized void close() throws ErrnoException {
         if(address != 0)        
@@ -56,6 +59,7 @@ public final class MemoryMappedFile implements AutoCloseable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.642 -0400", hash_original_method = "F5E87BA491C8F9D5AD5FD041B46AF87F", hash_generated_method = "12441DE4C92F62DF447D60D13BE8A08B")
     public BufferIterator bigEndianIterator() {
 BufferIterator varB4EC9D0E062809A0704546019BCC988B_279174044 =         new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);

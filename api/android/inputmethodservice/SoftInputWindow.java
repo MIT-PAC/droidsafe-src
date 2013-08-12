@@ -35,6 +35,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.722 -0400", hash_original_method = "DE19D8588D226C63B985BFE529D19F5B", hash_generated_method = "3DD77546C15F9DBFED14065D727E6BCF")
     public void setToken(IBinder token) {
         addTaint(token.getTaint());
@@ -61,6 +62,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.724 -0400", hash_original_method = "6F026F4BC5B101183B4B9B4DF989B709", hash_generated_method = "506BA68DD68B2C5F873965BAD39A22B1")
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -98,6 +100,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.726 -0400", hash_original_method = "9B0D08AECE95E0C5A74220E56FAF5BBC", hash_generated_method = "EFCB2AF638FF2BBADDA5D21DE70E61A9")
     public int getSize() {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
@@ -123,6 +126,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.728 -0400", hash_original_method = "32B4C6FEAFD2BF15DEEB55504FF34518", hash_generated_method = "4519B4F621BAE688C57F4986952285B9")
     public void setSize(int size) {
         addTaint(size);
@@ -151,6 +155,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.730 -0400", hash_original_method = "E3269318E29BDA61BD7E82E14CD77997", hash_generated_method = "9E19C0A9422BE2C41D9C8B53D72561B4")
     public void setGravity(int gravity) {
         addTaint(gravity);

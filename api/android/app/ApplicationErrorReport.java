@@ -608,6 +608,7 @@ switch(type){
 
     public static final Parcelable.Creator<ApplicationErrorReport> CREATOR
             = new Parcelable.Creator<ApplicationErrorReport>() {
+        @DSModeled(DSC.SAFE)
         public ApplicationErrorReport createFromParcel(Parcel source) {
             return new ApplicationErrorReport(source);
         }

@@ -33,6 +33,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void parse(String xml, ContentHandler contentHandler) throws SAXException {
         try {
             XMLReader reader = new ExpatReader();
@@ -44,6 +45,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void parse(Reader in, ContentHandler contentHandler) throws IOException, SAXException {
         XMLReader reader = new ExpatReader();
         reader.setContentHandler(contentHandler);

@@ -14,6 +14,7 @@ public class DERExternalParser implements DEREncodable, InMemoryRepresentable {
 
     private ASN1StreamParser _parser;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.239 -0400", hash_original_method = "57CF5022A9E21A477DCDCEAF7C51B0D4", hash_generated_method = "7EDCED9947F31976FEF2A31F5A0A78AE")
     public  DERExternalParser(ASN1StreamParser parser) {
         this._parser = parser;
@@ -22,6 +23,7 @@ public class DERExternalParser implements DEREncodable, InMemoryRepresentable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.240 -0400", hash_original_method = "C77FFAC7A6753577CB275ABB55D17A64", hash_generated_method = "71399FC874B3E47CE077CFDDAE748A44")
     public DEREncodable readObject() throws IOException {
 DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_635418125 =         _parser.readObject();
@@ -32,7 +34,7 @@ DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_635418125 =         _parser.rea
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.240 -0400", hash_original_method = "E08AB982B1429E7FF32DFAFFCE3445B5", hash_generated_method = "63D85F3DDFF7989698DE295CC23BAF47")
     public DERObject getLoadedObject() throws IOException {
         try 
@@ -59,6 +61,7 @@ DERObject varD972B7683CF111A6F634D8311D8A2756_720291731 =             new DERExt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.241 -0400", hash_original_method = "E8FC5EC09DAB37CBF457EC44DD373FAE", hash_generated_method = "28CF12EAEADEC7A937FFC510C7135B9D")
     public DERObject getDERObject() {
         try 

@@ -43,7 +43,7 @@ File var3159B9DA1820FE9B195E6E0FE8FEB2CB_1812383174 =         mBaseName;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.451 -0400", hash_original_method = "3A4012A9534B3FE136043C6A101CE434", hash_generated_method = "43C5D4744462D7456B5BC64534BEE23A")
     public FileOutputStream startWrite() throws IOException {
         if(mBaseName.exists())        
@@ -154,6 +154,7 @@ FileOutputStream var061B89662D09DE43FE2A2D88636258A2_1421759444 =         str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.452 -0400", hash_original_method = "9D6541EF95DD6CE6D6599F106C94D734", hash_generated_method = "A0BFAF1EFA4F51B8C14A3AC1E769E2AC")
     public FileOutputStream openAppend() throws IOException {
         try 
@@ -225,6 +226,7 @@ FileInputStream var59D1E0F00673AB4D53EFD779A964E7E0_1860480829 =         new Fil
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.454 -0400", hash_original_method = "69475477B3077359758F883E80DC53D4", hash_generated_method = "01536A6D9FD12A7D184AAAE1CF66F2EC")
     public byte[] readFully() throws IOException {
         FileInputStream stream = openRead();

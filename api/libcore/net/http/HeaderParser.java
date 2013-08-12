@@ -66,6 +66,7 @@ final class HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int parseSeconds(String value) {
         try {
             long seconds = Long.parseLong(value);

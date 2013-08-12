@@ -197,6 +197,7 @@ Application varF254F0ADF054F0318B65674CA3670A5E_2075624035 =         mApplicatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.145 -0400", hash_original_method = "12B5F8394AD7AE16AD90C8F95EA27CB9", hash_generated_method = "F512E9EDD3C57D4EF00B941FDA8EFBFD")
     public final boolean stopSelfResult(int startId) {
         addTaint(startId);

@@ -46,7 +46,7 @@ public final class InputBindResult implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.745 -0400", hash_original_method = "7D3C8FC32444FE9148F633706CA9BDDA", hash_generated_method = "FC91557BC817137168A136C5DE6F6F8F")
     @Override
     public String toString() {
@@ -92,6 +92,7 @@ String var7FC001ADC5B990238F8DB3504F6EAF2D_5655788 =         "InputBindResult{" 
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.746 -0400", hash_original_field = "5B120F1D91D62CFFE41182DB1B3AC094", hash_generated_field = "FB8CFB6623F2A703564B3A10377DAF9A")
 
     public static final Parcelable.Creator<InputBindResult> CREATOR = new Parcelable.Creator<InputBindResult>() {
+        @DSModeled(DSC.BAN)
         public InputBindResult createFromParcel(Parcel source) {
             return new InputBindResult(source);
         }

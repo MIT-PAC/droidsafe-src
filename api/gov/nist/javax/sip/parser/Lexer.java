@@ -104,6 +104,7 @@ public class Lexer extends LexerCore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getHeaderName(String line) {
         if (line == null)
             return null;

@@ -30,6 +30,7 @@ public final class NdefRecord implements Parcelable {
 
     private byte[] mPayload;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.117 -0400", hash_original_method = "FB48E937FC56CBD69B2A6F082227DD21", hash_generated_method = "1F3872BF2970251F0F5AC5E72B4B9976")
     public  NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload) {
         this(tnf, type, id, payload, (byte)(FLAG_MB|FLAG_ME));
@@ -127,6 +128,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.120 -0400", hash_original_method = "4BBEB3385EB023476A7C83C1132C6B8B", hash_generated_method = "B5BF3D3F488DD400E0639A1544BF6262")
     public byte[] getType() {
         byte[] var9A37959FAA262715140CE0FF3E7088D9_458446376 = (mType.clone());
@@ -147,6 +149,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.120 -0400", hash_original_method = "1327F8BA6EFB58D178B7F3819A329700", hash_generated_method = "CBEB58A96D76E5B3DE692115EC5ECD2D")
     public byte[] getPayload() {
         byte[] varF23B27D6120B4A2F52AD9D01C3A49123_1321820022 = (mPayload.clone());
@@ -174,6 +177,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NdefRecord createApplicationRecord(String packageName) {
         return new NdefRecord(TNF_EXTERNAL_TYPE, RTD_ANDROID_APP, new byte[] {},
                 packageName.getBytes(Charsets.US_ASCII));
@@ -186,6 +190,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NdefRecord createUri(String uriString) {
         byte prefix = 0x0;
         for (int i = 1; i < URI_PREFIX_MAP.length; i++) {
@@ -218,6 +223,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.121 -0400", hash_original_method = "7310D9773CC55767E043FA59CD9561A6", hash_generated_method = "6518FA58DC672378AFAA5105F8C781B0")
     public byte[] toByteArray() {
         byte[] varC7229ED78C192BDF5980F9E96C84B859_1609812243 = (generate(mFlags, mTnf, mType, mId, mPayload));
@@ -239,6 +245,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.121 -0400", hash_original_method = "747D030979ABC5D8CF3744986AE0C078", hash_generated_method = "A34753C4BA233A5350488D20307E3953")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -385,6 +392,7 @@ public final class NdefRecord implements Parcelable {
 
     public static final Parcelable.Creator<NdefRecord> CREATOR =
             new Parcelable.Creator<NdefRecord>() {
+        @DSModeled(DSC.SAFE)
         public NdefRecord createFromParcel(Parcel in) {
             byte flags = (byte)in.readInt();
             short tnf = (short)in.readInt();

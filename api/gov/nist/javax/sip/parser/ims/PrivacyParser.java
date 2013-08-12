@@ -17,6 +17,7 @@ import java.text.ParseException;
 
 public class PrivacyParser extends HeaderParser implements TokenTypes {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.091 -0400", hash_original_method = "1B46B2A155C790BA09FFD6B4EE4B1531", hash_generated_method = "C52570F1CB1987207E05DDE691DF8A74")
     public  PrivacyParser(String privacyType) {
         super(privacyType);
@@ -25,6 +26,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.092 -0400", hash_original_method = "4EC8E3CAF2B7BCDD5010285F1AA3D090", hash_generated_method = "B6191BCF2DD7124A6A14CC9328DDB2C9")
     protected  PrivacyParser(Lexer lexer) {
         super(lexer);
@@ -33,6 +35,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.094 -0400", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "E01D18141BBFCA440B8423CD111A504D")
     public SIPHeader parse() throws ParseException {
         if(debug)        

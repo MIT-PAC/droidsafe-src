@@ -16,6 +16,7 @@ import java.text.ParseException;
 
 public class PAssociatedURIParser extends AddressParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.878 -0400", hash_original_method = "0CDE275ECCBEF2889E9182D2465C2E20", hash_generated_method = "AAA76F953DE189B56CE0BA684D5A584B")
     public  PAssociatedURIParser(String associatedURI) {
         super(associatedURI);
@@ -24,6 +25,7 @@ public class PAssociatedURIParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.879 -0400", hash_original_method = "70EC41EF34A2E6E96E3702280780921E", hash_generated_method = "88BF51253EB3690D123C074323173C5F")
     protected  PAssociatedURIParser(Lexer lexer) {
         super(lexer);
@@ -32,6 +34,7 @@ public class PAssociatedURIParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.880 -0400", hash_original_method = "DA45542244416E40599094AA9DB4C3E3", hash_generated_method = "747FB3C3AD5E2589988550D1D9F990E9")
     public SIPHeader parse() throws ParseException {
         if(debug)        

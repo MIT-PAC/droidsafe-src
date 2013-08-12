@@ -29,6 +29,7 @@ public class StatusBarIcon implements Parcelable {
 
     public CharSequence contentDescription;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.168 -0400", hash_original_method = "4C7F8CA5669CDF6CA44AF1CD4C42CB3D", hash_generated_method = "DE4FEAB206FEF7894ACFEC79333CFF8C")
     public  StatusBarIcon(String iconPackage, int iconId, int iconLevel, int number,
             CharSequence contentDescription) {
@@ -46,6 +47,7 @@ public class StatusBarIcon implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.169 -0400", hash_original_method = "D5CBB2AA2C175CD3828E11BBF7822BC5", hash_generated_method = "281B2AC0CADBFFE503E005E287B2E9D3")
     public  StatusBarIcon(Parcel in) {
         addTaint(in.getTaint());
@@ -55,6 +57,7 @@ public class StatusBarIcon implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.169 -0400", hash_original_method = "1EE859B2BAC1B0E091951C7E79A1C85B", hash_generated_method = "20E31C0BF35B37BC42078DCBC0D810A1")
     @Override
     public String toString() {
@@ -70,6 +73,7 @@ String varB386A426A810794AFD31502A9A981A90_718981539 =         "StatusBarIcon(pk
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.170 -0400", hash_original_method = "D6D80221D74BF64CC6743E6FD4844F75", hash_generated_method = "10711C67A6B35C9072BAE042B64410AC")
     @Override
     public StatusBarIcon clone() {
@@ -87,6 +91,7 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_936681904 =         that;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.171 -0400", hash_original_method = "80D94D7ADFF35638471EE5AD3E4769D4", hash_generated_method = "F4D3DAC8B468C888AF30D9AE4B6A9A7E")
     public void readFromParcel(Parcel in) {
         this.iconPackage = in.readString();
@@ -105,6 +110,7 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_936681904 =         that;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.171 -0400", hash_original_method = "95CFF8C99AE4CB8951821DDD1BE9F05B", hash_generated_method = "C030BA13D2B0189030C4949999941B2B")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -141,6 +147,7 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_936681904 =         that;
     public static final Parcelable.Creator<StatusBarIcon> CREATOR
             = new Parcelable.Creator<StatusBarIcon>()
     {
+        @DSModeled(DSC.SAFE)
         public StatusBarIcon createFromParcel(Parcel parcel)
         {
             return new StatusBarIcon(parcel);

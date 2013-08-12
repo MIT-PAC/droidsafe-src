@@ -80,7 +80,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.205 -0400", hash_original_method = "6B106D21A6B322E95178F19E05B7CE37", hash_generated_method = "213B99B199BEBC90733945C14C617525")
     private void initViewAnimator(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());

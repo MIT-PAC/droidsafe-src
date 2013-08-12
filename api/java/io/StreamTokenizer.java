@@ -156,6 +156,7 @@ public class StreamTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.724 -0400", hash_original_method = "6817D84A74EC2CE0E287784F864856A8", hash_generated_method = "5591F4212A7ADD61489606CDB42FDA90")
     public int nextToken() throws IOException {
         if(pushBackToken)        

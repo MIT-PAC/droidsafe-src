@@ -699,6 +699,7 @@ for(Map.Entry<Integer, String> e : entries)
 
     public static final Parcelable.Creator<Address> CREATOR =
         new Parcelable.Creator<Address>() {
+        @DSModeled(DSC.SAFE)
         public Address createFromParcel(Parcel in) {
             String language = in.readString();
             String country = in.readString();

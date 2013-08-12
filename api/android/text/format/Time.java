@@ -50,6 +50,7 @@ public class Time {
 
     public String timezone;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.810 -0400", hash_original_method = "E0FCF5C2DD1FC8B8CECA3F88CA26F2FA", hash_generated_method = "BF4CD4DAA7554085430D29BA7427210E")
     public  Time(String timezone) {
         if(timezone == null)        
@@ -81,6 +82,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.810 -0400", hash_original_method = "5882A59C3CCF918AE2BB2D84CAA18E36", hash_generated_method = "902A5CE2790FDF84BD82AA26B1959A48")
     public  Time(Time other) {
         addTaint(other.getTaint());
@@ -104,6 +106,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.827 -0400", hash_original_method = "DF789B90859E8F04F5333F3487A99DFB", hash_generated_method = "6C69E586BE3E14F0CCFD049AB9EDF31B")
     public int getActualMaximum(int field) {
         addTaint(field);
@@ -228,6 +231,7 @@ switch(field){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.830 -0400", hash_original_method = "2DA36736B256CECB86984D41B76F2A40", hash_generated_method = "393E39D73C24C10172CE927BB4522E5F")
     public String format(String format) {
         addTaint(format.getTaint());
@@ -363,6 +367,7 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_79569539 =             format1(format
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.832 -0400", hash_original_method = "E417695E8CAC19265A6537D747474825", hash_generated_method = "E63EFE3CBF7EFB3BA78D0F893474A08F")
     public boolean parse3339(String s) {
         addTaint(s.getTaint());
@@ -517,6 +522,7 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_79569539 =             format1(format
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.834 -0400", hash_original_method = "42CA0EB350D1B07EC08DFD981A2476E6", hash_generated_method = "DBDB5E186B39FB693F07BC04E425A121")
     public boolean before(Time that) {
         addTaint(that.getTaint());
@@ -528,6 +534,7 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_79569539 =             format1(format
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.835 -0400", hash_original_method = "63DFD446B1AADA69AC0B8E51A8B5B261", hash_generated_method = "A5A8FDB34B64EF62E40C86BF2D1B8C27")
     public boolean after(Time that) {
         addTaint(that.getTaint());
@@ -539,6 +546,7 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_79569539 =             format1(format
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.835 -0400", hash_original_method = "9786C5AD526EBB88697D6E3283396468", hash_generated_method = "7B04343390AC1F273C3B62877F6CBFB4")
     public int getWeekNumber() {
         int closestThursday = yearDay + sThursdayOffset[weekDay];
@@ -625,6 +633,7 @@ String varF1ABAA80440B3A2EE683E32AB62D2A3A_650623129 =             String.format
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.835 -0400", hash_original_method = "D0FEABA86A68FA32A36FDA48979CCD03", hash_generated_method = "7F8DC2448D9B6D4384ECBBEC0D5D3C23")
     public long setJulianDay(int julianDay) {
         addTaint(julianDay);

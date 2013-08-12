@@ -153,6 +153,7 @@ public class ApnSetting {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.162 -0400", hash_original_method = "A2933E4E94FCB15D27495600AE7ECB36", hash_generated_method = "059C7C650B1D4AB94F40775403B80CBC")
     public String toString() {
         StringBuilder sb = new StringBuilder();

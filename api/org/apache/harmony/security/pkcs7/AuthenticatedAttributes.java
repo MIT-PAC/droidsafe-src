@@ -66,6 +66,7 @@ List<AttributeTypeAndValue> varA7E65B047A1744DF616E2152119C59A0_840005418 =     
 
     public static final ASN1SetOf ASN1 =
         new ASN1SetOf(AttributeTypeAndValue.ASN1) {
+        @DSModeled(DSC.SPEC)
         @Override public Object getDecodedObject(BerInputStream in) {
             return new AuthenticatedAttributes(in.getEncoded(),
                     (List<AttributeTypeAndValue>) in.content);

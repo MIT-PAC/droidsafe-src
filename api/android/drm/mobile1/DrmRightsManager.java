@@ -14,6 +14,7 @@ import java.util.List;
 
 public class DrmRightsManager {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.448 -0400", hash_original_method = "9CECCAD6D8D5F2E74B9B1C7CC1642036", hash_generated_method = "1CEF2C7E391438AE02A6D7E3E97F0D9F")
     protected  DrmRightsManager() {
         // ---------- Original Method ----------
@@ -144,7 +145,7 @@ List var9AD584CC2B54A36DD742B42DE81DBB32_2004193536 =         rightsList;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.454 -0400", hash_original_method = "017D692B38F8FD212CF524C82FCE2BD9", hash_generated_method = "217C2B5EB2E5F2AE6FCACA9CA4D6C2C2")
     public synchronized void deleteRights(DrmRights rights) {
         addTaint(rights.getTaint());
@@ -182,6 +183,7 @@ List var9AD584CC2B54A36DD742B42DE81DBB32_2004193536 =         rightsList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.456 -0400", hash_original_method = "D10F41EFD32E726343E3CA8A142B1A5C", hash_generated_method = "AF133CCEAF5CE2E99DEC1A2A0AE497D0")
     private int nativeGetRightsList(DrmRights[] rights, int numRights) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_815950260 = getTaintInt();

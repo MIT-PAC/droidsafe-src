@@ -66,7 +66,7 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.061 -0400", hash_original_method = "63DD348776A9AD7A69FD5A5406A9D749", hash_generated_method = "C584B60D4070D219729F8C3282DD6DF4")
     public  Surface(SurfaceSession s,
             int pid, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
@@ -92,7 +92,7 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.063 -0400", hash_original_method = "77F92398B62C28FF78E552B775B6A70A", hash_generated_method = "FDB64651208DEE56DB6D1C2510724720")
     public  Surface(SurfaceSession s,
             int pid, String name, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
@@ -120,7 +120,7 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.063 -0400", hash_original_method = "CA741F0DB07B20B1C302E68F5EF5136C", hash_generated_method = "CFF9079F6F8989E212EED52D804FE5C8")
     public  Surface() {
         if(DEBUG_RELEASE)        
@@ -184,6 +184,7 @@ Canvas var22D4613C7A7305DB019C02B164A77F20_39175989 =         lockCanvasNative(d
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.065 -0400", hash_original_method = "FD610F755B3A8168C37DFBCC26EDD5A5", hash_generated_method = "FA850EE97B5605899CCCDA72284FA7BB")
     @Override
     public String toString() {
@@ -293,7 +294,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void setOrientation(int display, int orientation) {
         setOrientation(display, orientation, 0);
     }
@@ -327,7 +328,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.068 -0400", hash_original_method = "7F99A19F828A289B6FD343EC8CB65512", hash_generated_method = "72AA9B77CC2AA972E9C4071D2F5243EE")
     public void setPosition(int x, int y) {
         addTaint(y);

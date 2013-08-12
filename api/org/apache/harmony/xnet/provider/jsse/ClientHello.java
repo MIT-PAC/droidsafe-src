@@ -63,6 +63,7 @@ public class ClientHello extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.251 -0400", hash_original_method = "9848891785B38B606D088EC36D49C2E1", hash_generated_method = "BA28F8FB2240AF44C54308F741784EA7")
     public  ClientHello(HandshakeIODataStream in, int length) throws IOException {
         addTaint(length);
@@ -106,6 +107,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.255 -0400", hash_original_method = "092EDC6A6C17B41B7BF7C969F19C771C", hash_generated_method = "CA49944348A00565B338B86632135D1F")
     public  ClientHello(HandshakeIODataStream in) throws IOException {
         if(in.readUint8() != 1)        

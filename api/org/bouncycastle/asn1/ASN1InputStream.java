@@ -21,6 +21,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
 
     private boolean lazyEvaluate;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.672 -0400", hash_original_method = "A509F95CC009C058902019FB1EA46111", hash_generated_method = "712E96BD7D3E62F77404E58E95566D4B")
     public  ASN1InputStream(
         InputStream is) {
@@ -30,6 +31,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.672 -0400", hash_original_method = "00EF7E908C3752F726679FF101FABBAF", hash_generated_method = "3463856FAA2DB77D2CE4E16A57C8AE31")
     public  ASN1InputStream(
         byte[] input) {
@@ -39,6 +41,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.672 -0400", hash_original_method = "B0ECE654E14AB45AF60FAFEB349CC4AF", hash_generated_method = "611C1895748C709C464F4829B64083BB")
     public  ASN1InputStream(
         byte[] input,
@@ -50,6 +53,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.673 -0400", hash_original_method = "EDCCEC3121F6C5E9B0FA391DCCD578AC", hash_generated_method = "30E22029645B9A707CD191A92111E3E5")
     public  ASN1InputStream(
         InputStream input,
@@ -61,6 +65,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.674 -0400", hash_original_method = "B7677C48F68A4418B50D4EB3534A5CED", hash_generated_method = "D4ED06E035F79507C3E1C2E566C6AD6B")
     public  ASN1InputStream(
         InputStream input,
@@ -76,6 +81,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int findLimit(InputStream in) {
         if (in instanceof LimitedInputStream)
         {
@@ -89,6 +95,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.674 -0400", hash_original_method = "CF3BC7CE74758708D5C7508F6ABCFCEC", hash_generated_method = "B7DE44E8DB1F9000A6688AE6B1C08A80")
     protected int readLength() throws IOException {
         int varC80E0DC01831B644FC078B296E30DF0A_1054798673 = (readLength(this, limit));
@@ -99,6 +106,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.675 -0400", hash_original_method = "BA47F8F31DF51652E381DF5AC1EDFDE7", hash_generated_method = "C77362D896173E4240A109F59820D68A")
     protected void readFully(
         byte[]  bytes) throws IOException {
@@ -117,6 +125,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.676 -0400", hash_original_method = "FB275304C6A60067CFDA4B800CA085AD", hash_generated_method = "9A8A53FD47CC59ABB4A862214BE71FC0")
     protected DERObject buildObject(
         int       tag,
@@ -181,6 +190,7 @@ DERObject var72557301F4134763D6B451D02E18155C_236738327 =         createPrimitiv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.676 -0400", hash_original_method = "3644C80D3B1C21E0DE1F50623D57B77E", hash_generated_method = "9CE8C0A40298092966655AC1F730CA11")
      ASN1EncodableVector buildEncodableVector() throws IOException {
         ASN1EncodableVector v = new ASN1EncodableVector();
@@ -216,6 +226,7 @@ ASN1EncodableVector var705FA4AEB2BCFF47B76DA61F226F7E26_273772086 =         new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.678 -0400", hash_original_method = "14F17C52EA17CC32DA8A973E14D77B9E", hash_generated_method = "92418AE2D3BBB0D2221A46813A159A8A")
     public DERObject readObject() throws IOException {
         int tag = read();
@@ -299,6 +310,7 @@ DERObject var9F04FABE8EE077714A8CD9610888B3CA_2091564994 =                 build
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int readTagNumber(InputStream s, int tag) throws IOException {
         int tagNo = tag & 0x1f;
         if (tagNo == 0x1f)
@@ -325,6 +337,7 @@ DERObject var9F04FABE8EE077714A8CD9610888B3CA_2091564994 =                 build
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int readLength(InputStream s, int limit) throws IOException {
         int length = s.read();
         if (length < 0)
@@ -365,6 +378,7 @@ DERObject var9F04FABE8EE077714A8CD9610888B3CA_2091564994 =                 build
     }
 
     
+    @DSModeled(DSC.SAFE)
     static DERObject createPrimitiveDERObject(
         int     tagNo,
         byte[]  bytes) {

@@ -17,6 +17,7 @@ abstract class LimitedInputStream extends InputStream {
 
     private int _limit;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.782 -0400", hash_original_method = "0D8C2EADFFB47C1CBCA5E0CC8CF6BC20", hash_generated_method = "055279600C3D6430555A03116D898451")
       LimitedInputStream(
         InputStream in,

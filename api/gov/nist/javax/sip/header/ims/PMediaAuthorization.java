@@ -19,6 +19,7 @@ public class PMediaAuthorization extends SIPHeader implements PMediaAuthorizatio
 
     private String token;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.195 -0400", hash_original_method = "33816D631C77F21B21E54BBEFDA2795C", hash_generated_method = "1DDFAEE2CC3B34FAA95C12E411F347A6")
     public  PMediaAuthorization() {
         super(P_MEDIA_AUTHORIZATION);
@@ -37,6 +38,7 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_1197511287 =         token;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.196 -0400", hash_original_method = "0F12B8FB487852A4D61415942AC9447A", hash_generated_method = "DD761AACC0BCBD255F952786FFEC9F19")
     public void setMediaAuthorizationToken(String token) throws InvalidArgumentException {
         if(token == null || token.length() == 0)        
@@ -64,6 +66,7 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_58058872 =         token;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.196 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "11A86BDBEAB8AECAFBC0109054DE3E40")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -75,6 +78,7 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_58058872 =         token;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.196 -0400", hash_original_method = "5CA94E0EC768C322B947B50479A5582B", hash_generated_method = "5EDBD4843E766AB0E7C724614DB4D6FE")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -98,6 +102,7 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_58058872 =         token;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.197 -0400", hash_original_method = "8A557E19577FD47CE8C49FDC6C46D11C", hash_generated_method = "4D100774BBC0140BDC3AE8392F18752E")
     public Object clone() {
         PMediaAuthorization retval = (PMediaAuthorization) super.clone();

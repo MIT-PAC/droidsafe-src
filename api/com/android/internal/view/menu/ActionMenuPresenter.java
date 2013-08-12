@@ -132,6 +132,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.985 -0400", hash_original_method = "A17C8C9C29C5D048821A272E4E211244", hash_generated_method = "7B14B2091BFBADDDF655305027558A71")
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -216,6 +217,7 @@ MenuView varDC838461EE2FA0CA4C9BBB70A15456B0_1652482953 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.988 -0400", hash_original_method = "59BA3C56A8058A32CF9B2FCB0A0B5507", hash_generated_method = "2ECBFC3F16E547903AF5FA1E78612B56")
     @Override
     public View getItemView(MenuItemImpl item, View convertView, ViewGroup parent) {
@@ -276,6 +278,7 @@ View var9FA9E3D1D53E248EBA38D0D6FCF32267_1268371811 =         actionView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.989 -0400", hash_original_method = "CF6FF79E1183E432FB7F279F6A955298", hash_generated_method = "C1E53B4E4F5241F8DC4D74A662DD83A1")
     @Override
     public boolean shouldIncludeItem(int childIndex, MenuItemImpl item) {
@@ -289,7 +292,7 @@ View var9FA9E3D1D53E248EBA38D0D6FCF32267_1268371811 =         actionView;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.990 -0400", hash_original_method = "675BFE60E67D99082131CDB4BA0667CE", hash_generated_method = "D0D7EE23EED2D2F2A26E9BCDDE68CAC3")
     @Override
     public void updateMenuView(boolean cleared) {
@@ -351,6 +354,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.991 -0400", hash_original_method = "9D8FC445B750A9A2E8805EF185920422", hash_generated_method = "E3275C856CFAEAC3B6C95A1DA608CB73")
     @Override
     public boolean filterLeftoverView(ViewGroup parent, int childIndex) {
@@ -371,6 +375,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.991 -0400", hash_original_method = "37299DBD51D21A28CE7BE5283912D693", hash_generated_method = "3FB204B1584B4D50B5696CB7B4FA8A08")
     public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -466,6 +471,7 @@ View var540C13E9E156B687226421B24F2DF178_1887737141 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.993 -0400", hash_original_method = "51D4B09F0769DB498C88D93C1DD1D610", hash_generated_method = "1F9E73E3D447B394FBE8F62E6F1B1348")
     public boolean showOverflowMenu() {
         if(mReserveOverflow && !isOverflowMenuShowing() && mMenu != null && mMenuView != null &&
@@ -495,6 +501,7 @@ View var540C13E9E156B687226421B24F2DF178_1887737141 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.994 -0400", hash_original_method = "F07D2B002CE8D32774BDF7E27A216F8A", hash_generated_method = "BD8DF62350FDFB66832CE3295FD8A887")
     public boolean hideOverflowMenu() {
         if(mPostedOpenRunnable != null && mMenuView != null)        
@@ -531,6 +538,7 @@ View var540C13E9E156B687226421B24F2DF178_1887737141 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.995 -0400", hash_original_method = "048650AFF94B01A571A17F813CE8142B", hash_generated_method = "BE59D21A77896E88ECF08F5E3EA40D7B")
     public boolean dismissPopupMenus() {
         boolean result = hideOverflowMenu();
@@ -545,6 +553,7 @@ View var540C13E9E156B687226421B24F2DF178_1887737141 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.995 -0400", hash_original_method = "86830002AFDFBC8C0790A0C80E395F68", hash_generated_method = "B4AAA3DF0901852A2EBEEEABFFF88FCF")
     public boolean hideSubMenus() {
         if(mActionButtonPopup != null)        
@@ -566,6 +575,7 @@ View var540C13E9E156B687226421B24F2DF178_1887737141 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.996 -0400", hash_original_method = "EDFA99D71A654F51EBF8F88159FF0AE5", hash_generated_method = "4BEFCC588AC5F07C38FFC13DDDD3A1BA")
     public boolean isOverflowMenuShowing() {
         boolean varB58C7D4F238868837BE1D2E02537B024_109768731 = (mOverflowPopup != null && mOverflowPopup.isShowing());
@@ -587,7 +597,7 @@ View var540C13E9E156B687226421B24F2DF178_1887737141 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.999 -0400", hash_original_method = "3161CCF567C7C41004F1DD2E1141CBA5", hash_generated_method = "55525A6B4CD2AEEBE9DC95CD0A84D64A")
     public boolean flagActionItems() {
         final ArrayList<MenuItemImpl> visibleItems = mMenu.getVisibleItems();
@@ -774,6 +784,7 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_1863703179 =         state;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.001 -0400", hash_original_method = "56321A468C9EBB2A9C3695363B6A634B", hash_generated_method = "6395FECB88E35C3CA9A72BD51549D49B")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -828,12 +839,14 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_1863703179 =         state;
 
         public int openSubMenuId;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.001 -0400", hash_original_method = "5B86CE655F475C08F177FDB52AD9ECFE", hash_generated_method = "4573F1D4704340137C4835179DE848FD")
           SavedState() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.002 -0400", hash_original_method = "10B6E86FE11BCC070EDA2136A91ED86D", hash_generated_method = "FC0C0D4D8A2B76282E9B2EAAF3EB5917")
           SavedState(Parcel in) {
             openSubMenuId = in.readInt();
@@ -854,6 +867,7 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_1863703179 =         state;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.002 -0400", hash_original_method = "4E7F3A208B8DADACA56997D8D1B3C90C", hash_generated_method = "44572D25927B82A3F70CAE1291043BCC")
         @Override
         public void writeToParcel(Parcel dest, int flags) {
@@ -873,6 +887,7 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_1863703179 =         state;
                 return new SavedState(in);
             }
 
+            @DSModeled(DSC.SAFE)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -909,6 +924,7 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_1863703179 =         state;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.003 -0400", hash_original_method = "133A6BF2CD1B819427A8C49FA8B8E865", hash_generated_method = "7A09BDCF93BB7FC3A41D01833456308A")
         @Override
         public boolean performClick() {
@@ -998,6 +1014,7 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_1863703179 =         state;
 
         private SubMenuBuilder mSubMenu;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.004 -0400", hash_original_method = "E276DF3AF8ED38FB9CAF2E195F32B2B4", hash_generated_method = "CF93AE7D6738F2E0B1F5EF3A1BAF12CF")
         public  ActionButtonSubmenu(Context context, SubMenuBuilder subMenu) {
             super(context, subMenu);
@@ -1068,6 +1085,7 @@ for(int i = 0;i < count;i++)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.004 -0400", hash_original_method = "29547EA8801B28CE842E58C3B2A91712", hash_generated_method = "D12666668D16AB8C38D6340DED8F2AFC")
         @Override
         public boolean onOpenSubMenu(MenuBuilder subMenu) {

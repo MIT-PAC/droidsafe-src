@@ -401,6 +401,7 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_1052308826 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.473 -0400", hash_original_method = "FECBC10325F07301270E33C64C8E0AD0", hash_generated_method = "0E2C0ACDFB9AFB56A9B352658C803FCF")
     protected final String createBadReqRes(String badReq, ParseException pe) {
         addTaint(pe.getTaint());

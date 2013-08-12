@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 public class ASN1OctetString extends ASN1StringType {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.345 -0400", hash_original_method = "FE8C061A61754FEAD4E80D2F91CDD232", hash_generated_method = "D6ED9BA2FC4CE32BD81039A4C8CEA95C")
     public  ASN1OctetString() {
         super(TAG_OCTETSTRING);

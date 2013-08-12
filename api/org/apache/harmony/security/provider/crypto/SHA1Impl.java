@@ -70,6 +70,7 @@ public class SHA1Impl implements SHA1_Data {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void updateHash(int[] intArray, byte[] byteInput, int fromByte, int toByte) {
         int index = intArray[BYTES_OFFSET];
         int i = fromByte;

@@ -30,6 +30,7 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
 
     private String boundary;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.881 -0400", hash_original_method = "2BDD067347267A613FC6CB4251D41452", hash_generated_method = "0FA7E4EBDBFC8D2D5E32009F85807634")
     public  MultipartMimeContentImpl(ContentTypeHeader contentTypeHeader) {
         this.multipartMimeContentTypeHeader = contentTypeHeader;
@@ -40,6 +41,7 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.881 -0400", hash_original_method = "B89677B4178E2DAF7E61A39544E04AE5", hash_generated_method = "7B6379D35A945CDE3B12CC9C7727578D")
     public boolean add(Content content) {
         addTaint(content.getTaint());
@@ -169,6 +171,7 @@ for(String hdr : headerArray)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.887 -0400", hash_original_method = "3C7197D83A3DC33713AACEA2691D16BA", hash_generated_method = "503BB45EBC3C3CB8E6F8666198A5D22A")
     public Content getContentByType(String contentType, String contentSubtype) {
         addTaint(contentSubtype.getTaint());
@@ -209,6 +212,7 @@ Content varF9E19AD6135C970F387F77C6F3DE4477_1932803780 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.888 -0400", hash_original_method = "5D236D4E42081CC93B2BC0976B6D3581", hash_generated_method = "A4D9F85A9E9AE541CFEEA8C1C43E1EBE")
     public void addContent(Content content) {
         addTaint(content.getTaint());
@@ -218,6 +222,7 @@ Content varF9E19AD6135C970F387F77C6F3DE4477_1932803780 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.888 -0400", hash_original_method = "DFB35A5106E2AD2A9D629D81C13D382C", hash_generated_method = "CFD1F6AEEF1079E0BA95C30D92B5AAC6")
     public Iterator<Content> getContents() {
 Iterator<Content> var78005D39F9311C6A323E697692687A79_467180609 =         this.contentList.iterator();
@@ -228,6 +233,7 @@ Iterator<Content> var78005D39F9311C6A323E697692687A79_467180609 =         this.c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.889 -0400", hash_original_method = "B0C4727628A80D66AB97702342F94FFA", hash_generated_method = "30D7F7AD6BCA95F8A2372E6E3D61A63F")
     public int getContentCount() {
         int var793568623107BB2DF4FE5C24C7E1A820_540337492 = (this.contentList.size());

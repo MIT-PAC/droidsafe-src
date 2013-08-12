@@ -19,6 +19,7 @@ public class MessageDigestAlgorithm {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static String calculateResponse(String algorithm, String hashUserNameRealmPasswd,
             String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,
@@ -58,6 +59,7 @@ public class MessageDigestAlgorithm {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String calculateResponse(String algorithm, String username_value, String realm_value,
             String passwd, String nonce_value, String nc_value, String cnonce_value,
             String method, String digest_uri_value, String entity_body, String qop_value,

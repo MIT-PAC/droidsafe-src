@@ -9,6 +9,7 @@ import droidsafe.annotations.*;
 
 public class InvalidKeyException extends KeyException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.859 -0400", hash_original_method = "BC12CDCCA39AEA87BF36441977671D95", hash_generated_method = "19AF4627832A22455F8CDE4EC0A5F487")
     public  InvalidKeyException(String msg) {
         super(msg);
@@ -33,6 +34,7 @@ public class InvalidKeyException extends KeyException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.861 -0400", hash_original_method = "F8B65E52926150DDFBD4B64691704A27", hash_generated_method = "86A90968DBBF5A24975C4DF9C1F74931")
     public  InvalidKeyException(Throwable cause) {
         super(cause);

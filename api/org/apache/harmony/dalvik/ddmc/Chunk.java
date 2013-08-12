@@ -27,6 +27,7 @@ public class Chunk {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.850 -0400", hash_original_method = "C04A7188909E46725BABBA45D3411BA7", hash_generated_method = "915E27FE45BBAC9B59A1D2D30C41E2F5")
     public  Chunk(int type, byte[] data, int offset, int length) {
         this.type = type;

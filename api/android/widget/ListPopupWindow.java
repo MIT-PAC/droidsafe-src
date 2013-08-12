@@ -1068,7 +1068,7 @@ switch(keyCode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.724 -0400", hash_original_method = "F5C740553BB47CFEBEC052FD2A1DEFBA", hash_generated_method = "F19212F524157543401757E3253BD08A")
     private int buildDropDown() {
         ViewGroup dropDownView;

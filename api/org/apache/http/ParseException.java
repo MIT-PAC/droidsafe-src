@@ -14,6 +14,7 @@ public class ParseException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.188 -0400", hash_original_method = "AA2D3B43514461050036AD8670526A69", hash_generated_method = "5E059B7A27B3133D67D677E5E1E7ADA4")
     public  ParseException(String message) {
         super(message);

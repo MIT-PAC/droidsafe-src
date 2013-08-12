@@ -28,7 +28,7 @@ public class InterruptedIOException extends IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.127 -0400", hash_original_method = "4976F1F97DF8BBE1F3AC7D56299FEDE9", hash_generated_method = "742315E973E461968901E22240B288C4")
     public  InterruptedIOException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

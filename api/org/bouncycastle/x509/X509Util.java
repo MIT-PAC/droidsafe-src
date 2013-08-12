@@ -60,7 +60,7 @@ class X509Util {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static DERObjectIdentifier getAlgorithmOID(
         String algorithmName) {
         algorithmName = Strings.toUpperCase(algorithmName);
@@ -72,6 +72,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static AlgorithmIdentifier getSigAlgID(
         DERObjectIdentifier sigOid,
         String              algorithmName) {
@@ -102,12 +103,14 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Signature getSignatureInstance(
         String algorithm) throws NoSuchAlgorithmException {
         return Signature.getInstance(algorithm);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Signature getSignatureInstance(
         String algorithm,
         String provider) throws NoSuchProviderException, NoSuchAlgorithmException {
@@ -122,6 +125,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] calculateSignature(
         DERObjectIdentifier sigOid,
         String              sigName,
@@ -147,6 +151,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] calculateSignature(
         DERObjectIdentifier sigOid,
         String              sigName,
@@ -173,6 +178,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static X509Principal convertPrincipal(
         X500Principal principal) {
         try
@@ -252,6 +258,7 @@ class X509Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Provider getProvider(String provider) throws NoSuchProviderException {
         Provider prov = Security.getProvider(provider);
         if (prov == null)

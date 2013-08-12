@@ -17,6 +17,7 @@ public class ParametersWithIV implements CipherParameters {
 
     private CipherParameters parameters;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.118 -0400", hash_original_method = "02220345FBEC664F191759358E3133FB", hash_generated_method = "6BABCE7FA5D667F461C3C5D358B7706C")
     public  ParametersWithIV(
         CipherParameters    parameters,

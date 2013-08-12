@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class DigestException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.827 -0400", hash_original_method = "5DAAB61061CBFECD5A1E1A61BC7BAA88", hash_generated_method = "2992D047403F360329B182C14D4D443A")
     public  DigestException(String msg) {
         super(msg);
@@ -30,6 +31,7 @@ public class DigestException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.828 -0400", hash_original_method = "57079B2A067E95F6018E75F3448CD9E3", hash_generated_method = "9483021684AF42E332153F4EA1890266")
     public  DigestException(Throwable cause) {
         super(cause);

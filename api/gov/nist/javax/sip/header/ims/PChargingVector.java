@@ -10,6 +10,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader implements PChargingVectorHeader, SIPHeaderNamesIms, ExtensionHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.176 -0400", hash_original_method = "F24963EF187BB1F8C634FCD3043DEC7F", hash_generated_method = "6095E38714E723CF4021E2B80F418044")
     public  PChargingVector() {
         super(P_CHARGING_VECTOR);
@@ -17,6 +18,7 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.177 -0400", hash_original_method = "28145672492296ED345E3C0B325C1523", hash_generated_method = "37DC53E33B8861EA0CC924A515BFA304")
     protected String encodeBody() {
         StringBuffer encoding = new StringBuffer();
@@ -40,6 +42,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1113626324 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.177 -0400", hash_original_method = "B80431D54E690B860FD3339F406AB025", hash_generated_method = "DC5B8C1B4D7AB789B02201B510970BFC")
     public String getICID() {
 String var8FB09FE306E053C5C94430AED16B3C8A_1933102323 =         getParameter(ParameterNamesIms.ICID_VALUE);
@@ -50,6 +53,7 @@ String var8FB09FE306E053C5C94430AED16B3C8A_1933102323 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.177 -0400", hash_original_method = "EBEB68B63CE22995F9427EDD0E4E07CA", hash_generated_method = "493F5EFC67403C38FD67F8DC92FF05E0")
     public void setICID(String icid) throws ParseException {
         addTaint(icid.getTaint());
@@ -71,6 +75,7 @@ String var8FB09FE306E053C5C94430AED16B3C8A_1933102323 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.178 -0400", hash_original_method = "E03F1FEEE570AA8D71D705B8C23619DF", hash_generated_method = "7A383FE0C1FE7DDC163036EC127AB36F")
     public String getICIDGeneratedAt() {
 String var353DF2B3886110E512F672D72362E9FC_2134426944 =         getParameter(ParameterNamesIms.ICID_GENERATED_AT);
@@ -81,6 +86,7 @@ String var353DF2B3886110E512F672D72362E9FC_2134426944 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.178 -0400", hash_original_method = "F4508B4C04B9B92ED2D0B6FD3FCDD70F", hash_generated_method = "178F52F63C8238C2E23B8250E870B1AA")
     public void setICIDGeneratedAt(String host) throws ParseException {
         addTaint(host.getTaint());
@@ -102,6 +108,7 @@ String var353DF2B3886110E512F672D72362E9FC_2134426944 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.178 -0400", hash_original_method = "9C58F34D8EC32A5F098899E01B3677E3", hash_generated_method = "967F3106CA241FE99F8B796CCA6804DE")
     public String getOriginatingIOI() {
 String var386819077BFE19DEBD440E43A3862CF1_1582475164 =         getParameter(ParameterNamesIms.ORIG_IOI);
@@ -112,6 +119,7 @@ String var386819077BFE19DEBD440E43A3862CF1_1582475164 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.178 -0400", hash_original_method = "4D1174A0C4FD1D4621AAA8C5BA456558", hash_generated_method = "B7AF2475F300A935FD3D982B665ED8EB")
     public void setOriginatingIOI(String origIOI) throws ParseException {
         addTaint(origIOI.getTaint());
@@ -129,6 +137,7 @@ String var386819077BFE19DEBD440E43A3862CF1_1582475164 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.179 -0400", hash_original_method = "D0795F3899C65FBD8AF4B39D420CBFCA", hash_generated_method = "D0AA009224E1966E17087C0724DB2B1B")
     public String getTerminatingIOI() {
 String var3BC0DA6BB104C1B12A39DBD2AA7F3225_1864786308 =         getParameter(ParameterNamesIms.TERM_IOI);
@@ -139,6 +148,7 @@ String var3BC0DA6BB104C1B12A39DBD2AA7F3225_1864786308 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.179 -0400", hash_original_method = "9F4DF1C8B170A0213F28AE6F8C15C36E", hash_generated_method = "ACA07A2F47B91A5CB23744D3F968CF8D")
     public void setTerminatingIOI(String termIOI) throws ParseException {
         addTaint(termIOI.getTaint());
@@ -156,6 +166,7 @@ String var3BC0DA6BB104C1B12A39DBD2AA7F3225_1864786308 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.180 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "2C7865670EB1D9B8575D1B5E288CA6A5")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

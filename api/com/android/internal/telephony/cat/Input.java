@@ -48,6 +48,7 @@ public class Input implements Parcelable {
 
     public Duration duration;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.371 -0400", hash_original_method = "3E111AA938495B7C4FDD9DF56E63C31E", hash_generated_method = "E9D74EB192B2133709AE56F6372F5254")
       Input() {
         text = "";
@@ -120,7 +121,7 @@ public class Input implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.375 -0400", hash_original_method = "B53B93ABACC072A2D5F958A02DC16FEB", hash_generated_method = "62FE11E4E09A13FA877C65CE5133C729")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -168,6 +169,7 @@ public class Input implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.376 -0400", hash_original_field = "C55BBAE9BA652C2BEDEB4F6E28BCA10E", hash_generated_field = "449B79E7C316C34FDDF2E2D2B21F2438")
 
     public static final Parcelable.Creator<Input> CREATOR = new Parcelable.Creator<Input>() {
+        @DSModeled(DSC.SAFE)
         public Input createFromParcel(Parcel in) {
             return new Input(in);
         }

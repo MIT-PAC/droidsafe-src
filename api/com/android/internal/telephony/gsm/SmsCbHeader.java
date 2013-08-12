@@ -143,6 +143,7 @@ public class SmsCbHeader implements SmsCbConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.756 -0400", hash_original_method = "F77CFF978B7542934CFB3B1620EE83C7", hash_generated_method = "2FD90AAB376F1817982BB9AEE4B1DF49")
     @Override
     public String toString() {

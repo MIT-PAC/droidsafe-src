@@ -51,6 +51,7 @@ public class ProtocolVersion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isSupported(String name) {
         return protocolsByName.containsKey(name);
     }

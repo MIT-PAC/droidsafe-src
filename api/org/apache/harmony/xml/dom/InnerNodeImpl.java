@@ -226,6 +226,7 @@ Node var27D66BDD904EAAAD70983474F8274FA5_1690387262 =         newChild;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.495 -0400", hash_original_method = "2E387D6B5E2ABD0B7044442BD7493DDC", hash_generated_method = "0851C03A522EA36C2C186F7ACFED741B")
     @Override
     public final void normalize() {

@@ -15,6 +15,7 @@ import java.text.ParseException;
 
 public class PChargingFunctionAddressesParser extends ParametersParser implements TokenTypes {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.902 -0400", hash_original_method = "E6802C10162BF9ECF1CA7A726DBBAC6F", hash_generated_method = "99B4FC5EC71086DA9B4D0A62B1EB4666")
     public  PChargingFunctionAddressesParser(String charging) {
         super(charging);
@@ -23,6 +24,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.902 -0400", hash_original_method = "D9D24A0C312DDEF7581D0ED53212D170", hash_generated_method = "B3C77CB743A80BBE679CA6123EBAE8BA")
     protected  PChargingFunctionAddressesParser(Lexer lexer) {
         super(lexer);
@@ -31,6 +33,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.903 -0400", hash_original_method = "5C436260248E496F94134402F46D8C6D", hash_generated_method = "374E91878CD904C73E4A5788BFE2E86B")
     public SIPHeader parse() throws ParseException {
         if(debug)        
@@ -73,6 +76,7 @@ SIPHeader var8CFFAD2B1C91656BD84AAB820927BE08_744039535 =             chargingFu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.904 -0400", hash_original_method = "E7DC882A60F6AF0A0416E9B2C1439960", hash_generated_method = "3C34FD1C148E1CF633F0825A195DE92B")
     protected void parseParameter(PChargingFunctionAddresses chargingFunctionAddresses) throws ParseException {
         addTaint(chargingFunctionAddresses.getTaint());

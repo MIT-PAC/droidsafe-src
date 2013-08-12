@@ -304,6 +304,7 @@ SharedPreferences var51219B3CDC87A25E51630D49EFFCE292_1497285742 =         mShar
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SharedPreferences getDefaultSharedPreferences(Context context) {
         return context.getSharedPreferences(getDefaultSharedPreferencesName(context),
                 getDefaultSharedPreferencesMode());
@@ -355,6 +356,7 @@ PreferenceScreen varBD47EECFB0EB94EE949C85E37FA9DD44_1029028479 =         mPrefe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.801 -0400", hash_original_method = "313075D13AC6A3D78BD3127C39A86211", hash_generated_method = "BB8597A764D074A1761453D964521FC2")
     public Preference findPreference(CharSequence key) {
         addTaint(key.getTaint());
@@ -401,6 +403,7 @@ Preference var9C6F359FB789290914AE76733086B9FC_1846523993 =         mPreferenceS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.802 -0400", hash_original_method = "D4733D45210A4F96431F976F3F9AB3C2", hash_generated_method = "FC1ED786ED927E66B76449EC3354285A")
      SharedPreferences.Editor getEditor() {
         if(mNoCommit)        
@@ -673,6 +676,7 @@ for(int i = 0;i < N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.808 -0400", hash_original_method = "221E9A8BD7E96AD4198B64196703C2D4", hash_generated_method = "920BD6CDDD3551DF4565856A149623BC")
      void unregisterOnActivityDestroyListener(OnActivityDestroyListener listener) {
         addTaint(listener.getTaint());

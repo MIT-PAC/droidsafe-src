@@ -63,6 +63,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.487 -0400", hash_original_method = "D2E4703F25DE73045253D43D661F8658", hash_generated_method = "901DC7A5F3DE07A36F238F62D89F9415")
     @Override
     public String[] getDefaultCipherSuites() {
@@ -83,6 +84,7 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_1177097999 =         sslParameters.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.488 -0400", hash_original_method = "107E6937D2B525F81A260013B97CF7D4", hash_generated_method = "12A3909623381440C68CC88B60741EAD")
     @Override
     public String[] getSupportedCipherSuites() {

@@ -26,6 +26,7 @@ public class Mesh extends BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.760 -0400", hash_original_method = "EFFB20897006BD21D9CD85929E5DBB71", hash_generated_method = "829459E3C86B5E3D578830BD3552E3B3")
     public int getVertexAllocationCount() {
         if(mVertexBuffers == null)        
@@ -45,6 +46,7 @@ public class Mesh extends BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.767 -0400", hash_original_method = "EA40159658251D040B5268F69F9B14EF", hash_generated_method = "AA45515ED04F7FDF207F4FACC4997C46")
     public Allocation getVertexAllocation(int slot) {
         addTaint(slot);
@@ -56,6 +58,7 @@ Allocation varAC9AD75199CCA1C9A5962A9C64AC83EB_190844094 =         mVertexBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.777 -0400", hash_original_method = "428E6D74220E844332BAD2A4C35405F1", hash_generated_method = "D28C332AF19B4E597028371FD53C3135")
     public int getPrimitiveCount() {
         if(mIndexBuffers == null)        
@@ -75,6 +78,7 @@ Allocation varAC9AD75199CCA1C9A5962A9C64AC83EB_190844094 =         mVertexBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.787 -0400", hash_original_method = "08B7801C574B5FE1151D8579346309F3", hash_generated_method = "5AAD07E6F7025FC16B5591D740910C61")
     public Allocation getIndexSetAllocation(int slot) {
         addTaint(slot);
@@ -86,6 +90,7 @@ Allocation varAB83D15F79B8459AA517B41C3C50A9E1_1411138097 =         mIndexBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.796 -0400", hash_original_method = "C97CD8ECF86AEBA4746DF3BE7591FFF7", hash_generated_method = "77220E57322E96A812D87BDB2D131EAB")
     public Primitive getPrimitive(int slot) {
         addTaint(slot);
@@ -141,6 +146,7 @@ for(int i = 0;i < idxCount;i ++)
         TRIANGLE_STRIP (4),
         TRIANGLE_FAN (5);
         int mID;
+        @DSModeled(DSC.SAFE)
         Primitive(int id) {
             mID = id;
         }
@@ -164,6 +170,7 @@ for(int i = 0;i < idxCount;i ++)
 
         Vector mIndexTypes;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.884 -0400", hash_original_method = "6A7DE29092EDA44714340A63C02A4D3B", hash_generated_method = "BD3A77C2AB52D03AEE51EE610D9C0D1E")
         public  Builder(RenderScript rs, int usage) {
             mRS = rs;
@@ -180,6 +187,7 @@ for(int i = 0;i < idxCount;i ++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.888 -0400", hash_original_method = "F2CC44AB8332A9CEBA185D757457B141", hash_generated_method = "97ABEEF1417149DF002CA62EF71E3FC5")
         public int getCurrentVertexTypeIndex() {
             int var7FB0BD12D9B5B135C3D9C6B825F2E79B_2131222428 = (mVertexTypeCount - 1);
@@ -190,6 +198,7 @@ for(int i = 0;i < idxCount;i ++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.893 -0400", hash_original_method = "390DA790368F4A077D3D7345AE862264", hash_generated_method = "9244BCB5B78CE07F3333B218B5D91652")
         public int getCurrentIndexSetIndex() {
             int varF12821C73C5836F088E70DD1BF98F142_2104680234 = (mIndexTypes.size() - 1);
@@ -200,6 +209,7 @@ for(int i = 0;i < idxCount;i ++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.905 -0400", hash_original_method = "4288B76F5BEB205918AF7DDCE9EEE5BF", hash_generated_method = "AD28E84EF23703831BD4BE32A3F6A9F0")
         public Builder addVertexType(Type t) throws IllegalStateException {
             if(mVertexTypeCount >= mVertexTypes.length)            
@@ -227,6 +237,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_786121630 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.924 -0400", hash_original_method = "FE7A9140417CA4AD355B5E4C1351F0BC", hash_generated_method = "A01948C35A51CE38625245BC153D8787")
         public Builder addVertexType(Element e, int size) throws IllegalStateException {
             if(mVertexTypeCount >= mVertexTypes.length)            
@@ -256,6 +267,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1276349180 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.939 -0400", hash_original_method = "6F637DE57BFF0697961ABB272635A4DE", hash_generated_method = "A21B0028D7E19E93005D7C4D7DBA2462")
         public Builder addIndexSetType(Type t, Primitive p) {
             addTaint(p.getTaint());
@@ -280,6 +292,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_367214056 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:51.950 -0400", hash_original_method = "2E7034A69395E1E5DBB2950602CE4F4E", hash_generated_method = "AF5F820A51641E503F00034DB655E14A")
         public Builder addIndexSetType(Primitive p) {
             addTaint(p.getTaint());
@@ -344,6 +357,7 @@ Type varD9C3C9A77E2D57500CF7BDC1E9D64E5D_507088897 =             tb.create();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.022 -0400", hash_original_method = "2B7677CA7551A1CB975DB188DC4C64F4", hash_generated_method = "02768B2ADBD0C4038D408AF2C65F1EC8")
         public Mesh create() {
             mRS.validate();
@@ -447,6 +461,7 @@ Mesh var4FF8CA43AF3D1A757E7FE6BFD5517AE1_2129636113 =             newMesh;
 
         Vector mIndexTypes;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.059 -0400", hash_original_method = "1C2A9BD6903F1FC6804233482DDA3B70", hash_generated_method = "C7B60159E3E1252A7663ADF6EA085592")
         public  AllocationBuilder(RenderScript rs) {
             mRS = rs;
@@ -461,6 +476,7 @@ Mesh var4FF8CA43AF3D1A757E7FE6BFD5517AE1_2129636113 =             newMesh;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.063 -0400", hash_original_method = "F2CC44AB8332A9CEBA185D757457B141", hash_generated_method = "C78AEEE46C26FC1A7BB8CA5488B70071")
         public int getCurrentVertexTypeIndex() {
             int var7FB0BD12D9B5B135C3D9C6B825F2E79B_1876312561 = (mVertexTypeCount - 1);
@@ -471,6 +487,7 @@ Mesh var4FF8CA43AF3D1A757E7FE6BFD5517AE1_2129636113 =             newMesh;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.069 -0400", hash_original_method = "390DA790368F4A077D3D7345AE862264", hash_generated_method = "8F9180C4A9CA1E1CAE71B2C23748A122")
         public int getCurrentIndexSetIndex() {
             int varF12821C73C5836F088E70DD1BF98F142_1614773477 = (mIndexTypes.size() - 1);
@@ -481,6 +498,7 @@ Mesh var4FF8CA43AF3D1A757E7FE6BFD5517AE1_2129636113 =             newMesh;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.084 -0400", hash_original_method = "77399CB88844FFACF599E547771813AB", hash_generated_method = "AF3169A9EFF5D958E63C0F008D046386")
         public AllocationBuilder addVertexAllocation(Allocation a) throws IllegalStateException {
             if(mVertexTypeCount >= mVertexTypes.length)            
@@ -526,6 +544,7 @@ AllocationBuilder var72A74007B2BE62B849F475C7BDA4658B_1197927845 =             t
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.103 -0400", hash_original_method = "3F005229FAC5669CED0C1EDA320C3ED4", hash_generated_method = "CD7F48B1AA7513E3C1C7C068883D4846")
         public AllocationBuilder addIndexSetType(Primitive p) {
             addTaint(p.getTaint());
@@ -545,6 +564,7 @@ AllocationBuilder var72A74007B2BE62B849F475C7BDA4658B_1813115322 =             t
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.122 -0400", hash_original_method = "26A045F795A631008C79D159817C5762", hash_generated_method = "C1A9C848CD1A63735EF199E7F7459259")
         public Mesh create() {
             mRS.validate();
@@ -687,6 +707,7 @@ Mesh var4FF8CA43AF3D1A757E7FE6BFD5517AE1_1618959338 =             newMesh;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.180 -0400", hash_original_method = "A80B7EA88EEABE74223D464930207C93", hash_generated_method = "20B5A873C2A32460E0E2C9333C508534")
         private void makeSpace(int count) {
             addTaint(count);
@@ -705,6 +726,7 @@ Mesh var4FF8CA43AF3D1A757E7FE6BFD5517AE1_1618959338 =             newMesh;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.193 -0400", hash_original_method = "9C257BDCAF09464D019E44935C728B31", hash_generated_method = "5C29D1257CC99DCB18121248433715C0")
         private void latch() {
             if((mFlags & COLOR) != 0)            
@@ -750,6 +772,7 @@ Mesh var4FF8CA43AF3D1A757E7FE6BFD5517AE1_1618959338 =             newMesh;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.202 -0400", hash_original_method = "D39116CA0B2556B236E2A719F71CCF2D", hash_generated_method = "4CDA88E029B2BD7BCB563B63989A1E96")
         public TriangleMeshBuilder addVertex(float x, float y) {
             if(mVtxSize != 2)            
@@ -777,6 +800,7 @@ TriangleMeshBuilder var72A74007B2BE62B849F475C7BDA4658B_1583783483 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.211 -0400", hash_original_method = "B58461FA5218392331985BFBE25F1947", hash_generated_method = "AF38A1CF9A44B9500A1B7E97B21DE190")
         public TriangleMeshBuilder addVertex(float x, float y, float z) {
             if(mVtxSize != 3)            
@@ -806,6 +830,7 @@ TriangleMeshBuilder var72A74007B2BE62B849F475C7BDA4658B_1585987793 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.220 -0400", hash_original_method = "9F9ED6BD9ACDCF25B5DD5CE14A948BE1", hash_generated_method = "86A490B142E7CD9994C569C091FC61A1")
         public TriangleMeshBuilder setTexture(float s, float t) {
             if((mFlags & TEXTURE_0) == 0)            
@@ -829,6 +854,7 @@ TriangleMeshBuilder var72A74007B2BE62B849F475C7BDA4658B_1387428722 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.229 -0400", hash_original_method = "6234685D550C65A17B5448D24C5DE3DB", hash_generated_method = "6DA5959985891A58DAD58F7DC5C5088A")
         public TriangleMeshBuilder setNormal(float x, float y, float z) {
             if((mFlags & NORMAL) == 0)            
@@ -854,6 +880,7 @@ TriangleMeshBuilder var72A74007B2BE62B849F475C7BDA4658B_1742096910 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.243 -0400", hash_original_method = "548191703C76A8B001B6DF95B2A3596B", hash_generated_method = "EF232935224B727DA93C75C72E479774")
         public TriangleMeshBuilder setColor(float r, float g, float b, float a) {
             if((mFlags & COLOR) == 0)            
@@ -881,6 +908,7 @@ TriangleMeshBuilder var72A74007B2BE62B849F475C7BDA4658B_30733350 =             t
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.252 -0400", hash_original_method = "C9D8C24AD3C37A6598DC86CC627D46E8", hash_generated_method = "C9B261C79F9C64D4AD85DFA74F965F8D")
         public TriangleMeshBuilder addTriangle(int idx1, int idx2, int idx3) {
             if((idx1 >= mVtxCount) || (idx1 < 0) ||
@@ -921,6 +949,7 @@ TriangleMeshBuilder var72A74007B2BE62B849F475C7BDA4658B_1267960466 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:52.266 -0400", hash_original_method = "2C3CCC3A0B0167433C5BE22C88A67CDC", hash_generated_method = "8A79B40562512CF4B5AB4AD93F139E50")
         public Mesh create(boolean uploadToBufferObject) {
             addTaint(uploadToBufferObject);

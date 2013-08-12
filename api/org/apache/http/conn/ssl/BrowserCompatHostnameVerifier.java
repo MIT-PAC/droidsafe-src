@@ -10,6 +10,7 @@ import javax.net.ssl.SSLException;
 
 public class BrowserCompatHostnameVerifier extends AbstractVerifier {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.054 -0400", hash_original_method = "F97EE270780B41C0EF5EF7526675E0EC", hash_generated_method = "F97EE270780B41C0EF5EF7526675E0EC")
     public BrowserCompatHostnameVerifier ()
     {

@@ -145,7 +145,7 @@ CharBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_163917115 =         output;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.514 -0400", hash_original_method = "297219195E5B4473685A201861AC1DC3", hash_generated_method = "5A8EC11F5198E95956BA645C9AEFD9E2")
     private void checkCoderResult(CoderResult result) throws CharacterCodingException {
         addTaint(result.getTaint());
@@ -171,7 +171,7 @@ CharBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_163917115 =         output;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.519 -0400", hash_original_method = "D4DFBF2849FE3731857D4FDEE2ED4787", hash_generated_method = "E41C87AC35041D530E6F8B95172A519A")
     private CharBuffer allocateMore(CharBuffer output) {
         addTaint(output.getTaint());
@@ -287,6 +287,7 @@ CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_1550925742 =                 res
     protected abstract CoderResult decodeLoop(ByteBuffer in, CharBuffer out);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.523 -0400", hash_original_method = "FA8F0AC80549BCE47D29C328C4E0F049", hash_generated_method = "7BF7D90EA1B08E33D4FBC936BB0C0E3B")
     public Charset detectedCharset() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_870615231 = new UnsupportedOperationException();
@@ -381,6 +382,7 @@ CoderResult var4757652C33DAD6EF5B43FF5968DA807C_1635127337 =         CoderResult
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.526 -0400", hash_original_method = "EB764964ACE224C10D45E3B66AA00682", hash_generated_method = "27AE00374AB555FA81F3E146E95E8CB4")
     public boolean isCharsetDetected() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1890231814 = new UnsupportedOperationException();
@@ -474,6 +476,7 @@ String var31BB01A272C4115B7C3C56058BC775C3_867465083 =         replacementChars;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.535 -0400", hash_original_method = "B18C28BF3814F00BA79DEB9A20AA9835", hash_generated_method = "34EB86A02682F0E3163C55D9A58B836A")
     public final CharsetDecoder replaceWith(String replacement) {
         if(replacement == null)        

@@ -17,6 +17,7 @@ public class TypedValue {
 @DSModeled(DSC.SAFE)
     public TypedValue() {
     }
+    @DSModeled(DSC.SAFE)
     public final float getFloat() {
         return Float.intBitsToFloat(data);
     }
@@ -32,6 +33,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float complexToDimension(int data, DisplayMetrics metrics)
     {
         return applyDimension(
@@ -41,6 +43,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int complexToDimensionPixelOffset(int data,
             DisplayMetrics metrics)
     {
@@ -51,6 +54,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int complexToDimensionPixelSize(int data,
             DisplayMetrics metrics)
     {
@@ -67,6 +71,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float complexToDimensionNoisy(int data, DisplayMetrics metrics)
     {
         float res = complexToDimension(data, metrics);
@@ -104,12 +109,14 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public float getDimension(DisplayMetrics metrics)
     {
         return complexToDimension(data, metrics);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float complexToFraction(int data, float base, float pbase)
     {
         switch ((data>>COMPLEX_UNIT_SHIFT)&COMPLEX_UNIT_MASK) {
@@ -122,12 +129,14 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public float getFraction(float base, float pbase)
     {
         return complexToFraction(data, base, pbase);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final CharSequence coerceToString()
     {
         int t = type;
@@ -138,6 +147,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String coerceToString(int type, int data)
     {
         switch (type) {
@@ -181,6 +191,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String toString()
     {
         StringBuilder sb = new StringBuilder();

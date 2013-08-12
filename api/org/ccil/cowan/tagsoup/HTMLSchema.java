@@ -6,6 +6,7 @@ import droidsafe.annotations.*;
 
 public class HTMLSchema extends Schema implements HTMLModels {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.975 -0400", hash_original_method = "B37F2CC4D3CB706912F6CBA7F07B30C9", hash_generated_method = "930CC9D540F8626E41226D5739341005")
     public  HTMLSchema() {
         setURI("http://www.w3.org/1999/xhtml");

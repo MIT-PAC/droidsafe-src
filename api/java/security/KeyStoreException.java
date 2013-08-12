@@ -9,6 +9,7 @@ import droidsafe.annotations.*;
 
 public class KeyStoreException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.020 -0400", hash_original_method = "7369A8C363020ACD6ED9F21AE7042369", hash_generated_method = "6724E2B6D063B954254D89FE652261EB")
     public  KeyStoreException(String msg) {
         super(msg);
@@ -33,6 +34,7 @@ public class KeyStoreException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.021 -0400", hash_original_method = "4819C5194870119A368744981D172EEA", hash_generated_method = "272D78745DC00DCC27EDCE6B35C30324")
     public  KeyStoreException(Throwable cause) {
         super(cause);

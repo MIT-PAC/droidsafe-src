@@ -47,6 +47,7 @@ public class ApnContext {
 
     AtomicBoolean mDependencyMet;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.975 -0400", hash_original_method = "8C9BAC99AF1ADE19DD4F445DDF3FD177", hash_generated_method = "9584A5048EC03175EAF3E0AB116D26B9")
     public  ApnContext(String apnType, String logTag) {
         mApnType = apnType;
@@ -173,7 +174,7 @@ ApnSetting var5F0035327B16970F87641EA787C7DFEA_812937098 =         mApnSetting;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.976 -0400", hash_original_method = "40A5E79AB68275438A57C310C588D046", hash_generated_method = "CECEABB4ABA114E566E71501B6ACBBDF")
     public void decWaitingApnsPermFailCount() {
         mWaitingApnsPermanentFailureCountDown.decrementAndGet();
@@ -314,7 +315,7 @@ String var59DFD2A70B3F2D6B9D7CBF9B5624B087_1482084501 =         mReason;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.978 -0400", hash_original_method = "3DA6D3F7F95DCB338B24FC0B5F96F559", hash_generated_method = "D4AA206F50ECE1F4CCA2FFE9A8DC21C3")
     public boolean isReady() {
         boolean varC4FA3A4411CC615F2E6422278735901F_1567155833 = (mDataEnabled.get() && mDependencyMet.get());
@@ -344,7 +345,7 @@ String var59DFD2A70B3F2D6B9D7CBF9B5624B087_1482084501 =         mReason;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.984 -0400", hash_original_method = "87E23337C7941EB7C82B165656BD6001", hash_generated_method = "F39099927426512B65D6243242F9A6C1")
     public boolean isEnabled() {
         boolean var20748B0A0AEC204B077E615BA25577C3_1848590115 = (mDataEnabled.get());
@@ -385,7 +386,7 @@ String var59DFD2A70B3F2D6B9D7CBF9B5624B087_1482084501 =         mReason;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.985 -0400", hash_original_method = "0156798C320A34D339E0A5D3C1FA955E", hash_generated_method = "8AF53D3FCE9A6DA66EBE5C9AA83C1811")
     @Override
     public String toString() {

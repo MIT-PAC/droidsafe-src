@@ -46,6 +46,7 @@ public abstract class DocumentBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "2EF99C1D795AAC3B61D79F7CC4612DFD")
     public Document parse(InputStream is) throws SAXException, IOException {
         addTaint(is.getTaint());
@@ -68,6 +69,7 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1098687120 =         parse(in);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "EA811CE95A08B04D15381504F667910C", hash_generated_method = "0BA2CB7D38778C6C1CC5E0BDA5C3DFAE")
     public Document parse(InputStream is, String systemId) throws SAXException, IOException {
         addTaint(systemId.getTaint());
@@ -93,6 +95,7 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1832750748 =         parse(in);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "595BF8AC63AB584AD723E5F0FBAE035E", hash_generated_method = "DC78036C2890191FF461EB4FF61AE232")
     public Document parse(String uri) throws SAXException, IOException {
         addTaint(uri.getTaint());
@@ -115,6 +118,7 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_428407042 =         parse(in);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.670 -0400", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "21318756401FDAF740788D1C9C403ACD")
     public Document parse(File f) throws SAXException, IOException {
         addTaint(f.getTaint());
@@ -197,6 +201,7 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885 =         parse(in);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.672 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "25F8C6E1FC17BC94AB2228F7A124C6A9")
     public boolean isXIncludeAware() {
         UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1952587041 = new UnsupportedOperationException(

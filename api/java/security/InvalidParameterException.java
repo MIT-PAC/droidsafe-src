@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class InvalidParameterException extends IllegalArgumentException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.866 -0400", hash_original_method = "A4FEFBD78FD62EF00C6F1D79EDBD5401", hash_generated_method = "5C07804D1F3ED78B3325D5ACF24549E2")
     public  InvalidParameterException(String msg) {
         super(msg);
@@ -15,6 +16,7 @@ public class InvalidParameterException extends IllegalArgumentException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.866 -0400", hash_original_method = "9CA8CE9AC39DC45F96DE6473AB9F71B5", hash_generated_method = "A364D8E4484CEE6C11C8D78768D38217")
     public  InvalidParameterException() {
         // ---------- Original Method ----------

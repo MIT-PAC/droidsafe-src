@@ -18,6 +18,7 @@ public class HeaderGroup implements Cloneable {
 
     private List headers;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.122 -0400", hash_original_method = "04659297943FDC7530B5F805B712786E", hash_generated_method = "EF8745843E1EC462E93115E80BE27206")
     public  HeaderGroup() {
         this.headers = new ArrayList(16);
@@ -26,6 +27,7 @@ public class HeaderGroup implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.123 -0400", hash_original_method = "DD1F10463F473A3E036D58A6099CEA6B", hash_generated_method = "9DDCABDB7D36845CE4D14BEAEAFE75FD")
     public void clear() {
         headers.clear();
@@ -98,6 +100,7 @@ for(int i = 0;i < this.headers.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.125 -0400", hash_original_method = "21A092A9E4BD805516734B366EB966A8", hash_generated_method = "2E8385DFB46D1B39BD0FC89665461621")
     public void setHeaders(Header[] headers) {
         addTaint(headers[0].getTaint());
@@ -121,6 +124,7 @@ for(int i = 0;i < headers.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.125 -0400", hash_original_method = "401EFCB61975E058185EEB3D46A8D6DB", hash_generated_method = "83AC3097FC072765B017CC297AB84F1C")
     public Header getCondensedHeader(String name) {
         addTaint(name.getTaint());
@@ -169,6 +173,7 @@ Header var9D89503D2589DD41795CD030E6EE24C1_1794632938 =             new BasicHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.126 -0400", hash_original_method = "C3B2FF3CCB5B189FEFC22CBF4687F83D", hash_generated_method = "347025236D188C488A3E0FD305A694D2")
     public Header[] getHeaders(String name) {
         addTaint(name.getTaint());
@@ -196,6 +201,7 @@ Header[] var01B2D19A9EC93F41FCE14F3ECF13509B_242661418 =         (Header[]) head
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.126 -0400", hash_original_method = "1B5D001D749637B235D3368FA2C6DC92", hash_generated_method = "E84D6EE4AAFE1E2F2F0C0DAFCA9E67F0")
     public Header getFirstHeader(String name) {
         addTaint(name.getTaint());
@@ -223,6 +229,7 @@ Header var540C13E9E156B687226421B24F2DF178_1599916538 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.127 -0400", hash_original_method = "F097824BB9F324FCD125DCECBE8EB60F", hash_generated_method = "8428980E180698D092C65252C6D7B33F")
     public Header getLastHeader(String name) {
         addTaint(name.getTaint());
@@ -260,6 +267,7 @@ Header[] var31F9662A3F18835AF66E4DC1AE1B3E24_1413389393 =         (Header[]) hea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.128 -0400", hash_original_method = "8F463ADE51DCD8AE5187274242206DA5", hash_generated_method = "222000D36AB181D5FC652BDE2926E9A4")
     public boolean containsHeader(String name) {
         addTaint(name.getTaint());

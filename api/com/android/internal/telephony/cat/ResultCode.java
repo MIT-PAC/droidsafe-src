@@ -44,6 +44,7 @@ public enum ResultCode {
     FRAMES_ERROR(0x3c),
     MMS_ERROR(0x3d);
     private int mCode;
+    @DSModeled(DSC.SAFE)
     ResultCode(int code) {
         mCode = code;
     }

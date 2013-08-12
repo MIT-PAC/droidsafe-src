@@ -19,12 +19,14 @@ public class DOMSource implements Source {
 
     private String systemID;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.133 -0400", hash_original_method = "C22C4B52562F798E2DC7E2B5F763062E", hash_generated_method = "839CD9DE42EFD6F922A393B3D648B5DB")
     public  DOMSource() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.133 -0400", hash_original_method = "7C7F7287E74EAB9B8232F0908501FA89", hash_generated_method = "7AE67A1BF840E9386D5FE2E4755F7F30")
     public  DOMSource(Node n) {
         addTaint(n.getTaint());
@@ -34,6 +36,7 @@ public class DOMSource implements Source {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.133 -0400", hash_original_method = "27D1704B3C4A5B83EAF9B6B6BE5CC0DE", hash_generated_method = "9BE3BBB8AF49CB55C6CF288389CE7F07")
     public  DOMSource(Node node, String systemID) {
         addTaint(systemID.getTaint());

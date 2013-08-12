@@ -175,6 +175,7 @@ public final class SearchableInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.074 -0400", hash_original_method = "5317CE2CAB02C1DC0498B77BC3A6FE3A", hash_generated_method = "4B72E97686B9CF24D04BC2B9C7635528")
       SearchableInfo(Parcel in) {
         mLabelId = in.readInt();

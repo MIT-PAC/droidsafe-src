@@ -33,6 +33,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
 
     String[] mOriginalFrom;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.057 -0400", hash_original_method = "4CA266072E0BEF58A4BC70323B402D31", hash_generated_method = "D4EC842A580A19EF5EC4D153D5B9C6B0")
     @Deprecated
     public  SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
@@ -50,6 +51,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.058 -0400", hash_original_method = "07FEC305B6EF36E13BFB609FC3D08908", hash_generated_method = "F320B5A94D3A47CF71AB8A17263C3779")
     public  SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
             int[] to, int flags) {
@@ -68,6 +70,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.059 -0400", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "AEE4E40D0B28046C9224F434CD0049A0")
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
@@ -139,6 +142,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_157334767 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.060 -0400", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "E06B0A7D875362159E7B590763BC1C85")
     public void setViewImage(ImageView v, String value) {
         addTaint(value.getTaint());
@@ -160,6 +164,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_157334767 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.061 -0400", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "6059A05BA24D864572F36CFBDDA47D36")
     public void setViewText(TextView v, String text) {
         addTaint(text.getTaint());
@@ -276,6 +281,7 @@ for(i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.064 -0400", hash_original_method = "F69CFA3E437766E0BB7C3F894D67D08E", hash_generated_method = "F3365A2C2DD553D3151FA16481758D34")
     @Override
     public Cursor swapCursor(Cursor c) {
@@ -292,6 +298,7 @@ Cursor varB5053E025797B3BF768F5C37934C244D_1142037487 =         res;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.064 -0400", hash_original_method = "B38CB52379BA28E208995EBA207AC843", hash_generated_method = "877687973002351160D40B6C00530455")
     public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
         addTaint(c.getTaint());

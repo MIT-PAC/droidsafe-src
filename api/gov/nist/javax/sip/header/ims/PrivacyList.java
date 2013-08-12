@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PrivacyList extends SIPHeaderList<Privacy> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.392 -0400", hash_original_method = "45F84AF986B8E1D18781B003920274BC", hash_generated_method = "1112F36E1D63D8A6DB0A3433FC13B944")
     public  PrivacyList() {
         super(Privacy.class, PrivacyHeader.NAME);
@@ -15,6 +16,7 @@ public class PrivacyList extends SIPHeaderList<Privacy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.392 -0400", hash_original_method = "09C54AFDDBF31F8225613CB28A3AFCA3", hash_generated_method = "567CB183A20847E31C5C72DC3280CD3B")
     public Object clone() {
         PrivacyList retval = new PrivacyList();

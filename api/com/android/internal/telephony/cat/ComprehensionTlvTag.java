@@ -31,6 +31,7 @@ public enum ComprehensionTlvTag {
     BROWSER_TERMINATION_CAUSE(0x34),
     TEXT_ATTRIBUTE(0x50);
     private int mValue;
+    @DSModeled(DSC.SAFE)
     ComprehensionTlvTag(int value) {
         mValue = value;
     }

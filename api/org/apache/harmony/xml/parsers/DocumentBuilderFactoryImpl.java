@@ -77,6 +77,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.727 -0400", hash_original_method = "02EA7BC2BA423DC2D4E19D42E2725988", hash_generated_method = "D8648CC68455FF50147BB94517BD2E4D")
     @Override
     public DocumentBuilder newDocumentBuilder() throws ParserConfigurationException {

@@ -54,6 +54,7 @@ public class BackupDataInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.185 -0400", hash_original_method = "E5C8D10363AA6A5828998ABAFBD3DBB5", hash_generated_method = "C39EBE02867AC715DB758FE4D901FBEF")
     public int read(byte[] b, int offset, int size) throws IOException {
         addTaint(size);
@@ -67,6 +68,7 @@ public class BackupDataInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.186 -0400", hash_original_method = "261A99F04C534DF9C91290D411F9A374", hash_generated_method = "372FFCECFF989E1EEE1834322CB4A3B9")
     public int read(byte[] b) throws IOException {
         addTaint(b[0]);

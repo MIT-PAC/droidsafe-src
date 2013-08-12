@@ -25,6 +25,7 @@ public final class Base64 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(byte[] in, int len) {
         int length = len / 4 * 3;
         if (length == 0) {

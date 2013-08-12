@@ -15,6 +15,7 @@ public class TransformerException extends Exception {
 
     Throwable containedException;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.082 -0400", hash_original_method = "ABE089B555C0BBE77A7ADBD2839474AC", hash_generated_method = "2B350626ACE88F11560D0D8824671729")
     public  TransformerException(String message) {
         super(message);
@@ -27,6 +28,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.083 -0400", hash_original_method = "BCE7B8322CC2320F24F40E1C57B1D6A6", hash_generated_method = "6B6F250FA67E31550203926FF836ECDC")
     public  TransformerException(Throwable e) {
         super(e.toString());
@@ -38,6 +40,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.084 -0400", hash_original_method = "D45FC511BA6A923B19FFB66FC049AAEB", hash_generated_method = "43BA7BE70D6F7434E28246E7A0ED9534")
     public  TransformerException(String message, Throwable e) {
         super(((message == null) || (message.length() == 0))
@@ -64,6 +67,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.086 -0400", hash_original_method = "48CCF75E307E890A227C0CAEA85C6D48", hash_generated_method = "D1660D35E82666749AAC5F28B3458DC8")
     public  TransformerException(String message, SourceLocator locator,
                                 Throwable e) {
@@ -123,6 +127,7 @@ Throwable var7AD5C7EA160E04D21F46409BCB89DECC_652590788 =         ((containedExc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.087 -0400", hash_original_method = "480EED18E1765067FE991AF0B4A8D2D9", hash_generated_method = "C4195EB43FE76A81EF68F2AA4A72C04F")
     public synchronized Throwable initCause(Throwable cause) {
         if(this.containedException != null)        
@@ -155,6 +160,7 @@ Throwable var72A74007B2BE62B849F475C7BDA4658B_627807708 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.088 -0400", hash_original_method = "5F0314D1FF4AABD6580ED0D63B1DE248", hash_generated_method = "733E5845110A4B34D0B3AADC19245B9B")
     public String getMessageAndLocation() {
         StringBuilder sbuffer = new StringBuilder();
@@ -192,6 +198,7 @@ String varEFC2B84A819C9F41414BE54046FF2802_702764779 =         sbuffer.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.089 -0400", hash_original_method = "066E0A6F600039820661DC1AB443CC5D", hash_generated_method = "1790BD6611973ABBD0EBEBC6204EF9E6")
     public String getLocationAsString() {
         if(null != locator)        
@@ -250,6 +257,7 @@ String var540C13E9E156B687226421B24F2DF178_1007161776 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.089 -0400", hash_original_method = "BFEE5D773C8C1A637BA8549A5548CE5E", hash_generated_method = "5DE43A2AD9D57F579CB99E2DD2DEBB6F")
     public void printStackTrace() {
         printStackTrace(new java.io.PrintWriter(System.err, true));
@@ -258,6 +266,7 @@ String var540C13E9E156B687226421B24F2DF178_1007161776 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.090 -0400", hash_original_method = "396FE4FDBD72A1A44CDA1D64A960A2B6", hash_generated_method = "FC5B9AD021B95237BD477BDDB89C5770")
     public void printStackTrace(java.io.PrintStream s) {
         addTaint(s.getTaint());

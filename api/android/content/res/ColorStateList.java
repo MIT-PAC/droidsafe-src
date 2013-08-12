@@ -41,6 +41,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.098 -0400", hash_original_method = "16DE5E515D4E313298C804E12AA820B9", hash_generated_method = "1A5568500CA502E67D3B8CE53B556B7F")
     public  ColorStateList(int[][] states, int[] colors) {
         mStateSpecs = states;
@@ -70,6 +71,7 @@ for(int i = 0;i < states.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ColorStateList valueOf(int color) {
         synchronized (sCache) {
             WeakReference<ColorStateList> ref = sCache.get(color);
@@ -84,6 +86,7 @@ for(int i = 0;i < states.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ColorStateList createFromXml(Resources r, XmlPullParser parser) throws XmlPullParserException, IOException {
         AttributeSet attrs = Xml.asAttributeSet(parser);
         int type;
@@ -113,6 +116,7 @@ for(int i = 0;i < states.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.102 -0400", hash_original_method = "C02A6B069CD8C9360FEC8CA407C14B4A", hash_generated_method = "6799AF670853995C0EAFF5779F60EC6F")
     public ColorStateList withAlpha(int alpha) {
         addTaint(alpha);
@@ -241,6 +245,7 @@ for(i = 0;i < numAttrs;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.108 -0400", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "7FADE078AB1A549132C70FF5F42F63C7")
     public int getColorForState(int[] stateSet, int defaultColor) {
         addTaint(defaultColor);
@@ -345,6 +350,7 @@ for(int i=0;i<N;i++)
             return new ColorStateList[size];
         }
 
+        @DSModeled(DSC.SAFE)
         public ColorStateList createFromParcel(Parcel source) {
             final int N = source.readInt();
             int[][] stateSpecs = new int[N][];

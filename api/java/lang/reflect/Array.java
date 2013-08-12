@@ -108,6 +108,7 @@ public final class Array {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getLength(Object array) {
         if (array instanceof Object[])
             return ((Object[]) array).length;
@@ -172,7 +173,7 @@ public final class Array {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static Object newInstance(Class<?> componentType, int size) throws NegativeArraySizeException {
         if (!componentType.isPrimitive()) {
             return createObjectArray(componentType, size);
@@ -218,6 +219,7 @@ public final class Array {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void set(Object array, int index, Object value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (!array.getClass().isArray()) {
             throw new IllegalArgumentException("Not an array type");
@@ -310,6 +312,7 @@ public final class Array {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setInt(Object array, int index, int value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof int[]) {
             ((int[]) array)[index] = value;
@@ -329,6 +332,7 @@ public final class Array {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setShort(Object array, int index, short value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof short[]) {
             ((short[]) array)[index] = value;

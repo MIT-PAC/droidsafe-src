@@ -40,7 +40,7 @@ public class Resources {
     private NativePluralRules mPluralRule;
     private CompatibilityInfo mCompatibilityInfo;
     
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config){
 		this(assets, metrics, config, (CompatibilityInfo) null);
@@ -130,7 +130,7 @@ public class Resources {
 
 
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled(DSC.SAFE)
 	public final String getString(int resId) {
 		String str = new String();
         str.addTaint(resId);
@@ -144,7 +144,7 @@ public class Resources {
         return str;
 	}
     
-	 @DSModeled
+	 @DSModeled(DSC.SAFE)
 	public CharSequence getQuantityText(int id, int quantity){
 		
 		String str = new String();
@@ -218,7 +218,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public String getQuantityString(int id, int quantity){
     	String str = new String();
 		str.addTaint(id);
@@ -228,7 +228,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public CharSequence getText(int id, CharSequence def){
     	String str = new String();
 		str.addTaint(id);
@@ -238,7 +238,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public CharSequence[] getTextArray(int id){
 		// Original method
 		/*
@@ -255,7 +255,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public String[] getStringArray(int id){
 		// Original method
 		/*
@@ -272,7 +272,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public int[] getIntArray(int id){
 		// Original method
 		/*
@@ -289,7 +289,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public TypedArray obtainTypedArray(int id){
 		// Original method
 		/*
@@ -309,7 +309,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public float getDimension(int id){
 		// Original method
 		/*
@@ -330,7 +330,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public int getDimensionPixelOffset(int id){
 		// Original method
 		/*
@@ -352,7 +352,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public int getDimensionPixelSize(int id){
 		// Original method
 		/*
@@ -374,7 +374,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public float getFraction(int id, int base, int pbase){
 		// Original method
 		/*
@@ -395,7 +395,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public Drawable getDrawable(int id){
 		// Original method
 		/*
@@ -434,7 +434,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public Movie getMovie(int id){
 		// Original method
 		/*
@@ -478,7 +478,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public ColorStateList getColorStateList(int id){
 		// Original method
 		/*
@@ -494,7 +494,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public boolean getBoolean(int id){
 		// Original method
 		/*
@@ -516,7 +516,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public int getInteger(int id){
 		// Original method
 		/*
@@ -538,7 +538,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public XmlResourceParser getLayout(int id){
 		// Original method
 		/*
@@ -562,7 +562,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public XmlResourceParser getXml(int id){
 		// Original method
 		/*
@@ -574,7 +574,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public InputStream openRawResource(int id){
 		// Original method
 		/*
@@ -588,7 +588,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public InputStream openRawResource(int id, TypedValue value){
 		// Original method
 		/*
@@ -609,7 +609,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public AssetFileDescriptor openRawResourceFd(int id){
 		// Original method
 		/*
@@ -635,7 +635,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public void getValue(int id, TypedValue outValue, boolean resolveRefs){
 		// Original method
 		/*
@@ -668,7 +668,7 @@ public class Resources {
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public void getValue(String name, TypedValue outValue, boolean resolveRefs){
 		// Original method
 		/*
@@ -696,6 +696,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public TypedArray obtainAttributes(AttributeSet set, int[] attrs){
 		// Original method
 		/*
@@ -714,6 +715,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics){
 		// Original method
@@ -820,6 +822,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getIdentifier(String name, String defType, String defPackage){
 		// Original method
 		/*
@@ -835,6 +838,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String getResourceName(int resid){
 		// Original method
 		/*
@@ -849,6 +853,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String getResourcePackageName(int resid){
 		// Original method
 		/*
@@ -862,7 +867,7 @@ public class Resources {
 		return "";
 	}
 
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public String getResourceTypeName(int resid){
 		// Original method
 		/*
@@ -876,7 +881,7 @@ public class Resources {
 		return "";
 	}
 
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public String getResourceEntryName(int resid){
 		// Original method
 		/*
@@ -890,7 +895,7 @@ public class Resources {
 		return "";
 	}
 
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public void parseBundleExtras(XmlResourceParser parser, Bundle outBundle){
 		// Original method
 		/*
@@ -915,7 +920,7 @@ public class Resources {
 		//Return nothing
 	}
 
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public void parseBundleExtra(String tagName, AttributeSet attrs,
             Bundle outBundle){
 		// Original method
@@ -984,6 +989,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     Drawable loadDrawable(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1017,6 +1023,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     ColorStateList loadColorStateList(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1048,6 +1055,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     XmlResourceParser loadXmlResourceParser(int id, String type){
 		// Original method
 		/*
@@ -1069,6 +1077,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     XmlResourceParser loadXmlResourceParser(String file, int id,
             int assetCookie, String type){
 		// Original method
@@ -1110,6 +1119,7 @@ public class Resources {
         private final AssetManager mAssets = null;
         private final int mTheme = 0;
         
+        @DSModeled(DSC.SAFE)
         Theme(){
 			/*
 			mAssets = Resources.this.mAssets;
@@ -1118,6 +1128,7 @@ public class Resources {
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void applyStyle(int resid, boolean force){
 			// Original method
 			/*
@@ -1129,6 +1140,7 @@ public class Resources {
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void setTo(Theme other){
 			// Original method
 			/*
@@ -1140,6 +1152,7 @@ public class Resources {
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public TypedArray obtainStyledAttributes(int[] attrs){
 			// Original method
 			/*
@@ -1156,6 +1169,7 @@ public class Resources {
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public TypedArray obtainStyledAttributes(int resid, int[] attrs){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
@@ -1171,6 +1185,7 @@ public class Resources {
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public boolean resolveAttribute(int resid, TypedValue outValue,
                 boolean resolveRefs){
 			// Original method
@@ -1190,6 +1205,7 @@ public class Resources {
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void dump(int priority, String tag, String prefix){
 			// Original method
 			/*

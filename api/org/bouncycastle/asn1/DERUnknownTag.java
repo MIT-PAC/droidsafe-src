@@ -22,6 +22,7 @@ public class DERUnknownTag extends DERObject {
 
     private byte[] data;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.688 -0400", hash_original_method = "478E15AF1DCD2422F6EEE25F4A5760E9", hash_generated_method = "D2F6CCC321A159AB5F5E89DD7F5AF587")
     public  DERUnknownTag(
         int     tag,
@@ -33,6 +34,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.689 -0400", hash_original_method = "2FAC8109F8B8850E3999605ED1A277CD", hash_generated_method = "9A2AFCB36490A2DEB5ABDF4FCC08791C")
     public  DERUnknownTag(
         boolean isConstructed,
@@ -81,7 +83,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.691 -0400", hash_original_method = "444E91CF9E2407B92E5AF0788B821FF3", hash_generated_method = "47AA9DB5EE593712CE49E5BC5815C98A")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -92,7 +94,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.691 -0400", hash_original_method = "FE1F3CE48FE1BAD33C90012410856208", hash_generated_method = "AFC871AE13A2A883B9D4D0C7F51C3502")
     public boolean equals(
         Object o) {
@@ -121,7 +123,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.692 -0400", hash_original_method = "6125EE5FC147EEAC675704125571B4F0", hash_generated_method = "837E3611C819F8D82E19643B2209F0EC")
     public int hashCode() {
         int var96ECA5C01A7445DAFC3C524853E3675A_91337341 = ((isConstructed ? ~0 : 0) ^ tag ^ Arrays.hashCode(data));

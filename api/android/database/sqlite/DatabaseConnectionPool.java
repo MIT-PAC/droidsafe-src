@@ -44,6 +44,7 @@ class DatabaseConnectionPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.132 -0400", hash_original_method = "BA169038399FE60257FEACB6F83742BB", hash_generated_method = "513FA28A3AABA906A7ABCD4DA846E1CB")
     synchronized void close() {
         if(Log.isLoggable(TAG, Log.DEBUG))        
@@ -148,6 +149,7 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_2114648838 =         db;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.136 -0400", hash_original_method = "C508883C202336989018472FC420E1EA", hash_generated_method = "F5DAFAD1ACE845079D92D76C2986FA79")
     synchronized void release(SQLiteDatabase db) {
         addTaint(db.getTaint());
@@ -212,6 +214,7 @@ ArrayList<SQLiteDatabase> varED12C351C2E8CA4F85F097DDC7E77B4D_1198855045 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.137 -0400", hash_original_method = "FCCC68E0BE173C0DC0076E45C706F445", hash_generated_method = "71B83AF5834DDF4C42DDACDE340190BE")
      int getFreePoolSize() {
         int count = 0;
@@ -357,6 +360,7 @@ for(int i = 0;i < mPool.size();i++)
 
         private HashSet<Long> mHolderIds = new HashSet<Long>();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.143 -0400", hash_original_method = "DC316C09CB4059B013C925E31D9707E2", hash_generated_method = "C727BF994E820394181F7F366C811F68")
         public  PoolObj(SQLiteDatabase db) {
             mDb = db;
@@ -461,6 +465,7 @@ for(int i = 0;i < mPool.size();i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.146 -0400", hash_original_method = "6B148DC19CAC05BE88274109F5158F0D", hash_generated_method = "A065688496972A70AC55B69D76817A17")
         @Override
         public String toString() {

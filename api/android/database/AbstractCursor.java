@@ -55,6 +55,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
 
     private boolean mSelfObserverRegistered;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.366 -0400", hash_original_method = "F60281D0CC7516E8B7AB1E4DD5850BC4", hash_generated_method = "3B5E09C25C600EDC4F66CDCD37507170")
     public  AbstractCursor() {
         mPos = -1;
@@ -139,6 +140,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.373 -0400", hash_original_method = "97CA757ED7462ACFFD2DF70EB3327BE9", hash_generated_method = "4127976E717C07E54B2B6FC9F7E42D94")
     public int getColumnCount() {
         int var6955B3DABD12007579C3EA0FED8494D8_1207793915 = (getColumnNames().length);
@@ -149,6 +151,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.373 -0400", hash_original_method = "FE85B15F7B4AB77AD59F907B33A4DE11", hash_generated_method = "17FE726C99E84E75E28F21C8A3D0BF8F")
     public void deactivate() {
         onDeactivateOrClose();
@@ -176,6 +179,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.374 -0400", hash_original_method = "6C342ADEDDD7EC7E0C1CE765BD80D8D1", hash_generated_method = "B6A2C7A493519036471229B3009C8D8D")
     public boolean requery() {
         if(mSelfObserver != null && mSelfObserverRegistered == false)        
@@ -208,6 +212,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.376 -0400", hash_original_method = "75E7685835D22353FA19EABDEF4435E7", hash_generated_method = "2BF4E0E42FFFCB99FDCE632E9C0D4D96")
     public void close() {
         mClosed = true;
@@ -283,6 +288,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.382 -0400", hash_original_method = "65BBCEF155E9F61984647ADC3CD9D8D5", hash_generated_method = "883799C1E91B44D82D6CC2CD6EFC4ACC")
     public final boolean moveToPosition(int position) {
         final int count = getCount();
@@ -410,6 +416,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.387 -0400", hash_original_method = "9906FDA9BB1856CC0A1F7D5381F7AEF7", hash_generated_method = "5BFBEF5A2B918373C6586DB11CB7C6EB")
     public final boolean isFirst() {
         boolean var3994D119F7C2C3B6496FDE34F6E9264A_262151052 = (mPos == 0 && getCount() != 0);
@@ -420,6 +427,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.388 -0400", hash_original_method = "5D098944D57453F70DEC79DF938E50E8", hash_generated_method = "388412F80B707C1F5B368BF1D3BA479B")
     public final boolean isLast() {
         int cnt = getCount();
@@ -432,6 +440,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.388 -0400", hash_original_method = "BEAF42FFABF4F6277016BED9CE1900CE", hash_generated_method = "30E0D24AB121C5A81A2475E3989A2597")
     public final boolean isBeforeFirst() {
         if(getCount() == 0)        
@@ -470,6 +479,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.390 -0400", hash_original_method = "1BC2DDCF2F027B280B5593E829676223", hash_generated_method = "AF8EE748E0B3DA0E125D7DA51DC514C2")
     public int getColumnIndex(String columnName) {
         addTaint(columnName.getTaint());
@@ -544,6 +554,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.392 -0400", hash_original_method = "2C8B9F57D7BABEC67595057D4A416343", hash_generated_method = "3B102FEFFD4FA34021378BC65CEF4B46")
     public String getColumnName(int columnIndex) {
         addTaint(columnIndex);
@@ -749,6 +760,7 @@ Object var540C13E9E156B687226421B24F2DF178_196464022 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.402 -0400", hash_original_method = "D69CAFAFBC9C61DD3802AD1DC7C32FD3", hash_generated_method = "80582907896F474B9244A88212ED5E6F")
     protected void checkPosition() {
         if(-1 == mPos || getCount() == mPos)        
@@ -783,6 +795,7 @@ Object var540C13E9E156B687226421B24F2DF178_196464022 =         null;
 
         WeakReference<AbstractCursor> mCursor;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.403 -0400", hash_original_method = "F9E51D895511CEE60B782983BAF87140", hash_generated_method = "1C8FE0B53CDA67BB2D5E07BFD3F83569")
         public  SelfContentObserver(AbstractCursor cursor) {
             super(null);
@@ -804,6 +817,7 @@ Object var540C13E9E156B687226421B24F2DF178_196464022 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.405 -0400", hash_original_method = "DA6E4383047955D7231484890E1F062B", hash_generated_method = "2A497B7AE559C826E71E1842C4EE3B27")
         @Override
         public void onChange(boolean selfChange) {

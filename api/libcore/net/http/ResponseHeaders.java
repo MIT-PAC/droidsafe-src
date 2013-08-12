@@ -92,7 +92,8 @@ public final class ResponseHeaders {
         this.uri = uri;
         this.headers = headers;
         HeaderParser.CacheControlHandler handler = new HeaderParser.CacheControlHandler() {
-            @Override public void handle(String directive, String parameter) {
+            @DSModeled(DSC.BAN)
+        @Override public void handle(String directive, String parameter) {
                 if (directive.equalsIgnoreCase("no-cache")) {
                     noCache = true;
                 } else if (directive.equalsIgnoreCase("no-store")) {
@@ -213,6 +214,7 @@ for(String varyField : value.split(","))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.078 -0400", hash_original_method = "796365D0FCCA6BD674FA822FBE40C059", hash_generated_method = "452012271DD782CB86893D007F8F7706")
     public boolean isContentEncodingGzip() {
         boolean var94B5B502A2ABF1EBBFD2D6372DF3B2FF_363050857 = ("gzip".equalsIgnoreCase(contentEncoding));
@@ -223,6 +225,7 @@ for(String varyField : value.split(","))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.078 -0400", hash_original_method = "AD1C758BD3B96983B4362B4ECCA164D6", hash_generated_method = "E13F95E67AAC2117E89E0EFDCED90CA7")
     public void stripContentEncoding() {
         contentEncoding = null;
@@ -233,6 +236,7 @@ for(String varyField : value.split(","))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.078 -0400", hash_original_method = "00B64F53B1189DFD8EFC83FE9CA41E37", hash_generated_method = "FCED540DBDFA7DE416DC9745C84A0DCF")
     public boolean isChunked() {
         boolean var1990FB90873D18F505D59F3D0EED154E_1940744693 = ("chunked".equalsIgnoreCase(transferEncoding));
@@ -243,6 +247,7 @@ for(String varyField : value.split(","))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.079 -0400", hash_original_method = "0C9005E446549CA2DCD479C6BCCC6A35", hash_generated_method = "1A2EA71DF1E2854988A44FD769CA7B67")
     public boolean hasConnectionClose() {
         boolean varF2BCD5BC5E8773DEF14059362B3DF736_153700245 = ("close".equalsIgnoreCase(connection));
@@ -451,6 +456,7 @@ String varBCB9696E34DE6C6E990E36231F1734E3_1338706236 =         wwwAuthenticate;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.084 -0400", hash_original_method = "22FEE68D81D5D179ED2595CC992792BF", hash_generated_method = "DC80F96132036FAD673859E5C2212566")
     public void setLocalTimestamps(long sentRequestMillis, long receivedResponseMillis) {
         this.sentRequestMillis = sentRequestMillis;
@@ -550,6 +556,7 @@ String varBCB9696E34DE6C6E990E36231F1734E3_1338706236 =         wwwAuthenticate;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.087 -0400", hash_original_method = "E402151342DE994EEE4FC3989E09156E", hash_generated_method = "5601485C65AA9919C066BE81E45EC615")
     public boolean isCacheable(RequestHeaders request) {
         addTaint(request.getTaint());
@@ -604,6 +611,7 @@ String varBCB9696E34DE6C6E990E36231F1734E3_1338706236 =         wwwAuthenticate;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.087 -0400", hash_original_method = "937D0115F7BB3894701032373C9A4BC7", hash_generated_method = "AEC56CBECF6336E14FA0DC2960B92187")
     public boolean hasVaryAll() {
         boolean varE1CCDF3C03F32095F5952C20B938A67A_689127782 = (varyFields.contains("*"));
@@ -712,6 +720,7 @@ ResponseSource var119A68D99E23251C9C650BF5A4F6C09B_981139120 =         request.h
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.090 -0400", hash_original_method = "824AD0BBE6883E3213FE3DC10E71C2FB", hash_generated_method = "81A5BFBBEE4081D1A0362949EF354705")
     public boolean validate(ResponseHeaders networkResponse) {
         addTaint(networkResponse.getTaint());
@@ -745,6 +754,7 @@ ResponseSource var119A68D99E23251C9C650BF5A4F6C09B_981139120 =         request.h
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.092 -0400", hash_original_method = "22AFCF8A6EE54CCCB143274E3F308CC7", hash_generated_method = "69FF3063519630884BC2BECD348DB94F")
     public ResponseHeaders combine(ResponseHeaders network) {
         addTaint(network.getTaint());

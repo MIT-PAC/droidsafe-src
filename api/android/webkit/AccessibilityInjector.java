@@ -38,6 +38,7 @@ class AccessibilityInjector {
 
     private int mLastDirection;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_method = "EF4641FD66F12CE398EFC703194D8E58", hash_generated_method = "2F86D7F6824D2022926CFD290AF26273")
     public  AccessibilityInjector(WebView webView) {
         mWebView = webView;
@@ -48,6 +49,7 @@ class AccessibilityInjector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.108 -0400", hash_original_method = "EB800BB0EE5BEF185F11F0CA48ECBE70", hash_generated_method = "1FE68CDBD2379BC00036EA7DAC374692")
     public boolean onKeyEvent(KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -262,6 +264,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.112 -0400", hash_original_method = "C444A575AEA295F9C8E995BA1405A425", hash_generated_method = "DEF6ED9ECF768097014613BE17F54785")
     public void onSelectionStringChange(String selectionString) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -512,6 +515,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_method = "DADE2DD09F8576C0E4A43D6B7E83F05B", hash_generated_method = "B45959DAB99DAC4267CCA6F4DDDB82B3")
         @Override
         public String toString() {

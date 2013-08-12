@@ -22,6 +22,7 @@ public final class PhoneNumberMatch {
 
     private PhoneNumber number;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.605 -0400", hash_original_method = "24CA5CFFCC859FAC59BD892D4A4B2393", hash_generated_method = "0DB9A664011856713AA21410A2D67232")
       PhoneNumberMatch(int start, String rawString, PhoneNumber number) {
         if(start < 0)        
@@ -74,6 +75,7 @@ PhoneNumber var63E80DF571E08DAA47BEFBF0BD0EEBAD_631946680 =         number;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.606 -0400", hash_original_method = "7D10A3C1D28519413DA457C01967C482", hash_generated_method = "FB816A311EE1D74B96C17828FDEC4F08")
     public int end() {
         int varA8E2CD44906F908C40D0261033818B3F_1990462093 = (start + rawString.length());
@@ -95,6 +97,7 @@ String var4B9D0983C640FEFA2A1CCD188F4CB7B8_540414653 =         rawString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.606 -0400", hash_original_method = "13786FFFFB16751EA6F3DAD6D70C98CC", hash_generated_method = "CFF9A9526BE4926E755FDDD2A65025CF")
     @Override
     public int hashCode() {
@@ -140,6 +143,7 @@ String var4B9D0983C640FEFA2A1CCD188F4CB7B8_540414653 =         rawString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.607 -0400", hash_original_method = "9E681ADFB274F0FD80239D8E6C0D9096", hash_generated_method = "F05ED29D34C94A04F4F1182B43AD6117")
     @Override
     public String toString() {

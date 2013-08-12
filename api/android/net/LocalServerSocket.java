@@ -18,6 +18,7 @@ public class LocalServerSocket {
 
     private LocalSocketAddress localAddress;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.192 -0400", hash_original_method = "84F635671A3C26E6B4F1228C3E17A491", hash_generated_method = "DD52E8915043550996201692E0D59419")
     public  LocalServerSocket(String name) throws IOException {
         impl = new LocalSocketImpl();
@@ -34,6 +35,7 @@ public class LocalServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.192 -0400", hash_original_method = "40EEF7A0A264136F662D7E1DA715A559", hash_generated_method = "EB25BDE0A8F69F77601A4FBFE2F2404A")
     public  LocalServerSocket(FileDescriptor fd) throws IOException {
         impl = new LocalSocketImpl(fd);
@@ -81,6 +83,7 @@ FileDescriptor var05E29FE12AB06423EE2D8B05D08F76BE_201939408 =         impl.getF
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.193 -0400", hash_original_method = "CB913E335DEA23070E332AEE6AD401FB", hash_generated_method = "12F0B4AF8EE7B599F14465C727089231")
     public void close() throws IOException {
         impl.close();

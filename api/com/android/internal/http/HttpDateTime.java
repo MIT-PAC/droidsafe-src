@@ -21,6 +21,7 @@ public final class HttpDateTime {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static long parse(String timeString) throws IllegalArgumentException {
         int date = 1;
         int month = Calendar.JANUARY;

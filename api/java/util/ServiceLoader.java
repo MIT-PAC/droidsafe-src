@@ -77,7 +77,7 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.996 -0400", hash_original_method = "7DCE51783862B815D2BC789E6049F748", hash_generated_method = "EB3EC4B2E81FA32FF6F4AFAD426C9AC4")
     private void internalLoad() {
         services.clear();
@@ -229,7 +229,7 @@ S var4CE3DC2994840DD0E53401858CD7B335_766351919 =                 service.cast(c
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.002 -0400", hash_original_method = "D6C7FE21AC961E0461EEEE7A6B5E3796", hash_generated_method = "1F21B7CAF5D2FAD0088BB912B59F21D4")
         private void readClass() {
 for(URL url : services)
@@ -288,7 +288,7 @@ for(URL url : services)
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.003 -0400", hash_original_method = "0BD3CD94707D253C58DB4E9194FF8BE6", hash_generated_method = "9FA31A87DBE96AFC93BE662AF0C7BE7A")
         private void checkValidJavaClassName(String className) {
             addTaint(className.getTaint());

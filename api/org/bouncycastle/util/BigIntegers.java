@@ -17,6 +17,7 @@ public final class BigIntegers {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] asUnsignedByteArray(
         BigInteger value) {
         byte[] bytes = value.toByteArray();
@@ -30,6 +31,7 @@ public final class BigIntegers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static BigInteger createRandomInRange(
         BigInteger      min,
         BigInteger      max,

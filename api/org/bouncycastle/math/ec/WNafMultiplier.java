@@ -15,6 +15,7 @@ class WNafMultiplier implements ECMultiplier {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.890 -0400", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "A709B07ACEDD288275AFCDBF344130C1")
     public byte[] windowNaf(byte width, BigInteger k) {
         addTaint(k.getTaint());
@@ -59,6 +60,7 @@ class WNafMultiplier implements ECMultiplier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.894 -0400", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "EE288B571BFAA5720C0F8B8A855D6340")
     public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo) {
         addTaint(preCompInfo.getTaint());

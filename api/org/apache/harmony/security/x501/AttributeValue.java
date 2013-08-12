@@ -38,6 +38,7 @@ public final class AttributeValue {
 
     public String rawString;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.714 -0400", hash_original_method = "A5E243B4900F23BDC01508FC8D249E26", hash_generated_method = "7018932926AC83E9AF8E52329C5BE90F")
     public  AttributeValue(String parsedString, boolean hasQorE) {
         wasEncoded = false;
@@ -52,6 +53,7 @@ public final class AttributeValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.716 -0400", hash_original_method = "5A85F043C6F0B70EF97E2EBE9C6D742A", hash_generated_method = "5EDBA688924A1FB605AF8106E6508D90")
     public  AttributeValue(String hexString, byte[] encoded) {
         wasEncoded = true;
@@ -101,6 +103,7 @@ public final class AttributeValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.718 -0400", hash_original_method = "B45EBCED75AEC87D8B9060BD1DB130BC", hash_generated_method = "3E7830540965546C3C6ADA1C6AFC24EB")
     public  AttributeValue(String rawString, byte[] encoded, int tag) {
         wasEncoded = true;
@@ -170,6 +173,7 @@ public final class AttributeValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.720 -0400", hash_original_method = "2B88DEF802689DAD6E450E66D9E740A5", hash_generated_method = "06FDD37E452896E7DE47C7B8A362BF1B")
     public String getHexString() {
         if(hexString == null)        
@@ -213,6 +217,7 @@ String varBA008EE6531228751573AF399048D4DC_27548481 =         hexString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.721 -0400", hash_original_method = "8E668EEB627F91F8E1893DDB676A8040", hash_generated_method = "B9958E763EE84DD36FDECB87BFAF164E")
     public void appendQEString(StringBuilder sb) {
         addTaint(sb.getTaint());
@@ -305,6 +310,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1206425441 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.722 -0400", hash_original_method = "2CE0F91F50A3484CAFB1D45D122355E5", hash_generated_method = "E62DBAD9475901348E8CF2F02F26AFD9")
     public String makeCanonical() {
         int length = rawString.length();

@@ -10,6 +10,7 @@ public abstract class FilterReader extends Reader {
 
     protected Reader in;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.004 -0400", hash_original_method = "F3D1BE373A56A0B558A4F2E00F8B10E0", hash_generated_method = "739351D73AD74357F67B0EF04AC04675")
     protected  FilterReader(Reader in) {
         super(in);
@@ -19,6 +20,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.004 -0400", hash_original_method = "501891754658354231C7815C688E4921", hash_generated_method = "E4E394ABE6A8D2B8F05C0A68D0EB9539")
     @Override
     public void close() throws IOException {
@@ -33,6 +35,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.005 -0400", hash_original_method = "CF9F5D7515858833C08423EA9B6FCE6A", hash_generated_method = "907E235D550618DFE572081872D7D847")
     @Override
     public synchronized void mark(int readlimit) throws IOException {
@@ -48,6 +51,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.005 -0400", hash_original_method = "2ED4924508737903A79CF3129A066F71", hash_generated_method = "6D587E4EEDA6193BCE7BDAAB3C394D4D")
     @Override
     public boolean markSupported() {
@@ -64,6 +68,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.005 -0400", hash_original_method = "25E05A20196B2EF8776FA69AEA6A01AB", hash_generated_method = "853B90331A7907F964FDBC3A9FACA0A1")
     @Override
     public int read() throws IOException {
@@ -80,6 +85,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.006 -0400", hash_original_method = "1EA26595B36EBCA6FE882CBA9CA8B025", hash_generated_method = "F852F7E43AC0BAAB92078D82E4356BD1")
     @Override
     public int read(char[] buffer, int offset, int count) throws IOException {
@@ -99,6 +105,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.006 -0400", hash_original_method = "3B619AD38F7F67E79C5355301607CFA3", hash_generated_method = "6E4A26F1275F101EE37F6D651769542A")
     @Override
     public boolean ready() throws IOException {
@@ -115,6 +122,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.006 -0400", hash_original_method = "14FB3B3EA5640BFE7D124E930BE279E7", hash_generated_method = "0A6CCFB96D671D21B6BB082A6A5A0FDD")
     @Override
     public void reset() throws IOException {
@@ -129,6 +137,7 @@ public abstract class FilterReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.007 -0400", hash_original_method = "1B3BA6A4C9DAFF7D8DBE3635EB5F6FB9", hash_generated_method = "88E2AEA043CB5FB8076E141E68D6FD1E")
     @Override
     public long skip(long charCount) throws IOException {

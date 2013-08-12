@@ -50,6 +50,7 @@ public class LazyDERSequence extends DERSequence {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.772 -0400", hash_original_method = "D55432484A7204F62197A1C42F1222BB", hash_generated_method = "63688DC3BEFD3EC1CBB046AF874279B5")
     public synchronized DEREncodable getObjectAt(int index) {
         addTaint(index);
@@ -69,6 +70,7 @@ DEREncodable varC3804AE80A9D974831C6A8C893D1AF39_392811218 =         super.getOb
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.772 -0400", hash_original_method = "939539D3FCA2F2720237F25863622D9D", hash_generated_method = "9F14A8B5B18520D3D98C0E5B0D6E0121")
     public synchronized Enumeration getObjects() {
         if(parsed)        
@@ -89,6 +91,7 @@ Enumeration var8EEBD713CC6C39B1C08E644169D4EB15_488121295 =         new LazyDERC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.773 -0400", hash_original_method = "4DAF8F12C79E02A5B25C6CFF5DA9F3C5", hash_generated_method = "34E17A22DD9E5DDFB4F28A1A07E9B600")
     public int size() {
         if(size < 0)        
@@ -120,6 +123,7 @@ Enumeration var8EEBD713CC6C39B1C08E644169D4EB15_488121295 =         new LazyDERC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.774 -0400", hash_original_method = "46D9E51ED6BB4A9637D586153D86E513", hash_generated_method = "7A5DF5C27037FCBEFF2C921FE01002E3")
      void encode(
         DEROutputStream out) throws IOException {

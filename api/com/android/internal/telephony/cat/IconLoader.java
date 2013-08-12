@@ -67,7 +67,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static IconLoader getInstance(Handler caller, IccFileHandler fh) {
         if (sLoader != null) {
             return sLoader;
@@ -156,7 +156,7 @@ class IconLoader extends Handler {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.303 -0400", hash_original_method = "E1BF715B9C953843C5BFB563C24D3B0D", hash_generated_method = "326126085CC9A068D689DC9A0C195DCA")
     @Override
     public void handleMessage(Message msg) {
@@ -324,6 +324,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToBnW(byte[] data, int length) {
         int valueIndex = 0;
         int width = data[valueIndex++] & 0xFF;
@@ -357,6 +358,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap parseToRGB(byte[] data, int length,
             boolean transparency, byte[] clut) {
         int valueIndex = 0;

@@ -80,6 +80,7 @@ public abstract class Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -131,6 +132,7 @@ String var3E6B52F63767621631F101D027EAE3AD_1525639224 =         getResources().g
     public abstract Resources.Theme getTheme();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.171 -0400", hash_original_method = "FF26021DC793B4DE3C0383ED66D7E1E8", hash_generated_method = "166458EACA124EA043102713E83AA2DB")
     public final TypedArray obtainStyledAttributes(
             int[] attrs) {
@@ -143,6 +145,7 @@ TypedArray var8958D93D46F775F5FEC57E8183C97240_1475138592 =         getTheme().o
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.171 -0400", hash_original_method = "C05CBF641E41D370531BE7FED84BE5CE", hash_generated_method = "DC0CF47D3EBED8808E361F65519DE5D0")
     public final TypedArray obtainStyledAttributes(
             int resid, int[] attrs) throws Resources.NotFoundException {
@@ -162,6 +165,7 @@ TypedArray var6CAC1D2E58E1F85B1471C7C1B3216D41_1460331081 =         getTheme().o
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.172 -0400", hash_original_method = "23F3A3F4901D9D1C9DD21EEAA884561D", hash_generated_method = "DFC3C32938C72A16758D350507A81749")
     public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs, int defStyleAttr, int defStyleRes) {
@@ -360,12 +364,12 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
     public abstract void removeStickyBroadcast(Intent intent);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Intent registerReceiver(BroadcastReceiver receiver,
             IntentFilter filter);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Intent registerReceiver(BroadcastReceiver receiver,
             IntentFilter filter,
             String broadcastPermission,
@@ -380,11 +384,11 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
     public abstract ComponentName startService(Intent service);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract boolean stopService(Intent service);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract boolean bindService(Intent service, ServiceConnection conn,
             int flags);
 
@@ -438,19 +442,19 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
     public abstract void revokeUriPermission(Uri uri, int modeFlags);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract int checkUriPermission(Uri uri, int pid, int uid, int modeFlags);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract int checkCallingUriPermission(Uri uri, int modeFlags);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract int checkCallingOrSelfUriPermission(Uri uri, int modeFlags);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags);
 

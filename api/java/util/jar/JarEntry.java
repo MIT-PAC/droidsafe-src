@@ -171,7 +171,7 @@ CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_2118316795 =         tmp;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "3B125BDC3FCBCE7977A58F597174AB72", hash_generated_method = "3E62305D96AC3A2B5DF5BD0BE5B75F99")
     private CodeSigner[] getCodeSigners(Certificate[] certs) {
         addTaint(certs[0].getTaint());

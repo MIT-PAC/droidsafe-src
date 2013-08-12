@@ -21,6 +21,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
 
     private boolean hasMoreChunks = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.909 -0400", hash_original_method = "F83C2E58EBE5A0D51F69F747FEAA67C2", hash_generated_method = "F4BADE76F5C981ECA829182116065B50")
       ChunkedInputStream(InputStream is, CacheRequest cacheRequest,
             HttpEngine httpEngine) throws IOException {
@@ -32,6 +33,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.910 -0400", hash_original_method = "A69C93E854B37E522584F08EF88E59BD", hash_generated_method = "E417B2D8EC7E19C2651D070F1809C908")
     @Override
     public int read(byte[] buffer, int offset, int count) throws IOException {
@@ -150,6 +152,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.913 -0400", hash_original_method = "637FFB0CF7184A6B5BB58296121EFC54", hash_generated_method = "66504CE0B3AC8B805D93CB9D94DFE738")
     @Override
     public int available() throws IOException {
@@ -172,6 +175,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.914 -0400", hash_original_method = "A3F7257F208C4120BEF39F0167994D8B", hash_generated_method = "45B363479133BFF7E531B10717EF67BE")
     @Override
     public void close() throws IOException {

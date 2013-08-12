@@ -23,6 +23,7 @@ class CacheLoader extends StreamLoader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.352 -0400", hash_original_method = "5DFC3C12C1D0EBA5023FB5F302EE8813", hash_generated_method = "EF9517A77C8E19847FF09D9F3550ED07")
     @Override
     protected boolean setupStreamAndSendStatus() {

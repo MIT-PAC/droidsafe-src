@@ -78,6 +78,7 @@ public class SurfaceView extends View {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.953 -0400", hash_original_field = "D90D1A693D5D2F3783052425E42CECB8", hash_generated_field = "341AB2CE4BC44F58CE9A63D19452DF45")
 
     final Handler mHandler = new Handler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.953 -0400", hash_original_method = "82BE8897E23B3ED9422918649CBA5FAB", hash_generated_method = "6BEB6804DB838516BA4CFA4771D978CB")
         @Override
         public void handleMessage(Message msg) {
@@ -116,6 +117,7 @@ public class SurfaceView extends View {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.953 -0400", hash_original_field = "913D85241AB526174FCEFAE21DC92202", hash_generated_field = "F93A5F157956482F9A7A0FA31A439CC6")
 
     final ViewTreeObserver.OnScrollChangedListener mScrollChangedListener = new ViewTreeObserver.OnScrollChangedListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.953 -0400", hash_original_method = "5F51326E8091C450ECA5819AAACF378E", hash_generated_method = "9745D3D4F8B077B019362B4564B9A421")
         public void onScrollChanged() {
             
@@ -195,6 +197,7 @@ public class SurfaceView extends View {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.954 -0400", hash_original_field = "7DE4F3D906ECFBD3310695CE98EDB143", hash_generated_field = "979F3EC4D28AB25C8DBFA7FB0D4ADD56")
 
     private final ViewTreeObserver.OnPreDrawListener mDrawListener = new ViewTreeObserver.OnPreDrawListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.954 -0400", hash_original_method = "BFD620CC97E89E709383D7DD902C160A", hash_generated_method = "2F9E5D9FADD874B33CEA4E7EAF8958D8")
         @Override
         public boolean onPreDraw() {
@@ -227,6 +230,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.956 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "B2CAB5E929433EA6D0C0BB2DEC01017A")
         public void addCallback(Callback callback) {
             {
@@ -247,6 +251,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.956 -0400", hash_original_method = "C2F2686F3B633A931E5A1A7B954047E4", hash_generated_method = "DB035C8CD46FF3BDF3B8256D88449CEF")
         public void removeCallback(Callback callback) {
             {
@@ -260,6 +265,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.957 -0400", hash_original_method = "64431562EF44F0DC495EE5D0EB57FE21", hash_generated_method = "5EC1C042E9F8EC07E989C383D5D12DF4")
         public void setFixedSize(int width, int height) {
             {
@@ -278,6 +284,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.957 -0400", hash_original_method = "E36476A0B11513BDBDEF513EF43A7F69", hash_generated_method = "8A56DFCEE733F3CA1DA6DDD667110EAA")
         public void setSizeFromLayout() {
             {
@@ -292,6 +299,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.957 -0400", hash_original_method = "E4680DDEA725EDF754E21194707CA19F", hash_generated_method = "57E59E04C359A177D2ED4A63F5D25E6A")
         public void setFormat(int format) {
             format = PixelFormat.RGB_565;
@@ -319,6 +327,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.958 -0400", hash_original_method = "2D0915C13785F2B0579D7E71B7329015", hash_generated_method = "13518B89DEE9C48F4005A1526A4BB700")
         public void setKeepScreenOn(boolean screenOn) {
             Message msg = mHandler.obtainMessage(KEEP_SCREEN_ON_MSG);
@@ -332,6 +341,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.959 -0400", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "2EA88269BA14916674E29DFFA53637C6")
         public Canvas lockCanvas() {
             Canvas varB4EAC82CA7396A68D541C85D26508E83_1416433397 = null; 
@@ -343,6 +353,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.959 -0400", hash_original_method = "680C567FEFB26BF9B08DD2E5AA0C3FA9", hash_generated_method = "7FD2CB9F0FE0D2BFA9842A0854F9C8A3")
         public Canvas lockCanvas(Rect dirty) {
             Canvas varB4EAC82CA7396A68D541C85D26508E83_633323187 = null; 
@@ -355,7 +366,7 @@ public class SurfaceView extends View {
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.960 -0400", hash_original_method = "4B95DCD02F9C44A8215403B28FBCC461", hash_generated_method = "E2365ED314FD823C889E68CD4EC4E0E5")
         private final Canvas internalLockCanvas(Rect dirty) {
             Canvas varB4EAC82CA7396A68D541C85D26508E83_1001906738 = null; 
@@ -412,6 +423,7 @@ public class SurfaceView extends View {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.961 -0400", hash_original_method = "94198D6DEEC3932A7E8E0C313FB26861", hash_generated_method = "DF654BF347DD18B3ED2B0613B73B292C")
         public void unlockCanvasAndPost(Canvas canvas) {
             mSurface.unlockCanvasAndPost(canvas);
@@ -488,7 +500,7 @@ public class SurfaceView extends View {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.204 -0400", hash_original_method = "8A7163C0B5D9260FCDBBE7B713CA285D", hash_generated_method = "EC875459420059988B62E0689FF79ECE")
     private void init() {
         setWillNotDraw(true);
@@ -652,7 +664,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.207 -0400", hash_original_method = "F99ED41FE6B39B12C38A6C99019A5F97", hash_generated_method = "17A2A7FE675F92C41C798BEDADC2A627")
     @Override
     protected boolean setFrame(int left, int top, int right, int bottom) {
@@ -825,7 +837,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.216 -0400", hash_original_method = "1133978B42097E05A4BF8CED29255FA3", hash_generated_method = "128EED3733F0FC01E31068F53657E414")
     private void updateWindow(boolean force, boolean redrawNeeded) {
         addTaint(redrawNeeded);

@@ -62,6 +62,7 @@ public final class Name {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.752 -0400", hash_original_method = "C2DB210B9AE13E0849500530EB26AF9F", hash_generated_method = "99987687812445E7EE166CCEBCAFD37E")
     public  Name(String name) throws IOException {
         rdn = new DNParser(name).parse();
@@ -79,6 +80,7 @@ public final class Name {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.753 -0400", hash_original_method = "0542B71517FD35CAEA3075D7EB945221", hash_generated_method = "EF24A9673132B01D4811115706B3576B")
     public X500Principal getX500Principal() {
 X500Principal varDAA92896EE3532444EC597CD40E21AB2_640524390 =         new X500Principal(getEncoded());
@@ -89,6 +91,7 @@ X500Principal varDAA92896EE3532444EC597CD40E21AB2_640524390 =         new X500Pr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.754 -0400", hash_original_method = "5BEC09DB13BD8A96A72F05D9AA4FB5FA", hash_generated_method = "B0EFB3AD395ABA157F41E9257CAF6185")
     public String getName(String format) {
         if(X500Principal.RFC1779.equals(format))        
@@ -220,6 +223,7 @@ String var6130110C1AB32206E1BE85A4D254C151_739474773 =         sName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.757 -0400", hash_original_method = "2981EA1A601F56A7B701653790363606", hash_generated_method = "0DCFE99290687781238E59380A3DA79A")
     public byte[] getEncoded() {
         if(encoded == null)        
@@ -245,10 +249,12 @@ String var6130110C1AB32206E1BE85A4D254C151_739474773 =         sName;
 
     public static final ASN1SequenceOf ASN1 = new ASN1SequenceOf(ASN1_RDN) {
 
+        @DSModeled(DSC.BAN)
         public Object getDecodedObject(BerInputStream in) {
             return new Name((List<List<AttributeTypeAndValue>>) in.content);
         }
 
+        @DSModeled(DSC.BAN)
         public Collection getValues(Object object) {
             return ((Name) object).rdn;
         }

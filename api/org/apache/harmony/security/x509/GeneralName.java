@@ -45,6 +45,7 @@ public final class GeneralName {
 
     private byte[] name_encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.323 -0400", hash_original_method = "E8D4D2361F943CCDDF33AB5563ED886E", hash_generated_method = "58E2146051A8502AA74472E83EDD23CC")
     public  GeneralName(int tag, String name) throws IOException {
         if(name == null)        
@@ -135,6 +136,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.326 -0400", hash_original_method = "F3BB557A640D5A23013E1A6A6D3E3A5F", hash_generated_method = "826B61522994505FED6CF9556854013A")
     public  GeneralName(byte[] name) throws IllegalArgumentException {
         int length = name.length;
@@ -305,6 +307,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.330 -0400", hash_original_method = "3054283C8DAE746EB9FE98BB22A2F7C2", hash_generated_method = "852FE137F6F8AECE97D724D129D4876D")
     public boolean isAcceptable(GeneralName gname) {
         addTaint(gname.getTaint());
@@ -413,6 +416,7 @@ for(int i = 0;i < _address.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.332 -0400", hash_original_method = "8BC63B983D4898BF725054A3D5D39730", hash_generated_method = "AD082FEA5221BDA2D3FEFCA5688A944D")
     public List<Object> getAsList() {
         ArrayList<Object> result = new ArrayList<Object>();
@@ -531,6 +535,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void checkDNS(String dns) throws IOException {
         String string = dns.toLowerCase(Locale.US);
         int length = string.length();
@@ -689,14 +694,17 @@ switch(tag){
            new ASN1Implicit(7, ASN1OctetString.getInstance()),
            new ASN1Implicit(8, ASN1Oid.getInstance()) }) {
 
+        @DSModeled(DSC.SAFE)
         public Object getObjectToEncode(Object value) {
             return ((GeneralName) value).name;
         }
 
+        @DSModeled(DSC.SAFE)
         public int getIndex(java.lang.Object object) {
             return  ((GeneralName) object).tag;
         }
 
+        @DSModeled(DSC.SPEC)
         @Override public Object getDecodedObject(BerInputStream in) throws IOException {
             GeneralName result;
             switch (in.choiceIndex) {

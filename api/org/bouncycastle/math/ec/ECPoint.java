@@ -194,7 +194,7 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_946597247 =         y;
     public abstract ECPoint twice();
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.643 -0400", hash_original_method = "CFD8CCAA4A8EFD7B41616F74559C84F4", hash_generated_method = "97CE43AE98DB7914C02173153BE78DF3")
     synchronized void assertECMultiplier() {
         if(this.multiplier == null)        
@@ -255,6 +255,7 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1719194488 =         this.multiplier
     
     public static class Fp extends ECPoint {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.644 -0400", hash_original_method = "C218E406154D6A68AEA278E34615CF99", hash_generated_method = "7264FC0871D150CAC2992ADBB6DA179F")
         public  Fp(ECCurve curve, ECFieldElement x, ECFieldElement y) {
             this(curve, x, y, false);
@@ -265,6 +266,7 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1719194488 =         this.multiplier
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.645 -0400", hash_original_method = "DA43573652764E89DCD825DB3FC87547", hash_generated_method = "28D6B134A609B371925EF9CCC49D1D66")
         public  Fp(ECCurve curve, ECFieldElement x, ECFieldElement y, boolean withCompression) {
             super(curve, x, y);
@@ -334,6 +336,7 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1719194488 =         this.multiplier
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.647 -0400", hash_original_method = "95E059CAF9907A74F8544551FF4AF334", hash_generated_method = "CD6BAC4661A223D1D50D8707557DE393")
         public ECPoint add(ECPoint b) {
             addTaint(b.getTaint());
@@ -391,6 +394,7 @@ ECPoint var071BB455154747F7E03561EA2C39CC7F_896493837 =             new ECPoint.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.647 -0400", hash_original_method = "814EC5F0BAC3EF42CB4061AB2E0CCD5F", hash_generated_method = "59CDA8EB72EE011E5F63577706674B9A")
         public ECPoint twice() {
             if(this.isInfinity())            
@@ -431,6 +435,7 @@ ECPoint var3A3B53403FE81238561C7DFE7EBB0574_164262050 =             new ECPoint.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.648 -0400", hash_original_method = "6CF29EA69F961CE922C32B4E8E2284E5", hash_generated_method = "14594E3304A5F2CD2B626E18380DCD07")
         public ECPoint subtract(ECPoint b) {
             addTaint(b.getTaint());
@@ -463,6 +468,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1246016497 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.652 -0400", hash_original_method = "8EF68E9821BB7A65A39BDB5C806DAEDA", hash_generated_method = "A84F5AA9EF7CF3DA1FBD1EFDFDB204F7")
         synchronized void assertECMultiplier() {
             if(this.multiplier == null)            
@@ -494,6 +500,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1246016497 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.653 -0400", hash_original_method = "4610FCAEB1DDBBF845E95D34129A59A7", hash_generated_method = "236DD0981DF54CF145B13EB29798D651")
         public  F2m(ECCurve curve, ECFieldElement x, ECFieldElement y, boolean withCompression) {
             super(curve, x, y);
@@ -533,6 +540,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1246016497 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.655 -0400", hash_original_method = "91DE6710B35AB1954917AAE97889BD70", hash_generated_method = "4077BB1CF0EFD7CFF6ABE9642795FD96")
         public byte[] getEncoded() {
             if(this.isInfinity())            
@@ -598,6 +606,7 @@ ECPoint var6E12BF01C43F8636C37FF895272EA727_1149906744 =             addSimple((
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.656 -0400", hash_original_method = "230992766041FE2E7B78B40F0E0C1144", hash_generated_method = "AC4423AB2D1126069E03BA675D746589")
         public ECPoint.F2m addSimple(ECPoint.F2m b) {
             addTaint(b.getTaint());
@@ -653,6 +662,7 @@ ECPoint varF77FD5A0FB078C7218024671CA30605E_932002819 =             subtractSimp
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.656 -0400", hash_original_method = "FE873BC192C2EB55E75185601239ED06", hash_generated_method = "EC6DC828A255F5A0126714E6F6924608")
         public ECPoint.F2m subtractSimple(ECPoint.F2m b) {
             addTaint(b.getTaint());
@@ -674,6 +684,7 @@ ECPoint.F2m var3E163E68CA57B99B76674064815F739F_2050454295 =             addSimp
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.657 -0400", hash_original_method = "45BA33A6C8448ED0A2617484FF5E8003", hash_generated_method = "96547D3817453EFEC231C0315313281E")
         public ECPoint twice() {
             if(this.isInfinity())            
@@ -730,6 +741,7 @@ ECPoint var8A5D491956EA8C03A91531C071EF48DE_401336950 =             new ECPoint.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.658 -0400", hash_original_method = "B01B67DF3607CCDD35FFA0674C4BFE3B", hash_generated_method = "E45A76D24BF9B5ABAC62E018DF1E5D4F")
         synchronized void assertECMultiplier() {
             if(this.multiplier == null)            

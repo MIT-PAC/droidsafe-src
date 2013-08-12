@@ -10,12 +10,14 @@ public class PipedOutputStream extends OutputStream {
 
     private PipedInputStream target;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.172 -0400", hash_original_method = "E4156F592468799387F97AC767717CEE", hash_generated_method = "BD1FEBE339408C69819D3D0783F7B91C")
     public  PipedOutputStream() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.172 -0400", hash_original_method = "EDB6E26C0B783EE736D00B46ADBCAF6A", hash_generated_method = "77C06272AFA286BF65D275B452485EEA")
     public  PipedOutputStream(PipedInputStream target) throws IOException {
         addTaint(target.getTaint());
@@ -25,6 +27,7 @@ public class PipedOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.173 -0400", hash_original_method = "3142FC22E0231F063D6673F4E3EF281C", hash_generated_method = "71994E877727B45D90756043166DAD68")
     @Override
     public void close() throws IOException {
@@ -43,6 +46,7 @@ public class PipedOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.174 -0400", hash_original_method = "962D17DAB77DCC2B5B99A6C84B8F4998", hash_generated_method = "1B4ED409737C7789ADA9052973C87E36")
     public void connect(PipedInputStream stream) throws IOException {
         if(stream == null)        
@@ -108,6 +112,7 @@ public class PipedOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.176 -0400", hash_original_method = "2AED6D37E619AA85421BF0C9628FA8FE", hash_generated_method = "0947B3AC86EF7763EEA24B39991FB365")
     @Override
     public void write(byte[] buffer, int offset, int count) throws IOException {
@@ -120,6 +125,7 @@ public class PipedOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.176 -0400", hash_original_method = "BFD8A7C0A63758DDB744E4CC4F7CF855", hash_generated_method = "99944A48378686D2EE48D725FEB0652B")
     @Override
     public void write(int oneByte) throws IOException {

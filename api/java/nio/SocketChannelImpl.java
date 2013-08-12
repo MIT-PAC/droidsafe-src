@@ -66,6 +66,7 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
 
     private final Object writeLock = new Object();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.092 -0400", hash_original_method = "CAD27D317D6065C47064EE5BE7F99097", hash_generated_method = "2378AFB80E6B30B428BEA86F4209CAE1")
     public  SocketChannelImpl(SelectorProvider selectorProvider) throws IOException {
         this(selectorProvider, true);
@@ -173,7 +174,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1491654690 =         socket;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.095 -0400", hash_original_method = "06D5BE9697FA1F6A3605D3BCB50E04A0", hash_generated_method = "855238DC6EDD9AAFBD2A8D2518A9BD12")
     @Override
     public boolean connect(SocketAddress socketAddress) throws IOException {
@@ -351,7 +352,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1491654690 =         socket;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.096 -0400", hash_original_method = "FDE0A0D9A12F7110643554CD43F8D7B6", hash_generated_method = "E60D599E7A919AB0B6E2C4872AC1B642")
     @Override
     public int read(ByteBuffer dst) throws IOException {
@@ -377,7 +378,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1491654690 =         socket;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.097 -0400", hash_original_method = "CFA00AB281069164ECAB790C179DF3F9", hash_generated_method = "9E96295019A68E69A2A579FC684FDAF1")
     @Override
     public long read(ByteBuffer[] targets, int offset, int length) throws IOException {
@@ -470,7 +471,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1491654690 =         socket;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.098 -0400", hash_original_method = "DCFA2CB99033209FD40A6F8FA617CF19", hash_generated_method = "C8868D7BF7DBA6A4D0BA1A100EB70858")
     @Override
     public int write(ByteBuffer src) throws IOException {
@@ -503,6 +504,7 @@ Socket varA63412D4E099639C1BBCBDC8D705186B_1491654690 =         socket;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.099 -0400", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "AF0F531DBF3450C2782D8F23135833C8")
     @Override
     public long write(ByteBuffer[] sources, int offset, int length) throws IOException {
@@ -666,7 +668,7 @@ for(int val = offset;val < length + offset;val++)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static InetSocketAddress validateAddress(SocketAddress socketAddress) {
         if (socketAddress == null) {
             throw new IllegalArgumentException();
@@ -720,6 +722,7 @@ InetAddress var7916DE881ABD051FA54E219C60ADC277_454068108 =         isBound ? lo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.101 -0400", hash_original_method = "B277EC5F8A308E553B57A0D050976387", hash_generated_method = "8A4048D7B505F1340F0DB31FC91FB3B2")
     @Override
     protected void implConfigureBlocking(boolean blocking) throws IOException {
@@ -790,6 +793,7 @@ SocketChannel var99BA3483FD74E36EACD435CEE6BD5D6F_248470887 =             channe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.101 -0400", hash_original_method = "CB881FA34C7D7FBE309BA2B3C38FD9DE", hash_generated_method = "C63F20ED238E0B9EABC21680F3E5036B")
         @Override
         public boolean isBound() {
@@ -801,6 +805,7 @@ SocketChannel var99BA3483FD74E36EACD435CEE6BD5D6F_248470887 =             channe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.101 -0400", hash_original_method = "5CCF8EB454AE33E9E231A2BE45E2629E", hash_generated_method = "4547C03547DD4759797F4DA243005E46")
         @Override
         public boolean isConnected() {
@@ -812,6 +817,7 @@ SocketChannel var99BA3483FD74E36EACD435CEE6BD5D6F_248470887 =             channe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.101 -0400", hash_original_method = "B0018340FF02F226576061EFB596D2DE", hash_generated_method = "62F9D0525B6A08BE05B465E0F4ED4924")
         @Override
         public InetAddress getLocalAddress() {
@@ -1007,6 +1013,7 @@ InputStream varBBCB65A129E4FF2F4EF7DA1CCF148B3D_1407690018 =             new Soc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.103 -0400", hash_original_method = "7907395A2BDEF0093C42980D22D2F1FF", hash_generated_method = "99ECF1E64CEF4C88B2BC5F5FEE18EA69")
         @Override
         public FileDescriptor getFileDescriptor$() {
@@ -1044,6 +1051,7 @@ FileDescriptor var0DACFA040D27F7D032EACE256C40E7C8_2056291803 =             sock
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.103 -0400", hash_original_method = "376EE3F97840D4205E91F242BC3F90AA", hash_generated_method = "9B8BA1A5E4D264BCCDA09C5F2967F68D")
         @Override
         public void write(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -1069,6 +1077,7 @@ FileDescriptor var0DACFA040D27F7D032EACE256C40E7C8_2056291803 =             sock
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.103 -0400", hash_original_method = "F1C26F791F3FC6DB336B7A388343CAEE", hash_generated_method = "8A8A0628B44D20C50E2A61395D15CF60")
         @Override
         public void write(int oneByte) throws IOException {
@@ -1118,6 +1127,7 @@ FileDescriptor var0DACFA040D27F7D032EACE256C40E7C8_2056291803 =             sock
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.104 -0400", hash_original_method = "9D425CB1AFA4E4568C9C3855468C26CA", hash_generated_method = "A365197E7D9441EA56C09B92588A23F3")
         @Override
         public int read() throws IOException {
@@ -1142,6 +1152,7 @@ FileDescriptor var0DACFA040D27F7D032EACE256C40E7C8_2056291803 =             sock
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.104 -0400", hash_original_method = "EA379AE73CA210BAF79C2B35EBD964D5", hash_generated_method = "14F05EA806D9F42BC48858CB3C0E4896")
         @Override
         public int read(byte[] buffer, int offset, int byteCount) throws IOException {

@@ -27,6 +27,7 @@ public class InputSource {
 
     private Reader characterStream;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.201 -0400", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "179D2E0E4F762DB57C25831D6BADEBE2")
     public  InputSource() {
         // ---------- Original Method ----------
@@ -42,6 +43,7 @@ public class InputSource {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.202 -0400", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "EFF5430C840A38D076B7A7F747401349")
     public  InputSource(InputStream byteStream) {
         addTaint(byteStream.getTaint());

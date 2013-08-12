@@ -184,6 +184,7 @@ HttpHost var15255B0340E21149253E1579997EBD34_1848211924 =         mProxyHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.861 -0400", hash_original_method = "D4465F27265450A81D8D5C54F66A3578", hash_generated_method = "2BDF81B5E3E5171C2B0DCAF9A61FB6F1")
     public RequestHandle queueRequest(
             String url, String method,
@@ -207,6 +208,7 @@ RequestHandle varDB478C081515AED8AECC176C7F352B76_277212566 =         queueReque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.862 -0400", hash_original_method = "5EE74AB0AE90D0DA727E01E7B767B670", hash_generated_method = "A12CFD4DE4AFE7E682E2DFF6D1029F79")
     public RequestHandle queueRequest(
             String url, WebAddress uri, String method, Map<String, String> headers,
@@ -255,6 +257,7 @@ RequestHandle var8559CD00D8E4603D5FEA793C2784B90A_2009461035 =         new Reque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.863 -0400", hash_original_method = "5ADB9D7A6CBFB38DBDB876B33452D400", hash_generated_method = "50294A765FCA2FB3D10CAA24C5E62744")
     public RequestHandle queueSynchronousRequest(String url, WebAddress uri,
             String method, Map<String, String> headers,

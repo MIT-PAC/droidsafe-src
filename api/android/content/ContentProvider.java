@@ -187,7 +187,7 @@ PathPermission[] var24E2D1568C411176949D95742C7A4275_1373800687 =         mPathP
             String selection, String[] selectionArgs, String sortOrder);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract String getType(Uri uri);
 
     
@@ -502,6 +502,7 @@ ContentProvider varC964AD0B3FDDC5F592DBC6B2E7A7AF92_1242787189 =             Con
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.808 -0400", hash_original_method = "157A3AC2CED86E999B16E7CDFBD5AE31", hash_generated_method = "7C169116488E43F1AC706B9D1269C758")
         @Override
         public String getProviderName() {
@@ -677,6 +678,7 @@ AssetFileDescriptor var55EAB6F02B22D2BCFE59AE1EC2B8FA58_1528724256 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.820 -0400", hash_original_method = "F8D45B029854B0071CB25BB646C6653D", hash_generated_method = "C66F7DEE9C872474E2EFF5F3C4EADF6B")
         public Bundle call(String method, String arg, Bundle extras) {
             addTaint(extras.getTaint());

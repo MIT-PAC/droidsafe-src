@@ -19,6 +19,7 @@ public abstract class DatagramSocketImpl implements SocketOptions {
 
     protected int localPort;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.431 -0400", hash_original_method = "36741B3348F3C30E5BB773EA210AEA7B", hash_generated_method = "BE9AB5AB91B36FA3C83AE715C819627B")
     public  DatagramSocketImpl() {
         localPort = -1;
@@ -50,6 +51,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_228543589 =         fd;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.432 -0400", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "D68762299C74F88E0BC310B8448B5F07")
      InetAddress getLocalAddress() {
 InetAddress var5B04D0CA841642814A75D4CAB88C3763_1954534540 =         IoBridge.getSocketLocalAddress(fd);

@@ -66,12 +66,14 @@ public final class EDIPartyName {
             setOptional(0);
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new EDIPartyName((String) values[0], (String) values[1],
                     in.getEncoded());
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             EDIPartyName epn = (EDIPartyName) object;
             values[0] = epn.nameAssigner;

@@ -14,6 +14,7 @@ public class InheritableThreadLocal<T> extends ThreadLocal<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.070 -0400", hash_original_method = "21950621664F241C91FE4E959BCE80F5", hash_generated_method = "E13ECF9F873781364FCD1C86DB3F9C78")
     protected T childValue(T parentValue) {
         addTaint(parentValue.getTaint());
@@ -38,6 +39,7 @@ Values varFD13BEAC833885316C9D98DFD25DC72D_2099164328 =         current.inherita
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.071 -0400", hash_original_method = "198C51D572472BCFE1CF3566F6918855", hash_generated_method = "8422C65D9EA725AD7ACC5B23EFC0711E")
     @Override
      Values initializeValues(Thread current) {

@@ -119,6 +119,7 @@ String var8E0819DAE5908F45AA8F092100A40C0A_696592298 =         this.schemeName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.141 -0400", hash_original_method = "FE8B35DF3D2B1A5F77A96BBF48284914", hash_generated_method = "80451F027FD1B2D488F4621B1F988A16")
     public String toURI() {
         CharArrayBuffer buffer = new CharArrayBuffer(32);
@@ -146,6 +147,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_30388163 =         buffer.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.142 -0400", hash_original_method = "6DDBCACEAF7453CD975901EB7FA152DA", hash_generated_method = "64A4CF0FE6F330D2BD5ABC52051DB04D")
     public String toHostString() {
         CharArrayBuffer buffer = new CharArrayBuffer(32);
@@ -169,6 +171,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_752338645 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.142 -0400", hash_original_method = "C17018EEDA4C922BB5D288F6A26A7D04", hash_generated_method = "97980D7048BC26C17EF291C11352FFA7")
     public String toString() {
 String var0A55F081974ADC5A13D4B31BB63BD3D0_2111204369 =         toURI();
@@ -223,6 +226,7 @@ String var0A55F081974ADC5A13D4B31BB63BD3D0_2111204369 =         toURI();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.144 -0400", hash_original_method = "148EB8E2858B696FB463985EE3E49929", hash_generated_method = "8425E327EFF8CBD9DDFBD09A61395981")
     public int hashCode() {
         int hash = LangUtils.HASH_SEED;
@@ -241,6 +245,7 @@ String var0A55F081974ADC5A13D4B31BB63BD3D0_2111204369 =         toURI();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.144 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "C1FC1DCC05F010CD78785EB587335C4D")
     public Object clone() throws CloneNotSupportedException {
 Object var46F3A0D86742C1D6E099C2B166941A33_1276748610 =         super.clone();

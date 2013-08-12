@@ -14,6 +14,7 @@ public abstract class TransformerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TransformerFactory newInstance() throws TransformerFactoryConfigurationError {
         String className = "org.apache.xalan.processor.TransformerFactoryImpl";
         try {

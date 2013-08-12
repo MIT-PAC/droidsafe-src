@@ -28,6 +28,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.148 -0400", hash_original_method = "4124FA04E6528A50C013D8FF7E28B610", hash_generated_method = "585A2BC23B8722370634F10AD0882A46")
     public  ExtractEditText(Context context, AttributeSet attrs) {
         super(context, attrs, com.android.internal.R.attr.editTextStyle);
@@ -37,6 +38,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.149 -0400", hash_original_method = "E7AB7BAEBF60AF77BB15799C720B6EC6", hash_generated_method = "7EDD7BB777CB73779114D32A3E34407E")
     public  ExtractEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -74,6 +76,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.151 -0400", hash_original_method = "6BAFF88F25F6637786E87F71A6E886F7", hash_generated_method = "7432FE4D1A31A23951A3EC8BEAEC333E")
     @Override
     public void setExtractedText(ExtractedText text) {
@@ -97,6 +100,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.151 -0400", hash_original_method = "FB80BE45A1B322D49A7CF30AB5AC4B14", hash_generated_method = "68D3D5159D39C8765482DEECD871AEF3")
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {
@@ -114,6 +118,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.152 -0400", hash_original_method = "7168E8EA0FE72B98E042580455F1047F", hash_generated_method = "6DE66E891D6974F31F437E08715C56D7")
     @Override
     public boolean performClick() {
@@ -136,7 +141,7 @@ public class ExtractEditText extends EditText {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.152 -0400", hash_original_method = "7C9BA2F8326E15326AC5ACB19DAA03AF", hash_generated_method = "6DD1DBA51387297908462F958845E00F")
     @Override
     public boolean onTextContextMenuItem(int id) {
@@ -171,6 +176,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.153 -0400", hash_original_method = "04872214ED3EAFCD92368D9E52854C64", hash_generated_method = "93AE0A3324B8858BE7EDFB4D3F23CDFA")
     public boolean hasVerticalScrollBar() {
         boolean var22DFB4B0D8430A12D0029AD265A2CAAA_1603675927 = (computeVerticalScrollRange() > computeVerticalScrollExtent());
@@ -181,6 +187,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.153 -0400", hash_original_method = "1D3D3676B67FC953B437D952E76D3E93", hash_generated_method = "2167BD755CC45BBFC2A6DFCA9982119F")
     @Override
     public boolean hasWindowFocus() {
@@ -192,6 +199,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.154 -0400", hash_original_method = "CC084819861CE9346C088F826DD71D3D", hash_generated_method = "D00B93FF5C7674FD210D34D782D2302C")
     @Override
     public boolean isFocused() {
@@ -203,6 +211,7 @@ public class ExtractEditText extends EditText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.154 -0400", hash_original_method = "C5038B1CABC8B8B00C688F0FD76B923F", hash_generated_method = "40B5D994EB851DEB185AA78402BF66E5")
     @Override
     public boolean hasFocus() {

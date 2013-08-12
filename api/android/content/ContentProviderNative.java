@@ -783,7 +783,7 @@ AssetFileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1792760399 =            
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.946 -0400", hash_original_method = "EF6BE11399C3C767419E53090230088A", hash_generated_method = "7A7BA54CFE2989CBCF0C095D48BEC9A0")
     public Bundle call(String method, String request, Bundle args) throws RemoteException {
         addTaint(args.getTaint());

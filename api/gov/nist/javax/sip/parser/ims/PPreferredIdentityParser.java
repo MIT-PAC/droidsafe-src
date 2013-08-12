@@ -30,6 +30,7 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.967 -0400", hash_original_method = "CA1397CFDA33B56E4743CDCAB79EF328", hash_generated_method = "6802833FE7FEF66BEA27629694D9101A")
     public SIPHeader parse() throws ParseException {
         if(debug)        

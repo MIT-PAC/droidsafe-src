@@ -362,7 +362,7 @@ Process var95FD552219433D6B22709796B000B842_1393224981 =             process;
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.461 -0400", hash_original_method = "72D26C729273916A38DD81F020E1EC4C", hash_generated_method = "40F2F8FC37905F9C16A01677E59415C7")
         public int exitValue() {
             synchronized
@@ -462,7 +462,7 @@ OutputStream varD1FAACFBEB53C1408150BAABD3C85558_53178915 =             this.out
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.464 -0400", hash_original_method = "945EE59E08960A318B9D424632962227", hash_generated_method = "3976B9B228E10969B17EE783ADC36B84")
         @Override
         public String toString() {
@@ -507,7 +507,7 @@ String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_227385180 =             "Process[pid=
         }
 
 
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.466 -0400", hash_original_method = "A8419736BED4DA94F6EABC777190260F", hash_generated_method = "0EE7E91DF7CB731A6EB91EF75E7BB649")
         @Override
         public ProcessReference poll() {

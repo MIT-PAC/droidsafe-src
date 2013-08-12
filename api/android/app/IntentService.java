@@ -27,6 +27,7 @@ public abstract class IntentService extends Service {
 
     private boolean mRedelivery;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.498 -0400", hash_original_method = "65486D76CF06DAF1688CBC9F94DF0A6F", hash_generated_method = "E803BFED5D7E11609305F714CC10CB38")
     public  IntentService(String name) {
         super();
@@ -45,6 +46,7 @@ public abstract class IntentService extends Service {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.499 -0400", hash_original_method = "D44587B147DECF989C6FA60808062415", hash_generated_method = "134209EF8F043B64491C32D5B342ADC6")
     @Override
     public void onCreate() {
@@ -100,6 +102,7 @@ public abstract class IntentService extends Service {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.500 -0400", hash_original_method = "1A14C95333617FF45AA4B183BFCE9C2C", hash_generated_method = "57CFED3BCB345327405FC23DC37C7117")
     @Override
     public void onDestroy() {

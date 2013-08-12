@@ -26,6 +26,7 @@ class PackedObjectVector<E> {
 
     private Object[] mValues;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.102 -0400", hash_original_method = "7647E7B16FB2C073A83B6C5C46BD0BB0", hash_generated_method = "9A70858516039202D340CEF6E58AC618")
     public  PackedObjectVector(int columns) {
         mColumns = columns;
@@ -42,6 +43,7 @@ class PackedObjectVector<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.104 -0400", hash_original_method = "1C46B70362A26F7DECFFAE89D2DE52CF", hash_generated_method = "8A4811F6DBB0AE2E4E3E0597FF7A42B0")
     public E getValue(int row, int column) {
         addTaint(column);
@@ -102,6 +104,7 @@ for(int i = 0;i < mColumns;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.106 -0400", hash_original_method = "E80F8248AEB29BC6824FCA0E99840E40", hash_generated_method = "023C92C55A5CCD9C4772B1FAF775CE48")
     public void deleteAt(int row, int count) {
         addTaint(row);

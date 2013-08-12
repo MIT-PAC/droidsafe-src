@@ -85,6 +85,7 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_786891284 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_method = "7BECB9552858FA87C7AFE2E5228279B4", hash_generated_method = "4744AFEA24CAB7FA1A7A9D21FE7FC326")
     public boolean isCphsVoiceMessageIndicatorAddress() {
         boolean var95ACF0A9BE4A49BF12B0430CD6C50261_774385182 = ((origBytes[OFFSET_ADDRESS_LENGTH] & 0xff) == 4
@@ -97,6 +98,7 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_786891284 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_method = "4D79B8C2A51115F6F438822C99644146", hash_generated_method = "079EEB721B933EE0B2C3D6B99A5A4E12")
     public boolean isCphsVoiceMessageSet() {
         boolean varFB8178DB0D1582B09684FEDA60AAB8D2_646605073 = (isCphsVoiceMessageIndicatorAddress()
@@ -109,6 +111,7 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_786891284 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_method = "4C77C20AE3A5F3CC1A1FB56D13643756", hash_generated_method = "471D4659BC9673DE119B1D8AA694A034")
     public boolean isCphsVoiceMessageClear() {
         boolean var1E82CA9B40E32514DB7591611C2E873C_690871101 = (isCphsVoiceMessageIndicatorAddress()

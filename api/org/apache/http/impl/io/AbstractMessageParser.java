@@ -142,6 +142,7 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         throws IOException, HttpException, ParseException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.375 -0400", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "F6A48326581DC84545938E2FCE7CDF7C")
     public HttpMessage parse() throws IOException, HttpException {
         HttpMessage message = null;

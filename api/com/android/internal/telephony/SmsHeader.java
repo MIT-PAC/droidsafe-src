@@ -39,6 +39,7 @@ public class SmsHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SmsHeader fromByteArray(byte[] data) {
         ByteArrayInputStream inStream = new ByteArrayInputStream(data);
         SmsHeader smsHeader = new SmsHeader();
@@ -102,6 +103,7 @@ public class SmsHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(SmsHeader smsHeader) {
         if ((smsHeader.portAddrs == null) &&
             (smsHeader.concatRef == null) &&

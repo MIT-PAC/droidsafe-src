@@ -36,6 +36,7 @@ class IOHandler {
 
     private ConcurrentHashMap<String, Socket> socketTable;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.350 -0400", hash_original_method = "9386B11A19881B80900AAECD631287FD", hash_generated_method = "30C5DFDA3ACE98208A6E4D447958B5B9")
     protected  IOHandler(SIPTransactionStack sipStack) {
         this.sipStack = (SipStackImpl) sipStack;
@@ -46,6 +47,7 @@ class IOHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static String makeKey(InetAddress addr, int port) {
         return addr.getHostAddress() + ":" + port;
     }
@@ -74,6 +76,7 @@ Socket var1C4C10334B791AF9AB0467C72691123D_2066856296 =         (Socket) socketT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.352 -0400", hash_original_method = "92816C2E9E6D943B13D719E81BC3AA88", hash_generated_method = "1EDBA6242590D8BA552C0B2ECEF726A0")
     protected void removeSocket(String key) {
         addTaint(key.getTaint());
@@ -111,6 +114,7 @@ for(int p = 0;p < length;p += chunksize)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.355 -0400", hash_original_method = "175D748D3B44D56B75F881FF6379A368", hash_generated_method = "DF1E27E19F19421F7BD47073017F2794")
     public SocketAddress obtainLocalAddress(InetAddress dst, int dstPort,
             InetAddress localAddress, int localPort) throws IOException {
@@ -366,6 +370,7 @@ Socket var540C13E9E156B687226421B24F2DF178_1344837967 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.364 -0400", hash_original_method = "1D520544B315CDC75D81B88E4BB64341", hash_generated_method = "259251E5C5E4A849066D432898E2B327")
     public void closeAll() {
 for(Enumeration<Socket> values = socketTable.elements();values.hasMoreElements();)

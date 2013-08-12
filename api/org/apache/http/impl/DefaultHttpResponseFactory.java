@@ -101,6 +101,7 @@ HttpResponse var5B7331AF545CF47BB674EB8B8981185E_896881117 =         new BasicHt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.333 -0400", hash_original_method = "D55AE22798B058ABD6A02EB9DF9528CC", hash_generated_method = "F3C48144619C9347C6E408609D7DC4EF")
     protected Locale determineLocale(HttpContext context) {
         addTaint(context.getTaint());

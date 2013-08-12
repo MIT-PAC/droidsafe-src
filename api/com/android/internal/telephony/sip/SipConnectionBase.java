@@ -58,6 +58,7 @@ abstract class SipConnectionBase extends Connection {
 
     private PostDialState postDialState = PostDialState.NOT_STARTED;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.161 -0400", hash_original_method = "D12ADA666E21FFAC81BC845F1B1B388F", hash_generated_method = "0A147067DDC7E6520776E477ED6F8818")
       SipConnectionBase(String dialString) {
         this.dialString = dialString;
@@ -72,6 +73,7 @@ abstract class SipConnectionBase extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.161 -0400", hash_original_method = "9D87CB1ACC156683FA215308BE25D1D9", hash_generated_method = "FDADB566493F2FF7E3602A795DC631BD")
     protected void setState(Call.State state) {
         addTaint(state.getTaint());
@@ -146,6 +148,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.162 -0400", hash_original_method = "8E0034C90F1E75659D16C0CDCE6F5793", hash_generated_method = "046E35D827FD64706F703500A20A5626")
     @Override
     public long getDurationMillis() {
@@ -179,6 +182,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.163 -0400", hash_original_method = "2CFF5FB4AC83B238AC9B892D795EB1DE", hash_generated_method = "A429A6EFE952A3585FCA99E6F3AD2270")
     @Override
     public long getHoldDurationMillis() {
@@ -265,6 +269,7 @@ PostDialState varA5212BBA7CEDC5476DB20427B201984F_1114729642 =         postDialS
     protected abstract Phone getPhone();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.164 -0400", hash_original_method = "0D579DEEA4ADF8476D536663A83CC650", hash_generated_method = "9EBFB271D6372FE8E99D65FD2AB38ED9")
     @Override
     public String getRemainingPostDialString() {

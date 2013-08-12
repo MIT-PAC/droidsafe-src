@@ -120,6 +120,7 @@ DOMImplementation var5DFBF8B654BC99F3F31723F0CC90EE38_115910356 =         dom;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.768 -0400", hash_original_method = "F8DF5811CFC2B33C1997BC6906E28600", hash_generated_method = "1880F5EF55710CEE27B53B62BF7B30D7")
     @Override
     public Document newDocument() {
@@ -131,6 +132,7 @@ Document varF44D68D8F95CBC444332B4C985935738_370247640 =         dom.createDocum
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.770 -0400", hash_original_method = "3B90C04D8401BDC844BD72B6E8D6BA23", hash_generated_method = "460F8A0203B5BA07150CB100297449F2")
     @Override
     public Document parse(InputSource source) throws SAXException, IOException {

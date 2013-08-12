@@ -27,6 +27,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] readAll(InputStream inStr) throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         pipeAll(inStr, buf);
@@ -34,6 +35,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] readAllLimited(InputStream inStr, int limit) throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         pipeAllLimited(inStr, limit, buf);
@@ -41,11 +43,13 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int readFully(InputStream inStr, byte[] buf) throws IOException {
         return readFully(inStr, buf, 0, buf.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int readFully(InputStream inStr, byte[] buf, int off, int len) throws IOException {
         int totalRead = 0;
         while (totalRead < len)
@@ -71,6 +75,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long pipeAllLimited(InputStream inStr, long limit, OutputStream outStr) throws IOException {
         long total = 0;
         byte[] bs = new byte[BUFFER_SIZE];

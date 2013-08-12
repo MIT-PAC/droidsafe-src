@@ -32,6 +32,7 @@ public class AuthenticatorDescription implements Parcelable {
 
     public boolean customTokens;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.482 -0400", hash_original_method = "10CE98088B9AD2510D39AB010FD4DE80", hash_generated_method = "3F8DC0EC4E78B4CB8DA1A2D2E512F4E3")
     public  AuthenticatorDescription(String type, String packageName, int labelId, int iconId,
             int smallIconId, int prefId, boolean customTokens) {
@@ -67,6 +68,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.486 -0400", hash_original_method = "11382004E2A497F30E307E2BE452746D", hash_generated_method = "A0E54BCAFADC69D039650CCC8275E8A3")
     public  AuthenticatorDescription(String type, String packageName, int labelId, int iconId,
             int smallIconId, int prefId) {
@@ -123,6 +125,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AuthenticatorDescription newKey(String type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
         return new AuthenticatorDescription(type);
@@ -140,6 +143,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.514 -0400", hash_original_method = "6BF731200C51E86131E751F42FA1CCF7", hash_generated_method = "27967978E3BDD3C5DD48822817474262")
     public int hashCode() {
         int var1234BA14D219990AD59276F9D4AC0644_2052708021 = (type.hashCode());
@@ -150,6 +154,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.520 -0400", hash_original_method = "56302D274B0C35098461E26F41A371FE", hash_generated_method = "E021F23787790CECFF4CF5D975082734")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -187,6 +192,7 @@ String var645F2244FF2137377AF0777536CDDC2B_1363612991 =         "AuthenticatorDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.529 -0400", hash_original_method = "72F90E851087733BFC5D935FAA58D7A0", hash_generated_method = "4C536443DCD43D5EAD7329EA8AFA3A76")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -214,6 +220,7 @@ String var645F2244FF2137377AF0777536CDDC2B_1363612991 =         "AuthenticatorDe
     public static final Creator<AuthenticatorDescription> CREATOR =
             new Creator<AuthenticatorDescription>() {
         
+        @DSModeled(DSC.SAFE)
         public AuthenticatorDescription createFromParcel(Parcel source) {
             return new AuthenticatorDescription(source);
         }

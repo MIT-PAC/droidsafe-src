@@ -77,6 +77,7 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.558 -0400", hash_original_method = "2F4ECD8A243390FA1987AE315BD02BED", hash_generated_method = "46D7D7808DDC8B89E6E388B8BF54DF38")
     @Override
     public int getPrefix(int index) {
@@ -89,6 +90,7 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.559 -0400", hash_original_method = "22178ADBDB18A4450F9D0DCE4A5B21CB", hash_generated_method = "9DF970C1711B20DF4112C5E83EABFF8A")
     @Override
     public String getDescription(int index) {

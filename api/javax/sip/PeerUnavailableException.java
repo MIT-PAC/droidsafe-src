@@ -12,6 +12,7 @@ public class PeerUnavailableException extends SipException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.277 -0400", hash_original_method = "66401C22E3DAC6E7A91EB96EDEE6E4D8", hash_generated_method = "E332E917A455254124ED9AD5E1051D79")
     public  PeerUnavailableException(String message) {
         super(message);

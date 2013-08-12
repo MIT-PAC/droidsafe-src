@@ -102,6 +102,7 @@ String varF8A43570A6D9CE873AAA24BBE28B6265_1822290007 =         this.uri;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.037 -0400", hash_original_method = "DE48B9AC65FB9CF013FEA7278BE0E864", hash_generated_method = "3BBE9E59AD914BEF7E93A39DE8BF630B")
     public String toString() {
 String var1C720FE9918AD554D33B74B2356310B2_230054062 =         BasicLineFormatter.DEFAULT

@@ -15,6 +15,7 @@ import java.text.ParseException;
 
 public class PathParser extends AddressParametersParser implements TokenTypes {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.045 -0400", hash_original_method = "7A079BF63C48031C1D75ACF959BDA24D", hash_generated_method = "8C9FF8410B31649835F48ABA0CD38AC9")
     public  PathParser(String path) {
         super(path);
@@ -23,6 +24,7 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.046 -0400", hash_original_method = "91CE1B5A663F1BD7DA26A8D59664C334", hash_generated_method = "F9264225D532990B0A316E96E402C1BB")
     protected  PathParser(Lexer lexer) {
         super(lexer);
@@ -31,6 +33,7 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.074 -0400", hash_original_method = "F1314A453C93E830C24484946DC25942", hash_generated_method = "5BFCDAA7F98690C138EBA5CDCC1165F4")
     public SIPHeader parse() throws ParseException {
         PathList pathList = new PathList();

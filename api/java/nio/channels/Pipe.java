@@ -33,6 +33,7 @@ public abstract class Pipe {
     
     public static abstract class SinkChannel extends AbstractSelectableChannel implements WritableByteChannel, GatheringByteChannel {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.245 -0400", hash_original_method = "6199DECCB48C88702EC19067764991B0", hash_generated_method = "C72698FDAA0C247A4C9BAA911A820984")
         protected  SinkChannel(SelectorProvider provider) {
             super(provider);

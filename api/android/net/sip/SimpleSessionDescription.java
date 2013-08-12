@@ -107,6 +107,7 @@ Media varBE1D6B119ABF0E6270B47941F9EF21CE_2055081616 =         media;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.372 -0400", hash_original_method = "B85596442E6A0B0D5C28199B22779A84", hash_generated_method = "0D261C797F4F512904D7712E2707FE21")
     public Media[] getMedia() {
 Media[] var36F2E75E5285F87859F9AF6BCE3D44D2_855785821 =         mMedia.toArray(new Media[mMedia.size()]);

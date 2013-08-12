@@ -33,6 +33,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.427 -0400", hash_original_method = "80DC04F99A2A57F6C5D41327EC1C50ED", hash_generated_method = "BB9CF57AE86E39B0F5074C6900D4C7A1")
     @Override
     public String getString(int columnIndex) {
@@ -74,6 +75,7 @@ String var40A8596F3179C0E714867EBE523A53EA_1604783932 =         mWindow.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.428 -0400", hash_original_method = "A77BC22B3B7D8AA9E2F50FAA1FFFE93C", hash_generated_method = "1648E27C48A6A229C04C06D516644BA4")
     @Override
     public int getInt(int columnIndex) {
@@ -156,6 +158,7 @@ String var40A8596F3179C0E714867EBE523A53EA_1604783932 =         mWindow.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.432 -0400", hash_original_method = "BDCD863F6E874A96AC9E7E0E4D765E55", hash_generated_method = "C240BFF4C0CB53A63A8BA7E998E8140C")
     @Deprecated
     public boolean isString(int columnIndex) {
@@ -192,6 +195,7 @@ String var40A8596F3179C0E714867EBE523A53EA_1604783932 =         mWindow.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.433 -0400", hash_original_method = "CEEA013C273D2B30A1533873F1614E01", hash_generated_method = "493BF98C968F90F82CFCD770A5D75065")
     @Override
     public int getType(int columnIndex) {

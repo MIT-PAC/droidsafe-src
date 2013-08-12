@@ -17,6 +17,7 @@ public class DateParseException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.814 -0400", hash_original_method = "53C5731479F0FA5FDE74FB1046876E6C", hash_generated_method = "335F377DD9E363064EDB0665BD0B0ED4")
     public  DateParseException(String message) {
         super(message);

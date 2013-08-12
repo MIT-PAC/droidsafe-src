@@ -74,7 +74,8 @@ public final class RequestHeaders {
         this.uri = uri;
         this.headers = headers;
         HeaderParser.CacheControlHandler handler = new HeaderParser.CacheControlHandler() {
-            @Override public void handle(String directive, String parameter) {
+            @DSModeled(DSC.BAN)
+        @Override public void handle(String directive, String parameter) {
                 if (directive.equalsIgnoreCase("no-cache")) {
                     noCache = true;
                 } else if (directive.equalsIgnoreCase("max-age")) {
@@ -171,6 +172,7 @@ for(int i = 0;i < headers.length();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.881 -0400", hash_original_method = "00B64F53B1189DFD8EFC83FE9CA41E37", hash_generated_method = "B0C8F4658B53E2DA2A12C55A9F6EC81A")
     public boolean isChunked() {
         boolean var1990FB90873D18F505D59F3D0EED154E_1988836568 = ("chunked".equalsIgnoreCase(transferEncoding));
@@ -181,6 +183,7 @@ for(int i = 0;i < headers.length();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.881 -0400", hash_original_method = "0C9005E446549CA2DCD479C6BCCC6A35", hash_generated_method = "9FF3BFD4CE22FAF9BDA8EE48191D6F91")
     public boolean hasConnectionClose() {
         boolean varF2BCD5BC5E8773DEF14059362B3DF736_427362648 = ("close".equalsIgnoreCase(connection));
@@ -389,6 +392,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.883 -0400", hash_original_method = "F33F8EDA09BCA13DCC3086A1647AF7B6", hash_generated_method = "A313E67A271C5DE73445DBC16A9A9B71")
     public void setChunked() {
         if(this.transferEncoding != null)        
@@ -406,6 +410,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.883 -0400", hash_original_method = "B694A143946FBE7D78723DAA6432C1D4", hash_generated_method = "4E3A77F848346044BA84EFF3C3B693F9")
     public void setContentLength(int contentLength) {
         if(this.contentLength != -1)        
@@ -423,6 +428,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.884 -0400", hash_original_method = "DC11EC3DFE82D6B10C121117898B0E91", hash_generated_method = "5D95A767E48FE686194646C257C68EC7")
     public void setUserAgent(String userAgent) {
         if(this.userAgent != null)        
@@ -440,6 +446,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.884 -0400", hash_original_method = "4B7D91EC3E8FCE0AF18D6E617B1DB541", hash_generated_method = "26B3693220C87FC324E0E3A0565E4DF5")
     public void setHost(String host) {
         if(this.host != null)        
@@ -457,6 +464,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.884 -0400", hash_original_method = "3089C76E2E8A40B02693EB13728E7CA8", hash_generated_method = "861AF586BFBDEBA145D397FECC5C529E")
     public void setConnection(String connection) {
         if(this.connection != null)        
@@ -474,6 +482,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.884 -0400", hash_original_method = "3166B34126860E43A5A770AE5259F680", hash_generated_method = "EEB343E3892D5390D804EF590CA0094B")
     public void setAcceptEncoding(String acceptEncoding) {
         if(this.acceptEncoding != null)        
@@ -491,6 +500,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.884 -0400", hash_original_method = "F11902D80B4B7789460A90B0230527B4", hash_generated_method = "897685C7BDD7FD9EC2B888730BCC26E7")
     public void setContentType(String contentType) {
         if(this.contentType != null)        
@@ -508,6 +518,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.884 -0400", hash_original_method = "64EEBAAA82D27C1188C64EDA1E7A0A05", hash_generated_method = "F3B048CFBD1FABD6CAF8B17DD1CD5B50")
     public void setIfModifiedSince(Date date) {
         addTaint(date.getTaint());
@@ -528,6 +539,7 @@ String var0C7AA8BF85EA309C0AB559E085E28DEA_934604530 =         proxyAuthorizatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.885 -0400", hash_original_method = "E4824BE31FA5B08E01F3918FCE59BE57", hash_generated_method = "A98D51D621E115CEBEB62F2195F2C1CE")
     public void setIfNoneMatch(String ifNoneMatch) {
         if(this.ifNoneMatch != null)        

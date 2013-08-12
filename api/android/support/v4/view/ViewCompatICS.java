@@ -17,33 +17,39 @@ class ViewCompatICS {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static boolean canScrollHorizontally(View v, int direction) {
         return v.canScrollHorizontally(direction);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean canScrollVertically(View v, int direction) {
         return v.canScrollVertically(direction);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setAccessibilityDelegate(View v, Object delegate) {
         v.setAccessibilityDelegate((AccessibilityDelegate) delegate);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         v.onPopulateAccessibilityEvent(event);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         v.onInitializeAccessibilityEvent(event);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void onInitializeAccessibilityNodeInfo(View v, Object info) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         v.onInitializeAccessibilityNodeInfo((AccessibilityNodeInfo) info);

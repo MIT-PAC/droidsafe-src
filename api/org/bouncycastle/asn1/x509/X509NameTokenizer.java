@@ -19,6 +19,7 @@ public class X509NameTokenizer {
 
     private StringBuffer buf = new StringBuffer();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.240 -0400", hash_original_method = "E29DC46EF5738DAFDF44DDEEECCCD2C0", hash_generated_method = "530DAC4DCE86DDCE43D9C6AC5EDA6C09")
     public  X509NameTokenizer(
         String  oid) {
@@ -28,6 +29,7 @@ public class X509NameTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.240 -0400", hash_original_method = "6C4980154E892C5E33B9260977D1D61C", hash_generated_method = "4BEA75B12AAC351464B943202513991C")
     public  X509NameTokenizer(
         String  oid,
@@ -52,6 +54,7 @@ public class X509NameTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.242 -0400", hash_original_method = "609C206EB69C69406C6D19A5ED0989AC", hash_generated_method = "48FA9B79E393F03DABFCC30AAD1A259B")
     public String nextToken() {
         if(index == value.length())        

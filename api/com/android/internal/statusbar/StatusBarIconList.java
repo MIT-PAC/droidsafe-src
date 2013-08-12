@@ -148,6 +148,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.202 -0400", hash_original_method = "8024CC157D8FAF0FCD4261460DE3C083", hash_generated_method = "DB4EF2DFB121DCA94C75DA44B3E1E610")
     public int getSlotIndex(String slot) {
         addTaint(slot.getTaint());
@@ -310,6 +311,7 @@ for(int i=0;i<N;i++)
     public static final Parcelable.Creator<StatusBarIconList> CREATOR
             = new Parcelable.Creator<StatusBarIconList>()
     {
+        @DSModeled(DSC.SAFE)
         public StatusBarIconList createFromParcel(Parcel parcel)
         {
             return new StatusBarIconList(parcel);

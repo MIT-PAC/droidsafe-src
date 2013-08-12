@@ -59,6 +59,7 @@ for(int i = 0;i < mCursors.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.037 -0400", hash_original_method = "C94247264BA1143A8EFEBC4EA367BD4C", hash_generated_method = "AAC5BFEBA4CF77B900320295447F3E7A")
     @Override
     public int getCount() {
@@ -86,6 +87,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.038 -0400", hash_original_method = "2E36F9108221D554FB6CCFC9204351EF", hash_generated_method = "0887FD39C10DCE74E4B483675B08EA4B")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
@@ -140,6 +142,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.039 -0400", hash_original_method = "3CE824B95C82F11BF58FC21A90C6596E", hash_generated_method = "139DAAC6A4D87FBF2F20BA3C08650E7F")
     @Override
     public String getString(int column) {
@@ -164,6 +167,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_1721898706 =         mCursor.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.040 -0400", hash_original_method = "196BE6610F391149CB98C678C09840A9", hash_generated_method = "A10B86612A7F1A2BDB8AED406FB07D85")
     @Override
     public int getInt(int column) {
@@ -176,6 +180,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_1721898706 =         mCursor.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.041 -0400", hash_original_method = "F9F66E8E22111A5FD3479C47D664F15E", hash_generated_method = "A3AF1DB04ACE7057DD6BF899A8D9B4D4")
     @Override
     public long getLong(int column) {
@@ -188,6 +193,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_1721898706 =         mCursor.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.043 -0400", hash_original_method = "67B17E1A8809B30C69BA5C708B2EF661", hash_generated_method = "554EB3C8296DC6B401116995D502FC08")
     @Override
     public float getFloat(int column) {
@@ -212,6 +218,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_1721898706 =         mCursor.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.045 -0400", hash_original_method = "EA5E8A29C1728085016D3A247FDA0EC9", hash_generated_method = "8F1D7ACD85C8038F4D6A0BCC202A249F")
     @Override
     public int getType(int column) {
@@ -224,6 +231,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_1721898706 =         mCursor.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.046 -0400", hash_original_method = "A230025A9AF792B73F7279DEAF8B2408", hash_generated_method = "F205F2D49662C8AD923865E9601C5375")
     @Override
     public boolean isNull(int column) {
@@ -236,6 +244,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_1721898706 =         mCursor.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.046 -0400", hash_original_method = "9D3EADEAB6620E0607DB05CBA4EF5895", hash_generated_method = "413FCABF23D1C8E2E54261C7900E7A21")
     @Override
     public byte[] getBlob(int column) {

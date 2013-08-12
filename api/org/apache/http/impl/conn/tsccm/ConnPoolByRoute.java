@@ -78,6 +78,7 @@ public class ConnPoolByRoute extends AbstractConnPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.393 -0400", hash_original_method = "5727338124A1E72B6395110A48913E3E", hash_generated_method = "7C3BD982DB5AAB93A0672AD2E787E1A4")
     protected Queue<BasicPoolEntry> createFreeConnQueue() {
 Queue<BasicPoolEntry> var01B77BB2B7DAEB18A121DF47998865B8_987091953 =         new LinkedList<BasicPoolEntry>();
@@ -108,6 +109,7 @@ Map<HttpRoute, RouteSpecificPool> var134DFE940BF69D54A54951EBDC23A049_509209047 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.394 -0400", hash_original_method = "5DDB8B45F189660D50400B7C32F12F31", hash_generated_method = "CE275144676E4DAC9E0A42FAA17EAE07")
     protected RouteSpecificPool newRouteSpecificPool(HttpRoute route) {
         addTaint(route.getTaint());
@@ -119,6 +121,7 @@ RouteSpecificPool var4C24997C04DFA56270A7A8E269A0BC66_689193913 =         new Ro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.395 -0400", hash_original_method = "92724E0FC2C28E5538F8325CDCFB2338", hash_generated_method = "D138EFE0A83145A9DD3BE862E7E3F730")
     protected WaitingThread newWaitingThread(Condition cond,
                                              RouteSpecificPool rospl) {
@@ -132,6 +135,7 @@ WaitingThread varDFDF030C3807F5EFC0894FF071EF6497_1207859264 =         new Waiti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.396 -0400", hash_original_method = "2DA0D144EE94C06AE8D1ED191B4BB0F6", hash_generated_method = "97462A4CC4DD35F730ABBA5EB76CE2B7")
     protected RouteSpecificPool getRoutePool(HttpRoute route,
                                              boolean create) {
@@ -369,6 +373,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_1236179673 =         entry;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.402 -0400", hash_original_method = "459D6C1E2796BA157345E479FDD43BC9", hash_generated_method = "C284AAB36548E98C6B3A85CFBF51602F")
     @Override
     public void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration, TimeUnit timeUnit) {
@@ -599,6 +604,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_1784340377 =         entry;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.405 -0400", hash_original_method = "DA32210354F9DB856361268717BF05AF", hash_generated_method = "6741F6577676B573D5E2D3F643B6D29D")
     @Override
     protected void handleLostEntry(HttpRoute route) {
@@ -635,6 +641,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_1784340377 =         entry;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.406 -0400", hash_original_method = "31234679312EA392475BCCB545DA6E40", hash_generated_method = "D518ADA40B7CAEB8EDF8EB5B2B36F582")
     protected void notifyWaitingThread(RouteSpecificPool rospl) {
         addTaint(rospl.getTaint());

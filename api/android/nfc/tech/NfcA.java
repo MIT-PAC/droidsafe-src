@@ -36,6 +36,7 @@ public final class NfcA extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NfcA get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NFC_A)) return null;
         try {
@@ -79,6 +80,7 @@ public final class NfcA extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.720 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "935BDFD4F0B8A13A4FF1B403D6E1CADF")
     public int getMaxTransceiveLength() {
         int var534FE261D7083B235B3B010A14A83EE1_845692679 = (getMaxTransceiveLengthInternal());
@@ -89,6 +91,7 @@ public final class NfcA extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.720 -0400", hash_original_method = "63D5F2163C0B5751BB93B998E089091B", hash_generated_method = "6C23619A0B89F3AD913769B88256BF4B")
     public void setTimeout(int timeout) {
         addTaint(timeout);
@@ -117,6 +120,7 @@ public final class NfcA extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.721 -0400", hash_original_method = "BA38E23E1F1B427D7366A44F0802731B", hash_generated_method = "CAD239917E57350B295FCADE64B1DF7A")
     public int getTimeout() {
         try 

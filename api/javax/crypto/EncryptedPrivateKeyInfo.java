@@ -136,6 +136,7 @@ public class EncryptedPrivateKeyInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.109 -0400", hash_original_method = "5A4FF1B4B6EE8C8ABD405D2DD33761E1", hash_generated_method = "518CCACE5B8E0C2184D34F896CF0A7BF")
     public  EncryptedPrivateKeyInfo(AlgorithmParameters algParams, byte[] encryptedData) throws NoSuchAlgorithmException {
         if(algParams == null)        
@@ -216,6 +217,7 @@ AlgorithmParameters var7FA38C5FF35ACD628F2BF4AA12BE3376_1384042003 =         alg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.111 -0400", hash_original_method = "953A1BC97C4FC2CA6B0BC7CB45B78971", hash_generated_method = "8B8F5E5EE5054B5A10FBED2169C2A5F0")
     public byte[] getEncryptedData() {
         byte[] ret = new byte[encryptedData.length];
@@ -230,6 +232,7 @@ AlgorithmParameters var7FA38C5FF35ACD628F2BF4AA12BE3376_1384042003 =         alg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.112 -0400", hash_original_method = "5E7E74DFC3F27253F408C7A3D7CB1593", hash_generated_method = "E3374C5488045E3C7BECC7E52C6BD845")
     public PKCS8EncodedKeySpec getKeySpec(Cipher cipher) throws InvalidKeySpecException {
         addTaint(cipher.getTaint());
@@ -279,6 +282,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_410462408 =             
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.139 -0400", hash_original_method = "E86A0445ED0DCCD02C804E7FA87DE046", hash_generated_method = "3A227065BCAE4EF208555AF2B9F1C773")
     public PKCS8EncodedKeySpec getKeySpec(Key decryptKey) throws NoSuchAlgorithmException,
                InvalidKeyException {
@@ -350,6 +354,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1502893277 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.168 -0400", hash_original_method = "B712B7178E60AED4791DB32F07137FE5", hash_generated_method = "D294784F6CAF0422FE587530E1F9813D")
     public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, String providerName) throws NoSuchProviderException,
                NoSuchAlgorithmException,
@@ -429,6 +434,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1118771816 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.190 -0400", hash_original_method = "90A968B6E2258355BD8D757E8E7A32BF", hash_generated_method = "41A41B1CE4C0894F3B59CF9CA7927E78")
     public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, Provider provider) throws NoSuchAlgorithmException,
                InvalidKeyException {
@@ -594,6 +600,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_2093323626 =            
 
     private static final ASN1Sequence asn1 = new ASN1Sequence(new ASN1Type[] {
             AlgorithmIdentifier.ASN1, ASN1OctetString.getInstance() }) {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.194 -0400", hash_original_method = "C7B48C01EA9BD54A7C386B9C416EAF20", hash_generated_method = "08F72077AAEF1EB6834FA5F016975C20")
         @Override
         protected void getValues(Object object, Object[] values) {

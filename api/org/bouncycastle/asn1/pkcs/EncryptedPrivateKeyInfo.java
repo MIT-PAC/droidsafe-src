@@ -26,6 +26,7 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
 
     private ASN1OctetString data;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.922 -0400", hash_original_method = "D7780F085E4F69D75EAD7364F689A92D", hash_generated_method = "DE44E6FDE373BEF984D943993C27E632")
     public  EncryptedPrivateKeyInfo(
         ASN1Sequence  seq) {
@@ -40,6 +41,7 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.923 -0400", hash_original_method = "05A2146A24A4B777EF99E759E6105DB4", hash_generated_method = "1D8FF643A8B8E69B31AC57D85BE6BD5D")
     public  EncryptedPrivateKeyInfo(
         AlgorithmIdentifier algId,
@@ -52,6 +54,7 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static EncryptedPrivateKeyInfo getInstance(
         Object  obj) {
         if (obj instanceof EncryptedPrivateKeyInfo)
@@ -77,6 +80,7 @@ AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_604131589 =         algI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.924 -0400", hash_original_method = "BBC4FA06F2A86F1789EA116FAB590C10", hash_generated_method = "E63C4CD7924E1BE55618C465CACE056A")
     public byte[] getEncryptedData() {
         byte[] var5EE6B65A36B3C65F89881A2A71E8AF96_1026067775 = (data.getOctets());
@@ -87,6 +91,7 @@ AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_604131589 =         algI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.924 -0400", hash_original_method = "1A83B7862624E8339D74A705608FC69D", hash_generated_method = "E6748229D61D9D38B633EF15B4B3FB64")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

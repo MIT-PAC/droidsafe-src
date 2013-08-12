@@ -222,6 +222,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.070 -0400", hash_original_method = "534072486045B703901D00BD8CC513FF", hash_generated_method = "4BEF998E0CAC5058771D34305EFB7725")
     public boolean mountObb(String filename, String key, OnObbStateChangeListener listener) {
         addTaint(listener.getTaint());
@@ -271,6 +272,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.071 -0400", hash_original_method = "49ADFC5746B1589055920681F4A3DF66", hash_generated_method = "B58A7E223C6902898997E7FC518AE603")
     public boolean unmountObb(String filename, boolean force, OnObbStateChangeListener listener) {
         addTaint(listener.getTaint());
@@ -499,6 +501,7 @@ String[] var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1223356005 =         paths;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.075 -0400", hash_original_method = "3247F72E228BC8CA6CB0EFFDE0587175", hash_generated_method = "A00097831F4AFE00836623180CBA9AF6")
         public void onUsbMassStorageConnectionChanged(boolean available) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -516,6 +519,7 @@ for(int i = 0;i < size;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.075 -0400", hash_original_method = "3412F22C5256750E7F040A232BDF8730", hash_generated_method = "C18F1537470C818B09833135EFD30C5F")
         public void onStorageStateChanged(String path, String oldState, String newState) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -662,6 +666,7 @@ for(int i = 0;i < size;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.078 -0400", hash_original_method = "834954D068AF2864C85CCAD9D321B725", hash_generated_method = "F9FE1E4DB54C2545F19A9754F59A1E06")
          OnObbStateChangeListener getListener() {
             if(mObbEventListenerRef == null)            
@@ -681,6 +686,7 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_91045438 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.078 -0400", hash_original_method = "E278FF9F38CD6580E6FCEF436B6AB830", hash_generated_method = "6DEBFD25277C0EC31E213CE1AC291962")
          void sendObbStateChanged(String path, int state) {
             addTaint(state);
@@ -705,6 +711,7 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_91045438 =         
 
         public int state;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.079 -0400", hash_original_method = "B6A5FB82143B81E65B529E1CD0C6BFE8", hash_generated_method = "D7B87FD5151A53761078D39156714F78")
         public  ObbStateChangedStorageEvent(String path, int state) {
             super(EVENT_OBB_STATE_CHANGED);
@@ -815,6 +822,7 @@ Message varF433E876D1576C042493660DEE33CDC1_1737579052 =             mMessage;
 
         private Handler mHandler;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.085 -0400", hash_original_method = "9AED46AC5CC711FE51A627C97DCCA6A0", hash_generated_method = "4BDF51206D9C521E57479CA6E4CEA118")
           ListenerDelegate(StorageEventListener listener) {
             mStorageEventListener = listener;
@@ -867,6 +875,7 @@ StorageEventListener varE7702B5CA1C4D4B989CA9AA0E2DA9878_419910665 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.085 -0400", hash_original_method = "2B1B76FC8373F60078A15952F701EC30", hash_generated_method = "02E226889414FA9CC2064DE3C95335B0")
          void sendShareAvailabilityChanged(boolean available) {
             addTaint(available);

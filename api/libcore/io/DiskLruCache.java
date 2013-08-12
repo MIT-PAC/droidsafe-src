@@ -143,6 +143,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DiskLruCache open(File directory, int appVersion, int valueCount, long maxSize) throws IOException {
         if (maxSize <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
@@ -424,6 +425,7 @@ Snapshot var2E6A24A5A6783496DE3A5FF2F4E2D6B9_587946527 =         new Snapshot(in
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.125 -0400", hash_original_method = "1C8B92160DB309C26801458073B88259", hash_generated_method = "B8E160815B469B78D6D196D40811F474")
     public synchronized Editor edit(String key) throws IOException {
         addTaint(key.getTaint());
@@ -581,6 +583,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.129 -0400", hash_original_method = "EADC8C19CC119124A893E81F5BBBE260", hash_generated_method = "7783B9BCB05DD027E2636DA30A8E444A")
     public synchronized boolean remove(String key) throws IOException {
         addTaint(key.getTaint());
@@ -679,6 +682,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.130 -0400", hash_original_method = "99CE1AB60FDF93828647C541E1949F71", hash_generated_method = "A222B13FE28773C94093F5384EA144CA")
     public synchronized void close() throws IOException {
         if(journalWriter == null)        
@@ -787,6 +791,7 @@ InputStream varC45F03A74031CF4889702A14392A5C83_610970306 =             ins[inde
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.132 -0400", hash_original_method = "CEACA6862DFE49E3BCD1DEF39CCE35B7", hash_generated_method = "5F366E77E90663344BFDD4EF4BBDAEA3")
         public String getString(int index) throws IOException {
             addTaint(index);
@@ -824,6 +829,7 @@ for(InputStream in : ins)
 
         private boolean hasErrors;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.133 -0400", hash_original_method = "DB0A9ACC8813DA2FB44F6FFEC09E8772", hash_generated_method = "9D5F2E1BFEBBC34BED7AEE5B243CB69C")
         private  Editor(Entry entry) {
             this.entry = entry;
@@ -866,6 +872,7 @@ InputStream var975B4CCB8B52229009977C881C3B9BC4_1363929824 =                 new
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.135 -0400", hash_original_method = "84B73985D87B7C97991726C0644B80BD", hash_generated_method = "360C78055BAFA9E5AD56AAC09F114CF1")
         public String getString(int index) throws IOException {
             addTaint(index);
@@ -879,6 +886,7 @@ String var47389769C317BA546AE73EC662DDC910_364607937 =             in != null ? 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.135 -0400", hash_original_method = "F4B649129433C613B63F53B88A8B2BF4", hash_generated_method = "449C5A78C8C558BCADB5C2BB260991CE")
         public OutputStream newOutputStream(int index) throws IOException {
             addTaint(index);
@@ -904,6 +912,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.136 -0400", hash_original_method = "988F125F60B3C088ADDC82562F362884", hash_generated_method = "05A987E9B9AE834E405844CB57C71937")
         public void set(int index, String value) throws IOException {
             addTaint(value.getTaint());
@@ -950,6 +959,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.137 -0400", hash_original_method = "805CDF65FA82242C2D4B7EB4CBDDF0ED", hash_generated_method = "18E9660C4426C8AA96D2D812955FA89C")
         public void abort() throws IOException {
             completeEdit(this, false);
@@ -960,6 +970,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
         
         private class FaultHidingOutputStream extends FilterOutputStream {
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.137 -0400", hash_original_method = "C9ADDA2E4F72C2E9295822BCBAC6927F", hash_generated_method = "F98AAD1DAF9C62BF5BF1780FA95F6862")
             private  FaultHidingOutputStream(OutputStream out) {
                 super(out);
@@ -968,6 +979,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.137 -0400", hash_original_method = "99CEE7897D6B59DCCBF2A9FD6D32C932", hash_generated_method = "DE19E823FA6CCC761385FD460C2684C6")
             @Override
             public void write(int oneByte) {
@@ -989,6 +1001,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.138 -0400", hash_original_method = "192A1A5EAAE398CB5AAE810F931045A8", hash_generated_method = "12D1BF532D80010F5DC64C8AE15D6599")
             @Override
             public void write(byte[] buffer, int offset, int length) {
@@ -1032,6 +1045,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.138 -0400", hash_original_method = "A7144C313F2BBCA14DD174D533CF0C30", hash_generated_method = "23B6E4BC95BEBC7C193269573D6E6B52")
             @Override
             public void flush() {
@@ -1074,6 +1088,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
 
         private Editor currentEditor;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.141 -0400", hash_original_method = "A48AD7F9473C4832EA43939DE55B0830", hash_generated_method = "05E015F56AEE62FCB3C094123AFDB03C")
         private  Entry(String key) {
             this.key = key;
@@ -1084,6 +1099,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_1135161712 =                 ne
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.141 -0400", hash_original_method = "5393AA568299AD2184B5004B9545BCCA", hash_generated_method = "66D9618FEDEA66B5933A9743BAE48B06")
         public String getLengths() throws IOException {
             StringBuilder result = new StringBuilder();
@@ -1151,6 +1167,7 @@ for(int i = 0;i < strings.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.152 -0400", hash_original_method = "C9A2E947DD05DC3D51A797932ED86E55", hash_generated_method = "40F802729F5FF000C59A5692EF3BE1FC")
         public File getCleanFile(int i) {
             addTaint(i);
@@ -1162,6 +1179,7 @@ File var8503B144813FCE392AB3D105B5D1F2B4_1144039771 =             new File(direc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.152 -0400", hash_original_method = "7E5BF4AC0CC24327CE09DE834205313B", hash_generated_method = "08CE048F03CD05E5DA62EAD4473C7693")
         public File getDirtyFile(int i) {
             addTaint(i);

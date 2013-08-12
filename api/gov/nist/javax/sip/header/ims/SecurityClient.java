@@ -10,6 +10,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class SecurityClient extends SecurityAgree implements SecurityClientHeader, ExtensionHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.454 -0400", hash_original_method = "2DC95595D33B318EDF43269B772F4B7E", hash_generated_method = "9FEC82225A678A3ED2A2EA564F83724D")
     public  SecurityClient() {
         super(SecurityClientHeader.NAME);
@@ -17,6 +18,7 @@ public class SecurityClient extends SecurityAgree implements SecurityClientHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.455 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "0839A59636F98EA831ADA7932182705B")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

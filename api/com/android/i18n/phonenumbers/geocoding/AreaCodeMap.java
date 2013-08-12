@@ -125,6 +125,7 @@ AreaCodeMapStorageStrategy varC8954BB945BA997C91E808EDD6426356_1965131432 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.434 -0400", hash_original_method = "E451B33DF0760BCBC0A94001216332F0", hash_generated_method = "750AE839AC42A3BEA36999DA395B3D9B")
     public void readExternal(ObjectInput objectInput) throws IOException {
         addTaint(objectInput.getTaint());
@@ -149,6 +150,7 @@ AreaCodeMapStorageStrategy varC8954BB945BA997C91E808EDD6426356_1965131432 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.435 -0400", hash_original_method = "E6F2985648B73053281BC07D9BFD7460", hash_generated_method = "CF24913F6D7DA86E6B71C3F7D58F187D")
     public void writeExternal(ObjectOutput objectOutput) throws IOException {
         addTaint(objectOutput.getTaint());
@@ -160,6 +162,7 @@ AreaCodeMapStorageStrategy varC8954BB945BA997C91E808EDD6426356_1965131432 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.436 -0400", hash_original_method = "C66AA501CE9C84CB206C0DD0D1F37167", hash_generated_method = "F2DAB1060C50AA798A42550C225B866C")
      String lookup(PhoneNumber number) {
         addTaint(number.getTaint());
@@ -256,6 +259,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_309267098 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.438 -0400", hash_original_method = "23EEAC8EFBFA0286A27EC362841462A0", hash_generated_method = "5C22F59441912D0866473568DBAD3ECE")
     @Override
     public String toString() {

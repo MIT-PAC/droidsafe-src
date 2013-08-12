@@ -19,6 +19,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
 
     byte[] string;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.727 -0400", hash_original_method = "210B116B260CE188F6D07BB4AB757CE1", hash_generated_method = "5A72E60B6724EC31C5D11C3C89BE4F40")
     public  ASN1OctetString(
         byte[]  string) {
@@ -38,6 +39,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.727 -0400", hash_original_method = "654F394A2F1F18AA4253E49ED9387EFC", hash_generated_method = "8F7F48CF5836419D2AE8C9400506B865")
     public  ASN1OctetString(
         DEREncodable obj) {
@@ -63,6 +65,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1OctetString getInstance(
         ASN1TaggedObject    obj,
         boolean             explicit) {
@@ -78,6 +81,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ASN1OctetString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof ASN1OctetString)
@@ -92,6 +96,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.728 -0400", hash_original_method = "34640A97A031BA78080CEBB6F9EA17E5", hash_generated_method = "E99DEF800AF9400F4DF1D9DB1A03BD36")
     public InputStream getOctetStream() {
 InputStream varFDCDB5E8FC538F264AC02353EB3C9F5D_1307355228 =         new ByteArrayInputStream(string);
@@ -124,6 +129,7 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_222923277 =         th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.729 -0400", hash_original_method = "306C0053EB93BF3AE4D12BCDAA093AD0", hash_generated_method = "76895823C9DD2FFC96C0269108D555EC")
     public int hashCode() {
         int var8CC5DCD7A6E75AED57809811CBC104BF_1728779283 = (Arrays.hashCode(this.getOctets()));
@@ -134,6 +140,7 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_222923277 =         th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.730 -0400", hash_original_method = "5FE20DA2EBC8E33EF5740C0666CFE34F", hash_generated_method = "A468162EF0A574CE7153F17879B658B5")
      boolean asn1Equals(
         DERObject  o) {
@@ -158,6 +165,7 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_222923277 =         th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.730 -0400", hash_original_method = "D3363286272FDA8D05900543905FFBE8", hash_generated_method = "D3E9C73E32072B475DAB85715BA83CCB")
     public DERObject getLoadedObject() {
 DERObject var637323B1C4EE7CAF17B2CD40E14254B5_1149423658 =         this.getDERObject();
@@ -173,6 +181,7 @@ DERObject var637323B1C4EE7CAF17B2CD40E14254B5_1149423658 =         this.getDEROb
         throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.731 -0400", hash_original_method = "A6F4AE428E861451DA18F2BDC0B16A3E", hash_generated_method = "4E11E800810753329ADE0A3DD9B8F586")
     public String toString() {
 String var9E18392C58EAD0B1BFCF106787A98CB2_1913790361 =         "#"+new String(Hex.encode(string));

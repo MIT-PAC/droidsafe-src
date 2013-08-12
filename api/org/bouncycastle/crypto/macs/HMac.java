@@ -76,6 +76,7 @@ public class HMac implements Mac {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.039 -0400", hash_original_method = "6A332A653F94B07A686BBEFB849C6DAB", hash_generated_method = "003481C2AD5AB25D28E7877E8BD5AE08")
     public String getAlgorithmName() {
 String var3B1F39D8F465DFD1B0D3818B237F2D32_1150631987 =         digest.getAlgorithmName() + "/HMAC";
@@ -97,6 +98,7 @@ Digest var3198260B9187CD88530E727D50A62D10_2103145591 =         digest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.041 -0400", hash_original_method = "3101A36249D850D878FF580C09B22824", hash_generated_method = "7A810CABEBB66607937D0A3EA166CACA")
     public void init(
         CipherParameters params) {
@@ -147,6 +149,7 @@ for(int i = 0;i < outputPad.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.042 -0400", hash_original_method = "C3086ADC6CE1A5F257F3E90CDD54BB5C", hash_generated_method = "42F617E365C3BBEAE8510D15E653E8C6")
     public void update(
         byte in) {
@@ -171,6 +174,7 @@ for(int i = 0;i < outputPad.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.043 -0400", hash_original_method = "E110C7DBF05C7A4DE1DAAF3289785A06", hash_generated_method = "C06F2F05E967CB9E2F81BA807A623987")
     public int doFinal(
         byte[] out,

@@ -33,6 +33,7 @@ public abstract class AlgorithmParametersSpi {
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract <T extends AlgorithmParameterSpec> T engineGetParameterSpec(
             Class<T> paramSpec) throws InvalidParameterSpecException;
 

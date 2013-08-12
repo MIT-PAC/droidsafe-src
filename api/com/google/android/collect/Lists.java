@@ -16,6 +16,7 @@ public class Lists {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static <E> ArrayList<E> newArrayList() {
         return new ArrayList<E>();
     }

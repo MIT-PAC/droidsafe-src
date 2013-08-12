@@ -21,6 +21,7 @@ public abstract class SecurityAgree extends ParametersHeader {
 
     private String secMechanism;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.420 -0400", hash_original_method = "37860681C961C756ECC7AFD430C41B9D", hash_generated_method = "8FD81F49C9A2C9E9D825D2785A8A98DB")
     public  SecurityAgree(String name) {
         super(name);
@@ -31,6 +32,7 @@ public abstract class SecurityAgree extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.421 -0400", hash_original_method = "0AED97FED716BE0BE4710B84F9A63527", hash_generated_method = "DE3AB21BDF30B86B04AD74FD31846F54")
     public  SecurityAgree() {
         super();
@@ -40,6 +42,7 @@ public abstract class SecurityAgree extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.421 -0400", hash_original_method = "9AC5B140B15B11CFD450C965DE3EDCEF", hash_generated_method = "9DD88FE6B6F7536DAF7EF925E5E5B6E7")
     public void setParameter(String name, String value) throws ParseException {
         addTaint(value.getTaint());
@@ -94,6 +97,7 @@ public abstract class SecurityAgree extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.422 -0400", hash_original_method = "6B925B5DF777A76390B5A8992D469F0E", hash_generated_method = "D0CE19C255A8596BFF44C0A56A5E704E")
     public String encodeBody() {
 String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanism + SEMICOLON + SP + parameters.encode();
@@ -104,6 +108,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.423 -0400", hash_original_method = "26617F329EF35F53927C51BE793DE18C", hash_generated_method = "05CEC45B58BC57456F87E532737EEFBE")
     public void setSecurityMechanism(String secMech) throws ParseException {
         if(secMech == null)        
@@ -124,6 +129,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.423 -0400", hash_original_method = "C9B1596896385C915B9F0E305B24E414", hash_generated_method = "3CB4CA8A3A9E845B14400A910F437D1A")
     public void setEncryptionAlgorithm(String ealg) throws ParseException {
         addTaint(ealg.getTaint());
@@ -145,6 +151,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.423 -0400", hash_original_method = "1034CB07B31AD4B972026DDB8CD1CF5A", hash_generated_method = "B0FBCEB7490A3C6E76F535AAEDD38847")
     public void setAlgorithm(String alg) throws ParseException {
         addTaint(alg.getTaint());
@@ -166,6 +173,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.424 -0400", hash_original_method = "445CF41DA92D45C4C84C6BEE36D36BF6", hash_generated_method = "D540B70EC167EAAF915F66EC137EA006")
     public void setProtocol(String prot) throws ParseException {
         addTaint(prot.getTaint());
@@ -187,6 +195,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.424 -0400", hash_original_method = "E016DD00F9E773B1BC74C49DD038424A", hash_generated_method = "0DBD7BB126B6F1C6E3362FF989DFD116")
     public void setMode(String mod) throws ParseException {
         addTaint(mod.getTaint());
@@ -208,6 +217,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.424 -0400", hash_original_method = "75DD86B518B8282C26250CE6A2B99A28", hash_generated_method = "7E35E43F64DCB8C3F0C4EBD590B6CFDA")
     public void setSPIClient(int spic) throws InvalidArgumentException {
         addTaint(spic);
@@ -229,6 +239,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.425 -0400", hash_original_method = "3C648084DC1BE07708C4C0C2C0242BDB", hash_generated_method = "DAF97306483ADD104DB526C1173B951B")
     public void setSPIServer(int spis) throws InvalidArgumentException {
         addTaint(spis);
@@ -250,6 +261,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.425 -0400", hash_original_method = "EF3E10E5EB6E9ADB9B0EAA61EFC25272", hash_generated_method = "02AFB68084C9E8561A2527067FB9FC59")
     public void setPortClient(int portC) throws InvalidArgumentException {
         addTaint(portC);
@@ -271,6 +283,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.425 -0400", hash_original_method = "AE705CDEF098778FC0F68E357BFDF4CB", hash_generated_method = "15D78D2DB3EFA5203E2791BA973F5A25")
     public void setPortServer(int portS) throws InvalidArgumentException {
         addTaint(portS);
@@ -292,6 +305,7 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_2059111907 =         this.secMechanis
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.426 -0400", hash_original_method = "6E802E2384BCAE9DA923A1C36DFE2987", hash_generated_method = "5F743E8E12DA77CC57529530A2B210A9")
     public void setPreference(float q) throws InvalidArgumentException {
         addTaint(q);
@@ -324,6 +338,7 @@ String var4B79C76D511B5068B7982514555BAC48_948547137 =         this.secMechanism
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.426 -0400", hash_original_method = "E48981B0D788C9F15FB0701B5A5A9BFB", hash_generated_method = "6A811223203514A6A791795B196E5DAC")
     public String getEncryptionAlgorithm() {
 String varE21C3B124DD167D3CBCA969644C356E9_548790615 =         getParameter(ParameterNamesIms.EALG);
@@ -334,6 +349,7 @@ String varE21C3B124DD167D3CBCA969644C356E9_548790615 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.426 -0400", hash_original_method = "10709FDAA4AFF85555E2A3D151185971", hash_generated_method = "F13754A6440F716D3BFC3A0D51DAF577")
     public String getAlgorithm() {
 String var64AC57F7E5736136BB55CD7FDAB4C576_1053972961 =         getParameter(ParameterNamesIms.ALG);
@@ -344,6 +360,7 @@ String var64AC57F7E5736136BB55CD7FDAB4C576_1053972961 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.426 -0400", hash_original_method = "D8F37ABD0A193610338515FA46330650", hash_generated_method = "A1867ED053177845EE1472CC850EF280")
     public String getProtocol() {
 String var20669F26102CE364C290D5B92D0C9D90_999273073 =         getParameter(ParameterNamesIms.PROT);
@@ -354,6 +371,7 @@ String var20669F26102CE364C290D5B92D0C9D90_999273073 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.427 -0400", hash_original_method = "F9C1DAC229A690F6459CC03AC622A5E3", hash_generated_method = "BDEFD1EB051428B1E381F1A99039A79F")
     public String getMode() {
 String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(ParameterNamesIms.MOD);
@@ -364,6 +382,7 @@ String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.427 -0400", hash_original_method = "2AA9C7181C6D09D271CB928F8ADC4E6A", hash_generated_method = "A41CAC2D1F719D4E1B8E2FE62EE4AC8B")
     public int getSPIClient() {
         int varB0D11DD358875318EF28CFAEF8204FE9_1047201295 = ((Integer.parseInt(getParameter(ParameterNamesIms.SPI_C))));
@@ -374,6 +393,7 @@ String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.427 -0400", hash_original_method = "87F3A8BE8E0310CD1D9EAD100DF812CC", hash_generated_method = "4C8481745B351A4CB7502AA531B7EFDA")
     public int getSPIServer() {
         int var291C13EA23D446CDAE55AC60738D17B3_1732159942 = ((Integer.parseInt(getParameter(ParameterNamesIms.SPI_S))));
@@ -384,6 +404,7 @@ String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.427 -0400", hash_original_method = "452A6BD881785C9FC11C999CB3A20207", hash_generated_method = "69CA427693FFA0F4A832A60FA55E44BA")
     public int getPortClient() {
         int var63C7374DA4C387E7AA7C73690C41B44D_1802701726 = ((Integer.parseInt(getParameter(ParameterNamesIms.PORT_C))));
@@ -394,6 +415,7 @@ String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.428 -0400", hash_original_method = "107465724D48A961682620CCB1B6C016", hash_generated_method = "1D68A74CAB9A349AFCC2FE04AD007F59")
     public int getPortServer() {
         int varCADDEE00098FFBB341DEFD35646A4854_1562159118 = ((Integer.parseInt(getParameter(ParameterNamesIms.PORT_S))));
@@ -404,6 +426,7 @@ String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.428 -0400", hash_original_method = "618486245568CF743B7149F19C0097DE", hash_generated_method = "74D0DD74891B1704310C8314543EE268")
     public float getPreference() {
         float var9B5EB94C7E7B422191F93D7C08FB45C5_1400732635 = ((Float.parseFloat(getParameter(ParameterNamesIms.Q))));
@@ -414,6 +437,7 @@ String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.428 -0400", hash_original_method = "AD0CCA4E33EB4C4CCEB107F65F233D48", hash_generated_method = "20454C978F45AD222A74452FBF29C9DD")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -439,6 +463,7 @@ String varE0E61CDFF4BFF8E844EF94D263035213_260091876 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.429 -0400", hash_original_method = "027A143FB16239A6EF6573784EA7EAA2", hash_generated_method = "94C458CE2E6676524EE0C482D8C5229D")
     public Object clone() {
         SecurityAgree retval = (SecurityAgree) super.clone();

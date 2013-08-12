@@ -107,6 +107,7 @@ public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.958 -0400", hash_original_field = "660FD0A006FEE08090F60B78E5797043", hash_generated_field = "99EED3785EF0C907A603E89C20142DDB")
 
     private OnLayoutChangeListener mLayoutChangeListener = new OnLayoutChangeListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.958 -0400", hash_original_method = "B906B3E54DBAAD427317F640A60E799C", hash_generated_method = "02969F67A79B551D4857B063D0CDE2B2")
         public void onLayoutChange(View v, int left, int top, int right,
                 int bottom, int oldLeft, int oldTop, int oldRight,
@@ -137,6 +138,7 @@ public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_field = "73CE077A46042732A8F7D92A2C1AF8E9", hash_generated_field = "D5E2F5EC139F4E66D1268BA7AC51AD66")
 
     private OnTouchListener mTouchListener = new OnTouchListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_method = "16F82C3AF10F7CC437B6D7BEE6D0DC69", hash_generated_method = "670745B700E2F0AEC3EB680BB5FE1569")
         public boolean onTouch(View v, MotionEvent event) {
             
@@ -166,6 +168,7 @@ public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_field = "52BC51643FEA9D0069B8F60CDBE72485", hash_generated_field = "07C335A7203DDCB0B6B0476786CDB55E")
 
     private Handler mHandler = new Handler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_method = "8F0BA1F98715C95935AC2F391AEFF8BC", hash_generated_method = "AAD2F5C855014B3F65805A54CE92C144")
         @Override
         public void handleMessage(Message msg) {
@@ -207,6 +210,7 @@ public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.960 -0400", hash_original_field = "3C390C0F3EC8C6E76F3F8507AC8E9757", hash_generated_field = "BE0735A4F6CFAEC244ADB1A1B9E79B8E")
 
     private View.OnClickListener mPauseListener = new View.OnClickListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.960 -0400", hash_original_method = "F90DC617061E164BAEBDBFB1EA5D02BB", hash_generated_method = "811C9C24B7A4723801F0D8BF2718901B")
         public void onClick(View v) {
             
@@ -223,6 +227,7 @@ public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_field = "2008B1EA87DEDE92B83942CF8FDFADEE", hash_generated_field = "3F48026F72D34D65675A07880DC105DA")
 
     private OnSeekBarChangeListener mSeekListener = new OnSeekBarChangeListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.960 -0400", hash_original_method = "6758392684DBD95D44B26F154F80CA94", hash_generated_method = "F7437A498E3BC8B8A4C329E77821999A")
         public void onStartTrackingTouch(SeekBar bar) {
             
@@ -237,6 +242,7 @@ public class MediaController extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.961 -0400", hash_original_method = "A0EB029A26053134120EC96D7E9882E8", hash_generated_method = "79AFAB679FF9035633BFBD81A27D25D1")
         public void onProgressChanged(SeekBar bar, int progress, boolean fromuser) {
             
@@ -259,6 +265,7 @@ public class MediaController extends FrameLayout {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_method = "53B60B6767600F274A52648AF75E3493", hash_generated_method = "AC47A2FB017606BEB8453C4173FA9028")
         public void onStopTrackingTouch(SeekBar bar) {
             
@@ -281,6 +288,7 @@ public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_field = "9A9DC70DF59B8B1F6B8A9A0C085DFDEA", hash_generated_field = "5DBE77CBBAA3F1DC86B3ACDF42D05696")
 
     private View.OnClickListener mRewListener = new View.OnClickListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_method = "B5D53DC8A12E02793B3EF0C8511F70D5", hash_generated_method = "0956446804574FD1FF0574BB3CAF295E")
         public void onClick(View v) {
             
@@ -303,6 +311,7 @@ public class MediaController extends FrameLayout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.963 -0400", hash_original_field = "50D091DCCFB4B00402EDDB2863541762", hash_generated_field = "357A31A66BFB23DD2BBC706283F10430")
 
     private View.OnClickListener mFfwdListener = new View.OnClickListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.963 -0400", hash_original_method = "BF054D35499B7B032734EBAD3598DA2F", hash_generated_method = "43AF20A0E570119EBA30B6224936073D")
         public void onClick(View v) {
             
@@ -378,7 +387,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.324 -0400", hash_original_method = "5AB721CF8AD66EE5762FE50902543B8E", hash_generated_method = "23191FD52B96F9E7404E05B0D03554AA")
     private void initFloatingWindow() {
         mWindowManager = (WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE);
@@ -411,7 +420,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.325 -0400", hash_original_method = "A15216BA04857F16D27E94A01ED8D9C8", hash_generated_method = "1511A01BAD7F587E281791C0F994A377")
     private void initFloatingWindowLayout() {
         mDecorLayoutParams = new WindowManager.LayoutParams();
@@ -442,7 +451,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.326 -0400", hash_original_method = "273528B94A02173E736183C73352565A", hash_generated_method = "6603F115B58AD0A111D498ADAC13E1E7")
     private void updateFloatingWindowLayout() {
         int [] anchorPos = new int[2];
@@ -507,7 +516,7 @@ public class MediaController extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.327 -0400", hash_original_method = "47AAB8ACF83F9E0950F4FC2EF0028588", hash_generated_method = "7EDEA8B1312AEC865B53889C8FEE2A79")
     protected View makeControllerView() {
         LayoutInflater inflate = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -524,7 +533,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1852993487 =         mRoot;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.329 -0400", hash_original_method = "6027E965805CA7D75D241C044D75CFC3", hash_generated_method = "DAD6B2D6E532D12D8E10E912B1ECFC80")
     private void initControllerView(View v) {
         mPauseButton = (ImageButton) v.findViewById(com.android.internal.R.id.pause);
@@ -590,7 +599,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1852993487 =         mRoot;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.330 -0400", hash_original_method = "4DD833D5B8F1F18277B038D9576E3A42", hash_generated_method = "37FCB9CE942835039AF687B7705C1DCE")
     private void disableUnsupportedButtons() {
         try 
@@ -715,7 +724,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1852993487 =         mRoot;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.331 -0400", hash_original_method = "E3DEF3CD65DC2BEF1837B2236B56198B", hash_generated_method = "8B10064358DC24ED920F97AFD767FB55")
     private String stringForTime(int timeMs) {
         addTaint(timeMs);
@@ -750,7 +759,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.332 -0400", hash_original_method = "972585652F798E535DB73510970F52DB", hash_generated_method = "6092BD05F91DFDC2AFFEE8393D3AAADE")
     private int setProgress() {
         if(mPlayer == null || mDragging)        
@@ -913,7 +922,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.334 -0400", hash_original_method = "B0869F9835F79F721C7D9CE04C896B2B", hash_generated_method = "C426C429605339CC86F18F1CAAB69E49")
     private void updatePausePlay() {
         if(mRoot == null || mPauseButton == null)        
@@ -937,7 +946,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.334 -0400", hash_original_method = "F9113ED701E8317A61E1AB80861EF0B1", hash_generated_method = "A150864218C42F04F8F737162601D6BC")
     private void doPauseResume() {
         if(mPlayer.isPlaying())        
@@ -1014,7 +1023,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_2049617016 =             mFormatter.f
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.335 -0400", hash_original_method = "8961D157AE11C5565BE89171B02042D7", hash_generated_method = "C56F3110B781E6F5A49332579E6C2734")
     private void installPrevNextListeners() {
         if(mNextButton != null)        

@@ -16,6 +16,7 @@ public class KeyManagementException extends KeyException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.917 -0400", hash_original_method = "DE152C48BD78964F95EBFDDBEC69C54C", hash_generated_method = "B8734ACC6C474635792EA54D4600570D")
     public  KeyManagementException() {
         // ---------- Original Method ----------
@@ -31,6 +32,7 @@ public class KeyManagementException extends KeyException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.918 -0400", hash_original_method = "E6EDC076BA6A403E961006D69F90ADCE", hash_generated_method = "AE80041D9385FDB751F3E8E6332E1E5F")
     public  KeyManagementException(Throwable cause) {
         super(cause);

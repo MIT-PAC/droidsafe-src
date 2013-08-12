@@ -26,6 +26,7 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
 
     protected boolean uriRoute;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.304 -0400", hash_original_method = "0B5C776E3038172CE320CE66ECCB4725", hash_generated_method = "5A8FB8B738B5DB9AC744FFEE7DE4B832")
     public  HopImpl(String hostName, int portNumber, String trans) {
         host = hostName;
@@ -44,6 +45,7 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.307 -0400", hash_original_method = "54879B5E9B62042FEEDC1EE4ADCFBB66", hash_generated_method = "C7654AE85C2876963495C8C8308B0E6E")
       HopImpl(String hop) throws IllegalArgumentException {
         if(hop == null)        

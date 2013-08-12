@@ -54,6 +54,7 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.173 -0400", hash_original_method = "645397050BFF5ABB72125064EE5637C4", hash_generated_method = "1202049A81C6B8473085432F9F2F3369")
     public Chunk handleChunk(Chunk request) {
         addTaint(request.getTaint());

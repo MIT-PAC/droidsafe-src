@@ -102,7 +102,7 @@ View varA971D394BC5F19CBC9FFD1F74ED9A7F7_278415857 =         findNextFocus(root,
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.975 -0400", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "C3876691437B9DA2B45016F11E9F10D9")
     private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
         addTaint(direction);
@@ -736,7 +736,7 @@ switch(direction){
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.989 -0400", hash_original_method = "CE5638677B07104C355FE3EB975CEDE8", hash_generated_method = "4D156730D84C1DA4646602251AB36489")
         private void getRect(View view, Rect rect) {
             addTaint(rect.getTaint());

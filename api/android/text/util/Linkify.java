@@ -412,6 +412,7 @@ class LinkSpec {
 
     int end;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.484 -0400", hash_original_method = "556B7BFA52BBBC98785B42B203495262", hash_generated_method = "556B7BFA52BBBC98785B42B203495262")
     public LinkSpec ()
     {

@@ -159,6 +159,7 @@ String var6A343BAC9DFF10320F68B5A4D553C4E8_1352967110 =         "UsbEndpoint[mAd
 
     public static final Parcelable.Creator<UsbEndpoint> CREATOR =
         new Parcelable.Creator<UsbEndpoint>() {
+        @DSModeled(DSC.SAFE)
         public UsbEndpoint createFromParcel(Parcel in) {
             int address = in.readInt();
             int attributes = in.readInt();

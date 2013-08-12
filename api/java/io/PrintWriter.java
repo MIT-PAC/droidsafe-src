@@ -61,6 +61,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.275 -0400", hash_original_method = "2C96C347B82CB5135A3ACEC685E09DC1", hash_generated_method = "91AF885BEB09C1CB8435A480DE8FAF91")
     public  PrintWriter(File file) throws FileNotFoundException {
         this(new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream(file))), false);
@@ -80,6 +81,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.275 -0400", hash_original_method = "BB4A7F43BD82DE5EABC7964AA01AA735", hash_generated_method = "0B4C3D5928920263AB6771C0EE855742")
     public  PrintWriter(String fileName) throws FileNotFoundException {
         this(new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream(fileName))),
@@ -99,6 +101,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.276 -0400", hash_original_method = "0D2606A00F6397A8DDF12D981BAB88CA", hash_generated_method = "D95D937E26FC6FD8F5964CA254BC3D21")
     public boolean checkError() {
         Writer delegate = out;
@@ -136,6 +139,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.277 -0400", hash_original_method = "914ABB48E88E0FB5E2AF825917F549B2", hash_generated_method = "3A6BC395F5583C68D84F0A4F52ECD770")
     @Override
     public void close() {
@@ -168,7 +172,7 @@ public class PrintWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.278 -0400", hash_original_method = "3747E1B1C7FB1936BAC6943C89A67163", hash_generated_method = "8C3F08D2CC22D5B937A4AA00C111DFAC")
     @Override
     public void flush() {
@@ -293,6 +297,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.284 -0400", hash_original_method = "1B10CD3CDAEEB6B80C16851B9025C53B", hash_generated_method = "12E80EBA3820F680F987E0B6D479BF62")
     public void print(double dnum) {
         addTaint(dnum);
@@ -302,6 +307,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.307 -0400", hash_original_method = "1CE43F20E63C9B7E63DE59186E96F9C3", hash_generated_method = "02E18306D5B567A2084BFFC0A5364E7D")
     public void print(float fnum) {
         addTaint(fnum);
@@ -311,6 +317,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.307 -0400", hash_original_method = "7E641CDBDB4194A4ABD6D1C9C473BCDE", hash_generated_method = "72C5D7D36660318C7E669F743B82FA10")
     public void print(int inum) {
         addTaint(inum);
@@ -320,6 +327,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.308 -0400", hash_original_method = "A3B835CD89D15A13CD365E547F38E002", hash_generated_method = "5350C4AC42B46E8FF7E70AE518A6A18F")
     public void print(long lnum) {
         addTaint(lnum);
@@ -329,6 +337,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.308 -0400", hash_original_method = "649E6082D773CF70C752E5716C5CC7C1", hash_generated_method = "693ABB32D1E0310A5EFB40FE7E5DB7AA")
     public void print(Object obj) {
         addTaint(obj.getTaint());
@@ -338,6 +347,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.308 -0400", hash_original_method = "28AE2923CB2E212C4A1D24DC5B3A947D", hash_generated_method = "5A026D312550580FCBBAAA7BB9AD2D92")
     public void print(String str) {
         addTaint(str.getTaint());
@@ -347,6 +357,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.308 -0400", hash_original_method = "55BF6AEFB35D15A1E34ADB671F9CB185", hash_generated_method = "B1FD8862E230788623D6EED22ED4B1DF")
     public void print(boolean bool) {
         addTaint(bool);
@@ -356,6 +367,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.309 -0400", hash_original_method = "F64EE4A89E44550272E2ED021897135C", hash_generated_method = "5A9D8C9CDABC6EB192238814801CE86C")
     public void println() {
         synchronized
@@ -416,6 +428,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.310 -0400", hash_original_method = "5AD4BE5FC276B9D22B3857BC3A21F6AF", hash_generated_method = "2AF3FEFBD9F0D1A853D2AE3CC075FDE9")
     public void println(int i) {
         addTaint(i);
@@ -435,6 +448,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.311 -0400", hash_original_method = "1CC054989EBE4FE044F6C09E43625828", hash_generated_method = "08E57207BFBB43EAD7A7328C4C72C6F1")
     public void println(Object obj) {
         addTaint(obj.getTaint());
@@ -444,6 +458,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.311 -0400", hash_original_method = "78EB2001D4D66C9EDDEA85708AB1EA5C", hash_generated_method = "41751A7C4771E148A4B4B0169BC0B8B2")
     public void println(String str) {
         addTaint(str.getTaint());
@@ -460,6 +475,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.311 -0400", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "F50EDCD63B561F206F067626B5527EA3")
     public void println(boolean b) {
         addTaint(b);
@@ -557,6 +573,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.313 -0400", hash_original_method = "CF32CDDE2940A658D82FD10746BC6D29", hash_generated_method = "7A17B49248C98CFFABCDBD9CE387376E")
     @Override
     public void write(String str) {

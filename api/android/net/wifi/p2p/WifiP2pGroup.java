@@ -250,6 +250,7 @@ for(WifiP2pDevice client : mClients)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.698 -0400", hash_original_method = "31A1E7A8626C889DB764B143F0123BF3", hash_generated_method = "C1B8A5B37DA0EA72F37F58ACF9F95AE5")
     public Collection<WifiP2pDevice> getClientList() {
 Collection<WifiP2pDevice> var56B5579FD7C84BFA68420B5AB0D4DCB4_1434655585 =         Collections.unmodifiableCollection(mClients);

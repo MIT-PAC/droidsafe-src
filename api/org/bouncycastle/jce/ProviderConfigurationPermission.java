@@ -21,6 +21,7 @@ public class ProviderConfigurationPermission extends BasicPermission {
 
     private int permissionMask;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.570 -0400", hash_original_method = "813A9EE5B8EE1175D591BD09E18CED38", hash_generated_method = "FCE0D7AA50C8BAFE22B8F6A947994E84")
     public  ProviderConfigurationPermission(String name) {
         super(name);
@@ -33,6 +34,7 @@ public class ProviderConfigurationPermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.570 -0400", hash_original_method = "9B1904E70CAFE5BEE7C2393BADCC8D35", hash_generated_method = "89C2E39FB4EB257283BFAFBDFB68BC65")
     public  ProviderConfigurationPermission(String name, String actions) {
         super(name, actions);
@@ -118,6 +120,7 @@ String var1D92EB8012A9AFD0473D135A86226554_1613626180 =         actions;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.575 -0400", hash_original_method = "D56E3F2CB9D0216BFD594EEAAA62CE47", hash_generated_method = "91C2B75DE025C41F5747C3F84AE0B611")
     public boolean implies(
         Permission permission) {
@@ -186,6 +189,7 @@ String var1D92EB8012A9AFD0473D135A86226554_1613626180 =         actions;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.576 -0400", hash_original_method = "8E474C8FDA83B9292E3AC02815650F0C", hash_generated_method = "5FE8BD9E02498B214DC6AA0873BC7A8C")
     public int hashCode() {
         int var67BC157D7EEE983D7151E66AB672C5A0_1929468853 = (this.getName().hashCode() + this.permissionMask);

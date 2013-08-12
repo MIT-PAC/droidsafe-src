@@ -94,6 +94,7 @@ public class SearchRecentSuggestions {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.507 -0400", hash_original_method = "CEDACB2E58AE40EFB4E2590521E9B487", hash_generated_method = "D05E0A9C5F9AA06C6F19147252F3A696")
      void waitForSave() {
         do {
@@ -160,6 +161,7 @@ public class SearchRecentSuggestions {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.509 -0400", hash_original_method = "0EFC2C7DB10B5AB62D9BC5D8C29D3C9A", hash_generated_method = "3B35BF6FA5CC108324272169590380D7")
     protected void truncateHistory(ContentResolver cr, int maxEntries) {
         addTaint(maxEntries);

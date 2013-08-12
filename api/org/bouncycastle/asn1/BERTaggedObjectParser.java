@@ -34,6 +34,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.026 -0400", hash_original_method = "641FC71F34D5E5D1E36A069067B2FFCA", hash_generated_method = "4224D6E59DB0E81A205C5A86FC970910")
       BERTaggedObjectParser(
         boolean             constructed,
@@ -71,6 +72,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.027 -0400", hash_original_method = "4AD739EA93AB775B40026E215844A8E7", hash_generated_method = "05CE4052B836A0DECB550048A036155E")
     public DEREncodable getObjectParser(
         int     tag,
@@ -105,6 +107,7 @@ DEREncodable varC0A7EA330C97F08D8F4E627A246A5388_1441408177 =         _parser.re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.027 -0400", hash_original_method = "966C66B264046D402E2F3ED8541B4BF3", hash_generated_method = "670F673EEFDC299E5972EF4E8C789F89")
     public DERObject getLoadedObject() throws IOException {
 DERObject var8672A79C191ABECE380987F377B9DD0A_986898948 =         _parser.readTaggedObject(_constructed, _tagNumber);
@@ -115,6 +118,7 @@ DERObject var8672A79C191ABECE380987F377B9DD0A_986898948 =         _parser.readTa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.027 -0400", hash_original_method = "8993E91076953DCCDD0896DB0B3E91BE", hash_generated_method = "53C80C4132CE5C77C7B21B24CEF5317C")
     public DERObject getDERObject() {
         try 

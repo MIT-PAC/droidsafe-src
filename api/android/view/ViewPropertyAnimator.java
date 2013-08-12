@@ -48,6 +48,7 @@ public class ViewPropertyAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.253 -0400", hash_original_field = "E77137B6BB2AC6EED35F93F563E9A9A8", hash_generated_field = "DDAE17988E2F7FE309FFBA8222A2CC64")
 
     private Runnable mAnimationStarter = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.253 -0400", hash_original_method = "FBB53873B37744AA497F2F82BA93513F", hash_generated_method = "B49121F60C78DA005BF63A708AB544D3")
         @Override
         public void run() {
@@ -518,7 +519,7 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_812601378 =         thi
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.905 -0400", hash_original_method = "10886573EB8B45FC976B918620A506A6", hash_generated_method = "D84E91E3898D4791773481D75296A024")
     private void startAnimation() {
         ValueAnimator animator = ValueAnimator.ofFloat(1.0f);
@@ -552,7 +553,7 @@ for(int i = 0;i < propertyCount;++i)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.906 -0400", hash_original_method = "DC6A356EFD140318ADF1C94BF09D3544", hash_generated_method = "747AF21211DEF47919A0F14EB53253B7")
     private void animateProperty(int constantName, float toValue) {
         addTaint(toValue);
@@ -567,7 +568,7 @@ for(int i = 0;i < propertyCount;++i)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.906 -0400", hash_original_method = "B9FE8E2780DEC5F83DA892CAE9192499", hash_generated_method = "A5B8DBE795D13265E1A5F32F24943CBE")
     private void animatePropertyBy(int constantName, float byValue) {
         addTaint(byValue);
@@ -580,7 +581,7 @@ for(int i = 0;i < propertyCount;++i)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.907 -0400", hash_original_method = "1BDECA037A3A41B230975E15C12C5086", hash_generated_method = "DF9B9C8AF5D48B4BF600D02CBB7DC588")
     private void animatePropertyBy(int constantName, float startValue, float byValue) {
         addTaint(byValue);

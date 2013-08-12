@@ -68,6 +68,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.671 -0400", hash_original_method = "85979238AB87BCF4845F6771314A5B1D", hash_generated_method = "2030FB27F58141C549B331CB6B4261AC")
     public  ComponentName(Parcel in) {
         mPackage = in.readString();
@@ -140,6 +141,7 @@ String var64662C86CFFE7A9599CD4183BD66D434_1568058077 =         mClass;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.675 -0400", hash_original_method = "1928B7DE815A138E651EC762B534B9EC", hash_generated_method = "358CE748002EADDD7C6C134578464055")
     public String getShortClassName() {
         if(mClass.startsWith(mPackage))        
@@ -168,6 +170,7 @@ String var64662C86CFFE7A9599CD4183BD66D434_465881585 =         mClass;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.675 -0400", hash_original_method = "390AD2AD67B7039AADEA1F7D4A32A2A2", hash_generated_method = "C1D23AAD1D45776F30D3F8132F31B7DD")
     public String flattenToString() {
 String var06A4D852FFCAF88A29792FA49A49FE23_1129316789 =         mPackage + "/" + mClass;
@@ -203,6 +206,7 @@ String var25046991B4E1F9743FF1F8E8BA0A59D6_1056664800 =         mPackage + "/" +
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.677 -0400", hash_original_method = "7CD87B9188FFFCA76A5FF9BDC65CF37F", hash_generated_method = "9866B2768CC99C01620E72D7D02CDFFE")
     public String toShortString() {
 String varB78D2BB45811B1D90493C7362E6C1AA5_1707585833 =         "{" + mPackage + "/" + mClass + "}";
@@ -213,7 +217,7 @@ String varB78D2BB45811B1D90493C7362E6C1AA5_1707585833 =         "{" + mPackage +
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.677 -0400", hash_original_method = "54FBA5D02AAB0DA35DA4E57242A769F6", hash_generated_method = "4B26A426C62828D22AD4834C54B0CF81")
     @Override
     public String toString() {
@@ -225,7 +229,7 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_357204788 =         "ComponentInfo{" 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.678 -0400", hash_original_method = "221E549665728B04A91E5C9A58326754", hash_generated_method = "B4B2D0E422E371550B03A3464E5983B4")
     @Override
     public boolean equals(Object obj) {
@@ -260,7 +264,7 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_357204788 =         "ComponentInfo{" 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.678 -0400", hash_original_method = "0BD278EA5D55E08CD4E56E53F182D0C7", hash_generated_method = "5E6171FC9F8CCED525B67D3D45C24894")
     @Override
     public int hashCode() {
@@ -272,7 +276,7 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_357204788 =         "ComponentInfo{" 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.679 -0400", hash_original_method = "DB0D439501C0EAB456A0FFDB0A59DF6E", hash_generated_method = "B32DA57D0768792F16897D1F3617DFF7")
     public int compareTo(ComponentName that) {
         addTaint(that.getTaint());
@@ -330,6 +334,7 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_357204788 =         "ComponentInfo{" 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ComponentName readFromParcel(Parcel in) {
         String pkg = in.readString();
         return pkg != null ? new ComponentName(pkg, in) : null;
@@ -340,6 +345,7 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_357204788 =         "ComponentInfo{" 
 
     public static final Parcelable.Creator<ComponentName> CREATOR
             = new Parcelable.Creator<ComponentName>() {
+        @DSModeled(DSC.SAFE)
         public ComponentName createFromParcel(Parcel in) {
             return new ComponentName(in);
         }

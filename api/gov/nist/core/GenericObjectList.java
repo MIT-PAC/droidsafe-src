@@ -57,6 +57,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.273 -0400", hash_original_method = "F5DC2C4EC43CFECAAD740ADD55431DC9", hash_generated_method = "FF7DB5FE015212A4B1AFAD154023E8E6")
     protected  GenericObjectList(String lname, String classname) {
         this(lname);
@@ -78,6 +79,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.273 -0400", hash_original_method = "4BFA114444B30544264252F06586D600", hash_generated_method = "223A8F81BB04AC4E5F8C5732970E7C9A")
     protected  GenericObjectList(String lname, Class objclass) {
         this(lname);
@@ -199,6 +201,7 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1896249372 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.277 -0400", hash_original_method = "F8FE3E2E9328224EF7348B82C4E16D5E", hash_generated_method = "25EE412368F145BF31988AD2BB899B75")
     protected GenericObject next() {
         if(myListIterator == null)        
@@ -231,6 +234,7 @@ GenericObject var540C13E9E156B687226421B24F2DF178_5020271 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.277 -0400", hash_original_method = "36818B2036C6B7283455BB1B552EEC9B", hash_generated_method = "FCC7E5A99898758986689978099EE69C")
     protected void concatenate(GenericObjectList objList) {
         addTaint(objList.getTaint());
@@ -240,6 +244,7 @@ GenericObject var540C13E9E156B687226421B24F2DF178_5020271 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.277 -0400", hash_original_method = "08F2996E575B7D53E4C32324607C70EA", hash_generated_method = "FCF72AEAFD495426B393C6C128B6AE22")
     protected void concatenate(GenericObjectList objList, boolean topFlag) {
         addTaint(topFlag);
@@ -344,6 +349,7 @@ String varBB173740B3F06857085CC2C58DFBA675_829248291 =         stringRep;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.280 -0400", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "6FA31ACE33C1515F301A61D6CB901EDE")
     public String debugDump(int indent) {
         int save = indentation;
@@ -382,6 +388,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1769518276 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.280 -0400", hash_original_method = "FBFEF7110940F0EF7EB32E6578ACD520", hash_generated_method = "7057AD0848DEFF7A4D67DE3383568A65")
     public void mergeObjects(GenericObjectList mergeList) {
         addTaint(mergeList.getTaint());

@@ -20,6 +20,7 @@ public class ForwardingOs implements Os {
 
     protected Os os;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.204 -0400", hash_original_method = "EC37328A0FF4DE634029572AA03E9806", hash_generated_method = "C41B14D0DEFEB2ECE4508496A7A2B2B8")
     public  ForwardingOs(Os os) {
         this.os = os;
@@ -41,7 +42,7 @@ FileDescriptor varBD3F3A12BED956EC2DBAD6724E131EE4_1074725709 =         os.accep
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.205 -0400", hash_original_method = "FFD94E7AFE1E3B1F76A2D696707B6857", hash_generated_method = "442386D116B790F8D0DAD9CEDC212CCE")
     public boolean access(String path, int mode) throws ErrnoException {
         addTaint(mode);
@@ -124,7 +125,7 @@ FileDescriptor var092978DB9B00BDE1FF699CE100480620_1633964602 =         os.dup2(
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.374 -0400", hash_original_method = "5CF51EBD75B5D23C7F632D7D494380D1", hash_generated_method = "93195CDDB03719F912FA0A8180D62535")
     public String[] environ() {
 String[] varFE76A844465119D9804B64AE61EA0663_1923812648 =         os.environ();
@@ -135,7 +136,7 @@ String[] varFE76A844465119D9804B64AE61EA0663_1923812648 =         os.environ();
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.375 -0400", hash_original_method = "CA43F47313D11741B7EE5D06954736CB", hash_generated_method = "FAA782A5FF0554102280F11A91B9D3F0")
     public int fcntlVoid(FileDescriptor fd, int cmd) throws ErrnoException {
         addTaint(cmd);
@@ -162,7 +163,7 @@ String[] varFE76A844465119D9804B64AE61EA0663_1923812648 =         os.environ();
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.375 -0400", hash_original_method = "28B6741D270DBCC0BDA43B4FBA76C484", hash_generated_method = "92311FE36D42D3B1654F8B86B4836C76")
     public int fcntlFlock(FileDescriptor fd, int cmd, StructFlock arg) throws ErrnoException {
         addTaint(arg.getTaint());
@@ -231,7 +232,7 @@ StructStatFs var4852AF1AB60ABCB5F55561CD74B51D75_14997725 =         os.fstatfs(f
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.377 -0400", hash_original_method = "4EDF3DB0839BDB5BB59D5BDCF6ED266B", hash_generated_method = "930A83AB33B776A91C71D7165F29793B")
     public String gai_strerror(int error) {
         addTaint(error);
@@ -243,7 +244,7 @@ String var1A676D6EB28C23C605FF41F2AF93787C_1059372021 =         os.gai_strerror(
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.377 -0400", hash_original_method = "D134969B79309E2FFE6734562680F40F", hash_generated_method = "82AB756B7DA416F4B9383EB9CA2A465A")
     public InetAddress[] getaddrinfo(String node, StructAddrinfo hints) throws GaiException {
         addTaint(hints.getTaint());
@@ -289,7 +290,7 @@ InetAddress[] var740CD4C878D078EA073D38DF14180AA4_816725390 =         os.getaddr
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.379 -0400", hash_original_method = "E4B66B682B354EFDCC2A2307B9973162", hash_generated_method = "F241B21293629B650FC894C21C51EB08")
     public String getenv(String name) {
         addTaint(name.getTaint());
@@ -301,7 +302,7 @@ String varB8D29798741A3C7F5BF1B240675D23EC_193183748 =         os.getenv(name);
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.379 -0400", hash_original_method = "95C6CCF446FE941364E9F3FC808640B5", hash_generated_method = "0C6602F88896116CA210613E6D115EC6")
     public String getnameinfo(InetAddress address, int flags) throws GaiException {
         addTaint(flags);
@@ -360,7 +361,7 @@ StructPasswd varF1FFADC007699FC5886376B578C443BA_192009488 =         os.getpwuid
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.381 -0400", hash_original_method = "C71AB83C8CB24831B3B392DF1EFA2A55", hash_generated_method = "8034E88E7D2B59325375A0B15791CA55")
     public SocketAddress getsockname(FileDescriptor fd) throws ErrnoException {
         addTaint(fd.getTaint());
@@ -386,7 +387,7 @@ SocketAddress var9FA8DDD00CD636DC6E093CBFEE8BB7B4_123775842 =         os.getsock
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.381 -0400", hash_original_method = "0CBF6F7E2BE2FF171C45C7BCFC831012", hash_generated_method = "4F06B3B5D863C5AD8703A85B60632F25")
     public InetAddress getsockoptInAddr(FileDescriptor fd, int level, int option) throws ErrnoException {
         addTaint(option);
@@ -400,7 +401,7 @@ InetAddress var9200B36BD92F4EFF190C70A41427EDDD_1807008060 =         os.getsocko
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.382 -0400", hash_original_method = "946A87B9C2E87F4C961C36C4569A31BA", hash_generated_method = "987D000281310F7DADD0A98ADCACE70E")
     public int getsockoptInt(FileDescriptor fd, int level, int option) throws ErrnoException {
         addTaint(option);
@@ -442,7 +443,7 @@ StructTimeval varE79BC9D50FB7F1E53B90E9D7732394D3_204580152 =         os.getsock
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.383 -0400", hash_original_method = "2F11239B76600858937301E80656F86F", hash_generated_method = "D2F6BE5EAD4A12D06DA38BB0EE008CD0")
     public int getuid() {
         int var83381C94B0E274AEEC790EBC352F8EED_912824210 = (os.getuid());
@@ -453,7 +454,7 @@ StructTimeval varE79BC9D50FB7F1E53B90E9D7732394D3_204580152 =         os.getsock
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.383 -0400", hash_original_method = "FD1CFE447DC743FEF7DD120355028D01", hash_generated_method = "5ADB0DAA91AFE7A8B6125FCAFA32C0D9")
     public String if_indextoname(int index) {
         addTaint(index);
@@ -465,7 +466,7 @@ String var04A8D1185ACC1CEA933C80A63F9456B4_1019067080 =         os.if_indextonam
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.384 -0400", hash_original_method = "244F6B5FD78AC80358A10468727F943C", hash_generated_method = "536D7CAEF5ABE4A200104CA6176D96E9")
     public InetAddress inet_pton(int family, String address) {
         addTaint(address.getTaint());
@@ -506,7 +507,7 @@ InetAddress var369337E903CB9434A5702027B369AE40_526341555 =         os.ioctlInet
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.384 -0400", hash_original_method = "E622E0FA602C62724E493B1B03996EEA", hash_generated_method = "364E497063FE8DCCA46F7442C28477AC")
     public boolean isatty(FileDescriptor fd) {
         addTaint(fd.getTaint());
@@ -578,7 +579,7 @@ StructStat var38A6E6D3DD9B1473AD66E831812A3A1C_861979030 =         os.lstat(path
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.385 -0400", hash_original_method = "689C229BD7F4B7F5308857A16DB04D8E", hash_generated_method = "FDE79479BA876DE1900765ED46A43059")
     public void mkdir(String path, int mode) throws ErrnoException {
         addTaint(mode);
@@ -589,7 +590,7 @@ StructStat var38A6E6D3DD9B1473AD66E831812A3A1C_861979030 =         os.lstat(path
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.385 -0400", hash_original_method = "419517122697B0628E53EB3E2B0A6370", hash_generated_method = "83C91E3E741A7504E34436A563F7F9AA")
     public void mlock(long address, long byteCount) throws ErrnoException {
         addTaint(byteCount);
@@ -600,7 +601,7 @@ StructStat var38A6E6D3DD9B1473AD66E831812A3A1C_861979030 =         os.lstat(path
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.386 -0400", hash_original_method = "4029BCDA0489C716FD1384F50323A029", hash_generated_method = "D165DBDBE625761CB22C218695F3BB36")
     public long mmap(long address, long byteCount, int prot, int flags, FileDescriptor fd, long offset) throws ErrnoException {
         addTaint(offset);
@@ -665,7 +666,7 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_1218836585 =         os.open(
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.386 -0400", hash_original_method = "C44D806183F8681F84B21225E3DD2820", hash_generated_method = "492027FE2D4A52EE5F88F5745E760CB8")
     public FileDescriptor[] pipe() throws ErrnoException {
 FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe();
@@ -676,7 +677,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.386 -0400", hash_original_method = "5599B9E106312A6343AFDB459C1296E6", hash_generated_method = "DFB4A7FCFCFF8CDFA6B1A7FE8074A2D1")
     public int poll(StructPollfd[] fds, int timeoutMs) throws ErrnoException {
         addTaint(timeoutMs);
@@ -703,7 +704,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.387 -0400", hash_original_method = "77B89AD0CF3C5D71E7DD42E992F283EF", hash_generated_method = "F82E1AAAC1361A70A0BF2AAD7445EBDF")
     public int pread(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
         addTaint(offset);
@@ -719,7 +720,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.387 -0400", hash_original_method = "1CD5001FEE779ACE9E3DB9100CD609FC", hash_generated_method = "EB150DCDF76E3096E703BAA1CBD0B9E1")
     public int pwrite(FileDescriptor fd, ByteBuffer buffer, long offset) throws ErrnoException {
         addTaint(offset);
@@ -733,7 +734,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.387 -0400", hash_original_method = "F0611566A9565E2DEF97709E6B9B6418", hash_generated_method = "D9E6F93EEDA7A8A8DD6689412B17A527")
     public int pwrite(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
         addTaint(offset);
@@ -749,7 +750,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.387 -0400", hash_original_method = "F3C222630BE6E1046A8D40208CD4C60B", hash_generated_method = "89D27629C9A902809362A157BD941D4B")
     public int read(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
         addTaint(buffer.getTaint());
@@ -762,7 +763,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.387 -0400", hash_original_method = "21F8B1ED0ECF46FDBCE6EA979BADF2C3", hash_generated_method = "07B3DE002498B0502DC8ECB7CC73740A")
     public int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
         addTaint(byteCount);
@@ -777,7 +778,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.387 -0400", hash_original_method = "E2800F54CC6608A5FBBD1BF36223D806", hash_generated_method = "BA1AE030E1CE84C29D6611853B0D060A")
     public int readv(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
         addTaint(byteCounts[0]);
@@ -792,7 +793,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.389 -0400", hash_original_method = "84F37C132BD33033E9DE4E38A8430067", hash_generated_method = "265D22B72BC57B9345994315E2C188AA")
     public int recvfrom(FileDescriptor fd, ByteBuffer buffer, int flags, InetSocketAddress srcAddress) throws ErrnoException {
         addTaint(srcAddress.getTaint());
@@ -807,7 +808,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.390 -0400", hash_original_method = "0394D475125B49320B23E75594B5C434", hash_generated_method = "68A8B876C1152BE49CA31B885F2EB81B")
     public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException {
         addTaint(srcAddress.getTaint());
@@ -845,7 +846,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.390 -0400", hash_original_method = "C572D6E07635A5094C687364A5671672", hash_generated_method = "1F1175EB5AC05501EF06D06BDA2CBFBC")
     public long sendfile(FileDescriptor outFd, FileDescriptor inFd, MutableLong inOffset, long byteCount) throws ErrnoException {
         addTaint(byteCount);
@@ -860,7 +861,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.391 -0400", hash_original_method = "88066FF66E9BA638CFCEFABD2B423922", hash_generated_method = "1CA04D30556313214D3DD3EC1AB82A58")
     public int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws ErrnoException {
         addTaint(port);
@@ -876,7 +877,7 @@ FileDescriptor[] varEC459D4EC842CD610D05C93AF9916DD8_138428626 =         os.pipe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.391 -0400", hash_original_method = "BC2321A87F2222D5681A88900983F12D", hash_generated_method = "0A7EB4BC5B20225555B5BAB00CBD02F3")
     public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
         addTaint(port);
@@ -1074,7 +1075,7 @@ StructStatFs var88B9FED519C4C56BEFB7C111CBFE5FC7_43277800 =         os.statfs(pa
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.394 -0400", hash_original_method = "FBEAE456B3A3C776553B1F7E912CD6FB", hash_generated_method = "344CCE1CC808B32E86CF7B9A2F1FFAC1")
     public String strerror(int errno) {
         addTaint(errno);
@@ -1097,7 +1098,7 @@ String var732FEF31C0B974955FA12C229A9ECCDE_1289760516 =         os.strerror(errn
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.394 -0400", hash_original_method = "9239DE14FB7F01A1D647B884E3411551", hash_generated_method = "1CC3B99065C885DCB046E9430CC8F634")
     public long sysconf(int name) {
         addTaint(name);
@@ -1147,7 +1148,7 @@ StructUtsname varB5D14CECEAA8EBC755C493954FACA078_25664735 =         os.uname();
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.395 -0400", hash_original_method = "437BEB04F87A5AE656D8F235B16E36DF", hash_generated_method = "73184B89D41083203DB4EA15F636760B")
     public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
         addTaint(byteCount);
@@ -1162,7 +1163,7 @@ StructUtsname varB5D14CECEAA8EBC755C493954FACA078_25664735 =         os.uname();
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.395 -0400", hash_original_method = "8BC1FDC02B601F3DB4DB2A70967C7CDC", hash_generated_method = "9EB3943E14CE6D3464F6C95DC3B0C08F")
     public int writev(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
         addTaint(byteCounts[0]);

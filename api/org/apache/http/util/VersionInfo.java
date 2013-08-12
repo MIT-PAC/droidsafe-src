@@ -30,6 +30,7 @@ public class VersionInfo {
 
     private String infoClassloader;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.584 -0400", hash_original_method = "A021B9E0131A2ECDBAD4FC090EED8BCD", hash_generated_method = "7A93125B07271CF07DD4EAC6B926DCFA")
     protected  VersionInfo(String pckg, String module,
                           String release, String time, String clsldr) {
@@ -113,6 +114,7 @@ String var36BEBB44E6CD616E742E932C9DA9302B_1323826450 =         infoClassloader;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.586 -0400", hash_original_method = "8C041823EF127A6F9DCC25E0329C5A09", hash_generated_method = "E6CC2E7A58C9BB1513564668214397CC")
     public String toString() {
         StringBuffer sb = new StringBuffer

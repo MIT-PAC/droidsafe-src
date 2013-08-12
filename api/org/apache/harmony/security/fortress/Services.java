@@ -48,18 +48,19 @@ public class Services {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Provider[] getProviders() {
         return providers.toArray(new Provider[providers.size()]);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<Provider> getProvidersList() {
         return new ArrayList<Provider>(providers);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Provider getProvider(String name) {
         if (name == null) {
             return null;
@@ -68,7 +69,7 @@ public class Services {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int insertProviderAt(Provider provider, int position) {
         int size = providers.size();
         if ((position < 1) || (position > size)) {
@@ -89,7 +90,7 @@ public class Services {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void initServiceInfo(Provider p) {
         for (Provider.Service serv : p.getServices()) {
             String type = serv.getType();
@@ -121,12 +122,13 @@ public class Services {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean isEmpty() {
         return services.isEmpty();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Provider.Service getService(String key) {
         return services.get(key);
     }

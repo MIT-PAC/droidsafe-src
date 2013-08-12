@@ -145,6 +145,7 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_1602252628 =         h;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.354 -0400", hash_original_method = "4D0C476A07E0F700EE67C6B7126A56CA", hash_generated_method = "D73A3F01DE26188DB9A4AAE4D761D59E")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -168,6 +169,7 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_1602252628 =         h;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.355 -0400", hash_original_method = "222EBFC3DE5F327343BF00A614895E1C", hash_generated_method = "F110396353B851332933489CE39CF0A9")
     public int hashCode() {
         int varD6D19EF04FF7562D9882478C7AD7E40B_610574597 = (this.getCurve().hashCode() ^ this.getG().hashCode());

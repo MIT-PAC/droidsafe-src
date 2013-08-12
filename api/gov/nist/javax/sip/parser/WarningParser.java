@@ -36,6 +36,7 @@ public class WarningParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.690 -0400", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "D30DEB7A5B1F69C2FDBB0AF3D4726388")
     public SIPHeader parse() throws ParseException {
         WarningList warningList = new WarningList();

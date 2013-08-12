@@ -290,7 +290,7 @@ ServiceInfo var28B71D71C22FF17E2913DF471BE53524_765440611 =         mService.ser
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.614 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "6BBBD594CEA9D755CBCA282889343252")
     public ComponentName getComponent() {
 ComponentName var93E6F91556E618C88339096F31BDB937_410357168 =         new ComponentName(mService.serviceInfo.packageName,
@@ -303,7 +303,7 @@ ComponentName var93E6F91556E618C88339096F31BDB937_410357168 =         new Compon
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.614 -0400", hash_original_method = "DC118FA5C7EE28B6AE7273376F31713A", hash_generated_method = "3A8D3591F195DEEEA582AA8E284346E8")
     public CharSequence loadLabel(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -315,7 +315,7 @@ CharSequence var2E9E378F798705D673A3CD2955015CB9_1871051554 =         mService.l
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.614 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "75E53CA766B6C04A4823C7C78EC625A9")
     public Drawable loadIcon(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -338,7 +338,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_1413239720 =         mSettingsActivit
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.615 -0400", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "C0F95D5CE976D016CAB5E573F1F46BA5")
     public int getSubtypeCount() {
         int var4D00EFCF59D020D8587406D0543FA800_1324848574 = (mSubtypes.size());
@@ -372,7 +372,7 @@ InputMethodSubtype var20D9F29322B7A583A76DDB79ACEBD923_7180723 =         mSubtyp
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.616 -0400", hash_original_method = "117DA0E6EED582D5768D87F87FE31C9D", hash_generated_method = "C3F71DCA885DD63BEE2EC78F28AB92BA")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -393,7 +393,7 @@ InputMethodSubtype var20D9F29322B7A583A76DDB79ACEBD923_7180723 =         mSubtyp
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.616 -0400", hash_original_method = "B1E623174B0D17462D77E01C624BA9A3", hash_generated_method = "DBD740914EA66C54C49C87A2C71151A5")
     @Override
     public String toString() {
@@ -409,7 +409,7 @@ String var46A8C37BD18223DBA7F7BB5E017FE828_810412377 =         "InputMethodInfo{
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.617 -0400", hash_original_method = "138C64F4407505D90DB7ED842C7A62A7", hash_generated_method = "C376F0B5415221CAE89455C1482001A9")
     @Override
     public boolean equals(Object o) {
@@ -445,7 +445,7 @@ String var46A8C37BD18223DBA7F7BB5E017FE828_810412377 =         "InputMethodInfo{
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.617 -0400", hash_original_method = "703EF4DB2908CB7D83260BB6EC0F610D", hash_generated_method = "D6A6068A972458D17675069D18E188C1")
     @Override
     public int hashCode() {
@@ -468,7 +468,7 @@ String var46A8C37BD18223DBA7F7BB5E017FE828_810412377 =         "InputMethodInfo{
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.617 -0400", hash_original_method = "A776E868EB44985D1E2E0042801983B1", hash_generated_method = "0D12A7C503BE78F4174FD70EEAB4CFDA")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -509,6 +509,7 @@ String var46A8C37BD18223DBA7F7BB5E017FE828_810412377 =         "InputMethodInfo{
 
     public static final Parcelable.Creator<InputMethodInfo> CREATOR
             = new Parcelable.Creator<InputMethodInfo>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public InputMethodInfo createFromParcel(Parcel source) {
             return new InputMethodInfo(source);

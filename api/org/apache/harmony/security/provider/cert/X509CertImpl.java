@@ -112,6 +112,7 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.195 -0400", hash_original_method = "8876B8D60330C38B32B3F1E3F7F33D8F", hash_generated_method = "9814F0F29843AE228E9CEBF205CBB9E3")
     public  X509CertImpl(Certificate certificate) {
         this.certificate = certificate;
@@ -399,6 +400,7 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_1418722844 =         new Date(getNotAft
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.203 -0400", hash_original_method = "36C3BDBBAA85C39CA2DA1792DFF67222", hash_generated_method = "D9F24149A5A3536181DE4D968CD1A782")
     public String getSigAlgName() {
         String result = sigAlgName;
@@ -429,6 +431,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1444378423 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.203 -0400", hash_original_method = "C10B97AA2F949E0770EFB417749475D0", hash_generated_method = "BF3C30CB501421D8E1901A88DC358490")
     public String getSigAlgOID() {
         String result = sigAlgOID;
@@ -845,6 +848,7 @@ Set<String> var532EB99679368325F37510E1C45E8683_849460448 =         extensions.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.211 -0400", hash_original_method = "46B3B0A81D238D78F58FF04050F493C3", hash_generated_method = "75596BAC663344588BB4BBE6B471FAE4")
     @Override
     public byte[] getExtensionValue(String oid) {
@@ -868,6 +872,7 @@ Set<String> var532EB99679368325F37510E1C45E8683_849460448 =         extensions.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.212 -0400", hash_original_method = "CB7B238BECDE285B4B368E69C74FBD34", hash_generated_method = "888071467FD83A269932876407F28353")
     @Override
     public boolean hasUnsupportedCriticalExtension() {

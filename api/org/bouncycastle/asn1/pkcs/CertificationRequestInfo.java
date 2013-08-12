@@ -85,6 +85,7 @@ public class CertificationRequestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.905 -0400", hash_original_method = "C4672867714D5EDD4217814EF96CA715", hash_generated_method = "F5C55B5E32012AC9A4B462ABA9EDEE98")
     public  CertificationRequestInfo(
         ASN1Sequence  seq) {

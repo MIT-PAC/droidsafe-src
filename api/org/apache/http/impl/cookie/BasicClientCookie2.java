@@ -80,6 +80,7 @@ String var0A98D510D3863CB5F81697FCEFEEC4BF_758526515 =         this.commentURL;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.579 -0400", hash_original_method = "417FDF5C1FC11A52F2E0DFC4D001D3E3", hash_generated_method = "B84CA5EE579DB64291C16DB5764733BC")
     @Override
     public boolean isPersistent() {
@@ -103,6 +104,7 @@ String var0A98D510D3863CB5F81697FCEFEEC4BF_758526515 =         this.commentURL;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.579 -0400", hash_original_method = "A1E29AF284BD9497DEE668CED1078224", hash_generated_method = "0FEDF2B1E4562A9521B4D821C9A251B9")
     @Override
     public Object clone() throws CloneNotSupportedException {

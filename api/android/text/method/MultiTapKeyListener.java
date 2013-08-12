@@ -266,6 +266,7 @@ for(Object method : methods)
 
         private Editable mBuffer;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.450 -0400", hash_original_method = "3DB3951CA009929F9B4A37752F403591", hash_generated_method = "64C6F8B09FC3C1E1F1031D1DBB78A20B")
         public  Timeout(Editable buffer) {
             mBuffer = buffer;

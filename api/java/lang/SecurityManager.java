@@ -16,6 +16,7 @@ public class SecurityManager {
 
     @Deprecated protected boolean inCheck;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.608 -0400", hash_original_method = "7FD71E6D3FB4A8DD9BF04FA4D2AAA4D4", hash_generated_method = "10F82CBF8C065A15711155F7BC44F06C")
     public  SecurityManager() {
         // ---------- Original Method ----------
@@ -357,6 +358,7 @@ Class<?> var540C13E9E156B687226421B24F2DF178_1434796142 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.617 -0400", hash_original_method = "036AF7AD226EFB7B513484DD9E6E1DD6", hash_generated_method = "086F83EBEA3822D550CB3E913C7FD595")
     public ThreadGroup getThreadGroup() {
 ThreadGroup varCEB2CB7130B29D7A7F00C0CFD8A82131_384056150 =         Thread.currentThread().getThreadGroup();

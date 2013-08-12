@@ -608,6 +608,7 @@ PhoneNumber var72A74007B2BE62B849F475C7BDA4658B_469993664 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.366 -0400", hash_original_method = "F1BB2EE5D9E77C138CA0D6B9F17756FB", hash_generated_method = "8044F7CA18DE2D88E8D0B0DC5139A529")
         @Override
         public int hashCode() {

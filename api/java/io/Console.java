@@ -19,7 +19,7 @@ public final class Console implements Flushable {
 
     private PrintWriter writer;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.570 -0400", hash_original_method = "4BB1B19487B7F99D445DFF44E768497C", hash_generated_method = "F63CBA47110CFE9BD3FA9E844BE04033")
     private  Console(InputStream in, OutputStream out) throws IOException {
         this.reader = new ConsoleReader(in);
@@ -36,7 +36,7 @@ public final class Console implements Flushable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static Console makeConsole() {
         if (!Libcore.os.isatty(FileDescriptor.in) || !Libcore.os.isatty(FileDescriptor.out)) {
             return null;
@@ -49,6 +49,7 @@ public final class Console implements Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.571 -0400", hash_original_method = "F7724246D188F0DD4BA6BF2BF289AD37", hash_generated_method = "4D7B28978F39C8925B3234F446DAAC01")
     public void flush() {
         writer.flush();
@@ -98,6 +99,7 @@ Reader var681AFDDDB48FD166DFCBFA04C65E6269_314543697 =         reader;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.573 -0400", hash_original_method = "1B0888B6F2590EE27349101E4345456E", hash_generated_method = "D4C8B50C856450CB42BCFF6F04525B78")
     public String readLine() {
         try 
@@ -140,6 +142,7 @@ String var54932DCBE9604DD8D26100A2DD0CC65C_1559035034 =             readLine();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.573 -0400", hash_original_method = "762DE6C819CD7377980A2753C88FB126", hash_generated_method = "B49411AF3EB8941781F06BF0E655E569")
     public char[] readPassword() {
         synchronized
@@ -256,6 +259,7 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1498134434 =         writer;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_method = "75157B2273B6AA161A7B1B413AEDC095", hash_generated_method = "A5E65993A379E3EA99BEF40B638BA0C1")
         @Override
         public void close() {

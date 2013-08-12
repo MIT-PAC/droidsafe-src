@@ -31,7 +31,7 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	public AbstractHttpMessage() {
 		// TODO Auto-generated constructor stub
 	}

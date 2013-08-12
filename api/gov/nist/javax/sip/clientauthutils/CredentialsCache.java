@@ -77,6 +77,7 @@ for(ListIterator<AuthorizationHeader> li = authHeaders.listIterator();li.hasNext
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.453 -0400", hash_original_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB", hash_generated_method = "331834403DDD2D6828B19D068B56756B")
      Collection<AuthorizationHeader> getCachedAuthorizationHeaders(
             String callid) {

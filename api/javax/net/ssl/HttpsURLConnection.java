@@ -34,6 +34,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultHostnameVerifier(HostnameVerifier v) {
         if (v == null) {
             throw new IllegalArgumentException("HostnameVerifier is null");
@@ -48,6 +49,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultSSLSocketFactory(SSLSocketFactory sf) {
         if (sf == null) {
             throw new IllegalArgumentException("SSLSocketFactory is null");
@@ -74,6 +76,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     public abstract Certificate[] getServerCertificates() throws SSLPeerUnverifiedException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.622 -0400", hash_original_method = "3002E4037B6FC8FCCD4931764B6D5235", hash_generated_method = "C9A9738050EE2DCFA255939985A6EDDA")
     public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
         Certificate[] certs = getServerCertificates();
@@ -95,6 +98,7 @@ Principal var9CF5ED47C051D95405EF759AB6EBE375_1677451684 =         ((X509Certifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.622 -0400", hash_original_method = "F7626DF75E46EFB83E8F38373F84B563", hash_generated_method = "08E30218A902DF535711F6EA112CDFDC")
     public Principal getLocalPrincipal() {
         Certificate[] certs = getLocalCertificates();
@@ -116,6 +120,7 @@ Principal var9CF5ED47C051D95405EF759AB6EBE375_1151222026 =         ((X509Certifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.623 -0400", hash_original_method = "1F574C02EC6D9C57C280B3A1D2132BB4", hash_generated_method = "18A3420DFFED23D30810E65F962BA2D3")
     public void setHostnameVerifier(HostnameVerifier v) {
         if(v == null)        

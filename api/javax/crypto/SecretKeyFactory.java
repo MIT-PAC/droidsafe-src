@@ -28,6 +28,7 @@ public class SecretKeyFactory {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.313 -0400", hash_original_method = "3C76CE2839A142E4DF9C7001A6A7FCB1", hash_generated_method = "B27AD49FCAEADB0E1BFABD281B4FCF93")
     protected  SecretKeyFactory(SecretKeyFactorySpi keyFacSpi,
             Provider provider, String algorithm) {
@@ -63,6 +64,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_356439642 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final SecretKeyFactory getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -72,6 +74,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_356439642 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final SecretKeyFactory getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException {
@@ -86,6 +89,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_356439642 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final SecretKeyFactory getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -99,6 +103,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_356439642 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.317 -0400", hash_original_method = "F35C5482AA0FDE82A0C15F5E475C73A0", hash_generated_method = "0EF542D9EF5BC3F8E83C4A1BB1712CB8")
     public final SecretKey generateSecret(KeySpec keySpec) throws InvalidKeySpecException {
         addTaint(keySpec.getTaint());
@@ -123,6 +128,7 @@ KeySpec var8F4D81791C8180D9CBCF44423DBEC0F6_1207074692 =         spiImpl.engineG
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.318 -0400", hash_original_method = "DE7905EDF6B0EF2B9BB95373F14A9269", hash_generated_method = "E681CE47F793B35BB7CD8F5AB43182A9")
     public final SecretKey translateKey(SecretKey key) throws InvalidKeyException {
         addTaint(key.getTaint());

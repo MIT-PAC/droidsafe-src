@@ -38,6 +38,7 @@ public class Type extends BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.314 -0400", hash_original_method = "4A983E462672C2EA1E6C39A6A01B91CB", hash_generated_method = "F8065654CDEA0C547A9BE53140ECA542")
     public Element getElement() {
 Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
@@ -48,6 +49,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.319 -0400", hash_original_method = "B8C0887F5E9E541E727ECCD0086F5E5B", hash_generated_method = "FFE0CD7F234A36DC2E6B5935FF29688B")
     public int getX() {
         int var74F2C7E1CEE060256706B117F5FA730E_482445178 = (mDimX);
@@ -58,6 +60,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.324 -0400", hash_original_method = "5E9C3BBA0D7932B9CBA182F8B32036BC", hash_generated_method = "FAE6A2C799BAC65CF38B55FD7DD732B6")
     public int getY() {
         int varEB7B56BF2E26D72976C8BE5C6E4CAFB5_1550429101 = (mDimY);
@@ -68,6 +71,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.330 -0400", hash_original_method = "E315B95FC6DF6C1A4510539F8CFF9FC2", hash_generated_method = "84B6E83216D9BAF2CB8E90C7B3C2B3CA")
     public int getZ() {
         int var30713945613FB4C6A730B4A32950F103_1442774074 = (mDimZ);
@@ -78,6 +82,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.335 -0400", hash_original_method = "4B051F35B9C270411E541578F7D74139", hash_generated_method = "5A73CA4245BDF94A4A3704BD28D5FBFE")
     public boolean hasMipmaps() {
         boolean varDDAEBBC104D36F2D3D3CDAF5E4EC77DB_808556547 = (mDimMipmaps);
@@ -88,6 +93,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.341 -0400", hash_original_method = "A298ED811BA5BE2EDFB864807B88B98E", hash_generated_method = "B2ECE4EB67403FB69FB05ABC00EDEE5C")
     public boolean hasFaces() {
         boolean var3E1AACDB9C31033BF848156C0A3F9A83_1324462790 = (mDimFaces);
@@ -98,6 +104,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.345 -0400", hash_original_method = "48334469C8B133AB7598FD3FC5B4F37B", hash_generated_method = "878540EA78CCD96B69AEBDEF96AE99E2")
     public int getCount() {
         int var6BADBC84ED4C8D9AA913FEA8E9084017_1731871881 = (mElementCount);
@@ -185,6 +192,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.396 -0400", hash_original_method = "D9C91D8B790AFADAD6800FA858F1EFFA", hash_generated_method = "245668955FC688CA4C3655E0C3BA7F3A")
     @Override
      void updateFromNative() {
@@ -274,6 +282,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.429 -0400", hash_original_method = "49C74CAE6836798531411A61C63C5943", hash_generated_method = "824B27B1198C5E7D78F8B5D1E28F7C7D")
         public Builder setX(int value) {
             if(value < 1)            
@@ -295,6 +304,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1194048284 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.437 -0400", hash_original_method = "DFB03FCEFD1326FB2171A041DB523085", hash_generated_method = "A4105DA6B2544342FEF9615C4B0FD3F4")
         public Builder setY(int value) {
             if(value < 1)            
@@ -316,6 +326,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1223422091 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.443 -0400", hash_original_method = "6FF2F97061E56A03E659E1B7B4FEDFAC", hash_generated_method = "AE8341CC56D90BE2246DD8C3A23DDDEF")
         public Builder setMipmaps(boolean value) {
             mDimMipmaps = value;
@@ -328,6 +339,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1741595708 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.453 -0400", hash_original_method = "A3F9FA926CF212B551274C553F57A403", hash_generated_method = "C49FC9F8E575764C2EEE5D5A5EA2419B")
         public Builder setFaces(boolean value) {
             mDimFaces = value;
@@ -340,6 +352,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1222195317 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:08:25.474 -0400", hash_original_method = "FE3D5B55E53BDF1600935D20E2D4BB17", hash_generated_method = "DE2CF13A483BC7939911E0E6E44F7BC2")
         public Type create() {
             if(mDimZ > 0)            

@@ -22,6 +22,7 @@ import java.text.ParseException;
 
 public class SecurityAgreeParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "3C9B744CAD21A5FF0128608065B78D3C", hash_generated_method = "CC9828D5309CF88A17780C7D47A7AC99")
     public  SecurityAgreeParser(String security) {
         super(security);
@@ -30,6 +31,7 @@ public class SecurityAgreeParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "901019111A521E611D0FA754D5F384A4", hash_generated_method = "DFEE8107DE9D6223B0CDE8A1E6B1EECC")
     protected  SecurityAgreeParser(Lexer lexer) {
         super(lexer);
@@ -38,6 +40,7 @@ public class SecurityAgreeParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "F5B0772594CADDF674D010ACA1204B13", hash_generated_method = "634F5424E1BC0DC9ACFD5EF7F2751253")
     protected void parseParameter(SecurityAgree header) throws ParseException {
         addTaint(header.getTaint());
@@ -66,6 +69,7 @@ public class SecurityAgreeParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.116 -0400", hash_original_method = "12664C139391D128E477218D3F3EA9C3", hash_generated_method = "D3770F893701749A53158521978B4259")
     public SIPHeaderList parse(SecurityAgree header) throws ParseException {
         addTaint(header.getTaint());

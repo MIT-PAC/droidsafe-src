@@ -623,7 +623,8 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_593256382 =         nativeToString(mN
     public static final Parcelable.Creator<Region> CREATOR
         = new Parcelable.Creator<Region>() {
             
-            public Region createFromParcel(Parcel p) {
+            @DSModeled(DSC.SAFE)
+        public Region createFromParcel(Parcel p) {
                 int ni = nativeCreateFromParcel(p);
                 if (ni == 0) {
                     throw new RuntimeException();

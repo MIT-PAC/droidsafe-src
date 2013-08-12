@@ -14,12 +14,14 @@ import org.apache.http.ReasonPhraseCatalog;
 
 public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.339 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
     protected  EnglishReasonPhraseCatalog() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.340 -0400", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "A3BB6041BC303F400FC276B80D3BAFF3")
     public String getReason(int status, Locale loc) {
         addTaint(loc.getTaint());

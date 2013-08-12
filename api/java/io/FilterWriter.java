@@ -11,6 +11,7 @@ public abstract class FilterWriter extends Writer {
 
     protected Writer out;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.382 -0400", hash_original_method = "C9832951E5B51AA5FF45C56E637B6353", hash_generated_method = "0518BC8718C104755E1F89522C6C593B")
     protected  FilterWriter(Writer out) {
         super(out);
@@ -20,6 +21,7 @@ public abstract class FilterWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.385 -0400", hash_original_method = "05673170CC0D0E023F5651E2EFB2043A", hash_generated_method = "7E3EAF948428C48249AF30A6023CCA05")
     @Override
     public void close() throws IOException {
@@ -34,6 +36,7 @@ public abstract class FilterWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.387 -0400", hash_original_method = "6E517A9D20FAB02C8C7ECBD26B835783", hash_generated_method = "8D19DCD755BC396FA0BB006F1B21D220")
     @Override
     public void flush() throws IOException {
@@ -48,6 +51,7 @@ public abstract class FilterWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.391 -0400", hash_original_method = "8844CE5B6BE403964369DBE67DE17A9B", hash_generated_method = "FE2C872D8D3C9882A42EC5E656EB3FA9")
     @Override
     public void write(char[] buffer, int offset, int count) throws IOException {
@@ -65,6 +69,7 @@ public abstract class FilterWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.398 -0400", hash_original_method = "C0F1D18AD38B0E8F448CFE46E5D9188A", hash_generated_method = "DE231F72051E6E88702E4C21C0F72D22")
     @Override
     public void write(int oneChar) throws IOException {
@@ -80,6 +85,7 @@ public abstract class FilterWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.401 -0400", hash_original_method = "C7C8D1E997868E998D408F658DA19BDC", hash_generated_method = "9FD7A8FA2198CECC9EB5F2AC8532319D")
     @Override
     public void write(String str, int offset, int count) throws IOException {

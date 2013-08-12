@@ -67,6 +67,7 @@ public class ComponentInfo extends PackageItemInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.368 -0400", hash_original_method = "19CED443F16784258FF178C9AF81CAC8", hash_generated_method = "626E61432523E0E69F8E89C2FB638002")
     @Override
     public CharSequence loadLabel(PackageManager pm) {

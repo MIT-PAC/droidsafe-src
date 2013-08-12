@@ -215,6 +215,7 @@ Locale var07CBB3424B1C5A44A7FC0518D56FE503_2015192595 =         this.locale;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.901 -0400", hash_original_method = "FEEB8D9BF9C5F48AC25C3CD2E5553BCA", hash_generated_method = "9C11798EEFBF59AB50E368580BEBDA51")
     protected String getReason(int code) {
         addTaint(code);

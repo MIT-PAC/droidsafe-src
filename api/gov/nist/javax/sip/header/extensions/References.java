@@ -19,6 +19,7 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
 
     private String callId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.860 -0400", hash_original_method = "6B62E640F31436F860F8D9827B037777", hash_generated_method = "768BC1B29AB1FAC713C1D8CE0EE02B20")
     public  References() {
         super(ReferencesHeader.NAME);
@@ -37,6 +38,7 @@ String var5E6A5595C014DC7657F3E7EDB5AB9AD0_1679705741 =         callId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.867 -0400", hash_original_method = "91B139942A314EFB2C4BD7B21FDCB20D", hash_generated_method = "44AB64BFAED8C094F2590233DE07DEC6")
     public String getRel() {
 String varEA085D01929B1B42394A68C55CC5EB34_179259382 =         this.getParameter(REL);
@@ -56,6 +58,7 @@ String varEA085D01929B1B42394A68C55CC5EB34_179259382 =         this.getParameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.868 -0400", hash_original_method = "FC242B166942B60DF02BE0B79DEF218D", hash_generated_method = "1E099169185A36190E99B89A2D2FAA11")
     public void setRel(String rel) throws ParseException {
         addTaint(rel.getTaint());
@@ -70,6 +73,7 @@ String varEA085D01929B1B42394A68C55CC5EB34_179259382 =         this.getParameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.870 -0400", hash_original_method = "1C9EBF6FB53478B12B2F8D939C3DAA09", hash_generated_method = "B0BC89A6BC9F7C140A583C5A6E1195A8")
     public String getParameter(String name) {
         addTaint(name.getTaint());
@@ -81,6 +85,7 @@ String var93ABFC9A758D64F9CF0A48E2109D5044_603810267 =         super.getParamete
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.871 -0400", hash_original_method = "5B135F944D95FEB85E76FF3C1A46B535", hash_generated_method = "F830E1388F574455875A17FF12935786")
     public Iterator getParameterNames() {
 Iterator var94DC65FB2EC0E6D50D73D04A0A1EDA98_1413670397 =         super.getParameterNames();
@@ -91,6 +96,7 @@ Iterator var94DC65FB2EC0E6D50D73D04A0A1EDA98_1413670397 =         super.getParam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.876 -0400", hash_original_method = "3BCAED05568F294E5383E287ED81A26C", hash_generated_method = "B4862296FA97F2DCD35B6969D77FB5F9")
     public void removeParameter(String name) {
         addTaint(name.getTaint());
@@ -100,6 +106,7 @@ Iterator var94DC65FB2EC0E6D50D73D04A0A1EDA98_1413670397 =         super.getParam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.877 -0400", hash_original_method = "BB55D06717833A89C2B24ACE66FD668C", hash_generated_method = "456493E0BA8EE79DFF94DE0859F7617E")
     public void setParameter(String name, String value) throws ParseException {
         addTaint(value.getTaint());
@@ -121,6 +128,7 @@ String var3CAE5995445ABD1DAEB0EE0A43C2A8EA_1426244096 =         ReferencesHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.878 -0400", hash_original_method = "9EEB3319C6EED2658F191ED9602B88D2", hash_generated_method = "A51E996D4130C1DFD6E051B8FFC89DD5")
     protected String encodeBody() {
         if(super.parameters.isEmpty())        
@@ -144,6 +152,7 @@ String var9E25CF61F2A135B94A4051F3E07DACF2_224110390 =             callId + ";" 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.880 -0400", hash_original_method = "66E692F28E8D2B6D542E6103B4241B59", hash_generated_method = "23095BB791D62BA351C99ACEE8F2B059")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

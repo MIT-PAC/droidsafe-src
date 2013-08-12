@@ -43,6 +43,7 @@ public class BasicHeaderIterator implements HeaderIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.583 -0400", hash_original_method = "FA5378A644617D9F29788BE3811B38CD", hash_generated_method = "8E3AC563479A56ECAF9278513AF1A94A")
     protected int findNext(int from) {
         addTaint(from);
@@ -76,6 +77,7 @@ public class BasicHeaderIterator implements HeaderIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.584 -0400", hash_original_method = "9D88E0551A3FF4A21A3E39810268F7E4", hash_generated_method = "877E17D4DF69D4A31FAA88999B89688C")
     protected boolean filterHeader(int index) {
         addTaint(index);
@@ -97,6 +99,7 @@ public class BasicHeaderIterator implements HeaderIterator {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public Header nextHeader() {
 		// TODO Auto-generated method stub

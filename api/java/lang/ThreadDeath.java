@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class ThreadDeath extends Error {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.474 -0400", hash_original_method = "D7F209B054EFDAA234F2E91AF71983AB", hash_generated_method = "A6EC0045879845D1284EF67AFC3557EB")
     public  ThreadDeath() {
         // ---------- Original Method ----------

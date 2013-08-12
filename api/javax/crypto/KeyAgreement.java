@@ -65,6 +65,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyAgreement getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -74,6 +75,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyAgreement getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException {
@@ -88,6 +90,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyAgreement getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -110,6 +113,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.212 -0400", hash_original_method = "B560CE194C80427D06320AB3301AD531", hash_generated_method = "54298711A73E3C566F7646B334A4EDD3")
     public final void init(Key key, SecureRandom random) throws InvalidKeyException {
         addTaint(random.getTaint());
@@ -120,6 +124,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.213 -0400", hash_original_method = "45385F3B8A57987C5A6F500929E2FE45", hash_generated_method = "058D84EE40C0C868FD6BA6562757C734")
     public final void init(Key key, AlgorithmParameterSpec params) throws InvalidKeyException, InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
@@ -130,6 +135,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.213 -0400", hash_original_method = "04B90A53EC2A8EFB98D3E5D98D18DD54", hash_generated_method = "494B430C7BF4E6433ACD30AC4B833BAC")
     public final void init(Key key, AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidKeyException,
@@ -143,6 +149,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.214 -0400", hash_original_method = "BB12C4D69D38F4161821D54CA8CAAD00", hash_generated_method = "40DBB9DFE93002B562A01AB23E8939E1")
     public final Key doPhase(Key key, boolean lastPhase) throws InvalidKeyException, IllegalStateException {
         addTaint(lastPhase);
@@ -155,6 +162,7 @@ Key varB62898BED1697BBBFDF7E5E5CA1F56DF_1303043209 =         spiImpl.engineDoPha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.214 -0400", hash_original_method = "A2824ED5DB0FCCB2C192A225E52EA88C", hash_generated_method = "F57F86D750835A564BDB2ADC53913023")
     public final byte[] generateSecret() throws IllegalStateException {
         byte[] varD6D437FCE0CD160B5DC1C3574E8E0598_725095147 = (spiImpl.engineGenerateSecret());
@@ -165,6 +173,7 @@ Key varB62898BED1697BBBFDF7E5E5CA1F56DF_1303043209 =         spiImpl.engineDoPha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.214 -0400", hash_original_method = "7B919BB67435CAC1AF727C4D009370B1", hash_generated_method = "334301357DB210C451BF36609AB206A5")
     public final int generateSecret(byte[] sharedSecret, int offset) throws IllegalStateException, ShortBufferException {
         addTaint(offset);
@@ -177,6 +186,7 @@ Key varB62898BED1697BBBFDF7E5E5CA1F56DF_1303043209 =         spiImpl.engineDoPha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.215 -0400", hash_original_method = "0E820F09DB891E9F2C0C31F49AA44F05", hash_generated_method = "306835A4BC508266D387AFA0B21C5417")
     public final SecretKey generateSecret(String algorithm) throws IllegalStateException, NoSuchAlgorithmException,
             InvalidKeyException {

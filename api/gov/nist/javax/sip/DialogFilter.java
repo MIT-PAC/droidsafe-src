@@ -273,6 +273,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.311 -0400", hash_original_method = "358FFD6F817CCE2A8A6AEFD88EADC0D0", hash_generated_method = "50225232CD8E4D82B588863A1CBEF5FE")
     public void processRequest(SIPRequest sipRequest, MessageChannel incomingMessageChannel) {
         addTaint(incomingMessageChannel.getTaint());
@@ -1041,6 +1042,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.320 -0400", hash_original_method = "4FD6D5D7FFBD58CDE4927F751F9B55A3", hash_generated_method = "CD0A10724738E10435A8F9733300C81A")
     public void processResponse(SIPResponse response, MessageChannel incomingMessageChannel,
             SIPDialog dialog) {
@@ -1196,6 +1198,7 @@ String var540C13E9E156B687226421B24F2DF178_1092383572 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.322 -0400", hash_original_method = "913AD64E566DC17432B7074017A68B2C", hash_generated_method = "90926C2FE27D0BC76E18BF4CA1C0EE79")
     public void processResponse(SIPResponse sipResponse, MessageChannel incomingChannel) {
         addTaint(incomingChannel.getTaint());

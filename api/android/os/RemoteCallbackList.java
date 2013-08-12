@@ -30,6 +30,7 @@ public class RemoteCallbackList<E extends IInterface> {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.499 -0400", hash_original_method = "46F1FD6FBAE5A826BE086BA154A601C8", hash_generated_method = "650306CCACDD82AC7B6F15E3BB4938E2")
     public boolean register(E callback) {
         addTaint(callback.getTaint());
@@ -88,6 +89,7 @@ public class RemoteCallbackList<E extends IInterface> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.501 -0400", hash_original_method = "E94D872448628F2BAA0FD192A750EA6D", hash_generated_method = "23DD0EBAAD7AAEE691319DD7A364D5A6")
     public boolean unregister(E callback) {
         addTaint(callback.getTaint());
@@ -147,6 +149,7 @@ for(Callback cb : mCallbacks.values())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.503 -0400", hash_original_method = "0963A4798BF8140F1109AA736DE1F9A0", hash_generated_method = "0F4DCC0F85E2CB1AE7F5362026E5BCDB")
     public void onCallbackDied(E callback, Object cookie) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -213,6 +216,7 @@ for(Callback cb : mCallbacks.values())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.505 -0400", hash_original_method = "C48AB0BBF7A76319F21B51268A720A67", hash_generated_method = "4C416FEE6B329B2DC315C90A331ED91B")
     public E getBroadcastItem(int index) {
         addTaint(index);

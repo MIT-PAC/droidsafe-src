@@ -44,6 +44,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_553003702 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.638 -0400", hash_original_method = "34CF5F66357C97013C2BECCDE3CD7868", hash_generated_method = "06DF8E3C6C21E9B78E878DD45E73632B")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -88,6 +89,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_553003702 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.639 -0400", hash_original_method = "4607E15AFDECFF486998F7FDB6C49986", hash_generated_method = "9373100289BB25E4AC4439406406AD85")
     public int hashCode() {
         try 
@@ -152,6 +154,7 @@ for(int i=0;i<encoded.length;i++)
     public abstract PublicKey getPublicKey();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.640 -0400", hash_original_method = "99E789CC29F8A2F97D8F3F24132FD9A6", hash_generated_method = "B5567D1914BA13E58705629B2329EEA5")
     protected Object writeReplace() throws ObjectStreamException {
         try 
@@ -183,6 +186,7 @@ Object varA4927F1440786F4D2449DB9A7837689C_647093254 =             new Certifica
 
         private byte[] data;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.641 -0400", hash_original_method = "D627339278E2A38DCC6197D27B1C70B7", hash_generated_method = "55F6196FF50C3DD7ADA6E33F2AD1B31C")
         protected  CertificateRep(String type, byte[] data) {
             this.type = type;
@@ -193,6 +197,7 @@ Object varA4927F1440786F4D2449DB9A7837689C_647093254 =             new Certifica
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.641 -0400", hash_original_method = "4FCDFCCBC9683C8411983C8346CDCC6D", hash_generated_method = "BFAC3201266653780201832FE22C27A0")
         protected Object readResolve() throws ObjectStreamException {
             try 

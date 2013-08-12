@@ -52,6 +52,7 @@ public final class AttributeTypeAndValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.514 -0400", hash_original_method = "C6730356D790440CF3C53B1796ADEA2C", hash_generated_method = "0F76768F9094B6D0283F162B15882135")
     public  AttributeTypeAndValue(String sOid, AttributeValue value) throws IOException {
         if(sOid.charAt(0) >= '0' && sOid.charAt(0) <= '9')        
@@ -93,6 +94,7 @@ public final class AttributeTypeAndValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.515 -0400", hash_original_method = "296A7913293032A81F372D58309D975C", hash_generated_method = "B282C0AD8EABF105319CBFA704CC99BE")
     public void appendName(String attrFormat, StringBuilder sb) {
         addTaint(sb.getTaint());
@@ -340,6 +342,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
             return true;
         }
 
+        @DSModeled(DSC.BAN)
         public Object decode(BerInputStream in) throws IOException {
             
             String str = null;
@@ -358,6 +361,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
             return new AttributeValue(str, bytesEncoded, in.tag);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override public Object getDecodedObject(BerInputStream in) throws IOException {
             
             throw new RuntimeException("AttributeValue getDecodedObject MUST NOT be invoked");
@@ -366,6 +370,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
         
         
         
+        @DSModeled(DSC.SAFE)
         public void encodeASN(BerOutputStream out) {
             AttributeValue av = (AttributeValue) out.content;
 
@@ -379,6 +384,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
             }
         }
 
+        @DSModeled(DSC.SPEC)
         public void setEncodingContent(BerOutputStream out) {
             AttributeValue av = (AttributeValue) out.content;
 
@@ -397,11 +403,13 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
             }
         }
 
+        @DSModeled(DSC.SAFE)
         public void encodeContent(BerOutputStream out) {
             
             throw new RuntimeException("AttributeValue encodeContent MUST NOT be invoked");
         }
 
+        @DSModeled(DSC.SAFE)
         @Override public int getEncodedLength(BerOutputStream out) { 
             AttributeValue av = (AttributeValue) out.content;
             if (av.encoded != null) {
@@ -416,11 +424,13 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_466180448 =         oid;
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Oid.getInstance(), attributeValue }) {
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
             return new AttributeTypeAndValue((int[]) values[0], (AttributeValue) values[1]);
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             AttributeTypeAndValue atav = (AttributeTypeAndValue) object;
             values[0] = atav.oid.getOid();

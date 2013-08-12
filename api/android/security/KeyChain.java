@@ -73,6 +73,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PrivateKey getPrivateKey(Context context, String alias) throws KeyChainException, InterruptedException {
         if (alias == null) {
             throw new NullPointerException("alias == null");
@@ -92,6 +93,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X509Certificate[] getCertificateChain(Context context, String alias) throws KeyChainException, InterruptedException {
         if (alias == null) {
             throw new NullPointerException("alias == null");
@@ -154,6 +156,7 @@ public final class KeyChain {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyChainConnection bind(Context context) throws InterruptedException {
         if (context == null) {
             throw new NullPointerException("context == null");

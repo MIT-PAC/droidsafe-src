@@ -73,7 +73,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void startLooperProfiling(String path, FileDescriptor fileDescriptor) {
         if (sLooperProfilerStorage.get() == null) {
             LooperProfiler profiler = new LooperProfiler(path, fileDescriptor);
@@ -83,7 +83,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void stopLooperProfiling() {
         LooperProfiler profiler = sLooperProfilerStorage.get();
         if (profiler != null) {
@@ -284,7 +284,7 @@ public class ViewDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static View findView(View root, String parameter) {
         if (parameter.indexOf('@') != -1) {
             final String[] ids = parameter.split("@");
@@ -1364,7 +1364,7 @@ public class ViewDebug {
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         private static void writeTraces(FileOutputStream out, long offset, long wallStart,
                 long threadStart, ArrayList<Entry> entries) throws IOException {
             FileChannel channel = out.getChannel();

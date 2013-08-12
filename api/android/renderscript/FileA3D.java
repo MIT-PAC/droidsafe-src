@@ -32,6 +32,7 @@ public class FileA3D extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:34.706 -0400", hash_original_method = "269B092AF0EC3A5F2942611AA8A98D07", hash_generated_method = "1B3BDECEFD18EC756EA0C22F92C4DD6B")
     private void initEntries() {
         int numFileEntries = mRS.nFileA3DGetNumIndexEntries(getID());
@@ -62,6 +63,7 @@ for(int i = 0;i < numFileEntries;i ++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:34.739 -0400", hash_original_method = "43026D362674C7F77E1B13142D92AB01", hash_generated_method = "1808F435ADFE0F035DAE4E584355B904")
     public int getIndexEntryCount() {
         if(mFileEntries == null)        
@@ -81,6 +83,7 @@ for(int i = 0;i < numFileEntries;i ++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:34.756 -0400", hash_original_method = "27D5CB32E5BFA60469EB476FDB126ADE", hash_generated_method = "95C184F71583CC2762DD851932DBF6F2")
     public IndexEntry getIndexEntry(int index) {
         addTaint(index);
@@ -204,6 +207,7 @@ IndexEntry varD01CF6E3ACDF99B6478B9E47E49EAA74_446919829 =         mFileEntries[
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:34.818 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "7CAAE93E5208A485ABFC1CC9E0180994")
         public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_736135851 =             mName;
@@ -214,6 +218,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_736135851 =             mName;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:34.824 -0400", hash_original_method = "B61BB3B634295075609E5761A0D6F231", hash_generated_method = "C6A2F2ADEC206839A2F032CBA5478561")
         public EntryType getEntryType() {
 EntryType var090BBB390B511490E21A283693B944FF_2036613388 =             mEntryType;
@@ -238,6 +243,7 @@ BaseObj var2FDE1120F80AA4E8798ECDBDB1C0E85C_491879173 =             obj;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:34.839 -0400", hash_original_method = "EA3DD7198DAB1863389D08AED87B7E1C", hash_generated_method = "08A26057DAFB743EBA98F47637EF18A4")
         public Mesh getMesh() {
 Mesh var1D14ADB8D61899EB69078B7D2FBB70E4_148031194 =             (Mesh)getObject();
@@ -248,7 +254,8 @@ Mesh var1D14ADB8D61899EB69078B7D2FBB70E4_148031194 =             (Mesh)getObject
         }
 
         
-                static synchronized BaseObj internalCreate(RenderScript rs, IndexEntry entry) {
+                @DSModeled(DSC.SAFE)
+        static synchronized BaseObj internalCreate(RenderScript rs, IndexEntry entry) {
             if(entry.mLoadedObj != null) {
                 return entry.mLoadedObj;
             }

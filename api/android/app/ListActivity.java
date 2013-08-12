@@ -172,6 +172,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.778 -0400", hash_original_method = "05075802629D70F2FE9B324F3D05972C", hash_generated_method = "A985CF7253319D9BED8FA52EF7C951CB")
     public int getSelectedItemPosition() {
         int varB3259E78107540D8D68BCBB3E503CBA4_1129259822 = (mList.getSelectedItemPosition());
@@ -182,6 +183,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.780 -0400", hash_original_method = "EBFC2CC18AED07D84008925040C28A97", hash_generated_method = "C6ECC6984E7560695C9119CC48BE63D7")
     public long getSelectedItemId() {
         long var9B989EB69692C97E4AB8970CCD694C25_235477858 = (mList.getSelectedItemId());
@@ -192,6 +194,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.781 -0400", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "B02BB284A31CE1DAF903CA51F68D69C7")
     public ListView getListView() {
         ensureList();

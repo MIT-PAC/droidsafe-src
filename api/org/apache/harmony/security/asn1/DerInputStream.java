@@ -138,6 +138,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.891 -0400", hash_original_method = "D6D26712C70093C458D89C6D3972D749", hash_generated_method = "0A4D0CF92FB1B13F2F6E35F1B41F5F2C")
     public void readSequence(ASN1Sequence sequence) throws IOException {
         addTaint(sequence.getTaint());
@@ -147,6 +148,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.892 -0400", hash_original_method = "77F51C9B8D3AA50862AF88F76C08878B", hash_generated_method = "A41A9981412AAE9C2CB6576D9502BD46")
     public void readSetOf(ASN1SetOf setOf) throws IOException {
         addTaint(setOf.getTaint());
@@ -177,6 +179,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.893 -0400", hash_original_method = "DDB0D038D9FFD20754D2BFE5BE49D19D", hash_generated_method = "CAF95CE41A4882DB665F08BB8849AD62")
     public void readUTCTime() throws IOException {
         if(tag == ASN1Constants.TAG_C_UTCTIME)        
@@ -207,6 +210,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.893 -0400", hash_original_method = "EBDF2A88B7EE1193AEF8967AC2F99528", hash_generated_method = "7FF07CA5717929EA52510DB5D3B23A0E")
     public void readGeneralizedTime() throws IOException {
         if(tag == ASN1Constants.TAG_C_GENERALIZEDTIME)        

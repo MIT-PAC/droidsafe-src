@@ -6,12 +6,14 @@ import droidsafe.annotations.*;
 
 public class TransactionAlreadyExistsException extends SipException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.360 -0400", hash_original_method = "6748172A8FDBE98EBDE794888E886227", hash_generated_method = "03AE0A4D0E3FD942DF397A578BE0B81F")
     public  TransactionAlreadyExistsException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.361 -0400", hash_original_method = "230B9A8FB8272D6B6901D384356BD5A2", hash_generated_method = "2F90F56936551D51BF335C744FFD9252")
     public  TransactionAlreadyExistsException(String message) {
         super(message);

@@ -688,7 +688,7 @@ AnimatorSet var6E2178F33F884BED37C5DEBCD18F9A96_1391548979 =         anim;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.383 -0400", hash_original_method = "FF30C4A715862D404FA915E9EED652EB", hash_generated_method = "16561DBFE9E4D1BDE8F2BF5380AFF17E")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private void sortNodes() {
         if(mNeedsSort)        
         {
@@ -843,7 +843,7 @@ for(int j = 0;j < numDependencies;++j)
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.414 -0400", hash_original_method = "AF711F2A0E7E526F8B6CE8D71F56AFBE", hash_generated_method = "AEFB16E18AD97431E69DBCE15B364897")
         private void startIfReady(Animator dependencyAnimation) {
             addTaint(dependencyAnimation.getTaint());

@@ -33,6 +33,7 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.541 -0400", hash_original_method = "00B10A8614D975711EAEB4C98ED18D40", hash_generated_method = "BBC4E0FAA2339E503A4A984047E4A1BD")
     public  AttCertIssuer(
         V2Form  v2Form) {
@@ -44,6 +45,7 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttCertIssuer getInstance(
         Object  obj) {
         if (obj instanceof AttCertIssuer)
@@ -70,7 +72,7 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static AttCertIssuer getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {

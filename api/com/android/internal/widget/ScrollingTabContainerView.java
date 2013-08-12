@@ -230,6 +230,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.207 -0400", hash_original_method = "2880D1017429231FB4C783DE8155FB40", hash_generated_method = "2DB326893015A2A947F353A2E4B62E19")
     public void setTabSelected(int position) {
         mSelectedTabIndex = position;
@@ -258,6 +259,7 @@ for(int i = 0;i < tabCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.208 -0400", hash_original_method = "2D264BA3FDE4BFC89C0D29CEF35AB5AF", hash_generated_method = "26F2E91F17A5314422F78CA7BBBD3619")
     public void setContentHeight(int contentHeight) {
         mContentHeight = contentHeight;
@@ -310,6 +312,7 @@ Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1482698738 =         spinner;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.211 -0400", hash_original_method = "DD246DFC5FD99F8FA7C3003D550B61F7", hash_generated_method = "F7DEA7DCC5DE05423EA8EB7E14EFAE9F")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
@@ -416,6 +419,7 @@ Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1482698738 =         spinner;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.213 -0400", hash_original_method = "887CFA274A392DE8385671362C9964CB", hash_generated_method = "4870A0AD27208DC28880E7226D22BA0B")
     @Override
     public void onAttachedToWindow() {
@@ -491,6 +495,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.215 -0400", hash_original_method = "21975DD541C9968A5D84261D431559E1", hash_generated_method = "30EEE35EF114E7152605CAC3A63B5400")
     public void addTab(ActionBar.Tab tab, boolean setSelected) {
         addTaint(setSelected);
@@ -562,6 +567,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.216 -0400", hash_original_method = "AB4E22DBFABD54435D3DD6BE48A7A755", hash_generated_method = "4784CE427F3B3E3FD07B9132081F1688")
     public void updateTab(int position) {
         addTaint(position);
@@ -585,6 +591,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.217 -0400", hash_original_method = "F55D08535CE5AE8E892CFC88E40F0277", hash_generated_method = "1D4135D665D44A162F1AABBC0C4F6198")
     public void removeTabAt(int position) {
         addTaint(position);
@@ -608,6 +615,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.218 -0400", hash_original_method = "505192EE2E755E624302670BB829212B", hash_generated_method = "FC735DC9B08CDD683C98638D8C90A820")
     public void removeAllTabs() {
         mTabLayout.removeAllViews();
@@ -630,6 +638,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.218 -0400", hash_original_method = "1E807444FE245168D5D160AA45CB2236", hash_generated_method = "9779246FC5A66267DE3957B61AD31C11")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -670,6 +679,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
 
         private View mCustomView;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.220 -0400", hash_original_method = "B5DB6118A5A739AD937742D1C44B643E", hash_generated_method = "8D2B0C46504124F08E8CF6BA7077B680")
         public  TabView(Context context, ActionBar.Tab tab, boolean forList) {
             super(context, null, com.android.internal.R.attr.actionBarTabStyle);
@@ -721,6 +731,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.222 -0400", hash_original_method = "0AA8F20782F60FCDEB51E2F40EEE8538", hash_generated_method = "2327D6DEEE1CD8D3596AF283109C89A4")
         public void update() {
             final ActionBar.Tab tab = mTab;
@@ -841,6 +852,7 @@ ActionBar.Tab var2863D7221C8303E9575E533B393C6A71_1007535098 =             mTab;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.223 -0400", hash_original_method = "A98679EF5D46D1EF9814D015704A8113", hash_generated_method = "CACE27B9036ED6BC13E1BA6D94BBA715")
         @Override
         public Object getItem(int position) {
@@ -866,6 +878,7 @@ Object varF69A319077C91E2F587183FB5AB81B22_1415470376 =             ((TabView) m
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.223 -0400", hash_original_method = "C541E21433CF0B8E7E2EE0D1C892D4E4", hash_generated_method = "BB36EE4537CE76E468F34CA60F3AA71D")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -906,6 +919,7 @@ View var78FE9B874BBEC69B62B43EE963245978_691858909 =             convertView;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.224 -0400", hash_original_method = "024B6ED45DE6B4C8643F8BD12AD99CDA", hash_generated_method = "D67179FD0F0ACCCFACD8524687C99C82")
         public void onClick(View view) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -976,6 +990,7 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_782914034 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.226 -0400", hash_original_method = "FCD0A8E872EDB46A2BFC14B31FFA43CC", hash_generated_method = "C73DC9668778EC41E6A37E2B557B70D1")
         @Override
         public void onAnimationEnd(Animator animation) {

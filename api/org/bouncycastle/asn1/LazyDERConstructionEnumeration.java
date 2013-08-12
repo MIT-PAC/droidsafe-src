@@ -18,6 +18,7 @@ class LazyDERConstructionEnumeration implements Enumeration {
 
     private Object nextObj;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.758 -0400", hash_original_method = "3BCCF8774D30BE9B39FD53E71BE1236C", hash_generated_method = "1026896E0191EEEFD95638149230A1BF")
     public  LazyDERConstructionEnumeration(byte[] encoded) {
         aIn = new ASN1InputStream(encoded, true);

@@ -129,6 +129,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_924572809 =         mText;
 
     public static final Parcelable.Creator<TextInfo> CREATOR
             = new Parcelable.Creator<TextInfo>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public TextInfo createFromParcel(Parcel source) {
             return new TextInfo(source);

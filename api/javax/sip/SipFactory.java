@@ -27,6 +27,7 @@ public class SipFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized SipFactory getInstance() {
         if (sSipFactory == null) sSipFactory = new SipFactory();
         return sSipFactory;
@@ -41,7 +42,7 @@ public class SipFactory {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.330 -0400", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "B667111BBE519A55F44B9A13E23ECC26")
     public synchronized SipStack createSipStack(Properties properties) throws PeerUnavailableException {
         addTaint(properties.getTaint());
@@ -86,6 +87,7 @@ SipStack var0FC1F21ED47F4C0C48881B0DAF112A16_1191162552 =         sipStack;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.330 -0400", hash_original_method = "131499B33C0579C2805DA9334AD4F6E4", hash_generated_method = "A7CF642DC07F557CAF29EDB590758C67")
     public AddressFactory createAddressFactory() throws PeerUnavailableException {
         try 
@@ -162,6 +164,7 @@ HeaderFactory varAC192C4527CC0F586B5A80B1EFE715DE_12685641 =             new gov
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.331 -0400", hash_original_method = "633D2CDB57C82E2B47B87FEFEA967AF9", hash_generated_method = "0231C9B96783324293FE380461B7703A")
     public MessageFactory createMessageFactory() throws PeerUnavailableException {
         try 

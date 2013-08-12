@@ -106,7 +106,7 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.833 -0400", hash_original_method = "41241BC7260E3C26DE66CCD5C227EECC", hash_generated_method = "ED81AE9C45D5F5B1CE4B82CA13417B67")
     private boolean areAllListInfosSelectable(ArrayList<ListView.FixedViewInfo> infos) {
         addTaint(infos.getTaint());

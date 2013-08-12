@@ -23,6 +23,7 @@ public class Pair<F, S> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.961 -0400", hash_original_method = "A022862730CB324FED346DC42742A154", hash_generated_method = "4920A6136D5713DF097D78032C9A80FE")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -65,6 +66,7 @@ public class Pair<F, S> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.961 -0400", hash_original_method = "7E2E6D9DD55E11668C618EBE33FB07A0", hash_generated_method = "A4E3CBA2EAFA94266DDD28732AD5B477")
     public int hashCode() {
         int result = 17;

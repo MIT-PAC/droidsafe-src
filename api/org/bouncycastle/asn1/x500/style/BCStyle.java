@@ -25,13 +25,14 @@ import org.bouncycastle.asn1.x509.X509ObjectIdentifiers;
 
 public class BCStyle implements X500NameStyle {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.427 -0400", hash_original_method = "0ABD618DA1E5963140699C4BF03983EF", hash_generated_method = "62EA560CCC47607A51180F5CADA7A74F")
     protected  BCStyle() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.428 -0400", hash_original_method = "BD2E63080765E1C5F0301383BAEA0055", hash_generated_method = "2CC284D6F474EA38D18DC06008E7F6E7")
     public ASN1Encodable stringToValue(ASN1ObjectIdentifier oid, String value) {
         addTaint(value.getTaint());
@@ -87,6 +88,7 @@ ASN1Encodable var2B1683A8AF4155B42EB4E966D550EB40_127390986 =         new DERUTF
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.429 -0400", hash_original_method = "9484E4F8104F6AF4F123D2A5FD97E1FE", hash_generated_method = "5A03C79DAD52FE393D7D0A8B7E806184")
     public ASN1ObjectIdentifier attrNameToOID(String attrName) {
         addTaint(attrName.getTaint());
@@ -98,6 +100,7 @@ ASN1ObjectIdentifier var36DEFB4E7CCF4A65D077415213D06BF0_1301176335 =         IE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.430 -0400", hash_original_method = "3E0470485E902738E6BF6ED5F1A7F39D", hash_generated_method = "F56D093D980F5EF249C686518BFE0D82")
     public boolean areEqual(X500Name name1, X500Name name2) {
         addTaint(name2.getTaint());
@@ -212,7 +215,7 @@ for(int i = 0;i != possRDNs.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.432 -0400", hash_original_method = "D45006114E7131F95F9CCEC1C09C1466", hash_generated_method = "D65323D89D3481E4E39DA4A913E360BA")
     protected boolean rdnAreEqual(RDN rdn1, RDN rdn2) {
         addTaint(rdn2.getTaint());
@@ -340,6 +343,7 @@ for(int i = 0;i != atvs1.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.434 -0400", hash_original_method = "A9463F881D57C8D610E0B84E4769BF0F", hash_generated_method = "D8D70036F8B220C2F7FA2FC7E2F430A7")
     public RDN[] fromString(String dirName) {
         addTaint(dirName.getTaint());
@@ -351,7 +355,7 @@ RDN[] varB4707AA258BA2978AA365DCAAA9F4D7C_1246266345 =         IETFUtils.rDNsFro
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.435 -0400", hash_original_method = "EA77324623CE6D0B04D0F275B161435F", hash_generated_method = "67F2B083374A19970C37468742772298")
     public int calculateHashCode(X500Name name) {
         addTaint(name.getTaint());
@@ -417,7 +421,7 @@ for(int j = 0;j != atv.length;j++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.437 -0400", hash_original_method = "C53C9B056BF6D42B40010FA6E5F8B1BD", hash_generated_method = "66B65D6B29BFB95FC966E936C5E4A41A")
     public String toString(X500Name name) {
         addTaint(name.getTaint());

@@ -69,6 +69,7 @@ public class DownloadManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.003 -0400", hash_original_method = "A2E8022D1487E0DC7C6CC7B8DABAC46D", hash_generated_method = "7CC22DCEB30E143A2BD6D2D17131305F")
     public long enqueue(Request request) {
         addTaint(request.getTaint());
@@ -134,6 +135,7 @@ public class DownloadManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.007 -0400", hash_original_method = "AA3C14DF1A360F6707C442D7B10D5AD3", hash_generated_method = "6DEA02AECF57C40E6D89F7A795D312B8")
     public Cursor query(Query query) {
         addTaint(query.getTaint());
@@ -225,6 +227,7 @@ Uri var540C13E9E156B687226421B24F2DF178_1996830365 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.012 -0400", hash_original_method = "EC65E8932FA161BF4DAEC74FC802F48D", hash_generated_method = "1BE2141E43042D92269A667F2605F738")
     public String getMimeTypeForDownloadedFile(long id) {
         addTaint(id);
@@ -320,6 +323,7 @@ for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext())
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Long getRecommendedMaxBytesOverMobile(Context context) {
         try {
             return Settings.Secure.getLong(context.getContentResolver(),
@@ -330,6 +334,7 @@ for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.019 -0400", hash_original_method = "58F6793B30C14E2CFD3653910A805BA2", hash_generated_method = "1E8F274584699999587E79BB8B715E2F")
     public long addCompletedDownload(String title, String description,
             boolean isMediaScannerScannable, String mimeType, String path, long length,
@@ -401,6 +406,7 @@ Uri varCB06EC07B2D6682F3C59CCA414EC1632_121836826 =         ContentUris.withAppe
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String getWhereClauseForIds(long[] ids) {
         StringBuilder whereClause = new StringBuilder();
         whereClause.append("(");
@@ -416,6 +422,7 @@ Uri varCB06EC07B2D6682F3C59CCA414EC1632_121836826 =         ContentUris.withAppe
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String[] getWhereArgsForIds(long[] ids) {
         String[] whereArgs = new String[ids.length];
         for (int i = 0; i < ids.length; i++) {
@@ -492,6 +499,7 @@ Uri varCB06EC07B2D6682F3C59CCA414EC1632_121836826 =         ContentUris.withAppe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.027 -0400", hash_original_method = "DEE528427F50C6163D0C2E44786A5A1B", hash_generated_method = "FDA44BFC9F8B59AE2D2550C14110C5D8")
           Request(String uriString) {
             mUri = Uri.parse(uriString);
@@ -616,6 +624,7 @@ Request var72A74007B2BE62B849F475C7BDA4658B_801762319 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.032 -0400", hash_original_method = "84826A0727261744241F6F54A16F49D4", hash_generated_method = "7A700030E69D230010E1DA709F48DB90")
         public Request addRequestHeader(String header, String value) {
             addTaint(value.getTaint());
@@ -760,6 +769,7 @@ Request var72A74007B2BE62B849F475C7BDA4658B_1215973108 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.048 -0400", hash_original_method = "A794ABF9FD18E330B670B5AD24CF2800", hash_generated_method = "87F22940201BB110933F52225D541D50")
          ContentValues toContentValues(String packageName) {
             addTaint(packageName.getTaint());
@@ -903,6 +913,7 @@ Query var72A74007B2BE62B849F475C7BDA4658B_1140448434 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.056 -0400", hash_original_method = "CE9295EE41F323C50B34B72F478BD4C2", hash_generated_method = "E79F559685333E70680FB5CA221DE80A")
         public Query setFilterByStatus(int flags) {
             mStatusFlags = flags;
@@ -1104,6 +1115,7 @@ String var301A4207D137C8EA4EF56F87F78044E6_2077174157 =             Downloads.Im
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.065 -0400", hash_original_method = "34538125BB8387937A75DA11F9FB5B65", hash_generated_method = "9369859B5CC812E3BC68C9BE9BBB323A")
         @Override
         public int getInt(int columnIndex) {
@@ -1116,6 +1128,7 @@ String var301A4207D137C8EA4EF56F87F78044E6_2077174157 =             Downloads.Im
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.066 -0400", hash_original_method = "744FA54C78DD5C7B6737C741AD0EB8F1", hash_generated_method = "F26CCB335C28AC0651CE2FB66A18D889")
         @Override
         public long getLong(int columnIndex) {
@@ -1150,6 +1163,7 @@ String var301A4207D137C8EA4EF56F87F78044E6_2077174157 =             Downloads.Im
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.067 -0400", hash_original_method = "2A6CC35BB4DF843267A861B5828C6994", hash_generated_method = "DC928DC8B3F23D8D785C60214C06191E")
         @Override
         public String getString(int columnIndex) {

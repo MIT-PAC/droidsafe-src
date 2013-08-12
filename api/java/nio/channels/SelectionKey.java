@@ -60,6 +60,7 @@ Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
     public abstract SelectionKey interestOps(int operations);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.277 -0400", hash_original_method = "ED231557F3875B4504449502DA9771AC", hash_generated_method = "FF5E8C9FBF77EC134158842D70BCFCC8")
     public final boolean isAcceptable() {
         boolean var184BFDC257D997348D948C238F624ED0_1534615599 = ((readyOps() & OP_ACCEPT) == OP_ACCEPT);
@@ -70,6 +71,7 @@ Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.277 -0400", hash_original_method = "2F2EE0183B49AF3C16598E47DE1FB088", hash_generated_method = "4B91BB86F437BCD4315DA4C20B2E8FF1")
     public final boolean isConnectable() {
         boolean varF330DA86349725C7DD104FDBFF474BC8_548903452 = ((readyOps() & OP_CONNECT) == OP_CONNECT);
@@ -80,6 +82,7 @@ Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.277 -0400", hash_original_method = "B9D7CCBAB6757F436C28ADF7D4904FD5", hash_generated_method = "C9881A59CE0AE3F5977BBEAE321475E2")
     public final boolean isReadable() {
         boolean var5BCD0D05F92B38BD9369FBE6A9C7F333_1084926686 = ((readyOps() & OP_READ) == OP_READ);
@@ -94,6 +97,7 @@ Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
     public abstract boolean isValid();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.278 -0400", hash_original_method = "FD6385C69AD88B8295913B1A01B9080B", hash_generated_method = "F479E98B32F5540C1647174033A098C4")
     public final boolean isWritable() {
         boolean var3E834C73360B37193989B72021E0B1A0_1540431269 = ((readyOps() & OP_WRITE) == OP_WRITE);

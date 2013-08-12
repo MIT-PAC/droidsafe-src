@@ -295,7 +295,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.282 -0400", hash_original_method = "EC8528293B0BAB1F2E4332771D0B26FB", hash_generated_method = "4CC5E3AD8909616CEB974D12F329F78F")
     @Override
     public String getContentType() {
@@ -351,6 +351,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1412896122 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.284 -0400", hash_original_method = "71DB7CA360B0ED6E855C6F8E83FB7FD7", hash_generated_method = "527D7A5785F20062A66BB3695E2EAADB")
     @Override
     public InputStream getInputStream() throws IOException {

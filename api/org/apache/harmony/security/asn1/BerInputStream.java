@@ -150,6 +150,7 @@ public class BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.635 -0400", hash_original_method = "E21A3F5A1E5C42E0733DFCD7E2B1A37B", hash_generated_method = "F430CD6C5425A01C9DA9F906609B59A4")
     public int next() throws IOException {
         tagOffset = offset;
@@ -334,6 +335,7 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.685 -0400", hash_original_method = "1A3161CCB7646B7891B929A5396BF673", hash_generated_method = "2EEF0F3421337F8E40669A6907F5D9EA")
     public void readGeneralizedTime() throws IOException {
         if(tag == ASN1Constants.TAG_GENERALIZEDTIME)        
@@ -405,6 +407,7 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.702 -0400", hash_original_method = "D1E9408574A13A490CB1D3EF3A359E97", hash_generated_method = "6EDB71703644C6D0B4456FCC4BC7262E")
     public void readUTCTime() throws IOException {
         if(tag == ASN1Constants.TAG_UTCTIME)        
@@ -644,6 +647,7 @@ for(int i = 0;i < length;i++,++oidElement)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.760 -0400", hash_original_method = "97688987A014CB8C0C54BAB32FA72A4F", hash_generated_method = "753CB615475754F2A65CB91C6001CB4D")
     public void readSequence(ASN1Sequence sequence) throws IOException {
         addTaint(sequence.getTaint());
@@ -1014,6 +1018,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.790 -0400", hash_original_method = "73ADE766083E21B57FB910CFDB1C7433", hash_generated_method = "2C020317B85E87031E88860EF4FCE2F2")
     public void readContent() throws IOException {
         if(offset + length > buffer.length)        

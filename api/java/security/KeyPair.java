@@ -17,6 +17,7 @@ public final class KeyPair implements Serializable {
 
     private PublicKey publicKey;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.926 -0400", hash_original_method = "283304EE488E7CC511471A1BB564958E", hash_generated_method = "C50326B32CF00A6F329560774769F4F4")
     public  KeyPair(PublicKey publicKey, PrivateKey privateKey) {
         this.privateKey = privateKey;

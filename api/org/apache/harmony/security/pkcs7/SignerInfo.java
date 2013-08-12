@@ -217,7 +217,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_630185994 =         res.toString();
             })
         {
             
-            @DSModeled(DSC.SAFE)
+            @DSModeled(DSC.BAN)
         @Override public void getValues(Object object, Object[] values) {
                 Object [] issAndSerial = (Object[])object;
                 values[0] = issAndSerial[0];
@@ -242,6 +242,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_630185994 =         res.toString();
             setOptional(6); 
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             SignerInfo si = (SignerInfo) object;
             values[0] = new byte[] {(byte)si.version};
@@ -261,6 +262,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_630185994 =         res.toString();
             values[6] = si.unauthenticatedAttributes;
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new SignerInfo(

@@ -95,6 +95,7 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.034 -0400", hash_original_method = "11ADA6ED2A991966CB49663045730556", hash_generated_method = "5B2A842235861802FFF76D448FA31C6A")
     public int compareTo(Object o) {
         addTaint(o.getTaint());
@@ -143,6 +144,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_847600741 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.036 -0400", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "C9F675B7C0DC46D14033611BF61255CA")
      Class<?> getTypeInternal() {
         if(type instanceof WeakReference)        
@@ -162,6 +164,7 @@ Class<?> var4585A728AFBCEE57D35F6001ECD82EAF_387279886 =         (Class<?>) type
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.037 -0400", hash_original_method = "9634509EF2A12286AE62950CEFC0E304", hash_generated_method = "8C2C3C0868982E2E2CC3E4CDF5F21CEC")
     public Class<?> getType() {
         Class<?> cl = getTypeInternal();
@@ -291,6 +294,7 @@ Class<?> var8C6A66A89969D061B1ECE468EDE00B0A_604514584 =         cl;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.042 -0400", hash_original_method = "AF834EA72E67DF4239AA5209B5DE5F81", hash_generated_method = "DED98FD3B8F3FC13CFA6E80649196C4E")
     public String getTypeString() {
         if(isPrimitive())        
@@ -363,6 +367,7 @@ String var7A85238CD32275F0BFF675D89BABBB30_1936400749 =         typeString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.044 -0400", hash_original_method = "ABFAE4540EC552EECBD4679559074925", hash_generated_method = "729452E04410EF1341705206AEFB0C8E")
     @Override
     public String toString() {

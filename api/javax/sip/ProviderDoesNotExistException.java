@@ -12,6 +12,7 @@ public class ProviderDoesNotExistException extends SipException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.281 -0400", hash_original_method = "1B998FAE6F4B1663E51EF9B76543EA0A", hash_generated_method = "E5B188B68F9929B811241113E6A2D774")
     public  ProviderDoesNotExistException(String message) {
         super(message);

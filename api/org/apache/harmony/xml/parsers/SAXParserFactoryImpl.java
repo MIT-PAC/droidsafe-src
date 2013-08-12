@@ -80,6 +80,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.794 -0400", hash_original_method = "8429289DC0C07EE6D0C2B7B5BD1C7C0B", hash_generated_method = "0E74336AB365DE33E4AD4CBA6C3EEC77")
     @Override
     public boolean isValidating() {
@@ -104,6 +105,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.795 -0400", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "77B60062746E0ED42949EB8B22DBE242")
     @Override
     public SAXParser newSAXParser() throws ParserConfigurationException {
@@ -202,6 +204,7 @@ SAXParser var97136CDAC6E5068137219CC84BCFD745_372579539 =             new SAXPar
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.797 -0400", hash_original_method = "FD755E093F221B14C5D40C6AB8BA5348", hash_generated_method = "0F19FD11F6B8C2EE843D2F7D095BC991")
     @Override
     public void setValidating(boolean value) {

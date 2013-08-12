@@ -62,6 +62,7 @@ public final class Ndef extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Ndef get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NDEF)) return null;
         try {
@@ -208,6 +209,7 @@ NdefMessage var540C13E9E156B687226421B24F2DF178_987154429 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.665 -0400", hash_original_method = "A66DE5F0B266681092CD198588C2EDA0", hash_generated_method = "7DBD3681DD0840A32AEFAB5166465F73")
     public void writeNdefMessage(NdefMessage msg) throws IOException, FormatException {
         addTaint(msg.getTaint());
@@ -251,6 +253,7 @@ switch(errorCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.666 -0400", hash_original_method = "7292FD9562AEE851073EE82DFE58EB20", hash_generated_method = "1975279373AF14BC0823568154FA232B")
     public boolean canMakeReadOnly() {
         INfcTag tagService = mTag.getTagService();
@@ -277,6 +280,7 @@ switch(errorCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.685 -0400", hash_original_method = "4D610B9041279D39FD5203194F60B421", hash_generated_method = "F4B680765D796A0A0C9C3072FB556383")
     public boolean makeReadOnly() throws IOException {
         checkConnected();

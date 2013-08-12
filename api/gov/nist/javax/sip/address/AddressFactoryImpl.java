@@ -23,6 +23,7 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.914 -0400", hash_original_method = "BCAEEC1C0FA5608D92211F34DF6950F5", hash_generated_method = "3AE1EAFA4741EEA140E014066588DBBA")
     public javax.sip.address.Address createAddress() {
 javax.sip.address.Address var010B70F9E3862AD442F9F51590223FC7_11950313 =         new AddressImpl();
@@ -33,6 +34,7 @@ javax.sip.address.Address var010B70F9E3862AD442F9F51590223FC7_11950313 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.915 -0400", hash_original_method = "8ECE0FD94D831C743ACA34A8ACB9471A", hash_generated_method = "E14AC5D7305633200153845BFFFB4C28")
     public javax.sip.address.Address createAddress(
         String displayName,
@@ -63,6 +65,7 @@ javax.sip.address.Address var546B74671DF65029CA2047A13F764E1A_1443799908 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.915 -0400", hash_original_method = "606F4ADF8EBB5ECDC152643EADDC0AC8", hash_generated_method = "A6650AF35989A7CF3EFCE6DB6688E8C8")
     public javax.sip.address.SipURI createSipURI(String uri) throws ParseException {
         addTaint(uri.getTaint());
@@ -99,6 +102,7 @@ javax.sip.address.SipURI var3775DD8192C4A09F6897FA3E13EAEC38_1311078006 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.917 -0400", hash_original_method = "97FF8506F533416A8B40E097933B45CB", hash_generated_method = "B1A2CE7F74052FD66F8F416467B71DED")
     public javax.sip.address.SipURI createSipURI(String user, String host) throws ParseException {
         addTaint(host.getTaint());
@@ -155,6 +159,7 @@ javax.sip.address.SipURI var2D27E8522206398314ED10B3D3A16811_783382693 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.918 -0400", hash_original_method = "D04D6AFFDB458F909DE8ED46FFEF9C7A", hash_generated_method = "03FE909551E8C94432641D3BA9A0E9A8")
     public javax.sip.address.TelURL createTelURL(String uri) throws ParseException {
         addTaint(uri.getTaint());
@@ -217,6 +222,7 @@ javax.sip.address.Address var546B74671DF65029CA2047A13F764E1A_1863038550 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.920 -0400", hash_original_method = "9FCBFE264C415F40E8FC1E843482D494", hash_generated_method = "E67723FA6145C93FBABC55D7EEF0399C")
     public javax.sip.address.Address createAddress(String address) throws java.text.ParseException {
         addTaint(address.getTaint());

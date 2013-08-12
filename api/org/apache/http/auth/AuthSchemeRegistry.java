@@ -111,6 +111,7 @@ AuthScheme varB5D01F4327DBBC343676B65A86A05A58_1232253554 =             factory.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.248 -0400", hash_original_method = "AC70BADA49B0F71D218410F2BC1D1DD5", hash_generated_method = "246197864AFC8F9AA8D9D52353B51B90")
     public synchronized List<String> getSchemeNames() {
 List<String> varAAEC45CC0E27E189B466FC7E198A1AD8_1551861263 =         new ArrayList<String>(registeredSchemes.keySet());

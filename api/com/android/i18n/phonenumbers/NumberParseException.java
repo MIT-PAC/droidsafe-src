@@ -15,6 +15,7 @@ public class NumberParseException extends Exception {
 
     private String message;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.592 -0400", hash_original_method = "E3BFB23E8C79BF87D1C5A9FB2A377F86", hash_generated_method = "3806F73A468A4900F06EBC218AF22D9C")
     public  NumberParseException(ErrorType errorType, String message) {
         super(message);
@@ -37,6 +38,7 @@ ErrorType var5A5A63BBE4A031A8D09DACEEAC4789E0_1909675424 =         errorType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.592 -0400", hash_original_method = "6D8405A96F8D5D279CAA6C0BAAB6D3AE", hash_generated_method = "EF08D3D3B11C2E556F47BFB47B491906")
     @Override
     public String toString() {

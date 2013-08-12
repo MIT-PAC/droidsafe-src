@@ -574,6 +574,7 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_997377750 =             respons
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.829 -0400", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "715CF4FA77516E276A6E0260E216C641")
     protected void releaseConnection() {
         try 
@@ -595,6 +596,7 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_997377750 =             respons
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.830 -0400", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "415DA8F0AF4612F76124E7EB7439B06D")
     protected HttpRoute determineRoute(HttpHost    target,
                                            HttpRequest request,
@@ -689,6 +691,7 @@ switch(step){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.833 -0400", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "1627B99E1102F756DE8EE65E33B3ABA8")
     protected boolean createTunnelToTarget(HttpRoute route,
                                            HttpContext context) throws HttpException, IOException {
@@ -813,6 +816,7 @@ switch(step){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.835 -0400", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "36AE56BB7A4F30C0EFF30FDDAC17A718")
     protected boolean createTunnelToProxy(HttpRoute route, int hop,
                                           HttpContext context) throws HttpException, IOException {

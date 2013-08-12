@@ -14,6 +14,7 @@ public class UnsupportedDigestAlgorithmException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.480 -0400", hash_original_method = "53A11CFB931BDAEE1F32CE61EF0BEDA2", hash_generated_method = "D56D91058196CD98BC4B8FC72E37D24E")
     public  UnsupportedDigestAlgorithmException(String message) {
         super(message);

@@ -17,6 +17,7 @@ class SimpleBigDecimal {
 
     private int scale;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.756 -0400", hash_original_method = "B9E3F8F2D1F0CB50E3B2E06390DB4E90", hash_generated_method = "506E28452973EFD977E32014FB60F11D")
     public  SimpleBigDecimal(BigInteger bigInt, int scale) {
         if(scale < 0)        
@@ -119,6 +120,7 @@ SimpleBigDecimal varBC873B48BA5F854280762166BC36B2E6_970714921 =         new Sim
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.759 -0400", hash_original_method = "1997D6C5826C900035276C18BCFDD9D3", hash_generated_method = "89E061E6CC890BE5037A933D2E96F2B6")
     public SimpleBigDecimal add(BigInteger b) {
         addTaint(b.getTaint());
@@ -177,6 +179,7 @@ SimpleBigDecimal varEB970EDBBB7718B30C3A81F4568A545F_2011793268 =         new Si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.761 -0400", hash_original_method = "F7512EC811E7F46BF7093DEE1B5F6571", hash_generated_method = "D810D08E1048778D3C4ECF904BBA8799")
     public SimpleBigDecimal multiply(BigInteger b) {
         addTaint(b.getTaint());
@@ -225,6 +228,7 @@ SimpleBigDecimal varC8A0EFC90D5FF6476306E34DA9FDBC84_1523505866 =         new Si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.762 -0400", hash_original_method = "F4FD2CFD498531A1DCCD160DB4A55A56", hash_generated_method = "1725346FC5AC17772E95968B72FE6A93")
     public int compareTo(SimpleBigDecimal val) {
         addTaint(val.getTaint());
@@ -249,6 +253,7 @@ SimpleBigDecimal varC8A0EFC90D5FF6476306E34DA9FDBC84_1523505866 =         new Si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.763 -0400", hash_original_method = "5A4C971F5322638C8E9F4B26460E4E92", hash_generated_method = "AB0C849D30FA934DD5B872ECA91838C5")
     public BigInteger floor() {
 BigInteger varC3DA19D8A5CFC927635B2DFC55335EE8_214244322 =         bigInt.shiftRight(scale);
@@ -259,6 +264,7 @@ BigInteger varC3DA19D8A5CFC927635B2DFC55335EE8_214244322 =         bigInt.shiftR
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.763 -0400", hash_original_method = "92FC76983B02D95A30B18D6CBD3123C0", hash_generated_method = "C431CFD10BBC8815EB2330AD4AD1E2D2")
     public BigInteger round() {
         SimpleBigDecimal oneHalf = new SimpleBigDecimal(ECConstants.ONE, 1);
@@ -281,6 +287,7 @@ BigInteger var4174CC434CBDE7DB724D4E7CC73D7929_236119333 =         add(oneHalf.a
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.764 -0400", hash_original_method = "AA9F4F5827911FF9AD2916733B5D4AF6", hash_generated_method = "2E3D5149624EF1C0B8069AC16A7D103B")
     public long longValue() {
         long varCF8562293A42CEC110CF39E17AE4DEC3_1697840621 = (floor().longValue());
@@ -302,6 +309,7 @@ BigInteger var4174CC434CBDE7DB724D4E7CC73D7929_236119333 =         add(oneHalf.a
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.765 -0400", hash_original_method = "687FE1E6404530E144AF0CBE5E24BCFF", hash_generated_method = "F196AB3A18FF3F8255501DC5E5D6B250")
     public String toString() {
         if(scale == 0)        
@@ -345,6 +353,7 @@ String var2460B846747F8B22185AD8BE722266A5_1817592490 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.765 -0400", hash_original_method = "31FE8AD014B4F1DD5E50498C47C1658F", hash_generated_method = "C07E43B80120A9015FE0C5A1A46EA898")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -378,6 +387,7 @@ String var2460B846747F8B22185AD8BE722266A5_1817592490 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.766 -0400", hash_original_method = "32368AD05F7F4213F28C81C339A46A5C", hash_generated_method = "CDA1B01506CFBE971452C9F2AFF443E1")
     public int hashCode() {
         int var43CD7DFA1F2F6D87A7D7C4C3BE2185AE_1624471424 = (bigInt.hashCode() ^ scale);

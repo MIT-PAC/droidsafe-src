@@ -13,6 +13,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class PProfileKey extends AddressParametersHeader implements PProfileKeyHeader, SIPHeaderNamesIms, ExtensionHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.263 -0400", hash_original_method = "62A39FCB1E97FABE3CE56B88DF28D500", hash_generated_method = "6CF76ED268EA92EBF0466748DD23DF23")
     public  PProfileKey( ) {
         super(P_PROFILE_KEY);
@@ -20,6 +21,7 @@ public class PProfileKey extends AddressParametersHeader implements PProfileKeyH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.263 -0400", hash_original_method = "0A29E597AFEA61D9850CF327C87E8DD7", hash_generated_method = "C570B5BEC1FF37B1984D71F7A2DDF85E")
     public  PProfileKey(AddressImpl address) {
         super(NAME);
@@ -30,6 +32,7 @@ public class PProfileKey extends AddressParametersHeader implements PProfileKeyH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.264 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "D18820F616D6A193DEBF6B61969A4626")
     @Override
     protected String encodeBody() {
@@ -63,6 +66,7 @@ String var1B324365A764C077A55854483509F4AB_597889478 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.265 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "C61648CCEBEC592B96579753DF9E137B")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -74,6 +78,7 @@ String var1B324365A764C077A55854483509F4AB_597889478 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.265 -0400", hash_original_method = "9C9266054F44A0CD7DB49784A3A7D69D", hash_generated_method = "95B2E950AEFA721261B8E91A852D85C0")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -85,6 +90,7 @@ String var1B324365A764C077A55854483509F4AB_597889478 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.266 -0400", hash_original_method = "38197786CF7CEF8229067A4B5205EC8C", hash_generated_method = "33275C3EEB341DAD849BCA596CBAEDE2")
     public Object clone() {
         PProfileKey retval = (PProfileKey) super.clone();

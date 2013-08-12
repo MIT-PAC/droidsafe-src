@@ -35,6 +35,7 @@ final class CharToByteBufferAdapter extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.399 -0400", hash_original_method = "38E7AC500E9C1BA37DDE4BE628E69019", hash_generated_method = "BD8DDA3FE01B4B163206ECBFC26A1461")
     @Override
     public CharBuffer asReadOnlyBuffer() {
@@ -56,6 +57,7 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_415431484 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.400 -0400", hash_original_method = "2B216932B774F9FB3B903B024B1F44DD", hash_generated_method = "9283B466EF0131BA0557892D587F5FB9")
     @Override
     public CharBuffer compact() {
@@ -112,6 +114,7 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1205376736 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.401 -0400", hash_original_method = "E3B7C628ECBF1BA157CEBCB59E54138B", hash_generated_method = "1B41B34471BD428A840F1C26FF81E284")
     @Override
     public char get() {
@@ -132,6 +135,7 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1205376736 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.401 -0400", hash_original_method = "2E9BB5D57AAEB3C216C710BA88C55EF9", hash_generated_method = "D59889BA2C55DEA13EAC9C853697B3DB")
     @Override
     public char get(int index) {
@@ -180,6 +184,7 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_635653630 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.403 -0400", hash_original_method = "78E98F36E3D964482B56C152BAA7846E", hash_generated_method = "50F130686B12338284445E51C7D276C8")
     @Override
     public boolean isDirect() {
@@ -191,6 +196,7 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_635653630 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.403 -0400", hash_original_method = "A5873C4C7FD9475A7CC3E2D0E938541A", hash_generated_method = "A73AD2BEE2E41A4E059B6DDBB97BF208")
     @Override
     public boolean isReadOnly() {
@@ -202,6 +208,7 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_635653630 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.403 -0400", hash_original_method = "DBC83B570884A1A98A3F46EF314D6E4A", hash_generated_method = "D3C6BA286AD49A17A8DFD6CD4C1DC8DB")
     @Override
     public ByteOrder order() {
@@ -213,6 +220,7 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1110972308 =         byteBuffer.or
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.404 -0400", hash_original_method = "5163488AC40767F8F030E728692C8A7E", hash_generated_method = "ECCEA0BF4A87FAFD3A6808EA8B655030")
     @Override
     protected char[] protectedArray() {
@@ -224,6 +232,7 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1110972308 =         byteBuffer.or
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.404 -0400", hash_original_method = "11D0A2FFE917F2CC89FA6C9EBE3FCE7F", hash_generated_method = "7180EBDCB6CF833DFE72DF9B82B84F97")
     @Override
     protected int protectedArrayOffset() {
@@ -247,6 +256,7 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1110972308 =         byteBuffer.or
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.405 -0400", hash_original_method = "A46BC55FC455B05EF747C70552AAC069", hash_generated_method = "56D0E0F3AB0ACA5D8CA92F4E23BCC1D9")
     @Override
     public CharBuffer put(char c) {
@@ -270,6 +280,7 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2116646922 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.405 -0400", hash_original_method = "3E41BE4D2E49CC352D854BBBF4557ADA", hash_generated_method = "E6CC86279E7D7FA7F540B96EDA121F8D")
     @Override
     public CharBuffer put(int index, char c) {

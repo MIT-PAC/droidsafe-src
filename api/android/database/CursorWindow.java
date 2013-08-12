@@ -31,6 +31,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
 
     private final CloseGuard mCloseGuard = CloseGuard.get();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.718 -0400", hash_original_method = "D2526397A12BC25EA910BA6CE9A2504E", hash_generated_method = "EBC092545ED0903AEE1DB06FB6809DDD")
     public  CursorWindow(String name) {
         mStartPos = 0;
@@ -222,6 +223,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.727 -0400", hash_original_method = "896D51A0732498DB684FD2752503707E", hash_generated_method = "DB8F6E7E5ED2C98BDE10FDF8BC3B292D")
     @Override
     protected void finalize() throws Throwable {
@@ -285,6 +287,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.730 -0400", hash_original_method = "6B12CEFAA1DE3FB86CA989F7EF7D159A", hash_generated_method = "138BAE56F7E233D621D61B747D55599C")
     public void close() {
         releaseReference();
@@ -293,6 +296,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.730 -0400", hash_original_method = "979E75E660A1C8BD17328FDD55823D54", hash_generated_method = "1A43E506686E999BD298E5363FB767E7")
     public void clear() {
         acquireReference();
@@ -336,6 +340,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.732 -0400", hash_original_method = "FEBAC209BE2E731A41AC61FC29EF2631", hash_generated_method = "FF60956C96211BF5C1B5F6DE8FB0DE08")
     public int getNumRows() {
         acquireReference();
@@ -359,6 +364,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.733 -0400", hash_original_method = "06070130EC2CA13555B4890F162F9E48", hash_generated_method = "EBCFF96C7F69428B08EEEFDC76B62997")
     public boolean setNumColumns(int columnNum) {
         addTaint(columnNum);
@@ -383,6 +389,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.734 -0400", hash_original_method = "EA2451DCCE3D57D72B2D978A02AB8CBE", hash_generated_method = "520BF208F6BA46D5D20CCF2F4941CE13")
     public boolean allocRow() {
         acquireReference();
@@ -427,6 +434,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.736 -0400", hash_original_method = "49D7CBD5A9292352030392B89291BE3D", hash_generated_method = "F66A9E428FF40DC8E7E52F5DAE43A7EB")
     @Deprecated
     public boolean isNull(int row, int column) {
@@ -440,6 +448,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.737 -0400", hash_original_method = "C746642EB39EFB60299B9B6078CB8713", hash_generated_method = "5E1F643070F85101BA96C8EAE28B61CC")
     @Deprecated
     public boolean isBlob(int row, int column) {
@@ -455,6 +464,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.738 -0400", hash_original_method = "F41C7C64C57B82BE924AB092481D8C56", hash_generated_method = "A9C58506C94F4B7CE4F4ADFF03839C43")
     @Deprecated
     public boolean isLong(int row, int column) {
@@ -468,6 +478,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.738 -0400", hash_original_method = "AB10FF6E7457EC84D59F089A4F39FCC7", hash_generated_method = "4495021732F84DC91761F7ADA075CD2E")
     @Deprecated
     public boolean isFloat(int row, int column) {
@@ -481,6 +492,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.739 -0400", hash_original_method = "235C1A23640EE5ABC2401DF58B1A3F61", hash_generated_method = "48E53DC6809B6102516EC64C4F6F9B50")
     @Deprecated
     public boolean isString(int row, int column) {
@@ -496,6 +508,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.740 -0400", hash_original_method = "8E937452D8006A30B303869F5FCBB330", hash_generated_method = "1D8E2557F9BF605D7AC8009C274231A8")
     public int getType(int row, int column) {
         addTaint(column);
@@ -521,6 +534,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.741 -0400", hash_original_method = "369AEBF74D7711C2C086D87D281ECBA3", hash_generated_method = "082C33DE55C76F15B19512258CE92C9F")
     public byte[] getBlob(int row, int column) {
         addTaint(column);
@@ -546,6 +560,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1679548868 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.742 -0400", hash_original_method = "91E1480DC9AA77B4570FAB2ABB8DFF8A", hash_generated_method = "D8C480D878935632ED75A683A2903CFB")
     public String getString(int row, int column) {
         addTaint(column);
@@ -571,6 +586,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.742 -0400", hash_original_method = "58A64F01A8AD746344B9549C1A3482B7", hash_generated_method = "E662B9381AB2E3B7AA0672AC50856B4A")
     public void copyStringToBuffer(int row, int column, CharArrayBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -604,6 +620,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.743 -0400", hash_original_method = "AD6EFD172162F129E252A5B000066DBD", hash_generated_method = "F9A6612F3E9C4EE5D599A469286217F5")
     public long getLong(int row, int column) {
         addTaint(column);
@@ -654,6 +671,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.744 -0400", hash_original_method = "A20DC76A6D7B2E924E48673418BA5751", hash_generated_method = "7FCD5F5E152FE808A47DA609767D50DB")
     public short getShort(int row, int column) {
         addTaint(column);
@@ -666,6 +684,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.744 -0400", hash_original_method = "551A86F714BE24A79B828A8B72E1E568", hash_generated_method = "1B0402E9F4A8955301DEF6C1411C0F70")
     public int getInt(int row, int column) {
         addTaint(column);
@@ -678,6 +697,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.745 -0400", hash_original_method = "27DD398413CBDB3B58DB63ADFF69899A", hash_generated_method = "3B9FC6625748387A1C517933964779ED")
     public float getFloat(int row, int column) {
         addTaint(column);
@@ -716,6 +736,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.746 -0400", hash_original_method = "6CB1D543D51D5DCA24055F8F53C41BAF", hash_generated_method = "B5DF2CA52B369B6C002B4E47B4D16441")
     public boolean putString(String value, int row, int column) {
         addTaint(column);
@@ -742,6 +763,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.747 -0400", hash_original_method = "2778A952D34B60D93ADEBF86D42CFB13", hash_generated_method = "C34571A9F760175AD8F2685151CD6757")
     public boolean putLong(long value, int row, int column) {
         addTaint(column);
@@ -768,6 +790,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.748 -0400", hash_original_method = "750162916D1917FF199EBD766435A4BC", hash_generated_method = "626FC033D95181D0488BAE68A9CCDE3D")
     public boolean putDouble(double value, int row, int column) {
         addTaint(column);
@@ -794,6 +817,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.749 -0400", hash_original_method = "729F260E3687A604BDCEB4B5144460BE", hash_generated_method = "74D171A066EB121D82059CEA30EE0870")
     public boolean putNull(int row, int column) {
         addTaint(column);

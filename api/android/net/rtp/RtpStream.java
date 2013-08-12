@@ -32,6 +32,7 @@ public class RtpStream {
 
     private int mNative;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.053 -0400", hash_original_method = "87C78188301D65B3202299E6E894F1D3", hash_generated_method = "0EBA38681CA047929975CD0AC8F8B93A")
       RtpStream(InetAddress address) throws SocketException {
         mLocalPort = create(address.getHostAddress());
@@ -142,6 +143,7 @@ InetAddress var8198FF43BDFDB16D148611CAF8ACB717_440095190 =         mRemoteAddre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.059 -0400", hash_original_method = "F6EBFCAAEA10AE181CE86DC5E6420909", hash_generated_method = "757FF6CC2B9127118B4EB2B2E8C2FD85")
     public void associate(InetAddress address, int port) {
         if(isBusy())        

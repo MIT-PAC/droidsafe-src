@@ -210,6 +210,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.358 -0400", hash_original_method = "3F84D57F957CA4DCEBAF95364A0886D3", hash_generated_method = "EB1DC29F7FC58B1E0C1515955B0A40B9")
     @Override
     protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {

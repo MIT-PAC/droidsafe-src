@@ -50,7 +50,7 @@ class CaseMapper {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static boolean isFinalSigma(char[] value, int offset, int count, int index) {
         if (index <= offset) {
             return false;

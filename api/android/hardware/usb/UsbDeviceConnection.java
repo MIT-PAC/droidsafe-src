@@ -49,6 +49,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.936 -0400", hash_original_method = "60A97EE86A4E90019B43CF20671154F6", hash_generated_method = "D0C1E55F2254AD3B56D0685F94FA43DC")
     public int getFileDescriptor() {
         int var146D2C80FFCD3E9CDD655A43248E972A_1730772704 = (native_get_fd());
@@ -59,7 +60,7 @@ public class UsbDeviceConnection {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.936 -0400", hash_original_method = "C038534F3EE98DEDE0B2FBB8841C177D", hash_generated_method = "D24125442E8F952DDE721EBFA04FC96B")
     public byte[] getRawDescriptors() {
         byte[] varD09739513A6279AA0B9EB08AD5AEB185_314300017 = (native_get_desc());
@@ -70,6 +71,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.937 -0400", hash_original_method = "D71499ECC8620176973E88D08B964E3F", hash_generated_method = "80B216C30A6BE32C22580190759D4B0F")
     public boolean claimInterface(UsbInterface intf, boolean force) {
         addTaint(force);
@@ -93,6 +95,7 @@ public class UsbDeviceConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.939 -0400", hash_original_method = "287C316117341FB52A3A40CE5C499D4B", hash_generated_method = "DAE9A2F3E971C01C6FBCD20A50B77BE7")
     public int controlTransfer(int requestType, int request, int value,
             int index, byte[] buffer, int length, int timeout) {
@@ -144,7 +147,7 @@ UsbRequest varCA5195E6E15F740103A7066F05C33A8B_697725926 =         request;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.961 -0400", hash_original_method = "4F2DA9C2985F5A00889FEF441508C01D", hash_generated_method = "36BD21046B5384A678B87FE288CB62C5")
     public String getSerial() {
 String var270454DF88BA715612072DB600947C1B_1679448533 =         native_get_serial();

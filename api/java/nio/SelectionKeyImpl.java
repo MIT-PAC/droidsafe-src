@@ -29,6 +29,7 @@ final class SelectionKeyImpl extends AbstractSelectionKey {
 
     private SelectorImpl selector;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.814 -0400", hash_original_method = "00B21AF608B9E98BCADD70D0A49AAABA", hash_generated_method = "B7E5B94132625F5F813F5FE9020AEB3A")
     public  SelectionKeyImpl(AbstractSelectableChannel channel, int operations,
             Object attachment, SelectorImpl selector) {
@@ -57,7 +58,7 @@ SelectableChannel var99BA3483FD74E36EACD435CEE6BD5D6F_2069342971 =         chann
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.814 -0400", hash_original_method = "88C76B7DE6B06DD1BF72DD8504F2EE79", hash_generated_method = "1175ED9D0083C0CAF461E5D27387AB26")
     @Override
     public int interestOps() {
@@ -92,7 +93,7 @@ SelectableChannel var99BA3483FD74E36EACD435CEE6BD5D6F_2069342971 =         chann
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.815 -0400", hash_original_method = "4D6BC0A0A118723D5704E38CA961A8E7", hash_generated_method = "B8F107D0C80FDD0AB66204613FB9CF45")
     @Override
     public SelectionKey interestOps(int operations) {
@@ -173,7 +174,7 @@ Selector var755D5516CC9C857A99E0A4197911305D_2037244143 =         selector;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.816 -0400", hash_original_method = "566ADAA0BA7A180A2DDEAD33A7978412", hash_generated_method = "78D8F272B412B95D7EC4221E0E664CC1")
      boolean isConnected() {
         boolean var22FD297A02B4C946ADA3777BC98F2729_1204462140 = (!(channel instanceof SocketChannel) || ((SocketChannel) channel).isConnected());

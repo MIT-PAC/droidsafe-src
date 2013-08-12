@@ -21,6 +21,7 @@ public class HexEncoder implements Encoder {
 
     protected final byte[] decodingTable = new byte[128];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.334 -0400", hash_original_method = "E555776B59F5150257DBB59B34D3D923", hash_generated_method = "7737B06D97A40AC486E2D8BE989DC087")
     public  HexEncoder() {
         initialiseDecodingTable();
@@ -56,7 +57,7 @@ for(int i = 0;i < encodingTable.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.336 -0400", hash_original_method = "BD9F8FC335D977E935DA4351136AEC70", hash_generated_method = "147F52D290A55FC291CDC91C2D5A299D")
     public int encode(
         byte[]                data,
@@ -100,6 +101,7 @@ for(int i = off;i < (off + length);i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.337 -0400", hash_original_method = "B7EDB63E53FAEFA939E2D19889BCA5A2", hash_generated_method = "335254B7720B10815E0059A22075B404")
     public int decode(
         byte[]          data,
@@ -177,6 +179,7 @@ for(int i = off;i < (off + length);i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.338 -0400", hash_original_method = "6D8A267573E3557F73C2709EF9053C58", hash_generated_method = "84768F170AB9D25198EF5A73F4E1849B")
     public int decode(
         String          data,

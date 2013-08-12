@@ -24,6 +24,7 @@ public final class NdefFormatable extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NdefFormatable get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NDEF_FORMATABLE)) return null;
         try {
@@ -34,6 +35,7 @@ public final class NdefFormatable extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.698 -0400", hash_original_method = "6CDCACAEC64FFB65AEDACBA4B44913A4", hash_generated_method = "D7399B803076A904EE452AE8C06A80F6")
     public void format(NdefMessage firstMessage) throws IOException, FormatException {
         addTaint(firstMessage.getTaint());
@@ -52,6 +54,7 @@ public final class NdefFormatable extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.700 -0400", hash_original_method = "E299B2177763F767A596EAE082378EB1", hash_generated_method = "7932BDC750FDE9B3C6DF5FE4ADABE8D7")
      void format(NdefMessage firstMessage, boolean makeReadOnly) throws IOException,
             FormatException {

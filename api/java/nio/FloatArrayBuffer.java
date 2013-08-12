@@ -15,6 +15,7 @@ abstract class FloatArrayBuffer extends FloatBuffer {
 
     protected int offset;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.985 -0400", hash_original_method = "D11EDAC27157134F6D93222FED96804A", hash_generated_method = "235954FFD5A65E27D2B4AC86646DAA42")
       FloatArrayBuffer(float[] array) {
         this(array.length, array, 0);
@@ -23,6 +24,7 @@ abstract class FloatArrayBuffer extends FloatBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.985 -0400", hash_original_method = "1F51B561748313656A83CE5668F8D726", hash_generated_method = "6ABAF8ACDB270E1271ACAA69FBF587EF")
       FloatArrayBuffer(int capacity) {
         this(capacity, new float[capacity], 0);
@@ -43,6 +45,7 @@ abstract class FloatArrayBuffer extends FloatBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.988 -0400", hash_original_method = "27C2E9E0DC08E8F6369DBB2405A9C20A", hash_generated_method = "DEC670C32A9BE05BC24E9F872608887D")
     @Override
     public final float get() {
@@ -63,6 +66,7 @@ abstract class FloatArrayBuffer extends FloatBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.989 -0400", hash_original_method = "7B23CE1A9B110702665631EFEB3A42BD", hash_generated_method = "E75026ED255306B4AAC0B4B271C9B9C5")
     @Override
     public final float get(int index) {
@@ -77,6 +81,7 @@ abstract class FloatArrayBuffer extends FloatBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.990 -0400", hash_original_method = "0E5CD729EA86ED4C8F1722765DDD0E33", hash_generated_method = "2073A9C153F8AD7838706912F9A0DA58")
     @Override
     public final FloatBuffer get(float[] dst, int dstOffset, int floatCount) {
@@ -116,6 +121,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1972536779 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.992 -0400", hash_original_method = "A08DEC6C777D2C1D29E23F2F39FEA4AD", hash_generated_method = "DBB7917192B244D348682D180F39939B")
     @Override
     public final ByteOrder order() {

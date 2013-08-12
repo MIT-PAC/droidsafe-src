@@ -107,6 +107,7 @@ public class BackupDataInput {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.167 -0400", hash_original_method = "32914A2DCD27EDE5CD7416010D683812", hash_generated_method = "B3BF2F3B0CC326BCF28D3EAE09027F67")
     public String getKey() {
         if(mHeaderReady)        
@@ -153,6 +154,7 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_529874909 =             mHeader.key;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.169 -0400", hash_original_method = "E6FF3430BADFF1BEAFD149782FA6CB07", hash_generated_method = "9E740461D31A243BB790E05381065A97")
     public int readEntityData(byte[] data, int offset, int size) throws IOException {
         addTaint(size);

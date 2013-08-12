@@ -51,6 +51,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.091 -0400", hash_original_method = "A7AF136A36340299371F158C25AED0D2", hash_generated_method = "780E834E0404362105D9AB566277688E")
     public OperatedClientConnection createConnection() {
 OperatedClientConnection varB7F75C6A5AEFC78EC04959C9746E7695_1665772296 =         new DefaultClientConnection();

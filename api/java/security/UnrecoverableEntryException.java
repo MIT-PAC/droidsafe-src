@@ -16,6 +16,7 @@ public class UnrecoverableEntryException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.580 -0400", hash_original_method = "41796CE6161E063E42FAB82830727D9B", hash_generated_method = "35A783454723AA1848D2CF3145087B07")
     public  UnrecoverableEntryException(String msg) {
         super(msg);

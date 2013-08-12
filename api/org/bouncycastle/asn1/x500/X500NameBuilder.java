@@ -18,6 +18,7 @@ public class X500NameBuilder {
 
     private Vector rdns = new Vector();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.355 -0400", hash_original_method = "D0728342E4979FB5B75C971FD31579AF", hash_generated_method = "C5F092BBA326550A9DB00A2B96B75883")
     public  X500NameBuilder(X500NameStyle template) {
         this.template = template;
@@ -26,6 +27,7 @@ public class X500NameBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.355 -0400", hash_original_method = "B523CEAB6DE32883E9365149ACA12057", hash_generated_method = "2B743260B0BFC4476AFDF84BB75613F8")
     public X500NameBuilder addRDN(ASN1ObjectIdentifier oid, String value) {
         addTaint(value.getTaint());
@@ -54,6 +56,7 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_342162469 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.357 -0400", hash_original_method = "3E5E6DF77AF598ABE6D42C6639692F78", hash_generated_method = "D3CA89ECF9478E525D52A6749E0CC425")
     public X500NameBuilder addRDN(AttributeTypeAndValue attrTAndV) {
         addTaint(attrTAndV.getTaint());
@@ -89,6 +92,7 @@ X500NameBuilder varD7F2C29827E72CD1BB5CBC1E148ADA09_256534313 =         addMulti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.359 -0400", hash_original_method = "19CADD9F3E05278519C8972C40F988FF", hash_generated_method = "1CA399EBD7171BF52A5B7751F2DC4E80")
     public X500NameBuilder addMultiValuedRDN(ASN1ObjectIdentifier[] oids, ASN1Encodable[] values) {
         addTaint(values[0].getTaint());
@@ -124,6 +128,7 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_1820682172 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.361 -0400", hash_original_method = "6DE1D9D13ABB402C9E6AC772336CF9FE", hash_generated_method = "8AAD0F42580B5CF0FA58CA68AAD0A1D6")
     public X500Name build() {
         RDN[] vals = new RDN[rdns.size()];

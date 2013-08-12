@@ -45,7 +45,7 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.095 -0400", hash_original_method = "7419DD25F2A8EC5E4F54973E3AF74E7D", hash_generated_method = "E666EC1DEE3712C9AFD8E800BDD4B431")
     @Override
     public void handleMessage(Message msg) {
@@ -72,6 +72,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.096 -0400", hash_original_method = "A724800C9AF8E80E36877A25E474B13E", hash_generated_method = "BB92E66E6A1EC42AB8A8874247EB43E6")
     @Override
     protected void initSstIcc() {
@@ -114,6 +115,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.096 -0400", hash_original_method = "D6AB29F1311EC0AB849815CC3FF790B9", hash_generated_method = "C2BFFF8FA1910215FFD3BB28A2FCD1A7")
     @Override
     public DataState getDataConnectionState(String apnType) {
@@ -279,6 +281,7 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_625460955 =         ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.870 -0400", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "5C2E7263CE966995D132F4E09FB89B61")
     @Override
     public String getSubscriberId() {
@@ -314,6 +317,7 @@ String var440DA0F542A7DF067CD1A564FADAEE1C_952569733 =         mImeiSv;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.872 -0400", hash_original_method = "9816ECED47475DB23BCECA20DA4E2B5A", hash_generated_method = "57BE36234E799EEF891D3321A11BF89F")
     @Override
     public IsimRecords getIsimRecords() {
@@ -325,6 +329,7 @@ IsimRecords varA54E2F00206ADE38CAE9E5438115660C_322872047 =         mIccRecords.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.872 -0400", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "93A6CCEFFFF01B27094460BF68C3E7AF")
     @Override
     public String getMsisdn() {
@@ -336,6 +341,7 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_1635702481 =         mIccRecords.getM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.872 -0400", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "276A7FEC40B6D9144DB1F28951D35976")
     @Override
     public void getAvailableNetworks(Message response) {
@@ -346,6 +352,7 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_1635702481 =         mIccRecords.getM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.873 -0400", hash_original_method = "F8B11B15838465AB38A3DDFE9FF000B6", hash_generated_method = "20892B8ECEDF6A4F71CD9DF7BE70AAC7")
     @Override
     public void requestIsimAuthentication(String nonce, Message result) {
@@ -357,7 +364,7 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_1635702481 =         mIccRecords.getM
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.873 -0400", hash_original_method = "69A9D8984C1FC702F097120D9CC0BB90", hash_generated_method = "D617ECE150CDF40841A353EBC76DCAE6")
     @Override
     protected void log(String s) {

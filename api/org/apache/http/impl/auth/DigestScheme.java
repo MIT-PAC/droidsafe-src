@@ -36,6 +36,7 @@ public class DigestScheme extends RFC2617Scheme {
 
     private String cnonce;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.447 -0400", hash_original_method = "7496779349A4F9577FBBD3B727B27A4A", hash_generated_method = "6FBC30D8DE91AA1878BE3E5080514294")
     public  DigestScheme() {
         super();
@@ -462,6 +463,7 @@ String varA9B2AEB85CC9079FF2659ECC6AA29225_437063021 =         qopOption;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String createCnonce() {
         String cnonce;
         MessageDigest md5Helper = createMessageDigest("MD5");

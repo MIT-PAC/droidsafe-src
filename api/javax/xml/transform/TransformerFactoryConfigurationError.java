@@ -12,6 +12,7 @@ public class TransformerFactoryConfigurationError extends Error {
 
     private Exception exception;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.123 -0400", hash_original_method = "B5236C2B50936EBB19164E0470E786D0", hash_generated_method = "4FA1D40EBB8466CB6249FD2FE24764E4")
     public  TransformerFactoryConfigurationError() {
         this.exception = null;
@@ -39,6 +40,7 @@ public class TransformerFactoryConfigurationError extends Error {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.126 -0400", hash_original_method = "1312292D5A501DBED2FE9598863C16EA", hash_generated_method = "3AA0EC502B73CBFEE0670605213B9CDB")
     public  TransformerFactoryConfigurationError(Exception e, String msg) {
         super(msg);
@@ -49,6 +51,7 @@ public class TransformerFactoryConfigurationError extends Error {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.126 -0400", hash_original_method = "87F4B9D5A318C1C88AAC3D2F1A6663D7", hash_generated_method = "54E9673AA6A269E8455283347474B9B0")
     public String getMessage() {
         String message = super.getMessage();

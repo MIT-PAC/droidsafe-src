@@ -33,6 +33,7 @@ public class ContentDispositionParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.091 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "C850C3D417E1FEDBE760BFF338ECE625")
     public SIPHeader parse() throws ParseException {
         if(debug)        

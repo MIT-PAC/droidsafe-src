@@ -29,6 +29,7 @@ public abstract class IccServiceTable {
     protected abstract Object[] getValues();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.265 -0400", hash_original_method = "6BE4E4A67F9CDE5BB71262E1760DB933", hash_generated_method = "30A0E11039A70486739561AF281FF9AE")
     protected boolean isAvailable(int service) {
         addTaint(service);

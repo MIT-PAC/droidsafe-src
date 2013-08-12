@@ -57,6 +57,7 @@ public class ThreadAuditor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.756 -0400", hash_original_method = "E669DE9122CCA9B4713223F08741F9E6", hash_generated_method = "C2A6343487A5B64A9D1AE0665B01426A")
     public synchronized ThreadHandle addCurrentThread() {
         ThreadHandle threadHandle = new ThreadHandle(this);
@@ -102,6 +103,7 @@ ThreadHandle var47A3C09AC8DC8AC9BE3EA5513CADAD05_1168278357 =         threadHand
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.759 -0400", hash_original_method = "A466F08B2826217F8F5011AA1A7379A2", hash_generated_method = "95A8A160C6BD6012CFC0D7686CF14825")
     public synchronized String auditThreads() {
         String auditReport = null;
@@ -129,6 +131,7 @@ String var45515A2592231F3BCF49C3DB63F02A4B_2122072438 =         auditReport;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.759 -0400", hash_original_method = "6675CF6A116AB121851289F1BA88A8F3", hash_generated_method = "43D6283ABB7FF643DE9470CC1ABE9647")
     public synchronized String toString() {
         String toString = "Thread Auditor - List of monitored threads:\n";
@@ -164,6 +167,7 @@ String varC9A0E46F6EAD14B0A7B52DADE46AB753_64522560 =         toString;
 
         private ThreadAuditor threadAuditor;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.760 -0400", hash_original_method = "40C494E087A9AB3654ECCCB79F809CD9", hash_generated_method = "9F19CF9B53493A055DB4C0233322D8F1")
         public  ThreadHandle(ThreadAuditor aThreadAuditor) {
             isThreadActive = false;
@@ -215,6 +219,7 @@ Thread var4E4577EDE13083D3065B1ECBBC20E477_1349802468 =             thread;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.762 -0400", hash_original_method = "3E3AA41CAE680C9493787FE6AF60A593", hash_generated_method = "9418C86B1BBC9E9B1CF1F5718E2E85D8")
         public long getPingIntervalInMillisecs() {
             long varB3D5BC2A6F17C75D3047A7E8BDB8B6C4_752342588 = (threadAuditor.getPingIntervalInMillisecs());
@@ -225,6 +230,7 @@ Thread var4E4577EDE13083D3065B1ECBBC20E477_1349802468 =             thread;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.762 -0400", hash_original_method = "433F66024AB5F11DDEF8BAC7248248B0", hash_generated_method = "A380C9068B72136FDE855B17E3BFA5EF")
         public String toString() {
             StringBuffer toString = new StringBuffer()

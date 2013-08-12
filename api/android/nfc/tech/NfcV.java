@@ -35,6 +35,7 @@ public final class NfcV extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NfcV get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NFC_V)) return null;
         try {
@@ -67,6 +68,7 @@ public final class NfcV extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.798 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "FF6B59519697DA2442E62A49C8E9A93B")
     public byte[] transceive(byte[] data) throws IOException {
         addTaint(data[0]);
@@ -78,6 +80,7 @@ public final class NfcV extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.798 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "D47CFA073C6C2EEA90A733382FC18D1F")
     public int getMaxTransceiveLength() {
         int var534FE261D7083B235B3B010A14A83EE1_1895365264 = (getMaxTransceiveLengthInternal());

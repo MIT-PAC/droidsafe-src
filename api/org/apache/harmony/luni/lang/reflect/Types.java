@@ -20,6 +20,7 @@ public class Types {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Type getType(Type type) {
         if (type instanceof ImplForType) {
             return ((ImplForType)type).getResolvedType();

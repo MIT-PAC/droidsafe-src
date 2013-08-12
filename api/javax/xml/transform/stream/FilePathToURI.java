@@ -14,6 +14,7 @@ class FilePathToURI {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String filepath2URI(String path) {
         if (path == null)
             return null;

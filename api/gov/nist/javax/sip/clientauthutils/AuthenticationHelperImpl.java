@@ -52,6 +52,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
 
     Timer timer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.416 -0400", hash_original_method = "F290994E580301A1A06D86741D2EE4F7", hash_generated_method = "3415224FDE86CBFA501F38752E3A93EC")
     public  AuthenticationHelperImpl(SipStackImpl sipStack, AccountManager accountManager,
             HeaderFactory headerFactory) {
@@ -67,6 +68,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.418 -0400", hash_original_method = "9D2E3CB72F7305E91EB5EE506EB32A3F", hash_generated_method = "4919A0A462594FEC3FC241FCD57CA2E3")
     public  AuthenticationHelperImpl(SipStackImpl sipStack, SecureAccountManager accountManager,
             HeaderFactory headerFactory) {
@@ -82,6 +84,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.423 -0400", hash_original_method = "CD11AFCBEA5D85B140502117B9E2B2FE", hash_generated_method = "74F608BB73C112CE32B8C2DAFD6BAABA")
     public ClientTransaction handleChallenge(Response challenge,
             ClientTransaction challengedTransaction, SipProvider transactionCreator, int cacheTime) throws SipException, NullPointerException {
@@ -391,6 +394,7 @@ AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_1443690413 =         aut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.444 -0400", hash_original_method = "B9EE184222D97BBFBAC451553E77E803", hash_generated_method = "1ED2562B19815AF6F331564341AC44AD")
     public void setAuthenticationHeaders(Request request) {
         addTaint(request.getTaint());
@@ -428,6 +432,7 @@ for(AuthorizationHeader authHeader : authHeaders)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.444 -0400", hash_original_method = "43BBEEB97A3047C63D843E4DFDBBA534", hash_generated_method = "9622E564207F4ECD5C179331AA0490C8")
     public void removeCachedAuthenticationHeaders(String callId) {
         addTaint(callId.getTaint());

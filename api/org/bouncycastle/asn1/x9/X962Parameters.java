@@ -19,6 +19,7 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
 
     private DERObject params = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.452 -0400", hash_original_method = "1397E8178C44E6DF45387B6B68418706", hash_generated_method = "B453EAFBCA88EA248BC259CAFD7FF735")
     public  X962Parameters(
         X9ECParameters      ecParameters) {
@@ -28,6 +29,7 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.452 -0400", hash_original_method = "E0388E86E3A80BEB8232173BF59EDA72", hash_generated_method = "0410E9418C009E7503558DCFFFD64184")
     public  X962Parameters(
         DERObjectIdentifier  namedCurve) {
@@ -37,6 +39,7 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.452 -0400", hash_original_method = "5A42A0C55CC0229CDC548581C7883253", hash_generated_method = "D413F1A132C0D46DA390CB21FC163766")
     public  X962Parameters(
         DERObject           obj) {
@@ -46,7 +49,8 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        public static X962Parameters getInstance(
+        @DSModeled(DSC.SAFE)
+    public static X962Parameters getInstance(
         Object obj) {
         if (obj == null || obj instanceof X962Parameters) 
         {
@@ -60,7 +64,7 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
     public static X962Parameters getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {

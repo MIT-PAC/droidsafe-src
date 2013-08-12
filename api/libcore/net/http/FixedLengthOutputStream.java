@@ -17,6 +17,7 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
 
     private int bytesRemaining;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.964 -0400", hash_original_method = "CD6D5F7765163EE89DC0FFBAC0DC51D9", hash_generated_method = "12B9AE81D736BC49DD2838960DD2FDBF")
     public  FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
         this.socketOut = socketOut;
@@ -69,6 +70,7 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.965 -0400", hash_original_method = "FCB6BF5DC7C6AA8912495FC6DAF3D35C", hash_generated_method = "AE7EA14CB9E1773F9CEA0C7D001C0791")
     @Override
     public void close() throws IOException {

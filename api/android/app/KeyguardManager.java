@@ -154,6 +154,7 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.549 -0400", hash_original_method = "D57DA4E953B853BFA2A0F53D32EDF463", hash_generated_method = "D28A2D90780DAE2B162143289BBBC835")
         public void disableKeyguard() {
             try 

@@ -38,6 +38,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
 
     Cursor mCursor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.804 -0400", hash_original_method = "A99DE5BAB8D49A9F22F0BBB80DAABBC5", hash_generated_method = "9EF8844A713C5AB4279066B2701877A1")
     public  CursorLoader(Context context) {
         super(context);
@@ -94,6 +95,7 @@ Cursor varADA3C208DF1628BA935498FB38A6BBD3_190217346 =         cursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.807 -0400", hash_original_method = "020E778E16877AE64A0EC7CA895AF414", hash_generated_method = "7BA456F7598ADADE1D7DC029F04032B1")
      void registerContentObserver(Cursor cursor, ContentObserver observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -105,6 +107,7 @@ Cursor varADA3C208DF1628BA935498FB38A6BBD3_190217346 =         cursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.808 -0400", hash_original_method = "37FD37E6CF73F613BFDCC98E888F8BCC", hash_generated_method = "A376C5282E799966540D172580181656")
     @Override
     public void deliverResult(Cursor cursor) {
@@ -144,6 +147,7 @@ Cursor varADA3C208DF1628BA935498FB38A6BBD3_190217346 =         cursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.808 -0400", hash_original_method = "FEDEC1668E99CC7AC8B63903F046C2E4", hash_generated_method = "0E2C6A803AEE61B43E99FEDB1510D146")
     @Override
     protected void onStartLoading() {
@@ -166,6 +170,7 @@ Cursor varADA3C208DF1628BA935498FB38A6BBD3_190217346 =         cursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.809 -0400", hash_original_method = "9D6573E0227A73E2122897AF91440AD0", hash_generated_method = "81B3A186E0433BEB205EBEDD3D384C02")
     @Override
     protected void onStopLoading() {
@@ -176,6 +181,7 @@ Cursor varADA3C208DF1628BA935498FB38A6BBD3_190217346 =         cursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.809 -0400", hash_original_method = "880E0574E2EB66A6B5B217A64A77BCD6", hash_generated_method = "1367F0488E8518F1895B5C6C647BBD24")
     @Override
     public void onCanceled(Cursor cursor) {
@@ -192,6 +198,7 @@ Cursor varADA3C208DF1628BA935498FB38A6BBD3_190217346 =         cursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.809 -0400", hash_original_method = "CBB8B33455486DDE9DE82F5D7E5B319A", hash_generated_method = "54C1532D8B9D01064C512600AA52A611")
     @Override
     protected void onReset() {
@@ -313,6 +320,7 @@ String var7F16D2B7DBEF42F7E6C1432220526EB5_1951455264 =         mSortOrder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.813 -0400", hash_original_method = "F4CED264AFFA6312AA112E1BE872302C", hash_generated_method = "CDC5A1E2EE5B5215E9C55F7BBD9A557D")
     @Override
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {

@@ -44,6 +44,7 @@ public final class DeviceAdminInfo implements Parcelable {
 
     int mUsesPolicies;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.548 -0400", hash_original_method = "DA2A583494497907A2E88C8448FC887F", hash_generated_method = "6C333069A6E0D37E63427E6168049870")
     public  DeviceAdminInfo(Context context, ResolveInfo receiver) throws XmlPullParserException, IOException {
         addTaint(context.getTaint());
@@ -133,6 +134,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.549 -0400", hash_original_method = "63AFCAD0BD5EA5852A2B80B7C90D81EC", hash_generated_method = "BB2740E4F064F8E201F116E2693410B2")
       DeviceAdminInfo(Parcel source) {
         mReceiver = ResolveInfo.CREATOR.createFromParcel(source);
@@ -237,7 +239,7 @@ CharSequence var1B6CAE566C6EF31064804F74FCA7B757_1172766269 =             pm.get
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.556 -0400", hash_original_method = "0A539B1C4B2E8E617EDD9C83DE1E1B83", hash_generated_method = "42AAF26022EA399C2311B45B1C9B1053")
     public Drawable loadIcon(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -272,6 +274,7 @@ Drawable var9E48956E65D02F3940B6623A96EA2B8E_1426641544 =         mReceiver.load
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.558 -0400", hash_original_method = "535AB0E7EF604572B28232B709525301", hash_generated_method = "13D58473FDD37B2A4FBF10C541E17836")
     public String getTagForPolicy(int policyIdent) {
         addTaint(policyIdent);
@@ -331,7 +334,7 @@ ArrayList<PolicyInfo> varB5053E025797B3BF768F5C37934C244D_857479402 =         re
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.565 -0400", hash_original_method = "B6CA0FCEADAF7A26300AC5E399081259", hash_generated_method = "4A2A281075112D6089C1D6EE9257E786")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -344,7 +347,7 @@ ArrayList<PolicyInfo> varB5053E025797B3BF768F5C37934C244D_857479402 =         re
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.566 -0400", hash_original_method = "337DF8B9CB781ADE72580EF8EE42E4C5", hash_generated_method = "19944A59C117294479426877F476A98A")
     @Override
     public String toString() {
@@ -356,7 +359,7 @@ String var1E9B509EA010A811781E44EEDFCE69A1_1577623421 =         "DeviceAdminInfo
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.567 -0400", hash_original_method = "3425AE1C08CE1294933DDD04C3D7531A", hash_generated_method = "AC57E475E95D2B4277F0D8D1B578241D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -394,7 +397,7 @@ String var1E9B509EA010A811781E44EEDFCE69A1_1577623421 =         "DeviceAdminInfo
 
         public int description;
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.571 -0400", hash_original_method = "A90CA239E6D53FEA8EFED1E11D7512A4", hash_generated_method = "E3787431209518667B6BC2676B74AB95")
         public  PolicyInfo(int identIn, String tagIn, int labelIn, int descriptionIn) {
             ident = identIn;
@@ -491,6 +494,7 @@ String var1E9B509EA010A811781E44EEDFCE69A1_1577623421 =         "DeviceAdminInfo
 
     public static final Parcelable.Creator<DeviceAdminInfo> CREATOR =
             new Parcelable.Creator<DeviceAdminInfo>() {
+        @DSModeled(DSC.SAFE)
         public DeviceAdminInfo createFromParcel(Parcel source) {
             return new DeviceAdminInfo(source);
         }

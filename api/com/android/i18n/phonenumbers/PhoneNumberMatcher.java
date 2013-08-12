@@ -39,6 +39,7 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
 
     private int searchIndex = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.703 -0400", hash_original_method = "1C998965C70C11F4F601639EB7EFDC0A", hash_generated_method = "EBE4856C151778B0A1399EF9B1F1CAB6")
       PhoneNumberMatcher(PhoneNumberUtil util, CharSequence text, String country, Leniency leniency,
       long maxTries) {
@@ -83,6 +84,7 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.704 -0400", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "F3DB61B138B521414BBA507719E01DDF")
     public boolean hasNext() {
         if(state == State.NOT_READY)        
@@ -115,6 +117,7 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.705 -0400", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "C04DC874A3832E6EB289A5AA806DF56A")
     public PhoneNumberMatch next() {
         if(!hasNext())        
@@ -191,6 +194,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_164927099 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isLatinLetter(char letter) {
         if (!Character.isLetter(letter) && Character.getType(letter) != Character.NON_SPACING_MARK) {
       return false;
@@ -368,6 +372,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_262661934 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "EF5394225C932C10E6494AD27CF9B24A")
     public void remove() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1052370502 = new UnsupportedOperationException();

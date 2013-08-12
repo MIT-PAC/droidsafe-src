@@ -103,6 +103,7 @@ public class CamcorderProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CamcorderProfile get(int cameraId, int quality) {
         if (!((quality >= QUALITY_LIST_START &&
                quality <= QUALITY_LIST_END) ||
@@ -128,6 +129,7 @@ public class CamcorderProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean hasProfile(int cameraId, int quality) {
         return native_has_camcorder_profile(cameraId, quality);
     }

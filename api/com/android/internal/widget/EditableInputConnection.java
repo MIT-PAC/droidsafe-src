@@ -23,6 +23,7 @@ public class EditableInputConnection extends BaseInputConnection {
 
     private TextView mTextView;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.081 -0400", hash_original_method = "48AFA0A031D991327826B99C24590A71", hash_generated_method = "F5E7C121122B9E0DC720A281B65F78CC")
     public  EditableInputConnection(TextView textview) {
         super(textview, true);
@@ -32,6 +33,7 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.081 -0400", hash_original_method = "79431EAAD385E82AA03E24E6CD9A3769", hash_generated_method = "FAE5CCD74A10B96749E58F3BC7210FA8")
     @Override
     public Editable getEditable() {
@@ -54,6 +56,7 @@ Editable var540C13E9E156B687226421B24F2DF178_1270324716 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.081 -0400", hash_original_method = "47A7176B3179FC9D2FE377D6B6F09D07", hash_generated_method = "984F0895FE0B94C0DBEB82380235A491")
     @Override
     public boolean beginBatchEdit() {
@@ -67,6 +70,7 @@ Editable var540C13E9E156B687226421B24F2DF178_1270324716 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.081 -0400", hash_original_method = "2B85862E44056949DE76AFB5C9725EFA", hash_generated_method = "30FF151B98F9A40D18F22D23711EE5BC")
     @Override
     public boolean endBatchEdit() {
@@ -119,6 +123,7 @@ Editable var540C13E9E156B687226421B24F2DF178_1270324716 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.082 -0400", hash_original_method = "120BCC39A19E9D48E7D09303ED2ED952", hash_generated_method = "C67DAC3D65C11D2F04272A79882BACC0")
     @Override
     public boolean commitCompletion(CompletionInfo text) {
@@ -173,6 +178,7 @@ Editable var540C13E9E156B687226421B24F2DF178_1270324716 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.082 -0400", hash_original_method = "7AF0006D10C2DF24946CEF4909222B3C", hash_generated_method = "5542E35589DDAA50963FC7AB6DC33A51")
     @Override
     public boolean performContextMenuAction(int id) {
@@ -192,6 +198,7 @@ Editable var540C13E9E156B687226421B24F2DF178_1270324716 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.082 -0400", hash_original_method = "1D36BC67F0D3E0E821622DAE101B8DA4", hash_generated_method = "6C92F16BBA8FC572B3002665A53171C8")
     @Override
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {

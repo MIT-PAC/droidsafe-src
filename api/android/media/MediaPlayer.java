@@ -172,6 +172,7 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_1491803316 =         parcel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.662 -0400", hash_original_method = "E1CEE3A46E058530408C5094E8A255A4", hash_generated_method = "796FA0F60902F4B58FB721B44A54DF97")
     public void setSurface(Surface surface) {
         addTaint(surface.getTaint());
@@ -218,6 +219,7 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_1491803316 =         parcel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MediaPlayer create(Context context, int resid) {
         try {
             AssetFileDescriptor afd = context.getResources().openRawResourceFd(resid);
@@ -350,6 +352,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.666 -0400", hash_original_method = "67ED0EB071685F0AFDAFB2EFB1BC8776", hash_generated_method = "F6A7068555B881C8A804649D69AFDB67")
     public void setDataSource(FileDescriptor fd) throws IOException, IllegalArgumentException, IllegalStateException {
         addTaint(fd.getTaint());
@@ -377,6 +380,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.667 -0400", hash_original_method = "40DE58868CCCFC32104AEA08DBC3B0CD", hash_generated_method = "8D9FC9E4EE85EF00796B52D423965C3C")
     public void start() throws IllegalStateException {
         stayAwake(true);
@@ -425,6 +429,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.669 -0400", hash_original_method = "2C98FD0B2087D81FFC1D38F1403791EF", hash_generated_method = "06AFAF75EE750623A542728C6F12B554")
     public void setWakeMode(Context context, int mode) {
         addTaint(context.getTaint());
@@ -463,6 +468,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.670 -0400", hash_original_method = "1D2643121E0BBACA918AEEFF16FB1665", hash_generated_method = "DC7BC558E6738B318DD0330215120E62")
     public void setScreenOnWhilePlaying(boolean screenOn) {
         if(mScreenOnWhilePlaying != screenOn)        
@@ -972,6 +978,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.694 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "50625AE6DF481AE64B3EB15F7175DFBD")
     @Override
     protected void finalize() {

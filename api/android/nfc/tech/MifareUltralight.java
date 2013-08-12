@@ -51,6 +51,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MifareUltralight get(Tag tag) {
         if (!tag.hasTech(TagTechnology.MIFARE_ULTRALIGHT)) return null;
         try {
@@ -89,6 +90,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.601 -0400", hash_original_method = "76B1D0EF2AB1E41E6168EFDF0BF06314", hash_generated_method = "40BB5D67D891F92DB783A462F6CD6CA0")
     public void writePage(int pageOffset, byte[] data) throws IOException {
         addTaint(data[0]);
@@ -111,6 +113,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.605 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "4DDA0288293ECACA4574848484AF2019")
     public byte[] transceive(byte[] data) throws IOException {
         addTaint(data[0]);
@@ -122,6 +125,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.606 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "997C03FD58B3D726541C73D98B06BDAB")
     public int getMaxTransceiveLength() {
         int var534FE261D7083B235B3B010A14A83EE1_476963268 = (getMaxTransceiveLengthInternal());
@@ -132,6 +136,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.607 -0400", hash_original_method = "D282B40A7C0A3209AA4502B842BB4FB3", hash_generated_method = "3810B68B5DDD147E93B187D50BBB4A7A")
     public void setTimeout(int timeout) {
         addTaint(timeout);
@@ -162,6 +167,7 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.608 -0400", hash_original_method = "849E2A68F4F80A968E68483D2D0B1744", hash_generated_method = "5B1651843AF2F4BDAF6C88C1FCC1303E")
     public int getTimeout() {
         try 

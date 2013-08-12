@@ -22,6 +22,7 @@ public final class Timestamp implements Serializable {
 
     private transient int hash;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.568 -0400", hash_original_method = "AAE6CDDCBB2AA770835AE5337F9257E2", hash_generated_method = "045A38CDC8121B61CEAB4A3A4D231109")
     public  Timestamp(Date timestamp, CertPath signerCertPath) {
         if(timestamp == null)        
@@ -50,6 +51,7 @@ public final class Timestamp implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.569 -0400", hash_original_method = "5EC26C09389FD151E3B15C0B386F0A3D", hash_generated_method = "67D29F80AD604685490A3D49FEC60F21")
     @Override
     public boolean equals(Object obj) {
@@ -106,6 +108,7 @@ Date var9C830804DEBADE9F0F9D7100079F1F4C_843730742 =         (Date) timestamp.cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.570 -0400", hash_original_method = "31DF5B7E8A0074E9903AAC481766C16B", hash_generated_method = "6E34CAEFC72CCE2D934E39C46BD57C17")
     @Override
     public int hashCode() {
@@ -124,6 +127,7 @@ Date var9C830804DEBADE9F0F9D7100079F1F4C_843730742 =         (Date) timestamp.cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.571 -0400", hash_original_method = "515CC78E7249E5726FD47C9B8B62F1A0", hash_generated_method = "AA18F8559CBFA850D371888EBAA43F94")
     @Override
     public String toString() {

@@ -34,6 +34,7 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.290 -0400", hash_original_method = "4D62E84034BBC9E292FAA30B93C18D79", hash_generated_method = "6B8618923A5C89BF1DEC956F152B4BAD")
     public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState) {
@@ -61,6 +62,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.293 -0400", hash_original_method = "F9437E8B6CBF659BF2444D9A1AC4A769", hash_generated_method = "2621ED04CD921D98A4BF4A93676355B4")
     public void restoreEntity(BackupDataInputStream data) {
         addTaint(data.getTaint());

@@ -273,7 +273,7 @@ SupplicantState var5CE7AE56112F2A1F3C0B8B3EBEFBA250_1017078318 =         mSuppli
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.297 -0400", hash_original_method = "B90838B740ABA91EEFFDC5A9A5E25B34", hash_generated_method = "DAE43D4581B6120D2B5711D37EC13DC6")
     public int getIpAddress() {
         if(mIpAddress == null || mIpAddress instanceof Inet6Address)        
@@ -311,6 +311,7 @@ SupplicantState var5CE7AE56112F2A1F3C0B8B3EBEFBA250_1017078318 =         mSuppli
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DetailedState getDetailedStateOf(SupplicantState suppState) {
         return stateMap.get(suppState);
     }
@@ -339,7 +340,7 @@ SupplicantState var5CE7AE56112F2A1F3C0B8B3EBEFBA250_1017078318 =         mSuppli
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.303 -0400", hash_original_method = "E7F8A705E19A9ABF8AEEB72FBC5B6139", hash_generated_method = "573B4FF568667427B2DA250FD9280340")
     @Override
     public String toString() {

@@ -46,6 +46,7 @@ public final class ImplForType implements ParameterizedType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.936 -0400", hash_original_method = "467C0CA3F26F8ADD49B2C117FFDDE5B5", hash_generated_method = "50BFE54AABDD5C5DE7E89574F53E7BAD")
     public Type[] getActualTypeArguments() {
 Type[] var9FC3950091FC8332FF1BE9E5D6665212_1641498403 =         args.getResolvedTypes().clone();
@@ -56,6 +57,7 @@ Type[] var9FC3950091FC8332FF1BE9E5D6665212_1641498403 =         args.getResolved
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.936 -0400", hash_original_method = "607EB162392181215E5C2613EAFAE402", hash_generated_method = "B9CF8C3141D74534A131A4635DF54599")
     public Type getOwnerType() {
         if(ownerTypeRes == null)        
@@ -84,6 +86,7 @@ Type var2E759B0D704D63E52781F7C5ADA34E62_1787275570 =         ownerTypeRes;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.937 -0400", hash_original_method = "8C14A8DC9EE4FE0D18F10F9D13D7DE4A", hash_generated_method = "B83DE2FAA11754831FBB897F8FA19D45")
     public Class getRawType() {
         if(rawType == null)        
@@ -114,6 +117,7 @@ Class var8EA1D50767FFA9660A4E248B29D3B6ED_1094618833 =         rawType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.937 -0400", hash_original_method = "62DEF1F574FB703889CA718D111580A0", hash_generated_method = "28492AC8C744658B8485C10CAB782263")
      Type getResolvedType() {
         if(args.getResolvedTypes().length == 0)        
@@ -137,6 +141,7 @@ Type var72A74007B2BE62B849F475C7BDA4658B_536701584 =             this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.937 -0400", hash_original_method = "6D877CB8043423D6A95AF1E4F8482A09", hash_generated_method = "EB666C10D82C713596B22AA66D6B1CA6")
     @Override
     public String toString() {

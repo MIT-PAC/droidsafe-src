@@ -21,6 +21,7 @@ class CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.983 -0400", hash_original_method = "BBFB9BBC2EA7C24F6D809DAEED5D51EA", hash_generated_method = "7F040E2F015382CB90A213D6E0724E49")
      AppInterface.CommandType getCommandType() {
 AppInterface.CommandType var8A824FAC5ED556766C4037BB3498C325_609476491 =         AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
@@ -50,6 +51,7 @@ class DisplayTextParams extends CommandParams {
 
     TextMessage textMsg;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.985 -0400", hash_original_method = "700E001E6C7C4BB86F65A405A500553F", hash_generated_method = "83A797157C562817FB582FF53A95D1F2")
       DisplayTextParams(CommandDetails cmdDet, TextMessage textMsg) {
         super(cmdDet);
@@ -95,6 +97,7 @@ class LaunchBrowserParams extends CommandParams {
 
     String url;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.989 -0400", hash_original_method = "333668ED0BA1936719D55AC9BD5C191E", hash_generated_method = "FFF01E63450B9EEAE4C232A4488BA57B")
       LaunchBrowserParams(CommandDetails cmdDet, TextMessage confirmMsg,
             String url, LaunchBrowserMode mode) {
@@ -252,6 +255,7 @@ class SelectItemParams extends CommandParams {
 
     boolean loadTitleIcon = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.001 -0400", hash_original_method = "E55DB81905BD2AA861EB811BEF064274", hash_generated_method = "5FA47F249C0A537A6EE47B385B1F1B33")
       SelectItemParams(CommandDetails cmdDet, Menu menu, boolean loadTitleIcon) {
         super(cmdDet);
@@ -264,6 +268,7 @@ class SelectItemParams extends CommandParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.002 -0400", hash_original_method = "18017A51DEA7E263420DEFD24143331D", hash_generated_method = "57F3CE51FF33761EB0F63271D53E25F4")
      boolean setIcon(Bitmap icon) {
         if(icon != null && menu != null)        
@@ -317,6 +322,7 @@ class GetInputParams extends CommandParams {
 
     Input input = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.002 -0400", hash_original_method = "4B81DD05ADA485DA1C52833ACC153D55", hash_generated_method = "71BC4E482D2B82B1899F6FFE0CD22E20")
       GetInputParams(CommandDetails cmdDet, Input input) {
         super(cmdDet);

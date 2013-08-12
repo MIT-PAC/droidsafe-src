@@ -13,6 +13,7 @@ import org.apache.http.util.CharArrayBuffer;
 
 public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.788 -0400", hash_original_method = "88ED703AD5842214D5052F930ED18AF6", hash_generated_method = "88ED703AD5842214D5052F930ED18AF6")
     public BasicHeaderValueFormatter ()
     {

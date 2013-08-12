@@ -25,6 +25,7 @@ public class AttributeCertificate extends ASN1Encodable {
 
     DERBitString signatureValue;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.593 -0400", hash_original_method = "2BEC4272F0342CC60C1E5750AB362553", hash_generated_method = "80C212D7054336F30DC20FF180FC8C79")
     public  AttributeCertificate(
         AttributeCertificateInfo    acinfo,
@@ -40,6 +41,7 @@ public class AttributeCertificate extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.595 -0400", hash_original_method = "B4D994B87261FFD4B0816002B55F0788", hash_generated_method = "9FFE9700D0C01C0356C98D512FDC79ED")
     public  AttributeCertificate(
         ASN1Sequence    seq) {
@@ -65,7 +67,7 @@ public class AttributeCertificate extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static AttributeCertificate getInstance(Object obj) {
         if (obj instanceof AttributeCertificate)
         {
@@ -112,6 +114,7 @@ DERBitString var31AD78CB3EB86CD4C82203E47E0AA933_1921489783 =         signatureV
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.597 -0400", hash_original_method = "EEF14432CC16BDD5140583520373DF2D", hash_generated_method = "D99712F6497F7F3B1804175C14D5B189")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

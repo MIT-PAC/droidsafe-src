@@ -17,6 +17,7 @@ import org.apache.http.protocol.HTTP;
 
 public class LaxContentLengthStrategy implements ContentLengthStrategy {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.331 -0400", hash_original_method = "8B5512428A3E2CA95F49978B80962BF4", hash_generated_method = "E15DC0A74431A761CB5419BD189E5032")
     public  LaxContentLengthStrategy() {
         super();

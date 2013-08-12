@@ -609,6 +609,7 @@ public final class Rect implements Parcelable {
             "(-?\\d+) (-?\\d+) (-?\\d+) (-?\\d+)");
     public static final Parcelable.Creator<Rect> CREATOR = new Parcelable.Creator<Rect>() {
         
+        @DSModeled(DSC.SAFE)
         public Rect createFromParcel(Parcel in) {
             Rect r = new Rect();
             r.readFromParcel(in);

@@ -87,6 +87,7 @@ public class SyncStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.762 -0400", hash_original_method = "2B2EA245A3AB4724B2781C31270E76F8", hash_generated_method = "C1C6476AB7E86C488DA321D845D6C08A")
     @Override
     public String toString() {

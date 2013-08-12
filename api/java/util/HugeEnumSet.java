@@ -152,6 +152,7 @@ for(int i = 0;i < bits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.459 -0400", hash_original_method = "A9576B1054BBEFBD598CED30CCA4181D", hash_generated_method = "8CF9D93D28C4DE728BB17571026E0683")
     @Override
     protected void complement() {

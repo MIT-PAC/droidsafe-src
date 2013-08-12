@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PMediaAuthorizationList extends SIPHeaderList<PMediaAuthorization> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.209 -0400", hash_original_method = "656C497A7A9D2E8465BD84DF21BD0C00", hash_generated_method = "9BCAC9929D32D2F555BF0B2B59C10BB5")
     public  PMediaAuthorizationList() {
         super(PMediaAuthorization.class, PMediaAuthorizationHeader.NAME);
@@ -15,6 +16,7 @@ public class PMediaAuthorizationList extends SIPHeaderList<PMediaAuthorization> 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.210 -0400", hash_original_method = "535B60F78292A563EBB4CD53A0D5E752", hash_generated_method = "D0FBE052A5664005DAE346ABC8AB4110")
     public Object clone() {
         PMediaAuthorizationList retval = new PMediaAuthorizationList();

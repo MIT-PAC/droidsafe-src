@@ -209,6 +209,7 @@ public final class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] clone(int[] data) {
         if (data == null)
         {

@@ -119,6 +119,7 @@ public class AlarmManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.891 -0400", hash_original_method = "7328E8391AD5750BAC4B3B8A138446CC", hash_generated_method = "5BAF798F717A2B1B1FCDA60799BC94BA")
     public void setTimeZone(String timeZone) {
         addTaint(timeZone.getTaint());

@@ -19,6 +19,7 @@ public class ASN1StreamParser {
 
     private int _limit;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.850 -0400", hash_original_method = "DBA5BC9F59C3649B70C3A3387D909190", hash_generated_method = "4C60CF1DD9390047E8E1B385E4B3C5B1")
     public  ASN1StreamParser(
         InputStream in) {
@@ -49,6 +50,7 @@ public class ASN1StreamParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.852 -0400", hash_original_method = "C3E0BE0AC09DBB98B8E162DDEE686364", hash_generated_method = "E4A403D4CBCB1FFD91B99DDD0A5BFA84")
      DEREncodable readIndef(int tagValue) throws IOException {
         addTaint(tagValue);
@@ -91,7 +93,7 @@ DEREncodable varE346071D9A7CD17D4B60913654A94C97_1324974968 =         new BERSet
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.853 -0400", hash_original_method = "CAB584B2B56E52E14F26B47F81A64976", hash_generated_method = "FAFC3B12EA68E22BA1727442E4CBD0E0")
      DEREncodable readImplicit(boolean constructed, int tag) throws IOException {
         addTaint(tag);
@@ -150,6 +152,7 @@ DEREncodable varF1EF7B02C1CEA24C1BADBFEE8E8EE4E1_1567359493 =             new DE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.854 -0400", hash_original_method = "52179F915187689C742CC095EFF2DB0F", hash_generated_method = "748FAA118E8F81903E4CD7958EE8C5BC")
      DERObject readTaggedObject(boolean constructed, int tag) throws IOException {
         addTaint(tag);
@@ -194,6 +197,7 @@ DERObject var1D06EA7540ADBA3F4001D24F22BE44FD_485202309 =         v.size() == 1
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.855 -0400", hash_original_method = "8294A0F9B070E477A3BFFFBCF1187D7F", hash_generated_method = "5E246C2DD37F39DC5250B203C2779D01")
     public DEREncodable readObject() throws IOException {
         int tag = _in.read();
@@ -312,6 +316,7 @@ DEREncodable var645D42AEC1170006BF2760866022159D_118839665 =                 ASN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.858 -0400", hash_original_method = "0431F63F80CE6652BCE08CECE2E42AA0", hash_generated_method = "1B577303096E0736A69B4BBC660C482F")
      ASN1EncodableVector readVector() throws IOException {
         ASN1EncodableVector v = new ASN1EncodableVector();

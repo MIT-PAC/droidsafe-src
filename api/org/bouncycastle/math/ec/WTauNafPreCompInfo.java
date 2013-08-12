@@ -18,6 +18,7 @@ class WTauNafPreCompInfo implements PreCompInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.927 -0400", hash_original_method = "F3FA619DF98A2689238B8A15B3158B11", hash_generated_method = "53B60FE427D8484604AF2A43B19A6FF0")
     protected ECPoint.F2m[] getPreComp() {
 ECPoint.F2m[] var859A8A67374BCAAC598F1E4AD75AF98D_489039405 =         preComp;

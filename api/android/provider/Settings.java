@@ -49,7 +49,7 @@ public final class Settings {
     
     public static class SettingNotFoundException extends AndroidException {
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.672 -0400", hash_original_method = "9D3DA3FD01BD65E9C8D44BD33E232128", hash_generated_method = "200240BBB63B98FF89E2DBCEE5936BE5")
         public  SettingNotFoundException(String msg) {
             super(msg);
@@ -136,7 +136,7 @@ public final class Settings {
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.692 -0400", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "B146B6C5DD372E8646E2DE527549ECC8")
         public String getString(ContentResolver cr, String name) {
             addTaint(name.getTaint());
@@ -263,6 +263,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putString(ContentResolver resolver, String name, String value) {
             if (MOVED_TO_SECURE.contains(name)) {
                 Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
@@ -304,6 +305,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putInt(ContentResolver cr, String name, int value) {
             return putString(cr, name, Integer.toString(value));
         }
@@ -331,11 +333,13 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putLong(ContentResolver cr, String name, long value) {
             return putString(cr, name, Long.toString(value));
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static float getFloat(ContentResolver cr, String name, float def) {
             String v = getString(cr, name);
             try {
@@ -346,6 +350,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static float getFloat(ContentResolver cr, String name) throws SettingNotFoundException {
             String v = getString(cr, name);
             if (v == null) {
@@ -359,6 +364,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putFloat(ContentResolver cr, String name, float value) {
             return putString(cr, name, Float.toString(value));
         }
@@ -380,7 +386,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         public static boolean putConfiguration(ContentResolver cr, Configuration config) {
             return Settings.System.putFloat(cr, FONT_SCALE, config.fontScale);
         }
@@ -392,7 +398,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
             return getInt(cr, SHOW_GTALK_SERVICE_STATUS, 0) != 0;
         }
@@ -1016,7 +1022,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
 
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         public synchronized static String getString(ContentResolver resolver, String name) {
             if (sNameValueCache == null) {
                 sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
@@ -1026,6 +1032,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putString(ContentResolver resolver,
                 String name, String value) {
             return putString(resolver, CONTENT_URI, name, value);
@@ -1038,6 +1045,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static int getInt(ContentResolver cr, String name, int def) {
             String v = getString(cr, name);
             try {
@@ -1048,6 +1056,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static int getInt(ContentResolver cr, String name) throws SettingNotFoundException {
             String v = getString(cr, name);
             try {
@@ -1058,6 +1067,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putInt(ContentResolver cr, String name, int value) {
             return putString(cr, name, Integer.toString(value));
         }
@@ -1085,11 +1095,13 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putLong(ContentResolver cr, String name, long value) {
             return putString(cr, name, Long.toString(value));
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static float getFloat(ContentResolver cr, String name, float def) {
             String v = getString(cr, name);
             try {
@@ -1100,6 +1112,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static float getFloat(ContentResolver cr, String name) throws SettingNotFoundException {
             String v = getString(cr, name);
             if (v == null) {
@@ -1113,6 +1126,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean putFloat(ContentResolver cr, String name, float value) {
             return putString(cr, name, Float.toString(value));
         }
@@ -1136,12 +1150,14 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static final boolean isLocationProviderEnabled(ContentResolver cr, String provider) {
             String allowedProviders = Settings.Secure.getString(cr, LOCATION_PROVIDERS_ALLOWED);
             return TextUtils.delimitedStringContains(allowedProviders, ',', provider);
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static final void setLocationProviderEnabled(ContentResolver cr,
                 String provider, boolean enabled) {
             if (enabled) {

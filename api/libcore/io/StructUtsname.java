@@ -22,6 +22,7 @@ public final class StructUtsname {
 
     public String machine;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.812 -0400", hash_original_method = "ABD276C824D50C395959B30AFCABD3AD", hash_generated_method = "AB75314AFD778C8279CD7A0DF9ABC9E1")
       StructUtsname(String sysname, String nodename, String release, String version, String machine) {
         this.sysname = sysname;

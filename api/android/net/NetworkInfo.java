@@ -406,7 +406,7 @@ String var8C566785696787B06C7B09BA315043CE_1016338902 =             mExtraInfo;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.410 -0400", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "E66124BE6C681FEFCECB0B7D42C0ADC4")
     @Override
     public String toString() {

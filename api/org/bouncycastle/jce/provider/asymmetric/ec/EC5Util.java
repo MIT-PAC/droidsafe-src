@@ -72,7 +72,8 @@ public class EC5Util {
     }
 
     
-        public static ECParameterSpec convertSpec(
+        @DSModeled(DSC.SAFE)
+    public static ECParameterSpec convertSpec(
         EllipticCurve ellipticCurve,
         org.bouncycastle.jce.spec.ECParameterSpec spec) {
         if (spec instanceof ECNamedCurveParameterSpec)
@@ -99,7 +100,8 @@ public class EC5Util {
     }
 
     
-        public static org.bouncycastle.jce.spec.ECParameterSpec convertSpec(
+        @DSModeled(DSC.SAFE)
+    public static org.bouncycastle.jce.spec.ECParameterSpec convertSpec(
         ECParameterSpec ecSpec,
         boolean withCompression) {
         ECCurve curve = convertCurve(ecSpec.getCurve());
@@ -120,7 +122,8 @@ public class EC5Util {
     }
 
     
-        public static org.bouncycastle.math.ec.ECPoint convertPoint(
+        @DSModeled(DSC.SAFE)
+    public static org.bouncycastle.math.ec.ECPoint convertPoint(
         ECCurve curve,
         ECPoint point,
         boolean withCompression) {

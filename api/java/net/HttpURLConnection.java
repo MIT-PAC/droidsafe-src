@@ -95,6 +95,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_1061818332 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.488 -0400", hash_original_method = "7D3B203196D55AEFB0033919830A54D2", hash_generated_method = "A2705FB7B663EA17A2B4F53985270981")
     public int getResponseCode() throws IOException {
         getInputStream();
@@ -149,6 +150,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_1061818332 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.489 -0400", hash_original_method = "2B517AE93F70715BB09FC42E79EE9551", hash_generated_method = "CBAEBB4B9F79DDF6B6B1C28EA1197E75")
     public String getResponseMessage() throws IOException {
         if(responseMessage != null)        
@@ -176,6 +178,7 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1931824519 =         responseMessage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.490 -0400", hash_original_method = "3B5EB6833E70FFDCB063E860A5177AF6", hash_generated_method = "D6FFA66AEC133516A6CFE9AFDFDAC420")
     public void setRequestMethod(String method) throws ProtocolException {
         if(connected)        
@@ -215,6 +218,7 @@ for(String permittedUserMethod : PERMITTED_USER_METHODS)
     public abstract boolean usingProxy();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.490 -0400", hash_original_method = "17A4A6C99056147BEFFA252CAD4737D6", hash_generated_method = "B9A32E6612D838A4EE193987F3BD06BE")
     @Override
     public String getContentEncoding() {
@@ -259,6 +263,7 @@ String var636F640217A2586C23C7303E786B88FE_366726606 =         super.getContentE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.491 -0400", hash_original_method = "746797ABBB47B5E996C092A3E4D56421", hash_generated_method = "A39A95A57F9C530B43BF4736FD7B2FE8")
     public void setFixedLengthStreamingMode(int contentLength) {
         if(super.connected)        

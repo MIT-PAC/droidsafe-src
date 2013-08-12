@@ -12,6 +12,7 @@ public class TransactionDoesNotExistException extends SipException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.368 -0400", hash_original_method = "FEB1A81DE901FC743AFE681804A1F11C", hash_generated_method = "8DA048A2C5245050F2F850498F31FD30")
     public  TransactionDoesNotExistException(String message) {
         super(message);

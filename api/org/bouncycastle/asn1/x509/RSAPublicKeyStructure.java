@@ -26,6 +26,7 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
 
     private BigInteger publicExponent;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.816 -0400", hash_original_method = "48EB528539A20A4AFED405FA2E9D9E5C", hash_generated_method = "4144DD2AAFD9958A803584B776141B25")
     public  RSAPublicKeyStructure(
         BigInteger  modulus,
@@ -38,6 +39,7 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.817 -0400", hash_original_method = "E4CEBF5DEC44F0033674466A43F99CB9", hash_generated_method = "8803BAE74D051BF3FDA8593B6E78890E")
     public  RSAPublicKeyStructure(
         ASN1Sequence  seq) {
@@ -64,6 +66,7 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RSAPublicKeyStructure getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -71,6 +74,7 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RSAPublicKeyStructure getInstance(
         Object obj) {
         if(obj == null || obj instanceof RSAPublicKeyStructure) 

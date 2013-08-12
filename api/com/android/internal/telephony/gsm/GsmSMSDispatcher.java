@@ -64,6 +64,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.127 -0400", hash_original_method = "FC96C37EC7CCEA012658804CB9F94924", hash_generated_method = "AB9F18314E4DF06E27ECE87D12F5EA19")
     @Override
     public void dispose() {
@@ -255,7 +256,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.132 -0400", hash_original_method = "3D7E3502DD1585858E097F3A6DC759F7", hash_generated_method = "657A9AE8C30AD049265B3E48C19D719A")
     @Override
     protected void sendData(String destAddr, String scAddr, int destPort,
@@ -316,7 +317,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.133 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "3BFF870EFE90594FDFC128ADCB46F6B3")
     @Override
     protected TextEncodingDetails calculateLength(CharSequence messageBody,
@@ -331,7 +332,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_992691367 =         SmsM
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.134 -0400", hash_original_method = "D46F86683A1628DBA1448E14FF571355", hash_generated_method = "C11DE1ED6E4AAC2528E1745135F45B91")
     @Override
     protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
@@ -367,7 +368,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_992691367 =         SmsM
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.134 -0400", hash_original_method = "FF8E1B494DDC1956B0825172C230EA31", hash_generated_method = "48B236C7123669EC9654E19A333E965F")
     @Override
     protected void sendSms(SmsTracker tracker) {
@@ -568,6 +569,7 @@ for(int i = 0;i < pdus.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.138 -0400", hash_original_method = "16D562DE8E79921485CB55DC774779E3", hash_generated_method = "4DCA3C92389EFBEBBBD67C47A1B09615")
         public boolean matchesLocation(String plmn, int lac, int cid) {
             addTaint(cid);

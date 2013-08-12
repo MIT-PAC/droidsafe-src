@@ -11,6 +11,7 @@ import android.os.Parcelable;
 
 public abstract class InputEvent implements Parcelable {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.019 -0400", hash_original_method = "5E30BC92EB346FB6C373466BBBDCD9C6", hash_generated_method = "4C32157640739D892888BF135F5DE17B")
       InputEvent() {
         // ---------- Original Method ----------

@@ -67,6 +67,7 @@ public abstract class GeneralDigest implements ExtendedDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.248 -0400", hash_original_method = "F796363C15CB3EC49C76DC6C83402CDE", hash_generated_method = "86D896F5E1F695AA1E2248A2BFA044C4")
     public void update(
         byte[]  in,

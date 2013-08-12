@@ -31,6 +31,7 @@ public class KeyException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.883 -0400", hash_original_method = "ED6FE96D5D1CB668863944D14AFF3EBE", hash_generated_method = "B61BDB6BD30DEED1E8037EFACDE6C4BD")
     public  KeyException(Throwable cause) {
         super(cause);

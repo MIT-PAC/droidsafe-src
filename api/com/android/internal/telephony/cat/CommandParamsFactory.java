@@ -96,6 +96,7 @@ CommandDetails var0060BCF683BA9945E92A4949C9036F93_1839794921 =         cmdDet;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.181 -0400", hash_original_method = "1AA16ED3503C2EABAE519A247570B4D1", hash_generated_method = "59514A66DC7442AA276944158CF7B24C")
      void make(BerTlv berTlv) {
         addTaint(berTlv.getTaint());

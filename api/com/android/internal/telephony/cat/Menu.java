@@ -45,6 +45,7 @@ public class Menu implements Parcelable {
 
     public boolean itemsIconSelfExplanatory;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.441 -0400", hash_original_method = "2E99B961E06FFBDF1C6EFBD0F84C03B4", hash_generated_method = "A863469DD6195991058FA32E29A64698")
     public  Menu() {
         items = new ArrayList<Item>();
@@ -157,6 +158,7 @@ for(int i=0;i<size;i++)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.446 -0400", hash_original_field = "F280FAF502E3EC830C212739EA877C0E", hash_generated_field = "55BC0B4641874E81A5D070AF9C451A82")
 
     public static final Parcelable.Creator<Menu> CREATOR = new Parcelable.Creator<Menu>() {
+        @DSModeled(DSC.SAFE)
         public Menu createFromParcel(Parcel in) {
             return new Menu(in);
         }

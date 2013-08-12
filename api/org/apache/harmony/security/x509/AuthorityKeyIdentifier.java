@@ -128,6 +128,7 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
             setOptional(2);
         }
 
+        @DSModeled(DSC.SPEC)
         @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
 

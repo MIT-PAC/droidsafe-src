@@ -124,6 +124,7 @@ public final class PolicyConstraints extends ExtensionValue {
             setOptional(1);
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             BigInteger requireExplicitPolicy = null;
@@ -139,6 +140,7 @@ public final class PolicyConstraints extends ExtensionValue {
                     in.getEncoded());
         }
 
+        @DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             PolicyConstraints pc = (PolicyConstraints) object;
             values[0] = pc.requireExplicitPolicy.toByteArray();

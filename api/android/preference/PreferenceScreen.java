@@ -41,6 +41,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.838 -0400", hash_original_method = "452CFBAB5DCB1913FE2E0341A07BD40C", hash_generated_method = "BCA931D58CA501592A7E834C4C343829")
     public ListAdapter getRootAdapter() {
         if(mRootAdapter == null)        
@@ -58,6 +59,7 @@ ListAdapter var69C649A5DFA7AE0E39B1A520D14F6450_1134340765 =         mRootAdapte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.838 -0400", hash_original_method = "BDEF03D241AC1847AD8585ACF20EF682", hash_generated_method = "066110A8AB9E0B8BA45D1DAF1E47162B")
     protected ListAdapter onCreateRootAdapter() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -82,6 +84,7 @@ ListAdapter var99AA28967D3A2946B59C82F1D9ABEEE0_71313853 =         new Preferenc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.838 -0400", hash_original_method = "0BA40F9F4173A0900F716D516252D657", hash_generated_method = "242F2A2F7647A1BE298DACFF84B8AB6B")
     @Override
     protected void onClick() {
@@ -214,6 +217,7 @@ Dialog var91E8306796CF70F787962B1CE02ED969_2016841557 =         mDialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.841 -0400", hash_original_method = "2F4F23BF6B6CEAFD77846C461E2361F8", hash_generated_method = "EE42F56ED9526CD9285374064C0ABC4B")
     @Override
     protected Parcelable onSaveInstanceState() {
@@ -245,6 +249,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_407685372 =         myState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.842 -0400", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "8D1F140D5913A647832B8CB90D82789F")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
@@ -324,6 +329,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_407685372 =         myState;
                 return new SavedState(in);
             }
 
+            @DSModeled(DSC.SAFE)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class ASN1UTCTime extends DERUTCTime {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.898 -0400", hash_original_method = "9FB0B414332B377CAC617115546A77CB", hash_generated_method = "A013CAF4244210C95264F70A7425C3F5")
       ASN1UTCTime(byte[] bytes) {
         super(bytes);
@@ -24,6 +25,7 @@ public class ASN1UTCTime extends DERUTCTime {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.898 -0400", hash_original_method = "56D06078D341C61AAEA2DCB1CFA1CC92", hash_generated_method = "1E5F83B2C9AE131E52F62B2B492A5714")
     public  ASN1UTCTime(String time) {
         super(time);

@@ -117,6 +117,7 @@ Object var540C13E9E156B687226421B24F2DF178_1491019690 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.058 -0400", hash_original_method = "4564C020E5F3A695F95559B726D59F50", hash_generated_method = "C52EE2D49F8E974F095F12AED1A9FA3D")
     @SuppressWarnings("unchecked")
     public Object getContent(Class[] types) throws IOException {
@@ -157,6 +158,7 @@ Object var540C13E9E156B687226421B24F2DF178_1804063500 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.059 -0400", hash_original_method = "F034FCCBCF276A401A79AE9D47D45859", hash_generated_method = "A49BB65459E94F5E55A2E24811C1F85E")
     public String getContentEncoding() {
 String var510A0BC22C0D704C1004D5A998438214_1964403696 =         getHeaderField("Content-Encoding");
@@ -247,6 +249,7 @@ ContentHandler varDDDFBDCC1DC485BBAE08766814FFA7F9_502461751 =         defaultHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.062 -0400", hash_original_method = "D3CB748394BDEDD2AA4B807728EDFBEF", hash_generated_method = "BEA2C0584E04C8068784136E54821BCF")
     public int getContentLength() {
         int var36E747513101639E71FF28934335E8B1_1039960482 = (getHeaderFieldInt("Content-Length", -1));
@@ -257,6 +260,7 @@ ContentHandler varDDDFBDCC1DC485BBAE08766814FFA7F9_502461751 =         defaultHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.062 -0400", hash_original_method = "7440B54E7BE94AE7F9BB4349A25246D4", hash_generated_method = "7D5FEB4A2FD1AF38D96A2949CE73C07E")
     public String getContentType() {
 String var0EAB4E793F4B3855B9901F8B99D4EE3C_10822782 =         getHeaderField("Content-Type");
@@ -267,6 +271,7 @@ String var0EAB4E793F4B3855B9901F8B99D4EE3C_10822782 =         getHeaderField("Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.063 -0400", hash_original_method = "4C9F7702471FFCF16C0BDF48E7BD6750", hash_generated_method = "3501E8BAC3414D6E40AE282F0DC8DE84")
     public long getDate() {
         long var6C7D70BD6F687EC931CC210CAA86A7DA_1793163874 = (getHeaderFieldDate("Date", 0));
@@ -323,6 +328,7 @@ String var0EAB4E793F4B3855B9901F8B99D4EE3C_10822782 =         getHeaderField("Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.065 -0400", hash_original_method = "C717C195610527A15AE106EB78FD0F84", hash_generated_method = "CEAC4A86E14883C5D9935BC0FEEE99F3")
     public long getExpiration() {
         long varB302556983FC0193F72FBF497F8AFB8C_1939338647 = (getHeaderFieldDate("Expires", 0));
@@ -333,6 +339,7 @@ String var0EAB4E793F4B3855B9901F8B99D4EE3C_10822782 =         getHeaderField("Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static FileNameMap getFileNameMap() {
         synchronized (URLConnection.class) {
             if (fileNameMap == null) {
@@ -424,6 +431,7 @@ String var540C13E9E156B687226421B24F2DF178_984524825 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.069 -0400", hash_original_method = "3BD57BE7E93B8CCFBCD5DB800D789765", hash_generated_method = "9F52614E9CDA421E4D07A501C8876891")
     @SuppressWarnings("deprecation")
     public long getHeaderFieldDate(String field, long defaultValue) {
@@ -461,6 +469,7 @@ String var540C13E9E156B687226421B24F2DF178_984524825 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.069 -0400", hash_original_method = "13117EC346BE33DF62C37EDAC186E83F", hash_generated_method = "6609FE780318B5A5DC1BBBC89D2E04FE")
     public int getHeaderFieldInt(String field, int defaultValue) {
         addTaint(defaultValue);
@@ -509,6 +518,7 @@ String var540C13E9E156B687226421B24F2DF178_415062842 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.070 -0400", hash_original_method = "AC7495DD6573AA12A9CB49C509EE6FD0", hash_generated_method = "76EDB5C5D45C90A51DF4D8B7B0E2B37F")
     public InputStream getInputStream() throws IOException {
         UnknownServiceException var041CA6C0CEC20D69C1192EA6A23D16F1_751798312 = new UnknownServiceException("Does not support writing to the input stream");
@@ -519,6 +529,7 @@ String var540C13E9E156B687226421B24F2DF178_415062842 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.071 -0400", hash_original_method = "1B346D840CFCEDE13531D2A642CD424D", hash_generated_method = "963CFBBA03AF775A2B3F1C2D621FBB57")
     public long getLastModified() {
         if(lastModified != -1)        
@@ -538,6 +549,7 @@ String var540C13E9E156B687226421B24F2DF178_415062842 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.071 -0400", hash_original_method = "F613A2AA87619B352A0F7C7CAB39D3F5", hash_generated_method = "707AFC17B8F2447D35D122E57FE44934")
     public OutputStream getOutputStream() throws IOException {
         UnknownServiceException var1691875A0B15152BF366E3EE936B3627_1503405204 = new UnknownServiceException("Does not support writing to the output stream");
@@ -558,6 +570,7 @@ java.security.Permission varAA4D4D55ABB29408F9384F4494AEC9E5_560687210 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.071 -0400", hash_original_method = "9BF81D9E57E4C63EDA2E82E6CB1EEED2", hash_generated_method = "5FF1CD59B10A8165F60080607859207E")
     public String getRequestProperty(String field) {
         addTaint(field.getTaint());
@@ -593,11 +606,13 @@ URL var4F9C62D322C7F68D5668056D4B193F9B_1582075202 =         url;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String guessContentTypeFromName(String url) {
         return getFileNameMap().getContentTypeFor(url);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String guessContentTypeFromStream(InputStream is) throws IOException {
         if (!is.markSupported()) {
             return null;
@@ -706,6 +721,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized void setContentHandlerFactory(ContentHandlerFactory contentFactory) {
         if (contentHandlerFactory != null) {
             throw new Error("Factory already set");
@@ -736,6 +752,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.074 -0400", hash_original_method = "3A49AB6E406CA8641E1DA3C376F73D42", hash_generated_method = "5479128F7387075B4F54BB3064B9DD25")
     public void setDoInput(boolean newValue) {
         checkNotConnected();
@@ -746,6 +763,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.075 -0400", hash_original_method = "F9A1D9CFB149787BC9250701CAC2EC3A", hash_generated_method = "C87FEF41C96B6A34E93E22638F84D18D")
     public void setDoOutput(boolean newValue) {
         checkNotConnected();
@@ -774,6 +792,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.076 -0400", hash_original_method = "EB8A856B35FAF51399B9B389D895E434", hash_generated_method = "ECDA14C4CEBD696C919706BB2E04449F")
     public void setRequestProperty(String field, String newValue) {
         addTaint(newValue.getTaint());
@@ -793,6 +812,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.076 -0400", hash_original_method = "36A4E65C2F0D12499DC505123F0CC423", hash_generated_method = "2C4942B39DE1BD013B5FC65E487DC4CE")
     public void setUseCaches(boolean newValue) {
         checkNotConnected();
@@ -803,6 +823,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.077 -0400", hash_original_method = "6A558E4FD6643B6A2C9B278FD394A062", hash_generated_method = "982FF05D8031E0450262D106A2FA9443")
     public void setConnectTimeout(int timeout) {
         if(timeout < 0)        
@@ -831,6 +852,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.077 -0400", hash_original_method = "AFADA452D3B07139A9E1C4690AAC11B3", hash_generated_method = "FBCAE12275BE3EE0A82583A02964BBF7")
     public void setReadTimeout(int timeout) {
         if(timeout < 0)        
@@ -859,6 +881,7 @@ String varE65B3A02759122992CB82C0E651AD408_415779763 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.078 -0400", hash_original_method = "C85D603FFD624A90EAB88172CE67727C", hash_generated_method = "A23E86DBE6740E14FB9A0C328C7D5D00")
     @Override
     public String toString() {
@@ -880,6 +903,7 @@ String var6A8B79AC21D46F64E8FA95BADFC3BF6A_1737255838 =         getClass().getNa
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.078 -0400", hash_original_method = "AE84E807F7FC8D1C4CC894407353562A", hash_generated_method = "74C742CA875BA0BB8DEF98FF9E46BC71")
         @Override
         public Object getContent(URLConnection u) throws IOException {

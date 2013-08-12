@@ -32,6 +32,7 @@ public class MinSEParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.754 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "CEA5F129CA828EF26F6AC3876C928EB6")
     public SIPHeader parse() throws ParseException {
         MinSE minse = new MinSE();

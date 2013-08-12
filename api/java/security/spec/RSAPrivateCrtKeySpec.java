@@ -29,6 +29,7 @@ public class RSAPrivateCrtKeySpec extends RSAPrivateKeySpec {
 
     private BigInteger crtCoefficient;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.106 -0400", hash_original_method = "ED8A111B4A0E8F9BE0E6693F37FD176F", hash_generated_method = "87C4762705CC223B1D5571024BD41BEF")
     public  RSAPrivateCrtKeySpec(BigInteger modulus,
                                 BigInteger publicExponent,

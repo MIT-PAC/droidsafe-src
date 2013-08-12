@@ -115,6 +115,7 @@ AuthScope varB0B030A52916F692F297266F102C8281_1542640103 =         this.authScop
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.317 -0400", hash_original_method = "CD2C06D38ABEB8110AC037A3B94BECA0", hash_generated_method = "50F02FB8B18C16EBFA5AFCC45485E699")
     @Override
     public String toString() {

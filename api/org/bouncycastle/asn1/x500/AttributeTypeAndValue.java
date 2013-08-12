@@ -33,6 +33,7 @@ public class AttributeTypeAndValue extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.289 -0400", hash_original_method = "455B7405955E1E537DECB7E0764A59EF", hash_generated_method = "E84A2F5BBB1F65ED45E2832DE9ADFE01")
     public  AttributeTypeAndValue(
         ASN1ObjectIdentifier type,
@@ -45,6 +46,7 @@ public class AttributeTypeAndValue extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttributeTypeAndValue getInstance(Object o) {
         if (o instanceof AttributeTypeAndValue)
         {

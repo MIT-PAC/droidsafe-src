@@ -90,6 +90,7 @@ public class Ringtone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.073 -0400", hash_original_method = "9AA0FF99679830890209304DA3B8D69B", hash_generated_method = "C42F507DFFAA4232B85FD96D56CA81EB")
     public String getTitle(Context context) {
         if(mTitle != null)        
@@ -282,6 +283,7 @@ String varD044B7BC8179EF64E9AD64248361B60E_369898316 =         mTitle = getTitle
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.079 -0400", hash_original_method = "0CA36CF7485684069EDD095AE8455157", hash_generated_method = "271A3815E7726EA6670E270712CBAAEF")
     public boolean isPlaying() {
         boolean var9F7141D2644A06BB137EBA742B0EA563_1141367735 = (mAudio != null && mAudio.isPlaying());

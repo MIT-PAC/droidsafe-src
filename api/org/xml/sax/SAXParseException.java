@@ -45,6 +45,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.251 -0400", hash_original_method = "7445111C75F88435899093DB45466FBB", hash_generated_method = "6B580BAD176A8ED410139B61B858C796")
     public  SAXParseException(String message, Locator locator,
                   Exception e) {
@@ -71,6 +72,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.252 -0400", hash_original_method = "F6A205656E7433FA991BA49A47A0113E", hash_generated_method = "60D43526F236A32957D2912A94DFC2AC")
     public  SAXParseException(String message, String publicId, String systemId,
                   int lineNumber, int columnNumber) {
@@ -86,6 +88,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.253 -0400", hash_original_method = "7C92F995098676855E75CD731C6CE956", hash_generated_method = "598FD09DC85031B08116D1E6438D66BE")
     public  SAXParseException(String message, String publicId, String systemId,
                   int lineNumber, int columnNumber, Exception e) {

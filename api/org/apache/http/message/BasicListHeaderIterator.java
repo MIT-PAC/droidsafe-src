@@ -24,6 +24,7 @@ public class BasicListHeaderIterator implements HeaderIterator {
 
     protected String headerName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.720 -0400", hash_original_method = "2D091C8CAFC19B749551E2F1187B6105", hash_generated_method = "C9F419A38BDA9FA70D45ADC4C2C0C577")
     public  BasicListHeaderIterator(List headers, String name) {
         if(headers == null)        
@@ -49,6 +50,7 @@ public class BasicListHeaderIterator implements HeaderIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.723 -0400", hash_original_method = "AE89C08F08BB3F2E2361D882A86E08E6", hash_generated_method = "87C172DDF899E8E91FA23176366D8D37")
     protected int findNext(int from) {
         addTaint(from);
@@ -126,6 +128,7 @@ public class BasicListHeaderIterator implements HeaderIterator {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void remove() {
 		// TODO Auto-generated method stub

@@ -84,6 +84,7 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.894 -0400", hash_original_method = "7CB663CBD5778E22C9AD8E80132ECD7C", hash_generated_method = "385188FEB4433B78F973DBF29302E229")
     @Override
     protected HttpParams createHttpParams() {
@@ -132,6 +133,7 @@ HttpRequestExecutor var77057CFCC113A990DCE28ADA4BDF2E52_2010296747 =         new
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.899 -0400", hash_original_method = "C42A8A1E8C3C461006C6920C87D13C0A", hash_generated_method = "88E644D9177F22E5DEEEF96D750381E4")
     @Override
     protected ClientConnectionManager createClientConnectionManager() {
@@ -418,6 +420,7 @@ CredentialsProvider varE9F1E29528E36748834AE02D7FF6FC73_770880675 =         new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.932 -0400", hash_original_method = "0D3A0E833E374EE9EB01454019D72BDB", hash_generated_method = "B1DB2E09B264995C12287AB868229F69")
     @Override
     protected HttpRoutePlanner createHttpRoutePlanner() {

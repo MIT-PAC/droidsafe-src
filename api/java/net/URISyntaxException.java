@@ -79,6 +79,7 @@ public class URISyntaxException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.869 -0400", hash_original_method = "D4B65418D906ACD682013E7ACC1989F7", hash_generated_method = "5C095698B62A3383AF70BB8E8026C519")
     public String getReason() {
 String var1F56B99E8E42A81BCA45826E1719D3B0_1797760676 =         super.getMessage();

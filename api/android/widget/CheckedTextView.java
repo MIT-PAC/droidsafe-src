@@ -197,7 +197,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.965 -0400", hash_original_method = "7617145132345CC873AC9F4B73DFB7CD", hash_generated_method = "8C71DDC022FDEF49FDAB438540989429")
     @Override
     protected void resolvePadding() {

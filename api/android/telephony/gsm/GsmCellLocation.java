@@ -122,6 +122,7 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.266 -0400", hash_original_method = "A65316AC0F6A2A4C5019C1501720E22E", hash_generated_method = "8B4F622331BD10C72BC93FE7CD5E72BB")
     @Override
     public boolean equals(Object o) {
@@ -162,6 +163,7 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.267 -0400", hash_original_method = "ECC0B1700594AB1E58D4785492DA1471", hash_generated_method = "FBBC4EF8BD4FE60B2A049FF3A40FEE25")
     @Override
     public String toString() {

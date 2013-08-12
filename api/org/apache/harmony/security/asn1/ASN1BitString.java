@@ -12,6 +12,7 @@ import libcore.util.EmptyArray;
 
 public class ASN1BitString extends ASN1StringType {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.181 -0400", hash_original_method = "AD601F3532730C1588B10C0B2F4700C0", hash_generated_method = "2D61DE183F5D6ABAA7F4E57F92D94159")
     public  ASN1BitString() {
         super(TAG_BITSTRING);

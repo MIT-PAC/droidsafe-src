@@ -127,6 +127,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.583 -0400", hash_original_method = "DF8D80CA8C09E77634765D8D414FAE26", hash_generated_method = "45B1A68DC48064407D417DD7CA2E5B76")
     public boolean canEncode(char c) {
         addTaint(c);
@@ -195,6 +196,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.584 -0400", hash_original_method = "54A1B7BF9180636CA7E06E09FE414A09", hash_generated_method = "D6C2DEBF9E10DEFD0E783CE0666CDEE2")
     public boolean canEncode(CharSequence sequence) {
         addTaint(sequence.getTaint());
@@ -306,7 +308,7 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_383822937 =         output;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.586 -0400", hash_original_method = "AAF7B17852C8827C6D375001E4EF8669", hash_generated_method = "5DF2108BB45D3910757D0C884F125EAF")
     private void checkCoderResult(CoderResult result) throws CharacterCodingException {
         addTaint(result.getTaint());
@@ -332,7 +334,7 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_383822937 =         output;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.587 -0400", hash_original_method = "46B614F003BDECDBAF0C028FA8A61DD7", hash_generated_method = "8DDBB17C34A936C6C9E576BB5EB1F5FE")
     private ByteBuffer allocateMore(ByteBuffer output) {
         addTaint(output.getTaint());

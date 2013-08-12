@@ -40,6 +40,7 @@ public class DatabaseUtils {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static final void writeExceptionToParcel(Parcel reply, Exception e) {
         int code = 0;
         boolean logException = true;
@@ -77,6 +78,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void readExceptionFromParcel(Parcel reply) {
         int code = reply.readExceptionCode();
         if (code == 0) return;
@@ -85,6 +87,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readExceptionWithFileNotFoundExceptionFromParcel(
             Parcel reply) throws FileNotFoundException {
         int code = reply.readExceptionCode();
@@ -98,6 +101,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void readExceptionWithOperationApplicationExceptionFromParcel(
             Parcel reply) throws OperationApplicationException {
         int code = reply.readExceptionCode();
@@ -136,6 +140,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void bindObjectToProgram(SQLiteProgram prog, int index,
             Object value) {
         if (value == null) {
@@ -253,6 +258,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String sqlEscapeString(String value) {
         StringBuilder escaper = new StringBuilder();
         DatabaseUtils.appendEscapedSQLString(escaper, value);
@@ -276,6 +282,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String concatenateWhere(String a, String b) {
         if (TextUtils.isEmpty(a)) {
             return b;
@@ -287,6 +294,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getCollationKey(String name) {
         byte [] arr = getCollationKeyInBytes(name);
         try {
@@ -297,6 +305,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getHexCollationKey(String name) {
         byte [] arr = getCollationKeyInBytes(name);
         char[] keys = Hex.encodeHex(arr);
@@ -329,6 +338,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCursor(Cursor cursor, PrintStream stream) {
         stream.println(">>>>> Dumping cursor " + cursor);
         if (cursor != null) {
@@ -343,6 +353,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCursor(Cursor cursor, StringBuilder sb) {
         sb.append(">>>>> Dumping cursor " + cursor + "\n");
         if (cursor != null) {
@@ -357,6 +368,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dumpCursorToString(Cursor cursor) {
         StringBuilder sb = new StringBuilder();
         dumpCursor(cursor, sb);
@@ -364,6 +376,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpCurrentRow(Cursor cursor) {
         dumpCurrentRow(cursor, System.out);
     }
@@ -403,6 +416,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dumpCurrentRowToString(Cursor cursor) {
         StringBuilder sb = new StringBuilder();
         dumpCurrentRow(cursor, sb);
@@ -422,6 +436,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorStringToContentValues(Cursor cursor, String field,
             ContentValues values, String key) {
         values.put(key, cursor.getString(cursor.getColumnIndexOrThrow(field)));
@@ -433,6 +448,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorIntToContentValues(Cursor cursor, String field, ContentValues values,
             String key) {
         int colIndex = cursor.getColumnIndex(field);
@@ -444,11 +460,13 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values) {
         cursorLongToContentValues(cursor, field, values, field);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorLongToContentValues(Cursor cursor, String field, ContentValues values,
             String key) {
         int colIndex = cursor.getColumnIndex(field);
@@ -492,18 +510,19 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long queryNumEntries(SQLiteDatabase db, String table) {
         return queryNumEntries(db, table, null, null);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
         return queryNumEntries(db, table, selection, null);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
             String[] selectionArgs) {
         String s = (!TextUtils.isEmpty(selection)) ? " where " + selection : "";
@@ -512,6 +531,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long longForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
         try {
@@ -522,12 +542,14 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long longForQuery(SQLiteStatement prog, String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
         return prog.simpleQueryForLong();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stringForQuery(SQLiteDatabase db, String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
         try {
@@ -538,12 +560,14 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String stringForQuery(SQLiteStatement prog, String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
         return prog.simpleQueryForString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteDatabase db,
             String query, String[] selectionArgs) {
         SQLiteStatement prog = db.compileStatement(query);
@@ -555,6 +579,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ParcelFileDescriptor blobFileDescriptorForQuery(SQLiteStatement prog,
             String[] selectionArgs) {
         prog.bindAllArgsAsStrings(selectionArgs);
@@ -589,6 +614,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorIntToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -629,6 +655,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getSqlStatementType(String sql) {
         sql = sql.trim();
         if (sql.length() < 3) {
@@ -840,6 +867,7 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_1084171090 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.939 -0400", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "AB99BE11BE6005309C70527F94038115")
         public int getColumnIndex(String key) {
             addTaint(key.getTaint());
@@ -965,6 +993,7 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_1084171090 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.941 -0400", hash_original_method = "9556B578266975E5A98CFEB0C2204667", hash_generated_method = "859DB4C5D61E861EB3EF12FD8A011A7F")
         public long insert(ContentValues values) {
             addTaint(values.getTaint());
@@ -976,6 +1005,7 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_1084171090 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.942 -0400", hash_original_method = "C80CA050416DA84901D4F7B0B2F41300", hash_generated_method = "721108E85737F617D424F77A49E45F2F")
         public long execute() {
             if(mPreparedStatement == null)            
@@ -1038,6 +1068,7 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_1084171090 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.942 -0400", hash_original_method = "C177E80799F9F51057A5F361D4C5571B", hash_generated_method = "74E433646E38E856889613D987166043")
         public long replace(ContentValues values) {
             addTaint(values.getTaint());

@@ -20,7 +20,8 @@ public class WindowImpl extends Window {
 
 	public Context context = null;
 
-	public WindowImpl(Context context) {
+	@DSModeled(DSC.BAN)
+    public WindowImpl(Context context) {
 		super(context);
 		this.context = context;
 	}
@@ -49,7 +50,8 @@ public class WindowImpl extends Window {
 
 	}
 
-	@Override
+	@DSModeled(DSC.BAN)
+    @Override
 	public void setContentView(int layoutResID) {
 		// TODO Auto-generated method stub
 
@@ -115,7 +117,8 @@ public class WindowImpl extends Window {
 
 	}
 
-	@Override
+	@DSModeled(DSC.BAN)
+    @Override
 	public void invalidatePanelMenu(int featureId) {
 		// TODO Auto-generated method stub
 
@@ -224,7 +227,8 @@ public class WindowImpl extends Window {
 		return false;
 	}
 
-	@Override
+	@DSModeled(DSC.BAN)
+    @Override
 	public View getDecorView() {
 		// TODO Auto-generated method stub
 		return null;
@@ -236,7 +240,8 @@ public class WindowImpl extends Window {
 		return null;
 	}
 
-	@Override
+	@DSModeled(DSC.BAN)
+    @Override
 	public Bundle saveHierarchyState() {
 		// TODO Auto-generated method stub
 		return null;

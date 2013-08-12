@@ -295,7 +295,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
 	private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
         mContext = context;
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -357,7 +357,7 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
         View view;

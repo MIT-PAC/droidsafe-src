@@ -116,6 +116,7 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.678 -0400", hash_original_method = "11E23C3DFA194FF115BF392A022E2577", hash_generated_method = "67AFF467EC49C2CA2FDCB644EA4903CD")
     protected void stop() {
         if(sipStack.isLoggingEnabled())        
@@ -159,6 +160,7 @@ ListeningPoint var159466560DE4F68332621D1854E33B2E_1384831501 =         (Listeni
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.680 -0400", hash_original_method = "BA46457405F31389F30610967A0B78B2", hash_generated_method = "CC3F6AA0AA4151559BA2A0E28D11C12A")
     public void handleEvent(EventObject sipEvent, SIPTransaction transaction) {
         addTaint(transaction.getTaint());
@@ -294,6 +296,7 @@ CallIdHeader varDC913DFF15C999609F003B03C8D38FA5_677383043 =         callid;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.684 -0400", hash_original_method = "7DCA30FF9D29B59AA737512D4B93FBF9", hash_generated_method = "5677B0164B148B6F62F09FB23C9794CD")
     public ClientTransaction getNewClientTransaction(Request request) throws TransactionUnavailableException {
         addTaint(request.getTaint());
@@ -752,6 +755,7 @@ for(Iterator<SipProviderImpl> it = sipStack.getSipProviders();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.691 -0400", hash_original_method = "5A8CC74B0BB93A3DC57DF48200955F60", hash_generated_method = "0E5FE934F64E0572E87A08F52E678C9B")
     public void sendRequest(Request request) throws SipException {
         addTaint(request.getTaint());
@@ -845,6 +849,7 @@ for(Iterator<SipProviderImpl> it = sipStack.getSipProviders();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.693 -0400", hash_original_method = "9E6954B352C971BA2053951D5F8763C5", hash_generated_method = "9FC7B19B8E8BB2ED107E322B1E5957E3")
     public void sendResponse(Response response) throws SipException {
         addTaint(response.getTaint());
@@ -947,6 +952,7 @@ for(Iterator<SipProviderImpl> it = sipStack.getSipProviders();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.695 -0400", hash_original_method = "9D9F76163655F94EC324A9002FE39206", hash_generated_method = "DFE066456C9668541CD2EB0BC9980609")
     public Dialog getNewDialog(Transaction transaction) throws SipException {
         addTaint(transaction.getTaint());
@@ -1048,6 +1054,7 @@ Dialog varE19892282EF70932DF3A147A213BE89D_1045051102 =         dialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.698 -0400", hash_original_method = "DDF38266DDD18665F4022DB956C0FE2D", hash_generated_method = "3C118F3287FE55111040A5068AA276C7")
     public void transactionErrorEvent(
             SIPTransactionErrorEvent transactionErrorEvent) {

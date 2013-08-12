@@ -49,6 +49,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1832678251 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.732 -0400", hash_original_method = "635BF1E9CDC5B7DBCFDF1ACD3F6E624D", hash_generated_method = "0F53C3D98B25B5CCD391B4F03A2A0C26")
     public boolean meetsCriteria(Criteria criteria) {
         addTaint(criteria.getTaint());

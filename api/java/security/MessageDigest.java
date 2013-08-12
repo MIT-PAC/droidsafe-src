@@ -46,6 +46,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MessageDigest getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
@@ -58,6 +59,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MessageDigest getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException();
@@ -76,6 +78,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.077 -0400", hash_original_method = "E1E123B455D04188508A4B0941F355AE", hash_generated_method = "886270F67B96DDF0DAA56D42A28596B7")
     public void reset() {
         engineReset();
@@ -84,6 +87,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.077 -0400", hash_original_method = "5D76F053E1EB2FF1CE017209E211EA20", hash_generated_method = "421EF14958559C71CD3E606C0F2D9D9B")
     public void update(byte arg0) {
         addTaint(arg0);
@@ -146,6 +150,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.079 -0400", hash_original_method = "427D2D0CC508C9C4E8BC486441041E72", hash_generated_method = "35F2DA2B49EA47F963AC1A1265864DB8")
     public int digest(byte[] buf, int offset, int len) throws DigestException {
         addTaint(len);
@@ -184,6 +189,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.080 -0400", hash_original_method = "67B827C914C444116C889B9B936D23D1", hash_generated_method = "67137A5435CCB17F8F4750386817CDB2")
     @Override
     public String toString() {
@@ -231,6 +237,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_962924216 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.081 -0400", hash_original_method = "CB1E3F95FB76C6289C61CD25B71DC6B2", hash_generated_method = "4BD7CAA2B1DDAA9FAE1E411DCB37C3B1")
     public final int getDigestLength() {
         int l = engineGetDigestLength();
@@ -276,6 +283,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_962924216 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.082 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "75A8CAB1D51C9AAB44B1862ED0A92A57")
     @Override
     public Object clone() throws CloneNotSupportedException {
@@ -296,6 +304,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.083 -0400", hash_original_method = "8AF1ACEDEB3ACC905C3D0DD872BD7C78", hash_generated_method = "EC420F17E2A02DA67E335396589590D6")
     public final void update(ByteBuffer input) {
         addTaint(input.getTaint());
@@ -310,7 +319,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
 
         private MessageDigestSpi spiImpl;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.085 -0400", hash_original_method = "AF4F6C5934F11306EFBE5B299B5A2B9A", hash_generated_method = "A429A5B998EC05778C035C93FB935975")
         private  MessageDigestImpl(MessageDigestSpi messageDigestSpi,
                 Provider provider, String algorithm) {
@@ -325,6 +334,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.085 -0400", hash_original_method = "7B2BEE5C01EE533E37620968FDA4C371", hash_generated_method = "80CF2DD0AD898031D6EF2CECA4BECD8D")
         @Override
         protected void engineReset() {
@@ -346,6 +356,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.086 -0400", hash_original_method = "A58BB0AA00BEE25A1A003BC1A1C82C78", hash_generated_method = "9C0F88CB36AED830CCB7E3F07AE13014")
         @Override
         protected int engineGetDigestLength() {
@@ -357,6 +368,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.086 -0400", hash_original_method = "D358F15D417A4020320217683B1513E5", hash_generated_method = "DA9CED5ADDCC300AE96EE0F890E10756")
         @Override
         protected void engineUpdate(byte arg0) {
@@ -380,6 +392,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_300615277 =             super.clone()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.087 -0400", hash_original_method = "C83E6E6E4FE5D7C377E3AA33AF7D3FC4", hash_generated_method = "8108382BD79E2261EA661C5057724301")
         @Override
         public Object clone() throws CloneNotSupportedException {

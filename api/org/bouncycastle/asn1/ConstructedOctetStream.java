@@ -19,6 +19,7 @@ class ConstructedOctetStream extends InputStream {
 
     private InputStream _currentStream;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.045 -0400", hash_original_method = "25BBB36D71D2D30850B0439DCA6D8B9F", hash_generated_method = "7609202E714AC535C8430BB5461BC38F")
       ConstructedOctetStream(
         ASN1StreamParser parser) {
@@ -28,6 +29,7 @@ class ConstructedOctetStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.046 -0400", hash_original_method = "30D34BC5FF70D0CD39A8963110E96C00", hash_generated_method = "DD97326E256DD106749DB12FA66B5C6A")
     public int read(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -83,6 +85,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.048 -0400", hash_original_method = "07E101CE9B272EF565A5C01515093572", hash_generated_method = "789B1A923FAFEEDE69F5F9561FD992A6")
     public int read() throws IOException {
         if(_currentStream == null)        

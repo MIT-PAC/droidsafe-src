@@ -110,7 +110,7 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress[] getAllByNameImpl(String host) throws UnknownHostException {
         if (host == null || host.isEmpty()) {
             return loopbackAddresses();
@@ -139,7 +139,7 @@ public class InetAddress implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress disallowDeprecatedFormats(String address, InetAddress inetAddress) {
         if (!(inetAddress instanceof Inet4Address) || address.indexOf(':') != -1) {
             return inetAddress;
@@ -253,7 +253,7 @@ String varE0844D2E3199657F6D45A77AB24C4989_1837194654 =             getHostAddre
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress[] lookupHostByName(String host) throws UnknownHostException {
         BlockGuard.getThreadPolicy().onNetwork();
         Object cachedResult = addressCache.get(host);
@@ -313,14 +313,14 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_937533407 =         (hostName == null
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static boolean isNumeric(String address) {
         InetAddress inetAddress = parseNumericAddressNoThrow(address);
         return inetAddress != null && disallowDeprecatedFormats(address, inetAddress) != null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static InetAddress parseNumericAddress(String numericAddress) {
         if (numericAddress == null || numericAddress.isEmpty()) {
             return Inet6Address.LOOPBACK;
@@ -456,6 +456,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_937533407 =         (hostName == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.667 -0400", hash_original_method = "C5AA36E6C7DFD1C45750A6D7AE21AFCC", hash_generated_method = "BCDBBA550D0DF4324A76C6900000A3AD")
     public boolean isReachable(int timeout) throws IOException {
         addTaint(timeout);
@@ -605,7 +606,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static InetAddress getByAddress(String hostName, byte[] ipAddress, int scopeId) throws UnknownHostException {
         if (ipAddress == null) {
             throw new UnknownHostException("ipAddress == null");

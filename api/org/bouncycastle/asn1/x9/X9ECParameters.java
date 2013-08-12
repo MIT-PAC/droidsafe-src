@@ -39,6 +39,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
 
     private byte[] seed;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.345 -0400", hash_original_method = "38D6105F07283EB5F8B3605923A2D06B", hash_generated_method = "881DE6A87710177125792979883E8786")
     public  X9ECParameters(
         ASN1Sequence  seq) {
@@ -80,6 +81,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.347 -0400", hash_original_method = "739112175432B7FC1F3897612DAEA859", hash_generated_method = "0F944A9E4DC39D01B3DB0F036F433885")
     public  X9ECParameters(
         ECCurve     curve,
@@ -93,6 +95,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.347 -0400", hash_original_method = "7F13F9D9B68D09FF2E2DEF2F93290D05", hash_generated_method = "6CEEC71B8EF9947BA1AC6A4755291D53")
     public  X9ECParameters(
         ECCurve     curve,
@@ -108,6 +111,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.349 -0400", hash_original_method = "1843E539ACF8FE39D46257BC325E0DC6", hash_generated_method = "A39EF16D26FE302B8F67ECD0C233F5FD")
     public  X9ECParameters(
         ECCurve     curve,
@@ -220,6 +224,7 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_1136126032 =         h;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.351 -0400", hash_original_method = "8FEF0683FB02574D7DCECBAD72741893", hash_generated_method = "C98C89887BC528CA6CC936131500FC0A")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

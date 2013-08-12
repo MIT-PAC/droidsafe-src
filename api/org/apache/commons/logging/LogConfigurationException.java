@@ -12,6 +12,7 @@ public class LogConfigurationException extends RuntimeException {
 
     protected Throwable cause = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.716 -0400", hash_original_method = "5BD29D5C4388EC618AF76FB6968F33B3", hash_generated_method = "7063A356E6027EED37F9AC630853EE07")
     public  LogConfigurationException() {
         super();
@@ -19,6 +20,7 @@ public class LogConfigurationException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.716 -0400", hash_original_method = "DDAD033C1D6A94945D0EFE9FFDFBD321", hash_generated_method = "377CDF98092075BAD618B64B156E2C3C")
     public  LogConfigurationException(String message) {
         super(message);
@@ -27,6 +29,7 @@ public class LogConfigurationException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.716 -0400", hash_original_method = "4454085F5358E0B8D9507639FB30951F", hash_generated_method = "CA0B38F218551F5BF8A9A608B397A063")
     public  LogConfigurationException(Throwable cause) {
         this((cause == null) ? null : cause.toString(), cause);

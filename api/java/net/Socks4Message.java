@@ -16,7 +16,7 @@ class Socks4Message {
 
     protected byte[] buffer;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.553 -0400", hash_original_method = "B36A7D8FEC73E76C782613C0576445D4", hash_generated_method = "E9318A5E21073D72E3A92D6D1199A0E3")
     public  Socks4Message() {
         buffer = new byte[BUFFER_LENGTH];
@@ -47,7 +47,7 @@ class Socks4Message {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.554 -0400", hash_original_method = "469B36103954E60DA4EDBA1638A3DCA3", hash_generated_method = "5F663287FB7E89A42E0920B0F3DC8202")
     public int getPort() {
         int varB511F2DC5EB97FB588E4FF68674CB533_512025777 = (Memory.peekShort(buffer, INDEX_PORT, ByteOrder.BIG_ENDIAN));
@@ -68,7 +68,7 @@ class Socks4Message {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.554 -0400", hash_original_method = "2791CEFF5B7A34F564852C42E861A745", hash_generated_method = "78F11BC2744F75D57C4ACAD9005E8EE2")
     public int getIP() {
         int var43169D413FEAC3CEDA9A813B7443971C_804193364 = (Memory.peekInt(buffer, INDEX_IP, ByteOrder.BIG_ENDIAN));
@@ -94,7 +94,7 @@ class Socks4Message {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.555 -0400", hash_original_method = "6684A79AEF4191DE9F243F196998CD91", hash_generated_method = "EA274B3047D260514FF9861B76B7A99F")
     public String getUserId() {
 String var3DD5599848628D833D4D71F889062CED_10431391 =         getString(INDEX_USER_ID, MAX_USER_ID_LENGTH);
@@ -105,7 +105,7 @@ String var3DD5599848628D833D4D71F889062CED_10431391 =         getString(INDEX_US
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.555 -0400", hash_original_method = "D89FFAAC0CE83481287E79A931367547", hash_generated_method = "A0E7EA3A91B7443981EE6682AFBEDAF6")
     public void setUserId(String id) {
         addTaint(id.getTaint());
@@ -115,6 +115,7 @@ String var3DD5599848628D833D4D71F889062CED_10431391 =         getString(INDEX_US
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.555 -0400", hash_original_method = "614A9A2B6D9145E41E65A77CC642278E", hash_generated_method = "BD8CFEBD20A2BB26CD26EA67EAD03C5F")
     @Override
     public String toString() {

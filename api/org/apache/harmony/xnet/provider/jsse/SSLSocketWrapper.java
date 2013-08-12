@@ -46,6 +46,7 @@ public class SSLSocketWrapper extends SSLSocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.603 -0400", hash_original_method = "9FF3340D77F2F34483025CED36A00A30", hash_generated_method = "7D37A0175C350D9CCFCEE1762B40E38E")
     @Override
     protected void initTransportLayer() throws IOException {
@@ -57,6 +58,7 @@ public class SSLSocketWrapper extends SSLSocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.603 -0400", hash_original_method = "BD47C9CE6748D7B1802F0F857351CC5A", hash_generated_method = "D4E0DDB20E7BC63059C4D773A969108B")
     @Override
     protected void closeTransportLayer() throws IOException {
@@ -75,6 +77,7 @@ public class SSLSocketWrapper extends SSLSocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.604 -0400", hash_original_method = "00D15638ACD466799C761D85B34B76D1", hash_generated_method = "BE8DECB54A5F440E2BE976F2F9CB74AF")
     @Override
     public void connect(SocketAddress sockaddr, int timeout) throws IOException {
@@ -88,6 +91,7 @@ public class SSLSocketWrapper extends SSLSocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.604 -0400", hash_original_method = "EAF5C6F0CD11B02972408C1904067F09", hash_generated_method = "95BDBC17C3A91E524ADBCD28B036E53E")
     @Override
     public void connect(SocketAddress sockaddr) throws IOException {
@@ -100,6 +104,7 @@ public class SSLSocketWrapper extends SSLSocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.605 -0400", hash_original_method = "7A09B0BAD685B79E09A501FC300262C5", hash_generated_method = "BFDEB2BFFFC2251B1649051846E03524")
     @Override
     public void bind(SocketAddress sockaddr) throws IOException {
@@ -112,6 +117,7 @@ public class SSLSocketWrapper extends SSLSocketImpl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.605 -0400", hash_original_method = "3943DC2A7B0758DBF52393C8C56EA577", hash_generated_method = "EDFA3CC2AA793877EA6E6F6203544E90")
     @Override
     public SocketAddress getRemoteSocketAddress() {
@@ -123,6 +129,7 @@ SocketAddress var4967962CF7D2DE2821745DC37AD1C991_567972489 =         socket.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.606 -0400", hash_original_method = "8FA3564BB5CFB45123B15A784733B246", hash_generated_method = "8B71BEC6B58F99250EDC74310DDD4509")
     @Override
     public SocketAddress getLocalSocketAddress() {
@@ -134,6 +141,7 @@ SocketAddress var1C6F9B0AD89BA50278597144BF3BD232_561283169 =         socket.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.606 -0400", hash_original_method = "FA66787E9EF6408AFBBAC830990D81DD", hash_generated_method = "BC1262FE7D62BE0CD43545D7CE89677B")
     @Override
     public InetAddress getLocalAddress() {
@@ -145,6 +153,7 @@ InetAddress var0C541A2DEB3DFBAE24BA22015AE99BEB_1422280074 =         socket.getL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.607 -0400", hash_original_method = "7C5B0DF8424BA5B1A7E73E96C6697260", hash_generated_method = "48979FACBEA1A8C6D99DBDA3235D1FB7")
     @Override
     public InetAddress getInetAddress() {
@@ -156,6 +165,7 @@ InetAddress varE20C5CD772B1ECBEFE0A81A1658EEE73_411245620 =         socket.getIn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.608 -0400", hash_original_method = "20064C2DA65D137C2E5BEE76E0D7F046", hash_generated_method = "C9BB83135AC9C20847F26AB1F0DF85E6")
     @Override
     public String toString() {
@@ -198,6 +208,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.609 -0400", hash_original_method = "42F0A197FBCF742A135D89D6FE12DB15", hash_generated_method = "21835C9586E06EF714A7BF25034B5F9D")
     @Override
     public void setKeepAlive(boolean on) throws SocketException {
@@ -208,6 +219,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.610 -0400", hash_original_method = "F7B57673F6A99B49112F94E152729E53", hash_generated_method = "F0919E51ED1A379DDBED086BE5BE4460")
     @Override
     public void setTrafficClass(int tos) throws SocketException {
@@ -248,6 +260,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.611 -0400", hash_original_method = "39F09AC39D817ADEB5123B039A643360", hash_generated_method = "A5485F8F1E04A681D338137BACB578F2")
     @Override
     public boolean getTcpNoDelay() throws SocketException {
@@ -259,6 +272,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.611 -0400", hash_original_method = "58E21075EC516F7123DEFDBD3078B712", hash_generated_method = "7B92F7AC84347542F0730A1CA9DE32B3")
     @Override
     public boolean getReuseAddress() throws SocketException {
@@ -292,6 +306,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.612 -0400", hash_original_method = "CA06E10BC8D1A46A5EC1742C20A8F3A9", hash_generated_method = "CC62D6EE30300A806D11EDA8F47C114C")
     @Override
     public int getTrafficClass() throws SocketException {
@@ -303,6 +318,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.612 -0400", hash_original_method = "010C724B642A1F7D7909AEF3BDB55CFF", hash_generated_method = "58945CAEE588DCCC9B4A585C26D820BD")
     @Override
     public int getSoTimeout() throws SocketException {
@@ -314,6 +330,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.612 -0400", hash_original_method = "8ECD41C257976189A03EEB5A2F2A2061", hash_generated_method = "9E839989A989F505EDEA23429ED719B5")
     @Override
     public int getSoLinger() throws SocketException {
@@ -325,6 +342,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.613 -0400", hash_original_method = "6DB456EA6159E594EA1D8C2937517626", hash_generated_method = "588302A79E52B2347AC564B180881B5D")
     @Override
     public int getSendBufferSize() throws SocketException {
@@ -336,6 +354,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.613 -0400", hash_original_method = "093818CB55F5B0F2E1248EF2E19EB4D0", hash_generated_method = "585F7B1A70D216F5E234E8CFD272E0FD")
     @Override
     public int getReceiveBufferSize() throws SocketException {
@@ -347,6 +366,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.613 -0400", hash_original_method = "EC1EF38CAA1E7F260C803E9C132BF1AD", hash_generated_method = "9CFF9DD294662EEC8177978870ED2CB9")
     @Override
     public boolean isConnected() {
@@ -358,6 +378,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.614 -0400", hash_original_method = "F9546A6C2D000DC4C97CDD10C3014895", hash_generated_method = "D17B0DAECA216D60F9D0C8E158F7D934")
     @Override
     public boolean isClosed() {
@@ -369,6 +390,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.614 -0400", hash_original_method = "8EA49BE4F5DCAEDF32C6C22D5F856F5E", hash_generated_method = "D7420D02EA4D8913467285DB397D9A66")
     @Override
     public boolean isBound() {
@@ -380,6 +402,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.614 -0400", hash_original_method = "51808AB98F30ED89EC1017AD205567F5", hash_generated_method = "17B534DCD2A9A71046D676CF1346CB0A")
     @Override
     public boolean isOutputShutdown() {
@@ -391,6 +414,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.614 -0400", hash_original_method = "28A9E9140AE8CAAEAFACC4EC7AFA7A9E", hash_generated_method = "DC3A118A6AA1E6E0E2D6BA32B324CE12")
     @Override
     public boolean isInputShutdown() {
@@ -402,6 +426,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.615 -0400", hash_original_method = "9202DEAEF4A83D1AC2B8E9A1BC72C67F", hash_generated_method = "E26F2C1A6E8083CAFE6E0D6719264DF4")
     @Override
     public int getPort() {
@@ -413,6 +438,7 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1510243818 =         "SSL socket over
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.615 -0400", hash_original_method = "8F87ED59A6F41F0CC7A13A5B3C7FF765", hash_generated_method = "9CC6F71FE42224D001B2228C4C947AE3")
     @Override
     public int getLocalPort() {

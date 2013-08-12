@@ -254,6 +254,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.543 -0400", hash_original_method = "8D6DAA6963637C0BD50884518E0FF993", hash_generated_method = "31DA195A8CACA429F53CC674AB87F7FD")
      void lock() {
         lock(null, false);
@@ -433,6 +434,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.554 -0400", hash_original_method = "EB4000007896884F9C35346C5F5B9337", hash_generated_method = "04B944DB3F1AF23170795845FA857B22")
     public void beginTransactionWithListenerNonExclusive(
             SQLiteTransactionListener transactionListener) {
@@ -505,6 +507,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.560 -0400", hash_original_method = "94F2931FC5A304B6FE8748C95A17E4E3", hash_generated_method = "18972CF8F2B78E5998666946BBD18F06")
     public void endTransaction() {
         verifyLockOwner();
@@ -621,6 +624,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.565 -0400", hash_original_method = "6E9122EA7DDDF4A7FCE3C41AA714113C", hash_generated_method = "D23388077EB91F0F229B8D2D6FAFE551")
     public boolean inTransaction() {
         boolean var39EB67E59CCF7ADD3C72720C6369AF85_1634167672 = (mLock.getHoldCount() > 0 || mTransactionUsingExecSql);
@@ -631,6 +635,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.566 -0400", hash_original_method = "5CE93639419B30E518363E5F446309C9", hash_generated_method = "142CD70EA8CD2C060BD2C144C95F1475")
     synchronized void setTransactionUsingExecSqlFlag() {
         if(Log.isLoggable(TAG, Log.DEBUG))        
@@ -686,6 +691,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.569 -0400", hash_original_method = "810FBEC1135AAF9FE09D5ED72E2387AC", hash_generated_method = "9BAC8EEC175D82D47AAF1F9DEAEAB3F9")
     public boolean isDbLockedByCurrentThread() {
         boolean var475246050C807519D6778B4F472B2F34_43355598 = (mLock.isHeldByCurrentThread());
@@ -696,6 +702,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.569 -0400", hash_original_method = "AFE51BB500BDF01026C5B1FB8FA31F68", hash_generated_method = "2A15818E0F5EA5EA2F3CC5E08F194BAA")
     public boolean isDbLockedByOtherThreads() {
         boolean var4D123C87AFCF66682F89F8439C71D1BC_1740042818 = (!mLock.isHeldByCurrentThread() && mLock.isLocked());
@@ -706,6 +713,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.570 -0400", hash_original_method = "275C631F29B5F92F82765C72693E08C5", hash_generated_method = "4D693A35425236FECA1B7F1752AF13EB")
     @Deprecated
     public boolean yieldIfContended() {
@@ -719,6 +727,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.570 -0400", hash_original_method = "E4D6EC2B61BA0EB36CC3F2E9664FDE2E", hash_generated_method = "B8A8186823E1E8FE24B8C1F0EB13C367")
     public boolean yieldIfContendedSafely() {
         boolean varF31E14BB72D4DE0DDAF7987B42E25895_1146214016 = (yieldIfContendedHelper(true , -1 ));
@@ -729,6 +738,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.570 -0400", hash_original_method = "EFD5966AFCC9629F634B854AE0830507", hash_generated_method = "F9C6D054E5E9162B8ADBFF987227F812")
     public boolean yieldIfContendedSafely(long sleepAfterYieldDelay) {
         addTaint(sleepAfterYieldDelay);
@@ -797,6 +807,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.575 -0400", hash_original_method = "2BF74CD6834BBADBF27F65464DB83499", hash_generated_method = "CE425E4C6DF5F609B1314826DD07DB4C")
     @Deprecated
     public Map<String, String> getSyncedTables() {
@@ -2673,6 +2684,7 @@ Thread var9339B408D15ACEBD23DAAE73BA89B0F6_1849379444 =             super.getOwn
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.676 -0400", hash_original_method = "0A30C3A8A16B3E36E180D94391681301", hash_generated_method = "44851D7461BF6DDB0A50B37382C40917")
         public String getOwnerDescription() {
             Thread t = getOwner();

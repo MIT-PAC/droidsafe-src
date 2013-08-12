@@ -33,6 +33,7 @@ public class FileClientSessionCache {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static synchronized SSLClientSessionCache usingDirectory(
             File directory) throws IOException {
         FileClientSessionCache.Impl cache = caches.get(directory);
@@ -44,7 +45,7 @@ public class FileClientSessionCache {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static synchronized void reset() {
         caches.clear();
     }
@@ -64,6 +65,7 @@ public class FileClientSessionCache {
 
         String[] initialFiles;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.522 -0400", hash_original_method = "666C086AB9DBFD99FFC100F4BBE01D6D", hash_generated_method = "7D55712EB4023DF56B73429213986B25")
           Impl(File directory) throws IOException {
             boolean exists = directory.exists();
@@ -117,6 +119,7 @@ public class FileClientSessionCache {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.524 -0400", hash_original_method = "6735B81487DB1A41BA0188585FC9CDB0", hash_generated_method = "F1D8D369D495FF93EEBD0E837836FF37")
         public synchronized byte[] getSessionData(String host, int port) {
             addTaint(port);
@@ -177,11 +180,13 @@ public class FileClientSessionCache {
         }
 
         
+        @DSModeled(DSC.SAFE)
         static void logReadError(String host, File file, Throwable t) {
             System.logW("Error reading session data for " + host + " from " + file + ".", t);
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.527 -0400", hash_original_method = "5132AE8CDA034691D0864F8896105224", hash_generated_method = "BFF37C2F2EA0041C11E08EA7E64403F1")
         public synchronized void putSessionData(SSLSession session,
                 byte[] sessionData) {
@@ -330,6 +335,7 @@ for(CacheFile cacheFile : diskOnly)
         }
 
         
+        @DSModeled(DSC.SAFE)
         static void logWriteError(String host, File file, Throwable t) {
             System.logW("Error writing session data for " + host + " to " + file + ".", t);
         }
@@ -347,6 +353,7 @@ for(CacheFile cacheFile : diskOnly)
 
         long lastModified = -1;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.532 -0400", hash_original_method = "2568A503B31BE5D3BE6A0CE416CE2454", hash_generated_method = "DD0D09E9FE4DE7B98618C520776A5376")
           CacheFile(File dir, String name) {
             super(dir, name);
@@ -357,6 +364,7 @@ for(CacheFile cacheFile : diskOnly)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.533 -0400", hash_original_method = "3C0BB5E42CA61BE7C548B702B5AC04C2", hash_generated_method = "7DD40DB553CE22AD58BB72E9EED03634")
         @Override
         public long lastModified() {
@@ -377,7 +385,7 @@ for(CacheFile cacheFile : diskOnly)
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.534 -0400", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "0482B1EDF901C6633EDCF84E69E9DEC3")
         @Override
         public int compareTo(File another) {

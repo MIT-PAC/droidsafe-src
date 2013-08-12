@@ -20,14 +20,14 @@ public class Hex {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(
         byte[]    data) {
         return encode(data, 0, data.length);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static byte[] encode(
         byte[]    data,
         int       off,
@@ -45,7 +45,7 @@ public class Hex {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int encode(
         byte[]         data,
         OutputStream   out) throws IOException {
@@ -53,7 +53,7 @@ public class Hex {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static int encode(
         byte[]         data,
         int            off,
@@ -79,7 +79,7 @@ public class Hex {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static byte[] decode(
         String    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
@@ -95,6 +95,7 @@ public class Hex {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int decode(
         String          data,
         OutputStream    out) throws IOException {

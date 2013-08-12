@@ -43,6 +43,7 @@ public class ScanResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.924 -0400", hash_original_method = "3BF3B5ECD6A260296AD88686E08D9EA2", hash_generated_method = "DA296083A9CAE597F75C983750CB051F")
     @Override
     public String toString() {
@@ -112,7 +113,8 @@ String var2460B846747F8B22185AD8BE722266A5_611380921 =         sb.toString();
 
     public static final Creator<ScanResult> CREATOR =
         new Creator<ScanResult>() {
-            public ScanResult createFromParcel(Parcel in) {
+            @DSModeled(DSC.SAFE)
+        public ScanResult createFromParcel(Parcel in) {
                 return new ScanResult(
                     in.readString(),
                     in.readString(),

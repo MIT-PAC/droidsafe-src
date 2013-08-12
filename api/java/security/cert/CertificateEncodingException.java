@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class CertificateEncodingException extends CertificateException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_method = "7001A7B06C3C6F6A9AA79A4DDBDE06C1", hash_generated_method = "9AF12C7C6EFC4619DBB2BD1EE3112CE5")
     public  CertificateEncodingException(String msg) {
         super(msg);
@@ -15,6 +16,7 @@ public class CertificateEncodingException extends CertificateException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_method = "4937F69C7A48975DF1EBD7F32A366CEE", hash_generated_method = "C2D35BC07014BC3018532FA9B69AF7DE")
     public  CertificateEncodingException() {
         // ---------- Original Method ----------
@@ -30,6 +32,7 @@ public class CertificateEncodingException extends CertificateException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_method = "A32D2B579DCEB6262CC5C2D0257C91FD", hash_generated_method = "FD7FB8602AB4B9B3545A4CE0F11FB9B6")
     public  CertificateEncodingException(Throwable cause) {
         super(cause);

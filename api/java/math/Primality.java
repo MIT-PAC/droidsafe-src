@@ -16,6 +16,7 @@ class Primality {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger nextProbablePrime(BigInteger n) {
         int i, j;
         int gapSize = 1024;

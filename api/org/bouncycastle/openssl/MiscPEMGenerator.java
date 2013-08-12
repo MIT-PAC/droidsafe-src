@@ -369,6 +369,7 @@ PemObject var79A72CD62B537839C32B7D798B57EB9A_2061589683 =         new PemObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.990 -0400", hash_original_method = "E9B86B455C150CA2FE6340A6ABEAFEB2", hash_generated_method = "97B17167D34B516229F0C99C389E5BFB")
     public PemObject generate() throws PemGenerationException {
         try 

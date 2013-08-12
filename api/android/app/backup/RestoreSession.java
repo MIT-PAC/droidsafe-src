@@ -218,6 +218,7 @@ public class RestoreSession {
 
         RestoreObserver mAppObserver;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.570 -0400", hash_original_method = "A8439BCE69D3AC67FEB783862C52DBDA", hash_generated_method = "426307F63BB5BE4469D020F36E155E90")
           RestoreObserverWrapper(Context context, RestoreObserver appObserver) {
             mHandler = new Handler(context.getMainLooper()) {            

@@ -56,6 +56,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Inet6Address getByAddress(String host, byte[] addr,
             NetworkInterface nif) throws UnknownHostException {
         Inet6Address address = Inet6Address.getByAddress(host, addr, 0);
@@ -172,6 +173,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.580 -0400", hash_original_method = "29BC59263985E8B6D4DC540BD2555DBE", hash_generated_method = "8A43ED63EAE4A4C48B464C10F4A28EE8")
     @Override
     public boolean isLoopbackAddress() {
@@ -278,6 +280,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.586 -0400", hash_original_method = "F4AA364893CE5E0A3EC053A0FC0AB68A", hash_generated_method = "59DE5967F7B2F3695E9D3B0FFA74DC95")
     public NetworkInterface getScopedInterface() {
         try 

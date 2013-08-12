@@ -29,6 +29,7 @@ public abstract class X509Certificate extends Certificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
         if (inStream == null) {
             throw new CertificateException("inStream == null");
@@ -145,6 +146,7 @@ public abstract class X509Certificate extends Certificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final X509Certificate getInstance(byte[] certData) throws CertificateException {
         if (certData == null) {
             throw new CertificateException("certData == null");

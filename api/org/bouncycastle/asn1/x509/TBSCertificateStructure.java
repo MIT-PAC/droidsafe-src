@@ -54,6 +54,7 @@ public class TBSCertificateStructure extends ASN1Encodable implements X509Object
 
     X509Extensions extensions;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.947 -0400", hash_original_method = "F026064B24F5E7FC18B81DFF22C18AC9", hash_generated_method = "5CC6E0237D1656960D6E32370721E993")
     public  TBSCertificateStructure(
         ASN1Sequence  seq) {

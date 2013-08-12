@@ -24,6 +24,7 @@ class FileBackupHelperBase {
 
     boolean mExceptionLogged;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.316 -0400", hash_original_method = "BB23E98A032BF11653E210F5716EBC1E", hash_generated_method = "69FDFADA91C028251590EF05EA12E4F2")
       FileBackupHelperBase(Context context) {
         mPtr = ctor();
@@ -126,7 +127,7 @@ class FileBackupHelperBase {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.320 -0400", hash_original_method = "13360827BDB81EDC3014ECA5973B3541", hash_generated_method = "BD99255811A7FAE29E4E7BB29BEE7A8A")
      boolean isKeyInList(String key, String[] list) {
         addTaint(list[0].getTaint());

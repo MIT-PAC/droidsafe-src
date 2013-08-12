@@ -186,6 +186,7 @@ for(int i = 0;v == null && i < vr.length;i++)
 
         private CharSequence mSource;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.526 -0400", hash_original_method = "4CDD8381D1031BF5EFE2F94225E565AD", hash_generated_method = "FCA0359EE87C92DA7B42CDF7637C2563")
         public  PasswordCharSequence(CharSequence source) {
             mSource = source;
@@ -194,6 +195,7 @@ for(int i = 0;v == null && i < vr.length;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.526 -0400", hash_original_method = "FE3E30D6F998A38B269E405486258D53", hash_generated_method = "85BB82BF79C1B59473B6C6505F5436AC")
         public int length() {
             int var9E844678846AA17EBC2ADB2098AEA729_2069438750 = (mSource.length());
@@ -204,6 +206,7 @@ for(int i = 0;v == null && i < vr.length;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.527 -0400", hash_original_method = "9EC5613B57D481274808D46BD66F08EC", hash_generated_method = "BA4DD4B62DB8BBA4931243E3E4B38520")
         public char charAt(int i) {
             addTaint(i);
@@ -242,6 +245,7 @@ for(int a = 0;a < visible.length;a++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.528 -0400", hash_original_method = "D736D7B90470DFC8C923D4B5D62B4D1D", hash_generated_method = "1E8C30D84279F6B9B98466E7BDD4D6E3")
         public CharSequence subSequence(int start, int end) {
             addTaint(end);
@@ -258,6 +262,7 @@ CharSequence var5B166C4D1D866639CF85033C2F7318C9_1296093723 =             new St
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.528 -0400", hash_original_method = "814020AAFF189164368E5EE6B0F105D9", hash_generated_method = "72ACA8AA43909EA28FA1DA05A97D40A2")
         public String toString() {
 String var2E22F76A1DF5431AD85BD69F1EB550BE_1382145842 =             subSequence(0, length()).toString();
@@ -268,6 +273,7 @@ String var2E22F76A1DF5431AD85BD69F1EB550BE_1382145842 =             subSequence(
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.530 -0400", hash_original_method = "B2B91CFAAB9E07A038BB0750D42A99E3", hash_generated_method = "E5581EFE44659864D12E624E521BC640")
         public void getChars(int start, int end, char[] dest, int off) {
             addTaint(off);
@@ -334,6 +340,7 @@ for(int a = 0;a < nvisible;a++)
 
         private PasswordTransformationMethod mTransformer;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.531 -0400", hash_original_method = "FF4274DAFF106899CDED6A946D5BF028", hash_generated_method = "F683F9098D8C1A03C876251A84ADB628")
         public  Visible(Spannable sp, PasswordTransformationMethod ptm) {
             mText = sp;
@@ -346,6 +353,7 @@ for(int a = 0;a < nvisible;a++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.531 -0400", hash_original_method = "C8775617BEE64680D27DACE05ECB8A14", hash_generated_method = "CA165B97F3ECA7B262668016C7A9F1A7")
         public void run() {
             mText.removeSpan(this);
@@ -360,6 +368,7 @@ for(int a = 0;a < nvisible;a++)
     
     private static class ViewReference extends WeakReference<View> implements NoCopySpan {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.531 -0400", hash_original_method = "8A425A895F2F15617289F8E7C481E0F9", hash_generated_method = "D83E3686AEBB4F4A1C147F503B454C57")
         public  ViewReference(View v) {
             super(v);

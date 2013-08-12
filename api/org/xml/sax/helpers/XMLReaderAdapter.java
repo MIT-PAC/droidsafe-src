@@ -125,6 +125,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.497 -0400", hash_original_method = "8AE6DA2951569D3F1B1B45FDE2C61B3C", hash_generated_method = "17B1436177E4DE56B91CAF4A0F73B451")
     public void parse(String systemId) throws IOException, SAXException {
         addTaint(systemId.getTaint());
@@ -134,6 +135,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.497 -0400", hash_original_method = "16241BDA797C9EF94AA818BE003DDED6", hash_generated_method = "BAF16683D2A3E904B6B3C7831EDDEAE4")
     public void parse(InputSource input) throws IOException, SAXException {
         addTaint(input.getTaint());

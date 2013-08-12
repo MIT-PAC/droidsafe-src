@@ -63,6 +63,7 @@ for(HeaderElement element : elements)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.475 -0400", hash_original_method = "3C8F107729ADA298748F7F0240656480", hash_generated_method = "0D39B67F5D6066EFD2E3EA279BE7A20C")
     protected Map<String, String> getParameters() {
         if(this.params == null)        
@@ -109,6 +110,7 @@ String varFBF77A7E99F84EB59C163A59DAFE14E8_92964026 =         this.params.get(na
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.476 -0400", hash_original_method = "39A90A5FE6DEA4D9B5180EC009C17361", hash_generated_method = "813663BF78B48991B1734EB381DE98AB")
     public String getRealm() {
 String var11FB4A81E0A819600072705611ABDD2B_1738849770 =         getParameter("realm");

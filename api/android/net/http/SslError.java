@@ -20,6 +20,7 @@ public class SslError {
 
     String mUrl;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.969 -0400", hash_original_method = "E54E1790034E06C2564EA8F8D322C604", hash_generated_method = "3D671E82DE6A5AE89E8DA32585619560")
     @Deprecated
     public  SslError(int error, SslCertificate certificate) {
@@ -55,6 +56,7 @@ public class SslError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.971 -0400", hash_original_method = "3533EE541F404B8ADD4D4E5426E464A7", hash_generated_method = "25D754A30D03BA1F327CFA910071D185")
     public  SslError(int error, X509Certificate certificate, String url) {
         this(error, new SslCertificate(certificate), url);
@@ -142,6 +144,7 @@ String varF1E91891753CD7C4305CCDECB60B9DDF_1423485154 =         mUrl;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.974 -0400", hash_original_method = "3A5499989FF366B2E4D135ECA3891E4C", hash_generated_method = "0E4EE6A079FD129D04AFF39CEF8455CE")
     public int getPrimaryError() {
         if(mErrors != 0)        
@@ -172,6 +175,7 @@ for(int error = SslError.SSL_MAX_ERROR - 1;error >= 0;--error)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.975 -0400", hash_original_method = "18A0C6CD1FD66E60B7FF0A9F205CF54C", hash_generated_method = "019791C6F46C7600CA7B6B558E51547D")
     public String toString() {
 String varBC2B8F20611E6C15A9DE58D1BABCFAD6_151235070 =         "primary error: " + getPrimaryError() +

@@ -13,6 +13,7 @@ public class DrmException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.338 -0400", hash_original_method = "8E7A7AD1E370694486A4B27CB4185F34", hash_generated_method = "E708A30560EB3C2DDDB508C610106F04")
     public  DrmException(String message) {
         super(message);

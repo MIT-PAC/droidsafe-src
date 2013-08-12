@@ -16,6 +16,7 @@ public class AuthenticationException extends ProtocolException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.323 -0400", hash_original_method = "42EE7D04E120D0BA05395B903F4DA9F5", hash_generated_method = "30CBF0C1BC505746267B43CC6B065512")
     public  AuthenticationException(String message) {
         super(message);

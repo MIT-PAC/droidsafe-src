@@ -25,6 +25,7 @@ public class PeriodicSync implements Parcelable {
 
     public long period;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.710 -0400", hash_original_method = "34D447B50A8BF0311FD91158BAB8271D", hash_generated_method = "8811081678FE37BAFD2ECD5814D13257")
     public  PeriodicSync(Account account, String authority, Bundle extras, long period) {
         this.account = account;
@@ -50,6 +51,7 @@ public class PeriodicSync implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.712 -0400", hash_original_method = "D77F1A5B85A714E7D78D3A9001CC9547", hash_generated_method = "6FEC3E8CA67B12F2B83AD9792E783FFE")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -66,6 +68,7 @@ public class PeriodicSync implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.713 -0400", hash_original_method = "05CC89CFE228C27B7E04895576ABC3FB", hash_generated_method = "8BADAAD2CE5545EF275D6AAC08B16651")
     public boolean equals(Object o) {
         addTaint(o.getTaint());

@@ -245,6 +245,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int indexOfValue(E value){
 		return getTaintInt();
 		// Original method

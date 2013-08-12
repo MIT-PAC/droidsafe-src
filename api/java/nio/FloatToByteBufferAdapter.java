@@ -34,6 +34,7 @@ final class FloatToByteBufferAdapter extends FloatBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.051 -0400", hash_original_method = "3FF4AF57EF2BE2D13954C1B0FC09E489", hash_generated_method = "6172AB5614A880B1F315F558628849D4")
     @Override
     public FloatBuffer asReadOnlyBuffer() {
@@ -55,6 +56,7 @@ FloatBuffer var0D8E466677B8F245666E1A4B1E0924E6_542590624 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.052 -0400", hash_original_method = "FBAC0D7CFE3E15F2BC0CE6753022B0DD", hash_generated_method = "BA63AC6EA736A6E95D009DB5F0D5C9FB")
     @Override
     public FloatBuffer compact() {
@@ -111,6 +113,7 @@ FloatBuffer var0D8E466677B8F245666E1A4B1E0924E6_1700755035 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.053 -0400", hash_original_method = "B6EAE0A3183D6C7B7623279A287B061F", hash_generated_method = "ABD008CB430D35718954ECBC0E4A5FAE")
     @Override
     public float get() {
@@ -131,6 +134,7 @@ FloatBuffer var0D8E466677B8F245666E1A4B1E0924E6_1700755035 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.054 -0400", hash_original_method = "230A68E38935998751EB725110E55452", hash_generated_method = "F870B6F3C50CE348CA07265D75E77123")
     @Override
     public float get(int index) {
@@ -179,6 +183,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_404789400 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.055 -0400", hash_original_method = "78E98F36E3D964482B56C152BAA7846E", hash_generated_method = "D8AA6DC5B841C8D1AF1B77DBD6844B7D")
     @Override
     public boolean isDirect() {
@@ -190,6 +195,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_404789400 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.056 -0400", hash_original_method = "A5873C4C7FD9475A7CC3E2D0E938541A", hash_generated_method = "E6B2758D55DABD6EF88C2DD65F7C800B")
     @Override
     public boolean isReadOnly() {
@@ -201,6 +207,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_404789400 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.056 -0400", hash_original_method = "DBC83B570884A1A98A3F46EF314D6E4A", hash_generated_method = "35215D0D98743E26FFDB4ADE25048A4D")
     @Override
     public ByteOrder order() {
@@ -212,6 +219,7 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1081774637 =         byteBuffer.or
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.056 -0400", hash_original_method = "B84097C1EE35CBEC4451B3A83458D5FB", hash_generated_method = "0197CB3E76D9C5E2E5A36C8D26BE7BE9")
     @Override
     protected float[] protectedArray() {
@@ -223,6 +231,7 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1081774637 =         byteBuffer.or
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.057 -0400", hash_original_method = "11D0A2FFE917F2CC89FA6C9EBE3FCE7F", hash_generated_method = "2B1EEF269C66D778C66C8A9EA7E4F170")
     @Override
     protected int protectedArrayOffset() {
@@ -246,6 +255,7 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1081774637 =         byteBuffer.or
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.057 -0400", hash_original_method = "BFCE73D0BEC9C4C5044FD718D90FCD3E", hash_generated_method = "3905C28FAAD37FFCA9DA1947A71AB03C")
     @Override
     public FloatBuffer put(float c) {
@@ -269,6 +279,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_448555155 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.058 -0400", hash_original_method = "031128B9243B4CE1487F7A32DBB76678", hash_generated_method = "E2D2B442750F66454290791592A40CDC")
     @Override
     public FloatBuffer put(int index, float c) {

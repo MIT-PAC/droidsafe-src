@@ -23,6 +23,7 @@ abstract class ValueParser {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static CommandDetails retrieveCommandDetails(ComprehensionTlv ctlv) throws ResultException {
         CommandDetails cmdDet = new CommandDetails();
         byte[] rawValue = ctlv.getRawValue();
@@ -69,7 +70,7 @@ abstract class ValueParser {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
         Item item = null;
         byte[] rawValue = ctlv.getRawValue();
@@ -90,6 +91,7 @@ abstract class ValueParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int retrieveItemId(ComprehensionTlv ctlv) throws ResultException {
         int id = 0;
         byte[] rawValue = ctlv.getRawValue();
@@ -103,7 +105,7 @@ abstract class ValueParser {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static IconId retrieveIconId(ComprehensionTlv ctlv) throws ResultException {
         IconId id = new IconId();
         byte[] rawValue = ctlv.getRawValue();
@@ -118,7 +120,7 @@ abstract class ValueParser {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static ItemsIconId retrieveItemsIconId(ComprehensionTlv ctlv) throws ResultException {
         CatLog.d("ValueParser", "retrieveItemsIconId:");
         ItemsIconId id = new ItemsIconId();
@@ -177,7 +179,7 @@ abstract class ValueParser {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static String retrieveAlphaId(ComprehensionTlv ctlv) throws ResultException {
         if (ctlv != null) {
             byte[] rawValue = ctlv.getRawValue();
@@ -199,6 +201,7 @@ abstract class ValueParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String retrieveTextString(ComprehensionTlv ctlv) throws ResultException {
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();

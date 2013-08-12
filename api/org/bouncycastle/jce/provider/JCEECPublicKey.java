@@ -55,6 +55,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
 
     private boolean withCompression;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.654 -0400", hash_original_method = "9E7728C1623EC94B5D37FACBA5DD3318", hash_generated_method = "327156E540554B6E64088EADD09A1AA5")
     public  JCEECPublicKey(
         String              algorithm,
@@ -71,7 +72,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.654 -0400", hash_original_method = "A5616D4D55CEB63F772F9CBA3C1DFD14", hash_generated_method = "F0E18FE70983065F38D66BBCC1D37881")
     public  JCEECPublicKey(
         String              algorithm,
@@ -86,7 +87,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.655 -0400", hash_original_method = "111BFFE89DFF28BACA95639C99C739E4", hash_generated_method = "DA5A9316F343B2974C9F9C723F746697")
     public  JCEECPublicKey(
         String              algorithm,
@@ -129,6 +130,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.656 -0400", hash_original_method = "55746F5B590BA5E7E6F86647B2880B63", hash_generated_method = "2C0036D42620838F47761AA7BD78455B")
     public  JCEECPublicKey(
         String                  algorithm,
@@ -162,6 +164,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.657 -0400", hash_original_method = "DB4C98F6CA9631B3AF629189844FA51E", hash_generated_method = "E96C3A560222EA73AA62606C6E52167A")
     public  JCEECPublicKey(
         String                  algorithm,
@@ -197,6 +200,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.658 -0400", hash_original_method = "493E6C6367259B3C767DD7B0D44CD4AE", hash_generated_method = "634D67CD4940A417D642DCB8EEDC2CFC")
     public  JCEECPublicKey(
         String                  algorithm,
@@ -211,6 +215,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.659 -0400", hash_original_method = "48FEA81B6DD226AC77A269B6C1D0920E", hash_generated_method = "88F95272856F11D242A41CB37C342F8B")
     public  JCEECPublicKey(
         ECPublicKey     key) {
@@ -224,6 +229,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.659 -0400", hash_original_method = "E3331AE678062C5B5D7432BD6E2A836D", hash_generated_method = "C3AD784478B0C86AF86FFE5C65E107D3")
       JCEECPublicKey(
         SubjectPublicKeyInfo    info) {
@@ -352,6 +358,7 @@ String varF820115C876B7F160DE375988A3E1CA1_653130863 =         "X.509";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.663 -0400", hash_original_method = "B91F24351022908E98D855E5218CDAAE", hash_generated_method = "36FCE3D113FF99BC15D5555C269222F9")
     public byte[] getEncoded() {
         ASN1Encodable params;
@@ -438,6 +445,7 @@ ECParameterSpec var2050BD22F02FAF79E0E50E99F724B032_2045543333 =         ecSpec;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.664 -0400", hash_original_method = "81096D9364BAA8B516E2B6B9D2CC7FA4", hash_generated_method = "83177AB44F81B50CA02F6C464165606D")
     public org.bouncycastle.jce.spec.ECParameterSpec getParameters() {
     if(ecSpec == null)        
@@ -458,7 +466,7 @@ org.bouncycastle.jce.spec.ECParameterSpec var50F76CD4865FC2697FA8B52025D95BD0_28
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.665 -0400", hash_original_method = "FA9E01D5B24E77318273BFF81F13FFEE", hash_generated_method = "7465D659EA5019735F99CBC64A5E7535")
     public ECPoint getW() {
 ECPoint varAC1ED615D9C1C7CE6EB4F0B7D3687588_557535968 =         new ECPoint(q.getX().toBigInteger(), q.getY().toBigInteger());
@@ -469,6 +477,7 @@ ECPoint varAC1ED615D9C1C7CE6EB4F0B7D3687588_557535968 =         new ECPoint(q.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.665 -0400", hash_original_method = "7DB4A3AB35CAAC289E69D3DC0703DC49", hash_generated_method = "263E2215006D7DD91BEAE7CC638D6233")
     public org.bouncycastle.math.ec.ECPoint getQ() {
     if(ecSpec == null)        
@@ -516,6 +525,7 @@ org.bouncycastle.math.ec.ECPoint varBEF1B7662E10AF6D5747729987514CB6_605569573 =
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.666 -0400", hash_original_method = "EA50C6AAC98F0F1C8DE39B8B441A0904", hash_generated_method = "ED3B766F87F10344E295C96B377D0C24")
      org.bouncycastle.jce.spec.ECParameterSpec engineGetSpec() {
     if(ecSpec != null)        
@@ -536,7 +546,7 @@ org.bouncycastle.jce.spec.ECParameterSpec var24C37D3B3F7EADB894890AFBF82C4655_18
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.666 -0400", hash_original_method = "DA24BA2CA85DFA6FE167BE0F082D0E3F", hash_generated_method = "440796CAF0E07B1174B53036B8A6EB4D")
     public String toString() {
         StringBuffer buf = new StringBuffer();
@@ -557,6 +567,7 @@ String var4FC680801218E6372BC708D6FA44AE60_947856697 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.666 -0400", hash_original_method = "EACE99DE9593101E486E698F887836BD", hash_generated_method = "C875AD2160A133E587C0A6CA363211F7")
     public void setPointFormat(String style) {
         withCompression = !("UNCOMPRESSED".equalsIgnoreCase(style));
@@ -565,7 +576,7 @@ String var4FC680801218E6372BC708D6FA44AE60_947856697 =         buf.toString();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.667 -0400", hash_original_method = "D60F50DFADDF83A04F7A401D33CE399D", hash_generated_method = "5B38B8366E6481BCB5E8753990F2F11F")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -589,7 +600,7 @@ String var4FC680801218E6372BC708D6FA44AE60_947856697 =         buf.toString();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.667 -0400", hash_original_method = "218BA141B3E48ED89E83DD04DDAC204C", hash_generated_method = "5A9394344987178F6EF97CD67E12AA58")
     public int hashCode() {
         int varE96486F0260DE6367039D0E23462B514_1414124825 = (engineGetQ().hashCode() ^ engineGetSpec().hashCode());

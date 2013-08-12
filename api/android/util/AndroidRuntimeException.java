@@ -21,6 +21,7 @@ public class AndroidRuntimeException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.493 -0400", hash_original_method = "396EB52B778995BFC6A3E50EA6AAC7F8", hash_generated_method = "8A62753D66FF37E1294D3C8B679C60AE")
     public  AndroidRuntimeException(String name, Throwable cause) {
         super(name, cause);
@@ -30,6 +31,7 @@ public class AndroidRuntimeException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.493 -0400", hash_original_method = "ED4D86824E00309868D3D3E5627C1A8D", hash_generated_method = "30786B2133AD70CFDE4A2E8623A37974")
     public  AndroidRuntimeException(Exception cause) {
         super(cause);

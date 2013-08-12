@@ -36,6 +36,7 @@ public final class NativeBreakIterator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.961 -0400", hash_original_method = "E8D9FE5FD19A07CF96575F06CB3EDCC6", hash_generated_method = "41F4221F4381A979E36022ACD0335D33")
     @Override
     public Object clone() {
@@ -98,6 +99,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_2068761953 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.963 -0400", hash_original_method = "208EB0EBF488A5AB652AF86235D70FBD", hash_generated_method = "4840C7CD141C8487FE191FCFD53D4997")
     @Override
     protected void finalize() throws Throwable {
@@ -138,6 +140,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_2068761953 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.964 -0400", hash_original_method = "C67E0BB38B934A66B534DF84C290EF97", hash_generated_method = "696B7F9A8DEB0CA0D3B98DB5F85FE14F")
     public int following(int offset) {
         addTaint(offset);
@@ -149,6 +152,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_2068761953 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.964 -0400", hash_original_method = "9A8EEEA70A76B239B3603BC6AAF004E0", hash_generated_method = "BE7EF5ACC9329C84CA0BDCEFCAE6732C")
     public CharacterIterator getText() {
         int newLoc = currentImpl(this.address);
@@ -173,6 +177,7 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_598191397 =         this.c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.965 -0400", hash_original_method = "E523A5922365CD35E7F7E6CDEBFA4659", hash_generated_method = "CD62214EDCDAC78577B2F8533F5FFB59")
     public int next(int n) {
         addTaint(n);
@@ -222,6 +227,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.966 -0400", hash_original_method = "67F081416AECF904EEC9E927DC093231", hash_generated_method = "632CAEA82ADC164E706623FA284F0A6A")
     public void setText(String newText) {
         addTaint(newText.getTaint());
@@ -243,6 +249,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.967 -0400", hash_original_method = "CA983FC19E9238FC0FEBBD9EADAED98D", hash_generated_method = "4D3F8696DAB80C2640B6363D670C6AA5")
     public boolean isBoundary(int offset) {
         addTaint(offset);
@@ -254,6 +261,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.968 -0400", hash_original_method = "C0EEB96929CAD1AA71A6080EC44F9C10", hash_generated_method = "235B4AE0F9F1FEE29E2A9C1BD9C26B45")
     public int preceding(int offset) {
         addTaint(offset);
@@ -265,6 +273,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NativeBreakIterator getCharacterInstance(Locale where) {
         return new NativeBreakIterator(getCharacterInstanceImpl(where.toString()), BI_CHAR_INSTANCE);
     }
@@ -280,6 +289,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static NativeBreakIterator getWordInstance(Locale where) {
         return new NativeBreakIterator(getWordInstanceImpl(where.toString()), BI_WORD_INSTANCE);
     }

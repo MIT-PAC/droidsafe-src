@@ -135,6 +135,7 @@ for(int i = 0;i < addresses.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.056 -0400", hash_original_method = "50D4F2062BD74B4850A586FC88599309", hash_generated_method = "B63879B3617FE401C7B93A2945C0011E")
     public void closeSocketAndStreams() {
         IoUtils.closeQuietly(sslOutputStream);
@@ -153,6 +154,7 @@ for(int i = 0;i < addresses.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.056 -0400", hash_original_method = "8353DEF033DB8B4F652D08F1BE7D5FB2", hash_generated_method = "A82B590F32C47AA40176D8DE6DF154BE")
     public void setSoTimeout(int readTimeout) throws SocketException {
         addTaint(readTimeout);
@@ -162,6 +164,7 @@ for(int i = 0;i < addresses.length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.057 -0400", hash_original_method = "97D9B93978E46D1095C2BFB6FD92F6AE", hash_generated_method = "6243C455A95F7D557F1691DF0CEC3675")
     public OutputStream getOutputStream() throws IOException {
         if(sslSocket != null)        
@@ -195,6 +198,7 @@ OutputStream var864D919353B9AF56DB2472A4EBA3E730_1521542894 =         outputStre
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.058 -0400", hash_original_method = "1360CB9715FEE0D075363C3EF21DD92C", hash_generated_method = "8A681DE61204B0FDCD851D230BE6F165")
     public InputStream getInputStream() throws IOException {
         if(sslSocket != null)        
@@ -256,6 +260,7 @@ Address var814577DDD37BAFB17E08CBEFDB411BAE_1472473947 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.059 -0400", hash_original_method = "15C1B21595200C1DF5857AC28380107D", hash_generated_method = "27A65744B31750F4886100F50B65BF2E")
     public void setupSecureSocket(SSLSocketFactory sslSocketFactory, boolean tlsTolerant) throws IOException {
         addTaint(tlsTolerant);
@@ -322,6 +327,7 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_1898224470 =         sslSocket;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.061 -0400", hash_original_method = "197418179C71EABCF647B3FA4C9F9D3C", hash_generated_method = "83A97AD7B1D1D8A6EAFD61ED055C433D")
      boolean isStale() throws IOException {
         if(!isEligibleForRecycling())        
@@ -400,6 +406,7 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_1898224470 =         sslSocket;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.062 -0400", hash_original_method = "10486D7D4909022462833E73661236C1", hash_generated_method = "60178B2D7712052FE0A0169A471187A2")
     protected boolean isEligibleForRecycling() {
         boolean var69C69396EB6626A84180EE6B19182F45_861827237 = (!socket.isClosed()
@@ -498,6 +505,7 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_2016208590 =             proxy;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.064 -0400", hash_original_method = "104FF09B2C80755ABB27A6E9EA994C0B", hash_generated_method = "4F5CA80BED764562E46CAD5AF5A86FD5")
         @Override
         public boolean equals(Object other) {
@@ -527,6 +535,7 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_2016208590 =             proxy;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.065 -0400", hash_original_method = "03AAE27C923B9ECFDFA09DAEE6900F4B", hash_generated_method = "A569881A9C9F55CDEA6518A93724E4A7")
         @Override
         public int hashCode() {
@@ -548,6 +557,7 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_2016208590 =             proxy;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.065 -0400", hash_original_method = "D7960E9C2008885C55D097BA1D2C0C2A", hash_generated_method = "F1740999DF04BF7AAA5DB58701CF9A56")
         public HttpConnection connect(int connectTimeout) throws IOException {
             addTaint(connectTimeout);

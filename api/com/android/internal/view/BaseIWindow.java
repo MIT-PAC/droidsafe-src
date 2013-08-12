@@ -39,6 +39,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.099 -0400", hash_original_method = "B78D43805956C22534D670D6CA75C80F", hash_generated_method = "E3504CC2FAB86F9BCD12A074399509B0")
     public void resized(int w, int h, Rect coveredInsets,
             Rect visibleInsets, boolean reportDraw, Configuration newConfig) {
@@ -110,6 +111,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.099 -0400", hash_original_method = "5012B02F4729E57505C4DA5AF3CD3EF7", hash_generated_method = "ADEB70EEEC9B6B5628AB2DAC02FDA882")
     public void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep, boolean sync) {
         addTaint(sync);
@@ -158,6 +160,7 @@ public class BaseIWindow extends IWindow.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.100 -0400", hash_original_method = "CCCF2ED340559A471760B73050C6F938", hash_generated_method = "3991F28ACBAEE20A60BACB2F4EFDBDDE")
     public void dispatchWallpaperCommand(String action, int x, int y,
             int z, Bundle extras, boolean sync) {

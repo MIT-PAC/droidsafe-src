@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 public final class AllPermission extends Permission {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.780 -0400", hash_original_method = "09A3FF901F6A2CF2EED3134C2EAC6A79", hash_generated_method = "E22C358DE3BB8BF580C61BABF15F3F8C")
     public  AllPermission(String name, String actions) {
         super("");
@@ -17,6 +18,7 @@ public final class AllPermission extends Permission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.780 -0400", hash_original_method = "8D01BAC0F6DD766A4223D24BBCA0691E", hash_generated_method = "DA55DE73D4BB8B2A20910679600CE1D4")
     public  AllPermission() {
         super("");

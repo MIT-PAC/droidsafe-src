@@ -83,6 +83,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isDebuggerConnected() {
         return VMDebug.isDebuggerConnected();
     }
@@ -100,6 +101,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startNativeTracing() {
         PrintWriter outStream = null;
         try {
@@ -135,21 +137,25 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing() {
         VMDebug.startMethodTracing(DEFAULT_TRACE_FILE_PATH, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing(String traceName) {
         startMethodTracing(traceName, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing(String traceName, int bufferSize) {
         startMethodTracing(traceName, bufferSize, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startMethodTracing(String traceName, int bufferSize,
         int flags) {
         String pathName = traceName;
@@ -180,16 +186,19 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopMethodTracing() {
         VMDebug.stopMethodTracing();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long threadCpuTimeNanos() {
         return VMDebug.threadCpuTimeNanos();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startAllocCounting() {
         VMDebug.startAllocCounting();
     }
@@ -463,11 +472,13 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getLoadedClassCount() {
         return VMDebug.getLoadedClassCount();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dumpHprofData(String fileName) throws IOException {
         VMDebug.dumpHprofData(fileName);
     }
@@ -602,6 +613,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setFieldsOn(Class<?> cl) {
         setFieldsOn(cl, false);
     }
@@ -631,6 +643,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean dumpService(String name, FileDescriptor fd, String[] args) {
         IBinder service = ServiceManager.getService(name);
         if (service == null) {
@@ -679,6 +692,7 @@ public final class Debug {
 
         private int[] otherStats = new int[NUM_OTHER_STATS*3];
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.995 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
         public  MemoryInfo() {
             // ---------- Original Method ----------
@@ -792,6 +806,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.997 -0400", hash_original_method = "D2FBA6C4AE93947F6ACE85B65AE77863", hash_generated_method = "F58315AEC824B84589C1CECB12B2445B")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -820,6 +835,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.998 -0400", hash_original_method = "3814E1A02C58284E12D5ED0E53DE29C9", hash_generated_method = "B59CAD56B8683A7B77C9659536173B0C")
         public void readFromParcel(Parcel source) {
             dalvikPss = source.readInt();
@@ -855,6 +871,7 @@ public final class Debug {
             public MemoryInfo createFromParcel(Parcel source) {
                 return new MemoryInfo(source);
             }
+            @DSModeled(DSC.SAFE)
             public MemoryInfo[] newArray(int size) {
                 return new MemoryInfo[size];
             }
@@ -878,6 +895,7 @@ public final class Debug {
 
         private int[] mCounts;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.999 -0400", hash_original_method = "409452CAAA99AF062D1B45C0A8D86C97", hash_generated_method = "5D14DE560AC6781B6BEDE1D45CC48926")
         public  InstructionCount() {
             mCounts = new int[NUM_INSTR];
@@ -886,6 +904,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.999 -0400", hash_original_method = "B55CA2C4A856CEE2241376D780EDBADA", hash_generated_method = "BEC4781F607857548ADEE704A65B40DD")
         public boolean resetAndStart() {
             try 
@@ -913,6 +932,7 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.999 -0400", hash_original_method = "5FCC8E6F7C9E5A23FBCB0A1615F5BC2D", hash_generated_method = "539BC3B70DE0AA20CF045F91862BFC3D")
         public boolean collect() {
             try 
@@ -960,6 +980,7 @@ for(int i = 0;i < NUM_INSTR;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.000 -0400", hash_original_method = "6746067FD45AAE4025CD0901FF5AA3FC", hash_generated_method = "1E651EEBF8830D0739CB44C5F4A64D4F")
         public int globalMethodInvocations() {
             int count = 0;

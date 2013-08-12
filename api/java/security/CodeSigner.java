@@ -105,6 +105,7 @@ Timestamp var7D8A855DA9A411559B05DE99C498CFFA_1360587763 =         timestamp;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.817 -0400", hash_original_method = "4C01119C48849B3B8C0F3B7EFA427DC4", hash_generated_method = "93110F779EC09B9E0A081FB48F2E0DFF")
     @Override
     public int hashCode() {
@@ -125,6 +126,7 @@ Timestamp var7D8A855DA9A411559B05DE99C498CFFA_1360587763 =         timestamp;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.818 -0400", hash_original_method = "9AD37782FDC32A71B028636E3AD750B0", hash_generated_method = "2ECEC630BEE12DC6988977EF1D7CF9B3")
     @Override
     public String toString() {

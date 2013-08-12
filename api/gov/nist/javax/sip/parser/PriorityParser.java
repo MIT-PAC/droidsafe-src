@@ -32,6 +32,7 @@ public class PriorityParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.334 -0400", hash_original_method = "9ECC1E43903CC22F0322E70EF9078767", hash_generated_method = "3AE05C420B25962F029BA0831CF197DC")
     public SIPHeader parse() throws ParseException {
         if(debug)        

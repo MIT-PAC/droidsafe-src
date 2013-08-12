@@ -39,6 +39,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.175 -0400", hash_original_method = "4C7FF3D19CAA5E8142F763BAEAB400A6", hash_generated_method = "4230E210F4FAC30E7BF77992BDC61E96")
     public  StreamResult(Writer writer) {
         addTaint(writer.getTaint());
@@ -48,6 +49,7 @@ public class StreamResult implements Result {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.175 -0400", hash_original_method = "CE70A50578573A39D0EE1A321E1352B9", hash_generated_method = "6596525B6F4518BD897D217812ABED11")
     public  StreamResult(String systemId) {
         this.systemId = systemId;
@@ -114,6 +116,7 @@ Writer varF684C05FE6F21143B285791952B93F74_359198972 =         writer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.180 -0400", hash_original_method = "30231F16AB3AB378740EA121A3BAEA6C", hash_generated_method = "15625C9663782FB88EBA4526C2B24DF7")
     public void setSystemId(File f) {
         this.systemId = FilePathToURI.filepath2URI(f.getAbsolutePath());

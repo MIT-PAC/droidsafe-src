@@ -247,6 +247,7 @@ Calendar varF9E19AD6135C970F387F77C6F3DE4477_2097602687 =             retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.703 -0400", hash_original_method = "D87C47C2DE06FF746589C19C83F3FD66", hash_generated_method = "2E11EC9653BF46F0689F72C24EFBBA8D")
     public SIPHeader parse() throws ParseException {
         String name = lexer.getNextToken(':');

@@ -152,6 +152,7 @@ public class PopupWindow {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.470 -0400", hash_original_field = "8AA9181EAEA04588ABD6B3AB55C1B57C", hash_generated_field = "2B651957906EF3EE2A8FF3D73794B10C")
 
     private OnScrollChangedListener mOnScrollChangedListener = new OnScrollChangedListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.470 -0400", hash_original_method = "8F0CC5ACEB252AEA9146DA3982ED4810", hash_generated_method = "7EF06A3B1EE135961B1267F768F6EA1D")
         public void onScrollChanged() {
             
@@ -542,7 +543,7 @@ View var11075ABCE34FC88A4EDC97AAF35631A1_429390533 =         mContentView;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.958 -0400", hash_original_method = "86AECB53D9496C7054030FB1672ECE9B", hash_generated_method = "235F8CA48AA18F6B969B7FF20C467B2E")
     public void setClipToScreenEnabled(boolean enabled) {
         mClipToScreen = enabled;
@@ -724,7 +725,7 @@ View var11075ABCE34FC88A4EDC97AAF35631A1_429390533 =         mContentView;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.961 -0400", hash_original_method = "B99D3AF8D05FDFEAE8059FF95B29B82E", hash_generated_method = "2064F738DADB98055539D689675E4F6D")
     public void showAtLocation(IBinder token, int gravity, int x, int y) {
         addTaint(y);
@@ -824,7 +825,7 @@ View var11075ABCE34FC88A4EDC97AAF35631A1_429390533 =         mContentView;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.962 -0400", hash_original_method = "ACCF8C7A05331E8E4B71A7F0F84ED581", hash_generated_method = "CAA5036FDDA279823E0427DD3CD26139")
     private void updateAboveAnchor(boolean aboveAnchor) {
         if(aboveAnchor != mAboveAnchor)        
@@ -878,7 +879,7 @@ View var11075ABCE34FC88A4EDC97AAF35631A1_429390533 =         mContentView;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.962 -0400", hash_original_method = "DA370B626B41FE86866E281D10A5B6B7", hash_generated_method = "80D9F62914B43AE659101D517B30575D")
     private void preparePopup(WindowManager.LayoutParams p) {
         if(mContentView == null || mContext == null || mWindowManager == null)        
@@ -916,7 +917,7 @@ View var11075ABCE34FC88A4EDC97AAF35631A1_429390533 =         mContentView;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.963 -0400", hash_original_method = "CC3762287DEDA3D715BCCB052800207D", hash_generated_method = "CBBF314CC288E7D7A9D0C8281FC03F65")
     private void invokePopup(WindowManager.LayoutParams p) {
         addTaint(p.getTaint());
@@ -935,7 +936,7 @@ View var11075ABCE34FC88A4EDC97AAF35631A1_429390533 =         mContentView;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.963 -0400", hash_original_method = "D97E1B6317AF67D9DC41A6FB19D27D69", hash_generated_method = "E683C62CC2BA4262EB8CB40E5F245F0B")
     private WindowManager.LayoutParams createPopupLayout(IBinder token) {
         addTaint(token.getTaint());
@@ -978,7 +979,7 @@ WindowManager.LayoutParams var74E4690D9F2A026504928C017944E149_1910176166 =     
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.964 -0400", hash_original_method = "731A130870E20EEF0406E3AA79CC1D53", hash_generated_method = "3CA7A835F7BCF6C7D660291992926DE5")
     private int computeFlags(int curFlags) {
         addTaint(curFlags);
@@ -1076,7 +1077,7 @@ WindowManager.LayoutParams var74E4690D9F2A026504928C017944E149_1910176166 =     
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.965 -0400", hash_original_method = "5A11C37B27567E510AD1092CF1C461D0", hash_generated_method = "6B51A85D0CCDB490A89005163B9C95D5")
     private boolean findDropDownPosition(View anchor, WindowManager.LayoutParams p,
             int xoff, int yoff) {
@@ -1182,7 +1183,7 @@ WindowManager.LayoutParams var74E4690D9F2A026504928C017944E149_1910176166 =     
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.966 -0400", hash_original_method = "6127242297D2005B4B3434B0EF072B4C", hash_generated_method = "69C44E8B4530A85A58689C8EB424391C")
     public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomDecorations) {
         addTaint(ignoreBottomDecorations);
@@ -1434,7 +1435,7 @@ WindowManager.LayoutParams var74E4690D9F2A026504928C017944E149_1910176166 =     
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.969 -0400", hash_original_method = "F5290879A773899EB945D797134BA900", hash_generated_method = "2FB71EBE90CCE13AF11BE8FF18C9359A")
     private void update(View anchor, boolean updateLocation, int xoff, int yoff,
             boolean updateDimension, int width, int height) {

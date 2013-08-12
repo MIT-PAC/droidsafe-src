@@ -35,7 +35,7 @@ final class CertTool {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static String getSignedPublicKey(Context context, int index, String challenge) {
         try {
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
@@ -54,11 +54,13 @@ final class CertTool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void addCertificate(Context context, String type, byte[] value) {
         Credentials.getInstance().install(context, type, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String getCertType(String mimeType) {
         return sCertificateTypeMap.get(mimeType);
     }

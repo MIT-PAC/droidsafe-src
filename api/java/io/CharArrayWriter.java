@@ -17,6 +17,7 @@ public class CharArrayWriter extends Writer {
 
     protected int count;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.536 -0400", hash_original_method = "C9452FB9491532C2A6C52BB5B3D25E39", hash_generated_method = "D4173DDAE8E1B17586789B3DC5C61CB6")
     public  CharArrayWriter() {
         buf = new char[32];
@@ -27,6 +28,7 @@ public class CharArrayWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.536 -0400", hash_original_method = "71C0EC52128D22FED2D8659A81B00E37", hash_generated_method = "95846B6CBCB309B95BD87C66439564E2")
     public  CharArrayWriter(int initialSize) {
         if(initialSize < 0)        
@@ -115,6 +117,7 @@ public class CharArrayWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.539 -0400", hash_original_method = "A3DCAA229974F9979554B7E0F1F4EF9F", hash_generated_method = "C983CD6DF37E752B3104C012C31217D9")
     public char[] toCharArray() {
         synchronized
@@ -134,6 +137,7 @@ public class CharArrayWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.540 -0400", hash_original_method = "F9B2EF7C65F2F351A8955F413D7A1883", hash_generated_method = "A652D21F1F13D33BC318A2593F7BE013")
     @Override
     public String toString() {
@@ -229,6 +233,7 @@ String var284A4624AC5D82C1992013009E0FB870_1543673132 =             new String(b
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.545 -0400", hash_original_method = "C2C534AA9A22A4D0AC70B4A5DCDA6B73", hash_generated_method = "976D255417FDBD01A50A18B545A0465B")
     public void writeTo(Writer out) throws IOException {
         addTaint(out.getTaint());
@@ -243,6 +248,7 @@ String var284A4624AC5D82C1992013009E0FB870_1543673132 =             new String(b
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.545 -0400", hash_original_method = "98F1E9A8C1E20678242580E2421D983C", hash_generated_method = "A8BC0D21ADD4AA9268A04C80AE17824D")
     @Override
     public CharArrayWriter append(char c) {
@@ -257,6 +263,7 @@ CharArrayWriter var72A74007B2BE62B849F475C7BDA4658B_944290908 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.546 -0400", hash_original_method = "B584B42D7A9874698AA3457A3A1D3154", hash_generated_method = "64FD201C87F90BB5D0949B18FAF5022B")
     @Override
     public CharArrayWriter append(CharSequence csq) {
@@ -278,6 +285,7 @@ CharArrayWriter var72A74007B2BE62B849F475C7BDA4658B_1607931057 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.547 -0400", hash_original_method = "A1054C6BA24908274B5EEDCC4DAC29F7", hash_generated_method = "11607D1BDAA0C35A89D3B52693209C00")
     @Override
     public CharArrayWriter append(CharSequence csq, int start, int end) {

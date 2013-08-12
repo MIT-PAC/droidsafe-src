@@ -362,6 +362,7 @@ ByteOrder var23C56E10BB5D9B298C705EBA6A502E06_1381362824 =         order;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.275 -0400", hash_original_method = "56B1D3E8961AB315D57FF8A49B63D4AB", hash_generated_method = "320DBC1BBDD53E2D4302779C4285AE40")
     public final ByteBuffer order(ByteOrder byteOrder) {
         addTaint(byteOrder.getTaint());

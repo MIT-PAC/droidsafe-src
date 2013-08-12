@@ -15,6 +15,7 @@ public class AsymmetricCipherKeyPair {
 
     private CipherParameters privateParam;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.425 -0400", hash_original_method = "65CF8F80B3A8FEDFD01C4D97F9AE7A45", hash_generated_method = "9254BC4FB058F17973370B2458B88E7F")
     public  AsymmetricCipherKeyPair(
         CipherParameters    publicParam,

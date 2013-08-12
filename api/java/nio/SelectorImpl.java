@@ -63,6 +63,7 @@ final class SelectorImpl extends AbstractSelector {
 
     private final UnsafeArrayList<StructPollfd> pollFds = new UnsafeArrayList<StructPollfd>(StructPollfd.class, 8);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.863 -0400", hash_original_method = "E76FB669EB1C2C846C756C0996AB21F1", hash_generated_method = "0D9E1647B78BE0B9097C1A41C340E265")
     public  SelectorImpl(SelectorProvider selectorProvider) throws IOException {
         super(selectorProvider);
@@ -96,6 +97,7 @@ final class SelectorImpl extends AbstractSelector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.863 -0400", hash_original_method = "79B2402F6F8D60BF0FF9B9A0443FD747", hash_generated_method = "70E27ED7321DB7468FFF319F085D615D")
     @Override
     protected void implCloseSelector() throws IOException {
@@ -175,6 +177,7 @@ SelectionKey var4F9CDD7F2704ACF6152924C37B86941A_607645589 =                 sel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.864 -0400", hash_original_method = "6BEEFC0027B3DD3AFC5CFC7324737402", hash_generated_method = "7771B31C059185734609AB6006A47EF7")
     @Override
     public synchronized Set<SelectionKey> keys() {
@@ -204,7 +207,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_1192850091 =         unmod
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.865 -0400", hash_original_method = "0F4ACBA61BED328D03506D362DC34EE4", hash_generated_method = "AE2A683CDF735ACCB371DBDF78C84C2C")
     @Override
     public int select() throws IOException {
@@ -238,6 +241,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_1192850091 =         unmod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.866 -0400", hash_original_method = "06C4B09F10BB426C607790AD420FF9C5", hash_generated_method = "F29FF2F2684C976BBFADDF0F03A9EC6C")
     @Override
     public int selectNow() throws IOException {
@@ -446,6 +450,7 @@ for(int i = 1;i < pollFds.size();++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.894 -0400", hash_original_method = "0EB011B4E4087026D6BA472324142821", hash_generated_method = "576B16C00903A3B8864D4B9C25ADE439")
     @Override
     public synchronized Set<SelectionKey> selectedKeys() {
@@ -502,6 +507,7 @@ for(SelectionKey currentKey : cancelledKeys)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.895 -0400", hash_original_method = "BDB632D034A5FFBF79564927E2AB1FFB", hash_generated_method = "6F099BD1D1B9A0B6B5B68E95BACCD532")
     @Override
     public Selector wakeup() {
@@ -529,6 +535,7 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_655359479 =         this;
 
         private Set<E> set;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.896 -0400", hash_original_method = "62B3F0681944A36B1514E173BA40D640", hash_generated_method = "24D039260CAE976729B60C3FC4D09830")
           UnaddableSet(Set<E> set) {
             this.set = set;
@@ -560,6 +567,7 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_655359479 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.897 -0400", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "49963853E7F1B9BD03F53BC04CCF9061")
         public boolean add(E object) {
             addTaint(object.getTaint());
@@ -582,6 +590,7 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_655359479 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.898 -0400", hash_original_method = "3FA453B9F7C92A0D7DD94260C67D9514", hash_generated_method = "10CF0C52087B2BD183B302B8BEE1DA86")
         public void clear() {
             set.clear();
@@ -601,6 +610,7 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_655359479 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.899 -0400", hash_original_method = "3FEE08DBC0596E43AC262D36678D5ED8", hash_generated_method = "519E311B92FF528C32E6EB92D40C7504")
         public boolean containsAll(Collection<?> c) {
             addTaint(c.getTaint());
@@ -612,6 +622,7 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_655359479 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.899 -0400", hash_original_method = "77AAB60D4A31FA879BC76A6A4D9C7743", hash_generated_method = "351C6EBDF1C8BA25DA8D1357083867E5")
         public boolean isEmpty() {
             boolean var08EDAD7A98754E14B01D22C183E68FB5_956915836 = (set.isEmpty());
@@ -622,6 +633,7 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_655359479 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.900 -0400", hash_original_method = "7FB7F4965058B71D097578895F541442", hash_generated_method = "46A692B483BF35203A34804B433D98ED")
         public Iterator<E> iterator() {
 Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_556578248 =             set.iterator();
@@ -632,6 +644,7 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_556578248 =             set.iter
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.901 -0400", hash_original_method = "2486ACD2DD23466CE4FFA1B67E298992", hash_generated_method = "E145E639896E77FB385F71B77B622114")
         public boolean remove(Object object) {
             addTaint(object.getTaint());
@@ -643,6 +656,7 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_556578248 =             set.iter
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.901 -0400", hash_original_method = "BBEFDF942C9288158521A1B78A605140", hash_generated_method = "2A92FFDBA3D2BA44956D003AEAE50F05")
         public boolean removeAll(Collection<?> c) {
             addTaint(c.getTaint());
@@ -665,6 +679,7 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_556578248 =             set.iter
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.902 -0400", hash_original_method = "283365B7154686D5E09A8541EE47F429", hash_generated_method = "D6049B384B9789525ABC93B9CC9CE83A")
         public int size() {
             int varC11C5BB059CE54FB66F4294B0D28BA2A_909515838 = (set.size());
@@ -675,6 +690,7 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_556578248 =             set.iter
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.903 -0400", hash_original_method = "A39D4D1F48CDD6F8823B658123DCFC27", hash_generated_method = "052FF75D0051CF99CE77AFA27EED385C")
         public Object[] toArray() {
 Object[] varDC748A26B5BB4C3F420CE5782606A6AD_2002771206 =             set.toArray();
@@ -685,6 +701,7 @@ Object[] varDC748A26B5BB4C3F420CE5782606A6AD_2002771206 =             set.toArra
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.903 -0400", hash_original_method = "820308A08287454AD26ACE5A2E12E893", hash_generated_method = "C858378E5DE3F08ADC16EF2E7BFADF34")
         public <T> T[] toArray(T[] a) {
             addTaint(a[0].getTaint());

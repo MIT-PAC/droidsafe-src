@@ -19,6 +19,7 @@ public class DialogTimeoutEvent extends EventObject {
 
     private Reason m_reason = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.333 -0400", hash_original_method = "3B858FD9FEE5DA9FA545213DB80889DF", hash_generated_method = "14471048012D6A06997B28DDCA617E16")
     public  DialogTimeoutEvent(Object source, Dialog dialog, Reason reason) {
         super(source);

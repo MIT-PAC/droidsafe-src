@@ -72,7 +72,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.626 -0400", hash_original_method = "47F39FA28854367E1C176B836238D964", hash_generated_method = "9A7650F54A1E1714B0B6595F858B8D60")
     private long writeLong(long i) throws IOException {
         addTaint(i);
@@ -94,7 +94,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.626 -0400", hash_original_method = "22B8B662F709BB8BFEF4CD6C31753D50", hash_generated_method = "B9997233F9A1678FBB88C27AB140FBDA")
     private int writeShort(int i) throws IOException {
         addTaint(i);

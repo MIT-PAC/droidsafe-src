@@ -20,6 +20,7 @@ class ListOfVariables {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.026 -0400", hash_original_method = "E8D6FFF820F0D97573E6E2C017665088", hash_generated_method = "1ACE6DA2E7715840BD0ECE6CC08C88F6")
      void add(TypeVariable<?> elem) {
         addTaint(elem.getTaint());

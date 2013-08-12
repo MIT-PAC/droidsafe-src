@@ -35,6 +35,7 @@ public class AcceptEncodingParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.635 -0400", hash_original_method = "A9DB3F83816CED00173237937952E9D8", hash_generated_method = "654297546EECD69A97871CBD5796F63B")
     public SIPHeader parse() throws ParseException {
         AcceptEncodingList acceptEncodingList = new AcceptEncodingList();

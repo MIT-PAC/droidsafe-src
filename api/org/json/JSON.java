@@ -24,6 +24,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Boolean toBoolean(Object value) {
         if (value instanceof Boolean) {
             return (Boolean) value;
@@ -39,6 +40,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Double toDouble(Object value) {
         if (value instanceof Double) {
             return (Double) value;
@@ -54,6 +56,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Integer toInteger(Object value) {
         if (value instanceof Integer) {
             return (Integer) value;
@@ -69,6 +72,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Long toLong(Object value) {
         if (value instanceof Long) {
             return (Long) value;
@@ -84,6 +88,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String toString(Object value) {
         if (value instanceof String) {
             return (String) value;
@@ -106,6 +111,7 @@ class JSON {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static JSONException typeMismatch(Object actual, String requiredType) throws JSONException {
         if (actual == null) {
             throw new JSONException("Value is null.");

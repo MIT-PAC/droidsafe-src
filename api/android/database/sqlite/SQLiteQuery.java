@@ -65,6 +65,7 @@ public class SQLiteQuery extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.937 -0400", hash_original_method = "D55C6AB533D249202FC7A2AC29FF93BB", hash_generated_method = "9C9626814FFF627F30FA2F59798ABB1B")
      int fillWindow(CursorWindow window) {
         addTaint(window.getTaint());
@@ -133,6 +134,7 @@ public class SQLiteQuery extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.938 -0400", hash_original_method = "54618FF47D2C419F49442C51D0DA0774", hash_generated_method = "CD867919B72D3220A28CDE0271AB8B8B")
      int columnCountLocked() {
         acquireReference();
@@ -156,6 +158,7 @@ public class SQLiteQuery extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.939 -0400", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "CE491A9FC4641E26B335D99C7F8EA688")
      String columnNameLocked(int columnIndex) {
         addTaint(columnIndex);
@@ -180,6 +183,7 @@ String var96AFF3FBA6F9E943FBE0AF3FA990EC97_945492448 =             nativeColumnN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.939 -0400", hash_original_method = "818F0EC4250B389213C92FDEA7A7A5CE", hash_generated_method = "6D208CD010ABE2AA8A4EB381EBCD3B42")
     @Override
     public String toString() {

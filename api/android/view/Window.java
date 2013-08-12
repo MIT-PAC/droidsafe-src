@@ -83,6 +83,7 @@ public abstract class Window {
 
     private final WindowManager.LayoutParams mWindowAttributes = new WindowManager.LayoutParams();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.966 -0400", hash_original_method = "50ED378DEE1AF31F505AB3EFDADA9166", hash_generated_method = "2F4374F5D0B28DE042B0A979121F000F")
     public  Window(Context context) {
         mContext = context;
@@ -102,6 +103,7 @@ Context var178E2AD52D6FBBB503F908168856B574_780564962 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.967 -0400", hash_original_method = "F2F0D9C02E357CB8D6CDE50C6B929622", hash_generated_method = "A2682A808AD048C418F28A3E5EFD9A9C")
     public final TypedArray getWindowStyle() {
         synchronized
@@ -188,6 +190,7 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.971 -0400", hash_original_method = "49C37E5CFC1C233E6DF0E927E49CABF4", hash_generated_method = "6F20CD6A75212FB6CDDA20ADCE81D557")
     public void setWindowManager(WindowManager wm, IBinder appToken, String appName) {
         addTaint(appName.getTaint());
@@ -199,6 +202,7 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.972 -0400", hash_original_method = "07A6DAE3F5C8016383AB9A64DB3A39A3", hash_generated_method = "D2613A512E51374BE7A68F598A992C59")
     public void setWindowManager(WindowManager wm, IBinder appToken, String appName,
             boolean hardwareAccelerated) {
@@ -219,6 +223,7 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
     }
 
     
+    @DSModeled(DSC.BAN)
     static CompatibilityInfoHolder getCompatInfo(Context context) {
     	CompatibilityInfoHolder retVal;
         Application app = (Application)context.getApplicationContext();
@@ -292,6 +297,7 @@ Callback var31075088B2A2E9D45AA9874A2DA07598_1494000183 =         mCallback;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.976 -0400", hash_original_method = "76A69B8FD04E6A39E52E254D3C51CA75", hash_generated_method = "F5A2A19ABDB6C046D37D2DE5021441BD")
     public void setGravity(int gravity) {
         addTaint(gravity);
@@ -670,6 +676,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_1150603740 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.985 -0400", hash_original_method = "06392AB1384FAD789566489ED7477D15", hash_generated_method = "9CEB251110F33E817C09DF04D15F37B6")
     public View findViewById(int id) {
         addTaint(id);
@@ -842,6 +849,7 @@ View var4A691E6E01A019BBE376A012F4AAC75B_204405514 =         getDecorView().find
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.989 -0400", hash_original_method = "5A085FB22E39DFD08969173C82283E9B", hash_generated_method = "484289E7F549237ED74D540852749268")
     public boolean hasFeature(int feature) {
         addTaint(feature);

@@ -59,6 +59,7 @@ public final class BluetoothDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.173 -0400", hash_original_method = "DA80DFD3FFE970A9DEF6CBF59BD17BFE", hash_generated_method = "0D7438EEE980A85A38D83E562164ADE6")
     @Override
     public boolean equals(Object o) {
@@ -135,6 +136,7 @@ String var86CD3BA5FA0F42F72E695A9A747D1E23_203030723 =         mAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.176 -0400", hash_original_method = "027728A71FD2E55E5703A638CB89EB2E", hash_generated_method = "715C1B19CCE396EA7BC50F90219E48D4")
     public String getName() {
         try 
@@ -271,6 +273,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1350500968 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.183 -0400", hash_original_method = "575E29F4E8B829BD0D23FAC1ADF3E1AA", hash_generated_method = "A92DCF677DC26D9C94DC480A1AC769CB")
     public boolean setDeviceOutOfBandData(byte[] hash, byte[] randomizer) {
         addTaint(randomizer[0]);
@@ -341,6 +344,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1350500968 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.186 -0400", hash_original_method = "D50E996B702CE09ED98935B433818740", hash_generated_method = "8786DCF252A7EF50B7BAAA01F4F36B13")
     public int getBondState() {
         try 
@@ -363,6 +367,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1350500968 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.187 -0400", hash_original_method = "EF524B188F92A45A25D7F167D0B007CD", hash_generated_method = "B7D048C69F41C5EAB4D5EE19BAEEA2BE")
     public BluetoothClass getBluetoothClass() {
         try 
@@ -467,6 +472,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.192 -0400", hash_original_method = "DEDB39F51E4B34081515EA0E29E542CE", hash_generated_method = "F9A34FFAB8FA3DC0B8B256FD15149F16")
     public boolean fetchUuidsWithSdp() {
         try 
@@ -513,6 +519,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1265503721 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.195 -0400", hash_original_method = "0C2B72A87477D43DC574495BFD9C1EAD", hash_generated_method = "041148F942A523C125911D09F2338638")
     public boolean setPin(byte[] pin) {
         addTaint(pin[0]);
@@ -949,6 +956,7 @@ BluetoothSocket varCBE45E1CC339E38D120332CED93F6CAC_1207411206 =         new Blu
 
     public static final Parcelable.Creator<BluetoothDevice> CREATOR =
             new Parcelable.Creator<BluetoothDevice>() {
+        @DSModeled(DSC.SAFE)
         public BluetoothDevice createFromParcel(Parcel in) {
             return new BluetoothDevice(in.readString());
         }

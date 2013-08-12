@@ -30,6 +30,7 @@ public class ClipData implements Parcelable {
 
     final ArrayList<Item> mItems = new ArrayList<Item>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.542 -0400", hash_original_method = "EBF505A176A1691C0AFF349A48F88B72", hash_generated_method = "E6ED0B9282DF85D02872FC17FFDC44A2")
     public  ClipData(CharSequence label, String[] mimeTypes, Item item) {
         addTaint(item.getTaint());
@@ -52,6 +53,7 @@ public class ClipData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.544 -0400", hash_original_method = "07F73711C3AF49FFEB328A8FE4F43045", hash_generated_method = "6EDC485D82689B70E4F80BD1122C8A7A")
     public  ClipData(ClipDescription description, Item item) {
         addTaint(item.getTaint());
@@ -74,6 +76,7 @@ public class ClipData implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.548 -0400", hash_original_method = "58D4E89221B1347651A83B7DDCBD7718", hash_generated_method = "207929556FD17766E89481E87DC0B7EF")
       ClipData(Parcel in) {
         mClipDescription = new ClipDescription(in);
@@ -110,6 +113,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public ClipData newPlainText(CharSequence label, CharSequence text) {
         Item item = new Item(text);
         return new ClipData(label, MIMETYPES_TEXT_PLAIN, item);
@@ -172,6 +176,7 @@ ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_123166857 =         mClipDes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.553 -0400", hash_original_method = "150F076539D3E4866582D984173D26A6", hash_generated_method = "18856106234B5847427CFB6765EB3FF9")
     public void addItem(Item item) {
         addTaint(item.getTaint());
@@ -211,6 +216,7 @@ Bitmap var664A3A1F0DCFF82F0A8D0B798A32C3B0_102245789 =         mIcon;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.554 -0400", hash_original_method = "79B4F12EE34F43C8036D233ADFF72DDF", hash_generated_method = "7084D32C69EFCF81974B5ECB09FFD19F")
     public Item getItemAt(int index) {
         addTaint(index);
@@ -234,6 +240,7 @@ Item var955C9579A8231EA8752336C152243F31_2065174624 =         mItems.get(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.555 -0400", hash_original_method = "0C9FB932279AD72A7EC79D2538384FC0", hash_generated_method = "C27D3B1BBC9B3CDDFDA0A83D0F34FA47")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -314,6 +321,7 @@ for(int i=0;i<N;i++)
 
         Uri mUri;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.557 -0400", hash_original_method = "4A009EFCCF51C2EA640445D87C84D900", hash_generated_method = "F5679DD9C9B02BBE86AE8D02CB384497")
         public  Item(CharSequence text) {
             mText = text;
@@ -489,7 +497,8 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1202350329 =             "";
     public static final Parcelable.Creator<ClipData> CREATOR =
         new Parcelable.Creator<ClipData>() {
 
-            public ClipData createFromParcel(Parcel source) {
+            @DSModeled(DSC.SAFE)
+        public ClipData createFromParcel(Parcel source) {
                 return new ClipData(source);
             }
 

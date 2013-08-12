@@ -94,7 +94,7 @@ public class PackageStats implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.280 -0400", hash_original_method = "3FE5C26F51751E2E83526086B9D94747", hash_generated_method = "23D7A2D651E95C4D2B7CC6BC91835EB4")
     public String toString() {
         final StringBuilder sb = new StringBuilder("PackageStats{");

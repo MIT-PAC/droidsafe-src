@@ -13,13 +13,14 @@ import android.text.TextUtils;
 
 public class MimeTypeMap {
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "3813AC6B5CB9CE0F32CF63BF21EAB5DA")
     private  MimeTypeMap() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getFileExtensionFromUrl(String url) {
         if (!TextUtils.isEmpty(url)) {
             int fragment = url.lastIndexOf('#');
@@ -45,6 +46,7 @@ public class MimeTypeMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "D279ABCEA3115671095B1C76CF272D07", hash_generated_method = "F02ECF6ED67D1AEA9EDF7CAC78E8BB11")
     public boolean hasMimeType(String mimeType) {
         addTaint(mimeType.getTaint());
@@ -56,6 +58,7 @@ public class MimeTypeMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "FBED9D640FBCA5125BA19E57D681C8BC")
     public String getMimeTypeFromExtension(String extension) {
         addTaint(extension.getTaint());
@@ -84,6 +87,7 @@ String var4DAE02CC55ADD03932C065B04B888027_1664912111 =         MimeUtils.guessM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.560 -0400", hash_original_method = "CB74F3FB06BF8C09198BE8DA9DF60967", hash_generated_method = "79024C3BB0B95F1C04A796FBF1DDA31C")
     public String getExtensionFromMimeType(String mimeType) {
         addTaint(mimeType.getTaint());
@@ -95,6 +99,7 @@ String varB4A30242D1D4E5BAA090B65DC871EF20_1024049582 =         MimeUtils.guessE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.560 -0400", hash_original_method = "8195A5AC7EDE6C7AAA15CD33C312F38D", hash_generated_method = "5F01B9D1CD8173CA3255EBC5FBD24D9B")
      String remapGenericMimeType(String mimeType, String url,
             String contentDisposition) {

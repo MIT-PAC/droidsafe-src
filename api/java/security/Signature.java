@@ -27,6 +27,7 @@ public abstract class Signature extends SignatureSpi {
 
     protected int state = UNINITIALIZED;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.495 -0400", hash_original_method = "007DE01FB6A8AC35B06025EDE803711E", hash_generated_method = "64FBEE7041AF14FFB5E58DA4CDF89A1A")
     protected  Signature(String algorithm) {
         this.algorithm = algorithm;
@@ -35,6 +36,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Signature getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -52,6 +54,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Signature getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -67,6 +70,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Signature getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -114,6 +118,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_2138983321 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.498 -0400", hash_original_method = "6F44917D7B2EA34B37DC316438211882", hash_generated_method = "DD5A0D573738A0D0584918D82BEC350D")
     public final void initVerify(PublicKey publicKey) throws InvalidKeyException {
         addTaint(publicKey.getTaint());
@@ -125,6 +130,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_2138983321 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.500 -0400", hash_original_method = "D5B41FE621F8332C2172FC7A18EF69C6", hash_generated_method = "C2185580E25F6CE572CCD1D613FD6AD9")
     public final void initVerify(Certificate certificate) throws InvalidKeyException {
         addTaint(certificate.getTaint());
@@ -162,6 +168,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.501 -0400", hash_original_method = "B6C8D7AE33737E5AFF4E8BA0A220ACB3", hash_generated_method = "9EC332E0A351CFBE5A325E9A51C98470")
     public final void initSign(PrivateKey privateKey) throws InvalidKeyException {
         addTaint(privateKey.getTaint());
@@ -173,6 +180,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.502 -0400", hash_original_method = "94B0D7FD7FB8599FDCD6F4025918B2A9", hash_generated_method = "0BFEDA386B7448BD514F0BA3D12AC034")
     public final void initSign(PrivateKey privateKey, SecureRandom random) throws InvalidKeyException {
         addTaint(random.getTaint());
@@ -185,6 +193,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.503 -0400", hash_original_method = "1CBD4CB00E49A2B9C590273D2FD8D112", hash_generated_method = "533ED43C6EDE9D5BB0B36A386A790744")
     public final byte[] sign() throws SignatureException {
         if(state != SIGN)        
@@ -204,6 +213,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.504 -0400", hash_original_method = "82A870C6C8965CC8E79085F7D8A960EB", hash_generated_method = "CF3AED19BDC8BF1FD855E43D757145A2")
     public final int sign(byte[] outbuf, int offset, int len) throws SignatureException {
         addTaint(len);
@@ -237,6 +247,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.505 -0400", hash_original_method = "C9B26283C94B06BB8BE60C57C40A18DF", hash_generated_method = "D87C88D33BC96097B1F8E1BB78267FEC")
     public final boolean verify(byte[] signature) throws SignatureException {
         addTaint(signature[0]);
@@ -257,6 +268,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.506 -0400", hash_original_method = "59329C8B89ACE0AC6C4DAAF18DA3F3C5", hash_generated_method = "F39E793EC31FCD04AB8250C0373A10B8")
     public final boolean verify(byte[] signature, int offset, int length) throws SignatureException {
         addTaint(length);
@@ -290,6 +302,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.507 -0400", hash_original_method = "79EA6E53B3D29CDFCD3B6E1380EAFC50", hash_generated_method = "B3A63D51E8263654EA4A47F0F7F29E86")
     public final void update(byte b) throws SignatureException {
         addTaint(b);
@@ -308,6 +321,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.508 -0400", hash_original_method = "7FDD4CB7D645E432F89E836C71DCF871", hash_generated_method = "0884B528B2CEBD5AEDB8028EBF0072D1")
     public final void update(byte[] data) throws SignatureException {
         addTaint(data[0]);
@@ -326,6 +340,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.508 -0400", hash_original_method = "935040FEA1E890342F7B1ED90DB7090F", hash_generated_method = "A4C797A4841B439C1C8FAECF56FE944D")
     public final void update(byte[] data, int off, int len) throws SignatureException {
         addTaint(len);
@@ -357,6 +372,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.508 -0400", hash_original_method = "4D212376BB0D0E0EE1EF0BE20DC8A649", hash_generated_method = "0A43787CFEF67A94F46275A8CFA1C18A")
     public final void update(ByteBuffer data) throws SignatureException {
         addTaint(data.getTaint());
@@ -375,6 +391,7 @@ for(Iterator i = ce.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.509 -0400", hash_original_method = "300ADD63628A84B0D8F725B1BA1E9A8E", hash_generated_method = "55880624F4C8733CB6F97A79EF7D7DFC")
     @Override
     public String toString() {
@@ -422,6 +439,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1454035905 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.509 -0400", hash_original_method = "D52E00AF44B32CEF42E7B7F3CD02413C", hash_generated_method = "37D481D51E183D8D9990C88466483BAF")
     @Deprecated
     public final void setParameter(String param, Object value) throws InvalidParameterException {
@@ -433,6 +451,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1454035905 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.510 -0400", hash_original_method = "723DAA3D9E86E61831D60007CF8F8BBA", hash_generated_method = "74522E307F3F14D563012F94B2A5F555")
     public final void setParameter(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
@@ -442,6 +461,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1454035905 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.510 -0400", hash_original_method = "8EDBC3AD900BE7B10A8F191CA049C5A8", hash_generated_method = "0E3F924FD9B3A94A23989C95E44FE74C")
     public final AlgorithmParameters getParameters() {
 AlgorithmParameters var143868FBE13878C430B11AC612630761_726180465 =         engineGetParameters();
@@ -503,6 +523,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1979423098 =             super.clone(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.513 -0400", hash_original_method = "FFC69249636133C4828AD78F0F12AF56", hash_generated_method = "F11D728DB740A9BA2544100AA3C45389")
         @Override
         protected byte[] engineSign() throws SignatureException {
@@ -524,6 +545,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1979423098 =             super.clone(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.513 -0400", hash_original_method = "5B50F80B75147450A8AE91D93998317F", hash_generated_method = "24DBA10696E248972E75102C3FECE445")
         @Override
         protected boolean engineVerify(byte[] arg0) throws SignatureException {
@@ -536,6 +558,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1979423098 =             super.clone(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.514 -0400", hash_original_method = "8E9D74168176A196545DE618D70F0045", hash_generated_method = "C243C3F4805D525D41637A1698367089")
         @Override
         protected void engineUpdate(byte[] arg0, int arg1, int arg2) throws SignatureException {
@@ -558,6 +581,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1979423098 =             super.clone(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.514 -0400", hash_original_method = "C51005CD648E9A95CA7D0B48071C4D8E", hash_generated_method = "2FA8EB08FB2AC527A2D109B341094316")
         @Override
         protected void engineInitVerify(PublicKey arg0) throws InvalidKeyException {
@@ -568,6 +592,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1979423098 =             super.clone(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.515 -0400", hash_original_method = "BC25730F2F2C84CFB445E50D8EAB3A12", hash_generated_method = "931468FE039AC479BDA8D6445CD9C6AA")
         @Override
         protected Object engineGetParameter(String arg0) throws InvalidParameterException {
@@ -580,6 +605,7 @@ Object varCE32E83F946A002A5075AB939035A337_1274199962 =             spiImpl.engi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.515 -0400", hash_original_method = "2EB6574DEFEEC579E00AC6D7C846FB9A", hash_generated_method = "A0620734AA6FF876354C66E0F38DFF65")
         @Override
         protected void engineSetParameter(String arg0, Object arg1) throws InvalidParameterException {
@@ -591,6 +617,7 @@ Object varCE32E83F946A002A5075AB939035A337_1274199962 =             spiImpl.engi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.515 -0400", hash_original_method = "E18D3A064C93BFFE53C93A44BEF059CB", hash_generated_method = "AB123B0AFF83376682BA420FD0BCB18B")
         @Override
         public Object clone() throws CloneNotSupportedException {

@@ -14,6 +14,7 @@ import java.text.ParseException;
 
 public class SecurityClientParser extends SecurityAgreeParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.128 -0400", hash_original_method = "E2D388149FE9736EADC08BE8FFBB13F8", hash_generated_method = "338363101D37C6DD7911DD28C276ACE3")
     public  SecurityClientParser(String security) {
         super(security);
@@ -22,6 +23,7 @@ public class SecurityClientParser extends SecurityAgreeParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.128 -0400", hash_original_method = "B40BF36519F1C74126A52BAB65D2C065", hash_generated_method = "730B14938AD7118FD56495E86859CCE3")
     protected  SecurityClientParser(Lexer lexer) {
         super(lexer);
@@ -30,6 +32,7 @@ public class SecurityClientParser extends SecurityAgreeParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.129 -0400", hash_original_method = "318B353FBE96AE207EFBEBC9BA5B16DF", hash_generated_method = "F7F9D190F098C1B20EB97BBC1ED1B6BF")
     public SIPHeader parse() throws ParseException {
         dbg_enter("SecuriryClient parse");

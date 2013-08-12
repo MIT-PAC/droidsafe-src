@@ -23,13 +23,14 @@ public abstract class BroadcastReceiver {
 
     private boolean mDebugUnregister;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.475 -0400", hash_original_method = "2900F07960080430406180ADD3872CDD", hash_generated_method = "4949473B0E069ABC52AE38A1EB5EC2B1")
     public  BroadcastReceiver() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract void onReceive(Context context, Intent intent);
 
     
@@ -80,6 +81,7 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1562396205 =         binder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.478 -0400", hash_original_method = "D9C6679B9D8E9806D41E73EFA120BCFE", hash_generated_method = "D8B058A84574659F09A9DE8C943A316A")
     public final void setResultCode(int code) {
         checkSynchronousHint();
@@ -101,6 +103,7 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1562396205 =         binder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.479 -0400", hash_original_method = "326C45A93CAC69AE5F40CC5662FD4E21", hash_generated_method = "C90A109DB604318B2505A1C010330879")
     public final void setResultData(String data) {
         checkSynchronousHint();
@@ -122,6 +125,7 @@ String var6A28DDDD6F2A36E80C7DF082C1A737CB_841002546 =         mPendingResult !=
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.480 -0400", hash_original_method = "A002D9C66CF7F2AA1D1827503AAC99EC", hash_generated_method = "AE999306C66D9D7D9F87E31E8790C266")
     public final void setResultExtras(Bundle extras) {
         checkSynchronousHint();
@@ -132,6 +136,7 @@ String var6A28DDDD6F2A36E80C7DF082C1A737CB_841002546 =         mPendingResult !=
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.481 -0400", hash_original_method = "4CB90710C7A856F1CF5FAF169A56650C", hash_generated_method = "FC52532D27D6E9BB1D1C0F1576552F25")
     public final Bundle getResultExtras(boolean makeMap) {
         addTaint(makeMap);
@@ -164,6 +169,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.483 -0400", hash_original_method = "71BA20FC3DD345B39DB950803A39A1ED", hash_generated_method = "4E29E8202B08EC6E81632318D3263996")
     public final void setResult(int code, String data, Bundle extras) {
         checkSynchronousHint();
@@ -189,6 +195,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.484 -0400", hash_original_method = "EA4258D43E5FA594C300ACFA62523E77", hash_generated_method = "6C8DB09AA240CF4D79E5212B6813BBD7")
     public final void abortBroadcast() {
         checkSynchronousHint();
@@ -283,6 +290,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.488 -0400", hash_original_method = "719234F696D75BD5E624E0997AEC2529", hash_generated_method = "E5D5CF20344AEC3559FCD970892B1BDB")
      void checkSynchronousHint() {
         if(mPendingResult == null)        
@@ -384,6 +392,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.495 -0400", hash_original_method = "70EE21896C4793F2CD7F1124D2F52609", hash_generated_method = "C6722180D7D266018ABE6FE095677B2C")
         public final void setResultData(String data) {
             checkSynchronousHint();
@@ -405,6 +414,7 @@ String var7AF81C367EA4623980C8741236739982_1514784894 =             mResultData;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.498 -0400", hash_original_method = "043EFA68A5EC6A2685391992580FAB4F", hash_generated_method = "3DC41E1A385242FB4F17457AEFAB3F81")
         public final void setResultExtras(Bundle extras) {
             checkSynchronousHint();
@@ -438,6 +448,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.500 -0400", hash_original_method = "48338FF93B0D949C9CE50695C92AC674", hash_generated_method = "E3572DCCD03AA2F0DB19C6D7EC1CD89E")
         public final void setResult(int code, String data, Bundle extras) {
             checkSynchronousHint();
@@ -463,6 +474,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.501 -0400", hash_original_method = "1D9776C1F73983B7C91D53BC3475252B", hash_generated_method = "0F92C63DCD6A0EC0FE789EDB71DC5FA6")
         public final void abortBroadcast() {
             checkSynchronousHint();
@@ -482,6 +494,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.505 -0400", hash_original_method = "D8A44D8DD1BCA140D23101E83E968FA0", hash_generated_method = "2DBEA386C58955DAD283AEB312C94BE1")
         public final void finish() {
             if(mType == TYPE_COMPONENT)            
@@ -587,6 +600,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.509 -0400", hash_original_method = "82A6C5AFD458725D364E088D203D4257", hash_generated_method = "81BBA58E125434C90F87F7362C620BCF")
          void checkSynchronousHint() {
             if(mOrderedHint || mInitialStickyHint)            

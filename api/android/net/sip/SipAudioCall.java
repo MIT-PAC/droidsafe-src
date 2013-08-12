@@ -75,6 +75,7 @@ public class SipAudioCall {
 
     private String mErrorMessage;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.471 -0400", hash_original_method = "E52D3B9BC90DBBDF3C179757863C5D97", hash_generated_method = "756A0602EA41970B104F8D81707C3875")
     public  SipAudioCall(Context context, SipProfile localProfile) {
         mContext = context;
@@ -87,6 +88,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.471 -0400", hash_original_method = "624C526ACE340C91B4AE00384193A96D", hash_generated_method = "B9E9FB4AE9D04DBD4B75E26C1D98D9F5")
     public void setListener(SipAudioCall.Listener listener) {
         addTaint(listener.getTaint());
@@ -96,6 +98,7 @@ public class SipAudioCall {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.472 -0400", hash_original_method = "7FD2357D0901F6F1D08ACBD882A0FD6F", hash_generated_method = "557DEFC1291601FA55CC52554394A562")
     public void setListener(SipAudioCall.Listener listener,
             boolean callbackImmediately) {
@@ -182,6 +185,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.474 -0400", hash_original_method = "597B95CEB5AFD05C977FB508D047C50E", hash_generated_method = "21668DF8FDBDBCA1A469227829ADE78B")
     public void close() {
         close(true);
@@ -236,6 +240,7 @@ SipProfile var435CC30651DB1BF41891A0CDD6107277_764101406 =             mLocalPro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.476 -0400", hash_original_method = "35C9BB243C8C9C83D8B1884AE3FDA6C7", hash_generated_method = "66AE97068B4FB756244873CA36548B25")
     public SipProfile getPeerProfile() {
         synchronized
@@ -749,6 +754,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.488 -0400", hash_original_method = "9D47ECE9B5A5E502049A76A2D5CF7D58", hash_generated_method = "8E74602D937CE74CB73587D9D8FD3EE5")
     public void attachCall(SipSession session, String sessionDescription) throws SipException {
         if(!SipManager.isVoipSupported(mContext))        
@@ -788,6 +794,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.488 -0400", hash_original_method = "CDFD7E26E80EFA4595D6BD4E5712D0C4", hash_generated_method = "4CACBF463A4609A36C6B5F54C0C5B8D9")
     public void makeCall(SipProfile peerProfile, SipSession sipSession,
             int timeout) throws SipException {
@@ -854,6 +861,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.490 -0400", hash_original_method = "83B252D66EF8BD3A5BE285DBF75AA925", hash_generated_method = "B3C6DCDAEDBBD391DC08A3B069D6240B")
     public void holdCall(int timeout) throws SipException {
         addTaint(timeout);
@@ -884,6 +892,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_349773066 =         new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.490 -0400", hash_original_method = "7A338589242F74847BFE21BB083282FF", hash_generated_method = "5262983FABE075DCDD111A269B276BA9")
     public void answerCall(int timeout) throws SipException {
         addTaint(timeout);
@@ -1155,6 +1164,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.495 -0400", hash_original_method = "91407CCBE269ED4E5C3C36CDEC2695DD", hash_generated_method = "64CC2F06F6ED94B5D70819871DF93516")
     public void toggleMute() {
         synchronized
@@ -1186,6 +1196,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.495 -0400", hash_original_method = "8238959D9236D29164DC3B2B6875AEBE", hash_generated_method = "568591DB5B2DC30323365A7730E2A1CF")
     public void setSpeakerMode(boolean speakerMode) {
         addTaint(speakerMode);
@@ -1217,6 +1228,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.496 -0400", hash_original_method = "5FC4A2324FC6DD99D16BF2BD98355D7B", hash_generated_method = "01A6B357F212196B4A2AAA5D87288C68")
     public void sendDtmf(int code) {
         addTaint(code);
@@ -1226,6 +1238,7 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_2073115734 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.497 -0400", hash_original_method = "7A09CE165EA90677044F14874DA9275F", hash_generated_method = "14EF2FA47FAC2D903381E7FF9F531794")
     public void sendDtmf(int code, Message result) {
         addTaint(result.getTaint());
@@ -1314,6 +1327,7 @@ AudioGroup varC72C554806D9F24F64BE7554224D6C80_277040381 =             ((mAudioS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.498 -0400", hash_original_method = "4F615D2FF52BC5640F885A620AAE1B91", hash_generated_method = "ED5FF7F74B4910A94D893D435B061A8A")
     public void startAudio() {
         try 
@@ -1570,6 +1584,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "1692051440F2E30BB9552F9991C2F337", hash_generated_method = "1437C4BAACEE991D53E3D4C693468728")
         public void onReadyToCall(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1580,6 +1595,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "F61EC18A6F9190266BB417D94187D91F", hash_generated_method = "D2F254533972267BD38ABBA599C28EF8")
         public void onCalling(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1590,6 +1606,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "80FA944D90A47A92553C0DDAF9805E5E", hash_generated_method = "9B19093F854AD2AE0774BCA056F55F98")
         public void onRinging(SipAudioCall call, SipProfile caller) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1601,6 +1618,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.502 -0400", hash_original_method = "F638A746C099264E58AA2EF34946D274", hash_generated_method = "4A1AC351FB7D4E94521BD7D9D2684A3A")
         public void onRingingBack(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1611,6 +1629,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.503 -0400", hash_original_method = "ED0948473C3573D4349DE4B81266B2ED", hash_generated_method = "D7B8C7B3FFA9BBE461FD8F86B99AA0D1")
         public void onCallEstablished(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1621,6 +1640,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.503 -0400", hash_original_method = "87752713DF39DD8F370DBCB68CD08A8A", hash_generated_method = "464E5D70533433713271DCF20E04B9AC")
         public void onCallEnded(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1631,6 +1651,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.503 -0400", hash_original_method = "A1C8D07F76B181730B1462483C996C45", hash_generated_method = "12D57F08446B4CC7CCF3C1A68173F58D")
         public void onCallBusy(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1641,6 +1662,7 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1533862223 =         session.getP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.503 -0400", hash_original_method = "901B34C07D0BCB3C3E5EC60CF9AA74AD", hash_generated_method = "46366D093626E901F9AECFA7125D47C9")
         public void onCallHeld(SipAudioCall call) {
             //DSFIXME:  CODE0009: Possible callback target function detected

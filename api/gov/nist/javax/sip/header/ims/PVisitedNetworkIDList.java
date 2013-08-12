@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PVisitedNetworkIDList extends SIPHeaderList<PVisitedNetworkID> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.346 -0400", hash_original_method = "755748D1B1A32FE22452F6E783BD15E2", hash_generated_method = "0F82AF3A13009C31F1061E0FD71C3D3E")
     public  PVisitedNetworkIDList() {
         super(PVisitedNetworkID.class, PVisitedNetworkIDHeader.NAME);
@@ -15,6 +16,7 @@ public class PVisitedNetworkIDList extends SIPHeaderList<PVisitedNetworkID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.347 -0400", hash_original_method = "7C4CA7398653F51DA5C0E61CD8209B41", hash_generated_method = "1865E0676909CF60B22F9A2445A7CCD7")
     public Object clone() {
         PVisitedNetworkIDList retval = new PVisitedNetworkIDList();

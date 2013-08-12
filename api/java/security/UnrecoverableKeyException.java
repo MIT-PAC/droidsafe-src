@@ -9,6 +9,7 @@ import droidsafe.annotations.*;
 
 public class UnrecoverableKeyException extends UnrecoverableEntryException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.584 -0400", hash_original_method = "E20357D553B788F278F646C0E3221E57", hash_generated_method = "39C1C493987B5B97D605567FC88B9169")
     public  UnrecoverableKeyException(String msg) {
         super(msg);

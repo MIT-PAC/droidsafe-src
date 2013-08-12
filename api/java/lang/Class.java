@@ -107,7 +107,7 @@ String var2F8E51633C4B934C6A6871930033C26B_2107392196 =         StringUtils.comb
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
     	Class<?> cl = Object.class;
@@ -178,6 +178,7 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.627 -0400", hash_original_method = "214E042C121A5AA68E2A99AA55DE15AA", hash_generated_method = "4B551EF27DC43B309DA4B1B8F35E960C")
     public Annotation[] getAnnotations() {
         HashMap<Class, Annotation> map = new HashMap<Class, Annotation>();
@@ -207,6 +208,7 @@ Annotation[] var4D8E3EA02357DB4A1B69E2F9F800E29B_574772046 =         coll.toArra
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.627 -0400", hash_original_method = "79C3FAE0B22F6799153600E0BD41AE53", hash_generated_method = "81BD4EFEAC4B38E4C50966BAA6459CC9")
     public String getCanonicalName() {
         if(isLocalClass() || isAnonymousClass())        
@@ -597,7 +599,7 @@ Field[] varB13318B8B62F8154F0AA694406899EAD_732481342 =         getDeclaredField
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
     	Field[] ret = new Field[0];
     	ret.addTaint(clazz.taint);
@@ -650,7 +652,7 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
     	Method[] ret = new Method[0];
     	ret[0].addTaint(clazz.taint);
@@ -659,7 +661,7 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
     	Method ret = new Method();
     	ret.addTaint(clazz.taint);
@@ -685,7 +687,7 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "66CD711920ADA841CC04EC44C476AA92", hash_generated_method = "E9EFFA224CF0890C33C432913B5CDC4A")
     public Constructor<?> getEnclosingConstructor() {
     	Constructor  ret = new Constructor();
@@ -693,7 +695,7 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "D4C604D782CFEF7F67F7383F824B8549", hash_generated_method = "42F609F6A3577ECAA8EE5F0164C83C69")
     public Method getEnclosingMethod() {
     	Method  ret = new Method();
@@ -701,6 +703,7 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.634 -0400", hash_original_method = "4BAB4756A542B5987CFE5A9EBB7771C0", hash_generated_method = "605356D16B18958B582150948FDFE273")
     @SuppressWarnings("unchecked")
     public T[] getEnumConstants() {
@@ -1218,6 +1221,7 @@ TypeVariable<Class<T>>[] var88FA10730ED8D83D53A7F9A30F5F0311_251484601 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "4ABCCCB32AED1EA36AB75BC1C1D6F00F", hash_generated_method = "DD26C3EFE53E746BBF0150135AD95244")
     public boolean isAnnotation() {
         final int ACC_ANNOTATION = 0x2000;
@@ -1232,6 +1236,7 @@ TypeVariable<Class<T>>[] var88FA10730ED8D83D53A7F9A30F5F0311_251484601 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "0543735514B2514B55E5A7CA82A68F41", hash_generated_method = "04AF7D4027BA793CC8B6E0B6EE44C791")
     @Override
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
@@ -1308,6 +1313,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.648 -0400", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "99DF7E42E57CBDCA6E517882B742F739")
     public boolean isEnum() {
         boolean var11C2EB902A1B8BD8CBB2D065CAECE303_1803550704 = (((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class));
@@ -1368,6 +1374,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "022E776606079BC3CFEA0634201C3D50", hash_generated_method = "0E8E0B6876AF9B58B613AF32B34CDDF6")
     public boolean isSynthetic() {
         final int ACC_SYNTHETIC = 0x1000;
@@ -1382,6 +1389,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "817F95E6C8C06997062B26BD4E2EEF58")
     public T newInstance() throws InstantiationException, IllegalAccessException {
 T varDABAB645F82D7DAC0FD72FFCF9059689_912412957 =         newInstanceImpl();
@@ -1425,6 +1433,7 @@ String var098FF1C1E251D1D541F5C2B99C1AEADF_411521045 =             (isInterface(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "AFC08E4F788A8A715582FE5BCDA4146B", hash_generated_method = "4A6CC5B9623A5F517F7A0E46369D8337")
     public Package getPackage() {
         ClassLoader loader = getClassLoader();
@@ -1458,6 +1467,7 @@ Package var540C13E9E156B687226421B24F2DF178_337558637 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "500D2CEF070061FBCB8343E3F70AD3A9", hash_generated_method = "910E7DFE96B4605E85B9C0C2ACD0BD70")
     @SuppressWarnings("unchecked")
     public <U> Class<? extends U> asSubclass(Class<U> clazz) {
@@ -1517,6 +1527,7 @@ T var60E33DF11B55697B4C1C6AE5825E84D3_1320749960 =             (T)obj;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T extends Object> T[] arraycopy(T[] result, T[] head, T[] tail) {
         System.arraycopy(head, 0, result, 0, head.length);
         System.arraycopy(tail, 0, result, head.length, tail.length);

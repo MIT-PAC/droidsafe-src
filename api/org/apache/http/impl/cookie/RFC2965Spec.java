@@ -26,6 +26,7 @@ import org.apache.http.util.CharArrayBuffer;
 
 public class RFC2965Spec extends RFC2109Spec {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.229 -0400", hash_original_method = "0C9AFF04E5BAABEBA18893034F65C0B5", hash_generated_method = "ED8461C5C758500E2E57B09EC8299F41")
     public  RFC2965Spec() {
         this(null, false);
@@ -300,6 +301,7 @@ for(int i = 0, len = ports.length;i < len;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.237 -0400", hash_original_method = "135D9D751A7E49D965B3B7FE1A189F11", hash_generated_method = "85F26512D3E0906035F5C3CE29FAF6D2")
     @Override
     public Header getVersionHeader() {

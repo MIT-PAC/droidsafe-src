@@ -31,6 +31,7 @@ public class ServerHandshakeImpl extends HandshakeProtocol {
 
     private PrivateKey privKey;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.865 -0400", hash_original_method = "3AF97CBDFDCCD2B098621E28E1AC9FE5", hash_generated_method = "D5581A48D5BE2E2A9830A403D5C0BA76")
     public  ServerHandshakeImpl(Object owner) {
         super(owner);
@@ -285,6 +286,7 @@ switch(handshakeType){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.873 -0400", hash_original_method = "866A772D6B919D9D55F9FB0C6E40CB44", hash_generated_method = "50A80328A8C13F60C7927A3A2253C70D")
     @Override
     public void unwrapSSLv2(byte[] bytes) {
@@ -723,6 +725,7 @@ CipherSuite var540C13E9E156B687226421B24F2DF178_661939543 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.890 -0400", hash_original_method = "C3331D73871F50BD7C19021D99D59A46", hash_generated_method = "4395F563433F3BABFCA019BF725CE472")
     @Override
     public void receiveChangeCipherSpec() {

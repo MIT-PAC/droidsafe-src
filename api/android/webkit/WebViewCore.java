@@ -144,6 +144,7 @@ public final class WebViewCore {
 
     DrawData mLastDrawData = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.130 -0400", hash_original_method = "68CF15993B11FD0BF4AA086C5A956766", hash_generated_method = "310BEA190BEDAFF7ED8229C2A3561CAD")
     public  WebViewCore(Context context, WebView w, CallbackProxy proxy,
             Map<String, Object> javascriptInterfaces) {
@@ -368,6 +369,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1328810813 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.137 -0400", hash_original_method = "EA467B8C1E05E16A088413F72C42053A", hash_generated_method = "3E09D0F5D1C64FEE5D9DE0BBBAEA06A6")
     protected void exceededDatabaseQuota(String url,
                                          String databaseIdentifier,
@@ -440,6 +442,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1328810813 =         "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.143 -0400", hash_original_method = "AEE66291188900A80051B984C26C1180", hash_generated_method = "200B836A780A890067A078AC3BA6E557")
     protected void geolocationPermissionsShowPrompt(String origin) {
         addTaint(origin.getTaint());
@@ -3165,6 +3168,7 @@ String varE11838054DF6067C67A0A2332560434C_1296563386 =             mPreview;
 
         private int mSavedPriority;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.234 -0400", hash_original_method = "E81290CBA9EBCD5546A9E9277FAE0605", hash_generated_method = "A52E68C7F77102AEF2A85166BA2DF4B3")
         private  EventHub() {
             // ---------- Original Method ----------

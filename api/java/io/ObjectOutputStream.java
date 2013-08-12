@@ -61,6 +61,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
 
     private final ObjectStreamClass proxyClassDesc = ObjectStreamClass.lookup(Proxy.class);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.762 -0400", hash_original_method = "EA89A37EA944EE797F4A4E71C06BB807", hash_generated_method = "1DD7286A5E2A9A1C12E3BB1E02964B00")
     protected  ObjectOutputStream() throws IOException {
         this.subclassOverridingImplementation = true;
@@ -127,6 +128,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.767 -0400", hash_original_method = "29115934C3EAEF8AC600D579304D0581", hash_generated_method = "F0440CBBA87C0B5AF39639A20DAAA699")
     @Override
     public void close() throws IOException {
@@ -164,6 +166,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.769 -0400", hash_original_method = "A89FD6C60365B1028CEBCCFC3106EF9A", hash_generated_method = "F0301CB4FE39D1E484CDC34733E39ADA")
     protected void drain() throws IOException {
         if(primitiveTypes == null || primitiveTypesBuffer == null)        
@@ -284,6 +287,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.774 -0400", hash_original_method = "4F3CF2DA9583C39D0A0D02BEFFFE8C29", hash_generated_method = "EA9662FC7D7895A2EDC533E135AEEE16")
     public PutField putFields() throws IOException {
         if(currentObject == null)        
@@ -360,6 +364,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.777 -0400", hash_original_method = "4FDA9D292F9CB60FE54E9147043F29DF", hash_generated_method = "6D8F2E55E577BC7432D57217289F254D")
     public void reset() throws IOException {
         drain();
@@ -394,6 +399,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.778 -0400", hash_original_method = "899849124785B3DAA2410A481AC243A4", hash_generated_method = "2B86BD4EDF8C16B449F65326D394EC16")
     public void useProtocolVersion(int version) throws IOException {
         if(!objectsWritten.isEmpty())        
@@ -422,6 +428,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.779 -0400", hash_original_method = "4335176A8BF0CB76C8983C14BE755AB0", hash_generated_method = "9B4CDDCA0882D4C6970F115215C97727")
     @Override
     public void write(byte[] buffer, int offset, int length) throws IOException {
@@ -436,6 +443,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.779 -0400", hash_original_method = "890E7ADC76A0934752F791BA928637BD", hash_generated_method = "5B96B782E8FCDD76A317B7BD628AB59A")
     @Override
     public void write(int value) throws IOException {
@@ -448,6 +456,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.780 -0400", hash_original_method = "253E21281D84BB4AEC7BC00A39E22928", hash_generated_method = "8CAC5304C0CDBD84D1BCBA7169694EB2")
     public void writeBoolean(boolean value) throws IOException {
         addTaint(value);
@@ -459,6 +468,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.780 -0400", hash_original_method = "DCBF5513EE5F9BB37CF570D282A66C5E", hash_generated_method = "69409C00C521E6C82339F7718DEBB028")
     public void writeByte(int value) throws IOException {
         addTaint(value);
@@ -470,6 +480,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.781 -0400", hash_original_method = "2FD9E25E34EBC831C98FBB1774A09056", hash_generated_method = "5D30D16BFF32CE724391E85ACF5F7FEA")
     public void writeBytes(String value) throws IOException {
         addTaint(value.getTaint());
@@ -481,6 +492,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.781 -0400", hash_original_method = "A70BC61472A0A40B7DA1B300459E269C", hash_generated_method = "B7D05BD58607411C8B50732D83B6DD20")
     public void writeChar(int value) throws IOException {
         addTaint(value);
@@ -492,6 +504,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1391424214 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.782 -0400", hash_original_method = "2819E1113D5EFA42F2CF8A185C5FE232", hash_generated_method = "06F7BFDC7C6E8E72DE6A17282CE7AA7F")
     public void writeChars(String value) throws IOException {
         addTaint(value.getTaint());
@@ -589,6 +602,7 @@ for(int i = 0;i < interfaces.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.784 -0400", hash_original_method = "02DC35912BAFF16550D8FBDB82DDCD50", hash_generated_method = "22166A12BB1098C29D619E1302902915")
     public void writeDouble(double value) throws IOException {
         addTaint(value);
@@ -642,6 +656,7 @@ for(int i = 0;i < fieldCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.784 -0400", hash_original_method = "851EC9DCB527C64AF85B9AAA86ABFF43", hash_generated_method = "58ADED738C75D67503016246780F0D1A")
     public void writeFields() throws IOException {
         if(currentPutField == null)        
@@ -804,6 +819,7 @@ for(ObjectStreamField fieldDesc : classDesc.fields())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.788 -0400", hash_original_method = "2F0CF28A5E4A8655D2779BA683FB03E5", hash_generated_method = "C9E52F02DF487292E2BDCFC805813F24")
     public void writeFloat(float value) throws IOException {
         addTaint(value);
@@ -891,6 +907,7 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.789 -0400", hash_original_method = "4D560E72502C61E130F3258421731401", hash_generated_method = "22EAF1C15ECB615519CEB9A162DD980D")
     public void writeInt(int value) throws IOException {
         addTaint(value);
@@ -902,6 +919,7 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.789 -0400", hash_original_method = "1C4CA2BE4C70907161A2CF485CB22A3E", hash_generated_method = "9A388AA854DE83D2410EC71D7F756A5C")
     public void writeLong(long value) throws IOException {
         addTaint(value);
@@ -1118,6 +1136,7 @@ for(int i = 0;i < objectArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.791 -0400", hash_original_method = "641338D73905B8D6D3FE171A8894AADC", hash_generated_method = "48A87AE7A333B9B38CA2F6B25437DF67")
     protected void writeClassDescriptor(ObjectStreamClass classDesc) throws IOException {
         addTaint(classDesc.getTaint());
@@ -1258,6 +1277,7 @@ for(int i = 0;i < objectArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.792 -0400", hash_original_method = "D65EE5B0FE82553B53FE321A403242DE", hash_generated_method = "1AD8F0335DD7B10E7BCF51E59808E29D")
     public final void writeObject(Object object) throws IOException {
         addTaint(object.getTaint());
@@ -1604,6 +1624,7 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1952026876 =         class
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.794 -0400", hash_original_method = "10EDB7023EA5060FBBA4CCA483056F88", hash_generated_method = "1C605B5513B52CA15BE4741CD0F7E92E")
     protected void writeObjectOverride(Object object) throws IOException {
         addTaint(object.getTaint());
@@ -1620,6 +1641,7 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1952026876 =         class
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.795 -0400", hash_original_method = "F969E0C742AA855339F3D16852D29508", hash_generated_method = "5D7B85EAD6ACC1E36FC30B56513B933F")
     public void writeShort(int value) throws IOException {
         addTaint(value);
@@ -1631,6 +1653,7 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1952026876 =         class
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.795 -0400", hash_original_method = "EEF09F25018D316A37E59FEE3B6D335C", hash_generated_method = "D8A4DBD12CAE08FEEAB12FDF55E7C0A4")
     protected void writeStreamHeader() throws IOException {
         output.writeShort(STREAM_MAGIC);
@@ -1641,6 +1664,7 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1952026876 =         class
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.795 -0400", hash_original_method = "BDFE9F98A4288C3F1994A443E4A70C5E", hash_generated_method = "43C0401506821F4A7C1662CF4F916CE0")
     public void writeUTF(String value) throws IOException {
         addTaint(value.getTaint());

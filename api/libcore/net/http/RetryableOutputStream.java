@@ -18,6 +18,7 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
 
     private ByteArrayOutputStream content;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.121 -0400", hash_original_method = "A832DB079A79DDBD6BA954E86DE3CFE0", hash_generated_method = "1352F636065EC36AE68B9261382DE447")
     public  RetryableOutputStream(int limit) {
         this.limit = limit;
@@ -28,6 +29,7 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.121 -0400", hash_original_method = "ACF7E60D1B2648BBC92003365E201CCA", hash_generated_method = "A24CA35E6EF5C5C312D9E235C2290F0F")
     public  RetryableOutputStream() {
         this.limit = -1;
@@ -38,6 +40,7 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.122 -0400", hash_original_method = "01295B07B18E8DACBE5B67B8ED73AB45", hash_generated_method = "70D9D034AAFBB872207AAB3483569F26")
     @Override
     public synchronized void close() throws IOException {
@@ -65,6 +68,7 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.123 -0400", hash_original_method = "E1F3BEFD89D2B57927FA9AF72B0F2441", hash_generated_method = "DDBE29D8D10A855B144ACB000D83A488")
     @Override
     public synchronized void write(byte[] buffer, int offset, int count) throws IOException {
@@ -90,6 +94,7 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.123 -0400", hash_original_method = "D6DA405C75C9B4A91F36F560BEF2D916", hash_generated_method = "274E790BCBF5B245F0AE26B0AD0B93A8")
     public synchronized int contentLength() throws IOException {
         close();
@@ -102,6 +107,7 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.123 -0400", hash_original_method = "13EC0747B327446249F03815D15BF368", hash_generated_method = "A3693C2F57555438C4510076BEEA99F4")
     public void writeToSocket(OutputStream socketOut) throws IOException {
         addTaint(socketOut.getTaint());

@@ -208,6 +208,7 @@ TabHost var06998FE366872B3BEE4958CBCD2D2D0F_1863439716 =         mTabHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.832 -0400", hash_original_method = "8A117298A466C130739D5E7C43BBFBE6", hash_generated_method = "8EA6BE70BBC671D625B4AD005E81518B")
     public TabWidget getTabWidget() {
 TabWidget varF0DBA4D03D7609D8323613EAD5340477_472807350 =         mTabHost.getTabWidget();

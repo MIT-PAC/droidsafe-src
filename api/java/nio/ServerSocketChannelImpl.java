@@ -60,7 +60,7 @@ ServerSocket varA63412D4E099639C1BBCBDC8D705186B_2045354879 =         socket;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.930 -0400", hash_original_method = "B7A0B638220973E2E0E163125709103A", hash_generated_method = "FC11EC07A639F96FFD437DB3947547FF")
     @Override
     public SocketChannel accept() throws IOException {
@@ -112,7 +112,7 @@ SocketChannel var83808169FC036D96931985AC221ACF88_141833379 =         result.soc
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.930 -0400", hash_original_method = "691B92594A92F5155DBD81F8E2ED268A", hash_generated_method = "40C55F0AA6DB229F28FD13D7E44CA7B4")
     @Override
     protected void implConfigureBlocking(boolean blocking) throws IOException {

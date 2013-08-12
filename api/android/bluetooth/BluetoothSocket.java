@@ -551,6 +551,7 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1911228897 =             acc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.705 -0400", hash_original_method = "ABBE2955D2E93EEDCAEE1A70196B3E98", hash_generated_method = "BBC8B3DAD75489C89A8990E3043D4382")
         public synchronized int doSdp() throws IOException {
             if(canceled)            

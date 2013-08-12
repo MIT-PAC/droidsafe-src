@@ -170,7 +170,7 @@ public class AppWidgetProviderInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.821 -0400", hash_original_method = "53CD7F02665BA9CCD92FD799E19E76A8", hash_generated_method = "9406C81CB2A9B5D14D0CEC79082C80A8")
     public String toString() {
 String var86602826B3CB97BCAACAB7E54F86BD12_966471763 =         "AppWidgetProviderInfo(provider=" + this.provider + ")";

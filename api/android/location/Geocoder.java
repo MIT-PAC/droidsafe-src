@@ -52,6 +52,7 @@ public final class Geocoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPresent() {
         IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
         ILocationManager lm = ILocationManager.Stub.asInterface(b);
@@ -128,6 +129,7 @@ List<Address> var540C13E9E156B687226421B24F2DF178_1432694146 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.062 -0400", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "A387DFB00094824D5AADBDFD4B780914")
     public List<Address> getFromLocationName(String locationName, int maxResults) throws IOException {
         addTaint(maxResults);
@@ -182,6 +184,7 @@ List<Address> var540C13E9E156B687226421B24F2DF178_776208618 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.064 -0400", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "04151684FCE729209FBC514D198263B0")
     public List<Address> getFromLocationName(String locationName, int maxResults,
         double lowerLeftLatitude, double lowerLeftLongitude,

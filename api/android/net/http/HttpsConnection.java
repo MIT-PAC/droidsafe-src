@@ -64,7 +64,7 @@ public class HttpsConnection extends Connection {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void initializeEngine(File sessionDir) {
         try {
             SSLClientSessionCache cache = null;

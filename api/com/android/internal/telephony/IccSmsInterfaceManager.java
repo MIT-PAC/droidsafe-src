@@ -86,6 +86,7 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.334 -0400", hash_original_method = "9F601681CEADDF9DEDCDA3A25A2BC5E0", hash_generated_method = "1F2C49C8A75A629CFFF67770F15CCFBF")
     public void sendText(String destAddr, String scAddr,
             String text, PendingIntent sentIntent, PendingIntent deliveryIntent) {
@@ -192,6 +193,7 @@ ArrayList<SmsRawData> varEDFF4FBBF053B5DC2B444ADFA049EE0F_2116326117 =         r
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.337 -0400", hash_original_method = "D79D646E773875E9B0C4106E95D311F1", hash_generated_method = "758EB1BC653CE59032B8E835BA63E5C1")
     protected byte[] makeSmsRecordData(int status, byte[] pdu) {
         addTaint(pdu[0]);

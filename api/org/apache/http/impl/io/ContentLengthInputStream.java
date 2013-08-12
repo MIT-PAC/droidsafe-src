@@ -53,6 +53,7 @@ public class ContentLengthInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.547 -0400", hash_original_method = "37495B10D833FDE07627744A97E6F360", hash_generated_method = "39ABC36047E0431FDDDCCDAF33183EF4")
     public void close() throws IOException {
         if(!closed)        
@@ -83,6 +84,7 @@ public class ContentLengthInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.548 -0400", hash_original_method = "829D665E9575B14A2545A678B846DF03", hash_generated_method = "0F596C6A98EDEDA9A07A23CB6DBF73ED")
     public int read() throws IOException {
         if(closed)        
@@ -113,6 +115,7 @@ public class ContentLengthInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.550 -0400", hash_original_method = "7953751167B17924FE4F5EE632E22C6C", hash_generated_method = "A2C8CCB2E97624005DA252A1895A4C48")
     public int read(byte[] b, int off, int len) throws java.io.IOException {
         addTaint(len);
@@ -155,6 +158,7 @@ public class ContentLengthInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.551 -0400", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "8ACD227DD484B0D4F014512BCCCCBF57")
     public int read(byte[] b) throws IOException {
         addTaint(b[0]);

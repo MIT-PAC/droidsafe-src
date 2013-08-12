@@ -20,6 +20,7 @@ public final class X509PublicKey implements PublicKey {
 
     private byte[] keyBytes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.976 -0400", hash_original_method = "9FD348638D81D976A870B98763E67369", hash_generated_method = "D790DFA6420E40E56C1C8FB9BD83052A")
     public  X509PublicKey(String algorithm, byte[] encoded, byte[] keyBytes) {
         this.algorithm = algorithm;
@@ -65,7 +66,7 @@ String varF820115C876B7F160DE375988A3E1CA1_1306700469 =         "X.509";
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.977 -0400", hash_original_method = "20DEFC617AA5E46ABFC95D3E93C239C4", hash_generated_method = "246F56D4C624B63B775FF2C5F819B5B2")
     @Override
     public String toString() {

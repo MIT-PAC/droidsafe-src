@@ -87,6 +87,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_1188307960 =         res.toString();
             ASN1Oid.getInstance(),
             GeneralName.ASN1 }) {
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new AccessDescription(
@@ -94,6 +95,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_1188307960 =         res.toString();
                     (GeneralName) values[1], in.getEncoded());
         }
 
+        @DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             AccessDescription ad = (AccessDescription) object;
             values[0] = ObjectIdentifier.toIntArray(ad.accessMethod);

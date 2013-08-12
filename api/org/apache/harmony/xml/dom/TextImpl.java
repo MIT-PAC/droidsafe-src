@@ -90,6 +90,7 @@ Text var72A74007B2BE62B849F475C7BDA4658B_605658270 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.711 -0400", hash_original_method = "9EC887BD47A703F2DBB656ECC04AC254", hash_generated_method = "D53034338FC964F94B725337A5D57F34")
     public final String getWholeText() {
         StringBuilder result = new StringBuilder();
@@ -109,6 +110,7 @@ String varE65B3A02759122992CB82C0E651AD408_816196226 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.711 -0400", hash_original_method = "F1D9E0F93EC220C6C7713D2F10A5FC3E", hash_generated_method = "29C30504B43D70999B0BD14B71A4CE35")
     public final Text replaceWholeText(String content) throws DOMException {
         addTaint(content.getTaint());
@@ -211,6 +213,7 @@ TextImpl var035B60A3C8E68711360148642E80CAF6_1466236922 =         nodeType == No
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.713 -0400", hash_original_method = "C12D207E9524D7914DF3EC77CD8084EB", hash_generated_method = "74C542C23714AB1FF92D9C0D1EDD5B5D")
     public final TextImpl minimize() {
         if(getLength() == 0)        

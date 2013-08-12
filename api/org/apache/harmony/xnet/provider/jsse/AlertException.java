@@ -17,6 +17,7 @@ public class AlertException extends RuntimeException {
 
     private byte description;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.887 -0400", hash_original_method = "76164594E21D6CE99D1A0A90A760CF7A", hash_generated_method = "C31398FCD1D6FC21427CE5C9A0C803C3")
     protected  AlertException(byte description, SSLException reason) {
         super(reason);

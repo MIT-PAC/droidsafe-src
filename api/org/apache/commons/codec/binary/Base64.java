@@ -33,6 +33,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isArrayByteBase64(byte[] arrayOctect) {
         arrayOctect = discardWhitespace(arrayOctect);
         int length = arrayOctect.length;
@@ -48,16 +49,19 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encodeBase64(byte[] binaryData) {
         return encodeBase64(binaryData, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encodeBase64Chunked(byte[] binaryData) {
         return encodeBase64(binaryData, true);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.655 -0400", hash_original_method = "27928DA5608E3EA81ACF98D07D1CDAA8", hash_generated_method = "3934633E0BD5D78303A18A2E35144272")
     public Object decode(Object pObject) throws DecoderException {
         addTaint(pObject.getTaint());
@@ -78,6 +82,7 @@ Object varF1762E63BC655048A9E66320D228C179_1826708357 =         decode((byte[]) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.655 -0400", hash_original_method = "E9A5741B84FE67E582817B8B79597420", hash_generated_method = "7050916032BAED808F2CD4BB8C0920FC")
     public byte[] decode(byte[] pArray) {
         addTaint(pArray[0]);
@@ -89,6 +94,7 @@ Object varF1762E63BC655048A9E66320D228C179_1826708357 =         decode((byte[]) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
         int lengthDataBits = binaryData.length * EIGHTBIT;
         int fewerThan24bits = lengthDataBits % TWENTYFOURBITGROUP;
@@ -188,6 +194,7 @@ Object varF1762E63BC655048A9E66320D228C179_1826708357 =         decode((byte[]) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] decodeBase64(byte[] base64Data) {
         base64Data = discardNonBase64(base64Data);
         if (base64Data.length == 0) {
@@ -254,6 +261,7 @@ Object varF1762E63BC655048A9E66320D228C179_1826708357 =         decode((byte[]) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     static byte[] discardNonBase64(byte[] data) {
         byte groomedData[] = new byte[data.length];
         int bytesCopied = 0;
@@ -268,6 +276,7 @@ Object varF1762E63BC655048A9E66320D228C179_1826708357 =         decode((byte[]) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.655 -0400", hash_original_method = "D5F82E7B8136CE61250AF5358F628FEE", hash_generated_method = "07E9694553D04CA08273386689C00D1D")
     public Object encode(Object pObject) throws EncoderException {
         addTaint(pObject.getTaint());
@@ -290,6 +299,7 @@ Object var130E191B6E071C81E7965AE9B24FBF1F_1794902393 =         encode((byte[]) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.656 -0400", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "B437DD759135813D7E9E39E74D6D8A1C")
     public byte[] encode(byte[] pArray) {
         addTaint(pArray[0]);

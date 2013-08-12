@@ -27,6 +27,7 @@ public class AlgorithmParameters {
 
     private boolean initialized;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.761 -0400", hash_original_method = "8DBC0799ED7E4900EBC29238B9DE7938", hash_generated_method = "FC9EF5F3B00E0445DB638E5CE884E307")
     protected  AlgorithmParameters(AlgorithmParametersSpi algPramSpi,
             Provider provider, String algorithm) {
@@ -40,6 +41,7 @@ public class AlgorithmParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmParameters getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -49,6 +51,7 @@ public class AlgorithmParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmParameters getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException {
@@ -63,6 +66,7 @@ public class AlgorithmParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmParameters getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -98,6 +102,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_567538338 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.763 -0400", hash_original_method = "7E6C59119732596BEFEB2E6E8A90EC10", hash_generated_method = "8AC8EF5D25C8AA68F6F3B6B9716076F7")
     public final void init(AlgorithmParameterSpec paramSpec) throws InvalidParameterSpecException {
         addTaint(paramSpec.getTaint());
@@ -118,6 +123,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_567538338 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.763 -0400", hash_original_method = "617D5B707C3D1A91A18634DFC0D9F364", hash_generated_method = "4CB3CF2A238FD214AD15F19EFC3E8D81")
     public final void init(byte[] params) throws IOException {
         addTaint(params[0]);
@@ -138,6 +144,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_567538338 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.764 -0400", hash_original_method = "7B3B0E8CD7575D668CB68D6510D827CC", hash_generated_method = "172F4F88C26D1B37D09196A64D906A8F")
     public final void init(byte[] params, String format) throws IOException {
         addTaint(format.getTaint());
@@ -179,6 +186,7 @@ T var85314A191FE096CEB6FC1BB15A481DB0_510525874 =         spiImpl.engineGetParam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.765 -0400", hash_original_method = "2345D83B19F14D228FA4A748BB5C0696", hash_generated_method = "6C0398B86C726A6FF0D279495CC43B78")
     public final byte[] getEncoded() throws IOException {
         if(!initialized)        
@@ -198,6 +206,7 @@ T var85314A191FE096CEB6FC1BB15A481DB0_510525874 =         spiImpl.engineGetParam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.766 -0400", hash_original_method = "5F0B9F7B1E2AFA510F6DA0646E7306FA", hash_generated_method = "E3B5CBA7E622F37265106A27206C7260")
     public final byte[] getEncoded(String format) throws IOException {
         addTaint(format.getTaint());
@@ -218,6 +227,7 @@ T var85314A191FE096CEB6FC1BB15A481DB0_510525874 =         spiImpl.engineGetParam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.767 -0400", hash_original_method = "3487587F52CF5404E8DAC6B47C5FD08C", hash_generated_method = "6FABEB4C58A2537CBF82CA060A2F9A50")
     @Override
     public final String toString() {

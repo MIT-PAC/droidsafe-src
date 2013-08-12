@@ -70,6 +70,7 @@ public class Program extends BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:00.979 -0400", hash_original_method = "0F929F0C8DC1843BD8DBD2B052064009", hash_generated_method = "E860DA58F781518ABE0F972AE4BDF008")
     public void bindTexture(Allocation va, int slot) throws IllegalArgumentException {
         addTaint(slot);
@@ -104,6 +105,7 @@ public class Program extends BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:00.995 -0400", hash_original_method = "B2C558B84E6818BCD922065D1FCE7093", hash_generated_method = "60C39C3BDFA8285CA38A7DD8692E479E")
     public void bindSampler(Sampler vs, int slot) throws IllegalArgumentException {
         addTaint(slot);
@@ -208,6 +210,7 @@ public class Program extends BaseObj {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:01.059 -0400", hash_original_method = "FF16C67F383C574036DFC60B250EEEF2", hash_generated_method = "CE83448BA3F081A75227157264814DFC")
         public BaseProgramBuilder setShader(String s) {
             mShader = s;
@@ -278,6 +281,7 @@ BaseProgramBuilder var72A74007B2BE62B849F475C7BDA4658B_2077137275 =             
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:01.091 -0400", hash_original_method = "5F149B188E50B29E19B8539B65E14210", hash_generated_method = "F46F28211598F4B904F22AB86F299E50")
         public int getCurrentConstantIndex() {
             int var677F7AF84F1D13D06BD9C3C87AE36A8D_1462116947 = (mConstantCount - 1);
@@ -288,6 +292,7 @@ BaseProgramBuilder var72A74007B2BE62B849F475C7BDA4658B_2077137275 =             
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:01.099 -0400", hash_original_method = "467C1DDFF09334AC57E34CD93B505419", hash_generated_method = "E2ACB436BF9D540FCCC2639FF8D11A06")
         public int getCurrentTextureIndex() {
             int var727FB2B8D8DDBF1CA78ED512140FD838_332326716 = (mTextureCount - 1);
@@ -298,6 +303,7 @@ BaseProgramBuilder var72A74007B2BE62B849F475C7BDA4658B_2077137275 =             
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:01.112 -0400", hash_original_method = "4E1ECDF73B11EBBAA54149A8F56B9D61", hash_generated_method = "097A69393CB3638502315321EAF7EB82")
         public BaseProgramBuilder addConstant(Type t) throws IllegalStateException {
             if(mConstantCount >= MAX_CONSTANT)            

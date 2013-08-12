@@ -6,6 +6,7 @@ import droidsafe.annotations.*;
 
 public class OperationCanceledException extends AccountsException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.774 -0400", hash_original_method = "6A2CA580ECAC1CA80E08E40CC1DE7A0D", hash_generated_method = "5FBC7ED054974008E3508D207C4F8A0E")
     public  OperationCanceledException() {
         super();
@@ -13,6 +14,7 @@ public class OperationCanceledException extends AccountsException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.776 -0400", hash_original_method = "30D3CCD84D44CE1156B1C66BFE82B5A0", hash_generated_method = "AF2693A0BA0D7DEB3AF3A535CE7B4CE9")
     public  OperationCanceledException(String message) {
         super(message);

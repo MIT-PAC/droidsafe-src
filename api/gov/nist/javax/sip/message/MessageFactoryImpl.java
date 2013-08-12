@@ -68,6 +68,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.820 -0400", hash_original_method = "D170EED829DCE544127E74E1BD3E45CA", hash_generated_method = "7F9CC491868D3224FA126C9C82EEEC5F")
     public Request createRequest(javax.sip.address.URI requestURI,
             String method, CallIdHeader callId, CSeqHeader cSeq,
@@ -133,6 +134,7 @@ Request varC7C20CEFE913CADDEFC247E46F836F62_409504577 =         sipRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.821 -0400", hash_original_method = "41D839E013CFE4CFF0DE63311CBF1487", hash_generated_method = "211E82B0283D71800E03A83364E81DC1")
     public Request createRequest(URI requestURI, String method,
             CallIdHeader callId, CSeqHeader cSeq, FromHeader from, ToHeader to,
@@ -182,6 +184,7 @@ Request varC7C20CEFE913CADDEFC247E46F836F62_1852941149 =         sipRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.822 -0400", hash_original_method = "CE2184BFA0A9A5A1AA8BA0C0C675B13F", hash_generated_method = "701F9D80FCD7891E6C7DD49CF325B7D1")
     public Request createRequest(URI requestURI, String method,
             CallIdHeader callId, CSeqHeader cSeq, FromHeader from, ToHeader to,
@@ -243,6 +246,7 @@ Request varC7C20CEFE913CADDEFC247E46F836F62_1202564480 =         sipRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.823 -0400", hash_original_method = "ECF04A8977F592B6B34B54A1AB720125", hash_generated_method = "685B46265EC2333CE30C90A4F67EB860")
     public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
@@ -290,6 +294,7 @@ Response varF66B3BABBC9AAC75BB598AB35EF16644_1311183611 =         sipResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.825 -0400", hash_original_method = "A629704DD43A1871A6A3CE469581E96B", hash_generated_method = "51EDE0CA4CCDEE3B6D38EDE82767AA59")
     public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
@@ -408,6 +413,7 @@ Response varF66B3BABBC9AAC75BB598AB35EF16644_106925343 =         sipResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.826 -0400", hash_original_method = "DD467BD39ED470F41EBF28C514D0DE9D", hash_generated_method = "FFB2DAE01AD72CB933CDF22563BBC5FB")
     public Response createResponse(int statusCode, Request request,
             ContentTypeHeader contentType, Object content) throws ParseException {
@@ -483,6 +489,7 @@ Response varF66B3BABBC9AAC75BB598AB35EF16644_72945952 =         sipResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.827 -0400", hash_original_method = "C92B83B60B03C2CCAA2954674526918C", hash_generated_method = "76F5DB9D2A4E533DE00B34878A67FD9B")
     public Response createResponse(int statusCode, Request request) throws ParseException {
         addTaint(request.getTaint());
@@ -518,6 +525,7 @@ Response varF66B3BABBC9AAC75BB598AB35EF16644_1590913344 =         sipResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.828 -0400", hash_original_method = "CA414FF436476B2FF81777F9CBBFC86F", hash_generated_method = "852DC0CEBFF502559EC0CD55FABD7A76")
     public Request createRequest(javax.sip.address.URI requestURI,
             String method, CallIdHeader callId, CSeqHeader cSeq,
@@ -583,6 +591,7 @@ Request varC7C20CEFE913CADDEFC247E46F836F62_1308484230 =         sipRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.829 -0400", hash_original_method = "F442F4A57014D62724BCC0FFB03CA549", hash_generated_method = "F15754CE0C955EF786BD547B95A78146")
     public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
@@ -635,6 +644,7 @@ Response varF66B3BABBC9AAC75BB598AB35EF16644_819830240 =         sipResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.829 -0400", hash_original_method = "6F9C1831E48382AD1DFACEE268167E8E", hash_generated_method = "ABD8142215EACFAC02958EDCA0285E34")
     public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,

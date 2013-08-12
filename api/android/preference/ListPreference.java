@@ -75,6 +75,7 @@ public class ListPreference extends DialogPreference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.315 -0400", hash_original_method = "F8AB6256811E3BA7AD610D04605DBEC4", hash_generated_method = "7F29CDDA2E6A00E5FD60C5EACAC3FE19")
     public void setEntries(int entriesResId) {
         addTaint(entriesResId);
@@ -104,6 +105,7 @@ CharSequence[] varDFEB20DF106F6A2CD6E980CC40196305_1033064800 =         mEntries
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.316 -0400", hash_original_method = "7F861B3AE1A834F9F6742B52B4830C35", hash_generated_method = "6DAF9580580CE2E0BA959DDF93D45C34")
     public void setEntryValues(int entryValuesResId) {
         addTaint(entryValuesResId);
@@ -124,6 +126,7 @@ CharSequence[] var8191EBE8B88208B04001F3EB9757A462_1035405289 =         mEntryVa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.316 -0400", hash_original_method = "C381E833D619D719391B620073306BFE", hash_generated_method = "A041F9E43957DB69CEF4AD3D2F625BA5")
     public void setValue(String value) {
         mValue = value;
@@ -134,6 +137,7 @@ CharSequence[] var8191EBE8B88208B04001F3EB9757A462_1035405289 =         mEntryVa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.317 -0400", hash_original_method = "C91AC61B4049FB662B529C1D1FF98F02", hash_generated_method = "2690E0EE9125629DB0F68ED4ECDB39E0")
     @Override
     public CharSequence getSummary() {
@@ -160,6 +164,7 @@ CharSequence varB94F03AB2102AC083EBCD479B7D73881_979453654 =             String.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.317 -0400", hash_original_method = "4C1B142B1B7C5EA1E6C6981CF6E13968", hash_generated_method = "F2567B4C67BA8A6BC5319A5FD8656F75")
     @Override
     public void setSummary(CharSequence summary) {
@@ -183,6 +188,7 @@ CharSequence varB94F03AB2102AC083EBCD479B7D73881_979453654 =             String.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.318 -0400", hash_original_method = "BCD9DE4E5FC7BA2AD13976209DEB6B06", hash_generated_method = "D8EE9CF7614CCBD13236BDD5B06EA6B5")
     public void setValueIndex(int index) {
         addTaint(index);
@@ -208,6 +214,7 @@ String varD1FEA3F5EE4618A9C3646312F018E4AC_709229868 =         mValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.319 -0400", hash_original_method = "70FF40F71A0C525EB8753661CD710EE3", hash_generated_method = "7911DC489275D81E75A1FB6C435DEBAC")
     public CharSequence getEntry() {
         int index = getValueIndex();
@@ -220,6 +227,7 @@ CharSequence varCFEC00F16F2300EEED067902F15C00E3_1886547097 =         index >= 0
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.322 -0400", hash_original_method = "4E596FDEE64331A25D2B8DFD1BC8797E", hash_generated_method = "E8C3FA6D0496941C0A1BFDB045B333C1")
     public int findIndexOfValue(String value) {
         addTaint(value.getTaint());
@@ -261,6 +269,7 @@ for(int i = mEntryValues.length - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.324 -0400", hash_original_method = "6F3CE4AF4F3E6C4B07BCF51D003E1B7E", hash_generated_method = "3114A4970509F69EE8C488178C32F683")
     @Override
     protected void onPrepareDialogBuilder(Builder builder) {
@@ -336,6 +345,7 @@ for(int i = mEntryValues.length - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.327 -0400", hash_original_method = "617E38A3300A64CD810B1ADC15B8238E", hash_generated_method = "B7D4EB6AAEB760D2C8C37A504CBADBD0")
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
@@ -350,6 +360,7 @@ Object var0AC0FFFECD61C5D7F483CEEBDC224FAC_1628873747 =         a.getString(inde
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.328 -0400", hash_original_method = "267399412B1F2706B566A7FA45C565D6", hash_generated_method = "2E70A4EC011DBDE8909784007AECB090")
     @Override
     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {

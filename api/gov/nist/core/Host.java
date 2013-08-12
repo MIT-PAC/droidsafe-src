@@ -37,6 +37,7 @@ public class Host extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.316 -0400", hash_original_method = "1C54F901C7075E148109F48E4FA121E8", hash_generated_method = "8740F404EC5394B5D024134EF11AD4CA")
     public  Host(String hostName) throws IllegalArgumentException {
         addTaint(hostName.getTaint());
@@ -109,6 +110,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_118167707 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.318 -0400", hash_original_method = "9C0AAF91E5C10F0884CC4B99F07D9A3D", hash_generated_method = "241A880DB38E3DE1A13AFCEEAF7E036C")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -160,6 +162,7 @@ String varA422790FD25D792954B908E37198A455_1230298465 =         hostname;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.319 -0400", hash_original_method = "217AB83550ED2E15188C82C367958B30", hash_generated_method = "37F3CFE424F188F153658219D4590848")
     public String getIpAddress() {
         String rawIpAddress = null;
@@ -301,6 +304,7 @@ String varB9A086326A3B77E8D4CF1FBB7004D18C_1033684749 =         rawIpAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.323 -0400", hash_original_method = "0FE7E7513DCC8527F5BCCDE13498B6DC", hash_generated_method = "9DD1EC7F373CD6744340E1A3A132ED85")
     public InetAddress getInetAddress() throws java.net.UnknownHostException {
         if(hostname == null)        

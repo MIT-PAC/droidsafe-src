@@ -45,6 +45,7 @@ public class DefaultRouter implements Router {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.246 -0400", hash_original_method = "0186412A42AE3A0076B8DB4250031F53", hash_generated_method = "4D64756E5CD8C2A1884EACDB2A802A85")
     public  DefaultRouter(SipStack sipStack, String defaultRoute) {
         this.sipStack = (SipStackImpl) sipStack;
@@ -82,6 +83,7 @@ public class DefaultRouter implements Router {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.248 -0400", hash_original_method = "5920A86ACDD933EC7CFC2B95A34FE620", hash_generated_method = "921CF172215FBF4F6D7D386AE3E09E2D")
     public Hop getNextHop(Request request) throws SipException {
         addTaint(request.getTaint());
@@ -184,6 +186,7 @@ Hop var540C13E9E156B687226421B24F2DF178_1655616454 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.250 -0400", hash_original_method = "F98ABD2EA2392557384972BDB7FAD5AD", hash_generated_method = "CCCEB65ED8C3986E9BC1D4BBCEE4CB85")
     public void fixStrictRouting(SIPRequest req) {
         addTaint(req.getTaint());
@@ -263,6 +266,7 @@ javax.sip.address.Hop varF8E8BFFE70D4C82F135420B297CB0572_1275462397 =         t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.253 -0400", hash_original_method = "C9341668DF04FCD8B03458AAEB056098", hash_generated_method = "5B5E07C756CAD4CE8EEC53749D4C8F5C")
     public ListIterator getNextHops(Request request) {
         addTaint(request.getTaint());

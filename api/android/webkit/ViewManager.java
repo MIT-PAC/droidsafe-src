@@ -169,7 +169,7 @@ for(ChildView v : mChildren)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.278 -0400", hash_original_method = "F0F47054709F050065D565E243DB8138", hash_generated_method = "2F391B4B259977D73AFFFA42D3682276")
      void endZoom() {
         mZoomInProgress = false;

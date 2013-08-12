@@ -23,6 +23,7 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
 
     private IOException instantiationException;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.393 -0400", hash_original_method = "73CB7C407A43304FA150044B815B6A46", hash_generated_method = "DA509C88D8CBE2F9A5C5ADAE49E05105")
     public  SSLServerSocketFactoryImpl() {
         try 
@@ -58,7 +59,7 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.394 -0400", hash_original_method = "D2E4703F25DE73045253D43D661F8658", hash_generated_method = "63C870F7FEFA8C44AFE0A40281C6A74E")
     @Override
     public String[] getDefaultCipherSuites() {
@@ -79,7 +80,7 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_1214971692 =         sslParameters.
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.395 -0400", hash_original_method = "107E6937D2B525F81A260013B97CF7D4", hash_generated_method = "576D1F746176A37DB2B9C36F2482C442")
     @Override
     public String[] getSupportedCipherSuites() {
@@ -100,7 +101,7 @@ String[] varF6F3ABBB205DDE294417F777EFDFB1AB_404122685 =         CipherSuite.get
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.395 -0400", hash_original_method = "8CBCDC02B624BDC3EBB9915D8C4D504E", hash_generated_method = "AEB32DE12B889087AC2DADDA5E7C8B1B")
     @Override
     public ServerSocket createServerSocket() throws IOException {
@@ -120,7 +121,7 @@ ServerSocket var86527CE368486504962A0DA665B63240_362655678 =         new SSLServ
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.396 -0400", hash_original_method = "38B1F9FB8A801D54D6140D98F9574C0C", hash_generated_method = "44D724D8FA350E84BD69B2022528991D")
     @Override
     public ServerSocket createServerSocket(int port) throws IOException {
@@ -143,7 +144,7 @@ ServerSocket var7CE2FAD1FAA4191304ED54A5E79AABB8_1748732306 =         new SSLSer
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.396 -0400", hash_original_method = "DB92DF56A4C60994E7A02C3BBC7271E4", hash_generated_method = "6ECC8C361903D457C61A8816F8040CC9")
     @Override
     public ServerSocket createServerSocket(int port, int backlog) throws IOException {
@@ -167,7 +168,7 @@ ServerSocket var2BDCD37DE1607D996E9E2DDBD7BF73A6_936939033 =         new SSLServ
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.397 -0400", hash_original_method = "05EB93BEC7CA6CC8959662993B7E734B", hash_generated_method = "27C22F100C692C87AC8CAFF78778B96A")
     @Override
     public ServerSocket createServerSocket(int port, int backlog,

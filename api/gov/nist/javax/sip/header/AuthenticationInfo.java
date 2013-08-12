@@ -123,6 +123,7 @@ String var652AB4C7E1504C0D435CEB3C517BD439_630296517 =         this.getParameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.045 -0400", hash_original_method = "CDD1565AE66D1F19FAC92EF7F73506E7", hash_generated_method = "5D479ED128D668886B36EE7821AAA7CB")
     public void setCNonce(String cNonce) throws ParseException {
         addTaint(cNonce.getTaint());
@@ -132,6 +133,7 @@ String var652AB4C7E1504C0D435CEB3C517BD439_630296517 =         this.getParameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.046 -0400", hash_original_method = "4BA976DE811A19A0644E93DFC8BE6F26", hash_generated_method = "257112CD3E8B37BCC56D25965E5E6064")
     public void setNextNonce(String nextNonce) throws ParseException {
         addTaint(nextNonce.getTaint());
@@ -141,6 +143,7 @@ String var652AB4C7E1504C0D435CEB3C517BD439_630296517 =         this.getParameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.046 -0400", hash_original_method = "885E7CACD33EDD6ADEC8B61045CE08BB", hash_generated_method = "0E1EEA4831F5ED2016C5399AD046BD96")
     public void setNonceCount(int nonceCount) throws ParseException {
         addTaint(nonceCount);
@@ -164,6 +167,7 @@ String var652AB4C7E1504C0D435CEB3C517BD439_630296517 =         this.getParameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.047 -0400", hash_original_method = "B224A85C0273DF0FE71ACDF1CBE34D20", hash_generated_method = "57A9BCC9E8F5D67744D6D9DFC75B8D43")
     public void setQop(String qop) throws ParseException {
         addTaint(qop.getTaint());

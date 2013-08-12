@@ -16,6 +16,7 @@ class VMThread {
 
     int vmData;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.709 -0400", hash_original_method = "1F6D5BC845AA1BFC5CA0AAC86B89BD84", hash_generated_method = "491E6C78D5C5B622654A9B44AD8AA760")
       VMThread(Thread t) {
         thread = t;
@@ -66,6 +67,7 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.711 -0400", hash_original_method = "A99C097CFE2867999295EE26A5D88F1F", hash_generated_method = "B21ED2BD8C15ED3917243D47CE193AD3")
      void start(long stackSize) {
         addTaint(stackSize);

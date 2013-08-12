@@ -56,6 +56,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.961 -0400", hash_original_method = "1E5AB95BB29F6C6E7982DF5E5FB9856A", hash_generated_method = "C00C0C061C00540F9B0F10960D3E2F6A")
     @Override
     public boolean equals(Object o) {
@@ -81,7 +82,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.962 -0400", hash_original_method = "7D0F85484BF18E8882B18922DC61C5E2", hash_generated_method = "32D972BC309EC0A0C2D2845E407FF648")
     @Override
     public int hashCode() {
@@ -93,7 +94,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
         TypeVariable[] formalVars = layer.getTypeParameters();
         for (TypeVariable var : formalVars) {
@@ -128,6 +129,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.963 -0400", hash_original_method = "295DDC7EA34C93EE6582DD0CD1BD5CCA", hash_generated_method = "AD55FE157FB1707F9B45C967F0CAD860")
      void resolve() {
         if(formalVar != null)        

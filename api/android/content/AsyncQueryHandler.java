@@ -327,6 +327,7 @@ switch(event){
     
     protected class WorkerHandler extends Handler {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.436 -0400", hash_original_method = "A52B8D8E16654F983AD0EA90A5CCAF59", hash_generated_method = "F512DD8347E2C466089CBE1C3F03EA3A")
         public  WorkerHandler(Looper looper) {
             super(looper);

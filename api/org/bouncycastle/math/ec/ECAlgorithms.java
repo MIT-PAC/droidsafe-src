@@ -36,7 +36,7 @@ public class ECAlgorithms {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static ECPoint shamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l) {
         if (!P.getCurve().equals(Q.getCurve()))

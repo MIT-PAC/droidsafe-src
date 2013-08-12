@@ -76,6 +76,7 @@ public class ViewFlipper extends ViewAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.243 -0400", hash_original_field = "02869CDAF60D7BAD10F76E3EF9313FAC", hash_generated_field = "1FE43EAD86528C4571343BC4A0A3488D")
 
     private final Handler mHandler = new Handler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.243 -0400", hash_original_method = "9F9F367503C2FAC32268BB267EBDCEAD", hash_generated_method = "8005712ED1DB8AF5F18C577789BDFE94")
         @Override
         public void handleMessage(Message msg) {
@@ -225,7 +226,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "01EB120A60E7A5C93ADD152BE225A9A1", hash_generated_method = "95DAE41B7EF1D4EE1E159B09B77728E8")
     private void updateRunning() {
         updateRunning(true);
@@ -234,7 +235,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.250 -0400", hash_original_method = "FEBFE82757020B844DFA7E8A1658E9A7", hash_generated_method = "AFC07426A2A5ED4EB088A9BC40257CB4")
     private void updateRunning(boolean flipNow) {
         addTaint(flipNow);

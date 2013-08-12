@@ -70,6 +70,7 @@ for(int i = 0;i < oldKeys.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.614 -0400", hash_original_method = "72EE0757674E1412A0DE2CCEADDB9C34", hash_generated_method = "A3EC175168196A6D31D003F414EA1157")
     public int get(Object key) {
         addTaint(key.getTaint());
@@ -139,6 +140,7 @@ for(int i = 0;i < oldKeys.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.617 -0400", hash_original_method = "F8012E326D1DCEC3988D8313DECC50DD", hash_generated_method = "314BE07447899CE65AC822EE5AE48A98")
     public int put(Object key, int value) {
         addTaint(value);

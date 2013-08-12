@@ -18,6 +18,7 @@ public final class FinalizerReference<T> extends Reference<T> {
 
     private FinalizerReference next;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.759 -0400", hash_original_method = "794711F8A2A85EA506452F6F39733664", hash_generated_method = "42DCF29ACAFCD1B3BB33325026979E23")
     public  FinalizerReference(T r, ReferenceQueue<? super T> q) {
         super(r, q);
@@ -27,6 +28,7 @@ public final class FinalizerReference<T> extends Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.759 -0400", hash_original_method = "832B7710CFA0BEA3E25E81BFE41C7B96", hash_generated_method = "235D170ABA453556898E79DC3497E234")
     @Override
     public T get() {
@@ -81,7 +83,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1452399684 =         zombie;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void finalizeAllEnqueued() throws InterruptedException {
         Sentinel sentinel = new Sentinel();
         FinalizerReference<Object> reference = new FinalizerReference<Object>(null, queue);

@@ -32,6 +32,7 @@ public class UsbManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.024 -0400", hash_original_method = "0C4F9A912AC5BE14CB67FA981035B977", hash_generated_method = "81D3B487B5641EE88D23592D602279A7")
     public HashMap<String,UsbDevice> getDeviceList() {
         Bundle bundle = new Bundle();
@@ -69,6 +70,7 @@ HashMap<String,UsbDevice> var540C13E9E156B687226421B24F2DF178_1735214693 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.024 -0400", hash_original_method = "8D8483424EA0CFD952FF0A230CCAC549", hash_generated_method = "069612DDDE6E87E4F46448B53294F65B")
     public UsbDeviceConnection openDevice(UsbDevice device) {
         addTaint(device.getTaint());
@@ -178,6 +180,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_532364495 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.027 -0400", hash_original_method = "BC4EEEB293CF372F4C660B9CBB978F7E", hash_generated_method = "ED083E3D9FE70F7FCD7468197A0A9DBF")
     public boolean hasPermission(UsbDevice device) {
         addTaint(device.getTaint());

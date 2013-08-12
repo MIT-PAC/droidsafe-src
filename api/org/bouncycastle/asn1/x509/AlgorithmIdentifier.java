@@ -29,6 +29,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
 
     private boolean parametersDefined = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.523 -0400", hash_original_method = "93A0883FD6E1F9293F6274682F4F2B4C", hash_generated_method = "1DA8FD912619DBB1040C93CFE3399124")
     public  AlgorithmIdentifier(
         DERObjectIdentifier     objectId) {
@@ -38,6 +39,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.524 -0400", hash_original_method = "2C0F45B70A770504C9769255F4669C3E", hash_generated_method = "A476A63C87942A3D4251E44C5BD03CCE")
     public  AlgorithmIdentifier(
         String     objectId) {
@@ -47,6 +49,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.525 -0400", hash_original_method = "3ADDA70B8CE4A49F17EDAA7C48E2C341", hash_generated_method = "2A43329F4D0F38FF1AB09D21CDE10B8F")
     public  AlgorithmIdentifier(
         DERObjectIdentifier     objectId,
@@ -61,6 +64,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.527 -0400", hash_original_method = "DB91F54486D8AF4EDC548543A54F560A", hash_generated_method = "93C8D46CF1D04E4E720C7C479BAFBB77")
     public  AlgorithmIdentifier(
         ASN1Sequence   seq) {
@@ -100,6 +104,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmIdentifier getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -107,6 +112,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlgorithmIdentifier getInstance(
         Object  obj) {
         if (obj== null || obj instanceof AlgorithmIdentifier)
@@ -129,6 +135,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.528 -0400", hash_original_method = "CD881EFC58E30EDA4D15D9E8685CDAFE", hash_generated_method = "2BAE2F7FCA3E043578E770E034994E3E")
     public ASN1ObjectIdentifier getAlgorithm() {
 ASN1ObjectIdentifier var554FF09B66A4F1AE1E145F3ACDB8AE2B_156970453 =         new ASN1ObjectIdentifier(objectId.getId());
@@ -161,6 +168,7 @@ DEREncodable var3CB0A38B794BDEDADB1F50256E0AE35B_1955849320 =         parameters
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.529 -0400", hash_original_method = "51F3CA499FC5330FCCD6B589EECABC9B", hash_generated_method = "EC6AB1DBAE3880BE08F99BC8AC3E7AA6")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

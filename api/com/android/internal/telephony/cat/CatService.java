@@ -35,6 +35,7 @@ class RilMessage {
 
     ResultCode mResCode;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.888 -0400", hash_original_method = "3402C3F9EF39C06F449D290965539671", hash_generated_method = "BD9C65CEF2D7E685C85E0E957CB6EFA1")
       RilMessage(int msgId, String rawData) {
         mId = msgId;
@@ -45,6 +46,7 @@ class RilMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.888 -0400", hash_original_method = "56F4F1F4536DAFEF01840B516ADA4963", hash_generated_method = "08086F10920F4C141BD1F6F3CA310AB9")
       RilMessage(RilMessage other) {
         this.mId = other.mId;

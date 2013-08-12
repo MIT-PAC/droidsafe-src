@@ -59,6 +59,7 @@ public class KeyManagerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyManagerFactory getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if ((provider == null) || (provider.length() == 0)) {
             throw new IllegalArgumentException("Provider is null or empty");
@@ -71,6 +72,7 @@ public class KeyManagerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final KeyManagerFactory getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException("Provider is null");
@@ -117,6 +119,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1227211053 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.639 -0400", hash_original_method = "968F65DD7A0A827F06FAF23F78E04C48", hash_generated_method = "4D82229B6FEB6970720AB6BBDA0089BB")
     public final void init(ManagerFactoryParameters spec) throws InvalidAlgorithmParameterException {
         addTaint(spec.getTaint());

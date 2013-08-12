@@ -13,6 +13,7 @@ public class SQLiteException extends SQLException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.779 -0400", hash_original_method = "0C0BEBB87E389634BC41A00A87165715", hash_generated_method = "13CE004E2289F072BFF57DEEB7DF3105")
     public  SQLiteException(String error) {
         super(error);

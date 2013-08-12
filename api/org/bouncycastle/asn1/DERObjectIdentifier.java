@@ -17,6 +17,7 @@ public class DERObjectIdentifier extends ASN1Object {
 
     String identifier;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.440 -0400", hash_original_method = "41784C2F0BEC0E535BBC46B058BAD130", hash_generated_method = "B2F120DC83F6BBA423515BDE568CAF9E")
       DERObjectIdentifier(
         byte[]  bytes) {
@@ -76,6 +77,7 @@ switch((int)value / 40){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.442 -0400", hash_original_method = "475B203FC54A32C4FE512A1ADD61E543", hash_generated_method = "C3CDBC30502A9172F58D23D9D9F9A3CA")
     public  DERObjectIdentifier(
         String  identifier) {
@@ -95,6 +97,7 @@ switch((int)value / 40){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERObjectIdentifier getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERObjectIdentifier)
@@ -105,6 +108,7 @@ switch((int)value / 40){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERObjectIdentifier getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -206,7 +210,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.446 -0400", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "C4A793797058EDA1528B5704E5A956A4")
      void encode(
         DEROutputStream out) throws IOException {
@@ -258,6 +262,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.446 -0400", hash_original_method = "F84420975A0078554FCD832859033A65", hash_generated_method = "8666E8FF5D06355C1B82EEE329105030")
     public int hashCode() {
         int var42FEDBF4FD5BE06E4875C69EBDEDAA3A_1006866346 = (identifier.hashCode());
@@ -268,6 +273,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.447 -0400", hash_original_method = "0655D55E620898111D8D6A0724E88908", hash_generated_method = "A4D866E41B2015F88C3894054CB8513A")
      boolean asn1Equals(
         DERObject  o) {
@@ -290,6 +296,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.447 -0400", hash_original_method = "7A5AF873124B543657B1C40A56842B0C", hash_generated_method = "53A14F32B3C35BF9F5AB0FD90D010492")
     public String toString() {
 String var5B63C5E61AFD535DA7B77B7EF14D4A91_360962898 =         getId();

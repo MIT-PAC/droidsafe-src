@@ -50,6 +50,7 @@ class FrameLoader {
 
     private WebResourceResponse mInterceptResponse;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.710 -0400", hash_original_method = "E604BA5F97EB5A21051EE698F8A56155", hash_generated_method = "A206A49D0F67A967CEB547485E0E8F49")
       FrameLoader(LoadListener listener, WebSettings settings,
             String method, WebResourceResponse interceptResponse) {
@@ -74,7 +75,7 @@ class FrameLoader {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.731 -0400", hash_original_method = "DAE08684530294543D6392896259C957", hash_generated_method = "92386B791CB1171C17B7ECFBFCCD9818")
     public void setReferrer(String ref) {
         if(URLUtil.isNetworkUrl(ref))        
@@ -131,7 +132,7 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1244776930 =         mListener;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.732 -0400", hash_original_method = "C44DBC63D87836D797664A5A599046E9", hash_generated_method = "F9F408113CE06FEC1A84C0281B5CC1B4")
     public boolean executeLoad() {
         String url = mListener.url();
@@ -274,7 +275,7 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1244776930 =         mListener;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.733 -0400", hash_original_method = "24B8F725DD0D2F171F529FAFE2897245", hash_generated_method = "B28637D304EB40844F78B9EBFE4C801D")
      boolean handleHTTPLoad() {
         if(mHeaders == null)        

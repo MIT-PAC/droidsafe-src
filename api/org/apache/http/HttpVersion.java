@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 public final class HttpVersion extends ProtocolVersion implements Serializable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.164 -0400", hash_original_method = "150D62CB24782FBFD68E18019E7202DB", hash_generated_method = "5A98695477A818F3B86276B2130B84D6")
     public  HttpVersion(int major, int minor) {
         super(HTTP, major, minor);
@@ -18,6 +19,7 @@ public final class HttpVersion extends ProtocolVersion implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.164 -0400", hash_original_method = "102B5DD63D8812CA09E006716DE254FA", hash_generated_method = "2F55E8249AA6CE6B0A21D3BDF0011C5D")
     public ProtocolVersion forVersion(int major, int minor) {
         addTaint(minor);

@@ -277,6 +277,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.789 -0400", hash_original_method = "D9E5895ECAF805883FA59A595552AAA6", hash_generated_method = "7BD9826E5A862EF5CCE40DBB6BDA90DC")
     protected void processBlock() {
         int a = H1;

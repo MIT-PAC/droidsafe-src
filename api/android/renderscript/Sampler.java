@@ -40,6 +40,7 @@ public class Sampler extends BaseObj {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.908 -0400", hash_original_method = "D317EF4B4114590296947059ADFB19C8", hash_generated_method = "A1D05334DCB708D329C634803B1E16E3")
     public Value getMinification() {
 Value varFF498CE7DB7B276D58AE6690DD82E33E_973097555 =         mMin;
@@ -50,6 +51,7 @@ Value varFF498CE7DB7B276D58AE6690DD82E33E_973097555 =         mMin;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.914 -0400", hash_original_method = "A7082274978B491E47306F0E360F75DB", hash_generated_method = "27F8053ED5DB58BA6527B177A872DD7C")
     public Value getMagnification() {
 Value varAFB30445E4361E4E22E5CD3ABF37224B_1309446871 =         mMag;
@@ -60,6 +62,7 @@ Value varAFB30445E4361E4E22E5CD3ABF37224B_1309446871 =         mMag;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.922 -0400", hash_original_method = "E48146B3F5D0EC1AF0EEEDA8DCF8E9C5", hash_generated_method = "2E3D65BE34F5EE6A7A23BC5D01075796")
     public Value getWrapS() {
 Value varA9560538D1FF66AD771BC97DC7B4576C_134584045 =         mWrapS;
@@ -70,6 +73,7 @@ Value varA9560538D1FF66AD771BC97DC7B4576C_134584045 =         mWrapS;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.927 -0400", hash_original_method = "BF16B6A54AB7A7E067EFC876E596B184", hash_generated_method = "8E8B0D6CD8A6647EB13BD29D2CC2BE32")
     public Value getWrapT() {
 Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
@@ -80,6 +84,7 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.931 -0400", hash_original_method = "93EB2299B93AC8C5EEC3466170C1832C", hash_generated_method = "230A5E9075498480E3105DD95BF644DF")
     public float getAnisotropy() {
         float var483621F6DC8C41E8F480E4713E953C9C_1417420389 = (mAniso);
@@ -90,7 +95,8 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
     }
 
     
-        public static Sampler CLAMP_NEAREST(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static Sampler CLAMP_NEAREST(RenderScript rs) {
         if(rs.mSampler_CLAMP_NEAREST == null) {
             Builder b = new Builder(rs);
             b.setMinification(Value.NEAREST);
@@ -129,7 +135,8 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
     }
 
     
-        public static Sampler WRAP_NEAREST(RenderScript rs) {
+        @DSModeled(DSC.SAFE)
+    public static Sampler WRAP_NEAREST(RenderScript rs) {
         if(rs.mSampler_WRAP_NEAREST == null) {
             Builder b = new Builder(rs);
             b.setMinification(Value.NEAREST);
@@ -205,6 +212,7 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
 
         float mAniso;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.982 -0400", hash_original_method = "8BA530FE069759F6E1F3228F8706F91B", hash_generated_method = "B5ED360C392A371B9D60BB58F49A31FC")
         public  Builder(RenderScript rs) {
             mRS = rs;
@@ -252,6 +260,7 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:14.003 -0400", hash_original_method = "774B9CE0D926CB6E3A04802F250BB893", hash_generated_method = "939E6F812D10B14C27137B43C9895B57")
         public void setMagnification(Value v) {
             if(v == Value.NEAREST || v == Value.LINEAR)            
@@ -315,6 +324,7 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:14.025 -0400", hash_original_method = "73597F570366B374FBC9D389A92F8786", hash_generated_method = "D5F960071708BD2640344B4882397F43")
         public void setAnisotropy(float v) {
             if(v >= 0.0f)            

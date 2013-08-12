@@ -18,6 +18,7 @@ public class Sets {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static <K> HashSet<K> newHashSet() {
         return new HashSet<K>();
     }
@@ -31,6 +32,7 @@ public class Sets {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> newSortedSet() {
         return new TreeSet<E>();
     }

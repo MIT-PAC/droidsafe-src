@@ -107,6 +107,7 @@ CipherParameters var6D94FE6EDC09D11F0842CB9C3B01FB06_833234573 =         new Key
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.986 -0400", hash_original_method = "51142E64B42932805E0B604E9F91CFAD", hash_generated_method = "A867C8943BD9F78CC6D767E5C3914EB4")
     public CipherParameters generateDerivedParameters(
         int     keySize,

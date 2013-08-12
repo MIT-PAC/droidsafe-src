@@ -46,6 +46,7 @@ public final class StructStat {
 
     public long st_blocks;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.804 -0400", hash_original_method = "22486884C03B7F82D2DEC9BC949FA3E4", hash_generated_method = "0BBCFF4030950EC5C529FBAD0D2BE6F0")
       StructStat(long st_dev, long st_ino, int st_mode, long st_nlink, int st_uid, int st_gid,
             long st_rdev, long st_size, long st_atime, long st_mtime, long st_ctime,

@@ -160,6 +160,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.744 -0400", hash_original_method = "10E4D98F7F6A52C0BD2C384AE2F36499", hash_generated_method = "FE4E9808A03FFE71C90B9C094045E9B6")
     @Override
     protected void setSignalStrengthDefaultValues() {
@@ -427,6 +428,7 @@ switch(cm.getRadioState()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.753 -0400", hash_original_method = "0ED1F162D4C144EF609907545C4226C8", hash_generated_method = "E88F45F59F5F84E8D3ED32B6BEF3371F")
     @Override
     protected void onSignalStrengthResult(AsyncResult ar) {
@@ -545,7 +547,7 @@ for(int i = 0;i < mHomeSystemId.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.755 -0400", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "B6DA6A58DAF4513C2CBC2FEB61446FA4")
     @Override
     protected void log(String s) {
@@ -556,7 +558,7 @@ for(int i = 0;i < mHomeSystemId.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.755 -0400", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "9CAD79F5F2E82C48926C38487323D3F6")
     @Override
     protected void loge(String s) {

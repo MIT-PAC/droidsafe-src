@@ -18,7 +18,7 @@ import com.android.internal.textservice.ITextServicesManager;
 
 public final class TextServicesManager {
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.056 -0400", hash_original_method = "378570C283DD42AD8C379B99FE38C5D3", hash_generated_method = "6D8E7E5AC37BE0D0EB3E290F31648406")
     private  TextServicesManager() {
         if(sService == null)        
@@ -34,7 +34,7 @@ public final class TextServicesManager {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static TextServicesManager getInstance() {
         synchronized (TextServicesManager.class) {
             if (sInstance != null) {
@@ -160,7 +160,7 @@ SpellCheckerSession varD555E544A66E0F97DA6BCDE940E3E79C_117142672 =         sess
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.061 -0400", hash_original_method = "996F778F72629C35F59A814BE7E587F6", hash_generated_method = "0EB0F489C390DD884772CFC9EE06C42F")
     public SpellCheckerInfo[] getEnabledSpellCheckers() {
         try 
@@ -194,7 +194,7 @@ SpellCheckerInfo[] var540C13E9E156B687226421B24F2DF178_300442277 =             n
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.061 -0400", hash_original_method = "A6F1D379519B22786C64C08B94869872", hash_generated_method = "E5066F5A42BD6DBCA53D4DDB0117E3F8")
     public SpellCheckerInfo getCurrentSpellChecker() {
         try 
@@ -218,7 +218,7 @@ SpellCheckerInfo var540C13E9E156B687226421B24F2DF178_1677938214 =             nu
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.062 -0400", hash_original_method = "4E93A8413D33E514F2933033BBA9E9C6", hash_generated_method = "970DB9487BC6138C866FE9091F891064")
     public void setCurrentSpellChecker(SpellCheckerInfo sci) {
         addTaint(sci.getTaint());
@@ -247,7 +247,7 @@ SpellCheckerInfo var540C13E9E156B687226421B24F2DF178_1677938214 =             nu
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.062 -0400", hash_original_method = "A09B5B882B337AC1ACCDB12AE24B1D1D", hash_generated_method = "1B5062BF41ABAF859627860D66D0A240")
     public SpellCheckerSubtype getCurrentSpellCheckerSubtype(
             boolean allowImplicitlySelectedSubtype) {
@@ -274,7 +274,7 @@ SpellCheckerSubtype var540C13E9E156B687226421B24F2DF178_1308362668 =            
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.063 -0400", hash_original_method = "CBCFCEE50800407BA5D76453EB5E1B5E", hash_generated_method = "F80836F3B5624BA7E6A4CB5D280EC08F")
     public void setSpellCheckerSubtype(SpellCheckerSubtype subtype) {
         addTaint(subtype.getTaint());
@@ -309,7 +309,7 @@ SpellCheckerSubtype var540C13E9E156B687226421B24F2DF178_1308362668 =            
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.064 -0400", hash_original_method = "61F4D400D4BC8B241A007E9AEF488847", hash_generated_method = "EBC90A9FBC4A8A5F5D1EDF858B02229E")
     public void setSpellCheckerEnabled(boolean enabled) {
         addTaint(enabled);
@@ -329,7 +329,7 @@ SpellCheckerSubtype var540C13E9E156B687226421B24F2DF178_1308362668 =            
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.064 -0400", hash_original_method = "AE8BC5A0830A7B4F81FE6C44FCEBBBC8", hash_generated_method = "12F764FFC25AE61D56276085E4999F66")
     public boolean isSpellCheckerEnabled() {
         try 

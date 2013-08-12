@@ -199,7 +199,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.054 -0400", hash_original_method = "AB721E5F3628508DEF5AE872A937DFD4", hash_generated_method = "23C998352750AF31DA02D732878FCD85")
     private boolean compareAndIncrementWorkerCount(int expect) {
         addTaint(expect);
@@ -211,7 +211,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.055 -0400", hash_original_method = "046A4642208AB0946E7553D201BA8A62", hash_generated_method = "B862B5267290317B39F575F0C51CD425")
     private boolean compareAndDecrementWorkerCount(int expect) {
         addTaint(expect);
@@ -223,7 +223,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.055 -0400", hash_original_method = "197D64850896CFE44F6E60A0B666E58B", hash_generated_method = "8F4A1F5693239AC1AA471391B29B19D0")
     private void decrementWorkerCount() {
         do {
@@ -235,7 +235,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.055 -0400", hash_original_method = "F2BE86117A689CA9DA89AB2ED7F58DB7", hash_generated_method = "E94285B230068A41C7D79FDF1F44BF21")
     private void advanceRunState(int targetState) {
         addTaint(targetState);
@@ -299,7 +299,7 @@ for(;;)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.057 -0400", hash_original_method = "AA36F499694835EB802B188BC7C59A14", hash_generated_method = "06583D556678F9CA21D9CC973213DE1A")
     private void checkShutdownAccess() {
         SecurityManager security = System.getSecurityManager();
@@ -334,7 +334,7 @@ for(Worker w : workers)
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.058 -0400", hash_original_method = "3FD8BB870BC89D5588F0560753D4337F", hash_generated_method = "CD273599E9E004032DAC6E5A1850A95E")
     private void interruptWorkers() {
         final ReentrantLock mainLock = this.mainLock;
@@ -372,7 +372,7 @@ for(Worker w : workers)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.058 -0400", hash_original_method = "C11819B67BF410300D59BD8104FE87A4", hash_generated_method = "5F5AE712F812F7CAF2B3399FA80C0F85")
     private void interruptIdleWorkers(boolean onlyOne) {
         addTaint(onlyOne);
@@ -428,7 +428,7 @@ for(Worker w : workers)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.059 -0400", hash_original_method = "8AE0F2FE6E5901DBE1EC6FD71BA67D3B", hash_generated_method = "5A72F35E8F8382990E1FD3DE61AAA8EA")
     private void interruptIdleWorkers() {
         interruptIdleWorkers(false);
@@ -437,7 +437,7 @@ for(Worker w : workers)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.059 -0400", hash_original_method = "41D1BD0CB95E0A52108020867995148C", hash_generated_method = "0166359A1E5FA720D76735778845B3E2")
     private void clearInterruptsForTaskRun() {
         if(runStateLessThan(ctl.get(), STOP) &&
@@ -484,7 +484,7 @@ for(Worker w : workers)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.060 -0400", hash_original_method = "4695ACF3E76D112BC6AF0E9543CB0BFB", hash_generated_method = "BE025C26B50EDDD18E29B24E69B10E95")
     private List<Runnable> drainQueue() {
         BlockingQueue<Runnable> q = workQueue;
@@ -515,7 +515,7 @@ List<Runnable> var8E14B675DD0E734D8359E9F7C3310A0E_38829162 =         taskList;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.061 -0400", hash_original_method = "7812A944CC6B2EE743043503F380EB35", hash_generated_method = "5DAA769DFEBB5E9AB8E52540D84F86CF")
     private boolean addWorker(Runnable firstTask, boolean core) {
         addTaint(core);
@@ -590,7 +590,7 @@ for(;;)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.063 -0400", hash_original_method = "98853BED73C436EB42A5D4B84EE5AAA8", hash_generated_method = "E47AC5707BABB6BA18F1E6E8F56B0B9B")
     private void processWorkerExit(Worker w, boolean completedAbruptly) {
         addTaint(completedAbruptly);
@@ -647,7 +647,7 @@ for(;;)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.065 -0400", hash_original_method = "CCE5E762047CA277EB153A60A9218EEF", hash_generated_method = "7CC6BA5508E42DF9B77F80B776155C0D")
     private Runnable getTask() {
         boolean timedOut = false;

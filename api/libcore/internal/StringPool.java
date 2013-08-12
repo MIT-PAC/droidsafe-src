@@ -31,6 +31,7 @@ public final class StringPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.922 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "D38AE4B4781A2D16F4305E860D49BB23")
     public String get(char[] array, int start, int length) {
         addTaint(length);

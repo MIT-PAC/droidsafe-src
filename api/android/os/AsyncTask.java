@@ -68,6 +68,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.589 -0400", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "B93DD365EACA133CBE5CAF01133F8330")
     private Result postResult(Result result) {
         addTaint(result.getTaint());
@@ -107,6 +108,7 @@ Status var6300E74790326279AA67EB8DFA2C84B0_2080544147 =         mStatus;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.593 -0400", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "C976233E37033A3D91D226FE1079E594")
     @SuppressWarnings({"UnusedDeclaration"})
     protected void onPostExecute(Result result) {
@@ -144,6 +146,7 @@ Status var6300E74790326279AA67EB8DFA2C84B0_2080544147 =         mStatus;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.602 -0400", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "7429E399886A985919F57383107CAFFB")
     public final boolean isCancelled() {
     	return cancelled;
@@ -372,6 +375,7 @@ switch(mStatus){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.620 -0400", hash_original_method = "921E33E8D8BBA9CD431C8BC69654B3A4", hash_generated_method = "3412AC0B19BEEA5471BA543EA333720D")
         @SuppressWarnings({"unchecked", "RawUseOfParameterizedType"})
         @Override

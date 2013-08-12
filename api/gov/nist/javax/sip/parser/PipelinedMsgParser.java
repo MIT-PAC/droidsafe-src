@@ -41,6 +41,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.304 -0400", hash_original_method = "A3AB807F1456A67D8271D731B6987080", hash_generated_method = "BD9DE796F5D2FEC781FD56D51A7F9912")
     public  PipelinedMsgParser(SIPMessageListener sipMessageListener,
             Pipeline in, boolean debug, int maxMessageSize) {
@@ -60,6 +61,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.305 -0400", hash_original_method = "BDF51C7E7DDD69BD9B7D7DBBB57B9FF1", hash_generated_method = "221A6DCBA2C7DAFFC85ECEE9ADDCFEE7")
     public  PipelinedMsgParser(SIPMessageListener mhandler, Pipeline in,
             int maxMsgSize) {
@@ -71,6 +73,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.305 -0400", hash_original_method = "748DD8A3EFE43FF431548555AB3BE25D", hash_generated_method = "3038AA5B53537C11A13D7FA6558B7FA2")
     public  PipelinedMsgParser(Pipeline in) {
         this(null, in, false, 0);
@@ -186,6 +189,7 @@ String var1B324365A764C077A55854483509F4AB_267726068 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.314 -0400", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "FDA85F84C593795ED1A4189CAB96ACDF")
     public void run() {
         Pipeline inputStream = this.rawInputStream;

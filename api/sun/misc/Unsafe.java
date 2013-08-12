@@ -20,7 +20,7 @@ public final class Unsafe {
         // ---------- Original Method ----------
     }
 
-    	@DSModeled(DSC.BAN)
+    	@DSModeled(DSC.SAFE)
         public static Unsafe getUnsafe() {
         ClassLoader calling = VMStack.getCallingClassLoader();
         if ((calling != null) && (calling != Unsafe.class.getClassLoader())) {
@@ -31,7 +31,7 @@ public final class Unsafe {
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.181 -0400", hash_original_method = "826DF3AF2C82C95E7B53BC94C24540AA", hash_generated_method = "37509F27C578466D3CFFA3A1C5C8873A")
-	@DSModeled(DSC.BAN)
+	@DSModeled(DSC.SAFE)
     public long objectFieldOffset(Field field) {
         addTaint(field.getTaint());
         if(Modifier.isStatic(field.getModifiers()))        
@@ -60,6 +60,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.588 -0400", hash_original_method = "10321221A26E92770863061AD8298BFF", hash_generated_method = "849220CE57217FFE590A860A22135545")
     public int arrayBaseOffset(Class clazz) {
         addTaint(clazz.getTaint());
@@ -89,6 +90,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.589 -0400", hash_original_method = "756FA93315C90771D6287C6D6A8351D6", hash_generated_method = "F2FB41A0D615664D34B4AFB21A32AA4C")
     public int arrayIndexScale(Class clazz) {
         addTaint(clazz.getTaint());
@@ -253,6 +255,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.594 -0400", hash_original_method = "A0416E5885795BAB8716EF22A6E96095", hash_generated_method = "49C10995BAFC92B667347C7E071D4DD9")
     public void park(boolean absolute, long time) {
         addTaint(time);
@@ -274,6 +277,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.595 -0400", hash_original_method = "D722FA56AE20F33E2A3A13A64FA43CE8", hash_generated_method = "8C6CB1263E59FCF4B7A4E28F1DE0B03C")
     public void unpark(Object obj) {
         addTaint(obj.getTaint());

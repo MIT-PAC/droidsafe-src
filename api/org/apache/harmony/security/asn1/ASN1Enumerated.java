@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 public final class ASN1Enumerated extends ASN1Primitive {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.251 -0400", hash_original_method = "AA03F41F75612EB5366E32BDDDAEA1AC", hash_generated_method = "11C6DEF098A19B58952BF9C0E3E54B4B")
     public  ASN1Enumerated() {
         super(TAG_ENUM);

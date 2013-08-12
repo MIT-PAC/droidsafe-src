@@ -59,6 +59,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Cursor getAllBookmarks(ContentResolver cr) throws IllegalStateException {
         return cr.query(Bookmarks.CONTENT_URI,
                 new String[] { Bookmarks.URL }, 
@@ -66,6 +67,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Cursor getAllVisitedUrls(ContentResolver cr) throws IllegalStateException {
         return cr.query(Combined.CONTENT_URI,
                 new String[] { Combined.URL }, null, null,
@@ -213,6 +215,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean canClearHistory(ContentResolver cr) {
         Cursor cursor = null;
         boolean ret = false;
@@ -230,6 +233,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void clearHistory(ContentResolver cr) {
         deleteHistoryWhere(cr, null);
     }
@@ -257,6 +261,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void deleteHistoryTimeFrame(ContentResolver cr,
             long begin, long end) {
         String whereClause;
@@ -277,12 +282,14 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void deleteFromHistory(ContentResolver cr, 
                                                String url) {
         cr.delete(History.CONTENT_URI, History.URL + "=?", new String[] { url });
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void addSearchUrl(ContentResolver cr, String search) {
         ContentValues values = new ContentValues();
         values.put(Searches.SEARCH, search);
@@ -291,6 +298,7 @@ public class Browser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void clearSearches(ContentResolver cr) {
         try {
             cr.delete(Searches.CONTENT_URI, null, null);

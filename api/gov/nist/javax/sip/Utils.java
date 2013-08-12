@@ -40,6 +40,7 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getQuotedString(String str) {
         return '"' + str.replace( "\"", "\\\"" ) + '"';
     }
@@ -60,6 +61,7 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.889 -0400", hash_original_method = "8B9CD4355F65A61EBC08146A51CEAFC7", hash_generated_method = "3D31C204D219201848CD9245ABA36ED2")
     public synchronized String generateCallIdentifier(String address) {
         addTaint(address.getTaint());
@@ -79,6 +81,7 @@ String var3A784E5AEB9086FAC40382C7254AF3F6_305156535 =         cidString + "@" +
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.889 -0400", hash_original_method = "9AA82EE1A1BEF7CB34AB2EE7CC0970FC", hash_generated_method = "48D405C16479A1963811EB8A42C08947")
     public synchronized String generateTag() {
 String var2334723CC90AD9070F7AA233F208C289_1411999085 =         Integer.toHexString(rand.nextInt());
@@ -89,6 +92,7 @@ String var2334723CC90AD9070F7AA233F208C289_1411999085 =         Integer.toHexStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.889 -0400", hash_original_method = "7AE3A829A02A70B14E30FF17666004A8", hash_generated_method = "9BF904194FDFE26CC71958B9AF2F8F1A")
     public synchronized String generateBranchId() {
         long num = rand.nextLong() + Utils.counter++  + System.currentTimeMillis();

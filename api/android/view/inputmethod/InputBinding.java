@@ -128,7 +128,7 @@ String var97082D0AA9ABA58D7744A7D0780CB658_1013244048 =         "InputBinding{" 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.539 -0400", hash_original_method = "CF6195886A2216F7801132B22F3EB428", hash_generated_method = "E44AF1DA8D5AD9DC12644062224F677F")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -160,6 +160,7 @@ String var97082D0AA9ABA58D7744A7D0780CB658_1013244048 =         "InputBinding{" 
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.539 -0400", hash_original_field = "91288E34B1866A3C65DC557B5773CCC7", hash_generated_field = "3934220B5C8F93AC893AC17F9265BD44")
 
     public static final Parcelable.Creator<InputBinding> CREATOR = new Parcelable.Creator<InputBinding>() {
+        @DSModeled(DSC.SAFE)
         public InputBinding createFromParcel(Parcel source) {
             return new InputBinding(source);
         }

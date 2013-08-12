@@ -79,6 +79,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean hasMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return false;
@@ -87,6 +88,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String guessMimeTypeFromExtension(String extension) {
         if (extension == null || extension.isEmpty()) {
             return null;
@@ -103,6 +105,7 @@ public final class MimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String guessExtensionFromMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return null;

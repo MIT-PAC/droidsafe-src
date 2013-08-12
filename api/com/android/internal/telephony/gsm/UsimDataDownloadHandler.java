@@ -33,6 +33,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.907 -0400", hash_original_method = "59837CA7040CC62FF3A3565A11425127", hash_generated_method = "702C0D1D7C8D429EADA68CD6CBD11F4E")
     public int startDataDownload(SmsMessage smsMessage) {
         addTaint(smsMessage.getTaint());

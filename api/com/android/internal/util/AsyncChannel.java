@@ -38,12 +38,14 @@ public class AsyncChannel {
 
     private Messenger mDstMessenger;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.582 -0400", hash_original_method = "FDD6D3EF5F7BC7D6883E0BF7536BB913", hash_generated_method = "CBC4A48158E97A41700C96C588786574")
     public  AsyncChannel() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.583 -0400", hash_original_method = "89C8C4B82DB5AC36CAD55D59C7A76E33", hash_generated_method = "6502AE2B136059846A9284675C6722C8")
     public int connectSrcHandlerToPackageSync(
             Context srcContext, Handler srcHandler, String dstPackageName, String dstClassName) {
@@ -79,6 +81,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.584 -0400", hash_original_method = "ABB64391FEF3212581FCE62A24663F37", hash_generated_method = "B57CA3C2AE7ADB45D78570DC04550424")
     public int connectSync(Context srcContext, Handler srcHandler, Messenger dstMessenger) {
         addTaint(dstMessenger.getTaint());
@@ -100,6 +103,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.585 -0400", hash_original_method = "E8061690950B5AC4037948D29BFD7764", hash_generated_method = "1D2A3B8B479D9ACDFF695E8CD3640676")
     public int connectSync(Context srcContext, Handler srcHandler, Handler dstHandler) {
         addTaint(dstHandler.getTaint());
@@ -113,6 +117,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.585 -0400", hash_original_method = "47E7CF94088222D35244DD2A346F6D10", hash_generated_method = "F241D337077661BAD5565E69A8BB6410")
     public int fullyConnectSync(Context srcContext, Handler srcHandler, Handler dstHandler) {
         addTaint(dstHandler.getTaint());
@@ -189,6 +194,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.589 -0400", hash_original_method = "EF115B092B0444968DFDE421B1D070CE", hash_generated_method = "28F461CC57C0714BB9A1229645B242B1")
     public void connect(Context srcContext, Handler srcHandler, Class<?> klass) {
         addTaint(klass.getTaint());
@@ -250,6 +256,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.593 -0400", hash_original_method = "AB6DAC74FF8B2E5B9FEB974F6DCFF3D6", hash_generated_method = "5000A075795BE8819ABC84CEC6ECCF16")
     public void connect(AsyncService srcAsyncService, Messenger dstMessenger) {
         addTaint(dstMessenger.getTaint());
@@ -297,6 +304,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.594 -0400", hash_original_method = "9DAC7AFA4C14A1022E9DEC304018391F", hash_generated_method = "71120F6F2CE7AD5B93EF5EC6250C0885")
     public void sendMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -319,6 +327,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.594 -0400", hash_original_method = "C8C31043DDFE26EC3BE146F1B2B418E3", hash_generated_method = "06398CE67DCE7135B7A87BF66738FAAA")
     public void sendMessage(int what) {
         addTaint(what);
@@ -444,6 +453,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.598 -0400", hash_original_method = "3044254AB71061FF974CD0BBDD0D9BC5", hash_generated_method = "F3ED75FCA64C73C17E7B6B341D2CFD63")
     public void replyToMessage(Message srcMsg, int what, int arg1) {
         addTaint(arg1);
@@ -481,6 +491,7 @@ public class AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.599 -0400", hash_original_method = "69829FBE15E20ADBF8C45DA9DA2D1745", hash_generated_method = "C40F2D1C923EE5E365997AACB2B21AE3")
     public void replyToMessage(Message srcMsg, int what, int arg1, int arg2, Object obj) {
         addTaint(obj.getTaint());

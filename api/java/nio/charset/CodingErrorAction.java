@@ -10,7 +10,7 @@ public class CodingErrorAction {
 
     private String action;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.640 -0400", hash_original_method = "97CD51F500ABFE41AE4BD609F91C5F74", hash_generated_method = "7A8E959B2CD8A428B2EF81F66E186CC8")
     private  CodingErrorAction(String action) {
         this.action = action;
@@ -19,6 +19,7 @@ public class CodingErrorAction {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.641 -0400", hash_original_method = "A74604AE646C671FE46897A241086F47", hash_generated_method = "61070809916B04E20EF54E0222E1D585")
     @Override
     public String toString() {

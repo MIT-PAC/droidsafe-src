@@ -34,6 +34,7 @@ public class ErrorInfoParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.427 -0400", hash_original_method = "A1D86D832E01EE0ED40EBBDB518014BA", hash_generated_method = "F2611BD7610CFCAB01784FE8DFAEDCB1")
     public SIPHeader parse() throws ParseException {
         if(debug)        

@@ -84,6 +84,7 @@ Object varD442C91479410F76C84B872DA6AAE139_1334062135 =         content;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.065 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "ABC689AD81863252200CF8E751D5A7ED")
     public byte[] getEncoded() {
         if(encoding == null)        
@@ -172,6 +173,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_1932976439 =         res.toString();
             setOptional(1); 
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             ContentInfo ci = (ContentInfo) object;
             values[0] = ci.oid;
@@ -189,6 +191,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_1932976439 =         res.toString();
             }
         }
 
+        @DSModeled(DSC.SPEC)
         @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
             int[] oid = (int[]) values[0];

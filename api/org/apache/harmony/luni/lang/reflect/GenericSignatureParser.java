@@ -138,6 +138,7 @@ public class GenericSignatureParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.920 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "563AB087B6DA97B0E6A38EB2360EC998")
     public void parseForMethod(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
@@ -234,6 +235,7 @@ public class GenericSignatureParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.921 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "14A999D722B6CCF0178DCC4DAA758E34")
     public void parseForField(GenericDeclaration genericDecl,
             String signature) {
@@ -272,6 +274,7 @@ public class GenericSignatureParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.921 -0400", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "24317D1D2603A28105AC58F4B5AC796E")
      void parseOptFormalTypeParameters() {
         ListOfVariables typeParams = new ListOfVariables();
@@ -372,6 +375,7 @@ Type varC598CFD9A43D0422EA3785D4E145264E_1405488354 =         parseTypeVariableS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.922 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "2EA9DCC0820634F295606BEE666DE403")
      Type parseClassTypeSignature() {
         expect('L');
@@ -407,6 +411,7 @@ Type varC5B9F25B4EEAD3E8E2C33F9429204397_29103966 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.922 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "77B69AC1FF81C5411A76FE2B93B64E07")
      ListOfTypes parseOptTypeArguments() {
         ListOfTypes typeArgs = new ListOfTypes(8);
@@ -500,6 +505,7 @@ Type varADF305843879946E21E3B89E908DB518_525003275 =             parseFieldTypeS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.922 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "9051A75728CED864F67DE9D14714C4BB")
      ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
         expect('T');
@@ -516,6 +522,7 @@ ImplForVariable<GenericDeclaration> var11CAA50B324ECC031E42B5B587147EE2_14639999
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.923 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "CC202E3093142A6801D595EB226F4C98")
      Type parseTypeSignature() {
 switch(symbol){
@@ -580,6 +587,7 @@ Type varADF305843879946E21E3B89E908DB518_1437887644 =         parseFieldTypeSign
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.923 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "CE4162C1BE76ABEACEE6DAAC2C3EEB3D")
      void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
         parseOptFormalTypeParameters();
@@ -623,6 +631,7 @@ Type varADF305843879946E21E3B89E908DB518_1437887644 =         parseFieldTypeSign
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.923 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "B964378BB806AC034E57143E9C84054C")
      Type parseReturnType() {
         if(symbol != 'V')        
@@ -680,6 +689,7 @@ Type var3C5CC6CDB919ACDAB4FA656C419DF43D_1765105289 =             void.class;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.924 -0400", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "4190E2CBC2A89B79A91C3EE5421BB33F")
      void expect(char c) {
         addTaint(c);
@@ -731,6 +741,7 @@ switch(ch){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.924 -0400", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "D3320A867FF64B39784A2EA3481A993B")
      void scanIdentifier() {
         if(!eof)        

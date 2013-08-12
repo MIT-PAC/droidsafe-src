@@ -147,6 +147,7 @@ public class RemoteControlClient {
 
     private EventHandler mEventHandler;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.980 -0400", hash_original_method = "AD6CCD9D9B436D492F90BC57466F8BB6", hash_generated_method = "DA556633AF4E14DCC67A471502C63FC6")
     public  RemoteControlClient(PendingIntent mediaButtonIntent) {
         mRcMediaIntent = mediaButtonIntent;
@@ -178,6 +179,7 @@ public class RemoteControlClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.981 -0400", hash_original_method = "BBCB02942EAA4463B06F3A8D8D85915D", hash_generated_method = "2CD17C2EF419C0ACBD020B84E8A50296")
     public  RemoteControlClient(PendingIntent mediaButtonIntent, Looper looper) {
         mRcMediaIntent = mediaButtonIntent;
@@ -188,6 +190,7 @@ public class RemoteControlClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.983 -0400", hash_original_method = "848F28E79710FB7B251A1B961691D3AF", hash_generated_method = "1731AAA573187B62779B75AB6BA6F5E6")
     public MetadataEditor editMetadata(boolean startEmpty) {
         addTaint(startEmpty);
@@ -226,6 +229,7 @@ MetadataEditor varED224B1BF4EAE660E8B6808A4D079108_1085237358 =         editor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.985 -0400", hash_original_method = "1B4A5A7A2B9348E61A1F8DBEDB05B350", hash_generated_method = "7D2E9646F7E7776C6B0CCEAFEFB1EB27")
     public void setPlaybackState(int state) {
         synchronized
@@ -575,6 +579,7 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1110661739 =         bitmap;
 
         private boolean mApplied = false;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.002 -0400", hash_original_method = "35489133548A4653F80D8552B0E58378", hash_generated_method = "8F0077210051A860529F5C8FE4CA59F4")
         private  MetadataEditor() {
             // ---------- Original Method ----------
@@ -592,6 +597,7 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1110661739 =         bitmap;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.004 -0400", hash_original_method = "DC698BF42DF290A93E2069AFDF9D8834", hash_generated_method = "C1643F954201E567067007C34DB18745")
         public synchronized MetadataEditor putString(int key, String value) throws IllegalArgumentException {
             addTaint(value.getTaint());
@@ -627,6 +633,7 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_634577800 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.005 -0400", hash_original_method = "59EE363FF7F9B37AD6A675925DC53A2A", hash_generated_method = "B66C1CF9F4281E86996D7454DB491171")
         public synchronized MetadataEditor putLong(int key, long value) throws IllegalArgumentException {
             addTaint(value);
@@ -709,6 +716,7 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_1119306195 =             this
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.008 -0400", hash_original_method = "0A0B775C77CB462F6342E4F76031A7F3", hash_generated_method = "A481AC120F8EBB9ABFCBA38F934A29F5")
         public synchronized void clear() {
             if(mApplied)            
@@ -727,6 +735,7 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_1119306195 =             this
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.009 -0400", hash_original_method = "93FD8866501AA3B03BDE4E693768AF3B", hash_generated_method = "D60361C64E5780A4B65FD4F46B37771C")
         public synchronized void apply() {
             if(mApplied)            

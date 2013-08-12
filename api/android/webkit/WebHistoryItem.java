@@ -256,6 +256,7 @@ Object var59DC1B5337A5DFD5414CD638BE20A387_1813525463 =         mCustomData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.372 -0400", hash_original_method = "F79252569D56DBC251BCABE120CFDF67", hash_generated_method = "415FCAC0E6431C9AA5C45691347499D4")
     protected synchronized WebHistoryItem clone() {
 WebHistoryItem var2497720903CF073BD8C984E52DB0ECAF_1095959950 =         new WebHistoryItem(this);

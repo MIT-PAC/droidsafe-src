@@ -40,6 +40,7 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.423 -0400", hash_original_method = "93FF9F6BC44FD78A86FF56612368CE29", hash_generated_method = "38D4F2713259BF406952562B96165348")
     public String toString() {
         int len = this.name.length();
@@ -111,6 +112,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_851499724 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.435 -0400", hash_original_method = "A586BF0615CE91E5DB31F98DF42747A4", hash_generated_method = "88EBD1952D09F35559303C272D58EA9A")
     public int hashCode() {
         int hash = LangUtils.HASH_SEED;
@@ -127,6 +129,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_851499724 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.437 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "2DE6C0F71CA8F7260FB3725663DEBEA7")
     public Object clone() throws CloneNotSupportedException {
 Object var46F3A0D86742C1D6E099C2B166941A33_1514908937 =         super.clone();

@@ -61,6 +61,7 @@ ArrayList<NamedContentValues> var5927EF407499F6B0E6446B9609227466_1334697494 =  
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.525 -0400", hash_original_method = "2AB28DA05FBE72723F9BBB19B5801CC4", hash_generated_method = "A9AD525D293539BB24D6B8E478AE6434")
     public String toString() {
         final StringBuilder sb = new StringBuilder();

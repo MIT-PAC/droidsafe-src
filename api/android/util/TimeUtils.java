@@ -31,7 +31,7 @@ public class TimeUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static TimeZone getTimeZone(int offset, boolean dst, long when, String country) {
         if (country == null) {
             return null;
@@ -82,6 +82,7 @@ public class TimeUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getTimeZoneDatabaseVersion() {
         return ZoneInfoDB.getVersion();
     }

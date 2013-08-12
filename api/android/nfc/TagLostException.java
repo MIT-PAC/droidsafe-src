@@ -15,6 +15,7 @@ public class TagLostException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.388 -0400", hash_original_method = "239642EC7BB7F7E7C0FD631CE1F9537C", hash_generated_method = "C2CF0D5741DE84E0868DF5282BEDA9C7")
     public  TagLostException(String message) {
         super(message);

@@ -15,6 +15,7 @@ public class DEROctetStringParser implements ASN1OctetStringParser {
 
     private DefiniteLengthInputStream stream;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.460 -0400", hash_original_method = "18F90E7C8910F20983A0E830634FAC28", hash_generated_method = "9D5CE2CB595BD9C55B8D972104EAB19F")
       DEROctetStringParser(
         DefiniteLengthInputStream stream) {
@@ -35,6 +36,7 @@ InputStream varA87CF74140B150613F4203E71875F9A7_453850622 =         stream;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.460 -0400", hash_original_method = "61774CD0E60B254BC7D8FDAA497BBCE4", hash_generated_method = "FA62F6F0EB2512EE23C1694C2EDC2E4C")
     public DERObject getLoadedObject() throws IOException {
 DERObject varBA3D40898413DBB6104C2FA267A66322_1090143427 =         new DEROctetString(stream.toByteArray());
@@ -45,6 +47,7 @@ DERObject varBA3D40898413DBB6104C2FA267A66322_1090143427 =         new DEROctetS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.461 -0400", hash_original_method = "9966B03EEC95948C208DE961DDFE6334", hash_generated_method = "0B0BD396341F33ED3DD6DC1A2FDA718D")
     public DERObject getDERObject() {
         try 

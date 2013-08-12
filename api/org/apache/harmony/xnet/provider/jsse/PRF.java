@@ -47,6 +47,7 @@ public class PRF {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static synchronized void computePRF_SSLv3(byte[] out, byte[] secret, byte[] seed) {
         if (sha == null) {
             init();

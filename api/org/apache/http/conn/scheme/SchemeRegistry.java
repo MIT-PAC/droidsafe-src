@@ -17,6 +17,7 @@ public final class SchemeRegistry {
 
     private Map<String,Scheme> registeredSchemes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.998 -0400", hash_original_method = "783AF87541D2DBDBA1743DA12D81CD53", hash_generated_method = "19CED71237E12F258C2D993EF51D05E7")
     public  SchemeRegistry() {
         super();
@@ -133,6 +134,7 @@ Scheme var9CA2A4D09CDE28FB110DF0CCFBCA11B5_994071496 =         gone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.001 -0400", hash_original_method = "AC70BADA49B0F71D218410F2BC1D1DD5", hash_generated_method = "539378F06BB6E306843FCBC3C0A4175C")
     public synchronized final List<String> getSchemeNames() {
 List<String> varAAEC45CC0E27E189B466FC7E198A1AD8_643193981 =         new ArrayList<String>(registeredSchemes.keySet());

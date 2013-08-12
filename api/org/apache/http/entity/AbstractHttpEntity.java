@@ -102,6 +102,7 @@ Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_916294054 =         this.contentEncod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.761 -0400", hash_original_method = "3048E7043703056EA818491E1D9863FC", hash_generated_method = "B44CE0248CDEDF1EFB7806A7D7105F83")
     public void consumeContent() throws IOException, UnsupportedOperationException {
         if(isStreaming())        

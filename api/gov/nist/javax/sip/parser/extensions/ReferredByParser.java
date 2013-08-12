@@ -30,6 +30,7 @@ public class ReferredByParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.780 -0400", hash_original_method = "17616601F399F4EC4152D86BF5F11B96", hash_generated_method = "5476ED3E555FFB13AEC0FA6D5B9A3592")
     public SIPHeader parse() throws ParseException {
         headerName(TokenTypes.REFERREDBY_TO);

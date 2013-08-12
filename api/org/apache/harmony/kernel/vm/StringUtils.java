@@ -13,6 +13,7 @@ public final class StringUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String combineStrings(Object[] list) {
         int listLength = list.length;
         switch (listLength) {

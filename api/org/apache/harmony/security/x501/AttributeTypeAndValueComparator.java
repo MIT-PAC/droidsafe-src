@@ -14,6 +14,7 @@ import org.apache.harmony.security.utils.ObjectIdentifier;
 
 public class AttributeTypeAndValueComparator implements Comparator, Serializable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.531 -0400", hash_original_method = "A875CA77DCF86273FF83ADF73F0AA798", hash_generated_method = "A875CA77DCF86273FF83ADF73F0AA798")
     public AttributeTypeAndValueComparator ()
     {

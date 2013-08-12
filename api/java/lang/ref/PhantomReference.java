@@ -15,6 +15,7 @@ public class PhantomReference<T> extends Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.767 -0400", hash_original_method = "11AC17D1A4195077BEA3CC915127101C", hash_generated_method = "D88E3EFF3DC0FA6B3AACE6EC41E47E6C")
     @Override
     public T get() {

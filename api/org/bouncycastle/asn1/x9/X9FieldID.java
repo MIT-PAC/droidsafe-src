@@ -83,6 +83,7 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.395 -0400", hash_original_method = "DE0F1786B89D9192DA26A23CD26B072E", hash_generated_method = "EC736FBE556FC79705AF65DDF77AD0A8")
     public  X9FieldID(
         ASN1Sequence  seq) {

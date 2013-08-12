@@ -62,7 +62,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.705 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "4B3F615129A6DB246D76C52537252983")
     public String toString() {
 String var4EC24595A80F5D9095B74DE6B798A232_1449727823 =         "ServiceInfo{"
@@ -110,6 +110,7 @@ String var4EC24595A80F5D9095B74DE6B798A232_1449727823 =         "ServiceInfo{"
 
     public static final Creator<ServiceInfo> CREATOR =
         new Creator<ServiceInfo>() {
+        @DSModeled(DSC.SAFE)
         public ServiceInfo createFromParcel(Parcel source) {
             return new ServiceInfo(source);
         }

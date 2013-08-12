@@ -98,6 +98,7 @@ public class ChunkedOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.525 -0400", hash_original_method = "48C91C3E7A4F39D8E60BF0ABE327AC31", hash_generated_method = "3FDAC3B070CD42C7A1F64954F4D7BF84")
     public void finish() throws IOException {
         if(!this.wroteLastChunk)        
@@ -190,6 +191,7 @@ public class ChunkedOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.531 -0400", hash_original_method = "E495FD5BB343CF99481A29E811E92BD2", hash_generated_method = "B11B90BB85CBB573ACA2B305EEAF5E66")
     public void close() throws IOException {
         if(!this.closed)        

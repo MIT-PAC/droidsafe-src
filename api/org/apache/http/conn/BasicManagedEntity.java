@@ -22,6 +22,7 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
 
     protected boolean attemptReuse;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.634 -0400", hash_original_method = "75E41BB014942CF37AED72804C2A632B", hash_generated_method = "365D60D7C8E08BF1264BBBA8E088B00B")
     public  BasicManagedEntity(HttpEntity entity,
                               ManagedClientConnection conn,
@@ -175,6 +176,7 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1847995806 =         new EofSens
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.637 -0400", hash_original_method = "317830EACA4241C6C1785BE58FAD1AFA", hash_generated_method = "F19EE2C3B1A9172EDA984346B719A19F")
     public boolean streamClosed(InputStream wrapped) throws IOException {
         addTaint(wrapped.getTaint());

@@ -41,6 +41,7 @@ public class BitwiseInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.624 -0400", hash_original_method = "D3779E30F0E2824C817E23A6212C6A73", hash_generated_method = "E02988E1D67F74C4A5E0F22AAB69370D")
     public int read(int bits) throws AccessException {
         int index = mPos >>> 3;
@@ -77,6 +78,7 @@ public class BitwiseInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.624 -0400", hash_original_method = "6BC73F7388CF8F913A045B88BC2AD5D8", hash_generated_method = "CEEF27D143B93232602DCA2FF5BF557D")
     public byte[] readByteArray(int bits) throws AccessException {
         addTaint(bits);
@@ -101,6 +103,7 @@ for(int i = 0;i < bytes;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.625 -0400", hash_original_method = "2B3CAB6B00B171A015C7D4103C2B529C", hash_generated_method = "F5239DA1680C3EBDC01E3778EB91B11E")
     public void skip(int bits) throws AccessException {
         if((mPos + bits) > mEnd)        

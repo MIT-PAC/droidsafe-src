@@ -170,6 +170,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_1686436304 =         res.toString();
             setOptional(4); 
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             SignedData sd = (SignedData) object;
             values[0] = new byte[] {(byte)sd.version};
@@ -180,6 +181,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_1686436304 =         res.toString();
             values[5] = sd.signerInfos;
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new SignedData(

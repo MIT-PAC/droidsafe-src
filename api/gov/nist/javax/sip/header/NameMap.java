@@ -62,6 +62,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void addExtensionHeader(
         String headerName,
         String className) {

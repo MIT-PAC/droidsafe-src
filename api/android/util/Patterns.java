@@ -17,6 +17,7 @@ public class Patterns {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String concatGroups(Matcher matcher) {
         StringBuilder b = new StringBuilder();
         final int numGroups = matcher.groupCount();
@@ -31,6 +32,7 @@ public class Patterns {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String digitsAndPlusOnly(Matcher matcher) {
         StringBuilder buffer = new StringBuilder();
         String matchingRegion = matcher.group();

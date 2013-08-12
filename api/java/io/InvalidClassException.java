@@ -31,6 +31,7 @@ public class InvalidClassException extends ObjectStreamException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.136 -0400", hash_original_method = "F4D165DC6F6D9B89EF49B0E2E4445877", hash_generated_method = "2FDE4C90979F45C05A9F154547656CD5")
     @Override
     public String getMessage() {

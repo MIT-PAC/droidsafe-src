@@ -15,6 +15,7 @@ public class WorkSource implements Parcelable {
 
     int[] mUids;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.853 -0400", hash_original_method = "6347D93E04E74669648A802B7921C1D5", hash_generated_method = "34579F464897EDC33F63C29271A0F20D")
     public  WorkSource() {
         mNum = 0;
@@ -53,7 +54,7 @@ public class WorkSource implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.855 -0400", hash_original_method = "98AF9D8E14FDBDB8400169325402879B", hash_generated_method = "70A6251886E48ABB203ED54B374D6A2A")
     public  WorkSource(int uid) {
         addTaint(uid);
@@ -242,7 +243,7 @@ WorkSource[] var540C13E9E156B687226421B24F2DF178_1530849350 =             null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.864 -0400", hash_original_method = "8F95FC70B656D084C5E20FAE69C56CE9", hash_generated_method = "C5BA14C8ECA3A450FA3FE0D4F5E3963B")
     public boolean add(WorkSource other) {
         addTaint(other.getTaint());

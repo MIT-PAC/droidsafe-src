@@ -32,6 +32,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
 
     boolean isBlocking = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.337 -0400", hash_original_method = "C1ED2F1D0A9F053BD27B8788D8E263F6", hash_generated_method = "CDC2687EFBB1875408EB822640372289")
     protected  AbstractSelectableChannel(SelectorProvider selectorProvider) {
         provider = selectorProvider;
@@ -52,6 +53,7 @@ SelectorProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_107796638 =         provide
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.337 -0400", hash_original_method = "455A665D6CB2D7E9E28AF0A0296346A0", hash_generated_method = "26BF10C4D20A1A81FB955BD0D3BDA1E3")
     @Override
     synchronized public final boolean isRegistered() {
@@ -63,6 +65,7 @@ SelectorProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_107796638 =         provide
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.338 -0400", hash_original_method = "4195F78E36942EF5DA6AFD3959F769A2", hash_generated_method = "6036BDA3E0590C575830AA886665FF8E")
     @Override
     synchronized public final SelectionKey keyFor(Selector selector) {
@@ -89,6 +92,7 @@ SelectionKey var540C13E9E156B687226421B24F2DF178_1086697152 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.339 -0400", hash_original_method = "CA2D38B16FDF21D8F80456FE85BBCC03", hash_generated_method = "54790A405139D90228BF51435046D2C2")
     @Override
     public final SelectionKey register(Selector selector, int interestSet,
@@ -154,6 +158,7 @@ SelectionKey var6A95247616A3A8B93CFF7783DABD08D4_1292101784 =             key;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.339 -0400", hash_original_method = "924900C80DDDFF3B15A21AACED0AEBE3", hash_generated_method = "73D2EB32BC024D30A937162171C96B24")
     @Override
     synchronized protected final void implCloseChannel() throws IOException {
@@ -208,6 +213,7 @@ Object var55ED10741B3646C9474CE7499E01CE99_459328493 =         blockingLock;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.341 -0400", hash_original_method = "C1D21D3B957CE63BA941CEBC7A89647F", hash_generated_method = "D96661E9520B96C2968423C467823A2A")
     @Override
     public final SelectableChannel configureBlocking(boolean blockingMode) throws IOException {
@@ -259,6 +265,7 @@ SelectableChannel var72A74007B2BE62B849F475C7BDA4658B_1197868880 =         this;
     protected abstract void implConfigureBlocking(boolean blocking) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.341 -0400", hash_original_method = "5E0A774ABE1807BF9448EF86554C6BF7", hash_generated_method = "A51AE6DD1CF72C5C8AA20038A863DA90")
     synchronized void deregister(SelectionKey k) {
         addTaint(k.getTaint());

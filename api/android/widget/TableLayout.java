@@ -98,7 +98,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static SparseBooleanArray parseColumns(String sequence) {
         SparseBooleanArray columns = new SparseBooleanArray();
         Pattern pattern = Pattern.compile("\\s*,\\s*");
@@ -116,7 +116,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.841 -0400", hash_original_method = "B376012DF0DA3032DA90C2CCE23CE9AB", hash_generated_method = "EBDB1CA5C6DE12BE8BEEE030E8E32A2B")
     private void initTableLayout() {
         if(mCollapsedColumns == null)        
@@ -161,7 +161,7 @@ public class TableLayout extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.843 -0400", hash_original_method = "46F66A2D3F5735AEA41A7DB58B431E82", hash_generated_method = "99F673A3DC8F3A6272D74C21613C8559")
     private void requestRowsLayout() {
         if(mInitialized)        
@@ -337,7 +337,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.848 -0400", hash_original_method = "1A7EBA0F6B48090D166288951056A8A7", hash_generated_method = "D147D504635AB056C72115672FDD4A4D")
     private void trackCollapsedColumns(View child) {
         addTaint(child.getTaint());
@@ -500,7 +500,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.850 -0400", hash_original_method = "4DFA55B8EC4F00C998EFCF5CE369887F", hash_generated_method = "4A2A435888046D96F86785FEF57CDE39")
     private void findLargestCells(int widthMeasureSpec) {
         addTaint(widthMeasureSpec);
@@ -556,7 +556,7 @@ for(int j = 0;j < length;j++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.851 -0400", hash_original_method = "FCBDEF350302C6CDE69DD815C0835AC5", hash_generated_method = "B6981A5126700C763334875D583F157C")
     private void shrinkAndStretchColumns(int widthMeasureSpec) {
         addTaint(widthMeasureSpec);
@@ -596,7 +596,7 @@ for(int width : mMaxWidths)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.852 -0400", hash_original_method = "4E3F5E45ADBAE8A09C7C386A43B12806", hash_generated_method = "A10F330EAB269D891A99AB68E033CFA7")
     private void mutateColumnsWidth(SparseBooleanArray columns,
             boolean allColumns, int size, int totalWidth) {

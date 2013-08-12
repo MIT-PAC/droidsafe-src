@@ -36,7 +36,7 @@ public class Picture {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.622 -0400", hash_original_method = "4720BFD5C543F65C552F0739FF1DD2E7", hash_generated_method = "4BD9ADE5DBB84D427AC38DA6258FE8BA")
     private  Picture(int nativePicture) {
         if(nativePicture == 0)        

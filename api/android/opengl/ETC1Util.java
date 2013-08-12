@@ -23,12 +23,14 @@ public class ETC1Util {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void loadTexture(int target, int level, int border,
             int fallbackFormat, int fallbackType, InputStream input) throws IOException {
         loadTexture(target, level, border, fallbackFormat, fallbackType, createTexture(input));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void loadTexture(int target, int level, int border,
             int fallbackFormat, int fallbackType, ETC1Texture texture) {
         if (fallbackFormat != GLES10.GL_RGB) {
@@ -58,6 +60,7 @@ public class ETC1Util {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isETC1Supported() {
         int[] results = new int[20];
         GLES10.glGetIntegerv(GLES10.GL_NUM_COMPRESSED_TEXTURE_FORMATS, results, 0);
@@ -75,7 +78,7 @@ public class ETC1Util {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static ETC1Texture createTexture(InputStream input) throws IOException {
         int width = 0;
         int height = 0;
@@ -117,7 +120,7 @@ public class ETC1Util {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void writeTexture(ETC1Texture texture, OutputStream output) throws IOException {
         ByteBuffer dataBuffer = texture.getData();
         int originalPosition = dataBuffer.position();
@@ -153,6 +156,7 @@ public class ETC1Util {
 
         private ByteBuffer mData;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.922 -0400", hash_original_method = "A36B04D2CAAE3BFE84C1C2073669215A", hash_generated_method = "05C505EED6C5AF4458D1D3C64F881687")
         public  ETC1Texture(int width, int height, ByteBuffer data) {
             mWidth = width;

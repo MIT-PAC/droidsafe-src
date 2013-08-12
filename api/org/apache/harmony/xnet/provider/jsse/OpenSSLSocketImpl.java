@@ -357,6 +357,7 @@ OpenSSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_237636930 =         sessi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.958 -0400", hash_original_method = "7D68DA7254C24BFF3C6F787A75CF4E46", hash_generated_method = "69C292DC64CA4654F1F07EAF53DECC60")
     public synchronized void startHandshake(boolean full) throws IOException {
         addTaint(full);
@@ -694,6 +695,7 @@ for(int i = 0;i < asn1DerEncodedPrincipals.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.962 -0400", hash_original_method = "4135185E706706A43228536D20F5AD94", hash_generated_method = "3CE08292F9A5DB78D1C6CC44939EE1D3")
     @SuppressWarnings("unused")
     public void handshakeCompleted() {
@@ -758,6 +760,7 @@ for(HandshakeCompletedListener listener : listeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.963 -0400", hash_original_method = "ED84B1AF9EB80DCCE7D2C3DBC193F549", hash_generated_method = "2DF5A43440010CEFC96D23C3D2C513E7")
     @SuppressWarnings("unused")
     @Override
@@ -811,6 +814,7 @@ for(int i = 0;i < bytes.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.963 -0400", hash_original_method = "E61C85BF5C63F4E04D0D50BF3BBE2593", hash_generated_method = "00C70655C631F750097C7968745BEEDC")
     @Override
     public InputStream getInputStream() throws IOException {
@@ -836,6 +840,7 @@ InputStream varFEDEDC0F36E8CADECC99C26A1426338D_575043805 =             is;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.963 -0400", hash_original_method = "5EE71E3DCC35A33F08AD90BC3313950F", hash_generated_method = "B1C603F3856A57D7938630723B8A7ADD")
     @Override
     public OutputStream getOutputStream() throws IOException {
@@ -919,6 +924,7 @@ SSLSession varAC68A29D0E39337DAC16C06FFEB1623B_1798195807 =         sslSession;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.964 -0400", hash_original_method = "AD8204C7E0D7DFC602B3A996AAF9AC40", hash_generated_method = "9B377380FF4027A3ED125C0E20E2A9B4")
     @Override
     public void removeHandshakeCompletedListener(
@@ -991,6 +997,7 @@ String[] var0633111015CD199BA68A1C170162F6EA_269329862 =         NativeCrypto.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.965 -0400", hash_original_method = "5CCACD4A046B80B9464615B5EFBE522F", hash_generated_method = "E202A5E507E528AE7A79155E9AC4CF9B")
     @Override
     public String[] getEnabledCipherSuites() {
@@ -1088,6 +1095,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_994533848 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.968 -0400", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "55CCAC3D5FE6557BA33874AEC1AEBB1C")
     @Override
     public boolean getUseClientMode() {
@@ -1120,6 +1128,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_994533848 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.969 -0400", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "1F0531435FE601DBF7A431FED94960DE")
     @Override
     public boolean getWantClientAuth() {
@@ -1131,6 +1140,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_994533848 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.969 -0400", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "9334E8031693B92D7FC0A622C40AA9F7")
     @Override
     public boolean getNeedClientAuth() {
@@ -1218,6 +1228,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_994533848 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.971 -0400", hash_original_method = "B24ED3F34169856B1F2602ADA3894B40", hash_generated_method = "62BAAE86488E43F79C284413A241F3EE")
     @Override
     public void close() throws IOException {
@@ -1308,6 +1319,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_994533848 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.972 -0400", hash_original_method = "48478F0D5C609BA19837DA284D888FF0", hash_generated_method = "BF8C5AB2E5F2BC68AEE0A2853FF7968C")
     @Override
     protected void finalize() throws Throwable {
@@ -1380,6 +1392,7 @@ FileDescriptor varECF71702861DD6150A427D89C35684D2_112071805 =             socke
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.972 -0400", hash_original_method = "DB2A9854396CBE443BE0852C07C28BD2", hash_generated_method = "EB03D2946E15134105A19AC1C506A8A1")
         @Override
         public int read(byte[] buf, int offset, int byteCount) throws IOException {
@@ -1430,6 +1443,7 @@ FileDescriptor varECF71702861DD6150A427D89C35684D2_112071805 =             socke
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.973 -0400", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "64E00942800EFBB3ACEFB66C4126D5C6")
         @Override
         public void write(int oneByte) throws IOException {

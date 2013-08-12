@@ -23,6 +23,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void install() {
         SocketTagger.set(new NetworkManagementSocketTagger());
     }
@@ -136,6 +137,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void resetKernelUidStats(int uid) {
         int errno = native_deleteTagData(0, uid);
         if (errno < 0) {
@@ -144,6 +146,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int kernelToTag(String string) {
         return (int) (Long.decode(string) >> 32);
     }

@@ -18,6 +18,7 @@ public class HandlerThread extends Thread {
 
     Looper mLooper;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.213 -0400", hash_original_method = "E5F101A858C2AB40D5C2E9617BFE5E37", hash_generated_method = "FCB270CCF80D7A39E5F41F9293FDE504")
     public  HandlerThread(String name) {
         super(name);
@@ -28,6 +29,7 @@ public class HandlerThread extends Thread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.214 -0400", hash_original_method = "E70E3F12F9547EDCFC1C795A424416CD", hash_generated_method = "A0A04D764B43C8282C78CE35882E9EB6")
     public  HandlerThread(String name, int priority) {
         super(name);
@@ -46,6 +48,7 @@ public class HandlerThread extends Thread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.216 -0400", hash_original_method = "9E0B8BC0299FD7F24B369B7431C1A009", hash_generated_method = "0B5CC3F60971D75F6E00E5C05E9341C9")
     public void run() {
         mTid = Process.myTid();
@@ -114,6 +117,7 @@ Looper var0D78717954912E9F181D5C0583378DCC_1702024292 =         mLooper;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.217 -0400", hash_original_method = "45988F35C3EAC3EE4988825F5EC29D45", hash_generated_method = "059AE2F792F478B6B34F7E1EC30BAB94")
     public boolean quit() {
         Looper looper = getLooper();

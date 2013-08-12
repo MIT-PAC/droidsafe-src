@@ -167,6 +167,7 @@ String var2460B846747F8B22185AD8BE722266A5_473867838 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Date valueOf(String dateString) {
         if (dateString == null) {
             throw new IllegalArgumentException();

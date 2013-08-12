@@ -13,6 +13,7 @@ public class AccountsException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.404 -0400", hash_original_method = "BE6623EBDA21E425CA18A18688AD132F", hash_generated_method = "AF40F58066E5BF8AB044BD65C8147500")
     public  AccountsException(String message) {
         super(message);

@@ -73,6 +73,7 @@ SslError var5995AA76FBBB5331C788BBF94383B022_758865090 =         verifyServerDom
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SslError verifyServerCertificates(
         byte[][] certChain, String domain, String authType) throws IOException {
         if (certChain == null || certChain.length == 0) {

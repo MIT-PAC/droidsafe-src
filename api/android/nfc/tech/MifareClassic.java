@@ -84,6 +84,7 @@ switch(a.getSak()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MifareClassic get(Tag tag) {
         if (!tag.hasTech(TagTechnology.MIFARE_CLASSIC)) return null;
         try {
@@ -179,6 +180,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.559 -0400", hash_original_method = "4046C9F5F79A621BBA2F7BE2C9D1103D", hash_generated_method = "36B527F6B452FF4B44043D252894FD78")
     public int getBlockCountInSector(int sectorIndex) {
         addTaint(sectorIndex);
@@ -205,6 +207,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.560 -0400", hash_original_method = "54173D46B73CE605A7C420967C72CF9C", hash_generated_method = "8A57AAC7329BDB6288FB81D221567748")
     public int blockToSector(int blockIndex) {
         addTaint(blockIndex);
@@ -256,6 +259,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.561 -0400", hash_original_method = "88C199BE0D888C3B911ED6B5CDCE45B3", hash_generated_method = "65431B118B521C1802994084C7AC8E11")
     public boolean authenticateSectorWithKeyA(int sectorIndex, byte[] key) throws IOException {
         addTaint(key[0]);
@@ -268,6 +272,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.562 -0400", hash_original_method = "18C51006B4E85BDBA44E7C237EA48ACA", hash_generated_method = "C6FE9A7190EC367C4BED4B4361B35C12")
     public boolean authenticateSectorWithKeyB(int sectorIndex, byte[] key) throws IOException {
         addTaint(key[0]);
@@ -346,6 +351,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.564 -0400", hash_original_method = "540E686F2680F6F111FB5FE029F249C7", hash_generated_method = "23BE0C4CE488FB69A7503EB3C3F4FAC2")
     public byte[] readBlock(int blockIndex) throws IOException {
         addTaint(blockIndex);
@@ -363,6 +369,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.565 -0400", hash_original_method = "6EB213EA4DA32B7A4304947C71CED66E", hash_generated_method = "CBEC081C3191C5D4F733B3B3D8E79A3A")
     public void writeBlock(int blockIndex, byte[] data) throws IOException {
         addTaint(data[0]);
@@ -394,6 +401,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.566 -0400", hash_original_method = "B8563CE393F659B55E0B9D3772EFE7A6", hash_generated_method = "14DC8825D4A008830017DD5E3C6EBDDA")
     public void increment(int blockIndex, int value) throws IOException {
         addTaint(value);
@@ -420,6 +428,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.568 -0400", hash_original_method = "FAA38C9F5E4C186E0FA530C9A1909DAD", hash_generated_method = "865ADA2554C62F7D68EFD0A04A86AE35")
     public void decrement(int blockIndex, int value) throws IOException {
         addTaint(value);
@@ -446,6 +455,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.568 -0400", hash_original_method = "25F048093BEC30F816A6E356A5759AAE", hash_generated_method = "FDFD3069D79BEAF0B3B3816A69516298")
     public void transfer(int blockIndex) throws IOException {
         addTaint(blockIndex);
@@ -461,6 +471,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.569 -0400", hash_original_method = "CA1FBC952F4C8F3DF96DFF31BC2893A2", hash_generated_method = "543532807DF5ECC1DB1D1BF1E2CD8C19")
     public void restore(int blockIndex) throws IOException {
         addTaint(blockIndex);
@@ -476,6 +487,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.570 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "8CD59A27F84D265E34A6C9A08FA6F918")
     public byte[] transceive(byte[] data) throws IOException {
         addTaint(data[0]);
@@ -487,6 +499,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.570 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "1EE8D5191D2D75FCC220BB1B62FCC20E")
     public int getMaxTransceiveLength() {
         int var534FE261D7083B235B3B010A14A83EE1_769533552 = (getMaxTransceiveLengthInternal());
@@ -497,6 +510,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.571 -0400", hash_original_method = "F9EC6D04AED06B3DFE22DC9A2A8AC0C3", hash_generated_method = "20DAA7AE25EB326F1404DAF540866468")
     public void setTimeout(int timeout) {
         addTaint(timeout);
@@ -525,6 +539,7 @@ switch(mSize){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.572 -0400", hash_original_method = "59718E6CF1FABD433F7C060A44E5C453", hash_generated_method = "CAE6B6FB9F61648A1713599E6718A15B")
     public int getTimeout() {
         try 

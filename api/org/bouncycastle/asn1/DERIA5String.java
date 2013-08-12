@@ -14,6 +14,7 @@ public class DERIA5String extends ASN1Object implements DERString {
 
     String string;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.346 -0400", hash_original_method = "6D45D0BD0357770FD3E912C483EA28A2", hash_generated_method = "9355E3DC845A6BC72B1A15A15EF98D6C")
     public  DERIA5String(
         byte[]   string) {
@@ -33,6 +34,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.346 -0400", hash_original_method = "E43446DCFA1E12AD62CEF41AA43F405C", hash_generated_method = "1148FF261F792216188D48ADE936F9C9")
     public  DERIA5String(
         String   string) {
@@ -42,6 +44,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.347 -0400", hash_original_method = "116E9F3E400BAA7DE0ED2CEAD98AD4A9", hash_generated_method = "8B5DA3A4D8B06A44C5346E43400207FE")
     public  DERIA5String(
         String   string,
@@ -73,6 +76,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERIA5String getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERIA5String)
@@ -83,6 +87,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERIA5String getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -120,6 +125,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1085538421 =         string;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.348 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "2EAF3D8977C71F507CD561CAAC4676E9")
     public byte[] getOctets() {
         char[] cs = string.toCharArray();
@@ -142,6 +148,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.349 -0400", hash_original_method = "81A044D942E61187B7BC9BD1DB599BBA", hash_generated_method = "8C44FA4DF8C43471B7888B43FBF9CF46")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -152,6 +159,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.349 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "D252A619E9F160D06B5A6BA721CD335A")
     public int hashCode() {
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_97418286 = (this.getString().hashCode());
@@ -162,6 +170,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.350 -0400", hash_original_method = "9B52498F79C21F529133E97FFA41DA30", hash_generated_method = "DB3464CBE78BD2554376D5A1F53BEB1E")
      boolean asn1Equals(
         DERObject  o) {
@@ -186,6 +195,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isIA5String(
         String  str) {
         for (int i = str.length() - 1; i >= 0; i--)

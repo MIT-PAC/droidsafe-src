@@ -30,6 +30,7 @@ public class PhoneNumberOfflineGeocoder {
 
     private Map<String, AreaCodeMap> availablePhonePrefixMaps = new HashMap<String, AreaCodeMap>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.651 -0400", hash_original_method = "22A2DBF8A31EE9DB065525841631FE26", hash_generated_method = "3868814D8E0AC4D85442BFE352DF642A")
       PhoneNumberOfflineGeocoder(String phonePrefixDataDirectory) {
         this.phonePrefixDataDirectory = phonePrefixDataDirectory;
@@ -171,6 +172,7 @@ AreaCodeMap var5B1B4B795B719A2CCEF18674C52B5D6E_511753923 =         availablePho
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized PhoneNumberOfflineGeocoder getInstance() {
         if (instance == null) {
       instance = new PhoneNumberOfflineGeocoder(MAPPING_DATA_DIRECTORY);
@@ -196,6 +198,7 @@ String varC942936C1DE055EED6142794CDBBAC27_698902791 =         (regionCode == nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.655 -0400", hash_original_method = "F67DBDA157A908486C2CB4AE34C3AE55", hash_generated_method = "60CB4A0EFBFFAB6551C91DD7AFFA82DD")
     public String getDescriptionForValidNumber(PhoneNumber number, Locale languageCode) {
         addTaint(languageCode.getTaint());
@@ -219,6 +222,7 @@ String varD34CF9974FC14F46EA66AD196503C90F_1440715086 =         (areaDescription
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.655 -0400", hash_original_method = "C5758C9E624EBA9DEEAB32D591791FD6", hash_generated_method = "2AE19D27668056CE10ABC5B24F6FC774")
     public String getDescriptionForNumber(PhoneNumber number, Locale languageCode) {
         addTaint(languageCode.getTaint());

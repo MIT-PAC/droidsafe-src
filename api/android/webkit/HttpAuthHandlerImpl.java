@@ -130,6 +130,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.140 -0400", hash_original_method = "3FC26787C5211E44D8B34B9447EFC8D6", hash_generated_method = "9BC27FCF7D7513655235C49E72BCDC7D")
     public void proceed(String username, String password) {
         addTaint(password.getTaint());

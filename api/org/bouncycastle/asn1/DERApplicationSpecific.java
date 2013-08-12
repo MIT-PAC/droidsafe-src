@@ -23,6 +23,7 @@ public class DERApplicationSpecific extends ASN1Object {
 
     private byte[] octets;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.076 -0400", hash_original_method = "F358753DF763D75E1752044681BF3AC8", hash_generated_method = "D55324640DF381B2652431FE7BF7FFCD")
       DERApplicationSpecific(
         boolean isConstructed,
@@ -38,6 +39,7 @@ public class DERApplicationSpecific extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.076 -0400", hash_original_method = "4CF4A9576D642E83593F5E4C6AD75E4B", hash_generated_method = "31E5815D9C59513C19B7E7F2E7F88BD4")
     public  DERApplicationSpecific(
         int    tag,
@@ -49,6 +51,7 @@ public class DERApplicationSpecific extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.077 -0400", hash_original_method = "6CD0D23957E9B404C2F9698016AC75E4", hash_generated_method = "9B40582C04B51417E3F8C2BD345D2E30")
     public  DERApplicationSpecific(
         int                  tag, 
@@ -98,6 +101,7 @@ public class DERApplicationSpecific extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.079 -0400", hash_original_method = "94BAC854E28F90CA4EA0E8959FF01D3B", hash_generated_method = "664F51C7DF748412DC65301B17E70D15")
     public  DERApplicationSpecific(int tagNo, ASN1EncodableVector vec) {
         addTaint(vec.getTaint());
@@ -193,6 +197,7 @@ for(int i = 0;i != vec.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.081 -0400", hash_original_method = "E9ECF57BA1A3D60C7D24C2D1B840176E", hash_generated_method = "95FC440F397F7E298ED46A2BD6C77BE4")
     public DERObject getObject() throws IOException {
 DERObject var7168AACCAD0A68A7098006CD429531D2_482228963 =         new ASN1InputStream(getContents()).readObject();
@@ -203,6 +208,7 @@ DERObject var7168AACCAD0A68A7098006CD429531D2_482228963 =         new ASN1InputS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.082 -0400", hash_original_method = "8D6BE9D0FACD64D64BE0372060383689", hash_generated_method = "4E07B164FD3875AF862A03DE0E113B49")
     public DERObject getObject(int derTagNo) throws IOException {
         addTaint(derTagNo);
@@ -236,7 +242,7 @@ DERObject var6973B48E7C58DF1E1DC0711650513E93_701106076 =         new ASN1InputS
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.083 -0400", hash_original_method = "E93A5605AEDD2C30A620D419DCC3B82A", hash_generated_method = "844DC1361445FD7735AA01CE5CDD994A")
      void encode(DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -256,7 +262,7 @@ DERObject var6973B48E7C58DF1E1DC0711650513E93_701106076 =         new ASN1InputS
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.084 -0400", hash_original_method = "2058BDE8789C9C651125E90A6C9106EF", hash_generated_method = "296595E31E87F6B1E708919C8C8F9705")
      boolean asn1Equals(
         DERObject o) {
@@ -285,7 +291,7 @@ DERObject var6973B48E7C58DF1E1DC0711650513E93_701106076 =         new ASN1InputS
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.085 -0400", hash_original_method = "CE8CF2E74F2DF6C65F2B809B8ECF710B", hash_generated_method = "0E878033885EAB79F95FAF1434153420")
     public int hashCode() {
         int var75F6921E5BCCAA342C07FD19F33F5B75_1459162141 = ((isConstructed ? 1 : 0) ^ tag ^ Arrays.hashCode(octets));

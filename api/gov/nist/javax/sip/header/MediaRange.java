@@ -15,6 +15,7 @@ public class MediaRange extends SIPObject {
 
     protected String subtype;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.558 -0400", hash_original_method = "A8D138215FF2330241D1163A7469BE2F", hash_generated_method = "94D7E99B7301CFEA2E8CC360FD81F551")
     public  MediaRange() {
         // ---------- Original Method ----------

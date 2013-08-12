@@ -31,6 +31,7 @@ public class DrmRawContent {
 
     private int rawType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.382 -0400", hash_original_method = "48C7554EE3F27E9D89A6C35F1696C3B9", hash_generated_method = "8E84A418082AEAEF26B93CD217E1BF73")
     public  DrmRawContent(InputStream inRawdata, int len, String mimeTypeStr) throws DrmException, IOException {
         addTaint(mimeTypeStr.getTaint());
@@ -104,6 +105,7 @@ String var1501B764E92923618CF5009F66D8B536_1383258295 =         rightsIssuer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.385 -0400", hash_original_method = "3A81FD63CF04F4BFFAA8D4F0C3F30C0B", hash_generated_method = "4DF4FDEC45EC8473CFF114EF33603D36")
     public InputStream getContentInputStream(DrmRights rights) {
         addTaint(rights.getTaint());
@@ -134,6 +136,7 @@ String var218CC42AA082B133996F120877DCB8CE_358870604 =         mediaType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.387 -0400", hash_original_method = "1DD68310D2E0F74333AF2EE851C2CA4C", hash_generated_method = "C130F71E8D02BF2AEBEDDA4F0E90F881")
     public int getContentLength(DrmRights rights) throws DrmException {
         addTaint(rights.getTaint());
@@ -251,6 +254,7 @@ String var218CC42AA082B133996F120877DCB8CE_358870604 =         mediaType;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.401 -0400", hash_original_method = "DD7664962C7714C7E289B90A25098018", hash_generated_method = "30913D4362B03C4047DA6AB21483007E")
         public int available() throws IOException {
             int len = nativeGetContentLength();
@@ -289,6 +293,7 @@ String var218CC42AA082B133996F120877DCB8CE_358870604 =         mediaType;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.403 -0400", hash_original_method = "287241C29465CA302A7D4AC4EAA3FF8F", hash_generated_method = "BB04C60468DF0F128212EA60E146DE86")
         public int read() throws IOException {
             int res;
@@ -311,6 +316,7 @@ String var218CC42AA082B133996F120877DCB8CE_358870604 =         mediaType;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.404 -0400", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "8F8B055EFEBD283A6517BEB9FEBC7385")
         public int read(byte[] b) throws IOException {
             addTaint(b[0]);
@@ -322,6 +328,7 @@ String var218CC42AA082B133996F120877DCB8CE_358870604 =         mediaType;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.406 -0400", hash_original_method = "E3473D498149E2AB489389364DA9079E", hash_generated_method = "2950E1920B0DC8C5A6F1155D699C5337")
         public int read(byte[] b, int off, int len) throws IOException {
             addTaint(off);

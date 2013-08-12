@@ -28,7 +28,7 @@ public class SecureRandom extends Random {
 
     private String algorithm;
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.354 -0400", hash_original_method = "33F8886B5EAC6FEC4DE9DFB0ACBA3485", hash_generated_method = "29048687EE25D7D4906D69AA4CC00F6A")
     public  SecureRandom() {
         super(0);
@@ -74,6 +74,7 @@ public class SecureRandom extends Random {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.354 -0400", hash_original_method = "9BC52FCDF813ED3C3D5BC6E2620A6B25", hash_generated_method = "E8BC2A0795EA174DE6D7C4E375EEE7EC")
     public  SecureRandom(byte[] seed) {
         this();
@@ -84,6 +85,7 @@ public class SecureRandom extends Random {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.354 -0400", hash_original_method = "BD02DB0E23AA7BAA028ADD51586ACEB6", hash_generated_method = "79A96A60F49CBED4ED102533D70B59AA")
     protected  SecureRandom(SecureRandomSpi secureRandomSpi,
                            Provider provider) {
@@ -120,6 +122,7 @@ public class SecureRandom extends Random {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SecureRandom getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
@@ -132,6 +135,7 @@ public class SecureRandom extends Random {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SecureRandom getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException();
@@ -166,7 +170,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_124656861 =         algorithm;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.355 -0400", hash_original_method = "8CEEFEAA85939144164B3CD7D68FA666", hash_generated_method = "C305C24A0BDACA76013F2E18E9D375BB")
     public synchronized void setSeed(byte[] seed) {
         addTaint(seed[0]);
@@ -176,7 +180,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_124656861 =         algorithm;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.355 -0400", hash_original_method = "9FF68F20EA17830E094095398C2F5999", hash_generated_method = "6A47EE20B63FBB6F25D4EC6D49EAB781")
     @Override
     public void setSeed(long seed) {
@@ -198,6 +202,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_124656861 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.355 -0400", hash_original_method = "AD0BFB52D4FF32A1ADE4FBCCEAA68479", hash_generated_method = "AAB5DEBD428C06FD5026F50D10A270C2")
     @Override
     public synchronized void nextBytes(byte[] bytes) {
@@ -208,6 +213,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_124656861 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.356 -0400", hash_original_method = "5D37488B96B0B99188E69118313D10F5", hash_generated_method = "E96BD3A325B63F1AEBD60045E3166708")
     @Override
     protected final int next(int numBits) {
@@ -255,6 +261,7 @@ for(int i = 0;i < bytes;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] getSeed(int numBytes) {
         SecureRandom result = internalSecureRandom;
         if (result == null) {
@@ -264,6 +271,7 @@ for(int i = 0;i < bytes;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.356 -0400", hash_original_method = "D819275281A9132149A7C81B1EB64271", hash_generated_method = "83B875F17EEE0BB14B7B4A8C7B6197AE")
     public byte[] generateSeed(int numBytes) {
         addTaint(numBytes);

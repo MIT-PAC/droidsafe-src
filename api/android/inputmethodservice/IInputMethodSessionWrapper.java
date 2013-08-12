@@ -259,6 +259,7 @@ switch(msg.what){
 
         IInputMethodCallback mCb;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.262 -0400", hash_original_method = "F69C5DA54CCE399124E2B79C8542153D", hash_generated_method = "B2C17F4C817962B7FCAE664250BDA861")
           InputMethodEventCallbackWrapper(IInputMethodCallback cb) {
             mCb = cb;
@@ -267,6 +268,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.264 -0400", hash_original_method = "7EDF22DE040F47B5D42C1B7CDA3CFBC9", hash_generated_method = "A4BEC0AF39E8861257831EB6FAA068F1")
         public void finishedEvent(int seq, boolean handled) {
             addTaint(handled);

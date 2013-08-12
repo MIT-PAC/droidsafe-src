@@ -14,6 +14,7 @@ public class SmsRawData implements Parcelable {
 
     byte[] data;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.296 -0400", hash_original_method = "786E0C6936F82B829DA5B3FF66BF9330", hash_generated_method = "9696AEC10121DADFC74AB9E5C21D1B54")
     public  SmsRawData(byte[] data) {
         this.data = data;

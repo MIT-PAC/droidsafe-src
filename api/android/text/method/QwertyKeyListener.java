@@ -493,6 +493,7 @@ String varFE81D892BE5757A0E16305825903D324_171204131 =         out;
 
         private char[] mText;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.647 -0400", hash_original_method = "573A0A1D2F4880FCE39DFE2EE4242AA3", hash_generated_method = "F3CF1157AFAB5B17CB35BAA0BE11F0EA")
         public  Replaced(char[] text) {
             mText = text;

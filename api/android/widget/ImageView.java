@@ -171,7 +171,7 @@ public class ImageView extends View {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.152 -0400", hash_original_method = "1C158315B1207DD6F7DBD78E9AF6090A", hash_generated_method = "6C86BA293E0B26AF0AEC484FE877D701")
     private void initImageView() {
         mMatrix     = new Matrix();
@@ -230,7 +230,7 @@ public class ImageView extends View {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.153 -0400", hash_original_method = "792DD4F5E748125528D3BF6C27B77C70", hash_generated_method = "E6C70F3730850842C9A246A8C4C0114E")
     @Override
     public int getResolvedLayoutDirection(Drawable dr) {
@@ -578,7 +578,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.159 -0400", hash_original_method = "16B1589372902AF87B2F0F65CBDC5B57", hash_generated_method = "4BEBE40AB9D5CFBF508FBB2EEF3CE1EF")
     private void resolveUri() {
         if(mDrawable != null)        
@@ -690,7 +690,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.160 -0400", hash_original_method = "ADE7139D7C0A9B2AE00EA96739AFBDE5", hash_generated_method = "E0867A363840E00ECC8838F7AEAEBB26")
     private void updateDrawable(Drawable d) {
         if(mDrawable != null)        
@@ -738,7 +738,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.160 -0400", hash_original_method = "E1DD34F979587974CF0EAF8DF3CFC3FF", hash_generated_method = "9B32301E4DC1BA530C710FFDA7DAD8F1")
     private void resizeFromDrawable() {
         Drawable d = mDrawable;
@@ -869,7 +869,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.163 -0400", hash_original_method = "6790E6B3204D72187344DF3593244181", hash_generated_method = "957A59FCFE799B1DA8D5A3E1B44E2B06")
     private int resolveAdjustedSize(int desiredSize, int maxSize,
                                    int measureSpec) {
@@ -933,7 +933,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.164 -0400", hash_original_method = "3A8E22D575255E0F3266968983CC3C02", hash_generated_method = "A9094CECDD9FA1324C6E0F82BCD42C44")
     private void configureBounds() {
         if(mDrawable == null || !mHaveFrame)        
@@ -1237,7 +1237,7 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.167 -0400", hash_original_method = "91840135D820437FBAEF19E5465CA144", hash_generated_method = "A57ACE779DD17A6273C6730F7C31547B")
     private void applyColorMod() {
         if(mDrawable != null && mColorMod)        

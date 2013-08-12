@@ -85,7 +85,7 @@ public class Environment {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static File getExternalStoragePublicDirectory(String type) {
         return new File("mnt/sdcard");
     }
@@ -135,6 +135,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getExternalStorageState() {
         try {
             IMountService mountService = IMountService.Stub.asInterface(ServiceManager
@@ -159,7 +160,7 @@ public class Environment {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static File getDirectory(String variableName, String defaultPath) {
         String path = System.getenv(variableName);
         return path == null ? new File(defaultPath) : new File(path);

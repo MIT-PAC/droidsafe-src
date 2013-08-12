@@ -20,6 +20,7 @@ public class ParserCursor {
 
     private int pos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.154 -0400", hash_original_method = "18E7372DC3B3776B683739AF6C000CE1", hash_generated_method = "226EE40B0EC27673D2CBF8468CEE61CE")
     public  ParserCursor(int lowerBound, int upperBound) {
         super();
@@ -121,6 +122,7 @@ public class ParserCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.157 -0400", hash_original_method = "DBE0DD908DEA3CD4A10978C31BD1370E", hash_generated_method = "4D329FDC9D7CA27F5C54407C667D2A91")
     public String toString() {
         CharArrayBuffer buffer = new CharArrayBuffer(16);

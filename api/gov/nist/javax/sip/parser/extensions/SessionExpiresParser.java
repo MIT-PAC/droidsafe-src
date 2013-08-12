@@ -32,6 +32,7 @@ public class SessionExpiresParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.847 -0400", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "807FEFDFE3B679A1CB8C4CFD54507224")
     public SIPHeader parse() throws ParseException {
         SessionExpires se = new SessionExpires();

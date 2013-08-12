@@ -215,6 +215,7 @@ Uri varB4C485D3C0F7F65526EF1FB88DF2A78B_1314475111 =         !TextUtils.isEmpty(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.882 -0400", hash_original_method = "617E38A3300A64CD810B1ADC15B8238E", hash_generated_method = "DD2B8483738202831600DAEF49FAF1B3")
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {

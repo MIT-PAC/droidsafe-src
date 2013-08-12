@@ -73,6 +73,7 @@ ParcelFileDescriptor varA2020F057EE0C4681E5D494D56A7C135_90232845 =         mFd;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.912 -0400", hash_original_method = "44C1CE26DE6098783D46BD5B3EB1BDD6", hash_generated_method = "9432DAE106B27E908272052B4C3E4859")
     public FileDescriptor getFileDescriptor() {
 FileDescriptor varE1F1962AEBAD268B7AA58A52652DD259_432765167 =         mFd.getFileDescriptor();
@@ -153,6 +154,7 @@ FileInputStream varB7E13BA4CA2B8A7FC10C543D77BE2739_1591861297 =         new Aut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.915 -0400", hash_original_method = "221DC8DE3671455AA557297DC19DE0C7", hash_generated_method = "8CEB31CAE2B75BC280828B7509651A19")
     public FileOutputStream createOutputStream() throws IOException {
         if(mLength < 0)        
@@ -172,6 +174,7 @@ FileOutputStream varA761DD43DBE68E9165A4D1238397668F_614338894 =         new Aut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.916 -0400", hash_original_method = "7D4F991E1E50267AE78D06F4481657CB", hash_generated_method = "B28A462F6B9A2E643BD62BA0D1DE4522")
     @Override
     public String toString() {
@@ -225,6 +228,7 @@ String varBCC72A648A1B956D0D083D4BD8697C29_719345300 =         "{AssetFileDescri
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.919 -0400", hash_original_method = "7717D4D64B71963D2E03703366A3F767", hash_generated_method = "B54D4282B9418BFB40A2B9C905C89714")
         @Override
         public int available() throws IOException {
@@ -305,6 +309,7 @@ String varBCC72A648A1B956D0D083D4BD8697C29_719345300 =         "{AssetFileDescri
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.921 -0400", hash_original_method = "A933078BF27D250D6509D415A1A48695", hash_generated_method = "C3B4875D16F9B6A1F49DCC5738AF64E9")
         @Override
         public long skip(long count) throws IOException {
@@ -358,6 +363,7 @@ String varBCC72A648A1B956D0D083D4BD8697C29_719345300 =         "{AssetFileDescri
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.924 -0400", hash_original_method = "2AE31565D7E15B3ED03E3797DC0147F2", hash_generated_method = "87AD8E27B69E4E5B8959983A1EB2AD7B")
         @Override
         public boolean markSupported() {
@@ -513,6 +519,7 @@ String varBCC72A648A1B956D0D083D4BD8697C29_719345300 =         "{AssetFileDescri
 
     public static final Parcelable.Creator<AssetFileDescriptor> CREATOR
             = new Parcelable.Creator<AssetFileDescriptor>() {
+        @DSModeled(DSC.SAFE)
         public AssetFileDescriptor createFromParcel(Parcel in) {
             return new AssetFileDescriptor(in);
         }

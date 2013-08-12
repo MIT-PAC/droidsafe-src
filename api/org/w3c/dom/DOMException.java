@@ -10,6 +10,7 @@ public class DOMException extends RuntimeException {
 
     public short code;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.123 -0400", hash_original_method = "0AC2D186CABB78D2BA6332ECA7EA8409", hash_generated_method = "3C32B00B1976CC683E416E26E7EA5481")
     public  DOMException(short code, String message) {
         super(message);

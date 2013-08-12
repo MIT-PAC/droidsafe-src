@@ -36,6 +36,7 @@ public class LruCache<K, V> {
 
     private int missCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.875 -0400", hash_original_method = "4EF140C80EBAC1C26C5562E76AB6C34D", hash_generated_method = "B661016043A59CCB0A803A0E76385341")
     public  LruCache(int maxSize) {
         if(maxSize <= 0)        
@@ -55,6 +56,7 @@ public class LruCache<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.876 -0400", hash_original_method = "E5DC52D3C4EAEBC9C86A603CE5606C4A", hash_generated_method = "B528B548D71694E5C287ED3475470DED")
     public final V get(K key) {
         if(key == null)        
@@ -247,6 +249,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_397232293 =         previous;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.880 -0400", hash_original_method = "9AD1617B914C1EE986412183164D996B", hash_generated_method = "D85B76C70BAD813556EC7465A7D0C22C")
     protected void entryRemoved(boolean evicted, K key, V oldValue, V newValue) {
         addTaint(newValue.getTaint());
@@ -304,6 +307,7 @@ V var540C13E9E156B687226421B24F2DF178_355529424 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.881 -0400", hash_original_method = "D3EB145ED9D558FDF887F10175D8EBDF", hash_generated_method = "6852E1E415BA1B80059D4CFD58DC38F6")
     public final void evictAll() {
         trimToSize(-1);

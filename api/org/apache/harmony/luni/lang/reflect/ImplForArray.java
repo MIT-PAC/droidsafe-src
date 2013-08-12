@@ -23,6 +23,7 @@ public final class ImplForArray implements GenericArrayType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.928 -0400", hash_original_method = "DF2F4D0FDA59F8B376BF76172F429ABC", hash_generated_method = "B0EA318D4CA3F6C9A3E93185BA8DB035")
     public Type getGenericComponentType() {
         try 
@@ -46,7 +47,7 @@ Type var62B4DAC76A381C72E7C16DCF7E120C0E_456818428 =             componentType;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.928 -0400", hash_original_method = "4E93C574A33186DE87D5834EAA369B51", hash_generated_method = "F9B8946FAF450819E8216E86433A5D3D")
     public String toString() {
 String varA243640258685B816D0B9D5AF9381898_628835627 =         componentType.toString() + "[]";

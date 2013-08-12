@@ -142,6 +142,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.257 -0400", hash_original_method = "64481B8066824EA776B6FC67FACE8B51", hash_generated_method = "5B50993B32FF40B0ECCDAABDD9BB5036")
     public void setRenderer(Renderer renderer) {
         checkRenderThreadState();
@@ -177,6 +178,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.258 -0400", hash_original_method = "6F22CFBD5A9926728BF6F0008FB33425", hash_generated_method = "CD9884CBA3536496A087BFFD0559CE66")
     public void setEGLContextFactory(EGLContextFactory factory) {
         checkRenderThreadState();
@@ -187,6 +189,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.258 -0400", hash_original_method = "1FB2F696FFEAFBF78B8CE4F0AE52B72E", hash_generated_method = "6BD5E5299B980A2A6E05ADF7ABC9CD3E")
     public void setEGLWindowSurfaceFactory(EGLWindowSurfaceFactory factory) {
         checkRenderThreadState();
@@ -197,6 +200,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.259 -0400", hash_original_method = "95299B7816E92BC747285D3C263BF3C6", hash_generated_method = "57B6C252C5E049C7F30F5A70B4956DEE")
     public void setEGLConfigChooser(EGLConfigChooser configChooser) {
         checkRenderThreadState();
@@ -207,6 +211,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.259 -0400", hash_original_method = "226B740D6DC98E22518E0EAB23B55B9E", hash_generated_method = "FB3999790C7191F067A027B0EDBCA419")
     public void setEGLConfigChooser(boolean needDepth) {
         addTaint(needDepth);
@@ -216,6 +221,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.260 -0400", hash_original_method = "091BCCF8C091A3C39DC981548CC7F874", hash_generated_method = "83621D78DF70B8B5E683F86DD862F423")
     public void setEGLConfigChooser(int redSize, int greenSize, int blueSize,
             int alphaSize, int depthSize, int stencilSize) {
@@ -233,6 +239,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.260 -0400", hash_original_method = "50689A18B452A2797F4096E269807A99", hash_generated_method = "9C0EB114981D0392CB7089EEB75DABAD")
     public void setEGLContextClientVersion(int version) {
         checkRenderThreadState();
@@ -243,6 +250,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.261 -0400", hash_original_method = "F401D8CE2ED637FA8D91B0F6CF1DA9F1", hash_generated_method = "2B6E51CBC645D702F00DE6F8DAB112F4")
     public void setRenderMode(int renderMode) {
         addTaint(renderMode);
@@ -252,6 +260,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.261 -0400", hash_original_method = "A90B80ACC894289C502B7717EBA7E101", hash_generated_method = "7D0AEDE866A842D64A2F863FE1F020CF")
     public int getRenderMode() {
         int var3A4B05FA71E35DAAA8CA366057A7D2CF_1492005771 = (mGLThread.getRenderMode());
@@ -262,6 +271,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.261 -0400", hash_original_method = "CFFBC35659E0BA943A055CA80830B728", hash_generated_method = "596A5792FF4EE3F180CFE15B447D9C84")
     public void requestRender() {
         mGLThread.requestRender();
@@ -270,6 +280,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.262 -0400", hash_original_method = "CA97146B18E855EC440A54EE624F6B33", hash_generated_method = "1701EE367EFAFFD7A8871AFD5FE8119B")
     public void surfaceCreated(SurfaceHolder holder) {
         addTaint(holder.getTaint());
@@ -279,6 +290,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.262 -0400", hash_original_method = "EA7799B476DE689FE2FFBF9C597A98F4", hash_generated_method = "847AF2A8F84DE1F98B2859A58D2FED9A")
     public void surfaceDestroyed(SurfaceHolder holder) {
         addTaint(holder.getTaint());
@@ -288,6 +300,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.262 -0400", hash_original_method = "30B95CA79378BAE34CA752354751401C", hash_generated_method = "5EA8E71188F042DA3547B5B7528A7B03")
     public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
         addTaint(h);
@@ -300,6 +313,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.263 -0400", hash_original_method = "0214E3A2798E907A5B7DAC32A4EC375B", hash_generated_method = "6681AE724F27029C5B375ADA17026377")
     public void onPause() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -309,6 +323,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.263 -0400", hash_original_method = "FF9EAD78F8E3B3945B5E32D8491EF212", hash_generated_method = "7C9D3D7765FF5DFBFD663EC6CFD3DF12")
     public void onResume() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -318,6 +333,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.263 -0400", hash_original_method = "BC25E256895D25AFE996AA7797074D1E", hash_generated_method = "6172F668F47571DE604108EB705EC639")
     public void queueEvent(Runnable r) {
         addTaint(r.getTaint());
@@ -371,6 +387,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.264 -0400", hash_original_method = "783D43AC66E879A98C2CBDD1B113996E", hash_generated_method = "4C8D1093930C1588D1CD927129A22660")
     @Override
     protected void onDetachedFromWindow() {
@@ -1886,7 +1903,7 @@ for(int i = 0;i < count;i++)
 
         private GLThread mEglOwner;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.312 -0400", hash_original_method = "5D6BCD582D13070585FC5F161A43B68D", hash_generated_method = "5D6BCD582D13070585FC5F161A43B68D")
         public GLThreadManager ()
         {

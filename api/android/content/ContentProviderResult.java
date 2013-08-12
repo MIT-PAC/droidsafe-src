@@ -107,6 +107,7 @@ public class ContentProviderResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.101 -0400", hash_original_method = "892D2D0BDFABE856512808AB86E3168D", hash_generated_method = "5F6C043239608CBC776B8AA4C97A0B02")
     public String toString() {
         if(uri != null)        

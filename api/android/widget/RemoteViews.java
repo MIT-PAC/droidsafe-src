@@ -178,7 +178,7 @@ String varD0D543EB218BC9E16C17B23C08BC19C7_1241124719 =         mPackage;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.764 -0400", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "94027C00C143FC7879CEA2922EE72FA6")
     private void recalculateMemoryUsage() {
         mMemoryUsageCounter.clear();
@@ -212,7 +212,7 @@ for(int i= 0;i < count;++i)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "41AB35E6CD13F07C492006A4E07CF7C3")
     private void addAction(Action a) {
         addTaint(a.getTaint());
@@ -718,7 +718,7 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_1588690019 =         result;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.772 -0400", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "98B120172AB8CDD4F398848FD6B7F5E5")
     private void performApply(View v, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -743,7 +743,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.779 -0400", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "08C29A90C911E4D6BE4977DA08781EE3")
     private Context prepareContext(Context context) {
         addTaint(context.getTaint());
@@ -2296,6 +2296,7 @@ switch(c){
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
 
     public static final Parcelable.Creator<RemoteViews> CREATOR = new Parcelable.Creator<RemoteViews>() {
+        @DSModeled(DSC.SAFE)
         public RemoteViews createFromParcel(Parcel parcel) {
             return new RemoteViews(parcel);
         }

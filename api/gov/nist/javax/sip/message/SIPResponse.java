@@ -219,6 +219,7 @@ public final class SIPResponse extends SIPMessage implements javax.sip.message.R
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.501 -0400", hash_original_method = "13FB64FAC5CAB193CAEE311D629E27B6", hash_generated_method = "B6D19FA1CB1F8706B5DC6F994BBCC512")
     public void setStatusCode(int statusCode) throws ParseException {
         addTaint(statusCode);
@@ -828,6 +829,7 @@ String var822854B97D2102A3952AE5BBC00EB7E3_199504374 =         statusLine.encode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.511 -0400", hash_original_method = "B6A6DA92002B5EA057CE082C91930B65", hash_generated_method = "9BABC257376D4E73D41648422AA9305D")
     public SIPRequest createRequest(SipUri requestURI, Via via, CSeq cseq, From from, To to) {
         addTaint(to.getTaint());

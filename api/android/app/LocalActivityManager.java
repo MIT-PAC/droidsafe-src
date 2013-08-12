@@ -361,6 +361,7 @@ String var2FDA46E65C37C9EE8C9E00B555D28E22_1638130298 =         mResumed != null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.152 -0400", hash_original_method = "AAFBFF7BB86A9D1FFB973CDC0860D37E", hash_generated_method = "9932935E8467C39520F8565B2C05C15E")
     public Activity getActivity(String id) {
         addTaint(id.getTaint());

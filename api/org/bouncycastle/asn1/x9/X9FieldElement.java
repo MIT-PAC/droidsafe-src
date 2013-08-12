@@ -20,6 +20,7 @@ public class X9FieldElement extends ASN1Encodable {
 
     protected ECFieldElement f;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.379 -0400", hash_original_method = "F44590D2DC1CB9A850DEED8AA932C508", hash_generated_method = "B40DD49217D53D4CC78C975F7729E462")
     public  X9FieldElement(ECFieldElement f) {
         this.f = f;
@@ -28,6 +29,7 @@ public class X9FieldElement extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.379 -0400", hash_original_method = "240BB5C1A9BD0B3E7BEC7A408B7EBED1", hash_generated_method = "DE42B6501323C05C92F64D9F048BCB56")
     public  X9FieldElement(BigInteger p, ASN1OctetString s) {
         this(new ECFieldElement.Fp(p, new BigInteger(1, s.getOctets())));
@@ -37,6 +39,7 @@ public class X9FieldElement extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.380 -0400", hash_original_method = "03C4454F48591BAC871371AEF932BD75", hash_generated_method = "6A607DB1359C9C2827C06AC0E1704631")
     public  X9FieldElement(int m, int k1, int k2, int k3, ASN1OctetString s) {
         this(new ECFieldElement.F2m(m, k1, k2, k3, new BigInteger(1, s.getOctets())));
@@ -60,6 +63,7 @@ ECFieldElement varABE3CFB53FE4A79F34CB25BC80BFD6E2_1430448696 =         f;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.381 -0400", hash_original_method = "C3D6716565C168642D40E95793D0D07C", hash_generated_method = "B0567881FF8A55E589977A536E00B793")
     public DERObject toASN1Object() {
         int byteCount = converter.getByteLength(f);

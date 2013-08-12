@@ -20,6 +20,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getInternalFormat(Bitmap bitmap) {
         if (bitmap == null) {
             throw new NullPointerException("getInternalFormat can't be used with a null Bitmap");
@@ -35,6 +36,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getType(Bitmap bitmap) {
         if (bitmap == null) {
             throw new NullPointerException("getType can't be used with a null Bitmap");
@@ -64,6 +66,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
         if (bitmap == null) {
@@ -93,6 +96,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap) {
         if (bitmap == null) {
@@ -108,6 +112,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
         if (bitmap == null) {
@@ -122,6 +127,7 @@ public final class GLUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getEGLErrorString(int error) {
         switch (error) {
             case EGL10.EGL_SUCCESS:

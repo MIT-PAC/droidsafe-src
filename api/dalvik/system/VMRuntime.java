@@ -51,7 +51,7 @@ public final class VMRuntime {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "A53C7C5E8A86B0A14FF3A91D5B112A95", hash_generated_method = "C96E2A9EC444161F6BCD18BCDC210F15")
     public float getTargetHeapUtilization() {
         float var546ADE640B6EDFBC8A086EF31347E768_85774206 = getTaintFloat();
@@ -91,7 +91,7 @@ public final class VMRuntime {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "C39A30D8892B0E36B74298597ED5FBE9", hash_generated_method = "EA21A7B0162E01E5EA792CC7A6CE2370")
     public void setTargetSdkVersion(int targetSdkVersion) {
     }
@@ -140,7 +140,7 @@ public final class VMRuntime {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "1BC492CFAAC06440005836321EF40EC6", hash_generated_method = "2A4500EED54D06B53CF090EFE1949B33")
     private void nativeSetTargetHeapUtilization(float newTarget) {
     }
@@ -180,13 +180,13 @@ public final class VMRuntime {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "2166D40B30A2B78A2A8578391CF70C71", hash_generated_method = "5CE41E3C314575546051C1FC068CDF23")
     public void startJitCompilation() {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "988710BD2A10AD89943FF29F774B18B3", hash_generated_method = "5394F4F9494DB803D576EA0E55AE138D")
     public void disableJitCompilation() {
     }
@@ -201,7 +201,7 @@ public final class VMRuntime {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "F2F9C5A5D8870A09D65982DFE8B619AA", hash_generated_method = "5D3CF82E2F5EECD43E253822BAF31A6B")
     public long addressOf(Object array) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_751142300 = getTaintLong();
@@ -215,7 +215,7 @@ public final class VMRuntime {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "FD10061FB9DFD564FAB6BA17DFE98F77", hash_generated_method = "E8B5A4E418AE7B4344F9BE83A99BC2C6")
     public boolean isDebuggerActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1157197785 = getTaintBoolean();

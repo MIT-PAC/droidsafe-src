@@ -301,7 +301,7 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.481 -0400", hash_original_method = "6E4750DDBC0AC16C300E83EC6E6DBC1D", hash_generated_method = "97BC4668F32198E8F25070B2DC67928E")
     public void setSecondaryProgress(int secondaryProgress) {
         if(mProgress != null)        
@@ -323,7 +323,7 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.481 -0400", hash_original_method = "4D0AEB75C79AE0306A009E89E85077BB", hash_generated_method = "39FFA63B0345AC14627FD245982AD050")
     public int getProgress() {
         if(mProgress != null)        
@@ -363,7 +363,7 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.483 -0400", hash_original_method = "B2C91689E392BFA0100BFE7CD7CBCF9A", hash_generated_method = "5B03911899A4D1D38B8BF4D5F1005C45")
     public int getMax() {
         if(mProgress != null)        
@@ -580,6 +580,7 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.496 -0400", hash_original_method = "4324E732D77BC0648AC0ECF3DB6A3F8F", hash_generated_method = "9C8F46C8F794E97CBBAB7656535BB4DC")
     public void setProgressPercentFormat(NumberFormat format) {
         mProgressPercentFormat = format;

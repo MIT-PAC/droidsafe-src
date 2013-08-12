@@ -44,7 +44,7 @@ public abstract class PackageManager {
     public abstract String[] canonicalToCurrentPackageNames(String[] names);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Intent getLaunchIntentForPackage(String packageName);
 
     
@@ -278,6 +278,7 @@ public abstract class PackageManager {
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.300 -0400", hash_original_method = "DBC2C646566E0B22A2FF91F44F8D10B2", hash_generated_method = "0653EC72A0D11C745065C5AE46F06664")
     public PackageInfo getPackageArchiveInfo(String archiveFilePath, int flags) {
         addTaint(flags);
@@ -318,13 +319,13 @@ PackageInfo var5AE978B2B8E8AB8649F1BCEEB6A3CE29_1300871783 =         PackagePars
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract void installPackage(
             Uri packageURI, IPackageInstallObserver observer, int flags,
             String installerPackageName);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract void installPackageWithVerification(Uri packageURI,
             IPackageInstallObserver observer, int flags, String installerPackageName,
             Uri verificationURI, ManifestDigest manifestDigest);

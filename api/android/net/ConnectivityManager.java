@@ -108,6 +108,7 @@ public class ConnectivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.389 -0400", hash_original_method = "900E5DCCFD12B740A82ADA5294C949B0", hash_generated_method = "34D458E07777009B9523985920E9D457")
     public int getNetworkPreference() {
         try 
@@ -131,6 +132,7 @@ public class ConnectivityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.390 -0400", hash_original_method = "5E96294DED8896A900AADA5BAA807536", hash_generated_method = "F2F1F90AD3F47479F493BA2B5341DFF2")
     public NetworkInfo getActiveNetworkInfo() {
         try 
@@ -326,6 +328,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1478821864 =             null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.396 -0400", hash_original_method = "709E7052A14C2A0D29C9219C00073F31", hash_generated_method = "427148BDEB1F005FF20C10B72357177B")
     public int startUsingNetworkFeature(int networkType, String feature) {
         addTaint(feature.getTaint());
@@ -353,6 +356,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1478821864 =             null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.397 -0400", hash_original_method = "60EB71F5D3B7B41111FE02ED36065292", hash_generated_method = "C1D7DC76AB16B2D5E1F4C61838445E7D")
     public int stopUsingNetworkFeature(int networkType, String feature) {
         addTaint(feature.getTaint());

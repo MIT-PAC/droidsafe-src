@@ -12,6 +12,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class PCalledPartyID extends gov.nist.javax.sip.header.AddressParametersHeader implements PCalledPartyIDHeader, SIPHeaderNamesIms, ExtensionHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.125 -0400", hash_original_method = "EDC402C5990746AE150AF00BD84032F6", hash_generated_method = "D9664EE33C8B96C805728CCB2FF4B2BE")
     public  PCalledPartyID(AddressImpl address) {
         super(NAME);
@@ -22,6 +23,7 @@ public class PCalledPartyID extends gov.nist.javax.sip.header.AddressParametersH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.126 -0400", hash_original_method = "D34D544F1730F850E33368222A05354C", hash_generated_method = "49A3F9AF22422791AFB5269749C297FA")
     public  PCalledPartyID() {
         super(CALLED_PARTY_ID);
@@ -29,6 +31,7 @@ public class PCalledPartyID extends gov.nist.javax.sip.header.AddressParametersH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.126 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "CC7844458163CBDED05DB5FCAEFB776C")
     public String encodeBody() {
         StringBuffer retval = new StringBuffer();
@@ -61,6 +64,7 @@ String var1B324365A764C077A55854483509F4AB_868707911 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.127 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "11777646B03BD4A57DBCD76AF161C0E3")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

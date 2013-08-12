@@ -18,6 +18,7 @@ public final class ImplForWildcard implements WildcardType {
 
     private ListOfTypes superBound;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.981 -0400", hash_original_method = "377AE596AF1F05D61C997E0097B90D78", hash_generated_method = "A362119BE9B074D6701B8CAD31C3A22C")
     public  ImplForWildcard(ListOfTypes extendsBound, ListOfTypes superBound) {
         this.extendsBound = extendsBound;
@@ -50,6 +51,7 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_1196800001 =         extendsBound.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.982 -0400", hash_original_method = "4E6CE2D91E2326D588B30852F56501A7", hash_generated_method = "9FF4616E8FD733E8F8262F064AA39C00")
     @Override
     public boolean equals(Object o) {
@@ -75,6 +77,7 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_1196800001 =         extendsBound.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.983 -0400", hash_original_method = "336948550805F35B42E4F5770BA4CC44", hash_generated_method = "423CCCD969D279AB37F00C59C2653CFE")
     @Override
     public int hashCode() {
@@ -88,6 +91,7 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_1196800001 =         extendsBound.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.983 -0400", hash_original_method = "93865AC448C11A5C9C4A3B3F15C62698", hash_generated_method = "38F56C06CA3A981F123C60B3E0B8D972")
     @Override
     public String toString() {

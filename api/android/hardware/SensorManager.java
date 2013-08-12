@@ -144,6 +144,7 @@ switch(i.getType()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.875 -0400", hash_original_method = "D388F11CBE90143BC36FA3E001809013", hash_generated_method = "E3E1CF446F59C4883E58376EFB7C4AF6")
     public List<Sensor> getSensorList(int type) {
         addTaint(type);
@@ -197,6 +198,7 @@ List<Sensor> varED12C351C2E8CA4F85F097DDC7E77B4D_1918059607 =         list;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.876 -0400", hash_original_method = "CA10DA2A107C571495F28D1A1A335E4D", hash_generated_method = "F78FDE58BD1A227AB23B75F1E28886A8")
     @Deprecated
     public boolean registerListener(SensorListener listener, int sensors) {
@@ -211,6 +213,7 @@ List<Sensor> varED12C351C2E8CA4F85F097DDC7E77B4D_1918059607 =         list;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.877 -0400", hash_original_method = "B7C7A7F6BC1EDB860C06401873DD1A46", hash_generated_method = "8B144E16CC8D944BB57DF1F5A04DC185")
     @Deprecated
     public boolean registerListener(SensorListener listener, int sensors, int rate) {
@@ -301,6 +304,7 @@ List<Sensor> varED12C351C2E8CA4F85F097DDC7E77B4D_1918059607 =         list;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.878 -0400", hash_original_method = "08C00AEC5C2F4A8557AFE56DD5038FAA", hash_generated_method = "9D42C88D13E47450325B36329B12BE0A")
     @Deprecated
     public void unregisterListener(SensorListener listener, int sensors) {
@@ -386,6 +390,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.879 -0400", hash_original_method = "F024191DD75DA5578F802D33C834CE8F", hash_generated_method = "F4EE929A1A6A4C70C3A8DE2D405AC865")
     @Deprecated
     public void unregisterListener(SensorListener listener) {
@@ -396,6 +401,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.879 -0400", hash_original_method = "A245758148D9D81E2CADBC67CD903CC7", hash_generated_method = "1A7A8DCC8AA6C4D35AA8357E67ED7B05")
     public void unregisterListener(SensorEventListener listener, Sensor sensor) {
         addTaint(sensor.getTaint());
@@ -468,6 +474,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.881 -0400", hash_original_method = "55FB0E0786574FCA30E9C20955CE2F64", hash_generated_method = "0F03A2A8EF12196941286E0DE06E7BD7")
     public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate,
             Handler handler) {
@@ -680,6 +687,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float getInclination(float[] I) {
         if (I.length == 9) {
             return (float)Math.atan2(I[5], I[4]);
@@ -689,6 +697,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean remapCoordinateSystem(float[] inR, int X, int Y,
             float[] outR) {
         if (inR == outR) {
@@ -760,6 +769,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float getAltitude(float p0, float p) {
         final float coef = 1.0f / 5.255f;
         return 44330.0f * (1.0f - (float)Math.pow(p/p0, coef));
@@ -841,6 +851,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getRotationMatrixFromVector(float[] R, float[] rotationVector) {
         float q0;
         float q1 = rotationVector[0];
@@ -890,6 +901,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getQuaternionFromVector(float[] Q, float[] rv) {
         if (rv.length == 4) {
             Q[0] = rv[3];
@@ -1258,6 +1270,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.895 -0400", hash_original_method = "262A581E44AC35F2D9F50EC370F0EA9A", hash_generated_method = "A043EF083863D75236AB6D2E2E65C367")
          int removeSensor(Sensor sensor) {
             addTaint(sensor.getTaint());
@@ -1273,6 +1286,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         boolean hasSensor(Sensor sensor) {
             return mSensors.get(sensor.getHandle());
         }
@@ -1342,6 +1356,7 @@ switch(t.sensor.getType()){
 
         private final LmsFilter mYawfilter = new LmsFilter();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.897 -0400", hash_original_method = "A655EEB442CA31096C7FBEA03DE93B9D", hash_generated_method = "CBB5CEA1870353CD7AEAFC08ACA9FF7B")
         @SuppressWarnings("deprecation")
           LegacyListener(SensorListener target) {
@@ -1387,6 +1402,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.899 -0400", hash_original_method = "E64F8429635EF9F3222DE4609CE00D63", hash_generated_method = "476C5B84E62E075DBB0D5D7C41A911A5")
         @SuppressWarnings("deprecation")
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
@@ -1408,6 +1424,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.900 -0400", hash_original_method = "7B74886508DCBDDEB63A3DDB570295F3", hash_generated_method = "439E239BBB2F9E86621BEB68FCFFA0DA")
         @SuppressWarnings("deprecation")
         public void onSensorChanged(SensorEvent event) {
@@ -1551,6 +1568,7 @@ switch(sensor){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.905 -0400", hash_original_method = "EF62ACDA1EDD9BA52B9A6B99F58CD8F6", hash_generated_method = "0CD321FCA8BC456B16F3E4CC3D379FA9")
         public float filter(long time, float in) {
             addTaint(in);

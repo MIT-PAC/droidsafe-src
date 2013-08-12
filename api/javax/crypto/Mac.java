@@ -33,6 +33,7 @@ public class Mac implements Cloneable {
 
     private boolean isInitMac;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.261 -0400", hash_original_method = "41257A854336509F555FDEC12089036E", hash_generated_method = "7032B200155C3BF44BC344231E63CB65")
     protected  Mac(MacSpi macSpi, Provider provider, String algorithm) {
         this.provider = provider;
@@ -69,6 +70,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Mac getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
@@ -78,6 +80,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Mac getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException("Provider is null or empty");
@@ -90,6 +93,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Mac getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException("provider == null");
@@ -102,6 +106,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.265 -0400", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "88195A32B310944125B60164B95C8D40")
     public final int getMacLength() {
         int var682E664C96A9B662D36EC2F18A07EE33_1303082927 = (spiImpl.engineGetMacLength());
@@ -112,6 +117,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.266 -0400", hash_original_method = "9228EAA32885A066BE953E8B5AE4C236", hash_generated_method = "2F2CA41C23E979A4890DC7AD6275794D")
     public final void init(Key key, AlgorithmParameterSpec params) throws InvalidKeyException, InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
@@ -133,6 +139,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.266 -0400", hash_original_method = "874C36BA9BA67506DF1E27339862DC05", hash_generated_method = "9DAC96B8FD5FEEEA4023BD5478A8E51C")
     public final void init(Key key) throws InvalidKeyException {
         addTaint(key.getTaint());
@@ -166,6 +173,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.267 -0400", hash_original_method = "CE2C32417AC34B9F04F350B6B83BA3FB", hash_generated_method = "45B3867C830924E5F2A2B91D523FA7F2")
     public final void update(byte input) throws IllegalStateException {
         addTaint(input);
@@ -184,6 +192,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.268 -0400", hash_original_method = "715302E1C20F57A2A8D63A54A99663FC", hash_generated_method = "408BCF3038CE299B2834380BDDA9ABFA")
     public final void update(byte[] input, int offset, int len) throws IllegalStateException {
         addTaint(len);
@@ -220,6 +229,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.269 -0400", hash_original_method = "3D6841DD3321DF543EE186C2C08CA7E2", hash_generated_method = "522060CC728BE4F2ECCD9994A7486629")
     public final void update(byte[] input) throws IllegalStateException {
         addTaint(input[0]);
@@ -243,6 +253,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.271 -0400", hash_original_method = "A1BB43A6E7623A403344D1C2F2A132EB", hash_generated_method = "2E8F1217E5590EB75E9485587AEE3041")
     public final void update(ByteBuffer input) {
         addTaint(input.getTaint());
@@ -274,6 +285,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.272 -0400", hash_original_method = "09A7E9E8BA2AA06F6A3808F7BB018D3B", hash_generated_method = "19613AF18752916B0124B905484401E1")
     public final byte[] doFinal() throws IllegalStateException {
         if(!isInitMac)        
@@ -293,6 +305,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.272 -0400", hash_original_method = "3A73D46F22DAF7149F49DD945D0B4F9C", hash_generated_method = "BDBD850E87273281A847C93ED1FB761B")
     public final void doFinal(byte[] output, int outOffset) throws ShortBufferException, IllegalStateException {
         addTaint(outOffset);
@@ -343,6 +356,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.273 -0400", hash_original_method = "D317760A96395810E5039143278FB4E4", hash_generated_method = "6EB6B7DFA3D625232FE79C9A1DB36499")
     public final byte[] doFinal(byte[] input) throws IllegalStateException {
         addTaint(input[0]);
@@ -370,6 +384,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.274 -0400", hash_original_method = "81378E48B4C25C37826FA808778D1291", hash_generated_method = "77C57E72DC7D91B702D238A17B41BD51")
     public final void reset() {
         spiImpl.engineReset();

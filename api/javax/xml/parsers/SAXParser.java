@@ -30,6 +30,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.903 -0400", hash_original_method = "EE92C6E107D176D208870C8A6C9502AF", hash_generated_method = "CB566E473016E1EFF7269AEEE421B370")
     public void reset() {
         UnsupportedOperationException var7C551673C8356EEBC5D7497F7A95F3F8_1971301081 = new UnsupportedOperationException(
@@ -48,6 +49,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.903 -0400", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "F0298980E86D4D6F524EDADFC94B4550")
     public void parse(InputStream is, HandlerBase hb) throws SAXException, IOException {
         addTaint(hb.getTaint());
@@ -69,6 +71,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.903 -0400", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "E0C0538E77C663EB3B9F6DCED6F07B1F")
     public void parse(
         InputStream is,
@@ -96,6 +99,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.904 -0400", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "99D5A79E7542FA7561A46378220EA111")
     public void parse(InputStream is, DefaultHandler dh) throws SAXException, IOException {
         addTaint(dh.getTaint());
@@ -117,6 +121,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.904 -0400", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "8790765D5F396BD9AFCC8B6313CEB6B2")
     public void parse(
         InputStream is,
@@ -144,6 +149,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.905 -0400", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "D9931C3583415B47972F1B5B63E02A3E")
     public void parse(String uri, HandlerBase hb) throws SAXException, IOException {
         addTaint(hb.getTaint());
@@ -165,6 +171,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.905 -0400", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "C18F284FBEAAE0E9EF35F9A2ADDD001E")
     public void parse(String uri, DefaultHandler dh) throws SAXException, IOException {
         addTaint(dh.getTaint());
@@ -186,6 +193,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.906 -0400", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "0C81B40E5A8D72C2C4464E89B7250357")
     public void parse(File f, HandlerBase hb) throws SAXException, IOException {
         addTaint(hb.getTaint());
@@ -246,6 +254,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.907 -0400", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "1DA08175DBAEDB9F69A88E34B64BAF28")
     public void parse(InputSource is, HandlerBase hb) throws SAXException, IOException {
         addTaint(hb.getTaint());
@@ -280,6 +289,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.907 -0400", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "D499D8D6B08ED070913A121A9A183429")
     public void parse(InputSource is, DefaultHandler dh) throws SAXException, IOException {
         addTaint(dh.getTaint());
@@ -340,6 +350,7 @@ public abstract class SAXParser {
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.909 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "2D7536F71708D280101A92135D317B02")
     public Schema getSchema() {
         UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1331589382 = new UnsupportedOperationException(
@@ -362,6 +373,7 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.909 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "B2352F9DEBA91D10BE91DC3FE764B23F")
     public boolean isXIncludeAware() {
         UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1622723895 = new UnsupportedOperationException(

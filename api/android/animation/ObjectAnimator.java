@@ -29,7 +29,7 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.423 -0400", hash_original_method = "72D05C8CED3E11A756BC68866B4296D0", hash_generated_method = "908359367A860F063D504A9A990778EC")
     private  ObjectAnimator(Object target, String propertyName) {
         addTaint(propertyName.getTaint());

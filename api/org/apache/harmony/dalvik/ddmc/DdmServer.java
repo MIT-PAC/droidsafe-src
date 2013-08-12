@@ -20,6 +20,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void registerHandler(int type, ChunkHandler handler) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         if (handler == null)
@@ -33,6 +34,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ChunkHandler unregisterHandler(int type) {
         synchronized (mHandlerMap) {
             return mHandlerMap.remove(type);
@@ -40,6 +42,7 @@ public class DdmServer {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void registrationComplete() {
         synchronized (mHandlerMap) {
             mRegistrationComplete = true;

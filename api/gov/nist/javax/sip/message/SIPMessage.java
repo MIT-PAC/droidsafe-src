@@ -251,6 +251,7 @@ String var2D67BB46AD10FAB14B45E2CB0673323E_1501656117 =         contentLengthHea
     public abstract String getDialogId(boolean isServerTransaction);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.160 -0400", hash_original_method = "AC5B2D97481875B2502EE3A7FDAB3C5D", hash_generated_method = "0646F46F8F10889899333E1C8EDA6CD8")
     public boolean match(Object other) {
         addTaint(other.getTaint());
@@ -377,6 +378,7 @@ for(int i = 0;i < templateHeaders.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.162 -0400", hash_original_method = "79C45AA8D92059F002F56259D7022AFE", hash_generated_method = "6FF4428456B93CB1BC3BC76CB0087B3C")
     public String encode() {
         StringBuffer encoding = new StringBuffer();
@@ -425,6 +427,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_683262936 =         encoding.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.163 -0400", hash_original_method = "716A084604DD8483BAA5EE270A2C01EC", hash_generated_method = "1F0DA4A6BA039CD94FF59A56BA97E728")
     public byte[] encodeAsBytes(String transport) {
         addTaint(transport.getTaint());
@@ -493,6 +496,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_683262936 =         encoding.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.165 -0400", hash_original_method = "CAA2D0A800A8BA91CFE25E08D1466992", hash_generated_method = "D81D8487E38ADFBDEEB17ACB2EDDF503")
     public Object clone() {
         SIPMessage retval = (SIPMessage) super.clone();
@@ -695,6 +699,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_180011674 =         stringRepresentat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.170 -0400", hash_original_method = "7BE2AED7224623BF9774680F8F08FE9F", hash_generated_method = "8A2E50DC77F1FA0EBF396B8466E049C7")
     public void attachHeader(SIPHeader header, boolean replaceFlag, boolean top) throws SIPDuplicateHeaderException {
         addTaint(top);
@@ -807,6 +812,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_180011674 =         stringRepresentat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.173 -0400", hash_original_method = "870FE8D30093D63C50FAB8B7342DE2BD", hash_generated_method = "CFFE3606CA354FC384BA5073B87C52F5")
     public void removeHeader(String headerName, boolean top) {
         addTaint(top);
@@ -937,6 +943,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_180011674 =         stringRepresentat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.175 -0400", hash_original_method = "04B79D458A896A4F330B98FD27925CCB", hash_generated_method = "EDEFF51CF51D1A3D8EEDAEBBDBE4680F")
     public String getTransactionId() {
         Via topVia = null;
@@ -995,6 +1002,7 @@ String var74489726A6E091DB52CBF99C7496DFAB_251647241 =             retval.toStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.175 -0400", hash_original_method = "2D96B4A52CFB118A97F95400511B110F", hash_generated_method = "C2F327293A606EF569B3DA5F6A567762")
     public int hashCode() {
         if(this.callIdHeader == null)        
@@ -1455,6 +1463,7 @@ String varF829FB8E72DE477DA0945F7BFAD27FF7_998879707 =         this.messageConte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.179 -0400", hash_original_method = "AF476AB0E969B944040525792C5BC52E", hash_generated_method = "FB0FF982BE500FC9DBA2CAB842DC81ED")
     public void setMessageContent(String type, String subType, String messageContent) {
         addTaint(subType.getTaint());

@@ -130,6 +130,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_234712589 =         address;
     protected abstract void listen(int backlog) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.522 -0400", hash_original_method = "2E2A133215115434551D3BB5177B3CB7", hash_generated_method = "B8621E300BE4F12EBE891E60D6F92C4E")
     @Override
     public String toString() {

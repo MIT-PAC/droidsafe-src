@@ -9,12 +9,14 @@ import java.io.IOException;
 
 public class DERNull extends ASN1Null {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.375 -0400", hash_original_method = "99B54E5156DA58D37DF99A37E5693124", hash_generated_method = "4766F3DC44E05384E805FB26F1BF2111")
     protected  DERNull() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.375 -0400", hash_original_method = "ACDC3B7B82E2509D0E7268C448CC95AD", hash_generated_method = "FA67DDB49B43779873195BDBFD4BBF42")
      void encode(
         DEROutputStream  out) throws IOException {

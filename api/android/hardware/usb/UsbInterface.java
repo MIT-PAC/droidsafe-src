@@ -111,6 +111,7 @@ UsbEndpoint varA407008022ECD3C933AE6F87B83AAD4B_848814924 =         (UsbEndpoint
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.996 -0400", hash_original_method = "7DE8C5BE07836E58A7BC66D5916A69AB", hash_generated_method = "A833F26BF654BBE7D6EEB5FB0B36D932")
     @Override
     public String toString() {
@@ -159,6 +160,7 @@ String var03783B3D2CD3446423B1AFCBB32FF247_2127091 =         "UsbInterface[mId="
 
     public static final Parcelable.Creator<UsbInterface> CREATOR =
         new Parcelable.Creator<UsbInterface>() {
+        @DSModeled(DSC.SAFE)
         public UsbInterface createFromParcel(Parcel in) {
             int id = in.readInt();
             int Class = in.readInt();

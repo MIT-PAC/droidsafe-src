@@ -335,6 +335,7 @@ switch(ch){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.038 -0400", hash_original_method = "12C3774F0261E7D12FCB54FD470B78E6", hash_generated_method = "3A33810BEAB61951B96FDC2415158850")
     protected char getUTF8() throws IOException {
         int res = getByte(pos);
@@ -461,6 +462,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.043 -0400", hash_original_method = "17512CE00D4450F012CF195B2D29239B", hash_generated_method = "E7DB18E9F900A7C41044857FDB4DBCE0")
     public List<List<AttributeTypeAndValue>> parse() throws IOException {
         List<List<AttributeTypeAndValue>> list = new ArrayList<List<AttributeTypeAndValue>>();

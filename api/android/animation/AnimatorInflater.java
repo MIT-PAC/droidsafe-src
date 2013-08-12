@@ -55,13 +55,13 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimatorFromXml(c, parser, Xml.asAttributeSet(parser), null, 0);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
             AttributeSet attrs, AnimatorSet parent, int sequenceOrdering) throws XmlPullParserException, IOException {
         Animator anim = null;
@@ -112,7 +112,7 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
         ObjectAnimator anim = new ObjectAnimator();
         loadAnimator(context, attrs, anim);
@@ -125,7 +125,7 @@ public class AnimatorInflater {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
         TypedArray a =
                 context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.Animator);

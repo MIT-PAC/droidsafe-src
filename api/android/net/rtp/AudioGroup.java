@@ -21,6 +21,7 @@ public class AudioGroup {
 
     private int mNative;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.010 -0400", hash_original_method = "9E113DACC3DCFC949CC90EBD557A2ACA", hash_generated_method = "0A80C29DBACA16C4F76FC1A830D63EA7")
     public  AudioGroup() {
         mStreams = new HashMap<AudioStream, Integer>();
@@ -29,6 +30,7 @@ public class AudioGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.010 -0400", hash_original_method = "868089D57ED1EE56E9ACF33DE8DED38E", hash_generated_method = "1DD1BE9D5F04F995D733544AAD30627A")
     public AudioStream[] getStreams() {
         synchronized
@@ -55,6 +57,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_1090140134 =             mStre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.011 -0400", hash_original_method = "3B407E7A126047BBCD9831E47F9B5D99", hash_generated_method = "EAB4964892321F17EB56D95FB63EC2F1")
     public void setMode(int mode) {
         if(mode < 0 || mode > MODE_LAST)        
@@ -85,6 +88,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_1090140134 =             mStre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.012 -0400", hash_original_method = "91004DD6DF12C73407D3712D3F37E9FF", hash_generated_method = "231A446CD3FAD0C8615758E6DC222EC4")
     synchronized void add(AudioStream stream, AudioCodec codec, int dtmfType) {
         addTaint(dtmfType);
@@ -184,6 +188,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_1090140134 =             mStre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.015 -0400", hash_original_method = "C7FD23B4AAD822C8D51633C16B0BB499", hash_generated_method = "EF5D67FF6D2260FAD583D2C50AC857D3")
     public void clear() {
         synchronized
@@ -199,6 +204,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_1090140134 =             mStre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.015 -0400", hash_original_method = "33021D83EBB0A5B0B0CD9D3745D70974", hash_generated_method = "714CF28135346593C7022C3C55084927")
     @Override
     protected void finalize() throws Throwable {

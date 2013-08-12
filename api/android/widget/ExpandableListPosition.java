@@ -23,7 +23,7 @@ class ExpandableListPosition {
 
     public int type;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "CA9DC1117656D5954D084C62466145DC")
     private  ExpandableListPosition() {
         // ---------- Original Method ----------
@@ -107,7 +107,7 @@ class ExpandableListPosition {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static ExpandableListPosition getRecycledOrCreate() {
         ExpandableListPosition elp;
         synchronized (sPool) {

@@ -471,6 +471,7 @@ String var672CCB2CF5D1564832066A1D15319102_862386682 =         sentProtocol.getT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.717 -0400", hash_original_method = "DA10FBD3B27193627F0BF00A97E141AB", hash_generated_method = "26B85B92E9C7E109A87DB307E824C20F")
     public void setTransport(String transport) throws ParseException {
         addTaint(transport.getTaint());

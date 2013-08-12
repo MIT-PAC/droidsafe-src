@@ -26,6 +26,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void close(FileDescriptor fd) throws IOException {
         try {
             if (fd != null && fd.valid()) {
@@ -37,6 +38,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(AutoCloseable closeable) {
         if (closeable != null) {
             try {
@@ -49,6 +51,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeQuietly(FileDescriptor fd) {
         try {
             IoUtils.close(fd);
@@ -68,6 +71,7 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setBlocking(FileDescriptor fd, boolean blocking) throws IOException {
         try {
             int flags = Libcore.os.fcntlVoid(fd, F_GETFL);
@@ -83,12 +87,13 @@ public final class IoUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] readFileAsByteArray(String path) throws IOException {
         return readFileAsBytes(path).toByteArray();
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String readFileAsString(String path) throws IOException {
         return readFileAsBytes(path).toString(Charsets.UTF_8);
     }
@@ -114,7 +119,7 @@ public final class IoUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void deleteContents(File dir) throws IOException {
         File[] files = dir.listFiles();
         if (files == null) {

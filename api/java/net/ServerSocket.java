@@ -42,6 +42,7 @@ public class ServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.399 -0400", hash_original_method = "B81C30D251B31CAFF71CF07C7882EF32", hash_generated_method = "5E60D2AA7E8E24F5C7A4E8B8BC5853C8")
     public  ServerSocket(int port, int backlog) throws IOException {
         this(port, backlog, Inet4Address.ANY);
@@ -51,7 +52,7 @@ public class ServerSocket {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.400 -0400", hash_original_method = "6BB36DC8E15E305D7407A47C7739996C", hash_generated_method = "8B35ED605D06BC9EBDBD3C7169A90016")
     public  ServerSocket(int port, int backlog, InetAddress localAddress) throws IOException {
         addTaint(localAddress.getTaint());
@@ -175,6 +176,7 @@ Socket varDBA8EAD1551D6943828EF63869B4FDF3_605925506 =         aSocket;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.402 -0400", hash_original_method = "0AAA019638F2B2CC41FFEEEB4E260F6C", hash_generated_method = "D2A1CBFF888748412C426E678E23160B")
     public InetAddress getInetAddress() {
         if(!isBound())        
@@ -214,6 +216,7 @@ InetAddress var521AFCEA60D8F5BBF63C4443E3C3E08B_405509798 =         impl.getInet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.403 -0400", hash_original_method = "37BE74568AC5DDD629C634B42E81BFFA", hash_generated_method = "DF865B340AFBB937748CD96D4C240B3A")
     public synchronized int getSoTimeout() throws IOException {
         checkOpen();
@@ -243,6 +246,7 @@ InetAddress var521AFCEA60D8F5BBF63C4443E3C3E08B_405509798 =         impl.getInet
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized void setSocketFactory(SocketImplFactory aFactory) throws IOException {
         if (factory != null) {
             throw new SocketException("Factory already set");
@@ -251,7 +255,7 @@ InetAddress var521AFCEA60D8F5BBF63C4443E3C3E08B_405509798 =         impl.getInet
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.403 -0400", hash_original_method = "E2A5F03981AB4BF932E59A553E83FA6F", hash_generated_method = "900719D57DB285EA0B463FBF3D9662CB")
     public synchronized void setSoTimeout(int timeout) throws SocketException {
         addTaint(timeout);
@@ -272,6 +276,7 @@ InetAddress var521AFCEA60D8F5BBF63C4443E3C3E08B_405509798 =         impl.getInet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.404 -0400", hash_original_method = "577ACC2D572353EA5861EB3648159EF5", hash_generated_method = "8822CB0EC787CE2BF6AC5FF138C64779")
     @Override
     public String toString() {
@@ -423,6 +428,7 @@ SocketAddress var71FAAB01987C8CA7A40E22DA9ADD06A6_549007986 =         new InetSo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.409 -0400", hash_original_method = "D6CD69E67882E49578E557811A0FC457", hash_generated_method = "EB45E1C9E38CA5AD9C7AF6489F52E899")
     public void setReuseAddress(boolean reuse) throws SocketException {
         addTaint(reuse);
@@ -434,6 +440,7 @@ SocketAddress var71FAAB01987C8CA7A40E22DA9ADD06A6_549007986 =         new InetSo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.409 -0400", hash_original_method = "8920D58954E3583481E89192EF874E86", hash_generated_method = "D29473AEDC7AEF66DA528D1479A16A31")
     public boolean getReuseAddress() throws SocketException {
         checkOpen();
@@ -466,6 +473,7 @@ SocketAddress var71FAAB01987C8CA7A40E22DA9ADD06A6_549007986 =         new InetSo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.410 -0400", hash_original_method = "1025A74ACDCA065D38BE1D18813D43DB", hash_generated_method = "40DA1253402F74303E83982116DD1B9D")
     public int getReceiveBufferSize() throws SocketException {
         checkOpen();

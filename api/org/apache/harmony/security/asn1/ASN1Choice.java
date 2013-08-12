@@ -22,6 +22,7 @@ public abstract class ASN1Choice extends ASN1Type {
 
     private int[][] identifiers;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.228 -0400", hash_original_method = "C70F669111768591EE425211051DE956", hash_generated_method = "64F030A798E2AB6A28E5234370A1E380")
     public  ASN1Choice(ASN1Type[] type) {
         super(TAG_CHOICE);
@@ -97,6 +98,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.230 -0400", hash_original_method = "0D992D1A6B83EB18D65339F632B428D0", hash_generated_method = "2763F67E71DE2B822F3652FC40338C0E")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);
@@ -108,6 +110,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.231 -0400", hash_original_method = "CA43C2DB32698BB605AF1C7E4ECA1770", hash_generated_method = "B3E1EC6298F78EB29014E5863CAA3FE5")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -145,6 +148,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1342670806 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.231 -0400", hash_original_method = "C4E40B33E0FA7E203CD41695E7BB47C7", hash_generated_method = "F1BD1732956943D5CBB4D73510B3D15D")
     public void encodeASN(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -154,6 +158,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1342670806 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.231 -0400", hash_original_method = "2AF14DF9816B381764BA8B204B1F7CEE", hash_generated_method = "6D3608C9807EBDFA390F9212E511F218")
     public final void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -171,6 +176,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1342670806 =         getDecodedObject
     public abstract Object getObjectToEncode(Object object);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.232 -0400", hash_original_method = "C699EF204D8C8BCCF80A813C218D94FB", hash_generated_method = "D12448A90C879F9ACB156082386AB5C8")
     public final void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());

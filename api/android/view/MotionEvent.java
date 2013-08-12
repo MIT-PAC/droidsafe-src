@@ -2516,6 +2516,7 @@ switch(axis){
 
     public static final Parcelable.Creator<MotionEvent> CREATOR
             = new Parcelable.Creator<MotionEvent>() {
+        @DSModeled(DSC.SAFE)
         public MotionEvent createFromParcel(Parcel in) {
             in.readInt(); 
             return MotionEvent.createFromParcelBody(in);

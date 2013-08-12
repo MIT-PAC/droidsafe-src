@@ -52,7 +52,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.906 -0400", hash_original_method = "EEC72C77A82E33054EA06A487B276F43", hash_generated_method = "F356CD49C2354B3C5C0127729DF491E0")
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
@@ -109,7 +109,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.908 -0400", hash_original_method = "D632FC0DC2F573BE68AD858FDE491D0B", hash_generated_method = "8BCD3FE8C4C8B1C04CD5BA483D6D214C")
     @Override
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {

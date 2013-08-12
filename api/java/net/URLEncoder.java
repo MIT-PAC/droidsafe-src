@@ -19,12 +19,14 @@ public class URLEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static String encode(String s) {
         return ENCODER.encode(s, Charsets.UTF_8);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
         return ENCODER.encode(s, Charset.forName(charsetName));
     }
@@ -33,6 +35,7 @@ public class URLEncoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.616 -0400", hash_original_field = "BF744055ED759113AEBE28A0C00A3E54", hash_generated_field = "04F0CC19FD1C184FAF8112872B3FF045")
 
     static UriCodec ENCODER = new UriCodec() {        
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.616 -0400", hash_original_method = "70778A5E4342F08CE32F374D86265937", hash_generated_method = "811C6B809939AF0583CA172372A0CFB9")
         @Override
         protected boolean isRetained(char c) {

@@ -158,6 +158,7 @@ StringWriter var72A74007B2BE62B849F475C7BDA4658B_956205892 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.776 -0400", hash_original_method = "4F8B551F847F79C820191D7A1919C8D2", hash_generated_method = "03A0420806DCAF4B19C45E7E116BCAF6")
     @Override
     public StringWriter append(CharSequence csq) {

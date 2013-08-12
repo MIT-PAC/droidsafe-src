@@ -64,10 +64,12 @@ List<GeneralSubtree> var3E5BAD48CE158B3B7A2AD7B7425D5701_873292195 =         gen
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.385 -0400", hash_original_field = "0799060D53393B92181BE0F337148C10", hash_generated_field = "E8931CE4F0A844140DFFB6382D546C0B")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(GeneralSubtree.ASN1) {
+        @DSModeled(DSC.SPEC)
         @Override public Object getDecodedObject(BerInputStream in) {
             return new GeneralSubtrees((List<GeneralSubtree>) in.content);
         }
 
+        @DSModeled(DSC.SAFE)
         @Override public Collection getValues(Object object) {
             GeneralSubtrees gss = (GeneralSubtrees) object;
             return (gss.generalSubtrees == null)

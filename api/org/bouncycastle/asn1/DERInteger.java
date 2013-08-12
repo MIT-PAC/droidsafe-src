@@ -17,6 +17,7 @@ public class DERInteger extends ASN1Object {
 
     byte[] bytes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.366 -0400", hash_original_method = "5201B112432D21625783310AA9CEC395", hash_generated_method = "42720B8B1671B205A71B78FEF08907A6")
     public  DERInteger(
         int         value) {
@@ -26,6 +27,7 @@ public class DERInteger extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.366 -0400", hash_original_method = "52A85FB71F259AF94A4C569903FA35A3", hash_generated_method = "E20D10919EB5723E10B3A8A6847E53D2")
     public  DERInteger(
         BigInteger   value) {
@@ -35,6 +37,7 @@ public class DERInteger extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.367 -0400", hash_original_method = "742445D1CBEB8EC33F0452B05DE17699", hash_generated_method = "3B54D0B289C9422429FE1852B21923A5")
     public  DERInteger(
         byte[]   bytes) {
@@ -44,7 +47,7 @@ public class DERInteger extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static DERInteger getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERInteger)
@@ -55,6 +58,7 @@ public class DERInteger extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERInteger getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -70,6 +74,7 @@ public class DERInteger extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.367 -0400", hash_original_method = "9CD9452AB0CD35F4B73E8FBD8DC6F0C8", hash_generated_method = "A0DC8DF6C45ABB47EDF2D59BBD9EC28F")
     public BigInteger getValue() {
 BigInteger varE4C146659CDD6B837AD2066CCD33EC90_665067192 =         new BigInteger(bytes);
@@ -80,6 +85,7 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_665067192 =         new BigIntege
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.368 -0400", hash_original_method = "71BDB36FFF593CAF4C9E79EFECF43EBD", hash_generated_method = "D5E6D2B22C023C77086D373F573F0175")
     public BigInteger getPositiveValue() {
 BigInteger var7698F9817E45674D2D13D01E9A3007E4_1654450930 =         new BigInteger(1, bytes);
@@ -90,6 +96,7 @@ BigInteger var7698F9817E45674D2D13D01E9A3007E4_1654450930 =         new BigInteg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.368 -0400", hash_original_method = "01662A631E5ACE6C7726FCC0828E9E63", hash_generated_method = "2A6EA4ADDC9E9D048BA1CE0AD22E8810")
      void encode(
         DEROutputStream out) throws IOException {
@@ -121,6 +128,7 @@ for(int i = 0;i != bytes.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.369 -0400", hash_original_method = "A031FF36E08BD1C92CE6416060813BEC", hash_generated_method = "BE45389536FFA3222350511B6B670046")
      boolean asn1Equals(
         DERObject  o) {
@@ -145,6 +153,7 @@ for(int i = 0;i != bytes.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.369 -0400", hash_original_method = "EFB82D2D11830675F5DB319D1D1561C4", hash_generated_method = "0F8EAA248A9ABA6635545B7C2BB22B82")
     public String toString() {
 String var1D0CCDA7D64D5831623D6828115D6FF2_558379800 =         getValue().toString();

@@ -15,6 +15,7 @@ public abstract class RestoreObserver {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.534 -0400", hash_original_method = "668807DC740187B04A6B6A3F86625C1D", hash_generated_method = "56B48799E86DF69774EB7E39DF803D80")
     public void restoreSetsAvailable(RestoreSet[] result) {
         addTaint(result[0].getTaint());

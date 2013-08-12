@@ -414,6 +414,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1222167777 =         mTarget;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.390 -0400", hash_original_method = "C3CBF66373C770C27B2BC8A07C4853B3", hash_generated_method = "FB687C3A6881AD9D7AC449BFED9CD2FF")
         public  CanceledException(String name) {
             super(name);
@@ -422,6 +423,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1222167777 =         mTarget;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.390 -0400", hash_original_method = "3AC8DEA112912D7509E7C6631865B3D3", hash_generated_method = "548138D68ED71FAD6BC31F6988F7ECCB")
         public  CanceledException(Exception cause) {
             super(cause);

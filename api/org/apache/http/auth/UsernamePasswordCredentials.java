@@ -16,6 +16,7 @@ public class UsernamePasswordCredentials implements Credentials {
 
     private String password;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.146 -0400", hash_original_method = "3728C308DDC1875044F9155978A28028", hash_generated_method = "B63FFC1ADCF4051569133B97568DBAF2")
     public  UsernamePasswordCredentials(String usernamePassword) {
         super();
@@ -51,6 +52,7 @@ public class UsernamePasswordCredentials implements Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.161 -0400", hash_original_method = "214A596E68D335B6B76C9680AF9532F2", hash_generated_method = "57D70B64FF925EB3247E3163865338D8")
     public  UsernamePasswordCredentials(String userName, String password) {
         super();
@@ -82,6 +84,7 @@ Principal varA4EE1AD4A5765C52734A508323BADA56_888939726 =         this.principal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.178 -0400", hash_original_method = "6347097AADB7B31CC60D07DB2FA74ADC", hash_generated_method = "D22C3DB73EF915FE100B508890E17724")
     public String getUserName() {
 String var645820FD954E697A3E19AB60B789C574_653362428 =         this.principal.getName();
@@ -103,6 +106,7 @@ String var8371B008E722D01F0CA3A116DA23853F_1175400134 =         password;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.190 -0400", hash_original_method = "5706D3CF5C9B96E72AB79DF75196B0CC", hash_generated_method = "814A4AF1BFB30DAEA083B4B2FC891C53")
     @Override
     public int hashCode() {
@@ -114,6 +118,7 @@ String var8371B008E722D01F0CA3A116DA23853F_1175400134 =         password;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.200 -0400", hash_original_method = "A404630EB6A67A8A7586EF96E1D8B3C7", hash_generated_method = "5AD64D3980D314B7F7771C23695FC421")
     @Override
     public boolean equals(Object o) {
@@ -156,6 +161,7 @@ String var8371B008E722D01F0CA3A116DA23853F_1175400134 =         password;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.211 -0400", hash_original_method = "55E8D51693AC55264ABFBD18A6F31F91", hash_generated_method = "F6381E5EC5795893BAFA5F57C6BEF60E")
     @Override
     public String toString() {

@@ -27,6 +27,7 @@ public class SSLParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.740 -0400", hash_original_method = "A6B6F0535750EB460CCEE975AE95DC3A", hash_generated_method = "AA57B220E35B5A8F336C31FBD94F869B")
     public  SSLParameters(String[] cipherSuites) {
         addTaint(cipherSuites[0].getTaint());
@@ -36,6 +37,7 @@ public class SSLParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.740 -0400", hash_original_method = "C1FFBB4FE86E468D8BAF1D7971E89CFD", hash_generated_method = "65FDBF87BECA71AB659229328EC278E0")
     public  SSLParameters(String[] cipherSuites,
                          String[] protocols) {
@@ -49,6 +51,7 @@ public class SSLParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.740 -0400", hash_original_method = "4A4F1106EE48461B88F50C671836AAA1", hash_generated_method = "90F1B67A990AAC47BBD782D3BEB51270")
     public String[] getCipherSuites() {
         if(cipherSuites == null)        
@@ -81,6 +84,7 @@ String[] var7F6A794107009E794CDF4DF232EEFD7F_825872535 =         cipherSuites.cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.742 -0400", hash_original_method = "4DAE6AE8C86EF57BE9BF60BD0F445F08", hash_generated_method = "7C32F538937F55EE5D6F5F9B290A6F57")
     public String[] getProtocols() {
         if(protocols == null)        
@@ -100,6 +104,7 @@ String[] var30954653E130D93F309E891186F9A8E2_294553224 =         protocols.clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.742 -0400", hash_original_method = "EF8F568BAE6FA22D6783DD8D622D3566", hash_generated_method = "9E02EDF06381A48F6DDCDB7FDE37BC1B")
     public void setProtocols(String[] protocols) {
         this.protocols = ((protocols == null)

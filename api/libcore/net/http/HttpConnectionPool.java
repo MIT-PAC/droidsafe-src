@@ -94,6 +94,7 @@ HttpConnection varA3969E918D3E68DBEDAE3D4F56B1CEE1_1967748393 =         address.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.103 -0400", hash_original_method = "96125B0E756F418D511DE46CCDC8F5C6", hash_generated_method = "D5408E1B37C340A2F33FB1721C216F88")
     public void recycle(HttpConnection connection) {
         addTaint(connection.getTaint());

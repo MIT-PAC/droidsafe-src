@@ -18,6 +18,7 @@ public class AlertProtocol {
 
     private Logger.Stream logger = Logger.getStream("alert");
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.912 -0400", hash_original_method = "E092E2209250C02F09C22B7C95E9AB91", hash_generated_method = "89DDAFEDBDC6600ADF822412966FC90D")
     protected  AlertProtocol() {
         // ---------- Original Method ----------
@@ -33,6 +34,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.913 -0400", hash_original_method = "F413EBA539C7D7D57656EE1032BAAF7C", hash_generated_method = "BEC679A15E3E9A3F261846F2A84D713B")
     protected void alert(byte level, byte description) {
         if(logger != null)        
@@ -61,6 +63,7 @@ public class AlertProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.914 -0400", hash_original_method = "87AB9C19E1A7EED4E3BFCF946809E0DA", hash_generated_method = "BCD73438B012A1E39572CDD89594E061")
     protected void setProcessed() {
         if(logger != null)        
@@ -202,6 +205,7 @@ String varEE238629FB375A59BD9F5B21CE2E346D_1390088738 =         "no_renegotiatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.917 -0400", hash_original_method = "124BFC00035B67AF657D6336BEA07CC5", hash_generated_method = "52C6E1F36E7078ADEAB5F53EDA07B4BB")
     protected byte[] wrap() {
         byte[] res = recordProtocol.wrap(ContentType.ALERT, alert, 0, 2);

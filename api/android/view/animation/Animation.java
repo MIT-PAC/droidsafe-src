@@ -197,7 +197,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.735 -0400", hash_original_method = "BA118FB94C8A2A7F04D6CE25751A9CE0", hash_generated_method = "EABFF5C032B25525517DC724151C7582")
     public void detach() {
         if(mStarted && !mEnded)        
@@ -851,7 +851,7 @@ switch(type){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CF5E77120A30A36E6B295FA946811571", hash_generated_method = "7298B4134AF9D7C22EC5B952093B299A")
     public void getInvalidateRegion(int left, int top, int right, int bottom,
             RectF invalidate, Transformation transformation) {
@@ -891,7 +891,7 @@ switch(type){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CE5BD1162FB4278724A9276A03F0A96A", hash_generated_method = "ED2C6D2087CE238AB85C759D8587D6EB")
     public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
         addTaint(bottom);

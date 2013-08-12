@@ -42,6 +42,7 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.643 -0400", hash_original_method = "311ACBA3C6B98FE9C535127054B24088", hash_generated_method = "8DF51BCA2A7D9C779715959BE9BBC17A")
     public boolean isDataAvailable(int timeout) throws IOException {
         addTaint(timeout);

@@ -37,6 +37,7 @@ public abstract class MessageDigestSpi {
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.098 -0400", hash_original_method = "63E93F26D259525D134C674633CD9D02", hash_generated_method = "99A5066D1A75A8074D20D672E6DF8797")
     protected void engineUpdate(ByteBuffer input) {
         addTaint(input.getTaint());
@@ -84,6 +85,7 @@ public abstract class MessageDigestSpi {
     protected abstract byte[] engineDigest();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.099 -0400", hash_original_method = "D264912F1C73FF5788F885ED0FD28756", hash_generated_method = "5C5FEB1745139CDCBC54557753C24714")
     protected int engineDigest(byte[] buf, int offset, int len) throws DigestException {
         addTaint(len);

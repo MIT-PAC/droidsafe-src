@@ -232,6 +232,7 @@ for(Iterator it = this.responseInterceptors.iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.275 -0400", hash_original_method = "977729FD94F3060F22AEFDD0D34CFD7C", hash_generated_method = "0A8AB54413CBFE298FA0C5087D79A161")
     public HttpRequestInterceptor getRequestInterceptor(int index) {
         addTaint(index);
@@ -305,6 +306,7 @@ HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_41853991 =         (H
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.277 -0400", hash_original_method = "076BC0B3D789CD5AF4622C7C18D19D27", hash_generated_method = "CB8F453D5AABC7B62AD23B63C75E91A0")
     public int getResponseInterceptorCount() {
         int varF627BE53DD27C71760DBA4AFD2455F39_1421890409 = ((this.responseInterceptors == null) ?
@@ -317,6 +319,7 @@ HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_41853991 =         (H
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.278 -0400", hash_original_method = "745ED53DD037C2DD0D029886B0DA9F3E", hash_generated_method = "B2A047C13FF2D708E06FCEFC1FCCB167")
     public HttpResponseInterceptor getResponseInterceptor(int index) {
         addTaint(index);

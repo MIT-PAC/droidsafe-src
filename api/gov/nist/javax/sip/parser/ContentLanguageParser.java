@@ -33,6 +33,7 @@ public class ContentLanguageParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.278 -0400", hash_original_method = "B9174D052A2AFCDDC5C88393A2D6AF07", hash_generated_method = "141E1B346828A07C1CB970D75D465F75")
     public SIPHeader parse() throws ParseException {
         if(debug)        

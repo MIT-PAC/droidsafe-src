@@ -110,6 +110,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.844 -0400", hash_original_method = "76AC245ADF42DED69B554EDA9FD556DE", hash_generated_method = "CF084E54BF4D36C7C9B58D6AC3AB4D4C")
     public  HttpRoute(HttpHost target, InetAddress local, boolean secure) {
         this(local, target, null, secure, TunnelType.PLAIN, LayerType.PLAIN);
@@ -120,6 +121,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.844 -0400", hash_original_method = "30B1C0BF43231AE18DB893662C2E010C", hash_generated_method = "5C0081891C0BEB28A75B40D4B82FF215")
     public  HttpRoute(HttpHost target) {
         this(null, target, null, false, TunnelType.PLAIN, LayerType.PLAIN);
@@ -321,6 +323,7 @@ LayerType var0B365440B9E6602F90569354BDD2D5AF_1115478046 =         this.layered;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.849 -0400", hash_original_method = "3549831666270A81F0B6433F4C19950E", hash_generated_method = "36E2C85CFB2CE6AEEAE0A8E750CB7484")
     @Override
     public final boolean equals(Object o) {

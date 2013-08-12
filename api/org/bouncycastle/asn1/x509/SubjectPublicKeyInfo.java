@@ -115,6 +115,7 @@ AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1477397614 =         alg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.837 -0400", hash_original_method = "090BC4B735B0EF996158F2D4FCADB97F", hash_generated_method = "EB69673EDCDEF0E6E95A7F98F487C054")
     public DERObject getPublicKey() throws IOException {
         ASN1InputStream aIn = new ASN1InputStream(keyData.getBytes());
@@ -138,6 +139,7 @@ DERBitString varE693AFBBC8CDD78D253BF1E5459B5722_1340930718 =         keyData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.837 -0400", hash_original_method = "8E6747A0EE688E54DEDDDF71F404B9F7", hash_generated_method = "2F4CCC875B3C111BCEAF48ECF9FF0C1C")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

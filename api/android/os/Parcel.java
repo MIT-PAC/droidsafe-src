@@ -21,7 +21,7 @@ public final class Parcel {
     private int mOwnObject;
     private RuntimeException mStack;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private Parcel(int obj){
 		init(obj);
 		/*
@@ -194,6 +194,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeByteArray(byte[] b){
 		mValueByteArray = b;
 		// Original method
@@ -206,6 +207,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeByteArray(byte[] b, int offset, int len){
 		mValueByteArray = b;
 		// Original method
@@ -312,6 +314,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeByte(byte val){
 		addTaint(val);
 		// Original method
@@ -357,6 +360,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeBundle(Bundle val){
 		mValueBundle = val;
 		// Original method
@@ -373,6 +377,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeList(List val){
 		mValueList = val;
 		// Original method
@@ -417,6 +422,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeSparseArray(SparseArray<Object> val){
 		mValueSparseArray = val;
 		// Original method
@@ -463,6 +469,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeBooleanArray(boolean[] val){
 		mValueBooleanArray = val;
 		// Original method
@@ -483,6 +490,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean[] createBooleanArray(){
 		return mValueBooleanArray;
 		// Original method
@@ -522,6 +530,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeCharArray(char[] val){
 		mValueCharArray = val;
 		// Original method
@@ -542,6 +551,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final char[] createCharArray(){
 		return mValueCharArray;
 		// Original method
@@ -562,6 +572,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void readCharArray(char[] val){
 		val[0] = mValueCharArray[0];
 		// Original method
@@ -581,6 +592,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeIntArray(int[] val){
 		mValueIntArray = val;
 		// Original method
@@ -601,6 +613,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int[] createIntArray(){
 		return mValueIntArray;
 		// Original method
@@ -621,6 +634,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void readIntArray(int[] val){
 		val[0] = mValueIntArray[0];
 		// Original method
@@ -640,6 +654,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeLongArray(long[] val){
 		mValueLongArray = val;
 		// Original method
@@ -660,6 +675,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final long[] createLongArray(){
 		return mValueLongArray;
 		// Original method
@@ -680,6 +696,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void readLongArray(long[] val){
 		val[0] = mValueLongArray[0];
 		// Original method
@@ -699,6 +716,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeFloatArray(float[] val){
 		mValueFloatArray = val;
 		// Original method
@@ -719,6 +737,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final float[] createFloatArray(){
 		return mValueFloatArray;
 		// Original method
@@ -758,6 +777,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeDoubleArray(double[] val){
 		mValueDoubleArray = val;
 		// Original method
@@ -778,6 +798,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final double[] createDoubleArray(){
 		return mValueDoubleArray;
 		// Original method
@@ -798,6 +819,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void readDoubleArray(double[] val){
 		val[0] = mValueDoubleArray[0];
 		// Original method
@@ -838,6 +860,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final String[] createStringArray(){
 		return mValueStringArray;
 		// Original method
@@ -877,6 +900,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeBinderArray(IBinder[] val){
 		mValueIBinderArray = val;
 		// Original method
@@ -918,6 +942,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final IBinder[] createBinderArray(){
 		return mValueIBinderArray;
 		// Original method
@@ -1064,6 +1089,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeParcelable(Parcelable p, int parcelableFlags){
 		mValueParcelable = p;
 		// Original method
@@ -1082,6 +1108,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeSerializable(Serializable s){
 		mValueSerializable = s;
 		// Original method
@@ -1330,6 +1357,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final byte readByte(){
 		return (byte)getTaintInt();
 		// Original method
@@ -1390,6 +1418,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final Bundle readBundle(){
 		return mValueBundle;
 		// Original method
@@ -1428,6 +1457,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void readByteArray(byte[] val){
 		val[0] = mValueByteArray[0];
 		// Original method
@@ -1445,7 +1475,7 @@ public final class Parcel {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public final String[] readStringArray(){
 		return mValueStringArray;
 		// Original method
@@ -1560,6 +1590,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final <T> ArrayList<T> createTypedArrayList(Parcelable.Creator<T> c) {
 		return (ArrayList<T>)mValueList;
 		// Original method
@@ -1615,6 +1646,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final ArrayList<String> createStringArrayList(){
 		return (ArrayList)mValueStringList;
 		// Original method
@@ -1635,6 +1667,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final ArrayList<IBinder> createBinderArrayList(){
 		return (ArrayList<IBinder>)this.mValueIBinderList;
 		// Original method
@@ -1701,6 +1734,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final <T> T[] createTypedArray(Parcelable.Creator<T> c) {
 		return (T[]) this.mValueTypedArray;
 		// Original method
@@ -1785,6 +1819,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
 		return (T) mValueParcelable;
 		// Original method
@@ -1812,6 +1847,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final Serializable readSerializable(){
 		return mValueSerializable;
 		// Original method
@@ -2009,6 +2045,7 @@ public final class Parcel {
     private static final int EX_HAS_REPLY_HEADER = -128;
     public final static Parcelable.Creator<String> STRING_CREATOR
              = new Parcelable.Creator<String>() {
+        @DSModeled(DSC.SAFE)
         public String createFromParcel(Parcel source) {
             return source.readString();
         }

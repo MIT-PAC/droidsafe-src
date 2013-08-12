@@ -17,6 +17,7 @@ class HistoricalCharsetNames {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String get(Charset charset) {
         String modernName = charset.name();
         String result = historicalNames.get(modernName);

@@ -247,6 +247,7 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_750013007 =         requestPo
         ;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.296 -0400", hash_original_method = "74B1E1F35A0ABEB335D073A37540DF82", hash_generated_method = "3EDF97E11A391666E0A5AADF14A31952")
     public void shutdown() {
         poolLock.lock();

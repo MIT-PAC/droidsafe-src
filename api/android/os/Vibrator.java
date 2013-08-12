@@ -76,7 +76,7 @@ public class Vibrator {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.820 -0400", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "8D41DB29BDA8014ECBFFAFF7A98E566E")
     public void cancel() {
         if(mService == null)        

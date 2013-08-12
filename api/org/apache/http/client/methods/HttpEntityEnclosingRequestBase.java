@@ -38,6 +38,7 @@ public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public boolean expectContinue() {
 		// TODO Auto-generated method stub
@@ -45,6 +46,7 @@ public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase imp
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.168 -0400", hash_original_method = "E7A680A098600990FE1B80B7489E8A9A", hash_generated_method = "D815820FCC8EF4C0A6C9694194C550BC")
     @Override
     public Object clone() throws CloneNotSupportedException {

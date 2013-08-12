@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class SecurityVerifyList extends SIPHeaderList<SecurityVerify> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.494 -0400", hash_original_method = "BB5D31C764D6B5DBD9562757DE1BE4AB", hash_generated_method = "F095E831F1F6EEA6D531EE4D2FD13812")
     public  SecurityVerifyList() {
         super(SecurityVerify.class, SecurityVerifyHeader.NAME);
@@ -15,6 +16,7 @@ public class SecurityVerifyList extends SIPHeaderList<SecurityVerify> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.494 -0400", hash_original_method = "5D85FA960C60C09D5CA838E3BC582AEC", hash_generated_method = "1E5318F603717452558C5E67535EF0F1")
     public Object clone() {
         SecurityVerifyList retval = new SecurityVerifyList();

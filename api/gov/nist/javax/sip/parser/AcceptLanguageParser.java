@@ -36,6 +36,7 @@ public class AcceptLanguageParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.729 -0400", hash_original_method = "FB0497E5D9550DB51E743204446EFE6C", hash_generated_method = "D549E2CCC8187671F9B3ECE06D083883")
     public SIPHeader parse() throws ParseException {
         AcceptLanguageList acceptLanguageList = new AcceptLanguageList();

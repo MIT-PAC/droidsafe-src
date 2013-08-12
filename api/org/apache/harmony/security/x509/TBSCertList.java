@@ -461,6 +461,7 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1392520941 =             issue
                 setOptional(2);
             }
 
+            @DSModeled(DSC.BAN)
             @Override protected Object getDecodedObject(BerInputStream in) {
                 Object[] values = (Object[]) in.content;
                 return new RevokedCertificate(
@@ -470,6 +471,7 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1392520941 =             issue
                         );
             }
 
+            @DSModeled(DSC.BAN)
             @Override protected void getValues(Object object, Object[] values) {
                 RevokedCertificate rcert = (RevokedCertificate) object;
                 values[0] = rcert.userCertificate.toByteArray();

@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public abstract class ASN1Null extends ASN1Object {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.689 -0400", hash_original_method = "D0FE59B1A9D3F66BFB745D7E961EAD28", hash_generated_method = "14E33D4578D52777E859D4C899DF0B5C")
       ASN1Null() {
         // ---------- Original Method ----------

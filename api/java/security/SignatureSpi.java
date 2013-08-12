@@ -32,6 +32,7 @@ public abstract class SignatureSpi {
             throws InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.542 -0400", hash_original_method = "B296906AC674D1ED6BCB89B75E33BE26", hash_generated_method = "4A98244F9B1ADE8FF226127164FF7ED3")
     protected void engineInitSign(PrivateKey privateKey, SecureRandom random) throws InvalidKeyException {
         addTaint(privateKey.getTaint());
@@ -184,6 +185,7 @@ public abstract class SignatureSpi {
             throws SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.546 -0400", hash_original_method = "1A108B8DE7E13E12F61358DC32E2687B", hash_generated_method = "BA1EF11CD86077982A3932BA74179C9F")
     protected boolean engineVerify(byte[] sigBytes, int offset, int length) throws SignatureException {
         addTaint(length);
@@ -207,6 +209,7 @@ protected abstract void engineSetParameter(String param, Object value)
             throws InvalidParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.547 -0400", hash_original_method = "09773BC31BC521068D3A412C371D22F3", hash_generated_method = "3AF1361E0FC0104B04D9FDC515BC1E94")
     protected void engineSetParameter(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
@@ -218,6 +221,7 @@ protected abstract void engineSetParameter(String param, Object value)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.547 -0400", hash_original_method = "8524B01EC33E60B2ED7B8CC70F0D409D", hash_generated_method = "B42CCBA227F77C1B64215A88923591D3")
     protected AlgorithmParameters engineGetParameters() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1736660356 = new UnsupportedOperationException();

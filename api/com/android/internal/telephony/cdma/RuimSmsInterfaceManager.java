@@ -74,6 +74,7 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.376 -0400", hash_original_method = "BD8DF48547112A1ED89E06EF8DBAC147", hash_generated_method = "AEC21BB3A2F8351A81A22755BF88A93F")
     public  RuimSmsInterfaceManager(CDMAPhone phone, SMSDispatcher dispatcher) {
         super(phone);
@@ -92,6 +93,7 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.377 -0400", hash_original_method = "4FA1DF67E8E2FEA7279C76FF6F2C28E0", hash_generated_method = "C0C43D8ACAFF0B71521D10DF8760751F")
     protected void finalize() {
         try 
@@ -200,6 +202,7 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.379 -0400", hash_original_method = "2942961FDF8C69DB3912CFC67A52E698", hash_generated_method = "C86287EB22C6B4EACF8EBF326DE4AC21")
     public List<SmsRawData> getAllMessagesFromIccEf() {
         if(DBG)        
@@ -255,6 +258,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1158482755 =         mSms;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.379 -0400", hash_original_method = "4359F4C67258CB29FAAD950989F56651", hash_generated_method = "B7580A9DD7D4BA2C3A7870F122A51233")
     public boolean disableCellBroadcast(int messageIdentifier) {
         addTaint(messageIdentifier);
@@ -293,6 +297,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1158482755 =         mSms;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.380 -0400", hash_original_method = "A1B1A2F1E999A2614769F6F66BA1F268", hash_generated_method = "117A5F719F847BD2E92DAA06231A89A1")
     protected void log(String msg) {
         addTaint(msg.getTaint());

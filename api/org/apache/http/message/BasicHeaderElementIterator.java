@@ -161,6 +161,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public HeaderElement nextElement() {
 		// TODO Auto-generated method stub

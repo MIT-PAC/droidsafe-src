@@ -23,6 +23,7 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
 
     private LayoutInflater mInflater;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.039 -0400", hash_original_method = "64F07E8E3FA816788C81269041C7BE2C", hash_generated_method = "53013D3A3F29175031F7903528B214EF")
     @Deprecated
     public  ResourceCursorAdapter(Context context, int layout, Cursor c) {
@@ -36,6 +37,7 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.039 -0400", hash_original_method = "2548BF0AFC8B02A5BB725BAA0B70445F", hash_generated_method = "CA2E44791E3B839C002D72FC80792E8C")
     public  ResourceCursorAdapter(Context context, int layout, Cursor c, boolean autoRequery) {
         super(context, c, autoRequery);
@@ -49,6 +51,7 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.039 -0400", hash_original_method = "1C7227D889BF56CFA0B952AEE07E9BD1", hash_generated_method = "317D63852F959D2A0D0845D324886911")
     public  ResourceCursorAdapter(Context context, int layout, Cursor c, int flags) {
         super(context, c, flags);
@@ -62,6 +65,7 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.039 -0400", hash_original_method = "E86C9DC4408CF260B8E6AACF31CF8025", hash_generated_method = "36A816967741D231AA91F1D8AFEE94F3")
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
@@ -76,6 +80,7 @@ View var68828DAED9379EACCE08B520DE480281_1392310729 =         mInflater.inflate(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.039 -0400", hash_original_method = "C82CC5D78027B48163EBCC94CFA263B9", hash_generated_method = "339F511BB2F9AACFEDB995A7BB1F0054")
     @Override
     public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {

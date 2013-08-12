@@ -29,6 +29,7 @@ abstract class GLWrapperBase implements GL, GL10, GL10Ext, GL11, GL11Ext, GL11Ex
 
     protected GL11ExtensionPack mgl11ExtensionPack;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.388 -0400", hash_original_method = "B36031ED922ABC4425023B0E6A7BD8D3", hash_generated_method = "9BF59016A1EDA3D847EB3E1E7ABF09A0")
     public  GLWrapperBase(GL gl) {
         mgl = (GL10) gl;

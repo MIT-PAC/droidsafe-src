@@ -90,6 +90,7 @@ String var32C07A996FD67A2B69DAABC149FA7447_1710828125 =         this.reasonPhras
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.047 -0400", hash_original_method = "B124288BE18B40A8DA205B6ACD4ADD5F", hash_generated_method = "CD701F8AB5DA322505A271B45DE8B085")
     public String toString() {
 String var5F94FEC01AE9C71FD9724E389BAEB8E0_1099259234 =         BasicLineFormatter.DEFAULT

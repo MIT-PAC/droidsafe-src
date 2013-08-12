@@ -21,6 +21,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
 
     private Object extendAccessInfo;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.994 -0400", hash_original_method = "DEE74A53744AC3C87B8E5D43A4E5AAF1", hash_generated_method = "65F3138D03DFD60A3C1CA7CFEA9ABE25")
     public  PAccessNetworkInfo() {
         super(PAccessNetworkInfoHeader.NAME);
@@ -30,6 +31,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.995 -0400", hash_original_method = "6534876DB72B3A707C2CB418BA871B14", hash_generated_method = "994A5E9F7763AD51E3ED2D1F94600F2B")
     public  PAccessNetworkInfo(String accessTypeVal) {
         this();
@@ -40,6 +42,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.995 -0400", hash_original_method = "D6FCF3C8B020A71473FC0BA5D5C4EFFC", hash_generated_method = "5D5FC3AFEEEF41A8566F92DB448E73E8")
     public void setAccessType(String accessTypeVal) {
         if(accessTypeVal == null)        
@@ -71,6 +74,7 @@ String var13839985BF7A2123F9C538846603D7DA_1567410722 =         accessType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.996 -0400", hash_original_method = "E9F3B4E9864C75E8FFBFA10460D6CC15", hash_generated_method = "9A86F70C5029A8A6ABCE8D99D73C0976")
     public void setCGI3GPP(String cgi) throws ParseException {
         addTaint(cgi.getTaint());
@@ -92,6 +96,7 @@ String var13839985BF7A2123F9C538846603D7DA_1567410722 =         accessType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.996 -0400", hash_original_method = "DB7CBC31CF308121D9BAFEDB35CD4092", hash_generated_method = "DE7FC740AE4FEBEA0F84233A8FF1F868")
     public String getCGI3GPP() {
 String var3812EB68A035524A86CF47B940DCA391_1222658306 =         getParameter(ParameterNamesIms.CGI_3GPP);
@@ -102,6 +107,7 @@ String var3812EB68A035524A86CF47B940DCA391_1222658306 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.996 -0400", hash_original_method = "3441B9130B7E2309E30E20A20941366E", hash_generated_method = "ABF435C3AE4DAB96D42493BFB0F41173")
     public void setUtranCellID3GPP(String utranCellID) throws ParseException {
         addTaint(utranCellID.getTaint());
@@ -123,6 +129,7 @@ String var3812EB68A035524A86CF47B940DCA391_1222658306 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.997 -0400", hash_original_method = "0ADE7B7C3AF1E996E987AFD2A2268F3F", hash_generated_method = "5515B88E89A9930AC70D8B05A398828C")
     public String getUtranCellID3GPP() {
 String varB7D6779487FCB9E7AA24DA0384F3987E_2018048575 =         getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
@@ -133,6 +140,7 @@ String varB7D6779487FCB9E7AA24DA0384F3987E_2018048575 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.997 -0400", hash_original_method = "36CD4D2ED6BE8C30DC84C656A727D43F", hash_generated_method = "BAA1F24B401F4051A3757ADC524C0E99")
     public void setDSLLocation(String dslLocation) throws ParseException {
         addTaint(dslLocation.getTaint());
@@ -154,6 +162,7 @@ String varB7D6779487FCB9E7AA24DA0384F3987E_2018048575 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.997 -0400", hash_original_method = "4D20CBE53C80D56010466434BFFF6884", hash_generated_method = "E10718C1062BE76946860F518C4C7DBF")
     public String getDSLLocation() {
 String var56319797F5EE3CFB62504C9DF7482837_1386888619 =         getParameter(ParameterNamesIms.DSL_LOCATION);
@@ -164,6 +173,7 @@ String var56319797F5EE3CFB62504C9DF7482837_1386888619 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.998 -0400", hash_original_method = "8FAF3F13595D3CEC54730D14353CA65A", hash_generated_method = "8019DF5A344EC163F744A4F46DAD36BF")
     public void setCI3GPP2(String ci3Gpp2) throws ParseException {
         addTaint(ci3Gpp2.getTaint());
@@ -185,6 +195,7 @@ String var56319797F5EE3CFB62504C9DF7482837_1386888619 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.998 -0400", hash_original_method = "18AE63A32B787BFBE4E7AAC618BF3721", hash_generated_method = "D7BACD60CB98CE6986E2F7A8D7828A96")
     public String getCI3GPP2() {
 String varCE2F991713F6651BF4DC93FE5785DC00_191281456 =         getParameter(ParameterNamesIms.CI_3GPP2);
@@ -195,6 +206,7 @@ String varCE2F991713F6651BF4DC93FE5785DC00_191281456 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.998 -0400", hash_original_method = "EBE4690A0158C298C62212A7BC5E46A3", hash_generated_method = "F275D628C02B330A902E879BE60B1F3A")
     public void setParameter(String name, Object value) {
         addTaint(value.getTaint());
@@ -231,6 +243,7 @@ String varCE2F991713F6651BF4DC93FE5785DC00_191281456 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.999 -0400", hash_original_method = "14EC79395C271902F7A8954DCD0CA9FB", hash_generated_method = "D8CC1D243860E6AD0E3C4AA093FA2A43")
     public void setExtensionAccessInfo(Object extendAccessInfo) throws ParseException {
         if(extendAccessInfo == null)        
@@ -262,6 +275,7 @@ Object var92A160837D8EF0168F11ECE20849458E_358224723 =         this.extendAccess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.000 -0400", hash_original_method = "1EAFA3D993C26925ABBC9977DB42C837", hash_generated_method = "7F539465189CF5E80AFDD2ABC5CF1759")
     protected String encodeBody() {
         StringBuffer encoding = new StringBuffer();
@@ -294,6 +308,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1991775628 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.000 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "6C11BAD9357D4988BD67358362718391")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -305,6 +320,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1991775628 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.001 -0400", hash_original_method = "3C3E67AEA43A987A78987E8A7C9369D7", hash_generated_method = "2570FD9AF376DE8916963F4AC44A728D")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -316,6 +332,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1991775628 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.001 -0400", hash_original_method = "80A80943646C1EE5D35A726D4DDD4538", hash_generated_method = "044159E09396A7960253B6C0B8A1D0DF")
     public Object clone() {
         PAccessNetworkInfo retval = (PAccessNetworkInfo) super.clone();

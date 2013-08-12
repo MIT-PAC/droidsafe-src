@@ -996,6 +996,7 @@ Object varAC81821DD38AD6A8C7609D7C76D213BC_252978758 =         this.applicationD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.395 -0400", hash_original_method = "1E1A6C22D1982081DC74374A2FF63AAD", hash_generated_method = "72C7FCCFB417E4EB2831C9EDC45C21B6")
     public synchronized boolean isRequestConsumable(SIPRequest dialogRequest) {
         addTaint(dialogRequest.getTaint());
@@ -1024,6 +1025,7 @@ Object varAC81821DD38AD6A8C7609D7C76D213BC_252978758 =         this.applicationD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.396 -0400", hash_original_method = "45E0951257A8FCCA68182E75CB3B0E3E", hash_generated_method = "DE1D13475475DCD97E05ECAB4844AED0")
     public void doDeferredDelete() {
         if(sipStack.getTimer() == null)        
@@ -1179,6 +1181,7 @@ Transaction var3438649A4792DF2509905DA6DFD61D20_669886678 =         this.firstTr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.422 -0400", hash_original_method = "A5E017CF1C9F9D5F5F2E302DFCC4F846", hash_generated_method = "AFBE658A4FD4863421D7677C78161CDD")
     public Iterator getRouteSet() {
         if(this.routeList == null)        
@@ -1202,6 +1205,7 @@ Iterator var4674157788617195CA241AA3F5AF84C8_1679065033 =             this.getRo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.422 -0400", hash_original_method = "A8016262F3F363A84230A54DA12F1862", hash_generated_method = "21EB2BD41EE91668DB7DB7DBEA19850E")
     public synchronized void addRoute(SIPRequest sipRequest) {
         addTaint(sipRequest.getTaint());
@@ -1249,6 +1253,7 @@ Iterator var4674157788617195CA241AA3F5AF84C8_1679065033 =             this.getRo
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SIPDialog createFromNOTIFY(SIPClientTransaction subscribeTx,
             SIPTransaction notifyST) {
         SIPDialog d = new SIPDialog(notifyST);
@@ -1344,6 +1349,7 @@ String var8BDB7310D064EBC529941BE9D229C459_724540774 =         this.dialogId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.424 -0400", hash_original_method = "5D1D12A2E6FD98502CE24F8CA665F380", hash_generated_method = "133A8EA7F7605C2028E80FD62BF63E24")
     public void addTransaction(SIPTransaction transaction) {
         SIPRequest sipRequest = (SIPRequest) transaction.getOriginalRequest();
@@ -1940,6 +1946,7 @@ Request varC7C20CEFE913CADDEFC247E46F836F62_173731697 =         sipRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.432 -0400", hash_original_method = "E90E816BF2167876B04C570AAB507565", hash_generated_method = "E0424943D64D19A978CFE0C7B47B3542")
     public void sendRequest(ClientTransaction clientTransactionId, boolean allowInterleaving) throws TransactionDoesNotExistException, SipException {
         addTaint(allowInterleaving);
@@ -2372,6 +2379,7 @@ Request var540C13E9E156B687226421B24F2DF178_1149184586 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.440 -0400", hash_original_method = "8ECB2239C30E6B6F2CF5AEE7662DC317", hash_generated_method = "0BCA1BE60070AD36748524EFE8132B27")
     public Request createAck(long cseqno) throws InvalidArgumentException, SipException {
         addTaint(cseqno);
@@ -3436,6 +3444,7 @@ EventHeader var831190736CCDD70E51757EC097B34D0B_1393873867 =         eventHeader
 
         ClientTransaction ctx;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.459 -0400", hash_original_method = "420F244B37AE2567998EBC3FAC66EFCB", hash_generated_method = "F7A2B4C9B57CD24D4C0C2169969C8DE0")
         public  ReInviteSender(ClientTransaction ctx) {
             this.ctx = ctx;
@@ -3444,6 +3453,7 @@ EventHeader var831190736CCDD70E51757EC097B34D0B_1393873867 =         eventHeader
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.460 -0400", hash_original_method = "05496AD165548F09E9869029BA920071", hash_generated_method = "1ADB0BBCC5965FA3A846905A0639F5FF")
         public void terminate() {
             try 
@@ -3465,6 +3475,7 @@ EventHeader var831190736CCDD70E51757EC097B34D0B_1393873867 =         eventHeader
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.461 -0400", hash_original_method = "DA8B28F4804F3F25626961946D2074C4", hash_generated_method = "CB75E74C42DAD09E8C3E83F15B65E4B0")
         public void run() {
             try 

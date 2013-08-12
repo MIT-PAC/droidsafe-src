@@ -186,6 +186,7 @@ for(int i = 0;i < values.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.925 -0400", hash_original_method = "5A7B1508F1787808F49F0B5550C8CD51", hash_generated_method = "BBAD595CB40DF225A09E8A174D76766D")
     @Override
     public void getChoiceLength(ASN1Choice choice) {
@@ -206,6 +207,7 @@ for(int i = 0;i < values.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.926 -0400", hash_original_method = "3844D47826105180913F54E31B3EFD0D", hash_generated_method = "E5C6111A046F4D5F52772A46F3E5D5DA")
     @Override
     public void getExplicitLength(ASN1Explicit explicit) {
@@ -230,6 +232,7 @@ for(int i = 0;i < values.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.927 -0400", hash_original_method = "987D6B9FDB5F0819C8D50266B95DAA65", hash_generated_method = "E0DF66864669BD75ECDBA5CC31B7792F")
     @Override
     public void getSequenceLength(ASN1Sequence sequence) {

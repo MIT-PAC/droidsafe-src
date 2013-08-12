@@ -57,6 +57,7 @@ public class EditorInfo implements InputType, Parcelable {
 
     public Bundle extras;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.352 -0400", hash_original_method = "B9ADFD40DF801C34FF4D54782A68254E", hash_generated_method = "B9ADFD40DF801C34FF4D54782A68254E")
     public EditorInfo ()
     {
@@ -229,6 +230,7 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.358 -0400", hash_original_field = "1571425679A71C2B4E211351FA79417D", hash_generated_field = "1554B4BEF2704B75DF5E855F87FA4685")
 
     public static final Parcelable.Creator<EditorInfo> CREATOR = new Parcelable.Creator<EditorInfo>() {
+        @DSModeled(DSC.SAFE)
         public EditorInfo createFromParcel(Parcel source) {
             EditorInfo res = new EditorInfo();
             res.inputType = source.readInt();

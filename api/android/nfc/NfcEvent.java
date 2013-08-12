@@ -10,6 +10,7 @@ public final class NfcEvent {
 
     public NfcAdapter nfcAdapter;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.261 -0400", hash_original_method = "EC9DC1FF5D63DBE437BD3C224D5FA5E1", hash_generated_method = "C1D928D50AD6623D1CB143696CA7488A")
       NfcEvent(NfcAdapter nfcAdapter) {
         this.nfcAdapter = nfcAdapter;

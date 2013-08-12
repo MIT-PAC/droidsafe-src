@@ -56,6 +56,7 @@ public abstract class CellLocation {
     public abstract boolean isEmpty();
 
     
+    @DSModeled(DSC.SAFE)
     public static CellLocation getEmpty() {
         switch(TelephonyManager.getDefault().getCurrentPhoneType()) {
         case Phone.PHONE_TYPE_CDMA:

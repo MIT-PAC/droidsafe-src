@@ -15,6 +15,7 @@ class WTauNafMultiplier implements ECMultiplier {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.921 -0400", hash_original_method = "02F90693504CEA800318EF0ACD8D13BB", hash_generated_method = "330764DA201409D4BF1DBAB62D6CC268")
     public ECPoint multiply(ECPoint point, BigInteger k, PreCompInfo preCompInfo) {
         addTaint(preCompInfo.getTaint());

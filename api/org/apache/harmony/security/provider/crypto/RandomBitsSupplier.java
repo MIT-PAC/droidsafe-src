@@ -53,6 +53,7 @@ public class RandomBitsSupplier implements SHA1_Data {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] getRandomBits(int numBytes) {
         if (numBytes <= 0) {
             throw new IllegalArgumentException(Integer.toString(numBytes));

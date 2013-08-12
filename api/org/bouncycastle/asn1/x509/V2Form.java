@@ -26,6 +26,7 @@ public class V2Form extends ASN1Encodable {
 
     ObjectDigestInfo objectDigestInfo;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.987 -0400", hash_original_method = "58484080C9CD52E375DC7B3D30D61BD6", hash_generated_method = "F65B38D63267FE602DE1A3694A5C6E35")
     public  V2Form(
         GeneralNames    issuerName) {
@@ -35,6 +36,7 @@ public class V2Form extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.988 -0400", hash_original_method = "A1182A2D0637CA133E8A6FD666F8BDBF", hash_generated_method = "1E6B2E7209864E218BC9063D7A5CE19B")
     public  V2Form(
         ASN1Sequence seq) {
@@ -75,6 +77,7 @@ for(int i = index;i != seq.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static V2Form getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -82,6 +85,7 @@ for(int i = index;i != seq.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static V2Form getInstance(
         Object  obj) {
         if (obj == null || obj instanceof V2Form)
@@ -129,6 +133,7 @@ ObjectDigestInfo var8645E6823C16465BE8DE456BAC146566_138178326 =         objectD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.991 -0400", hash_original_method = "136E61B408FA241B2CCB57655BDD036B", hash_generated_method = "F7115EE3CE0329AD63ADCAFAFD6FCB76")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

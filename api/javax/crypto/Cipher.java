@@ -78,6 +78,7 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Cipher getInstance(String transformation,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException, NoSuchPaddingException {
@@ -92,6 +93,7 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final Cipher getInstance(String transformation,
             Provider provider) throws NoSuchAlgorithmException,
             NoSuchPaddingException {
@@ -103,13 +105,13 @@ public class Cipher {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static NoSuchAlgorithmException invalidTransformation(String transformation) throws NoSuchAlgorithmException {
         throw new NoSuchAlgorithmException("Invalid transformation: " + transformation);
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static synchronized Cipher getCipher(String transformation, Provider provider) throws NoSuchAlgorithmException, NoSuchPaddingException {
         if (transformation == null || transformation.isEmpty()) {
             throw invalidTransformation(transformation);
@@ -181,7 +183,7 @@ public class Cipher {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static String[] checkTransformation(String transformation) throws NoSuchAlgorithmException {
         if (transformation.startsWith("/")) {
             transformation = transformation.substring(1);
@@ -229,6 +231,7 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1198396030 =         transformation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.992 -0400", hash_original_method = "D9E2BEA1F59A5109A8382C65AF7F31D0", hash_generated_method = "131488281E08FD856FED0DFB75646BEB")
     public final int getBlockSize() {
         int var45465D5DC9BEC9FECC52A032FA1F16D6_1556458036 = (spiImpl.engineGetBlockSize());
@@ -239,6 +242,7 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1198396030 =         transformation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.993 -0400", hash_original_method = "AA8C5558649103E88A25D53E8218E1F5", hash_generated_method = "F58DF4198942097B10E31CE7DF93200C")
     public final int getOutputSize(int inputLen) {
         addTaint(inputLen);
@@ -259,6 +263,7 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1198396030 =         transformation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.993 -0400", hash_original_method = "99DAD5FABE956FC53B6CC59AB3BC8215", hash_generated_method = "95E139449A166E27E9A9054D9AA7C0B0")
     public final byte[] getIV() {
         byte[] varE5F6887C529E3E0CA3FBCCADA885FC6B_271257408 = (spiImpl.engineGetIV());
@@ -269,6 +274,7 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1198396030 =         transformation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.993 -0400", hash_original_method = "1EF273790A635FFB8595723F2B2D47C7", hash_generated_method = "781D465EA74F05C8AC1037EFF38FD35A")
     public final AlgorithmParameters getParameters() {
 AlgorithmParameters varDDF010DE7E5B16986942A6D470695726_1572153909 =         spiImpl.engineGetParameters();
@@ -290,6 +296,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.993 -0400", hash_original_method = "429E4D2BD5B61AF47430304468140423", hash_generated_method = "A53648B1A5A6390529F392A2C6D436BB")
     public final void init(int opmode, Key key) throws InvalidKeyException {
         addTaint(key.getTaint());
@@ -307,6 +314,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.993 -0400", hash_original_method = "0BCC9283EB770D83968E2D5392900813", hash_generated_method = "FE70452A34DB88E3DA3903253EE198C4")
     public final void init(int opmode, Key key, SecureRandom random) throws InvalidKeyException {
         addTaint(random.getTaint());
@@ -340,6 +348,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.994 -0400", hash_original_method = "BBC8C1A41A2EA4CA6303B616FCC7D14B", hash_generated_method = "AF7D35ADF82EA5CCADDAD7ABA4A8462F")
     public final void init(int opmode, Key key, AlgorithmParameterSpec params) throws InvalidKeyException, InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
@@ -358,6 +367,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.994 -0400", hash_original_method = "8E7DC73E6E4E585B73E6EA7E879FC58B", hash_generated_method = "4BE0E12A2EC974CD397827A7111246A7")
     public final void init(int opmode, Key key, AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidKeyException,
@@ -375,6 +385,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.994 -0400", hash_original_method = "BF9CD5FCB5A2729A943C192A3430B212", hash_generated_method = "BC06FBEE8CFBD0D350DE8E18059BB017")
     public final void init(int opmode, Key key, AlgorithmParameters params) throws InvalidKeyException, InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
@@ -393,6 +404,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.994 -0400", hash_original_method = "807F390A384AF896657386359C87C81B", hash_generated_method = "075A71815B69189F4E3CC85430E667B0")
     public final void init(int opmode, Key key, AlgorithmParameters params,
             SecureRandom random) throws InvalidKeyException,
@@ -410,6 +422,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.994 -0400", hash_original_method = "D1B8B02AA4362AEA38C29780F594C5E0", hash_generated_method = "1692D003B87308C28B20BE9EEC5A6B0E")
     public final void init(int opmode, Certificate certificate) throws InvalidKeyException {
         addTaint(certificate.getTaint());
@@ -427,6 +440,7 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.995 -0400", hash_original_method = "CF5B7C36D9EDA90E4E4A39DDF2F721FD", hash_generated_method = "917D67F6B411DA95328CA1EB72B0B994")
     public final void init(int opmode, Certificate certificate,
             SecureRandom random) throws InvalidKeyException {
@@ -517,6 +531,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.996 -0400", hash_original_method = "6B0ED73318E2DF96B368CBFEB9D8FD9F", hash_generated_method = "62A02067778C87601C2B055C03124A75")
     public final byte[] update(byte[] input, int inputOffset, int inputLen) {
         addTaint(inputLen);
@@ -570,6 +585,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.996 -0400", hash_original_method = "851A7508725C6167E01999D358074612", hash_generated_method = "CFB28CBEB2FF7793CF59B60116161AF0")
     public final int update(byte[] input, int inputOffset, int inputLen,
             byte[] output) throws ShortBufferException {
@@ -585,6 +601,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.997 -0400", hash_original_method = "43E41610DEFFC00737E44CA5E5476BCF", hash_generated_method = "937C13B673A51DE4E96E7892C3A8A59A")
     public final int update(byte[] input, int inputOffset, int inputLen,
             byte[] output, int outputOffset) throws ShortBufferException {
@@ -639,6 +656,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.997 -0400", hash_original_method = "3650ED22F64FB3DE8113B7C668BA6C70", hash_generated_method = "0E334FA8D2E17366FF418CF75C9B1F34")
     public final int update(ByteBuffer input, ByteBuffer output) throws ShortBufferException {
         addTaint(output.getTaint());
@@ -669,6 +687,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.997 -0400", hash_original_method = "F0FEA4F0F73707A698ECC32C0962F654", hash_generated_method = "0407B1F7E4E57DC3E034A139D8C81669")
     public final byte[] doFinal() throws IllegalBlockSizeException,
             BadPaddingException {
@@ -689,6 +708,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.998 -0400", hash_original_method = "93AA6B063068AA94349A945C7753479D", hash_generated_method = "E3D7C7AB098A12E4B4E04BB3CF81D4A3")
     public final int doFinal(byte[] output, int outputOffset) throws IllegalBlockSizeException, ShortBufferException,
             BadPaddingException {
@@ -720,6 +740,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.998 -0400", hash_original_method = "ED0F518E6798AF2EE42518F6A3E77904", hash_generated_method = "C0BE9466DB661A94431272C280FB4199")
     public final byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
             BadPaddingException {
@@ -741,6 +762,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.998 -0400", hash_original_method = "6B1737194DBFF54F3884AE72A596BA42", hash_generated_method = "97FC1C5335FE1BBB65D6DE5B28210D56")
     public final byte[] doFinal(byte[] input, int inputOffset, int inputLen) throws IllegalBlockSizeException, BadPaddingException {
         addTaint(inputLen);
@@ -772,6 +794,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.998 -0400", hash_original_method = "A6D208F07F7B0D8A8A4180809C2EF479", hash_generated_method = "76EE2C7F5795724E0A79AC803F7F3BE6")
     public final int doFinal(byte[] input, int inputOffset, int inputLen,
             byte[] output) throws ShortBufferException,
@@ -788,6 +811,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.998 -0400", hash_original_method = "46F54FF2783CE552AE826C81B354A349", hash_generated_method = "DD2D76BCA6E0323083E3888DA06FF98F")
     public final int doFinal(byte[] input, int inputOffset, int inputLen,
             byte[] output, int outputOffset) throws ShortBufferException,
@@ -825,6 +849,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.999 -0400", hash_original_method = "90770161074657C0B33458A086574F5B", hash_generated_method = "ACC293779D446055019A134C9F03E350")
     public final int doFinal(ByteBuffer input, ByteBuffer output) throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException {
@@ -856,6 +881,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.999 -0400", hash_original_method = "6E0DA752A02639D8B96D35F2A60D917D", hash_generated_method = "1ABECF8B5D548E291D948EDDC133D3B9")
     public final byte[] wrap(Key key) throws IllegalBlockSizeException,
             InvalidKeyException {
@@ -877,6 +903,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.999 -0400", hash_original_method = "601EF7D9B28B5898301EBC35141803DA", hash_generated_method = "A789E14AC34CE1CF820A24B732FD065F")
     public final Key unwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException,
@@ -903,6 +930,7 @@ Key var3B6EEF5A41015CBF2E819B3EDDAF7B55_1249112942 =         spiImpl.engineUnwra
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMaxAllowedKeyLength(String transformation) throws NoSuchAlgorithmException {
         if (transformation == null) {
             throw new NullPointerException();

@@ -26,6 +26,7 @@ public class Proxy implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.181 -0400", hash_original_method = "4536AE1A64E0852F0920CAD3D2F2C594", hash_generated_method = "698C4B548DC7670D8B6A3E54EBD2B093")
     protected  Proxy(InvocationHandler h) {
         this.h = h;
@@ -150,6 +151,7 @@ public class Proxy implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isProxyClass(Class<?> cl) {
         if (cl == null) {
             throw new NullPointerException();
@@ -160,6 +162,7 @@ public class Proxy implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InvocationHandler getInvocationHandler(Object proxy) throws IllegalArgumentException {
         if (isProxyClass(proxy.getClass())) {
             return ((Proxy) proxy).h;

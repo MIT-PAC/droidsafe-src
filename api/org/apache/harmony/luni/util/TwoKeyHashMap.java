@@ -514,6 +514,7 @@ Entry<E, K, V> var540C13E9E156B687226421B24F2DF178_1797432989 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.138 -0400", hash_original_method = "43A91F8C54B90BC0F4C951BCB1425B25", hash_generated_method = "9E7B2D0F8E476BB36D7A4ACAECC2D17F")
         public String getKey() {
 String var68CFAAB40FE81B389C40EF166B3D7E7E_1594039173 =             key1.toString() + key2.toString();
@@ -544,6 +545,7 @@ K varA654CD75EFA94D4E93625838DEFFD3AA_427994556 =             key2;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.138 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "721643787FDBFB85248B96D742D2F0A5")
         public V getValue() {
 V varAF280DA2BC37D8BE783D8499160168DE_931355215 =             value;
@@ -554,6 +556,7 @@ V varAF280DA2BC37D8BE783D8499160168DE_931355215 =             value;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.138 -0400", hash_original_method = "B73895AEE255DB24C138E57D2456050E", hash_generated_method = "1D8BC3CB0B990BB7310B3C4699E452A9")
         public V setValue(V value) {
             V oldValue = this.value;
@@ -568,6 +571,7 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_254955845 =             oldValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.139 -0400", hash_original_method = "2C745FE5DF9CE9CA09289DC08E07F848", hash_generated_method = "570E8323A239B22AA0F05512FFC8E391")
         public boolean equals(Object obj) {
             addTaint(obj.getTaint());
@@ -966,6 +970,7 @@ Iterator<V> varFA13F1FC571FA0A48E63CCBACC5FD2F6_1698676617 =             createV
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.148 -0400", hash_original_method = "74702C44933E62600B2ED3E7307D82B0", hash_generated_method = "65B0B7ADC3AC59AF1C368CB9E56D6515")
         public boolean contains(Object obj) {
             addTaint(obj.getTaint());

@@ -79,6 +79,7 @@ public class SQLiteStatement extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.060 -0400", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "B7441A4097BC0C1F105A001ED2B8EBAB")
     public long executeInsert() {
         try 

@@ -53,12 +53,14 @@ public class X509Name extends ASN1Encodable {
 
     private int hashCodeValue;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.196 -0400", hash_original_method = "E0A402814C87C5337199B2B0EDD62792", hash_generated_method = "057550D58678CB656F886F7D19F48820")
     protected  X509Name() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.196 -0400", hash_original_method = "88A842BBAF40DA82D57137327D6884BA", hash_generated_method = "729383BE804D5B075D4D3A6B8E6AAD05")
     public  X509Name(
         ASN1Sequence  seq) {
@@ -103,6 +105,7 @@ for(int i = 0;i < set.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.197 -0400", hash_original_method = "E338E099196C520643EABA462B148868", hash_generated_method = "4F3D38547E82E9E318C39F8B7A6E3207")
     public  X509Name(
         Hashtable  attributes) {
@@ -112,6 +115,7 @@ for(int i = 0;i < set.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.197 -0400", hash_original_method = "0E56A2506DE147DC0FDCD121F4661515", hash_generated_method = "A49EF6B0C5B62CA69F33510749DE931F")
     public  X509Name(
         Vector      ordering,
@@ -123,6 +127,7 @@ for(int i = 0;i < set.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.198 -0400", hash_original_method = "391D1DCB58738C4647988CF64EC70334", hash_generated_method = "C8B7393ED9FDD9B6432305E5596BA5B0")
     public  X509Name(
         Vector                   ordering,
@@ -165,6 +170,7 @@ for(int i = 0;i != this.ordering.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.199 -0400", hash_original_method = "09339315E74F09704223BAA476796553", hash_generated_method = "0F41C1E3C1E5E881D2C0FD837D91BC14")
     public  X509Name(
         Vector  oids,
@@ -176,6 +182,7 @@ for(int i = 0;i != this.ordering.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.199 -0400", hash_original_method = "492C8BC9ACE864159B4ED5D85649FE7D", hash_generated_method = "0F32012FE3C7BD4EBAB240E85483ED30")
     public  X509Name(
         Vector                  oids,
@@ -220,6 +227,7 @@ for(int i = 0;i < oids.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.200 -0400", hash_original_method = "225E7940DFC3CDF11421E5A31C692555", hash_generated_method = "A024263123D4A3F4C04E171635CEFE11")
     public  X509Name(
         String                  dirName,
@@ -231,6 +239,7 @@ for(int i = 0;i < oids.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.200 -0400", hash_original_method = "A1386F925B8F997747CFC9FBEC64818C", hash_generated_method = "3E05FD368AB3F462CC34AD8AA65CF293")
     public  X509Name(
         boolean reverse,
@@ -242,6 +251,7 @@ for(int i = 0;i < oids.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.201 -0400", hash_original_method = "0ED99673E1BB44384871E74A0AAAAEE6", hash_generated_method = "6D8DC8B4F730D61439367E6EA1D209AB")
     public  X509Name(
         boolean                 reverse,
@@ -255,6 +265,7 @@ for(int i = 0;i < oids.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.201 -0400", hash_original_method = "AD0C5D6A617F7C4CAD4929B6BAF77A7F", hash_generated_method = "2E465D7394BE3FD3FEFE3A3D438D8658")
     public  X509Name(
         boolean     reverse,
@@ -268,6 +279,7 @@ for(int i = 0;i < oids.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.203 -0400", hash_original_method = "E0536EE704C9789715788F9D659749FC", hash_generated_method = "020F0C820D551360F3FD7A8E5D61E0B1")
     public  X509Name(
         boolean                 reverse,
@@ -351,6 +363,7 @@ for(int i = 0;i < this.ordering.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X509Name getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -425,6 +438,7 @@ DERObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_366033994 =         oid;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "2D101B81AA4F7CB6B72317966361C7FD", hash_generated_method = "2CF88432046725E1793F9B0DED9671EA")
     public Vector getOIDs() {
         Vector v = new Vector();
@@ -445,6 +459,7 @@ Vector var6DC76BC51820DD65E8396280E884AA78_815994314 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "F648A0377CD08E6DCA69D49343904A7E", hash_generated_method = "8C3DEDB1D65E0B41D9EE36CD2B0B468F")
     public Vector getValues() {
         Vector v = new Vector();
@@ -465,6 +480,7 @@ Vector var6DC76BC51820DD65E8396280E884AA78_1602479944 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "B5B05F9A72085C1CEE80B6960CBCC4AA", hash_generated_method = "E1BA681B4C3C90BBA2879D038B0740A2")
     public Vector getValues(
         DERObjectIdentifier oid) {
@@ -548,6 +564,7 @@ DERObject var42A78C062640017A329FA085150BC1B8_884349102 =         seq;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.205 -0400", hash_original_method = "280DBAE44A81315C42DC75BD60909480", hash_generated_method = "6ED7AF80B00B74E308EB38946A167614")
     public boolean equals(Object obj, boolean inOrder) {
         addTaint(inOrder);
@@ -625,6 +642,7 @@ for(int i = 0;i < orderingSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.207 -0400", hash_original_method = "F1AF8C1EFC711A1D842EED436165BEED", hash_generated_method = "F2A02CF5F15F7615F60B14B7A1E5C2D8")
     public int hashCode() {
         if(isHashCodeCalculated)        
@@ -663,6 +681,7 @@ for(int i = 0;i != ordering.size();i += 1)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.208 -0400", hash_original_method = "9BE112C8870FAD3CF61652B8C6BD4A74", hash_generated_method = "D45D9B2B3341F51E18C7CF289164C610")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -946,6 +965,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_716714771 =         res.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.210 -0400", hash_original_method = "656BABE23C68D82FE6D3AB319F560E81", hash_generated_method = "0F7E955D187C0A0E158EEC04F089EFE0")
     public String toString(
         boolean     reverse,

@@ -166,7 +166,7 @@ public class KeyCharacterMap {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.177 -0400", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "839714433C1AB1652906FEC18CC2A616")
     public boolean getFallbackAction(int keyCode, int metaState,
             FallbackAction outFallbackAction) {

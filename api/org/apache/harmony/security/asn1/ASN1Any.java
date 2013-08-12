@@ -11,6 +11,7 @@ import java.io.IOException;
 
 public final class ASN1Any extends ASN1Type {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.159 -0400", hash_original_method = "DC9940F4B091FD322F1F3A80DE5DA9F7", hash_generated_method = "4BC9F36E0DA8D5C47FBAC49DEA0BD42A")
     public  ASN1Any() {
         super(TAG_ANY);

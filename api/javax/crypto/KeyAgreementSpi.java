@@ -15,6 +15,7 @@ import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class KeyAgreementSpi {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.218 -0400", hash_original_method = "63241E16415E7B15EEAD7BA66A194D2D", hash_generated_method = "888DE129141231ECBF5F507BB6FEC590")
     public  KeyAgreementSpi() {
         // ---------- Original Method ----------

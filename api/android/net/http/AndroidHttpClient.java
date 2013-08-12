@@ -171,6 +171,7 @@ HttpContext var4C2DD4015CB4BB3F876A587F79816595_440458386 =             context;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputStream getUngzippedContent(HttpEntity entity) throws IOException {
         InputStream responseStream = entity.getContent();
         if (responseStream == null) return responseStream;
@@ -199,6 +200,7 @@ HttpContext var4C2DD4015CB4BB3F876A587F79816595_440458386 =             context;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.732 -0400", hash_original_method = "5DB032B661B95AF8C86F6F8448CB3EFD", hash_generated_method = "6108AC4D9F6FF90E0AD92688D5B147C4")
     public HttpParams getParams() {
 HttpParams var58F71D00F7895AFF9FAD07E21D27F5D7_401866371 =         delegate.getParams();
@@ -295,6 +297,7 @@ T var4C992D413ECABA26DC3DF2FE56905C2B_848318443 =         delegate.execute(reque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.734 -0400", hash_original_method = "7CB9DE1B48678C64D58684D5D8F5CD5D", hash_generated_method = "D730D86ADEE270C3F9CECE7E250B5772")
     public <T> T execute(HttpHost target, HttpRequest request,
             ResponseHandler<? extends T> responseHandler) throws IOException,
@@ -347,6 +350,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(targe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.734 -0400", hash_original_method = "B1B69215498581680849253AEA19542C", hash_generated_method = "AA3BC6ABD7628F8D0787E4DFDF708C47")
     public void enableCurlLogging(String name, int level) {
         if(name == null)        
@@ -460,6 +464,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_550641489 =         delegate.execute(targe
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long parseDate(String dateString) {
         return HttpDateTime.parse(dateString);
     }

@@ -73,6 +73,7 @@ public final class NfcF extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.773 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "F6B8B7E714D339ED980509A4850C91AC")
     public byte[] transceive(byte[] data) throws IOException {
         addTaint(data[0]);
@@ -84,6 +85,7 @@ public final class NfcF extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.774 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "4CCBFE6F1CBE054E5C4E63FC91980AC7")
     public int getMaxTransceiveLength() {
         int var534FE261D7083B235B3B010A14A83EE1_1536423487 = (getMaxTransceiveLengthInternal());
@@ -94,6 +96,7 @@ public final class NfcF extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.775 -0400", hash_original_method = "D0C1DC7ECC9E082014D504E80FD68DDB", hash_generated_method = "6C81169D81091BE1292D96D45E0442D1")
     public void setTimeout(int timeout) {
         addTaint(timeout);
@@ -122,6 +125,7 @@ public final class NfcF extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.776 -0400", hash_original_method = "BA26E553829B17341BEC1294BC995A3C", hash_generated_method = "A0EDC32DB4FBDDBC047FCAF4CEBF956B")
     public int getTimeout() {
         try 

@@ -34,6 +34,7 @@ class BitLevel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int bitCount(BigInteger val) {
         val.prepareJavaRepresentation();
         int bCount = 0;
@@ -56,6 +57,7 @@ class BitLevel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean testBit(BigInteger val, int n) {
         val.prepareJavaRepresentation();
         return ((val.digits[n >> 5] & (1 << (n & 31))) != 0);
@@ -88,7 +90,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static BigInteger shiftLeftOneBit(BigInteger source) {
         source.prepareJavaRepresentation();
         int srcLen = source.numberLength;
@@ -99,7 +101,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static BigInteger shiftRight(BigInteger source, int count) {
         source.prepareJavaRepresentation();
         int intCount = count >> 5;
@@ -130,7 +132,7 @@ class BitLevel {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static boolean shiftRight(int[] result, int resultLen, int[] source, int intCount, int count) {
         int i;
         boolean allZero = true;
@@ -153,6 +155,7 @@ class BitLevel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static BigInteger flipBit(BigInteger val, int n) {
         val.prepareJavaRepresentation();
         int resSign = (val.sign == 0) ? 1 : val.sign;

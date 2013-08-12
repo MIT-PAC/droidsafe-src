@@ -201,7 +201,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_217363778 =         animation;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.804 -0400", hash_original_method = "32142259597E010D1F73DE9F53078982", hash_generated_method = "4E65A7B8F2F15E326635944EB64D008E")
     @Override
     public boolean hasAlpha() {
@@ -428,7 +428,7 @@ for(int i = count - 1;i >= 0;--i)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.809 -0400", hash_original_method = "357CAB1AB4D965ADF6EAF9B7256F84EE", hash_generated_method = "BFCF3894293EA6F8898D6D3DBFA953DC")
     public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -615,7 +615,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.811 -0400", hash_original_method = "1FA58C163A7DB9A5169EF699805FA3C9", hash_generated_method = "2279BAA9493EAB586EEB7ABA6BF9E5D7")
      void restoreChildrenStartOffset() {
         final long[] offsets = mStoredOffsets;

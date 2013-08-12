@@ -47,6 +47,7 @@ class SelectItemResponseData extends ResponseData {
 
     private int id;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.494 -0400", hash_original_method = "88F47DF9733601EED859AE224777BF09", hash_generated_method = "8FDACCA548D165B7C04215788EACD650")
     public  SelectItemResponseData(int id) {
         super();
@@ -91,6 +92,7 @@ class GetInkeyInputResponseData extends ResponseData {
 
     public String mInData;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.497 -0400", hash_original_method = "C406233D38E0F3E58D00D02791A05027", hash_generated_method = "695D3A66BAC879130627520F8DC3C22A")
     public  GetInkeyInputResponseData(String inData, boolean ucs2, boolean packed) {
         super();
@@ -106,6 +108,7 @@ class GetInkeyInputResponseData extends ResponseData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.499 -0400", hash_original_method = "3E22EF603F248A198EBAA27D03FAD9D9", hash_generated_method = "6C46507AEDB6686D6B987AB23A7B2504")
     public  GetInkeyInputResponseData(boolean yesNoResponse) {
         super();
@@ -272,6 +275,7 @@ class DTTZResponseData extends ResponseData {
 
     private Calendar calendar;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.508 -0400", hash_original_method = "26136AA860D2CA0BB937B819E5CFDD9D", hash_generated_method = "4F6BBC2786F3BE4258FAD407CA694BE3")
     public  DTTZResponseData(Calendar cal) {
         super();
@@ -281,6 +285,7 @@ class DTTZResponseData extends ResponseData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.510 -0400", hash_original_method = "3B6DBE61112682FA3D432448D0A26FBC", hash_generated_method = "1DD020A8BF61E1AB7A5B9EF0F9050AC9")
     @Override
     public void format(ByteArrayOutputStream buf) {

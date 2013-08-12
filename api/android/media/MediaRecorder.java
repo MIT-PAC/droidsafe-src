@@ -103,6 +103,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.752 -0400", hash_original_method = "C41941EDDC1BA172E48D383432866025", hash_generated_method = "EA0883B7DD7BF1E78DBBB6A767774F67")
     public void setProfile(CamcorderProfile profile) {
         addTaint(profile.getTaint());
@@ -156,6 +157,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.753 -0400", hash_original_method = "FFEAE3173573A6FB2AF430882DE311CC", hash_generated_method = "4B6AD7A1FC3615C3F95988B725389D33")
     public void setOrientationHint(int degrees) {
         addTaint(degrees);
@@ -180,6 +182,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.754 -0400", hash_original_method = "95876148111FCD378C0A7171639D46C7", hash_generated_method = "A3727A006CDA7C19EC47E49BE1762F7B")
     public void setLocation(float latitude, float longitude) {
         addTaint(longitude);
@@ -260,6 +263,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.757 -0400", hash_original_method = "A30D5A78BCFDD0EC33430FA69AAB0135", hash_generated_method = "6F0B92660117AABED33991FBE321B6B4")
     public void setAudioSamplingRate(int samplingRate) {
         addTaint(samplingRate);
@@ -296,6 +300,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.758 -0400", hash_original_method = "3786AB4A2177EE063AA4F526AF23E799", hash_generated_method = "44A3306E0471FD53CDFF1AA4CC48FB4D")
     public void setAudioEncodingBitRate(int bitRate) {
         addTaint(bitRate);
@@ -314,6 +319,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.758 -0400", hash_original_method = "1B43BF8F9E62EF0E8125F105BE9509D7", hash_generated_method = "5B492681A8965AEA0F8A379C89CDEC40")
     public void setVideoEncodingBitRate(int bitRate) {
         addTaint(bitRate);
@@ -332,6 +338,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.759 -0400", hash_original_method = "A0B41C1DE963DD2616BE7FC07860DC3A", hash_generated_method = "F9ED9DF6F92CC32C9A66BD87F2715733")
     public void setAuxiliaryOutputFile(FileDescriptor fd) {
         addTaint(fd.getTaint());
@@ -340,6 +347,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.759 -0400", hash_original_method = "8F81BCAE7FDFB44AAC23771364E7255A", hash_generated_method = "AAD3CF3C79CF1F5A00C1B6681DB3A216")
     public void setAuxiliaryOutputFile(String path) {
         addTaint(path.getTaint());
@@ -590,6 +598,7 @@ public class MediaRecorder {
     
     public final class OutputFormat {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.768 -0400", hash_original_method = "9E0C1C4960BAFFDB241CC667DA1146ED", hash_generated_method = "553275D8A28B3F06BA2AAF766D2B6DD6")
         private  OutputFormat() {
             // ---------- Original Method ----------

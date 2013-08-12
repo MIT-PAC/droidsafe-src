@@ -27,6 +27,7 @@ public class IssuerSerial extends ASN1Encodable {
 
     DERBitString issuerUID;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.762 -0400", hash_original_method = "6A7E42DF8EF9B09B844C872DFCA023C7", hash_generated_method = "073DA71EDB8FD70444FA07B0EAABE82A")
     public  IssuerSerial(
         ASN1Sequence    seq) {
@@ -56,6 +57,7 @@ public class IssuerSerial extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.763 -0400", hash_original_method = "B838D7E53D177DFF65C1A291EEAEEEE1", hash_generated_method = "D4EC88DF2D8A028D56F6AF5E2A27DDE6")
     public  IssuerSerial(
         GeneralNames    issuer,
@@ -68,6 +70,7 @@ public class IssuerSerial extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IssuerSerial getInstance(
             Object  obj) {
         if (obj == null || obj instanceof IssuerSerial)
@@ -82,6 +85,7 @@ public class IssuerSerial extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IssuerSerial getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -122,6 +126,7 @@ DERBitString var81B1BFDC984EDD98A3FFF7ED3A8DDFA3_622751283 =         issuerUID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.765 -0400", hash_original_method = "91432FD7FC59DB0CA5EF9903A7843F73", hash_generated_method = "A54B9C8E48F816BDCA2A8FBD1F22398A")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

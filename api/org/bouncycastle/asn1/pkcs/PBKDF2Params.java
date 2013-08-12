@@ -28,6 +28,7 @@ public class PBKDF2Params extends ASN1Encodable {
 
     DERInteger keyLength;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.003 -0400", hash_original_method = "5BA909CEBC7BF7CD8A582DB2DCC88322", hash_generated_method = "9293987A5EC39CF4E6E60D9B1251A6DF")
     public  PBKDF2Params(
         byte[]  salt,
@@ -40,6 +41,7 @@ public class PBKDF2Params extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.004 -0400", hash_original_method = "04097C22B31A4C58A7AF2A76FBE1FC77", hash_generated_method = "57D9F28ABD320FAFD2784AD29197BA1E")
     public  PBKDF2Params(
         ASN1Sequence  seq) {
@@ -70,6 +72,7 @@ public class PBKDF2Params extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PBKDF2Params getInstance(
         Object  obj) {
         if (obj instanceof PBKDF2Params)
@@ -84,6 +87,7 @@ public class PBKDF2Params extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.005 -0400", hash_original_method = "5423221662EFD73C70147CAB8114C396", hash_generated_method = "859616851A0759C2B51672346C7BF6FD")
     public byte[] getSalt() {
         byte[] var225742414AAD58D749DE2AEF6A3EF7B3_1512855313 = (octStr.getOctets());
@@ -94,6 +98,7 @@ public class PBKDF2Params extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.005 -0400", hash_original_method = "1C8F1DF1E9A7C9D74F917C50A0F9295E", hash_generated_method = "4941304EA085A1B0A1A00FBAE333BA64")
     public BigInteger getIterationCount() {
 BigInteger var53FCCDFC6E49719A6EF34AD5B4B147C7_1957432175 =         iterationCount.getValue();
@@ -104,6 +109,7 @@ BigInteger var53FCCDFC6E49719A6EF34AD5B4B147C7_1957432175 =         iterationCou
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.005 -0400", hash_original_method = "05FD7C7D47C946F5351B5DDBB4ABDC60", hash_generated_method = "C852966228D8359029775895A1A57952")
     public BigInteger getKeyLength() {
         if(keyLength != null)        
@@ -124,6 +130,7 @@ BigInteger var540C13E9E156B687226421B24F2DF178_489334025 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.006 -0400", hash_original_method = "B60CD10E8E03E12312566D8BFE3F0B82", hash_generated_method = "1CCDA79F67A85CB8D99B172A44A843DA")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

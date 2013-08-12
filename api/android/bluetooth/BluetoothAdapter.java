@@ -55,6 +55,7 @@ public final class BluetoothAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized BluetoothAdapter getDefaultAdapter() {
         if (sAdapter == null) {
             IBinder b = ServiceManager.getService(BluetoothAdapter.BLUETOOTH_SERVICE);
@@ -67,6 +68,7 @@ public final class BluetoothAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.996 -0400", hash_original_method = "BAA9CF7F2ACFCBAB9569C2DACFA96981", hash_generated_method = "3BC90A8B06DAF9BCEA7C32471E4C702E")
     public BluetoothDevice getRemoteDevice(String address) {
         addTaint(address.getTaint());
@@ -78,6 +80,7 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_236867484 =         new Blue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.997 -0400", hash_original_method = "D4868B88346C10F14C8F7C77B49B5DE2", hash_generated_method = "299819F3926B71687D82C491ABF71C5D")
     public boolean isEnabled() {
         try 
@@ -100,6 +103,7 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_236867484 =         new Blue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.998 -0400", hash_original_method = "FCF9C6106F07630DEF71CB873FCC3D8F", hash_generated_method = "2E79D02AF31D3DDD6D03E2464CF4DF09")
     public int getState() {
         try 
@@ -122,6 +126,7 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_236867484 =         new Blue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.999 -0400", hash_original_method = "F70C75CE8A3147FA6677C79F04CF4B02", hash_generated_method = "D0E832C0B2EF7AB5695D9591199C5161")
     public boolean enable() {
         try 
@@ -144,6 +149,7 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_236867484 =         new Blue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.000 -0400", hash_original_method = "DC1BB7EEB209838517C27214CEB71072", hash_generated_method = "432FD1A21A5A1F3B1C7CE99E84D6DC24")
     public boolean disable() {
         try 
@@ -166,6 +172,7 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_236867484 =         new Blue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.001 -0400", hash_original_method = "45FE79E8525553C566F03D519E5189F4", hash_generated_method = "07BF2263BAC66E71269921CA2CFF0C92")
     public String getAddress() {
         try 
@@ -188,6 +195,7 @@ String var540C13E9E156B687226421B24F2DF178_1372111249 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.002 -0400", hash_original_method = "AA5C06C383156A346DC521053F89AB2B", hash_generated_method = "F2F2D76E6DB90B0A350D730DBCCA137D")
     public String getName() {
         try 
@@ -240,6 +248,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1745016148 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.003 -0400", hash_original_method = "08F81801C25A11FE898E4D65E015413F", hash_generated_method = "59741371900B0360B8F2F6FCFF20955F")
     public boolean setName(String name) {
         addTaint(name.getTaint());
@@ -270,6 +279,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1745016148 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.004 -0400", hash_original_method = "76CF52E29182798DA67FD15A9B155F30", hash_generated_method = "5CEB29684D98BBDE2FC5B261BA29ABCD")
     public int getScanMode() {
         if(getState() != STATE_ON)        
@@ -401,6 +411,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1745016148 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.008 -0400", hash_original_method = "10268AD378D15FC8A51253E10EC3C6B2", hash_generated_method = "B9D7352B657CF65D674E3BDFC3C5E3CD")
     public boolean startDiscovery() {
         if(getState() != STATE_ON)        
@@ -430,6 +441,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1745016148 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.010 -0400", hash_original_method = "63E67EB5C61EED8D2B51A1BF56472E25", hash_generated_method = "844EA85CE80DE5945AC810EE92FB2B3B")
     public boolean cancelDiscovery() {
         if(getState() != STATE_ON)        
@@ -459,6 +471,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1745016148 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.011 -0400", hash_original_method = "C88946A48EEE076D7E3C1C6C5F371E49", hash_generated_method = "2E55BF93DCF74FF13634E323329BF91A")
     public boolean isDiscovering() {
         if(getState() != STATE_ON)        
@@ -488,6 +501,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1745016148 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.011 -0400", hash_original_method = "A20534464E90E0C8E439D633BB81432E", hash_generated_method = "51C8AE64CD9AC174D35DE61E69B42C79")
     public Set<BluetoothDevice> getBondedDevices() {
         if(getState() != STATE_ON)        
@@ -910,6 +924,7 @@ Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_8562257 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.031 -0400", hash_original_method = "7E4371B1FE17235BDA29BC99978F2247", hash_generated_method = "8A5DE5A8CA70649D1A2FF7FD54C6D1EA")
     public boolean getProfileProxy(Context context, BluetoothProfile.ServiceListener listener,
                                    int profile) {

@@ -95,6 +95,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 			"TLSv1"
 	};
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.829 -0400", hash_original_method = "BD80EAD073CED4ACABB1B92EBB481070", hash_generated_method = "61A3FAE21B49746705B2C029ACAAFB9F")
     protected  SipStackImpl() {
         super();
@@ -114,6 +115,7 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.854 -0400", hash_original_method = "31E9570F9C2C0C73DA51527B7C89A7AA", hash_generated_method = "5EFF6D89B21A28E4293C335089F555E6")
     public  SipStackImpl(Properties configurationProperties) throws PeerUnavailableException {
         this();
@@ -916,6 +918,7 @@ String var46CF8C589BF424F75B525BB7945D7C14_38985987 =         super.getHostAddre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.858 -0400", hash_original_method = "287349EDD4D46CE4DB7C5F6D8E2D772E", hash_generated_method = "66EB263EAA0D090B2C4549FA98BFB7A9")
     public java.util.Iterator getListeningPoints() {
 java.util.Iterator var4D981ED554566F59753BE5601AF226A4_354515586 =         this.listeningPoints.values().iterator();
@@ -937,6 +940,7 @@ java.util.Iterator var4D981ED554566F59753BE5601AF226A4_354515586 =         this.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.858 -0400", hash_original_method = "88A6DC9DED9CE5F7635E348CD4A3C5F8", hash_generated_method = "941CF60876183BFF95770A59A37998AA")
     public java.util.Iterator<SipProviderImpl> getSipProviders() {
 java.util.Iterator<SipProviderImpl> varBBD9EF8FEF4ABF5F5900D59FEB2D1D43_1464171136 =         this.sipProviders.iterator();

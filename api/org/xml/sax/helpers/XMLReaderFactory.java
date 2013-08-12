@@ -24,6 +24,7 @@ final public class XMLReaderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static XMLReader createXMLReader() throws SAXException {
         String        className = null;
         ClassLoader    loader = NewInstance.getClassLoader ();
@@ -59,6 +60,7 @@ final public class XMLReaderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static XMLReader createXMLReader(String className) throws SAXException {
         return loadClass (NewInstance.getClassLoader (), className);
     }

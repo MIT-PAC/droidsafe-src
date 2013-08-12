@@ -82,6 +82,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static MessageQueue myQueue() {
         return myLooper().mQueue;
     }

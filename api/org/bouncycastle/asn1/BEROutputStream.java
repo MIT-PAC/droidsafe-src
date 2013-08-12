@@ -20,7 +20,7 @@ public class BEROutputStream extends DEROutputStream {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.947 -0400", hash_original_method = "7A7F2C3481471D2C873255AD36ADBA85", hash_generated_method = "9597DF76516C61BB88051661D15E8A15")
     public void writeObject(
         Object    obj) throws IOException {

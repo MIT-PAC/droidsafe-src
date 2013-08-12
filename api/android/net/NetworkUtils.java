@@ -175,6 +175,7 @@ public class NetworkUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] makeStrings(Collection<InetAddress> addrs) {
         String[] result = new String[addrs.size()];
         int i = 0;

@@ -160,6 +160,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.235 -0400", hash_original_method = "D4457BF5780841D42A453C9EF4E52627", hash_generated_method = "8BF31EFF3F3CC93B393E7CC4A8155913")
     public StatusBarNotification clone() {
 StatusBarNotification varB772A3535461487A1581A4E8A6C22135_1453442249 =         new StatusBarNotification(this.pkg, this.id, this.tag,
@@ -172,6 +173,7 @@ StatusBarNotification varB772A3535461487A1581A4E8A6C22135_1453442249 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.235 -0400", hash_original_method = "8CD358CFA5A2F08AEF9168AA24337844", hash_generated_method = "290B704E50A3B68C343528F8CA39DB95")
     public String toString() {
 String var2D40DE0DA00F138A6FA942140A54F410_1158396944 =         "StatusBarNotification(package=" + pkg + " id=" + id + " tag=" + tag
@@ -225,6 +227,7 @@ String var2D40DE0DA00F138A6FA942140A54F410_1158396944 =         "StatusBarNotifi
     public static final Parcelable.Creator<StatusBarNotification> CREATOR
             = new Parcelable.Creator<StatusBarNotification>()
     {
+        @DSModeled(DSC.SAFE)
         public StatusBarNotification createFromParcel(Parcel parcel)
         {
             return new StatusBarNotification(parcel);

@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class SecurityClientList extends SIPHeaderList<SecurityClient> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.465 -0400", hash_original_method = "917A181365931F7A6837DEBD96805F45", hash_generated_method = "E0A52096EC1B851DD08D91D4333A641E")
     public  SecurityClientList() {
         super(SecurityClient.class, SecurityClientHeader.NAME);
@@ -15,6 +16,7 @@ public class SecurityClientList extends SIPHeaderList<SecurityClient> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.466 -0400", hash_original_method = "8CB3EC0B5802F634A5AAC136D83D14DA", hash_generated_method = "F6413A168A82ACB1F510DEC7753B5843")
     public Object clone() {
         SecurityClientList retval = new SecurityClientList();

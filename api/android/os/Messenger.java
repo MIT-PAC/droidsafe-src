@@ -84,7 +84,7 @@ IBinder varE29672B36B312FCEF89F2650279B2AD2_38271713 =         mTarget.asBinder(
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.667 -0400", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "2AF5B95FA771F65B9502042CB28848E4")
     public int hashCode() {
         int var015DBE14D40CCC902461F5EB4537F2D8_2075176353 = (mTarget.asBinder().hashCode());

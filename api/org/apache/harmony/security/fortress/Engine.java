@@ -19,6 +19,7 @@ public class Engine {
 
     private volatile ServiceCacheEntry serviceCache;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.974 -0400", hash_original_method = "197C44846842D871388F9BC9DA5E7C36", hash_generated_method = "E075FDC3EE78D0EB2810A12FFECF67F0")
     public  Engine(String service) {
         this.serviceName = service;
@@ -71,6 +72,7 @@ SpiAndProvider var4FD37FCABA311ED3E9B8D1F9B44E3BE2_2041609979 =         new SpiA
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.994 -0400", hash_original_method = "A7EA60582CEFDE50341F39C3F4FF4289", hash_generated_method = "036B2F2F38E7993F6F785C1ACFD5BABF")
     public Object getInstance(String algorithm, Provider provider, Object param) throws NoSuchAlgorithmException {
         addTaint(param.getTaint());

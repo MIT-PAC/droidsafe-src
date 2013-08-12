@@ -19,6 +19,7 @@ public class X9ECPoint extends ASN1Encodable {
 
     ECPoint p;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.360 -0400", hash_original_method = "D8A9B6BC21A3F338658632EA320E8353", hash_generated_method = "761FFCAF52EF07DD44194D08623A70BE")
     public  X9ECPoint(
         ECPoint p) {
@@ -28,6 +29,7 @@ public class X9ECPoint extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.361 -0400", hash_original_method = "62B905AD7CA2E17ED0AA9C97BE811516", hash_generated_method = "45B652F09751CF767E280B805C2FC864")
     public  X9ECPoint(
         ECCurve          c,
@@ -49,6 +51,7 @@ ECPoint var74E4690D9F2A026504928C017944E149_2035606040 =         p;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.361 -0400", hash_original_method = "C505CC97F230C74832134C935460DD57", hash_generated_method = "699387BAB4E3B9E3D1905D295EFC8D19")
     public DERObject toASN1Object() {
 DERObject var7350EF93798DCB7AA7CB91F6A5DC0F71_1460267553 =         new DEROctetString(p.getEncoded());

@@ -39,6 +39,7 @@ abstract class AbstractSessionContext implements SSLSessionContext {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.584 -0400", hash_original_field = "BA23DE027615123BDB3690D617C0A3EB", hash_generated_field = "5BF57BED3AD0AD3FD0B289A8ACE951DB")
 
     private final Map<ByteArray, SSLSession> sessions = new LinkedHashMap<ByteArray, SSLSession>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.584 -0400", hash_original_method = "50C1CC90C9158408C79488CFE262DC7E", hash_generated_method = "BAE616B55944ED5CF16B043FC04F885E")
         @Override
         protected boolean removeEldestEntry(
@@ -54,6 +55,7 @@ abstract class AbstractSessionContext implements SSLSessionContext {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.863 -0400", hash_original_method = "B86A9D4A1D1D4BFB528024933586DA07", hash_generated_method = "2BA638231C8AD53D155EB67E486801A1")
       AbstractSessionContext(int maximumSize, int timeout) {
         this.maximumSize = maximumSize;
@@ -178,6 +180,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_54913296 =         new Enumerati
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.868 -0400", hash_original_method = "8615761B2210F074D79DA775AC19AA71", hash_generated_method = "B65EE0CB0AAF519D51F592B9833FAAA0")
     protected void trimToSize() {
         synchronized
@@ -258,6 +261,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_54913296 =         new Enumerati
     protected abstract void sessionRemoved(SSLSession session);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.870 -0400", hash_original_method = "ACCBBC1F3ACDB7C97A3E02614B766E1C", hash_generated_method = "E32BDC099E178DAC2DECF9DB58D45C36")
     public final void setSessionCacheSize(int size) throws IllegalArgumentException {
         if(size < 0)        
@@ -333,7 +337,7 @@ for(Certificate cert : certs)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.873 -0400", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "B550CA0925FE4C4192AD7AE619DE4FFB")
      SSLSession toSession(byte[] data, String host, int port) {
         addTaint(port);
@@ -379,7 +383,7 @@ SSLSession var540C13E9E156B687226421B24F2DF178_736592433 =             null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.876 -0400", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "E2162FC62B3D01A26585EE79E85AD654")
     public SSLSession getSession(byte[] sessionId) {
         addTaint(sessionId[0]);

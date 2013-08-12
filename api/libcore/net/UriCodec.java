@@ -13,6 +13,7 @@ import java.nio.charset.Charsets;
 
 public abstract class UriCodec {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.874 -0400", hash_original_method = "4BF02B8F3FC732245257150462C2453A", hash_generated_method = "4BF02B8F3FC732245257150462C2453A")
     public UriCodec ()
     {
@@ -24,6 +25,7 @@ public abstract class UriCodec {
     protected abstract boolean isRetained(char c);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.875 -0400", hash_original_method = "F141B1647AA9A55C59B7CEA66DF70E00", hash_generated_method = "A74DB85FA925A7A05AD4486616E5F88D")
     public final String validate(String uri, int start, int end, String name) throws URISyntaxException {
         addTaint(name.getTaint());
@@ -75,6 +77,7 @@ String var83F838AFDFF49EDFAA9A2F840A0E32DF_1048973455 =         uri.substring(st
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void validateSimple(String s, String legal) throws URISyntaxException {
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -147,6 +150,7 @@ for(int i = 0;i < s.length();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.878 -0400", hash_original_method = "F07BB214CFA4248E3F52B7C20E4073AE", hash_generated_method = "0AE2B01F40F0ECC9F6566CAEB929B369")
     public final String encode(String s, Charset charset) {
         addTaint(charset.getTaint());
@@ -163,6 +167,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1247271125 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.879 -0400", hash_original_method = "718B3A047F245697E7F44FEAF3256360", hash_generated_method = "8BDDFF8EBD1A839191A04A74A2FC7809")
     public final void appendEncoded(StringBuilder builder, String s) {
         addTaint(s.getTaint());
@@ -173,6 +178,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1247271125 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.879 -0400", hash_original_method = "9FEB097DD7C595E776FA816DF15836E6", hash_generated_method = "FAFEDADF6AE1359D5FE5498461C980DB")
     public final void appendPartiallyEncoded(StringBuilder builder, String s) {
         addTaint(s.getTaint());
@@ -183,6 +189,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1247271125 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String decode(String s, boolean convertPlus, Charset charset) {
         if (s.indexOf('%') == -1 && (!convertPlus || s.indexOf('+') == -1)) {
             return s;
@@ -233,6 +240,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1247271125 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String decode(String s) {
         return decode(s, false, Charsets.UTF_8);
     }

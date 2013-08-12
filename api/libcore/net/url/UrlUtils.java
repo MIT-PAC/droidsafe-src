@@ -17,6 +17,7 @@ public final class UrlUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String canonicalizePath(String path, boolean discardRelativePrefix) {
         int segmentStart = 0;
         int deletableSegments = 0;
@@ -55,6 +56,7 @@ public final class UrlUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String authoritySafePath(String authority, String path) {
         if (authority != null && !authority.isEmpty() && !path.isEmpty() && !path.startsWith("/")) {
             return "/" + path;
@@ -63,7 +65,7 @@ public final class UrlUtils {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String getSchemePrefix(String spec) {
         int colon = spec.indexOf(':');
         if (colon < 1) {

@@ -17,6 +17,7 @@ public final class AlternativeName extends ExtensionValue {
 
     private GeneralNames alternativeNames;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.802 -0400", hash_original_method = "1E01F580CB089394F15961B5A9E514F5", hash_generated_method = "32210F953BEB66A9F259D9B8FC9AD15D")
     public  AlternativeName(boolean which, byte[] encoding) throws IOException {
         super(encoding);

@@ -406,6 +406,7 @@ Token var4F2F48FA7E0E08F3309FEA0E4F1D3813_1116266735 =         this.currentMatch
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.494 -0400", hash_original_method = "F94CBEE0A9F2E4712D2EBE65CDCE3A2F", hash_generated_method = "8D925A757A9CB06DCAFAEB97DB93949B")
     public boolean startsSafeToken() {
         try 
@@ -513,6 +514,7 @@ String var540C13E9E156B687226421B24F2DF178_1154880251 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.495 -0400", hash_original_method = "888B4B5B30F6453059C386257A5A6804", hash_generated_method = "EB89B3E8DF836BF562AB103748BF92A8")
     public String ttokenSafe() {
         int startIdx = ptr;
@@ -630,6 +632,7 @@ switch(validChar){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.498 -0400", hash_original_method = "17D25E29F0B0C1524A5E10AF751238A3", hash_generated_method = "C0C96D758F025F2C6A6100DB19F4B6FB")
     public String quotedString() throws ParseException {
         int startIdx = ptr + 1;
@@ -687,6 +690,7 @@ String var99047E80C8D908E7450B95CA048E9A1B_2094692887 =         buffer.substring
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.498 -0400", hash_original_method = "0DEFD663D479F88E7A114CE703AF8835", hash_generated_method = "2A8B5ED1F07ED40924A52CFCCAF2E886")
     public String comment() throws ParseException {
         StringBuffer retval = new StringBuffer();
@@ -742,6 +746,7 @@ String var1B324365A764C077A55854483509F4AB_63772602 =         retval.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.499 -0400", hash_original_method = "86F26DE68AB39CE9DEE1E486630D72BD", hash_generated_method = "0B56F780EE001BEB9DF59C5FBFD9240E")
     public String byteStringNoSemicolon() {
         StringBuffer retval = new StringBuffer();
@@ -790,6 +795,7 @@ String var1B324365A764C077A55854483509F4AB_505165004 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.499 -0400", hash_original_method = "B2A0AA5C97E9078316CA6FEBE65DB0C3", hash_generated_method = "5235B0B1E85B186686139B46BB8CC4E7")
     public String byteStringNoSlash() {
         StringBuffer retval = new StringBuffer();
@@ -1004,6 +1010,7 @@ String var80E0A1BD12E9EB1E52F54BB94AE35FBC_719064184 =         buffer.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.500 -0400", hash_original_method = "720A9C8698AD8EBEF63DE1F048944846", hash_generated_method = "7B75C943CEB9264BFA78D6088E2DB5C7")
     public String getString(char c) throws ParseException {
         addTaint(c);

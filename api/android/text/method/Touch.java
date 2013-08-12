@@ -169,6 +169,7 @@ public class Touch {
 
         public boolean mUsed;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.848 -0400", hash_original_method = "08E421E9322E778CECBC733D54E45544", hash_generated_method = "66FA1179FCC318BE27520D77EFA0DCE6")
         public  DragState(float x, float y, int scrollX, int scrollY) {
             mX = x;

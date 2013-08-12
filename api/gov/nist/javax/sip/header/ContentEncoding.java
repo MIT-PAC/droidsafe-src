@@ -14,6 +14,7 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
 
     protected String contentEncoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.232 -0400", hash_original_method = "AF3A83AEFF326F1AB1D055130F5C4343", hash_generated_method = "484568D4CE2DAF62679DC5CF40341916")
     public  ContentEncoding() {
         super(CONTENT_ENCODING);
@@ -21,6 +22,7 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.232 -0400", hash_original_method = "4F763B16EA587AFDD37717E0DDC46D04", hash_generated_method = "FE4323D4242D23A5C0F73B251A58E683")
     public  ContentEncoding(String enc) {
         super(CONTENT_ENCODING);
@@ -52,6 +54,7 @@ String varB77403BF8D1FE544589F5EE718B4AD53_1939077777 =         contentEncoding;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.233 -0400", hash_original_method = "250F948E1BF6921E6DE1D81CBA749729", hash_generated_method = "6EB923D25B29706303E8CC02C0201946")
     public void setEncoding(String encoding) throws ParseException {
         if(encoding == null)        

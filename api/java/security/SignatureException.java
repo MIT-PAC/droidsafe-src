@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class SignatureException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.521 -0400", hash_original_method = "1A64E23BD4BC60E25E0621B283BA1364", hash_generated_method = "C71B9CE6B395B0E57D426F180728D6CC")
     public  SignatureException(String msg) {
         super(msg);
@@ -15,6 +16,7 @@ public class SignatureException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.521 -0400", hash_original_method = "FC81C3C47A9C38543897BA92BDE9ED63", hash_generated_method = "9B6C915C21DA34F6FA6FCE12975D4CE6")
     public  SignatureException() {
         // ---------- Original Method ----------
@@ -30,6 +32,7 @@ public class SignatureException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.522 -0400", hash_original_method = "3352DA5C6676595EED2C0C966A19B61C", hash_generated_method = "895EECBC965475F068EB6F442AE732E8")
     public  SignatureException(Throwable cause) {
         super(cause);

@@ -12,6 +12,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class Path extends gov.nist.javax.sip.header.AddressParametersHeader implements PathHeader, SIPHeaderNamesIms, ExtensionHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.361 -0400", hash_original_method = "1A5DC98D9C587097429AD2D82BB7A094", hash_generated_method = "9E806A6AFF9F5E8AABFBB957AB3E2305")
     public  Path(AddressImpl address) {
         super(NAME);
@@ -22,6 +23,7 @@ public class Path extends gov.nist.javax.sip.header.AddressParametersHeader impl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.362 -0400", hash_original_method = "1037FC87002CAE3F016A3DA3F4CF1390", hash_generated_method = "6BA54447352AEF48A71AC6B629E6A91B")
     public  Path() {
         super(NAME);
@@ -29,6 +31,7 @@ public class Path extends gov.nist.javax.sip.header.AddressParametersHeader impl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.362 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "35EE9F187B8FA6EA1138142CE69EBE2D")
     public String encodeBody() {
         StringBuffer retval = new StringBuffer();
@@ -61,6 +64,7 @@ String var1B324365A764C077A55854483509F4AB_83315632 =         retval.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.363 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "CD630894187AF173382C2C9AF178FB36")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

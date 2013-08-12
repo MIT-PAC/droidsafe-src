@@ -134,6 +134,7 @@ String varBC219BAAC41CE19068373FABD4054E59_1727731650 =                 token.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void checkToken( String token ) throws ParseException {
         if (token == null || token.length()==0 ) {
             throw new ParseException("null or empty token", -1 );

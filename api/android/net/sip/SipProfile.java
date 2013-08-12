@@ -93,6 +93,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.636 -0400", hash_original_method = "0F86B1263AA1167A9BA85D0781C26BDD", hash_generated_method = "891BEF1CDED0A49E8CAAE48C372D1BDC")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -147,6 +148,7 @@ SipURI var95FDA4C63539A7F6A3372CE48866EE18_826765425 =         (SipURI) mAddress
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.637 -0400", hash_original_method = "8967C0A1855BD4ECE9D4EFBDFCF47E43", hash_generated_method = "12BA629FB2C94A228CB10DF81EBA7D14")
     public String getUriString() {
         if(!TextUtils.isEmpty(mProxyAddress))        
@@ -177,6 +179,7 @@ Address var86CD3BA5FA0F42F72E695A9A747D1E23_2128047423 =         mAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.637 -0400", hash_original_method = "986E0B7E655AC166DA3BC65E473D37F3", hash_generated_method = "241FDD8A82CFB9555305DFB9592065F4")
     public String getDisplayName() {
 String varCA247D4070EBA69E293EDE228C7016A5_1261595251 =         mAddress.getDisplayName();
@@ -187,6 +190,7 @@ String varCA247D4070EBA69E293EDE228C7016A5_1261595251 =         mAddress.getDisp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.638 -0400", hash_original_method = "5CC4F03701178BF5DF2B7731C175F0C0", hash_generated_method = "189EFDEAFB6DD234A388BA7FDD6E5D53")
     public String getUserName() {
 String var2DC509A5BDF6D016393D388560037066_5437553 =         getUri().getUser();
@@ -356,6 +360,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_499356423 =         this;
         }
         
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.643 -0400", hash_original_method = "6381C04E2A4A8813FA59E1834CF9FF37", hash_generated_method = "6F8CDEA5405203C57CFFF2041E8FE042")
         public  Builder(SipProfile profile) {
             if(profile == null)            
@@ -396,6 +401,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_499356423 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.644 -0400", hash_original_method = "64C9112A2795748CF233F7AC81823050", hash_generated_method = "BF295F522BD853BD50009B44226FFED6")
         public  Builder(String uriString) throws ParseException {
             addTaint(uriString.getTaint());
@@ -431,6 +437,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_499356423 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.645 -0400", hash_original_method = "75E755B13696F99D7736C0DDC72A28FA", hash_generated_method = "FA92A886C40B9BFA4D322B30018DF62B")
         public  Builder(String username, String serverDomain) throws ParseException {
             if((username == null) || (serverDomain == null))            
@@ -468,6 +475,7 @@ String varEE08D80023883C80E1930E2668767591_1858781912 =             (uriString.t
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.646 -0400", hash_original_method = "18250D1818A49995026FA15C7D9E3273", hash_generated_method = "5898507A09E44A0AC7FC5F9E01AEEB95")
         public Builder setAuthUserName(String name) {
             mProfile.mAuthUserName = name;
@@ -480,6 +488,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1938952657 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.647 -0400", hash_original_method = "296C55D6980E7D56ABE421835C15F41F", hash_generated_method = "50C6043FFC6506707FA8EB10C186E986")
         public Builder setProfileName(String name) {
             mProfile.mProfileName = name;
@@ -492,6 +501,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_32902625 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.647 -0400", hash_original_method = "BC6826AF1B9FCC986900D7A0D38FE546", hash_generated_method = "1F6D098F1A1F1F57DA28663C59D468D7")
         public Builder setPassword(String password) {
             addTaint(password.getTaint());
@@ -505,6 +515,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1578282220 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.648 -0400", hash_original_method = "F3098A99A5C246234AF1DF8489EE5D8A", hash_generated_method = "4ACFE3C963B8C91A326A9A68D6B2A71B")
         public Builder setPort(int port) throws IllegalArgumentException {
             if((port > 65535) || (port < 1000))            
@@ -610,6 +621,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1743641785 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.650 -0400", hash_original_method = "9D6052B0DC59ACBDB83E3EF9051B1CBF", hash_generated_method = "99E748FFDB14CE72383F040F95B9751C")
         public SipProfile build() {
             mProfile.mPassword = mUri.getUserPassword();
@@ -676,7 +688,8 @@ SipProfile var2628D2F9765045D198E63F41D85B8E30_1112191072 =             mProfile
 
     public static final Parcelable.Creator<SipProfile> CREATOR =
             new Parcelable.Creator<SipProfile>() {
-                public SipProfile createFromParcel(Parcel in) {
+                @DSModeled(DSC.SAFE)
+        public SipProfile createFromParcel(Parcel in) {
                     return new SipProfile(in);
                 }
 

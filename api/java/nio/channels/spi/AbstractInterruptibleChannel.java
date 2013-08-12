@@ -23,6 +23,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.733 -0400", hash_original_field = "EABFBB4303F4F38DE6361EA110D0C225", hash_generated_field = "3241E21A4D9EDA17FAE674120F4A600D")
 
     private final Runnable interruptAndCloseRunnable = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.733 -0400", hash_original_method = "AE7E9C29A12236996DA74E23561B6760", hash_generated_method = "A82EC148D3A353CBA856B48EDD1EC897")
         @Override
         public void run() {
@@ -63,7 +64,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.316 -0400", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "8287E10D9F12C89A1439F431F5E5D42D")
     @Override
     public final void close() throws IOException {

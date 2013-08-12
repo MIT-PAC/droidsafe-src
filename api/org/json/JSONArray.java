@@ -66,6 +66,7 @@ public class JSONArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.247 -0400", hash_original_method = "2C5D59A27A6C313C8872AC341D9D75C0", hash_generated_method = "3378ED80D83483144E6722F83CA13B24")
     public int length() {
         int var45ED98251535301233938FEAC38EF89B_1268419864 = (values.size());
@@ -76,6 +77,7 @@ public class JSONArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.247 -0400", hash_original_method = "F9CCA0A17EFD82FAE33507862E5A944E", hash_generated_method = "FBB5E0588021B80378F52E4ECD8E1066")
     public JSONArray put(boolean value) {
         addTaint(value);
@@ -115,6 +117,7 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_68602618 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.248 -0400", hash_original_method = "4C6CD72BE64F436E9F52C8D610641FF3", hash_generated_method = "EEB117104B4F387021D13B37DD5ED60D")
     public JSONArray put(long value) {
         addTaint(value);
@@ -128,6 +131,7 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_194370073 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.248 -0400", hash_original_method = "1D7645A229713F67337A58F8FF42D21C", hash_generated_method = "FAC0656A0E2B46374BF4A564B826D17D")
     public JSONArray put(Object value) {
         addTaint(value.getTaint());
@@ -141,6 +145,7 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_559238665 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.249 -0400", hash_original_method = "A8D9FD0A2FF792A00A29218BCE37DF7B", hash_generated_method = "4E0A9A6C0CB0B9613CD1D1EC01DDF802")
     public JSONArray put(int index, boolean value) throws JSONException {
         addTaint(value);
@@ -153,6 +158,7 @@ JSONArray var61C7A82145F58415AC9751EC1E113EA9_154269401 =         put(index, (Bo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.249 -0400", hash_original_method = "EB27801A89D2451AEBF6D71C639BF890", hash_generated_method = "E9E3D260A24D599B1B4EF35C9D526B97")
     public JSONArray put(int index, double value) throws JSONException {
         addTaint(value);
@@ -165,6 +171,7 @@ JSONArray varD2648A584BB78028772896479DD96F21_639000144 =         put(index, (Do
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.249 -0400", hash_original_method = "95364EFCBA8D50C1E1F228177A921191", hash_generated_method = "FDEFEBA7ED420E39A08878C6D38D3CF4")
     public JSONArray put(int index, int value) throws JSONException {
         addTaint(value);
@@ -177,6 +184,7 @@ JSONArray varF18272C2716313036EEA794AD07A8D95_564956634 =         put(index, (In
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.250 -0400", hash_original_method = "3F2291B7B045A442A1A296D04FF74C3B", hash_generated_method = "ED64E1EB95D7FD03D42CAEF317CFE5F6")
     public JSONArray put(int index, long value) throws JSONException {
         addTaint(value);
@@ -218,6 +226,7 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_1568699545 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.250 -0400", hash_original_method = "075BEAC25684C4B47CFBC04F9272F423", hash_generated_method = "7E25DC8BBBA62B21DA75B04FB5B24BB6")
     public boolean isNull(int index) {
         addTaint(index);
@@ -266,6 +275,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_803540999 =             value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.251 -0400", hash_original_method = "3B6F9D3E5AFD1AB6175A8B6BF8959553", hash_generated_method = "0C21B02A89CA62C5CBE42F711F383608")
     public Object opt(int index) {
         addTaint(index);
@@ -286,6 +296,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.258 -0400", hash_original_method = "24E6A67B676FCC7270A02518A61B22A2", hash_generated_method = "69BAC835BFCF2ADC05D4753A2AF2DCD6")
     public boolean getBoolean(int index) throws JSONException {
         addTaint(index);
@@ -310,6 +321,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.259 -0400", hash_original_method = "A304D16233AC57FB2DDAD429570460E8", hash_generated_method = "71B6EFC7A850633813A194643F9471D4")
     public boolean optBoolean(int index) {
         addTaint(index);
@@ -321,6 +333,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.259 -0400", hash_original_method = "D837DFEA35C0469693745E1088FDEE2E", hash_generated_method = "A23A5F2070AB9CFC41F1DF4597892B0D")
     public boolean optBoolean(int index, boolean fallback) {
         addTaint(fallback);
@@ -337,6 +350,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.265 -0400", hash_original_method = "6D74AEBF7F111E364BD2DB0E7727FAF6", hash_generated_method = "AE5270E0E2CCD2AC641F7796A726E275")
     public double getDouble(int index) throws JSONException {
         addTaint(index);
@@ -361,6 +375,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.266 -0400", hash_original_method = "6ACFD4932D58B1B1AAD30FC39935EAD2", hash_generated_method = "D2C91C021A225DB100143DECD98170FA")
     public double optDouble(int index) {
         addTaint(index);
@@ -372,6 +387,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.267 -0400", hash_original_method = "0BBC192CCA032D1199B25DAD0E3977E8", hash_generated_method = "7F890600DB91B690152382B95DAB1524")
     public double optDouble(int index, double fallback) {
         addTaint(fallback);
@@ -388,6 +404,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.274 -0400", hash_original_method = "853222C548896141F9D1D8AF0338F5C4", hash_generated_method = "56B563F0D1537B2B84CBF42FFB50C7A5")
     public int getInt(int index) throws JSONException {
         addTaint(index);
@@ -412,6 +429,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.275 -0400", hash_original_method = "7CF76FC4FBEA846C37B11EB5D3437F82", hash_generated_method = "8F4AA829A065846D168A0D7BAA7DE2E3")
     public int optInt(int index) {
         addTaint(index);
@@ -423,6 +441,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.276 -0400", hash_original_method = "5DB279774D0456981D1F7F001BBC18BA", hash_generated_method = "5C53496F5C6F04703D31C96A87A2CEFD")
     public int optInt(int index, int fallback) {
         addTaint(fallback);
@@ -439,6 +458,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.286 -0400", hash_original_method = "56F71130ADC070DD70D4CA02CA42F381", hash_generated_method = "8E25B57EF8519564E3CA4F7CEE0CED9E")
     public long getLong(int index) throws JSONException {
         addTaint(index);
@@ -463,6 +483,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.287 -0400", hash_original_method = "2BBCBA9E354F863B816F565C8B8E92CB", hash_generated_method = "C949A1662E590E7190C67E89115B4211")
     public long optLong(int index) {
         addTaint(index);
@@ -474,6 +495,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.288 -0400", hash_original_method = "81CF1715684C5D206C6FD7331990B13E", hash_generated_method = "6B01328B52986C598E476F0C8D4FFEC4")
     public long optLong(int index, long fallback) {
         addTaint(fallback);
@@ -490,6 +512,7 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_749529514 =         values.get(index)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.297 -0400", hash_original_method = "7F7D1138F84D636CF19BD9329533631C", hash_generated_method = "C1CA708844FA2ACACE0A13E2E1E204C3")
     public String getString(int index) throws JSONException {
         addTaint(index);
@@ -514,6 +537,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1025089925 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.298 -0400", hash_original_method = "C31202553EDC4F0A1E4B21CAD06ABEC4", hash_generated_method = "D83F4FBDB93EFAB5E64C106B4AACA272")
     public String optString(int index) {
         addTaint(index);
@@ -525,6 +549,7 @@ String var2A75D9FFD03F8140445734C02AD94794_552234192 =         optString(index, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.298 -0400", hash_original_method = "97366D23F93DD4ABD9E565325F7585B9", hash_generated_method = "2DF1A6265C8E5E60939885FE6CBC88F8")
     public String optString(int index, String fallback) {
         addTaint(fallback.getTaint());
@@ -541,6 +566,7 @@ String varB29C31EA7BA163F0F2187995ADA1E48E_198365971 =         result != null ? 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.308 -0400", hash_original_method = "173A28EF43B750DEF6376D4E3E2F6DD2", hash_generated_method = "1583C87C3938B57825F1664A671481B0")
     public JSONArray getJSONArray(int index) throws JSONException {
         addTaint(index);
@@ -567,6 +593,7 @@ JSONArray varA31A6C9B348464F1BAAA1B1373E54400_1917228608 =             (JSONArra
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.309 -0400", hash_original_method = "CBF30564657B4CB07ABBCF29084A5653", hash_generated_method = "A78DCE47E9D5DF6F17ACAF640B60DAFA")
     public JSONArray optJSONArray(int index) {
         addTaint(index);
@@ -580,6 +607,7 @@ JSONArray var37D15C802F10CA15BA7D983DBF1DB879_2006910764 =         object instan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.320 -0400", hash_original_method = "EA5692C9D71198B472B917468564A78A", hash_generated_method = "8BBADBFA8164AE0A9498D05CDE972F5A")
     public JSONObject getJSONObject(int index) throws JSONException {
         addTaint(index);
@@ -606,6 +634,7 @@ JSONObject varA963CC0194E284A145B65210ED1E5C63_1789935741 =             (JSONObj
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.321 -0400", hash_original_method = "871DF64EA3EF0F09C790BD6ABB0AB209", hash_generated_method = "9BCDA77AFAF2841A2977E66ECA884ED7")
     public JSONObject optJSONObject(int index) {
         addTaint(index);
@@ -619,6 +648,7 @@ JSONObject varE8B2189D470FA34838D00114FC8343E3_878938952 =         object instan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.322 -0400", hash_original_method = "CEEBF6D79C62E432FE9EF262922223A6", hash_generated_method = "8EDF7D6308462A0F52343D1693104E51")
     public JSONObject toJSONObject(JSONArray names) throws JSONException {
         addTaint(names.getTaint());
@@ -652,6 +682,7 @@ JSONObject varDC838461EE2FA0CA4C9BBB70A15456B0_984524759 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.322 -0400", hash_original_method = "818E08743989593DA274993EAEC63482", hash_generated_method = "AF0C4D71EEE6DD0CBB90CCA240A55385")
     public String join(String separator) throws JSONException {
         addTaint(separator.getTaint());
@@ -683,6 +714,7 @@ String var2127C9CDB37C196CD892BED0F39DA194_2088465176 =         stringer.out.toS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.323 -0400", hash_original_method = "CC6BE78472EEEAF64E530CA9F9B14BB5", hash_generated_method = "73926439D7568B4D344C1C6194152AC3")
     @Override
     public String toString() {
@@ -711,6 +743,7 @@ String var540C13E9E156B687226421B24F2DF178_638470559 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.323 -0400", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "19A0A242E25591A706F3B13A792C5F23")
     public String toString(int indentSpaces) throws JSONException {
         addTaint(indentSpaces);
@@ -756,6 +789,7 @@ for(Object value : values)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.324 -0400", hash_original_method = "5391F86F0DF47CDF0FABD2AA1BAE9E60", hash_generated_method = "F2FF44E0AEEA75E6A231F6BE1DEA4074")
     @Override
     public int hashCode() {

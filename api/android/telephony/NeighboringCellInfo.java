@@ -33,6 +33,7 @@ public class NeighboringCellInfo implements Parcelable {
 
     private int mNetworkType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.126 -0400", hash_original_method = "BD76A3213F8AC49348CAF06FA32CACCC", hash_generated_method = "8998E5B0F109CED8D6A58E23270AEBB9")
     @Deprecated
     public  NeighboringCellInfo() {
@@ -50,6 +51,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.126 -0400", hash_original_method = "19B23EA98615F51662865132429A9393", hash_generated_method = "1E061B23AF443E35C2DB8FFD1015E187")
     @Deprecated
     public  NeighboringCellInfo(int rssi, int cid) {
@@ -61,6 +63,7 @@ public class NeighboringCellInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.130 -0400", hash_original_method = "F57F6CF0E582113B7CF21CF2AAAD28CD", hash_generated_method = "ADE3B4D50248FE9E96E5F042CC0D9EF1")
     public  NeighboringCellInfo(int rssi, String location, int radioType) {
         mRssi = rssi;
@@ -281,6 +284,7 @@ String var2460B846747F8B22185AD8BE722266A5_1421670504 =         sb.toString();
 
     public static final Parcelable.Creator<NeighboringCellInfo> CREATOR
     = new Parcelable.Creator<NeighboringCellInfo>() {
+        @DSModeled(DSC.SAFE)
         public NeighboringCellInfo createFromParcel(Parcel in) {
             return new NeighboringCellInfo(in);
         }

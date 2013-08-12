@@ -1235,6 +1235,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.816 -0400", hash_original_method = "750E0A25CDE7A09F3C919B08C5243F0D", hash_generated_method = "9B5CB58A68FA10E5D74FA1DA487C9FB2")
         @Override
         public void finalize() {
@@ -1280,6 +1281,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     public static final Parcelable.Creator<Bitmap> CREATOR
             = new Parcelable.Creator<Bitmap>() {
         
+        @DSModeled(DSC.SAFE)
         public Bitmap createFromParcel(Parcel p) {
             Bitmap bm = nativeCreateFromParcel(p);
             if (bm == null) {

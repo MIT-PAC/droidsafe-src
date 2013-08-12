@@ -351,6 +351,7 @@ DiskLruCache var02A6FDEB64F19DB584E60A103B9AE5CB_372499827 =         cache;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.403 -0400", hash_original_method = "AFAC31322E1EE7F2799E824F8557136B", hash_generated_method = "982331C993FF0C35A247764B922A7D7F")
     synchronized void trackResponse(ResponseSource source) {
         addTaint(source.getTaint());

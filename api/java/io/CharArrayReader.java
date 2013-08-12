@@ -23,6 +23,7 @@ public class CharArrayReader extends Reader {
 
     protected int count;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.512 -0400", hash_original_method = "6DA04233D2F41366A5B785CAFAB5785D", hash_generated_method = "9D431D2D4B8EBE9BACF7AB6051854539")
     public  CharArrayReader(char[] buf) {
         this.buf = buf;
@@ -59,6 +60,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.514 -0400", hash_original_method = "D1485373461621933BC43F45AD6A923E", hash_generated_method = "FDB89C61612626CF8A25C148DFEE2D52")
     @Override
     public void close() {
@@ -100,6 +102,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.515 -0400", hash_original_method = "364865576D00D1903D5FAEF3F67610B8", hash_generated_method = "3763EEE20F492F15A56B0410851C5AE3")
     @Override
     public void mark(int readLimit) throws IOException {
@@ -145,6 +148,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.516 -0400", hash_original_method = "81B0DFE29130C0DF55A1485815BBFE58", hash_generated_method = "43342D39E471B904E954AD5433F715C6")
     @Override
     public int read() throws IOException {
@@ -172,6 +176,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.517 -0400", hash_original_method = "D326846A8F32FE2907A115981466F659", hash_generated_method = "A0EA52E5630DDEB265BDCF5673596DEE")
     @Override
     public int read(char[] buffer, int offset, int len) throws IOException {
@@ -210,6 +215,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.517 -0400", hash_original_method = "ACF01B5A9581EC6A7FB489059F8F6839", hash_generated_method = "F315F8B837985048A81F4F140DBB0229")
     @Override
     public boolean ready() throws IOException {
@@ -228,6 +234,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.518 -0400", hash_original_method = "8831F819121D6F1C65C36C6F61A61062", hash_generated_method = "7CA9920E1397BD77EA56CF95F724CD38")
     @Override
     public void reset() throws IOException {
@@ -244,6 +251,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.518 -0400", hash_original_method = "204384BC4BAAF8636F71AE068D63C20F", hash_generated_method = "14DF107F57A46F4F4B3D2030F978A3CE")
     @Override
     public long skip(long charCount) throws IOException {

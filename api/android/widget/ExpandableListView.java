@@ -217,7 +217,7 @@ for(int i = 0, childFlPos = mFirstPosition - headerViewsCount;i < childCount;i++
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.498 -0400", hash_original_method = "D5F058A591B90F6E54D4D617313791EB", hash_generated_method = "610C1668F743DEAA4C486876FA99DCC4")
     private Drawable getIndicator(PositionMetadata pos) {
         addTaint(pos.getTaint());
@@ -380,7 +380,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "A9D0233B5C169CC66750AD88D31A38E9", hash_generated_method = "F96CE6C85C444F7E1EFF067C454C8380")
     private boolean isHeaderOrFooterPosition(int position) {
         addTaint(position);
@@ -394,7 +394,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "8FB53CC37B504290AC6948A7A815A683", hash_generated_method = "990A2CC506EF5A76BF28C4AE27229175")
     private int getFlatPositionForConnector(int flatListPosition) {
         addTaint(flatListPosition);
@@ -406,7 +406,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "D8821ADD18913687E76F2B3166416BE8", hash_generated_method = "2F97073096076724328AF199A0B418BE")
     private int getAbsoluteFlatPosition(int flatListPosition) {
         addTaint(flatListPosition);

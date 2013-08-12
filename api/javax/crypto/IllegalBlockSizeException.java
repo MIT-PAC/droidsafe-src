@@ -11,6 +11,7 @@ import java.security.GeneralSecurityException;
 
 public class IllegalBlockSizeException extends GeneralSecurityException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.199 -0400", hash_original_method = "861F6F81DB957F4D77B1EC6AAE4C23A3", hash_generated_method = "0BBC40120A5249158AD39AFDE295728B")
     public  IllegalBlockSizeException(String msg) {
         super(msg);

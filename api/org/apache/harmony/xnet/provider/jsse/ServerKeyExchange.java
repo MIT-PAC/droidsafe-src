@@ -128,6 +128,7 @@ public class ServerKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toUnsignedByteArray(BigInteger bi) {
         if (bi == null) {
             return null;

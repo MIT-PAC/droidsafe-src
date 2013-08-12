@@ -62,6 +62,7 @@ public class Package implements AnnotatedElement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.415 -0400", hash_original_method = "1D0B4DB439BD39BE82415F0E494CFB63", hash_generated_method = "686D6C770160E2E9635418430D737165")
     @SuppressWarnings("unchecked")
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {

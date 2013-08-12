@@ -33,6 +33,7 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.969 -0400", hash_original_method = "D75087D014852658987FF99D82A818E7", hash_generated_method = "ED22A77DBCDF12909424D982E1B4C1E1")
     public void init(
         KeyGenerationParameters param) {
@@ -47,6 +48,7 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.970 -0400", hash_original_method = "BE753751E7356A8E17BBC3B84C55A0A8", hash_generated_method = "C59017772C5FA165E8DB8B0B07AD0E0A")
     public AsymmetricCipherKeyPair generateKeyPair() {
         BigInteger n = params.getN();

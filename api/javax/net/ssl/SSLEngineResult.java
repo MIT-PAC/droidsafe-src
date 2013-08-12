@@ -21,6 +21,7 @@ public class SSLEngineResult {
 
     private int bytesProduced;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.704 -0400", hash_original_method = "7E2A70A53EA60FD8E9743686AFF107DB", hash_generated_method = "3EE9E0CDF6E7F1FE40B33D1B1877FA9C")
     public  SSLEngineResult(SSLEngineResult.Status status,
             SSLEngineResult.HandshakeStatus handshakeStatus, int bytesConsumed, int bytesProduced) {
@@ -116,6 +117,7 @@ HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1020062299 =         handsha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.705 -0400", hash_original_method = "FF10D49A46BF312B9918894EBDEF7098", hash_generated_method = "CB74B72A02D8455DC6839EAD1429650D")
     @Override
     public String toString() {

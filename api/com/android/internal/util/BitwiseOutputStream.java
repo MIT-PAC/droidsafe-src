@@ -31,6 +31,7 @@ public class BitwiseOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.635 -0400", hash_original_method = "72E6824355C9DBC273758F3BBD7B1F36", hash_generated_method = "E8EB08C6FE932CB4E3C29B04903FE853")
     public byte[] toByteArray() {
         int len = (mPos >>> 3) + ((mPos & 0x07) > 0 ? 1 : 0);
@@ -64,6 +65,7 @@ public class BitwiseOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.637 -0400", hash_original_method = "5E02E1586BFD98056E8E0E2C4C1BAAF7", hash_generated_method = "FF34A3B6B04D013F8C84D8F13303AF47")
     public void write(int bits, int data) throws AccessException {
         if((bits < 0) || (bits > 8))        
@@ -118,6 +120,7 @@ for(int i = 0;i < arr.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.640 -0400", hash_original_method = "8EBD7575DC6E636356E0A413FE046F9F", hash_generated_method = "FE4673D796D119D8C6BA5A110C594DA4")
     public void skip(int bits) {
         possExpand(bits);
@@ -130,6 +133,7 @@ for(int i = 0;i < arr.length;i++)
     
     public static class AccessException extends Exception {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.641 -0400", hash_original_method = "FD7EE91BB7CFA9004E3BBE9542C9C5B5", hash_generated_method = "C8649CF1DC7622EC3E4732E728626B65")
         public  AccessException(String s) {
             super("BitwiseOutputStream access failed: " + s);

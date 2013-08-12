@@ -13,6 +13,7 @@ public class DestroyFailedException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.854 -0400", hash_original_method = "49DB9D74B82421E273A368ED4AD8049A", hash_generated_method = "1C116CEBFB0E50E54BBB1395893F9B9C")
     public  DestroyFailedException(String message) {
         super(message);

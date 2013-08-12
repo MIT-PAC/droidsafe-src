@@ -344,6 +344,7 @@ for(int i = 0;i < text.length();i++)
 
         Object onlyValue;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.248 -0400", hash_original_method = "4AEE734B1EFD8A5D4A3557C383752F00", hash_generated_method = "A506FC59BBF6CC43F79B603F40D6503D")
           FixedParameter(Object onlyValue) {
             this.onlyValue = onlyValue;
@@ -401,6 +402,7 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
     
     static abstract class BooleanParameter implements Parameter {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.250 -0400", hash_original_method = "51C6AD17F5451D33F04DE00B4C815245", hash_generated_method = "51C6AD17F5451D33F04DE00B4C815245")
         public BooleanParameter ()
         {
@@ -446,18 +448,22 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
         });
         PARAMETERS.put("check-character-normalization", new FixedParameter(false));
         PARAMETERS.put("comments", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.comments;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.comments = (Boolean) value;
             }
         });
         PARAMETERS.put("datatype-normalization", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.datatypeNormalization;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 if ((Boolean) value) {
                     config.datatypeNormalization = true;
                     config.validate = true;
@@ -468,18 +474,22 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
         });
         PARAMETERS.put("element-content-whitespace", new FixedParameter(true));
         PARAMETERS.put("entities", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.entities;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.entities = (Boolean) value;
             }
         });
         PARAMETERS.put("error-handler", new Parameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.errorHandler;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.errorHandler = (DOMErrorHandler) value;
             }
             @DSModeled(DSC.SAFE)
@@ -488,7 +498,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
             }
         });
         PARAMETERS.put("infoset", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return !config.entities
                         && !config.datatypeNormalization
                         && !config.cdataSections
@@ -496,7 +507,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
                         && config.comments
                         && config.namespaces;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 if ((Boolean) value) {
                     config.entities = false;
                     config.datatypeNormalization = false;
@@ -508,7 +520,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
             }
         });
         PARAMETERS.put("namespaces", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.namespaces;
             }
             public void set(DOMConfigurationImpl config, Object value) {
@@ -518,10 +531,12 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
         PARAMETERS.put("namespace-declarations", new FixedParameter(true));
         PARAMETERS.put("normalize-characters", new FixedParameter(false));
         PARAMETERS.put("schema-location", new Parameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.schemaLocation;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.schemaLocation = (String) value;
             }
             @DSModeled(DSC.SAFE)
@@ -530,10 +545,12 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
             }
         });
         PARAMETERS.put("schema-type", new Parameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.schemaType;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.schemaType = (String) value;
             }
             @DSModeled(DSC.SAFE)
@@ -542,27 +559,33 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_95841847 =             onlyValue;
             }
         });
         PARAMETERS.put("split-cdata-sections", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.splitCdataSections;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.splitCdataSections = (Boolean) value;
             }
         });
         PARAMETERS.put("validate", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.validate;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.validate = (Boolean) value;
             }
         });
         PARAMETERS.put("validate-if-schema", new FixedParameter(false));
         PARAMETERS.put("well-formed", new BooleanParameter() {
-            public Object get(DOMConfigurationImpl config) {
+            @DSModeled(DSC.SAFE)
+        public Object get(DOMConfigurationImpl config) {
                 return config.wellFormed;
             }
-            public void set(DOMConfigurationImpl config, Object value) {
+            @DSModeled(DSC.SAFE)
+        public void set(DOMConfigurationImpl config, Object value) {
                 config.wellFormed = (Boolean) value;
             }
         });

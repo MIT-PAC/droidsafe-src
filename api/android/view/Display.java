@@ -102,7 +102,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "79B8C4439194701109AF7AA6129A555C", hash_generated_method = "CCC57910A60FFFE46777166360FEAAD3")
     private void getSizeInternal(Point outSize, boolean doCompat) {
         addTaint(doCompat);
@@ -163,7 +163,7 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "404C4EF6FA3AD3B9975B754C597D6C0E", hash_generated_method = "9F72D0A1C69A802F93E9E2B86E2A3209")
     public int getMaximumSizeDimension() {
         try 
@@ -246,7 +246,7 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "B1AC967D724C688D478E66D81CB079DE", hash_generated_method = "62C7E3CE07717E516B996020BB6FD984")
     public void getRealSize(Point outSize) {
         addTaint(outSize.getTaint());
@@ -466,6 +466,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.BAN)
     static IWindowManager getWindowManager() {
         synchronized (sStaticInit) {
             if (sWindowManager == null) {

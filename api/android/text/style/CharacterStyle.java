@@ -48,6 +48,7 @@ CharacterStyle var72A74007B2BE62B849F475C7BDA4658B_367063018 =         this;
 
         private CharacterStyle mStyle;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.948 -0400", hash_original_method = "CAC991CB238644E494D2A55B9FB554CC", hash_generated_method = "7C4191215C179AED62D69BA1F57E231B")
         public  Passthrough(CharacterStyle cs) {
             mStyle = cs;
@@ -66,6 +67,7 @@ CharacterStyle var72A74007B2BE62B849F475C7BDA4658B_367063018 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.949 -0400", hash_original_method = "1F67DF9DEB8C0E16558BBAAD1B5FDCCE", hash_generated_method = "67F7CD3561ABD21BD6E130D11FEC285A")
         @Override
         public CharacterStyle getUnderlying() {

@@ -15,6 +15,7 @@ public class BufferedOutputStream extends FilterOutputStream {
 
     protected int count;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.315 -0400", hash_original_method = "D896F62F17EBF4CCE50C0B823DA78DD6", hash_generated_method = "DCF2592BEC0A2A9308E8AFC5C2200B2C")
     public  BufferedOutputStream(OutputStream out) {
         this(out, 8192);
@@ -57,7 +58,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.317 -0400", hash_original_method = "E23D99313D714FF4FE33BC33C5A12E3B", hash_generated_method = "D8FD0801B6E456AE5F329DE44381A8CC")
     private void checkNotClosed() throws IOException {
         if(buf == null)        
@@ -73,7 +74,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.319 -0400", hash_original_method = "EC14898AF1C6D500DEF61C098384315C", hash_generated_method = "056EEFC2CFD24F3FE74AD94037D7003F")
     @Override
     public synchronized void write(byte[] buffer, int offset, int length) throws IOException {
@@ -120,6 +121,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.320 -0400", hash_original_method = "C551C170B690A76D4989DEC0BC19E3FB", hash_generated_method = "943098EF6E4001D5D5FB37EF37934B8C")
     @Override
     public synchronized void close() throws IOException {
@@ -147,6 +149,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.321 -0400", hash_original_method = "45333A97ED5F96C22A3D88C235B79D5A", hash_generated_method = "8196BAFC44CEA190508D7332895439C2")
     @Override
     public synchronized void write(int oneByte) throws IOException {
@@ -167,7 +170,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.321 -0400", hash_original_method = "AAC3F75032624F788E22A2E407A017DD", hash_generated_method = "B666C8C1C7135EA8F14F583F8FCB7409")
     private void flushInternal() throws IOException {
         if(count > 0)        

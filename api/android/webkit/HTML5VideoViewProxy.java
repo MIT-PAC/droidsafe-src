@@ -116,7 +116,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.079 -0400", hash_original_method = "62621EBDF8B0A4EDB36AB4D032595D91", hash_generated_method = "2F375E48F6E447CCC226130CA39C8C1A")
     public void dispatchOnEnded() {
         Message msg = Message.obtain(mWebCoreHandler, ENDED);
@@ -329,7 +329,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.084 -0400", hash_original_method = "87AB58F6C80364970DB0BE0C32B4800B", hash_generated_method = "61924CB1EF94A31BF20CC184AF49FD6D")
     public Context getContext() {
 Context var7A9501759E8A898311CFF24F0CB70875_809663722 =         mWebView.getContext();
@@ -470,7 +470,7 @@ Context var7A9501759E8A898311CFF24F0CB70875_809663722 =         mWebView.getCont
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static HTML5VideoViewProxy getInstance(WebViewCore webViewCore, int nativePtr) {
         return new HTML5VideoViewProxy(webViewCore.getWebView(), nativePtr);
     }
@@ -666,14 +666,14 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1457897790 =         mWebView;
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         public static boolean isPlaying(HTML5VideoViewProxy proxy) {
             return (mCurrentProxy == proxy && mHTML5VideoView != null
                     && mHTML5VideoView.isPlaying());
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         public static int getCurrentPosition() {
             int currentPosMs = 0;
             if (mHTML5VideoView != null) {
@@ -699,7 +699,7 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1457897790 =         mWebView;
         }
 
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
         public static void onPrepared() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             if (!mHTML5VideoView.isFullScreenMode() || mHTML5VideoView.getAutostart()) {
@@ -872,6 +872,7 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1457897790 =         mWebView;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.105 -0400", hash_original_method = "338E5BF0BBF2101BF0B2221F763D6960", hash_generated_method = "141C3B73DC0CDA8BD805841A16E0D059")
         public void endData() {
             if(mStatusCode == 200)            

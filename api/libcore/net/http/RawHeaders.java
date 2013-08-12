@@ -33,12 +33,14 @@ public final class RawHeaders {
 
     private String responseMessage;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.770 -0400", hash_original_method = "29CBB7411AB87121F534DC6D89E1C3FF", hash_generated_method = "15AC6645C1F6E653E1857608E76C2802")
     public  RawHeaders() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.770 -0400", hash_original_method = "E9B27FF414EC11CE1087F7E174CD847B", hash_generated_method = "95DE4AF15A4442FE8EB3D1946076B466")
     public  RawHeaders(RawHeaders copyFrom) {
         namesAndValues.addAll(copyFrom.namesAndValues);
@@ -55,6 +57,7 @@ public final class RawHeaders {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.771 -0400", hash_original_method = "A034EBBE3F64C8F074A3B6C276AAF223", hash_generated_method = "53BBC5EAF2223E6D82333D28EB55CCA0")
     public void setStatusLine(String statusLine) {
         statusLine = statusLine.trim();
@@ -152,6 +155,7 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1927636780 =         responseMessage;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.771 -0400", hash_original_method = "8393782C8F932A1D751AE7869AA4907E", hash_generated_method = "6140D26C8B40DBA2BC872D6468399173")
     public void addLine(String line) {
         addTaint(line.getTaint());
@@ -174,6 +178,7 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1927636780 =         responseMessage;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.772 -0400", hash_original_method = "438CB3F0D3B01507EC959AE5277C1434", hash_generated_method = "DDC9B4465874979E190F03898A5A5D34")
     public void add(String fieldName, String value) {
         addTaint(value.getTaint());
@@ -204,6 +209,7 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1927636780 =         responseMessage;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.772 -0400", hash_original_method = "5C24A819593BC86E0E1AF9616F67E395", hash_generated_method = "63E7B39B3E6BB029B2052F0F8D7522D9")
     public void removeAll(String fieldName) {
         addTaint(fieldName.getTaint());
@@ -225,6 +231,7 @@ for(int i = 0;i < namesAndValues.size();i += 2)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.772 -0400", hash_original_method = "9CD3B49A68466D363A29D778884154B6", hash_generated_method = "E56F279295B60DA2DEDA4049B37E4A74")
     public void addAll(String fieldName, List<String> headerFields) {
         addTaint(headerFields.getTaint());
@@ -240,6 +247,7 @@ for(String value : headerFields)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.772 -0400", hash_original_method = "A964C2ABDA70C3696494D217AFF90E69", hash_generated_method = "92D2E5804FB4736CE669F680A32EED68")
     public void set(String fieldName, String value) {
         addTaint(value.getTaint());
@@ -252,6 +260,7 @@ for(String value : headerFields)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.772 -0400", hash_original_method = "65DB99CA105C788DAB9FE23472075832", hash_generated_method = "97D66E6901F6A1EB466241D717CAC0A2")
     public int length() {
         int varE63A1D855242D8FF8D0BF3DDD621831D_1122249175 = (namesAndValues.size() / 2);
@@ -262,6 +271,7 @@ for(String value : headerFields)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.772 -0400", hash_original_method = "BE23DD7B1410D37DAEEAE51D9DBF75EB", hash_generated_method = "61BFDF3AFDC355427609C503EBF0D52F")
     public String getFieldName(int index) {
         addTaint(index);
@@ -284,6 +294,7 @@ String var4C1162125A66AB3D5F5C1CB3ACCE21E2_787208004 =         namesAndValues.ge
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.772 -0400", hash_original_method = "B22E5B19D625D7A351EC2F77115E183E", hash_generated_method = "A19C214080310B46FF1F4E595B9CEDE7")
     public String getValue(int index) {
         addTaint(index);
@@ -306,6 +317,7 @@ String varAB0AA5003D99383723C8D8C1BFF8E756_1890307359 =         namesAndValues.g
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.773 -0400", hash_original_method = "5CE86F73873B18464F6757EE122420F2", hash_generated_method = "65B02AAB897ABDF53801667AF5108540")
     public String get(String fieldName) {
         addTaint(fieldName.getTaint());
@@ -331,6 +343,7 @@ String var540C13E9E156B687226421B24F2DF178_1087392450 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.773 -0400", hash_original_method = "DFF30A75B51A172BE4172930F32BB680", hash_generated_method = "E1985F5DE8DDAFB53B1D9B969886CD86")
     public RawHeaders getAll(Set<String> fieldNames) {
         addTaint(fieldNames.getTaint());
@@ -358,6 +371,7 @@ RawHeaders varDC838461EE2FA0CA4C9BBB70A15456B0_1829860698 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.773 -0400", hash_original_method = "03F9E8D356406A137FAD06FB9E8EE371", hash_generated_method = "6D20CA2BCBDE8504ABE85B3CE4F2BDA6")
     public String toHeaderString() {
         StringBuilder result = new StringBuilder(256);
@@ -383,6 +397,7 @@ String varE65B3A02759122992CB82C0E651AD408_124625034 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.773 -0400", hash_original_method = "08275C5AA7086D8C8C86CDE1903B0FA3", hash_generated_method = "D242E93772CC78E16AA2AC0345CDBE16")
     public Map<String, List<String>> toMultimap() {
         Map<String, List<String>> result = new TreeMap<String, List<String>>(FIELD_NAME_COMPARATOR);
@@ -426,6 +441,7 @@ Map<String, List<String>> var7574B6F28DE66C39A71661FC6443DD41_1433241239 =      
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static RawHeaders fromMultimap(Map<String, List<String>> map) {
         RawHeaders result = new RawHeaders();
         for (Entry<String, List<String>> entry : map.entrySet()) {
@@ -444,6 +460,7 @@ Map<String, List<String>> var7574B6F28DE66C39A71661FC6443DD41_1433241239 =      
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.375 -0400", hash_original_field = "FA7582AED8A9C6860ED135540F90AAFE", hash_generated_field = "F018DC0E2BA01C80BAE5B1A83407ABAC")
 
     private static final Comparator<String> FIELD_NAME_COMPARATOR = new Comparator<String>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.375 -0400", hash_original_method = "97A4263BD250C85D737E56C91BCF9DB2", hash_generated_method = "87FDB9F6A8C83D84768E8CB65F606488")
         @FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
         @Override

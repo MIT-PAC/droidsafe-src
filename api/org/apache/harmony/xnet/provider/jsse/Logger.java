@@ -19,6 +19,7 @@ public class Logger {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Stream getStream(String name) {
         for (int i=0; i<names.length; i++) {
             if (names[i].equals(name)) {
@@ -34,6 +35,7 @@ public class Logger {
 
         private String prefix;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.666 -0400", hash_original_method = "5B47239B5174F6EBCA9E4F35C8BFA346", hash_generated_method = "C1A387A4B681305609275C7F863AB8E4")
         public  Stream(String name) {
             super(System.err);
@@ -90,6 +92,7 @@ for(int i=0;i<indent;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.668 -0400", hash_original_method = "8FD37FA4B52BC22F9117E57A4C975FCE", hash_generated_method = "ED8D0DE2E5AA0B4C2F4FE94AD6949ED6")
         public void print(byte[] data) {
             addTaint(data[0]);
@@ -99,6 +102,7 @@ for(int i=0;i<indent;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.668 -0400", hash_original_method = "97F4A1EEA64A5AE021D275219F0FBD08", hash_generated_method = "BB181D24226617F36B2C948E761DB4AF")
         public void print(byte[] data, int offset, int len) {
             addTaint(len);
@@ -110,6 +114,7 @@ for(int i=0;i<indent;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.669 -0400", hash_original_method = "6BD913AAA4D9B14F7C28D0536E7C7B24", hash_generated_method = "88C77C40CE254F14A3BBEE66CBD686B5")
         public void printAsHex(int perLine, String prefix, String delimiter, byte[] data) {
             addTaint(data[0]);

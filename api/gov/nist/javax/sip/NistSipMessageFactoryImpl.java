@@ -32,6 +32,7 @@ class NistSipMessageFactoryImpl implements StackMessageFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.483 -0400", hash_original_method = "05D11288A97D40A10A9E1FF4BB412446", hash_generated_method = "CA25179D9A7E946E6C33E18426F70307")
     public ServerRequestInterface newSIPServerRequest(SIPRequest sipRequest,
             MessageChannel messageChannel) {
@@ -71,6 +72,7 @@ ServerRequestInterface varF9E19AD6135C970F387F77C6F3DE4477_1792467797 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.485 -0400", hash_original_method = "683DE9908ACD912FB40AB2EA7112FC1F", hash_generated_method = "59AA0E7CDA8720F02A07654DEB6BF544")
     public ServerResponseInterface newSIPServerResponse(
             SIPResponse sipResponse, MessageChannel messageChannel) {

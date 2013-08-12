@@ -61,7 +61,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.524 -0400", hash_original_method = "7EC53D5BF716DEFD994FB15A461002F1", hash_generated_method = "3D8A6247C9818B32B49482F6602B165B")
     @Override
     public boolean isMCGlobal() {

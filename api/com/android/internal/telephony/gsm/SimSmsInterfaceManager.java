@@ -48,6 +48,7 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.437 -0400", hash_original_field = "6D394D9EA6E1664AF7305BEAB74AC6B5", hash_generated_field = "2581284BDC9FE06CEA002CD189D3CA4F")
 
     Handler mHandler = new Handler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.437 -0400", hash_original_method = "2B211BBD733007234A9B9085CE23F724", hash_generated_method = "791EB521B43B73C3BF37FF78C68699C9")
         @Override
         public void handleMessage(Message msg) {
@@ -175,6 +176,7 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.650 -0400", hash_original_method = "5C5D2075C67DB185E1C8FAD979C1C6EE", hash_generated_method = "AC56EFD2917AD58FDBDE940CAA13BBAB")
     public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) {
         addTaint(smsc[0]);
@@ -266,6 +268,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_485900680 =         mSms;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.651 -0400", hash_original_method = "9E9858677901A40DCFB3014D7783E7CF", hash_generated_method = "66CCD835987F649D259A6963DE0830E4")
     public boolean enableCellBroadcast(int messageIdentifier) {
         addTaint(messageIdentifier);
@@ -277,6 +280,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_485900680 =         mSms;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.651 -0400", hash_original_method = "E254B3C21063075DCFCF4B937B1FF66E", hash_generated_method = "7DC6EE60F19C3C7029A4F755955F1C04")
     public boolean disableCellBroadcast(int messageIdentifier) {
         addTaint(messageIdentifier);
@@ -320,6 +324,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_485900680 =         mSms;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.653 -0400", hash_original_method = "47BAD55325978FFE5C517009A7EF2AB8", hash_generated_method = "4C6978C08D0CF7B284005510E4F843A7")
     public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
         addTaint(endMessageId);
@@ -453,6 +458,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_485900680 =         mSms;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.655 -0400", hash_original_method = "9715F7B64D6F5D9B1FC00DACD193B4CE", hash_generated_method = "9FFE737D65BF3BA4E83567038136FE56")
         protected void startUpdate() {
             mConfigList.clear();
@@ -461,6 +467,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_485900680 =         mSms;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.656 -0400", hash_original_method = "6A2FA862D29C9C6898FE89F28FC062F6", hash_generated_method = "FCE21ACC10B4841B0929C63597A3A8B0")
         protected void addRange(int startId, int endId, boolean selected) {
             addTaint(selected);
@@ -474,6 +481,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_485900680 =         mSms;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.656 -0400", hash_original_method = "1E945351230B27489052E59869E2AD9A", hash_generated_method = "413930D73335985CCEE8E24FC07C28F9")
         protected boolean finishUpdate() {
             if(mConfigList.isEmpty())            

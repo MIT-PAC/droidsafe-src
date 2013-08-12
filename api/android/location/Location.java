@@ -116,6 +116,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.586 -0400", hash_original_method = "8A60F1EB9D48909B7AC1F2F058E6CA7B", hash_generated_method = "A5FD920F0D9C1B46242725755E8D0203")
     public void set(Location l) {
         mProvider = l.mProvider;
@@ -217,6 +218,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double convert(String coordinate) {
         if (coordinate == null) {
             throw new NullPointerException("coordinate");
@@ -730,6 +732,7 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_741141421 =         mExtras;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.601 -0400", hash_original_method = "0A734FEAEEC80691783BCF1D3384CC6B", hash_generated_method = "9B56A595B86963DFD04070AE7AE28FC1")
     public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? null : new Bundle(extras);

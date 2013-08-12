@@ -19,6 +19,7 @@ public class DERGeneralizedTime extends ASN1Object {
 
     String time;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.318 -0400", hash_original_method = "5EF6ACB57D96EC76628792297A2B7108", hash_generated_method = "796BA18E10CB94C9560C5A358DB0A1AE")
     public  DERGeneralizedTime(
         String  time) {
@@ -46,6 +47,7 @@ public class DERGeneralizedTime extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.318 -0400", hash_original_method = "5D85DC02B66532E4C85C7A2666266463", hash_generated_method = "5D4888C3595C69940C82F4750021F758")
     public  DERGeneralizedTime(
         Date time) {
@@ -59,6 +61,7 @@ public class DERGeneralizedTime extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.319 -0400", hash_original_method = "552D223548319DB52C5B3EC786733650", hash_generated_method = "56D6BB29CF435A66E80BD5304E438519")
       DERGeneralizedTime(
         byte[]  bytes) {
@@ -79,6 +82,7 @@ for(int i = 0;i != dateC.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERGeneralizedTime getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERGeneralizedTime)
@@ -89,6 +93,7 @@ for(int i = 0;i != dateC.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERGeneralizedTime getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -115,6 +120,7 @@ String varA66D020F4BCAB26A12562312D8A04DED_136487982 =         time;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.320 -0400", hash_original_method = "C3D7FF56BCEB461182F81161FEBABFED", hash_generated_method = "07F6C0E000B546A7BAB2C2107B4AA409")
     public String getTime() {
         if(time.charAt(time.length() - 1) == 'Z')        
@@ -233,6 +239,7 @@ String var6A3BBCB0E6B7481E73D549A5BA968D95_1870842854 =         Integer.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.325 -0400", hash_original_method = "6889666E48E5F8883310FD63C4807DBB", hash_generated_method = "A7397B6E6AA770B1B67C7971A955063E")
     public Date getDate() throws ParseException {
         SimpleDateFormat dateF;
@@ -347,6 +354,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.328 -0400", hash_original_method = "C3570560B057E7DF0510746F3C613D12", hash_generated_method = "B878DA8C8BC44E3A1D1BA2729D4B2E92")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -357,6 +365,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.328 -0400", hash_original_method = "F335EAF093E47550844C4E3B7BAA9B7A", hash_generated_method = "986B2ADA3692544CE59AD7B220335C0C")
      boolean asn1Equals(
         DERObject  o) {
@@ -379,6 +388,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.328 -0400", hash_original_method = "12943BCCC2961451B97E26F622F40AB3", hash_generated_method = "C8D6C9CDC5659ED67CE68348F60BAB97")
     public int hashCode() {
         int varCE1F3110113ADDA600B9294B4A8B4BC4_188105203 = (time.hashCode());

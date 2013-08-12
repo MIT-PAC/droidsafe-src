@@ -12,6 +12,7 @@ public class SipException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.530 -0400", hash_original_method = "9795DB733321F498B81268F6E7181236", hash_generated_method = "E42819ACCDC57D85ECA3E0EEEEC55716")
     public  SipException(String message) {
         super(message);

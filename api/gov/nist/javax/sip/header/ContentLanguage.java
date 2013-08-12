@@ -14,6 +14,7 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
 
     protected Locale locale;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.252 -0400", hash_original_method = "04F34AE7A99F7FC60EC2CE238423FC91", hash_generated_method = "B92C196A4B4BAB1C64D53F4B3E22B74A")
     public  ContentLanguage() {
         super(CONTENT_LANGUAGE);
@@ -21,6 +22,7 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.252 -0400", hash_original_method = "AA9A79158F9BAA0E6C86C7EA6B5AA5A0", hash_generated_method = "804930ED1A84BE81881C2A3AE488B310")
     public  ContentLanguage(String languageTag) {
         super(CONTENT_LANGUAGE);
@@ -31,6 +33,7 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.253 -0400", hash_original_method = "969C0CF9A75C29D747322906DB447799", hash_generated_method = "F6A6D814C00CAC111D18861111F05101")
     public String encodeBody() {
 String var8C1CD6F54EF4D18C716132A3D390019B_1284191483 =         this.getLanguageTag();
@@ -41,6 +44,7 @@ String var8C1CD6F54EF4D18C716132A3D390019B_1284191483 =         this.getLanguage
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.253 -0400", hash_original_method = "97684B013EF42C114E2563BE4754CC3B", hash_generated_method = "78B6B7ACC2046468519090AACBF1CBBB")
     public String getLanguageTag() {
         if("".equals(locale.getCountry()))        
@@ -64,6 +68,7 @@ String var9D965CDE9A5FC69D278845CD5ADE967F_1586847057 =             locale.getLa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.254 -0400", hash_original_method = "0029980C0556452F57A726D089728FB9", hash_generated_method = "E2436C436119A4905888B65FE5AA03D8")
     public void setLanguageTag(String languageTag) {
         final int slash = languageTag.indexOf('-');
@@ -105,6 +110,7 @@ Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_2104013633 =         locale;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.257 -0400", hash_original_method = "CEAD9E53DA5FB3A31278ED5B9373A85D", hash_generated_method = "43A2F82A1AF7C41C9BB9457EA98ACFCD")
     public Object clone() {
         ContentLanguage retval = (ContentLanguage) super.clone();

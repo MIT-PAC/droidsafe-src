@@ -92,6 +92,7 @@ public class RefQueueWorker implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.424 -0400", hash_original_method = "4BBB4A6394E78355577BCA1899518AA3", hash_generated_method = "744BF52BC6D7A2884848DEF85B1B3249")
     public void shutdown() {
         Thread wt = this.workerThread;
@@ -109,6 +110,7 @@ public class RefQueueWorker implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.424 -0400", hash_original_method = "7EB957F4647F2E9AB09EE1A296B7BEEF", hash_generated_method = "32A0C35C5A827075E0BED2F078302335")
     @Override
     public String toString() {

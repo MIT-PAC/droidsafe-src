@@ -13,6 +13,7 @@ import java.net.UnknownHostException;
 
 final class DefaultSocketFactory extends SocketFactory {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.514 -0400", hash_original_method = "EE45CFA4F563D30E821D60984F7D023D", hash_generated_method = "027CB46FE2CBA12105D59EC97E29AE07")
       DefaultSocketFactory() {
         // ---------- Original Method ----------

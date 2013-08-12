@@ -46,6 +46,7 @@ public class SSLRecordProtocol {
 
     private boolean sessionWasChanged = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.359 -0400", hash_original_method = "0C3980D24E651B574AA14368331D3B6C", hash_generated_method = "8E358A1C35371391D0DCB7A6D780AE7A")
     protected  SSLRecordProtocol(HandshakeProtocol handshakeProtocol,
             AlertProtocol alertProtocol,
@@ -78,6 +79,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.360 -0400", hash_original_method = "68629F3A6781EB04D799B3D741A0C393", hash_generated_method = "56C2EC2C42CC56189BC96A15F2C16FD1")
     protected int getMinRecordSize() {
         int varAFB060BEF18D1D15523C07EFD6FFBA71_669388080 = ((activeReadState == null)
@@ -92,6 +94,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.360 -0400", hash_original_method = "96A9B5266C66AFA94D8E0CC291B5F152", hash_generated_method = "0331F2D532CAC71A4D7618492BE54471")
     protected int getRecordSize(int data_size) {
         addTaint(data_size);
@@ -122,6 +125,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.361 -0400", hash_original_method = "CC13DBD4825E3C45756D9062D61E5D58", hash_generated_method = "88FA7EDA0BBF868D66186EEA3D1887DE")
     protected int getDataSize(int record_size) {
         addTaint(record_size);
@@ -153,6 +157,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.361 -0400", hash_original_method = "5F7DF598938706B482CEEA679EFAD91B", hash_generated_method = "4C3097790A77CD13B42D19B9BDDE2739")
     protected byte[] wrap(byte content_type, DataStream dataStream) {
         addTaint(dataStream.getTaint());
@@ -167,6 +172,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.363 -0400", hash_original_method = "55B5DE87A88F61771BAABFB22C57BC6F", hash_generated_method = "276B9430DEA72C4AD3AD25FEC2BB4CE5")
     protected byte[] wrap(byte content_type,
                        byte[] fragment, int offset, int len) {
@@ -297,6 +303,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.367 -0400", hash_original_method = "D4A06B5E6BD10843CEED9C48A36D68A3", hash_generated_method = "9B25729670131692BDA2FBE3A34C1342")
     protected byte[] getChangeCipherSpecMesage(SSLSessionImpl session) {
         addTaint(session.getTaint());
@@ -331,6 +338,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1184358427 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.368 -0400", hash_original_method = "B39FD616EE504B12CB9E5F46F7A6A390", hash_generated_method = "D662A04B784631B915123344A6639653")
     protected int unwrap() throws IOException {
         if(logger != null)        
@@ -465,6 +473,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.369 -0400", hash_original_method = "23FCA30C77438F833B36A8A9B6CBC6CC", hash_generated_method = "FE6378E27CB3580198C2014B7ED2A0CA")
     protected void alert(byte level, byte description) {
         addTaint(description);
@@ -491,6 +500,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.371 -0400", hash_original_method = "C2A186E08A6901259D50AE521996EDF2", hash_generated_method = "C9069A389B9213669B99E663C216CFD3")
     protected void shutdown() {
         session = null;

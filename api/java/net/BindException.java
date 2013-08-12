@@ -7,12 +7,14 @@ import droidsafe.annotations.*;
 
 public class BindException extends SocketException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.289 -0400", hash_original_method = "D66D1C4C5928E000A465F2B26896B637", hash_generated_method = "C638B86E6197A90D0C5D3DF2A4972BCE")
     public  BindException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.289 -0400", hash_original_method = "6FF32DF773E2792C41FA7AD13FDCFDDC", hash_generated_method = "BE7E73FDC246F21A9CA5B2C1286D2489")
     public  BindException(String detailMessage) {
         super(detailMessage);
@@ -21,7 +23,7 @@ public class BindException extends SocketException {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.290 -0400", hash_original_method = "C8F93BE3A806C12732DAADB48D8791E4", hash_generated_method = "7529504FC975453FD409C06506129ECE")
     public  BindException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

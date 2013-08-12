@@ -44,6 +44,7 @@ public class TLSMessageProcessor extends MessageProcessor {
 
     private ArrayList<TLSMessageChannel> incomingTlsMessageChannels;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.876 -0400", hash_original_method = "625854FFB2FE295DE1DAD8EB11451B94", hash_generated_method = "93982FF0AF11823800F729A927DBA008")
     protected  TLSMessageProcessor(InetAddress ipAddress, SIPTransactionStack sipStack, int port) {
         super(ipAddress, port, "tls",sipStack);
@@ -95,6 +96,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.878 -0400", hash_original_method = "010F4DD19A92034627C31D97E026477A", hash_generated_method = "AA759EF25E09778719ED10F86C980458")
     public void run() {
         while

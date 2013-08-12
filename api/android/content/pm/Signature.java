@@ -152,7 +152,7 @@ for(int j=0;j<N;j++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.787 -0400", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "9C8E54EBDD24E8E5922F44CCD763471D")
     public String toCharsString() {
         String str = mStringRef == null ? null : mStringRef.get();
@@ -178,7 +178,7 @@ String var061B89662D09DE43FE2A2D88636258A2_1993221826 =         str;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.788 -0400", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "9FF2A6A9D7BB62FB35D30F8216DE2775")
     public byte[] toByteArray() {
         byte[] bytes = new byte[mSignature.length];
@@ -210,7 +210,7 @@ PublicKey varA6AF97A9DA9E3D7762300A5338BFE054_416831250 =         cert.getPublic
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.789 -0400", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "A163271D48A24BA730DE8CA3D2F4B4EE")
     @Override
     public boolean equals(Object obj) {
@@ -294,6 +294,7 @@ PublicKey varA6AF97A9DA9E3D7762300A5338BFE054_416831250 =         cert.getPublic
 
     public static final Parcelable.Creator<Signature> CREATOR
             = new Parcelable.Creator<Signature>() {
+        @DSModeled(DSC.SAFE)
         public Signature createFromParcel(Parcel source) {
             return new Signature(source);
         }

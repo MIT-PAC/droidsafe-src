@@ -47,6 +47,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public abstract void flush() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.826 -0400", hash_original_method = "3613EF644BBA13BB917F4671227467C0", hash_generated_method = "EDB2281A1F92C2B5FD052E7F788E702C")
     public void write(char[] buf) throws IOException {
         addTaint(buf[0]);
@@ -60,6 +61,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public abstract void write(char[] buf, int offset, int count) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.827 -0400", hash_original_method = "8F6AF6BA5D86D88C527DBF804753FF5E", hash_generated_method = "17BF4B55221AAD4DFD06928C874C2969")
     public void write(int oneChar) throws IOException {
         addTaint(oneChar);
@@ -78,6 +80,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.827 -0400", hash_original_method = "2CB0ACB6DB74A20D3FAA9874B0AAEB97", hash_generated_method = "D679F0FD60DA7857A651B895A5562B8C")
     public void write(String str) throws IOException {
         addTaint(str.getTaint());
@@ -87,6 +90,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.827 -0400", hash_original_method = "2D3658401DD29E26DBD40724F9EE6A10", hash_generated_method = "28BFF56728E1C7FBE68733E163FC3824")
     public void write(String str, int offset, int count) throws IOException {
         addTaint(count);
@@ -116,6 +120,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.828 -0400", hash_original_method = "9D99658000F160BDAECAED91EC9BFB5D", hash_generated_method = "0A509602C5476E9936C69FAB94D8D80D")
     public Writer append(char c) throws IOException {
         addTaint(c);
@@ -129,6 +134,7 @@ Writer var72A74007B2BE62B849F475C7BDA4658B_208249911 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.828 -0400", hash_original_method = "D993D81DE6953743EFA25FF281FB0E15", hash_generated_method = "AE1E49D61EBB6B581D2A33E9A9E196FC")
     public Writer append(CharSequence csq) throws IOException {
         addTaint(csq.getTaint());
@@ -149,6 +155,7 @@ Writer var72A74007B2BE62B849F475C7BDA4658B_1119451712 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.829 -0400", hash_original_method = "44B7413EC481F793F1919C886AE2AD0E", hash_generated_method = "172ED5244E526B3A0F8E0FC3EC3D20A4")
     public Writer append(CharSequence csq, int start, int end) throws IOException {
         addTaint(end);

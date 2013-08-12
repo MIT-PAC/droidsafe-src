@@ -83,6 +83,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_559675577 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.364 -0400", hash_original_method = "712313A7FB39E8068296CCC509012BB3", hash_generated_method = "6D3575E6BA0D1D85C6C2C09E72C62F74")
     public String toString() {
 String var72C53EB254ECB0D5467E66B7861D8A47_42115256 =         "PermissionGroupInfo{"

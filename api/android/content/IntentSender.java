@@ -238,6 +238,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1416135643 =         mTarget;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.609 -0400", hash_original_method = "2F0F888808ED374E72461686A526DBD5", hash_generated_method = "3D65C4B9722C2C702E36855D4994E789")
         public  SendIntentException(String name) {
             super(name);
@@ -246,6 +247,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1416135643 =         mTarget;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.609 -0400", hash_original_method = "124D84CE7C7EE822BF41BDFAD538F007", hash_generated_method = "F92E006546D061799119E44C8681B178")
         public  SendIntentException(Exception cause) {
             super(cause);

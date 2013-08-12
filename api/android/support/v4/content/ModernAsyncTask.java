@@ -135,6 +135,7 @@ Result var3E54577D8BA0B3895F3C3277069ED558_513924779 =             postResult(do
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.972 -0400", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "569062B4CBD63448FAE14D1A434279DB")
     private Result postResult(Result result) {
         addTaint(result.getTaint());
@@ -174,6 +175,7 @@ Status var6300E74790326279AA67EB8DFA2C84B0_1336248352 =         mStatus;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.973 -0400", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "C976233E37033A3D91D226FE1079E594")
     @SuppressWarnings({"UnusedDeclaration"})
     protected void onPostExecute(Result result) {
@@ -211,6 +213,7 @@ Status var6300E74790326279AA67EB8DFA2C84B0_1336248352 =         mStatus;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.975 -0400", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "97511D3A446D631FE312F2B43893DE01")
     public final boolean isCancelled() {
         boolean var7E7FA29716C4CBE4B16D639A4F3CDD24_1581999372 = (mFuture.isCancelled());
@@ -221,6 +224,7 @@ Status var6300E74790326279AA67EB8DFA2C84B0_1336248352 =         mStatus;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.975 -0400", hash_original_method = "79A634F40CF588E281325883FCE2C51B", hash_generated_method = "C5C4111F47705CA7D902511AD3021865")
     public final boolean cancel(boolean mayInterruptIfRunning) {
         addTaint(mayInterruptIfRunning);
@@ -373,6 +377,7 @@ ModernAsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_18
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.982 -0400", hash_original_method = "921E33E8D8BBA9CD431C8BC69654B3A4", hash_generated_method = "3412AC0B19BEEA5471BA543EA333720D")
         @SuppressWarnings({"unchecked", "RawUseOfParameterizedType"})
         @Override

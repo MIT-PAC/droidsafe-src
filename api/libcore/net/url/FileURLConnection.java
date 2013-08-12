@@ -56,6 +56,7 @@ public class FileURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.184 -0400", hash_original_method = "9A475DD1FCE4CCB36A5D73E904D3A34C", hash_generated_method = "CFA792195BF7265F672B928B6B86031F")
     @Override
     public void connect() throws IOException {
@@ -86,6 +87,7 @@ public class FileURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.185 -0400", hash_original_method = "686027F78C1D594BA8DD041F116549D4", hash_generated_method = "3E25A212FE0FA2BB1FAC2FC2813EAEA4")
     @Override
     public int getContentLength() {
@@ -113,6 +115,7 @@ public class FileURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.185 -0400", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "77C77620F06DC1E8F2397EDFAD727B98")
     @Override
     public String getContentType() {
@@ -221,6 +224,7 @@ InputStream var3844484F7CAF8650F3CB9D0A65F2D71C_438544904 =         new ByteArra
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.187 -0400", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "DDC8CEEF8D57BEAF5D4C19C44BD84183")
     @Override
     public InputStream getInputStream() throws IOException {

@@ -27,7 +27,7 @@ class ComparableTimSort {
 
     private int[] runLen;
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.936 -0400", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "6E6050B5BB0EBC82522B0519F1B2A39E")
     private  ComparableTimSort(Object[] a) {
         this.a = a;
@@ -92,7 +92,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("fallthrough")
     private static void binarySort(Object[] a, int lo, int hi, int start) {
         if (DEBUG) assert lo <= start && start <= hi;
@@ -124,7 +124,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static int countRunAndMakeAscending(Object[] a, int lo, int hi) {
         if (DEBUG) assert lo < hi;
@@ -179,7 +179,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.938 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "580643CA6C172D607F1F2CA5E85F1871")
     private void mergeCollapse() {
         while
@@ -218,7 +218,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.939 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "20BE957EE6198C35C2069073816FC05C")
     private void mergeForceCollapse() {
         while
@@ -239,7 +239,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.940 -0400", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "DB99D3415DA5669E215427D430F35A5C")
     @SuppressWarnings("unchecked")
     private void mergeAt(int i) {
@@ -272,7 +272,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static int gallopLeft(Comparable<Object> key, Object[] a,
             int base, int len, int hint) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -318,7 +318,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static int gallopRight(Comparable<Object> key, Object[] a,
             int base, int len, int hint) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -364,7 +364,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.944 -0400", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "D74C1F7E82B07F901C8C7B3F4527105A")
     @SuppressWarnings("unchecked")
     private void mergeLo(int base1, int len1, int base2, int len2) {
@@ -474,7 +474,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.946 -0400", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "32E5C41E615F12E8375C60A6921A8562")
     @SuppressWarnings("unchecked")
     private void mergeHi(int base1, int len1, int base2, int len2) {
@@ -589,7 +589,7 @@ class ComparableTimSort {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.959 -0400", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "BE2AF2549C329997BD798119B9D65BFF")
     private Object[] ensureCapacity(int minCapacity) {
         addTaint(minCapacity);

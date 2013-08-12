@@ -68,6 +68,7 @@ public class StringMsgParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.872 -0400", hash_original_method = "9C5089EA8774478643AAED9197A2D229", hash_generated_method = "A7358246937510B9B5E6E1E0D6E123EC")
     public SIPMessage parseSIPMessage(byte[] msgBuffer) throws ParseException {
         addTaint(msgBuffer[0]);
@@ -184,6 +185,7 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_1720381556 =         message;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.875 -0400", hash_original_method = "2180FC72509B511C247A77608998B3E2", hash_generated_method = "624841CDFBA564B5E7671D4B1EC2DAD0")
     public SIPMessage parseSIPMessage(String msgString) throws ParseException {
         if(msgString == null || msgString.length() == 0)        
@@ -446,6 +448,7 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_649030540 =         message;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.878 -0400", hash_original_method = "049BA210A39AB5443B08132FD51D457E", hash_generated_method = "1560F0F5BFD15ABBC949EE63A5AE29C1")
     public AddressImpl parseAddress(String address) throws ParseException {
         addTaint(address.getTaint());
@@ -459,6 +462,7 @@ AddressImpl var38834A65BE845C655031CC23ACA4C772_1337875766 =         addressPars
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.878 -0400", hash_original_method = "6E5629CC68B4185F1ADA3485008A15B3", hash_generated_method = "C046608B4E8C57D750CF62A5F0FF0ABA")
     public Host parseHost(String host) throws ParseException {
         addTaint(host.getTaint());
@@ -472,6 +476,7 @@ Host varBFDC80813AB4D3C174FE89D0FE5657A6_34832042 =         new HostNameParser(l
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.879 -0400", hash_original_method = "FA67D7760B995854EEA852AD4B17EA85", hash_generated_method = "8546A7AF0428F814CA31236D48F45D97")
     public TelephoneNumber parseTelephoneNumber(String telephone_number) throws ParseException {
         addTaint(telephone_number.getTaint());
@@ -483,6 +488,7 @@ TelephoneNumber var19E7CF3AFA993CEA6FC8BE2686AF0D09_556840835 =         new URLP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.879 -0400", hash_original_method = "F49AF4817F29179E4378A66D59AF945F", hash_generated_method = "62CF577284D35ECF893FA41D3E28BCCE")
     public SipUri parseSIPUrl(String url) throws ParseException {
         addTaint(url.getTaint());
@@ -507,6 +513,7 @@ SipUri var945CAFD84159019C48E6373757A24F78_787874223 =             new URLParser
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.880 -0400", hash_original_method = "40F3B3649F989E59FAF074C2858F6B9B", hash_generated_method = "5068BFCFFAF0E4FD1DFA1B2F2365E1F6")
     public GenericURI parseUrl(String url) throws ParseException {
         addTaint(url.getTaint());
@@ -518,6 +525,7 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_1922450796 =         new URLParse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.881 -0400", hash_original_method = "6152413E77E62620D4330DAF5944A1B1", hash_generated_method = "24B2C53490E426334CC5D8E49A18CC04")
     public SIPHeader parseSIPHeader(String header) throws ParseException {
         addTaint(header.getTaint());
@@ -589,6 +597,7 @@ SIPHeader varB31A57F2E73DE9124E0166DAEE7B8802_1720083336 =         hp.parse();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.881 -0400", hash_original_method = "C661D43CA4BEB0154AFD6A7B8492896F", hash_generated_method = "41108F12F31666C4292B188033DFD103")
     public RequestLine parseSIPRequestLine(String requestLine) throws ParseException {
         addTaint(requestLine.getTaint());
@@ -602,6 +611,7 @@ RequestLine var21E03B2AA1692429C9EF98FFF07ABBA2_721703916 =         new RequestL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.881 -0400", hash_original_method = "9FDE6314AF63D7F1DD1D0AE258CFAA9B", hash_generated_method = "7DB47BD4F622E37B8CE9ED04E2A00495")
     public StatusLine parseSIPStatusLine(String statusLine) throws ParseException {
         addTaint(statusLine.getTaint());
@@ -622,6 +632,7 @@ StatusLine varC168C3AEA25683D36962B85515B113E0_668512523 =         new StatusLin
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void main(String[] args) throws ParseException {
         String messages[] = {
                 "SIP/2.0 200 OK\r\n"

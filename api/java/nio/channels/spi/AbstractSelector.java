@@ -27,6 +27,7 @@ public abstract class AbstractSelector extends Selector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.780 -0400", hash_original_field = "33150D8ED2F1190449307B4DADDC93F3", hash_generated_field = "81FD2F18DE20D067CA30F74C258D7012")
 
     private final Runnable wakeupRunnable = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.780 -0400", hash_original_method = "7C4207C049033B8A840024AF7D6007E1", hash_generated_method = "DE46A52DF305552AEC6BF62783C2EE19")
         @Override
         public void run() {
@@ -64,6 +65,7 @@ public abstract class AbstractSelector extends Selector {
     protected abstract void implCloseSelector() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.361 -0400", hash_original_method = "4BED6A018F66CD694B83A1B1A043078B", hash_generated_method = "07D68938E01C5D05E0DFFCA73587E363")
     @Override
     public final boolean isOpen() {

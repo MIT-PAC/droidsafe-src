@@ -86,6 +86,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.135 -0400", hash_original_method = "4B12F08D986FED39E34C8D26B1B878DE", hash_generated_method = "58C03B4E618301C756226F917093ECF9")
     public  X500Principal(String name) {
         if(name == null)        
@@ -116,6 +117,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.152 -0400", hash_original_method = "2009C8B3D7F2D72E316D77325E1D8621", hash_generated_method = "46ACB32B13BD47CB01CB8C661672C48A")
     public  X500Principal(String name, Map<String,String> keywordMap) {
         if(name == null)        
@@ -146,7 +148,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.153 -0400", hash_original_method = "9E8384C79D62223409840D75AB5AB58E", hash_generated_method = "09EFF356EBDF39DF087EF8EC087C4E14")
     private IllegalArgumentException incorrectInputEncoding(IOException e) {
         addTaint(e.getTaint());
@@ -177,7 +179,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.154 -0400", hash_original_method = "4587ED52F7AA726C7418DB94B8315A23", hash_generated_method = "7661A1D74C9E8F17648EC4CB2286CF6F")
     private synchronized String getCanonicalName() {
         if(canonicalName == null)        
@@ -228,6 +230,7 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1762934192 =         canonicalName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.155 -0400", hash_original_method = "0D44433D57FF4BE42B367E2D93A9CEDF", hash_generated_method = "9F18D801B0D0BD88AE619CA61F782458")
     public byte[] getEncoded() {
         byte[] src = dn.getEncoded();
@@ -244,6 +247,7 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1762934192 =         canonicalName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.156 -0400", hash_original_method = "2BCB4CFF6EEF485C6E2E6569B64BAD8B", hash_generated_method = "4273AAC63D413CCEF795547A25ED6BDE")
     public String getName() {
 String var08F6DAD71EC6EDB0BE0363A140D3B809_1700881439 =         dn.getName(RFC2253);
@@ -254,6 +258,7 @@ String var08F6DAD71EC6EDB0BE0363A140D3B809_1700881439 =         dn.getName(RFC22
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.156 -0400", hash_original_method = "DC6B95F939C1817F13ECF66B400795F1", hash_generated_method = "49BC7B1AFF94CF4D7BFC4963970F9F22")
     public String getName(String format) {
         addTaint(format.getTaint());

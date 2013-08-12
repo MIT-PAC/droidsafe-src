@@ -185,6 +185,7 @@ public class ConnectionStateTLS extends ConnectionState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.397 -0400", hash_original_method = "B9B8901A6530A5AA902AF1AE1DCFF588", hash_generated_method = "6099C04F05C6C7D9AE156FA1B84AB2D5")
     @Override
     protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {

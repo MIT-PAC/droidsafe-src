@@ -89,6 +89,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.426 -0400", hash_original_method = "75096E18A1A48E91D30DD9D6FBFD5D1F", hash_generated_method = "1E67B408FAA37579BCF4F26BEA5F6ADF")
     public void start() {
         if(mRunner != null)        
@@ -130,6 +131,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.429 -0400", hash_original_method = "5CE1AB9DF7D7162F89956B1D13BE745E", hash_generated_method = "7A10A3F5A3163851361A82480E3A5794")
     public void sendStatus(int resultCode, Bundle results) {
         addTaint(results.getTaint());
@@ -181,6 +183,7 @@ public class Instrumentation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.430 -0400", hash_original_method = "6EB9EED76498D1668A96326FD6FFBEE9", hash_generated_method = "FD3545546835D20A0C087ACC19F8773F")
     public void setAutomaticPerformanceSnapshots() {
         mAutomaticPerformanceSnapshots = true;
@@ -471,6 +474,7 @@ ActivityMonitor var0EE62FBAA5467D9B6F72D472A1B595B3_284807976 =         am;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.454 -0400", hash_original_method = "29E7A5CE85EC83DC1A6299DE5A3CFA02", hash_generated_method = "C036AF848F0BA8C8B69C950581B03628")
     public boolean checkMonitorHit(ActivityMonitor monitor, int minHits) {
         addTaint(minHits);
@@ -501,6 +505,7 @@ ActivityMonitor var0EE62FBAA5467D9B6F72D472A1B595B3_284807976 =         am;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.454 -0400", hash_original_method = "ACAA082ACBE3DC4BF5F5B838A83827D9", hash_generated_method = "8F87C4E8124D866E2DA252D4B7B2B015")
     public Activity waitForMonitor(ActivityMonitor monitor) {
         addTaint(monitor.getTaint());
@@ -521,6 +526,7 @@ Activity var8CEBAC25E19008E785695F06EF11C2CD_690777164 =         activity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.455 -0400", hash_original_method = "C35EC81162DCBEC6CBBF630B6FBC9A38", hash_generated_method = "21DFB70086FB496B719A5D9E3201B024")
     public Activity waitForMonitorWithTimeout(ActivityMonitor monitor, long timeOut) {
         addTaint(timeOut);
@@ -672,6 +678,7 @@ Activity var8CEBAC25E19008E785695F06EF11C2CD_1311860503 =         activity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.458 -0400", hash_original_method = "029397BC692B989F9FCA48D48FDB9479", hash_generated_method = "12F25BDAF3A4A5FBA334182824957A8C")
     public void sendStringSync(String text) {
         addTaint(text.getTaint());
@@ -702,6 +709,7 @@ for(int i = 0;i < events.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.458 -0400", hash_original_method = "8EB82A3200B456D290A2F7A26355BB76", hash_generated_method = "1C005B54B7D54FF96D737259EA574091")
     public void sendKeySync(KeyEvent event) {
         addTaint(event.getTaint());
@@ -724,6 +732,7 @@ for(int i = 0;i < events.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.458 -0400", hash_original_method = "EAB0936DFBB6258C56105993043121F1", hash_generated_method = "FF7303FB48B8E043FB9585EC9B2EFDD4")
     public void sendKeyDownUpSync(int key) {
         addTaint(key);
@@ -746,6 +755,7 @@ for(int i = 0;i < events.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.459 -0400", hash_original_method = "B9A3EF31E8BF5F99FCCA686BC6658BE3", hash_generated_method = "9DED309319688233BAC7BCFE91D311B3")
     public void sendPointerSync(MotionEvent event) {
         addTaint(event.getTaint());
@@ -768,6 +778,7 @@ for(int i = 0;i < events.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.459 -0400", hash_original_method = "6B2ECCD3AB22E94B5B1243023E902F6D", hash_generated_method = "27B1767E851AD0A3BBF6F900B9F883A2")
     public void sendTrackballEventSync(MotionEvent event) {
         addTaint(event.getTaint());
@@ -805,6 +816,7 @@ Application var462AA7D74A15F95A3674E0E27E1A513F_903707710 =         newApplicati
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public Application newApplication(Class<?> clazz, Context context) throws InstantiationException, IllegalAccessException, 
             ClassNotFoundException {
         Application app = (Application)clazz.newInstance();
@@ -1062,6 +1074,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.464 -0400", hash_original_method = "7FDB53D95055F8344C6717BAA41CDD62", hash_generated_method = "30C2B3835BA32D0C19AF35DC83FE7525")
     public void startAllocCounting() {
         Runtime.getRuntime().gc();
@@ -1496,6 +1509,7 @@ Activity varB2DA8B7B053D8CC25E96301AE1CAB7FD_339645640 =             mLastActivi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.473 -0400", hash_original_method = "905168F82A17E43399C57E76AC6D268D", hash_generated_method = "EA33BB7B28EF42734BD082E03E9FD9C4")
         public final Activity waitForActivity() {
             synchronized
@@ -1532,6 +1546,7 @@ Activity varB5053E025797B3BF768F5C37934C244D_1860316542 =                 res;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.473 -0400", hash_original_method = "68E343228598567180DC80BCAD1066EC", hash_generated_method = "81A6D5CDF3AE3F674920B5FD70347A71")
         public final Activity waitForActivityWithTimeout(long timeOut) {
             addTaint(timeOut);
@@ -1836,6 +1851,7 @@ Intent var7AF81C367EA4623980C8741236739982_1283047780 =             mResultData;
 
         private ActivityWaiter mWaiter;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.477 -0400", hash_original_method = "C941F219CD1DB06313DFA66C54B64070", hash_generated_method = "112E0EFA9E3E1E4D0209C198398F4B90")
         public  ActivityGoing(ActivityWaiter waiter) {
             mWaiter = waiter;
@@ -1885,6 +1901,7 @@ Intent var7AF81C367EA4623980C8741236739982_1283047780 =             mResultData;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.478 -0400", hash_original_method = "B0AE6A8D5B64501509EFCE6FDAF91034", hash_generated_method = "4C12FAE056B1B688F0C66F7C112C2339")
         public final boolean queueIdle() {
             if(mCallback != null)            

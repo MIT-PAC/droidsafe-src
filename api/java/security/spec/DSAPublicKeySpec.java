@@ -23,6 +23,7 @@ public class DSAPublicKeySpec implements KeySpec {
 
     private BigInteger g;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.037 -0400", hash_original_method = "59DD68ABED9CC2F6FAC8589709FFB9BA", hash_generated_method = "EB02F7CC5C63D0CDE99159462457284C")
     public  DSAPublicKeySpec(BigInteger y, BigInteger p,
             BigInteger q, BigInteger g) {

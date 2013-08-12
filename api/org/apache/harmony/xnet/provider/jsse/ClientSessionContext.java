@@ -20,6 +20,7 @@ public class ClientSessionContext extends AbstractSessionContext {
 
     private SSLClientSessionCache persistentCache;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.295 -0400", hash_original_method = "6120BD96B39A4004425E377055807D67", hash_generated_method = "F659DA8BD462D7F6605B182211013349")
     public  ClientSessionContext() {
         super(10, 0);
@@ -27,6 +28,7 @@ public class ClientSessionContext extends AbstractSessionContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.295 -0400", hash_original_method = "6D75428DC9ADEDF784907D2671C869EF", hash_generated_method = "C6254049363252F425D23F511FF44987")
     public int size() {
         int varA6F0EF27A4AA4518AF01C97064847341_2146485673 = (sessionsByHostAndPort.size());
@@ -174,6 +176,7 @@ SSLSession var540C13E9E156B687226421B24F2DF178_1119522669 =         null;
 
         int port;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.300 -0400", hash_original_method = "EB165053DB1A3C349320DF850A0D5A85", hash_generated_method = "84EF2DBC1C64C3B8AF7BCB08B75838B4")
           HostAndPort(String host, int port) {
             this.host = host;
@@ -184,6 +187,7 @@ SSLSession var540C13E9E156B687226421B24F2DF178_1119522669 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.301 -0400", hash_original_method = "4275ECED88C546D6C48AA6C77D620659", hash_generated_method = "A8AED5059D4FE254DC3A820A59F4186C")
         @Override
         public int hashCode() {
@@ -195,6 +199,7 @@ SSLSession var540C13E9E156B687226421B24F2DF178_1119522669 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.301 -0400", hash_original_method = "B55E1F045FCFEF599209FA0277EB136A", hash_generated_method = "2746B8D5E8C712EEDD536314C905D411")
         @Override
         public boolean equals(Object o) {

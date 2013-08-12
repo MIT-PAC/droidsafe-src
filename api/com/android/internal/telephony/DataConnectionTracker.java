@@ -1739,6 +1739,7 @@ for(DataConnection dc : mDataConnections.values())
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.179 -0400", hash_original_method = "CBCCCAC9E5E65AD1C4A36F84309761F3", hash_generated_method = "5084D0A66E4E15FA652E0C50C229F7A5")
         public  TxRxSum(long txPkts, long rxPkts) {
             this.txPkts = txPkts;
@@ -1749,6 +1750,7 @@ for(DataConnection dc : mDataConnections.values())
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.179 -0400", hash_original_method = "AD3F4A8C32B5AB82EFF11F34262CA97C", hash_generated_method = "392DAA30EB30056E5D0A513FEBC5B1E8")
         public  TxRxSum(TxRxSum sum) {
             txPkts = sum.txPkts;

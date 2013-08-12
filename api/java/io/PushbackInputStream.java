@@ -17,6 +17,7 @@ public class PushbackInputStream extends FilterInputStream {
 
     protected int pos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.340 -0400", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "3F5564E951E35BDFCBCD7F9B903974D4")
     public  PushbackInputStream(InputStream in) {
         super(in);
@@ -28,6 +29,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.341 -0400", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "E082049566C7B3E6BD6EFB65CFCF32C6")
     public  PushbackInputStream(InputStream in, int size) {
         super(in);
@@ -48,6 +50,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.341 -0400", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "D558B4378EE0BEEF128D61DC9814446B")
     @Override
     public int available() throws IOException {
@@ -68,6 +71,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.342 -0400", hash_original_method = "74DA7764B5809B26A354DD7668DF4A77", hash_generated_method = "C1903668237FDB5C713ACF10513B5390")
     @Override
     public void close() throws IOException {
@@ -98,6 +102,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.343 -0400", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "4842C5B76729638D23676070E0215B6D")
     @Override
     public int read() throws IOException {
@@ -127,6 +132,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.356 -0400", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "0881C3355861A975DE4F16CCA5561890")
     @Override
     public int read(byte[] buffer, int offset, int length) throws IOException {
@@ -190,6 +196,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.369 -0400", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "B0A9D018300356ACFE7F90CD0CF8B5B8")
     @Override
     public long skip(long byteCount) throws IOException {
@@ -238,6 +245,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.370 -0400", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "FF0E04C75F4ADF97E37C2B1AC9D50386")
     public void unread(byte[] buffer) throws IOException {
         addTaint(buffer[0]);
@@ -247,6 +255,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.378 -0400", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "577211ADFED3472DBAD0735C27410BD9")
     public void unread(byte[] buffer, int offset, int length) throws IOException {
         addTaint(offset);
@@ -279,6 +288,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.379 -0400", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "37CBC0DDE761A1A1900FB207B441CF3A")
     public void unread(int oneByte) throws IOException {
         if(buf == null)        
@@ -314,6 +324,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.380 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "50DCA95D17CA6DA3D75BD97AD44EEEE8")
     @Override
     public void reset() throws IOException {

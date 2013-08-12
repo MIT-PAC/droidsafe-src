@@ -50,6 +50,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getDeviceSoftwareVersion() {
         try {
             return getSubscriberInfo().getDeviceSvn();
@@ -61,6 +62,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getDeviceId() {
         try {
             return getSubscriberInfo().getDeviceId();
@@ -72,6 +74,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public CellLocation getCellLocation() {
         try {
             Bundle bundle = getITelephony().getCellLocation();
@@ -107,6 +110,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public List<NeighboringCellInfo> getNeighboringCellInfo() {
         try {
             return getITelephony().getNeighboringCellInfo();
@@ -169,21 +173,25 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getNetworkOperatorName() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ALPHA);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getNetworkOperator() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_NUMERIC);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isNetworkRoaming() {
         return "true".equals(SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISROAMING));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getNetworkCountryIso() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY);
     }
@@ -280,6 +288,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean hasIccCard() {
         try {
             return getITelephony().hasIccCard();
@@ -293,6 +302,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getSimState() {
         String prop = SystemProperties.get(TelephonyProperties.PROPERTY_SIM_STATE);
         if ("ABSENT".equals(prop)) {
@@ -316,21 +326,25 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getSimOperator() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getSimOperatorName() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getSimCountryIso() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getSimSerialNumber() {
         try {
             return getSubscriberInfo().getIccSerialNumber();
@@ -357,6 +371,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getSubscriberId() {
         try {
             return getSubscriberInfo().getSubscriberId();
@@ -369,6 +384,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getLine1Number() {
         try {
             return getSubscriberInfo().getLine1Number();
@@ -407,6 +423,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getVoiceMailNumber() {
         try {
             return getSubscriberInfo().getVoiceMailNumber();
@@ -445,6 +462,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String getVoiceMailAlphaTag() {
         try {
             return getSubscriberInfo().getVoiceMailAlphaTag();
@@ -503,6 +521,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getCallState() {
         try {
             return getITelephony().getCallState();
@@ -516,6 +535,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getDataActivity() {
         try {
             return getITelephony().getDataActivity();
@@ -529,6 +549,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getDataState() {
         try {
             return getITelephony().getDataState();

@@ -245,6 +245,7 @@ public class ContextImpl extends Context {
         //mOuterContext = this;
     }
 
+    @DSModeled(DSC.SAFE)
     static ContextImpl getImpl(Context context) {
         Context nextContext;
         while ((context instanceof ContextWrapper) &&
@@ -255,6 +256,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public AssetManager getAssets() {
         throw new UnsupportedOperationException();
@@ -268,6 +270,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public PackageManager getPackageManager() {
         throw new UnsupportedOperationException();
@@ -281,12 +284,14 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public Looper getMainLooper() {
     	return Looper.getMainLooper();
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public Context getApplicationContext() {
         throw new UnsupportedOperationException();
@@ -311,6 +316,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public Resources.Theme getTheme() {
         throw new UnsupportedOperationException();
@@ -324,30 +330,35 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageName() {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public ApplicationInfo getApplicationInfo() {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageResourcePath() {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageCodePath() {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public File getSharedPrefsFile(String name) {
         throw new UnsupportedOperationException();
@@ -389,6 +400,7 @@ File varB5580270F36BE30B06AE9DEFC8DEE79A_507544949 =             mPreferencesDir
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
         throw new UnsupportedOperationException();
@@ -407,12 +419,14 @@ File varB5580270F36BE30B06AE9DEFC8DEE79A_507544949 =             mPreferencesDir
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public File getExternalFilesDir(String type) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public File getObbDir() {
         throw new UnsupportedOperationException();
@@ -437,6 +451,7 @@ File varB5580270F36BE30B06AE9DEFC8DEE79A_507544949 =             mPreferencesDir
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String[] fileList() {
         throw new UnsupportedOperationException( );
@@ -491,12 +506,14 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_237158048 =         db;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public File getDatabasePath(String name) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String[] databaseList() {
         throw new UnsupportedOperationException();
@@ -533,6 +550,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public Drawable getWallpaper() {
         throw new UnsupportedOperationException();
@@ -545,6 +563,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public int getWallpaperDesiredMinimumWidth() {
         throw new UnsupportedOperationException();
@@ -1154,6 +1173,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public Context createPackageContext(String packageName, int flags)
             throws PackageManager.NameNotFoundException {
@@ -1194,6 +1214,7 @@ File varFC9C2C7F2B1B79BD901FB4B96215DB24_856543158 =             mPackageInfo.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ContextImpl createSystemContext(ActivityThread mainThread) {
         ContextImpl context = new ContextImpl();
         context.init(Resources.getSystem(), mainThread);
@@ -1277,6 +1298,7 @@ File varFC9C2C7F2B1B79BD901FB4B96215DB24_856543158 =             mPackageInfo.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.121 -0400", hash_original_method = "00E338AD03CD22E7A509C63ABE7257F4", hash_generated_method = "D633E95438E4D4495D54D17BB8A58C95")
     final Context getReceiverRestrictedContext() {
         if(mReceiverRestrictedContext != null)        

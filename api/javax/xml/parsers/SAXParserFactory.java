@@ -22,6 +22,7 @@ public abstract class SAXParserFactory {
 
     private boolean namespaceAware = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.983 -0400", hash_original_method = "5B4969E70C1A248827CF399EDBDC2A24", hash_generated_method = "75917AE4861FBF4B1ABCA31AADA8B4D1")
     protected  SAXParserFactory() {
         // ---------- Original Method ----------
@@ -114,6 +115,7 @@ public abstract class SAXParserFactory {
                 SAXNotSupportedException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.987 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C98628B2C8517B80BBF6049332733E5C")
     public Schema getSchema() {
         UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_165710345 = new UnsupportedOperationException(
@@ -136,6 +138,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.988 -0400", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "4F63B10903306944292CC0DE6068D774")
     public void setSchema(Schema schema) {
         addTaint(schema.getTaint());
@@ -182,6 +185,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.989 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "D92F1F035FE09C8106431728A82A02F0")
     public boolean isXIncludeAware() {
         UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_20481189 = new UnsupportedOperationException(

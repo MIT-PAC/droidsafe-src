@@ -152,6 +152,7 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1349615508 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.971 -0400", hash_original_method = "90FAABB6F73024DC33344558EFAA1B46", hash_generated_method = "A02266357DFDA86D460292CAF9DBD74F")
     public boolean isStale() {
         if(aborted)        
@@ -193,6 +194,7 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1349615508 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.972 -0400", hash_original_method = "BE23B10B196A5676F79C60CBBEA5CE71", hash_generated_method = "A37C657F7032C9B101E964F4969056FC")
     public int getSocketTimeout() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -235,6 +237,7 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1967927531 =         c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.972 -0400", hash_original_method = "25E2D0AFEEAE4A9FF0C3D2AE265B1F31", hash_generated_method = "70AB7BA45A99B085B270DD9DA1C565C9")
     public boolean isResponseAvailable(int timeout) throws IOException {
         addTaint(timeout);
@@ -335,6 +338,7 @@ InetAddress varCDFAB36BFB4DA07291E03E81DE197703_299570086 =         conn.getLoca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.974 -0400", hash_original_method = "CFFC28C49AC23EFEB6812E81E4BB886D", hash_generated_method = "51AFCCACF2F5E883382770199DBB7413")
     public int getLocalPort() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -349,6 +353,7 @@ InetAddress varCDFAB36BFB4DA07291E03E81DE197703_299570086 =         conn.getLoca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.974 -0400", hash_original_method = "600F3FFEA838B52DB2FC8A00D0FD1454", hash_generated_method = "2CACB8E642A346719FA8C36C493C26A8")
     public InetAddress getRemoteAddress() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -363,6 +368,7 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_1492725337 =         conn.getRem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.974 -0400", hash_original_method = "8BDC367E1BB67504AED838B12612BDA6", hash_generated_method = "3E89D98923FC4DD12A46F5DA3A8D5CA0")
     public int getRemotePort() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -377,6 +383,7 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_1492725337 =         conn.getRem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.975 -0400", hash_original_method = "4D12F5B41CA786A718C0CE38C40DC2DA", hash_generated_method = "23A5E4032CBE96105685B688FAA4007C")
     public boolean isSecure() {
         OperatedClientConnection conn = getWrappedConnection();
@@ -391,6 +398,7 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_1492725337 =         conn.getRem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.975 -0400", hash_original_method = "08E9B3DBCD970FB9C319F7E659C9D167", hash_generated_method = "5646B39DFF4AEC220058BCB39556DBCF")
     public SSLSession getSSLSession() {
         OperatedClientConnection conn = getWrappedConnection();

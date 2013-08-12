@@ -83,6 +83,7 @@ public abstract class TwoStatePreference extends Preference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.924 -0400", hash_original_method = "12D9CEBA0208655576D33A98ED54981A", hash_generated_method = "FCB722B53DB1EFADEF31625EE7EE4BCE")
     public void setChecked(boolean checked) {
         if(mChecked != checked)        
@@ -141,6 +142,7 @@ public abstract class TwoStatePreference extends Preference {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.927 -0400", hash_original_method = "840A2DF332BCD4D47FC113ECD5767E5E", hash_generated_method = "63364D1BFCEBB03223B66404D3DEE4D4")
     public void setSummaryOn(int summaryResId) {
         addTaint(summaryResId);
@@ -161,6 +163,7 @@ CharSequence varD1E749C94F9B28E16C4A47C78F19D8A5_1568715208 =         mSummaryOn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.927 -0400", hash_original_method = "D2C60679B7A2716D92F9A6A90EE31D5E", hash_generated_method = "F161A57C5FFA118076F8F82DB07C7BA0")
     public void setSummaryOff(CharSequence summary) {
         mSummaryOff = summary;
@@ -176,6 +179,7 @@ CharSequence varD1E749C94F9B28E16C4A47C78F19D8A5_1568715208 =         mSummaryOn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.928 -0400", hash_original_method = "A777E36B9565634072F09AB599AD44D9", hash_generated_method = "1E81C7B3FC3B0BA36BC120C5EA9A61D9")
     public void setSummaryOff(int summaryResId) {
         addTaint(summaryResId);
@@ -216,6 +220,7 @@ CharSequence var2641568191E73DF01E4F2B182167672C_717953182 =         mSummaryOff
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.929 -0400", hash_original_method = "CD855B5FF5EBE7A616F45EDA9F1DAEC1", hash_generated_method = "9DC7B8FC1A474C14924FD3B9C1FD054C")
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
@@ -244,6 +249,7 @@ Object varB9D762988BDD10E681231DA7DDF58A47_1575248190 =         a.getBoolean(ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.930 -0400", hash_original_method = "6184398C925EDFB35C067E47CDB9F78F", hash_generated_method = "1AB232AA6D212D4C771A6F9B34F900BB")
      void sendAccessibilityEvent(View view) {
         addTaint(view.getTaint());
@@ -312,6 +318,7 @@ Object varB9D762988BDD10E681231DA7DDF58A47_1575248190 =         a.getBoolean(ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.934 -0400", hash_original_method = "128E228DA264F73B8973AB4629CC5B53", hash_generated_method = "B7AC8106D511ACF66F10E38387AA530F")
     @Override
     protected Parcelable onSaveInstanceState() {
@@ -368,6 +375,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1604798056 =         myState;
 
         boolean checked;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.936 -0400", hash_original_method = "BB6B7FCEDF34CA74F36D6258486FF337", hash_generated_method = "49AC5E3B0A809768E3B5980304872239")
         public  SavedState(Parcel source) {
             super(source);
@@ -377,6 +385,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1604798056 =         myState;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.936 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB11810075E98F66089A29D0DD89C4B4")
         public  SavedState(Parcelable superState) {
             super(superState);
@@ -385,6 +394,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1604798056 =         myState;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.937 -0400", hash_original_method = "5F0C2D7310332C4BBDEFEA2518DC2D5F", hash_generated_method = "980ACDE293416983A34F34555E490FA3")
         @Override
         public void writeToParcel(Parcel dest, int flags) {
@@ -406,6 +416,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1604798056 =         myState;
                 return new SavedState(in);
             }
 
+            @DSModeled(DSC.SAFE)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

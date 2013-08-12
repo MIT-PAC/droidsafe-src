@@ -14,6 +14,7 @@ public class CircularRedirectException extends RedirectException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.351 -0400", hash_original_method = "EFEABC4C711DA14ECED12A57E29FC504", hash_generated_method = "2CC69D2B535BF7167C1BB04FDCEDD128")
     public  CircularRedirectException(String message) {
         super(message);

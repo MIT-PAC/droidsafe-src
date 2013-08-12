@@ -111,7 +111,7 @@ View varC7C74D1A1F888482D2EEA96BBD632B6B_656653800 =         createViewFromResou
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.975 -0400", hash_original_method = "9F7D1FC25501C8F0267FBA100FA00D09", hash_generated_method = "4DC7E393E81D0377B77BB87DD66B7F86")
     private View createViewFromResource(int position, View convertView,
             ViewGroup parent, int resource) {
@@ -168,7 +168,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_237151036 =         createViewFromResou
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.977 -0400", hash_original_method = "BE6FDCE3CF7BF2397C7FC2DCDCAE8C07", hash_generated_method = "CBD8BF588B60C8D94EB99BBC2BEC45BB")
     private void bindView(int position, View view) {
         addTaint(view.getTaint());

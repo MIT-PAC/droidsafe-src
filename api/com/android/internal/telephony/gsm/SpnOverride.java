@@ -36,6 +36,7 @@ public class SpnOverride {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.872 -0400", hash_original_method = "F9DB25D793978B2E288A45309BFBD20E", hash_generated_method = "F4E065E61C87E998F1389C7AA5582F7E")
      boolean containsCarrier(String carrier) {
         addTaint(carrier.getTaint());
@@ -47,6 +48,7 @@ public class SpnOverride {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.873 -0400", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "7F72BA696897679B47E6759C422E4ADA")
      String getSpn(String carrier) {
         addTaint(carrier.getTaint());

@@ -70,7 +70,7 @@ public class LinearLayout extends ViewGroup {
     private int mShowDividers;
     private int mDividerPadding;
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public LinearLayout(Context context) {
         super(context);
     }
@@ -315,7 +315,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     protected boolean hasDividerBeforeChildAt(int childIndex) {
         if (childIndex == 0) {
             return (mShowDividers & SHOW_DIVIDER_BEGINNING) != 0;
@@ -526,7 +526,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private void forceUniformWidth(int count, int heightMeasureSpec) {
         int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(),
                 MeasureSpec.EXACTLY);
@@ -813,7 +813,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private void forceUniformHeight(int count, int widthMeasureSpec) {
         int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),
                 MeasureSpec.EXACTLY);

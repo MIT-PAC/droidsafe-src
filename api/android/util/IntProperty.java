@@ -17,6 +17,7 @@ public abstract class IntProperty<T> extends Property<T, Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setValue(T object, int value);
 
     

@@ -44,7 +44,7 @@ public final class Daemons {
 
         private Thread thread;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.802 -0400", hash_original_method = "E956A3D7836B08A486122F00857B9C56", hash_generated_method = "E956A3D7836B08A486122F00857B9C56")
         public Daemon ()
         {
@@ -172,7 +172,7 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_1062596234 =            
     
     private static class ReferenceQueueDaemon extends Daemon {
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.824 -0400", hash_original_method = "CD631EFADB4142F64B0E6D0342597BAC", hash_generated_method = "CD631EFADB4142F64B0E6D0342597BAC")
         public ReferenceQueueDaemon ()
         {
@@ -283,7 +283,7 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_1062596234 =            
 
         private volatile long finalizingStartedNanos;
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.825 -0400", hash_original_method = "4CAA35D6DE3500E449D08F039EDA298E", hash_generated_method = "4CAA35D6DE3500E449D08F039EDA298E")
         public FinalizerDaemon ()
         {
@@ -363,7 +363,7 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_1062596234 =            
     
     private static class FinalizerWatchdogDaemon extends Daemon {
         
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.826 -0400", hash_original_method = "703968011540BAA8269C6E22457DD3B1", hash_generated_method = "703968011540BAA8269C6E22457DD3B1")
         public FinalizerWatchdogDaemon ()
         {

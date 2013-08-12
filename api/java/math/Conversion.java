@@ -16,6 +16,7 @@ class Conversion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String bigInteger2String(BigInteger val, int radix) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
@@ -88,6 +89,7 @@ class Conversion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String toDecimalScaledString(BigInteger val, int scale) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
@@ -234,7 +236,7 @@ class Conversion {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static String toDecimalScaledString(long value, int scale) {
         int resLengthInChars;
         int currentChar;
@@ -342,6 +344,7 @@ class Conversion {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static double bigInteger2Double(BigInteger val) {
         val.prepareJavaRepresentation();
         if ((val.numberLength < 2)

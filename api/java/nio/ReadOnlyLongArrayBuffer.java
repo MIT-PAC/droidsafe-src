@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.587 -0400", hash_original_method = "C217C684C5DFBD85DAC953DA8CC4F355", hash_generated_method = "A27125D7AB0ABDAB65A1C28DBD5CE9F0")
       ReadOnlyLongArrayBuffer(int capacity, long[] backingArray, int arrayOffset) {
         super(capacity, backingArray, arrayOffset);
@@ -18,6 +19,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ReadOnlyLongArrayBuffer copy(LongArrayBuffer other, int markOfOther) {
         ReadOnlyLongArrayBuffer buf =
                 new ReadOnlyLongArrayBuffer(other.capacity(), other.backingArray, other.offset);
@@ -28,6 +30,7 @@ final class ReadOnlyLongArrayBuffer extends LongArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.588 -0400", hash_original_method = "9283ADC80310F7E479295F96D960F17D", hash_generated_method = "ABBBDE6907BF314708B502F0104CBE76")
     @Override
     public LongBuffer asReadOnlyBuffer() {
@@ -39,6 +42,7 @@ LongBuffer var398C146492D42068C7FF67EDC7FA3DFF_1678154275 =         duplicate();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.588 -0400", hash_original_method = "0AF2CD05C541DF81A768714F9C7047F3", hash_generated_method = "15ACCCB24CA1C225977AAE2E18935F03")
     @Override
     public LongBuffer compact() {
@@ -50,6 +54,7 @@ LongBuffer var398C146492D42068C7FF67EDC7FA3DFF_1678154275 =         duplicate();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.588 -0400", hash_original_method = "BCAEF14AE65D2F213653B4CB45E8B265", hash_generated_method = "178A26283F508F270BCA93BD28CCC6A2")
     @Override
     public LongBuffer duplicate() {
@@ -73,6 +78,7 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_751932522 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.589 -0400", hash_original_method = "4182362C5B9492F840FDEB2D9E41E07C", hash_generated_method = "D2BB7750D990F469A4DB6D7670E0003C")
     @Override
     protected long[] protectedArray() {
@@ -84,6 +90,7 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_751932522 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.589 -0400", hash_original_method = "0ABFB09F32C9F0D211E0D26315A037E6", hash_generated_method = "7F899F0DAEBC49A79FDE48ADE9754202")
     @Override
     protected int protectedArrayOffset() {
@@ -107,6 +114,7 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_751932522 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.590 -0400", hash_original_method = "7393DFCF52569FCC2605F08F020574B2", hash_generated_method = "384EC918E1E673EDC73752F692B55A1A")
     @Override
     public LongBuffer put(long c) {
@@ -119,6 +127,7 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_751932522 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.590 -0400", hash_original_method = "E5FA3278A640CB37396E7D9BDEEA6C53", hash_generated_method = "DA7B6D5ADD3EEFCE16AFCEC6CEA40817")
     @Override
     public LongBuffer put(int index, long c) {
@@ -132,6 +141,7 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_751932522 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.590 -0400", hash_original_method = "30B5D6EAC290C108C17070B0EA497381", hash_generated_method = "B20200AB8EF83C90F1F11091A1D35C3F")
     @Override
     public LongBuffer put(LongBuffer buf) {
@@ -144,6 +154,7 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_751932522 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.591 -0400", hash_original_method = "216FEF8EB820A47DE670615020EB98B3", hash_generated_method = "37DEF84C0D9F9FD41F8B603321A36E02")
     @Override
     public final LongBuffer put(long[] src, int srcOffset, int longCount) {
@@ -158,6 +169,7 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_751932522 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.591 -0400", hash_original_method = "B55D734F8AFBBB86296CAB7433B17B3B", hash_generated_method = "E45A5F909A0C9FA742096A92D71761A8")
     @Override
     public LongBuffer slice() {

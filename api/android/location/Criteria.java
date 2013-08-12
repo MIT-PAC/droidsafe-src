@@ -69,6 +69,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.012 -0400", hash_original_method = "F7CDA1AEB030C3E960B93BFBD444E4B1", hash_generated_method = "52B8FA720840D972634AEC73BB657779")
     public void setHorizontalAccuracy(int accuracy) {
         if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        
@@ -97,6 +98,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.014 -0400", hash_original_method = "A234CD6EE2124B9B176BE728225522DE", hash_generated_method = "B649BA1793B0FFEF75641906B89EC917")
     public void setVerticalAccuracy(int accuracy) {
         if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        

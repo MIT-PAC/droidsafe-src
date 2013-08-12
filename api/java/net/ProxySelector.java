@@ -32,11 +32,11 @@ public abstract class ProxySelector {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract List<Proxy> select(URI uri);
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract void connectFailed(URI uri, SocketAddress address, IOException failure);
 
     

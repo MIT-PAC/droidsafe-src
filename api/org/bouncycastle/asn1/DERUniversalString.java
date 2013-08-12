@@ -15,6 +15,7 @@ public class DERUniversalString extends ASN1Object implements DERString {
 
     private byte[] string;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.660 -0400", hash_original_method = "2B92FC0148DCC3B768EB41AB12E19E0C", hash_generated_method = "EB9C704CCBDB706AC49133E4C66FA4A0")
     public  DERUniversalString(
         byte[]   string) {
@@ -24,6 +25,7 @@ public class DERUniversalString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERUniversalString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERUniversalString)
@@ -34,6 +36,7 @@ public class DERUniversalString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DERUniversalString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -49,6 +52,7 @@ public class DERUniversalString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.663 -0400", hash_original_method = "C8AC92EF6B951363C15B3CD0868FB9EA", hash_generated_method = "1B366A3534680DFC2EBE6A02145DDD9B")
     public String getString() {
         StringBuffer buf = new StringBuffer("#");
@@ -95,6 +99,7 @@ String var4FC680801218E6372BC708D6FA44AE60_739083286 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.663 -0400", hash_original_method = "79F534E26CC8382FAA66B4080878D117", hash_generated_method = "0DC391A51D3658D0B8A69373F4CF67C8")
     public String toString() {
 String var8DB59AA9A0821BE4812A8E2F6919F1D5_1426518529 =         getString();
@@ -116,6 +121,7 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_1426518529 =         getString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.665 -0400", hash_original_method = "7109223BA8B3755943761B0801F71200", hash_generated_method = "F88007CD612C447D9E6A0F14C5CFAD23")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -126,6 +132,7 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_1426518529 =         getString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.666 -0400", hash_original_method = "2C48DF670B2A84721AF2DD998EBDD99A", hash_generated_method = "CA97362764E90AAE26BA49353C946BE2")
      boolean asn1Equals(
         DERObject  o) {
@@ -148,6 +155,7 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_1426518529 =         getString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.667 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "5F6DB062E852EBBDF95729E6EF68ADF2")
     public int hashCode() {
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_2008375627 = (this.getString().hashCode());

@@ -43,6 +43,7 @@ public class UserData {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] stringToAscii(String str) {
         int len = str.length();
         byte[] result = new byte[len];
@@ -55,6 +56,7 @@ public class UserData {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.754 -0400", hash_original_method = "F1C0D00F51384BB453814F967BB3AF69", hash_generated_method = "52CCB7C7D058B9EC5E1B294A0E98B8D6")
     @Override
     public String toString() {

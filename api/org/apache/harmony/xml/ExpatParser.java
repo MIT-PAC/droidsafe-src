@@ -367,6 +367,7 @@ class ExpatParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.079 -0400", hash_original_method = "DBF93F6482092FD1B1DD0B14B0D97B21", hash_generated_method = "5F91E1FCC54A41C4943902574C2F51F9")
      void handleExternalEntity(String context, String publicId,
             String systemId) throws SAXException, IOException {
@@ -513,6 +514,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.080 -0400", hash_original_method = "DD8A0FE95AA726B14C9A7464570F0B95", hash_generated_method = "A8017B6E901A855BD46FCED3059512DF")
      void append(String xml) throws SAXException {
         addTaint(xml.getTaint());
@@ -541,6 +543,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.080 -0400", hash_original_method = "E534E6CFFABE07F7DCCE5DEDEA13040B", hash_generated_method = "085BF9F8CF87EA7F4CB81A6145E7E968")
      void append(char[] xml, int offset, int length) throws SAXException {
         addTaint(length);
@@ -572,6 +575,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.081 -0400", hash_original_method = "DB127BCAFE6AA42D44BF28FF8E448923", hash_generated_method = "1D7F2770C65BF986375A7EC0FEC92FEF")
      void append(byte[] xml) throws SAXException {
         addTaint(xml[0]);
@@ -581,6 +585,7 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_1018160444 =         encoding == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.081 -0400", hash_original_method = "6B7A6AA30AC9918948A2664C57D48C07", hash_generated_method = "C9791952D165E52DA803DA0B34D86170")
      void append(byte[] xml, int offset, int length) throws SAXException {
         addTaint(length);
@@ -884,6 +889,7 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_1148865376 =         new ClonedAt
     }
 
     
+    @DSModeled(DSC.SAFE)
     static InputStream openUrl(String url) throws IOException {
         try {
             URLConnection urlConnection = new URL(url).openConnection();
@@ -1077,6 +1083,7 @@ String varA2481285DD560B3E99E863747DEB930A_2053928167 =             "Locator[pub
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.087 -0400", hash_original_method = "A89638ADC5A1EBA87157983FC792900F", hash_generated_method = "F49144015F290D0E87EA00C97B74FEED")
         @Override
         public int getParserPointer() {
@@ -1088,6 +1095,7 @@ String varA2481285DD560B3E99E863747DEB930A_2053928167 =             "Locator[pub
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.087 -0400", hash_original_method = "13948788E535A0F103A62D341F619BEF", hash_generated_method = "0960E271773C2EA3D2EF5323683FB110")
         @Override
         public int getPointer() {
@@ -1108,6 +1116,7 @@ String varA2481285DD560B3E99E863747DEB930A_2053928167 =             "Locator[pub
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.088 -0400", hash_original_method = "27A61DE39F4EE665DACE4F17911F194F", hash_generated_method = "5EDCE381284053CB386F71AA2C8C4D91")
         @Override
         public int getLength() {

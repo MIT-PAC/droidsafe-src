@@ -43,7 +43,7 @@ public final class SpellCheckerInfo implements Parcelable {
 
     private final ArrayList<SpellCheckerSubtype> mSubtypes = new ArrayList<SpellCheckerSubtype>();
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.862 -0400", hash_original_method = "6A25F08819F54F2E6B313A58A8CE6D90", hash_generated_method = "8E27387DBC614D1907428DE4DC9EBE54")
     public  SpellCheckerInfo(Context context, ResolveInfo service) throws XmlPullParserException, IOException {
         addTaint(context.getTaint());
@@ -133,7 +133,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.864 -0400", hash_original_method = "D0DF2452D02A3DC9C8E7C8BB825D11D4", hash_generated_method = "C0D8D8F6984FB63466EE4BBD97721CF4")
     public  SpellCheckerInfo(Parcel source) {
         mLabel = source.readInt();
@@ -161,7 +161,7 @@ String var565D51511D15781AE576ED3D7A8F70E9_2116894751 =         mId;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.865 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "CF1BE5C5D0411B8D03F696EB9A0CE1DF")
     public ComponentName getComponent() {
 ComponentName var93E6F91556E618C88339096F31BDB937_404524552 =         new ComponentName(
@@ -300,6 +300,7 @@ SpellCheckerSubtype var20D9F29322B7A583A76DDB79ACEBD923_586033217 =         mSub
 
     public static final Parcelable.Creator<SpellCheckerInfo> CREATOR
             = new Parcelable.Creator<SpellCheckerInfo>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public SpellCheckerInfo createFromParcel(Parcel source) {
             return new SpellCheckerInfo(source);

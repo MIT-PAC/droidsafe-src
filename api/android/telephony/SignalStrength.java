@@ -1085,6 +1085,7 @@ String var3AB1774E337C2A164F26B8C12AE948E0_1668494751 =         ("SignalStrength
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.854 -0400", hash_original_field = "17161E0D5F664640DD3B27CBEFA72BA0", hash_generated_field = "9C95D36DB334C11AD4000563454AA3FC")
 
     public static final Parcelable.Creator<SignalStrength> CREATOR = new Parcelable.Creator() {
+        @DSModeled(DSC.SAFE)
         public SignalStrength createFromParcel(Parcel in) {
             return new SignalStrength(in);
         }

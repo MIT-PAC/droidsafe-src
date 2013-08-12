@@ -149,6 +149,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_1591694122 =         stringRepresenta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.362 -0400", hash_original_method = "45144F3B633868FAD50525AF05DB3D15", hash_generated_method = "A917C33E2EB9224F3067200FC8F074F0")
     public void checkHeaders() throws ParseException {
         String prefix = "Missing a required header : ";
@@ -360,6 +361,7 @@ javax.sip.address.URI var82D1C2C46F8CAC913B42419B02F7BB1D_1898475717 =         (
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.366 -0400", hash_original_method = "9E5CBCE30B3652DB4124768C08B76945", hash_generated_method = "C25F872189C6C220F890A228EEDFA40F")
     public void setRequestURI(URI uri) {
         addTaint(uri.getTaint());
@@ -387,6 +389,7 @@ javax.sip.address.URI var82D1C2C46F8CAC913B42419B02F7BB1D_1898475717 =         (
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.366 -0400", hash_original_method = "EB488472F269B62C6CA4000BD2F13691", hash_generated_method = "751854308DB9B65DAB0336B36D8FE893")
     public void setMethod(String method) {
         addTaint(method.getTaint());
@@ -530,6 +533,7 @@ String varB17575D7C845B2C662583710539AAEBB_979125397 =         this.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.369 -0400", hash_original_method = "A6367075CC534F28F93FAF1E0E79C3E5", hash_generated_method = "8FF7CD63A21DF330D04E209ED56FE027")
     public Object clone() {
         SIPRequest retval = (SIPRequest) super.clone();
@@ -592,6 +596,7 @@ LinkedList varF9E19AD6135C970F387F77C6F3DE4477_859737169 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.370 -0400", hash_original_method = "8262152376D5F60373B8E0AFA26377AD", hash_generated_method = "013AA8AD365D79FF210781620AA92232")
     public boolean match(Object matchObj) {
         addTaint(matchObj.getTaint());
@@ -792,6 +797,7 @@ String var00A359C12D3BB90F4D7EAC5F002493EE_293523564 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.373 -0400", hash_original_method = "1C55C0FE8476C30A968193AA8AE54F83", hash_generated_method = "D9E1C7A93E4BC88DE953D20F2453DEF2")
     public SIPResponse createResponse(int statusCode) {
         addTaint(statusCode);
@@ -805,6 +811,7 @@ SIPResponse var604B30A12C0AAD66058E0B3499FDF292_1318883775 =         this.create
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.374 -0400", hash_original_method = "4F64A0C3F2C04A008F76D91B875DAC0D", hash_generated_method = "2A198AE8FC5424F072D6BBE1BF952C2B")
     public SIPResponse createResponse(int statusCode, String reasonPhrase) {
         addTaint(reasonPhrase.getTaint());
@@ -894,6 +901,7 @@ SIPResponse var2036E7FD3A3D966BDBCD4AA1915E2AF6_901504981 =         newResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.375 -0400", hash_original_method = "8DA892BCFD0BDEE05EB086307BFA5229", hash_generated_method = "853EFA6EA8BC34099D4D1257E0C342E8")
     public SIPRequest createCancelRequest() throws SipException {
         if(!this.getMethod().equals(Request.INVITE))        
@@ -935,6 +943,7 @@ SIPRequest var75803EE373E898F71DE593829D9E3AA6_68151981 =         cancel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.378 -0400", hash_original_method = "19E2EF483A3AD0C60513AE35D850A021", hash_generated_method = "AB261BEA59D9A9C46D4DD3DC2B725C61")
     public SIPRequest createAckRequest(To responseToHeader) {
         addTaint(responseToHeader.getTaint());
@@ -1066,6 +1075,7 @@ SIPRequest var843B90BB67BB5454D25E3643EF8010AB_1276164156 =         newRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.381 -0400", hash_original_method = "88B58E52E2D044E743A1ED3102F3960B", hash_generated_method = "1EF94D08FF535522934F538B0BBD8A99")
     public SIPRequest createSIPRequest(RequestLine requestLine, boolean switchHeaders) {
         addTaint(switchHeaders);

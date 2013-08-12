@@ -33,6 +33,7 @@ public class FragmentActivity extends Activity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.736 -0400", hash_original_field = "BD6DAC53FC9C157B350330EAEE248807", hash_generated_field = "501FA87408E2F66D936187DF5DCADDC6")
 
     final Handler mHandler = new Handler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.736 -0400", hash_original_method = "ED8978699985B094E29E929E78E6359E", hash_generated_method = "168BA30ED6C33F2DDBC36D8B8B268C8C")
         @Override
         public void handleMessage(Message msg) {
@@ -75,6 +76,7 @@ public class FragmentActivity extends Activity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.737 -0400", hash_original_field = "BF98B02E33783F9E5A5CF09B5615CA83", hash_generated_field = "ADF324DE7C48550B65817C7DAE1C2031")
 
     final FragmentContainer mContainer = new FragmentContainer() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.737 -0400", hash_original_method = "EBF9138B1D5057AD1D48F1D0D3D08E54", hash_generated_method = "93FC326340435248F019828EB69DF899")
         @Override
         public View findViewById(int id) {
@@ -160,6 +162,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.065 -0400", hash_original_method = "6AE13C43A807A8F581EF7E482513BDAF", hash_generated_method = "2F6D57473D5D3CD0E2A1AE71D5A914F0")
     public void onBackPressed() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -174,6 +177,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.065 -0400", hash_original_method = "55FDC064636609C07EA6D352B59B7C90", hash_generated_method = "1C9A1A936CA05248F3562920B9C055A7")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -187,6 +191,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.065 -0400", hash_original_method = "C455F2D927ADC92D1A4791D782C4857A", hash_generated_method = "3E5962B6517860089A05D3369C6A064F")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -229,6 +234,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.066 -0400", hash_original_method = "7F7FAA4BD379FD5B7B024567C1869B85", hash_generated_method = "B41C59A10747B8262EFC4B5B5AFD87F5")
     @Override
     public boolean onCreatePanelMenu(int featureId, Menu menu) {
@@ -265,6 +271,7 @@ public class FragmentActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.066 -0400", hash_original_method = "77C8CC4EE959FDB021D467966620FB0D", hash_generated_method = "0DE5356270AFCAD95A23278D80098266")
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
@@ -359,6 +366,7 @@ View varCA045DD9191E9B0BACEF80A7EEFB5C7A_804400827 =         fragment.mView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.067 -0400", hash_original_method = "81DE240BA78D06EF3CA4E4150F572C81", hash_generated_method = "060C5407A30F13E0FD85AEFCEDF74CCD")
     @Override
     protected void onDestroy() {
@@ -380,6 +388,7 @@ View varCA045DD9191E9B0BACEF80A7EEFB5C7A_804400827 =         fragment.mView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.067 -0400", hash_original_method = "9885A8D8E166C211280B71A198245DDA", hash_generated_method = "AB5FD295018141871DE1CDD1BF8C0D2E")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -409,6 +418,7 @@ View varCA045DD9191E9B0BACEF80A7EEFB5C7A_804400827 =         fragment.mView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.067 -0400", hash_original_method = "5060399A61D97F30C880AACCBE3D1906", hash_generated_method = "179AD79FEEBC5260223D01A1DE47B9E6")
     @Override
     public void onLowMemory() {
@@ -421,6 +431,7 @@ View varCA045DD9191E9B0BACEF80A7EEFB5C7A_804400827 =         fragment.mView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.068 -0400", hash_original_method = "07B1A6CC471050623DC993725853B976", hash_generated_method = "4E1F6E20A36BA5FD636940BF4D7A7ACA")
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -462,6 +473,7 @@ switch(featureId){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.068 -0400", hash_original_method = "B1F57A749E35030E5CB8EAB506D19441", hash_generated_method = "79CD56A71D6249D03ABF50568EB2F958")
     @Override
     public void onPanelClosed(int featureId, Menu menu) {
@@ -483,6 +495,7 @@ switch(featureId){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.068 -0400", hash_original_method = "EBBC480BA94BD3D79D683AB555C9F857", hash_generated_method = "F6203FA5F3497C63921C51E8F1DE18BC")
     @Override
     protected void onPause() {
@@ -520,6 +533,7 @@ switch(featureId){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.068 -0400", hash_original_method = "3FCB5D73B297020DDBEAF38F4A9C2458", hash_generated_method = "2304C8D4908051D209863854C6EC9090")
     @Override
     protected void onResume() {
@@ -536,6 +550,7 @@ switch(featureId){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.068 -0400", hash_original_method = "6B2BC88BC45E8448086501D1DCC5CA8F", hash_generated_method = "0EC7CE9DD1DFB4A4C28F312BCC044B23")
     @Override
     protected void onPostResume() {
@@ -552,6 +567,7 @@ switch(featureId){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.069 -0400", hash_original_method = "571F1484F02501E8599B33312B988FBD", hash_generated_method = "D3F8E7A7CF464221689B4E21DB27888D")
     protected void onResumeFragments() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -561,6 +577,7 @@ switch(featureId){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.069 -0400", hash_original_method = "B669498AB621CA27E61E7D94F5D38091", hash_generated_method = "F46788068DBD5D8C3A2C1B6F7ED3B490")
     @Override
     public boolean onPreparePanel(int featureId, View view, Menu menu) {
@@ -652,6 +669,7 @@ Object var7D805FCD5771122135162F5B7459B31C_1911121652 =         nci;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.070 -0400", hash_original_method = "C79CD565EF7D4DAA3E1BC7711F48F8E1", hash_generated_method = "32D322835D7FD87775E923B44703158E")
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -672,6 +690,7 @@ Object var7D805FCD5771122135162F5B7459B31C_1911121652 =         nci;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.070 -0400", hash_original_method = "F5C32F05E56A3FD61FD95DF89ACF56DE", hash_generated_method = "7D239A22EDC5B732DE87F86521AF6BF1")
     @Override
     protected void onStart() {
@@ -725,6 +744,7 @@ for(int i=0;i<loaders.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.070 -0400", hash_original_method = "F60F215A385D287752751758F3F3D1D2", hash_generated_method = "D292BE290C6A31742F08B288962530FC")
     @Override
     protected void onStop() {
@@ -753,6 +773,7 @@ Object var540C13E9E156B687226421B24F2DF178_1135838170 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.071 -0400", hash_original_method = "350BC71A71D255050EA53218D39061A7", hash_generated_method = "774F41D160584E8917E1E198F3D42DB2")
     public Object getLastCustomNonConfigurationInstance() {
         NonConfigurationInstances nc = (NonConfigurationInstances)
@@ -767,6 +788,7 @@ Object var5B57144719C5DFE393244107A5A35FBA_1406433072 =         nc != null ? nc.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.071 -0400", hash_original_method = "9AD1865EB184E07C9164FA8858758524", hash_generated_method = "ECF552923146C377DB66E8F497E401AE")
     public void supportInvalidateOptionsMenu() {
         if(android.os.Build.VERSION.SDK_INT >= HONEYCOMB)        
@@ -784,6 +806,7 @@ Object var5B57144719C5DFE393244107A5A35FBA_1406433072 =         nc != null ? nc.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.071 -0400", hash_original_method = "793A438044EEB54318015A62231AC042", hash_generated_method = "AA94D62EA0B88634CC66EEC2A35935C8")
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
         addTaint(args[0].getTaint());
@@ -945,6 +968,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.072 -0400", hash_original_method = "4C92BE36A72450E440D9BAAFB03D8955", hash_generated_method = "396E82C845013CD0203A115C35BB097B")
      void doReallyStop(boolean retaining) {
         if(!mReallyStopped)        
@@ -964,6 +988,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.073 -0400", hash_original_method = "E4D0A1E9799E4532B863FFE2D6A92452", hash_generated_method = "3881F683C297898F0D37C2901806C723")
      void onReallyStop() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1070,6 +1095,7 @@ FragmentManager varB68713B43E6D3DE30B9A48FEA4C5FD0D_1077820215 =         mFragme
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.073 -0400", hash_original_method = "6D742EEA8D7FFBA4C7362E83B04A53C8", hash_generated_method = "2B55FF047860DFE6F9F9E7C26C4B5799")
      void invalidateSupportFragment(String who) {
         addTaint(who.getTaint());

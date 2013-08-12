@@ -15,6 +15,7 @@ public final class AccessController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T doPrivileged(PrivilegedAction<T> action) {
         return action.run();
     }
@@ -56,7 +57,7 @@ public final class AccessController {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static AccessControlContext getContext() {
         return new AccessControlContext(null);
     }

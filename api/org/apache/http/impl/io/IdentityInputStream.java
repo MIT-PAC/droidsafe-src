@@ -38,6 +38,7 @@ public class IdentityInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.615 -0400", hash_original_method = "DCB121D8842EB51547DBC31A4230EDC6", hash_generated_method = "EAE041E496D4CE0962320B403B0A7329")
     public int available() throws IOException {
         if(!this.closed && this.in.isDataAvailable(10))        
@@ -70,6 +71,7 @@ public class IdentityInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.616 -0400", hash_original_method = "F6A0760AFCA549A5825114F4EAC4FB8F", hash_generated_method = "59B65F6CBCC786094C71EF3458F623A8")
     public int read() throws IOException {
         if(this.closed)        

@@ -57,6 +57,7 @@ String var85927E281577E5F9975F9E6243687DB0_1377151234 =         mPattern;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.206 -0400", hash_original_method = "62F8B077957CE70BF92EA7EF3ACCE61D", hash_generated_method = "67E5A20A23EE3C08DE19423022EE5700")
     public boolean match(String str) {
         addTaint(str.getTaint());
@@ -68,6 +69,7 @@ String var85927E281577E5F9975F9E6243687DB0_1377151234 =         mPattern;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.207 -0400", hash_original_method = "4D68435646F5279408D2A4F2A408DED4", hash_generated_method = "3472B534F0D59E6168B1685FB1E58E23")
     public String toString() {
         String type = "? ";
@@ -124,7 +126,7 @@ switch(mType){
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     static boolean matchPattern(String pattern, String match, int type) {
         if (match == null) return false;
         if (type == PATTERN_LITERAL) {

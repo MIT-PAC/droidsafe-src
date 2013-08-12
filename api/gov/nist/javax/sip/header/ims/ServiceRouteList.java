@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class ServiceRouteList extends SIPHeaderList<ServiceRoute> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.516 -0400", hash_original_method = "C0CA39C0A35C17F8012D1D71020C7494", hash_generated_method = "357269883D61B3888F1D67DD56AA019B")
     public  ServiceRouteList() {
         super(ServiceRoute.class, ServiceRouteHeader.NAME);
@@ -15,6 +16,7 @@ public class ServiceRouteList extends SIPHeaderList<ServiceRoute> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.517 -0400", hash_original_method = "1032498AE96A3DBCEFF1D5F4D42985C8", hash_generated_method = "140ACD3AB4B6255B3BB874B98CFB0E2F")
     public Object clone() {
         ServiceRouteList retval = new ServiceRouteList();

@@ -21,6 +21,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static byte[] decodeHex(char[] data) throws DecoderException {
         int len = data.length;
         if ((len & 0x01) != 0) {
@@ -38,6 +39,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static int toDigit(char ch, int index) throws DecoderException {
         int digit = Character.digit(ch, 16);
         if (digit == -1) {
@@ -59,6 +61,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.704 -0400", hash_original_method = "A17636F69FEFB6DDDFC5F873DED10994", hash_generated_method = "78AA884176727BF2CA639DB787FAB301")
     public byte[] decode(byte[] array) throws DecoderException {
         addTaint(array[0]);
@@ -70,6 +73,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.705 -0400", hash_original_method = "259B1B44CE3EA0D75FAE3A3A31435A4B", hash_generated_method = "D9B8CD83ED1C3B462D1F8B2056D7AB31")
     public Object decode(Object object) throws DecoderException {
         addTaint(object.getTaint());
@@ -96,6 +100,7 @@ Object var7D7CE31ADFA4FD7FAC36DE7403692C28_1778087439 =             decodeHex(ch
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.705 -0400", hash_original_method = "50DBD5604B609ED94F02B18C89B60347", hash_generated_method = "51EE2C3630699F8508A59D9DFD4D86F5")
     public byte[] encode(byte[] array) {
         addTaint(array[0]);
@@ -107,6 +112,7 @@ Object var7D7CE31ADFA4FD7FAC36DE7403692C28_1778087439 =             decodeHex(ch
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.705 -0400", hash_original_method = "65D07AA1ACA3F409200AC5EFDF123AC8", hash_generated_method = "0E2AAF41EA1931C86A62435A44545C05")
     public Object encode(Object object) throws EncoderException {
         addTaint(object.getTaint());

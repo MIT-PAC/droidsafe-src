@@ -39,6 +39,7 @@ public abstract class ConnectionState {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.311 -0400", hash_original_method = "A4712167FB5CF3F93D986A297FF936DF", hash_generated_method = "4DD201553C5E2E4CE82FC521D1E6DA98")
     protected int getMinFragmentSize() {
         int var8E16396006E30E999C59C6F584041DF5_100378399 = (encCipher.getOutputSize(1+hash_size));
@@ -49,6 +50,7 @@ public abstract class ConnectionState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.312 -0400", hash_original_method = "DD3B7DF1039350512C674DDBBC384DAA", hash_generated_method = "146859657A1726EEE535343ACB182FC7")
     protected int getFragmentSize(int content_size) {
         addTaint(content_size);
@@ -60,6 +62,7 @@ public abstract class ConnectionState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.312 -0400", hash_original_method = "1E3397EF0AF5BC858955A8504765F190", hash_generated_method = "A8C6C133DD112FEFDFC88F6F3FBAE094")
     protected int getContentSize(int generic_cipher_size) {
         addTaint(generic_cipher_size);
@@ -102,6 +105,7 @@ public abstract class ConnectionState {
         (byte type, byte[] fragment, int offset, int len);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.313 -0400", hash_original_method = "4CD2779F027BE7D5E16F48C0F5195279", hash_generated_method = "29EFDCB3F945063E6FE6C6D98F00D36F")
     protected byte[] decrypt(byte type, byte[] fragment) {
         addTaint(fragment[0]);

@@ -15,6 +15,7 @@ public class UnknownServiceException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.168 -0400", hash_original_method = "7690A99261A8975258177F18AE9D9AC2", hash_generated_method = "CCAF363A9E074FCB6990A8E7358E2752")
     public  UnknownServiceException(String detailMessage) {
         super(detailMessage);

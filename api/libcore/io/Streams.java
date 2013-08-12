@@ -26,6 +26,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static int readSingleByte(InputStream in) throws IOException {
         byte[] buffer = new byte[1];
         int result = in.read(buffer, 0, 1);
@@ -47,7 +48,7 @@ public final class Streams {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void readFully(InputStream in, byte[] dst, int offset, int byteCount) throws IOException {
         if (byteCount == 0) {
             return;
@@ -70,6 +71,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static byte[] readFully(InputStream in) throws IOException {
         try {
             return readFullyNoClose(in);
@@ -79,6 +81,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static byte[] readFullyNoClose(InputStream in) throws IOException {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
@@ -90,7 +93,7 @@ public final class Streams {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static String readFully(Reader reader) throws IOException {
         try {
             StringWriter writer = new StringWriter();
@@ -106,6 +109,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static void skipAll(InputStream in) throws IOException {
         do {
             in.skip(Long.MAX_VALUE);
@@ -113,6 +117,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static long skipByReading(InputStream in, long byteCount) throws IOException {
         byte[] buffer = skipBuffer.getAndSet(null);
         if (buffer == null) {
@@ -148,6 +153,7 @@ public final class Streams {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String readAsciiLine(InputStream in) throws IOException {
         StringBuilder result = new StringBuilder(80);
         while (true) {

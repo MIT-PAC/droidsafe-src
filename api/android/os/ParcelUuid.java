@@ -40,6 +40,7 @@ UUID var86B71BE3C39C4B77800B74F827A65360_169333613 =         mUuid;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.156 -0400", hash_original_method = "88F1B202F7B60E8AC7861421AE6F35A5", hash_generated_method = "70A730DF6D6291A5A284752FE73D943A")
     @Override
     public String toString() {
@@ -114,6 +115,7 @@ String var3DBA5581A50FF6A029E224F01A569D9E_148096710 =         mUuid.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.157 -0400", hash_original_method = "914E719E6FA80BA5E3F689C4DD681C77", hash_generated_method = "2139B38EDAF805C119EAEC6940A80806")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

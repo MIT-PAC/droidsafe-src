@@ -22,7 +22,7 @@ class VelocityTrackerCompatHoneycomb {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static float getYVelocity(VelocityTracker tracker, int pointerId) {
         return tracker.getYVelocity(pointerId);
     }

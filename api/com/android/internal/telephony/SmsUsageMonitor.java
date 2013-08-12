@@ -24,6 +24,7 @@ public class SmsUsageMonitor {
 
     private final HashMap<String, ArrayList<Long>> mSmsStamp = new HashMap<String, ArrayList<Long>>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.441 -0400", hash_original_method = "AA58276D63D2163182FD805D073EE67C", hash_generated_method = "41E1494827BFC473DCA67AF4C2849C94")
     public  SmsUsageMonitor(ContentResolver resolver) {
         mMaxAllowed = Settings.Secure.getInt(resolver,
@@ -42,6 +43,7 @@ public class SmsUsageMonitor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.441 -0400", hash_original_method = "7B2C29F4698952FF45E2699BBB5DEB62", hash_generated_method = "F5020B67D30B77B9A0B8E7C878C54BF3")
      void dispose() {
         mSmsStamp.clear();
@@ -50,6 +52,7 @@ public class SmsUsageMonitor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.442 -0400", hash_original_method = "EA1BFE3566BC11C4D089155AC6363183", hash_generated_method = "8AB28D99D71DCBD9C77B1CFEFC4B5740")
     public boolean check(String appName, int smsWaiting) {
         addTaint(smsWaiting);

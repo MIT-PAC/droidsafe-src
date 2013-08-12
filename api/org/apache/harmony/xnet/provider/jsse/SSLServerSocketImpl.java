@@ -65,6 +65,7 @@ public class SSLServerSocketImpl extends SSLServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.415 -0400", hash_original_method = "12BE90119F3183109C9DE5DBB63B352A", hash_generated_method = "D3C95C6FB5322D3926297BEF263A8736")
     @Override
     public String[] getSupportedCipherSuites() {
@@ -76,6 +77,7 @@ String[] varF6F3ABBB205DDE294417F777EFDFB1AB_1478218204 =         CipherSuite.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.416 -0400", hash_original_method = "80B545F2398A25060AECB1A23E821DD5", hash_generated_method = "24E90CD7EE19994607B925F200066A65")
     @Override
     public String[] getEnabledCipherSuites() {
@@ -97,6 +99,7 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_332997983 =         sslParameters.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.416 -0400", hash_original_method = "9A36300B3497119D0180A59D3E72D371", hash_generated_method = "736EF08E6B9F61001031435D9298E18D")
     @Override
     public String[] getSupportedProtocols() {
@@ -108,6 +111,7 @@ String[] varCE68CF4030A908DFE590B8EDFA039BDD_1373460077 =         ProtocolVersio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.416 -0400", hash_original_method = "9376751549A6436575C0783CA6C3A4A0", hash_generated_method = "D3B0E0C9D026EB06227FE55F01A6E2CC")
     @Override
     public String[] getEnabledProtocols() {

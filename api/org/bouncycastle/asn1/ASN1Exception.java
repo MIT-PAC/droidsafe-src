@@ -14,6 +14,7 @@ public class ASN1Exception extends IOException {
 
     private Throwable cause;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.625 -0400", hash_original_method = "723A1DBA8406751CA0BE121F0D1A9151", hash_generated_method = "BCDB967B921E585F1BBFBFA3FF4A327F")
       ASN1Exception(String message) {
         super(message);

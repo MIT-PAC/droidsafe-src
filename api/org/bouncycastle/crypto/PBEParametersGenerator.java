@@ -20,6 +20,7 @@ public abstract class PBEParametersGenerator {
 
     protected int iterationCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.475 -0400", hash_original_method = "1EFCFCAED54D10FE929FE2EAEA704D32", hash_generated_method = "3C2B98B5AB2577359A7BA81A6CF7EC83")
     protected  PBEParametersGenerator() {
         // ---------- Original Method ----------
@@ -99,6 +100,7 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] PKCS5PasswordToUTF8Bytes(
         char[]  password) {
         return Strings.toUTF8ByteArray(password);

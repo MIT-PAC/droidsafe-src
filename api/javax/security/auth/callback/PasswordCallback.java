@@ -21,6 +21,7 @@ public class PasswordCallback implements Callback, Serializable {
 
     private char[] inputPassword;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.867 -0400", hash_original_method = "FF9C282CA0D3F4D89988C18610E5667F", hash_generated_method = "2DC202BDD00C9FC4676F34D1DFBC6A5A")
     public  PasswordCallback(String prompt, boolean echoOn) {
         addTaint(prompt.getTaint());
@@ -72,6 +73,7 @@ String varE4FB060A074D4292A4C6C936BB93312C_1596257846 =         prompt;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.869 -0400", hash_original_method = "A602CEA65D3FCE1A9999A6860447F09F", hash_generated_method = "CE313029BCA82AE20353D370D081B811")
     public void setPassword(char[] password) {
         if(password == null)        
@@ -93,6 +95,7 @@ String varE4FB060A074D4292A4C6C936BB93312C_1596257846 =         prompt;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.869 -0400", hash_original_method = "5EC08C3E76624CC9F22EE28EB19509D9", hash_generated_method = "063C04B0A1D3B3DD2631A7791B4C87EA")
     public char[] getPassword() {
         if(inputPassword != null)        

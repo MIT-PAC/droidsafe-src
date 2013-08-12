@@ -57,6 +57,7 @@ public class JarURLConnectionImpl extends JarURLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.358 -0400", hash_original_method = "0D95FCCAA7871FCD5DE5E8081721F47B", hash_generated_method = "8B3D84B6AAE954FF50A9F78D86E66D39")
     @Override
     public void connect() throws IOException {
@@ -153,6 +154,7 @@ JarFile var8E1F414344626BA4FB59E50115387315_2102347690 =         jarFile;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.360 -0400", hash_original_method = "AF67425F611C6CCEA6B4F36EBE571AB2", hash_generated_method = "BFC51FBB5F2E612B75CB26B4967A9A86")
      JarFile openJarFile() throws IOException {
         if(jarFileURL.getProtocol().equals("file"))        
@@ -222,6 +224,7 @@ JarFile var540C13E9E156B687226421B24F2DF178_269575024 =                         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.361 -0400", hash_original_method = "4969FA075748EE67279B88C22279B5EB", hash_generated_method = "C82C8068FF6B44F3345965F94B9E7DA9")
     @Override
     public JarEntry getJarEntry() throws IOException {
@@ -359,6 +362,7 @@ String var09A62FBC65BE187AFF76DDFD23EE82F2_502952705 =         cType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.364 -0400", hash_original_method = "C82FBA290AE26D875C8865E2241D6919", hash_generated_method = "B6BBD3925655AF337A063C7BEA687C1D")
     @Override
     public int getContentLength() {
@@ -394,6 +398,7 @@ String var09A62FBC65BE187AFF76DDFD23EE82F2_502952705 =         cType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.365 -0400", hash_original_method = "277EA8603145BCD9B1620E5B0867C76D", hash_generated_method = "90247A2BF8F68398E6E91E6EAA0BB576")
     @Override
     public Object getContent() throws IOException {
@@ -427,6 +432,7 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_137890211 =         jarFileURLCon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.366 -0400", hash_original_method = "89E1132CC6620CB971998873757D9D18", hash_generated_method = "363CF346BB5C035540B4D884B280422C")
     @Override
     public boolean getUseCaches() {
@@ -448,6 +454,7 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_137890211 =         jarFileURLCon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.366 -0400", hash_original_method = "E32A55AFDD8C878EAFF3633240EF835D", hash_generated_method = "FA3D3489E7FFBD99F00E723273352026")
     @Override
     public boolean getDefaultUseCaches() {
@@ -469,6 +476,7 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_137890211 =         jarFileURLCon
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void closeCachedFiles() {
         Set<Map.Entry<URL, JarFile>> s = jarCache.entrySet();
         synchronized (jarCache) {
@@ -491,6 +499,7 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_137890211 =         jarFileURLCon
 
         JarFile jarFile;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.367 -0400", hash_original_method = "6E5813E713394C12219CB12B24913AED", hash_generated_method = "E125CDB3DA807FC148E23519EBBE4EF5")
         protected  JarURLConnectionInputStream(InputStream in, JarFile file) {
             super(in);
@@ -501,6 +510,7 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_137890211 =         jarFileURLCon
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.367 -0400", hash_original_method = "C19810B5404F297C56A9BC5E0816E19A", hash_generated_method = "710260A35875A7F3968A128DDA4A88CC")
         @Override
         public void close() throws IOException {

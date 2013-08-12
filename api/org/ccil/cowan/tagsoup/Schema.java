@@ -26,6 +26,7 @@ public abstract class Schema {
 
     private ElementType theRoot = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.189 -0400", hash_original_method = "D0D844E899EF8830D95ED807F7DF602A", hash_generated_method = "D0D844E899EF8830D95ED807F7DF602A")
     public Schema ()
     {
@@ -33,6 +34,7 @@ public abstract class Schema {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.189 -0400", hash_original_method = "9699024F392D458CCB5B62F4AD905856", hash_generated_method = "B5432464F72FF4BDC517335D3BD849BC")
     public void elementType(String name, int model, int memberOf, int flags) {
         addTaint(flags);
@@ -61,6 +63,7 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_791023593 =         theRoot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.190 -0400", hash_original_method = "1826BAE4A7A25490C40F3DF9456EC509", hash_generated_method = "A556C657D75E300427B2D2AD2A1BC435")
     public void attribute(String elemName, String attrName,
 				String type, String value) {
@@ -89,6 +92,7 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_791023593 =         theRoot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.190 -0400", hash_original_method = "C7818769967A7B7D6BCF0765E44CE567", hash_generated_method = "8F8F28852E5AED7122FD7C0944CA9280")
     public void parent(String name, String parentName) {
         addTaint(parentName.getTaint());
@@ -121,6 +125,7 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_791023593 =         theRoot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.190 -0400", hash_original_method = "9D058B55598451C1F46B788161F3861A", hash_generated_method = "5947E64AEEF9E0D4D0A89F5DDBFB024A")
     public void entity(String name, int value) {
         addTaint(value);
@@ -131,7 +136,7 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_791023593 =         theRoot;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.190 -0400", hash_original_method = "15E50FC94B256079445190BC5C208F0A", hash_generated_method = "E64B1FFA74FFD9252436682523D02782")
     public ElementType getElementType(String name) {
         addTaint(name.getTaint());
@@ -143,6 +148,7 @@ ElementType varCF5D2F602097A6A5D759EF35ED655804_1564334697 =         (ElementTyp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.190 -0400", hash_original_method = "5590AE9B6B63818372EC6D8DB973BC8E", hash_generated_method = "FD0BFF65DF8646A96DB2D2E03C21EEFF")
     public int getEntity(String name) {
         addTaint(name.getTaint());

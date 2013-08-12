@@ -50,6 +50,7 @@ public class OpenSSLSocketFactoryImpl extends javax.net.ssl.SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.867 -0400", hash_original_method = "ED12E5BC8BFE19F7383AAD2954B3D6F8", hash_generated_method = "F977EBEDD1EBB8F226355D7FF351DF06")
     public  OpenSSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = sslParameters;
@@ -60,6 +61,7 @@ public class OpenSSLSocketFactoryImpl extends javax.net.ssl.SSLSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.867 -0400", hash_original_method = "0281EF5D8B3BC852A1CC14F175899740", hash_generated_method = "64FA7A0318C27BA2918C127BFD141B61")
     public String[] getDefaultCipherSuites() {
 String[] var82D10C47ABE9DD1DDD091B4BC41FC622_397919770 =         NativeCrypto.getDefaultCipherSuites();
@@ -70,6 +72,7 @@ String[] var82D10C47ABE9DD1DDD091B4BC41FC622_397919770 =         NativeCrypto.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.868 -0400", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "0CEE6D2CB3C54D50DEEE7D2C37E86FCE")
     public String[] getSupportedCipherSuites() {
 String[] var0633111015CD199BA68A1C170162F6EA_264839186 =         NativeCrypto.getSupportedCipherSuites();

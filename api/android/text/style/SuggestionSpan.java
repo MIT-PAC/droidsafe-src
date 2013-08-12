@@ -457,6 +457,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_1468753206 =         mNotificationTar
 
     public static final Parcelable.Creator<SuggestionSpan> CREATOR =
             new Parcelable.Creator<SuggestionSpan>() {
+        @DSModeled(DSC.SAFE)
         @Override
         public SuggestionSpan createFromParcel(Parcel source) {
             return new SuggestionSpan(source);

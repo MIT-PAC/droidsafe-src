@@ -192,6 +192,7 @@ public final class ContactsContract {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static void notifyDirectoryChange(ContentResolver resolver) {
             ContentValues contentValues = new ContentValues();
             resolver.update(Directory.CONTENT_URI, contentValues, null, null);

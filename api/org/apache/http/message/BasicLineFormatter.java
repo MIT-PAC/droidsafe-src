@@ -16,6 +16,7 @@ import org.apache.http.util.CharArrayBuffer;
 
 public class BasicLineFormatter implements LineFormatter {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.925 -0400", hash_original_method = "8022E7B2B110A3478739271765EA4718", hash_generated_method = "8022E7B2B110A3478739271765EA4718")
     public BasicLineFormatter ()
     {

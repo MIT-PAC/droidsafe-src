@@ -166,6 +166,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.149 -0400", hash_original_method = "FDD541AC7ACF46AD908991FDB1EF4671", hash_generated_method = "723EF595343DF897F626C23BDD1FB97C")
     public boolean getFeature(String name) throws SAXNotRecognizedException, SAXNotSupportedException {
         addTaint(name.getTaint());
@@ -188,6 +189,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.151 -0400", hash_original_method = "DD81CF03E95A92E28D68E44755507EB5", hash_generated_method = "570DD1952DC6AFAFA3D60C6A32ACF28C")
     public void setFeature(String name, boolean value) throws SAXNotRecognizedException, SAXNotSupportedException {
         addTaint(name.getTaint());
@@ -233,6 +235,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.152 -0400", hash_original_method = "F750AD287EF0AB9FAAF84C1118421011", hash_generated_method = "2F3ED1683C0AA31D3A61E3EDAC6A081C")
     public Object getProperty(String name) throws SAXNotRecognizedException, SAXNotSupportedException {
         addTaint(name.getTaint());
@@ -288,6 +291,7 @@ Object varD4054F34FCEDCED3102672B633AE76D0_868341059 =             theAutoDetect
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.153 -0400", hash_original_method = "A91E5B1E97A27DD267128DBDD8DC4544", hash_generated_method = "81A95C925013C1311F0333C867F47C86")
     public void setProperty(String name, Object value) throws SAXNotRecognizedException, SAXNotSupportedException {
         addTaint(name.getTaint());
@@ -442,6 +446,7 @@ ErrorHandler varF30FCC774C37D18FDA65D270F88B540B_725143057 =         (theErrorHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.156 -0400", hash_original_method = "5995949AA97E47EEEF7CCC54B7A2CDFD", hash_generated_method = "4F868F0CB6A1B70FB87DDCC4F4F04C53")
     public void parse(InputSource input) throws IOException, SAXException {
         addTaint(input.getTaint());
@@ -472,6 +477,7 @@ ErrorHandler varF30FCC774C37D18FDA65D270F88B540B_725143057 =         (theErrorHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.156 -0400", hash_original_method = "84CD70DF516C08D97CF2D35EEDEEB169", hash_generated_method = "EA2B9D9CD7F2D7BB4C4396AD6FB433B0")
     public void parse(String systemid) throws IOException, SAXException {
         addTaint(systemid.getTaint());
@@ -608,6 +614,7 @@ InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1113995642 =         c.getInputS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.157 -0400", hash_original_method = "35040F07E07C8DEC63311B713CED1F9F", hash_generated_method = "D8EAF365A3862A7E83AB03DF6E77FF12")
     public void adup(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -624,6 +631,7 @@ InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1113995642 =         c.getInputS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.157 -0400", hash_original_method = "C9FB1DE82C24B4094C9FB21723BCABB8", hash_generated_method = "568F4189FB79348FE1244D85783FC8B5")
     public void aname(char[] buff, int offset, int length) throws SAXException {
         if(theNewElement == null)        
@@ -635,6 +643,7 @@ InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1113995642 =         c.getInputS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.158 -0400", hash_original_method = "B00CA1167B22D91DBB3A58CD90B87CBC", hash_generated_method = "5AF586FA5AF4420C9899DC2E1388B18A")
     public void aval(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -713,6 +722,7 @@ String var066172BAF3274369BB7672D02BD9C593_2066261488 =         new String(dst, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.159 -0400", hash_original_method = "38A8EAE3BE9C6B2369CA0ABEFF20DED1", hash_generated_method = "46345302BE4543B332C8C9596818D864")
     public void entity(char[] buff, int offset, int length) throws SAXException {
         theEntity = lookupEntity(buff, offset, length);
@@ -773,6 +783,7 @@ String var066172BAF3274369BB7672D02BD9C593_2066261488 =         new String(dst, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.159 -0400", hash_original_method = "0A8BABE6DCD2F294E63CAA7BFD276118", hash_generated_method = "56876500EA4C9C1AAB924589BFF2AB68")
     public void eof(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -799,6 +810,7 @@ String var066172BAF3274369BB7672D02BD9C593_2066261488 =         new String(dst, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.160 -0400", hash_original_method = "551A0AD1D8D7CCFDEAB6F03D7C2481C3", hash_generated_method = "5EC52ADE5B9B0DDD9B8446A33C9B6D93")
     public void etag(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -813,7 +825,7 @@ String var066172BAF3274369BB7672D02BD9C593_2066261488 =         new String(dst, 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.161 -0400", hash_original_method = "C9023F984BCCCBD84980442CF55120FA", hash_generated_method = "0ACAF278B1011903EE52A55D1713E795")
     public boolean etag_cdata(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -872,6 +884,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.161 -0400", hash_original_method = "F1F8115795B982079B234CC2192B7DDB", hash_generated_method = "DC05BF5A14CD5354F22F448C188E8282")
     public void etag_basic(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1137,6 +1150,7 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_1000499131 =         prefix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.164 -0400", hash_original_method = "1C2CEC982271DB04AB7A74A00D860FDA", hash_generated_method = "0ADFE06C58CE52172B3E0222D1BE2C92")
     public void decl(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1313,6 +1327,7 @@ String var17F296EBBF7F1F875B1A9BB868D8F4B3_2111822423 =         dst.toString().t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.165 -0400", hash_original_method = "7EEA5677E99A2C9EF1241E44C92259AC", hash_generated_method = "52F7778B89F9D862616ECE43354D333C")
     public void gi(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1353,6 +1368,7 @@ String var17F296EBBF7F1F875B1A9BB868D8F4B3_2111822423 =         dst.toString().t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.165 -0400", hash_original_method = "A6AFE17C00CB0D2270FAE1159A108399", hash_generated_method = "007288F33DA15611C9AD0C7A70F09471")
     public void cdsect(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1368,6 +1384,7 @@ String var17F296EBBF7F1F875B1A9BB868D8F4B3_2111822423 =         dst.toString().t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.165 -0400", hash_original_method = "087E39444EA30ADF63D8EEFEFF8A4B70", hash_generated_method = "0220B9AAE5955192EB6BC1996DB51010")
     public void pcdata(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1415,6 +1432,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.166 -0400", hash_original_method = "10DA4877B62CBC6E2AF531E70FE25E21", hash_generated_method = "294CB36D1F5BBA62BC66BF4274168DE0")
     public void pitarget(char[] buff, int offset, int length) throws SAXException {
         if(theNewElement != null)        
@@ -1426,7 +1444,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.166 -0400", hash_original_method = "373E8AB8CB624AD49A96496DDC7BD596", hash_generated_method = "FB3633235A53377577D848C8A9FBA0CD")
     public void pi(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1451,6 +1469,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.166 -0400", hash_original_method = "E16C8825C4BEC5864699E25FFFCA21E7", hash_generated_method = "81000967EDB101985F2DAF1EB5B25DC5")
     public void stagc(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1472,6 +1491,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.166 -0400", hash_original_method = "0E3563E6FA953D38A95EC3A2105DD410", hash_generated_method = "4911940EE4EDD4E0D943CF9269263979")
     public void stage(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1488,6 +1508,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.166 -0400", hash_original_method = "A603B5B2E591802383EBFF92F8BBF095", hash_generated_method = "0EA4C7C84A9B4768AC08E2170A07F31D")
     public void cmnt(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);

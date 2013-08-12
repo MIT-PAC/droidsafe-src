@@ -16,6 +16,7 @@ public class ResponseEventExt extends ResponseEvent {
 
     private ClientTransactionExt m_originalTransaction;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.493 -0400", hash_original_method = "E0A4B826C1E89C68B173497FA6715B8E", hash_generated_method = "D9CFAF44542742CC92191234D3E6FA33")
     public  ResponseEventExt(Object source, ClientTransactionExt clientTransaction, 
             Dialog dialog,  Response response) {
@@ -29,6 +30,7 @@ public class ResponseEventExt extends ResponseEvent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.494 -0400", hash_original_method = "1D5FD647F40A8A30082BEBDADF028E9F", hash_generated_method = "ECDCAD76D54EEC005C31652C309B2446")
     public boolean isForkedResponse() {
         boolean var0FCFC13D796A6319C2F5AEA23D967DF1_709514538 = (super.getClientTransaction() == null && m_originalTransaction != null);

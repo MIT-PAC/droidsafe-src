@@ -486,7 +486,7 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_177848195 =         retValue;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.391 -0400", hash_original_method = "E23B4E2A713C93A88E352378F7DC6B9B", hash_generated_method = "A7CAF66E68CF82BE5509A3C225FE49D6")
     @SuppressWarnings("unchecked")
     private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
@@ -927,7 +927,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
 
         long gId;
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.396 -0400", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "DE6C626044B8E9CC58838E683EF276B1")
         private  GroupMetadata() {
             // ---------- Original Method ----------
@@ -1002,6 +1002,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         public static final Parcelable.Creator<GroupMetadata> CREATOR =
                 new Parcelable.Creator<GroupMetadata>() {
             
+            @DSModeled(DSC.SAFE)
             public GroupMetadata createFromParcel(Parcel in) {
                 GroupMetadata gm = GroupMetadata.obtain(
                         in.readInt(),
@@ -1011,6 +1012,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
                 return gm;
             }
     
+            @DSModeled(DSC.SAFE)
             public GroupMetadata[] newArray(int size) {
                 return new GroupMetadata[size];
             }
@@ -1045,7 +1047,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
 
         public int groupInsertIndex;
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.397 -0400", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "72FA864FA9C855DE015B0EDB93BB6462")
         private  PositionMetadata() {
             // ---------- Original Method ----------
@@ -1076,7 +1078,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         private static PositionMetadata getRecycledOrCreate() {
             PositionMetadata pm;
             synchronized (sPool) {

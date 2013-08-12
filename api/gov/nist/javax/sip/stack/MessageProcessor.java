@@ -57,6 +57,7 @@ public abstract class MessageProcessor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.613 -0400", hash_original_method = "2C4312BB27594DAC5B53740BCE61F76F", hash_generated_method = "96439D7A800DDD503CCF1F8D7FC1A559")
     protected  MessageProcessor( InetAddress ipAddress, int port, String transport,
     							SIPTransactionStack transactionStack ) {
@@ -115,6 +116,7 @@ String var555A7CA0390490B84966DAB12A131C9F_340275504 =         this.transport;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.617 -0400", hash_original_method = "AEC88A1D2F84DB1C070CC4830A163BA9", hash_generated_method = "2C74B6F85A6F8B87301AD80925E20443")
     public Via getViaHeader() {
         try 

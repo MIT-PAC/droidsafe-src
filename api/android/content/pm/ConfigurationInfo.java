@@ -65,7 +65,7 @@ public class ConfigurationInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.412 -0400", hash_original_method = "DF17C53C5839729CA11877C3DC3AE571", hash_generated_method = "75102C759B7628B086C9EA63251C31EA")
     public String toString() {
 String var57D8B201F347B4113B2F1E3F7D401190_362167868 =         "ConfigurationInfo{"
@@ -118,6 +118,7 @@ String var57D8B201F347B4113B2F1E3F7D401190_362167868 =         "ConfigurationInf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.415 -0400", hash_original_method = "6B16AB9E297007D3C91B331171401C71", hash_generated_method = "5D1D376D36606AF947AF55A94D89E443")
     public String getGlEsVersion() {
         int major = ((reqGlEsVersion & 0xffff0000) >> 16);

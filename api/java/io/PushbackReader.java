@@ -17,6 +17,7 @@ public class PushbackReader extends FilterReader {
 
     int pos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.400 -0400", hash_original_method = "B6B01CC88320509C49CCBB3EC0CBE41F", hash_generated_method = "62A3B3BD60076499D8409D3023072A84")
     public  PushbackReader(Reader in) {
         super(in);
@@ -29,6 +30,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.401 -0400", hash_original_method = "9E5ACD5C81BD224F75A81C9C066E599D", hash_generated_method = "8224A9B00508510CF3279E754832F282")
     public  PushbackReader(Reader in, int size) {
         super(in);
@@ -50,6 +52,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.401 -0400", hash_original_method = "298F8792979BB77A625D9BD803A02F79", hash_generated_method = "DD4153A262642BD08B302060931EF1F4")
     @Override
     public void close() throws IOException {
@@ -66,6 +69,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.401 -0400", hash_original_method = "4DEDB50585DFE7302612A8E4FFBB0FA9", hash_generated_method = "40EF216F27837D55FF7EF413887A088A")
     @Override
     public void mark(int readAheadLimit) throws IOException {
@@ -90,6 +94,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.402 -0400", hash_original_method = "CE14A4FF29D58642FE2BEF405E27FE95", hash_generated_method = "2E0DDC187B3537DBF0E48ECBCA67F6EE")
     @Override
     public int read() throws IOException {
@@ -133,6 +138,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.404 -0400", hash_original_method = "B9190ABDE3B10CB37A8EAB2FF74A1B25", hash_generated_method = "205C131954FFF1D82154787DB6285382")
     @Override
     public int read(char[] buffer, int offset, int count) throws IOException {
@@ -183,6 +189,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.405 -0400", hash_original_method = "D62FC241A8B58B8EF1EBB387C319130D", hash_generated_method = "E22A20C407C21BF5F72668BBEC7027D7")
     @Override
     public boolean ready() throws IOException {
@@ -208,6 +215,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.405 -0400", hash_original_method = "6BB6003CEE550FAD13C0147210CF490A", hash_generated_method = "1134DFC043040BF301FCCCFD9B8894BB")
     @Override
     public void reset() throws IOException {
@@ -219,6 +227,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.406 -0400", hash_original_method = "3A71863D4D33CC0B41E243A7D99AFC6A", hash_generated_method = "F8AF0CE4843E548684A191D58AF92074")
     public void unread(char[] buffer) throws IOException {
         addTaint(buffer[0]);
@@ -228,6 +237,7 @@ public class PushbackReader extends FilterReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.407 -0400", hash_original_method = "D820ACC6B7460811082E4447561A1371", hash_generated_method = "0489F8B66A077F0CD7E9F4392293EE98")
     public void unread(char[] buffer, int offset, int length) throws IOException {
         addTaint(length);
@@ -262,6 +272,7 @@ for(int i = offset + length - 1;i >= offset;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.407 -0400", hash_original_method = "778C661227F8B678AE3F6B841DAAEACD", hash_generated_method = "7AA9CA3EBB9EF5D68B581BC1A3892029")
     public void unread(int oneChar) throws IOException {
         synchronized
@@ -286,6 +297,7 @@ for(int i = offset + length - 1;i >= offset;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.408 -0400", hash_original_method = "7C49E5AFA8C1711AAA62DBD76CA3EFA0", hash_generated_method = "09D74C735D08753090B231C2C6B6CB5E")
     @Override
     public long skip(long charCount) throws IOException {

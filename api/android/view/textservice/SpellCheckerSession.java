@@ -45,6 +45,7 @@ public class SpellCheckerSession {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.370 -0400", hash_original_field = "F31C044CAEC6C694941601486644A901", hash_generated_field = "717D500B8155D92BDA4533EDDFF8F419")
 
     private final Handler mHandler = new Handler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.370 -0400", hash_original_method = "D344BABB0D35462B4470990692E141D9", hash_generated_method = "68AF14A458510A80CC95B3C4EF0AAC31")
         @Override
         public void handleMessage(Message msg) {
@@ -63,7 +64,7 @@ public class SpellCheckerSession {
         
 };
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.902 -0400", hash_original_method = "EAC7F16E5AF219F835F940B08638A4A9", hash_generated_method = "F9FA48F0EADAEBCA145DD75C1969F14F")
     public  SpellCheckerSession(
             SpellCheckerInfo info, ITextServicesManager tsm, SpellCheckerSessionListener listener) {
@@ -258,7 +259,7 @@ ISpellCheckerSessionListener var820AE1A05D9F7D1D7D422F5929FB9AB9_1994063276 =   
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.910 -0400", hash_original_method = "FF3B1A32D02DE5F870E94EBAC6E0CDD1", hash_generated_method = "836DF91E7D75EF5DA76A50F84254C4C2")
         private void processTask(ISpellCheckerSession session, SpellCheckerParams scp,
                 boolean async) {
@@ -434,7 +435,7 @@ switch(scp.mWhat){
         }
 
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.916 -0400", hash_original_method = "A1EA0918B68CB66F258D8DAFDFEA4BA7", hash_generated_method = "21C5B6F3747336A2E36103F23C6D3AEC")
         private void processOrEnqueueTask(SpellCheckerParams scp) {
             addTaint(scp.getTaint());

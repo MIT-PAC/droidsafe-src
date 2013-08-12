@@ -145,6 +145,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.771 -0400", hash_original_field = "53A427FD16557EC7A190A6A22832513B", hash_generated_field = "BDCDEE8CB213AC6AC722C08C26B494D4")
 
     private Runnable mShowImeRunnable = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.771 -0400", hash_original_method = "0C9F4768975D596BB26A07FA95497352", hash_generated_method = "EC092D8AB01C27482EC5C32D694A46BC")
         public void run() {
             InputMethodManager imm = (InputMethodManager)
@@ -165,6 +166,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.772 -0400", hash_original_field = "E89A5EA49EA144C7FEB827EB20CCD537", hash_generated_field = "3E8E4FFE990C2F063F9CE6F2A6C2E370")
 
     private Runnable mUpdateDrawableStateRunnable = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.772 -0400", hash_original_method = "E7E2D783E1837F9E8B1A28FF4E183514", hash_generated_method = "B3EAFD427E9292CB229208955575A412")
         public void run() {
             updateFocusedState();
@@ -177,6 +179,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.772 -0400", hash_original_field = "D5FA47F6738ED48B04D60BB4B31A6FC7", hash_generated_field = "710120C6C6D078D00159221C7E0B3868")
 
     private Runnable mReleaseCursorRunnable = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.772 -0400", hash_original_method = "EDF4C3DBCA8CFDCCDE7923F1B773494D", hash_generated_method = "5D09A5A32E2149C6D8DDAB1034633D73")
         public void run() {
             {

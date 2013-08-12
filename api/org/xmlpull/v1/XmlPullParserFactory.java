@@ -23,12 +23,14 @@ public class XmlPullParserFactory {
 
     protected HashMap features = new HashMap();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_method = "59320E09A9AFF113592C1ECE87FC559F", hash_generated_method = "68325C6D2BA66CB5DC2172316E778C58")
     protected  XmlPullParserFactory() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_method = "37707163E7D75DA023F216E9B819E8F1", hash_generated_method = "281866DA3490845B831FACC4BFF03D24")
     public void setFeature(String name, boolean state) throws XmlPullParserException {
         addTaint(state);
@@ -39,6 +41,7 @@ public class XmlPullParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.564 -0400", hash_original_method = "C9956302BBB91FCF3572BD64EE7FBD09", hash_generated_method = "F99CD254F271BE71EF21BC76DBC98CB0")
     public boolean getFeature(String name) {
         addTaint(name.getTaint());
@@ -52,6 +55,7 @@ public class XmlPullParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.564 -0400", hash_original_method = "7D3BF21C0D11A10F81ABD73B19B61390", hash_generated_method = "2A65F06D4BE9FBAA0C357B468191C460")
     public void setNamespaceAware(boolean awareness) {
         addTaint(awareness);
@@ -61,6 +65,7 @@ public class XmlPullParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.564 -0400", hash_original_method = "DD0A1E37D5A6E0D61FD3265D348DFEF0", hash_generated_method = "5ED4A517EF7FD933E0E63DA3007204A7")
     public boolean isNamespaceAware() {
         boolean var6315A68DCC9052F6A43C9B5B41FEF245_29658185 = (getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES));
@@ -71,6 +76,7 @@ public class XmlPullParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.565 -0400", hash_original_method = "756F754F40CB32AB0AD4E4D0A9342AA0", hash_generated_method = "ECF89D5A161A9AC4587B1B6D69A60AC9")
     public void setValidating(boolean validating) {
         addTaint(validating);
@@ -80,6 +86,7 @@ public class XmlPullParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.565 -0400", hash_original_method = "B31DF449D9A1DA367D662873CDA0DA23", hash_generated_method = "3AD0CFA0C91A995401E6555FABC14A5D")
     public boolean isValidating() {
         boolean var7071369F79CC67F9563C3D976C3FB483_1359755357 = (getFeature (XmlPullParser.FEATURE_VALIDATION));
@@ -139,6 +146,7 @@ XmlPullParser var6B083770A9017854BE96B8873F66785B_2118004604 =                 p
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.567 -0400", hash_original_method = "72277D8D6A4CD4D2004A6DECEFEB4DA7", hash_generated_method = "17119BD372181244C2C8F2D3DC21FECB")
     public XmlSerializer newSerializer() throws XmlPullParserException {
         if(serializerClasses == null)        
@@ -179,11 +187,13 @@ XmlSerializer var0BEA34000EE709D03EB4BC9DC3C2B533_953300717 =                 se
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static XmlPullParserFactory newInstance() throws XmlPullParserException {
         return newInstance(null, null);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static XmlPullParserFactory newInstance(String classNames, Class context) throws XmlPullParserException {
         classNames = "org.kxml2.io.KXmlParser,org.kxml2.io.KXmlSerializer";
         XmlPullParserFactory factory = null;

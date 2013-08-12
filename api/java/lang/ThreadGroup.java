@@ -39,6 +39,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
 
     private boolean isDestroyed;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.514 -0400", hash_original_method = "15CA8765FCB0FEEB29D720D0682BEE22", hash_generated_method = "3B996292AFF43978FACFCB1859624595")
     public  ThreadGroup(String name) {
         this(Thread.currentThread().getThreadGroup(), name);
@@ -47,7 +48,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.514 -0400", hash_original_method = "E77CFC99E1E2014F4D8FD3506A5DB87B", hash_generated_method = "FDD61B9457A11601D166AF303D682565")
     public  ThreadGroup(ThreadGroup parent, String name) {
         if(parent == null)        
@@ -83,7 +84,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.516 -0400", hash_original_method = "2C0349D8A755A992C407F37169B24D0C", hash_generated_method = "2023BF93A9F5BDCA687CAB745D1EC815")
     private  ThreadGroup() {
         this.name = "system";
@@ -94,6 +95,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.516 -0400", hash_original_method = "F6402A744D3DEB7896E39C3D58ADE009", hash_generated_method = "DD9139DF0B815FFCE52C0695F6603075")
     public int activeCount() {
         int count = 0;
@@ -135,6 +137,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.517 -0400", hash_original_method = "AF255D2A52D389FA67BDDD4C4590191B", hash_generated_method = "5AD60DD256F90E3776B4349BCD628B73")
     public int activeGroupCount() {
         int count = 0;
@@ -159,7 +162,7 @@ for(ThreadGroup group : groups)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.517 -0400", hash_original_method = "0DD772AEDB7C823C2E91BB6377F03397", hash_generated_method = "0490A50F6656BEF7A83869C88610E98B")
     private void add(ThreadGroup g) throws IllegalThreadStateException {
         addTaint(g.getTaint());
@@ -203,6 +206,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.519 -0400", hash_original_method = "662D73EDBF2256DFDB84D7DB5F6E6941", hash_generated_method = "24EFDC6905C7DCE9F5B230AF361C2557")
     public final void destroy() {
         synchronized
@@ -294,6 +298,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.520 -0400", hash_original_method = "CA294C4CBD805FDF86CE51E26A265568", hash_generated_method = "8EC5B0668A61AC3998DA6AFE67D0EA2B")
     public int enumerate(ThreadGroup[] groups) {
         addTaint(groups[0].getTaint());
@@ -419,6 +424,7 @@ ThreadGroup var0F49909EA73F8892C338E4DCA6EB9906_1316588857 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.524 -0400", hash_original_method = "2F1556F9A0B232F489BC24F1BD1E38E0", hash_generated_method = "D1EA4039B0425509B7BD00775FC14E30")
     public final void interrupt() {
         synchronized
@@ -471,6 +477,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.525 -0400", hash_original_method = "8CFF2ECA4877D9633C2E3E2E2839A20E", hash_generated_method = "C6E05FAED89AA6A1B46B82F7A311D5CC")
     public void list() {
         System.out.println();
@@ -847,6 +854,7 @@ String var8A8A36D1F5831B81760F8A7B6FB3030F_451338402 =         getClass().getNam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.529 -0400", hash_original_method = "2D14DBB3818CDCF2DBAC484BFFF8FD8D", hash_generated_method = "C5DF400ED2DAE5FD9496E6D48E1D1C79")
     final void addThread(Thread thread) throws IllegalThreadStateException {
         addTaint(thread.getTaint());

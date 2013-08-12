@@ -74,6 +74,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.777 -0400", hash_original_method = "8FAA759F9028DD0FC2323799369D6711", hash_generated_method = "FA79E5D18165E36B910431A2986A1913")
     public void show(FragmentManager manager, String tag) {
         addTaint(tag.getTaint());
@@ -92,6 +93,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.777 -0400", hash_original_method = "040104E30D8A876DF591293449491AA6", hash_generated_method = "DC65DE6005FD943FD635EFA22707B8EF")
     public int show(FragmentTransaction transaction, String tag) {
         addTaint(tag.getTaint());
@@ -351,6 +353,7 @@ LayoutInflater varAAEF3E5344A533E1A8E0FBAA0822B7FC_171494912 =         (LayoutIn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.802 -0400", hash_original_method = "94CB11021A94D8409376FA3A852A41E9", hash_generated_method = "88C71DC970D68121C8A7A855203D4802")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //DSFIXME:  CODE0009: Possible callback target function detected

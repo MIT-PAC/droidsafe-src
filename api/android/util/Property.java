@@ -32,6 +32,7 @@ public abstract class Property<T, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract V get(T object);
 
     

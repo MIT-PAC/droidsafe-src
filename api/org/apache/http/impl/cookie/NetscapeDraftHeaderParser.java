@@ -21,6 +21,7 @@ public class NetscapeDraftHeaderParser {
 
     private BasicHeaderValueParser nvpParser;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.919 -0400", hash_original_method = "5814035B8E0ECDCEC909AB1CD6C37999", hash_generated_method = "B65FC9AF3C13C4BB2F50EE6BEA98497A")
     public  NetscapeDraftHeaderParser() {
         super();

@@ -557,6 +557,7 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_2110379561 =         new Spanne
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.063 -0400", hash_original_method = "26F622CE8D56F6DE86DA56D7C47E1EF9", hash_generated_method = "04A4564C67D98A641F3E71EA08140F5D")
         public void chooseHeight(CharSequence text, int start, int end,
                                  int spanstartv, int v,

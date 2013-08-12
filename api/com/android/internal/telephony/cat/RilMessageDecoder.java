@@ -48,6 +48,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized RilMessageDecoder getInstance(Handler caller, IccFileHandler fh) {
         if (sInstance == null) {
             sInstance = new RilMessageDecoder(caller, fh);
@@ -70,6 +71,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.568 -0400", hash_original_method = "66DFFFB44E1DF2E53F71A8A0807BF75D", hash_generated_method = "ECCB5B676DCD87CD851184A597949DB1")
     public void sendMsgParamsDecoded(ResultCode resCode, CommandParams cmdParams) {
         addTaint(cmdParams.getTaint());
@@ -158,6 +160,7 @@ switch(rilMsg.mId){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.571 -0400", hash_original_method = "57F9642232CB19CA7FAC73C8363E6E1D", hash_generated_method = "CE6D6592BD2A1D87776E4EE614990B97")
         @Override
         public boolean processMessage(Message msg) {
@@ -203,6 +206,7 @@ switch(rilMsg.mId){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.574 -0400", hash_original_method = "17A6F88C736680351817FD1B07408EDF", hash_generated_method = "8B918E7F0EAC4C110BC1FBF63372E8F2")
         @Override
         public boolean processMessage(Message msg) {

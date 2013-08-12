@@ -17,12 +17,14 @@ public class URLDecoder {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static String decode(String s) {
         return UriCodec.decode(s, true, Charset.defaultCharset());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String decode(String s, String encoding) throws UnsupportedEncodingException {
         return UriCodec.decode(s, true, Charset.forName(encoding));
     }

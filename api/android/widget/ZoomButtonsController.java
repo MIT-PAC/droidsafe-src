@@ -108,6 +108,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_field = "E7709E2A554C5D6ACC0DCFB2BB1FB7B7", hash_generated_field = "F70694DA0401A421E844EF7D59C877AC")
 
     private final Handler mHandler = new Handler() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_method = "08D68F0747526F6C2171A582DECDF849", hash_generated_method = "CFC43127320AFEBB55812F13C5DF794D")
         @Override
         public void handleMessage(Message msg) {
@@ -200,7 +201,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.365 -0400", hash_original_method = "4896FBB838EA68425CC17AB554E92B7B", hash_generated_method = "FC9759EBA7AE84455E945621E605B511")
     private FrameLayout createContainer() {
         LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -424,7 +425,7 @@ View var4BE15960FF1DC136D3D870EA1777142D_1350050369 =         mControls;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.371 -0400", hash_original_method = "9FC1F818AD77D871CBB70B150EF10183", hash_generated_method = "1EB452CE8F6E70923C38710D44317FE5")
     private void dismissControlsDelayed(int delay) {
         addTaint(delay);
@@ -441,7 +442,7 @@ View var4BE15960FF1DC136D3D870EA1777142D_1350050369 =         mControls;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.372 -0400", hash_original_method = "AC8EA5B19015CD5AEB4699B6A0E359A3", hash_generated_method = "99E365AE14BAFFFC3D4A9101BCBBD718")
     private void refreshPositioningVariables() {
         if(mOwnerView.getWindowToken() == null)        
@@ -466,7 +467,7 @@ View var4BE15960FF1DC136D3D870EA1777142D_1350050369 =         mControls;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.374 -0400", hash_original_method = "378B3DC7088565C3BEBCF57941C87615", hash_generated_method = "A84F42EEBFEE352B07DD189994E7C2CE")
     private boolean onContainerKey(KeyEvent event) {
         addTaint(event.getTaint());
@@ -560,7 +561,7 @@ switch(keyCode){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.375 -0400", hash_original_method = "682CD28D25D57C221683C84B731CBBF0", hash_generated_method = "CCB7C6D806260ACDC95DC918CFAA754F")
     private ViewRootImpl getOwnerViewRootImpl() {
         View rootViewOfOwner = mOwnerView.getRootView();
@@ -597,7 +598,7 @@ ViewRootImpl var540C13E9E156B687226421B24F2DF178_238603472 =             null;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.376 -0400", hash_original_method = "AC268A3687D4D0CE3C71C1BC69224E9B", hash_generated_method = "00DE6735F470255517FC43C7D3F8314C")
     public boolean onTouch(View v, MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -667,7 +668,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.377 -0400", hash_original_method = "5B47D11F01081A67B0DC801C22F3388C", hash_generated_method = "D28FE4B3DFC9DF5E6FF03450E82BB6BB")
     private void setTouchTargetView(View view) {
         mTouchTargetView = view;
@@ -683,7 +684,7 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.377 -0400", hash_original_method = "87725495631184F2D9436EB1CA8B8776", hash_generated_method = "CB72F86652CB2241059E4806F16F3541")
     private View findViewForTouch(int rawX, int rawY) {
         addTaint(rawY);
@@ -743,7 +744,7 @@ View varC364E3ABF5AB6B23AB1C8ACB044B06D1_1307350065 =         closestChild;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.378 -0400", hash_original_method = "17B14786F835EF976BE6949F1B3BDF94", hash_generated_method = "F20F1B1E54FFC0101AD0D428F6B397DF")
     private void onPostConfigurationChanged() {
         dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);

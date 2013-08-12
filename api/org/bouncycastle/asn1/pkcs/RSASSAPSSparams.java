@@ -33,6 +33,7 @@ public class RSASSAPSSparams extends ASN1Encodable {
 
     private DERInteger trailerField;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.122 -0400", hash_original_method = "E18C025F8AE162B11B2BEFB826A371E0", hash_generated_method = "C5D85E8AEEC1B8922F2BE74806DE4F69")
     public  RSASSAPSSparams() {
         hashAlgorithm = DEFAULT_HASH_ALGORITHM;
@@ -47,6 +48,7 @@ public class RSASSAPSSparams extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.124 -0400", hash_original_method = "4E350BBAFE5F6E54301E67F504041AFB", hash_generated_method = "1D5CE60D3A372CE46C06DE77C379CB49")
     public  RSASSAPSSparams(
         AlgorithmIdentifier hashAlgorithm,
@@ -65,6 +67,7 @@ public class RSASSAPSSparams extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.125 -0400", hash_original_method = "BFA6C4C69768336B001E015A810FDA00", hash_generated_method = "AE5B4868256FDA0D9A15A7139EA64DEC")
     public  RSASSAPSSparams(
         ASN1Sequence seq) {
@@ -100,6 +103,7 @@ switch(o.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static RSASSAPSSparams getInstance(
         Object  obj) {
         if (obj == null || obj instanceof RSASSAPSSparams)
@@ -158,6 +162,7 @@ DERInteger var3B01E18491BDB360626EFB4A43588DCD_1917691414 =         trailerField
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.127 -0400", hash_original_method = "AB78784B82028E9E5C0DF1201C6494F4", hash_generated_method = "98CAF10B815FE34AEE0EC3FB71DF0EBA")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

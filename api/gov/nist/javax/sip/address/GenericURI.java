@@ -26,6 +26,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.019 -0400", hash_original_method = "7FD69531AE924D3F151616E62ADFB396", hash_generated_method = "CB62C3292327AA7B5E832FF4C236D993")
     public  GenericURI(String uriString) throws ParseException {
         try 

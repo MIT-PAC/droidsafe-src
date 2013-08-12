@@ -39,6 +39,7 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1480144706 =         thi
 
         private MetricAffectingSpan mStyle;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.049 -0400", hash_original_method = "E5C4C18A2D9007D25412D59B1295CF18", hash_generated_method = "75C2CC207212A07203A3BA36C4AE0A96")
         public  Passthrough(MetricAffectingSpan cs) {
             mStyle = cs;
@@ -47,6 +48,7 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1480144706 =         thi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.049 -0400", hash_original_method = "813F80F60D9F0493A35140828DCD41CA", hash_generated_method = "3A3D6E74F3849EDBCC3DCC67692ECFF5")
         @Override
         public void updateDrawState(TextPaint tp) {
@@ -57,6 +59,7 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1480144706 =         thi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.050 -0400", hash_original_method = "9605D4D5DDCA8BDD205A07667048DFB8", hash_generated_method = "083C6A7FF9C64E54D4B0FB944A0FE568")
         @Override
         public void updateMeasureState(TextPaint tp) {
@@ -67,6 +70,7 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1480144706 =         thi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.050 -0400", hash_original_method = "7E9DC1976758CC762B32217CDDCBF09C", hash_generated_method = "5D2E9495280E3A623429CE13B2D223F0")
         @Override
         public MetricAffectingSpan getUnderlying() {

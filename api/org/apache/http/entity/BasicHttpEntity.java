@@ -22,6 +22,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
 
     private long length;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.212 -0400", hash_original_method = "6C56C11F8A570F150FD118B6F4CE07D0", hash_generated_method = "422F155C0F38937E2C1FE41DC8DFE07C")
     public  BasicHttpEntity() {
         super();
@@ -42,6 +43,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.214 -0400", hash_original_method = "DD43DF1BE34625633489098C75403E56", hash_generated_method = "12D8D80225BA20429A74E10B41551D26")
     public InputStream getContent() throws IllegalStateException {
         if(this.content == null)        
@@ -143,6 +145,7 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_108912998 =         this.content
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.221 -0400", hash_original_method = "DCFF80E870BC55BBCCB28CB7928D312B", hash_generated_method = "5478524E96912DE3DA4F0CACC6449FE5")
     public void consumeContent() throws IOException {
         if(content != null)        

@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 final class ReadWriteDoubleArrayBuffer extends DoubleArrayBuffer {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.685 -0400", hash_original_method = "B4E24CEABED532340C057028C27A20CE", hash_generated_method = "94E77AA6E102F947FEF29D19E50CF5F5")
       ReadWriteDoubleArrayBuffer(double[] array) {
         super(array);
@@ -24,6 +25,7 @@ final class ReadWriteDoubleArrayBuffer extends DoubleArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.686 -0400", hash_original_method = "070D24C1E4BB222D9665C788C08CE160", hash_generated_method = "46C105BC38298713126612575D74DDEE")
       ReadWriteDoubleArrayBuffer(int capacity, double[] backingArray, int arrayOffset) {
         super(capacity, backingArray, arrayOffset);
@@ -34,6 +36,7 @@ final class ReadWriteDoubleArrayBuffer extends DoubleArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ReadWriteDoubleArrayBuffer copy(DoubleArrayBuffer other, int markOfOther) {
         ReadWriteDoubleArrayBuffer buf =
                 new ReadWriteDoubleArrayBuffer(other.capacity(), other.backingArray, other.offset);
@@ -44,6 +47,7 @@ final class ReadWriteDoubleArrayBuffer extends DoubleArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.687 -0400", hash_original_method = "5AAFDD62868C036C158BF06CDC5CBF15", hash_generated_method = "6C79B4F406471DAECFB95793F25BA697")
     @Override
     public DoubleBuffer asReadOnlyBuffer() {
@@ -55,6 +59,7 @@ DoubleBuffer var20B0BA473CE6FF86AB93C6E901F2517B_102056208 =         ReadOnlyDou
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.687 -0400", hash_original_method = "335CB60FAB792A2A62A6EF4754C454D6", hash_generated_method = "8BD3DEF95D146EC3AF17272EF9B9849D")
     @Override
     public DoubleBuffer compact() {
@@ -74,6 +79,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1580387434 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.688 -0400", hash_original_method = "BCF332FB26078E1D870C2E24915718AE", hash_generated_method = "B10F1E574460EB9318B536CB5D3DAC06")
     @Override
     public DoubleBuffer duplicate() {
@@ -133,6 +139,7 @@ DoubleBuffer var6ED4708F04CD11720ECFFDBFD927116F_1598820059 =         copy(this,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.689 -0400", hash_original_method = "3ABE5CDAB9C61826E50F217BC06E7CD8", hash_generated_method = "633F51F1C7B41C351542DF84AB77B850")
     @Override
     public DoubleBuffer put(double c) {
@@ -156,6 +163,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1342916189 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.690 -0400", hash_original_method = "C8225EBC0979909DB9C4BC520342492D", hash_generated_method = "9F16024E31379B0EC7C693EAF620B231")
     @Override
     public DoubleBuffer put(int index, double c) {
@@ -200,6 +208,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_887889195 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.690 -0400", hash_original_method = "34292390282C3C5B07F994751AC72ECC", hash_generated_method = "65D0ED722C9D89D2F476F6457C1A1188")
     @Override
     public DoubleBuffer slice() {

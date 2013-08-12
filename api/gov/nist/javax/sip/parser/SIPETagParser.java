@@ -28,6 +28,7 @@ public class SIPETagParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.692 -0400", hash_original_method = "2EFAB9CD472E8A9D51A90FC23F3B4B08", hash_generated_method = "CF935A934ADF36AE991DF4C2DC062A24")
     public SIPHeader parse() throws ParseException {
         if(debug)        

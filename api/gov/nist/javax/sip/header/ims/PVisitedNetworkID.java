@@ -22,6 +22,7 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
 
     private boolean isQuoted;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.334 -0400", hash_original_method = "051A535620162843E1B90678BF3DA49E", hash_generated_method = "3CE366DEE4998CA432B3DC12C1B2E9D5")
     public  PVisitedNetworkID() {
         super(P_VISITED_NETWORK_ID);
@@ -29,6 +30,7 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.335 -0400", hash_original_method = "F3FD852440F29DF78156D2082B766F5C", hash_generated_method = "30D2F8F6796EF6A2C2BB59E74881FC25")
     public  PVisitedNetworkID(String networkID) {
         super(P_VISITED_NETWORK_ID);
@@ -39,6 +41,7 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.335 -0400", hash_original_method = "5824AB36695E623B7CAEFD86EE80361A", hash_generated_method = "013D487482F9576F961EAF1CCFA59767")
     public  PVisitedNetworkID(Token tok) {
         super(P_VISITED_NETWORK_ID);
@@ -49,6 +52,7 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.335 -0400", hash_original_method = "90D5FECE17BBAD01000BE0E34EB90561", hash_generated_method = "D63940FD6F36A574A328175E187AB348")
     protected String encodeBody() {
         StringBuffer retval = new StringBuffer();
@@ -79,6 +83,7 @@ String var1B324365A764C077A55854483509F4AB_1049221879 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.337 -0400", hash_original_method = "F88375989912893742E68A8CB169C4C0", hash_generated_method = "5F47B65C884B79AE43EF4556C1457FA5")
     public void setVisitedNetworkID(String networkID) {
         if(networkID == null)        
@@ -97,6 +102,7 @@ String var1B324365A764C077A55854483509F4AB_1049221879 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.338 -0400", hash_original_method = "3764C600A7ABF764E75A7A0F8A4AD296", hash_generated_method = "C8EF47DC904ACCC2F5EEF81BB6F1488E")
     public void setVisitedNetworkID(Token networkID) {
         if(networkID == null)        
@@ -126,6 +132,7 @@ String var4407FF7AA9ED0126D0C1885DD8BF4B81_322878629 =         networkID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.338 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "CDD76A83DCAD061AA726320057E5021A")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -137,6 +144,7 @@ String var4407FF7AA9ED0126D0C1885DD8BF4B81_322878629 =         networkID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.339 -0400", hash_original_method = "BB5BE6B7830212EF4C97BABF52359F44", hash_generated_method = "0024E0C56DC7AC09BFE413F41D0DBE83")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -162,6 +170,7 @@ String var4407FF7AA9ED0126D0C1885DD8BF4B81_322878629 =         networkID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.340 -0400", hash_original_method = "FDDED33F93F598CF66CA227B3E72EBB0", hash_generated_method = "511A86CFF0309A02BF6FE9CA4843C898")
     public Object clone() {
         PVisitedNetworkID retval = (PVisitedNetworkID) super.clone();

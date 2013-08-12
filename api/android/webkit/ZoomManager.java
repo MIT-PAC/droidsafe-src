@@ -172,6 +172,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.801 -0400", hash_original_method = "2EFEEBFBDE6ACF8543350ABFFB008A8F", hash_generated_method = "A64373EB5CABF6E6FF174BBD666B2871")
     public void updateDefaultZoomDensity(float density) {
         addTaint(density);
@@ -565,6 +566,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.856 -0400", hash_original_method = "4B2E3C5C63E13C95ACA7AA346AD0833D", hash_generated_method = "FF74CAFE48138CD77AC4A34421206BF3")
     public void animateZoom(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -967,6 +969,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.860 -0400", hash_original_method = "DB3FE2513664456015F767E0971235E8", hash_generated_method = "3E66FA23C347B7262B2B06E4B35F8C39")
     public boolean isPreventingWebkitUpdates() {
         boolean var01176885CC0A7FB647AA0BDEB81201E1_78507500 = (isZoomAnimating());
@@ -988,6 +991,7 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_1038541492 =         mS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.860 -0400", hash_original_method = "CAC2F3D27B1973D4CF70D4BE09DB9479", hash_generated_method = "0107FEF1AE411DC1E92A8EB3457E28F9")
     public void onSizeChanged(int w, int h, int ow, int oh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1064,6 +1068,7 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_1038541492 =         mS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.861 -0400", hash_original_method = "30705697D50ADB9D51B01BF1D1A7F736", hash_generated_method = "C86B06D7F2F3030AC43836F40A4F09B3")
     public void onNewPicture(WebViewCore.DrawData drawData) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1164,6 +1169,7 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_1038541492 =         mS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.862 -0400", hash_original_method = "49A97AD028E7397E6545CF950CBFEBF3", hash_generated_method = "57C2DDAEAD6A5B05E512ED939D661A09")
     public void onFirstLayout(WebViewCore.DrawData drawData) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1594,6 +1600,7 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.869 -0400", hash_original_method = "69F2A7AC5DBED7E3BD0F18F39CE3A7B5", hash_generated_method = "25E6E276B6B5ED0D9FD45C26BFCB5342")
         public boolean handleScale(ScaleGestureDetector detector) {
             addTaint(detector.getTaint());

@@ -57,6 +57,7 @@ ShortBuffer var0D8E466677B8F245666E1A4B1E0924E6_553673221 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.018 -0400", hash_original_method = "05DE7B6CED27ACAA0A9F6BF73EB6C673", hash_generated_method = "6CAECC168758573B4520681FC7D32068")
     @Override
     public ShortBuffer compact() {

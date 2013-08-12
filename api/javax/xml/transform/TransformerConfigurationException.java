@@ -6,6 +6,7 @@ import droidsafe.annotations.*;
 
 public class TransformerConfigurationException extends TransformerException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.056 -0400", hash_original_method = "BD9B4D3E21457DCFC8705065705F7747", hash_generated_method = "A2C224685083B7346EB781B715051790")
     public  TransformerConfigurationException() {
         super("Configuration Error");
@@ -29,6 +30,7 @@ public class TransformerConfigurationException extends TransformerException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.058 -0400", hash_original_method = "BD51DDC4165DA92B6AA2ED19748DFB52", hash_generated_method = "A27AAEC34B1FD03AE1D73009425312DA")
     public  TransformerConfigurationException(String msg, Throwable e) {
         super(msg, e);
@@ -48,6 +50,7 @@ public class TransformerConfigurationException extends TransformerException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.059 -0400", hash_original_method = "C1BB4F182A4DB12C2F5D6DBB3B298E48", hash_generated_method = "1E6895881AD831C0C703BB020DD55F0D")
     public  TransformerConfigurationException(String message,
                                              SourceLocator locator,

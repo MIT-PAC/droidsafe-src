@@ -23,6 +23,7 @@ public class LocatorImpl implements Locator {
 
     private int columnNumber;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.333 -0400", hash_original_method = "1944A965405A65742195C130B4EA39CD", hash_generated_method = "41C9F2F41F2C736A19B0FB99C5AC7CBE")
     public  LocatorImpl() {
         // ---------- Original Method ----------

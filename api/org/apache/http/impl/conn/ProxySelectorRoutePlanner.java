@@ -133,6 +133,7 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_330765704 =         route;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.197 -0400", hash_original_method = "D5DFF4CEFF9EFFF0748C4A7B53D21FF4", hash_generated_method = "67C4ED832E0CCCD6B1A71B51CB4062B0")
     protected HttpHost determineProxy(HttpHost    target,
                                       HttpRequest request,
@@ -184,6 +185,7 @@ HttpHost varDC838461EE2FA0CA4C9BBB70A15456B0_1046479367 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.198 -0400", hash_original_method = "E71E40B42A0A74E659F7570AD29A596D", hash_generated_method = "DF9559A756EC8A4D639F3B6513FFDFBA")
     protected String getHost(InetSocketAddress isa) {
         addTaint(isa.getTaint());

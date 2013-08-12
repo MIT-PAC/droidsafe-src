@@ -62,6 +62,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.692 -0400", hash_original_method = "EEFED13FF9B8A7AEEF5F21DDE66222B5", hash_generated_method = "C40C125FC83752E849CE87EC263BD380")
     @Override
     public int read() throws IOException {
@@ -98,6 +99,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.693 -0400", hash_original_method = "140106DCDF4EB864C1587DEC2B46B903", hash_generated_method = "5948E82379E4FDF9B8CC418F545436C1")
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
@@ -137,6 +139,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.694 -0400", hash_original_method = "4F7157F64E168AA9C8D7643824C693E0", hash_generated_method = "DADE807D5E8AD3C6B35BBAC90E419C3E")
     @Override
     public int read(byte[] b) throws IOException {
@@ -174,6 +177,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.695 -0400", hash_original_method = "4A9A4C62148DEF77484BCFABD0B37515", hash_generated_method = "02A138B39979F78C1C532B248C78B31C")
     @Override
     public int available() throws IOException {
@@ -208,6 +212,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.697 -0400", hash_original_method = "BBB2789F4CB1F09FFDECF0070B286C07", hash_generated_method = "9CE787676AF3BC2FF1BCDDF0C7498C87")
     @Override
     public void close() throws IOException {
@@ -219,6 +224,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.698 -0400", hash_original_method = "AE762594E7D7874DF7D34819786C5E24", hash_generated_method = "40B0324A4E4BF295A3065280029A5ABD")
     protected void checkEOF(int eof) throws IOException {
         addTaint(eof);
@@ -284,6 +290,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.700 -0400", hash_original_method = "85C58A54B3CFDF3144733266DFBF6D58", hash_generated_method = "CC39B6CA46C1FFA79A8272D004358E91")
     protected void checkAbort() throws IOException {
         if(wrappedStream != null)        
@@ -316,6 +323,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.700 -0400", hash_original_method = "02046A66B4E60C074CA5E7223CFCAAA0", hash_generated_method = "AAF8AA5F8B1ADF608224C02DBF968299")
     public void releaseConnection() throws IOException {
         this.close();
@@ -324,6 +332,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.701 -0400", hash_original_method = "0D022924489DD4E5DC4E4B7CC5A41FBA", hash_generated_method = "2816D09D80A223528F6FAFD5D9771168")
     public void abortConnection() throws IOException {
         selfClosed = true;

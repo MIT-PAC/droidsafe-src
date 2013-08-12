@@ -178,6 +178,7 @@ public class DataConnectionAc extends AsyncChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.001 -0400", hash_original_method = "82303217C6F0F47E549DB7B210318471", hash_generated_method = "60533E49A2385C5AA24187639CD75F48")
     public int getRefCountSync() {
         Message response = sendMessageSynchronously(REQ_GET_REFCOUNT);
@@ -234,6 +235,7 @@ ApnSetting var906583DF257E5B26DD99AC8582D137B0_131171674 =         retVal;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.002 -0400", hash_original_method = "DD32FEB19DC77901F346EA49C4C70BF1", hash_generated_method = "78A7F7BEC4A899DD6F88B4436297FA21")
     public ApnSetting getApnSettingSync() {
         Message response = sendMessageSynchronously(REQ_GET_APNSETTING);
@@ -385,6 +387,7 @@ UpdateLinkPropertyResult var906583DF257E5B26DD99AC8582D137B0_877118545 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "98F59EFFB83342DD2236B59D91A5E4B5", hash_generated_method = "9F0A34FEB048F7A236FBC9BEDEF6239F")
     public UpdateLinkPropertyResult updateLinkPropertiesDataCallStateSync(DataCallState newState) {
         addTaint(newState.getTaint());
@@ -416,7 +419,7 @@ UpdateLinkPropertyResult var705B5710E3C3DA3E1BF96D2C3612E3E7_930353467 =        
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "30D60C86BD34D11FA73E7C7E67CFC7AA", hash_generated_method = "D4F531D4955CFF6D8770B0B4B5F6FCF5")
     public void reqLinkCapabilities() {
         sendMessage(REQ_GET_LINK_CAPABILITIES);
@@ -445,7 +448,7 @@ LinkCapabilities var906583DF257E5B26DD99AC8582D137B0_716022791 =         retVal;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "C1F7B964512DA39EF105AA8C4B5198E6", hash_generated_method = "A4315CC19831AD5EBA3C1294188B9D16")
     public LinkCapabilities getLinkCapabilitiesSync() {
         Message response = sendMessageSynchronously(REQ_GET_LINK_CAPABILITIES);
@@ -473,7 +476,7 @@ LinkCapabilities var540C13E9E156B687226421B24F2DF178_968087282 =             nul
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "9EFFE3DDD73E4A7AC997D7CA04936F41", hash_generated_method = "965E6733CE5021911266CF7CA6477732")
     public void reqReset() {
         sendMessage(REQ_RESET);
@@ -485,6 +488,7 @@ LinkCapabilities var540C13E9E156B687226421B24F2DF178_968087282 =             nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "C179D3525D5003A50B8C9C0361938568", hash_generated_method = "746688ABF6FF04EB844E4EFF378A08D1")
     public void resetSync() {
         Message response = sendMessageSynchronously(REQ_RESET);
@@ -594,7 +598,7 @@ LinkCapabilities var540C13E9E156B687226421B24F2DF178_968087282 =             nul
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "48ABE9510A7CA4042FB5B96D41BACEB8", hash_generated_method = "14A6CDA272A988C13673C18A68ED9FBB")
     public Collection<ApnContext> rspApnList(Message response) {
         addTaint(response.getTaint());
@@ -611,6 +615,7 @@ Collection<ApnContext> var906583DF257E5B26DD99AC8582D137B0_13160037 =         re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "498EAD8B319A2A3996C6AC846ACD4BE2", hash_generated_method = "41A34C77D6F294EF57DEE7248C0ECF5B")
     public Collection<ApnContext> getApnListSync() {
         Message response = sendMessageSynchronously(REQ_GET_APNCONTEXT_LIST);
@@ -678,7 +683,7 @@ Collection<ApnContext> var1AAB482EE4DBE9E61066979E07ECDC94_1298124724 =         
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "3F955D64051D380D89135CF7B70C1F05", hash_generated_method = "55CD94C30D42F73DB678447F20978650")
     public void reqGetReconnectIntent() {
         Message response = sendMessageSynchronously(REQ_GET_RECONNECT_INTENT);

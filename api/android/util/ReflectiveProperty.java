@@ -118,6 +118,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.068 -0400", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "CFAD963715C08895B70B6FABBF1C15B5")
     @Override
     public void set(T object, V value) {
@@ -183,6 +184,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.069 -0400", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "5C3CAA4C584D2F1EF9112B658D5E5978")
     @Override
     public V get(T object) {

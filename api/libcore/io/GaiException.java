@@ -37,6 +37,7 @@ public final class GaiException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.401 -0400", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "FEB283282B837AB3CD2E2A015A246F62")
     @Override
     public String getMessage() {
@@ -59,6 +60,7 @@ String var701BE8BF919F58E6C9A5E8912E1F0ED7_126944146 =         functionName + " 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.401 -0400", hash_original_method = "5B589888D552552C8BEA12CEE384825F", hash_generated_method = "69E64AF536E7E9C1F97746E4595E030C")
     public UnknownHostException rethrowAsUnknownHostException(String detailMessage) throws UnknownHostException {
         addTaint(detailMessage.getTaint());
@@ -73,6 +75,7 @@ String var701BE8BF919F58E6C9A5E8912E1F0ED7_126944146 =         functionName + " 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.403 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "8E15F311885D8AC46136FB4246D0DDC0")
     public UnknownHostException rethrowAsUnknownHostException() throws UnknownHostException {
         java.net.UnknownHostException var5F7B19AF1BB87D36470BEC0E68B99E1A_502394357 = rethrowAsUnknownHostException(getMessage());

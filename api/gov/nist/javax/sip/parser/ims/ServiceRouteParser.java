@@ -15,6 +15,7 @@ import java.text.ParseException;
 
 public class ServiceRouteParser extends AddressParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.164 -0400", hash_original_method = "C37E1CF835BF2C15063590E48C1460DA", hash_generated_method = "8C2B7AE6C87ECFA2AE553FECAD97617E")
     public  ServiceRouteParser(String serviceRoute) {
         super(serviceRoute);
@@ -23,6 +24,7 @@ public class ServiceRouteParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.165 -0400", hash_original_method = "2EF38FE2F98AC9040691FDDD49315448", hash_generated_method = "40B8AF85BCDEC5F1C3B570E298922915")
     protected  ServiceRouteParser(Lexer lexer) {
         super(lexer);
@@ -31,6 +33,7 @@ public class ServiceRouteParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.193 -0400", hash_original_method = "8017C6E265731C6E1BE6E337AC0EFE2E", hash_generated_method = "C830B296C51D674A066B7E0DA079EAE2")
     public SIPHeader parse() throws ParseException {
         ServiceRouteList serviceRouteList = new ServiceRouteList();

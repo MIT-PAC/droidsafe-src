@@ -69,7 +69,7 @@ public abstract class SSLSocketFactory extends SocketFactory {
     public abstract String[] getSupportedCipherSuites();
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public abstract Socket createSocket(Socket s, String host, int port, boolean autoClose)
             throws IOException;
 

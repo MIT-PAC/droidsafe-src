@@ -24,6 +24,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean stateSetMatches(int[] stateSpec, int[] stateSet) {
         if (stateSet == null) {
             return (stateSpec == null || isWildCard(stateSpec));
@@ -91,6 +92,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] trimStateSet(int[] states, int newSize) {
         if (states.length == newSize) {
             return states;
@@ -101,6 +103,7 @@ public class StateSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dump(int[] states) {
         StringBuilder sb = new StringBuilder();
         int count = states.length;

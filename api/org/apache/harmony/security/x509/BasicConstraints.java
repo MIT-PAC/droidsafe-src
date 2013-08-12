@@ -101,7 +101,7 @@ public final class BasicConstraints extends ExtensionValue {
             setOptional(1);
         }
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         public Object getDecodedObject(BerInputStream in) throws IOException {
             return in.content;
         }

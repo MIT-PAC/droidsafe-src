@@ -8,6 +8,7 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PAssociatedURIList extends SIPHeaderList<PAssociatedURI> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.114 -0400", hash_original_method = "4F3C386FF0DD7CB0697F371A75488EC2", hash_generated_method = "35867964AE38FD2D92EA7E427B86E224")
     public  PAssociatedURIList() {
         super(PAssociatedURI.class, PAssociatedURI.NAME);
@@ -15,6 +16,7 @@ public class PAssociatedURIList extends SIPHeaderList<PAssociatedURI> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.114 -0400", hash_original_method = "85D89754B0983A44CEDEEC2CF2B4E2A8", hash_generated_method = "406DC38289D422A5E18FABECC7FC82A6")
     public Object clone() {
         PAssociatedURIList retval = new PAssociatedURIList();

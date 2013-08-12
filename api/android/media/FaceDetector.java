@@ -33,6 +33,7 @@ public class FaceDetector {
 
     private byte mBWBuffer[];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.183 -0400", hash_original_method = "69484680A1706F6AEC1DEA5335B0CC8C", hash_generated_method = "098F0AF48257D62271EA978CAE6ED8CB")
     public  FaceDetector(int width, int height, int maxFaces) {
         if(!sInitialized)        
@@ -218,7 +219,7 @@ for(int i=0;i<numFaces;i++)
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.185 -0400", hash_original_method = "50883A0AF140E51AB6B8450738DEEEF4", hash_generated_method = "D6ADA1775CF6B9F54A21145C7419746C")
         public float pose(int euler) {
             addTaint(euler);

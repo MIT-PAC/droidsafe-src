@@ -16,14 +16,14 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
 
     byte[] buffer;
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.095 -0400", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "A265DEAC1EBA95E175EB1A0A29A2449C")
     protected  SSLEngineAppData() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.096 -0400", hash_original_method = "452DC75F155E1CC98FB8D0CBD4BB0B6D", hash_generated_method = "BAD3D6354232E5FFAD1B005B9D9C45A2")
     public void append(byte[] src) {
         if(buffer != null)        
@@ -45,7 +45,7 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.098 -0400", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "E9B2AC25E881594444FEB405CBC9D9B0")
     protected int placeTo(ByteBuffer[] dsts, int offset, int length) {
         addTaint(length);

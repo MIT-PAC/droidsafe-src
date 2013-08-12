@@ -199,6 +199,7 @@ public class AlertController {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.890 -0400", hash_original_method = "1F16FD36E11C30DD7C480C9A0A11F40F", hash_generated_method = "DFBC9F682E66FF7187788968A9D5DC2F")
     public  AlertController(Context context, DialogInterface di, Window window) {
         mContext = context;
@@ -258,6 +259,7 @@ public class AlertController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.891 -0400", hash_original_method = "9A4AA3E1D6FBAA7AEFBA0C5C78FA5BFD", hash_generated_method = "859ADF5F3CE51944AF3FB43100541FDD")
     public void installContent() {
         mWindow.requestFeature(Window.FEATURE_NO_TITLE);
@@ -427,6 +429,7 @@ switch(whichButton){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.896 -0400", hash_original_method = "5C2407A3F3458DD1635D398D03E8F03F", hash_generated_method = "5F3F6BBEB99C48A445515D28F9602DEB")
     public void setIcon(Drawable icon) {
         mIcon = icon;
@@ -498,6 +501,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.896 -0400", hash_original_method = "B7833AF2811E127AB8391879126162ED", hash_generated_method = "52F6C7EC45C1AA598C3C8141DDB62E07")
     @SuppressWarnings({"UnusedDeclaration"})
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -512,6 +516,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.896 -0400", hash_original_method = "98FE899904FE72C0DB5091897F5A09B0", hash_generated_method = "563F9811B2429B42AB2E66BA8DFD6E62")
     @SuppressWarnings({"UnusedDeclaration"})
     public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -936,6 +941,7 @@ switch(msg.what){
 
         boolean mRecycleOnMeasure = true;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.902 -0400", hash_original_method = "EE9FD5306D2F93DFDAA34BAADCE625A8", hash_generated_method = "9DC75BF16ABC669F3AA08697B9DBBF0A")
         public  RecycleListView(Context context) {
             super(context);
@@ -944,6 +950,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.902 -0400", hash_original_method = "FD9F3D8D98E58119FCDEC82734593D0D", hash_generated_method = "89CC3056B21BFD4D3EF37F5A44EA57E5")
         public  RecycleListView(Context context, AttributeSet attrs) {
             super(context, attrs);
@@ -953,6 +960,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.902 -0400", hash_original_method = "B696B9456EBFFE7A743BD389E8B7B605", hash_generated_method = "B5A4A17DE1430AEE76B00ABB7D830C28")
         public  RecycleListView(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);

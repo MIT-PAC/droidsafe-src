@@ -16,6 +16,7 @@ class IntArray {
 
     private int[] m_ints;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.704 -0400", hash_original_method = "CF92B6C8E56A2FEEE1A27D3C8C98CB3C", hash_generated_method = "4AA2E90BC04CBD175089A5991408DCD6")
     public  IntArray(int intLen) {
         m_ints = new int[intLen];
@@ -24,6 +25,7 @@ class IntArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.705 -0400", hash_original_method = "E4E96F90C2D91DCFC85CADE699127A3A", hash_generated_method = "0788CFC36461FC202D3DA53F8D708A6F")
     public  IntArray(int[] ints) {
         m_ints = ints;
@@ -109,6 +111,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.708 -0400", hash_original_method = "E4246E87B7407E5D0D895B01F5CA5262", hash_generated_method = "5A1C7FCF2C17B24AA191D69741001982")
     public boolean isZero() {
         boolean var253C72334C0EB694AA96247E57A28F2F_182337286 = (m_ints.length == 0
@@ -179,7 +182,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.710 -0400", hash_original_method = "8733B39F158A323B90B7B7708BEF842A", hash_generated_method = "8C2B2B7AA386998F0D45A67D34396A53")
     public int bitLength() {
         int intLen = getUsedLength();
@@ -374,6 +377,7 @@ for(int i = 0;i < usedLen;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.714 -0400", hash_original_method = "59BECB0203E4A32DCA173F83ED20FA13", hash_generated_method = "C96F1EEB3CB82EBC2431A18C52D7B349")
     public IntArray shiftLeft(int n) {
         addTaint(n);
@@ -655,6 +659,7 @@ IntArray var807FB10045EE51C06BDB74744A6714DF_504348278 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.720 -0400", hash_original_method = "B863CB3B654462D1A297BFCA9B6601CD", hash_generated_method = "CFB37B772C3181A4E6923B985824AB51")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -706,6 +711,7 @@ for(int i = 0;i < usedLen;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.721 -0400", hash_original_method = "651D45029664378C68EF3BB76B2C76E2", hash_generated_method = "D18B9FC0A8CA7BE7C896B0466DA20642")
     public int hashCode() {
         int usedLen = getUsedLength();
@@ -738,6 +744,7 @@ Object varBA17DD7025F99CDDFD91CAFCA1CF7C41_1270546825 =         new IntArray(Arr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.722 -0400", hash_original_method = "14E8054A89CE6D677D0451C5FF658D29", hash_generated_method = "744633E844537C752BF48C7DBDA87028")
     public String toString() {
         int usedLen = getUsedLength();

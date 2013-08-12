@@ -48,6 +48,7 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
     private final boolean mCheckForDuplicatePortsInOmadmWapPush = Resources.getSystem().getBoolean(
             com.android.internal.R.bool.config_duplicate_port_omadm_wappush);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.963 -0400", hash_original_method = "2E2EEE07B541CA6772FE9654DB0B546E", hash_generated_method = "EBD30BE7030698566647192A32E6941B")
       CdmaSMSDispatcher(CDMAPhone phone, SmsStorageMonitor storageMonitor,
             SmsUsageMonitor usageMonitor) {
@@ -124,6 +125,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.966 -0400", hash_original_method = "AEF7CF36D035C3FD2F985EB9DE02C895", hash_generated_method = "C37AB51D81C76360B508473C8A4BE85E")
     @Override
     public int dispatchMessage(SmsMessageBase smsb) {
@@ -316,7 +318,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.974 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "B435AEC04CEF6748F95B78E9D09460DD")
     @Override
     protected TextEncodingDetails calculateLength(CharSequence messageBody,
@@ -433,7 +435,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_1065058420 =         Sms
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.980 -0400", hash_original_method = "8A630C8BC501F81DB51344181E02B8CE", hash_generated_method = "54988EDB67C41AB9D73A4516B7474B2D")
     @Override
     protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {

@@ -24,6 +24,7 @@ public class FilterOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.992 -0400", hash_original_method = "C1E29F96DEA4D8E16CD646B2E66B7808", hash_generated_method = "AC13D11143D0A052A3D9F2A56DE4CE3B")
     @Override
     public void close() throws IOException {
@@ -71,6 +72,7 @@ public class FilterOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.993 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "A2EF74EEF7203CB573D4B22064D57305")
     @Override
     public void flush() throws IOException {
@@ -80,6 +82,7 @@ public class FilterOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.994 -0400", hash_original_method = "6F432F0CBACFD3E73C2E675DFA6BA23C", hash_generated_method = "E3A5CF635677037D69531729E07E0E17")
     @Override
     public void write(byte[] buffer, int offset, int length) throws IOException {
@@ -99,6 +102,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.994 -0400", hash_original_method = "10EC24027333F66A6325D4B91084AA70", hash_generated_method = "EBAE2AB4E266AF5ADD2FC53827D10E0A")
     @Override
     public void write(int oneByte) throws IOException {

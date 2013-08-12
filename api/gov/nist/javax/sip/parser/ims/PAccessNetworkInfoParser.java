@@ -17,6 +17,7 @@ import java.text.ParseException;
 
 public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.854 -0400", hash_original_method = "6DB4AD794C60B8862A83AFB0C9C82A92", hash_generated_method = "0626EAFE4B05112392B453E5EB07C05A")
     public  PAccessNetworkInfoParser(String accessNetwork) {
         super(accessNetwork);
@@ -25,6 +26,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.855 -0400", hash_original_method = "3B0D9C588403AF5495F889BAEC6E0FEE", hash_generated_method = "68D1D3CFA3C0BDE696C93371CF1A8F52")
     protected  PAccessNetworkInfoParser(Lexer lexer) {
         super(lexer);
@@ -33,6 +35,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.856 -0400", hash_original_method = "0BB1DE6FBD7AB2CBAE3BF43510D39D52", hash_generated_method = "4351C39E6B86766A9A3C1F38F392C35B")
     public SIPHeader parse() throws ParseException {
         if(debug)        

@@ -40,6 +40,7 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1380388782 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.594 -0400", hash_original_method = "AA50F870D8B0EDDAC30AA11C075FA460", hash_generated_method = "918CF92591056CBB2A504EFE70C20355")
     public String getCipherSuite() {
 String var17F7C6541C3AC9A1AB7A1A7947F67092_1298997231 =         session.getCipherSuite();
@@ -50,6 +51,7 @@ String var17F7C6541C3AC9A1AB7A1A7947F67092_1298997231 =         session.getCiphe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.594 -0400", hash_original_method = "12F750698B4C5596A2F6F73DC7614702", hash_generated_method = "77E7109DC564CB29AB7A2DC22FC2B975")
     public Certificate[] getLocalCertificates() {
 Certificate[] var814C5E0AD153A50BA7251795F2B21D70_1377716341 =         session.getLocalCertificates();
@@ -60,6 +62,7 @@ Certificate[] var814C5E0AD153A50BA7251795F2B21D70_1377716341 =         session.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.595 -0400", hash_original_method = "4973BE3A4ED587D46EBF93135059669C", hash_generated_method = "649CFB66FF63743550215E390C8F7564")
     public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
 Certificate[] var95023AC60737474272021AD776AF6739_479019612 =         session.getPeerCertificates();
@@ -70,6 +73,7 @@ Certificate[] var95023AC60737474272021AD776AF6739_479019612 =         session.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.595 -0400", hash_original_method = "8A3AA58C9CA390E089E395D78527A15D", hash_generated_method = "B10C2F91372D2E1F80C17537B0C08AE3")
     public X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
 X509Certificate[] varDD253E96FEFE5AFA9B8333B5E04E8D52_365562285 =         session.getPeerCertificateChain();
@@ -80,7 +84,7 @@ X509Certificate[] varDD253E96FEFE5AFA9B8333B5E04E8D52_365562285 =         sessio
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.595 -0400", hash_original_method = "E52328DA42ED4C7658029875D0FD2A85", hash_generated_method = "6B976C81D69CC3A8E4093C2A7DBA2183")
     public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
 Principal varE32C5C017D2564D4CA9314996F3A7199_861515882 =         session.getPeerPrincipal();
@@ -91,7 +95,7 @@ Principal varE32C5C017D2564D4CA9314996F3A7199_861515882 =         session.getPee
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.596 -0400", hash_original_method = "9AEFAC82D29E63E6CA9E21A60A8B85D0", hash_generated_method = "B12AF50D5BB5450439C37439FC996167")
     public Principal getLocalPrincipal() {
 Principal var1392FB01BD123E39BCC698D8FF713577_693718310 =         session.getLocalPrincipal();

@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 
 public class PreferenceCategory extends PreferenceGroup {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.541 -0400", hash_original_method = "1DC034B1500658FC000B09366B7B5F7E", hash_generated_method = "20BA41491D8D5925EEDB0F1805DC236E")
     public  PreferenceCategory(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -21,6 +22,7 @@ public class PreferenceCategory extends PreferenceGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.541 -0400", hash_original_method = "8161E913420B97F1DB3C693A6B08D371", hash_generated_method = "3004D48D6001715FD5670AE536642CFC")
     public  PreferenceCategory(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.preferenceCategoryStyle);
@@ -30,6 +32,7 @@ public class PreferenceCategory extends PreferenceGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.541 -0400", hash_original_method = "41E6234004F62208925BDD88189872FC", hash_generated_method = "3039D1EA2009B4CCD567FC0142143AB8")
     public  PreferenceCategory(Context context) {
         this(context, null);

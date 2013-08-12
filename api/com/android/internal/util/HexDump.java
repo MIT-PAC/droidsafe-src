@@ -16,11 +16,13 @@ public class HexDump {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String dumpHexString(byte[] array) {
         return dumpHexString(array, 0, array.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String dumpHexString(byte[] array, int offset, int length) {
         StringBuilder result = new StringBuilder();
         byte[] line = new byte[16];
@@ -77,16 +79,19 @@ public class HexDump {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(byte b) {
         return toHexString(toByteArray(b));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(byte[] array) {
         return toHexString(array, 0, array.length);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(byte[] array, int offset, int length) {
         char[] buf = new char[length * 2];
         int bufIndex = 0;
@@ -100,6 +105,7 @@ public class HexDump {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(int i) {
         return toHexString(toByteArray(i));
     }
@@ -133,6 +139,7 @@ public class HexDump {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] hexStringToByteArray(String hexString) {
         int length = hexString.length();
         byte[] buffer = new byte[length / 2];

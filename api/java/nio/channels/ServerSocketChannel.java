@@ -13,6 +13,7 @@ import java.nio.channels.spi.SelectorProvider;
 
 public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.291 -0400", hash_original_method = "D01FB77CE4D99625B967A0B24C153D7F", hash_generated_method = "11CDF703A4591FA5F7E5C70AF9A7C9BA")
     protected  ServerSocketChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
@@ -21,6 +22,7 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ServerSocketChannel open() throws IOException {
         return SelectorProvider.provider().openServerSocketChannel();
     }

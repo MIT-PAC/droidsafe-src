@@ -21,6 +21,7 @@ public abstract class SIPStackTimerTask extends TimerTask {
     protected abstract void runTask();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.996 -0400", hash_original_method = "83C0265BCA7923E7BED6DC913E28AE42", hash_generated_method = "B81B556CAB994BDEB0B84F4F8D69A273")
     public final void run() {
         try 

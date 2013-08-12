@@ -42,6 +42,7 @@ public class AppWidgetManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AppWidgetManager getInstance(Context context) {
         synchronized (sManagerCache) {
             if (sService == null) {
@@ -177,6 +178,7 @@ public class AppWidgetManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.754 -0400", hash_original_method = "C96E973D3DD249985D67DC789B41FB05", hash_generated_method = "9A5DD218EC3DCC36718CDA76CD8E7F10")
     public void notifyAppWidgetViewDataChanged(int appWidgetId, int viewId) {
         addTaint(viewId);
@@ -218,6 +220,7 @@ List<AppWidgetProviderInfo> var3B775FE7F2FF95C6330A1E6EB6B9F5B9_748531966 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.758 -0400", hash_original_method = "57B0FB21059F64A76489662CF361FBD9", hash_generated_method = "D44478DF57B7A983D4F423B556983500")
     public AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) {
         addTaint(appWidgetId);
@@ -250,7 +253,7 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_1852149243 =          
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.759 -0400", hash_original_method = "1B2C655DAB3EC9AC1A1945226B92611F", hash_generated_method = "E6CC8D3FAE0D107FEC54D402CAB54A3F")
     public void bindAppWidgetId(int appWidgetId, ComponentName provider) {
         addTaint(provider.getTaint());
@@ -326,6 +329,7 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_1852149243 =          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.763 -0400", hash_original_method = "A8A608804967C37EB91DAF26AED4E71B", hash_generated_method = "3DA8C69E7D6CAB5338E4ABDBB5D1BF27")
     public int[] getAppWidgetIds(ComponentName provider) {
         addTaint(provider.getTaint());

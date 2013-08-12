@@ -42,6 +42,7 @@ final class RealToString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.520 -0400", hash_original_method = "1884E8ED6DAC8970F9D7F2BC46F506BE", hash_generated_method = "F50443A26D124792F3E34A9A228D1E2A")
     public String doubleToString(double d) {
         addTaint(d);
@@ -64,7 +65,7 @@ String varF4EEEB4C20BC8ED70835679C92A2BBC0_385646869 =         convertDouble(nul
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.522 -0400", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "89C00D0EA8D7927F106521A3B3D5A8DE")
     private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
         addTaint(inputNumber);
@@ -151,6 +152,7 @@ String var8EEABFE9064AA4A4E48633B57953C96D_1031323988 =         (sb != null) ? n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.523 -0400", hash_original_method = "2E0F3580AFBA548A22C88B300D06F425", hash_generated_method = "2026B57DDE8FAB4DF918847A4D9F4FC9")
     public String floatToString(float f) {
         addTaint(f);
@@ -500,7 +502,7 @@ for(int i = 3;i >= 0;i--)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.573 -0400", hash_original_field = "2D2E92A8D0328A9801B0413D209B9EF9", hash_generated_field = "9DCB2A0234839FFA438E5D31EF7751AF")
 
     private static final ThreadLocal<RealToString> INSTANCE = new ThreadLocal<RealToString>() {        
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.573 -0400", hash_original_method = "9364A7477DF2F9BBB2EF3C35EE7A5D92", hash_generated_method = "6879AD8D085EBF57CA55A5F59F935FBD")
         @Override
         protected RealToString initialValue() {

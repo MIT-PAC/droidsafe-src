@@ -125,6 +125,7 @@ public class UiModeManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.320 -0400", hash_original_method = "9AFE4882A5DD35A0B7234D31EDC0BDFC", hash_generated_method = "0621C930969FED0D3090FDF4E7B9CBE9")
     public int getNightMode() {
         if(mService != null)        

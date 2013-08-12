@@ -36,6 +36,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
 
     private ASN1Set attributes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.048 -0400", hash_original_method = "A30E81EA2AB5EF2B8533B5735A047E38", hash_generated_method = "130BAFFC48619BCECD919E3970DB98A3")
     public  PrivateKeyInfo(
         AlgorithmIdentifier algId,
@@ -47,6 +48,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.049 -0400", hash_original_method = "94CFD25F02D1F3C4AA4CA24B118947E8", hash_generated_method = "7AC5230DB1193E73BD6862587521CB91")
     public  PrivateKeyInfo(
         AlgorithmIdentifier algId,
@@ -62,6 +64,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.050 -0400", hash_original_method = "97D7CEF7A57CDA757D069637093B5F4D", hash_generated_method = "C5BB452B3EC290E5350231509AE5C22B")
     public  PrivateKeyInfo(
         ASN1Sequence  seq) {
@@ -114,6 +117,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PrivateKeyInfo getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -121,6 +125,7 @@ public class PrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PrivateKeyInfo getInstance(
         Object  obj) {
         if (obj instanceof PrivateKeyInfo)
@@ -168,6 +173,7 @@ ASN1Set var4BBC8979DB64A9C3E2328AA1E06CDBB3_855165636 =         attributes;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.053 -0400", hash_original_method = "7CF8276E9977E7549D144BD3BA353868", hash_generated_method = "384BC98694E447CFCC58831B36CB3E7F")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

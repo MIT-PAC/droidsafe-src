@@ -15,6 +15,7 @@ public final class StructGroupReq {
 
     public InetAddress gr_group;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.797 -0400", hash_original_method = "4D71F3877768E92734212FD10E1F3346", hash_generated_method = "5AF7044220FB4FCA67A8D725E0E8AA92")
     public  StructGroupReq(int gr_interface, InetAddress gr_group) {
         this.gr_interface = gr_interface;
@@ -25,6 +26,7 @@ public final class StructGroupReq {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.797 -0400", hash_original_method = "7C7A6CFDA39E9F15601C4EC14F339026", hash_generated_method = "5F778823D139F3584209DA25723F7EC8")
     @Override
     public String toString() {

@@ -25,6 +25,7 @@ public class SSLSocketOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.583 -0400", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "A356673BF18A00CFAC4BA54C535E65CE")
     @Override
     public void write(int b) throws IOException {

@@ -61,6 +61,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
 
     private boolean mForceShowIcon;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.195 -0400", hash_original_method = "C8B59316A7D022025F82FC9BA82661FF", hash_generated_method = "790CBF54259918251471EF4D3F7E522A")
     public  ListMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
@@ -89,6 +90,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.196 -0400", hash_original_method = "8379DAC15AF7C56B575365B6BA969EC4", hash_generated_method = "2485AFEBA2411D31425AF1EBA22B081D")
     public  ListMenuItemView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -98,7 +100,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.196 -0400", hash_original_method = "85E45C4D26BDFDA8B8A891EEA2149544", hash_generated_method = "D5BBC55D73ED0BC6A03D3C4BE00465B1")
     @Override
     protected void onFinishInflate() {
@@ -124,7 +126,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.197 -0400", hash_original_method = "5092F6390AF72578BEED6176B75C91D1", hash_generated_method = "ECA5DB92E6F45AE6E8CEA972B9504B66")
     public void initialize(MenuItemImpl itemData, int menuType) {
         mItemData = itemData;
@@ -156,7 +158,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.198 -0400", hash_original_method = "D643CEDDD2281EA2D982E86A77F53965", hash_generated_method = "7B943DD86CEAEA3A765348DAB2E192F1")
     public void setTitle(CharSequence title) {
         addTaint(title.getTaint());
@@ -192,7 +194,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.199 -0400", hash_original_method = "10ED998AF45E09E3692DBD756F730611", hash_generated_method = "806E03B3338CB9F1701D77FBC79CE4D5")
     public void setCheckable(boolean checkable) {
         addTaint(checkable);
@@ -245,7 +247,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.200 -0400", hash_original_method = "1046275995CFEC2A71A54D8E1F9C97CC", hash_generated_method = "3F0AC1043DF9ABCF8904647F5CBC41D6")
     public void setChecked(boolean checked) {
         addTaint(checked);
@@ -284,7 +286,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.201 -0400", hash_original_method = "4983CC204EB78339386267D8C73D5694", hash_generated_method = "BB3455A20D68F28C065108466A11990C")
     public void setShortcut(boolean showShortcut, char shortcutKey) {
         addTaint(shortcutKey);
@@ -311,7 +313,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.202 -0400", hash_original_method = "19EB37BE18B7BC088A147E31A5EAA2CE", hash_generated_method = "EAD1FB0638B5D0F1469DDE8BA0FDDA40")
     public void setIcon(Drawable icon) {
         addTaint(icon.getTaint());
@@ -362,6 +364,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.203 -0400", hash_original_method = "EB04FE2393D8303D2CC7459EB64C837F", hash_generated_method = "003F4FA6D83937864129F6A58178C630")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

@@ -188,7 +188,7 @@ class TimSort<T> {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.750 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "580643CA6C172D607F1F2CA5E85F1871")
     private void mergeCollapse() {
         while
@@ -227,7 +227,7 @@ class TimSort<T> {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.751 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "20BE957EE6198C35C2069073816FC05C")
     private void mergeForceCollapse() {
         while
@@ -248,7 +248,7 @@ class TimSort<T> {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.751 -0400", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "9D146F5276FE7C4BEA12FE5758748B20")
     private void mergeAt(int i) {
         if(DEBUG){ }        if(DEBUG){ }        if(DEBUG){ }        int base1 = runBase[i];
@@ -371,7 +371,7 @@ class TimSort<T> {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.755 -0400", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "3468CC925D24A32D3B7B3A3037921D37")
     private void mergeLo(int base1, int len1, int base2, int len2) {
         addTaint(base2);
@@ -481,7 +481,7 @@ class TimSort<T> {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.758 -0400", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "F2C7CC00BB12DED379A2AFC03CE6EA02")
     private void mergeHi(int base1, int len1, int base2, int len2) {
         addTaint(len2);

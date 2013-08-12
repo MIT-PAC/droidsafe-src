@@ -488,6 +488,7 @@ switch(roamInd){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.274 -0400", hash_original_method = "9AB048E0DEB3BE0C35B104EC83429815", hash_generated_method = "0DAAA3DF94CF7E3628B7C8E48A121492")
     public int getCdmaEriIconMode(int roamInd, int defRoamInd) {
         addTaint(defRoamInd);
@@ -500,6 +501,7 @@ switch(roamInd){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.274 -0400", hash_original_method = "180B939948D08F85119E751A7703AC82", hash_generated_method = "43E788314EC107EEAA92BB8BC4DDCF5D")
     public String getCdmaEriText(int roamInd, int defRoamInd) {
         addTaint(defRoamInd);
@@ -572,6 +574,7 @@ String var3179FF429DC1C911ED4D261268562F01_872346819 =         getEriDisplayInfo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.276 -0400", hash_original_method = "AD3807950D152469EF511B007C55D141", hash_generated_method = "7FE5A1EE541981B8D45301CB149DC18F")
         @Override
         public String toString() {

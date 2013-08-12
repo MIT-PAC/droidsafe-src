@@ -251,6 +251,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.892 -0400", hash_original_method = "3480FC3F53F060D0AF87F13A57EE020E", hash_generated_method = "20A150176AA7EBF483AB927EABCB354C")
     public void bindNull(int index) {
         addTaint(index);
@@ -270,6 +271,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.893 -0400", hash_original_method = "D271F20EDF0F2BB1E84FEE6A8DFAF59F", hash_generated_method = "403F94A995B4C365054BC6B57100EB5D")
     public void bindDouble(int index, double value) {
         addTaint(value);
@@ -350,6 +352,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.896 -0400", hash_original_method = "D3AE998E3454F9C657DFB347B01A5D33", hash_generated_method = "6EA7E193B383C56E278039CE952A8700")
     public void close() {
         mBindArgs = null;

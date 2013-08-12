@@ -44,6 +44,7 @@ public final class CookieSyncManager extends WebSyncManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.197 -0400", hash_original_method = "A7C987CCC15AF0CAF990686404E67664", hash_generated_method = "8E1B2D02C24D7F05BC2E4F1C859FD3B4")
      ArrayList<Cookie> getCookiesForDomain(String domain) {
         addTaint(domain.getTaint());
@@ -64,6 +65,7 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_1354625075 =         mData
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.198 -0400", hash_original_method = "04ED664127B5DCE8177E313009734B8D", hash_generated_method = "56DF1169E1F544FCF8D9D9E2D55D0DBA")
      void clearAllCookies() {
         if(mDataBase == null)        
@@ -98,6 +100,7 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_1354625075 =         mData
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.198 -0400", hash_original_method = "C551147CF3F803C4BE33E46DD1A6FC76", hash_generated_method = "DB5E862EAF4476CD2AAC6C135238852F")
      void clearSessionCookies() {
         if(mDataBase == null)        
@@ -113,6 +116,7 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_1354625075 =         mData
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.199 -0400", hash_original_method = "C17F5F6F39FEAB50212EA7D808E14AB6", hash_generated_method = "376263A331BF5A37EFC28D249C653C23")
      void clearExpiredCookies(long now) {
         addTaint(now);
@@ -129,6 +133,7 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_1354625075 =         mData
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.199 -0400", hash_original_method = "05B4AB2BDA2D583135C82323F50F29AB", hash_generated_method = "3A63D579C07CECE2FCF5968A5562D878")
     protected void syncFromRamToFlash() {
         if(DebugFlags.COOKIE_SYNC_MANAGER)        

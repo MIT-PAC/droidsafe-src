@@ -22,6 +22,7 @@ public class UndeclaredThrowableException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.192 -0400", hash_original_method = "6F99F5FACA33DF39A2D7F5348E0FE855", hash_generated_method = "EE7B8C0D554069D1EB3BD838523A6DAB")
     public  UndeclaredThrowableException(Throwable exception,
             String detailMessage) {

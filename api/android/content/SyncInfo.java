@@ -86,6 +86,7 @@ public class SyncInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.962 -0400", hash_original_field = "A01FEEA498E9DC325074E88D0BA2C977", hash_generated_field = "5C265E4318FC6B04FC842570ABED2BA1")
 
     public static final Creator<SyncInfo> CREATOR = new Creator<SyncInfo>() {
+        @DSModeled(DSC.SAFE)
         public SyncInfo createFromParcel(Parcel in) {
             return new SyncInfo(in);
         }

@@ -25,7 +25,7 @@ public class SocketTimeoutException extends InterruptedIOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.535 -0400", hash_original_method = "154D3A6011E860B522250E3541FB283D", hash_generated_method = "E7D94C43A005F854FFE41822EDF08CF0")
     public  SocketTimeoutException(Throwable cause) {
         super(null, cause);
@@ -34,7 +34,7 @@ public class SocketTimeoutException extends InterruptedIOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.535 -0400", hash_original_method = "A2F64A06EC646B0B6CC4F19E5E317D3C", hash_generated_method = "20DEABEF5F8F11AD604B02825B5870F4")
     public  SocketTimeoutException(String detailMessage, Throwable cause) {
         super(detailMessage, cause);

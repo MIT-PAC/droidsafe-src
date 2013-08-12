@@ -48,6 +48,7 @@ public abstract class SSLContextSpi {
     protected abstract SSLSessionContext engineGetClientSessionContext();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.678 -0400", hash_original_method = "38369B007DD3DFBC2F17B36F6861DA09", hash_generated_method = "4B1320EE5532E7833AAA253CD56F0C28")
     protected javax.net.ssl.SSLParameters engineGetDefaultSSLParameters() {
 javax.net.ssl.SSLParameters var0D24C82A180A38AA13BFD398679AE174_468131076 =         createSSLParameters(false);
@@ -58,6 +59,7 @@ javax.net.ssl.SSLParameters var0D24C82A180A38AA13BFD398679AE174_468131076 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.678 -0400", hash_original_method = "86210C07C6F5D2D352BAF9AB53AE79CE", hash_generated_method = "3ACD0A776DDE06BAF90B1ACB72137489")
     protected javax.net.ssl.SSLParameters engineGetSupportedSSLParameters() {
 javax.net.ssl.SSLParameters varFE76CDC4E3DE17434647E2DDA62A2469_1739572272 =         createSSLParameters(true);

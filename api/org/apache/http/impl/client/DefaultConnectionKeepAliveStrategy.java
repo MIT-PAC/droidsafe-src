@@ -21,6 +21,7 @@ public class DefaultConnectionKeepAliveStrategy implements ConnectionKeepAliveSt
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.665 -0400", hash_original_method = "A7D37BD826557BEBF753D4A8DC681C72", hash_generated_method = "0454C0478E74C6DD5905EBEF9679F93C")
     public long getKeepAliveDuration(HttpResponse response, HttpContext context) {
         addTaint(context.getTaint());

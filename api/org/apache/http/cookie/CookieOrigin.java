@@ -135,6 +135,7 @@ String varCEA6D4C764DAAC99DE6B9EB26F6F3E54_1826012099 =         this.path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.131 -0400", hash_original_method = "04B66E71C7D8EF5D2D79480EE2BA7CE8", hash_generated_method = "E25CF0C464F2E2A2A0AB71CEBF321FBE")
     @Override
     public String toString() {

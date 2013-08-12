@@ -54,6 +54,7 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.461 -0400", hash_original_method = "EA455C93C36CD9B5DA0D1424A19781EC", hash_generated_method = "9A3AE7EBB8CD34581C3EA65D8364E104")
     @Override
     public boolean equals(Object o) {
@@ -104,6 +105,7 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.463 -0400", hash_original_method = "6A657EF2E4E3E8DD6C55372C14375784", hash_generated_method = "5432E66F6172F840065B41BDB9E68098")
     @Override
     public String toString() {

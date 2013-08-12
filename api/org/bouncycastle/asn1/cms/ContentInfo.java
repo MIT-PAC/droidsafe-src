@@ -25,6 +25,7 @@ public class ContentInfo extends ASN1Encodable {
 
     private DEREncodable content;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.818 -0400", hash_original_method = "ACECF8DCEA349FB5AA8E3A5A4DDD5C04", hash_generated_method = "53A62DE957712956E8D0481C87B38CF5")
     public  ContentInfo(
         ASN1Sequence  seq) {
@@ -64,6 +65,7 @@ public class ContentInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.835 -0400", hash_original_method = "AB0717E658192592AF8930AA14355CFE", hash_generated_method = "A3BA825DF17E5D0A0A8AF41AB3ABF408")
     public  ContentInfo(
         ASN1ObjectIdentifier contentType,
@@ -76,6 +78,7 @@ public class ContentInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ContentInfo getInstance(
         Object  obj) {
         if (obj == null || obj instanceof ContentInfo)
@@ -112,7 +115,7 @@ DEREncodable varD442C91479410F76C84B872DA6AAE139_978413017 =         content;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.835 -0400", hash_original_method = "2158A385B6C0B5A4AB87745CBE53ED1A", hash_generated_method = "7C7661ECA47612A78189C8B1AC3BF7F9")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

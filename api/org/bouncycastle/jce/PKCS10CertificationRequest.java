@@ -131,6 +131,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.253 -0400", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "74C86B98FE1BABF9D67598B0C39B0570")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
@@ -262,6 +263,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.255 -0400", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "35DBBE56CC6D0DFD5865FE4851463AF4")
     public PublicKey getPublicKey() throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException {
 PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_103346534 =         getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
@@ -356,6 +358,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.258 -0400", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "8320E5446476AA6523E2561488742C80")
     public boolean verify(
         PublicKey pubKey,

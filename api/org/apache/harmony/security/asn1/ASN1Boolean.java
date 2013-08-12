@@ -11,6 +11,7 @@ import java.io.IOException;
 
 public final class ASN1Boolean extends ASN1Primitive {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.199 -0400", hash_original_method = "FD99504F4E1A7A3268A56063556CF13F", hash_generated_method = "02BFB4CEBA233BD3B2DAAA4AB6F0DE78")
     public  ASN1Boolean() {
         super(TAG_BOOLEAN);

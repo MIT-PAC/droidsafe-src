@@ -94,6 +94,7 @@ public class ObjectStreamClass implements Serializable {
 
     private transient volatile List<ObjectStreamClass> cachedHierarchy;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.979 -0400", hash_original_method = "F4D9898A03FC0DADA999BF46D97F9433", hash_generated_method = "A9246BC45205ECF4E818CF0D168C4ADC")
       ObjectStreamClass() {
         // ---------- Original Method ----------
@@ -120,6 +121,7 @@ public class ObjectStreamClass implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.979 -0400", hash_original_method = "592D0703821799AB937A99A67AB05B5C", hash_generated_method = "CEE81B62F443FBC81A905109D25CF68C")
      Field getReflectionField(ObjectStreamField osf) {
         addTaint(osf.getTaint());
@@ -443,6 +445,7 @@ for(int i = 0;i < _fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Field fieldSerialPersistentFields(Class<?> cl) {
         try {
             Field f = cl.getDeclaredField("serialPersistentFields");
@@ -470,6 +473,7 @@ Class<?> var075125BABC426AEE972114AF721E5216_154444002 =         resolvedClass;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.982 -0400", hash_original_method = "CFDAB7386CDDDD8EC35152CD7D073792", hash_generated_method = "90090AF56EBDC71CA30F4AECE5782D0C")
      Object newInstance(Class<?> instantiationClass) throws InvalidClassException {
         addTaint(instantiationClass.getTaint());
@@ -608,6 +612,7 @@ Class<?> var76428D7ECDBDBDA03374EA99025A082D_519850443 =         constructorClas
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.984 -0400", hash_original_method = "58A307C728457592549C73808957655C", hash_generated_method = "1229C3C41C516E581C4386A91C2EFD6E")
     public ObjectStreamField getField(String name) {
         addTaint(name.getTaint());
@@ -637,6 +642,7 @@ ObjectStreamField var540C13E9E156B687226421B24F2DF178_1851481735 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.984 -0400", hash_original_method = "3D80A7A04F3988E3E464D888981C4A01", hash_generated_method = "4A41E3BB271592E7A7255718D9BD4569")
      ObjectStreamField[] fields() {
         if(fields == null)        
@@ -667,6 +673,7 @@ ObjectStreamField[] varDA099C5ABC8C115F7AAB4D8E4C4982EA_207728971 =         fiel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.984 -0400", hash_original_method = "BA69DA3B5E6C7F20CA233B877CCB0384", hash_generated_method = "D6C09155DC58F3FABCF3CA9DF2BABA72")
     public ObjectStreamField[] getFields() {
         copyFieldAttributes();
@@ -679,6 +686,7 @@ ObjectStreamField[] varAFD42F6EF24F64BA6A7D3A69307F5D14_1987553695 =         loa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.984 -0400", hash_original_method = "8AA71837DDE89491F51C878CBC8B38A5", hash_generated_method = "B19DF9C867F46A2A641231AB711261E0")
      List<ObjectStreamClass> getHierarchy() {
         List<ObjectStreamClass> result = cachedHierarchy;
@@ -833,6 +841,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
 	}
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isExternalizable(Class<?> cl) {
         return EXTERNALIZABLE.isAssignableFrom(cl);
     }
@@ -844,6 +853,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean isSerializable(Class<?> cl) {
         return SERIALIZABLE.isAssignableFrom(cl);
     }
@@ -875,6 +885,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.986 -0400", hash_original_method = "250E0179C7C05D1D77B183DF06C38BC2", hash_generated_method = "02C6E10B8150B912A82C316AB37941CF")
      boolean isSerializable() {
         resolveProperties();
@@ -887,6 +898,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.986 -0400", hash_original_method = "86835294A15C6057A38D3AF0C7A856A1", hash_generated_method = "2C87EA8F870AC7D8F6658313CA387839")
      boolean isExternalizable() {
         resolveProperties();
@@ -899,6 +911,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.986 -0400", hash_original_method = "052543446E0B6EEA498804C02394B590", hash_generated_method = "3CB53C55E522CBAE338306A6D3A11122")
      boolean isProxy() {
         resolveProperties();
@@ -911,6 +924,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.986 -0400", hash_original_method = "23781B8C58B21A484CF86E4B23EBD9CC", hash_generated_method = "B89F938420B1D356344B9CAA00675CFD")
      boolean isEnum() {
         resolveProperties();
@@ -923,17 +937,20 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ObjectStreamClass lookup(Class<?> cl) {
         ObjectStreamClass osc = lookupStreamClass(cl);
         return (osc.isSerializable() || osc.isExternalizable()) ? osc : null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ObjectStreamClass lookupAny(Class<?> cl) {
         return lookupStreamClass(cl);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ObjectStreamClass lookupStreamClass(Class<?> cl) {
         WeakHashMap<Class<?>, ObjectStreamClass> tlc = getCache();
         ObjectStreamClass cachedValue = tlc.get(cl);
@@ -1231,6 +1248,7 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_306065815 =         methodReadObjectN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.989 -0400", hash_original_method = "0689970A4402522168D5BA272C87560D", hash_generated_method = "D1DDA44B73A0C7A66E446F592F5D20E4")
     @Override
     public String toString() {

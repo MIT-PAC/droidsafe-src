@@ -57,12 +57,14 @@ public class EventLog {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getTagName(int tag) {
         readTagsFile();
         return sTagNames.get(tag);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getTagCode(String name) {
         readTagsFile();
         Integer code = sTagCodes.get(name);
@@ -130,6 +132,7 @@ public class EventLog {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.691 -0400", hash_original_method = "5C1055DF8325BC493282A721B537C094", hash_generated_method = "67E495747ED214C8B51B5E58DBBB3A29")
         public int getThreadId() {
             int var693E03F6BC7B2854576A3ADA8F53460F_650648884 = (mBuffer.getInt(THREAD_OFFSET));
@@ -140,6 +143,7 @@ public class EventLog {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.692 -0400", hash_original_method = "8DE4962A92E5344AF237DA513A746866", hash_generated_method = "8D6F5FAE6E94E1E0D0D56E0573F80FD8")
         public long getTimeNanos() {
             long var24175EF131B78F4D74CCAFA21B9A839C_786712398 = (mBuffer.getInt(SECONDS_OFFSET) * 1000000000l
@@ -152,6 +156,7 @@ public class EventLog {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.692 -0400", hash_original_method = "E731C73BB2559185B3FCAA3365113EC6", hash_generated_method = "45EA213E44BEDB809B747B26C21FC8DE")
         public int getTag() {
             int var0C2BC9A382DDE4B2CD1B5995D056DA3E_176860320 = (mBuffer.getInt(TAG_OFFSET));
@@ -162,6 +167,7 @@ public class EventLog {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.692 -0400", hash_original_method = "87D859F946E538D2E12E387EABE85774", hash_generated_method = "D9C8063DF886286D8178E127FB0735DE")
         public synchronized Object getData() {
             try 

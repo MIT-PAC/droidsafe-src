@@ -191,6 +191,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_574587444 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.298 -0400", hash_original_method = "DED1E319CFFFF5B0653C6B0D046D4EB9", hash_generated_method = "94D5B5CB7E825ED13074595379BD7E4D")
     @Override
     public boolean equals(Object o) {
@@ -239,6 +240,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_574587444 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.299 -0400", hash_original_method = "AA52C08879A8120A7A68C6044F6A755A", hash_generated_method = "29C631A33DAEFB3BB1AF45673C9EC6C5")
     @Override
     public String toString() {
@@ -296,6 +298,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1500582685 =         buffer.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.301 -0400", hash_original_method = "5969A15C4BB29A6E888D795486A04627", hash_generated_method = "419062762BC84C0077D1613507EA7272")
     @Override
     public int hashCode() {

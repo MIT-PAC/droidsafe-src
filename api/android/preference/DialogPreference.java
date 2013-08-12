@@ -77,6 +77,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.192 -0400", hash_original_method = "60E52A3616503A9CD82A6F28FDC1EC0D", hash_generated_method = "7DC0B69FCCF790DB4973948C42EBBACE")
     public  DialogPreference(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.dialogPreferenceStyle);
@@ -95,6 +96,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.195 -0400", hash_original_method = "8574D5B6827EC6804865DBFE054A884D", hash_generated_method = "921AF374EE02731466ED31538473BDD6")
     public void setDialogTitle(int dialogTitleResId) {
         addTaint(dialogTitleResId);
@@ -124,6 +126,7 @@ CharSequence var8A283C630C420D29DA612FDBD4AF8034_80959521 =         mDialogTitle
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.196 -0400", hash_original_method = "15D4845E464A684E3158A3E73E2FE949", hash_generated_method = "5A1723810D2ECEB1D15DCB328B269301")
     public void setDialogMessage(int dialogMessageResId) {
         addTaint(dialogMessageResId);
@@ -153,6 +156,7 @@ CharSequence varAB9C41555832BFB23A354B68F953D4FB_1858476429 =         mDialogMes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.197 -0400", hash_original_method = "224A37AA492D9AAF37391FD4564E4780", hash_generated_method = "1F53ABCC2160D94BA60BF25B6B4C958F")
     public void setDialogIcon(int dialogIconRes) {
         mDialogIcon = getContext().getResources().getDrawable(dialogIconRes);
@@ -181,6 +185,7 @@ Drawable var5FD070880F0D4515E94900111CD7523A_1864558858 =         mDialogIcon;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.197 -0400", hash_original_method = "B063A8AED375BD92CBE4E8D46785B0F8", hash_generated_method = "C84D8ABBD12F840AD901C8AE0F8708B8")
     public void setPositiveButtonText(int positiveButtonTextResId) {
         addTaint(positiveButtonTextResId);
@@ -259,6 +264,7 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_141097512 =         mNegativeBu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.200 -0400", hash_original_method = "D63055C4B5449F36C1385D3F75BC6CB0", hash_generated_method = "C75941BEB55E860D99AA4A9B7CDBF789")
     @Override
     protected void onClick() {
@@ -269,6 +275,7 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_141097512 =         mNegativeBu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.200 -0400", hash_original_method = "F05F4238EDB347ACAD0B24F734C6EC9A", hash_generated_method = "02A1920FB990FBB5D54343298041861E")
     protected void showDialog(Bundle state) {
         addTaint(state.getTaint());
@@ -330,6 +337,7 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_141097512 =         mNegativeBu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.202 -0400", hash_original_method = "30915DC6B0C7508CE694D92B8515D200", hash_generated_method = "FA1929F91169A7624B2F878402D465F8")
     protected View onCreateDialogView() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -403,6 +411,7 @@ View var10DFF701F8E6B3A87243F69F93A3F708_495004607 =         inflater.inflate(mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.204 -0400", hash_original_method = "4F73C1927BDEFF08475C0DA03B2F2CFE", hash_generated_method = "218083DB667C8DADC0E85D167572D0F3")
     public void onDismiss(DialogInterface dialog) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -519,6 +528,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_999794059 =         myState;
 
         Bundle dialogBundle;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.206 -0400", hash_original_method = "EF20CF8D7035837CBAB7B591A73E7119", hash_generated_method = "235A6412ECD5B38AB4470FD695A9633B")
         public  SavedState(Parcel source) {
             super(source);
@@ -530,6 +540,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_999794059 =         myState;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.207 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB11810075E98F66089A29D0DD89C4B4")
         public  SavedState(Parcelable superState) {
             super(superState);
@@ -538,6 +549,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_999794059 =         myState;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.207 -0400", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "C502B78D5FDDE7BB7675DF37B837C744")
         @Override
         public void writeToParcel(Parcel dest, int flags) {
@@ -561,6 +573,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_999794059 =         myState;
                 return new SavedState(in);
             }
 
+            @DSModeled(DSC.SAFE)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

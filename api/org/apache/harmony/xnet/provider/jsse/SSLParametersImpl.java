@@ -59,6 +59,7 @@ public class SSLParametersImpl implements Cloneable {
 
     private boolean enable_session_creation = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.311 -0400", hash_original_method = "434B8A48338D9D15BE95F1FE66033FC3", hash_generated_method = "1EF7F418E5CC28F5758ACB990BB8EDF5")
     protected  SSLParametersImpl(KeyManager[] kms, TrustManager[] tms,
             SecureRandom sr, ClientSessionContext clientSessionContext,
@@ -135,6 +136,7 @@ CipherSuite[] var4FE9A25924581DEE872791EA4874412D_1212556164 =         enabledCi
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static SSLParametersImpl getDefault() throws KeyManagementException {
         SSLParametersImpl result = defaultParameters;
         if (result == null) {
@@ -192,6 +194,7 @@ X509TrustManager var56C611970C82E9A90BA55937E8F17214_1184780114 =         trustM
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.314 -0400", hash_original_method = "067B45F1A56F6A0D2A18E621BA5CC8CE", hash_generated_method = "55F9A43B238D2DFD2C7A3111E1D48F0C")
     protected SecureRandom getSecureRandom() {
         if(secureRandom != null)        
@@ -259,6 +262,7 @@ String[] varF3F84C88F370917D7BACDC6E9882C7DE_1282954448 =         enabledCipherS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.316 -0400", hash_original_method = "C91A557B3D523F3F985021D6CA71D94C", hash_generated_method = "57D77AF8F771A20B63363AD1186483E6")
     protected void setEnabledCipherSuites(String[] suites) {
         if(suites == null)        
@@ -307,6 +311,7 @@ for(int i=0;i<suites.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.317 -0400", hash_original_method = "26510D7872AB5791B4C2075CD3368FCD", hash_generated_method = "BFB70864F35E5354D4543C17625FA1B8")
     protected String[] getEnabledProtocols() {
 String[] var7F784EE3631AE57BC482259F3F556633_1840911321 =         enabledProtocols.clone();
@@ -317,6 +322,7 @@ String[] var7F784EE3631AE57BC482259F3F556633_1840911321 =         enabledProtoco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.317 -0400", hash_original_method = "2B0D33614474781D29E26E9E317355EA", hash_generated_method = "6D433B3A91ED3443A38865B3E2D926EE")
     protected void setEnabledProtocols(String[] protocols) {
         if(protocols == null)        
@@ -443,6 +449,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.320 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "824184689828B4A591C02DE0DD5B1A12")
     @Override
     protected Object clone() {
@@ -506,6 +513,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_2043267237 =             super.clone(
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static X509TrustManager getDefaultTrustManager() {
         X509TrustManager result = defaultTrustManager;
         if (result == null) {

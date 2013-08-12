@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class CertificateNotYetValidException extends CertificateException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.200 -0400", hash_original_method = "0159E0DC6739291193C204EC49D53AEB", hash_generated_method = "F79BE1E35B5E0BA4D62C0421534D9CBF")
     public  CertificateNotYetValidException(String msg) {
         super(msg);

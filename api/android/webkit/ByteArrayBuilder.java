@@ -93,6 +93,7 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_1752700387 =         mChunks.removeFir
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.332 -0400", hash_original_method = "16ED363A8E80AEA093971B1CDA828010", hash_generated_method = "23CF97B4777238B890CCEA7CC64259B5")
     public synchronized boolean isEmpty() {
         boolean varE85C4ADB4BA58A94A981B77BD2E5382D_401390915 = (mChunks.isEmpty());
@@ -103,6 +104,7 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_1752700387 =         mChunks.removeFir
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.333 -0400", hash_original_method = "6BBE6D0629DEE9459E725081CE095168", hash_generated_method = "110A24EB15DE16AC1BCB97DD0A5A2DA2")
     public synchronized int getByteSize() {
         int total = 0;
@@ -127,6 +129,7 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_1752700387 =         mChunks.removeFir
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.333 -0400", hash_original_method = "F807D4A4D9C660A6AF7B8E4ADC0E0EE6", hash_generated_method = "FE9FC7E3F5C3C5E0A6A31CBC5466203B")
     public synchronized void clear() {
         Chunk c = getFirstChunk();

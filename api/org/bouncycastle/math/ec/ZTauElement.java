@@ -15,6 +15,7 @@ class ZTauElement {
 
     public BigInteger v;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.932 -0400", hash_original_method = "A3D4CB97AD018D8DBE3665C338C0704B", hash_generated_method = "9C00FBE4B2049A69994EC1F561802173")
     public  ZTauElement(BigInteger u, BigInteger v) {
         this.u = u;

@@ -29,6 +29,7 @@ public class DateUtils {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static String getDayOfWeekString(int dayOfWeek, int abbrev) {
         int[] list;
         switch (abbrev) {
@@ -44,12 +45,14 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getAMPMString(int ampm) {
         Resources r = Resources.getSystem();
         return r.getString(sAmPm[ampm - Calendar.AM]);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getMonthString(int month, int abbrev) {
         int[] list;
         switch (abbrev) {
@@ -82,17 +85,20 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(long startTime) {
         return getRelativeTimeSpanString(startTime, System.currentTimeMillis(), MINUTE_IN_MILLIS);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(long time, long now, long minResolution) {
         int flags = FORMAT_SHOW_DATE | FORMAT_SHOW_YEAR | FORMAT_ABBREV_MONTH;
         return getRelativeTimeSpanString(time, now, minResolution, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(long time, long now, long minResolution,
             int flags) {
         Resources r = Resources.getSystem();
@@ -182,6 +188,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeDateTimeString(Context c, long time, long minResolution,
             long transitionResolution, int flags) {
         Resources r = Resources.getSystem();
@@ -265,11 +272,13 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatElapsedTime(long elapsedSeconds) {
         return formatElapsedTime(null, elapsedSeconds);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatElapsedTime(StringBuilder recycle, long elapsedSeconds) {
         initFormatStrings();
         long hours = 0;
@@ -361,6 +370,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final CharSequence formatSameDayTime(long then, long now,
             int dateStyle, int timeStyle) {
         Calendar thenCal = new GregorianCalendar();
@@ -388,6 +398,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isToday(long when) {
         Time time = new Time();
         time.set(when);
@@ -479,6 +490,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDateRange(Context context, long startMillis,
             long endMillis, int flags) {
         Formatter f = new Formatter(new StringBuilder(50), Locale.getDefault());
@@ -486,12 +498,14 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Formatter formatDateRange(Context context, Formatter formatter, long startMillis,
             long endMillis, int flags) {
         return formatDateRange(context, formatter, startMillis, endMillis, flags, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Formatter formatDateRange(Context context, Formatter formatter, long startMillis,
             long endMillis, int flags, String timeZone) {
         Resources res = Resources.getSystem();
@@ -784,11 +798,13 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String formatDateTime(Context context, long millis, int flags) {
         return formatDateRange(context, millis, millis, flags);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(Context c, long millis,
             boolean withPreposition) {
         String result;
@@ -826,6 +842,7 @@ public class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence getRelativeTimeSpanString(Context c, long millis) {
         return getRelativeTimeSpanString(c, millis, false );
     }

@@ -28,6 +28,7 @@ public abstract class KeyFactorySpi {
                                     throws InvalidKeySpecException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract <T extends KeySpec> T engineGetKeySpec(Key key, Class<T> keySpec)
                                     throws InvalidKeySpecException;
 

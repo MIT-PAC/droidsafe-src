@@ -26,16 +26,19 @@ class EdgeEffectCompatIcs {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isFinished(Object edgeEffect) {
         return ((EdgeEffect) edgeEffect).isFinished();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void finish(Object edgeEffect) {
         ((EdgeEffect) edgeEffect).finish();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean onPull(Object edgeEffect, float deltaDistance) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         ((EdgeEffect) edgeEffect).onPull(deltaDistance);
@@ -43,6 +46,7 @@ class EdgeEffectCompatIcs {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean onRelease(Object edgeEffect) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         EdgeEffect eff = (EdgeEffect) edgeEffect;
@@ -51,6 +55,7 @@ class EdgeEffectCompatIcs {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean onAbsorb(Object edgeEffect, int velocity) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         ((EdgeEffect) edgeEffect).onAbsorb(velocity);
@@ -58,6 +63,7 @@ class EdgeEffectCompatIcs {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean draw(Object edgeEffect, Canvas canvas) {
         return ((EdgeEffect) edgeEffect).draw(canvas);
     }

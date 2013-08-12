@@ -178,6 +178,7 @@ final class FragmentManagerState implements Parcelable {
 
     BackStackState[] mBackStack;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.612 -0400", hash_original_method = "4ADB2DBBD6899E89144480A7958A6490", hash_generated_method = "252DFEAE0ECB79838960A8B564DE42F6")
     public  FragmentManagerState() {
         // ---------- Original Method ----------
@@ -340,6 +341,7 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_74342500 =         new B
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.625 -0400", hash_original_method = "082964FFA3913D960E19EEB76BD9505B", hash_generated_method = "20C92141C8F20FE30CC1B0D9B6705BAF")
     @Override
     public boolean executePendingTransactions() {
@@ -372,6 +374,7 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_74342500 =         new B
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.626 -0400", hash_original_method = "B7072E2D8E1B8CAC03251D641D234641", hash_generated_method = "9A6D9AC319E820E31FA03FF399740505")
     @Override
     public boolean popBackStackImmediate() {
@@ -540,6 +543,7 @@ BackStackEntry var74F933A734514BD5EE40CF9077B41749_1793411911 =         mBackSta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.640 -0400", hash_original_method = "28A5058460B6EF16DD9CEE59F403CB5D", hash_generated_method = "D8305445F413B21EFF2D5FADF863AEDD")
     @Override
     public void putFragment(Bundle bundle, String key, Fragment fragment) {
@@ -669,6 +673,7 @@ String var2460B846747F8B22185AD8BE722266A5_1320543241 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.643 -0400", hash_original_method = "0EF991BB6A19DFA56B66936C5498080A", hash_generated_method = "8EEEBB4ED378B8D4B41B20E1D5B100AD")
     @Override
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
@@ -1970,6 +1975,7 @@ Fragment var540C13E9E156B687226421B24F2DF178_1083043815 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.664 -0400", hash_original_method = "2EC9B9D8ABC4926EA1F7FF85BE00D458", hash_generated_method = "71CCE022E57DE0A8D6CE6BA905EFE59A")
     public boolean execPendingActions() {
         if(mExecutingActions)        
@@ -2038,6 +2044,7 @@ for(int i=0;i<mActive.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.665 -0400", hash_original_method = "480CA24D6CDDA51ECD1DFDE903041169", hash_generated_method = "48F7B93763F7745B9B8D7EDBE4BD21AF")
      void reportBackStackChanged() {
         if(mBackStackChangeListeners != null)        
@@ -2074,6 +2081,7 @@ for(int i=0;i<mBackStackChangeListeners.size();i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.668 -0400", hash_original_method = "2DCA4D0949EEA78B53FF55FD7B1EE1F8", hash_generated_method = "0F8E36D17D0207DFBE08D5671521DA9A")
      boolean popBackStackState(Handler handler, String name, int id, int flags) {
         addTaint(flags);
@@ -2249,6 +2257,7 @@ ArrayList<Fragment> varFEBBCC2DAA2DE5E47E180E56AA61ABE9_1308771092 =         fra
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.671 -0400", hash_original_method = "DCA5B6BB14B617A2A3ED4183EF745130", hash_generated_method = "E28DB04A5B1F9170291C7EF18A9DEBA2")
      Bundle saveFragmentBasicState(Fragment f) {
         addTaint(f.getTaint());
@@ -2310,6 +2319,7 @@ Bundle varDC838461EE2FA0CA4C9BBB70A15456B0_288969281 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.673 -0400", hash_original_method = "5A6DADDDEE90F93280222EE0F5B508C8", hash_generated_method = "B8ABCEE3F723B9AC424843F48DA3C687")
      Parcelable saveAllState() {
         execPendingActions();
@@ -2648,6 +2658,7 @@ for(int i=0;i<mAdded.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.678 -0400", hash_original_method = "BC8D3EC4480A5918F3A38ABAC82A7ED6", hash_generated_method = "4B8CB7ADC37149492438038AC0868F5E")
     public void dispatchLowMemory() {
         if(mActive != null)        

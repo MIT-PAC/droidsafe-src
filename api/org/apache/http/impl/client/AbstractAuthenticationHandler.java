@@ -33,6 +33,7 @@ public abstract class AbstractAuthenticationHandler implements AuthenticationHan
 
     private final Log log = LogFactory.getLog(getClass());
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.524 -0400", hash_original_method = "E0C989328AEDF63A6A5F2E03C11F9A89", hash_generated_method = "3C9B9AA4DECDD14BF6F40DFCFEDAF1CD")
     public  AbstractAuthenticationHandler() {
         super();

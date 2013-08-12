@@ -133,10 +133,12 @@ for(PolicyInformation policyInformation : policyInformations)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.952 -0400", hash_original_field = "513989838E566B722E0AE48FE445DE0C", hash_generated_field = "C5B8ADE8005B79F0446643932F6EFA0A")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(PolicyInformation.ASN1) {
+        @DSModeled(DSC.BAN)
         @Override public Object getDecodedObject(BerInputStream in) {
             return new CertificatePolicies((List<PolicyInformation>) in.content, in.getEncoded());
         }
 
+        @DSModeled(DSC.SAFE)
         @Override public Collection getValues(Object object) {
             CertificatePolicies cps = (CertificatePolicies) object;
             return cps.policyInformations;

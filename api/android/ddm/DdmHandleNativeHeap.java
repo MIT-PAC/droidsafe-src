@@ -20,7 +20,7 @@ public class DdmHandleNativeHeap extends ChunkHandler {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static void register() {
         DdmServer.registerHandler(CHUNK_NHGT, mInstance);
     }

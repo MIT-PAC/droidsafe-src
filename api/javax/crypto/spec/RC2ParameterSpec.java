@@ -29,6 +29,7 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.410 -0400", hash_original_method = "66EC02A60547F68FA7875E0B5CB3BCDA", hash_generated_method = "4FB0F2C9ADB92F86372625B21D977FE7")
     public  RC2ParameterSpec(int effectiveKeyBits, byte[] iv) {
         if(iv == null)        
@@ -59,6 +60,7 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.412 -0400", hash_original_method = "F8E908A70E700CBC7624EF366C4425D3", hash_generated_method = "4D79C22F70FCCB2E3A65AA5D21B4EE70")
     public  RC2ParameterSpec(int effectiveKeyBits, byte[] iv, int offset) {
         addTaint(offset);

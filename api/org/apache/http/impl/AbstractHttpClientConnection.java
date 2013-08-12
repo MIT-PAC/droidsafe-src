@@ -53,6 +53,7 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
 
     private HttpConnectionMetricsImpl metrics = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.298 -0400", hash_original_method = "69689155BD098727A81CB27002CF309C", hash_generated_method = "41F36C3FEDE28B35D52F3A06E3DE2D75")
     public  AbstractHttpClientConnection() {
         super();
@@ -78,6 +79,7 @@ EntityDeserializer varD8277C9FB64D708D6AAEC33B5D57A8C1_133569803 =         new E
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.299 -0400", hash_original_method = "FD78F978388B59B364B21C2EBA485800", hash_generated_method = "DC28F4A05188798D0BBB072D7F5569BB")
     protected EntitySerializer createEntitySerializer() {
 EntitySerializer var73E805B24B914F947FB8A61049CA1B74_528489240 =         new EntitySerializer(new StrictContentLengthStrategy());
@@ -177,6 +179,7 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_1681998378 =         new H
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.304 -0400", hash_original_method = "EC2664454103C0151B5CF1E9311C3275", hash_generated_method = "995A0BEC6DAED5E21A792107AD435D1C")
     public boolean isResponseAvailable(int timeout) throws IOException {
         addTaint(timeout);
@@ -306,6 +309,7 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_813298892 =         response;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.308 -0400", hash_original_method = "DD669E10200A1B56B0064A07B14E647E", hash_generated_method = "502C567E7D783DE6E98521A7853E8774")
     public boolean isStale() {
         if(!isOpen())        

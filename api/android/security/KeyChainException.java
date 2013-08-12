@@ -29,6 +29,7 @@ public class KeyChainException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.066 -0400", hash_original_method = "8CC23A5EEF616E11C5C7CDC0612B705F", hash_generated_method = "ECEDA574E6A3ECB23575DB9CD1F202E5")
     public  KeyChainException(Throwable cause) {
         super((cause == null ? null : cause.toString()), cause);

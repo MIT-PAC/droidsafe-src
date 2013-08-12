@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class SSLException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.718 -0400", hash_original_method = "767432C29D53FDFEE031F1BE821865F4", hash_generated_method = "BE42D32C1B6DBB96F7457377099FD7BE")
     public  SSLException(String reason) {
         super(reason);
@@ -17,6 +18,7 @@ public class SSLException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.718 -0400", hash_original_method = "5FF36E085E786A28DDEEC1EBE169EDD3", hash_generated_method = "69F646BD9CF9C8650FC1C6FF1BAEB9C4")
     public  SSLException(String message, Throwable cause) {
         super(message);
@@ -28,6 +30,7 @@ public class SSLException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.718 -0400", hash_original_method = "1E7679A49A32A86556807238CABB4D3B", hash_generated_method = "97073F2375FD3040FCE8D76B58FF2939")
     public  SSLException(Throwable cause) {
         super(cause == null ? null : cause.toString());

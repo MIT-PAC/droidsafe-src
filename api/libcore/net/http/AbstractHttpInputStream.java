@@ -28,6 +28,7 @@ abstract class AbstractHttpInputStream extends InputStream {
 
     protected boolean closed;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.886 -0400", hash_original_method = "6245049C2A6A145F2B06E5BE82F53149", hash_generated_method = "747761486CF9B3437F7E77A9EE692C7D")
       AbstractHttpInputStream(InputStream in, HttpEngine httpEngine,
             CacheRequest cacheRequest) throws IOException {
@@ -52,6 +53,7 @@ abstract class AbstractHttpInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.887 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "DD1473F470370183131115D3C58226CE")
     @Override
     public final int read() throws IOException {
@@ -63,6 +65,7 @@ abstract class AbstractHttpInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.888 -0400", hash_original_method = "9C8C395306DF0EF2B124A9030249421B", hash_generated_method = "DD2996C5166F22E91F5A8CD850580BE4")
     protected final void checkNotClosed() throws IOException {
         if(closed)        
@@ -78,6 +81,7 @@ abstract class AbstractHttpInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.888 -0400", hash_original_method = "F99DAA756C38E790D14E093C328A014A", hash_generated_method = "F6AD2B4F17B22D6EA07A6BE0F8D9E8C8")
     protected final void cacheWrite(byte[] buffer, int offset, int count) throws IOException {
         addTaint(count);
@@ -94,6 +98,7 @@ abstract class AbstractHttpInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.889 -0400", hash_original_method = "B3EBF796D65123BF085C9E1DA5AFCD9A", hash_generated_method = "3225D0A341AB3AFFC8E947A7C2344A66")
     protected final void endOfInput(boolean reuseSocket) throws IOException {
         addTaint(reuseSocket);
@@ -110,6 +115,7 @@ abstract class AbstractHttpInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.889 -0400", hash_original_method = "2A1CD1BA2665856DC3A1B988519977B9", hash_generated_method = "509B0E99DC89A699733427A298F88B04")
     protected final void unexpectedEndOfInput() {
         if(cacheRequest != null)        

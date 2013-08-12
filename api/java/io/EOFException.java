@@ -14,6 +14,7 @@ public class EOFException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.624 -0400", hash_original_method = "1DF3A1A90A52071351DFC31CC87C4540", hash_generated_method = "855014E89A61FE5F00BB1A0F46233C4D")
     public  EOFException(String detailMessage) {
         super(detailMessage);

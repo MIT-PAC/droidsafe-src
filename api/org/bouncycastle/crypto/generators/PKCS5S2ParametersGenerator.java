@@ -20,6 +20,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
 
     private Mac hMac = new HMac(new SHA1Digest());
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.006 -0400", hash_original_method = "B69BB14B43B673ED175B53A442E5BA52", hash_generated_method = "8185A6FBD8116F10F37B5ADDD415EEE5")
     public  PKCS5S2ParametersGenerator() {
         // ---------- Original Method ----------
@@ -145,6 +146,7 @@ for(int i = 1;i <= l;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.012 -0400", hash_original_method = "47F03A4B7607EC42FAB580BDD530C12C", hash_generated_method = "DA4660D2DB500DB9268FB449F6C25E55")
     public CipherParameters generateDerivedParameters(
         int keySize) {
@@ -161,6 +163,7 @@ CipherParameters var6D94FE6EDC09D11F0842CB9C3B01FB06_1455127899 =         new Ke
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.012 -0400", hash_original_method = "51142E64B42932805E0B604E9F91CFAD", hash_generated_method = "9EEBDB80F09168F343C64496D1D64C47")
     public CipherParameters generateDerivedParameters(
         int     keySize,
@@ -181,6 +184,7 @@ CipherParameters var03ABCD9D26B2AC8C264C443A6B20AF1A_673709942 =         new Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.013 -0400", hash_original_method = "9CBF59A81FEE9822185147DE8DCD075A", hash_generated_method = "FD1D08D5D5DFE80CF3DF7E49431069C1")
     public CipherParameters generateDerivedMacParameters(
         int keySize) {

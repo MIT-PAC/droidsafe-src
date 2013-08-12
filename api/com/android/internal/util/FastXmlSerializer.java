@@ -377,6 +377,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.721 -0400", hash_original_method = "E509685A6C63D2EAA11B8F86DFCB8A1B", hash_generated_method = "196F77BA7F0001B01E7CB8EE492887C9")
     public void entityRef(String text) throws IOException, IllegalArgumentException,
             IllegalStateException {
@@ -409,6 +410,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.722 -0400", hash_original_method = "D60A1C44513D9E8C5B891F5551C5FBBA", hash_generated_method = "50754EDEDEE0591BF892857D0CBD6E34")
     public void flush() throws IOException {
         if(mPos > 0)        
@@ -450,6 +452,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.723 -0400", hash_original_method = "06A4B22AA2E8AAA8ED4F22B001D0D1FC", hash_generated_method = "6E5AEF60555D14423C54B8921D0BFBFC")
     public int getDepth() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1947685213 = new UnsupportedOperationException();
@@ -460,6 +463,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.723 -0400", hash_original_method = "A938A921621E94044F2CFA3DC31C9E8C", hash_generated_method = "AEE5C1FC6E53C052B2ED6DFEFA1C606F")
     public boolean getFeature(String name) {
         addTaint(name.getTaint());
@@ -471,6 +475,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.724 -0400", hash_original_method = "6A642C9EEC23AC32ED606658DA110E38", hash_generated_method = "9426F896EE3FBAD3E4C0CF7417723E35")
     public String getName() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1031133102 = new UnsupportedOperationException();
@@ -481,6 +486,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.724 -0400", hash_original_method = "8F74E2B7FCD796BC320C8C37775EA11E", hash_generated_method = "6FE6BA7C3492578568007F2177D833DF")
     public String getNamespace() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2088980764 = new UnsupportedOperationException();
@@ -491,6 +497,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.724 -0400", hash_original_method = "1ADA26C4B32C10D168CE4DC5A8DC35EC", hash_generated_method = "140A0824572D558CB5FE914D404A3EB2")
     public String getPrefix(String namespace, boolean generatePrefix) throws IllegalArgumentException {
         addTaint(generatePrefix);
@@ -503,6 +510,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1611198000 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.724 -0400", hash_original_method = "DA8A49250701B8FD4E3C9A3CEF97A891", hash_generated_method = "9CC90C0754AEEE1D97C3493C4132A11B")
     public Object getProperty(String name) {
         addTaint(name.getTaint());

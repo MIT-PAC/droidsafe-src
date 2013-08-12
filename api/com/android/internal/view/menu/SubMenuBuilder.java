@@ -43,6 +43,7 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.602 -0400", hash_original_method = "136516E019CDEFE0F3C3ED762AF8783A", hash_generated_method = "19AD3DA1C3FCC3A30A75E5F705FE76E0")
     @Override
     public boolean isQwertyMode() {
@@ -54,6 +55,7 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.602 -0400", hash_original_method = "A904D66AD1D8E748B65C9C8C5EEC3261", hash_generated_method = "79E4CB159EE960C6D2776BB96509D65E")
     @Override
     public void setShortcutsVisible(boolean shortcutsVisible) {
@@ -64,6 +66,7 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.602 -0400", hash_original_method = "71E56F7ABFBB449375F493931D31DE57", hash_generated_method = "5E6322A0AFB39300C9DF92E9694E5D8B")
     @Override
     public boolean isShortcutsVisible() {
@@ -119,6 +122,7 @@ MenuBuilder varF208CAAF42A19269A08D768D04E791E1_324417128 =         mParentMenu;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.604 -0400", hash_original_method = "9000096E0EC4FB2931429080284C8422", hash_generated_method = "422D251E500BA8C2B7EC418E41465DB5")
     @Override
      boolean dispatchMenuItemSelected(MenuBuilder menu, MenuItem item) {
@@ -134,6 +138,7 @@ MenuBuilder varF208CAAF42A19269A08D768D04E791E1_324417128 =         mParentMenu;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.605 -0400", hash_original_method = "0AF009FB156FDD26BF7D5688EA94EA96", hash_generated_method = "570767E3BAEF89A9E26AF4FBA316FEC6")
     public SubMenu setIcon(Drawable icon) {
         addTaint(icon.getTaint());
@@ -160,6 +165,7 @@ SubMenu var72A74007B2BE62B849F475C7BDA4658B_582075715 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.605 -0400", hash_original_method = "56E209FCA945BF27944112A810A882F0", hash_generated_method = "B327BF777051F888B17EB9E42EACA737")
     public SubMenu setHeaderIcon(Drawable icon) {
         addTaint(icon.getTaint());
@@ -215,6 +221,7 @@ SubMenu var018BD80D9611AACB04043AA4590875FA_123250262 =         (SubMenu) super.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.606 -0400", hash_original_method = "6E97D9D8BEFE428705B38823DA7B3E98", hash_generated_method = "A3E6EEC31B2F9C919CE118BDC8B4C78E")
     @Override
     public boolean expandItemActionView(MenuItemImpl item) {
@@ -239,6 +246,7 @@ SubMenu var018BD80D9611AACB04043AA4590875FA_123250262 =         (SubMenu) super.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.607 -0400", hash_original_method = "2F8B587BD2C060C35373EC0A47CA21D2", hash_generated_method = "87686FB90D9CEA44B0E5432D080AB2A9")
     @Override
     public String getActionViewStatesKey() {

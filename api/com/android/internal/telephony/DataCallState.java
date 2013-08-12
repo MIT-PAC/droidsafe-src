@@ -65,6 +65,7 @@ public class DataCallState {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.746 -0400", hash_original_method = "CAAE2D86A06B83EE392B769B8D61B847", hash_generated_method = "EE069559F17B8EF747CB1921C551F914")
     @Override
     public String toString() {
@@ -315,6 +316,7 @@ SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_734996832 =         result;
         SetupResult() {
             mFailCause = FailCause.fromInt(0);
         }
+        @DSModeled(DSC.SAFE)
         @Override
         public String toString() {
             return name() + "  SetupResult.mFailCause=" + mFailCause;

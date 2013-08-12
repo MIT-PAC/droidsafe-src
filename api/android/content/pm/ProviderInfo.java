@@ -137,7 +137,7 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.436 -0400", hash_original_method = "A325E506B6C78D4488CEDF60427F48B5", hash_generated_method = "8CFC39FC0E01EC54C664DAD8521BB382")
     public String toString() {
 String varD6FD82BF3DAE7A6B9B51563B3E18074B_1393481245 =         "ContentProviderInfo{name=" + authority + " className=" + name

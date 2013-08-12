@@ -260,6 +260,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     public abstract void unwrapSSLv2(byte[] bytes);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.641 -0400", hash_original_method = "086592130010ECCB1C6429039BD6D57C", hash_generated_method = "908EF30B8D770D0C21ADA258EA017CB8")
     public byte[] wrap() {
         if(delegatedTaskErr != null)        
@@ -313,6 +314,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.642 -0400", hash_original_method = "5115C1B2C55B3895E035DFBE235241DE", hash_generated_method = "F2D02FFC22C07AFB6DB3AD933B281A39")
     protected void fatalAlert(byte description, String reason) {
         addTaint(reason.getTaint());
@@ -325,6 +327,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.642 -0400", hash_original_method = "06E08FFEF783008AA773EFEC73CFC5B4", hash_generated_method = "5468A9C74DD5814441F9C8BC152CADCF")
     protected void fatalAlert(byte description, String reason, Exception cause) {
         addTaint(cause.getTaint());
@@ -338,6 +341,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.643 -0400", hash_original_method = "6E25B9A677528D560BDF206ADC0AD3D2", hash_generated_method = "01D9E95A01936B98DB4E1CB607331AF2")
     protected void fatalAlert(byte description, SSLException cause) {
         addTaint(cause.getTaint());
@@ -359,6 +363,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.643 -0400", hash_original_method = "FE7E38FD7B354AD563BA3A5D1A8C1D76", hash_generated_method = "E9676E6F2BD801DEC90D829BEAE82FCA")
     protected void computerVerifyDataTLS(String label, byte[] buf) {
         addTaint(buf[0]);
@@ -530,6 +535,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.645 -0400", hash_original_method = "CE5478587DF2FFE8F2A4389A21077FB6", hash_generated_method = "CE2FA5160C9C32D0166340388FA174D2")
     public Runnable getTask() {
         if(delegatedTasks.isEmpty())        

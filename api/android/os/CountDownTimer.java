@@ -68,6 +68,7 @@ public abstract class CountDownTimer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.920 -0400", hash_original_method = "9B88C24B384B8F4F3D5DCE994477E303", hash_generated_method = "EE2ABFCEDB6C12F5844A3A67A7DE5470")
     public synchronized final CountDownTimer start() {
         if(mMillisInFuture <= 0)        

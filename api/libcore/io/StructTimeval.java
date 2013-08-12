@@ -26,6 +26,7 @@ public final class StructTimeval {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static StructTimeval fromMillis(long millis) {
         long tv_sec = millis / 1000;
         long tv_usec = (millis - (tv_sec * 1000)) * 1000;
@@ -44,6 +45,7 @@ public final class StructTimeval {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.809 -0400", hash_original_method = "0C66DEC6052711C5671EFCEF17FE1D94", hash_generated_method = "B8AF303810C56B735D605CCFCA7EB60C")
     @Override
     public String toString() {

@@ -32,6 +32,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.012 -0400", hash_original_method = "622891E063D73C9F0042092134963E28", hash_generated_method = "C58DE856E5DBB409858A66F3F2FE44E1")
     public SIPHeader parse() throws ParseException {
         PVisitedNetworkIDList visitedNetworkIDList = new PVisitedNetworkIDList();
@@ -138,6 +139,7 @@ SIPHeader varBC7EEB21C758F2C49F34FDE84F1EE5BB_1646940601 =             visitedNe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.038 -0400", hash_original_method = "DF631989BD446AE0B628512FDA7DF0A8", hash_generated_method = "DBB4D028A55367AB7AE247C99A9DB99C")
     protected void parseToken(PVisitedNetworkID visitedNetworkID) throws ParseException {
         addTaint(visitedNetworkID.getTaint());

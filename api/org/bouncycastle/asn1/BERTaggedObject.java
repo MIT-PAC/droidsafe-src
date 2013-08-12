@@ -11,6 +11,7 @@ import java.util.Enumeration;
 
 public class BERTaggedObject extends DERTaggedObject {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.009 -0400", hash_original_method = "C31FB64F3B4373F22983AB0E8A924F45", hash_generated_method = "1BDFE6029FA7A9657F1B649820F56AC9")
     public  BERTaggedObject(
         int             tagNo,

@@ -66,6 +66,7 @@ HttpEntity varB0390008473457B24431D383C02B7BE2_493720796 =         this.entity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.856 -0400", hash_original_method = "A0F17E45777A46D709253948E7008FD4", hash_generated_method = "0F2C60598AE8CC7CA15344A3F2217539")
     public boolean expectContinue() {
         Header expect = getFirstHeader(HTTP.EXPECT_DIRECTIVE);

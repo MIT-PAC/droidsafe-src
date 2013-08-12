@@ -54,6 +54,7 @@ public class Pipeline extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.254 -0400", hash_original_method = "2B544F7E796D3D68CE94D6BF6C677E04", hash_generated_method = "F1007A6A7ADD2C63A526302593DACFE0")
     public void startTimer() {
         if(this.readTimeout == -1)        
@@ -68,6 +69,7 @@ public class Pipeline extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.255 -0400", hash_original_method = "37F409FD7F01F3081F8A12D9761B8422", hash_generated_method = "9D1FEC64C892C262511518F9F868101B")
     public void stopTimer() {
         if(this.readTimeout == -1)        
@@ -82,6 +84,7 @@ public class Pipeline extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.256 -0400", hash_original_method = "B005CBAD4698DC28B9A1B35993572349", hash_generated_method = "D525B687107201E0639D515E37075902")
     public void write(byte[] bytes, int start, int length) throws IOException {
         addTaint(length);
@@ -112,6 +115,7 @@ public class Pipeline extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.257 -0400", hash_original_method = "C06546AC352C387D8ACC673056FAD350", hash_generated_method = "34735B8E84F6FCA8D09563EE8CECB9D4")
     public void write(byte[] bytes) throws IOException {
         addTaint(bytes[0]);
@@ -155,6 +159,7 @@ public class Pipeline extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.260 -0400", hash_original_method = "F2F79F1D43766E909F353C0CFC9043D6", hash_generated_method = "60FCF488A7F348ABCB1EA8689BF48C9A")
     public int read() throws IOException {
         synchronized
@@ -254,6 +259,7 @@ public class Pipeline extends InputStream {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.264 -0400", hash_original_method = "866118B2542F2688ED0E9C68986718EB", hash_generated_method = "537826948ABF88BE67ACE53B71EF9DFB")
         public boolean cancel() {
             boolean retval = super.cancel();
@@ -283,6 +289,7 @@ public class Pipeline extends InputStream {
 
         int ptr;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.266 -0400", hash_original_method = "093A036FC0CE68502CB27911CE2FE87A", hash_generated_method = "472B6068A5A13A0C758199B66E1D9C16")
         public  Buffer(byte[] bytes, int length) {
             ptr = 0;

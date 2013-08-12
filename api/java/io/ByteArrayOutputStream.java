@@ -58,7 +58,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.468 -0400", hash_original_method = "D6EC9446F27E74EA041BF330AAB72CEF", hash_generated_method = "B52DA47CB0E5954795B9200C0FED4F41")
     private void expand(int i) {
         addTaint(i);
@@ -114,6 +114,7 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.472 -0400", hash_original_method = "2951DD657350D2DCE6E576199EA1BCE5", hash_generated_method = "3D5643F3A2B58EF07761D2B821FC20AC")
     @Override
     public String toString() {
@@ -125,6 +126,7 @@ String var284A4624AC5D82C1992013009E0FB870_737994891 =         new String(buf, 0
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.474 -0400", hash_original_method = "3E105C3C1F43529FE32D861B80701B8D", hash_generated_method = "1CEC4B79548298F1CCAC859875943B86")
     @Deprecated
     public String toString(int hibyte) {
@@ -146,6 +148,7 @@ String varB2A77A3F22A466F171E40117F4960755_1534551633 =         new String(newBu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.475 -0400", hash_original_method = "E8B99C45FE2629BCCA1491714FD1F75F", hash_generated_method = "BF900D0BBB2D6BA1A7F0FB3A101B991B")
     public String toString(String enc) throws UnsupportedEncodingException {
         addTaint(enc.getTaint());
@@ -199,7 +202,7 @@ String var5E21685371F07E75C95D47BDF9CF6168_777958475 =         new String(buf, 0
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.478 -0400", hash_original_method = "19AD6C910070CA1BF00692AA88EF7627", hash_generated_method = "BC4F34D67DFB39ED5B878BDE02A99196")
     public synchronized void writeTo(OutputStream out) throws IOException {
         addTaint(out.getTaint());

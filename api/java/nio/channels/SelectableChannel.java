@@ -43,6 +43,7 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
     public abstract SelectorProvider provider();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.260 -0400", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "E336014C9CAD971A325F1C55663FDC18")
     public final SelectionKey register(Selector selector, int operations) throws ClosedChannelException {
         addTaint(operations);

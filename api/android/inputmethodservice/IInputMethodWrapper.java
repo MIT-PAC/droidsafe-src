@@ -61,6 +61,7 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.306 -0400", hash_original_method = "578FDF861144B5ACC99AF98F1B65A29F", hash_generated_method = "178ED6C5F9CB2892D0129CECEB052A65")
     public InputMethod getInternalInputMethod() {
 InputMethod var68ED14805F4A474C688994B0C0607ED3_1418493318 =         mInputMethod.get();

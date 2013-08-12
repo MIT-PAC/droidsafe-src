@@ -78,6 +78,7 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_1742185791 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.616 -0400", hash_original_method = "79CA4CDBF662362D6AFDE76E65301125", hash_generated_method = "844419A56C8CE06C4DC2C45325454572")
     @Deprecated
     public void onTooManyRedirects(WebView view, Message cancelMsg,
@@ -130,6 +131,7 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_1742185791 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.617 -0400", hash_original_method = "292FE6324BA8FDA19777928FD16DC874", hash_generated_method = "5FCC10F1274F04813FE642DC23C298ED")
     public void onReceivedSslError(WebView view, SslErrorHandler handler,
             SslError error) {
@@ -167,6 +169,7 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_1742185791 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.618 -0400", hash_original_method = "99DC3611344E7F5F6B557A987ADB25FE", hash_generated_method = "E3559A109C6D478005B6A2B159C3FB05")
     public void onReceivedHttpAuthRequest(WebView view,
             HttpAuthHandler handler, String host, String realm) {

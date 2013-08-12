@@ -57,6 +57,7 @@ public final class BluetoothClass implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.098 -0400", hash_original_method = "E65C8DBAA86595E02DE1992FA15205E3", hash_generated_method = "5572DD741FE98E74E57CC2E7F3D77831")
     @Override
     public String toString() {
@@ -511,6 +512,7 @@ switch(getDeviceClass()){
 
     public static final Parcelable.Creator<BluetoothClass> CREATOR =
             new Parcelable.Creator<BluetoothClass>() {
+        @DSModeled(DSC.SAFE)
         public BluetoothClass createFromParcel(Parcel in) {
             return new BluetoothClass(in.readInt());
         }

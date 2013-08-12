@@ -132,7 +132,7 @@ for(String cn : getDNSSubjectAlts(x509))
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.561 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "9C4305B6696E12B27209682CB8A5808F")
     private boolean acceptableCountryWildcard(String cn) {
         addTaint(cn.getTaint());
@@ -194,7 +194,7 @@ String var540C13E9E156B687226421B24F2DF178_960074410 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.562 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "017F4CFB891E8E09A0F6902F5F57D3DB")
     private List<String> getDNSSubjectAlts(X509Certificate cert) {
         addTaint(cert.getTaint());

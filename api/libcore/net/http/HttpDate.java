@@ -23,6 +23,7 @@ public final class HttpDate {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Date parse(String value) {
         try {
             return STANDARD_DATE_FORMAT.get().parse(value);
@@ -47,6 +48,7 @@ public final class HttpDate {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.807 -0400", hash_original_field = "7070321CEDCE8DDA350092605D887EA6", hash_generated_field = "CF56E75DA635218131CA8ED5FD9CB318")
 
     private static final ThreadLocal<DateFormat> STANDARD_DATE_FORMAT = new ThreadLocal<DateFormat>() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.807 -0400", hash_original_method = "884CECE43D2C8988F9978CEA7BD2135F", hash_generated_method = "C825C1CF5D34F144303E23409DAA668A")
         @Override
         protected DateFormat initialValue() {

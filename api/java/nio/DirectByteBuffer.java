@@ -37,6 +37,7 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.524 -0400", hash_original_method = "05EA367CE37FB792328EB9B5E5178E53", hash_generated_method = "A9C32B7EC5C2EF9242C40D5B9E0A8DB4")
     @Override
     public final ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
@@ -57,6 +58,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.525 -0400", hash_original_method = "5166EE5E9707A9E6D584C615F445133C", hash_generated_method = "9B521FFC3A3E94894C4D50F30426F414")
     final void get(char[] dst, int dstOffset, int charCount) {
         addTaint(charCount);
@@ -72,6 +74,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.526 -0400", hash_original_method = "ADD0EB5B665BFADA07EEB34F0C07C866", hash_generated_method = "176BA05F6EB357104CD12502AD0096EA")
     final void get(double[] dst, int dstOffset, int doubleCount) {
         addTaint(doubleCount);
@@ -87,6 +90,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.526 -0400", hash_original_method = "6E512C073258D3379E68BD1EE70E834D", hash_generated_method = "AC3570B4BADB57ABA839D624063F822C")
     final void get(float[] dst, int dstOffset, int floatCount) {
         addTaint(floatCount);
@@ -102,6 +106,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.527 -0400", hash_original_method = "C51D1E84C7192049016360AA331FDA28", hash_generated_method = "9B95039658C6215A632514718613FC79")
     final void get(int[] dst, int dstOffset, int intCount) {
         addTaint(intCount);
@@ -117,6 +122,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.527 -0400", hash_original_method = "3F36E5287836D62D1612D85220FCD9CD", hash_generated_method = "8EBC25C3E4463E5DCF3BF2FA1F23C0FF")
     final void get(long[] dst, int dstOffset, int longCount) {
         addTaint(longCount);
@@ -132,6 +138,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.528 -0400", hash_original_method = "95F33E34C92C83F601EF4DD99BC92C04", hash_generated_method = "2DE7C1009C4112209DD39AFF67DF8FA3")
     final void get(short[] dst, int dstOffset, int shortCount) {
         addTaint(shortCount);
@@ -147,6 +154,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.528 -0400", hash_original_method = "FD6E107A3BCF0EDBECB1B5D0CCC3DC10", hash_generated_method = "67E4AE0DA7AE5ADDBBE3D956ED76908B")
     @Override
     public final byte get() {
@@ -167,6 +175,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.528 -0400", hash_original_method = "4EC80D94823705ACCC824037AEC83986", hash_generated_method = "41F2296FCAD8D55587407DF7A9A062D2")
     @Override
     public final byte get(int index) {
@@ -181,6 +190,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.529 -0400", hash_original_method = "24C7DEF0B0564BDE5B8AAC76D5D642E1", hash_generated_method = "E5829C4AE8FA099CE3B69B437E4047D5")
     @Override
     public final char getChar() {
@@ -207,6 +217,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.529 -0400", hash_original_method = "5FBE332600F81DB9B06A8F423199602B", hash_generated_method = "AA538B634B0771C065227EBAC2CCD2F1")
     @Override
     public final char getChar(int index) {
@@ -221,6 +232,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.530 -0400", hash_original_method = "5EFA43D409368A8372AA180C23146E16", hash_generated_method = "313EB24B58E9E7474F51567774E20497")
     @Override
     public final double getDouble() {
@@ -247,6 +259,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.530 -0400", hash_original_method = "96FC6E541F1994B391122E02AC73326B", hash_generated_method = "B6BF28212BD4933229F3798CE06F2703")
     @Override
     public final double getDouble(int index) {
@@ -261,6 +274,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.531 -0400", hash_original_method = "2EE285AEEA4FEACBF45EAADB7A9A5368", hash_generated_method = "B68A5FD5E7F57B55EB46C93CBB6DBE6F")
     @Override
     public final float getFloat() {
@@ -287,6 +301,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.531 -0400", hash_original_method = "050B7A76EC6791ECC7468C2E0B06A7E7", hash_generated_method = "CD5E63954BF0D0974E8ABA6AF978A0AE")
     @Override
     public final float getFloat(int index) {
@@ -301,6 +316,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.532 -0400", hash_original_method = "D5783EC3520BA4180543335F9AE942E7", hash_generated_method = "FC337CF7E940A21D7D29A7CBE868D44F")
     @Override
     public final int getInt() {
@@ -327,6 +343,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.533 -0400", hash_original_method = "A56F512613C67F8975E594518A590248", hash_generated_method = "741362848F4A0B58A14CD49E55D20410")
     @Override
     public final int getInt(int index) {
@@ -341,6 +358,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.533 -0400", hash_original_method = "8F4B5A1B3C9B20E6E7648EDEC4DC7AE6", hash_generated_method = "386B7CB4F380F04C37D50930BA122F5E")
     @Override
     public final long getLong() {
@@ -367,6 +385,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.533 -0400", hash_original_method = "94B0F156AE4944E60A0908AA30F792C3", hash_generated_method = "EC80B1557F50E0FEC0699837A3331F01")
     @Override
     public final long getLong(int index) {
@@ -381,6 +400,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.534 -0400", hash_original_method = "A23C234E65EF1DC26A40AB6396A2664F", hash_generated_method = "2685FE980DEC5C631BB5BA21AE755611")
     @Override
     public final short getShort() {
@@ -407,6 +427,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.534 -0400", hash_original_method = "3D46A49BA7FE751296135E85F30A2B25", hash_generated_method = "5D586F86F3C1C8BEF5483591D52664BB")
     @Override
     public final short getShort(int index) {
@@ -433,6 +454,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.535 -0400", hash_original_method = "B372104876D32901CA696FF1048C8368", hash_generated_method = "F9713BDBA9CA6D5B4ADE6EB061597987")
     public final void free() {
         block.free();
@@ -441,6 +463,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.535 -0400", hash_original_method = "6C3FEAC6B139FD6B0B9CDBF24FD25811", hash_generated_method = "84BC4BB003B96FC512388C207F812DC5")
     @Override
     protected byte[] protectedArray() {
@@ -463,7 +486,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.536 -0400", hash_original_method = "BE42CB64719A7E35581BD2552BC2391A", hash_generated_method = "FBFB479C7B875FC91B958323B03B1BC2")
     @Override
     protected int protectedArrayOffset() {

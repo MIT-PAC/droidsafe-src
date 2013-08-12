@@ -12,6 +12,7 @@ public class UnsupportedCallbackException extends Exception {
 
     private Callback callback;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.874 -0400", hash_original_method = "6F64A91CCA6DECE8990E118F6F2706F6", hash_generated_method = "D0D2AF18505AA576BB4AA2E2936C7D6B")
     public  UnsupportedCallbackException(Callback callback) {
         this.callback = callback;
@@ -20,6 +21,7 @@ public class UnsupportedCallbackException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.875 -0400", hash_original_method = "E54A6FA33A5BFCD773DCE92A09F71FE9", hash_generated_method = "F2AB684AD9AA4102D4EEDBE8ED41F564")
     public  UnsupportedCallbackException(Callback callback, String message) {
         super(message);

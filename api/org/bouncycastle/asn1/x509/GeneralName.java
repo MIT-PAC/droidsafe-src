@@ -57,6 +57,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.695 -0400", hash_original_method = "D162BA12EC49621407922055320A05EF", hash_generated_method = "DD9CC29BA2DB0B242690EBD36A22DA6F")
     public  GeneralName(
         DERObject name, int tag) {
@@ -68,6 +69,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.695 -0400", hash_original_method = "665CD76EA1DF7ECA95D5C037ABED8C02", hash_generated_method = "DA021E28FCFC1CD04E4328E4BEAD69B3")
     public  GeneralName(
         int           tag,
@@ -80,6 +82,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.696 -0400", hash_original_method = "4C7C4EFE2EC806CECAFA053C455D2BA2", hash_generated_method = "951D3C9E74FDA3DC2422664B845CA28A")
     public  GeneralName(
         int       tag,
@@ -460,6 +463,7 @@ for(int i = doubleColon;i != val.length - (index - doubleColon);i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_method = "D622C616E457C40B929532BF47722854", hash_generated_method = "4371BD4B535C3E2C8EF402B8226B74CC")
     public DERObject toASN1Object() {
         if(tag == directoryName)        

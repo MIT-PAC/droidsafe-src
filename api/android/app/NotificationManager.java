@@ -78,6 +78,7 @@ public class NotificationManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.336 -0400", hash_original_method = "C3E2CA3977B6A0DFE40EA0B5D969CEEE", hash_generated_method = "B4FE8F0698D984ABEB6334817C99606F")
     public void cancel(int id) {
         addTaint(id);
@@ -111,6 +112,7 @@ public class NotificationManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.337 -0400", hash_original_method = "755B5F96474649FA97E86F2D74D1F0A8", hash_generated_method = "BC97B9420B51E2C81E74AEF4EDEAF77B")
     public void cancelAll() {
         INotificationManager service = getService();

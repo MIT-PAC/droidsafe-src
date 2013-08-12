@@ -14,6 +14,7 @@ import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class MacSpi {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.283 -0400", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "8D6409E06ABF820FA39D434786DC17A2")
     public  MacSpi() {
         // ---------- Original Method ----------
@@ -89,6 +90,7 @@ public abstract class MacSpi {
     protected abstract void engineReset();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.286 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "1B56C580261B81C02F36E011988759AE")
     @Override
     public Object clone() throws CloneNotSupportedException {

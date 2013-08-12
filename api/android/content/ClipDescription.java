@@ -20,6 +20,7 @@ public class ClipDescription implements Parcelable {
 
     String[] mMimeTypes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.589 -0400", hash_original_method = "6E07A97519B37D56809D89D2D092EC92", hash_generated_method = "890D65494935619F9AA429AB6DB7B54C")
     public  ClipDescription(CharSequence label, String[] mimeTypes) {
         if(mimeTypes == null)        
@@ -39,6 +40,7 @@ public class ClipDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.590 -0400", hash_original_method = "A0387A443FBD0EC599BEE38B5BCEEEFE", hash_generated_method = "500EE76E612CA9247BDBAF4FBA4E3A0E")
     public  ClipDescription(ClipDescription o) {
         mLabel = o.mLabel;
@@ -49,6 +51,7 @@ public class ClipDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.592 -0400", hash_original_method = "2082AA3F6A7022812C6D8548A4E1BDA1", hash_generated_method = "DC7613E13E0DBB147B4733FF183442DB")
       ClipDescription(Parcel in) {
         mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
@@ -114,6 +117,7 @@ for(int i=0;i<mMimeTypes.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.596 -0400", hash_original_method = "184F6EBE579A57B9FFCBCC2BBB07DD57", hash_generated_method = "AED10A9BDC8BB4AE6F57E38636178466")
     public String[] filterMimeTypes(String mimeType) {
         addTaint(mimeType.getTaint());
@@ -233,6 +237,7 @@ for(int i=0;i<mMimeTypes.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.600 -0400", hash_original_method = "B91E92C4C4B5B9EF26722F0E8D4A5B80", hash_generated_method = "D0B5048C2BD49A5B6DDFB0BCFC932B20")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

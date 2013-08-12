@@ -57,6 +57,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String getHost(Context ctx) {
         java.net.Proxy proxy = getProxy(ctx, null);
         if (proxy == java.net.Proxy.NO_PROXY) return null;
@@ -68,6 +69,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getPort(Context ctx) {
         java.net.Proxy proxy = getProxy(ctx, null);
         if (proxy == java.net.Proxy.NO_PROXY) return -1;
@@ -79,6 +81,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String getDefaultHost() {
         String host = System.getProperty("http.proxyHost");
         if (TextUtils.isEmpty(host)) return null;
@@ -86,6 +89,7 @@ public final class Proxy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getDefaultPort() {
         if (getDefaultHost() == null) return -1;
         try {
@@ -226,6 +230,7 @@ public final class Proxy {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.098 -0400", hash_original_method = "48F5B4B79C87549F69CC4C6A9BA0C6B0", hash_generated_method = "76508D34F8CFC2C5E73F3CFB8FEC4EE3")
         @Override
         protected java.net.Proxy chooseProxy(List<java.net.Proxy> proxies, HttpHost target,

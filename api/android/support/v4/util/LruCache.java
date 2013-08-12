@@ -36,6 +36,7 @@ public class LruCache<K, V> {
 
     private int missCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.073 -0400", hash_original_method = "4EF140C80EBAC1C26C5562E76AB6C34D", hash_generated_method = "2C6C9A735F0BE3BC2C3CE54D29C89C0B")
     public  LruCache(int maxSize) {
         if(maxSize <= 0)        
@@ -55,6 +56,7 @@ public class LruCache<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.075 -0400", hash_original_method = "E5DC52D3C4EAEBC9C86A603CE5606C4A", hash_generated_method = "1F70685DE934B91A2E44B77B6EA101F3")
     public final V get(K key) {
         if(key == null)        
@@ -115,6 +117,7 @@ V var887CC428FAE3E4113D67DDB6E0274549_586250023 =             createdValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.076 -0400", hash_original_method = "79B383546C2B260561E7B3FD1850F381", hash_generated_method = "603CBBE71E690668AAC0D334773F3E6B")
     public final V put(K key, V value) {
         if(key == null || value == null)        
@@ -217,6 +220,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_1618001416 =         previous;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.078 -0400", hash_original_method = "5ECD46803ACE6D1B641401078C3B9D9C", hash_generated_method = "46BAC879A1F48F83AC8A798E6F8C38C3")
     public final V remove(K key) {
         if(key == null)        
@@ -259,6 +263,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_2015789417 =         previous;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.079 -0400", hash_original_method = "9AD1617B914C1EE986412183164D996B", hash_generated_method = "D85B76C70BAD813556EC7465A7D0C22C")
     protected void entryRemoved(boolean evicted, K key, V oldValue, V newValue) {
         addTaint(newValue.getTaint());
@@ -316,6 +321,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.081 -0400", hash_original_method = "D3EB145ED9D558FDF887F10175D8EBDF", hash_generated_method = "6852E1E415BA1B80059D4CFD58DC38F6")
     public final void evictAll() {
         trimToSize(-1);
@@ -411,6 +417,7 @@ Map<K, V> var7CBA52F3D0FF67B0A6C8182187BA636E_520054507 =         new LinkedHash
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.083 -0400", hash_original_method = "D511C7B644032E2A9485769132851C89", hash_generated_method = "2A51C4FB1A3CCF9A9FA06A069E0D90B9")
     @Override
     public synchronized final String toString() {

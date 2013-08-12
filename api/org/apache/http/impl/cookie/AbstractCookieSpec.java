@@ -95,6 +95,7 @@ CookieAttributeHandler var3E73215C2EA435E7F052AAB7C8597D27_887618459 =          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.528 -0400", hash_original_method = "BF6A284618BDB748E6134235BAFA5C45", hash_generated_method = "9BAC6B88A5D4F2DEB2FC693A7CF7188B")
     protected Collection<CookieAttributeHandler> getAttribHandlers() {
 Collection<CookieAttributeHandler> var4186A4F29AAD2C613AF1424EC7B20E08_827240114 =         this.attribHandlerMap.values();

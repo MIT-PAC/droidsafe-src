@@ -304,6 +304,7 @@ for(int i=0;i<callbacks.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.137 -0400", hash_original_method = "B5ED6DC4BA8E7805F8F571CEAE93D7B1", hash_generated_method = "B9C646D104F25D62E442A97FA7CE9EAA")
      void dispatchActivitySaveInstanceState(Activity activity, Bundle outState) {
         addTaint(outState.getTaint());

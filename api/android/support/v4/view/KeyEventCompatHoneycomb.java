@@ -22,13 +22,13 @@ class KeyEventCompatHoneycomb {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean metaStateHasModifiers(int metaState, int modifiers) {
         return KeyEvent.metaStateHasModifiers(metaState, modifiers);
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static boolean metaStateHasNoModifiers(int metaState) {
         return KeyEvent.metaStateHasNoModifiers(metaState);
     }

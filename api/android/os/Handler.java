@@ -138,6 +138,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final Message obtainMessage(int what){
 		// Original method
 		/*
@@ -150,6 +151,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final Message obtainMessage(int what, Object obj){
 		// Original method
 		/*
@@ -163,6 +165,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final Message obtainMessage(int what, int arg1, int arg2){
 		// Original method
 		/*
@@ -177,6 +180,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final Message obtainMessage(int what, int arg1, int arg2, Object obj){
 		// Original method
 		/*
@@ -205,6 +209,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean postAtTime(Runnable r, long uptimeMillis){
 		// Original method
 		/*
@@ -257,6 +262,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void removeCallbacks(Runnable r){
 		// Original method
 		/*
@@ -423,6 +429,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void removeMessages(int what){
 		// Original method
 		/*

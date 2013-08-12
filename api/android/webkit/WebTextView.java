@@ -146,6 +146,7 @@ class WebTextView extends AutoCompleteTextView implements AdapterView.OnItemClic
 
     private Handler mHandler;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.036 -0400", hash_original_method = "089095F3BAAFCF9E87F2A27B8FA6A0A2", hash_generated_method = "7E113602158EE934AC5BB02F052E6EF6")
       WebTextView(Context context, WebView webView, int autoFillQueryId) {
         super(context, null, com.android.internal.R.attr.webTextViewStyle);
@@ -219,6 +220,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.038 -0400", hash_original_method = "6961E56AC59C570DF49F429D8D391CD8", hash_generated_method = "731347EE4B6EE618D13AA38C9C03B8F9")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -374,6 +376,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.038 -0400", hash_original_method = "4890DDDCE957B3D3A5D6757132681BB5", hash_generated_method = "ED4B7E9EBA405B5DA87F1DAB2AF0F4F3")
      void ensureLayout() {
         if(getLayout() == null)        
@@ -459,6 +462,7 @@ ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_863724196 =         mReceiver
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.039 -0400", hash_original_method = "76914D313CC2AB81853EDD1E3C727FFE", hash_generated_method = "B86F4C0B13345A3066076DAA8B4D5ECC")
     @Override
     protected void makeNewLayout(int w, int hintWidth, Metrics boring,
@@ -504,6 +508,7 @@ InputConnection var9911BB1C5F1522C1630847C40E8BC67E_196071367 =         connecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.039 -0400", hash_original_method = "804428A0FF8505961E29DE067C3E7206", hash_generated_method = "C3F111AD14178CE70473B85DA1229BFD")
     @Override
     public void onEditorAction(int actionCode) {
@@ -570,6 +575,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.040 -0400", hash_original_method = "A29BC68952EA75E2FA60BFA3E7E77A14", hash_generated_method = "5F66268F73CE77DC1DE348768C490FCE")
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -652,6 +658,7 @@ switch(actionCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.040 -0400", hash_original_method = "86E27647BFDE15D66BF8F4D142CAE4A5", hash_generated_method = "C07B6E53123F7ACA7ED7EF3728630AE4")
     @Override
     protected void onTextChanged(CharSequence s,int start,int before,int count) {
@@ -748,6 +755,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.041 -0400", hash_original_method = "C8E8CDF4C81BBE6A97ACE8DDCE593DE3", hash_generated_method = "A971FC5DB5B0D9E31141DB1165C7D3A5")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -849,6 +857,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.042 -0400", hash_original_method = "39A98F4B040DD226E88FA29A15911D83", hash_generated_method = "E2E8C75B690BE62694294B48806B539E")
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
@@ -909,6 +918,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.042 -0400", hash_original_method = "E890325AD4CF04CF90789A3947029902", hash_generated_method = "BC197A6168B60C3069D315DE4474B75B")
      void remove() {
         InputMethodManager imm = InputMethodManager.getInstance(mContext);
@@ -965,6 +975,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.043 -0400", hash_original_method = "95851FC5190E2011BB56B8769701FDF9", hash_generated_method = "E20F45C9FCF58CDEF59D19C7E171D450")
     public void setAdapterCustom(AutoCompleteAdapter adapter) {
         addTaint(adapter.getTaint());
@@ -1006,6 +1017,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.043 -0400", hash_original_method = "10D826035FBCEEF5092B615EC9DFDE75", hash_generated_method = "B072FB2BE3A6E94DE006DBDBDE47F869")
      void setDefaultSelection() {
         Spannable text = (Spannable) getText();
@@ -1078,6 +1090,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.043 -0400", hash_original_method = "C341AA0EB003F8D508947196584836B7", hash_generated_method = "4D7B0BEC9834A42C8E4654682B07BA85")
      void setNodePointer(int ptr) {
         if(ptr != mNodePointer)        
@@ -1093,6 +1106,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.044 -0400", hash_original_method = "1A385B6FBFB65985BDFEFA75CA11C93C", hash_generated_method = "ED04B00F0C15CAD59749CFC4706A66B7")
      void setRect(int x, int y, int width, int height) {
         addTaint(y);
@@ -1135,6 +1149,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.066 -0400", hash_original_method = "CE3949E5C336F8D95926C2F0BAE76623", hash_generated_method = "6366711B8EFD75954168952FB2746FC4")
      void setSelectionFromWebKit(int start, int end) {
         addTaint(end);
@@ -1159,6 +1174,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.067 -0400", hash_original_method = "0E0FB59047FF987C205DC97754DD32D6", hash_generated_method = "E11D55D9F9950208F0B8C264A3D805A9")
      void updateTextSize() {
         Assert.assertNotNull("updateTextSize should only be called from "
@@ -1175,6 +1191,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.067 -0400", hash_original_method = "FCE77DF28E9B30518950525927BBC7BA", hash_generated_method = "6516707DF939BD164481990C08A14A02")
      void setTextAndKeepSelection(String text) {
         Editable edit = getText();
@@ -1223,6 +1240,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.071 -0400", hash_original_method = "9C43235B4CCED4C8A2DC53AB1F7D42B9", hash_generated_method = "CF5550D93223C2191EC65D361AD01F3E")
      void setType(int type) {
         addTaint(type);
@@ -1334,6 +1352,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String urlForAutoCompleteData(String urlString) {
         URL url = null;
         try {
@@ -1528,6 +1547,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.085 -0400", hash_original_method = "BD0D404B64FBDA001253C5382CB9CD95", hash_generated_method = "1BDDE8E99B8B0CD83BA28160C27FFE63")
         @Override
         public int getLineTop(int line) {
@@ -1559,6 +1579,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:54.086 -0400", hash_original_method = "C6FC0517987C8200BB760FE857B81ECC", hash_generated_method = "40530DBF5B50EBDCDF4E40E33C9DD09C")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {

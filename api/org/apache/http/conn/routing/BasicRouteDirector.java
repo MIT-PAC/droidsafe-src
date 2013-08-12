@@ -13,6 +13,7 @@ public class BasicRouteDirector implements HttpRouteDirector {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.790 -0400", hash_original_method = "2D52A8A1F4F510CECBAF7D127E816999", hash_generated_method = "DD5AFA38DD0547CB7400AC6059E28E5D")
     public int nextStep(RouteInfo plan, RouteInfo fact) {
         addTaint(fact.getTaint());
@@ -51,6 +52,7 @@ public class BasicRouteDirector implements HttpRouteDirector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.790 -0400", hash_original_method = "966B65B53C96D6B72CF4916A6633605B", hash_generated_method = "CE9FCAB79AB495B21E65B93EEA9F5749")
     protected int firstStep(RouteInfo plan) {
         addTaint(plan.getTaint());
@@ -111,6 +113,7 @@ public class BasicRouteDirector implements HttpRouteDirector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.792 -0400", hash_original_method = "DAD47A54D3A856226CAD2FBA5A8D36F7", hash_generated_method = "3A1F82BA4D189E06CEC903CB93A2FDD4")
     protected int proxiedStep(RouteInfo plan, RouteInfo fact) {
         addTaint(fact.getTaint());

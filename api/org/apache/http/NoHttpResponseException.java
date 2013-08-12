@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class NoHttpResponseException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.186 -0400", hash_original_method = "51433E3131C29EA8B44042173638BB72", hash_generated_method = "688C705B577B8CD6856E2BDA45269CDB")
     public  NoHttpResponseException(String message) {
         super(message);

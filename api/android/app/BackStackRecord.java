@@ -43,6 +43,7 @@ final class BackStackState implements Parcelable {
 
     CharSequence mBreadCrumbShortTitleText;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.988 -0400", hash_original_method = "DCE5061D40CBE6F430759A7A23E4D4F8", hash_generated_method = "5381D10427AEEB9BCBBFDE891BE0BAB3")
     public  BackStackState(FragmentManagerImpl fm, BackStackRecord bse) {
         addTaint(fm.getTaint());
@@ -125,7 +126,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.995 -0400", hash_original_method = "F8D54BF837A015C95DFB9CC70933C9DB", hash_generated_method = "EAEDDFF1CBA2E1780FC6B2A4795C0B2B")
     public BackStackRecord instantiate(FragmentManagerImpl fm) {
         addTaint(fm.getTaint());

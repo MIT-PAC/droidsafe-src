@@ -164,6 +164,7 @@ public class Point implements Parcelable {
     
     public static final Parcelable.Creator<Point> CREATOR = new Parcelable.Creator<Point>() {
         
+        @DSModeled(DSC.SAFE)
         public Point createFromParcel(Parcel in) {
             Point r = new Point();
             r.readFromParcel(in);

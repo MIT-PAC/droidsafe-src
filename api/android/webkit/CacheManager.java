@@ -99,6 +99,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean enableTransaction() {
         assert !JniUtil.useChromiumHttpStack();
         if (++mRefCount == 1) {
@@ -109,6 +110,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean disableTransaction() {
         assert !JniUtil.useChromiumHttpStack();
         if (--mRefCount == 0) {
@@ -119,12 +121,14 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean startTransaction() {
         assert !JniUtil.useChromiumHttpStack();
         return mDataBase.startCacheTransaction();
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean endTransaction() {
         assert !JniUtil.useChromiumHttpStack();
         boolean ret = mDataBase.endCacheTransaction();
@@ -150,6 +154,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static CacheResult getCacheFile(String url,
             Map<String, String> headers) {
@@ -157,6 +162,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static CacheResult getCacheFile(String url, long postIdentifier,
             Map<String, String> headers) {
         if (mDisabled) {
@@ -226,6 +232,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static CacheResult createCacheFile(String url, int statusCode,
             Headers headers, String mimeType, long postIdentifier,
             boolean forceCache) {
@@ -304,6 +311,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean cleanupCacheFile(CacheResult cacheRet) {
         assert !JniUtil.useChromiumHttpStack();
         try {
@@ -315,6 +323,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean removeAllCacheFiles() {
         if (mBaseDir == null) {
             assert !JniUtil.useChromiumHttpStack();
@@ -344,6 +353,7 @@ public final class CacheManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void trimCacheIfNeeded() {
         assert !JniUtil.useChromiumHttpStack();
         if (mDataBase.getCacheTotalSize() > CACHE_THRESHOLD) {

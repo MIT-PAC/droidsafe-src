@@ -31,6 +31,7 @@ public class UserAgentParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.526 -0400", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "9BCAC89D0602F69A91979C3242805697")
     public SIPHeader parse() throws ParseException {
         if(debug)        

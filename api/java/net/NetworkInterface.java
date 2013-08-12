@@ -67,6 +67,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static NetworkInterface forUnboundMulticastSocket() {
         return new NetworkInterface(null, -1,
                 Arrays.asList(Inet6Address.ANY), Collections.<InterfaceAddress>emptyList());
@@ -95,6 +96,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_981283183 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.894 -0400", hash_original_method = "8FEC8BEDC3DD9B76E3DD04718D2DB944", hash_generated_method = "291A2F6CE85FD6C06E23BCC121D9381F")
     public Enumeration<InetAddress> getInetAddresses() {
 Enumeration<InetAddress> varD3B470D483B8F9354A0737BFC5858998_1221450591 =         Collections.enumeration(addresses);
@@ -213,7 +215,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static SocketException rethrowAsSocketException(Exception ex) throws SocketException {
         SocketException result = new SocketException();
         result.initCause(ex);
@@ -245,12 +247,13 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Enumeration<NetworkInterface> getNetworkInterfaces() throws SocketException {
         return Collections.enumeration(getNetworkInterfacesList());
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static List<NetworkInterface> getNetworkInterfacesList() throws SocketException {
         String[] interfaceNames = new File("/sys/class/net").list();
         NetworkInterface[] interfaces = new NetworkInterface[interfaceNames.length];
@@ -366,6 +369,7 @@ String var2460B846747F8B22185AD8BE722266A5_741317479 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "C190D1700F991379DD6B6FA0B56D9271", hash_generated_method = "72B3BA77E541ECB3C28F5AADD14A28B7")
     public List<InterfaceAddress> getInterfaceAddresses() {
 List<InterfaceAddress> var1AE6140156ED59D7B38A38420D0276CF_1802201865 =         Collections.unmodifiableList(interfaceAddresses);
@@ -376,6 +380,7 @@ List<InterfaceAddress> var1AE6140156ED59D7B38A38420D0276CF_1802201865 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "8E4C110AD3B43FE2BF8CD3BA4F006B61", hash_generated_method = "6C7AE7B059212BAC8A081B9794D0677F")
     public Enumeration<NetworkInterface> getSubInterfaces() {
 Enumeration<NetworkInterface> varFB917036CF4C112A6E28D983C9E7D865_1402198101 =         Collections.enumeration(children);
@@ -397,6 +402,7 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_686297012 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "75BA962F238E916BD53759FC06C4F3FC", hash_generated_method = "E3A5BB9EEB4B8077698A2FD6CB08315F")
     public boolean isUp() throws SocketException {
         boolean var26DF8EC98758B1380AC5855D3A8FEF83_1057693276 = (hasFlag(IFF_UP));
@@ -407,6 +413,7 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_686297012 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "43938CC724FD99A90F694F02FE52F3C1", hash_generated_method = "2BD6954B5F75F13182B025C0F0A21F72")
     public boolean isLoopback() throws SocketException {
         boolean var9AB8438077177BEA1D608C258B4B8B26_1342266003 = (hasFlag(IFF_LOOPBACK));
@@ -417,6 +424,7 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_686297012 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "23308A79A2D2396A98D81E8541E78934", hash_generated_method = "8A09A34DC6F6E5D17A1BA6C622E5A522")
     public boolean isPointToPoint() throws SocketException {
         boolean var5E74952569B8C838CE61A4AB61CD82BC_1182581060 = (hasFlag(IFF_POINTOPOINT));
@@ -427,6 +435,7 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_686297012 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.896 -0400", hash_original_method = "F3F42A79D0AC4CD032482F2E9202D65B", hash_generated_method = "2C1788D7881B508A5C19703273036297")
     public boolean supportsMulticast() throws SocketException {
         boolean varCAF320F4BB75DE7DCBCC3CDA3F430534_1905375120 = (hasFlag(IFF_MULTICAST));
@@ -451,6 +460,7 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_686297012 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.939 -0400", hash_original_method = "38A6C5A0C86B6ED6858EFB47D652704B", hash_generated_method = "03D3756D0CCE283A6BBA95B14F88554B")
     public byte[] getHardwareAddress() throws SocketException {
         try 
@@ -499,6 +509,7 @@ for(int i = 0;i < result.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.932 -0400", hash_original_method = "57A1E5A45121F464D5D64A55053B7665", hash_generated_method = "47A96A9C040229DEBE358B1CFF0C91F3")
     public int getMTU() throws SocketException {
         int varBC4143F5BD08A4B8EF95741872F7167D_867435652 = (readIntFile("/sys/class/net/" + name + "/mtu"));

@@ -20,14 +20,14 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static long lastDebuggerActivity() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1326805405 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1326805405;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static boolean isDebuggingEnabled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936903779 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_936903779;
@@ -41,7 +41,7 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static String[] getVmFeatureList() {
     	String[] ret = new String[0];
     	return ret;
@@ -81,13 +81,13 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static void startMethodTracingNative(String traceFileName,
         FileDescriptor fd, int bufferSize, int flags) {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static boolean isMethodTracingActive() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1236083031 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1236083031;
@@ -99,7 +99,7 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void startEmulatorTracing() {
     }
 
@@ -109,7 +109,7 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static long threadCpuTimeNanos() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1349091814 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1349091814;
@@ -126,14 +126,14 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static int getAllocCount(int kind) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006668567 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006668567;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void resetAllocCount(int kinds) {
     }
 
@@ -167,17 +167,17 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void resetInstructionCount() {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void printLoadedClasses(int flags) {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static int getLoadedClassCount() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368515312 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368515312;
@@ -192,7 +192,7 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void dumpHprofDataDdms() {
     }
 
@@ -209,7 +209,7 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void dumpReferenceTables() {
     }
 
@@ -219,7 +219,7 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static void infopoint(int id) {
     }
 
@@ -234,7 +234,7 @@ public final class VMDebug {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public static long countInstancesOfClass(Class klass, boolean assignable) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897;

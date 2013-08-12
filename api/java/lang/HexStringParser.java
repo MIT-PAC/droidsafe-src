@@ -42,6 +42,7 @@ final class HexStringParser {
 
     private String abandonedNumber = "";
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.998 -0400", hash_original_method = "0F94CFCCDCBAD4C71218B93664CFA571", hash_generated_method = "FAB0E994F336D410190943BCA78F23A8")
     public  HexStringParser(int exponentWidth, int mantissaWidth) {
         this.EXPONENT_WIDTH = exponentWidth;
@@ -60,6 +61,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static double parseDouble(String hexString) {
         HexStringParser parser = new HexStringParser(DOUBLE_EXPONENT_WIDTH, DOUBLE_MANTISSA_WIDTH);
         long result = parser.parse(hexString, true);
@@ -67,6 +69,7 @@ final class HexStringParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float parseFloat(String hexString) {
         HexStringParser parser = new HexStringParser(FLOAT_EXPONENT_WIDTH, FLOAT_MANTISSA_WIDTH);
         int result = (int) parser.parse(hexString, false);

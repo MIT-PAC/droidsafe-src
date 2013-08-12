@@ -15,6 +15,7 @@ public final class StructLinger {
 
     public int l_linger;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.799 -0400", hash_original_method = "B2DBC5125F252FD79E2837DA3A5E5C7A", hash_generated_method = "01C58025B7637D560E391B8C3FEF0630")
     public  StructLinger(int l_onoff, int l_linger) {
         this.l_onoff = l_onoff;
@@ -36,6 +37,7 @@ public final class StructLinger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.799 -0400", hash_original_method = "F93BE5BFF4FFDE74302B318FFC6DC0AC", hash_generated_method = "D4522C242A20A4A9195D56EC3568FDD7")
     @Override
     public String toString() {

@@ -29,6 +29,7 @@ public class ListFragment extends Fragment {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.048 -0400", hash_original_field = "F487762B42FCD79D908F11802425F9AE", hash_generated_field = "2191C8C7F9D27D78D192D12C39499CAC")
 
     final private Runnable mRequestFocus = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.048 -0400", hash_original_method = "4F290F2508C3F0B44E09591C5B0749BC", hash_generated_method = "203642A5324F5F18B21A0D020E65FD5C")
         public void run() {
             mList.focusableViewAvailable(mList);
@@ -86,6 +87,7 @@ public class ListFragment extends Fragment {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.476 -0400", hash_original_method = "92DD87AA93E8A92E60115765257469F5", hash_generated_method = "A0001B7116B7AF93DEEB0D1EB730C073")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -177,7 +179,7 @@ View varE2FC54A1BB143D1D1A0E38EDF22F290D_466747361 =         root;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.479 -0400", hash_original_method = "B9F859547BD6410EA28F34027A6366BE", hash_generated_method = "603A4D55808103A90D851FF671C09445")
     public void setListAdapter(ListAdapter adapter) {
         boolean hadAdapter = mAdapter != null;
@@ -202,6 +204,7 @@ View varE2FC54A1BB143D1D1A0E38EDF22F290D_466747361 =         root;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.480 -0400", hash_original_method = "6FC4BB7AE2BE523C1207DDD3222220F6", hash_generated_method = "6D445B8D673D3639928814553952A446")
     public void setSelection(int position) {
         addTaint(position);
@@ -213,6 +216,7 @@ View varE2FC54A1BB143D1D1A0E38EDF22F290D_466747361 =         root;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.480 -0400", hash_original_method = "602C73B7F7242D55D7B4B399409B7E51", hash_generated_method = "D72483B32AE33B66FCAEC9B123A42F5F")
     public int getSelectedItemPosition() {
         ensureList();
@@ -225,6 +229,7 @@ View varE2FC54A1BB143D1D1A0E38EDF22F290D_466747361 =         root;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.481 -0400", hash_original_method = "7FA8F631361DB814AF49E068AB6A3A01", hash_generated_method = "D9254F20C18A19FE0DAD0F619FE314B0")
     public long getSelectedItemId() {
         ensureList();
@@ -237,6 +242,7 @@ View varE2FC54A1BB143D1D1A0E38EDF22F290D_466747361 =         root;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.481 -0400", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "0371E171DFD8E8E4B6BB30BA0FD41231")
     public ListView getListView() {
         ensureList();
@@ -249,6 +255,7 @@ ListView var344AE622895130273F3D062543816FEE_2017919155 =         mList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.482 -0400", hash_original_method = "BDE8F4E2DF99E8DBF624FF236090A0E2", hash_generated_method = "24747C899CE090BE21E00BD06DD90049")
     public void setEmptyText(CharSequence text) {
         ensureList();
@@ -277,6 +284,7 @@ ListView var344AE622895130273F3D062543816FEE_2017919155 =         mList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.483 -0400", hash_original_method = "58A7D31C5F755970E32BD1449250481A", hash_generated_method = "ECFA22EF7C67E65DE11CACB9B16B3B88")
     public void setListShown(boolean shown) {
         addTaint(shown);
@@ -286,6 +294,7 @@ ListView var344AE622895130273F3D062543816FEE_2017919155 =         mList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.484 -0400", hash_original_method = "9A20C5F20729EB8F1D1E26962B6A5257", hash_generated_method = "2204BE8E8F3D2EB7B29E24737821F7B6")
     public void setListShownNoAnimation(boolean shown) {
         addTaint(shown);

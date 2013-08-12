@@ -251,6 +251,7 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.546 -0400", hash_original_method = "D894692E4046265C2E05884CCE780235", hash_generated_method = "EB51F95B22CD1F9D8B7D1F4A854079F6")
     public boolean isAcceptable(List<GeneralName> names) {
         addTaint(names.getTaint());
@@ -360,6 +361,7 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
             setOptional(1);
         }
 
+        @DSModeled(DSC.BAN)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new NameConstraints(

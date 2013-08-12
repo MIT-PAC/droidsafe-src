@@ -35,6 +35,7 @@ public final class Field extends AccessibleObject implements Member {
 
     private int slot;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.003 -0400", hash_original_method = "18020B40E6468EB970BF7E1035466368", hash_generated_method = "056CC8AA5B0A121050D652E4EFA901DD")
       Field(Field orig) {
         this(orig.declaringClass, orig.type, orig.name, orig.slot);
@@ -140,6 +141,7 @@ String var2F8E51633C4B934C6A6871930033C26B_1366671226 =         StringUtils.comb
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.006 -0400", hash_original_method = "E96960960A41CE3DD754F7ED4B73683A", hash_generated_method = "C60A06D975F521900A0F52AC4D3CA8F9")
     public String toGenericString() {
         StringBuilder sb = new StringBuilder(80);
@@ -180,6 +182,7 @@ String var2460B846747F8B22185AD8BE722266A5_700738073 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.007 -0400", hash_original_method = "963F10B2A4697E7A9ECC1BB94066D74F", hash_generated_method = "5D12C0FE3DCA0B0E814C8439618EFF90")
     public Type getGenericType() {
         initGenericType();
@@ -276,6 +279,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.009 -0400", hash_original_method = "955F27DFEC9F7B5FBB7D8BD5BE41A050", hash_generated_method = "76B2C24257BD3B5CB993228A56B7CF82")
     @Override
     public boolean equals(Object object) {
@@ -288,7 +292,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.010 -0400", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "4B7B83C96E7AA37593001CF2DB5E01DC")
     public Object get(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -300,6 +304,7 @@ Object var7995FC01A88811E5E97CF2E73643495D_1945262284 =         getField(object,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.010 -0400", hash_original_method = "27492232D5FCC61236B83BF948F6F104", hash_generated_method = "75FE70B5817C0425E0D0DBA1768BAA30")
     public boolean getBoolean(Object object) throws IllegalAccessException,
             IllegalArgumentException {
@@ -390,7 +395,7 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_391083683 =         declaringClass;
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.012 -0400", hash_original_method = "5A676A538E8952F6729F0D8423178A33", hash_generated_method = "985A2FD607479EF30EABA9B14A6A727E")
     public int getModifiers() {
         int var5A21DFF9A4E45BEE9AF69069B6808DEF_1724906113 = (getFieldModifiers(declaringClass, slot));
@@ -454,6 +459,7 @@ Class<?> varC5B9F25B4EEAD3E8E2C33F9429204397_1396214102 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.014 -0400", hash_original_method = "7C0B16AD34D2790FBD73D96D003DD91D", hash_generated_method = "D70300403D980EAEE6AAFD01B38D5533")
     @Override
     public int hashCode() {
@@ -465,6 +471,7 @@ Class<?> varC5B9F25B4EEAD3E8E2C33F9429204397_1396214102 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.014 -0400", hash_original_method = "6D24AA0F6B01F01D922DBBA93FD91F81", hash_generated_method = "62C72115E0B338F718DA287637B5771C")
     public void set(Object object, Object value) throws IllegalAccessException,
             IllegalArgumentException {
@@ -487,6 +494,7 @@ Class<?> varC5B9F25B4EEAD3E8E2C33F9429204397_1396214102 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.015 -0400", hash_original_method = "AD912B9A4F5D11756FF2F9AE3FC4D6E6", hash_generated_method = "6C2DFB2557346BA99AD390D5490279E8")
     public void setByte(Object object, byte value) throws IllegalAccessException,
             IllegalArgumentException {
@@ -564,6 +572,7 @@ Class<?> varC5B9F25B4EEAD3E8E2C33F9429204397_1396214102 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.017 -0400", hash_original_method = "2B14553F8A926216EE23C791DBC737FD", hash_generated_method = "A8B180D0D4389FF6202AC5514F1E2626")
     @Override
     public String toString() {

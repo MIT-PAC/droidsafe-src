@@ -53,6 +53,7 @@ public class LocalSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.231 -0400", hash_original_method = "A3B0926C7F2CA904DDE9677BB08BC75D", hash_generated_method = "42E999EB23DA7A01B6B222FB340824F6")
     @Override
     public String toString() {
@@ -167,6 +168,7 @@ LocalSocketAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_2015261535 =         loca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.232 -0400", hash_original_method = "DEA6C893F972103692387A11DBA05C46", hash_generated_method = "533C4C8E1C1894394E518692A378F60A")
     public InputStream getInputStream() throws IOException {
         implCreateIfNeeded();
@@ -179,6 +181,7 @@ InputStream varA0C6C26B40703E7D9482EAE0B79E45D2_790956824 =         impl.getInpu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.232 -0400", hash_original_method = "7FCFFCB2ACC45D6472F8A8A9AE347E00", hash_generated_method = "9FA979783E36CCAD07962C03DBE4F0C5")
     public OutputStream getOutputStream() throws IOException {
         implCreateIfNeeded();
@@ -249,6 +252,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1391704260 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.233 -0400", hash_original_method = "669C21804ABD7497EBD82667408E0CF6", hash_generated_method = "6A8B069F5CCBD60E317EEBBFE1967E89")
     public int getSoTimeout() throws IOException {
         int varD9ED706581E59D8A02AABC09446C91B3_2000896599 = (((Integer) impl.getOption(SocketOptions.SO_TIMEOUT)).intValue());
@@ -268,6 +272,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1391704260 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.233 -0400", hash_original_method = "68B16714CB779407E8A17B8680E487D9", hash_generated_method = "FC2282D5337A2B12D88FE0AAB4F3B630")
     public int getSendBufferSize() throws IOException {
         int var30D2E319E9C2929AD28B20E6E58446D9_1008331177 = (((Integer) impl.getOption(SocketOptions.SO_SNDBUF)).intValue());
@@ -381,6 +386,7 @@ Credentials var6122CE1776E20B8EED790D65216238CF_265091749 =         impl.getPeer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.235 -0400", hash_original_method = "48E5039C4FB2B8BAB81B3561EAA65E0E", hash_generated_method = "6D2481C1499334E32C45DF1061C408F6")
     public FileDescriptor getFileDescriptor() {
 FileDescriptor var05E29FE12AB06423EE2D8B05D08F76BE_1556571872 =         impl.getFileDescriptor();

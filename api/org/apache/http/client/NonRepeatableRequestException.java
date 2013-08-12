@@ -16,6 +16,7 @@ public class NonRepeatableRequestException extends ProtocolException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.376 -0400", hash_original_method = "4B87CBDD18691A2F7063A9BFE6EBFE62", hash_generated_method = "CE5DF3FDD87E08FE883176C2ECCDCABC")
     public  NonRepeatableRequestException(String message) {
         super(message);

@@ -27,6 +27,7 @@ public class ParcelFileDescriptor implements Parcelable {
 
     private ParcelFileDescriptor mParcelDescriptor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.080 -0400", hash_original_method = "DB42A2A8BBE574C2950DCEEDDCE79B62", hash_generated_method = "0D84580F8C4180A00E40F7A16F093250")
     public  ParcelFileDescriptor(ParcelFileDescriptor descriptor) {
         super();
@@ -213,6 +214,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_1769834910 =         mFileDes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.096 -0400", hash_original_method = "AECA8304F263BE3AD120D5996456D31E", hash_generated_method = "CE7243A2D56E9AF0AAF8CA6AB2D73982")
     public int detachFd() {
         if(mClosed)        
@@ -281,6 +283,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_1769834910 =         mFileDes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.096 -0400", hash_original_method = "BA9513A0FEF5B159A730B41F75EA216A", hash_generated_method = "308B8072C7B4A05A45101D678DA7A26D")
     @Override
     public String toString() {
@@ -360,6 +363,7 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1250576866 =         "{ParcelFileDesc
 
         private ParcelFileDescriptor mFd;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.097 -0400", hash_original_method = "E3D4E7E6DEAE42263A4A251652766597", hash_generated_method = "4971668D7654AFFF55B2DDD509DBD7E3")
         public  AutoCloseInputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
@@ -369,6 +373,7 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1250576866 =         "{ParcelFileDesc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.097 -0400", hash_original_method = "3297019645A62F287411C53B25C33F9A", hash_generated_method = "64EED0A8F37058D0517D6328F7FEB62F")
         @Override
         public void close() throws IOException {
@@ -398,6 +403,7 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1250576866 =         "{ParcelFileDesc
 
         private ParcelFileDescriptor mFd;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.098 -0400", hash_original_method = "AC6B0F3765CD3D3DD6495992ADDCA299", hash_generated_method = "3519A8D63370D6208317BADE5496D9F6")
         public  AutoCloseOutputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
@@ -407,6 +413,7 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1250576866 =         "{ParcelFileDesc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.098 -0400", hash_original_method = "3297019645A62F287411C53B25C33F9A", hash_generated_method = "64EED0A8F37058D0517D6328F7FEB62F")
         @Override
         public void close() throws IOException {

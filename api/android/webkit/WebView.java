@@ -3831,12 +3831,14 @@ WebBackForwardList varA600F65CA71BDFE56E1956B5658F76F2_1501443926 =         mCal
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String findAddress(String addr) {
         checkThread();
         return findAddress(addr, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String findAddress(String addr, boolean caseInsensitive) {
         return WebViewCore.nativeFindAddress(addr, caseInsensitive);
     }
@@ -10876,6 +10878,7 @@ ViewManager var26FEA57E0624F30880F3CB39D38E2C18_1418628700 =         mViewManage
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.516 -0400", hash_original_method = "7975E69377E2D4E4371FF984BC41AAFC", hash_generated_method = "BDE8634D3C7775A2E87DFF3E15E40528")
         public void onGlobalLayout() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -10969,6 +10972,7 @@ WebView varB2F5B05B23D3BD7D25D64079184A239B_2000578849 =             mWebview;
         }
 
         
+        @DSModeled(DSC.SAFE)
         static void init(Context c) {
             if (sInstance == null) {
                 sInstance = new OnTrimMemoryListener(c.getApplicationContext());
@@ -10995,6 +10999,7 @@ WebView varB2F5B05B23D3BD7D25D64079184A239B_2000578849 =             mWebview;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.517 -0400", hash_original_method = "F302D96FF2DE7B0F1AFDB07E6DA881CC", hash_generated_method = "8B6119E052C035A523C8AFB98A4FAD26")
         @Override
         public void onTrimMemory(int level) {

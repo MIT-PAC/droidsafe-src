@@ -14,6 +14,7 @@ public class BackupManager {
 
     private Context mContext;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.262 -0400", hash_original_method = "85561994F0AAB46E3AEAAB82C9107690", hash_generated_method = "0B376C856E6AD2AF391165CD38C9A30E")
     public  BackupManager(Context context) {
         mContext = context;
@@ -31,6 +32,7 @@ public class BackupManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.263 -0400", hash_original_method = "ADE0596EF26D37CE11FFEC5E571C37D4", hash_generated_method = "57BE6CAFE4A4A5E54E5CCB7B51EC1DD7")
     public void dataChanged() {
         checkServiceBinder();
@@ -57,6 +59,7 @@ public class BackupManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void dataChanged(String packageName) {
         checkServiceBinder();
         if (sService != null) {

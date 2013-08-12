@@ -25,6 +25,7 @@ public class ECNamedCurveTable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static ECNamedCurveParameterSpec getParameterSpec(
         String  name) {
         X9ECParameters  ecP = X962NamedCurves.getByName(name);
@@ -70,6 +71,7 @@ public class ECNamedCurveTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Enumeration getNames() {
         Vector v = new Vector();
         addEnumeration(v, X962NamedCurves.getNames());

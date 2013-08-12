@@ -14,6 +14,7 @@ import java.util.TimeZone;
 
 public final class ASN1GeneralizedTime extends ASN1Time {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.294 -0400", hash_original_method = "BB0F4D8A317B403CA2CD2FD0C74F8C92", hash_generated_method = "AB7ED863FCD9D63D36CDA59E2988CC10")
     public  ASN1GeneralizedTime() {
         super(TAG_GENERALIZEDTIME);
@@ -60,6 +61,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_12980836 =         getDecodedObject(i
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.296 -0400", hash_original_method = "D33B8806BE3331999BE0A247A6FB02E4", hash_generated_method = "2EBC5FAE5BFC613F29174250BED949C1")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());

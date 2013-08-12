@@ -57,7 +57,7 @@ public abstract class ActionProvider {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.419 -0400", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "4965DF89D75A45720F4555BC74EC6B5D")
     public void subUiVisibilityChanged(boolean isVisible) {
         addTaint(isVisible);

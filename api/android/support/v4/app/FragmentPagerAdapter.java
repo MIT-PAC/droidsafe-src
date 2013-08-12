@@ -99,6 +99,7 @@ Object varD266FB1A901BB0D9A16D45416C785B25_861136232 =         fragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.438 -0400", hash_original_method = "C523B4C098494E2FCA3311FDB475454B", hash_generated_method = "412D8BD48DCAADD45552AFB80A4221A4")
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
@@ -136,6 +137,7 @@ Object varD266FB1A901BB0D9A16D45416C785B25_861136232 =         fragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.439 -0400", hash_original_method = "82B7432FA4441721C4132291867EEFCE", hash_generated_method = "685D42234C04229A62EAD30179248403")
     @Override
     public void finishUpdate(ViewGroup container) {

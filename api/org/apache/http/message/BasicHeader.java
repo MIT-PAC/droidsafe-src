@@ -61,6 +61,7 @@ String varD64EF4B55BF21CB8765EC6BE5560B5B8_8538494 =         this.value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.700 -0400", hash_original_method = "F969228997B8CD2234867EA0CA894312", hash_generated_method = "353E06F6F402A9A35531AFA216E0E961")
     public String toString() {
 String var3240027F019094032D6E79F8261F1C67_1213109702 =         BasicLineFormatter.DEFAULT.formatHeader(null, this).toString();
@@ -71,6 +72,7 @@ String var3240027F019094032D6E79F8261F1C67_1213109702 =         BasicLineFormatt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.700 -0400", hash_original_method = "4A0D34AA034E5A375AA25DFEEA935661", hash_generated_method = "4A0321A6709B7DC2518ED64D52C71137")
     public HeaderElement[] getElements() throws ParseException {
         if(this.value != null)        
@@ -94,6 +96,7 @@ HeaderElement[] var500E91C31ED37DF8B17C895D7E8D1295_922484526 =             new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.701 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "8201A9DDD02921B6DDD510BAB8504846")
     public Object clone() throws CloneNotSupportedException {
 Object var46F3A0D86742C1D6E099C2B166941A33_387153739 =         super.clone();

@@ -182,6 +182,7 @@ ComponentName var93E6F91556E618C88339096F31BDB937_920729115 =         new Compon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.368 -0400", hash_original_method = "DC118FA5C7EE28B6AE7273376F31713A", hash_generated_method = "650883E8A808B52259189E1D2F2BED01")
     public CharSequence loadLabel(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -227,7 +228,7 @@ Drawable var4348016AAF788F05EADA2157D91AE065_50686882 =         pm.getDrawable(m
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.371 -0400", hash_original_method = "9EB36950261646858CECEB28CEC974AC", hash_generated_method = "B043F5A4858CCEC3A7E98F60F2500E5F")
     public CharSequence loadAuthor(PackageManager pm) throws NotFoundException {
         addTaint(pm.getTaint());
@@ -259,7 +260,7 @@ CharSequence varFE7FE420E7443373E8CC4AD0F8CFC84C_1099115748 =         pm.getText
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.373 -0400", hash_original_method = "ECA3C93288FC3A8841FE238CFCF9AD1A", hash_generated_method = "288D7866F465E89AD5B94F559F2A2A51")
     public CharSequence loadDescription(PackageManager pm) throws NotFoundException {
         addTaint(pm.getTaint());
@@ -330,7 +331,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_700998418 =         mSettingsActivity
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.377 -0400", hash_original_method = "01F16DDF22698F82DBFF601E0002CE8F", hash_generated_method = "CD67CAB3C3A0FE3DA6E71AE1F6F8F460")
     @Override
     public String toString() {
@@ -382,6 +383,7 @@ String var74D6B0CBF1B60D7089F268183AE6E814_1616513075 =         "WallpaperInfo{"
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.379 -0400", hash_original_field = "84A4B5F5E39D6F71F6BCEDFA677A58DF", hash_generated_field = "3E4220CC5B52A5C0AED6D687E5CC83E9")
 
     public static final Parcelable.Creator<WallpaperInfo> CREATOR = new Parcelable.Creator<WallpaperInfo>() {
+        @DSModeled(DSC.SAFE)
         public WallpaperInfo createFromParcel(Parcel source) {
             return new WallpaperInfo(source);
         }

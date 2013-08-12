@@ -254,6 +254,7 @@ String var1683DFD77A14FECD8D736DE9F8F7443E_35388079 =         "UsbAccessory[mMan
 
     public static final Parcelable.Creator<UsbAccessory> CREATOR =
         new Parcelable.Creator<UsbAccessory>() {
+        @DSModeled(DSC.SAFE)
         public UsbAccessory createFromParcel(Parcel in) {
             String manufacturer = in.readString();
             String model = in.readString();

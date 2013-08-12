@@ -168,6 +168,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
             setDefault(Boolean.FALSE, 5);
         }
 
+        @DSModeled(DSC.BAN)
         protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             IssuingDistributionPoint idp = new IssuingDistributionPoint(

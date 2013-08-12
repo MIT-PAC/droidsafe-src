@@ -21,6 +21,7 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
 
     private String subAppIds;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.243 -0400", hash_original_method = "2FB8EC7339BBF3197572778DF84B2394", hash_generated_method = "FCCB9A4D9BB589A3DB266620467C2216")
     protected  PPreferredService(String name) {
         super(NAME);
@@ -29,6 +30,7 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.243 -0400", hash_original_method = "80DD74DB52B5BA3BF0297E04ECC509FE", hash_generated_method = "8906F3091D6728D0A2DF3027DBEFD55A")
     public  PPreferredService() {
         super(P_PREFERRED_SERVICE);
@@ -36,6 +38,7 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.244 -0400", hash_original_method = "13CD5B55BBBCA0548D99A959291FFE7D", hash_generated_method = "A615214249E1C8858A29D2F83FF1A4FC")
     @Override
     protected String encodeBody() {
@@ -72,6 +75,7 @@ String var1B324365A764C077A55854483509F4AB_774199945 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.244 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "EF5A14EF2B2E99B45C03BBA74F025B5C")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -83,6 +87,7 @@ String var1B324365A764C077A55854483509F4AB_774199945 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.244 -0400", hash_original_method = "C9711D50FDDAB1BC6FA9D8BEA3306598", hash_generated_method = "74D4D6363EC34158E1E1FD028ED98AF7")
     public String getApplicationIdentifiers() {
         if(this.subAppIds.charAt(0)=='.')        
@@ -103,6 +108,7 @@ String var0F006A3A2B361F089D6C99C0B6CF0955_55046921 =         this.subAppIds;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.245 -0400", hash_original_method = "A7D1F6103283AF549702A3BD8A97DA85", hash_generated_method = "338CDEBB8A835F5A495698DA5ED08978")
     public String getSubserviceIdentifiers() {
         if(this.subServiceIds.charAt(0)=='.')        
@@ -132,6 +138,7 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1641480461 =         this.subServiceI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.246 -0400", hash_original_method = "86174BD2B9F1F7BE8C26F06288A88EF6", hash_generated_method = "B3E4B360308281668CC193B4B051E180")
     public void setSubserviceIdentifiers(String subservices) {
         this.subServiceIds = ".".concat(subservices);
@@ -140,6 +147,7 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1641480461 =         this.subServiceI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.246 -0400", hash_original_method = "C4B8C9C88189BDF3DAB8E362AE1162B5", hash_generated_method = "88B2DB96488D61AADA10E701A3CE49B8")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -151,6 +159,7 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1641480461 =         this.subServiceI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.246 -0400", hash_original_method = "924DF1F04CF6C30DB3A78FE0D39487E9", hash_generated_method = "A303095A4C1868ADD550A0DFE87BB4B0")
     public Object clone() {
         PPreferredService retval = (PPreferredService) super.clone();

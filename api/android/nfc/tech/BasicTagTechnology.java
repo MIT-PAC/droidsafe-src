@@ -63,6 +63,7 @@ Tag varD6A25044F8E609F6CD67330C1523D33D_1850809499 =         mTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.466 -0400", hash_original_method = "627518FDA5BCF854C6C8A282AA02DD65", hash_generated_method = "5C045D700B9E9B5CF5E707A729F2D3F7")
     @Override
     public boolean isConnected() {
@@ -97,6 +98,7 @@ Tag varD6A25044F8E609F6CD67330C1523D33D_1850809499 =         mTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.468 -0400", hash_original_method = "804D2A1436436AD53D4E3C21667A8A7D", hash_generated_method = "9FA75003970543B9CA5BA2095BDC70BF")
     @Override
     public void connect() throws IOException {
@@ -231,6 +233,7 @@ Tag varD6A25044F8E609F6CD67330C1523D33D_1850809499 =         mTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.472 -0400", hash_original_method = "34B3E57F39840A6B37FC716C1405DA5D", hash_generated_method = "6BBB230FD46EDDC37A6F9910A62BC030")
      int getMaxTransceiveLengthInternal() {
         try 

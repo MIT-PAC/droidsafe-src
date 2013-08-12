@@ -84,6 +84,7 @@ String var59D1027D8312A72F6CBAE99932E8098B_828529643 =         mWritePermission;
 
     public static final Parcelable.Creator<PathPermission> CREATOR
             = new Parcelable.Creator<PathPermission>() {
+        @DSModeled(DSC.SAFE)
         public PathPermission createFromParcel(Parcel source) {
             return new PathPermission(source);
         }

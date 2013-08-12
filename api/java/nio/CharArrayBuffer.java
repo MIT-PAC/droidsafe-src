@@ -46,6 +46,7 @@ abstract class CharArrayBuffer extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.299 -0400", hash_original_method = "930271761AD6BA9DD8139CF2E7572A4C", hash_generated_method = "7475B1BC62611B48FE5F254945FD4773")
     @Override
     public final char get() {
@@ -66,6 +67,7 @@ abstract class CharArrayBuffer extends CharBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.299 -0400", hash_original_method = "5DC544428BD1C6845537E5987EE9535C", hash_generated_method = "F1280AE19605C25DA266F78329970D19")
     @Override
     public final char get(int index) {
@@ -120,6 +122,7 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1418860762 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.300 -0400", hash_original_method = "A08DEC6C777D2C1D29E23F2F39FEA4AD", hash_generated_method = "4E02087C8692F1A5DD9406A665821F67")
     @Override
     public final ByteOrder order() {
@@ -131,6 +134,7 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_59079726 =         ByteOrder.nativ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.300 -0400", hash_original_method = "4B1929E0A98D3F3896D7290A74598BEB", hash_generated_method = "E502E053096E1EE30ECEFFDD11C42459")
     @Override
     public final CharSequence subSequence(int start, int end) {
@@ -152,6 +156,7 @@ CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_211059994 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.301 -0400", hash_original_method = "955B04A37714208757E4A9A84A4E89C7", hash_generated_method = "87F0062B7A39EF057432EF62BEDA4A85")
     @Override
     public final String toString() {

@@ -41,6 +41,7 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static IsoDep get(Tag tag) {
         if (!tag.hasTech(TagTechnology.ISO_DEP)) return null;
         try {
@@ -79,6 +80,7 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.500 -0400", hash_original_method = "DE4D3DFA438B7711A20A8976B1AA544A", hash_generated_method = "26B8D69B983098563E137AB333F1B842")
     public int getTimeout() {
         try 
@@ -125,6 +127,7 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.502 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "9DEC9A5D8A039E78ED17B37529C7CF0A")
     public byte[] transceive(byte[] data) throws IOException {
         addTaint(data[0]);
@@ -136,6 +139,7 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.502 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "EDD12FD8CFEBA579EFF0E6EFE733F60F")
     public int getMaxTransceiveLength() {
         int var534FE261D7083B235B3B010A14A83EE1_1855940570 = (getMaxTransceiveLengthInternal());

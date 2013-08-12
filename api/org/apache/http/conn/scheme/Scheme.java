@@ -133,6 +133,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1482962945 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.985 -0400", hash_original_method = "DC9B71D58EF4666028CCB60CC7379DF5", hash_generated_method = "9B835D854B21D775853AED2E47598E75")
     @Override
     public final String toString() {
@@ -159,6 +160,7 @@ String varBB173740B3F06857085CC2C58DFBA675_700620276 =         stringRep;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.985 -0400", hash_original_method = "62FA4DFF9313BF5A320239E33F35F300", hash_generated_method = "7EAB5021E628BE5D91FDD46A61B4C198")
     @Override
     public final boolean equals(Object obj) {
@@ -202,6 +204,7 @@ String varBB173740B3F06857085CC2C58DFBA675_700620276 =         stringRep;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.987 -0400", hash_original_method = "D2A22011D07817D724D5F16905D145B4", hash_generated_method = "4E754B3310FBCCBD0A59AF4BA1D16345")
     @Override
     public int hashCode() {

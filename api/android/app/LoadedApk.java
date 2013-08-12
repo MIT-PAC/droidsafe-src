@@ -1282,6 +1282,7 @@ RuntimeException var8A7CFC5E9175831B838BE224FA4022CA_2099969833 =             mU
 
             private boolean mOrdered;
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.794 -0400", hash_original_method = "6D86F310027103A2EE811DA0AC3AEAF2", hash_generated_method = "A5CC09E5EF80631E588BAE9283E2A5F5")
             public  Args(Intent intent, int resultCode, String resultData, Bundle resultExtras,
                     boolean ordered, boolean sticky) {

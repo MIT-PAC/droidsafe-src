@@ -14,16 +14,19 @@ class DERFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static DERSequence createSequence(ASN1EncodableVector v) {
         return v.size() < 1 ? EMPTY_SEQUENCE : new DERSequence(v);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static DERSet createSet(ASN1EncodableVector v) {
         return v.size() < 1 ? EMPTY_SET : new DERSet(v);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static DERSet createSet(ASN1EncodableVector v, boolean needsSorting) {
         return v.size() < 1 ? EMPTY_SET : new DERSet(v, needsSorting);
     }

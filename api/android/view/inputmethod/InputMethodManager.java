@@ -120,6 +120,7 @@ public final class InputMethodManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_field = "BCB122DBAEAD09474F3177A327270EA8", hash_generated_field = "7F61D375E432AF7DEA6AA6FB636235DA")
 
     final IInputMethodClient.Stub mClient = new IInputMethodClient.Stub() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "F6EA3706319B79FC567D288B23EBD7C8", hash_generated_method = "C657B985C982F7F1989F7F8E33AA9AB9")
         @Override
         protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -172,6 +173,7 @@ public final class InputMethodManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "574FEF71BCEC075DFBB030A0D3C30C22", hash_generated_method = "2CC8A14340DD97B215BB7F37776C22E7")
         public void onBindMethod(InputBindResult res) {
             
@@ -182,6 +184,7 @@ public final class InputMethodManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_method = "588CEEFF7FA7882256433E31043E7659", hash_generated_method = "93B331FAA4D44012CC809EFD07D72DC5")
         public void onUnbindMethod(int sequence) {
             
@@ -192,6 +195,7 @@ public final class InputMethodManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_method = "348B3468B5EF750F568EE6741021F563", hash_generated_method = "F00801DE5796A4FB5DF1A8F8529ED1F9")
         public void setActive(boolean active) {
             mH.sendMessage(mH.obtainMessage(MSG_SET_ACTIVE, active ? 1 : 0, 0));
@@ -230,13 +234,13 @@ public final class InputMethodManager {
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static public InputMethodManager getInstance(Context context) {
         return getInstance(context.getMainLooper());
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     static public InputMethodManager getInstance(Looper mainLooper) {
         synchronized (mInstanceSync) {
             if (mInstance != null) {
@@ -401,7 +405,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.715 -0400", hash_original_method = "7375BD73E964162AE893F10DF6DE4659", hash_generated_method = "36D126F4ABF7BBA8439D8085B61D5B7D")
     public void setImeWindowStatus(IBinder imeToken, int vis, int backDisposition) {
         addTaint(backDisposition);
@@ -435,7 +439,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.716 -0400", hash_original_method = "CEA057AD7D0092E84D73E0D04E9F9DEE", hash_generated_method = "BBE8440508EA5669189DD531A3914A22")
     public void registerSuggestionSpansForNotification(SuggestionSpan[] spans) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -459,7 +463,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.716 -0400", hash_original_method = "67AB3FB4ECE37955692BC451DD457E24", hash_generated_method = "89155998080391B7B3CF4A5353756897")
     public void notifySuggestionPicked(SuggestionSpan span, String originalString, int index) {
         addTaint(index);
@@ -612,7 +616,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.718 -0400", hash_original_method = "55A79A529B0E338884C3A2F27FEDBFDF", hash_generated_method = "A3F02A6853C0AE306D5DA86B99CDD374")
     public void reportFinishInputConnection(InputConnection ic) {
         addTaint(ic.getTaint());
@@ -769,7 +773,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.719 -0400", hash_original_method = "5110555AB7D318C3F52B5C2085DD7CF4", hash_generated_method = "ED187209014239787D8ECCFDB2ED15ED")
     public void showSoftInputUnchecked(int flags, ResultReceiver resultReceiver) {
         addTaint(resultReceiver.getTaint());
@@ -1031,7 +1035,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.721 -0400", hash_original_method = "574E98E1F1761FC0DC94CE21F83FBF8C", hash_generated_method = "4D81D76D15CFF61AE0032BECFD59FC02")
     public void windowDismissed(IBinder appWindowToken) {
         addTaint(appWindowToken.getTaint());
@@ -1055,7 +1059,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.721 -0400", hash_original_method = "3DD6E391932A9CCCB1C61486572B8B95", hash_generated_method = "1875EA8926CC9B820D472611DCDF2FDE")
     public void focusIn(View view) {
         addTaint(view.getTaint());
@@ -1137,7 +1141,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.722 -0400", hash_original_method = "7D116D001C63CE498592C7AACB0DA356", hash_generated_method = "3BE962DE6E10FCEC8C8BF62DB6EF49A7")
     public void checkFocus() {
         if(mServedView == mNextServedView && !mNextServedNeedsStart)        
@@ -1192,7 +1196,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.722 -0400", hash_original_method = "4893EC862C01D5D2A6E85A7017E94B9B", hash_generated_method = "ED58CCC433760687FDF522A84949FC15")
     public void onWindowFocus(View rootView, View focusedView, int softInputMode,
             boolean first, int windowFlags) {
@@ -1512,7 +1516,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.744 -0400", hash_original_method = "E668070B782BDDB11E06224CB9252B61", hash_generated_method = "11801685BA911C2696416FF91D7B874F")
     public void dispatchKeyEvent(Context context, int seq, KeyEvent key,
             IInputMethodCallback callback) {
@@ -1568,7 +1572,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.745 -0400", hash_original_method = "99D2E1A6FD8F8DDA0CF04D3632103B0E", hash_generated_method = "A1A25E4D84233622766E5DD938E28B6B")
      void dispatchTrackballEvent(Context context, int seq, MotionEvent motion,
             IInputMethodCallback callback) {

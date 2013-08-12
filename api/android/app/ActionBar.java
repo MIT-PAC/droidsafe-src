@@ -19,6 +19,7 @@ import android.widget.SpinnerAdapter;
 
 public abstract class ActionBar {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.183 -0400", hash_original_method = "6A41438E0ABBC5F08FB907D4E02D20B4", hash_generated_method = "6A41438E0ABBC5F08FB907D4E02D20B4")
     public ActionBar ()
     {

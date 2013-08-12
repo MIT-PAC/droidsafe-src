@@ -41,6 +41,7 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.221 -0400", hash_original_method = "5DDF0C0E89F34CB1A8CBBC902747CC21", hash_generated_method = "89316C29AF0B1D2F9E62F062D40AED6C")
     public boolean updateAdnRecordsInEfBySearch(int efid,
             String oldTag, String oldPhoneNumber,
@@ -62,6 +63,7 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.221 -0400", hash_original_method = "9AD4878D7C5B3598149BA0FF3B75DA5E", hash_generated_method = "EF72975139229B6049D4AC9F6386C9D3")
     public boolean updateAdnRecordsInEfByIndex(int efid, String newTag,
             String newPhoneNumber, int index, String pin2) throws android.os.RemoteException {
@@ -80,6 +82,7 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.222 -0400", hash_original_method = "1CAFC4CE677429A2AF90987C4E8DEFFE", hash_generated_method = "F794450F32543D728CCBF53A53B5CE1B")
     public int[] getAdnRecordsSize(int efid) throws android.os.RemoteException {
         addTaint(efid);

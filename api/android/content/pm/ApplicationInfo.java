@@ -222,7 +222,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.320 -0400", hash_original_method = "D921E47CA861D6D48D77FD8F7E62A49D", hash_generated_method = "222CBAA69CC88DD772B4106DAC69991B")
     public String toString() {
 String var246B074C1516DF6D4A012CC0A362E7AA_376531236 =         "ApplicationInfo{"
@@ -283,6 +283,7 @@ String var246B074C1516DF6D4A012CC0A362E7AA_376531236 =         "ApplicationInfo{
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.321 -0400", hash_original_method = "91D0630D593C0E5EFA5BB0A713D23C43", hash_generated_method = "8B23D35C48EFC2F593D935FA0394A125")
     public CharSequence loadDescription(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -402,6 +403,7 @@ ApplicationInfo var72A74007B2BE62B849F475C7BDA4658B_1788161570 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.323 -0400", hash_original_method = "C6664C7947CB4F50D04FE5C6FED7BB23", hash_generated_method = "3D45D3F81A01FE22490504F82DE71943")
         public final int compare(ApplicationInfo aa, ApplicationInfo ab) {
             addTaint(ab.getTaint());

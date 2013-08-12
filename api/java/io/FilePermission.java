@@ -10,6 +10,7 @@ import java.security.Permission;
 
 public final class FilePermission extends Permission implements Serializable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.952 -0400", hash_original_method = "59DC5A74444A3A71F70AFFCCC541A824", hash_generated_method = "E8079AF0636A74EB86728A5D631EEA07")
     public  FilePermission(String path, String actions) {
         super("");

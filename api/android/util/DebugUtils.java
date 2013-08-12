@@ -18,6 +18,7 @@ public class DebugUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isObjectSelected(Object object) {
         boolean match = false;
         String s = System.getenv("ANDROID_OBJECT_FILTER");

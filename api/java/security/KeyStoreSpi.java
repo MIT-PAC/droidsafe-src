@@ -93,6 +93,7 @@ public abstract class KeyStoreSpi {
             throws IOException, NoSuchAlgorithmException, CertificateException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.043 -0400", hash_original_method = "2DD87D7240BCBB9F96BACA77A06CD528", hash_generated_method = "4C56B3F97861EC65BFE63E0D46A6D870")
     public void engineStore(KeyStore.LoadStoreParameter param) throws IOException, NoSuchAlgorithmException, CertificateException {
         addTaint(param.getTaint());
@@ -158,6 +159,7 @@ public abstract class KeyStoreSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.046 -0400", hash_original_method = "B68FB53D4042F1FDA8275FB481793ECB", hash_generated_method = "CA60EFFCCA993F7244FF292C057101B9")
     public KeyStore.Entry engineGetEntry(String alias,
             KeyStore.ProtectionParameter protParam) throws KeyStoreException,
@@ -232,6 +234,7 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_600898535 =                 n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.047 -0400", hash_original_method = "3D4613712C6A1FF15305C05DDF5D1E0F", hash_generated_method = "6B89AE5F38D76F0B17FB409A95B415F9")
     public void engineSetEntry(String alias, KeyStore.Entry entry,
             KeyStore.ProtectionParameter protParam) throws KeyStoreException {
@@ -313,6 +316,7 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_600898535 =                 n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.048 -0400", hash_original_method = "E646126BAF6D7B233BE960C73341BBD0", hash_generated_method = "72543B1C26477AF4FDAE093D024333BE")
     public boolean engineEntryInstanceOf(String alias,
             Class<? extends KeyStore.Entry> entryClass) {

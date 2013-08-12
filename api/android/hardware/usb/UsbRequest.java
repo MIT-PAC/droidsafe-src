@@ -32,6 +32,7 @@ public class UsbRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.051 -0400", hash_original_method = "5DC7CF12AEC4C5E9E1FB850AF7C3FB90", hash_generated_method = "1749277C98023CD8C2CF135142206632")
     public boolean initialize(UsbDeviceConnection connection, UsbEndpoint endpoint) {
         addTaint(connection.getTaint());
