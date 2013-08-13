@@ -270,7 +270,7 @@ public class GrammarVisitor {
 
             // Get the set of coefficients associated with the other
             // nonterminal;
-            Set<RE> ocoeffs = getCoeff(ont);
+            Set<RE> ocoeffs = new HashSet<RE>(getCoeff(ont));
 
             // If there are no coefficients associated with the other
             // nonterminal, then
