@@ -99,6 +99,7 @@ CharSequence var27949C1B6C468F63F8F1B1AFE2B5C1F4_1601050839 =         new Spanna
     	return super.nextSpanTransition(start, limit, kind);
     }
     
+    @DSModeled(DSC.SAFE)
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
     	addTaint(queryStart);
     	addTaint(queryEnd);

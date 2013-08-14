@@ -1389,7 +1389,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "817F95E6C8C06997062B26BD4E2EEF58")
     public T newInstance() throws InstantiationException, IllegalAccessException {
 T varDABAB645F82D7DAC0FD72FFCF9059689_912412957 =         newInstanceImpl();
@@ -1493,6 +1493,7 @@ Class<? extends U> var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090 =             
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "E0CC08D19733748B74C939DEAB4797E1", hash_generated_method = "521BA862A15172BE90D80E3869E14622")
     @SuppressWarnings("unchecked")
     public T cast(Object obj) {

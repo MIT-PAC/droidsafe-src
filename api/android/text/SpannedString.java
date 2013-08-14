@@ -76,6 +76,7 @@ CharSequence var8E256BFE79DDBC5B54C96C6CCB48784A_931240530 =         new Spanned
     	return super.nextSpanTransition(start, limit, kind);
     }
     
+    @DSModeled(DSC.SAFE)
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
     	addTaint(queryStart);
     	addTaint(queryEnd);

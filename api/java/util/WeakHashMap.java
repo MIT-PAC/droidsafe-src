@@ -472,6 +472,7 @@ Collection<V> var60B0A8A6E555943126A18D312F8E04FB_1559692254 =         valuesCol
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.118 -0400", hash_original_method = "7498B4140ED8DA87371F31164D271C1D", hash_generated_method = "5AD5D87D0846A4390F90C4C142B7138C")
     @Override
     public V get(Object key) {
@@ -961,6 +962,7 @@ K varF46E0FEC371F89BDFA76383E23E6646E_1477930199 =             super.get();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "750856B87B26366DE28AC0A002466815")
         public V getValue() {
 V varAF280DA2BC37D8BE783D8499160168DE_871589787 =             value;

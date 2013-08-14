@@ -1962,6 +1962,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
     	T[] retVal;
         if (start == end && start > 0) {
