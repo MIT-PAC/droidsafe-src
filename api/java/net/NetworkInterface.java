@@ -52,6 +52,7 @@ public final class NetworkInterface extends Object {
 
     private NetworkInterface parent = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.892 -0400", hash_original_method = "F3FEF51C38B27C4E9E0E3609EB93BEE8", hash_generated_method = "CF1D14E69302D3FB4CBE482F8E9FE53C")
     private  NetworkInterface(String name, int interfaceIndex,
             List<InetAddress> addresses, List<InterfaceAddress> interfaceAddresses) {
@@ -135,6 +136,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void collectIpv6Addresses(String interfaceName, int interfaceIndex,
             List<InetAddress> addresses, List<InterfaceAddress> interfaceAddresses) throws SocketException {
         BufferedReader in = null;
@@ -163,6 +165,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_818013052 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void collectIpv4Address(String interfaceName, List<InetAddress> addresses,
             List<InterfaceAddress> interfaceAddresses) throws SocketException {
         FileDescriptor fd = null;

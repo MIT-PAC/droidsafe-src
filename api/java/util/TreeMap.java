@@ -503,6 +503,7 @@ Node<K, V> var1924C94B76524D1C3D7310EA17B0EF94_483797481 =         node;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.379 -0400", hash_original_method = "8CBFE12E379E7871AFCE5B0FC5C284CB", hash_generated_method = "6C31EDACABDC5C5503AC657CCCAF0917")
     private void replaceInParent(Node<K, V> node, Node<K, V> replacement) {
         addTaint(node.getTaint());
@@ -1620,6 +1621,7 @@ Node<K, V> var3D331EA760A7BCD3BF7E380A6C79C638_738207279 =             last;
     
     class EntrySet extends AbstractSet<Map.Entry<K, V>> {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.393 -0400", hash_original_method = "AA90B2AD56C6E037D76F6D8ACC9327A5", hash_generated_method = "AA90B2AD56C6E037D76F6D8ACC9327A5")
         public EntrySet ()
         {
@@ -1644,6 +1646,7 @@ Node<K, V> var3D331EA760A7BCD3BF7E380A6C79C638_738207279 =             last;
         @Override
         public Iterator<Entry<K, V>> iterator() {
 Iterator<Entry<K, V>> var622BFC9B0FC71AB66EF04995E784B17E_614310421 =             new MapIterator<Entry<K, V>>(root == null ? null : root.first()) {            
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.394 -0400", hash_original_method = "86F000434530E8D6B0755FFE9A16C5F8", hash_generated_method = "4BE0C7785663E2E9FA82B3C401C686B4")
             public Entry<K, V> next() {
 Entry<K, V> varBEFE63D427BFF5E467D509E70ABD58CE_1041489519 =                 stepForward();
@@ -1728,6 +1731,7 @@ Entry<K, V> varBEFE63D427BFF5E467D509E70ABD58CE_1041489519 =                 ste
     
     class KeySet extends AbstractSet<K> implements NavigableSet<K> {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.394 -0400", hash_original_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF", hash_generated_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF")
         public KeySet ()
         {
@@ -1752,6 +1756,7 @@ Entry<K, V> varBEFE63D427BFF5E467D509E70ABD58CE_1041489519 =                 ste
         @Override
         public Iterator<K> iterator() {
 Iterator<K> varC6C6F031377E271DFB1816B61A8EA88F_1443392908 =             new MapIterator<K>(root == null ? null : root.first()) {            
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.395 -0400", hash_original_method = "E581E07EB6E816B7B0F53BDF6AE52418", hash_generated_method = "B3B40503996237A4E981BADF67FB3C91")
             public K next() {
 K varED589F5CB2626464AC74D486990A7A15_713493815 =                 stepForward().key;
@@ -1776,6 +1781,7 @@ K varED589F5CB2626464AC74D486990A7A15_713493815 =                 stepForward().
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.395 -0400", hash_original_method = "C8D968F3C5FE84BB3D2A53544A3D4B19", hash_generated_method = "DFEC2748635A9728BBC4A153F1CD9035")
         public Iterator<K> descendingIterator() {
 Iterator<K> var684ADF17601F4E6DD3748CC4B25E0E8D_2021365314 =             new MapIterator<K>(root == null ? null : root.last()) {            
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.395 -0400", hash_original_method = "30CD89883F8CEF7ECE49A6E9F42F1507", hash_generated_method = "3E677B0B05EF009C3C0689FAAA5C4159")
             public K next() {
 K varFE3C1A21095894F113C168C20974D3B7_1118199779 =                 stepBackward().key;
@@ -2657,6 +2663,7 @@ Comparator<? super K> var189BFD6654899F3ED4575521560E0DC6_171463195 =           
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.414 -0400", hash_original_method = "7F86A739037DCA8312EEE2819E1107F8", hash_generated_method = "1A825E07991CFBB133E661A46E7D8171")
         @Override
         public Set<Entry<K, V>> entrySet() {
@@ -2943,6 +2950,7 @@ Node<K, V> varDC838461EE2FA0CA4C9BBB70A15456B0_196472020 =                 resul
         
         final class BoundedEntrySet extends AbstractSet<Entry<K, V>> {
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.440 -0400", hash_original_method = "6A727A04787362E0DA8C9D4EFA8450E8", hash_generated_method = "6A727A04787362E0DA8C9D4EFA8450E8")
             public BoundedEntrySet ()
             {
@@ -2974,10 +2982,12 @@ Node<K, V> varDC838461EE2FA0CA4C9BBB70A15456B0_196472020 =                 resul
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.441 -0400", hash_original_method = "0E267F64AB80178C28467CD978AC79C8", hash_generated_method = "5A221781EE99493EE05E3B7294B54281")
             @Override
             public Iterator<Entry<K, V>> iterator() {
 Iterator<Entry<K, V>> var007B5231128F5E237111AC487E38483B_1132179570 =                 new BoundedIterator<Entry<K, V>>(endpoint(true)) {                
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.441 -0400", hash_original_method = "336D5542BA5231E0955145F5F84B4BBD", hash_generated_method = "5C262257CAF0017D8DDEB3567F5E9421")
                 public Entry<K, V> next() {
 Entry<K, V> var20BE8BC2B8AE57FD70A8A3FD9993CBC9_1537078141 =                     ascending ? stepForward() : stepBackward();
@@ -3052,6 +3062,7 @@ Entry<K, V> var20BE8BC2B8AE57FD70A8A3FD9993CBC9_1537078141 =                    
         
         final class BoundedKeySet extends AbstractSet<K> implements NavigableSet<K> {
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.442 -0400", hash_original_method = "9AD1259E686AD3B6150FA3E61E8BAA17", hash_generated_method = "9AD1259E686AD3B6150FA3E61E8BAA17")
             public BoundedKeySet ()
             {
@@ -3088,6 +3099,7 @@ Entry<K, V> var20BE8BC2B8AE57FD70A8A3FD9993CBC9_1537078141 =                    
             @Override
             public Iterator<K> iterator() {
 Iterator<K> var67B4ECA44D3FE1877CC98B43105388F5_2060286296 =                 new BoundedIterator<K>(endpoint(true)) {                
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.442 -0400", hash_original_method = "3A3F5ECB2E6902CB8A6D0DE3222F8B33", hash_generated_method = "A0D253C620D6189C0E8987C453DC4E10")
                 public K next() {
 K varCF8CFCF1855BD2B023CA836D055B4ADC_195836093 =                     (ascending ? stepForward() : stepBackward()).key;
@@ -3112,6 +3124,7 @@ K varCF8CFCF1855BD2B023CA836D055B4ADC_195836093 =                     (ascending
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.445 -0400", hash_original_method = "74923548E6D3A508C57DDA053BC0EE64", hash_generated_method = "61D08906757EB6C4EBA71581A3002F1B")
             public Iterator<K> descendingIterator() {
 Iterator<K> var9EBD11D4DEB7C81B42F9AB79E3A635DE_1813629407 =                 new BoundedIterator<K>(endpoint(false)) {                
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.445 -0400", hash_original_method = "3DCBF0E7821BEEE7C84D65AF30CA29D6", hash_generated_method = "E99A6431A8CDC809F30FBC7B10FB455D")
                 public K next() {
 K var5AE3460D8173776397FCF8731046F295_74905366 =                     (ascending ? stepBackward() : stepForward()).key;
@@ -3406,6 +3419,7 @@ NavigableSet<K> varAF8103DD5E04E7E5EEF583022A60862D_1663713395 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.449 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "ABF792B182FE0894B28111C19970E55E")
         @Override
         public Set<Entry<K, V>> entrySet() {
@@ -3503,6 +3517,7 @@ Object var1219B05CBB1AEEB8B0049A311D9879A0_224498156 =             m.new Bounded
 
         boolean toEnd;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.452 -0400", hash_original_method = "F30568FCC0DA5EEA09201E340702FDB4", hash_generated_method = "F30568FCC0DA5EEA09201E340702FDB4")
         public SubMap ()
         {
@@ -3510,6 +3525,7 @@ Object var1219B05CBB1AEEB8B0049A311D9879A0_224498156 =             m.new Bounded
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.452 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "5845133A2FDB7DB3B5F4E606D0D555F5")
         @Override
         public Set<Entry<K, V>> entrySet() {

@@ -23,12 +23,14 @@ public final class CollectionUtils {
     public static <T> Iterable<T> dereferenceIterable(
             final Iterable<? extends Reference<T>> iterable, final boolean trim) {
         return new Iterable<T>() {
-            public Iterator<T> iterator() {
+            @DSModeled(DSC.SAFE)
+        public Iterator<T> iterator() {
                 return new Iterator<T>() {
                     private final Iterator<? extends Reference<T>> delegate = iterable.iterator();
                     private boolean removeIsOkay;
                     private T next;
-                    private void computeNext() {
+                    @DSModeled(DSC.SAFE)
+            private void computeNext() {
                         removeIsOkay = false;
                         while (next == null && delegate.hasNext()) {
                             next = delegate.next().get();
@@ -37,11 +39,13 @@ public final class CollectionUtils {
                             }
                         }
                     }
-                    @Override public boolean hasNext() {
+                    @DSModeled(DSC.SAFE)
+            @Override public boolean hasNext() {
                         computeNext();
                         return next != null;
                     }
-                    @Override public T next() {
+                    @DSModeled(DSC.SAFE)
+            @Override public T next() {
                         if (!hasNext()) {
                             throw new IllegalStateException();
                         }
@@ -50,7 +54,8 @@ public final class CollectionUtils {
                         next = null;
                         return result;
                     }
-                    public void remove() {
+                    @DSModeled(DSC.SAFE)
+            public void remove() {
                         if (!removeIsOkay) {
                             throw new IllegalStateException();
                         }
@@ -62,6 +67,7 @@ public final class CollectionUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> void removeDuplicates(List<T> list, Comparator<? super T> comparator) {
         Collections.sort(list, comparator);
         int j = 1;

@@ -61,6 +61,7 @@ class InitManifest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.687 -0400", hash_original_method = "CF9A667F0E0C9B5E94CE0B45251AAFAF", hash_generated_method = "4B1A7A17F801FDA7485B1553B0305BB0")
      void initEntries(Map<String, Attributes> entries,
             Map<String, Manifest.Chunk> chunks) throws IOException {

@@ -686,6 +686,7 @@ for(Map.Entry<Object, Object> entry : entrySet())
         }
 });
             builder.setEntityResolver(new EntityResolver() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.435 -0400", hash_original_method = "7B6D510D74072B007F41B0B5792E868F", hash_generated_method = "9535974F36AE06BFB0501FA200FA8F7E")
         public InputSource resolveEntity(String publicId,
                         String systemId) throws SAXException, IOException {

@@ -25,15 +25,15 @@ import com.android.internal.util.ArrayUtils;
 public class TextUtils {
 	static class MyCreator implements Parcelable.Creator<CharSequence> {
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
         public MyCreator() {}
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
         public CharSequence createFromParcel(Parcel p) {
             return new String();
         }
      
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
         public CharSequence[] newArray(int size)
         {
             return new CharSequence[size];
@@ -437,6 +437,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence expandTemplate(CharSequence template,
                                               CharSequence... values) {
         if (values.length > 9) {
@@ -543,7 +544,7 @@ public class TextUtils {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static void copySpansFrom(Spanned source, int start, int end,
                                      Class kind,
                                      Spannable dest, int destoff) {
@@ -820,6 +821,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence concat(CharSequence... text) {
         if (text.length == 0) {
             return "";
@@ -906,6 +908,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPrintableAsciiOnly(final CharSequence str) {
         final int len = str.length();
         for (int i = 0; i < len; i++) {
@@ -1004,6 +1007,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     public static <T> T[] removeEmptySpans(T[] spans, Spanned spanned, Class<T> klass) {
     	T[] retVal;
@@ -1111,6 +1115,7 @@ public class TextUtils {
 
         private int mEnd;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.664 -0400", hash_original_method = "BFBBE5A2171EAA5D387A9688FF38614C", hash_generated_method = "8066376B76A8E349A3B964287189E234")
         public  Reverser(CharSequence source, int start, int end) {
             mSource = source;
@@ -1134,6 +1139,7 @@ public class TextUtils {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.665 -0400", hash_original_method = "D736D7B90470DFC8C923D4B5D62B4D1D", hash_generated_method = "102344C1C0351E2AD4D79CCD803C39CE")
         public CharSequence subSequence(int start, int end) {
             addTaint(end);
@@ -1150,6 +1156,7 @@ CharSequence var5B166C4D1D866639CF85033C2F7318C9_571467782 =             new Str
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.665 -0400", hash_original_method = "814020AAFF189164368E5EE6B0F105D9", hash_generated_method = "1966D47A254BF368C79AE76825163E6F")
         @Override
         public String toString() {
@@ -1161,6 +1168,7 @@ String var2E22F76A1DF5431AD85BD69F1EB550BE_638501454 =             subSequence(0
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.665 -0400", hash_original_method = "54C9409C1585BDAF025F1FDAAC236D34", hash_generated_method = "A690DC7DC77FA6089B6DB53D093BE7E9")
         public char charAt(int off) {
             addTaint(off);
@@ -1172,6 +1180,7 @@ String var2E22F76A1DF5431AD85BD69F1EB550BE_638501454 =             subSequence(0
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.666 -0400", hash_original_method = "81F95A724AC4812824CCEB8249CFBC9B", hash_generated_method = "31520A5D001EA5F191CCC36109D9AFA8")
         public void getChars(int start, int end, char[] dest, int destoff) {
             addTaint(destoff);

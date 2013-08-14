@@ -3334,6 +3334,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Matrix getMatrix(){
 		// Original method
 		/*
@@ -3361,6 +3362,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     final boolean hasIdentityMatrix(){
 		// Original method
 		/*
@@ -3376,6 +3378,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void ensureTransformationInfo(){
 		// Original method
 		/*
@@ -3397,6 +3400,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     final Matrix getInverseMatrix(){
 		// Original method
 		/*
@@ -3420,6 +3424,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setCameraDistance(float distance){
 		// Original method
 		/*
@@ -3454,6 +3459,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setRotation(float rotation){
 		// Original method
 		/*
@@ -3486,6 +3492,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setRotationY(float rotationY){
 		// Original method
 		/*
@@ -3518,6 +3525,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setRotationX(float rotationX){
 		// Original method
 		/*
@@ -3550,6 +3558,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScaleX(float scaleX){
 		// Original method
 		/*
@@ -3582,6 +3591,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScaleY(float scaleY){
 		// Original method
 		/*
@@ -3614,6 +3624,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setPivotX(float pivotX){
 		// Original method
 		/*
@@ -3647,6 +3658,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setPivotY(float pivotY){
 		// Original method
 		/*
@@ -3680,6 +3692,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setAlpha(float alpha){
 		// Original method
 		/*
@@ -3700,6 +3713,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean setAlphaNoInvalidation(float alpha){
 		// Original method
 		/*
@@ -3732,6 +3746,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setTop(int top){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3764,6 +3779,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setBottom(int bottom){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3784,6 +3800,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setLeft(int left){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3804,6 +3821,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setRight(int right){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3823,6 +3841,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setX(float x){
 		// Original method
 		/*
@@ -3846,6 +3865,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setY(float y){
 		// Original method
 		/*
@@ -3869,6 +3889,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTranslationX(float translationX){
 		// Original method
 		/*
@@ -3901,6 +3922,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTranslationY(float translationY){
 		// Original method
 		/*
@@ -3921,6 +3943,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastTranslationX(float x){
 		// Original method
 		/*
@@ -3935,6 +3958,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastTranslationY(float y){
 		// Original method
 		/*
@@ -3949,6 +3973,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastX(float x){
 		// Original method
 		/*
@@ -3963,6 +3988,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastY(float y){
 		// Original method
 		/*
@@ -3977,6 +4003,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastScaleX(float x){
 		// Original method
 		/*
@@ -3991,6 +4018,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastScaleY(float y){
 		// Original method
 		/*
@@ -4005,6 +4033,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastAlpha(float alpha){
 		// Original method
 		/*
@@ -4017,6 +4046,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFastRotationY(float y){
 		// Original method
 		/*
@@ -4031,6 +4061,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void getHitRect(Rect outRect){
 		// Original method
 		/*
@@ -4079,6 +4110,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void getFocusedRect(Rect r){
 		// Original method
 		/*
@@ -4090,6 +4122,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean getGlobalVisibleRect(Rect r, Point globalOffset){
 		// Original method
 		/*
@@ -4110,6 +4143,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean getGlobalVisibleRect(Rect r){
 		// Original method
 		/*
@@ -4121,6 +4155,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean getLocalVisibleRect(Rect r){
 		// Original method
 		/*
@@ -4137,6 +4172,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void offsetTopAndBottom(int offset){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4144,6 +4180,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void offsetLeftAndRight(int offset){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4158,6 +4195,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setLayoutParams(ViewGroup.LayoutParams params){
 		mLayoutParams = params;
 		requestLayout();
@@ -4175,6 +4213,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void scrollTo(int x, int y){
 		// Original method
 		/*
@@ -4196,6 +4235,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void scrollBy(int x, int y){
 		// Original method
 		/*
@@ -4207,6 +4247,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean awakenScrollBars(){
 		// Original method
 		/*
@@ -4232,6 +4273,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean awakenScrollBars(int startDelay){
 		// Original method
 		/*
@@ -4243,6 +4285,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean awakenScrollBars(int startDelay, boolean invalidate){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4264,6 +4307,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void invalidate(Rect dirty){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4271,6 +4315,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void invalidate(int l, int t, int r, int b){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4299,6 +4344,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void fastInvalidate(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4320,6 +4366,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void invalidateParentIfNeeded(){
 		// Original method
 		/*
@@ -4348,6 +4395,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void computeOpaqueFlags(){
 		// Original method
 		/*
@@ -4426,6 +4474,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postDelayed(Runnable action, long delayMillis){
 		// Original method
 		/*
@@ -4476,6 +4525,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void postInvalidate(){
 		// Original method
 		/*
@@ -4487,6 +4537,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void postInvalidate(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -4498,6 +4549,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void postInvalidateDelayed(long delayMilliseconds){
 		// Original method
 		/*
@@ -4515,6 +4567,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void postInvalidateDelayed(long delayMilliseconds, int left, int top,
             int right, int bottom){
 		// Original method
@@ -4617,6 +4670,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setVerticalFadingEdgeEnabled(boolean verticalFadingEdgeEnabled){
 		// Original method
 		/*
@@ -4633,6 +4687,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected float getTopFadingEdgeStrength(){
 		// Original method
 		/*
@@ -4644,6 +4699,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected float getBottomFadingEdgeStrength(){
 		// Original method
 		/*
@@ -4656,6 +4712,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected float getLeftFadingEdgeStrength(){
 		// Original method
 		/*
@@ -4667,6 +4724,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected float getRightFadingEdgeStrength(){
 		// Original method
 		/*
@@ -4691,6 +4749,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setHorizontalScrollBarEnabled(boolean horizontalScrollBarEnabled){
 		// Original method
 		/*
@@ -4718,6 +4777,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setVerticalScrollBarEnabled(boolean verticalScrollBarEnabled){
 		// Original method
 		/*
@@ -4733,6 +4793,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void recomputePadding(){
 		// Original method
 		/*
@@ -4744,6 +4805,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScrollbarFadingEnabled(boolean fadeScrollbars){
 		// Original method
 		/*
@@ -4774,6 +4836,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScrollBarStyle(int style){
 		// Original method
 		/*
@@ -4801,6 +4864,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int computeHorizontalScrollRange(){
 		// Original method
 		/*
@@ -4824,6 +4888,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int computeHorizontalScrollExtent(){
 		// Original method
 		/*
@@ -4835,6 +4900,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int computeVerticalScrollRange(){
 		// Original method
 		/*
@@ -4858,6 +4924,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int computeVerticalScrollExtent(){
 		// Original method
 		/*
@@ -4869,6 +4936,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean canScrollHorizontally(int direction){
 		// Original method
 		/*
@@ -4887,6 +4955,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean canScrollVertically(int direction){
 		// Original method
 		/*
@@ -4905,6 +4974,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected final void onDrawScrollBars(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -4924,6 +4994,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onDrawHorizontalScrollBar(Canvas canvas, Drawable scrollBar,
             int l, int t, int r, int b){
 		// Original method
@@ -4937,6 +5008,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onDrawVerticalScrollBar(Canvas canvas, Drawable scrollBar,
             int l, int t, int r, int b){
 		// Original method
@@ -4961,6 +5033,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void assignParent(ViewParent parent){
 		// Original method
 		/*
@@ -4979,6 +5052,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onAttachedToWindow(){
 		// Original method
 		/*
@@ -5012,6 +5086,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void resolvePadding(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5019,6 +5094,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean canResolveLayoutDirection(){
 		// Original method
 		/*
@@ -5047,6 +5123,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected static boolean isLayoutDirectionRtl(Locale locale){
 		// Original method
 		/*
@@ -5059,6 +5136,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onDetachedFromWindow(){
 		// Original method
 		/*
@@ -5141,6 +5219,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void dispatchAttachedToWindow(AttachInfo info, int visibility){
 		mAttachInfo = info;
 		info.mTreeObserver.merge(mFloatingTreeObserver);
@@ -5162,6 +5241,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void dispatchDetachedFromWindow(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5169,6 +5249,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void saveHierarchyState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -5180,6 +5261,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -5214,6 +5296,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void restoreHierarchyState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -5225,6 +5308,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -5246,6 +5330,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onRestoreInstanceState(Parcelable state){
 		// Original method
 		/*
@@ -5276,6 +5361,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setDuplicateParentStateEnabled(boolean enabled){
 		// Original method
 		/*
@@ -5299,6 +5385,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setLayerType(int layerType, Paint paint){
 		addTaint(layerType);
 		// Original method
@@ -5331,6 +5418,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void buildLayer(){
 		// Original method
 		/*
@@ -5357,6 +5445,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     HardwareLayer getHardwareLayer(){
 		return mHardwareLayer;
 		// Original method
@@ -5364,6 +5453,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean destroyLayer(){
 		// Original method
 		/*
@@ -5382,6 +5472,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void destroyHardwareResources(){
 		// Original method
 		/*
@@ -5393,6 +5484,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setDrawingCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -5418,6 +5510,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"UnusedDeclaration"}) 
 	public void outputDirtyFlags(String indent, boolean clear, int clearMask){
 		// Original method
@@ -5466,6 +5559,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public DisplayList getDisplayList(){
 		return mDisplayList;
 		// Original method
@@ -5473,6 +5567,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Bitmap getDrawingCache(){
 		// Original method
 		/*
@@ -5484,6 +5579,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Bitmap getDrawingCache(boolean autoScale){
 		// Original method
 		/*
@@ -5501,6 +5597,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void destroyDrawingCache(){
 		// Original method
 		/*
@@ -5546,6 +5643,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void buildDrawingCache(){
 		// Original method
 		/*
@@ -5557,6 +5655,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void buildDrawingCache(boolean autoScale){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5564,6 +5663,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5643,6 +5743,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getFadeTop(boolean offsetRequired){
 		// Original method
 		/*
@@ -5656,6 +5757,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getFadeHeight(boolean offsetRequired){
 		// Original method
 		/*
@@ -5681,6 +5783,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void draw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5755,6 +5858,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"unchecked"}) public void layout(int l, int t, int r, int b){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5773,6 +5877,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean setFrame(int left, int top, int right, int bottom){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5797,6 +5902,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void invalidateDrawable(Drawable drawable){
 		// Original method
 		/*
@@ -5814,6 +5920,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void scheduleDrawable(Drawable who, Runnable what, long when){
 		// Original method
 		/*
@@ -5831,6 +5938,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void unscheduleDrawable(Drawable who, Runnable what){
 		// Original method
 		/*
@@ -5848,6 +5956,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void unscheduleDrawable(Drawable who){
 		// Original method
 		/*
@@ -5861,6 +5970,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getResolvedLayoutDirection(Drawable who){
 		// Original method
 		/*
@@ -5884,6 +5994,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void drawableStateChanged(){
 		// Original method
 		/*
@@ -5898,6 +6009,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void refreshDrawableState(){
 		// Original method
 		/*
@@ -5946,6 +6058,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected static int[] mergeDrawableStates(int[] baseState, int[] additionalState){
 		// Original method
 		/*
@@ -5963,6 +6076,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void jumpDrawablesToCurrentState(){
 		// Original method
 		/*
@@ -5976,6 +6090,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @RemotableViewMethod 
 	public void setBackgroundColor(int color){
 		// Original method
@@ -5992,6 +6107,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @RemotableViewMethod 
 	public void setBackgroundResource(int resid){
 		addTaint(resid);
@@ -6013,6 +6129,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setBackgroundDrawable(Drawable d){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6026,6 +6143,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setPadding(int left, int top, int right, int bottom){
 		addTaint(left);
 		addTaint(right);
@@ -6036,6 +6154,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setPaddingRelative(int start, int top, int end, int bottom){
 		addTaint(start);
 		addTaint(end);
@@ -6257,6 +6376,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void getLocationOnScreen(int[] location){
 		// Original method
 		/*
@@ -6273,6 +6393,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void getLocationInWindow(int[] location){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6295,6 +6416,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected View findViewWithTagTraversal(Object tag){
 		// Original method
 		/*
@@ -6309,6 +6431,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip){
 		// Original method
 		/*
@@ -6338,6 +6461,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     final View findViewByAccessibilityId(int accessibilityId){
 		// Original method
 		/*
@@ -6352,6 +6476,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
 		/*
@@ -6366,6 +6491,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final View findViewWithTag(Object tag){
 		// Original method
 		/*
@@ -6380,6 +6506,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final View findViewByPredicate(Predicate<View> predicate){
 		// Original method
 		/*
@@ -6391,6 +6518,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final View findViewByPredicateInsideOut(View start, Predicate<View> predicate){
 		// Original method
 		/*
@@ -6524,6 +6652,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTagInternal(int key, Object tag){
 		setKeyedTag(key, tag);
 		// Original method
@@ -6556,6 +6685,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean dispatchConsistencyCheck(int consistency){
 		// Original method
 		/*
@@ -6567,6 +6697,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean onConsistencyCheck(int consistency){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6574,6 +6705,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void debug(){
 		// Original method
 		/*
@@ -6585,6 +6717,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void debug(int depth){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6592,6 +6725,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected static String debugIndent(int depth){
 		// Original method
 		/*
@@ -6670,6 +6804,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void measure(int widthMeasureSpec, int heightMeasureSpec){
 		addTaint(widthMeasureSpec);
 		addTaint(heightMeasureSpec);
@@ -6679,6 +6814,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
 		// Original method
 		/*
@@ -6719,6 +6855,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static int resolveSize(int size, int measureSpec){
 		// Original method
 		/*
@@ -6730,6 +6867,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static int resolveSizeAndState(int size, int measureSpec, int childMeasuredState){
 		// Original method
 		/*
@@ -6759,6 +6897,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDefaultSize(int size, int measureSpec){
 		// Original method
 		/*
@@ -6782,6 +6921,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getSuggestedMinimumHeight(){
 		// Original method
 		/*
@@ -6800,6 +6940,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getSuggestedMinimumWidth(){
 		// Original method
 		/*
@@ -6850,6 +6991,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void startAnimation(Animation animation){
 		// Original method
 		/*
@@ -6864,6 +7006,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void clearAnimation(){
 		// Original method
 		/*
@@ -6879,6 +7022,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setAnimation(Animation animation){
 		mCurrentAnimation = animation;
 		animation.reset();
@@ -6931,6 +7075,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean gatherTransparentRegion(Region region){
 		// Original method
 		/*
@@ -6954,6 +7099,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void playSoundEffect(int soundConstant){
 		// Original method
 		/*
@@ -6968,6 +7114,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean performHapticFeedback(int feedbackConstant){
 		// Original method
 		/*
@@ -6979,6 +7126,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean performHapticFeedback(int feedbackConstant, int flags){
 		// Original method
 		/*
@@ -6998,6 +7146,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSystemUiVisibility(int visibility){
 		// Original method
 		/*
@@ -7026,6 +7175,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnSystemUiVisibilityChangeListener(OnSystemUiVisibilityChangeListener l){
 		// Original method
 		/*
@@ -7040,6 +7190,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void dispatchSystemUiVisibilityChanged(int visibility){
 		// Original method
 		/*
@@ -7055,6 +7206,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void updateLocalSystemUiVisibility(int localValue, int localChanges){
 		// Original method
 		/*
@@ -7069,6 +7221,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean startDrag(ClipData data, DragShadowBuilder shadowBuilder,
             Object myLocalState, int flags){
 		// Original method
@@ -7089,6 +7242,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchDragEvent(DragEvent event){
 		// Original method
 		/*
@@ -7128,6 +7282,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void applyDrawableToTransparentRegion(Drawable dr, Region region){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -7155,6 +7310,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static View inflate(Context context, int resource, ViewGroup root){
 		// Original method
 		/*
@@ -7167,6 +7323,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"UnusedParameters"}) 
 	protected boolean overScrollBy(int deltaX, int deltaY,
             int scrollX, int scrollY,
@@ -7203,6 +7360,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOverScrollMode(int overScrollMode){
 		addTaint(overScrollMode);
 		// Original method
@@ -7220,6 +7378,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected float getVerticalScrollFactor(){
 		return getTaintFloat();
 		// Original method
@@ -7241,6 +7400,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected float getHorizontalScrollFactor(){
 		// Original method
 		/*
@@ -7264,6 +7424,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTextDirection(int textDirection){
 		// Original method
 		/*
@@ -7350,6 +7511,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ViewPropertyAnimator animate(){
         mAnimator = new ViewPropertyAnimator(this);
         return mAnimator;
@@ -7396,6 +7558,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @ViewDebug.ExportedProperty
         float mAlpha = 1f;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.648 -0400", hash_original_method = "047CC1B263AEE84E056E34E366D57D72", hash_generated_method = "047CC1B263AEE84E056E34E366D57D72")
         public TransformationInfo ()
         {
@@ -7421,6 +7584,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         private OnDragListener mOnDragListener;
         private OnSystemUiVisibilityChangeListener mOnSystemUiVisibilityChangeListener;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.649 -0400", hash_original_method = "30D31F497118E5B2F2D60734B7298038", hash_generated_method = "30D31F497118E5B2F2D60734B7298038")
         public ListenerInfo ()
         {
@@ -7435,6 +7599,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public static class DragShadowBuilder {
         private final WeakReference<View> mView;
         
+        @DSModeled(DSC.SAFE)
         public DragShadowBuilder(View view){
 			mView = new WeakReference<View>(view);
 			/*
@@ -7443,6 +7608,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         DragShadowBuilder(){
 			mView = new WeakReference<View>(null);
 			/*
@@ -7451,6 +7617,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         @SuppressWarnings({"JavadocReference"}) 
 		final public View getView(){
 			// Original method
@@ -7463,6 +7630,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void onProvideShadowMetrics(Point shadowSize, Point shadowTouchPoint){
 			// Original method
 			/*
@@ -7480,6 +7648,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void onDrawShadow(Canvas canvas){
 			// Original method
 			/*
@@ -7502,6 +7671,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     public static class MeasureSpec {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.651 -0400", hash_original_method = "2EA619F0F89BA048B9092F3C9EFB9775", hash_generated_method = "2EA619F0F89BA048B9092F3C9EFB9775")
         public MeasureSpec ()
         {
@@ -7545,6 +7715,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public static String toString(int measureSpec){
 			// Original method
 			/*
@@ -7580,6 +7751,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     class CheckForLongPress implements Runnable {
         private int mOriginalWindowAttachCount;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.652 -0400", hash_original_method = "C4F936F21A8F70C0274337932B924B19", hash_generated_method = "C4F936F21A8F70C0274337932B924B19")
         public CheckForLongPress ()
         {
@@ -7587,6 +7759,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
+        @DSModeled(DSC.SAFE)
         public void run(){
 			// Original method
 			/*
@@ -7621,6 +7794,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     private final class CheckForTap implements Runnable {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.653 -0400", hash_original_method = "AB5DEBF7CC7D6BE3A48A21837827B410", hash_generated_method = "AB5DEBF7CC7D6BE3A48A21837827B410")
         public CheckForTap ()
         {
@@ -7628,6 +7802,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
+        @DSModeled(DSC.SAFE)
         public void run(){
 			// Original method
 			/*
@@ -7648,6 +7823,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     private final class PerformClick implements Runnable {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.653 -0400", hash_original_method = "88B4BB962521E66182F1BC580E9EB222", hash_generated_method = "88B4BB962521E66182F1BC580E9EB222")
         public PerformClick ()
         {
@@ -7655,6 +7831,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
+        @DSModeled(DSC.SAFE)
         public void run(){
 			// Original method
 			/*
@@ -7672,6 +7849,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     private final class UnsetPressedState implements Runnable {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.653 -0400", hash_original_method = "6C14B43BA30389F098070D93AD09F5B4", hash_generated_method = "6C14B43BA30389F098070D93AD09F5B4")
         public UnsetPressedState ()
         {
@@ -7679,6 +7857,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
+        @DSModeled(DSC.SAFE)
         public void run(){
 			// Original method
 			/*
@@ -7696,11 +7875,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     public static class BaseSavedState extends AbsSavedState {
         
+        @DSModeled(DSC.SAFE)
         public BaseSavedState(Parcel source){
 			super(source);
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public BaseSavedState(Parcelable superState){
 			super(superState);
 		}
@@ -7708,10 +7889,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         
         public static final Parcelable.Creator<BaseSavedState> CREATOR =
                 new Parcelable.Creator<BaseSavedState>() {
+            @DSModeled(DSC.SAFE)
             public BaseSavedState createFromParcel(Parcel in) {
                 return new BaseSavedState(in);
             }
 
+            @DSModeled(DSC.SAFE)
             public BaseSavedState[] newArray(int size) {
                 return new BaseSavedState[size];
             }
@@ -7769,6 +7952,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         final ArrayList<View> mFocusablesTempList = new ArrayList<View>(24);
         int mAccessibilityWindowId = View.NO_ID;
         
+        @DSModeled(DSC.SAFE)
         AttachInfo(IWindowSession session, IWindow window,
                 Handler handler, Callbacks effectPlayer){
 			mSession = session;  //Preserved
@@ -7795,6 +7979,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             int right;
             int bottom;
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.656 -0400", hash_original_method = "7F8409C46E15AE6EC7087A7F4E97E2BF", hash_generated_method = "7F8409C46E15AE6EC7087A7F4E97E2BF")
             public InvalidateInfo ()
             {
@@ -7827,6 +8012,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			}
 
             
+            @DSModeled(DSC.SAFE)
             static InvalidateInfo acquire(){
 				// Original method
 				/*
@@ -7838,6 +8024,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			}
 
             
+            @DSModeled(DSC.SAFE)
             void release(){
 				// Original method
 				/*
@@ -7877,7 +8064,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             private static final int POOL_LIMIT = 10;
             private static final Pool<InvalidateInfo> sPool = Pools.synchronizedPool(
                     Pools.finitePool(new PoolableManager<InvalidateInfo>() {
-                        public InvalidateInfo newInstance() {
+                        @DSModeled(DSC.SAFE)
+                public InvalidateInfo newInstance() {
                             return new InvalidateInfo();
                         }
 
@@ -7923,6 +8111,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         public int state = OFF;
         private int mLastColor;
         
+        @DSModeled(DSC.SAFE)
         ScrollabilityCache(ViewConfiguration configuration, View host){
 			paint = new Paint();
 			matrix = new Matrix();
@@ -7941,6 +8130,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void setFadeColor(int color){
 			// Original method
 			/*
@@ -7959,6 +8149,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void run(){
 			// Original method
 			/*
@@ -7992,6 +8183,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     private class SendViewScrolledAccessibilityEvent implements Runnable {
         public volatile boolean mIsPending;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.663 -0400", hash_original_method = "67D827D7B507D3EF133C26B0E057ECB2", hash_generated_method = "67D827D7B507D3EF133C26B0E057ECB2")
         public SendViewScrolledAccessibilityEvent ()
         {
@@ -7999,6 +8191,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
+        @DSModeled(DSC.SAFE)
         public void run(){
 			// Original method
 			/*
@@ -8025,6 +8218,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
+        @DSModeled(DSC.SAFE)
         public void sendAccessibilityEvent(View host, int eventType){
 			// Original method
 			/*
@@ -8036,6 +8230,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event){
 			// Original method
 			/*
@@ -8047,6 +8242,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event){
 			// Original method
 			/*
@@ -8058,6 +8254,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event){
 			// Original method
 			/*
@@ -8069,6 +8266,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event){
 			// Original method
 			/*
@@ -8080,6 +8278,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info){
 			// Original method
 			/*
@@ -8091,6 +8290,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                 AccessibilityEvent event){
 			// Original method
@@ -8501,6 +8701,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             super(str);
         }
 
+        @DSModeled(DSC.SAFE)
         public Float get(View v) {
             return Float.valueOf(getTaintFloat());
         }
@@ -8510,6 +8711,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.675 -0400", hash_original_field = "2463A82C1B3B068FBED45F14B07DEA60", hash_generated_field = "2E88A25ECF88D0581B11F01DDC5B788E")
 
     public static Property<View, Float> TRANSLATION_X = new FloatProperty<View>("translationX") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.675 -0400", hash_original_method = "71D30789CC0083AAA14E647D4066A62B", hash_generated_method = "A4CA630E3A6CE2DB963A21903A3B8B1A")
         @Override
         public void setValue(View object, float value) {
@@ -8521,6 +8723,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.675 -0400", hash_original_method = "AE4ED8B1A0B86A64F67E6D55304484F8", hash_generated_method = "1D8264874C1928BE149BE425BFCA7426")
         @Override
         public Float get(View object) {
@@ -8537,6 +8740,7 @@ Float var1EE961A971645330A9017F7FA3785D71_957435700 =             object.getTran
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.676 -0400", hash_original_field = "7372D8389B757BEF40F84E15ACD0B19E", hash_generated_field = "3514365D38BDAF2F2F1CD4EFBC59F1B9")
 
     public static Property<View, Float> TRANSLATION_Y = new FloatProperty<View>("translationY") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.676 -0400", hash_original_method = "35EB991A21102AE6A66798A0E05F4EB7", hash_generated_method = "A5EBF576D4F376228384178650B915B8")
         @Override
         public void setValue(View object, float value) {
@@ -8548,6 +8752,7 @@ Float var1EE961A971645330A9017F7FA3785D71_957435700 =             object.getTran
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.676 -0400", hash_original_method = "602B4C29E3FDDB39DD10FBFA4C1D4EAD", hash_generated_method = "6FB57E8001B90DEEE9BE11440DF351D9")
         @Override
         public Float get(View object) {
@@ -8564,6 +8769,7 @@ Float var2F73F18B2F448957B7F4A6042BFE42D7_1141995321 =             object.getTra
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.677 -0400", hash_original_field = "7ABCFD2CD0D4C099DC453E558FE85F44", hash_generated_field = "9AE8BCB9ADF5964753832A0E9C82085F")
 
     public static Property<View, Float> X = new FloatProperty<View>("x") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.677 -0400", hash_original_method = "942D12A2907E436F9DD2D5A3BB599D1C", hash_generated_method = "5AD321261CD4E7CAE9C55D29082D3984")
         @Override
         public void setValue(View object, float value) {
@@ -8575,6 +8781,7 @@ Float var2F73F18B2F448957B7F4A6042BFE42D7_1141995321 =             object.getTra
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.677 -0400", hash_original_method = "87F550DC0E1D4FED879AF17D796C775D", hash_generated_method = "F776345D7AF71C0CCC5CABC0EAE37559")
         @Override
         public Float get(View object) {
@@ -8591,6 +8798,7 @@ Float var79139FA0C6BFD7D541A918F05D3438FA_746831689 =             object.getX();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.678 -0400", hash_original_field = "CFD3CAFD4126436BCB87BFC085957E57", hash_generated_field = "D23D2D01DF692E441C62FAF9235D2C1B")
 
     public static Property<View, Float> Y = new FloatProperty<View>("y") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.677 -0400", hash_original_method = "F66C6BF603238C3B745DBF80CCB68E15", hash_generated_method = "125CC8AFE1A0A06C7B8226AAB9171D95")
         @Override
         public void setValue(View object, float value) {
@@ -8602,6 +8810,7 @@ Float var79139FA0C6BFD7D541A918F05D3438FA_746831689 =             object.getX();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.678 -0400", hash_original_method = "107F13AA20F45AE0A7AF10B2A89B1B3D", hash_generated_method = "60F1EA2015E6D9801FCE3C335A8D2C71")
         @Override
         public Float get(View object) {
@@ -8618,6 +8827,7 @@ Float var9946FB3F09262FEAAE01246CE687D806_312564050 =             object.getY();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.679 -0400", hash_original_field = "E56D0E5046417B3F74FFC7B03E80BE5C", hash_generated_field = "FB557AFE67B470E71F7C64EE24F6E3BE")
 
     public static Property<View, Float> ROTATION = new FloatProperty<View>("rotation") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.678 -0400", hash_original_method = "E4DD5C8F5E4B6A35D65B3372F3D8BFBA", hash_generated_method = "55BCC4A7C747CD5CD469C514CC0ACBCC")
         @Override
         public void setValue(View object, float value) {
@@ -8629,6 +8839,7 @@ Float var9946FB3F09262FEAAE01246CE687D806_312564050 =             object.getY();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.678 -0400", hash_original_method = "6F0DC1763312BEA34F1272E5458BA30D", hash_generated_method = "93A1247B93F525A70AF24AACE1BCE202")
         @Override
         public Float get(View object) {
@@ -8645,6 +8856,7 @@ Float varD66D8769C4B60D584C7FF909FDCA35BF_1043115386 =             object.getRot
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.679 -0400", hash_original_field = "E6B3F0C9E4238E32ABB7463CE9AD008B", hash_generated_field = "325BD964137AF15B5513B111B09E57AF")
 
     public static Property<View, Float> ROTATION_X = new FloatProperty<View>("rotationX") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.679 -0400", hash_original_method = "D8E97A391BF9703940D7A06280ABBB3F", hash_generated_method = "F3C04BF826D916D7D1A9BBCDB86E7972")
         @Override
         public void setValue(View object, float value) {
@@ -8656,6 +8868,7 @@ Float varD66D8769C4B60D584C7FF909FDCA35BF_1043115386 =             object.getRot
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.679 -0400", hash_original_method = "3FE8B70962F32AF948528D0D6E8ED1AF", hash_generated_method = "C643B80BDEE48811955C32164EE25D31")
         @Override
         public Float get(View object) {
@@ -8672,6 +8885,7 @@ Float var26159A98B1309CAF2C6FE688F8F28145_1018722032 =             object.getRot
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.681 -0400", hash_original_field = "E871DD5638C4B35E145FF614A448D053", hash_generated_field = "BA1634E8F9B2BA862DD6DB1E36053562")
 
     public static Property<View, Float> ROTATION_Y = new FloatProperty<View>("rotationY") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.680 -0400", hash_original_method = "CDE80AB2A44D5B173DB76AD6CA4559A4", hash_generated_method = "4D4247D1DC57CB25069C48F0A3026E18")
         @Override
         public void setValue(View object, float value) {
@@ -8683,6 +8897,7 @@ Float var26159A98B1309CAF2C6FE688F8F28145_1018722032 =             object.getRot
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.680 -0400", hash_original_method = "EE835584282672E99083546AE5304355", hash_generated_method = "EC3104706FF00573D1C74D896F7BC9D4")
         @Override
         public Float get(View object) {
@@ -8699,6 +8914,7 @@ Float varFEFF6D02FE31E0E71A8B442456325A47_978011147 =             object.getRota
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.682 -0400", hash_original_field = "D10E65978F70513DFF3F1897F968D4D2", hash_generated_field = "5F4C99EEC421BEF559C61A599C6B6AA3")
 
     public static Property<View, Float> SCALE_X = new FloatProperty<View>("scaleX") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.681 -0400", hash_original_method = "1B653DA1FDE36CFBF0835E42B933826F", hash_generated_method = "F8E41B724A022763691029E682DBD544")
         @Override
         public void setValue(View object, float value) {
@@ -8710,6 +8926,7 @@ Float varFEFF6D02FE31E0E71A8B442456325A47_978011147 =             object.getRota
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.682 -0400", hash_original_method = "A2F336BAC519262505475338F6D5EC55", hash_generated_method = "7C0D10D0B10CEFE8BE321B44DFB2FDC6")
         @Override
         public Float get(View object) {
@@ -8726,6 +8943,7 @@ Float var29A25D8E5214EC0587BAF5FE326BDD85_1350607049 =             object.getSca
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.690 -0400", hash_original_field = "5ABACA635607E234A6DDA7D7BAA57212", hash_generated_field = "F34310CAD52C1DF136CCDA6F7447C004")
 
     public static Property<View, Float> SCALE_Y = new FloatProperty<View>("scaleY") {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.690 -0400", hash_original_method = "1D5FE7CAB5F43F92B9050D214C28178E", hash_generated_method = "7FC16C60655737E43F2B16325C8FC494")
         @Override
         public void setValue(View object, float value) {
@@ -8737,6 +8955,7 @@ Float var29A25D8E5214EC0587BAF5FE326BDD85_1350607049 =             object.getSca
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.690 -0400", hash_original_method = "CDBF0205ED6FCB3C37D74DE97C039D1E", hash_generated_method = "9BE4EC4F0B6D79FFD0D814D710A167BC")
         @Override
         public Float get(View object) {

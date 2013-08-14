@@ -39,6 +39,7 @@ public final class SignedData {
 
     private List<SignerInfo> signerInfos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.082 -0400", hash_original_method = "86716568313110DB160A45E25CDB2037", hash_generated_method = "A7163F81F2CB05006B0F1E02C351C027")
     private  SignedData(int version, List<?> digestAlgorithms, ContentInfo contentInfo,
             List<Certificate> certificates, List<CertificateList> crls,

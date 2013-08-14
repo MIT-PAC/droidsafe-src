@@ -2302,7 +2302,7 @@ String var36EEEB02F8950D6778907441639F547C_213512947 =             new String(s)
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.968 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "1366812328FC382F5B8FE3423F551FD8")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             addTaint(type.getTaint());

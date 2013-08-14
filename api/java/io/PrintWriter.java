@@ -209,6 +209,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.280 -0400", hash_original_method = "68BF859C2EE72E22FD2B6E3C884D672F", hash_generated_method = "DF02C44BABA6FE25D5CFDE6292EF3472")
     public PrintWriter format(String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -221,6 +222,7 @@ PrintWriter varAC550D889141827F9746A4BB1DA8EE48_245775654 =         format(Local
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.281 -0400", hash_original_method = "D5634586266B3A8B702A8EF418739481", hash_generated_method = "D229AE108DD5DFFE343F178E61C7A449")
     public PrintWriter format(Locale l, String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -252,6 +254,7 @@ PrintWriter var72A74007B2BE62B849F475C7BDA4658B_1034271261 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.282 -0400", hash_original_method = "D4B734B1529E4ABCC31A727EC1C73F87", hash_generated_method = "B968BC6D81546DACB18A60EB18EAAB41")
     public PrintWriter printf(String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -264,6 +267,7 @@ PrintWriter var1C1A7E0ECC814A41656D8DF055D1B8DD_368942557 =         format(forma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.283 -0400", hash_original_method = "31E00ED7FA07EDC8A599E35C64000277", hash_generated_method = "B8F4196D830F395EFA7AB10FB6F6C3E4")
     public PrintWriter printf(Locale l, String format, Object... args) {
         addTaint(args[0].getTaint());

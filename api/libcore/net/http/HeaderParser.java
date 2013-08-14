@@ -6,6 +6,7 @@ import droidsafe.annotations.*;
 
 final class HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.993 -0400", hash_original_method = "C3E16CB5840D33E016F8223898DE7315", hash_generated_method = "C3E16CB5840D33E016F8223898DE7315")
     public HeaderParser ()
     {
@@ -13,6 +14,7 @@ final class HeaderParser {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void parseCacheControl(String value, CacheControlHandler handler) {
         int pos = 0;
         while (pos < value.length()) {

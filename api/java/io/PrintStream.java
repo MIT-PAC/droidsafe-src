@@ -255,6 +255,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.221 -0400", hash_original_method = "05D45546979F5891D35AE44E50FD3553", hash_generated_method = "3D9D933443637EFB0075ADBF7A11DFBF")
     public PrintStream format(String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -267,6 +268,7 @@ PrintStream varAC550D889141827F9746A4BB1DA8EE48_1575975703 =         format(Loca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.222 -0400", hash_original_method = "A0786364FBC116E551740BAAD4532E24", hash_generated_method = "1814A406D7A9D6B7AE47E0D2488B9FF2")
     public PrintStream format(Locale l, String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -291,6 +293,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_845279553 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.223 -0400", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "F7A4513A4C968EBF17CD1D3803A174FE")
     public PrintStream printf(String format, Object... args) {
         addTaint(args[0].getTaint());
@@ -303,6 +306,7 @@ PrintStream var1C1A7E0ECC814A41656D8DF055D1B8DD_1412893245 =         format(form
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.223 -0400", hash_original_method = "F50C21D98ADC94B4526029B9C256D54E", hash_generated_method = "17E7ED262D563C8F7B25C65D48E0E821")
     public PrintStream printf(Locale l, String format, Object... args) {
         addTaint(args[0].getTaint());

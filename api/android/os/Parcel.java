@@ -1780,6 +1780,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated public final <T> T[] readTypedArray(Parcelable.Creator<T> c) {
 		return createTypedArray(c);
 		// Original method
@@ -1820,7 +1821,7 @@ public final class Parcel {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
 		return (T) mValueParcelable;
 		// Original method
