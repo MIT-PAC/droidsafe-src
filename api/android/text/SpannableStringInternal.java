@@ -528,6 +528,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.795 -0400", hash_original_method = "70C480F1BBBBF461E174788F8B29326C", hash_generated_method = "F609E9A81979A453320EEBBDA4D93A10")
     private void checkRange(final String operation, int start, int end) {
         addTaint(end);

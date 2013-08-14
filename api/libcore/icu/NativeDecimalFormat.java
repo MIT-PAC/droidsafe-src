@@ -226,6 +226,7 @@ Object var4B7571CD2CD6DD663DE146F4A4111E5C_1135110969 =         new NativeDecima
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.835 -0400", hash_original_method = "5FE0177EB5130C508ECEC468A64D96E3", hash_generated_method = "C11BBAB7F1AB273966033292A454BD94")
     public void setDecimalFormatSymbols(final LocaleData localeData) {
         addTaint(localeData.getTaint());

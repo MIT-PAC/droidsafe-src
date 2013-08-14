@@ -38,6 +38,7 @@ public class InputStreamReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.111 -0400", hash_original_method = "EBBB6FD529AC9BA283207DBA01D68764", hash_generated_method = "8BD7A404AB6716E807F4322DA252A54F")
     public  InputStreamReader(InputStream in, final String enc) throws UnsupportedEncodingException {
         super(in);

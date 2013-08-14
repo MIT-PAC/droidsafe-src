@@ -500,6 +500,7 @@ Set<String> var1DD546152BB75C36ADB53C3247459F46_366430845 =         Collections.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.432 -0400", hash_original_method = "A87BE62C7A489C0C3750546357B411C0", hash_generated_method = "0A8899B8A69A32A18E613C9F0DB4012D")
     private <K> void selectProperties(Hashtable<K, Object> selectProperties, final boolean isStringOnly) {
         addTaint(isStringOnly);

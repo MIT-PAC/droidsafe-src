@@ -234,6 +234,7 @@ String varCAC2FB4F16F751F82616E09DB74CE99D_1727822386 =         props.getPropert
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Object getInstanceByClass(final String className) {
         try {
             Class<?> clazz = ClassLoader.getSystemClassLoader().loadClass(className);

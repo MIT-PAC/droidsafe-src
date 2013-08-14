@@ -56,6 +56,7 @@ public class SimpleTimeZone extends TimeZone {
 
     private int dstSavings = 3600000;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.569 -0400", hash_original_method = "A73AE5A515785364E3BAF8A0CE898B7F", hash_generated_method = "5F21045727ED24DEBB6477ACC1DAABB8")
     public  SimpleTimeZone(int offset, final String name) {
         addTaint(name.getTaint());

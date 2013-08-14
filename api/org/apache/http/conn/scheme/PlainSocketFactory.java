@@ -22,6 +22,7 @@ public final class PlainSocketFactory implements SocketFactory {
 
     private HostNameResolver nameResolver;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.949 -0400", hash_original_method = "0E5BF5873ABF9DF43E8A566F0715555C", hash_generated_method = "073C079607EBC9301C453AE9002AEF90")
     public  PlainSocketFactory(final HostNameResolver nameResolver) {
         super();

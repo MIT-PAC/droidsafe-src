@@ -26,6 +26,7 @@ public final class HttpHost implements Cloneable {
 
     protected String schemeName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.137 -0400", hash_original_method = "3BB513ACF90DB4E8549AF0CC3A6C9663", hash_generated_method = "9679D1A9D710BD3FA099F18632B28E91")
     public  HttpHost(final String hostname, int port, final String scheme) {
         super();
@@ -61,6 +62,7 @@ public final class HttpHost implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.138 -0400", hash_original_method = "6AFEA0EBFC8A407A29450DC5B1D95F74", hash_generated_method = "67E5F1132B9AEC53F4513FF0855DCCC8")
     public  HttpHost(final String hostname, int port) {
         this(hostname, port, null);
@@ -70,6 +72,7 @@ public final class HttpHost implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.138 -0400", hash_original_method = "9E22BC6A820AFDDBFC5B86A2EC17A27A", hash_generated_method = "71E490F3361A1782307D755E40D7D695")
     public  HttpHost(final String hostname) {
         this(hostname, -1, null);
@@ -78,6 +81,7 @@ public final class HttpHost implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.139 -0400", hash_original_method = "C44D4CD5D948E031A838C102F3C3F056", hash_generated_method = "2BC334727B51F49C4C42C8286E32572D")
     public  HttpHost(final HttpHost httphost) {
         this(httphost.hostname, httphost.port, httphost.schemeName);

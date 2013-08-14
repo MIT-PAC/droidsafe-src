@@ -1054,6 +1054,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final <T extends Parcelable> void writeTypedArray(T[] val,
             int parcelableFlags){
 		mValueTypedArray = val;

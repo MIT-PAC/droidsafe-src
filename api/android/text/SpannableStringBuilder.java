@@ -543,6 +543,7 @@ SpannableStringBuilder var165DB2B44C34181CD22FCFB4EE83017A_321488211 =         r
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.047 -0400", hash_original_method = "653147CE10EC22F15BE8C423BD65FA32", hash_generated_method = "620615D96DD63FC6AD3A04A78C30624D")
     public SpannableStringBuilder replace(final int start, final int end,
                         CharSequence tb, int tbstart, int tbend) {
@@ -1192,6 +1193,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.061 -0400", hash_original_method = "70C480F1BBBBF461E174788F8B29326C", hash_generated_method = "022913432A1F74C2286A47B790290993")
     private void checkRange(final String operation, int start, int end) {
         addTaint(end);

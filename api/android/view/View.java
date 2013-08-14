@@ -1943,6 +1943,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.BAN)
     private View findViewInsideOutShouldExist(View root, final int childViewId){
 		// Original method
 		/*

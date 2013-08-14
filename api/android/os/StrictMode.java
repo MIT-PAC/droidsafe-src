@@ -39,17 +39,20 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void setThreadPolicy(final ThreadPolicy policy) {
         setThreadPolicyMask(policy.mask);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void setThreadPolicyMask(final int policyMask) {
         setBlockGuardPolicy(policyMask);
         Binder.setThreadStrictModePolicy(policyMask);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void setBlockGuardPolicy(final int policyMask) {
         if (policyMask == 0) {
             BlockGuard.setThreadPolicy(BlockGuard.LAX_POLICY);
@@ -223,6 +226,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void dropboxViolationAsync(
             final int violationMaskSubset, final ViolationInfo info) {
         int outstanding = sDropboxCallsInFlight.incrementAndGet();
@@ -287,6 +291,7 @@ public final class StrictMode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setVmPolicy(final VmPolicy policy) {
         synchronized (StrictMode.class) {
             sVmPolicy = policy;
@@ -1343,6 +1348,7 @@ String var88FE0C10C841ADC188489DE26D480D44_1591693979 =             "AndroidBloc
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.760 -0400", hash_original_method = "E564B46DD31AF359B07F190378DAA828", hash_generated_method = "101CD51A507E6022F7DCD55692F1537B")
          void handleViolationWithTimingAttempt(final ViolationInfo info) {
             addTaint(info.getTaint());
@@ -1423,6 +1429,7 @@ for(int n = 0;n < records.size();++n)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.763 -0400", hash_original_method = "41F5C3E6841DC86E9C64A72E84C0FF7E", hash_generated_method = "C378359697D2B5EA39503CCDF847E327")
          void handleViolation(final ViolationInfo info) {
             addTaint(info.getTaint());

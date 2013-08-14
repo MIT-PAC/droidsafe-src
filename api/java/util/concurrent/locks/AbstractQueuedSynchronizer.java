@@ -64,6 +64,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.295 -0400", hash_original_method = "D115C79C5FCCB59668763118EBD8CBBB", hash_generated_method = "2B9DFD31CD067D35FF671DC3EE1FEDD6")
     private Node enq(final Node node) {
         addTaint(node.getTaint());
@@ -329,6 +330,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.305 -0400", hash_original_method = "0D7553B7A8DFDAC7C355CECFA0DBF574", hash_generated_method = "ADD9FBE0A9D14C317EF4899A364C4404")
     final boolean acquireQueued(final Node node, int arg) {
         addTaint(arg);

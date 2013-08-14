@@ -25,6 +25,7 @@ public class AuthScope {
 
     private int port;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.293 -0400", hash_original_method = "DA242C23FF99C9B0BDF7227FEE464070", hash_generated_method = "425E439BA455FE442B587FF3E57AEC1C")
     public  AuthScope(final String host, int port, 
         final String realm, final String scheme) {
@@ -127,6 +128,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_574587444 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.297 -0400", hash_original_method = "1AE5BF6F5B5937D7D318302FFD2D6934", hash_generated_method = "F828F0011C73943126EE2A30FDBDCF92")
     public int match(final AuthScope that) {
         addTaint(that.getTaint());

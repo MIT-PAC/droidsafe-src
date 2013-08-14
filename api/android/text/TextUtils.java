@@ -898,6 +898,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isPrintableAscii(final char c) {
         final int asciiFirst = 0x20;
         final int asciiLast = 0x7E;
