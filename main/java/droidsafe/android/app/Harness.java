@@ -188,6 +188,8 @@ public class Harness {
 	        }
 	    }
 	    
+	    body.getUnits().add(Jimple.v().newReturnVoidStmt());
+
 	    return callStaticInits;
 	}
 
