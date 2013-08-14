@@ -766,6 +766,7 @@ View var2EFFDC7A452E405931BA682E5046627A_221022289 =         mWindow.findViewByI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.746 -0400", hash_original_method = "4EF468126ED8F0323D4288D03F894270", hash_generated_method = "DA0BFB7C3887B4609A1A5BE9B6E4CD7C")
     public void onWindowAttributesChanged(WindowManager.LayoutParams params) {
         //DSFIXME:  CODE0009: Possible callback target function detected

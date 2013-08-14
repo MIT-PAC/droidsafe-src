@@ -149,7 +149,8 @@ public class WindowImpl extends Window {
 		return false;
 	}
 
-	@Override
+	@DSModeled(DSC.SAFE)
+    @Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		// TODO Auto-generated method stub
 

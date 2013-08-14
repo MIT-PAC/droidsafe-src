@@ -784,6 +784,7 @@ String varFB90DA94A5E41D35E9CAB1F945B07348_837841878 =         delegate.toString
     
     private final class HttpUrlConnectionDelegate extends HttpURLConnectionImpl {
         
+    	@DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.669 -0400", hash_original_method = "3AF8C0CBB6814014DDC85DEC3B91D01C", hash_generated_method = "EFDF6B2A40127A321E3579EA2108DB76")
         private  HttpUrlConnectionDelegate(URL url, int port) {
             super(url, port);
@@ -793,6 +794,7 @@ String varFB90DA94A5E41D35E9CAB1F945B07348_837841878 =         delegate.toString
         }
 
         
+    	@DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.669 -0400", hash_original_method = "A74BDB7D7A715A5C0D19C172C28B7777", hash_generated_method = "25137BDC92BB1379AA29210558B26D50")
         private  HttpUrlConnectionDelegate(URL url, int port, Proxy proxy) {
             super(url, port, proxy);

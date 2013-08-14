@@ -391,6 +391,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1536079929 =         new String(codeP
     
     private class CustomLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.520 -0400", hash_original_method = "EFD1513E9BFBC9B14636F3CC7AC41B6C", hash_generated_method = "19A9879B12E07C26C0FDCF805FDF3C6D")
         public  CustomLinkedHashMap() {
             super(16, 0.75f, true);

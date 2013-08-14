@@ -128,6 +128,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void recycle(){
 		// Original method
 		/*

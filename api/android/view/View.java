@@ -5937,10 +5937,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int[] onCreateDrawableState(int extraSpace){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+		return new int[1];
 	}
 
     
@@ -5957,7 +5958,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return baseState;
     }
 		*/
-		return null;
+		return new int[1];
 	}
 
     
@@ -6321,6 +6322,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final View findViewById(int id){
 		return this;
 		// Original method

@@ -469,7 +469,8 @@ String var2460B846747F8B22185AD8BE722266A5_2074743259 =         sb.toString();
                 return info;
             }
 
-            public WifiInfo[] newArray(int size) {
+            @DSModeled(DSC.SAFE)
+        public WifiInfo[] newArray(int size) {
                 return new WifiInfo[size];
             }
         };

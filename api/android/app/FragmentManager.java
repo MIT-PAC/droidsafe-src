@@ -2632,6 +2632,7 @@ for(int i=0;i<fms.mBackStack.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.678 -0400", hash_original_method = "5117E19429D94CDE29C750CF70651BE9", hash_generated_method = "913918AF97C107F4C0F2EC9BB67E1901")
     public void dispatchConfigurationChanged(Configuration newConfig) {
         addTaint(newConfig.getTaint());

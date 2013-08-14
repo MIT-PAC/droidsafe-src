@@ -19,6 +19,7 @@ public final class CollectionUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Iterable<T> dereferenceIterable(
             final Iterable<? extends Reference<T>> iterable, final boolean trim) {
         return new Iterable<T>() {

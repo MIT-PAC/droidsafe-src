@@ -1167,6 +1167,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_1354535532 =                 new Vm
 
         private final HashMap<Integer, Long> mLastViolationTime = new HashMap<Integer, Long>();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.757 -0400", hash_original_method = "56B73F441F57B7F1580692BF8D8E5ECB", hash_generated_method = "D44A205806718F04E37473DFF9A09152")
         public  AndroidBlockGuardPolicy(final int policyMask) {
             mPolicyMask = policyMask;
@@ -1328,6 +1329,7 @@ String var88FE0C10C841ADC188489DE26D480D44_1591693979 =             "AndroidBloc
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.759 -0400", hash_original_method = "5E39E8C314EEA382AFAE0CC045B36998", hash_generated_method = "313352E0C15FE1A3718262CB17047DD4")
          void startHandlingViolationException(BlockGuard.BlockGuardPolicyException e) {
             addTaint(e.getTaint());

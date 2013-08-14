@@ -5322,6 +5322,7 @@ for(int i = 0;i < mCursorCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.565 -0400", hash_original_method = "E327CCF4B590DA515951F33B48F8FD2D", hash_generated_method = "237B9A766B7B61E53EB819818D699F43")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
@@ -8386,6 +8387,7 @@ switch(mLayout.getParagraphAlignment(line)){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.636 -0400", hash_original_method = "8F48F7BF1B8DCE5D5519F1200A0ED853", hash_generated_method = "013F5B522239BCFED689BBC93A9546EA")
     public void setEllipsize(TextUtils.TruncateAt where) {
         if(mEllipsize != where)        
@@ -13234,6 +13236,7 @@ EasyEditSpan var5CF42DCA35C107A57B18028EC7B27F86_1290739002 =                 ea
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.738 -0400", hash_original_method = "ACD5284757446306F2E6E1BADED5158A", hash_generated_method = "D10F4B045A1E81F1365855DF88B4139E")
         public void run() {
             if(mCancelled)            

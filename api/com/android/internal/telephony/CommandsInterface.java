@@ -31,30 +31,37 @@ public interface CommandsInterface {
                     || this == NV_READY;
         }
         private int stateType;
+        @DSModeled(DSC.BAN)
         private RadioState (int type) {
             stateType = type;
         }
 
+        @DSModeled(DSC.BAN)
         public int getType() {
             return stateType;
         }
 
+        @DSModeled(DSC.BAN)
         public boolean isAvailable() {
             return this != RADIO_UNAVAILABLE;
         }
 
+        @DSModeled(DSC.BAN)
         public boolean isSIMReady() {
             return this == SIM_READY;
         }
 
+        @DSModeled(DSC.BAN)
         public boolean isRUIMReady() {
             return this == RUIM_READY;
         }
 
+        @DSModeled(DSC.BAN)
         public boolean isNVReady() {
             return this == NV_READY;
         }
 
+        @DSModeled(DSC.BAN)
         public boolean isGsm() {
             if (BaseCommands.getLteOnCdmaModeStatic() == Phone.LTE_ON_CDMA_TRUE) {
                 return false;
@@ -65,6 +72,7 @@ public interface CommandsInterface {
             }
         }
 
+        @DSModeled(DSC.BAN)
         public boolean isCdma() {
             if (BaseCommands.getLteOnCdmaModeStatic() == Phone.LTE_ON_CDMA_TRUE) {
                 return true;

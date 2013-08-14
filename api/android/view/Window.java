@@ -481,6 +481,7 @@ Callback var31075088B2A2E9D45AA9874A2DA07598_1494000183 =         mCallback;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.982 -0400", hash_original_method = "66B5C1599B3320A30790CC9FF26FC996", hash_generated_method = "2B1526F7EA2574D0DBD3513CACCB6043")
     public void setAttributes(WindowManager.LayoutParams a) {
         addTaint(a.getTaint());

@@ -6019,6 +6019,7 @@ switch(step){
 
         private final ArrayList<HandlerAction> mActions = new ArrayList<HandlerAction>();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.767 -0400", hash_original_method = "9D853D73EE638AB90ACD5CD9573763A9", hash_generated_method = "9D853D73EE638AB90ACD5CD9573763A9")
         public RunQueue ()
         {

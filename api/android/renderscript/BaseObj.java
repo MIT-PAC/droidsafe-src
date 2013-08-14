@@ -19,6 +19,7 @@ public class BaseObj {
 
     RenderScript mRS;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-12 10:24:38.846 -0400", hash_original_method = "C8BB1F812AF2F94B259A1E5D31EF6D41", hash_generated_method = "9BA993700E946D74BD21802FA955DFDC")
       BaseObj(int id, RenderScript rs) {
         rs.validate();
@@ -50,6 +51,7 @@ public class BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-12 10:24:38.902 -0400", hash_original_method = "070330937CB15D09BB5E296631EB884D", hash_generated_method = "787BC2A5C62355AD70DAB5AD9F6E5B9F")
      int getID() {
         if(mDestroyed)        
@@ -78,6 +80,7 @@ public class BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-12 10:24:38.919 -0400", hash_original_method = "B7F1DAC6FB0A90239CE3626781D0AB2E", hash_generated_method = "C2187B3977F54248C6E3E53F798C73A1")
      void checkValid() {
         if(mID == 0)        
@@ -151,6 +154,7 @@ public class BaseObj {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-12 10:24:38.962 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "76576415083956B2A9D7F69455B0166B")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_222070636 =         mName;
@@ -216,6 +220,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_222070636 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-12 10:24:39.012 -0400", hash_original_method = "399A2DDCEE4C827B87F141BE75C58C17", hash_generated_method = "783E387FC850A620061B6D7EFD462E3C")
     @Override
     public int hashCode() {
@@ -227,6 +232,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_222070636 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-12 10:24:39.024 -0400", hash_original_method = "60FC0B8BE57466D21B9D49483A61B23F", hash_generated_method = "0BE831F494D505876FDC41DC28F9D2F6")
     @Override
     public boolean equals(Object obj) {
