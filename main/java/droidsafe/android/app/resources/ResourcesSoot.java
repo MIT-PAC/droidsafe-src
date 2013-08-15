@@ -42,6 +42,7 @@ import soot.jimple.JimpleBody;
 import soot.util.Chain;
 
 
+import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -186,6 +187,8 @@ public class ResourcesSoot {
         mSootClass.addField(mActivityField);
         
         mSootClass.setApplicationClass();
+        
+        API.v().addSystemClass(mSootClass);
 
         mBaseClassList = new LinkedList<SootClass>();
         
@@ -426,6 +429,7 @@ public class ResourcesSoot {
                                         Modifier.PUBLIC | Modifier.STATIC);
         
         mSootClass.addMethod(mInitLayoutMethod);
+        API.v().addSafeMethod(mInitLayoutMethod);
         
         mInitLayoutBody = Jimple.v().newBody(mInitLayoutMethod);
         mInitLayoutMethod.setActiveBody(mInitLayoutBody);
@@ -539,8 +543,7 @@ public class ResourcesSoot {
         
         //logger.warn("method {} ", method);
         //logger.warn("mArgContext {}", mArgContext);
-        
-        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef()); 
+        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), mArgContext); 
         Stmt stmt = Jimple.v().newInvokeStmt(invokeExpr);
         
         Chain<Unit> units = mInitLayoutBody.getUnits();
@@ -732,7 +735,8 @@ public class ResourcesSoot {
 
         // add the method to the class
         mSootClass.addMethod(method);
-
+        API.v().addSafeMethod(method);
+        
         // create active body, and set the body active
         JimpleBody body = Jimple.v().newBody(method);
         method.setActiveBody(body);
@@ -912,6 +916,7 @@ public class ResourcesSoot {
 
     	// add the method to the class
     	mSootClass.addMethod(method);
+        API.v().addSafeMethod(method);
 
     	// create active body, and set the body active
     	JimpleBody body = Jimple.v().newBody(method);
@@ -1047,6 +1052,7 @@ public class ResourcesSoot {
     	
     	// add the method to the class
     	mSootClass.addMethod(method);
+        API.v().addSafeMethod(method);
 
     	// create active body, and set the body active
     	JimpleBody body = Jimple.v().newBody(method);
