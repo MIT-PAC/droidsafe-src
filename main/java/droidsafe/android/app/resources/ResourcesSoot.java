@@ -543,8 +543,7 @@ public class ResourcesSoot {
         
         //logger.warn("method {} ", method);
         //logger.warn("mArgContext {}", mArgContext);
-        
-        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef()); 
+        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), mArgContext); 
         Stmt stmt = Jimple.v().newInvokeStmt(invokeExpr);
         
         Chain<Unit> units = mInitLayoutBody.getUnits();
