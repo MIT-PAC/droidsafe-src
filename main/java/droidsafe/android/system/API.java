@@ -127,6 +127,21 @@ public class API {
     }
 
     /**
+     * Add the given class to the list of system classes.  Used when new classes are created.
+     */
+    public void addSystemClass(SootClass sc) {
+        allSystemClasses.add(sc);
+    }
+    
+    /** 
+     * Add the given method to the list of safe methods.
+     */
+    public void addSafeMethod(SootMethod sm) {
+        all_sys_methods.addMethod(sm);
+        safe_methods.addMethod(sm);
+    }
+    
+    /**
      * Create the system method txt file with the signature and modifiers for all 
      * system methods.  Should not be called on a normal run.
      */
