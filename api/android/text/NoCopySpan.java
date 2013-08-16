@@ -6,7 +6,8 @@ import droidsafe.annotations.*;
 public interface NoCopySpan {
     
     public class Concrete implements NoCopySpan {
-    	public Concrete() {
+    	@DSModeled(DSC.SAFE)
+        public Concrete() {
     		//Synthesized constructor
     	}
     }

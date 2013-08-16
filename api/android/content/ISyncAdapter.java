@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.c
 {
 private static final java.lang.String DESCRIPTOR = "android.content.ISyncAdapter";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.content.ISyncAdapter)iin);
 }
 return new android.content.ISyncAdapter.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -96,16 +98,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public void startSync(android.content.ISyncContext syncContext, java.lang.String authority, android.accounts.Account account, android.os.Bundle extras) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void startSync(android.content.ISyncContext syncContext, java.lang.String authority, android.accounts.Account account, android.os.Bundle extras) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

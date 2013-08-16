@@ -41,6 +41,7 @@ public class WebViewDatabase {
 
     private boolean mInitialized = false;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.486 -0400", hash_original_method = "EFB05B9D3FCAB305323B10379F1EC778", hash_generated_method = "0851865C68ABC1653EF41F96E16ADD4F")
     private  WebViewDatabase(final Context context) {
         addTaint(context.getTaint());

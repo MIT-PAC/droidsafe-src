@@ -26,11 +26,13 @@ return ((com.android.internal.view.IInputMethodManager)iin);
 }
 return new com.android.internal.view.IInputMethodManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -411,11 +413,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.SAFE)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -503,7 +507,8 @@ return _result;
 
 
 
-public java.util.List getShortcutInputMethodsAndSubtypes() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.util.List getShortcutInputMethodsAndSubtypes() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -554,7 +559,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public com.android.internal.view.InputBindResult startInput(com.android.internal.view.IInputMethodClient client, com.android.internal.view.IInputContext inputContext, android.view.inputmethod.EditorInfo attribute, boolean initial, boolean needResult) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public com.android.internal.view.InputBindResult startInput(com.android.internal.view.IInputMethodClient client, com.android.internal.view.IInputContext inputContext, android.view.inputmethod.EditorInfo attribute, boolean initial, boolean needResult) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -587,7 +593,8 @@ _data.recycle();
 }
 return _result;
 }
-public void finishInput(com.android.internal.view.IInputMethodClient client) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void finishInput(com.android.internal.view.IInputMethodClient client) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -602,7 +609,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean showSoftInput(com.android.internal.view.IInputMethodClient client, int flags, android.os.ResultReceiver resultReceiver) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean showSoftInput(com.android.internal.view.IInputMethodClient client, int flags, android.os.ResultReceiver resultReceiver) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -628,7 +636,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean hideSoftInput(com.android.internal.view.IInputMethodClient client, int flags, android.os.ResultReceiver resultReceiver) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hideSoftInput(com.android.internal.view.IInputMethodClient client, int flags, android.os.ResultReceiver resultReceiver) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -690,7 +699,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void showInputMethodAndSubtypeEnablerFromClient(com.android.internal.view.IInputMethodClient client, java.lang.String topId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void showInputMethodAndSubtypeEnablerFromClient(com.android.internal.view.IInputMethodClient client, java.lang.String topId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -706,7 +716,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setInputMethod(android.os.IBinder token, java.lang.String id) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setInputMethod(android.os.IBinder token, java.lang.String id) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -916,7 +927,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setInputMethodEnabled(java.lang.String id, boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean setInputMethodEnabled(java.lang.String id, boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

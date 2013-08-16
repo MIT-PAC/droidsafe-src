@@ -32,10 +32,15 @@ public interface SearchBox {
 
     
     public abstract class SearchBoxListener {
+        @DSModeled(DSC.SAFE)
         public void onSuggestionsReceived(String query, List<String> suggestions) {}
+        @DSModeled(DSC.BAN)
         public void onChangeComplete(boolean called) {}
+        @DSModeled(DSC.BAN)
         public void onSubmitComplete(boolean called) {}
+        @DSModeled(DSC.BAN)
         public void onResizeComplete(boolean called) {}
+        @DSModeled(DSC.BAN)
         public void onCancelComplete(boolean called) {}
     }
 

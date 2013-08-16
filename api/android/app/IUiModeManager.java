@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.app.IUiModeManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.app.IUiModeManager)iin);
 }
 return new android.app.IUiModeManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -92,16 +94,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public void enableCarMode(int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void enableCarMode(int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -117,7 +122,8 @@ _data.recycle();
 }
 }
 
-public void disableCarMode(int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void disableCarMode(int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -133,7 +139,8 @@ _data.recycle();
 }
 }
 
-public int getCurrentModeType() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getCurrentModeType() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -151,7 +158,8 @@ _data.recycle();
 return _result;
 }
 
-public void setNightMode(int mode) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setNightMode(int mode) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -167,7 +175,8 @@ _data.recycle();
 }
 }
 
-public int getNightMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getNightMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

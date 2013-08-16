@@ -98,6 +98,7 @@ List<Cookie> varCBE2F43F7F720C22A8D82FB98D41DC23_314871575 =         Collections
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_method = "882C42ACB6CC9EA440C89C4BE76EF44B", hash_generated_method = "342125F1B5121493C6C82D942913996E")
     public synchronized boolean clearExpired(final Date date) {
         addTaint(date.getTaint());

@@ -22,9 +22,11 @@ public interface SurfaceHolder {
 
     
     public static class BadSurfaceTypeException extends RuntimeException {
+        @DSModeled(DSC.SAFE)
         public BadSurfaceTypeException() {
         }
 
+        @DSModeled(DSC.SAFE)
         public BadSurfaceTypeException(String name) {
             super(name);
         }

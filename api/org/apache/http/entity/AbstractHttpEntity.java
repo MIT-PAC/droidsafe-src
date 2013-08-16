@@ -53,11 +53,13 @@ Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_916294054 =         this.contentEncod
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setContentType(final Header contentType) {
         this.contentType = contentType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setContentType(final String ctString) {
         Header h = null;
         if (ctString != null) {
@@ -67,6 +69,7 @@ Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_916294054 =         this.contentEncod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.758 -0400", hash_original_method = "DEBEEA900825B0657525159073BC33A3", hash_generated_method = "1A414CB42618A24BED38C8E50DD477A0")
     public void setContentEncoding(final Header contentEncoding) {
         this.contentEncoding = contentEncoding;
@@ -75,6 +78,7 @@ Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_916294054 =         this.contentEncod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.759 -0400", hash_original_method = "C8D25A66722ADB2A8BE857D43D852F52", hash_generated_method = "BCEED26725CC5C466F41BFDBA7565B3E")
     public void setContentEncoding(final String ceString) {
         addTaint(ceString.getTaint());

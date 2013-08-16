@@ -24,6 +24,7 @@ public class BasicTokenIterator implements TokenIterator {
 
     protected int searchPos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.283 -0400", hash_original_method = "728241B000D06E5A4B3FF4A1E835CDCC", hash_generated_method = "94820959A691C675E3B40D23581CEF19")
     public  BasicTokenIterator(final HeaderIterator headerIterator) {
         if(headerIterator == null)        

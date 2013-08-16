@@ -167,6 +167,7 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_1207897800 =         this.socket;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.067 -0400", hash_original_method = "8F7D1845D5CBAF2D176D233AC7877F21", hash_generated_method = "90026C16B669FDCC69C149AA04A43C9A")
     @Override
     protected SessionInputBuffer createSessionInputBuffer(
@@ -199,6 +200,7 @@ SessionInputBuffer var736A436546842D53E14743BF3FAC79E6_1066388828 =         inbu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.068 -0400", hash_original_method = "17D3D45553913AFCC8694294B924BCA4", hash_generated_method = "142C1244EE1B535E89F25F46DE4F2443")
     @Override
     protected SessionOutputBuffer createSessionOutputBuffer(

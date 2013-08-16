@@ -26,11 +26,13 @@ return ((com.android.internal.telephony.ISms)iin);
 }
 return new com.android.internal.telephony.ISms.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -202,11 +204,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.SAFE)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -229,7 +233,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean updateMessageOnIccEf(int messageIndex, int newStatus, byte[] pdu) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean updateMessageOnIccEf(int messageIndex, int newStatus, byte[] pdu) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -356,7 +361,8 @@ _data.recycle();
 }
 }
 
-public boolean enableCellBroadcast(int messageIdentifier) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean enableCellBroadcast(int messageIdentifier) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -394,7 +400,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -414,7 +421,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

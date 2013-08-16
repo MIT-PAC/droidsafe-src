@@ -264,6 +264,7 @@ String[] var99D8976FAB8D6731FEC3A476C186DDE3_1272587601 =         retArray;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.000 -0400", hash_original_method = "5C4180581403390570CBF3420B87F392", hash_generated_method = "EBEC8F5A0611F07F77B32D600361A014")
     final CharSequence[] getResourceTextArray(final int id) {
         addTaint(id);

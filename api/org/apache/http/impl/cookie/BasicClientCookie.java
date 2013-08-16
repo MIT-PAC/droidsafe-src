@@ -88,6 +88,7 @@ String varD64EF4B55BF21CB8765EC6BE5560B5B8_1908402108 =         this.value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.555 -0400", hash_original_method = "5A9FD1CB2995C306AE14120138CE8987", hash_generated_method = "5A3F164F4419E5A4EF475391DD8D78C7")
     public void setValue(final String value) {
         this.value = value;
@@ -260,6 +261,7 @@ String varBC6F7C939633E3CAB88354B71B894197_1634658164 =         cookiePath;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.561 -0400", hash_original_method = "D870EC906D46A0EDE777AE892D1551DA", hash_generated_method = "0613269E739C51CF8FB9C8AA183DD236")
     public boolean isExpired(final Date date) {
         addTaint(date.getTaint());
@@ -292,6 +294,7 @@ String varBC6F7C939633E3CAB88354B71B894197_1634658164 =         cookiePath;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.562 -0400", hash_original_method = "A480B1BC0B8318470327D71D112D198A", hash_generated_method = "AE47E2E8326EE0845F32DB3BF2FB7651")
     public String getAttribute(final String name) {
         addTaint(name.getTaint());

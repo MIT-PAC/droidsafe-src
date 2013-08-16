@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.c
 {
 private static final java.lang.String DESCRIPTOR = "android.content.IClipboard";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.content.IClipboard)iin);
 }
 return new android.content.IClipboard.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -127,11 +129,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -179,7 +183,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.ClipDescription getPrimaryClipDescription() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.content.ClipDescription getPrimaryClipDescription() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -201,7 +206,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean hasPrimaryClip() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hasPrimaryClip() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -249,7 +255,8 @@ _data.recycle();
 }
 }
 
-public boolean hasClipboardText() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hasClipboardText() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

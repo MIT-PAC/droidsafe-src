@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.s
 {
 private static final java.lang.String DESCRIPTOR = "android.speech.tts.ITextToSpeechService";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.speech.tts.ITextToSpeechService)iin);
 }
 return new android.speech.tts.ITextToSpeechService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -217,16 +219,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public int speak(java.lang.String callingApp, java.lang.String text, int queueMode, android.os.Bundle params) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int speak(java.lang.String callingApp, java.lang.String text, int queueMode, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -254,7 +259,8 @@ _data.recycle();
 return _result;
 }
 
-public int synthesizeToFile(java.lang.String callingApp, java.lang.String text, java.lang.String filename, android.os.Bundle params) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int synthesizeToFile(java.lang.String callingApp, java.lang.String text, java.lang.String filename, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -282,7 +288,8 @@ _data.recycle();
 return _result;
 }
 
-public int playAudio(java.lang.String callingApp, android.net.Uri audioUri, int queueMode, android.os.Bundle params) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public int playAudio(java.lang.String callingApp, android.net.Uri audioUri, int queueMode, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -316,7 +323,8 @@ _data.recycle();
 return _result;
 }
 
-public int playSilence(java.lang.String callingApp, long duration, int queueMode, android.os.Bundle params) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int playSilence(java.lang.String callingApp, long duration, int queueMode, android.os.Bundle params) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -344,7 +352,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isSpeaking() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isSpeaking() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -362,7 +371,8 @@ _data.recycle();
 return _result;
 }
 
-public int stop(java.lang.String callingApp) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int stop(java.lang.String callingApp) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -381,7 +391,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String[] getLanguage() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getLanguage() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -420,7 +431,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String[] getFeaturesForLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String[] getFeaturesForLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -441,7 +453,8 @@ _data.recycle();
 return _result;
 }
 
-public int loadLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int loadLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.appwidget.IAppWidgetService";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((com.android.internal.appwidget.IAppWidgetService)iin);
 }
 return new com.android.internal.appwidget.IAppWidgetService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -281,11 +283,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -314,7 +318,8 @@ _data.recycle();
 }
 return _result;
 }
-public void stopListening(int hostId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void stopListening(int hostId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -329,7 +334,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int allocateAppWidgetId(java.lang.String packageName, int hostId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int allocateAppWidgetId(java.lang.String packageName, int hostId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -348,7 +354,8 @@ _data.recycle();
 }
 return _result;
 }
-public void deleteAppWidgetId(int appWidgetId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void deleteAppWidgetId(int appWidgetId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -363,7 +370,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void deleteHost(int hostId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void deleteHost(int hostId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -378,7 +386,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void deleteAllHosts() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void deleteAllHosts() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -392,7 +401,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.widget.RemoteViews getAppWidgetViews(int appWidgetId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.widget.RemoteViews getAppWidgetViews(int appWidgetId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -491,7 +501,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void notifyAppWidgetViewDataChanged(int[] appWidgetIds, int viewId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void notifyAppWidgetViewDataChanged(int[] appWidgetIds, int viewId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -524,7 +535,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.appwidget.AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.appwidget.AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -569,7 +581,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void bindRemoteViewsService(int appWidgetId, android.content.Intent intent, android.os.IBinder connection) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public void bindRemoteViewsService(int appWidgetId, android.content.Intent intent, android.os.IBinder connection) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -592,7 +605,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void unbindRemoteViewsService(int appWidgetId, android.content.Intent intent) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public void unbindRemoteViewsService(int appWidgetId, android.content.Intent intent) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -614,7 +628,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int[] getAppWidgetIds(android.content.ComponentName provider) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int[] getAppWidgetIds(android.content.ComponentName provider) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

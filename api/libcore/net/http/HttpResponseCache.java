@@ -868,6 +868,7 @@ InputStream var091D3B9C0C9CE73F019D8ED2F738F1B8_1454892750 =                 in;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.417 -0400", hash_original_method = "C9B15DB0F46F05D49B15F04525C28EC8", hash_generated_method = "FBCA15F19E431977CCDD32E59F049B8F")
         public SecureCacheResponse newSecureCacheResponse(final InputStream in) {
             addTaint(in.getTaint());

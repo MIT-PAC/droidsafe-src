@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.view.IInputContextCallback";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static com.android.internal.view.IInputContextCallback asInterface(android.os.IBinder obj)
+@DSModeled(DSC.BAN)
+        public static com.android.internal.view.IInputContextCallback asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((com.android.internal.view.IInputContextCallback)iin);
 }
 return new com.android.internal.view.IInputContextCallback.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -115,19 +118,23 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements com.android.internal.view.IInputContextCallback
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.BAN)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void setTextBeforeCursor(java.lang.CharSequence textBeforeCursor, int seq) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setTextBeforeCursor(java.lang.CharSequence textBeforeCursor, int seq) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -146,7 +153,8 @@ finally {
 _data.recycle();
 }
 }
-public void setTextAfterCursor(java.lang.CharSequence textAfterCursor, int seq) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setTextAfterCursor(java.lang.CharSequence textAfterCursor, int seq) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -165,7 +173,8 @@ finally {
 _data.recycle();
 }
 }
-public void setCursorCapsMode(int capsMode, int seq) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setCursorCapsMode(int capsMode, int seq) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -178,7 +187,8 @@ finally {
 _data.recycle();
 }
 }
-public void setExtractedText(android.view.inputmethod.ExtractedText extractedText, int seq) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setExtractedText(android.view.inputmethod.ExtractedText extractedText, int seq) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -197,7 +207,8 @@ finally {
 _data.recycle();
 }
 }
-public void setSelectedText(java.lang.CharSequence selectedText, int seq) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setSelectedText(java.lang.CharSequence selectedText, int seq) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.widget.IRemoteViewsFactory";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((com.android.internal.widget.IRemoteViewsFactory)iin);
 }
 return new com.android.internal.widget.IRemoteViewsFactory.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -147,15 +149,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void onDataSetChanged() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onDataSetChanged() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -169,7 +174,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void onDataSetChangedAsync() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onDataSetChangedAsync() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -180,7 +186,8 @@ finally {
 _data.recycle();
 }
 }
-public void onDestroy(android.content.Intent intent) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public void onDestroy(android.content.Intent intent) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -198,7 +205,8 @@ finally {
 _data.recycle();
 }
 }
-public int getCount() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getCount() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -215,7 +223,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.widget.RemoteViews getViewAt(int position) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.widget.RemoteViews getViewAt(int position) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -238,7 +247,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.widget.RemoteViews getLoadingView() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.widget.RemoteViews getLoadingView() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -260,7 +270,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getViewTypeCount() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getViewTypeCount() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -277,7 +288,8 @@ _data.recycle();
 }
 return _result;
 }
-public long getItemId(int position) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public long getItemId(int position) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -295,7 +307,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean hasStableIds() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hasStableIds() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -312,7 +325,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isCreated() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isCreated() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

@@ -207,6 +207,7 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
         EQUAL (5),
         NOT_EQUAL (6);
         int mID;
+        @DSModeled(DSC.BAN)
         DepthFunc(int id) {
             mID = id;
         }
@@ -224,7 +225,7 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
         ONE_MINUS_DST_ALPHA (7),
         SRC_ALPHA_SATURATE (8);
         int mID;
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         BlendSrcFunc(int id) {
             mID = id;
         }
@@ -241,6 +242,7 @@ BlendDstFunc varBA9FBDF309FE837973BF7CABB9122658_189020843 =         mBlendDst;
         DST_ALPHA (6),
         ONE_MINUS_DST_ALPHA (7);
         int mID;
+        @DSModeled(DSC.BAN)
         BlendDstFunc(int id) {
             mID = id;
         }

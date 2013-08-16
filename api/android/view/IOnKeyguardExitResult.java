@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.v
 {
 private static final java.lang.String DESCRIPTOR = "android.view.IOnKeyguardExitResult";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.view.IOnKeyguardExitResult asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.view.IOnKeyguardExitResult asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((android.view.IOnKeyguardExitResult)iin);
 }
 return new android.view.IOnKeyguardExitResult.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -53,19 +56,23 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.view.IOnKeyguardExitResult
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void onKeyguardExitResult(boolean success) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onKeyguardExitResult(boolean success) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

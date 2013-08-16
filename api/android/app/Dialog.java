@@ -1441,6 +1441,7 @@ LayoutInflater var8D6DD3C28714B51EAA9625A43B68EFD5_1258320974 =         getWindo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.775 -0400", hash_original_method = "B6A3C715E726D4D77D298D569C13057A", hash_generated_method = "95F41A85B90A80A4E33B245BB5BA05B6")
     public void setOnCancelListener(final OnCancelListener listener) {
         if(mCancelAndDismissTaken != null)        
@@ -1473,6 +1474,7 @@ LayoutInflater var8D6DD3C28714B51EAA9625A43B68EFD5_1258320974 =         getWindo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.776 -0400", hash_original_method = "774019D9ADE46FB9924B78D145C17F36", hash_generated_method = "3D496AF9B1B4D7260FDDA232E220A62F")
     public void setCancelMessage(final Message msg) {
         mCancelMessage = msg;
@@ -1481,6 +1483,7 @@ LayoutInflater var8D6DD3C28714B51EAA9625A43B68EFD5_1258320974 =         getWindo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.777 -0400", hash_original_method = "464A84E289A7DD535A8EA3034BC5D33F", hash_generated_method = "AB374898C720DF34A158B1DDAF079A54")
     public void setOnDismissListener(final OnDismissListener listener) {
         if(mCancelAndDismissTaken != null)        
@@ -1533,6 +1536,7 @@ LayoutInflater var8D6DD3C28714B51EAA9625A43B68EFD5_1258320974 =         getWindo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.778 -0400", hash_original_method = "2BD742B46509FC81ABA0DF4EC8F37AEC", hash_generated_method = "86E89A398CB75A38D126DF12BF88B627")
     public void setDismissMessage(final Message msg) {
         mDismissMessage = msg;
@@ -1541,6 +1545,7 @@ LayoutInflater var8D6DD3C28714B51EAA9625A43B68EFD5_1258320974 =         getWindo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.778 -0400", hash_original_method = "4322D13EDCAAC15D5143567F42FC68A2", hash_generated_method = "25459E49C2406440CF2B581360E31CE1")
     public boolean takeCancelAndDismissListeners(String msg, final OnCancelListener cancel,
             final OnDismissListener dismiss) {
@@ -1597,6 +1602,7 @@ LayoutInflater var8D6DD3C28714B51EAA9625A43B68EFD5_1258320974 =         getWindo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.781 -0400", hash_original_method = "A9C3EE1B48BA32717B6024C41DF4E1F6", hash_generated_method = "EEA474A83FE4C7A6A402FA07BCAB4982")
     public void setOnKeyListener(final OnKeyListener onKeyListener) {
         mOnKeyListener = onKeyListener;

@@ -181,6 +181,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void cursorFillWindow(final Cursor cursor,
             int position, final CursorWindow window) {
         if (position < 0 || position >= cursor.getCount()) {

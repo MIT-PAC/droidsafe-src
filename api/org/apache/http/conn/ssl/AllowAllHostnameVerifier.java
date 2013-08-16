@@ -16,6 +16,7 @@ public class AllowAllHostnameVerifier extends AbstractVerifier {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.049 -0400", hash_original_method = "F0A4B9BAEEEE63400ECBAAB6ED04E07E", hash_generated_method = "8F65F1810A9B843577338BD52B20723D")
     public final void verify(
             final String host, 

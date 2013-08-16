@@ -28,28 +28,33 @@ public interface AttributedCharacterIterator extends CharacterIterator {
         private String name;
 
         
+        @DSModeled(DSC.SAFE)
         protected Attribute(String name) {
             this.name = name;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @Override
         public final boolean equals(Object object) {
             return this == object;
         }
 
         
+        @DSModeled(DSC.SAFE)
         protected String getName() {
             return name;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @Override
         public final int hashCode() {
             return super.hashCode();
         }
 
         
+        @DSModeled(DSC.SAFE)
         protected Object readResolve() throws InvalidObjectException {
             
             try {
@@ -67,6 +72,7 @@ public interface AttributedCharacterIterator extends CharacterIterator {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @Override
         public String toString() {
             return getClass().getName() + '(' + getName() + ')';

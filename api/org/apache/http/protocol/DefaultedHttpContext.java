@@ -15,6 +15,7 @@ public final class DefaultedHttpContext implements HttpContext {
 
     private HttpContext defaults;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.288 -0400", hash_original_method = "A0575674BF73385D2F6A60AE80137BEF", hash_generated_method = "D565DB98F36958C516D0B8D790264749")
     public  DefaultedHttpContext(final HttpContext local, final HttpContext defaults) {
         super();
@@ -72,6 +73,7 @@ Object var74888A1C7728062EE6A275D5DB131063_859187654 =         this.local.remove
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.289 -0400", hash_original_method = "EE2D3704A963700B0310D3F12DCBDD4D", hash_generated_method = "3C5F2E0AF008CA77F93E9CF2D58E9412")
     public void setAttribute(final String id, final Object obj) {
         addTaint(obj.getTaint());

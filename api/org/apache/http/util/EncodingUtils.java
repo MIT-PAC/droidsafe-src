@@ -17,6 +17,7 @@ public final class EncodingUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getString(
         final byte[] data, 
         int offset, 
@@ -37,6 +38,7 @@ public final class EncodingUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getString(final byte[] data, final String charset) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
@@ -45,6 +47,7 @@ public final class EncodingUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] getBytes(final String data, final String charset) {
         if (data == null) {
             throw new IllegalArgumentException("data may not be null");
@@ -60,6 +63,7 @@ public final class EncodingUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] getAsciiBytes(final String data) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
@@ -72,6 +76,7 @@ public final class EncodingUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getAsciiString(final byte[] data, int offset, int length) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");
@@ -84,6 +89,7 @@ public final class EncodingUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getAsciiString(final byte[] data) {
         if (data == null) {
             throw new IllegalArgumentException("Parameter may not be null");

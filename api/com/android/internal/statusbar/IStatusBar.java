@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.statusbar.IStatusBar";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,11 +27,13 @@ return ((com.android.internal.statusbar.IStatusBar)iin);
 }
 return new com.android.internal.statusbar.IStatusBar.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -170,15 +173,18 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements com.android.internal.statusbar.IStatusBar
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -201,7 +207,8 @@ finally {
 _data.recycle();
 }
 }
-public void removeIcon(int index) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void removeIcon(int index) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -213,7 +220,8 @@ finally {
 _data.recycle();
 }
 }
-public void addNotification(android.os.IBinder key, com.android.internal.statusbar.StatusBarNotification notification) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void addNotification(android.os.IBinder key, com.android.internal.statusbar.StatusBarNotification notification) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -232,7 +240,8 @@ finally {
 _data.recycle();
 }
 }
-public void updateNotification(android.os.IBinder key, com.android.internal.statusbar.StatusBarNotification notification) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void updateNotification(android.os.IBinder key, com.android.internal.statusbar.StatusBarNotification notification) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -263,7 +272,8 @@ finally {
 _data.recycle();
 }
 }
-public void disable(int state) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void disable(int state) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -275,7 +285,8 @@ finally {
 _data.recycle();
 }
 }
-public void animateExpand() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void animateExpand() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -286,7 +297,8 @@ finally {
 _data.recycle();
 }
 }
-public void animateCollapse() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void animateCollapse() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -297,7 +309,8 @@ finally {
 _data.recycle();
 }
 }
-public void setSystemUiVisibility(int vis) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setSystemUiVisibility(int vis) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -309,7 +322,8 @@ finally {
 _data.recycle();
 }
 }
-public void topAppWindowChanged(boolean menuVisible) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void topAppWindowChanged(boolean menuVisible) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -335,7 +349,8 @@ finally {
 _data.recycle();
 }
 }
-public void setHardKeyboardStatus(boolean available, boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setHardKeyboardStatus(boolean available, boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -348,7 +363,8 @@ finally {
 _data.recycle();
 }
 }
-public void toggleRecentApps() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void toggleRecentApps() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

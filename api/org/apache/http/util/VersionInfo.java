@@ -168,6 +168,7 @@ String var2460B846747F8B22185AD8BE722266A5_1894302844 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     public final static VersionInfo loadVersionInfo(final String pckg,
                                                     ClassLoader clsldr) {
         if (pckg == null) {

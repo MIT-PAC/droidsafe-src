@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.b
 {
 private static final java.lang.String DESCRIPTOR = "android.bluetooth.IBluetooth";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.bluetooth.IBluetooth)iin);
 }
 return new android.bluetooth.IBluetooth.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -908,15 +910,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public boolean isEnabled() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -933,7 +938,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getBluetoothState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getBluetoothState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -950,7 +956,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean enable() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean enable() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -967,7 +974,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean disable(boolean persistSetting) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean disable(boolean persistSetting) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -985,7 +993,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String getAddress() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getAddress() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1002,7 +1011,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String getName() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getName() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1037,7 +1047,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.os.ParcelUuid[] getUuids() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.os.ParcelUuid[] getUuids() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1054,7 +1065,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getScanMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getScanMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1071,7 +1083,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setScanMode(int mode, int duration) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean setScanMode(int mode, int duration) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1090,7 +1103,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getDiscoverableTimeout() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getDiscoverableTimeout() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1107,7 +1121,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setDiscoverableTimeout(int timeout) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean setDiscoverableTimeout(int timeout) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1125,7 +1140,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean startDiscovery() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean startDiscovery() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1142,7 +1158,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean cancelDiscovery() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean cancelDiscovery() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1159,7 +1176,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isDiscovering() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isDiscovering() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1176,7 +1194,8 @@ _data.recycle();
 }
 return _result;
 }
-public byte[] readOutOfBandData() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public byte[] readOutOfBandData() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1193,7 +1212,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getAdapterConnectionState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getAdapterConnectionState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1210,7 +1230,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getProfileConnectionState(int profile) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getProfileConnectionState(int profile) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1228,7 +1249,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean changeApplicationBluetoothState(boolean on, android.bluetooth.IBluetoothStateChangeCallback callback, android.os.IBinder b) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean changeApplicationBluetoothState(boolean on, android.bluetooth.IBluetoothStateChangeCallback callback, android.os.IBinder b) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1322,7 +1344,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] listBonds() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] listBonds() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1339,7 +1362,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getBondState(java.lang.String address) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getBondState(java.lang.String address) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1432,7 +1456,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getRemoteClass(java.lang.String address) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getRemoteClass(java.lang.String address) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1649,7 +1674,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isBluetoothDock(java.lang.String address) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean isBluetoothDock(java.lang.String address) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1667,7 +1693,8 @@ _data.recycle();
 }
 return _result;
 }
-public int addRfcommServiceRecord(java.lang.String serviceName, android.os.ParcelUuid uuid, int channel, android.os.IBinder b) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int addRfcommServiceRecord(java.lang.String serviceName, android.os.ParcelUuid uuid, int channel, android.os.IBinder b) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1694,7 +1721,8 @@ _data.recycle();
 }
 return _result;
 }
-public void removeServiceRecord(int handle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void removeServiceRecord(int handle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1874,7 +1902,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getInputDeviceConnectionState(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getInputDeviceConnectionState(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1923,7 +1952,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getInputDevicePriority(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getInputDevicePriority(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1947,7 +1977,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isTetheringOn() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isTetheringOn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1964,7 +1995,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setBluetoothTethering(boolean value) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setBluetoothTethering(boolean value) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2232,7 +2264,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.os.ParcelFileDescriptor getMainChannelFd(android.bluetooth.BluetoothDevice device, android.bluetooth.BluetoothHealthAppConfiguration config) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.os.ParcelFileDescriptor getMainChannelFd(android.bluetooth.BluetoothDevice device, android.bluetooth.BluetoothHealthAppConfiguration config) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

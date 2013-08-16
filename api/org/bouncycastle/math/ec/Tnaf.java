@@ -16,6 +16,7 @@ class Tnaf {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static BigInteger norm(final byte mu, ZTauElement lambda) {
         BigInteger norm;
         BigInteger s1 = lambda.u.multiply(lambda.u);
@@ -37,6 +38,7 @@ class Tnaf {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SimpleBigDecimal norm(final byte mu, SimpleBigDecimal u,
             SimpleBigDecimal v) {
         SimpleBigDecimal norm;

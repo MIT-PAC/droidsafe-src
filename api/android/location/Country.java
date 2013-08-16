@@ -22,6 +22,7 @@ public class Country implements Parcelable {
 
     private int mHashCode;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.917 -0400", hash_original_method = "180A74FA9B2C94F60E7E0D1924EE6005", hash_generated_method = "D0A9AE36B4340F4167768832321716A6")
     public  Country(final String countryIso, final int source) {
         if(countryIso == null || source < COUNTRY_SOURCE_NETWORK

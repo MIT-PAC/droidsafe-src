@@ -457,6 +457,7 @@ for(V v1 : toBeRemoved)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.567 -0400", hash_original_method = "45DA6CE662A637B1B0A1C5B390B75450", hash_generated_method = "A05EE2ADC7C0B4466367FAC11D9D64B2")
     private boolean containsType(ArrayList<ServiceInfo<V>> serviceInfos, V type) {
         addTaint(type.getTaint());
@@ -483,6 +484,7 @@ for(int i = 0, N = serviceInfos.size();i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.568 -0400", hash_original_method = "39F2D99D837C3B52D94DD556DC01CC72", hash_generated_method = "4EDC63F50677F92E2336BCCF856D5D63")
     private boolean containsTypeAndUid(ArrayList<ServiceInfo<V>> serviceInfos, V type, int uid) {
         addTaint(uid);

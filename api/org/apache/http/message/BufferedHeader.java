@@ -23,6 +23,7 @@ public class BufferedHeader implements FormattedHeader, Cloneable {
 
     private int valuePos;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.095 -0400", hash_original_method = "49FE93A821CCACEE6FBD2E0E30BEDB29", hash_generated_method = "6A350FCE5C7875C30EE170695FCC4D1D")
     public  BufferedHeader(final CharArrayBuffer buffer) throws ParseException {
         super();

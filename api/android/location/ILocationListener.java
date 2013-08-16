@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.l
 {
 private static final java.lang.String DESCRIPTOR = "android.location.ILocationListener";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.location.ILocationListener asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.location.ILocationListener asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((android.location.ILocationListener)iin);
 }
 return new android.location.ILocationListener.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -95,11 +98,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -121,7 +126,8 @@ finally {
 _data.recycle();
 }
 }
-public void onStatusChanged(java.lang.String provider, int status, android.os.Bundle extras) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onStatusChanged(java.lang.String provider, int status, android.os.Bundle extras) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

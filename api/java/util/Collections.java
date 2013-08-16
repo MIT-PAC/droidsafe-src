@@ -122,7 +122,8 @@ public class Collections {
         @Override public boolean hasMoreElements() {
                 return it.hasNext();
             }
-            @Override public T nextElement() {
+            @DSModeled(DSC.SAFE)
+        @Override public T nextElement() {
                 return it.next();
             }
         };
@@ -209,6 +210,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> List<T> nCopies(final int length, T object) {
         return new CopiesList<T>(length, object);
     }
@@ -3105,6 +3107,7 @@ Iterator<E> var17584F965577555F1B3BEAB9FFD781E4_1722746458 =             new Ite
                 // ---------- Original Method ----------
                 //return iterator.hasNext();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.731 -0400", hash_original_method = "E4F6FE4F8164B2EF0F004EE03FA1069C", hash_generated_method = "1379AC8E7CA0E95528701719109AF5AB")
             @Override
             public E next() {
@@ -3399,6 +3402,7 @@ ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_1140878997 =             lis
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.751 -0400", hash_original_method = "1D0E6831E50FA8995D23240A6E091C82", hash_generated_method = "685CD7A900A8299B727471C10D97D42A")
         @Override
         public ListIterator<E> listIterator(final int location) {

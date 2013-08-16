@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.net.IThrottleManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.net.IThrottleManager)iin);
 }
 return new android.net.IThrottleManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -127,11 +129,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -174,7 +178,8 @@ _data.recycle();
 }
 return _result;
 }
-public long getResetTime(java.lang.String iface) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public long getResetTime(java.lang.String iface) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -192,7 +197,8 @@ _data.recycle();
 }
 return _result;
 }
-public long getPeriodStartTime(java.lang.String iface) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public long getPeriodStartTime(java.lang.String iface) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -210,7 +216,8 @@ _data.recycle();
 }
 return _result;
 }
-public long getCliffThreshold(java.lang.String iface, int cliff) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public long getCliffThreshold(java.lang.String iface, int cliff) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -248,7 +255,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String getHelpUri() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getHelpUri() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

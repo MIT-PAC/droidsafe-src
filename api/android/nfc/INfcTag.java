@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.nfc.INfcTag";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.nfc.INfcTag)iin);
 }
 return new android.nfc.INfcTag.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -281,15 +283,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public int close(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int close(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -307,7 +312,8 @@ _data.recycle();
 }
 return _result;
 }
-public int connect(int nativeHandle, int technology) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int connect(int nativeHandle, int technology) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -326,7 +332,8 @@ _data.recycle();
 }
 return _result;
 }
-public int reconnect(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int reconnect(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -344,7 +351,8 @@ _data.recycle();
 }
 return _result;
 }
-public int[] getTechList(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int[] getTechList(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -362,7 +370,8 @@ _data.recycle();
 }
 return _result;
 }
-public byte[] getUid(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public byte[] getUid(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -380,7 +389,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isNdef(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isNdef(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -398,7 +408,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isPresent(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isPresent(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -416,7 +427,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.nfc.TransceiveResult transceive(int nativeHandle, byte[] data, boolean raw) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.nfc.TransceiveResult transceive(int nativeHandle, byte[] data, boolean raw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -441,7 +453,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getLastError(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getLastError(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -459,7 +472,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.nfc.NdefMessage ndefRead(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.nfc.NdefMessage ndefRead(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -507,7 +521,8 @@ _data.recycle();
 }
 return _result;
 }
-public int ndefMakeReadOnly(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int ndefMakeReadOnly(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -525,7 +540,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean ndefIsWritable(int nativeHandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean ndefIsWritable(int nativeHandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -543,7 +559,8 @@ _data.recycle();
 }
 return _result;
 }
-public int formatNdef(int nativeHandle, byte[] key) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int formatNdef(int nativeHandle, byte[] key) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -562,7 +579,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.nfc.Tag rediscover(int nativehandle) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.nfc.Tag rediscover(int nativehandle) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -585,7 +603,8 @@ _data.recycle();
 }
 return _result;
 }
-public int setTimeout(int technology, int timeout) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int setTimeout(int technology, int timeout) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -604,7 +623,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getTimeout(int technology) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getTimeout(int technology) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -622,7 +642,8 @@ _data.recycle();
 }
 return _result;
 }
-public void resetTimeouts() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void resetTimeouts() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -636,7 +657,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean canMakeReadOnly(int ndefType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean canMakeReadOnly(int ndefType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -654,7 +676,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getMaxTransceiveLength(int technology) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getMaxTransceiveLength(int technology) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

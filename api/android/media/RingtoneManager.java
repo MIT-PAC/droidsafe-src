@@ -471,11 +471,13 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_842273843 =             mContext.getC
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Ringtone getRingtone(final Context context, Uri ringtoneUri) {
         return getRingtone(context, ringtoneUri, -1);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Ringtone getRingtone(final Context context, Uri ringtoneUri, int streamType) {
         try {
             Ringtone r = new Ringtone(context);

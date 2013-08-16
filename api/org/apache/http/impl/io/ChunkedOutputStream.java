@@ -29,6 +29,7 @@ public class ChunkedOutputStream extends OutputStream {
 
     private boolean closed = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.523 -0400", hash_original_method = "56C47BEE54D84D2C2F06C5F3380F6FB5", hash_generated_method = "13922ECA8643BCE0F6F9E2C85B378856")
     public  ChunkedOutputStream(final SessionOutputBuffer out, int bufferSize) throws IOException {
         super();
@@ -40,6 +41,7 @@ public class ChunkedOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.523 -0400", hash_original_method = "0998BD1AC5B9537C7B2BFA3E832ED71A", hash_generated_method = "D4570D00A61C6FB90014617F162A887A")
     public  ChunkedOutputStream(final SessionOutputBuffer out) throws IOException {
         this(out, 2048);

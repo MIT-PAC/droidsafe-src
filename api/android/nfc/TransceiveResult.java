@@ -19,6 +19,7 @@ public final class TransceiveResult implements Parcelable {
 
     byte[] mResponseData;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.444 -0400", hash_original_method = "BA3E23EA94CFCB76E8DA5A162A199F9F", hash_generated_method = "52B26C94A414FFC514E277A7C1EC7257")
     public  TransceiveResult(final int result, final byte[] data) {
         mResult = result;

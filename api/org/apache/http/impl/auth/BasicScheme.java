@@ -79,6 +79,7 @@ String varC223609D18BB55F930AA94C44D8E4264_73867107 =         "basic";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.382 -0400", hash_original_method = "29881E2E3CE612A2D14B025CB6CBAAB9", hash_generated_method = "47B9C54A077BF15ED05D440763F84CF1")
     public Header authenticate(
             final Credentials credentials, 

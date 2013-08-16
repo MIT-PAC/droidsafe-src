@@ -1295,6 +1295,7 @@ String varF3DAD022EBABA935DC888B174E45C206_1407681354 =         getRawResFilenam
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.300 -0400", hash_original_method = "468A4DE23411D07F152B7955301757EE", hash_generated_method = "EF6FBD3E66E53A2039127B1AC512D427")
     private void didReceiveAuthenticationChallenge(
             final int handle, String host, String realm, final boolean useCachedCredentials,

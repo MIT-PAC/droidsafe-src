@@ -24,6 +24,7 @@ public class ContentLengthInputStream extends InputStream {
 
     private SessionInputBuffer in = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.546 -0400", hash_original_method = "EB9A16D491B02E1C854609CD55105FA5", hash_generated_method = "A9FB7A4461901A5E3962104E6CCA4CA9")
     public  ContentLengthInputStream(final SessionInputBuffer in, long contentLength) {
         super();

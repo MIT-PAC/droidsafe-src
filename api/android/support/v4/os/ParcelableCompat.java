@@ -18,6 +18,7 @@ public class ParcelableCompat {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static <T> Parcelable.Creator<T> newCreator(
             ParcelableCompatCreatorCallbacks<T> callbacks) {
         return new CompatCreator<T>(callbacks);

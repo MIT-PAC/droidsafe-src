@@ -25,6 +25,7 @@ public class LaxContentLengthStrategy implements ContentLengthStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.333 -0400", hash_original_method = "41ED45EAF3AEC2DD673C6E2EB6E32552", hash_generated_method = "E588C6A3391D042FFD2C0C41257C34AD")
     public long determineLength(final HttpMessage message) throws HttpException {
         addTaint(message.getTaint());

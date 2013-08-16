@@ -26,7 +26,8 @@ return ((com.android.internal.telephony.IPhoneStateListener)iin);
 }
 return new com.android.internal.telephony.IPhoneStateListener.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -144,15 +145,18 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements com.android.internal.telephony.IPhoneStateListener
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.SAFE)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -174,7 +178,8 @@ finally {
 _data.recycle();
 }
 }
-public void onSignalStrengthChanged(int asu) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onSignalStrengthChanged(int asu) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -198,7 +203,8 @@ finally {
 _data.recycle();
 }
 }
-public void onCallForwardingIndicatorChanged(boolean cfi) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCallForwardingIndicatorChanged(boolean cfi) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -212,7 +218,8 @@ _data.recycle();
 }
 
 
-public void onCellLocationChanged(android.os.Bundle location) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCellLocationChanged(android.os.Bundle location) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

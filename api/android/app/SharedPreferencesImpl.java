@@ -485,6 +485,7 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_1473235632 =         new EditorImpl()
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.247 -0400", hash_original_method = "4AFBAD62741BB9BDCEF60806B476332B", hash_generated_method = "ADE8CB6728E4E8A6058F8BFBCD4C8BD0")
     private void enqueueDiskWrite(final MemoryCommitResult mcr,
                                   final Runnable postWriteRunnable) {
@@ -973,6 +974,7 @@ MemoryCommitResult var154B51BCE99D10E07062079308329222_607911735 =             m
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.271 -0400", hash_original_method = "9C764C33950FD36589194E2D3CE4E56B", hash_generated_method = "B8C889EEBF3EC674E28753342BE7CAA9")
         private void notifyListeners(final MemoryCommitResult mcr) {
             addTaint(mcr.getTaint());

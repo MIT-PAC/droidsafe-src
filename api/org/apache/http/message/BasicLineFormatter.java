@@ -48,6 +48,7 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_923146644 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static String formatProtocolVersion(final ProtocolVersion version,
                                      LineFormatter formatter) {
         if (formatter == null)
@@ -107,6 +108,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_331633846 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.928 -0400", hash_original_method = "84522AAB157FB837ECA38AFA8517069A", hash_generated_method = "22A52263C246E7D6D7ABEEAF932C322D")
     protected int estimateProtocolVersionLen(final ProtocolVersion version) {
         addTaint(version.getTaint());
@@ -118,6 +120,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_331633846 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static String formatRequestLine(final RequestLine reqline,
                                                  LineFormatter formatter) {
         if (formatter == null)
@@ -155,6 +158,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1495433838 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.930 -0400", hash_original_method = "1E31567E89FBC15B9220080016C6779D", hash_generated_method = "5C6CD29D248F38EE0C1375AB555AA7F3")
     protected void doFormatRequestLine(final CharArrayBuffer buffer,
                                        final RequestLine reqline) {
@@ -184,6 +188,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1495433838 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static String formatStatusLine(final StatusLine statline,
                                                 LineFormatter formatter) {
         if (formatter == null)
@@ -220,6 +225,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1090352477 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.932 -0400", hash_original_method = "060574F84EC41767BDDD7A9C8F77F8CE", hash_generated_method = "8DDAD7270D3C4D37EBDE3773E784FFA5")
     protected void doFormatStatusLine(final CharArrayBuffer buffer,
                                       final StatusLine statline) {
@@ -259,6 +265,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1090352477 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static String formatHeader(final Header header,
                                             LineFormatter formatter) {
         if (formatter == null)

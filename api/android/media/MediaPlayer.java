@@ -580,6 +580,7 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.671 -0400", hash_original_method = "62D59DE780FDA113D7200968BD4DD768", hash_generated_method = "2C7E211D6888C7EEB0475DB38BE3090D")
     public Metadata getMetadata(final boolean update_only,
                                 final boolean apply_filter) {

@@ -133,6 +133,7 @@ public class Program extends BaseObj {
         TEXTURE_2D (0),
         TEXTURE_CUBE (1);
         int mID;
+        @DSModeled(DSC.BAN)
         TextureType(int id) {
             mID = id;
         }
@@ -145,6 +146,7 @@ public class Program extends BaseObj {
         CONSTANT (2),
         TEXTURE_TYPE (3);
         int mID;
+        @DSModeled(DSC.BAN)
         ProgramParam(int id) {
             mID = id;
         }

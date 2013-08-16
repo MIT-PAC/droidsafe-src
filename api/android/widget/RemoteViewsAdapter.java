@@ -251,6 +251,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.900 -0400", hash_original_method = "5FA96F3EFCF6BBECAF668E31FDA609B8", hash_generated_method = "1014D5D3BCC4BBC0DF6A72DA0B4D05DA")
     private void updateRemoteViews(final int position, boolean isRequested) {
         addTaint(isRequested);

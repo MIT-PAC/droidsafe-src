@@ -1519,6 +1519,7 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean checkPrefixIsIgnorable(final String str,
             int forwardIndex, int backwardIndex) {
         boolean trunk_prefix_was_read = false;

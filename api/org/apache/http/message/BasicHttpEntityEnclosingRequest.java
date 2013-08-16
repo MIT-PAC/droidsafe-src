@@ -19,6 +19,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
 
     private HttpEntity entity;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.854 -0400", hash_original_method = "3B9AEA8ADDBEE1D3D457706DB0027555", hash_generated_method = "5A221AB4F918295D6C96B40163436F64")
     public  BasicHttpEntityEnclosingRequest(final String method, final String uri) {
         super(method, uri);
@@ -28,6 +29,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.855 -0400", hash_original_method = "81663ABF166B6EF77CF828F0FBB9FCD0", hash_generated_method = "889882ADBA9A82FD7E7E8E88B2936F00")
     public  BasicHttpEntityEnclosingRequest(final String method, final String uri, 
             final ProtocolVersion ver) {
@@ -39,6 +41,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.855 -0400", hash_original_method = "411AD89842852D4D934BE04E93AC495C", hash_generated_method = "859E7C832CEFE5C5AB9DA47E5E03C9FF")
     public  BasicHttpEntityEnclosingRequest(final RequestLine requestline) {
         super(requestline);
@@ -58,6 +61,7 @@ HttpEntity varB0390008473457B24431D383C02B7BE2_493720796 =         this.entity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.856 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;

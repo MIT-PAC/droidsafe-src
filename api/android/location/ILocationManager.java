@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.l
 {
 private static final java.lang.String DESCRIPTOR = "android.location.ILocationManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.location.ILocationManager)iin);
 }
 return new android.location.ILocationManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -516,11 +518,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -566,7 +570,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String getBestProvider(android.location.Criteria criteria, boolean enabledOnly) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getBestProvider(android.location.Criteria criteria, boolean enabledOnly) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -591,7 +596,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean providerMeetsCriteria(java.lang.String provider, android.location.Criteria criteria) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean providerMeetsCriteria(java.lang.String provider, android.location.Criteria criteria) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -745,7 +751,8 @@ _data.recycle();
 }
 
 
-public void locationCallbackFinished(android.location.ILocationListener listener) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void locationCallbackFinished(android.location.ILocationListener listener) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -835,7 +842,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.os.Bundle getProviderInfo(java.lang.String provider) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.os.Bundle getProviderInfo(java.lang.String provider) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -876,7 +884,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.location.Location getLastKnownLocation(java.lang.String provider) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.location.Location getLastKnownLocation(java.lang.String provider) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -925,7 +934,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean geocoderIsPresent() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean geocoderIsPresent() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1040,7 +1050,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setTestProviderLocation(java.lang.String provider, android.location.Location loc) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setTestProviderLocation(java.lang.String provider, android.location.Location loc) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1062,7 +1073,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void clearTestProviderLocation(java.lang.String provider) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void clearTestProviderLocation(java.lang.String provider) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1108,7 +1120,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setTestProviderStatus(java.lang.String provider, int status, android.os.Bundle extras, long updateTime) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setTestProviderStatus(java.lang.String provider, int status, android.os.Bundle extras, long updateTime) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1132,7 +1145,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void clearTestProviderStatus(java.lang.String provider) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void clearTestProviderStatus(java.lang.String provider) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1149,7 +1163,8 @@ _data.recycle();
 }
 
 
-public boolean sendNiResponse(int notifId, int userResponse) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean sendNiResponse(int notifId, int userResponse) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

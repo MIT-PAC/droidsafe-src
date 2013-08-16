@@ -1153,6 +1153,7 @@ switch(hint){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.703 -0400", hash_original_method = "8B7584A552A003B9ACCE9D0FC992FC50", hash_generated_method = "27B2F92694AA9C88B3570205BF8D8BF7")
     @Override
     protected boolean setFrame(final int l, int t, final int r, int b) {

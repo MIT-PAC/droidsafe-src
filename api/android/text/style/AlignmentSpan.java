@@ -12,6 +12,7 @@ public interface AlignmentSpan extends ParagraphStyle {
 
     public static class Standard
     implements AlignmentSpan, ParcelableSpan {
+        @DSModeled(DSC.SAFE)
         public Standard(Layout.Alignment align) {
             mAlignment = align;
         }
@@ -20,10 +21,12 @@ public interface AlignmentSpan extends ParagraphStyle {
             mAlignment = Layout.Alignment.valueOf(src.readString());
         }
         
+        @DSModeled(DSC.SAFE)
         public int getSpanTypeId() {
             return TextUtils.ALIGNMENT_SPAN;
         }
         
+        @DSModeled(DSC.SAFE)
         public int describeContents() {
             return 0;
         }
@@ -32,6 +35,7 @@ public interface AlignmentSpan extends ParagraphStyle {
             dest.writeString(mAlignment.name());
         }
 
+        @DSModeled(DSC.SAFE)
         public Layout.Alignment getAlignment() {
             return mAlignment;
         }

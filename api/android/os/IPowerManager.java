@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.o
 {
 private static final java.lang.String DESCRIPTOR = "android.os.IPowerManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.os.IPowerManager)iin);
 }
 return new android.os.IPowerManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -245,11 +247,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -301,7 +305,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void goToSleep(long time) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void goToSleep(long time) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -316,7 +321,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void goToSleepWithReason(long time, int reason) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void goToSleepWithReason(long time, int reason) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -350,7 +356,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void userActivity(long when, boolean noChangeLights) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void userActivity(long when, boolean noChangeLights) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -366,7 +373,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void userActivityWithForce(long when, boolean noChangeLights, boolean force) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void userActivityWithForce(long when, boolean noChangeLights, boolean force) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -383,7 +391,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void clearUserActivityTimeout(long now, long timeout) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void clearUserActivityTimeout(long now, long timeout) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -416,7 +425,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getSupportedWakeLockFlags() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getSupportedWakeLockFlags() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -433,7 +443,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setStayOnSetting(int val) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setStayOnSetting(int val) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -448,7 +459,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setMaximumScreenOffTimeount(int timeMs) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setMaximumScreenOffTimeount(int timeMs) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -463,7 +475,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void preventScreenOn(boolean prevent) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void preventScreenOn(boolean prevent) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -478,7 +491,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isScreenOn() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isScreenOn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -527,7 +541,8 @@ _data.recycle();
 }
 
 
-public void setBacklightBrightness(int brightness) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setBacklightBrightness(int brightness) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -542,7 +557,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setAttentionLight(boolean on, int color) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setAttentionLight(boolean on, int color) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

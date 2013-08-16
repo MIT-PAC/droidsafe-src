@@ -93,6 +93,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1244014084 =             super.clone(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.241 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "84EF349DA9FD804363B17C81E338B2E1")
     public K getKey() {
 K var6A95247616A3A8B93CFF7783DABD08D4_460635772 =         key;
@@ -103,6 +104,7 @@ K var6A95247616A3A8B93CFF7783DABD08D4_460635772 =         key;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.242 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "29A93CF1CC192CBE1C5203ACBDF756F0")
     public V getValue() {
 V varAF280DA2BC37D8BE783D8499160168DE_415404468 =         value;
@@ -126,6 +128,7 @@ V varAF280DA2BC37D8BE783D8499160168DE_415404468 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.243 -0400", hash_original_method = "123DAF07FFBE76C8EE5BD5879EB92827", hash_generated_method = "290CA4DDFCD3D88C3F29D74BFBA30D93")
     public V setValue(V object) {
         V result = value;

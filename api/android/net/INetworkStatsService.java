@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.net.INetworkStatsService";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.net.INetworkStatsService)iin);
 }
 return new android.net.INetworkStatsService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -200,11 +202,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -306,7 +310,8 @@ _data.recycle();
 return _result;
 }
 
-public android.net.NetworkStats getSummaryForAllUid(android.net.NetworkTemplate template, long start, long end, boolean includeTags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.net.NetworkStats getSummaryForAllUid(android.net.NetworkTemplate template, long start, long end, boolean includeTags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -339,7 +344,8 @@ _data.recycle();
 return _result;
 }
 
-public android.net.NetworkStats getDataLayerSnapshotForUid(int uid) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkStats getDataLayerSnapshotForUid(int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -363,7 +369,8 @@ _data.recycle();
 return _result;
 }
 
-public void incrementOperationCount(int uid, int tag, int operationCount) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void incrementOperationCount(int uid, int tag, int operationCount) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -381,7 +388,8 @@ _data.recycle();
 }
 }
 
-public void setUidForeground(int uid, boolean uidForeground) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setUidForeground(int uid, boolean uidForeground) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -398,7 +406,8 @@ _data.recycle();
 }
 }
 
-public void forceUpdate() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void forceUpdate() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

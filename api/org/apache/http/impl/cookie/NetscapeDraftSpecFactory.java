@@ -18,6 +18,7 @@ public class NetscapeDraftSpecFactory implements CookieSpecFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.991 -0400", hash_original_method = "34FA08500657FDD515515AEEA52740F3", hash_generated_method = "0D8D4A5BE1B08BE1EABC45789148F989")
     public CookieSpec newInstance(final HttpParams params) {
         addTaint(params.getTaint());

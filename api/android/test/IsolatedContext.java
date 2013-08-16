@@ -248,6 +248,7 @@ Account[] varF35A7B4D3EBC7623DF9EB3A949846B5B_2026429804 =             new Accou
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.772 -0400", hash_original_method = "5A38E85AB6C8568CBD9DDFB8A2598F70", hash_generated_method = "D2351E59045609D42BE93B05855D25B9")
         public AccountManagerFuture<Account[]> getAccountsByTypeAndFeatures(
                 final String type, final String[] features,

@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.nfc.INfcAdapter";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.nfc.INfcAdapter)iin);
 }
 return new android.nfc.INfcAdapter.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -154,15 +156,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public android.nfc.INfcTag getNfcTagInterface() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.nfc.INfcTag getNfcTagInterface() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -179,7 +184,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.nfc.INfcAdapterExtras getNfcAdapterExtrasInterface(java.lang.String pkg) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.nfc.INfcAdapterExtras getNfcAdapterExtrasInterface(java.lang.String pkg) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -197,7 +203,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -214,7 +221,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean disable() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean disable() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -231,7 +239,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean enable() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean enable() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -248,7 +257,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean enableNdefPush() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean enableNdefPush() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -265,7 +275,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean disableNdefPush() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean disableNdefPush() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -282,7 +293,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isNdefPushEnabled() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isNdefPushEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

@@ -13,9 +13,11 @@ import android.util.Log;
 public interface WindowManager extends ViewManager {
     
     public static class BadTokenException extends RuntimeException {
+        @DSModeled(DSC.SAFE)
         public BadTokenException() {
         }
 
+        @DSModeled(DSC.SAFE)
         public BadTokenException(String name) {
             super(name);
         }
@@ -377,6 +379,7 @@ public interface WindowManager extends ViewManager {
         public int privateFlags;
 
         
+        @DSModeled(DSC.SAFE)
         public static boolean mayUseInputMethod(int flags) {
             switch (flags&(FLAG_NOT_FOCUSABLE|FLAG_ALT_FOCUSABLE_IM)) {
                 case 0:
@@ -491,18 +494,21 @@ public interface WindowManager extends ViewManager {
         
         public int inputFeatures;
 
+        @DSModeled(DSC.SAFE)
         public LayoutParams() {
             super(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             type = TYPE_APPLICATION;
             format = PixelFormat.OPAQUE;
         }
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(int _type) {
             super(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             type = _type;
             format = PixelFormat.OPAQUE;
         }
     
+        @DSModeled(DSC.SAFE)
         public LayoutParams(int _type, int _flags) {
             super(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             type = _type;
@@ -510,6 +516,7 @@ public interface WindowManager extends ViewManager {
             format = PixelFormat.OPAQUE;
         }
     
+        @DSModeled(DSC.SAFE)
         public LayoutParams(int _type, int _flags, int _format) {
             super(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             type = _type;
@@ -517,6 +524,7 @@ public interface WindowManager extends ViewManager {
             format = _format;
         }
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(int w, int h, int _type, int _flags, int _format) {
             super(w, h);
             type = _type;
@@ -524,6 +532,7 @@ public interface WindowManager extends ViewManager {
             format = _format;
         }
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(int w, int h, int xpos, int ypos, int _type,
                 int _flags, int _format) {
             super(w, h);
@@ -534,6 +543,7 @@ public interface WindowManager extends ViewManager {
             format = _format;
         }
     
+        @DSModeled(DSC.SAFE)
         public final void setTitle(CharSequence title) {
             if (null == title)
                 title = "";
@@ -541,14 +551,17 @@ public interface WindowManager extends ViewManager {
             mTitle = TextUtils.stringOrSpannedString(title);
         }
     
+        @DSModeled(DSC.SAFE)
         public final CharSequence getTitle() {
             return mTitle;
         }
     
+        @DSModeled(DSC.SAFE)
         public int describeContents() {
             return 0;
         }
 
+        @DSModeled(DSC.SAFE)
         public void writeToParcel(Parcel out, int parcelableFlags) {
             out.writeInt(width);
             out.writeInt(height);
@@ -579,16 +592,19 @@ public interface WindowManager extends ViewManager {
         
         public static final Parcelable.Creator<LayoutParams> CREATOR
                     = new Parcelable.Creator<LayoutParams>() {
+            @DSModeled(DSC.SAFE)
             public LayoutParams createFromParcel(Parcel in) {
                 return new LayoutParams(in);
             }
     
+            @DSModeled(DSC.SAFE)
             public LayoutParams[] newArray(int size) {
                 return new LayoutParams[size];
             }
         };
     
     
+        @DSModeled(DSC.SAFE)
         public LayoutParams(Parcel in) {
             width = in.readInt();
             height = in.readInt();
@@ -646,6 +662,7 @@ public interface WindowManager extends ViewManager {
         
         private int[] mCompatibilityParamsBackup = null;
         
+        @DSModeled(DSC.SAFE)
         public final int copyFrom(LayoutParams o) {
             int changes = 0;
     
@@ -765,6 +782,7 @@ public interface WindowManager extends ViewManager {
             return changes;
         }
     
+        @DSModeled(DSC.SAFE)
         @Override
         public String debug(String output) {
             output += "Contents of " + this + ":";
@@ -776,6 +794,7 @@ public interface WindowManager extends ViewManager {
             return "";
         }
     
+        @DSModeled(DSC.SAFE)
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder(256);
@@ -859,6 +878,7 @@ public interface WindowManager extends ViewManager {
         }
 
         
+        @DSModeled(DSC.BAN)
         public void scale(float scale) {
             x = (int) (x * scale + 0.5f);
             y = (int) (y * scale + 0.5f);
@@ -871,6 +891,7 @@ public interface WindowManager extends ViewManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         void backup() {
             int[] backup = mCompatibilityParamsBackup;
             if (backup == null) {
@@ -884,6 +905,7 @@ public interface WindowManager extends ViewManager {
         }
 
         
+        @DSModeled(DSC.SAFE)
         void restore() {
             int[] backup = mCompatibilityParamsBackup;
             if (backup != null) {

@@ -49,6 +49,7 @@ extends CharSequence, GetChars, Spannable, Appendable
     public static class Factory {
         private static Editable.Factory sInstance = new Editable.Factory();
         
+        @DSModeled(DSC.SAFE)
         private Factory() {
         	//Synthensized constructor
         }

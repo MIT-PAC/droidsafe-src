@@ -26,6 +26,7 @@ public class DefaultUserTokenHandler implements UserTokenHandler {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.869 -0400", hash_original_method = "C085E1B104B611601D851A47FC5A6C7D", hash_generated_method = "A0CC5EE5928B1768518C994847505C2C")
     public Object getUserToken(final HttpContext context) {
         addTaint(context.getTaint());
@@ -63,6 +64,7 @@ Object var0CDBC293F5686809A28657B94AD2C0FD_155878320 =         userPrincipal;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Principal getAuthPrincipal(final AuthState authState) {
         AuthScheme scheme = authState.getAuthScheme();
         if (scheme != null && scheme.isComplete() && scheme.isConnectionBased()) {

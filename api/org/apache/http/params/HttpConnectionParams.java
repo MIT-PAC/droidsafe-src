@@ -14,6 +14,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getSoTimeout(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -22,6 +23,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setSoTimeout(final HttpParams params, int timeout) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -30,6 +32,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean getTcpNoDelay(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -39,6 +42,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setTcpNoDelay(final HttpParams params, boolean value) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -47,6 +51,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getSocketBufferSize(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -56,6 +61,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setSocketBufferSize(final HttpParams params, int size) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -64,6 +70,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getLinger(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -89,6 +96,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setConnectionTimeout(final HttpParams params, int timeout) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -98,6 +106,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isStaleCheckingEnabled(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");

@@ -24,6 +24,7 @@ public final class BasicHttpParams extends AbstractHttpParams implements Seriali
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.194 -0400", hash_original_method = "B548E6F0EBE84EE65DD3D63619F6DBC3", hash_generated_method = "87E100FD5F34D5117BAA67C0F0D40643")
     public Object getParameter(final String name) {
         addTaint(name.getTaint());
@@ -126,6 +127,7 @@ for(int i = 0;i < names.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.197 -0400", hash_original_method = "DA4682045050DAC8AB210F57CB41214B", hash_generated_method = "DDF78BFDB9DDE6ECEF8AC728E75D576C")
     public boolean isParameterSetLocally(final String name) {
         addTaint(name.getTaint());

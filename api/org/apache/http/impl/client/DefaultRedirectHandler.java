@@ -36,6 +36,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.716 -0400", hash_original_method = "03F3AE903C1DF30A5B96C5B08682C8BA", hash_generated_method = "41D4D7C81E24A85E49C88B0BF083A225")
     public boolean isRedirectRequested(
             final HttpResponse response,
@@ -79,6 +80,7 @@ switch(statusCode){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.720 -0400", hash_original_method = "21747B99F20BEEB46FB81199FFB99B8C", hash_generated_method = "45EA369CF770069B804E499C59E2E04A")
     public URI getLocationURI(
             final HttpResponse response, 

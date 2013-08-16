@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.app.IWallpaperManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.app.IWallpaperManager asInterface(android.os.IBinder obj)
+@DSModeled(DSC.BAN)
+        public static android.app.IWallpaperManager asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((android.app.IWallpaperManager)iin);
 }
 return new android.app.IWallpaperManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -148,20 +151,24 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.app.IWallpaperManager
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.BAN)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public android.os.ParcelFileDescriptor setWallpaper(java.lang.String name) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.os.ParcelFileDescriptor setWallpaper(java.lang.String name) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -234,7 +241,8 @@ _data.recycle();
 return _result;
 }
 
-public android.app.WallpaperInfo getWallpaperInfo() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.app.WallpaperInfo getWallpaperInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -257,7 +265,8 @@ _data.recycle();
 return _result;
 }
 
-public void clearWallpaper() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void clearWallpaper() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -272,7 +281,8 @@ _data.recycle();
 }
 }
 
-public void setDimensionHints(int width, int height) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setDimensionHints(int width, int height) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -289,7 +299,8 @@ _data.recycle();
 }
 }
 
-public int getWidthHint() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getWidthHint() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -307,7 +318,8 @@ _data.recycle();
 return _result;
 }
 
-public int getHeightHint() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getHeightHint() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

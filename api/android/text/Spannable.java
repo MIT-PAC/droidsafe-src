@@ -16,16 +16,19 @@ extends Spanned
     public static class Factory {
         private static Spannable.Factory sInstance = new Spannable.Factory();
         
+        @DSModeled(DSC.SAFE)
         private Factory() {
         	//Synthetic method
         }
 
          
+        @DSModeled(DSC.SAFE)
         public static Spannable.Factory getInstance() {
             return sInstance;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public Spannable newSpannable(CharSequence source) {
             return new SpannableString(source);
         }

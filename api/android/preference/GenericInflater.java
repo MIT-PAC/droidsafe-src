@@ -338,6 +338,7 @@ T var19048E9B5FBA4BA561E1AC6C48A6F349_1005244084 =         createItem(name, mDef
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.270 -0400", hash_original_method = "8A20619C5B186F5C05E29B17BC664D21", hash_generated_method = "D2B193FF9F143D2903EE19489E32C6D8")
     private final T createItemFromTag(XmlPullParser parser, String name, AttributeSet attrs) {
         addTaint(attrs.getTaint());
@@ -393,6 +394,7 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_761532127 =             item;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.271 -0400", hash_original_method = "DD09A710ED93B5E593984A56AAF093F3", hash_generated_method = "CA8186DA00BF87069C9E2D4E182CAF7F")
     private void rInflate(XmlPullParser parser, T parent, final AttributeSet attrs) throws XmlPullParserException, IOException {
         addTaint(attrs.getTaint());
@@ -439,6 +441,7 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_761532127 =             item;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.271 -0400", hash_original_method = "19860FA740DE510446609E99D1C237FB", hash_generated_method = "5108F3E9BF91F76D2BE48EBBE0C35417")
     protected boolean onCreateCustomFromTag(XmlPullParser parser, T parent,
             final AttributeSet attrs) throws XmlPullParserException {

@@ -18,6 +18,7 @@ public class HttpGet extends HttpRequestBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.426 -0400", hash_original_method = "31474A7F59CE66F27E23571A1F0DC0EA", hash_generated_method = "5836DA1D051A606B6242F1ABC917AC67")
     public  HttpGet(final URI uri) {
         super();

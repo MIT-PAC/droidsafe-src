@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.s
 {
 private static final java.lang.String DESCRIPTOR = "android.security.IKeyChainAliasCallback";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.security.IKeyChainAliasCallback asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.security.IKeyChainAliasCallback asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,11 +28,13 @@ return ((android.security.IKeyChainAliasCallback)iin);
 }
 return new android.security.IKeyChainAliasCallback.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -58,11 +62,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }

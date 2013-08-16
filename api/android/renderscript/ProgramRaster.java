@@ -83,6 +83,7 @@ CullMode var152C0F26D3190115F1B1B5CD185268F6_1389726823 =         mCullMode;
         FRONT (1),
         NONE (2);
         int mID;
+        @DSModeled(DSC.BAN)
         CullMode(int id) {
             mID = id;
         }

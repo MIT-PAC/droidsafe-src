@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.accessibilityservice.IAccessibilityServiceConnection";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,11 +27,13 @@ return ((android.accessibilityservice.IAccessibilityServiceConnection)iin);
 }
 return new android.accessibilityservice.IAccessibilityServiceConnection.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -153,11 +156,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -183,7 +188,8 @@ _data.recycle();
 }
 }
 
-public float findAccessibilityNodeInfoByAccessibilityId(int accessibilityWindowId, int accessibilityViewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public float findAccessibilityNodeInfoByAccessibilityId(int accessibilityWindowId, int accessibilityViewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -206,7 +212,8 @@ _data.recycle();
 return _result;
 }
 
-public float findAccessibilityNodeInfosByViewText(java.lang.String text, int accessibilityWindowId, int accessibilityViewId, int interractionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public float findAccessibilityNodeInfosByViewText(java.lang.String text, int accessibilityWindowId, int accessibilityViewId, int interractionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -230,7 +237,8 @@ _data.recycle();
 return _result;
 }
 
-public float findAccessibilityNodeInfosByViewTextInActiveWindow(java.lang.String text, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public float findAccessibilityNodeInfosByViewTextInActiveWindow(java.lang.String text, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -252,7 +260,8 @@ _data.recycle();
 return _result;
 }
 
-public float findAccessibilityNodeInfoByViewIdInActiveWindow(int viewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public float findAccessibilityNodeInfoByViewIdInActiveWindow(int viewId, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -274,7 +283,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean performAccessibilityAction(int accessibilityWindowId, int accessibilityViewId, int action, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean performAccessibilityAction(int accessibilityWindowId, int accessibilityViewId, int action, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

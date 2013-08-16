@@ -26,7 +26,8 @@ return ((com.android.internal.telephony.IWapPushManager)iin);
 }
 return new com.android.internal.telephony.IWapPushManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -128,16 +129,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.SAFE)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public int processMessage(java.lang.String app_id, java.lang.String content_type, android.content.Intent intent) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public int processMessage(java.lang.String app_id, java.lang.String content_type, android.content.Intent intent) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

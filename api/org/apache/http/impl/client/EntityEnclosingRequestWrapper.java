@@ -38,6 +38,7 @@ HttpEntity varB0390008473457B24431D383C02B7BE2_1840634265 =         this.entity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.882 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;

@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.b
 {
 private static final java.lang.String DESCRIPTOR = "android.bluetooth.IBluetoothHeadset";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.bluetooth.IBluetoothHeadset)iin);
 }
 return new android.bluetooth.IBluetoothHeadset.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -349,11 +351,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -466,7 +470,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setPriority(android.bluetooth.BluetoothDevice device, int priority) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean setPriority(android.bluetooth.BluetoothDevice device, int priority) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -491,7 +496,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getPriority(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getPriority(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -589,7 +595,8 @@ return _result;
 }
 
 
-public int getBatteryUsageHint(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getBatteryUsageHint(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -687,7 +694,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean cancelConnectThread() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean cancelConnectThread() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

@@ -21,6 +21,7 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
 
     private Wire wire;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.166 -0400", hash_original_method = "9B52F273E26CB5D7F7BAD01E854C0200", hash_generated_method = "68AE7CE59A1FBCC69C9ADB138EB35B44")
     public  LoggingSessionOutputBuffer(final SessionOutputBuffer out, final Wire wire) {
         super();

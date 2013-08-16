@@ -22,6 +22,7 @@ public class BasicResponseHandler implements ResponseHandler<String> {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.267 -0400", hash_original_method = "2A5E0F0DC068B1165A25576DA590B50A", hash_generated_method = "B110CBD2261469E411B04223FE9CD60F")
     public String handleResponse(final HttpResponse response) throws HttpResponseException, IOException {
         addTaint(response.getTaint());

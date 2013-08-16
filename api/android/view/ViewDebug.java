@@ -348,11 +348,13 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void profileViewAndChildren(final View view, BufferedWriter out) throws IOException {
         profileViewAndChildren(view, out, true);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void profileViewAndChildren(final View view, BufferedWriter out, boolean root) throws IOException {
         long durationMeasure =
                 (root || (view.mPrivateFlags & View.MEASURED_DIMENSION_SET) != 0) ? profileViewOperation(
@@ -440,6 +442,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static <T> long profileViewOperation(View view, final ViewOperation<T> operation) {
         final CountDownLatch latch = new CountDownLatch(1);
         final long[] duration = new long[1];
@@ -470,6 +473,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void captureLayers(View root, final DataOutputStream clientStream) throws IOException {
         try {
             Rect outRect = new Rect();
@@ -531,6 +535,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void capture(View root, final OutputStream clientStream, String parameter) throws IOException {
         final View captureView = findView(root, parameter);
         Bitmap b = performViewCapture(captureView, false);
@@ -552,6 +557,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Bitmap performViewCapture(final View captureView, final boolean skpiChildren) {
         if (captureView != null) {
             final CountDownLatch latch = new CountDownLatch(1);

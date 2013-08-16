@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.app.backup.IBackupManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,11 +27,13 @@ return ((android.app.backup.IBackupManager)iin);
 }
 return new android.app.backup.IBackupManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -288,11 +291,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -379,7 +384,8 @@ _data.recycle();
 }
 }
 
-public void setBackupEnabled(boolean isEnabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setBackupEnabled(boolean isEnabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -395,7 +401,8 @@ _data.recycle();
 }
 }
 
-public void setAutoRestore(boolean doAutoRestore) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setAutoRestore(boolean doAutoRestore) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -411,7 +418,8 @@ _data.recycle();
 }
 }
 
-public void setBackupProvisioned(boolean isProvisioned) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setBackupProvisioned(boolean isProvisioned) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -427,7 +435,8 @@ _data.recycle();
 }
 }
 
-public boolean isBackupEnabled() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isBackupEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -465,7 +474,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean hasBackupPassword() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hasBackupPassword() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -483,7 +493,8 @@ _data.recycle();
 return _result;
 }
 
-public void backupNow() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void backupNow() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -567,7 +578,8 @@ _data.recycle();
 }
 }
 
-public java.lang.String getCurrentTransport() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getCurrentTransport() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -585,7 +597,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String[] listAllTransports() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] listAllTransports() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -603,7 +616,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String selectBackupTransport(java.lang.String transport) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String selectBackupTransport(java.lang.String transport) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -622,7 +636,8 @@ _data.recycle();
 return _result;
 }
 
-public android.content.Intent getConfigurationIntent(java.lang.String transport) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public android.content.Intent getConfigurationIntent(java.lang.String transport) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -646,7 +661,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getDestinationString(java.lang.String transport) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getDestinationString(java.lang.String transport) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -685,7 +701,8 @@ _data.recycle();
 return _result;
 }
 
-public void opComplete(int token) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void opComplete(int token) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

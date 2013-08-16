@@ -183,6 +183,7 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         WRAP (3),
         CLAMP (4);
         int mID;
+        @DSModeled(DSC.BAN)
         Value(int id) {
             mID = id;
         }

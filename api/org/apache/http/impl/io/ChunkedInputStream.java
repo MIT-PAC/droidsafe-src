@@ -325,6 +325,7 @@ Header[] var9FFC098F6658A5A943CD9CFF2C06B71C_12854951 =         (Header[])this.f
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void exhaustInputStream(final InputStream inStream) throws IOException {
         byte buffer[] = new byte[1024];
         while (inStream.read(buffer) >= 0) {

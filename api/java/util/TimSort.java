@@ -596,7 +596,7 @@ class TimSort<T> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.759 -0400", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "98893F5CE5B12AAF4AC591D4435DC3D0")
     private T[] ensureCapacity(int minCapacity) {
         addTaint(minCapacity);

@@ -18,6 +18,7 @@ public class URIUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static URI createURI(
             final String scheme,
             final String host,
@@ -55,6 +56,7 @@ public class URIUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static URI rewriteURI(
             final URI uri, 
             final HttpHost target,
@@ -82,6 +84,7 @@ public class URIUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static URI rewriteURI(
             final URI uri, 
             final HttpHost target) throws URISyntaxException {
@@ -89,11 +92,13 @@ public class URIUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static URI resolve(final URI baseURI, final String reference) {
         return URIUtils.resolve(baseURI, URI.create(reference));
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static URI resolve(final URI baseURI, URI reference) {
         if (baseURI == null) {
             throw new IllegalArgumentException("Base URI may nor be null");

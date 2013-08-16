@@ -21,6 +21,7 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public final static String formatElements(final HeaderElement[] elems,
                               final boolean quote,
                               HeaderValueFormatter formatter) {
@@ -30,6 +31,7 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.789 -0400", hash_original_method = "3B962169F247D53704261A5A24F1A431", hash_generated_method = "057D0187E0768CCDBA74E05F1DE2027C")
     public CharArrayBuffer formatElements(CharArrayBuffer buffer,
                                           final HeaderElement[] elems,
@@ -85,6 +87,7 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_699731864 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.790 -0400", hash_original_method = "62CDCB67E7EC0B179AEAB50C07EF0602", hash_generated_method = "8444B2E487454AC73C9DD8D24749E409")
     protected int estimateElementsLen(final HeaderElement[] elems) {
         addTaint(elems[0].getTaint());
@@ -113,6 +116,7 @@ for(int i=0;i<elems.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static String formatHeaderElement(final HeaderElement elem,
                                    boolean quote,
                                    HeaderValueFormatter formatter) {
@@ -192,6 +196,7 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_920462969 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.792 -0400", hash_original_method = "8E6899628E610E70351C174244187E71", hash_generated_method = "0F24D153E162073CC6CA5A642720AEEA")
     protected int estimateHeaderElementLen(final HeaderElement elem) {
         addTaint(elem.getTaint());
@@ -238,6 +243,7 @@ for(int i=0;i<parcnt;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static String formatParameters(final NameValuePair[] nvps,
                                 final boolean quote,
                                 HeaderValueFormatter formatter) {
@@ -303,6 +309,7 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_780645178 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.795 -0400", hash_original_method = "C68A0319865C468C0B8527915CD85227", hash_generated_method = "62EFA48EAEAFFAF244ED2281D37B86FF")
     protected int estimateParametersLen(final NameValuePair[] nvps) {
         addTaint(nvps[0].getTaint());
@@ -331,6 +338,7 @@ for(int i=0;i<nvps.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static String formatNameValuePair(final NameValuePair nvp,
                                    final boolean quote,
                                    HeaderValueFormatter formatter) {
@@ -394,6 +402,7 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1808750356 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.797 -0400", hash_original_method = "91AA35E40301ABCAA7663733F9252D07", hash_generated_method = "312CEA6270F2D65AAE488FCC428F380A")
     protected int estimateNameValuePairLen(final NameValuePair nvp) {
         addTaint(nvp.getTaint());

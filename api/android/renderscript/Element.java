@@ -956,6 +956,7 @@ for(int i = 0;i < numSubElements;i ++)
         RS_PROGRAM_STORE (1009, 4);
         int mID;
         int mSize;
+        @DSModeled(DSC.SAFE)
         DataType(int id, int size) {
             mID = id;
             mSize = size;
@@ -972,6 +973,7 @@ for(int i = 0;i < numSubElements;i ++)
         PIXEL_RGBA (11),
         PIXEL_DEPTH (12);
         int mID;
+        @DSModeled(DSC.BAN)
         DataKind(int id) {
             mID = id;
         }

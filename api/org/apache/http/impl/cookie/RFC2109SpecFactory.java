@@ -18,6 +18,7 @@ public class RFC2109SpecFactory implements CookieSpecFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.118 -0400", hash_original_method = "319F84F2475AFEEE24E68A878D2B0074", hash_generated_method = "CA52BEFBC0B10DD81B1A0B5931E0527D")
     public CookieSpec newInstance(final HttpParams params) {
         addTaint(params.getTaint());

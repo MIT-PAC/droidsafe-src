@@ -124,6 +124,7 @@ NameValuePair varA110B53CAEF3F85A3C14AF777DCEB7F7_265695726 =         this.param
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.733 -0400", hash_original_method = "EB48045459F47CF0118B0835F7086CA0", hash_generated_method = "D5005445C4F6F331AF39608453DD7B45")
     public NameValuePair getParameterByName(final String name) {
         addTaint(name.getTaint());

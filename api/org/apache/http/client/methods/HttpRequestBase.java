@@ -102,6 +102,7 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_1565140925 =         new BasicRe
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.208 -0400", hash_original_method = "3320A765B2CE48350AC27D9599EAC026", hash_generated_method = "C72876729647E8A3A80A7FBC268F56B2")
     public void setURI(final URI uri) {
         this.uri = uri;

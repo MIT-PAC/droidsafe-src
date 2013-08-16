@@ -192,6 +192,7 @@ Context var76636B45E4D1C87FF9777E5D70C7AB46_1891283509 =         mTestContext;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.289 -0400", hash_original_method = "A497F47748432DFEA008CEEF9E1905F4", hash_generated_method = "8CDA4FE41F3074A63A3EB90C694B2F0C")
     protected void scrubClass(final Class<?> testCaseClass) throws IllegalAccessException {
         addTaint(testCaseClass.getTaint());

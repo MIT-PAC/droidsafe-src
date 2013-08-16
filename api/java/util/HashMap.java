@@ -456,7 +456,7 @@ V var540C13E9E156B687226421B24F2DF178_1149995742 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.973 -0400", hash_original_method = "23837E71B15780DD12C36C21FB15F598", hash_generated_method = "C216BF2169AA7B12DC38EC472391C3C8")
     private V putValueForNullKey(V value) {
         addTaint(value.getTaint());
@@ -779,7 +779,7 @@ V var540C13E9E156B687226421B24F2DF178_262724475 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.976 -0400", hash_original_method = "C27EF61BE4179F161C4389258A9892DE", hash_generated_method = "70B79646709BF4795B950183DFC9B160")
     private V removeNullKey() {
         HashMapEntry<K, V> e = entryForNullKey;

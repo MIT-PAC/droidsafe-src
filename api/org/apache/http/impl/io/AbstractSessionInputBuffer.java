@@ -184,6 +184,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.430 -0400", hash_original_method = "5A83C8A4FAF4774EC1C7C0472F5C75E8", hash_generated_method = "6A373C976F0A79F277B2576E0FA6F3E4")
     public int read(final byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -283,6 +284,7 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.433 -0400", hash_original_method = "473C0DD8FF067FE4EC2BE597B4124765", hash_generated_method = "E98C7263481D961D1AAA2E835B4D9036")
     public int readLine(final CharArrayBuffer charbuffer) throws IOException {
         addTaint(charbuffer.getTaint());
@@ -347,6 +349,7 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.434 -0400", hash_original_method = "729842E116E7795B9747338D0779180E", hash_generated_method = "35DA7303FBFECA164F4F191E13D32ECF")
     private int lineFromLineBuffer(final CharArrayBuffer charbuffer) throws IOException {
         addTaint(charbuffer.getTaint());
@@ -405,6 +408,7 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.435 -0400", hash_original_method = "E6FBFD5C83985C7D6E27D18B8C3822A9", hash_generated_method = "D76672085F36E909944C122C23392E89")
     private int lineFromReadBuffer(final CharArrayBuffer charbuffer, int pos) throws IOException {
         addTaint(charbuffer.getTaint());

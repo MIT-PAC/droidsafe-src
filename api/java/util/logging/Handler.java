@@ -83,6 +83,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_457755045 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.107 -0400", hash_original_method = "B808F11DA6FC61C942B2D7F2A86E3C09", hash_generated_method = "84ED8BF4B111FA0EF381A5FC5215950A")
     private Object getCustomizeInstance(final String className) throws Exception {
         addTaint(className.getTaint());

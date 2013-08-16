@@ -20,6 +20,7 @@ public interface CommandsInterface {
         NV_NOT_READY(3),      
         NV_READY(3);          
 
+        @DSModeled(DSC.BAN)
         public boolean isOn()  {
             return this == SIM_NOT_READY
                     || this == SIM_LOCKED_OR_ABSENT

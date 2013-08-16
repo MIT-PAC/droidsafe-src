@@ -37,6 +37,7 @@ public class BasicSecureHandler extends AbstractCookieAttributeHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.660 -0400", hash_original_method = "4FA33B6CF0EDC25DCB9ED37E197D753F", hash_generated_method = "5AAC8B509B18743388AF472280CEF17D")
     @Override
     public boolean match(final Cookie cookie, final CookieOrigin origin) {

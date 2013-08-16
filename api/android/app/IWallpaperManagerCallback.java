@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.app.IWallpaperManagerCallback";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.app.IWallpaperManagerCallback)iin);
 }
 return new android.app.IWallpaperManagerCallback.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -51,20 +53,24 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.app.IWallpaperManagerCallback
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public void onWallpaperChanged() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onWallpaperChanged() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

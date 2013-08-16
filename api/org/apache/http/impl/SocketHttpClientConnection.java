@@ -65,6 +65,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.354 -0400", hash_original_method = "AA92EF53C1C7E5C18A171AB9C4BA46D7", hash_generated_method = "59B37466BDE38A70FB895C5F04110644")
     protected SessionInputBuffer createSessionInputBuffer(
             final Socket socket, 
@@ -81,6 +82,7 @@ SessionInputBuffer var37442DDBB4EC5DBB61A49580F0DD0085_1327552192 =         new 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.354 -0400", hash_original_method = "188D8B42816E97B142A63887C343A4D5", hash_generated_method = "FDBB1692784F212986FD1A01BC6FE4F2")
     protected SessionOutputBuffer createSessionOutputBuffer(
             final Socket socket, 
@@ -97,6 +99,7 @@ SessionOutputBuffer var95460FC2529DBA317C2C68B6FFB37D8D_1862255505 =         new
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.355 -0400", hash_original_method = "05B6F703A6A9BCF9CC38B84399416D78", hash_generated_method = "DBE7407A3A22EA86026D21056B42460D")
     protected void bind(
             final Socket socket, 

@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.app.admin.IDevicePolicyManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.app.admin.IDevicePolicyManager asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.app.admin.IDevicePolicyManager asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((android.app.admin.IDevicePolicyManager)iin);
 }
 return new android.app.admin.IDevicePolicyManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -724,15 +727,18 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.app.admin.IDevicePolicyManager
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -942,7 +948,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getPasswordMinimumLetters(android.content.ComponentName who) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getPasswordMinimumLetters(android.content.ComponentName who) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1150,7 +1157,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setPasswordExpirationTimeout(android.content.ComponentName who, long expiration) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setPasswordExpirationTimeout(android.content.ComponentName who, long expiration) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1196,7 +1204,8 @@ _data.recycle();
 }
 return _result;
 }
-public long getPasswordExpiration(android.content.ComponentName who) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public long getPasswordExpiration(android.content.ComponentName who) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1220,7 +1229,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isActivePasswordSufficient() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isActivePasswordSufficient() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1237,7 +1247,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getCurrentFailedPasswordAttempts() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getCurrentFailedPasswordAttempts() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1276,7 +1287,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getMaximumFailedPasswordsForWipe(android.content.ComponentName admin) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getMaximumFailedPasswordsForWipe(android.content.ComponentName admin) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1365,7 +1377,8 @@ _data.recycle();
 }
 return _result;
 }
-public void lockNow() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void lockNow() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1379,7 +1392,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void wipeData(int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void wipeData(int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1425,7 +1439,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.ComponentName getGlobalProxyAdmin() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.content.ComponentName getGlobalProxyAdmin() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1496,7 +1511,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getStorageEncryptionStatus() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getStorageEncryptionStatus() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1535,7 +1551,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean getCameraDisabled(android.content.ComponentName who) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean getCameraDisabled(android.content.ComponentName who) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1622,7 +1639,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean packageHasActiveAdmins(java.lang.String packageName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean packageHasActiveAdmins(java.lang.String packageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1640,7 +1658,8 @@ _data.recycle();
 }
 return _result;
 }
-public void getRemoveWarning(android.content.ComponentName policyReceiver, android.os.RemoteCallback result) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void getRemoveWarning(android.content.ComponentName policyReceiver, android.os.RemoteCallback result) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1714,7 +1733,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setActivePasswordState(int quality, int length, int letters, int uppercase, int lowercase, int numbers, int symbols, int nonletter) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setActivePasswordState(int quality, int length, int letters, int uppercase, int lowercase, int numbers, int symbols, int nonletter) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1736,7 +1756,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void reportFailedPasswordAttempt() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void reportFailedPasswordAttempt() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1750,7 +1771,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void reportSuccessfulPasswordAttempt() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void reportSuccessfulPasswordAttempt() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

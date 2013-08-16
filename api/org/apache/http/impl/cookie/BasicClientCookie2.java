@@ -22,6 +22,7 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
 
     private boolean discard;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.576 -0400", hash_original_method = "B06BAED2E07D7F9218D98A385CC362B8", hash_generated_method = "4A126B79B154DB4D1F86BF2812224D99")
     public  BasicClientCookie2(final String name, final String value) {
         super(name, value);
@@ -43,6 +44,7 @@ public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.577 -0400", hash_original_method = "764909B3E1563DDB6A65C5637CB4CC25", hash_generated_method = "C9B871E54B4C065A0B7E18343F865239")
     public void setPorts(final int[] ports) {
         this.ports = ports;
@@ -63,6 +65,7 @@ String var0A98D510D3863CB5F81697FCEFEEC4BF_758526515 =         this.commentURL;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.578 -0400", hash_original_method = "D3350C04B38359935C8E8B49E5A32164", hash_generated_method = "0459F7D7F51F9287B0A6EC8A909F9C50")
     public void setCommentURL(final String commentURL) {
         this.commentURL = commentURL;
@@ -92,6 +95,7 @@ String var0A98D510D3863CB5F81697FCEFEEC4BF_758526515 =         this.commentURL;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.579 -0400", hash_original_method = "D5A8F73F69F1E942ED94DA98E7190BDB", hash_generated_method = "50AAAC264CB85152B18E43C558DB5695")
     @Override
     public boolean isExpired(final Date date) {

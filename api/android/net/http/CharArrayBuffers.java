@@ -19,6 +19,7 @@ class CharArrayBuffers {
     }
 
 
+    @DSModeled(DSC.BAN)
     static boolean containsIgnoreCaseTrimmed(CharArrayBuffer buffer,
             int beginIndex, final String str) {
         int len = buffer.length();
@@ -41,6 +42,7 @@ class CharArrayBuffers {
     }
 
     
+    @DSModeled(DSC.BAN)
     static int setLowercaseIndexOf(CharArrayBuffer buffer, final int ch) {
         int beginIndex = 0;
         int endIndex = buffer.length();

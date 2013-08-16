@@ -24,6 +24,7 @@ public abstract class CookieSpecBase extends AbstractCookieSpec {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected static String getDefaultPath(final CookieOrigin origin) {
         String defaultPath = origin.getPath();
         int lastSlashIndex = defaultPath.lastIndexOf('/');
@@ -37,6 +38,7 @@ public abstract class CookieSpecBase extends AbstractCookieSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static String getDefaultDomain(final CookieOrigin origin) {
         return origin.getHost();
     }

@@ -1122,6 +1122,7 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_1038541492 =         mS
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.861 -0400", hash_original_method = "74FCB7875112FE9C3AB647C4DB8DEDB6", hash_generated_method = "77A52066D21C916EEF65A1D097E2B9C8")
     private boolean setupZoomOverviewWidth(WebViewCore.DrawData drawData, final int viewWidth) {
         addTaint(viewWidth);

@@ -884,6 +884,7 @@ Map<String, String> var2AF78D255D26C3C84C3DB61E3A8BCBD5_1445404204 =         new
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.580 -0400", hash_original_method = "4DBAD15B0F91A1B1A1A509E057CF6487", hash_generated_method = "BE518D50FDA188705AEA47437C9E816A")
     private void setJournalMode(final String dbPath, final String mode) {
         addTaint(mode.getTaint());

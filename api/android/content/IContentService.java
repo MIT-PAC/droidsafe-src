@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.c
 {
 private static final java.lang.String DESCRIPTOR = "android.content.IContentService";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,11 +27,13 @@ return ((android.content.IContentService)iin);
 }
 return new android.content.IContentService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -380,15 +383,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void registerContentObserver(android.net.Uri uri, boolean notifyForDescendentsn, android.database.IContentObserver observer) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public void registerContentObserver(android.net.Uri uri, boolean notifyForDescendentsn, android.database.IContentObserver observer) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -426,7 +432,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void notifyChange(android.net.Uri uri, android.database.IContentObserver observer, boolean observerWantsSelfNotifications, boolean syncToNetwork) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public void notifyChange(android.net.Uri uri, android.database.IContentObserver observer, boolean observerWantsSelfNotifications, boolean syncToNetwork) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -450,7 +457,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void requestSync(android.accounts.Account account, java.lang.String authority, android.os.Bundle extras) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void requestSync(android.accounts.Account account, java.lang.String authority, android.os.Bundle extras) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -479,7 +487,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void cancelSync(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void cancelSync(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -528,7 +537,8 @@ _data.recycle();
 return _result;
 }
 
-public void setSyncAutomatically(android.accounts.Account account, java.lang.String providerName, boolean sync) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setSyncAutomatically(android.accounts.Account account, java.lang.String providerName, boolean sync) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -639,7 +649,8 @@ _data.recycle();
 }
 }
 
-public int getIsSyncable(android.accounts.Account account, java.lang.String providerName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getIsSyncable(android.accounts.Account account, java.lang.String providerName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -688,7 +699,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setMasterSyncAutomatically(boolean flag) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setMasterSyncAutomatically(boolean flag) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -703,7 +715,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean getMasterSyncAutomatically() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean getMasterSyncAutomatically() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -721,7 +734,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isSyncActive(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean isSyncActive(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -764,7 +778,8 @@ _data.recycle();
 return _result;
 }
 
-public android.content.SyncAdapterType[] getSyncAdapterTypes() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.content.SyncAdapterType[] getSyncAdapterTypes() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -813,7 +828,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isSyncPending(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean isSyncPending(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -838,7 +854,8 @@ _data.recycle();
 }
 return _result;
 }
-public void addStatusChangeListener(int mask, android.content.ISyncStatusObserver callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void addStatusChangeListener(int mask, android.content.ISyncStatusObserver callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -854,7 +871,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void removeStatusChangeListener(android.content.ISyncStatusObserver callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void removeStatusChangeListener(android.content.ISyncStatusObserver callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

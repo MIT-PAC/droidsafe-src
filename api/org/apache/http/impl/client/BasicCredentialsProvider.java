@@ -48,6 +48,7 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Credentials matchCredentials(
             final HashMap<AuthScope, Credentials> map, 
             final AuthScope authscope) {

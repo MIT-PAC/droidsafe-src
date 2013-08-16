@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.accounts.IAccountManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.accounts.IAccountManager)iin);
 }
 return new android.accounts.IAccountManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -382,15 +384,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public java.lang.String getPassword(android.accounts.Account account) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getPassword(android.accounts.Account account) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -439,7 +444,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.accounts.AuthenticatorDescription[] getAuthenticatorTypes() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.accounts.AuthenticatorDescription[] getAuthenticatorTypes() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -456,7 +462,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.accounts.Account[] getAccounts(java.lang.String accountType) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.accounts.Account[] getAccounts(java.lang.String accountType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -584,7 +591,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public java.lang.String peekAuthToken(android.accounts.Account account, java.lang.String authTokenType) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String peekAuthToken(android.accounts.Account account, java.lang.String authTokenType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -756,7 +764,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void updateCredentials(android.accounts.IAccountManagerResponse response, android.accounts.Account account, java.lang.String authTokenType, boolean expectActivityLaunch, android.os.Bundle options) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void updateCredentials(android.accounts.IAccountManagerResponse response, android.accounts.Account account, java.lang.String authTokenType, boolean expectActivityLaunch, android.os.Bundle options) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

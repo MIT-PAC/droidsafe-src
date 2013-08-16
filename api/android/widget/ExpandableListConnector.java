@@ -63,6 +63,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.382 -0400", hash_original_method = "1168BEC82030FA7343EA44D40ECA13BC", hash_generated_method = "048D1B26F404B6FC152542AE44019C2C")
      PositionMetadata getUnflattenedPos(final int flPos) {
         addTaint(flPos);
@@ -144,6 +145,7 @@ PositionMetadata var0286E2BBC69197A9CBE39684ACEAAC4E_896243061 =         Positio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.384 -0400", hash_original_method = "1D3F8862F07489DB803D2A10735D7C2B", hash_generated_method = "3C50271F722D56A41961B8EC57160FAE")
      PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
         addTaint(pos.getTaint());

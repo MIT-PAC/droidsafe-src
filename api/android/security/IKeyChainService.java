@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.s
 {
 private static final java.lang.String DESCRIPTOR = "android.security.IKeyChainService";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.security.IKeyChainService)iin);
 }
 return new android.security.IKeyChainService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -121,11 +123,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -149,7 +153,8 @@ _data.recycle();
 }
 return _result;
 }
-public byte[] getCertificate(java.lang.String alias) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public byte[] getCertificate(java.lang.String alias) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -169,7 +174,8 @@ return _result;
 }
 
 
-public void installCaCertificate(byte[] caCertificate) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void installCaCertificate(byte[] caCertificate) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -204,7 +210,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean reset() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean reset() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

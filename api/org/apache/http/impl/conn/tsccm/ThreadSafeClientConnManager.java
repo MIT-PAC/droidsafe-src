@@ -71,6 +71,7 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.474 -0400", hash_original_method = "E5BC66DBF19261346819AE7E60C7F467", hash_generated_method = "B937B11514E0487DFACA6487CDF959E9")
     protected AbstractConnPool createConnectionPool(final HttpParams params) {
         addTaint(params.getTaint());

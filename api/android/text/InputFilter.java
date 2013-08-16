@@ -36,10 +36,12 @@ public interface InputFilter
 
     
     public static class LengthFilter implements InputFilter {
+        @DSModeled(DSC.SAFE)
         public LengthFilter(int max) {
             mMax = max;
         }
 
+        @DSModeled(DSC.SAFE)
         public CharSequence filter(CharSequence source, int start, int end,
                                    Spanned dest, int dstart, int dend) {
             int keep = mMax - (dest.length() - (dend - dstart));

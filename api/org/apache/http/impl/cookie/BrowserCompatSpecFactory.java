@@ -18,6 +18,7 @@ public class BrowserCompatSpecFactory implements CookieSpecFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.786 -0400", hash_original_method = "57B736694D04F685316FEE33170F38F5", hash_generated_method = "74BC54B47A46E8ABA6EEAA64BBD5B14F")
     public CookieSpec newInstance(final HttpParams params) {
         addTaint(params.getTaint());

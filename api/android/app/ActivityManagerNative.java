@@ -4207,6 +4207,7 @@ String varB5053E025797B3BF768F5C37934C244D_673200407 =         res;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:42.061 -0400", hash_original_method = "BE5C38AE92A5EE5CE45944FF93295090", hash_generated_method = "D665481180F226ADCEB40ADD6B865E77")
     public boolean clearApplicationUserData(final String packageName,
             final IPackageDataObserver observer) throws RemoteException {

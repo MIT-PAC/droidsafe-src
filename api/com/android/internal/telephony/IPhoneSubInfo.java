@@ -26,7 +26,8 @@ return ((com.android.internal.telephony.IPhoneSubInfo)iin);
 }
 return new com.android.internal.telephony.IPhoneSubInfo.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -153,16 +154,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.SAFE)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.SAFE)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public java.lang.String getDeviceId() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getDeviceId() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -180,7 +184,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getDeviceSvn() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getDeviceSvn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -198,7 +203,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getSubscriberId() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getSubscriberId() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -216,7 +222,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getIccSerialNumber() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getIccSerialNumber() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -234,7 +241,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getLine1Number() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getLine1Number() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -252,7 +260,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getLine1AlphaTag() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getLine1AlphaTag() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -270,7 +279,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getMsisdn() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getMsisdn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -288,7 +298,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getVoiceMailNumber() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getVoiceMailNumber() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -324,7 +335,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getVoiceMailAlphaTag() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getVoiceMailAlphaTag() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -342,7 +354,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getIsimImpi() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getIsimImpi() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -360,7 +373,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getIsimDomain() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getIsimDomain() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

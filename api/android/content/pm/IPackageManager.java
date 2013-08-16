@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.c
 {
 private static final java.lang.String DESCRIPTOR = "android.content.pm.IPackageManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.content.pm.IPackageManager)iin);
 }
 return new android.content.pm.IPackageManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -1178,15 +1180,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public android.content.pm.PackageInfo getPackageInfo(java.lang.String packageName, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.content.pm.PackageInfo getPackageInfo(java.lang.String packageName, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1228,7 +1233,8 @@ _data.recycle();
 }
 return _result;
 }
-public int[] getPackageGids(java.lang.String packageName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int[] getPackageGids(java.lang.String packageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1246,7 +1252,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] currentToCanonicalPackageNames(java.lang.String[] names) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String[] currentToCanonicalPackageNames(java.lang.String[] names) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1325,7 +1332,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.pm.PermissionGroupInfo getPermissionGroupInfo(java.lang.String name, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.content.pm.PermissionGroupInfo getPermissionGroupInfo(java.lang.String name, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1391,7 +1399,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.pm.ActivityInfo getActivityInfo(android.content.ComponentName className, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.content.pm.ActivityInfo getActivityInfo(android.content.ComponentName className, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1481,7 +1490,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.pm.ProviderInfo getProviderInfo(android.content.ComponentName className, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.content.pm.ProviderInfo getProviderInfo(android.content.ComponentName className, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1511,7 +1521,8 @@ _data.recycle();
 }
 return _result;
 }
-public int checkPermission(java.lang.String permName, java.lang.String pkgName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int checkPermission(java.lang.String permName, java.lang.String pkgName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1588,7 +1599,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isProtectedBroadcast(java.lang.String actionName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean isProtectedBroadcast(java.lang.String actionName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1625,7 +1637,8 @@ _data.recycle();
 }
 return _result;
 }
-public int checkUidSignatures(int uid1, int uid2) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int checkUidSignatures(int uid1, int uid2) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1644,7 +1657,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] getPackagesForUid(int uid) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getPackagesForUid(int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1662,7 +1676,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String getNameForUid(int uid) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getNameForUid(int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1698,7 +1713,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.pm.ResolveInfo resolveIntent(android.content.Intent intent, java.lang.String resolvedType, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public android.content.pm.ResolveInfo resolveIntent(android.content.Intent intent, java.lang.String resolvedType, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1816,7 +1832,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.pm.ResolveInfo resolveService(android.content.Intent intent, java.lang.String resolvedType, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public android.content.pm.ResolveInfo resolveService(android.content.Intent intent, java.lang.String resolvedType, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1874,7 +1891,8 @@ _data.recycle();
 return _result;
 }
 
-public android.content.pm.ParceledListSlice getInstalledPackages(int flags, java.lang.String lastRead) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.content.pm.ParceledListSlice getInstalledPackages(int flags, java.lang.String lastRead) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1899,7 +1917,8 @@ _data.recycle();
 return _result;
 }
 
-public android.content.pm.ParceledListSlice getInstalledApplications(int flags, java.lang.String lastRead) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.content.pm.ParceledListSlice getInstalledApplications(int flags, java.lang.String lastRead) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1942,7 +1961,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.pm.ProviderInfo resolveContentProvider(java.lang.String name, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.content.pm.ProviderInfo resolveContentProvider(java.lang.String name, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2055,7 +2075,8 @@ _data.recycle();
 return _result;
 }
 
-public void installPackage(android.net.Uri packageURI, android.content.pm.IPackageInstallObserver observer, int flags, java.lang.String installerPackageName) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public void installPackage(android.net.Uri packageURI, android.content.pm.IPackageInstallObserver observer, int flags, java.lang.String installerPackageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2079,7 +2100,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void finishPackageInstall(int token) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void finishPackageInstall(int token) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2128,7 +2150,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public java.lang.String getInstallerPackageName(java.lang.String packageName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String getInstallerPackageName(java.lang.String packageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2161,7 +2184,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void removePackageFromPreferred(java.lang.String packageName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void removePackageFromPreferred(java.lang.String packageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2467,7 +2491,8 @@ _data.recycle();
 }
 }
 
-public void getPackageSizeInfo(java.lang.String packageName, android.content.pm.IPackageStatsObserver observer) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void getPackageSizeInfo(java.lang.String packageName, android.content.pm.IPackageStatsObserver observer) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2484,7 +2509,8 @@ _data.recycle();
 }
 }
 
-public java.lang.String[] getSystemSharedLibraryNames() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getSystemSharedLibraryNames() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2502,7 +2528,8 @@ _data.recycle();
 return _result;
 }
 
-public android.content.pm.FeatureInfo[] getSystemAvailableFeatures() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.content.pm.FeatureInfo[] getSystemAvailableFeatures() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2537,7 +2564,8 @@ _data.recycle();
 }
 return _result;
 }
-public void enterSafeMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void enterSafeMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2551,7 +2579,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isSafeMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isSafeMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2568,7 +2597,8 @@ _data.recycle();
 }
 return _result;
 }
-public void systemReady() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void systemReady() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2582,7 +2612,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean hasSystemUidErrors() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hasSystemUidErrors() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2600,7 +2631,8 @@ _data.recycle();
 return _result;
 }
 
-public void performBootDexOpt() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void performBootDexOpt() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2634,7 +2666,8 @@ _data.recycle();
 return _result;
 }
 
-public void updateExternalMediaStatus(boolean mounted, boolean reportStatus) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void updateExternalMediaStatus(boolean mounted, boolean reportStatus) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2650,7 +2683,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public java.lang.String nextPackageToClean(java.lang.String lastPackage) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public java.lang.String nextPackageToClean(java.lang.String lastPackage) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2668,7 +2702,8 @@ _data.recycle();
 }
 return _result;
 }
-public void movePackage(java.lang.String packageName, android.content.pm.IPackageMoveObserver observer, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void movePackage(java.lang.String packageName, android.content.pm.IPackageMoveObserver observer, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2709,7 +2744,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setInstallLocation(int loc) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean setInstallLocation(int loc) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2727,7 +2763,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getInstallLocation() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getInstallLocation() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2768,7 +2805,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean removeUser(int userId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean removeUser(int userId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2786,7 +2824,8 @@ _data.recycle();
 }
 return _result;
 }
-public void installPackageWithVerification(android.net.Uri packageURI, android.content.pm.IPackageInstallObserver observer, int flags, java.lang.String installerPackageName, android.net.Uri verificationURI, android.content.pm.ManifestDigest manifestDigest) throws android.os.RemoteException
+@DSModeled(DSC.SPEC)
+            public void installPackageWithVerification(android.net.Uri packageURI, android.content.pm.IPackageInstallObserver observer, int flags, java.lang.String installerPackageName, android.net.Uri verificationURI, android.content.pm.ManifestDigest manifestDigest) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2824,7 +2863,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void verifyPendingInstall(int id, int verificationCode) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void verifyPendingInstall(int id, int verificationCode) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2840,7 +2880,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.content.pm.VerifierDeviceIdentity getVerifierDeviceIdentity() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.content.pm.VerifierDeviceIdentity getVerifierDeviceIdentity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2862,7 +2903,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isFirstBoot() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isFirstBoot() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

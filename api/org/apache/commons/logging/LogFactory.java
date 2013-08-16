@@ -387,6 +387,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static LogFactory newFactory(final String factoryClass,
                                            final ClassLoader classLoader,
                                            final ClassLoader contextClassLoader) throws LogConfigurationException {
@@ -414,6 +415,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     protected static LogFactory newFactory(final String factoryClass,
                                            final ClassLoader classLoader) {
         return newFactory(factoryClass, classLoader, null);
@@ -552,6 +554,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static InputStream getResourceAsStream(final ClassLoader loader,
                                                    final String name) {
         return (InputStream)AccessController.doPrivileged(
@@ -567,6 +570,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Enumeration getResources(final ClassLoader loader,
             final String name) {
         PrivilegedAction action = 
@@ -595,6 +599,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Properties getProperties(final URL url) {
         PrivilegedAction action = 
             new PrivilegedAction() {

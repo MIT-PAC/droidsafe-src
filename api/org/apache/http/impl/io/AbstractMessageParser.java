@@ -37,6 +37,7 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
 
     protected LineParser lineParser;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.373 -0400", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "F4B1AC6889A3B2D6999787D723602472")
     public  AbstractMessageParser(
             final SessionInputBuffer buffer,
@@ -77,6 +78,7 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Header[] parseHeaders(
             final SessionInputBuffer inbuffer,
             int maxHeaderCount,

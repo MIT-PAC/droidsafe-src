@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.h
 {
 private static final java.lang.String DESCRIPTOR = "android.hardware.usb.IUsbManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.hardware.usb.IUsbManager)iin);
 }
 return new android.hardware.usb.IUsbManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -291,15 +293,18 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.hardware.usb.IUsbManager
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -346,7 +351,8 @@ _data.recycle();
 return _result;
 }
 
-public android.hardware.usb.UsbAccessory getCurrentAccessory() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.hardware.usb.UsbAccessory getCurrentAccessory() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -399,7 +405,8 @@ _data.recycle();
 return _result;
 }
 
-public void setDevicePackage(android.hardware.usb.UsbDevice device, java.lang.String packageName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setDevicePackage(android.hardware.usb.UsbDevice device, java.lang.String packageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -495,7 +502,8 @@ _data.recycle();
 return _result;
 }
 
-public void requestDevicePermission(android.hardware.usb.UsbDevice device, java.lang.String packageName, android.app.PendingIntent pi) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void requestDevicePermission(android.hardware.usb.UsbDevice device, java.lang.String packageName, android.app.PendingIntent pi) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -525,7 +533,8 @@ _data.recycle();
 }
 }
 
-public void requestAccessoryPermission(android.hardware.usb.UsbAccessory accessory, java.lang.String packageName, android.app.PendingIntent pi) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void requestAccessoryPermission(android.hardware.usb.UsbAccessory accessory, java.lang.String packageName, android.app.PendingIntent pi) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -555,7 +564,8 @@ _data.recycle();
 }
 }
 
-public void grantDevicePermission(android.hardware.usb.UsbDevice device, int uid) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void grantDevicePermission(android.hardware.usb.UsbDevice device, int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -578,7 +588,8 @@ _data.recycle();
 }
 }
 
-public void grantAccessoryPermission(android.hardware.usb.UsbAccessory accessory, int uid) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void grantAccessoryPermission(android.hardware.usb.UsbAccessory accessory, int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -620,7 +631,8 @@ _data.recycle();
 return _result;
 }
 
-public void clearDefaults(java.lang.String packageName) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void clearDefaults(java.lang.String packageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

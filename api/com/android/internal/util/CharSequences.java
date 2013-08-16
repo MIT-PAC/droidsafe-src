@@ -15,6 +15,7 @@ public class CharSequences {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static CharSequence forAsciiBytes(final byte[] bytes) {
         return new CharSequence() {
             @DSModeled(DSC.SAFE)
@@ -35,6 +36,7 @@ public class CharSequences {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence forAsciiBytes(final byte[] bytes,
             final int start, final int end) {
         validate(start, end, bytes.length);

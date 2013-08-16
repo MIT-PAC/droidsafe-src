@@ -128,6 +128,7 @@ String var0478718F0636FB61899C13801CE9FE09_187277600 =         s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.154 -0400", hash_original_method = "456F99C71B313CB59FF46BB7AC385CAA", hash_generated_method = "7DEF71F264D4432C025F730CBCB065BF")
     public int readLine(final CharArrayBuffer buffer) throws IOException {
         addTaint(buffer.getTaint());

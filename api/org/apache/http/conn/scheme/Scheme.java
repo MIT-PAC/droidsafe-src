@@ -28,6 +28,7 @@ public final class Scheme {
 
     private String stringRep;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.983 -0400", hash_original_method = "FC3EBEAFEA712CD3115701A02487AC2E", hash_generated_method = "03FC8FFF8B51D798755E6B085E631E17")
     public  Scheme(final String name,
                   final SocketFactory factory,

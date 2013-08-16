@@ -55,6 +55,7 @@ public final class CookieSpecRegistry {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.168 -0400", hash_original_method = "7F517F7E1779C641A5E7B828D148D2B3", hash_generated_method = "74FB1139022E12F2F0FEE39B33D0A488")
     public synchronized void unregister(final String id) {
         addTaint(id.getTaint());
@@ -73,6 +74,7 @@ public final class CookieSpecRegistry {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.168 -0400", hash_original_method = "8996807FE7E231444D0F4F50C2BE4E33", hash_generated_method = "696E04EA553A97AF1B1C627C3BFA2D0E")
     public synchronized CookieSpec getCookieSpec(final String name, final HttpParams params) throws IllegalStateException {
         addTaint(params.getTaint());
@@ -109,6 +111,7 @@ CookieSpec varB5D01F4327DBBC343676B65A86A05A58_1975905501 =             factory.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.169 -0400", hash_original_method = "44CB7B6D7C3249DF9FE20C6D12DA10E7", hash_generated_method = "C8515555A043050EA2B93C5DC5064FC3")
     public synchronized CookieSpec getCookieSpec(final String name) throws IllegalStateException {
         addTaint(name.getTaint());

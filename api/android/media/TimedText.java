@@ -446,6 +446,7 @@ for(int i = 0;i < entryCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.337 -0400", hash_original_method = "9BAFED3979BE76875AB5C6D705EB5845", hash_generated_method = "7FBC88907AA494A01D9B3E8F49BC9A82")
     public boolean isValidKey(final int key) {
         addTaint(key);
@@ -468,6 +469,7 @@ for(int i = 0;i < entryCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.337 -0400", hash_original_method = "9397D6B2A6748EB9B0D75013A7674AB7", hash_generated_method = "0CE9E77813E4A851B5EEF73CE6931BFA")
     public boolean containsKey(final int key) {
         addTaint(key);
@@ -499,6 +501,7 @@ Set varBBC4C0AAD9644B71B43DA8509843FD46_1233482818 =         mKeyObjectMap.keySe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.338 -0400", hash_original_method = "E013B89BFA963BB8F029FE138EDADA51", hash_generated_method = "6106DC3AA267491E5697A3993AB3CC9E")
     public Object getObject(final int key) {
         addTaint(key);

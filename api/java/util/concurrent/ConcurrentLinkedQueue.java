@@ -754,7 +754,7 @@ for(Node<E> p = first();p != null;p = succ(p))
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.730 -0400", hash_original_method = "530B75A5B8DF2D5033AF3BE4C3DEE1C2", hash_generated_method = "FB1C2D51DC8757480B0A901438224A88")
         private E advance() {
             lastRet = nextNode;

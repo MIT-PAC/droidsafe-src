@@ -81,7 +81,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.770 -0400", hash_original_method = "088E691065B085AAA9856C71AD537C28", hash_generated_method = "D6A38108D0F472EE1508408B82FFDB6D")
     @SuppressWarnings("unchecked")
     private E[] newElementArray(int size) {

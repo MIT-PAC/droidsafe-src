@@ -525,6 +525,7 @@ String var68CFAAB40FE81B389C40EF166B3D7E7E_1594039173 =             key1.toStrin
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.138 -0400", hash_original_method = "8E21854AE9ADC89A1868BC4522219FB2", hash_generated_method = "02AC37E1A3677196DFC97D59077ECB15")
         public E getKey1() {
 E var1DFC6AC0D2D727F36FD87608E8DCDD41_1584280199 =             key1;
@@ -535,6 +536,7 @@ E var1DFC6AC0D2D727F36FD87608E8DCDD41_1584280199 =             key1;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.138 -0400", hash_original_method = "7F02D1AD568FC6C2F60475D661F743CB", hash_generated_method = "279659BF90FB4C886AD1DDA6C6C53FBC")
         public K getKey2() {
 K varA654CD75EFA94D4E93625838DEFFD3AA_427994556 =             key2;

@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.textservice.ITextServicesManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((com.android.internal.textservice.ITextServicesManager)iin);
 }
 return new com.android.internal.textservice.ITextServicesManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -156,15 +158,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public android.view.textservice.SpellCheckerInfo getCurrentSpellChecker(java.lang.String locale) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.view.textservice.SpellCheckerInfo getCurrentSpellChecker(java.lang.String locale) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -187,7 +192,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.view.textservice.SpellCheckerSubtype getCurrentSpellCheckerSubtype(java.lang.String locale, boolean allowImplicitlySelectedSubtype) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.view.textservice.SpellCheckerSubtype getCurrentSpellCheckerSubtype(java.lang.String locale, boolean allowImplicitlySelectedSubtype) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -258,7 +264,8 @@ finally {
 _data.recycle();
 }
 }
-public void setCurrentSpellCheckerSubtype(java.lang.String locale, int hashCode) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setCurrentSpellCheckerSubtype(java.lang.String locale, int hashCode) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -271,7 +278,8 @@ finally {
 _data.recycle();
 }
 }
-public void setSpellCheckerEnabled(boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setSpellCheckerEnabled(boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -283,7 +291,8 @@ finally {
 _data.recycle();
 }
 }
-public boolean isSpellCheckerEnabled() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isSpellCheckerEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -300,7 +309,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.view.textservice.SpellCheckerInfo[] getEnabledSpellCheckers() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.view.textservice.SpellCheckerInfo[] getEnabledSpellCheckers() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

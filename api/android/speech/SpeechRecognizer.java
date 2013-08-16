@@ -85,6 +85,7 @@ switch(msg.what){
 
     private final InternalListener mListener = new InternalListener();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.218 -0400", hash_original_method = "501952D87180FDD5A7C8687B64627639", hash_generated_method = "0467EC6C791C177B4C120C9E915154E8")
     private  SpeechRecognizer(final Context context, final ComponentName serviceComponent) {
         mContext = context;
@@ -102,11 +103,13 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SpeechRecognizer createSpeechRecognizer(final Context context) {
         return createSpeechRecognizer(context, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SpeechRecognizer createSpeechRecognizer(final Context context,
             final ComponentName serviceComponent) {
         if (context == null) {
@@ -129,6 +132,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.221 -0400", hash_original_method = "88CA4DC9FEC4470B022FF2313B42E756", hash_generated_method = "03D10FDEEFF202187D07066E13B9CE55")
     public void startListening(final Intent recognizerIntent) {
         addTaint(recognizerIntent.getTaint());
@@ -384,6 +388,7 @@ switch(msg.what){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.229 -0400", hash_original_method = "A482946B66588C02F73749F3E3304B88", hash_generated_method = "5E4548CB5E969C50AAE15E6C04B39ECD")
         public void onServiceConnected(final ComponentName name, final IBinder service) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -406,6 +411,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.230 -0400", hash_original_method = "C567EEB0F8B99E207D7273B6531D37A6", hash_generated_method = "061E2D9F4054FAFE762FBD30FE305D63")
         public void onServiceDisconnected(final ComponentName name) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -496,6 +502,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.232 -0400", hash_original_method = "440BB1FF5EAB849BC7B5A9B2BDE64DB2", hash_generated_method = "CAC8DBC23909E24C9C3D7347DE9B28C2")
         public void onBufferReceived(final byte[] buffer) {
             //DSFIXME:  CODE0009: Possible callback target function detected

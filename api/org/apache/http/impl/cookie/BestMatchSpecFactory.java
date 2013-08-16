@@ -18,6 +18,7 @@ public class BestMatchSpecFactory implements CookieSpecFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.717 -0400", hash_original_method = "2201EB1DC86453D4D2DD6749773278D9", hash_generated_method = "F87EDE2C44AAF4E370FE9E7CD2F51D76")
     public CookieSpec newInstance(final HttpParams params) {
         addTaint(params.getTaint());

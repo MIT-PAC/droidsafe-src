@@ -502,6 +502,7 @@ Animator var91452894FB20F2545760279496A05CEA_2073711516 =         mDisappearingA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.236 -0400", hash_original_method = "388160589FFEE2126FAAE5CBAFC89998", hash_generated_method = "2ADDC9DE884A03C7753B4EE0C2CD35FA")
     private void runChangeTransition(final ViewGroup parent, View newView, final int changeReason) {
         addTaint(changeReason);
@@ -598,6 +599,7 @@ for(View view : views)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.257 -0400", hash_original_method = "108854515942B7EF6A63499B84E31466", hash_generated_method = "DB554CE1174DC372D2649329C61FFB43")
     private void setupChangeAnimation(final ViewGroup parent, final int changeReason,
             Animator baseAnimator, final long duration, final View child) {
@@ -895,6 +897,7 @@ for(Animator anim : currentAnimCopy.values())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.291 -0400", hash_original_method = "071036D6A0EA050ACF09A35752DC1D52", hash_generated_method = "94A9C3BDD89E9DB1E2701526F96BB6D3")
     private void runAppearingTransition(final ViewGroup parent, final View child) {
         addTaint(child.getTaint());
@@ -951,6 +954,7 @@ for(TransitionListener listener : mListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.303 -0400", hash_original_method = "202CDBACC5F0926CC1D7E1540267464D", hash_generated_method = "1D79B123659B108ABE1A8C692FCDDCF2")
     private void runDisappearingTransition(final ViewGroup parent, final View child) {
         addTaint(child.getTaint());

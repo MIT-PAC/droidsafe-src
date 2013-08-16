@@ -162,6 +162,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.988 -0400", hash_original_method = "7123F2F991682C288B1EB84DFD3ADE3C", hash_generated_method = "2022F221659337AB9CD6D018F6DE8495")
     public void setXIncludeAware(final boolean state) {
         addTaint(state);

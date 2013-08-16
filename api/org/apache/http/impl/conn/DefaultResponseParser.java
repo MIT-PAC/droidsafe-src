@@ -64,6 +64,7 @@ public class DefaultResponseParser extends AbstractMessageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.105 -0400", hash_original_method = "C18012C1F40BC670B50816FED9E30E72", hash_generated_method = "62AB0D9B1EBDE6FA0BF6A1957F164A04")
     @Override
     protected HttpMessage parseHead(

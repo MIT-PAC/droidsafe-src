@@ -345,6 +345,7 @@ String var7008830BBF5901458C7F9C81D44DB32A_1665225864 =         fName;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Test warning(final String message) {
         return new TestCase("warning") {
             protected void runTest() {

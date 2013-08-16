@@ -26,6 +26,7 @@ public final class EntityUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(final HttpEntity entity) throws IOException {
         if (entity == null) {
             throw new IllegalArgumentException("HTTP entity may not be null");
@@ -55,6 +56,7 @@ public final class EntityUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getContentCharSet(final HttpEntity entity) throws ParseException {
         if (entity == null) {
             throw new IllegalArgumentException("HTTP entity may not be null");
@@ -73,6 +75,7 @@ public final class EntityUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(
             final HttpEntity entity, final String defaultCharset) throws IOException, ParseException {
         if (entity == null) {
@@ -111,6 +114,7 @@ public final class EntityUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toString(final HttpEntity entity) throws IOException, ParseException {
         return toString(entity, null);
     }

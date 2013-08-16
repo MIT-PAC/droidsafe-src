@@ -316,6 +316,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_127232092 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.805 -0400", hash_original_method = "168ADC282E12956DAABD30E8715DF8C4", hash_generated_method = "79E8DA41ECA9F62975CE1CB5E8F87DDC")
     public void setOnDismissListener(final OnDismissListener listener) {
         mDismissListener = listener;

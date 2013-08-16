@@ -56,6 +56,7 @@ public abstract class AbstractCookieSpec implements CookieSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.527 -0400", hash_original_method = "BCC9FF9C8AB53BB12822345DA7DF2FF0", hash_generated_method = "89291137683F1A7E3BD7616BDD9E27E7")
     protected CookieAttributeHandler findAttribHandler(final String name) {
         addTaint(name.getTaint());
@@ -67,6 +68,7 @@ CookieAttributeHandler var7CB6F905BCF04D6249C4063CC6DBE304_748946437 =         t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.527 -0400", hash_original_method = "F6557A039F439C9724E0D7B320BEE361", hash_generated_method = "8058DCB1FE0A33C6E46D593E01CDF160")
     protected CookieAttributeHandler getAttribHandler(final String name) {
         addTaint(name.getTaint());

@@ -50,6 +50,7 @@ public final class CharArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.474 -0400", hash_original_method = "1554F1B702E64F0170BDDCC0C4BCFFD0", hash_generated_method = "4B162B41A2C3258845F8C6DBE22684D9")
     public void append(final char[] b, int off, int len) {
         addTaint(off);
@@ -242,6 +243,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.478 -0400", hash_original_method = "1FCF3DEEF5F4407F6E71047E93ADF346", hash_generated_method = "49730BC943CE4FB60121280D8C8C9DAA")
     public void append(final ByteArrayBuffer b, int off, int len) {
         addTaint(len);

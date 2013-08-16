@@ -492,6 +492,7 @@ Thread varE0D714D758F1540A8DF364A965AF9150_1865533905 =             t;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.436 -0400", hash_original_method = "0BB5C6FA3ECC4446695A9AB19E82A9A9", hash_generated_method = "61D578F034A061841ED18D157F62D535")
         public Thread newThread(final Runnable r) {
             addTaint(r.getTaint());

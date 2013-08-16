@@ -22,6 +22,7 @@ public class DefaultProxyAuthenticationHandler extends AbstractAuthenticationHan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.696 -0400", hash_original_method = "439F158CF98654180ED92C5B006474BF", hash_generated_method = "0CD4CB15E608E230EDECD7444E7C3D66")
     public boolean isAuthenticationRequested(
             final HttpResponse response, 

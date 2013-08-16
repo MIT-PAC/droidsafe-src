@@ -53,6 +53,7 @@ public class RFC2965Spec extends RFC2109Spec {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.230 -0400", hash_original_method = "4409F0FE45DA6FEDE61567597482D361", hash_generated_method = "D73FDA47621E9661260D07652F89DE67")
     private BasicClientCookie createCookie(
             final String name, final String value, final CookieOrigin origin) {
@@ -73,6 +74,7 @@ BasicClientCookie varB4C6ADEB9C3E8E55D6C4EB3F341D441E_390615086 =         cookie
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.231 -0400", hash_original_method = "C203D6CC66BEDFCF9DF77F8143966D25", hash_generated_method = "40A9F23B0CAF7AE921EA86C310695B35")
     private BasicClientCookie createCookie2(
             final String name, final String value, final CookieOrigin origin) {
@@ -164,6 +166,7 @@ List<Cookie> var7A32AB0BC299936B4ABF6C972D767041_260143135 =         cookies;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.233 -0400", hash_original_method = "67EA3E91E653DB3E455D1CE08BD1E58C", hash_generated_method = "E7DC9DC001626E3AE0E82484B9DEDD81")
     @Override
     public void validate(final Cookie cookie, CookieOrigin origin) throws MalformedCookieException {
@@ -195,6 +198,7 @@ List<Cookie> var7A32AB0BC299936B4ABF6C972D767041_260143135 =         cookies;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.234 -0400", hash_original_method = "6825BB2CF6533B26EC949D0ED0CB3EFF", hash_generated_method = "BEF2489B812F602C15F80FA2780A595B")
     @Override
     public boolean match(final Cookie cookie, CookieOrigin origin) {
@@ -266,6 +270,7 @@ for(int i = 0, len = ports.length;i < len;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static CookieOrigin adjustEffectiveHost(final CookieOrigin origin) {
         String host = origin.getHost();
         boolean isLocalHost = true;

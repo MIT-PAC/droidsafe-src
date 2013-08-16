@@ -24,6 +24,7 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public final static HeaderElement[] parseElements(final String value,
                                       HeaderValueParser parser) throws ParseException {
         if (value == null) {
@@ -39,6 +40,7 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.832 -0400", hash_original_method = "5016300DF78E74A02C94B3D9AD513F2B", hash_generated_method = "6B10CAB0EB78DACB5CEC05E1F14B7C00")
     public HeaderElement[] parseElements(final CharArrayBuffer buffer,
                                          final ParserCursor cursor) {
@@ -184,6 +186,7 @@ HeaderElement var7F31DAC00D84C92DB3DA09B50D518202_1258161006 =         new Basic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.835 -0400", hash_original_method = "AD12DE8E127E3F34D456FD84EFD432E9", hash_generated_method = "270E85F043ED36FAFD48B462942D8F2F")
     public NameValuePair[] parseParameters(final CharArrayBuffer buffer,
                                            final ParserCursor cursor) {
@@ -244,6 +247,7 @@ NameValuePair[] var775797A1DB981CCD7D6A3DE99C60A910_1264819741 =         (NameVa
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static NameValuePair parseNameValuePair(final String value,
                                         HeaderValueParser parser) throws ParseException {
         if (value == null) {
@@ -272,6 +276,7 @@ NameValuePair var318CCD15B7AA3EEEC3B989AEA01F0945_1758492287 =         parseName
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isOneOf(final char ch, final char[] chs) {
         if (chs != null) {
             for (int i = 0; i < chs.length; i++) {

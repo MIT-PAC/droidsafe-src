@@ -24,6 +24,7 @@ public class EntityDeserializer {
 
     private ContentLengthStrategy lenStrategy;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.285 -0400", hash_original_method = "43D1E101961C0CA215F907F346FBEAD7", hash_generated_method = "9E65A517B145CEA56991A0E1495409C8")
     public  EntityDeserializer(final ContentLengthStrategy lenStrategy) {
         super();
@@ -42,6 +43,7 @@ public class EntityDeserializer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.286 -0400", hash_original_method = "1D794DD29EBBF563C5B5C17E3457B66D", hash_generated_method = "C7428FB713C93DEC0C36620792AFFB1F")
     protected BasicHttpEntity doDeserialize(
             final SessionInputBuffer inbuffer,

@@ -520,6 +520,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_768269418 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.017 -0400", hash_original_method = "1908B917B7F2E57ADC23D5E48F4386F2", hash_generated_method = "BFEDD3E2F1BC7C8CBF3AF2CA3644354B")
         public Builder setPositiveButton(int textId, final OnClickListener listener) {
             P.mPositiveButtonText = P.mContext.getText(textId);
@@ -534,6 +535,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1345585724 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.018 -0400", hash_original_method = "1500328C36AB679D672A26C184A5FC31", hash_generated_method = "BCB0629197C59D83B61E8D44D8EB4327")
         public Builder setPositiveButton(CharSequence text, final OnClickListener listener) {
             P.mPositiveButtonText = text;
@@ -548,6 +550,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1271100816 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.019 -0400", hash_original_method = "375537371A0A52AA7AA0B24EAC6A7474", hash_generated_method = "639ACB51B11907734BA9F908614BA135")
         public Builder setNegativeButton(int textId, final OnClickListener listener) {
             P.mNegativeButtonText = P.mContext.getText(textId);
@@ -562,6 +565,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1812162133 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.020 -0400", hash_original_method = "50EFB872DEBCC22CFB32B40979906BC8", hash_generated_method = "6B70CF2D3BAB8DEB214DFE9A8BD81358")
         public Builder setNegativeButton(CharSequence text, final OnClickListener listener) {
             P.mNegativeButtonText = text;
@@ -576,6 +580,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1965877369 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.022 -0400", hash_original_method = "0D40DB16A6B6349ABA0D8583C3D4D844", hash_generated_method = "7AB54CED670EBB7CC27C403DCFC5F39C")
         public Builder setNeutralButton(int textId, final OnClickListener listener) {
             P.mNeutralButtonText = P.mContext.getText(textId);
@@ -590,6 +595,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_69162640 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.024 -0400", hash_original_method = "4D91C8A8E1E08D55171F5837D3929412", hash_generated_method = "EF3C01AAD6204D2A70C227EE0641BB52")
         public Builder setNeutralButton(CharSequence text, final OnClickListener listener) {
             P.mNeutralButtonText = text;
@@ -643,6 +649,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1102212499 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.032 -0400", hash_original_method = "6D193582453841FD4D6BB305EA061757", hash_generated_method = "AA83DF773A3D2138E1A7612B08561C2F")
         public Builder setItems(int itemsId, final OnClickListener listener) {
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
@@ -657,6 +664,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1219590025 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.034 -0400", hash_original_method = "AFD2C4146CF077CBCC62EEF7225AE645", hash_generated_method = "74B4A29A1F35FE7C0138051CB8159A7D")
         public Builder setItems(CharSequence[] items, final OnClickListener listener) {
             P.mItems = items;
@@ -671,6 +679,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1482300472 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.037 -0400", hash_original_method = "2FCAEDE0B3C9195EDB3158F22A7C0109", hash_generated_method = "A89CF367BEAEE08C5F0A4B950466329C")
         public Builder setAdapter(final ListAdapter adapter, final OnClickListener listener) {
             P.mAdapter = adapter;
@@ -685,6 +694,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_519620734 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.039 -0400", hash_original_method = "7DFF15703A2CCBB36AC3557F6AE7E187", hash_generated_method = "D904B5F149A0F9C89F9399D941ED46B7")
         public Builder setCursor(final Cursor cursor, final OnClickListener listener,
                 String labelColumn) {
@@ -702,6 +712,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1257976296 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.041 -0400", hash_original_method = "7878252A286B56EBCE9E439D4FCEB298", hash_generated_method = "C84C459099D32D54CFB1E42C523A810D")
         public Builder setMultiChoiceItems(int itemsId, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
@@ -721,6 +732,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_183145158 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.043 -0400", hash_original_method = "73AB6C3AD26EFF6561BAC3BA481ECFD7", hash_generated_method = "6DF3E6B2B733392B670A6E268034D256")
         public Builder setMultiChoiceItems(CharSequence[] items, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
@@ -740,6 +752,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_397081415 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.045 -0400", hash_original_method = "E8A3FFCE7184DC2DAE306B849E312FF3", hash_generated_method = "E1125E75348D765F87AC30A6DA001A73")
         public Builder setMultiChoiceItems(Cursor cursor, String isCheckedColumn, String labelColumn, 
                 final OnMultiChoiceClickListener listener) {
@@ -761,6 +774,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_172881778 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.046 -0400", hash_original_method = "CF9378D7D2AE06BB2F5FFE088D660C44", hash_generated_method = "BB6A18157F30E49F3CA274D6B78CC1A7")
         public Builder setSingleChoiceItems(int itemsId, int checkedItem, 
                 final OnClickListener listener) {
@@ -780,6 +794,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1638587830 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.050 -0400", hash_original_method = "02441459B611830238DF1D8B31546828", hash_generated_method = "AF94B70B6983BDFB6CC69E8323E74876")
         public Builder setSingleChoiceItems(Cursor cursor, int checkedItem, String labelColumn, 
                 final OnClickListener listener) {
@@ -801,6 +816,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_224247942 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.055 -0400", hash_original_method = "7491118E608CEFA972DD3B23E3E7B8C6", hash_generated_method = "A31014734A56E32D87841F1BFEF76C5E")
         public Builder setSingleChoiceItems(CharSequence[] items, int checkedItem, final OnClickListener listener) {
             P.mItems = items;
@@ -819,6 +835,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_478597044 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.058 -0400", hash_original_method = "06BB43759703ED3EE55275B85ACF4622", hash_generated_method = "2A9A62A8F1F34EF73421157174A6F80E")
         public Builder setSingleChoiceItems(ListAdapter adapter, int checkedItem, final OnClickListener listener) {
             P.mAdapter = adapter;

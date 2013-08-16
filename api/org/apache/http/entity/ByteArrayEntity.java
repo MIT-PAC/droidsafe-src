@@ -68,6 +68,7 @@ InputStream varEFD22E670A1626295FDBD437906D30FE_748342161 =         new ByteArra
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.252 -0400", hash_original_method = "F9996C70B2856060246DFF92163DB1CA", hash_generated_method = "CB15D82E84241B1B5213EC10AC9A3BC5")
     public void writeTo(final OutputStream outstream) throws IOException {
         addTaint(outstream.getTaint());

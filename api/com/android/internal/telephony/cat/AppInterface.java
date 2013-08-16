@@ -39,11 +39,13 @@ public interface AppInterface {
             mValue = value;
         }
 
+        @DSModeled(DSC.BAN)
         public int value() {
             return mValue;
         }
 
         
+        @DSModeled(DSC.BAN)
         public static CommandType fromInt(int value) {
             for (CommandType e : CommandType.values()) {
                 if (e.mValue == value) {

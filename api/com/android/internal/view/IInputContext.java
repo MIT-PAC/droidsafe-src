@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.view.IInputContext";
 
-public Stub()
+@DSModeled(DSC.SAFE)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,11 +27,13 @@ return ((com.android.internal.view.IInputContext)iin);
 }
 return new com.android.internal.view.IInputContext.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -305,15 +308,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void getTextBeforeCursor(int length, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void getTextBeforeCursor(int length, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -331,7 +337,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void getTextAfterCursor(int length, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void getTextAfterCursor(int length, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -366,7 +373,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void getExtractedText(android.view.inputmethod.ExtractedTextRequest request, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void getExtractedText(android.view.inputmethod.ExtractedTextRequest request, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -390,7 +398,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void deleteSurroundingText(int leftLength, int rightLength) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void deleteSurroundingText(int leftLength, int rightLength) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -428,7 +437,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void finishComposingText() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void finishComposingText() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -506,7 +516,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setSelection(int start, int end) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setSelection(int start, int end) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -522,7 +533,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void performEditorAction(int actionCode) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void performEditorAction(int actionCode) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -537,7 +549,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void performContextMenuAction(int id) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void performContextMenuAction(int id) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -552,7 +565,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void beginBatchEdit() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void beginBatchEdit() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -566,7 +580,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void endBatchEdit() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void endBatchEdit() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -580,7 +595,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void reportFullscreenMode(boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void reportFullscreenMode(boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -616,7 +632,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void clearMetaKeyStates(int states) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void clearMetaKeyStates(int states) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -653,7 +670,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setComposingRegion(int start, int end) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setComposingRegion(int start, int end) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -669,7 +687,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void getSelectedText(int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void getSelectedText(int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

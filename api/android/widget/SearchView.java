@@ -918,6 +918,7 @@ switch(widthMode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.852 -0400", hash_original_method = "7F3DE149B8C5E14764DBC69CC4EE105A", hash_generated_method = "F19080D6A42C7E560ADEC9CECAC4AD25")
     private void updateViewsVisibility(final boolean collapsed) {
         mIconified = collapsed;
@@ -1096,6 +1097,7 @@ switch(widthMode){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.856 -0400", hash_original_method = "10C83777364EAA061E75B08DB527338D", hash_generated_method = "08711110AD11BC0D9126A2797350EE29")
     private void setImeVisibility(final boolean visible) {
         addTaint(visible);

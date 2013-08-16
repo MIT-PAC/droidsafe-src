@@ -569,6 +569,7 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void modifyFieldIfSet(final Field field, final TypedProperties properties,
                                          final String propertyName) {
         if (field.getType() == java.lang.String.class) {

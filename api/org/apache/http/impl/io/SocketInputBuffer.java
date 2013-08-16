@@ -17,6 +17,7 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
 
     private Socket socket;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.642 -0400", hash_original_method = "7283DB9E346A36B4239C51041B32EE66", hash_generated_method = "857010EDEC3B759C88CA59C08AE425E1")
     public  SocketInputBuffer(
             final Socket socket,

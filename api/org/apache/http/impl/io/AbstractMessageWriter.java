@@ -31,6 +31,7 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
 
     protected LineFormatter lineFormatter;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.385 -0400", hash_original_method = "81470EB0FA2062B136A4D8177B3454ED", hash_generated_method = "E8D22AC1D377D9998615507FFD34F612")
     public  AbstractMessageWriter(final SessionOutputBuffer buffer,
                                  final LineFormatter formatter,
@@ -64,6 +65,7 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
         ;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.385 -0400", hash_original_method = "33F4F2FFED23975C76AB7BEDB0A8854B", hash_generated_method = "AC7B21EA6D46637C22D239D4E28BFE18")
     public void write(
             final HttpMessage message) throws IOException, HttpException {

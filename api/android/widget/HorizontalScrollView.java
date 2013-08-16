@@ -1004,6 +1004,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.037 -0400", hash_original_method = "B34C300D12B589B0218EA4927548AE87", hash_generated_method = "042545AE00ADD425598FC729FC7F459C")
     private View findFocusableViewInMyBounds(final boolean leftFocus,
             final int left, View preferredFocusable) {

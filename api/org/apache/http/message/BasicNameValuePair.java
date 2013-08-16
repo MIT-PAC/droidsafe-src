@@ -70,6 +70,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_851499724 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.428 -0400", hash_original_method = "3849D74FE9AE53A80E5FA00389489FFC", hash_generated_method = "E501B96FDC97F1CADB8113019EE6C063")
     public boolean equals(final Object object) {
         addTaint(object.getTaint());

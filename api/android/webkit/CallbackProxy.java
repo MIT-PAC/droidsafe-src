@@ -2236,6 +2236,7 @@ Uri varE22FFCE020DE18FB2CC526226D95C1A9_345608861 =         uploadFile.getResult
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.883 -0400", hash_original_method = "23B0DB25EF15209B12B4D98F75BC4826", hash_generated_method = "1CC67B1DE228486A08B2C64A649EF681")
         public synchronized void setResult(E result) {
             mResult = result;

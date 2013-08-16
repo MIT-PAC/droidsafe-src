@@ -62,6 +62,7 @@ public class NetscapeDomainHandler extends BasicDomainHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isSpecialDomain(final String domain) {
         final String ucDomain = domain.toUpperCase(Locale.ENGLISH);
         return ucDomain.endsWith(".COM")

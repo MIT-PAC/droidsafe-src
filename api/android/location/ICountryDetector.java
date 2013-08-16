@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.l
 {
 private static final java.lang.String DESCRIPTOR = "android.location.ICountryDetector";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,11 +27,13 @@ return ((android.location.ICountryDetector)iin);
 }
 return new android.location.ICountryDetector.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -81,16 +84,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public android.location.Country detectCountry() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.location.Country detectCountry() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -129,7 +135,8 @@ _data.recycle();
 }
 }
 
-public void removeCountryListener(android.location.ICountryListener listener) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void removeCountryListener(android.location.ICountryListener listener) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

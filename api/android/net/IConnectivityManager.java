@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.net.IConnectivityManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.net.IConnectivityManager)iin);
 }
 return new android.net.IConnectivityManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -539,15 +541,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void setNetworkPreference(int pref) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setNetworkPreference(int pref) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -562,7 +567,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getNetworkPreference() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getNetworkPreference() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -579,7 +585,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.NetworkInfo getActiveNetworkInfo() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkInfo getActiveNetworkInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -601,7 +608,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.NetworkInfo getActiveNetworkInfoForUid(int uid) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkInfo getActiveNetworkInfoForUid(int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -624,7 +632,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.NetworkInfo getNetworkInfo(int networkType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkInfo getNetworkInfo(int networkType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -647,7 +656,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.NetworkInfo[] getAllNetworkInfo() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkInfo[] getAllNetworkInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -664,7 +674,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isNetworkSupported(int networkType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isNetworkSupported(int networkType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -682,7 +693,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.LinkProperties getActiveLinkProperties() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.LinkProperties getActiveLinkProperties() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -704,7 +716,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.LinkProperties getLinkProperties(int networkType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.LinkProperties getLinkProperties(int networkType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -727,7 +740,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.NetworkState[] getAllNetworkState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkState[] getAllNetworkState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -744,7 +758,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.NetworkQuotaInfo getActiveNetworkQuotaInfo() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkQuotaInfo getActiveNetworkQuotaInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -766,7 +781,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setRadios(boolean onOff) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean setRadios(boolean onOff) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -784,7 +800,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setRadio(int networkType, boolean turnOn) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean setRadio(int networkType, boolean turnOn) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -803,7 +820,8 @@ _data.recycle();
 }
 return _result;
 }
-public int startUsingNetworkFeature(int networkType, java.lang.String feature, android.os.IBinder binder) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int startUsingNetworkFeature(int networkType, java.lang.String feature, android.os.IBinder binder) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -842,7 +860,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean requestRouteToHost(int networkType, int hostAddress) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean requestRouteToHost(int networkType, int hostAddress) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -861,7 +880,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean requestRouteToHostAddress(int networkType, byte[] hostAddress) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean requestRouteToHostAddress(int networkType, byte[] hostAddress) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -880,7 +900,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean getMobileDataEnabled() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean getMobileDataEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -897,7 +918,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setMobileDataEnabled(boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setMobileDataEnabled(boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -913,7 +935,8 @@ _data.recycle();
 }
 }
 
-public void setPolicyDataEnable(int networkType, boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setPolicyDataEnable(int networkType, boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -965,7 +988,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getLastTetherError(java.lang.String iface) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getLastTetherError(java.lang.String iface) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -983,7 +1007,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isTetheringSupported() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isTetheringSupported() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1000,7 +1025,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] getTetherableIfaces() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getTetherableIfaces() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1017,7 +1043,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] getTetheredIfaces() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getTetheredIfaces() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1035,7 +1062,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String[] getTetheredIfacePairs() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getTetheredIfacePairs() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1052,7 +1080,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] getTetheringErroredIfaces() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getTetheringErroredIfaces() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1069,7 +1098,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] getTetherableUsbRegexs() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getTetherableUsbRegexs() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1086,7 +1116,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] getTetherableWifiRegexs() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getTetherableWifiRegexs() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1103,7 +1134,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String[] getTetherableBluetoothRegexs() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String[] getTetherableBluetoothRegexs() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1120,7 +1152,8 @@ _data.recycle();
 }
 return _result;
 }
-public int setUsbTethering(boolean enable) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int setUsbTethering(boolean enable) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1153,7 +1186,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void reportInetCondition(int networkType, int percentage) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void reportInetCondition(int networkType, int percentage) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1169,7 +1203,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.net.ProxyProperties getGlobalProxy() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.ProxyProperties getGlobalProxy() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1212,7 +1247,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.net.ProxyProperties getProxy() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.ProxyProperties getProxy() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1234,7 +1270,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setDataDependency(int networkType, boolean met) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setDataDependency(int networkType, boolean met) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1274,7 +1311,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean prepareVpn(java.lang.String oldPackage, java.lang.String newPackage) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean prepareVpn(java.lang.String oldPackage, java.lang.String newPackage) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1345,7 +1383,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public com.android.internal.net.LegacyVpnInfo getLegacyVpnInfo() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public com.android.internal.net.LegacyVpnInfo getLegacyVpnInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

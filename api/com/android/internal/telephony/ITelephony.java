@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.telephony.ITelephony";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((com.android.internal.telephony.ITelephony)iin);
 }
 return new com.android.internal.telephony.ITelephony.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -386,16 +388,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public void dial(java.lang.String number) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void dial(java.lang.String number) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -427,7 +432,8 @@ _data.recycle();
 }
 }
 
-public boolean showCallScreen() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean showCallScreen() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -445,7 +451,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean showCallScreenWithDialpad(boolean showDialpad) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean showCallScreenWithDialpad(boolean showDialpad) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -464,7 +471,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean endCall() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean endCall() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -482,7 +490,8 @@ _data.recycle();
 return _result;
 }
 
-public void answerRingingCall() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void answerRingingCall() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -497,7 +506,8 @@ _data.recycle();
 }
 }
 
-public void silenceRinger() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void silenceRinger() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -512,7 +522,8 @@ _data.recycle();
 }
 }
 
-public boolean isOffhook() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isOffhook() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -530,7 +541,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isRinging() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isRinging() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -548,7 +560,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isIdle() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isIdle() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -566,7 +579,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isRadioOn() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isRadioOn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -584,7 +598,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isSimPinEnabled() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isSimPinEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -602,7 +617,8 @@ _data.recycle();
 return _result;
 }
 
-public void cancelMissedCallsNotification() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void cancelMissedCallsNotification() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -617,7 +633,8 @@ _data.recycle();
 }
 }
 
-public boolean supplyPin(java.lang.String pin) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean supplyPin(java.lang.String pin) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -675,7 +692,8 @@ _data.recycle();
 return _result;
 }
 
-public void toggleRadioOnOff() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void toggleRadioOnOff() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -690,7 +708,8 @@ _data.recycle();
 }
 }
 
-public boolean setRadio(boolean turnOn) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean setRadio(boolean turnOn) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -709,7 +728,8 @@ _data.recycle();
 return _result;
 }
 
-public void updateServiceLocation() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void updateServiceLocation() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -724,7 +744,8 @@ _data.recycle();
 }
 }
 
-public void enableLocationUpdates() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void enableLocationUpdates() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -739,7 +760,8 @@ _data.recycle();
 }
 }
 
-public void disableLocationUpdates() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void disableLocationUpdates() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -773,7 +795,8 @@ _data.recycle();
 return _result;
 }
 
-public int disableApnType(java.lang.String type) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int disableApnType(java.lang.String type) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -792,7 +815,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean enableDataConnectivity() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean enableDataConnectivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -810,7 +834,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean disableDataConnectivity() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean disableDataConnectivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -828,7 +853,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isDataConnectivityPossible() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isDataConnectivityPossible() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -845,7 +871,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.os.Bundle getCellLocation() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.os.Bundle getCellLocation() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -885,7 +912,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getCallState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getCallState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -902,7 +930,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getDataActivity() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getDataActivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -919,7 +948,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getDataState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getDataState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -937,7 +967,8 @@ _data.recycle();
 return _result;
 }
 
-public int getActivePhoneType() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getActivePhoneType() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -955,7 +986,8 @@ _data.recycle();
 return _result;
 }
 
-public int getCdmaEriIconIndex() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getCdmaEriIconIndex() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -973,7 +1005,8 @@ _data.recycle();
 return _result;
 }
 
-public int getCdmaEriIconMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getCdmaEriIconMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -991,7 +1024,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getCdmaEriText() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getCdmaEriText() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1009,7 +1043,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean needsOtaServiceProvisioning() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean needsOtaServiceProvisioning() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1027,7 +1062,8 @@ _data.recycle();
 return _result;
 }
 
-public int getVoiceMessageCount() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getVoiceMessageCount() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1045,7 +1081,8 @@ _data.recycle();
 return _result;
 }
 
-public int getNetworkType() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getNetworkType() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1063,7 +1100,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean hasIccCard() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hasIccCard() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1081,7 +1119,8 @@ _data.recycle();
 return _result;
 }
 
-public int getLteOnCdmaMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getLteOnCdmaMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

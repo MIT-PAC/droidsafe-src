@@ -1595,6 +1595,7 @@ ArrayList<MenuItemImpl> var1BEF02116BD01649FAF4B06AB6C0ADD7_96574102 =         m
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.410 -0400", hash_original_method = "186F768E53D647FEAF851BE51616ADE9", hash_generated_method = "D20224C7DAA48B5F1B95A884AF346724")
     private void setHeaderInternal(final int titleRes, final CharSequence title, final int iconRes,
             final Drawable icon, final View view) {

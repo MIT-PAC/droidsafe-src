@@ -23,6 +23,7 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.851 -0400", hash_original_method = "0F8C1618FD9AF6BE64F2E7BA50B72FEE", hash_generated_method = "8AC81A8C42636D4CE642F73F07C84D74")
     public boolean isAuthenticationRequested(
             final HttpResponse response, 

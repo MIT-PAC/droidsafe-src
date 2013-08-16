@@ -241,6 +241,7 @@ Element varA85FFCDAA3B45409BDD4C198FC37D351_665221814 =         mElement;
         @Deprecated
         POSITVE_Z (4);
         int mID;
+        @DSModeled(DSC.BAN)
         CubemapFace(int id) {
             mID = id;
         }

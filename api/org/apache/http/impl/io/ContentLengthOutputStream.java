@@ -26,6 +26,7 @@ public class ContentLengthOutputStream extends OutputStream {
 
     private boolean closed = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.568 -0400", hash_original_method = "CBDB2FDC82C5AFE44AFBC6A393E7627D", hash_generated_method = "41D4D12DBE52C5F9BAA5CFEAD221D681")
     public  ContentLengthOutputStream(final SessionOutputBuffer out, long contentLength) {
         super();

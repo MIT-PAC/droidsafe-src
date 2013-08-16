@@ -14,11 +14,13 @@ public interface IMountServiceListener extends IInterface {
         private static final String DESCRIPTOR = "IMountServiceListener";
 
         
+        @DSModeled(DSC.BAN)
         public Stub() {
             this.attachInterface(this, DESCRIPTOR);
         }
 
         
+        @DSModeled(DSC.BAN)
         public static IMountServiceListener asInterface(IBinder obj) {
             if ((obj == null)) {
                 return null;
@@ -30,10 +32,12 @@ public interface IMountServiceListener extends IInterface {
             return new IMountServiceListener.Stub.Proxy(obj);
         }
 
+        @DSModeled(DSC.BAN)
         public IBinder asBinder() {
             return this;
         }
 
+        @DSModeled(DSC.SPEC)
         @Override
         public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
                 throws RemoteException {
@@ -69,19 +73,23 @@ public interface IMountServiceListener extends IInterface {
         private static class Proxy implements IMountServiceListener {
             private IBinder mRemote;
 
+            @DSModeled(DSC.BAN)
             Proxy(IBinder remote) {
                 mRemote = remote;
             }
 
+            @DSModeled(DSC.BAN)
             public IBinder asBinder() {
                 return mRemote;
             }
 
+            @DSModeled(DSC.BAN)
             public String getInterfaceDescriptor() {
                 return DESCRIPTOR;
             }
 
             
+            @DSModeled(DSC.BAN)
             public void onUsbMassStorageConnectionChanged(boolean connected) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -98,6 +106,7 @@ public interface IMountServiceListener extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void onStorageStateChanged(String path, String oldState, String newState)
                     throws RemoteException {
                 Parcel _data = Parcel.obtain();

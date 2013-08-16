@@ -468,6 +468,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_937533407 =         (hostName == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.773 -0400", hash_original_method = "A1A0F0207714140D12E9E4AE2187615D", hash_generated_method = "DA703A9943F73B00CF0C811D2AFDC4FE")
     public boolean isReachable(NetworkInterface networkInterface, final int ttl, final int timeout) throws IOException {
         addTaint(timeout);

@@ -74,6 +74,7 @@ public class FastXmlSerializer implements XmlSerializer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.716 -0400", hash_original_method = "FE048AE8183F447BAD2B7EF704E010CC", hash_generated_method = "4AEE68BC14561202C92F242E36D49377")
     private void append(String str, int i, final int length) throws IOException {
         addTaint(i);
@@ -118,6 +119,7 @@ public class FastXmlSerializer implements XmlSerializer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.717 -0400", hash_original_method = "A84A951371BFD4434741842D4AA34429", hash_generated_method = "B52B7588BCF49FB67E997EA9E3687164")
     private void append(char[] buf, int i, final int length) throws IOException {
         addTaint(i);
@@ -172,6 +174,7 @@ public class FastXmlSerializer implements XmlSerializer {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.718 -0400", hash_original_method = "685D23784A67F08835F67CA0A97F5B9B", hash_generated_method = "41AF799BA3D260F846310A7A4E01A1DA")
     private void escapeAndAppendString(final String string) throws IOException {
         addTaint(string.getTaint());

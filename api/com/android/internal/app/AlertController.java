@@ -1178,6 +1178,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.909 -0400", hash_original_method = "8E786D28D6E36F7AAC42E3AE032D9CF8", hash_generated_method = "5413B48DB0A86CB2A67A914F80BCEDF2")
         private void createListView(final AlertController dialog) {
             final RecycleListView listView = (RecycleListView)

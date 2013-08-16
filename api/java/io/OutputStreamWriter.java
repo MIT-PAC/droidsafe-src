@@ -33,6 +33,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.109 -0400", hash_original_method = "FE2D64915F756E150E2359224C906A4F", hash_generated_method = "63D2923CE9B7F28B13D73EC2B8780F28")
     public  OutputStreamWriter(OutputStream out, final String enc) throws UnsupportedEncodingException {
         super(out);

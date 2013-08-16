@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.statusbar.IStatusBarService";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((com.android.internal.statusbar.IStatusBarService)iin);
 }
 return new com.android.internal.statusbar.IStatusBarService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -255,15 +257,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void expand() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void expand() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -277,7 +282,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void collapse() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void collapse() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -358,7 +364,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void topAppWindowChanged(boolean menuVisible) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void topAppWindowChanged(boolean menuVisible) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -421,7 +428,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void onPanelRevealed() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onPanelRevealed() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -472,7 +480,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void onClearAllNotifications() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onClearAllNotifications() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -503,7 +512,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setSystemUiVisibility(int vis) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setSystemUiVisibility(int vis) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -518,7 +528,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setHardKeyboardEnabled(boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setHardKeyboardEnabled(boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -533,7 +544,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void toggleRecentApps() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void toggleRecentApps() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

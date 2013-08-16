@@ -10,7 +10,8 @@ public interface IEventListener extends android.os.IInterface
 	{
 		private static final java.lang.String DESCRIPTOR = "android.accessibilityservice.IEventListener";
 
-		public Stub()
+		@DSModeled(DSC.BAN)
+        public Stub()
 		{
 			this.attachInterface(this, DESCRIPTOR);
 		}
@@ -26,7 +27,8 @@ public interface IEventListener extends android.os.IInterface
 			}
 			return new android.accessibilityservice.IEventListener.Stub.Proxy(obj);
 		}
-		public android.os.IBinder asBinder()
+		@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 		{
 			return this;
 		}
@@ -73,11 +75,13 @@ public interface IEventListener extends android.os.IInterface
 			{
 				mRemote = remote;
 			}
-			public android.os.IBinder asBinder()
+			@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 			{
 				return mRemote;
 			}
-			public java.lang.String getInterfaceDescriptor()
+			@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 			{
 				return DESCRIPTOR;
 			}
@@ -112,7 +116,8 @@ public interface IEventListener extends android.os.IInterface
 					_data.recycle();
 				}
 			}
-			public void onInterrupt() throws android.os.RemoteException
+			@DSModeled(DSC.BAN)
+            public void onInterrupt() throws android.os.RemoteException
 			{
 				android.os.Parcel _data = android.os.Parcel.obtain();
 				try {

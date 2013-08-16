@@ -113,6 +113,7 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.609 -0400", hash_original_method = "F4164F0D843971333C91373781EC7696", hash_generated_method = "CD5E7B031A9CF6C8039D99954A6F5F8F")
     public void runTestOnUiThread(final Runnable r) throws Throwable {
         addTaint(r.getTaint());

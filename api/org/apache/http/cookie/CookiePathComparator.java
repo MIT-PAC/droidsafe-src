@@ -18,6 +18,7 @@ public class CookiePathComparator implements Serializable, Comparator<Cookie> {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.139 -0400", hash_original_method = "679ADE09B30DFC8534697854331FFCFD", hash_generated_method = "2DDF7D41345915514496DFA792287917")
     private String normalizePath(final Cookie cookie) {
         addTaint(cookie.getTaint());
@@ -45,6 +46,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_1393623156 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.140 -0400", hash_original_method = "38114A956CA6EEFF2831D01642E4D39A", hash_generated_method = "B651B70142DE6706EBBA1F93A8C5EA08")
     public int compare(final Cookie c1, final Cookie c2) {
         addTaint(c2.getTaint());

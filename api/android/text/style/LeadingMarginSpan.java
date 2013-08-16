@@ -49,10 +49,12 @@ extends ParagraphStyle
             mRest = src.readInt();
         }
         
+        @DSModeled(DSC.SAFE)
         public int getSpanTypeId() {
             return TextUtils.LEADING_MARGIN_SPAN;
         }
         
+        @DSModeled(DSC.SAFE)
         public int describeContents() {
             return 0;
         }
@@ -62,10 +64,12 @@ extends ParagraphStyle
             dest.writeInt(mRest);
         }
 
+        @DSModeled(DSC.SAFE)
         public int getLeadingMargin(boolean first) {
             return first ? mFirst : mRest;
         }
 
+        @DSModeled(DSC.SAFE)
         public void drawLeadingMargin(Canvas c, Paint p,
                                       int x, int dir,
                                       int top, int baseline, int bottom,

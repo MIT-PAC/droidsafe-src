@@ -173,7 +173,7 @@ E var3C45A13E1663E5EB1E89D586B823C6D6_1237879280 =         this.<E>cast(items[i]
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.282 -0400", hash_original_method = "7F66A086F3C39CFEE464DF3F42EF745A", hash_generated_method = "64F96985DE28D2DA338226764931CAD7")
     private void insert(E x) {
         items[putIndex] = x;
@@ -188,7 +188,7 @@ E var3C45A13E1663E5EB1E89D586B823C6D6_1237879280 =         this.<E>cast(items[i]
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.283 -0400", hash_original_method = "FAA6B2CA6161B01EDCE06644087258E9", hash_generated_method = "9C7EF44205F6DDD590CC7EFC544840EE")
     private E extract() {
         final Object[] items = this.items;

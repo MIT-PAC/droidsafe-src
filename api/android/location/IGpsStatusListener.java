@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.l
 {
 private static final java.lang.String DESCRIPTOR = "android.location.IGpsStatusListener";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.location.IGpsStatusListener)iin);
 }
 return new android.location.IGpsStatusListener.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -101,15 +103,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void onGpsStarted() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onGpsStarted() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -120,7 +125,8 @@ finally {
 _data.recycle();
 }
 }
-public void onGpsStopped() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onGpsStopped() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -131,7 +137,8 @@ finally {
 _data.recycle();
 }
 }
-public void onFirstFix(int ttff) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onFirstFix(int ttff) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -143,7 +150,8 @@ finally {
 _data.recycle();
 }
 }
-public void onSvStatusChanged(int svCount, int[] prns, float[] snrs, float[] elevations, float[] azimuths, int ephemerisMask, int almanacMask, int usedInFixMask) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onSvStatusChanged(int svCount, int[] prns, float[] snrs, float[] elevations, float[] azimuths, int ephemerisMask, int almanacMask, int usedInFixMask) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

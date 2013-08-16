@@ -53,6 +53,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.895 -0400", hash_original_method = "AAC0170DE8A46A77F8ABEAF95E5D47DF", hash_generated_method = "1D6ED238FFB7668E21F795FEA61006F7")
     public  BasicHttpResponse(final StatusLine statusline) {
         this(statusline, null, null);
@@ -61,6 +62,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.895 -0400", hash_original_method = "6506B3795A3A16C6E9B1FFC15C1ED834", hash_generated_method = "555CD811A3B58BF43063D7090991996F")
     public  BasicHttpResponse(final ProtocolVersion ver,
                              final int code,
@@ -184,6 +186,7 @@ Locale var07CBB3424B1C5A44A7FC0518D56FE503_2015192595 =         this.locale;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.900 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;

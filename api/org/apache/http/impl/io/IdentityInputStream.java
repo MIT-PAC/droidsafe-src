@@ -95,6 +95,7 @@ public class IdentityInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.616 -0400", hash_original_method = "E3ECD120B22D1F545DEC5B2DDE1C9AA2", hash_generated_method = "3FD6668A7530563538B8BC74FF16969E")
     public int read(final byte[] b, int off, int len) throws IOException {
         addTaint(len);

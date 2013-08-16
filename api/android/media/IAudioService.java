@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.m
 {
 private static final java.lang.String DESCRIPTOR = "android.media.IAudioService";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.media.IAudioService)iin);
 }
 return new android.media.IAudioService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -463,15 +465,18 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void adjustVolume(int direction, int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void adjustVolume(int direction, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -487,7 +492,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void adjustSuggestedStreamVolume(int direction, int suggestedStreamType, int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void adjustSuggestedStreamVolume(int direction, int suggestedStreamType, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -504,7 +510,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void adjustStreamVolume(int streamType, int direction, int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void adjustStreamVolume(int streamType, int direction, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -521,7 +528,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setStreamVolume(int streamType, int index, int flags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setStreamVolume(int streamType, int index, int flags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -572,7 +580,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isStreamMute(int streamType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isStreamMute(int streamType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -590,7 +599,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getStreamVolume(int streamType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getStreamVolume(int streamType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -608,7 +618,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getStreamMaxVolume(int streamType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getStreamMaxVolume(int streamType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -626,7 +637,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getLastAudibleStreamVolume(int streamType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getLastAudibleStreamVolume(int streamType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -644,7 +656,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setRingerMode(int ringerMode) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setRingerMode(int ringerMode) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -659,7 +672,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getRingerMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getRingerMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -676,7 +690,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setVibrateSetting(int vibrateType, int vibrateSetting) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setVibrateSetting(int vibrateType, int vibrateSetting) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -692,7 +707,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getVibrateSetting(int vibrateType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getVibrateSetting(int vibrateType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -710,7 +726,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean shouldVibrate(int vibrateType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean shouldVibrate(int vibrateType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -728,7 +745,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setMode(int mode, android.os.IBinder cb) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setMode(int mode, android.os.IBinder cb) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -744,7 +762,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -761,7 +780,8 @@ _data.recycle();
 }
 return _result;
 }
-public void playSoundEffect(int effectType) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void playSoundEffect(int effectType) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -773,7 +793,8 @@ finally {
 _data.recycle();
 }
 }
-public void playSoundEffectVolume(int effectType, float volume) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void playSoundEffectVolume(int effectType, float volume) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -786,7 +807,8 @@ finally {
 _data.recycle();
 }
 }
-public boolean loadSoundEffects() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean loadSoundEffects() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -803,7 +825,8 @@ _data.recycle();
 }
 return _result;
 }
-public void unloadSoundEffects() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void unloadSoundEffects() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -814,7 +837,8 @@ finally {
 _data.recycle();
 }
 }
-public void reloadAudioSettings() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void reloadAudioSettings() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -825,7 +849,8 @@ finally {
 _data.recycle();
 }
 }
-public void setSpeakerphoneOn(boolean on) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setSpeakerphoneOn(boolean on) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -840,7 +865,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isSpeakerphoneOn() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isSpeakerphoneOn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -857,7 +883,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setBluetoothScoOn(boolean on) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setBluetoothScoOn(boolean on) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -872,7 +899,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isBluetoothScoOn() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isBluetoothScoOn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -912,7 +940,8 @@ _data.recycle();
 }
 return _result;
 }
-public int abandonAudioFocus(android.media.IAudioFocusDispatcher l, java.lang.String clientId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int abandonAudioFocus(android.media.IAudioFocusDispatcher l, java.lang.String clientId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

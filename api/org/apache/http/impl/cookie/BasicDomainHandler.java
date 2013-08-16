@@ -114,6 +114,7 @@ public class BasicDomainHandler implements CookieAttributeHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.606 -0400", hash_original_method = "35486252C095151EC7F82B814432B360", hash_generated_method = "4BBA05223E139417D5EFF1713B6C76CF")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
         addTaint(origin.getTaint());

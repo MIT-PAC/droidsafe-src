@@ -153,6 +153,7 @@ Country var540C13E9E156B687226421B24F2DF178_1357408776 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.937 -0400", hash_original_method = "F95DEB9AF970A5D9353FC83CA6F7013A", hash_generated_method = "6E25ECA6DE0FEF76506A107D81C59D91")
         public void onCountryDetected(final Country country) {
             //DSFIXME:  CODE0009: Possible callback target function detected

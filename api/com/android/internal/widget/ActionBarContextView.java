@@ -309,6 +309,7 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_1106698419 =         mSubtitle;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.788 -0400", hash_original_method = "6CF0CC9D4208F5A3169016F9961CD359", hash_generated_method = "E1B7BAA751BB6259C9FE8997F952C724")
     public void initForMode(final ActionMode mode) {
         addTaint(mode.getTaint());

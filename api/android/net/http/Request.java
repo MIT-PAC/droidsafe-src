@@ -567,6 +567,7 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_410354574 =         mPath;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean canResponseHaveBody(final HttpRequest request,
                                                final int status) {
         if ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod())) {

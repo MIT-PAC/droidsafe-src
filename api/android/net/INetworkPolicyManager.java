@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.net.INetworkPolicyManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.net.INetworkPolicyManager)iin);
 }
 return new android.net.INetworkPolicyManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -167,16 +169,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public void setUidPolicy(int uid, int policy) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setUidPolicy(int uid, int policy) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -192,7 +197,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getUidPolicy(int uid) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getUidPolicy(int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -210,7 +216,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isUidForeground(int uid) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isUidForeground(int uid) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -243,7 +250,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void unregisterListener(android.net.INetworkPolicyListener listener) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void unregisterListener(android.net.INetworkPolicyListener listener) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -274,7 +282,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.net.NetworkPolicy[] getNetworkPolicies() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.NetworkPolicy[] getNetworkPolicies() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -292,7 +301,8 @@ _data.recycle();
 return _result;
 }
 
-public void snoozePolicy(android.net.NetworkTemplate template) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void snoozePolicy(android.net.NetworkTemplate template) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -314,7 +324,8 @@ _data.recycle();
 }
 }
 
-public void setRestrictBackground(boolean restrictBackground) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setRestrictBackground(boolean restrictBackground) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -329,7 +340,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean getRestrictBackground() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean getRestrictBackground() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -346,7 +358,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.NetworkQuotaInfo getNetworkQuotaInfo(android.net.NetworkState state) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.net.NetworkQuotaInfo getNetworkQuotaInfo(android.net.NetworkState state) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

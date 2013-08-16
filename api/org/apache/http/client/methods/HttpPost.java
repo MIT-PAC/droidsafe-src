@@ -16,6 +16,7 @@ public class HttpPost extends HttpEntityEnclosingRequestBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.231 -0400", hash_original_method = "160A4A8C6AAC5C78A2F503FA797FE66F", hash_generated_method = "A8B986D251D55D73FE046BB884E3CBB5")
     public  HttpPost(final URI uri) {
         super();

@@ -44,6 +44,7 @@ public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.689 -0400", hash_original_method = "CD15A57681F805F21E0C1F750415FEC8", hash_generated_method = "A166DAF2CB1B0E817C4227701DBD7C29")
     public boolean retryRequest(
             final IOException exception, 

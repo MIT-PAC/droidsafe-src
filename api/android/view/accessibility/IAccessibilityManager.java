@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.v
 {
 private static final java.lang.String DESCRIPTOR = "android.view.accessibility.IAccessibilityManager";
 
-public Stub()
+@DSModeled(DSC.SAFE)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.view.accessibility.IAccessibilityManager asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.view.accessibility.IAccessibilityManager asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,11 +28,13 @@ return ((android.view.accessibility.IAccessibilityManager)iin);
 }
 return new android.view.accessibility.IAccessibilityManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -125,19 +129,23 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.view.accessibility.IAccessibilityManager
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public int addClient(android.view.accessibility.IAccessibilityManagerClient client) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int addClient(android.view.accessibility.IAccessibilityManagerClient client) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -155,7 +163,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean sendAccessibilityEvent(android.view.accessibility.AccessibilityEvent uiEvent) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean sendAccessibilityEvent(android.view.accessibility.AccessibilityEvent uiEvent) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -214,7 +223,8 @@ _data.recycle();
 }
 return _result;
 }
-public void interrupt() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void interrupt() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -228,7 +238,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int addAccessibilityInteractionConnection(android.view.IWindow windowToken, android.view.accessibility.IAccessibilityInteractionConnection connection) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int addAccessibilityInteractionConnection(android.view.IWindow windowToken, android.view.accessibility.IAccessibilityInteractionConnection connection) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -247,7 +258,8 @@ _data.recycle();
 }
 return _result;
 }
-public void removeAccessibilityInteractionConnection(android.view.IWindow windowToken) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void removeAccessibilityInteractionConnection(android.view.IWindow windowToken) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -262,7 +274,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void registerEventListener(android.accessibilityservice.IEventListener client) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void registerEventListener(android.accessibilityservice.IEventListener client) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

@@ -178,6 +178,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.737 -0400", hash_original_method = "B7345027764D354450098F40DD004B57", hash_generated_method = "35DB90E7A7F154AD4BEB88B9F67BCD08")
     private E unlinkFirst() {
         Node<E> f = first;

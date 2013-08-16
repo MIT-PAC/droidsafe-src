@@ -28,6 +28,7 @@ public class SyncQueue {
 
     public final HashMap<String, SyncOperation> mOperationsMap = Maps.newHashMap();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.630 -0400", hash_original_method = "4B46EA3F8AD8CFC1D0053E5D8D79C64A", hash_generated_method = "C4C0547698F0B4A817D4C1F60667CAFF")
     public  SyncQueue(SyncStorageEngine syncStorageEngine, final SyncAdaptersCache syncAdapters) {
         addTaint(syncAdapters.getTaint());

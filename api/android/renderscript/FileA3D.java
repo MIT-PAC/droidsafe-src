@@ -160,9 +160,11 @@ IndexEntry varD01CF6E3ACDF99B6478B9E47E49EAA74_446919829 =         mFileEntries[
         UNKNOWN (0),
         MESH (1);
         int mID;
+        @DSModeled(DSC.BAN)
         EntryType(int id) {
             mID = id;
         }
+        @DSModeled(DSC.BAN)
         static EntryType toEntryType(int intID) {
             return EntryType.values()[intID];
         }

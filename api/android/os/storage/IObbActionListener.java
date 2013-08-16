@@ -14,11 +14,13 @@ public interface IObbActionListener extends IInterface {
         private static final String DESCRIPTOR = "IObbActionListener";
 
         
+        @DSModeled(DSC.BAN)
         public Stub() {
             this.attachInterface(this, DESCRIPTOR);
         }
 
         
+        @DSModeled(DSC.BAN)
         public static IObbActionListener asInterface(IBinder obj) {
             if ((obj == null)) {
                 return null;
@@ -30,10 +32,12 @@ public interface IObbActionListener extends IInterface {
             return new IObbActionListener.Stub.Proxy(obj);
         }
 
+        @DSModeled(DSC.BAN)
         public IBinder asBinder() {
             return this;
         }
 
+        @DSModeled(DSC.BAN)
         @Override
         public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
                 throws RemoteException {
@@ -61,19 +65,23 @@ public interface IObbActionListener extends IInterface {
         private static class Proxy implements IObbActionListener {
             private IBinder mRemote;
 
+            @DSModeled(DSC.BAN)
             Proxy(IBinder remote) {
                 mRemote = remote;
             }
 
+            @DSModeled(DSC.BAN)
             public IBinder asBinder() {
                 return mRemote;
             }
 
+            @DSModeled(DSC.BAN)
             public String getInterfaceDescriptor() {
                 return DESCRIPTOR;
             }
 
             
+            @DSModeled(DSC.BAN)
             public void onObbResult(String filename, int nonce, int status)
                     throws RemoteException {
                 Parcel _data = Parcel.obtain();

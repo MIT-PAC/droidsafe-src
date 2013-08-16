@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.net.sip.ISipSessionListener";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.net.sip.ISipSessionListener)iin);
 }
 return new android.net.sip.ISipSessionListener.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -189,15 +191,18 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.net.sip.ISipSessionListener
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -218,7 +223,8 @@ _data.recycle();
 }
 }
 
-public void onRinging(android.net.sip.ISipSession session, android.net.sip.SipProfile caller, java.lang.String sessionDescription) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onRinging(android.net.sip.ISipSession session, android.net.sip.SipProfile caller, java.lang.String sessionDescription) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -242,7 +248,8 @@ _data.recycle();
 }
 }
 
-public void onRingingBack(android.net.sip.ISipSession session) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onRingingBack(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -258,7 +265,8 @@ _data.recycle();
 }
 }
 
-public void onCallEstablished(android.net.sip.ISipSession session, java.lang.String sessionDescription) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCallEstablished(android.net.sip.ISipSession session, java.lang.String sessionDescription) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -275,7 +283,8 @@ _data.recycle();
 }
 }
 
-public void onCallEnded(android.net.sip.ISipSession session) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCallEnded(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -291,7 +300,8 @@ _data.recycle();
 }
 }
 
-public void onCallBusy(android.net.sip.ISipSession session) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCallBusy(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -307,7 +317,8 @@ _data.recycle();
 }
 }
 
-public void onCallTransferring(android.net.sip.ISipSession newSession, java.lang.String sessionDescription) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCallTransferring(android.net.sip.ISipSession newSession, java.lang.String sessionDescription) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -324,7 +335,8 @@ _data.recycle();
 }
 }
 
-public void onError(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onError(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -342,7 +354,8 @@ _data.recycle();
 }
 }
 
-public void onCallChangeFailed(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCallChangeFailed(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -360,7 +373,8 @@ _data.recycle();
 }
 }
 
-public void onRegistering(android.net.sip.ISipSession session) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onRegistering(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -376,7 +390,8 @@ _data.recycle();
 }
 }
 
-public void onRegistrationDone(android.net.sip.ISipSession session, int duration) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onRegistrationDone(android.net.sip.ISipSession session, int duration) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -393,7 +408,8 @@ _data.recycle();
 }
 }
 
-public void onRegistrationFailed(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onRegistrationFailed(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -411,7 +427,8 @@ _data.recycle();
 }
 }
 
-public void onRegistrationTimeout(android.net.sip.ISipSession session) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onRegistrationTimeout(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

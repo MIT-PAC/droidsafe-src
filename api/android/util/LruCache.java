@@ -260,6 +260,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_397232293 =         previous;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.880 -0400", hash_original_method = "56F7B4D0824C7980B3CF91C05C1DA172", hash_generated_method = "9AE5D1E1A9194483A9A164F6F8155FF1")
     protected V create(K key) {
         addTaint(key.getTaint());
@@ -271,7 +272,7 @@ V var540C13E9E156B687226421B24F2DF178_355529424 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.880 -0400", hash_original_method = "971860883D94FE365FE71BDE260829D3", hash_generated_method = "77B6CA7B07C23D7E7823B04918523398")
     private int safeSizeOf(K key, V value) {
         addTaint(value.getTaint());
@@ -295,6 +296,7 @@ V var540C13E9E156B687226421B24F2DF178_355529424 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.881 -0400", hash_original_method = "6F73EAFB28729CDC0BB32AECE7CD1246", hash_generated_method = "FA25461615F4C308E1545F413FA6EE09")
     protected int sizeOf(K key, V value) {
         addTaint(value.getTaint());

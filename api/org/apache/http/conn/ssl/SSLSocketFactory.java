@@ -159,6 +159,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static KeyManager[] createKeyManagers(final KeyStore keystore, final String password) throws KeyStoreException, NoSuchAlgorithmException, UnrecoverableKeyException {
         if (keystore == null) {
             throw new IllegalArgumentException("Keystore may not be null");
@@ -170,6 +171,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static TrustManager[] createTrustManagers(final KeyStore keystore) throws KeyStoreException, NoSuchAlgorithmException {
         if (keystore == null) {
             throw new IllegalArgumentException("Keystore may not be null");
@@ -192,6 +194,7 @@ Socket var0E0BC511BA4EC00F28BB00B8267F4271_1884217845 =         (SSLSocket) this
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.089 -0400", hash_original_method = "1B91A377551E45AA28D03654EA268EA3", hash_generated_method = "FA9DB61A7EACB6D9AD1DBADF55599AFF")
     public Socket connectSocket(
         final Socket sock,
@@ -306,6 +309,7 @@ Socket var60CA3250EDBBF5555FAF69541F78D26E_853532904 =         sslsock;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.091 -0400", hash_original_method = "76BFB202D82A5741071D030FB94DC57A", hash_generated_method = "157BBF7AB8264DB0F256DEB9EC02FE95")
     public Socket createSocket(
         final Socket socket,

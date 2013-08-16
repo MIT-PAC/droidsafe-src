@@ -2015,6 +2015,7 @@ switch(msg.what){
 
         private InputMethodManager mParentInputMethodManager;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.748 -0400", hash_original_method = "778EAAA875B5E9B35A79C47358BD4D78", hash_generated_method = "981CC9B51595C8DA7E72C72DD4B60993")
         public  ControlledInputConnectionWrapper(final Looper mainLooper, final InputConnection conn,
                 final InputMethodManager inputMethodManager) {

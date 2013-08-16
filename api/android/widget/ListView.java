@@ -1066,6 +1066,7 @@ View var7B839F21D0245BE275F8017F44DD4441_2105560574 =         sel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.815 -0400", hash_original_method = "4E8DF0CF85AB0B6CF8E1C94B60E67D20", hash_generated_method = "BF739C65212130D83776F2F07EAAA2E3")
     final int measureHeightOfChildren(int widthMeasureSpec, int startPosition, int endPosition,
             final int maxHeight, int disallowPartialChildPosition) {
@@ -2756,6 +2757,7 @@ for(int pos = startPos;pos >= firstPosition;pos--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.877 -0400", hash_original_method = "2622F1B1638C7BCDD9C32B9CBE54AF85", hash_generated_method = "1D7B03CF50D17D317D53BA73EBF70C7D")
     private ArrowScrollFocusResult arrowScrollFocused(final int direction) {
         addTaint(direction);

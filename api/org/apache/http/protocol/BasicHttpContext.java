@@ -32,6 +32,7 @@ public class BasicHttpContext implements HttpContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.240 -0400", hash_original_method = "5AF73FFF83A5EDE5922275A66AC65FB8", hash_generated_method = "B5A5242F5A3C49F125339A385D6736EC")
     public Object getAttribute(final String id) {
         addTaint(id.getTaint());

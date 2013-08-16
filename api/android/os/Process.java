@@ -53,6 +53,7 @@ public class Process {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static final ProcessStartResult start(final String processClass,
                                   final String niceName,
                                   int uid, int gid, int[] gids,
@@ -159,6 +160,7 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ProcessStartResult startViaZygote(final String processClass,
                                   final String niceName,
                                   final int uid, final int gid,

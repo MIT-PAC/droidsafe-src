@@ -17,6 +17,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static long getTimeout(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -25,6 +26,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setTimeout(final HttpParams params, long timeout) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -33,6 +35,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setMaxConnectionsPerRoute(final HttpParams params,
                                                 final ConnPerRoute connPerRoute) {
         if (params == null) {
@@ -56,6 +59,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setMaxTotalConnections(
             final HttpParams params,
             int maxTotalConnections) {
@@ -67,6 +71,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getMaxTotalConnections(
             final HttpParams params) {
         if (params == null) {

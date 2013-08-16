@@ -70,6 +70,7 @@ Object var37C56C9D63C623261861C16DCFB73F6D_1920332035 =         state;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.004 -0400", hash_original_method = "9D16F7D7F90D43454808FD39B427C300", hash_generated_method = "B09AF06B0499DA01F80DB609204967D6")
     public void setState(final Object state) {
         this.state = state;

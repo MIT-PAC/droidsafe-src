@@ -13,6 +13,7 @@ class Division {
     }
 
 
+    @DSModeled(DSC.SAFE)
     static int divideArrayByInt(int[] quotient, int[] dividend, final int dividendLength,
             final int divisor) {
         long rem = 0;

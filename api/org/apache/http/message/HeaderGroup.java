@@ -305,6 +305,7 @@ HeaderIterator var78733DC078B20A3D11B9F03D1F78A2FB_1399433087 =         new Basi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.129 -0400", hash_original_method = "DFA4A10C9A5AF888C1AA8746F1A85305", hash_generated_method = "1D1CB462AEDC557161A62B007D137948")
     public HeaderIterator iterator(final String name) {
         addTaint(name.getTaint());

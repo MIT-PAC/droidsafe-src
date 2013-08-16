@@ -88,6 +88,7 @@ Credentials var64342BF7968F6111C1E5BB4D3DAC5D79_992839524 =         this.credent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.315 -0400", hash_original_method = "CA0BD3D3E2D3BF9E673535ADF196F87D", hash_generated_method = "3DD02DA100E700462E960E48422CA3F9")
     public void setCredentials(final Credentials credentials) {
         this.credentials = credentials;
@@ -107,6 +108,7 @@ AuthScope varB0B030A52916F692F297266F102C8281_1542640103 =         this.authScop
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.316 -0400", hash_original_method = "608941030C588F83A6C921F3D04280DF", hash_generated_method = "7D1366DFB32085A799B9EEC519DF7012")
     public void setAuthScope(final AuthScope authScope) {
         this.authScope = authScope;

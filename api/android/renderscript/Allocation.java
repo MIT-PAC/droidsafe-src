@@ -1334,6 +1334,7 @@ switch(bc){
         MIPMAP_FULL(1),
         MIPMAP_ON_SYNC_TO_TEXTURE(2);
         int mID;
+        @DSModeled(DSC.BAN)
         MipmapControl(int id) {
             mID = id;
         }

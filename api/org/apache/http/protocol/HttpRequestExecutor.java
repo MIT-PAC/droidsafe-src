@@ -26,6 +26,7 @@ public class HttpRequestExecutor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.342 -0400", hash_original_method = "0630A8D079D2F2EA09859A2EAC923D24", hash_generated_method = "19E5F3DFB28F335C25D2477AFC86FD9D")
     protected boolean canResponseHaveBody(final HttpRequest request,
                                           final HttpResponse response) {

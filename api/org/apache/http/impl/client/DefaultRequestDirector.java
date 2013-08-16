@@ -244,6 +244,7 @@ public class DefaultRequestDirector implements RequestDirector {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.823 -0400", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "7F670B2EBE1422E8A44AF135D1C69B91")
     private RequestWrapper wrapRequest(
             final HttpRequest request) throws ProtocolException {
@@ -273,6 +274,7 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_1295689652 =             new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.823 -0400", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "56FC19C47F200C9C51682659348EFFFD")
     protected void rewriteRequestURI(
             final RequestWrapper request,
@@ -1065,6 +1067,7 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_639884716 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.839 -0400", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "EA679C6F1AA8CE77E96E16ABF551363F")
     private void processChallenges(
             final Map<String, Header> challenges, 
@@ -1111,6 +1114,7 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_639884716 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.839 -0400", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "9F4D9E0699D7444EDF75B415F2AA6026")
     private void updateAuthState(
             final AuthState authState, 

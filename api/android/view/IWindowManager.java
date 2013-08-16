@@ -11,12 +11,14 @@ public static abstract class Stub extends android.os.Binder implements android.v
 {
 private static final java.lang.String DESCRIPTOR = "android.view.IWindowManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.view.IWindowManager asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SPEC)
+        public static android.view.IWindowManager asInterface(android.os.IBinder obj)
 {
 	android.view.IWindowManager retVal;
 	if ((obj==null)) {
@@ -33,11 +35,13 @@ public static android.view.IWindowManager asInterface(android.os.IBinder obj)
 	return retVal;
 }
 
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -934,21 +938,25 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.view.IWindowManager
 {
 	private android.os.IBinder mRemote;
-	Proxy(android.os.IBinder remote)
+	@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 	{
 		mRemote = remote;
 	}
-	public android.os.IBinder asBinder()
+	@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 	{
 		return mRemote;
 	}
-	public java.lang.String getInterfaceDescriptor()
+	@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 	{
 		return DESCRIPTOR;
 	}
 
 
-public boolean startViewServer(int port) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean startViewServer(int port) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -968,7 +976,8 @@ return _result;
 }
 
 
-public boolean stopViewServer() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean stopViewServer() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -987,7 +996,8 @@ return _result;
 }
 
 
-public boolean isViewServerRunning() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isViewServerRunning() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1006,7 +1016,8 @@ return _result;
 }
 
 
-public android.view.IWindowSession openSession(com.android.internal.view.IInputMethodClient client, com.android.internal.view.IInputContext inputContext) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.view.IWindowSession openSession(com.android.internal.view.IInputMethodClient client, com.android.internal.view.IInputContext inputContext) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1060,7 +1071,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void getRealDisplaySize(android.graphics.Point size) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void getRealDisplaySize(android.graphics.Point size) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1077,7 +1089,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getMaximumSizeDimension() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getMaximumSizeDimension() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1094,7 +1107,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setForcedDisplaySize(int longDimen, int shortDimen) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setForcedDisplaySize(int longDimen, int shortDimen) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1110,7 +1124,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void clearForcedDisplaySize() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void clearForcedDisplaySize() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1126,7 +1141,8 @@ _data.recycle();
 }
 
 
-public boolean canStatusBarHide() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean canStatusBarHide() throws android.os.RemoteException
 {
 	android.os.Parcel _data = android.os.Parcel.obtain();
 	android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1279,7 +1295,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setEventDispatching(boolean enabled) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setEventDispatching(boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1360,7 +1377,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setAppOrientation(android.view.IApplicationToken token, int requestedOrientation) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setAppOrientation(android.view.IApplicationToken token, int requestedOrientation) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1376,7 +1394,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getAppOrientation(android.view.IApplicationToken token) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getAppOrientation(android.view.IApplicationToken token) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1410,7 +1429,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void prepareAppTransition(int transit, boolean alwaysKeepCurrent) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void prepareAppTransition(int transit, boolean alwaysKeepCurrent) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1426,7 +1446,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getPendingAppTransition() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getPendingAppTransition() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1460,7 +1481,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void executeAppTransition() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void executeAppTransition() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1588,7 +1610,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void moveAppToken(int index, android.os.IBinder token) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void moveAppToken(int index, android.os.IBinder token) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1737,7 +1760,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isKeyguardLocked() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isKeyguardLocked() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1754,7 +1778,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isKeyguardSecure() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isKeyguardSecure() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1771,7 +1796,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean inKeyguardRestrictedInputMode() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean inKeyguardRestrictedInputMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1788,7 +1814,8 @@ _data.recycle();
 }
 return _result;
 }
-public void dismissKeyguard() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void dismissKeyguard() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1819,7 +1846,8 @@ _data.recycle();
 }
 
 
-public float getAnimationScale(int which) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public float getAnimationScale(int which) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1837,7 +1865,8 @@ _data.recycle();
 }
 return _result;
 }
-public float[] getAnimationScales() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public float[] getAnimationScales() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1854,7 +1883,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setAnimationScale(int which, float scale) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setAnimationScale(int which, float scale) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1870,7 +1900,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setAnimationScales(float[] scales) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setAnimationScales(float[] scales) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1887,7 +1918,8 @@ _data.recycle();
 }
 
 
-public int getSwitchState(int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getSwitchState(int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1905,7 +1937,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getSwitchStateForDevice(int devid, int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getSwitchStateForDevice(int devid, int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1924,7 +1957,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getScancodeState(int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getScancodeState(int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1942,7 +1976,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getScancodeStateForDevice(int devid, int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getScancodeStateForDevice(int devid, int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1961,7 +1996,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getTrackballScancodeState(int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getTrackballScancodeState(int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1979,7 +2015,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getDPadScancodeState(int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getDPadScancodeState(int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1997,7 +2034,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getKeycodeState(int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getKeycodeState(int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2015,7 +2053,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getKeycodeStateForDevice(int devid, int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getKeycodeStateForDevice(int devid, int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2034,7 +2073,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getTrackballKeycodeState(int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getTrackballKeycodeState(int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2052,7 +2092,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getDPadKeycodeState(int sw) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getDPadKeycodeState(int sw) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2095,7 +2136,8 @@ return _result;
 }
 
 
-public boolean hasKeys(int[] keycodes, boolean[] keyExists) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean hasKeys(int[] keycodes, boolean[] keyExists) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2116,7 +2158,8 @@ _data.recycle();
 return _result;
 }
 
-public android.view.InputDevice getInputDevice(int deviceId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.view.InputDevice getInputDevice(int deviceId) throws android.os.RemoteException
 {
 	addTaint(deviceId);
 	android.os.Parcel _data = android.os.Parcel.obtain();
@@ -2142,7 +2185,8 @@ public android.view.InputDevice getInputDevice(int deviceId) throws android.os.R
 	return _result;
 }
 
-public int[] getInputDeviceIds() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int[] getInputDeviceIds() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2161,7 +2205,8 @@ return _result;
 }
 
 
-public void setInTouchMode(boolean showFocus) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setInTouchMode(boolean showFocus) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2177,7 +2222,8 @@ _data.recycle();
 }
 }
 
-public void showStrictModeViolation(boolean on) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void showStrictModeViolation(boolean on) throws android.os.RemoteException
 {
 	addTaint(on);
 	android.os.Parcel _data = android.os.Parcel.obtain();
@@ -2211,7 +2257,8 @@ _data.recycle();
 }
 
 
-public void updateRotation(boolean alwaysSendConfiguration) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void updateRotation(boolean alwaysSendConfiguration) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2227,7 +2274,8 @@ _data.recycle();
 }
 }
 
-public int getRotation() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getRotation() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2245,7 +2293,8 @@ _data.recycle();
 return _result;
 }
 
-public int watchRotation(android.view.IRotationWatcher watcher) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int watchRotation(android.view.IRotationWatcher watcher) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2264,7 +2313,8 @@ _data.recycle();
 return _result;
 }
 
-public int getPreferredOptionsPanelGravity() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int getPreferredOptionsPanelGravity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2282,7 +2332,8 @@ _data.recycle();
 return _result;
 }
 
-public void freezeRotation(int rotation) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void freezeRotation(int rotation) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2298,7 +2349,8 @@ _data.recycle();
 }
 }
 
-public void thawRotation() throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void thawRotation() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2313,7 +2365,8 @@ _data.recycle();
 }
 }
 
-public android.graphics.Bitmap screenshotApplications(android.os.IBinder appToken, int maxWidth, int maxHeight) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public android.graphics.Bitmap screenshotApplications(android.os.IBinder appToken, int maxWidth, int maxHeight) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2339,7 +2392,8 @@ _data.recycle();
 return _result;
 }
 
-public void statusBarVisibilityChanged(int visibility) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void statusBarVisibilityChanged(int visibility) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2355,7 +2409,8 @@ _data.recycle();
 }
 }
 
-public void setPointerSpeed(int speed) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setPointerSpeed(int speed) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2371,7 +2426,8 @@ _data.recycle();
 }
 }
 
-public void waitForWindowDrawn(android.os.IBinder token, android.os.IRemoteCallback callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void waitForWindowDrawn(android.os.IBinder token, android.os.IRemoteCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2388,7 +2444,8 @@ _data.recycle();
 }
 }
 
-public boolean hasNavigationBar() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean hasNavigationBar() throws android.os.RemoteException
 {
 	android.os.Parcel _data = android.os.Parcel.obtain();
 	android.os.Parcel _reply = android.os.Parcel.obtain();

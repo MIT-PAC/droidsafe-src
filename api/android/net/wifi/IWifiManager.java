@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.net.wifi.IWifiManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.net.wifi.IWifiManager)iin);
 }
 return new android.net.wifi.IWifiManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -422,15 +424,18 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.net.wifi.IWifiManager
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -451,7 +456,8 @@ _data.recycle();
 }
 return _result;
 }
-public int addOrUpdateNetwork(android.net.wifi.WifiConfiguration config) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public int addOrUpdateNetwork(android.net.wifi.WifiConfiguration config) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -475,7 +481,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean removeNetwork(int netId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean removeNetwork(int netId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -493,7 +500,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean enableNetwork(int netId, boolean disableOthers) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean enableNetwork(int netId, boolean disableOthers) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -512,7 +520,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean disableNetwork(int netId) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean disableNetwork(int netId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -530,7 +539,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean pingSupplicant() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean pingSupplicant() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -547,7 +557,8 @@ _data.recycle();
 }
 return _result;
 }
-public void startScan(boolean forceActive) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void startScan(boolean forceActive) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -579,7 +590,8 @@ _data.recycle();
 }
 return _result;
 }
-public void disconnect() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void disconnect() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -593,7 +605,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void reconnect() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void reconnect() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -607,7 +620,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void reassociate() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void reassociate() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -621,7 +635,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.net.wifi.WifiInfo getConnectionInfo() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.wifi.WifiInfo getConnectionInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -643,7 +658,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean setWifiEnabled(boolean enable) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean setWifiEnabled(boolean enable) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -661,7 +677,8 @@ _data.recycle();
 }
 return _result;
 }
-public int getWifiEnabledState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getWifiEnabledState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -694,7 +711,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void setFrequencyBand(int band, boolean persist) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setFrequencyBand(int band, boolean persist) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -710,7 +728,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getFrequencyBand() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getFrequencyBand() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -727,7 +746,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean isDualBandSupported() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isDualBandSupported() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -744,7 +764,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean saveConfiguration() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean saveConfiguration() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -761,7 +782,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.DhcpInfo getDhcpInfo() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.DhcpInfo getDhcpInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -783,7 +805,8 @@ _data.recycle();
 }
 return _result;
 }
-public boolean acquireWifiLock(android.os.IBinder lock, int lockType, java.lang.String tag, android.os.WorkSource ws) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public boolean acquireWifiLock(android.os.IBinder lock, int lockType, java.lang.String tag, android.os.WorkSource ws) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -850,7 +873,8 @@ _data.recycle();
 }
 return _result;
 }
-public void initializeMulticastFiltering() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void initializeMulticastFiltering() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -864,7 +888,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean isMulticastEnabled() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isMulticastEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -881,7 +906,8 @@ _data.recycle();
 }
 return _result;
 }
-public void acquireMulticastLock(android.os.IBinder binder, java.lang.String tag) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void acquireMulticastLock(android.os.IBinder binder, java.lang.String tag) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -897,7 +923,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void releaseMulticastLock() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void releaseMulticastLock() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -933,7 +960,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public int getWifiApEnabledState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getWifiApEnabledState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -950,7 +978,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.net.wifi.WifiConfiguration getWifiApConfiguration() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.wifi.WifiConfiguration getWifiApConfiguration() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -972,7 +1001,8 @@ _data.recycle();
 }
 return _result;
 }
-public void setWifiApConfiguration(android.net.wifi.WifiConfiguration wifiConfig) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setWifiApConfiguration(android.net.wifi.WifiConfiguration wifiConfig) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -993,7 +1023,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void startWifi() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void startWifi() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1007,7 +1038,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void stopWifi() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void stopWifi() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1036,7 +1068,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void clearBlacklist() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void clearBlacklist() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1050,7 +1083,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public android.os.Messenger getMessenger() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.os.Messenger getMessenger() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1072,7 +1106,8 @@ _data.recycle();
 }
 return _result;
 }
-public java.lang.String getConfigFile() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getConfigFile() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

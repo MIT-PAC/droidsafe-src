@@ -258,6 +258,7 @@ List<Cookie> varD28DD8C21FB75510B75EB2B0FA23C310_602164161 =             getComp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.710 -0400", hash_original_method = "C8CEC6D04CCA02851E16316FDE4218F3", hash_generated_method = "3CFBDBA27048B71607AB478D11072B28")
     public List<Header> formatCookies(final List<Cookie> cookies) {
         addTaint(cookies.getTaint());

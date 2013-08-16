@@ -16,6 +16,7 @@ public class CloneUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Object clone(final Object obj) throws CloneNotSupportedException {
         if (obj == null) {
             return null;

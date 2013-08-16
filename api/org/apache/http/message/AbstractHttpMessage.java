@@ -20,6 +20,7 @@ public abstract class AbstractHttpMessage implements HttpMessage {
 
     protected HttpParams params;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.649 -0400", hash_original_method = "926C531625268700794509BCC2F5F77F", hash_generated_method = "F64E6306B6CC36DC6AE4D39268C8D717")
     protected  AbstractHttpMessage(final HttpParams params) {
         super();
@@ -59,6 +60,7 @@ Header[] var4405D79A789F00918F592F035CB6C2D8_1820405280 =         this.headergro
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.654 -0400", hash_original_method = "4F426424B706B56A99E07E40B5C52BFA", hash_generated_method = "878B71679C1BECB4683230820856838F")
     public Header getFirstHeader(final String name) {
         addTaint(name.getTaint());
@@ -70,6 +72,7 @@ Header var76E8CB6F7B6FA9646332056848EE09DA_598808874 =         this.headergroup.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.655 -0400", hash_original_method = "2D4239F1E5F9F68D789A00645007924A", hash_generated_method = "CC09081129781D653DD392FA6CC1A219")
     public Header getLastHeader(final String name) {
         addTaint(name.getTaint());
@@ -88,6 +91,7 @@ Header varDCA51A694DA7D6393945A3D3B01EF2B5_1953978623 =         this.headergroup
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.657 -0400", hash_original_method = "1DE731CFF4ECF4DBA0EF3FE32BB726E4", hash_generated_method = "751B734939824D5C25A49ACB3EDE30C5")
     public void addHeader(final Header header) {
         addTaint(header.getTaint());

@@ -270,6 +270,7 @@ ProgramFragmentFixedFunction var26DF16C60843D72D87227D9A8F098EF0_556291857 =    
             MODULATE (2),
             DECAL (3);
             int mID;
+            @DSModeled(DSC.BAN)
             EnvMode(int id) {
                 mID = id;
             }
@@ -282,6 +283,7 @@ ProgramFragmentFixedFunction var26DF16C60843D72D87227D9A8F098EF0_556291857 =    
             RGB (3),
             RGBA (4);
             int mID;
+            @DSModeled(DSC.BAN)
             Format(int id) {
                 mID = id;
             }

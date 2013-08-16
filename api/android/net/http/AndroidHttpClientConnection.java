@@ -83,6 +83,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.771 -0400", hash_original_method = "B7940401E9D410C3E0007DD81BDA911F", hash_generated_method = "70AF7E958BC9713F71D6BCE8CE7A7CE5")
     public void bind(
             final Socket socket,
@@ -427,6 +428,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "9CF9D3D7B73D0AA22EE5EB3E861EF60E", hash_generated_method = "0F1770ADB6ED50FDECE3533E0FAA9369")
     public void sendRequestHeader(final HttpRequest request) throws HttpException, IOException {
         addTaint(request.getTaint());
@@ -449,6 +451,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "73C1557906EF5C67B1A62D382FCB88AB", hash_generated_method = "A0ED3FA67DF50270635DF1F6D1A328EF")
     public void sendRequestEntity(final HttpEntityEnclosingRequest request) throws HttpException, IOException {
         addTaint(request.getTaint());
@@ -596,6 +599,7 @@ StatusLine varECE1183D548EEF2334B847FDE0390490_134462201 =         statusline;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.775 -0400", hash_original_method = "1E84D06F522FAB67F7B7209EA462145E", hash_generated_method = "0B57A1710E2C22E0CCB1BD40C8CB62EC")
     public HttpEntity receiveResponseEntity(final Headers headers) {
         addTaint(headers.getTaint());
@@ -639,6 +643,7 @@ HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_2074931648 =         entity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.775 -0400", hash_original_method = "DFC24C3199FB5D6CC47411FD6E7FCAFF", hash_generated_method = "712A5426CC8577FEFA09259DE810826B")
     private long determineLength(final Headers headers) {
         addTaint(headers.getTaint());

@@ -229,6 +229,7 @@ AuthSchemeRegistry var1D6A0ADE255A698E8F43B1E2D290AEE8_995461824 =         suppo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.053 -0400", hash_original_method = "B5A5E2A2EE7D2FD2092F96692A5CDFDD", hash_generated_method = "3C42503E29092F80429E0AF91C8774F9")
     public synchronized void setAuthSchemes(final AuthSchemeRegistry authSchemeRegistry) {
         supportedAuthSchemes = authSchemeRegistry;
@@ -255,6 +256,7 @@ CookieSpecRegistry var03DD863D201DBFCBCC9315ABE44F665D_1412853671 =         supp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.056 -0400", hash_original_method = "ECFE272682DD75F5943282F00E9E7207", hash_generated_method = "02A7C140907F5B8EE3A8A142294A0EC2")
     public synchronized void setCookieSpecs(final CookieSpecRegistry cookieSpecRegistry) {
         supportedCookieSpecs = cookieSpecRegistry;
@@ -281,6 +283,7 @@ ConnectionReuseStrategy varC37844E15433FF489CCF7DF2085601AF_843891579 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.058 -0400", hash_original_method = "0133833828FCF3626C93AA839CEB0491", hash_generated_method = "AF5320EFD9E99DC33F92EA7E0CED5A8B")
     public synchronized void setReuseStrategy(final ConnectionReuseStrategy reuseStrategy) {
         this.reuseStrategy = reuseStrategy;
@@ -307,6 +310,7 @@ ConnectionKeepAliveStrategy var350D15DC240AE1CEBE26AA8C1FB91B5D_717595536 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.065 -0400", hash_original_method = "D20C58629EEB51CAE85A715149CC7D7C", hash_generated_method = "B3F9B24A37A8DE5E73DDF55AD916F9EB")
     public synchronized void setKeepAliveStrategy(final ConnectionKeepAliveStrategy keepAliveStrategy) {
         this.keepAliveStrategy = keepAliveStrategy;
@@ -333,6 +337,7 @@ HttpRequestRetryHandler var27CFE2B9CEAB74F4158D32BF7CE29442_301058155 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.069 -0400", hash_original_method = "19552606DD1E479BE8417A8173CF9EA3", hash_generated_method = "985889BC4F1D66823E0485810DB22646")
     public synchronized void setHttpRequestRetryHandler(final HttpRequestRetryHandler retryHandler) {
         this.retryHandler = retryHandler;
@@ -359,6 +364,7 @@ RedirectHandler var969FF4899AC3037F7E626C3A09754AB9_667012586 =         redirect
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.074 -0400", hash_original_method = "07A813B5AFD38C75974602ADA745C22B", hash_generated_method = "73ABE2415F8D9F22FC4D05EC42A96B5F")
     public synchronized void setRedirectHandler(final RedirectHandler redirectHandler) {
         this.redirectHandler = redirectHandler;
@@ -385,6 +391,7 @@ AuthenticationHandler var14FEB6F269E494F8F61E59AA40ABA915_1610929043 =         t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.076 -0400", hash_original_method = "3685124053FD269048709264319B81C4", hash_generated_method = "7F19CABE1B8FBFBC290DE1DCC8C0E27B")
     public synchronized void setTargetAuthenticationHandler(
             final AuthenticationHandler targetAuthHandler) {
@@ -412,6 +419,7 @@ AuthenticationHandler var9EB5A7EC5E1A637214C662B32FCF2B73_1695659655 =         p
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.079 -0400", hash_original_method = "4AA8E7473E47BB58C8F6156C1A703EBB", hash_generated_method = "356451F6A605451A11F8421138DE04CD")
     public synchronized void setProxyAuthenticationHandler(
             final AuthenticationHandler proxyAuthHandler) {
@@ -439,6 +447,7 @@ CookieStore varEF8955D9725B20580D54DFD94C0772B2_194417643 =         cookieStore;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.081 -0400", hash_original_method = "6E3B852BBCF6A420BC19B0060772D5B7", hash_generated_method = "901644A30539362C37C64ED0E9AD33C4")
     public synchronized void setCookieStore(final CookieStore cookieStore) {
         this.cookieStore = cookieStore;
@@ -465,6 +474,7 @@ CredentialsProvider var8211F985665B1FE67F6F01527CAE769E_2009552892 =         cre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.083 -0400", hash_original_method = "84417141BEDCB871793C7CE856775B85", hash_generated_method = "BA9188757149893D624B8659AF5EAA2C")
     public synchronized void setCredentialsProvider(final CredentialsProvider credsProvider) {
         this.credsProvider = credsProvider;
@@ -491,6 +501,7 @@ HttpRoutePlanner var2417A831E17E58CB597F83300D761324_1919770683 =         this.r
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.086 -0400", hash_original_method = "3BD66AC4C2DF9FC67B263F6DFA8FD061", hash_generated_method = "FDD7402A6E317D6AFBAF72C7F3C5329F")
     public synchronized void setRoutePlanner(final HttpRoutePlanner routePlanner) {
         this.routePlanner = routePlanner;
@@ -517,6 +528,7 @@ UserTokenHandler varD1124753873EE6AAD5C43849D9B4A3C0_627146147 =         this.us
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.089 -0400", hash_original_method = "FFF313FCFA52F9BED7C1E5BB0A288A32", hash_generated_method = "2F9250109242DF93749FD0275E8C2401")
     public synchronized void setUserTokenHandler(final UserTokenHandler userTokenHandler) {
         this.userTokenHandler = userTokenHandler;
@@ -815,6 +827,7 @@ HttpResponse var1E0ADA5609F1551DD904433FC94E0E29_1900544653 =         execute(ta
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.121 -0400", hash_original_method = "005994C3A0F7DC1EFC9539C703B59C31", hash_generated_method = "BD7D80D606A0FCE79AFE805185CAC379")
     protected RequestDirector createClientRequestDirector(
             final HttpRequestExecutor requestExec,

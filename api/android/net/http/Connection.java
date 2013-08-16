@@ -504,6 +504,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContex
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.947 -0400", hash_original_method = "CD663685F32FAE99B1C37BBE4FC5CEFB", hash_generated_method = "C0530AE8D38B07D5A3AB10A36EA482D6")
     private boolean keepAlive(HttpEntity entity,
             ProtocolVersion ver, int connType, final HttpContext context) {

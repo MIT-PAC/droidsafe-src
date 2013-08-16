@@ -22,6 +22,7 @@ public class InputStreamEntity extends AbstractHttpEntity {
 
     private boolean consumed = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.273 -0400", hash_original_method = "9ECB63D0474F50482B9F88A6526A3761", hash_generated_method = "0E70A1A4CEF40BB104C4778A9C35DBF7")
     public  InputStreamEntity(final InputStream instream, long length) {
         super();

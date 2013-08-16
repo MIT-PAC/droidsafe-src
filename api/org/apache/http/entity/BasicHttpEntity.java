@@ -94,6 +94,7 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_108912998 =         this.content
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.218 -0400", hash_original_method = "9243F298C9B144B2EDE1C1ED14CD424D", hash_generated_method = "5E27285ED6D5A57AA981DC542F0CB0AA")
     public void setContent(final InputStream instream) {
         this.content = instream;
@@ -104,6 +105,7 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_108912998 =         this.content
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.219 -0400", hash_original_method = "4D2C7455ACC84C8F2AC9220CC460CB0C", hash_generated_method = "38DEA44FDD7AADB0ADBAC42C8E64E3E2")
     public void writeTo(final OutputStream outstream) throws IOException {
         addTaint(outstream.getTaint());

@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements com.andro
 {
 private static final java.lang.String DESCRIPTOR = "com.android.internal.view.IInputMethodSession";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static com.android.internal.view.IInputMethodSession asInterface(android.os.IBinder obj)
+@DSModeled(DSC.BAN)
+        public static com.android.internal.view.IInputMethodSession asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((com.android.internal.view.IInputMethodSession)iin);
 }
 return new com.android.internal.view.IInputMethodSession.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -189,19 +192,23 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements com.android.internal.view.IInputMethodSession
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.BAN)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void finishInput() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void finishInput() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -215,7 +222,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void updateExtractedText(int token, android.view.inputmethod.ExtractedText text) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void updateExtractedText(int token, android.view.inputmethod.ExtractedText text) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -237,7 +245,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void updateSelection(int oldSelStart, int oldSelEnd, int newSelStart, int newSelEnd, int candidatesStart, int candidatesEnd) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void updateSelection(int oldSelStart, int oldSelEnd, int newSelStart, int newSelEnd, int candidatesStart, int candidatesEnd) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -257,7 +266,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void viewClicked(boolean focusChanged) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void viewClicked(boolean focusChanged) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -272,7 +282,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void updateCursor(android.graphics.Rect newCursor) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void updateCursor(android.graphics.Rect newCursor) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -293,7 +304,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void displayCompletions(android.view.inputmethod.CompletionInfo[] completions) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void displayCompletions(android.view.inputmethod.CompletionInfo[] completions) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -331,7 +343,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void dispatchTrackballEvent(int seq, android.view.MotionEvent event, com.android.internal.view.IInputMethodCallback callback) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void dispatchTrackballEvent(int seq, android.view.MotionEvent event, com.android.internal.view.IInputMethodCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -376,7 +389,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void toggleSoftInput(int showFlags, int hideFlags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void toggleSoftInput(int showFlags, int hideFlags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -392,7 +406,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void finishSession() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void finishSession() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

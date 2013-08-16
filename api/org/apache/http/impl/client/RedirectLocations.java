@@ -23,6 +23,7 @@ public class RedirectLocations {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.891 -0400", hash_original_method = "AE445335586A61F4AB9D472CB658E765", hash_generated_method = "888D34750EE38C985088E1CFF644F516")
     public boolean contains(final URI uri) {
         addTaint(uri.getTaint());
@@ -34,6 +35,7 @@ public class RedirectLocations {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.892 -0400", hash_original_method = "F9942D2466FE07715480ED4C9CFB455E", hash_generated_method = "118F4446B2A84A513CB9A39012B991C9")
     public void add(final URI uri) {
         addTaint(uri.getTaint());
@@ -43,6 +45,7 @@ public class RedirectLocations {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.892 -0400", hash_original_method = "E60762F1048604C69EBEEFFB1108CCA7", hash_generated_method = "0BA8EAF60D4166FCD58DA6CA082EAAED")
     public boolean remove(final URI uri) {
         addTaint(uri.getTaint());

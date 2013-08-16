@@ -11,6 +11,7 @@ import org.apache.http.params.HttpParams;
 
 public class SocketOutputBuffer extends AbstractSessionOutputBuffer {
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.649 -0400", hash_original_method = "1DA9FA2C2AD0E745701D10A4EA37C418", hash_generated_method = "999529FA66E8471E2B9F7371CEF1C574")
     public  SocketOutputBuffer(
             final Socket socket,

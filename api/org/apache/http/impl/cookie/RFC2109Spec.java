@@ -108,6 +108,7 @@ List<Cookie> var244203BCE4724537DC84FE61D4419CE6_1405685498 =         parse(elem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.107 -0400", hash_original_method = "FA8C9B830274A9DE10C31E9A8EA08163", hash_generated_method = "4817BE8ACB811C161CB4764FBB6C38E1")
     @Override
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
@@ -200,6 +201,7 @@ List<Header> var59734256327096CDB0D6F953D783862E_820380553 =             doForma
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.109 -0400", hash_original_method = "13FFFC492D1247BC18ED6817446ED518", hash_generated_method = "1B9DAB82B34552E66BEBC4B1E13742CE")
     private List<Header> doFormatOneHeader(final List<Cookie> cookies) {
         addTaint(cookies.getTaint());
@@ -250,6 +252,7 @@ List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_687094528 =         headers;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.110 -0400", hash_original_method = "8AE6C62AD6B7A2305FE4DC1EC3AC9430", hash_generated_method = "5E324A0F6AEA0C032CE5B80DE1566ED5")
     private List<Header> doFormatManyHeaders(final List<Cookie> cookies) {
         addTaint(cookies.getTaint());
@@ -284,6 +287,7 @@ List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_1932353331 =         headers;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.111 -0400", hash_original_method = "06F97D44B0AB130D85C55056AFD5C23B", hash_generated_method = "982FF44A9FF37AD5FC4DA92E9661BFB1")
     protected void formatParamAsVer(final CharArrayBuffer buffer, 
             final String name, final String value, int version) {

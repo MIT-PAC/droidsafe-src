@@ -31,6 +31,7 @@ public class NetscapeDraftHeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.920 -0400", hash_original_method = "3C830AE22F7AA511AF75147C79DF353D", hash_generated_method = "3024AD54CBDA0EE5195A404288D02665")
     public HeaderElement parseHeader(
             final CharArrayBuffer buffer,

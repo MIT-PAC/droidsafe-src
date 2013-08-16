@@ -16,26 +16,31 @@ public final class LangUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int hashCode(final int seed, final int hashcode) {
         return seed * HASH_OFFSET + hashcode;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int hashCode(final int seed, final boolean b) {
         return hashCode(seed, b ? 1 : 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int hashCode(final int seed, final Object obj) {
         return hashCode(seed, obj != null ? obj.hashCode() : 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equals(final Object obj1, final Object obj2) {
         return obj1 == null ? obj2 == null : obj1.equals(obj2);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean equals(final Object[] a1, final Object[] a2) {
         if (a1 == null) {
             if (a2 == null) {

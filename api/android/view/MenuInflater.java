@@ -362,6 +362,7 @@ switch(eventType){
 
         private ActionProvider itemActionProvider;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.610 -0400", hash_original_method = "D92FD84364574F36A2E6DED89015926B", hash_generated_method = "0CCDB88A494929C5A6239EA497C25103")
         public  MenuState(final Menu menu) {
             this.menu = menu;

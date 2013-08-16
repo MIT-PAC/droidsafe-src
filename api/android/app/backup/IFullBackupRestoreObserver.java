@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.app.backup.IFullBackupRestoreObserver";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.app.backup.IFullBackupRestoreObserver)iin);
 }
 return new android.app.backup.IFullBackupRestoreObserver.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -95,16 +97,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public void onStartBackup() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onStartBackup() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -129,7 +134,8 @@ _data.recycle();
 }
 }
 
-public void onEndBackup() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onEndBackup() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -141,7 +147,8 @@ _data.recycle();
 }
 }
 
-public void onStartRestore() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onStartRestore() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -166,7 +173,8 @@ _data.recycle();
 }
 }
 
-public void onEndRestore() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onEndRestore() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -178,7 +186,8 @@ _data.recycle();
 }
 }
 
-public void onTimeout() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void onTimeout() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

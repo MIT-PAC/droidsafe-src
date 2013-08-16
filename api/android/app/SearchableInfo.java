@@ -104,6 +104,7 @@ public final class SearchableInfo implements Parcelable {
 
     private int mVoiceMaxResults;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.069 -0400", hash_original_method = "633954995A30C027EA0DC2D487CA3CDA", hash_generated_method = "4F65ED6E3FD969A24B5D83E170C2F537")
     private  SearchableInfo(Context activityContext, AttributeSet attr, final ComponentName cName) {
         addTaint(attr.getTaint());
@@ -490,6 +491,7 @@ ActionKeyInfo var84BB625C941C7D500DC00A075C71E98C_354147134 =         mActionKey
     }
 
     
+    @DSModeled(DSC.BAN)
     private static SearchableInfo getActivityMetaData(Context context, XmlPullParser xml,
             final ComponentName cName) {
         SearchableInfo result = null;

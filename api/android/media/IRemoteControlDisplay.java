@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.m
 {
 private static final java.lang.String DESCRIPTOR = "android.media.IRemoteControlDisplay";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.media.IRemoteControlDisplay)iin);
 }
 return new android.media.IRemoteControlDisplay.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -140,11 +142,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
@@ -169,7 +173,8 @@ finally {
 _data.recycle();
 }
 }
-public void setPlaybackState(int generationId, int state, long stateChangeTimeMs) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setPlaybackState(int generationId, int state, long stateChangeTimeMs) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -183,7 +188,8 @@ finally {
 _data.recycle();
 }
 }
-public void setTransportControlFlags(int generationId, int transportControlFlags) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void setTransportControlFlags(int generationId, int transportControlFlags) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -196,7 +202,8 @@ finally {
 _data.recycle();
 }
 }
-public void setMetadata(int generationId, android.os.Bundle metadata) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setMetadata(int generationId, android.os.Bundle metadata) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

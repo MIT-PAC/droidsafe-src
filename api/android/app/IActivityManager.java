@@ -346,14 +346,17 @@ public interface IActivityManager extends IInterface {
         public IContentProvider provider;
         public boolean noReleaseNeeded;
 
+        @DSModeled(DSC.BAN)
         public ContentProviderHolder(ProviderInfo _info) {
             info = _info;
         }
 
+        @DSModeled(DSC.BAN)
         public int describeContents() {
             return 0;
         }
 
+        @DSModeled(DSC.BAN)
         public void writeToParcel(Parcel dest, int flags) {
             info.writeToParcel(dest, 0);
             if (provider != null) {
@@ -366,15 +369,18 @@ public interface IActivityManager extends IInterface {
 
         public static final Parcelable.Creator<ContentProviderHolder> CREATOR
                 = new Parcelable.Creator<ContentProviderHolder>() {
+            @DSModeled(DSC.BAN)
             public ContentProviderHolder createFromParcel(Parcel source) {
                 return new ContentProviderHolder(source);
             }
 
+            @DSModeled(DSC.SAFE)
             public ContentProviderHolder[] newArray(int size) {
                 return new ContentProviderHolder[size];
             }
         };
 
+        @DSModeled(DSC.BAN)
         private ContentProviderHolder(Parcel source) {
             info = ProviderInfo.CREATOR.createFromParcel(source);
             provider = ContentProviderNative.asInterface(
@@ -391,13 +397,16 @@ public interface IActivityManager extends IInterface {
         public long thisTime;
         public long totalTime;
 
+        @DSModeled(DSC.BAN)
         public WaitResult() {
         }
 
+        @DSModeled(DSC.BAN)
         public int describeContents() {
             return 0;
         }
 
+        @DSModeled(DSC.BAN)
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(result);
             dest.writeInt(timeout ? 1 : 0);
@@ -408,6 +417,7 @@ public interface IActivityManager extends IInterface {
 
         public static final Parcelable.Creator<WaitResult> CREATOR
                 = new Parcelable.Creator<WaitResult>() {
+            @DSModeled(DSC.BAN)
             public WaitResult createFromParcel(Parcel source) {
                 return new WaitResult(source);
             }
@@ -417,6 +427,7 @@ public interface IActivityManager extends IInterface {
             }
         };
 
+        @DSModeled(DSC.BAN)
         private WaitResult(Parcel source) {
             result = source.readInt();
             timeout = source.readInt() != 0;

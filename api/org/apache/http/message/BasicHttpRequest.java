@@ -21,6 +21,7 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
 
     private String uri;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.868 -0400", hash_original_method = "D336B902E966467A394D4F5E82995C23", hash_generated_method = "0FE4AAE896D37E83A2EEB70CE73AB25D")
     public  BasicHttpRequest(final String method, final String uri) {
         super();
@@ -52,6 +53,7 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.869 -0400", hash_original_method = "32D970961D566BAF565D674274EE91DF", hash_generated_method = "A33C678434B289592570C6B71DAC0A6E")
     public  BasicHttpRequest(final String method, final String uri, final ProtocolVersion ver) {
         this(new BasicRequestLine(method, uri, ver));
@@ -62,6 +64,7 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.870 -0400", hash_original_method = "6934C052A0F550106B98ACB21507F0F6", hash_generated_method = "8CD57FF6CAD09D3B8A0C7CD3B3E61306")
     public  BasicHttpRequest(final RequestLine requestline) {
         super();

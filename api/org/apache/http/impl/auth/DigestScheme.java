@@ -46,6 +46,7 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.447 -0400", hash_original_method = "F883A5EB3B1E4D14BCFB97B586287C83", hash_generated_method = "2172A43399EE14D5A388F8CB089F40AF")
     @Override
     public void processChallenge(
@@ -149,6 +150,7 @@ String varFD1934E0BA3A06FC5A424DB3DDD067C8_1414291662 =         "digest";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.448 -0400", hash_original_method = "53EAC8543BC193A49B7CF7E715181435", hash_generated_method = "656A2C68903F8EA8CC9B6DAE29816304")
     public void overrideParamter(final String name, final String value) {
         addTaint(value.getTaint());
@@ -226,6 +228,7 @@ Header varD9B43F6A543FACB6477B447D4483CEAE_1132556101 =         createDigestHead
     }
 
     
+    @DSModeled(DSC.BAN)
     private static MessageDigest createMessageDigest(
             final String digAlg) throws UnsupportedDigestAlgorithmException {
         try {
@@ -238,6 +241,7 @@ Header varD9B43F6A543FACB6477B447D4483CEAE_1132556101 =         createDigestHead
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.449 -0400", hash_original_method = "EC5C003DA4A6F1C86FB6170174AAC10C", hash_generated_method = "E4CDC88CB8F82B1AF07597119BDFEE1D")
     private String createDigest(final Credentials credentials) throws AuthenticationException {
         addTaint(credentials.getTaint());
@@ -358,6 +362,7 @@ String var2EC6C72AFD08A9E52823FFE883A36622_214640521 =         serverDigest;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.450 -0400", hash_original_method = "C034852EE12EEF6A2A977B845769FACB", hash_generated_method = "A2C436A6DF8DCA9366374CD9D9A4C956")
     private Header createDigestHeader(
             final Credentials credentials, 

@@ -2888,6 +2888,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void finishAnimatingView(final View view, Animation animation){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

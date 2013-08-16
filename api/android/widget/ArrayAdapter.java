@@ -324,6 +324,7 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public Object getItem(int position) {
 		return getTaint();

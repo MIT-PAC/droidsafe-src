@@ -111,6 +111,7 @@ public class AccountManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.824 -0400", hash_original_method = "96491C15B9EBF498D1F12389B670F852", hash_generated_method = "3E0872507A37323EA476FA927548A741")
     public String getPassword(final Account account) {
         addTaint(account.getTaint());
@@ -142,6 +143,7 @@ String varF265DC2FF2F4422603F1281D744D04FC_1235973310 =             mService.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.830 -0400", hash_original_method = "8DF662EA0E604D155E2F8EF5AE185580", hash_generated_method = "9475F81DC39B8549A1A699546433EC86")
     public String getUserData(final Account account, final String key) {
         addTaint(key.getTaint());
@@ -411,6 +413,7 @@ Account[] var8AFC8F239FAF32249C1DA5BD5D6C508A_259823908 =             descs;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.910 -0400", hash_original_method = "E8BA698C89E3CF76A294446D4D176FF0", hash_generated_method = "15E24A567D05DCC27F124EAD65F5D3B4")
     public AccountManagerFuture<Boolean> removeAccount(final Account account,
             AccountManagerCallback<Boolean> callback, Handler handler) {
@@ -467,6 +470,7 @@ Boolean varE5CA5297BFAF8C89D32D5EF2EF2432F6_1423864158 =             bundle.getB
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.915 -0400", hash_original_method = "4162D414A92CDAFD44055C84C3F9947E", hash_generated_method = "1010DEB38636C019DB35834056540FDF")
     public void invalidateAuthToken(final String accountType, final String authToken) {
         addTaint(authToken.getTaint());
@@ -502,6 +506,7 @@ Boolean varE5CA5297BFAF8C89D32D5EF2EF2432F6_1423864158 =             bundle.getB
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.923 -0400", hash_original_method = "DF00C62B1FBE79E2C2C3124DAA6E8CCA", hash_generated_method = "744A7EEB628379B7A2BBCB2A17437144")
     public String peekAuthToken(final Account account, final String authTokenType) {
         addTaint(authTokenType.getTaint());
@@ -541,6 +546,7 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1250779985 =             mService.pee
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.926 -0400", hash_original_method = "DBE21AE149A5EC66FBC34FA1D5807CA3", hash_generated_method = "AD36FB21E807B4818E503BE0E38283A3")
     public void setPassword(final Account account, final String password) {
         addTaint(password.getTaint());
@@ -571,6 +577,7 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1250779985 =             mService.pee
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.931 -0400", hash_original_method = "9D6E3653B7C827404B4854FFAF700F44", hash_generated_method = "405E9D1D29F1E437BD18B42515E6D44B")
     public void clearPassword(final Account account) {
         addTaint(account.getTaint());
@@ -600,6 +607,7 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1250779985 =             mService.pee
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.937 -0400", hash_original_method = "39E18EFA140E2C140EF9BDAC244CFA88", hash_generated_method = "092A8213A112F79A7E43AFF738C7D4EB")
     public void setUserData(final Account account, final String key, final String value) {
         addTaint(value.getTaint());
@@ -638,6 +646,7 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1250779985 =             mService.pee
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.947 -0400", hash_original_method = "967876CD971AD7982E73046636574113", hash_generated_method = "A4BBD03FEB7D574A254D751E4B018ABE")
     public void setAuthToken(Account account, final String authTokenType, final String authToken) {
         addTaint(authToken.getTaint());
@@ -948,6 +957,7 @@ AccountManagerFuture<Bundle> varAF4F8503C14478A49D1D8937CDFAB658_985942427 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.011 -0400", hash_original_method = "D809F6F9BB7D46EEEE0B772ED5C9F6A9", hash_generated_method = "E300B37B96D9F856FD83EEA0A5E51C40")
     public AccountManagerFuture<Bundle> updateCredentials(final Account account,
             final String authTokenType,
@@ -1076,6 +1086,7 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_992146252 =    
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.048 -0400", hash_original_method = "20F25A89C89C92245636BC8DCFF18BD7", hash_generated_method = "3A2A32EA4123F98789B49893C89592C0")
     private void postToHandler(Handler handler, final OnAccountsUpdateListener listener,
             final Account[] accounts) {
@@ -1780,6 +1791,7 @@ Future2Task<T> var72A74007B2BE62B849F475C7BDA4658B_1284376435 =             this
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.204 -0400", hash_original_method = "41F0112BBEC6735226A2F41FF2202D7E", hash_generated_method = "149214C5C31E317F77C9D84079D6194B")
         private T internalGetResult(Long timeout, TimeUnit unit) throws OperationCanceledException, IOException, AuthenticatorException {
             addTaint(unit.getTaint());

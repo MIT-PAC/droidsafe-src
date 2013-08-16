@@ -252,6 +252,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int countDots(final String s) {
         int count = 0;
         for(int i = 0; i < s.length(); i++) {

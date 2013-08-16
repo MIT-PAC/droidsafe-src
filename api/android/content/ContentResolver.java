@@ -983,6 +983,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Object addStatusChangeListener(int mask, final SyncStatusObserver callback) {
         if (callback == null) {
             throw new IllegalArgumentException("you passed in a null callback");

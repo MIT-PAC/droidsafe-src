@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.v
 {
 private static final java.lang.String DESCRIPTOR = "android.view.IApplicationToken";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.view.IApplicationToken asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.view.IApplicationToken asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,11 +28,13 @@ return ((android.view.IApplicationToken)iin);
 }
 return new android.view.IApplicationToken.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -82,19 +86,23 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.view.IApplicationToken
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void windowsDrawn() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void windowsDrawn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -108,7 +116,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void windowsVisible() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void windowsVisible() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -122,7 +131,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public void windowsGone() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void windowsGone() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -136,7 +146,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-public boolean keyDispatchingTimedOut() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean keyDispatchingTimedOut() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -153,7 +164,8 @@ _data.recycle();
 }
 return _result;
 }
-public long getKeyDispatchingTimeout() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public long getKeyDispatchingTimeout() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

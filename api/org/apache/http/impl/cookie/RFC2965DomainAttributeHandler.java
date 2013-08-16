@@ -171,6 +171,7 @@ public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.178 -0400", hash_original_method = "C7211512AD90131E871DA498CB7C5AD4", hash_generated_method = "D073FDDFD7FBF12C555FC951ED779510")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
         addTaint(origin.getTaint());

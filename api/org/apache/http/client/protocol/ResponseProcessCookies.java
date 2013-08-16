@@ -84,6 +84,7 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.597 -0400", hash_original_method = "91DFC6E3C42B7F0C9ED2CF0B4905D6AD", hash_generated_method = "8412E5DDD380FA295A44D44A1DFF147E")
     private void processCookies(
             final HeaderIterator iterator, 

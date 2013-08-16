@@ -109,6 +109,7 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.390 -0400", hash_original_method = "9ED25198C2B890CA881490476183D1D6", hash_generated_method = "7CA30BFC7F413B508A79C9FB2450C1E3")
     public synchronized void addFailure(final Test test, final AssertionFailedError t) {
         addTaint(t.getTaint());

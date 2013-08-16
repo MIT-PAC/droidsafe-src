@@ -15,19 +15,23 @@ public interface IMountService extends IInterface {
         private static class Proxy implements IMountService {
             private final IBinder mRemote;
 
+            @DSModeled(DSC.BAN)
             Proxy(IBinder remote) {
                 mRemote = remote;
             }
 
+            @DSModeled(DSC.BAN)
             public IBinder asBinder() {
                 return mRemote;
             }
 
+            @DSModeled(DSC.BAN)
             public String getInterfaceDescriptor() {
                 return DESCRIPTOR;
             }
 
             
+            @DSModeled(DSC.BAN)
             public void registerListener(IMountServiceListener listener) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -43,6 +47,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void unregisterListener(IMountServiceListener listener) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -58,6 +63,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public boolean isUsbMassStorageConnected() throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -75,6 +81,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void setUsbMassStorageEnabled(boolean enable) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -90,6 +97,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public boolean isUsbMassStorageEnabled() throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -107,6 +115,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int mountVolume(String mountPoint) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -125,6 +134,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void unmountVolume(String mountPoint, boolean force, boolean removeEncryption)
                     throws RemoteException {
                 Parcel _data = Parcel.obtain();
@@ -143,6 +153,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int formatVolume(String mountPoint) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -161,6 +172,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int[] getStorageUsers(String path) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -179,6 +191,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public String getVolumeState(String mountPoint) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -197,6 +210,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int createSecureContainer(String id, int sizeMb, String fstype, String key,
                     int ownerUid) throws RemoteException {
                 Parcel _data = Parcel.obtain();
@@ -220,6 +234,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int destroySecureContainer(String id, boolean force) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -239,6 +254,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int finalizeSecureContainer(String id) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -257,6 +273,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int mountSecureContainer(String id, String key, int ownerUid)
                     throws RemoteException {
                 Parcel _data = Parcel.obtain();
@@ -278,6 +295,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int unmountSecureContainer(String id, boolean force) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -297,6 +315,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public boolean isSecureContainerMounted(String id) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -315,6 +334,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public int renameSecureContainer(String oldId, String newId) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -334,6 +354,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public String getSecureContainerPath(String id) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -352,6 +373,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public String[] getSecureContainerList() throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -369,6 +391,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void shutdown(IMountShutdownObserver observer)
                     throws RemoteException {
                 Parcel _data = Parcel.obtain();
@@ -385,6 +408,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void finishMediaUpdate() throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -399,6 +423,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void mountObb(String filename, String key, IObbActionListener token, int nonce)
                     throws RemoteException {
                 Parcel _data = Parcel.obtain();
@@ -418,6 +443,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public void unmountObb(String filename, boolean force, IObbActionListener token,
                     int nonce) throws RemoteException {
                 Parcel _data = Parcel.obtain();
@@ -437,6 +463,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public boolean isObbMounted(String filename) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -455,6 +482,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public String getMountedObbPath(String filename) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -473,6 +501,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public boolean isExternalStorageEmulated() throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -489,6 +518,7 @@ public interface IMountService extends IInterface {
                 return _result;
             }
 
+            @DSModeled(DSC.BAN)
             public int getEncryptionState() throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -505,6 +535,7 @@ public interface IMountService extends IInterface {
                 return _result;
             }
 
+            @DSModeled(DSC.BAN)
             public int decryptStorage(String password) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -522,6 +553,7 @@ public interface IMountService extends IInterface {
                 return _result;
             }
 
+            @DSModeled(DSC.BAN)
             public int encryptStorage(String password) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -539,6 +571,7 @@ public interface IMountService extends IInterface {
                 return _result;
             }
 
+            @DSModeled(DSC.BAN)
             public int changeEncryptionPassword(String password) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -556,6 +589,7 @@ public interface IMountService extends IInterface {
                 return _result;
             }
 
+            @DSModeled(DSC.BAN)
             @Override
             public int verifyEncryptionPassword(String password) throws RemoteException {
                 Parcel _data = Parcel.obtain();
@@ -574,6 +608,7 @@ public interface IMountService extends IInterface {
                 return _result;
             }
 
+            @DSModeled(DSC.BAN)
             public Parcelable[] getVolumeList() throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -591,6 +626,7 @@ public interface IMountService extends IInterface {
             }
 
             
+            @DSModeled(DSC.BAN)
             public String getSecureContainerFilesystemPath(String id) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();
@@ -678,6 +714,7 @@ public interface IMountService extends IInterface {
         static final int TRANSACTION_verifyEncryptionPassword = IBinder.FIRST_CALL_TRANSACTION + 32;
 
         
+        @DSModeled(DSC.BAN)
         public static IMountService asInterface(IBinder obj) {
             if (obj == null) {
                 return null;
@@ -690,14 +727,17 @@ public interface IMountService extends IInterface {
         }
 
         
+        @DSModeled(DSC.BAN)
         public Stub() {
             attachInterface(this, DESCRIPTOR);
         }
 
+        @DSModeled(DSC.BAN)
         public IBinder asBinder() {
             return this;
         }
 
+        @DSModeled(DSC.BAN)
         @Override
         public boolean onTransact(int code, Parcel data, Parcel reply,
                 int flags) throws RemoteException {

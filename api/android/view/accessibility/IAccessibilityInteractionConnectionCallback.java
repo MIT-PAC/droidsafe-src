@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.v
 {
 private static final java.lang.String DESCRIPTOR = "android.view.accessibility.IAccessibilityInteractionConnectionCallback";
 
-public Stub()
+@DSModeled(DSC.SAFE)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.view.accessibility.IAccessibilityInteractionConnectionCallback asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.view.accessibility.IAccessibilityInteractionConnectionCallback asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,11 +28,13 @@ return ((android.view.accessibility.IAccessibilityInteractionConnectionCallback)
 }
 return new android.view.accessibility.IAccessibilityInteractionConnectionCallback.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+        @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -80,20 +84,24 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.view.accessibility.IAccessibilityInteractionConnectionCallback
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public void setFindAccessibilityNodeInfoResult(android.view.accessibility.AccessibilityNodeInfo info, int interactionId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setFindAccessibilityNodeInfoResult(android.view.accessibility.AccessibilityNodeInfo info, int interactionId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -113,7 +121,8 @@ _data.recycle();
 }
 }
 
-public void setFindAccessibilityNodeInfosResult(java.util.List<android.view.accessibility.AccessibilityNodeInfo> infos, int interactionId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setFindAccessibilityNodeInfosResult(java.util.List<android.view.accessibility.AccessibilityNodeInfo> infos, int interactionId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -127,7 +136,8 @@ _data.recycle();
 }
 }
 
-public void setPerformAccessibilityActionResult(boolean succeeded, int interactionId) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setPerformAccessibilityActionResult(boolean succeeded, int interactionId) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

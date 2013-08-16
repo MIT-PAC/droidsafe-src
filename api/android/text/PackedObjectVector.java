@@ -43,7 +43,7 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.104 -0400", hash_original_method = "1C46B70362A26F7DECFFAE89D2DE52CF", hash_generated_method = "8A4811F6DBB0AE2E4E3E0597FF7A42B0")
     public E getValue(int row, int column) {
         addTaint(column);
@@ -62,6 +62,7 @@ E var1003C6094065F51E703D3FC5DD353D7E_1690440764 =         (E) value;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.104 -0400", hash_original_method = "C9FAD217A876C18081065D61EE309BF7", hash_generated_method = "D37DDFDC406B0976D016D614124D6C6D")
     public void setValue(int row, int column, E value) {
         if(row >= mRowGapStart)        
@@ -74,6 +75,7 @@ E var1003C6094065F51E703D3FC5DD353D7E_1690440764 =         (E) value;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.105 -0400", hash_original_method = "4D54718FEF2171E694149D7895F4552C", hash_generated_method = "E1954D0D4AE9F0765712067ED7F6E68D")
     public void insertAt(int row, E[] values) {
         addTaint(values[0].getTaint());
@@ -208,6 +210,7 @@ for(int j = 0;j < mColumns;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.110 -0400", hash_original_method = "D4D4661D97DE10B055DBC1529423C904", hash_generated_method = "A1FB8E7AC3A82954571F9B34F02DA715")
     public void dump() {
 for(int i = 0;i < mRows;i++)

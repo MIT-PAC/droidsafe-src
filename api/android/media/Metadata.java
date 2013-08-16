@@ -141,6 +141,7 @@ Set<Integer> var19BD1B7180A2FD56EA0AAC27E469272A_1295618902 =         mKeyToPosM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.865 -0400", hash_original_method = "7767A5018B3458E07A2B7B3389E3B1D0", hash_generated_method = "017178EE79D68C50E3BC55FAD74D57C6")
     public boolean has(final int metadataId) {
         addTaint(metadataId);
@@ -161,6 +162,7 @@ Set<Integer> var19BD1B7180A2FD56EA0AAC27E469272A_1295618902 =         mKeyToPosM
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.866 -0400", hash_original_method = "D07ADABDF4536425A343AFD4015AEABD", hash_generated_method = "F804F4B271E390D6CD4AA71A0FB21889")
     public String getString(final int key) {
         addTaint(key);
@@ -174,6 +176,7 @@ String var1B25834954A649773DFCF4733E0DFAF6_367059589 =         mParcel.readStrin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.866 -0400", hash_original_method = "2E24F7D1E582CF4592E0FE6ACF6159ED", hash_generated_method = "A42A7D6A9724EB843D6DD988495B4D25")
     public int getInt(final int key) {
         addTaint(key);
@@ -187,6 +190,7 @@ String var1B25834954A649773DFCF4733E0DFAF6_367059589 =         mParcel.readStrin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.866 -0400", hash_original_method = "92B2C04C5831BF6FBB547313E4BFF6F1", hash_generated_method = "CD9ED43B8FF832173074E36392E8E2FC")
     public boolean getBoolean(final int key) {
         addTaint(key);
@@ -200,6 +204,7 @@ String var1B25834954A649773DFCF4733E0DFAF6_367059589 =         mParcel.readStrin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.866 -0400", hash_original_method = "B0F0000F85D960C325C9AE562DB8183E", hash_generated_method = "12A883C1A256B1EC257E6D0528B823F9")
     public long getLong(final int key) {
         addTaint(key);
@@ -213,6 +218,7 @@ String var1B25834954A649773DFCF4733E0DFAF6_367059589 =         mParcel.readStrin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.866 -0400", hash_original_method = "C463F992BA89266506A75490D5B4B789", hash_generated_method = "FFF491B543BF9F8743D1AD37F06B2CCA")
     public double getDouble(final int key) {
         addTaint(key);
@@ -226,6 +232,7 @@ String var1B25834954A649773DFCF4733E0DFAF6_367059589 =         mParcel.readStrin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.867 -0400", hash_original_method = "7682E02DAB96764259A6698B858B1834", hash_generated_method = "D28C92983DD24A6AFE912E4E63FA7476")
     public byte[] getByteArray(final int key) {
         addTaint(key);
@@ -239,6 +246,7 @@ String var1B25834954A649773DFCF4733E0DFAF6_367059589 =         mParcel.readStrin
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.867 -0400", hash_original_method = "AAEF3D01D729AC9D47A3AB4C5693312B", hash_generated_method = "2C39FE9875B8F01B4DD7C9236235098E")
     public Date getDate(final int key) {
         addTaint(key);
@@ -293,6 +301,7 @@ Date varBD9B55B530F60709CCFA9E4F3BCA3194_98084209 =             cal.getTime();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.867 -0400", hash_original_method = "6E38B18258B92FBBE9034AE151B9B0E7", hash_generated_method = "A37B935E60B9E0644B63AC84096C2F4B")
     private boolean checkMetadataId(final int val) {
         addTaint(val);
@@ -314,6 +323,7 @@ Date varBD9B55B530F60709CCFA9E4F3BCA3194_98084209 =             cal.getTime();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.868 -0400", hash_original_method = "E71E62CC93A8C30E28BB789565435B56", hash_generated_method = "3E0642A581A9BEB286DED07B8BE2E7DA")
     private void checkType(final int key, final int expectedType) {
         addTaint(expectedType);

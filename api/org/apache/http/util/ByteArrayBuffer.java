@@ -114,6 +114,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.436 -0400", hash_original_method = "46C6F4F43DFE7BB1741326F0CDCC6C04", hash_generated_method = "54F880000DCDCFD9225D59EF929B660C")
     public void append(final char[] b, int off, int len) {
         addTaint(off);

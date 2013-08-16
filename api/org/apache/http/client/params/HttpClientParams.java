@@ -34,6 +34,7 @@ public class HttpClientParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isAuthenticating(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -52,6 +53,7 @@ public class HttpClientParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getCookiePolicy(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");

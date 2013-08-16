@@ -145,6 +145,7 @@ List<String> varAAEC45CC0E27E189B466FC7E198A1AD8_643193981 =         new ArrayLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.001 -0400", hash_original_method = "E53575E4E05CC4D1B4FC58DE949DDA2A", hash_generated_method = "EC2D8F9D92F392360BC6888D3D75A7AA")
     public synchronized void setItems(final Map<String, Scheme> map) {
         addTaint(map.getTaint());

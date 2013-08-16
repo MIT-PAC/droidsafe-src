@@ -18,6 +18,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getHttpElementCharset(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -31,6 +32,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setHttpElementCharset(final HttpParams params, final String charset) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -39,6 +41,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getContentCharset(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -60,6 +63,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ProtocolVersion getVersion(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -81,6 +85,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getUserAgent(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -97,6 +102,7 @@ public final class HttpProtocolParams implements CoreProtocolPNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean useExpectContinue(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");

@@ -501,6 +501,7 @@ String var540C13E9E156B687226421B24F2DF178_995288269 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.051 -0400", hash_original_method = "00D6A00D33EFE0DA025C348896CFB4AD", hash_generated_method = "08B18AF12E9A8A8EA1FDB914F2E0F27D")
     private File getCertificateFile(File dir, final X509Certificate x) {
         addTaint(x.getTaint());
@@ -569,6 +570,7 @@ File var908387D27739B0137405CF0F79F5D3A2_444978157 =         findCert(dir, x.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.053 -0400", hash_original_method = "A6B2832B57E732FF74F3B8B62A574310", hash_generated_method = "F2F9C44B02BD0572F6980DE0EDC470C2")
     public X509Certificate findIssuer(final X509Certificate c) {
         addTaint(c.getTaint());
@@ -624,6 +626,7 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_1763265003 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.053 -0400", hash_original_method = "3F71F2007BD6B23A9969AFA8B1C7C7C7", hash_generated_method = "99D663D2CC257420CD184BE738D2B62A")
     private <T> T findCert(
             File dir, X500Principal subject, CertSelector selector, Class<T> desiredReturnType) {

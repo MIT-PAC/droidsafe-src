@@ -736,6 +736,7 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_1294264322 =         types
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.365 -0400", hash_original_method = "162904FEAED4FE3BDD09493527BC709D", hash_generated_method = "1CCADD49CFACED77857DE6EC3AA0C2AB")
     private void sendCancelSyncsMessage(final Account account, final String authority) {
         addTaint(authority.getTaint());
@@ -2699,6 +2700,7 @@ for(ActiveSyncContext syncContext : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.479 -0400", hash_original_method = "61AEAAC860377C6ACC1D13743DAD80A2", hash_generated_method = "43A919F29A8BE8607C5EC65FEB8A7F6F")
         private void runBoundToSyncAdapter(final ActiveSyncContext activeSyncContext,
               ISyncAdapter syncAdapter) {

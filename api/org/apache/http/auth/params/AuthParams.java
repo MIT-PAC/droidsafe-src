@@ -17,6 +17,7 @@ public final class AuthParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getCredentialCharset(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
@@ -30,6 +31,7 @@ public final class AuthParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setCredentialCharset(final HttpParams params, final String charset) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");

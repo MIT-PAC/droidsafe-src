@@ -25,6 +25,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int[] parsePortAttribute(final String portValue) throws MalformedCookieException {
         StringTokenizer st = new StringTokenizer(portValue, ",");
         int[] ports = new int[st.countTokens()];

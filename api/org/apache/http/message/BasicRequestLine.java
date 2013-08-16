@@ -21,6 +21,7 @@ public class BasicRequestLine implements RequestLine, Cloneable {
 
     private String uri;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.036 -0400", hash_original_method = "C975E0C09D0E2EF1EBE9CA9605A59CBA", hash_generated_method = "0F6C377F32F7531C4989380D9879D81E")
     public  BasicRequestLine(final String method,
                             final String uri,

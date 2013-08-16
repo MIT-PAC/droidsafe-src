@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.l
 {
 private static final java.lang.String DESCRIPTOR = "android.location.ICountryListener";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.location.ICountryListener)iin);
 }
 return new android.location.ICountryListener.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -58,19 +60,23 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.location.ICountryListener
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.SAFE)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void onCountryDetected(android.location.Country country) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void onCountryDetected(android.location.Country country) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

@@ -17,6 +17,7 @@ public class MalformedChunkCodingException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.171 -0400", hash_original_method = "8529106FFAE0E25F63F016FC3AC665F8", hash_generated_method = "93F27E7A1054A90EC78E05053E38911D")
     public  MalformedChunkCodingException(final String message) {
         super(message);

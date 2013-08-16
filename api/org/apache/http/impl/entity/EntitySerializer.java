@@ -22,6 +22,7 @@ public class EntitySerializer {
 
     private ContentLengthStrategy lenStrategy;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.301 -0400", hash_original_method = "6A84330A1DEB7B7037DF31B55F2620FD", hash_generated_method = "3DF4460BCA2F70829FF28734C2C462A8")
     public  EntitySerializer(final ContentLengthStrategy lenStrategy) {
         super();
@@ -78,6 +79,7 @@ OutputStream varC70AA7B701F6A379FFC7C55A4EAF1EE7_342090776 =             new Con
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.304 -0400", hash_original_method = "61D7ADAF4C31C152373CEA6CC3FA217A", hash_generated_method = "AED8863D2713E1059BD2579A8A568404")
     public void serialize(
             final SessionOutputBuffer outbuffer,

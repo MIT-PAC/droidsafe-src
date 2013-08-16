@@ -20,6 +20,7 @@ public class BufferedHttpEntity extends HttpEntityWrapper {
 
     private byte[] buffer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.247 -0400", hash_original_method = "9933624B15A1F62492A5E829A3A364D0", hash_generated_method = "34411053CF28BA65BDAD703427BE5863")
     public  BufferedHttpEntity(final HttpEntity entity) throws IOException {
         super(entity);
@@ -109,6 +110,7 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_824349158 =             wrappedE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "6978AFF2D6BA6FB48D86DE86B3A93492", hash_generated_method = "A71CC268CCA2EE0E37EBEE72613B23F3")
     public void writeTo(final OutputStream outstream) throws IOException {
         addTaint(outstream.getTaint());

@@ -3760,6 +3760,7 @@ String var7225B3CC8914DF65BB421A6F179F031C_250582609 =             "Package{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.181 -0400", hash_original_method = "A43E20CDE8CCB4A62D1450265CBDCEF5", hash_generated_method = "3B9B007756A0F82A78CF4AE553A3C10A")
         public  Component(final ParsePackageItemArgs args, final PackageItemInfo outInfo) {
             owner = args.owner;
@@ -3802,6 +3803,7 @@ String var7225B3CC8914DF65BB421A6F179F031C_250582609 =             "Package{"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.183 -0400", hash_original_method = "D9B47963B1B8ABE0F2CDFAC0BBD1CAD2", hash_generated_method = "05E0E43ED97BA2AAD8F1B2B8B0B45F41")
         public  Component(final ParseComponentArgs args, final ComponentInfo outInfo) {
             this(args, (PackageItemInfo)outInfo);
@@ -4051,6 +4053,7 @@ String var230D88132BCDB5C1EFFF3FA52025C2F5_892089084 =             "PermissionGr
 
         public ActivityInfo info;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.190 -0400", hash_original_method = "2916F6991906FCE3DAEE226AB756275F", hash_generated_method = "C5644F879FB9CA9E6C46626AFFCC6523")
         public  Activity(final ParseComponentArgs args, final ActivityInfo _info) {
             super(args, _info);
@@ -4097,6 +4100,7 @@ String var7349656C7BD58594155B01DB7429F0FA_861819933 =             "Activity{"
 
         public ServiceInfo info;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.190 -0400", hash_original_method = "2742F060EFDB78FDF4E4BA2659F1DC82", hash_generated_method = "E6E889FECE4BAD756F1CCD77DCFEFAE8")
         public  Service(final ParseComponentArgs args, final ServiceInfo _info) {
             super(args, _info);
@@ -4146,6 +4150,7 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1550021840 =             "Service{"
 
         public boolean syncable;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.194 -0400", hash_original_method = "EAE8B6AC135EBC96C8D24D047B180DE5", hash_generated_method = "343B3653CFEC536617399565A9DBD70E")
         public  Provider(final ParseComponentArgs args, final ProviderInfo _info) {
             super(args, _info);
@@ -4206,6 +4211,7 @@ String var57150B0931FFC28ACB80176BA213B66A_973482619 =             "Provider{"
 
         public InstrumentationInfo info;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.195 -0400", hash_original_method = "CAE763D5DCD2DC693DEEA83AE92F98C5", hash_generated_method = "581298DE305784FBB2B4E24A97D7CBBE")
         public  Instrumentation(final ParsePackageItemArgs args, final InstrumentationInfo _info) {
             super(args, _info);

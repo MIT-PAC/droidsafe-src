@@ -29,6 +29,7 @@ public final class DateUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Date parseDate(final String dateValue, String[] dateFormats) throws DateParseException {
         return parseDate(dateValue, dateFormats, null);
     }

@@ -13,6 +13,7 @@ public abstract class AbstractHttpParams implements HttpParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.168 -0400", hash_original_method = "ABC520F536F6B9249E7F10C3331D9CFF", hash_generated_method = "ECBC01BD2C4A4636F2206B45EF28B74F")
     public long getLongParameter(final String name, long defaultValue) {
         addTaint(defaultValue);
@@ -50,6 +51,7 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_275427395 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.169 -0400", hash_original_method = "FC38355AD8AFE83547775A40AA8286E7", hash_generated_method = "0ECEF55849350FF198B7D0B5EDC9AF90")
     public int getIntParameter(final String name, int defaultValue) {
         addTaint(defaultValue);
@@ -87,6 +89,7 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_1545297467 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.170 -0400", hash_original_method = "B3915F7C4095D2BECFA83FAD119B9A71", hash_generated_method = "4C8D034A3FEB6C60E149A481D27A6A30")
     public double getDoubleParameter(final String name, double defaultValue) {
         addTaint(defaultValue);
@@ -124,6 +127,7 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_892483360 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.172 -0400", hash_original_method = "EE3E41732A5BC182F80D452656C028BA", hash_generated_method = "0A3481D7DD104116416C8C7ABC222780")
     public boolean getBooleanParameter(final String name, boolean defaultValue) {
         addTaint(defaultValue);
@@ -147,6 +151,7 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_892483360 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.173 -0400", hash_original_method = "E4FF8AAC25178FB9DD8E5DC61133723C", hash_generated_method = "44C012EF24266E717395D9ED1F7BB3F7")
     public HttpParams setBooleanParameter(final String name, boolean value) {
         addTaint(value);

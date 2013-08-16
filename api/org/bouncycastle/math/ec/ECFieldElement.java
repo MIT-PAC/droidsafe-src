@@ -576,6 +576,7 @@ ECFieldElement var05CCF13E4F1E050A83D5CD6B3B4844DB_1796042216 =             new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.569 -0400", hash_original_method = "DED14713A83018FDD63888AD3FB6A659", hash_generated_method = "81C3C2A4794FE1695CC2DBCA11E3FD44")
         public ECFieldElement subtract(final ECFieldElement b) {
             addTaint(b.getTaint());
@@ -587,6 +588,7 @@ ECFieldElement var9DB025919878C446BA442101E8E28F74_192332611 =             add(b
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.569 -0400", hash_original_method = "CFFAAAAE4FA7236DDDBD1DC710F4AF58", hash_generated_method = "EC95BAE3B798A2A3F9549CA7CC36FE9B")
         public ECFieldElement multiply(final ECFieldElement b) {
             addTaint(b.getTaint());
@@ -604,6 +606,7 @@ ECFieldElement var607E4A0964B00B8064FAFC5C09036C82_1517042471 =             new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.569 -0400", hash_original_method = "69832D94122014C087767F6408988886", hash_generated_method = "53E9F79787E0474CADBF071C98DE1DF6")
         public ECFieldElement divide(final ECFieldElement b) {
             addTaint(b.getTaint());

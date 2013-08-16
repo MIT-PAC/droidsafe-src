@@ -14,10 +14,12 @@ extends ParagraphStyle
     implements TabStopSpan
     {
         
+        @DSModeled(DSC.SAFE)
         public Standard(int where) {
             mTab = where;
         }
 
+        @DSModeled(DSC.SAFE)
         public int getTabStop() {
             return mTab;
         }

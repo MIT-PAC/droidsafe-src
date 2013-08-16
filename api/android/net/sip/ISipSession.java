@@ -10,7 +10,8 @@ public static abstract class Stub extends android.os.Binder implements android.n
 {
 private static final java.lang.String DESCRIPTOR = "android.net.sip.ISipSession";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
@@ -26,7 +27,8 @@ return ((android.net.sip.ISipSession)iin);
 }
 return new android.net.sip.ISipSession.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -181,16 +183,19 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 
-public java.lang.String getLocalIp() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getLocalIp() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -208,7 +213,8 @@ _data.recycle();
 return _result;
 }
 
-public android.net.sip.SipProfile getLocalProfile() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.sip.SipProfile getLocalProfile() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -231,7 +237,8 @@ _data.recycle();
 return _result;
 }
 
-public android.net.sip.SipProfile getPeerProfile() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.net.sip.SipProfile getPeerProfile() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -254,7 +261,8 @@ _data.recycle();
 return _result;
 }
 
-public int getState() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public int getState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -272,7 +280,8 @@ _data.recycle();
 return _result;
 }
 
-public boolean isInCall() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public boolean isInCall() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -290,7 +299,8 @@ _data.recycle();
 return _result;
 }
 
-public java.lang.String getCallId() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public java.lang.String getCallId() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -308,7 +318,8 @@ _data.recycle();
 return _result;
 }
 
-public void setListener(android.net.sip.ISipSessionListener listener) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void setListener(android.net.sip.ISipSessionListener listener) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -324,7 +335,8 @@ _data.recycle();
 }
 }
 
-public void register(int duration) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void register(int duration) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -340,7 +352,8 @@ _data.recycle();
 }
 }
 
-public void unregister() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void unregister() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -355,7 +368,8 @@ _data.recycle();
 }
 }
 
-public void makeCall(android.net.sip.SipProfile callee, java.lang.String sessionDescription, int timeout) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void makeCall(android.net.sip.SipProfile callee, java.lang.String sessionDescription, int timeout) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -396,7 +410,8 @@ _data.recycle();
 }
 }
 
-public void endCall() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public void endCall() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -411,7 +426,8 @@ _data.recycle();
 }
 }
 
-public void changeCall(java.lang.String sessionDescription, int timeout) throws android.os.RemoteException
+@DSModeled(DSC.SAFE)
+            public void changeCall(java.lang.String sessionDescription, int timeout) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

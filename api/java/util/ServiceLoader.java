@@ -119,6 +119,7 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <S> S loadFromSystemProperty(final Class<S> service) {
         try {
             final String className = System.getProperty(service.getName());

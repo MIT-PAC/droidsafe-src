@@ -41,6 +41,7 @@ public abstract class AbstractAuthenticationHandler implements AuthenticationHan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.526 -0400", hash_original_method = "784665A0C5858E32179EE01DA6E7685F", hash_generated_method = "808AC6958D96F91A97B6B6C7F287D9DD")
     protected Map<String, Header> parseChallenges(
             final Header[] headers) throws MalformedChallengeException {

@@ -81,6 +81,7 @@ Map<String, String> var751A5B03769AE238544A23D7966F9A50_1496208306 =         thi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.475 -0400", hash_original_method = "438C518DA2063D2BB9EB7CDD3EF15700", hash_generated_method = "22F41B0DC9A41B6139083CC397BF5C86")
     public String getParameter(final String name) {
         addTaint(name.getTaint());

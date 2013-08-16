@@ -137,6 +137,7 @@ ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_1534892021 =             Htt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.921 -0400", hash_original_method = "B7AE4BE889035DC000B6C604548769F2", hash_generated_method = "08E29A1903365C05B0B5AAD84F7FC9FB")
     public void setProtocolVersion(final ProtocolVersion version) {
         this.version = version;
@@ -156,6 +157,7 @@ URI varF8A43570A6D9CE873AAA24BBE28B6265_1249197207 =         this.uri;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.922 -0400", hash_original_method = "3320A765B2CE48350AC27D9599EAC026", hash_generated_method = "C72876729647E8A3A80A7FBC268F56B2")
     public void setURI(final URI uri) {
         this.uri = uri;

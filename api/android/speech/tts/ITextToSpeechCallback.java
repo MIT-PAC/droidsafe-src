@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.s
 {
 private static final java.lang.String DESCRIPTOR = "android.speech.tts.ITextToSpeechCallback";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.speech.tts.ITextToSpeechCallback asInterface(android.os.IBinder obj)
+@DSModeled(DSC.SAFE)
+        public static android.speech.tts.ITextToSpeechCallback asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((android.speech.tts.ITextToSpeechCallback)iin);
 }
 return new android.speech.tts.ITextToSpeechCallback.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -73,11 +76,13 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }

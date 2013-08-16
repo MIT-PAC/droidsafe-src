@@ -17,6 +17,7 @@ public class ConnectTimeoutException extends InterruptedIOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.652 -0400", hash_original_method = "253E079134F8C2683EC310BD65E6492A", hash_generated_method = "8FCE924413115A5E8265B73232B002B9")
     public  ConnectTimeoutException(final String message) {
         super(message);

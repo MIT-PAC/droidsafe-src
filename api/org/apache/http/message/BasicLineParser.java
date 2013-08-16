@@ -59,6 +59,7 @@ public class BasicLineParser implements LineParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.982 -0400", hash_original_method = "9BF4BF2A71D6F582F34C94EF6EF05C09", hash_generated_method = "D8BF95339E2C5E9480CF4D6850B08DE3")
     public ProtocolVersion parseProtocolVersion(final CharArrayBuffer buffer,
                                                 final ParserCursor cursor) throws ParseException {
@@ -233,6 +234,7 @@ for(int j=0;ok && (j<protolength);j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static RequestLine parseRequestLine(final String value,
                                      LineParser parser) throws ParseException {
         if (value == null) {
@@ -333,6 +335,7 @@ RequestLine var21398EE0F79F6732234579A2A1746261_954315659 =         new BasicReq
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static StatusLine parseStatusLine(final String value,
                                    LineParser parser) throws ParseException {
         if (value == null) {
@@ -348,6 +351,7 @@ RequestLine var21398EE0F79F6732234579A2A1746261_954315659 =         new BasicReq
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.988 -0400", hash_original_method = "25C42EFA872F90FCC52B9EB0DE702858", hash_generated_method = "48A0138E617C364C305AB9AB009861FA")
     public StatusLine parseStatusLine(final CharArrayBuffer buffer,
                                       final ParserCursor cursor) throws ParseException {
@@ -417,6 +421,7 @@ StatusLine var0B0E9078CC8F6F2F5D3BE8156FA67B50_821056794 =             createSta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.988 -0400", hash_original_method = "6514ACEBF21FB82A84D20506623D0A23", hash_generated_method = "06081C7BC5AC26FD95CCB84014710568")
     protected StatusLine createStatusLine(final ProtocolVersion ver,
                                           final int status, 

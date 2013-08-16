@@ -2320,6 +2320,7 @@ Iterable<PhoneNumberMatch> var1BC109E3A5A41FD4CBF09A5B341E099A_938001089 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.075 -0400", hash_original_method = "C3E745E72AE45D5E83FFDE500327E040", hash_generated_method = "31C11C291B8B80F1055F91BD105B4E94")
     public Iterable<PhoneNumberMatch> findNumbers(
       final CharSequence text, final String defaultRegion, final Leniency leniency,

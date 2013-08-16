@@ -14,11 +14,13 @@ public interface IMountShutdownObserver extends IInterface {
         private static final java.lang.String DESCRIPTOR = "IMountShutdownObserver";
 
         
+        @DSModeled(DSC.BAN)
         public Stub() {
             this.attachInterface(this, DESCRIPTOR);
         }
 
         
+        @DSModeled(DSC.BAN)
         public static IMountShutdownObserver asInterface(IBinder obj) {
             if ((obj == null)) {
                 return null;
@@ -30,10 +32,12 @@ public interface IMountShutdownObserver extends IInterface {
             return new IMountShutdownObserver.Stub.Proxy(obj);
         }
 
+        @DSModeled(DSC.BAN)
         public IBinder asBinder() {
             return this;
         }
 
+        @DSModeled(DSC.BAN)
         @Override
         public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
                 throws RemoteException {
@@ -57,19 +61,23 @@ public interface IMountShutdownObserver extends IInterface {
         private static class Proxy implements IMountShutdownObserver {
             private IBinder mRemote;
 
+            @DSModeled(DSC.BAN)
             Proxy(IBinder remote) {
                 mRemote = remote;
             }
 
+            @DSModeled(DSC.BAN)
             public IBinder asBinder() {
                 return mRemote;
             }
 
+            @DSModeled(DSC.BAN)
             public java.lang.String getInterfaceDescriptor() {
                 return DESCRIPTOR;
             }
 
             
+            @DSModeled(DSC.BAN)
             public void onShutDownComplete(int statusCode) throws RemoteException {
                 Parcel _data = Parcel.obtain();
                 Parcel _reply = Parcel.obtain();

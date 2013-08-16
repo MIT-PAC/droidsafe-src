@@ -10,12 +10,14 @@ public static abstract class Stub extends android.os.Binder implements android.a
 {
 private static final java.lang.String DESCRIPTOR = "android.app.ISearchManager";
 
-public Stub()
+@DSModeled(DSC.BAN)
+        public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 
-public static android.app.ISearchManager asInterface(android.os.IBinder obj)
+@DSModeled(DSC.BAN)
+        public static android.app.ISearchManager asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,7 +28,8 @@ return ((android.app.ISearchManager)iin);
 }
 return new android.app.ISearchManager.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+        public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -110,19 +113,23 @@ return super.onTransact(code, data, reply, flags);
 private static class Proxy implements android.app.ISearchManager
 {
 private android.os.IBinder mRemote;
-Proxy(android.os.IBinder remote)
+@DSModeled(DSC.BAN)
+            Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@DSModeled(DSC.BAN)
+            public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-public java.lang.String getInterfaceDescriptor()
+@DSModeled(DSC.BAN)
+            public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public android.app.SearchableInfo getSearchableInfo(android.content.ComponentName launchActivity) throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.app.SearchableInfo getSearchableInfo(android.content.ComponentName launchActivity) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -185,7 +192,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.ComponentName getGlobalSearchActivity() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.content.ComponentName getGlobalSearchActivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -207,7 +215,8 @@ _data.recycle();
 }
 return _result;
 }
-public android.content.ComponentName getWebSearchActivity() throws android.os.RemoteException
+@DSModeled(DSC.BAN)
+            public android.content.ComponentName getWebSearchActivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

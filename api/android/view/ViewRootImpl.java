@@ -1134,6 +1134,7 @@ ViewParent var540C13E9E156B687226421B24F2DF178_1121572334 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.679 -0400", hash_original_method = "67B0199062309B0E78F2F88E3E2AD59A", hash_generated_method = "F964834C972E369035199E3D42BA0E53")
     public ViewParent invalidateChildInParent(final int[] location, final Rect dirty) {
         addTaint(dirty.getTaint());

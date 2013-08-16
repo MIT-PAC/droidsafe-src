@@ -63,6 +63,7 @@ public class AutoText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String get(CharSequence src, final int start, final int end,
                              View view) {
         return getInstance(view).lookup(src, start, end);
@@ -86,6 +87,7 @@ public class AutoText {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.409 -0400", hash_original_method = "A395619387E5FA987B6ED6EABB20C725", hash_generated_method = "13426B28078051E2FF3E17B8636EF2B3")
     private String lookup(CharSequence src, final int start, final int end) {
         addTaint(end);

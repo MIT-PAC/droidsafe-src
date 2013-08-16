@@ -136,6 +136,7 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static Object parseValue(StreamTokenizer st, final int type) throws IOException {
         final int token = st.nextToken();
         if (type == TYPE_BOOLEAN) {

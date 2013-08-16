@@ -21,6 +21,7 @@ public class BasicStatusLine implements StatusLine, Cloneable {
 
     private String reasonPhrase;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.045 -0400", hash_original_method = "E6F861CC92981BDB285C9E8C86704EF5", hash_generated_method = "B3671397830764FB92FA639C65B85C75")
     public  BasicStatusLine(final ProtocolVersion version, int statusCode,
                            final String reasonPhrase) {
