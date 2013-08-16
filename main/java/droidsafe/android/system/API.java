@@ -139,6 +139,7 @@ public class API {
     public void addSafeMethod(SootMethod sm) {
         all_sys_methods.addMethod(sm);
         safe_methods.addMethod(sm);
+        api_modeled_methods.addMethod(sm);
     }
     
     /**
@@ -408,6 +409,7 @@ public class API {
 
             for (SootMethod sm : all_sys_methods) {
                 String m = sm.getSignature();
+                
                 if (!(spec_methods.contains(m) || banned_methods.contains(m) || safe_methods.contains(m)))
                     out.write(m.substring(1, m.length() - 1) + "\n");
             }

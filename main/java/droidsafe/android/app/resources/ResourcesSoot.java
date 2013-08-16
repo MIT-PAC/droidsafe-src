@@ -429,7 +429,6 @@ public class ResourcesSoot {
                                         Modifier.PUBLIC | Modifier.STATIC);
         
         mSootClass.addMethod(mInitLayoutMethod);
-        
         API.v().addSafeMethod(mInitLayoutMethod);
         
         mInitLayoutBody = Jimple.v().newBody(mInitLayoutMethod);
@@ -737,7 +736,6 @@ public class ResourcesSoot {
 
         // add the method to the class
         mSootClass.addMethod(method);
-
         API.v().addSafeMethod(method);
         
         // create active body, and set the body active
@@ -919,6 +917,7 @@ public class ResourcesSoot {
 
     	// add the method to the class
     	mSootClass.addMethod(method);
+        API.v().addSafeMethod(method);
 
     	// create active body, and set the body active
     	JimpleBody body = Jimple.v().newBody(method);
@@ -1054,6 +1053,7 @@ public class ResourcesSoot {
     	
     	// add the method to the class
     	mSootClass.addMethod(method);
+        API.v().addSafeMethod(method);
 
     	// create active body, and set the body active
     	JimpleBody body = Jimple.v().newBody(method);
