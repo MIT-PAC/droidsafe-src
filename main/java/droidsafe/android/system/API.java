@@ -25,6 +25,7 @@ import soot.SootMethod;
 import soot.Type;
 import soot.tagkit.AnnotationEnumElem;
 import soot.tagkit.AnnotationTag;
+import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
 import droidsafe.main.Config;
@@ -519,6 +520,9 @@ public class API {
         return all_sys_methods;
     }
 
+    
+   
+    
     public enum Classification {
         SAFE, SPEC, BAN, NONE;
     }

@@ -69,6 +69,8 @@ import soot.SootClass;
 import soot.SootMethod;
 
 import soot.tagkit.LineNumberTag;
+import soot.tagkit.SyntheticTag;
+import soot.tagkit.Tag;
 
 import soot.Type;
 
@@ -878,6 +880,49 @@ public class SootUtils {
                 list.add(sootClass);
         }
         return list;
+    }
+    
+    /**
+     * Return true if the method has the synthetic tag or flag.
+     */
+    public static boolean isSynthetic(SootMethod method) {      
+        for (Tag tag : method.getTags()) {
+            if (tag instanceof SyntheticTag) {
+                return true;
+            }
+        }
+        //modifier for synthetic flag
+        if ((method.getModifiers() & 0x1000) != 0)
+            return true;
+        
+        //bridge method?
+        if ((method.getModifiers() & 0x0040) != 0)
+            return true;
+        
+        return false;
+    }
+    
+    /**
+     * Return true if the class has the synthetic tag or flag.
+     */
+    public static boolean isSynthetic(SootClass clz) {
+        for (Tag tag : clz.getTags()) {
+            if (tag instanceof SyntheticTag) {
+                return true;
+            }
+        }
+        
+        if ((clz.getModifiers() & 0x1000) != 0)
+            return true;
+        
+        return false;
+    }
+    
+    /**
+     * Return true if this class was defined as an enum.
+     */
+    public static boolean isEnum(SootClass clz) {
+        return ((clz.getModifiers() & 0x4000) != 0);
     }
 }
 
