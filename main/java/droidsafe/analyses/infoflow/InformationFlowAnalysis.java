@@ -98,7 +98,9 @@ public class InformationFlowAnalysis {
      */
     public static void run() {
         ObjectUtil.run();
+        logger.info("Starting Memory Access Analysis...");
         MemoryAccessAnalysis.run();
+        logger.info("Finished Memory Access Analysis...");
         v = new InformationFlowAnalysis(InterproceduralControlFlowGraph.v());
     }
 
