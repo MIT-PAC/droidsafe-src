@@ -31,6 +31,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
 
     private boolean secure;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.842 -0400", hash_original_method = "5CB4C66072DE9146913D6ADB77CB6362", hash_generated_method = "7EC28756D055E8C24B912B1E20C9D016")
     private  HttpRoute(InetAddress local,
                       HttpHost target, HttpHost[] proxies,

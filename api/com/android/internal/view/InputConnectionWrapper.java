@@ -768,6 +768,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "361E9A3C637FF701A52DA6E2E96E1B0D", hash_generated_method = "814A0D2CE3D6D41A396D781C1797E8E5")
         public void setTextBeforeCursor(CharSequence textBeforeCursor, int seq) {
             addTaint(seq);
@@ -797,6 +798,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "364CB8CF32311AACA17721A234C603BF", hash_generated_method = "975AA37A99088CB886312E87682854CB")
         public void setTextAfterCursor(CharSequence textAfterCursor, int seq) {
             addTaint(seq);
@@ -826,6 +828,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "22EEF86B76323A3D0B42A8BDC8D7F847", hash_generated_method = "7373C5692B3E76C57D3C9353D6192FC4")
         public void setSelectedText(CharSequence selectedText, int seq) {
             addTaint(seq);
@@ -855,6 +858,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.786 -0400", hash_original_method = "998E9B4FE98738EB2922C01E8488A9FE", hash_generated_method = "0C0A7E94B4E77405E233A018B6CEA3B4")
         public void setCursorCapsMode(int capsMode, int seq) {
             addTaint(seq);
@@ -884,6 +888,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.786 -0400", hash_original_method = "728CBF4CDD80384E151B1C8A539138C4", hash_generated_method = "1309DAA77656ADC61D18ECA3FC0E6D1A")
         public void setExtractedText(ExtractedText extractedText, int seq) {
             addTaint(seq);

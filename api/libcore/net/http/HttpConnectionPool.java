@@ -47,6 +47,7 @@ final class HttpConnectionPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.103 -0400", hash_original_method = "9723020948C88E298F74B7B4BEB4D8BB", hash_generated_method = "0141DBD36C0084C32DD7F97904D1D374")
     public HttpConnection get(HttpConnection.Address address, int connectTimeout) throws IOException {
         addTaint(connectTimeout);

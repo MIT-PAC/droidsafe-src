@@ -175,6 +175,7 @@ for(int j = startInPara;j < endInPara;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.024 -0400", hash_original_method = "DC7A3D7065A333C10C0F305EED7320B6", hash_generated_method = "C3B83D8FFFF1E7C42064B284981EEDA6")
      float addStyleRun(TextPaint paint, int len, Paint.FontMetricsInt fm) {
         addTaint(fm.getTaint());
@@ -218,7 +219,7 @@ for(int q = p, i = p + 1, e = p + len;;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.028 -0400", hash_original_method = "18B04B5B33F859850D856F2E2DC299C7", hash_generated_method = "F2DC21615DA03B6114EC278AF3FDB786")
      float addStyleRun(TextPaint paint, MetricAffectingSpan[] spans, int len,
             Paint.FontMetricsInt fm) {
