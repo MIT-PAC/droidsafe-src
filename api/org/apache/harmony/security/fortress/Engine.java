@@ -28,6 +28,7 @@ public class Engine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.986 -0400", hash_original_method = "5C42DE2D9EE07142D674B5F3DD7E1F43", hash_generated_method = "CDE5426FCF8339C138FEB942CF6A0201")
     public SpiAndProvider getInstance(String algorithm, Object param) throws NoSuchAlgorithmException {
         addTaint(param.getTaint());

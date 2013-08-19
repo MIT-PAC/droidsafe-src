@@ -183,6 +183,7 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.752 -0400", hash_original_method = "B12778B9891AAFECC2CB8B0C655200C4", hash_generated_method = "92389B9C7D97F347A96EA58121CA61BA")
         @Override
         public TriState checkRtl(char[] text, int start, int count) {
@@ -227,6 +228,7 @@ TriState varDC838461EE2FA0CA4C9BBB70A15456B0_770460623 =             result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.754 -0400", hash_original_method = "2D65014765DBEAE21140F9644F3DEE55", hash_generated_method = "B9BE5531E3CBFFE0FC50DCAF4B38B105")
         @Override
         public TriState checkRtl(char[] text, int start, int count) {

@@ -1536,6 +1536,7 @@ String varC27FFD0D6D1EF6B53917B2D053C6E05C_1344946912 =             cachedString
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.065 -0400", hash_original_method = "9B1777E9DAB1C1ED3319A4EEC33BCB54", hash_generated_method = "CA211AB13478F815CB1155C5DB3D8A45")
         public Builder buildUpon() {
 Builder varB0D57715B2E1FC2447B5F7A2D1E9683B_339072280 =             new Builder()
@@ -2257,6 +2258,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1370325355 =             builder.toSt
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.100 -0400", hash_original_method = "6635CD2DD122D7EE5F14A5F21B272B08", hash_generated_method = "167C0A1C978BA2C420B66F39E14B1AF2")
         public Builder buildUpon() {
 Builder varED3F8822050435D1DCF8FEEC1E3625B3_1513361006 =             new Builder()
@@ -2430,6 +2432,7 @@ Builder var2C099BD4CBAC004E7DBA3E062586EF05_1267060703 =             path(PathPa
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.125 -0400", hash_original_method = "818DCEC2192004BCFE40E4E49FDA7A4C", hash_generated_method = "AB3FA251D86350B1A9FA63275AD869AF")
         public Builder appendPath(String newSegment) {
             addTaint(newSegment.getTaint());
@@ -2441,6 +2444,7 @@ Builder var8D3C52E329AACC9BA26FC60EDBDA633E_578710583 =             path(PathPar
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.134 -0400", hash_original_method = "04B6E07373B5BCB6E5F5541B11BC55A7", hash_generated_method = "E1817F630DEAA136259537BB879777BE")
         public Builder appendEncodedPath(String newSegment) {
             addTaint(newSegment.getTaint());
@@ -2524,6 +2528,7 @@ Builder varF653F4C1C1E12E452895547E2A8D497C_987500309 =             fragment(Par
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.148 -0400", hash_original_method = "F83D70A0FC90543F01AB6385367098CC", hash_generated_method = "4B86219195D36FFF9606AA2A262F1AB7")
         public Builder appendQueryParameter(String key, String value) {
             addTaint(value.getTaint());

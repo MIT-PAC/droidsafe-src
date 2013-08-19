@@ -56,7 +56,7 @@ public final class ORAddress {
 
         private final Object foo = new Object();
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             values[0] = foo;
         }

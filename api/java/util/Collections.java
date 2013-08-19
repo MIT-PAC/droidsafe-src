@@ -3795,6 +3795,7 @@ Iterator<Map.Entry<K, V>> var95D309287220EAC9AA0261E09FAD4D41_1872266644 =      
                     // ---------- Original Method ----------
                     //return iterator.hasNext();
                 }
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.755 -0400", hash_original_method = "EEF2AC3DD179F17AE4AC144ABD5D488C", hash_generated_method = "CB4213BC0043596BE2DE7AF0846AAC88")
                 @Override
                 public Map.Entry<K, V> next() {
