@@ -223,7 +223,8 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
                         break;
                     }
                 }
-                assert(succ != null);
+                assert succ != null;
+                assert curr.getBody().getMethod().equals(succ.getBody().getMethod());
                 Targets tgts = new Targets(cg.edgesOutOf(curr.getTail()));
                 while (tgts.hasNext()) {
                     SootMethod method = tgts.next().method();
