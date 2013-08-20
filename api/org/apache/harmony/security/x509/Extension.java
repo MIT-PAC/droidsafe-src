@@ -711,6 +711,8 @@ BasicConstraints var540C13E9E156B687226421B24F2DF178_1731560724 =             nu
                     extnValue, rawExtnValue, in.getEncoded(), decodedExtValue);
         }
 
+
+        @DSModeled(DSC.BAN)
         @Override protected void getValues(Object object, Object[] values) {
             Extension ext = (Extension) object;
             values[0] = ext.extnID;

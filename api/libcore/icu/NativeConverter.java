@@ -127,7 +127,8 @@ public final class NativeConverter {
         @Override
 			public CharsetEncoder newEncoder() {
 				return new CharsetEncoder(this, 0, 0) {
-					@Override
+					@DSModeled(DSC.SAFE)
+            @Override
 					protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
 						out.addTaint(in.getTaint());
 						CoderResult res;
@@ -159,7 +160,8 @@ public final class NativeConverter {
         @Override
 			public CharsetDecoder newDecoder() {
 				return new CharsetDecoder(this, 0, 0) {
-					@Override
+					@DSModeled(DSC.SAFE)
+            @Override
 					protected CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
 						out.addTaint(in.getTaint());
 						CoderResult res;

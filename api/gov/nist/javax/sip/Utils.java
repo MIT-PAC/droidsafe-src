@@ -29,6 +29,7 @@ public class Utils implements UtilsExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String toHexString(byte b[]) {
         int pos = 0;
         char[] c = new char[b.length * 2];

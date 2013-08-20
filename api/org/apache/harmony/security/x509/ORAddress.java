@@ -46,6 +46,7 @@ public final class ORAddress {
 
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             new ASN1Sequence(new ASN1Type[] {}) {
+                @DSModeled(DSC.BAN)
                 @Override protected void getValues(Object object, Object[] values) {}
             }}) {
 

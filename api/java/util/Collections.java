@@ -945,8 +945,8 @@ Object var41537F84856EC2B8175806D98827383E_1804832711 =             Collections.
         }
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.638 -0400", hash_original_method = "FC88A4B2F50E498E162F3F7EEDE885B1", hash_generated_method = "1664388D092FF4E38B8E589AB4C5A2A8")
+@DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.638 -0400", hash_original_method = "FC88A4B2F50E498E162F3F7EEDE885B1", hash_generated_method = "1664388D092FF4E38B8E589AB4C5A2A8")
         @Override
         public Iterator iterator() {
 Iterator var2DC6937AF28EC3FA949592521F2521D5_1518535643 =             EMPTY_ITERATOR;
@@ -1491,6 +1491,7 @@ Set<Map.Entry<K, V>> varC1C98ED33EBE8D5F809497AE1618869F_181985594 =            
             public Iterator<Map.Entry<K, V>> iterator() {
 Iterator<Map.Entry<K, V>> var72555FFA480563A744615CB3042A10C3_693483736 =                 new Iterator<Map.Entry<K, V>>() {                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:02.500 -0400", hash_original_field = "42ADDF4753B3ACA32EE339265163027B", hash_generated_field = "DE9DC7F145F778F316047B4F4AEC3B9B")
                 boolean hasNext = true;
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:02.500 -0400", hash_original_method = "1FFE1DD028DACE64CCBE65BDB363D72C", hash_generated_method = "CEE619A24E48BC379FDED3A48B0D271A")
                 @Override
                 public boolean hasNext() {
@@ -3780,6 +3781,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_163713358 =             m.toString();
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.755 -0400", hash_original_method = "53A7F61EDA7A64FBCB28AE61A8906002", hash_generated_method = "67993FFD84C85C04B894A8095882D351")
             @Override
             public Iterator<Map.Entry<K, V>> iterator() {
