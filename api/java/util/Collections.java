@@ -3621,6 +3621,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_953277828 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.753 -0400", hash_original_method = "FB0DE15DA25D3994421C9FBDD1812EDD", hash_generated_method = "4C8869CD78EDAB65CBF45B98903CB104")
         @Override
         public Set<Map.Entry<K, V>> entrySet() {

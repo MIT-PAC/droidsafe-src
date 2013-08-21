@@ -123,6 +123,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static Element[] makeDexElements(ArrayList<File> files,
             File optimizedDirectory) {
         ArrayList<Element> elements = new ArrayList<Element>();
