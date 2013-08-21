@@ -119,6 +119,7 @@ public class JarFile extends ZipFile {
                 //ze = zenum;
                 //this.jf = jf;
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.893 -0400", hash_original_method = "9E60B2163115C0F4A5143AACEF20F301", hash_generated_method = "A9BD8A1B106036F6DBD99AA6F97568BA")
             public boolean hasMoreElements() {
                 boolean var93A4AF90B366B42C637BBBFD28A84EA0_1761813638 = (ze.hasMoreElements());
@@ -127,6 +128,7 @@ public class JarFile extends ZipFile {
                 // ---------- Original Method ----------
                 //return ze.hasMoreElements();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.894 -0400", hash_original_method = "5675597FFA2F5C3F421325DE8580ECC3", hash_generated_method = "D81DE2A599219AF7E7410538E353F5A5")
             public JarEntry nextElement() {
                 JarEntry je = new JarEntry(ze.nextElement());

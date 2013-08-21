@@ -1220,12 +1220,10 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
     @DSModeled(DSC.SPEC)
     public Intent addCategory(String category) {
 		mCategories.addTaint(category.getTaint());
-		/*
         if (mCategories == null) {
             mCategories = new HashSet<String>();
         }
         mCategories.add(category.intern());
-        */
         return this;
     }
 

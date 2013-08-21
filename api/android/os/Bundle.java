@@ -47,10 +47,8 @@ public final class Bundle implements Parcelable, Cloneable {
         //all calls that use it should be banned
         //mClassLoader = getClass().getClassLoader();
 		//mClassLoader = getClass().getClassLoader();
-		/*
 		mMap = new HashMap<String, Object>();
 		mClassLoader = getClass().getClassLoader();
-		*/
 	}
 
     
@@ -75,10 +73,7 @@ public final class Bundle implements Parcelable, Cloneable {
     @DSModeled(DSC.BAN)
 	public Bundle(ClassLoader loader){
 		mClassLoader = loader;  //Preserved
-		/*
 		mMap = new HashMap<String, Object>();
-		mClassLoader = loader;
-		*/
 	}
 
     
@@ -86,17 +81,14 @@ public final class Bundle implements Parcelable, Cloneable {
 	public Bundle(int capacity){
 		//mMap = new HashMap<String, Object>();
 		//mClassLoader = getClass().getClassLoader();
-		/*
 		mMap = new HashMap<String, Object>(capacity);
 		mClassLoader = getClass().getClassLoader();
-		*/
 	}
 
     
     @DSModeled(DSC.SAFE)
 	public Bundle(Bundle b){
 		addTaint(b.getTaint());
-		/*
 		if (b.mParcelledData != null) {
             mParcelledData = Parcel.obtain();
             mParcelledData.appendFrom(b.mParcelledData, 0, b.mParcelledData.dataSize());
@@ -112,7 +104,6 @@ public final class Bundle implements Parcelable, Cloneable {
 		mHasFds = b.mHasFds;
 		mFdsKnown = b.mFdsKnown;
 		mClassLoader = b.mClassLoader;
-		*/
 	}
 
     
@@ -188,6 +179,7 @@ public final class Bundle implements Parcelable, Cloneable {
     @DSModeled(DSC.BAN)
     public boolean setAllowFds(boolean allowFds){
 		addTaint(allowFds);
+        mAllowFds = allowFds;
 		return getTaintBoolean();
 		// Original method
 		/*
@@ -214,7 +206,7 @@ public final class Bundle implements Parcelable, Cloneable {
     
     synchronized void unparcel(){
 		// We are handling the taint when the mParcelledData is assigned
-		/*
+    	/*
 		int N = mParcelledData.readInt();
 		mMap = new HashMap<String, Object>();
 		mParcelledData.readMapInternal(mMap, N, mClassLoader);
@@ -222,23 +214,21 @@ public final class Bundle implements Parcelable, Cloneable {
 		mParcelledData = null;
 		*/
 		// Original method
-		/*
-		{
-        if (mParcelledData == null) {
-            return;
-        }
-        int N = mParcelledData.readInt();
-        if (N < 0) {
-            return;
-        }
-        if (mMap == null) {
-            mMap = new HashMap<String, Object>();
-        }
-        mParcelledData.readMapInternal(mMap, N, mClassLoader);
-        mParcelledData.recycle();
-        mParcelledData = null;
-    }
-		*/
+    	{
+    		if (mParcelledData == null) {
+    			return;
+    		}
+    		int N = mParcelledData.readInt();
+    		if (N < 0) {
+    			return;
+    		}
+    		if (mMap == null) {
+    			mMap = new HashMap<String, Object>();
+    		}
+    		mParcelledData.readMapInternal(mMap, N, mClassLoader);
+    		mParcelledData.recycle();
+    		mParcelledData = null;
+    	}
 		//Return nothing
 	}
 
@@ -271,14 +261,12 @@ public final class Bundle implements Parcelable, Cloneable {
     
     public void clear(){
 		// Original method
-		/*
-		{
-        unparcel();
-        mMap.clear();
-        mHasFds = false;
-        mFdsKnown = true;
-    }
-		*/
+    	{
+    		unparcel();
+    		mMap.clear();
+    		mHasFds = false;
+    		mFdsKnown = true;
+    	}
 		//Return nothing
 	}
 
@@ -296,8 +284,10 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Object get(String key){
-		return getTaint();
+        return mMap.get(key);
+		//return getTaint();
 		// Original method
 		/*
 		{
@@ -309,6 +299,7 @@ public final class Bundle implements Parcelable, Cloneable {
 
     
     public void remove(String key){
+        mMap.remove(key);
 		// Original method
 		/*
 		{
@@ -324,22 +315,20 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putAll(Bundle map){
 		addTaint(map.getTaint());
 		// Original method
-		/*
 		{
-        unparcel();
-        map.unparcel();
-        mMap.putAll(map.mMap);
-        mHasFds |= map.mHasFds;
-        mFdsKnown = mFdsKnown && map.mFdsKnown;
-    }
-		*/
+			unparcel();
+			map.unparcel();
+			mMap.putAll(map.mMap);
+			mHasFds |= map.mHasFds;
+			mFdsKnown = mFdsKnown && map.mFdsKnown;
+		}
 		//Return nothing
 	}
 
     
     @DSModeled(DSC.SAFE)
     public Set<String> keySet(){
-		Set<String> keys = new HashSet<String>();
+		Set<String> keys = mMap.keySet();
 		keys.addTaint(getTaint());
 		return keys;
 		// Original method
@@ -364,6 +353,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putBoolean(String key, boolean value){
 		mKey = key;
 		addTaint(value);
+        mMap.put(key, value);
 		// Original method
 		/*
 		{
@@ -377,6 +367,7 @@ public final class Bundle implements Parcelable, Cloneable {
     
     public void putByte(String key, byte value){
 		mKey = key;
+        mMap.put(key, value);
 		addTaint(value);
 		// Original method
 		/*
@@ -392,6 +383,7 @@ public final class Bundle implements Parcelable, Cloneable {
     @DSModeled(DSC.SAFE)
     public void putChar(String key, char value){
 		mKey = key;
+        mMap.put(key, value);
 		addTaint(value);
 		// Original method
 		/*
@@ -407,6 +399,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putShort(String key, short value){
 		mKey = key;
 		addTaint(value);
+        mMap.put(key, value);
 		// Original method
 		/*
 		{
@@ -422,6 +415,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putInt(String key, int value){
 		mKey = key;
 		addTaint(value);
+        mMap.put(key, value);
 		// Original method
 		/*
 		{
@@ -437,6 +431,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putLong(String key, long value){
 		mKey = key;
 		addTaint(value);
+        mMap.put(key, value);
 		// Original method
 		/*
 		{
@@ -451,6 +446,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putFloat(String key, float value){
 		mKey = key;
 		addTaint(value);
+        mMap.put(key, value);
 		// Original method
 		/*
 		{
@@ -466,7 +462,9 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putDouble(String key, double value){
 		mKey = key;
 		mValueDouble = value; //DSFIXME:  Temporary fix (see below)
-		//addTaint(value.getTaint()); //DSFIXME:  Need to add another addTaint method that takes a double
+        mMap.put(key, value);
+		addTaint(value); //DSFIXME:  Need to add another addTaint method that takes a double
+		addTaint(key.getTaint());
 		// Original method
 		/*
 		{
@@ -482,6 +480,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	public void putString(String key, String value){
 		mKey = key;
 		mValueString = value;
+        mMap.put(key, value);
 		// Original method
 		/*
 		{
@@ -497,6 +496,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public void putCharSequence(String key, CharSequence value){
 		mKey = key;
 		mValueCharSequence = value;
+        mMap.put(key, value);
 		// Original method
 		/*
 		{
@@ -513,13 +513,11 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueParcelable = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-        mFdsKnown = false;
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+			mFdsKnown = false;
+		}
 		//Return nothing
 	}
 
@@ -528,13 +526,11 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueParcelableArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-        mFdsKnown = false;
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+			mFdsKnown = false;
+		}
 		//Return nothing
 	}
 
@@ -544,13 +540,11 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueParcelableArrayList = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-        mFdsKnown = false;
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+			mFdsKnown = false;
+		}
 		//Return nothing
 	}
 
@@ -561,13 +555,11 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueSparseParcelableArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-        mFdsKnown = false;
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+			mFdsKnown = false;
+		}
 		//Return nothing
 	}
 
@@ -577,12 +569,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueArrayList = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -591,12 +581,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueStringArrayList = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -621,12 +609,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueSerializable = value;
 		// Original method
-		/*
 		{
         unparcel();
         mMap.put(key, value);
-    }
-		*/
+		}
 		//Return nothing
 	}
 
@@ -636,12 +622,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueBooleanArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -650,12 +634,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueByteArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -664,12 +646,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueShortArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -678,12 +658,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueCharArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -692,12 +670,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueIntArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -707,12 +683,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueLongArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -721,12 +695,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueFloatArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -736,12 +708,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueDoubleArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -750,12 +720,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueStringArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -765,12 +733,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueCharSequenceArray = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -780,12 +746,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueBundle = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -795,12 +759,10 @@ public final class Bundle implements Parcelable, Cloneable {
 		mKey = key;
 		mValueIBinder = value;
 		// Original method
-		/*
 		{
-        unparcel();
-        mMap.put(key, value);
-    }
-		*/
+			unparcel();
+			mMap.put(key, value);
+		}
 		//Return nothing
 	}
 
@@ -860,20 +822,20 @@ public final class Bundle implements Parcelable, Cloneable {
 		return getTaintBoolean();
 		// Original method
 		/*
-		{
-        unparcel();
-        Object o = mMap.get(key);
-        if (o == null) {
-            return defaultValue;
-        }
-        try {
-            return (Boolean) o;
-        } catch (ClassCastException e) {
-            typeWarning(key, o, "Boolean", defaultValue, e);
-            return defaultValue;
-        }
-    }
-		*/
+    	{
+    		unparcel();
+    		Object o = mMap.get(key);
+    		if (o == null) {
+    			return defaultValue;
+    		}
+    		try {
+    			return (Boolean) o;
+    		} catch (ClassCastException e) {
+    			typeWarning(key, o, "Boolean", defaultValue, e);
+    			return defaultValue;
+    		}
+    	}
+    	*/
 	}
 
     
@@ -882,11 +844,11 @@ public final class Bundle implements Parcelable, Cloneable {
 		return getTaintByte();
 		// Original method
 		/*
-		{
-        unparcel();
-        return getByte(key, (byte) 0);
-    }
-		*/
+    	{
+    		unparcel();
+    		return getByte(key, (byte) 0);
+    	}
+    	*/
 	}
 
     
@@ -895,20 +857,20 @@ public final class Bundle implements Parcelable, Cloneable {
 		return getTaintByte();
 		// Original method
 		/*
-		{
-        unparcel();
-        Object o = mMap.get(key);
-        if (o == null) {
-            return defaultValue;
-        }
-        try {
-            return (Byte) o;
-        } catch (ClassCastException e) {
-            typeWarning(key, o, "Byte", defaultValue, e);
-            return defaultValue;
-        }
-    }
-		*/
+    	{
+    		unparcel();
+    		Object o = mMap.get(key);
+    		if (o == null) {
+    			return defaultValue;
+    		}
+    		try {
+    			return (Byte) o;
+    		} catch (ClassCastException e) {
+    			typeWarning(key, o, "Byte", defaultValue, e);
+    			return defaultValue;
+    		}
+    	}
+    	*/
 	}
 
     
@@ -930,20 +892,20 @@ public final class Bundle implements Parcelable, Cloneable {
 		return getTaintChar();
 		// Original method
 		/*
-		{
-        unparcel();
-        Object o = mMap.get(key);
-        if (o == null) {
-            return defaultValue;
-        }
-        try {
-            return (Character) o;
-        } catch (ClassCastException e) {
-            typeWarning(key, o, "Character", defaultValue, e);
-            return defaultValue;
-        }
-    }
-		*/
+    	{
+    		unparcel();
+    		Object o = mMap.get(key);
+    		if (o == null) {
+    			return defaultValue;
+    		}
+    		try {
+    			return (Character) o;
+    		} catch (ClassCastException e) {
+    			typeWarning(key, o, "Character", defaultValue, e);
+    			return defaultValue;
+    		}
+    	}
+    	*/
 	}
 
     
@@ -952,11 +914,11 @@ public final class Bundle implements Parcelable, Cloneable {
 		return getTaintShort();
 		// Original method
 		/*
-		{
-        unparcel();
-        return getShort(key, (short) 0);
-    }
-		*/
+    	{
+    		unparcel();
+    		return getShort(key, (short) 0);
+    	}
+    	*/
 	}
 
     
