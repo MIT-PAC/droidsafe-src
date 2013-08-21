@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
+import soot.Body;
 import soot.Immediate;
 import soot.Kind;
 import soot.Local;
@@ -239,15 +240,21 @@ public class InformationFlowAnalysis {
     }
 
     private void initialize() {
-        worklist = new Worklist();
-        for (Block head : controlFlowGraph.getHeads()) {
-            SootMethod tgt = head.getBody().getMethod();
-            assert controlFlowGraph.getPredsOf(head).size() == 0;
-            States states = new States();
-            states.put(Context.v(new Edge(null, null, tgt, Kind.INVALID), new Edge(null, null, tgt, Kind.INVALID)), new FrameHeapStatics());
-            fromToStates.get(null).put(head, states);
-            worklist.add(head);
+        SootMethod method = Scene.v().getMethod("<DroidSafeMain: void main(java.lang.String[])>");
+        Local local = method.getActiveBody().getParameterLocal(0);
+        Set<MyValue> values = new HashSet<MyValue>();
+        for (AllocNode allocNode : GeoPTA.v().getPTSetContextIns(local)) {
+            values.add(Address.v(allocNode));
         }
+        FrameHeapStatics frameHeapStatics = new FrameHeapStatics();
+        frameHeapStatics.frame.putS(MethodMyParameterRef.v(method, new ParameterRef(local.getType(), 0)), ImmutableList.<MyValue>copyOf(values));
+        States states = new States();
+        states.put(Context.v(new Edge(null, null, method, Kind.INVALID), new Edge(null, null, method, Kind.INVALID)), frameHeapStatics);
+        Block block = controlFlowGraph.methodToHeads.get(method).get(0);
+        assert controlFlowGraph.getHeads().contains(block);
+        fromToStates.get(null).put(block, states);
+        worklist = new Worklist();
+        worklist.add(block);
     }
 
     private States collectFlowBefore(Block curr) {

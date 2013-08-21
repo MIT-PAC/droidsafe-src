@@ -39,7 +39,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     private final Map<Block, List<Block>> blockToPreds;
     private final List<Block> blocks;
 
-    private final Map<SootMethod, List<Block>> methodToHeads;
+    public final Map<SootMethod, List<Block>> methodToHeads;
     private final Map<SootMethod, List<Block>> methodToTails;
     public final Map<SootMethod, List<Block>> methodToBlocks;
 
