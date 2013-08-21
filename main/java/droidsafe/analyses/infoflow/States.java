@@ -51,7 +51,11 @@ public class States {
     }
 
     FrameHeapStatics put(Context context, FrameHeapStatics frameHeapStatics) {
-        return contextToFrameHeapStatics.put(context, frameHeapStatics);
+        if (frameHeapStatics != null && !frameHeapStatics.isEmpty()) {
+            return contextToFrameHeapStatics.put(context, frameHeapStatics);
+        } else {
+            return contextToFrameHeapStatics.remove(context);
+        }
     }
 
     FrameHeapStatics get(Context context) {
@@ -176,6 +180,10 @@ class FrameHeapStatics {
 
     FrameHeapStatics merge(FrameHeapStatics that) {
         return new FrameHeapStatics(this.frame.merge(that.frame), this.heap.merge(that.heap), this.statics.merge(that.statics));
+    }
+
+    boolean isEmpty() {
+        return frame.isEmpty() && heap.isEmpty() && statics.isEmpty();
     }
 
     @Override
@@ -402,6 +410,10 @@ class Frame {
             }
         }
         return roots;
+    }
+
+    boolean isEmpty() {
+        return locals.isEmpty() && thiz.isEmpty() && params.isEmpty();
     }
 
     @Override
@@ -666,6 +678,10 @@ class Heap {
         return heap;
     }
 
+    boolean isEmpty() {
+        return instances.isEmpty() && arrays.isEmpty();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -794,6 +810,10 @@ class Instances {
 
     Set<Map.Entry<AddressField, ImmutableList<MyValue>>> entrySet() {
         return addressFieldToValues.entrySet();
+    }
+
+    boolean isEmpty() {
+        return addressFieldToValues.isEmpty();
     }
 
     @Override
@@ -996,6 +1016,10 @@ class Arrays {
         return addressToValues.entrySet();
     }
 
+    boolean isEmpty() {
+        return addressToValues.isEmpty();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -1113,6 +1137,10 @@ class Statics {
             }
         }
         return statics;
+    }
+
+    boolean isEmpty() {
+        return fieldToValues.isEmpty();
     }
 
     @Override
