@@ -60,7 +60,7 @@ public class SootConfig {
 		StringBuffer cp = new StringBuffer();
 		
 		//add the api modeling directory first so we can load modeling classes
-		cp.append(Config.v().ANDROID_LIB_DIR + File.separator + "droidsafe-api-model.jar");
+		cp.append(Config.v().DROIDSAFE_API_MODEL_JAR_PATH);
 		
 		//add the classes directory
 		cp.append( File.pathSeparator+ Project.v().getAppClassesDir().toString());

@@ -42,6 +42,10 @@ public class Config {
 
   public static final String ANDROID_LIB_DIR_REL = "android-lib";
 
+  /** location of the GITI api model jar */
+  public static final String DROIDSAFE_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
+                                                          + File.separator + "droidsafe-api-model.jar";
+
   /** location of configuration files */
   public static final String SYSTEM_CLASSES_FILE = "config-files" + File.separator
       + "system_class_files.txt";
@@ -58,7 +62,7 @@ public class Config {
   public String APP_ROOT_DIR;
 
   /** Path for the root folder for droidsafe code */
-  private String apacHome;
+  private String apacHome = System.getenv("APAC_HOME");
 
   public File ANDROID_LIB_DIR;
   public String target = "specdump";
@@ -330,7 +334,6 @@ public class Config {
   }
 
   public void init(String[] args) {
-    this.apacHome = System.getenv("APAC_HOME");
     logger.info("APAC_HOME = {}", apacHome);
     if (this.apacHome == null) {
       logger.error("Environment variable $APAC_HOME not set!");
