@@ -122,7 +122,7 @@ public class Config {
    * 
    * @return The current value of boolean flag callSystemExitOnError.
    */
-  public boolean getCallSystehExitOnError() {
+  public boolean getCallSystemExitOnError() {
     return this.callSystemExitOnError;
   }
 
