@@ -43,7 +43,7 @@ public class Config {
   public static final String ANDROID_LIB_DIR_REL = "android-lib";
 
   /** location of the GITI api model jar */
-  public static final String DROIDSAFE_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
+  public static String DROIDSAFE_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
                                                           + File.separator + "droidsafe-api-model.jar";
 
   /** location of configuration files */
@@ -119,6 +119,8 @@ public class Config {
 
   public void setApacHome(String apacHome) {
     this.apacHome = apacHome;
+    Config.DROIDSAFE_API_MODEL_JAR_PATH = this.apacHome + File.separator + ANDROID_LIB_DIR_REL 
+            + File.separator + "droidsafe-api-model.jar";
   }
 
   /**
