@@ -210,32 +210,28 @@ public class GeoPTA {
      * in the pointer assignment graph.
      */
     public IVarAbstraction getInternalNode(Value val) {
+        Node node = null;
+        
         if (val instanceof Local) {
-            LocalVarNode node = ptsProvider.findLocalVarNode(val);
-            IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
-            return internalNode;
+            node = ptsProvider.findLocalVarNode(val);          
         } else if (val instanceof FieldRef) {
            SootField field = ((FieldRef)val).getField();
-           GlobalVarNode node = ptsProvider.findGlobalVarNode(field);
-           IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
-           return internalNode;            
+           node = ptsProvider.findGlobalVarNode(field);                    
         } else if (val instanceof ArrayRef) {
             ArrayRef arf = (ArrayRef) val;
-            LocalVarNode vn = ptsProvider.findLocalVarNode((Local) arf.getBase());
-            if (vn == null ) {
-                logger.info("GeoPTA: could not find Node for array ref: {}", val);
-            }
-            IVarAbstraction pn = ptsProvider.findInternalNode(vn);
-            if ( pn == null ) {
-                logger.info("GeoPTA: could not find internal node for array ref: {}", val);
-            }
-            return pn;
+            node = ptsProvider.findLocalVarNode((Local) arf.getBase());
         }
 
-        logger.error("Unknown type for pointer: {}", val.getClass());
-        droidsafe.main.Main.exit(1);
+        if (node == null) {
+            logger.info("Unknown type for pointer: {}", val.getClass());
+            return null;
+        }
         
-        return null;
+        IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
+        if (internalNode == null) {
+            logger.info("Cannot field internal node for value: {}", val); 
+        }
+        return internalNode;
     }
 
     /**
