@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import soot.AnySubType;
 import soot.ArrayType;
 import soot.G;
+import soot.Kind;
 import soot.Local;
 import soot.RefLikeType;
 import soot.RefType;
@@ -55,6 +56,7 @@ import soot.jimple.FieldRef;
 
 import com.google.common.collect.HashBiMap;
 
+import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.utils.CannotFindMethodException;
@@ -326,6 +328,11 @@ public class GeoPTA {
      * context.
      */
     public Set<AllocNode> getPTSet(Value val, Edge context) {
+        if (context == null) {
+            logger.error("Null context edge for pta query.");
+            droidsafe.main.Main.exit(1);
+        }
+        
         //logger.info("Querying pt set for: {} in {}", v, context);
         IVarAbstraction ivar = getInternalNode(val);
         if (ivar == null) {
@@ -333,6 +340,14 @@ public class GeoPTA {
             return new HashSet<AllocNode>();
         }
         Node sparkNode = ivar.getWrappedNode();
+        
+        //special case for DroidSafeMain.main(), if we are queried on a local from the 
+        //harness main, then return the insensitive result
+        if (context.tgt().equals(Harness.v().getMain()) && 
+                context.src() == null && context.srcUnit() == null && context.kind().equals(Kind.STATIC)) {
+            return getPTSetContextIns(val);
+        }
+       
 
         return getPTSet(sparkNode, ivar, context, val);
     }
