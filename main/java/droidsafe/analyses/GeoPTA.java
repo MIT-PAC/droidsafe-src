@@ -43,12 +43,15 @@ import soot.jimple.spark.geom.helper.ContextTranslator;
 import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.GlobalVarNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.options.PaddleOptions;
+import soot.jimple.ArrayRef;
+import soot.jimple.FieldRef;
 
 import com.google.common.collect.HashBiMap;
 
@@ -194,7 +197,7 @@ public class GeoPTA {
         if (!(val.getType() instanceof RefLikeType)) 
             return false;
 
-        if (val instanceof Local && getInternalNode(val) != null)
+        if (getInternalNode(val) != null)
             return true;
 
         //might need more stuff here.
@@ -203,16 +206,30 @@ public class GeoPTA {
     }
 
     /**
-     * Return true if the value is a pointer in the pointer assignment graph.
+     * Return the internal node representation for the value (local, fieldref, or array ref)
+     * in the pointer assignment graph.
      */
     public IVarAbstraction getInternalNode(Value val) {
         if (val instanceof Local) {
             LocalVarNode node = ptsProvider.findLocalVarNode(val);
             IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
             return internalNode;
-        } else if (val instanceof SootField) {
-            logger.error("Unknown type for pointer: {}", val.getClass());
-            droidsafe.main.Main.exit(1);
+        } else if (val instanceof FieldRef) {
+           SootField field = ((FieldRef)val).getField();
+           GlobalVarNode node = ptsProvider.findGlobalVarNode(field);
+           IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
+           return internalNode;            
+        } else if (val instanceof ArrayRef) {
+            ArrayRef arf = (ArrayRef) val;
+            LocalVarNode vn = ptsProvider.findLocalVarNode((Local) arf.getBase());
+            if (vn == null ) {
+                logger.info("GeoPTA: could not find Node for array ref: {}", val);
+            }
+            IVarAbstraction pn = ptsProvider.findInternalNode(vn);
+            if ( pn == null ) {
+                logger.info("GeoPTA: could not find internal node for array ref: {}", val);
+            }
+            return pn;
         }
 
         logger.error("Unknown type for pointer: {}", val.getClass());
