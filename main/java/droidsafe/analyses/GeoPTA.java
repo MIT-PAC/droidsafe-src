@@ -43,12 +43,16 @@ import soot.jimple.spark.geom.helper.ContextTranslator;
 import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.GlobalVarNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.options.PaddleOptions;
+import soot.jimple.ArrayRef;
+import soot.jimple.FieldRef;
+import soot.jimple.spark.pag.FieldRefNode;
 
 import com.google.common.collect.HashBiMap;
 
@@ -194,7 +198,7 @@ public class GeoPTA {
         if (!(val.getType() instanceof RefLikeType)) 
             return false;
 
-        if (val instanceof Local && getInternalNode(val) != null)
+        if (getInternalNode(val, false) != null)
             return true;
 
         //might need more stuff here.
@@ -203,22 +207,41 @@ public class GeoPTA {
     }
 
     /**
-     * Return true if the value is a pointer in the pointer assignment graph.
-     */
+     * Return the internal node representation for the value (local, fieldref, or array ref)
+     * in the pointer assignment graph.  If warn equals true, print log warnings if errors.
+     */  
     public IVarAbstraction getInternalNode(Value val) {
+        return getInternalNode(val, true);
+    }
+    
+    /**
+     * Return the internal node representation for the value (local, fieldref, or array ref)
+     * in the pointer assignment graph.  If warn equals true, print log warnings if errors.
+     */
+    public IVarAbstraction getInternalNode(Value val, boolean warn) {
+        Node node = null;
+        
         if (val instanceof Local) {
-            LocalVarNode node = ptsProvider.findLocalVarNode(val);
-            IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
-            return internalNode;
-        } else if (val instanceof SootField) {
-            logger.error("Unknown type for pointer: {}", val.getClass());
-            droidsafe.main.Main.exit(1);
+            node = ptsProvider.findLocalVarNode(val);          
+        } else if (val instanceof FieldRef) {
+           SootField field = ((FieldRef)val).getField();
+           node = ptsProvider.findGlobalVarNode(field);                    
+        } else if (val instanceof ArrayRef) {
+            ArrayRef arf = (ArrayRef) val;
+            node = ptsProvider.findLocalVarNode((Local) arf.getBase());
         }
 
-        logger.error("Unknown type for pointer: {}", val.getClass());
-        droidsafe.main.Main.exit(1);
+        if (node == null) {
+            if (warn)
+                logger.info("Unknown type for pointer: {} {}", val, val.getClass());
+            return null;
+        }
         
-        return null;
+        IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
+        if (warn && internalNode == null) {
+            logger.info("Cannot field internal node for value: {}", val); 
+        }
+        return internalNode;
     }
 
     /**
@@ -261,7 +284,7 @@ public class GeoPTA {
                 allocNodes = ivar.get_all_points_to_objects();
             } else {
                 //not a static initializer, regular call
-                if (sparkNode instanceof LocalVarNode) {
+                if (sparkNode != null) {
                     long l = cgEdge.map_offset;
                     long r = l + ptsProvider.max_context_size_block[cgEdge.s];
 
@@ -279,15 +302,10 @@ public class GeoPTA {
                                 val, context);
                         }
                     }
-                } else if (sparkNode == null) {
-                    logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
                 } else {
-                    logger.error("Unknown type of spark node for points to query for value v {}, " +
-                            "ivar {} spark node {}.", 
-                            val, ivar, sparkNode);
-                    droidsafe.main.Main.exit(1);
-                }
-
+                    logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
+                } 
+                
                 if (allocNodes.isEmpty()) {
                     logger.debug("empty getPTSet query: v {} (ivar {}) with context {}.", val, ivar, context);
                 }
