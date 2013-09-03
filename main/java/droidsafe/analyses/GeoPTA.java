@@ -31,7 +31,9 @@ import soot.SootMethod;
 import soot.Type;
 import soot.Value;
 import soot.jimple.Expr;
+import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
@@ -222,8 +224,10 @@ public class GeoPTA {
         Node node = null;
         
         if (val instanceof Local) {
-            node = ptsProvider.findLocalVarNode(val);          
-        } else if (val instanceof FieldRef) {
+            node = ptsProvider.findLocalVarNode(val);
+        } else if (val instanceof InstanceFieldRef) {
+            node = ptsProvider.findLocalVarNode((Local) ((InstanceFieldRef)val).getBase());    
+        } else if (val instanceof StaticFieldRef) {
            SootField field = ((FieldRef)val).getField();
            node = ptsProvider.findGlobalVarNode(field);                    
         } else if (val instanceof ArrayRef) {
