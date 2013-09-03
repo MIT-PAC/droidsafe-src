@@ -21,7 +21,6 @@ import org.slf4j.LoggerFactory;
 import soot.AnySubType;
 import soot.ArrayType;
 import soot.G;
-import soot.Kind;
 import soot.Local;
 import soot.RefLikeType;
 import soot.RefType;
@@ -56,7 +55,6 @@ import soot.jimple.FieldRef;
 
 import com.google.common.collect.HashBiMap;
 
-import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.utils.CannotFindMethodException;
@@ -199,7 +197,7 @@ public class GeoPTA {
         if (!(val.getType() instanceof RefLikeType)) 
             return false;
 
-        if (getInternalNode(val) != null)
+        if (getInternalNode(val, false) != null)
             return true;
 
         //might need more stuff here.
@@ -209,9 +207,17 @@ public class GeoPTA {
 
     /**
      * Return the internal node representation for the value (local, fieldref, or array ref)
-     * in the pointer assignment graph.
-     */
+     * in the pointer assignment graph.  If warn equals true, print log warnings if errors.
+     */  
     public IVarAbstraction getInternalNode(Value val) {
+        return getInternalNode(val, true);
+    }
+    
+    /**
+     * Return the internal node representation for the value (local, fieldref, or array ref)
+     * in the pointer assignment graph.  If warn equals true, print log warnings if errors.
+     */
+    public IVarAbstraction getInternalNode(Value val, boolean warn) {
         Node node = null;
         
         if (val instanceof Local) {
@@ -225,12 +231,13 @@ public class GeoPTA {
         }
 
         if (node == null) {
-            logger.info("Unknown type for pointer: {}", val.getClass());
+            if (warn)
+                logger.info("Unknown type for pointer: {} {}", val, val.getClass());
             return null;
         }
         
         IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
-        if (internalNode == null) {
+        if (warn && internalNode == null) {
             logger.info("Cannot field internal node for value: {}", val); 
         }
         return internalNode;
@@ -328,11 +335,6 @@ public class GeoPTA {
      * context.
      */
     public Set<AllocNode> getPTSet(Value val, Edge context) {
-        if (context == null) {
-            logger.error("Null context edge for pta query.");
-            droidsafe.main.Main.exit(1);
-        }
-        
         //logger.info("Querying pt set for: {} in {}", v, context);
         IVarAbstraction ivar = getInternalNode(val);
         if (ivar == null) {
@@ -340,14 +342,6 @@ public class GeoPTA {
             return new HashSet<AllocNode>();
         }
         Node sparkNode = ivar.getWrappedNode();
-        
-        //special case for DroidSafeMain.main(), if we are queried on a local from the 
-        //harness main, then return the insensitive result
-        if (context.tgt().equals(Harness.v().getMain()) && 
-                context.src() == null && context.srcUnit() == null && context.kind().equals(Kind.STATIC)) {
-            return getPTSetContextIns(val);
-        }
-       
 
         return getPTSet(sparkNode, ivar, context, val);
     }
