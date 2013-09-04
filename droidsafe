@@ -25,6 +25,8 @@ def run_droidsafe(args):
 
     command.append("-Xms1g");
     command.append("-Xmx16g");
+    if os.path.basename(args[0]).endswith("-debug"):
+        command.append("-enableassertions");
     
     command.append(MAIN_CLASS)
 
