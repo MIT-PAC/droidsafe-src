@@ -262,28 +262,36 @@ public class GeoPTA {
         if ( ivar == null ) {
             return allocNodes;
         }
-        
+
         CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
-        long l = cgEdge.map_offset;
-        long r = l + ptsProvider.max_context_size_block[cgEdge.s];
+
 
         Set<AllocNode> baseNodes = getGlobalorLocalPTSet(vn, ivar, context, val);
 
         for (AllocNode baseNode : baseNodes) {
             IVarAbstraction padf = ptsProvider.findAndInsertInstanceField(baseNode, field);
 
-            Obj_1cfa_extractor contextFieldVisitor = new Obj_1cfa_extractor();
-            padf.get_all_context_sensitive_objects(l, r, contextFieldVisitor);
+            //if we cannot find a corresponding call graph edge represented in the geo encoding,
+            //perform an insensitive search.
+            if (cgEdge == null) {
+                allocNodes.addAll(padf.get_all_points_to_objects());
+            } else {
+                long l = cgEdge.map_offset;
+                long r = l + ptsProvider.max_context_size_block[cgEdge.s];
 
-            for (CallsiteContextVar ccvField : contextFieldVisitor.outList) {
-                //check here is the CCV is null because in the underlying analysis, it 
-                //sometimes adds nulls to the context search, don't know why but 
-                //only seems to happen in rare circumstances, might need to investigate more.
-                if (ccvField != null) {    
-                    allocNodes.add((AllocNode)ccvField.var);
-                } else {
-                    logger.info("Null callsite context var found during PTA search (continuing): {} in {}", 
-                        val, context);
+                Obj_1cfa_extractor contextFieldVisitor = new Obj_1cfa_extractor();
+                padf.get_all_context_sensitive_objects(l, r, contextFieldVisitor);
+
+                for (CallsiteContextVar ccvField : contextFieldVisitor.outList) {
+                    //check here is the CCV is null because in the underlying analysis, it 
+                    //sometimes adds nulls to the context search, don't know why but 
+                    //only seems to happen in rare circumstances, might need to investigate more.
+                    if (ccvField != null) {    
+                        allocNodes.add((AllocNode)ccvField.var);
+                    } else {
+                        logger.info("Null callsite context var found during PTA search (continuing): {} in {}", 
+                            val, context);
+                    }
                 }
             }
         }
@@ -359,7 +367,7 @@ public class GeoPTA {
     public Set<AllocNode> getPTSet(Value val, Edge context) {
         //logger.info("Querying pt set for: {} in {}", v, context);
         
-        
+    
         //handle instance field refs specially, need to find base and then field
         if (val instanceof InstanceFieldRef) {
             return getInstanceFieldPTSet((InstanceFieldRef)val, context);
