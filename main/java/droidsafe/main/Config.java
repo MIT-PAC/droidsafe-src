@@ -178,9 +178,10 @@ public class Config {
     options.addOption(infoFlow);
 
     Option infoFlowDotFile =
-        OptionBuilder.withArgName("FILE").hasArg()
+        OptionBuilder
+            .withArgName("FILE").hasArg()
             .withDescription("Export information flows to FILE in DOT")
-            .withLongOpt("infoflow-dot-file").create();
+            .withLongOpt("infoflow-dot-file").create("z");
     options.addOption(infoFlowDotFile);
 
     Option infoFlowDotMethod =
@@ -190,7 +191,7 @@ public class Config {
             .withDescription(
                 "Export information flows specific to METHOD only: METHOD is specified by its signature"
                     + " (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")")
-            .withLongOpt("infoflow-dot-method").create();
+            .withLongOpt("infoflow-dot-method").create("x");
     options.addOption(infoFlowDotMethod);
 
     Option approot =
