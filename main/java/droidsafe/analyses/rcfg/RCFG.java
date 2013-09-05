@@ -27,6 +27,9 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
+import soot.Value;
+import soot.jimple.AssignStmt;
+import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.NewExpr;
@@ -42,6 +45,7 @@ import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.Chain;
 import soot.util.queue.QueueReader;
 import soot.Type;
+import soot.RefLikeType;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.EntryPoints;
@@ -410,18 +414,14 @@ public class RCFG {
 
         while (stmtIt.hasNext()) {
             Stmt stmt = (Stmt)stmtIt.next();
+            
             InstanceInvokeExpr expr = SootUtils.getInstanceInvokeExpr(stmt);
             if (expr == null) 
                 continue;
 
-            /*
-            if (!GeoPTA.v().isPointer(expr.getBase())) {
-                System.out.printf("Not a pointer %s for call %s %s\n", expr.getBase(), expr, 
-                    SootUtils.getSourceLocation(stmt, src.getDeclaringClass()));
-            }
-             */
-
-            for (AllocNode alloc : GeoPTA.v().getPTSet(expr.getBase(), context)) {
+            Set<AllocNode> nodes = GeoPTA.v().getPTSet(expr.getBase(), context);     
+            
+            for (AllocNode alloc : nodes) {
                 if (AddAllocsForAPICalls.v().isGeneratedExpr(alloc.getNewExpr())) {
                     Type t = alloc.getType();
 
