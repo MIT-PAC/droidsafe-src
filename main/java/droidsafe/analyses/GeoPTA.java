@@ -50,6 +50,7 @@ import soot.jimple.spark.geom.helper.ContextTranslator;
 import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.ArrayElement;
 import soot.jimple.spark.pag.GlobalVarNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.MethodPAG;
@@ -149,6 +150,13 @@ public class GeoPTA {
         }
     }
 
+    /**
+     * Return true is this method is a valid method to use for a context sensitive search.
+     */
+    public boolean isValidMethod(SootMethod sm) {
+        return ptsProvider.isValidMethod(sm);
+    }
+    
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
@@ -279,43 +287,38 @@ public class GeoPTA {
             return allocNodes;
         }
 
-        CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
-
-
         Set<AllocNode> baseNodes = getGlobalorLocalPTSet(vn, ivar, context, val);
 
         for (AllocNode baseNode : baseNodes) {
             IVarAbstraction padf = ptsProvider.findAndInsertInstanceField(baseNode, field);
-
-            //if we cannot find a corresponding call graph edge represented in the geo encoding,
-            //perform an insensitive search.
-            if (cgEdge == null) {
-                allocNodes.addAll(padf.get_all_points_to_objects());
-            } else {
-                long l = cgEdge.map_offset;
-                long r = l + ptsProvider.max_context_size_block[cgEdge.s];
-
-                Obj_1cfa_extractor contextFieldVisitor = new Obj_1cfa_extractor();
-                padf.get_all_context_sensitive_objects(l, r, contextFieldVisitor);
-
-                for (CallsiteContextVar ccvField : contextFieldVisitor.outList) {
-                    //check here is the CCV is null because in the underlying analysis, it 
-                    //sometimes adds nulls to the context search, don't know why but 
-                    //only seems to happen in rare circumstances, might need to investigate more.
-                    if (ccvField != null) {    
-                        allocNodes.add((AllocNode)ccvField.var);
-                    } else {
-                        logger.info("Null callsite context var found during PTA search (continuing): {} in {}", 
-                            val, context);
-                    }
-                }
-            }
+            allocNodes.addAll(padf.get_all_points_to_objects());
         }
 
 
         return allocNodes;
     }
 
+    private Set<AllocNode> getArrayRefPTSet(ArrayRef val, Edge context) {
+        Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
+        
+        LocalVarNode vn = ptsProvider.findLocalVarNode((Local) val.getBase());
+        
+        IVarAbstraction ivar = ptsProvider.findInternalNode(vn);
+        
+        if ( ivar == null ) {
+            return allocNodes;
+        }
+
+        Set<AllocNode> baseNodes = getGlobalorLocalPTSet(vn, ivar, context, val);
+
+        for (AllocNode baseNode : baseNodes) {
+            IVarAbstraction padf = ptsProvider.findAndInsertInstanceField(baseNode, ArrayElement.v());
+            allocNodes.addAll(padf.get_all_points_to_objects());
+        }
+
+        return allocNodes;
+    }
+    
     
     /**
      * Perform a context sensitive search on a given global or local that does not require a 
@@ -388,7 +391,9 @@ public class GeoPTA {
         //handle instance field refs specially, need to find base and then field
         if (val instanceof InstanceFieldRef) {
             return getInstanceFieldPTSet((InstanceFieldRef)val, context);
-        }  
+        } else if (val instanceof ArrayRef) {
+            return getArrayRefPTSet((ArrayRef)val, context);
+        }
             
         //single search
         Node node = null;
@@ -397,9 +402,6 @@ public class GeoPTA {
         } else if (val instanceof StaticFieldRef) {
            SootField field = ((FieldRef)val).getField();
            node = ptsProvider.findGlobalVarNode(field);                    
-        } else if (val instanceof ArrayRef) {
-            ArrayRef arf = (ArrayRef) val;
-            node = ptsProvider.findLocalVarNode((Local) arf.getBase());
         } 
 
         if (node == null) {
@@ -439,6 +441,13 @@ public class GeoPTA {
                     Set<AllocNode> fromPTA = fieldVar.get_all_points_to_objects();
                     allocNodes.addAll(fromPTA);
                 }                
+            } else if (val instanceof ArrayRef) {
+                Set<AllocNode> baseNodes = getPTSetContextIns(((ArrayRef)val).getBase());
+                for (AllocNode baseNode : baseNodes) {
+                    IVarAbstraction fieldVar = ptsProvider.findAndInsertInstanceField(baseNode, ArrayElement.v());
+                    Set<AllocNode> fromPTA = fieldVar.get_all_points_to_objects();
+                    allocNodes.addAll(fromPTA);
+                }
             } else {            
                 IVarAbstraction ivar = getInternalNode(val);
                 ivar = ivar.getRepresentative();
