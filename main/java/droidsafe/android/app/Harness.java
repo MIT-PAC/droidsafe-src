@@ -325,7 +325,8 @@ public class Harness {
 		body.getLocals().add(compLocal);
 		
 		Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
-		        compClass.getType());
+		    RefType.v("java.lang.String"));
+		body.getLocals().add(stringLocal);
 		
 		//Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
 		//        RefType.v(compType)); 
