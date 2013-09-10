@@ -398,13 +398,9 @@ public class Resources {
 		// Read in the resource id to name map
 		read_resources();
 		
-		//adding system default resources
-		String resourceName = "android.R.string.untitled";
-		resource_info.put(new Integer(0x0104000f), resourceName);
-		RString rString = new RString("");
-		Set<RString> valueSet = new HashSet<RString>();
-		valueSet.add(rString);
-		stringNameToRStringSet.put(resourceName, valueSet);
+		// load builtin strings and add them to the map
+		BuiltinStrings.v().loadBuiltinStrings();
+		stringNameToRStringSet.putAll(BuiltinStrings.v().getNameToValueSet());
 		
 	}
 
