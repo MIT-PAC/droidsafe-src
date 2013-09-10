@@ -795,9 +795,17 @@ public class ResourcesSoot {
             
             //TODO: need to normalize the name/params
             if (attrValue.contains("@")) {
+                // the name automatically gets assigned during xml parsing
+                
+                String stringName = attrValue;
+                stringName = stringName.replace("@android:string/",  "android.R.string.");
+                stringName = stringName.replace("@string/", "string.");
+
+                /*
                 int ind = attrValue.indexOf("@");
                 String stringName = attrValue.substring(ind+1);
                 stringName = stringName.replace("/", ".");
+                */
 
                 if (mStringToValueSet.containsKey(stringName)) {
                     logger.debug("{} can be expanded ", stringName);    
@@ -809,6 +817,9 @@ public class ResourcesSoot {
                             continue;
                         textSet.add(rstring.value);
                     }
+                } 
+                else {
+                   logger.warn("attr {} => {} not in mStringToValueSet ", attrValue, stringName ); 
                 }
             } 
             else {

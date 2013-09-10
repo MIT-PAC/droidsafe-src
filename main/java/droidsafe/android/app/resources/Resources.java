@@ -423,7 +423,7 @@ public class Resources {
 			// build the method that instantiates view objects
 			Integer layoutNumericId = resource_info.inverse().get(layout.view.id);
 			if (layoutNumericId == null) {
-			    logger.warn("Layout has no viewID, skipped");
+			    logger.warn("Layout has no viewID, skipped: {}", layout.view);
 			    continue;
 			}
 			
@@ -470,27 +470,18 @@ public class Resources {
 						continue;
 					}
 					// the name automatically gets assigned during xml parsing
-					String stringName = rString.name;
-					logger.debug("name: {} ", stringName);
+					String stringName = rString.name.replace("@+",  "@");
+					stringName = stringName.replace("@android:string/",  "android.R.string.");
+					stringName = stringName.replace("@string/", "string.");
 
-					//normalize stringname
-					if (stringName.startsWith("android:")) {
-						stringName = stringName.substring("android:".length());
-					}
-					if (stringName.startsWith("@+")) {
-						stringName = stringName.substring(2);
-					}
-
-					if (stringName.startsWith("@")) {
-						stringName = stringName.substring(1);
-					}
-
-					stringName = "string." + stringName;
-
+					if (!stringName.startsWith("string."))
+					    stringName = "string." + stringName; 
+					
 					logger.debug("Adding a string name to string value mapping: ({}:{})", 
 							stringName, stringValue);
 
 					Set<RString> valueSet = stringNameToRStringSet.get(stringName);
+
 					if (valueSet == null) {
 						valueSet = new HashSet<RString>();
 						stringNameToRStringSet.put(stringName, valueSet);
@@ -565,9 +556,11 @@ public class Resources {
 		//generated resource classes
 		// for (SootClass clz : Scene.v().getClasses()) {
 		for (SootClass clz : Scene.v().getApplicationClasses()) {
-			/* We skip internal android stuff */
-			if (clz.getName().startsWith("android.R$"))
+			/* We skip internal android stuff: should never happen as android.R.X is api */
+			if (clz.getName().startsWith("android.R.")) {
+				logger.warn("Class {}", clz);
 				continue;
+			}
 
 			String shortName = clz.getShortName();
 			if (shortName.equals("BuildConfig") || shortName.equals("R")) {
