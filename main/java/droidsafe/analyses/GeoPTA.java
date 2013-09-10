@@ -22,6 +22,7 @@ import soot.AnySubType;
 import soot.ArrayType;
 import soot.G;
 import soot.Local;
+import soot.PointsToSet;
 import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
@@ -30,10 +31,16 @@ import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
+import soot.jimple.AssignStmt;
+import soot.jimple.CastExpr;
+import soot.jimple.ClassConstant;
 import soot.jimple.Expr;
+import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.NewExpr;
+import soot.jimple.NullConstant;
+import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
-import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.dataRep.CallsiteContextVar;
 import soot.jimple.spark.geom.geomPA.CgEdge;
@@ -43,12 +50,18 @@ import soot.jimple.spark.geom.helper.ContextTranslator;
 import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.GlobalVarNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.options.PaddleOptions;
+import soot.jimple.ArrayRef;
+import soot.jimple.FieldRef;
+import soot.jimple.spark.pag.FieldRefNode;
+import soot.jimple.spark.sets.P2SetVisitor;
+import soot.jimple.spark.sets.PointsToSetInternal;
 
 import com.google.common.collect.HashBiMap;
 
@@ -80,6 +93,7 @@ public class GeoPTA {
     /** singleton of this analysis */
     private static GeoPTA v;
 
+    public static final Set<AllocNode> EMPTY_PTA_SET = Collections.<AllocNode>emptySet();
 
     /**
      * Reset the PTA and get it ready for another run.
@@ -194,31 +208,39 @@ public class GeoPTA {
         if (!(val.getType() instanceof RefLikeType)) 
             return false;
 
-        if (val instanceof Local && getInternalNode(val) != null)
+        //now see if it is tracked by the PTA
+        if (getInternalNode(val) != null)
             return true;
-
-        //might need more stuff here.
 
         return false;
     }
 
+    
     /**
-     * Return true if the value is a pointer in the pointer assignment graph.
+     * Return the internal node representation for the value (local, fieldref, or array ref)
+     * in the pointer assignment graph.  
      */
     public IVarAbstraction getInternalNode(Value val) {
+        Node node = null;
+        
         if (val instanceof Local) {
-            LocalVarNode node = ptsProvider.findLocalVarNode(val);
-            IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
-            return internalNode;
-        } else if (val instanceof SootField) {
-            logger.error("Unknown type for pointer: {}", val.getClass());
-            droidsafe.main.Main.exit(1);
+            node = ptsProvider.findLocalVarNode(val);
+        } else if (val instanceof InstanceFieldRef) {
+            node = ptsProvider.findLocalVarNode((Local) ((InstanceFieldRef)val).getBase());    
+        } else if (val instanceof StaticFieldRef) {
+           SootField field = ((FieldRef)val).getField();
+           node = ptsProvider.findGlobalVarNode(field);                    
+        } else if (val instanceof ArrayRef) {
+            ArrayRef arf = (ArrayRef) val;
+            node = ptsProvider.findLocalVarNode((Local) arf.getBase());
         }
 
-        logger.error("Unknown type for pointer: {}", val.getClass());
-        droidsafe.main.Main.exit(1);
+        if (node == null) {
+            return null;
+        }
         
-        return null;
+        IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
+        return internalNode;
     }
 
     /**
@@ -236,9 +258,70 @@ public class GeoPTA {
     }
 
     /**
-     * v used only for error reporting
+     * Perform a context sensitive search of the PTA result for an instance field.  First
+     * search for base reference and then for each object pointed to by base, search the field reference.
      */
-    private Set<AllocNode> getPTSet(Node sparkNode, IVarAbstraction ivar, Edge context, Value val) {
+    private Set<AllocNode> getInstanceFieldPTSet(InstanceFieldRef val, Edge context) {
+        Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
+        
+        if (!(val.getField().getType() instanceof RefLikeType)) {
+            logger.error("Querying PTA for instance field that is not a reference type: {}", val);
+            droidsafe.main.Main.exit(1);
+        }
+        
+        final SootField field = val.getField();
+        
+        LocalVarNode vn = ptsProvider.findLocalVarNode((Local) val.getBase());
+        
+        IVarAbstraction ivar = ptsProvider.findInternalNode(vn);
+        
+        if ( ivar == null ) {
+            return allocNodes;
+        }
+
+        CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
+
+
+        Set<AllocNode> baseNodes = getGlobalorLocalPTSet(vn, ivar, context, val);
+
+        for (AllocNode baseNode : baseNodes) {
+            IVarAbstraction padf = ptsProvider.findAndInsertInstanceField(baseNode, field);
+
+            //if we cannot find a corresponding call graph edge represented in the geo encoding,
+            //perform an insensitive search.
+            if (cgEdge == null) {
+                allocNodes.addAll(padf.get_all_points_to_objects());
+            } else {
+                long l = cgEdge.map_offset;
+                long r = l + ptsProvider.max_context_size_block[cgEdge.s];
+
+                Obj_1cfa_extractor contextFieldVisitor = new Obj_1cfa_extractor();
+                padf.get_all_context_sensitive_objects(l, r, contextFieldVisitor);
+
+                for (CallsiteContextVar ccvField : contextFieldVisitor.outList) {
+                    //check here is the CCV is null because in the underlying analysis, it 
+                    //sometimes adds nulls to the context search, don't know why but 
+                    //only seems to happen in rare circumstances, might need to investigate more.
+                    if (ccvField != null) {    
+                        allocNodes.add((AllocNode)ccvField.var);
+                    } else {
+                        logger.info("Null callsite context var found during PTA search (continuing): {} in {}", 
+                            val, context);
+                    }
+                }
+            }
+        }
+
+
+        return allocNodes;
+    }
+
+    
+    /**
+     * Perform a context sensitive search on a given global or local that does not require a 
+     * search of a base value.
+     */
+    private Set<AllocNode> getGlobalorLocalPTSet(Node sparkNode, IVarAbstraction ivar, Edge context, Value val) {
         Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
 
         try {
@@ -261,7 +344,7 @@ public class GeoPTA {
                 allocNodes = ivar.get_all_points_to_objects();
             } else {
                 //not a static initializer, regular call
-                if (sparkNode instanceof LocalVarNode) {
+                if (sparkNode != null) {
                     long l = cgEdge.map_offset;
                     long r = l + ptsProvider.max_context_size_block[cgEdge.s];
 
@@ -279,15 +362,10 @@ public class GeoPTA {
                                 val, context);
                         }
                     }
-                } else if (sparkNode == null) {
-                    logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
                 } else {
-                    logger.error("Unknown type of spark node for points to query for value v {}, " +
-                            "ivar {} spark node {}.", 
-                            val, ivar, sparkNode);
-                    droidsafe.main.Main.exit(1);
-                }
-
+                    logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
+                } 
+                
                 if (allocNodes.isEmpty()) {
                     logger.debug("empty getPTSet query: v {} (ivar {}) with context {}.", val, ivar, context);
                 }
@@ -299,29 +377,45 @@ public class GeoPTA {
     }
 
     /**
-     * Given a pointer node in the SPARK generated points to graph and a given context, 
-     * find the set of allocations that it could point to in the context.
-     */
-    public Set<AllocNode> getPTSet(Node sparkNode, Edge context) {
-        IVarAbstraction ivar = ptsProvider.consG.get(sparkNode);
-        return getPTSet(sparkNode, ivar, context, null);
-    }
-
-    /**
      * Given a value that is a pointer, and a context edge from the call graph, 
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
     public Set<AllocNode> getPTSet(Value val, Edge context) {
         //logger.info("Querying pt set for: {} in {}", v, context);
-        IVarAbstraction ivar = getInternalNode(val);
-        if (ivar == null) {
-            //nothing known about this pointer:
-            return new HashSet<AllocNode>();
-        }
-        Node sparkNode = ivar.getWrappedNode();
+        
+    
+        //handle instance field refs specially, need to find base and then field
+        if (val instanceof InstanceFieldRef) {
+            return getInstanceFieldPTSet((InstanceFieldRef)val, context);
+        }  
+            
+        //single search
+        Node node = null;
+        if (val instanceof Local) {
+            node = ptsProvider.findLocalVarNode(val);
+        } else if (val instanceof StaticFieldRef) {
+           SootField field = ((FieldRef)val).getField();
+           node = ptsProvider.findGlobalVarNode(field);                    
+        } else if (val instanceof ArrayRef) {
+            ArrayRef arf = (ArrayRef) val;
+            node = ptsProvider.findLocalVarNode((Local) arf.getBase());
+        } 
 
-        return getPTSet(sparkNode, ivar, context, val);
+        if (node == null) {
+            logger.info("Cannot find spark node for: {} {}", val, val.getClass());
+            return EMPTY_PTA_SET;
+        }
+        
+        IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
+        if (internalNode == null) {
+            logger.info("Cannot find internal geom node for value: {}", val); 
+            return EMPTY_PTA_SET;
+        }
+        
+        Node sparkNode = internalNode.getWrappedNode();
+
+        return getGlobalorLocalPTSet(sparkNode, internalNode, context, val);
     }
 
     /**
@@ -329,19 +423,30 @@ public class GeoPTA {
      */
     public Set<AllocNode> getPTSetContextIns(Value val) {
         Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-
+        
         if (!isPointer(val))
             return allocNodes;
 
         try {
-            IVarAbstraction ivar = getInternalNode(val);
-            Node sparkNode = ivar.getWrappedNode();
-            ivar = ivar.getRepresentative();
+            //for an instance field ref, we first have to perform a search of alloc nodes for the
+            //base, then for each base, on the field
+            if (val instanceof InstanceFieldRef) {
+                Set<AllocNode> baseNodes = getPTSetContextIns(((InstanceFieldRef)val).getBase());
+                SootField field = ((InstanceFieldRef)val).getField();
+                for (AllocNode baseNode : baseNodes) {
+                    IVarAbstraction fieldVar = ptsProvider.findAndInsertInstanceField(baseNode, field);
+                    //fieldVar = fieldVar.getRepresentative();
+                    Set<AllocNode> fromPTA = fieldVar.get_all_points_to_objects();
+                    allocNodes.addAll(fromPTA);
+                }                
+            } else {            
+                IVarAbstraction ivar = getInternalNode(val);
+                ivar = ivar.getRepresentative();
 
-            Set<AllocNode> fromPTA = ivar.get_all_points_to_objects();
-            if (fromPTA != null)
-                allocNodes.addAll(fromPTA);
-
+                Set<AllocNode> fromPTA = ivar.get_all_points_to_objects();
+                if (fromPTA != null)
+                    allocNodes.addAll(fromPTA);
+            }
         } catch (Exception e) {
             logger.info("Some sort of error getting context insensitive points to set for {}", val);
             //e.printStackTrace();
@@ -521,10 +626,74 @@ public class GeoPTA {
         file.print("======================= dumpPTA () Done =====================================\n");
     }
 
+    private void testField(final PrintStream file) {
+        for ( SootMethod sm : ptsProvider.getAllReachableMethods() ) {
+            //          if (sm.isJavaLibraryMethod())
+            //              continue;
+            if (!sm.isConcrete())
+                continue;
+            if (!sm.hasActiveBody()) {
+                sm.retrieveActiveBody();
+            }
+            if ( !ptsProvider.isValidMethod(sm) )
+                continue;
+
+
+            // We first gather all the memory access expressions
+            for (Iterator stmts = sm.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+                Stmt st = (Stmt) stmts.next();
+
+                if ( !(st instanceof AssignStmt) ) continue;
+
+                AssignStmt a = (AssignStmt) st;
+                final Value lValue = a.getLeftOp();
+                final Value rValue = a.getRightOp();
+
+                InstanceFieldRef ifr = null;
+
+                if (lValue instanceof InstanceFieldRef) {
+                    // Def statement
+                    ifr = (InstanceFieldRef)lValue;
+                }
+                else if ( rValue instanceof InstanceFieldRef ) {
+                    // Use statement
+                    ifr = (InstanceFieldRef)rValue;
+                }
+
+                if (ifr != null) {
+                    file.println(sm);
+                    file.println(st);
+                    file.println(ifr);
+                    
+                    final SootField field = ifr.getField();
+
+                    LocalVarNode vn = ptsProvider.findLocalVarNode((Local) ifr.getBase());
+                    if ( vn == null ) continue;
+                    
+                    // Spark
+                    vn.getP2Set().forall(new P2SetVisitor() {
+                        
+                        @Override
+                        public void visit(Node n) {
+                            PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects((AllocNode)n, field);
+                            pts.forall(new P2SetVisitor() {
+                                @Override
+                                public void visit(Node n) {
+                                    file.println(" Visitor: " + n);
+                                }
+                            });
+                        }
+                    });
+                }
+                file.println();
+            }
+        }
+    }
+    
     /**
      * Print out all points to sets.
      */
-    public void dumpPTA(PrintStream file) {
+    public void dumpPTA(final PrintStream file) {
 
         file.print("======================= dumpPTA ()=====================================\n");
         //Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
@@ -543,11 +712,6 @@ public class GeoPTA {
 
             if (pn.getWrappedNode() != orig.getWrappedNode())
                 file.println("Original: " + orig.getWrappedNode());
-
-            file.println(val);
-
-            if (val instanceof AllocDotField) 
-                file.printf("\tAlloc dot field\n");
 
             if ( val instanceof LocalVarNode ) {
                 // We map the local pointer to its 1-cfa versions
@@ -582,6 +746,22 @@ public class GeoPTA {
                 }
             }
             else {
+                if (val instanceof AllocDotField) {
+                    
+                    AllocDotField adf = (AllocDotField)val;
+                    file.printf("\tAlloc dot field: %s %s\n", adf.getBase(), adf.getField());
+                    Set<AllocNode> allocNodes = pn.get_all_points_to_objects();
+                    for (AllocNode node : allocNodes) {
+                        file.println(" " + node);
+                    }
+                   
+                    adf.getP2Set().forall(new P2SetVisitor() {
+                        @Override
+                        public void visit(Node n) {
+                            file.printf(" Visitor: " + n);
+                        }
+                    });
+                } 
                 Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
                 pn.get_all_context_sensitive_objects(1, 
                     soot.jimple.spark.geom.geomPA.Constants.MAX_CONTEXTS, contextObjsVisitor);
@@ -589,7 +769,7 @@ public class GeoPTA {
                 for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
                     //cobj.inQ = false;
                     if (cobj != null)
-                        file.print( " " + cobj.getNumber() );
+                        file.println( " " + cobj.var );
                 }
                 file.println();
             }
@@ -597,6 +777,7 @@ public class GeoPTA {
             file.println();
         }
         file.print("======================= dumpPTA () Done =====================================\n");
+        testField(file);
     }
 
     /**
@@ -697,47 +878,6 @@ public class GeoPTA {
 
 
         logger.info("[spark] Done!");
-    }
-
-    /**
-     * Not used: once used to test paddle as underlying pta.
-     */
-    private static void setPaddlePointsToAnalysis() {
-        logger.info("[paddle] Starting analysis ...");
-
-        //System.out.println(System.getProperty("java.library.path"));
-
-        HashMap<String, String> opt = new HashMap<String, String>();
-        opt.put("enabled","true");
-        opt.put("verbose","false");
-        opt.put("bdd","true");
-        opt.put("backend","javabdd");
-        opt.put("context","kcfa");
-        opt.put("k","2");
-        //opt.put("context-heap","true");
-        opt.put("propagator","auto");
-        opt.put("conf","ofcg");
-        opt.put("order","32");
-        opt.put("q","auto");
-        opt.put("set-impl","double");
-        opt.put("double-set-old","hybrid");
-        opt.put("double-set-new","hybrid");
-        opt.put("pre-jimplify","false");
-        opt.put("verbosegc", "false");
-        opt.put("all-reachable","false");
-        opt.put("on-fly-cg", "true");
-        opt.put("set-impl", "double");
-        opt.put("verbose", "true");
-        opt.put("implicit-entry", "false");
-
-        PaddleTransformer pt = new PaddleTransformer();
-        PaddleOptions paddle_opt = new PaddleOptions(opt);
-        pt.setup(paddle_opt);
-        pt.solve(paddle_opt);
-        soot.jimple.paddle.Results.v().makeStandardSootResults();
-
-
-        logger.info("[paddle] Done!");
     }
 
     /**

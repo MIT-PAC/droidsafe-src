@@ -56,6 +56,7 @@ import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.SootUtils;
 
 /*
@@ -69,7 +70,7 @@ public class DroidsafeAnalysisRunner extends Main {
   /**
    * Id for the markers to be added to the Android app files.
    */
-  public final String DROIDSAFE_MARKER_ID = Activator.PLUGIN_ID + ".droidsafemarker";
+  // public final String DROIDSAFE_MARKER_ID = Activator.PLUGIN_ID + ".droidsafemarker";
 
   IProject project;
 
@@ -130,18 +131,27 @@ public class DroidsafeAnalysisRunner extends Main {
     logger.info("From Activator.getPreferenceStore" + "\nJIMPLE Prefence = " + writeJimpleClasses
         + "\nInfoFlow = " + infoFlow + "\nPass = " + passTarget);
 
-    G.reset();
-    Project.v().init();
-    SootConfig.init();
-    API.v().init();
-    Project.v().loadClasses();
-    Permissions.init();
-    ResourcesSoot.reset();
+    // G.reset();
+    // Project.v().init();
+    // SootConfig.init();
+    // API.v().init();
+    // Project.v().loadClasses();
+    // Permissions.init();
+    // ResourcesSoot.reset();
   }
 
   public IStatus run(IProgressMonitor monitor) {
+    DroidsafeEclipseProgressMonitor dsMonitor = new DroidsafeEclipseProgressMonitor(monitor);
+    DroidsafeExecutionStatus execStatus = Main.run(dsMonitor);
+    if (monitor.isCanceled() || execStatus == DroidsafeExecutionStatus.CANCEL_STATUS) {
+      return Status.CANCEL_STATUS;
+    }
+    return Status.OK_STATUS;
+  }
+
+  public IStatus runOld(IProgressMonitor monitor) {
     long startTime = System.currentTimeMillis();
-    
+
     logger.info("Creating locals for all string constant arguments.");
     LocalForStringConstantArguments.run();
     monitor.worked(1);
@@ -201,7 +211,7 @@ public class DroidsafeAnalysisRunner extends Main {
     logger.info("Running String Analysis.");
     monitor.subTask("Running String Analysis.");
     long jsaStartTime = System.currentTimeMillis();
-    
+
     JSAStrings.init(Config.v());
     if (Config.v().runStringAnalysis) {
       jsaAnalysis();
@@ -211,8 +221,8 @@ public class DroidsafeAnalysisRunner extends Main {
       return Status.CANCEL_STATUS;
     }
     long jsaEndTime = System.currentTimeMillis();
-    long jsaRunTime = jsaEndTime-jsaStartTime;
-    
+    long jsaRunTime = jsaEndTime - jsaStartTime;
+
     // logger.info("Inserting DSTaintObject allocations at each new expression...");
     // monitor.subTask("Inserting DSTaintObject allocations at each new expression");
     // InsertDSTaintAllocs.run();
@@ -341,7 +351,7 @@ public class DroidsafeAnalysisRunner extends Main {
     monitor.worked(1);
     long endTime = System.currentTimeMillis();
     long runTime = endTime - startTime;
-    logger.debug("Time for droidsafe analysis = "+runTime+" String Analysis "+jsaRunTime);
+    logger.debug("Time for droidsafe analysis = " + runTime + " String Analysis " + jsaRunTime);
     return Status.OK_STATUS;
   }
 
@@ -354,33 +364,19 @@ public class DroidsafeAnalysisRunner extends Main {
     JSAUtils.setupSpecHotspots();
     // Adds hotspots added manually by the user.
     /*
-    SecuritySpecModel previousSpec =
-        SecuritySpecModel.deserializeSpecFromFile(Config.v().APP_ROOT_DIR);
-    if (previousSpec != null) {
-      Map<String, List<HotspotModel>> hotspotMap = previousSpec.getHotspotMap();
-      if (hotspotMap != null) {
-        for (String sig : hotspotMap.keySet()) {
-          List<HotspotModel> hotspots = hotspotMap.get(sig);
-          List<Integer> argumentsAlreadySeen = new ArrayList<Integer>();
-          if (hotspots != null) {
-            for (HotspotModel hotspot : hotspots) {
-              int position = hotspot.getArgumentPosition();
-              if (!argumentsAlreadySeen.contains(position)) {
-                if (position == -1) {
-                  // JSAStrings.v().addReturnHotspot(sig);
-                  logger.debug("\n\nJSAStrings.v().addReturnHotspot({});\n", sig);
-                  argumentsAlreadySeen.add(position);
-                } else {
-                  JSAStrings.v().addArgumentHotspots(sig, position);
-                  logger.debug("\n\nJSAStrings.v().addArgumentHotspot({},{});\n", sig, position);
-                  argumentsAlreadySeen.add(position);
-                }
-              }
-            }
-          }
-        }
-      }
-      }*/
+     * SecuritySpecModel previousSpec =
+     * SecuritySpecModel.deserializeSpecFromFile(Config.v().APP_ROOT_DIR); if (previousSpec != null)
+     * { Map<String, List<HotspotModel>> hotspotMap = previousSpec.getHotspotMap(); if (hotspotMap
+     * != null) { for (String sig : hotspotMap.keySet()) { List<HotspotModel> hotspots =
+     * hotspotMap.get(sig); List<Integer> argumentsAlreadySeen = new ArrayList<Integer>(); if
+     * (hotspots != null) { for (HotspotModel hotspot : hotspots) { int position =
+     * hotspot.getArgumentPosition(); if (!argumentsAlreadySeen.contains(position)) { if (position
+     * == -1) { // JSAStrings.v().addReturnHotspot(sig);
+     * logger.debug("\n\nJSAStrings.v().addReturnHotspot({});\n", sig);
+     * argumentsAlreadySeen.add(position); } else { JSAStrings.v().addArgumentHotspots(sig,
+     * position); logger.debug("\n\nJSAStrings.v().addArgumentHotspot({},{});\n", sig, position);
+     * argumentsAlreadySeen.add(position); } } } } } } }
+     */
     JSAStrings.run();
     JSAStrings.v().log();
   }

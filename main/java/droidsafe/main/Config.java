@@ -42,6 +42,10 @@ public class Config {
 
   public static final String ANDROID_LIB_DIR_REL = "android-lib";
 
+  /** location of the GITI api model jar */
+  public static String DROIDSAFE_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
+                                                          + File.separator + "droidsafe-api-model.jar";
+
   /** location of configuration files */
   public static final String SYSTEM_CLASSES_FILE = "config-files" + File.separator
       + "system_class_files.txt";
@@ -58,7 +62,7 @@ public class Config {
   public String APP_ROOT_DIR;
 
   /** Path for the root folder for droidsafe code */
-  private String apacHome;
+  private String apacHome = System.getenv("APAC_HOME");
 
   public File ANDROID_LIB_DIR;
   public String target = "specdump";
@@ -115,6 +119,8 @@ public class Config {
 
   public void setApacHome(String apacHome) {
     this.apacHome = apacHome;
+    Config.DROIDSAFE_API_MODEL_JAR_PATH = this.apacHome + File.separator + ANDROID_LIB_DIR_REL 
+            + File.separator + "droidsafe-api-model.jar";
   }
 
   /**
@@ -122,7 +128,7 @@ public class Config {
    * 
    * @return The current value of boolean flag callSystemExitOnError.
    */
-  public boolean getCallSystehExitOnError() {
+  public boolean getCallSystemExitOnError() {
     return this.callSystemExitOnError;
   }
 
@@ -172,9 +178,10 @@ public class Config {
     options.addOption(infoFlow);
 
     Option infoFlowDotFile =
-        OptionBuilder.withArgName("FILE").hasArg()
+        OptionBuilder
+            .withArgName("FILE").hasArg()
             .withDescription("Export information flows to FILE in DOT")
-            .withLongOpt("infoflow-dot-file").create();
+            .withLongOpt("infoflow-dot-file").create("z");
     options.addOption(infoFlowDotFile);
 
     Option infoFlowDotMethod =
@@ -184,7 +191,7 @@ public class Config {
             .withDescription(
                 "Export information flows specific to METHOD only: METHOD is specified by its signature"
                     + " (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")")
-            .withLongOpt("infoflow-dot-method").create();
+            .withLongOpt("infoflow-dot-method").create("x");
     options.addOption(infoFlowDotMethod);
 
     Option approot =
@@ -330,7 +337,6 @@ public class Config {
   }
 
   public void init(String[] args) {
-    this.apacHome = System.getenv("APAC_HOME");
     logger.info("APAC_HOME = {}", apacHome);
     if (this.apacHome == null) {
       logger.error("Environment variable $APAC_HOME not set!");
