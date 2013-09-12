@@ -22,9 +22,12 @@ import java.util.List;
 import java.util.Set;
 
 import org.reflections.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
 import soot.ValueBox;
+import sun.util.logging.resources.logging;
 
 /**
  * Class containing utility methods for JSA
@@ -32,6 +35,12 @@ import soot.ValueBox;
  * @author dpetters
  */
 public class JSAUtils {
+    
+    /**
+     *  The logging output.
+     */
+    private static final Logger logger = LoggerFactory.getLogger(JSAUtils.class);
+
     /**
      * Set JSA hotspots to be every method signature in attr modeling that has a string as a parameter
      */
@@ -115,14 +124,18 @@ public class JSAUtils {
     {
         for (SootMethod m : API.v().getAllSystemMethods()) {
             if (API.v().isInterestingMethod(m)) {
-                String sig = m.getSignature();
-                int i = 0;
-                for (soot.Type t : m.getParameterTypes()) {
-                    if (SootUtils.isStringType(t)) {
-                        List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
+                try {
+                    String sig = m.getSignature();
+                    int i = 0;
+                    for (soot.Type t : m.getParameterTypes()) {
+                        if (SootUtils.isStringType(t)) {
+                            List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
+                        }
+                        i++;     
                     }
-                    i++;     
-                }
+                 } catch (Exception e) {
+                     logger.error("Exception when adding hotspot for method.");
+                 }
                 // FIXME: Return hotspots are raising an exception.
                 /*
                 if (SootUtils.isStringType(m.getReturnType())) {

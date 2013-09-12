@@ -11,6 +11,7 @@ import droidsafe.analyses.PTAMethodInformation;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
+import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
@@ -42,7 +43,6 @@ public class RCFGNode implements PTAMethodInformation {
 		    invokeExpr = (InvokeExpr)entryEdge.srcStmt().getInvokeExpr();
 		else
 		    invokeExpr = null;
-		
 	}
 	
 	/**

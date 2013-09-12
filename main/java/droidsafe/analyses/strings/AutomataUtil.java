@@ -201,6 +201,15 @@ public class AutomataUtil {
             return (op == ReOp.UNION); 
         }
         
+        
+        public boolean isFloat() {
+            return "<float>".equals(meta);
+        }
+        
+        public boolean isInt() {
+            return "<int>".equals(meta);
+        }
+        
         /** Constructor. **/
         public RE(ReOp argOp) {
             this.op = argOp;
@@ -1050,12 +1059,71 @@ public class AutomataUtil {
         }
 
         private RE assertHasNotLength() {
-            // TODO Auto-generated method stub
+            AssertHasNotLength sop = (AssertHasNotLength) strOp;
+            logger.debug(String.format("AssertNotLength min is %s", sop.getMin()));
+            logger.debug(String.format("AssertNotLength max is %s", sop.getMax()));
+            
+            RE arg1 = cats.get(0);
+            
+            if (arg1.isFloat()) {
+                return arg1;
+            }
+            if (arg1.isInt()) {
+                return arg1;
+            }
+            
+            
+            if (arg1.op == ReOp.UNION) {
+                RE acc = empty;
+                for (RE a : arg1.alts) {
+                    RE tmp = new RE(ReOp.UNOP);
+                    tmp.strOp = this.strOp;
+                    tmp.cats = new LinkedList<RE>();
+                    tmp.cats.add(a);
+                    RE res = tmp.interpretOp();
+                    if (res == null) {
+                        return null;
+                    }   
+                    acc = acc.union(tmp.interpretOp());
+                }
+                return acc;
+            }            
+            
             return null;
         }
 
         private RE assertHasLength() {
-            // TODO Auto-generated method stub
+            // AssertHasLength sop = (AssertHasLength) strOp;
+            // logger.debug(String.format("AssertHasLength min is %s", sop.getMin()));
+            // logger.debug(String.format("AssertHasLength max is %s", sop.getMax()));
+            
+            RE arg1 = cats.get(0);
+            
+            if (arg1.isFloat()) {
+                return arg1;
+            }
+            
+            if (arg1.isInt()) {
+                return arg1;
+            }
+            
+            if (arg1.op == ReOp.UNION) {
+                RE acc = empty;
+                for (RE a : arg1.alts) {
+                    RE tmp = new RE(ReOp.UNOP);
+                    tmp.strOp = this.strOp;
+                    tmp.cats = new LinkedList<RE>();
+                    tmp.cats.add(a);
+                    RE res = tmp.interpretOp();
+                    if (res == null) {
+                        return null;
+                    }   
+                    acc = acc.union(tmp.interpretOp());
+                }
+                return acc;
+            }            
+            
+
             return null;
         }
 

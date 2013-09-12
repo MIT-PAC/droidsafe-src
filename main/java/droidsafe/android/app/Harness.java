@@ -132,6 +132,7 @@ public class Harness {
 		//create the harness class
 		harnessClass = new SootClass(HARNESS_CLASS_NAME, Modifier.PUBLIC | Modifier.FINAL);
 		harnessClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
+		API.v().addSystemClass(harnessClass);
 		
 		searchForAllocsOfAPIImplementors();
 		 
@@ -147,6 +148,8 @@ public class Harness {
 		
 		StmtBody body = Jimple.v().newBody(harnessMain);
 		harnessMain.setActiveBody(body);
+		
+		API.v().addSafeMethod(harnessMain);
 		
 		Stmt beginCalls = mainMethodHeader(body);
 		
@@ -347,7 +350,8 @@ public class Harness {
 		body.getLocals().add(compLocal);
 		
 		Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
-		        compClass.getType());
+		    RefType.v("java.lang.String"));
+		body.getLocals().add(stringLocal);
 		
 		//Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
 		//        RefType.v(compType)); 
