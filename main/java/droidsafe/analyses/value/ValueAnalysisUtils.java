@@ -1,9 +1,9 @@
 package droidsafe.analyses.value;
 
-
 /**
  * Class containing attribute modeling utility methods 
- * @author dpetters@mit.edu
+
+ * @author dpetters
  * */
 public class ValueAnalysisUtils {
     /** 

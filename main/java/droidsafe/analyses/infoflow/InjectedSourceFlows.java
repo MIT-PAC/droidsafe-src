@@ -3,8 +3,7 @@ package droidsafe.analyses.infoflow;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.analyses.value.ValueAnalysisModeledObject;
-import droidsafe.analyses.value.models.android.net.Uri;
+import droidsafe.analyses.value.VAModel;
 
 import java.lang.reflect.Field;
 
@@ -59,7 +58,7 @@ public class InjectedSourceFlows {
     private static InjectedSourceFlows v;
 
     /** local to store the attribute modeling results in */
-    private final Map<AllocNode, ValueAnalysisModeledObject> attrModelingResults;
+    private final Map<AllocNode, VAModel> attrModelingResults;
     
     /** results of this analysis, map from allocnodes to the flows injected */
     private Map<AllocNode, Set<MyKind>> injectedFlows;
@@ -191,7 +190,7 @@ public class InjectedSourceFlows {
 
                     //do something
                     try {
-                        ValueAnalysisModeledObject modeledClass = this.attrModelingResults.get(node);
+                        VAModel modeledClass = this.attrModelingResults.get(node);
 
                         Class<?> modeledClassClass = modeledClass.getClass();
 

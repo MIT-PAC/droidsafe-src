@@ -1,6 +1,6 @@
 package droidsafe.speclang;
 
-import droidsafe.analyses.value.ValueAnalysisModeledObject;
+import droidsafe.analyses.value.VAModel;
 import soot.jimple.spark.pag.AllocNode;
 
 /**
@@ -13,14 +13,14 @@ import soot.jimple.spark.pag.AllocNode;
  */
 public class ValueAnalysisValue extends ConcreteArgumentValue {
     /** The modeled object as calculated by the Value Analysis */
-    private ValueAnalysisModeledObject mObj;
+    private VAModel mObj;
     /** The underlying allocation node */
     private AllocNode allocNode;
     
     /**
      * Create a new VAValue with the given modeled object and allocation node.
      */
-    public ValueAnalysisValue(ValueAnalysisModeledObject mo, AllocNode an) {
+    public ValueAnalysisValue(VAModel mo, AllocNode an) {
         super();
         this.mObj = mo;
         this.allocNode = an;
