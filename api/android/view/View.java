@@ -7906,8 +7906,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         void onFocusChange(View v, boolean hasFocus);
     }
 	
-	public interface OnClickListener {
-        
+    public interface OnClickListener {
+        @DSModeled(DSC.SAFE)
         void onClick(View v);
     }
 	
