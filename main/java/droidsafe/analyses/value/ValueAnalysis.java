@@ -2,6 +2,8 @@ package droidsafe.analyses.value;
 
 
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.helper.CallGraphContextVisitor;
+import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.value.VAModel;
 
 import droidsafe.android.app.Project;
@@ -11,8 +13,10 @@ import droidsafe.speclang.Method;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.lang.reflect.Constructor;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -21,6 +25,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.Stmt;
+import soot.jimple.toolkits.callgraph.Edge;
 
 import soot.RefType;
 
@@ -43,7 +49,7 @@ import soot.Value;
  * @author dpetters
  *
  */
-public class ValueAnalysis {
+public class ValueAnalysis implements CallGraphContextVisitor {
 
     /** Singleton for analysis */
     private static ValueAnalysis am;
@@ -145,6 +151,14 @@ public class ValueAnalysis {
     
     /** run the analysis to fixed point */
     public static void run() {
+        if (GeoPTA.v() == null) {
+            logger.error("The GeoPTA pass has not been run. Value analysis requires it.");
+            droidsafe.main.Main.exit(1);
+        }      
+       
+        if (am == null)
+            am = new ValueAnalysis();
+
         runOnce();
         
         System.out.print("\n");
@@ -153,14 +167,14 @@ public class ValueAnalysis {
 
         try {
             am.vaErrorsLog.close();
-        } catch (IOException ioe){
-            logger.warn("Unable to close the va-errors.log file.", ioe);
+        } catch (IOException e){
+            logger.warn("Unable to close the va-errors.log file.", e);
         }
 
         try {
             am.vaResultsLog.close();
-        } catch (IOException ioe){
-            logger.warn("Unable to close the va-results.log file.", ioe);
+        } catch (IOException e){
+            logger.warn("Unable to close the va-results.log file.", e);
         }
     }
 
@@ -171,8 +185,6 @@ public class ValueAnalysis {
             droidsafe.main.Main.exit(1);
         }      
 
-        setup();
-
         // va errors file used to help figure out what to model
         try {
             am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
@@ -181,7 +193,6 @@ public class ValueAnalysis {
             logger.warn("Unable to open va-errors.log:", e);
         }
 
-        // va stats file
         try {
             am.vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                     + "va-results.log");
@@ -189,10 +200,38 @@ public class ValueAnalysis {
             logger.warn("Unable to open va-results.log: ", e);
         }
 
-
-        Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
+        CallGraphTraversal.accept(am);
     }
 
+    @Override
+    public void visit(SootMethod sootMethod, Edge context, Edge edgeInto) {
+        
+        if(!sootMethod.isConcrete())
+            return;
+        
+        if(!sootMethod.hasActiveBody())
+            sootMethod.retrieveActiveBody();
+
+        if(!GeoPTA.v().isValidMethod(sootMethod))
+            return;
+
+        logResult(sootMethod.toString());
+        for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+            Stmt stmt = (Stmt) stmts.next();
+            /*
+            if(stmt instanceof AssignStmt) {
+              AssignStmt assignStmt = (AssignStmt)stmt;
+              Value leftOp = assignStmt.getLeftOp();
+              if(leftOp instanceof InstanceFieldRef) {
+                InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
+                Value baseValue = instanceFieldRef.getBase();
+
+              }
+            }
+            */
+            //logResult(stmt.toString());
+        }
+    }
 
     /**
      * Helper method to write to the file where we log all errors we encounter during value analysis
@@ -220,5 +259,6 @@ public class ValueAnalysis {
      * Log the results of the modeling
      */
     private void logResults() {
+
     }
 }
