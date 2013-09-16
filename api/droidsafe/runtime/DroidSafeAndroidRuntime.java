@@ -21,75 +21,69 @@ import droidsafe.annotations.DSModeled;
  *
  */
 public class DroidSafeAndroidRuntime {
-	public static boolean control = new Random().nextBoolean();
-	public static int switchControl = new Random().nextInt();
-	private static Application mApplication;
-	
-	@DSModeled
-	/**
-	 * This method will be called automatically by the droidsafe harness class before all
-	 * application code.
-	 * 	
-	 * @param args
-	 */
-	public static void main() {
-		
-	}
-	
-	/**
-	 * create any associated state and call init methods on an activity
-	 * 
-	 * call any life cycle events for the activity
-	 * 
-	 * @param activity
-	 */
-	@DSModeled(DSC.SPEC)
-	public static void modelActivity(android.app.Activity activity) {
-		ContextImpl context = new ContextImpl();
-		
-		if (mApplication != null)
-			activity.setApplication(mApplication);
-		
-		while (true) {
-			Bundle b = new Bundle();
-			//onsavedinstancestate(b)
-			activity.performCreate(b, context);
-		
-			
-			activity.droidsafeOnResume();
-			activity.droidsafeOnStop();
-			activity.droidsafeOnDestroy();
-		}
-		
-		//code
-	}
-	
-	@DSModeled(DSC.SPEC)
-	public static void modelService(android.app.Service service) {
-		if (mApplication != null)
-			service.setApplication(mApplication);
+    public static boolean control = new Random().nextBoolean();
+    public static int switchControl = new Random().nextInt();
+    private static Application mApplication;
 
-	}
-	
-	@DSModeled(DSC.SPEC)
-	public static void modelContentProvider(android.content.ContentProvider contentProvider) {
-		
-	}
-	
-	@DSModeled(DSC.SPEC)
-	public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
-		receiver.onReceive(new ContextImpl(), new Intent());
-	}
-	
-	@DSModeled(DSC.SPEC)
-	public static void modelApplication(android.app.Application app) {
-		mApplication = app;
-		while (true) {
-			app.droidsafeOnCreate();
-			app.droidsafeOnTerminate();
-			app.droidsafeOnEverythingElse();
-		}
-		//code
-	}
-	
+    @DSModeled
+    /**
+     * This method will be called automatically by the droidsafe harness class before all
+     * application code.
+     * 	
+     * @param args
+     */
+    public static void main() {
+
+    }
+
+    /**
+     * create any associated state and call init methods on an activity
+     * 
+     * call any life cycle events for the activity
+     * 
+     * @param activity
+     */
+    @DSModeled(DSC.SPEC)
+    public static void modelActivity(android.app.Activity activity) {
+        ContextImpl context = new ContextImpl();
+
+        if (mApplication != null)
+            activity.setApplication(mApplication);
+
+        Bundle b = new Bundle();
+        //onsavedinstancestate(b)
+        activity.performCreate(b, context);
+
+
+        activity.droidsafeOnResume();
+        activity.droidsafeOnStop();
+        activity.droidsafeOnDestroy();
+
+    }
+
+    @DSModeled(DSC.SPEC)
+    public static void modelService(android.app.Service service) {
+        if (mApplication != null)
+            service.setApplication(mApplication);
+
+    }
+
+    @DSModeled(DSC.SPEC)
+    public static void modelContentProvider(android.content.ContentProvider contentProvider) {
+
+    }
+
+    @DSModeled(DSC.SPEC)
+    public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
+        receiver.onReceive(new ContextImpl(), new Intent());
+    }
+
+    @DSModeled(DSC.SPEC)
+    public static void modelApplication(android.app.Application app) {
+        mApplication = app;
+
+        app.droidsafeOnCreate();
+        app.droidsafeOnTerminate();
+        app.droidsafeOnEverythingElse();
+    }
 }
