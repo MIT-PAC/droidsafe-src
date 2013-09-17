@@ -96,4 +96,11 @@ public class JimpleRelationships {
     public SootMethod getEnclosingMethod(Stmt stmt) {
         return stmtToMethod.get(stmt);
     }
+    
+    /**
+     * Given an expression in the Scene, return the enclosing method.
+     */
+    public SootMethod getEnclosingMethod(Expr expr) {
+        return stmtToMethod.get(exprToStmt.get(expr));
+    }
 }

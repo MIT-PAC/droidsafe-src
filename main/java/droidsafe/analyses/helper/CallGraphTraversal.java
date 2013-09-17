@@ -17,6 +17,7 @@ import soot.Kind;
 import soot.Scene;
 import soot.SootMethod;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.spark.geom.geomPA.CgEdge;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
@@ -91,19 +92,23 @@ public class CallGraphTraversal {
                 //if a virtual call, use the pta to do a context sensitive search, and prune the call graph
                 //only visit the edge if it is in a context sensitive search (search with the old context)
                 try {
-                    Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveVirtualInvokeMap(iie, contextEntry);
+                   
+                    Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
                     for (Map.Entry<AllocNode, SootMethod> entry: 
                         virtualCallMap.entrySet()) {
+                      
                         // Only the virtual calls do the following test
                         if ( entry.getValue() == target ) {
                             //found edge in context sensitive search
+                           
                             traversal(visitor, new EdgeAndContext(curEdge, newContextEntry));
                             break;
                         }   
                     } 
                 } catch (CannotFindMethodException e) {
-                    logger.error("Cannot resolve method during CallGraph traversal: {}", iie);
-                    droidsafe.main.Main.exit(1);
+                    //if we could not find the method during the resolution, just ignore for now...
+                    logger.info("Cannot resolve method during CallGraph traversal: {}", iie);
+                    //droidsafe.main.Main.exit(1);
                 }   
             } else {
                 traversal(visitor, new EdgeAndContext(curEdge, newContextEntry));

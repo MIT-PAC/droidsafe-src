@@ -45,8 +45,10 @@ import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
+import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.VirtualInvokeExpr;
 
 import soot.LongType;
 
@@ -675,13 +677,26 @@ public class SootUtils {
         return line;
     }
 
-
+    /**
+     * Wrapped resolve special dispatch method that will throw a more useful exception when
+     * it cannot find the method.  
+      */
+    public static SootMethod resolveSpecialDispatch(SpecialInvokeExpr invoke) 
+            throws CannotFindMethodException {
+        SootMethod container = JimpleRelationships.v().getEnclosingMethod(invoke);
+        try {
+            return Scene.v().getActiveHierarchy().resolveSpecialDispatch( invoke, container);
+        } catch (Exception e) {
+            throw new CannotFindMethodException(invoke, container);
+        }
+    }
 
     /**
      * Wrapped resolve concrete dispatch method that will throw a more useful exception when
      * it cannot find the method.
      */
-    public static SootMethod resolveConcreteDispatch(SootClass clz, SootMethod meth) throws CannotFindMethodException {
+    public static SootMethod resolveConcreteDispatch(SootClass clz, SootMethod meth) 
+            throws CannotFindMethodException {
         try {
             return Scene.v().getActiveHierarchy().resolveConcreteDispatch( clz, meth);
         } catch (Exception e) {
@@ -714,6 +729,22 @@ public class SootUtils {
         return (InstanceInvokeExpr)expr;
     }
 
+    /**
+     * Try to grab a virtual invoke expr from a statement, if it does not
+     * have one, return null.
+     */
+    public static VirtualInvokeExpr getVirtualInvokeExpr(Stmt stmt) {
+        if (stmt == null || !stmt.containsInvokeExpr()) 
+            return null;
+
+        InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+
+        if (!(expr instanceof VirtualInvokeExpr)) 
+            return null;
+
+        return (VirtualInvokeExpr)expr;
+    }
+    
     public static Set<SootMethod> getOverridingMethodsIncluding(SootClass clz, String subSig) {
         Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
 

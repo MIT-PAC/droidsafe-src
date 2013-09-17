@@ -44,12 +44,12 @@ public class TestPTA implements CallGraphContextVisitor {
     }
 
     private void testMethod(SootMethod sm, Edge context, Edge edgeInto) {
-        /*System.out.println("Test Method: " + sm);
-        System.out.println("context: " + context);
-        System.out.println("Edge into: " + edgeInto);
-        System.out.println("Context context: " + context.srcCtxt());
-        System.out.println("Stmt: " + context.srcStmt());
-        System.out.println();
+        //logger.info("Test Method: " + sm);
+        /*logger.info("context: " + context);
+        logger.info("Edge into: " + edgeInto);
+        logger.info("Context context: " + context.srcCtxt());
+        logger.info("Stmt: " + context.srcStmt());
+        logger.info();
         */
 
         if (!sm.isConcrete())
@@ -68,15 +68,15 @@ public class TestPTA implements CallGraphContextVisitor {
 
             if (iie != null) {
                 /*
-                System.out.println("Instance Invoke: " + st);
-                System.out.println("Context: " + context);
+                logger.info("Instance Invoke: " + st);
+                logger.info("Context: " + context);
                 for (AllocNode node : GeoPTA.v().getPTSet(iie.getBase(), context)) 
-                    System.out.println("  " + node);
+                    logger.info("  " + node);
                 
                 for (AllocNode node : GeoPTA.v().getPTSetContextIns((iie.getBase()))) 
-                    System.out.println("  Ins: " + node);
+                    logger.info("  Ins: " + node);
                 
-                System.out.println();
+                logger.info();
                 */
             } else  if (st instanceof AssignStmt) {
 
@@ -105,30 +105,29 @@ public class TestPTA implements CallGraphContextVisitor {
                             rhsNodes = new LinkedHashSet<AllocNode>();
                         } else {
                             rhsNodes = new LinkedHashSet<AllocNode>();
-                            System.out.println("** Empty RHS: " + a.getRightOp());
+                            logger.info("** Empty RHS: " + a.getRightOp());
                         }
 
                         if (!lhsNodes.containsAll(rhsNodes)) {
-                            System.out.println(sm + "\n" + st);
-                            System.out.println("  Context: " + context);
-                            System.out.println("RHS:");
+                            logger.info(sm + "\n" + st);
+                            logger.info("  Context: " + context);
+                            logger.info("RHS:");
                             for (AllocNode node : rhsNodes) 
-                                System.out.println("  " + node);
-                            System.out.println("LHS:");
+                                logger.info("  " + node);
+                            logger.info("LHS:");
                             for (AllocNode node : lhsNodes) 
-                                System.out.println("  " + node);
+                                logger.info("  " + node);
                             if (a.getLeftOp() instanceof InstanceFieldRef) {
                                 Set<AllocNode> baseNodes = GeoPTA.v().getPTSet(((InstanceFieldRef)a.getLeftOp()).getBase(), 
                                     context);
                                 for (AllocNode node : baseNodes) {
-                                    System.out.println("  baseNode: " + node);
+                                    logger.info("  baseNode: " + node);
                                 }
                             }
-                            /*  System.out.println("Ins LHS: ");
+                            /*  logger.info("Ins LHS: ");
                         for (AllocNode node : GeoPTA.v().getPTSetContextIns(a.getLeftOp()))
-                            System.out.println("  " + node);
+                            logger.info("  " + node);
                              */
-                            System.out.println();
                         }
                     }
                 } catch (Exception e) {

@@ -754,13 +754,24 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							GeoPTA.v().getPTSetContextIns(iie.getBase()));
 				}
 				
-				for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+				Map<AllocNode,SootMethod> resolvedMap = null;
+				
+				try {
+				    resolvedMap = GeoPTA.v().resolveInstanceInvokeMap(iie, null);
+				} catch (CannotFindMethodException e) {
+				    logger.info("Error resolving instance invoke.  Probably a broadcast receiver that registers an " +
+				    		"IntentFilter (this is not supported yet).", e);
+				    continue;
+				    //droidsafe.main.Main.exit(1);
+				}
+				
+				for (Map.Entry<AllocNode, SootMethod> resEntry : resolvedMap.entrySet()) {
 					
 					if (debugOn) {
-						logger.info("AllocNode {} ", node);
+						logger.info("AllocNode {} ", resEntry.getKey());
 					}
 
-					Type nodeType = node.getType();
+					Type nodeType = resEntry.getKey().getType();
 
 					if (!(nodeType instanceof RefType)) {
 						logger.info("Skipping type {} ", nodeType);
@@ -773,21 +784,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						break;
 					}
 
-					SootClass allocClz = ((RefType)node.getType()).getSootClass();
-					SootMethod resolved = null; 
-					try {
-						resolved = SootUtils.
-								resolveConcreteDispatch(allocClz, iie.getMethod());
-
-					} catch (CannotFindMethodException e) {
-						if (iie.getMethod().toString().contains("findView")) {
-							logger.warn("exception {} ", e);
-						}
-						continue;
-					} catch (Exception ex) {
-						logger.warn("Exception ex {} ", ex);
-					}
-
+					SootMethod resolved = resEntry.getValue(); 
+					
 					// replacing getString/getText
 					for (SootMethod method: getCharSequenceList) {
 						if (method.equals(resolved))  {

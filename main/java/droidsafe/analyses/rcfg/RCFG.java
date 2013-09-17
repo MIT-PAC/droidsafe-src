@@ -490,7 +490,7 @@ public class RCFG {
             InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
             if (iie != null) {    
                 try {
-                    Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveVirtualInvokeMap(iie, context);
+                    Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, context);
                     for (Map.Entry<AllocNode, SootMethod> entry: 
                         virtualCallMap.entrySet()) {
                         // Only the virtual calls do the following test

@@ -3,6 +3,7 @@ package droidsafe.utils;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
+import soot.jimple.SpecialInvokeExpr;
 
 /**
  * Used to denote that a method cannot be found during a search.  Most prominently used to 
@@ -20,6 +21,14 @@ public class CannotFindMethodException extends Exception {
      */
     public CannotFindMethodException(SootClass clz, SootMethod method) {
         super(String.format("Cannot find or resolve %s in %s.", method, clz));
+    }
+    
+
+    /**
+     * Create new exception for a special invoke.
+     */
+    public CannotFindMethodException(SpecialInvokeExpr invoke, SootMethod method) {
+        super(String.format("Cannot find or resolve %s in %s.", invoke, method));
     }
     
     /**
