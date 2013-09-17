@@ -553,8 +553,8 @@ public class Resources {
 		// for (SootClass clz : Scene.v().getClasses()) {
 		for (SootClass clz : Scene.v().getApplicationClasses()) {
 			/* We skip internal android stuff: should never happen as android.R.X is api */
-			if (clz.getName().startsWith("android.R.")) {
-				logger.warn("Class {}", clz);
+			if (clz.getName().startsWith("android.R$")) {
+				logger.debug("Android class {}, skipped", clz);
 				continue;
 			}
 
