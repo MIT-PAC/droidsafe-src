@@ -70,6 +70,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.764 -0400", hash_original_method = "C3742BF53888E5C7E36BAC1682B0BA91", hash_generated_method = "ADB47BA9803E2B0CD7AB1B1691A42C1B")
     public  ObjectOutputStream(OutputStream output) throws IOException {
         this.output = (output instanceof DataOutputStream) ? (DataOutputStream) output
@@ -149,6 +150,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.768 -0400", hash_original_method = "F6C293AC5437F7F079C554EABDD8D443", hash_generated_method = "6927D2675696649F5EF2245ED8AAE2F7")
     public void defaultWriteObject() throws IOException {
         if(currentObject == null)        
@@ -259,6 +261,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.772 -0400", hash_original_method = "117A95892DAF31A0926F2E917E5208CF", hash_generated_method = "D7617F4AFE8FFDEE4B1014AA8B651BC6")
     @Override
     public void flush() throws IOException {
@@ -930,7 +933,7 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
         //primitiveTypes.writeLong(value);
     }
 
-    
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.790 -0400", hash_original_method = "6EA4BE49540BA12319B9F5CA997917E6", hash_generated_method = "5DF56850713322E102AC5F27C9EB26CD")
     private int writeNewArray(Object array, Class<?> arrayClass, ObjectStreamClass arrayClDesc,
             Class<?> componentType, boolean unshared) throws IOException {
@@ -1287,6 +1290,7 @@ for(int i = 0;i < objectArray.length;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.792 -0400", hash_original_method = "21591331F2C6632F1308070B9A9FAC52", hash_generated_method = "A30260E62FC06953F362FEAD59CCD637")
     public void writeUnshared(Object object) throws IOException {
         addTaint(object.getTaint());

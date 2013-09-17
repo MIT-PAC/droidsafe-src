@@ -20,6 +20,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void prepare() {
     	/*
         if (sThreadLocal.get() != null) {
@@ -49,6 +50,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void loop() {
         Looper me = myLooper();
         if (me == null) {
@@ -88,6 +90,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void quit(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Message msg = Message.obtain();

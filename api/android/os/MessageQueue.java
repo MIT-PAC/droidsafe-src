@@ -102,6 +102,7 @@ public class MessageQueue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     final Message next(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //int pendingIdleHandlerCount = -1;

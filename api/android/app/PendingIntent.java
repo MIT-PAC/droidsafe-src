@@ -24,6 +24,7 @@ public final class PendingIntent implements Parcelable {
 
     private IIntentSender mTarget;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.377 -0400", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "2DB84B772119314499B70FB507774FD6")
       PendingIntent(IIntentSender target) {
         mTarget = target;

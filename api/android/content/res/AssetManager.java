@@ -1296,6 +1296,7 @@ for(int i = 0;i < paths.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.038 -0400", hash_original_method = "A5BC52EF5476CDC51345AEEDA1CB06B3", hash_generated_method = "57D5E534FD75CD11FF7F523F2FEF82E6")
         public final int available() throws IOException {
             long len = getAssetRemainingLength(mAsset);
@@ -1308,6 +1309,7 @@ for(int i = 0;i < paths.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.038 -0400", hash_original_method = "DCE38A6652895F3698A02DE5A8538C09", hash_generated_method = "1FD3F8F431101B02B329DF8125F7C1E1")
         public final void close() throws IOException {
             synchronized

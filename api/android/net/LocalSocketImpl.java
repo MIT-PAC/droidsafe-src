@@ -600,6 +600,7 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1905385672 =         null
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.293 -0400", hash_original_method = "C23E504E812AF14B0F4062FED57A7B1E", hash_generated_method = "ECE646958EE00D511DDB45A2F54ADA78")
         @Override
         public void close() throws IOException {

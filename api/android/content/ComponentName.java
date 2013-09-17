@@ -41,6 +41,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.669 -0400", hash_original_method = "36F25878FE380B4CEA8E7C4B89DDFC1A", hash_generated_method = "10C31D504A19968F933EB3EDC6954081")
     public  ComponentName(Context pkg, String cls) {
         if(cls == null)        
@@ -58,6 +59,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.670 -0400", hash_original_method = "8AE00F6D12874A3382D28F364D43BAC6", hash_generated_method = "13D4875E5F4F3BF7BA85EDE233A1EC9A")
     public  ComponentName(Context pkg, Class<?> cls) {
         mPackage = pkg.getPackageName();

@@ -76,6 +76,7 @@ public class HandlerThread extends Thread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.216 -0400", hash_original_method = "0FC13809696BA2D6DC441C842770D0F1", hash_generated_method = "E2EDF91F5386DA87DFFE501F94670950")
     public Looper getLooper() {
         if(!isAlive())        

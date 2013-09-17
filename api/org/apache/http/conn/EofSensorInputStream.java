@@ -19,6 +19,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
 
     private EofSensorWatcher eofWatcher;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.690 -0400", hash_original_method = "9B2B9BBE0E73ACBBC201B99B60B700AE", hash_generated_method = "072358C2EF896C959C4D904603AA2A00")
     public  EofSensorInputStream(final InputStream in,
                                 final EofSensorWatcher watcher) {
@@ -43,6 +44,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.691 -0400", hash_original_method = "7D1410F2491A2101D94AEDEF5E6D4821", hash_generated_method = "434B51258B9B90C49FCD28B07790A46B")
     protected boolean isReadAllowed() throws IOException {
         if(selfClosed)        
@@ -258,6 +260,7 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.699 -0400", hash_original_method = "5F2207AEF37490FFD8B76672ACFD7F2C", hash_generated_method = "1FB1EAF2655D1BF1A67F58560DB61035")
     protected void checkClose() throws IOException {
         if(wrappedStream != null)        

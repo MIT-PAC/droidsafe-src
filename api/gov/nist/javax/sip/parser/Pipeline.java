@@ -142,6 +142,7 @@ public class Pipeline extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.258 -0400", hash_original_method = "9D61CBBC55A04932A86EE90F3831850B", hash_generated_method = "B867A1B5A44B26D8032AA9D1A8C08AF6")
     public void close() throws IOException {
         this.isClosed = true;

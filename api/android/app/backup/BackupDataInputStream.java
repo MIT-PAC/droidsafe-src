@@ -33,6 +33,7 @@ public class BackupDataInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.184 -0400", hash_original_method = "F4751627195ADC12549C9A18CF48A412", hash_generated_method = "AF5E7823B0AF49DEF7D2454266EA9D87")
     public int read() throws IOException {
         byte[] one = mOneByte;

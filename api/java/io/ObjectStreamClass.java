@@ -236,6 +236,7 @@ Field var540C13E9E156B687226421B24F2DF178_930772849 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.981 -0400", hash_original_method = "3492CF41320405C3965233DAB60A3EF1", hash_generated_method = "EB3D9E9BF46B8744450AC7BD1668A38F")
      void buildFieldDescriptors(Field[] declaredFields) {
         addTaint(declaredFields[0].getTaint());
@@ -341,6 +342,7 @@ for(int i = 0;i < _fields.length;i++)
                 Class<?>[] interfaces = cl.getInterfaces();
                 if (interfaces.length > 1) {
                     Comparator<Class<?>> interfaceComparator = new Comparator<Class<?>>() {
+                        @DSModeled(DSC.BAN)
                         public int compare(Class<?> itf1, Class<?> itf2) {
                             return itf1.getName().compareTo(itf2.getName());
                         }
@@ -353,7 +355,8 @@ for(int i = 0;i < _fields.length;i++)
             }
             if (fields.length > 1) {
                 Comparator<Field> fieldComparator = new Comparator<Field>() {
-                    public int compare(Field field1, Field field2) {
+                    @DSModeled(DSC.BAN)
+        public int compare(Field field1, Field field2) {
                         return field1.getName().compareTo(field2.getName());
                     }
                 };
@@ -380,6 +383,7 @@ for(int i = 0;i < _fields.length;i++)
             Constructor<?>[] constructors = cl.getDeclaredConstructors();
             if (constructors.length > 1) {
                 Comparator<Constructor<?>> constructorComparator = new Comparator<Constructor<?>>() {
+                    @DSModeled(DSC.BAN)
                     public int compare(Constructor<?> ctr1, Constructor<?> ctr2) {
                         return (getConstructorSignature(ctr1)
                                 .compareTo(getConstructorSignature(ctr2)));
@@ -403,7 +407,8 @@ for(int i = 0;i < _fields.length;i++)
             Method[] methods = cl.getDeclaredMethods();
             if (methods.length > 1) {
                 Comparator<Method> methodComparator = new Comparator<Method>() {
-                    public int compare(Method m1, Method m2) {
+                    @DSModeled(DSC.BAN)
+        public int compare(Method m1, Method m2) {
                         int result = m1.getName().compareTo(m2.getName());
                         if (result == 0) {
                             return getMethodSignature(m1).compareTo(
@@ -977,6 +982,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.BAN)
     static Method findMethod(Class<?> cl, String methodName) {
         Class<?> search = cl;
         Method method = null;
@@ -996,6 +1002,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.BAN)
     static Method findPrivateMethod(Class<?> cl, String methodName,
             Class<?>[] param) {
         try {
@@ -1331,6 +1338,7 @@ String var5FAD7D225659685DEAC931806B2CCAFE_1580625427 =         getName() + ": s
 
     private static SoftReference<ThreadLocal<WeakHashMap<Class<?>, ObjectStreamClass>>> storage = new SoftReference<ThreadLocal<WeakHashMap<Class<?>, ObjectStreamClass>>>(null);
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public int compare(Class<?> itf1, Class<?> itf2) {
 		return itf1.getName().compareTo(itf2.getName());
 	}
@@ -1350,11 +1358,13 @@ String var5FAD7D225659685DEAC931806B2CCAFE_1580625427 =         getName() + ": s
 	}
     
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public int compare(Constructor<?> ctr1, Constructor<?> ctr2) {
 		return (getConstructorSignature(ctr1).compareTo(getConstructorSignature(ctr2)));
 	}
     
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public int compare(Field field1, Field field2) {
 		return field1.getName().compareTo(field2.getName());
 	}
