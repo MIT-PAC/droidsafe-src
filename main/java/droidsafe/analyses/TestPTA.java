@@ -44,8 +44,8 @@ public class TestPTA implements CallGraphContextVisitor {
     }
 
     private void testMethod(SootMethod sm, Edge context, Edge edgeInto) {
-        /*System.out.println("Test Method: " + sm);
-        System.out.println("context: " + context);
+        //System.out.println("Test Method: " + sm);
+        /*System.out.println("context: " + context);
         System.out.println("Edge into: " + edgeInto);
         System.out.println("Context context: " + context.srcCtxt());
         System.out.println("Stmt: " + context.srcStmt());

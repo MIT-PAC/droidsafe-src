@@ -15,6 +15,7 @@ import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -196,7 +197,7 @@ public class ResolveStringConstants extends BodyTransformer {
     protected void inspectAndReplaceCalls(Chain<Unit> units, AssignStmt parent, InvokeExpr expr,
                                           HashMap<String, RString> stringNameToRString,
                                           HashMap<String, RStringArray> stringArrayNameToRStringArray) {
-        Set<SootMethod> targets = getTargets(expr);
+        Collection<SootMethod> targets = getTargets(expr);
 
         for (SootMethod target : targets) {
             boolean replaced = false;
@@ -289,10 +290,10 @@ public class ResolveStringConstants extends BodyTransformer {
     /**
      * Given an invoke expression, return the set of methods that could possibly be called. 
      */
-    private Set<SootMethod> getTargets(InvokeExpr expr) {
+    private Collection<SootMethod> getTargets(InvokeExpr expr) {
         if (expr instanceof InstanceInvokeExpr) {
             try {
-                return GeoPTA.v().resolveVirtualInvoke((InstanceInvokeExpr)expr);
+                return GeoPTA.v().resolveInstanceInvoke((InstanceInvokeExpr)expr);
             } catch (CannotFindMethodException e) {
                logger.error("Error resolving virtual call: {}", e);
                droidsafe.main.Main.exit(1);

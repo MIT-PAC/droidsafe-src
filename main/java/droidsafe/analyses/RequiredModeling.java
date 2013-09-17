@@ -41,6 +41,7 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
@@ -250,20 +251,15 @@ public class RequiredModeling {
             //get the receiver, receivers are only present for instance invokes 
             InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
             if (iie != null) {
-                SootMethod resolved = null;
-                for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
-                    if ( node.getType() instanceof RefType ) {
-                        SootClass sc = ((RefType)node.getType()).getSootClass();
-                        try {
-                            resolved = SootUtils.resolveConcreteDispatch(sc, iie.getMethod());
-                        } catch (CannotFindMethodException e) {
-                            resolved = null;
-                        }
-                    }
-                    if (resolved != null)
-                        break;
+                Collection<SootMethod> resolved = null;
+           
+                try {
+                    resolved = GeoPTA.v().resolveInstanceInvoke(iie);
+                } catch (CannotFindMethodException e) {
+                    resolved = null;
                 }
-                if (resolved == null) 
+          
+                if (resolved == null || resolved.isEmpty()) 
                     fw.write(String.format
                         ("No valid allocations for receiver of %s of type %s in %s (%s).\n\n",
                             iie.getMethod(), iie.getBase().getType(), m, 

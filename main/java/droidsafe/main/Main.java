@@ -15,6 +15,7 @@ import soot.SootMethod;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
@@ -240,6 +241,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
+    new TestPTA();
 
     if (Config.v().infoFlow) {
       logger.info("Starting Information Flow Analysis...");
