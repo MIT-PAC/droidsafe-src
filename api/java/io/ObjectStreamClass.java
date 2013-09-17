@@ -342,6 +342,7 @@ for(int i = 0;i < _fields.length;i++)
                 Class<?>[] interfaces = cl.getInterfaces();
                 if (interfaces.length > 1) {
                     Comparator<Class<?>> interfaceComparator = new Comparator<Class<?>>() {
+                        @DSModeled(DSC.BAN)
                         public int compare(Class<?> itf1, Class<?> itf2) {
                             return itf1.getName().compareTo(itf2.getName());
                         }
@@ -382,6 +383,7 @@ for(int i = 0;i < _fields.length;i++)
             Constructor<?>[] constructors = cl.getDeclaredConstructors();
             if (constructors.length > 1) {
                 Comparator<Constructor<?>> constructorComparator = new Comparator<Constructor<?>>() {
+                    @DSModeled(DSC.BAN)
                     public int compare(Constructor<?> ctr1, Constructor<?> ctr2) {
                         return (getConstructorSignature(ctr1)
                                 .compareTo(getConstructorSignature(ctr2)));
@@ -1000,6 +1002,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_204763534 =         superc
     }
 
     
+    @DSModeled(DSC.BAN)
     static Method findPrivateMethod(Class<?> cl, String methodName,
             Class<?>[] param) {
         try {
@@ -1335,6 +1338,7 @@ String var5FAD7D225659685DEAC931806B2CCAFE_1580625427 =         getName() + ": s
 
     private static SoftReference<ThreadLocal<WeakHashMap<Class<?>, ObjectStreamClass>>> storage = new SoftReference<ThreadLocal<WeakHashMap<Class<?>, ObjectStreamClass>>>(null);
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public int compare(Class<?> itf1, Class<?> itf2) {
 		return itf1.getName().compareTo(itf2.getName());
 	}
@@ -1354,11 +1358,13 @@ String var5FAD7D225659685DEAC931806B2CCAFE_1580625427 =         getName() + ": s
 	}
     
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public int compare(Constructor<?> ctr1, Constructor<?> ctr2) {
 		return (getConstructorSignature(ctr1).compareTo(getConstructorSignature(ctr2)));
 	}
     
     // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public int compare(Field field1, Field field2) {
 		return field1.getName().compareTo(field2.getName());
 	}

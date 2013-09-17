@@ -933,7 +933,7 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
         //primitiveTypes.writeLong(value);
     }
 
-    
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.790 -0400", hash_original_method = "6EA4BE49540BA12319B9F5CA997917E6", hash_generated_method = "5DF56850713322E102AC5F27C9EB26CD")
     private int writeNewArray(Object array, Class<?> arrayClass, ObjectStreamClass arrayClDesc,
             Class<?> componentType, boolean unshared) throws IOException {
