@@ -317,6 +317,7 @@ Object var7995FC01A88811E5E97CF2E73643495D_1945262284 =         getField(object,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.010 -0400", hash_original_method = "638C7C4918F4FDF5130555C74F583890", hash_generated_method = "3F14B89CD0FE76772E4BC8CFBA38057A")
     public byte getByte(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -328,6 +329,7 @@ Object var7995FC01A88811E5E97CF2E73643495D_1945262284 =         getField(object,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.010 -0400", hash_original_method = "6648A25494EBFE26376F66DF9331BADB", hash_generated_method = "2FA552AD0E8ABFB7E94D157A51104044")
     public char getChar(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -350,6 +352,7 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_391083683 =         declaringClass;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.011 -0400", hash_original_method = "B22A8667913C0820CACD3D8F78E3B803", hash_generated_method = "686B5CB6AE469F34D8009509FBA3510F")
     public double getDouble(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -361,6 +364,7 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_391083683 =         declaringClass;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.011 -0400", hash_original_method = "BFF553DA1989441891013747E355F341", hash_generated_method = "4C91F00844D29DB79AFA5246AC8551B5")
     public float getFloat(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -384,6 +388,7 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_391083683 =         declaringClass;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.012 -0400", hash_original_method = "005A2557A921AA55BF8BDBCBDC639BE4", hash_generated_method = "E6C891BD482B211824A9E829A97024B0")
     public long getLong(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());
@@ -425,6 +430,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1839843716 =         name;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.013 -0400", hash_original_method = "0DDA5605A2464ED398902817D939E3F2", hash_generated_method = "245A9F0DBA30E3CDA4CAD3794A1252CC")
     public short getShort(Object object) throws IllegalAccessException, IllegalArgumentException {
         addTaint(object.getTaint());

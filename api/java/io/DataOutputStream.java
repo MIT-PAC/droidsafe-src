@@ -145,6 +145,7 @@ for(int index = 0;index < str.length();index++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.617 -0400", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "1E31D82E4CCC1BDCFE3108E1328D9F76")
     public final void writeChar(int val) throws IOException {
         addTaint(val);
@@ -168,6 +169,7 @@ for(int index = 0;index < str.length();index++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.618 -0400", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "015AAB732EE3FB11ACE6574EE6EF9751")
     public final void writeDouble(double val) throws IOException {
         addTaint(val);

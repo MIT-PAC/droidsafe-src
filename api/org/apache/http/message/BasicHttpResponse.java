@@ -29,6 +29,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
 
     private Locale locale;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.894 -0400", hash_original_method = "A29A20D85E2A95F9F380E42B440BE20C", hash_generated_method = "F62FBB036191731763E50F35AFEE3CC1")
     public  BasicHttpResponse(final StatusLine statusline,
                              final ReasonPhraseCatalog catalog,

@@ -13,6 +13,7 @@ public class NotSerializableException extends ObjectStreamException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.155 -0400", hash_original_method = "AC41FE5CB653485B7C55102BD4EBFA1E", hash_generated_method = "1DDE35527EB2F2F0B8D30789AD2BCCF2")
     public  NotSerializableException(String detailMessage) {
         super(detailMessage);

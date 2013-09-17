@@ -970,6 +970,7 @@ for(Class<?> ifc : c.getInterfaces())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "49C2E28E402D8BB5DB2322E2416CA9ED", hash_generated_method = "5B873533CFE9265A2B31B5389EE5BDF6")
     public int getModifiers() {
         int varFE4FFB4CAC8BB487081CD848C12AB306_747472459 = (getModifiers(this, false));
