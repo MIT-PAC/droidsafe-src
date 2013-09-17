@@ -759,8 +759,10 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				try {
 				    resolvedMap = GeoPTA.v().resolveInstanceInvokeMap(iie, null);
 				} catch (CannotFindMethodException e) {
-				    logger.error("Error resolving instance invoke: {}", e);
-				    droidsafe.main.Main.exit(1);
+				    logger.info("Error resolving instance invoke.  Probably a broadcast receiver that registers an " +
+				    		"IntentFilter (this is not supported yet).", e);
+				    continue;
+				    //droidsafe.main.Main.exit(1);
 				}
 				
 				for (Map.Entry<AllocNode, SootMethod> resEntry : resolvedMap.entrySet()) {

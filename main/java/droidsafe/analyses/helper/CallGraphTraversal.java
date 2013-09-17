@@ -106,8 +106,9 @@ public class CallGraphTraversal {
                         }   
                     } 
                 } catch (CannotFindMethodException e) {
-                    logger.error("Cannot resolve method during CallGraph traversal: {}", iie);
-                    droidsafe.main.Main.exit(1);
+                    //if we could not find the method during the resolution, just ignore for now...
+                    logger.info("Cannot resolve method during CallGraph traversal: {}", iie);
+                    //droidsafe.main.Main.exit(1);
                 }   
             } else {
                 traversal(visitor, new EdgeAndContext(curEdge, newContextEntry));
