@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -39,10 +40,13 @@ import soot.jimple.ClassConstant;
 import soot.jimple.Expr;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.InterfaceInvokeExpr;
 import soot.jimple.NewExpr;
 import soot.jimple.NullConstant;
+import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
+import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.dataRep.CallsiteContextVar;
 import soot.jimple.spark.geom.dataRep.IntervalContextVar;
@@ -643,9 +647,9 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Set<SootMethod> resolveVirtualInvoke(InstanceInvokeExpr invoke) 
+    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke) 
             throws CannotFindMethodException {
-        return resolveVirtualInvoke(invoke, null);
+        return resolveInstanceInvoke(invoke, null);
     }
 
     /**
@@ -655,7 +659,7 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Map<AllocNode, SootMethod> resolveVirtualInvokeMap(InstanceInvokeExpr invoke, Edge context) 
+    public Map<AllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
         Map<AllocNode, SootMethod> methods = new LinkedHashMap<AllocNode, SootMethod>();
 
@@ -668,21 +672,30 @@ public class GeoPTA {
 
         //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
         for (AllocNode an : allocs) {
-            Type t = an.getType();
-            SootClass clz = null;
-            //some type that we don't understand, so throw that we cannot find the method
-            if ( t instanceof AnySubType ) {
-                throw new CannotFindMethodException(t, invoke.getMethod());
-            } else if (t instanceof ArrayType) {
-                //if array type then we have to get a reference to the Object class
-                //because in java one can invoke methods of Object on arrays
-                clz = Scene.v().getSootClass("java.lang.Object");
+            if (invoke instanceof SpecialInvokeExpr) {
+                SootMethod resolved = SootUtils.resolveSpecialDispatch((SpecialInvokeExpr)invoke); 
+                methods.put(an, resolved);
+            } else if (invoke instanceof VirtualInvokeExpr || invoke instanceof InterfaceInvokeExpr) {
+                Type t = an.getType();
+                SootClass clz = null;
+                //some type that we don't understand, so throw that we cannot find the method
+                if ( t instanceof AnySubType ) {
+                    throw new CannotFindMethodException(t, invoke.getMethod());
+                } else if (t instanceof ArrayType) {
+                    //if array type then we have to get a reference to the Object class
+                    //because in java one can invoke methods of Object on arrays
+                    clz = Scene.v().getSootClass("java.lang.Object");
+                } else {
+                    //normal reference type, just get the soot class
+                    clz = ((RefType)t).getSootClass();
+                }   
+                
+                methods.put(an, SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
             } else {
-                //normal reference type, just get the soot class
-                clz = ((RefType)t).getSootClass();
-            }   
+                logger.error("Unknown invoke expression type encountered when resolving InstanceInvoke {}", invoke);
+                droidsafe.main.Main.exit(1);
+            }
             
-            methods.put(an, SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
             
         }
 
@@ -696,37 +709,9 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Set<SootMethod> resolveVirtualInvoke(InstanceInvokeExpr invoke, Edge context) 
+    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
-        Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
-
-        Set<AllocNode> allocs = null;
-        //get either the context sensitive or insensitive result based on the context param 
-        if (context == null) 
-            allocs = getPTSetContextIns(invoke.getBase());
-        else
-            allocs = getPTSet(invoke.getBase(), context);
-
-        //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
-        for (AllocNode an : allocs) {
-            Type t = an.getType();
-            SootClass clz = null;
-            //some type that we don't understand, so throw that we cannot find the method
-            if ( t instanceof AnySubType ) {
-                throw new CannotFindMethodException(t, invoke.getMethod());
-            } else if (t instanceof ArrayType) {
-                //if array type then we have to get a reference to the Object class
-                //because in java one can invoke methods of Object on arrays
-                clz = Scene.v().getSootClass("java.lang.Object");
-            } else {
-                //normal reference type, just get the soot class
-                clz = ((RefType)t).getSootClass();
-            }   
-            
-            methods.add(SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
-        }
-
-        return methods;
+       return resolveInstanceInvokeMap(invoke, context).values();
     }
     
     /**
