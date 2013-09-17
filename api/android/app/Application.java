@@ -412,6 +412,10 @@ Object[] var7E06ACD9C2C819F377F4C0B98904AB11_888661499 =         callbacks;
     
 	// ------------- Droidsafe Hooks -------------
     @DSModeled(DSC.BAN)
+ 	public void droidsafeAttach(Context context) {
+ 		attach(context);
+ 	}
+    @DSModeled(DSC.BAN)
 	public void droidsafeOnCreate() {
 		onCreate();
 	}

@@ -435,6 +435,7 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_744389184 =         mFD;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.537 -0400", hash_original_method = "BFF461741A45AAAD780835BEF712AE09", hash_generated_method = "06EE7EE744B83410595BA1BEC0E4622B")
         @Override
         public int read(byte buffer[], int offset, int count) throws IOException {

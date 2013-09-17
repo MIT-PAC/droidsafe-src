@@ -1118,6 +1118,7 @@ FileDescriptor var0DACFA040D27F7D032EACE256C40E7C8_2056291803 =             sock
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.104 -0400", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "52F7C33AE9AC04D22BBF80B1439C0461")
         @Override
         public void close() throws IOException {

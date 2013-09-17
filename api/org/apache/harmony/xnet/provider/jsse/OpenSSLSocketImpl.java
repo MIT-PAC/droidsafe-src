@@ -1381,6 +1381,7 @@ FileDescriptor varECF71702861DD6150A427D89C35684D2_112071805 =             socke
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.972 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "C6C0228D066FEB7CC261FAACA0E783F4")
         @Override
         public int read() throws IOException {

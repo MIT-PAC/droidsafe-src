@@ -19,6 +19,7 @@ public class Jdk14Logger implements Log, Serializable {
 
     protected String name = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.832 -0400", hash_original_method = "7BF4C742F8C5ACA23F214E18E295ECBB", hash_generated_method = "6B46B2B2E363B95E607D2463C3D691C8")
     public  Jdk14Logger(String name) {
         this.name = name;

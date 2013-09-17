@@ -41,6 +41,7 @@ abstract class LimitedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.782 -0400", hash_original_method = "C0E0722B99096B33B184C9FBB5E52E11", hash_generated_method = "AD66AA47DA5023E1EE9584ACE6A423A3")
     protected void setParentEofDetect(boolean on) {
         addTaint(on);

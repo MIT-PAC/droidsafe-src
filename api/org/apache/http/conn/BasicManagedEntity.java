@@ -59,6 +59,7 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.635 -0400", hash_original_method = "5A535D8BC3EB290E639D312782FBEB37", hash_generated_method = "A81709100B72FC84E985B39F7F7483EE")
     @Override
     public InputStream getContent() throws IOException {
@@ -145,6 +146,7 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1847995806 =         new EofSens
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.637 -0400", hash_original_method = "5A64D16D6F2B869D7FBA53B05FD87C82", hash_generated_method = "6B84BA7AF2397218591F1889C5B94CCE")
     public boolean eofDetected(InputStream wrapped) throws IOException {
         addTaint(wrapped.getTaint());
@@ -208,6 +210,7 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1847995806 =         new EofSens
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.638 -0400", hash_original_method = "BAB258C2D5F3651DF9A25667D27EF99D", hash_generated_method = "A90600FFB0E3E1A0C94470F9791181FA")
     public boolean streamAbort(InputStream wrapped) throws IOException {
         addTaint(wrapped.getTaint());
@@ -226,6 +229,7 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1847995806 =         new EofSens
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.638 -0400", hash_original_method = "713B19D560033B1B50E26BAD17DD5FF2", hash_generated_method = "0CEB6928C118BF6301564F82313DE396")
     protected void releaseManagedConnection() throws IOException {
         if(managedConn != null)        

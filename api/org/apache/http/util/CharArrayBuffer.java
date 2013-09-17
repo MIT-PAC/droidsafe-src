@@ -127,6 +127,7 @@ public final class CharArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.475 -0400", hash_original_method = "CF054D049383C7FB58555671D733BB49", hash_generated_method = "8A8E381CC04ED22BEA2463A28A3946B3")
     public void append(final CharArrayBuffer b, int off, int len) {
         addTaint(len);

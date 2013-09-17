@@ -39,6 +39,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
 
     private boolean mStartCompatibility = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.132 -0400", hash_original_method = "D0179C650F036CDA92B50348E0090B82", hash_generated_method = "F9D63210E10597231C4F4BD03B0C29AC")
     public  Service() {
         super(null);
@@ -170,6 +171,7 @@ Application varF254F0ADF054F0318B65674CA3670A5E_2075624035 =         mApplicatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.144 -0400", hash_original_method = "945F4D421616C07D2272A8F5A6D0EDF6", hash_generated_method = "90A2ACABEF9D358251EFBBA296C3DC37")
     public final void stopSelf(int startId) {
         addTaint(startId);

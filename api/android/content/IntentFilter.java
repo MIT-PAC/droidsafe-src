@@ -62,6 +62,7 @@ public class IntentFilter implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.478 -0400", hash_original_method = "6BE32B941606799E1C4582399143D6DE", hash_generated_method = "119ED66427480ABD6681C0AE70D3B5DC")
     public  IntentFilter(String action) {
         addTaint(action.getTaint());
@@ -287,6 +288,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.494 -0400", hash_original_method = "77921182B442B1D522A9772E07DC4CA3", hash_generated_method = "11EEC18AEBC64E2693F15A2A86513040")
     public final int countActions() {
         int varF3EAFD377BEC9E11B182DEBEDFEF6633_92766387 = (mActions.size());

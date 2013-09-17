@@ -2448,6 +2448,7 @@ String var7912B2DCBC9E314551464676F1365845_364843374 =         "Bundle[" + mMap.
 
     public static final Parcelable.Creator<Bundle> CREATOR =
         new Parcelable.Creator<Bundle>() {
+        @DSModeled(DSC.SAFE)
         public Bundle createFromParcel(Parcel in) {
             return in.readBundle();
         }

@@ -283,6 +283,7 @@ public class ChunkedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.503 -0400", hash_original_method = "7C0EA5C3612B6B07D60F3A7E9A05393C", hash_generated_method = "1DC47ABACDE91C315D402201107410A9")
     public void close() throws IOException {
         if(!closed)        
