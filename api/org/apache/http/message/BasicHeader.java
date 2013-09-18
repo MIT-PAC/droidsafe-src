@@ -19,6 +19,7 @@ public class BasicHeader implements Header, Cloneable {
 
     private String value;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.699 -0400", hash_original_method = "2FB38EAD7D5E85502A5A04936633433A", hash_generated_method = "2268A122220E70DE109390FAFB9203FD")
     public  BasicHeader(final String name, final String value) {
         super();

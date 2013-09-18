@@ -898,6 +898,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_677949017 =                     builder.
             }
 
             
+            @DSModeled(DSC.SPEC)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.213 -0400", hash_original_method = "BE255AFD270DEBC5451268E05A1F1326", hash_generated_method = "C4648BCEBDDBC721BF20954370DB7258")
             @Override
             public android.content.Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException {
@@ -2216,6 +2217,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SPEC)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.232 -0400", hash_original_method = "DDAF6836AC46D694049E3DD971FAB2B5", hash_generated_method = "329BAF29F669B8C9170B620BCA88EF47")
             @Override
             public Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException {

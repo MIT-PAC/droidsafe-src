@@ -17,6 +17,7 @@ import org.apache.http.protocol.HTTP;
 public class StringEntity extends AbstractHttpEntity implements Cloneable {
     protected  byte[] content = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.793 -0400", hash_original_method = "310FAE5CF3493E31DD2A41A7B590618B", hash_generated_method = "D6DF4A142B89E0B0B95941A5CA423B41")
     public  StringEntity(final String s, String charset) throws UnsupportedEncodingException {
         super();

@@ -588,6 +588,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorStringToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);
@@ -597,6 +598,7 @@ public class DatabaseUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void cursorLongToContentValuesIfPresent(Cursor cursor, ContentValues values,
             String column) {
         final int index = cursor.getColumnIndex(column);

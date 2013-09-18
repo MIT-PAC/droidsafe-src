@@ -1703,6 +1703,7 @@ Node<E> varF5CD8D7CA701CEA2223F30343E08C456_1806713055 =                 firstNo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.000 -0400", hash_original_method = "2DD616E77FD4CF0B4B36F4DDA6D06963", hash_generated_method = "3650A52AB62E3B6230B26DD8C1566EDC")
          void advance() {
             final ReentrantLock lock = LinkedBlockingDeque.this.lock;

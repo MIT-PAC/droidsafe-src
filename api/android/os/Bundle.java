@@ -687,6 +687,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.363 -0400", hash_original_method = "C647C81034119067E2383CA02CF65D5F", hash_generated_method = "2A4FB1229722946DE91D4EF0E38C280D")
     public void putSerializable(String key, Serializable value) {
         addTaint(value.getTaint());

@@ -21,6 +21,7 @@ class MapEntry<K, V> implements Map.Entry<K, V>, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.238 -0400", hash_original_method = "D494BFA0BCF5AB6B3E53FE04C11D2F42", hash_generated_method = "63672617A0FD25776E962F4E19FA2F6F")
       MapEntry(K theKey, V theValue) {
         key = theKey;

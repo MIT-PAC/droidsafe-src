@@ -334,6 +334,7 @@ V var540C13E9E156B687226421B24F2DF178_1050350966 =         null;
         public Iterator<K> iterator() {
 Iterator<K> var4B7F8C61468541A26B3FAC55056B6833_1559186866 =             new Iterator<K>() {            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.238 -0400", hash_original_field = "04F401FA3821AC3FF2BCE0E3D156C68B", hash_generated_field = "0C09F8E15A29D51A05F808D7E7E66C06")
             Iterator<Map.Entry<K, V>> setIterator = entrySet().iterator();
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.238 -0400", hash_original_method = "213B6F6BF550680DB14A6264553A9606", hash_generated_method = "ACB963D682EF88D926D2B80F10997625")
             public boolean hasNext() {
                 boolean var148F57DEC6206B4324A475DF6F64D64C_691562238 = (setIterator.hasNext());
@@ -342,6 +343,7 @@ Iterator<K> var4B7F8C61468541A26B3FAC55056B6833_1559186866 =             new Ite
                 // ---------- Original Method ----------
                 //return setIterator.hasNext();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.238 -0400", hash_original_method = "2ACAF5E8045DB2C1E5B1B79533A99B49", hash_generated_method = "4EF12DBA947241D9C30175FFA733A8DB")
             public K next() {
 K var617A45C7DCCD8863F5C5FEA71DA0D3FB_1568056615 =                 setIterator.next().getKey();
@@ -564,6 +566,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1216113150 =         buffer.toString(
         public Iterator<V> iterator() {
 Iterator<V> var71B24D83A007564AC361D4FC2D7C0C99_607584023 =             new Iterator<V>() {            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.246 -0400", hash_original_field = "04F401FA3821AC3FF2BCE0E3D156C68B", hash_generated_field = "0C09F8E15A29D51A05F808D7E7E66C06")
             Iterator<Map.Entry<K, V>> setIterator = entrySet().iterator();
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.247 -0400", hash_original_method = "213B6F6BF550680DB14A6264553A9606", hash_generated_method = "5F927E12BD212B66E70FB60CC74C280E")
             public boolean hasNext() {
                 boolean var148F57DEC6206B4324A475DF6F64D64C_1846683100 = (setIterator.hasNext());
@@ -572,6 +575,7 @@ Iterator<V> var71B24D83A007564AC361D4FC2D7C0C99_607584023 =             new Iter
                 // ---------- Original Method ----------
                 //return setIterator.hasNext();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.247 -0400", hash_original_method = "26FD6EB64128E32F409902FB919BC33E", hash_generated_method = "05A4E19C8E43F297299161B945560D2D")
             public V next() {
 V var5D9B7DBE16C9E1B136841E3D4AAD057C_1169932288 =                 setIterator.next().getValue();

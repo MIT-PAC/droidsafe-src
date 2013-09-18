@@ -18,6 +18,7 @@ public final class Entity {
 
     private ArrayList<NamedContentValues> mSubValues;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.523 -0400", hash_original_method = "F3CEBA8F3F7B881E0532AE5995D0A010", hash_generated_method = "EABD197C03FF12EBD2C18CFF71395ADF")
     public  Entity(ContentValues values) {
         mValues = values;

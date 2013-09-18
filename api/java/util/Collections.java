@@ -1243,6 +1243,7 @@ Iterator<E> varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739 =             new Ite
                 // ---------- Original Method ----------
                 //return hasNext;
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.644 -0400", hash_original_method = "163A9F5CD311CAB76B0FCB4B7573EA38", hash_generated_method = "D3A20B9110EDB69D5177BBD684C16F5B")
             @Override
             public E next() {
@@ -1501,6 +1502,7 @@ Iterator<Map.Entry<K, V>> var72555FFA480563A744615CB3042A10C3_693483736 =       
                     // ---------- Original Method ----------
                     //return hasNext;
                 }
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:02.503 -0400", hash_original_method = "E80284659713283C8723ACEF8D2E3A9E", hash_generated_method = "AC8345E6077CAB2D7D6A4E7303EDB467")
                 @Override
                 public Map.Entry<K, V> next() {
@@ -3420,6 +3422,7 @@ ListIterator<E> var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926 =             new L
                 // ---------- Original Method ----------
                 //throw new UnsupportedOperationException();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.739 -0400", hash_original_method = "AA3B17E619A4DDCE5FFF27C1294FF431", hash_generated_method = "7DFF87F70712B3934D1337A001FA46EE")
             @Override
             public boolean hasNext() {
@@ -3438,6 +3441,7 @@ ListIterator<E> var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926 =             new L
                 // ---------- Original Method ----------
                 //return iterator.hasPrevious();
             }
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.739 -0400", hash_original_method = "E4F6FE4F8164B2EF0F004EE03FA1069C", hash_generated_method = "B67ADE2EE6FF512132D0D06E4192095A")
             @Override
             public E next() {
