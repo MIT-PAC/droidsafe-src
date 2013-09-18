@@ -3,6 +3,7 @@ package droidsafe.analyses.infoflow;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.value.VAUtils;
 import droidsafe.analyses.value.VAModel;
 
 import java.lang.reflect.Field;
@@ -157,7 +158,7 @@ public class InjectedSourceFlows {
 
                 classesToInspect.add(sootClass);
 
-                Class<?> modeledClass = ValueAnalysis.v().getDroidsafeClass(sootClass);
+                Class<?> modeledClass = VAUtils.getDroidsafeClass(sootClass);
                 Field modeledField = modeledClass.getField(field);
                 
                 //add the modeled field to the map of modeled field to value->kind

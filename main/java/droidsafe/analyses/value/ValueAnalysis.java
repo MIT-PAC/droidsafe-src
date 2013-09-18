@@ -58,7 +58,7 @@ public class ValueAnalysis implements CallGraphContextVisitor {
      * AllocNode keys are the objects that we can and want to model. 
      * The value is the Model object which simulates that object. 
      */
-    private Map<AllocNode, VAModel> allocNodeToVAModel; 
+    private Map<AllocNode, VAModel> allocNodeToVAModelMap; 
 
     /** va errors file used to help figure out what to model */
     private FileWriter vaErrorsLog;
@@ -94,7 +94,7 @@ public class ValueAnalysis implements CallGraphContextVisitor {
 
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
-        this.allocNodeToVAModel = new LinkedHashMap<AllocNode, VAModel>();
+        this.allocNodeToVAModelMap = new LinkedHashMap<AllocNode, VAModel>();
     }
 
 
@@ -106,40 +106,24 @@ public class ValueAnalysis implements CallGraphContextVisitor {
      * Getter for analysis result
      */
     public Map<AllocNode, VAModel> getResults() {
-        return this.allocNodeToVAModel;
+        return this.allocNodeToVAModelMap;
     }
 
     /**
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(AllocNode node) {
-        return this.allocNodeToVAModel.containsKey(node) &&
-            !this.allocNodeToVAModel.get(node).__ds__invalidated();
+        return this.allocNodeToVAModelMap.containsKey(node) &&
+            !this.allocNodeToVAModelMap.get(node).__ds__invalidated();
     }
 
     /**
      * Return the ModeledObject result for a given alloc node.
      */
     public VAModel getResult(AllocNode node) {
-        return this.allocNodeToVAModel.get(node);
+        return this.allocNodeToVAModelMap.get(node);
     }
-
-    /**
-     * Helper method that convers a refType into the appropriate droidsafe.analyses.value.models.class
-     *
-     * @throws ClassNotFoundException if the correct class isn't modeled 
-     */
-    public Class<?> getDroidsafeClass(RefType refType) throws ClassNotFoundException {
-        SootClass sootClass = refType.getSootClass();
-        return this.getDroidsafeClass(sootClass);
-    }
-
-    /** wrapper around toAttrModelingModelClass */
-    public Class<?> getDroidsafeClass(SootClass sootClass) throws ClassNotFoundException {
-        String className = sootClass.getName();
-        return Class.forName(ValueAnalysisUtils.toAttrModelingModelClass(className));
-    }
-
+    
     //==================================================================================================================
     // Static Methods
     //==================================================================================================================
@@ -159,7 +143,23 @@ public class ValueAnalysis implements CallGraphContextVisitor {
         if (am == null)
             am = new ValueAnalysis();
 
-        runOnce();
+        try {
+            am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
+                    + "va-errors.log");
+        } catch (Exception e) {
+            logger.warn("Unable to open va-errors.log:", e);
+        }
+
+        try {
+            am.vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
+                    + "va-results.log");
+        } catch (Exception e) {
+            logger.warn("Unable to open va-results.log: ", e);
+        }
+
+
+        am.createObjectModels();
+        //am.runOnce();
         
         System.out.print("\n");
 
@@ -180,27 +180,62 @@ public class ValueAnalysis implements CallGraphContextVisitor {
 
     /** run the full analysis once */ 
     public static void runOnce() {
-        if (GeoPTA.v() == null) {
-            logger.error("The GeoPTA pass has not been run. Value analysis requires it.");
-            droidsafe.main.Main.exit(1);
-        }      
-
-        // va errors file used to help figure out what to model
-        try {
-            am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
-                    + "va-errors.log");
-        } catch (Exception e) {
-            logger.warn("Unable to open va-errors.log:", e);
-        }
-
-        try {
-            am.vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
-                    + "va-results.log");
-        } catch (Exception e) {
-            logger.warn("Unable to open va-results.log: ", e);
-        }
-
         CallGraphTraversal.accept(am);
+    }
+
+    public void createObjectModels() {
+        for(AllocNode allocNode : GeoPTA.v().getAllAllocNodes()) {
+            createObjectModel(allocNode);    
+        }
+        System.out.println("Dmitrij! We created " + this.allocNodeToVAModelMap.size() + " object models");
+        System.out.println(this.allocNodeToVAModelMap.size());
+    }
+
+    public void createObjectModel(AllocNode allocNode) {
+        if(!(allocNode.getType() instanceof RefType)) {
+            this.logError(allocNode.toString());
+            return;
+        }
+        RefType refType = (RefType)allocNode.getType();
+
+        String errorLogEntry = "Couldn't model an instance of the " + refType.getSootClass().getName() + " ";
+
+        Class<?> cls;
+        try {
+            cls = VAUtils.getDroidsafeClass(refType);
+        } catch(ClassNotFoundException e) {
+            errorLogEntry += e.toString();
+            this.logError(errorLogEntry);
+            return;
+        }
+        
+        RefVAModel model = null;
+        Constructor<?> ctor;
+        try {
+           ctor = cls.getConstructor(AllocNode.class);
+        } catch(NoSuchMethodException e) {
+            errorLogEntry += "Available constructors are:\n";
+            for (Constructor<?> constructor : cls.getConstructors()){
+                errorLogEntry += constructor + "\n";
+            }
+            errorLogEntry += e.toString();
+            this.logError(errorLogEntry);
+            return;
+        } catch(SecurityException e) {
+            errorLogEntry += e.toString();
+            this.logError(errorLogEntry);
+            return;
+        }
+        
+        try {
+            model = (RefVAModel)ctor.newInstance(allocNode);
+        } catch(Exception e){
+            errorLogEntry += e.toString();
+            this.logError(errorLogEntry);
+            return;
+        }
+
+        this.allocNodeToVAModelMap.put(allocNode, model);
     }
 
     @Override
