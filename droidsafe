@@ -27,6 +27,8 @@ def run_droidsafe(args):
     command.append("-Xmx16g");
 #    command.append("-Xrunhprof:heap=sites,depth=6");
     command.append("-Dfile.encoding=UTF-8");
+    if os.path.basename(args[0]).endswith("-debug"):
+        command.append("-enableassertions");
     
     command.append(MAIN_CLASS)
 
