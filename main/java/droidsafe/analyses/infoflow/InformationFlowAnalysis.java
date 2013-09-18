@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
+import soot.Body;
 import soot.Immediate;
 import soot.Kind;
 import soot.Local;
@@ -41,7 +42,6 @@ import soot.Type;
 import soot.Unit;
 import soot.Value;
 import soot.jimple.AbstractStmtSwitch;
-import soot.jimple.AnyNewExpr;
 import soot.jimple.ArrayRef;
 import soot.jimple.AssignStmt;
 import soot.jimple.BinopExpr;
@@ -98,7 +98,9 @@ public class InformationFlowAnalysis {
      */
     public static void run() {
         ObjectUtil.run();
+        logger.info("Starting Memory Access Analysis...");
         MemoryAccessAnalysis.run();
+        logger.info("Finished Memory Access Analysis...");
         v = new InformationFlowAnalysis(InterproceduralControlFlowGraph.v());
     }
 
@@ -238,15 +240,21 @@ public class InformationFlowAnalysis {
     }
 
     private void initialize() {
-        worklist = new Worklist();
-        for (Block head : controlFlowGraph.getHeads()) {
-            SootMethod tgt = head.getBody().getMethod();
-            assert controlFlowGraph.getPredsOf(head).size() == 0;
-            States states = new States();
-            states.put(Context.v(new Edge(null, null, tgt, Kind.INVALID), new Edge(null, null, tgt, Kind.INVALID)), new FrameHeapStatics());
-            fromToStates.get(null).put(head, states);
-            worklist.add(head);
+        SootMethod method = Scene.v().getMethod("<DroidSafeMain: void main(java.lang.String[])>");
+        Local local = method.getActiveBody().getParameterLocal(0);
+        Set<MyValue> values = new HashSet<MyValue>();
+        for (AllocNode allocNode : GeoPTA.v().getPTSetContextIns(local)) {
+            values.add(Address.v(allocNode));
         }
+        FrameHeapStatics frameHeapStatics = new FrameHeapStatics();
+        frameHeapStatics.frame.putS(MethodMyParameterRef.v(method, new ParameterRef(local.getType(), 0)), ImmutableList.<MyValue>copyOf(values));
+        States states = new States();
+        states.put(Context.v(new Edge(null, null, method, Kind.INVALID), new Edge(null, null, method, Kind.INVALID)), frameHeapStatics);
+        Block block = controlFlowGraph.methodToHeads.get(method).get(0);
+        assert controlFlowGraph.getHeads().contains(block);
+        fromToStates.get(null).put(block, states);
+        worklist = new Worklist();
+        worklist.add(block);
     }
 
     private States collectFlowBefore(Block curr) {
@@ -1816,28 +1824,15 @@ class MemoryAccessAnalysis {
     }
 
     private void doAnalysis() {
-        List<Block> topologicalOrder = new PseudoTopologicalOrderer<Block>().newList(controlFlowGraph, false);
-        FrameHeapStatics frameHeapStatics = new FrameHeapStatics();
-        FrameHeapStatics oldFrameHeapStatics;
-        do {
-            oldFrameHeapStatics = new FrameHeapStatics(frameHeapStatics);
-            for (Block block : topologicalOrder) {
-                SootMethod method = block.getBody().getMethod();
-                if (!ObjectUtil.v().isAddTaint(method) && !ObjectUtil.v().isGetTaint(method)) {
-                    frameHeapStatics = execute(block, frameHeapStatics);
-                }
-            }
-        } while (!frameHeapStatics.equals(oldFrameHeapStatics));
-
         Map<SootMethod, Set<AddressField>> mtoaf = new DefaultHashMap<SootMethod, Set<AddressField>>(Collections.<AddressField>emptySet());
         Map<SootMethod, Set<SootField>> mtof = new DefaultHashMap<SootMethod, Set<SootField>>(Collections.<SootField>emptySet());
         Map<SootMethod, Set<Address>> mtoa = new DefaultHashMap<SootMethod, Set<Address>>(Collections.<Address>emptySet());
         for (Map.Entry<SootMethod, List<Block>> methodBlocks : controlFlowGraph.methodToBlocks.entrySet()) {
             SootMethod method = methodBlocks.getKey();
             List<Block> blocks = methodBlocks.getValue();
-            mtoaf.put(method, accessi(blocks, frameHeapStatics));
-            mtof.put(method, accesss(blocks, frameHeapStatics));
-            mtoa.put(method, accessa(blocks, frameHeapStatics));
+            mtoaf.put(method, accessi(blocks));
+            mtof.put(method, accesss(blocks));
+            mtoa.put(method, accessa(blocks));
         }
 
         TransitiveTargets transitiveTargets = new TransitiveTargets(callGraph);
@@ -1860,7 +1855,7 @@ class MemoryAccessAnalysis {
         return;
     }
 
-    private Set<AddressField> accessi(List<Block> blocks, FrameHeapStatics frameHeapStatics) {
+    private Set<AddressField> accessi(List<Block> blocks) {
         Set<AddressField> addressFields = new HashSet<AddressField>();
         for (Block block : blocks) {
             Iterator<Unit> it = block.iterator();
@@ -1868,9 +1863,9 @@ class MemoryAccessAnalysis {
                 Set<AddressField> addrflds = null;
                 Unit unit = it.next();
                 if (unit instanceof AssignStmt) {
-                    addrflds = accessi((AssignStmt)unit, frameHeapStatics);
+                    addrflds = accessi((AssignStmt)unit);
                 } else if (unit instanceof InvokeStmt) {
-                    addrflds = accessi((InvokeStmt)unit, frameHeapStatics);
+                    addrflds = accessi((InvokeStmt)unit);
                 }
                 if (addrflds != null) {
                     addressFields.addAll(addrflds);
@@ -1880,12 +1875,12 @@ class MemoryAccessAnalysis {
         return addressFields;
     }
 
-    private Set<AddressField> accessi(AssignStmt stmt, final FrameHeapStatics frameHeapStatics) {
+    private Set<AddressField> accessi(AssignStmt stmt) {
         Set<AddressField> addressFields = null;
         Value rValue = stmt.getRightOp();
         if (rValue instanceof InstanceFieldRef) {
             addressFields = new HashSet<AddressField>();
-            addressFields.addAll(accessi(stmt, (InstanceFieldRef)rValue, frameHeapStatics));
+            addressFields.addAll(accessi(stmt, (InstanceFieldRef)rValue));
         } else if (rValue instanceof NewExpr) {
             AllocNode allocNode = GeoPTA.v().getAllocNode(rValue);
             if (allocNode != null) {
@@ -1906,7 +1901,7 @@ class MemoryAccessAnalysis {
             }
             if (isGetTaint) {
                 addressFields = new HashSet<AddressField>();
-                for (MyValue value : receiver(stmt, (InvokeExpr)rValue, frameHeapStatics.frame)) {
+                for (MyValue value : receiver(stmt, (InvokeExpr)rValue)) {
                     addressFields.add(AddressField.v((Address)value, ObjectUtil.v().taint));
                 }
             }
@@ -1916,24 +1911,21 @@ class MemoryAccessAnalysis {
             if (addressFields == null) {
                 addressFields = new HashSet<AddressField>();
             }
-            addressFields.addAll(accessi(stmt, (InstanceFieldRef)variable, frameHeapStatics));
+            addressFields.addAll(accessi(stmt, (InstanceFieldRef)variable));
         }
         return addressFields;
     }
 
-    private Set<AddressField> accessi(final AssignStmt stmt, InstanceFieldRef instanceFieldRef, final FrameHeapStatics frameHeapStatics) {
-        final SootMethod method = controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
+    private Set<AddressField> accessi(final AssignStmt stmt, InstanceFieldRef instanceFieldRef) {
         SootField field = instanceFieldRef.getField();
         final Set<AddressField> addressFields = new HashSet<AddressField>();
-        for (MyValue value : frameHeapStatics.frame.get(MethodLocal.v(method, (Local)instanceFieldRef.getBase()))) {
-            if (value instanceof Address) {
-                addressFields.add(AddressField.v((Address)value, field));
-            }
+        for (AllocNode allocNode : GeoPTA.v().getPTSetContextIns(instanceFieldRef.getBase())) {
+            addressFields.add(AddressField.v(Address.v(allocNode), field));
         }
         return addressFields;
     }
 
-    private Set<AddressField> accessi(InvokeStmt stmt, final FrameHeapStatics frameHeapStatics) {
+    private Set<AddressField> accessi(InvokeStmt stmt) {
         Set<AddressField> addressFields = null;
         boolean isAddTaint = false;
         @SuppressWarnings("rawtypes")
@@ -1946,21 +1938,21 @@ class MemoryAccessAnalysis {
         }
         if (isAddTaint) {
             addressFields = new HashSet<AddressField>();
-            for (MyValue value : receiver(stmt, stmt.getInvokeExpr(), frameHeapStatics.frame)) {
+            for (MyValue value : receiver(stmt, stmt.getInvokeExpr())) {
                 addressFields.add(AddressField.v((Address)value, ObjectUtil.v().taint));
             }
         }
         return addressFields;
     }
 
-    private Set<SootField> accesss(List<Block> blocks, FrameHeapStatics frameHeapStatics) {
+    private Set<SootField> accesss(List<Block> blocks) {
         Set<SootField> fields = new HashSet<SootField>();
         for (Block block : blocks) {
             Iterator<Unit> it = block.iterator();
             while (it.hasNext()) {
                 Unit unit = it.next();
                 if (unit instanceof AssignStmt) {
-                    Set<SootField> flds = accesss((AssignStmt)unit, frameHeapStatics);
+                    Set<SootField> flds = accesss((AssignStmt)unit);
                     if (flds != null) {
                         fields.addAll(flds);
                     }
@@ -1970,35 +1962,35 @@ class MemoryAccessAnalysis {
         return fields;
     }
 
-    private Set<SootField> accesss(AssignStmt stmt, final FrameHeapStatics frameHeapStatics) {
+    private Set<SootField> accesss(AssignStmt stmt) {
         Set<SootField> fields = null;
         Value rValue = stmt.getRightOp();
         if (rValue instanceof StaticFieldRef) {
             fields = new HashSet<SootField>();
-            fields.addAll(accesss(stmt, (StaticFieldRef)rValue, frameHeapStatics));
+            fields.addAll(accesss(stmt, (StaticFieldRef)rValue));
         }
         Value variable = stmt.getLeftOp();
         if (variable instanceof StaticFieldRef) {
             if (fields == null) {
                 fields = new HashSet<SootField>();
             }
-            fields.addAll(accesss(stmt, (StaticFieldRef)variable, frameHeapStatics));
+            fields.addAll(accesss(stmt, (StaticFieldRef)variable));
         }
         return fields;
     }
 
-    private Set<SootField> accesss(final AssignStmt stmt, StaticFieldRef staticFieldRef, final FrameHeapStatics frameHeapStatics) {
+    private Set<SootField> accesss(final AssignStmt stmt, StaticFieldRef staticFieldRef) {
         return ImmutableSet.of(staticFieldRef.getField());
     }
 
-    private Set<Address> accessa(List<Block> blocks, FrameHeapStatics frameHeapStatics) {
+    private Set<Address> accessa(List<Block> blocks) {
         Set<Address> addresses = new HashSet<Address>();
         for (Block block : blocks) {
             Iterator<Unit> it = block.iterator();
             while (it.hasNext()) {
                 Unit unit = it.next();
                 if (unit instanceof AssignStmt) {
-                    Set<Address> addrs = accessa((AssignStmt)unit, frameHeapStatics);
+                    Set<Address> addrs = accessa((AssignStmt)unit);
                     if (addrs != null) {
                         addresses.addAll(addrs);
                     }
@@ -2008,779 +2000,82 @@ class MemoryAccessAnalysis {
         return addresses;
     }
 
-    private Set<Address> accessa(AssignStmt stmt, final FrameHeapStatics frameHeapStatics) {
+    private Set<Address> accessa(AssignStmt stmt) {
         Set<Address> addresses = null;
         Value rValue = stmt.getRightOp();
         if (rValue instanceof ArrayRef) {
             addresses = new HashSet<Address>();
-            addresses.addAll(accessa(stmt, (ArrayRef)rValue, frameHeapStatics));
+            addresses.addAll(accessa(stmt, (ArrayRef)rValue));
         }
         Value variable = stmt.getLeftOp();
         if (variable instanceof ArrayRef) {
             if (addresses == null) {
                 addresses = new HashSet<Address>();
             }
-            addresses.addAll(accessa(stmt, (ArrayRef)variable, frameHeapStatics));
+            addresses.addAll(accessa(stmt, (ArrayRef)variable));
         }
         return addresses;
     }
 
-    private Set<Address> accessa(final AssignStmt stmt, ArrayRef arrayRef, final FrameHeapStatics frameHeapStatics) {
-        final SootMethod method = controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
+    private Set<Address> accessa(final AssignStmt stmt, ArrayRef arrayRef) {
         final Set<Address> addresses = new HashSet<Address>();
-        for (MyValue value : frameHeapStatics.frame.get(MethodLocal.v(method, (Local)arrayRef.getBase()))) {
-            if (value instanceof Address) {
-                addresses.add((Address)value);
-            }
+        for (AllocNode allocNode : GeoPTA.v().getPTSetContextIns(arrayRef.getBase())) {
+            addresses.add(Address.v(allocNode));
         }
         return addresses;
     }
 
-    private FrameHeapStatics execute(Block block, FrameHeapStatics inFrameHeapStatics) {
-        FrameHeapStatics outFrameHeapStatics = inFrameHeapStatics;
-        Iterator<Unit> it = block.iterator();
-        while (it.hasNext()) {
-            outFrameHeapStatics = execute(it.next(), outFrameHeapStatics);
-        }
-        return outFrameHeapStatics;
-    }
-
-    private FrameHeapStatics execute(final Unit curr, final FrameHeapStatics inFrameHeapStatics) {
-        AbstractStmtSwitch stmtSwitch = new AbstractStmtSwitch() {
-            @Override
-            public void caseAssignStmt(final AssignStmt stmt) {
-                setResult(execute(stmt, inFrameHeapStatics));
-            }
-
-            @Override
-            public void caseIdentityStmt(IdentityStmt stmt) {
-                setResult(execute(stmt, inFrameHeapStatics));
-            }
-
-            @Override
-            public void caseInvokeStmt(InvokeStmt stmt) {
-                // invoke_stmt = invoke_expr;
-                setResult(execute(stmt, stmt.getInvokeExpr(), inFrameHeapStatics));
-            }
-
-            @Override
-            public void caseReturnStmt(ReturnStmt stmt) {
-                setResult(execute(stmt, inFrameHeapStatics));
-            }
-
-            @Override
-            public void caseReturnVoidStmt(ReturnVoidStmt stmt) {
-                setResult(inFrameHeapStatics);
-            }
-
-            @Override
-            public void defaultCase(Object stmt) {
-                setResult(inFrameHeapStatics);
-            }
-        };
-        curr.apply(stmtSwitch);
-        return (FrameHeapStatics)stmtSwitch.getResult();
-    }
-
-    // stmt = ... | assign_stmt | ...;
-    private FrameHeapStatics execute(final AssignStmt stmt, final FrameHeapStatics inFrameHeapStatics) {
-        // assign_stmt = variable "=" rvalue;
-        final Value variable = stmt.getLeftOp();
-        Value rValue = stmt.getRightOp();
-        // rvalue = array_ref | constant | expr | instance_field_ref | local | next_next_stmt_address | static_field_ref;
-        MyAbstractRValueSwitch rValueSwitch = new MyAbstractRValueSwitch() {
-            // rvalue = array_ref | ...;
-            @Override
-            public void caseArrayRef(ArrayRef arrayRef) {
-                // variable "=" array_ref
-                setResult(execute(stmt, variable, arrayRef, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | constant | ...
-            // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
-            @Override
-            public void caseConstant(Constant constant) {
-                // varaible "=" constant
-                setResult(inFrameHeapStatics);
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = binop_expr | ...;
-            // binop_expr = add_expr | and_expr | cmp_expr | cmpg_expr | cmpl_expr | div_expr | eq_expr | ge_expr | gt_expr | le_expr | lt_expr | mul_expr | ne_expr | or_expr | rem_expr | shl_expr | shr_expr | sub_expr | ushr_expr | xor_expr;
-            @Override
-            public void caseBinopExpr(BinopExpr binopExpr) {
-                // variable "=" binop_expr
-                setResult(inFrameHeapStatics);
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = ... | cast_expr | ...;
-            @Override
-            public void caseCastExpr(CastExpr castExpr) {
-                // variable "=" cast_expr
-                setResult(execute(stmt, variable, castExpr, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = ... | instance_of_expr | ...;
-            @Override
-            public void caseInstanceOfExpr(InstanceOfExpr instanceOfExpr) {
-                // variable "=" instance_of_expr
-                setResult(execute(stmt, variable, instanceOfExpr, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = ... | invoke_expr | ...;
-            // invoke_expr = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr;
-            @Override
-            public void caseInvokeExpr(InvokeExpr invokeExpr) {
-                // variable "=" invoke_expr
-                setResult(execute(stmt, variable, invokeExpr, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = ... | new_array_expr | ...;
-            @Override
-            public void caseNewArrayExpr(NewArrayExpr newArrayExpr) {
-                // variable "=" new_array_expr
-                setResult(execute(stmt, variable, newArrayExpr, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = ... | new_expr | ...;
-            @Override
-            public void caseNewExpr(NewExpr newExpr) {
-                // variable "=" new_expr
-                setResult(execute(stmt, variable, newExpr, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = ... | new_multi_array_expr | ...;
-            @Override
-            public void caseNewMultiArrayExpr(NewMultiArrayExpr newMultiArrayExpr) {
-                setResult(execute(stmt, variable, newMultiArrayExpr, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | expr | ...;
-            // expr = ... | unop_expr;
-            // unop_expr = length_expr | neg_expr;
-            @Override
-            public void caseUnopExpr(UnopExpr unopExpr) {
-                setResult(inFrameHeapStatics);
-            }
-
-            // rvalue = ... | instance_field_ref | ...;
-            @Override
-            public void caseInstanceFieldRef(InstanceFieldRef instanceFieldRef) {
-                // variable "=" instance_field_ref
-                setResult(execute(stmt, variable, instanceFieldRef, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | local | ...;
-            @Override
-            public void caseLocal(Local local) {
-                // variable "=" local
-                setResult(execute(stmt, variable, local, inFrameHeapStatics));
-            }
-
-            // rvalue = ... | static_field_ref;
-            @Override
-            public void caseStaticFieldRef (StaticFieldRef staticFieldRef) {
-                // variable "=" static_field_ref
-                setResult(execute(stmt, variable, staticFieldRef, inFrameHeapStatics));
-            }
-        };
-        rValue.apply(rValueSwitch);
-        return (FrameHeapStatics)rValueSwitch.getResult();
-    }
-
-    // assign_stmt = variable "=" array_ref
-    private FrameHeapStatics execute(final AssignStmt stmt, Value variable, ArrayRef arrayRef, final FrameHeapStatics inFrameHeapStatics) {
-        // array_ref = immediate "[" immediate "]";
-        Immediate immediate = (Immediate)arrayRef.getBase();
-        ImmutableList<MyValue> addresses = evaluate(stmt, immediate, inFrameHeapStatics.frame);
-        final Set<MyValue> values = new HashSet<MyValue>();
-        for (MyValue address : addresses) {
-            if (address instanceof Address) {
-                values.addAll(inFrameHeapStatics.heap.arrays.get((Address)address));
-            }
-        }
-        // variable = array_ref | instance_field_ref | static_field_ref | local;
-        MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-            // variable = array_ref | ...;
-            @Override
-            public void caseArrayRef(ArrayRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | instance_field_ref | ...;
-            @Override
-            public void caseInstanceFieldRef(InstanceFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | static_field_ref | ...;
-            @Override
-            public void caseStaticFieldRef(StaticFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | local;
-            @Override
-            public void caseLocal(Local local) {
-                Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-                frame.putW(MethodLocal.v(controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod(), local), values);
-                setResult(new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-            }
-        };
-        variable.apply(variableSwitch);
-        return (FrameHeapStatics)variableSwitch.getResult();
-    }
-
-    // assign_stmt = variable "=" cast_expr
-    private FrameHeapStatics execute(final AssignStmt stmt, final Value variable, CastExpr castExpr, final FrameHeapStatics inFrameHeapStatics) {
-        // cast_expr = "(" type ")" immediate;
-        Value immediate = castExpr.getOp();
+    private Set<MyValue> evaluate(final Stmt stmt, Immediate immediate) {
         // immediate = constant | local;
         MyAbstractImmediateSwitch immediateSwitch = new MyAbstractImmediateSwitch() {
             // immediate = constant | ...;
             // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
             @Override
             public void caseConstant(Constant constant) {
-                // local "=" "(" type ")" constant
-                setResult(inFrameHeapStatics);
-            }
-
-            // immediate = ... | local;
-            @Override
-            public void caseLocal(final Local local) {
-                // local "=" "(" type ")" local
-                setResult(execute(stmt, variable, local, inFrameHeapStatics));
-            }
-        };
-        immediate.apply(immediateSwitch);
-        return (FrameHeapStatics)immediateSwitch.getResult();
-    }
-
-    // assigin_stmt = variable "=" instance_of_expr
-    private FrameHeapStatics execute(final AssignStmt stmt, final Value variable, InstanceOfExpr instanceOfExpr, final FrameHeapStatics inFrameHeapStatics) {
-        // instance_of_expr = immediate "instanceof" ref_type;
-        Immediate immediate = (Immediate)instanceOfExpr.getOp();
-        final ImmutableList<MyValue> values = evaluate(stmt, immediate, inFrameHeapStatics.frame);
-        // variable = array_ref | instance_field_ref | static_field_ref | local;
-        MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-            // variable = array_ref | ...;
-            @Override
-            public void caseArrayRef(ArrayRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | instance_field_ref | ...;
-            @Override
-            public void caseInstanceFieldRef(InstanceFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | static_field_ref | ...;
-            @Override
-            public void caseStaticFieldRef(StaticFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | local;
-            @Override
-            public void caseLocal(Local local) {
-                Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-                frame.putW(MethodLocal.v(controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod(), local), values);
-                setResult(new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-            }
-        };
-        variable.apply(variableSwitch);
-        return (FrameHeapStatics)variableSwitch.getResult();
-    }
-
-    // assign_stmt = variable "=" invoke_expr
-    private FrameHeapStatics execute (final AssignStmt stmt, Value variable, InvokeExpr invokeExpr, final FrameHeapStatics inFrameHeapStatics) {
-        Block curr = controlFlowGraph.unitToBlock.get(stmt);
-        List<Block> succs = controlFlowGraph.getSuccsOf(curr);
-        assert succs.size() > 0;
-
-        if (succs.size() == 1) {
-            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(succs.get(0).getHead());
-            return inFrameHeapStatics;
-        }
-
-        boolean isGetTaint = false;
-        for (Block succ : succs) {
-            if (ObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
-                isGetTaint = true;
-                break;
-            }
-        }
-        if (isGetTaint) {
-            assert succs.size() == 2;
-            SootMethod caller = curr.getBody().getMethod();
-            ImmutableList<MyValue> receivers = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
-            Set<MyValue> values = new HashSet<MyValue>();
-            for (MyValue receiver : receivers) {
-                values.addAll(inFrameHeapStatics.heap.instances.get((Address)receiver, ObjectUtil.v().taint));
-            }
-            Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-            frame.putS(MethodLocal.v(caller, (Local)variable), values);
-            return new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics);
-        }
-
-        ImmutableList<MyValue> thiz = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
-        List<ImmutableList<MyValue>> args = evaluate(stmt, invokeExpr.getArgs(), inFrameHeapStatics.frame);
-        FrameHeapStatics outFrameHeapStatics = new FrameHeapStatics(inFrameHeapStatics);
-        SootMethod caller = curr.getBody().getMethod();
-        for (Block succ : controlFlowGraph.getSuccsOf(curr)) {
-            // XXX: skip "$r0 := @caughtexception"
-            if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
-                continue;
-            }
-            SootMethod callee = succ.getBody().getMethod();
-            if (!caller.equals(callee)) {
-                outFrameHeapStatics.frame.putW(callee, thiz);
-
-                int i = 0;
-                for (Object type : callee.getParameterTypes()) {
-                    outFrameHeapStatics.frame.putW(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
-                    i++;
-                }
-            }
-        }
-        return outFrameHeapStatics;
-    }
-
-    // assign_stmt = variable "=" new_array_expr
-    // assign_stmt = variable "=" new_expr
-    // assign_stmt = variable "=" new_multi_array_expr
-    private FrameHeapStatics execute(final AssignStmt stmt, Value variable, AnyNewExpr anyNewExpr, final FrameHeapStatics inFrameHeapStatics) {
-        FrameHeapStatics outFrameHeapStatics;
-        AllocNode allocNode = GeoPTA.v().getAllocNode(anyNewExpr);
-        if (allocNode != null) {
-            final ImmutableList<MyValue> values = ImmutableList.<MyValue>of(Address.v(allocNode));
-            // variable = array_ref | instance_field_ref | static_field_ref | local;
-            MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-                // variable = array_ref | ...;
-                @Override
-                public void caseArrayRef(ArrayRef v) {
-                    // TODO
-                    throw new UnsupportedOperationException(stmt.toString());
-                }
-
-                // variable = ... | instance_field_ref | ...;
-                @Override
-                public void caseInstanceFieldRef(InstanceFieldRef v) {
-                    // TODO
-                    throw new UnsupportedOperationException(stmt.toString());
-                }
-
-                // variable = ... | static_field_ref | ...;
-                @Override
-                public void caseStaticFieldRef(StaticFieldRef v) {
-                    // TODO
-                    throw new UnsupportedOperationException(stmt.toString());
-                }
-
-                // variable = ... | local;
-                @Override
-                public void caseLocal(Local local) {
-                    Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-                    frame.putW(MethodLocal.v(controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod(), local), values);
-                    setResult(new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-                }
-            };
-            variable.apply(variableSwitch);
-            outFrameHeapStatics = (FrameHeapStatics)variableSwitch.getResult();
-        } else {
-            // assert controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod().getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
-            outFrameHeapStatics = inFrameHeapStatics;
-        }
-        return outFrameHeapStatics;
-    }
-
-    // assign_stmt = variable "=" instance_field_ref
-    private FrameHeapStatics execute(final AssignStmt stmt, Value variable, InstanceFieldRef instanceFieldRef, final FrameHeapStatics inFrameHeapStatics) {
-        final SootMethod method = controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
-        SootField field = instanceFieldRef.getField();
-        final Set<MyValue> values = new HashSet<MyValue>();
-        for (MyValue value : inFrameHeapStatics.frame.get(MethodLocal.v(method, (Local)instanceFieldRef.getBase()))) {
-            if (value instanceof Address) {
-                values.addAll(inFrameHeapStatics.heap.instances.get((Address)value, field));
-            }
-        }
-        // variable = array_ref | instance_field_ref | static_field_ref | local;
-        MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-            // variable = array_ref | ...;
-            @Override
-            public void caseArrayRef(ArrayRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | instance_field_ref | ...;
-            @Override
-            public void caseInstanceFieldRef(InstanceFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | static_field_ref | ...;
-            @Override
-            public void caseStaticFieldRef(StaticFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | local;
-            @Override
-            public void caseLocal(Local local) {
-                Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-                frame.putW(MethodLocal.v(method, local), values);
-                setResult(new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-            }
-        };
-        variable.apply(variableSwitch);
-        return (FrameHeapStatics)variableSwitch.getResult();
-    }
-
-    // assign_stmt = variable "=" local
-    private FrameHeapStatics execute(final AssignStmt stmt, Value variable, final Local local, final FrameHeapStatics inFrameHeapStatics) {
-        final SootMethod method = controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
-        final ImmutableList<MyValue> inValues = inFrameHeapStatics.frame.get(MethodLocal.v(method, local));
-        // variable = array_ref | instance_field_ref | static_field_ref | local;
-        MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-            // variable = array_ref | ...;
-            @Override
-            public void caseArrayRef(ArrayRef arrayRef) {
-                Arrays arrays = new Arrays(inFrameHeapStatics.heap.arrays);
-                for (MyValue value : inFrameHeapStatics.frame.get(MethodLocal.v(method, (Local)arrayRef.getBase()))) {
-                    if (value instanceof Address) {
-                        Address address = (Address)value;
-                        arrays.putW(address, inValues);
-                    }
-                }
-                setResult(new FrameHeapStatics(inFrameHeapStatics.frame, new Heap(inFrameHeapStatics.heap.instances, arrays), inFrameHeapStatics.statics));
-            }
-
-            // variable = ... | instance_field_ref | ...;
-            @Override
-            public void caseInstanceFieldRef(InstanceFieldRef instanceFieldRef) {
-                // instance_field_ref "=" local
-                SootField field = instanceFieldRef.getField();
-                Instances instances = new Instances(inFrameHeapStatics.heap.instances);
-                for (MyValue value : inFrameHeapStatics.frame.get(MethodLocal.v(method, (Local)instanceFieldRef.getBase()))) {
-                    if (value instanceof Address) {
-                        instances.putW((Address)value, field, inValues);
-                    }
-                }
-                setResult(new FrameHeapStatics(inFrameHeapStatics.frame, new Heap(instances, inFrameHeapStatics.heap.arrays), inFrameHeapStatics.statics));
-            }
-
-            // variable = ... | static_field_ref | ...;
-            @Override
-            public void caseStaticFieldRef(StaticFieldRef staticFieldRef) {
-                SootField field = staticFieldRef.getField();
-                Statics statics = new Statics(inFrameHeapStatics.statics);
-                statics.putW(field, inValues);
-                setResult(new FrameHeapStatics(inFrameHeapStatics.frame, inFrameHeapStatics.heap, statics));
-            }
-
-            // variable = ... | local;
-            @Override
-            public void caseLocal(Local local) {
-                // local "=" local
-                Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-                frame.putW(MethodLocal.v(method, local), inValues);
-                setResult(new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-            }
-        };
-        variable.apply(variableSwitch);
-        return (FrameHeapStatics)variableSwitch.getResult();
-    }
-
-    // assign_stmt = variable "=" static_field_ref
-    private FrameHeapStatics execute(final AssignStmt stmt, Value variable, StaticFieldRef staticFieldRef, final FrameHeapStatics inFrameHeapStatics) {
-        SootField field = staticFieldRef.getField();
-        final ImmutableList<MyValue> values = inFrameHeapStatics.statics.get(field);
-        // variable = array_ref | instance_field_ref | static_field_ref | local;
-        MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-            // variable = array_ref | ...;
-            @Override
-            public void caseArrayRef(ArrayRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | instance_field_ref | ...;
-            @Override
-            public void caseInstanceFieldRef(InstanceFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | static_field_ref | ...;
-            @Override
-            public void caseStaticFieldRef(StaticFieldRef v) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
-            }
-
-            // variable = ... | local;
-            @Override
-            public void caseLocal(Local local) {
-                Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-                frame.putW(MethodLocal.v(controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod(), local), values);
-                setResult(new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-            }
-        };
-        variable.apply(variableSwitch);
-        return (FrameHeapStatics)variableSwitch.getResult();
-    }
-
-    // identity_stmt
-    private FrameHeapStatics execute(final IdentityStmt stmt, final FrameHeapStatics inFrameHeapStatics) {
-        // identity_stmt = local ":=" identity_value;
-        final Local local = (Local)stmt.getLeftOp();
-        IdentityRef identityValue = (IdentityRef)stmt.getRightOp();
-        // identity_value = caught_exception_ref | parameter_ref | this_ref;
-        MyAbstractIdentityValueSwitch identityValueSwitch = new MyAbstractIdentityValueSwitch() {
-            // identity_value = caught_exception_ref | ...;
-            @Override
-            public void caseCaughtExceptionRef(CaughtExceptionRef caughtExceptionRef) {
-                setResult(inFrameHeapStatics);
-            }
-
-            // identity_value = ... | parameter_ref | ...;
-            @Override
-            public void caseParameterRef(ParameterRef parameterRef) {
-                setResult(execute(stmt, local, parameterRef, inFrameHeapStatics));
-            }
-
-            // identity_value = ... | this_ref;
-            @Override
-            public void caseThisRef(ThisRef thisRef) {
-                setResult(execute(stmt, local, thisRef, inFrameHeapStatics));
-            }
-        };
-        identityValue.apply(identityValueSwitch);
-        return (FrameHeapStatics)identityValueSwitch.getResult();
-    }
-
-    // identity_stmt = local ":=" parameter_ref
-    private FrameHeapStatics execute(IdentityStmt stmt, Local local, ParameterRef parameterRef, FrameHeapStatics inFrameHeapStatics) {
-        SootMethod method = controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
-        Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-        frame.putW(MethodLocal.v(method, local), inFrameHeapStatics.frame.get(MethodMyParameterRef.v(method, parameterRef)));
-        return new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics);
-    }
-
-    // identity_stmt = local ":=" this_ref
-    private FrameHeapStatics execute(IdentityStmt stmt, Local local, ThisRef thisRef, FrameHeapStatics inFrameHeapStatics) {
-        SootMethod method = controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
-        Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-        frame.putW(MethodLocal.v(method, local), inFrameHeapStatics.frame.thiz.get(method));
-        return new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics);
-    }
-
-    // stmt = ... | return_stmt | ...;
-    private FrameHeapStatics execute(final ReturnStmt stmt, final FrameHeapStatics inFrameHeapStatics) {
-        // return_stmt = "return" immediate;
-        FrameHeapStatics outFrameHeapStatics = inFrameHeapStatics;
-        for (Block fallThrough : controlFlowGraph.getSuccsOf(controlFlowGraph.unitToBlock.get(stmt))) {
-            // XXX: skip "$r0 := @caughtexception"
-            if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(fallThrough.getHead())) {
-                continue;
-            }
-            final SootMethod caller = fallThrough.getBody().getMethod();
-            Unit callStmt = controlFlowGraph.getPrecedingCallBlock(fallThrough, caller).getTail();
-            if (callStmt instanceof AssignStmt) {
-                final AssignStmt assignStmt = (AssignStmt)callStmt;
-                final ImmutableList<MyValue> values = evaluate(stmt, (Immediate)stmt.getOp(), outFrameHeapStatics.frame);
-                // variable = array_ref | instance_field_ref | static_field_ref | local;
-                Value variable = assignStmt.getLeftOp();
-                final FrameHeapStatics tmpFrameHeapStatics = outFrameHeapStatics;
-                MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-                    // variable = array_ref | ...;
-                    @Override
-                    public void caseArrayRef(ArrayRef arrayRef) {
-                        // TODO
-                        throw new UnsupportedOperationException(stmt.toString());
-                    }
-
-                    // variable = ... | instance_field_ref | ...;
-                    @Override
-                    public void caseInstanceFieldRef(InstanceFieldRef lInstanceFieldRef) {
-                        // TODO
-                        throw new UnsupportedOperationException(stmt.toString());
-                    }
-
-                    // variable = ... | static_field_ref | ...;
-                    @Override
-                    public void caseStaticFieldRef(StaticFieldRef lStaticFieldRef) {
-                        // TODO
-                        throw new UnsupportedOperationException(stmt.toString());
-                    }
-
-                    // variable = ... | local;
-                    @Override
-                    public void caseLocal(final Local local) {
-                        Frame frame = new Frame(tmpFrameHeapStatics.frame, tmpFrameHeapStatics.frame.thiz, tmpFrameHeapStatics.frame.params);
-                        frame.putW(MethodLocal.v(caller, local), values);
-                        setResult(new FrameHeapStatics(frame, tmpFrameHeapStatics.heap, tmpFrameHeapStatics.statics));
-                    }
-                };
-                variable.apply(variableSwitch);
-                outFrameHeapStatics = (FrameHeapStatics)variableSwitch.getResult();
-            }
-        }
-        return outFrameHeapStatics;
-    }
-
-    // stmt = ... | assign_stmt | ... ;
-    // assign_stmt = variable "=" rvalue;
-    // variable = array_ref | instance_field_ref | static_field_ref;
-    // rvalue = ... | expr | ...;
-    // expr = ... | invoke_expr | ...;
-
-    // stmt = ... | invoke_stmt | ...;
-    // invoke_stmt = invoke_expr;
-
-    // invoke_expr = interface_invoke_expr | special _invoke_expr | static_invoke_expr | virtual_invoke_expr;
-    // interface_invoke_expr = "interfaceinvoke" immediate ".[" + method_signature "]" "(" immediate_list ")"
-    // special_invoke_expr = "specialinvoke" immediate ".[" method_signature "]" "(" immediate_list ")";
-    // static_invoke_expr = "staticinvoke" "[" method_signature "]" "(" immediate_list ")";
-    // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")";
-    private FrameHeapStatics execute(Stmt stmt, InvokeExpr invokeExpr, final FrameHeapStatics inFrameHeapStatics) {
-        assert(stmt.containsInvokeExpr());
-
-        Block curr = controlFlowGraph.unitToBlock.get(stmt);
-        List<Block> succs = controlFlowGraph.getSuccsOf(curr);
-        assert succs.size() > 0;
-
-        if (succs.size() == 1) {
-            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(succs.get(0).getHead());
-            return inFrameHeapStatics;
-        }
-
-        boolean isAddTaint = false;
-        boolean isGetTaint = false;
-        for (Block succ : succs) {
-            SootMethod method = succ.getBody().getMethod();
-            if (ObjectUtil.v().isAddTaint(method)) {
-                isAddTaint = true;
-                break;
-            }
-            if (ObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
-                isGetTaint = true;
-                break;
-            }
-        }
-        if (isAddTaint || isGetTaint) {
-            assert succs.size() == 2;
-            return inFrameHeapStatics;
-        }
-
-        ImmutableList<MyValue> thiz = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
-        List<ImmutableList<MyValue>> args = evaluate(stmt, invokeExpr.getArgs(), inFrameHeapStatics.frame);
-        FrameHeapStatics outFrameHeapStatics = new FrameHeapStatics(inFrameHeapStatics);
-        SootMethod caller = curr.getBody().getMethod();
-        for (Block succ : controlFlowGraph.getSuccsOf(curr)) {
-            // XXX: skip "$r0 := @caughtexception"
-            if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
-                continue;
-            }
-            SootMethod callee = succ.getBody().getMethod();
-            if (!caller.equals(callee)) {
-                outFrameHeapStatics.frame.putW(callee, thiz);
-                int i = 0;
-                for (Object type : callee.getParameterTypes()) {
-                    outFrameHeapStatics.frame.putW(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
-                    i++;
-                }
-            }
-        }
-        return outFrameHeapStatics;
-    }
-
-    private ImmutableList<MyValue> evaluate(final Stmt stmt, Immediate immediate, final Frame frame) {
-        // immediate = constant | local;
-        MyAbstractImmediateSwitch immediateSwitch = new MyAbstractImmediateSwitch() {
-            // immediate = constant | ...;
-            // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
-            @Override
-            public void caseConstant(Constant constant) {
-                setResult(ImmutableList.<MyValue>of());
+                setResult(Collections.<MyValue>emptySet());
             }
 
             // immediate = ... | local;
             @Override
             public void caseLocal(Local local) {
-                setResult(frame.get(MethodLocal.v(controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod(), local)));
+                HashSet<MyValue> values = new HashSet<MyValue>();
+                for (AllocNode allocNode : GeoPTA.v().getPTSetContextIns(local)) {
+                    values.add(Address.v(allocNode));
+                }
+                setResult(values);
             }
         };
         immediate.apply(immediateSwitch);
-        return (ImmutableList<MyValue>)immediateSwitch.getResult();
+        return (Set<MyValue>)immediateSwitch.getResult();
     }
 
-    private List<ImmutableList<MyValue>> evaluate(final Stmt stmt, List<Value> immediates, final Frame frame) {
-        final SootMethod method = controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
-        final List<ImmutableList<MyValue>> args = new ArrayList<ImmutableList<MyValue>>();
-        for (Value immediate : immediates) {
-            // immediate = constant | local;
-            immediate.apply(new MyAbstractImmediateSwitch() {
-                // immediate = constant | ...;
-                // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
-                @Override
-                public void caseConstant(Constant constant) {
-                    args.add(ImmutableList.<MyValue>of());
-                }
-
-                // immediate = ... | local;
-                @Override
-                public void caseLocal(Local local) {
-                    args.add(frame.get(MethodLocal.v(method, local)));
-                }
-            });
-        }
-        return args;
-    }
-
-    private ImmutableList<MyValue> receiver(final Stmt stmt, InvokeExpr invokeExpr, final Frame frame) {
+    private Set<MyValue> receiver(final Stmt stmt, InvokeExpr invokeExpr) {
         MyAbstractInvokeExprSwitch invokeExprSwitch = new MyAbstractInvokeExprSwitch() {
             @Override
             public void caseInterfaceInvokeExpr(InterfaceInvokeExpr invokeExpr) {
                 // interface_invoke_expr = "interfaceinvoke" immediate ".[" + method_signature "]" "(" immediate_list ")"
                 Immediate immediate = (Immediate)invokeExpr.getBase();
-                setResult(evaluate(stmt, immediate, frame));
+                setResult(evaluate(stmt, immediate));
             }
 
             @Override
             public void caseSpecialInvokeExpr(SpecialInvokeExpr invokeExpr) {
                 // special_invoke_expr = "specialinvoke" immediate ".[" method_signature "]" "(" immediate_list ")";
                 Immediate immediate = (Immediate)invokeExpr.getBase();
-                setResult(evaluate(stmt, immediate, frame));
+                setResult(evaluate(stmt, immediate));
             }
 
             @Override
             public void caseStaticInvokeExpr(StaticInvokeExpr invokeEpxr) {
                 // static_invoke_expr = "staticinvoke" "[" method_signature "]" "(" immediate_list ")";
-                setResult(ImmutableList.<MyValue>of());
+                setResult(Collections.<MyValue>emptySet());
             }
 
             @Override
             public void caseVirtualInvokeExpr(VirtualInvokeExpr invokeExpr) {
                 // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")";
                 Immediate immediate = (Immediate)invokeExpr.getBase();
-                setResult(evaluate(stmt, immediate, frame));
+                setResult(evaluate(stmt, immediate));
             }
 
             @Override
@@ -2790,6 +2085,6 @@ class MemoryAccessAnalysis {
             }
         };
         invokeExpr.apply(invokeExprSwitch);
-        return (ImmutableList<MyValue>)invokeExprSwitch.getResult();
+        return (Set<MyValue>)invokeExprSwitch.getResult();
     }
 }
