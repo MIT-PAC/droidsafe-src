@@ -153,13 +153,6 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    monitor.subTask("Adding allocations for API calls.");
-    AddAllocsForAPICalls.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
     logger.info("Starting PTA...");
     monitor.subTask("PTA First Pass");
     GeoPTA.release();
@@ -215,14 +208,18 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Starting Value Analysis");
-    monitor.subTask("Value Analysis");
-    ValueAnalysis.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    //create instance of value analysis object, so that later passes an query empty result.
+    ValueAnalysis.setup();
+    if (Config.v().runValueAnalysis) {
+        logger.info("Starting Value Analysis");
+        monitor.subTask("Value Analysis");
+        ValueAnalysis.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        logger.info("Finished Value Analysis");
     }
-    logger.info("Finished Value Analysis");
 
     logger.info("Starting Generate RCFG...");
     monitor.subTask("Generating Spec");
@@ -242,7 +239,8 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    new TestPTA();
+    //Test the points to analysis
+    //new TestPTA();
 
     if (Config.v().infoFlow) {
       logger.info("Starting Information Flow Analysis...");

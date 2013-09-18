@@ -301,6 +301,14 @@ public class ValueAnalysis {
         logger.info("Value Analysis: runAgain got called");
         runAgain = true;
     }
+    
+    /**
+     * Create instance of analysis object, but do not run.
+     */
+    public static void setup() {
+        if (am == null)
+            am = new ValueAnalysis();
+    }
 
     /** run the full analysis once */ 
     public static void runOnce() {
@@ -309,8 +317,7 @@ public class ValueAnalysis {
             droidsafe.main.Main.exit(1);
         }      
 
-        if (am == null)
-            am = new ValueAnalysis();
+        setup();
 
         // va errors file used to help figure out what to model
         try {

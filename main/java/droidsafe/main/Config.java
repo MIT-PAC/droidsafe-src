@@ -91,6 +91,9 @@ public class Config {
    * If true, run string analysis on app classes. true by default
    */
   public boolean runStringAnalysis = true;
+  
+  /** if true, run value analysis */
+  public boolean runValueAnalysis = true;
 
   /**
    * if true, string analysis is done for all soot application classes. Otherwise, it is only done
@@ -159,8 +162,12 @@ public class Config {
     options.addOption(jsa);
 
     Option writeJimple =
-        new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
+            new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
     options.addOption(writeJimple);
+    
+    Option noVA =
+            new Option("nova", "Do not run value analysis.");
+    options.addOption(noVA);
 
     Option runStringAnalysisUnfiltered =
         new Option("analyzestrings_unfiltered",
@@ -238,8 +245,12 @@ public class Config {
       this.noSourceInfo = true;
     }
 
-    if (cmd.hasOption("jimple")) this.writeJimpleAppClasses = true;
-
+    if (cmd.hasOption("jimple")) 
+        this.writeJimpleAppClasses = true;
+    
+    if (cmd.hasOption("nova"))
+        this.runValueAnalysis = false;
+    
     if (cmd.hasOption("nojsa")) {
       this.runStringAnalysis = false;
     }

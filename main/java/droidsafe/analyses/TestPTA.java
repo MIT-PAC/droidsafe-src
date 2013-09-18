@@ -28,23 +28,30 @@ import droidsafe.utils.SootUtils;
  * @author mgordon
  *
  */
-public class TestPTA implements CallGraphContextVisitor {
+public class TestPTA extends CallGraphContextVisitor {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(TestPTA.class);
 
+    int numMethods = 0;
+    
     public TestPTA() {
         // TODO Auto-generated constructor stub
         CallGraphTraversal.accept(this);
+        System.out.println("Number of method/context visited: " + numMethods);
     }
 
     @Override
-    public void visit(SootMethod method, Edge context, Edge edgeInto) {
+    public void visitEntryContext(SootMethod method, Edge context) {
         // TODO Auto-generated method stub
-        testMethod(method, context, edgeInto);
+        testMethod(method, context);
     }
 
-    private void testMethod(SootMethod sm, Edge context, Edge edgeInto) {
+    private void testMethod(SootMethod sm, Edge context) {
+        numMethods++;
         //logger.info("Test Method: " + sm);
+        //System.out.println(sm);
+        //System.out.println("  " + context);
+                
         /*logger.info("context: " + context);
         logger.info("Edge into: " + edgeInto);
         logger.info("Context context: " + context.srcCtxt());
@@ -87,13 +94,13 @@ public class TestPTA implements CallGraphContextVisitor {
 
                         Set<AllocNode> rhsNodes = null;
                         if (GeoPTA.v().isPointer(a.getRightOp())) {
-                            rhsNodes = GeoPTA.v().getPTSet(a.getRightOp(), context);
+                            rhsNodes = GeoPTA.v().getPTSet1CFA(a.getRightOp(), context);
                         } else if (GeoPTA.v().getAllocNode(a.getRightOp()) != null) {
                             rhsNodes = new LinkedHashSet<AllocNode>();
                             rhsNodes.add(GeoPTA.v().getAllocNode(a.getRightOp()));
                         } else if (a.getRightOp() instanceof CastExpr) {
                             CastExpr castExpr = (CastExpr)a.getRightOp();
-                            rhsNodes = GeoPTA.v().getPTSet(castExpr.getOp(), context);
+                            rhsNodes = GeoPTA.v().getPTSet1CFA(castExpr.getOp(), context);
                             Set<AllocNode> toRemove = new HashSet<AllocNode>();
                             for (AllocNode node : rhsNodes) {
                                 if (!GeoPTA.v().isLegalCast(node.getType(), castExpr.getCastType())) {
@@ -118,7 +125,8 @@ public class TestPTA implements CallGraphContextVisitor {
                             for (AllocNode node : lhsNodes) 
                                 logger.info("  " + node);
                             if (a.getLeftOp() instanceof InstanceFieldRef) {
-                                Set<AllocNode> baseNodes = GeoPTA.v().getPTSet(((InstanceFieldRef)a.getLeftOp()).getBase(), 
+                                Set<AllocNode> baseNodes = 
+                                        GeoPTA.v().getPTSet1CFA(((InstanceFieldRef)a.getLeftOp()).getBase(), 
                                     context);
                                 for (AllocNode node : baseNodes) {
                                     logger.info("  baseNode: " + node);

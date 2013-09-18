@@ -505,6 +505,60 @@ public class GeoPTA {
         return allocNodes;
     }
 
+    /** 
+     * Return the 1CFA context query for reference and 1CFA context edge.
+     */
+    public Set<AllocNode> getPTSet1CFA(Value val, Edge context) {
+        try {
+            //if the context does not make sense, use the insensitive version
+            if (context == null || context.srcStmt() == null)
+                return getPTSetContextIns(val);
+
+            if (ptsProvider.getInternalEdgeFromSootEdge(context) == null) {
+                //System.out.println("Edge not in geo: " + context);
+                return getPTSetContextIns(val);
+            }
+
+            final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+            PointsToSetInternal pts = null;
+
+            if (val instanceof InstanceFieldRef) {
+                InstanceFieldRef ifr = (InstanceFieldRef)val;
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects(context.srcStmt(), 
+                    (Local)ifr.getBase(), ifr.getField());
+            } else if (val instanceof ArrayRef) {
+                ArrayRef arrayRef = (ArrayRef)val;
+
+                PointsToSet baseSet = ptsProvider.reachingObjects(context.srcStmt(), 
+                    (Local) arrayRef.getBase());
+
+                pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(baseSet);
+            } else if (val instanceof Local) {
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects(context.srcStmt(), (Local)val);
+            } else if (val instanceof StaticFieldRef) {
+                SootField field = ((StaticFieldRef)val).getField();
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
+            } else if (val instanceof NullConstant) {
+                return allocNodes;
+            } else {
+                logger.error("Unknown reference type for 1cfa search: {} {}", val, val.getClass());
+                droidsafe.main.Main.exit(1);
+            }
+
+            //visit internal points to set and grab all allocnodes        
+            pts.forall(new P2SetVisitor() {
+                public void visit(Node n) {
+                    allocNodes.add((AllocNode)n);
+                }
+            });
+
+            return allocNodes;
+        } catch (Exception ee) {
+            logger.info("Some error in 1CFA search.  Falling back to insensitive search." , ee);
+            return getPTSetContextIns(val);
+        }
+    }
+    
     /**
      * Given a value that is a pointer, and a context edge from the call graph, 
      * return the points to set of allocation nodes that can be pointed to in the
@@ -653,24 +707,28 @@ public class GeoPTA {
     }
 
     /**
-     * Use the PTA to resolve the set of methods that an instance invoke could call.  Use the 
-     * parameter edge as the context to query the context sensitive PTA result for the receiver.
-     * Return a map of the allocnode to the resolved method.
      * 
-     * If the method cannot be found, then throw a specialized exception.
      */
-    public Map<AllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Edge context) 
-            throws CannotFindMethodException {
-        Map<AllocNode, SootMethod> methods = new LinkedHashMap<AllocNode, SootMethod>();
-
+    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Edge context) 
+        throws CannotFindMethodException {
         Set<AllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSetContextIns(invoke.getBase());
         else
-            allocs = getPTSet(invoke.getBase(), context);
-
-        //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
+            allocs = getPTSet1CFA(invoke.getBase(), context);
+        
+        return internalResolveInstanceInvokeMap(allocs, invoke, context);
+    }
+    
+    /**
+     * 
+     */
+    private Map<AllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<AllocNode> allocs, 
+        InstanceInvokeExpr invoke, Edge context) throws CannotFindMethodException {
+        Map<AllocNode, SootMethod> methods = new LinkedHashMap<AllocNode, SootMethod>();
+        
+      //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
         for (AllocNode an : allocs) {
             if (invoke instanceof SpecialInvokeExpr) {
                 SootMethod resolved = SootUtils.resolveSpecialDispatch((SpecialInvokeExpr)invoke); 
@@ -700,6 +758,25 @@ public class GeoPTA {
         }
 
         return methods;
+    }
+    
+    /**
+     * Use the PTA to resolve the set of methods that an instance invoke could call.  Use the 
+     * parameter edge as the context to query the context sensitive PTA result for the receiver.
+     * Return a map of the allocnode to the resolved method.
+     * 
+     * If the method cannot be found, then throw a specialized exception.
+     */
+    public Map<AllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Edge context) 
+            throws CannotFindMethodException {
+        Set<AllocNode> allocs = null;
+        //get either the context sensitive or insensitive result based on the context param 
+        if (context == null) 
+            allocs = getPTSetContextIns(invoke.getBase());
+        else
+            allocs = getPTSet(invoke.getBase(), context);
+        
+        return internalResolveInstanceInvokeMap(allocs, invoke, context);
     }
     
 

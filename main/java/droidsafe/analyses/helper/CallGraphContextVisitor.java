@@ -10,15 +10,31 @@ import soot.jimple.toolkits.callgraph.Edge;
  * @author mgordon
  *
  */
-public interface CallGraphContextVisitor {
+public class CallGraphContextVisitor {
 
     /**
      * Called for each edge in the call graph.  Allows the visitor to do something with the method
      * and its context edge.
      *  
      * @param method the callee method
-     * @param context the context entry point edge
+     * @param entryEdge the context entry point edge
      * @param edgeInto the calling edge (1CFA edge)
      */
-    public void visit(SootMethod method, Edge context, Edge edgeInto);
+    public void visitEntryContextAnd1CFA(SootMethod method, Edge entryEdge, Edge edgeInto) {}
+    
+    /**
+     * Called for each reachable combinations of method / 1CFA (calling edge) context
+     * 
+     * @param method Callee method
+     * @param edgeInto 1CFA call edge
+     */
+    public void visit1CFA(SootMethod method, Edge edgeInto) {}
+    
+    /**
+     * Called for each reachable combination of method / entry edge context 
+     * 
+     * @param method callee method
+     * @param entryEdge entry point edge 
+     */
+    public void visitEntryContext(SootMethod method, Edge entryEdge) {}
 }
