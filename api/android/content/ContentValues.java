@@ -19,6 +19,7 @@ public final class ContentValues implements Parcelable {
 
     private HashMap<String, Object> mValues;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.354 -0400", hash_original_method = "5E7EA6E1821501C5972B7C7CC639145B", hash_generated_method = "83FF0F0E418B834B6E273F883D6E85A7")
     public  ContentValues() {
         mValues = new HashMap<String, Object>(8);
