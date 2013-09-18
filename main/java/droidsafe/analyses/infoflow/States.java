@@ -51,7 +51,11 @@ public class States {
     }
 
     FrameHeapStatics put(Context context, FrameHeapStatics frameHeapStatics) {
-        return contextToFrameHeapStatics.put(context, frameHeapStatics);
+        if (frameHeapStatics != null && !frameHeapStatics.isEmpty()) {
+            return contextToFrameHeapStatics.put(context, frameHeapStatics);
+        } else {
+            return contextToFrameHeapStatics.remove(context);
+        }
     }
 
     FrameHeapStatics get(Context context) {
@@ -99,6 +103,16 @@ public class States {
         }
         str.append('}');
         return str.toString();
+    }
+
+    public States minus(States that) {
+        States states = new States();
+        for (Map.Entry<Context, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+            Context context = contextFrameHeapStatics.getKey();
+            FrameHeapStatics frameHeapStatics = contextFrameHeapStatics.getValue();
+            states.put(context, frameHeapStatics.minus(that.get(context)));
+        }
+        return states;
     }
 }
 
@@ -178,6 +192,10 @@ class FrameHeapStatics {
         return new FrameHeapStatics(this.frame.merge(that.frame), this.heap.merge(that.heap), this.statics.merge(that.statics));
     }
 
+    boolean isEmpty() {
+        return frame.isEmpty() && heap.isEmpty() && statics.isEmpty();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -194,6 +212,10 @@ class FrameHeapStatics {
     @Override
     public String toString() {
         return "(" + frame + ",\\l " + heap + ",\\l " + statics + ")";
+    }
+
+    public FrameHeapStatics minus(FrameHeapStatics that) {
+        return new FrameHeapStatics(this.frame.minus(that.frame), this.heap.minus(that.heap), this.statics.minus(that.statics));
     }
 }
 
@@ -404,6 +426,10 @@ class Frame {
         return roots;
     }
 
+    boolean isEmpty() {
+        return locals.isEmpty() && thiz.isEmpty() && params.isEmpty();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -485,6 +511,29 @@ class Frame {
         TreeMap<MethodMyParameterRef, ImmutableList<MyValue>> sortedParams = new TreeMap<MethodMyParameterRef, ImmutableList<MyValue>>(paramComparator);
         sortedParams.putAll(params);
         return "(" + sortedLocals + ", " + sortedThese + ", " + sortedParams + ")";
+    }
+
+    public Frame minus(Frame that) {
+        Frame frame = new Frame();
+        for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
+            MethodLocal local = localValues.getKey();
+            Set<MyValue> values = new HashSet<MyValue>(localValues.getValue());
+            values.removeAll(that.get(local));
+            frame.putS(local, ImmutableList.<MyValue>copyOf(values));
+        }
+        for (Map.Entry<SootMethod, ImmutableList<MyValue>> methodValues : this.thiz.entrySet()) {
+            SootMethod method = methodValues.getKey();
+            Set<MyValue> values = new HashSet<MyValue>(methodValues.getValue());
+            values.removeAll(that.get(method));
+            frame.putS(method, ImmutableList.<MyValue>copyOf(values));
+        }
+        for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> paramValues : this.params.entrySet()) {
+            MethodMyParameterRef param = paramValues.getKey();
+            Set<MyValue> values = new HashSet<MyValue>(paramValues.getValue());
+            values.removeAll(that.get(param));
+            frame.putS(param, ImmutableList.<MyValue>copyOf(values));
+        }
+        return frame;
     }
 }
 
@@ -587,6 +636,7 @@ class MethodMyParameterRef {
 class MyParameterRef extends ParameterRef {
     public MyParameterRef(ParameterRef param) {
         super(param.getType(), param.getIndex());
+        assert !(param instanceof MyParameterRef);
     }
 
     @Override
@@ -666,6 +716,10 @@ class Heap {
         return heap;
     }
 
+    boolean isEmpty() {
+        return instances.isEmpty() && arrays.isEmpty();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -726,6 +780,10 @@ class Heap {
         }
         return addressesReachable;
     }
+
+    public Heap minus(Heap that) {
+        return new Heap(this.instances.minus(that.instances), this.arrays.minus(that.arrays));
+    }
 }
 
 class Instances {
@@ -779,6 +837,15 @@ class Instances {
     }
 
     // strongly update
+    ImmutableList<MyValue> putS(AddressField addressField, ImmutableList<MyValue> values) {
+        if (values != null && !values.isEmpty()) {
+            return addressFieldToValues.put(addressField, values);
+        } else {
+            return addressFieldToValues.remove(addressField);
+        }
+    }
+
+    // strongly update
     ImmutableList<MyValue> putS(Address address, SootField field, ImmutableList<MyValue> values) {
         AddressField addressField = AddressField.v(address, field);
         if (values != null && !values.isEmpty()) {
@@ -788,12 +855,20 @@ class Instances {
         }
     }
 
+    ImmutableList<MyValue> get(AddressField addressField) {
+        return addressFieldToValues.get(addressField);
+    }
+
     ImmutableList<MyValue> get(Address address, SootField field) {
         return addressFieldToValues.get(AddressField.v(address, field));
     }
 
     Set<Map.Entry<AddressField, ImmutableList<MyValue>>> entrySet() {
         return addressFieldToValues.entrySet();
+    }
+
+    boolean isEmpty() {
+        return addressFieldToValues.isEmpty();
     }
 
     @Override
@@ -828,6 +903,17 @@ class Instances {
     @Override
     public String toString() {
         return new TreeMap<AddressField, ImmutableList<MyValue>>(addressFieldToValues).toString();
+    }
+
+    public Instances minus(Instances that) {
+        Instances instances = new Instances();
+        for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : this.addressFieldToValues.entrySet()) {
+            AddressField addressField = addressFieldValues.getKey();
+            Set<MyValue> values = new HashSet<MyValue>(addressFieldValues.getValue());
+            values.removeAll(that.get(addressField));
+            instances.putS(addressField, ImmutableList.<MyValue>copyOf(values));
+        }
+        return instances;
     }
 }
 
@@ -996,6 +1082,10 @@ class Arrays {
         return addressToValues.entrySet();
     }
 
+    boolean isEmpty() {
+        return addressToValues.isEmpty();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -1028,6 +1118,17 @@ class Arrays {
     @Override
     public String toString() {
         return new TreeMap<Address, ImmutableList<MyValue>>(addressToValues).toString();
+    }
+
+    public Arrays minus(Arrays that) {
+        Arrays arrays = new Arrays();
+        for (Map.Entry<Address, ImmutableList<MyValue>> addressValues : this.addressToValues.entrySet()) {
+            Address address = addressValues.getKey();
+            Set<MyValue> values = new HashSet<MyValue>(addressValues.getValue());
+            values.removeAll(that.get(address));
+            arrays.putS(address, ImmutableList.<MyValue>copyOf(values));
+        }
+        return arrays;
     }
 }
 
@@ -1115,6 +1216,10 @@ class Statics {
         return statics;
     }
 
+    boolean isEmpty() {
+        return fieldToValues.isEmpty();
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -1155,6 +1260,17 @@ class Statics {
         TreeMap<SootField, ImmutableList<MyValue>> sortedFieldToValues = new TreeMap<SootField, ImmutableList<MyValue>>(fieldComparator);
         sortedFieldToValues.putAll(fieldToValues);
         return sortedFieldToValues.toString();
+    }
+
+    public Statics minus(Statics that) {
+        Statics statics = new Statics();
+        for (Map.Entry<SootField, ImmutableList<MyValue>> fieldValues : this.fieldToValues.entrySet()) {
+            SootField field = fieldValues.getKey();
+            Set<MyValue> values = new HashSet<MyValue>(fieldValues.getValue());
+            values.removeAll(that.get(field));
+            statics.putS(field, ImmutableList.<MyValue>copyOf(values));
+        }
+        return statics;
     }
 }
 

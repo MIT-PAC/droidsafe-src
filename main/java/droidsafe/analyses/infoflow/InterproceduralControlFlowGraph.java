@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultDirectedGraph;
@@ -12,6 +13,7 @@ import org.jgrapht.graph.DefaultEdge;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.analyses.GeoPTA;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -37,7 +39,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     private final Map<Block, List<Block>> blockToPreds;
     private final List<Block> blocks;
 
-    private final Map<SootMethod, List<Block>> methodToHeads;
+    public final Map<SootMethod, List<Block>> methodToHeads;
     private final Map<SootMethod, List<Block>> methodToTails;
     public final Map<SootMethod, List<Block>> methodToBlocks;
 
@@ -184,28 +186,31 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     }
 
     private void collectIntraproceduralControlFlowGraphs() {
+        Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
         List<SootMethod> entryPoints = Scene.v().getEntryPoints();
         for (SootClass clz : Scene.v().getApplicationClasses()) {
             for (SootMethod method : clz.getMethods()) {
-                if (method.hasActiveBody()) {
-                    BlockGraph blockGraph = new MyBriefBlockGraph(method.getActiveBody());
-                    if (entryPoints.contains(method)) {
-                        heads.addAll(blockGraph.getHeads());
-                    }
-                    for (Block block : blockGraph) {
-                        blockToSuccs.put(block, new ArrayList<Block>(blockGraph.getSuccsOf(block)));
-                        blockToPreds.put(block, new ArrayList<Block>(blockGraph.getPredsOf(block)));
-                        blocks.add(block);
-                        Iterator<Unit> it = block.iterator();
-                        while (it.hasNext()) {
-                            unitToBlock.put(it.next(), block);
+                if (reachableMethods.contains(method)) {
+                    if (method.hasActiveBody()) {
+                        BlockGraph blockGraph = new MyBriefBlockGraph(method.getActiveBody());
+                        if (entryPoints.contains(method)) {
+                            heads.addAll(blockGraph.getHeads());
                         }
+                        for (Block block : blockGraph) {
+                            blockToSuccs.put(block, new ArrayList<Block>(blockGraph.getSuccsOf(block)));
+                            blockToPreds.put(block, new ArrayList<Block>(blockGraph.getPredsOf(block)));
+                            blocks.add(block);
+                            Iterator<Unit> it = block.iterator();
+                            while (it.hasNext()) {
+                                unitToBlock.put(it.next(), block);
+                            }
+                        }
+                        methodToHeads.put(method, blockGraph.getHeads());
+                        methodToTails.put(method, blockGraph.getTails());
+                        methodToBlocks.put(method, blockGraph.getBlocks());
+                    } else {
+                        logger.info(method + ": no active body");
                     }
-                    methodToHeads.put(method, blockGraph.getHeads());
-                    methodToTails.put(method, blockGraph.getTails());
-                    methodToBlocks.put(method, blockGraph.getBlocks());
-                } else {
-                    logger.info(method + ": no active body");
                 }
             }
         }
@@ -223,7 +228,8 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
                         break;
                     }
                 }
-                assert(succ != null);
+                assert succ != null;
+                assert curr.getBody().getMethod().equals(succ.getBody().getMethod());
                 Targets tgts = new Targets(cg.edgesOutOf(curr.getTail()));
                 while (tgts.hasNext()) {
                     SootMethod method = tgts.next().method();
