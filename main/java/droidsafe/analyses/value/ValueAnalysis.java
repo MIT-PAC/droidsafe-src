@@ -49,7 +49,7 @@ import soot.Value;
  * @author dpetters
  *
  */
-public class ValueAnalysis implements CallGraphContextVisitor {
+public class ValueAnalysis extends CallGraphContextVisitor {
 
     /** Singleton for analysis */
     private static ValueAnalysis am;
@@ -132,7 +132,12 @@ public class ValueAnalysis implements CallGraphContextVisitor {
     public static ValueAnalysis v() {
         return am;
     }
-    
+   
+    public static void setup() {
+        if (am == null)
+            am = new ValueAnalysis();
+    }
+
     /** run the analysis to fixed point */
     public static void run() {
         if (GeoPTA.v() == null) {
@@ -140,9 +145,6 @@ public class ValueAnalysis implements CallGraphContextVisitor {
             droidsafe.main.Main.exit(1);
         }      
        
-        if (am == null)
-            am = new ValueAnalysis();
-
         try {
             am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                     + "va-errors.log");
@@ -239,7 +241,7 @@ public class ValueAnalysis implements CallGraphContextVisitor {
     }
 
     @Override
-    public void visit(SootMethod sootMethod, Edge context, Edge edgeInto) {
+    public void visitEntryContextAnd1CFA(SootMethod sootMethod, Edge entryEdge, Edge edgeInto) {
         
         if(!sootMethod.isConcrete())
             return;
