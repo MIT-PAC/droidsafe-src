@@ -65,6 +65,7 @@ import soot.jimple.spark.pag.GlobalVarNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
+import soot.jimple.spark.pag.VarNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.options.PaddleOptions;
@@ -284,227 +285,7 @@ public class GeoPTA {
         return types;
     }
 
-    /**
-     * Perform a context sensitive search of the PTA result for an instance field.  First
-     * search for base reference and then for each object pointed to by base, search the field reference.
-     */
-    private Set<AllocNode> getPTSet(Local local, SootField field, Edge context) {
-        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-        
-        if (!(field.getType() instanceof RefLikeType)) {
-            logger.error("Querying PTA for instance field that is not a reference type: {}.{}", local, field);
-            droidsafe.main.Main.exit(1);
-        }
-        
-        PointsToSetInternal reachingObj = (PointsToSetInternal)
-                ptsProvider.reachingObjects(context.srcStmt(), local, field);
-        
-        reachingObj.forall(new P2SetVisitor() {
-            public void visit(Node n) {
-                allocNodes.add((AllocNode)n);
-            }
-        });
-        
-        return allocNodes;
-        
-        
-        /*
-        final SootField field = val.getField();
-        
-        LocalVarNode vn = ptsProvider.findLocalVarNode((Local) val.getBase());
-        
-        IVarAbstraction ivar = ptsProvider.findInternalNode(vn);
-        
-        if ( ivar == null ) {
-            return allocNodes;
-        }
-        
-        CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
-
-        Set<AllocNode> baseNodes = getGlobalorLocalPTSet(vn, ivar, context, val);
-
-        for (AllocNode baseNode : baseNodes) {
-            IVarAbstraction padf = ptsProvider.findAndInsertInstanceField(baseNode, field);
-            padf = padf.getRepresentative();
-            
-            if (padf instanceof FullSensitiveNode && ((FullSensitiveNode)padf).pt_objs == null) 
-                continue;
-            
-            //TODO: Is this correct???
-            if (cgEdge == null) {
-                allocNodes.addAll(padf.get_all_points_to_objects());
-            } else {
-                long l = cgEdge.map_offset;
-                long r = l + ptsProvider.max_context_size_block[cgEdge.s];
-                
-                Obj_full_extractor contextObjsVisitor = new Obj_full_extractor();
-                contextObjsVisitor.prepare();
-                padf.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
-                contextObjsVisitor.finish();
-
-                for (IntervalContextVar icv : contextObjsVisitor.icvList) {
-                    //check here is the CCV is null because in the underlying analysis, it 
-                    //sometimes adds nulls to the context search, don't know why but 
-                    //only seems to happen in rare circumstances, might need to investigate more.
-                    if (icv != null) {    
-                        allocNodes.add((AllocNode)icv.var);
-                    } else {
-                        logger.info("Null callsite context var found during PTA search (continuing): {} in {}", 
-                            val, context);
-                    }
-                }
-            }
-        }
-
-        
-        return allocNodes;
-        */
-    }
-
-    private Set<AllocNode> getArrayRefPTSet(ArrayRef val, Edge context) {
-        Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-        
-        LocalVarNode vn = ptsProvider.findLocalVarNode((Local) val.getBase());
-        
-        IVarAbstraction ivar = ptsProvider.findInternalNode(vn);
-        
-        if ( ivar == null ) {
-            return allocNodes;
-        }
-
-        Set<AllocNode> baseNodes = getGlobalorLocalPTSet(vn, ivar, context, val);
-
-        for (AllocNode baseNode : baseNodes) {
-            IVarAbstraction padf = ptsProvider.findAndInsertInstanceField(baseNode, ArrayElement.v());
-            allocNodes.addAll(padf.get_all_points_to_objects());
-        }
-
-        return allocNodes;
-    }
-    
-    
-    private Set<AllocNode> getPTSet(SootField field) {
-        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-        
-        PointsToSetInternal pti = (PointsToSetInternal)ptsProvider.reachingObjects(field);
-        
-        pti.forall(new P2SetVisitor() {
-            public void visit(Node n) {
-                allocNodes.add((AllocNode)n);
-            }
-        });
-        
-        return allocNodes;
-    }
-    
-    private Set<AllocNode> getPTSet(Local local, Edge context) {
-        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-
-        Context c = context.srcStmt();
-        LocalVarNode vn = ptsProvider.findLocalVarNode(local);
-       
-        
-        // We first lookup the cache
-        ContextVarNode cvn = vn.context(c);
-      /*  if ( cvn != null ) {
-            return cvn.getP2Set();
-        }*/
-        
-        cvn = ptsProvider.makeContextVarNode(vn, c);            // The points-to vector is set to empty at start
-       
-        
-        // Otherwise we create a new points-to vector
-        IVarAbstraction pn = ptsProvider.consG.get(vn);
-        pn = pn.getRepresentative();
-        if ( pn == null ) {
-            // The enclosing method of this pointer is obsoleted
-            return EMPTY_PTA_SET;
-        }
-        
-
-        
-        CgEdge myEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
-        //System.out.println("Geometry: " + myEdge.map_offset + " " + ptsProvider.max_context_size_block[myEdge.s]);
-        long low = myEdge.map_offset;
-        long high = low + ptsProvider.max_context_size_block[myEdge.s];
-        
-        PointsToSetInternal ptset = cvn.makeP2Set();
-        
-        for ( AllocNode an : pn.get_all_points_to_objects() ) {
-            if ( pn.pointer_interval_points_to(low, high, an) ) {
-                ptset.add(an);
-                allocNodes.add(an);
-            }
-        }
-        
-        return allocNodes;
-    }
-    
-    /**
-     * Perform a context sensitive search on a given global or local that does not require a 
-     * search of a base value.
-     */
-    private Set<AllocNode> getGlobalorLocalPTSet(Node sparkNode, IVarAbstraction ivar, Edge context, Value val) {
-        Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-
-        try {
-            if (context == null) {
-                logger.error("Null context edge for pta query.");
-                droidsafe.main.Main.exit(1);
-            }
-
-            if (ivar == null) { 
-                logger.error("Error getting internal PTA node for {} of {}.", ivar);
-                droidsafe.main.Main.exit(1);
-            }
-
-            //don't really know why this is needed, sometimes maybe the internal analysis
-            //delegates some nodes
-            ivar = ivar.getRepresentative();
-            CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
-            //System.out.println("  Geo Context: " + context + " " + cgEdge);
-            if (cgEdge == null) {
-                //static initializer, no call edge, return context insenstive pta set
-                allocNodes = ivar.get_all_points_to_objects();
-            } else {
-                //not a static initializer, regular call
-                if (sparkNode != null) {
-                    long l = cgEdge.map_offset;
-                    long r = l + ptsProvider.max_context_size_block[cgEdge.s];
-                    System.out.println("  L: " + l + ", R: " + r);
-    
-                    Obj_full_extractor contextObjsVisitor = new Obj_full_extractor();
-                    contextObjsVisitor.prepare();
-                    ivar.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
-                    contextObjsVisitor.finish();
-
-                    for (IntervalContextVar icv : contextObjsVisitor.icvList) {
-                        //check here is the CCV is null because in the underlying analysis, it 
-                        //sometimes adds nulls to the context search, don't know why but 
-                        //only seems to happen in rare circumstances, might need to investigate more.
-                        if (icv != null) {    
-                            System.out.println("  Added L: " + icv.L + ", R: " + icv.R);
-                            allocNodes.add((AllocNode)icv.var);
-                        } else {
-                            logger.info("Null callsite context var found during PTA search (continuing): {} in {}", 
-                                val, context);
-                        }
-                    }
-                
-                } else {
-                    logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
-                } 
-                
-                if (allocNodes.isEmpty()) {
-                    logger.debug("empty getPTSet query: v {} (ivar {}) with context {}.", val, ivar, context);
-                }
-            }
-        } catch (Exception e) {
-            logger.info("Some sort of error getting points to set for {} in {}", val, context, e);
-        }
-        return allocNodes;
-    }
-
+   
     /** 
      * Return the 1CFA context query for reference and 1CFA context edge.
      */
@@ -567,128 +348,47 @@ public class GeoPTA {
     public Set<AllocNode> getPTSet(Value val, Edge context) {
         //until we fix the full context search, we return the insensitive result
         return getPTSetContextIns(val);
-        /*
-        //logger.info("Querying pt set for: {} in {}", v, context);
-        
-        //if the context does not make sense, use the insensitive version
-        if (context == null || context.srcUnit() == null)
-            return getPTSetContextIns(val);
-        
-        //handle instance field refs and arrays specially, need to find base and then field
-        if (val instanceof InstanceFieldRef) {
-            InstanceFieldRef ifr = (InstanceFieldRef) val;
-            return getPTSet((Local)ifr.getBase(), ifr.getField(), context);
-        } else if (val instanceof ArrayRef) {
-            return getArrayRefPTSet((ArrayRef)val, context);
-        }
-            
-        //single search
-        Node node = null;
-        if (val instanceof Local) {
-            return getPTSet((Local)val, context);
-            //node = ptsProvider.findLocalVarNode(val);
-        } else if (val instanceof StaticFieldRef) {
-           SootField field = ((FieldRef)val).getField();
-           return getPTSet(field);
-           //node = ptsProvider.findGlobalVarNode(field);                    
-        } 
-        
-        logger.error("Unknown value for PTA query: {}", val);
-        droidsafe.main.Main.exit(1);
-        return EMPTY_PTA_SET;
-         */
-        
-        /*
-        if (node == null) {
-            logger.info("Cannot find spark node for: {} {}", val, val.getClass());
-            return EMPTY_PTA_SET;
-        }
-        
-        IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
-        if (internalNode == null) {
-            logger.info("Cannot find internal geom node for value: {}", val); 
-            return EMPTY_PTA_SET;
-        }
-        
-        Node sparkNode = internalNode.getWrappedNode();
-
-        return getGlobalorLocalPTSet(sparkNode, internalNode, context, val);
-        */
-    }
-
-    /**
-     * Perform a context ins search for a field given a base node.
-     */
-    public Set<AllocNode> getPTSetContextIns(AllocNode baseNode, SootField field) {
-        Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-        
-        if (!(field.getType() instanceof RefLikeType)) {
-            logger.error("Querying PTA on a field that is not a reference");
-            droidsafe.main.Main.exit(1);
-        }
-        
-        IVarAbstraction fieldVar = ptsProvider.findAndInsertInstanceField(baseNode, field);
-        //fieldVar = fieldVar.getRepresentative();
-        Set<AllocNode> fromPTA = fieldVar.get_all_points_to_objects();
-        allocNodes.addAll(fromPTA);
-        
-        return allocNodes;
-    }
-    
-    private Set<AllocNode> getPTSetContextIns(Local local, SootField field) {
-        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-        
-        PointsToSetInternal ptsi = (PointsToSetInternal)ptsProvider.reachingObjects(local, field);
-        
-        ptsi.forall(new P2SetVisitor() {
-            public void visit(Node node) {
-                allocNodes.add((AllocNode)node);
-            }
-        });
-        
-        return allocNodes;
     }
     
     /**
      * Given a pointer value, return the context insensitive points to set.
      */
     public Set<AllocNode> getPTSetContextIns(Value val) {
-        final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-        
-        if (!isPointer(val))
-            return allocNodes;
+               
+        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+        PointsToSetInternal pts = null;
         
         try {
             //for an instance field ref, we first have to perform a search of alloc nodes for the
             //base, then for each base, on the field
             if (val instanceof InstanceFieldRef) {
                 InstanceFieldRef ifr = (InstanceFieldRef)val;
-                return getPTSetContextIns((Local)ifr.getBase(), ifr.getField()); 
-                /*
-                Set<AllocNode> baseNodes = getPTSetContextIns(((InstanceFieldRef)val).getBase());
-                SootField field = ((InstanceFieldRef)val).getField();
-                for (AllocNode baseNode : baseNodes) {
-                    allocNodes.addAll(getPTSetContextIns(baseNode, field));
-                } 
-                */               
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)ifr.getBase(), ifr.getField());
             } else if (val instanceof ArrayRef) {
-                Set<AllocNode> baseNodes = getPTSetContextIns(((ArrayRef)val).getBase());
-                for (AllocNode baseNode : baseNodes) {
-                    IVarAbstraction fieldVar = ptsProvider.findAndInsertInstanceField(baseNode, ArrayElement.v());
-                    Set<AllocNode> fromPTA = fieldVar.get_all_points_to_objects();
-                    allocNodes.addAll(fromPTA);
-                }
-            } else {            
-                IVarAbstraction ivar = getInternalNode(val);
-                ivar = ivar.getRepresentative();
-
-                Set<AllocNode> fromPTA = ivar.get_all_points_to_objects();
-                if (fromPTA != null)
-                    allocNodes.addAll(fromPTA);
+                ArrayRef arrayRef = (ArrayRef)val;
+                pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement
+                        (ptsProvider.reachingObjects((Local)arrayRef.getBase()));
+            } else if (val instanceof Local){            
+                 pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)val);
+            } else if (val instanceof StaticFieldRef) {
+                SootField field = ((StaticFieldRef)val).getField();
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
+            } else if (val instanceof NullConstant) {
+                return allocNodes;
+            } else {
+                logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
+                droidsafe.main.Main.exit(1);
             }
             
+            //visit internal points to set and grab all allocnodes        
+            pts.forall(new P2SetVisitor() {
+                public void visit(Node n) {
+                    allocNodes.add((AllocNode)n);
+                }
+            });
+            
         } catch (Exception e) {
-            logger.info("Some sort of error getting context insensitive points to set for {}", val);
+            logger.info("Some sort of error getting context insensitive points to set for {}", val, e);
             //e.printStackTrace();
         }
 
