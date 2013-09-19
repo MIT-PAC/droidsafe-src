@@ -45,10 +45,10 @@ public class JimpleRelationships {
     }
     
     /**
-     * Regenerate underlying maps.  Used if there has been jimple transforms run.
+     * Reset underlying maps.  Used if there has been jimple transforms run.
      */
     public static void reset() {
-        v = new JimpleRelationships();
+        v = null;
     }
     
     /**

@@ -81,6 +81,7 @@ public class Main {
     // create the permissions map
     Permissions.init();
     ResourcesSoot.reset();
+    JimpleRelationships.reset();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
