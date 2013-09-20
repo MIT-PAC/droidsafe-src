@@ -216,16 +216,18 @@ public class Main {
     }
 
     //create instance of value analysis object, so that later passes an query empty result.
+    long startTime = System.nanoTime();
     ValueAnalysis.setup();
     if (Config.v().runValueAnalysis) {
         logger.info("Starting Value Analysis");
         monitor.subTask("Value Analysis");
         ValueAnalysis.run();
+        long endTime = System.nanoTime();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        logger.info("Finished Value Analysis");
+        logger.info("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
     }
 
     logger.info("Starting Generate RCFG...");

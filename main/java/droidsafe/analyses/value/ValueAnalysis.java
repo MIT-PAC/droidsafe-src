@@ -1,6 +1,5 @@
 package droidsafe.analyses.value;
 
-
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CallGraphContextVisitor;
 import droidsafe.analyses.helper.CallGraphTraversal;
@@ -19,18 +18,17 @@ import java.lang.reflect.Constructor;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.jimple.AssignStmt;
+import soot.jimple.InstanceFieldRef;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
 
 import soot.RefType;
-
-import soot.SootClass;
 
 import soot.SootMethod;
 
@@ -88,19 +86,10 @@ public class ValueAnalysis extends CallGraphContextVisitor {
      */
     public static boolean runAgain = false;
 
-    //==================================================================================================================
-    // Constructors
-    //==================================================================================================================
-
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
         this.allocNodeToVAModelMap = new LinkedHashMap<AllocNode, VAModel>();
     }
-
-
-    //==================================================================================================================
-    // Public Methods
-    //==================================================================================================================
 
     /**
      * Getter for analysis result
@@ -123,16 +112,12 @@ public class ValueAnalysis extends CallGraphContextVisitor {
     public VAModel getResult(AllocNode node) {
         return this.allocNodeToVAModelMap.get(node);
     }
-    
-    //==================================================================================================================
-    // Static Methods
-    //==================================================================================================================
 
     /** access to the singleton instance */
     public static ValueAnalysis v() {
         return am;
     }
-   
+
     public static void setup() {
         if (am == null)
             am = new ValueAnalysis();
@@ -144,7 +129,7 @@ public class ValueAnalysis extends CallGraphContextVisitor {
             logger.error("The GeoPTA pass has not been run. Value analysis requires it.");
             droidsafe.main.Main.exit(1);
         }      
-       
+
         try {
             am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                     + "va-errors.log");
@@ -159,12 +144,10 @@ public class ValueAnalysis extends CallGraphContextVisitor {
             logger.warn("Unable to open va-results.log: ", e);
         }
 
-
         am.createObjectModels();
-        //am.runOnce();
-        
-        System.out.print("\n");
 
+        am.runOnce();
+        
         am.logResults();
 
         try {
@@ -189,8 +172,6 @@ public class ValueAnalysis extends CallGraphContextVisitor {
         for(AllocNode allocNode : GeoPTA.v().getAllAllocNodes()) {
             createObjectModel(allocNode);    
         }
-        System.out.println("Dmitrij! We created " + this.allocNodeToVAModelMap.size() + " object models");
-        System.out.println(this.allocNodeToVAModelMap.size());
     }
 
     public void createObjectModel(AllocNode allocNode) {
@@ -210,11 +191,11 @@ public class ValueAnalysis extends CallGraphContextVisitor {
             this.logError(errorLogEntry);
             return;
         }
-        
+
         RefVAModel model = null;
         Constructor<?> ctor;
         try {
-           ctor = cls.getConstructor(AllocNode.class);
+            ctor = cls.getConstructor(AllocNode.class);
         } catch(NoSuchMethodException e) {
             errorLogEntry += "Available constructors are:\n";
             for (Constructor<?> constructor : cls.getConstructors()){
@@ -228,7 +209,7 @@ public class ValueAnalysis extends CallGraphContextVisitor {
             this.logError(errorLogEntry);
             return;
         }
-        
+
         try {
             model = (RefVAModel)ctor.newInstance(allocNode);
         } catch(Exception e){
@@ -241,32 +222,29 @@ public class ValueAnalysis extends CallGraphContextVisitor {
     }
 
     @Override
-    public void visitEntryContextAnd1CFA(SootMethod sootMethod, Edge entryEdge, Edge edgeInto) {
-        
+    public void visitEntryContext(SootMethod sootMethod, Edge entryEdge) {
+
         if(!sootMethod.isConcrete())
             return;
-        
+
         if(!sootMethod.hasActiveBody())
             sootMethod.retrieveActiveBody();
 
-        if(!GeoPTA.v().isValidMethod(sootMethod))
-            return;
-
-        logResult(sootMethod.toString());
         for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
             Stmt stmt = (Stmt) stmts.next();
-            /*
             if(stmt instanceof AssignStmt) {
-              AssignStmt assignStmt = (AssignStmt)stmt;
-              Value leftOp = assignStmt.getLeftOp();
-              if(leftOp instanceof InstanceFieldRef) {
-                InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
-                Value baseValue = instanceFieldRef.getBase();
-
-              }
+                AssignStmt assignStmt = (AssignStmt)stmt;
+                Value leftOp = assignStmt.getLeftOp();
+                Value rightOp = assignStmt.getRightOp();
+                if(leftOp instanceof InstanceFieldRef) {
+                    InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
+                    Value baseValue = instanceFieldRef.getBase();
+                    //logResult(assignStmt.toString());
+                    //logResult(instanceFieldRef.toString());
+                    //logResult(rightOp.getType().toString());
+                    //logResult("\n");
+                }
             }
-            */
-            //logResult(stmt.toString());
         }
     }
 
@@ -296,6 +274,9 @@ public class ValueAnalysis extends CallGraphContextVisitor {
      * Log the results of the modeling
      */
     private void logResults() {
-
+        for(Map.Entry<AllocNode, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
+            logResult("AllocNode: " + entry.getKey().toString());
+            logResult("Model: " + entry.getValue().__ds__toString());
+        }
     }
 }

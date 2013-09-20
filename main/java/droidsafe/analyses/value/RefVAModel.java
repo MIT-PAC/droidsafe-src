@@ -1,17 +1,23 @@
 package droidsafe.analyses.value;
 
+import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.value.models.droidsafe.primitives.StringVAModel;
+
 import java.lang.reflect.Field;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Set;
-import droidsafe.analyses.GeoPTA;
-import java.util.HashSet;
+
 import org.apache.commons.lang3.StringUtils;
 
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.StringConstantNode;
+
+import soot.RefLikeType;
 
 import soot.RefType;
 
@@ -40,11 +46,17 @@ public abstract class RefVAModel extends VAModel {
      */
     public Set<VAModel> __ds__getFieldVAModels(SootField sootField) {
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
-        Set<AllocNode> allocNodes = new HashSet<AllocNode>();//TODO: replace to this -> GeoPTA.getPTSetContextIns(this, sootField);
-         for(AllocNode allocNode : allocNodes) {
-             fieldVAModels.add(ValueAnalysis.v().getResults().get(allocNode));
-         }
-         return fieldVAModels;
+        if (sootField.getType() instanceof RefType) {
+            Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.__ds__getAllocNode(), sootField);
+            for(AllocNode allocNode : allocNodes) {
+                if(allocNode instanceof StringConstantNode) {
+                    fieldVAModels.add(new StringVAModel(((StringConstantNode)allocNode).getString()));    
+                } else {
+                    fieldVAModels.add(ValueAnalysis.v().getResults().get(allocNode));
+                }
+            }
+        }
+        return fieldVAModels;
     }
 
     /**
@@ -99,15 +111,21 @@ public abstract class RefVAModel extends VAModel {
         } else {
             // for each field we have a reference
             for(SootField sootField : this.getSootClass().getFields()) {
-                // using which we call getFieldVAModels to get a list of of object models
-                String fieldString = sootField.getName() + ":[";
-                List<String> objectModelStrings = new ArrayList<String>();
-                for(VAModel objectModel : this.__ds__getFieldVAModels(sootField)){
-                    // for each object model we call its toString method
-                    objectModelStrings.add(objectModel.__ds__toString());
+                Set<VAModel> vaModels = this.__ds__getFieldVAModels(sootField);
+                if(vaModels.size() > 0){
+                    // using which we call getFieldVAModels to get a list of of object models
+                    String fieldString = sootField.getName() + ":[";
+                    List<String> objectModelStrings = new ArrayList<String>();
+                    for(VAModel objectModel : vaModels){
+                        // TODO: figure out why this can be null
+                        if(objectModel != null ) {
+                            // for each object model we call its toString method
+                            objectModelStrings.add(objectModel.__ds__toString());
+                        }
+                    }
+                    fieldString += StringUtils.join(objectModelStrings.toArray(), ". ") + "]";
+                    fieldStrings.add(fieldString);
                 }
-                fieldString += StringUtils.join(objectModelStrings.toArray(), ". ") + "]";
-                fieldStrings.add(fieldString);
             }
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
         }
