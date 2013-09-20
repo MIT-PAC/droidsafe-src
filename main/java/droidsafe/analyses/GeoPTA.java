@@ -351,6 +351,24 @@ public class GeoPTA {
     }
     
     /**
+     * Content Insensitive query of field reference with allocnode and field. 
+     */
+    public Set<AllocNode> getPTSetContextIns(AllocNode node, SootField field) {
+        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+
+        PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects(node, field);
+
+        //visit internal points to set and grab all allocnodes        
+        pts.forall(new P2SetVisitor() {
+            public void visit(Node n) {
+                allocNodes.add((AllocNode)n);
+            }
+        });
+
+        return allocNodes;
+    }
+    
+    /**
      * Given a pointer value, return the context insensitive points to set.
      */
     public Set<AllocNode> getPTSetContextIns(Value val) {
