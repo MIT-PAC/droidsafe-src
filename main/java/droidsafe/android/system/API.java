@@ -99,7 +99,7 @@ public class API {
             
             
             //load any modeled classes from the api model, overwrite the stub classes
-            JarFile apiModeling = new JarFile(new File(Config.v().DROIDSAFE_API_MODEL_JAR_PATH));
+            JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
             Set<SootClass> modeledClasses = SootUtils.loadClassesFromJar(apiModeling, true, new LinkedHashSet<String>()); 
             allSystemClasses.addAll(modeledClasses);
             all_sys_methods.addAllMethods(apiModeling);

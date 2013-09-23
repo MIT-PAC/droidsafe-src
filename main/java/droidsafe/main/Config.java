@@ -43,9 +43,12 @@ public class Config {
   public static final String ANDROID_LIB_DIR_REL = "android-lib";
 
   /** location of the GITI api model jar */
-  public static String DROIDSAFE_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
+  private static String DROIDSAFE_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
                                                           + File.separator + "droidsafe-api-model.jar";
 
+  /** location of the manual api model jar */
+  private static String DROIDSAFE_MANUAL_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
+                                                          + File.separator + "droidsafe-manual-api-model.jar";
   /** location of configuration files */
   public static final String SYSTEM_CLASSES_FILE = "config-files" + File.separator
       + "system_class_files.txt";
@@ -94,6 +97,9 @@ public class Config {
   
   /** if true, run value analysis */
   public boolean runValueAnalysis = true;
+  
+  /** if true, use the small manual set of android classes for the api model, for a fast run. */
+  public boolean useManualModeling = false;
 
   /**
    * if true, string analysis is done for all soot application classes. Otherwise, it is only done
@@ -124,8 +130,20 @@ public class Config {
     this.apacHome = apacHome;
     Config.DROIDSAFE_API_MODEL_JAR_PATH = this.apacHome + File.separator + ANDROID_LIB_DIR_REL 
             + File.separator + "droidsafe-api-model.jar";
+    Config.DROIDSAFE_MANUAL_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
+            + File.separator + "droidsafe-manual-api-model.jar";
   }
 
+  /**
+   * Return the absolute path name for the android lib concrete model to use for this run.
+   */
+  public String getAndroidLibJarPath() {
+      if (useManualModeling)
+          return DROIDSAFE_MANUAL_API_MODEL_JAR_PATH;
+      else
+          return DROIDSAFE_API_MODEL_JAR_PATH;
+  }
+  
   /**
    * Getter for callSystemExitOnError
    * 
@@ -165,6 +183,10 @@ public class Config {
             new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
     options.addOption(writeJimple);
     
+    Option manualAPIMod = 
+            new Option("manualmod", "Use small set of manual Android API modeling for fast run.");
+    options.addOption(manualAPIMod);
+            
     Option noVA =
             new Option("nova", "Do not run value analysis.");
     options.addOption(noVA);
@@ -250,6 +272,9 @@ public class Config {
     
     if (cmd.hasOption("nova"))
         this.runValueAnalysis = false;
+    
+    if (cmd.hasOption("manualmod")) 
+        this.useManualModeling = true;
     
     if (cmd.hasOption("nojsa")) {
       this.runStringAnalysis = false;
