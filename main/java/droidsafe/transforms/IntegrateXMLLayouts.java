@@ -311,7 +311,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
-			SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
+			//SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
+			SootMethod getStringMethod = ResourcesSoot.v().retrieveGetCharSequence_ID(intId);
 
 			if (getStringMethod == null) {
 				logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));

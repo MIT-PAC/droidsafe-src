@@ -991,7 +991,7 @@ public class ResourcesSoot {
      * @param intId
      * @return
      */
-    private SootField createStringMember(Integer intId) {
+    private SootField resolveStringMember(Integer intId) {
         String   idName    = makeIdName("String", intId); 
         String   className = makeClassName("java.lang.String");
 
@@ -1019,12 +1019,31 @@ public class ResourcesSoot {
     }
     
     /**
+     * retrieve the getCharSequence_ID method, create one if does not exist
+     * @param intId
+     * @return
+     */
+    public SootMethod retrieveGetCharSequence_ID(Integer intId) {
+        String methodName = "getCharSequence_" + String.format("%x", intId);
+
+        SootMethod method = null;
+        
+        try {
+            method = mSootClass.getMethodByName(methodName);
+            return method;
+        } 
+        catch (Exception ex){
+            return addGetCharSequence_ID(intId);
+        }
+    }
+    
+    /**
      * add getStringOrText_ID()
      * @param intId
      * @return
      */
     public SootMethod addGetCharSequence_ID(Integer intId) {
-    	SootField sootField = createStringMember(intId); 
+    	SootField sootField = resolveStringMember(intId); 
     	if (sootField == null)  {
     		logger.warn("Cannot create String field for {} ", String.format("%x", intId));
     		return null;

@@ -50,6 +50,10 @@ public class BuiltinStrings {
         return nameToValueSet; 
     }
     
+    public Map<Integer, String> getIdToNameMap() { 
+        return idToName; 
+    }
+    
     /**
      * load builtin strings for a given locale
      * @param localeSuffix
