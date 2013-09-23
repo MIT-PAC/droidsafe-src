@@ -9,11 +9,11 @@ public class IllegalStateException extends RuntimeException {
 	    super();
     }
 
-	@DSModeled(DSC.SPEC)
+	@DSModeled
     public IllegalStateException(String detailMessage) {
         super(detailMessage);
     }
-	@DSModeled(DSC.SPEC)
+	@DSModeled
     public IllegalStateException(String message, Throwable cause) {
         super(message, cause);
     }

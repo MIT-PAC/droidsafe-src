@@ -670,7 +670,7 @@ public class Matrix {
 		//Return nothing
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	protected void finalize(){
 		
 		// Original method

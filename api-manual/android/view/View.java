@@ -857,7 +857,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public void setOnClickListener(OnClickListener l){
 		l.onClick(this);
 		// Original method
@@ -872,6 +872,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
+	@DSModeled
 	public boolean hasOnClickListeners(){
 		
 		// Original method
@@ -884,6 +885,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return false;
 	}
 	
+	@DSModeled
 	public void setOnLongClickListener(OnLongClickListener l){
 		
 		// Original method
@@ -7586,7 +7588,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 /*	  
 	public static Property<View, Float> ALPHA = new FloatProperty<View>("alpha") {
 	    
-	    @DSModeled(DSC.SPEC)
+	    @DSModeled
 	    {
 	    }
 	    
@@ -7904,8 +7906,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         void onFocusChange(View v, boolean hasFocus);
     }
 	
-	public interface OnClickListener {
-        
+    public interface OnClickListener {
+        @DSModeled(DSC.SAFE)
         void onClick(View v);
     }
 	

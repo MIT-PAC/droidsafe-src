@@ -14,7 +14,7 @@ public class LocationManager {
 	
 	private ILocationManager mService;
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled //Going to mark as SPEC since this is related to location (which is sensitive)
 	public LocationManager(ILocationManager service) {
         mService = service;
     }
