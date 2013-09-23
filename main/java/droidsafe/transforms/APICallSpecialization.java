@@ -25,6 +25,12 @@ import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
 import soot.util.Chain;
 
+/**
+ * Not used currently.
+ * 
+ * @author mgordon
+ *
+ */
 public class APICallSpecialization extends BodyTransformer {
 	private final static Logger logger = LoggerFactory.getLogger(APICallSpecialization.class);
 	

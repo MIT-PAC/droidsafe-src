@@ -25,7 +25,11 @@ import soot.jimple.toolkits.callgraph.Edge;
 
 /**
  * This class performs a traversal of the call graph (hopefully using context sensitivity), and calls a visitor 
- * for each edge in the call graph.  The visitor is called with the context edge and the 1CFA edge.
+ * method at different points in the traversal:
+ * 
+ * 1. Visitor is called for each callee method / entry point edge / 1cfa edge combination.
+ * 2. Visitor is called for each callee method / 1cfa edge combination
+ * 3. Visitor is called for each callee method / entry point edge combination.
  * 
  * @author mgordon
  *
@@ -36,7 +40,9 @@ public class CallGraphTraversal {
     /** The spark (context insensitive) call graph */ 
     private CallGraph sparkCG;
     /** The edges (and the context) that we have visited */
-    private HashSet<EdgeAndContext> visited;
+    private HashSet<EdgeAndContext> visitedEntryAnd1CFA;
+    private HashSet<Edge> visitedEdges;
+    private HashSet<MethodAndContext> visitedMethodAndContext;
 
     /**
      * Accept a visitor and perform a traversal of the call graph, calling the visit method 
@@ -44,7 +50,8 @@ public class CallGraphTraversal {
      */
     public static void accept(CallGraphContextVisitor visitor) {
         Edge edgeToMain = new Edge(null, null, Harness.v().getMain(), Kind.STATIC);
-        new CallGraphTraversal(visitor).traversal(visitor, new EdgeAndContext(edgeToMain, edgeToMain));
+        new CallGraphTraversal(visitor).traversal(visitor, new EdgeAndContext(edgeToMain, edgeToMain),
+                new MethodAndContext(Harness.v().getMain(), edgeToMain));
     }
 
     /**
@@ -53,23 +60,39 @@ public class CallGraphTraversal {
     private CallGraphTraversal(CallGraphContextVisitor visitor) {
         // TODO Auto-generated constructor stub
         sparkCG = Scene.v().getCallGraph();
-        visited = new HashSet<EdgeAndContext>();
+        visitedEntryAnd1CFA = new HashSet<EdgeAndContext>();
+        visitedEdges = new HashSet<Edge>();
+        visitedMethodAndContext = new HashSet<MethodAndContext>();
     }
 
     /** 
      * Recursive method to perform the traversal.
      */
-    private void traversal(CallGraphContextVisitor visitor, EdgeAndContext edgeAndContext) {
-        
-        if (visited.contains(edgeAndContext)) 
+    private void traversal(CallGraphContextVisitor visitor, EdgeAndContext edgeAndContext, 
+                           MethodAndContext methodAndContext) {
+        //do not visit if we have seen this full context and entry edge before
+        if (visitedEntryAnd1CFA.contains(edgeAndContext)) 
             return;
         
         Edge current = edgeAndContext.edgeInto;
         Edge contextEntry = edgeAndContext.context;
         SootMethod method = current.tgt();
         
-        visitor.visit(method, contextEntry, current);
-        visited.add(edgeAndContext);
+        //always visit with full combination
+        visitor.visitEntryContextAnd1CFA(method, contextEntry, current);
+        
+        //visit the method and the 1cfa context edge if we have not visited it before
+        if (!visitedEdges.contains(current)) 
+            visitor.visit1CFA(method, current);
+        
+        //visit the method and the entry edge context
+        if (!visitedMethodAndContext.contains(methodAndContext))
+            visitor.visitEntryContext(methodAndContext.method, methodAndContext.context);
+        
+        //remember what we have visited
+        visitedEntryAnd1CFA.add(edgeAndContext);
+        visitedEdges.add(current);
+        visitedMethodAndContext.add(methodAndContext);
         
         Iterator<Edge> ciEdges = sparkCG.edgesOutOf(method);
 
@@ -93,7 +116,9 @@ public class CallGraphTraversal {
                 //only visit the edge if it is in a context sensitive search (search with the old context)
                 try {
                    
-                    Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
+                    //Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
+                    Map<AllocNode, SootMethod> virtualCallMap = 
+                            GeoPTA.v().resolveInstanceInvokeMap1CFA(iie, current);
                     for (Map.Entry<AllocNode, SootMethod> entry: 
                         virtualCallMap.entrySet()) {
                       
@@ -101,7 +126,8 @@ public class CallGraphTraversal {
                         if ( entry.getValue() == target ) {
                             //found edge in context sensitive search
                            
-                            traversal(visitor, new EdgeAndContext(curEdge, newContextEntry));
+                            traversal(visitor, new EdgeAndContext(curEdge, newContextEntry), 
+                                new MethodAndContext(target, newContextEntry));
                             break;
                         }   
                     } 
@@ -111,10 +137,52 @@ public class CallGraphTraversal {
                     //droidsafe.main.Main.exit(1);
                 }   
             } else {
-                traversal(visitor, new EdgeAndContext(curEdge, newContextEntry));
+                traversal(visitor, new EdgeAndContext(curEdge, newContextEntry), 
+                    new MethodAndContext(target, newContextEntry));
             }
         }
         
+    }
+}
+
+/**
+ * inner class to store a method and the entry point in which it was called during the traversal of the call graph.
+ * 
+ * @author mgordon
+ *
+ */
+class MethodAndContext {
+    SootMethod method;
+    Edge context;
+    
+    public MethodAndContext(SootMethod method, Edge context) {
+        super();
+        this.method = method;
+        this.context = context;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((context == null) ? 0 : context.hashCode());
+        result = prime * result + ((method == null) ? 0 : method.hashCode());
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        MethodAndContext other = (MethodAndContext) obj;
+        if (context == null) {
+            if (other.context != null) return false;
+        } else if (!context.equals(other.context)) return false;
+        if (method == null) {
+            if (other.method != null) return false;
+        } else if (!method.equals(other.method)) return false;
+        return true;
     }
 }
 

@@ -630,9 +630,11 @@ public class Harness {
 	              (RefType.v("java.lang.String"), 1), 0)));
 	    
 	    //call all static initializer method
+	    /*
 	    SootMethod allClinits = callAllStaticInitializers();
 	    
 	    body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(allClinits.makeRef())));
+	    */
 	    
 	    //create a nop as target of goto below, to create loop over all possible events
 	    NopStmt beginCalls = Jimple.v().newNopStmt();

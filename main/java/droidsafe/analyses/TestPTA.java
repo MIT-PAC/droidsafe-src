@@ -28,28 +28,35 @@ import droidsafe.utils.SootUtils;
  * @author mgordon
  *
  */
-public class TestPTA implements CallGraphContextVisitor {
+public class TestPTA extends CallGraphContextVisitor {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(TestPTA.class);
 
+    int numMethods = 0;
+    
     public TestPTA() {
         // TODO Auto-generated constructor stub
         CallGraphTraversal.accept(this);
+        System.out.println("Number of method/context visited: " + numMethods);
     }
 
     @Override
-    public void visit(SootMethod method, Edge context, Edge edgeInto) {
+    public void visitEntryContext(SootMethod method, Edge context) {
         // TODO Auto-generated method stub
-        testMethod(method, context, edgeInto);
+        testMethod(method, context);
     }
 
-    private void testMethod(SootMethod sm, Edge context, Edge edgeInto) {
-        //logger.info("Test Method: " + sm);
-        /*logger.info("context: " + context);
-        logger.info("Edge into: " + edgeInto);
-        logger.info("Context context: " + context.srcCtxt());
-        logger.info("Stmt: " + context.srcStmt());
-        logger.info();
+    private void testMethod(SootMethod sm, Edge context) {
+        numMethods++;
+        System.out.println("Test Method: " + sm);
+        //System.out.println(sm);
+        //System.out.println("  " + context);
+                
+        /*System.out.println("context: " + context);
+        System.out.println("Edge into: " + edgeInto);
+        System.out.println("Context context: " + context.srcCtxt());
+        System.out.println("Stmt: " + context.srcStmt());
+        System.out.println();
         */
 
         if (!sm.isConcrete())
@@ -68,15 +75,15 @@ public class TestPTA implements CallGraphContextVisitor {
 
             if (iie != null) {
                 /*
-                logger.info("Instance Invoke: " + st);
-                logger.info("Context: " + context);
+                System.out.println("Instance Invoke: " + st);
+                System.out.println("Context: " + context);
                 for (AllocNode node : GeoPTA.v().getPTSet(iie.getBase(), context)) 
-                    logger.info("  " + node);
+                    System.out.println("  " + node);
                 
                 for (AllocNode node : GeoPTA.v().getPTSetContextIns((iie.getBase()))) 
-                    logger.info("  Ins: " + node);
+                    System.out.println("  Ins: " + node);
                 
-                logger.info();
+                System.out.println();
                 */
             } else  if (st instanceof AssignStmt) {
 
@@ -105,28 +112,29 @@ public class TestPTA implements CallGraphContextVisitor {
                             rhsNodes = new LinkedHashSet<AllocNode>();
                         } else {
                             rhsNodes = new LinkedHashSet<AllocNode>();
-                            logger.info("** Empty RHS: " + a.getRightOp());
+                            System.out.println("** Empty RHS: " + a.getRightOp());
                         }
 
                         if (!lhsNodes.containsAll(rhsNodes)) {
-                            logger.info(sm + "\n" + st);
-                            logger.info("  Context: " + context);
-                            logger.info("RHS:");
+                            System.out.println(sm + "\nAssign: " + st);
+                            System.out.println("  Context: " + context);
+                            System.out.println("RHS:");
                             for (AllocNode node : rhsNodes) 
-                                logger.info("  " + node);
-                            logger.info("LHS:");
+                                System.out.println("  " + node);
+                            System.out.println("LHS:");
                             for (AllocNode node : lhsNodes) 
-                                logger.info("  " + node);
+                                System.out.println("  " + node);
                             if (a.getLeftOp() instanceof InstanceFieldRef) {
-                                Set<AllocNode> baseNodes = GeoPTA.v().getPTSet(((InstanceFieldRef)a.getLeftOp()).getBase(), 
+                                Set<AllocNode> baseNodes = 
+                                        GeoPTA.v().getPTSet(((InstanceFieldRef)a.getLeftOp()).getBase(), 
                                     context);
                                 for (AllocNode node : baseNodes) {
-                                    logger.info("  baseNode: " + node);
+                                    System.out.println("  baseNode: " + node);
                                 }
                             }
-                            /*  logger.info("Ins LHS: ");
+                            /*  System.out.println("Ins LHS: ");
                         for (AllocNode node : GeoPTA.v().getPTSetContextIns(a.getLeftOp()))
-                            logger.info("  " + node);
+                            System.out.println("  " + node);
                              */
                         }
                     }
