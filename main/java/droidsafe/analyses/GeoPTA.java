@@ -42,6 +42,7 @@ import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InterfaceInvokeExpr;
 import soot.jimple.NewExpr;
+import soot.jimple.NewMultiArrayExpr;
 import soot.jimple.NullConstant;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticFieldRef;
@@ -69,6 +70,7 @@ import soot.jimple.spark.pag.VarNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.options.PaddleOptions;
+import soot.toolkits.scalar.Pair;
 import soot.jimple.ArrayRef;
 import soot.jimple.FieldRef;
 import soot.jimple.spark.pag.FieldRefNode;
@@ -180,7 +182,14 @@ public class GeoPTA {
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
     public AllocNode getAllocNode(Object newExpr) {
-        return newToAllocNodeMap.get(newExpr);
+        if (newExpr instanceof NewMultiArrayExpr) {
+            NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
+            ArrayType type = (ArrayType)newArr.getType();
+            Integer i = type.numDimensions;
+            Pair pair = new Pair(newArr, i);
+            return newToAllocNodeMap.get(pair);
+        } else
+            return newToAllocNodeMap.get(newExpr);
     }
 
     /**
@@ -209,7 +218,7 @@ public class GeoPTA {
             if (node instanceof AllocNode) {
                 AllocNode an = (AllocNode)node;
                 newToAllocNodeMap.put(an.getNewExpr(), an);
-            }
+            } 
         }
 
         for (IVarAbstraction ivar : ptsProvider.allocations) {
@@ -218,6 +227,7 @@ public class GeoPTA {
             AllocNode obj = (AllocNode)ivar.getWrappedNode();
             newToAllocNodeMap.put(obj.getNewExpr(), obj);
         }
+        
     }
 
     /**
