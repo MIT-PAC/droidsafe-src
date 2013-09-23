@@ -23,6 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.AssignStmt;
+import soot.jimple.Constant;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Stmt;
@@ -34,18 +35,14 @@ import soot.SootMethod;
 
 import soot.Value;
 
-/** Models certain Android objects such as Intents, Strings, and Uris so that we better understand the way they are
- * built up and used.
+/** 
+ * Determine soundly and conservatively the possible values of fields of security sensitive  Android objects such as 
+ * Intents, Strings, and Uris.
  *
- * We don't want to present the analyst with the built up of each like we do now, but instead each at the time of its
- * use with as much Context as possible (this might help shorten the spec a little bit). For example, for an Intent i,
- * we should tell the analyst which View or Uri will be started when StartActivity(i) is called and let them decide
- * whether its malware or not.
- *
- * We are assuming that in general, each is used simply and once.
+ * This will make it easier for an analyst to determine if a particular security-sensitive API call that one of these
+ * objects interacts with is used maliciously by providing the necessary context.
  * 
  * @author dpetters
- *
  */
 public class ValueAnalysis extends CallGraphContextVisitor {
 
@@ -239,10 +236,14 @@ public class ValueAnalysis extends CallGraphContextVisitor {
                 if(leftOp instanceof InstanceFieldRef) {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
-                    //logResult(assignStmt.toString());
-                    //logResult(instanceFieldRef.toString());
-                    //logResult(rightOp.getType().toString());
-                    //logResult("\n");
+                    if(rightOp instanceof Constant) {
+                        Constant rightOpConstant = (Constant)rightOp;
+                        logResult(assignStmt.toString());
+                        logResult(instanceFieldRef.toString());
+                        logResult(rightOp.getType().toString());
+                        logResult(rightOpConstant.toString());
+                        logResult("\n");
+                    }
                 }
             }
         }
@@ -275,8 +276,8 @@ public class ValueAnalysis extends CallGraphContextVisitor {
      */
     private void logResults() {
         for(Map.Entry<AllocNode, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
-            logResult("AllocNode: " + entry.getKey().toString());
-            logResult("Model: " + entry.getValue().__ds__toString());
+            //logResult("AllocNode: " + entry.getKey().toString());
+            //logResult("Model: " + entry.getValue().__ds__toString());
         }
     }
 }

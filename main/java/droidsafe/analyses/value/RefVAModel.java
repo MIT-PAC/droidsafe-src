@@ -47,7 +47,7 @@ public abstract class RefVAModel extends VAModel {
     public Set<VAModel> __ds__getFieldVAModels(SootField sootField) {
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         if (sootField.getType() instanceof RefType) {
-            Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.__ds__getAllocNode(), sootField);
+            Set<AllocNode> allocNodes = new HashSet<AllocNode>();//TODO: GeoPTA.v().getPTSetContextIns(this.__ds__getAllocNode(), sootField);
             for(AllocNode allocNode : allocNodes) {
                 if(allocNode instanceof StringConstantNode) {
                     fieldVAModels.add(new StringVAModel(((StringConstantNode)allocNode).getString()));    
