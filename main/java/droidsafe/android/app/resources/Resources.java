@@ -401,6 +401,7 @@ public class Resources {
 		// load builtin strings and add them to the map
 		BuiltinStrings.v().loadBuiltinStrings();
 		stringNameToRStringSet.putAll(BuiltinStrings.v().getNameToValueSet());
+		resource_info.putAll(BuiltinStrings.v().getIdToNameMap());
 		
 	}
 
