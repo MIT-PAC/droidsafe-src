@@ -251,6 +251,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
+			if (ResourcesSoot.isAndroidId(intId)) {
+			    logger.info("android builtin IDs, ignored ");
+			    return;
+			}
+
 			SootMethod method = ResourcesSoot.v().lookupInitLayout_ID(intId);
 
 			if (method == null) {
@@ -617,6 +622,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				logger.info("Couldn't replace {} ", stmt);
 				return;
 			}
+			
+			if (ResourcesSoot.isAndroidId(intId)) {
+			    logger.info("android builtin IDs, ignored ");
+			    return;
+			}
 
 			//SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
 			SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
@@ -680,6 +690,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			catch (Exception ex) {
 				logger.info("Couldn't replace {} ", stmt);
 				return;
+			}
+
+			if (ResourcesSoot.isAndroidId(intId)) {
+			    logger.info("android builtin IDs, ignored ");
+			    return;
 			}
 
 			SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
