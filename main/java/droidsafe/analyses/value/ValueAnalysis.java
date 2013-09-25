@@ -233,6 +233,11 @@ public class ValueAnalysis extends CallGraphContextVisitor {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
                     Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetContextIns(baseValue);
+                    if(sootMethod.getName().equals("setURI")) {
+                        System.out.println("FOUND IT");
+                        System.out.println(rightOp);
+                        System.out.println(GeoPTA.v().getPTSetContextIns(rightOp));
+                    }
                     for(AllocNode allocNode : baseAllocNodes) {
                         VAModel vaModel = this.allocNodeToVAModelMap.get(allocNode);
                         if(vaModel != null) {
