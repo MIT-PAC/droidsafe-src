@@ -12,6 +12,7 @@ import java.util.jar.JarFile;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.AnySubType;
+import soot.Local;
 
 import soot.ArrayType;
 
@@ -45,10 +47,12 @@ import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
+import soot.jimple.ParameterRef;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
+import soot.jimple.internal.JIdentityStmt;
 
 import soot.LongType;
 
@@ -954,6 +958,44 @@ public class SootUtils {
      */
     public static boolean isEnum(SootClass clz) {
         return ((clz.getModifiers() & 0x4000) != 0);
+    }
+    
+    
+    /**
+     * Given a method and a index of an argument, return the local variable that is assigned
+     * to the argument index in the header of the method.
+     */
+    public static Local getLocalRefForArgIndex(SootMethod method, int i) {
+        if (!method.isConcrete()) {
+            logger.error("Asking for argument index for non-concrete method {}", method);
+            droidsafe.main.Main.exit(1);
+        }
+            
+                
+        if (i >= method.getParameterCount() || i < 0) {
+            logger.error("Asking for argument index that does not exist for method {} {}", method, i);
+            droidsafe.main.Main.exit(1);
+        }
+                  
+        if(!method.hasActiveBody())
+            method.retrieveActiveBody();
+        
+        for(Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+            Stmt stmt = (Stmt) stmts.next();
+            if (stmt instanceof JIdentityStmt) {
+                JIdentityStmt id = (JIdentityStmt)stmt;
+                
+                if (id.getRightOp() instanceof ParameterRef && ((ParameterRef)id.getRightOp()).getIndex() == i) {
+                    return (Local)id.getLeftOp();
+                }
+            }
+        }
+        
+        logger.error("Unknown error when searching for parameter assignment {} in {}.", i, method);
+        droidsafe.main.Main.exit(1);
+        
+        return null;
+       
     }
 }
 

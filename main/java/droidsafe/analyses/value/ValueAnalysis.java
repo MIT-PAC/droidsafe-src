@@ -3,11 +3,14 @@ package droidsafe.analyses.value;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CallGraphContextVisitor;
 import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.VAModel;
 
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
 
 import droidsafe.speclang.Method;
+import droidsafe.utils.SootUtils;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -16,6 +19,7 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -30,11 +34,13 @@ import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.IntConstant;
+import soot.jimple.InvokeExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
 
+import soot.Local;
 import soot.RefType;
 
 import soot.SootMethod;
@@ -213,6 +219,51 @@ public class ValueAnalysis extends CallGraphContextVisitor {
         if(model != null)
             this.allocNodeToVAModelMap.put(allocNode, model);
     }
+    
+    private Map<Local, String> getJSALocalMap(Edge edgeInto) {
+        SootMethod sootMethod = edgeInto.tgt();
+        Map<Local,String> map = new HashMap<Local,String>();
+        
+        if (!API.v().isSystemMethod(sootMethod))
+            return map;
+        
+        if (sootMethod.getParameterCount() == 0)
+            return map;
+        
+        //query jsa for all arg values
+        //if any are hotspots, add mapping from local to jsa value
+        if (edgeInto.srcStmt() == null || !edgeInto.srcStmt().containsInvokeExpr())
+            return map;
+
+        InvokeExpr invoke = edgeInto.srcStmt().getInvokeExpr();
+       
+        int i = 0;
+        for (Value argv : invoke.getArgs()) {
+            Local local = SootUtils.getLocalRefForArgIndex(sootMethod, i);
+            if (JSAStrings.v().isHotspotValue(argv)) {
+                map.put(local, JSAStrings.v().getRegex(argv));
+            }
+            
+            i++;
+        }
+        
+        if (map.isEmpty())
+            return map;
+        
+        //check to see if any of the local vals are lhs for any assignment
+        //pull out of map if so
+        for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+            Stmt stmt = (Stmt) stmts.next();
+            if(stmt instanceof AssignStmt) {
+                AssignStmt assignStmt = (AssignStmt)stmt;
+                Value leftOp = assignStmt.getLeftOp();
+                if (map.containsKey(leftOp))
+                    map.remove(leftOp);
+            }
+        }
+        
+        return map;
+    }
 
     @Override
     public void visitEntryContextAnd1CFA(SootMethod sootMethod, Edge entryEdge, Edge edgeInto) {
@@ -222,6 +273,8 @@ public class ValueAnalysis extends CallGraphContextVisitor {
 
         if(!sootMethod.hasActiveBody())
             sootMethod.retrieveActiveBody();
+        
+        Map<Local, String> jsaMap = getJSALocalMap(edgeInto);
 
         for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
             Stmt stmt = (Stmt) stmts.next();
@@ -233,11 +286,7 @@ public class ValueAnalysis extends CallGraphContextVisitor {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
                     Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetContextIns(baseValue);
-                    if(sootMethod.getName().equals("setURI")) {
-                        System.out.println("FOUND IT");
-                        System.out.println(rightOp);
-                        System.out.println(GeoPTA.v().getPTSetContextIns(rightOp));
-                    }
+                   
                     for(AllocNode allocNode : baseAllocNodes) {
                         VAModel vaModel = this.allocNodeToVAModelMap.get(allocNode);
                         if(vaModel != null) {
