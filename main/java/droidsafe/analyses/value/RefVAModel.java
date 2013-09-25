@@ -17,6 +17,8 @@ import org.apache.commons.lang3.StringUtils;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.StringConstantNode;
 
+import soot.Type;
+
 import soot.RefLikeType;
 
 import soot.RefType;
@@ -31,29 +33,61 @@ import soot.SootField;
  * @author dpetters
  */
 public abstract class RefVAModel extends VAModel {
-    
+
     /**
      * Every model is tied to an allocNode (one-to-one). 
      */
-    protected AllocNode __ds__allocNode;
+    protected AllocNode allocNode;
 
     public RefVAModel(AllocNode allocNode){
-        this.__ds__allocNode = allocNode;
+        this.allocNode = allocNode;
     }
 
     /**
-     * @returns the set of VAModels for the field
+     * @returns null if the value of the field could be anything
+     *          set of VAModels for the values of the field otherwise
      */
-    public Set<VAModel> __ds__getFieldVAModels(SootField sootField) {
+    public Set<VAModel> getFieldVAModels(SootField sootField) {
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
-        if (sootField.getType() instanceof RefType) {
-            Set<AllocNode> allocNodes = new HashSet<AllocNode>();//TODO: GeoPTA.v().getPTSetContextIns(this.__ds__getAllocNode(), sootField);
-            for(AllocNode allocNode : allocNodes) {
-                if(allocNode instanceof StringConstantNode) {
-                    fieldVAModels.add(new StringVAModel(((StringConstantNode)allocNode).getString()));    
+        Type fieldType = sootField.getType();
+        if(fieldType instanceof RefType) {
+            RefType fieldRefType = (RefType)fieldType;
+            Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.getAllocNode(), sootField);
+            if(allocNodes.size()>0){
+                if(fieldRefType.getSootClass().getName().equals("java.lang.String")) {
+                    StringVAModel stringVAModel = new StringVAModel();
+                    for(AllocNode allocNode : allocNodes) {
+                        if(allocNode instanceof StringConstantNode) {
+                            stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
+                        } else {
+                            // all strings weren't constants, invalidate
+                            stringVAModel.invalidate();
+                            break;
+                        }
+                    }
+                    fieldVAModels.add(stringVAModel);
                 } else {
-                    fieldVAModels.add(ValueAnalysis.v().getResults().get(allocNode));
+                    for(AllocNode allocNode : allocNodes) {
+                        VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
+                        if(vaModel != null) fieldVAModels.add(vaModel);
+                    }
                 }
+            }
+        } else {
+            Class<?> c = this.getClass();
+            try {
+                Field field = c.getDeclaredField(sootField.getName());
+                try {
+                    Object fieldObject = field.get(this);
+                    PrimVAModel fieldObjectPrimVAModel = (PrimVAModel)fieldObject;
+                    if(fieldObjectPrimVAModel.values.size() > 0) {
+                        fieldVAModels.add(fieldObjectPrimVAModel); 
+                    }
+                } catch(IllegalAccessException e) {
+
+                }
+            } catch(NoSuchFieldException e) {
+
             }
         }
         return fieldVAModels;
@@ -63,10 +97,10 @@ public abstract class RefVAModel extends VAModel {
      * Returns the id of the AllocNode if the model has one.
      * @returns id as String
      */
-    public String __ds__getId() {
+    public String getId() {
         String id = "";
         Pattern p = Pattern.compile("\\d+");
-        Matcher m = p.matcher(this.__ds__allocNode.toString());
+        Matcher m = p.matcher(this.allocNode.toString());
         if(m.find()) {
             id += m.group();
         }
@@ -76,54 +110,55 @@ public abstract class RefVAModel extends VAModel {
     /**
      * @returns AllocNode that corresponds to this model.
      */
-    public AllocNode __ds__getAllocNode(){
-        return this.__ds__allocNode;
+    public AllocNode getAllocNode(){
+        return this.allocNode;
     }
 
     /**
      * @returns a string representation of this object model.
      */
-    public String __ds__toString() {
+    @Override
+    public String toString() {
         String str = "<va-modeled ";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
-        str += " " + this.__ds__getId() + ": ";
-        str += "{" + this.__ds__fieldsString() + "}";
+        str += " " + this.getId() + ": ";
+        str += "{" + this.fieldsString() + "}";
         return str + ">";
     }
-   
+
     /**
      * @returns the SootClass for this object model.
      */ 
     private SootClass getSootClass() {
         // We only model objects, so the type should always be RefType
-        return ((RefType)this.__ds__getAllocNode().getType()).getSootClass();
+        return ((RefType)this.getAllocNode().getType()).getSootClass();
     }
 
     /**
-     * TODO: this needs to be made recursive now. A field's value is multiple object models now
-     * Return a string of just the resolved field values for this modeled object.
+     * Return a string of the resolved field values for this modeled object.
      */
-    private String __ds__fieldsString() {
+    private String fieldsString() {
         String fieldsString = "";
         List<String> fieldStrings = new ArrayList<String>();
-        if (this.__ds__invalidated) {
+        if (this.invalidated) {
             fieldsString += INVALIDATED;
         } else {
-            // for each field we have a reference
             for(SootField sootField : this.getSootClass().getFields()) {
-                Set<VAModel> vaModels = this.__ds__getFieldVAModels(sootField);
+                Set<VAModel> vaModels = this.getFieldVAModels(sootField);
                 if(vaModels.size() > 0){
                     // using which we call getFieldVAModels to get a list of of object models
-                    String fieldString = sootField.getName() + ":[";
+                    String fieldString = sootField.getName() + ":";
+                    if(vaModels.size() > 1) fieldString += "[";
                     List<String> objectModelStrings = new ArrayList<String>();
-                    for(VAModel objectModel : vaModels){
+                    for(VAModel vaModel : vaModels){
                         // TODO: figure out why this can be null
-                        if(objectModel != null ) {
+                        if(vaModel != null ) {
                             // for each object model we call its toString method
-                            objectModelStrings.add(objectModel.__ds__toString());
+                            objectModelStrings.add(vaModel.toString());
                         }
                     }
-                    fieldString += StringUtils.join(objectModelStrings.toArray(), ". ") + "]";
+                    fieldString += StringUtils.join(objectModelStrings.toArray(), ". ");
+                    if(vaModels.size() > 1) fieldString += "]";
                     fieldStrings.add(fieldString);
                 }
             }
