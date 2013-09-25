@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
+import soot.jimple.AnyNewExpr;
 import soot.jimple.AssignStmt;
 import soot.jimple.CastExpr;
 import soot.jimple.InstanceFieldRef;
@@ -20,6 +21,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import droidsafe.analyses.helper.CallGraphContextVisitor;
 import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -47,8 +49,12 @@ public class TestPTA extends CallGraphContextVisitor {
     }
 
     private void testMethod(SootMethod sm, Edge context) {
+        //if (API.v().isSystemMethod(sm))
+        //    return;
+        
         numMethods++;
         System.out.println("Test Method: " + sm);
+        
         //System.out.println(sm);
         //System.out.println("  " + context);
                 
@@ -89,6 +95,11 @@ public class TestPTA extends CallGraphContextVisitor {
 
                 AssignStmt a = (AssignStmt) st;
                 try {
+                    if (a.getRightOp() instanceof AnyNewExpr) {
+                        if (GeoPTA.v().getAllocNode(a.getRightOp()) == null)
+                            System.out.println("New expr not in map: " + a);
+                    } 
+                    
                     if (GeoPTA.v().isPointer(a.getLeftOp())) {
                         Set<AllocNode> lhsNodes = GeoPTA.v().getPTSet(a.getLeftOp(), context);
 

@@ -13,6 +13,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
@@ -226,6 +227,16 @@ public class Main {
     monitor.subTask("Generating Spec");
     RCFG.generate();
     logger.info("Finished Generating RCFG.");
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+
+    
+    logger.info("Finding method calls on all important alloc nodes...");
+    monitor.subTask("Generating Spec");
+    MethodCallsOnAlloc.run();
+    logger.info("Finished finding method calls on alloc nodes.");
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;

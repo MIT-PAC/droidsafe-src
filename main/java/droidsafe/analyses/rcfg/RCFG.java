@@ -117,12 +117,22 @@ public class RCFG extends CallGraphContextVisitor {
     }
 
     /**
+     * Return true if this allocation node can possible be an argument or receiver for an output event.
+     */
+    public boolean isRecOrArgForAPICall(AllocNode an) {
+        return apiCallNodes.contains(an);
+    }
+    
+    /**
      * Get the nodes of the rCFG (a forrest).
      */
     public Collection<RCFGNode> getNodes() {
         return entryEdgeToNode.values();
     }
     
+    /**
+     * Given an edge from api -> app, return the rcfgnode that represents it in the RCFG.  
+     */
     public RCFGNode getNodeForEntryEdge(Edge entryEdge) {
         if (!entryEdgeToNode.containsKey(entryEdge)) {
             logger.info("Creating new RCFG node from edge {}", entryEdge);
@@ -132,6 +142,13 @@ public class RCFG extends CallGraphContextVisitor {
         return entryEdgeToNode.get(entryEdge);
     }
     
+    /**
+     * for each edge, decide if the edge should appear as an output event for the context edge represented
+     * by the RCFGNode for the context.
+     * 
+     * Also, when an output event is found, query for all the alloc nodes that could be either a receiver or an 
+     * argument, and remember these nodes for later processing by MethodCallsOnAllocs.
+     */
     public void visitEntryContextAnd1CFA(SootMethod method, Edge entryEdge, Edge edgeInto) {
         //remember that we have visited this method
         visitedMethods.add(method);
