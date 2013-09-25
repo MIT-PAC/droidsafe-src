@@ -76,6 +76,7 @@ public class Location implements Parcelable {
 
     private float[] mResults = new float[2];
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.584 -0400", hash_original_method = "70E7035C56BDBF9C3F6572F798B0D4BF", hash_generated_method = "8AB106958B355CB4AC17F4AC5B22BFE5")
     public  Location(String provider) {
         mProvider = provider;

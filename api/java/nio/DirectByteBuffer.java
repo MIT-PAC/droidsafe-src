@@ -13,6 +13,7 @@ abstract class DirectByteBuffer extends BaseByteBuffer {
 
     protected int offset;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.524 -0400", hash_original_method = "474B95A59FDFCBE6BE31B5807DAED730", hash_generated_method = "6A61B09F75DFE3016FA31BD930001AD8")
     protected  DirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         super(capacity, block);

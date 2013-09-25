@@ -13,6 +13,7 @@ final class FloatToByteBufferAdapter extends FloatBuffer {
 
     private ByteBuffer byteBuffer;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.050 -0400", hash_original_method = "810EBC63174C0FA8B04ABE1EAC99DA74", hash_generated_method = "FC9D382F68DC054BA01D6ECD3665B29E")
       FloatToByteBufferAdapter(ByteBuffer byteBuffer) {
         super(byteBuffer.capacity() / SizeOf.FLOAT);

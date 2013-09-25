@@ -52,6 +52,7 @@ FloatBuffer var6FE30EC196CEEF16DE99C41319A74BF2_1492613504 =         FloatToByte
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.178 -0400", hash_original_method = "75D241C3AC04B03A5C5326F3F52D5EBD", hash_generated_method = "3D7AA51F41654558A83870D6F02BE117")
     @Override
     public final IntBuffer asIntBuffer() {

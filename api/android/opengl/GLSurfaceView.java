@@ -61,6 +61,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
     private boolean mPreserveEGLContextOnPause;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.253 -0400", hash_original_method = "2049D028AED77772C0EF08D2BBAE876F", hash_generated_method = "ABCBE1DBCC48566A86DFC4993FBA2798")
     public  GLSurfaceView(Context context) {
         super(context);
@@ -444,6 +445,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.265 -0400", hash_original_method = "97605796E723B11DCDEB6F529D20F6F4", hash_generated_method = "DEC8FBDC02CD7EF5E494517F655CA15F")
         public EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig config) {
             addTaint(config.getTaint());
@@ -463,6 +465,7 @@ EGLContext var4C18EADC35FDAA640D05B1661AC9F8A7_1756112244 =             egl.eglC
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.266 -0400", hash_original_method = "737CCA85FA60476B1E480C5B63FFDFD8", hash_generated_method = "FB25EC3B0764E71C6518454177D59073")
         public void destroyContext(EGL10 egl, EGLDisplay display,
                 EGLContext context) {
@@ -505,6 +508,7 @@ EGLContext var4C18EADC35FDAA640D05B1661AC9F8A7_1756112244 =             egl.eglC
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.267 -0400", hash_original_method = "B3EF23184592B8D563E81FEA0BB94777", hash_generated_method = "3B47694EC6D53D4DACF538557B8B1B28")
         public EGLSurface createWindowSurface(EGL10 egl, EGLDisplay display,
                 EGLConfig config, Object nativeWindow) {
@@ -534,6 +538,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1848407234 =             result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.268 -0400", hash_original_method = "E501A8DBEBAA16077B860412B23D22C3", hash_generated_method = "62167E021FEC61595A665B69C4B5B7F1")
         public void destroySurface(EGL10 egl, EGLDisplay display,
                 EGLSurface surface) {
@@ -700,6 +705,7 @@ EGLConfig var81567CF7749AF2EA37063F56A4D104CE_1965624746 =             config;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.273 -0400", hash_original_method = "90A4D31D410952CF994E4BDBA2A25F67", hash_generated_method = "5C5089836D83CB2B5DA887972AB6298E")
         @Override
         public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
@@ -807,6 +813,7 @@ EGLConfig var540C13E9E156B687226421B24F2DF178_867898396 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.276 -0400", hash_original_method = "E1120F549D6F6E96023A6A07CACEFA1B", hash_generated_method = "A47F62F6DCD00CF4E5E8066D4D9B5CE1")
         public void start() {
             if(LOG_EGL)            
@@ -843,6 +850,7 @@ EGLConfig var540C13E9E156B687226421B24F2DF178_867898396 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.277 -0400", hash_original_method = "E9F7F165780F6F468D822EAA5675F636", hash_generated_method = "0470F2E4C6714F5AE2C4FE5CE9F545BF")
         public GL createSurface(SurfaceHolder holder) {
             if(LOG_EGL)            
@@ -915,6 +923,7 @@ GL varFAA02136F9EBF1C6070126B7C9E9CB37_1835747862 =             gl;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.279 -0400", hash_original_method = "009805D54505405E7F35DCDF643A7FC6", hash_generated_method = "7A469EDC4D4D4A110B38ED9ADFB06D4D")
         public void purgeBuffers() {
             mEgl.eglMakeCurrent(mEglDisplay,
@@ -933,6 +942,7 @@ GL varFAA02136F9EBF1C6070126B7C9E9CB37_1835747862 =             gl;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.280 -0400", hash_original_method = "9C95ED348041927E683F703A784FA97A", hash_generated_method = "90FE5F937599601CA7A40CE1AB4191B2")
         public boolean swap() {
             if(! mEgl.eglSwapBuffers(mEglDisplay, mEglSurface))            
@@ -969,6 +979,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.281 -0400", hash_original_method = "F4390E64E142A92962AFFCA2A868DB1D", hash_generated_method = "3AA48DFDF0E8A5A71C0F9271AB99BF16")
         public void destroySurface() {
             if(LOG_EGL)            
@@ -996,6 +1007,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.282 -0400", hash_original_method = "75E7D06EEC93D6B21DBAB7382B0AE2AF", hash_generated_method = "FAEB092283C1C5AEF04BC4EA95AB9696")
         public void finish() {
             if(LOG_EGL)            
@@ -1131,6 +1143,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.288 -0400", hash_original_method = "4EBF7F6B9BB16BE66D221453F245DA46", hash_generated_method = "550DD3240C41D167A1DDF31588BE6F1A")
         @Override
         public void run() {
@@ -1599,6 +1612,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.306 -0400", hash_original_method = "C67CE20F9EC18CF1CF416A1853C3B589", hash_generated_method = "186DAF0D2A1313F1C6758DAF78FC2EDA")
         public void onPause() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1646,6 +1660,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.306 -0400", hash_original_method = "8E5DEB2C9B7EC152BCE3E0DC74768ADB", hash_generated_method = "A4140363D9851395C6C0B8362748A2CC")
         public void onResume() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1764,6 +1779,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.309 -0400", hash_original_method = "9327C398D00F21C8F0D3A5F602389F52", hash_generated_method = "859D4162BE0DBF24AB151CDCBA2CD53F")
         public void requestReleaseEglContextLocked() {
             mShouldReleaseEglContext = true;
@@ -1824,6 +1840,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.310 -0400", hash_original_method = "4397D4B6CC585AD9A2FABC1DB1031654", hash_generated_method = "97F56083B0C8ACED57AE8237C5E7EFB5")
         @Override
         public void flush() {
@@ -1833,6 +1850,7 @@ switch(error){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.311 -0400", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "9BDF1371A8F52A0B4DB9441B7A707252")
         @Override
         public void write(char[] buf, int offset, int count) {
@@ -1911,6 +1929,7 @@ for(int i = 0;i < count;i++)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.312 -0400", hash_original_method = "FE8705658DEAD61621738F4D8A2A7147", hash_generated_method = "29D8A8F475D3E7C44E72CDC33E671C23")
         public synchronized void threadExiting(GLThread thread) {
             addTaint(thread.getTaint());
@@ -1935,6 +1954,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.313 -0400", hash_original_method = "BB464B3FFF506A1CF7A316246B2050CF", hash_generated_method = "85270BE6A21C1C664C07754013ACFA1C")
         public boolean tryAcquireEglContextLocked(GLThread thread) {
             if(mEglOwner == thread || mEglOwner == null)            
@@ -1976,6 +1996,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.313 -0400", hash_original_method = "3F74D4F9D098B5B4B240AE885DDBE7E6", hash_generated_method = "DDDEEFB1E851589A136B3AB748BF49DD")
         public void releaseEglContextLocked(GLThread thread) {
             addTaint(thread.getTaint());
@@ -2003,6 +2024,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.314 -0400", hash_original_method = "BB392C65C3FB4BE472C770A6388E6483", hash_generated_method = "7DF816D2C9AA4194DB92CADA46E5AC87")
         public synchronized boolean shouldTerminateEGLWhenPausing() {
             checkGLESVersion();
@@ -2015,6 +2037,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.314 -0400", hash_original_method = "3071AD09B063784236EDA64AF3B8A081", hash_generated_method = "ACB68AC38CE55DB9C98558ECF8E21312")
         public synchronized void checkGLDriver(GL10 gl) {
             addTaint(gl.getTaint());

@@ -255,6 +255,7 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.616 -0400", hash_original_method = "BE0504B13DA269CA089182E44C7F834B", hash_generated_method = "DFEB890C2DD945BBAFD101E3D282231F")
     public void glColorPointer(
         int size,
@@ -636,6 +637,7 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.622 -0400", hash_original_method = "A9D2CB8422A028FB150957649B6BF2BA", hash_generated_method = "ABD334F1ED3EE45E2A3347F6D074AA5E")
     public String glGetString(
         int name
@@ -1458,6 +1460,7 @@ String varC04F7EF67EFA4B802A6C88CA1EC6368A_1687678124 =         returnValue;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.630 -0400", hash_original_method = "EB50FBD03587D2E27B120FC4C1DFD2C5", hash_generated_method = "63F79E5606DDE77685C98D550EEB41CA")
     public void glVertexPointer(
         int size,

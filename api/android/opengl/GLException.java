@@ -12,6 +12,7 @@ public class GLException extends RuntimeException {
 
     private int mError;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:24.434 -0400", hash_original_method = "96DB8331E14285058E25E6A757999905", hash_generated_method = "8817BEE8B1FD83BF9A81AAEB44786CFD")
     public  GLException(final int error) {
         super(getErrorString(error));
@@ -21,6 +22,7 @@ public class GLException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:24.434 -0400", hash_original_method = "A636DB5B62EC5D4719489ECE76BDA6F0", hash_generated_method = "B9A54DA43E2FF78984AE8A384AF78FBE")
     public  GLException(final int error, final String string) {
         super(string);

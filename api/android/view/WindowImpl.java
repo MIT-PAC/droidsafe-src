@@ -57,7 +57,8 @@ public class WindowImpl extends Window {
 
 	}
 
-	@Override
+	@DSModeled(DSC.SAFE)
+    @Override
 	public void setContentView(View view) {
 		// TODO Auto-generated method stub
 
@@ -278,7 +279,8 @@ public class WindowImpl extends Window {
 		return false;
 	}
 
-	@Override
+	@DSModeled(DSC.SAFE)
+    @Override
 	public void setVolumeControlStream(int streamType) {
 		// TODO Auto-generated method stub
 

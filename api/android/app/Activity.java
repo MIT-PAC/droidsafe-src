@@ -368,6 +368,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     protected void onPostCreate(Bundle savedInstanceState){
 		onTitleChanged(getTitle(), getTitleColor());
 		// Original method
@@ -384,6 +385,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     protected void onStart(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, false);
 		mLoaderManager.doStart();
@@ -1459,6 +1461,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean onCreateOptionsMenu(Menu menu){
 		return mParent.onCreateOptionsMenu(menu);
 		// Original method
@@ -1503,6 +1506,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void onOptionsMenuClosed(Menu menu){
 		mParent.onOptionsMenuClosed(menu);
 		// Original method
@@ -1605,6 +1609,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -1671,6 +1676,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated protected void onPrepareDialog(int id, Dialog dialog, Bundle args){
 		onPrepareDialog(id, dialog);
 		// Original method
