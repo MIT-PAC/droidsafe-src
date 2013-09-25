@@ -16,6 +16,18 @@ if (defined($outName)) {
 $commentStarted = 0;
 
 while (<IFILE>) {
+    if (/\*\//) {
+        $commentStarted = 0;
+        next;
+    }
+    if (/\/\*/) {
+        $commentStarted = 1;
+        next;
+    }
+
+    next if ($commentStarted );
+
+
     if (/class\s+(\w+)\s*\{/) {
         push @classList, $1;
         next;
