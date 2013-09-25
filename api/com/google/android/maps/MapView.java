@@ -28,6 +28,7 @@ public class MapView extends MockView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 14:12:51.484 -0400", hash_original_method = "E5E0F6A0D4E2DB742AD5FA2BA02C5B13", hash_generated_method = "8F929D8F6A5E05453D841C81DB09069F")
     public  MapView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

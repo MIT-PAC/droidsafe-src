@@ -20,6 +20,7 @@ class GLErrorWrapper extends GLWrapperBase {
 
     Thread mOurThread;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.409 -0400", hash_original_method = "C181619CCB40EB18FF121A09C05E4687", hash_generated_method = "9209FEC4718FFBB927B0ECA8D410C78F")
     public  GLErrorWrapper(GL gl, int configFlags) {
         super(gl);
@@ -175,6 +176,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.452 -0400", hash_original_method = "4364D8D5F51B3C6569C8F39D4E51EA04", hash_generated_method = "3126DE78A319B06BB6AA81E1C8853551")
     public void glClearColor(float red, float green, float blue, float alpha) {
         addTaint(alpha);
@@ -208,6 +210,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.462 -0400", hash_original_method = "956F409EF1EADA73108A1C4B67FC1A5C", hash_generated_method = "4263199169E232E1840850A4A45791D5")
     public void glClearDepthf(float depth) {
         addTaint(depth);
@@ -527,6 +530,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.550 -0400", hash_original_method = "D49564350639657A355C4B877826C52F", hash_generated_method = "691B31A683E16E6F28367940F80FC748")
     public void glDisable(int cap) {
         addTaint(cap);
@@ -540,6 +544,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.554 -0400", hash_original_method = "855E8B051ED8CBC1203FC822FD021828", hash_generated_method = "2C87E55CD9FA59E7F886425D5E5A4C52")
     public void glDisableClientState(int array) {
         addTaint(array);
@@ -569,6 +574,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.561 -0400", hash_original_method = "5219ACFB98EACED3BA7FB66380EED928", hash_generated_method = "24259BB38A17FA4EE1E8AE1F94DE3A7F")
     public void glDrawElements(int mode, int count, int type, Buffer indices) {
         addTaint(indices.getTaint());
@@ -599,6 +605,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.569 -0400", hash_original_method = "5109B9FEC88700C058123D36B6279F4D", hash_generated_method = "3C7ADA71447FDEED9C1A2ECE99B76C22")
     public void glEnableClientState(int array) {
         addTaint(array);
@@ -725,6 +732,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.601 -0400", hash_original_method = "DC820EC7C8249DB3ACF589F75D2A15E5", hash_generated_method = "69779A3EB10762DC33F17DD168ED7840")
     public void glFrontFace(int mode) {
         addTaint(mode);
@@ -738,6 +746,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.605 -0400", hash_original_method = "BCF359F592E3040EB9E1338B9A9400AB", hash_generated_method = "81AB724A4603916949067DE74D129824")
     public void glFrustumf(float left, float right, float bottom, float top,
             float near, float far) {
@@ -854,6 +863,7 @@ class GLErrorWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.632 -0400", hash_original_method = "3ED6913E5E7CF46B5A28C7A9761C377B", hash_generated_method = "426499C4CE52AED3DF342275485BEF8E")
     public String glGetString(int name) {
         addTaint(name);
@@ -1272,6 +1282,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_637267855 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.738 -0400", hash_original_method = "1CF0B8C2254257C506F75CED4FDC3C00", hash_generated_method = "BB92B5522E16E64A863F401B7A93CE23")
     public void glMatrixMode(int mode) {
         addTaint(mode);
@@ -1577,6 +1588,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_637267855 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.815 -0400", hash_original_method = "0DE4332635328A12C013DB27FF2CE04A", hash_generated_method = "0695A3E0A1FE7B143CF6F802ACA0CCC4")
     public void glRotatef(float angle, float x, float y, float z) {
         addTaint(z);
@@ -1639,6 +1651,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_637267855 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.830 -0400", hash_original_method = "F71CEF3DEC5AC68CAFB885B631BEEB80", hash_generated_method = "233FB1073B0D7F2B76A8EDEA0313A373")
     public void glScalef(float x, float y, float z) {
         addTaint(z);
@@ -1686,6 +1699,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_637267855 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.841 -0400", hash_original_method = "E292B70498533BCBAEEFF3AED828C0E0", hash_generated_method = "3E0598414024957ABDAA3E391F836670")
     public void glShadeModel(int mode) {
         addTaint(mode);
@@ -2000,6 +2014,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_637267855 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.919 -0400", hash_original_method = "B863B365542A05B8E086855775B1B25D", hash_generated_method = "2EDAD4EFFCC02E31EBDEBF2CA13029E2")
     public void glVertexPointer(int size, int type,
             int stride, Buffer pointer) {
@@ -2017,6 +2032,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_637267855 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-24 12:42:56.922 -0400", hash_original_method = "9EC0F2F771D5D0C8A7E09F5D4B11D824", hash_generated_method = "A548E8C7B98818B6771BA39592D2C77D")
     public void glViewport(int x, int y, int width, int height) {
         addTaint(height);

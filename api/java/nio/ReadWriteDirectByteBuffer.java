@@ -202,6 +202,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1714559401 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.664 -0400", hash_original_method = "C81F946AF2E7397E3B6D2FB9DB9038F5", hash_generated_method = "39F19424789394E78DAD0EB2D79A33B4")
     final void put(float[] src, int srcOffset, int floatCount) {
         addTaint(floatCount);

@@ -542,6 +542,7 @@ Number var74971C09A2489F39862E7D44F1B176BF_987583909 =         parse(address, st
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.842 -0400", hash_original_method = "6BE8F2BF8B3A5604EA6D6E250F279823", hash_generated_method = "3262CACEC5E7ABCA1D9BD89541329C1C")
     public String getNegativePrefix() {
         if(negPrefNull)        

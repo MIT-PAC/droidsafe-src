@@ -154,6 +154,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public FileInputStream openFileInput(String name)
         throws FileNotFoundException {
