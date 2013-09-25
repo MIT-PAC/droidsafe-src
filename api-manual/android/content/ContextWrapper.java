@@ -47,7 +47,7 @@ import droidsafe.annotations.DSModeled;
 public class ContextWrapper extends Context {
     private Context mBase;
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public ContextWrapper(Context base) {
         mBase = base;
     }
@@ -59,7 +59,7 @@ public class ContextWrapper extends Context {
      * 
      * @param base The new base context for this wrapper.
      */
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     protected void attachBaseContext(Context base) {
         mBase = base;
         
@@ -68,19 +68,19 @@ public class ContextWrapper extends Context {
     /**
      * @return the base context as set by the constructor or setBaseContext
      */
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public Context getBaseContext() {
         return mBase;
     }
 
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public AssetManager getAssets() {
         return mBase.getAssets();
     }
 
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public Resources getResources()
     {
         return mBase.getResources();
@@ -92,7 +92,7 @@ public class ContextWrapper extends Context {
     }
 
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public ContentResolver getContentResolver() {
     	return mBase.getContentResolver();
     }

@@ -126,7 +126,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 		*/
 	}
 	
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public final int getThemeResource() {
         return getTaintInt();
     }

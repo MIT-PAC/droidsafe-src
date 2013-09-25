@@ -15,7 +15,7 @@ import java.util.TimeZone;
 
 public class ExifInterface {
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled() //Decided to go with SPEC because in theory be used for covert data storage
 	private void loadAttributes() throws IOException {
 		addTaint("string attribute taint".getTaint()); //Implicit taint for getAttribute
 		//addTaint(-1.getTaint()); //Implicit taint for getAttributeInt

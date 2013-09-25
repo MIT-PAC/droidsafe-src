@@ -60,7 +60,7 @@ public class ContextImpl extends Context {
 	private DroidSafeContentResolver contentResolver;
 	private SensorManager sensorManager;
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public ContextImpl() {
 		contentResolver = new DroidSafeContentResolver(this);
 		sensorManager = new SensorManager();
@@ -87,7 +87,7 @@ public class ContextImpl extends Context {
     }
 
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled()
     public Resources getResources() {
         return Resources.getSystem();
     }
@@ -98,7 +98,7 @@ public class ContextImpl extends Context {
     }
 
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public ContentResolver getContentResolver() {
         return contentResolver;
     }

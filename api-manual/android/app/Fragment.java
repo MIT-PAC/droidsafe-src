@@ -17,12 +17,12 @@ import droidsafe.annotations.DSModeled;
 
 public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListener {
 
-	@DSModeled(DSC.SPEC)
+	@DSModeled	
 	public Fragment() {
 		onCreateView(new LayoutInflater(), null, null);
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		//return null;
@@ -55,11 +55,24 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
 		
 	}
 
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	@DSModeled(DSC.SAFE)
+	public final String getString(int resId) {
+		String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public final CharSequence getText(int resId) {
+        String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
 
 }

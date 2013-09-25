@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Set;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -35,25 +37,28 @@ public abstract class Context {
 
 	
 	/* Concrete Methods */
+    @DSModeled(DSC.SAFE)
 	public boolean isRestricted() {
         return false;
     }
 	
+	@DSModeled(value = DSC.SAFE)
 	public int getThemeResId() {
         return 0;
     }
 	
+	@DSModeled(DSC.SAFE)
+	public final String getString(int resId) {
+		String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
+	
+	@DSModeled(DSC.SAFE)
 	public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
         return str;
-		/*
-		 * No need to model the Resources class at this time.  The underlying
-		 * implementation calls down into AssetManager and simply supplies a
-		 * string value.  If more items utilize Resources or AssetManager we
-		 * may need to model those classes.  For now this will suffice.
-		 */
-        //return getResources().getText(resId);
     }
 	
 	@DSModeled(value = DSC.SAFE)
@@ -61,10 +66,13 @@ public abstract class Context {
 		//Do Nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs) {
         return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
     }
+	
+	
 	
 	/* Abstract Methods */
 	public abstract Object getSystemService(String name);
@@ -182,4 +190,12 @@ public abstract class Context {
     public abstract void setWallpaper(InputStream data) throws IOException;
 	@Deprecated
     public abstract void clearWallpaper() throws IOException;
+	
+	// Hook to match with value analsysis
+	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
+
+	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here 
+	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
+		this.__ds__intentFilters.add(intentFilter);
+	}
 }

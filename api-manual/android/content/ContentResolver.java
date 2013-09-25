@@ -172,7 +172,7 @@ public abstract class ContentResolver {
     private static final int SLOW_THRESHOLD_MILLIS = 500;
     private final Random mRandom = new Random();  // guarded by itself
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public ContentResolver(Context context) {
         mContext = context;
     }
@@ -261,7 +261,7 @@ public abstract class ContentResolver {
         }
     }
 
-   @DSModeled(DSC.SPEC)
+   @DSModeled
    /**
     * On this query call, we want the information flow taint to flow from the
     * query call to the underlying cursor.  So just create a cursor and return it.

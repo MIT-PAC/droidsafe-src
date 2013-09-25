@@ -68,13 +68,13 @@ public class Resources {
 	    }
 	    
         @Override
-        @DSModeled(DSC.SPEC)
+        @DSModeled
         public void put(long k, Object o) {
             //throw new UnsupportedOperationException();
             
         }
         
-        @DSModeled(DSC.SPEC)
+        @DSModeled
         @Override
         public void append(long k, Object o) {
             //throw new UnsupportedOperationException();
@@ -154,22 +154,21 @@ public class Resources {
 	    return mSystem;
 	}
 	
-	public CharSequence getText(int id){
-		
-		// Original method
-		/*
-		{
-        CharSequence res = mAssets.getResourceText(id);
-        if (res != null) {
-            return res;
-        }
-        throw new NotFoundException("String resource ID #0x"
-                                    + Integer.toHexString(id));
-    }
-		*/
-		return null;
+	
+	@DSModeled(DSC.SAFE)
+	public final String getString(int resId) {
+		String str = new String();
+        str.addTaint(resId);
+        return str;
 	}
 	
+	@DSModeled(DSC.SAFE)
+	public final CharSequence getText(int resId) {
+        String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
+    
 	public CharSequence getQuantityText(int id, int quantity){
 		
 		// Original method
@@ -209,7 +208,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	private static int attrForQuantityCode(int quantityCode){
 		
 		// Original method
@@ -228,7 +227,7 @@ public class Resources {
 		return 0;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	private static String stringForQuantityCode(int quantityCode){
 		
 		// Original method
@@ -247,24 +246,8 @@ public class Resources {
 		return "";
 	}
 	
-	@DSModeled(DSC.SPEC)
-	public String getString(int id){
-		
-		// Original method
-		/*
-		{
-        CharSequence res = getText(id);
-        if (res != null) {
-            return res.toString();
-        }
-        throw new NotFoundException("String resource ID #0x"
-                                    + Integer.toHexString(id));
-    }
-		*/
-		return "";
-	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public String getString(int id, Object... formatArgs){
 		
 		// Original method
@@ -277,7 +260,7 @@ public class Resources {
 		return "";
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public String getQuantityString(int id, int quantity, Object... formatArgs){
 		
 		// Original method
@@ -290,7 +273,7 @@ public class Resources {
 		return "";
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public String getQuantityString(int id, int quantity){
 		
 		// Original method
@@ -302,7 +285,7 @@ public class Resources {
 		return "";
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public CharSequence getText(int id, CharSequence def){
 		
 		// Original method
@@ -315,7 +298,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public CharSequence[] getTextArray(int id){
 		
 		// Original method
@@ -332,7 +315,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public String[] getStringArray(int id){
 		
 		// Original method
@@ -349,7 +332,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public int[] getIntArray(int id){
 		
 		// Original method
@@ -366,7 +349,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public TypedArray obtainTypedArray(int id){
 		
 		// Original method
@@ -388,7 +371,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public float getDimension(int id){
 		
 		// Original method
@@ -409,7 +392,7 @@ public class Resources {
 		return 0;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public int getDimensionPixelOffset(int id){
 		
 		// Original method
@@ -431,7 +414,7 @@ public class Resources {
 		return 0;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public int getDimensionPixelSize(int id){
 		
 		// Original method
@@ -453,7 +436,7 @@ public class Resources {
 		return 0;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public float getFraction(int id, int base, int pbase){
 		
 		// Original method
@@ -474,7 +457,7 @@ public class Resources {
 		return 0;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public Drawable getDrawable(int id){
 		
 		// Original method
@@ -490,7 +473,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public Drawable getDrawableForDensity(int id, int density){
 		
 		// Original method
@@ -516,7 +499,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public Movie getMovie(int id){
 		
 		// Original method
@@ -536,7 +519,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public int getColor(int id){
 		
 		// Original method
@@ -561,7 +544,7 @@ public class Resources {
 		return 0;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public ColorStateList getColorStateList(int id){
 		
 		// Original method
@@ -577,7 +560,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public boolean getBoolean(int id){
 		
 		// Original method
@@ -599,7 +582,7 @@ public class Resources {
 		return false;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public int getInteger(int id){
 		
 		// Original method
@@ -621,7 +604,7 @@ public class Resources {
 		return 0;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public XmlResourceParser getLayout(int id){
 		
 		// Original method
@@ -633,7 +616,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public XmlResourceParser getAnimation(int id){
 		
 		// Original method
@@ -645,7 +628,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public XmlResourceParser getXml(int id){
 		
 		// Original method
@@ -657,7 +640,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public InputStream openRawResource(int id){
 		
 		// Original method
@@ -671,7 +654,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public InputStream openRawResource(int id, TypedValue value){
 		
 		// Original method
@@ -693,7 +676,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public AssetFileDescriptor openRawResourceFd(int id){
 		
 		// Original method
@@ -721,7 +704,7 @@ public class Resources {
 		return null;
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public void getValue(int id, TypedValue outValue, boolean resolveRefs){
 		
 		// Original method
@@ -738,7 +721,7 @@ public class Resources {
 		//Return nothing
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public void getValueForDensity(int id, int density, TypedValue outValue, boolean resolveRefs){
 		
 		// Original method
@@ -754,7 +737,7 @@ public class Resources {
 		//Return nothing
 	}
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public void getValue(String name, TypedValue outValue, boolean resolveRefs){
 		
 		// Original method
