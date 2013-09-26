@@ -148,8 +148,6 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
             logger.warn("Unable to open va-results.log: ", e);
         }
 
-        System.out.println(JSAStrings.v().getHotspots());
-
         am.createObjectModels();
 
         CallGraphTraversal.acceptEntryContextAnd1CFA(am);

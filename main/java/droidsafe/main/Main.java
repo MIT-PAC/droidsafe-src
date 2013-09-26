@@ -160,7 +160,7 @@ public class Main {
 
     logger.info("Injecting String Analysis Results.");
     monitor.subTask("Injecting String Analysis Results.");
-    // JSAResultInjection.run();
+    JSAResultInjection.run();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
