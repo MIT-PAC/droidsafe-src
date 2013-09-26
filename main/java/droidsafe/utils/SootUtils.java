@@ -959,44 +959,6 @@ public class SootUtils {
     public static boolean isEnum(SootClass clz) {
         return ((clz.getModifiers() & 0x4000) != 0);
     }
-    
-    
-    /**
-     * Given a method and a index of an argument, return the local variable that is assigned
-     * to the argument index in the header of the method.
-     */
-    public static Local getLocalRefForArgIndex(SootMethod method, int i) {
-        if (!method.isConcrete()) {
-            logger.error("Asking for argument index for non-concrete method {}", method);
-            droidsafe.main.Main.exit(1);
-        }
-            
-                
-        if (i >= method.getParameterCount() || i < 0) {
-            logger.error("Asking for argument index that does not exist for method {} {}", method, i);
-            droidsafe.main.Main.exit(1);
-        }
-                  
-        if(!method.hasActiveBody())
-            method.retrieveActiveBody();
-        
-        for(Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
-            Stmt stmt = (Stmt) stmts.next();
-            if (stmt instanceof JIdentityStmt) {
-                JIdentityStmt id = (JIdentityStmt)stmt;
-                
-                if (id.getRightOp() instanceof ParameterRef && ((ParameterRef)id.getRightOp()).getIndex() == i) {
-                    return (Local)id.getLeftOp();
-                }
-            }
-        }
-        
-        logger.error("Unknown error when searching for parameter assignment {} in {}.", i, method);
-        droidsafe.main.Main.exit(1);
-        
-        return null;
-       
-    }
 }
 
 

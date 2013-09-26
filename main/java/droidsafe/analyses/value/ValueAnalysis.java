@@ -241,7 +241,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
        
         int i = 0;
         for (Value argv : invoke.getArgs()) {
-            Local local = SootUtils.getLocalRefForArgIndex(sootMethod, i);
+            Local local = sootMethod.getActiveBody().getParameterLocal(i);
             if (JSAStrings.v().isHotspotValue(argv)) {
                 map.put(local, JSAStrings.v().getRegex(argv));
             }
