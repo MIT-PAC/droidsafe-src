@@ -19,10 +19,10 @@ import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
-import droidsafe.analyses.helper.CallGraphContextVisitor;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
+import droidsafe.analyses.helper.*;
 
 /**
  * Hacked up testing pass for the PTA and the call graph traversal.
@@ -30,7 +30,7 @@ import droidsafe.utils.SootUtils;
  * @author mgordon
  *
  */
-public class TestPTA extends CallGraphContextVisitor {
+public class TestPTA implements CGVisitorEntryContext {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(TestPTA.class);
 
@@ -38,16 +38,21 @@ public class TestPTA extends CallGraphContextVisitor {
     
     public TestPTA() {
         // TODO Auto-generated constructor stub
-        CallGraphTraversal.accept(this);
+        CallGraphTraversal.acceptEntryContext(this);
         System.out.println("Number of method/context visited: " + numMethods);
     }
 
     @Override
     public void visitEntryContext(SootMethod method, Edge context) {
         // TODO Auto-generated method stub
-        testMethod(method, context);
+        //testMethod(method, context);
+        countMethods(method, context);
     }
 
+    private void countMethods(SootMethod sm, Edge context) {
+        numMethods++;
+    }
+    
     private void testMethod(SootMethod sm, Edge context) {
         //if (API.v().isSystemMethod(sm))
         //    return;

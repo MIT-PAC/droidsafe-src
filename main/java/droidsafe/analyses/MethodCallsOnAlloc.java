@@ -11,7 +11,7 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
-import droidsafe.analyses.helper.CallGraphContextVisitor;
+import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
@@ -26,7 +26,7 @@ import droidsafe.analyses.rcfg.RCFG;
  * @author mgordon
  *
  */
-public class MethodCallsOnAlloc extends CallGraphContextVisitor {
+public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
     /** Map of alloc node to edges that could have alloc node as receiver or arg */
     private Map<AllocNode,Set<Edge>> nodeToCalls;
     /** Singleton object */
@@ -51,7 +51,7 @@ public class MethodCallsOnAlloc extends CallGraphContextVisitor {
      */
     public static void run() {
         v = new MethodCallsOnAlloc();
-        CallGraphTraversal.accept(v);
+        CallGraphTraversal.acceptEntryContextAnd1CFA(v);
     }
     
     /**

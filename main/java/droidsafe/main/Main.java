@@ -17,6 +17,7 @@ import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
+import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
@@ -83,6 +84,7 @@ public class Main {
     Permissions.init();
     ResourcesSoot.reset();
     JimpleRelationships.reset();
+    CallGraphTraversal.reset();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -189,7 +191,10 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
+    //reset the cache of the call graph traversal
+    CallGraphTraversal.reset();
+    
     // write jimple txt files for all classes so we can analzye them
     // all transforms should be done by here.
 

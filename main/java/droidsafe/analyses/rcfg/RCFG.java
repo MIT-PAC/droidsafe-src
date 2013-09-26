@@ -51,7 +51,7 @@ import soot.Type;
 import soot.RefLikeType;
 
 import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CallGraphContextVisitor;
+import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -73,7 +73,7 @@ import droidsafe.utils.Utils;
  * @author mgordon
  *
  */
-public class RCFG extends CallGraphContextVisitor {
+public class RCFG implements CGVisitorEntryAnd1CFA {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(RCFG.class);
      /** Singleton of this class */
@@ -105,7 +105,7 @@ public class RCFG extends CallGraphContextVisitor {
      */
     public static void generate() {
         v = new RCFG();
-        CallGraphTraversal.accept(v);
+        CallGraphTraversal.acceptEntryContextAnd1CFA(v);
         //print unreachable methods to the debug log
         v.printUnreachableSrcMethods();
     }
