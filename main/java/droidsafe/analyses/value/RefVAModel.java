@@ -3,6 +3,8 @@ package droidsafe.analyses.value;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.value.models.droidsafe.primitives.StringVAModel;
 
+import droidsafe.utils.SootUtils;
+
 import java.lang.reflect.Field;
 
 import java.util.ArrayList;
@@ -17,15 +19,13 @@ import org.apache.commons.lang3.StringUtils;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.StringConstantNode;
 
-import soot.Type;
-
-import soot.RefLikeType;
-
 import soot.RefType;
 
 import soot.SootClass;
 
 import soot.SootField;
+
+import soot.Type;
 
 /**
  * Base class for value analysis object models.
@@ -50,28 +50,34 @@ public abstract class RefVAModel extends VAModel {
     public Set<VAModel> getFieldVAModels(SootField sootField) {
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         Type fieldType = sootField.getType();
-        if(fieldType instanceof RefType) {
+        if(fieldType instanceof RefType && !((RefType)fieldType).getSootClass().getName().equals("java.lang.String")) {
             RefType fieldRefType = (RefType)fieldType;
             Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.getAllocNode(), sootField);
-            if(allocNodes.size()>0){
-                if(fieldRefType.getSootClass().getName().equals("java.lang.String")) {
-                    StringVAModel stringVAModel = new StringVAModel();
-                    for(AllocNode allocNode : allocNodes) {
-                        if(allocNode instanceof StringConstantNode) {
-                            stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
-                        } else {
-                            // all strings weren't constants, invalidate
-                            stringVAModel.invalidate();
-                            break;
-                        }
-                    }
-                    fieldVAModels.add(stringVAModel);
-                } else {
-                    for(AllocNode allocNode : allocNodes) {
-                        VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
-                        if(vaModel != null) fieldVAModels.add(vaModel);
-                    }
+            if(allocNodes.size() > 0){
+                /*
+                   if(fieldRefType.getSootClass().getName().equals("java.lang.String")) {
+                   StringVAModel stringVAModel = new StringVAModel();
+                   for(AllocNode allocNode : allocNodes) {
+                   if(allocNode instanceof StringConstantNode) {
+                   stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
+                   } else {
+                // all strings weren't constants, invalidate
+                stringVAModel.invalidate();
+                break;
+                   }
+                   }
+                   fieldVAModels.add(stringVAModel);
+                   } else {
+                   */
+                for(AllocNode allocNode : allocNodes) {
+                    VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
+                    if(vaModel != null)
+                        fieldVAModels.add(vaModel);
+                    else
+                        return null;
                 }
+
+                //} 
             }
         } else {
             Class<?> c = this.getClass();
@@ -80,14 +86,14 @@ public abstract class RefVAModel extends VAModel {
                 try {
                     Object fieldObject = field.get(this);
                     PrimVAModel fieldObjectPrimVAModel = (PrimVAModel)fieldObject;
-                    if(fieldObjectPrimVAModel.values.size() > 0) {
+                    if(fieldObjectPrimVAModel.invalidated() || fieldObjectPrimVAModel.values.size() > 0) {
                         fieldVAModels.add(fieldObjectPrimVAModel); 
                     }
                 } catch(IllegalAccessException e) {
-
+                    return null;
                 }
             } catch(NoSuchFieldException e) {
-
+                return null;
             }
         }
         return fieldVAModels;
@@ -143,9 +149,12 @@ public abstract class RefVAModel extends VAModel {
         if (this.invalidated) {
             fieldsString += INVALIDATED;
         } else {
-            for(SootField sootField : this.getSootClass().getFields()) {
+            for(SootField sootField : getAllFields(this.getSootClass())) {
                 Set<VAModel> vaModels = this.getFieldVAModels(sootField);
-                if(vaModels.size() > 0){
+                if(vaModels == null) {
+                    String fieldString = sootField.getName() + ":INV";
+                    fieldStrings.add(fieldString);
+                } else if(vaModels.size() > 0){
                     // using which we call getFieldVAModels to get a list of of object models
                     String fieldString = sootField.getName() + ":";
                     if(vaModels.size() > 1) fieldString += "[";
@@ -165,5 +174,14 @@ public abstract class RefVAModel extends VAModel {
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
         }
         return fieldsString;
+    }
+
+    private Set<SootField> getAllFields(SootClass sootClass) {
+        Set<SootField> sootFields = new HashSet<SootField>();
+        sootFields.addAll(sootClass.getFields());
+        for(SootClass parentSootClass : SootUtils.getParents(sootClass)) {
+            sootFields.addAll(parentSootClass.getFields());
+        }
+        return sootFields;
     }
 }

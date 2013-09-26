@@ -148,6 +148,8 @@ public class ValueAnalysis extends CallGraphContextVisitor {
             logger.warn("Unable to open va-results.log: ", e);
         }
 
+        System.out.println(JSAStrings.v().getHotspots());
+
         am.createObjectModels();
 
         CallGraphTraversal.accept(am);
@@ -273,9 +275,9 @@ public class ValueAnalysis extends CallGraphContextVisitor {
 
         if(!sootMethod.hasActiveBody())
             sootMethod.retrieveActiveBody();
-        
-        Map<Local, String> jsaMap = getJSALocalMap(edgeInto);
 
+        Map<Local, String> jsaMap = getJSALocalMap(edgeInto);
+        
         for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
             Stmt stmt = (Stmt) stmts.next();
             if(stmt instanceof AssignStmt) {
@@ -299,7 +301,13 @@ public class ValueAnalysis extends CallGraphContextVisitor {
                                     VAModel fieldObjectVAModel = (VAModel)fieldObject;
                                     if(fieldObjectVAModel instanceof PrimVAModel) {
                                         PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
-                                        if(rightOp instanceof Constant) {
+                                        if(fieldName.equals("mAction")) {
+                                            System.out.println(allocNode);
+                                            System.out.println("current method: " + sootMethod);
+                                            System.out.println("source method: " + edgeInto.src());
+                                            System.out.println(fieldPrimVAModel.getValues());
+                                        }
+                                       if(rightOp instanceof Constant) {
                                             Constant rightOpConstant = (Constant)rightOp;
                                             if(rightOpConstant instanceof IntConstant) {
                                                 IntConstant intConstant = (IntConstant)rightOpConstant;
@@ -314,10 +322,20 @@ public class ValueAnalysis extends CallGraphContextVisitor {
                                                 FloatConstant floatConstant = (FloatConstant)rightOpConstant;
                                                 fieldPrimVAModel.addValue(floatConstant.value);
                                             } else {
-                                                logError("Unhandled constant case: " + rightOpConstant.getClass());
+                                                System.out.println("Unhandled constant case: " + rightOpConstant.getClass());
+                                                System.exit(1);
                                             }
+                                        } else if (rightOp instanceof Local && jsaMap.containsKey((Local)rightOp)) {
+                                            if(fieldName.equals("mAction")){
+                                                System.out.println(jsaMap.get((Local)rightOp) + "\n");
+                                            }
+                                            fieldPrimVAModel.addValue(jsaMap.get((Local)rightOp));
+
                                         } else {
                                             fieldPrimVAModel.invalidate();
+                                            if(fieldName.equals("mAction")){
+                                                System.out.println("invalidating");
+                                            }
                                         }
                                     }
                                 } catch(IllegalAccessException e) {

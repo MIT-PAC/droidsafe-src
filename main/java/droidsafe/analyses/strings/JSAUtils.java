@@ -117,7 +117,7 @@ public class JSAUtils {
     public static void setupSpecHotspots()
     {
         for (SootMethod m : API.v().getAllSystemMethods()) {
-            if (API.v().isInterestingMethod(m)) {
+            //if (API.v().isInterestingMethod(m)) {
                 try {
                     String sig = m.getSignature();
                     int i = 0;
@@ -137,7 +137,7 @@ public class JSAUtils {
                     JSAStrings.v().addReturnHotspot(sig);
                 }
                 */
-            }
+            //}
         }
     }
 }

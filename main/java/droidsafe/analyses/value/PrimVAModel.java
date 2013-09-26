@@ -25,6 +25,10 @@ public abstract class PrimVAModel extends VAModel {
         this.values.add(value);
     }
 
+    public Set<Object> getValues() {
+        return this.values;
+    }
+
     @Override
     public String toString() {
         String str = "<va-modeled-" + this.type + ":"; 
@@ -39,7 +43,7 @@ public abstract class PrimVAModel extends VAModel {
         } else {
             if(values.size() > 1) fieldsString += "[";
             List<String> fieldStrings = new ArrayList<String>();
-            for(Object val : values) {
+            for(Object val : this.getValues()) {
                 fieldStrings.add(val.toString());
             }
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
