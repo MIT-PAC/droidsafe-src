@@ -221,51 +221,6 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         if(model != null)
             this.allocNodeToVAModelMap.put(allocNode, model);
     }
-    
-    private Map<Local, String> getJSALocalMap(Edge edgeInto) {
-        SootMethod sootMethod = edgeInto.tgt();
-        Map<Local,String> map = new HashMap<Local,String>();
-        
-        if (!API.v().isSystemMethod(sootMethod))
-            return map;
-        
-        if (sootMethod.getParameterCount() == 0)
-            return map;
-        
-        //query jsa for all arg values
-        //if any are hotspots, add mapping from local to jsa value
-        if (edgeInto.srcStmt() == null || !edgeInto.srcStmt().containsInvokeExpr())
-            return map;
-
-        InvokeExpr invoke = edgeInto.srcStmt().getInvokeExpr();
-       
-        int i = 0;
-        for (Value argv : invoke.getArgs()) {
-            Local local = sootMethod.getActiveBody().getParameterLocal(i);
-            if (JSAStrings.v().isHotspotValue(argv)) {
-                map.put(local, JSAStrings.v().getRegex(argv));
-            }
-            
-            i++;
-        }
-        
-        if (map.isEmpty())
-            return map;
-        
-        //check to see if any of the local vals are lhs for any assignment
-        //pull out of map if so
-        for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
-            Stmt stmt = (Stmt) stmts.next();
-            if(stmt instanceof AssignStmt) {
-                AssignStmt assignStmt = (AssignStmt)stmt;
-                Value leftOp = assignStmt.getLeftOp();
-                if (map.containsKey(leftOp))
-                    map.remove(leftOp);
-            }
-        }
-        
-        return map;
-    }
 
     @Override
     public void visitEntryContextAnd1CFA(SootMethod sootMethod, Edge entryEdge, Edge edgeInto) {
@@ -276,8 +231,6 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         if(!sootMethod.hasActiveBody())
             sootMethod.retrieveActiveBody();
 
-        Map<Local, String> jsaMap = getJSALocalMap(edgeInto);
-        
         for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
             Stmt stmt = (Stmt) stmts.next();
             if(stmt instanceof AssignStmt) {
@@ -301,12 +254,6 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                     VAModel fieldObjectVAModel = (VAModel)fieldObject;
                                     if(fieldObjectVAModel instanceof PrimVAModel) {
                                         PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
-                                        if(fieldName.equals("mAction")) {
-                                            System.out.println(allocNode);
-                                            System.out.println("current method: " + sootMethod);
-                                            System.out.println("source method: " + edgeInto.src());
-                                            System.out.println(fieldPrimVAModel.getValues());
-                                        }
                                        if(rightOp instanceof Constant) {
                                             Constant rightOpConstant = (Constant)rightOp;
                                             if(rightOpConstant instanceof IntConstant) {
@@ -325,17 +272,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                                 System.out.println("Unhandled constant case: " + rightOpConstant.getClass());
                                                 System.exit(1);
                                             }
-                                        } else if (rightOp instanceof Local && jsaMap.containsKey((Local)rightOp)) {
-                                            if(fieldName.equals("mAction")){
-                                                System.out.println(jsaMap.get((Local)rightOp) + "\n");
-                                            }
-                                            fieldPrimVAModel.addValue(jsaMap.get((Local)rightOp));
-
                                         } else {
                                             fieldPrimVAModel.invalidate();
-                                            if(fieldName.equals("mAction")){
-                                                System.out.println("invalidating");
-                                            }
                                         }
                                     }
                                 } catch(IllegalAccessException e) {

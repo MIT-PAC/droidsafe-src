@@ -50,34 +50,31 @@ public abstract class RefVAModel extends VAModel {
     public Set<VAModel> getFieldVAModels(SootField sootField) {
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         Type fieldType = sootField.getType();
-        if(fieldType instanceof RefType && !((RefType)fieldType).getSootClass().getName().equals("java.lang.String")) {
+        if(fieldType instanceof RefType) {
             RefType fieldRefType = (RefType)fieldType;
             Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.getAllocNode(), sootField);
             if(allocNodes.size() > 0){
-                /*
-                   if(fieldRefType.getSootClass().getName().equals("java.lang.String")) {
-                   StringVAModel stringVAModel = new StringVAModel();
-                   for(AllocNode allocNode : allocNodes) {
-                   if(allocNode instanceof StringConstantNode) {
-                   stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
-                   } else {
-                // all strings weren't constants, invalidate
-                stringVAModel.invalidate();
-                break;
-                   }
-                   }
-                   fieldVAModels.add(stringVAModel);
-                   } else {
-                   */
-                for(AllocNode allocNode : allocNodes) {
-                    VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
-                    if(vaModel != null)
-                        fieldVAModels.add(vaModel);
-                    else
-                        return null;
-                }
-
-                //} 
+                if(fieldRefType.getSootClass().getName().equals("java.lang.String")) {
+                    StringVAModel stringVAModel = new StringVAModel();
+                    for(AllocNode allocNode : allocNodes) {
+                        if(allocNode instanceof StringConstantNode) {
+                            stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
+                        } else {
+                            // all strings weren't constants, invalidate
+                            stringVAModel.invalidate();
+                            break;
+                        }
+                    }
+                    fieldVAModels.add(stringVAModel);
+                } else {
+                    for(AllocNode allocNode : allocNodes) {
+                        VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
+                        if(vaModel != null)
+                            fieldVAModels.add(vaModel);
+                        else
+                            return null;
+                    }
+                } 
             }
         } else {
             Class<?> c = this.getClass();

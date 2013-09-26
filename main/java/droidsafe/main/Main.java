@@ -37,6 +37,7 @@ import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
+import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -152,6 +153,14 @@ public class Main {
       monitor.subTask("Running String Analysis.");
       jsaAnalysis(monitor);
     }
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+
+    logger.info("Injecting String Analysis Results.");
+    monitor.subTask("Injecting String Analysis Results.");
+    // JSAResultInjection.run();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
