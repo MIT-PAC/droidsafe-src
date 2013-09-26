@@ -1,7 +1,7 @@
 package droidsafe.analyses.value;
 
 import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CallGraphContextVisitor;
+import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.VAModel;
@@ -56,7 +56,7 @@ import soot.Value;
  * 
  * @author dpetters
  */
-public class ValueAnalysis extends CallGraphContextVisitor {
+public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
     /** Singleton for analysis */
     private static ValueAnalysis am;
@@ -152,7 +152,7 @@ public class ValueAnalysis extends CallGraphContextVisitor {
 
         am.createObjectModels();
 
-        CallGraphTraversal.accept(am);
+        CallGraphTraversal.acceptEntryContextAnd1CFA(am);
 
         am.logResults();
 
