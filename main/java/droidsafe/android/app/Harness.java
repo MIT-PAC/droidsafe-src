@@ -221,6 +221,13 @@ public class Harness {
 		
 		String methodSig = String.format("<%s: void __ds__registerIntentFilter(android.content.IntentFilter)>", 
 								"android.content.Context");
+
+		// if broadcast receiver, we use a different signature
+		if (appLocal != null) {
+		    methodSig = String.format("<%s: void __ds__registerIntentFilter(android.content.IntentFilter)>", 
+								"android.content.BroadcastReceiver");
+		}
+
 		SootMethod registerIntentFilter = Scene.v().getMethod(methodSig);
 		
 		methodSig = String.format("<%s: void <init>()>", "android.content.IntentFilter");
@@ -295,7 +302,7 @@ public class Harness {
 			if (appLocal == null)
 				return;
 			
-			
+			// Broadcast receiver, will also do this
 			body.getUnits().add(
 					Jimple.v().newInvokeStmt(
 							Jimple.v().newVirtualInvokeExpr(appLocal, 
