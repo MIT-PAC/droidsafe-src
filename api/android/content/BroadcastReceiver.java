@@ -1,10 +1,14 @@
 package android.content;
 
 // Droidsafe Imports
+import java.util.HashSet;
+import java.util.Set;
+
 import droidsafe.annotations.*;
 
 import android.app.ActivityManagerNative;
 import android.app.ActivityThread;
+import android.app.Application;
 import android.app.IActivityManager;
 import android.app.QueuedWork;
 import android.os.Bundle;
@@ -318,7 +322,21 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
         //e.fillInStackTrace();
         //Log.e("BroadcastReceiver", e.getMessage(), e);
     }
-
+    
+    // Broadcast receiver really belongs to application so, we call register intentfilter from
+    // broadcast the receiver of application
+    // We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
+    @DSModeled(DSC.BAN)
+    public void __ds__registerIntentFilter(IntentFilter intentFilter) {
+        if (mApplication != null)
+            mApplication.__ds__intentFilters.add(intentFilter);
+    }
+    
+    private Application mApplication;
+    
+    public void setApplication(Application app) { 
+        this.mApplication = app;
+    }
     
     public static class PendingResult {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.489 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "B93BF1EFA6B57CC598632E54B97CD147")
