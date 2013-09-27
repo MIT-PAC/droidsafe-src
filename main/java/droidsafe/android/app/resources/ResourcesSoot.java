@@ -220,6 +220,9 @@ public class ResourcesSoot {
       instance = new ResourcesSoot();
     }
     
+    public static boolean isAndroidId(Integer intId) {
+        return ((intId.intValue() & 0x01000000) == 0x01000000);            
+    }
     /**
      * get the conditional field
      * @return
