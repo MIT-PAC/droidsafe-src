@@ -402,14 +402,19 @@ public class Harness {
 		
 		AndroidManifest manifest = Resources.v().getManifest();
 		logger.info("Application {}, package {} ", manifest.application, Resources.v().package_name);
-		
+
+		if (manifest.application == null) {
+		    logger.info("{} is NOT an allication project, skip intentFilterInjection", 
+		            Resources.v().package_name);
+		    return;
+		}
+		    
 		manifest.application.setSootClass(manifest.application.name);
 		
 		SootClass appClass = manifest.application.getSootClass();
 		
 		StmtBody body = (StmtBody) harnessMain.getActiveBody();
 		
-        
         // locate app constructor and call them
         String appInitSig = String.format("<%s: void <init>()>", "android.app.Application");
 		SootMethod appInit = null;
@@ -418,8 +423,7 @@ public class Harness {
 		    appInit = Scene.v().getMethod(appInitSig);
 		}
 		catch (Exception ex) {
-		    logger.warn("Cannot inject intent filter, not an application class");
-		    return;
+		    logger.warn("Cannot inject intent filter ");
 		}
 
 		SootMethod initMethod = null;
