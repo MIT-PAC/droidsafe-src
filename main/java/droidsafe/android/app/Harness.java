@@ -333,20 +333,28 @@ public class Harness {
 	 */
 	private void injectXMLComponent(String compType, SootClass compClass, 
 									List<IntentFilter> intentFilterList, StmtBody body, Local appLocal) {
-		SootMethod initMethod; 
-		
 		logger.info("Type {} ", compType);
 		
         String initSig = String.format("<%s: void <init>()>", compClass.getName());
         
-		SootMethod compInit = Scene.v().getMethod(initSig);
+		//SootMethod compInit = Scene.v().getMethod(initSig);
+		SootMethod compInit = null;
+		SootMethod initMethod = null; 
 		
-		try {
-			initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(compClass, compInit); 
-		} 
-		catch (Exception ex) {
-			logger.warn("Cannot resolve constructor {}", compInit);
-			return;
+		if (Scene.v().containsMethod(initSig)) {
+		    compInit = Scene.v().getMethod(initSig);
+		}
+		else {
+		    logger.info("Class {} does not have <init> function");
+		}
+
+		if (compInit != null) {
+		    try {
+		        initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(compClass, compInit); 
+		    } 
+		    catch (Exception ex) {
+		        logger.warn("Cannot resolve constructor {}", compInit);
+		    }
 		}
 
 		String name = String.format("__ds__%s%03d", 
@@ -366,15 +374,17 @@ public class Harness {
 		Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
 		body.getUnits().add(Jimple.v().newAssignStmt(compLocal,  newAppExpr));
 
-		Stmt initStmt = Jimple.v().newInvokeStmt(
-				Jimple.v().newVirtualInvokeExpr(compLocal, initMethod.makeRef()));
-		body.getUnits().add(initStmt);
 		
+		if (initMethod != null) {
+		    Stmt initStmt= Jimple.v().newInvokeStmt(
+		            Jimple.v().newVirtualInvokeExpr(compLocal, initMethod.makeRef()));
+		    body.getUnits().add(initStmt);
+		}
 		injectIntentFilter(compLocal, stringLocal, intentFilterList, body, appLocal);
 		
 		// Call runtime init
 		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
-		initStmt = Jimple.v().newInvokeStmt(
+		Stmt initStmt = Jimple.v().newInvokeStmt(
 				Jimple.v().newStaticInvokeExpr(droidsafeInit.makeRef(), compLocal));
 		
 		body.getUnits().add(initStmt);
@@ -402,8 +412,16 @@ public class Harness {
         
         // locate app constructor and call them
         String appInitSig = String.format("<%s: void <init>()>", "android.app.Application");
-		SootMethod appInit = Scene.v().getMethod(appInitSig);
-	
+		SootMethod appInit = null;
+
+		try {
+		    appInit = Scene.v().getMethod(appInitSig);
+		}
+		catch (Exception ex) {
+		    logger.warn("Cannot inject intent filter, not an application class");
+		    return;
+		}
+
 		SootMethod initMethod = null;
 		
 		try {
@@ -446,7 +464,7 @@ public class Harness {
 	
 		for (Activity context : manifest.activities) {
 			
-			logger.info("Activity {} ", context);
+			logger.info("Activity {} ", context);			
 			injectXMLComponent(Components.ACTIVITY_CLASS, context.getSootClass(), context.intent_filters, body); 
 		}
 
