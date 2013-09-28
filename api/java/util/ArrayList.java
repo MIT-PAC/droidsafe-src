@@ -81,35 +81,9 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     public boolean add(E object) {
         addTaint(object.getTaint());
         Object[] a = array;
-        int s = size;
-        if(s == a.length)        
-        {
-            Object[] newArray = new Object[s +
-                    (s < (MIN_CAPACITY_INCREMENT / 2) ?
-                     MIN_CAPACITY_INCREMENT : s >> 1)];
-            System.arraycopy(a, 0, newArray, 0, s);
-            array = a = newArray;
-        } //End block
-        a[s] = object;
-        size = s + 1;
-        modCount++;
-        boolean varB326B5062B2F0E69046810717534CB09_729763718 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1395374857 = getTaintBoolean();
+        a[size] = object;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1395374857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1395374857;
-        // ---------- Original Method ----------
-        //Object[] a = array;
-        //int s = size;
-        //if (s == a.length) {
-            //Object[] newArray = new Object[s +
-                    //(s < (MIN_CAPACITY_INCREMENT / 2) ?
-                     //MIN_CAPACITY_INCREMENT : s >> 1)];
-            //System.arraycopy(a, 0, newArray, 0, s);
-            //array = a = newArray;
-        //}
-        //a[s] = object;
-        //size = s + 1;
-        //modCount++;
-        //return true;
     }
 
     
