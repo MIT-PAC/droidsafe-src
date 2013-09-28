@@ -71,7 +71,14 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
         
         if (invoke instanceof InstanceInvokeExpr) {
             InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
-            for (AllocNode an : GeoPTA.v().getPTSet(iie.getBase(), context)) {
+            Set<AllocNode> nodes;
+            //if the context is the same as the edge into, then we cannot use context back to the src
+            if (context == edgeInto) 
+                nodes = GeoPTA.v().getPTSetContextIns(iie.getBase());
+            else    
+                nodes = GeoPTA.v().getPTSet(iie.getBase(), context);
+            
+            for (AllocNode an : nodes) {
                 if (RCFG.v().isRecOrArgForAPICall(an)) {
                     getCalls(an).add(edgeInto);
                 }
@@ -80,7 +87,13 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
         
         for (Value argv : invoke.getArgs()) {
             if (GeoPTA.v().isPointer(argv)) {
-                for (AllocNode an : GeoPTA.v().getPTSet(argv, context)) {
+                Set<AllocNode> nodes;
+                //if the context is the same as the edge into, then we cannot use context back to the src
+                if (context == edgeInto) 
+                    nodes = GeoPTA.v().getPTSetContextIns(argv);
+                else    
+                    nodes = GeoPTA.v().getPTSet(argv, context);
+                for (AllocNode an : nodes) {
                     if (RCFG.v().isRecOrArgForAPICall(an)) {
                         getCalls(an).add(edgeInto);
                     }

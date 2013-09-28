@@ -54,10 +54,12 @@ import soot.jimple.spark.geom.dataRep.IntervalContextVar;
 import soot.jimple.spark.geom.geomE.FullSensitiveNode;
 import soot.jimple.spark.geom.geomPA.CgEdge;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
+import soot.jimple.spark.geom.geomPA.GeomQueries;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
 import soot.jimple.spark.geom.helper.ContextTranslator;
 import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
 import soot.jimple.spark.geom.helper.Obj_full_extractor;
+import soot.jimple.spark.geom.helper.PtSensVisitor;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ArrayElement;
@@ -107,6 +109,10 @@ public class GeoPTA {
     private HashBiMap<Object, AllocNode> newToAllocNodeMap;
     /** singleton of this analysis */
     private static GeoPTA v;
+    /** Full context query interface */
+    private GeomQueries queries;
+    /** object to reuse for full sensitive queries */
+    private Obj_full_extractor objFull;
 
     public static final Set<AllocNode> EMPTY_PTA_SET = Collections.<AllocNode>emptySet();
 
@@ -151,8 +157,12 @@ public class GeoPTA {
      */
     private GeoPTA() {
         ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
-        //ContextTranslator.build_1cfa_map(ptsProvider);
         callGraph = Scene.v().getCallGraph();
+        
+        queries = new GeomQueries(ptsProvider);
+        objFull = new Obj_full_extractor();
+        //ContextTranslator.build_1cfa_map(ptsProvider);
+
         createNewToAllocMap();
 
         if (Config.v().dumpPta){
@@ -357,7 +367,25 @@ public class GeoPTA {
      */
     public Set<AllocNode> getPTSet(Value val, Edge context) {
         //until we fix the full context search, we return the insensitive result
-        return getPTSetContextIns(val);
+        if (val instanceof Local && context.isVirtual()) {
+            Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+            LocalVarNode vn = ptsProvider.findLocalVarNode((Local)val);
+            objFull.prepare();
+            
+            if (vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
+                    queries.contexsByAnyCallEdge(context, (Local)val, objFull) ) {
+                objFull.finish();
+            } else {
+                return getPTSetContextIns(val);
+            }
+            for ( IntervalContextVar icv : objFull.icvList ) {
+                allocNodes.add((AllocNode)icv.var);
+            }
+            
+            return allocNodes;
+        } else {
+            return getPTSetContextIns(val);
+        }
     }
     
     /**

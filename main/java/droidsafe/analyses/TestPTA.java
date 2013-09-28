@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
+import soot.Value;
 import soot.jimple.AnyNewExpr;
 import soot.jimple.AssignStmt;
 import soot.jimple.CastExpr;
@@ -45,8 +46,8 @@ public class TestPTA implements CGVisitorEntryContext {
     @Override
     public void visitEntryContext(SootMethod method, Edge context) {
         // TODO Auto-generated method stub
-        //testMethod(method, context);
-        countMethods(method, context);
+        testMethod(method, context);
+        //countMethods(method, context);
     }
 
     private void countMethods(SootMethod sm, Edge context) {
@@ -54,14 +55,14 @@ public class TestPTA implements CGVisitorEntryContext {
     }
     
     private void testMethod(SootMethod sm, Edge context) {
-        //if (API.v().isSystemMethod(sm))
-        //    return;
+        if (API.v().isSystemMethod(sm))
+            return;
         
         numMethods++;
         System.out.println("Test Method: " + sm);
         
         //System.out.println(sm);
-        //System.out.println("  " + context);
+        System.out.println("  " + context);
                 
         /*System.out.println("context: " + context);
         System.out.println("Edge into: " + edgeInto);
@@ -85,17 +86,22 @@ public class TestPTA implements CGVisitorEntryContext {
             InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(st);
 
             if (iie != null) {
-                /*
+                
                 System.out.println("Instance Invoke: " + st);
                 System.out.println("Context: " + context);
                 for (AllocNode node : GeoPTA.v().getPTSet(iie.getBase(), context)) 
                     System.out.println("  " + node);
-                
-                for (AllocNode node : GeoPTA.v().getPTSetContextIns((iie.getBase()))) 
-                    System.out.println("  Ins: " + node);
-                
+                System.out.println("Args");
+                for (Value val : iie.getArgs()) {
+                    if (GeoPTA.v().isPointer(val)) {
+                        for (AllocNode node : GeoPTA.v().getPTSet(val, context))
+                            System.out.println("  " + node);
+                    } else {
+                        System.out.println("  not a pointer.");
+                    }
+                }
                 System.out.println();
-                */
+               
             } else  if (st instanceof AssignStmt) {
 
                 AssignStmt a = (AssignStmt) st;
@@ -152,7 +158,7 @@ public class TestPTA implements CGVisitorEntryContext {
                         for (AllocNode node : GeoPTA.v().getPTSetContextIns(a.getLeftOp()))
                             System.out.println("  " + node);
                              */
-                        }
+                       }
                     }
                 } catch (Exception e) {
                     logger.error("Error with PTA: {}", st, e);
