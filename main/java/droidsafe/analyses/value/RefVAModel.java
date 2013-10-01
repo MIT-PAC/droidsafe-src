@@ -158,9 +158,15 @@ public abstract class RefVAModel extends VAModel {
                     List<String> objectModelStrings = new ArrayList<String>();
                     for(VAModel vaModel : vaModels){
                         // TODO: figure out why this can be null
-                        if(vaModel != null ) {
-                            // for each object model we call its toString method
-                            objectModelStrings.add(vaModel.toString());
+                        if(vaModel != null) {
+                            // for each field object model, we call its toString, unless the object model is the same
+                            // one we are trying to print out (to avoid a toString infinite loop)
+                            if(this==vaModel) {                                                                           
+                                objectModelStrings.add("itself");
+                            } else {
+                            // for each object model we call its tostring method
+                                objectModelStrings.add(vaModel.toString());
+                            }
                         }
                     }
                     fieldString += StringUtils.join(objectModelStrings.toArray(), ". ");
