@@ -18,6 +18,7 @@ import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.infoflow.APIInfoKindMapping;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
@@ -145,7 +146,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
     // JSA analysis fails if it follows AddAllocsForAPICalls.run()
     // Set up the analysis object no matter what.
     JSAStrings.init(Config.v());
@@ -273,6 +274,7 @@ public class Main {
     if (Config.v().infoFlow) {
       logger.info("Starting Information Flow Analysis...");
       monitor.subTask("Information Flow Analysis: Injected source flow");
+      APIInfoKindMapping.initMapping();
       InjectedSourceFlows.run();
       if (monitor.isCanceled()) {
         return DroidsafeExecutionStatus.CANCEL_STATUS;
