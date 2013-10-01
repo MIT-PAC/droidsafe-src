@@ -99,7 +99,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
     logger.info("Calling scalar optimizations.");
     monitor.subTask("Scalar Optimization");
     ScalarAppOptimizations.run();

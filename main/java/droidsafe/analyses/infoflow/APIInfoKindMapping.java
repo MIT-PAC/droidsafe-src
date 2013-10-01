@@ -21,9 +21,9 @@ import droidsafe.android.system.API;
 import droidsafe.main.Config;
 
 /**
- * Load and server the mapping of API methods to high level information kinds.
+ * Load and serve the mapping of API methods to high level information kinds.
  * The mapping were taken from the SuSi paper for Android 4.2 and we define a mapping
- * from SootMethod -> InfoKind for both source and sink methods.
+ * from SootMethod -> Set<InfoKind> for both source and sink methods.
  * 
  * @author mgordon
  *
@@ -39,10 +39,10 @@ public class APIInfoKindMapping {
     public static final Pattern sigRE = Pattern.compile("(<[^<>]*>) \\((\\S+)\\)");
     /** Static singleton */
     private static APIInfoKindMapping v;
-    /** map of sources from soot method to info kind */
-    private HashMap<SootMethod,InfoKind> srcsMapping;
-    /** map of sinks from soot method to info kind */
-    private HashMap<SootMethod,InfoKind> sinksMapping;
+    /** map of sources from soot method to info kinds */
+    private Map<SootMethod,Set<InfoKind>> srcsMapping;
+    /** map of sinks from soot method to info kinds */
+    private Map<SootMethod,Set<InfoKind>> sinksMapping;
     /** map of strings to the info kind that represents them */
     private HashMap<String,InfoKind> infoKinds;
     
@@ -57,8 +57,8 @@ public class APIInfoKindMapping {
      * Init maps...
      */
     private APIInfoKindMapping() {
-        srcsMapping = new HashMap<SootMethod,InfoKind>();
-        sinksMapping = new HashMap<SootMethod,InfoKind>();
+        srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
+        sinksMapping = new HashMap<SootMethod,Set<InfoKind>>();
         infoKinds = new HashMap<String,InfoKind>();
     }
 
@@ -70,9 +70,9 @@ public class APIInfoKindMapping {
     }
     
     /**
-     * Return the high level information kind defined for this source method.
+     * Return the high level information kinds defined for this source method.
      */
-    public InfoKind getSourceInfoKind(SootMethod method) {
+    public Set<InfoKind> getSourceInfoKinds(SootMethod method) {
         return srcsMapping.get(method);
     }
     
@@ -84,9 +84,9 @@ public class APIInfoKindMapping {
     }
     
     /**
-     * Return the high level information kind defined for this sink method.
+     * Return the high level information kinds defined for this sink method.
      */
-    public InfoKind getSinkInfoKind(SootMethod method) {
+    public Set<InfoKind> getSinkInfoKinds(SootMethod method) {
         return sinksMapping.get(method);
     }
     
@@ -121,7 +121,7 @@ public class APIInfoKindMapping {
     /**
      * Read the sink or source mapping file and add the mappings to the map argument.
      */
-    private void readMappingFile(File file, Map<SootMethod, InfoKind> mapping) {
+    private void readMappingFile(File file, Map<SootMethod, Set<InfoKind>> mapping) {
         try {
             LineNumberReader br = new LineNumberReader (new FileReader (file));
             String line = null;
@@ -140,7 +140,10 @@ public class APIInfoKindMapping {
                     
                     try {
                         SootMethod sootMethod = Scene.v().getMethod(methodSig);
-                        mapping.put(sootMethod, getInfoKind(infoKind));
+                        if (!mapping.containsKey(sootMethod)) {
+                            mapping.put(sootMethod, new HashSet<InfoKind>());
+                        }
+                        mapping.get(sootMethod).add(getInfoKind(infoKind));
                     } catch (Exception e) {
                         notFound ++;
                     }
