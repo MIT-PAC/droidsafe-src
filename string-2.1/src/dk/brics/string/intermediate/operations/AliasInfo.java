@@ -215,10 +215,13 @@ public class AliasInfo {
      */
     boolean setCorrupt(Variable a) {
         boolean changed = false;
-        for (Variable var : live) {
-        	if (aliasing.getAliasStatus(var, a).mightBeAlias()) {
-        		changed |= corrupted.add(var);
-        	}
+        // LWG: only need to corrupt a if a is live
+        if (live.contains(a)) {
+            for (Variable var : live) {
+                if (aliasing.getAliasStatus(var, a).mightBeAlias()) {
+                    changed |= corrupted.add(var);
+                }
+            }
         }
         return changed;
     }
