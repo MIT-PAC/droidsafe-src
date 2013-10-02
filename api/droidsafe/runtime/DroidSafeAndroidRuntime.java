@@ -119,7 +119,8 @@ public class DroidSafeAndroidRuntime {
 
     @DSModeled(DSC.SPEC)
     public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
-        // No-op onReceive called from registerReceiver in ContextImpl
+        if (mApplication != null)
+            receiver.setApplication(mApplication);
     }
 
     @DSModeled(DSC.SPEC)
