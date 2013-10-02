@@ -36,7 +36,7 @@ public class APIInfoKindMapping {
     /** relative file name for mapping file for sinks */
     private static String SINK_MAPPING_FILENAME = "sinks-4.2.txt";
     /** regular expression for entries in the mapping files */
-    public static final Pattern sigRE = Pattern.compile("(<[^<>]*>) \\((\\S+)\\)");
+    public static final Pattern sigRE = Pattern.compile("(<[^<>]*>) (\\S+ )?\\((\\S+)\\)");
     /** Static singleton */
     private static APIInfoKindMapping v;
     /** map of sources from soot method to info kinds */
@@ -127,6 +127,7 @@ public class APIInfoKindMapping {
             String line = null;
             int lineNum = 0;
             int notFound = 0;
+            int found = 0;
             while ((line = br.readLine()) != null) {
                 lineNum = br.getLineNumber();
                 line = line.trim();
@@ -136,7 +137,8 @@ public class APIInfoKindMapping {
                 
                 if (b) {
                     String methodSig = matcher.group(1);
-                    String infoKind = matcher.group(2);
+                    String permission = matcher.group(2);
+                    String infoKind = matcher.group(3);
                     
                     try {
                         SootMethod sootMethod = Scene.v().getMethod(methodSig);
@@ -144,11 +146,14 @@ public class APIInfoKindMapping {
                             mapping.put(sootMethod, new HashSet<InfoKind>());
                         }
                         mapping.get(sootMethod).add(getInfoKind(infoKind));
+                        System.out.println("Adding to mapping " + methodSig + " -> " + infoKind);
+                        found++;
                     } catch (Exception e) {
                         notFound ++;
                     }
                 }
             }
+            logger.info("Number of methods for info kind mapping from " + file + ": "+ found);
             logger.info("Number of methods not in scene for info kind mapping from " + file + ": "+ notFound);
         } catch (IOException e) {
             logger.error("Error reading information king mapping file.", e);
