@@ -2,6 +2,7 @@ package droidsafe.analyses.value;
 
 import soot.RefType;
 
+import soot.Scene;
 import soot.SootClass;
 
 
@@ -40,5 +41,12 @@ public class VAUtils {
      */
     public static Class<?> getDroidsafeClass(SootClass sootClass) throws ClassNotFoundException {
         return Class.forName(toAttrModelingModelClass(sootClass.getName()));
+    }
+
+    /**
+     * Given a SootClass, return the corresponding va model SootClass
+     */
+    public static SootClass getDroidsafeSootClass(SootClass sootClass) throws ClassNotFoundException {
+        return Scene.v().getSootClass(toAttrModelingModelClass(sootClass.getName()));
     }
 }
