@@ -238,10 +238,14 @@ public class AliasInfo {
      */
     boolean mergeCorrupt(AliasInfo other, Variable variableToCorrupt) {
     	boolean changed = false;
-    	for (Variable var : live) {
-    		if (other.aliasing.getAliasStatus(var, variableToCorrupt).mightBeAlias()) {
-    			changed |= corrupted.add(var);
-    		}
+        // LWG: only need to merge if the variable is live in 'other'
+        if (other.live.contains(variableToCorrupt)) {
+            for (Variable var : live) {
+                if (other.live.contains(var) &&
+                        other.aliasing.getAliasStatus(var, variableToCorrupt).mightBeAlias()) {
+                    changed |= corrupted.add(var);
+                }
+            }
     	}
     	return changed;
     }
