@@ -36,6 +36,7 @@ import com.android.internal.util.XmlUtils;
 
 
 public class Intent implements Parcelable, Cloneable {
+    @DSVAModeled
     private String mAction;
     private Uri mData;
     private String mType;
