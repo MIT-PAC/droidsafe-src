@@ -1,7 +1,7 @@
 package droidsafe.analyses.value;
 
 import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.value.models.droidsafe.primitives.StringVAModel;
+import droidsafe.analyses.value.primitives.StringVAModel;
 
 import droidsafe.utils.SootUtils;
 
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Matcher;
+import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.Set;
 
@@ -146,7 +147,7 @@ public abstract class RefVAModel extends VAModel {
         if (this.invalidated) {
             fieldsString += INVALIDATED;
         } else {
-            for(SootField sootField : getAllFields(this.getSootClass())) {
+            for(SootField sootField : getFieldsToDisplay(this.getSootClass())) {
                 Set<VAModel> vaModels = this.getFieldVAModels(sootField);
                 if(vaModels == null) {
                     String fieldString = sootField.getName() + ":INV";
@@ -179,12 +180,31 @@ public abstract class RefVAModel extends VAModel {
         return fieldsString;
     }
 
-    private Set<SootField> getAllFields(SootClass sootClass) {
-        Set<SootField> sootFields = new HashSet<SootField>();
-        sootFields.addAll(sootClass.getFields());
-        for(SootClass parentSootClass : SootUtils.getParents(sootClass)) {
-            sootFields.addAll(parentSootClass.getFields());
+    private Set<SootField> getFieldsToDisplay(SootClass sootClassParam) {
+        System.out.println("getFieldsToDisplay for " + sootClassParam);
+
+        // the result
+        Set<SootField> fieldsToDisplay = new HashSet<SootField>();
+
+        // we want to display not only values of fields from this class, but also any parent class in the hierarchy
+        Set<SootClass> classesInHierarchy = new HashSet<SootClass>();
+        classesInHierarchy.add(sootClassParam);
+        classesInHierarchy.addAll(SootUtils.getParents(sootClassParam));
+
+        // we will filter classes and fields by what is annotated as security sensitive in the api model
+        Map<SootClass, Set<SootField>> classesAndFieldsVAShouldModel = ValueAnalysis.v().getClassesAndFieldsToModel();
+        System.out.println("classesAndFieldsVAShouldModel: " + classesAndFieldsVAShouldModel);
+        // go through all fields in the hierarchy, filtering down to only those that should get displayed 
+        for(SootClass sootClass : classesInHierarchy) {
+            if(classesAndFieldsVAShouldModel.containsKey(sootClass)) {
+                Set<SootField> fieldsVAShouldModel = classesAndFieldsVAShouldModel.get(sootClass);
+                for(SootField sootField : sootClass.getFields()) {
+                    if(fieldsVAShouldModel.contains(sootField))
+                        fieldsToDisplay.add(sootField);
+                }
+            }
         }
-        return sootFields;
+        System.out.println("fieldsToDisplay: " + fieldsToDisplay);
+        return fieldsToDisplay;
     }
 }

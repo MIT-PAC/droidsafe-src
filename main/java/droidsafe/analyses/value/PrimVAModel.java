@@ -41,13 +41,13 @@ public abstract class PrimVAModel extends VAModel {
         if(this.invalidated) {
             fieldsString += INVALIDATED;
         } else {
-            if(values.size() > 1) fieldsString += "[";
+            fieldsString += "[";
             List<String> fieldStrings = new ArrayList<String>();
             for(Object val : this.getValues()) {
                 fieldStrings.add(val.toString());
             }
             fieldsString += StringUtils.join(fieldStrings.toArray(), ", ");
-            if(values.size() > 1) fieldsString += "]";
+            fieldsString += "]";
         }
         return fieldsString;
     }
