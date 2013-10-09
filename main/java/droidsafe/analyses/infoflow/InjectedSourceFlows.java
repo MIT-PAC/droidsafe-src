@@ -2,7 +2,7 @@ package droidsafe.analyses.infoflow;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.rcfg.RCFG;
-import droidsafe.analyses.value.models.droidsafe.primitives.StringVAModel;
+import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.RefVAModel;

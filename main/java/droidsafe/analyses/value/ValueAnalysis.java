@@ -1,15 +1,17 @@
 package droidsafe.analyses.value;
 
 import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.value.modelgen.ModelCodeGenerator;
 import droidsafe.analyses.value.VAModel;
 
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 
 import droidsafe.speclang.Method;
+
 import droidsafe.utils.SootUtils;
 
 import java.io.File;
@@ -41,7 +43,12 @@ import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
 
 import soot.Local;
+
 import soot.RefType;
+
+import soot.SootClass;
+
+import soot.SootField;
 
 import soot.SootMethod;
 
@@ -66,6 +73,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * The value is the Model object which simulates that object. 
      */
     private Map<AllocNode, VAModel> allocNodeToVAModelMap; 
+
+    private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
 
     /** va errors file used to help figure out what to model */
     private FileWriter vaErrorsLog;
@@ -93,6 +102,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
         this.allocNodeToVAModelMap = new LinkedHashMap<AllocNode, VAModel>();
+        this.classesAndFieldsToModel = ModelCodeGenerator.getClassesAndFieldsToModel(true);
     }
 
     /**
@@ -100,6 +110,13 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      */
     public Map<AllocNode, VAModel> getResults() {
         return this.allocNodeToVAModelMap;
+    }
+
+    /**
+     * Getter for analysis result
+     */
+    public Map<SootClass, Set<SootField>> getClassesAndFieldsToModel() {
+        return this.classesAndFieldsToModel;
     }
 
     /**
