@@ -168,7 +168,7 @@ public class APIInfoKindMapping {
  * @author mgordon
  *
  */
-class InfoKind implements MyValue {
+class InfoKind implements InfoValue {
     /** name of this information kind */
     private String name;
    

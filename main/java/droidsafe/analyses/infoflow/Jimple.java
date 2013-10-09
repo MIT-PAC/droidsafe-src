@@ -3,6 +3,7 @@ package droidsafe.analyses.infoflow;
 import soot.Local;
 import soot.jimple.AbstractExprSwitch;
 import soot.jimple.AbstractJimpleValueSwitch;
+import soot.jimple.AbstractRefSwitch;
 import soot.jimple.AddExpr;
 import soot.jimple.AndExpr;
 import soot.jimple.ArrayRef;
@@ -385,7 +386,7 @@ abstract class MyAbstractIdentityValueSwitch extends AbstractJimpleValueSwitch {
     }
 }
 
-// invoke_exrp = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr | dynamic_invoke_expr;
+// invoke_expr = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr | dynamic_invoke_expr;
 abstract class MyAbstractInvokeExprSwitch extends AbstractExprSwitch {
     // invoke_expr = interface_invoke_expr | ...
     @Override
@@ -411,5 +412,60 @@ abstract class MyAbstractInvokeExprSwitch extends AbstractExprSwitch {
     final public void defaultCase(Object e) {
         // This should not happen
         throw new RuntimeException(e.toString());
+    }
+}
+
+// unop_expr = length_expr | neg_expr
+abstract class MyAbstractUnopExprSwitch extends AbstractExprSwitch {
+    // unop_expr = length_expr
+    @Override
+    abstract public void caseLengthExpr(LengthExpr e);
+
+    // unop_expr = neg_expr
+    @Override
+    abstract public void caseNegExpr(NegExpr e);
+
+    final public void caseDynamicInvokeExpr(DynamicInvokeExpr e) {
+        defaultCase(e);
+    }
+
+    @Override
+    final public void defaultCase(Object e) {
+        // This should not happen
+        throw new RuntimeException(e.toString());
+    }
+}
+
+// concrete_ref = instace_field_ref | static_field_ref | array_ref
+abstract class MyAbstractConcreteRefSwitch extends AbstractRefSwitch {
+    Object result;
+
+    @Override
+    final public void caseCaughtExceptionRef(CaughtExceptionRef e) {
+        defaultCase(e);
+    }
+
+    @Override
+    final public void caseParameterRef(ParameterRef e) {
+        defaultCase(e);
+    }
+
+    @Override
+    final public void caseThisRef(ThisRef e) {
+        defaultCase(e);
+    }
+
+    @Override
+    final public void defaultCase(Object e) {
+        // This should not happen
+        throw new RuntimeException(e.toString());
+    }
+
+    public void setResult(Object result) {
+        this.result = result;
+    }
+
+    public Object getResult() {
+        return result;
     }
 }
