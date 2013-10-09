@@ -2,6 +2,8 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+
 import java.lang.reflect.Array;
 
 
@@ -10,7 +12,7 @@ import java.lang.reflect.Array;
 
 public abstract class AbstractCollection<E> implements Collection<E> {
     
-    private E[] collectionData = (E[])new Object[1]; 
+    protected E[] collectionData = (E[])new Object[1]; 
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.345 -0400", hash_original_method = "2CD999E5665A4C31F4601D44982C7C04", hash_generated_method = "80ABF1E4206482266414E558C3C72331")
@@ -151,6 +153,15 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         //return contents;
     }
 
+    @DSModeled(DSC.BAN)
+    protected E getElement(int index) {
+        if (DroidSafeAndroidRuntime.control) {
+            return null;
+        }
+
+        collectionData[0].addTaint(index);
+        return collectionData[0];
+    }
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.357 -0400", hash_original_method = "A06C3538162F748E28317896970387BE", hash_generated_method = "22C4F41EBA3A6ACE287F6D60148ADCF8")
