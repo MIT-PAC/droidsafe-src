@@ -89,12 +89,12 @@ public class TestPTA implements CGVisitorEntryContext {
                 
                 System.out.println("Instance Invoke: " + st);
                 System.out.println("Context: " + context);
-                for (AllocNode node : GeoPTA.v().getPTSet(iie.getBase(), context)) 
+                for (AllocNode node : GeoPTA.v().getPTSetEntryPointContext(iie.getBase(), context)) 
                     System.out.println("  " + node);
                 System.out.println("Args");
                 for (Value val : iie.getArgs()) {
                     if (GeoPTA.v().isPointer(val)) {
-                        for (AllocNode node : GeoPTA.v().getPTSet(val, context))
+                        for (AllocNode node : GeoPTA.v().getPTSetEntryPointContext(val, context))
                             System.out.println("  " + node);
                     } else {
                         System.out.println("  not a pointer.");
@@ -112,17 +112,17 @@ public class TestPTA implements CGVisitorEntryContext {
                     } 
                     
                     if (GeoPTA.v().isPointer(a.getLeftOp())) {
-                        Set<AllocNode> lhsNodes = GeoPTA.v().getPTSet(a.getLeftOp(), context);
+                        Set<AllocNode> lhsNodes = GeoPTA.v().getPTSetEntryPointContext(a.getLeftOp(), context);
 
                         Set<AllocNode> rhsNodes = null;
                         if (GeoPTA.v().isPointer(a.getRightOp())) {
-                            rhsNodes = GeoPTA.v().getPTSet(a.getRightOp(), context);
+                            rhsNodes = GeoPTA.v().getPTSetEntryPointContext(a.getRightOp(), context);
                         } else if (GeoPTA.v().getAllocNode(a.getRightOp()) != null) {
                             rhsNodes = new LinkedHashSet<AllocNode>();
                             rhsNodes.add(GeoPTA.v().getAllocNode(a.getRightOp()));
                         } else if (a.getRightOp() instanceof CastExpr) {
                             CastExpr castExpr = (CastExpr)a.getRightOp();
-                            rhsNodes = GeoPTA.v().getPTSet(castExpr.getOp(), context);
+                            rhsNodes = GeoPTA.v().getPTSetEntryPointContext(castExpr.getOp(), context);
                             Set<AllocNode> toRemove = new HashSet<AllocNode>();
                             for (AllocNode node : rhsNodes) {
                                 if (!GeoPTA.v().isLegalCast(node.getType(), castExpr.getCastType())) {
@@ -148,8 +148,9 @@ public class TestPTA implements CGVisitorEntryContext {
                                 System.out.println("  " + node);
                             if (a.getLeftOp() instanceof InstanceFieldRef) {
                                 Set<AllocNode> baseNodes = 
-                                        GeoPTA.v().getPTSet(((InstanceFieldRef)a.getLeftOp()).getBase(), 
-                                    context);
+                                        GeoPTA.v().getPTSetEntryPointContext(
+                                            ((InstanceFieldRef)a.getLeftOp()).getBase(), 
+                                            context);
                                 for (AllocNode node : baseNodes) {
                                     System.out.println("  baseNode: " + node);
                                 }

@@ -76,7 +76,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
             if (context == edgeInto) 
                 nodes = GeoPTA.v().getPTSetContextIns(iie.getBase());
             else    
-                nodes = GeoPTA.v().getPTSet(iie.getBase(), context);
+                nodes = GeoPTA.v().getPTSetEntryPointContext(iie.getBase(), context);
             
             for (AllocNode an : nodes) {
                 if (RCFG.v().isRecOrArgForAPICall(an)) {
@@ -92,7 +92,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
                 if (context == edgeInto) 
                     nodes = GeoPTA.v().getPTSetContextIns(argv);
                 else    
-                    nodes = GeoPTA.v().getPTSet(argv, context);
+                    nodes = GeoPTA.v().getPTSetEntryPointContext(argv, context);
                 for (AllocNode an : nodes) {
                     if (RCFG.v().isRecOrArgForAPICall(an)) {
                         getCalls(an).add(edgeInto);

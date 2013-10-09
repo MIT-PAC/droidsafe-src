@@ -295,10 +295,10 @@ public class GeoPTA {
      * For a given pointer in the context, return all the types that the objects pointed to 
      * by the pointer can realize.
      */
-    public Set<Type> getTypes(Value val, Edge context) {
+    public Set<Type> getTypesEntryPointContext(Value val, Edge context) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSet(val, context)) {
+        for (AllocNode node : getPTSetEntryPointContext(val, context)) {
             types.add(node.getType());
         }
 
@@ -365,7 +365,7 @@ public class GeoPTA {
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
-    public Set<AllocNode> getPTSet(Value val, Edge context) {
+    public Set<AllocNode> getPTSetEntryPointContext(Value val, Edge context) {
         //until we fix the full context search, we return the insensitive result
         if (val instanceof Local && context.isVirtual()) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
@@ -459,11 +459,23 @@ public class GeoPTA {
      */
     public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke) 
             throws CannotFindMethodException {
-        return resolveInstanceInvoke(invoke, null);
+        return resolveInstanceInvokeEntryPointContext(invoke, null);
     }
 
     /**
-     * 
+     * Use the PTA to resolve the set of method that an instance invoke could call.  In this 
+     * version, use the context insensitive result.  Return a map of each alloc node to its
+     * target method.
+     */
+    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
+        throws CannotFindMethodException {
+        return resolveInstanceInvokeMap1CFA(invoke, null);
+    }
+    
+    /**
+     * Use the PTA to resolve the set of method that an instance invoke could call.  In this 
+     * version, use the 1cfa context result.  Return a map of each alloc node to its
+     * target method.
      */
     public Map<AllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Edge context) 
         throws CannotFindMethodException {
@@ -523,14 +535,14 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Map<AllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Edge context) 
+    public Map<AllocNode, SootMethod> resolveInstanceInvokeMapEntryPointContext(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
         Set<AllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSetContextIns(invoke.getBase());
         else
-            allocs = getPTSet(invoke.getBase(), context);
+            allocs = getPTSetEntryPointContext(invoke.getBase(), context);
         
         return internalResolveInstanceInvokeMap(allocs, invoke, context);
     }
@@ -542,9 +554,9 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke, Edge context) 
+    public Collection<SootMethod> resolveInstanceInvokeEntryPointContext(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
-       return resolveInstanceInvokeMap(invoke, context).values();
+       return resolveInstanceInvokeMapEntryPointContext(invoke, context).values();
     }
     
     /**

@@ -773,7 +773,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				Map<AllocNode,SootMethod> resolvedMap = null;
 				
 				try {
-				    resolvedMap = GeoPTA.v().resolveInstanceInvokeMap(iie, null);
+				    resolvedMap = GeoPTA.v().resolveInstanceInvokeMap(iie);
 				} catch (CannotFindMethodException e) {
 				    logger.info("Error resolving instance invoke.  Probably a broadcast receiver that registers an " +
 				    		"IntentFilter (this is not supported yet).", e);

@@ -169,7 +169,7 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
             InvokeExpr invoke = edgeInto.srcStmt().getInvokeExpr();
             if (invoke instanceof InstanceInvokeExpr) {
                 InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
-                for (AllocNode an : GeoPTA.v().getPTSet(iie.getBase(), entryEdge)) {
+                for (AllocNode an : GeoPTA.v().getPTSetEntryPointContext(iie.getBase(), entryEdge)) {
                     OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, an, line);
                     logger.debug("Found output event: {} {}", edgeInto.tgt(), an);
                     node.addOutputEvent(oe);
