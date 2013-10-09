@@ -1,7 +1,9 @@
 package droidsafe.analyses.infoflow;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -13,16 +15,20 @@ import org.jgrapht.graph.DefaultEdge;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.collect.Lists;
+
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.helper.CGVisitorEntryContext;
+import droidsafe.analyses.helper.CallGraphTraversal;
 import soot.Scene;
-import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.CaughtExceptionRef;
 import soot.jimple.IdentityStmt;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.CallGraph;
-import soot.jimple.toolkits.callgraph.Targets;
+import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.callgraph.TopologicalOrderer;
 import soot.toolkits.graph.Block;
 import soot.toolkits.graph.BlockGraph;
 import soot.toolkits.graph.DirectedGraph;
@@ -33,18 +39,20 @@ import soot.util.dot.DotGraph;
  */
 
 public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
-    private final List<Block> heads;
+    private final List<Block> headBlocks;
 
-    private final Map<Block, List<Block>> blockToSuccs;
-    private final Map<Block, List<Block>> blockToPreds;
+    private final Map<Block, List<Block>> blockToFollowingBlocks;
+    private final Map<Block, List<Block>> blockToPrecedingBlocks;
     private final List<Block> blocks;
 
-    public final Map<SootMethod, List<Block>> methodToHeads;
-    private final Map<SootMethod, List<Block>> methodToTails;
+    public final Map<SootMethod, List<Block>> methodToHeadBlocks;
+    private final Map<SootMethod, List<Block>> methodToTailBlocks;
     public final Map<SootMethod, List<Block>> methodToBlocks;
-
+    
     public final Map<Unit, Block> unitToBlock;
 
+    public final Map<SootMethod, Set<Edge>> methodToEntryEdges;
+    
     private static InterproceduralControlFlowGraph v;
 
     private final static Logger logger = LoggerFactory.getLogger(InterproceduralControlFlowGraph.class);
@@ -59,7 +67,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
 
     @Override
     public List<Block> getHeads() {
-        return heads;
+        return headBlocks;
     }
 
     @Override
@@ -69,12 +77,12 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
 
     @Override
     public List<Block> getPredsOf(Block block) {
-        return blockToPreds.get(block);
+        return blockToPrecedingBlocks.get(block);
     }
 
     @Override
     public List<Block> getSuccsOf(Block block) {
-        return blockToSuccs.get(block);
+        return blockToFollowingBlocks.get(block);
     }
 
     @Override
@@ -89,28 +97,28 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
 
     @Override
     public String toString() {
-        StringBuffer buf = new StringBuffer();
-        buf.append("({");
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("({");
         for (Block block : blocks) {
-            buf.append(block.getBody().getMethod() + ": " + block + ", ");
+            buffer.append(block.getBody().getMethod() + ": " + block + ", ");
         }
-        buf.append("}, {");
+        buffer.append("}, {");
         for (Block curr : blocks) {
-            for (Block succ : blockToSuccs.get(curr)) {
-                buf.append("(" + curr.getBody().getMethod() + ": " + curr + ", " + succ.getBody().getMethod() + ": " + succ + "), ");
+            for (Block succ : blockToFollowingBlocks.get(curr)) {
+                buffer.append("(" + curr.getBody().getMethod() + ": " + curr + ", " + succ.getBody().getMethod() + ": " + succ + "), ");
             }
         }
-        buf.append("})");
-        return buf.toString();
+        buffer.append("})");
+        return buffer.toString();
     }
 
     public DotGraph toDotGraph() {
         DotGraph graph = new DotGraph("Interprocedural Control Flow Graph");
-        for (Block src : blocks) {
-            String s = blockToString(src);
-            graph.drawNode(s);
-            for (Block tgt : blockToSuccs.get(src)) {
-                graph.drawEdge(s, blockToString(tgt));
+        for (Block block : blocks) {
+            String blockString = blockToString(block);
+            graph.drawNode(blockString);
+            for (Block followingBlock : blockToFollowingBlocks.get(block)) {
+                graph.drawEdge(blockString, blockToString(followingBlock));
             }
         }
         return graph;
@@ -120,9 +128,9 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         DefaultDirectedGraph<Block, DefaultEdge> graph = new DefaultDirectedGraph<Block, DefaultEdge>(DefaultEdge.class);
         for (Block block : blocks) {
             graph.addVertex(block);
-            for (Block succ : blockToSuccs.get(block)) {
-                graph.addVertex(succ);
-                graph.addEdge(block, succ);
+            for (Block followingBlock : blockToFollowingBlocks.get(block)) {
+                graph.addVertex(followingBlock);
+                graph.addEdge(block, followingBlock);
             }
         }
         return graph;
@@ -130,35 +138,35 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
 
     public Graph<Block, DefaultEdge> toJGraphT(SootMethod method) {
         DefaultDirectedGraph<Block, DefaultEdge> graph = new DefaultDirectedGraph<Block, DefaultEdge>(DefaultEdge.class);
-        for (Block curr : methodToBlocks.get(method)) {
-            graph.addVertex(curr);
-            for (Block pred : blockToPreds.get(curr)) {
-                graph.addVertex(pred);
-                graph.addEdge(pred, curr);
+        for (Block block : methodToBlocks.get(method)) {
+            graph.addVertex(block);
+            for (Block precedingBlock : blockToPrecedingBlocks.get(block)) {
+                graph.addVertex(precedingBlock);
+                graph.addEdge(precedingBlock, block);
             }
-            for (Block succ : blockToSuccs.get(curr)) {
-                graph.addVertex(succ);
-                graph.addEdge(curr, succ);
+            for (Block followingBlock : blockToFollowingBlocks.get(block)) {
+                graph.addVertex(followingBlock);
+                graph.addEdge(block, followingBlock);
             }
         }
         return graph;
     }
 
     public Block getPrecedingCallBlock(Block fallThroughBlock, SootMethod method) {
-        for (Block pred : blockToPreds.get(fallThroughBlock)) {
-            if (((Stmt)pred.getTail()).containsInvokeExpr() && pred.getBody().getMethod().equals(method)) {
-                return pred;
+        for (Block precedingBlock : blockToPrecedingBlocks.get(fallThroughBlock)) {
+            if (((Stmt)precedingBlock.getTail()).containsInvokeExpr() && precedingBlock.getBody().getMethod().equals(method)) {
+                return precedingBlock;
             }
         }
         return null;
     }
 
-    public Block getFallThrough(Block callBlock) {
-        assert ((Stmt)callBlock.getTail()).containsInvokeExpr();
-        SootMethod method = callBlock.getBody().getMethod();
-        for (Block succ : blockToSuccs.get(callBlock)) {
-            if (succ.getBody().getMethod().equals(method)) {
-                return succ;
+    public Block getFallThrough(Block callerBlock) {
+        assert ((Stmt)callerBlock.getTail()).containsInvokeExpr();
+        SootMethod method = callerBlock.getBody().getMethod();
+        for (Block followingBlock : blockToFollowingBlocks.get(callerBlock)) {
+            if (followingBlock.getBody().getMethod().equals(method) && !methodToHeadBlocks.get(method).contains(followingBlock)) {
+                return followingBlock;
             }
         }
         return null;
@@ -169,89 +177,107 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     }
 
     private InterproceduralControlFlowGraph() {
-        heads = new ArrayList<Block>();
+        headBlocks = new ArrayList<Block>();
 
-        blockToSuccs = new HashMap<Block, List<Block>>();
-        blockToPreds = new HashMap<Block, List<Block>>();
+        blockToFollowingBlocks = new HashMap<Block, List<Block>>();
+        blockToPrecedingBlocks = new HashMap<Block, List<Block>>();
         blocks = new ArrayList<Block>();
 
-        methodToHeads = new HashMap<SootMethod, List<Block>>();
-        methodToTails = new HashMap<SootMethod, List<Block>>();
+        methodToHeadBlocks = new HashMap<SootMethod, List<Block>>();
+        methodToTailBlocks = new HashMap<SootMethod, List<Block>>();
         methodToBlocks = new HashMap<SootMethod, List<Block>>();
 
         unitToBlock = new HashMap<Unit, Block>();
 
         collectIntraproceduralControlFlowGraphs();
         connectIntraproceduralControlFlowGraphs();
+        
+        methodToEntryEdges = new DefaultHashMap<SootMethod, Set<Edge>>(Collections.<Edge>emptySet());
+        CallGraphTraversal.acceptEntryContext(new CGVisitorEntryContext () {
+            @Override
+            public void visitEntryContext(SootMethod method, Edge entryEdge) {
+                Set<Edge> entryEdges = methodToEntryEdges.get(method);
+                if (entryEdges.isEmpty()) {
+                    entryEdges = new HashSet<Edge>();
+                }
+                entryEdges.add(entryEdge);
+                methodToEntryEdges.put(method, entryEdges);
+            }
+        });
     }
 
     private void collectIntraproceduralControlFlowGraphs() {
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
         List<SootMethod> entryPoints = Scene.v().getEntryPoints();
-        for (SootClass clz : Scene.v().getApplicationClasses()) {
-            for (SootMethod method : clz.getMethods()) {
-                if (reachableMethods.contains(method)) {
-                    if (method.hasActiveBody()) {
-                        BlockGraph blockGraph = new MyBriefBlockGraph(method.getActiveBody());
-                        if (entryPoints.contains(method)) {
-                            heads.addAll(blockGraph.getHeads());
-                        }
-                        for (Block block : blockGraph) {
-                            blockToSuccs.put(block, new ArrayList<Block>(blockGraph.getSuccsOf(block)));
-                            blockToPreds.put(block, new ArrayList<Block>(blockGraph.getPredsOf(block)));
-                            blocks.add(block);
-                            Iterator<Unit> it = block.iterator();
-                            while (it.hasNext()) {
-                                unitToBlock.put(it.next(), block);
-                            }
-                        }
-                        methodToHeads.put(method, blockGraph.getHeads());
-                        methodToTails.put(method, blockGraph.getTails());
-                        methodToBlocks.put(method, blockGraph.getBlocks());
-                    } else {
-                        logger.info(method + ": no active body");
+        TopologicalOrderer topologicalOrderer = new TopologicalOrderer(Scene.v().getCallGraph());
+        topologicalOrderer.go();
+        for (SootMethod method : Lists.reverse(topologicalOrderer.order())) {
+            if (reachableMethods.contains(method)) {
+                if (method.hasActiveBody()) {
+                    BlockGraph blockGraph = new MyBriefBlockGraph(method.getActiveBody());
+                    if (entryPoints.contains(method)) {
+                        headBlocks.addAll(blockGraph.getHeads());
                     }
+                    for (Block block : blockGraph) {
+                        blockToFollowingBlocks.put(block, new ArrayList<Block>(blockGraph.getSuccsOf(block)));
+                        blockToPrecedingBlocks.put(block, new ArrayList<Block>(blockGraph.getPredsOf(block)));
+                        blocks.add(block);
+                        Iterator<Unit> it = block.iterator();
+                        while (it.hasNext()) {
+                            unitToBlock.put(it.next(), block);
+                        }
+                    }
+                    methodToHeadBlocks.put(method, blockGraph.getHeads());
+                    methodToTailBlocks.put(method, blockGraph.getTails());
+                    methodToBlocks.put(method, blockGraph.getBlocks());
+                } else {
+                    logger.info(method + ": no active body");
                 }
             }
         }
+        //G.v().out.println("Number of Units = " + unitToBlock.keySet().size());
     }
 
     private void connectIntraproceduralControlFlowGraphs() {
-        CallGraph cg = Scene.v().getCallGraph();
-        for (Block curr : blocks) {
-            if (((Stmt)curr.getTail()).containsInvokeExpr()) {
-                Block succ = null;
-                // XXX: assuming that there is only one fall-through and that the others are "$r0 := @caughtexception"
-                for (Block s : blockToSuccs.get(curr)) {
-                    if (!containsCaughtExceptionRef(s.getHead())) {
-                        succ = s;
-                        break;
+        CallGraph callGraph = Scene.v().getCallGraph();
+        for (Block block : blocks) {
+            Unit tailUnit = block.getTail();
+            if (((Stmt)tailUnit).containsInvokeExpr()) {
+                Block followingBlock = null;
+                followingBlock = blockToFollowingBlocks.get(block).get(0);
+                assert !containsCaughtExceptionRef(followingBlock.getHead());
+                assert block.getBody().getMethod().equals(followingBlock.getBody().getMethod());
+                Iterator<Edge> edges = callGraph.edgesOutOf(tailUnit);
+                while (edges.hasNext()) {
+                    Edge edge = edges.next();
+                    // HACK: our model calls <clinit> explicitly, using staticinvoke.
+                    if (edge.isClinit()) {
+                        continue;
                     }
-                }
-                assert succ != null;
-                assert curr.getBody().getMethod().equals(succ.getBody().getMethod());
-                Targets tgts = new Targets(cg.edgesOutOf(curr.getTail()));
-                while (tgts.hasNext()) {
-                    SootMethod method = tgts.next().method();
-                    if (methodToHeads.containsKey(method)) {
-                        List<Block> heads = methodToHeads.get(method);
-                        for (Block head : heads) {
-                            if (!containsCaughtExceptionRef(head.getHead())) {
-                                if (!blockToSuccs.get(curr).contains(head)) {
-                                    blockToSuccs.get(curr).add(head);
+                    SootMethod calleeMethod = (SootMethod)edge.getTgt();
+                    if (ObjectUtils.v().isGetTaint(calleeMethod) || ObjectUtils.v().isAddTaint(calleeMethod)) {
+                        continue;
+                    }
+                    if (methodToHeadBlocks.containsKey(calleeMethod)) {
+                        List<Block> headBlocks = methodToHeadBlocks.get(calleeMethod);
+                        for (Block headBlock : headBlocks) {
+                            if (!containsCaughtExceptionRef(headBlock.getHead())) {
+                                if (!blockToFollowingBlocks.get(block).contains(headBlock)) {
+                                    blockToFollowingBlocks.get(block).add(headBlock);
                                 }
-                                if (!blockToPreds.get(head).contains(curr)) {
-                                    blockToPreds.get(head).add(curr);
+                                if (!blockToPrecedingBlocks.get(headBlock).contains(block)) {
+                                    blockToPrecedingBlocks.get(headBlock).add(block);
                                 }
                             }
                         }
-                        this.heads.removeAll(heads);
-                        for (Block tail : methodToTails.get(method)) {
-                            if (!blockToSuccs.get(tail).contains(succ)) {
-                                blockToSuccs.get(tail).add(succ);
+                        // XXX: is the following statement valid for a recursive call?
+                        this.headBlocks.removeAll(headBlocks);
+                        for (Block tailBlock : methodToTailBlocks.get(calleeMethod)) {
+                            if (!blockToFollowingBlocks.get(tailBlock).contains(followingBlock)) {
+                                blockToFollowingBlocks.get(tailBlock).add(followingBlock);
                             }
-                            if (!blockToPreds.get(succ).contains(tail)) {
-                                blockToPreds.get(succ).add(tail);
+                            if (!blockToPrecedingBlocks.get(followingBlock).contains(tailBlock)) {
+                                blockToPrecedingBlocks.get(followingBlock).add(tailBlock);
                             }
                         }
                     }

@@ -19,9 +19,11 @@ import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.infoflow.APIInfoKindMapping;
+import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.analyses.infoflow.ObjectUtils;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
@@ -272,45 +274,47 @@ public class Main {
     //new TestPTA();
 
     if (Config.v().infoFlow) {
-      logger.info("Starting Information Flow Analysis...");
-      monitor.subTask("Information Flow Analysis: Injected source flow");
-      APIInfoKindMapping.initMapping();
-      InjectedSourceFlows.run();
-      if (monitor.isCanceled()) {
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-      }
-      monitor.subTask("Information Flow Analysis: Control flow graph");
-      InterproceduralControlFlowGraph.run();
-      if (monitor.isCanceled()) {
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-      }
-      monitor.subTask("Information Flow Analysis: Information flow");
-      InformationFlowAnalysis.run();
-      if (monitor.isCanceled()) {
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-      }
-
-      String infoFlowDotFile = Config.v().infoFlowDotFile;
-      if (infoFlowDotFile != null) {
-        try {
-          String infoFlowDotMethod = Config.v().infoFlowDotMethod;
-          if (infoFlowDotMethod != null) {
-            monitor.subTask("Information Flow Analysis: Export Dot Graph");
-            InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod),
-                infoFlowDotFile);
-          } else {
-            monitor.subTask("Information Flow Analysis: Export Dot Graph");
-            InformationFlowAnalysis.exportDotGraph(infoFlowDotFile);
-          }
-        } catch (IOException exp) {
-          logger.error(exp.toString());
+        logger.info("Starting Information Flow Analysis...");
+        monitor.subTask("Information Flow Analysis: Injected source flow");
+        APIInfoKindMapping.initMapping();
+        InjectedSourceFlows.run();
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-      }
-      logger.info("Finished Information Flow Analysis...");
+        monitor.subTask("Information Flow Analysis: Control flow graph");
+        ObjectUtils.run();
+        InterproceduralControlFlowGraph.run();
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        monitor.subTask("Information Flow Analysis: Information flow");
+        AllocNodeUtils.run();
+        InformationFlowAnalysis.run();
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        try {
+            String[] infoFlowDotMethods = Config.v().infoFlowDotMethods;
+            if (infoFlowDotMethods != null) {
+                monitor.subTask("Information Flow Analysis: Export Dot Graph");
+                for (String methodSignature : infoFlowDotMethods) {
+                    SootMethod method = Scene.v().getMethod(methodSignature);
+                    InformationFlowAnalysis.exportDotGraph(method, methodSignature + ".dot");
+                }
+                G.v().out.println(InformationFlowAnalysis.v().getInstances());
+                if (monitor.isCanceled()) {
+                    return DroidsafeExecutionStatus.CANCEL_STATUS;
+                }
+            }
+        } catch (IOException exp) {
+            logger.error(exp.toString());
+        }
+        logger.info("Finished Information Flow Analysis...");
     }
     monitor.worked(1);
     if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
     if (Config.v().target.equals("specdump")) {
