@@ -72,7 +72,7 @@ public class Config {
   /** Don't include source location information when outputting spec */
   public boolean noSourceInfo = false;
   /** If true, analyze information flows. */
-  public boolean infoFlow = false;
+  public boolean infoFlow = true;
   /** Methods on which to export information flows in DOT */
   public String[] infoFlowDotMethods;
   /**
@@ -201,8 +201,8 @@ public class Config {
     options.addOption(callgraph);
 
 
-    Option infoFlow = new Option(null, "infoflow", false, "Analyze information flows");
-    options.addOption(infoFlow);
+    Option noInfoFlow = new Option(null, "noinfoflow", false, "True off information flow analysis");
+    options.addOption(noInfoFlow);
 
     Option infoFlowDotMethod =
         OptionBuilder
@@ -271,8 +271,8 @@ public class Config {
       this.runStringAnalysis = false;
     }
 
-    if (cmd.hasOption("infoflow")) {
-        this.infoFlow = true;
+    if (cmd.hasOption("noinfoflow")) {
+        this.infoFlow = false;
     }
 
     if (cmd.hasOption("infoflow-dot-method")) {

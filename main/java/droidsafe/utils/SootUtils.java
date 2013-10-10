@@ -665,6 +665,15 @@ public class SootUtils {
 
         return null;
     }
+    
+    /**
+     * Return the source location for a statement, assuming JimpleRelationships
+     * is up to date and has been run.
+     */
+    public static SourceLocationTag getSourceLocation(Stmt stmt) {
+        SootClass clz = JimpleRelationships.v().getEnclosingMethod(stmt).getDeclaringClass();
+        return getSourceLocation(stmt, clz);
+    }
 
     public static SourceLocationTag getSourceLocation(Stmt stmt, SootClass clz) {
         SourceLocationTag line = null;

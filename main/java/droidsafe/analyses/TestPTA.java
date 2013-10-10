@@ -51,6 +51,7 @@ public class TestPTA implements CGVisitorEntryContext {
 
     private void countMethods(SootMethod sm, Edge context) {
         numMethods++;
+        System.out.println("Call: " + sm);
     }
     
     private void testMethod(SootMethod sm, Edge context) {

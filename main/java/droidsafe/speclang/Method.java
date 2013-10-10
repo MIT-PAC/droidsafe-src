@@ -3,6 +3,7 @@ package droidsafe.speclang;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -11,15 +12,23 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Local;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
+import soot.Unit;
+import soot.Value;
 import soot.jimple.Expr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.tagkit.LineNumberTag;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.PTAMethodInformation;
+import droidsafe.analyses.infoflow.APIInfoKindMapping;
+import droidsafe.analyses.infoflow.InfoKind;
+import droidsafe.analyses.infoflow.InfoUnit;
+import droidsafe.analyses.infoflow.InfoValue;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
@@ -341,7 +350,116 @@ public class Method implements Comparable<Method> {
 	public boolean checkValidSpecMethod() {
 		return API.v().isSupportedMethod(sootMethod);
 	}
+	
+	/**
+	 * If this method is defined as a sink method with a high level sink type, 
+	 * return the InfoKinds of this method.  Otherwise, return an empty list. 
+	 */
+	public Set<InfoKind> getSinkInfoKinds() {
+	    if (APIInfoKindMapping.v().hasSinkInfoKind(sootMethod)) {
+	        return APIInfoKindMapping.v().getSinkInfoKinds(sootMethod);
+	    }
+	    return Collections.emptySet();
+	}
 
+	/**
+	 * Query the information flow analysis for the given value, either the receiver or an argument
+	 * of this method call.
+	 */
+	private Set<InfoValue> queryInfoFlow(Value val) {
+	    if (!Config.v().infoFlow || !(val instanceof Local))
+            return Collections.emptySet();
+        
+        Unit unit = JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr());
+        //call the information flow results
+        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getContextEdge(), unit, (Local)val);
+	}
+		
+	/**
+	 * For the receiver of this method, return the set of all api calls in user code that 
+	 * could reach the receiver (or one of its fields).
+	 */
+	public Set<SourceLocationTag> getReceiverSourceInfoUnits() {
+	    //call the information flow results
+	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
+	    	    
+	    Set<SourceLocationTag> srcSrcs = new HashSet<SourceLocationTag>();
+	    for (InfoValue iv : srcs) {
+	        if (iv instanceof InfoUnit) {
+	            InfoUnit srcUnit = (InfoUnit)iv;
+	            if (!(srcUnit.getUnit() instanceof Stmt))
+	                continue;
+	            SourceLocationTag tag = SootUtils.getSourceLocation((Stmt)srcUnit.getUnit());
+	            srcSrcs.add(tag);
+	        }
+	    }
+	    
+	    return srcSrcs;
+	}
+	
+	/**
+	 * For argument at i return the set of all api calls in user code that could reach the 
+	 * argument (or one of its fields).
+	 */
+	public Set<SourceLocationTag> getArgSourceInfoUnits(int i) {
+	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getArgValue(i));	    
+	    
+        Set<SourceLocationTag> srcSrcs = new HashSet<SourceLocationTag>();
+        for (InfoValue iv : srcs) {
+            if (iv instanceof InfoUnit) {
+                InfoUnit srcUnit = (InfoUnit)iv;
+                if (!(srcUnit.getUnit() instanceof Stmt))
+                    continue;
+                SourceLocationTag tag = SootUtils.getSourceLocation((Stmt)srcUnit.getUnit());
+                srcSrcs.add(tag);
+            }
+        }
+        
+        return srcSrcs;
+	}
+
+	/**
+	 * For argument at i, return the set of high level information kinds that the argument could possibly 
+	 * be tainted with.
+	 */
+	public Set<InfoKind> getArgInfoKinds(int i) {
+	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getArgValue(i));
+	    
+	    Set<InfoKind> srcKinds = new HashSet<InfoKind>();
+	    for (InfoValue iv : srcs) {
+	        if (iv instanceof InfoKind)
+	            srcKinds.add((InfoKind)iv);
+	    }
+	    
+	    return srcKinds;
+	}
+
+	/**
+	 * For receiver, return the set of high-level information kinds that the receiver could possibly be 
+	 * tainted with.	 
+	 */
+	public Set<InfoKind> getRecInfoKinds() {
+	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
+        
+        Set<InfoKind> srcKinds = new HashSet<InfoKind>();
+        for (InfoValue iv : srcs) {
+            if (iv instanceof InfoKind)
+                srcKinds.add((InfoKind)iv);
+        }
+        
+        return srcKinds;
+	}
+
+	/**
+	 *  Return the high level InfoKinds for all possible sources (receiver and all args).
+	 */
+	public Set<InfoKind> getSourcesInfoKinds() {
+	    Set<InfoKind> srcKinds = getRecInfoKinds();
+	    for (int i = 0; i < ptaInfo.getNumArgs(); i++)
+	        srcKinds.addAll(getArgInfoKinds(i));
+	    return srcKinds;
+	}
+	
     @Override
     public int hashCode() {
         final int prime = 31;

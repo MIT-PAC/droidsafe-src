@@ -155,6 +155,10 @@ public class Harness {
 		
 		addCallToModelingRuntime(body);
 		
+		//call all static initializer method       
+        //SootMethod allClinits = callAllStaticInitializers();
+        //body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(allClinits.makeRef())));    
+		
 		/** inject intentfilter and application  */
 		injectApplicationIntentFilters();
 		
@@ -179,6 +183,8 @@ public class Harness {
 	                new LinkedList<Type>(), VoidType.v(), Modifier.PRIVATE | Modifier.STATIC);
 	    callStaticInits.setDeclaringClass(harnessClass);
 	    harnessClass.addMethod(callStaticInits);
+	    
+	    API.v().addSafeMethod(callStaticInits);
 	    
 	    StmtBody body = Jimple.v().newBody(callStaticInits);
 	    callStaticInits.setActiveBody(body);
@@ -657,13 +663,6 @@ public class Harness {
 	    body.getUnits().add(Jimple.v().newIdentityStmt(arg, 
 	            Jimple.v().newParameterRef(ArrayType.v
 	              (RefType.v("java.lang.String"), 1), 0)));
-	    
-	    //call all static initializer method
-	    /*
-	    SootMethod allClinits = callAllStaticInitializers();
-	    
-	    body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(allClinits.makeRef())));
-	    */
 	    
 	    //create a nop as target of goto below, to create loop over all possible events
 	    NopStmt beginCalls = Jimple.v().newNopStmt();
