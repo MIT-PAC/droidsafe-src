@@ -37,6 +37,8 @@ import droidsafe.android.app.resources.ResourcesSoot;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.speclang.model.AllocLocationModel;
+import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
@@ -89,6 +91,8 @@ public class Main {
     ResourcesSoot.reset();
     JimpleRelationships.reset();
     CallGraphTraversal.reset();
+    AllocLocationModel.reset();
+    CallLocationModel.reset();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -330,6 +334,7 @@ public class Main {
       if (spec != null) {
         SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+        SecuritySpecModel.printPointsToInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
       }
       monitor.worked(1);
       if (monitor.isCanceled()) {

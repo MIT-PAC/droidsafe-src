@@ -14,8 +14,6 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
-import soot.jimple.Expr;
-import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.tagkit.LineNumberTag;
 import droidsafe.analyses.GeoPTA;
@@ -23,10 +21,7 @@ import droidsafe.analyses.PTAMethodInformation;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
-import droidsafe.utils.JimpleRelationships;
-import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
-import droidsafe.utils.Utils;
 
 public class Method implements Comparable<Method> {
 	private static final Logger logger = LoggerFactory.getLogger(Method.class);
@@ -149,77 +144,27 @@ public class Method implements Comparable<Method> {
 	}
 	
 	/**
-	 * Return a set of lines for possible new expression that can reach receiver of this method.
+	 * Return a set of allocation nodes for possible new expression that can reach receiver of this method.
 	 */
-	public Set<SourceLocationTag> getReceiverSources() {
-	    HashSet<SourceLocationTag> sources = new HashSet<SourceLocationTag>();
-	    
+	public Set<AllocNode> getReceiverAllocNodes() {
 	    if (ptaInfo == null || !ptaInfo.hasReceiver() || !GeoPTA.v().isPointer(ptaInfo.getReceiver()))
-	        return sources;
+	        return new HashSet<AllocNode>();
 	    
-	    for (AllocNode node : ptaInfo.getReceiverPTSet()) {
-	        Object expr = GeoPTA.v().getNewExpr(node);
-	        
-	        if (expr == null || !(expr instanceof Expr)) {
-	            logger.debug("Cannot find new expression for allocnode: {}", node);
-	            continue;
-	        }
-	        
-	        Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)expr);
-	        if (stmt == null) {
-	            logger.debug("Cannot find enclosing statement for expression: {}", expr);
-	            continue;
-	        }
-	        
-	        SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
-	        if (method == null) {
-	            logger.debug("Cannot find enclosing method for statement: {}", stmt);
-	            continue;
-	        }
-	        
-	        sources.add(SootUtils.getSourceLocation(stmt, method.getDeclaringClass()));
-	    }
-	    
-	    return sources;
+	    return ptaInfo.getReceiverPTSet();
 	}
 	
 	/**
-	 * Return the set of lines for new expression that could reach the argument i, assuming it is 
-	 * a pointer value.  Return empty set of any problems.
+	 * Return the set of allocation nodes for new expression that could reach the argument i,  
+	 * assuming it is a pointer value.  Return empty set of any problems.
 	 */
-	public Set<SourceLocationTag> getArgSources(int i) {
-	    HashSet<SourceLocationTag> sources = new HashSet<SourceLocationTag>();
-        
-        if (ptaInfo == null || !GeoPTA.v().isPointer(ptaInfo.getArgValue(i)))
-            return sources;
-        
-        for (AllocNode node : ptaInfo.getArgPTSet(i)) {
-            Object expr = GeoPTA.v().getNewExpr(node);
-            
-            if (expr == null || !(expr instanceof Expr)) {
-                logger.debug("Cannot find new expression for allocnode: {}", node);
-                continue;
-            }
-            
-            Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)expr);
-            if (stmt == null) {
-                logger.debug("Cannot find enclosing statement for expression: {}", expr);
-                continue;
-            }
-            
-            SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
-            if (method == null) {
-                logger.debug("Cannot find enclosing method for statement: {}", stmt);
-                continue;
-            }
-            
-            sources.add(SootUtils.getSourceLocation(stmt, method.getDeclaringClass()));
-        }
-        
-        return sources;
+	public Set<AllocNode> getArgAllocNodes(int i) {
+	    if (ptaInfo == null || !GeoPTA.v().isPointer(ptaInfo.getArgValue(i)))
+	        return new HashSet<AllocNode>();
+
+	    return ptaInfo.getArgPTSet(i);
 	}
 	
-	public boolean hasReceiver() {
+    public boolean hasReceiver() {
 		return receiver != null && !receiver.equals("");			
 	}
 	
