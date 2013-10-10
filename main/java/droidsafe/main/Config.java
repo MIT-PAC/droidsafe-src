@@ -73,10 +73,8 @@ public class Config {
   public boolean noSourceInfo = false;
   /** If true, analyze information flows. */
   public boolean infoFlow = false;
-  /** Path where to export information flows in DOT */
-  public String infoFlowDotFile;
-  /** Method on which to export information flows in DOT */
-  public String infoFlowDotMethod;
+  /** Methods on which to export information flows in DOT */
+  public String[] infoFlowDotMethods;
   /**
    * If true, classes loaded from android.jar will be treated as application classes and analysis
    * may analyze them.
@@ -206,13 +204,6 @@ public class Config {
     Option infoFlow = new Option(null, "infoflow", false, "Analyze information flows");
     options.addOption(infoFlow);
 
-    Option infoFlowDotFile =
-        OptionBuilder
-            .withArgName("FILE").hasArg()
-            .withDescription("Export information flows to FILE in DOT")
-            .withLongOpt("infoflow-dot-file").create("z");
-    options.addOption(infoFlowDotFile);
-
     Option infoFlowDotMethod =
         OptionBuilder
             .withArgName("METHOD")
@@ -281,17 +272,12 @@ public class Config {
     }
 
     if (cmd.hasOption("infoflow")) {
-      this.infoFlow = true;
-    }
-
-    if (cmd.hasOption("infoflow-dot-file")) {
-      assert this.infoFlow == true;
-      this.infoFlowDotFile = cmd.getOptionValue("infoflow-dot-file");
+        this.infoFlow = true;
     }
 
     if (cmd.hasOption("infoflow-dot-method")) {
-      assert this.infoFlowDotFile != null;
-      this.infoFlowDotMethod = cmd.getOptionValue("infoflow-dot-method");
+        assert this.infoFlow;
+        this.infoFlowDotMethods = cmd.getOptionValues("infoflow-dot-method");
     }
 
     if (cmd.hasOption("ptadump")) this.dumpPta = true;

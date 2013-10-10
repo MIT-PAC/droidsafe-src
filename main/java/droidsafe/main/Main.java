@@ -18,9 +18,12 @@ import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.infoflow.APIInfoKindMapping;
+import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.analyses.infoflow.ObjectUtils;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
@@ -34,9 +37,12 @@ import droidsafe.android.app.resources.ResourcesSoot;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.speclang.model.AllocLocationModel;
+import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
+import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -85,6 +91,8 @@ public class Main {
     ResourcesSoot.reset();
     JimpleRelationships.reset();
     CallGraphTraversal.reset();
+    AllocLocationModel.reset();
+    CallLocationModel.reset();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -97,7 +105,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
     logger.info("Calling scalar optimizations.");
     monitor.subTask("Scalar Optimization");
     ScalarAppOptimizations.run();
@@ -144,7 +152,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
     // JSA analysis fails if it follows AddAllocsForAPICalls.run()
     // Set up the analysis object no matter what.
     JSAStrings.init(Config.v());
@@ -152,6 +160,14 @@ public class Main {
       monitor.subTask("Running String Analysis.");
       jsaAnalysis(monitor);
     }
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+
+    logger.info("Injecting String Analysis Results.");
+    monitor.subTask("Injecting String Analysis Results.");
+    JSAResultInjection.run();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -216,16 +232,18 @@ public class Main {
     }
 
     //create instance of value analysis object, so that later passes an query empty result.
+    long startTime = System.nanoTime();
     ValueAnalysis.setup();
     if (Config.v().runValueAnalysis) {
         logger.info("Starting Value Analysis");
         monitor.subTask("Value Analysis");
         ValueAnalysis.run();
+        long endTime = System.nanoTime();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        logger.info("Finished Value Analysis");
+        logger.info("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
     }
 
     logger.info("Starting Generate RCFG...");
@@ -260,44 +278,47 @@ public class Main {
     //new TestPTA();
 
     if (Config.v().infoFlow) {
-      logger.info("Starting Information Flow Analysis...");
-      monitor.subTask("Information Flow Analysis: Injected source flow");
-      InjectedSourceFlows.run();
-      if (monitor.isCanceled()) {
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-      }
-      monitor.subTask("Information Flow Analysis: Control flow graph");
-      InterproceduralControlFlowGraph.run();
-      if (monitor.isCanceled()) {
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-      }
-      monitor.subTask("Information Flow Analysis: Information flow");
-      InformationFlowAnalysis.run();
-      if (monitor.isCanceled()) {
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-      }
-
-      String infoFlowDotFile = Config.v().infoFlowDotFile;
-      if (infoFlowDotFile != null) {
-        try {
-          String infoFlowDotMethod = Config.v().infoFlowDotMethod;
-          if (infoFlowDotMethod != null) {
-            monitor.subTask("Information Flow Analysis: Export Dot Graph");
-            InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod),
-                infoFlowDotFile);
-          } else {
-            monitor.subTask("Information Flow Analysis: Export Dot Graph");
-            InformationFlowAnalysis.exportDotGraph(infoFlowDotFile);
-          }
-        } catch (IOException exp) {
-          logger.error(exp.toString());
+        logger.info("Starting Information Flow Analysis...");
+        monitor.subTask("Information Flow Analysis: Injected source flow");
+        APIInfoKindMapping.initMapping();
+        InjectedSourceFlows.run();
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-      }
-      logger.info("Finished Information Flow Analysis...");
+        monitor.subTask("Information Flow Analysis: Control flow graph");
+        ObjectUtils.run();
+        InterproceduralControlFlowGraph.run();
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        monitor.subTask("Information Flow Analysis: Information flow");
+        AllocNodeUtils.run();
+        InformationFlowAnalysis.run();
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        try {
+            String[] infoFlowDotMethods = Config.v().infoFlowDotMethods;
+            if (infoFlowDotMethods != null) {
+                monitor.subTask("Information Flow Analysis: Export Dot Graph");
+                for (String methodSignature : infoFlowDotMethods) {
+                    SootMethod method = Scene.v().getMethod(methodSignature);
+                    InformationFlowAnalysis.exportDotGraph(method, methodSignature + ".dot");
+                }
+                G.v().out.println(InformationFlowAnalysis.v().getInstances());
+                if (monitor.isCanceled()) {
+                    return DroidsafeExecutionStatus.CANCEL_STATUS;
+                }
+            }
+        } catch (IOException exp) {
+            logger.error(exp.toString());
+        }
+        logger.info("Finished Information Flow Analysis...");
     }
     monitor.worked(1);
     if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
     if (Config.v().target.equals("specdump")) {
@@ -313,6 +334,7 @@ public class Main {
       if (spec != null) {
         SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+        SecuritySpecModel.printPointsToInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
       }
       monitor.worked(1);
       if (monitor.isCanceled()) {

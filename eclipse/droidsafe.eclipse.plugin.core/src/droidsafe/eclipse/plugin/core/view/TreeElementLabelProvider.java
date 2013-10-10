@@ -24,6 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.MethodModel;
@@ -43,13 +44,13 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
   private static final Logger logger = LoggerFactory.getLogger(TreeElementLabelProvider.class);
 
   /** The image for the method node in the outline view */
-  private static final Image INPUT_METHOD_IMAGE = getImage("android.png");
+  private static final Image INPUT_METHOD_IMAGE = DroidsafePluginUtilities.getImage("android.png");
 
   /** The image for the unsafe method node in the outline view */
-  private static final Image UNSAFE_METHOD_IMAGE = getImage("red-android.png");
+  private static final Image UNSAFE_METHOD_IMAGE = DroidsafePluginUtilities.getImage("red-android.png");
 
   /** Image for Hotspot Nodes */
-  private static final Image HOTSPOT_IMAGE = getImage("hotspot.png");
+  private static final Image HOTSPOT_IMAGE = DroidsafePluginUtilities.getImage("hotspot.png");
 
   /** The image for whitelist entry in the outline view */
   private static final Image DEFAULT_IMAGE = PlatformUI.getWorkbench().getSharedImages()
@@ -282,19 +283,4 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     super.update(cell);
   }
 
-
-  /**
-   * Helper Method to load the images
-   * 
-   * @param file The string with the path to the image file.
-   * 
-   * @return An Image object corresponding to the file name.
-   * 
-   */
-  private static Image getImage(String file) {
-    Bundle bundle = FrameworkUtil.getBundle(TreeElementLabelProvider.class);
-    URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
-    ImageDescriptor image = ImageDescriptor.createFromURL(url);
-    return image.createImage();
-  }
 }

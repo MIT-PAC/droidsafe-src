@@ -1,14 +1,12 @@
 package droidsafe.analyses.value.modelgen;
 
-import japa.parser.ASTHelper;
-import japa.parser.JavaParser;
+import droidsafe.analyses.value.VAModel;
+
+import droidsafe.main.Config;
+
+import droidsafe.utils.SootUtils;
+
 import japa.parser.ast.BlockComment;
-import japa.parser.ast.Comment;
-import japa.parser.ast.CompilationUnit;
-import japa.parser.ast.ImportDeclaration;
-import japa.parser.ast.LineComment;
-import japa.parser.ast.PackageDeclaration;
-import japa.parser.ast.TypeParameter;
 import japa.parser.ast.body.BodyDeclaration;
 import japa.parser.ast.body.ClassOrInterfaceDeclaration;
 import japa.parser.ast.body.ConstructorDeclaration;
@@ -20,6 +18,8 @@ import japa.parser.ast.body.Parameter;
 import japa.parser.ast.body.TypeDeclaration;
 import japa.parser.ast.body.VariableDeclarator;
 import japa.parser.ast.body.VariableDeclaratorId;
+import japa.parser.ast.Comment;
+import japa.parser.ast.CompilationUnit;
 import japa.parser.ast.expr.BooleanLiteralExpr;
 import japa.parser.ast.expr.Expression;
 import japa.parser.ast.expr.FieldAccessExpr;
@@ -28,17 +28,29 @@ import japa.parser.ast.expr.MethodCallExpr;
 import japa.parser.ast.expr.NameExpr;
 import japa.parser.ast.expr.NullLiteralExpr;
 import japa.parser.ast.expr.ObjectCreationExpr;
+import japa.parser.ASTHelper;
+import japa.parser.ast.ImportDeclaration;
+import japa.parser.ast.LineComment;
+import japa.parser.ast.PackageDeclaration;
 import japa.parser.ast.stmt.BlockStmt;
 import japa.parser.ast.stmt.ExplicitConstructorInvocationStmt;
 import japa.parser.ast.stmt.ExpressionStmt;
 import japa.parser.ast.stmt.ReturnStmt;
 import japa.parser.ast.stmt.Statement;
 import japa.parser.ast.type.ClassOrInterfaceType;
+import japa.parser.ast.TypeParameter;
 import japa.parser.ast.type.PrimitiveType;
 import japa.parser.ast.type.PrimitiveType.Primitive;
 import japa.parser.ast.type.ReferenceType;
 import japa.parser.ast.type.Type;
 import japa.parser.ast.type.VoidType;
+import japa.parser.JavaParser;
+
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.joran.JoranConfigurator;
+import ch.qos.logback.core.joran.spi.JoranException;
+import ch.qos.logback.core.util.StatusPrinter;
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -47,31 +59,43 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java.lang.reflect.Modifier;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.jar.JarFile;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.jar.JarFile;
+
 
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ArrayType;
+
+import soot.PrimType;
+
 import soot.RefType;
+
 import soot.Scene;
+
 import soot.SootClass;
+
 import soot.SootField;
+
 import soot.SootMethod;
-import droidsafe.analyses.value.ValueAnalysisModeledObject;
-import droidsafe.main.Config;
-import droidsafe.utils.SootUtils;
+
+import soot.tagkit.AnnotationTag;
+import soot.tagkit.Tag;
+import soot.tagkit.VisibilityAnnotationTag;
+
 
 public class ModelCodeGenerator {
 
@@ -143,15 +167,16 @@ public class ModelCodeGenerator {
     private Set<String> sourceImports;
     private List<String> keywordsEndingWithS = Arrays.asList(new String[]{"extends", "implements"});
     private HashSet<String> localClassNames;
+    private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
 
     public ModelCodeGenerator(String sourcePath) {
         sourceDirs = sourcePath.split(":");
         apacHome = System.getenv("APAC_HOME");
         Reflections reflections = new Reflections(MODEL_PACKAGE);
-        Set<Class<? extends ValueAnalysisModeledObject>> modeledClasses = 
-                reflections.getSubTypesOf(ValueAnalysisModeledObject.class);
+        Set<Class<? extends VAModel>> modeledClasses = 
+                reflections.getSubTypesOf(VAModel.class);
         classesAlreadyModeled = new HashSet<String>();
-        for (Class<? extends ValueAnalysisModeledObject> modeledClass: modeledClasses)
+        for (Class<? extends VAModel> modeledClass: modeledClasses)
             classesAlreadyModeled.add(modeledClass.getName());
         logger.debug("APAC_HOME = {}", apacHome);
         if (apacHome == null) {
@@ -162,7 +187,47 @@ public class ModelCodeGenerator {
         modelSourceDirs = new String[]{modelSourceDir};
         androidLibDir = constructPath(apacHome, Config.ANDROID_LIB_DIR_REL);
         loadAPIClasses();
+        this.classesAndFieldsToModel = getClassesAndFieldsToModel(false);
    }
+
+   /**
+    * @param forDisplay    If true, does not filter out non-primitive fields
+    * @return    a map of sootClasses to sets of sootFields that are annotated to be resolved in the api model
+    */
+   public static Map<SootClass, Set<SootField>> getClassesAndFieldsToModel(boolean forDisplay) {
+        Map<SootClass, Set<SootField>> classesAndFieldsToModel = new HashMap<SootClass, Set<SootField>>();
+
+        String apiModelJarFilePath = constructPath(Config.v().getApacHome(), Config.ANDROID_LIB_DIR_REL, "droidsafe-api-model.jar");
+        File apiModelJarFile = new File(apiModelJarFilePath);
+        try {
+            JarFile apiModelJar = new JarFile(apiModelJarFile);
+            Set<SootClass> apiModelSootClasses = SootUtils.loadClassesFromJar(apiModelJar, true, new HashSet<String>()); 
+            for (SootClass apiModelSootClass : apiModelSootClasses) {
+                for(SootField apiModelSootField : apiModelSootClass.getFields()){
+                    for (Tag tag : apiModelSootField.getTags()){
+                        if (tag instanceof VisibilityAnnotationTag) {
+                            VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
+                            for (AnnotationTag at : vat.getAnnotations()) {
+                                if (at.getType().contains("droidsafe/annotations/DSVAModeled")) {
+                                    if (!classesAndFieldsToModel.containsKey(apiModelSootClass)) {
+                                        classesAndFieldsToModel.put(apiModelSootClass, new HashSet<SootField>());
+                                    }
+                                    if(apiModelSootField.getType() instanceof PrimType || forDisplay) {
+                                        classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            logger.error("Could not open api model jar: " + e);
+            System.exit(1);
+        }
+        return classesAndFieldsToModel;
+    }
+
 
     private void loadAPIClasses() {
         try {
@@ -204,7 +269,7 @@ public class ModelCodeGenerator {
                 if (!anonymousInnerClass) {
                     apiClasses.add(clsName);
                     for (SootMethod meth: modeled.getMethods()) {
-                        apiMethods.add(meth.getSignature());
+                        //apiMethods.add(meth.getSignature());
                     }
                 }
             }
@@ -221,7 +286,7 @@ public class ModelCodeGenerator {
             classToModel = classesToBeModeled.remove(0);
             generate(classToModel, null);
         }
-        installGeneratedModels();
+        //installGeneratedModels();
         logger.info("Done.");
     }
 
@@ -231,8 +296,7 @@ public class ModelCodeGenerator {
         unqualifiedClassName = getUnqualifiedName(classToModel);
         imports = new TreeSet<String>();
         imports.add("soot.jimple.spark.pag.AllocNode");
-        imports.add("droidsafe.analyses.value.ValueAnalysisModeledObject");
-        imports.add("droidsafe.analyses.value.ValueAnalysisModelingSet");
+        imports.add("droidsafe.analyses.value.RefVAModel");
         importsProcessed = new HashSet<String>();
         importsProcessed.add(classToModel);
         primitiveTypeConversionMap = new HashMap<PrimitiveType.Primitive, Type>();
@@ -262,8 +326,8 @@ public class ModelCodeGenerator {
 
     private Set<String> getFieldsToModel(SootClass sootClass) {
         Set<String> fieldsToModel = new HashSet<String>();
-        if (fieldsToModel.isEmpty()) {
-            for (SootField field: sootClass.getFields()) {
+        if (this.classesAndFieldsToModel.containsKey(sootClass)) {
+            for (SootField field: this.classesAndFieldsToModel.get(sootClass)) {
                 if (!field.isFinal())
                     fieldsToModel.add(field.getName());
             }
@@ -562,7 +626,7 @@ public class ModelCodeGenerator {
             List<ClassOrInterfaceType> extendsList = coi.getExtends();
             if (!isInterface && extendsList == null) {
                 extendsList = new ArrayList<ClassOrInterfaceType>();
-                extendsList.add(new ClassOrInterfaceType("ValueAnalysisModeledObject"));
+                extendsList.add(new ClassOrInterfaceType("RefVAModel"));
             } else {
                 if (extendsList != null) {
                     if (isInterface) {
@@ -576,7 +640,7 @@ public class ModelCodeGenerator {
                         String superName = superClass.getName();
                         if (!superName.startsWith("android")) {
                             extendsList = new ArrayList<ClassOrInterfaceType>();
-                            extendsList.add(new ClassOrInterfaceType("ValueAnalysisModeledObject"));                            
+                            extendsList.add(new ClassOrInterfaceType("RefVAModel"));                            
                         }
                     }
 
@@ -718,9 +782,10 @@ public class ModelCodeGenerator {
     }
 
     private void convertInit(List<VariableDeclarator> modelVars, Type type, ReferenceType modelType) {
-        Expression init = (modelType != type) ? initForSetOfValues(modelType) : null;
-        for (VariableDeclarator modelVar: modelVars)
+        Expression init = (modelType != type) ? new ObjectCreationExpr(null, (ClassOrInterfaceType)modelType.getType(), null) : null;
+        for (VariableDeclarator modelVar: modelVars){
             modelVar.setInit(init);
+        }
     }
 
     private Expression initForSetOfValues(ReferenceType modelType) {
@@ -778,8 +843,8 @@ public class ModelCodeGenerator {
     private Type convertPrimitive(Primitive prim) {
         Type type = primitiveTypeConversionMap.get(prim);
         if (type == null) {
-            imports.add("droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysis" + prim);
-            type = makeSetOfType("ValueAnalysis" + prim);
+            imports.add("droidsafe.analyses.value.primitives." + prim + "VAModel");
+            type = makeReferenceType(prim + "VAModel");
             primitiveTypeConversionMap.put(prim, type);
         }
         return type;
@@ -1116,7 +1181,7 @@ public class ModelCodeGenerator {
 
     private void writeModel(CompilationUnit cu) {
         String modelPackageName = MODEL_PACKAGE_PREFIX + packageName;
-        File dir = constructFile("generated", modelPackageName.replace(".", File.separator));
+        File dir = constructFile(modelSourceDir, modelPackageName.replace(".", File.separator));
         dir.mkdirs();
         PrintWriter out = null;
         File outFile = new File(dir, unqualifiedClassName + ".java");
@@ -1133,7 +1198,7 @@ public class ModelCodeGenerator {
         }
         generatedModels.add(outFile);
     }
-    
+    /*
     private void installGeneratedModels() {
         String curDir = System.getProperty("user.dir");
         String generatedPath = constructPath(curDir, "generated");
@@ -1176,7 +1241,7 @@ public class ModelCodeGenerator {
                 undoPw.close();
         }
     }
-
+    */
     private boolean isSetOfType(Type type) {
         if (type instanceof ReferenceType) {
             type = ((ReferenceType) type).getType();
@@ -1260,7 +1325,7 @@ public class ModelCodeGenerator {
         return new File(path);        
     }
 
-    private String constructPath(String ...comps) {
+    private static String constructPath(String ...comps) {
         StringBuffer buf = new StringBuffer();
         for (int i = 0; i < comps.length; i++) {
             if (i > 0)
@@ -1274,18 +1339,35 @@ public class ModelCodeGenerator {
      * @param args
      */
     public static void main(String[] args) {
-        if (args.length < 2) {
-            logger.error("Usage: ModelCodeGen <source path> <class name> <field1 name> <field2 name> ...");
+        if (args.length < 1) {
+            logger.error("Usage: ModelCodeGen <source path>");
             droidsafe.main.Main.exit(1);
         } else {
+            //Config.v().configureDebugLog();
+    LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+    try {
+      JoranConfigurator configurator = new JoranConfigurator();
+      configurator.setContext(context);
+      // Call context.reset() to clear any previous configuration, e.g. default
+      // configuration. For multi-step configuration, omit calling context.reset().
+      context.reset();
+      configurator.doConfigure(System.getenv("APAC_HOME") + File.separator + "config-files/va-template-generation-log.xml");
+    } catch (JoranException je) {
+      // StatusPrinter will handle this
+    }
+    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+
+           
             String sourcePath = args[0];
-            String className = args[1];
-            Set<String> fieldNames = new HashSet<String>();
-            for (int i = 2; i < args.length; i++) {
-                fieldNames.add(args[i]);
-            }
             ModelCodeGenerator modelGen = new ModelCodeGenerator(sourcePath);
-            modelGen.run(className, fieldNames);
+            for(Map.Entry<SootClass, Set<SootField>> entry : modelGen.classesAndFieldsToModel.entrySet()){
+                Set<String> fieldNames = new HashSet<String>();
+                for (SootField sootField : entry.getValue()) {
+                    fieldNames.add(sootField.getName());
+                }
+                modelGen.run(entry.getKey().getName(), fieldNames);
+            }
+            //modelGen.installGeneratedModels();
         }
     }
 
