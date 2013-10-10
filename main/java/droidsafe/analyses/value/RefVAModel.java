@@ -181,8 +181,6 @@ public abstract class RefVAModel extends VAModel {
     }
 
     private Set<SootField> getFieldsToDisplay(SootClass sootClassParam) {
-        System.out.println("getFieldsToDisplay for " + sootClassParam);
-
         // the result
         Set<SootField> fieldsToDisplay = new HashSet<SootField>();
 
@@ -193,7 +191,6 @@ public abstract class RefVAModel extends VAModel {
 
         // we will filter classes and fields by what is annotated as security sensitive in the api model
         Map<SootClass, Set<SootField>> classesAndFieldsVAShouldModel = ValueAnalysis.v().getClassesAndFieldsToModel();
-        System.out.println("classesAndFieldsVAShouldModel: " + classesAndFieldsVAShouldModel);
         // go through all fields in the hierarchy, filtering down to only those that should get displayed 
         for(SootClass sootClass : classesInHierarchy) {
             if(classesAndFieldsVAShouldModel.containsKey(sootClass)) {
@@ -204,7 +201,6 @@ public abstract class RefVAModel extends VAModel {
                 }
             }
         }
-        System.out.println("fieldsToDisplay: " + fieldsToDisplay);
         return fieldsToDisplay;
     }
 }
