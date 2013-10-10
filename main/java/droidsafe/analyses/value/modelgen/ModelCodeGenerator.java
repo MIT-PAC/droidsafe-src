@@ -1181,7 +1181,7 @@ public class ModelCodeGenerator {
 
     private void writeModel(CompilationUnit cu) {
         String modelPackageName = MODEL_PACKAGE_PREFIX + packageName;
-        File dir = constructFile("generated", modelPackageName.replace(".", File.separator));
+        File dir = constructFile(modelSourceDir, modelPackageName.replace(".", File.separator));
         dir.mkdirs();
         PrintWriter out = null;
         File outFile = new File(dir, unqualifiedClassName + ".java");
@@ -1198,7 +1198,7 @@ public class ModelCodeGenerator {
         }
         generatedModels.add(outFile);
     }
-    
+    /*
     private void installGeneratedModels() {
         String curDir = System.getProperty("user.dir");
         String generatedPath = constructPath(curDir, "generated");
@@ -1241,7 +1241,7 @@ public class ModelCodeGenerator {
                 undoPw.close();
         }
     }
-
+    */
     private boolean isSetOfType(Type type) {
         if (type instanceof ReferenceType) {
             type = ((ReferenceType) type).getType();
@@ -1367,7 +1367,7 @@ public class ModelCodeGenerator {
                 }
                 modelGen.run(entry.getKey().getName(), fieldNames);
             }
-            modelGen.installGeneratedModels();
+            //modelGen.installGeneratedModels();
         }
     }
 
