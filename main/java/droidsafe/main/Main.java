@@ -39,6 +39,7 @@ import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
+import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -158,7 +159,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
     logger.info("Injecting String Analysis Results.");
     monitor.subTask("Injecting String Analysis Results.");
     JSAResultInjection.run();
@@ -166,7 +167,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
     logger.info("Starting PTA...");
     monitor.subTask("PTA First Pass");
     GeoPTA.release();
@@ -239,7 +240,48 @@ public class Main {
         }
         logger.info("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
     }
+    
+    logger.info("Undoing String Analysis Result Injection.");
+    monitor.subTask("Undoing String Analysis Result Injection.");
+    UndoJSAResultInjection.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
 
+    // all transforms should be done by here!
+    logger.info("Restarting PTA...");
+    monitor.subTask("PTA third Pass");
+    GeoPTA.release();
+    GeoPTA.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    
+    //reset the cache of the call graph traversal
+    CallGraphTraversal.reset();
+    
+    // write jimple txt files for all classes so we can analzye them
+    // all transforms should be done by here.
+
+    logger.info("Caching Jimple Hierarchy Relationships...");
+    monitor.subTask("Caching Jimple Hierarchy Relationships...");
+    JimpleRelationships.v();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+
+    if (Config.v().writeJimpleAppClasses) {
+      monitor.subTask("Writing all app classes");
+      writeAllAppClasses();
+    }
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    
     logger.info("Starting Generate RCFG...");
     monitor.subTask("Generating Spec");
     RCFG.generate();
