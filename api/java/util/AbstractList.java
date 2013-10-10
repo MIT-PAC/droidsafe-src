@@ -9,9 +9,9 @@ import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.419 -0400", hash_original_field = "675B3022548A1029F9CE7A2C25B23BBF", hash_generated_field = "D904B48F1A1A3F19ECDEE2D75BF7C70B")
+    //@DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.419 -0400", hash_original_field = "675B3022548A1029F9CE7A2C25B23BBF", hash_generated_field = "D904B48F1A1A3F19ECDEE2D75BF7C70B")
 
-    protected transient int modCount;
+    //protected transient int modCount;
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.419 -0400", hash_original_method = "AFDDADD59FA06C48A3131F90ADCD1B27", hash_generated_method = "C2512795C4B4D09B5344EF8EABF2A19D")
@@ -23,15 +23,17 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.420 -0400", hash_original_method = "CE54A57EF9628E9FD413F964E9F93054", hash_generated_method = "A01914328316F1F0C4A33E8F194581C9")
     public void add(int location, E object) {
-        super.add(object);
-        addTaint(location);
+        super.addElementAt(location, object);
     }
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.421 -0400", hash_original_method = "35A5EA4215B8229218ACFA970E186418", hash_generated_method = "0127629B0B8F67B14192AFA72258FAC0")
     public boolean addAll(int location, Collection<? extends E> collection) {
         addTaint(location);
-        return super.addAll(collection);
+        for ( E elem: collection) {
+            addElementAt(location++, elem);
+        }
+        return true;
     }
 
     
@@ -47,11 +49,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.423 -0400", hash_original_method = "FBFDCAC8150A508191130E5D508BCC64", hash_generated_method = "204F4D2CFDFE31B104EBE1269CE6D370")
     @Override
     public boolean equals(Object object) {
-        addTaint(object.getTaint());
-        Object retObj = new Object();
-        retObj.addTaint(object.getTaint());
-        retObj.addTaint(taint);
-        return retObj.getTaintBoolean();
+        return super.isEqualTo(object);
     }
 
     
@@ -70,10 +68,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.426 -0400", hash_original_method = "33CCCA11E9065665C3CB5AA775E1CF23", hash_generated_method = "5A11134C6788D386CFD7B275F903E2FC")
     public int indexOf(Object object) {
-        Object retObj = new Object();
-        retObj.addTaint(taint);
-        retObj.addTaint(object.getTaint());
-        return retObj.getTaintInt();
+        return super.getIndexOf(object);
     }
 
     
@@ -92,10 +87,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.428 -0400", hash_original_method = "D9C6E95DB4589560C406CE5442E4EDF7", hash_generated_method = "BD972CB256E1A2D2ADAD81413FB3F434")
     public int lastIndexOf(Object object) {
-        Object retObj = new Object();
-        retObj.addTaint(object.getTaint());
-        retObj.addTaint(taint);
-        return retObj.getTaintInt();
+        return getLastIndexOf(object);
     }
 
     
@@ -121,27 +113,23 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.430 -0400", hash_original_method = "5388D372D048D053ADD084F02A9C1484", hash_generated_method = "8139D75C3BDD16E15FDC1C3ADC818304")
     public E remove(int location) {
-        addTaint(location);
-        return getElement(0);
+        return removeElementAt(location);
     }
 
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.431 -0400", hash_original_method = "D592F953402A10CA44AACBE4A2DEE99F", hash_generated_method = "6D6A2347514B81060D28B96CAA380E0C")
     protected void removeRange(int start, int end) {
-        addTaint(end);
-        addTaint(start);
+        for (int i = end; i >= start; i--)
+            removeElementAt(i);
     }
 
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.431 -0400", hash_original_method = "8830E2F07CC294339D5D496574BCFA5E", hash_generated_method = "EB4F57E538448BBB2DB9DEE7C42586D7")
     public E set(int location, E object) {
-        addTaint(object.getTaint());
-        addTaint(location);
-        remove(location);
-        add(location, object);
-        return getElement(location);
+        setElementAt(location, object);
+        return getElementAt(location);
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -155,13 +143,8 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             if(start <= end)            
             {
                 List<E> elemList;
-                if(this instanceof RandomAccess)                
-                {
-                    elemList = new SubAbstractListRandomAccess<E>(this, start, end);
-                } //End block
-                else {
-                    elemList = new SubAbstractList<E>(this, start, end);
-                }
+                
+                elemList = new SubAbstractList<E>(this, start, end);
                 elemList.addTaint(taint);
                 elemList.addTaint(end);
                 elemList.addTaint(start);
@@ -186,6 +169,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.433 -0400", hash_original_field = "8F224EBDBA035312E97D20DDD1BA3431", hash_generated_field = "576334B50B797BC1B6FEA5BF5FD6A2E8")
         int lastPosition = -1;
+        int pos = -1;
         
                 @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.433 -0400", hash_original_method = "490F53403E14C3D703A2316B7D58EECE", hash_generated_method = "521DE0FD8E86B0B1E4563974AFB0BE5F")
@@ -198,10 +182,10 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
                 @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.434 -0400", hash_original_method = "884628BFB3767B804229DABA0C944FF7", hash_generated_method = "563086F58812C8DA195AC1B8A3890FB5")
         public boolean hasNext() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1082016730 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1082016730;
+            //boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1082016730 = getTaintBoolean();
+            //return var84E2C64F38F78BA3EA5C905AB5A2DA27_1082016730;
             // ---------- Original Method ----------
-            //return pos + 1 < size();
+            return pos + 1 < size();
         }
 
         
@@ -210,23 +194,17 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         public E next() {
             addTaint(1);
             if (DroidSafeAndroidRuntime.control) {
-                E result = get(0);
-                result.addTaint(taint);
-                return result;
-            }
-            if (DroidSafeAndroidRuntime.control) {
-                NoSuchElementException var28D00AB599969908D71F102AF992D49A_1381153892 = new NoSuchElementException();
-                var28D00AB599969908D71F102AF992D49A_1381153892.addTaint(taint);
-                throw var28D00AB599969908D71F102AF992D49A_1381153892;
-            }
-
-            if (DroidSafeAndroidRuntime.control) {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_2105245686 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_2105245686.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_2105245686;   
             }
-            
-            return get(0);
+            if (hasNext()) {
+                E elem = removeElementAt(++pos);
+                return elem;
+            }
+            NoSuchElementException var28D00AB599969908D71F102AF992D49A_1381153892 = new NoSuchElementException();
+            var28D00AB599969908D71F102AF992D49A_1381153892.addTaint(taint);
+            throw var28D00AB599969908D71F102AF992D49A_1381153892;
         }
 
         
@@ -248,7 +226,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 
             try 
             {
-                AbstractList.this.remove(0);
+                AbstractList.this.remove(pos);
             } //End block
             catch (IndexOutOfBoundsException e)
             {
@@ -286,14 +264,15 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.437 -0400", hash_original_method = "8412DB3046BBE3C95103744B97C55755", hash_generated_method = "FCB46A27825758C61A072AD3245829E3")
         FullListIterator(int start) {
             addTaint(start);
-            if (DroidSafeAndroidRuntime.control) {
+
+            if (start >= 0 && start <= size()) {
+                pos = start - 1;
+            }
+            else {
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1565012145 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_1565012145.addTaint(taint);
-                throw varE4A00D3DB3B35ED0F12562B8AA17377A_1565012145;
-            } //End block
-            // ---------- Original Method ----------
-            //if (start >= 0 && start <= size()) {
-            //pos = start - 1;
+                throw varE4A00D3DB3B35ED0F12562B8AA17377A_1565012145; 
+            }
             //} else {
             //throw new IndexOutOfBoundsException();
             //}
@@ -304,67 +283,66 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.439 -0400", hash_original_method = "603C65EE4595557F6EBDC0AA77E84F9A", hash_generated_method = "27CFD88E9F5CEB31014C301B2C89DB13")
         public void add(E object) {
             addTaint(object.getTaint());
+
             if (DroidSafeAndroidRuntime.control) {
-                try 
-                {
-                    AbstractList.this.add(0, object);
-                } //End block
-                catch (IndexOutOfBoundsException e)
-                {
-                    NoSuchElementException var28D00AB599969908D71F102AF992D49A_2060155683 = new NoSuchElementException();
-                    var28D00AB599969908D71F102AF992D49A_2060155683.addTaint(taint);
-                    throw var28D00AB599969908D71F102AF992D49A_2060155683;
-                } //End block
-            } //End block
-            else
-            {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1984128342 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_1984128342.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1984128342;
             } //End block
+            try 
+            {
+                AbstractList.this.add(pos, object);
+            } //End block
+            catch (IndexOutOfBoundsException e)
+            {
+                NoSuchElementException var28D00AB599969908D71F102AF992D49A_2060155683 = new NoSuchElementException();
+                var28D00AB599969908D71F102AF992D49A_2060155683.addTaint(taint);
+                throw var28D00AB599969908D71F102AF992D49A_2060155683;
+            } //End block
+
         }
 
 
         @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.439 -0400", hash_original_method = "9E39925604BB7D82864E9E0B4A9B04C9", hash_generated_method = "DC64338703DAFC5D3681B0CE98898D95")
         public boolean hasPrevious() {
-            return getTaintBoolean();
             // ---------- Original Method ----------
-            //return pos >= 0;
+            return pos >= 0;
         }
 
 
         @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.440 -0400", hash_original_method = "1B59C01DCB2067B0BBD0025D75B60071", hash_generated_method = "C7FB5C50D5A7DE59EB2823E679B1AD79")
         public int nextIndex() {
-            return getTaintInt();
             // ---------- Original Method ----------
-            //return pos + 1;
+            return pos + 1;
         }
 
 
         @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.441 -0400", hash_original_method = "BA720A4E815309A9A2EA4C02DBD66B54", hash_generated_method = "1680C874984CF4DDF6E3DA5FE5E8B5D4")
         public E previous() {
-            if (DroidSafeAndroidRuntime.control)
+
+            if (DroidSafeAndroidRuntime.control) {
+                ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_2076290306 = new ConcurrentModificationException();
+                var779BA6969BD29E5F2D0448781C543B65_2076290306.addTaint(taint);
+                throw var779BA6969BD29E5F2D0448781C543B65_2076290306;
+            }
+
+            try 
             {
-                try 
-                {
-                    E result = get(0);
-                    E varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652 =                     result;
-                    varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652.addTaint(taint);
-                    return varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652;
-                } //End block
-                catch (IndexOutOfBoundsException e)
-                {
-                    NoSuchElementException var28D00AB599969908D71F102AF992D49A_1100152132 = new NoSuchElementException();
-                    var28D00AB599969908D71F102AF992D49A_1100152132.addTaint(taint);
-                    throw var28D00AB599969908D71F102AF992D49A_1100152132;
-                } //End block
+                E result = get(pos--);
+                E varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652 =                     result;
+                varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652.addTaint(taint);
+                return varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652;
             } //End block
-            ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_2076290306 = new ConcurrentModificationException();
-            var779BA6969BD29E5F2D0448781C543B65_2076290306.addTaint(taint);
-            throw var779BA6969BD29E5F2D0448781C543B65_2076290306;
+            catch (IndexOutOfBoundsException e)
+            {
+                NoSuchElementException var28D00AB599969908D71F102AF992D49A_1100152132 = new NoSuchElementException();
+                var28D00AB599969908D71F102AF992D49A_1100152132.addTaint(taint);
+                throw var28D00AB599969908D71F102AF992D49A_1100152132;
+            } //End block
+
             // ---------- Original Method ----------
             //if (expectedModCount == modCount) {
             //try {
@@ -383,9 +361,8 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.442 -0400", hash_original_method = "DC75AA0325D63F3F64774210ED43B204", hash_generated_method = "365C12BE8A10E11C949799058446A835")
         public int previousIndex() {
-            return getTaintInt();
             // ---------- Original Method ----------
-            //return pos;
+            return pos;
         }
 
 
@@ -393,24 +370,24 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.443 -0400", hash_original_method = "5524F756B39DB0F01B5AC1D051D85348", hash_generated_method = "1AB3A3CDD81A14B3532CE5B15641F0CD")
         public void set(E object) {
             addTaint(object.getTaint());
-            if (DroidSafeAndroidRuntime.control) {
-                try 
-                {
-                    AbstractList.this.set(lastPosition, object);
-                } //End block
-                catch (IndexOutOfBoundsException e)
-                {
-                    IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1268997674 = new IllegalStateException();
-                    varC311A989A119B96A6232C22ABFE87C25_1268997674.addTaint(taint);
-                    throw varC311A989A119B96A6232C22ABFE87C25_1268997674;
-                } //End block
-            } //End block
-            else
-            {
+           if (DroidSafeAndroidRuntime.control) {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_336730254 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_336730254.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_336730254;
             } //End block
+
+           try 
+           {
+               AbstractList.this.set(pos+1, object);
+           } //End block
+           catch (IndexOutOfBoundsException e)
+           {
+               IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1268997674 = new IllegalStateException();
+               varC311A989A119B96A6232C22ABFE87C25_1268997674.addTaint(taint);
+               throw varC311A989A119B96A6232C22ABFE87C25_1268997674;
+           } //End block
+
+
             // ---------- Original Method ----------
             //if (expectedModCount == modCount) {
             //try {
@@ -424,34 +401,25 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         }
     }
 
-
-    
-    private final class SubAbstractListRandomAccess<E> extends SubAbstractList<E> implements RandomAccess {
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.444 -0400", hash_original_method = "DDA87CACC9A09C50E7E63C031564E416", hash_generated_method = "6B7B76F5C18BE79DC74610147357D3EB")
-          SubAbstractListRandomAccess(AbstractList<E> list, int start, int end) {
-            super(list, start, end);
-            // ---------- Original Method ----------
-        }
-        
-    }
-
-
-    
     private static class SubAbstractList<E> extends AbstractList<E> {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.445 -0400", hash_original_field = "8905032EB1CDF77831923571A781EEC0", hash_generated_field = "C1379C832D8AED55354E52703E5CFF3D")
 
         private AbstractList<E> fullList;
+        int offset;
+        int size;
         
         @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.446 -0400", hash_original_method = "9C3A542F3B8DAB5106AD210DFA1C1074", hash_generated_method = "1AB05E7BE46F8223923A52968D13AFBB")
           SubAbstractList(AbstractList<E> list, int start, int end) {
             fullList = list;
-            modCount = fullList.modCount;
+            //modCount = fullList.modCount;
 
             addTaint(start);
             addTaint(end);
+
+            offset = start;
+            size = end - start;
+
             // ---------- Original Method ----------
             //fullList = list;
             //modCount = fullList.modCount;
@@ -466,7 +434,8 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         public void add(int location, E object) {
             addTaint(object.getTaint());
             addTaint(location);
-            fullList.add(location, object);
+            fullList.add(location + offset, object);
+            size++;
 
             if (DroidSafeAndroidRuntime.control)
             {
@@ -502,7 +471,6 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         public boolean addAll(int location, Collection<? extends E> collection) {
             addTaint(location);
             addTaint(collection.getTaint());
-            fullList.addAll(collection);
             
             if (DroidSafeAndroidRuntime.control) {
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_679105590 = new IndexOutOfBoundsException();
@@ -515,7 +483,13 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
                 var779BA6969BD29E5F2D0448781C543B65_1103994350.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1103994350;
             }
-            return getTaintBoolean();
+
+            for (E elem: collection) {
+                fullList.addElementAt(offset + location, elem);
+                location++;
+                size++;
+            }
+            return true; 
             // ---------- Original Method ----------
             //if (modCount == fullList.modCount) {
                 //if (location >= 0 && location <= size) {
@@ -539,15 +513,9 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         public boolean addAll(Collection<? extends E> collection) {
 
             addTaint(collection.getTaint());
+            
+            return addAll(0, collection);
 
-            if (DroidSafeAndroidRuntime.control) {
-                ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1945704776 = new ConcurrentModificationException();
-                var779BA6969BD29E5F2D0448781C543B65_1945704776.addTaint(taint);
-                throw var779BA6969BD29E5F2D0448781C543B65_1945704776;
-            }
-            
-            return getTaintBoolean();
-            
             // ---------- Original Method ----------
             //if (modCount == fullList.modCount) {
                 //boolean result = fullList.addAll(offset + size, collection);
@@ -578,7 +546,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
                 var779BA6969BD29E5F2D0448781C543B65_1777440182.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1777440182;
             }
-            return getElement(location);
+            return getElementAt(location + offset);
             
             // ---------- Original Method ----------
             //if (modCount == fullList.modCount) {
@@ -620,7 +588,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
             }
 
             ListIterator<E> varB9B1B3D6EADC76A9BB5951AEEBCC5ACB_1408186847 =                     new SubAbstractListIterator<E>(fullList
-                    .listIterator(location), this, getTaintInt(), getTaintInt());
+                    .listIterator(location), this, offset, size);
 
             varB9B1B3D6EADC76A9BB5951AEEBCC5ACB_1408186847.addTaint(taint);
             varB9B1B3D6EADC76A9BB5951AEEBCC5ACB_1408186847.addTaint(location);
@@ -654,7 +622,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
                 var779BA6969BD29E5F2D0448781C543B65_1912515637.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1912515637;
             }
-            return super.remove(location);
+            return super.remove(location + offset);
         }
 
 
@@ -669,6 +637,11 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
                 var779BA6969BD29E5F2D0448781C543B65_259880465.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_259880465;
             } //End block
+
+            for (int i = end; i >= start; i--) {
+                fullList.remove(i + offset);
+                size--;
+            }
             // ---------- Original Method ----------
             //if (start != end) {
             //if (modCount == fullList.modCount) {
@@ -701,7 +674,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
                 throw var779BA6969BD29E5F2D0448781C543B65_1399457177;
             }
 
-            E var95CF0C14865F4C7BC0EBAE627CB27751_662668506 =                     fullList.set(location + getTaintInt(), object);
+            E var95CF0C14865F4C7BC0EBAE627CB27751_662668506 =                     fullList.set(location + offset, object);
             var95CF0C14865F4C7BC0EBAE627CB27751_662668506.addTaint(taint);
             return var95CF0C14865F4C7BC0EBAE627CB27751_662668506;
             // ---------- Original Method ----------
@@ -724,7 +697,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
                 var779BA6969BD29E5F2D0448781C543B65_870817432.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_870817432;
             }
-            return getTaintInt();
+            return size;
             // ---------- Original Method ----------
             //if (modCount == fullList.modCount) {
             //return size;
@@ -742,7 +715,13 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
         private final class SubAbstractListIterator<E> implements ListIterator<E> {
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.453 -0400", hash_original_field = "A8F4783570FDF0AC561E9E4720394F13", hash_generated_field = "96B7492BED9C5CEFD9531AA61E07E6FD")
 
+            int start;
+            int offset;
+            int end;
+
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.453 -0400", hash_original_field = "420CEC00303CF5FF3EE30BF824FC1427", hash_generated_field = "962F6323627A99A953BE0EC69102D478")
             private SubAbstractList<E> subList;
+
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.453 -0400", hash_original_field = "420CEC00303CF5FF3EE30BF824FC1427", hash_generated_field = "962F6323627A99A953BE0EC69102D478")
 
             private ListIterator<E> iterator;
@@ -756,6 +735,9 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
                 addTaint(offset);
                 addTaint(length);
                 addTaint(it.getTaint());
+                start = offset;
+                end = start + length;
+
                 // ---------- Original Method ----------
                 //iterator = it;
                 //subList = list;
@@ -770,6 +752,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
                 addTaint(object.getTaint());
                 iterator.add(object);
                 subList.sizeChanged(true);
+                end++;
                 // ---------- Original Method ----------
                 //iterator.add(object);
                 //subList.sizeChanged(true);
