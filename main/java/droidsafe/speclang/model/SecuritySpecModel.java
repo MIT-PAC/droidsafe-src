@@ -10,17 +10,22 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,6 +64,8 @@ public class SecuritySpecModel extends ModelChangeSupport
    * The name of the file to use to save the serialized version of the spec.
    */
   public static final String SECURITY_SPEC_SERIAL_FILE_NAME = "security_spec.ser";
+
+  private static final String POINTS_TO_INFO_FILE_NAME = "points-to-info.txt";
 
   /**
    * The path to location of the Android project root folder. We need this information to serialize
@@ -410,6 +417,106 @@ public class SecuritySpecModel extends ModelChangeSupport
   @Override
   public void propertyChange(PropertyChangeEvent event) {
     serializeSpecToFile(this, this.projectRootPath);
+  }
+
+  /**
+   * Print points-to info associated with the security spec to a file in the droidsafe folder of 
+   * the current selected Android app.
+   */
+  public static void printPointsToInfo(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    try {
+      FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + POINTS_TO_INFO_FILE_NAME);
+      Set<MethodModel> entryPoints = securitySpecModel.getEntryPoints();
+      SortedSet<MethodModel> allMethods = new TreeSet<MethodModel>(new MethodP2Comparator());
+      allMethods.addAll(entryPoints);
+      for (MethodModel entryPoint: entryPoints) {
+        allMethods.addAll(securitySpecModel.getOutputEvents(entryPoint));
+      }
+      for (MethodModel method: allMethods) {
+        StringBuffer buf = new StringBuffer();
+        List<AllocLocationModel> receiverSources = method.getReceiverAllocSources();
+        if (receiverSources != null && !receiverSources.isEmpty()) {
+          buf.append("  <receiver> " + method.getReceiver() + "\n");
+          printAllocations(receiverSources, buf);
+        }
+        List<String> args = method.getMethodArguments();
+        for (int i = 0; i < args.size(); i++) {
+          List<AllocLocationModel> argSources = method.getArgumentAllocSources(i);
+          if (!argSources.isEmpty()) {
+            buf.append("  <argument " + (i + 1) + "> " + method.getArgumentValue(i) + "\n");
+            printAllocations(argSources, buf);
+          }
+        }
+        if (buf.length() > 0) {
+          fw.write(method.getSignature() + "\n");
+          fw.write(buf.toString());
+        }
+      }
+      fw.close();
+    } catch (IOException e) {
+      logger.error("Error writing points-to info file.");
+      droidsafe.main.Main.exit(1);
+    }     
+  }
+
+  /**
+   * Appends points-to info associated with the given allocation sources to the given string buffer.
+   */
+  private static void printAllocations(List<AllocLocationModel> allocSources, StringBuffer buf) {
+    for (AllocLocationModel allocLoc: allocSources) {
+      buf.append("    <allocation> "+ allocLoc + "\n");
+      for (CallLocationModel callLoc: allocLoc.getCallsOnAlloc())
+        buf.append("      <call> " + callLoc + "\n");
+    }
+  }
+
+  /**
+   * A method comparator used to sort method entries in the points-to info output.
+   */
+  public static class MethodP2Comparator implements Comparator<MethodModel> {
+
+    @Override
+    public int compare(MethodModel method1, MethodModel method2) {
+      int diff = getAllocCount(method2) - getAllocCount(method1);
+      if (diff == 0) {
+        diff = method1.getClassName().compareTo(method2.getClassName());
+        if (diff == 0) {
+          diff = method1.getMethodName().compareTo(method2.getMethodName());
+          if (diff == 0) {
+            diff = method1.getSignature().compareTo(method2.getSignature());
+            if (diff == 0) {
+              diff = getLineNumber(method1) - (getLineNumber(method2));
+            }
+          }
+        }
+      }
+      return diff;
+    }
+
+  /**
+   * Returns the total count of alloc nodes associated with the given method's receiver
+   * and arguments.
+   */
+    private int getAllocCount(MethodModel method) {
+      int count = 0;
+      List<AllocLocationModel> receiverSources = method.getReceiverAllocSources();
+      if (receiverSources != null)
+        count += receiverSources.size();
+      int argCount = method.getMethodArguments().size();
+      for (int i = 0; i < argCount; i++) {
+        count += method.getArgumentAllocSources(i).size();
+      }
+      return count;
+    }
+
+  /**
+   * Returns the number of the first line where this method is called.
+   */
+    private int getLineNumber(MethodModel method) {
+      List<CodeLocationModel> lines = method.getLines();
+      return (lines == null || lines.isEmpty()) ? 0 : lines.get(0).getLine();
+    }
+
   }
 
 }

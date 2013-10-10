@@ -113,9 +113,9 @@ public class DroidsafeAnalysisRunner extends Main {
     boolean infoFlow = preferenceStore.getBoolean(PreferenceConstants.P_INFOFLOW);
     Config.v().infoFlow = infoFlow;
     if (infoFlow) {
-      Config.v().infoFlowDotFile = preferenceStore.getString(PreferenceConstants.P_INFOFLOWDOTFILE);
-      Config.v().infoFlowDotMethod =
-          preferenceStore.getString(PreferenceConstants.P_INFOFLOWMETHOD);
+//      Config.v().infoFlowDotFile = preferenceStore.getString(PreferenceConstants.P_INFOFLOWDOTFILE);
+      Config.v().infoFlowDotMethods =
+          preferenceStore.getString(PreferenceConstants.P_INFOFLOWMETHOD).split(";");
     }
     String passTarget = preferenceStore.getString(PreferenceConstants.P_TARGET_PASS);
     Config.v().target = passTarget;
@@ -149,211 +149,211 @@ public class DroidsafeAnalysisRunner extends Main {
     return Status.OK_STATUS;
   }
 
-  public IStatus runOld(IProgressMonitor monitor) {
-    long startTime = System.currentTimeMillis();
-
-    logger.info("Creating locals for all string constant arguments.");
-    LocalForStringConstantArguments.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    monitor.subTask("Scalar Optimization");
-    logger.info("Calling scalar optimizations.");
-    ScalarAppOptimizations.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Create tags for the overriden system methods in user code.");
-    monitor.subTask("Create tags for overriden system methods");
-    TagImplementedSystemMethods.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Resolving resources and Manifest.");
-    monitor.subTask("Resolving Manifest");
-    Resources.resolveManifest(Config.v().APP_ROOT_DIR);
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-
-    logger.info("Finding entry points in user code.");
-    monitor.subTask("Finding entry points in user code.");
-    EntryPoints.v().calculate();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Creating Harness.");
-    monitor.subTask("Creating Harness");
-    Harness.create();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Setting Harness Main as entry point.");
-    monitor.subTask("Setting Harness Main as entry point");
-    setHarnessMainAsEntryPoint();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Running String Analysis.");
-    monitor.subTask("Running String Analysis.");
-    long jsaStartTime = System.currentTimeMillis();
-
-    JSAStrings.init(Config.v());
-    if (Config.v().runStringAnalysis) {
-      jsaAnalysis();
-    }
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-    long jsaEndTime = System.currentTimeMillis();
-    long jsaRunTime = jsaEndTime - jsaStartTime;
-
-    // logger.info("Inserting DSTaintObject allocations at each new expression...");
-    // monitor.subTask("Inserting DSTaintObject allocations at each new expression");
-    // InsertDSTaintAllocs.run();
-    // monitor.worked(1);
-    // if (monitor.isCanceled()) {
-    // return Status.CANCEL_STATUS;
-    // }
-
-    AddAllocsForAPICalls.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Starting PTA...");
-    monitor.subTask("PTA First Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Incorporating XML layout information");
-    monitor.subTask("Incorporating XML layout information");
-    IntegrateXMLLayouts.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Resolving String Constants");
-    monitor.subTask("Resolving String Constants");
-    ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    logger.info("Restarting PTA...");
-    monitor.subTask("PTA Second Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    // write jimple txt files for all classes so we can analzye them
-    if (Config.v().writeJimpleAppClasses) {
-      writeAllAppClasses();
-    }
-
-    logger.info("Starting Value Analysis");
-    monitor.subTask("Value Analysis");
-    ValueAnalysis.run();
-    monitor.worked(1);
-    logger.info("Finished Value Analysis");
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    monitor.subTask("Generating Spec");
-    RCFG.generate();
-    logger.info("Finished generatin spec");
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    // print out what modeling is required for this application
-    monitor.subTask("Required Modeling");
-    RequiredModeling.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    if (Config.v().infoFlow) {
-      logger.info("Starting Information Flow Analysis...");
-      monitor.subTask("Information Flow Analysis");
-      InjectedSourceFlows.run();
-      InterproceduralControlFlowGraph.run();
-      InformationFlowAnalysis.run();
-
-      String infoFlowDotFile = Config.v().infoFlowDotFile;
-      if (infoFlowDotFile != null) {
-        try {
-          String infoFlowDotMethod = Config.v().infoFlowDotMethod;
-          if (infoFlowDotMethod != null) {
-            InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod),
-                infoFlowDotFile);
-          } else {
-            InformationFlowAnalysis.exportDotGraph(infoFlowDotFile);
-          }
-        } catch (IOException exp) {
-          logger.error(exp.toString());
-        }
-      }
-      logger.info("Finished Information Flow Analysis...");
-    }
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
-
-    if (Config.v().target.equals("specdump")) {
-      monitor.subTask("Writing Spec to File");
-      RCFGToSSL.run(false);
-      SecuritySpecification spec = RCFGToSSL.v().getSpec();
-
-      if (spec != null) {
-        SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
-        SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-        DroidsafePluginUtilities.generateMarkersForSecuritySpecification(securitySpecModel,
-            this.project);
-      }
-      monitor.worked(1);
-      if (monitor.isCanceled()) {
-        return Status.CANCEL_STATUS;
-      }
-    } else if (Config.v().target.equals("confcheck")) {
-      logger.error("Not implemented yet!");
-    }
-
-    monitor.worked(1);
-    long endTime = System.currentTimeMillis();
-    long runTime = endTime - startTime;
-    logger.debug("Time for droidsafe analysis = " + runTime + " String Analysis " + jsaRunTime);
-    return Status.OK_STATUS;
-  }
+//  public IStatus runOld(IProgressMonitor monitor) {
+//    long startTime = System.currentTimeMillis();
+//
+//    logger.info("Creating locals for all string constant arguments.");
+//    LocalForStringConstantArguments.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    monitor.subTask("Scalar Optimization");
+//    logger.info("Calling scalar optimizations.");
+//    ScalarAppOptimizations.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Create tags for the overriden system methods in user code.");
+//    monitor.subTask("Create tags for overriden system methods");
+//    TagImplementedSystemMethods.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Resolving resources and Manifest.");
+//    monitor.subTask("Resolving Manifest");
+//    Resources.resolveManifest(Config.v().APP_ROOT_DIR);
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//
+//    logger.info("Finding entry points in user code.");
+//    monitor.subTask("Finding entry points in user code.");
+//    EntryPoints.v().calculate();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Creating Harness.");
+//    monitor.subTask("Creating Harness");
+//    Harness.create();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Setting Harness Main as entry point.");
+//    monitor.subTask("Setting Harness Main as entry point");
+//    setHarnessMainAsEntryPoint();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Running String Analysis.");
+//    monitor.subTask("Running String Analysis.");
+//    long jsaStartTime = System.currentTimeMillis();
+//
+//    JSAStrings.init(Config.v());
+//    if (Config.v().runStringAnalysis) {
+//      jsaAnalysis();
+//    }
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//    long jsaEndTime = System.currentTimeMillis();
+//    long jsaRunTime = jsaEndTime - jsaStartTime;
+//
+//    // logger.info("Inserting DSTaintObject allocations at each new expression...");
+//    // monitor.subTask("Inserting DSTaintObject allocations at each new expression");
+//    // InsertDSTaintAllocs.run();
+//    // monitor.worked(1);
+//    // if (monitor.isCanceled()) {
+//    // return Status.CANCEL_STATUS;
+//    // }
+//
+//    AddAllocsForAPICalls.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Starting PTA...");
+//    monitor.subTask("PTA First Pass");
+//    GeoPTA.release();
+//    GeoPTA.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Incorporating XML layout information");
+//    monitor.subTask("Incorporating XML layout information");
+//    IntegrateXMLLayouts.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Resolving String Constants");
+//    monitor.subTask("Resolving String Constants");
+//    ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    logger.info("Restarting PTA...");
+//    monitor.subTask("PTA Second Pass");
+//    GeoPTA.release();
+//    GeoPTA.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    // write jimple txt files for all classes so we can analzye them
+//    if (Config.v().writeJimpleAppClasses) {
+//      writeAllAppClasses();
+//    }
+//
+//    logger.info("Starting Value Analysis");
+//    monitor.subTask("Value Analysis");
+//    ValueAnalysis.run();
+//    monitor.worked(1);
+//    logger.info("Finished Value Analysis");
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    monitor.subTask("Generating Spec");
+//    RCFG.generate();
+//    logger.info("Finished generatin spec");
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    // print out what modeling is required for this application
+//    monitor.subTask("Required Modeling");
+//    RequiredModeling.run();
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    if (Config.v().infoFlow) {
+//      logger.info("Starting Information Flow Analysis...");
+//      monitor.subTask("Information Flow Analysis");
+//      InjectedSourceFlows.run();
+//      InterproceduralControlFlowGraph.run();
+//      InformationFlowAnalysis.run();
+//
+//      String infoFlowDotFile = Config.v().infoFlowDotFile;
+//      if (infoFlowDotFile != null) {
+//        try {
+//          String infoFlowDotMethod = Config.v().infoFlowDotMethod;
+//          if (infoFlowDotMethod != null) {
+//            InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod),
+//                infoFlowDotFile);
+//          } else {
+//            InformationFlowAnalysis.exportDotGraph(infoFlowDotFile);
+//          }
+//        } catch (IOException exp) {
+//          logger.error(exp.toString());
+//        }
+//      }
+//      logger.info("Finished Information Flow Analysis...");
+//    }
+//    monitor.worked(1);
+//    if (monitor.isCanceled()) {
+//      return Status.CANCEL_STATUS;
+//    }
+//
+//    if (Config.v().target.equals("specdump")) {
+//      monitor.subTask("Writing Spec to File");
+//      RCFGToSSL.run(false);
+//      SecuritySpecification spec = RCFGToSSL.v().getSpec();
+//
+//      if (spec != null) {
+//        SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
+//        SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+//        DroidsafePluginUtilities.generateMarkersForSecuritySpecification(securitySpecModel,
+//            this.project);
+//      }
+//      monitor.worked(1);
+//      if (monitor.isCanceled()) {
+//        return Status.CANCEL_STATUS;
+//      }
+//    } else if (Config.v().target.equals("confcheck")) {
+//      logger.error("Not implemented yet!");
+//    }
+//
+//    monitor.worked(1);
+//    long endTime = System.currentTimeMillis();
+//    long runTime = endTime - startTime;
+//    logger.debug("Time for droidsafe analysis = " + runTime + " String Analysis " + jsaRunTime);
+//    return Status.OK_STATUS;
+//  }
 
 
   /**
