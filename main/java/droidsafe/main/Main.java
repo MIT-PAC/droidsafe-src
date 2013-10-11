@@ -306,7 +306,6 @@ public class Main {
                     SootMethod method = Scene.v().getMethod(methodSignature);
                     InformationFlowAnalysis.exportDotGraph(method, methodSignature + ".dot");
                 }
-                G.v().out.println(InformationFlowAnalysis.v().getInstances());
                 if (monitor.isCanceled()) {
                     return DroidsafeExecutionStatus.CANCEL_STATUS;
                 }
