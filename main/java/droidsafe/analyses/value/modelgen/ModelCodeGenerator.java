@@ -73,8 +73,6 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-
-import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -101,27 +99,27 @@ public class ModelCodeGenerator {
 
     public static final String MODEL_PACKAGE = "droidsafe.analyses.value.models";
     public static final String MODEL_PACKAGE_PREFIX = MODEL_PACKAGE + ".";
-    
+
     public static final List<String> PRIMITIVE_WRAPPER_CLASS_NAMES = Arrays.asList(new String[]{"Boolean",
-                                                                                                "Character",
-                                                                                                "Byte",
-                                                                                                "Short",
-                                                                                                "Integer",
-                                                                                                "Long",
-                                                                                                "Float",
-                                                                                                "Double"});
+        "Character",
+           "Byte",
+           "Short",
+           "Integer",
+           "Long",
+           "Float",
+           "Double"});
     public static final List<String> COLLECTION_CLASS_NAMES =
-            Arrays.asList(new String[]{"BlockingDeque", "BlockingQueue", "Collection", "Deque", "List",
-                                       "NavigableSet", "Queue", "Set", "SortedSet", "AbstractCollection",
-                                       "AbstractList", "AbstractQueue", "AbstractSequentialList", "AbstractSet",
-                                       "ArrayBlockingQueue", "ArrayDeque", "ArrayList", "AttributeList",
-                                       "ConcurrentLinkedQueue", "ConcurrentSkipListSet", "CopyOnWriteArrayList",
-                                       "CopyOnWriteArraySet", "DelayQueue", "EnumSet", "HashSet", "LinkedBlockingDeque",
-                                       "LinkedBlockingQueue", "LinkedHashSet", "LinkedList", "PriorityBlockingQueue",
-                                       "PriorityQueue", "Stack", "SynchronousQueue", "TreeSet", "Vector"});
-    
+        Arrays.asList(new String[]{"BlockingDeque", "BlockingQueue", "Collection", "Deque", "List",
+            "NavigableSet", "Queue", "Set", "SortedSet", "AbstractCollection",
+        "AbstractList", "AbstractQueue", "AbstractSequentialList", "AbstractSet",
+        "ArrayBlockingQueue", "ArrayDeque", "ArrayList", "AttributeList",
+        "ConcurrentLinkedQueue", "ConcurrentSkipListSet", "CopyOnWriteArrayList",
+        "CopyOnWriteArraySet", "DelayQueue", "EnumSet", "HashSet", "LinkedBlockingDeque",
+        "LinkedBlockingQueue", "LinkedHashSet", "LinkedList", "PriorityBlockingQueue",
+        "PriorityQueue", "Stack", "SynchronousQueue", "TreeSet", "Vector"});
+
     private Map<PrimitiveType.Primitive, Type> primitiveTypeConversionMap;
-    
+
     private Map<String, Type> classTypeConversionMap;
 
     private static final Logger logger = LoggerFactory.getLogger(ModelCodeGenerator.class);
@@ -148,11 +146,11 @@ public class ModelCodeGenerator {
     private String unqualifiedClassName;
 
     private String packageName;
-    
+
     private SortedSet<String> imports;
 
     private String apacHome;
-    
+
     private List<String> excludedClasses = Arrays.asList(new String[]{"android.view.WindowLeaked"});
 
     private Set<String> importsProcessed;
@@ -163,7 +161,6 @@ public class ModelCodeGenerator {
     private Set<String> apiClasses;
     private Set<String> apiMethods;
     private String androidLibDir;
-//    private Hierarchy hierarchy;
     private Set<String> sourceImports;
     private List<String> keywordsEndingWithS = Arrays.asList(new String[]{"extends", "implements"});
     private HashSet<String> localClassNames;
@@ -172,29 +169,24 @@ public class ModelCodeGenerator {
     public ModelCodeGenerator(String sourcePath) {
         sourceDirs = sourcePath.split(":");
         apacHome = System.getenv("APAC_HOME");
-        Reflections reflections = new Reflections(MODEL_PACKAGE);
-        Set<Class<? extends VAModel>> modeledClasses = 
-                reflections.getSubTypesOf(VAModel.class);
         classesAlreadyModeled = new HashSet<String>();
-        for (Class<? extends VAModel> modeledClass: modeledClasses)
-            classesAlreadyModeled.add(modeledClass.getName());
         logger.debug("APAC_HOME = {}", apacHome);
         if (apacHome == null) {
-          logger.error("Environment variable $APAC_HOME not set!");
-          droidsafe.main.Main.exit(1);
+            logger.error("Environment variable $APAC_HOME not set!");
+            droidsafe.main.Main.exit(1);
         }
         modelSourceDir = constructPath(apacHome, "src", "main", "java");
         modelSourceDirs = new String[]{modelSourceDir};
         androidLibDir = constructPath(apacHome, Config.ANDROID_LIB_DIR_REL);
         loadAPIClasses();
         this.classesAndFieldsToModel = getClassesAndFieldsToModel(false);
-   }
+    }
 
-   /**
-    * @param forDisplay    If true, does not filter out non-primitive fields
-    * @return    a map of sootClasses to sets of sootFields that are annotated to be resolved in the api model
-    */
-   public static Map<SootClass, Set<SootField>> getClassesAndFieldsToModel(boolean forDisplay) {
+    /**
+     * @param forDisplay    If true, does not filter out non-primitive fields
+     * @return    a map of sootClasses to sets of sootFields that are annotated to be resolved in the api model
+     */
+    public static Map<SootClass, Set<SootField>> getClassesAndFieldsToModel(boolean forDisplay) {
         Map<SootClass, Set<SootField>> classesAndFieldsToModel = new HashMap<SootClass, Set<SootField>>();
 
         String apiModelJarFilePath = constructPath(Config.v().getApacHome(), Config.ANDROID_LIB_DIR_REL, "droidsafe-api-model.jar");
@@ -233,22 +225,22 @@ public class ModelCodeGenerator {
         try {
             apiClasses = new HashSet<String>();
             apiMethods = new HashSet<String>();
-             
+
             String apiModelJarPath = constructPath(androidLibDir, "droidsafe-api-model.jar");
             String androidJarPath = constructPath(androidLibDir, "android-impl.jar");
-            
+
             if (!new File(androidJarPath).exists()) {
                 logger.error("android.jar does not exist");
                 droidsafe.main.Main.exit(1);
             }
-            
+
             if (!new File(apiModelJarPath).exists()) {
                 logger.error("droidsafe-api-model.jar does not exist");
                 droidsafe.main.Main.exit(1);
             }
-            
+
             sootClassPath = apiModelJarPath + ":" + androidJarPath;
-            
+
             System.setProperty("soot.class.path", sootClassPath);
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(constructPath(apacHome, Config.ANDROID_LIB_DIR_REL, "droidsafe-api-model.jar")));
@@ -273,7 +265,7 @@ public class ModelCodeGenerator {
                     }
                 }
             }
-//            hierarchy = new Hierarchy();
+            //            hierarchy = new Hierarchy();
         } catch (Exception e) {
             logger.error("Error loading droidsafe-api-model.jar", e);
             droidsafe.main.Main.exit(1);
@@ -286,8 +278,6 @@ public class ModelCodeGenerator {
             classToModel = classesToBeModeled.remove(0);
             generate(classToModel, null);
         }
-        //installGeneratedModels();
-        logger.info("Done.");
     }
 
     private void generate(String classToModel, Set<String> fieldsToModel) {
@@ -336,7 +326,7 @@ public class ModelCodeGenerator {
     }
 
     private CompilationUnit parseJavaSource(File sourceFile) throws Exception {
-        logger.info("Parsing Java source " + sourceFile + "...");
+        logger.debug("Parsing Java source " + sourceFile + "...");
         FileInputStream in = null;
         CompilationUnit cu = null;
         in = new FileInputStream(sourceFile);
@@ -354,12 +344,12 @@ public class ModelCodeGenerator {
         throw new IOException("Failed to find Java source file for " + className);
 
     }
-    
+
     private File getJavaSourceFile(String sourceDir, String className) {
         File javaFile = constructFile(sourceDir, className.replace(".", File.separator) + ".java");
         return (javaFile.exists()) ? javaFile : null;
     }
-    
+
     private void computeMethodCodeMap(CompilationUnit cu, File javaFile) throws IOException {
         methodCodeCommentMap = new HashMap<BodyDeclaration, Comment>();
         BufferedReader reader = null;
@@ -374,7 +364,7 @@ public class ModelCodeGenerator {
         if (reader != null) 
             reader.close();
     }
-    
+
     private void computeMethodCodeMap(ClassOrInterfaceDeclaration coi, BufferedReader reader) throws IOException {
         for (BodyDeclaration member: coi.getMembers()) {
             if (member instanceof ConstructorDeclaration) {
@@ -442,7 +432,7 @@ public class ModelCodeGenerator {
             return comment;
         }
     }
-    
+
     private int stripIndex(String line, int max) {
         max = Math.min(max, line.length());
         for (int i = 0; i < max; i++) {
@@ -459,8 +449,8 @@ public class ModelCodeGenerator {
     }
 
     private CompilationUnit generateModel(CompilationUnit cu, SootClass sootClass, Set<String> fieldsToModel, 
-                                          CompilationUnit oldModelCu) throws Exception {
-        logger.info("Generating model for " + classToModel + "...");
+            CompilationUnit oldModelCu) throws Exception {
+        logger.debug("Generating model for " + classToModel + "...");
         sourceImports = new HashSet<String>();
         addImports(cu, sourceImports);
         localClassNames = new HashSet<String>();
@@ -486,7 +476,7 @@ public class ModelCodeGenerator {
                                     oldType.getName().equals(type.getName())) {
                                 oldModelCoi = (ClassOrInterfaceDeclaration) oldType;
                                 break;
-                            }
+                                    }
                         }
                     }
                     ClassOrInterfaceDeclaration modelCoi = generateClassOrInterface(coi, sootClass, fieldsToModel, oldModelCoi);
@@ -513,7 +503,7 @@ public class ModelCodeGenerator {
                 removeQualifiers(coi);
             }
         }
-        
+
     }
 
     private void removeQualifiers(ClassOrInterfaceDeclaration coi) {
@@ -610,9 +600,9 @@ public class ModelCodeGenerator {
     }
 
     private ClassOrInterfaceDeclaration generateClassOrInterface(ClassOrInterfaceDeclaration coi, 
-                                                                 SootClass sootClass,
-                                                                 Set<String> fieldsToModel,
-                                                                 ClassOrInterfaceDeclaration oldModelCoi) throws Exception {
+            SootClass sootClass,
+            Set<String> fieldsToModel,
+            ClassOrInterfaceDeclaration oldModelCoi) throws Exception {
         if (apiClasses.contains(sootClass.getName())) {
             if (fieldsToModel == null)
                 fieldsToModel = getFieldsToModel(sootClass);
@@ -717,15 +707,15 @@ public class ModelCodeGenerator {
         }
         return null;
     }
-    
+
     private Set<String> typeParameterNames(List<TypeParameter> typeParams) {
         return typeParameterNames(typeParams, null);
     }
 
     private Set<String> typeParameterNames(List<TypeParameter> typeParams, Set<String> initTypeParamNames) {
         Set<String> typeParamNames = (initTypeParamNames == null) ? 
-                new HashSet<String>() :
-                new HashSet<String>(initTypeParamNames);
+            new HashSet<String>() :
+            new HashSet<String>(initTypeParamNames);
         if (typeParams != null) {
             for (TypeParameter typeParam: typeParams) {
                 typeParamNames.add(typeParam.getName());
@@ -752,13 +742,13 @@ public class ModelCodeGenerator {
     }
 
     private FieldDeclaration generateField(ClassOrInterfaceDeclaration modelCoi, SootClass sootClass, 
-                                           FieldDeclaration field, Set<String> fieldsToModel, Set<String> coiTypeParamNames) {
+            FieldDeclaration field, Set<String> fieldsToModel, Set<String> coiTypeParamNames) {
         localClassNames.add(modelCoi.getName());
         List<VariableDeclarator> vars = field.getVariables();
         List<VariableDeclarator> modelVars = new ArrayList<VariableDeclarator>();
         for (VariableDeclarator var: vars) {
             if (fieldsToModel.contains(var.getId().getName()))
-                 modelVars.add(var);   
+                modelVars.add(var);   
         }
         if (!modelVars.isEmpty()) {
             SootField sootField = sootClass.getFieldByName(modelVars.get(0).getId().getName());
@@ -823,7 +813,7 @@ public class ModelCodeGenerator {
         }
         return type;
     }
-    
+
     private boolean intersect(Set<String> set1, List<String> set2) {
         for (String elt1: set1)
             if (set2.contains(elt1))
@@ -902,7 +892,7 @@ public class ModelCodeGenerator {
                             !classesCurrentlyModeled.contains(rootClsName) &&
                             !classesToBeModeled.contains(rootClsName)) {
                         classesToBeModeled.add(rootClsName);
-                    }
+                            }
                     if (isAPIClass)
                         imports.add(modelClsName.replace('$', '.'));
                     else
@@ -917,7 +907,7 @@ public class ModelCodeGenerator {
             importsProcessed.add(clsName);
         }
     }
-    
+
     private Set<String> getClassReferences(Type type, soot.Type sootType, Set<String> typeParamNames) {
         Set<String> result = new HashSet<String>();
         getClassReferences(type, sootType, typeParamNames, result);
@@ -994,9 +984,9 @@ public class ModelCodeGenerator {
     }
 
     private MethodDeclaration generateInitMethod(ClassOrInterfaceDeclaration modelCoi,
-                                                 SootClass sootClass,
-                                                 ConstructorDeclaration constr, Set<String> typeParamNames,
-                                                 Set<String> fieldsToModel) throws Exception {
+            SootClass sootClass,
+            ConstructorDeclaration constr, Set<String> typeParamNames,
+            Set<String> fieldsToModel) throws Exception {
         List<Parameter> params = constr.getParameters();
         int modifiers = makePublic(constr.getModifiers());
         MethodDeclaration method = new MethodDeclaration(modifiers, ASTHelper.VOID_TYPE, "_init_", params);
@@ -1052,7 +1042,7 @@ public class ModelCodeGenerator {
         }
         return sootMethod;
     }
-    
+
     private boolean typeMatch(Type type, soot.Type sootType, Set<String> typeParamNames) {
         if (type instanceof ReferenceType) {
             ReferenceType refType = (ReferenceType) type;
@@ -1083,7 +1073,7 @@ public class ModelCodeGenerator {
     }
 
     private MethodDeclaration convertMethod(ClassOrInterfaceDeclaration modelCoi, MethodDeclaration method, SootMethod sootMethod, 
-                                            Set<String> typeParamNames, Comment codeComment, Set<String> fieldsToModel) {
+            Set<String> typeParamNames, Comment codeComment, Set<String> fieldsToModel) {
         method.setModifiers(makePublic(method.getModifiers()));
         Type returnType = method.getType();
         soot.Type sootReturnType = sootMethod.getReturnType();
@@ -1130,14 +1120,14 @@ public class ModelCodeGenerator {
                 }
                 BlockStmt newBody = new BlockStmt(newStmts);
                 if (codeComment != null) {
-                   newBody.setEndComment(codeComment);
+                    newBody.setEndComment(codeComment);
                 }
                 method.setBody(newBody);
             }
         }
         return method;
     }
-    
+
     private boolean isGetterMethodForModeledField(MethodDeclaration method, Set<String> fieldsToModel) {
         BlockStmt body = method.getBody();
         List<Statement> stmts = body.getStmts();
@@ -1168,15 +1158,15 @@ public class ModelCodeGenerator {
     }
 
     private Expression defaultInitValue(Type type) {
-       if (type instanceof ReferenceType)
-           return NULL;
-       if (type instanceof PrimitiveType) {
-           switch (((PrimitiveType) type).getType()) {
-               case Boolean: return FALSE;
-               default: return ZERO;
-           }
-       }
-       return null;
+        if (type instanceof ReferenceType)
+            return NULL;
+        if (type instanceof PrimitiveType) {
+            switch (((PrimitiveType) type).getType()) {
+                case Boolean: return FALSE;
+                default: return ZERO;
+            }
+        }
+        return null;
     }
 
     private void writeModel(CompilationUnit cu) {
@@ -1185,7 +1175,7 @@ public class ModelCodeGenerator {
         dir.mkdirs();
         PrintWriter out = null;
         File outFile = new File(dir, unqualifiedClassName + ".java");
-        logger.info("Writing model code to " + outFile.getPath() + "...");
+        logger.debug("Writing model code to " + outFile.getPath() + "...");
         try {
             out = new PrintWriter(outFile);
             out.print(cu.toString());
@@ -1198,50 +1188,7 @@ public class ModelCodeGenerator {
         }
         generatedModels.add(outFile);
     }
-    /*
-    private void installGeneratedModels() {
-        String curDir = System.getProperty("user.dir");
-        String generatedPath = constructPath(curDir, "generated");
-        File generatedDir = new File(generatedPath);
-        generatedDir.mkdir();
-        String undoScriptPath = constructPath(generatedPath, "undomodelgen");
-        File undoScriptFile = new File(undoScriptPath);
-        if (undoScriptFile.exists()) {
-            File undoScirptBackupFile = new File(undoScriptPath + ".backup");
-            undoScriptFile.renameTo(undoScirptBackupFile);
-        }
-        undoScriptFile.setExecutable(true);
-        PrintWriter undoPw = null;
-        try {
-            undoPw = new PrintWriter(undoScriptFile);
-            undoPw.println("#!/bin/bash");
-            for (File generatedModel: generatedModels) {
-                String modelPath = generatedModel.getAbsolutePath().replace(generatedPath, modelSourceDir);
-                File model = new File(modelPath);
-                File modelDir = model.getParentFile();
-                modelDir.mkdirs();
-                String backupModelPath = modelPath+".backup";
-                boolean restore = false;
-                if (model.exists()) {
-                    File backupModel = new File(backupModelPath);
-                    if (!model.renameTo(backupModel)) 
-                        throw new IOException("Failed to rename the existing model to " + backupModel);
-                    restore = true;
-                }
-                if (!generatedModel.renameTo(model))
-                    throw new IOException("Failed to rename the generated model to " + model);
-                undoPw.println("mv " + modelPath + " " + generatedModel.getParent());
-                if (restore)
-                    undoPw.println("mv " + backupModelPath + " " + modelPath);
-            }
-        } catch (IOException e) {
-            logger.error("installGeneratedModels failed", e);
-        } finally {
-            if (undoPw != null)
-                undoPw.close();
-        }
-    }
-    */
+
     private boolean isSetOfType(Type type) {
         if (type instanceof ReferenceType) {
             type = ((ReferenceType) type).getType();
@@ -1262,18 +1209,18 @@ public class ModelCodeGenerator {
     private static ReferenceType makeReferenceType(String className) {
         return new ReferenceType(new ClassOrInterfaceType(className));
     }
-    
+
     private static ReferenceType makeGenericReferenceType(String genericClassName, Type ... typeArgs) {
         ClassOrInterfaceType genericType = makeGenericType(genericClassName, typeArgs);
         return new ReferenceType(genericType);
     }
-    
+
     private static ClassOrInterfaceType makeGenericType(String genericClassName, Type ... typeArgs) {
         ClassOrInterfaceType genericType = new ClassOrInterfaceType(genericClassName);
         genericType.setTypeArgs(Arrays.asList(typeArgs));
         return genericType;
     }
-    
+
     private static Expression makeModelingSetCreationExpr(Type typeArg) {
         return makeGenericObjectCreationExpr("ValueAnalysisModelingSet", typeArg);
     }
@@ -1289,14 +1236,14 @@ public class ModelCodeGenerator {
             params.add(param);
         return params;
     }
-    
+
     private static List<Expression> makeExprList(Expression ...expressions) {
         List<Expression> exprs = new ArrayList<Expression>();
         for (Expression expr: expressions)
             exprs.add(expr);
         return exprs;
     }
-    
+
     private static BlockStmt makeBlockStmt(Statement ...statements) {
         List<Statement> stmts = new ArrayList<Statement>();
         for (Statement stmt: statements)
@@ -1343,21 +1290,20 @@ public class ModelCodeGenerator {
             logger.error("Usage: ModelCodeGen <source path>");
             droidsafe.main.Main.exit(1);
         } else {
-            //Config.v().configureDebugLog();
-    LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
-    try {
-      JoranConfigurator configurator = new JoranConfigurator();
-      configurator.setContext(context);
-      // Call context.reset() to clear any previous configuration, e.g. default
-      // configuration. For multi-step configuration, omit calling context.reset().
-      context.reset();
-      configurator.doConfigure(System.getenv("APAC_HOME") + File.separator + "config-files/va-template-generation-log.xml");
-    } catch (JoranException je) {
-      // StatusPrinter will handle this
-    }
-    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+            LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+            try {
+                JoranConfigurator configurator = new JoranConfigurator();
+                configurator.setContext(context);
+                // Call context.reset() to clear any previous configuration, e.g. default
+                // configuration. For multi-step configuration, omit calling context.reset().
+                context.reset();
+                configurator.doConfigure(System.getenv("APAC_HOME") + File.separator + "config-files/va-template-generation-log.xml");
+            } catch (JoranException je) {
+                // StatusPrinter will handle this
+            }
+            StatusPrinter.printInCaseOfErrorsOrWarnings(context);
 
-           
+
             String sourcePath = args[0];
             ModelCodeGenerator modelGen = new ModelCodeGenerator(sourcePath);
             for(Map.Entry<SootClass, Set<SootField>> entry : modelGen.classesAndFieldsToModel.entrySet()){
@@ -1367,8 +1313,6 @@ public class ModelCodeGenerator {
                 }
                 modelGen.run(entry.getKey().getName(), fieldNames);
             }
-            //modelGen.installGeneratedModels();
         }
     }
-
 }
