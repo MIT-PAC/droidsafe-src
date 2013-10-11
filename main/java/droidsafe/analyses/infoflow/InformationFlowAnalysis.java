@@ -990,8 +990,6 @@ public class InformationFlowAnalysis {
         return parameterLocals;
     }
 
-    static final InfoKind NO_CATEGORY = APIInfoKindMapping.v().getInfoKind("NO_CATEGORY");
-    
     // stmt = return_stmt | return_void_stmt
     private State executeReturn(Stmt stmt, State inState) {
         assert stmt instanceof ReturnStmt || stmt instanceof ReturnVoidStmt;
@@ -1011,20 +1009,7 @@ public class InformationFlowAnalysis {
                     Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                     if (lLocal.getType() instanceof RefLikeType) {
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            ImmutableSet<InfoValue> values;
-                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)) {
-                                HashSet<InfoValue> vs = new HashSet<InfoValue>();
-                                for (InfoKind infoKind : APIInfoKindMapping.v().getSourceInfoKinds(calleeMethod)) {
-                                    if (infoKind.equals(NO_CATEGORY)) {
-                                        vs.add(InfoUnit.v(callStmt));
-                                    } else {
-                                        vs.add(infoKind);
-                                    }
-                                }
-                                values = ImmutableSet.<InfoValue>copyOf(vs);
-                            } else {
-                                values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
-                            }
+                            ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                                 for (AllocNode allocNode : GeoPTA.v().getPTSet(lLocal, entryEdge)) {
                                     outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
@@ -1036,20 +1021,7 @@ public class InformationFlowAnalysis {
                             outState.locals.putS(entryEdge, lLocal, evaluate(entryEdge, opImmediate, inState.locals));
                         }
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            ImmutableSet<InfoValue> values;
-                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)) {
-                                HashSet<InfoValue> vs = new HashSet<InfoValue>();
-                                for (InfoKind infoKind : APIInfoKindMapping.v().getSourceInfoKinds(calleeMethod)) {
-                                    if (infoKind.equals(NO_CATEGORY)) {
-                                        vs.add(InfoUnit.v(callStmt));
-                                    } else {
-                                        vs.add(infoKind);
-                                    }
-                                }
-                                values = ImmutableSet.<InfoValue>copyOf(vs);
-                            } else {
-                                values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
-                            }
+                            ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                                 outState.locals.putW(entryEdge, lLocal, values);
                             }
