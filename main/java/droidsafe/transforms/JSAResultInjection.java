@@ -35,7 +35,7 @@ import soot.util.Chain;
 public class JSAResultInjection extends BodyTransformer {
 	
 	private static int LOCALID = 0;
-	public static final String LOCAL_PREFIX = "DS_STRING_ARG";
+	public static final String LOCAL_PREFIX = "JSA_INJ_STRING_ARG";
 
 	/**
 	 * Call this pass on all application classes in the project.
