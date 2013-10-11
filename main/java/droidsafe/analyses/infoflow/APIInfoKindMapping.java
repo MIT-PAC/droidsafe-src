@@ -46,6 +46,11 @@ public class APIInfoKindMapping {
     /** map of strings to the info kind that represents them */
     private HashMap<String,InfoKind> infoKinds;
     
+    /** ignore kinds with these names */
+    private static Set<String> IGNORE_INFOKINDS = new HashSet<String>(java.util.Arrays.asList(
+        "NO_CATEGORY"
+        ));
+    
     /**
      * Return the static singleton.
      */
@@ -139,9 +144,14 @@ public class APIInfoKindMapping {
                     String methodSig = matcher.group(1);
                     String permission = matcher.group(2);
                     String infoKind = matcher.group(3);
+
+                    //ignore NO_CATEGORY because it tells us nothing really
+                    if (IGNORE_INFOKINDS.contains(infoKind))
+                        continue;
                     
                     try {
                         SootMethod sootMethod = Scene.v().getMethod(methodSig);
+                        
                         if (!mapping.containsKey(sootMethod)) {
                             mapping.put(sootMethod, new HashSet<InfoKind>());
                         }

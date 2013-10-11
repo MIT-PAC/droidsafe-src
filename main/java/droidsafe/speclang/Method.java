@@ -19,6 +19,7 @@ import soot.Type;
 import soot.Unit;
 import soot.Value;
 import soot.jimple.Expr;
+import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.tagkit.LineNumberTag;
@@ -32,6 +33,7 @@ import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
@@ -393,21 +395,51 @@ public class Method implements Comparable<Method> {
         
         return srcSrcs;
 	}
+	
+	/**
+	 * Given a value from the invoke statement (either receiver or an argument), query the 
+	 * information flow for the units the flow to it, and then use the PTA to find all the targets
+	 * of the source statements to see if any of them have higher level InfoKind associated with them.
+	 * Return the set of all InfoKinds for the targets of all sources.
+	 */
+	private Set<InfoKind> getInfoKinds(Value v) {
+	    Set<InfoValue> srcs = queryInfoFlow(v);
+        
+        Set<InfoKind> srcKinds = new HashSet<InfoKind>();
+        for (InfoValue iv : srcs) {
+            if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
+                
+                Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
+                
+                if (!stmt.containsInvokeExpr())
+                    continue;
+                
+                InvokeExpr invoke = stmt.getInvokeExpr();
+                //for each of the targets see if they have an Info Kind
+                
+                try {
+                    Collection<SootMethod> targets = 
+                            GeoPTA.v().resolveInvokeEventContext(invoke, ptaInfo.getContextEdge());
+                    
+                    for (SootMethod target : targets) {
+                        if (APIInfoKindMapping.v().hasSourceInfoKind(target))
+                            srcKinds.addAll(APIInfoKindMapping.v().getSourceInfoKinds(target));
+                    }
+                } catch (CannotFindMethodException e) {
+                    continue;
+                }
+            }
+        }
+        
+        return srcKinds;
+	}
 
 	/**
 	 * For argument at i, return the set of high level information kinds that the argument could possibly 
 	 * be tainted with.
 	 */
 	public Set<InfoKind> getArgInfoKinds(int i) {
-	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getArgValue(i));
-	    
-	    Set<InfoKind> srcKinds = new HashSet<InfoKind>();
-	    for (InfoValue iv : srcs) {
-	        if (iv instanceof InfoKind)
-	            srcKinds.add((InfoKind)iv);
-	    }
-	    
-	    return srcKinds;
+	    return getInfoKinds(ptaInfo.getArgValue(i));
 	}
 
 	/**
@@ -415,15 +447,7 @@ public class Method implements Comparable<Method> {
 	 * tainted with.	 
 	 */
 	public Set<InfoKind> getRecInfoKinds() {
-	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
-        
-        Set<InfoKind> srcKinds = new HashSet<InfoKind>();
-        for (InfoValue iv : srcs) {
-            if (iv instanceof InfoKind)
-                srcKinds.add((InfoKind)iv);
-        }
-        
-        return srcKinds;
+        return getInfoKinds(ptaInfo.getReceiver());
 	}
 
 	/**
