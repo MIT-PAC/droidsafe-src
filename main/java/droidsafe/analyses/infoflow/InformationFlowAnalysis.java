@@ -223,42 +223,6 @@ public class InformationFlowAnalysis {
                 this.statics = statics;
                 hasChanged = true;
             }
-//            for (Block block : InterproceduralControlFlowGraph.v()) {
-//                if (hasChanged) {
-//                    State inState = new State(getLocalsBefore(block), this.instances, this.arrays, this.statics);
-//                    State outState = execute(block, inState);
-//                    if (outState != null) {
-//                        for (Block followingBlock : InterproceduralControlFlowGraph.v().getSuccsOf(block)) {
-//                            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
-//                            localsFromTo.get(block).put(followingBlock, outState.locals);
-//                            assert outState.instances == this.instances;
-//                            assert outState.arrays == this.arrays;
-//                            assert outState.statics == this.statics;
-//                        }
-//                    }
-//                } else {
-//                    State inState = new State(getLocalsBefore(block), new Instances(this.instances), new Arrays(this.arrays), new Statics(this.statics));
-//                    State outState = execute(block, inState);
-//                    if (outState != null) {
-//                        for (Block followingBlock : InterproceduralControlFlowGraph.v().getSuccsOf(block)) {
-//                            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
-//                            if (hasChanged) {
-//                                localsFromTo.get(block).put(followingBlock, outState.locals);
-//                                assert outState.instances == this.instances;
-//                                assert outState.arrays == this.arrays;
-//                                assert outState.statics == this.statics;
-//                            } else if (!outState.equals(new State(localsFromTo.get(block).get(followingBlock), this.instances, this.arrays, this.statics))) {
-//                                localsFromTo.get(block).put(followingBlock, outState.locals);
-//                                this.instances = outState.instances;
-//                                this.arrays = outState.arrays;
-//                                this.statics = outState.statics;
-//                                hasChanged = true;
-//                            }
-//                        }
-//                    }
-//                }
-//                //G.v().out.println(count++);
-//            }
             int localsFromToCount = 0;
             for (Map.Entry<Block, Map<Block, Locals>> blockBlockToLocals : localsFromTo.entrySet()) {
                 Block fromBlock = blockBlockToLocals.getKey();
@@ -965,24 +929,6 @@ public class InformationFlowAnalysis {
                 localsFromTo.get(block).put(followingBlock, outState.locals);
                 hasChanged = true;
             }
-//            if (hasChanged) {
-//                localsFromTo.get(block).put(followingBlock, outState.locals);
-//                assert outState.instances == this.instances;
-//                assert outState.arrays == this.arrays;
-//                assert outState.statics == this.statics;
-//            } else {
-//                State oldOutState = new State(localsFromTo.get(block).get(followingBlock), this.instances, this.arrays, this.statics);
-//                if (!oldOutState.equals(outState)) {
-//                    Edge callEdge = Scene.v().getCallGraph().findEdge(stmt, calleeMethod);
-//                    boolean isEntryPoint = EntryPointCGEdges.v().isEntryPoint(callEdge);
-//                    oldOutState.equals(outState);
-//                    localsFromTo.get(block).put(followingBlock, outState.locals);
-//                    this.instances = outState.instances;
-//                    this.arrays = outState.arrays;
-//                    this.statics = outState.statics;
-//                    hasChanged = true;
-//                }
-//            }
         }
 
         return null;
@@ -1044,8 +990,6 @@ public class InformationFlowAnalysis {
         return parameterLocals;
     }
 
-    static final InfoKind NO_CATEGORY = APIInfoKindMapping.v().getInfoKind("NO_CATEGORY");
-    
     // stmt = return_stmt | return_void_stmt
     private State executeReturn(Stmt stmt, State inState) {
         assert stmt instanceof ReturnStmt || stmt instanceof ReturnVoidStmt;
@@ -1065,20 +1009,7 @@ public class InformationFlowAnalysis {
                     Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                     if (lLocal.getType() instanceof RefLikeType) {
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            ImmutableSet<InfoValue> values;
-                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)) {
-                                HashSet<InfoValue> vs = new HashSet<InfoValue>();
-                                for (InfoKind infoKind : APIInfoKindMapping.v().getSourceInfoKinds(calleeMethod)) {
-                                    if (infoKind.equals(NO_CATEGORY)) {
-                                        vs.add(InfoUnit.v(callStmt));
-                                    } else {
-                                        vs.add(infoKind);
-                                    }
-                                }
-                                values = ImmutableSet.<InfoValue>copyOf(vs);
-                            } else {
-                                values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
-                            }
+                            ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                                 for (AllocNode allocNode : GeoPTA.v().getPTSet(lLocal, entryEdge)) {
                                     outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
@@ -1090,20 +1021,7 @@ public class InformationFlowAnalysis {
                             outState.locals.putS(entryEdge, lLocal, evaluate(entryEdge, opImmediate, inState.locals));
                         }
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            ImmutableSet<InfoValue> values;
-                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)) {
-                                HashSet<InfoValue> vs = new HashSet<InfoValue>();
-                                for (InfoKind infoKind : APIInfoKindMapping.v().getSourceInfoKinds(calleeMethod)) {
-                                    if (infoKind.equals(NO_CATEGORY)) {
-                                        vs.add(InfoUnit.v(callStmt));
-                                    } else {
-                                        vs.add(infoKind);
-                                    }
-                                }
-                                values = ImmutableSet.<InfoValue>copyOf(vs);
-                            } else {
-                                values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
-                            }
+                            ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                                 outState.locals.putW(entryEdge, lLocal, values);
                             }
@@ -1132,20 +1050,6 @@ public class InformationFlowAnalysis {
                 localsFromTo.get(block).put(followingBlock, outState.locals);
                 hasChanged = true;
             }
-//            if (hasChanged) {
-//                localsFromTo.get(block).put(followingBlock, outState.locals);
-//                assert outState.instances == this.instances;
-//                assert outState.arrays == this.arrays;
-//                assert outState.statics == this.statics;
-//            } else {
-//                if (!outState.equals(new State(localsFromTo.get(block).get(followingBlock), this.instances, this.arrays, this.statics))) {
-//                    localsFromTo.get(block).put(followingBlock, outState.locals);
-//                    this.instances = outState.instances;
-//                    this.arrays = outState.arrays;
-//                    this.statics = outState.statics;
-//                    hasChanged = true;
-//                }
-//            }
         }
         return null;
     }
@@ -1204,55 +1108,5 @@ public class InformationFlowAnalysis {
                     }
                 });
         dotExporter.export(new BufferedWriter(new FileWriter(fileName)), jGraphT);
-    }
-    
-    private static ImmutableSet<InfoValue> allocNodesToValues(Set<AllocNode> allocNodes) {
-        Set<InfoValue> values = new HashSet<InfoValue>();
-        for (AllocNode allocNode : allocNodes) {
-            values.add(Address.v(allocNode));
-        }
-        return ImmutableSet.<InfoValue>copyOf(values);
-    }
-
-    public Instances getInstances() {
-        return this.instances;
-    }
-    
-    Set<AllocNode> reachable(Set<AllocNode> roots) {
-        Set<AllocNode> allocNodesReachable = new HashSet<AllocNode>(roots);
-        Set<AllocNode> allocNodesToVisit = new HashSet<AllocNode>(roots);
-        Set<AllocNode> allocNodesVisited = new HashSet<AllocNode>();
-        while (!(allocNodesToVisit.isEmpty())) {
-            Set<AllocNode> allocNodesToVisitNewly = new HashSet<AllocNode>();
-            for (AllocNode allocNode : allocNodesToVisit) {
-                allocNodesVisited.add(allocNode);
-                final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
-                if (allocNode.getType() instanceof RefType) {
-                    for (AllocDotField allocDotField : allocNode.getFields()) {
-                        ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjects(allocNode, (SootField)allocDotField.getField())).forall(new P2SetVisitor() {
-                            public void visit(Node node) {
-                                allocNodes.add((AllocNode)node);
-                            }
-                        });
-                    }
-                } else if (allocNode.getType() instanceof ArrayType) {
-                    HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), (GeomPointsTo)Scene.v().getPointsToAnalysis());
-                    pointsToSet.add(allocNode);
-                    ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
-                        public void visit(Node node) {
-                            allocNodes.add((AllocNode)node);
-                        }
-                    });
-                }
-                allocNodesReachable.addAll(allocNodes);
-                for (AllocNode node : allocNodes) {
-                    if (!allocNodesVisited.contains(node)) {
-                        allocNodesToVisitNewly.add(node);
-                    }
-                }
-            }
-            allocNodesToVisit = allocNodesToVisitNewly;
-        }
-        return allocNodesReachable;
     }
 }
