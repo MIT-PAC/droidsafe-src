@@ -146,7 +146,7 @@ public class APIInfoKindMapping {
                             mapping.put(sootMethod, new HashSet<InfoKind>());
                         }
                         mapping.get(sootMethod).add(getInfoKind(infoKind));
-                        System.out.println("Adding to mapping " + methodSig + " -> " + infoKind);
+                        //System.out.println("Adding to mapping " + methodSig + " -> " + infoKind);
                         found++;
                     } catch (Exception e) {
                         notFound ++;
