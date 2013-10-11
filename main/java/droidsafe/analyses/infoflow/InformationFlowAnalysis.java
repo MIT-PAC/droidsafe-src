@@ -125,7 +125,7 @@ public class InformationFlowAnalysis {
         }
         return values;
     }
-    
+
     public Set<InfoValue> getTaintsBeforeRecursively(Edge entryEdge, Unit unit, Local local) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
         State state = getStateBefore(unit);
@@ -140,7 +140,7 @@ public class InformationFlowAnalysis {
         }
         return values;
     }
-    
+
     private State getStateBefore(Unit unit) {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(unit);
         State state = getStateBefore(block);
@@ -159,7 +159,7 @@ public class InformationFlowAnalysis {
     private Locals getLocalsFromTo(Block from, Block to) {
         return localsFromTo.get(from).get(to);
     }
-    
+
     private Locals getLocalsBefore(Block block) {
         Locals locals;
         List<Block> precedingBlocks = InterproceduralControlFlowGraph.v().getPredsOf(block);
@@ -840,8 +840,8 @@ public class InformationFlowAnalysis {
                 return inState;
             }
         }
-        
-        Local lLocal = (stmt instanceof AssignStmt) ? (Local)((AssignStmt)stmt).getLeftOp() : null; 
+
+        Local lLocal = (stmt instanceof AssignStmt) ? (Local)((AssignStmt)stmt).getLeftOp() : null;
         SootMethod callerMethod = block.getBody().getMethod();
         HashSet<InfoValue>[] arguments = null;
         AddressFieldToValues addressFieldToValues = null;
@@ -888,13 +888,13 @@ public class InformationFlowAnalysis {
                         for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                             addressToValues = addressToValues.merge(inState.arrays.get(entryEdge));
                         }
-                                
+
                         fieldToValues = FieldToValues.EMPTY;
                         for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                             fieldToValues = fieldToValues.merge(inState.statics.get(entryEdge));
                         }
                     }
-                    
+
                     for (int i = 0; i < calleeMethod.getParameterCount(); i++) {
                         if (!(parameterLocals[i].getType() instanceof RefLikeType)) {
                             outState.locals.putS(callEdge, parameterLocals[i], arguments[i]);
@@ -933,12 +933,12 @@ public class InformationFlowAnalysis {
 
         return null;
     }
-    
+
     private State executeGetTaint(Stmt stmt, InvokeExpr invokeExpr, State inState) {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
         assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
         SootMethod callerMethod = block.getBody().getMethod();
-        
+
         State outState = inState;
         if (stmt instanceof AssignStmt) {
             // local "=" "virtualinvoke" immediate ".[" Object.getTaint* "]" "(" ")"
@@ -955,7 +955,7 @@ public class InformationFlowAnalysis {
             // "virtualinvoke" immediate ".[" Object.getTaint* "]" "(" ")"
             assert stmt instanceof InvokeStmt;
         }
-       return outState; 
+       return outState;
     }
 
     private State executeAddTaint(Stmt stmt, InvokeExpr invokeExpr, State inState) {
@@ -1074,11 +1074,11 @@ public class InformationFlowAnalysis {
         immediate.apply(immediateSwitch);
         return (ImmutableSet<InfoValue>)immediateSwitch.getResult();
     }
-    
+
     public static void exportDotGraph(SootMethod method, String fileName) throws IOException {
         exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(method), fileName);
     }
-    
+
     private static void exportDotGraph(final Graph<Block, DefaultEdge> jGraphT, String fileName) throws IOException {
         DOTExporter<Block, DefaultEdge> dotExporter = new DOTExporter<Block, DefaultEdge>(
                 new IntegerNameProvider<Block>(),
