@@ -40,7 +40,6 @@ import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
-import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
@@ -98,6 +97,8 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
+    /* Disabling local for constant string argument because it should not be needed 
+     * anymore
     logger.info("Creating locals for all string constant arguments.");
     monitor.subTask("Creating locals for string constant arguments.");
     LocalForStringConstantArguments.run();
@@ -105,6 +106,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
+    */
     
     logger.info("Calling scalar optimizations.");
     monitor.subTask("Scalar Optimization");
