@@ -203,19 +203,46 @@ public class Method implements Comparable<Method> {
 	}
 	
 	public String toString(boolean flagUnsupported) {
-	String ret = "";
+	StringBuilder ret = new StringBuilder();
 		
 		if (!lines.isEmpty() && !Config.v().noSourceInfo) {
 			for (SourceLocationTag line : lines) {
-				ret += "// " + line + "\n";
+				ret.append("// " + line + "\n");
 			}
 		}
 		
 		for (String str : Permissions.v().getPermissions(sootMethod)) 
-			ret += "// Requires permission: " + str + "\n";
+			ret.append("// Requires permission: " + str + "\n");
+		
+		//print resolved high-level information flows
+		Set<InfoKind> recSourceKinds = getRecInfoKinds();
+		Set<InfoKind> sinkKinds = getSinkInfoKinds();
+		
+		Set<InfoKind> argsSourceKinds = new HashSet<InfoKind>();
+		
+		for (int i = 0; i < ptaInfo.getNumArgs(); i++)
+		    argsSourceKinds.addAll(getArgInfoKinds(i));
+		
+		if (!recSourceKinds.isEmpty() || !argsSourceKinds.isEmpty() || !sinkKinds.isEmpty()) {
+		    ret.append("// InfoFlows: \n//    (receiver:");
+		    
+		    for (InfoKind src : recSourceKinds) 
+		        ret.append(" " + src);
+		    		    
+		    ret.append(")\n//    (args:");
+		    for (InfoKind src : argsSourceKinds) { 
+                ret.append(" " + src);
+		    }
+		    ret.append(")\n//    (sinks:");
+            
+		    for (InfoKind sink : sinkKinds)
+		        ret.append(" " + sink);
+		  
+		    ret.append(")\n");
+		}
 		
 		if (flagUnsupported && !API.v().isSupportedMethod(sootMethod))
-			ret += "**";
+			ret.append("**");
 		
         return ret + toSignatureString();
 	}
