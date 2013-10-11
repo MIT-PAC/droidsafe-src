@@ -36,6 +36,7 @@ import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.ParameterRef;
@@ -961,6 +962,15 @@ public class SootUtils {
      */
     public static boolean isEnum(SootClass clz) {
         return ((clz.getModifiers() & 0x4000) != 0);
+    }
+    
+    public static SootMethod getMethodFromStmt(Stmt stmt) {
+        if (stmt.containsInvokeExpr()) {
+            InvokeExpr invokeExpr = stmt.getInvokeExpr();
+            return invokeExpr.getMethod(); 
+        }
+        return null;
+
     }
 }
 
