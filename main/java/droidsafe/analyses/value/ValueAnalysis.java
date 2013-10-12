@@ -4,8 +4,6 @@ import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.analyses.value.modelgen.ModelCodeGenerator;
-import droidsafe.analyses.value.VAModel;
 
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
@@ -86,23 +84,15 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     private static final Logger logger = LoggerFactory.getLogger(ValueAnalysis.class);
 
     /** The package of the value analysis models */
-    public static final String MODEL_PACKAGE = "droidsafe.analyses.value.models";
+    public static final String MODEL_PACKAGE = "droidsafe.analyses.value.VAResultContainerClasses";
 
     /** The prefix that is prepended to fully qualified value analysis models */
     public static final String MODEL_PACKAGE_PREFIX = MODEL_PACKAGE + ".";
 
-    /** The directory relative from APAC_HOME that is the base of the modeling source code for this abstract semantics 
-    */
-    public static final String MODEL_SRC_BASE_DIR = "src/main/java/droidsafe.analyses.value.models.";
-
-    /** The directory relative from APAC_HOME that is the base of the modeling class files for this abstract semantics 
-    */
-    public static final String MODEL_CLASS_BASE_DIR = "classes/main/droidsafe.analyses.value.models.";
-
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
         this.allocNodeToVAModelMap = new LinkedHashMap<AllocNode, VAModel>();
-        this.classesAndFieldsToModel = ModelCodeGenerator.getClassesAndFieldsToModel(true);
+        this.classesAndFieldsToModel = VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
     }
 
     /**
