@@ -1,4 +1,4 @@
-package droidsafe.analyses.value.modelgen;
+package droidsafe.analyses.value;
 
 import japa.parser.ast.body.BodyDeclaration;
 import japa.parser.ast.body.ConstructorDeclaration;

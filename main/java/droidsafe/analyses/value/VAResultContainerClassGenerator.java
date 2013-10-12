@@ -1,4 +1,4 @@
-package droidsafe.analyses.value.modelgen;
+package droidsafe.analyses.value;
 
 import droidsafe.analyses.value.VAModel;
 
@@ -95,10 +95,7 @@ import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
 
 
-public class ModelCodeGenerator {
-
-    public static final String MODEL_PACKAGE = "droidsafe.analyses.value.models";
-    public static final String MODEL_PACKAGE_PREFIX = MODEL_PACKAGE + ".";
+public class VAResultContainerClassGenerator {
 
     public static final List<String> PRIMITIVE_WRAPPER_CLASS_NAMES = Arrays.asList(new String[]{"Boolean",
         "Character",
@@ -122,7 +119,7 @@ public class ModelCodeGenerator {
 
     private Map<String, Type> classTypeConversionMap;
 
-    private static final Logger logger = LoggerFactory.getLogger(ModelCodeGenerator.class);
+    private static final Logger logger = LoggerFactory.getLogger(VAResultContainerClassGenerator.class);
 
     private static final Expression NULL = new NullLiteralExpr();
 
@@ -166,7 +163,7 @@ public class ModelCodeGenerator {
     private HashSet<String> localClassNames;
     private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
 
-    public ModelCodeGenerator(String sourcePath) {
+    public VAResultContainerClassGenerator(String sourcePath) {
         sourceDirs = sourcePath.split(":");
         apacHome = System.getenv("APAC_HOME");
         classesAlreadyModeled = new HashSet<String>();
@@ -175,7 +172,7 @@ public class ModelCodeGenerator {
             logger.error("Environment variable $APAC_HOME not set!");
             droidsafe.main.Main.exit(1);
         }
-        modelSourceDir = constructPath(apacHome, "src", "main", "java");
+        modelSourceDir = constructPath(apacHome, "src", "gen");
         modelSourceDirs = new String[]{modelSourceDir};
         androidLibDir = constructPath(apacHome, Config.ANDROID_LIB_DIR_REL);
         loadAPIClasses();
@@ -302,7 +299,7 @@ public class ModelCodeGenerator {
             File sourceFile = getJavaSourceFile(sourceDirs, classToModel);
             cu = parseJavaSource(sourceFile);
             computeMethodCodeMap(cu, sourceFile);
-            String modelClass = MODEL_PACKAGE_PREFIX + classToModel;
+            String modelClass = ValueAnalysis.MODEL_PACKAGE_PREFIX + classToModel;
             if (classesAlreadyModeled.contains(modelClass)) {
                 File oldModelFile = getJavaSourceFile(modelSourceDirs, modelClass);
                 oldModelCu = parseJavaSource(oldModelFile);
@@ -456,7 +453,7 @@ public class ModelCodeGenerator {
         localClassNames = new HashSet<String>();
         CompilationUnit model = new CompilationUnit();
 
-        String modelPackageName = MODEL_PACKAGE_PREFIX + packageName;
+        String modelPackageName = ValueAnalysis.MODEL_PACKAGE_PREFIX + packageName;
         PackageDeclaration modelPkg = new PackageDeclaration(new NameExpr(modelPackageName));
         model.setPackage(modelPkg);
 
@@ -488,7 +485,7 @@ public class ModelCodeGenerator {
         List<ImportDeclaration> importDecls = new ArrayList<ImportDeclaration>();
         removeConflictingImports();
         for (String imp: imports) {
-            if (!imp.startsWith(MODEL_PACKAGE_PREFIX + classToModel + "."))
+            if (!imp.startsWith(ValueAnalysis.MODEL_PACKAGE_PREFIX + classToModel + "."))
                 importDecls.add(new ImportDeclaration(new NameExpr(imp), false, false));
         }
         model.setImports(importDecls);
@@ -881,7 +878,7 @@ public class ModelCodeGenerator {
 
     private void collectImports(String clsName) {
         if (!importsProcessed.contains(clsName)) {
-            String modelClsName = MODEL_PACKAGE_PREFIX + clsName;
+            String modelClsName = ValueAnalysis.MODEL_PACKAGE_PREFIX + clsName;
             if (!getQualifier(clsName).equals("java.lang")) {
                 if (clsName.startsWith("android")) {
                     int pos = clsName.indexOf('$');
@@ -1170,7 +1167,7 @@ public class ModelCodeGenerator {
     }
 
     private void writeModel(CompilationUnit cu) {
-        String modelPackageName = MODEL_PACKAGE_PREFIX + packageName;
+        String modelPackageName = ValueAnalysis.MODEL_PACKAGE_PREFIX + packageName;
         File dir = constructFile(modelSourceDir, modelPackageName.replace(".", File.separator));
         dir.mkdirs();
         PrintWriter out = null;
@@ -1287,7 +1284,7 @@ public class ModelCodeGenerator {
      */
     public static void main(String[] args) {
         if (args.length < 1) {
-            logger.error("Usage: ModelCodeGen <source path>");
+            logger.error("Usage: VAResultContainerClassGenerator <source path>");
             droidsafe.main.Main.exit(1);
         } else {
             LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
@@ -1297,21 +1294,20 @@ public class ModelCodeGenerator {
                 // Call context.reset() to clear any previous configuration, e.g. default
                 // configuration. For multi-step configuration, omit calling context.reset().
                 context.reset();
-                configurator.doConfigure(System.getenv("APAC_HOME") + File.separator + "config-files/va-template-generation-log.xml");
+                configurator.doConfigure(System.getenv("APAC_HOME") + File.separator + "config-files/va-result-container-class-generator-logging.xml");
             } catch (JoranException je) {
                 // StatusPrinter will handle this
             }
             StatusPrinter.printInCaseOfErrorsOrWarnings(context);
 
-
             String sourcePath = args[0];
-            ModelCodeGenerator modelGen = new ModelCodeGenerator(sourcePath);
-            for(Map.Entry<SootClass, Set<SootField>> entry : modelGen.classesAndFieldsToModel.entrySet()){
+            VAResultContainerClassGenerator generator = new VAResultContainerClassGenerator(sourcePath);
+            for(Map.Entry<SootClass, Set<SootField>> entry : generator.classesAndFieldsToModel.entrySet()){
                 Set<String> fieldNames = new HashSet<String>();
                 for (SootField sootField : entry.getValue()) {
                     fieldNames.add(sootField.getName());
                 }
-                modelGen.run(entry.getKey().getName(), fieldNames);
+                generator.run(entry.getKey().getName(), fieldNames);
             }
         }
     }
