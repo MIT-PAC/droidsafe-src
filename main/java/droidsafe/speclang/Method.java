@@ -226,12 +226,17 @@ public class Method implements Comparable<Method> {
 		    argsSourceKinds.addAll(getArgInfoKinds(i));
 		
 		if (!recSourceKinds.isEmpty() || !argsSourceKinds.isEmpty() || !sinkKinds.isEmpty()) {
-		    ret.append("// InfoFlows: \n//    (receiver:");
+		    ret.append("// InfoFlows: \n");
+
+		    if (hasReceiver()) {
+		        ret.append("//    (receiver:");
+		        for (InfoKind src : recSourceKinds) 
+		            ret.append(" " + src);
+
+		        ret.append(")\n");
+		    }
 		    
-		    for (InfoKind src : recSourceKinds) 
-		        ret.append(" " + src);
-		    		    
-		    ret.append(")\n//    (args:");
+		    ret.append("//    (args:");
 		    for (InfoKind src : argsSourceKinds) { 
                 ret.append(" " + src);
 		    }
@@ -359,6 +364,9 @@ public class Method implements Comparable<Method> {
 	 */
 	public Set<SourceLocationTag> getReceiverSourceInfoUnits() {
 	    //call the information flow results
+	    if (!hasReceiver())
+	        return Collections.emptySet();
+	                
 	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
 	    	    
 	    Set<SourceLocationTag> srcSrcs = new HashSet<SourceLocationTag>();
@@ -447,7 +455,10 @@ public class Method implements Comparable<Method> {
 	 * tainted with.	 
 	 */
 	public Set<InfoKind> getRecInfoKinds() {
-        return getInfoKinds(ptaInfo.getReceiver());
+	    if (hasReceiver())
+	        return getInfoKinds(ptaInfo.getReceiver());
+	    else 
+	        return Collections.emptySet();
 	}
 
 	/**
