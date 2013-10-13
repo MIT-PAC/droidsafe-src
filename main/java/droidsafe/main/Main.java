@@ -97,17 +97,6 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
-    /* Disabling local for constant string argument because it should not be needed 
-     * anymore
-    logger.info("Creating locals for all string constant arguments.");
-    monitor.subTask("Creating locals for string constant arguments.");
-    LocalForStringConstantArguments.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-    */
     
     logger.info("Calling scalar optimizations.");
     monitor.subTask("Scalar Optimization");
@@ -156,34 +145,8 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
     
-    // JSA analysis fails if it follows AddAllocsForAPICalls.run()
-    // Set up the analysis object no matter what.
-    JSAStrings.init(Config.v());
-    if (Config.v().runStringAnalysis) {
-      monitor.subTask("Running String Analysis.");
-      jsaAnalysis(monitor);
-    }
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-    
-    logger.info("Injecting String Analysis Results.");
-    monitor.subTask("Injecting String Analysis Results.");
-    JSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-    
-    logger.info("Starting PTA...");
-    monitor.subTask("PTA First Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
 
     logger.info("Incorporating XML layout information");
     monitor.subTask("Incorporating XML layout information");
@@ -200,26 +163,13 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
-    // all transforms should be done by here!
-    logger.info("Restarting PTA...");
-    monitor.subTask("PTA Second Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    
+    //run jsa after we inject strings from XML values and layout
+    JSAStrings.init(Config.v());
+    if (Config.v().runStringAnalysis) {
+      monitor.subTask("Running String Analysis.");
+      jsaAnalysis(monitor);
     }
-    
-    //reset the cache of the call graph traversal
-    CallGraphTraversal.reset();
-    
-    // write jimple txt files for all classes so we can analzye them
-    // all transforms should be done by here.
-
-    logger.info("Caching Jimple Hierarchy Relationships...");
-    monitor.subTask("Caching Jimple Hierarchy Relationships...");
-    JimpleRelationships.v();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -234,6 +184,17 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
+    logger.info("Injecting String Analysis Results.");
+    monitor.subTask("Injecting String Analysis Results.");
+    JSAResultInjection.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+    
     //create instance of value analysis object, so that later passes an query empty result.
     long startTime = System.nanoTime();
     ValueAnalysis.setup();
@@ -257,38 +218,8 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    // all transforms should be done by here!
-    logger.info("Restarting PTA...");
-    monitor.subTask("PTA third Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-    
-    //reset the cache of the call graph traversal
-    CallGraphTraversal.reset();
-    
-    // write jimple txt files for all classes so we can analzye them
-    // all transforms should be done by here.
-
-    logger.info("Caching Jimple Hierarchy Relationships...");
-    monitor.subTask("Caching Jimple Hierarchy Relationships...");
-    JimpleRelationships.v();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
-    if (Config.v().writeJimpleAppClasses) {
-      monitor.subTask("Writing all app classes");
-      writeAllAppClasses();
-    }
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
     
     logger.info("Starting Generate RCFG...");
     monitor.subTask("Generating Spec");
@@ -298,8 +229,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
-    
+  
     logger.info("Finding method calls on all important alloc nodes...");
     monitor.subTask("Generating Spec");
     MethodCallsOnAlloc.run();
@@ -420,6 +350,33 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
     return DroidsafeExecutionStatus.OK_STATUS;
+  }
+  
+  /**
+   * Called after one or more transforms to recalculate any underlying analysis.
+   */
+  private static DroidsafeExecutionStatus afterTransform(IDroidsafeProgressMonitor monitor) {
+      logger.info("Running PTA...");
+      monitor.subTask("Running PTA");
+      GeoPTA.release();
+      GeoPTA.run();
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+      }
+      
+      logger.info("Caching Jimple Hierarchy Relationships...");
+      monitor.subTask("Caching Jimple Hierarchy Relationships...");
+      JimpleRelationships.v();
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+      }
+      
+      //reset the cache of the call graph traversal
+      CallGraphTraversal.reset();
+      
+      return DroidsafeExecutionStatus.OK_STATUS;
   }
 
   /**
