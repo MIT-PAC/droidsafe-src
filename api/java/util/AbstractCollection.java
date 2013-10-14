@@ -171,6 +171,9 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         //return contents;
     }
 
+    /*************************************************************************
+     * Additional Method facilitating subclass implementation/reuse
+     *************************************************************************/
     @DSModeled(DSC.BAN)
     protected E getElementAt(int index) {
         if (index >= len || index < 0)
@@ -244,7 +247,17 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         }
         return false;
     }
-    
+
+    @DSModeled(DSC.BAN)
+    public Iterator<E>getIterator(){
+        return new BasicIterator<E>(); 
+    }
+
+    @DSModeled(DSC.BAN)
+    public ListIterator<E>getListIterator(int location){
+        return new BasicIterator<E>(location); 
+    }
+
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.357 -0400", hash_original_method = "A06C3538162F748E28317896970387BE", hash_generated_method = "22C4F41EBA3A6ACE287F6D60148ADCF8")
     @Override
@@ -254,6 +267,88 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return retStr;
     }
 
-    
+     /*************************************************************************
+     * Iterator classes 
+     *************************************************************************/
+     private final class BasicIterator<T> implements ListIterator<T> {     
+        int start;
+        int current; //current active index
+        
+        @DSModeled(DSC.BAN)
+        BasicIterator() {
+            this(0);
+        }
+        
+        @DSModeled(DSC.BAN)
+        BasicIterator(int location) {
+            start = location;
+            current = start - 1;
+        }
+        
+        @Override
+        @DSModeled(DSC.BAN)
+        public boolean hasNext() {
+            // TODO Auto-generated method stub
+            return (current < len -1);
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public T next() {
+            // TODO Auto-generated method stub
+            return (T) collectionData[++current];
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public void remove() {
+            // TODO Auto-generated method stub
+            removeElementAt(current);
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public void add(Object object) {
+            // TODO Auto-generated method stub
+            //addElementAt(current, object);
+            E tmpObj = (E)object;
+            //addElementAt(current, tmpObj);
+            addElementAt(current, tmpObj);
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public boolean hasPrevious() {
+            // TODO Auto-generated method stub
+            return (current > start);
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public int nextIndex() {
+            return current + 1;
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public T previous() {
+            // TODO Auto-generated method stub
+            return (T) getElementAt(--current);
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public int previousIndex() {
+            // TODO Auto-generated method stub
+            return (current - 1);
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public void set(T object) {
+            // TODO Auto-generated method stub
+            setElementAt(current, (E)object);
+        }
+     }
 }
 
