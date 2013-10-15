@@ -75,8 +75,22 @@ public class RequiredModeling {
             if (API.v().isSystemClass(method.getDeclaringClass()) && 
                 !ignoreNotModeled(method) &&  
                 !API.v().isAPIModeledMethod(method) &&
-                !SootMethod.staticInitializerName.equals(method.getName()))
+                !SootMethod.staticInitializerName.equals(method.getName())) {
+                
+                logger.debug("Method {}: hasbody-{}, abstract-{}, concrete-{}",
+                        method,
+                        method.hasActiveBody(),
+                        method.isAbstract(),
+                        method.isConcrete());
+
+                SootMethod resolved  = SootUtils.resolveMethod(method);
+                if (resolved != method && resolved != null) {
+                    logger.debug("Method {} has an implementation {} ", method, resolved);
+                    if (API.v().isAPIModeledMethod(resolved))
+                        continue;
+                }
                 toModel.add(method.getSignature());
+            }
         }
 
         try {

@@ -341,6 +341,43 @@ public class SootUtils {
         return resolveMethod(clz.getSuperclass(), signature);
     }
     
+    /* Given the signature of a method that may or may not concretely exist, search 
+     * for the concrete call that will be resolved for the signature.
+     * 
+     * This search entails a polymorphic search over all the methods of the class
+     * for return types and parameter types.  
+     * 
+     * It then searches parent classes if the method cannot be found in this class.
+     */
+    public static SootMethod resolveMethod(SootMethod method) {
+
+        if (method.hasActiveBody())
+            return method;
+        
+        SootClass clz = method.getDeclaringClass();
+        
+       //if not found, and at object can't find it
+        if (clz.getName().equals("java.lang.Object") ||
+                clz.getSuperclass() == null)
+            return null;
+        
+        SootClass parentClass = clz.getSuperclass();
+
+        SootMethod parentMethod;
+        try {
+            parentMethod = SootUtils.resolveConcreteDispatch(parentClass, method);
+            if (parentMethod == null)
+                return null;
+            //now check the parents
+            return resolveMethod(parentMethod);
+        } catch (CannotFindMethodException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    
     /**
      * Matching a callback method.  We ignore return type as it is not important in callback
      * @param clz
