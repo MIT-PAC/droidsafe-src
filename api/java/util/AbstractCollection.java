@@ -203,7 +203,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     @DSModeled(DSC.BAN)
-    protected void addElementAt(int index, E object) {
+    protected boolean addElementAt(int index, E object) {
         addTaint(index);
         addTaint(object.getTaint());
         
@@ -216,6 +216,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         }
         len++;
         collectionData[index] = object; 
+        return true;
     }
     
     @DSModeled(DSC.BAN)
@@ -235,6 +236,43 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         }
         return -1;
     }
+    
+    @DSModeled(DSC.BAN)
+    protected E getFirstElement(){
+        return collectionData[0];
+    }
+
+    @DSModeled(DSC.BAN)
+    protected E getLastElement(){
+        if (len > 0)
+            return collectionData[len-1];
+        return null;
+    }
+    
+    @DSModeled(DSC.BAN)
+    protected void addFirstElement(E object){
+        addElementAt(0, object);
+    }
+    
+        @DSModeled(DSC.BAN)
+    protected void addLastElement(E object){
+        addElementAt(size()-1, object);
+    }
+        
+         
+    @DSModeled(DSC.BAN)
+    protected E removeFirstElement(){
+        if (size() > 0)
+            return removeElementAt(0);
+        return null;
+    }
+    
+        @DSModeled(DSC.BAN)
+    protected E removeLastElement() {
+        if (size() > 0)
+            return removeElementAt(size()-1);
+        return null;
+    }
 
     @DSModeled(DSC.BAN)
     protected boolean isEqualTo(Object collection) {
@@ -251,6 +289,11 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     @DSModeled(DSC.BAN)
     public Iterator<E>getIterator(){
         return new BasicIterator<E>(); 
+    }
+    
+    @DSModeled(DSC.BAN)
+    public Iterator<E>getReverseIterator(){
+        return new BasicReverseIterator<E>(); 
     }
 
     @DSModeled(DSC.BAN)
@@ -270,7 +313,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      /*************************************************************************
      * Iterator classes 
      *************************************************************************/
-     private final class BasicIterator<T> implements ListIterator<T> {     
+     private class BasicIterator<T> implements ListIterator<T> {     
         int start;
         int current; //current active index
         
@@ -349,6 +392,27 @@ public abstract class AbstractCollection<E> implements Collection<E> {
             // TODO Auto-generated method stub
             setElementAt(current, (E)object);
         }
+     }
+     
+     private class BasicReverseIterator<T> extends BasicIterator<T>{     
+         
+        @DSModeled(DSC.BAN)
+         public BasicReverseIterator(){
+             current = len;
+             start = 0;
+         }
+         
+         @Override
+        @DSModeled(DSC.BAN)
+         public boolean hasNext(){
+             return super.hasPrevious();
+         }
+         
+         @Override
+        @DSModeled(DSC.BAN)
+         public T next() {
+             return super.previous();
+         }
      }
 }
 
