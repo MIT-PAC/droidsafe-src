@@ -63,9 +63,6 @@ public class InjectedSourceFlows {
     /** singleton instance */
     private static InjectedSourceFlows v;
 
-    /** local to store the attribute modeling results in */
-    private final Map<AllocNode, VAModel> attrModelingResults;
-
     /** results of this analysis, map from allocnodes to the flows injected */
     private Map<AllocNode, Set<MyKind>> injectedFlows;
 
@@ -178,7 +175,8 @@ public class InjectedSourceFlows {
         System.out.println(fieldFlowMap);
 
         //loop over all allocnodes in the results and if there is an inject flow, remember it
-        for (AllocNode node : attrModelingResults.keySet()) {
+        for (Object newExpr : ValueAnalysis.v().getResults().keySet()) {
+            AllocNode node = GeoPTA.v().getAllocNode(newExpr);
             Type type = node.getType();
             if (type instanceof RefType) {
                 SootClass clz = ((RefType)type).getSootClass();
@@ -187,7 +185,7 @@ public class InjectedSourceFlows {
                     System.out.println("Testing: " + node);
 
                     //do something
-                    RefVAModel modeledClass = (RefVAModel)this.attrModelingResults.get(node);
+                    RefVAModel modeledClass = (RefVAModel)ValueAnalysis.v().getResult(node);
 
 
                     for (SootField field : trackedFields.get(clz)) {
@@ -259,7 +257,6 @@ public class InjectedSourceFlows {
      * Private (to enforce singleton pattern) class constructor that runs the analysis
      */
     private InjectedSourceFlows() {
-        this.attrModelingResults = ValueAnalysis.v().getResults();
         this.injectedFlows = new LinkedHashMap<AllocNode, Set<MyKind>>();
     }
 

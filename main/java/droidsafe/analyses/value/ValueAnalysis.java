@@ -69,10 +69,10 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     private static ValueAnalysis am;
 
     /** 
-     * AllocNode keys are the objects that we can and want to model. 
+     * keys are the objects that we can and want to model (they are new expressions) 
      * The value is the Model object which simulates that object. 
      */
-    private Map<AllocNode, VAModel> allocNodeToVAModelMap; 
+    private Map<Object, VAModel> allocNodeToVAModelMap; 
 
     private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
 
@@ -101,14 +101,14 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
-        this.allocNodeToVAModelMap = new LinkedHashMap<AllocNode, VAModel>();
+        this.allocNodeToVAModelMap = new LinkedHashMap<Object, VAModel>();
         this.classesAndFieldsToModel = ModelCodeGenerator.getClassesAndFieldsToModel(true);
     }
 
     /**
      * Getter for analysis result
      */
-    public Map<AllocNode, VAModel> getResults() {
+    public Map<Object, VAModel> getResults() {
         return this.allocNodeToVAModelMap;
     }
 
@@ -123,15 +123,19 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(AllocNode node) {
-        return this.allocNodeToVAModelMap.containsKey(node) &&
-            !this.allocNodeToVAModelMap.get(node).invalidated();
+        Object newExpr = GeoPTA.v().getNewExpr(node);
+        
+        return this.allocNodeToVAModelMap.containsKey(newExpr) &&
+            !this.allocNodeToVAModelMap.get(newExpr).invalidated();
     }
 
     /**
      * Return the ModeledObject result for a given alloc node.
      */
     public VAModel getResult(AllocNode node) {
-        return this.allocNodeToVAModelMap.get(node);
+        Object newExpr = GeoPTA.v().getNewExpr(node);
+        
+        return this.allocNodeToVAModelMap.get(newExpr);
     }
 
     /** access to the singleton instance */
@@ -185,11 +189,13 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     }
 
     public void createObjectModels() {
+        //TODO: Do we want to change this to getAllNewExprs()?
         for(AllocNode allocNode : GeoPTA.v().getAllAllocNodes()) {
             createObjectModel(allocNode);    
         }
     }
 
+    //TODO: Change this to accept Object newExpr?
     public void createObjectModel(AllocNode allocNode) {
         if(!(allocNode.getType() instanceof RefType)) {
             this.logError(allocNode.toString());
@@ -211,6 +217,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         RefVAModel model = null;
         Constructor<?> ctor;
         try {
+          //TODO: Change constructor of modeled class to an Object (new expr) argument?
             ctor = cls.getConstructor(AllocNode.class);
         } catch(NoSuchMethodException e) {
             errorLogEntry += "Available constructors are:\n";
@@ -227,14 +234,17 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }
 
         try {
+            //TODO: Change constructor of modeled class to an Object (new expr) argument?
             model = (RefVAModel)ctor.newInstance(allocNode);
         } catch(Exception e){
             errorLogEntry += e.toString();
             logError(errorLogEntry);
             return;
         }
-        if(model != null)
-            this.allocNodeToVAModelMap.put(allocNode, model);
+        if(model != null) {
+            Object newExpr = GeoPTA.v().getNewExpr(allocNode);
+            this.allocNodeToVAModelMap.put(newExpr, model);
+        }
     }
 
     @Override
@@ -258,7 +268,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                     Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetContextIns(baseValue);
                    
                     for(AllocNode allocNode : baseAllocNodes) {
-                        VAModel vaModel = this.allocNodeToVAModelMap.get(allocNode);
+                        Object newExpr = GeoPTA.v().getNewExpr(allocNode);
+                        VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
                         if(vaModel != null) {
                             Class<?> c = vaModel.getClass();
                             String fieldName = instanceFieldRef.getField().getName();
@@ -330,8 +341,9 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * Log the results of the modeling
      */
     private void logResults() {
-        for(Map.Entry<AllocNode, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
-            logResult("AllocNode: " + entry.getKey().toString());
+        for(Map.Entry<Object, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
+            logResult("NewExpr: " + entry.getKey().toString());
+            logResult("AllocNode: " + GeoPTA.v().getAllocNode(entry.getKey()));
             logResult("Model: " + entry.getValue().toString());
         }
     }
