@@ -4,8 +4,6 @@ package java.util;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
-import java.lang.reflect.Array;
-
 public abstract class AbstractCollection<E> implements Collection<E> {
     
     public static final int DEF_COLLECTION_SIZE = 16;
@@ -13,6 +11,8 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     protected E[] collectionData = (E[])new Object[DEF_COLLECTION_SIZE]; 
     
     protected int len = 0;
+    
+    protected int capacity = DEF_COLLECTION_SIZE;
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.345 -0400", hash_original_method = "2CD999E5665A4C31F4601D44982C7C04", hash_generated_method = "80ABF1E4206482266414E558C3C72331")
@@ -199,6 +199,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
             collectionData[i] = collectionData[i+1];
         }
         len -= 1;
+        retElem.addTaint(getTaint());
         return retElem;
     }
 
@@ -239,13 +240,16 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     
     @DSModeled(DSC.BAN)
     protected E getFirstElement(){
+        collectionData[0].addTaint(getTaint());
         return collectionData[0];
     }
 
     @DSModeled(DSC.BAN)
     protected E getLastElement(){
-        if (len > 0)
+        if (len > 0) {
+            collectionData[len-1].addTaint(getTaint());
             return collectionData[len-1];
+        }
         return null;
     }
     
@@ -283,7 +287,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
             
             return (this.containsAll(abstractCollect));
         }
-        return false;
+        return getTaintBoolean();
     }
 
     @DSModeled(DSC.BAN)
