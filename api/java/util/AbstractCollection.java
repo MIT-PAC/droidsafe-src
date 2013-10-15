@@ -19,7 +19,25 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     protected  AbstractCollection() {
         // ---------- Original Method ----------
     }
-    
+        
+    @DSModeled(DSC.BAN)
+    protected void requestCapacity(int capacity) {
+        if (capacity > this.capacity) {
+            incrementCapacity(capacity - this.capacity);
+        }
+        addTaint(capacity);
+    }
+
+    @DSModeled(DSC.BAN)
+    protected void incrementCapacity(int additional) {
+        int newCap = capacity + additional; 
+        E[] newCollection = (E[])new Object[newCap];
+        for (int i = 0; i < capacity; i++) {
+            newCollection[i] = collectionData[i];
+        }
+        collectionData = newCollection;
+        addTaint(capacity);
+    }
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.345 -0400", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "8275414EBF339E8E1A38339518310828")
     public boolean add(E object) {
@@ -184,8 +202,13 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 
     @DSModeled(DSC.BAN)
     protected void setElementAt(int index, E obj) {
-        if (index >= len || index < 0)
-            throw new IndexOutOfBoundsException();
+        if (index >= len || index < 0) {
+            IndexOutOfBoundsException ex = new IndexOutOfBoundsException();
+            ex.addTaint(getTaint());
+            ex.addTaint(index);
+            ex.addTaint(obj.getTaint());
+            throw ex;
+        }
         
         addTaint(index);
         addTaint(obj.getTaint());
@@ -209,14 +232,16 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         addTaint(object.getTaint());
         
         if (index > len) {
-            throw new IndexOutOfBoundsException();
+            IndexOutOfBoundsException ex = new IndexOutOfBoundsException();
+            ex.addTaint(getTaint());
+            throw ex; 
         }
 
         for (int i = len; i > index ; i--) {
             collectionData[i] = collectionData[i-1];
         }
-        len++;
         collectionData[index] = object; 
+        len++;
         return true;
     }
     
@@ -228,10 +253,28 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         }
         return -1;
     }
+
+    @DSModeled(DSC.BAN)
+    protected int getIndexOf(Object object, int loc) {
+        for (int i = loc; i < len; i++) {
+            if (collectionData[i] == object)
+                return i;
+        }
+        return -1;
+    }
     
     @DSModeled(DSC.BAN)
     protected int getLastIndexOf(Object object) {
         for (int i = len-1; i >= 0; i--) {
+            if (collectionData[i] == object)
+                return i;
+        }
+        return -1;
+    }
+
+    @DSModeled(DSC.BAN)
+    protected int getLastIndexOf(Object object, int loc) {
+        for (int i = loc; i >= 0; i--) {
             if (collectionData[i] == object)
                 return i;
         }
@@ -303,6 +346,11 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     @DSModeled(DSC.BAN)
     public ListIterator<E>getListIterator(int location){
         return new BasicIterator<E>(location); 
+    }
+    
+     @DSModeled(DSC.BAN)
+    public Enumeration<E> getEnumeration(){
+        return new BasicEnumeration<E>(); 
     }
 
         @DSModeled(DSC.SAFE)
@@ -417,6 +465,28 @@ public abstract class AbstractCollection<E> implements Collection<E> {
          public T next() {
              return super.previous();
          }
+     }
+     
+     private class BasicEnumeration<T> extends BasicIterator<T> implements Enumeration<T> {
+
+        @DSModeled(DSC.BAN)
+         public BasicEnumeration() {
+             super();
+         }
+        @Override
+        @DSModeled(DSC.BAN)
+        public boolean hasMoreElements() {
+            // TODO Auto-generated method stub
+            return hasNext();
+        }
+
+        @Override
+        @DSModeled(DSC.BAN)
+        public T nextElement() {
+            // TODO Auto-generated method stub
+            return next();
+        }
+         
      }
 }
 
