@@ -42,7 +42,10 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.345 -0400", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "8275414EBF339E8E1A38339518310828")
     public boolean add(E object) {
         if (DroidSafeAndroidRuntime.control) {
-            throw new UnsupportedOperationException();
+            UnsupportedOperationException ex = new UnsupportedOperationException();
+            ex.addTaint(object.getTaint());
+            ex.addTaint(getTaint());
+            throw ex;
         }
 
         collectionData[len++] = (E) object;
@@ -486,7 +489,6 @@ public abstract class AbstractCollection<E> implements Collection<E> {
             // TODO Auto-generated method stub
             return next();
         }
-         
      }
 }
 

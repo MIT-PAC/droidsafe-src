@@ -167,6 +167,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      ***********************************************************************/
     private final class SubAbstractList<E> extends AbstractList<E> {
 
+        @DSModeled(DSC.SAFE)
         public SubAbstractList(AbstractList original, int start, int end) {
             for (int i = start; i <= end; i++)
                 add((E)original.getElementAt(i));
