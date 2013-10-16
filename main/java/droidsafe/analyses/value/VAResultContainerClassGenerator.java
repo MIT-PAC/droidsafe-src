@@ -282,7 +282,6 @@ public class VAResultContainerClassGenerator {
         packageName = getQualifier(classToModel);
         unqualifiedClassName = getUnqualifiedName(classToModel);
         imports = new TreeSet<String>();
-        imports.add("soot.jimple.spark.pag.AllocNode");
         imports.add("droidsafe.analyses.value.RefVAModel");
         importsProcessed = new HashSet<String>();
         importsProcessed.add(classToModel);
@@ -973,9 +972,9 @@ public class VAResultContainerClassGenerator {
 
     private ConstructorDeclaration generateConstructor(ClassOrInterfaceDeclaration modelCoi) {
         ConstructorDeclaration modelConstr = new ConstructorDeclaration(Modifier.PUBLIC, modelCoi.getName());
-        Parameter parameter = ASTHelper.createParameter(makeReferenceType("AllocNode"), "allocNode");
+        Parameter parameter = ASTHelper.createParameter(makeReferenceType("Object"), "newExpr");
         modelConstr.setParameters(makeParameterList(parameter));
-        Statement stmt = new ExplicitConstructorInvocationStmt(false, null, makeExprList(new NameExpr("allocNode")));
+        Statement stmt = new ExplicitConstructorInvocationStmt(false, null, makeExprList(new NameExpr("newExpr")));
         modelConstr.setBlock(makeBlockStmt(stmt));
         return modelConstr;
     }

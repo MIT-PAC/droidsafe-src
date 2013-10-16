@@ -38,10 +38,10 @@ public abstract class RefVAModel extends VAModel {
     /**
      * Every model is tied to an allocNode (one-to-one). 
      */
-    protected AllocNode allocNode;
+    protected Object newExpr;
 
-    public RefVAModel(AllocNode allocNode){
-        this.allocNode = allocNode;
+    public RefVAModel(Object newExpr){
+        this.newExpr = newExpr;
     }
 
     /**
@@ -104,7 +104,7 @@ public abstract class RefVAModel extends VAModel {
     public String getId() {
         String id = "";
         Pattern p = Pattern.compile("\\d+");
-        Matcher m = p.matcher(this.allocNode.toString());
+        Matcher m = p.matcher(this.getAllocNode().toString());
         if(m.find()) {
             id += m.group();
         }
@@ -115,7 +115,7 @@ public abstract class RefVAModel extends VAModel {
      * @returns AllocNode that corresponds to this model.
      */
     public AllocNode getAllocNode(){
-        return this.allocNode;
+        return GeoPTA.v().getAllocNode(this.newExpr);
     }
 
     /**

@@ -179,14 +179,13 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     }
 
     public void createObjectModels() {
-        //TODO: Do we want to change this to getAllNewExprs()?
         for(AllocNode allocNode : GeoPTA.v().getAllAllocNodes()) {
-            createObjectModel(allocNode);    
+            Object newExpr = GeoPTA.v().getNewExpr(allocNode);
+            createObjectModel(allocNode, newExpr);    
         }
     }
 
-    //TODO: Change this to accept Object newExpr?
-    public void createObjectModel(AllocNode allocNode) {
+    public void createObjectModel(AllocNode allocNode, Object newExpr) {
         if(!(allocNode.getType() instanceof RefType)) {
             this.logError(allocNode.toString());
             return;
@@ -207,8 +206,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         RefVAModel model = null;
         Constructor<?> ctor;
         try {
-          //TODO: Change constructor of modeled class to an Object (new expr) argument?
-            ctor = cls.getConstructor(AllocNode.class);
+            ctor = cls.getConstructor(Object.class);
         } catch(NoSuchMethodException e) {
             errorLogEntry += "Available constructors are:\n";
             for (Constructor<?> constructor : cls.getConstructors()){
@@ -224,15 +222,13 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }
 
         try {
-            //TODO: Change constructor of modeled class to an Object (new expr) argument?
-            model = (RefVAModel)ctor.newInstance(allocNode);
+            model = (RefVAModel)ctor.newInstance(newExpr);
         } catch(Exception e){
             errorLogEntry += e.toString();
             logError(errorLogEntry);
             return;
         }
         if(model != null) {
-            Object newExpr = GeoPTA.v().getNewExpr(allocNode);
             this.allocNodeToVAModelMap.put(newExpr, model);
         }
     }
