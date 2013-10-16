@@ -96,7 +96,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     }
 
     /**
-     * Getter for analysis result
+     * Getter for analysis result.  Jimple NewExpr -> VAModel.
      */
     public Map<Object, VAModel> getResults() {
         return this.allocNodeToVAModelMap;
