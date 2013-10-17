@@ -184,14 +184,16 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Injecting String Analysis Results.");
-    monitor.subTask("Injecting String Analysis Results.");
-    JSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    if (Config.v().runValueAnalysis) {
+        logger.info("Injecting String Analysis Results.");
+        monitor.subTask("Injecting String Analysis Results.");
+        JSAResultInjection.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
     }
-    
+
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     
@@ -208,19 +210,20 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
         logger.info("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
-    }
-    
-    logger.info("Undoing String Analysis Result Injection.");
-    monitor.subTask("Undoing String Analysis Result Injection.");
-    UndoJSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+
+        logger.info("Undoing String Analysis Result Injection.");
+        monitor.subTask("Undoing String Analysis Result Injection.");
+        UndoJSAResultInjection.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-    
     logger.info("Starting Generate RCFG...");
     monitor.subTask("Generating Spec");
     RCFG.generate();
