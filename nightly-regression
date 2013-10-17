@@ -2,4 +2,4 @@
 
 : ${APAC_HOME:?"Need to define APAC_HOME"}
 
-$APAC_HOME/system-tests/regtest.py -threads 4 -timeout 7200 -dir $APAC_HOME/android-apps/engagements
+$APAC_HOME/system-tests/regtest.py -threads 6 -timeout 7200 -dir $APAC_HOME/android-apps/engagements
