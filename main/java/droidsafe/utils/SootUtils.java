@@ -4,7 +4,6 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.jar.JarEntry;
@@ -12,6 +11,7 @@ import java.util.jar.JarFile;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,68 +21,48 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.AnySubType;
-
+import soot.Local;
 import soot.ArrayType;
-
 import soot.BooleanType;
-
 import soot.ByteType;
-
 import soot.CharType;
-
 import soot.DoubleType;
-
 import soot.FloatType;
-
 import soot.Hierarchy;
-
 import soot.IntType;
-
 import soot.jimple.DoubleConstant;
+import soot.jimple.Expr;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
+import soot.jimple.ParameterRef;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
-
+import soot.jimple.internal.JIdentityStmt;
 import soot.LongType;
-
 import soot.NullType;
-
 import soot.PrimType;
-
 import soot.Printer;
-
 import soot.RefLikeType;
-
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.ShortType;
-
 import soot.SootClass;
-
 import soot.SootMethod;
-
 import soot.tagkit.LineNumberTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
-
 import soot.Type;
-
 import soot.Unit;
-
 import soot.util.Chain;
 import soot.util.JasminOutputStream;
-
 import soot.Value;
-
 import soot.VoidType;
 
 /**
@@ -662,6 +642,34 @@ public class SootUtils {
         return null;
     }
 
+    /**
+     * Return the source location of a Jimple expression.
+     */
+    public static SourceLocationTag getSourceLocation(Expr expr) {
+        Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)expr);
+        if (stmt == null) {
+            logger.debug("Cannot find enclosing statement for expression: {}", expr);
+            return null;
+        }
+
+        return getSourceLocation(stmt);
+    }
+
+    /**
+     * Return the source location of a Jimple statement.
+     */
+    public static SourceLocationTag getSourceLocation(Stmt stmt) {
+        SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
+        if (method == null) {
+            logger.debug("Cannot find enclosing method for statement: {}", stmt);
+            return null;
+        }
+        return getSourceLocation(stmt, method.getDeclaringClass());
+    }
+
+    /**
+     * Return the source location of a Jimple statement in a soot class.
+     */
     public static SourceLocationTag getSourceLocation(Stmt stmt, SootClass clz) {
         SourceLocationTag line = null;
 
@@ -954,6 +962,15 @@ public class SootUtils {
      */
     public static boolean isEnum(SootClass clz) {
         return ((clz.getModifiers() & 0x4000) != 0);
+    }
+    
+    public static SootMethod getMethodFromStmt(Stmt stmt) {
+        if (stmt.containsInvokeExpr()) {
+            InvokeExpr invokeExpr = stmt.getInvokeExpr();
+            return invokeExpr.getMethod(); 
+        }
+        return null;
+
     }
 }
 

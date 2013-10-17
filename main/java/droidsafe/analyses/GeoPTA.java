@@ -37,15 +37,18 @@ import soot.Value;
 import soot.jimple.AssignStmt;
 import soot.jimple.CastExpr;
 import soot.jimple.ClassConstant;
+import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.Expr;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InterfaceInvokeExpr;
+import soot.jimple.InvokeExpr;
 import soot.jimple.NewExpr;
 import soot.jimple.NewMultiArrayExpr;
 import soot.jimple.NullConstant;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticFieldRef;
+import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.SparkTransformer;
@@ -451,6 +454,66 @@ public class GeoPTA {
         return allocNodes;
     }
 
+    /**
+     * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
+     * for instance invokes, and use an insensitive search.
+     */
+    public Collection<SootMethod> resolveInvokeContextIns(InvokeExpr invoke) 
+        throws CannotFindMethodException {
+        if (invoke instanceof StaticInvokeExpr) {
+            Set<SootMethod> ret = new HashSet<SootMethod>();
+            ret.add(((StaticInvokeExpr)invoke).getMethod());
+            return ret;
+        } else if (invoke instanceof DynamicInvokeExpr) {
+            logger.error("Should not see dynamic invoke expr: {}", invoke);
+            droidsafe.main.Main.exit(1);
+        } else if (invoke instanceof InstanceInvokeExpr) {
+            return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
+        }
+        
+        return Collections.emptySet();
+    }
+    
+    /**
+     * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
+     * for instance invokes, and use an event context search.
+     */
+    public Collection<SootMethod> resolveInvokeEventContext(InvokeExpr invoke, Edge context) 
+            throws CannotFindMethodException {
+        if (invoke instanceof StaticInvokeExpr) {
+            Set<SootMethod> ret = new HashSet<SootMethod>();
+            ret.add(((StaticInvokeExpr)invoke).getMethod());
+            return ret;
+        } else if (invoke instanceof DynamicInvokeExpr) {
+            logger.error("Should not see dynamic invoke expr: {}", invoke);
+            droidsafe.main.Main.exit(1);
+        } else if (invoke instanceof InstanceInvokeExpr) {
+            return resolveInstanceInvoke((InstanceInvokeExpr)invoke, context);
+        }
+        
+        return Collections.emptySet();
+    }
+    
+    /**
+     * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
+     * for instance invokes, and use a 1cfa search.
+     */
+    public Collection<SootMethod> resolveInvoke1CFA(InvokeExpr invoke, Edge context) 
+            throws CannotFindMethodException {
+        if (invoke instanceof StaticInvokeExpr) {
+            Set<SootMethod> ret = new HashSet<SootMethod>();
+            ret.add(((StaticInvokeExpr)invoke).getMethod());
+            return ret;
+        } else if (invoke instanceof DynamicInvokeExpr) {
+            logger.error("Should not see dynamic invoke expr: {}", invoke);
+            droidsafe.main.Main.exit(1);
+        } else if (invoke instanceof InstanceInvokeExpr) {
+            return resolveInstanceInvokeMap1CFA((InstanceInvokeExpr)invoke, context).values();
+        }
+        
+        return Collections.emptySet();
+    }
+    
     /**
      * Use the PTA to resolve the set of methods that an instance invoke could call.  In this
      * version, use the context insensitive PTA result.

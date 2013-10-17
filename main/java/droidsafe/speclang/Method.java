@@ -3,6 +3,7 @@ package droidsafe.speclang;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -11,22 +12,31 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Local;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
+import soot.Unit;
+import soot.Value;
 import soot.jimple.Expr;
+import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.tagkit.LineNumberTag;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.PTAMethodInformation;
+import droidsafe.analyses.infoflow.APIInfoKindMapping;
+import droidsafe.analyses.infoflow.InfoKind;
+import droidsafe.analyses.infoflow.InfoUnit;
+import droidsafe.analyses.infoflow.InfoValue;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
-import droidsafe.utils.Utils;
 
 public class Method implements Comparable<Method> {
 	private static final Logger logger = LoggerFactory.getLogger(Method.class);
@@ -149,77 +159,27 @@ public class Method implements Comparable<Method> {
 	}
 	
 	/**
-	 * Return a set of lines for possible new expression that can reach receiver of this method.
+	 * Return a set of allocation nodes for possible new expression that can reach receiver of this method.
 	 */
-	public Set<SourceLocationTag> getReceiverSources() {
-	    HashSet<SourceLocationTag> sources = new HashSet<SourceLocationTag>();
-	    
+	public Set<AllocNode> getReceiverAllocNodes() {
 	    if (ptaInfo == null || !ptaInfo.hasReceiver() || !GeoPTA.v().isPointer(ptaInfo.getReceiver()))
-	        return sources;
+	        return new HashSet<AllocNode>();
 	    
-	    for (AllocNode node : ptaInfo.getReceiverPTSet()) {
-	        Object expr = GeoPTA.v().getNewExpr(node);
-	        
-	        if (expr == null || !(expr instanceof Expr)) {
-	            logger.debug("Cannot find new expression for allocnode: {}", node);
-	            continue;
-	        }
-	        
-	        Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)expr);
-	        if (stmt == null) {
-	            logger.debug("Cannot find enclosing statement for expression: {}", expr);
-	            continue;
-	        }
-	        
-	        SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
-	        if (method == null) {
-	            logger.debug("Cannot find enclosing method for statement: {}", stmt);
-	            continue;
-	        }
-	        
-	        sources.add(SootUtils.getSourceLocation(stmt, method.getDeclaringClass()));
-	    }
-	    
-	    return sources;
+	    return ptaInfo.getReceiverPTSet();
 	}
 	
 	/**
-	 * Return the set of lines for new expression that could reach the argument i, assuming it is 
-	 * a pointer value.  Return empty set of any problems.
+	 * Return the set of allocation nodes for new expression that could reach the argument i,  
+	 * assuming it is a pointer value.  Return empty set of any problems.
 	 */
-	public Set<SourceLocationTag> getArgSources(int i) {
-	    HashSet<SourceLocationTag> sources = new HashSet<SourceLocationTag>();
-        
-        if (ptaInfo == null || !GeoPTA.v().isPointer(ptaInfo.getArgValue(i)))
-            return sources;
-        
-        for (AllocNode node : ptaInfo.getArgPTSet(i)) {
-            Object expr = GeoPTA.v().getNewExpr(node);
-            
-            if (expr == null || !(expr instanceof Expr)) {
-                logger.debug("Cannot find new expression for allocnode: {}", node);
-                continue;
-            }
-            
-            Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)expr);
-            if (stmt == null) {
-                logger.debug("Cannot find enclosing statement for expression: {}", expr);
-                continue;
-            }
-            
-            SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
-            if (method == null) {
-                logger.debug("Cannot find enclosing method for statement: {}", stmt);
-                continue;
-            }
-            
-            sources.add(SootUtils.getSourceLocation(stmt, method.getDeclaringClass()));
-        }
-        
-        return sources;
+	public Set<AllocNode> getArgAllocNodes(int i) {
+	    if (ptaInfo == null || !GeoPTA.v().isPointer(ptaInfo.getArgValue(i)))
+	        return new HashSet<AllocNode>();
+
+	    return ptaInfo.getArgPTSet(i);
 	}
 	
-	public boolean hasReceiver() {
+    public boolean hasReceiver() {
 		return receiver != null && !receiver.equals("");			
 	}
 	
@@ -245,19 +205,51 @@ public class Method implements Comparable<Method> {
 	}
 	
 	public String toString(boolean flagUnsupported) {
-	String ret = "";
+	StringBuilder ret = new StringBuilder();
 		
 		if (!lines.isEmpty() && !Config.v().noSourceInfo) {
 			for (SourceLocationTag line : lines) {
-				ret += "// " + line + "\n";
+				ret.append("// " + line + "\n");
 			}
 		}
 		
 		for (String str : Permissions.v().getPermissions(sootMethod)) 
-			ret += "// Requires permission: " + str + "\n";
+			ret.append("// Requires permission: " + str + "\n");
+		
+		//print resolved high-level information flows
+		Set<InfoKind> recSourceKinds = getRecInfoKinds();
+		Set<InfoKind> sinkKinds = getSinkInfoKinds();
+		
+		Set<InfoKind> argsSourceKinds = new HashSet<InfoKind>();
+		
+		for (int i = 0; i < ptaInfo.getNumArgs(); i++)
+		    argsSourceKinds.addAll(getArgInfoKinds(i));
+		
+		if (!recSourceKinds.isEmpty() || !argsSourceKinds.isEmpty() || !sinkKinds.isEmpty()) {
+		    ret.append("// InfoFlows: \n");
+
+		    if (hasReceiver()) {
+		        ret.append("//    (receiver:");
+		        for (InfoKind src : recSourceKinds) 
+		            ret.append(" " + src);
+
+		        ret.append(")\n");
+		    }
+		    
+		    ret.append("//    (args:");
+		    for (InfoKind src : argsSourceKinds) { 
+                ret.append(" " + src);
+		    }
+		    ret.append(")\n//    (sinks:");
+            
+		    for (InfoKind sink : sinkKinds)
+		        ret.append(" " + sink);
+		  
+		    ret.append(")\n");
+		}
 		
 		if (flagUnsupported && !API.v().isSupportedMethod(sootMethod))
-			ret += "**";
+			ret.append("**");
 		
         return ret + toSignatureString();
 	}
@@ -341,7 +333,144 @@ public class Method implements Comparable<Method> {
 	public boolean checkValidSpecMethod() {
 		return API.v().isSupportedMethod(sootMethod);
 	}
+	
+	/**
+	 * If this method is defined as a sink method with a high level sink type, 
+	 * return the InfoKinds of this method.  Otherwise, return an empty list. 
+	 */
+	public Set<InfoKind> getSinkInfoKinds() {
+	    if (APIInfoKindMapping.v().hasSinkInfoKind(sootMethod)) {
+	        return APIInfoKindMapping.v().getSinkInfoKinds(sootMethod);
+	    }
+	    return Collections.emptySet();
+	}
 
+	/**
+	 * Query the information flow analysis for the given value, either the receiver or an argument
+	 * of this method call.
+	 */
+	private Set<InfoValue> queryInfoFlow(Value val) {
+	    if (!Config.v().infoFlow || !(val instanceof Local))
+            return Collections.emptySet();
+        
+        Unit unit = JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr());
+        //call the information flow results
+        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getContextEdge(), unit, (Local)val);
+	}
+		
+	/**
+	 * For the receiver of this method, return the set of all api calls in user code that 
+	 * could reach the receiver (or one of its fields).
+	 */
+	public Set<SourceLocationTag> getReceiverSourceInfoUnits() {
+	    //call the information flow results
+	    if (!hasReceiver())
+	        return Collections.emptySet();
+	                
+	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
+	    	    
+	    Set<SourceLocationTag> srcSrcs = new HashSet<SourceLocationTag>();
+	    for (InfoValue iv : srcs) {
+	        if (iv instanceof InfoUnit) {
+	            InfoUnit srcUnit = (InfoUnit)iv;
+	            if (!(srcUnit.getUnit() instanceof Stmt))
+	                continue;
+	            SourceLocationTag tag = SootUtils.getSourceLocation((Stmt)srcUnit.getUnit());
+	            srcSrcs.add(tag);
+	        }
+	    }
+	    
+	    return srcSrcs;
+	}
+	
+	/**
+	 * For argument at i return the set of all api calls in user code that could reach the 
+	 * argument (or one of its fields).
+	 */
+	public Set<SourceLocationTag> getArgSourceInfoUnits(int i) {
+	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getArgValue(i));	    
+	    
+        Set<SourceLocationTag> srcSrcs = new HashSet<SourceLocationTag>();
+        for (InfoValue iv : srcs) {
+            if (iv instanceof InfoUnit) {
+                InfoUnit srcUnit = (InfoUnit)iv;
+                if (!(srcUnit.getUnit() instanceof Stmt))
+                    continue;
+                SourceLocationTag tag = SootUtils.getSourceLocation((Stmt)srcUnit.getUnit());
+                srcSrcs.add(tag);
+            }
+        }
+        
+        return srcSrcs;
+	}
+	
+	/**
+	 * Given a value from the invoke statement (either receiver or an argument), query the 
+	 * information flow for the units the flow to it, and then use the PTA to find all the targets
+	 * of the source statements to see if any of them have higher level InfoKind associated with them.
+	 * Return the set of all InfoKinds for the targets of all sources.
+	 */
+	private Set<InfoKind> getInfoKinds(Value v) {
+	    Set<InfoValue> srcs = queryInfoFlow(v);
+        
+        Set<InfoKind> srcKinds = new HashSet<InfoKind>();
+        for (InfoValue iv : srcs) {
+            if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
+                
+                Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
+                
+                if (!stmt.containsInvokeExpr())
+                    continue;
+                
+                InvokeExpr invoke = stmt.getInvokeExpr();
+                //for each of the targets see if they have an Info Kind
+                
+                try {
+                    Collection<SootMethod> targets = 
+                            GeoPTA.v().resolveInvokeEventContext(invoke, ptaInfo.getContextEdge());
+                    
+                    for (SootMethod target : targets) {
+                        if (APIInfoKindMapping.v().hasSourceInfoKind(target))
+                            srcKinds.addAll(APIInfoKindMapping.v().getSourceInfoKinds(target));
+                    }
+                } catch (CannotFindMethodException e) {
+                    continue;
+                }
+            }
+        }
+        
+        return srcKinds;
+	}
+
+	/**
+	 * For argument at i, return the set of high level information kinds that the argument could possibly 
+	 * be tainted with.
+	 */
+	public Set<InfoKind> getArgInfoKinds(int i) {
+	    return getInfoKinds(ptaInfo.getArgValue(i));
+	}
+
+	/**
+	 * For receiver, return the set of high-level information kinds that the receiver could possibly be 
+	 * tainted with.	 
+	 */
+	public Set<InfoKind> getRecInfoKinds() {
+	    if (hasReceiver())
+	        return getInfoKinds(ptaInfo.getReceiver());
+	    else 
+	        return Collections.emptySet();
+	}
+
+	/**
+	 *  Return the high level InfoKinds for all possible sources (receiver and all args).
+	 */
+	public Set<InfoKind> getSourcesInfoKinds() {
+	    Set<InfoKind> srcKinds = getRecInfoKinds();
+	    for (int i = 0; i < ptaInfo.getNumArgs(); i++)
+	        srcKinds.addAll(getArgInfoKinds(i));
+	    return srcKinds;
+	}
+	
     @Override
     public int hashCode() {
         final int prime = 31;

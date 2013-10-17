@@ -53,6 +53,13 @@ public class RCFGNode implements PTAMethodInformation {
 	}
 	
 	/**
+	 * Return the calling edge of this entry point.
+	 */
+	public Edge getContextEdge() {
+	    return entryEdge;
+	}
+	
+	/**
 	 * Add a new output event to this input event rCFG node.
 	 */
 	public void addOutputEvent(OutputEvent e) {
@@ -73,6 +80,13 @@ public class RCFGNode implements PTAMethodInformation {
 		return outputEvents;
 	}
 
+	/**
+	 * Return the invoke expression that calls this input event (api -> app code).
+	 */
+	public InvokeExpr getInvokeExpr() {
+	    return invokeExpr;
+	}
+	
 	/**
 	 * Return the string representation for this rCFG node.
 	 */

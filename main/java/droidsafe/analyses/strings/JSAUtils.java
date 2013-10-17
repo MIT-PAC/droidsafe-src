@@ -1,15 +1,7 @@
 package droidsafe.analyses.strings;
 
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisBoolean;
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisByte;
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisChar;
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisDouble;
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisFloat;
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisLong;
-import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisShort;
 import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.analyses.value.ValueAnalysisModeledObject;
+import droidsafe.analyses.value.VAModel;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
@@ -45,12 +37,13 @@ public class JSAUtils {
      * Set JSA hotspots to be every method signature in attr modeling that has a string as a parameter
      */
     public static void setUpHotspots(){
+        /*
         Reflections reflections = new Reflections(ValueAnalysis.MODEL_PACKAGE);
 
-        Set<Class<? extends ValueAnalysisModeledObject>> modeledClasses = 
-            reflections.getSubTypesOf(ValueAnalysisModeledObject.class);
+        Set<Class<? extends VAModel>> modeledClasses = 
+            reflections.getSubTypesOf(VAModel.class);
 
-        for(Class<? extends ValueAnalysisModeledObject> modeledClass : modeledClasses){
+        for(Class<? extends VAModel> modeledClass : modeledClasses){
             Method modeledMethods[] = modeledClass.getDeclaredMethods();
 
             for (Method modeledMethod : modeledMethods) {
@@ -115,6 +108,7 @@ public class JSAUtils {
                 }
             }
         }
+        */
     }
     
     /**
@@ -123,7 +117,7 @@ public class JSAUtils {
     public static void setupSpecHotspots()
     {
         for (SootMethod m : API.v().getAllSystemMethods()) {
-            if (API.v().isInterestingMethod(m)) {
+            //if (API.v().isInterestingMethod(m)) {
                 try {
                     String sig = m.getSignature();
                     int i = 0;
@@ -143,7 +137,7 @@ public class JSAUtils {
                     JSAStrings.v().addReturnHotspot(sig);
                 }
                 */
-            }
+            //}
         }
     }
 }
