@@ -301,7 +301,7 @@ public class GeoPTA {
     public Set<Type> getTypesEntryPointContext(Value val, Edge context) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSetEntryPointContext(val, context)) {
+        for (AllocNode node : getPTSetEventContext(val, context)) {
             types.add(node.getType());
         }
 
@@ -368,7 +368,7 @@ public class GeoPTA {
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
-    public Set<AllocNode> getPTSetEntryPointContext(Value val, Edge context) {
+    public Set<AllocNode> getPTSetEventContext(Value val, Edge context) {
         //until we fix the full context search, we return the insensitive result
         if (val instanceof Local && context.isVirtual()) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
@@ -468,7 +468,7 @@ public class GeoPTA {
             logger.error("Should not see dynamic invoke expr: {}", invoke);
             droidsafe.main.Main.exit(1);
         } else if (invoke instanceof InstanceInvokeExpr) {
-            return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
+            return resolveInstanceInvokeContextIns((InstanceInvokeExpr)invoke);
         }
         
         return Collections.emptySet();
@@ -488,7 +488,7 @@ public class GeoPTA {
             logger.error("Should not see dynamic invoke expr: {}", invoke);
             droidsafe.main.Main.exit(1);
         } else if (invoke instanceof InstanceInvokeExpr) {
-            return resolveInstanceInvoke((InstanceInvokeExpr)invoke, context);
+            return resolveInstanceInvokeEventContext((InstanceInvokeExpr)invoke, context);
         }
         
         return Collections.emptySet();
@@ -520,9 +520,9 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke) 
+    public Collection<SootMethod> resolveInstanceInvokeContextIns(InstanceInvokeExpr invoke) 
             throws CannotFindMethodException {
-        return resolveInstanceInvokeEntryPointContext(invoke, null);
+        return resolveInstanceInvokeMapContextIns(invoke).values();
     }
 
     /**
@@ -530,7 +530,7 @@ public class GeoPTA {
      * version, use the context insensitive result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
+    public Map<AllocNode,SootMethod> resolveInstanceInvokeMapContextIns(InstanceInvokeExpr invoke) 
         throws CannotFindMethodException {
         return resolveInstanceInvokeMap1CFA(invoke, null);
     }
@@ -598,14 +598,14 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Map<AllocNode, SootMethod> resolveInstanceInvokeMapEntryPointContext(InstanceInvokeExpr invoke, Edge context) 
+    public Map<AllocNode, SootMethod> resolveInstanceInvokeMapEventContext(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
         Set<AllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSetContextIns(invoke.getBase());
         else
-            allocs = getPTSetEntryPointContext(invoke.getBase(), context);
+            allocs = getPTSetEventContext(invoke.getBase(), context);
         
         return internalResolveInstanceInvokeMap(allocs, invoke, context);
     }
@@ -617,9 +617,9 @@ public class GeoPTA {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Collection<SootMethod> resolveInstanceInvokeEntryPointContext(InstanceInvokeExpr invoke, Edge context) 
+    public Collection<SootMethod> resolveInstanceInvokeEventContext(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
-       return resolveInstanceInvokeMapEntryPointContext(invoke, context).values();
+       return resolveInstanceInvokeMapEventContext(invoke, context).values();
     }
     
     /**

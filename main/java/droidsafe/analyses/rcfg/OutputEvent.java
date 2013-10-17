@@ -202,7 +202,7 @@ public class OutputEvent implements PTAMethodInformation {
      */
     public Set<AllocNode> getArgPTSet(int i) {
         Value v = getArgValue(i);
-        return GeoPTA.v().getPTSetEntryPointContext(v, contextEdge);
+        return GeoPTA.v().getPTSetEventContext(v, contextEdge);
     }
 
     /**
