@@ -3152,6 +3152,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
 	}
     
     // orphaned legacy field
+    @DSVAModeled
     private String uriString;
     
 }
