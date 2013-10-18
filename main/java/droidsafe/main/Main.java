@@ -186,14 +186,17 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    driverMsg("Injecting String Analysis Results.");
-    monitor.subTask("Injecting String Analysis Results.");
-    JSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+    if (Config.v().runValueAnalysis) {
+        driverMsg("Injecting String Analysis Results.");
+        monitor.subTask("Injecting String Analysis Results.");
+        JSAResultInjection.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
     }
-    
+
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     
@@ -210,19 +213,20 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
         driverMsg("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
-    }
-    
-    driverMsg("Undoing String Analysis Result Injection.");
-    monitor.subTask("Undoing String Analysis Result Injection.");
-    UndoJSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+
+        driverMsg("Undoing String Analysis Result Injection.");
+        monitor.subTask("Undoing String Analysis Result Injection.");
+        UndoJSAResultInjection.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-    
     driverMsg("Starting Generate RCFG...");
     monitor.subTask("Generating Spec");
     RCFG.generate();
@@ -254,8 +258,10 @@ public class Main {
     //new TestPTA();
 
     if (Config.v().infoFlow) {
+        StopWatch timer = new StopWatch();
         driverMsg("Starting Information Flow Analysis...");
         monitor.subTask("Information Flow Analysis: Injected source flow");
+        timer.start();
         APIInfoKindMapping.initMapping();
         InjectedSourceFlows.run();
         if (monitor.isCanceled()) {
@@ -289,7 +295,8 @@ public class Main {
         } catch (IOException exp) {
             logger.error(exp.toString());
         }
-        driverMsg("Finished Information Flow Analysis...");
+        timer.stop();
+        driverMsg("Finished Information Flow Analysis: " + timer);
     }
     monitor.worked(1);
     if (monitor.isCanceled()) {

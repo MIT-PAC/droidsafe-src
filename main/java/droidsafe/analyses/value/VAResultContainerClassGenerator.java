@@ -90,6 +90,7 @@ import soot.SootField;
 
 import soot.SootMethod;
 
+import soot.tagkit.AbstractHost;
 import soot.tagkit.AnnotationTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
@@ -179,6 +180,20 @@ public class VAResultContainerClassGenerator {
         this.classesAndFieldsToModel = getClassesAndFieldsToModel(false);
     }
 
+    public static boolean hasDSVAModeledAnnotation(AbstractHost ah) {
+        for (Tag tag : ah.getTags()){
+            if (tag instanceof VisibilityAnnotationTag) {
+                VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
+                for (AnnotationTag at : vat.getAnnotations()) {
+                    if (at.getType().contains("droidsafe/annotations/DSVAModeled")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     /**
      * @param forDisplay    If true, does not filter out non-primitive fields
      * @return    a map of sootClasses to sets of sootFields that are annotated to be resolved in the api model
@@ -192,29 +207,25 @@ public class VAResultContainerClassGenerator {
             JarFile apiModelJar = new JarFile(apiModelJarFile);
             Set<SootClass> apiModelSootClasses = SootUtils.loadClassesFromJar(apiModelJar, true, new HashSet<String>()); 
             for (SootClass apiModelSootClass : apiModelSootClasses) {
+                if(hasDSVAModeledAnnotation(apiModelSootClass)){
+                    classesAndFieldsToModel.put(apiModelSootClass, new HashSet<SootField>());
+                }
                 for(SootField apiModelSootField : apiModelSootClass.getFields()){
-                    for (Tag tag : apiModelSootField.getTags()){
-                        if (tag instanceof VisibilityAnnotationTag) {
-                            VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
-                            for (AnnotationTag at : vat.getAnnotations()) {
-                                if (at.getType().contains("droidsafe/annotations/DSVAModeled")) {
-                                    if (!classesAndFieldsToModel.containsKey(apiModelSootClass)) {
-                                        classesAndFieldsToModel.put(apiModelSootClass, new HashSet<SootField>());
-                                    }
-                                    if(apiModelSootField.getType() instanceof PrimType || forDisplay) {
-                                        classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
-                                    }
-                                }
-                            }
+                    if(hasDSVAModeledAnnotation(apiModelSootField)) {                
+                        if (!classesAndFieldsToModel.containsKey(apiModelSootClass)) {
+                            classesAndFieldsToModel.put(apiModelSootClass, new HashSet<SootField>());
+                        }
+                        if(apiModelSootField.getType() instanceof PrimType || forDisplay) {
+                            classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
                         }
                     }
                 }
             }
-        } catch (IOException e) {
-            logger.error("Could not open api model jar: " + e);
-            System.exit(1);
-        }
-        return classesAndFieldsToModel;
+            } catch (IOException e) {
+                logger.error("Could not open api model jar: " + e);
+                System.exit(1);
+            }
+            return classesAndFieldsToModel;
     }
 
 
