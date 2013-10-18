@@ -102,12 +102,15 @@ public class InjectedSourceFlows {
     public static void run() {
         v = new InjectedSourceFlows();
         v.buildInjectedFlowMap();
-        System.out.println("Injected Flows: \n");
+        
+        logger.info("Injected Flows: \n");
+         
         for (Entry<AllocNode, Set<MyKind>> entry: v.injectedFlows.entrySet()) {
-            System.out.println(entry.getKey());
+            logger.info(entry.getKey().toString());
             for (MyKind kind : entry.getValue())
-                System.out.println("  " + kind);
-        } 
+                logger.info("  " + kind);
+        }
+         
     }
 
     /**
@@ -171,8 +174,8 @@ public class InjectedSourceFlows {
 
 
         }
-        System.out.println(trackedFields);
-        System.out.println(fieldFlowMap);
+        //System.out.println(trackedFields);
+        //System.out.println(fieldFlowMap);
 
         //loop over all allocnodes in the results and if there is an inject flow, remember it
         for (Object newExpr : ValueAnalysis.v().getResults().keySet()) {
@@ -182,7 +185,7 @@ public class InjectedSourceFlows {
                 SootClass clz = ((RefType)type).getSootClass();
 
                 if (classesToInspect.contains(clz)) {
-                    System.out.println("Testing: " + node);
+                    //System.out.println("Testing: " + node);
 
                     //do something
                     RefVAModel modeledClass = (RefVAModel)ValueAnalysis.v().getResult(node);
@@ -217,7 +220,7 @@ public class InjectedSourceFlows {
             for (Entry<Object, MyKind> flowTest : possibleFlows.entrySet()) {
                 boolean testTrue = false;
 
-                System.out.printf("** Testing: %s (%s) and %s (%s)\n", value, value.getClass(), 
+                logger.info("** Testing: %s (%s) and %s (%s)\n", value, value.getClass(), 
                         flowTest.getKey(), flowTest.getKey().getClass());
 
                 if (value instanceof StringVAModel && flowTest.getKey() instanceof String) {

@@ -52,6 +52,8 @@ import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
+import org.apache.commons.lang3.time.*;
+
 /**
  * Main entry class for DroidSafe analysis.
  * 
@@ -69,7 +71,7 @@ public class Main {
    * 
    */
   public static void main(String[] args) {
-    logger.info("Starting DroidSafe Run");
+    driverMsg("Starting DroidSafe Run");
     // grab command line args and set some globals
     Config.v().init(args);
     run(new DroidsafeDefaultProgressMonitor());
@@ -98,7 +100,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
     
-    logger.info("Calling scalar optimizations.");
+    driverMsg("Calling scalar optimizations.");
     monitor.subTask("Scalar Optimization");
     ScalarAppOptimizations.run();
     monitor.worked(1);
@@ -106,7 +108,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Create tags for the overriden system methods in user code.");
+    driverMsg("Create tags for the overriden system methods in user code.");
     monitor.subTask("Create tags for overriden system methods");
     TagImplementedSystemMethods.run();
     monitor.worked(1);
@@ -114,7 +116,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Resolving resources and Manifest.");
+    driverMsg("Resolving resources and Manifest.");
     monitor.subTask("Resolving Manifest");
     Resources.resolveManifest(Config.v().APP_ROOT_DIR);
     monitor.worked(1);
@@ -122,7 +124,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Finding entry points in user code.");
+    driverMsg("Finding entry points in user code.");
     monitor.subTask("Finding entry points.");
     EntryPoints.v().calculate();
     monitor.worked(1);
@@ -130,7 +132,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Creating Harness.");
+    driverMsg("Creating Harness.");
     monitor.subTask("Creating Harness");
     Harness.create();
     monitor.worked(1);
@@ -138,7 +140,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Setting Harness Main as entry point.");
+    driverMsg("Setting Harness Main as entry point.");
     monitor.subTask("Setting Harness Main as entry point");
     setHarnessMainAsEntryPoint();
     if (monitor.isCanceled()) {
@@ -148,7 +150,7 @@ public class Main {
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-    logger.info("Incorporating XML layout information");
+    driverMsg("Incorporating XML layout information");
     monitor.subTask("Incorporating XML layout information");
     IntegrateXMLLayouts.run();
     monitor.worked(1);
@@ -156,7 +158,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Resolving String Constants");
+    driverMsg("Resolving String Constants");
     monitor.subTask("Resolving String Constants");
     ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
     monitor.worked(1);
@@ -184,14 +186,17 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Injecting String Analysis Results.");
-    monitor.subTask("Injecting String Analysis Results.");
-    JSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+    if (Config.v().runValueAnalysis) {
+        driverMsg("Injecting String Analysis Results.");
+        monitor.subTask("Injecting String Analysis Results.");
+        JSAResultInjection.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
     }
-    
+
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     
@@ -199,7 +204,7 @@ public class Main {
     long startTime = System.nanoTime();
     ValueAnalysis.setup();
     if (Config.v().runValueAnalysis) {
-        logger.info("Starting Value Analysis");
+        driverMsg("Starting Value Analysis");
         monitor.subTask("Value Analysis");
         ValueAnalysis.run();
         long endTime = System.nanoTime();
@@ -207,33 +212,34 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        logger.info("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
-    }
-    
-    logger.info("Undoing String Analysis Result Injection.");
-    monitor.subTask("Undoing String Analysis Result Injection.");
-    UndoJSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+        driverMsg("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
+
+
+        driverMsg("Undoing String Analysis Result Injection.");
+        monitor.subTask("Undoing String Analysis Result Injection.");
+        UndoJSAResultInjection.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
-    
-    logger.info("Starting Generate RCFG...");
+    driverMsg("Starting Generate RCFG...");
     monitor.subTask("Generating Spec");
     RCFG.generate();
-    logger.info("Finished Generating RCFG.");
+    driverMsg("Finished Generating RCFG.");
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
   
-    logger.info("Finding method calls on all important alloc nodes...");
+    driverMsg("Finding method calls on all important alloc nodes...");
     monitor.subTask("Generating Spec");
     MethodCallsOnAlloc.run();
-    logger.info("Finished finding method calls on alloc nodes.");
+    driverMsg("Finished finding method calls on alloc nodes.");
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -252,8 +258,10 @@ public class Main {
     //new TestPTA();
 
     if (Config.v().infoFlow) {
-        logger.info("Starting Information Flow Analysis...");
+        StopWatch timer = new StopWatch();
+        driverMsg("Starting Information Flow Analysis...");
         monitor.subTask("Information Flow Analysis: Injected source flow");
+        timer.start();
         APIInfoKindMapping.initMapping();
         InjectedSourceFlows.run();
         if (monitor.isCanceled()) {
@@ -287,7 +295,8 @@ public class Main {
         } catch (IOException exp) {
             logger.error(exp.toString());
         }
-        logger.info("Finished Information Flow Analysis...");
+        timer.stop();
+        driverMsg("Finished Information Flow Analysis: " + timer);
     }
     monitor.worked(1);
     if (monitor.isCanceled()) {
@@ -295,7 +304,7 @@ public class Main {
     }
 
     if (Config.v().target.equals("specdump")) {
-      logger.info("Converting RCFG to SSL and dumping...");
+      driverMsg("Converting RCFG to SSL and dumping...");
       monitor.subTask("Writing Spec to File");
       RCFGToSSL.run(false);
       SecuritySpecification spec = RCFGToSSL.v().getSpec();
@@ -315,7 +324,7 @@ public class Main {
       }
 
     } else if (Config.v().target.equals("confcheck")) {
-      logger.info("Converting RCFG to SSL ...");
+      driverMsg("Converting RCFG to SSL ...");
       RCFGToSSL.run(true);
       logger.error("Not implemented yet!");
     }
@@ -353,11 +362,23 @@ public class Main {
   }
   
   /**
+   * Print message to out and to logger.
+   * 
+   * @param str
+   */
+  private static void driverMsg(String str) {
+      System.out.println(str);
+      logger.info(str);
+  }
+  
+  /**
    * Called after one or more transforms to recalculate any underlying analysis.
    */
   private static DroidsafeExecutionStatus afterTransform(IDroidsafeProgressMonitor monitor) {
-      logger.info("Running PTA...");
+      driverMsg("Running PTA...");
       monitor.subTask("Running PTA");
+      StopWatch timer = new StopWatch();
+      timer.start();
       GeoPTA.release();
       GeoPTA.run();
       monitor.worked(1);
@@ -375,6 +396,10 @@ public class Main {
       
       //reset the cache of the call graph traversal
       CallGraphTraversal.reset();
+      
+      long endTime = System.currentTimeMillis();
+      timer.stop();
+      driverMsg("Finished PTA: " + timer);
       
       return DroidsafeExecutionStatus.OK_STATUS;
   }

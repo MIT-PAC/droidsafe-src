@@ -273,7 +273,7 @@ public class RequiredModeling {
                 Collection<SootMethod> resolved = null;
            
                 try {
-                    resolved = GeoPTA.v().resolveInstanceInvoke(iie);
+                    resolved = GeoPTA.v().resolveInstanceInvokeContextIns(iie);
                 } catch (CannotFindMethodException e) {
                     resolved = null;
                 }

@@ -293,7 +293,7 @@ public class ResolveStringConstants extends BodyTransformer {
     private Collection<SootMethod> getTargets(InvokeExpr expr) {
         if (expr instanceof InstanceInvokeExpr) {
             try {
-                return GeoPTA.v().resolveInstanceInvoke((InstanceInvokeExpr)expr);
+                return GeoPTA.v().resolveInstanceInvokeContextIns((InstanceInvokeExpr)expr);
             } catch (CannotFindMethodException e) {
                logger.error("Error resolving virtual call: {}", e);
                droidsafe.main.Main.exit(1);
