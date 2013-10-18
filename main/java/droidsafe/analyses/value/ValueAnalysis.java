@@ -251,7 +251,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                 if(leftOp instanceof InstanceFieldRef) {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
-                    Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetContextIns(baseValue);
+                    Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetEventContext(baseValue, entryEdge);
                    
                     for(AllocNode allocNode : baseAllocNodes) {
                         Object newExpr = GeoPTA.v().getNewExpr(allocNode);
@@ -281,7 +281,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                                 FloatConstant floatConstant = (FloatConstant)rightOpConstant;
                                                 fieldPrimVAModel.addValue(floatConstant.value);
                                             } else {
-                                                System.out.println("Unhandled constant case: " + rightOpConstant.getClass());
+                                                System.out.println("Unhandled constant case: " + 
+                                                        rightOpConstant.getClass());
                                                 System.exit(1);
                                             }
                                         } else {
