@@ -922,6 +922,27 @@ public class SootUtils {
     }
     
     /**
+     * Look for application callbacks with a given name.  No class info is available,
+     * as some of the callbacks are not specified with packagename in xml layout
+     * 1c/Wifinder is one
+     * @param methodSig
+     * @return
+     */
+    public static List<SootMethod> matchApplicationMethodName(String methodName) {
+        List<SootMethod> matches = new LinkedList<SootMethod>();
+        for (SootClass sootClass: Scene.v().getApplicationClasses()) {
+            for (SootMethod method: sootClass.getMethods()) {
+                String name = grabName(method.getSignature());
+                if (name.equals(methodName)) {
+                    logger.debug("Method {} MATCHED ", method);
+                    matches.add(method);
+                }
+            }            
+        }
+        return matches;
+    }
+    
+    /**
      * Return true if the method has the synthetic tag or flag.
      */
     public static boolean isSynthetic(SootMethod method) {      

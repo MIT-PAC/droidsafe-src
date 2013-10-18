@@ -578,9 +578,16 @@ public class ResourcesSoot {
         
         SootMethod method = null;
         
-    	String className = onClickSignature.substring(1, onClickSignature.indexOf(":"));
-    	SootClass clz = Scene.v().getSootClass(className);
-        method = SootUtils.resolveCallbackMethod(clz, onClickSignature);
+        if (onClickSignature.contains(":")) {
+        	String className = onClickSignature.substring(1, onClickSignature.indexOf(":"));
+        	SootClass clz = Scene.v().getSootClass(className);
+            method = SootUtils.resolveCallbackMethod(clz, onClickSignature);
+        }
+        else {
+            List<SootMethod> matches = SootUtils.matchApplicationMethodName(onClickSignature);
+            if (matches.size() > 0)
+                method = matches.get(0);
+        }
         
         if (method == null) {
         	logger.warn("Cannot locate method {} ", onClickSignature);
