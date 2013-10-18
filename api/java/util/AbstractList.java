@@ -27,6 +27,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.421 -0400", hash_original_method = "35A5EA4215B8229218ACFA970E186418", hash_generated_method = "0127629B0B8F67B14192AFA72258FAC0")
     public boolean addAll(int location, Collection<? extends E> collection) {
         addTaint(location);
+        addTaint(collection.getTaint());
         for ( E elem: collection) {
             addElementAt(location++, elem);
         }
@@ -162,11 +163,18 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         }
     }
     
+    public static List newSimpleList() {
+        return new SubAbstractList();
+    }
+    
     /***********************************************************************
      *  Simplify all inner classes
      ***********************************************************************/
-    private final class SubAbstractList<E> extends AbstractList<E> {
+    public final static class SubAbstractList<E> extends AbstractList<E> {
 
+        public SubAbstractList() {
+            
+        }
         @DSModeled(DSC.SAFE)
         public SubAbstractList(AbstractList original, int start, int end) {
             for (int i = start; i <= end; i++)

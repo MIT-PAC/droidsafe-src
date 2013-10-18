@@ -80,29 +80,23 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.347 -0400", hash_original_method = "9D755B12CFAC53130BB68496AAAEDB9E", hash_generated_method = "AB29316BF38F2A7F7FF285294AD0586B")
     public boolean contains(Object object) {
-        for (int i = 0; i < len; i++) {
-            if (collectionData[i] == object)
-                return true;
-        }
-        return false;        
+        return getTaintBoolean();
     }
 
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.348 -0400", hash_original_method = "5E0F818F4852B6FE376F87B40084BB49", hash_generated_method = "D9488CE0E9092353E75E56A47831CB4C")
     public boolean containsAll(Collection<?> collection) {
-        for (Object item: collection) {
-            if (!contains(item))
-                return false;
-        }
-        return true;        
+        return getTaintBoolean();
     }
 
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.348 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "8CE042654B5192EFCE000048B14B8C75")
     public boolean isEmpty() {
-        return (len == 0); 
+        if (len == 0)
+            return true;
+        return getTaintBoolean();
         // ---------- Original Method ----------
         //return size() == 0;
     }
@@ -117,11 +111,9 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     public boolean remove(Object object) {
         addTaint(object.getTaint());
         int index = getIndexOf(object);
-        if (index == -1)
-            return false;
-        
-        removeElementAt(index);
-        return true;
+        if (index != -1)
+            removeElementAt(index);
+        return getTaintBoolean();
     }
 
     @DSModeled(DSC.SAFE)
@@ -197,9 +189,12 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      *************************************************************************/
     @DSModeled(DSC.BAN)
     protected E getElementAt(int index) {
-        if (index >= len || index < 0)
-            throw new IndexOutOfBoundsException();
-        
+        if (index >= len || index < 0) {
+            IndexOutOfBoundsException ex = new IndexOutOfBoundsException();
+            ex.addTaint(getTaint());
+            ex.addTaint(index);
+            throw ex; 
+        }
         return collectionData[index];
     }
 
@@ -338,22 +333,30 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 
     @DSModeled(DSC.BAN)
     public Iterator<E>getIterator(){
-        return new BasicIterator<E>(); 
+        Iterator<E> iter = new BasicIterator<E>(); 
+        iter.addTaint(getTaint());
+        return iter;
     }
     
     @DSModeled(DSC.BAN)
     public Iterator<E>getReverseIterator(){
-        return new BasicReverseIterator<E>(); 
+        Iterator<E> iter = new BasicReverseIterator<E>(); 
+        iter.addTaint(getTaint());
+        return iter;
     }
 
     @DSModeled(DSC.BAN)
     public ListIterator<E>getListIterator(int location){
-        return new BasicIterator<E>(location); 
+        ListIterator<E> iter = new BasicIterator<E>(location); 
+        iter.addTaint(getTaint());
+        return iter;
     }
     
      @DSModeled(DSC.BAN)
     public Enumeration<E> getEnumeration(){
-        return new BasicEnumeration<E>(); 
+        Enumeration<E> retEnum = new BasicEnumeration<E>(); 
+        retEnum.addTaint(getTaint());
+        return retEnum;
     }
 
         @DSModeled(DSC.SAFE)
@@ -364,7 +367,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         retStr.addTaint(getTaint());
         return retStr;
     }
-
+        
      /*************************************************************************
      * Iterator classes 
      *************************************************************************/
@@ -372,99 +375,106 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         int start;
         int current; //current active index
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         BasicIterator() {
             this(0);
         }
         
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         BasicIterator(int location) {
             start = location;
             current = start - 1;
+            addTaint(location);
         }
         
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public boolean hasNext() {
             // TODO Auto-generated method stub
-            return (current < len -1);
+            //return (current < len -1);
+            return getTaintBoolean();
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public T next() {
             // TODO Auto-generated method stub
             return (T) collectionData[++current];
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public void remove() {
             // TODO Auto-generated method stub
             removeElementAt(current);
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public void add(Object object) {
             // TODO Auto-generated method stub
             //addElementAt(current, object);
             E tmpObj = (E)object;
             //addElementAt(current, tmpObj);
             addElementAt(current, tmpObj);
+            addTaint(object.getTaint());
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public boolean hasPrevious() {
             // TODO Auto-generated method stub
-            return (current > start);
+            //return (current > start);
+            return getTaintBoolean();
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public int nextIndex() {
-            return current + 1;
+            //return current + 1;
+            return getTaintInt();
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public T previous() {
             // TODO Auto-generated method stub
             return (T) getElementAt(--current);
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public int previousIndex() {
             // TODO Auto-generated method stub
-            return (current - 1);
+            //return (current - 1);
+            return getTaintInt();
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public void set(T object) {
             // TODO Auto-generated method stub
             setElementAt(current, (E)object);
+            addTaint(object.getTaint());
         }
      }
      
      private class BasicReverseIterator<T> extends BasicIterator<T>{     
          
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
          public BasicReverseIterator(){
              current = len;
              start = 0;
          }
          
          @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
          public boolean hasNext(){
              return super.hasPrevious();
          }
          
          @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
          public T next() {
              return super.previous();
          }
@@ -472,19 +482,19 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      
      private class BasicEnumeration<T> extends BasicIterator<T> implements Enumeration<T> {
 
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
          public BasicEnumeration() {
              super();
          }
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public boolean hasMoreElements() {
             // TODO Auto-generated method stub
             return hasNext();
         }
 
         @Override
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
         public T nextElement() {
             // TODO Auto-generated method stub
             return next();
