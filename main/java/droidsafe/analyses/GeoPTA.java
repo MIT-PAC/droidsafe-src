@@ -84,6 +84,8 @@ import soot.jimple.spark.sets.P2SetVisitor;
 import soot.jimple.spark.sets.PointsToSetInternal;
 
 import com.google.common.collect.HashBiMap;
+import org.apache.commons.io.*;
+import org.apache.commons.io.output.NullOutputStream;
 
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
@@ -147,12 +149,17 @@ public class GeoPTA {
      * Runs Soot's geometric PTA and resolve the context.
      */
     public static void run() {
+        //don't print crap to screen!
+        G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
 
         setGeomPointsToAnalysis();
-
+        
 
         v = new GeoPTA();
+        
+        //other passes can print crap now
+        G.v().out = System.out;
     }
 
     /**
@@ -160,6 +167,11 @@ public class GeoPTA {
      */
     private GeoPTA() {
         ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
+        
+        //update the underlying soot call graph to prune unrealizeable edges
+        ptsProvider.updateSootData();
+        
+        //cache the call graph
         callGraph = Scene.v().getCallGraph();
         
         queries = new GeomQueries(ptsProvider);
@@ -375,7 +387,7 @@ public class GeoPTA {
             LocalVarNode vn = ptsProvider.findLocalVarNode((Local)val);
             objFull.prepare();
             
-            if (vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
+            if (vn != null && vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
                     queries.contexsByAnyCallEdge(context, (Local)val, objFull) ) {
                 objFull.finish();
             } else {
