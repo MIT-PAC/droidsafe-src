@@ -17,6 +17,9 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     
     HashSet<Entry<K,V>> backingEntrySet = new HashSet<Entry<K,V>>();
     
+    public static final int DEF_MAP_SIZE = 16;
+    protected int capacity = DEF_MAP_SIZE;
+    
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.575 -0400", hash_original_method = "38C8E9EBD98120A2B6A13CBC6F342ADF", hash_generated_method = "BA1BD3AE70CC5BFD1550DE98F5395666")
@@ -24,6 +27,12 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
         // ---------- Original Method ----------
     }
 
+        @DSModeled(DSC.BAN)
+        public void requestCapacity(int capacity) {
+            valuesCollection.requestCapacity(capacity);
+            keySet.requestCapacity(capacity);
+            addTaint(capacity);
+        }
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.576 -0400", hash_original_method = "76EEE079F2D9B88A31C5F2E8E9C7EB92", hash_generated_method = "D04492222E27A17B4DBF52591A0F49E1")

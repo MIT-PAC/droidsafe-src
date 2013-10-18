@@ -21,7 +21,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
         
     @DSModeled(DSC.BAN)
-    protected void requestCapacity(int capacity) {
+    public void requestCapacity(int capacity) {
         if (capacity > this.capacity) {
             incrementCapacity(capacity - this.capacity);
         }
