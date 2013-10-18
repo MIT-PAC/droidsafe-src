@@ -8,7 +8,7 @@ import java.net.URI;
 
 
 
-
+@DSVAModeled
 public class HttpGet extends HttpRequestBase {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.426 -0400", hash_original_method = "5037302FD966B72BDD781660024EF657", hash_generated_method = "8EFE493527A73BE90AE403202B61D198")
