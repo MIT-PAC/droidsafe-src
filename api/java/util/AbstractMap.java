@@ -215,7 +215,74 @@ for(Map.Entry<? extends K, ? extends V> entry : map.entrySet())
         //}
     }
 
+    @DSModeled(DSC.BAN)
+    protected Entry<K,V> removeFirstEntry() {
+        Entry<K,V> entry = backingEntrySet.removeFirstElement();
+        valuesCollection.removeFirstElement();
+        keySet.removeFirstElement();
+        entry.addTaint(getTaint());
+        return entry;
+    }
     
+   
+    @DSModeled(DSC.BAN)
+    protected Entry<K,V> getFirstEntry() {
+        Entry<K,V> entry = backingEntrySet.getFirstElement();
+        entry.addTaint(getTaint());
+        return entry;
+    }
+
+     @DSModeled(DSC.BAN)
+    protected V getFirstValue() {
+        V value = backingEntrySet.getFirstElement().getValue();
+        value.addTaint(getTaint());
+        return value;
+    }
+     
+    @DSModeled(DSC.BAN)
+    protected K getFirstKey() {
+        K key = backingEntrySet.getFirstElement().getKey();
+        key.addTaint(getTaint());
+        return key;
+    }
+    
+    @DSModeled(DSC.BAN)
+    protected Entry<K,V> removeLastEntry() {
+        Entry<K,V> entry = backingEntrySet.removeLastElement();
+        valuesCollection.removeLastElement();
+        keySet.removeLastElement();
+        entry.addTaint(getTaint());
+        return entry;
+    }
+
+    @DSModeled(DSC.BAN)
+    protected Entry<K,V> getLastEntry() {
+        Entry<K,V> entry = backingEntrySet.getLastElement();
+        entry.addTaint(getTaint());
+        return entry;
+    }
+
+   @DSModeled(DSC.BAN)
+    protected V getLastValue() {
+        V value = backingEntrySet.getLastElement().getValue();
+        value.addTaint(getTaint());
+        return value;
+    }
+     
+    @DSModeled(DSC.BAN)
+    protected K getLastKey() {
+        K key = backingEntrySet.getLastElement().getKey();
+        key.addTaint(getTaint());
+        return key;
+    }
+    
+    @DSModeled(DSC.BAN)
+    protected Entry<K,V> getSomeEntry() {
+        Entry<K,V> entry = backingEntrySet.getElementAt(getTaintInt());
+        entry.addTaint(getTaint());
+        return entry;
+    }
+
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.585 -0400", hash_original_method = "DF925EC53E8E5501C52A21B969B7A962", hash_generated_method = "A8C27B378C94E544EE89D7FD0FB575DD")
     public V remove(Object key) {
@@ -230,6 +297,7 @@ for(Map.Entry<? extends K, ? extends V> entry : map.entrySet())
         keySet.removeElementAt(index);
 
         V value = valuesCollection.getElementAt(index);
+        valuesCollection.removeElementAt(index);
         value.addTaint(getTaint());
         
         return value;
@@ -260,7 +328,7 @@ for(Map.Entry<? extends K, ? extends V> entry : map.entrySet())
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.586 -0400", hash_original_method = "68473A1BCB9C7CDFC9C6F1089F605F26", hash_generated_method = "C7A06C4B5755155D9E19DE9DF6D4033E")
     public int size() {
-        return keySet.size();
+        return getTaintInt();
         // ---------- Original Method ----------
         //return entrySet().size();
     }
@@ -340,8 +408,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1216113150 =         buffer.toString(
         }
 
         AbstractMap<K, V> result = (AbstractMap<K, V>) super.clone();
-        result.keySet = null;
-        result.valuesCollection = null;
+        result.putAll(this);
         Object varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900.addTaint(getTaint());
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900;
