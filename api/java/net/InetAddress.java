@@ -46,6 +46,7 @@ public class InetAddress implements Serializable {
     byte[] ipaddress;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.662 -0400", hash_original_field = "018531A6FE3834353217DBF6A6634DCF", hash_generated_field = "1B7A53B08CE768344D84B69A12503624")
 
+    @DSVAModeled
     String hostName;
     
         @DSModeled(DSC.SAFE)

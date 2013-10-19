@@ -319,7 +319,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private Layout mSavedMarqueeModeLayout;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.444 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "6CF16E724237A2841199FB30284CED38")
 
-    @ViewDebug.ExportedProperty(category = "text") private CharSequence mText;
+    @ViewDebug.ExportedProperty(category = "text") 
+    @DSVAModeled 
+    private CharSequence mText;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.444 -0400", hash_original_field = "116BEBA84C265E44D657283E75BE60A1", hash_generated_field = "30221785C9497266E9C8ABBDFDCBE7EC")
 
     private CharSequence mTransformed;

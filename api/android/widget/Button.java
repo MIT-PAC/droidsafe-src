@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 
 
 
+@DSVAModeled
 public class Button extends TextView {
     
     @DSModeled(DSC.SAFE)
