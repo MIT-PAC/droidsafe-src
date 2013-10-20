@@ -149,7 +149,7 @@ public class Main {
     
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+    
     driverMsg("Incorporating XML layout information");
     monitor.subTask("Incorporating XML layout information");
     IntegrateXMLLayouts.run();
@@ -167,6 +167,9 @@ public class Main {
     }
     
     //run jsa after we inject strings from XML values and layout
+    driverMsg("Starting String Analysis...");
+    StopWatch timer1 = new StopWatch();
+    timer1.start();
     JSAStrings.init(Config.v());
     if (Config.v().runStringAnalysis) {
       monitor.subTask("Running String Analysis.");
@@ -176,6 +179,8 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
+    timer1.stop();
+    driverMsg("Finished String Analysis: " + timer1);
 
     if (Config.v().writeJimpleAppClasses) {
       monitor.subTask("Writing all app classes");
