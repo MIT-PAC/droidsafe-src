@@ -381,8 +381,9 @@ public class GeoPTA {
      * context.
      */
     public Set<AllocNode> getPTSetEventContext(Value val, Edge context) {
-        //until we fix the full context search, we return the insensitive result
-        if (val instanceof Local && context.isVirtual()) {
+      // return getPTSetContextIns(val);
+      
+        if (val instanceof Local) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
             LocalVarNode vn = ptsProvider.findLocalVarNode((Local)val);
             objFull.prepare();
@@ -398,7 +399,46 @@ public class GeoPTA {
             }
             
             return allocNodes;
-        } else {
+        } else if (val instanceof InstanceFieldRef && ((InstanceFieldRef)val).getBase() instanceof Local) {
+            Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+            InstanceFieldRef ifr = (InstanceFieldRef) val;
+            Local base = (Local)ifr.getBase();
+            
+            LocalVarNode vn = ptsProvider.findLocalVarNode(base);
+            objFull.prepare();
+            
+            if (vn != null && vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
+                    queries.contextsByAnyCallEdge(context, base, ifr.getField(), objFull) ) {
+                objFull.finish();
+            } else {
+                return getPTSetContextIns(val);
+            }
+            for ( IntervalContextVar icv : objFull.icvList ) {
+                allocNodes.add((AllocNode)icv.var);
+            }
+            
+            return allocNodes;
+        } else if (val instanceof ArrayRef && ((ArrayRef)val).getBase() instanceof Local) {
+            Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+            ArrayRef ifr = (ArrayRef) val;
+            Local base = (Local)ifr.getBase();
+            
+            LocalVarNode vn = ptsProvider.findLocalVarNode(base);
+            objFull.prepare();
+            
+            if (vn != null && vn.getMethod() != null && getAllReachableMethods().contains(vn.getMethod()) && 
+                    queries.contextsByAnyCallEdge(context, base, ArrayElement.v(), objFull) ) {
+                objFull.finish();
+            } else {
+                return getPTSetContextIns(val);
+            }
+            for ( IntervalContextVar icv : objFull.icvList ) {
+                allocNodes.add((AllocNode)icv.var);
+            }
+            
+            return allocNodes;
+        }
+        else {
             return getPTSetContextIns(val);
         }
     }
