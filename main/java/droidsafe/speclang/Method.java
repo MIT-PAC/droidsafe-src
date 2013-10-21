@@ -432,6 +432,13 @@ public class Method implements Comparable<Method> {
                     for (SootMethod target : targets) {
                         if (APIInfoKindMapping.v().hasSourceInfoKind(target))
                             srcKinds.addAll(APIInfoKindMapping.v().getSourceInfoKinds(target));
+                        else {
+                            //unknown info kind, check if a spec or ban method and if so, denote with UNKNOWN kind
+                            if (API.v().isInterestingMethod(target)) {
+                                srcKinds.add(APIInfoKindMapping.v().SENSITIVE_NOCATEGORY);
+                            }
+                            
+                        }
                     }
                 } catch (CannotFindMethodException e) {
                     continue;

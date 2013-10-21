@@ -45,6 +45,8 @@ public class APIInfoKindMapping {
     private Map<SootMethod,Set<InfoKind>> sinksMapping;
     /** map of strings to the info kind that represents them */
     private HashMap<String,InfoKind> infoKinds;
+    /** default info kind for a spec or ban method that is not labeled */
+    public InfoKind SENSITIVE_NOCATEGORY;
     
     /** ignore kinds with these names */
     private static Set<String> IGNORE_INFOKINDS = new HashSet<String>(java.util.Arrays.asList(
@@ -65,6 +67,7 @@ public class APIInfoKindMapping {
         srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
         sinksMapping = new HashMap<SootMethod,Set<InfoKind>>();
         infoKinds = new HashMap<String,InfoKind>();
+        SENSITIVE_NOCATEGORY = getInfoKind("SENSITIVE_NOCATEGORY");
     }
 
     /**

@@ -283,8 +283,6 @@ public class SootUtils {
 
         } else if (parent instanceof VoidType && child instanceof VoidType) {
             return true;
-        } else if (parent instanceof NullType && child instanceof NullType) {
-            return true;
         } else {
             return false;
         }
@@ -317,10 +315,18 @@ public class SootUtils {
             if (!isSubTypeOfIncluding(returnType, curr.getReturnType())) 
                 continue;
 
-            for (int i = 0; i < args.length; i++) 
-                if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i)))
+            boolean foundCounterEx = false;
+            for (int i = 0; i < args.length; i++) {
+                if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i))) {
+                    foundCounterEx = true;
                     continue;
+                }
+            }
 
+            //found at least one argument position that differs
+            if (foundCounterEx)
+                continue;
+            
             //if we got here all is well and we found a method that matches!
             return curr;
         }
