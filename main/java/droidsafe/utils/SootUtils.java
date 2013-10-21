@@ -975,6 +975,37 @@ public class SootUtils {
         return false;
     }
     
+    static SootMethod stubExceptionMethod = null;
+    /**
+     * check if a given method is a runtime stub
+     * @param method
+     * @return
+     */
+    public static boolean isRuntimeStubMethod(SootMethod method) {    
+        
+        if (stubExceptionMethod == null) {
+            String signature = "<java.lang.RuntimeException: void <init>(java.lang.String)>";
+            stubExceptionMethod = Scene.v().getMethod(signature);
+        }
+        if (!method.hasActiveBody())
+            return true; 
+
+        for (Unit unit: method.getActiveBody().getUnits()){
+            Stmt stmt = (Stmt)unit;
+            if (stmt.containsInvokeExpr()) {
+                InvokeExpr invokeExpr = stmt.getInvokeExpr();
+                SootMethod invokeMethod = invokeExpr.getMethod();
+                if (invokeMethod == stubExceptionMethod) {
+                    Value arg = invokeExpr.getArg(0);
+                    if (arg.toString().equalsIgnoreCase("stub")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
     /**
      * Return true if the class has the synthetic tag or flag.
      */
