@@ -32,13 +32,12 @@ import soot.util.Chain;
  * class from the parent in the points to analysis, such that we can introduce Object Sensitivity for a subset of 
  * classes.
  * 
- * The clone that is created includes all fields from all parents of the original class.  The fields are renamed, and 
- * field refs in the cloned methods are updated appropriately.  
+ * In the original class, all private fields are made protected, so that code in the clone can access them.
  * 
- * In the original class, all private static fields are made protected, so that code in the clone can access them.
+ * The clone that is created does not include fields from the ancestor classes.
  * 
- * All methods from the original class plus its ancestors are added to the clone (they are added in a way such that 
- * method inheritance is correctly observed from the original hierarchy).  
+ * All non-static methods from the original class plus its ancestors are added to the clone 
+ * (they are added in a way such that method inheritance is correctly observed from the original hierarchy).  
  * 
  * @author mgordon
  *
@@ -60,9 +59,10 @@ public class ClassCloner {
     public static int uniqueID = 0;
     /** appended to name cloned classes */
     public static final String CLONE_POSTFIX = "_ds_clone_";
-    /** appended to name of cloned fields */
-    public static final String CLONED_FIELD_POSTFIX = "_ds_clone_field";
-    
+ 
+    /**
+     * Private constructor for a specific class cloner.
+     */
     private ClassCloner(SootClass org, boolean isSystem) {
         this.original = org;
         this.isAPI = isSystem;
@@ -70,12 +70,21 @@ public class ClassCloner {
         ancestorsOfIncluding = new HashSet<SootClass>();
     }
 
+    /** 
+     * Static call to clone a particular class, and return the clone. 
+     * 
+     * If isAPIClass is true, then treat the cloned class as an api class and add it to the list of api classes, and
+     * set its methods as safe,spec,ban based on ancestors.
+     */
     public static SootClass cloneClass(SootClass original, boolean isAPIClass) {
         ClassCloner cloner = new ClassCloner(original, isAPIClass);
         cloner.cloneAndInstallClass();
         return cloner.clone;
     }
     
+    /**
+     * Perform the work of actually clone class, changing fields and cloning methods.
+     */
     private void cloneAndInstallClass() {
         clone = new SootClass(original.getName() + CLONE_POSTFIX + uniqueID, 
             original.getModifiers());
@@ -89,10 +98,10 @@ public class ClassCloner {
         }
         clone.setSuperclass(original);
         
-        //create the class fields
+        //modify ancestors fields
         SootClass ancestor = original;
         while (!"java.lang.Object".equals(ancestor.getName())) {
-            incorporateAncestorFields(ancestor);
+            makeAncestorFieldsVisible(ancestor);
             ancestorsOfIncluding.add(ancestor);
             ancestor = ancestor.getSuperclass();
         }
@@ -114,6 +123,10 @@ public class ClassCloner {
         }
     }
 
+    /**
+     * Return true if the clone already contains a method that would resolve to this method, this 
+     * is the test that mimics virtual dispatch, so we don't clone in methods that would not be called.
+     */
     private boolean containsMethod(String signature) {
         //check this class for the method with polymorpism
         String mName = SootUtils.grabName(signature);
@@ -149,32 +162,31 @@ public class ClassCloner {
         return false;
     }
     
-    private void incorporateAncestorFields(SootClass ancestor) {  
+    /**
+     * Change private to protected for ancestor fields.
+     */
+    private void makeAncestorFieldsVisible(SootClass ancestor) {  
         for (SootField ancestorField : ancestor.getFields()) {
-            //make all static field protected
-            if (ancestorField.isStatic()) {
-                if (ancestorField.isPrivate()) {
-                    //turn on protected
-                    ancestorField.setModifiers(ancestorField.getModifiers() | Modifier.PROTECTED);
-                    //turn off private
-                    ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.PRIVATE);
-                }
-            } else {
-              //clone all instance fields
-               SootField newField = new SootField(
-                   ancestorField.getName() + "_" +  ancestor.getName() + CLONED_FIELD_POSTFIX,
-                   ancestorField.getType(), ancestorField.getModifiers());
-               newField.addAllTagsOf(ancestorField);
-               clone.addField(newField);
+            if (ancestorField.isPrivate()) {
+                //turn on protected
+                ancestorField.setModifiers(ancestorField.getModifiers() | Modifier.PROTECTED);
+                //turn off private
+                ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.PRIVATE);
             }
-            
         }
     }
     
+    /**
+     * Clone non-static ancestor methods that are not hidden by virtual dispatch.
+     */
     private void incorporateAncestorMethods(SootClass ancestor) {
             
         //create all methods, cloning body, replacing instance field refs
         for (SootMethod ancestorM : ancestor.getMethods()) {
+            //never clone static methods
+            if (ancestorM.isStatic())
+                continue;
+            
             //check if this method already exists
             if (containsMethod(ancestorM.getSignature())) {
                 //System.out.printf("\tAlready contains method %s\n.", ancestorM);
@@ -183,7 +195,6 @@ public class ClassCloner {
             
             SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
                 ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
-            
             
             //System.out.printf("\tAdding method %s\n.", ancestorM);
             //register method
@@ -196,94 +207,11 @@ public class ClassCloner {
                     API.v().addSpecMethod(newMeth);
                 else if (API.v().isSafeMethod(newMeth)) 
                     API.v().addSafeMethod(newMeth);
-                
             }
             
             //clone body
             Body newBody = (Body)ancestorM.getActiveBody().clone();
             newMeth.setActiveBody(newBody);
-            
-            //go through original body and remember field references, so we can create correct ones later...
-            Map<Integer, SootField> origStmtFieldMap = new HashMap<Integer,SootField>();
-            
-            Iterator origStmts = ancestorM.getActiveBody().getUnits().iterator();
-            int i = -1;
-            while (origStmts.hasNext()) {
-                i++;
-                Stmt stmt = (Stmt)origStmts.next();
-                
-                if (stmt.containsFieldRef()) {
-                    FieldRef fieldRef = stmt.getFieldRef();
-                    SootFieldRef sootFieldRef = fieldRef.getFieldRef();
-                    SootField sootField = sootFieldRef.resolve();
-                    
-                    if (sootField.isStatic())
-                        continue;
-                    
-                    origStmtFieldMap.put(i, sootField);
-                }
-                
-                
-            }
-            
-            //change all field references
-            
-            StmtBody stmtBody = (StmtBody)newBody;
-            Chain units = stmtBody.getUnits();
-            Iterator stmtIt = units.snapshotIterator();
-
-            i = -1;
-            while (stmtIt.hasNext()) {
-                i++;
-                Stmt stmt = (Stmt)stmtIt.next();
-                
-                if (stmt.containsFieldRef()) {
-                    FieldRef fieldRef = stmt.getFieldRef();
-                    SootFieldRef oldSootFieldRef = fieldRef.getFieldRef();
-                   
-                    //don't do anything if the field is of class that is not the original or is cloned
-                    //this is before the field ref is resolved, so it shows that the possible field is not
-                    //in the tree
-                    if (fieldRef.getField().isStatic() || 
-                            !ancestorsOfIncluding.contains(fieldRef.getField().getDeclaringClass()))
-                        continue;  
-                    
-                    if (!origStmtFieldMap.containsKey(i)) {
-                        logger.error("Some problem with consistency between orignal and cloned method: {} {}", stmt, 
-                            newMeth);
-                        droidsafe.main.Main.exit(1);
-                    }
-                    
-                    SootField origField = origStmtFieldMap.get(i);
-                    
-                    //don't do anything if the resolved field is of class that is not the original or is cloned
-                    if (!ancestorsOfIncluding.contains(origField.getDeclaringClass()))
-                        continue;   
-                    
-                    //don't do anything for static fields or if the field was of Object
-                    if ("java.lang.Object".equals(origField.getDeclaringClass().getName()))
-                        continue;
-                    
-                    String newFieldName = oldSootFieldRef.name() + "_" + origField.getDeclaringClass() + 
-                            CLONED_FIELD_POSTFIX;
-                    
-                    if (!clone.declaresField(newFieldName, oldSootFieldRef.type())) {
-                        logger.error("Cannot find field {} in clone of {}. Originally in {}", 
-                            newFieldName,
-                            ancestor, origField.getDeclaringClass());
-                    }
-                    
-                    SootFieldRef newSootFieldRef = 
-                            Scene.v().makeFieldRef(clone, 
-                                newFieldName, 
-                                oldSootFieldRef.type(), 
-                                false);
-                    
-                    
-                    
-                    fieldRef.setFieldRef(newSootFieldRef);
-                }
-            }
         }
     }
 }
