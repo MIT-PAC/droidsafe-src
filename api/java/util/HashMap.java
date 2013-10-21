@@ -16,23 +16,7 @@ import libcore.util.Objects;
 
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.962 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "5BCDF9B3CCDE8C26B422211A63786F6F")
-    transient int size;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.962 -0400", hash_original_field = "675B3022548A1029F9CE7A2C25B23BBF", hash_generated_field = "66B0BB3B51ED8DFDAEFDC2833CA7C4AB")
 
-    transient int modCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.962 -0400", hash_original_field = "F0598264A691A8F62272ACA0E79AF374", hash_generated_field = "AC9BEC59E41404676A448C0DD2BB745B")
-
-    private transient int threshold;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.962 -0400", hash_original_field = "3E8ABCE844B6A8A95397486A3899B536", hash_generated_field = "EB6C570550CCFE8E5FEBB44BA37D02C0")
-
-    private transient Set<K> keySet;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.962 -0400", hash_original_field = "D4E06C98DBA5A687CB6C836BF538EC81", hash_generated_field = "BFDE585634496DDD7FBD15EDD2D3C5DD")
-
-    private transient Set<Entry<K, V>> entrySet;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.962 -0400", hash_original_field = "F09CC7EE3A9A93273F4B80601CAFB00C", hash_generated_field = "5A2A505CEEC79706812E901D735E2A7C")
-
-    private transient Collection<V> values;
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.963 -0400", hash_original_method = "67F8ADB6599C3AA95FA8DFFD843377DD", hash_generated_method = "7409D258B8D042741B25C0440FA51BF9")
@@ -121,9 +105,6 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             varA5A331D65C8C3F32D42E49D64BCF4109_1421621907.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1421621907;
         } //End block
-        result.keySet = null;
-        result.entrySet = null;
-        result.values = null;
         result.init();
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_649335864.addTaint(taint);
@@ -210,7 +191,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
         ObjectOutputStream.PutField fields = stream.putFields();
         fields.put("loadFactor", DEFAULT_LOAD_FACTOR);
         stream.writeFields();
-        stream.writeInt(size);
+        stream.writeInt(size());
 for(Entry<K, V> e : entrySet())
         {
             stream.writeObject(e.getKey());
