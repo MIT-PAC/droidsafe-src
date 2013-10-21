@@ -2,6 +2,8 @@ package java.lang;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -856,6 +858,12 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     
     @DSModeled(DSC.SPEC)
     public static void sleep(long millis, int nanos) throws InterruptedException {
+        if (DroidSafeAndroidRuntime.control) {
+            InterruptedException ex = new InterruptedException();
+            ex.addTaint(millis);
+            ex.addTaint(nanos);
+            throw ex;
+        }
         VMThread.sleep(millis, nanos);
     }
 

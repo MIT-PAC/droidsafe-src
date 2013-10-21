@@ -247,6 +247,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.326 -0400", hash_original_method = "1712784D81B05F738E3678B0ED7626EA", hash_generated_method = "0524BA17BB94C2A262CF63DD8345ECE8")
     @Deprecated
     public  KeyEvent(KeyEvent origEvent, long eventTime, int newRepeat) {

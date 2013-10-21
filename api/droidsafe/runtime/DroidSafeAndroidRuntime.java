@@ -76,6 +76,8 @@ public class DroidSafeAndroidRuntime {
 
         activity.droidsafeOnSavedInstanceState(new Bundle());
 
+        activity.droidsafeOnKeyEvents();
+        
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
         activity.droidsafeOnStop();
