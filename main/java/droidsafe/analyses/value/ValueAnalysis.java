@@ -193,13 +193,21 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         RefType refType = (RefType)allocNode.getType();
 
         String errorLogEntry = "Couldn't model an instance of the " + refType.getSootClass().getName() + " ";
+        
+        SootClass sootClass = refType.getSootClass();
 
-        Class<?> cls;
-        try {
-            cls = VAUtils.getDroidsafeClass(refType);
-        } catch(ClassNotFoundException e) {
-            errorLogEntry += e.toString();
-            this.logError(errorLogEntry);
+        Class<?> cls = null;
+        while(sootClass.hasSuperclass() && cls == null) {
+            try {
+                cls = VAUtils.getDroidsafeClass(sootClass);
+            } catch(ClassNotFoundException e) {
+                errorLogEntry += e.toString();
+                this.logError(errorLogEntry);
+                sootClass = sootClass.getSuperclass();
+            }
+        }
+
+        if (cls == null) {
             return;
         }
 
