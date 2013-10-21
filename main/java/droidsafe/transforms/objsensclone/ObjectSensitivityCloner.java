@@ -31,7 +31,10 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.util.Chain;
 
 /**
- * 
+ * Introduce selective object sensitivity by cloning certain api classes.  
+ * When a new expression of one of the tracked classes is encountered in application code, 
+ * a clone is created of the original class (clone contains methods from ancestors), and the
+ * new expression (plus constructor call) are changed to reference the new cloned class.  
  * 
  * Does not rely on PTA.
  * 
@@ -39,15 +42,17 @@ import soot.util.Chain;
  *
  */
 public class ObjectSensitivityCloner {
+    /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(ObjectSensitivityCloner.class);
-    
+    /** list of class names to clone */
     public static final Set<String> NAMES_TO_CLONE = new HashSet<String>(java.util.Arrays.asList(
         "android.content.Intent", "android.net.Uri"
         ));
     
-    private ObjectSensitivityCloner() {
-    }
-
+    /**
+     * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
+     * new expression.
+     */
     public static void run() {
         int clonedClasses = 0;
         
@@ -127,7 +132,9 @@ public class ObjectSensitivityCloner {
     }
     
     /**
-    *
+    * Given the assignment statement that includes the new expression, find the associated constructor call
+    * that is called on the local value.  This method will search starting from the assignment, and conservatively
+    * find the constructor call.  Will return null if a constructor is not found.
     */
    private static SpecialInvokeExpr findConstructorCall(SootMethod method, AssignStmt assignStmt) {
        Local local = (Local)assignStmt.getLeftOp();
