@@ -580,8 +580,14 @@ public class ResourcesSoot {
         
         if (onClickSignature.contains(":")) {
         	String className = onClickSignature.substring(1, onClickSignature.indexOf(":"));
-        	SootClass clz = Scene.v().getSootClass(className);
-            method = SootUtils.resolveCallbackMethod(clz, onClickSignature);
+        	try {
+        	    SootClass clz = Scene.v().getSootClass(className);
+        	    method = SootUtils.resolveCallbackMethod(clz, onClickSignature);
+        	}
+        	catch (Exception ex) {
+        	    logger.warn("onClick handler {} is not available", onClickSignature);
+        	    return false;
+        	}
         }
         else {
             List<SootMethod> matches = SootUtils.matchApplicationMethodName(onClickSignature);
