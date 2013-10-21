@@ -4,8 +4,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -48,6 +51,8 @@ import soot.Type;
 import soot.RefLikeType;
 
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
+import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
@@ -68,28 +73,25 @@ import droidsafe.utils.Utils;
  * @author mgordon
  *
  */
-public class RCFG {
+public class RCFG implements CGVisitorEntryAnd1CFA {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(RCFG.class);
-    /** Soot's call graph */
-    private CallGraph sparkCG;
-    /** The forrest of rCFG nodes */
-    private Set<RCFGNode> rCFG;
-    /** Singleton of this class */
+     /** Singleton of this class */
     private static RCFG v;
-    /** methods we have visiting while building the rCFG */
-    private Set<SootMethod> visitedMethods;
-    /** File name for output of unreachable user methods */
+     /** File name for output of unreachable user methods */
     private static final String UNREACHABLES_FILE_NAME = "unreachable-user-methods.txt"; 
-
     /** list of names of methods to ignore when creating the RCFG output events */
     private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = 
             new HashSet<String>(Arrays.asList("<clinit>", "finalize"));
-    
     /** list of package name REs in which to ignore output events */
     private static final Pattern[] IGNORE_INPUT_EVENTS_IN = 
             {Pattern.compile("android.support.*")};
-    
+    /** Map of entry edge to the rcfg node representing it */
+    private Map<Edge,RCFGNode> entryEdgeToNode;
+    /** methods we have visited in our search */
+    private Set<SootMethod> visitedMethods;
+    /** alloc nodes that are either a receiver or argument for an api call */
+    private Set<AllocNode> apiCallNodes;
     
     /**
      * Return the singleton of this class.
@@ -102,199 +104,88 @@ public class RCFG {
      * Generate the rCFG.
      */
     public static void generate() {
-
         v = new RCFG();
-        v.createRCFG();
-
-        //for (RCFGNode node : v.rCFG)
-         //   System.out.println(node.toString());
-        //logger.info("\n" + v.toString());
+        CallGraphTraversal.acceptEntryContextAnd1CFA(v);
+        //print unreachable methods to the debug log
+        v.printUnreachableSrcMethods();
+    }
+    
+    private RCFG() {
+        this.visitedMethods = new HashSet<SootMethod>();
+        this.entryEdgeToNode = new LinkedHashMap<Edge, RCFGNode>();
+        this.apiCallNodes = new HashSet<AllocNode>();
     }
 
     /**
-     * Private constructor.
+     * Return true if this allocation node can possible be an argument or receiver for an output event.
      */
-    private RCFG() {
-        visitedMethods = new LinkedHashSet<SootMethod>();
+    public boolean isRecOrArgForAPICall(AllocNode an) {
+        return apiCallNodes.contains(an);
     }
-
+    
     /**
      * Get the nodes of the rCFG (a forrest).
      */
-    public Set<RCFGNode> getNodes() {
-        return rCFG;
+    public Collection<RCFGNode> getNodes() {
+        return entryEdgeToNode.values();
     }
-
+    
     /**
-     * Internal method to iterate over all entry point edges and make rCFG nodes for them.
+     * Given an edge from api -> app, return the rcfgnode that represents it in the RCFG.  
      */
-    private void createRCFG() {
-        sparkCG = Scene.v().getCallGraph();
-        rCFG = new LinkedHashSet<RCFGNode>();
-
-        //iterate over all edges to find entry points for rcfg
-        //these entry points are edges from harness to user code
-        //or edges from api call to user code
-        QueueReader<Edge> edges = sparkCG.listener();
-
-        while (edges.hasNext()) {
-            Edge e = edges.next();
-            SootClass tgtClass = e.tgt().getDeclaringClass();
-            if (!Project.v().isLibClass(tgtClass) && !Project.v().isSrcClass(tgtClass))
-                continue;
-
-            //ignore input events from classes in the ignore list
-            if (shouldIgnoreInputEventFromClass(tgtClass.getName()))
-                continue;
-            
-            SootClass srcClass = e.src().getDeclaringClass();
-            //find edges from harness to user code
-            if (srcClass.equals(Harness.v().getHarnessClass()) ||
-                    API.v().isSystemClass(srcClass)) {
-                //System.out.printf("Processing edge: %s\n", e);
-                startAtEntry(e);
-            }
+    public RCFGNode getNodeForEntryEdge(Edge entryEdge) {
+        if (!entryEdgeToNode.containsKey(entryEdge)) {
+            logger.info("Creating new RCFG node from edge {}", entryEdge);
+            entryEdgeToNode.put(entryEdge, new RCFGNode(entryEdge));
         }
         
-        //print unreachable methods to the debug log
-        printUnreachableSrcMethods();
+        return entryEdgeToNode.get(entryEdge);
     }
-
+    
     /**
-     * Create an RCFGNode from an entry point edge and then starting at this edge, find all api calls and add as 
-     * output events to the rCFG edge.
-     */
-    private void startAtEntry(Edge edge) {
-        SootMethod method = edge.tgt();
-
-        //don't create entry points for edges into api
-        if (API.v().isSystemMethod(edge.tgt()))  {
-            logger.info("For RCFG, ignoring entry point: {}", method);
-            return;
-        }
-        
-
-        //create node, and add to it the RCFG
-        RCFGNode node = new RCFGNode(edge);
-        logger.info("Creating new RCFG node from edge {}", edge);
-        rCFG.add(node);
-        //visit the call graph from this point
-        visitEdge(edge, edge, node, new LinkedHashSet<Edge>());
-    }
-
-    /**
-     * Visit a edge during the construction of an single rCFG node.  Find all api calls and all calls to other app
-     * methods.  Visit all of these edges in a recursive search.
+     * for each edge, decide if the edge should appear as an output event for the context edge represented
+     * by the RCFGNode for the context.
      * 
-     * Context is the context edge of the input event (the entry point).
-     * edgeInto is the edge we are visiting.
-     * 
+     * Also, when an output event is found, query for all the alloc nodes that could be either a receiver or an 
+     * argument, and remember these nodes for later processing by MethodCallsOnAllocs.
      */
-    private void visitEdge(Edge context, Edge edgeInto, RCFGNode rCFGNode, Set<Edge> visited) {
-        SootMethod method = edgeInto.tgt();
-
-        visited.add(edgeInto);
+    public void visitEntryContextAnd1CFA(SootMethod method, Edge entryEdge, Edge edgeInto) {
+        //remember that we have visited this method
         visitedMethods.add(method);
-
-        Set<Edge> appEdgesOut = new LinkedHashSet<Edge>();
-        Set<Edge> allEdges = new LinkedHashSet<Edge>();
-
-        //find all calls to api and save context and call to rCFGNode
-
-        //first check on the calls directly in the call graph
-        //and do this in a context sensitive way, process each edge
-        csEdges(rCFGNode, context, edgeInto, appEdgesOut, allEdges);
-
-        //don't call this for now, we assume the modeling is complete.
-        //apiEdgesFromNullReceivers(rCFGNode, context, method, appEdgesOut, allEdges);
         
-        //recurse into all calls of app methods
-        for (Edge edge : appEdgesOut) {
-            logger.debug("Visiting edge: {}", edge);
-            if (!visited.contains(edge))
-                visitEdge(context, edge, rCFGNode, visited);
-        }
+        //only add to the rcfg node if there is a call from app code (non-system method) into the api (system method)
+        //and the called system method is interesting
+        //and we should not ignore it.
+        if (API.v().isSystemMethod(method) && 
+                !API.v().isSystemMethod(edgeInto.src()) &&
+                API.v().isInterestingMethod(method) &&
+                !IGNORE_SYS_METHOD_WITH_NAME.contains(method.getName())) {
 
-        //maybe cache methods at a certain depth if there are other edges into it
-    }
+            RCFGNode node = getNodeForEntryEdge(entryEdge);
 
-    /**
-     * Find possible api edges that we missed because the call had no allocs for the receiver.
-     */
-    private void apiEdgesFromNullReceivers(RCFGNode rCFGNode, Edge context, SootMethod method, 
-                                        Set<Edge> appEdgesOut, Set<Edge> allEdges) {
-        
-        //loop over statements, find instance invokes, see if they have a alloc set, etc.
-        if (!method.isConcrete())
-            return;
-     
-        StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+            SourceLocationTag line = 
+                    SootUtils.getSourceLocation(edgeInto.srcStmt(), edgeInto.src().getDeclaringClass());
 
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
-        // get a snapshot iterator of the unit since we are going to
-        // mutate the chain when iterating over it.
-        Iterator<Unit> stmtIt = units.snapshotIterator();
-
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
-            InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
-            
-            if (iie == null)
-                continue;
-            
-            Set<AllocNode> allocs = GeoPTA.v().getPTSet(iie.getBase(), context);
-            if (allocs.isEmpty()) {
-
-                //somehow fake the call
-                Set<SootMethod> allMethods = 
-                        SootUtils.getOverridingMethodsIncluding(iie.getMethod().getDeclaringClass(), 
-                            iie.getMethodRef().getSubSignature().getString());
-
-                //set some arbitrary size on the number of possible methods we insert based
-                //on hierarchy analysis.
-                if (allMethods.size() > 4)
-                    continue;
-                
-                for (SootMethod m : allMethods) {
-                    if (API.v().isSystemMethod(m)) {
-                        Edge newEdge = new Edge(method, stmt, m);
-                        processEdge(rCFGNode, newEdge, context, null, appEdgesOut, allEdges, 1);
-                    }
+            InvokeExpr invoke = edgeInto.srcStmt().getInvokeExpr();
+            if (invoke instanceof InstanceInvokeExpr) {
+                InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
+                for (AllocNode an : GeoPTA.v().getPTSetEventContext(iie.getBase(), entryEdge)) {
+                    OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, an, line);
+                    logger.debug("Found output event: {} {}", edgeInto.tgt(), an);
+                    node.addOutputEvent(oe);
+                    //remember interesting alloc nodes
+                    apiCallNodes.add(an);
+                    apiCallNodes.addAll(oe.getAllArgsPTSet());
                 }
+            } else {
+                OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, null, line);
+                logger.debug("Found output event: {} (null receiver)", edgeInto.tgt());
+                node.addOutputEvent(oe);
+                apiCallNodes.addAll(oe.getAllArgsPTSet());
             }
         }
     }
-    
-    
-    /** 
-     * Found an edge that could be an output event or an app edge, 
-     * 
-     * if an output event create one and add necessary information, 
-     * 
-     * if an app edge, add edge to the set of app edges to inspect
-     */
-    private void processEdge(RCFGNode rCFGNode, Edge edge, Edge context, 
-                             AllocNode receiver, Set<Edge> appEdgesOut, Set<Edge> allEdges, int debug) {
-
-        allEdges.add(edge);
-        logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
-        if (API.v().isSystemMethod(edge.tgt())) {
-            //add output events for interesting methods only
-            if (API.v().isInterestingMethod(edge.tgt()) &&
-                    !IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName())) {
-                logger.debug("Found output event: {} {}", edge.tgt(), receiver );
-                //System.out.printf("OE (%s): %s %s (%s)\n", debug, edge.tgt(), receiver, rCFGNode.getEntryPoint());
-                SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
-                OutputEvent oe = new OutputEvent(edge, context, rCFGNode, receiver, line);
-                rCFGNode.addOutputEvent(oe);
-            }
-        } else {
-            //it is an app edge, so recurse into later
-            appEdgesOut.add(edge);
-        }
-    }
-
+  
     /**
      * Find and return a string of all invoke statements that could invoke an API call.
      */
@@ -366,54 +257,6 @@ public class RCFG {
             droidsafe.main.Main.exit(1);
         } 
     }
-
-    /**
-     * Find all the edges out of a method given the context edge.  Organize the edges into
-     * applicatoin edges (appEdgesOut) and all edges (allEdges).  Use the context sensitive of 
-     * the input event to query the PTA for instance invokes to cull the call graph for the
-     * context.
-     */
-    private void csEdges(RCFGNode rCFGNode, Edge context, Edge edgeInto, 
-                         Set<Edge> appEdgesOut, Set<Edge> allEdges) {
-        SootMethod method = edgeInto.tgt();
-        Iterator<Edge> ciEdges = sparkCG.edgesOutOf(method);
-
-        //iterate over all the ci edges from soot, and check to see
-        //if they are valid given the context
-        while (ciEdges.hasNext()) {
-            Edge curEdge = ciEdges.next();
-            
-            //System.out.printf("inspecting edge: %s %s %s\n", curEdge, curEdge.hashCode(), curEdge.srcStmt());
-            SootMethod target = curEdge.tgt();
-            //get the internal edge from the CS analysis
-            CgEdge cgEdge = GeoPTA.v().getInternalEdgeFromSootEdge(curEdge);
-            if (cgEdge == null) {
-                //hmm, edge is not in the cs call graph at all, process it just in case...
-                processEdge(rCFGNode, curEdge, context, null, appEdgesOut, allEdges, 2);
-                continue;
-            }
-
-            InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
-            if (iie != null) {    
-                try {
-                    Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, context);
-                    for (Map.Entry<AllocNode, SootMethod> entry: 
-                        virtualCallMap.entrySet()) {
-                        // Only the virtual calls do the following test
-                        if ( entry.getValue() == target ) {
-                            processEdge(rCFGNode, curEdge, context, entry.getKey(), appEdgesOut, allEdges, 4);
-                            break;
-                        }   
-                    } 
-                } catch (CannotFindMethodException e) {
-                    logger.error("Cannot resolve method during RCFG creation: {}", iie);
-                    droidsafe.main.Main.exit(1);
-                }   
-            } else {
-                processEdge(rCFGNode, curEdge, context, null, appEdgesOut, allEdges, 5);
-            }
-        }
-    }
     
     /** 
      * Return true if the class of the input event is in the ignore list, and thus the 
@@ -434,7 +277,7 @@ public class RCFG {
     public String toString() {
         StringBuilder str = new StringBuilder();
 
-        for (RCFGNode node : rCFG) {
+        for (RCFGNode node : entryEdgeToNode.values()) {
             str.append(node + "\n");
         }
 

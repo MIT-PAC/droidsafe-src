@@ -221,7 +221,7 @@ public class ResourcesSoot {
     }
     
     public static boolean isAndroidId(Integer intId) {
-        return ((intId.intValue() & 0x01000000) == 0x01000000);            
+        return ((intId.intValue() & 0xF1000000) == 0x01000000);            
     }
     /**
      * get the conditional field
@@ -578,9 +578,22 @@ public class ResourcesSoot {
         
         SootMethod method = null;
         
-    	String className = onClickSignature.substring(1, onClickSignature.indexOf(":"));
-    	SootClass clz = Scene.v().getSootClass(className);
-        method = SootUtils.resolveCallbackMethod(clz, onClickSignature);
+        if (onClickSignature.contains(":")) {
+        	String className = onClickSignature.substring(1, onClickSignature.indexOf(":"));
+        	try {
+        	    SootClass clz = Scene.v().getSootClass(className);
+        	    method = SootUtils.resolveCallbackMethod(clz, onClickSignature);
+        	}
+        	catch (Exception ex) {
+        	    logger.warn("onClick handler {} is not available", onClickSignature);
+        	    return false;
+        	}
+        }
+        else {
+            List<SootMethod> matches = SootUtils.matchApplicationMethodName(onClickSignature);
+            if (matches.size() > 0)
+                method = matches.get(0);
+        }
         
         if (method == null) {
         	logger.warn("Cannot locate method {} ", onClickSignature);

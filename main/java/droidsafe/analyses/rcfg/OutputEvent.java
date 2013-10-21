@@ -1,6 +1,7 @@
 package droidsafe.analyses.rcfg;
 
 import java.util.Formatter;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -113,6 +114,13 @@ public class OutputEvent implements PTAMethodInformation {
         }
     }
 
+    /**
+     * Return the invoke expression associated with this output event.
+     */
+    public InvokeExpr getInvokeExpr() {
+        return invokeExpr;
+    }
+    
     /** 
      * Return the number of args in the invoke expression.
      */
@@ -194,9 +202,23 @@ public class OutputEvent implements PTAMethodInformation {
      */
     public Set<AllocNode> getArgPTSet(int i) {
         Value v = getArgValue(i);
-        return GeoPTA.v().getPTSet(v, contextEdge);
+        return GeoPTA.v().getPTSetEventContext(v, contextEdge);
     }
 
+    /**
+     * Return a set of all the alloc nodes that all the of the args can point to.
+     */
+    public Set<AllocNode> getAllArgsPTSet() {
+        HashSet<AllocNode> nodes = new HashSet<AllocNode>();
+        
+        for (int i = 0; i < getNumArgs(); i++) {
+            if (isArgPointer(i))
+                nodes.addAll(getArgPTSet(i));
+        }
+        
+        return nodes;
+    }
+    
     /**
      * Return the context edge.
      */

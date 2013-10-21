@@ -2,7 +2,10 @@ package droidsafe.analyses.helper;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +34,8 @@ import soot.jimple.toolkits.callgraph.Edge;
  * 2. Visitor is called for each callee method / 1cfa edge combination
  * 3. Visitor is called for each callee method / entry point edge combination.
  * 
+ * The traversals are cached because the call graph is huge.
+ * 
  * @author mgordon
  *
  */
@@ -39,109 +44,160 @@ public class CallGraphTraversal {
     private static final Logger logger = LoggerFactory.getLogger(CallGraphTraversal.class);
     /** The spark (context insensitive) call graph */ 
     private CallGraph sparkCG;
+    /** combination of entry and 1cfa edge in the traversal */
+    private Set<EdgeAndContext> visitedEntryAnd1CFA;
     /** The edges (and the context) that we have visited */
-    private HashSet<EdgeAndContext> visitedEntryAnd1CFA;
-    private HashSet<Edge> visitedEdges;
-    private HashSet<MethodAndContext> visitedMethodAndContext;
-
+    private Set<Edge> visitedEdges;
+    /** the combination of method and entry point edge in the traversal */
+    private Set<MethodAndContext> visitedMethodAndContext;
+    /** Static singleton */
+    private static CallGraphTraversal v;
+    
     /**
-     * Accept a visitor and perform a traversal of the call graph, calling the visit method 
-     * of the visitor for each call graph edge.
+     * Reset the cache of the call graph traversal for a new run or for a change in the code.
      */
-    public static void accept(CallGraphContextVisitor visitor) {
-        Edge edgeToMain = new Edge(null, null, Harness.v().getMain(), Kind.STATIC);
-        new CallGraphTraversal(visitor).traversal(visitor, new EdgeAndContext(edgeToMain, edgeToMain),
-                new MethodAndContext(Harness.v().getMain(), edgeToMain));
+    public static void reset() {
+        v = null;
+    }
+    
+    /**
+     * Create a new singleton and cache the traversals
+     */
+    private static void createCachedTraversal() {
+        v = new CallGraphTraversal();
+        //create the cached traversal
+        v.traversal();  
+    }
+    
+    /**
+     * Called for each edge in the call graph.  Allows the visitor to do something with the method
+     * and its context edge.
+     */  
+    public static void acceptEntryContextAnd1CFA(CGVisitorEntryAnd1CFA visitor) {
+        if (v == null)
+            createCachedTraversal();
+        
+        for (EdgeAndContext edgeAndContext : v.visitedEntryAnd1CFA) {
+            visitor.visitEntryContextAnd1CFA(edgeAndContext.edgeInto.tgt(), edgeAndContext.context, 
+                edgeAndContext.edgeInto);
+        }
+    }
+    
+    /**
+     * Called for each reachable combinations of method / 1CFA (calling edge) context
+     */
+    public static void accept1CFA(CGVisitor1CFA visitor) {
+        if (v == null)
+            createCachedTraversal();
+        
+        for (Edge edge : v.visitedEdges) {
+            visitor.visit1CFA(edge.tgt(), edge);
+        }
     }
 
     /**
+     * Called for each reachable combination of method / entry edge context 
+     */
+    public static void acceptEntryContext(CGVisitorEntryContext visitor) {
+        if (v == null)
+            createCachedTraversal();
+        
+        for (MethodAndContext methodAndContext : v.visitedMethodAndContext) {
+            visitor.visitEntryContext(methodAndContext.method, methodAndContext.context);
+        }
+    }
+    
+    /**
      * Create a new traversal.
      */
-    private CallGraphTraversal(CallGraphContextVisitor visitor) {
-        // TODO Auto-generated constructor stub
+    private CallGraphTraversal() {
         sparkCG = Scene.v().getCallGraph();
-        visitedEntryAnd1CFA = new HashSet<EdgeAndContext>();
-        visitedEdges = new HashSet<Edge>();
-        visitedMethodAndContext = new HashSet<MethodAndContext>();
+        visitedEntryAnd1CFA = new LinkedHashSet<EdgeAndContext>();
+        visitedEdges = new LinkedHashSet<Edge>();
+        visitedMethodAndContext = new LinkedHashSet<MethodAndContext>();
     }
 
     /** 
      * Recursive method to perform the traversal.
      */
-    private void traversal(CallGraphContextVisitor visitor, EdgeAndContext edgeAndContext, 
-                           MethodAndContext methodAndContext) {
-        //do not visit if we have seen this full context and entry edge before
-        if (visitedEntryAnd1CFA.contains(edgeAndContext)) 
-            return;
-        
-        Edge current = edgeAndContext.edgeInto;
-        Edge contextEntry = edgeAndContext.context;
-        SootMethod method = current.tgt();
-        
-        //always visit with full combination
-        visitor.visitEntryContextAnd1CFA(method, contextEntry, current);
-        
-        //visit the method and the 1cfa context edge if we have not visited it before
-        if (!visitedEdges.contains(current)) 
-            visitor.visit1CFA(method, current);
-        
-        //visit the method and the entry edge context
-        if (!visitedMethodAndContext.contains(methodAndContext))
-            visitor.visitEntryContext(methodAndContext.method, methodAndContext.context);
-        
-        //remember what we have visited
-        visitedEntryAnd1CFA.add(edgeAndContext);
-        visitedEdges.add(current);
-        visitedMethodAndContext.add(methodAndContext);
-        
-        Iterator<Edge> ciEdges = sparkCG.edgesOutOf(method);
+    private void traversal() {
+        Edge edgeToMain = new Edge(null, null, Harness.v().getMain(), Kind.STATIC);
 
-        //iterate over all the ci edges from soot, and check to see
-        //if they are valid given the context
-        while (ciEdges.hasNext()) {
-            Edge curEdge = ciEdges.next();
-            
-            SootMethod target = curEdge.tgt();
-            Edge newContextEntry = contextEntry;
-            
-            //context may change for this call if going from api -> user
-            if (API.v().isSystemMethod(method) && !API.v().isSystemMethod(target)) {
-                newContextEntry = curEdge;
+        LinkedList<EdgeAndContext> stack = new LinkedList<EdgeAndContext>();
+
+        EdgeAndContext startingEdgeContext = new EdgeAndContext(edgeToMain, edgeToMain);
+        stack.add(startingEdgeContext);
+
+        while (!stack.isEmpty()) {
+            EdgeAndContext edgeAndContext = stack.pop();
+
+            //do not visit if we have seen this full context and entry edge before
+            if (visitedEntryAnd1CFA.contains(edgeAndContext)) 
+                continue;
+
+            MethodAndContext methodAndContext = new MethodAndContext(edgeAndContext.edgeInto.tgt(), 
+                edgeAndContext.context);
+
+            Edge current = edgeAndContext.edgeInto;
+            Edge contextEntry = edgeAndContext.context;
+            SootMethod method = current.tgt();
+
+            //remember what we have visited
+            visitedEntryAnd1CFA.add(edgeAndContext);
+            visitedEdges.add(current);
+            visitedMethodAndContext.add(methodAndContext);
+
+            Iterator<Edge> ciEdges = sparkCG.edgesOutOf(method);
+
+            //iterate over all the ci edges from soot, and check to see
+            //if they are valid given the context
+            while (ciEdges.hasNext()) {
+                Edge curEdge = ciEdges.next();
+
+                SootMethod target = curEdge.tgt();
+                Edge newContextEntry = contextEntry;
+
+                //context may change for this call if going from api -> user
+                if (API.v().isSystemMethod(method) && !API.v().isSystemMethod(target)) {
+                    newContextEntry = curEdge;
+                }
+
+                InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
+
+                if (iie != null) {
+                    //if a virtual call, use the pta to do a context sensitive search, and prune the call graph
+                    //only visit the edge if it is in a context sensitive search (search with the old context)
+                    try {
+
+                        //Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
+                        Map<AllocNode, SootMethod> virtualCallMap = 
+                                GeoPTA.v().resolveInstanceInvokeMap1CFA(iie, current);
+                        for (Map.Entry<AllocNode, SootMethod> entry: 
+                            virtualCallMap.entrySet()) {
+
+                            // Only the virtual calls do the following test
+                            if ( entry.getValue() == target ) {
+                                //found edge in context sensitive search
+
+                                EdgeAndContext newEdgeAndContext = new EdgeAndContext(curEdge, newContextEntry);
+                                if (!visitedEntryAnd1CFA.contains((newEdgeAndContext)))
+                                    stack.push(newEdgeAndContext);
+                                break;
+                            }   
+                        } 
+                    } catch (CannotFindMethodException e) {
+                        //if we could not find the method during the resolution, just ignore for now...
+                        logger.info("Cannot resolve method during CallGraph traversal: {}", iie);
+                        //droidsafe.main.Main.exit(1);
+                    }   
+                } else {
+                    EdgeAndContext newEdgeAndContext = new EdgeAndContext(curEdge, newContextEntry);
+                    if (!visitedEntryAnd1CFA.contains((newEdgeAndContext)))
+                        stack.push(newEdgeAndContext); 
+                }
             }
-          
-            InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
-          
-            if (iie != null) {
-                //if a virtual call, use the pta to do a context sensitive search, and prune the call graph
-                //only visit the edge if it is in a context sensitive search (search with the old context)
-                try {
-                   
-                    //Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
-                    Map<AllocNode, SootMethod> virtualCallMap = 
-                            GeoPTA.v().resolveInstanceInvokeMap1CFA(iie, current);
-                    for (Map.Entry<AllocNode, SootMethod> entry: 
-                        virtualCallMap.entrySet()) {
-                      
-                        // Only the virtual calls do the following test
-                        if ( entry.getValue() == target ) {
-                            //found edge in context sensitive search
-                           
-                            traversal(visitor, new EdgeAndContext(curEdge, newContextEntry), 
-                                new MethodAndContext(target, newContextEntry));
-                            break;
-                        }   
-                    } 
-                } catch (CannotFindMethodException e) {
-                    //if we could not find the method during the resolution, just ignore for now...
-                    logger.info("Cannot resolve method during CallGraph traversal: {}", iie);
-                    //droidsafe.main.Main.exit(1);
-                }   
-            } else {
-                traversal(visitor, new EdgeAndContext(curEdge, newContextEntry), 
-                    new MethodAndContext(target, newContextEntry));
-            }
+
         }
-        
     }
 }
 

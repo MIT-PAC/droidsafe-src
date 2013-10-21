@@ -21,6 +21,7 @@ import soot.Value;
 import soot.jimple.ClassConstant;
 import soot.jimple.IntConstant;
 import soot.jimple.LongConstant;
+import soot.jimple.NullConstant;
 import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ClassConstantNode;
@@ -41,6 +42,7 @@ import droidsafe.speclang.ConcreteListArgumentValue;
 import droidsafe.speclang.IntValue;
 import droidsafe.speclang.JSAValue;
 import droidsafe.speclang.Method;
+import droidsafe.speclang.NullValue;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.StringValue;
 import droidsafe.speclang.TypeValue;
@@ -268,6 +270,10 @@ public class RCFGToSSL {
 				clrv.add(s);
 			return clrv;
 			
+		} else if (ptsToSet.isEmpty()) {
+		    ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
+            clrv.add(NullValue.getNullValue());
+            return clrv;
 		} else {  //if not all constants, then return type because we don't know what is happening
 			return new TypeValue(t);
 		}
@@ -305,6 +311,9 @@ public class RCFGToSSL {
 		} else if (value instanceof ClassConstant) {
 			listArg.add(new ClassValue(((ClassConstant)value).getValue()));
 			return listArg;
+		} else if (value instanceof NullConstant) {
+		    listArg.add(NullValue.getNullValue());
+		    return listArg;
 		} else 
 			return new TypeValue(type);
 	}

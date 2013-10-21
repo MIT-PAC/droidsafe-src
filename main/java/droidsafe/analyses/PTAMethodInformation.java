@@ -5,7 +5,9 @@ import java.util.Set;
 import soot.Type;
 import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.InvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.callgraph.Edge;
 import droidsafe.utils.Utils;
 
 /**
@@ -68,4 +70,14 @@ public interface PTAMethodInformation {
      * Return true if the receiver is a pointer. 
      */
     public boolean isReceiverPointer();
+    
+    /**
+     * Return the invoke expression that invokes the method.
+     */
+    public InvokeExpr getInvokeExpr();
+    
+    /**
+     * Return the call graph edge used for context sensitive lookups. 
+     */
+    public Edge getContextEdge();
 }

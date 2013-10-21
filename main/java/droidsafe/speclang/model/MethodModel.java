@@ -3,12 +3,14 @@ package droidsafe.speclang.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.jimple.spark.pag.AllocNode;
 import soot.SootMethod;
 import soot.Type;
 import droidsafe.android.system.Permissions;
@@ -37,7 +39,6 @@ public class MethodModel extends ModelChangeSupport
   /**
    * Standard logger.
    */
-  @SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(MethodModel.class);
 
   /**
@@ -82,6 +83,12 @@ public class MethodModel extends ModelChangeSupport
   private List<String> methodArgumentValues = new ArrayList<String>();
 
   /**
+   * List of list of lines for new expressions that could reach the method's arguments.
+   */
+  private List<List<AllocLocationModel>> methodArgumentAllocSources =
+      new ArrayList<List<AllocLocationModel>>();
+
+  /**
    * The source code location where the method is defined or called.
    */
   private SourceLocationTag declarationLocation;
@@ -112,6 +119,10 @@ public class MethodModel extends ModelChangeSupport
    */
   private String receiver = "";
 
+  /**
+   * The list of lines for new expressions that could reach the receiver of this method.
+   */
+  private List<AllocLocationModel> receiverAllocSources = new ArrayList<AllocLocationModel>();
 
   /**
    * If the method is native or not
@@ -138,6 +149,11 @@ public class MethodModel extends ModelChangeSupport
       Object receiver = originalMethod.getReceiver();
       if (receiver instanceof ConcreteListArgumentValue) {
         this.receiver = receiver.toString();
+        for (AllocNode node : originalMethod.getReceiverAllocNodes()) {
+          AllocLocationModel line = AllocLocationModel.get(node);
+          if (line != null) this.receiverAllocSources.add(line);
+        }
+        Collections.sort(this.receiverAllocSources);
       }
     }
     for (SourceLocationTag line : originalMethod.getLines()) {
@@ -154,9 +170,17 @@ public class MethodModel extends ModelChangeSupport
     }
 
     List<ArgumentValue> arguments = Arrays.asList(originalMethod.getArgs());
-    for (ArgumentValue arg : arguments) {
+    for (int i = 0; i < arguments.size(); i++) {
+      ArgumentValue arg = arguments.get(i);
       String argValue = arg.toString();
       this.methodArgumentValues.add(argValue);
+      List<AllocLocationModel> argSources = new ArrayList<AllocLocationModel>();
+      for (AllocNode node : originalMethod.getArgAllocNodes(i)) {
+        AllocLocationModel line = AllocLocationModel.get(node);
+        if (line != null) argSources.add(line);
+      }
+      Collections.sort(argSources);
+      this.methodArgumentAllocSources.add(argSources);
       // logger.debug("Argument for method {} is {}", new Object[]
       // {methodSignature, argValue});
     }
@@ -245,6 +269,13 @@ public class MethodModel extends ModelChangeSupport
    */
   public String getReceiver() {
     return this.receiver;
+  }
+
+  /**
+   * @return the lines for new expressions that could reach the method's receiver.
+   */
+  public List<AllocLocationModel> getReceiverAllocSources() {
+    return this.receiverAllocSources;
   }
 
   /**
@@ -459,5 +490,23 @@ public class MethodModel extends ModelChangeSupport
    */
   public List<String> getMethodArguments() {
     return methodArgumentTypes;
+  }
+
+  /**
+   * Returns computed value for the method's ith arguments.
+   * 
+   * @return
+   */
+  public String getArgumentValue(int i) {
+    return methodArgumentValues.get(i);
+  }
+
+  /**
+   * Returns set of lines for new expressions that could reach the method's ith arguments.
+   * 
+   * @return
+   */
+  public List<AllocLocationModel> getArgumentAllocSources(int i) {
+    return methodArgumentAllocSources.get(i);
   }
 }
