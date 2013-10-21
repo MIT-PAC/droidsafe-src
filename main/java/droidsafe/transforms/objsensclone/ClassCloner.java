@@ -1,8 +1,10 @@
 package droidsafe.transforms.objsensclone;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +31,7 @@ public class ClassCloner {
     
     private SootClass original;
     private SootClass clone;
+    private Set<SootClass> ancestorsOfIncluding;
     private boolean isAPI;
     private SootMethodList methods;
     public static int uniqueID = 0;
@@ -39,6 +42,7 @@ public class ClassCloner {
         this.original = org;
         this.isAPI = isSystem;
         methods = new SootMethodList();
+        ancestorsOfIncluding = new HashSet<SootClass>();
     }
 
     public static SootClass cloneClass(SootClass original, boolean isAPIClass) {
@@ -64,6 +68,7 @@ public class ClassCloner {
         SootClass ancestor = original;
         while (!"java.lang.Object".equals(ancestor.getName())) {
             incorporateAncestorFields(ancestor);
+            ancestorsOfIncluding.add(ancestor);
             ancestor = ancestor.getSuperclass();
         }
         
@@ -198,24 +203,36 @@ public class ClassCloner {
                     FieldRef fieldRef = stmt.getFieldRef();
                     SootFieldRef oldSootFieldRef = fieldRef.getFieldRef();
                    
+                    //don't do anything if the field is of class that is not the original or is cloned
+                    //this is before the field ref is resolved, so it shows that the possible field is not
+                    //in the tree
+                    if (fieldRef.getField().isStatic() || 
+                            !ancestorsOfIncluding.contains(fieldRef.getField().getDeclaringClass()))
+                        continue;  
+                    
                     if (!origStmtFieldMap.containsKey(i)) {
-                        logger.error("Some problem with consistency between orignal and cloned method:{}", newMeth);
+                        logger.error("Some problem with consistency between orignal and cloned method: {} {}", stmt, 
+                            newMeth);
                         droidsafe.main.Main.exit(1);
                     }
                     
                     SootField origField = origStmtFieldMap.get(i);
                     
-                    //don't do anything for static fields
-                    if (origField.isStatic())
+                    //don't do anything if the resolved field is of class that is not the original or is cloned
+                    if (!ancestorsOfIncluding.contains(origField.getDeclaringClass()))
+                        continue;   
+                    
+                    //don't do anything for static fields or if the field was of Object
+                    if ("java.lang.Object".equals(origField.getDeclaringClass().getName()))
                         continue;
                     
                     String newFieldName = oldSootFieldRef.name() + "_" + origField.getDeclaringClass() + 
                             CLONED_FIELD_POSTFIX;
                     
                     if (!clone.declaresField(newFieldName, oldSootFieldRef.type())) {
-                        logger.error("Cannot field field {} in clone of {}.", 
-                            oldSootFieldRef.name() + CLONED_FIELD_POSTFIX,
-                            ancestor);
+                        logger.error("Cannot find field {} in clone of {}. Originally in {}", 
+                            newFieldName,
+                            ancestor, origField.getDeclaringClass());
                     }
                     
                     SootFieldRef newSootFieldRef = 
@@ -228,9 +245,7 @@ public class ClassCloner {
                     
                     fieldRef.setFieldRef(newSootFieldRef);
                 }
-                
             }
         }
-               
     }
 }

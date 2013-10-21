@@ -30,7 +30,7 @@ public class ObjectSensitivityCloner {
     private static final Logger logger = LoggerFactory.getLogger(ObjectSensitivityCloner.class);
     
     public static final Set<String> NAMES_TO_CLONE = new HashSet<String>(java.util.Arrays.asList(
-        "edu.droidsafe.Child"
+        "android.content.Intent", "android.net.Uri"
         ));
     
     private ObjectSensitivityCloner() {
