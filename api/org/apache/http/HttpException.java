@@ -10,6 +10,7 @@ import org.apache.http.util.ExceptionUtils;
 public class HttpException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.105 -0400", hash_original_method = "CE1042B423C0576E9C85D621B7EA3FF6", hash_generated_method = "0DA2B15A81BFF0C65703BCFAA76028E6")
+    @DSModeled(DSC.SAFE)
     public  HttpException() {
         super();
         // ---------- Original Method ----------

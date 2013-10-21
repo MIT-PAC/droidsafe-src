@@ -47,6 +47,7 @@ import droidsafe.helpers.DSUtils;
 public class File implements Serializable, Comparable<File> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.816 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")
 
+    @DSVAModeled
     private String path;
     
     @DSModeled(DSC.SAFE)

@@ -2,7 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
+import droidsafe.runtime.*;
 
 import java.io.IOException;
 import java.io.InvalidObjectException;
@@ -70,15 +70,6 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         //size = a.length;
     }
 
-   
-    @DSModeled(DSC.BAN)
-    private static int newCapacity(int currentCapacity) {
-        int increment = (currentCapacity < (MIN_CAPACITY_INCREMENT / 2) ?
-                MIN_CAPACITY_INCREMENT : currentCapacity >> 1);
-        return currentCapacity + increment;
-    }
-
-   
     @DSModeled(DSC.SAFE)
     static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int size) {
         throw new IndexOutOfBoundsException("Invalid index " + index + ", size is " + size);
@@ -233,11 +224,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1640159609 =             result;
         return getElementAt(location);
     } 
 
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.840 -0400", hash_original_field = "F9F98993EEA9BE3997005456026F76D9", hash_generated_field = "DACDD4E45B583B8C5383B55561081E3B")
-
-    private static final int MIN_CAPACITY_INCREMENT = 12;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.840 -0400", hash_original_field = "C1AC5D7497D25261150408B53250333D", hash_generated_field = "E089B2B162ABB353A6199922AA057C3E")
-
     private static final long serialVersionUID = 8683452581122892189L;
 
     

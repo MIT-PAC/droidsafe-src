@@ -40,6 +40,7 @@ import droidsafe.helpers.DSUtils;
 public final class Class<T> implements Serializable, AnnotatedElement, GenericDeclaration, Type {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.624 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
 
+    @DSVAModeled
     private transient String name;
     
     @DSModeled(DSC.BAN)

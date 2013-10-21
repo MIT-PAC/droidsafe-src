@@ -36,11 +36,15 @@ import com.android.internal.util.XmlUtils;
 
 
 public class Intent implements Parcelable, Cloneable {
+    @DSVAModeled
     private String mAction;
+    @DSVAModeled
     private Uri mData;
+    @DSVAModeled
     private String mType;
     private String mPackage;
     private ComponentName mComponent;
+    @DSVAModeled
     private int mFlags;
     private HashSet<String> mCategories;
     private Bundle mExtras;
@@ -130,13 +134,13 @@ public class Intent implements Parcelable, Cloneable {
     
     @DSModeled(DSC.SAFE)
 	public Intent(String action) {
-        setAction(action);
+        mAction = action;
     }
 
     
     @DSModeled(DSC.SAFE)
 	public Intent(String action, Uri uri) {
-        setAction(action);
+        mAction = action;
         mData = uri;
     }
 

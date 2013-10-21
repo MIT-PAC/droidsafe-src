@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import android.text.Selection;
@@ -983,6 +984,24 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnKeyEvents() {
+        int action = getTaintInt();
+        int code = getTaintInt();
+        int repeatCount = getTaintInt();
+        KeyEvent ev = new KeyEvent(action, code);
+        onKeyDown(getTaintInt(), ev);
+        onKeyUp(getTaintInt(), ev);
+        onKeyLongPress(getTaintInt(), ev);
+        onKeyMultiple(code, repeatCount, ev);
+        
+        Parcel parcel = Parcel.obtain();
+        MotionEvent motionEv = MotionEvent.createFromParcelBody(parcel);
+        onTouchEvent(motionEv);
+        onTrackballEvent(motionEv);
+        onGenericMotionEvent(motionEv);
+    }
+
     @DSModeled(DSC.SAFE)
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method

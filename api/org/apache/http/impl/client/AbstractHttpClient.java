@@ -748,6 +748,21 @@ HttpResponse var1E0ADA5609F1551DD904433FC94E0E29_1900544653 =         execute(ta
 		this.target = target;
 		this.request = request;
 		this.context = context;
+		addTaint(target.getTaint());
+		addTaint(request.getTaint());
+		addTaint(context.getTaint());
+		
+		if (DroidSafeAndroidRuntime.control) {		    
+		    ClientProtocolException clientEx = new ClientProtocolException(new HttpException());    
+		    clientEx.addTaint(getTaint());
+		    throw clientEx;
+		}
+		
+		if (DroidSafeAndroidRuntime.control) {         
+            IOException ioEx = new IOException("");
+            ioEx.addTaint(getTaint());
+            throw ioEx;
+        }
 		// DSModel - send back a fake response
 		return new BasicHttpResponse(null, null, null);
 		/*
