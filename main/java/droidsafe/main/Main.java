@@ -90,6 +90,8 @@ public class Main {
     Project.v().loadClasses();
     // create the permissions map
     Permissions.init();
+    //sink high-level information flow mapping 
+    APIInfoKindMapping.initMapping();
     ResourcesSoot.reset();
     JimpleRelationships.reset();
     CallGraphTraversal.reset();
@@ -261,13 +263,12 @@ public class Main {
 
     //Test the points to analysis
     //new TestPTA();
-
+    
     if (Config.v().infoFlow) {
         StopWatch timer = new StopWatch();
         driverMsg("Starting Information Flow Analysis...");
         monitor.subTask("Information Flow Analysis: Injected source flow");
         timer.start();
-        APIInfoKindMapping.initMapping();
         InjectedSourceFlows.run();
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
