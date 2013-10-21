@@ -84,6 +84,7 @@ public class DroidSafeAndroidRuntime {
 
     }
 
+    @DSModeled(DSC.BAN)
     public static void modelService(android.app.Service service) {
         if (mApplication != null)
             service.setApplication(mApplication);
@@ -109,7 +110,7 @@ public class DroidSafeAndroidRuntime {
         service.onDestroy();
     }
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static void modelContentProvider(android.content.ContentProvider contentProvider) {
         contentProvider.onCreate();
         contentProvider.onConfigurationChanged(new Configuration());
@@ -117,7 +118,7 @@ public class DroidSafeAndroidRuntime {
         contentProvider.onTrimMemory(0);
     }
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
         if (mApplication != null)
             receiver.setApplication(mApplication);

@@ -334,6 +334,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
     
     private Application mApplication;
     
+    @DSModeled(DSC.BAN)
     public void setApplication(Application app) { 
         this.mApplication = app;
     }

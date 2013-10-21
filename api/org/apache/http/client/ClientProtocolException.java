@@ -27,6 +27,7 @@ public class ClientProtocolException extends IOException {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.359 -0400", hash_original_method = "CE5566FA43618E2C322AA845802DCAD6", hash_generated_method = "C9B1F6D51076DFC5A5B2355C62E3F42B")
+    @DSModeled(DSC.SPEC)
     public  ClientProtocolException(Throwable cause) {
         addTaint(cause.getTaint());
         initCause(cause);
@@ -36,6 +37,7 @@ public class ClientProtocolException extends IOException {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.360 -0400", hash_original_method = "3D3F161C5740C8F0A7A6AC126178E78A", hash_generated_method = "64DF560EFBBAFB9D815177AFC3D2FD6A")
+    @DSModeled(DSC.SPEC)
     public  ClientProtocolException(String message, Throwable cause) {
         super(message);
         addTaint(cause.getTaint());
