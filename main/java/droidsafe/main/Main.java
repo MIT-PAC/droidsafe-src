@@ -168,8 +168,7 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-    
-    
+        
     driverMsg("Adding Object Sensitivity by cloning...");
     monitor.subTask("Adding Object Sensitivity by cloning...");
     ObjectSensitivityCloner.run();
