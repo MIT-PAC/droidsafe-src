@@ -82,6 +82,7 @@ public class Intent implements Parcelable, Cloneable {
         {
             this.mSelector = new Intent(o.mSelector);
         } //End block
+        addTaint(getTaint());
         // ---------- Original Method ----------
         //this.mAction = o.mAction;
         //this.mData = o.mData;
@@ -1184,6 +1185,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
 	public Intent setAction(String action) {
 		mAction = action;
         //mAction = action != null ? action.intern() : null;
+		addTaint(action.getTaint());
         return this;
     }
 
@@ -1191,6 +1193,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
     @DSModeled(DSC.SAFE)
 	public Intent setData(Uri data) {
         mData = data;
+        addTaint(data.getTaint());
 		/*
         mType = null;
         */
@@ -1202,6 +1205,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
 	public Intent setType(String type) {
             mData=null;
             mType = type;
+            addTaint(type.getTaint());
             return this;
     }
 
@@ -1213,6 +1217,8 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
         mType = type;
 Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1185276063.addTaint(taint);
+        addTaint(data.getTaint());
+        addTaint(type.getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_1185276063;
         // ---------- Original Method ----------
         //mData = data;
@@ -1272,6 +1278,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
             throw var8BA32FA43E547F20BF608AAF6B7199B5_1000380269;
         } //End block
         mSelector = selector;
+        addTaint(selector.getTaint());
         // ---------- Original Method ----------
         //if (selector == this) {
             //throw new IllegalArgumentException(
@@ -2012,6 +2019,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1839274427 =         this;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.457 -0400", hash_original_method = "240F6D2BBC198957F28DF199FF71FA51", hash_generated_method = "323448496A1EB64B6B509F0F11F239D5")
     public Intent setFlags(int flags) {
         mFlags = flags;
+        addTaint(flags);
 Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_238535034.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_238535034;
@@ -2030,9 +2038,13 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     
     @DSModeled(DSC.SAFE)
 	public Intent setPackage(String packageName) {
+        addTaint(packageName.getTaint());
         if (packageName != null && mSelector != null) {
-            throw new IllegalArgumentException(
+            IllegalArgumentException exception = 
+            new IllegalArgumentException(
                     "Can't set package name when selector is already set");
+            exception.addTaint(getTaint());
+            throw exception;
         }
         mPackage = packageName;
         return this;
@@ -2042,6 +2054,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     @DSModeled(DSC.SAFE)
 	public Intent setComponent(ComponentName component) {
         mComponent = component;
+        addTaint(component.getTaint());
         return this;
     }
 
@@ -2050,7 +2063,9 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "A7E573A4994CE22857A73F3E6FF16052", hash_generated_method = "C98CA911AF4638EF31A76CD5F5B6B418")
     public Intent setClassName(Context packageContext, String className) {
         mComponent = new ComponentName(packageContext, className);
-Intent var72A74007B2BE62B849F475C7BDA4658B_607451133 =         this;
+        addTaint(packageContext.getTaint());
+        addTaint(className.getTaint()); 
+        Intent var72A74007B2BE62B849F475C7BDA4658B_607451133 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_607451133.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_607451133;
         // ---------- Original Method ----------
@@ -2062,8 +2077,10 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_607451133 =         this;
     @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "0DAD204BCD083F4BEBCC949C19CA4443", hash_generated_method = "5CEF145A6CCA0AADAE7E7BECBD589C6D")
     public Intent setClassName(String packageName, String className) {
+        addTaint(packageName.getTaint());
+        addTaint(className.getTaint());
         mComponent = new ComponentName(packageName, className);
-Intent var72A74007B2BE62B849F475C7BDA4658B_1442856412 =         this;
+        Intent var72A74007B2BE62B849F475C7BDA4658B_1442856412 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1442856412.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1442856412;
         // ---------- Original Method ----------
@@ -2075,6 +2092,8 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1442856412 =         this;
     @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.459 -0400", hash_original_method = "07D0BC1863460C70C46D0D4DB8E842CD", hash_generated_method = "7F6ACB39663195BC97A4BC6A90961AAC")
     public Intent setClass(Context packageContext, Class<?> cls) {
+        addTaint(packageContext.getTaint());
+        addTaint(cls.getTaint());
         mComponent = new ComponentName(packageContext, cls);
 Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1106282301.addTaint(taint);
@@ -2096,6 +2115,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         {
             mSourceBounds = null;
         } //End block
+        addTaint(r.getTaint());
         // ---------- Original Method ----------
         //if (r != null) {
             //mSourceBounds = new Rect(r);
@@ -2109,6 +2129,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.461 -0400", hash_original_method = "E5580C6082A47C0EDDA03A45ABBBF7D7", hash_generated_method = "4B8FA51A496FF6E4B5BA8D2EE3D46DB1")
     public int fillIn(Intent other, int flags) {
         addTaint(flags);
+        addTaint(other.getTaint());
         int changes = 0;
         if(other.mAction != null
                 && (mAction == null || (flags&FILL_IN_ACTION) != 0))        
@@ -2195,141 +2216,8 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.462 -0400", hash_original_method = "B6E4053A3570119C1E3D361525D403A8", hash_generated_method = "C8D6E623D6274E5B094908B5C049F5B2")
     public boolean filterEquals(Intent other) {
         addTaint(other.getTaint());
-        if(other == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1790736717 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1833066724 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1833066724;
-        } //End block
-        if(mAction != other.mAction)        
-        {
-            if(mAction != null)            
-            {
-                if(!mAction.equals(other.mAction))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_582901807 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1832143596 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1832143596;
-                } //End block
-            } //End block
-            else
-            {
-                if(!other.mAction.equals(mAction))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1934727722 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2085815512 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2085815512;
-                } //End block
-            } //End block
-        } //End block
-        if(mData != other.mData)        
-        {
-            if(mData != null)            
-            {
-                if(!mData.equals(other.mData))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_142414271 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011417306 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011417306;
-                } //End block
-            } //End block
-            else
-            {
-                if(!other.mData.equals(mData))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_783690542 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_588687685 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_588687685;
-                } //End block
-            } //End block
-        } //End block
-        if(mType != other.mType)        
-        {
-            if(mType != null)            
-            {
-                if(!mType.equals(other.mType))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1145982851 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192951307 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_192951307;
-                } //End block
-            } //End block
-            else
-            {
-                if(!other.mType.equals(mType))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1365205665 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586663098 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_586663098;
-                } //End block
-            } //End block
-        } //End block
-        if(mPackage != other.mPackage)        
-        {
-            if(mPackage != null)            
-            {
-                if(!mPackage.equals(other.mPackage))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_124201562 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1165733371 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1165733371;
-                } //End block
-            } //End block
-            else
-            {
-                if(!other.mPackage.equals(mPackage))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_682842912 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1616439131 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1616439131;
-                } //End block
-            } //End block
-        } //End block
-        if(mComponent != other.mComponent)        
-        {
-            if(mComponent != null)            
-            {
-                if(!mComponent.equals(other.mComponent))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1766733685 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1477741934 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1477741934;
-                } //End block
-            } //End block
-            else
-            {
-                if(!other.mComponent.equals(mComponent))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1774808094 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170229236 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1170229236;
-                } //End block
-            } //End block
-        } //End block
-        if(mCategories != other.mCategories)        
-        {
-            if(mCategories != null)            
-            {
-                if(!mCategories.equals(other.mCategories))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1893746922 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_587230228 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_587230228;
-                } //End block
-            } //End block
-            else
-            {
-                if(!other.mCategories.equals(mCategories))                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1959984362 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2104148020 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2104148020;
-                } //End block
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_976003831 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212680784 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1212680784;
+        return getTaintBoolean();
+        
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -2337,34 +2225,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.463 -0400", hash_original_method = "8096117DA4698C90A65D3667512D1D4C", hash_generated_method = "D506D0D0B53B35A630A8B69FE659274D")
     public int filterHashCode() {
-        int code = 0;
-        if(mAction != null)        
-        {
-            code += mAction.hashCode();
-        } //End block
-        if(mData != null)        
-        {
-            code += mData.hashCode();
-        } //End block
-        if(mType != null)        
-        {
-            code += mType.hashCode();
-        } //End block
-        if(mPackage != null)        
-        {
-            code += mPackage.hashCode();
-        } //End block
-        if(mComponent != null)        
-        {
-            code += mComponent.hashCode();
-        } //End block
-        if(mCategories != null)        
-        {
-            code += mCategories.hashCode();
-        } //End block
-        int varC13367945D5D4C91047B3B50234AA7AB_178773663 = (code);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273806603 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273806603;
+        return getTaintInt();
         // ---------- Original Method ----------
         //int code = 0;
         //if (mAction != null) {
@@ -2704,7 +2565,7 @@ for(String key : mExtras.keySet())
     @Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
-		return 0;
+		return getTaintInt();
 	}
 
     

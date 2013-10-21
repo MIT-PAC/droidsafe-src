@@ -145,6 +145,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     public synchronized V get(Object key) {
         V value = backingMap.get(key);
         value.addTaint(getTaint());
+        return value;
         // ---------- Original Method ----------
         //int hash = key.hashCode();
         //hash ^= (hash >>> 20) ^ (hash >>> 12);
