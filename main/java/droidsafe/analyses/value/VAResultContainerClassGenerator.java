@@ -212,10 +212,17 @@ public class VAResultContainerClassGenerator {
                 }
                 for(SootField apiModelSootField : apiModelSootClass.getFields()){
                     if(hasDSVAModeledAnnotation(apiModelSootField)) {                
+                        soot.Type fieldType = apiModelSootField.getType();
+                        if(fieldType instanceof RefType) {
+                            SootClass fieldTypeClass = ((RefType)fieldType).getSootClass();
+                            if(!classesAndFieldsToModel.containsKey(fieldTypeClass)) {
+                                classesAndFieldsToModel.put(fieldTypeClass, new HashSet<SootField>());
+                            }
+                        }
                         if (!classesAndFieldsToModel.containsKey(apiModelSootClass)) {
                             classesAndFieldsToModel.put(apiModelSootClass, new HashSet<SootField>());
                         }
-                        if(apiModelSootField.getType() instanceof PrimType || forDisplay) {
+                        if(fieldType instanceof PrimType || forDisplay) {
                             classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
                         }
                     }
@@ -697,8 +704,10 @@ public class VAResultContainerClassGenerator {
                         }
                     } else if (member instanceof EnumDeclaration) {
                         EnumDeclaration enumDecl = (EnumDeclaration) member;
-                        for (BodyDeclaration enumMember: enumDecl.getMembers()) {
-                            enumMember.setAnnotations(null);
+                        if (enumDecl.getMembers() != null) {
+                            for (BodyDeclaration enumMember: enumDecl.getMembers()) {
+                                enumMember.setAnnotations(null);
+                            }
                         }
                         newMember = enumDecl;
                     }
@@ -1045,7 +1054,7 @@ public class VAResultContainerClassGenerator {
             }
             buf.append(')');
             //throw new Exception("Failed to find soot method " + buf);
-            logger.warn("Failed to find soot method " + buf);
+            //logger.warn("Failed to find soot method " + buf);
         }
         return sootMethod;
     }
