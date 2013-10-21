@@ -1,5 +1,6 @@
 package droidsafe.transforms.objsensclone;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -26,16 +27,40 @@ import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.util.Chain;
 
+/**
+ * This transformation will create a clone of a given class that is appropriate for separating the cloned
+ * class from the parent in the points to analysis, such that we can introduce Object Sensitivity for a subset of 
+ * classes.
+ * 
+ * The clone that is created includes all fields from all parents of the original class.  The fields are renamed, and 
+ * field refs in the cloned methods are updated appropriately.  
+ * 
+ * In the original class, all private static fields are made protected, so that code in the clone can access them.
+ * 
+ * All methods from the original class plus its ancestors are added to the clone (they are added in a way such that 
+ * method inheritance is correctly observed from the original hierarchy).  
+ * 
+ * @author mgordon
+ *
+ */
 public class ClassCloner {
+    /** static logger class */
     private static final Logger logger = LoggerFactory.getLogger(ClassCloner.class);
-    
+    /** original soot class which we are cloning */
     private SootClass original;
+    /** the clone we have created */
     private SootClass clone;
+    /** a list of ancestor of the original class, plus the original class */
     private Set<SootClass> ancestorsOfIncluding;
+    /** should we treat the new cloned class as an api class */
     private boolean isAPI;
+    /** methods of the new cloned class */
     private SootMethodList methods;
+    /** unique ID used for introduced fields */
     public static int uniqueID = 0;
+    /** appended to name cloned classes */
     public static final String CLONE_POSTFIX = "_ds_clone_";
+    /** appended to name of cloned fields */
     public static final String CLONED_FIELD_POSTFIX = "_ds_clone_field";
     
     private ClassCloner(SootClass org, boolean isSystem) {
@@ -104,9 +129,17 @@ public class ClassCloner {
             if (!SootUtils.isSubTypeOfIncluding(returnType, curr.getReturnType())) 
                 continue;
 
-            for (int i = 0; i < args.length; i++) 
-                if (!SootUtils.isSubTypeOfIncluding(SootUtils.toSootType(args[i]), curr.getParameterType(i)))
+            boolean foundIncompArg = false;            
+            for (int i = 0; i < args.length; i++) {
+                if (!SootUtils.isSubTypeOfIncluding(SootUtils.toSootType(args[i]), curr.getParameterType(i))) {
+                    foundIncompArg = true;
                     continue;
+                }
+            }
+            
+            //at least one parameter does not match!
+            if (foundIncompArg)
+                continue;
 
             //if we got here all is well and we found a method that matches!
             return true;
@@ -131,6 +164,7 @@ public class ClassCloner {
                SootField newField = new SootField(
                    ancestorField.getName() + "_" +  ancestor.getName() + CLONED_FIELD_POSTFIX,
                    ancestorField.getType(), ancestorField.getModifiers());
+               newField.addAllTagsOf(ancestorField);
                clone.addField(newField);
             }
             
@@ -142,12 +176,16 @@ public class ClassCloner {
         //create all methods, cloning body, replacing instance field refs
         for (SootMethod ancestorM : ancestor.getMethods()) {
             //check if this method already exists
-            if (containsMethod(ancestorM.getSignature()))
+            if (containsMethod(ancestorM.getSignature())) {
+                //System.out.printf("\tAlready contains method %s\n.", ancestorM);
                 continue;
+            }
             
             SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
                 ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
             
+            
+            //System.out.printf("\tAdding method %s\n.", ancestorM);
             //register method
             methods.addMethod(newMeth);
             clone.addMethod(newMeth);
