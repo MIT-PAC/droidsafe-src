@@ -93,6 +93,8 @@ public class Config {
    */
   public boolean runStringAnalysis = true;
   
+  public boolean addObjectSensitivity = true;
+  
   /** if true, run value analysis */
   public boolean runValueAnalysis = true;
   
@@ -189,6 +191,12 @@ public class Config {
             new Option("nova", "Do not run value analysis.");
     options.addOption(noVA);
 
+    Option noObjSens =
+            new Option("noobjsens", "Do not add object sensitivity to points to analysis.");
+    options.addOption(noObjSens);
+
+    
+    
     Option runStringAnalysisUnfiltered =
         new Option("analyzestrings_unfiltered",
             "Run string analysis with no application class filtering.");
@@ -263,6 +271,9 @@ public class Config {
     
     if (cmd.hasOption("nova"))
         this.runValueAnalysis = false;
+    
+    if (cmd.hasOption("noobjsens"))
+        this.addObjectSensitivity = false;
     
     if (cmd.hasOption("manualmod")) 
         this.useManualModeling = true;
