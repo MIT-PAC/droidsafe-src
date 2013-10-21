@@ -83,7 +83,7 @@ public class ObjectSensitivityCloner {
                         if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
                             NewExpr oldNewExpr = (NewExpr) assign.getRightOp();
                             if (NAMES_TO_CLONE.contains(oldNewExpr.getBaseType().getClassName())) {
-                                System.out.printf("Found new expr to replace and clone class: %s %s %s\n",
+                                logger.info("Found new expr to replace and clone class: %s %s %s\n",
                                     clz, method, assign);
                             
                               
@@ -128,7 +128,7 @@ public class ObjectSensitivityCloner {
                 }
             }
         }
-        System.out.printf("Finished cloning.  Added %d classes.\n", clonedClasses);
+        System.out.printf("Finished cloning: added %d classes.\n", clonedClasses);
     }
     
     /**
