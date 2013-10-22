@@ -35,6 +35,7 @@ import soot.RefType;
 import soot.Scene;
 import soot.SootField;
 import soot.SootMethod;
+import soot.Type;
 import soot.Unit;
 import soot.Value;
 import soot.jimple.AbstractConstantSwitch;
@@ -68,14 +69,7 @@ import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
-import soot.jimple.spark.geom.geomPA.GeomPointsTo;
-import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.Node;
-import soot.jimple.spark.pag.SparkField;
-import soot.jimple.spark.sets.HashPointsToSet;
-import soot.jimple.spark.sets.P2SetVisitor;
-import soot.jimple.spark.sets.PointsToSetInternal;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.toolkits.graph.Block;
 import droidsafe.analyses.EntryPointCGEdges;
@@ -129,13 +123,19 @@ public class InformationFlowAnalysis {
     public Set<InfoValue> getTaintsBeforeRecursively(Edge entryEdge, Unit unit, Local local) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
         State state = getStateBefore(unit);
-        if (local.getType() instanceof RefLikeType) {
+        Type type = local.getType();
+        if (type instanceof RefType) {
             for (AllocNode allocNode : AllocNodeUtils.v().reachable(GeoPTA.v().getPTSetEventContext(local, entryEdge))) {
                 for (ImmutableSet<InfoValue> vs : state.instances.get(entryEdge, Address.v(allocNode)).values()) {
                     values.addAll(vs);
                 }
             }
+        } else if (type instanceof ArrayType) {
+            for (AllocNode allocNode : AllocNodeUtils.v().reachable(GeoPTA.v().getPTSetEventContext(local, entryEdge))) {
+                values.addAll(state.arrays.get(entryEdge, Address.v(allocNode)));
+            }
         } else {
+            assert !(type instanceof RefLikeType);
             values.addAll(evaluate(entryEdge, local, state.locals));
         }
         return values;
