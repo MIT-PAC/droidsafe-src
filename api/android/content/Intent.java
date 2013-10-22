@@ -2823,13 +2823,13 @@ for(i=0;i<N;i++)
     @DSModeled(DSC.BAN)
     public Intent translateIntent() {
         Intent result = new Intent();
-        result.setAction(orig.getAction());
-        result.setType(orig.getType());
-        result.setPackage(orig.getPackage());
+        result.setAction(this.getAction());
+        result.setType(this.getType());
+        result.setPackage(this.getPackage());
 
-        result.setData(orig.getData());
+        result.setData(this.getData());
         //set the data field to the type field in the case there is no existing uri
-        result.setData(Uri.parse(orig.getType()));
+        result.setData(new Uri(this.getType()));
 
         return result;
     }
