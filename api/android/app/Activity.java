@@ -2009,8 +2009,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         passed to this method.  Of course, we cannot model the response intent
         perfectly, but grab as many fields as we can.
 		*/
-		Intent resultIntent = new Intent();
-		droidsafe.helpers.DSUtils.translateIntent(intent, resultIntent);
+		Intent resultIntent;
+		resultIntent = intent.translateIntent();
 		this.onActivityResult(requestCode, /* just make this up */ -1,
 				resultIntent);
 		// Original method

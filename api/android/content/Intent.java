@@ -15,6 +15,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -2814,6 +2815,25 @@ for(i=0;i<N;i++)
     }
 
     
+    /**
+     * Use this method to translate one intent to another in a way that is
+     * dependent on the values resolved by attribute modeling.  This call is modeled 
+     * in the attribute modeling pass as well.
+     */
+    @DSModeled(DSC.BAN)
+    public Intent translateIntent() {
+        Intent result = new Intent();
+        result.setAction(orig.getAction());
+        result.setType(orig.getType());
+        result.setPackage(orig.getPackage());
+
+        result.setData(orig.getData());
+        //set the data field to the type field in the case there is no existing uri
+        result.setData(Uri.parse(orig.getType()));
+
+        return result;
+    }
+
     @DSModeled(DSC.SPEC)
     public static Intent parseIntent(Resources resources, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         Intent intent = new Intent();
