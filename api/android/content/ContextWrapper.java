@@ -9,12 +9,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.android.internal.policy.PolicyManager;
+
 import android.accounts.AccountManager;
 import android.accounts.IAccountManager;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.DownloadManager;
 import android.app.KeyguardManager;
+import android.app.NotificationManager;
+import android.app.SearchManager;
+import android.app.StatusBarManager;
+import android.app.UiModeManager;
 import android.app.admin.DevicePolicyManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -25,20 +31,40 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.hardware.usb.IUsbManager;
+import android.hardware.usb.UsbManager;
 import android.location.CountryDetector;
 import android.location.ICountryDetector;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.IConnectivityManager;
+import android.net.INetworkPolicyManager;
+import android.net.IThrottleManager;
+import android.net.NetworkPolicyManager;
+import android.net.ThrottleManager;
 import android.net.Uri;
+import android.net.wifi.IWifiManager;
+import android.net.wifi.WifiManager;
+import android.net.wifi.p2p.IWifiP2pManager;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.nfc.NfcManager;
 import android.os.Bundle;
 import android.os.DropBoxManager;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.IPowerManager;
 import android.os.Looper;
+import android.os.PowerManager;
+import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.Vibrator;
+import android.os.storage.StorageManager;
 import android.provider.AlarmClock;
+import android.telephony.TelephonyManager;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.WindowManager;
+import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
@@ -470,15 +496,7 @@ public class ContextWrapper extends Context {
     @DSModeled(DSC.SAFE)
     public Object getSystemService(String name) {
         switch (name) {
-            case POWER_SERVICE: {
-                break;
-            }
-            case WINDOW_SERVICE: {
-                break;
-            }
-            case LAYOUT_INFLATER_SERVICE: {
-                break;
-            }
+            
             case ACCOUNT_SERVICE: {
                 AccountManager manager = new AccountManager();
                 manager.addTaint(getTaint());
@@ -553,10 +571,16 @@ public class ContextWrapper extends Context {
                 KeyguardManager manager = new KeyguardManager();
                 manager.addTaint(getTaint());
                 return manager;
-                break;
+            }
+            case LAYOUT_INFLATER_SERVICE: {
+                LayoutInflater manager = PolicyManager.makeNewLayoutInflater(this);
+                manager.addTaint(getTaint());
+                return manager;
             }
             case LOCATION_SERVICE: {
-                break;
+                KeyguardManager manager = new KeyguardManager();
+                manager.addTaint(getTaint());
+                return manager;
             } 
             case NFC_SERVICE: {
                 NfcManager manager = new NfcManager(this);
@@ -570,14 +594,28 @@ public class ContextWrapper extends Context {
                 break;
             }
             case NETWORK_POLICY_SERVICE: {
-                break;
+                NetworkPolicyManager manager = new NetworkPolicyManager();
+                manager.addTaint(getTaint());
+                return manager;
             }
             case NOTIFICATION_SERVICE: {
-                break;
+                NotificationManager manager = new NotificationManager(this);
+                manager.addTaint(getTaint());
+                return manager;
             }
+
             case SEARCH_SERVICE: {
-                break;
+                SearchManager manager = new SearchManager(this); 
+                manager.addTaint(getTaint());
+                return manager;
             }
+
+            case POWER_SERVICE: {
+                PowerManager manager = new PowerManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
             case SENSOR_SERVICE: {
                 break;
             }
@@ -585,42 +623,67 @@ public class ContextWrapper extends Context {
                 break;
             }
             case STORAGE_SERVICE: {
-                break;
+                StorageManager manager;
+                manager = new StorageManager();
+                manager.addTaint(getTaint());
+                return manager;
             }
             case STATUS_BAR_SERVICE: {
-                break;
+                StatusBarManager manager = StatusBarManager.createInstance(this);
+                manager.addTaint(getTaint());
+                return manager;
             }
             case TELEPHONY_SERVICE: {
-                break;
+                TelephonyManager manager = new TelephonyManager(this);
+                manager.addTaint(getTaint());
+                return manager;
             }
-
             case TEXT_SERVICES_MANAGER_SERVICE: {
                 TextServicesManager manager = TextServicesManager.getInstance();
                 manager.addTaint(getTaint());
                 return manager;
             }
-
             case THROTTLE_SERVICE: {
-                break;
+                ThrottleManager manager = ThrottleManager.createInstance();
+                manager.addTaint(getTaint());
+                return manager;
             }
             case UI_MODE_SERVICE: {
-                break;
+                UiModeManager manager = UiModeManager.createInstance();
+                manager.addTaint(getTaint());
+                return manager;
             }
             case USB_SERVICE: {
-                break;
+                UsbManager manager = new UsbManager(this);
+                manager.addTaint(getTaint());
+                return manager;
             }
             case VIBRATOR_SERVICE: {
-                break;
+                Vibrator manager = new Vibrator();
+                manager.addTaint(getTaint());
+                return manager;
             }
+
             case WALLPAPER_SERVICE: {
-                break;
             }
             case WIFI_SERVICE: {
-                break;
+                WifiManager manager = new WifiManager();
+                manager.addTaint(getTaint());
+                return manager;
             }
             case WIFI_P2P_SERVICE: {
-                break;
+                WifiP2pManager manager = new WifiP2pManager();
+                manager.addTaint(getTaint());
+                return manager;
+
             }
+            case WINDOW_SERVICE: {
+                WindowManager manager = WindowManagerImpl.getDefault();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            
             default: {
             }
         }

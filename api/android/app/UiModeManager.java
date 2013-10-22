@@ -14,13 +14,21 @@ public class UiModeManager {
 
     private IUiModeManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.317 -0400", hash_original_method = "885E2DF97B9D4497B2AC3BA2EAEC628B", hash_generated_method = "056F639D47467015E4958DFADC7377FD")
       UiModeManager() {
+        /*
         mService = IUiModeManager.Stub.asInterface(
                 ServiceManager.getService(Context.UI_MODE_SERVICE));
+        */
         // ---------- Original Method ----------
         //mService = IUiModeManager.Stub.asInterface(
                 //ServiceManager.getService(Context.UI_MODE_SERVICE));
+    }
+    
+    @DSModeled(DSC.BAN)
+    public static UiModeManager createInstance() {
+        return new UiModeManager();
     }
 
     

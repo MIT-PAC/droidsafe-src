@@ -18,6 +18,11 @@ public class ThrottleManager {
         // ---------- Original Method ----------
     }
 
+    //Added by manual modeling
+    @DSModeled(DSC.BAN)
+    public static ThrottleManager createInstance() {
+        return new ThrottleManager();
+    }
     
     @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.325 -0400", hash_original_method = "1E8483A92A1408237E2885FBEDD54340", hash_generated_method = "5BAA81ACE2D9663C0B54B6AC96DFBA11")
@@ -37,7 +42,7 @@ public class ThrottleManager {
         //}
         //mService = service;
     }
-
+    
     
     @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.326 -0400", hash_original_method = "2AA7855A594B5700D93ECFB7D9A7B7C4", hash_generated_method = "B14ADC7D9113494E2BC83444859FAEA6")

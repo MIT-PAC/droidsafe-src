@@ -59,7 +59,14 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
         //mService = ISearchManager.Stub.asInterface(
                 //ServiceManager.getService(Context.SEARCH_SERVICE));
     }
+    
+    // Manually added
+    @DSModeled(DSC.BAN)
+    public SearchManager(Context context) {
+        mContext = context;
+        addTaint(context.getTaint());
 
+    }
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.795 -0400", hash_original_method = "A99B2740D078AE52E51C31205C7D1808", hash_generated_method = "3CB0CF6ED5CEC8FE73899735BE4DAB05")

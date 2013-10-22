@@ -33,8 +33,10 @@ public class TelephonyManager {
             } else {
                 sContext = context;
             }
+            /*
             sRegistry = ITelephonyRegistry.Stub.asInterface(ServiceManager.getService(
                     "telephony.registry"));
+           */
         }
     }
 

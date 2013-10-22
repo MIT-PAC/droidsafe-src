@@ -17,8 +17,9 @@ public class KeyguardManager {
 
     private IWindowManager mWM;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "5B69E23112A7A32F8407EC1FFE36B34D", hash_generated_method = "3C92E03D678C4B924547CF2813CCA769")
-      KeyguardManager() {
+    public KeyguardManager() {
         //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
         // ---------- Original Method ----------
         //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
@@ -120,6 +121,11 @@ public class KeyguardManager {
             mTag = tag;
             // ---------- Original Method ----------
             //mTag = tag;
+        }
+        
+        @DSModeled(DSC.BAN)
+        public KeyguardLock() {
+            
         }
 
         

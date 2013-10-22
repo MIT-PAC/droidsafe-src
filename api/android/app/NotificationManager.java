@@ -22,6 +22,13 @@ public class NotificationManager {
         // ---------- Original Method ----------
         //mContext = context;
     }
+    
+    
+    @DSModeled(DSC.BAN)
+    public NotificationManager(Context context) {
+        addTaint(context.getTaint());
+        mContext = context;
+    }
 
     
     @DSModeled(DSC.BAN)

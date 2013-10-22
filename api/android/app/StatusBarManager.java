@@ -35,6 +35,12 @@ public class StatusBarManager {
         //mContext = context;
     }
 
+
+    //Added by manual modeling 
+    @DSModeled(DSC.BAN)
+    public static StatusBarManager createInstance(Context context){
+        return new StatusBarManager(context);
+    }
     
     @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.292 -0400", hash_original_method = "1D3FF7F9C7208A1463AE69512DB03B53", hash_generated_method = "A59AA6A78A27D7B9FE5EEDE5576DB985")
