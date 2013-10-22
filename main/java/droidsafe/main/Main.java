@@ -409,6 +409,7 @@ public class Main {
       
       logger.info("Caching Jimple Hierarchy Relationships...");
       monitor.subTask("Caching Jimple Hierarchy Relationships...");
+      JimpleRelationships.reset();
       JimpleRelationships.v();
       monitor.worked(1);
       if (monitor.isCanceled()) {
