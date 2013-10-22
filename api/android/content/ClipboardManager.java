@@ -50,10 +50,18 @@ public class ClipboardManager extends android.text.ClipboardManager {
 
         
 };
+
+    //for getSystemService
+    @DSModeled(DSC.BAN)
+    public  ClipboardManager(Context context) {
+        addTaint(context.getTaint());
+        mContext = context;
+    }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.625 -0400", hash_original_method = "97558C16BA3BDE6476EDF618E25B9B81", hash_generated_method = "96F575CB12FC3C55C0854FEB3CCF2F69")
     public  ClipboardManager(Context context, Handler handler) {
         addTaint(handler.getTaint());
+        addTaint(context.getTaint());
         mContext = context;
         // ---------- Original Method ----------
         //mContext = context;

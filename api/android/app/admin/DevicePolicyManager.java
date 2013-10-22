@@ -37,9 +37,22 @@ public class DevicePolicyManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.708 -0400", hash_original_method = "50DCCFAFB01D68C84073DED89668D8AE", hash_generated_method = "C38A3CAA5978B5E74759E44B9191AA99")
     private  DevicePolicyManager(Context context, Handler handler) {
         addTaint(handler.getTaint());
+        addTaint(context.getTaint());
         mContext = context;
         mService = IDevicePolicyManager.Stub.asInterface(
                 ServiceManager.getService(Context.DEVICE_POLICY_SERVICE));
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mService = IDevicePolicyManager.Stub.asInterface(
+                //ServiceManager.getService(Context.DEVICE_POLICY_SERVICE));
+    }
+    
+    //Injected by hand modeling
+    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.708 -0400", hash_original_method = "50DCCFAFB01D68C84073DED89668D8AE", hash_generated_method = "C38A3CAA5978B5E74759E44B9191AA99")
+    public DevicePolicyManager(Context context) {
+        addTaint(context.getTaint());
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
         //mService = IDevicePolicyManager.Stub.asInterface(

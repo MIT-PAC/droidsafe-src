@@ -13,6 +13,9 @@ import android.accounts.AccountManager;
 import android.accounts.IAccountManager;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
+import android.app.DownloadManager;
+import android.app.KeyguardManager;
+import android.app.admin.DevicePolicyManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -22,14 +25,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.location.CountryDetector;
+import android.location.ICountryDetector;
+import android.media.AudioManager;
+import android.net.ConnectivityManager;
+import android.net.IConnectivityManager;
 import android.net.Uri;
+import android.nfc.NfcManager;
 import android.os.Bundle;
+import android.os.DropBoxManager;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.ServiceManager;
 import android.provider.AlarmClock;
 import android.view.accessibility.AccessibilityManager;
+import android.view.inputmethod.InputMethodManager;
+import android.view.textservice.TextServicesManager;
 
 
 
@@ -468,60 +480,88 @@ public class ContextWrapper extends Context {
                 break;
             }
             case ACCOUNT_SERVICE: {
-                AccountManager am = new AccountManager();
-                am.addTaint(getTaint());
-                return am;
+                AccountManager manager = new AccountManager();
+                manager.addTaint(getTaint());
+                return manager;
             }
             case ACTIVITY_SERVICE: {
-                ActivityManager am = new ActivityManager(this);
-                am.addTaint(getTaint());
-                return am;
+                ActivityManager manager = new ActivityManager(this);
+                manager.addTaint(getTaint());
+                return manager;
             }
             case ALARM_SERVICE: {
-                AlarmManager am = new AlarmManager();
-                am.addTaint(getTaint());
-                return am;
+                AlarmManager manager = new AlarmManager();
+                manager.addTaint(getTaint());
+                return manager;
             }
-            case NOTIFICATION_SERVICE: {
+            
+            case ACCESSIBILITY_SERVICE: {
+                AccessibilityManager manager = AccessibilityManager.getInstance(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case AUDIO_SERVICE: {
+                AudioManager manager = new AudioManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case APPWIDGET_SERVICE: {
                 break;
             }
-            case ACCESSIBILITY_SERVICE: {
-                AccessibilityManager am = AccessibilityManager.getInstance(this);
-                am.addTaint(getTaint());
-                return am;
+            case BACKUP_SERVICE: {
+                break;
             }
+            
+           case CLIPBOARD_SERVICE: {
+               ClipboardManager manager = new ClipboardManager(this);
+               manager.addTaint(getTaint());
+               return manager;
+            }
+
+           case CONNECTIVITY_SERVICE: {
+               ConnectivityManager manager = new ConnectivityManager();
+               manager.addTaint(getTaint());
+               return manager;
+           }
+            case COUNTRY_DETECTOR: {
+                CountryDetector manager = new CountryDetector();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case DEVICE_POLICY_SERVICE: {
+                DevicePolicyManager manager = new DevicePolicyManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case DOWNLOAD_SERVICE: {
+                DownloadManager manager = new DownloadManager(this.getContentResolver(), this.getPackageName());
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case DROPBOX_SERVICE: {
+                DropBoxManager manager = new DropBoxManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case INPUT_METHOD_SERVICE: {
+                InputMethodManager manager = InputMethodManager.getInstance(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
             case KEYGUARD_SERVICE: {
+                KeyguardManager manager = new KeyguardManager();
+                manager.addTaint(getTaint());
+                return manager;
                 break;
             }
             case LOCATION_SERVICE: {
                 break;
-            }
-            case COUNTRY_DETECTOR: {
-                break;
-            }
-            case SEARCH_SERVICE: {
-                break;
-            }
-            case SENSOR_SERVICE: {
-                break;
-            }
-            case STORAGE_SERVICE: {
-                break;
-            }
-            case WALLPAPER_SERVICE: {
-                break;
-            }
-            case VIBRATOR_SERVICE: {
-                break;
-            }
-            case STATUS_BAR_SERVICE: {
-                break;
-            }
-            case CONNECTIVITY_SERVICE: {
-                break;
-            }
-            case THROTTLE_SERVICE: {
-                break;
+            } 
+            case NFC_SERVICE: {
+                NfcManager manager = new NfcManager(this);
+                manager.addTaint(getTaint());
+                return manager;
             }
             case NETWORKMANAGEMENT_SERVICE: {
                 break;
@@ -532,52 +572,53 @@ public class ContextWrapper extends Context {
             case NETWORK_POLICY_SERVICE: {
                 break;
             }
-            case WIFI_SERVICE: {
+            case NOTIFICATION_SERVICE: {
                 break;
             }
-            case WIFI_P2P_SERVICE: {
+            case SEARCH_SERVICE: {
                 break;
             }
-            case AUDIO_SERVICE: {
-                break;
-            }
-            case TELEPHONY_SERVICE: {
-                break;
-            }
-            case CLIPBOARD_SERVICE: {
-                break;
-            }
-            case INPUT_METHOD_SERVICE: {
-                break;
-            }
-            case TEXT_SERVICES_MANAGER_SERVICE: {
-                break;
-            }
-            case APPWIDGET_SERVICE: {
-                break;
-            }
-            case BACKUP_SERVICE: {
-                break;
-            }
-            case DROPBOX_SERVICE: {
-                break;
-            }
-            case DEVICE_POLICY_SERVICE: {
-                break;
-            }
-            case UI_MODE_SERVICE: {
-                break;
-            }
-            case DOWNLOAD_SERVICE: {
-                break;
-            }
-            case NFC_SERVICE: {
+            case SENSOR_SERVICE: {
                 break;
             }
             case SIP_SERVICE: {
                 break;
             }
+            case STORAGE_SERVICE: {
+                break;
+            }
+            case STATUS_BAR_SERVICE: {
+                break;
+            }
+            case TELEPHONY_SERVICE: {
+                break;
+            }
+
+            case TEXT_SERVICES_MANAGER_SERVICE: {
+                TextServicesManager manager = TextServicesManager.getInstance();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            case THROTTLE_SERVICE: {
+                break;
+            }
+            case UI_MODE_SERVICE: {
+                break;
+            }
             case USB_SERVICE: {
+                break;
+            }
+            case VIBRATOR_SERVICE: {
+                break;
+            }
+            case WALLPAPER_SERVICE: {
+                break;
+            }
+            case WIFI_SERVICE: {
+                break;
+            }
+            case WIFI_P2P_SERVICE: {
                 break;
             }
             default: {

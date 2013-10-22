@@ -19,17 +19,19 @@ public class KeyguardManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "5B69E23112A7A32F8407EC1FFE36B34D", hash_generated_method = "3C92E03D678C4B924547CF2813CCA769")
       KeyguardManager() {
-        mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
+        //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
         // ---------- Original Method ----------
         //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
     }
+    
+    
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "5C652CD18FFB9FB973F397E439BEDA7E", hash_generated_method = "F21168EF43019EA1A25026ADCA91DA7E")
     @Deprecated
     public KeyguardLock newKeyguardLock(String tag) {
         addTaint(tag.getTaint());
-KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new KeyguardLock(tag);
+        KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new KeyguardLock(tag);
         varF94DC7E8A9793C7121D37FAB19D77E2D_113462621.addTaint(taint);
         return varF94DC7E8A9793C7121D37FAB19D77E2D_113462621;
         // ---------- Original Method ----------
@@ -39,18 +41,7 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "A2184A2736F97B1687D11E2CDBE84F5B", hash_generated_method = "3D2D001658EBF59BB5DB37E17C504095")
     public boolean isKeyguardLocked() {
-        try 
-        {
-            boolean var3C36CA7330DB079E34B974089829DB13_1001232781 = (mWM.isKeyguardLocked());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_653613632 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_653613632;
-        } //End block
-        catch (RemoteException ex)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_57142607 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_409489178 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_409489178;
-        } //End block
+        return getTaintBoolean();
         // ---------- Original Method ----------
         //try {
             //return mWM.isKeyguardLocked();
@@ -62,18 +53,7 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "D9B1D6FBA38958F439C4BED06843FB22", hash_generated_method = "F8860485DA1511952057E7BEF480512D")
     public boolean isKeyguardSecure() {
-        try 
-        {
-            boolean varE5A33C01CE2969B848F2F3442C462F84_1692273008 = (mWM.isKeyguardSecure());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_838931272 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_838931272;
-        } //End block
-        catch (RemoteException ex)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_194772126 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2137229433 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2137229433;
-        } //End block
+        return getTaintBoolean();
         // ---------- Original Method ----------
         //try {
             //return mWM.isKeyguardSecure();
@@ -85,18 +65,7 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.548 -0400", hash_original_method = "4D76893BACDA286FED51AB2B592BACEE", hash_generated_method = "35AC64A1ADCA8D6D4F4AC5E9F5EA7C98")
     public boolean inKeyguardRestrictedInputMode() {
-        try 
-        {
-            boolean var264F95E421F60912B701F635207F7053_696082052 = (mWM.inKeyguardRestrictedInputMode());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1946563789 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1946563789;
-        } //End block
-        catch (RemoteException ex)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1923363737 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_954264954 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_954264954;
-        } //End block
+        return getTaintBoolean();
         // ---------- Original Method ----------
         //try {
             //return mWM.inKeyguardRestrictedInputMode();
@@ -157,6 +126,8 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
         @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.549 -0400", hash_original_method = "D57DA4E953B853BFA2A0F53D32EDF463", hash_generated_method = "D28A2D90780DAE2B162143289BBBC835")
         public void disableKeyguard() {
+            addTaint(false);
+            /*
             try 
             {
                 mWM.disableKeyguard(mToken, mTag);
@@ -164,6 +135,7 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
             catch (RemoteException ex)
             {
             } //End block
+            */
             // ---------- Original Method ----------
             //try {
                 //mWM.disableKeyguard(mToken, mTag);
@@ -174,6 +146,8 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.549 -0400", hash_original_method = "A230379C02A7A7A26A0484D5752F5D3C", hash_generated_method = "6EFC040D730E4BC7C0E18A5339E6A4D2")
         public void reenableKeyguard() {
+            addTaint(true);
+            /*
             try 
             {
                 mWM.reenableKeyguard(mToken);
@@ -181,13 +155,13 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new Keyguar
             catch (RemoteException ex)
             {
             } //End block
+            */
             // ---------- Original Method ----------
             //try {
                 //mWM.reenableKeyguard(mToken);
             //} catch (RemoteException ex) {
             //}
         }
-
         
     }
 

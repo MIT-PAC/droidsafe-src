@@ -222,6 +222,8 @@ public final class InputMethodManager {
         {
             mInstance = this;
         } //End block
+        addTaint(service.getTaint());
+        addTaint(looper.getTaint());
         // ---------- Original Method ----------
         //mService = service;
         //mMainLooper = looper;
@@ -231,6 +233,12 @@ public final class InputMethodManager {
         //if (mInstance == null) {
             //mInstance = this;
         //}
+    }
+    
+    //Hand modeling
+    @DSModeled(DSC.BAN)
+    public InputMethodManager() {
+        
     }
 
     
@@ -246,9 +254,12 @@ public final class InputMethodManager {
             if (mInstance != null) {
                 return mInstance;
             }
+            /*
             IBinder b = ServiceManager.getService(Context.INPUT_METHOD_SERVICE);
             IInputMethodManager service = IInputMethodManager.Stub.asInterface(b);
             mInstance = new InputMethodManager(service, mainLooper);
+            */
+            mInstance = new InputMethodManager();
         }
         return mInstance;
     }
