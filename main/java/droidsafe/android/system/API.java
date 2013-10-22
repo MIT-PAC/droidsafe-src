@@ -143,6 +143,24 @@ public class API {
         api_modeled_methods.addMethod(sm);
     }
     
+    /** 
+     * Add the given method to the list of spec methods.
+     */
+    public void addSpecMethod(SootMethod sm) {
+        all_sys_methods.addMethod(sm);
+        spec_methods.addMethod(sm);
+        api_modeled_methods.addMethod(sm);
+    }
+    
+    /** 
+     * Add the given method to the list of spec methods.
+     */
+    public void addBanMethod(SootMethod sm) {
+        all_sys_methods.addMethod(sm);
+        banned_methods.addMethod(sm);
+        api_modeled_methods.addMethod(sm);
+    }
+    
     /**
      * Create the system method txt file with the signature and modifiers for all 
      * system methods.  Should not be called on a normal run.
@@ -432,7 +450,33 @@ public class API {
     public boolean isBannedMethod(String sig) {
         return banned_methods.contains(sig);
     }
+    
+    /** 
+     * Used by the specification create to check if a method is legal to put in the 
+     * spec.  Must check the method, and all superclass definitions of the method.
+     * 
+     * @param sig
+     * @return
+     */
+    public boolean isBannedMethod(SootMethod m) {
+        return banned_methods.contains(m);
+    }
+    
+    
+    /** 
+     * Check if a method is safe.  meaning it should not appear in the specification.
+     */
+    public boolean isSafeMethod(SootMethod m) {
+        return safe_methods.contains(m);
+    }
 
+    /** 
+     * Check if a method is spec.  meaning it is support and should appear in the spec.
+     */
+    public boolean isSpecMethod(SootMethod m) {
+        return spec_methods.contains(m);
+    }
+    
     /**
      * Return true if this is a system method define in anrdoid.jar.
      */

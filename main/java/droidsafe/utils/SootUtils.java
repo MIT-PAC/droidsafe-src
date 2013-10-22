@@ -283,8 +283,6 @@ public class SootUtils {
 
         } else if (parent instanceof VoidType && child instanceof VoidType) {
             return true;
-        } else if (parent instanceof NullType && child instanceof NullType) {
-            return true;
         } else {
             return false;
         }
@@ -317,10 +315,18 @@ public class SootUtils {
             if (!isSubTypeOfIncluding(returnType, curr.getReturnType())) 
                 continue;
 
-            for (int i = 0; i < args.length; i++) 
-                if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i)))
+            boolean foundCounterEx = false;
+            for (int i = 0; i < args.length; i++) {
+                if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i))) {
+                    foundCounterEx = true;
                     continue;
+                }
+            }
 
+            //found at least one argument position that differs
+            if (foundCounterEx)
+                continue;
+            
             //if we got here all is well and we found a method that matches!
             return curr;
         }
@@ -1009,6 +1015,40 @@ public class SootUtils {
         if ((method.getModifiers() & 0x0040) != 0)
             return true;
         
+        return false;
+    }
+    
+    static SootMethod stubExceptionMethod = null;
+    /**
+     * check if a given method is a runtime stub
+     * @param method
+     * @return
+     */
+    public static boolean isRuntimeStubMethod(SootMethod method) {    
+        
+        if (stubExceptionMethod == null) {
+            String signature = "<java.lang.RuntimeException: void <init>(java.lang.String)>";
+            stubExceptionMethod = Scene.v().getMethod(signature);
+        }
+        if (!method.hasActiveBody())
+            return true; 
+        
+        if (SootUtils.isGeneratedPhantomMethod(method))
+            return true;
+
+        for (Unit unit: method.getActiveBody().getUnits()){
+            Stmt stmt = (Stmt)unit;
+            if (stmt.containsInvokeExpr()) {
+                InvokeExpr invokeExpr = stmt.getInvokeExpr();
+                SootMethod invokeMethod = invokeExpr.getMethod();
+                if (invokeMethod == stubExceptionMethod) {
+                    Value arg = invokeExpr.getArg(0);
+                    if (arg.toString().equalsIgnoreCase("stub")) {
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
     

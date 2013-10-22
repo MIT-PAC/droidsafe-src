@@ -12,6 +12,7 @@ import soot.G;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.options.Options;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.RCFGToSSL;
@@ -46,6 +47,7 @@ import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
 import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.IDroidsafeProgressMonitor;
@@ -167,6 +169,19 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
+
+    if (Config.v().addObjectSensitivity) {
+        driverMsg("Adding Object Sensitivity by cloning...");
+        monitor.subTask("Adding Object Sensitivity by cloning...");
+        ObjectSensitivityCloner.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+    }
+
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
     
     //run jsa after we inject strings from XML values and layout
     driverMsg("Starting String Analysis...");
@@ -207,19 +222,19 @@ public class Main {
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     
-    //create instance of value analysis object, so that later passes an query empty result.
-    long startTime = System.nanoTime();
     ValueAnalysis.setup();
     if (Config.v().runValueAnalysis) {
         driverMsg("Starting Value Analysis");
         monitor.subTask("Value Analysis");
+        StopWatch vaTimer = new StopWatch();
+        vaTimer.start();
         ValueAnalysis.run();
-        long endTime = System.nanoTime();
+        vaTimer.stop();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        driverMsg("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
+        driverMsg("Finished Value Analysis: " + vaTimer);
 
 
         driverMsg("Undoing String Analysis Result Injection.");
@@ -235,9 +250,12 @@ public class Main {
     }
 
     driverMsg("Starting Generate RCFG...");
+    StopWatch rcfgTimer = new StopWatch();
+    rcfgTimer.start();
     monitor.subTask("Generating Spec");
     RCFG.generate();
-    driverMsg("Finished Generating RCFG.");
+    rcfgTimer.stop();
+    driverMsg("Finished Generating RCFG: " + rcfgTimer);
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -394,6 +412,7 @@ public class Main {
       
       logger.info("Caching Jimple Hierarchy Relationships...");
       monitor.subTask("Caching Jimple Hierarchy Relationships...");
+      JimpleRelationships.reset();
       JimpleRelationships.v();
       monitor.worked(1);
       if (monitor.isCanceled()) {
