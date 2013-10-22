@@ -222,19 +222,19 @@ public class Main {
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     
-    //create instance of value analysis object, so that later passes an query empty result.
-    long startTime = System.nanoTime();
     ValueAnalysis.setup();
     if (Config.v().runValueAnalysis) {
         driverMsg("Starting Value Analysis");
         monitor.subTask("Value Analysis");
+        StopWatch vaTimer = new StopWatch();
+        vaTimer.start();
         ValueAnalysis.run();
-        long endTime = System.nanoTime();
+        vaTimer.stop();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        driverMsg("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
+        driverMsg("Finished Value Analysis: " + vaTimer);
 
 
         driverMsg("Undoing String Analysis Result Injection.");
@@ -250,9 +250,12 @@ public class Main {
     }
 
     driverMsg("Starting Generate RCFG...");
+    StopWatch rcfgTimer = new StopWatch();
+    rcfgTimer.start();
     monitor.subTask("Generating Spec");
     RCFG.generate();
-    driverMsg("Finished Generating RCFG.");
+    rcfgTimer.stop();
+    driverMsg("Finished Generating RCFG: " + rcfgTimer);
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
