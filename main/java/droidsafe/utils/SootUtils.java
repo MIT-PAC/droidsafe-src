@@ -995,6 +995,9 @@ public class SootUtils {
         }
         if (!method.hasActiveBody())
             return true; 
+        
+        if (SootUtils.isGeneratedPhantomMethod(method))
+            return true;
 
         for (Unit unit: method.getActiveBody().getUnits()){
             Stmt stmt = (Stmt)unit;
