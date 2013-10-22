@@ -25,19 +25,22 @@ public class DropBoxManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.032 -0400", hash_original_method = "04B0A4DBB2EAE135AA112A8CAA9647B1", hash_generated_method = "56807A840D421C3846696C198899DDB8")
     public  DropBoxManager(IDropBoxManagerService service) {
         mService = service;
+        addTaint(service.getTaint());
         // ---------- Original Method ----------
         //mService = service;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.033 -0400", hash_original_method = "E688A3A6CCC118BEDB51FAABD6872F4D", hash_generated_method = "1D2825C63C164429C45D67692FE8B561")
-    protected  DropBoxManager() {
+    public DropBoxManager() {
         mService = null;
         // ---------- Original Method ----------
         //mService = null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.033 -0400", hash_original_method = "B6329499D071F8AC982F0B19B7FB97DF", hash_generated_method = "AC389ED0CA5C981E6BDFE990EAE31A10")
     public void addText(String tag, String data) {
         addTaint(data.getTaint());
@@ -54,6 +57,7 @@ public class DropBoxManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.034 -0400", hash_original_method = "7BD48A32860AA6BD88FDC639FDB6D7D8", hash_generated_method = "DC301D2AD656C82005D88253CA9D918D")
     public void addData(String tag, byte[] data, int flags) {
         addTaint(flags);

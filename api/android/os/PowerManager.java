@@ -18,7 +18,7 @@ public class PowerManager {
     
     @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.325 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
-    private  PowerManager() {
+    public PowerManager() {
         // ---------- Original Method ----------
     }
 

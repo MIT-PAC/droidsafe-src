@@ -29,13 +29,18 @@ public class WindowImpl extends Window {
 	@Override
 	public void takeSurface(Callback2 callback) {
 		// TODO Auto-generated method stub
-
+	    if (callback != null) {
+	        addTaint(callback.getTaint());
+	    }
 	}
 
 	@Override
 	public void takeInputQueue(android.view.InputQueue.Callback callback) {
 		// TODO Auto-generated method stub
-
+	    addTaint(callback.getTaint());
+	    android.view.InputQueue inputQueue = new InputQueue(null);
+	    callback.onInputQueueCreated(inputQueue);
+	    callback.onInputQueueDestroyed(inputQueue);
 	}
 
 	@Override

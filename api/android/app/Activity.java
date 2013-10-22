@@ -2,6 +2,8 @@ package android.app;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -2726,16 +2728,30 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     
     @DSModeled(DSC.SAFE)
 	@Override public Object getSystemService(String name){
-		getBaseContext();
-		ensureSearchManager();
-		super.getSystemService(name);
-		return mSearchManager;
+       
+        if (DroidSafeAndroidRuntime.control || getBaseContext()==null) {
+             IllegalStateException exception = new IllegalStateException(
+                    "System services not available to Activities before onCreate()");
+             exception.addTaint(getTaint());
+        }
+
+        if (name.equals(SEARCH_SERVICE)) {
+            ensureSearchManager();
+            mSearchManager.addTaint(getTaint());
+            return mSearchManager;
+        }
+        
+        if (name.equals(WINDOW_SERVICE)) {
+            mWindowManager.addTaint(getTaint());
+            return mWindowManager;
+        }
+
+		return super.getSystemService(name);
 		// Original method
 		/*
 		{
         if (getBaseContext() == null) {
-            throw new IllegalStateException(
-                    "System services not available to Activities before onCreate()");
+           
         }
         if (WINDOW_SERVICE.equals(name)) {
             return mWindowManager;

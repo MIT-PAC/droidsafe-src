@@ -49,6 +49,20 @@ public class ActivityManager {
       ActivityManager(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
+        addTaint(context.getTaint());
+        addTaint(handler.getTaint());
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mHandler = handler;
+    }
+
+        
+    // used by modeling to provide shortcut to ActivityManager from getSystemService
+    @DSModeled(DSC.BAN)
+    public ActivityManager(Context context) {
+        mContext = context;
+        mHandler = new Handler();
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = handler;

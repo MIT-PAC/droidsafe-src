@@ -2,6 +2,8 @@ package android.os.storage;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +62,28 @@ public class StorageManager {
         //mBinderListener = new MountServiceBinderListener();
         //mMountService.registerListener(mBinderListener);
     }
+    
+    //Added by manual modeling
+    @DSModeled(DSC.BAN)
+    public  StorageManager() {
+        /*
+        if (DroidSafeAndroidRuntime.control) {
+            RemoteException ex = new RemoteException();
+            ex.addTaint(getTaint());
+            throw ex;
+        }
+        */
+        // ---------- Original Method ----------
+        //mMountService = IMountService.Stub.asInterface(ServiceManager.getService("mount"));
+        //if (mMountService == null) {
+            //Log.e(TAG, "Unable to connect to mount service! - is it running yet?");
+            //return;
+        //}
+        //mTgtLooper = tgtLooper;
+        //mBinderListener = new MountServiceBinderListener();
+        //mMountService.registerListener(mBinderListener);
+    }
+
 
     
     @DSModeled(DSC.BAN)

@@ -33,6 +33,12 @@ public class WifiP2pManager {
         //mService = service;
     }
 
+    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.775 -0400", hash_original_method = "E626A45256220AE3F4AF9F0577D669AE", hash_generated_method = "AE4DAB67531AE0D3DD7CB41C112DC312")
+    public  WifiP2pManager() {
+        // ---------- Original Method ----------
+        //mService = service;
+    }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.776 -0400", hash_original_method = "38C14B58266EB34A7D20FC8977BB0D6B", hash_generated_method = "05B168EFFA26C8A0562BA140C2865834")
     public Channel initialize(Context srcContext, Looper srcLooper, ChannelListener listener) {

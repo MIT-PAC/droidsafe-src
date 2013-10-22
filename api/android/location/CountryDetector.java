@@ -23,6 +23,17 @@ public class CountryDetector {
     public  CountryDetector(ICountryDetector service) {
         mService = service;
         mListeners = new HashMap<CountryListener, ListenerTransport>();
+        addTaint(service.getTaint());
+        // ---------- Original Method ----------
+        //mService = service;
+        //mListeners = new HashMap<CountryListener, ListenerTransport>();
+    }
+    
+    //inject by hand modeling
+    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.931 -0400", hash_original_method = "1A7B373E04EF53B30E08B7B8CC03780E", hash_generated_method = "D989B224CC275E8895828F0A793F6A43")
+    public  CountryDetector() {
+        mListeners = new HashMap<CountryListener, ListenerTransport>();
         // ---------- Original Method ----------
         //mService = service;
         //mListeners = new HashMap<CountryListener, ListenerTransport>();

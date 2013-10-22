@@ -21,11 +21,13 @@ public final class TextServicesManager {
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.056 -0400", hash_original_method = "378570C283DD42AD8C379B99FE38C5D3", hash_generated_method = "6D8E7E5AC37BE0D0EB3E290F31648406")
     private  TextServicesManager() {
+        /*
         if(sService == null)        
         {
             IBinder b = ServiceManager.getService(Context.TEXT_SERVICES_MANAGER_SERVICE);
             sService = ITextServicesManager.Stub.asInterface(b);
         } //End block
+        */
         // ---------- Original Method ----------
         //if (sService == null) {
             //IBinder b = ServiceManager.getService(Context.TEXT_SERVICES_MANAGER_SERVICE);

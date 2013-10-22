@@ -30,6 +30,16 @@ public class UsbManager {
         //mContext = context;
         //mService = service;
     }
+    
+    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.023 -0400", hash_original_method = "68E88C1381A537FEBD5C1D01CC81CFD6", hash_generated_method = "0147BA6BA88EBD3825613E13FAA8DB75")
+    public  UsbManager(Context context){
+        mContext = context;
+        addTaint(context.getTaint());
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mService = service;
+    }
 
     
     @DSModeled(DSC.SAFE)

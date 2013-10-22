@@ -32,7 +32,10 @@ public final class PolicyManager {
     
     @DSModeled(DSC.BAN)
     public static LayoutInflater makeNewLayoutInflater(Context context) {
+        return new MyLayoutInflater(context);
+        /*
         return sPolicy.makeNewLayoutInflater(context);
+        */
     }
 
     
@@ -68,6 +71,24 @@ public final class PolicyManager {
             throw new RuntimeException(
                     POLICY_IMPL_CLASS_NAME + " could not be instantiated", ex);
         }
+    }
+    
+    private static class MyLayoutInflater extends LayoutInflater {
+
+        @DSModeled(DSC.BAN)
+        public MyLayoutInflater(Context context){
+            super(context);
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public LayoutInflater cloneInContext(Context newContext) {
+            MyLayoutInflater newCopy = new MyLayoutInflater(newContext);
+            newCopy.addTaint(getTaint());
+            // TODO Auto-generated method stub
+            return newCopy;
+        }
+        
     }
     
 }

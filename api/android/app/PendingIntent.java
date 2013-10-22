@@ -121,6 +121,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.380 -0400", hash_original_method = "D9A9ECA0CF76712CB3C35292E7994C6B", hash_generated_method = "D8FB116C20953E0ACE776F552898FF49")
     public IntentSender getIntentSender() {
 IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_317099010 =         new IntentSender(mTarget);
@@ -131,6 +132,7 @@ IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_317099010 =         new IntentS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.380 -0400", hash_original_method = "7E47A257CCD629A0D7E43A8ADD34CCE8", hash_generated_method = "9959F8EFC13EB2DA470AD3CBEDD29362")
     public void cancel() {
         try 
@@ -148,6 +150,7 @@ IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_317099010 =         new IntentS
     }
 
     
+        @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.380 -0400", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "F7F550965E6EFD08806178788FE1473C")
     public void send() throws CanceledException {
         send(null, 0, null, null, null, null);
@@ -156,6 +159,7 @@ IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_317099010 =         new IntentS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.381 -0400", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "FC95C098CD3581D6FC879DC40608B6DE")
     public void send(int code) throws CanceledException {
         addTaint(code);
@@ -177,6 +181,7 @@ IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_317099010 =         new IntentS
     }
 
     
+        @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.382 -0400", hash_original_method = "10F50483791A59D1BF380CE4A4A7460C", hash_generated_method = "670756514B26B2D05C26EC07B405085D")
     public void send(int code, OnFinished onFinished, Handler handler) throws CanceledException {
         addTaint(handler.getTaint());
@@ -338,7 +343,7 @@ String var540C13E9E156B687226421B24F2DF178_530974602 =             null;
         //return mTarget.asBinder().hashCode();
     }
 
-    
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.387 -0400", hash_original_method = "A24ED44DCFDBAE1CB5B942522723AC1A", hash_generated_method = "4FDCDFDE25F6C3CEA39B5F741D0EEE98")
     @Override
     public String toString() {

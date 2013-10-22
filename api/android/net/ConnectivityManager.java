@@ -27,7 +27,13 @@ public class ConnectivityManager {
         // ---------- Original Method ----------
         //mService = checkNotNull(service, "missing IConnectivityManager");
     }
-
+    
+    
+    //added for Modeling
+    @DSModeled(DSC.BAN)
+    public ConnectivityManager(){
+        
+    }
     
     @DSModeled(DSC.SAFE)
     public static boolean isNetworkTypeValid(int networkType) {

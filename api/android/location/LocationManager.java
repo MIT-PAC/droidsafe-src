@@ -39,6 +39,11 @@ public class LocationManager {
     @DSModeled(DSC.BAN)
 	public LocationManager(ILocationManager service) {
         mService = service;
+        addTaint(service.getTaint());
+    }
+
+    @DSModeled(DSC.BAN)
+    public LocationManager() {
     }
 
     

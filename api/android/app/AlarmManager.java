@@ -2,6 +2,7 @@ package android.app;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import android.app.PendingIntent.CanceledException;
 import android.os.RemoteException;
 
 
@@ -11,6 +12,7 @@ public class AlarmManager {
 
     private IAlarmManager mService;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.886 -0400", hash_original_method = "777E43DCC11684FA65853DF87647331C", hash_generated_method = "C807E43424CB7C729C805FCAFCCB79C4")
       AlarmManager(IAlarmManager service) {
         mService = service;
@@ -18,12 +20,24 @@ public class AlarmManager {
         //mService = service;
     }
 
-    
+    @DSModeled(DSC.BAN)
+    public AlarmManager(){
+        
+    }
+
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.886 -0400", hash_original_method = "62DAF5BCFF42E7C3B71DA4EC3FF03273", hash_generated_method = "00637051DDD716CB394E09B323080F9C")
     public void set(int type, long triggerAtTime, PendingIntent operation) {
         addTaint(operation.getTaint());
         addTaint(triggerAtTime);
         addTaint(type);
+        try {
+            operation.send(getTaintInt());
+        } catch (CanceledException e) {
+            // TODO Auto-generated catch block
+            //actual interface does not have throw statement
+        }
+        /*
         try 
         {
             mService.set(type, triggerAtTime, operation);
@@ -31,6 +45,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.set(type, triggerAtTime, operation);
@@ -39,6 +54,7 @@ public class AlarmManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.887 -0400", hash_original_method = "B76B6BC989D8817E7D8138A521E8EB08", hash_generated_method = "1F883AD2D5B31B8D04A551F102467DCA")
     public void setRepeating(int type, long triggerAtTime, long interval,
             PendingIntent operation) {
@@ -46,6 +62,13 @@ public class AlarmManager {
         addTaint(interval);
         addTaint(triggerAtTime);
         addTaint(type);
+        try {
+            operation.send(getTaintInt());
+        } catch (CanceledException e) {
+            // TODO Auto-generated catch block
+            //actual interface does not have throw statement
+        }
+        /*
         try 
         {
             mService.setRepeating(type, triggerAtTime, interval, operation);
@@ -53,6 +76,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.setRepeating(type, triggerAtTime, interval, operation);
@@ -68,6 +92,7 @@ public class AlarmManager {
         addTaint(interval);
         addTaint(triggerAtTime);
         addTaint(type);
+        /*
         try 
         {
             mService.setInexactRepeating(type, triggerAtTime, interval, operation);
@@ -75,6 +100,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.setInexactRepeating(type, triggerAtTime, interval, operation);
@@ -83,9 +109,13 @@ public class AlarmManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.889 -0400", hash_original_method = "201C17E876772752E3C1FB6083A5FC0F", hash_generated_method = "C077AA8A887A89A055EBE697EB5271ED")
     public void cancel(PendingIntent operation) {
         addTaint(operation.getTaint());
+        operation.cancel();
+
+        /*
         try 
         {
             mService.remove(operation);
@@ -93,6 +123,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.remove(operation);
@@ -102,15 +133,9 @@ public class AlarmManager {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.890 -0400", hash_original_method = "3A70CE6E172EDC0255F255C60401C6D7", hash_generated_method = "4D8770A8C859AEC78E4AD69D8F646E10")
+    @DSModeled(DSC.SPEC)
     public void setTime(long millis) {
         addTaint(millis);
-        try 
-        {
-            mService.setTime(millis);
-        } //End block
-        catch (RemoteException ex)
-        {
-        } //End block
         // ---------- Original Method ----------
         //try {
             //mService.setTime(millis);
@@ -123,6 +148,7 @@ public class AlarmManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.891 -0400", hash_original_method = "7328E8391AD5750BAC4B3B8A138446CC", hash_generated_method = "5BAF798F717A2B1B1FCDA60799BC94BA")
     public void setTimeZone(String timeZone) {
         addTaint(timeZone.getTaint());
+        /*
         try 
         {
             mService.setTimeZone(timeZone);
@@ -130,6 +156,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.setTimeZone(timeZone);

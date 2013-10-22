@@ -44,6 +44,10 @@ public class NetworkPolicyManager {
         //mService = service;
     }
 
+    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.493 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "D38E2F3C6BBCF7701EB83058FEF1E0DC")
+    public  NetworkPolicyManager() {
+    }
     
     @DSModeled(DSC.BAN)
     public static NetworkPolicyManager getSystemService(Context context) {

@@ -71,6 +71,8 @@ public class AccountManager {
         mContext = context;
         mService = service;
         mMainHandler = new Handler(mContext.getMainLooper());
+        addTaint(context.getTaint());
+        addTaint(service.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //mService = service;
@@ -84,10 +86,19 @@ public class AccountManager {
         mContext = context;
         mService = service;
         mMainHandler = handler;
+        addTaint(context.getTaint());
+        addTaint(service.getTaint());
+        addTaint(handler.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //mService = service;
         //mMainHandler = handler;
+    }
+    
+    //DS: we added method to allow creation of account manager from getSystemService()
+    @DSModeled(DSC.BAN)
+    public AccountManager() {
+        
     }
 
     
@@ -105,6 +116,7 @@ public class AccountManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AccountManager get(Context context) {
         if (context == null) throw new IllegalArgumentException("context is null");
         return (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
