@@ -9,6 +9,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import android.accounts.AccountManager;
+import android.accounts.IAccountManager;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -22,8 +25,11 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Looper;
+import android.os.ServiceManager;
 import android.provider.AlarmClock;
+import android.view.accessibility.AccessibilityManager;
 
 
 
@@ -451,14 +457,135 @@ public class ContextWrapper extends Context {
     @Override
     @DSModeled(DSC.SAFE)
     public Object getSystemService(String name) {
-        if (name.equals(ALARM_SERVICE)) {
-            AlarmManager am = new AlarmManager();
-            am.addTaint(getTaint());
-            return am;
+        switch (name) {
+            case POWER_SERVICE: {
+                break;
+            }
+            case WINDOW_SERVICE: {
+                break;
+            }
+            case LAYOUT_INFLATER_SERVICE: {
+                break;
+            }
+            case ACCOUNT_SERVICE: {
+                AccountManager am = new AccountManager();
+                am.addTaint(getTaint());
+                return am;
+            }
+            case ACTIVITY_SERVICE: {
+                ActivityManager am = new ActivityManager(this);
+                am.addTaint(getTaint());
+                return am;
+            }
+            case ALARM_SERVICE: {
+                AlarmManager am = new AlarmManager();
+                am.addTaint(getTaint());
+                return am;
+            }
+            case NOTIFICATION_SERVICE: {
+                break;
+            }
+            case ACCESSIBILITY_SERVICE: {
+                AccessibilityManager am = AccessibilityManager.getInstance(this);
+                am.addTaint(getTaint());
+                return am;
+            }
+            case KEYGUARD_SERVICE: {
+                break;
+            }
+            case LOCATION_SERVICE: {
+                break;
+            }
+            case COUNTRY_DETECTOR: {
+                break;
+            }
+            case SEARCH_SERVICE: {
+                break;
+            }
+            case SENSOR_SERVICE: {
+                break;
+            }
+            case STORAGE_SERVICE: {
+                break;
+            }
+            case WALLPAPER_SERVICE: {
+                break;
+            }
+            case VIBRATOR_SERVICE: {
+                break;
+            }
+            case STATUS_BAR_SERVICE: {
+                break;
+            }
+            case CONNECTIVITY_SERVICE: {
+                break;
+            }
+            case THROTTLE_SERVICE: {
+                break;
+            }
+            case NETWORKMANAGEMENT_SERVICE: {
+                break;
+            }
+            case NETWORK_STATS_SERVICE: {
+                break;
+            }
+            case NETWORK_POLICY_SERVICE: {
+                break;
+            }
+            case WIFI_SERVICE: {
+                break;
+            }
+            case WIFI_P2P_SERVICE: {
+                break;
+            }
+            case AUDIO_SERVICE: {
+                break;
+            }
+            case TELEPHONY_SERVICE: {
+                break;
+            }
+            case CLIPBOARD_SERVICE: {
+                break;
+            }
+            case INPUT_METHOD_SERVICE: {
+                break;
+            }
+            case TEXT_SERVICES_MANAGER_SERVICE: {
+                break;
+            }
+            case APPWIDGET_SERVICE: {
+                break;
+            }
+            case BACKUP_SERVICE: {
+                break;
+            }
+            case DROPBOX_SERVICE: {
+                break;
+            }
+            case DEVICE_POLICY_SERVICE: {
+                break;
+            }
+            case UI_MODE_SERVICE: {
+                break;
+            }
+            case DOWNLOAD_SERVICE: {
+                break;
+            }
+            case NFC_SERVICE: {
+                break;
+            }
+            case SIP_SERVICE: {
+                break;
+            }
+            case USB_SERVICE: {
+                break;
+            }
+            default: {
+            }
         }
+        
         Object obj = new Object();
         obj.addTaint(getTaint());
-        //return mBase.getSystemService(name);
         return obj;
     }
 

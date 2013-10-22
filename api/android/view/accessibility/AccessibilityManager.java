@@ -55,7 +55,13 @@ public final class AccessibilityManager {
 
         
 };
+    //used by getSystemService
+    @DSModeled(DSC.BAN)
+    public  AccessibilityManager(Context context) {
+        addTaint(context.getTaint());
+    }
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.313 -0400", hash_original_method = "3479AC0BFEAC12F432B7D77CBEFC979B", hash_generated_method = "C6F032E5BE56CE806F8E82AF6F80B7BD")
     public  AccessibilityManager(Context context, IAccessibilityManager service) {
         mHandler = new MyHandler(context.getMainLooper());
@@ -68,6 +74,10 @@ public final class AccessibilityManager {
         catch (RemoteException re)
         {
         } //End block
+
+        addTaint(context.getTaint());
+        addTaint(service.getTaint());
+
         // ---------- Original Method ----------
         //mHandler = new MyHandler(context.getMainLooper());
         //mService = service;
@@ -80,12 +90,11 @@ public final class AccessibilityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static AccessibilityManager getInstance(Context context) {
         synchronized (sInstanceSync) {
             if (sInstance == null) {
-                IBinder iBinder = ServiceManager.getService(Context.ACCESSIBILITY_SERVICE);
-                IAccessibilityManager service = IAccessibilityManager.Stub.asInterface(iBinder);
-                sInstance = new AccessibilityManager(context, service);
+                sInstance = new AccessibilityManager(context);
             }
         }
         return sInstance;
