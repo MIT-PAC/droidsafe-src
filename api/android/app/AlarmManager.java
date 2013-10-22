@@ -18,12 +18,17 @@ public class AlarmManager {
         //mService = service;
     }
 
+    @DSModeled(DSC.BAN)
+    public AlarmManager(){
+        
+    }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.886 -0400", hash_original_method = "62DAF5BCFF42E7C3B71DA4EC3FF03273", hash_generated_method = "00637051DDD716CB394E09B323080F9C")
     public void set(int type, long triggerAtTime, PendingIntent operation) {
         addTaint(operation.getTaint());
         addTaint(triggerAtTime);
         addTaint(type);
+        /*
         try 
         {
             mService.set(type, triggerAtTime, operation);
@@ -31,6 +36,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.set(type, triggerAtTime, operation);
@@ -46,6 +52,7 @@ public class AlarmManager {
         addTaint(interval);
         addTaint(triggerAtTime);
         addTaint(type);
+        /*
         try 
         {
             mService.setRepeating(type, triggerAtTime, interval, operation);
@@ -53,6 +60,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.setRepeating(type, triggerAtTime, interval, operation);
@@ -68,6 +76,7 @@ public class AlarmManager {
         addTaint(interval);
         addTaint(triggerAtTime);
         addTaint(type);
+        /*
         try 
         {
             mService.setInexactRepeating(type, triggerAtTime, interval, operation);
@@ -75,6 +84,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.setInexactRepeating(type, triggerAtTime, interval, operation);
@@ -86,6 +96,7 @@ public class AlarmManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.889 -0400", hash_original_method = "201C17E876772752E3C1FB6083A5FC0F", hash_generated_method = "C077AA8A887A89A055EBE697EB5271ED")
     public void cancel(PendingIntent operation) {
         addTaint(operation.getTaint());
+        /*
         try 
         {
             mService.remove(operation);
@@ -93,6 +104,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.remove(operation);
@@ -123,6 +135,7 @@ public class AlarmManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.891 -0400", hash_original_method = "7328E8391AD5750BAC4B3B8A138446CC", hash_generated_method = "5BAF798F717A2B1B1FCDA60799BC94BA")
     public void setTimeZone(String timeZone) {
         addTaint(timeZone.getTaint());
+        /*
         try 
         {
             mService.setTimeZone(timeZone);
@@ -130,6 +143,7 @@ public class AlarmManager {
         catch (RemoteException ex)
         {
         } //End block
+        */
         // ---------- Original Method ----------
         //try {
             //mService.setTimeZone(timeZone);

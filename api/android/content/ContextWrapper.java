@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import android.app.AlarmManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -22,6 +23,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.AlarmClock;
 
 
 
@@ -449,7 +451,15 @@ public class ContextWrapper extends Context {
     @Override
     @DSModeled(DSC.SAFE)
     public Object getSystemService(String name) {
-        return mBase.getSystemService(name);
+        if (name.equals(ALARM_SERVICE)) {
+            AlarmManager am = new AlarmManager();
+            am.addTaint(getTaint());
+            return am;
+        }
+        Object obj = new Object();
+        obj.addTaint(getTaint());
+        //return mBase.getSystemService(name);
+        return obj;
     }
 
     
