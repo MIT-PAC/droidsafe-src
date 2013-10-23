@@ -41,6 +41,8 @@ import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.stats.AppMethodsEventContextStats;
+import droidsafe.stats.PTASetsAvgSize;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.UndoJSAResultInjection;
@@ -169,7 +171,17 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
+    //some stats to collect, probably want a better structure for stats gathering
+    /*{
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
+        AppMethodsEventContextStats.run();
+        PTASetsAvgSize.run();
+        exit(0);
+    }*/
+    
     if (Config.v().addObjectSensitivity) {
         driverMsg("Adding Object Sensitivity by cloning...");
         monitor.subTask("Adding Object Sensitivity by cloning...");
@@ -260,16 +272,6 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-  
-    driverMsg("Finding method calls on all important alloc nodes...");
-    monitor.subTask("Generating Spec");
-    MethodCallsOnAlloc.run();
-    driverMsg("Finished finding method calls on alloc nodes.");
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
 
     // print out what modeling is required for this application
     monitor.subTask("Required Modeling");
@@ -325,6 +327,15 @@ public class Main {
     monitor.worked(1);
     if (monitor.isCanceled()) {
         return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    
+    driverMsg("Finding method calls on all important alloc nodes...");
+    monitor.subTask("Generating Spec");
+    MethodCallsOnAlloc.run();
+    driverMsg("Finished finding method calls on alloc nodes.");
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
     if (Config.v().target.equals("specdump")) {
@@ -459,7 +470,7 @@ public class Main {
    */
   public static void exit(int status) {
     if (Config.v().getCallSystemExitOnError()) {
-      System.exit(1);
+      System.exit(status);
     } else {
       throw new IllegalStateException();
     }
