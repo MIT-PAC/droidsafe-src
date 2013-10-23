@@ -473,8 +473,26 @@ public class GeoPTA {
             //for an instance field ref, we first have to perform a search of alloc nodes for the
             //base, then for each base, on the field
             if (val instanceof InstanceFieldRef) {
-                InstanceFieldRef ifr = (InstanceFieldRef)val;
-                pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)ifr.getBase(), ifr.getField());
+                final InstanceFieldRef ifr = (InstanceFieldRef)val;
+                //bug in this implementation, so perform search with more manual steps
+                //pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)ifr.getBase(), ifr.getField());
+
+                PointsToSetInternal base = (PointsToSetInternal)ptsProvider.reachingObjects((Local)ifr.getBase());
+
+                base.forall(new P2SetVisitor() {
+                    public void visit(Node n) {
+                        PointsToSetInternal temp = 
+                                (PointsToSetInternal)ptsProvider.reachingObjects((AllocNode)n, ifr.getField());
+                            temp.forall( new P2SetVisitor() {
+                                public void visit(Node n) {
+                                    allocNodes.add((AllocNode)n);
+                                }
+                            });
+                    }
+                });
+                
+                return allocNodes;
+
             } else if (val instanceof ArrayRef) {
                 ArrayRef arrayRef = (ArrayRef)val;
                 pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement
