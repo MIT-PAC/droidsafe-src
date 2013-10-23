@@ -599,6 +599,7 @@ public class Harness {
 	        if (closestParent == null || !API.v().isAPIModeledMethod(closestParent)) {
 	            Local receiver = localsMap.get(clazz);
 	            //create the call to the entry point method
+	            logger.info("Missing modeling.  Had to create a dummy call for: {}", entryPoint);
 	            createCallWithNewArgs(entryPoint, body, receiver);
 	        }
 	    }
