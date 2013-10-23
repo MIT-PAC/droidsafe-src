@@ -126,7 +126,7 @@ public abstract class RefVAModel extends VAModel {
         if(m.find()) {
             id += m.group();
         }
-        return " #" + id;
+        return "#" + id;
     }
 
     /**
@@ -140,12 +140,25 @@ public abstract class RefVAModel extends VAModel {
      * @returns a string representation of this object model.
      */
     @Override
-    public String toString() {
-        String str = "<va-modeled ";
+    public String toStringSimple() {
+        String str = "{\"";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
-        str += " " + this.getId() + ": ";
-        str += "{" + this.fieldsString() + "}";
-        return str + ">";
+        str += "\":";
+        str += "{" + this.fieldsString(false) + "}";
+        str += "}";
+        return str.replace("\"", "");
+    }
+
+    /**
+     * @returns a string representation of this object model.
+     */
+    @Override
+    public String toStringDetailed() {
+        String str = "{\"va-modeled-";
+        str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
+        str += " " + this.getId() + "\": ";
+        str += "{" + this.fieldsString(true) + "}";
+        return str + "}";
     }
 
     /**
@@ -159,7 +172,7 @@ public abstract class RefVAModel extends VAModel {
     /**
      * Return a string of the resolved field values for this modeled object.
      */
-    private String fieldsString() {
+    private String fieldsString(boolean detailed) {
         String fieldsString = "";
         List<String> fieldStrings = new ArrayList<String>();
         if (this.invalidated) {
@@ -168,11 +181,11 @@ public abstract class RefVAModel extends VAModel {
             for(SootField sootField : getFieldsToDisplay(this.getSootClass())) {
                 Set<VAModel> vaModels = this.getFieldVAModels(sootField);
                 if(vaModels == null) {
-                    String fieldString = sootField.getName() + ":INV";
+                    String fieldString = "\"" + sootField.getName() + "\":" + INVALIDATED;
                     fieldStrings.add(fieldString);
                 } else if(vaModels.size() > 0){
                     // using which we call getFieldVAModels to get a list of of object models
-                    String fieldString = sootField.getName() + ":";
+                    String fieldString = "\"" + sootField.getName() + "\":";
                     if(vaModels.size() > 1) fieldString += "[";
                     List<String> objectModelStrings = new ArrayList<String>();
                     for(VAModel vaModel : vaModels){
@@ -181,10 +194,16 @@ public abstract class RefVAModel extends VAModel {
                             // for each field object model, we call its toString, unless the object model is the same
                             // one we are trying to print out (to avoid a toString infinite loop)
                             if(this==vaModel) {                                                                           
-                                objectModelStrings.add("itself");
+                                objectModelStrings.add("\"itself\"");
                             } else {
-                            // for each object model we call its tostring method
-                                objectModelStrings.add(vaModel.toString());
+                                // for each object model we call its tostring method
+                                String str = "";
+                                if(detailed) {
+                                    str += vaModel.toStringDetailed();
+                                } else {
+                                    str += vaModel.toStringSimple();
+                                }
+                                objectModelStrings.add(str);
                             }
                         }
                     }

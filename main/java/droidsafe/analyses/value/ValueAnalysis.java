@@ -3,14 +3,11 @@ package droidsafe.analyses.value;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.strings.JSAStrings;
 
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 
 import droidsafe.speclang.Method;
-
-import droidsafe.utils.SootUtils;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -19,7 +16,6 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -34,13 +30,10 @@ import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.IntConstant;
-import soot.jimple.InvokeExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
-
-import soot.Local;
 
 import soot.RefType;
 
@@ -339,7 +332,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         for(Map.Entry<Object, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
             logResult("NewExpr: " + entry.getKey().toString());
             logResult("AllocNode: " + GeoPTA.v().getAllocNode(entry.getKey()));
-            logResult("Model: " + entry.getValue().toString());
+            logResult("Model: " + entry.getValue().toStringPretty());
         }
     }
 }
