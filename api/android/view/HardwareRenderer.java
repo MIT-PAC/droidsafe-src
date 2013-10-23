@@ -58,6 +58,7 @@ public abstract class HardwareRenderer {
 
     private boolean mRequested = true;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.525 -0400", hash_original_method = "E06114671092584077A71408305BD1AB", hash_generated_method = "E06114671092584077A71408305BD1AB")
     public HardwareRenderer ()
     {
@@ -184,6 +185,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SPEC)
     static HardwareRenderer createGlRenderer(int glVersion, boolean translucent) {
         switch (glVersion) {
             case 2:
@@ -634,6 +636,7 @@ EGLContext var927F4799C479B4C43A974ADDE6053FE6_1394440957 =             egl.eglC
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.538 -0400", hash_original_method = "476B6B31B3E717E00869D611EE7348F9", hash_generated_method = "9DE91ABC178188A5D799E43797E98925")
         @Override
          void destroy(boolean full) {
@@ -666,6 +669,7 @@ EGLContext var927F4799C479B4C43A974ADDE6053FE6_1394440957 =             egl.eglC
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.539 -0400", hash_original_method = "8729F371C5ECEEE6F9AFEEF006F001BC", hash_generated_method = "C097A218D875F057B9CCADED356636EC")
          void destroySurface() {
             if(mEglSurface != null && mEglSurface != EGL_NO_SURFACE)            
@@ -1130,6 +1134,7 @@ GLES20Canvas var5172C7EB1AEC89F673E47E03A04AE959_1104815543 =             mGlCan
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.543 -0400", hash_original_method = "6E3A6DE775BA1410C4AD975BAADAD54E", hash_generated_method = "754E2713F42008D964679C9DA3511FB7")
         @Override
          void destroy(boolean full) {
@@ -1300,6 +1305,7 @@ SurfaceTexture varAA924545A7AC84D1B0FCFE9418DCB8F7_1257300807 =             ((GL
         }
 
         
+        @DSModeled(DSC.BAN)
         static HardwareRenderer create(boolean translucent) {
             if (GLES20Canvas.isAvailable()) {
                 return new Gl20Renderer(translucent);

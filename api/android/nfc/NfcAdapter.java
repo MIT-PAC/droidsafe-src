@@ -2,6 +2,8 @@ package android.nfc;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+
 import java.util.HashMap;
 
 import android.annotation.SdkConstant;
@@ -46,6 +48,7 @@ public final class NfcAdapter {
         
 };
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.220 -0400", hash_original_method = "C4AF3477B0D281733AFB736BB9D4035F", hash_generated_method = "30D49F121006E5986523C8D7A73A0AB0")
       NfcAdapter(Context context) {
         mContext = context;
@@ -72,24 +75,10 @@ public final class NfcAdapter {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static synchronized NfcAdapter getNfcAdapter(Context context) {
-        if (!sIsInitialized) {
-            if (!hasNfcFeature()) {
-                Log.v(TAG, "this device does not have NFC support");
-                throw new UnsupportedOperationException();
-            }
-            sService = getServiceInterface();
-            if (sService == null) {
-                Log.e(TAG, "could not retrieve NFC service");
-                throw new UnsupportedOperationException();
-            }
-            try {
-                sTagService = sService.getNfcTagInterface();
-            } catch (RemoteException e) {
-                Log.e(TAG, "could not retrieve NFC Tag service");
-                throw new UnsupportedOperationException();
-            }
-            sIsInitialized = true;
+        if (DroidSafeAndroidRuntime.control) {
+           UnsupportedOperationException exc = new UnsupportedOperationException();
         }
         if (context == null) {
             if (sNullContextNfcAdapter == null) {
@@ -97,6 +86,7 @@ public final class NfcAdapter {
             }
             return sNullContextNfcAdapter;
         }
+
         NfcAdapter adapter = sNfcAdapters.get(context);
         if (adapter == null) {
             adapter = new NfcAdapter(context);

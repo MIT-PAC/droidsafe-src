@@ -1,5 +1,7 @@
 package android.view;
 
+import java.util.Random;
+
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -28,7 +30,7 @@ public class WindowImpl extends Window {
 
 	@Override
 	public void takeSurface(Callback2 callback) {
-		// TODO Auto-generated method stub
+		// TODO: perform callback invocation
 	    if (callback != null) {
 	        addTaint(callback.getTaint());
 	    }
@@ -46,7 +48,7 @@ public class WindowImpl extends Window {
 	@Override
 	public boolean isFloating() {
 		// TODO Auto-generated method stub
-		return false;
+		return getTaintBoolean();
 	}
 
 	@Override
@@ -241,10 +243,13 @@ public class WindowImpl extends Window {
 		return null;
 	}
 
+	@DSModeled(DSC.BAN)
 	@Override
 	public View peekDecorView() {
 		// TODO Auto-generated method stub
-		return null;
+	    View view = new View();
+	    view.addTaint(getTaint());
+	    return view;
 	}
 
 	@DSModeled(DSC.BAN)

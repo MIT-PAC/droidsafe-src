@@ -52,6 +52,7 @@ public abstract class LayoutInflater {
 
     private HashMap<String, Boolean> mFilterMap;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.809 -0400", hash_original_method = "E7207BFA97B4D4DD74A98816C77C472E", hash_generated_method = "E7012C3F049DB497107558CB08563437")
     protected  LayoutInflater(Context context) {
         mContext = context;
@@ -60,6 +61,7 @@ public abstract class LayoutInflater {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.810 -0400", hash_original_method = "5CC0837D3FE56B24A71C58B4CCAA4F88", hash_generated_method = "73B9412CB86D13A699FB0B44C161827A")
     protected  LayoutInflater(LayoutInflater original, Context newContext) {
         mContext = newContext;

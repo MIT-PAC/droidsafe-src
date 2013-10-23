@@ -405,6 +405,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.016 -0400", hash_original_field = "18C98C39E8D3C77B924AFC1D76DB38D1", hash_generated_field = "10425C1D99C9B3E146C1BBB81040F9EF")
 
     private final InputHandler mInputHandler = new InputHandler() {        
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.016 -0400", hash_original_method = "DA8B85C0B97B283164189BFC107A0C51", hash_generated_method = "FF89E1B449B2A3760D958F63C22C8E1D")
         public void handleKey(KeyEvent event, InputQueue.FinishedCallback finishedCallback) {
             startInputEvent(finishedCallback);
@@ -417,6 +418,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.016 -0400", hash_original_method = "BA251C4BE7EEF8348B6DA839AE6C5F99", hash_generated_method = "6D32680B0C65B263C80F930005E38CDC")
         public void handleMotion(MotionEvent event, InputQueue.FinishedCallback finishedCallback) {
             startInputEvent(finishedCallback);

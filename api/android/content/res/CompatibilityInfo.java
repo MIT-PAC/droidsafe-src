@@ -610,6 +610,7 @@ String var2460B846747F8B22185AD8BE722266A5_1081074771 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.198 -0400", hash_original_method = "DE018C3EFE6320C8CBFF22F7586A6AFE", hash_generated_method = "BCB66683F13C1FFC403E533D30C88297")
         public void translateWindowLayout(WindowManager.LayoutParams params) {
             addTaint(params.getTaint());

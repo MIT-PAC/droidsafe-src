@@ -1,6 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
+import java.util.Random;
+
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -59,9 +61,17 @@ public class KeyEvent extends InputEvent implements Parcelable {
     private  KeyEvent() {
         // ---------- Original Method ----------
     }
-
+    
+    @DSModeled(DSC.BAN)
+    public static KeyEvent droidsafeObtainEvent() {
+        Random rand = new Random();
+        KeyEvent ev = new KeyEvent(rand.nextInt(), rand.nextInt(), rand.nextInt(),
+                                   rand.nextInt(), rand.nextInt(), rand.nextInt());
+        return ev;
+    }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_method = "CD3F04ECBB2EC92C58F1141FB07383F6", hash_generated_method = "9E340ECF295B6405C058125A8CBA7881")
+    @DSModeled(DSC.SPEC)
     public  KeyEvent(int action, int code) {
         mAction = action;
         mKeyCode = code;
@@ -75,6 +85,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.321 -0400", hash_original_method = "460E02BA0A36D9C6A0F4AFF64D96FF32", hash_generated_method = "0E7C5DCA42C9647434DB4ABB082B8DB0")
     public  KeyEvent(long downTime, long eventTime, int action,
                     int code, int repeat) {
@@ -94,6 +105,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.321 -0400", hash_original_method = "25AD2761B1583202D71C2F5EBFFC872D", hash_generated_method = "275AD3BEE78984753ACE16E0BADC010A")
     public  KeyEvent(long downTime, long eventTime, int action,
                     int code, int repeat, int metaState) {
@@ -115,6 +127,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.321 -0400", hash_original_method = "A71C4CD2E48CE8A2B595D45DAD40720E", hash_generated_method = "944B2B9BDB09A7DE50769025DCA0C0BA")
     public  KeyEvent(long downTime, long eventTime, int action,
                     int code, int repeat, int metaState,
@@ -166,6 +179,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.322 -0400", hash_original_method = "7235AB46A09763BE60DBC1995AF7FBA4", hash_generated_method = "FFFAE3B9A32EE21D7971626798028812")
     public  KeyEvent(long downTime, long eventTime, int action,
                     int code, int repeat, int metaState,
@@ -218,7 +232,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
         //mSource = InputDevice.SOURCE_KEYBOARD;
     }
 
-    
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.323 -0400", hash_original_method = "DBCE0965BBC4352F0EBDFBB71CBA04FA", hash_generated_method = "477A037D98AB21C2F5E1ED48F265600D")
     public  KeyEvent(KeyEvent origEvent) {
         mDownTime = origEvent.mDownTime;
@@ -247,7 +261,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.326 -0400", hash_original_method = "1712784D81B05F738E3678B0ED7626EA", hash_generated_method = "0524BA17BB94C2A262CF63DD8345ECE8")
     @Deprecated
     public  KeyEvent(KeyEvent origEvent, long eventTime, int newRepeat) {
@@ -331,7 +345,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static void populateKeycodeSymbolicNames() {
         SparseArray<String> names = KEYCODE_SYMBOLIC_NAMES;
         names.append(KEYCODE_UNKNOWN, "KEYCODE_UNKNOWN");
