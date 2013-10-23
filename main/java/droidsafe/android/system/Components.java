@@ -13,7 +13,6 @@ public class Components {
 	public static String SERVICE_CLASS = "android.app.Service";
 	public static String CONTENTPROVIDER_CLASS = "android.content.ContentProvider";
 	public static String BROADCASTRECEIVER_CLASS = "android.content.BroadcastReceiver";
-	public static String APPLICATION_CLASS		 = "android.app.Application";
 	
 	/** This array stores objects that are created by the android runtime, and passed into 
 	 * event handlers of components 
@@ -28,7 +27,6 @@ public class Components {
 		CLASS_NAMES.add(SERVICE_CLASS);
 		CLASS_NAMES.add(CONTENTPROVIDER_CLASS);
 		CLASS_NAMES.add(BROADCASTRECEIVER_CLASS);
-		CLASS_NAMES.add(APPLICATION_CLASS);
 	}
 
 	/** 

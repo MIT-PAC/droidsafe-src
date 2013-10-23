@@ -1,5 +1,11 @@
 package droidsafe.analyses.value;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
+
 /**
  * Base class for value analysis object models.
  *
@@ -7,7 +13,7 @@ package droidsafe.analyses.value;
  */
 public abstract class VAModel {
     
-    public static final String INVALIDATED = "INV";
+    public static final String INVALIDATED = "\"INVALIDATED\"";
 
     /**
      * An object may be invalidated if we cannot soundly resolve it.
@@ -27,6 +33,38 @@ public abstract class VAModel {
     public boolean invalidated() {
         return this.invalidated;
     }
-    
-    public abstract String toString();
+
+    /**
+     * @returns a simple printout of the results
+     */
+    public abstract String toStringSimple();
+
+    /**
+     * @returns a detailed printout of the results
+     */
+    public abstract String toStringDetailed();
+
+
+    /**
+     * @returns a well-formatted (pretty!) detailed printout of the results
+     */
+    public String toStringPretty() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser jp = new JsonParser();
+        try {
+            JsonElement je = jp.parse(this.toStringDetailed());
+            return gson.toJson(je).replace("\"", ""); 
+        } catch (JsonSyntaxException e) {
+            System.out.println("Malformed JSON: " + this.toStringDetailed());
+            System.out.println(e.toString());
+        }
+        return null;
+    }
+
+    /**
+     * @returns a detailed printout of the results
+     */
+    public String toString() {
+        return this.toStringDetailed().replace("\"", "");
+    }
 }
