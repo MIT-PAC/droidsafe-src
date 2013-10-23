@@ -35,6 +35,8 @@ import android.hardware.usb.IUsbManager;
 import android.hardware.usb.UsbManager;
 import android.location.CountryDetector;
 import android.location.ICountryDetector;
+import android.location.LocationManager;
+import android.location.ILocationManager;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.IConnectivityManager;
@@ -496,7 +498,7 @@ public class ContextWrapper extends Context {
     @DSModeled(DSC.SAFE)
     public Object getSystemService(String name) {
         switch (name) {
-            
+           
             case ACCOUNT_SERVICE: {
                 AccountManager manager = new AccountManager();
                 manager.addTaint(getTaint());
@@ -578,7 +580,8 @@ public class ContextWrapper extends Context {
                 return manager;
             }
             case LOCATION_SERVICE: {
-                KeyguardManager manager = new KeyguardManager();
+                IBinder b4 = ServiceManager.getService(LOCATION_SERVICE);
+                LocationManager manager = new LocationManager(ILocationManager.Stub.asInterface(b4));
                 manager.addTaint(getTaint());
                 return manager;
             } 
