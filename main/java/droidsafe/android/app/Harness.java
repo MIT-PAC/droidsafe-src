@@ -72,17 +72,15 @@ public class Harness {
 			Components.ACTIVITY_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelActivity(android.app.Activity)>",
 			Components.SERVICE_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelService(android.app.Service)>",
 			Components.CONTENTPROVIDER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelContentProvider(android.content.ContentProvider)>",
-			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>",
-			Components.APPLICATION_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>"
+			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>"
 			);
-	
+	private String modelApplicationMethod = "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>";
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
 	private List<Unit> entryPointInvokes;
 	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
 	
 	private Map<SootClass, Local> localsMap;
-	
 	private int localID = 0;
 	private int fieldID = 0;
 	
@@ -450,7 +448,7 @@ public class Harness {
 									Jimple.v().newVirtualInvokeExpr(appLocal, initMethod.makeRef()));
 		body.getUnits().add(initStmt);
 		
-		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(Components.APPLICATION_CLASS));
+		SootMethod droidsafeInit = Scene.v().getMethod(modelApplicationMethod);
 		
 		//instantiate droidsafe runtime
 		List<Value> list = new LinkedList<Value>();
