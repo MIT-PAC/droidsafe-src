@@ -163,6 +163,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         }
     }
     
+    @DSModeled(DSC.SAFE)
     public static List newSimpleList() {
         return new SubAbstractList();
     }
@@ -172,6 +173,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      ***********************************************************************/
     public final static class SubAbstractList<E> extends AbstractList<E> {
 
+        @DSModeled(DSC.SAFE)
         public SubAbstractList() {
             
         }

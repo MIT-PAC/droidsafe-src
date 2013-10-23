@@ -1614,6 +1614,7 @@ NavigableSet<K> var119889AEAA5B3E18E2858897784D1CE7_1556931084 =             Tre
 
 
 
+    @DSModeled(DSC.SAFE)
     @Override
     public Set<java.util.Map.Entry<K, V>> entrySet() {
         // TODO Auto-generated method stub

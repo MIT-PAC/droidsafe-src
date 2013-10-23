@@ -2,6 +2,7 @@ package android.os;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 
 
@@ -241,7 +242,7 @@ public final class Message implements Parcelable {
         return ((flags & FLAG_IN_USE) == FLAG_IN_USE);
     }
 		*/
-		return false;
+		return getTaintBoolean();
 	}
 
     
@@ -307,19 +308,19 @@ public final class Message implements Parcelable {
         return 0;
     }
 		*/
-		return 0;
+		return getTaintInt();
 	}
 
     
     @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel dest, int flags){
 		// Original method
-		/*
-		{
-        if (callback != null) {
-            throw new RuntimeException(
-                "Can't marshal callbacks across processes.");
+        if (DroidSafeAndroidRuntime.control) {
+            RuntimeException ex = new RuntimeException("Can't marshal callbacks across processes.");
+            ex.addTaint(getTaint());
+            throw ex;
         }
+        
         dest.writeInt(what);
         dest.writeInt(arg1);
         dest.writeInt(arg2);
@@ -338,29 +339,22 @@ public final class Message implements Parcelable {
         dest.writeLong(when);
         dest.writeBundle(data);
         Messenger.writeMessengerOrNullToParcel(replyTo, dest);
-    }
-		*/
-		//Return nothing
 	}
 
     
     @DSModeled(DSC.BAN)
     private final void readFromParcel(Parcel source){
+        addTaint(source.getTaint());
 		// Original method
-		/*
-		{
         what = source.readInt();
         arg1 = source.readInt();
         arg2 = source.readInt();
         if (source.readInt() != 0) {
-            obj = source.readParcelable(getClass().getClassLoader());
+            obj = new Object();
         }
         when = source.readLong();
         data = source.readBundle();
         replyTo = Messenger.readMessengerOrNullFromParcel(source);
-    }
-		*/
-		//Return nothing
 	}
 
     
