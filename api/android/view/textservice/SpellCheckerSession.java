@@ -188,6 +188,7 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_98808614 =         mSpellCh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.906 -0400", hash_original_method = "59AD6E7808D10F8FF29E63144F2BA4F1", hash_generated_method = "4A1790F673068DADA3C7E1B074B4C4E8")
     @Override
     protected void finalize() throws Throwable {

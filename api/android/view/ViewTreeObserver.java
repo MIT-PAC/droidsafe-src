@@ -35,6 +35,7 @@ public final class ViewTreeObserver {
 
     private boolean mAlive = true;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.873 -0400", hash_original_method = "CC9985AE6D7058390B2C51E91CCE49A3", hash_generated_method = "5739F6075FCB84039D6115D26517DF4C")
       ViewTreeObserver() {
         // ---------- Original Method ----------

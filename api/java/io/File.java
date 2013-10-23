@@ -253,7 +253,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "5CDCBB522AFEF90E14CEC34C413E4DF5", hash_generated_method = "5EAF3499FCEAD1057DC1A1746F2BFBB1")
     public boolean delete() {
         try 
@@ -279,7 +279,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "CB1935EF5F2FD9C7C5DF0BCD9272AB92", hash_generated_method = "1DCAE6528A5E92D9050119D34A45FB7D")
     public void deleteOnExit() {
         DeleteOnExit.getInstance().addFile(getAbsolutePath());

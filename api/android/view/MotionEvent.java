@@ -31,6 +31,12 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     private  MotionEvent() {
         // ---------- Original Method ----------
     }
+    
+    @DSModeled(DSC.BAN)
+    public static MotionEvent droidsafeObtainEvent(){
+        MotionEvent ev = new MotionEvent();
+        return ev;
+    }
 
     
     @DSModeled(DSC.BAN)

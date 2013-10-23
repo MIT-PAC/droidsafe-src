@@ -316,11 +316,15 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_640913260 =  
         //return Collections.unmodifiableList(services);
     }
 
-    
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.318 -0400", hash_original_method = "30ACA46B7331464EC3BADA9B88DE998C", hash_generated_method = "717A666E6BC15313F7DC671F3F29079E")
     public boolean addAccessibilityStateChangeListener(
             AccessibilityStateChangeListener listener) {
-        addTaint(listener.getTaint());
+        if (listener != null) {
+            addTaint(listener.getTaint());
+            listener.onAccessibilityStateChanged(getTaintBoolean());
+        }
+        
         boolean var2C5A5236155593B4358D863171B0BDD6_1251272144 = (mAccessibilityStateChangeListeners.add(listener));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_575558927 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_575558927;
@@ -329,10 +333,14 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_640913260 =  
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.318 -0400", hash_original_method = "253F741B79F5A62D71C9725DE0D51542", hash_generated_method = "DA685E6A5AB504A56BB127F89E0AE3B5")
     public boolean removeAccessibilityStateChangeListener(
             AccessibilityStateChangeListener listener) {
-        addTaint(listener.getTaint());
+        if (listener != null) {
+            addTaint(listener.getTaint());
+            listener.onAccessibilityStateChanged(getTaintBoolean());
+        }
         boolean var85C8C39FFA5F20612971B1AF401EF0C0_758093597 = (mAccessibilityStateChangeListeners.remove(listener));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_999281333 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_999281333;
@@ -391,11 +399,14 @@ for(int i = 0;i < listenerCount;i++)
     }
 
     
+    //TODO: potential callback hooks
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.319 -0400", hash_original_method = "418C3E6E38CD336BB574D60AEBCE4154", hash_generated_method = "BEC5053102E08B6C8A9F645074683663")
     public int addAccessibilityInteractionConnection(IWindow windowToken,
             IAccessibilityInteractionConnection connection) {
         addTaint(connection.getTaint());
         addTaint(windowToken.getTaint());
+
         try 
         {
             int var945A9B0E1DAFACBDF82326BF6F30DAD2_1615296659 = (mService.addAccessibilityInteractionConnection(windowToken, connection));
@@ -418,6 +429,7 @@ for(int i = 0;i < listenerCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.320 -0400", hash_original_method = "E001917337970813CAF9F9A342D31C5B", hash_generated_method = "178637070F75B2D0FA1B015D379BA7D7")
     public void removeAccessibilityInteractionConnection(IWindow windowToken) {
         addTaint(windowToken.getTaint());
