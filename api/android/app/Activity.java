@@ -69,6 +69,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     private int mIdent;
     String mEmbeddedID;
     private Application mApplication;
+    @DSVAModeled
     Intent mIntent;
     private ComponentName mComponent;
     ActivityInfo mActivityInfo;
