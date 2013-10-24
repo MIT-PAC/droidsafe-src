@@ -381,8 +381,8 @@ public class GeoPTA {
      * context.
      */
     public Set<AllocNode> getPTSetEventContext(Value val, Edge context) {
-      // return getPTSetContextIns(val);
-      
+      return getPTSetContextIns(val);
+      /*
         if (val instanceof Local) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
             LocalVarNode vn = ptsProvider.findLocalVarNode((Local)val);
@@ -441,6 +441,7 @@ public class GeoPTA {
         else {
             return getPTSetContextIns(val);
         }
+        */
     }
     
     /**
