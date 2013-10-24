@@ -3177,16 +3177,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 
-    
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
-        addTaint(icicle.getTaint());
-        mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
-                com.android.internal.R.styleable.Window_windowNoDisplay, false);
-        mFragments.dispatchActivityCreated();
-        onCreate(icicle);
-        onStart();
+        performCreate(icicle, this);
         // ---------- Original Method ----------
         //onCreate(icicle);
         //mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
@@ -3464,6 +3458,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     // orphaned legacy method
     @DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
 	public final void performCreate(Bundle icicle, Context context){
+        addTaint(icicle.getTaint());
+        addTaint(context.getTaint());
 		this.attachBaseContext(context);
 		onCreate(icicle);
 		onStart();
