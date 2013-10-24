@@ -106,6 +106,10 @@ public class Config {
    * for the source classes of the project.
    */
   public boolean unfilteredStringAnalysis = false;
+  /** are we debugging */
+  public boolean debug = false;
+  /** are we in strict mode and should fail on errors */
+  public boolean strict = false;
 
   /**
    * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -172,12 +176,15 @@ public class Config {
     Option noSourceInfo = new Option("nosourceinfo", "Do not print source information in spec");
     options.addOption(noSourceInfo);
 
-    Option debugLog =
-        new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
-    options.addOption(debugLog);
+    Option debug =
+        new Option("debug", "Enable debugging: log at ./droidsafe/droidsafe.log");
+    options.addOption(debug);
 
     Option jsa = new Option("nojsa", "Do not use JSA");
     options.addOption(jsa);
+    
+    Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
+    options.addOption(strict);
 
     Option writeJimple =
             new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
@@ -282,6 +289,10 @@ public class Config {
       this.runStringAnalysis = false;
     }
 
+    if (cmd.hasOption("strict")) {
+        this.strict = true;
+      }
+    
     if (cmd.hasOption("noinfoflow")) {
         this.infoFlow = false;
     }
@@ -296,8 +307,9 @@ public class Config {
     if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
 
 
-    if (cmd.hasOption("debuglog")) {
+    if (cmd.hasOption("debug")) {
       configureDebugLog();
+      this.debug = true;
     }
 
     if (cmd.hasOption("analyzestrings_unfiltered")) {
