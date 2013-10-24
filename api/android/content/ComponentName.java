@@ -12,9 +12,11 @@ import android.os.Parcelable;
 public final class ComponentName implements Parcelable, Cloneable, Comparable<ComponentName> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.666 -0400", hash_original_field = "089616237F5DED8B7A7F9A618C4FC032", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
 
+    @DSVAModeled
     private String mPackage;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.666 -0400", hash_original_field = "3C06167D41E761EA62261D0BFD22DD5C", hash_generated_field = "5E2CA74CC8E570ED6932C7E63B69D503")
 
+    @DSVAModeled
     private String mClass;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.668 -0400", hash_original_method = "1714B1C8173E376D41E514F902D33E99", hash_generated_method = "7D9E77D2C93B078A228882B5CD43438C")
