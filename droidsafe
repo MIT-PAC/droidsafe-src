@@ -11,9 +11,9 @@ APAC_HOME = os.environ['APAC_HOME'] + os.sep
 
 def run_droidsafe(args):
     libs = APAC_HOME + "bin" + os.sep
-    command = []
-    command.append("java")
-    command.append("-cp")
+    java_command = []
+    java_command.append("java")
+    java_command.append("-cp")
 
     classpath = "";
     for jar in JARS:
@@ -21,22 +21,27 @@ def run_droidsafe(args):
     #needed for logback configuration
     classpath += APAC_HOME + os.sep + "config-files"
     classpath += ":."
-    command.append(classpath)
+    java_command.append(classpath)
 
-    command.append("-Xms1g");
-    command.append("-Xmx16g");
-#    command.append("-Xrunhprof:heap=sites,depth=6");
-    command.append("-Dfile.encoding=UTF-8");
-    if os.path.basename(args[0]).endswith("-debug"):
-        command.append("-enableassertions");
-    
-    command.append(MAIN_CLASS)
+    java_command.append("-Xms1g");
+    java_command.append("-Xmx16g");
+#   java_command.append("-Xrunhprof:heap=sites,depth=6");
+    java_command.append("-Dfile.encoding=UTF-8");
 
+    #search args for -strict to enable assertions
     for arg in args[1:]:
-        command.append(arg)
+        if "-strict" in args:
+            java_command.append("-enableassertions")
+
+
+    java_command.append(MAIN_CLASS)
+    
+    #append arguments
+    for arg in args[1:]:
+        java_command.append(arg)
 
     #print(command)
-    return subprocess.call(command)
+    return subprocess.call(java_command)
 
 
 
