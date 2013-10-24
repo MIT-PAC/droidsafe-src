@@ -3466,6 +3466,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	public final void performCreate(Bundle icicle, Context context){
 		this.attachBaseContext(context);
 		onCreate(icicle);
+		onStart();
 		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
 		mFragments.dispatchActivityCreated();
