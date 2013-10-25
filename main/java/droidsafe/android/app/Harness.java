@@ -261,7 +261,7 @@ public class Harness {
 
 			// call default constructor
 			Stmt initStmt = Jimple.v().newInvokeStmt(
-					Jimple.v().newVirtualInvokeExpr(intentFilterLocal, intentFilterInit.makeRef()));
+					Jimple.v().newSpecialInvokeExpr(intentFilterLocal, intentFilterInit.makeRef()));
 			
 			body.getUnits().add(initStmt);
 			
@@ -372,24 +372,23 @@ public class Harness {
 		Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
 		body.getUnits().add(Jimple.v().newAssignStmt(compLocal,  newAppExpr));
 
+		if (initMethod != null) {
+		    Stmt initStmt = Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(compLocal, initMethod.makeRef()));
+		    body.getUnits().add(initStmt);
+		}
+
 		//create field for component
         SootField compField = new SootField(FIELD_PREFIX + localID++ , compClass.getType(), 
             Modifier.PUBLIC | Modifier.STATIC);
         harnessClass.addField(compField);
-
-        //set local to field
-        body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(compField.makeRef()), appLocal));
+		
+	    //set local to field
+        body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(compField.makeRef()), compLocal));
         //add to globals map for querying
         globalsMap.put(compClass, compField);
 		
-		
-		if (initMethod != null) {
-		    Stmt initStmt= Jimple.v().newInvokeStmt(
-		            Jimple.v().newVirtualInvokeExpr(compLocal, initMethod.makeRef()));
-		    body.getUnits().add(initStmt);
-		}
 		injectIntentFilter(compLocal, stringLocal, intentFilterList, body, appLocal);
-		
+	        
 		// Call runtime init
 		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
 		Stmt initStmt = Jimple.v().newInvokeStmt(
@@ -455,7 +454,7 @@ public class Harness {
         
         // __dsApp__.<init>()
 		InvokeStmt initStmt = Jimple.v().newInvokeStmt(
-									Jimple.v().newVirtualInvokeExpr(appLocal, initMethod.makeRef()));
+									Jimple.v().newSpecialInvokeExpr(appLocal, initMethod.makeRef()));
 		body.getUnits().add(initStmt);
 		
 		SootMethod droidsafeInit = Scene.v().getMethod(modelApplicationMethod);
@@ -747,6 +746,10 @@ public class Harness {
 		}
 	}
 	
+	/**
+	 * add a constructor call to body for the given reftype.  Use the simpliest constructor
+	 * that can be found.
+	 */
 	public static void addConstructorCall(Body body, Local local, RefType type) {
 		SootClass clazz = type.getSootClass();
 		
