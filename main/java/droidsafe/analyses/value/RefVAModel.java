@@ -2,6 +2,7 @@ package droidsafe.analyses.value;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.value.primitives.StringVAModel;
+import droidsafe.analyses.value.UnknownVAModel;
 
 import droidsafe.utils.SootUtils;
 
@@ -46,6 +47,8 @@ public abstract class RefVAModel extends VAModel {
 
     private static final Logger logger = LoggerFactory.getLogger(RefVAModel.class);
 
+    private static final UnknownVAModel unknownValue = new UnknownVAModel();
+
     public RefVAModel(Object newExpr){
         this.newExpr = newExpr;
     }
@@ -55,7 +58,7 @@ public abstract class RefVAModel extends VAModel {
      *          set of VAModels for the values of the field otherwise
      */
     public Set<VAModel> getFieldVAModels(SootField sootField) {
-        String errorMsg = this.getAllocNode() + "'s field " + sootField + " invalidated because ";
+        String errorMsg = this.getAllocNode() + "'s field " + sootField + " got assigned the value 'unknown' because ";
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         Type fieldType = sootField.getType();
         if(fieldType instanceof RefType) {
@@ -64,10 +67,10 @@ public abstract class RefVAModel extends VAModel {
             if(allocNodes.size() > 0){
                 String fieldClassName = fieldRefType.getSootClass().getName();
                 if(Arrays.asList(new String[] {"java.lang.String", 
-                                               "java.lang.CharSequence", 
-                                               "java.lang.StringBuffer", 
-                                               "java.lang.StringBuilder"}
-                                ).contains(fieldClassName)) {
+                    "java.lang.CharSequence", 
+                    "java.lang.StringBuffer", 
+                    "java.lang.StringBuilder"}
+                    ).contains(fieldClassName)) {
                     StringVAModel stringVAModel = new StringVAModel();
                     for(AllocNode allocNode : allocNodes) {
                         if(allocNode instanceof StringConstantNode) {
@@ -75,8 +78,7 @@ public abstract class RefVAModel extends VAModel {
                         } else {
                             // all strings weren't constants, invalidate
                             ValueAnalysis.logError(errorMsg + " the value it is assigned, " + allocNode + " is not a constant. Contained values beforehand: " + stringVAModel.getValues());
-                            stringVAModel.invalidate();
-                            break;
+                            stringVAModel.addValue("UNKNOWN");
                         }
                     }
                     fieldVAModels.add(stringVAModel);
@@ -85,9 +87,9 @@ public abstract class RefVAModel extends VAModel {
                         VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
                         if(vaModel != null) {
                             fieldVAModels.add(vaModel);
-                    } else {
+                        } else {
                             ValueAnalysis.logError(errorMsg + " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
-                            return null;
+                            fieldVAModels.add(unknownValue);
                         }
 
                     }
@@ -105,11 +107,11 @@ public abstract class RefVAModel extends VAModel {
                     }
                 } catch(IllegalAccessException e) {
                     ValueAnalysis.logError(errorMsg + " its values couldn't be retrieved: " + e.toString());
-                    return null;
+                    fieldVAModels.add(unknownValue);
                 }
             } catch(NoSuchFieldException e) {
                 ValueAnalysis.logError(errorMsg + " its values couldn't be retrieved: " + e.toString());
-                return null;
+                fieldVAModels.add(unknownValue);
             }
         }
         return fieldVAModels;
