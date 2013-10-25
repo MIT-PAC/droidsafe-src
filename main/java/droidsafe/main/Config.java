@@ -75,6 +75,9 @@ public class Config {
   public boolean infoFlow = true;
   /** Methods on which to export information flows in DOT */
   public String[] infoFlowDotMethods;
+  /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
+  public boolean infoFlowTrackAll = false;
+
   /**
    * If true, classes loaded from android.jar will be treated as application classes and analysis
    * may analyze them.
@@ -229,6 +232,9 @@ public class Config {
             .withLongOpt("infoflow-dot-method").create("x");
     options.addOption(infoFlowDotMethod);
 
+    Option infoFlowTrackAll = new Option(null, "infoflow-track-all", false, "Track all methods (excluding those in java.lang) during information flow analysis");
+    options.addOption(infoFlowTrackAll);
+
     Option approot =
         OptionBuilder.withArgName("dir").hasArg()
             .withDescription("The Android application root directory").create("approot");
@@ -300,6 +306,10 @@ public class Config {
     if (cmd.hasOption("infoflow-dot-method")) {
         assert this.infoFlow;
         this.infoFlowDotMethods = cmd.getOptionValues("infoflow-dot-method");
+    }
+
+    if (cmd.hasOption("infoflow-track-all")) {
+        this.infoFlowTrackAll = true;
     }
 
     if (cmd.hasOption("ptadump")) this.dumpPta = true;

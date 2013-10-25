@@ -1125,10 +1125,13 @@ public class InformationFlowAnalysis {
                     Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                     if (lLocal.getType() instanceof RefLikeType) {
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
-                            for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
-                                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(lLocal, entryEdge)) {
-                                    outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
+                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)
+                                    || (Config.v().infoFlowTrackAll && !calleeMethod.getDeclaringClass().getPackageName().equals("java.lang"))) {
+                                ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
+                                for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
+                                    for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(lLocal, entryEdge)) {
+                                        outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
+                                    }
                                 }
                             }
                         }
@@ -1137,9 +1140,12 @@ public class InformationFlowAnalysis {
                             outState.locals.putS(entryEdge, lLocal, evaluate(entryEdge, opImmediate, inState.locals));
                         }
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
-                            for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
-                                outState.locals.putW(entryEdge, lLocal, values);
+                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)
+                                    || (Config.v().infoFlowTrackAll && !calleeMethod.getDeclaringClass().getPackageName().equals("java.lang"))) {
+                                ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
+                                for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
+                                    outState.locals.putW(entryEdge, lLocal, values);
+                                }
                             }
                         }
                     }
