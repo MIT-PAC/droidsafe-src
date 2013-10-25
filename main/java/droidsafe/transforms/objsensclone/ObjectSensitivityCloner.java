@@ -62,10 +62,10 @@ public class ObjectSensitivityCloner {
 
     /** list of class names that should not be cloned */
     public static final Set<String> CLASSES_TO_NOT_CLONE = 
-         new HashSet<String>(java.util.Arrays.asList("java.lang.String", 
-                                                     "java.lang.Class", 
-                                                     "java.lang.CharSequence", 
-                                                     "android.app.Activity"));
+            new HashSet<String>(java.util.Arrays.asList("java.lang.String", 
+                "java.lang.Class", 
+                "java.lang.CharSequence", 
+                    "android.app.Activity"));
 
 
 
@@ -75,79 +75,78 @@ public class ObjectSensitivityCloner {
      */
     public static void run() {
         int clonedClasses = 0;
-       
+
         List<SootClass> classes = new LinkedList<SootClass>();
         for (SootClass clz : Scene.v().getClasses()) {
             classes.add(clz);
         }
 
-        //loop through all non-system classes, clone classes and replace new exprs
-        for (SootClass clz : classes) {
-            if (API.v().isSystemClass(clz))
+
+        for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
+            //if (API.v().isSystemMethod(method))
+            //    continue;
+
+            if (method.isAbstract() || !method.isConcrete())
                 continue;
 
-            for (SootMethod method : clz.getMethods()) {
-                if (method.isAbstract() || !method.isConcrete())
-                    continue;
+            Body body = method.getActiveBody();
+            StmtBody stmtBody = (StmtBody)body;
+            Chain units = stmtBody.getUnits();
+            Iterator stmtIt = units.snapshotIterator();
 
-                Body body = method.getActiveBody();
-                StmtBody stmtBody = (StmtBody)body;
-                Chain units = stmtBody.getUnits();
-                Iterator stmtIt = units.snapshotIterator();
+            while (stmtIt.hasNext()) {
+                Stmt stmt = (Stmt)stmtIt.next();
 
-                while (stmtIt.hasNext()) {
-                    Stmt stmt = (Stmt)stmtIt.next();
+                if (stmt instanceof AssignStmt) {
+                    AssignStmt assign = (AssignStmt) stmt;
+                    if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
+                        NewExpr oldNewExpr = (NewExpr) assign.getRightOp();
+                        SootClass base = oldNewExpr.getBaseType().getSootClass();
+                        String baseClassName = base.getName();
+                        if (VA_RESOLVED_CLASSES.contains(base) && !CLASSES_TO_NOT_CLONE.contains(baseClassName)) {
+                            logger.info("Found new expr to replace and clone class: %s %s\n",
+                                method, assign);
 
-                    if (stmt instanceof AssignStmt) {
-                        AssignStmt assign = (AssignStmt) stmt;
-                        if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
-                            NewExpr oldNewExpr = (NewExpr) assign.getRightOp();
-                            SootClass base = oldNewExpr.getBaseType().getSootClass();
-                            String baseClassName = base.getName();
-                            if (VA_RESOLVED_CLASSES.contains(base) && !CLASSES_TO_NOT_CLONE.contains(baseClassName)) {
-                                logger.info("Found new expr to replace and clone class: %s %s %s\n",
-                                        clz, method, assign);
+                            //now change the constructor call after find the appropriate call to change
+                            try {
+                                SpecialInvokeExpr special = findConstructorCall(method,
+                                    assign);
 
-                                //now change the constructor call after find the appropriate call to change
-                                try {
-                                    SpecialInvokeExpr special = findConstructorCall(method,
-                                            assign);
+                                if (special != null) {
+                                    //found an appropriate constructor call
 
-                                    if (special != null) {
-                                        //found an appropriate constructor call
-
-                                        //clone class and install it as an new API class
-                                        SootClass cloned = 
+                                    //clone class and install it as an new API class
+                                    SootClass cloned = 
                                             ClassCloner.cloneClass(oldNewExpr.getBaseType().getSootClass(), true);
 
-                                        SootMethodRef origMethodRef = special.getMethodRef();
+                                    SootMethodRef origMethodRef = special.getMethodRef();
 
-                                        //replace old constructor call with call to cloned class
-                                        special.setMethodRef(Scene.v().makeMethodRef(cloned, 
-                                                    origMethodRef.name(), 
-                                                    origMethodRef.parameterTypes(), 
-                                                    origMethodRef.returnType(), 
-                                                    origMethodRef.isStatic()));
+                                    //replace old constructor call with call to cloned class
+                                    special.setMethodRef(Scene.v().makeMethodRef(cloned, 
+                                        origMethodRef.name(), 
+                                        origMethodRef.parameterTypes(), 
+                                        origMethodRef.returnType(), 
+                                        origMethodRef.isStatic()));
 
-                                        //replace new expression with new expression of cloned class
-                                        NewExpr newNewExpr = Jimple.v().newNewExpr(RefType.v(cloned));
-                                        assign.setRightOp(newNewExpr);
+                                    //replace new expression with new expression of cloned class
+                                    NewExpr newNewExpr = Jimple.v().newNewExpr(RefType.v(cloned));
+                                    assign.setRightOp(newNewExpr);
 
-                                        clonedClasses++;
-                                    } else {
-                                        throw new Exception("Special Invoke Not Found!");
-                                    }
-                                } catch (Exception e) {
-                                    logger.error("Error processing constructor call after modifying new expr: {}", 
-                                            stmt, e);
+                                    clonedClasses++;
+                                } else {
+                                    throw new Exception("Special Invoke Not Found!");
                                 }
-
+                            } catch (Exception e) {
+                                logger.error("Error processing constructor call after modifying new expr: {}", 
+                                    stmt, e);
                             }
+
                         }
                     }
                 }
             }
         }
+
         System.out.printf("Finished cloning: added %d classes.\n", clonedClasses);
     }
 
