@@ -12,9 +12,10 @@ import com.google.common.collect.ImmutableSet;
 
 import soot.Local;
 import soot.SootField;
-import soot.Unit;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+
+import droidsafe.main.Config;
 
 class EdgeLocal implements Comparable<EdgeLocal> {
     private static final HashMap<ImmutablePair<Edge, Local>, EdgeLocal> cache = new HashMap<ImmutablePair<Edge, Local>, EdgeLocal>();
@@ -207,7 +208,9 @@ class AddressField implements Comparable<AddressField> {
     SootField field;
 
     private AddressField(Address address, SootField field) {
-        assert address != null && field != null;
+        if (Config.v().strict) {
+            assert address != null && field != null;
+        }
         this.address = address;
         this.field = field;
     }
@@ -263,7 +266,9 @@ class EdgeAddressField implements Comparable<EdgeAddressField> {
     AddressField addressField;
 
     private EdgeAddressField(Edge entryEdge, AddressField addressField) {
-        assert entryEdge != null && addressField != null;
+        if (Config.v().strict) {
+            assert entryEdge != null && addressField != null;
+        }
         this.entryEdge = entryEdge;
         this.addressField = addressField;
     }
@@ -548,7 +553,9 @@ class EdgeAddress implements Comparable<EdgeAddress> {
     Address address;
 
     private EdgeAddress(Edge entryEdge, Address address) {
-        assert entryEdge != null && address != null;
+        if (Config.v().strict) {
+            assert entryEdge != null && address != null;
+        }
         this.entryEdge = entryEdge;
         this.address = address;
     }
@@ -787,7 +794,9 @@ class EdgeField implements Comparable<EdgeField> {
     SootField field;
 
     private EdgeField(Edge entryEdge, SootField field) {
-        assert entryEdge != null && field != null;
+        if (Config.v().strict) {
+            assert entryEdge != null && field != null;
+        }
         this.entryEdge = entryEdge;
         this.field = field;
     }
@@ -1029,7 +1038,9 @@ class State {
     Statics statics;
 
     State(Locals locals, Instances instances, Arrays arrays, Statics statics) {
-        assert locals != null && instances != null && arrays != null && statics != null;
+        if (Config.v().strict) {
+            assert locals != null && instances != null && arrays != null && statics != null;
+        }
         this.locals = locals;
         this.instances = instances;
         this.arrays = arrays;
@@ -1060,12 +1071,16 @@ class Address implements InfoValue, Comparable<Address> {
     private final AllocNode allocNode;
 
     private Address(AllocNode allocNode) {
-        assert allocNode != null;
+        if (Config.v().strict) {
+            assert allocNode != null;
+        }
         this.allocNode = allocNode;
     }
 
     public static Address v(AllocNode allocNode) {
-        assert allocNode != null;
+        if (Config.v().strict) {
+            assert allocNode != null;
+        }
         Address address = allocNodeToAddress.get(allocNode);
         if (address == null) {
             address = new Address(allocNode);

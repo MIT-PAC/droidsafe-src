@@ -8,6 +8,8 @@ import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 
+import droidsafe.main.Config;
+
 public class ObjectUtils {
     private static ObjectUtils v;
 
@@ -25,9 +27,13 @@ public class ObjectUtils {
 
     private ObjectUtils() {
         SootClass klass = Scene.v().getSootClass("java.lang.Object");
-        assert klass != null;
+        if (Config.v().strict) {
+            assert klass != null;
+        }
         taint = klass.getFieldByName("taint");
-        assert taint != null;
+        if (Config.v().strict) {
+            assert taint != null;
+        }
         addTaints = new HashSet<SootMethod>();
         getTaints = new HashSet<SootMethod>();
         for (SootMethod method : klass.getMethods()) {
