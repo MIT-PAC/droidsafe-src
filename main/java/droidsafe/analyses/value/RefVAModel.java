@@ -74,7 +74,11 @@ public abstract class RefVAModel extends VAModel {
                     StringVAModel stringVAModel = new StringVAModel();
                     for(AllocNode allocNode : allocNodes) {
                         if(allocNode instanceof StringConstantNode) {
-                            stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
+                            String value = ((StringConstantNode)allocNode).getString();
+                            value = value.replaceAll("(\\r|\\n)", "");
+                            value = value.replace("\"", "");
+                            value = value.replace("\\uxxxx", "");
+                            stringVAModel.addValue(value);    
                         } else {
                             // all strings weren't constants, invalidate
                             ValueAnalysis.logError(errorMsg + " the value it is assigned, " + allocNode + " is not a constant. Contained values beforehand: " + stringVAModel.getValues());
