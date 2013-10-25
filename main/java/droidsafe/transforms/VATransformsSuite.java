@@ -7,6 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import soot.Body;
 import soot.Local;
 import soot.Scene;
@@ -25,6 +28,7 @@ import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CGVisitorEntryContext;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.system.API;
@@ -45,6 +49,9 @@ public class VATransformsSuite implements CGVisitorEntryContext {
      *
      */
     class ConservativeStartActivity implements VATransform {
+        /** Logger object */
+        private final Logger logger = LoggerFactory.getLogger(ConservativeStartActivity.class);
+        
         Set<Stmt> modified = new HashSet<Stmt>();
         
         @Override
@@ -70,7 +77,7 @@ public class VATransformsSuite implements CGVisitorEntryContext {
             }
             
             for (SootField activityField : fields) {
-                System.out.println("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
+                logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
                 //call set intent on these activities with local   
                     
                 //create local and add to body
