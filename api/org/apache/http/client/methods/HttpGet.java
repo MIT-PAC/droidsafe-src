@@ -34,7 +34,11 @@ public class HttpGet extends HttpRequestBase {
     public  HttpGet(final String uri) {
         super();
         addTaint(uri.getTaint());
-        setURI(URI.create(uri));
+        try {
+            setURI(new URI(uri));
+        } catch (Exception e) {
+            
+        }
         // ---------- Original Method ----------
         //setURI(URI.create(uri));
     }
