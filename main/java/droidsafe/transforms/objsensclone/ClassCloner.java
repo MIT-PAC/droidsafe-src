@@ -93,8 +93,8 @@ public class ClassCloner {
         //set parent
         if (original.isFinal()) {
             //change final modifier
-            logger.error("Trying to clone final class!");
-            droidsafe.main.Main.exit(1);
+            logger.info("Changing final modifier on {}", original);
+            original.setModifiers(original.getModifiers() ^ Modifier.FINAL);
         }
         clone.setSuperclass(original);
         
@@ -183,6 +183,10 @@ public class ClassCloner {
             
         //create all methods, cloning body, replacing instance field refs
         for (SootMethod ancestorM : ancestor.getMethods()) {
+            if (ancestorM.isAbstract() || ancestorM.isPhantom() || !ancestorM.isConcrete() || 
+                    SootUtils.isRuntimeStubMethod(ancestorM) || ancestorM.getSource() == null)
+                continue;
+                
             //never clone static methods
             if (ancestorM.isStatic())
                 continue;
@@ -203,14 +207,14 @@ public class ClassCloner {
             if (isAPI) {
                 if (API.v().isBannedMethod(ancestorM.getSignature())) 
                     API.v().addBanMethod(newMeth);
-                else if (API.v().isSpecMethod(newMeth)) 
+                else if (API.v().isSpecMethod(ancestorM)) 
                     API.v().addSpecMethod(newMeth);
-                else if (API.v().isSafeMethod(newMeth)) 
+                else if (API.v().isSafeMethod(ancestorM)) 
                     API.v().addSafeMethod(newMeth);
             }
             
             //clone body
-            Body newBody = (Body)ancestorM.getActiveBody().clone();
+            Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
             newMeth.setActiveBody(newBody);
         }
     }
