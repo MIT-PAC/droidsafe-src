@@ -72,10 +72,12 @@ import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.toolkits.graph.Block;
+
 import droidsafe.analyses.EntryPointCGEdges;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
 
 /**
  * Information Flow Analysis
@@ -135,7 +137,9 @@ public class InformationFlowAnalysis {
                 values.addAll(state.arrays.get(entryEdge, Address.v(allocNode)));
             }
         } else {
-            assert !(type instanceof RefLikeType);
+            if (Config.v().strict) {
+                assert !(type instanceof RefLikeType);
+            }
             values.addAll(evaluate(entryEdge, local, state.locals));
         }
         return values;
@@ -169,7 +173,9 @@ public class InformationFlowAnalysis {
                 locals = locals.merge(localsFromTo.get(precedingBlock).get(block));
             }
         } else {
-            assert precedingBlocks.size() == 0;
+            if (Config.v().strict) {
+                assert precedingBlocks.size() == 0;
+            }
             locals = new Locals(localsFromTo.get(null).get(block));
         }
         return locals;
@@ -209,7 +215,9 @@ public class InformationFlowAnalysis {
                 State outState = execute(block, inState);
                 if (outState != null) {
                     for (Block followingBlock : InterproceduralControlFlowGraph.v().getSuccsOf(block)) {
-                        assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
+                        if (Config.v().strict) {
+                            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
+                        }
                         if (hasChanged || !localsFromTo.get(block).get(followingBlock).equals(outState.locals)) {
                             localsFromTo.get(block).put(followingBlock, outState.locals);
                             hasChanged = true;
@@ -257,8 +265,12 @@ public class InformationFlowAnalysis {
     private void initialize() {
         SootMethod method = Harness.v().getMain();
         Block block = InterproceduralControlFlowGraph.v().methodToHeadBlocks.get(method).get(0);
-        assert block.getHead() instanceof IdentityStmt;
-        assert InterproceduralControlFlowGraph.v().getHeads().contains(block);
+        if (Config.v().strict) {
+            assert block.getHead() instanceof IdentityStmt;
+        }
+        if (Config.v().strict) {
+            assert InterproceduralControlFlowGraph.v().getHeads().contains(block);
+        }
 
         this.localsFromTo.get(null).put(block, Locals.EMPTY);
         this.instances = new Instances();
@@ -422,7 +434,9 @@ public class InformationFlowAnalysis {
             public void caseInvokeExpr(InvokeExpr invokeExpr) {
                 // local "=" invoke_expr
                 // invoke_expr = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr;
-                assert !(invokeExpr instanceof DynamicInvokeExpr);
+                if (Config.v().strict) {
+                    assert !(invokeExpr instanceof DynamicInvokeExpr);
+                }
                 setResult(execute(stmt, invokeExpr, inState));
             }
         };
@@ -435,27 +449,43 @@ public class InformationFlowAnalysis {
         AbstractConstantSwitch constantSwitch = new AbstractConstantSwitch() {
             @Override
             public void caseClassConstant(ClassConstant constant) {
-                assert lLocal.getType() instanceof RefType;
-                assert GeoPTA.v().getAllocNode(constant) != null;
+                if (Config.v().strict) {
+                    assert lLocal.getType() instanceof RefType;
+                }
+                if (Config.v().strict) {
+                    assert GeoPTA.v().getAllocNode(constant) != null :
+                            InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
+                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                }
                 setResult(inState);
             }
 
             @Override
             public void caseNullConstant(NullConstant constant) {
-                assert lLocal.getType() instanceof RefLikeType;
+                if (Config.v().strict) {
+                    assert lLocal.getType() instanceof RefLikeType;
+                }
                 setResult(inState);
             }
 
             @Override
             public void caseStringConstant(StringConstant constant) {
-                assert lLocal.getType() instanceof RefType;
-                assert GeoPTA.v().getAllocNode(constant) != null;
+                if (Config.v().strict) {
+                    assert lLocal.getType() instanceof RefType;
+                }
+                if (Config.v().strict) {
+                    assert GeoPTA.v().getAllocNode(constant) != null :
+                            InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
+                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                }
                 setResult(inState);
             }
 
             @Override
             public void defaultCase(Object constant) {
-                assert constant instanceof NumericConstant;
+                if (Config.v().strict) {
+                    assert constant instanceof NumericConstant;
+                }
                 setResult(inState);
             }
         };
@@ -467,9 +497,13 @@ public class InformationFlowAnalysis {
     private State execute(AssignStmt stmt, Local lLocal, Local rLocal, State inState) {
         State outState = inState;
         if (lLocal.getType() instanceof RefLikeType) {
-            assert rLocal.getType() instanceof RefLikeType;
+            if (Config.v().strict) {
+                assert rLocal.getType() instanceof RefLikeType;
+            }
         } else {
-            assert !(rLocal.getType() instanceof RefLikeType);
+            if (Config.v().strict) {
+                assert !(rLocal.getType() instanceof RefLikeType);
+            }
             SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 outState.locals.putS(entryEdge, lLocal, inState.locals.get(entryEdge, rLocal));
@@ -482,9 +516,13 @@ public class InformationFlowAnalysis {
     private State execute(AssignStmt stmt, Local lLocal, InstanceFieldRef instanceFieldRef, State inState) {
         State outState = inState;
         if (lLocal.getType() instanceof RefLikeType) {
-            assert instanceFieldRef.getType() instanceof RefLikeType;
+            if (Config.v().strict) {
+                assert instanceFieldRef.getType() instanceof RefLikeType;
+            }
         } else {
-            assert !(instanceFieldRef.getType() instanceof RefLikeType);
+            if (Config.v().strict) {
+                assert !(instanceFieldRef.getType() instanceof RefLikeType);
+            }
             SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
             // instance_field_ref = immediate ".[" field_signature "]"
             Local baseLocal = (Local)instanceFieldRef.getBase();
@@ -504,9 +542,13 @@ public class InformationFlowAnalysis {
     private State execute(AssignStmt stmt, Local lLocal, StaticFieldRef staticFieldRef, State inState) {
         State outState = inState;
         if (lLocal.getType() instanceof RefLikeType) {
-            assert staticFieldRef.getType() instanceof RefLikeType;
+            if (Config.v().strict) {
+                assert staticFieldRef.getType() instanceof RefLikeType;
+            }
         } else {
-            assert !(staticFieldRef.getType() instanceof RefLikeType);
+            if (Config.v().strict) {
+                assert !(staticFieldRef.getType() instanceof RefLikeType);
+            }
             SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
             // static_field_ref = "[" field_signature "]"
             SootField field = staticFieldRef.getField();
@@ -521,9 +563,13 @@ public class InformationFlowAnalysis {
     private State execute(AssignStmt stmt, Local lLocal, ArrayRef arrayRef, State inState) {
         State outState = inState;
         if (lLocal.getType() instanceof RefLikeType) {
-            assert arrayRef.getType() instanceof RefLikeType;
+            if (Config.v().strict) {
+                assert arrayRef.getType() instanceof RefLikeType;
+            }
         } else {
-            assert !(arrayRef.getType() instanceof RefLikeType);
+            if (Config.v().strict) {
+                assert !(arrayRef.getType() instanceof RefLikeType);
+            }
             SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
             // array_ref = immediate "[" immediate "]";
             Local baseLocal = (Local)arrayRef.getBase();
@@ -542,7 +588,9 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" new_array_expr
     // assign_stmt = local "=" new_multi_array_expr
     private State execute(AssignStmt stmt, Local lLocal, AnyNewExpr anyNewExpr, State inState) {
-        assert lLocal.getType() instanceof RefLikeType;
+        if (Config.v().strict) {
+            assert lLocal.getType() instanceof RefLikeType;
+        }
         State outState = inState;
         SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
         AllocNode allocNode = GeoPTA.v().getAllocNode(anyNewExpr);
@@ -550,7 +598,13 @@ public class InformationFlowAnalysis {
             Address address = Address.v(allocNode);
             ImmutableSet<InfoValue> taints = ImmutableSet.<InfoValue>copyOf(InjectedSourceFlows.v().getInjectedFlows(allocNode));
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
-                assert GeoPTA.v().getPTSetEventContext(lLocal, entryEdge).contains(GeoPTA.v().getAllocNode(anyNewExpr));
+                if (Config.v().strict) {
+                    assert GeoPTA.v().getPTSetEventContext(lLocal, entryEdge).contains(GeoPTA.v().getAllocNode(anyNewExpr)) :
+                            method + ": " + stmt + ":\n" +
+                            "\tGeoPTA.v().getPTSetEventContext(" + lLocal + ", " + entryEdge + ") does not contain GeoPTA.v().getAllocNode(" + anyNewExpr + ")\n" +
+                            "\tGeoPTA.v().getPTSetEventContext(" + lLocal + ", " + entryEdge + ") = " + GeoPTA.v().getPTSetEventContext(lLocal, entryEdge) + "\n" +
+                            "\tGeoPTA.v().getAllocNode(" + anyNewExpr + ") = " + GeoPTA.v().getAllocNode(anyNewExpr);
+                }
                 outState.instances.putW(entryEdge, address, ObjectUtils.v().taint, taints);
             }
         }
@@ -581,11 +635,19 @@ public class InformationFlowAnalysis {
     private State execute(AssignStmt stmt, Local lLocal, CastExpr castExpr, Local local, State inState) {
         State outState = inState;
         if (lLocal.getType() instanceof RefLikeType) {
-            assert castExpr.getType() instanceof RefLikeType;
-            assert local.getType() instanceof RefLikeType;
+            if (Config.v().strict) {
+                assert castExpr.getType() instanceof RefLikeType;
+            }
+            if (Config.v().strict) {
+                assert local.getType() instanceof RefLikeType;
+            }
         } else {
-            assert !(castExpr.getType() instanceof RefLikeType);
-            assert !(local.getType() instanceof RefLikeType);
+            if (Config.v().strict) {
+                assert !(castExpr.getType() instanceof RefLikeType);
+            }
+            if (Config.v().strict) {
+                assert !(local.getType() instanceof RefLikeType);
+            }
             SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 outState.locals.putS(entryEdge, lLocal, inState.locals.get(entryEdge, local));
@@ -595,12 +657,18 @@ public class InformationFlowAnalysis {
     }
 
     // assign_stmt = local "=" "(" type ")" constant
-    private State execute(AssignStmt stmt, final Local lLocal, CastExpr castExpr, Constant constant, final State inState) {
+    private State execute(final AssignStmt stmt, final Local lLocal, CastExpr castExpr, Constant constant, final State inState) {
         AbstractConstantSwitch constantSwitch = new AbstractConstantSwitch() {
             @Override
             public void caseClassConstant(ClassConstant constant) {
-                assert lLocal.getType() instanceof RefType;
-                assert GeoPTA.v().getAllocNode(constant) != null;
+                if (Config.v().strict) {
+                    assert lLocal.getType() instanceof RefType;
+                }
+                if (Config.v().strict) {
+                    assert GeoPTA.v().getAllocNode(constant) != null :
+                            InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
+                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                }
                 setResult(inState);
             }
 
@@ -611,15 +679,25 @@ public class InformationFlowAnalysis {
 
             @Override
             public void caseStringConstant(StringConstant constant) {
-                assert lLocal.getType() instanceof RefType;
-                assert GeoPTA.v().getAllocNode(constant) != null;
+                if (Config.v().strict) {
+                    assert lLocal.getType() instanceof RefType;
+                }
+                if (Config.v().strict) {
+                    assert GeoPTA.v().getAllocNode(constant) != null :
+                            InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
+                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                }
                 setResult(inState);
             }
 
             @Override
             public void defaultCase(Object constant) {
-                assert lLocal.getType() instanceof PrimType;
-                assert constant instanceof NumericConstant;
+                if (Config.v().strict) {
+                    assert lLocal.getType() instanceof PrimType;
+                }
+                if (Config.v().strict) {
+                    assert constant instanceof NumericConstant;
+                }
                 setResult(inState);
             }
         };
@@ -629,7 +707,9 @@ public class InformationFlowAnalysis {
 
     // assigin_stmt = local "=" instance_of_expr
     private State execute(AssignStmt stmt, Local lLocal, InstanceOfExpr instanceOfExpr, State inState) {
-        assert !(lLocal.getType() instanceof RefLikeType);
+        if (Config.v().strict) {
+            assert !(lLocal.getType() instanceof RefLikeType);
+        }
         State outState = inState;
         SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
         // instance_of_expr = immediate "instanceof" ref_type
@@ -646,7 +726,9 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" unop_expr
     private State execute(final AssignStmt stmt, final Local lLocal, UnopExpr unopExpr, final State inState) {
-        assert !(lLocal.getType() instanceof RefLikeType);
+        if (Config.v().strict) {
+            assert !(lLocal.getType() instanceof RefLikeType);
+        }
         final State outState = inState;
         final SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
         // unop_expr = length_expr | neg_expr;
@@ -663,7 +745,9 @@ public class InformationFlowAnalysis {
 
             @Override
             public void caseLengthExpr(LengthExpr lengthExpr) {
-                assert immediate instanceof Local;
+                if (Config.v().strict) {
+                    assert immediate instanceof Local;
+                }
                 for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                     HashSet<InfoValue> values = new HashSet<InfoValue>();
                     for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(immediate, entryEdge)) {
@@ -679,7 +763,9 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" binop_expr
     private State execute(AssignStmt stmt, Local lLocal, BinopExpr binopExpr, State inState) {
-        assert !(lLocal.getType() instanceof RefLikeType);
+        if (Config.v().strict) {
+            assert !(lLocal.getType() instanceof RefLikeType);
+        }
         State outState = inState;
         SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
         // binop_expr = immediate binop immediate
@@ -698,8 +784,10 @@ public class InformationFlowAnalysis {
                 outState.locals.putS(entryEdge, lLocal, values);
             }
         } else {
-            assert immediates[0].getType() instanceof PrimType;
-            assert immediates[1].getType() instanceof PrimType;
+            if (Config.v().strict) {
+                assert immediates[0].getType() instanceof PrimType;
+                assert immediates[1].getType() instanceof PrimType;
+            }
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 for (Immediate immediate : immediates) {
@@ -758,7 +846,9 @@ public class InformationFlowAnalysis {
             @Override
             public void caseConstant(Constant constant) {
                 // static_field_ref "=" constant
-                assert !(constant instanceof ClassConstant);
+                if (Config.v().strict) {
+                    assert !(constant instanceof ClassConstant);
+                }
                 setResult(inState);
             }
         };
@@ -824,13 +914,21 @@ public class InformationFlowAnalysis {
     // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")"
     private State execute(Stmt stmt, InvokeExpr invokeExpr, State inState) {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
-        assert block.getTail().equals(stmt);
+        if (Config.v().strict) {
+            assert block.getTail().equals(stmt);
+        }
         List<Block> followingBlocks = InterproceduralControlFlowGraph.v().getSuccsOf(block);
-        assert followingBlocks.size() > 0;
+        if (Config.v().strict) {
+            assert followingBlocks.size() > 0;
+        }
 
         if (followingBlocks.size() == 1) {
-            assert block.getBody().getMethod().equals(followingBlocks.get(0).getBody().getMethod());
-            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlocks.get(0).getHead());
+            if (Config.v().strict) {
+                assert block.getBody().getMethod().equals(followingBlocks.get(0).getBody().getMethod());
+            }
+            if (Config.v().strict) {
+                assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlocks.get(0).getHead());
+            }
             SootMethod calleeMethod = invokeExpr.getMethod();
             if (ObjectUtils.v().isAddTaint(calleeMethod)) {
                 return executeAddTaint(stmt, invokeExpr, inState);
@@ -848,7 +946,9 @@ public class InformationFlowAnalysis {
         AddressToValues addressToValues = null;
         FieldToValues fieldToValues = null;
         for (Block followingBlock : followingBlocks) {
-            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
+            if (Config.v().strict) {
+                assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
+            }
             State outState;
             Body calleeBody = followingBlock.getBody();
             SootMethod calleeMethod = calleeBody.getMethod();
@@ -856,7 +956,9 @@ public class InformationFlowAnalysis {
                 outState = new State(new Locals(), inState.instances, inState.arrays, inState.statics);
                 Local[] parameterLocals = getParameterLocals(calleeBody);
                 Edge callEdge = Scene.v().getCallGraph().findEdge(stmt, calleeMethod);
-                assert callEdge != null;
+                if (Config.v().strict) {
+                    assert callEdge != null;
+                }
                 if (!EntryPointCGEdges.v().isEntryPoint(callEdge)) {
                     for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                         for (int i = 0; i < invokeExpr.getArgCount(); i++) {
@@ -936,7 +1038,9 @@ public class InformationFlowAnalysis {
 
     private State executeGetTaint(Stmt stmt, InvokeExpr invokeExpr, State inState) {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
-        assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
+        if (Config.v().strict) {
+            assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
+        }
         SootMethod callerMethod = block.getBody().getMethod();
 
         State outState = inState;
@@ -953,14 +1057,18 @@ public class InformationFlowAnalysis {
             }
         } else {
             // "virtualinvoke" immediate ".[" Object.getTaint* "]" "(" ")"
-            assert stmt instanceof InvokeStmt;
+            if (Config.v().strict) {
+                assert stmt instanceof InvokeStmt;
+            }
         }
        return outState;
     }
 
     private State executeAddTaint(Stmt stmt, InvokeExpr invokeExpr, State inState) {
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
-        assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
+        if (Config.v().strict) {
+            assert InterproceduralControlFlowGraph.v().getSuccsOf(block).size() == 1;
+        }
         SootMethod callerMethod = block.getBody().getMethod();
 
         State outState = inState;
@@ -974,7 +1082,9 @@ public class InformationFlowAnalysis {
                 }
             }
         } else {
-            assert argImmediate instanceof Constant;
+            if (Config.v().strict) {
+                assert argImmediate instanceof Constant;
+            }
         }
         return outState;
     }
@@ -992,18 +1102,24 @@ public class InformationFlowAnalysis {
 
     // stmt = return_stmt | return_void_stmt
     private State executeReturn(Stmt stmt, State inState) {
-        assert stmt instanceof ReturnStmt || stmt instanceof ReturnVoidStmt;
+        if (Config.v().strict) {
+            assert stmt instanceof ReturnStmt || stmt instanceof ReturnVoidStmt;
+        }
         Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
         SootMethod calleeMethod = block.getBody().getMethod();
         Immediate opImmediate = (stmt instanceof ReturnStmt) ? (Immediate)((ReturnStmt)stmt).getOp() : null;
         for (Block followingBlock : InterproceduralControlFlowGraph.v().getSuccsOf(block)) {
-            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
+            if (Config.v().strict) {
+                assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(followingBlock.getHead());
+            }
             State outState = new State(opImmediate != null ? new Locals() : Locals.EMPTY, inState.instances, inState.arrays, inState.statics);
             SootMethod callerMethod = followingBlock.getBody().getMethod();
             Block callBlock = InterproceduralControlFlowGraph.v().getPrecedingCallBlock(followingBlock, callerMethod);
             Unit callStmt = callBlock.getTail();
             Edge callEdge = Scene.v().getCallGraph().findEdge(callStmt, calleeMethod);
-            assert callEdge != null;
+            if (Config.v().strict) {
+                assert callEdge != null;
+            }
             if (!EntryPointCGEdges.v().isEntryPoint(callEdge)) {
                 if (opImmediate != null && callStmt instanceof AssignStmt) {
                     Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
@@ -1029,7 +1145,9 @@ public class InformationFlowAnalysis {
                     }
                 }
             } else {
-                assert !(!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod));
+                if (Config.v().strict) {
+                    assert !(!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod));
+                }
                 if (opImmediate != null && callStmt instanceof AssignStmt) {
                     Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                     if (!(lLocal.getType() instanceof RefLikeType)) {
@@ -1055,7 +1173,9 @@ public class InformationFlowAnalysis {
     }
 
     private ImmutableSet<InfoValue> evaluate(final Edge entryEdge, Immediate immediate, final Locals locals) {
-        assert !(immediate.getType() instanceof RefLikeType);
+        if (Config.v().strict) {
+            assert !(immediate.getType() instanceof RefLikeType);
+        }
 
         // immediate = constant | local;
         MyAbstractImmediateSwitch immediateSwitch = new MyAbstractImmediateSwitch() {
