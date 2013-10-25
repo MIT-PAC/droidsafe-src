@@ -110,15 +110,16 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
      */
     public static void reset() {
         v = null;
+        v = new RCFG();
     }
 
     /**
      * Generate the rCFG.
      */
     public static void generate() {
-        CallGraphTraversal.acceptEntryContextAnd1CFA(v);
+        CallGraphTraversal.acceptEntryContextAnd1CFA(v());
         //print unreachable methods to the debug log
-        v.printUnreachableSrcMethods();
+        v().printUnreachableSrcMethods();
     }
     
     private RCFG() {
