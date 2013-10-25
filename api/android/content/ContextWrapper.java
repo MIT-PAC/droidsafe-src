@@ -121,6 +121,12 @@ public class ContextWrapper extends Context {
     public ContentResolver getContentResolver() {
     	return mBase.getContentResolver();
     }
+    
+    @Override
+    @DSModeled(DSC.SAFE)
+    public Object getSystemService(String service) {
+        return mBase.getSystemService(service);
+    }
 
     
     @Override
