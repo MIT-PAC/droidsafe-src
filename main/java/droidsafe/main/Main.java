@@ -49,6 +49,7 @@ import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.VATransformsSuite;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
 import droidsafe.utils.DroidsafeExecutionStatus;
@@ -101,6 +102,7 @@ public class Main {
     CallGraphTraversal.reset();
     AllocLocationModel.reset();
     CallLocationModel.reset();
+    RCFG.reset();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -211,15 +213,6 @@ public class Main {
     timer1.stop();
     driverMsg("Finished String Analysis: " + timer1);
 
-    if (Config.v().writeJimpleAppClasses) {
-      monitor.subTask("Writing all app classes");
-      writeAllAppClasses();
-    }
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
 
     if (Config.v().runValueAnalysis) {
         driverMsg("Injecting String Analysis Results.");
@@ -248,6 +241,8 @@ public class Main {
         }
         driverMsg("Finished Value Analysis: " + vaTimer);
 
+        driverMsg("Running Value Analysis Tranform Suite.");
+        VATransformsSuite.run();
 
         driverMsg("Undoing String Analysis Result Injection.");
         monitor.subTask("Undoing String Analysis Result Injection.");
@@ -283,6 +278,16 @@ public class Main {
 
     //Test the points to analysis
     //new TestPTA();
+    
+    if (Config.v().writeJimpleAppClasses) {
+        driverMsg("Writing Jimple Classes.");
+        monitor.subTask("Writing all app classes");
+        writeAllAppClasses();
+      }
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+      }
     
     if (Config.v().infoFlow) {
         StopWatch timer = new StopWatch();

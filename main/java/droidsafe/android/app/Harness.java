@@ -116,6 +116,21 @@ public class Harness {
 		return harnessMain;
 	}
 	
+	/**
+	 * Return the set of classes that were created by the harness.  These are Android components
+	 * and other classes of the application that are created by the runtime. 
+	 */
+	public Set<SootClass> getCreatedClasses() {
+	    return globalsMap.keySet();
+	}
+	
+	/**
+	 * Return the static field of the harness that stores the object of the created class clz. 
+	 */
+	public SootField getFieldForCreatedClass(SootClass clz) {
+	    return globalsMap.get(clz);
+	}
+	
 	public SootClass getHarnessClass() {
 		return harnessClass;
 	}

@@ -92,19 +92,30 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
     private Set<SootMethod> visitedMethods;
     /** alloc nodes that are either a receiver or argument for an api call */
     private Set<AllocNode> apiCallNodes;
+    /** ignore making output events for stmts in this set */
+    private Set<Stmt> ignoreSet;
     
     /**
      * Return the singleton of this class.
      */
     public static RCFG v() {
+        if (v == null)
+            v = new RCFG();
+
         return v;
+    }
+    
+    /**
+     * Reset state of this analysis.
+     */
+    public static void reset() {
+        v = null;
     }
 
     /**
      * Generate the rCFG.
      */
     public static void generate() {
-        v = new RCFG();
         CallGraphTraversal.acceptEntryContextAnd1CFA(v);
         //print unreachable methods to the debug log
         v.printUnreachableSrcMethods();
@@ -114,8 +125,16 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
         this.visitedMethods = new HashSet<SootMethod>();
         this.entryEdgeToNode = new LinkedHashMap<Edge, RCFGNode>();
         this.apiCallNodes = new HashSet<AllocNode>();
+        this.ignoreSet = new HashSet<Stmt>(); 
     }
 
+    /**
+     * Don't create output events for any methods from this invoke expr
+     */
+    public void ignoreInvokeForOutputEvents(Stmt stmt) {
+        ignoreSet.add(stmt);
+    }
+    
     /**
      * Return true if this allocation node can possible be an argument or receiver for an output event.
      */
@@ -159,7 +178,8 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
         if (API.v().isSystemMethod(method) && 
                 !API.v().isSystemMethod(edgeInto.src()) &&
                 API.v().isInterestingMethod(method) &&
-                !IGNORE_SYS_METHOD_WITH_NAME.contains(method.getName())) {
+                !IGNORE_SYS_METHOD_WITH_NAME.contains(method.getName()) &&
+                !ignoreSet.contains(edgeInto.srcStmt())) {
 
             RCFGNode node = getNodeForEntryEdge(entryEdge);
 
