@@ -74,7 +74,7 @@ public abstract class RefVAModel extends VAModel {
                             stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
                         } else {
                             // all strings weren't constants, invalidate
-                            logger.debug(errorMsg + " the value it is assigned, " + allocNode + " is not a constant. Contained values beforehand: " + stringVAModel.getValues());
+                            ValueAnalysis.logError(errorMsg + " the value it is assigned, " + allocNode + " is not a constant. Contained values beforehand: " + stringVAModel.getValues());
                             stringVAModel.invalidate();
                             break;
                         }
@@ -86,7 +86,7 @@ public abstract class RefVAModel extends VAModel {
                         if(vaModel != null) {
                             fieldVAModels.add(vaModel);
                     } else {
-                            logger.debug(errorMsg + " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
+                            ValueAnalysis.logError(errorMsg + " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
                             return null;
                         }
 
@@ -104,11 +104,11 @@ public abstract class RefVAModel extends VAModel {
                         fieldVAModels.add(fieldObjectPrimVAModel); 
                     }
                 } catch(IllegalAccessException e) {
-                    logger.debug(errorMsg + " its values couldn't be retrieved: " + e.toString());
+                    ValueAnalysis.logError(errorMsg + " its values couldn't be retrieved: " + e.toString());
                     return null;
                 }
             } catch(NoSuchFieldException e) {
-                logger.debug(errorMsg + " its values count' be retrieved: " + e.toString());
+                ValueAnalysis.logError(errorMsg + " its values couldn't be retrieved: " + e.toString());
                 return null;
             }
         }
