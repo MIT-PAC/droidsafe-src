@@ -12,4 +12,12 @@ import soot.Type;
 public abstract class ConcreteArgumentValue {
 	
 	public abstract String toStringValue();
+
+  /**
+   * Return a well-formatted detailed printout of this value. Default implementation.
+   */
+  public String toStringPretty() {
+      return toString();
+  }
+
 }

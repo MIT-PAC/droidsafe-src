@@ -25,12 +25,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ValueBox;
+import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAStrings.Hotspot;
 import droidsafe.android.app.Project;
@@ -65,7 +67,20 @@ public class SecuritySpecModel extends ModelChangeSupport
    */
   public static final String SECURITY_SPEC_SERIAL_FILE_NAME = "security_spec.ser";
 
+  /**
+   * The name of the file that contains the points-to info of the spec.
+   */
   private static final String POINTS_TO_INFO_FILE_NAME = "points-to-info.txt";
+
+  /**
+   * The name of the file that contains the info flow summary of the spec.
+   */
+  private static final String INFO_FLOW_SUMMARY_FILE_NAME = "info-flow-summary.txt";
+
+  /**
+   * The name of the file that contains the info flow details of the spec.
+   */
+  private static final String INFO_FLOW_DETAILS_FILE_NAME = "info-flow-details.txt";
 
   /**
    * The path to location of the Android project root folder. We need this information to serialize
@@ -114,7 +129,8 @@ public class SecuritySpecModel extends ModelChangeSupport
    */
   Map<String, List<HotspotModel>> methodToHotspotMap = new HashMap<String, List<HotspotModel>>();
 
-
+  Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = new TreeMap<String, Map<String, Set<MethodModel>>>();
+  
   /**
    * Main constructor for the spec model. Translate the original droidsafe spec into a simpler
    * representation that can be used by the eclipse plugin.
@@ -143,6 +159,10 @@ public class SecuritySpecModel extends ModelChangeSupport
     return this.methodToHotspotMap;
   }
 
+  public Map<String, Map<String, Set<MethodModel>>> getInfoFlowSummaryMap() {
+    return this.infoFlowSummaryMap;
+  }
+  
   /**
    * Auxiliary method to add all previously computed hotspots to the spec.
    * 
@@ -201,6 +221,7 @@ public class SecuritySpecModel extends ModelChangeSupport
       }
       this.inputEventBlocks.put(model, modelOutputEvents);
       model.addPropertyChangeListener(this);
+      updateInfoFlowSummaryMap(model, inputEvent);
 
       List<HotspotModel> hotspots = this.methodToHotspotMap.get(model.getSootMethodSignature());
       if (hotspots != null) {
@@ -219,6 +240,8 @@ public class SecuritySpecModel extends ModelChangeSupport
         MethodModel methodModel = new MethodModel(outputEvent);
         modelOutputEvents.add(methodModel);
         methodModel.addPropertyChangeListener(this);
+        updateInfoFlowSummaryMap(methodModel, outputEvent);
+
         List<HotspotModel> apiHotspots =
             this.methodToHotspotMap.get(methodModel.getSootMethodSignature());
 
@@ -255,6 +278,30 @@ public class SecuritySpecModel extends ModelChangeSupport
       // Integer.toString(modelOutputEvents.size()));
     }
     // logger.debug("{}", printSpecModel());
+  }
+
+  private void updateInfoFlowSummaryMap(MethodModel methodModel, Method method) {
+    Set<InfoKind> sourcesInfoKinds = method.getSourcesInfoKinds();
+    Set<InfoKind> sinkInfoKinds = method.getSinkInfoKinds();
+    if (!sourcesInfoKinds.isEmpty() && !sinkInfoKinds.isEmpty()) {
+      for (InfoKind sourceInfoKind: sourcesInfoKinds) {
+        String source = sourceInfoKind.toString();
+        Map<String, Set<MethodModel>> sinkMap = infoFlowSummaryMap.get(source);
+        if (sinkMap == null) {
+          sinkMap = new TreeMap<String, Set<MethodModel>>();
+          infoFlowSummaryMap.put(source, sinkMap);
+        }
+        for (InfoKind sinkInfoKind: sinkInfoKinds) {
+          String sink = sinkInfoKind.toString();
+          Set<MethodModel> methodModels = sinkMap.get(sink);
+          if (methodModels == null) {
+            methodModels = new TreeSet<MethodModel>();
+            sinkMap.put(sink, methodModels);
+          }
+          methodModels.add(methodModel);
+        }
+      }
+    }
   }
 
   public String printSpecModel() {
@@ -434,7 +481,7 @@ public class SecuritySpecModel extends ModelChangeSupport
       }
       for (MethodModel method: allMethods) {
         StringBuffer buf = new StringBuffer();
-        List<AllocLocationModel> receiverSources = method.getReceiverAllocSources();
+        List<AllocLocationModel> receiverSources = method.getArgumentAllocSources(-1);
         if (receiverSources != null && !receiverSources.isEmpty()) {
           buf.append("  <receiver> " + method.getReceiver() + "\n");
           printAllocations(receiverSources, buf);
@@ -442,8 +489,8 @@ public class SecuritySpecModel extends ModelChangeSupport
         List<String> args = method.getMethodArguments();
         for (int i = 0; i < args.size(); i++) {
           List<AllocLocationModel> argSources = method.getArgumentAllocSources(i);
-          if (!argSources.isEmpty()) {
-            buf.append("  <argument " + (i + 1) + "> " + method.getArgumentValue(i) + "\n");
+          if (argSources != null && !argSources.isEmpty()) {
+            buf.append("  <argument " + (i + 1) + "> : " + args.get(i) + "\n");
             printAllocations(argSources, buf);
           }
         }
@@ -499,12 +546,14 @@ public class SecuritySpecModel extends ModelChangeSupport
    */
     private int getAllocCount(MethodModel method) {
       int count = 0;
-      List<AllocLocationModel> receiverSources = method.getReceiverAllocSources();
+      List<AllocLocationModel> receiverSources = method.getArgumentAllocSources(-1);
       if (receiverSources != null)
         count += receiverSources.size();
       int argCount = method.getMethodArguments().size();
       for (int i = 0; i < argCount; i++) {
-        count += method.getArgumentAllocSources(i).size();
+        List<AllocLocationModel> allocs = method.getArgumentAllocSources(i);
+        if (allocs != null)
+          count += allocs.size();
       }
       return count;
     }
@@ -517,6 +566,80 @@ public class SecuritySpecModel extends ModelChangeSupport
       return (lines == null || lines.isEmpty()) ? 0 : lines.get(0).getLine();
     }
 
+  }
+
+  public static void printInfoFlowSummary(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+      try {
+          FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + INFO_FLOW_SUMMARY_FILE_NAME);
+          Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = securitySpecModel.getInfoFlowSummaryMap();
+          for (String source : infoFlowSummaryMap.keySet()) {
+              Map<String, Set<MethodModel>> sinkMap = infoFlowSummaryMap.get(source);
+              for (String sink : sinkMap.keySet()) {
+                  fw.write(source + " -> " + sink + "\n");
+                  Set<MethodModel> methods = sinkMap.get(sink);
+                  for (MethodModel method: methods) {
+                      fw.write("  " + method + "\n");
+                  }
+              }
+          }
+          fw.close();
+      } catch (IOException e) {
+          logger.error("Error writing info flow summary to file.");
+          droidsafe.main.Main.exit(1);
+      }     
+  }
+
+  /**
+   * Print detailed info flow info associated with the security spec to a file in the droidsafe folder of 
+   * the current selected Android app.
+   */
+  public static void printInfoFlowDetails(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    try {
+      FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + INFO_FLOW_DETAILS_FILE_NAME);
+      Set<MethodModel> entryPoints = securitySpecModel.getEntryPoints();
+      SortedSet<MethodModel> allMethods = new TreeSet<MethodModel>();
+      allMethods.addAll(entryPoints);
+      for (MethodModel entryPoint: entryPoints) {
+        allMethods.addAll(securitySpecModel.getOutputEvents(entryPoint));
+      }
+      for (MethodModel method: allMethods) {
+        if (method.hasInfoFlowInfo()) {
+          fw.write(method.getSignature() + "\n");
+          List<String> receiverInfoKinds = method.getArgumentInfoKinds(-1);
+          List<CallLocationModel> receiverSourceInfoUnits = method.getArgumentSourceInfoUnits(-1);
+          String desc = "<receiver> " + method.getReceiver();
+          writeInfoFlowDetails(desc, receiverInfoKinds, receiverSourceInfoUnits, fw);
+          List<String> args = method.getMethodArguments();
+          for (int i = 0; i < args.size(); i++) {
+            List<String> argInfoKinds = method.getArgumentInfoKinds(i);
+            List<CallLocationModel> argInfoUnits = method.getArgumentSourceInfoUnits(i);
+            desc = "<argument " + (i + 1) + "> : " + args.get(i);
+            writeInfoFlowDetails(desc, argInfoKinds, argInfoUnits, fw);
+          }
+          List<String> sinkInfoKinds = method.getSinkInfoKinds();
+          desc = "<sinks>";
+          writeInfoFlowDetails(desc, sinkInfoKinds, null, fw);
+        }
+      }
+      fw.close();
+    } catch (IOException e) {
+      logger.error("Error writing info flow details to file.");
+      droidsafe.main.Main.exit(1);
+    }     
+  }
+
+  private static void writeInfoFlowDetails(String desc, List<String> infoKinds,
+      List<CallLocationModel> infoUnits, FileWriter fw) throws IOException {
+    if ((infoKinds != null && !infoKinds.isEmpty()) || (infoUnits != null && !infoUnits.isEmpty())) {
+      fw.write("  " + desc + "\n");
+      String kinds = (infoKinds == null) ? "[SENSITIVE_NOCATEGORY]" : infoKinds.toString();
+      fw.write("    " + kinds + "\n");
+      if (infoUnits != null) {
+        for (CallLocationModel loc: infoUnits) {
+          fw.write("      " + loc + "\n");
+        }
+      }
+    }
   }
 
 }

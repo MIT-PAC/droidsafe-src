@@ -45,12 +45,12 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.view.TreeElementLabelProvider;
-import droidsafe.eclipse.plugin.core.view.pointsto.MethodArgumentModel;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.TreeElementLabelProvider;
 import droidsafe.main.Config;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
+import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
@@ -169,6 +169,40 @@ public class DroidsafePluginUtilities {
         int offset = region.getOffset();
         int length = region.getLength();
         textEditor.selectAndReveal(offset, length);
+      }
+    }
+  }
+
+  /**
+   * Reveals and highlights the given method argument or receiver for the given project in an editor.  
+   * Activates the editor if the parameter 'activate' is true.
+   */
+  public static void revealInEditor(IProject project, MethodModel method, boolean activate) {
+    List<CodeLocationModel> lines = method.getLines();
+    SourceLocationTag line;
+    if (lines.isEmpty()) {
+      line = method.getDeclSourceLocation();
+    } else {
+      line = lines.get(0);
+    }
+    if (line != null) {
+      String className = line.getClz();
+      IEditorPart openedEditor = openEditor(project, className, activate);
+      if (openedEditor != null && openedEditor instanceof ITextEditor) {
+        ITextEditor textEditor = (ITextEditor) openedEditor;
+        IDocument document =
+            textEditor.getDocumentProvider().getDocument(
+              textEditor.getEditorInput());
+        int lineNumber = line.getLine();
+        int offset;
+        try {
+            offset = document.getLineOffset(lineNumber - 1);
+            int length = document.getLineLength(lineNumber - 1);
+            textEditor.selectAndReveal(offset, length);
+        } catch (BadLocationException e) {
+            logger.debug("Exception while creating editor for line {}", line);
+            e.printStackTrace();
+        }
       }
     }
   }

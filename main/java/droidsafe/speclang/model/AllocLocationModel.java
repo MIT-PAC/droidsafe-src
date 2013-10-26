@@ -126,7 +126,7 @@ public class AllocLocationModel extends CodeLocationModel {
     }
 
     /**
-     * Return the source line model for the give AllocNode. Return empty set of any problems.
+     * Return the source line model for the give AllocNode. Return null if there are any problems.
      */
     public static AllocLocationModel get(AllocNode node) {
         AllocLocationModel line = map.get(node);

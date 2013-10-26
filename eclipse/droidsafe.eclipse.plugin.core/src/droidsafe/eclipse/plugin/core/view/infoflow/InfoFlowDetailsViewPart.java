@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view.pointsto;
+package droidsafe.eclipse.plugin.core.view.infoflow;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -19,44 +19,49 @@ import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 import droidsafe.speclang.model.MethodModel;
 
 /**
- * View for displaying the points-to info on the receiver/arguments of a given method. 
+ * View for displaying the info flow on the receiver/arguments of a given method. 
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class PointsToViewPart extends MethodInfoOutlineViewPart {
+public class InfoFlowDetailsViewPart extends MethodInfoOutlineViewPart {
 
     /** The ID of the view as specified by the extension. */
-    public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.PointsToView";
+    public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.InfoFlowDetailslView";
 
     /** The text displayed on the empty page. */
-    protected static String EMPTY_PAGE_LABEL = "To display the points-to info, first select a method from the 'Security Spec Outline'";
+    protected static String EMPTY_PAGE_LABEL = "To display the high-level info flow info, first select a method from the 'Security Spec Outline'";
     
     @Override
-    protected IBaseLabelProvider makeLabelProvider() {
-        return new PointsToTreeElementLabelProvider();
+    protected ITreeContentProvider makeContentProvider() {
+        return new InfoFlowDetailsTreeElementContentProvider();
     }
 
     @Override
-    protected ITreeContentProvider makeContentProvider() {
-        return new PointsToTreeElementContentProvider();
+    protected IBaseLabelProvider makeLabelProvider() {
+        return new InfoFlowDetailsTreeElementLabelProvider();
     }
-    
+
     @Override
     protected String emptyPageText() {
         return EMPTY_PAGE_LABEL;
     }
     
+    @Override
+    protected int autoExpandLevel() {
+      return 3;
+    }
+
     /**
      * Open the outline view for the given input element.
      */
     public static void openView(MethodModel inputElement) {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
-        PointsToViewPart view = (PointsToViewPart) activePage.findView(VIEW_ID);
+        InfoFlowDetailsViewPart view = (InfoFlowDetailsViewPart) activePage.findView(VIEW_ID);
         if (view == null) {
             // open the view
             try {
-                view = (PointsToViewPart) activePage.showView(VIEW_ID);
+                view = (InfoFlowDetailsViewPart) activePage.showView(VIEW_ID);
             } catch (PartInitException e) {
                 e.printStackTrace();
             }

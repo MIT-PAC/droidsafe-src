@@ -362,21 +362,20 @@ public class Method implements Comparable<Method> {
 	 * For the receiver of this method, return the set of all api calls in user code that 
 	 * could reach the receiver (or one of its fields).
 	 */
-	public Set<SourceLocationTag> getReceiverSourceInfoUnits() {
+	public Set<Stmt> getReceiverSourceInfoUnits() {
 	    //call the information flow results
 	    if (!hasReceiver())
 	        return Collections.emptySet();
 	                
 	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
 	    	    
-	    Set<SourceLocationTag> srcSrcs = new HashSet<SourceLocationTag>();
+	    Set<Stmt> srcSrcs = new HashSet<Stmt>();
 	    for (InfoValue iv : srcs) {
 	        if (iv instanceof InfoUnit) {
 	            InfoUnit srcUnit = (InfoUnit)iv;
 	            if (!(srcUnit.getUnit() instanceof Stmt))
 	                continue;
-	            SourceLocationTag tag = SootUtils.getSourceLocation((Stmt)srcUnit.getUnit());
-	            srcSrcs.add(tag);
+	            srcSrcs.add((Stmt)srcUnit.getUnit());
 	        }
 	    }
 	    
@@ -387,17 +386,16 @@ public class Method implements Comparable<Method> {
 	 * For argument at i return the set of all api calls in user code that could reach the 
 	 * argument (or one of its fields).
 	 */
-	public Set<SourceLocationTag> getArgSourceInfoUnits(int i) {
+	public Set<Stmt> getArgSourceInfoUnits(int i) {
 	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getArgValue(i));	    
 	    
-        Set<SourceLocationTag> srcSrcs = new HashSet<SourceLocationTag>();
+        Set<Stmt> srcSrcs = new HashSet<Stmt>();
         for (InfoValue iv : srcs) {
             if (iv instanceof InfoUnit) {
                 InfoUnit srcUnit = (InfoUnit)iv;
                 if (!(srcUnit.getUnit() instanceof Stmt))
                     continue;
-                SourceLocationTag tag = SootUtils.getSourceLocation((Stmt)srcUnit.getUnit());
-                srcSrcs.add(tag);
+                  srcSrcs.add((Stmt)srcUnit.getUnit());
             }
         }
         

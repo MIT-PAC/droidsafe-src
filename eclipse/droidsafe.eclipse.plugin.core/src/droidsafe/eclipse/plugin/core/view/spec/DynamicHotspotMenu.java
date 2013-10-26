@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view;
+package droidsafe.eclipse.plugin.core.view.spec;
 
 import org.eclipse.jface.action.ContributionItem;
 import org.eclipse.jface.viewers.ISelection;

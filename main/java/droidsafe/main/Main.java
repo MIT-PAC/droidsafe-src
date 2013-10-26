@@ -357,6 +357,8 @@ public class Main {
       if (spec != null) {
         SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+        SecuritySpecModel.printInfoFlowSummary(securitySpecModel, Config.v().APP_ROOT_DIR);
+        SecuritySpecModel.printInfoFlowDetails(securitySpecModel, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.printPointsToInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
       }
       monitor.worked(1);

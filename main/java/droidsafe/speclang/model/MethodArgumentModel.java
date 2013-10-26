@@ -1,9 +1,6 @@
-package droidsafe.eclipse.plugin.core.view.pointsto;
+package droidsafe.speclang.model;
 
 import java.util.List;
-
-import droidsafe.speclang.model.AllocLocationModel;
-import droidsafe.speclang.model.MethodModel;
 
 /**
  * Representation of the receiver or an argument of a method call.
@@ -58,13 +55,28 @@ public class MethodArgumentModel {
      * Return the lines for new expressions that could reach this method receiver/argument.
      */
     public List<AllocLocationModel> getAllocSources() {
-        return (isReceiver()) ? method.getReceiverAllocSources() : method.getArgumentAllocSources(argumentIndex);
+        return method.getArgumentAllocSources(argumentIndex);
+    }
+
+    /**
+     * Return the the list of high level information kinds that the receiver/argument could possibly 
+     * be tainted with.
+     */
+    public List<String> getInfoKinds() {
+        return method.getArgumentInfoKinds(argumentIndex);
+    }
+
+    /**
+     * Return the the list of all api calls in user code that could reach the receiver/argument.
+     */
+    public List<CallLocationModel> getSourceInfoUnits() {
+        return method.getArgumentSourceInfoUnits(argumentIndex);
     }
 
     @Override
     public String toString() {
-        String val = (isReceiver()) ? method.getReceiver() : method.getArgumentValue(argumentIndex);
-        return getShortDesc() + " - " + val;
+        String type = (isReceiver()) ? method.getReturnType() : method.getMethodArguments().get(argumentIndex);
+        return getShortDesc() + ": " + type;
     }
     
     /**

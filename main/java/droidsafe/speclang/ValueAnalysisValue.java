@@ -34,6 +34,14 @@ public class ValueAnalysisValue extends ConcreteArgumentValue {
         return mObj.toString();
     }
     
+    @Override
+    /**
+     * Return a well-formatted detailed printout of this value
+     */
+    public String toStringPretty() {
+        return mObj.toStringPretty();
+    }
+    
     /**
      * Return a string rep of the modeled object.
      */

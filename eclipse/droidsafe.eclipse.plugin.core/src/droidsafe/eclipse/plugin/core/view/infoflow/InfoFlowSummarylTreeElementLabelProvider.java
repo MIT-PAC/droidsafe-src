@@ -1,22 +1,21 @@
-package droidsafe.eclipse.plugin.core.view.pointsto;
+package droidsafe.eclipse.plugin.core.view.infoflow;
 
 import org.eclipse.swt.graphics.Image;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
-import droidsafe.speclang.model.AllocLocationModel;
-import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
+import droidsafe.speclang.model.MethodModel;
 
 /**
- * Label provider for the nodes of the points-to outline view.
+ * Label provider for the nodes of the info flow outline view.
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class PointsToTreeElementLabelProvider extends MethodInfoTreeElementLabelProvider {
-
+public class InfoFlowSummarylTreeElementLabelProvider extends MethodInfoTreeElementLabelProvider {
+    
     /**
      * Returns the label for the tree node to display in the tree outline view.
      * 
@@ -28,16 +27,9 @@ public class PointsToTreeElementLabelProvider extends MethodInfoTreeElementLabel
         if (element instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
             Object data = treeElement.getData();
-            if (data instanceof AllocLocationModel) {
-                AllocLocationModel loc = (AllocLocationModel) data;
-                return "<new> " + loc;
-            } else if (data instanceof CallLocationModel) {
-                CallLocationModel loc = (CallLocationModel) data;
-                return "<call> " + loc;
-            }
             return data.toString();
         }
-        return element.toString();
+        return super.getText(element);
     }
 
     /**
@@ -46,20 +38,17 @@ public class PointsToTreeElementLabelProvider extends MethodInfoTreeElementLabel
      * @param element The tree node element to display.
      * @return The icon image to display together with the label in the outline view.
      */
-    @Override
     public Image getImage(Object element) {
         if (element instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
             Object data = treeElement.getData();
-            if (data instanceof AllocLocationModel) {
-                return DroidsafeImages.ALLOC_NODE_IMAGE;
-            } else if (data instanceof CallLocationModel) {
-                return DroidsafeImages.CODE_LOC_IMAGE;
-            } else if (data instanceof MethodArgumentModel) {
-                MethodArgumentModel methArg = (MethodArgumentModel) data;
-                if (methArg.isReceiver())
-                    return DroidsafeImages.METHOD_RECEIVER_IMAGE;
-                return DroidsafeImages.METHOD_ARG_IMAGE;
+            if (data instanceof MethodModel) {
+                MethodModel meth = (MethodModel) data;
+                if (meth.isSafe())
+                    return DroidsafeImages.SAFE_ANDROID_WITH_INFO_IMAGE;
+                return DroidsafeImages.UNSAFE_ANDROID_WITH_INFO_IMAGE;
+            } else if (data instanceof String) {
+                return DroidsafeImages.INFO_FLOW_IMAGE;
             }
         }
         return null;

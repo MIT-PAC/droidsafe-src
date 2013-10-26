@@ -35,7 +35,7 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
   /**
    * Current status of the code location.
    */
-  private DroidsafeIssueResolutionStatus status = DroidsafeIssueResolutionStatus.UNRESOLVED;
+  private DroidsafeIssueResolutionStatus status = DroidsafeIssueResolutionStatus.UNSAFE;
 
   /** Element to support updates to the object to be communicated to the UI. */
   private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);

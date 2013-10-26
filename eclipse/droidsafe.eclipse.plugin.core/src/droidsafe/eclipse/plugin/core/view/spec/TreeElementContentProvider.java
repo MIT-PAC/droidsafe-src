@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view;
+package droidsafe.eclipse.plugin.core.view.spec;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -210,27 +210,40 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
         }
 
         for (MethodModel inputMethod : outputEventBlocks.get(apiMethod).keySet()) {
-          TreeElement<MethodModel, CodeLocationModel> inputElement =
-              new TreeElement<MethodModel, CodeLocationModel>(inputMethod.getShortSignature(),
-                  inputMethod, CodeLocationModel.class);
+          TreeElement<MethodModel, Object> inputElement =
+              new TreeElement<MethodModel, Object>(inputMethod.getShortSignature(),
+                  inputMethod, Object.class);
           apiElement.addChild(inputElement);
           updatePropertyChangeListener(inputMethod, inputElement);
 
           List<CodeLocationModel> locations = outputEventBlocks.get(apiMethod).get(inputMethod);
           if (locations != null) {
-            for (CodeLocationModel location : locations) {
-              TreeElement<CodeLocationModel, HotspotModel> locationElement =
-                  new TreeElement<CodeLocationModel, HotspotModel>(location.toString(), location,
-                      HotspotModel.class);
-              inputElement.addChild(locationElement);
-              updatePropertyChangeListener(location, locationElement);
+            if (locations != null) {
+              if (locations.size() == 1) {
+                CodeLocationModel location = locations.get(0);
+                List<HotspotModel> hotspots = location.getHotspots();
+                for (HotspotModel hotspot : hotspots) {
+                  TreeElement<Object, Object> hotspotElement =
+                      new TreeElement<Object, Object>(hotspot.toString(), hotspot, Object.class);
+                  inputElement.addChild(hotspotElement);
+                  updatePropertyChangeListener(hotspot, hotspotElement);
+                }
+              } else {
+                for (CodeLocationModel location : locations) {
+                  TreeElement<Object, HotspotModel> locationElement =
+                      new TreeElement<Object, HotspotModel>(location.toString(), location,
+                          HotspotModel.class);
+                  inputElement.addChild(locationElement);
+                  updatePropertyChangeListener(location, locationElement);
 
-              List<HotspotModel> hotspots = location.getHotspots();
-              for (HotspotModel hotspot : hotspots) {
-                TreeElement<HotspotModel, Object> hotspotElement =
-                    new TreeElement<HotspotModel, Object>(hotspot.toString(), hotspot, Object.class);
-                locationElement.addChild(hotspotElement);
-                updatePropertyChangeListener(hotspot, hotspotElement);
+                  List<HotspotModel> hotspots = location.getHotspots();
+                  for (HotspotModel hotspot : hotspots) {
+                    TreeElement<HotspotModel, Object> hotspotElement =
+                        new TreeElement<HotspotModel, Object>(hotspot.toString(), hotspot, Object.class);
+                    locationElement.addChild(hotspotElement);
+                    updatePropertyChangeListener(hotspot, hotspotElement);
+                  }
+                }
               }
             }
           }
@@ -298,8 +311,8 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   private void createModelWithEntryPointAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     Map<MethodModel, List<MethodModel>> inputEventBlocks = this.model.getInputEventBlocks();
     if (inputEventBlocks != null) {
-      Map<String, TreeElement<MethodModel, CodeLocationModel>> localNodeLabelToTreeElementMap =
-          new HashMap<String, TreeElement<MethodModel, CodeLocationModel>>();
+      Map<String, TreeElement<MethodModel, Object>> localNodeLabelToTreeElementMap =
+          new HashMap<String, TreeElement<MethodModel, Object>>();
 
       for (MethodModel inputMethod : inputEventBlocks.keySet()) {
         localNodeLabelToTreeElementMap.clear();
@@ -311,12 +324,12 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
 
         for (MethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
           String methodSignature = outputMethod.getShortSignature();
-          TreeElement<MethodModel, CodeLocationModel> outputElement =
+          TreeElement<MethodModel, Object> outputElement =
               localNodeLabelToTreeElementMap.get(methodSignature);
           if (outputElement == null) {
             outputElement =
-                new TreeElement<MethodModel, CodeLocationModel>(methodSignature, outputMethod,
-                    CodeLocationModel.class);
+                new TreeElement<MethodModel, Object>(methodSignature, outputMethod,
+                    Object.class);
             inputElement.addChild(outputElement);
             updatePropertyChangeListener(outputMethod, outputElement);
             localNodeLabelToTreeElementMap.put(methodSignature, outputElement);
@@ -324,21 +337,31 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
 
           List<CodeLocationModel> locations = outputMethod.getLines();
           if (locations != null) {
-            for (CodeLocationModel location : locations) {
-              TreeElement<CodeLocationModel, HotspotModel> locationElement =
-                  new TreeElement<CodeLocationModel, HotspotModel>(location.toString(), location,
-                      HotspotModel.class);
-              outputElement.addChild(locationElement);
-              updatePropertyChangeListener(location, locationElement);
-
+            if (locations.size() == 1) {
+              CodeLocationModel location = locations.get(0);
               List<HotspotModel> hotspots = location.getHotspots();
               for (HotspotModel hotspot : hotspots) {
-                TreeElement<HotspotModel, Object> hotspotElement =
-                    new TreeElement<HotspotModel, Object>(hotspot.toString(), hotspot, Object.class);
-                locationElement.addChild(hotspotElement);
+                TreeElement<Object, Object> hotspotElement =
+                    new TreeElement<Object, Object>(hotspot.toString(), hotspot, Object.class);
+                outputElement.addChild(hotspotElement);
                 updatePropertyChangeListener(hotspot, hotspotElement);
               }
+            } else {
+              for (CodeLocationModel location : locations) {
+                TreeElement<Object, HotspotModel> locationElement =
+                    new TreeElement<Object, HotspotModel>(location.toString(), location,
+                        HotspotModel.class);
+                outputElement.addChild(locationElement);
+                updatePropertyChangeListener(location, locationElement);
 
+                List<HotspotModel> hotspots = location.getHotspots();
+                for (HotspotModel hotspot : hotspots) {
+                  TreeElement<HotspotModel, Object> hotspotElement =
+                      new TreeElement<HotspotModel, Object>(hotspot.toString(), hotspot, Object.class);
+                  locationElement.addChild(hotspotElement);
+                  updatePropertyChangeListener(hotspot, hotspotElement);
+                }
+              }
             }
           }
         }
