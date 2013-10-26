@@ -76,7 +76,7 @@ public class Config {
   /** Methods on which to export information flows in DOT */
   public String[] infoFlowDotMethods;
   /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
-  public boolean infoFlowTrackAll = false;
+  public boolean infoFlowTrackAll = true;
 
   /**
    * If true, classes loaded from android.jar will be treated as application classes and analysis
