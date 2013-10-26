@@ -90,6 +90,8 @@ public class ClassCloner {
             original.getModifiers());
         uniqueID++;
         
+        //System.out.printf("Cloning class %s with %s.\n", original, clone);
+        
         //set parent
         if (original.isFinal()) {
             //change final modifier
@@ -184,7 +186,7 @@ public class ClassCloner {
         //create all methods, cloning body, replacing instance field refs
         for (SootMethod ancestorM : ancestor.getMethods()) {
             if (ancestorM.isAbstract() || ancestorM.isPhantom() || !ancestorM.isConcrete() || 
-                    SootUtils.isRuntimeStubMethod(ancestorM) || ancestorM.getSource() == null)
+                    SootUtils.isRuntimeStubMethod(ancestorM))
                 continue;
                 
             //never clone static methods
@@ -193,14 +195,14 @@ public class ClassCloner {
             
             //check if this method already exists
             if (containsMethod(ancestorM.getSignature())) {
-                //System.out.printf("\tAlready contains method %s\n.", ancestorM);
+                //System.out.printf("\tAlready contains method %s.\n", ancestorM);
                 continue;
             }
             
             SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
                 ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
             
-            //System.out.printf("\tAdding method %s\n.", ancestorM);
+            //System.out.printf("\tAdding method %s.\n", ancestorM);
             //register method
             methods.addMethod(newMeth);
             clone.addMethod(newMeth);

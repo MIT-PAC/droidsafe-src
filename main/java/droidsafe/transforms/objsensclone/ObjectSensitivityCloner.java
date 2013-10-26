@@ -75,13 +75,7 @@ public class ObjectSensitivityCloner {
      */
     public static void run() {
         int clonedClasses = 0;
-
-        List<SootClass> classes = new LinkedList<SootClass>();
-        for (SootClass clz : Scene.v().getClasses()) {
-            classes.add(clz);
-        }
-
-
+        
         for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
             //if (API.v().isSystemMethod(method))
             //    continue;
@@ -104,7 +98,7 @@ public class ObjectSensitivityCloner {
                         SootClass base = oldNewExpr.getBaseType().getSootClass();
                         String baseClassName = base.getName();
                         if (VA_RESOLVED_CLASSES.contains(base) && !CLASSES_TO_NOT_CLONE.contains(baseClassName)) {
-                            logger.info("Found new expr to replace and clone class: %s %s\n",
+                            logger.info("Found new expr to replace and clone class: {} {}\n",
                                 method, assign);
 
                             //now change the constructor call after find the appropriate call to change
