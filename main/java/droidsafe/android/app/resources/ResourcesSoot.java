@@ -787,8 +787,9 @@ public class ResourcesSoot {
 
         units.add(Jimple.v().newAssignStmt(localView, newExpr));
 
+        //constructor call, use invoke special
         units.add(Jimple.v().newInvokeStmt(
-                    Jimple.v().newVirtualInvokeExpr(localView, viewInitMethod.makeRef(), 
+                    Jimple.v().newSpecialInvokeExpr(localView, viewInitMethod.makeRef(), 
                                 argContext))); 
 
         for (String attrName: obj.attributes.keySet()) {
@@ -980,7 +981,7 @@ public class ResourcesSoot {
     	units.add(Jimple.v().newAssignStmt(localFragment, newExpr));
 
     	units.add(Jimple.v().newInvokeStmt(
-    			Jimple.v().newVirtualInvokeExpr(localFragment, initMethod.makeRef())));
+    			Jimple.v().newSpecialInvokeExpr(localFragment, initMethod.makeRef())));
 
     	units.add(Jimple.v().newAssignStmt(fieldRef, localFragment));
 
