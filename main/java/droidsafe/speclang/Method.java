@@ -342,7 +342,7 @@ public class Method implements Comparable<Method> {
 	    if (APIInfoKindMapping.v().hasSinkInfoKind(sootMethod)) {
 	        return APIInfoKindMapping.v().getSinkInfoKinds(sootMethod);
 	    }
-	    return Collections.emptySet();
+	    return new HashSet<InfoKind>();
 	}
 
 	/**
@@ -351,7 +351,7 @@ public class Method implements Comparable<Method> {
 	 */
 	private Set<InfoValue> queryInfoFlow(Value val) {
 	    if (!Config.v().infoFlow || !(val instanceof Local))
-            return Collections.emptySet();
+            return new HashSet<InfoValue>();
         
         Unit unit = JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr());
         //call the information flow results
@@ -365,7 +365,7 @@ public class Method implements Comparable<Method> {
 	public Set<Stmt> getReceiverSourceInfoUnits() {
 	    //call the information flow results
 	    if (!hasReceiver())
-	        return Collections.emptySet();
+	        return new HashSet<Stmt>();
 	                
 	    Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
 	    	    
@@ -463,7 +463,7 @@ public class Method implements Comparable<Method> {
 	    if (hasReceiver())
 	        return getInfoKinds(ptaInfo.getReceiver());
 	    else 
-	        return Collections.emptySet();
+	        return new HashSet<InfoKind>();
 	}
 
 	/**
