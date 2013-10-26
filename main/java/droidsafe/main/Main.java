@@ -327,6 +327,7 @@ public class Main {
             logger.error(exp.toString());
         }
         timer.stop();
+        droidsafe.stats.AvgInfoFlowSetSize.run();
         driverMsg("Finished Information Flow Analysis: " + timer);
     }
     monitor.worked(1);
