@@ -8,6 +8,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Local;
 import soot.SootMethod;
 import soot.Value;
 import soot.jimple.AnyNewExpr;
@@ -56,9 +57,9 @@ public class TestPTA implements CGVisitorEntryContext {
     }
     
     private void testMethod(SootMethod sm, Edge context) {
-        if (API.v().isSystemMethod(sm))
-            return;
-        
+        //if (API.v().isSystemMethod(sm))
+        //    return;
+                
         numMethods++;
         System.out.println("Test Method: " + sm);
         
@@ -86,7 +87,7 @@ public class TestPTA implements CGVisitorEntryContext {
 
             InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(st);
 
-            if (iie != null) {
+            if (false) {
                 
                 System.out.println("Instance Invoke: " + st);
                 System.out.println("Context: " + context);
@@ -103,7 +104,8 @@ public class TestPTA implements CGVisitorEntryContext {
                 }
                 System.out.println();
                
-            } else  if (st instanceof AssignStmt) {
+            }
+            if (st instanceof AssignStmt) {
 
                 AssignStmt a = (AssignStmt) st;
                 try {
@@ -138,13 +140,13 @@ public class TestPTA implements CGVisitorEntryContext {
                             System.out.println("** Empty RHS: " + a.getRightOp());
                         }
 
-                        if (!lhsNodes.containsAll(rhsNodes)) {
+                        if (a.getLeftOp() instanceof Local && !lhsNodes.containsAll(rhsNodes)) {
                             System.out.println(sm + "\nAssign: " + st);
                             System.out.println("  Context: " + context);
-                            System.out.println("RHS:");
+                            System.out.println("RHS: " + a.getRightOp() + " " + a.getRightOp().getClass());
                             for (AllocNode node : rhsNodes) 
                                 System.out.println("  " + node);
-                            System.out.println("LHS:");
+                            System.out.println("LHS: " + a.getLeftOp() + " " + a.getLeftOp().getClass());
                             for (AllocNode node : lhsNodes) 
                                 System.out.println("  " + node);
                             if (a.getLeftOp() instanceof InstanceFieldRef) {
@@ -160,7 +162,7 @@ public class TestPTA implements CGVisitorEntryContext {
                         for (AllocNode node : GeoPTA.v().getPTSetContextIns(a.getLeftOp()))
                             System.out.println("  " + node);
                              */
-                       }
+                          }
                     }
                 } catch (Exception e) {
                     logger.error("Error with PTA: {}", st, e);
