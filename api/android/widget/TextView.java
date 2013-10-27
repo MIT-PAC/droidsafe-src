@@ -3,7 +3,6 @@ package android.widget;
 // Droidsafe Imports
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
-
 import droidsafe.runtime.*;
 import android.R;
 import android.content.ClipData;
@@ -124,9 +123,12 @@ import android.view.textservice.SpellCheckerSubtype;
 import android.view.textservice.TextServicesManager;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.RemoteViews.RemoteView;
+
 import com.android.internal.util.FastMath;
 import com.android.internal.widget.EditableInputConnection;
+
 import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.text.BreakIterator;
@@ -319,8 +321,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private Layout mSavedMarqueeModeLayout;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.444 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "6CF16E724237A2841199FB30284CED38")
 
+    @DSVAModeled
+    private String TEXT;
+    
     @ViewDebug.ExportedProperty(category = "text") 
-    @DSVAModeled 
     private CharSequence mText;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.444 -0400", hash_original_field = "116BEBA84C265E44D657283E75BE60A1", hash_generated_field = "30221785C9497266E9C8ABBDFDCBE7EC")
 
@@ -493,6 +497,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.455 -0400", hash_original_field = "28E8D15C0BD03E974FEC7876975B1D1F", hash_generated_field = "946F5E9D92C681851A4147B34C44B028")
 
     private CorrectionHighlighter mCorrectionHighlighter;
+    
+    @DSModeled(DSC.SAFE) 
+    public void setTextDS(String text) {
+        this.TEXT = text;
+    }
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.455 -0400", hash_original_method = "16A18A865F32B95685EAC04EF434D4B5", hash_generated_method = "E4C2F370BE90FD637853CF92939C9374")
