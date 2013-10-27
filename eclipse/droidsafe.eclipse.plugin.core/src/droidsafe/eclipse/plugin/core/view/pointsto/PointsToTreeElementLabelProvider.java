@@ -2,6 +2,7 @@ package droidsafe.eclipse.plugin.core.view.pointsto;
 
 import org.eclipse.swt.graphics.Image;
 
+import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
@@ -30,7 +31,11 @@ public class PointsToTreeElementLabelProvider extends MethodInfoTreeElementLabel
             Object data = treeElement.getData();
             if (data instanceof AllocLocationModel) {
                 AllocLocationModel loc = (AllocLocationModel) data;
-                return "<new> " + loc;
+                if (loc.getFromAPI()) {
+                    return "<new> (from API)";
+                } else {
+                    return "<new> " + loc;
+                }
             } else if (data instanceof CallLocationModel) {
                 CallLocationModel loc = (CallLocationModel) data;
                 return "<call> " + loc;

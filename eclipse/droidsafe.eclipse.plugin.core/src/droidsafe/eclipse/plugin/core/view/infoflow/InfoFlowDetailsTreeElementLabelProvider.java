@@ -28,7 +28,7 @@ public class InfoFlowDetailsTreeElementLabelProvider extends MethodInfoTreeEleme
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
             Object data = treeElement.getData();
             if (data instanceof String && treeElement.getParent() != null) {
-                return "<kinds> " + data;
+                return data.toString();
             } else if (data instanceof CallLocationModel) {
                 CallLocationModel loc = (CallLocationModel) data;
                 return "<call> " + loc;
