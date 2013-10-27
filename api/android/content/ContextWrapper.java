@@ -117,7 +117,7 @@ public class ContextWrapper extends Context {
 
     
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public ContentResolver getContentResolver() {
     	return mBase.getContentResolver();
     }

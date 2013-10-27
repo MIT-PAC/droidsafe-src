@@ -112,7 +112,7 @@ public abstract class ContentResolver {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
    /**
     * On this query call, we want the information flow taint to flow from the
     * query call to the underlying cursor.  So just create a cursor and return it.
