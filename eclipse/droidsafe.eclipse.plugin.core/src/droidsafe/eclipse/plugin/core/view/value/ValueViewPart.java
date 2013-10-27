@@ -113,9 +113,11 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
     static Map<MethodModel, String> methodToValuesText = new HashMap<MethodModel, String>();
     
     private String getValuesText(MethodModel method) {
-        String valuesText = methodToValuesText.get(method);
-        if (valuesText == null) {
-            if (method.hasValueInfo()) {
+        if (!method.hasValueInfo()) {
+            return "";
+        } else {
+            String valuesText = methodToValuesText.get(method);
+            if (valuesText == null) {
                 StringBuffer buf = new StringBuffer();
                 List<String> argTypes = method.getMethodArguments();
                 for (int i = 0; i < argTypes.size(); i++) {
@@ -133,10 +135,9 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
                 }
                 valuesText = buf.toString();
                 methodToValuesText.put(method, valuesText);
-                return valuesText;
             }
-        }
-        return "";
+            return valuesText;
+        } 
     }
 
     /**

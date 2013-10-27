@@ -582,6 +582,12 @@ public class MethodModel extends ModelChangeSupport
     if (methodSignature == null) {
       if (other.methodSignature != null) return false;
     } else if (!methodSignature.equals(other.methodSignature)) return false;
+    if ((methodArgumentValues == null) != (other.methodArgumentValues == null)) {
+        return false;
+    } else if (methodArgumentValues != null) {
+        if (!methodArgumentValues.toString().equals(other.methodArgumentValues.toString()))
+            return false;
+    }
     if (declarationLocation == null) {
       if (other.declarationLocation != null) return false;
     } else if (!declarationLocation.equals(other.declarationLocation)) return false;
@@ -622,6 +628,17 @@ public class MethodModel extends ModelChangeSupport
         }
       }
     }
+    if (result == 0)
+        if (methodArgumentValues == null) {
+            if (m.methodArgumentValues != null)
+                result = 1;
+        } else {
+            if (m.methodArgumentValues == null) {
+                result = -1;
+            } else {
+                result = methodArgumentValues.toString().compareTo(m.methodArgumentValues.toString());
+            }
+        }
     return result;
   }
 
