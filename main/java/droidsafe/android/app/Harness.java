@@ -263,7 +263,7 @@ public class Harness {
 
 			// call default constructor
 			Stmt initStmt = Jimple.v().newInvokeStmt(
-					Jimple.v().newVirtualInvokeExpr(intentFilterLocal, intentFilterInit.makeRef()));
+					Jimple.v().newSpecialInvokeExpr(intentFilterLocal, intentFilterInit.makeRef()));
 			
 			body.getUnits().add(initStmt);
 			

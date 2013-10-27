@@ -774,8 +774,9 @@ public class ResourcesSoot {
 
         units.add(Jimple.v().newAssignStmt(localView, newExpr));
 
+        //view.init<>
         units.add(Jimple.v().newInvokeStmt(
-                    Jimple.v().newVirtualInvokeExpr(localView, viewInitMethod.makeRef(), 
+                    Jimple.v().newSpecialInvokeExpr(localView, viewInitMethod.makeRef(), 
                                 argContext))); 
 
         for (String attrName: obj.attributes.keySet()) {
