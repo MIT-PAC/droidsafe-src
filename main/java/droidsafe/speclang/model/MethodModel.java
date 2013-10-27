@@ -182,7 +182,7 @@ public class MethodModel extends ModelChangeSupport
     if (originalMethod.hasReceiver()) {
       Object receiver = originalMethod.getReceiver();
       if (receiver instanceof ConcreteListArgumentValue) {
-          this.receiverValue = receiver.toString();
+          this.receiverValue = ((ConcreteListArgumentValue) receiver).toStringPretty().toString();
       }
       this.receiverType = originalMethod.getSootMethod().getDeclaringClass().getName();
       setReceiverAllocSources(originalMethod);
