@@ -64,34 +64,47 @@ public class InjectedSourceFlows {
     private static InjectedSourceFlows v;
 
     /** results of this analysis, map from allocnodes to the flows injected */
-    private Map<AllocNode, Set<MyKind>> injectedFlows;
+    private Map<AllocNode, Set<InfoKind>> injectedFlows;
 
     /**
      * This map defines the flows we will inject based on values of fields.  
      * 
      * fully qualified field name -> object-> kind
      */
-    private static Map<String, Map<Object, MyKind>> flowsToInject = new LinkedHashMap<String, Map<Object, MyKind>>() {{
-
-        put("android.net.Uri.uriString", 
-                new LinkedHashMap<Object,MyKind>() {{
-                    put("person", MyKind.CONTACTS);
-                    put("content://browser/bookmarks", MyKind.BROWSER_BOOKMARKS);
-                    put("content://browser/bookmarks", MyKind.BROWSER_HISTORY);
-                }});
-
-    }};
+    private static Map<String, Map<Object, InfoKind>> flowsToInject;
+    
+    private void initFlowsToInject() {
+       flowsToInject  = new 
+                LinkedHashMap<String, Map<Object, InfoKind>>();
+       
+       flowsToInject.put("android.net.Uri.uriString", 
+                    new LinkedHashMap<Object,InfoKind>() {{
+                        put("person", InfoKind.getInfoKind("CONTACT_INFORMATION"));
+                        put("contact", InfoKind.getInfoKind("CONTACT_INFORMATION"));
+                        put("content://browser/bookmarks", InfoKind.getInfoKind("BROWSER_INFORMATION"));
+                        put("content://browser/bookmarks", InfoKind.getInfoKind("BROWSER_INFORMATION"));
+                    }});
+                  
+    }
+    
+    /**
+     * Private (to enforce singleton pattern) class constructor that runs the analysis
+     */
+    private InjectedSourceFlows() {
+        initFlowsToInject();
+        this.injectedFlows = new LinkedHashMap<AllocNode, Set<InfoKind>>();
+    }
 
     /**
      * This map defines the flows we will inject based on classes.
      *
      * fully qualified class name -> set of kinds
      */
-    private static Map<String, Set<MyKind>> classNameToFlows = new HashMap<String, Set<MyKind>>();
+    private static Map<String, Set<InfoKind>> classNameToFlows = new HashMap<String, Set<InfoKind>>();
     static {
         {
-            Set<MyKind> kinds = new HashSet<MyKind>();
-            kinds.add(MyKind.LOCATION);
+            Set<InfoKind> kinds = new HashSet<InfoKind>();
+            kinds.add(InfoKind.getInfoKind("LOCATION_INFORMATION"));
             classNameToFlows.put("android.location.Location", kinds);
         }
     }
@@ -105,9 +118,9 @@ public class InjectedSourceFlows {
         
         logger.info("Injected Flows: \n");
          
-        for (Entry<AllocNode, Set<MyKind>> entry: v.injectedFlows.entrySet()) {
+        for (Entry<AllocNode, Set<InfoKind>> entry: v.injectedFlows.entrySet()) {
             logger.info(entry.getKey().toString());
-            for (MyKind kind : entry.getValue())
+            for (InfoKind kind : entry.getValue())
                 logger.info("  " + kind);
         }
          
@@ -123,7 +136,7 @@ public class InjectedSourceFlows {
     /**
      * Return the set of injected flows for this allocation site.
      */
-    public Set<MyKind> getInjectedFlows(AllocNode node) {
+    public Set<InfoKind> getInjectedFlows(AllocNode node) {
         Object newExpr = GeoPTA.v().getNewExpr(node);
         if (newExpr instanceof NewExpr) {
             String className = ((NewExpr)newExpr).getBaseType().getClassName();
@@ -135,7 +148,7 @@ public class InjectedSourceFlows {
         if (injectedFlows.containsKey(node)) {
             return injectedFlows.get(node);
         } else {
-            return new LinkedHashSet<MyKind>();
+            return new LinkedHashSet<InfoKind>();
         }
     }
 
@@ -148,7 +161,7 @@ public class InjectedSourceFlows {
         Set<SootClass> classesToInspect = new LinkedHashSet<SootClass>();
 
         //map from field of the modeled class to the value->kind maps.
-        Map<SootField, Map<Object, MyKind>> fieldFlowMap = new LinkedHashMap<SootField, Map<Object, MyKind>>();
+        Map<SootField, Map<Object, InfoKind>> fieldFlowMap = new LinkedHashMap<SootField, Map<Object, InfoKind>>();
 
         //map from modeled class class to field of that class that has an injected flow definition
         Map<SootClass, Set<SootField>> trackedFields = new LinkedHashMap<SootClass, Set<SootField>>(); 
@@ -195,7 +208,7 @@ public class InjectedSourceFlows {
                         //Value analysis stores all results as sets
                         Set<VAModel> values = modeledClass.getFieldVAModels(field);
 
-                        Set<MyKind> flowsFound = test(values, fieldFlowMap.get(field));
+                        Set<InfoKind> flowsFound = test(values, fieldFlowMap.get(field));
                         if (flowsFound.size() > 0)
                             injectedFlows.put(node, flowsFound);
                     }
@@ -213,11 +226,11 @@ public class InjectedSourceFlows {
      * 
      * For strings, use value.contains(testValue) otherwise use .equals()
      */
-    private Set<MyKind> test(Set<VAModel> values, Map<Object, MyKind> possibleFlows) {
-        Set<MyKind> kindsFound = new LinkedHashSet<MyKind>();
+    private Set<InfoKind> test(Set<VAModel> values, Map<Object, InfoKind> possibleFlows) {
+        Set<InfoKind> kindsFound = new LinkedHashSet<InfoKind>();
 
         for (VAModel value : values) {
-            for (Entry<Object, MyKind> flowTest : possibleFlows.entrySet()) {
+            for (Entry<Object, InfoKind> flowTest : possibleFlows.entrySet()) {
                 boolean testTrue = false;
 
                 logger.info("** Testing: %s (%s) and %s (%s)\n", value, value.getClass(), 
@@ -256,14 +269,9 @@ public class InjectedSourceFlows {
         return fullFieldName.substring(0, fullFieldName.lastIndexOf('.'));
     }
 
-    /**
-     * Private (to enforce singleton pattern) class constructor that runs the analysis
-     */
-    private InjectedSourceFlows() {
-        this.injectedFlows = new LinkedHashMap<AllocNode, Set<MyKind>>();
-    }
+   
 
-    public Map<SootField, Set<MyKind>> getInjectedFlows(AllocNode allocNode, Edge entryEdge) {
+    public Map<SootField, Set<InfoKind>> getInjectedFlows(AllocNode allocNode, Edge entryEdge) {
         logger.error("Don't call this anymore!");
         droidsafe.main.Main.exit(1);
         return null;
