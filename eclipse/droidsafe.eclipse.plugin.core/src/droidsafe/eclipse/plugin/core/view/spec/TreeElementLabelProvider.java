@@ -86,7 +86,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       Object data = ((TreeElement<?, ?>) element).getData();
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
-        String receiver = method.getReceiver();
+        String receiver = method.getReceiverValue();
         if (receiver == null) {
           receiver = "";
         } else if (!receiver.equals("")) {

@@ -119,11 +119,18 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
             String valuesText = methodToValuesText.get(method);
             if (valuesText == null) {
                 StringBuffer buf = new StringBuffer();
+                String receiverValue = method.getReceiverValue();
+                if (receiverValue != null && receiverValue != "") {
+                    buf.append("receiver: ");
+                    buf.append(method.getReceiverType());
+                    buf.append("\n\n");
+                    buf.append(receiverValue);
+                }
                 List<String> argTypes = method.getMethodArguments();
                 for (int i = 0; i < argTypes.size(); i++) {
                     String argValue = method.getArgumentValue(i);
                     if (argValue != null) {
-                        if (i > 0) 
+                        if (buf.length() > 0) 
                             buf.append(":\n\n");
                         buf.append("argument ");
                         buf.append(i + 1);
