@@ -3,16 +3,11 @@ package droidsafe.analyses.value;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.analyses.value.modelgen.ModelCodeGenerator;
-import droidsafe.analyses.value.VAModel;
 
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 
 import droidsafe.speclang.Method;
-
-import droidsafe.utils.SootUtils;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,7 +16,6 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -36,13 +30,10 @@ import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.IntConstant;
-import soot.jimple.InvokeExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
-
-import soot.Local;
 
 import soot.RefType;
 
@@ -69,10 +60,10 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     private static ValueAnalysis am;
 
     /** 
-     * AllocNode keys are the objects that we can and want to model. 
+     * keys are the objects that we can and want to model (they are new expressions) 
      * The value is the Model object which simulates that object. 
      */
-    private Map<AllocNode, VAModel> allocNodeToVAModelMap; 
+    private Map<Object, VAModel> allocNodeToVAModelMap; 
 
     private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
 
@@ -86,29 +77,21 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     private static final Logger logger = LoggerFactory.getLogger(ValueAnalysis.class);
 
     /** The package of the value analysis models */
-    public static final String MODEL_PACKAGE = "droidsafe.analyses.value.models";
+    public static final String MODEL_PACKAGE = "droidsafe.analyses.value.VAResultContainerClasses";
 
     /** The prefix that is prepended to fully qualified value analysis models */
     public static final String MODEL_PACKAGE_PREFIX = MODEL_PACKAGE + ".";
 
-    /** The directory relative from APAC_HOME that is the base of the modeling source code for this abstract semantics 
-    */
-    public static final String MODEL_SRC_BASE_DIR = "src/main/java/droidsafe.analyses.value.models.";
-
-    /** The directory relative from APAC_HOME that is the base of the modeling class files for this abstract semantics 
-    */
-    public static final String MODEL_CLASS_BASE_DIR = "classes/main/droidsafe.analyses.value.models.";
-
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
-        this.allocNodeToVAModelMap = new LinkedHashMap<AllocNode, VAModel>();
-        this.classesAndFieldsToModel = ModelCodeGenerator.getClassesAndFieldsToModel(true);
+        this.allocNodeToVAModelMap = new LinkedHashMap<Object, VAModel>();
+        this.classesAndFieldsToModel = VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
     }
 
     /**
-     * Getter for analysis result
+     * Getter for analysis result.  Jimple NewExpr -> VAModel.
      */
-    public Map<AllocNode, VAModel> getResults() {
+    public Map<Object, VAModel> getResults() {
         return this.allocNodeToVAModelMap;
     }
 
@@ -123,15 +106,19 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(AllocNode node) {
-        return this.allocNodeToVAModelMap.containsKey(node) &&
-            !this.allocNodeToVAModelMap.get(node).invalidated();
+        Object newExpr = GeoPTA.v().getNewExpr(node);
+        
+        return this.allocNodeToVAModelMap.containsKey(newExpr) &&
+            !this.allocNodeToVAModelMap.get(newExpr).invalidated();
     }
 
     /**
      * Return the ModeledObject result for a given alloc node.
      */
     public VAModel getResult(AllocNode node) {
-        return this.allocNodeToVAModelMap.get(node);
+        Object newExpr = GeoPTA.v().getNewExpr(node);
+        
+        return this.allocNodeToVAModelMap.get(newExpr);
     }
 
     /** access to the singleton instance */
@@ -186,11 +173,12 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
     public void createObjectModels() {
         for(AllocNode allocNode : GeoPTA.v().getAllAllocNodes()) {
-            createObjectModel(allocNode);    
+            Object newExpr = GeoPTA.v().getNewExpr(allocNode);
+            createObjectModel(allocNode, newExpr);    
         }
     }
 
-    public void createObjectModel(AllocNode allocNode) {
+    public void createObjectModel(AllocNode allocNode, Object newExpr) {
         if(!(allocNode.getType() instanceof RefType)) {
             this.logError(allocNode.toString());
             return;
@@ -198,20 +186,28 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         RefType refType = (RefType)allocNode.getType();
 
         String errorLogEntry = "Couldn't model an instance of the " + refType.getSootClass().getName() + " ";
+        
+        SootClass sootClass = refType.getSootClass();
 
-        Class<?> cls;
-        try {
-            cls = VAUtils.getDroidsafeClass(refType);
-        } catch(ClassNotFoundException e) {
-            errorLogEntry += e.toString();
-            this.logError(errorLogEntry);
+        Class<?> cls = null;
+        while(sootClass.hasSuperclass() && cls == null) {
+            try {
+                cls = VAUtils.getDroidsafeClass(sootClass);
+            } catch(ClassNotFoundException e) {
+                errorLogEntry += e.toString();
+                this.logError(errorLogEntry);
+                sootClass = sootClass.getSuperclass();
+            }
+        }
+
+        if (cls == null) {
             return;
         }
 
         RefVAModel model = null;
         Constructor<?> ctor;
         try {
-            ctor = cls.getConstructor(AllocNode.class);
+            ctor = cls.getConstructor(Object.class);
         } catch(NoSuchMethodException e) {
             errorLogEntry += "Available constructors are:\n";
             for (Constructor<?> constructor : cls.getConstructors()){
@@ -227,14 +223,15 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }
 
         try {
-            model = (RefVAModel)ctor.newInstance(allocNode);
+            model = (RefVAModel)ctor.newInstance(newExpr);
         } catch(Exception e){
             errorLogEntry += e.toString();
             logError(errorLogEntry);
             return;
         }
-        if(model != null)
-            this.allocNodeToVAModelMap.put(allocNode, model);
+        if(model != null) {
+            this.allocNodeToVAModelMap.put(newExpr, model);
+        }
     }
 
     @Override
@@ -255,10 +252,11 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                 if(leftOp instanceof InstanceFieldRef) {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
-                    Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetContextIns(baseValue);
+                    Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetEventContext(baseValue, entryEdge);
                    
                     for(AllocNode allocNode : baseAllocNodes) {
-                        VAModel vaModel = this.allocNodeToVAModelMap.get(allocNode);
+                        Object newExpr = GeoPTA.v().getNewExpr(allocNode);
+                        VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
                         if(vaModel != null) {
                             Class<?> c = vaModel.getClass();
                             String fieldName = instanceFieldRef.getField().getName();
@@ -284,7 +282,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                                 FloatConstant floatConstant = (FloatConstant)rightOpConstant;
                                                 fieldPrimVAModel.addValue(floatConstant.value);
                                             } else {
-                                                System.out.println("Unhandled constant case: " + rightOpConstant.getClass());
+                                                System.out.println("Unhandled constant case: " + 
+                                                        rightOpConstant.getClass());
                                                 System.exit(1);
                                             }
                                         } else {
@@ -330,9 +329,10 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * Log the results of the modeling
      */
     private void logResults() {
-        for(Map.Entry<AllocNode, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
-            logResult("AllocNode: " + entry.getKey().toString());
-            logResult("Model: " + entry.getValue().toString());
+        for(Map.Entry<Object, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
+            logResult("NewExpr: " + entry.getKey().toString());
+            logResult("AllocNode: " + GeoPTA.v().getAllocNode(entry.getKey()));
+            logResult("Model: " + entry.getValue().toStringPretty());
         }
     }
 }

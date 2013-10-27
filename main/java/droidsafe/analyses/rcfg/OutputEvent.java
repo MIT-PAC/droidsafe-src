@@ -114,6 +114,13 @@ public class OutputEvent implements PTAMethodInformation {
         }
     }
 
+    /**
+     * Return the invoke expression associated with this output event.
+     */
+    public InvokeExpr getInvokeExpr() {
+        return invokeExpr;
+    }
+    
     /** 
      * Return the number of args in the invoke expression.
      */
@@ -195,7 +202,7 @@ public class OutputEvent implements PTAMethodInformation {
      */
     public Set<AllocNode> getArgPTSet(int i) {
         Value v = getArgValue(i);
-        return GeoPTA.v().getPTSet(v, contextEdge);
+        return GeoPTA.v().getPTSetEventContext(v, contextEdge);
     }
 
     /**

@@ -12,6 +12,7 @@ import soot.G;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.options.Options;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.RCFGToSSL;
@@ -40,18 +41,22 @@ import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
-import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.stats.AppMethodsEventContextStats;
+import droidsafe.stats.PTASetsAvgSize;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
 import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
+
+import org.apache.commons.lang3.time.*;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -70,7 +75,7 @@ public class Main {
    * 
    */
   public static void main(String[] args) {
-    logger.info("Starting DroidSafe Run");
+    driverMsg("Starting DroidSafe Run");
     // grab command line args and set some globals
     Config.v().init(args);
     run(new DroidsafeDefaultProgressMonitor());
@@ -89,6 +94,8 @@ public class Main {
     Project.v().loadClasses();
     // create the permissions map
     Permissions.init();
+    //sink high-level information flow mapping 
+    APIInfoKindMapping.initMapping();
     ResourcesSoot.reset();
     JimpleRelationships.reset();
     CallGraphTraversal.reset();
@@ -98,16 +105,8 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
-    logger.info("Creating locals for all string constant arguments.");
-    monitor.subTask("Creating locals for string constant arguments.");
-    LocalForStringConstantArguments.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
     
-    logger.info("Calling scalar optimizations.");
+    driverMsg("Calling scalar optimizations.");
     monitor.subTask("Scalar Optimization");
     ScalarAppOptimizations.run();
     monitor.worked(1);
@@ -115,7 +114,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Create tags for the overriden system methods in user code.");
+    driverMsg("Create tags for the overriden system methods in user code.");
     monitor.subTask("Create tags for overriden system methods");
     TagImplementedSystemMethods.run();
     monitor.worked(1);
@@ -123,7 +122,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Resolving resources and Manifest.");
+    driverMsg("Resolving resources and Manifest.");
     monitor.subTask("Resolving Manifest");
     Resources.resolveManifest(Config.v().APP_ROOT_DIR);
     monitor.worked(1);
@@ -131,7 +130,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Finding entry points in user code.");
+    driverMsg("Finding entry points in user code.");
     monitor.subTask("Finding entry points.");
     EntryPoints.v().calculate();
     monitor.worked(1);
@@ -139,7 +138,7 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Creating Harness.");
+    driverMsg("Creating Harness.");
     monitor.subTask("Creating Harness");
     Harness.create();
     monitor.worked(1);
@@ -147,15 +146,59 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    logger.info("Setting Harness Main as entry point.");
+    driverMsg("Setting Harness Main as entry point.");
     monitor.subTask("Setting Harness Main as entry point");
     setHarnessMainAsEntryPoint();
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
     
-    // JSA analysis fails if it follows AddAllocsForAPICalls.run()
-    // Set up the analysis object no matter what.
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+    
+    driverMsg("Incorporating XML layout information");
+    monitor.subTask("Incorporating XML layout information");
+    IntegrateXMLLayouts.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+
+    driverMsg("Resolving String Constants");
+    monitor.subTask("Resolving String Constants");
+    ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    
+    //some stats to collect, probably want a better structure for stats gathering
+    /*{
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
+        AppMethodsEventContextStats.run();
+        PTASetsAvgSize.run();
+        exit(0);
+    }*/
+    
+    if (Config.v().addObjectSensitivity) {
+        driverMsg("Adding Object Sensitivity by cloning...");
+        monitor.subTask("Adding Object Sensitivity by cloning...");
+        ObjectSensitivityCloner.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+    }
+
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+    
+    //run jsa after we inject strings from XML values and layout
+    driverMsg("Starting String Analysis...");
+    StopWatch timer1 = new StopWatch();
+    timer1.start();
     JSAStrings.init(Config.v());
     if (Config.v().runStringAnalysis) {
       monitor.subTask("Running String Analysis.");
@@ -165,63 +208,8 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-    
-    logger.info("Injecting String Analysis Results.");
-    monitor.subTask("Injecting String Analysis Results.");
-    JSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-    
-    logger.info("Starting PTA...");
-    monitor.subTask("PTA First Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
-    logger.info("Incorporating XML layout information");
-    monitor.subTask("Incorporating XML layout information");
-    IntegrateXMLLayouts.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
-    logger.info("Resolving String Constants");
-    monitor.subTask("Resolving String Constants");
-    ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
-    // all transforms should be done by here!
-    logger.info("Restarting PTA...");
-    monitor.subTask("PTA Second Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-    
-    //reset the cache of the call graph traversal
-    CallGraphTraversal.reset();
-    
-    // write jimple txt files for all classes so we can analzye them
-    // all transforms should be done by here.
-
-    logger.info("Caching Jimple Hierarchy Relationships...");
-    monitor.subTask("Caching Jimple Hierarchy Relationships...");
-    JimpleRelationships.v();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
+    timer1.stop();
+    driverMsg("Finished String Analysis: " + timer1);
 
     if (Config.v().writeJimpleAppClasses) {
       monitor.subTask("Writing all app classes");
@@ -232,81 +220,58 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    //create instance of value analysis object, so that later passes an query empty result.
-    long startTime = System.nanoTime();
-    ValueAnalysis.setup();
+
     if (Config.v().runValueAnalysis) {
-        logger.info("Starting Value Analysis");
-        monitor.subTask("Value Analysis");
-        ValueAnalysis.run();
-        long endTime = System.nanoTime();
+        driverMsg("Injecting String Analysis Results.");
+        monitor.subTask("Injecting String Analysis Results.");
+        JSAResultInjection.run();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        logger.info("Finished Value Analysis in " + (endTime-startTime)/1000000000 + " seconds");
-    }
-    
-    logger.info("Undoing String Analysis Result Injection.");
-    monitor.subTask("Undoing String Analysis Result Injection.");
-    UndoJSAResultInjection.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    // all transforms should be done by here!
-    logger.info("Restarting PTA...");
-    monitor.subTask("PTA third Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
     
-    //reset the cache of the call graph traversal
-    CallGraphTraversal.reset();
-    
-    // write jimple txt files for all classes so we can analzye them
-    // all transforms should be done by here.
+    ValueAnalysis.setup();
+    if (Config.v().runValueAnalysis) {
+        driverMsg("Starting Value Analysis");
+        monitor.subTask("Value Analysis");
+        StopWatch vaTimer = new StopWatch();
+        vaTimer.start();
+        ValueAnalysis.run();
+        vaTimer.stop();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        driverMsg("Finished Value Analysis: " + vaTimer);
 
-    logger.info("Caching Jimple Hierarchy Relationships...");
-    monitor.subTask("Caching Jimple Hierarchy Relationships...");
-    JimpleRelationships.v();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+        driverMsg("Undoing String Analysis Result Injection.");
+        monitor.subTask("Undoing String Analysis Result Injection.");
+        UndoJSAResultInjection.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
-    if (Config.v().writeJimpleAppClasses) {
-      monitor.subTask("Writing all app classes");
-      writeAllAppClasses();
-    }
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-    
-    logger.info("Starting Generate RCFG...");
+    driverMsg("Starting Generate RCFG...");
+    StopWatch rcfgTimer = new StopWatch();
+    rcfgTimer.start();
     monitor.subTask("Generating Spec");
     RCFG.generate();
-    logger.info("Finished Generating RCFG.");
+    rcfgTimer.stop();
+    driverMsg("Finished Generating RCFG: " + rcfgTimer);
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
-    
-    logger.info("Finding method calls on all important alloc nodes...");
-    monitor.subTask("Generating Spec");
-    MethodCallsOnAlloc.run();
-    logger.info("Finished finding method calls on alloc nodes.");
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
 
     // print out what modeling is required for this application
     monitor.subTask("Required Modeling");
@@ -318,11 +283,12 @@ public class Main {
 
     //Test the points to analysis
     //new TestPTA();
-
+    
     if (Config.v().infoFlow) {
-        logger.info("Starting Information Flow Analysis...");
+        StopWatch timer = new StopWatch();
+        driverMsg("Starting Information Flow Analysis...");
         monitor.subTask("Information Flow Analysis: Injected source flow");
-        APIInfoKindMapping.initMapping();
+        timer.start();
         InjectedSourceFlows.run();
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -355,15 +321,25 @@ public class Main {
         } catch (IOException exp) {
             logger.error(exp.toString());
         }
-        logger.info("Finished Information Flow Analysis...");
+        timer.stop();
+        driverMsg("Finished Information Flow Analysis: " + timer);
     }
     monitor.worked(1);
     if (monitor.isCanceled()) {
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
+    
+    driverMsg("Finding method calls on all important alloc nodes...");
+    monitor.subTask("Generating Spec");
+    MethodCallsOnAlloc.run();
+    driverMsg("Finished finding method calls on alloc nodes.");
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
 
     if (Config.v().target.equals("specdump")) {
-      logger.info("Converting RCFG to SSL and dumping...");
+      driverMsg("Converting RCFG to SSL and dumping...");
       monitor.subTask("Writing Spec to File");
       RCFGToSSL.run(false);
       SecuritySpecification spec = RCFGToSSL.v().getSpec();
@@ -383,7 +359,7 @@ public class Main {
       }
 
     } else if (Config.v().target.equals("confcheck")) {
-      logger.info("Converting RCFG to SSL ...");
+      driverMsg("Converting RCFG to SSL ...");
       RCFGToSSL.run(true);
       logger.error("Not implemented yet!");
     }
@@ -419,6 +395,50 @@ public class Main {
     }
     return DroidsafeExecutionStatus.OK_STATUS;
   }
+  
+  /**
+   * Print message to out and to logger.
+   * 
+   * @param str
+   */
+  private static void driverMsg(String str) {
+      System.out.println(str);
+      logger.info(str);
+  }
+  
+  /**
+   * Called after one or more transforms to recalculate any underlying analysis.
+   */
+  private static DroidsafeExecutionStatus afterTransform(IDroidsafeProgressMonitor monitor) {
+      driverMsg("Running PTA...");
+      monitor.subTask("Running PTA");
+      StopWatch timer = new StopWatch();
+      timer.start();
+      GeoPTA.release();
+      GeoPTA.run();
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+      }
+      
+      logger.info("Caching Jimple Hierarchy Relationships...");
+      monitor.subTask("Caching Jimple Hierarchy Relationships...");
+      JimpleRelationships.reset();
+      JimpleRelationships.v();
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+      }
+      
+      //reset the cache of the call graph traversal
+      CallGraphTraversal.reset();
+      
+      long endTime = System.currentTimeMillis();
+      timer.stop();
+      driverMsg("Finished PTA: " + timer);
+      
+      return DroidsafeExecutionStatus.OK_STATUS;
+  }
 
   /**
    * Set's harness as entry point for Soot. Run after EntryPoints.
@@ -450,7 +470,7 @@ public class Main {
    */
   public static void exit(int status) {
     if (Config.v().getCallSystemExitOnError()) {
-      System.exit(1);
+      System.exit(status);
     } else {
       throw new IllegalStateException();
     }

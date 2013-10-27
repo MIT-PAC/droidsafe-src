@@ -72,22 +72,17 @@ public class Harness {
 			Components.ACTIVITY_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelActivity(android.app.Activity)>",
 			Components.SERVICE_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelService(android.app.Service)>",
 			Components.CONTENTPROVIDER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelContentProvider(android.content.ContentProvider)>",
-			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>",
-			Components.APPLICATION_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>"
+			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>"
 			);
-	
+	private String modelApplicationMethod = "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>";
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
 	private List<Unit> entryPointInvokes;
 	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
 	
 	private Map<SootClass, Local> localsMap;
-	private Set<SootField> generatedFields;
-		
 	private int localID = 0;
 	private int fieldID = 0;
-	
-	public static final String FIELDNAME = "_ds_generated_field";
 	
 	public static Harness v;
 	
@@ -127,15 +122,12 @@ public class Harness {
 	private Harness() {
 	    localsMap = new LinkedHashMap<SootClass, Local>();
 		entryPointInvokes = new LinkedList<Unit>();
-		generatedFields = new LinkedHashSet<SootField>();
-		
+				
 		//create the harness class
 		harnessClass = new SootClass(HARNESS_CLASS_NAME, Modifier.PUBLIC | Modifier.FINAL);
 		harnessClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
 		API.v().addSystemClass(harnessClass);
 		
-		searchForAllocsOfAPIImplementors();
-		 
 		//create the harness main method
 		List<Type> args = new LinkedList<Type>();
 		args.add(ArrayType.v(RefType.v("java.lang.String"), 1));
@@ -155,11 +147,14 @@ public class Harness {
 		
 		addCallToModelingRuntime(body);
 		
+		//call all static initializer method       
+        //SootMethod allClinits = callAllStaticInitializers();
+        //body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(allClinits.makeRef())));    
+		
 		/** inject intentfilter and application  */
 		injectApplicationIntentFilters();
 		
 		Set<SootClass> visitedClasses = addCallsToComponentEntryPoints(body);
-		visitedClasses.addAll(addEntryPointsForAllocatedObjects(body));
 		addEntryPointsForNonAllocated(body, visitedClasses);
 		
 		//create the loop back to the beginning of the calls
@@ -179,6 +174,8 @@ public class Harness {
 	                new LinkedList<Type>(), VoidType.v(), Modifier.PRIVATE | Modifier.STATIC);
 	    callStaticInits.setDeclaringClass(harnessClass);
 	    harnessClass.addMethod(callStaticInits);
+	    
+	    API.v().addSafeMethod(callStaticInits);
 	    
 	    StmtBody body = Jimple.v().newBody(callStaticInits);
 	    callStaticInits.setActiveBody(body);
@@ -451,7 +448,7 @@ public class Harness {
 									Jimple.v().newVirtualInvokeExpr(appLocal, initMethod.makeRef()));
 		body.getUnits().add(initStmt);
 		
-		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(Components.APPLICATION_CLASS));
+		SootMethod droidsafeInit = Scene.v().getMethod(modelApplicationMethod);
 		
 		//instantiate droidsafe runtime
 		List<Value> list = new LinkedList<Value>();
@@ -496,93 +493,6 @@ public class Harness {
 		}
 	}
 	
-	/**
-	 * we have to find all creation sites of objects of application classes.  We want to call
-	 * any method that overrides an api method on the object (allocnode) in the harness class
-	 * so that the pta can reason correctly about the calls. 
-	 */
-	private void searchForAllocsOfAPIImplementors() {
-		for (SootClass clz : Scene.v().getClasses()) {
-			//not a class we are interested in
-			if (clz.isLibraryClass() || clz.isInterface() ||
-					clz.equals(harnessClass) || API.v().isSystemClass(clz)) 
-				continue;
-
-			//loop through all methods, and then allocation statements
-			//looking for allocations of objects that have API parents
-			for (SootMethod method : clz.getMethods()) {
-				if (!clz.declaresMethod(method.getSubSignature())
-						|| !method.isConcrete()) 
-					continue;
-				
-				if (method.isNative()) 
-					continue;
-				
-				StmtBody stmtBody = null;
-				
-				try {
-					try {
-						 stmtBody = (StmtBody)method.retrieveActiveBody();
-					} catch (Exception e) {
-						if (e.getMessage().startsWith("Unrecognized bytecode instruction: 168") &&
-								Project.v().isLibClass(clz.toString())) {
-							logger.warn("\nError with underlying Soot translation for method {} {}. It is a method from a jar" +
-									"library.  Ignoring error and continuing...\n", method, clz);
-							clz.removeMethod(method);
-							continue;
-						} if (Project.v().isLibClass(clz.toString())) {
-							logger.warn("\nError with in analyzing library method. Ignoring and continuing...\n", method, clz);
-							clz.removeMethod(method);
-							continue;
-						} else {
-							logger.error("Unknown error in building Harness", e);
-							droidsafe.main.Main.exit(1);
-						}
-					}
-					Chain<Unit> units = stmtBody.getUnits();
-					Iterator<Unit> stmtIt = units.snapshotIterator();
-					while (stmtIt.hasNext()) {
-						Stmt stmt = (Stmt)stmtIt.next();
-						if (!(stmt instanceof AssignStmt))
-							continue;
-						AssignStmt assignStmt = (AssignStmt)stmt;
-						//find all assignments statements with rval as new expr
-						if (assignStmt.getRightOp() instanceof NewExpr) {
-							NewExpr newExpr = (NewExpr)assignStmt.getRightOp();
-
-							//looking for a new expr of a class that is an app class
-							if (newExpr.getType() instanceof RefType &&
-									((RefType)newExpr.getType()).getSootClass().isApplicationClass() &&
-									!API.v().isSystemClass(((RefType)newExpr.getType()).getSootClass())) {
-
-								//creating a new class in user code that inherits from an api class
-								logger.debug("Found an alloc of a app class that inherits from API {}: in {} ({})", newExpr, method, clz);
-								handleAllocOfAPIImplementors(newExpr, assignStmt, clz, units);
-							}
-						}
-					}
-				} catch (Exception e) {
-					logger.warn("Trying to look for allocations in method {} of {} (probably a native method)", method, clz, e);
-				}
-			}
-		}
-	}
-
-	private void handleAllocOfAPIImplementors(NewExpr expr, AssignStmt stmt, SootClass clz, Chain<Unit> units) {
-		//create field in the harness class
-		SootField field = new SootField(FIELDNAME + fieldID++, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);
-		harnessClass.addField(field);
-		
-		//remember this field for later so we can create all api overriding calls in it
-		generatedFields.add(field);
-		
-		SootFieldRef fieldRef = field.makeRef();
-		
-		//add an assignment of the field right after the new call
-		units.insertAfter(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(fieldRef), stmt.getLeftOp()), 
-				stmt);
-	}
-	
 	private void addEntryPointsForNonAllocated(StmtBody body, Set<SootClass> allocatedClasses) {
 	    for (SootClass clz : Scene.v().getClasses()) {
 	        if (clz.isLibraryClass() || clz.isInterface() ||
@@ -605,46 +515,6 @@ public class Harness {
 	    
 	}
 	
-	private Set<SootClass> addEntryPointsForAllocatedObjects(StmtBody body) {
-		//for each field that we generated, add a call to any method that overrides 
-		//an api method
-	    Set<SootClass> visited = new LinkedHashSet<SootClass>();
-	    
-		for (SootField field : generatedFields) {
-			SootClass clz = ((RefType)field.getType()).getSootClass();
-			visited.add(clz);
-			//we need to keep around this field if there are non-modeled calls to it
-			//any method of it
-			boolean needField = false;
-			for (SootMethod method : Hierarchy.v().getAllInheritedAppMethodsIncluded(clz)) {
-				//Messages.log("    Checking for method: " + method.getSignature());
-    			if (!method.isConcrete())
-    				continue;
- 
-    			if (Hierarchy.v().isImplementedSystemMethod(method)) {
-    				//find the closest overriden method from the api
-    				SootMethod closestParent = API.v().getClosestOverridenAPIMethod(method);
-    				//don't add a call for overrides that override a method that is modeled
-    				//if modeled, it means we have modeled all registrations of the method
-    				if (!API.v().isAPIModeledMethod(closestParent)) {
-    					logger.info("Adding call in harness to non-component entry point: {}", method.toString());
-    					//create a local to point to the field
-    					Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
-    					body.getLocals().add(receiver);
-    					//assign the local to the field
-    					body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
-    							Jimple.v().newStaticFieldRef(field.makeRef())));
-    					//create a call to this entry point
-    					createCallWithNewArgs(method, body, receiver);
-    					needField = true;
-    				}
-    			} 
-			}
-		}
-		
-		return visited;
-	}
-	
 	/**
 	 * create the header for the main method including the saving of args
 	 * and the start of the loop for entry points calls, return the label for the loop
@@ -657,13 +527,6 @@ public class Harness {
 	    body.getUnits().add(Jimple.v().newIdentityStmt(arg, 
 	            Jimple.v().newParameterRef(ArrayType.v
 	              (RefType.v("java.lang.String"), 1), 0)));
-	    
-	    //call all static initializer method
-	    /*
-	    SootMethod allClinits = callAllStaticInitializers();
-	    
-	    body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(allClinits.makeRef())));
-	    */
 	    
 	    //create a nop as target of goto below, to create loop over all possible events
 	    NopStmt beginCalls = Jimple.v().newNopStmt();
@@ -734,6 +597,7 @@ public class Harness {
 	        if (closestParent == null || !API.v().isAPIModeledMethod(closestParent)) {
 	            Local receiver = localsMap.get(clazz);
 	            //create the call to the entry point method
+	            logger.info("Missing modeling.  Had to create a dummy call for: {}", entryPoint);
 	            createCallWithNewArgs(entryPoint, body, receiver);
 	        }
 	    }

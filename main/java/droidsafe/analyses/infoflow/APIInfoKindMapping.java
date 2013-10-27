@@ -45,6 +45,13 @@ public class APIInfoKindMapping {
     private Map<SootMethod,Set<InfoKind>> sinksMapping;
     /** map of strings to the info kind that represents them */
     private HashMap<String,InfoKind> infoKinds;
+    /** default info kind for a spec or ban method that is not labeled */
+    public InfoKind SENSITIVE_NOCATEGORY;
+    
+    /** ignore kinds with these names */
+    private static Set<String> IGNORE_INFOKINDS = new HashSet<String>(java.util.Arrays.asList(
+        "NO_CATEGORY"
+        ));
     
     /**
      * Return the static singleton.
@@ -60,6 +67,7 @@ public class APIInfoKindMapping {
         srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
         sinksMapping = new HashMap<SootMethod,Set<InfoKind>>();
         infoKinds = new HashMap<String,InfoKind>();
+        SENSITIVE_NOCATEGORY = getInfoKind("SENSITIVE_NOCATEGORY");
     }
 
     /**
@@ -139,14 +147,19 @@ public class APIInfoKindMapping {
                     String methodSig = matcher.group(1);
                     String permission = matcher.group(2);
                     String infoKind = matcher.group(3);
+
+                    //ignore NO_CATEGORY because it tells us nothing really
+                    if (IGNORE_INFOKINDS.contains(infoKind))
+                        continue;
                     
                     try {
                         SootMethod sootMethod = Scene.v().getMethod(methodSig);
+                        
                         if (!mapping.containsKey(sootMethod)) {
                             mapping.put(sootMethod, new HashSet<InfoKind>());
                         }
                         mapping.get(sootMethod).add(getInfoKind(infoKind));
-                        System.out.println("Adding to mapping " + methodSig + " -> " + infoKind);
+                        //System.out.println("Adding to mapping " + methodSig + " -> " + infoKind);
                         found++;
                     } catch (Exception e) {
                         notFound ++;
@@ -160,51 +173,4 @@ public class APIInfoKindMapping {
             droidsafe.main.Main.exit(1);
         }
     }
-}
-
-/**
- * High Level information kind identified by a string type (name).
- * 
- * @author mgordon
- *
- */
-class InfoKind implements InfoValue {
-    /** name of this information kind */
-    private String name;
-   
-    /**
-     * Create a new information kind named str.
-     */
-    InfoKind(String str) {
-        this.name = str;
-    }
-    
-    /**
-     * Return the string name of this information kind.
-     */
-    public String toString() {
-        return name;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
-        if (getClass() != obj.getClass()) return false;
-        InfoKind other = (InfoKind) obj;
-        if (name == null) {
-            if (other.name != null) return false;
-        } else if (!name.equals(other.name)) return false;
-        return true;
-    }
-    
-    
 }

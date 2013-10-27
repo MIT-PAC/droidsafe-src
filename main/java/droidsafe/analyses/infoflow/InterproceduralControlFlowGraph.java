@@ -20,6 +20,7 @@ import com.google.common.collect.Lists;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CGVisitorEntryContext;
 import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.utils.SootUtils;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Unit;
@@ -213,7 +214,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         topologicalOrderer.go();
         for (SootMethod method : Lists.reverse(topologicalOrderer.order())) {
             if (reachableMethods.contains(method)) {
-                if (method.hasActiveBody()) {
+                if (method.hasActiveBody() && !SootUtils.isRuntimeStubMethod(method)) {
                     BlockGraph blockGraph = new MyBriefBlockGraph(method.getActiveBody());
                     if (entryPoints.contains(method)) {
                         headBlocks.addAll(blockGraph.getHeads());
@@ -256,6 +257,9 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
                     }
                     SootMethod calleeMethod = (SootMethod)edge.getTgt();
                     if (ObjectUtils.v().isGetTaint(calleeMethod) || ObjectUtils.v().isAddTaint(calleeMethod)) {
+                        continue;
+                    }
+                    if (SootUtils.isRuntimeStubMethod(calleeMethod)) {
                         continue;
                     }
                     if (methodToHeadBlocks.containsKey(calleeMethod)) {

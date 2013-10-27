@@ -35,6 +35,7 @@ import soot.RefType;
 import soot.Scene;
 import soot.SootField;
 import soot.SootMethod;
+import soot.Type;
 import soot.Unit;
 import soot.Value;
 import soot.jimple.AbstractConstantSwitch;
@@ -68,14 +69,7 @@ import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
-import soot.jimple.spark.geom.geomPA.GeomPointsTo;
-import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.Node;
-import soot.jimple.spark.pag.SparkField;
-import soot.jimple.spark.sets.HashPointsToSet;
-import soot.jimple.spark.sets.P2SetVisitor;
-import soot.jimple.spark.sets.PointsToSetInternal;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.toolkits.graph.Block;
 import droidsafe.analyses.EntryPointCGEdges;
@@ -117,7 +111,7 @@ public class InformationFlowAnalysis {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
         State state = getStateBefore(unit);
         if (local.getType() instanceof RefLikeType) {
-            for (AllocNode allocNode : GeoPTA.v().getPTSet(local, entryEdge)) {
+            for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(local, entryEdge)) {
                 values.addAll(state.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
             }
         } else {
@@ -129,13 +123,19 @@ public class InformationFlowAnalysis {
     public Set<InfoValue> getTaintsBeforeRecursively(Edge entryEdge, Unit unit, Local local) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
         State state = getStateBefore(unit);
-        if (local.getType() instanceof RefLikeType) {
-            for (AllocNode allocNode : AllocNodeUtils.v().reachable(GeoPTA.v().getPTSet(local, entryEdge))) {
+        Type type = local.getType();
+        if (type instanceof RefType) {
+            for (AllocNode allocNode : AllocNodeUtils.v().reachable(GeoPTA.v().getPTSetEventContext(local, entryEdge))) {
                 for (ImmutableSet<InfoValue> vs : state.instances.get(entryEdge, Address.v(allocNode)).values()) {
                     values.addAll(vs);
                 }
             }
+        } else if (type instanceof ArrayType) {
+            for (AllocNode allocNode : AllocNodeUtils.v().reachable(GeoPTA.v().getPTSetEventContext(local, entryEdge))) {
+                values.addAll(state.arrays.get(entryEdge, Address.v(allocNode)));
+            }
         } else {
+            assert !(type instanceof RefLikeType);
             values.addAll(evaluate(entryEdge, local, state.locals));
         }
         return values;
@@ -223,34 +223,34 @@ public class InformationFlowAnalysis {
                 this.statics = statics;
                 hasChanged = true;
             }
-            int localsFromToCount = 0;
-            for (Map.Entry<Block, Map<Block, Locals>> blockBlockToLocals : localsFromTo.entrySet()) {
-                Block fromBlock = blockBlockToLocals.getKey();
-                for (Map.Entry<Block, Locals> blockLocals : blockBlockToLocals.getValue().entrySet()) {
-                    Block toBlock = blockLocals.getKey();
-                    Locals locals = blockLocals.getValue();
-                    for (ImmutableSet<InfoValue> infoValues : locals.values()) {
-                        localsFromToCount += infoValues.size();
-                    }
-                }
-            }
-            G.v().out.println("the total number of values in localsFromTo = " + localsFromToCount);
-            int instancesCount = 0;
-            for (ImmutableSet<InfoValue> infoValues : instances.values()) {
-                instancesCount += infoValues.size();
-            }
-            G.v().out.println("the total number of values in instances = " + instancesCount);
-            int arraysCount = 0;
-            for (ImmutableSet<InfoValue> infoValues : arrays.values()) {
-                arraysCount += infoValues.size();
-            }
-            G.v().out.println("the total number of values in arrays = " + arraysCount);
-            int staticsCount = 0;
-            for (ImmutableSet<InfoValue> infoValues : statics.values()) {
-                staticsCount += infoValues.size();
-            }
-            G.v().out.println("the total number of values in statics = " + staticsCount);
-            G.v().out.println();
+//            int localsFromToCount = 0;
+//            for (Map.Entry<Block, Map<Block, Locals>> blockBlockToLocals : localsFromTo.entrySet()) {
+//                Block fromBlock = blockBlockToLocals.getKey();
+//                for (Map.Entry<Block, Locals> blockLocals : blockBlockToLocals.getValue().entrySet()) {
+//                    Block toBlock = blockLocals.getKey();
+//                    Locals locals = blockLocals.getValue();
+//                    for (ImmutableSet<InfoValue> infoValues : locals.values()) {
+//                        localsFromToCount += infoValues.size();
+//                    }
+//                }
+//            }
+//            G.v().out.println("the total number of values in localsFromTo = " + localsFromToCount);
+//            int instancesCount = 0;
+//            for (ImmutableSet<InfoValue> infoValues : instances.values()) {
+//                instancesCount += infoValues.size();
+//            }
+//            G.v().out.println("the total number of values in instances = " + instancesCount);
+//            int arraysCount = 0;
+//            for (ImmutableSet<InfoValue> infoValues : arrays.values()) {
+//                arraysCount += infoValues.size();
+//            }
+//            G.v().out.println("the total number of values in arrays = " + arraysCount);
+//            int staticsCount = 0;
+//            for (ImmutableSet<InfoValue> infoValues : statics.values()) {
+//                staticsCount += infoValues.size();
+//            }
+//            G.v().out.println("the total number of values in statics = " + staticsCount);
+//            G.v().out.println();
         } while (hasChanged);
     }
 
@@ -491,7 +491,7 @@ public class InformationFlowAnalysis {
             SootField field = instanceFieldRef.getField();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
-                for (AllocNode allocNode : GeoPTA.v().getPTSet(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
                     values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), field));
                 }
                 outState.locals.putS(entryEdge, lLocal, values);
@@ -529,7 +529,7 @@ public class InformationFlowAnalysis {
             Local baseLocal = (Local)arrayRef.getBase();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
-                for (AllocNode allocNode : GeoPTA.v().getPTSet(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
                     values.addAll(inState.arrays.get(entryEdge, Address.v(allocNode)));
                 }
                 outState.locals.putS(entryEdge, lLocal, values);
@@ -550,7 +550,7 @@ public class InformationFlowAnalysis {
             Address address = Address.v(allocNode);
             ImmutableSet<InfoValue> taints = ImmutableSet.<InfoValue>copyOf(InjectedSourceFlows.v().getInjectedFlows(allocNode));
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
-                assert GeoPTA.v().getPTSet(lLocal, entryEdge).contains(GeoPTA.v().getAllocNode(anyNewExpr));
+                assert GeoPTA.v().getPTSetEventContext(lLocal, entryEdge).contains(GeoPTA.v().getAllocNode(anyNewExpr));
                 outState.instances.putW(entryEdge, address, ObjectUtils.v().taint, taints);
             }
         }
@@ -636,7 +636,7 @@ public class InformationFlowAnalysis {
         Local opLocal = (Local)instanceOfExpr.getOp();
         for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
             HashSet<InfoValue> values = new HashSet<InfoValue>();
-            for (AllocNode allocNode : GeoPTA.v().getPTSet(opLocal, entryEdge)) {
+            for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(opLocal, entryEdge)) {
                 values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
             }
             outState.locals.putS(entryEdge, lLocal, values);
@@ -666,7 +666,7 @@ public class InformationFlowAnalysis {
                 assert immediate instanceof Local;
                 for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                     HashSet<InfoValue> values = new HashSet<InfoValue>();
-                    for (AllocNode allocNode : GeoPTA.v().getPTSet(immediate, entryEdge)) {
+                    for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(immediate, entryEdge)) {
                         values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
                     }
                     outState.locals.putS(entryEdge, lLocal, values);
@@ -690,7 +690,7 @@ public class InformationFlowAnalysis {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 for (int i = 0; i < immediates.length; i++) {
                     if (isOpLocal[i]) {
-                        for (AllocNode allocNode : GeoPTA.v().getPTSet(immediates[i], entryEdge)) {
+                        for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(immediates[i], entryEdge)) {
                             values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
                         }
                     }
@@ -738,7 +738,7 @@ public class InformationFlowAnalysis {
             Local baseLocal = (Local)instanceFieldRef.getBase();
             SootField field = instanceFieldRef.getField();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
-                for (AllocNode allocNode : GeoPTA.v().getPTSet(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
                     outState.instances.putW(entryEdge, Address.v(allocNode), field, evaluate(entryEdge, rLocal, inState.locals));
                 }
             }
@@ -806,7 +806,7 @@ public class InformationFlowAnalysis {
             SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
             Local baseLocal = (Local)arrayRef.getBase();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
-                for (AllocNode allocNode : GeoPTA.v().getPTSet(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
                     outState.arrays.putW(entryEdge, Address.v(allocNode), evaluate(entryEdge, rLocal, inState.locals));
                 }
             }
@@ -946,7 +946,7 @@ public class InformationFlowAnalysis {
             Local baseLocal = (Local)((VirtualInvokeExpr)invokeExpr).getBase();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
-                for (AllocNode allocNode : GeoPTA.v().getPTSet(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
                     values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
                 }
                 outState.locals.putS(entryEdge, lLocal, values);
@@ -969,7 +969,7 @@ public class InformationFlowAnalysis {
         if (argImmediate instanceof Local) {
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                 ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>copyOf(inState.locals.get(entryEdge, (Local)argImmediate));
-                for (AllocNode allocNode : GeoPTA.v().getPTSet(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
                     outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
                 }
             }
@@ -1011,7 +1011,7 @@ public class InformationFlowAnalysis {
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
                             ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
-                                for (AllocNode allocNode : GeoPTA.v().getPTSet(lLocal, entryEdge)) {
+                                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(lLocal, entryEdge)) {
                                     outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
                                 }
                             }

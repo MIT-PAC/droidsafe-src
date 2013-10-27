@@ -72,7 +72,7 @@ public class Config {
   /** Don't include source location information when outputting spec */
   public boolean noSourceInfo = false;
   /** If true, analyze information flows. */
-  public boolean infoFlow = false;
+  public boolean infoFlow = true;
   /** Methods on which to export information flows in DOT */
   public String[] infoFlowDotMethods;
   /**
@@ -92,6 +92,8 @@ public class Config {
    * If true, run string analysis on app classes. true by default
    */
   public boolean runStringAnalysis = true;
+  
+  public boolean addObjectSensitivity = true;
   
   /** if true, run value analysis */
   public boolean runValueAnalysis = true;
@@ -189,6 +191,12 @@ public class Config {
             new Option("nova", "Do not run value analysis.");
     options.addOption(noVA);
 
+    Option noObjSens =
+            new Option("noobjsens", "Do not add object sensitivity to points to analysis.");
+    options.addOption(noObjSens);
+
+    
+    
     Option runStringAnalysisUnfiltered =
         new Option("analyzestrings_unfiltered",
             "Run string analysis with no application class filtering.");
@@ -201,8 +209,8 @@ public class Config {
     options.addOption(callgraph);
 
 
-    Option infoFlow = new Option(null, "infoflow", false, "Analyze information flows");
-    options.addOption(infoFlow);
+    Option noInfoFlow = new Option(null, "noinfoflow", false, "True off information flow analysis");
+    options.addOption(noInfoFlow);
 
     Option infoFlowDotMethod =
         OptionBuilder
@@ -264,6 +272,9 @@ public class Config {
     if (cmd.hasOption("nova"))
         this.runValueAnalysis = false;
     
+    if (cmd.hasOption("noobjsens"))
+        this.addObjectSensitivity = false;
+    
     if (cmd.hasOption("manualmod")) 
         this.useManualModeling = true;
     
@@ -271,8 +282,8 @@ public class Config {
       this.runStringAnalysis = false;
     }
 
-    if (cmd.hasOption("infoflow")) {
-        this.infoFlow = true;
+    if (cmd.hasOption("noinfoflow")) {
+        this.infoFlow = false;
     }
 
     if (cmd.hasOption("infoflow-dot-method")) {

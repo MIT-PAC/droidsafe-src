@@ -42,9 +42,8 @@ import soot.Value;
  *
  */
 public class JSAResultInjection extends BodyTransformer {
-
     private static int LOCALID = 0;
-    public static final String LOCAL_PREFIX = "DS_STRING_ARG";
+    public static final String LOCAL_PREFIX = "JSA_INJ_STRING_ARG";
     public static Map<InvokeExpr, Map<Integer, Value>> changesMade = new HashMap<InvokeExpr, Map<Integer, Value>>();
 
     /**
