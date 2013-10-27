@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view;
+package droidsafe.eclipse.plugin.core.view.spec;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +18,10 @@ import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
@@ -44,7 +46,11 @@ import org.slf4j.LoggerFactory;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
-import droidsafe.eclipse.plugin.core.view.TreeElementContentProvider.TopLevelParentEntity;
+import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
+import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
+import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.TreeElementContentProvider.TopLevelParentEntity;
+import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.IModelChangeSupport;
 import droidsafe.speclang.model.MethodModel;
@@ -61,7 +67,7 @@ import droidsafe.utils.SourceLocationTag;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class SecuritySpecOutlineViewPart extends ViewPart {
+public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionChangedListener {
   private static final Logger logger = LoggerFactory.getLogger(SecuritySpecOutlineViewPart.class);
 
   /** The ID of the view as specified by the extension. */
@@ -192,10 +198,12 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         getViewer().setInput(securitySpecModel);
         updateCurrentViewerSettings();
       }
+      InfoFlowSummaryViewPart.openView(this.securitySpecModel);
     }
     if (getViewer() != null) {
       this.parentComposite.layout();
     }
+    
   }
 
   /**
@@ -212,6 +220,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     initializeSecuritySpec(parent);
     if (this.securitySpecModel != null) {
       initializeTreeViewer();
+      InfoFlowSummaryViewPart.openView(this.securitySpecModel);
     }
   }
 
@@ -251,6 +260,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       viewer.setLabelProvider(this.labelProvider);
       viewer.setAutoExpandLevel(1);
       viewer.setUseHashlookup(true);
+      viewer.addSelectionChangedListener(this);
       ColumnViewerToolTipSupport.enableFor(viewer);
       sortViewByMethodName();
 
@@ -364,11 +374,11 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
   @Override
   public void setFocus() {
-    if (viewer != null) {
-      viewer.getControl().setFocus();
-    } else if (textViewer != null) {
-      textViewer.getControl().setFocus();
-    }
+//    if (viewer != null) {
+//      viewer.getControl().setFocus();
+//    } else if (textViewer != null) {
+//      textViewer.getControl().setFocus();
+//    }
   }
 
   /**
@@ -788,4 +798,25 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     return ((TreeElementContentProvider) this.contentProvider)
         .findTreeElementForModelObject(modelObject);
   }
+
+  @Override
+  public void selectionChanged(SelectionChangedEvent event) {
+    if (event.getSelectionProvider() == viewer) {
+      ISelection selection = event.getSelection();
+      if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
+        Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
+        if (selectedNode instanceof TreeElement<?, ?>) {
+          TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
+          Object data = treeElement.getData();
+          if (data instanceof MethodModel) {
+            MethodModel method = (MethodModel) data;
+            PointsToViewPart.openView(method);
+            InfoFlowDetailsViewPart.openView(method);
+            ValueViewPart.openView(method);
+          }
+        }
+      }
+    }
+  }
+
 }

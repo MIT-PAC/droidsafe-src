@@ -79,8 +79,9 @@ public class Harness {
 	private SootMethod harnessMain;
 	private List<Unit> entryPointInvokes;
 	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
+	public static String FIELD_PREFIX = "_ds_field_";
 	
-	private Map<SootClass, Local> localsMap;
+	private Map<SootClass, SootField> globalsMap;
 	private int localID = 0;
 	private int fieldID = 0;
 	
@@ -115,12 +116,27 @@ public class Harness {
 		return harnessMain;
 	}
 	
+	/**
+	 * Return the set of classes that were created by the harness.  These are Android components
+	 * and other classes of the application that are created by the runtime. 
+	 */
+	public Set<SootClass> getCreatedClasses() {
+	    return globalsMap.keySet();
+	}
+	
+	/**
+	 * Return the static field of the harness that stores the object of the created class clz. 
+	 */
+	public SootField getFieldForCreatedClass(SootClass clz) {
+	    return globalsMap.get(clz);
+	}
+	
 	public SootClass getHarnessClass() {
 		return harnessClass;
 	}
 	
 	private Harness() {
-	    localsMap = new LinkedHashMap<SootClass, Local>();
+	    globalsMap = new LinkedHashMap<SootClass, SootField>();
 		entryPointInvokes = new LinkedList<Unit>();
 				
 		//create the harness class
@@ -371,14 +387,23 @@ public class Harness {
 		Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
 		body.getUnits().add(Jimple.v().newAssignStmt(compLocal,  newAppExpr));
 
-		
 		if (initMethod != null) {
-		    Stmt initStmt= Jimple.v().newInvokeStmt(
-		            Jimple.v().newVirtualInvokeExpr(compLocal, initMethod.makeRef()));
+		    Stmt initStmt = Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(compLocal, initMethod.makeRef()));
 		    body.getUnits().add(initStmt);
 		}
-		injectIntentFilter(compLocal, stringLocal, intentFilterList, body, appLocal);
+
+		//create field for component
+        SootField compField = new SootField(FIELD_PREFIX + localID++ , compClass.getType(), 
+            Modifier.PUBLIC | Modifier.STATIC);
+        harnessClass.addField(compField);
 		
+	    //set local to field
+        body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(compField.makeRef()), compLocal));
+        //add to globals map for querying
+        globalsMap.put(compClass, compField);
+		
+		injectIntentFilter(compLocal, stringLocal, intentFilterList, body, appLocal);
+	        
 		// Call runtime init
 		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
 		Stmt initStmt = Jimple.v().newInvokeStmt(
@@ -386,7 +411,6 @@ public class Harness {
 		
 		body.getUnits().add(initStmt);
 		
-		localsMap.put(compClass, compLocal);
 	}
 	
 	
@@ -445,10 +469,20 @@ public class Harness {
         
         // __dsApp__.<init>()
 		InvokeStmt initStmt = Jimple.v().newInvokeStmt(
-									Jimple.v().newVirtualInvokeExpr(appLocal, initMethod.makeRef()));
+									Jimple.v().newSpecialInvokeExpr(appLocal, initMethod.makeRef()));
 		body.getUnits().add(initStmt);
 		
 		SootMethod droidsafeInit = Scene.v().getMethod(modelApplicationMethod);
+		
+		//create field for application
+		SootField appField = new SootField(FIELD_PREFIX + localID++ , appClass.getType(), 
+		    Modifier.PUBLIC | Modifier.STATIC);
+		harnessClass.addField(appField);
+
+		//set local to field
+		body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(appField.makeRef()), appLocal));
+		//add to globals map for querying
+		globalsMap.put(appClass, appField);
 		
 		//instantiate droidsafe runtime
 		List<Value> list = new LinkedList<Value>();
@@ -551,6 +585,7 @@ public class Harness {
 		
 		return visited;
 	}
+
 	
 	/** 
 	 * Add a call to the method in the main of the harness, and create the receiver class if it does
@@ -559,22 +594,29 @@ public class Harness {
 	private void addCallToEntryPointAndCreateLocal(StmtBody body, SootClass clazz, SootMethod entryPoint) {
 	    
 	    //first create the local for the declaring class if we have not created it before
-	    if (!localsMap.containsKey(clazz) && !entryPoint.isStatic()) {
+	    if (!globalsMap.containsKey(clazz) && !entryPoint.isStatic()) {
 	        RefType type = RefType.v(clazz);
+
 	        
-	        //add the local
 	        Local receiver = Jimple.v().newLocal("l" + localID++, type);
 	        body.getLocals().add(receiver);
 
-	        //add the call to the new object
-	        body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr(type)));
+            //add the call to the new object
+            body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr(type)));
 
+            //add the field
+	        SootField newField = new SootField(FIELD_PREFIX + localID++, type, 
+	            Modifier.PUBLIC  | Modifier.STATIC); 
+	        harnessClass.addField(newField);
+	        	                    
 	        //create a constructor for this object
 	        addConstructorCall(body, receiver, type);
 
-
+	        //assign back to field
+	        body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(newField.makeRef()), receiver));
+	        
 	        logger.debug("Adding new receiver object to harness main method: {}", clazz.toString());
-	        localsMap.put(clazz, receiver);
+	        globalsMap.put(clazz, newField);
 
 	        //if a component, add a call to the launch (init) method in the runtime modeling
 	        if (Hierarchy.v().isAndroidComponentClass(clazz)) {
@@ -595,15 +637,15 @@ public class Harness {
 	        //don't add a call for overrides that override a method that is modeled
 	        //if modeled, it means we have modeled all registrations of the method
 	        if (closestParent == null || !API.v().isAPIModeledMethod(closestParent)) {
-	            Local receiver = localsMap.get(clazz);
+	            SootField field = globalsMap.get(clazz);
 	            //create the call to the entry point method
 	            logger.info("Missing modeling.  Had to create a dummy call for: {}", entryPoint);
-	            createCallWithNewArgs(entryPoint, body, receiver);
+	            createCallWithNewArgs(entryPoint, body, field);
 	        }
 	    }
 	}
 
-	private void createCallWithNewArgs(SootMethod method, StmtBody body, Local receiver) {
+	private void createCallWithNewArgs(SootMethod method, StmtBody body, SootField field) {
 		//next create locals for all arguments
 		//List of argument position to locals created...
 		List<Value> args = new LinkedList<Value>();
@@ -622,6 +664,9 @@ public class Harness {
 
 		//now create call to entry point
 		logger.debug("method args {} = size of args list {}", method.getParameterCount(), args.size());
+		Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
+		body.getLocals().add(receiver);
+		body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newStaticFieldRef(field.makeRef())));
 		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(method, receiver, args));
 		entryPointInvokes.add(call);
 		body.getUnits().add(call);
@@ -716,6 +761,10 @@ public class Harness {
 		}
 	}
 	
+	/**
+	 * add a constructor call to body for the given reftype.  Use the simpliest constructor
+	 * that can be found.
+	 */
 	public static void addConstructorCall(Body body, Local local, RefType type) {
 		SootClass clazz = type.getSootClass();
 		

@@ -10,13 +10,16 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import soot.jimple.spark.pag.AllocNode;
 import soot.SootMethod;
 import soot.Type;
+import soot.jimple.Stmt;
+import soot.jimple.spark.pag.AllocNode;
+import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.android.system.Permissions;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.ConcreteListArgumentValue;
 import droidsafe.speclang.Method;
+import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
@@ -80,13 +83,23 @@ public class MethodModel extends ModelChangeSupport
   /**
    * List of computed values for method's parameters.
    */
-  private List<String> methodArgumentValues = new ArrayList<String>();
+  private List<String> methodArgumentValues;
 
   /**
    * List of list of lines for new expressions that could reach the method's arguments.
    */
-  private List<List<AllocLocationModel>> methodArgumentAllocSources =
-      new ArrayList<List<AllocLocationModel>>();
+  private List<List<AllocLocationModel>> methodArgumentAllocSources;
+
+  /**
+   * List of list of lines for new expressions that could reach the method's arguments.
+   */
+  private List<List<CallLocationModel>> methodArgumentSourceInfoUnits;
+
+  /**
+   * List of high-level information kinds that the the method's arguments could possibly be 
+   * tainted with.
+   */
+  private List<List<String>> methodArgumentInfoKinds;
 
   /**
    * The source code location where the method is defined or called.
@@ -99,9 +112,15 @@ public class MethodModel extends ModelChangeSupport
   private List<CodeLocationModel> lines = new ArrayList<CodeLocationModel>();
 
   /**
+   * List of sink info kinds if the method is a sink method with a high level sink type.
+   * Empty list otherwise.
+   */
+  private List<String> sinkInfoKinds;
+
+  /**
    * Current status of the method set by the analyst.
    */
-  private DroidsafeIssueResolutionStatus status = DroidsafeIssueResolutionStatus.UNRESOLVED;
+  private DroidsafeIssueResolutionStatus status = DroidsafeIssueResolutionStatus.UNSAFE;
 
   /**
    * The short signature of the method with parameter classes replaced by concrete values if
@@ -122,13 +141,23 @@ public class MethodModel extends ModelChangeSupport
   /**
    * The list of lines for new expressions that could reach the receiver of this method.
    */
-  private List<AllocLocationModel> receiverAllocSources = new ArrayList<AllocLocationModel>();
+  private List<AllocLocationModel> receiverAllocSources;
+
+  /**
+   * The list of all api calls in user code that could reach the receiver (or one of its fields).
+   */
+  private List<CallLocationModel> receiverSourceInfoUnits;
+
+  /**
+   * The list of high-level information kinds that the receiver could possibly be 
+   * tainted with.
+   */
+  private List<String> receiverInfoKinds;
 
   /**
    * If the method is native or not
    */
   private boolean isNative = false;
-
 
   /**
    * Main constructor.
@@ -148,48 +177,185 @@ public class MethodModel extends ModelChangeSupport
     if (originalMethod.hasReceiver()) {
       Object receiver = originalMethod.getReceiver();
       if (receiver instanceof ConcreteListArgumentValue) {
-        this.receiver = receiver.toString();
-        for (AllocNode node : originalMethod.getReceiverAllocNodes()) {
-          AllocLocationModel line = AllocLocationModel.get(node);
-          if (line != null) this.receiverAllocSources.add(line);
-        }
-        Collections.sort(this.receiverAllocSources);
+          this.receiver = receiver.toString();
+          setReceiverAllocSources(originalMethod);
+          setReceiverInfoKinds(originalMethod);
+          setReceiverSourceInfoUnits(originalMethod);
       }
     }
     for (SourceLocationTag line : originalMethod.getLines()) {
       this.lines.add(new CodeLocationModel(line));
     }
+    if (!originalMethod.getSinkInfoKinds().isEmpty())
+      this.sinkInfoKinds = new ArrayList<String>();
+      for (InfoKind infoKind : originalMethod.getSinkInfoKinds()) {
+        this.sinkInfoKinds.add(infoKind.toString());
+      }
 
     logger.debug("\n" + this.sootMethodSignature);
     SootMethod sootMethod = originalMethod.getSootMethod();
     for (Type parType : sootMethod.getParameterTypes()) {
       this.methodArgumentTypes.add(parType.toString());
-      // logger.debug("Argument for soot method {} is {}", new Object[]
-      // {methodSignature,
-      // parType.toString()});
     }
 
-    List<ArgumentValue> arguments = Arrays.asList(originalMethod.getArgs());
-    for (int i = 0; i < arguments.size(); i++) {
-      ArgumentValue arg = arguments.get(i);
-      String argValue = arg.toString();
-      this.methodArgumentValues.add(argValue);
-      List<AllocLocationModel> argSources = new ArrayList<AllocLocationModel>();
-      for (AllocNode node : originalMethod.getArgAllocNodes(i)) {
-        AllocLocationModel line = AllocLocationModel.get(node);
-        if (line != null) argSources.add(line);
-      }
-      Collections.sort(argSources);
-      this.methodArgumentAllocSources.add(argSources);
-      // logger.debug("Argument for method {} is {}", new Object[]
-      // {methodSignature, argValue});
+    if (originalMethod.getArgs().length > 0) {
+      setArgumentValues(originalMethod);
+      setArgumentAllocSources(originalMethod);
+      setArgumentInfoKinds(originalMethod);
+      setArgumentSourceInfoUnits(originalMethod);
     }
-    // if (originalMethod.getReceiver() != null) {
-    // Object receiver = originalMethod.getReceiver();
-    // logger.debug("Receiver for method {}",
-    // originalMethod.getReceiver().getClass());
-    // }
   }
+
+  /**
+   * Compute and set the field methodArgumentSourceInfoUnits.
+   */
+  private void setArgumentSourceInfoUnits(Method originalMethod) {
+    boolean hasInfo = false;
+    methodArgumentSourceInfoUnits = new ArrayList<List<CallLocationModel>>();
+    for (int i = 0; i < originalMethod.getArgs().length; i++) {
+      Set<Stmt> stmts = originalMethod.getArgSourceInfoUnits(i);
+      List<CallLocationModel> argSourceInfoUnits = null;
+      if (!stmts.isEmpty()) {
+        argSourceInfoUnits = new ArrayList<CallLocationModel>();
+        for (Stmt stmt : stmts) {
+            CallLocationModel line = CallLocationModel.get(stmt);
+            if (line != null) {
+                argSourceInfoUnits.add(line);
+                hasInfo = true;
+            }
+        }
+        Collections.sort(argSourceInfoUnits);
+      }
+      methodArgumentSourceInfoUnits.add(argSourceInfoUnits);
+    }
+    if (!hasInfo)
+      methodArgumentSourceInfoUnits = null;
+  }
+
+  /**
+   * Compute and set the field methodArgumentInfoKinds.
+   */
+  private void setArgumentInfoKinds(Method originalMethod) {
+    boolean hasInfo = false;
+    methodArgumentInfoKinds = new ArrayList<List<String>>();
+    for (int i = 0; i < originalMethod.getArgs().length; i++) {
+      Set<InfoKind> infoKinds = originalMethod.getArgInfoKinds(i);
+      List<String> argInfoKinds = null;
+      if (!infoKinds.isEmpty()) {
+        hasInfo = true;
+        argInfoKinds = new ArrayList<String>();
+        for (InfoKind infoKind : originalMethod.getArgInfoKinds(i)) {
+          argInfoKinds.add(infoKind.toString());
+        }
+        Collections.sort(argInfoKinds);
+      }
+      methodArgumentInfoKinds.add(argInfoKinds);
+    }
+    if (!hasInfo)
+      methodArgumentInfoKinds = null;
+  }
+
+
+  /**
+   * Compute and set the field methodArgumentValues.
+   */
+  private void setArgumentValues(Method originalMethod) {
+    boolean hasInfo = false;
+    methodArgumentValues = new ArrayList<String>();
+    for (ArgumentValue arg : originalMethod.getArgs()) {
+      String argValue = null;
+      if (arg instanceof ConcreteListArgumentValue) {
+        hasInfo = true;
+        argValue = ((ConcreteListArgumentValue) arg).toStringPretty();
+      }
+      methodArgumentValues.add(argValue);
+    }
+    if (!hasInfo)
+      methodArgumentValues = null;
+  }
+
+  /**
+   * Compute and set the field methodArgumentAllocSources.
+   */
+  private void setArgumentAllocSources(Method originalMethod) {
+    boolean hasInfo = false;
+    methodArgumentAllocSources = new ArrayList<List<AllocLocationModel>>();
+    for (int i = 0; i < originalMethod.getArgs().length; i++) {
+      Set<AllocNode> nodes = originalMethod.getArgAllocNodes(i);
+      List<AllocLocationModel> argSources = null;
+      if (!nodes.isEmpty()) {
+        argSources = new ArrayList<AllocLocationModel>();
+        for (AllocNode node : nodes) {
+          AllocLocationModel line = AllocLocationModel.get(node);
+          if (line != null) argSources.add(line);
+        }
+        if (!argSources.isEmpty()) {
+          hasInfo = true;
+          Collections.sort(argSources);
+        } else {
+          argSources = null;
+        }
+      }
+      methodArgumentAllocSources.add(argSources);
+    }
+    if (!hasInfo)
+      methodArgumentAllocSources = null;
+  }
+
+  /**
+   * Compute and set the field receiverSourceInfoUnits.
+   */
+  private void setReceiverSourceInfoUnits(Method originalMethod) {
+    boolean hasInfo = false;
+    Set<Stmt> stmts = originalMethod.getReceiverSourceInfoUnits();
+    if (!stmts.isEmpty()) {
+      receiverSourceInfoUnits = new ArrayList<CallLocationModel>();
+      for (Stmt stmt : stmts) {
+        CallLocationModel line = CallLocationModel.get(stmt);
+        if (line != null) {
+          hasInfo = true;
+          receiverSourceInfoUnits.add(line);
+        }
+      }
+      Collections.sort(receiverSourceInfoUnits);
+    }
+    if (!hasInfo)
+      receiverSourceInfoUnits = null;
+  }
+
+  /**
+   * Compute and set the field receiverInfoKinds.
+   */
+  private void setReceiverInfoKinds(Method originalMethod) {
+    Set<InfoKind> infoKinds = originalMethod.getRecInfoKinds();
+    if (!infoKinds.isEmpty()) {
+      receiverInfoKinds = new ArrayList<String>();
+      for (InfoKind infoKind : infoKinds) {
+        receiverInfoKinds.add(infoKind.toString());
+      }
+      Collections.sort(receiverInfoKinds);
+    }
+   }
+
+  /**
+   * Compute and set the field receiverAllocSources.
+   */
+  private void setReceiverAllocSources(Method originalMethod) {
+    Set<AllocNode> allocNodes = originalMethod.getReceiverAllocNodes();
+    if (!allocNodes.isEmpty()) {
+      receiverAllocSources = new ArrayList<AllocLocationModel>();
+      for (AllocNode allocNode : allocNodes) {
+        AllocLocationModel line = AllocLocationModel.get(allocNode);
+        if (line != null) receiverAllocSources.add(line);
+      }
+      if (!receiverAllocSources.isEmpty()) {
+        Collections.sort(receiverAllocSources);
+      } else {
+        receiverAllocSources = null;
+      }
+    }
+  }
+
 
   /**
    * Method name getter. Returns only the method name, and not the method signature that includes
@@ -272,13 +438,6 @@ public class MethodModel extends ModelChangeSupport
   }
 
   /**
-   * @return the lines for new expressions that could reach the method's receiver.
-   */
-  public List<AllocLocationModel> getReceiverAllocSources() {
-    return this.receiverAllocSources;
-  }
-
-  /**
    * Returns a simple text version of the short signature (one with unqualified classnames and
    * constant values
    */
@@ -286,13 +445,11 @@ public class MethodModel extends ModelChangeSupport
     StringBuffer out = new StringBuffer();
     out.append(Utils.extractClassname(getClassName()) + " " + getMethodName() + " (");
     String delim = "";
-    for (ArgumentValue arg : m.getArgs()) {
+    
+    for (int i = 0; i < m.getArgs().length; i++) {
+      Type argType = m.getActualArgType(i);
       out.append(delim);
-      if (arg.isType()) {
-        out.append(Utils.extractClassname(arg.toString()));
-      } else { // constant of some sort
-        out.append(arg.toString().replaceAll("[\\n]+", "\\\\n"));
-      }
+      out.append(Utils.extractClassname(argType.toString()));
       delim = ", ";
     }
 
@@ -311,6 +468,14 @@ public class MethodModel extends ModelChangeSupport
   }
 
   /**
+   * If this method is defined as a sink method with a high level sink type, 
+   * return the InfoKinds of this method.  Otherwise, return an empty list. 
+   */
+  public List<String> getSinkInfoKinds() {
+      return sinkInfoKinds;
+  }
+
+      /**
    * Sets the value of the status field, and fires a property change event to notify the view. If
    * the current status is the same as the new status, no property change event is triggered.
    * 
@@ -417,6 +582,12 @@ public class MethodModel extends ModelChangeSupport
     if (methodSignature == null) {
       if (other.methodSignature != null) return false;
     } else if (!methodSignature.equals(other.methodSignature)) return false;
+    if ((methodArgumentValues == null) != (other.methodArgumentValues == null)) {
+        return false;
+    } else if (methodArgumentValues != null) {
+        if (!methodArgumentValues.toString().equals(other.methodArgumentValues.toString()))
+            return false;
+    }
     if (declarationLocation == null) {
       if (other.declarationLocation != null) return false;
     } else if (!declarationLocation.equals(other.declarationLocation)) return false;
@@ -457,6 +628,17 @@ public class MethodModel extends ModelChangeSupport
         }
       }
     }
+    if (result == 0)
+        if (methodArgumentValues == null) {
+            if (m.methodArgumentValues != null)
+                result = 1;
+        } else {
+            if (m.methodArgumentValues == null) {
+                result = -1;
+            } else {
+                result = methodArgumentValues.toString().compareTo(m.methodArgumentValues.toString());
+            }
+        }
     return result;
   }
 
@@ -498,15 +680,110 @@ public class MethodModel extends ModelChangeSupport
    * @return
    */
   public String getArgumentValue(int i) {
+    if (methodArgumentValues == null)
+      return null;
     return methodArgumentValues.get(i);
   }
 
   /**
-   * Returns set of lines for new expressions that could reach the method's ith arguments.
+   * Returns the list of lines for new expressions that could reach the method's receiver (i = -1)
+   * or the ith arguments.
    * 
    * @return
    */
   public List<AllocLocationModel> getArgumentAllocSources(int i) {
-    return methodArgumentAllocSources.get(i);
+    if (i == -1) 
+      return receiverAllocSources;
+    if (methodArgumentAllocSources == null)
+        return null;
+      return methodArgumentAllocSources.get(i);
+    }
+
+  /**
+   * Returns the list of all api calls in user code that could reach the receiver (i = -1)
+   * or the ith argument.
+   */
+  public List<CallLocationModel> getArgumentSourceInfoUnits(int i) {
+    if (i == -1)
+      return receiverSourceInfoUnits;
+    if (methodArgumentSourceInfoUnits == null)
+      return null;
+    return methodArgumentSourceInfoUnits.get(i);
   }
+  
+  /**
+   * Returns the list of high level information kinds that the receiver (i = -1) or the ith argument
+   * could possibly be tainted with.
+   */
+  public List<String> getArgumentInfoKinds(int i) {
+    if (i == -1)
+      return receiverInfoKinds;
+    if (methodArgumentInfoKinds == null)
+      return null;
+    return methodArgumentInfoKinds.get(i);
+  }
+
+  /**
+   * Cached method argument model for the receiver of this method.
+   */
+  private transient MethodArgumentModel receiverModel;
+  
+  /**
+   * Cached method argument models for the arguments of this method.
+   */
+  private transient MethodArgumentModel[] argumentModels;
+  
+  /**
+   * Returns the MethodArgumentModel for the receiver (i = -1) or the ith (i >=0) argument of this method.
+   */
+  public MethodArgumentModel getArgumentModel(int i) {
+    if (i == -1) {
+      if (receiverModel == null)
+        receiverModel = new MethodArgumentModel(this, -1);
+      return receiverModel;
+    }
+    if (argumentModels == null) {
+      argumentModels = new MethodArgumentModel[methodArgumentTypes.size()];
+    }
+    if (argumentModels[i] == null) {
+      argumentModels[i] = new MethodArgumentModel(this, i);
+    }
+    return argumentModels[i];
+  }
+  
+  /**
+   * Returns true if there are computed values info on one of the method arguments.
+   */
+  public boolean hasValueInfo() {
+    return methodArgumentValues != null;
+  }
+
+  /**
+   * Returns true if there is points-to info on the receiver or one of the method arguments.
+   */
+  public boolean hasPointsToInfo() {
+    return receiverAllocSources != null || methodArgumentAllocSources != null;
+  }
+
+  /**
+   * Returns true if there is high level sink/source info on the method.
+   */
+  public boolean hasInfoFlowInfo() {
+    return hasHighLevelInfoFlowInfo() || hasLowLevelInfoFlowInfo();
+  }
+
+  /**
+   * Returns true if there is high level sink/source info on the method.
+   */
+  public boolean hasHighLevelInfoFlowInfo() {
+    return receiverInfoKinds != null || methodArgumentInfoKinds != null || sinkInfoKinds != null;
+  }
+
+  /**
+   * Returns true if there is low level info flow info on the receiver or one of the method arguments .
+   */
+  public boolean hasLowLevelInfoFlowInfo() {
+    return receiverSourceInfoUnits != null || methodArgumentSourceInfoUnits != null;
+  }
+
 }

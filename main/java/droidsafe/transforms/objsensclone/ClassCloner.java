@@ -90,11 +90,13 @@ public class ClassCloner {
             original.getModifiers());
         uniqueID++;
         
+        //System.out.printf("Cloning class %s with %s.\n", original, clone);
+        
         //set parent
         if (original.isFinal()) {
             //change final modifier
-            logger.error("Trying to clone final class!");
-            droidsafe.main.Main.exit(1);
+            logger.info("Changing final modifier on {}", original);
+            original.setModifiers(original.getModifiers() ^ Modifier.FINAL);
         }
         clone.setSuperclass(original);
         
@@ -183,34 +185,38 @@ public class ClassCloner {
             
         //create all methods, cloning body, replacing instance field refs
         for (SootMethod ancestorM : ancestor.getMethods()) {
+            if (ancestorM.isAbstract() || ancestorM.isPhantom() || !ancestorM.isConcrete() || 
+                    SootUtils.isRuntimeStubMethod(ancestorM))
+                continue;
+                
             //never clone static methods
             if (ancestorM.isStatic())
                 continue;
             
             //check if this method already exists
             if (containsMethod(ancestorM.getSignature())) {
-                //System.out.printf("\tAlready contains method %s\n.", ancestorM);
+                //System.out.printf("\tAlready contains method %s.\n", ancestorM);
                 continue;
             }
             
             SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
                 ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
             
-            //System.out.printf("\tAdding method %s\n.", ancestorM);
+            //System.out.printf("\tAdding method %s.\n", ancestorM);
             //register method
             methods.addMethod(newMeth);
             clone.addMethod(newMeth);
             if (isAPI) {
                 if (API.v().isBannedMethod(ancestorM.getSignature())) 
                     API.v().addBanMethod(newMeth);
-                else if (API.v().isSpecMethod(newMeth)) 
+                else if (API.v().isSpecMethod(ancestorM)) 
                     API.v().addSpecMethod(newMeth);
-                else if (API.v().isSafeMethod(newMeth)) 
+                else if (API.v().isSafeMethod(ancestorM)) 
                     API.v().addSafeMethod(newMeth);
             }
             
             //clone body
-            Body newBody = (Body)ancestorM.getActiveBody().clone();
+            Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
             newMeth.setActiveBody(newBody);
         }
     }

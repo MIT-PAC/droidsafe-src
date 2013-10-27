@@ -68,10 +68,10 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
 
     /** va errors file used to help figure out what to model */
-    private FileWriter vaErrorsLog;
+    public static FileWriter vaErrorsLog;
 
     /** va stats file */
-    private FileWriter vaResultsLog;
+    public static FileWriter vaResultsLog;
 
     /** Generic logger */
     private static final Logger logger = LoggerFactory.getLogger(ValueAnalysis.class);
@@ -139,14 +139,14 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }      
 
         try {
-            am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
+            vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                     + "va-errors.log");
         } catch (Exception e) {
             logger.warn("Unable to open va-errors.log:", e);
         }
 
         try {
-            am.vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
+            vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                     + "va-results.log");
         } catch (Exception e) {
             logger.warn("Unable to open va-results.log: ", e);
@@ -306,22 +306,22 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     /**
      * Helper method to write to the file where we log all errors we encounter during value analysis
      */
-    private void logError(String logEntry) {
+    public static void logError(String logEntry) {
         try {
-            this.vaErrorsLog.write(logEntry + "\n");
+            vaErrorsLog.write(logEntry + "\n");
         } catch (IOException ioe) {
-            logger.warn("Unable to write to the va-errors.log file.", ioe);
+            //logger.warn("Unable to write to the va-errors.log file.", ioe);
         }
     }
 
     /**
      * Helper method to write to the file where we log all the value analysis statistics
      */
-    private void logResult(String logEntry) {
+    public static void logResult(String logEntry) {
         try {
-            this.vaResultsLog.write(logEntry + "\n");
+            vaResultsLog.write(logEntry + "\n");
         } catch (IOException ioe) {
-            logger.warn("Unable to write to the va-results.log file.", ioe);
+            //logger.warn("Unable to write to the va-results.log file.", ioe);
         }
     }
 

@@ -8,23 +8,25 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 
 public class CollapseAll extends AbstractHandler {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
     IWorkbenchPart part = HandlerUtil.getActivePart(event);
+    TreeViewer viewer = null;
     if (part instanceof SecuritySpecOutlineViewPart) {
-      SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
-      TreeViewer viewer = droidsafeView.getViewer();
-      if (viewer != null) {
-        expandViewer(viewer);
-      }
+      viewer = ((SecuritySpecOutlineViewPart) part).getViewer();
+    } else if (part instanceof DroidsafeInfoOutlineViewPart) {
+      viewer = ((DroidsafeInfoOutlineViewPart) part).getViewer();
+    }
+    if (viewer != null) {
+      expandViewer(viewer);
     }
     return null;
   }
-
 
   private void expandViewer(final TreeViewer treeViewer) {
     final Runnable expand = new Runnable() {

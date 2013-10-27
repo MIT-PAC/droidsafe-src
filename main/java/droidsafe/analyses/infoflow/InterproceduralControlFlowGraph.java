@@ -17,10 +17,6 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.Lists;
 
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CGVisitorEntryContext;
-import droidsafe.analyses.helper.CallGraphTraversal;
-import droidsafe.utils.SootUtils;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Unit;
@@ -34,6 +30,12 @@ import soot.toolkits.graph.Block;
 import soot.toolkits.graph.BlockGraph;
 import soot.toolkits.graph.DirectedGraph;
 import soot.util.dot.DotGraph;
+
+import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.helper.CGVisitorEntryContext;
+import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.main.Config;
+import droidsafe.utils.SootUtils;
 
 /**
  * This class represents a control flow graph for a whole program.
@@ -163,7 +165,9 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     }
 
     public Block getFallThrough(Block callerBlock) {
-        assert ((Stmt)callerBlock.getTail()).containsInvokeExpr();
+        if (Config.v().strict) {
+            assert ((Stmt)callerBlock.getTail()).containsInvokeExpr();
+        }
         SootMethod method = callerBlock.getBody().getMethod();
         for (Block followingBlock : blockToFollowingBlocks.get(callerBlock)) {
             if (followingBlock.getBody().getMethod().equals(method) && !methodToHeadBlocks.get(method).contains(followingBlock)) {
@@ -246,8 +250,12 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
             if (((Stmt)tailUnit).containsInvokeExpr()) {
                 Block followingBlock = null;
                 followingBlock = blockToFollowingBlocks.get(block).get(0);
-                assert !containsCaughtExceptionRef(followingBlock.getHead());
-                assert block.getBody().getMethod().equals(followingBlock.getBody().getMethod());
+                if (Config.v().strict) {
+                    assert !containsCaughtExceptionRef(followingBlock.getHead());
+                }
+                if (Config.v().strict) {
+                    assert block.getBody().getMethod().equals(followingBlock.getBody().getMethod());
+                }
                 Iterator<Edge> edges = callGraph.edgesOutOf(tailUnit);
                 while (edges.hasNext()) {
                     Edge edge = edges.next();

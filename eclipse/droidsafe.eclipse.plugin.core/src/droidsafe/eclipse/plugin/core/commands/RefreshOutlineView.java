@@ -6,7 +6,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 
 /**
  * Command to refresh the Droidsafe outline view. The command reads the serialized version of the

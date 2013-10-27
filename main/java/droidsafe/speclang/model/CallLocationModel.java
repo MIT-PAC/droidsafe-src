@@ -33,21 +33,23 @@ public class CallLocationModel extends CodeLocationModel {
     /**
      * Signature of the target method for the underlying call edge.
      */
-    private String targetMethodSig;
+    private String targetMethodSig = "";
 
     /**
-     * Create a call edge source line model and compute its fields.
+     * Create a call statement source line model and compute its fields.
      * 
      * @param clz name of the class where the new expression for the AllocNode resides in
      * @param line the line number for the new expression corresponding to the underlying AllocNode
-     * @param callEdge the underlying call edge
+     * @param stmt the underlying call statement
      */
-    public CallLocationModel(String clz, int line, Edge callEdge) {
+    public CallLocationModel(String clz, int line, Stmt stmt) {
         super(clz, line);
-        SootMethod targetMethod = callEdge.getTgt().method();
-        String subSig = targetMethod.getSubSignature();
-        int namePos = subSig.indexOf(targetMethod.getName());
-        targetMethodSig = targetMethod.getDeclaringClass().getName() + "." + subSig.substring(namePos) + ": " + targetMethod.getReturnType();
+        if (stmt.containsInvokeExpr()) {
+            SootMethod targetMethod = stmt.getInvokeExpr().getMethod();
+            String subSig = targetMethod.getSubSignature();
+            int namePos = subSig.indexOf(targetMethod.getName());
+            targetMethodSig = targetMethod.getDeclaringClass().getName() + "." + subSig.substring(namePos) + ": " + targetMethod.getReturnType();
+        }
     }
 
     /**
@@ -56,7 +58,7 @@ public class CallLocationModel extends CodeLocationModel {
      * @param srcLoc the source location tag for the call expression corresponding to the underlying call edge
      * @param callEdge the underlying call edge
      */
-    public CallLocationModel(SourceLocationTag srcLoc, Edge callEdge) {
+    public CallLocationModel(SourceLocationTag srcLoc, Stmt callEdge) {
         this(srcLoc.getClz(), srcLoc.getLine(), callEdge);
     }
 
@@ -75,9 +77,9 @@ public class CallLocationModel extends CodeLocationModel {
     }
 
     /**
-     * A map from call edges to their associated source line models.
+     * A map from call statements to their associated source line models.
      */
-    private static Map<Edge, CallLocationModel> map = new HashMap<Edge, CallLocationModel>();
+    private static Map<Stmt, CallLocationModel> map = new HashMap<Stmt, CallLocationModel>();
     
     /**
      * Clear the static map from call edges to their associated source line models.
@@ -90,25 +92,33 @@ public class CallLocationModel extends CodeLocationModel {
      * Return the source line model for the give call edge. Return empty set of any problems.
      */
     public static CallLocationModel get(Edge callEdge) {
-        CallLocationModel line = map.get(callEdge);
+        Stmt stmt = callEdge.srcStmt() ;
+
+        if (stmt == null) {
+            logger.debug("Cannot find source statement for call edge: {}", callEdge);
+            return null;
+        }
+
+        return get(stmt);
+    }
+
+    /**
+     * Return the source line model for the give call edge. Return empty set of any problems.
+     */
+    public static CallLocationModel get(Stmt stmt) {
+        CallLocationModel line = map.get(stmt);
         if (line == null) {
-            Stmt stmt = callEdge.srcStmt() ;
-
-            if (stmt == null) {
-                logger.debug("Cannot find source statement for call edge: {}", callEdge);
-                return null;
-            }
-
             // LWG
             SourceLocationTag srcLoc =  SootUtils.getSourceLocation(stmt);
             if (srcLoc == null) {
                 logger.debug("Cannot find source location for statement: {}", stmt);
                 return null;
             }
-            line = new CallLocationModel(srcLoc, callEdge);
-            map.put(callEdge, line);
+            line = new CallLocationModel(srcLoc, stmt);
+            map.put(stmt, line);
         }
         return line;
         
     }
+
 }
