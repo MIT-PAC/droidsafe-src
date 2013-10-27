@@ -1,3 +1,5 @@
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> (DATABASE_INFORMATION)
+
 UNIQUE_IDENTIFIER:
 <com.android.internal.telephony.cdma.CDMAPhone: java.lang.String getDeviceId()> (UNIQUE_IDENTIFIER)
 <com.android.internal.telephony.IccRecords: java.lang.String getVoiceMailNumber()> (UNIQUE_IDENTIFIER)

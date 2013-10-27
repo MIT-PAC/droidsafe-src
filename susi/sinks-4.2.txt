@@ -1,3 +1,7 @@
+ADDED_BY_DROIDSAFE:
+<android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)> (SCREEN)
+<android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)> (SCREEN)
+
 LOCATION_INFORMATION:
 <android.location.ILocationManager$Stub$Proxy: void clearTestProviderEnabled(java.lang.String)> (LOCATION_INFORMATION)
 <android.location.ILocationManager$Stub$Proxy: void clearTestProviderStatus(java.lang.String)> (LOCATION_INFORMATION)
