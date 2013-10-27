@@ -219,7 +219,8 @@ public class Config {
     options.addOption(callgraph);
 
 
-    Option noInfoFlow = new Option(null, "noinfoflow", false, "True off information flow analysis");
+    Option noInfoFlow = new Option("noinfoflow", 
+        "True off information flow analysis");
     options.addOption(noInfoFlow);
 
     Option infoFlowDotMethod =
@@ -232,7 +233,8 @@ public class Config {
             .withLongOpt("infoflow-dot-method").create("x");
     options.addOption(infoFlowDotMethod);
 
-    Option infoFlowTrackAll = new Option(null, "infoflow-track-all", false, "Track all methods (excluding those in java.lang) during information flow analysis");
+    Option infoFlowTrackAll = new Option("trackallflows", 
+        "Track all methods (excluding those in java.lang) during information flow analysis");
     options.addOption(infoFlowTrackAll);
 
     Option approot =
@@ -308,7 +310,7 @@ public class Config {
         this.infoFlowDotMethods = cmd.getOptionValues("infoflow-dot-method");
     }
 
-    if (cmd.hasOption("infoflow-track-all")) {
+    if (cmd.hasOption("trackallflows")) {
         this.infoFlowTrackAll = true;
     }
 
