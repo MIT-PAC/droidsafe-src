@@ -134,9 +134,14 @@ public class MethodModel extends ModelChangeSupport
   private Set<String> permissions;
 
   /**
-   * The receiver of the method call.
+   * The computed value of the receiver of this method call.
    */
-  private String receiver = "";
+  private String receiverValue = "";
+
+  /**
+   * The type of the receiver of this method call.
+   */
+  private String receiverType;
 
   /**
    * The list of lines for new expressions that could reach the receiver of this method.
@@ -177,11 +182,12 @@ public class MethodModel extends ModelChangeSupport
     if (originalMethod.hasReceiver()) {
       Object receiver = originalMethod.getReceiver();
       if (receiver instanceof ConcreteListArgumentValue) {
-          this.receiver = receiver.toString();
-          setReceiverAllocSources(originalMethod);
-          setReceiverInfoKinds(originalMethod);
-          setReceiverSourceInfoUnits(originalMethod);
+          this.receiverValue = receiver.toString();
       }
+      this.receiverType = originalMethod.getSootMethod().getDeclaringClass().getName();
+      setReceiverAllocSources(originalMethod);
+      setReceiverInfoKinds(originalMethod);
+      setReceiverSourceInfoUnits(originalMethod);
     }
     for (SourceLocationTag line : originalMethod.getLines()) {
       this.lines.add(new CodeLocationModel(line));
@@ -433,8 +439,8 @@ public class MethodModel extends ModelChangeSupport
   /**
    * @return the receiver object string representation.
    */
-  public String getReceiver() {
-    return this.receiver;
+  public String getReceiverValue() {
+    return this.receiverValue;
   }
 
   /**
@@ -591,9 +597,7 @@ public class MethodModel extends ModelChangeSupport
     if (declarationLocation == null) {
       if (other.declarationLocation != null) return false;
     } else if (!declarationLocation.equals(other.declarationLocation)) return false;
-    if (receiver == null) {
-      if (other.receiver != null) return false;
-    } else if (!receiver.equals(other.receiver)) return false;
+    if (!receiverValue.equals(other.receiverValue)) return false;
     return true;
   }
 
@@ -610,7 +614,7 @@ public class MethodModel extends ModelChangeSupport
 
     int result = this.getSignature().compareTo(m.getSignature());
     if (result == 0) {
-      result = this.receiver.compareTo(m.getReceiver());
+      result = this.receiverValue.compareTo(m.getReceiverValue());
     }
     if (result == 0) {
       if (this.getDeclSourceLocation() != null && m.getDeclSourceLocation() != null) {
@@ -755,7 +759,7 @@ public class MethodModel extends ModelChangeSupport
    * Returns true if there are computed values info on one of the method arguments.
    */
   public boolean hasValueInfo() {
-    return methodArgumentValues != null;
+    return !receiverValue.equals("") && methodArgumentValues != null;
   }
 
   /**
@@ -784,6 +788,10 @@ public class MethodModel extends ModelChangeSupport
    */
   public boolean hasLowLevelInfoFlowInfo() {
     return receiverSourceInfoUnits != null || methodArgumentSourceInfoUnits != null;
+  }
+
+  public String getReceiverType() {
+    return receiverType;
   }
 
 }

@@ -483,7 +483,7 @@ public class SecuritySpecModel extends ModelChangeSupport
         StringBuffer buf = new StringBuffer();
         List<AllocLocationModel> receiverSources = method.getArgumentAllocSources(-1);
         if (receiverSources != null && !receiverSources.isEmpty()) {
-          buf.append("  <receiver> " + method.getReceiver() + "\n");
+          buf.append("  <receiver> " + method.getReceiverValue() + "\n");
           printAllocations(receiverSources, buf);
         }
         List<String> args = method.getMethodArguments();
@@ -607,7 +607,7 @@ public class SecuritySpecModel extends ModelChangeSupport
           fw.write(method.getSignature() + "\n");
           List<String> receiverInfoKinds = method.getArgumentInfoKinds(-1);
           List<CallLocationModel> receiverSourceInfoUnits = method.getArgumentSourceInfoUnits(-1);
-          String desc = "<receiver> " + method.getReceiver();
+          String desc = "<receiver> " + method.getReceiverValue();
           writeInfoFlowDetails(desc, receiverInfoKinds, receiverSourceInfoUnits, fw);
           List<String> args = method.getMethodArguments();
           for (int i = 0; i < args.size(); i++) {

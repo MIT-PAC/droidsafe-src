@@ -335,9 +335,7 @@ public class DroidsafePluginUtilities {
     String str = document.get(offset, length);
     MethodModel method = methodArg.getMethod();
     String methodName = method.getMethodName();
-    String receiver = method.getReceiver();
-    boolean hasReceiver = receiver != null && !receiver.equals("");
-    String regex = (hasReceiver) ?
+    String regex = (method.getReceiverType() != null) ?
         "(.*\\s)?(\\S+)\\.\\s*" + methodName + "\\s*\\(.*" :
           "(^|(.*)?\\W+)" + methodName + "\\s*\\((.*)";
     Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
@@ -573,8 +571,8 @@ public class DroidsafePluginUtilities {
             try {
               addMarkerForMethod(inputMethod, file, inputMethod.getShortSignature(), lineNbr);
               addMarkerForMethod(inputMethod, file, inputMethod.getSignature(), lineNbr);
-              if (inputMethod.getReceiver() != null) {
-                addMarkerForMethod(inputMethod, file, inputMethod.getReceiver(), lineNbr);
+              if (inputMethod.getReceiverValue() != null) {
+                addMarkerForMethod(inputMethod, file, inputMethod.getReceiverValue(), lineNbr);
               }
               if (inputMethod.getPermissions() != null) {
                 for (String permission : inputMethod.getPermissions()) {
@@ -605,8 +603,8 @@ public class DroidsafePluginUtilities {
                       addMarkerForMethod(outputMethod, file, message, lineNbr);
                     }
                   }
-                  if (outputMethod.getReceiver() != null) {
-                    addMarkerForMethod(outputMethod, file, outputMethod.getReceiver(), lineNbr);
+                  if (outputMethod.getReceiverValue() != null) {
+                    addMarkerForMethod(outputMethod, file, outputMethod.getReceiverValue(), lineNbr);
                   }
                   List<HotspotModel> hotspots = location.getHotspots();
                   for (HotspotModel hotspot : hotspots) {
