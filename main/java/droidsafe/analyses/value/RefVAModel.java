@@ -193,7 +193,7 @@ public abstract class RefVAModel extends VAModel {
                             }
                         }
                     }
-                    fieldString += StringUtils.join(objectModelStrings.toArray(), ". ");
+                    fieldString += StringUtils.join(objectModelStrings.toArray(), ", ");
                     if(vaModels.size() > 1) fieldString += "]";
                     fieldStrings.add(fieldString);
                 }
