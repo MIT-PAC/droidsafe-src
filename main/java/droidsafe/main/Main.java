@@ -216,7 +216,7 @@ public class Main {
     timer1.stop();
     driverMsg("Finished String Analysis: " + timer1);
 
-/*
+
     if (Config.v().runValueAnalysis) {
         driverMsg("Injecting String Analysis Results.");
         monitor.subTask("Injecting String Analysis Results.");
@@ -226,10 +226,10 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
     }
-*/
+
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
-    
+   
     ValueAnalysis.setup();
     if (Config.v().runValueAnalysis) {
         driverMsg("Starting Value Analysis");

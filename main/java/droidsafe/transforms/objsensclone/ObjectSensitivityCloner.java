@@ -131,8 +131,8 @@ public class ObjectSensitivityCloner {
                                     throw new Exception("Special Invoke Not Found!");
                                 }
                             } catch (Exception e) {
-                                logger.error("Error processing constructor call after modifying new expr: {}", 
-                                    stmt, e);
+                                logger.error("Error processing constructor call after modifying new expr: {} in {}", 
+                                    stmt, method, e);
                             }
 
                         }
@@ -175,18 +175,20 @@ public class ObjectSensitivityCloner {
 
                     //value has been redefined before we found a constructor, so we can't find anything!
                     for (ValueBox def : stmt.getDefBoxes()) {
-                        if (def.canContainValue(local)) {
+                        if (def.getValue().equals(local)) {
+                            System.out.println("Failed on can contain value: " + stmt);
                             return null;
                         }
                     }
 
-                } else if (stmt.branches()) {
+                } else if (!stmt.containsInvokeExpr() && stmt.branches()) {
                     //check for control flow?
+                    System.out.println("Failed on control flow: " + stmt);
                     return null;
                 }
             }
         }
-
+        System.out.println("Failed...");
         return null;
     }
 
