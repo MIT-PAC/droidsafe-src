@@ -184,28 +184,26 @@ public class Environment {
     private volatile static StorageVolume mPrimaryVolume = null;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.943 -0400", hash_original_field = "ABD2DC3A68E7E273F00286BB6E564846", hash_generated_field = "4859F8047AF82464AD430C6BD0B6CE29")
 
-    private static final File DATA_DIRECTORY = getDirectory("ANDROID_DATA", "/data");
+    private static final File DATA_DIRECTORY = new File("/data");
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.943 -0400", hash_original_field = "3F61A3C438E0DF8566DCC4F749E369A4", hash_generated_field = "C6ADCEB630E1DE7BE8C3111429988817")
 
-    private static final File SECURE_DATA_DIRECTORY = getDirectory("ANDROID_SECURE_DATA", "/data/secure");
+    private static final File SECURE_DATA_DIRECTORY = new File("/data/secure");
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.943 -0400", hash_original_field = "F6750F49ABC2B48E79913450F0FBEB71", hash_generated_field = "265692B8C815542986C5D1C47C8A516C")
 
-    private static final File EXTERNAL_STORAGE_DIRECTORY = getDirectory("EXTERNAL_STORAGE", "/mnt/sdcard");
+    private static final File EXTERNAL_STORAGE_DIRECTORY = new File("/mnt/sdcard");
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.943 -0400", hash_original_field = "CEC4B98703B1F5079D7526CB8C9836A1", hash_generated_field = "43621C6B88A374CEBF6446E7926E8652")
 
-    private static final File EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY = new File (new File(getDirectory("EXTERNAL_STORAGE", "/mnt/sdcard"),
-                    "Android"), "data");
+    private static final File EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY = new File ("/mnt/sdcard/Android/data");
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.943 -0400", hash_original_field = "3BA9A346DFEE82C8778D8240922DE757", hash_generated_field = "AD65A5FB28B34137240B3B2C48DF6C20")
 
-    private static final File EXTERNAL_STORAGE_ANDROID_MEDIA_DIRECTORY = new File (new File(getDirectory("EXTERNAL_STORAGE", "/mnt/sdcard"),
-                    "Android"), "media");
+    private static final File EXTERNAL_STORAGE_ANDROID_MEDIA_DIRECTORY = new File ("/mnt/sdcard/Android/media");
+                    
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.944 -0400", hash_original_field = "F2DEA7505FDFA748D1FACEDA5EE74EE2", hash_generated_field = "ED045C15D4C606594CB4CE468299A66D")
 
-    private static final File EXTERNAL_STORAGE_ANDROID_OBB_DIRECTORY = new File (new File(getDirectory("EXTERNAL_STORAGE", "/mnt/sdcard"),
-                    "Android"), "obb");
+    private static final File EXTERNAL_STORAGE_ANDROID_OBB_DIRECTORY = new File ("/mnt/sdcard/Android/obb");  
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.944 -0400", hash_original_field = "C014CD980A9B8BE92DC94186EA778D96", hash_generated_field = "4667E2C8EB83B2183E1EAA45E9576E1D")
 
-    private static final File DOWNLOAD_CACHE_DIRECTORY = getDirectory("DOWNLOAD_CACHE", "/cache");
+    private static final File DOWNLOAD_CACHE_DIRECTORY = new File("/cache");
     public static String DIRECTORY_MUSIC = "Music";
     public static String DIRECTORY_PODCASTS = "Podcasts";
     public static String DIRECTORY_RINGTONES = "Ringtones";

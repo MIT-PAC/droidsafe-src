@@ -2171,7 +2171,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		//Return nothing
 	}
 
-    
+    @DSModeled(DSC.SAFE)
     public void removeViewAt(int index){
 		// Original method
 		/*
@@ -2276,6 +2276,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void removeAllViews(){
 		// Original method
 		/*

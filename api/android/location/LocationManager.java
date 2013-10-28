@@ -817,6 +817,7 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.993 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "7B70CBDE081B95E75A69268514229255")
+    @DSModeled(DSC.SAFE)
     public Location getLastKnownLocation(String provider) {
         addTaint(provider.getTaint());
         if(provider == null)        

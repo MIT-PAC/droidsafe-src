@@ -56,6 +56,7 @@ public class ListActivity extends Activity {
 };
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.761 -0400", hash_original_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E", hash_generated_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E")
+    @DSModeled(DSC.SAFE)
     public ListActivity ()
     {
         //Synthesized constructor
@@ -89,6 +90,7 @@ public class ListActivity extends Activity {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.767 -0400", hash_original_method = "4F23093C6BEB1F491BB932E73A46BC35", hash_generated_method = "CF7A1C3476A79012F41BDF4FF64AE419")
     @Override
+    @DSModeled(DSC.SAFE)
     protected void onDestroy() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         mHandler.removeCallbacks(mRequestFocus);
@@ -147,6 +149,7 @@ public class ListActivity extends Activity {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.775 -0400", hash_original_method = "24FA4810D9E2927905358E0A26AF6AD1", hash_generated_method = "16A96C087EF2F39B7302E11E10E5E2C2")
+    @DSModeled(DSC.SAFE)
     public void setListAdapter(ListAdapter adapter) {
         synchronized
 (this)        {

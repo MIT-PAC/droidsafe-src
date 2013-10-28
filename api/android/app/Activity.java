@@ -118,7 +118,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		mWindow = PolicyManager.makeNewWindow((Context)this);
 	}
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Intent getIntent(){
 		return mIntent;
 		// Original method
@@ -484,7 +484,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
@@ -1942,7 +1942,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public LayoutInflater getLayoutInflater(){
 		return getWindow().getLayoutInflater();
 		// Original method
@@ -2263,7 +2263,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public final void setResult(int resultCode, Intent data){
 		addTaint(resultCode);
 		mResultData = data;
@@ -2504,7 +2504,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	protected void onActivityResult(int requestCode, int resultCode, Intent data){
 		// Original method
 		/*

@@ -67,7 +67,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.827 -0400", hash_original_method = "81BA8F3B1394F61F87D69C567F9782CA", hash_generated_method = "14D9F285EF0C4143A3F21833924D8EC8")
     public  URI(String spec) throws URISyntaxException {
         addTaint(spec.getTaint());

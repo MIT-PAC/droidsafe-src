@@ -330,8 +330,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
             var535F4D9720F3B0C96D8143873CE0638C_1405753140.addTaint(taint);
             return var535F4D9720F3B0C96D8143873CE0638C_1405753140;
         } //End block
-        String userDir = System.getProperty("user.dir");
-String var4F090B9F25B3E37BF995BFA6769B0207_1493143672 =         path.isEmpty() ? userDir : join(userDir, path);
+        String userDir = "user.dir" + path;
+        String var4F090B9F25B3E37BF995BFA6769B0207_1493143672 = userDir, path;
         var4F090B9F25B3E37BF995BFA6769B0207_1493143672.addTaint(taint);
         return var4F090B9F25B3E37BF995BFA6769B0207_1493143672;
         // ---------- Original Method ----------
@@ -781,7 +781,7 @@ String[] var4F4C7F90EA62B6A2861763194713B35C_815412095 =         listImpl(path);
     
     @DSModeled(DSC.SAFE)
     private static String[] listImpl(String path) {
-		return new String[0];
+		return new String[]{"*.*" + path};
 	}
 
     

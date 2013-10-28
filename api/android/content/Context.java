@@ -151,6 +151,7 @@ public abstract class Context {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.170 -0400", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "93D787D10019EB3C184F3D4409EE8F88")
+    @DSModeled(DSC.SAFE)   
     public final String getString(int resId) {
         addTaint(resId);
 String varE43003255E2CDFE3A3F854C99DB3C345_1254485630 =         getResources().getString(resId);
@@ -162,6 +163,7 @@ String varE43003255E2CDFE3A3F854C99DB3C345_1254485630 =         getResources().g
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.170 -0400", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "DD7F718E38B10AE9B4A5A4A828CAE4E2")
+    @DSModeled(DSC.SAFE)
     public final String getString(int resId, Object... formatArgs) {
         addTaint(formatArgs[0].getTaint());
         addTaint(resId);
