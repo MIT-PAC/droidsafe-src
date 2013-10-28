@@ -3,19 +3,16 @@ package droidsafe.analyses.value;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
-
+import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
-
 import droidsafe.speclang.Method;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -32,17 +29,13 @@ import soot.jimple.InstanceFieldRef;
 import soot.jimple.IntConstant;
 import soot.jimple.LongConstant;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
-
 import soot.RefType;
-
 import soot.SootClass;
-
 import soot.SootField;
-
 import soot.SootMethod;
-
 import soot.Value;
 
 /** 
@@ -107,9 +100,9 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      */
     public boolean hasResult(AllocNode node) {
         Object newExpr = GeoPTA.v().getNewExpr(node);
-        
+
         return this.allocNodeToVAModelMap.containsKey(newExpr) &&
-            !this.allocNodeToVAModelMap.get(newExpr).invalidated();
+                !this.allocNodeToVAModelMap.get(newExpr).invalidated();
     }
 
     /**
@@ -117,7 +110,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      */
     public VAModel getResult(AllocNode node) {
         Object newExpr = GeoPTA.v().getNewExpr(node);
-        
+
         return this.allocNodeToVAModelMap.get(newExpr);
     }
 
@@ -140,14 +133,14 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
         try {
             vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
-                    + "va-errors.log");
+                + "va-errors.log");
         } catch (Exception e) {
             logger.warn("Unable to open va-errors.log:", e);
         }
 
         try {
             vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
-                    + "va-results.log");
+                + "va-results.log");
         } catch (Exception e) {
             logger.warn("Unable to open va-results.log: ", e);
         }
@@ -186,7 +179,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         RefType refType = (RefType)allocNode.getType();
 
         String errorLogEntry = "Couldn't model an instance of the " + refType.getSootClass().getName() + " ";
-        
+
         SootClass sootClass = refType.getSootClass();
 
         Class<?> cls = null;
@@ -253,7 +246,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
                     Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetEventContext(baseValue, entryEdge);
-                   
+
                     for(AllocNode allocNode : baseAllocNodes) {
                         Object newExpr = GeoPTA.v().getNewExpr(allocNode);
                         VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
@@ -267,31 +260,54 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                     VAModel fieldObjectVAModel = (VAModel)fieldObject;
                                     if(fieldObjectVAModel instanceof PrimVAModel) {
                                         PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
-                                       if(rightOp instanceof Constant) {
-                                            Constant rightOpConstant = (Constant)rightOp;
-                                            if(rightOpConstant instanceof IntConstant) {
-                                                IntConstant intConstant = (IntConstant)rightOpConstant;
-                                                fieldPrimVAModel.addValue(intConstant.value);
-                                            } else if(rightOpConstant instanceof LongConstant) {
-                                                LongConstant longConstant = (LongConstant)rightOpConstant;
-                                                fieldPrimVAModel.addValue(longConstant.value);
-                                            } else if(rightOpConstant instanceof DoubleConstant) {
-                                                DoubleConstant doubleConstant = (DoubleConstant)rightOpConstant;
-                                                fieldPrimVAModel.addValue(doubleConstant.value);
-                                            } else if(rightOpConstant instanceof FloatConstant) {
-                                                FloatConstant floatConstant = (FloatConstant)rightOpConstant;
-                                                fieldPrimVAModel.addValue(floatConstant.value);
+                                        if (fieldPrimVAModel instanceof StringVAModel) {
+                                            //Found string
+                                            //System.out.println("Found String!!: " + fieldObject);
+                                            Set<AllocNode> rhsNodes = GeoPTA.v().getPTSetEventContext(rightOp, entryEdge);
+                                            for(AllocNode rhsNode : rhsNodes) {
+                                                if(rhsNode instanceof StringConstantNode) {
+                                                    String value = ((StringConstantNode)rhsNode).getString();
+                                                    value = value.replaceAll("(\\r|\\n)", "");
+                                                    value = value.replace("\"", "");
+                                                    value = value.replace("\\uxxxx", "");
+                                                    fieldPrimVAModel.addValue(value);    
+                                                } else {
+                                                    // all strings weren't constants, invalidate
+                                                    ValueAnalysis.logError(fieldObject.toString() + 
+                                                        " the value it is assigned, " + 
+                                                        rhsNode + " is not a constant. Contained values beforehand: " + 
+                                                        fieldPrimVAModel.getValues());
+                                                    fieldPrimVAModel.addValue("UNKNOWN");
+                                                }
+                                            }                                            
+                                        } else  {
+                                            //primitive, but not string primitive
+                                            if(rightOp instanceof Constant) {
+                                                Constant rightOpConstant = (Constant)rightOp;
+                                                if(rightOpConstant instanceof IntConstant) {
+                                                    IntConstant intConstant = (IntConstant)rightOpConstant;
+                                                    fieldPrimVAModel.addValue(intConstant.value);
+                                                } else if(rightOpConstant instanceof LongConstant) {
+                                                    LongConstant longConstant = (LongConstant)rightOpConstant;
+                                                    fieldPrimVAModel.addValue(longConstant.value);
+                                                } else if(rightOpConstant instanceof DoubleConstant) {
+                                                    DoubleConstant doubleConstant = (DoubleConstant)rightOpConstant;
+                                                    fieldPrimVAModel.addValue(doubleConstant.value);
+                                                } else if(rightOpConstant instanceof FloatConstant) {
+                                                    FloatConstant floatConstant = (FloatConstant)rightOpConstant;
+                                                    fieldPrimVAModel.addValue(floatConstant.value);
+                                                } else {
+                                                    System.out.println("Unhandled constant case: " + 
+                                                            rightOpConstant.getClass());
+                                                    System.exit(1);
+                                                }
                                             } else {
-                                                System.out.println("Unhandled constant case: " + 
-                                                        rightOpConstant.getClass());
-                                                System.exit(1);
+                                                fieldPrimVAModel.invalidate();
                                             }
-                                        } else {
-                                            fieldPrimVAModel.invalidate();
                                         }
                                     }
                                 } catch(IllegalAccessException e) {
-                                     logError(e.toString());
+                                    logError(e.toString());
                                 }
                             } catch(NoSuchFieldException e) {
                                 logError(e.toString());

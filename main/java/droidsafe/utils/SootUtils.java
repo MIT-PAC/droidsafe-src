@@ -80,6 +80,23 @@ public class SootUtils {
 
     public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
 
+    /**
+     * Return true if this reference is to a String, CharSequence, StringBuffer, or StringBuilder.
+     */
+    public static boolean isStringOrSimilarType(Type type) {
+        if (type instanceof RefType) {
+            RefType refType = (RefType)type;
+            
+            return refType.equals(RefType.v("java.lang.String")) || 
+                    refType.equals(RefType.v("java.lang.CharSequence")) ||
+                    refType.equals(RefType.v("java.lang.StringBuffer")) ||
+                    refType.equals(RefType.v("java.lang.StringBuilder"));
+                    
+        }
+        
+        return false;
+    }
+    
     /*
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 

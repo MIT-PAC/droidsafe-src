@@ -61,43 +61,23 @@ public abstract class RefVAModel extends VAModel {
         String errorMsg = this.getAllocNode() + "'s field " + sootField + " got assigned the value 'unknown' because ";
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         Type fieldType = sootField.getType();
-        if(fieldType instanceof RefType) {
+        if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)) {
             RefType fieldRefType = (RefType)fieldType;
             Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.getAllocNode(), sootField);
             if(allocNodes.size() > 0){
                 String fieldClassName = fieldRefType.getSootClass().getName();
-                if(Arrays.asList(new String[] {"java.lang.String", 
-                    "java.lang.CharSequence", 
-                    "java.lang.StringBuffer", 
-                    "java.lang.StringBuilder"}
-                    ).contains(fieldClassName)) {
-                    StringVAModel stringVAModel = new StringVAModel();
-                    for(AllocNode allocNode : allocNodes) {
-                        if(allocNode instanceof StringConstantNode) {
-                            String value = ((StringConstantNode)allocNode).getString();
-                            value = value.replaceAll("(\\r|\\n)", "");
-                            value = value.replace("\"", "");
-                            value = value.replace("\\uxxxx", "");
-                            stringVAModel.addValue(value);    
-                        } else {
-                            // all strings weren't constants, invalidate
-                            ValueAnalysis.logError(errorMsg + " the value it is assigned, " + allocNode + " is not a constant. Contained values beforehand: " + stringVAModel.getValues());
-                            stringVAModel.addValue("UNKNOWN");
-                        }
+                //took out string code here!
+                for(AllocNode allocNode : allocNodes) {
+                    VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
+                    if(vaModel != null) {
+                        fieldVAModels.add(vaModel);
+                    } else {
+                        ValueAnalysis.logError(errorMsg + 
+                            " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
+                        fieldVAModels.add(unknownValue);
                     }
-                    fieldVAModels.add(stringVAModel);
-                } else {
-                    for(AllocNode allocNode : allocNodes) {
-                        VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
-                        if(vaModel != null) {
-                            fieldVAModels.add(vaModel);
-                        } else {
-                            ValueAnalysis.logError(errorMsg + " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
-                            fieldVAModels.add(unknownValue);
-                        }
 
-                    }
-                } 
+                }
             }
         } else {
             Class<?> c = this.getClass();
