@@ -75,7 +75,7 @@ public class MethodArgumentModel {
 
     @Override
     public String toString() {
-        String type = (isReceiver()) ? method.getReturnType() : method.getMethodArguments().get(argumentIndex);
+        String type = (isReceiver()) ? method.getReceiverType() : method.getMethodArguments().get(argumentIndex);
         return getShortDesc() + ": " + type;
     }
     

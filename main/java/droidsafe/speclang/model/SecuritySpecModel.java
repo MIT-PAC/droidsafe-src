@@ -36,6 +36,7 @@ import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAStrings.Hotspot;
 import droidsafe.android.app.Project;
+import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 
@@ -71,6 +72,11 @@ public class SecuritySpecModel extends ModelChangeSupport
    * The name of the file that contains the points-to info of the spec.
    */
   private static final String POINTS_TO_INFO_FILE_NAME = "points-to-info.txt";
+
+  /**
+   * The name of the file that contains the points-to info of the spec.
+   */
+  private static final String VALUE_INFO_FILE_NAME = "value-info.txt";
 
   /**
    * The name of the file that contains the info flow summary of the spec.
@@ -483,7 +489,7 @@ public class SecuritySpecModel extends ModelChangeSupport
         StringBuffer buf = new StringBuffer();
         List<AllocLocationModel> receiverSources = method.getArgumentAllocSources(-1);
         if (receiverSources != null && !receiverSources.isEmpty()) {
-          buf.append("  <receiver> " + method.getReceiverValue() + "\n");
+          buf.append("  <receiver> " + method.getReceiverType() + "\n");
           printAllocations(receiverSources, buf);
         }
         List<String> args = method.getMethodArguments();
@@ -492,6 +498,48 @@ public class SecuritySpecModel extends ModelChangeSupport
           if (argSources != null && !argSources.isEmpty()) {
             buf.append("  <argument " + (i + 1) + "> : " + args.get(i) + "\n");
             printAllocations(argSources, buf);
+          }
+        }
+        if (buf.length() > 0) {
+          fw.write(method.getSignature() + "\n");
+          fw.write(buf.toString());
+        }
+      }
+      fw.close();
+    } catch (IOException e) {
+      logger.error("Error writing points-to info file.");
+      droidsafe.main.Main.exit(1);
+    }     
+  }
+
+  /**
+   * Print points-to info associated with the security spec to a file in the droidsafe folder of 
+   * the current selected Android app.
+   */
+  public static void printValueInfo(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    try {
+      FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + VALUE_INFO_FILE_NAME);
+      Set<MethodModel> entryPoints = securitySpecModel.getEntryPoints();
+      SortedSet<MethodModel> allMethods = new TreeSet<MethodModel>(new MethodP2Comparator());
+      allMethods.addAll(entryPoints);
+      for (MethodModel entryPoint: entryPoints) {
+        allMethods.addAll(securitySpecModel.getOutputEvents(entryPoint));
+      }
+      for (MethodModel method: allMethods) {
+        StringBuffer buf = new StringBuffer();
+        String receiverValue = method.getReceiverValue();
+        if (receiverValue != null && !receiverValue.isEmpty()) {
+          buf.append("<receiver>");
+          buf.append(receiverValue);
+          buf.append("\n\n");
+        }
+        List<String> args = method.getMethodArguments();
+        for (int i = 0; i < args.size(); i++) {
+          String argValue = method.getArgumentValue(i);
+          if (argValue != null && !argValue.isEmpty()) {
+            buf.append("<argument " + (i + 1) + "> : " + args.get(i) + "\n");
+            buf.append(argValue);
+            buf.append("\n\n");
           }
         }
         if (buf.length() > 0) {
@@ -567,6 +615,14 @@ public class SecuritySpecModel extends ModelChangeSupport
     }
 
   }
+  
+  public static void printSpecInfo(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    printInfoFlowSummary(securitySpecModel, Config.v().APP_ROOT_DIR);
+    printInfoFlowDetails(securitySpecModel, Config.v().APP_ROOT_DIR);
+    printValueInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+    printPointsToInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+    
+  }
 
   public static void printInfoFlowSummary(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
       try {
@@ -607,7 +663,7 @@ public class SecuritySpecModel extends ModelChangeSupport
           fw.write(method.getSignature() + "\n");
           List<String> receiverInfoKinds = method.getArgumentInfoKinds(-1);
           List<CallLocationModel> receiverSourceInfoUnits = method.getArgumentSourceInfoUnits(-1);
-          String desc = "<receiver> " + method.getReceiverValue();
+          String desc = "<receiver> " + method.getReceiverType();
           writeInfoFlowDetails(desc, receiverInfoKinds, receiverSourceInfoUnits, fw);
           List<String> args = method.getMethodArguments();
           for (int i = 0; i < args.size(); i++) {

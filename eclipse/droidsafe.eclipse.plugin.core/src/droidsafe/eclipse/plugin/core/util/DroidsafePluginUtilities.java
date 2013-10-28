@@ -165,10 +165,16 @@ public class DroidsafePluginUtilities {
         IDocument document =
             textEditor.getDocumentProvider().getDocument(
               textEditor.getEditorInput());
+        int lineNumber = line.getLine();
         IRegion region = getRegion(document, methArg, line, isDecl);
-        int offset = region.getOffset();
-        int length = region.getLength();
-        textEditor.selectAndReveal(offset, length);
+        try {
+          int offset = (region == null) ? document.getLineOffset(lineNumber - 1) : region.getOffset();
+          int length = (region == null) ? document.getLineLength(lineNumber - 1) : region.getLength();
+          textEditor.selectAndReveal(offset, length);
+        } catch (BadLocationException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
       }
     }
   }
