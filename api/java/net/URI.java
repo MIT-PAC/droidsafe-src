@@ -71,7 +71,8 @@ public final class URI implements Comparable<URI>, Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.827 -0400", hash_original_method = "81BA8F3B1394F61F87D69C567F9782CA", hash_generated_method = "14D9F285EF0C4143A3F21833924D8EC8")
     public  URI(String spec) throws URISyntaxException {
         addTaint(spec.getTaint());
-        parseURI(spec, false);
+        string = spec;
+       // parseURI(spec, false);
         // ---------- Original Method ----------
         //parseURI(spec, false);
     }
@@ -82,22 +83,7 @@ public final class URI implements Comparable<URI>, Serializable {
         addTaint(fragment.getTaint());
         addTaint(schemeSpecificPart.getTaint());
         addTaint(scheme.getTaint());
-        StringBuilder uri = new StringBuilder();
-        if(scheme != null)        
-        {
-            uri.append(scheme);
-            uri.append(':');
-        } //End block
-        if(schemeSpecificPart != null)        
-        {
-            ALL_LEGAL_ENCODER.appendEncoded(uri, schemeSpecificPart);
-        } //End block
-        if(fragment != null)        
-        {
-            uri.append('#');
-            ALL_LEGAL_ENCODER.appendEncoded(uri, fragment);
-        } //End block
-        parseURI(uri.toString(), false);
+        string = scheme + ":" + schemeSpecificPart + "#" + fragment;
         // ---------- Original Method ----------
         //StringBuilder uri = new StringBuilder();
         //if (scheme != null) {
@@ -123,61 +109,9 @@ public final class URI implements Comparable<URI>, Serializable {
         addTaint(port);
         addTaint(userInfo.getTaint());
         addTaint(scheme.getTaint());
-        if(scheme == null && userInfo == null && host == null && path == null
-                && query == null && fragment == null)        
-        {
-            this.path = "";
-            return;
-        } //End block
-        if(scheme != null && path != null && !path.isEmpty() && path.charAt(0) != '/')        
-        {
-            URISyntaxException var606273C4AFC635374A21A2FA3E7D2253_1051908708 = new URISyntaxException(path, "Relative path");
-            var606273C4AFC635374A21A2FA3E7D2253_1051908708.addTaint(taint);
-            throw var606273C4AFC635374A21A2FA3E7D2253_1051908708;
-        } //End block
-        StringBuilder uri = new StringBuilder();
-        if(scheme != null)        
-        {
-            uri.append(scheme);
-            uri.append(':');
-        } //End block
-        if(userInfo != null || host != null || port != -1)        
-        {
-            uri.append("//");
-        } //End block
-        if(userInfo != null)        
-        {
-            USER_INFO_ENCODER.appendEncoded(uri, userInfo);
-            uri.append('@');
-        } //End block
-        if(host != null)        
-        {
-            if(host.indexOf(':') != -1 && host.indexOf(']') == -1 && host.indexOf('[') == -1)            
-            {
-                host = "[" + host + "]";
-            } //End block
-            uri.append(host);
-        } //End block
-        if(port != -1)        
-        {
-            uri.append(':');
-            uri.append(port);
-        } //End block
-        if(path != null)        
-        {
-            PATH_ENCODER.appendEncoded(uri, path);
-        } //End block
-        if(query != null)        
-        {
-            uri.append('?');
-            ALL_LEGAL_ENCODER.appendEncoded(uri, query);
-        } //End block
-        if(fragment != null)        
-        {
-            uri.append('#');
-            ALL_LEGAL_ENCODER.appendEncoded(uri, fragment);
-        } //End block
-        parseURI(uri.toString(), true);
+     
+        string = scheme + " " + userInfo + " " + host + " " + port + " " + path + " " + query + " " + fragment;
+        
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -202,38 +136,7 @@ public final class URI implements Comparable<URI>, Serializable {
         addTaint(path.getTaint());
         addTaint(authority.getTaint());
         addTaint(scheme.getTaint());
-        if(scheme != null && path != null && !path.isEmpty() && path.charAt(0) != '/')        
-        {
-            URISyntaxException var606273C4AFC635374A21A2FA3E7D2253_942447257 = new URISyntaxException(path, "Relative path");
-            var606273C4AFC635374A21A2FA3E7D2253_942447257.addTaint(taint);
-            throw var606273C4AFC635374A21A2FA3E7D2253_942447257;
-        } //End block
-        StringBuilder uri = new StringBuilder();
-        if(scheme != null)        
-        {
-            uri.append(scheme);
-            uri.append(':');
-        } //End block
-        if(authority != null)        
-        {
-            uri.append("//");
-            AUTHORITY_ENCODER.appendEncoded(uri, authority);
-        } //End block
-        if(path != null)        
-        {
-            PATH_ENCODER.appendEncoded(uri, path);
-        } //End block
-        if(query != null)        
-        {
-            uri.append('?');
-            ALL_LEGAL_ENCODER.appendEncoded(uri, query);
-        } //End block
-        if(fragment != null)        
-        {
-            uri.append('#');
-            ALL_LEGAL_ENCODER.appendEncoded(uri, fragment);
-        } //End block
-        parseURI(uri.toString(), false);
+        string = scheme + " " + authority + " " + path + " " + query + " " + fragment;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -244,70 +147,6 @@ public final class URI implements Comparable<URI>, Serializable {
     private void parseURI(String uri, boolean forceServer) throws URISyntaxException {
         addTaint(forceServer);
         string = uri;
-        int fragmentStart = UrlUtils.findFirstOf(uri, "#", 0, uri.length());
-        if(fragmentStart < uri.length())        
-        {
-            fragment = ALL_LEGAL_ENCODER.validate(uri, fragmentStart + 1, uri.length(), "fragment");
-        } //End block
-        int start;
-        int colon = UrlUtils.findFirstOf(uri, ":", 0, fragmentStart);
-        if(colon < UrlUtils.findFirstOf(uri, "/?#", 0, fragmentStart))        
-        {
-            absolute = true;
-            scheme = validateScheme(uri, colon);
-            start = colon + 1;
-            if(start == fragmentStart)            
-            {
-                URISyntaxException varE6BD178EC809A2E5E6292ECB2EFD9959_674084732 = new URISyntaxException(uri, "Scheme-specific part expected", start);
-                varE6BD178EC809A2E5E6292ECB2EFD9959_674084732.addTaint(taint);
-                throw varE6BD178EC809A2E5E6292ECB2EFD9959_674084732;
-            } //End block
-            if(!uri.regionMatches(start, "/", 0, 1))            
-            {
-                opaque = true;
-                schemeSpecificPart = ALL_LEGAL_ENCODER.validate(
-                        uri, start, fragmentStart, "scheme specific part");
-                return;
-            } //End block
-        } //End block
-        else
-        {
-            absolute = false;
-            start = 0;
-        } //End block
-        opaque = false;
-        schemeSpecificPart = uri.substring(start, fragmentStart);
-        int fileStart;
-        if(uri.regionMatches(start, "//", 0, 2))        
-        {
-            int authorityStart = start + 2;
-            //fileStart = UrlUtils.findFirstOf(uri, "/?", authorityStart, fragmentStart);
-            fileStart = 0;
-            if(authorityStart == uri.length())            
-            {
-                URISyntaxException varE5F5DDDD4DF3054651CDAC5E21D37F76_1633852130 = new URISyntaxException(uri, "Authority expected", uri.length());
-                varE5F5DDDD4DF3054651CDAC5E21D37F76_1633852130.addTaint(taint);
-                throw varE5F5DDDD4DF3054651CDAC5E21D37F76_1633852130;
-            } //End block
-            if(authorityStart < fileStart)            
-            {
-                authority = AUTHORITY_ENCODER.validate(uri, authorityStart, fileStart, "authority");
-            } //End block
-        } //End block
-        else
-        {
-            fileStart = start;
-        } //End block
-        //int queryStart = UrlUtils.findFirstOf(uri, "?", fileStart, fragmentStart);
-        int queryStart = 0;
-        path = PATH_ENCODER.validate(uri, fileStart, queryStart, "path");
-        if(queryStart < fragmentStart)        
-        {
-            query = ALL_LEGAL_ENCODER.validate(uri, queryStart + 1, fragmentStart, "query");
-        } //End block
-        parseAuthority(forceServer);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1591,48 +1430,7 @@ String varE65B3A02759122992CB82C0E651AD408_1611435310 =         result.toString(
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.846 -0400", hash_original_method = "17490955FE7D32C9695E89CDD3A294E6", hash_generated_method = "27D4065BF46968E70B80EE5A339BC58E")
     @Override
     public String toString() {
-        if(string != null)        
-        {
-String varDCF8A90B03379D9C1C8BF337A3879E0C_1059051662 =             string;
-            varDCF8A90B03379D9C1C8BF337A3879E0C_1059051662.addTaint(taint);
-            return varDCF8A90B03379D9C1C8BF337A3879E0C_1059051662;
-        } //End block
-        StringBuilder result = new StringBuilder();
-        if(scheme != null)        
-        {
-            result.append(scheme);
-            result.append(':');
-        } //End block
-        if(opaque)        
-        {
-            result.append(schemeSpecificPart);
-        } //End block
-        else
-        {
-            if(authority != null)            
-            {
-                result.append("//");
-                result.append(authority);
-            } //End block
-            if(path != null)            
-            {
-                result.append(path);
-            } //End block
-            if(query != null)            
-            {
-                result.append('?');
-                result.append(query);
-            } //End block
-        } //End block
-        if(fragment != null)        
-        {
-            result.append('#');
-            result.append(fragment);
-        } //End block
-        string = result.toString();
-String varDCF8A90B03379D9C1C8BF337A3879E0C_2130932876 =         string;
-        varDCF8A90B03379D9C1C8BF337A3879E0C_2130932876.addTaint(taint);
-        return varDCF8A90B03379D9C1C8BF337A3879E0C_2130932876;
+     return string;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
