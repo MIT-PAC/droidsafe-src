@@ -787,6 +787,7 @@ public class ResourcesSoot {
 
         units.add(Jimple.v().newAssignStmt(localView, newExpr));
 
+        //view.init<>
         //constructor call, use invoke special
         units.add(Jimple.v().newInvokeStmt(
                     Jimple.v().newSpecialInvokeExpr(localView, viewInitMethod.makeRef(), 

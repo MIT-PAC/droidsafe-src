@@ -88,7 +88,7 @@ public abstract class RefVAModel extends VAModel {
                     fieldVAModels.add(stringVAModel);
                 } else {
                     for(AllocNode allocNode : allocNodes) {
-                        VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
+                        VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
                         if(vaModel != null) {
                             fieldVAModels.add(vaModel);
                         } else {
