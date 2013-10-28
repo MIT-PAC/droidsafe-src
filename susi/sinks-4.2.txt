@@ -1,6 +1,10 @@
 ADDED_BY_DROIDSAFE:
 <android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)> (SCREEN)
 <android.widget.Toast: android.widget.Toast makeText(android.content.Context,int,int)> (SCREEN)
+<org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest)> (NETWORK)
+<org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest,org.apache.http.protocol.HttpContext)> (NETWORK)
+<org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost,org.apache.http.HttpRequest)> (NETWORK)
+<org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost,org.apache.http.HttpRequest,org.apache.http.protocol.HttpContext)> (NETWORK)
 
 LOCATION_INFORMATION:
 <android.location.ILocationManager$Stub$Proxy: void clearTestProviderEnabled(java.lang.String)> (LOCATION_INFORMATION)
