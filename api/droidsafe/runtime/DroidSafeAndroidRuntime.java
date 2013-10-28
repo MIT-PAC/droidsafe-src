@@ -109,6 +109,7 @@ public class DroidSafeAndroidRuntime {
                 }
             }
         }
+        service.droidsafeOnSubServiceHook();
         service.onConfigurationChanged(new Configuration());
         service.onLowMemory();
         service.onTrimMemory(0);
