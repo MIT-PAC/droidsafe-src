@@ -321,8 +321,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private Layout mSavedMarqueeModeLayout;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.444 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "6CF16E724237A2841199FB30284CED38")
 
-    @DSVAModeled
-    private String TEXT;
     
     @ViewDebug.ExportedProperty(category = "text") 
     private CharSequence mText;
@@ -497,11 +495,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.455 -0400", hash_original_field = "28E8D15C0BD03E974FEC7876975B1D1F", hash_generated_field = "946F5E9D92C681851A4147B34C44B028")
 
     private CorrectionHighlighter mCorrectionHighlighter;
-    
-    @DSModeled(DSC.SAFE) 
-    public void setTextDS(String text) {
-        this.TEXT = text;
-    }
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.455 -0400", hash_original_method = "16A18A865F32B95685EAC04EF434D4B5", hash_generated_method = "E4C2F370BE90FD637853CF92939C9374")

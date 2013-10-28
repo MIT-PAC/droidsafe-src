@@ -10,6 +10,13 @@ import android.util.AttributeSet;
 @DSVAModeled
 public class Button extends TextView {
    
+    @DSVAModeled
+    private String TEXT;
+    
+    @DSModeled(DSC.SAFE) 
+    public void setTextDS(String text) {
+        this.TEXT = text;
+    }
     
     
     @DSModeled(DSC.SAFE)
