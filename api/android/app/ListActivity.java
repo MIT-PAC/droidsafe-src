@@ -1,12 +1,15 @@
 package android.app;
 
 // Droidsafe Imports
+import java.util.LinkedList;
+
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 import droidsafe.runtime.*;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceActivity.Header;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -231,6 +234,12 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1101591930 =         mAdapter;
             //return;
         //}
         //setContentView(com.android.internal.R.layout.list_content_simple);
+    }
+
+    @DSModeled(DSC.BAN)
+    @Override
+    public void droidsafeOnSubActivityHook() {
+        onListItemClick(mList, mList.getChildAt(0), getTaintInt(), getTaintInt());
     }
 
     

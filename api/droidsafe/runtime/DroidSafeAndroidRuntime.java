@@ -80,6 +80,10 @@ public class DroidSafeAndroidRuntime {
         
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
+        
+        //call hooks specific for SubActivity classes
+        activity.droidsafeOnSubActivityHook();
+
         activity.droidsafeOnStop();
         activity.droidsafeOnDestroy();
         activity.onDetachedFromWindow();

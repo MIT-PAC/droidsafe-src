@@ -41,6 +41,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public abstract class PreferenceActivity extends ListActivity implements PreferenceManager.OnPreferenceTreeClickListener, PreferenceFragment.OnPreferenceStartFragmentCallback {
@@ -311,6 +312,20 @@ switch(msg.what){
         // ---------- Original Method ----------
         //return getListView().getVisibility() == View.VISIBLE
                 //&& mPreferenceManager == null;
+    }
+    
+    @DSModeled(DSC.BAN)
+    @Override
+    public void droidsafeOnSubActivityHook() {
+        onIsHidingHeaders();
+        onIsMultiPane();
+        onBuildHeaders(new LinkedList<Header>());
+        onGetInitialHeader();
+        onGetNewHeader();
+        onHeaderClick(new Header(), getTaintInt());
+        onBuildStartFragmentIntent(new String(), new Bundle(), getTaintInt(), getTaintInt());
+        //TODO: check to make sure other callbacks are already called from super classes
+        // callback preference screeen set
     }
 
     

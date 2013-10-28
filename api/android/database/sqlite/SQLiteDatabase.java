@@ -40,6 +40,7 @@ import dalvik.system.BlockGuard;
 
 
 import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class SQLiteDatabase extends SQLiteClosable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.531 -0400", hash_original_field = "2F577CFF36E03467323CF3302EA45D6C", hash_generated_field = "E7056D75F4E4E6EB0CBA6DCE1F4F880B")
@@ -137,6 +138,11 @@ public class SQLiteDatabase extends SQLiteClosable {
             varE4C91A561B864CD4490A03B12C2E1BD5_1723494487.addTaint(taint);
             throw varE4C91A561B864CD4490A03B12C2E1BD5_1723494487;
         } //End block
+        
+        addTaint(path.getTaint());
+        addTaint(factory.getTaint());
+        addTaint(connectionNum);
+
         setMaxSqlCacheSize(DEFAULT_SQL_CACHE_SIZE);
         mFlags = flags;
         mPath = path;
@@ -245,6 +251,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.543 -0400", hash_original_method = "6F6099DC841EA0266005BC3A83B18A96", hash_generated_method = "2A987EE7CB3E0BFCE2CF75EBB4A3F7FF")
      void lock(String sql) {
         addTaint(sql.getTaint());
@@ -254,7 +261,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.543 -0400", hash_original_method = "8D6DAA6963637C0BD50884518E0FF993", hash_generated_method = "31DA195A8CACA429F53CC674AB87F7FD")
      void lock() {
         lock(null, false);
@@ -267,7 +274,10 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.544 -0400", hash_original_method = "550218B4AE04D143508369398336F95D", hash_generated_method = "E2070B94C1CF03D4ABE3B501D68A397F")
     private void lock(String sql, boolean forced) {
         addTaint(forced);
-        addTaint(sql.getTaint());
+
+        if (sql != null)
+            addTaint(sql.getTaint());
+/*
         if(Thread.holdsLock(this))        
         {
         } //End block
@@ -305,6 +315,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
                 logTimeStat(sql, timeStart, GET_LOCK_LOG_PREFIX);
             } //End block
         } //End block
+*/
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -331,6 +342,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.547 -0400", hash_original_method = "CB05AAFAB101AFFDD598174816C61BF7", hash_generated_method = "454B48A9532576C534C73BFE34BC80FF")
      void unlock() {
+        /*
         if(!mLockingEnabled)        
         return;
         if(SQLiteDebug.DEBUG_LOCK_TIME_TRACKING)        
@@ -341,6 +353,7 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
             } //End block
         } //End block
         mLock.unlock();
+        */
         // ---------- Original Method ----------
         //if (!mLockingEnabled) return;
         //if (SQLiteDebug.DEBUG_LOCK_TIME_TRACKING) {
@@ -450,6 +463,9 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
     private void beginTransaction(SQLiteTransactionListener transactionListener,
             boolean exclusive) {
         addTaint(exclusive);
+        if (transactionListener != null)
+            addTaint(transactionListener.getTaint());
+        /*
         verifyDbIsOpen();
         lockForced(BEGIN_SQL);
         boolean ok = false;
@@ -502,6 +518,8 @@ String varE4FE602774BCA440409AAE6EFE27003F_1972529260 =         mLastSqlStatemen
                 unlockForced();
             } //End block
         } //End block
+        
+        */
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -1606,6 +1624,7 @@ for(i = 0;i < size;i++)
     public int updateWithOnConflict(String table, ContentValues values,
             String whereClause, String[] whereArgs, int conflictAlgorithm) {
         addTaint(conflictAlgorithm);
+        addTaint(whereArgs.getTaintShort());
         addTaint(whereArgs[0].getTaint());
         addTaint(whereClause.getTaint());
         addTaint(values.getTaint());
@@ -1699,28 +1718,15 @@ for(i = setValuesSize;i < bindArgsSize;i++)
     private int executeSql(String sql, Object[] bindArgs) throws SQLException {
         addTaint(bindArgs[0].getTaint());
         addTaint(sql.getTaint());
-        if(DatabaseUtils.getSqlStatementType(sql) == DatabaseUtils.STATEMENT_ATTACH)        
-        {
-            disableWriteAheadLogging();
-            mHasAttachedDbs = true;
-        } //End block
-        SQLiteStatement statement = new SQLiteStatement(this, sql, bindArgs);
-        try 
-        {
-            int var01DF87E30F36942B79889D5C280E42B9_1533965845 = (statement.executeUpdateDelete());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430819270 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430819270;
-        } //End block
-        catch (SQLiteDatabaseCorruptException e)
-        {
+        
+        if (DroidSafeAndroidRuntime.control) {
+            SQLiteDatabaseCorruptException e = new SQLiteDatabaseCorruptException();
+            e.addTaint(getTaint());
             onCorruption();
-            e.addTaint(taint);
             throw e;
-        } //End block
-        finally 
-        {
-            statement.close();
-        } //End block
+        }
+        
+        return getTaintInt();
         // ---------- Original Method ----------
         //if (DatabaseUtils.getSqlStatementType(sql) == DatabaseUtils.STATEMENT_ATTACH) {
             //disableWriteAheadLogging();
@@ -2620,19 +2626,21 @@ for(int i = 0;i < attachedDbs.size();i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.654 -0400", hash_original_method = "8D335FE0EDA9A8017E889380A7A722CF", hash_generated_method = "7DC2BD660B2CDC6483080370E51D7A42")
     private void dbopen(String path, int flags) {
+            addTaint(path.getTaint());
+            addTaint(flags);
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.655 -0400", hash_original_method = "70E20853624884484C3836EF6F149A55", hash_generated_method = "079E6181584D18FF7794E2CCCC7EC698")
     private void enableSqlTracing(String path, short connectionNum) {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.656 -0400", hash_original_method = "C8A96013E7D0E582573D33F32AE9CEB2", hash_generated_method = "8E4CC6A847CB4D4A755E1D378C2FD667")
     private void enableSqlProfiling(String path, short connectionNum) {
     }

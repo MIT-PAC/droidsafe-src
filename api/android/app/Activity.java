@@ -3508,6 +3508,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	public void droidsafeOnPause() {
     	this.onPause();
 	}
+    
+    /**
+     * addition hooks to allow subactivity onXYZ to be called from droidsafe runtime
+     */
+    @DSModeled(DSC.BAN)
+	public void droidsafeOnSubActivityHook() {
+	}
 
     
 }
