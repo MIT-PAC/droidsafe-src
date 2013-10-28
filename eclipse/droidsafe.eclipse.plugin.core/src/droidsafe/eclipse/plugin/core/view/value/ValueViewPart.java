@@ -120,7 +120,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
             if (valuesText == null) {
                 StringBuffer buf = new StringBuffer();
                 String receiverValue = method.getReceiverValue();
-                if (receiverValue != null && receiverValue != "") {
+                if (receiverValue != null && !receiverValue.isEmpty()) {
                     buf.append("receiver: ");
                     buf.append(method.getReceiverType());
                     buf.append("\n\n");

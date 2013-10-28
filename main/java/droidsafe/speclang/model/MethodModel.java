@@ -759,7 +759,7 @@ public class MethodModel extends ModelChangeSupport
    * Returns true if there are computed values info on one of the method arguments.
    */
   public boolean hasValueInfo() {
-    return !receiverValue.equals("") && methodArgumentValues != null;
+    return !receiverValue.equals("") || methodArgumentValues != null;
   }
 
   /**
