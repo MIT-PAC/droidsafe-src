@@ -12,6 +12,7 @@ public class StatFs {
 
     private int mNativeContext;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.593 -0400", hash_original_method = "B32C82E8AC66960E05928520E920B8ED", hash_generated_method = "CCF55AC3BDE6BEDBB3990853763B6D6F")
     public  StatFs(String path) {
         addTaint(path.getTaint());

@@ -25,6 +25,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
 
     final KeyEvent.DispatcherState mDispatcherState = new KeyEvent.DispatcherState();
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.078 -0400", hash_original_method = "BC18251CD7580FCA2AE30C6FE0852CCA", hash_generated_method = "BC18251CD7580FCA2AE30C6FE0852CCA")
     public AbstractInputMethodService ()
     {

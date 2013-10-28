@@ -1141,7 +1141,7 @@ _data.recycle();
 }
 
 
-@DSModeled(DSC.BAN)
+@DSModeled(DSC.SAFE)
             public boolean canStatusBarHide() throws android.os.RemoteException
 {
 	android.os.Parcel _data = android.os.Parcel.obtain();
@@ -2158,7 +2158,7 @@ _data.recycle();
 return _result;
 }
 
-@DSModeled(DSC.BAN)
+@DSModeled(DSC.SAFE)
             public android.view.InputDevice getInputDevice(int deviceId) throws android.os.RemoteException
 {
 	addTaint(deviceId);
@@ -2222,7 +2222,7 @@ _data.recycle();
 }
 }
 
-@DSModeled(DSC.BAN)
+@DSModeled(DSC.SAFE)
             public void showStrictModeViolation(boolean on) throws android.os.RemoteException
 {
 	addTaint(on);
@@ -2444,7 +2444,7 @@ _data.recycle();
 }
 }
 
-@DSModeled(DSC.BAN)
+@DSModeled(DSC.SAFE)
             public boolean hasNavigationBar() throws android.os.RemoteException
 {
 	android.os.Parcel _data = android.os.Parcel.obtain();

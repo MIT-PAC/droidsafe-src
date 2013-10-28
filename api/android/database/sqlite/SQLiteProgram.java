@@ -34,6 +34,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
 
     int mStatementType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.878 -0400", hash_original_method = "7775AC6B878F6A87A2372052B1B0D459", hash_generated_method = "41E778A5BDC0A5D548EA64717016D4CF")
       SQLiteProgram(SQLiteDatabase db, String sql) {
         this(db, sql, null, true);
@@ -43,6 +44,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.881 -0400", hash_original_method = "DADBFC98E2D0F265D4B5A43330A492E4", hash_generated_method = "FA50D3FC133A83B8E0EEA46C07D9CA2F")
       SQLiteProgram(SQLiteDatabase db, String sql, Object[] bindArgs,
             boolean compileFlag) {
@@ -115,6 +117,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.884 -0400", hash_original_method = "300DFE9F6A4C69242F1C212512462325", hash_generated_method = "1CD0B8729AFD456C5EE63418C49A729F")
     @Override
     protected void onAllReferencesReleased() {
@@ -129,6 +132,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.885 -0400", hash_original_method = "A968FD9C775F09F9345F28805B1169A5", hash_generated_method = "431B9CF113097FF3B598F21FC4A441C4")
     @Override
     protected void onAllReferencesReleasedFromContainer() {
@@ -141,6 +145,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.886 -0400", hash_original_method = "A1FA2CE0BFABB0D7A31C7494B049120F", hash_generated_method = "5D6868BE11EFE7AC8BFB63471A055E5D")
      void release() {
         if(mCompiledSql == null)        
@@ -282,6 +287,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.894 -0400", hash_original_method = "963A4C4D7269247053E24419DAA13FC1", hash_generated_method = "759F3932A616F4E3320D86FE5AB6128D")
     public void bindString(int index, String value) {
         addTaint(value.getTaint());
@@ -320,6 +326,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.895 -0400", hash_original_method = "A82C4E1E74B388EF1F68336E0B7074B9", hash_generated_method = "8A47B8FA5E4047E2CED91F1786488589")
     public void clearBindings() {
         mBindArgs = null;
@@ -388,6 +395,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.898 -0400", hash_original_method = "3FC7B6EE26A3C940A3FAD2B270073635", hash_generated_method = "E98AE2A112EF7A3BE2E1A3C087F0CC40")
      void compileAndbindAllArgs() {
         if((mStatementType & STATEMENT_DONT_PREPARE) > 0)        
@@ -454,6 +462,7 @@ for(int index : mBindArgs.keySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.900 -0400", hash_original_method = "7568906165FD370FD5C4296CB4D5FD76", hash_generated_method = "B8D09063FB225E95259D13453AD4A72E")
     public void bindAllArgsAsStrings(String[] bindArgs) {
         addTaint(bindArgs[0].getTaint());

@@ -140,7 +140,7 @@ public class InputMethodService extends AbstractInputMethodService {
     int mCandidatesVisibility;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.496 -0400", hash_original_field = "C0ED2CFA44D0D69EEA23C8E4C66CE227", hash_generated_field = "497159238D66DB93A282D483EC1CA3AC")
 
-    CompletionInfo[] mCurCompletions;
+    CompletionInfo[] mCurCompletions = new CompletionInfo[10];
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.496 -0400", hash_original_field = "27CC66322143CE51D330735DF962162F", hash_generated_field = "0A08F53EED6C8EEC9D7CC85E98FAC447")
 
     boolean mShowInputForced;
@@ -264,6 +264,7 @@ public class InputMethodService extends AbstractInputMethodService {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.498 -0400", hash_original_method = "1525492D8EE98BBF3E2138610F838AAF", hash_generated_method = "1525492D8EE98BBF3E2138610F838AAF")
     public InputMethodService ()
     {
@@ -308,6 +309,8 @@ public class InputMethodService extends AbstractInputMethodService {
         mWindow = new SoftInputWindow(this, mTheme, mDispatcherState);
         initViews();
         mWindow.getWindow().setLayout(MATCH_PARENT, WRAP_CONTENT);
+        for (int i = 0; i < mCurCompletions.length; i++)
+            mCurCompletions[i] = new CompletionInfo(getTaintInt(), getTaintInt(), new String());
         // ---------- Original Method ----------
         //mTheme = Resources.selectSystemTheme(mTheme,
                 //getApplicationInfo().targetSdkVersion,
@@ -333,6 +336,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.502 -0400", hash_original_method = "F1A6BBC586CE4C5158D93D758F9EE4FD", hash_generated_method = "2E992143C8A8A5FEB72770AB798F0F87")
      void initialize() {
         if(!mInitialized)        
@@ -348,6 +352,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.504 -0400", hash_original_method = "E6A2B0DBCD46A23062A8849E041DB211", hash_generated_method = "C9F3FD38CC9DC02895E3A0D8CADB0293")
      void initViews() {
         mInitialized = false;
@@ -386,6 +391,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.505 -0400", hash_original_method = "03BF0E4B83AB5EEC5EA04DACA2552646", hash_generated_method = "91DA585A45BAC6BEB0DD08E5DA580FB1")
     @Override
     public void onDestroy() {
@@ -957,6 +963,7 @@ EditorInfo varDE36ACD7348A513234260C9526EF31CC_258562537 =         mInputEditorI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.523 -0400", hash_original_method = "587D3BCB04C3551F0F314F802D60C565", hash_generated_method = "3B5FB2C109BED111B5A6251B8FC530E9")
     public int getCandidatesHiddenVisibility() {
         int var6645820E07724FB19B2C03771B652C5E_1290762036 = (isExtractViewShown() ? View.GONE : View.INVISIBLE);
@@ -1353,6 +1360,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.540 -0400", hash_original_method = "09134BCCF788D1D9024485AE6DA1693C", hash_generated_method = "14C8BCC1031877ACF4A6D5146B69A189")
     public void hideWindow() {
         finishViews();
@@ -1616,6 +1624,7 @@ View var540C13E9E156B687226421B24F2DF178_1412653713 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.553 -0400", hash_original_method = "53762C81936F5FCD41F3F903406EE4C3", hash_generated_method = "5C5E62A715329EE6C45F4A1DEC3FE6E6")
     public void requestHideSelf(int flags) {
         addTaint(flags);
@@ -2864,6 +2873,52 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
 
         public static final int TOUCHABLE_INSETS_REGION
                 = ViewTreeObserver.InternalInsetsInfo.TOUCHABLE_INSETS_REGION;
+    }
+
+    @Override
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnSubServiceHook() {
+        super.droidsafeOnSubServiceHook();
+        onBindInput();
+        onComputeInsets(new Insets());
+        onCreateCandidatesView();
+        onCreateExtractTextView();
+        onCreateInputView();
+        onAppPrivateCommand(new String(),  new Bundle());
+        onCreateInputMethodInterface();
+        onCreateInputMethodSessionInterface();
+        onDisplayCompletions(mCurCompletions);
+        onEvaluateFullscreenMode();
+        onEvaluateInputViewShown();
+        onExtractedCursorMovement(getTaintInt(),  getTaintInt());
+        onExtractedDeleteText(getTaintInt(),  getTaintInt());
+        onExtractedTextClicked();
+        onExtractingInputChanged(new EditorInfo());
+        onFinishInput();
+        onFinishInputView(getTaintBoolean());
+        onInitializeInterface();
+        onKeyDown(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
+        onKeyUp(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
+        onKeyLongPress(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
+        onKeyDown(getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
+        onKeyMultiple(getTaintInt(), getTaintInt(), new KeyEvent(getTaintInt(), getTaintInt()));
+        onShowInputRequested(getTaintInt(),  getTaintBoolean());
+        onStartCandidatesView(new EditorInfo(), getTaintBoolean());
+        onStartInput(new EditorInfo(), getTaintBoolean());
+        onStartInputView(new EditorInfo(), getTaintBoolean());
+        onTrackballEvent(MotionEvent.droidsafeObtainEvent());
+        onUpdateCursor(new Rect());
+        onUpdateExtractedText(getTaintInt(), new ExtractedText());
+        onUpdateExtractingViews(new EditorInfo());
+        onUpdateExtractingVisibility(new EditorInfo());
+
+        onUpdateSelection(getTaintInt(),  getTaintInt(),  getTaintInt(), getTaintInt(),  
+                         getTaintInt(), getTaintInt());
+        onViewClicked(getTaintBoolean());
+        onWindowHidden();
+        onWindowShown();
+        
+        onUnbindInput();
     }
 
 

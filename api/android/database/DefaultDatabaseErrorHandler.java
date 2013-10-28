@@ -15,6 +15,7 @@ import android.util.Pair;
 
 public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.957 -0400", hash_original_method = "896C9D78E64EAD9D50DC29D09D68C65A", hash_generated_method = "896C9D78E64EAD9D50DC29D09D68C65A")
     public DefaultDatabaseErrorHandler ()
     {

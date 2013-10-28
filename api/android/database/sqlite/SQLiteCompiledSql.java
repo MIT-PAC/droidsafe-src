@@ -28,6 +28,7 @@ class SQLiteCompiledSql {
 
     private boolean mInUse = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.224 -0400", hash_original_method = "C9E5BB8A7566B989DACB4531BB979B78", hash_generated_method = "546688A8F875F6FD041920E76F861F19")
       SQLiteCompiledSql(SQLiteDatabase db, String sql) {
         db.verifyDbIsOpen();
@@ -59,6 +60,7 @@ class SQLiteCompiledSql {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.225 -0400", hash_original_method = "8853AA921C334D6AF9AE7213FF2A5D13", hash_generated_method = "ED9D659C369AD780BE44EF509F38976C")
      void releaseSqlStatement() {
         if(nStatement != 0)        
@@ -105,6 +107,7 @@ class SQLiteCompiledSql {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.227 -0400", hash_original_method = "AE3D09E3B5AB69E4329FBD89B4473FE6", hash_generated_method = "B3B41998A788AC7FE9794D9C8865C2BF")
     synchronized void releaseIfNotInUse() {
         if(!mInUse)        
@@ -118,6 +121,7 @@ class SQLiteCompiledSql {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.227 -0400", hash_original_method = "043FE176FAAAC79BBB94A20B9880CE43", hash_generated_method = "9FA847F4C910AB1E13B14F50F8F813B8")
     @Override
     protected void finalize() throws Throwable {

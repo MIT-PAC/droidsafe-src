@@ -31,6 +31,7 @@ public class ListActivity extends Activity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.757 -0400", hash_original_field = "F487762B42FCD79D908F11802425F9AE", hash_generated_field = "B11DF01C886CC15D12A595382174A0C1")
 
     private Runnable mRequestFocus = new Runnable() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.756 -0400", hash_original_method = "4F290F2508C3F0B44E09591C5B0749BC", hash_generated_method = "203642A5324F5F18B21A0D020E65FD5C")
         public void run() {
             mList.focusableViewAvailable(mList);
@@ -43,6 +44,7 @@ public class ListActivity extends Activity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.760 -0400", hash_original_field = "9B3F30A71979D6623D111E114AFFBE5E", hash_generated_field = "F601E5C2332EFF7D085096154B4D128B")
 
     private AdapterView.OnItemClickListener mOnClickListener = new AdapterView.OnItemClickListener() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.760 -0400", hash_original_method = "FBAC6E1DF4BED6C0A21E33622DB577EE", hash_generated_method = "833C533291E93907AE627CFADCA9E3A3")
         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -58,6 +60,7 @@ public class ListActivity extends Activity {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.761 -0400", hash_original_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E", hash_generated_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E")
     public ListActivity ()
     {
@@ -77,6 +80,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.765 -0400", hash_original_method = "39D3E8C83EC5D9AA90999E3A2D1BCB07", hash_generated_method = "066644180D6D98293ABB7CCE0CF4437A")
     @Override
     protected void onRestoreInstanceState(Bundle state) {
@@ -90,6 +94,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.767 -0400", hash_original_method = "4F23093C6BEB1F491BB932E73A46BC35", hash_generated_method = "CF7A1C3476A79012F41BDF4FF64AE419")
     @Override
     protected void onDestroy() {
@@ -102,6 +107,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.771 -0400", hash_original_method = "955E85868B41B55EC53984762AF65544", hash_generated_method = "30388E3EF3BC0BDECE4758D0963DCC90")
     @Override
     public void onContentChanged() {
@@ -149,6 +155,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.775 -0400", hash_original_method = "24FA4810D9E2927905358E0A26AF6AD1", hash_generated_method = "16A96C087EF2F39B7302E11E10E5E2C2")
     public void setListAdapter(ListAdapter adapter) {
         synchronized
@@ -166,6 +173,7 @@ public class ListActivity extends Activity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.777 -0400", hash_original_method = "567D9F46FDBA003818BBBCD086387BF6", hash_generated_method = "600CC98502A226E0867A545DC502CE66")
     public void setSelection(int position) {
         addTaint(position);

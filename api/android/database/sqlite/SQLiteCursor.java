@@ -50,6 +50,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.302 -0400", hash_original_method = "73EECE67D75C79AF0ED0AD77F55FFB21", hash_generated_method = "819342AB1150F05CA9FF27F6DB10D9E2")
     public  SQLiteCursor(SQLiteCursorDriver driver, String editTable, SQLiteQuery query) {
         if(query == null)        
@@ -275,6 +276,7 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_2011788089 =         mColumns;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.313 -0400", hash_original_method = "448CAED0D85C68E057975FF7C64F6766", hash_generated_method = "F952F3C03ADB6ED50FD0A82E13FE1446")
     @Override
     public void close() {
@@ -411,6 +413,7 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_2011788089 =         mColumns;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.319 -0400", hash_original_method = "3B748B9308D21E215FBA6A9497941AC3", hash_generated_method = "F7AB92730F29B27F883A76E20B20D2DA")
     @Override
     protected void finalize() {

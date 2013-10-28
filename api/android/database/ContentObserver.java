@@ -19,6 +19,7 @@ public abstract class ContentObserver {
 
     Handler mHandler;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.570 -0400", hash_original_method = "DEDF781BC2901F5DB53B414F0A999CAB", hash_generated_method = "256B09D59F656DF49A982C4626C638E5")
     public  ContentObserver(Handler handler) {
         mHandler = handler;

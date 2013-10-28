@@ -120,6 +120,7 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
 
     private boolean mBaseMethodCalled;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.490 -0400", hash_original_method = "9CEB9C34CAA8ECAB230B50A0542D61B3", hash_generated_method = "74D1F627E9A957F43B8CE427BAE8AFEA")
     public  Preference(Context context, AttributeSet attrs, int defStyle) {
         addTaint(defStyle);
@@ -186,6 +187,7 @@ switch(attr){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.491 -0400", hash_original_method = "48043D3D24F48A6FD06B47A9624983D0", hash_generated_method = "BF1985E86638FE5C9EDFA863C08F2728")
     public  Preference(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.preferenceStyle);
@@ -195,6 +197,7 @@ switch(attr){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.491 -0400", hash_original_method = "B50FF766B3A35A641C8DC6BF5214AE70", hash_generated_method = "946D92E4443D83AFE407CB73CBDDE443")
     public  Preference(Context context) {
         this(context, null);
