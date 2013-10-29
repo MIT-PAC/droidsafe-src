@@ -77,7 +77,7 @@ public abstract class LayoutInflater {
         //mFilter = original.mFilter;
     }
 
-    
+    @DSModeled(DSC.SAFE)
     public static LayoutInflater from(Context context) {
         LayoutInflater LayoutInflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

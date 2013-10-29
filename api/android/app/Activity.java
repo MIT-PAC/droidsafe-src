@@ -1483,7 +1483,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public boolean onCreateOptionsMenu(Menu menu){
 		return mParent.onCreateOptionsMenu(menu);
 		// Original method
@@ -1631,7 +1631,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -1685,7 +1685,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @Deprecated public void onPrepareDialog(int id, Dialog dialog){
 		dialog.setOwnerActivity(this);
 		// Original method
@@ -1698,7 +1698,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @Deprecated protected void onPrepareDialog(int id, Dialog dialog, Bundle args){
 		onPrepareDialog(id, dialog);
 		// Original method
@@ -2404,7 +2404,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public void finish(){
 		Log.v(TAG, "Finishing self: token=" + mToken);
 		mResultData.setAllowFds(false);

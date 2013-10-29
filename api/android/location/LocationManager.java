@@ -830,13 +830,13 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
         {
 Location var94D744E5CB62D5F61288405519195D94_1241647484 =             mService.getLastKnownLocation(provider);
             var94D744E5CB62D5F61288405519195D94_1241647484.addTaint(taint);
-            return var94D744E5CB62D5F61288405519195D94_1241647484;
+            
         } //End block
         catch (RemoteException ex)
         {
 Location var540C13E9E156B687226421B24F2DF178_1859180586 =             null;
             var540C13E9E156B687226421B24F2DF178_1859180586.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1859180586;
+          
         } //End block
         // ---------- Original Method ----------
         //if (provider == null) {
@@ -848,6 +848,7 @@ Location var540C13E9E156B687226421B24F2DF178_1859180586 =             null;
             //Log.e(TAG, "getLastKnowLocation: RemoteException", ex);
             //return null;
         //}
+        return new Location("GPS");
     }
 
     
