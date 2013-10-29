@@ -16,6 +16,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.app.Application;
+import android.app.Dialog;
 
 
 
@@ -72,6 +73,20 @@ public class DroidSafeAndroidRuntime {
         activity.onSearchRequested();
         activity.onUserInteraction();
 
+        //TODO: DOES THIS MAKE SENSE?
+        activity.onCreateDialog(0);
+        activity.onCreateDialog(0, new Bundle());
+        activity.onPrepareDialog(0, new Dialog(context));
+        
+        
+        //TODO: WHAT ABOUT A REAL MENU?
+        activity.onCreateOptionsMenu(null);
+        activity.onPrepareOptionsMenu(null);
+        activity.onCreateContextMenu(null, null, null);
+        activity.onOptionsItemSelected(null);
+        activity.onContextItemSelected(null);
+        
+        
         activity.onConfigurationChanged(new Configuration());
 
         activity.droidsafeOnSavedInstanceState(new Bundle());

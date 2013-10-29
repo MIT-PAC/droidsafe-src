@@ -1662,7 +1662,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     
     @DSModeled(DSC.SAFE)
-    @Deprecated protected Dialog onCreateDialog(int id){
+    @Deprecated public  Dialog onCreateDialog(int id){
 		// Original method
 		/*
 		{
@@ -1674,7 +1674,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     
     @DSModeled(DSC.SAFE)
-    @Deprecated protected Dialog onCreateDialog(int id, Bundle args){
+    @Deprecated public Dialog onCreateDialog(int id, Bundle args){
 		return onCreateDialog(id);
 		// Original method
 		/*
@@ -1686,7 +1686,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     
     @DSModeled(DSC.SPEC)
-    @Deprecated protected void onPrepareDialog(int id, Dialog dialog){
+    @Deprecated public void onPrepareDialog(int id, Dialog dialog){
 		dialog.setOwnerActivity(this);
 		// Original method
 		/*
