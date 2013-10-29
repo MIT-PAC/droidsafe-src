@@ -1,4 +1,5 @@
 ADDED_BY_DROIDSAFE:
+<java.io.FileOutputStream: void write(int)> (FILE)
 <android.app.Activity: void startActivityForResult(android.content.Intent,int)> (START_ACTIVITY)
 <android.app.Activity: void startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int)> (START_ACTIVITY)
 <android.app.Activity: void startActivity(android.content.Intent)> (START_ACTIVITY)
