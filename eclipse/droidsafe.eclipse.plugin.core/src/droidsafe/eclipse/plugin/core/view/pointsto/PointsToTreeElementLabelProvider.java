@@ -9,6 +9,7 @@ import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
+import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * Label provider for the nodes of the points-to outline view.
@@ -31,18 +32,18 @@ public class PointsToTreeElementLabelProvider extends MethodInfoTreeElementLabel
             Object data = treeElement.getData();
             if (data instanceof AllocLocationModel) {
                 AllocLocationModel loc = (AllocLocationModel) data;
-                if (loc.getFromAPI()) {
+                if (!loc.getFromAPI()) {
                     return "<new> (from API)";
                 } else {
-                    return "<new> " + loc;
+                    return "<new> " + ClassCloner.removeClassCloneSuffix(loc.toString());
                 }
             } else if (data instanceof CallLocationModel) {
                 CallLocationModel loc = (CallLocationModel) data;
-                return "<call> " + loc;
+                return "<call> " + ClassCloner.removeClassCloneSuffix(loc.toString());
             }
-            return data.toString();
+            return ClassCloner.removeClassCloneSuffix(data.toString());
         }
-        return element.toString();
+        return ClassCloner.removeClassCloneSuffix(element.toString());
     }
 
     /**
