@@ -49,12 +49,6 @@ public abstract class RefVAModel extends VAModel {
 
     private static final UnknownVAModel unknownValue = new UnknownVAModel();
 
-    /** 
-     * Flag that gets set to true when the model is being printed.
-     * Used to avoid infinite loops when printing due to chains of models being values of fields of other models.
-     */
-    private boolean beingPrinted = false;
-
     public RefVAModel(Object newExpr){
         this.newExpr = newExpr;
     }
@@ -133,16 +127,10 @@ public abstract class RefVAModel extends VAModel {
      */
     @Override
     public String toStringSimple() {
-        beingPrinted = true;
         String str = "{\"";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
         str += "\":";
-        if(beingPrinted) {
-            str += "\"RECURSIVE\"";
-        } else {
-            str += "{" + this.fieldsString(false) + "}";
-        }
-        beingPrinted = false;
+        str += "{" + this.fieldsString(false) + "}";
         str += "}";
         return str.replace("\"", "");
     }
@@ -152,16 +140,10 @@ public abstract class RefVAModel extends VAModel {
      */
     @Override
     public String toStringDetailed() {
-        beingPrinted = true;
         String str = "{\"va-modeled-";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
         str += " " + this.getId() + "\": ";
-        if(beingPrinted) {
-            str += "\"RECURSIVE\"";
-        } else {
-            str += "{" + this.fieldsString(true) + "}";
-        }
-        beingPrinted = false;
+        str += "{" + this.fieldsString(true) + "}";
         return str + "}";
     }
 
