@@ -133,16 +133,16 @@ public abstract class RefVAModel extends VAModel {
      */
     @Override
     public String toStringSimple() {
-        beingPrinted = true;
         String str = "{\"";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
         str += "\":";
         if(beingPrinted) {
             str += "\"RECURSIVE\"";
         } else {
+            beingPrinted = true;
             str += "{" + this.fieldsString(false) + "}";
+            beingPrinted = false;
         }
-        beingPrinted = false;
         str += "}";
         return str.replace("\"", "");
     }
@@ -152,16 +152,16 @@ public abstract class RefVAModel extends VAModel {
      */
     @Override
     public String toStringDetailed() {
-        beingPrinted = true;
         String str = "{\"va-modeled-";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
         str += " " + this.getId() + "\": ";
         if(beingPrinted) {
             str += "\"RECURSIVE\"";
         } else {
+            beingPrinted = true;
             str += "{" + this.fieldsString(true) + "}";
+            beingPrinted = false;
         }
-        beingPrinted = false;
         return str + "}";
     }
 
