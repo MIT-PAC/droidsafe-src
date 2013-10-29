@@ -323,11 +323,13 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * Helper method to write to the file where we log all errors we encounter during value analysis
      */
     public static void logError(String logEntry) {
+        /*
         try {
             vaErrorsLog.write(logEntry + "\n");
         } catch (IOException ioe) {
-            //logger.warn("Unable to write to the va-errors.log file.", ioe);
+            logger.warn("Unable to write to the va-errors.log file.", ioe);
         }
+        */
     }
 
     /**
