@@ -221,7 +221,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_659266388 =         fd;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.943 -0400", hash_original_method = "F915AF116DBABF662C85674FE9C75DD1", hash_generated_method = "B0100B8D6811E035B621357EE70ED51B")
     @Override
     public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
@@ -234,7 +234,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_659266388 =         fd;
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.943 -0400", hash_original_method = "36E798E1E7EB95F42CDB9DAEDA0C8547", hash_generated_method = "138B1D0EC92A8994ADF13D7A3C31A154")
     @Override
     public void write(int oneByte) throws IOException {

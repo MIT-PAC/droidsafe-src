@@ -881,7 +881,7 @@ File[] var36CD04F8590545BE163F612A0C547736_510542342 =         result.toArray(ne
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.833 -0400", hash_original_method = "7CC449D7C06EBE9C929936D878A8919D", hash_generated_method = "CC3ED78B83BA36B3882FDB2D5B3AC32F")
     private File[] filenamesToFiles(String[] filenames) {
         addTaint(filenames[0].getTaint());
