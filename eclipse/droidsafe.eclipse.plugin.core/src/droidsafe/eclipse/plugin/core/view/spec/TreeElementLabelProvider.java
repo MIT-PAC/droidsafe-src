@@ -30,6 +30,7 @@ import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.MethodsToHighlight;
+import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * Label provider for the nodes of the Droidsafe outline view.
@@ -93,15 +94,15 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
           receiver = "\n" + receiver;
         }
         if (!useShortSignatureForMethods) {
-          return method.getSignature() + receiver;
+          return ClassCloner.removeClassCloneSuffix(method.getSignature() + receiver);
         } else {
-          return method.getShortSignature() + receiver;
+          return ClassCloner.removeClassCloneSuffix(method.getShortSignature() + receiver);
         }
       } else if (data instanceof HotspotModel) {
           return "hotspot: argument " + (((HotspotModel)data).getArgumentPosition() + 1);
       }
     }
-    return element.toString();
+    return ClassCloner.removeClassCloneSuffix(element.toString());
   }
 
   public String getToolTipText(Object obj) {
@@ -128,7 +129,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
         if (method.isNative()) {
           sb.append("\nNATIVE METHOD");
         }
-        return sb.toString();
+        return ClassCloner.removeClassCloneSuffix(sb.toString());
       }
     }
     return null;

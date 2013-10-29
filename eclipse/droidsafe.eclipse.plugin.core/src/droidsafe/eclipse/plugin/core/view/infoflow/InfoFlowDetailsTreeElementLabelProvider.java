@@ -7,6 +7,7 @@ import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.eclipse.plugin.core.view.MethodInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
+import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * Label provider for the nodes of the info flow outline view.
@@ -31,7 +32,7 @@ public class InfoFlowDetailsTreeElementLabelProvider extends MethodInfoTreeEleme
                 return data.toString();
             } else if (data instanceof CallLocationModel) {
                 CallLocationModel loc = (CallLocationModel) data;
-                return "<call> " + loc;
+                return "<call> " + ClassCloner.removeClassCloneSuffix(loc.toString());
             }
         }
         return super.getText(element);

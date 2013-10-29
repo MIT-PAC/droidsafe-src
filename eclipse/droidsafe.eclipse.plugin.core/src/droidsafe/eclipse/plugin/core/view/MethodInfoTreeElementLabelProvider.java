@@ -10,6 +10,7 @@ import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
+import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * Label provider for the nodes of the points-to outline view.
@@ -35,9 +36,9 @@ public class MethodInfoTreeElementLabelProvider extends StyledCellLabelProvider 
         if (element instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
             Object data = treeElement.getData();
-            return data.toString();
+            return ClassCloner.removeClassCloneSuffix(data.toString());
         }
-        return element.toString();
+        return ClassCloner.removeClassCloneSuffix(element.toString());
     }
 
     /**

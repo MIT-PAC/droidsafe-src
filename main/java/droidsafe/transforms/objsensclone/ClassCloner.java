@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -220,4 +222,12 @@ public class ClassCloner {
             newMeth.setActiveBody(newBody);
         }
     }
+    
+    public static String removeClassCloneSuffix(String str) {
+        String regex = CLONE_POSTFIX+"[0-9]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        return matcher.replaceAll("");
+    }
+
 }
