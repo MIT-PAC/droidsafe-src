@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.app.Application;
 import android.app.Dialog;
+import android.view.MotionEvent;
 
 
 
@@ -85,6 +86,8 @@ public class DroidSafeAndroidRuntime {
         activity.onCreateContextMenu(null, null, null);
         activity.onOptionsItemSelected(null);
         activity.onContextItemSelected(null);
+        
+        activity.dispatchTouchEvent(new MotionEvent());
         
         
         activity.onConfigurationChanged(new Configuration());
