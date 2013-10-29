@@ -441,6 +441,8 @@ public class Method implements Comparable<Method> {
                 } catch (CannotFindMethodException e) {
                     continue;
                 }
+            } else if (iv instanceof InfoKind) {
+                srcKinds.add((InfoKind)iv);
             }
         }
         
