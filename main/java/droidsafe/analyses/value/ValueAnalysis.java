@@ -7,6 +7,7 @@ import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.speclang.Method;
+import droidsafe.transforms.JSAResultInjection;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -28,6 +29,7 @@ import soot.jimple.FloatConstant;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.IntConstant;
 import soot.jimple.LongConstant;
+import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.Stmt;
@@ -266,11 +268,21 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                             Set<AllocNode> rhsNodes = GeoPTA.v().getPTSetEventContext(rightOp, entryEdge);
                                             for(AllocNode rhsNode : rhsNodes) {
                                                 if(rhsNode instanceof StringConstantNode) {
-                                                    String value = ((StringConstantNode)rhsNode).getString();
-                                                    value = value.replaceAll("(\\r|\\n)", "");
-                                                    value = value.replace("\"", "");
-                                                    value = value.replace("\\uxxxx", "");
-                                                    fieldPrimVAModel.addValue(value);    
+                                                    StringConstant sc = (StringConstant)rhsNode.getNewExpr();
+                                                    if (JSAResultInjection.createdStringConstants.contains(sc)) {
+                                                        String value = ((StringConstantNode)rhsNode).getString();
+                                                        value = value.replaceAll("(\\r|\\n)", "");
+                                                        value = value.replace("\"", "");
+                                                        value = value.replace("\\uxxxx", "");
+                                                        fieldPrimVAModel.addValue(value);    
+                                                    } else {
+                                                     // all strings weren't constants, invalidate
+                                                        ValueAnalysis.logError(fieldObject.toString() + 
+                                                            " the value it is assigned, " + 
+                                                            rhsNode + " is not a constant. Contained values beforehand: " + 
+                                                            fieldPrimVAModel.getValues());
+                                                        fieldPrimVAModel.addValue("UNKNOWN");
+                                                    }
                                                 } else {
                                                     // all strings weren't constants, invalidate
                                                     ValueAnalysis.logError(fieldObject.toString() + 
