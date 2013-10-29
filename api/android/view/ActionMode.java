@@ -112,5 +112,109 @@ Object varD6A25044F8E609F6CD67330C1523D33D_2083384432 =         mTag;
         public void onDestroyActionMode(ActionMode mode);
     }
     
+    @DSModeled(DSC.BAN)
+    public static ActionMode droidsafeObtainObject() {
+        return new SimpleActionMode();
+    }
+    
+    private static class SimpleActionMode extends ActionMode {
+
+        @DSModeled(DSC.BAN)
+        private SimpleActionMode() {
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public void setTitle(CharSequence title) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public void setTitle(int resId) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public void setSubtitle(CharSequence subtitle) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public void setSubtitle(int resId) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public void setCustomView(View view) {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public void invalidate() {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public void finish() {
+            // TODO Auto-generated method stub
+            
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public Menu getMenu() {
+            // TODO Auto-generated method stub
+            return null; 
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public CharSequence getTitle() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public CharSequence getSubtitle() {
+            // TODO Auto-generated method stub
+            String str = new String(); 
+            str.addTaint(getTaint());
+            return str;
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public View getCustomView() {
+            // TODO Auto-generated method stub
+            View v = new View();
+            v.addTaint(getTaint());
+            return v;
+        }
+
+        @Override
+        @DSModeled(DSC.SAFE)
+        public MenuInflater getMenuInflater() {
+            // TODO Auto-generated method stub
+            View v = new View();
+            MenuInflater inflater = new MenuInflater(v.getContext());
+            inflater.addTaint(getTaint());
+            return inflater;
+        }
+        
+    }
 }
 
