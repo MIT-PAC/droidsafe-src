@@ -269,22 +269,13 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                             for(AllocNode rhsNode : rhsNodes) {
                                                 if(rhsNode instanceof StringConstantNode) {
                                                     StringConstant sc = (StringConstant)rhsNode.getNewExpr();
-                                                    if (JSAResultInjection.createdStringConstants.contains(sc)) {
-                                                        String value = ((StringConstantNode)rhsNode).getString();
-                                                        value = value.replaceAll("(\\r|\\n)", "");
-                                                        value = value.replace("\"", "");
-                                                        value = value.replace("\\uxxxx", "");
-                                                        fieldPrimVAModel.addValue(value);    
-                                                    } else {
-                                                     // all strings weren't constants, invalidate
-                                                        ValueAnalysis.logError(fieldObject.toString() + 
-                                                            " the value it is assigned, " + 
-                                                            rhsNode + " is not a constant. Contained values beforehand: " + 
-                                                            fieldPrimVAModel.getValues());
-                                                        fieldPrimVAModel.addValue("UNKNOWN");
-                                                    }
+                                                    String value = ((StringConstantNode)rhsNode).getString();
+                                                    value = value.replaceAll("(\\r|\\n)", "");
+                                                    value = value.replace("\"", "");
+                                                    value = value.replace("\\uxxxx", "");
+                                                    fieldPrimVAModel.addValue(value);    
                                                 } else {
-                                                    // all strings weren't constants, invalidate
+                                                    // all strings weren't constants, write unknown value
                                                     ValueAnalysis.logError(fieldObject.toString() + 
                                                         " the value it is assigned, " + 
                                                         rhsNode + " is not a constant. Contained values beforehand: " + 
@@ -341,7 +332,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         } catch (IOException ioe) {
             logger.warn("Unable to write to the va-errors.log file.", ioe);
         }
-        */
+         */
     }
 
     /**
