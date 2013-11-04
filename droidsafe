@@ -7,7 +7,6 @@ import subprocess
 import socket
 
 HOSTNAME = socket.gethostname()
-print(HOSTNAME)
 JARS = ["droidsafe-core.jar","droidsafe-libs.jar"]
 MAIN_CLASS = "droidsafe.main.Main"
 APAC_HOME = os.environ['APAC_HOME'] + os.sep
