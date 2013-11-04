@@ -4,10 +4,15 @@ from __future__ import print_function
 import sys
 import os
 import subprocess
+import socket
 
+HOSTNAME = socket.gethostname()
+print(HOSTNAME)
 JARS = ["droidsafe-core.jar","droidsafe-libs.jar"]
 MAIN_CLASS = "droidsafe.main.Main"
 APAC_HOME = os.environ['APAC_HOME'] + os.sep
+
+
 
 def run_droidsafe(args):
     libs = APAC_HOME + "bin" + os.sep
@@ -23,7 +28,7 @@ def run_droidsafe(args):
     classpath += ":."
     java_command.append(classpath)
 
-    if (subprocess.check_output('hostname').startswith("hippo")):
+    if (HOSTNAME.startswith("hippo")):
         java_command.append("-Xms2g");
         java_command.append("-Xmx32g");
     else:
