@@ -1,0 +1,6 @@
+appApiUsage is a utility tool to list API usage in one or more apps.
+
+Usage:
+
+bin/appApiUsage -o <outputFile> <appJars>  
+
