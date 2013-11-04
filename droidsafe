@@ -23,8 +23,13 @@ def run_droidsafe(args):
     classpath += ":."
     java_command.append(classpath)
 
-    java_command.append("-Xms2g");
-    java_command.append("-Xmx32g");
+    if (subprocess.check_output('hostname').startswith("hippo")):
+        java_command.append("-Xms2g");
+        java_command.append("-Xmx32g");
+    else:
+        java_command.append("-Xms1g");
+        java_command.append("-Xmx16g");
+
 #   java_command.append("-Xrunhprof:heap=sites,depth=6");
     java_command.append("-Dfile.encoding=UTF-8");
 
