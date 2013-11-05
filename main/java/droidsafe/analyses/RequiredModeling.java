@@ -158,7 +158,7 @@ public class RequiredModeling {
                         }
                     }
                     
-                    if (!found)
+                    if (!found && !API.v().isSystemClass(method.getDeclaringClass()))
                         fw.write(method + " overrides " + API.v().getClosestOverridenAPIMethod(method) + "\n");
                 }
             }
