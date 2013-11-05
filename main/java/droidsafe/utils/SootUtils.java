@@ -8,6 +8,7 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,6 +20,10 @@ import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.android.app.Project;
+import droidsafe.utils.CannotFindMethodException;
 
 import soot.AnySubType;
 import soot.Local;
@@ -78,6 +83,7 @@ public class SootUtils {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(SootUtils.class);
 
+    /** Matches a Java method signature **/
     public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
 
     /**
@@ -97,7 +103,7 @@ public class SootUtils {
         return false;
     }
     
-    /*
+    /**
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 
      */
@@ -151,10 +157,12 @@ public class SootUtils {
         }
     }
 
+    /** Returns true if specified type is Java.lang.String **/
     public static boolean isStringType(Type t) {
         return t.equals(RefType.v("java.lang.String"));
     }
 
+    /** Returns true if specified type is java.lang.Class **/
     public static boolean isClassType(Type t) {
         return t.equals(RefType.v("java.lang.Class"));
     }
@@ -352,8 +360,8 @@ public class SootUtils {
      * @return
      */
     public static SootMethod resolveCallbackMethod(SootClass clz, String signature) {
-    	 if (Scene.v().containsMethod(signature)) 
-             return Scene.v().getMethod(signature);
+        if (Scene.v().containsMethod(signature)) 
+            return Scene.v().getMethod(signature);
 
          //check this class for the method with polymorpism
          String mName = grabName(signature);
@@ -736,6 +744,10 @@ public class SootUtils {
         }
     }
 
+    /** 
+     * Returns the element type for an array, the 'base' of AnySubType.  If type is 
+     * neither just returns type
+     */
     public static Type getBaseType(RefLikeType type) {
         if (type instanceof ArrayType) 
             return ((ArrayType)type).getArrayElementType();
@@ -1052,6 +1064,40 @@ public class SootUtils {
         }
         return null;
 
+    }
+    /** 
+     * Returns a list of all of the application (non android)
+     * classes.
+     */
+    public static List<SootClass> get_app_classes () {
+        List<SootClass> clist = new ArrayList<SootClass>();
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (Project.v().isSrcClass(clz.toString()))
+                clist.add(clz);
+        }
+        return (clist);
+    }
+    
+    /** 
+     * Returns a list of all of the android system classes.
+     */
+    public static List<SootClass> get_android_classes () {
+        List<SootClass> clist = new ArrayList<SootClass>();
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (!Project.v().isSrcClass(clz.toString()))
+                clist.add(clz);
+        }
+        return (clist);
+    }
+    
+    /** 
+     * Returns a string describing the specified stmt.  
+     * Used for error messages 
+     **/
+    public static String app_location (Stmt stmt, Object msg) {
+        SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
+        SourceLocationTag loc = getSourceLocation(stmt, method.getDeclaringClass());
+        return String.format ("At method: %s, line %d, jimple stmt: %s: %s", method, loc.getLine(), stmt, msg);
     }
 }
 

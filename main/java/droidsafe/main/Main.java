@@ -43,6 +43,7 @@ import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.stats.AppMethodsEventContextStats;
 import droidsafe.stats.PTASetsAvgSize;
+import droidsafe.transforms.HoistAllocations;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.UndoJSAResultInjection;
@@ -187,6 +188,13 @@ public class Main {
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     
+    driverMsg ("Hoisting Allocations");
+    monitor.subTask("Hoisting Allocations");
+    HoistAllocations.run();
+    monitor.worked(1);
+    if (monitor.isCanceled())
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+ 
     if (Config.v().addObjectSensitivity) {
         driverMsg("Adding Object Sensitivity by cloning...");
         monitor.subTask("Adding Object Sensitivity by cloning...");

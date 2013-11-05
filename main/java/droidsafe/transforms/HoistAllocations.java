@@ -49,6 +49,8 @@ import droidsafe.utils.SootUtils;
  * This should be extended to support a variety of different calls for which we
  * would like to hoist their allocations into the application. But for now it is
  * specific to Uri.parse()
+ *
+ * @author jhp
  */
 public class HoistAllocations extends BodyTransformer {
 
@@ -58,6 +60,7 @@ public class HoistAllocations extends BodyTransformer {
     /** Enable/Disable the transformation **/
     static boolean enabled = true;
     
+    /** Modify all instances of Uri.parse(String) with new Uri(String) **/
     public static void run() {
 
         if (!enabled) return;
@@ -140,6 +143,12 @@ public class HoistAllocations extends BodyTransformer {
       }
     }
     
+
+    /** 
+     * Modifies the specified method body to replace all calls to Uri.parse(String)
+     * with new Uri(String).  This ensures that the allocation of the Uri is
+     * unique
+     */
     protected void internalTransform(Body b, String phaseName, Map options) {
         StmtBody stmtBody = (StmtBody) b;
         Chain<Unit> units = stmtBody.getUnits();
