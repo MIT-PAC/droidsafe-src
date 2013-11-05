@@ -1,4 +1,14 @@
+ADDED_BY_DROIDSAFE:
+
 <android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> (DATABASE_INFORMATION)
+<com.google.android.maps.GeoPoint: int getLatitudeE6()> (LOCATION_INFORMATION)
+<com.google.android.maps.GeoPoint: int getLongitudeE6()> (LOCATION_INFORMATION)
+<com.google.android.maps.GeoPoint: int hashCode()> (LOCATION_INFORMATION)
+<com.google.android.maps.GeoPoint: boolean equals(java.lang.Object)> (LOCATION_INFORMATION)
+<com.google.android.maps.GeoPoint: java.lang.String toString()> (LOCATION_INFORMATION)
+<com.google.android.maps.MapView: int getLatitudeSpan()> (LOCATION_INFORMATION)
+<com.google.android.maps.MapView: int getLongitudeSpan()> (LOCATION_INFORMATION)
+<com.google.android.maps.MyLocationOverlay: float getOrientation()> (LOCATION_INFORMATION)
 
 UNIQUE_IDENTIFIER:
 <com.android.internal.telephony.cdma.CDMAPhone: java.lang.String getDeviceId()> (UNIQUE_IDENTIFIER)
