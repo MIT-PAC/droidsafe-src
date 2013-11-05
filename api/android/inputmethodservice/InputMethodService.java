@@ -48,9 +48,7 @@ import android.view.inputmethod.InputMethodSubtype;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-
-
-
+import com.android.internal.R;
 
 
 public class InputMethodService extends AbstractInputMethodService {
@@ -298,9 +296,9 @@ public class InputMethodService extends AbstractInputMethodService {
         //DSFIXME:  CODE0009: Possible callback target function detected
         mTheme = Resources.selectSystemTheme(mTheme,
                 getApplicationInfo().targetSdkVersion,
-                android.R.style.Theme_InputMethod,
-                android.R.style.Theme_Holo_InputMethod,
-                android.R.style.Theme_DeviceDefault_InputMethod);
+                R.style.Theme_InputMethod,
+                R.style.Theme_Holo_InputMethod,
+                R.style.Theme_DeviceDefault_InputMethod);
         super.setTheme(mTheme);
         super.onCreate();
         mImm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);

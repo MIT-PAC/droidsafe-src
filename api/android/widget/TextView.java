@@ -5,7 +5,7 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 import droidsafe.runtime.*;
-import android.R;
+import com.android.internal.R;
 import android.content.ClipData;
 import android.content.ClipData.Item;
 import android.content.ClipboardManager;
@@ -14460,7 +14460,7 @@ for(int i = 0;i < length;i++)
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.758 -0400", hash_original_field = "4EE2EC84135A501AB5CC573E44247990", hash_generated_field = "18031134C63E234D2C3372B21DDAF396")
 
             TextAppearanceSpan highlightSpan = new TextAppearanceSpan(mContext,
-                    android.R.style.TextAppearance_SuggestionHighlight);
+                    com.android.internal.R.style.TextAppearance_SuggestionHighlight);
             
             @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.758 -0400", hash_original_method = "613563FC71224468A61688B0DDA11E74", hash_generated_method = "613563FC71224468A61688B0DDA11E74")
