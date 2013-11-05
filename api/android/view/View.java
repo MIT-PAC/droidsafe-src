@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import android.app.ContextImpl;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -239,7 +240,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     @DSModeled(DSC.SAFE)
 	View(){
-		mResources = null;
+		this(new ContextImpl());
 		/*
 		mResources = null;
 		*/

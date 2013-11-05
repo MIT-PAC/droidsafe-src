@@ -2909,6 +2909,8 @@ CharSequence var7CA95817A6D9656A122DEE239271F49F_205325547 =         getText(com
         onUpdateExtractedText(getTaintInt(), new ExtractedText());
         onUpdateExtractingViews(new EditorInfo());
         onUpdateExtractingVisibility(new EditorInfo());
+        
+        onCurrentInputMethodSubtypeChanged(InputMethodSubtype.droidsafeObtainInputMethodSubtype());
 
         onUpdateSelection(getTaintInt(),  getTaintInt(),  getTaintInt(), getTaintInt(),  
                          getTaintInt(), getTaintInt());

@@ -217,6 +217,7 @@ for(int i=0;i<callbacks.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.131 -0400", hash_original_method = "BB2CB10BE5DA2456D7FFED5329EAA067", hash_generated_method = "CC0454283F21C29F90A29AD9FEEA0BDB")
      void dispatchActivityStarted(Activity activity) {
         addTaint(activity.getTaint());
