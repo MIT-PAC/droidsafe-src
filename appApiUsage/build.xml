@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="appApiUsage" default="help">
+
+  <property name="apac-dir" value="../.."/>
+  <property name="lib" value="${apac-dir}/lib"/>
+  <property name="droidsafe" value="${apac-dir}/bin"/>
+  <property name="android-lib" value="${apac-dir}/android-lib"/>
+
+ <condition property="is.windows">
+   <os family="windows" />
+  </condition>
+
+  <path id="lib-jars">
+    <pathelement location="${android-lib}/android-impl.jar"/>
+    <pathelement location="${droidsafe}/droidsafe-core.jar"/>
+    <pathelement location="${droidsafe}/droidsafe-libs.jar"/>
+  </path>
+
+  <target name="help">
+    <echo>
+      ==================================================================================================
+      Primary Targets:
+      =====================================================================
+      compile     Compile appApiUsage tool
+      clean       Cleanup all generated binary files
+  </echo>
+  </target>
+  
+    <!--
+  ==========================================================================
+        COMPILE 
+  ==========================================================================
+    -->
+	<target name="compile" description="Compile appApiUsage ">
+	    <mkdir dir="classes"/>
+	    <javac debug="true" debuglevel="source,lines,vars" includeAntRuntime="false" includeJavaRuntime="false" destdir="classes" srcdir="src" classpathref="lib-jars">
+	    </javac>
+	    <jar destfile="bin/appApiUsage.jar" basedir="classes" includes="**/*.class">
+	      <manifest>
+	        <attribute name="Main-Class" value="droidsafe.tools.AppApiUsage"/>
+	      </manifest>
+	    </jar>
+	</target>
+	
+	
+    <target name="clean">
+        <delete dir="classes" />
+        <delete file="bin/uwintools.jar" />
+    </target>
+
+</project>
