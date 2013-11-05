@@ -2,7 +2,7 @@ package android.widget;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
-import android.R;
+import com.android.internal.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;

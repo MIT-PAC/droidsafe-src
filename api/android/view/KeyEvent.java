@@ -589,6 +589,11 @@ public class KeyEvent extends InputEvent implements Parcelable {
         ev.mNext = null;
         return ev;
     }
+    
+    @DSModeled(DSC.BAN)
+    public static KeyEvent droidsafeGetEvent() {
+        return new KeyEvent();
+    }
 
     
     public static KeyEvent obtain(long downTime, long eventTime, int action,

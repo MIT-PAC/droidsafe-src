@@ -1177,6 +1177,8 @@ switch(f.mState){
                         f.mAnimatingAway = anim;
                         f.mStateAfterAnimating = newState;
                         anim.addListener(new AnimatorListenerAdapter() {        
+
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.649 -0400", hash_original_method = "9D8EA3EF50700F2206500D8F97DFE625", hash_generated_method = "F98049BF17DC3CF1A936A8C90F9DB5ED")
         @Override
         public void onAnimationEnd(Animator anim) {
@@ -1518,6 +1520,7 @@ for(int i=0;i<mActive.size();i++)
                     anim.setTarget(fragment.mView);
                     final Fragment finalFragment = fragment;
                     anim.addListener(new AnimatorListenerAdapter() {        
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.655 -0400", hash_original_method = "FE6C0F24C850190D502A7783FD2F34FA", hash_generated_method = "9F66710E4025C8ED7E86A5AD00DC4DC7")
         @Override
         public void onAnimationEnd(Animator animation) {

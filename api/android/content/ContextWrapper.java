@@ -123,6 +123,7 @@ public class ContextWrapper extends Context {
     }
     
     
+    @DSModeled(DSC.SAFE)
     @Override
     public Looper getMainLooper() {
         return mBase.getMainLooper();
@@ -136,6 +137,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void setTheme(int resid) {
         mBase.setTheme(resid);
@@ -149,6 +151,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public Resources.Theme getTheme() {
         return mBase.getTheme();
@@ -196,6 +199,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {
         return mBase.getSharedPreferences(name, mode);
@@ -281,6 +285,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public SQLiteDatabase openOrCreateDatabase(String name, int mode, CursorFactory factory,
             DatabaseErrorHandler errorHandler) {

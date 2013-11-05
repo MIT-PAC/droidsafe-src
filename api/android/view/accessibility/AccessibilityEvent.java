@@ -54,6 +54,10 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
         //mPackageName = event.mPackageName;
     }
 
+    @DSModeled(DSC.BAN)
+    public static AccessibilityEvent droidsafeGetEvent() {
+        return new AccessibilityEvent(); 
+    }
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.215 -0400", hash_original_method = "86DBA4ADDEC94CD24AE35AA90BF3A59E", hash_generated_method = "6492507E6895DD8BD82A9BA2AB3D8559")

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import android.app.ContextImpl;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -207,6 +208,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         onDraw(new Canvas());
         mResources = context.getResources();
         mKeyedTags = new SparseArray<Object>();
+        
+        droidsafeCallbackHook();
+        droidsafeOverridingMethodHook();
+        
 		/*
 		mContext = context;
 		mResources = context != null ? context.getResources() : null;
@@ -235,7 +240,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     
     @DSModeled(DSC.SAFE)
 	View(){
-		mResources = null;
+		this(new ContextImpl());
 		/*
 		mResources = null;
 		*/
@@ -255,6 +260,57 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 		//Return nothing
 	}
+    
+    @DSModeled(DSC.BAN)
+    public void droidsafeCallbackHook(){
+        onCheckIsTextEditor();
+        onCloseSystemDialogs(new String());
+        onCreateInputConnection(new EditorInfo());
+
+        onWindowFocusChanged(getTaintBoolean());
+        onDragEvent(DragEvent.obtain());
+        onFilterTouchEventForSecurity(MotionEvent.droidsafeObtainEvent());
+
+        onHoverChanged(getTaintBoolean());
+        onHoverEvent(MotionEvent.droidsafeObtainEvent());
+        onTouchEvent(MotionEvent.droidsafeObtainEvent());
+        onTrackballEvent(MotionEvent.droidsafeObtainEvent());
+        onGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
+
+        onInitializeAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
+        onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo.obtain());
+
+        onKeyDown(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyUp(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyLongPress(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyShortcut(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyPreIme(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyMultiple(getTaintInt(), getTaintInt(), KeyEvent.droidsafeGetEvent());
+
+        onPopulateAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
+        onStartTemporaryDetach();
+        
+        onMeasure(getTaintInt(),  getTaintInt());
+
+        onAnimationStart();
+        onAnimationEnd();
+        
+    }
+    
+    @DSModeled(DSC.BAN)
+    public void droidsafeOverridingMethodHook() {
+        computeHorizontalScrollExtent();
+        computeHorizontalScrollOffset();
+        computeHorizontalScrollRange();
+        computeOpaqueFlags();
+
+        computeVerticalScrollExtent();
+        computeVerticalScrollOffset();
+        computeVerticalScrollRange();
+    }
+    
+    
+    
 
     
     @DSModeled(DSC.SAFE)

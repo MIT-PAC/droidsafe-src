@@ -17,10 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.AbsListView.OnScrollListener;
-
-
-
-
+import com.android.internal.R;
 
 class FastScroller {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.666 -0400", hash_original_field = "E4F0AC5F69FC7254EF772878E84BE9AD", hash_generated_field = "723113CD58F6B081A7D304DE131200C0")
@@ -1333,12 +1330,12 @@ switch(mPosition){
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.698 -0400", hash_original_field = "72C442925745EFC5792F94523ABD1AB2", hash_generated_field = "84AAA12BA67F0A875D601387F39B9663")
 
     private static final int[] ATTRS = new int[] {
-        android.R.attr.fastScrollTextColor,
-        android.R.attr.fastScrollThumbDrawable,
-        android.R.attr.fastScrollTrackDrawable,
-        android.R.attr.fastScrollPreviewBackgroundLeft,
-        android.R.attr.fastScrollPreviewBackgroundRight,
-        android.R.attr.fastScrollOverlayPosition
+        R.attr.fastScrollTextColor,
+        R.attr.fastScrollThumbDrawable,
+        R.attr.fastScrollTrackDrawable,
+        R.attr.fastScrollPreviewBackgroundLeft,
+        R.attr.fastScrollPreviewBackgroundRight,
+        R.attr.fastScrollOverlayPosition
     };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.698 -0400", hash_original_field = "CA4C0713CBE2C71C5C492833440E804E", hash_generated_field = "1FA0034D769E8804C911CA57C3894230")
 

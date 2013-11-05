@@ -376,6 +376,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.385 -0400", hash_original_method = "B3EA5CAC0D9EF5BCE0C71FFF26BBF7DF", hash_generated_method = "F2981833A2E2D41CFD1C55C29C5B7B5E")
     public final boolean moveToFirst() {
         boolean varAEEF8432B85CCEC90B9B26EB4EFF64FA_659045585 = (moveToPosition(0));
@@ -396,6 +397,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.386 -0400", hash_original_method = "44D940C3A0E42253110DBD8C1211FDCC", hash_generated_method = "1FFA683BC08E4BEAB2484088DD672BEA")
     public final boolean moveToNext() {
         boolean var8F4EB11AE5AB0BA8075D29C285AB95F0_1969702927 = (moveToPosition(mPos + 1));
@@ -776,6 +778,7 @@ Object var540C13E9E156B687226421B24F2DF178_196464022 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.402 -0400", hash_original_method = "F26D041066C4F03E188153BABFEE500A", hash_generated_method = "3CAA66883E12BA7CD7932F65BFCD8226")
     @Override
     protected void finalize() {

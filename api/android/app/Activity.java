@@ -41,6 +41,7 @@ import android.view.ActionMode;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.ContextThemeWrapper;
+import android.view.DragEvent;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -54,9 +55,12 @@ import android.view.ViewManager;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.inputmethod.EditorInfo;
 
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
+import com.android.internal.view.menu.MenuBuilder;
 
 
 
@@ -3508,6 +3512,40 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	public void droidsafeOnPause() {
     	this.onPause();
 	}
+    
+    /**
+     * addition hooks to allow subactivity onXYZ to be called from droidsafe runtime
+     */
+    @DSModeled(DSC.BAN)
+	public void droidsafeOnSubActivityHook() {
+        droidsafeOnOthersHook();
+	}
+    
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnOthersHook() {
+        this.onActionModeFinished(ActionMode.droidsafeObtainObject());
+        this.onActionModeStarted(ActionMode.droidsafeObtainObject());
+        MenuBuilder builder = new MenuBuilder(getBaseContext());
+        //technically we should use the menu from external source
+        Menu menu = builder.addSubMenu(getTaintInt());
+        this.onCreateOptionsMenu(menu);
+        this.onAttachFragment(Fragment.instantiate(getBaseContext(), new String()));
+        this.onPrepareOptionsMenu(menu);
+        this.onContextMenuClosed(menu);
+        this.onContextItemSelected(menu.add(new String()));
+       
+        onWindowFocusChanged(getTaintBoolean());
+
+        onTouchEvent(MotionEvent.droidsafeObtainEvent());
+        onTrackballEvent(MotionEvent.droidsafeObtainEvent());
+        onGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
+
+        onKeyDown(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyUp(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyLongPress(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyShortcut(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyMultiple(getTaintInt(), getTaintInt(), KeyEvent.droidsafeGetEvent());
+    }
 
     
 }

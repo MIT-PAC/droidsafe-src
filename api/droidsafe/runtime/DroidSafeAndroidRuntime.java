@@ -98,6 +98,10 @@ public class DroidSafeAndroidRuntime {
         
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
+        
+        //call hooks specific for SubActivity classes
+        activity.droidsafeOnSubActivityHook();
+
         activity.droidsafeOnStop();
         activity.droidsafeOnDestroy();
         activity.onDetachedFromWindow();
@@ -131,6 +135,7 @@ public class DroidSafeAndroidRuntime {
                 }
             }
         }
+        service.droidsafeOnSubServiceHook();
         service.onConfigurationChanged(new Configuration());
         service.onLowMemory();
         service.onTrimMemory(0);

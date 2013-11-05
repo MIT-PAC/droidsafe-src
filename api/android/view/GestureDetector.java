@@ -77,6 +77,7 @@ public class GestureDetector {
     private final InputEventConsistencyVerifier mInputEventConsistencyVerifier = InputEventConsistencyVerifier.isInstrumentationEnabled() ?
                     new InputEventConsistencyVerifier(this, 0) : null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.338 -0400", hash_original_method = "A860FCB0BF3B13241916CBB6D51694FF", hash_generated_method = "E6CA8D8569D21E79FA473A515330C959")
     @Deprecated
     public  GestureDetector(OnGestureListener listener, Handler handler) {
@@ -87,6 +88,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.338 -0400", hash_original_method = "6A4A0666EC699D6858654C1F91F62135", hash_generated_method = "91671E28D2A1E7F8AB6B8690B259B1ED")
     @Deprecated
     public  GestureDetector(OnGestureListener listener) {
@@ -96,6 +98,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.339 -0400", hash_original_method = "D6C1A078025AA71050A12C76B6AD8601", hash_generated_method = "38776F5E0B561D0B8EC94ED1EF65106E")
     public  GestureDetector(Context context, OnGestureListener listener) {
         this(context, listener, null);
@@ -105,6 +108,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.339 -0400", hash_original_method = "D04E727BBFBC862644FCD26897C3FDE9", hash_generated_method = "65D33671FADD6210424E5C6191C4445F")
     public  GestureDetector(Context context, OnGestureListener listener, Handler handler) {
         this(context, listener, handler, context != null &&
@@ -116,6 +120,7 @@ public class GestureDetector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.340 -0400", hash_original_method = "3A200FED7280634DDE54E1C354EDC878", hash_generated_method = "2ACD6CA9F5DEC57A33DA67091312F2BF")
     public  GestureDetector(Context context, OnGestureListener listener, Handler handler,
             boolean ignoreMultitouch) {
@@ -130,11 +135,25 @@ public class GestureDetector {
             mHandler = new GestureHandler();
         } //End block
         mListener = listener;
+        
+        listener.onDown(MotionEvent.droidsafeObtainEvent());
+        listener.onFling(MotionEvent.droidsafeObtainEvent(), MotionEvent.droidsafeObtainEvent(),
+                        getTaintInt(), getTaintInt());
+        listener.onLongPress(MotionEvent.droidsafeObtainEvent());
+        listener.onScroll(MotionEvent.droidsafeObtainEvent(), MotionEvent.droidsafeObtainEvent(),
+                          getTaintFloat(), getTaintFloat());
+       
+        listener.onShowPress(MotionEvent.droidsafeObtainEvent());
+        listener.onSingleTapUp(MotionEvent.droidsafeObtainEvent());
+        
         if(listener instanceof OnDoubleTapListener)        
         {
             setOnDoubleTapListener((OnDoubleTapListener) listener);
         } //End block
         init(context, ignoreMultitouch);
+        
+        
+
         // ---------- Original Method ----------
         //if (handler != null) {
             //mHandler = new GestureHandler(handler);
@@ -189,6 +208,10 @@ public class GestureDetector {
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.342 -0400", hash_original_method = "571B39F87736E3994F3A317209D7E1C6", hash_generated_method = "8874C66605DB2FF6FE5F0E858C5BB080")
     public void setOnDoubleTapListener(OnDoubleTapListener onDoubleTapListener) {
         mDoubleTapListener = onDoubleTapListener;
+        
+        onDoubleTapListener.onDoubleTap(MotionEvent.droidsafeObtainEvent());
+        onDoubleTapListener.onDoubleTapEvent(MotionEvent.droidsafeObtainEvent());
+        onDoubleTapListener.onSingleTapConfirmed(MotionEvent.droidsafeObtainEvent());
         // ---------- Original Method ----------
         //mDoubleTapListener = onDoubleTapListener;
     }

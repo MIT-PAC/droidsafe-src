@@ -238,7 +238,7 @@ public final class InputMethodManager {
     //Hand modeling
     @DSModeled(DSC.BAN)
     public InputMethodManager() {
-        
+     
     }
 
     
@@ -260,6 +260,8 @@ public final class InputMethodManager {
             mInstance = new InputMethodManager(service, mainLooper);
             */
             mInstance = new InputMethodManager();
+
+            ServiceManager.getService("");
         }
         return mInstance;
     }
