@@ -1,6 +1,7 @@
 package droidsafe.main;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -27,13 +28,29 @@ public class SootConfig {
 		setSootClassPath();
 	}
 	
-	public static void loadAppClasses(Set<String> classes) {
+	/**
+	 * Load set of classes as application classes to be analyzed.
+	 * If shouldReplace is true, then replace a class if it is already defined.
+	 * If shouldReplace is false, then don't replace the class if it is already defined
+	 * 
+	 * Return list of classes that were not loaded
+	 */
+	public static Set<String> loadAppClasses(Set<String> classes, boolean shouldReplace) {
+	    Set<String> notLoaded = new HashSet<String>();
 		//load the application classes and set them as app classes
 		for (String clz : classes) {
+		    //if we don't want to replace and this class is already defined, then skip
+		    if (!shouldReplace && Scene.v().containsClass(clz) && Scene.v().getSootClass(clz).isApplicationClass()) {
+		        logger.debug("Not loading {}, already loaded\n", clz);
+		        notLoaded.add(clz);
+		        continue;
+		    }
+		    
 			//Scene.v().loadClassAndSupport(clz).setApplicationClass();
 			Scene.v().loadClass(clz, SootClass.BODIES).setApplicationClass();
 			logger.debug("Loading class as application class: {}", clz);
 		}
+		return notLoaded;
 	}
 			
 	/**
