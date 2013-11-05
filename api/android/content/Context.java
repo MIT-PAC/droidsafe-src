@@ -216,6 +216,7 @@ TypedArray var6CAC1D2E58E1F85B1471C7C1B3216D41_1460331081 =         getTheme().o
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs) {
         return getTheme().obtainStyledAttributes(set, attrs, 0, 0);

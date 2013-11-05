@@ -878,6 +878,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_192721827 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.751 -0400", hash_original_method = "9F0DD3DD42B1176D3BFC90E1CC869BD8", hash_generated_method = "FA9613911A2A6B53687A115BA4086A12")
     @Override
     protected void onAllReferencesReleased() {
@@ -981,6 +982,7 @@ String varD669198966AE1D11824B74353EFDF302_1395191806 =         "# Open Cursors=
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.754 -0400", hash_original_method = "2B041B6FC7B2CED29CA29EA62E026B41", hash_generated_method = "D4058BB7031DEE79BA386EC360C1CDEE")
     @Override
     public String toString() {

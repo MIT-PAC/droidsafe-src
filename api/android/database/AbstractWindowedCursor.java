@@ -12,6 +12,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
 
     protected CursorWindow mWindow;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.426 -0400", hash_original_method = "45FA808929D52C3FF25B9987C9B4DFA0", hash_generated_method = "45FA808929D52C3FF25B9987C9B4DFA0")
     public AbstractWindowedCursor ()
     {
@@ -90,6 +91,7 @@ String var40A8596F3179C0E714867EBE523A53EA_1604783932 =         mWindow.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.429 -0400", hash_original_method = "32AD2A447F72132C95E38AB4CD7276EC", hash_generated_method = "EA8C3CEF884875A76AFBFD16D758D15F")
     @Override
     public long getLong(int columnIndex) {
@@ -210,6 +212,7 @@ String var40A8596F3179C0E714867EBE523A53EA_1604783932 =         mWindow.getStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.433 -0400", hash_original_method = "46B0DF4A07DF4EB7D2CA6A3ED3C216CA", hash_generated_method = "2692F206DEF989DE4513FFEADE352592")
     @Override
     protected void checkPosition() {

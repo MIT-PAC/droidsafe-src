@@ -41,6 +41,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public abstract class PreferenceActivity extends ListActivity implements PreferenceManager.OnPreferenceTreeClickListener, PreferenceFragment.OnPreferenceStartFragmentCallback {
@@ -121,6 +122,7 @@ switch(msg.what){
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.369 -0400", hash_original_method = "5B933AEEC6389C71875EE2A57A875A3A", hash_generated_method = "5B933AEEC6389C71875EE2A57A875A3A")
     public PreferenceActivity ()
     {
@@ -128,6 +130,7 @@ switch(msg.what){
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.398 -0400", hash_original_method = "7377982A731D92C32EEEF871F40BFABD", hash_generated_method = "D43BC4C519BC8078BE2429A9EA44CB1F")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -311,6 +314,20 @@ switch(msg.what){
         // ---------- Original Method ----------
         //return getListView().getVisibility() == View.VISIBLE
                 //&& mPreferenceManager == null;
+    }
+    
+    @DSModeled(DSC.BAN)
+    @Override
+    public void droidsafeOnSubActivityHook() {
+        onIsHidingHeaders();
+        onIsMultiPane();
+        onBuildHeaders(new LinkedList<Header>());
+        onGetInitialHeader();
+        onGetNewHeader();
+        onHeaderClick(new Header(), getTaintInt());
+        onBuildStartFragmentIntent(new String(), new Bundle(), getTaintInt(), getTaintInt());
+        //TODO: check to make sure other callbacks are already called from super classes
+        // callback preference screeen set
     }
 
     
@@ -593,6 +610,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.477 -0400", hash_original_method = "015EB586B516E4BA63E47DF2D2F941B5", hash_generated_method = "AE118E707C09982F50168A53C26BB9CF")
     @Override
     protected void onDestroy() {
@@ -718,6 +736,7 @@ Header var540C13E9E156B687226421B24F2DF178_1765735875 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.498 -0400", hash_original_method = "B413EAEA105506529AB09785B80740F7", hash_generated_method = "72B7D24B88F658BB93C8F3A07B2A5D17")
     @Override
     public void onContentChanged() {
@@ -1382,6 +1401,7 @@ PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_743531044 =         mPrefe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.601 -0400", hash_original_method = "7CC03E7D3EBAF4E1E382E9E7A55EF0AE", hash_generated_method = "9997E88388F8F46F4A9BDA8219C5A432")
     @Deprecated
     public PreferenceScreen getPreferenceScreen() {

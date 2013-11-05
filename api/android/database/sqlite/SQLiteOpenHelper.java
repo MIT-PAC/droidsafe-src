@@ -34,6 +34,7 @@ public abstract class SQLiteOpenHelper {
 
     private DatabaseErrorHandler mErrorHandler;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.823 -0400", hash_original_method = "FA08D03545E9DF881DE2A492BC7B90D5", hash_generated_method = "5E6F83AB57D3846D72B269C6A4631576")
     public  SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version) {
         this(context, name, factory, version, new DefaultDatabaseErrorHandler());
@@ -45,6 +46,7 @@ public abstract class SQLiteOpenHelper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.826 -0400", hash_original_method = "31439111717724CD584CC4C37B277BA9", hash_generated_method = "91FCD08F7F9386FBF6B0E377EC191F7E")
     public  SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version,
             DatabaseErrorHandler errorHandler) {
@@ -89,6 +91,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_265564831 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.829 -0400", hash_original_method = "907737C2FD1DDBAF11A72FCBC6C42218", hash_generated_method = "D8F6AAE64EE48739E4F01EDF1BEB1A8D")
     public synchronized SQLiteDatabase getWritableDatabase() {
         if(mDatabase != null)        
@@ -192,6 +195,7 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_628360158 =             db;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.832 -0400", hash_original_method = "2895B1DC2B2D9F1953E668AA67DA7E81", hash_generated_method = "DE97B086C04556014B56785CE97776A4")
     public synchronized SQLiteDatabase getReadableDatabase() {
         if(mDatabase != null)        
@@ -258,6 +262,7 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_779912361 =             mData
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.833 -0400", hash_original_method = "C09EB7B9D42A5A795555D7C9A56D8370", hash_generated_method = "8C122B00FF700110C4D2C65D103E2325")
     public synchronized void close() {
         if(mIsInitializing)        
@@ -288,6 +293,7 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_779912361 =             mData
     public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.835 -0400", hash_original_method = "E809F845DA52B26B37A0B95640D58A46", hash_generated_method = "5B8D18B99C8B9F27F6E0861A2FFB02A3")
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //DSFIXME:  CODE0009: Possible callback target function detected

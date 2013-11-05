@@ -309,7 +309,7 @@ public class ActionBarView extends AbsActionBarView {
         } //End block
         mContentHeight = a.getLayoutDimension(R.styleable.ActionBar_height, 0);
         a.recycle();
-        mLogoNavItem = new ActionMenuItem(context, 0, android.R.id.home, 0, 0, mTitle);
+        mLogoNavItem = new ActionMenuItem(context, 0, R.id.home, 0, 0, mTitle);
         mHomeLayout.setOnClickListener(mUpClickListener);
         mHomeLayout.setClickable(true);
         mHomeLayout.setFocusable(true);

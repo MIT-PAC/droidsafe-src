@@ -7,6 +7,7 @@ import java.lang.ref.WeakReference;
 
 import libcore.icu.NativePluralRules;
 import android.graphics.Movie;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Drawable.ConstantState;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import android.util.SparseArray;
 import android.util.TypedValue;
 
 
-
+import android.R;
 
 public class Resources {
     final TypedValue mTmpValue = new TypedValue();
@@ -397,17 +398,7 @@ public class Resources {
     
     @DSModeled(DSC.SAFE)
 	public Drawable getDrawable(int id){
-		// Original method
-		/*
-		{
-        synchronized (mTmpValue) {
-            TypedValue value = mTmpValue;
-            getValue(id, value, true);
-            return loadDrawable(value, id);
-        }
-    }
-		*/
-		return null;
+        return loadDrawable(null, id);
 	}
 
     
@@ -993,7 +984,9 @@ public class Resources {
     Drawable loadDrawable(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+        Drawable ret = new ColorDrawable();
+        ret.addTaint(getTaint());
+        return ret;
 	}
 
     

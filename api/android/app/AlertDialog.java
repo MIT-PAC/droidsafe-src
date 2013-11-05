@@ -81,6 +81,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int resolveDialogTheme(Context context, int resid) {
         if (resid == THEME_TRADITIONAL) {
             return com.android.internal.R.style.Theme_Dialog_Alert;
@@ -103,6 +104,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.979 -0400", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "B7188CF39CE4A1207BBBFBF54836C5CF")
     public Button getButton(int whichButton) {
         addTaint(whichButton);
@@ -114,6 +116,7 @@ Button var982AAF2A195CEB114AEA08F0D79D1554_623151443 =         mAlert.getButton(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.980 -0400", hash_original_method = "ECC410A91FC6F30B82508F44C93EA39B", hash_generated_method = "EC273ECC084A55FEFC17F7A6C80AAD1E")
     public ListView getListView() {
 ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getListView();
@@ -124,6 +127,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.981 -0400", hash_original_method = "5655E82DFA793B6CD86300EA45F77D5A", hash_generated_method = "752B50DE17B484A92012992274CD105C")
     @Override
     public void setTitle(CharSequence title) {
@@ -146,6 +150,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.982 -0400", hash_original_method = "0FDFF41BD74285789F29E89A2F2C112C", hash_generated_method = "AD0A1CFD85BC03625326EDD2E6B6DEF0")
     public void setMessage(CharSequence message) {
         addTaint(message.getTaint());
@@ -155,6 +160,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.982 -0400", hash_original_method = "588C26275F4E62D9742C7DBB082EE340", hash_generated_method = "9DFBFC5BE7B086484A96014C0BB838EA")
     public void setView(View view) {
         addTaint(view.getTaint());
@@ -239,6 +245,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.987 -0400", hash_original_method = "14303CDDA201782BB4EE72003EBE4B25", hash_generated_method = "F5A39D614B0E1C476633016ECABDFCB3")
     @Deprecated
     public void setButton(CharSequence text, final OnClickListener listener) {
@@ -250,6 +257,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.988 -0400", hash_original_method = "99FBB4BC7546CFCEFDAC9CCE0B0EC52F", hash_generated_method = "A133C1FA29229A311BCC319905DF1878")
     @Deprecated
     public void setButton2(CharSequence text, final OnClickListener listener) {
@@ -261,6 +269,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.989 -0400", hash_original_method = "9225C5ACB453A48CCE22F622BD426A12", hash_generated_method = "469E8C38083E77334CDE31443F3D835E")
     @Deprecated
     public void setButton3(CharSequence text, final OnClickListener listener) {
@@ -272,6 +281,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.990 -0400", hash_original_method = "B742B976A105323EE27DB344109D47DF", hash_generated_method = "3C4D87639FE619F12997B202A1E9113E")
     public void setIcon(int resId) {
         addTaint(resId);
@@ -291,6 +301,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.992 -0400", hash_original_method = "1B8133F4D68862D013C951EDD0C82832", hash_generated_method = "08969955AC3254B40ADC900C8F0396CF")
     public void setIconAttribute(int attrId) {
         addTaint(attrId);
@@ -328,6 +339,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_2012875858 =         mAlert.getList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.997 -0400", hash_original_method = "BF8AB256B91D3A887301218CA5494F2D", hash_generated_method = "F1E94738E2950904756A842ECA018013")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -503,6 +515,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_894892718 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.015 -0400", hash_original_method = "3A94A6A2822E55FB53EB2F980E52FF8E", hash_generated_method = "B006CC613930A86C82B08ECAB6EA22FA")
         public Builder setIconAttribute(int attrId) {
             addTaint(attrId);
@@ -932,6 +945,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1521219680 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.070 -0400", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "776F67F1F733289C64AE4A93107A0614")
         public AlertDialog create() {
             final AlertDialog dialog = new AlertDialog(P.mContext, mTheme, false);
@@ -964,6 +978,7 @@ AlertDialog varE19892282EF70932DF3A147A213BE89D_580931381 =             dialog;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.071 -0400", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "33469449DD6A882A6A0B8831F6E6ED34")
         public AlertDialog show() {
             AlertDialog dialog = create();
