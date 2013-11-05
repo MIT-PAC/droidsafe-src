@@ -58,7 +58,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     
     @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "560F8A7FDE8C5C12025FD3A840761BDA")
-    private  KeyEvent() {
+    public  KeyEvent() {
         // ---------- Original Method ----------
     }
     
