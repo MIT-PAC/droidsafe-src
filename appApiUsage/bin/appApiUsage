@@ -3,9 +3,10 @@ SCRIPTNAME=`basename $0`
 BINDIR=`dirname $0`
 APPDIR=`(cd $BINDIR/..; pwd)`
 LIBDIR=$APPDIR/../../lib
+DROIDSAFE_BINDIR=$APPDIR/../../bin
 APPJAR=$APPDIR/bin/appApiUsage.jar
 
-for JARFILE in $LIBDIR/*.jar; do
+for JARFILE in $LIBDIR/*.jar $DROIDSAFE_BINDIR/*jar; do
     APP_CLASSPATH=$APP_CLASSPATH:$JARFILE
 done
 

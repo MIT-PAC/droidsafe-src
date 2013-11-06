@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +51,7 @@ public class ApiUsageListing {
         JarFile jar;
         try {
             jar = new JarFile(jarFile);
-            SootUtils.loadClassesFromJar(jar, false, null);
+            SootUtils.loadClassesFromJar(jar, false, new HashSet<String>());
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -67,7 +68,7 @@ public class ApiUsageListing {
         JarFile jar;
         try {
             jar = new JarFile(jarFile);
-            SootUtils.loadClassesFromJar(jar, true, null);
+            SootUtils.loadClassesFromJar(jar, true, new HashSet<String>());
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -133,7 +134,7 @@ public class ApiUsageListing {
     }
     
     public void printSummaryReport(){
-       printStream.printf("======== Summary for all (%d) Jars =============", jarCount); 
+       printStream.printf("======== Summary for all (%d) Jars =============\n", jarCount); 
        printJarReport("All", apiAllOverride, apiAllUsage);
     }
     /**
@@ -145,20 +146,18 @@ public class ApiUsageListing {
     private void printJarReport(String jarFile, Map<SootMethod, Integer> overrideMap, 
                                 Map<SootMethod, Integer> usageMap) {
        
-       printStream.printf("========Output Report for jar %s=======", jarFile);
+       printStream.printf("========Output Report for jar %s=======\n", jarFile);
        printStream.printf("API overriden methods:\n");
        for (SootMethod method: overrideMap.keySet()) {
            printStream.printf("%s => %d \n",  method, overrideMap.get(method));           
        }
 
-       printStream.printf("\nDirect API call methods: ");
+       printStream.printf("\nDirect API call methods: \n");
        for (SootMethod method: usageMap.keySet()) {
            printStream.printf("%s => %d \n",  method, usageMap.get(method));           
        }
         
     }
-    
-    
     
     private static void setSootOptions() {
         soot.options.Options.v().set_keep_line_number(true);
@@ -216,6 +215,14 @@ public class ApiUsageListing {
             listing.setReportFile(outFile);
         }
         
+        StringBuilder cp = new StringBuilder();
+        
+        cp.append(".");
+        for (String jarName: libJars) {
+            cp.append(File.pathSeparator + jarName);
+        }
+        System.setProperty("soot.class.path", cp.toString());
+
         for (String jarName: libJars) {
             logger.warn("Loading API jar {} ", jarName);
             listing.addApiJar(jarName);
