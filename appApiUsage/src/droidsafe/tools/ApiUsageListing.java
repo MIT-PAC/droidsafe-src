@@ -65,6 +65,7 @@ public class ApiUsageListing {
     
     public void addAppJar(String jarFile) {
         //SootUtils.loadClassesFromJar(jarFile, true, null);
+        logger.info("Loading appJar {}", jarFile);
         JarFile jar;
         try {
             jar = new JarFile(jarFile);
@@ -82,11 +83,15 @@ public class ApiUsageListing {
 
         // Going through all methods inside the class
         for (SootClass sootClass: Scene.v().getApplicationClasses()) {
+            logger.info("Application classes {} ", sootClass);
+        
             for (SootMethod sootMethod: sootClass.getMethods()) {
                 // Check for overriding method
                 // check for method being called by someone
+                logger.info("Method {} ", sootMethod);
                                 
                 if (SootUtils.isApiOverridenMethod(sootMethod)) {
+
                     logger.info("{} is API overring method ", sootMethod);
                     if (!apiOverride.containsKey(sootMethod)) {
                         apiOverride.put(sootMethod, 0);                        
@@ -111,6 +116,13 @@ public class ApiUsageListing {
                     apiUsage.put(method, apiUsage.get(method)+1); 
                 }
             }            
+        }
+        
+        for (SootClass sootClass: Scene.v().getClasses()) {
+            logger.info("{} phantom: {}, library:{}", sootClass, sootClass.isPhantomClass(), sootClass.isLibraryClass());
+            if (sootClass.getMethods() != null){
+                logger.info("{} has {} methods ", sootClass, sootClass.getMethodCount());
+            }
         }
         
         printJarReport(jarFile, apiOverride, apiUsage);
@@ -221,16 +233,9 @@ public class ApiUsageListing {
         for (String jarName: libJars) {
             cp.append(File.pathSeparator + jarName);
         }
-        System.setProperty("soot.class.path", cp.toString());
 
-        for (String jarName: libJars) {
-            logger.warn("Loading API jar {} ", jarName);
-            listing.addApiJar(jarName);
-        }
-        
         List<String> appJarFiles = new LinkedList<String>();
         String[] arguments = commandLine.getArgs();
-        
         for (String arg: arguments) {
             appJarFiles.add(arg);
         }
@@ -247,6 +252,18 @@ public class ApiUsageListing {
             }            
         }
         
+        for (String jarName: appJarFiles) {
+            cp.append(File.pathSeparator + jarName);
+        }
+        System.setProperty("soot.class.path", cp.toString());
+        logger.info("classpath: {} ", cp.toString());
+
+        for (String jarName: libJars) {
+            logger.warn("Loading API jar {} ", jarName);
+            listing.addApiJar(jarName);
+        }
+ 
+
         for (String jarName: appJarFiles) {
             logger.warn("Loading app jar {} ", jarName);
             listing.addAppJar(jarName);
