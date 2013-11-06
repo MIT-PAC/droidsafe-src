@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -80,6 +82,8 @@ public class ApiUsageListing {
         
         HashMap<SootMethod, Integer> apiUsage    = new HashMap<SootMethod, Integer>();
         HashMap<SootMethod, Integer> apiOverride = new HashMap<SootMethod, Integer>();
+        
+        Scene.v().getApplicationClasses().clear();
 
         // Going through all methods inside the class
         for (SootClass sootClass: Scene.v().getApplicationClasses()) {
@@ -90,15 +94,17 @@ public class ApiUsageListing {
                 // check for method being called by someone
                 logger.info("Method {} ", sootMethod);
                                 
-                if (SootUtils.isApiOverridenMethod(sootMethod)) {
+                SootMethod overriden = SootUtils.getApiOverridenMethod(sootMethod);
+
+                //if (SootUtils.isApiOverridenMethod(sootMethod)) {
+                if (overriden != null) {
 
                     logger.info("{} is API overring method ", sootMethod);
-                    if (!apiOverride.containsKey(sootMethod)) {
-                        apiOverride.put(sootMethod, 0);                        
+                    if (!apiOverride.containsKey(overriden)) {
+                        apiOverride.put(overriden, 0);                        
                     }
-                    
                     // add the counter
-                    apiOverride.put(sootMethod, apiOverride.get(sootMethod)+1);
+                    apiOverride.put(overriden, apiOverride.get(overriden)+1);
                 }
 
                 Set<SootMethod> calleeSet = SootUtils.getCalleeSet(sootMethod);
@@ -116,13 +122,6 @@ public class ApiUsageListing {
                     apiUsage.put(method, apiUsage.get(method)+1); 
                 }
             }            
-        }
-        
-        for (SootClass sootClass: Scene.v().getClasses()) {
-            logger.info("{} phantom: {}, library:{}", sootClass, sootClass.isPhantomClass(), sootClass.isLibraryClass());
-            if (sootClass.getMethods() != null){
-                logger.info("{} has {} methods ", sootClass, sootClass.getMethodCount());
-            }
         }
         
         printJarReport(jarFile, apiOverride, apiUsage);
@@ -160,15 +159,33 @@ public class ApiUsageListing {
        
        printStream.printf("========Output Report for jar %s=======\n", jarFile);
        printStream.printf("API overriden methods:\n");
+       printStream.printf("----------------------\n");
+       
+       ArrayList<String> methodList = new ArrayList<String>(overrideMap.size());
+       
        for (SootMethod method: overrideMap.keySet()) {
+           methodList.add(method.toString());
+       }
+       Collections.sort(methodList);
+       
+       for (String methodSig: methodList) {
+           SootMethod method = Scene.v().getMethod(methodSig); 
            printStream.printf("%s => %d \n",  method, overrideMap.get(method));           
        }
+       methodList = new ArrayList<String>(usageMap.size());
+       
 
-       printStream.printf("\nDirect API call methods: \n");
        for (SootMethod method: usageMap.keySet()) {
+           methodList.add(method.toString());
+       }
+       Collections.sort(methodList);
+       
+       printStream.printf("\nDirect API call methods: \n");
+       printStream.printf("----------------------\n");
+       for (String methodSig: methodList) {
+           SootMethod method = Scene.v().getMethod(methodSig);       
            printStream.printf("%s => %d \n",  method, usageMap.get(method));           
        }
-        
     }
     
     private static void setSootOptions() {
