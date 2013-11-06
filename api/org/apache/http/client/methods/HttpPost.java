@@ -3,6 +3,7 @@ package org.apache.http.client.methods;
 // Droidsafe Imports
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
+import java.net.*;
 
 import droidsafe.runtime.*;
 import java.net.URI;
@@ -30,6 +31,11 @@ public class HttpPost extends HttpEntityEnclosingRequestBase {
     @DSModeled(DSC.SPEC)
 	public HttpPost(final String uri) {
         super();
+        try {
+            setURI(new URI(uri));
+        } catch (URISyntaxException e) {
+            
+        }
         addTaint(uri.getTaint());
     }
 
