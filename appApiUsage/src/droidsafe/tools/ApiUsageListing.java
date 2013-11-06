@@ -5,8 +5,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.jar.JarFile;
 
 import org.apache.commons.cli.BasicParser;
@@ -19,9 +23,10 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.android.app.Project;
-import droidsafe.android.system.API;
-import droidsafe.main.SootConfig;
+import soot.Scene;
+import soot.SootClass;
+import soot.SootMethod;
+
 import droidsafe.utils.SootUtils;
 
 /**
@@ -32,6 +37,8 @@ import droidsafe.utils.SootUtils;
  */
 public class ApiUsageListing {
     private static final Logger logger = LoggerFactory.getLogger(ApiUsageListing.class);
+    
+    private PrintStream printStream = System.out;
 
     public ApiUsageListing() {
         setSootOptions();
@@ -50,6 +57,11 @@ public class ApiUsageListing {
         };               
     }
 
+    private HashMap<SootMethod, Integer> apiAllUsage    = new HashMap<SootMethod, Integer>();
+    private HashMap<SootMethod, Integer> apiAllOverride = new HashMap<SootMethod, Integer>();
+    
+    int jarCount = 0;
+    
     public void addAppJar(String jarFile) {
         //SootUtils.loadClassesFromJar(jarFile, true, null);
         JarFile jar;
@@ -59,12 +71,94 @@ public class ApiUsageListing {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        };       
-    }
+            return;
+        };
+        
+        jarCount++;
+        
+        HashMap<SootMethod, Integer> apiUsage    = new HashMap<SootMethod, Integer>();
+        HashMap<SootMethod, Integer> apiOverride = new HashMap<SootMethod, Integer>();
 
-    public void setReport(String reportFile) {
+        // Going through all methods inside the class
+        for (SootClass sootClass: Scene.v().getApplicationClasses()) {
+            for (SootMethod sootMethod: sootClass.getMethods()) {
+                // Check for overriding method
+                // check for method being called by someone
+                                
+                if (SootUtils.isApiOverridenMethod(sootMethod)) {
+                    logger.info("{} is API overring method ", sootMethod);
+                    if (!apiOverride.containsKey(sootMethod)) {
+                        apiOverride.put(sootMethod, 0);                        
+                    }
+                    
+                    // add the counter
+                    apiOverride.put(sootMethod, apiOverride.get(sootMethod)+1);
+                }
+
+                Set<SootMethod> calleeSet = SootUtils.getCalleeSet(sootMethod);
+                for (SootMethod method: calleeSet) {
+                    // skip aplication class
+                    if (method.getDeclaringClass().isApplicationClass()) {
+                        continue;
+                    }
+                    // if the callee is not application class, it is direct API class
+                   if (!apiUsage.containsKey(method)) {
+                        apiUsage.put(method, 0);                        
+                    }
+                    
+                    // add the counter
+                    apiUsage.put(method, apiUsage.get(method)+1); 
+                }
+            }            
+        }
+        
+        printJarReport(jarFile, apiOverride, apiUsage);
+        
+        apiAllOverride.putAll(apiOverride);
+        apiAllUsage.putAll(apiUsage);
+    }
+    
+    /**
+     * Set a report File
+     * @param reportFile
+     */
+    public void setReportFile(String reportFile) {
+        try {
+            PrintStream stream = new PrintStream(reportFile);
+            printStream = stream;
+        }
+        catch (Exception ex) {
+            logger.warn("Cannot open report file {}", reportFile);
+        }        
+    }
+    
+    public void printSummaryReport(){
+       printStream.printf("======== Summary for all (%d) Jars =============", jarCount); 
+       printJarReport("All", apiAllOverride, apiAllUsage);
+    }
+    /**
+     * Output report for each section
+     * @param jarFile
+     * @param overrideMap
+     * @param usageMap
+     */
+    private void printJarReport(String jarFile, Map<SootMethod, Integer> overrideMap, 
+                                Map<SootMethod, Integer> usageMap) {
+       
+       printStream.printf("========Output Report for jar %s=======", jarFile);
+       printStream.printf("API overriden methods:\n");
+       for (SootMethod method: overrideMap.keySet()) {
+           printStream.printf("%s => %d \n",  method, overrideMap.get(method));           
+       }
+
+       printStream.printf("\nDirect API call methods: ");
+       for (SootMethod method: usageMap.keySet()) {
+           printStream.printf("%s => %d \n",  method, usageMap.get(method));           
+       }
         
     }
+    
+    
     
     private static void setSootOptions() {
         soot.options.Options.v().set_keep_line_number(true);
@@ -117,6 +211,10 @@ public class ApiUsageListing {
         
         ApiUsageListing listing = new ApiUsageListing();
         
+        if (commandLine.hasOption("out")) {
+            String outFile = commandLine.getOptionValue("out");
+            listing.setReportFile(outFile);
+        }
         
         for (String jarName: libJars) {
             logger.warn("Loading API jar {} ", jarName);
@@ -124,8 +222,10 @@ public class ApiUsageListing {
         }
         
         List<String> appJarFiles = new LinkedList<String>();
-        if (commandLine.getArgList() != null){
-            appJarFiles.addAll(commandLine.getArgList());
+        String[] arguments = commandLine.getArgs();
+        
+        for (String arg: arguments) {
+            appJarFiles.add(arg);
         }
 
         if (commandLine.hasOption("inlist")) {
@@ -145,8 +245,8 @@ public class ApiUsageListing {
             listing.addAppJar(jarName);
         }
         
-        // TODO Auto-generated method stub
-        // Project.v().init();
+        listing.printSummaryReport();
+
     }
     
     private static void printHelp(Options options) {
