@@ -244,13 +244,13 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1293281338 =         builder.toString
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
         public static Uri parse(String uriString) {
             return new Uri(uriString);
         }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Uri fromFile(File file) {
         if (file == null) {
             throw new NullPointerException("file");

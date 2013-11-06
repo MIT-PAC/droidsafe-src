@@ -12,6 +12,7 @@ public abstract class Observable<T> {
 
     protected final ArrayList<T> mObservers = new ArrayList<T>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.062 -0400", hash_original_method = "70464F2D6E4F3B59517C778B3B1A93D5", hash_generated_method = "70464F2D6E4F3B59517C778B3B1A93D5")
     public Observable ()
     {

@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 
 public class ContentObservable extends Observable<ContentObserver> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.555 -0400", hash_original_method = "0D8C230D46EFDA6222B6D152F7216617", hash_generated_method = "0D8C230D46EFDA6222B6D152F7216617")
     public ContentObservable ()
     {

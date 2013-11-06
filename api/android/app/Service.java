@@ -337,6 +337,14 @@ String varDD9C2143734A2F5CB66BF5CFBE75CE5F_736001360 =         mClassName;
         // ---------- Original Method ----------
         //return mClassName;
     }
+    
+    /**
+     * callback hook for subservices
+     */
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnSubServiceHook() {
+        
+    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.155 -0400", hash_original_field = "A59B3C2E563000CF632F248E775E1904", hash_generated_field = "BCD56721F1394C062DFD537E559B3715")

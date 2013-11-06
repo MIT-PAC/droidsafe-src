@@ -475,7 +475,7 @@ Object var854B7A61C03CF753466A11AD5A6F683C_2142006971 =         mMap.get(key);
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.302 -0400", hash_original_method = "E7336EB9055C9F862A0B8D336BB5AE0F", hash_generated_method = "FB618D2195B1DE7959F738C2433A3309")
     public void putString(String key, String value) {
         addTaint(value.getTaint());
@@ -1583,6 +1583,7 @@ SparseArray<T> var540C13E9E156B687226421B24F2DF178_1931449992 =             null
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.619 -0400", hash_original_method = "3E1FB271E8FDF7CD375ECA97D496DB8C", hash_generated_method = "BCF1D0F94CE0C414FF86D7B0B3E679D1")
+    @DSModeled(DSC.SAFE)
     public Serializable getSerializable(String key) {
         addTaint(key.getTaint());
         unparcel();

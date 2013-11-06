@@ -61,14 +61,14 @@ public final class System {
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public static long nanoTime() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;

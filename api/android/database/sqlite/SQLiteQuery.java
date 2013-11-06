@@ -20,6 +20,7 @@ public class SQLiteQuery extends SQLiteProgram {
 
     private boolean mClosed = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.933 -0400", hash_original_method = "B04E51F22DB6FA67074D367FD62C2A3B", hash_generated_method = "18D8D2891ECFC4704610AF4707BD2E8D")
       SQLiteQuery(SQLiteDatabase db, String query, int offsetIndex, String[] bindArgs) {
         super(db, query);
@@ -195,6 +196,7 @@ String var3EFB8F4E9BBF4DC978F8DF4F177CC507_1487590186 =         "SQLiteQuery: " 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.940 -0400", hash_original_method = "C1F8301470323E9B4CE9B1F32DF8E225", hash_generated_method = "6C73A8E1493172E7E20CAF1DBE3B5224")
     @Override
     public void close() {

@@ -25,9 +25,10 @@ public class Object {
             varAAEB03D14830D479070633B166EED001_1798330854.addTaint(taint);
             throw varAAEB03D14830D479070633B166EED001_1798330854;
         } //End block
-Object var5D97285CC21650E6D41723F3E22233BE_1153587035 =         internalClone((Cloneable) this);
-        var5D97285CC21650E6D41723F3E22233BE_1153587035.addTaint(taint);
-        return var5D97285CC21650E6D41723F3E22233BE_1153587035;
+        
+        //fix for cloning, just return this statement
+        
+        return this;
         // ---------- Original Method ----------
         //if (!(this instanceof Cloneable)) {
             //throw new CloneNotSupportedException("Class doesn't implement Cloneable");
@@ -39,9 +40,11 @@ Object var5D97285CC21650E6D41723F3E22233BE_1153587035 =         internalClone((C
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.633 -0400", hash_original_method = "DC17854DB4C4786A4B8C4AFD2060B404", hash_generated_method = "A43E05FEA5D61737BBCA795F23B88103")
     @DSModeled(DSC.SAFE)
     private Object internalClone(Cloneable o) {
-    	Object retVal = new Object();
-    	retVal.addTaint(getTaint());
-    	return retVal;
+    	 //Object retVal = new Object();
+    	//retVal.addTaint(getTaint());
+        
+        //fix for cloning, just return the this statement
+    	return this;
     }
 
     

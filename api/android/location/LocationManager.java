@@ -253,7 +253,8 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
+ 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.985 -0400", hash_original_method = "79B0FCFC5B63DF5D944678DA62AFE363", hash_generated_method = "52636F7D8FC2E80863E9DF747C3029E6")
     public void requestLocationUpdates(String provider,
         long minTime, float minDistance, LocationListener listener) {
@@ -261,6 +262,7 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
         addTaint(minDistance);
         addTaint(minTime);
         addTaint(provider.getTaint());
+                
         if(provider == null)        
         {
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_812000166 = new IllegalArgumentException("provider==null");
@@ -363,6 +365,14 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
         addTaint(minTime);
         addTaint(criteria.getTaint());
         addTaint(provider.getTaint());
+        
+        //call listeners directory for DroidSafe
+        listener.onLocationChanged(new Location(provider));
+        Bundle bundle = new Bundle();
+        listener.onStatusChanged(provider, 0, bundle);
+        listener.onProviderEnabled(provider);
+        listener.onProviderDisabled(provider);
+        
         if(minTime < 0L)        
         {
             minTime = 0L;
@@ -807,6 +817,7 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.993 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "7B70CBDE081B95E75A69268514229255")
+    @DSModeled(DSC.SAFE)
     public Location getLastKnownLocation(String provider) {
         addTaint(provider.getTaint());
         if(provider == null)        
@@ -819,13 +830,13 @@ String var540C13E9E156B687226421B24F2DF178_11489280 =         null;
         {
 Location var94D744E5CB62D5F61288405519195D94_1241647484 =             mService.getLastKnownLocation(provider);
             var94D744E5CB62D5F61288405519195D94_1241647484.addTaint(taint);
-            return var94D744E5CB62D5F61288405519195D94_1241647484;
+            
         } //End block
         catch (RemoteException ex)
         {
 Location var540C13E9E156B687226421B24F2DF178_1859180586 =             null;
             var540C13E9E156B687226421B24F2DF178_1859180586.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1859180586;
+          
         } //End block
         // ---------- Original Method ----------
         //if (provider == null) {
@@ -837,6 +848,7 @@ Location var540C13E9E156B687226421B24F2DF178_1859180586 =             null;
             //Log.e(TAG, "getLastKnowLocation: RemoteException", ex);
             //return null;
         //}
+        return new Location("GPS");
     }
 
     

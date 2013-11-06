@@ -63,7 +63,7 @@ public final class URL implements Serializable {
 
     private transient int hashCode;
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.956 -0400", hash_original_method = "121BE8263BD1C356B2FE90A678407E92", hash_generated_method = "13BE7CC69BC37CEBA9C3D962CB708488")
     public  URL(String spec) throws MalformedURLException {
         this((URL) null, spec, null);
@@ -477,7 +477,7 @@ Object varB0F4ACE0BCE6830B8B39B3ED2F0664DB_1604793771 =         openConnection()
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.973 -0400", hash_original_method = "D92AC8AC4808B4044341B9D346CCCA3C", hash_generated_method = "3121FB0D7CF7B880AEE328B81C825D6B")
     @SuppressWarnings("unchecked")
     public final Object getContent(Class[] types) throws IOException {
@@ -490,7 +490,7 @@ Object var6F18832B08F01BFE5F09D74E11F75FF3_2064874730 =         openConnection()
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "78801A6092FC374B64CA0EB1A9832472")
     public final InputStream openStream() throws IOException {
 InputStream var87790969037245FCECE93EB13FB59F9E_458691682 =         openConnection().getInputStream();
@@ -501,7 +501,7 @@ InputStream var87790969037245FCECE93EB13FB59F9E_458691682 =         openConnecti
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "DDCF57687ACF51357E563F1083DC4261", hash_generated_method = "59A0D749A7D681DCF183E55E7A4985AB")
     public URLConnection openConnection() throws IOException {
 URLConnection var8582ACACD5693CAF10280320B49B91CB_74152353 =         streamHandler.openConnection(this);
@@ -512,7 +512,7 @@ URLConnection var8582ACACD5693CAF10280320B49B91CB_74152353 =         streamHandl
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.974 -0400", hash_original_method = "CB72409718452D46955A0A85FC179645", hash_generated_method = "562A3F5A8E96C4C5ED979B90685726A4")
     public URLConnection openConnection(Proxy proxy) throws IOException {
         addTaint(proxy.getTaint());

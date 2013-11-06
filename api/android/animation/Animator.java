@@ -87,6 +87,10 @@ public abstract class Animator implements Cloneable {
             mListeners = new ArrayList<AnimatorListener>();
         } //End block
         mListeners.add(listener);
+        listener.onAnimationCancel(this);
+        listener.onAnimationStart(this);
+        listener.onAnimationCancel(this);
+        listener.onAnimationRepeat(this);
         // ---------- Original Method ----------
         //if (mListeners == null) {
             //mListeners = new ArrayList<AnimatorListener>();

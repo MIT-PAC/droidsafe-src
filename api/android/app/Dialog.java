@@ -317,6 +317,7 @@ Activity var1F93BAB3C8E73BD5DD59D84CA7D69EBB_626784901 =         mOwnerActivity;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.725 -0400", hash_original_method = "33443011198828BD072B057DA719765A", hash_generated_method = "91D25D057127796858709A51A2608F95")
+    @DSModeled(DSC.SAFE)
     public void dismiss() {
         if(Thread.currentThread() != mUiThread)        
         {

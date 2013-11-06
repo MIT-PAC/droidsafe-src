@@ -43,13 +43,19 @@ public class Intent implements Parcelable, Cloneable {
     private Uri mData;
     @DSVAModeled
     private String mType;
+    @DSVAModeled
     private String mPackage;
+    @DSVAModeled
     private ComponentName mComponent;
     @DSVAModeled
     private int mFlags;
     private HashSet<String> mCategories;
+    //TODO: removed for demo
+    //@DSVAModeled
     private Bundle mExtras;
     private Rect mSourceBounds;
+    //TODO: removed for demo
+    //@DSVAModeled
     private Intent mSelector;
     
     @DSModeled(DSC.SAFE)

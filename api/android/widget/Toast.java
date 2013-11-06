@@ -136,7 +136,7 @@ public class Toast {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
         result.addTaint(text.getTaint());
@@ -154,7 +154,7 @@ public class Toast {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public static Toast makeText(Context context, int resId, int duration)
                                 throws Resources.NotFoundException {
         return makeText(context, context.getResources().getText(resId), duration);

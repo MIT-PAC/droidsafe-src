@@ -16,7 +16,9 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.app.Application;
-
+import android.app.Dialog;
+import android.view.MotionEvent;
+import com.google.android.maps.MapActivity;
 
 
 /**
@@ -72,6 +74,22 @@ public class DroidSafeAndroidRuntime {
         activity.onSearchRequested();
         activity.onUserInteraction();
 
+        //TODO: DOES THIS MAKE SENSE?
+        activity.onCreateDialog(0);
+        activity.onCreateDialog(0, new Bundle());
+        activity.onPrepareDialog(0, new Dialog(context));
+        
+        
+        //TODO: WHAT ABOUT A REAL MENU?
+        activity.onCreateOptionsMenu(null);
+        activity.onPrepareOptionsMenu(null);
+        activity.onCreateContextMenu(null, null, null);
+        activity.onOptionsItemSelected(null);
+        activity.onContextItemSelected(null);
+        
+        activity.dispatchTouchEvent(new MotionEvent());
+        
+        
         activity.onConfigurationChanged(new Configuration());
 
         activity.droidsafeOnSavedInstanceState(new Bundle());
@@ -80,9 +98,21 @@ public class DroidSafeAndroidRuntime {
         
         activity.droidsafeOnResume();
         activity.droidsafeOnPause();
+        
+        //call hooks specific for SubActivity classes
+        activity.droidsafeOnSubActivityHook();
+
         activity.droidsafeOnStop();
         activity.droidsafeOnDestroy();
         activity.onDetachedFromWindow();
+
+        //Calls for MapActivity from mapping library
+        if (activity instanceof MapActivity) {
+            MapActivity ma = (MapActivity)activity;
+            ma.isRouteDisplayed();
+            ma.isLocationDisplayed();
+            ma.onGetMapDataSource();
+        }
 
     }
 
@@ -105,6 +135,7 @@ public class DroidSafeAndroidRuntime {
                 }
             }
         }
+        service.droidsafeOnSubServiceHook();
         service.onConfigurationChanged(new Configuration());
         service.onLowMemory();
         service.onTrimMemory(0);

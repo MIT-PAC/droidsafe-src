@@ -48,6 +48,15 @@ public final class InputMethodSubtype implements Parcelable {
 
     private HashMap<String, String> mExtraValueHashMapCache;
     
+    
+    @DSModeled(DSC.BAN)
+    public static InputMethodSubtype droidsafeObtainInputMethodSubtype() {
+        InputMethodSubtype subtype = new InputMethodSubtype(0, 0, new String(), new String(), 
+                                         new String(), false);
+        return subtype;
+    }
+            
+    
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.818 -0400", hash_original_method = "934D77263F2647B2A011D3A69C057C66", hash_generated_method = "4858F2C37D559F615970C0A29D470F18")
     public  InputMethodSubtype(int nameId, int iconId, String locale, String mode, String extraValue,

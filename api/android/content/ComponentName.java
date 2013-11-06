@@ -12,11 +12,14 @@ import android.os.Parcelable;
 public final class ComponentName implements Parcelable, Cloneable, Comparable<ComponentName> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.666 -0400", hash_original_field = "089616237F5DED8B7A7F9A618C4FC032", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
 
+    @DSVAModeled
     private String mPackage;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.666 -0400", hash_original_field = "3C06167D41E761EA62261D0BFD22DD5C", hash_generated_field = "5E2CA74CC8E570ED6932C7E63B69D503")
 
+    @DSVAModeled
     private String mClass;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.668 -0400", hash_original_method = "1714B1C8173E376D41E514F902D33E99", hash_generated_method = "7D9E77D2C93B078A228882B5CD43438C")
     public  ComponentName(String pkg, String cls) {
         if(pkg == null)        
@@ -41,7 +44,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.669 -0400", hash_original_method = "36F25878FE380B4CEA8E7C4B89DDFC1A", hash_generated_method = "10C31D504A19968F933EB3EDC6954081")
     public  ComponentName(Context pkg, String cls) {
         if(cls == null)        
@@ -59,7 +62,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.670 -0400", hash_original_method = "8AE00F6D12874A3382D28F364D43BAC6", hash_generated_method = "13D4875E5F4F3BF7BA85EDE233A1EC9A")
     public  ComponentName(Context pkg, Class<?> cls) {
         mPackage = pkg.getPackageName();
@@ -99,7 +102,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.672 -0400", hash_original_method = "5EFEBE9DDFB777526DBE0E9A79DAA5EE", hash_generated_method = "EF7C0113FB2FFBE69E1004B0C1942B83")
     private  ComponentName(String pkg, Parcel in) {
         mPackage = pkg;
@@ -110,7 +113,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.673 -0400", hash_original_method = "0C586E8D4837845118D5ECAFE1DD23B0", hash_generated_method = "7282876A691E19953B7C9F855AD89A5B")
     public ComponentName clone() {
 ComponentName var6C09C2B1BA5F965B795709781D6C0A40_1651853086 =         new ComponentName(mPackage, mClass);

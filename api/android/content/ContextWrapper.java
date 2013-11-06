@@ -35,6 +35,8 @@ import android.hardware.usb.IUsbManager;
 import android.hardware.usb.UsbManager;
 import android.location.CountryDetector;
 import android.location.ICountryDetector;
+import android.location.LocationManager;
+import android.location.ILocationManager;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.IConnectivityManager;
@@ -100,7 +102,7 @@ public class ContextWrapper extends Context {
 
     
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Resources getResources()
     {
         return mBase.getResources();
@@ -115,12 +117,13 @@ public class ContextWrapper extends Context {
 
     
     @Override
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public ContentResolver getContentResolver() {
     	return mBase.getContentResolver();
     }
-
     
+    
+    @DSModeled(DSC.SAFE)
     @Override
     public Looper getMainLooper() {
         return mBase.getMainLooper();
@@ -134,6 +137,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void setTheme(int resid) {
         mBase.setTheme(resid);
@@ -147,6 +151,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public Resources.Theme getTheme() {
         return mBase.getTheme();
@@ -194,6 +199,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {
         return mBase.getSharedPreferences(name, mode);
@@ -279,6 +285,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public SQLiteDatabase openOrCreateDatabase(String name, int mode, CursorFactory factory,
             DatabaseErrorHandler errorHandler) {
@@ -492,207 +499,6 @@ public class ContextWrapper extends Context {
     }
 
     
-    @Override
-    @DSModeled(DSC.SAFE)
-    public Object getSystemService(String name) {
-        switch (name) {
-            
-            case ACCOUNT_SERVICE: {
-                AccountManager manager = new AccountManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case ACTIVITY_SERVICE: {
-                ActivityManager manager = new ActivityManager(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case ALARM_SERVICE: {
-                AlarmManager manager = new AlarmManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            
-            case ACCESSIBILITY_SERVICE: {
-                AccessibilityManager manager = AccessibilityManager.getInstance(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case AUDIO_SERVICE: {
-                AudioManager manager = new AudioManager(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case APPWIDGET_SERVICE: {
-                break;
-            }
-            case BACKUP_SERVICE: {
-                break;
-            }
-            
-           case CLIPBOARD_SERVICE: {
-               ClipboardManager manager = new ClipboardManager(this);
-               manager.addTaint(getTaint());
-               return manager;
-            }
-
-           case CONNECTIVITY_SERVICE: {
-               ConnectivityManager manager = new ConnectivityManager();
-               manager.addTaint(getTaint());
-               return manager;
-           }
-            case COUNTRY_DETECTOR: {
-                CountryDetector manager = new CountryDetector();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case DEVICE_POLICY_SERVICE: {
-                DevicePolicyManager manager = new DevicePolicyManager(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case DOWNLOAD_SERVICE: {
-                DownloadManager manager = new DownloadManager(this.getContentResolver(), this.getPackageName());
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case DROPBOX_SERVICE: {
-                DropBoxManager manager = new DropBoxManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case INPUT_METHOD_SERVICE: {
-                InputMethodManager manager = InputMethodManager.getInstance(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-
-            case KEYGUARD_SERVICE: {
-                KeyguardManager manager = new KeyguardManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case LAYOUT_INFLATER_SERVICE: {
-                LayoutInflater manager = PolicyManager.makeNewLayoutInflater(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case LOCATION_SERVICE: {
-                KeyguardManager manager = new KeyguardManager();
-                manager.addTaint(getTaint());
-                return manager;
-            } 
-            case NFC_SERVICE: {
-                NfcManager manager = new NfcManager(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case NETWORKMANAGEMENT_SERVICE: {
-                break;
-            }
-            case NETWORK_STATS_SERVICE: {
-                break;
-            }
-            case NETWORK_POLICY_SERVICE: {
-                NetworkPolicyManager manager = new NetworkPolicyManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case NOTIFICATION_SERVICE: {
-                NotificationManager manager = new NotificationManager(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-
-            case SEARCH_SERVICE: {
-                SearchManager manager = new SearchManager(this); 
-                manager.addTaint(getTaint());
-                return manager;
-            }
-
-            case POWER_SERVICE: {
-                PowerManager manager = new PowerManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-
-            case SENSOR_SERVICE: {
-                break;
-            }
-            case SIP_SERVICE: {
-                break;
-            }
-            case STORAGE_SERVICE: {
-                StorageManager manager;
-                manager = new StorageManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case STATUS_BAR_SERVICE: {
-                StatusBarManager manager = StatusBarManager.createInstance(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case TELEPHONY_SERVICE: {
-                TelephonyManager manager = new TelephonyManager(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case TEXT_SERVICES_MANAGER_SERVICE: {
-                TextServicesManager manager = TextServicesManager.getInstance();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case THROTTLE_SERVICE: {
-                ThrottleManager manager = ThrottleManager.createInstance();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case UI_MODE_SERVICE: {
-                UiModeManager manager = UiModeManager.createInstance();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case USB_SERVICE: {
-                UsbManager manager = new UsbManager(this);
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case VIBRATOR_SERVICE: {
-                Vibrator manager = new Vibrator();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-
-            case WALLPAPER_SERVICE: {
-            }
-            case WIFI_SERVICE: {
-                WifiManager manager = new WifiManager();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-            case WIFI_P2P_SERVICE: {
-                WifiP2pManager manager = new WifiP2pManager();
-                manager.addTaint(getTaint());
-                return manager;
-
-            }
-            case WINDOW_SERVICE: {
-                WindowManager manager = WindowManagerImpl.getDefault();
-                manager.addTaint(getTaint());
-                return manager;
-            }
-
-            
-            default: {
-            }
-        }
-        
-        Object obj = new Object();
-        obj.addTaint(getTaint());
-        return obj;
-    }
-
     
     @Override
     public int checkPermission(String permission, int pid, int uid) {

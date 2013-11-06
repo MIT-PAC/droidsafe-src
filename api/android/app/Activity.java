@@ -41,6 +41,7 @@ import android.view.ActionMode;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.ContextThemeWrapper;
+import android.view.DragEvent;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -54,9 +55,12 @@ import android.view.ViewManager;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.inputmethod.EditorInfo;
 
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
+import com.android.internal.view.menu.MenuBuilder;
 
 
 
@@ -69,6 +73,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     private int mIdent;
     String mEmbeddedID;
     private Application mApplication;
+    @DSVAModeled
     Intent mIntent;
     private ComponentName mComponent;
     ActivityInfo mActivityInfo;
@@ -117,7 +122,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		mWindow = PolicyManager.makeNewWindow((Context)this);
 	}
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public Intent getIntent(){
 		return mIntent;
 		// Original method
@@ -483,7 +488,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
@@ -1482,7 +1487,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public boolean onCreateOptionsMenu(Menu menu){
 		return mParent.onCreateOptionsMenu(menu);
 		// Original method
@@ -1630,7 +1635,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -1661,7 +1666,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     
     @DSModeled(DSC.SAFE)
-    @Deprecated protected Dialog onCreateDialog(int id){
+    @Deprecated public  Dialog onCreateDialog(int id){
 		// Original method
 		/*
 		{
@@ -1673,7 +1678,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     
     @DSModeled(DSC.SAFE)
-    @Deprecated protected Dialog onCreateDialog(int id, Bundle args){
+    @Deprecated public Dialog onCreateDialog(int id, Bundle args){
 		return onCreateDialog(id);
 		// Original method
 		/*
@@ -1684,8 +1689,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
-    @Deprecated protected void onPrepareDialog(int id, Dialog dialog){
+    @DSModeled(DSC.SAFE)
+    @Deprecated public void onPrepareDialog(int id, Dialog dialog){
 		dialog.setOwnerActivity(this);
 		// Original method
 		/*
@@ -1697,7 +1702,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @Deprecated protected void onPrepareDialog(int id, Dialog dialog, Bundle args){
 		onPrepareDialog(id, dialog);
 		// Original method
@@ -1941,7 +1946,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public LayoutInflater getLayoutInflater(){
 		return getWindow().getLayoutInflater();
 		// Original method
@@ -2262,7 +2267,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public final void setResult(int resultCode, Intent data){
 		addTaint(resultCode);
 		mResultData = data;
@@ -2403,7 +2408,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public void finish(){
 		Log.v(TAG, "Finishing self: token=" + mToken);
 		mResultData.setAllowFds(false);
@@ -2503,7 +2508,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
 	protected void onActivityResult(int requestCode, int resultCode, Intent data){
 		// Original method
 		/*
@@ -3177,16 +3182,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 
-    
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
-        addTaint(icicle.getTaint());
-        mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
-                com.android.internal.R.styleable.Window_windowNoDisplay, false);
-        mFragments.dispatchActivityCreated();
-        onCreate(icicle);
-        onStart();
+        performCreate(icicle, this);
         // ---------- Original Method ----------
         //onCreate(icicle);
         //mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
@@ -3464,8 +3463,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     // orphaned legacy method
     @DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
 	public final void performCreate(Bundle icicle, Context context){
+        addTaint(icicle.getTaint());
+        addTaint(context.getTaint());
 		this.attachBaseContext(context);
 		onCreate(icicle);
+		onStart();
 		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
 		mFragments.dispatchActivityCreated();
@@ -3510,6 +3512,40 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	public void droidsafeOnPause() {
     	this.onPause();
 	}
+    
+    /**
+     * addition hooks to allow subactivity onXYZ to be called from droidsafe runtime
+     */
+    @DSModeled(DSC.BAN)
+	public void droidsafeOnSubActivityHook() {
+        droidsafeOnOthersHook();
+	}
+    
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnOthersHook() {
+        this.onActionModeFinished(ActionMode.droidsafeObtainObject());
+        this.onActionModeStarted(ActionMode.droidsafeObtainObject());
+        MenuBuilder builder = new MenuBuilder(getBaseContext());
+        //technically we should use the menu from external source
+        Menu menu = builder.addSubMenu(getTaintInt());
+        this.onCreateOptionsMenu(menu);
+        this.onAttachFragment(Fragment.instantiate(getBaseContext(), new String()));
+        this.onPrepareOptionsMenu(menu);
+        this.onContextMenuClosed(menu);
+        this.onContextItemSelected(menu.add(new String()));
+       
+        onWindowFocusChanged(getTaintBoolean());
+
+        onTouchEvent(MotionEvent.droidsafeObtainEvent());
+        onTrackballEvent(MotionEvent.droidsafeObtainEvent());
+        onGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
+
+        onKeyDown(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyUp(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyLongPress(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyShortcut(getTaintInt(), KeyEvent.droidsafeGetEvent());
+        onKeyMultiple(getTaintInt(), getTaintInt(), KeyEvent.droidsafeGetEvent());
+    }
 
     
 }

@@ -22,23 +22,23 @@ public abstract class Process {
     public abstract void destroy();
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public abstract int exitValue();
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public abstract InputStream getErrorStream();
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public abstract InputStream getInputStream();
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public abstract OutputStream getOutputStream();
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public abstract int waitFor() throws InterruptedException;
 
     

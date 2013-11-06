@@ -33,7 +33,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
 	
 	private Result result;
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.588 -0400", hash_original_method = "8B3C3F162E88495B3198046B04CCAD12", hash_generated_method = "717DB90AF8B9D7E6F5C69DCC8BADBDB4")
     public  AsyncTask() {
         // ---------- Original Method ----------

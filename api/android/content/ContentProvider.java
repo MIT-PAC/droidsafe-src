@@ -49,7 +49,9 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     private Transport mTransport = new Transport();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.784 -0400", hash_original_method = "F039A73ADD81439EFEE4572A926905FF", hash_generated_method = "AE9E67C0D421B97975CBD6F5E7DAC5C3")
+    @DSModeled(DSC.SAFE)
     public  ContentProvider() {
+        
         // ---------- Original Method ----------
     }
 

@@ -471,6 +471,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean hasMessages(int what){
 		// Original method
 		/*

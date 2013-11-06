@@ -39,6 +39,7 @@ public class SQLiteStatement extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.058 -0400", hash_original_method = "66D9912335771E2036ED62B64CF3BC86", hash_generated_method = "062D012ACC0658844CBF23041E31F4BA")
     public int executeUpdateDelete() {
         try 
@@ -125,6 +126,7 @@ public class SQLiteStatement extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.061 -0400", hash_original_method = "12DB780B550F95E5C10FD5998E83FEFD", hash_generated_method = "266E560CEDC9D2BD7A8D2B849209BF31")
     public long simpleQueryForLong() {
         try 
@@ -164,6 +166,7 @@ public class SQLiteStatement extends SQLiteProgram {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.062 -0400", hash_original_method = "6D794A242164C6F60D732256A15CB380", hash_generated_method = "7D1682DD79401AD2EAF263F26FD5C2CB")
     public String simpleQueryForString() {
         try 

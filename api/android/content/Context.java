@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.android.internal.policy.PolicyManager;
+
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -28,6 +30,59 @@ import android.os.Looper;
 import android.util.AttributeSet;
 
 
+import android.accounts.AccountManager;
+import android.accounts.IAccountManager;
+import android.app.ActivityManager;
+import android.app.AlarmManager;
+import android.app.DownloadManager;
+import android.app.KeyguardManager;
+import android.app.NotificationManager;
+import android.app.SearchManager;
+import android.app.StatusBarManager;
+import android.app.UiModeManager;
+import android.app.admin.DevicePolicyManager;
+import android.content.res.Resources;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.hardware.usb.IUsbManager;
+import android.hardware.usb.UsbManager;
+import android.location.CountryDetector;
+import android.location.ICountryDetector;
+import android.location.LocationManager;
+import android.location.ILocationManager;
+import android.media.AudioManager;
+import android.net.ConnectivityManager;
+import android.net.IConnectivityManager;
+import android.net.INetworkPolicyManager;
+import android.net.IThrottleManager;
+import android.net.NetworkPolicyManager;
+import android.net.ThrottleManager;
+import android.net.Uri;
+import android.net.wifi.IWifiManager;
+import android.net.wifi.WifiManager;
+import android.net.wifi.p2p.IWifiP2pManager;
+import android.net.wifi.p2p.WifiP2pManager;
+import android.nfc.NfcManager;
+import android.os.DropBoxManager;
+import android.os.IBinder;
+import android.os.IPowerManager;
+import android.os.PowerManager;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.Vibrator;
+import android.os.storage.StorageManager;
+import android.provider.AlarmClock;
+import android.telephony.TelephonyManager;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.WindowManager;
+import android.view.WindowManagerImpl;
+import android.view.accessibility.AccessibilityManager;
+import android.view.inputmethod.InputMethodManager;
+import android.view.textservice.TextServicesManager;
 
 
 
@@ -96,6 +151,7 @@ public abstract class Context {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.170 -0400", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "93D787D10019EB3C184F3D4409EE8F88")
+    @DSModeled(DSC.SAFE)   
     public final String getString(int resId) {
         addTaint(resId);
 String varE43003255E2CDFE3A3F854C99DB3C345_1254485630 =         getResources().getString(resId);
@@ -107,6 +163,7 @@ String varE43003255E2CDFE3A3F854C99DB3C345_1254485630 =         getResources().g
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.170 -0400", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "DD7F718E38B10AE9B4A5A4A828CAE4E2")
+    @DSModeled(DSC.SAFE)
     public final String getString(int resId, Object... formatArgs) {
         addTaint(formatArgs[0].getTaint());
         addTaint(resId);
@@ -159,6 +216,7 @@ TypedArray var6CAC1D2E58E1F85B1471C7C1B3216D41_1460331081 =         getTheme().o
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs) {
         return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
@@ -402,8 +460,209 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
             String profileFile, Bundle arguments);
 
     
-    @DSModeled(DSC.SAFE)
-    public abstract Object getSystemService(String name);
+    @DSModeled(DSC.SPEC)
+    public Object getSystemService(String name) {
+        switch (name) {
+           
+            case ACCOUNT_SERVICE: {
+                AccountManager manager = new AccountManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case ACTIVITY_SERVICE: {
+                ActivityManager manager = new ActivityManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case ALARM_SERVICE: {
+                AlarmManager manager = new AlarmManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            
+            case ACCESSIBILITY_SERVICE: {
+                AccessibilityManager manager = AccessibilityManager.getInstance(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case AUDIO_SERVICE: {
+                AudioManager manager = new AudioManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case APPWIDGET_SERVICE: {
+                break;
+            }
+            case BACKUP_SERVICE: {
+                break;
+            }
+            
+           case CLIPBOARD_SERVICE: {
+               ClipboardManager manager = new ClipboardManager(this);
+               manager.addTaint(getTaint());
+               return manager;
+            }
+
+           case CONNECTIVITY_SERVICE: {
+               ConnectivityManager manager = new ConnectivityManager();
+               manager.addTaint(getTaint());
+               return manager;
+           }
+            case COUNTRY_DETECTOR: {
+                CountryDetector manager = new CountryDetector();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case DEVICE_POLICY_SERVICE: {
+                DevicePolicyManager manager = new DevicePolicyManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case DOWNLOAD_SERVICE: {
+                DownloadManager manager = new DownloadManager(this.getContentResolver(), this.getPackageName());
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case DROPBOX_SERVICE: {
+                DropBoxManager manager = new DropBoxManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case INPUT_METHOD_SERVICE: {
+                InputMethodManager manager = InputMethodManager.getInstance(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            case KEYGUARD_SERVICE: {
+                KeyguardManager manager = new KeyguardManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case LAYOUT_INFLATER_SERVICE: {
+                LayoutInflater manager = PolicyManager.makeNewLayoutInflater(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case LOCATION_SERVICE: {
+                //IBinder b4 = ServiceManager.getService(LOCATION_SERVICE);
+                //LocationManager manager = new LocationManager(ILocationManager.Stub.asInterface(b4));
+
+                LocationManager manager = new LocationManager();
+                manager.addTaint(getTaint());
+                return manager;
+            } 
+            case NFC_SERVICE: {
+                NfcManager manager = new NfcManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case NETWORKMANAGEMENT_SERVICE: {
+                break;
+            }
+            case NETWORK_STATS_SERVICE: {
+                break;
+            }
+            case NETWORK_POLICY_SERVICE: {
+                NetworkPolicyManager manager = new NetworkPolicyManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case NOTIFICATION_SERVICE: {
+                NotificationManager manager = new NotificationManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            case SEARCH_SERVICE: {
+                SearchManager manager = new SearchManager(this); 
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            case POWER_SERVICE: {
+                PowerManager manager = new PowerManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            case SENSOR_SERVICE: {
+                break;
+            }
+            case SIP_SERVICE: {
+                break;
+            }
+            case STORAGE_SERVICE: {
+                StorageManager manager;
+                manager = new StorageManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case STATUS_BAR_SERVICE: {
+                StatusBarManager manager = StatusBarManager.createInstance(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case TELEPHONY_SERVICE: {
+                TelephonyManager manager = new TelephonyManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case TEXT_SERVICES_MANAGER_SERVICE: {
+                TextServicesManager manager = TextServicesManager.getInstance();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case THROTTLE_SERVICE: {
+                ThrottleManager manager = ThrottleManager.createInstance();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case UI_MODE_SERVICE: {
+                UiModeManager manager = UiModeManager.createInstance();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case USB_SERVICE: {
+                UsbManager manager = new UsbManager(this);
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case VIBRATOR_SERVICE: {
+                Vibrator manager = new Vibrator();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            case WALLPAPER_SERVICE: {
+            }
+            case WIFI_SERVICE: {
+                WifiManager manager = new WifiManager();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            case WIFI_P2P_SERVICE: {
+                WifiP2pManager manager = new WifiP2pManager();
+                manager.addTaint(getTaint());
+                return manager;
+
+            }
+            case WINDOW_SERVICE: {
+                WindowManager manager = WindowManagerImpl.getDefault();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+
+            
+            default: {
+            }
+        }
+        
+        Object obj = new Object();
+        obj.addTaint(getTaint());
+        return obj;
+    }
+
 
     
     @DSModeled(DSC.SAFE)
