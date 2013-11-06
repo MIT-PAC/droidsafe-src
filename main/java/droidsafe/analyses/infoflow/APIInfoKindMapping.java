@@ -43,8 +43,6 @@ public class APIInfoKindMapping {
     private Map<SootMethod,Set<InfoKind>> srcsMapping;
     /** map of sinks from soot method to info kinds */
     private Map<SootMethod,Set<InfoKind>> sinksMapping;
-    /** map of strings to the info kind that represents them */
-    private HashMap<String,InfoKind> infoKinds;
     /** default info kind for a spec or ban method that is not labeled */
     public InfoKind SENSITIVE_NOCATEGORY;
     
@@ -66,8 +64,7 @@ public class APIInfoKindMapping {
     private APIInfoKindMapping() {
         srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
         sinksMapping = new HashMap<SootMethod,Set<InfoKind>>();
-        infoKinds = new HashMap<String,InfoKind>();
-        SENSITIVE_NOCATEGORY = getInfoKind("SENSITIVE_NOCATEGORY");
+        SENSITIVE_NOCATEGORY = InfoKind.getInfoKind("SENSITIVE_NOCATEGORY");
     }
 
     /**
@@ -114,17 +111,7 @@ public class APIInfoKindMapping {
         v.readMappingFile(sinksFile, v.sinksMapping);
     }
     
-    /** 
-     * Given a string return (or create and return) the InfoKind object that
-     * represents it.
-     */
-    public InfoKind getInfoKind(String str) {
-        if (!infoKinds.containsKey(str)) {
-            infoKinds.put(str, new InfoKind(str));
-        }
-        
-        return infoKinds.get(str);
-    }
+
    
     /**
      * Read the sink or source mapping file and add the mappings to the map argument.
@@ -158,7 +145,7 @@ public class APIInfoKindMapping {
                         if (!mapping.containsKey(sootMethod)) {
                             mapping.put(sootMethod, new HashSet<InfoKind>());
                         }
-                        mapping.get(sootMethod).add(getInfoKind(infoKind));
+                        mapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind));
                         //System.out.println("Adding to mapping " + methodSig + " -> " + infoKind);
                         found++;
                     } catch (Exception e) {

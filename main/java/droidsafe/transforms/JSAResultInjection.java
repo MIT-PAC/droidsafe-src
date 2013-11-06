@@ -7,6 +7,8 @@ import droidsafe.android.app.Project;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
 import soot.Body;
 
@@ -45,6 +47,7 @@ public class JSAResultInjection extends BodyTransformer {
     private static int LOCALID = 0;
     public static final String LOCAL_PREFIX = "JSA_INJ_STRING_ARG";
     public static Map<InvokeExpr, Map<Integer, Value>> changesMade = new HashMap<InvokeExpr, Map<Integer, Value>>();
+    public static Set<StringConstant> createdStringConstants = new HashSet<StringConstant>();
 
     /**
      * Call this pass on all application classes in the project.
@@ -97,7 +100,9 @@ public class JSAResultInjection extends BodyTransformer {
 
                     //add an assignment of the local to the string constant
                     //right before the call
-                    AssignStmt assignStmt = Jimple.v().newAssignStmt(arg, StringConstant.v(JSAStrings.v().getRegex(v)));
+                    StringConstant sc = StringConstant.v(JSAStrings.v().getRegex(v));
+                    createdStringConstants.add(sc);
+                    AssignStmt assignStmt = Jimple.v().newAssignStmt(arg, sc);
                     units.insertBefore(assignStmt, stmt);
 
                     //replace the string constant with the local in the call

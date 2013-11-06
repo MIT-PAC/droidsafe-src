@@ -213,15 +213,23 @@ public class VAResultContainerClassGenerator {
                 for(SootField apiModelSootField : apiModelSootClass.getFields()){
                     if(hasDSVAModeledAnnotation(apiModelSootField)) {                
                         soot.Type fieldType = apiModelSootField.getType();
-                        if(fieldType instanceof RefType) {
-                            SootClass fieldTypeClass = ((RefType)fieldType).getSootClass();
-                            if(!classesAndFieldsToModel.containsKey(fieldTypeClass)) {
-                                classesAndFieldsToModel.put(fieldTypeClass, new HashSet<SootField>());
-                            }
-                        }
+                        //moved up, this is needed if class has a field annotated, but the class is 
+                        //not annotated.
                         if (!classesAndFieldsToModel.containsKey(apiModelSootClass)) {
                             classesAndFieldsToModel.put(apiModelSootClass, new HashSet<SootField>());
                         }
+                        
+                        if(fieldType instanceof RefType) {
+                            RefType refType = (RefType)fieldType;
+                            SootClass fieldTypeClass = ((RefType)fieldType).getSootClass();
+                            if (refType.equals(RefType.v("java.lang.String"))) {
+                                //add string fields to the list of fields that are modeled!
+                                classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
+                            } else if(!classesAndFieldsToModel.containsKey(fieldTypeClass)) {
+                                classesAndFieldsToModel.put(fieldTypeClass, new HashSet<SootField>());
+                            }
+                        }
+                        
                         if(fieldType instanceof PrimType || forDisplay) {
                             classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
                         }
@@ -810,7 +818,9 @@ public class VAResultContainerClassGenerator {
             if (refType.getArrayCount() == 0 && refType.getType() instanceof ClassOrInterfaceType) {
                 ClassOrInterfaceType coi = (ClassOrInterfaceType)refType.getType();
                 String coiName = coi.getName();
-                if (coiName.equals("String") || PRIMITIVE_WRAPPER_CLASS_NAMES.contains(coiName)) {
+                if (coiName.equals("String")) {
+                    type = getStringType();
+                } else if (PRIMITIVE_WRAPPER_CLASS_NAMES.contains(coiName)) {
                     type = convertStringOrPrimitiveWrapperType(coiName);
                 } else if (COLLECTION_CLASS_NAMES.contains(coiName)){
                     List<Type> typeArgs = coi.getTypeArgs();
@@ -835,6 +845,19 @@ public class VAResultContainerClassGenerator {
             if (set2.contains(elt1))
                 return true;
         return false;
+    }
+    
+    private Type getStringType() {
+        //System.out.println("**Converting string!!");
+        String vaString = "String" + "VAModel";
+        Type type = classTypeConversionMap.get(vaString);
+        if (type == null) {
+            imports.add("droidsafe.analyses.value.primitives." + vaString);
+            type = makeReferenceType(vaString);
+            classTypeConversionMap.put(vaString, type);
+        }
+        
+        return type;
     }
 
     private Type convertStringOrPrimitiveWrapperType(String clsName) {

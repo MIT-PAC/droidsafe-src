@@ -12,9 +12,10 @@ import com.google.common.collect.ImmutableSet;
 
 import soot.Local;
 import soot.SootField;
-import soot.Unit;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+
+import droidsafe.main.Config;
 
 class EdgeLocal implements Comparable<EdgeLocal> {
     private static final HashMap<ImmutablePair<Edge, Local>, EdgeLocal> cache = new HashMap<ImmutablePair<Edge, Local>, EdgeLocal>();
@@ -23,7 +24,9 @@ class EdgeLocal implements Comparable<EdgeLocal> {
     Local local;
 
     private EdgeLocal(Edge entryEdge, Local local) {
-        assert entryEdge != null && local != null;
+        if (Config.v().strict) {
+            assert entryEdge != null && local != null;
+        }
         this.entryEdge = entryEdge;
         this.local = local;
     }
@@ -75,14 +78,14 @@ class EdgeLocal implements Comparable<EdgeLocal> {
 class Locals {
     static final Locals EMPTY = new Locals();
 
-    private DefaultHashMap<EdgeLocal, ImmutableSet<InfoValue>> locals;
+    private DefaultHashMap<EdgeLocal, ImmutableSet<InfoValue>> edgeLocalToValues;
 
     Locals() {
-        locals = new DefaultHashMap<EdgeLocal, ImmutableSet<InfoValue>>(ImmutableSet.<InfoValue>of());
+        edgeLocalToValues = new DefaultHashMap<EdgeLocal, ImmutableSet<InfoValue>>(ImmutableSet.<InfoValue>of());
     }
 
     Locals(Locals that) {
-        this.locals = new DefaultHashMap<EdgeLocal, ImmutableSet<InfoValue>>(that.locals);
+        this.edgeLocalToValues = new DefaultHashMap<EdgeLocal, ImmutableSet<InfoValue>>(that.edgeLocalToValues);
     }
 
     ImmutableSet<InfoValue> putS(Edge entryEdge, Local local, HashSet<InfoValue> values) {
@@ -91,112 +94,93 @@ class Locals {
 
     ImmutableSet<InfoValue> putS(Edge entryEdge, Local local, ImmutableSet<InfoValue> values) {
         if (values != null && !values.isEmpty()) {
-            return locals.put(EdgeLocal.v(entryEdge, local), values);
+            return edgeLocalToValues.put(EdgeLocal.v(entryEdge, local), values);
         } else {
-            return locals.remove(EdgeLocal.v(entryEdge, local));
+            return edgeLocalToValues.remove(EdgeLocal.v(entryEdge, local));
         }
     }
 
     ImmutableSet<InfoValue> putW(Edge entryEdge, Local local, ImmutableSet<InfoValue> values) {
         EdgeLocal edgeLocal = EdgeLocal.v(entryEdge, local);
-        ImmutableSet<InfoValue> oldValues = locals.get(edgeLocal);
-        if (values != null && !values.isEmpty()) {
+        ImmutableSet<InfoValue> oldValues = edgeLocalToValues.get(edgeLocal);
+        if (values != null && values.isEmpty()) {
             HashSet<InfoValue> newValues = new HashSet<InfoValue>(oldValues);
             newValues.addAll(values);
-            return locals.put(edgeLocal, ImmutableSet.<InfoValue>copyOf(newValues));
+            return edgeLocalToValues.put(edgeLocal, ImmutableSet.<InfoValue>copyOf(newValues));
         } else {
             return oldValues;
         }
+    }
+
+    private ImmutableSet<InfoValue> remove(EdgeLocal edgeLocal) {
+        return edgeLocalToValues.remove(edgeLocal);
     }
 
     ImmutableSet<InfoValue> remove(Edge entryEdge, Local local) {
         return remove(EdgeLocal.v(entryEdge, local));
     }
 
-    private ImmutableSet<InfoValue> remove(EdgeLocal edgeLocal) {
-        return locals.remove(edgeLocal);
+    private ImmutableSet<InfoValue> get(EdgeLocal edgeLocal) {
+        return edgeLocalToValues.get(edgeLocal);
     }
-    
+
     ImmutableSet<InfoValue> get(Edge entryEdge, Local local) {
         return get(EdgeLocal.v(entryEdge, local));
     }
-    
-    private ImmutableSet<InfoValue> get(EdgeLocal edgeLocal) {
-        return locals.get(edgeLocal);
-    }
-    
+
     Locals merge(Locals that) {
         Locals locals = new Locals();
-        for (Map.Entry<EdgeLocal, ImmutableSet<InfoValue>> edgeLocalValues : this.locals.entrySet()) {
+        for (Map.Entry<EdgeLocal, ImmutableSet<InfoValue>> edgeLocalValues : this.edgeLocalToValues.entrySet()) {
             EdgeLocal edgeLocal = edgeLocalValues.getKey();
             ImmutableSet<InfoValue> values = edgeLocalValues.getValue();
-            if (that.locals.containsKey(edgeLocal)) {
+            if (that.edgeLocalToValues.containsKey(edgeLocal)) {
                 HashSet<InfoValue> mergedValues = new HashSet<InfoValue>(values);
-                mergedValues.addAll(that.locals.get(edgeLocal));
-                locals.locals.put(edgeLocal, ImmutableSet.copyOf(mergedValues));
+                mergedValues.addAll(that.edgeLocalToValues.get(edgeLocal));
+                locals.edgeLocalToValues.put(edgeLocal, ImmutableSet.copyOf(mergedValues));
             } else {
-                locals.locals.put(edgeLocal, values);
+                locals.edgeLocalToValues.put(edgeLocal, values);
             }
         }
-        for (Map.Entry<EdgeLocal, ImmutableSet<InfoValue>> edgeLocalValues : that.locals.entrySet()) {
+        for (Map.Entry<EdgeLocal, ImmutableSet<InfoValue>> edgeLocalValues : that.edgeLocalToValues.entrySet()) {
             EdgeLocal edgeLocal = edgeLocalValues.getKey();
-            if (!this.locals.containsKey(edgeLocal)) {
-                locals.locals.put(edgeLocal, edgeLocalValues.getValue());
+            if (!this.edgeLocalToValues.containsKey(edgeLocal)) {
+                locals.edgeLocalToValues.put(edgeLocal, edgeLocalValues.getValue());
             }
         }
         return locals;
     }
-    
+
     @Override
     public boolean equals(Object object) {
-       if (this == object) {
-           return true;
-       }
-       if (!(object instanceof Locals)) {
-           return false;
-       }
-       Locals that = (Locals)object;
-       
-       if (this.locals.size() != that.locals.size()) {
-           return false;
-       }
-       try {
-           for (Map.Entry<EdgeLocal, ImmutableSet<InfoValue>> localValues : this.locals.entrySet()) {
-               if (!(localValues.getValue().equals(that.locals.get(localValues.getKey())))) {
-                   return false;
-               }
-           }
-       } catch (ClassCastException unused) {
-           return false;
-       } catch (NullPointerException unused) {
-           return false;
-       }
-       
-       return true;
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof Locals)) {
+            return false;
+        }
+        Locals that = (Locals)object;
+
+        if (this.edgeLocalToValues.size() != that.edgeLocalToValues.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<EdgeLocal, ImmutableSet<InfoValue>> localValues : this.edgeLocalToValues.entrySet()) {
+                if (!(localValues.getValue().equals(that.edgeLocalToValues.get(localValues.getKey())))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public String toString() {
-        return locals.toString();
-    }
-    
-    int size() {
-        return locals.size();
-    }
-
-    Collection<ImmutableSet<InfoValue>> values() {
-        return locals.values();
-    }
-    
-    Locals minus(Locals that) {
-        Locals locals = new Locals();
-        for (Map.Entry<EdgeLocal, ImmutableSet<InfoValue>> edgeLocalValues : this.locals.entrySet()) {
-            EdgeLocal edgeLocal = edgeLocalValues.getKey();
-            HashSet<InfoValue> values = new HashSet<InfoValue>(edgeLocalValues.getValue());
-            values.removeAll(that.get(edgeLocal));
-            locals.putS(edgeLocal.entryEdge, edgeLocal.local, ImmutableSet.<InfoValue>copyOf(values));
-        }
-        return locals;
+        return edgeLocalToValues.toString();
     }
 }
 
@@ -207,7 +191,9 @@ class AddressField implements Comparable<AddressField> {
     SootField field;
 
     private AddressField(Address address, SootField field) {
-        assert address != null && field != null;
+        if (Config.v().strict) {
+            assert address != null && field != null;
+        }
         this.address = address;
         this.field = field;
     }
@@ -223,16 +209,16 @@ class AddressField implements Comparable<AddressField> {
     }
 
     @Override
-    public boolean equals(Object that) {
-        if (this == that) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
-        if (!(that instanceof AddressField)) {
+        if (!(object instanceof AddressField)) {
             return false;
         }
-        AddressField addressField = (AddressField)that;
+        AddressField that = (AddressField)object;
 
-        return this.address.equals(addressField.address) && this.field.equals(addressField.field);
+        return this.address.equals(that.address) && this.field.equals(that.field);
     }
 
     @Override
@@ -256,85 +242,60 @@ class AddressField implements Comparable<AddressField> {
     }
 }
 
-class EdgeAddressField implements Comparable<EdgeAddressField> {
-    private static final HashMap<ImmutablePair<Edge, AddressField>, EdgeAddressField> cache = new HashMap<ImmutablePair<Edge, AddressField>, EdgeAddressField>();
-
-    Edge entryEdge;
-    AddressField addressField;
-
-    private EdgeAddressField(Edge entryEdge, AddressField addressField) {
-        assert entryEdge != null && addressField != null;
-        this.entryEdge = entryEdge;
-        this.addressField = addressField;
-    }
-
-    static EdgeAddressField v(Edge entryEdge, Address address, SootField field) {
-        return v(entryEdge, AddressField.v(address, field));
-    }
-
-    static EdgeAddressField v(Edge entryEdge, AddressField addressField) {
-        ImmutablePair<Edge, AddressField> key = ImmutablePair.of(entryEdge, addressField);
-        EdgeAddressField value = cache.get(key);
-        if (value == null) {
-            value = new EdgeAddressField(entryEdge, addressField);
-            cache.put(key, value);
-        }
-        return value;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) {
-            return true;
-        }
-        if (!(object instanceof EdgeAddressField)) {
-            return false;
-        }
-        EdgeAddressField that = (EdgeAddressField)object;
-
-        return this.entryEdge.equals(that.entryEdge) && this.addressField.equals(that.addressField);
-    }
-
-    @Override
-    public int hashCode() {
-        return 31 * (31 * 17 + entryEdge.hashCode()) + addressField.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return "(" + entryEdge + ", " + addressField.address + "," + addressField.field + ")";
-    }
-
-    @Override
-    public int compareTo(EdgeAddressField that) {
-        int entryEdge = this.entryEdge.toString().compareTo(that.entryEdge.toString());
-        if (entryEdge != 0) {
-            return entryEdge;
-        } else {
-            return this.addressField.compareTo(that.addressField);
-        }
-    }
-}
-
 class AddressFieldToValues {
     static final AddressFieldToValues EMPTY = new AddressFieldToValues();
-    
+
     private DefaultHashMap<AddressField, ImmutableSet<InfoValue>> addressFieldToValues;
-    
+
     AddressFieldToValues() {
         addressFieldToValues = new DefaultHashMap<AddressField, ImmutableSet<InfoValue>>(ImmutableSet.<InfoValue>of());
     }
-    
-    ImmutableSet<InfoValue> get(Address address, SootField field) {
-        return get(AddressField.v(address, field));
+
+    AddressFieldToValues(AddressFieldToValues that) {
+        addressFieldToValues = new DefaultHashMap<AddressField, ImmutableSet<InfoValue>>(that.addressFieldToValues);
+    }
+
+    ImmutableSet<InfoValue> putS(AddressField addressField, ImmutableSet<InfoValue> values) {
+        return addressFieldToValues.put(addressField, values);
+    }
+
+    void putSAll(AddressFieldToValues that) {
+        for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : that.entrySet()) {
+            AddressField addressField = addressFieldValues.getKey();
+            ImmutableSet<InfoValue> values = addressFieldValues.getValue();
+            putS(addressField, values);
+        }
+    }
+
+    ImmutableSet<InfoValue> putW(AddressField addressField, ImmutableSet<InfoValue> values) {
+        ImmutableSet<InfoValue> oldValues = addressFieldToValues.get(addressField);
+        if (values != null && !values.isEmpty()) {
+            HashSet<InfoValue> newValues = new HashSet<InfoValue>(oldValues);
+            newValues.addAll(values);
+            return addressFieldToValues.put(addressField, ImmutableSet.<InfoValue>copyOf(newValues));
+        } else {
+            return oldValues;
+        }
+    }
+
+    ImmutableSet<InfoValue> putW(Address address, SootField field, ImmutableSet<InfoValue> values) {
+        return putW(AddressField.v(address, field), values);
+    }
+
+    void putWAll(AddressFieldToValues that) {
+        for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : that.entrySet()) {
+            AddressField addressField = addressFieldValues.getKey();
+            ImmutableSet<InfoValue> values = addressFieldValues.getValue();
+            putW(addressField, values);
+        }
     }
 
     ImmutableSet<InfoValue> get(AddressField addressField) {
         return addressFieldToValues.get(addressField);
     }
 
-    ImmutableSet<InfoValue> putS(AddressField addressField, ImmutableSet<InfoValue> values) {
-        return addressFieldToValues.put(addressField, values);
+    ImmutableSet<InfoValue> get(Address address, SootField field) {
+        return get(AddressField.v(address, field));
     }
 
     AddressFieldToValues merge(AddressFieldToValues that) {
@@ -362,137 +323,106 @@ class AddressFieldToValues {
     Set<Map.Entry<AddressField, ImmutableSet<InfoValue>>> entrySet() {
         return addressFieldToValues.entrySet();
     }
-    
+
     @Override
     public boolean equals(Object object) {
-       if (this == object) {
-           return true;
-       }
-       if (!(object instanceof AddressFieldToValues)) {
-           return false;
-       }
-       AddressFieldToValues that = (AddressFieldToValues)object;
-       
-       if (this.addressFieldToValues.size() != that.addressFieldToValues.size()) {
-           return false;
-       }
-       try {
-           for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : this.addressFieldToValues.entrySet()) {
-               if (!(addressFieldValues.getValue().equals(that.addressFieldToValues.get(addressFieldValues.getKey())))) {
-                   return false;
-               }
-           }
-       } catch (ClassCastException unused) {
-           return false;
-       } catch (NullPointerException unused) {
-           return false;
-       }
-       
-       return true;
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof AddressFieldToValues)) {
+            return false;
+        }
+        AddressFieldToValues that = (AddressFieldToValues)object;
+
+        if (this.addressFieldToValues.size() != that.addressFieldToValues.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : this.addressFieldToValues.entrySet()) {
+                if (!(addressFieldValues.getValue().equals(that.addressFieldToValues.get(addressFieldValues.getKey())))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+
+        return true;
     }
 }
 
 class Instances {
-    private DefaultHashMap<EdgeAddressField, ImmutableSet<InfoValue>> instances;
+    private DefaultHashMap<Edge, AddressFieldToValues> edgeToAddressFieldToValues;
 
     Instances() {
-        instances = new DefaultHashMap<EdgeAddressField, ImmutableSet<InfoValue>>(ImmutableSet.<InfoValue>of());
+        edgeToAddressFieldToValues = new DefaultHashMap<Edge, AddressFieldToValues>(AddressFieldToValues.EMPTY);
     }
 
     Instances(Instances that) {
-        this.instances = new DefaultHashMap<EdgeAddressField, ImmutableSet<InfoValue>>(that.instances);
+        this.edgeToAddressFieldToValues = new DefaultHashMap<Edge, AddressFieldToValues>(AddressFieldToValues.EMPTY);
+        for (Map.Entry<Edge, AddressFieldToValues> edgeAddressFieldToValues : that.edgeToAddressFieldToValues.entrySet()) {
+            Edge edge = edgeAddressFieldToValues.getKey();
+            AddressFieldToValues addressFieldToValues = edgeAddressFieldToValues.getValue();
+            this.edgeToAddressFieldToValues.put(edge, new AddressFieldToValues(addressFieldToValues));
+        }
+    }
+
+    ImmutableSet<InfoValue> putS(Edge entryEdge, AddressField addressField, ImmutableSet<InfoValue> values) {
+        return edgeToAddressFieldToValues.get(entryEdge).putS(addressField, values);
+    }
+
+    void putSAll(Edge entryEdge, AddressFieldToValues addressFieldToValues) {
+        edgeToAddressFieldToValues.get(entryEdge).putSAll(addressFieldToValues);
+    }
+
+    ImmutableSet<InfoValue> putW(Edge entryEdge, AddressField addressField, ImmutableSet<InfoValue> values) {
+        return edgeToAddressFieldToValues.get(entryEdge).putW(addressField, values);
+    }
+
+    ImmutableSet<InfoValue> putW(Edge entryEdge, Address address, SootField field, ImmutableSet<InfoValue> values) {
+        return edgeToAddressFieldToValues.get(entryEdge).putW(address, field, values);
+    }
+
+    void putWAll(Edge entryEdge, AddressFieldToValues addressFieldToValues) {
+        edgeToAddressFieldToValues.get(entryEdge).putWAll(addressFieldToValues);
     }
 
     ImmutableSet<InfoValue> get(Edge entryEdge, Address address, SootField field) {
-        return instances.get(EdgeAddressField.v(entryEdge, address, field)); 
+        return edgeToAddressFieldToValues.get(entryEdge).get(address, field);
     }
 
     AddressFieldToValues get(Edge entryEdge) {
-        AddressFieldToValues addressFieldToValues = new AddressFieldToValues();
-        for (Map.Entry<EdgeAddressField, ImmutableSet<InfoValue>> edgeAddressFieldValues : instances.entrySet()) {
-            EdgeAddressField edgeAddressField = edgeAddressFieldValues.getKey();
-            ImmutableSet<InfoValue> values = edgeAddressFieldValues.getValue();
-            if (edgeAddressField.entryEdge.equals(entryEdge)) {
-                addressFieldToValues.putS(AddressField.v(edgeAddressField.addressField.address, edgeAddressField.addressField.field), values);
-            }
-        }
-        return addressFieldToValues;
+        return edgeToAddressFieldToValues.get(entryEdge);
     }
 
     private HashMap<EdgeAddress, FieldToValues> edgeAddressToFieldToValues;
 
-    // XXX: put*() must not be called after calling get(Edge, Address). Otherwise, subsequent get(Edge, Address)' return value may be invalid. 
+    // XXX: put*() must not be called after calling get(Edge, Address). Otherwise, subsequent get(Edge, Address)'s return value may be invalid.
     FieldToValues get(Edge entryEdge, Address address) {
         if (edgeAddressToFieldToValues == null) {
             edgeAddressToFieldToValues = new HashMap<EdgeAddress, FieldToValues>();
         }
-        
+
         EdgeAddress edgeAddress = EdgeAddress.v(entryEdge, address);
-        
+
         if (edgeAddressToFieldToValues.containsKey(edgeAddress)) {
             return edgeAddressToFieldToValues.get(edgeAddress);
         }
-        
+
         FieldToValues fieldToValues = new FieldToValues();
-        for (Map.Entry<EdgeAddressField, ImmutableSet<InfoValue>> edgeAddressFieldValues : instances.entrySet()) {
-            EdgeAddressField edgeAddressField = edgeAddressFieldValues.getKey();
-            ImmutableSet<InfoValue> values = edgeAddressFieldValues.getValue();
-            if (edgeAddressField.entryEdge.equals(entryEdge) && edgeAddressField.addressField.address.equals(address)) {
-                fieldToValues.putS(edgeAddressField.addressField.field, values);
+        for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : edgeToAddressFieldToValues.get(entryEdge).entrySet()) {
+            AddressField addressField = addressFieldValues.getKey();
+            ImmutableSet<InfoValue> values = addressFieldValues.getValue();
+            if (addressField.address.equals(address)) {
+                fieldToValues.putS(addressField.field, values);
             }
         }
         edgeAddressToFieldToValues.put(edgeAddress, fieldToValues);
         return fieldToValues;
     }
-    
-    void putSAll(Edge entryEdge, AddressFieldToValues addressFieldToValues) {
-        for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : addressFieldToValues.entrySet()) {
-            AddressField addressField = addressFieldValues.getKey();
-            ImmutableSet<InfoValue> values = addressFieldValues.getValue();
-            putS(entryEdge, addressField, values);
-        }
-    }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, AddressField addressField, ImmutableSet<InfoValue> values) {
-        return instances.put(EdgeAddressField.v(entryEdge, addressField), values);
-    }
-    
-    void putWAll(Edge entryEdge, AddressFieldToValues addressFieldToValues) {
-        for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : addressFieldToValues.entrySet()) {
-            AddressField addressField = addressFieldValues.getKey();
-            ImmutableSet<InfoValue> values = addressFieldValues.getValue();
-            putW(entryEdge, addressField, values);
-        }
-    }
-
-    ImmutableSet<InfoValue> putW(Edge entryEdge, AddressField addressField, ImmutableSet<InfoValue> values) {
-        return putW(entryEdge, addressField.address, addressField.field, values);
-    }
-
-    ImmutableSet<InfoValue> putW(Edge entryEdge, Address address, SootField field, ImmutableSet<InfoValue> values) {
-        EdgeAddressField edgeAddressField = EdgeAddressField.v(entryEdge, address, field);
-        ImmutableSet<InfoValue> oldValues = instances.get(edgeAddressField);
-        if (values != null && !values.isEmpty()) {
-            HashSet<InfoValue> newValues = new HashSet<InfoValue>(oldValues);
-            newValues.addAll(values);
-            return instances.put(edgeAddressField, ImmutableSet.<InfoValue>copyOf(newValues));
-        } else {
-            return oldValues;
-        }
-    }
-
-    Set<Map.Entry<EdgeAddressField, ImmutableSet<InfoValue>>> entrySet() {
-        return instances.entrySet();
-    }
-    
-    int size() {
-        return instances.size();
-    }
-
-    Collection<ImmutableSet<InfoValue>> values() {
-        return instances.values();
-    }
-    
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -503,17 +433,14 @@ class Instances {
         }
         Instances that = (Instances)object;
 
-        if (this.instances.size() != that.instances.size()) {
+        if (this.edgeToAddressFieldToValues.size() != that.edgeToAddressFieldToValues.size()) {
             return false;
         }
         try {
-            for (Map.Entry<EdgeAddressField, ImmutableSet<InfoValue>> edgeAddressFieldValues : this.instances.entrySet()) {
-                if (!(edgeAddressFieldValues.getValue().equals(that.instances.get(edgeAddressFieldValues.getKey())))) {
+            for (Map.Entry<Edge, AddressFieldToValues> edgeAddressFieldToValues : this.edgeToAddressFieldToValues.entrySet()) {
+                if (!(edgeAddressFieldToValues.getValue().equals(that.edgeToAddressFieldToValues.get(edgeAddressFieldToValues.getKey())))) {
                     return false;
                 }
-//                if (edgeAddressFieldValues.getValue().size() != that.instances.get(edgeAddressFieldValues.getKey()).size()) {
-//                    return false;
-//                }
             }
         } catch (ClassCastException unused) {
             return false;
@@ -523,21 +450,10 @@ class Instances {
 
         return true;
     }
-    
+
     @Override
     public String toString() {
-        return instances.toString();
-    }
-    
-    Instances minus(Instances that) {
-        Instances instances = new Instances();
-        for (Map.Entry<EdgeAddressField, ImmutableSet<InfoValue>> edgeAddressFieldValues : this.instances.entrySet()) {
-            EdgeAddressField edgeAddressField = edgeAddressFieldValues.getKey();
-            HashSet<InfoValue> values = new HashSet<InfoValue>(edgeAddressFieldValues.getValue());
-            values.removeAll(that.get(edgeAddressField.entryEdge, edgeAddressField.addressField.address, edgeAddressField.addressField.field));
-            instances.putS(edgeAddressField.entryEdge, edgeAddressField.addressField, ImmutableSet.<InfoValue>copyOf(values));
-        }
-        return instances;
+        return edgeToAddressFieldToValues.toString();
     }
 }
 
@@ -548,7 +464,9 @@ class EdgeAddress implements Comparable<EdgeAddress> {
     Address address;
 
     private EdgeAddress(Edge entryEdge, Address address) {
-        assert entryEdge != null && address != null;
+        if (Config.v().strict) {
+            assert entryEdge != null && address != null;
+        }
         this.entryEdge = entryEdge;
         this.address = address;
     }
@@ -599,13 +517,13 @@ class EdgeAddress implements Comparable<EdgeAddress> {
 
 class AddressToValues {
     static final AddressToValues EMPTY = new AddressToValues();
-    
+
     private DefaultHashMap<Address, ImmutableSet<InfoValue>> addressToValues;
-    
+
     AddressToValues() {
         addressToValues = new DefaultHashMap<Address, ImmutableSet<InfoValue>>(ImmutableSet.<InfoValue>of());
     }
-    
+
     ImmutableSet<InfoValue> get(Address address) {
         return addressToValues.get(address);
     }
@@ -639,33 +557,33 @@ class AddressToValues {
     Set<Map.Entry<Address, ImmutableSet<InfoValue>>> entrySet() {
         return addressToValues.entrySet();
     }
-    
+
     @Override
     public boolean equals(Object object) {
-       if (this == object) {
-           return true;
-       }
-       if (!(object instanceof AddressToValues)) {
-           return false;
-       }
-       AddressToValues that = (AddressToValues)object;
-       
-       if (this.addressToValues.size() != that.addressToValues.size()) {
-           return false;
-       }
-       try {
-           for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : this.addressToValues.entrySet()) {
-               if (!(addressValues.getValue().equals(that.addressToValues.get(addressValues.getKey())))) {
-                   return false;
-               }
-           }
-       } catch (ClassCastException unused) {
-           return false;
-       } catch (NullPointerException unused) {
-           return false;
-       }
-       
-       return true;
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof AddressToValues)) {
+            return false;
+        }
+        AddressToValues that = (AddressToValues)object;
+
+        if (this.addressToValues.size() != that.addressToValues.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : this.addressToValues.entrySet()) {
+                if (!(addressValues.getValue().equals(that.addressToValues.get(addressValues.getKey())))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+
+        return true;
     }
 }
 
@@ -680,31 +598,15 @@ class Arrays {
         this.arrays = new DefaultHashMap<EdgeAddress, ImmutableSet<InfoValue>>(that.arrays);
     }
 
-    AddressToValues get(Edge entryEdge) {
-        AddressToValues addressToValues = new AddressToValues();
-        for (Map.Entry<EdgeAddress, ImmutableSet<InfoValue>> edgeAddressValues : arrays.entrySet()) {
-            EdgeAddress edgeAddress = edgeAddressValues.getKey();
-            ImmutableSet<InfoValue> values = edgeAddressValues.getValue();
-            if (edgeAddress.entryEdge.equals(entryEdge)) {
-                addressToValues.putS(edgeAddress.address, values);
-            }
-        }
-        return addressToValues;
+    ImmutableSet<InfoValue> putS(Edge entryEdge, Address address, ImmutableSet<InfoValue> values) {
+        return arrays.put(EdgeAddress.v(entryEdge, address), values);
     }
 
-    ImmutableSet<InfoValue> get(Edge entryEdge, Address address) {
-        return get(EdgeAddress.v(entryEdge, address));
-    }
-    
-    ImmutableSet<InfoValue> get(EdgeAddress edgeAddress) {
-        return arrays.get(edgeAddress);
-    }
-
-    void putWAll(Edge entryEdge, AddressToValues addressToValues) {
+    void putSAll(Edge entryEdge, AddressToValues addressToValues) {
         for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : addressToValues.entrySet()) {
             Address address = addressValues.getKey();
             ImmutableSet<InfoValue> values = addressValues.getValue();
-            putW(entryEdge, address, values);
+            putS(entryEdge, address, values);
         }
     }
 
@@ -720,63 +622,60 @@ class Arrays {
         }
     }
 
-    void putSAll(Edge entryEdge, AddressToValues addressToValues) {
+    void putWAll(Edge entryEdge, AddressToValues addressToValues) {
         for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : addressToValues.entrySet()) {
             Address address = addressValues.getKey();
             ImmutableSet<InfoValue> values = addressValues.getValue();
-            putS(entryEdge, address, values);
+            putW(entryEdge, address, values);
         }
     }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, Address address, ImmutableSet<InfoValue> values) {
-        return arrays.put(EdgeAddress.v(entryEdge, address), values);
+    ImmutableSet<InfoValue> get(EdgeAddress edgeAddress) {
+        return arrays.get(edgeAddress);
     }
-    
-    int size() {
-        return arrays.size();
+
+    ImmutableSet<InfoValue> get(Edge entryEdge, Address address) {
+        return get(EdgeAddress.v(entryEdge, address));
     }
-    
-    Collection<ImmutableSet<InfoValue>> values() {
-        return arrays.values();
+
+    AddressToValues get(Edge entryEdge) {
+        AddressToValues addressToValues = new AddressToValues();
+        for (Map.Entry<EdgeAddress, ImmutableSet<InfoValue>> edgeAddressValues : arrays.entrySet()) {
+            EdgeAddress edgeAddress = edgeAddressValues.getKey();
+            ImmutableSet<InfoValue> values = edgeAddressValues.getValue();
+            if (edgeAddress.entryEdge.equals(entryEdge)) {
+                addressToValues.putS(edgeAddress.address, values);
+            }
+        }
+        return addressToValues;
     }
 
     @Override
     public boolean equals(Object object) {
-       if (this == object) {
-           return true;
-       }
-       if (!(object instanceof Arrays)) {
-           return false;
-       }
-       Arrays that = (Arrays)object;
-       
-       if (this.arrays.size() != that.arrays.size()) {
-           return false;
-       }
-       try {
-           for (Map.Entry<EdgeAddress, ImmutableSet<InfoValue>> edgeAddressValues : this.arrays.entrySet()) {
-               if (!(edgeAddressValues.getValue().equals(that.arrays.get(edgeAddressValues.getKey())))) {
-                   return false;
-               }
-           }
-       } catch (ClassCastException unused) {
-           return false;
-       } catch (NullPointerException unused) {
-           return false;
-       }
-       
-       return true;
-    }
-    
-    Arrays minus(Arrays that) {
-        Arrays arrays = new Arrays();
-        for (Map.Entry<EdgeAddress, ImmutableSet<InfoValue>> edgeAddressValues : this.arrays.entrySet()) {
-            EdgeAddress edgeAddress = edgeAddressValues.getKey();
-            HashSet<InfoValue> values = new HashSet<InfoValue>(edgeAddressValues.getValue());
-            values.removeAll(that.get(edgeAddress));
-            arrays.putS(edgeAddress.entryEdge, edgeAddress.address, ImmutableSet.<InfoValue>copyOf(values));
+        if (this == object) {
+            return true;
         }
-        return arrays;
+        if (!(object instanceof Arrays)) {
+            return false;
+        }
+        Arrays that = (Arrays)object;
+
+        if (this.arrays.size() != that.arrays.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<EdgeAddress, ImmutableSet<InfoValue>> edgeAddressValues : this.arrays.entrySet()) {
+                if (!(edgeAddressValues.getValue().equals(that.arrays.get(edgeAddressValues.getKey())))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+
+        return true;
     }
 }
 
@@ -787,7 +686,9 @@ class EdgeField implements Comparable<EdgeField> {
     SootField field;
 
     private EdgeField(Edge entryEdge, SootField field) {
-        assert entryEdge != null && field != null;
+        if (Config.v().strict) {
+            assert entryEdge != null && field != null;
+        }
         this.entryEdge = entryEdge;
         this.field = field;
     }
@@ -838,13 +739,13 @@ class EdgeField implements Comparable<EdgeField> {
 
 class FieldToValues {
     static final FieldToValues EMPTY = new FieldToValues();
-    
+
     private DefaultHashMap<SootField, ImmutableSet<InfoValue>> fieldToValues;
-    
+
     FieldToValues() {
         fieldToValues = new DefaultHashMap<SootField, ImmutableSet<InfoValue>>(ImmutableSet.<InfoValue>of());
     }
-    
+
     ImmutableSet<InfoValue> get(SootField field) {
         return fieldToValues.get(field);
     }
@@ -878,37 +779,37 @@ class FieldToValues {
     Set<Map.Entry<SootField, ImmutableSet<InfoValue>>> entrySet() {
         return fieldToValues.entrySet();
     }
-    
+
     Collection<ImmutableSet<InfoValue>> values() {
         return fieldToValues.values();
     }
-    
+
     @Override
     public boolean equals(Object object) {
-       if (this == object) {
-           return true;
-       }
-       if (!(object instanceof FieldToValues)) {
-           return false;
-       }
-       FieldToValues that = (FieldToValues)object;
-       
-       if (this.fieldToValues.size() != that.fieldToValues.size()) {
-           return false;
-       }
-       try {
-           for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : this.fieldToValues.entrySet()) {
-               if (!(fieldValues.getValue().equals(that.fieldToValues.get(fieldValues.getKey())))) {
-                   return false;
-               }
-           }
-       } catch (ClassCastException unused) {
-           return false;
-       } catch (NullPointerException unused) {
-           return false;
-       }
-       
-       return true;
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof FieldToValues)) {
+            return false;
+        }
+        FieldToValues that = (FieldToValues)object;
+
+        if (this.fieldToValues.size() != that.fieldToValues.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : this.fieldToValues.entrySet()) {
+                if (!(fieldValues.getValue().equals(that.fieldToValues.get(fieldValues.getKey())))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+
+        return true;
     }
 }
 
@@ -934,19 +835,15 @@ class Statics {
         return fieldToValues;
     }
 
-    ImmutableSet<InfoValue> get(Edge entryEdge, SootField field) {
-        return get(EdgeField.v(entryEdge, field));
-    }
-    
-    ImmutableSet<InfoValue> get(EdgeField edgeField) {
-        return statics.get(edgeField);
+    ImmutableSet<InfoValue> putS(Edge entryEdge, SootField field, ImmutableSet<InfoValue> values) {
+        return statics.put(EdgeField.v(entryEdge, field), values);
     }
 
-    void putWAll(Edge entryEdge, FieldToValues fieldToValues) {
+    void putSAll(Edge entryEdge, FieldToValues fieldToValues) {
         for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : fieldToValues.entrySet()) {
             SootField field = fieldValues.getKey();
             ImmutableSet<InfoValue> values = fieldValues.getValue();
-            putW(entryEdge, field, values);
+            putS(entryEdge, field, values);
         }
     }
 
@@ -962,63 +859,48 @@ class Statics {
         }
     }
 
-    void putSAll(Edge entryEdge, FieldToValues fieldToValues) {
+    void putWAll(Edge entryEdge, FieldToValues fieldToValues) {
         for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : fieldToValues.entrySet()) {
             SootField field = fieldValues.getKey();
             ImmutableSet<InfoValue> values = fieldValues.getValue();
-            putS(entryEdge, field, values);
+            putW(entryEdge, field, values);
         }
     }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, SootField field, ImmutableSet<InfoValue> values) {
-        return statics.put(EdgeField.v(entryEdge, field), values);
+    ImmutableSet<InfoValue> get(EdgeField edgeField) {
+        return statics.get(edgeField);
     }
-    
-    int size() {
-        return statics.size();
+
+    ImmutableSet<InfoValue> get(Edge entryEdge, SootField field) {
+        return get(EdgeField.v(entryEdge, field));
     }
-    
-    Collection<ImmutableSet<InfoValue>> values() {
-        return statics.values();
-    }
-    
+
     @Override
     public boolean equals(Object object) {
-       if (this == object) {
-           return true;
-       }
-       if (!(object instanceof Statics)) {
-           return false;
-       }
-       Statics that = (Statics)object;
-       
-       if (this.statics.size() != that.statics.size()) {
-           return false;
-       }
-       try {
-           for (Map.Entry<EdgeField, ImmutableSet<InfoValue>> edgeFieldValues : this.statics.entrySet()) {
-               if (!(edgeFieldValues.getValue().equals(that.statics.get(edgeFieldValues.getKey())))) {
-                   return false;
-               }
-           }
-       } catch (ClassCastException unused) {
-           return false;
-       } catch (NullPointerException unused) {
-           return false;
-       }
-       
-       return true;
-    }
-
-    Statics minus(Statics that) {
-        Statics statics = new Statics();
-        for (Map.Entry<EdgeField, ImmutableSet<InfoValue>> edgeFieldValues : this.statics.entrySet()) {
-            EdgeField edgeField = edgeFieldValues.getKey();
-            HashSet<InfoValue> values = new HashSet<InfoValue>(edgeFieldValues.getValue());
-            values.removeAll(that.get(edgeField));
-            statics.putS(edgeField.entryEdge, edgeField.field, ImmutableSet.<InfoValue>copyOf(values));
+        if (this == object) {
+            return true;
         }
-        return statics;
+        if (!(object instanceof Statics)) {
+            return false;
+        }
+        Statics that = (Statics)object;
+
+        if (this.statics.size() != that.statics.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<EdgeField, ImmutableSet<InfoValue>> edgeFieldValues : this.statics.entrySet()) {
+                if (!(edgeFieldValues.getValue().equals(that.statics.get(edgeFieldValues.getKey())))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+
+        return true;
     }
 }
 
@@ -1029,13 +911,15 @@ class State {
     Statics statics;
 
     State(Locals locals, Instances instances, Arrays arrays, Statics statics) {
-        assert locals != null && instances != null && arrays != null && statics != null;
+        if (Config.v().strict) {
+            assert locals != null && instances != null && arrays != null && statics != null;
+        }
         this.locals = locals;
         this.instances = instances;
         this.arrays = arrays;
         this.statics = statics;
     }
-    
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -1048,10 +932,6 @@ class State {
 
         return this.locals.equals(that.locals) && this.instances.equals(that.instances) && this.arrays.equals(that.arrays) && this.statics.equals(that.statics);
     }
-    
-    State minus(State that) {
-        return new State(this.locals.minus(that.locals), this.instances.minus(that.instances), this.arrays.minus(that.arrays), this.statics.minus(that.statics));
-    }
 }
 
 class Address implements InfoValue, Comparable<Address> {
@@ -1060,12 +940,16 @@ class Address implements InfoValue, Comparable<Address> {
     private final AllocNode allocNode;
 
     private Address(AllocNode allocNode) {
-        assert allocNode != null;
+        if (Config.v().strict) {
+            assert allocNode != null;
+        }
         this.allocNode = allocNode;
     }
 
     public static Address v(AllocNode allocNode) {
-        assert allocNode != null;
+        if (Config.v().strict) {
+            assert allocNode != null;
+        }
         Address address = allocNodeToAddress.get(allocNode);
         if (address == null) {
             address = new Address(allocNode);

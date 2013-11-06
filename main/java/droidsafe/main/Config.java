@@ -75,6 +75,9 @@ public class Config {
   public boolean infoFlow = true;
   /** Methods on which to export information flows in DOT */
   public String[] infoFlowDotMethods;
+  /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
+  public boolean infoFlowTrackAll = false;
+
   /**
    * If true, classes loaded from android.jar will be treated as application classes and analysis
    * may analyze them.
@@ -106,6 +109,10 @@ public class Config {
    * for the source classes of the project.
    */
   public boolean unfilteredStringAnalysis = false;
+  /** are we debugging */
+  public boolean debug = false;
+  /** are we in strict mode and should fail on errors */
+  public boolean strict = false;
 
   /**
    * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -172,12 +179,15 @@ public class Config {
     Option noSourceInfo = new Option("nosourceinfo", "Do not print source information in spec");
     options.addOption(noSourceInfo);
 
-    Option debugLog =
-        new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
-    options.addOption(debugLog);
+    Option debug =
+        new Option("debug", "Enable debugging: log at ./droidsafe/droidsafe.log");
+    options.addOption(debug);
 
     Option jsa = new Option("nojsa", "Do not use JSA");
     options.addOption(jsa);
+    
+    Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
+    options.addOption(strict);
 
     Option writeJimple =
             new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
@@ -209,7 +219,8 @@ public class Config {
     options.addOption(callgraph);
 
 
-    Option noInfoFlow = new Option(null, "noinfoflow", false, "True off information flow analysis");
+    Option noInfoFlow = new Option("noinfoflow", 
+        "True off information flow analysis");
     options.addOption(noInfoFlow);
 
     Option infoFlowDotMethod =
@@ -221,6 +232,10 @@ public class Config {
                     + " (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")")
             .withLongOpt("infoflow-dot-method").create("x");
     options.addOption(infoFlowDotMethod);
+
+    Option infoFlowTrackAll = new Option("trackallflows", 
+        "Track all methods (excluding those in java.lang) during information flow analysis");
+    options.addOption(infoFlowTrackAll);
 
     Option approot =
         OptionBuilder.withArgName("dir").hasArg()
@@ -282,6 +297,10 @@ public class Config {
       this.runStringAnalysis = false;
     }
 
+    if (cmd.hasOption("strict")) {
+        this.strict = true;
+      }
+    
     if (cmd.hasOption("noinfoflow")) {
         this.infoFlow = false;
     }
@@ -291,13 +310,18 @@ public class Config {
         this.infoFlowDotMethods = cmd.getOptionValues("infoflow-dot-method");
     }
 
+    if (cmd.hasOption("trackallflows")) {
+        this.infoFlowTrackAll = true;
+    }
+
     if (cmd.hasOption("ptadump")) this.dumpPta = true;
 
     if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
 
 
-    if (cmd.hasOption("debuglog")) {
+    if (cmd.hasOption("debug")) {
       configureDebugLog();
+      this.debug = true;
     }
 
     if (cmd.hasOption("analyzestrings_unfiltered")) {

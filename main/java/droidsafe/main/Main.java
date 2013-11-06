@@ -41,12 +41,16 @@ import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.stats.AppMethodsEventContextStats;
+import droidsafe.stats.PTASetsAvgSize;
+import droidsafe.transforms.HoistAllocations;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.VATransformsSuite;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
 import droidsafe.utils.DroidsafeExecutionStatus;
@@ -99,6 +103,7 @@ public class Main {
     CallGraphTraversal.reset();
     AllocLocationModel.reset();
     CallLocationModel.reset();
+    RCFG.reset();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -169,7 +174,27 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-
+    
+    //some stats to collect, probably want a better structure for stats gathering
+    /*{
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
+        AppMethodsEventContextStats.run();
+        PTASetsAvgSize.run();
+        exit(0);
+    }*/
+    
+    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+    
+    driverMsg ("Hoisting Allocations");
+    monitor.subTask("Hoisting Allocations");
+    HoistAllocations.run();
+    monitor.worked(1);
+    if (monitor.isCanceled())
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+ 
     if (Config.v().addObjectSensitivity) {
         driverMsg("Adding Object Sensitivity by cloning...");
         monitor.subTask("Adding Object Sensitivity by cloning...");
@@ -199,15 +224,6 @@ public class Main {
     timer1.stop();
     driverMsg("Finished String Analysis: " + timer1);
 
-    if (Config.v().writeJimpleAppClasses) {
-      monitor.subTask("Writing all app classes");
-      writeAllAppClasses();
-    }
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
 
     if (Config.v().runValueAnalysis) {
         driverMsg("Injecting String Analysis Results.");
@@ -221,7 +237,7 @@ public class Main {
 
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
-    
+   
     ValueAnalysis.setup();
     if (Config.v().runValueAnalysis) {
         driverMsg("Starting Value Analysis");
@@ -236,6 +252,8 @@ public class Main {
         }
         driverMsg("Finished Value Analysis: " + vaTimer);
 
+        driverMsg("Running Value Analysis Tranform Suite.");
+        VATransformsSuite.run();
 
         driverMsg("Undoing String Analysis Result Injection.");
         monitor.subTask("Undoing String Analysis Result Injection.");
@@ -260,16 +278,6 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-  
-    driverMsg("Finding method calls on all important alloc nodes...");
-    monitor.subTask("Generating Spec");
-    MethodCallsOnAlloc.run();
-    driverMsg("Finished finding method calls on alloc nodes.");
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return DroidsafeExecutionStatus.CANCEL_STATUS;
-    }
-
 
     // print out what modeling is required for this application
     monitor.subTask("Required Modeling");
@@ -281,6 +289,16 @@ public class Main {
 
     //Test the points to analysis
     //new TestPTA();
+    
+    if (Config.v().writeJimpleAppClasses) {
+        driverMsg("Writing Jimple Classes.");
+        monitor.subTask("Writing all app classes");
+        writeAllAppClasses();
+      }
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+      }
     
     if (Config.v().infoFlow) {
         StopWatch timer = new StopWatch();
@@ -320,11 +338,21 @@ public class Main {
             logger.error(exp.toString());
         }
         timer.stop();
+        droidsafe.stats.AvgInfoFlowSetSize.run();
         driverMsg("Finished Information Flow Analysis: " + timer);
     }
     monitor.worked(1);
     if (monitor.isCanceled()) {
         return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    
+    driverMsg("Finding method calls on all important alloc nodes...");
+    monitor.subTask("Generating Spec");
+    MethodCallsOnAlloc.run();
+    driverMsg("Finished finding method calls on alloc nodes.");
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
     if (Config.v().target.equals("specdump")) {
@@ -340,7 +368,7 @@ public class Main {
       if (spec != null) {
         SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-        SecuritySpecModel.printPointsToInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+        SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
       }
       monitor.worked(1);
       if (monitor.isCanceled()) {
@@ -459,7 +487,7 @@ public class Main {
    */
   public static void exit(int status) {
     if (Config.v().getCallSystemExitOnError()) {
-      System.exit(1);
+      System.exit(status);
     } else {
       throw new IllegalStateException();
     }

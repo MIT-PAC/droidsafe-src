@@ -9,8 +9,8 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import droidsafe.eclipse.plugin.core.view.pointsto.MethodArgumentModel;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
+import droidsafe.speclang.model.MethodArgumentModel;
 
 public class OpenPointsToView extends AbstractHandler {
 

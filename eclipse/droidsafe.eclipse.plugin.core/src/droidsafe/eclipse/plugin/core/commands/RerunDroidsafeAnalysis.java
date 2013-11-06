@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.runner.DroidsafeAnalysisRunner;
-import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 
 /**
  * Command to rerun the droidsafe analysis directly from the outline view.

@@ -7,7 +7,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.handlers.RadioState;
 
-import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 
 
 /**

@@ -51,6 +51,9 @@ public class AllocLocationModel extends CodeLocationModel {
      * at the location corresponding to the underlying AllocNode.
      */
     private List<CallLocationModel> callsOnAlloc = new ArrayList<CallLocationModel>();
+
+    /** True if the source line resides in an API class. */
+    private boolean fromAPI;
     
     /**
      * Create an AllocNode source line model and compute its fields.
@@ -61,6 +64,7 @@ public class AllocLocationModel extends CodeLocationModel {
      */
     public AllocLocationModel(String clz, int line, AllocNode node) {
         super(clz, line);
+        fromAPI = Project.v().isSrcClass(clz);
         Object expr = node.getNewExpr();
         if (expr != null && expr instanceof NewExpr)
             type = ((NewExpr) expr).getType().toString();
@@ -97,7 +101,14 @@ public class AllocLocationModel extends CodeLocationModel {
     public String getType() {
         return type;
     }
-    
+
+    /**
+     * Return true if the source line resides in an API class.
+     */
+    public boolean getFromAPI() {
+        return fromAPI;
+    }
+
     /**
      * Return the list of source lines for the calls in the user code that might change the value
      * at the location corresponding to the underlying AllocNode.
@@ -126,7 +137,7 @@ public class AllocLocationModel extends CodeLocationModel {
     }
 
     /**
-     * Return the source line model for the give AllocNode. Return empty set of any problems.
+     * Return the source line model for the give AllocNode. Return null if there are any problems.
      */
     public static AllocLocationModel get(AllocNode node) {
         AllocLocationModel line = map.get(node);

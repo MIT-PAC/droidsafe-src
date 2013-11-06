@@ -167,8 +167,13 @@ public class Project {
      */
     public void loadClasses() {
         //load into soot the src classes and lib jars classes
-        SootConfig.loadAppClasses(getSrcClasses());
-        SootConfig.loadAppClasses(getLibClasses());
+        SootConfig.loadAppClasses(getSrcClasses(), true);
+        //we have modeled some common library classes, so if they are modeled and loaded
+        //already, don't load them, and remove them from the list of lib classes
+        Set<String> modeledLibraryClzs = SootConfig.loadAppClasses(getLibClasses(), false);
+        for (String modeled : modeledLibraryClzs) {
+            libClasses.remove(modeled);
+        }
     }
 
     /**

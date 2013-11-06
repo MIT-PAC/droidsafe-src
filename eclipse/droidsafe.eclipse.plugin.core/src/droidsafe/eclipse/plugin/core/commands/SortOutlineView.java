@@ -9,7 +9,7 @@ import org.eclipse.ui.handlers.RadioState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 
 
 /**

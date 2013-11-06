@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view;
+package droidsafe.eclipse.plugin.core.view.spec;
 
 import java.net.URL;
 import java.util.Set;
@@ -25,10 +25,12 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.MethodsToHighlight;
+import droidsafe.transforms.objsensclone.ClassCloner;
 
 /**
  * Label provider for the nodes of the Droidsafe outline view.
@@ -43,31 +45,6 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
   @SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(TreeElementLabelProvider.class);
 
-  /** The image for the method node in the outline view */
-  private static final Image INPUT_METHOD_IMAGE = DroidsafePluginUtilities.getImage("android.png");
-
-  /** The image for the unsafe method node in the outline view */
-  private static final Image UNSAFE_METHOD_IMAGE = DroidsafePluginUtilities.getImage("red-android.png");
-
-  /** Image for Hotspot Nodes */
-  private static final Image HOTSPOT_IMAGE = DroidsafePluginUtilities.getImage("hotspot.png");
-
-  /** The image for whitelist entry in the outline view */
-  private static final Image DEFAULT_IMAGE = PlatformUI.getWorkbench().getSharedImages()
-      .getImage(ISharedImages.IMG_OBJ_FOLDER);
-
-  /** The image to use for safe code locations */
-  private static final Image SAFE_SOURCE_LOCATION_IMAGE = PlatformUI.getWorkbench()
-      .getSharedImages().getImage(org.eclipse.ui.ide.IDE.SharedImages.IMG_OBJS_TASK_TSK);
-
-  /** Image for unresolved code locations */
-  private static final Image UNRESOLVED_SOURCE_LOCATION_IMAGE = PlatformUI.getWorkbench()
-      .getSharedImages().getImage(ISharedImages.IMG_OBJ_FILE);
-
-  /** Image for unsafe code locations */
-  private static final Image UNSAFE_SOURCE_LOCATION_IMAGE = PlatformUI.getWorkbench()
-      .getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
-
   private boolean useShortSignatureForMethods = true;
 
   private static Font boldFont;
@@ -81,7 +58,6 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
     boldFont = new Font(Display.getCurrent(), styleData);
   }
-
 
   /**
    * Method to set the boolean to control what type of labels should be used for method nodes in the
@@ -111,20 +87,22 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       Object data = ((TreeElement<?, ?>) element).getData();
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
-        String receiver = method.getReceiver();
+        String receiver = method.getReceiverValue();
         if (receiver == null) {
           receiver = "";
         } else if (!receiver.equals("")) {
           receiver = "\n" + receiver;
         }
         if (!useShortSignatureForMethods) {
-          return method.getSignature() + receiver;
+          return ClassCloner.removeClassCloneSuffix(method.getSignature() + receiver);
         } else {
-          return method.getShortSignature() + receiver;
+          return ClassCloner.removeClassCloneSuffix(method.getShortSignature() + receiver);
         }
+      } else if (data instanceof HotspotModel) {
+          return "hotspot: argument " + (((HotspotModel)data).getArgumentPosition() + 1);
       }
     }
-    return element.toString();
+    return ClassCloner.removeClassCloneSuffix(element.toString());
   }
 
   public String getToolTipText(Object obj) {
@@ -151,7 +129,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
         if (method.isNative()) {
           sb.append("\nNATIVE METHOD");
         }
-        return sb.toString();
+        return ClassCloner.removeClassCloneSuffix(sb.toString());
       }
     }
     return null;
@@ -171,75 +149,82 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       // logger.info("Data = {}", data);
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
+        boolean hasInfoFlow = method.hasInfoFlowInfo();
         if (method.isUnsafe()) {
-          return UNSAFE_METHOD_IMAGE;
+            if (hasInfoFlow) {
+                return DroidsafeImages.UNSAFE_ANDROID_WITH_INFO_IMAGE;
+            } else {
+                return DroidsafeImages.UNSAFE_ANDROID_IMAGE;
+            }
+        } else if (hasInfoFlow) {
+            return DroidsafeImages.SAFE_ANDROID_WITH_INFO_IMAGE;
         } else {
-          return INPUT_METHOD_IMAGE;
+            return DroidsafeImages.SAFE_ANDROID_IMAGE;
         }
       } else if (data instanceof CodeLocationModel) {
         CodeLocationModel line = (CodeLocationModel) data;
         if (line.isSafe()) {
-          return SAFE_SOURCE_LOCATION_IMAGE;
+          return DroidsafeImages.SAFE_SOURCE_LOCATION_IMAGE;
         } else if (line.isUnsafe()) {
-          return UNSAFE_SOURCE_LOCATION_IMAGE;
+          return DroidsafeImages.UNSAFE_SOURCE_LOCATION_IMAGE;
         } else {
-          return UNRESOLVED_SOURCE_LOCATION_IMAGE;
+          return DroidsafeImages.UNRESOLVED_SOURCE_LOCATION_IMAGE;
         }
       } else if (data instanceof HotspotModel) {
-        return HOTSPOT_IMAGE;
+        return DroidsafeImages.UNSAFE_ANDROID_IMAGE;
       }
 
     }
-    return DEFAULT_IMAGE;
+    return DroidsafeImages.DEFAULT_IMAGE;
   }
 
-  /**
-   * A styler to allow the label of the node to be strikeout.
-   */
-  private static StyledString.Styler STRIKEOUT = new StyledString.Styler() {
-    @Override
-    public void applyStyles(TextStyle textStyle) {
-      textStyle.strikeout = true;
-    }
-  };
+//  /**
+//   * A styler to allow the label of the node to be strikeout.
+//   */
+//  private static StyledString.Styler STRIKEOUT = new StyledString.Styler() {
+//    @Override
+//    public void applyStyles(TextStyle textStyle) {
+//      textStyle.strikeout = true;
+//    }
+//  };
 
-  private static final Color RED = Display.getDefault().getSystemColor(SWT.COLOR_RED);
-  private static final Color BLUE = Display.getDefault().getSystemColor(SWT.COLOR_BLUE);
+//  private static final Color RED = Display.getDefault().getSystemColor(SWT.COLOR_RED);
+//  private static final Color BLUE = Display.getDefault().getSystemColor(SWT.COLOR_BLUE);
 
-  /**
-   * A styler to allow the label of the node to be red.
-   */
-  private static StyledString.Styler RED_FOREGROUND = new StyledString.Styler() {
+//  /**
+//   * A styler to allow the label of the node to be red.
+//   */
+//  private static StyledString.Styler RED_FOREGROUND = new StyledString.Styler() {
+//
+//    @Override
+//    public void applyStyles(TextStyle textStyle) {
+//      textStyle.foreground = RED;
+//      textStyle.font = boldFont;
+//    }
+//  };
 
-    @Override
-    public void applyStyles(TextStyle textStyle) {
-      textStyle.foreground = RED;
-      textStyle.font = boldFont;
-    }
-  };
+//  /**
+//   * A styler to allow the label of the node to be blue.
+//   */
+//  private static StyledString.Styler BLUE_FOREGROUND = new StyledString.Styler() {
+//
+//    @Override
+//    public void applyStyles(TextStyle textStyle) {
+//      textStyle.foreground = BLUE;
+//      textStyle.font = boldFont;
+//    }
+//  };
 
-  /**
-   * A styler to allow the label of the node to be blue.
-   */
-  private static StyledString.Styler BLUE_FOREGROUND = new StyledString.Styler() {
-
-    @Override
-    public void applyStyles(TextStyle textStyle) {
-      textStyle.foreground = BLUE;
-      textStyle.font = boldFont;
-    }
-  };
-
-  /**
-   * A styler to allow the label of the node to be bold.
-   */
-  private static StyledString.Styler BOLD = new StyledString.Styler() {
-
-    @Override
-    public void applyStyles(TextStyle textStyle) {
-      textStyle.font = boldFont;
-    }
-  };
+//  /**
+//   * A styler to allow the label of the node to be bold.
+//   */
+//  private static StyledString.Styler BOLD = new StyledString.Styler() {
+//
+//    @Override
+//    public void applyStyles(TextStyle textStyle) {
+//      textStyle.font = boldFont;
+//    }
+//  };
 
   /**
    * The method that provides the desired style for the Tree node label.
@@ -249,36 +234,37 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
   @Override
   public void update(ViewerCell cell) {
     Object obj = cell.getElement();
-    StyledString styledString = new StyledString(getText(obj));
-
-    if (obj instanceof TreeElement<?, ?>) {
-      TreeElement<?, ?> element = (TreeElement<?, ?>) obj;
-      Object data = element.getData();
-      if (data instanceof MethodModel) {
-        MethodModel method = (MethodModel) data;
-        
-        if (method.isSafe()) {
-          styledString.setStyle(0, styledString.length(), STRIKEOUT);
-          
-        } else if (method.getPermissions() != null && !method.getPermissions().isEmpty()) {
-          styledString.setStyle(0, styledString.length(), RED_FOREGROUND);
-          
-        } else if (method.isNative()) {
-          styledString.setStyle(0, styledString.length(), RED_FOREGROUND);
-          
-        } else if (MethodsToHighlight.shouldHighlightMethd(method)) {
-          styledString.setStyle(0, styledString.length(), BLUE_FOREGROUND);
-          
-        } else if (method.getReceiver() != null && !method.getReceiver().equals("")) {
-          styledString.setStyle(0, styledString.length(), BOLD);
-        }
-      } else if (data instanceof CodeLocationModel && ((CodeLocationModel) data).isSafe()) {
-        styledString.setStyle(0, styledString.length(), STRIKEOUT);
-      }
-
-    }
-    cell.setText(styledString.toString());
-    cell.setStyleRanges(styledString.getStyleRanges());
+//    StyledString styledString = new StyledString(getText(obj));
+//
+//    if (obj instanceof TreeElement<?, ?>) {
+//      TreeElement<?, ?> element = (TreeElement<?, ?>) obj;
+//      Object data = element.getData();
+//      if (data instanceof MethodModel) {
+//        MethodModel method = (MethodModel) data;
+//        
+//        if (method.isSafe()) {
+//          styledString.setStyle(0, styledString.length(), STRIKEOUT);
+//          
+//        } else if (method.getPermissions() != null && !method.getPermissions().isEmpty()) {
+//          styledString.setStyle(0, styledString.length(), RED_FOREGROUND);
+//          
+//        } else if (method.isNative()) {
+//          styledString.setStyle(0, styledString.length(), RED_FOREGROUND);
+//          
+//        } else if (MethodsToHighlight.shouldHighlightMethd(method)) {
+//          styledString.setStyle(0, styledString.length(), BLUE_FOREGROUND);
+//          
+//        } else if (method.getReceiver() != null && !method.getReceiver().equals("")) {
+//          styledString.setStyle(0, styledString.length(), BOLD);
+//        }
+//      } else if (data instanceof CodeLocationModel && ((CodeLocationModel) data).isSafe()) {
+//        styledString.setStyle(0, styledString.length(), STRIKEOUT);
+//      }
+//
+//    }
+//    cell.setText(styledString.toString());
+//    cell.setStyleRanges(styledString.getStyleRanges());
+    cell.setText(getText(obj));
     cell.setImage(getImage(obj));
     super.update(cell);
   }

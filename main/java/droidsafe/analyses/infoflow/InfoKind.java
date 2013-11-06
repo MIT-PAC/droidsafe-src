@@ -1,5 +1,7 @@
 package droidsafe.analyses.infoflow;
 
+import java.util.HashMap;
+
 
 /**
  * High Level information kind identified by a string type (name).
@@ -10,11 +12,26 @@ package droidsafe.analyses.infoflow;
 public  class InfoKind implements InfoValue {
     /** name of this information kind */
     private String name;
+    
+    /** map of strings to the info kind that represents them */
+    private static HashMap<String,InfoKind> infoKinds = new HashMap<String,InfoKind>();
 
+    /** 
+     * Given a string return (or create and return) the InfoKind object that
+     * represents it.
+     */
+    public static InfoKind getInfoKind(String str) {
+        if (!infoKinds.containsKey(str)) {
+            infoKinds.put(str, new InfoKind(str));
+        }
+        
+        return infoKinds.get(str);
+    }
+    
     /**
      * Create a new information kind named str.
      */
-    InfoKind(String str) {
+    private InfoKind(String str) {
         this.name = str;
     }
 

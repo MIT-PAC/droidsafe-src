@@ -95,6 +95,19 @@ public class ConcreteListArgumentValue extends ArgumentValue  {
 		return ret;
 	}
 	
+  /**
+   * Return a well-formatted detailed printout of the argument value.
+   */
+  public String toStringPretty() {
+    String ret = "";
+    for (int i = 0; i < args.size(); i++) {
+      if (i > 0)
+        ret += "|";
+      ret += args.get(i).toStringPretty();
+    }
+    return ret;
+  }
+  
 
 	@Override
 	public int hashCode() {

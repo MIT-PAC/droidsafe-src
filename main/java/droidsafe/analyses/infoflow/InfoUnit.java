@@ -5,13 +5,17 @@ import java.util.Map;
 
 import soot.Unit;
 
+import droidsafe.main.Config;
+
 public class InfoUnit implements InfoValue {
     private static Map<Unit, InfoUnit> unitToInfoUnit = new HashMap<Unit, InfoUnit>();
 
     Unit unit;
 
     private InfoUnit(Unit unit) {
-        assert unit != null;
+        if (Config.v().strict) {
+            assert unit != null;
+        }
         this.unit = unit;
     }
     
@@ -20,7 +24,9 @@ public class InfoUnit implements InfoValue {
     }
 
     static InfoUnit v(Unit unit) {
-        assert unit != null;
+        if (Config.v().strict) {
+            assert unit != null;
+        }
         InfoUnit infoUnit = unitToInfoUnit.get(unit);
         if (infoUnit == null) {
             infoUnit = new InfoUnit(unit);

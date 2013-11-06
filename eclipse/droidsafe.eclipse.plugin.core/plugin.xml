@@ -270,15 +270,8 @@
                visible="true">
          </separator>
          <dynamic
-               class="droidsafe.eclipse.plugin.core.view.DynamicHotspotMenu"
+               class="droidsafe.eclipse.plugin.core.view.spec.DynamicHotspotMenu"
                id="droidsafe.eclipse.plugin.core.view.DynamicHotspotMenu">
-         </dynamic>
-         <separator
-               name="droidsafe.eclipse.plugin.core.outlineview.popupmenu.separator3">
-         </separator>
-         <dynamic
-               class="droidsafe.eclipse.plugin.core.view.pointsto.DynamicPointsToMenu"
-               id="droidsafe.eclipse.plugin.core.view.pointsto.DynamicPointsToMenu">
          </dynamic>
    </menuContribution> -->
       <menuContribution
@@ -411,6 +404,63 @@
             </command>
          </toolbar>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.InfoFlowSummaryView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.InfoFlowDetailslView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.PointsToView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
@@ -464,7 +514,7 @@
       </category>
       <view
             category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
-            class="droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart"
+            class="droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart"
             icon="icons/android.png"
             id="droidsafe.eclipse.plugin.core.view.DroidsafeSpecView"
             name="Security Spec Outline">
@@ -477,6 +527,42 @@
             name="Points To Info"
             restorable="false">
       </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.InfoFlowSummaryView"
+            name="Info Flow Summary"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.InfoFlowDetailslView"
+            name="Info Flow Details"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.value.ValueViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.ValueView"
+            name="Values"
+            restorable="false">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="droidsafe.eclipse.plugin.core.DroidsafePerspectiveFactory"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.DroidsafePerspective"
+            name="Droidsafe">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
    </extension>
 
 </plugin>

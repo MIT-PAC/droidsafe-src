@@ -2,6 +2,7 @@ package droidsafe.analyses.value;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.value.primitives.StringVAModel;
+import droidsafe.analyses.value.UnknownVAModel;
 
 import droidsafe.utils.SootUtils;
 
@@ -46,6 +47,14 @@ public abstract class RefVAModel extends VAModel {
 
     private static final Logger logger = LoggerFactory.getLogger(RefVAModel.class);
 
+    private static final UnknownVAModel unknownValue = new UnknownVAModel();
+    
+    /** 
+     * Flag that gets set to true when the model is being printed.
+     * Used to avoid infinite loops when printing due to chains of models being values of fields of other models.
+     */
+    private boolean beingPrinted = false;
+
     public RefVAModel(Object newExpr){
         this.newExpr = newExpr;
     }
@@ -55,43 +64,26 @@ public abstract class RefVAModel extends VAModel {
      *          set of VAModels for the values of the field otherwise
      */
     public Set<VAModel> getFieldVAModels(SootField sootField) {
-        String errorMsg = this.getAllocNode() + "'s field " + sootField + " invalidated because ";
+        String errorMsg = this.getAllocNode() + "'s field " + sootField + " got assigned the value 'unknown' because ";
         Set<VAModel> fieldVAModels = new HashSet<VAModel>();
         Type fieldType = sootField.getType();
-        if(fieldType instanceof RefType) {
+        if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)) {
             RefType fieldRefType = (RefType)fieldType;
             Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.getAllocNode(), sootField);
             if(allocNodes.size() > 0){
                 String fieldClassName = fieldRefType.getSootClass().getName();
-                if(Arrays.asList(new String[] {"java.lang.String", 
-                                               "java.lang.CharSequence", 
-                                               "java.lang.StringBuffer", 
-                                               "java.lang.StringBuilder"}
-                                ).contains(fieldClassName)) {
-                    StringVAModel stringVAModel = new StringVAModel();
-                    for(AllocNode allocNode : allocNodes) {
-                        if(allocNode instanceof StringConstantNode) {
-                            stringVAModel.addValue(((StringConstantNode)allocNode).getString());    
-                        } else {
-                            // all strings weren't constants, invalidate
-                            logger.debug(errorMsg + " the value it is assigned, " + allocNode + " is not a constant. Contained values beforehand: " + stringVAModel.getValues());
-                            stringVAModel.invalidate();
-                            break;
-                        }
-                    }
-                    fieldVAModels.add(stringVAModel);
-                } else {
-                    for(AllocNode allocNode : allocNodes) {
-                        VAModel vaModel = ValueAnalysis.v().getResults().get(allocNode);
-                        if(vaModel != null) {
-                            fieldVAModels.add(vaModel);
+                //took out string code here!
+                for(AllocNode allocNode : allocNodes) {
+                    VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
+                    if(vaModel != null) {
+                        fieldVAModels.add(vaModel);
                     } else {
-                            logger.debug(errorMsg + " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
-                            return null;
-                        }
-
+                        ValueAnalysis.logError(errorMsg + 
+                            " its class isn't marked as security-sensitive (annotated with DSVAModeled).");
+                        fieldVAModels.add(unknownValue);
                     }
-                } 
+
+                }
             }
         } else {
             Class<?> c = this.getClass();
@@ -104,12 +96,12 @@ public abstract class RefVAModel extends VAModel {
                         fieldVAModels.add(fieldObjectPrimVAModel); 
                     }
                 } catch(IllegalAccessException e) {
-                    logger.debug(errorMsg + " its values couldn't be retrieved: " + e.toString());
-                    return null;
+                    ValueAnalysis.logError(errorMsg + " its values couldn't be retrieved: " + e.toString());
+                    fieldVAModels.add(unknownValue);
                 }
             } catch(NoSuchFieldException e) {
-                logger.debug(errorMsg + " its values count' be retrieved: " + e.toString());
-                return null;
+                ValueAnalysis.logError(errorMsg + " its values couldn't be retrieved: " + e.toString());
+                fieldVAModels.add(unknownValue);
             }
         }
         return fieldVAModels;
@@ -144,7 +136,13 @@ public abstract class RefVAModel extends VAModel {
         String str = "{\"";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
         str += "\":";
-        str += "{" + this.fieldsString(false) + "}";
+        if(beingPrinted) {
+            str += "\"RECURSIVE\"";
+        } else {
+            beingPrinted = true;
+            str += "{" + this.fieldsString(false) + "}";
+            beingPrinted = false;
+        }
         str += "}";
         return str.replace("\"", "");
     }
@@ -157,7 +155,13 @@ public abstract class RefVAModel extends VAModel {
         String str = "{\"va-modeled-";
         str += this.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
         str += " " + this.getId() + "\": ";
-        str += "{" + this.fieldsString(true) + "}";
+        if(beingPrinted) {
+            str += "\"RECURSIVE\"";
+        } else {
+            beingPrinted = true;
+            str += "{" + this.fieldsString(true) + "}";
+            beingPrinted = false;
+        }
         return str + "}";
     }
 
@@ -207,7 +211,7 @@ public abstract class RefVAModel extends VAModel {
                             }
                         }
                     }
-                    fieldString += StringUtils.join(objectModelStrings.toArray(), ". ");
+                    fieldString += StringUtils.join(objectModelStrings.toArray(), ", ");
                     if(vaModels.size() > 1) fieldString += "]";
                     fieldStrings.add(fieldString);
                 }

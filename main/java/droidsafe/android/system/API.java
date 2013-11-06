@@ -28,6 +28,7 @@ import soot.tagkit.AnnotationTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
+import droidsafe.android.app.Hierarchy;
 import droidsafe.main.Config;
 import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
@@ -121,7 +122,7 @@ public class API {
 
         loadDroidSafeCalls();
         findModeledMethods();
-        addUnmodeledMissingAPIMethods();
+        checkForUnmodeledMissingAPIMethods();
         //old load classification code from config_files/system_calls.txt
         //now we classify based on the annotation DSModeled
         //loadClassification();
@@ -189,7 +190,7 @@ public class API {
      * Read in all method from all_system_methods, then create a SootMethod for missing api
      * methods from modeled classes.
      */
-    private void addUnmodeledMissingAPIMethods() {
+    private void checkForUnmodeledMissingAPIMethods() {
         try {
             File sys_calls_file= new File(Config.v().getApacHome(), Config.SYSTEM_METHODS_FILE);
             LineNumberReader br = new LineNumberReader (new FileReader (sys_calls_file));
@@ -203,24 +204,19 @@ public class API {
                 int modifiers = Integer.parseInt(lineSplit[0]);
                 String methodSig = lineSplit[1];
 
-                if (!Scene.v().containsMethod(methodSig)) {
-                    //System.out.printf("Found unmodeled system method: %s\n", methodSig);
-                    SootClass clazz = Scene.v().getSootClass(SootUtils.grabClass(methodSig));
-
-                    List params = new LinkedList();
-                    for (String arg : SootUtils.grabArgs(methodSig)) {
-                        params.add(SootUtils.toSootType(arg));
+                try {
+                    SootClass clz = Scene.v().getSootClass(SootUtils.grabClass(methodSig));
+                    if (clz == null) {
+                        throw new Exception();
                     }
-
-                    SootMethod missing = new SootMethod(SootUtils.grabName(methodSig),
-                        params,
-                        SootUtils.toSootType(SootUtils.grabReturnType(methodSig)),
-                        modifiers);
-
-                    missing.setPhantom(true);
-                    clazz.addMethod(missing);
-                    all_sys_methods.addMethod(missing);
-                    banned_methods.addMethod(missing);
+                } catch (Exception e) {
+                    logger.warn("Android class not modeled: {} (Might be ok because of modeling simplification).", 
+                        SootUtils.grabClass(methodSig));
+                }
+                
+                if (!Scene.v().containsMethod(methodSig)) {
+                    logger.info("Android method not modeled: {} (Might be ok because of modeling simplification).",  
+                        methodSig);
                 }
 
             }
