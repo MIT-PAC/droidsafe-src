@@ -375,30 +375,38 @@ public class SootUtils {
      * API overriden method or null
      */
     public static SootMethod getApiOverridenMethod(SootMethod method) {
-        if (method.isAbstract() || !method.hasActiveBody())
+        if (method.isAbstract() || method.isPrivate()) {
+            logger.debug("{} is either abstract or private", method);
+            return null;
+        }
+        
+        SootClass clz = method.getDeclaringClass().getSuperclass();
+        if (clz == null)
             return null;
         
-        SootClass clz = method.getDeclaringClass();
-        
-        //if not found, and at object can't find it
-         if (clz.getName().equals("java.lang.Object") ||
-                 clz.getSuperclass() == null)
-             return null;
-         
-         SootClass parentClass = clz.getSuperclass();
+        logger.debug("getApiOverridenMethod: {} ", method);
+        logger.debug("sig {}, subsig {} ", method.getSignature(), method.getSubSignature());
 
-         SootMethod parentMethod;
-         try {
-             parentMethod = SootUtils.resolveConcreteDispatch(parentClass, method);
-             if (parentMethod == null)
-                 return null;
-             //now check the parents
-             return resolveMethod(parentMethod);
-         } catch (CannotFindMethodException e) {
-             // TODO Auto-generated catch block
-             e.printStackTrace();
-         }
-         return null;        
+        while (clz != null && clz.getName()!= null && 
+              !clz.getName().equals("java.lang.Object")) {
+
+            SootMethod parentMethod = null;
+            try {
+                if (clz.isLibraryClass())
+                    parentMethod = clz.getMethod(method.getSubSignature());
+            }
+            catch (Exception e) {
+                logger.debug("Exception {} ", e);
+            }
+        
+            logger.debug("parentMethod = {} ", parentMethod);
+            if (parentMethod != null){
+                return parentMethod;
+            }
+            clz = clz.getSuperclass();
+        }
+        
+        return null;
     }
     
     
