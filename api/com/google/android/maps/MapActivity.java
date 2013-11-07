@@ -9,6 +9,11 @@ import android.os.Bundle;
 public abstract class MapActivity extends Activity
 {
     @DSModeled(DSC.SAFE)
+    public MapActivity {
+        
+    }
+    
+    @DSModeled(DSC.SAFE)
     public void onCreate(Bundle paramBundle)
     {
     } 

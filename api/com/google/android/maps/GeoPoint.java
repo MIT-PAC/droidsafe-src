@@ -5,6 +5,11 @@ import droidsafe.annotations.*;
 public class GeoPoint
 {
     @DSModeled(DSC.SAFE)
+    public GeoPoint() {
+        
+    }
+    
+    @DSModeled(DSC.SAFE)
     public int getLatitudeE6()
     {
         return 0;

@@ -796,7 +796,7 @@ MenuItem var72A74007B2BE62B849F475C7BDA4658B_724523338 =         this;
     }
 
     
-        @DSModeled(DSC.BAN)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.504 -0400", hash_original_method = "C575291A3325EE507AB9F55E92185E54", hash_generated_method = "C37373E1D7BB4ABA1456A66C567F1FF8")
     public MenuItem setVisible(boolean shown) {
         addTaint(shown);
