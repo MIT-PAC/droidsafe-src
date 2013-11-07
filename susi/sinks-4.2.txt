@@ -16,6 +16,8 @@ ADDED_BY_DROIDSAFE:
 <org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest,org.apache.http.protocol.HttpContext)> (NETWORK)
 <org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost,org.apache.http.HttpRequest)> (NETWORK)
 <org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost,org.apache.http.HttpRequest,org.apache.http.protocol.HttpContext)> (NETWORK)
+<java.lang.ProcessBuilder: java.lang.Process start()> (OS_COMMAND)
+
 
 LOCATION_INFORMATION:
 <android.location.ILocationManager$Stub$Proxy: void clearTestProviderEnabled(java.lang.String)> (LOCATION_INFORMATION)
