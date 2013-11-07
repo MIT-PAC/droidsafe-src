@@ -14,6 +14,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -53,6 +54,11 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
     /** Singleton for analysis */
     private static ValueAnalysis am;
+    
+    /** if true, track all string values that the pta can find,
+     *  if false, just track values that JSA injects.
+     */
+    private static final boolean TRACK_ALL_STRING_VALUES = false;
 
     /** 
      * keys are the objects that we can and want to model (they are new expressions) 
@@ -228,7 +234,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
             this.allocNodeToVAModelMap.put(newExpr, model);
         }
     }
-
+ 
     @Override
     public void visitEntryContextAnd1CFA(SootMethod sootMethod, Edge entryEdge, Edge edgeInto) {
 
@@ -263,26 +269,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                     if(fieldObjectVAModel instanceof PrimVAModel) {
                                         PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
                                         if (fieldPrimVAModel instanceof StringVAModel) {
-                                            //Found string
-                                            //System.out.println("Found String!!: " + fieldObject);
-                                            Set<AllocNode> rhsNodes = GeoPTA.v().getPTSetEventContext(rightOp, entryEdge);
-                                            for(AllocNode rhsNode : rhsNodes) {
-                                                if(rhsNode instanceof StringConstantNode) {
-                                                    StringConstant sc = (StringConstant)rhsNode.getNewExpr();
-                                                    String value = ((StringConstantNode)rhsNode).getString();
-                                                    value = value.replaceAll("(\\r|\\n)", "");
-                                                    value = value.replace("\"", "");
-                                                    value = value.replace("\\uxxxx", "");
-                                                    fieldPrimVAModel.addValue(value);    
-                                                } else {
-                                                    // all strings weren't constants, write unknown value
-                                                    ValueAnalysis.logError(fieldObject.toString() + 
-                                                        " the value it is assigned, " + 
-                                                        rhsNode + " is not a constant. Contained values beforehand: " + 
-                                                        fieldPrimVAModel.getValues());
-                                                    fieldPrimVAModel.addValue("UNKNOWN");
-                                                }
-                                            }                                            
+                                            handleString(assignStmt, fieldPrimVAModel, entryEdge);
                                         } else  {
                                             //primitive, but not string primitive
                                             if(rightOp instanceof Constant) {
@@ -322,6 +309,52 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }
     }
 
+    
+    /**
+     * Handle case where type for assignment is a string
+     */
+    private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Edge entryEdge) {
+        //Found string
+        //System.out.println("Found String!!: " + fieldObject);
+        Set<AllocNode> rhsNodes;
+        
+        //get the string nodes the rhs expression could possibly point to
+        if (assignStmt.getRightOp() instanceof StringConstant) {
+            //if a direct string constant, then get the string constant node from pta
+            rhsNodes = new HashSet<AllocNode>();
+            rhsNodes.add(GeoPTA.v().getAllocNode(assignStmt.getRightOp()));
+        } else {
+            //if not a string constant, then query pta
+            rhsNodes = GeoPTA.v().getPTSetEventContext(assignStmt.getRightOp(), entryEdge);
+        }
+        
+        for(AllocNode rhsNode : rhsNodes) {
+            boolean knownValue = false;
+            if(rhsNode instanceof StringConstantNode) {
+                StringConstant sc = (StringConstant)rhsNode.getNewExpr();
+                //are we tracking all strings, or just the strings injected by jsa for api calls in user code
+                if (TRACK_ALL_STRING_VALUES || 
+                        JSAResultInjection.createdStringConstants.contains(sc)) {
+                    String value = ((StringConstantNode)rhsNode).getString();
+                    value = value.replaceAll("(\\r|\\n)", "");
+                    value = value.replace("\"", "");
+                    value = value.replace("\\uxxxx", "");
+                    fieldPrimVAModel.addValue(value);
+                    knownValue = true;
+                }
+            }
+            if (!knownValue) {
+                // all strings weren't constants, write unknown value
+                ValueAnalysis.logError(fieldPrimVAModel.toString() + 
+                    " the value it is assigned, " + 
+                    rhsNode + " is not a constant. Contained values beforehand: " + 
+                    fieldPrimVAModel.getValues());
+                fieldPrimVAModel.addValue("UNKNOWN");
+            }
+        }                           
+    }
+
+    
     /**
      * Helper method to write to the file where we log all errors we encounter during value analysis
      */

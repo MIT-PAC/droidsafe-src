@@ -231,35 +231,6 @@ public class InformationFlowAnalysis {
                 this.statics = statics;
                 hasChanged = true;
             }
-            int localsFromToCount = 0;
-            for (Map.Entry<Block, Map<Block, Locals>> blockBlockToLocals : localsFromTo.entrySet()) {
-                Block fromBlock = blockBlockToLocals.getKey();
-                for (Map.Entry<Block, Locals> blockLocals : blockBlockToLocals.getValue().entrySet()) {
-                    Block toBlock = blockLocals.getKey();
-                    Locals locals = blockLocals.getValue();
-                    for (ImmutableSet<InfoValue> infoValues : locals.values()) {
-                        localsFromToCount += infoValues.size();
-                    }
-                }
-            }
-            //            G.v().out.println("the total number of values in localsFromTo = " + localsFromToCount);
-            int instancesCount = 0;
-            for (ImmutableSet<InfoValue> infoValues : instances.values()) {
-                instancesCount += infoValues.size();
-            }
-            //            G.v().out.println("the total number of values in instances = " + instancesCount);
-            int arraysCount = 0;
-            for (ImmutableSet<InfoValue> infoValues : arrays.values()) {
-                arraysCount += infoValues.size();
-            }
-            //            G.v().out.println("the total number of values in arrays = " + arraysCount);
-            int staticsCount = 0;
-            for (ImmutableSet<InfoValue> infoValues : statics.values()) {
-                staticsCount += infoValues.size();
-            }
-            //            G.v().out.println("the total number of values in statics = " + staticsCount);
-            //            G.v().out.println();
-            G.v().out.printf("\tIteration: %s | %s | %s | %s\n", localsFromToCount, instancesCount, arraysCount, staticsCount);
         } while (hasChanged);
     }
 

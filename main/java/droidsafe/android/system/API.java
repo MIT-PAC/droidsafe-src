@@ -68,6 +68,33 @@ public class API {
 
     private Map<String,Class<?>> stubsForModeledClasses;
 
+    /** Container classes that we have modified to be understood by our analysis. */
+    private final Set<String> droidSafeContainerClasses = 
+            new HashSet<String>(Arrays.asList(
+                "java.util.AbstractCollection",
+                "java.util.AbstractList",
+                "java.util.ArrayList",
+                "java.util.AbstractSequentialList",
+                "java.util.LinkedList",
+                "java.util.Vector",
+                "java.UnsafeArrayList",
+                "java.util.AbstractQueue",
+                "java.util.AbstractSet",
+                "java.util.HashSet",
+                "java.util.LinkedHashSet",
+                "java.util.TreeSet",
+                "java.util.AbstractMap",
+                "java.util.EnumMap",
+                "java.util.HashMap",
+                "java.util.LinkedHashMap",
+                "java.util.TreeMap",
+                "java.util.IdentityHashMap",
+                "java.util.WeakHashMap",
+                "java.util.Dictionary",
+                "java.util.Hashtable"
+                    ));
+
+
 
     static {
         v = new API();
@@ -80,25 +107,34 @@ public class API {
         return v;
     }
 
+    /**
+     * Return true if the given string represents a container class that we have modified to 
+     * be understood by our analysis.
+     */
+    public boolean isContainerClass(String clz) {
+        return droidSafeContainerClasses.contains(clz);
+    }
+
+
     public void init() {
         //uncomment this to create system method files
         //createAllSystemMethodsFile();
 
         try {
             allSystemClasses = new LinkedHashSet<SootClass>();
-            
+
             safe_methods = new SootMethodList(); 
-          
+
             spec_methods = new SootMethodList();
-         
+
             all_sys_methods = new SootMethodList();
-           
+
             banned_methods = new SootMethodList();
-           
+
             api_modeled_methods = new SootMethodList();
-            
-            
-            
+
+
+
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
             Set<SootClass> modeledClasses = SootUtils.loadClassesFromJar(apiModeling, true, new LinkedHashSet<String>()); 
@@ -134,7 +170,7 @@ public class API {
     public void addSystemClass(SootClass sc) {
         allSystemClasses.add(sc);
     }
-    
+
     /** 
      * Add the given method to the list of safe methods.
      */
@@ -143,7 +179,7 @@ public class API {
         safe_methods.addMethod(sm);
         api_modeled_methods.addMethod(sm);
     }
-    
+
     /** 
      * Add the given method to the list of spec methods.
      */
@@ -152,7 +188,7 @@ public class API {
         spec_methods.addMethod(sm);
         api_modeled_methods.addMethod(sm);
     }
-    
+
     /** 
      * Add the given method to the list of spec methods.
      */
@@ -161,7 +197,7 @@ public class API {
         banned_methods.addMethod(sm);
         api_modeled_methods.addMethod(sm);
     }
-    
+
     /**
      * Create the system method txt file with the signature and modifiers for all 
      * system methods.  Should not be called on a normal run.
@@ -213,7 +249,7 @@ public class API {
                     logger.warn("Android class not modeled: {} (Might be ok because of modeling simplification).", 
                         SootUtils.grabClass(methodSig));
                 }
-                
+
                 if (!Scene.v().containsMethod(methodSig)) {
                     logger.info("Android method not modeled: {} (Might be ok because of modeling simplification).",  
                         methodSig);
@@ -424,7 +460,7 @@ public class API {
 
             for (SootMethod sm : all_sys_methods) {
                 String m = sm.getSignature();
-                
+
                 if (!(spec_methods.contains(m) || banned_methods.contains(m) || safe_methods.contains(m)))
                     out.write(m.substring(1, m.length() - 1) + "\n");
             }
@@ -446,7 +482,7 @@ public class API {
     public boolean isBannedMethod(String sig) {
         return banned_methods.contains(sig);
     }
-    
+
     /** 
      * Used by the specification create to check if a method is legal to put in the 
      * spec.  Must check the method, and all superclass definitions of the method.
@@ -457,8 +493,8 @@ public class API {
     public boolean isBannedMethod(SootMethod m) {
         return banned_methods.contains(m);
     }
-    
-    
+
+
     /** 
      * Check if a method is safe.  meaning it should not appear in the specification.
      */
@@ -472,7 +508,7 @@ public class API {
     public boolean isSpecMethod(SootMethod m) {
         return spec_methods.contains(m);
     }
-    
+
     /**
      * Return true if this is a system method define in anrdoid.jar.
      */
@@ -560,9 +596,9 @@ public class API {
         return all_sys_methods;
     }
 
-    
-   
-    
+
+
+
     public enum Classification {
         SAFE, SPEC, BAN, NONE;
     }

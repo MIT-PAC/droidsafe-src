@@ -19,6 +19,7 @@ import soot.SootMethod;
 
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.utils.SootUtils;
 
 /**
  * Load and serve the mapping of API methods to high level information kinds.
@@ -71,28 +72,79 @@ public class APIInfoKindMapping {
      * Return turn if the method is a source method that has a high level information kind defined.
      */
     public boolean hasSourceInfoKind(SootMethod method) {
-        return srcsMapping.containsKey(method);
+        if (srcsMapping.containsKey(method)) 
+            return true;
+        
+        //check for all overriden methods because of possible cloning
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                if (srcsMapping.containsKey(parent))
+                    return true;
+            }
+        }
+        
+        return false;
     }
     
     /**
-     * Return the high level information kinds defined for this source method.
+     * Return the high level information kinds defined for this source method.  Search all parent overriden methods
+     * as well for info kind.
      */
     public Set<InfoKind> getSourceInfoKinds(SootMethod method) {
-        return srcsMapping.get(method);
+        if (srcsMapping.containsKey(method))
+            return srcsMapping.get(method);
+        
+        Set<InfoKind> kinds = new HashSet<InfoKind>();
+        
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                kinds.addAll(srcsMapping.get(parent));
+            }
+        }
+        
+        return kinds;
     }
     
     /**
      * Return turn if the method is a sink method that has a high level information kind defined.
+     * Search all parent overriden methods as well for info kind.
      */
     public boolean hasSinkInfoKind(SootMethod method) {
-        return sinksMapping.containsKey(method);
+        if (sinksMapping.containsKey(method)) 
+            return true;
+        
+        //check for all overriden methods because of possible cloning
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                if (sinksMapping.containsKey(parent))
+                    return true;
+            }
+        }
+        
+        return false;
     }
     
     /**
-     * Return the high level information kinds defined for this sink method.
+     * Return the high level information kinds defined for this sink method. Search all parent overriden methods
+     * as well for info kind.
      */
     public Set<InfoKind> getSinkInfoKinds(SootMethod method) {
-        return sinksMapping.get(method);
+        if (sinksMapping.containsKey(method))
+            return sinksMapping.get(method);
+        
+        Set<InfoKind> kinds = new HashSet<InfoKind>();
+        
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                kinds.addAll(sinksMapping.get(parent));
+            }
+        }
+        
+        return kinds;
     }
     
     /** 
