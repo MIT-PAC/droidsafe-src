@@ -190,13 +190,25 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
             InvokeExpr invoke = edgeInto.srcStmt().getInvokeExpr();
             if (invoke instanceof InstanceInvokeExpr) {
                 InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
-                for (AllocNode an : GeoPTA.v().getPTSetEventContext(iie.getBase(), entryEdge)) {
-                    OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, an, line);
-                    logger.debug("Found output event: {} {}", edgeInto.tgt(), an);
-                    node.addOutputEvent(oe);
-                    //remember interesting alloc nodes
-                    apiCallNodes.add(an);
-                    apiCallNodes.addAll(oe.getAllArgsPTSet());
+                try {
+                    //use the pta to find all the alloc nodes for the source call
+                    //for each, see if they map to the destination method, if they do,
+                    //create the output event
+                    for (Map.Entry<AllocNode, SootMethod> entry : 
+                        GeoPTA.v().resolveInstanceInvokeMapEventContext(iie, entryEdge).entrySet()) {
+                        if (entry.getValue().equals(method)) {
+                            OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, entry.getKey(), line);
+                            logger.debug("Found output event: {} {}", edgeInto.tgt(), entry.getKey());
+                            node.addOutputEvent(oe);
+                            //remember interesting alloc nodes
+                            apiCallNodes.add(entry.getKey());
+                            apiCallNodes.addAll(oe.getAllArgsPTSet());
+                        }
+                        
+                    }
+                } catch (CannotFindMethodException e) {
+                    logger.error("Could not find a possible target for a call (RCFG): {} in {}", iie, edgeInto.getSrc());
+                    droidsafe.main.Main.exit(1);
                 }
             } else {
                 OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, null, line);
