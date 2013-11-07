@@ -19,7 +19,6 @@ public final class Parcel {
     private int mObject;
     @SuppressWarnings({"UnusedDeclaration"})
     private int mOwnObject;
-    private RuntimeException mStack;
     
     @DSModeled(DSC.BAN)
     private Parcel(int obj){
@@ -1279,7 +1278,7 @@ public final class Parcel {
     @DSModeled(DSC.SAFE)
     public final double readDouble(){
 		//Formerly a native function
-		return 0;
+		return getTaintDouble();
 	}
 
     

@@ -45,6 +45,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.019 -0400", hash_original_method = "DB07395F523937B25016D60988A66D69", hash_generated_method = "84401EF7C5E724C9A0A8712DD56C891C")
       Bundle(Parcel parcelledData) {
         addTaint(parcelledData.getTaint());
@@ -54,6 +55,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.023 -0400", hash_original_method = "4CBA8A75160127E76B9D77B8452C524A", hash_generated_method = "5325D673E1E11CEF8833CE6FAD5B0719")
       Bundle(Parcel parcelledData, int length) {
         addTaint(length);
@@ -69,6 +71,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public  Bundle(ClassLoader loader) {
         mMap = new HashMap<String, Object>();
         mClassLoader = loader;
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //mMap = new HashMap<String, Object>();
         //mClassLoader = loader;
@@ -79,6 +82,7 @@ public final class Bundle implements Parcelable, Cloneable {
     public  Bundle(int capacity) {
         mMap = new HashMap<String, Object>(capacity);
         mClassLoader = getClass().getClassLoader();
+        addTaint(capacity);
         // ---------- Original Method ----------
         //mMap = new HashMap<String, Object>(capacity);
         //mClassLoader = getClass().getClassLoader();
@@ -109,6 +113,7 @@ public final class Bundle implements Parcelable, Cloneable {
         mHasFds = b.mHasFds;
         mFdsKnown = b.mFdsKnown;
         mClassLoader = b.mClassLoader;
+        addTaint(b.getTaint());
         // ---------- Original Method ----------
         //if (b.mParcelledData != null) {
             //mParcelledData = Parcel.obtain();
@@ -141,29 +146,12 @@ public final class Bundle implements Parcelable, Cloneable {
     public String getPairValue() {
         unparcel();
         int size = mMap.size();
-        if(size > 1)        
-        {
-        } //End block
-        if(size == 0)        
-        {
-String var540C13E9E156B687226421B24F2DF178_179915264 =             null;
-            var540C13E9E156B687226421B24F2DF178_179915264.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_179915264;
-        } //End block
+        
         Object o = mMap.values().iterator().next();
-        try 
-        {
-String var05F8BA7898C830EEFB724B7656469F9E_30704574 =             (String) o;
-            var05F8BA7898C830EEFB724B7656469F9E_30704574.addTaint(taint);
-            return var05F8BA7898C830EEFB724B7656469F9E_30704574;
-        } //End block
-        catch (ClassCastException e)
-        {
-            typeWarning("getPairValue()", o, "String", e);
-String var540C13E9E156B687226421B24F2DF178_543008190 =             null;
-            var540C13E9E156B687226421B24F2DF178_543008190.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_543008190;
-        } //End block
+        
+        o.addTaint(getTaint());
+        return (String) o;
+        
         // ---------- Original Method ----------
         //unparcel();
         //int size = mMap.size();
@@ -187,6 +175,7 @@ String var540C13E9E156B687226421B24F2DF178_543008190 =             null;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.110 -0400", hash_original_method = "98C9A117007F79899B5BBD029ABFD6B8", hash_generated_method = "1DFA79725EDD590714D0602080EA4C5B")
     public void setClassLoader(ClassLoader loader) {
         mClassLoader = loader;
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //mClassLoader = loader;
     }
@@ -195,7 +184,7 @@ String var540C13E9E156B687226421B24F2DF178_543008190 =             null;
     @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.114 -0400", hash_original_method = "DF35DB07DA97BBA7096331B39E871560", hash_generated_method = "62C8F52BAD08A79175D3875EC690E99B")
     public ClassLoader getClassLoader() {
-ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_431669795 =         mClassLoader;
+        ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_431669795 =         mClassLoader;
         var03260047576FFCA5A37C413ABA8D1CD1_431669795.addTaint(taint);
         return var03260047576FFCA5A37C413ABA8D1CD1_431669795;
         // ---------- Original Method ----------
@@ -208,6 +197,7 @@ ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_431669795 =         mClassLoader
     public boolean setAllowFds(boolean allowFds) {
         boolean orig = mAllowFds;
         mAllowFds = allowFds;
+        addTaint(allowFds);
         boolean var025F253325B46929CD34F2A7C3C55E7C_657424141 = (orig);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912;
@@ -270,8 +260,7 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763 =         new Bundle(this)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.146 -0400", hash_original_method = "89E974D778C485ED4A98439CDF5961E3", hash_generated_method = "2589B20E3DA759F2944F86B92C96601F")
     public int size() {
         unparcel();
-        int varAAAF4724B0913947E2ED6094A113A891_951771865 = (mMap.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722182444 = getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722182444 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722182444;
         // ---------- Original Method ----------
         //unparcel();
@@ -283,8 +272,7 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763 =         new Bundle(this)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.152 -0400", hash_original_method = "8B93AFDE665AAAFE98B5EE9FD5355D4B", hash_generated_method = "3DE10A26149EEB2E3D91D31D57ADFD12")
     public boolean isEmpty() {
         unparcel();
-        boolean varCEA0A99A912E069D03233564B3C4197B_2078121140 = (mMap.isEmpty());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436061990 = getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436061990 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436061990;
         // ---------- Original Method ----------
         //unparcel();
@@ -292,6 +280,7 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763 =         new Bundle(this)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.168 -0400", hash_original_method = "9DC77B5F54151FE5CD815F7C8172B2ED", hash_generated_method = "E511022D09E81C4678253AC729CF8B7F")
     public void clear() {
         unparcel();
@@ -320,6 +309,7 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763 =         new Bundle(this)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.183 -0400", hash_original_method = "E6C9158A697ED4C4296ED4A1595BA584", hash_generated_method = "AFE89B72F1690F1A63221BE4E89CB501")
     public Object get(String key) {
         addTaint(key.getTaint());
@@ -333,6 +323,7 @@ Object var854B7A61C03CF753466A11AD5A6F683C_2142006971 =         mMap.get(key);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.190 -0400", hash_original_method = "717A16AB4D98DDB60DEBCEA5CDF9B0B2", hash_generated_method = "1141D5516355B422B713906ADDE3884C")
     public void remove(String key) {
         addTaint(key.getTaint());
@@ -365,7 +356,7 @@ Object var854B7A61C03CF753466A11AD5A6F683C_2142006971 =         mMap.get(key);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.211 -0400", hash_original_method = "00E2D8861948F8DB601BFD39768039D0", hash_generated_method = "EFE9837B21DD8E2A2A1FD4C36ABF5AE2")
     public Set<String> keySet() {
         unparcel();
-Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867 =         mMap.keySet();
+        Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867 =         mMap.keySet();
         var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867.addTaint(taint);
         return var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867;
         // ---------- Original Method ----------
@@ -377,87 +368,7 @@ Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867 =         mMap.keySet
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.242 -0400", hash_original_method = "4B0480B2866CB29DA37F7AEC68A5E217", hash_generated_method = "5DEF87C3126270DC5B9ED343C95E52E8")
     public boolean hasFileDescriptors() {
-        if(!mFdsKnown)        
-        {
-            boolean fdFound = false;
-            if(mParcelledData != null)            
-            {
-                if(mParcelledData.hasFileDescriptors())                
-                {
-                    fdFound = true;
-                } //End block
-            } //End block
-            else
-            {
-                Iterator<Map.Entry<String, Object>> iter = mMap.entrySet().iterator();
-                while
-(!fdFound && iter.hasNext())                
-                {
-                    Object obj = iter.next().getValue();
-                    if(obj instanceof Parcelable)                    
-                    {
-                        if((((Parcelable)obj).describeContents()
-                                & Parcelable.CONTENTS_FILE_DESCRIPTOR) != 0)                        
-                        {
-                            fdFound = true;
-                            break;
-                        } //End block
-                    } //End block
-                    else
-                    if(obj instanceof Parcelable[])                    
-                    {
-                        Parcelable[] array = (Parcelable[]) obj;
-for(int n = array.length - 1;n >= 0;n--)
-                        {
-                            if((array[n].describeContents()
-                                    & Parcelable.CONTENTS_FILE_DESCRIPTOR) != 0)                            
-                            {
-                                fdFound = true;
-                                break;
-                            } //End block
-                        } //End block
-                    } //End block
-                    else
-                    if(obj instanceof SparseArray)                    
-                    {
-                        SparseArray<? extends Parcelable> array = (SparseArray<? extends Parcelable>) obj;
-for(int n = array.size() - 1;n >= 0;n--)
-                        {
-                            if((array.get(n).describeContents()
-                                    & Parcelable.CONTENTS_FILE_DESCRIPTOR) != 0)                            
-                            {
-                                fdFound = true;
-                                break;
-                            } //End block
-                        } //End block
-                    } //End block
-                    else
-                    if(obj instanceof ArrayList)                    
-                    {
-                        ArrayList array = (ArrayList) obj;
-                        if((array.size() > 0)
-                                && (array.get(0) instanceof Parcelable))                        
-                        {
-for(int n = array.size() - 1;n >= 0;n--)
-                            {
-                                Parcelable p = (Parcelable) array.get(n);
-                                if(p != null && ((p.describeContents()
-                                        & Parcelable.CONTENTS_FILE_DESCRIPTOR) != 0))                                
-                                {
-                                    fdFound = true;
-                                    break;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            mHasFds = fdFound;
-            mFdsKnown = true;
-        } //End block
-        boolean var2250F3E2C27D5FBDB1DA94D9DB9ED089_1196604162 = (mHasFds);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1750962101 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1750962101;
+        return getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -663,6 +574,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.351 -0400", hash_original_method = "ABD9DF23A5A8A0A83F11C474E2CAFB17", hash_generated_method = "37F9146356DBDB6648C38BEAC5313EE3")
     public void putStringArrayList(String key, ArrayList<String> value) {
         addTaint(value.getTaint());
@@ -714,6 +626,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.371 -0400", hash_original_method = "1C56E40FECAB1AC7C31C1D64DCBF74F0", hash_generated_method = "5213B1E070335D9401528254C481E52C")
     public void putByteArray(String key, byte[] value) {
         addTaint(value[0]);
@@ -726,6 +639,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.376 -0400", hash_original_method = "2FF709A9E88600F14AEB34FA372FB7A3", hash_generated_method = "3104E0304351AB9D6E24A13D4518EEE0")
     public void putShortArray(String key, short[] value) {
         addTaint(value[0]);
@@ -738,6 +652,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.382 -0400", hash_original_method = "5BBE3077A529F887080D848A31F1E40F", hash_generated_method = "20FA95EC5112A909F98F512F04084DA0")
     public void putCharArray(String key, char[] value) {
         addTaint(value[0]);
@@ -750,6 +665,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.387 -0400", hash_original_method = "6E03156089AB80D54004D251F8CBA9A8", hash_generated_method = "AA0D743CF2BF08A40853D73E8355A710")
     public void putIntArray(String key, int[] value) {
         addTaint(value[0]);
@@ -775,6 +691,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.396 -0400", hash_original_method = "6C49285A06086C4B176330EBC83C2D3B", hash_generated_method = "33F0CA57AA79BA462FC96478C4B6BBF1")
     public void putFloatArray(String key, float[] value) {
         addTaint(value[0]);
@@ -800,6 +717,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.405 -0400", hash_original_method = "3F318C6E0F37B53192FF4A33987FF921", hash_generated_method = "1AC9029516C13EAFD5FB46257A07E20E")
     public void putStringArray(String key, String[] value) {
         addTaint(value[0].getTaint());
@@ -921,26 +839,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(defaultValue);
         addTaint(key.getTaint());
         unparcel();
-        Object o = mMap.get(key);
-        if(o == null)        
-        {
-            boolean var16830A58E1E33A4163524366BA7B701B_1846025398 = (defaultValue);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1147435859 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1147435859;
-        } //End block
-        try 
-        {
-            boolean varC0A59981B6A9A74E185A6995D9EB5B72_360433757 = ((Boolean) o);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1999414534 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1999414534;
-        } //End block
-        catch (ClassCastException e)
-        {
-            typeWarning(key, o, "Boolean", defaultValue, e);
-            boolean var16830A58E1E33A4163524366BA7B701B_360688925 = (defaultValue);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_225003096 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_225003096;
-        } //End block
+        //Object o = mMap.get(key); //this shoudl already be part of taint
+        return getTaintBoolean();
+
         // ---------- Original Method ----------
         //unparcel();
         //Object o = mMap.get(key);
@@ -961,8 +862,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     public byte getByte(String key) {
         addTaint(key.getTaint());
         unparcel();
-        byte var5B0A48E0E31913CC901DB451A84568F5_1127880515 = (getByte(key, (byte) 0));
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_69905918 = getTaintByte();
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_69905918 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_69905918;
         // ---------- Original Method ----------
         //unparcel();
@@ -977,25 +877,7 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-Byte var6042003835E71BD302E1524BA5D2EC10_1708796667 =             defaultValue;
-            var6042003835E71BD302E1524BA5D2EC10_1708796667.addTaint(taint);
-            return var6042003835E71BD302E1524BA5D2EC10_1708796667;
-        } //End block
-        try 
-        {
-Byte varC54AA9AB5858E046700E70C354EEF0AA_1765899042 =             (Byte) o;
-            varC54AA9AB5858E046700E70C354EEF0AA_1765899042.addTaint(taint);
-            return varC54AA9AB5858E046700E70C354EEF0AA_1765899042;
-        } //End block
-        catch (ClassCastException e)
-        {
-            typeWarning(key, o, "Byte", defaultValue, e);
-Byte var6042003835E71BD302E1524BA5D2EC10_2107873956 =             defaultValue;
-            var6042003835E71BD302E1524BA5D2EC10_2107873956.addTaint(taint);
-            return var6042003835E71BD302E1524BA5D2EC10_2107873956;
-        } //End block
+        return getTaintByte();
         // ---------- Original Method ----------
         //unparcel();
         //Object o = mMap.get(key);
@@ -1016,9 +898,8 @@ Byte var6042003835E71BD302E1524BA5D2EC10_2107873956 =             defaultValue;
     public char getChar(String key) {
         addTaint(key.getTaint());
         unparcel();
-        char var73806458D5069BFA70A3B5BD5CCA2A2F_2036948877 = (getChar(key, (char) 0));
-                char varA87DEB01C5F539E6BDA34829C8EF2368_927807264 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_927807264;
+        Object value = mMap.get(key);        
+        return getTaintChar();
         // ---------- Original Method ----------
         //unparcel();
         //return getChar(key, (char) 0);
@@ -2140,6 +2021,7 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_276212002 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.771 -0400", hash_original_method = "3231DDBB4D17868FEAA7FF4365CACCDA", hash_generated_method = "2144C95B7DB011D2E71A07AE5E323CBF")
     public double[] getDoubleArray(String key) {
         addTaint(key.getTaint());
@@ -2320,6 +2202,7 @@ IBinder var540C13E9E156B687226421B24F2DF178_2690998 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.804 -0400", hash_original_method = "90A94F467F11AD2B1AEECA4B5BC07A1D", hash_generated_method = "8B5FF5BA32445196D63B4BEEC0C2DC54")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);

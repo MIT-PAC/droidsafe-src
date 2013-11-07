@@ -18,7 +18,7 @@ import android.os.IBinder;
 import android.app.Application;
 import android.app.Dialog;
 import android.view.MotionEvent;
-
+import com.google.android.maps.MapActivity;
 
 
 /**
@@ -105,6 +105,14 @@ public class DroidSafeAndroidRuntime {
         activity.droidsafeOnStop();
         activity.droidsafeOnDestroy();
         activity.onDetachedFromWindow();
+
+        //Calls for MapActivity from mapping library
+        if (activity instanceof MapActivity) {
+            MapActivity ma = (MapActivity)activity;
+            ma.isRouteDisplayed();
+            ma.isLocationDisplayed();
+            ma.onGetMapDataSource();
+        }
 
     }
 
