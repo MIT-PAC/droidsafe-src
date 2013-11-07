@@ -46,6 +46,7 @@ import droidsafe.stats.PTASetsAvgSize;
 import droidsafe.transforms.HoistAllocations;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
+import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
@@ -104,6 +105,14 @@ public class Main {
     AllocLocationModel.reset();
     CallLocationModel.reset();
     RCFG.reset();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    
+    driverMsg("Removing identity overrides.");
+    monitor.subTask("Removing identity overrides.");
+    RemoveStupidOverrides.run();
     monitor.worked(1);
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
