@@ -9,7 +9,7 @@ import android.os.Bundle;
 public abstract class MapActivity extends Activity
 {
     @DSModeled(DSC.SAFE)
-    public MapActivity {
+    public MapActivity() {
         
     }
     
