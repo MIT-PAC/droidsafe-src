@@ -89,7 +89,7 @@ public final class BlockGuard {
         }
 
         
-                @DSModeled(DSC.BAN)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.695 -0400", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "3ABC1E7E53A553FC97EA8D27BCC1D15F")
         public String getMessage() {
 String varF29D773CC11975C29C8B08D549DF4902_1427760421 =             "policy=" + mPolicyState + " violation=" + mPolicyViolated +
