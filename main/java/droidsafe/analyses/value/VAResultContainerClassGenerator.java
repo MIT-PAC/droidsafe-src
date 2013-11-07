@@ -222,7 +222,8 @@ public class VAResultContainerClassGenerator {
                         if(fieldType instanceof RefType) {
                             RefType refType = (RefType)fieldType;
                             SootClass fieldTypeClass = ((RefType)fieldType).getSootClass();
-                            if (refType.equals(RefType.v("java.lang.String"))) {
+                            if (refType.equals(RefType.v("java.lang.String")) ||
+                                    refType.equals(RefType.v("java.lang.CharSequence"))) {
                                 //add string fields to the list of fields that are modeled!
                                 classesAndFieldsToModel.get(apiModelSootClass).add(apiModelSootField);
                             } else if(!classesAndFieldsToModel.containsKey(fieldTypeClass)) {
@@ -818,7 +819,7 @@ public class VAResultContainerClassGenerator {
             if (refType.getArrayCount() == 0 && refType.getType() instanceof ClassOrInterfaceType) {
                 ClassOrInterfaceType coi = (ClassOrInterfaceType)refType.getType();
                 String coiName = coi.getName();
-                if (coiName.equals("String")) {
+                if (coiName.equals("String") || coiName.equals("CharSequence")) {
                     type = getStringType();
                 } else if (PRIMITIVE_WRAPPER_CLASS_NAMES.contains(coiName)) {
                     type = convertStringOrPrimitiveWrapperType(coiName);
