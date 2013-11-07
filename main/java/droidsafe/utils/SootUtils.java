@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,6 +27,7 @@ import droidsafe.android.app.Project;
 import droidsafe.utils.CannotFindMethodException;
 
 import soot.AnySubType;
+import soot.Body;
 import soot.Local;
 import soot.ArrayType;
 import soot.BooleanType;
@@ -946,6 +948,104 @@ public class SootUtils {
         }
     }
 
+    /**
+     * For a given method, try to find a corresponding API overriden method
+     * @param method
+     * Method to look for corresponding API overriden
+     * @return
+     * API overriden method or null
+     */
+    public static SootMethod getApiOverridenMethod(SootMethod method) {
+        if (method.isAbstract() || method.isPrivate()) {
+            logger.debug("{} is either abstract or private", method);
+            return null;
+        }
+
+        SootClass clz = method.getDeclaringClass().getSuperclass();
+        if (clz == null)
+            return null;
+
+        logger.debug("getApiOverridenMethod: {} ", method);
+        logger.debug("sig {}, subsig {} ", method.getSignature(), method.getSubSignature());
+
+        while (clz != null && clz.getName()!= null &&
+              !clz.getName().equals("java.lang.Object")) {
+
+            SootMethod parentMethod = null;
+            try {
+                if (clz.isLibraryClass())
+                    parentMethod = clz.getMethod(method.getSubSignature());
+            }
+            catch (Exception e) {
+                logger.debug("Exception {} ", e);
+            }
+
+            logger.debug("parentMethod = {} ", parentMethod);
+            if (parentMethod != null){
+                return parentMethod;
+            }
+            clz = clz.getSuperclass();
+        }
+
+        return null;
+    }
+    
+    /**
+     * check if a method is an API overriden method
+     * @param method
+     * @return
+     */
+    public static boolean isApiOverridenMethod(SootMethod method) {
+        return (getApiOverridenMethod(method) != null);
+    }
+
+    /*
+     *  * Given a method, get a set of methods that are called by this method
+     * @param sootMethod
+     * @return
+     */
+    public static Set<SootMethod> getCalleeSet(SootMethod sootMethod) {
+
+        Set<SootMethod> calleeSet = new HashSet<SootMethod>();
+        Body body;
+
+        if (!sootMethod.isConcrete()) {
+            return calleeSet;
+        }
+
+        try {
+            body = sootMethod.retrieveActiveBody();
+        }
+        catch (Exception ex) {
+            logger.warn("execption trying to get ActiveBody: {} ", ex);
+            return calleeSet;
+        }
+
+        Chain<Unit> units = body.getUnits();
+
+
+        /* Note that locals are named as follows:
+         *  r => reference, i=> immediate
+         *  $r, $i => true local
+         *  r, i => parameter passing, and r0 is for this when it is non-static
+         */
+
+        for (Unit unit: units){
+            Stmt statement = (Stmt)unit;
+
+            if (statement.containsInvokeExpr())
+            {
+                InvokeExpr expr = statement.getInvokeExpr();
+                SootMethod invokedMethod = expr.getMethod();
+                calleeSet.add(invokedMethod);
+            }
+
+        }
+        return calleeSet;
+    }
+        
+
+    
     /**
      * get a list of ancestor of a given class, in order from immediate to oldest
      */
