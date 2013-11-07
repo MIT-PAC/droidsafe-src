@@ -103,7 +103,7 @@ class Locals {
     ImmutableSet<InfoValue> putW(Edge entryEdge, Local local, ImmutableSet<InfoValue> values) {
         EdgeLocal edgeLocal = EdgeLocal.v(entryEdge, local);
         ImmutableSet<InfoValue> oldValues = edgeLocalToValues.get(edgeLocal);
-        if (values != null && values.isEmpty()) {
+        if (values != null && !values.isEmpty()) {
             HashSet<InfoValue> newValues = new HashSet<InfoValue>(oldValues);
             newValues.addAll(values);
             return edgeLocalToValues.put(edgeLocal, ImmutableSet.<InfoValue>copyOf(newValues));
