@@ -5,6 +5,8 @@ import droidsafe.analyses.value.VAResultContainerClassGenerator;
 
 import droidsafe.android.system.API;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -67,7 +69,8 @@ public class ObjectSensitivityCloner {
                 "java.lang.CharSequence", 
                     "android.app.Activity"));
 
-
+    
+    
 
     /**
      * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
@@ -75,8 +78,14 @@ public class ObjectSensitivityCloner {
      */
     public static void run() {
         int clonedClasses = 0;
-        
-        for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
+
+        //we want to keep a consistent numbering across runs of droidsafe for clones
+        //so we sort the classes list we go through
+        SootMethod[] methods = GeoPTA.v().getAllReachableMethods().toArray(new SootMethod[0]);
+        Arrays.sort(methods, new ToStringComparator());
+            
+        for (SootMethod method : methods) {
+               
             //if (API.v().isSystemMethod(method))
             //    continue;
 
@@ -97,7 +106,12 @@ public class ObjectSensitivityCloner {
                         NewExpr oldNewExpr = (NewExpr) assign.getRightOp();
                         SootClass base = oldNewExpr.getBaseType().getSootClass();
                         String baseClassName = base.getName();
-                        if (VA_RESOLVED_CLASSES.contains(base) && !CLASSES_TO_NOT_CLONE.contains(baseClassName)) {
+                        //currently we are cloning any va tracked class, and 
+                        //container classes we have mod'ed in user code
+                        if ((VA_RESOLVED_CLASSES.contains(base) ||
+                                (API.v().isContainerClass(baseClassName) && !API.v().isSystemMethod(method)))
+                                && 
+                                !CLASSES_TO_NOT_CLONE.contains(baseClassName)) {
                             logger.info("Found new expr to replace and clone class: {} {}\n",
                                 method, assign);
 
@@ -240,4 +254,12 @@ public class ObjectSensitivityCloner {
 
         return found;
     }
+}
+
+class ToStringComparator implements Comparator<Object> {
+    @Override
+    public int compare(Object o1, Object o2) {
+        return o1.toString().compareTo(o2.toString());
+    }
+    
 }
