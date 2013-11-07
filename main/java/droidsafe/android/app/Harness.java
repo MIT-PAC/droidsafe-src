@@ -170,8 +170,7 @@ public class Harness {
 		/** inject intentfilter and application  */
 		injectApplicationIntentFilters();
 		
-		Set<SootClass> visitedClasses = addCallsToComponentEntryPoints(body);
-		addEntryPointsForNonAllocated(body, visitedClasses);
+		addCallsToComponentEntryPoints(body);
 		
 		//create the loop back to the beginning of the calls
 		body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
@@ -527,28 +526,6 @@ public class Harness {
 		}
 	}
 	
-	private void addEntryPointsForNonAllocated(StmtBody body, Set<SootClass> allocatedClasses) {
-	    for (SootClass clz : Scene.v().getClasses()) {
-	        if (clz.isLibraryClass() || clz.isInterface() ||
-                    clz.equals(harnessClass) || API.v().isSystemClass(clz))
-                continue;
-	        
-	        if (!allocatedClasses.contains(clz) && EntryPoints.v().hasPossibleEntryPoint(clz)) {
-	            
-	            
-	            //create field for class and allocation
-	            //call all system implemented methods
-	            for (SootMethod m : Hierarchy.v().getAllInheritedAppMethodsIncluded(clz)) {
-	                if (Hierarchy.v().isImplementedSystemMethod(m)) {
-	                    logger.info("Adding entry point for class that was not alloced: " + m);
-	                    addCallToEntryPointAndCreateLocal(body, clz, m);
-	                }
-	            }
-	        }
-	    }
-	    
-	}
-	
 	/**
 	 * create the header for the main method including the saving of args
 	 * and the start of the loop for entry points calls, return the label for the loop
@@ -569,9 +546,8 @@ public class Harness {
 	    return beginCalls;
 	}
 	
-	private Set<SootClass> addCallsToComponentEntryPoints(StmtBody body) {
-	    Set<SootClass> visited = new LinkedHashSet<SootClass>();
-		
+	private void addCallsToComponentEntryPoints(StmtBody body) {
+	
 		for (EntryPoints.EntryPoint entryPoint : EntryPoints.v().getAppEntryPoints()) {
 			SootClass clazz = entryPoint.clz;
 			
@@ -579,11 +555,7 @@ public class Harness {
 				continue;
 			
 			addCallToEntryPointAndCreateLocal(body, clazz, entryPoint.method); 
-			
-			visited.add(clazz);
 		}
-		
-		return visited;
 	}
 
 	
