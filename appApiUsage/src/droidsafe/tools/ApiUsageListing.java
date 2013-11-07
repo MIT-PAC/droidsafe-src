@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -27,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.util.Chain;
 
 import droidsafe.utils.SootUtils;
 
@@ -64,7 +67,18 @@ public class ApiUsageListing {
     int jarCount = 0;
     
     public void addAppJar(String jarFile) {
+        List<SootClass> appClasses = new LinkedList<SootClass>(); 
+
+        for (SootClass sootClass: Scene.v().getApplicationClasses()) {
+            appClasses.add(sootClass);
+        }
+        
+        for (SootClass sootClass: appClasses) {
+            Scene.v().removeClass(sootClass);
+        }
+
         //SootUtils.loadClassesFromJar(jarFile, true, null);
+        logger.info("Loading appJar {}", jarFile);
         JarFile jar;
         try {
             jar = new JarFile(jarFile);
@@ -79,21 +93,28 @@ public class ApiUsageListing {
         
         HashMap<SootMethod, Integer> apiUsage    = new HashMap<SootMethod, Integer>();
         HashMap<SootMethod, Integer> apiOverride = new HashMap<SootMethod, Integer>();
-
+        
+       
         // Going through all methods inside the class
         for (SootClass sootClass: Scene.v().getApplicationClasses()) {
+            logger.info("Application classes {} ", sootClass);
+        
             for (SootMethod sootMethod: sootClass.getMethods()) {
                 // Check for overriding method
                 // check for method being called by someone
+                logger.info("Method {} ", sootMethod);
                                 
-                if (SootUtils.isApiOverridenMethod(sootMethod)) {
+                SootMethod overriden = SootUtils.getApiOverridenMethod(sootMethod);
+
+                //if (SootUtils.isApiOverridenMethod(sootMethod)) {
+                if (overriden != null) {
+
                     logger.info("{} is API overring method ", sootMethod);
-                    if (!apiOverride.containsKey(sootMethod)) {
-                        apiOverride.put(sootMethod, 0);                        
+                    if (!apiOverride.containsKey(overriden)) {
+                        apiOverride.put(overriden, 0);                        
                     }
-                    
                     // add the counter
-                    apiOverride.put(sootMethod, apiOverride.get(sootMethod)+1);
+                    apiOverride.put(overriden, apiOverride.get(overriden)+1);
                 }
 
                 Set<SootMethod> calleeSet = SootUtils.getCalleeSet(sootMethod);
@@ -112,11 +133,26 @@ public class ApiUsageListing {
                 }
             }            
         }
-        
+
+     
         printJarReport(jarFile, apiOverride, apiUsage);
         
-        apiAllOverride.putAll(apiOverride);
-        apiAllUsage.putAll(apiUsage);
+        for (SootMethod method: apiOverride.keySet()) {
+            if (!apiAllOverride.containsKey(method)) {
+                apiAllOverride.put(method,  0);
+            }
+            int count = apiOverride.get(method);
+            apiAllOverride.put(method,  apiAllOverride.get(method) + count);
+        }
+
+        for (SootMethod method: apiUsage.keySet()) {
+            if (!apiAllUsage.containsKey(method)) {
+                apiAllUsage.put(method,  0);
+            }
+            int count = apiUsage.get(method);
+            apiAllUsage.put(method,  apiAllUsage.get(method) + count);
+        }
+
     }
     
     /**
@@ -148,15 +184,43 @@ public class ApiUsageListing {
        
        printStream.printf("========Output Report for jar %s=======\n", jarFile);
        printStream.printf("API overriden methods:\n");
+       printStream.printf("----------------------\n");
+       
+       ArrayList<String> methodList = new ArrayList<String>(overrideMap.size());
+       
        for (SootMethod method: overrideMap.keySet()) {
-           printStream.printf("%s => %d \n",  method, overrideMap.get(method));           
+           methodList.add(method.toString());
        }
+       Collections.sort(methodList);
+       
+       for (String methodSig: methodList) {
+           try {
+               SootMethod method = Scene.v().getMethod(methodSig); 
+               printStream.printf("%s => %d \n",  method, overrideMap.get(method));  
+           }
+           catch (Exception e) {
+               logger.warn("exception {}", e);
+           }
+       }
+       methodList = new ArrayList<String>(usageMap.size());
+       
 
-       printStream.printf("\nDirect API call methods: \n");
        for (SootMethod method: usageMap.keySet()) {
-           printStream.printf("%s => %d \n",  method, usageMap.get(method));           
+           methodList.add(method.toString());
        }
-        
+       Collections.sort(methodList);
+       
+       printStream.printf("\nDirect API call methods: \n");
+       printStream.printf("----------------------\n");
+       for (String methodSig: methodList) {
+           try {
+           SootMethod method = Scene.v().getMethod(methodSig);       
+           printStream.printf("%s => %d \n",  method, usageMap.get(method));
+           }
+           catch (Exception e) {
+               logger.warn("exception {}", e);
+           }
+       }
     }
     
     private static void setSootOptions() {
@@ -221,16 +285,9 @@ public class ApiUsageListing {
         for (String jarName: libJars) {
             cp.append(File.pathSeparator + jarName);
         }
-        System.setProperty("soot.class.path", cp.toString());
 
-        for (String jarName: libJars) {
-            logger.warn("Loading API jar {} ", jarName);
-            listing.addApiJar(jarName);
-        }
-        
         List<String> appJarFiles = new LinkedList<String>();
         String[] arguments = commandLine.getArgs();
-        
         for (String arg: arguments) {
             appJarFiles.add(arg);
         }
@@ -247,6 +304,18 @@ public class ApiUsageListing {
             }            
         }
         
+        for (String jarName: appJarFiles) {
+            cp.append(File.pathSeparator + jarName);
+        }
+        System.setProperty("soot.class.path", cp.toString());
+        logger.info("classpath: {} ", cp.toString());
+
+        for (String jarName: libJars) {
+            logger.warn("Loading API jar {} ", jarName);
+            listing.addApiJar(jarName);
+        }
+ 
+
         for (String jarName: appJarFiles) {
             logger.warn("Loading app jar {} ", jarName);
             listing.addAppJar(jarName);
