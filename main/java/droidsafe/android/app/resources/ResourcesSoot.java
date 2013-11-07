@@ -30,7 +30,6 @@ import soot.VoidType;
 import soot.Modifier;
 import soot.SootField;
 import soot.Local;
-
 import soot.jimple.FieldRef;  
 import soot.jimple.Expr;
 import soot.jimple.ConditionExpr;
@@ -40,8 +39,7 @@ import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
 import soot.jimple.JimpleBody;
 import soot.util.Chain;
-
-
+import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
@@ -174,7 +172,7 @@ public class ResourcesSoot {
         mUiObjectTable = new HashMap<Integer, UISootObject>();
         mLayoutInitMap = new HashMap<Integer, SootMethod>();
 
-        mSootClass = new SootClass("droidsafe.android.ResourcesSoot", Modifier.PUBLIC);
+        mSootClass = new SootClass(Project.DS_GENERATED_CLASSES_PREFX + "ResourcesSoot", Modifier.PUBLIC);
     //  mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
         Scene.v().addClass(mSootClass);
 
@@ -710,7 +708,7 @@ public class ResourcesSoot {
     }
 
     /**
-     * Method to add getView_XYX(content) to the droidsafe.android.ResourcesSoot 
+     * Method to add getView_XYX(content) to the ResourcesSoot 
      * @param intId : numeric Id seen in gen/R file
      */
     private boolean addGetView_ID(Integer intId) {

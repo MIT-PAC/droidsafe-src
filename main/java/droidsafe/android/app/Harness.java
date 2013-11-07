@@ -78,7 +78,7 @@ public class Harness {
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
 	private List<Unit> entryPointInvokes;
-	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
+	public static String HARNESS_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFX + "DroidSafeMain";
 	public static String FIELD_PREFIX = "_ds_field_";
 	
 	private Map<SootClass, SootField> globalsMap;
