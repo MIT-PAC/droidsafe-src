@@ -339,7 +339,9 @@ public class JSAStrings {
     } else {
       Collection<SootClass> srcClasses = new ArrayList<SootClass>();
       for (SootClass cls : appClasses)
-        if (Project.v().isSrcClass(cls)) srcClasses.add(cls);
+        if (Project.v().isSrcClass(cls) || Project.v().isDroidSafeGeneratedClass(cls)) {
+            srcClasses.add(cls);
+        }   
       StringAnalysis.setApplicationClasses(srcClasses);
     }
   }
