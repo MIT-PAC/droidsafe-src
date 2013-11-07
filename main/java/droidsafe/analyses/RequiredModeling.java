@@ -100,14 +100,11 @@ public class RequiredModeling {
             for (String m : toModel) {
                 fw.write(m + "\n");
             }
-            fw.write("\nErrors in PTA:\n\n");
-            checkAllocations(fw);
-
-            fw.write("\nFields Missing from API Modeling " +
-                    "(versus abstract semantics of Value Analysis):\n\n");
-            checkConcreteVSAbstractSemantics(fw);
-
+           
             checkHandlers(fw);
+            
+            fw.write("\nErrors in PTA for reachable methods:\n\n");
+            checkAllocations(fw);
             
             fw.close();
         } catch (Exception e) {
@@ -144,7 +141,7 @@ public class RequiredModeling {
         
         CallGraph sparkCG = Scene.v().getCallGraph();
         
-        fw.write("Methods overriding a system method that are not called from model: \n\n");
+        fw.write("\n\nMethods overriding a system method that are not called from model: \n");
         
         for (SootClass clz : Scene.v().getClasses()) {
             if (!(Project.v().isLibClass(clz) || Project.v().isSrcClass(clz)))
@@ -182,59 +179,6 @@ public class RequiredModeling {
     }
 
     /**
-     * Check that all fields defined in classes that are modeled in the abstract semantics 
-     * of value analysis have a corresponding definition in the concrete semantics of the 
-     * model of the API.
-     */
-    private static void checkConcreteVSAbstractSemantics(FileWriter fw) throws Exception {
-        //for all sootlclasses, see if we have a corresponding modeling class
-        for (SootClass concreteClz: Scene.v().getClasses()) {
-            if (!API.v().isSystemClass(concreteClz)) 
-                continue;
-
-            Class<?> absClz = null;
-            try {
-                absClz = Class.forName(ValueAnalysis.MODEL_PACKAGE_PREFIX + "." + 
-                        concreteClz.getName());
-            } catch (ClassNotFoundException e) {
-                //could not find class, so ignore
-            }
-
-            if (absClz != null) {
-                for (Field absField : absClz.getDeclaredFields()) {
-                    //did we find a match in the concrete semantics?
-                    boolean matched = false;
-                    //get a string representation of the type of the field 
-                    //from the abstract semantics
-                    String typeStr = absField.getType().getName();
-                    //remove the modeling package name from the type if it exists
-                    if (typeStr.startsWith(ValueAnalysis.MODEL_PACKAGE_PREFIX))
-                        typeStr = typeStr.substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length() + 1);
-
-                    //ignore logger fields
-                    if ("org.slf4j.Logger".equals(typeStr)) {
-                        continue;
-                    }
-
-                    //see if we find a matching field in the concrete semantics with the same name
-                    //and type string
-                    if (concreteClz.declaresFieldByName(absField.getName())) {
-                        SootField concreteField = concreteClz.getFieldByName(absField.getName());
-                        if (concreteField.getType().toString().equals(typeStr))
-                            matched = true;
-                    }             
-
-                    if (!matched) {
-                        fw.write(String.format("Field name: %s, type = %s, class = %s\n", 
-                            absField.getName(), typeStr, concreteClz.getName()));
-                    }
-                }
-            }
-
-        }
-    }
-
-    /**
      * For each virtual invoke statement check that the reference receiver of the invoke can
      * point to an actual alloc node.  If not, and the pta set is empty, it is good indication
      * that we are missing something in modeling.  Do this only for calls on api objects.  
@@ -251,7 +195,7 @@ public class RequiredModeling {
                 continue;
 
             for (SootMethod meth : clazz.getMethods()) {
-                if (meth.isConcrete()) {
+                if (meth.isConcrete() && GeoPTA.v().isReachableMethod(meth)) {
                     checkInvokes(meth, meth.retrieveActiveBody(), fw);
                 }
             }
