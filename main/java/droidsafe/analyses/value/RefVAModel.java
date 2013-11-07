@@ -88,7 +88,7 @@ public abstract class RefVAModel extends VAModel {
         } else {
             Class<?> c = this.getClass();
             try {
-                Field field = c.getDeclaredField(sootField.getName());
+                Field field = c.getField(sootField.getName());
                 try {
                     Object fieldObject = field.get(this);
                     PrimVAModel fieldObjectPrimVAModel = (PrimVAModel)fieldObject;
