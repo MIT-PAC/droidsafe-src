@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.util.Chain;
 
 import droidsafe.utils.SootUtils;
 
@@ -66,6 +67,16 @@ public class ApiUsageListing {
     int jarCount = 0;
     
     public void addAppJar(String jarFile) {
+        List<SootClass> appClasses = new LinkedList<SootClass>(); 
+
+        for (SootClass sootClass: Scene.v().getApplicationClasses()) {
+            appClasses.add(sootClass);
+        }
+        
+        for (SootClass sootClass: appClasses) {
+            Scene.v().removeClass(sootClass);
+        }
+
         //SootUtils.loadClassesFromJar(jarFile, true, null);
         logger.info("Loading appJar {}", jarFile);
         JarFile jar;
@@ -83,8 +94,7 @@ public class ApiUsageListing {
         HashMap<SootMethod, Integer> apiUsage    = new HashMap<SootMethod, Integer>();
         HashMap<SootMethod, Integer> apiOverride = new HashMap<SootMethod, Integer>();
         
-        Scene.v().getApplicationClasses().clear();
-
+       
         // Going through all methods inside the class
         for (SootClass sootClass: Scene.v().getApplicationClasses()) {
             logger.info("Application classes {} ", sootClass);
@@ -123,11 +133,26 @@ public class ApiUsageListing {
                 }
             }            
         }
-        
+
+     
         printJarReport(jarFile, apiOverride, apiUsage);
         
-        apiAllOverride.putAll(apiOverride);
-        apiAllUsage.putAll(apiUsage);
+        for (SootMethod method: apiOverride.keySet()) {
+            if (!apiAllOverride.containsKey(method)) {
+                apiAllOverride.put(method,  0);
+            }
+            int count = apiOverride.get(method);
+            apiAllOverride.put(method,  apiAllOverride.get(method) + count);
+        }
+
+        for (SootMethod method: apiUsage.keySet()) {
+            if (!apiAllUsage.containsKey(method)) {
+                apiAllUsage.put(method,  0);
+            }
+            int count = apiUsage.get(method);
+            apiAllUsage.put(method,  apiAllUsage.get(method) + count);
+        }
+
     }
     
     /**
@@ -169,8 +194,13 @@ public class ApiUsageListing {
        Collections.sort(methodList);
        
        for (String methodSig: methodList) {
-           SootMethod method = Scene.v().getMethod(methodSig); 
-           printStream.printf("%s => %d \n",  method, overrideMap.get(method));           
+           try {
+               SootMethod method = Scene.v().getMethod(methodSig); 
+               printStream.printf("%s => %d \n",  method, overrideMap.get(method));  
+           }
+           catch (Exception e) {
+               logger.warn("exception {}", e);
+           }
        }
        methodList = new ArrayList<String>(usageMap.size());
        
@@ -183,8 +213,13 @@ public class ApiUsageListing {
        printStream.printf("\nDirect API call methods: \n");
        printStream.printf("----------------------\n");
        for (String methodSig: methodList) {
+           try {
            SootMethod method = Scene.v().getMethod(methodSig);       
-           printStream.printf("%s => %d \n",  method, usageMap.get(method));           
+           printStream.printf("%s => %d \n",  method, usageMap.get(method));
+           }
+           catch (Exception e) {
+               logger.warn("exception {}", e);
+           }
        }
     }
     

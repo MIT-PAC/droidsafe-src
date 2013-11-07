@@ -3,6 +3,7 @@ SCRIPTNAME=`basename $0`
 BINDIR=`dirname $0`
 APPDIR=`(cd $BINDIR/..; pwd)`
 LIBDIR=$APPDIR/../../lib
+DROIDSAFE_DIR=$APPDIR/../..
 DROIDSAFE_BINDIR=$APPDIR/../../bin
 APPJAR=$APPDIR/bin/appApiUsage.jar
 
@@ -11,4 +12,8 @@ for JARFILE in $LIBDIR/*.jar $DROIDSAFE_BINDIR/*jar; do
 done
 
 APP_CLASSPATH=$APPJAR:$APP_CLASSPATH
-java -cp $APP_CLASSPATH droidsafe.tools.ApiUsageListing $1 $2 $3 $4 $5 $6 $7 $8 $9
+if [ "$#" -eq 0 ]; then
+    java -cp $APP_CLASSPATH droidsafe.tools.ApiUsageListing 
+else
+    java -cp $APP_CLASSPATH droidsafe.tools.ApiUsageListing -a $DROIDSAFE_DIR/android-lib/android.jar -a $DROIDSAFE_DIR/android-lib/android-impl.jar $1 $2 $3 $4 $5 $6 $7 $8 $9
+fi
