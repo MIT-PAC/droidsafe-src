@@ -254,7 +254,6 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
                     Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetEventContext(baseValue, entryEdge);
-
                     for(AllocNode allocNode : baseAllocNodes) {
                         Object newExpr = GeoPTA.v().getNewExpr(allocNode);
                         VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
@@ -262,7 +261,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                             Class<?> c = vaModel.getClass();
                             String fieldName = instanceFieldRef.getField().getName();
                             try {
-                                Field field = c.getDeclaredField(fieldName);
+                                Field field = c.getField(fieldName);
                                 try {
                                     Object fieldObject = field.get(vaModel);
                                     VAModel fieldObjectVAModel = (VAModel)fieldObject;
@@ -297,10 +296,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                         }
                                     }
                                 } catch(IllegalAccessException e) {
-                                    logError(e.toString());
                                 }
                             } catch(NoSuchFieldException e) {
-                                logError(e.toString());
                             }
                         }
                     }

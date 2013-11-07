@@ -55,11 +55,9 @@ public class JSAResultInjection extends BodyTransformer {
     public static void run() {
         JSAResultInjection transformer = new JSAResultInjection();
         for (SootClass clz : Scene.v().getClasses()) {
-            if (Project.v().isSrcClass(clz.toString())) {
-                for (SootMethod meth : clz.getMethods()) {
-                    if (meth.isConcrete())
-                        transformer.transform(meth.retrieveActiveBody());
-                }
+            for (SootMethod meth : clz.getMethods()) {
+                if (meth.isConcrete())
+                    transformer.transform(meth.retrieveActiveBody());
             }
         }
     }
