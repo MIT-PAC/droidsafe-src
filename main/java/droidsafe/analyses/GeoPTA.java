@@ -261,6 +261,13 @@ public class GeoPTA {
     public Set<SootMethod> getAllReachableMethods() {
         return ptsProvider.getAllReachableMethods();
     }
+    
+    /**
+     * Return true if this method is a reachable method.
+     */
+    public boolean isReachableMethod(SootMethod method) {
+        return ptsProvider.getAllReachableMethods().contains(method);
+    }
 
     /**
      * Return true if this value is a pointer that is represented in the 
