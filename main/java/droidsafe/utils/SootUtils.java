@@ -826,6 +826,30 @@ public class SootUtils {
         return (VirtualInvokeExpr)expr;
     }
     
+    
+    /**
+     * Return all methods that the given method (in the class) overrides from all of its parent classes.
+     */
+    public static Set<SootMethod> getOverriddenMethodsFromParents(SootClass clz, String subSig) {
+        Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
+
+        Set<SootClass> parents = getParents(clz);
+
+        for (SootClass parent : parents) {
+            if (parent.declaresMethod(subSig)) {
+                SootMethod meth = parent.getMethod(subSig);
+                if (!meth.isAbstract())
+                    methods.add(meth);
+            }
+        }
+
+        return methods;
+    }
+
+    
+    /**
+     * Return all methods that override the given method (in the given class). Search all children
+     */
     public static Set<SootMethod> getOverridingMethodsIncluding(SootClass clz, String subSig) {
         Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
 
