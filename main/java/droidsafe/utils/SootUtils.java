@@ -8,6 +8,7 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -20,6 +21,10 @@ import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.android.app.Project;
+import droidsafe.utils.CannotFindMethodException;
 
 import soot.AnySubType;
 import soot.Body;
@@ -39,7 +44,6 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
-import soot.jimple.LengthExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.ParameterRef;
@@ -81,9 +85,27 @@ public class SootUtils {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(SootUtils.class);
 
+    /** Matches a Java method signature **/
     public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
 
-    /*
+    /**
+     * Return true if this reference is to a String, CharSequence, StringBuffer, or StringBuilder.
+     */
+    public static boolean isStringOrSimilarType(Type type) {
+        if (type instanceof RefType) {
+            RefType refType = (RefType)type;
+            
+            return refType.equals(RefType.v("java.lang.String")) || 
+                    refType.equals(RefType.v("java.lang.CharSequence")) ||
+                    refType.equals(RefType.v("java.lang.StringBuffer")) ||
+                    refType.equals(RefType.v("java.lang.StringBuilder"));
+                    
+        }
+        
+        return false;
+    }
+    
+    /**
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 
      */
@@ -137,10 +159,12 @@ public class SootUtils {
         }
     }
 
+    /** Returns true if specified type is Java.lang.String **/
     public static boolean isStringType(Type t) {
         return t.equals(RefType.v("java.lang.String"));
     }
 
+    /** Returns true if specified type is java.lang.Class **/
     public static boolean isClassType(Type t) {
         return t.equals(RefType.v("java.lang.Class"));
     }
@@ -367,58 +391,6 @@ public class SootUtils {
         return null;
     }
     
-    /**
-     * For a given method, try to find a corresponding API overriden method
-     * @param method
-     * Method to look for corresponding API overriden
-     * @return
-     * API overriden method or null
-     */
-    public static SootMethod getApiOverridenMethod(SootMethod method) {
-        if (method.isAbstract() || method.isPrivate()) {
-            logger.debug("{} is either abstract or private", method);
-            return null;
-        }
-        
-        SootClass clz = method.getDeclaringClass().getSuperclass();
-        if (clz == null)
-            return null;
-        
-        logger.debug("getApiOverridenMethod: {} ", method);
-        logger.debug("sig {}, subsig {} ", method.getSignature(), method.getSubSignature());
-
-        while (clz != null && clz.getName()!= null && 
-              !clz.getName().equals("java.lang.Object")) {
-
-            SootMethod parentMethod = null;
-            try {
-                if (clz.isLibraryClass())
-                    parentMethod = clz.getMethod(method.getSubSignature());
-            }
-            catch (Exception e) {
-                logger.debug("Exception {} ", e);
-            }
-        
-            logger.debug("parentMethod = {} ", parentMethod);
-            if (parentMethod != null){
-                return parentMethod;
-            }
-            clz = clz.getSuperclass();
-        }
-        
-        return null;
-    }
-    
-    
-    /**
-     * check if a method is an API overriden method
-     * @param method
-     * @return
-     */
-    public static boolean isApiOverridenMethod(SootMethod method) {
-        return (getApiOverridenMethod(method) != null);
-    }
-    
     
     /**
      * Matching a callback method.  We ignore return type as it is not important in callback
@@ -427,8 +399,8 @@ public class SootUtils {
      * @return
      */
     public static SootMethod resolveCallbackMethod(SootClass clz, String signature) {
-    	 if (Scene.v().containsMethod(signature)) 
-             return Scene.v().getMethod(signature);
+        if (Scene.v().containsMethod(signature)) 
+            return Scene.v().getMethod(signature);
 
          //check this class for the method with polymorpism
          String mName = grabName(signature);
@@ -542,51 +514,6 @@ public class SootUtils {
     }
 
 
-    /**
-     * Given a method, get a set of methods that are called by this method
-     * @param sootMethod
-     * @return
-     */
-    public static Set<SootMethod> getCalleeSet(SootMethod sootMethod) {
-
-        Set<SootMethod> calleeSet = new HashSet<SootMethod>();
-        Body body;
-        
-        if (!sootMethod.isConcrete()) {
-            return calleeSet;
-        }
-        
-        try {
-            body = sootMethod.retrieveActiveBody();
-        }
-        catch (Exception ex) {
-            logger.warn("execption trying to get ActiveBody: {} ", ex);
-            return calleeSet;
-        }
-        
-        Chain<Unit> units = body.getUnits();
-        
-        
-        /* Note that locals are named as follows:
-         *  r => reference, i=> immediate
-         *  $r, $i => true local
-         *  r, i => parameter passing, and r0 is for this when it is non-static 
-         */
-        
-        for (Unit unit: units){
-            Stmt statement = (Stmt)unit;
-            
-            if (statement.containsInvokeExpr())
-            {
-                InvokeExpr expr = statement.getInvokeExpr();
-                SootMethod invokedMethod = expr.getMethod();
-                calleeSet.add(invokedMethod);
-            }
-            
-        }
-        return calleeSet;
-    }
-    
     /**
      * Load classes from the given jar file into Soot's current scene.  
      * Load the classes as application classes if appClass is true.
@@ -856,6 +783,10 @@ public class SootUtils {
         }
     }
 
+    /** 
+     * Returns the element type for an array, the 'base' of AnySubType.  If type is 
+     * neither just returns type
+     */
     public static Type getBaseType(RefLikeType type) {
         if (type instanceof ArrayType) 
             return ((ArrayType)type).getArrayElementType();
@@ -1017,6 +948,104 @@ public class SootUtils {
         }
     }
 
+    /**
+     * For a given method, try to find a corresponding API overriden method
+     * @param method
+     * Method to look for corresponding API overriden
+     * @return
+     * API overriden method or null
+     */
+    public static SootMethod getApiOverridenMethod(SootMethod method) {
+        if (method.isAbstract() || method.isPrivate()) {
+            logger.debug("{} is either abstract or private", method);
+            return null;
+        }
+
+        SootClass clz = method.getDeclaringClass().getSuperclass();
+        if (clz == null)
+            return null;
+
+        logger.debug("getApiOverridenMethod: {} ", method);
+        logger.debug("sig {}, subsig {} ", method.getSignature(), method.getSubSignature());
+
+        while (clz != null && clz.getName()!= null &&
+              !clz.getName().equals("java.lang.Object")) {
+
+            SootMethod parentMethod = null;
+            try {
+                if (clz.isLibraryClass())
+                    parentMethod = clz.getMethod(method.getSubSignature());
+            }
+            catch (Exception e) {
+                logger.debug("Exception {} ", e);
+            }
+
+            logger.debug("parentMethod = {} ", parentMethod);
+            if (parentMethod != null){
+                return parentMethod;
+            }
+            clz = clz.getSuperclass();
+        }
+
+        return null;
+    }
+    
+    /**
+     * check if a method is an API overriden method
+     * @param method
+     * @return
+     */
+    public static boolean isApiOverridenMethod(SootMethod method) {
+        return (getApiOverridenMethod(method) != null);
+    }
+
+    /*
+     *  * Given a method, get a set of methods that are called by this method
+     * @param sootMethod
+     * @return
+     */
+    public static Set<SootMethod> getCalleeSet(SootMethod sootMethod) {
+
+        Set<SootMethod> calleeSet = new HashSet<SootMethod>();
+        Body body;
+
+        if (!sootMethod.isConcrete()) {
+            return calleeSet;
+        }
+
+        try {
+            body = sootMethod.retrieveActiveBody();
+        }
+        catch (Exception ex) {
+            logger.warn("execption trying to get ActiveBody: {} ", ex);
+            return calleeSet;
+        }
+
+        Chain<Unit> units = body.getUnits();
+
+
+        /* Note that locals are named as follows:
+         *  r => reference, i=> immediate
+         *  $r, $i => true local
+         *  r, i => parameter passing, and r0 is for this when it is non-static
+         */
+
+        for (Unit unit: units){
+            Stmt statement = (Stmt)unit;
+
+            if (statement.containsInvokeExpr())
+            {
+                InvokeExpr expr = statement.getInvokeExpr();
+                SootMethod invokedMethod = expr.getMethod();
+                calleeSet.add(invokedMethod);
+            }
+
+        }
+        return calleeSet;
+    }
+        
+
+    
     /**
      * get a list of ancestor of a given class, in order from immediate to oldest
      */
@@ -1196,6 +1225,40 @@ public class SootUtils {
         }
         return null;
 
+    }
+    /** 
+     * Returns a list of all of the application (non android)
+     * classes.
+     */
+    public static List<SootClass> get_app_classes () {
+        List<SootClass> clist = new ArrayList<SootClass>();
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (Project.v().isSrcClass(clz.toString()))
+                clist.add(clz);
+        }
+        return (clist);
+    }
+    
+    /** 
+     * Returns a list of all of the android system classes.
+     */
+    public static List<SootClass> get_android_classes () {
+        List<SootClass> clist = new ArrayList<SootClass>();
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (!Project.v().isSrcClass(clz.toString()))
+                clist.add(clz);
+        }
+        return (clist);
+    }
+    
+    /** 
+     * Returns a string describing the specified stmt.  
+     * Used for error messages 
+     **/
+    public static String app_location (Stmt stmt, Object msg) {
+        SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
+        SourceLocationTag loc = getSourceLocation(stmt, method.getDeclaringClass());
+        return String.format ("At method: %s, line %d, jimple stmt: %s: %s", method, loc.getLine(), stmt, msg);
     }
 }
 
