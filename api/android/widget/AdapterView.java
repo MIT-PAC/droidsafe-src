@@ -134,6 +134,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.375 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "A196844E345185ADD2A42B24D8C435A9")
     public void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
+        //TODO: callback listener
+        listener.onItemClick(this, this.getSelectedView(), getTaintInt(), getTaintInt());
         // ---------- Original Method ----------
         //mOnItemClickListener = listener;
     }

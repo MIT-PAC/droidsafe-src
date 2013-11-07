@@ -3096,6 +3096,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 
 
         @Override public void onChanged(){
+            super.onChanged();
 			// Original method
 			/*
 			{
