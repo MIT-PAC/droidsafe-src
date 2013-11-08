@@ -1,0 +1,5 @@
+#! /bin/bash
+# Run droidspafe using the makefile, passing all arguments via DSARGS
+# The Makefile will build droidsafe as necessary before running it.
+args="$@"
+make specdump "DSARGS=$args"
