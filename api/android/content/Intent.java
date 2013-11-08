@@ -156,7 +156,7 @@ public class Intent implements Parcelable, Cloneable {
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "8A8F598E2C7B57A58F1379D7AFC8B81F", hash_generated_method = "CFC95A750DAD5D8F9B4AF9DD7CFFB32A")
     public  Intent(Context packageContext, Class<?> cls) {
-        mComponent = new ComponentName(packageContext, cls);
+        mComponent = new ComponentName(packageContext, cls.getName());
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, cls);
     }
@@ -169,7 +169,7 @@ public class Intent implements Parcelable, Cloneable {
         addTaint(action.getTaint());
         setAction(action);
         mData = uri;
-        mComponent = new ComponentName(packageContext, cls);
+        mComponent = new ComponentName(packageContext, cls.getName());
         // ---------- Original Method ----------
         //setAction(action);
         //mData = uri;
@@ -2101,7 +2101,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     public Intent setClass(Context packageContext, Class<?> cls) {
         addTaint(packageContext.getTaint());
         addTaint(cls.getTaint());
-        mComponent = new ComponentName(packageContext, cls);
+        mComponent = new ComponentName(packageContext, cls.getName());
 Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1106282301.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1106282301;
