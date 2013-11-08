@@ -14,6 +14,6 @@ public class UnknownVAModel extends VAModel {
 
     @Override
     public String toStringDetailed() {
-        return "\"UNKNOWN\"";
+        return "\"" + ValueAnalysis.UNKNOWN_VALUES_STRING + "\"";
     }
 }
