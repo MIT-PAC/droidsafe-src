@@ -1,5 +1,14 @@
 ADDED_BY_DROIDSAFE:
 
+# EXIF tags and from images are marked IMAGE.  Some are really location
+<android.media.ExifInterface: java.lang.String getAttribute(java.lang.String)> (IMAGE)
+<android.media.ExifInterface: int getAttributeInt(java.lang.String,int)> (IMAGE)
+<android.media.ExifInterface: double getAttributeDouble(java.lang.String,double)> (IMAGE)
+<android.media.ExifInterface: byte[] getThumbnail()> (IMAGE)
+<android.media.ExifInterface: boolean getLatLong(float[])> (IMAGE)
+<android.media.ExifInterface: double getAltitude(double)> (IMAGE)
+
+<android.media.ExifInterface: 
 <android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> (DATABASE_INFORMATION)
 <com.google.android.maps.GeoPoint: int getLatitudeE6()> (LOCATION_INFORMATION)
 <com.google.android.maps.GeoPoint: int getLongitudeE6()> (LOCATION_INFORMATION)
