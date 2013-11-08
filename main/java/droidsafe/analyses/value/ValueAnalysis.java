@@ -62,6 +62,9 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      */
     private static final int MAX_NUM_OF_NON_APP_VALUES_TO_TRACK = 5;
 
+    /** string to represent sets of unknown values */
+    public static final String UNKNOWN_VALUES_STRING = "ANYTHING";
+
     /** 
      * keys are the objects that we can and want to model (they are new expressions) 
      * The value is the Model object which simulates that object. 
@@ -352,7 +355,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                     " the value it is assigned, " + 
                     rhsNode + " is not a constant. Contained values beforehand: " + 
                     fieldPrimVAModel.getValues());
-                fieldPrimVAModel.addValue("UNKNOWN");
+                fieldPrimVAModel.addValue(UNKNOWN_VALUES_STRING);
             }
         }                           
     }
