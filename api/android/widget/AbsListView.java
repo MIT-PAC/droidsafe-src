@@ -46,7 +46,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     LongSparseArray<Integer> mCheckedIdStates;
     int mLayoutMode = LAYOUT_NORMAL;
     AdapterDataSetObserver mDataSetObserver;
-    ListAdapter mAdapter;
+    public ListAdapter mAdapter;
     private RemoteViewsAdapter mRemoteAdapter;
     private boolean mDeferNotifyDataSetChanged = false;
     boolean mDrawSelectorOnTop = false;

@@ -149,6 +149,13 @@ public class DroidSafeAndroidRuntime {
         contentProvider.onConfigurationChanged(new Configuration());
         contentProvider.onLowMemory();
         contentProvider.onTrimMemory(0);
+        // Its not clear if we could figure out some of the value for these
+        // parameters
+        contentProvider.query(null, null, null, null, null);
+        contentProvider.insert(null, null);
+        contentProvider.update(null, null, null, null);
+        contentProvider.delete(null, null, null);
+        contentProvider.getType(null);
     }
 
     @DSModeled(DSC.BAN)
