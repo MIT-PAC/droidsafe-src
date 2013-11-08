@@ -114,7 +114,9 @@ public class ListActivity extends Activity {
         //DSFIXME:  CODE0009: Possible callback target function detected
         super.onContentChanged();
         View emptyView = findViewById(com.android.internal.R.id.empty);
-        mList = (ListView)findViewById(com.android.internal.R.id.list);
+        // The findViewById doesn't work yet, so just create one.
+        // mList = (ListView)findViewById(com.android.internal.R.id.list);
+        mList = new ListView(this);
         if(mList == null)        
         {
             RuntimeException var814898E2A75124B230F991BD301E888E_738625787 = new RuntimeException(
@@ -236,7 +238,10 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1101591930 =         mAdapter;
         {
             return;
         } //End block
-        setContentView(com.android.internal.R.layout.list_content_simple);
+        mList = new ListView (this);
+        // We can't look up views by their ids and its not clear where mList
+        // will get initialized
+        // setContentView(com.android.internal.R.layout.list_content_simple);
         // ---------- Original Method ----------
         //if (mList != null) {
             //return;

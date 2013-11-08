@@ -57,6 +57,8 @@ import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.inputmethod.EditorInfo;
+import android.widget.CursorAdapter;
+import android.widget.AbsListView;
 
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
@@ -1585,6 +1587,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     
     @DSModeled(DSC.SAFE)
     public void registerForContextMenu(View view){
+        // model the callbacks.  This code is sure to be missing things
+        // There are many other types of views and adapters
+        if (view instanceof AbsListView) {
+            AbsListView alv = (AbsListView) view;
+            if (alv.mAdapter instanceof CursorAdapter) {
+                CursorAdapter ca = (CursorAdapter) alv.mAdapter;
+                ca.bindView (view, this, ca.getCursor());
+                ca.newView (this, ca.getCursor(), null);
+            }
+        }
 		view.setOnCreateContextMenuListener(this);
 		// Original method
 		/*

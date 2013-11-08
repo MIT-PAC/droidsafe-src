@@ -42,6 +42,14 @@ public abstract class SQLiteOpenHelper {
         addTaint(factory.getTaint());
         addTaint(name.getTaint());
         addTaint(context.getTaint());
+
+        // This method will call various entry points when necessary.
+        // We enable all of them here
+        onCreate (null);
+        onDowngrade (null, 0, 1);
+        onOpen (null);
+        onUpgrade (null, 0, 1);
+
         // ---------- Original Method ----------
     }
 

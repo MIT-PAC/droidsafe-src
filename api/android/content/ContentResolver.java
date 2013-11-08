@@ -678,10 +678,19 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
-    @DSModeled(DSC.SPEC)
+    /** 
+     * This registers the specified ContentObserver to be called when the URI 
+     * changes.  For example, the URI could be content://sms and the onChange()
+     * functions will get called whenever an SMS message is received
+     */
+    @DSModeled(DSC.SAFE)
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer)
     {
+      // Model the calls to onChange
+      observer.onChange(false);
+      // observer.onChange(false, uri); (not in API 15)
+
         try {
             getContentService().registerContentObserver(uri, notifyForDescendents,
                     observer.getContentObserver());
