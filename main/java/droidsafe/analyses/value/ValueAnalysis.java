@@ -55,10 +55,12 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     /** Singleton for analysis */
     private static ValueAnalysis am;
     
-    /** if true, track all string values that the pta can find,
-     *  if false, just track values that JSA injects.
+    /**
+     * Sometimes the api has values that are useful, but also sometimes, if we track
+     * api generated values, we get a huge blowup, so we limit the number of values that we track here,
+     * that are generated in the api code and not in app source.
      */
-    private static final boolean TRACK_ALL_STRING_VALUES = false;
+    private static final int MAX_NUM_OF_NON_APP_VALUES_TO_TRACK = 5;
 
     /** 
      * keys are the objects that we can and want to model (they are new expressions) 
@@ -325,12 +327,14 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
             rhsNodes = GeoPTA.v().getPTSetEventContext(assignStmt.getRightOp(), entryEdge);
         }
         
+        int nonAppValues = 0;
         for(AllocNode rhsNode : rhsNodes) {
             boolean knownValue = false;
             if(rhsNode instanceof StringConstantNode) {
+                //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
-                if (TRACK_ALL_STRING_VALUES || 
+                if (nonAppValues < MAX_NUM_OF_NON_APP_VALUES_TO_TRACK || 
                         JSAResultInjection.createdStringConstants.contains(sc)) {
                     String value = ((StringConstantNode)rhsNode).getString();
                     value = value.replaceAll("(\\r|\\n)", "");
@@ -338,6 +342,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                     value = value.replace("\\uxxxx", "");
                     fieldPrimVAModel.addValue(value);
                     knownValue = true;
+                    if (!JSAResultInjection.createdStringConstants.contains(sc))
+                        nonAppValues++;
                 }
             }
             if (!knownValue) {

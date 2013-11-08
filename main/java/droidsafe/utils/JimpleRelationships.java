@@ -1,13 +1,14 @@
 package droidsafe.utils;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.RequiredModeling;
-
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -49,6 +50,13 @@ public class JimpleRelationships {
      */
     public static void reset() {
         v = null;
+    }
+    
+    /**
+     * Return set of all stmts in the program.
+     */
+    public Set<Stmt> getAllStmts() {
+        return Collections.unmodifiableSet(stmtToMethod.keySet());
     }
     
     /**

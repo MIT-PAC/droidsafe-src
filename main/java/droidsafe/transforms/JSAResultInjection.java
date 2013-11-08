@@ -1,9 +1,10 @@
 package droidsafe.transforms;
 
+import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.strings.JSAStrings;
-
 import droidsafe.android.app.Project;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -11,28 +12,22 @@ import java.util.Set;
 import java.util.HashSet;
 
 import soot.Body;
-
 import soot.BodyTransformer;
-
 import soot.jimple.AssignStmt;
+import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
-
+import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.ClassConstantNode;
 import soot.Local;
-
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootMethod;
-
 import soot.util.Chain;
-
 import soot.Value;
 
 /**
@@ -88,6 +83,10 @@ public class JSAResultInjection extends BodyTransformer {
             InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
             Map<Integer, Value> argMod = new HashMap<Integer, Value>();
 
+            //see if we should perform any outright replacements, and if so, don't do a jsa injection
+            if (replaceInvokeExpr(stmtBody, units, stmt))
+                continue;
+
             //iterate over the args and see if any arg is a string constant
             for (int i = 0; i < expr.getArgCount(); i++) {
                 Value v = expr.getArg(i);
@@ -110,6 +109,58 @@ public class JSAResultInjection extends BodyTransformer {
             }
             changesMade.put(expr, argMod);            
         }
+    }
+
+    /**
+     * We might want to transform certain statements to make Value Analysis resolve better.  Do
+     * that here, and then the jsa injection will not be performed in the above method.
+     * 
+     * return true if a transform was performed.
+     */
+    private boolean replaceInvokeExpr(StmtBody stmtBody, Chain units, Stmt stmt) {
+        if (!(stmt instanceof AssignStmt) || !(((AssignStmt)stmt).getRightOp() instanceof InvokeExpr))
+            return false;
+
+        AssignStmt assign = (AssignStmt)stmt;
+        InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
+        try {
+            Collection<SootMethod> targets = GeoPTA.v().resolveInvokeContextIns(invoke);
+
+            if (targets.size() != 1)
+                return false;
+            
+            //if we get here we have one target
+            for (SootMethod target : targets) {
+                //replace java.lang.Class.getName() with a string constant if possible
+                if ("<java.lang.Class: java.lang.String getName()>".equals(target.getSignature())) {
+                    InstanceInvokeExpr iie = (InstanceInvokeExpr) invoke;
+                    Set<AllocNode> nodes = GeoPTA.v().getPTSetContextIns(iie.getBase());
+                    if (nodes.size() != 1) 
+                        return false;
+                            
+                    for (AllocNode node : nodes) {
+                        if (node instanceof ClassConstantNode) {
+                            String name = ((ClassConstantNode)node).getClassConstant().toString();
+                            
+                            //add a local variable
+                            Local newLocal = Jimple.v().newLocal(LOCAL_PREFIX + LOCALID++, RefType.v("java.lang.String"));
+                            stmtBody.getLocals().add(newLocal);
+                            
+                            StringConstant sc = StringConstant.v(name);
+                            createdStringConstants.add(sc);
+                            AssignStmt localAssign = Jimple.v().newAssignStmt(newLocal, sc);
+                            units.insertBefore(localAssign, stmt);
+                            assign.setRightOp(newLocal);
+                            return true;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            
+        }
+        
+        return false;
     }
 }
 
