@@ -25,7 +25,6 @@ import org.slf4j.LoggerFactory;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.android.app.Project;
 import droidsafe.utils.CannotFindMethodException;
-
 import soot.AnySubType;
 import soot.Body;
 import soot.Local;
@@ -37,6 +36,7 @@ import soot.DoubleType;
 import soot.FloatType;
 import soot.Hierarchy;
 import soot.IntType;
+import soot.SootMethodRef;
 import soot.jimple.DoubleConstant;
 import soot.jimple.Expr;
 import soot.jimple.FloatConstant;
@@ -48,6 +48,7 @@ import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.ParameterRef;
 import soot.jimple.SpecialInvokeExpr;
+import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
@@ -303,6 +304,73 @@ public class SootUtils {
         }
     }
 
+    /**
+     * Return true if the method invoked by the invoke expression could invoke the target.
+     * 
+     * Here, we are not looking at PTA information, this is just based on types.
+     */
+    public static boolean couldCallBasedOnTypes(InvokeExpr invoke, SootMethod target) {
+        if (invoke instanceof StaticInvokeExpr) {
+            //if a static invoke, then no polymorphic search, it must call the 
+            //method exactly
+            SootMethodRef invokedMethod= invoke.getMethodRef();
+            SootClass invokeClass = invokedMethod.declaringClass();
+                
+            //target class must be equal
+            if (!RefType.v(target.getDeclaringClass()).equals(RefType.v(invokeClass)))
+                return false;
+            
+            //names of methods must match
+            if (!target.getName().equals(invokedMethod.name()) || 
+                    target.getParameterCount() != invokedMethod.parameterTypes().size())
+                return false;
+                
+            //return type of target must be equal to of invoke
+            if (!(target.getReturnType().equals(invokedMethod.returnType())))
+                return false;
+            
+            //arg types must match
+            for (int i = 0; i < target.getParameterCount(); i++)
+                if (!target.getParameterType(i).equals(invokedMethod.parameterType(i)))
+                    return false;
+                       
+            //if we get here all has passed, so we could call it.
+            return true;
+            
+        } else if (invoke instanceof InstanceInvokeExpr) {
+            InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
+            SootMethodRef invokedMethod = iie.getMethodRef();
+            SootClass invokeClass = invokedMethod.declaringClass();
+                
+            //target class must be subclass of invoke method class
+            if (!isSubTypeOfIncluding(RefType.v(target.getDeclaringClass()), 
+                RefType.v(invokeClass)))
+                return false;
+            
+            //names of methods must match
+            if (!target.getName().equals(invokedMethod.name()) || 
+                    target.getParameterCount() != invokedMethod.parameterTypes().size())
+                return false;
+                
+            //return type of target must be subtype of invoke
+            if (!isSubTypeOfIncluding(target.getReturnType(), invokedMethod.returnType()))
+                return false;
+            
+            //arg types must match
+            for (int i = 0; i < target.getParameterCount(); i++)
+                if (!isSubTypeOfIncluding(target.getParameterType(i),invokedMethod.parameterType(i)))
+                    return false;
+                       
+            //if we get here all has passed, so we could call it.
+            return true;
+        } else {
+            logger.error("Unknown invoke type: {}", invoke);
+            droidsafe.main.Main.exit(1);
+        }
+        
+        return false;
+    }
+    
     /**
      * Given the signature of a method that may or may not concretely exist, search 
      * for the concrete call that will be resolved for the signature.

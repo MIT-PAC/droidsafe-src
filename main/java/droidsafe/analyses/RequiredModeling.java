@@ -28,6 +28,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
 import soot.Body;
@@ -39,6 +40,7 @@ import soot.SootField;
 import soot.SootMethod;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.spark.ondemand.pautil.SootUtil;
@@ -141,6 +143,8 @@ public class RequiredModeling {
         
         CallGraph sparkCG = Scene.v().getCallGraph();
         
+        Set<InvokeExpr> invokesInSystem = getAllSystemInvokes();
+        
         fw.write("\n\nMethods overriding a system method that are not called from model: \n");
         
         for (SootClass clz : Scene.v().getClasses()) {
@@ -169,8 +173,24 @@ public class RequiredModeling {
                         }
                     }
                     
-                    if (!found && !API.v().isSystemClass(method.getDeclaringClass()))
+                    if (!found && !API.v().isSystemClass(method.getDeclaringClass())) {
                         fw.write(method + " overrides " + API.v().getClosestOverridenAPIMethod(method) + "\n");
+                        
+                        //now search invokes in the library and see if it is called
+                        List<SootMethod> couldCall = new LinkedList<SootMethod>();
+                        for (InvokeExpr invoke : invokesInSystem) {
+                            if (SootUtils.couldCallBasedOnTypes(invoke, method))
+                                couldCall.add(JimpleRelationships.v().getEnclosingMethod(invoke));
+                        }
+                        
+                        if (couldCall.isEmpty()) {
+                            fw.write("\tMethod not called anywhere in Android API/Runtime!\n");
+                        } else {
+                            fw.write("\tMethod could be called from following Android API/Runtime Methods:\n");
+                            for (SootMethod m : couldCall ) 
+                                fw.write("\t  " + m + "\n");
+                        }
+                    }
                 }
             }
         }
@@ -178,6 +198,38 @@ public class RequiredModeling {
         fw.write("\n");
     }
 
+    /**
+     * Return set of all invoke statements in system methods;
+     */
+    private static Set<InvokeExpr>getAllSystemInvokes() {
+        Set<InvokeExpr> invokes = new HashSet<InvokeExpr>();
+        
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (!API.v().isSystemClass(clz))
+                continue;
+            
+            for (SootMethod method : clz.getMethods()) {
+                if (!method.isConcrete()) 
+                    continue;
+                StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+                
+             // get body's unit as a chain
+                Chain units = stmtBody.getUnits();
+
+                Iterator stmtIt = units.iterator(); 
+                
+                while (stmtIt.hasNext()) {
+                    Stmt stmt = (Stmt)stmtIt.next();
+                    if (stmt.containsInvokeExpr()) {
+                        invokes.add(stmt.getInvokeExpr());
+                    }
+                }
+            }
+        }
+        
+        return invokes;
+    }
+    
     /**
      * For each virtual invoke statement check that the reference receiver of the invoke can
      * point to an actual alloc node.  If not, and the pta set is empty, it is good indication
