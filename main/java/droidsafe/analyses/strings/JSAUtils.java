@@ -122,7 +122,7 @@ public class JSAUtils {
                     String sig = m.getSignature();
                     int i = 0;
                     for (soot.Type t : m.getParameterTypes()) {
-                        if (SootUtils.isStringType(t)) {
+                        if (SootUtils.isStringOrSimilarType(t)) {
                             List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
                         }
                         i++;     
