@@ -164,6 +164,8 @@ public class ResourcesSoot {
     /** map that maps layout ID -> layout init method */
     private Map<Integer, SootMethod> mLayoutInitMap; 
 
+    private static int UNIQUE_ID = 0;
+    
     /**
      * private constructor
      */
@@ -613,7 +615,17 @@ public class ResourcesSoot {
         // localView =  fieldRef
         units.add(stmt);
         
-        Expr invokeExpr = Jimple.v().newVirtualInvokeExpr(mArgContext, method.makeRef(), mViewLocal);
+        //need cast argument of init layout to type of the receiver of the onclick method...
+        //add a local for the cast
+        SootClass listenerClass = method.getDeclaringClass();
+        Local castLocal = Jimple.v().newLocal("castLocal" + UNIQUE_ID++ ,  RefType.v(listenerClass));
+        mInitLayoutBody.getLocals().add(castLocal);
+        
+        Stmt castStmt = 
+                Jimple.v().newAssignStmt(castLocal, Jimple.v().newCastExpr(mArgContext,RefType.v(listenerClass)));
+        units.add(castStmt);
+        
+        Expr invokeExpr = Jimple.v().newVirtualInvokeExpr(castLocal, method.makeRef(), mViewLocal);
         stmt = Jimple.v().newInvokeStmt(invokeExpr);
         
         units.add(stmt);
