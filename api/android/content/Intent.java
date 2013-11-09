@@ -51,7 +51,7 @@ public class Intent implements Parcelable, Cloneable {
     private int mFlags;
     private HashSet<String> mCategories;
     //TODO: removed for demo
-    //@DSVAModeled
+    @DSVAModeled
     private Bundle mExtras;
     private Rect mSourceBounds;
     //TODO: removed for demo
