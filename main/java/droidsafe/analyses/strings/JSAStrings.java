@@ -173,7 +173,7 @@ public class JSAStrings {
    * Run the analysis, after init.
    * @throws Throwable 
    */
-  public static void run() throws Throwable {
+  public static void run() {
     Callable<Object> callAnalyze = new Callable<Object>() {
       @Override
       public String call() throws Exception {
@@ -189,7 +189,8 @@ public class JSAStrings {
       v().status = Status.TIMEDOUT_ANALYSIS;
       logger.warn("Timed out when running JSA");
     } catch (Exception e) {
-      throw e.getCause();
+      logger.error("Exception when running JSA: {}", e.getCause());
+      droidsafe.main.Main.exit(1);
     }
   }
 
