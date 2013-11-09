@@ -671,7 +671,7 @@ public class GrammarVisitor {
      * @param nt
      * @param re
      */
-    private void setRE(Nonterminal nt, RE re) {
+    void setRE(Nonterminal nt, RE re) {
         reMap.put(nt, re);
     }
 

@@ -10,7 +10,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
+import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,6 +63,20 @@ public class JSAStrings {
   /** boolean that determines whether the analysis has run */
   private boolean hasRun = false;
 
+  /** The number of regular expressions generated for hotspots. */
+  private Map<Value, String> regexMap = new HashMap<Value, String>();
+
+  /** timeout value (in minutes) for running the string analysis. */
+  private static long timeout;
+  
+  private enum Status {
+    TIMEDOUT_ANALYSIS, TIMEDOUT_REGEN, OK
+  }
+
+  private Status status;
+  
+  private int reGenTimoutCount = 0;
+
 
   /**
    * Map to keep track of defined hotspots. Maps the method signature used to create the hotspot to
@@ -85,6 +107,7 @@ public class JSAStrings {
     nonterminals = new HashMap<Value, Nonterminal>();
     gv = null;
     signatureToHotspotMap = new TreeMap<String, List<Hotspot>>();
+    status = Status.OK;
   }
 
   /**
@@ -108,7 +131,7 @@ public class JSAStrings {
    * Return true if this value is a hotspot that was resolved by JSA.
    */
   public boolean isHotspotValue(Value v) {
-      return this.hasRun && nonterminals.containsKey(v);
+      return this.hasRun && status != Status.TIMEDOUT_ANALYSIS && nonterminals.containsKey(v);
   }
   
   /**
@@ -143,29 +166,47 @@ public class JSAStrings {
     // SootClass clazz =
     // StringAnalysis.loadClass(Harness.HARNESS_CLASS_NAME);
     setApplicationClasses(config);
+    timeout = config.stringAnalysisTimeout;
   }
 
   /**
    * Run the analysis, after init.
+   * @throws Throwable 
    */
-  public static void run() {
-    // Well this seems a little dumb to simply wrap analyze...
-    v().hasRun = true;
-    v().analyze();
+  public static void run() throws Throwable {
+    Callable<Object> callAnalyze = new Callable<Object>() {
+      @Override
+      public String call() throws Exception {
+        v().hasRun = true;
+        v().analyze();
+        return null;
+      }
+    };
+    try {
+      // logger.info("Running JSA with timeout " + timeout);
+      runWithTimeout(callAnalyze, timeout, TimeUnit.MINUTES);
+    } catch (TimeoutException e) {
+      v().status = Status.TIMEDOUT_ANALYSIS;
+      logger.warn("Timed out when running JSA");
+    } catch (Exception e) {
+      throw e.getCause();
+    }
   }
 
   /**
    * Run the analysis.
    */
   private void analyze() {
-    // LWG
     logger.info("Action hotspots: " + hotspots.size());
-    Date start = new Date();
+    StopWatch timer = new StopWatch();
+    timer.start();
 
     sa = new StringAnalysis(hotspots); // Run the analysis.
 
-    // LWG
-    reportTime("[Strig Analysis] Multi-level automaton", start);
+    timer.stop();
+    logger.info("[Strig Analysis] Multi-level automaton: " + timer);
+    
+    timeout -= timer.getTime() / 1000 / 60; // in minutes
 
     for (ValueBox h : hotspots) {
       // automata.put(h.getValue(),sa.getAutomaton(h));
@@ -177,7 +218,7 @@ public class JSAStrings {
   }
 
   /**
-   * Auxiliar method to add an element to the hotspot map.
+   * Auxiliary method to add an element to the hotspot map.
    * 
    * @param signature The soot signature if the method.
    * @param hotspot The hot
@@ -231,13 +272,49 @@ public class JSAStrings {
    * @return
    */
   public String getRegex(Value v) {
+    String res = regexMap.get(v);
+    return (res == null) ? "<any string>" : res;
+  }
+
+  /**
+   * Generate the regular expression for the given Value.
+   * 
+   * @param v The Soot Value associated with the hotspot.
+   * @return
+   */
+  public String generateRegex(Value v) {
     try {
-      RE res = gv.getRE(nonterminals.get(v));
-      res = res.simplifyOps();
-      return res.toString();
+      RE regex = gv.getRE(nonterminals.get(v));
+      String res = regex.simplifyOps().toString();
+      regexMap.put(v, res);
+      return res;
     } catch (NullPointerException e) {
       return "";
     }
+  }
+
+  /**
+   * Generate the regular expression for the given Value.
+   * 
+   * @param v The Soot Value associated with the hotspot.
+   * @return
+   */
+  public String generateRegex(final Value v, long timeout, TimeUnit timeUnit) {
+    Callable<String> callable = new Callable<String>() {
+      @Override
+      public String call() throws Exception {
+        return generateRegex(v);
+      }
+    };
+    try {
+      return runWithTimeout(callable, timeout, timeUnit);
+    } catch (TimeoutException e) {
+      logger.info("Timed out when generating regex for " + v);
+      reGenTimoutCount++;
+    } catch (Exception e) {
+      logger.info("Exception when generating regex for " + v + ": " + e.getCause());
+    }
+    return "<any string>";
   }
 
   /**
@@ -300,7 +377,33 @@ public class JSAStrings {
    * Dump a summary of analysis.
    */
   public void log() {
-    logger.debug("Done with String analysis");
+    if (status == Status.TIMEDOUT_ANALYSIS) {
+      logger.warn("String analysis timed out.");
+    } else {
+      logger.debug("Done with String analysis");
+      Callable<Object> callGenerateREs = new Callable<Object>() {
+        @Override
+        public String call() throws Exception {
+          generateRegexs();
+          return null;
+        }
+      };
+      try {
+        // logger.info("Generating regular expressions with timeout " + timeout);
+        runWithTimeout(callGenerateREs, timeout, TimeUnit.MINUTES);
+      } catch (TimeoutException e) {
+        v().status = Status.TIMEDOUT_REGEN;
+        logger.warn("Timed out when running regex generatation");
+      } catch (Exception e) {
+        logger.info("Exception when running regex generatation: " + e.getCause());
+      }
+      if (reGenTimoutCount > 0) {
+        logger.warn("Regular expression generatation timed out on " + reGenTimoutCount + " of " + hotspots.size() + " hotspots.");
+      }
+    }
+  }
+
+  private void generateRegexs() {
     JSAStrings singleton = JSAStrings.v();
 
     // LWG
@@ -319,12 +422,11 @@ public class JSAStrings {
         for (ValueBox v: hotspot.getHotspots()) {
           // exploreRegex(automata.get(v.getValue()));
           logger.info("  "+ i++ +": " + sa.getClassName(v) + ": line " + sa.getLineNumber(v) + " : " + v.getValue());
-          logger.info("     regular expression: \"" + singleton.getRegex(v.getValue()) + "\"");
+          logger.info("     regular expression: \"" + singleton.generateRegex(v.getValue(), 30, TimeUnit.SECONDS) + "\"");
         }
       }
     }
   }
-
 
   // LWG: Allow application classes to be filtered from soot.Scene
   /**
@@ -423,29 +525,16 @@ public class JSAStrings {
   // ***********************************************************************************************
   // LWG
   
-  /**
-   * Log the elapsed time from 'start' to current time.
-   * @param desc The description of the operation being timed.
-   * @param start Start time of the operation.
-   */
-  private static void reportTime(String desc, Date start) {
-      Date end = new Date();
-      long time = (end.getTime() - start.getTime()) / 1000;
-      long seconds = time % 60;
-      long minutes = (time / 60) % 60;
-      long hours = time / 3600;
-       StringBuffer buf = new StringBuffer(((desc == null) ? " " : desc)+" in ");
-       if (hours > 0) {
-         buf.append(hours);
-         buf.append(" hours ");
-       }
-       if (minutes > 0) {
-         buf.append(minutes);
-         buf.append(" minutes ");
-       }
-       buf.append(seconds);
-       buf.append(" seconds");
-      logger.info(buf.toString());
+  public static <T> T runWithTimeout(Callable<T> callable, long timeout, TimeUnit timeUnit) 
+      throws Exception {
+    if (timeout == 0) {
+      return callable.call();
+    } else {
+      final ExecutorService executor = Executors.newSingleThreadExecutor();
+      final Future<T> future = executor.submit(callable);
+      executor.shutdown(); // This does not cancel the already-scheduled task.
+      return future.get(timeout, timeUnit);
+    }
   }
 
 }

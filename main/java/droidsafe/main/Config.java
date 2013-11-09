@@ -96,6 +96,9 @@ public class Config {
    */
   public boolean runStringAnalysis = true;
   
+  /** timeout value in minutes for running the string analysis. 0 means no timeout. Default is 120 (2 hours). */
+  public int stringAnalysisTimeout = 120;
+
   public boolean addObjectSensitivity = true;
   
   /** if true, run value analysis */
@@ -295,6 +298,10 @@ public class Config {
     
     if (cmd.hasOption("nojsa")) {
       this.runStringAnalysis = false;
+    }
+
+    if (cmd.hasOption("jsatimeout")) {
+      this.stringAnalysisTimeout = Integer.parseInt(cmd.getOptionValue("jsatimeout"));
     }
 
     if (cmd.hasOption("strict")) {

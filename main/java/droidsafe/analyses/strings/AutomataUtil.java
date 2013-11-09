@@ -176,8 +176,10 @@ public class AutomataUtil {
         public static final RE epsilon = new RE(ReOp.EPSILON);
         /** The empty language. **/
         public static final RE empty = new RE(ReOp.EMPTY);
+        /** Any string. **/
+        public static final RE ANY_STRING = anyString();
         
-        public RE anyString() {
+        public static RE anyString() {
             RE res = mkRange('\u0000','\uffff');
             res =  res.star();
             res.meta = "<any string>";
