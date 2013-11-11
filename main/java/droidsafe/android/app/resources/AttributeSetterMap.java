@@ -51,7 +51,7 @@ public class AttributeSetterMap {
 		
 		// from TextView class
 		addEntry(
-				new SetterEntry("text", "android.widget.TextView","void setTextDS(java.lang.CharSequence)"));
+				new SetterEntry("text", "android.widget.TextView","void setText(java.lang.CharSequence)"));
 		// addEntry(
 		// 		new SetterEntry("textAllCaps", "android.widget.TextView","void setAllCaps(boolean)"));		
 		addEntry(
