@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -20,6 +21,7 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.android.system.API;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
@@ -208,12 +210,18 @@ public class SecuritySpecification  {
 
 	public String toString() {
 		StringBuffer buf = new StringBuffer();
+		
+		/*  do not print whitelist information
 		buf.append("whitelist {\n");
         for (Method m : whitelist) {
         	buf.append("\t" + m.toString() + "\n");
         }
         buf.append("}\n\n");
-
+        */
+		
+		//keep a string of high level flows
+		StringBuffer highLevelFlows = new StringBuffer("Flow Summary { \n");
+		
         List<Method> methods = new ArrayList<Method>(eventBlocks.keySet());
         Collections.sort (methods);
         
@@ -231,10 +239,22 @@ public class SecuritySpecification  {
         		buf.append("\t");
         		//print out the method and flag unsupport (true arg to toString())
         		buf.append(oe.toString(true).replaceAll("\n", "\n\t") + ";\n");
+        		
+        		Set<InfoKind> sinks = oe.getSinkInfoKinds();
+        		Set<InfoKind> sources = oe.getSourcesInfoKinds();
+        		
+        		for (InfoKind sinkKind : sinks) {
+        		    for (InfoKind srcKind : sources)
+        		        highLevelFlows.append("\t" + srcKind + " -> " + sinkKind + "\n");
+        		}
         	}
         	
         	buf.append("}\n\n");
         }
+        
+        highLevelFlows.append("}\n\n");
+        
+        buf.insert(0, highLevelFlows.toString());
         
         return buf.toString();
 	}
