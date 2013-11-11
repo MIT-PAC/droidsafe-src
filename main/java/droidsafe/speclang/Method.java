@@ -51,6 +51,16 @@ public class Method implements Comparable<Method> {
     private List<SourceLocationTag> lines;
     /** Points to information for this method call */
     private PTAMethodInformation ptaInfo;
+    /** receiver info kinds set, used to cache the info kinds so we do not query info flow more than once */
+    private Set<InfoKind> recInfoKinds;
+    /** receiver raw info flow information, used to cache the info kinds so we do not query info flow more than once */
+    private Set<InfoValue> recInfoValues;
+    /** argument info kinds set, used to cache the info kinds so we do not query info flow more than once */
+    private Set<InfoKind>[] argInfoKinds;
+    /** argument raw info flow results, used to cache the info kinds so we do not query info flow more than once */
+    private Set<InfoValue>[] argInfoValues;
+    
+    
 
     public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, Object receiver) {
         this.sootMethod = method;
@@ -59,6 +69,9 @@ public class Method implements Comparable<Method> {
         lines = new ArrayList<SourceLocationTag>();
         logger.info("Creating method: {} with receiever {}", method, receiver);
         this.ptaInfo = ptaInfo;
+        argInfoKinds = new HashSet[ptaInfo.getNumArgs()];
+        argInfoValues = new HashSet[ptaInfo.getNumArgs()];
+        
     }
 
 
@@ -366,11 +379,12 @@ public class Method implements Comparable<Method> {
         //call the information flow results
         if (!hasReceiver())
             return new HashSet<Stmt>();
-
-        Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getReceiver());
+        
+        if (recInfoValues == null)
+            recInfoValues = queryInfoFlow(ptaInfo.getReceiver());
 
         Set<Stmt> srcSrcs = new HashSet<Stmt>();
-        for (InfoValue iv : srcs) {
+        for (InfoValue iv : recInfoValues) {
             if (iv instanceof InfoUnit) {
                 InfoUnit srcUnit = (InfoUnit)iv;
                 if (!(srcUnit.getUnit() instanceof Stmt))
@@ -387,10 +401,11 @@ public class Method implements Comparable<Method> {
      * argument (or one of its fields).
      */
     public Set<Stmt> getArgSourceInfoUnits(int i) {
-        Set<InfoValue> srcs = queryInfoFlow(ptaInfo.getArgValue(i));	    
+        if (argInfoValues[i] == null)
+            argInfoValues[i] = queryInfoFlow(ptaInfo.getArgValue(i));	    
 
         Set<Stmt> srcSrcs = new HashSet<Stmt>();
-        for (InfoValue iv : srcs) {
+        for (InfoValue iv : argInfoValues[i]) {
             if (iv instanceof InfoUnit) {
                 InfoUnit srcUnit = (InfoUnit)iv;
                 if (!(srcUnit.getUnit() instanceof Stmt))
@@ -455,7 +470,9 @@ public class Method implements Comparable<Method> {
      * be tainted with.
      */
     public Set<InfoKind> getArgInfoKinds(int i) {
-        return getInfoKinds(ptaInfo.getArgValue(i));
+        if (argInfoKinds[i] == null)
+            argInfoKinds[i] = getInfoKinds(ptaInfo.getArgValue(i)); 
+        return argInfoKinds[i];
     }
 
     /**
@@ -463,8 +480,11 @@ public class Method implements Comparable<Method> {
      * tainted with.	 
      */
     public Set<InfoKind> getRecInfoKinds() {
-        if (hasReceiver())
-            return getInfoKinds(ptaInfo.getReceiver());
+        if (hasReceiver()) {
+            if (recInfoKinds == null)
+                recInfoKinds = getInfoKinds(ptaInfo.getReceiver()); 
+            return recInfoKinds;
+        }
         else 
             return new HashSet<InfoKind>();
     }
