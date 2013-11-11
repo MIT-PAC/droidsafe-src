@@ -2259,6 +2259,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.463 -0400", hash_original_method = "A07DFF04DF4B6FC888385D304C4BCF4A", hash_generated_method = "DF76F249C82FE03750DDE89F019EA1E5")
     @Override
+    @DSModeled(DSC.SAFE)
     public String toString() {
         StringBuilder b = new StringBuilder(128);
         b.append("Intent { ");
