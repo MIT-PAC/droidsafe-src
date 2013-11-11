@@ -3659,6 +3659,10 @@ for(int i = 0;i < suggestionSpans.length;i++)
         {
             text = "";
         } //End block
+        
+        mText = text;
+        
+        /*
         if(!isSuggestionsEnabled())        
         {
             text = removeSuggestionSpans(text);
@@ -3689,7 +3693,10 @@ for(int i = 0;i < n;i++)
             {
                 text = out;
             } //End block
+        
         } //End block
+        
+        */
         if(notifyBefore)        
         {
             if(mText != null)            
@@ -3702,6 +3709,7 @@ for(int i = 0;i < n;i++)
                 sendBeforeTextChanged("", 0, 0, text.length());
             } //End block
         } //End block
+        
         boolean needEditableForNotification = false;
         if(mListeners != null && mListeners.size() != 0)        
         {
@@ -3714,18 +3722,18 @@ for(int i = 0;i < n;i++)
             setFilters(t, mFilters);
             InputMethodManager imm = InputMethodManager.peekInstance();
             if(imm != null)            
-            imm.restartInput(this);
+                imm.restartInput(this);
         } //End block
         else
-        if(type == BufferType.SPANNABLE || mMovement != null)        
-        {
-            text = mSpannableFactory.newSpannable(text);
-        } //End block
-        else
-        if(!(text instanceof CharWrapper))        
-        {
-            text = TextUtils.stringOrSpannedString(text);
-        } //End block
+            if(type == BufferType.SPANNABLE || mMovement != null)        
+            {
+                text = mSpannableFactory.newSpannable(text);
+            } //End block
+            else
+                if(!(text instanceof CharWrapper))        
+                {
+                    text = TextUtils.stringOrSpannedString(text);
+                } //End block
         if(mAutoLinkMask != 0)        
         {
             Spannable s2;
@@ -3741,7 +3749,7 @@ for(int i = 0;i < n;i++)
             {
                 text = s2;
                 type = (type == BufferType.EDITABLE) ? BufferType.EDITABLE : BufferType.SPANNABLE;
-                mText = text;
+                //mText = text;
                 if(mLinksClickable && !textCanBeSelected())                
                 {
                     setMovementMethod(LinkMovementMethod.getInstance());
@@ -3749,7 +3757,7 @@ for(int i = 0;i < n;i++)
             } //End block
         } //End block
         mBufferType = type;
-        mText = text;
+        //mText = text;
         if(mTransformation == null)        
         {
             mTransformed = text;
@@ -3764,12 +3772,12 @@ for(int i = 0;i < n;i++)
             Spannable sp = (Spannable) text;
             final ChangeWatcher[] watchers = sp.getSpans(0, sp.length(), ChangeWatcher.class);
             final int count = watchers.length;
-for(int i = 0;i < count;i++)
-            sp.removeSpan(watchers[i]);
+            for(int i = 0;i < count;i++)
+                sp.removeSpan(watchers[i]);
             if(mChangeWatcher == null)            
-            mChangeWatcher = new ChangeWatcher();
+                mChangeWatcher = new ChangeWatcher();
             sp.setSpan(mChangeWatcher, 0, textLength, Spanned.SPAN_INCLUSIVE_INCLUSIVE |
-                       (PRIORITY << Spanned.SPAN_PRIORITY_SHIFT));
+                (PRIORITY << Spanned.SPAN_PRIORITY_SHIFT));
             if(mInput != null)            
             {
                 sp.setSpan(mInput, 0, textLength, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
@@ -14432,7 +14440,7 @@ for(int i = 0;i < length;i++)
             public void dismiss() {
                 super.dismiss();
                 TextView.this.getPositionListener().removeSubscriber(SuggestionsPopupWindow.this);
-                ((Spannable) mText).removeSpan(mSuggestionRangeSpan);
+                //((Spannable) mText).removeSpan(mSuggestionRangeSpan);
                 setCursorVisible(mCursorWasVisibleBeforeSuggestions);
                 if(hasInsertionController())                
                 {
