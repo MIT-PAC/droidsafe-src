@@ -190,14 +190,14 @@ public class ObjectSensitivityCloner {
                     //value has been redefined before we found a constructor, so we can't find anything!
                     for (ValueBox def : stmt.getDefBoxes()) {
                         if (def.getValue().equals(local)) {
-                            System.out.println("Failed on can contain value: " + stmt);
+                            //System.out.println("Failed on can contain value: " + stmt);
                             return null;
                         }
                     }
 
                 } else if (!stmt.containsInvokeExpr() && stmt.branches()) {
                     //check for control flow?
-                    System.out.println("Failed on control flow: " + stmt);
+                    //System.out.println("Failed on control flow: " + stmt);
                     return null;
                 }
             }

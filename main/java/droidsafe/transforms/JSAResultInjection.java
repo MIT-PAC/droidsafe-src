@@ -2,7 +2,10 @@ package droidsafe.transforms;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.value.VAResultContainerClassGenerator;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Project;
+import droidsafe.utils.SootUtils;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -27,6 +30,7 @@ import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.ValueBox;
 import soot.util.Chain;
 import soot.Value;
 
@@ -42,7 +46,11 @@ public class JSAResultInjection extends BodyTransformer {
     private static int LOCALID = 0;
     public static final String LOCAL_PREFIX = "JSA_INJ_STRING_ARG";
     public static Map<InvokeExpr, Map<Integer, Value>> changesMade = new HashMap<InvokeExpr, Map<Integer, Value>>();
-    public static Set<StringConstant> createdStringConstants = new HashSet<StringConstant>();
+    /** Set of string constants that VA will track */
+    public static Set<StringConstant> trackedStringConstants = new HashSet<StringConstant>();
+    /** list of classes resolved by VA */
+    public static final Set<SootClass> VA_RESOLVED_CLASSES = 
+         VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
 
     /**
      * Call this pass on all application classes in the project.
@@ -56,6 +64,26 @@ public class JSAResultInjection extends BodyTransformer {
             }
         }
     }
+    
+    /**
+     * Return true if we should track string constants from this class.
+     */
+    private boolean shouldTrackStringValue(SootClass clz) {
+        Set<SootClass> baseClassesToModel = ValueAnalysis.baseClassesToModel();
+        //check class directly
+        
+        if (baseClassesToModel.contains(clz))
+            return true; 
+
+        //if not directly contained, now check parents
+        for (SootClass parent : SootUtils.getParents(clz)) {
+            if (!parent.isInterface() && baseClassesToModel.contains(parent)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     /**
      * Tranform method called on the body that will find all invoke expressions, and
@@ -63,6 +91,10 @@ public class JSAResultInjection extends BodyTransformer {
      * and replace the constant in the argument with the local.
      */
     protected void internalTransform(Body b, String phaseName, Map options)  {
+        SootMethod enclosingMethod = b.getMethod();
+        
+        boolean isVATrackedClass = shouldTrackStringValue(enclosingMethod.getDeclaringClass());
+        
         StmtBody stmtBody = (StmtBody)b;
 
         // get body's unit as a chain
@@ -78,6 +110,19 @@ public class JSAResultInjection extends BodyTransformer {
 
             if (!stmt.containsInvokeExpr()) {
                 continue;
+            }
+            
+            //add all string constants from va tracked classes, but not from other API classes
+            //because this is too aggressive
+            if (isVATrackedClass) {
+                for (Object valueBox : stmt.getUseAndDefBoxes()) {
+                    if (valueBox instanceof ValueBox) {
+                        Value value = ((ValueBox)valueBox).getValue();
+                        if (value instanceof StringConstant) 
+                            trackedStringConstants.add((StringConstant)value);
+                    }
+                }
+                    
             }
 
             InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
@@ -98,7 +143,7 @@ public class JSAResultInjection extends BodyTransformer {
                     //add an assignment of the local to the string constant
                     //right before the call
                     StringConstant sc = StringConstant.v(JSAStrings.v().getRegex(v));
-                    createdStringConstants.add(sc);
+                    trackedStringConstants.add(sc);
                     AssignStmt assignStmt = Jimple.v().newAssignStmt(arg, sc);
                     units.insertBefore(assignStmt, stmt);
 
@@ -147,7 +192,7 @@ public class JSAResultInjection extends BodyTransformer {
                             stmtBody.getLocals().add(newLocal);
                             
                             StringConstant sc = StringConstant.v(name);
-                            createdStringConstants.add(sc);
+                            trackedStringConstants.add(sc);
                             AssignStmt localAssign = Jimple.v().newAssignStmt(newLocal, sc);
                             units.insertBefore(localAssign, stmt);
                             assign.setRightOp(newLocal);

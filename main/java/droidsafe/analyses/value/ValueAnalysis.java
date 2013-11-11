@@ -8,6 +8,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.speclang.Method;
 import droidsafe.transforms.JSAResultInjection;
+import droidsafe.utils.SootUtils;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -54,13 +55,6 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
     /** Singleton for analysis */
     private static ValueAnalysis am;
-    
-    /**
-     * Sometimes the api has values that are useful, but also sometimes, if we track
-     * api generated values, we get a huge blowup, so we limit the number of values that we track here,
-     * that are generated in the api code and not in app source.
-     */
-    private static final int MAX_NUM_OF_NON_APP_VALUES_TO_TRACK = 5;
 
     /** string to represent sets of unknown values */
     public static final String UNKNOWN_VALUES_STRING = "ANYTHING";
@@ -87,11 +81,28 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
     /** The prefix that is prepended to fully qualified value analysis models */
     public static final String MODEL_PACKAGE_PREFIX = MODEL_PACKAGE + ".";
+    /** list of base classes that we will model taken from the annotations in the source code. 
+     * Can be queried before va is run or created.
+     */
+    private static Set<SootClass> baseClassesToModel;
 
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
         this.allocNodeToVAModelMap = new LinkedHashMap<Object, VAModel>();
         this.classesAndFieldsToModel = VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
+    }
+
+    /**
+     * Before VA is run, this method will all base classes that will be tracked (have at least one field 
+     * tracked by VA).
+     */
+    public static Set<SootClass> baseClassesToModel() {
+        if (baseClassesToModel == null) {
+            baseClassesToModel = 
+                VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
+        }
+
+        return baseClassesToModel;
     }
 
     /**
@@ -239,7 +250,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
             this.allocNodeToVAModelMap.put(newExpr, model);
         }
     }
- 
+
     @Override
     public void visitEntryContextAnd1CFA(SootMethod sootMethod, Edge entryEdge, Edge edgeInto) {
 
@@ -311,7 +322,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }
     }
 
-    
+
     /**
      * Handle case where type for assignment is a string
      */
@@ -319,7 +330,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         //Found string
         //System.out.println("Found String!!: " + fieldObject);
         Set<AllocNode> rhsNodes;
-        
+
         //get the string nodes the rhs expression could possibly point to
         if (assignStmt.getRightOp() instanceof StringConstant) {
             //if a direct string constant, then get the string constant node from pta
@@ -329,24 +340,20 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
             //if not a string constant, then query pta
             rhsNodes = GeoPTA.v().getPTSetEventContext(assignStmt.getRightOp(), entryEdge);
         }
-        
-        int nonAppValues = 0;
+
         for(AllocNode rhsNode : rhsNodes) {
             boolean knownValue = false;
             if(rhsNode instanceof StringConstantNode) {
                 //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
-                if (nonAppValues < MAX_NUM_OF_NON_APP_VALUES_TO_TRACK || 
-                        JSAResultInjection.createdStringConstants.contains(sc)) {
+                if (JSAResultInjection.trackedStringConstants.contains(sc)) {
                     String value = ((StringConstantNode)rhsNode).getString();
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");
                     value = value.replace("\\uxxxx", "");
                     fieldPrimVAModel.addValue(value);
                     knownValue = true;
-                    if (!JSAResultInjection.createdStringConstants.contains(sc))
-                        nonAppValues++;
                 }
             }
             if (!knownValue) {
@@ -360,7 +367,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }                           
     }
 
-    
+
     /**
      * Helper method to write to the file where we log all errors we encounter during value analysis
      */
