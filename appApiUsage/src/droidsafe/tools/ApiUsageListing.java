@@ -61,8 +61,8 @@ public class ApiUsageListing {
         };               
     }
 
-    private HashMap<SootMethod, Integer> apiAllUsage    = new HashMap<SootMethod, Integer>();
-    private HashMap<SootMethod, Integer> apiAllOverride = new HashMap<SootMethod, Integer>();
+    protected HashMap<SootMethod, Integer> apiAllUsage    = new HashMap<SootMethod, Integer>();
+    protected HashMap<SootMethod, Integer> apiAllOverride = new HashMap<SootMethod, Integer>();
     
     int jarCount = 0;
     
