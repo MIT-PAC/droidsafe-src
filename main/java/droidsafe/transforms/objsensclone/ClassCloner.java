@@ -231,7 +231,8 @@ public class ClassCloner {
             }
             
             //turn off final for ancestor methods
-            ancestorM.setModifiers(ancestorM.getModifiers() ^ Modifier.FINAL);
+            if (ancestorM.isFinal())
+                ancestorM.setModifiers(ancestorM.getModifiers() ^ Modifier.FINAL);
             
             ancestorMethodsAdded.add(ancestorM);
             
