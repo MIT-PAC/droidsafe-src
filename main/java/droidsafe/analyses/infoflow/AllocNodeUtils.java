@@ -28,57 +28,56 @@ public class AllocNodeUtils {
     }
 
     HashMap<AllocNode, Set<AllocNode>> allocNodeToReachableAllocNodes = new HashMap<AllocNode, Set<AllocNode>>();
-    
-    Set<AllocNode> reachable(AllocNode root) {
-        if (allocNodeToReachableAllocNodes.containsKey(root)) {
-            return allocNodeToReachableAllocNodes.get(root);
-        }
-        
-        Set<AllocNode> allocNodesReachable = new HashSet<AllocNode>();
-        allocNodesReachable.add(root);
-        Set<AllocNode> allocNodesToVisit = new HashSet<AllocNode>();
-        allocNodesToVisit.add(root);
-        Set<AllocNode> allocNodesVisited = new HashSet<AllocNode>();
-        while (!(allocNodesToVisit.isEmpty())) {
-            Set<AllocNode> allocNodesToVisitNewly = new HashSet<AllocNode>();
-            for (AllocNode allocNode : allocNodesToVisit) {
-                allocNodesVisited.add(allocNode);
-                final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
-                if (allocNode.getType() instanceof RefType) {
-                    for (AllocDotField allocDotField : allocNode.getFields()) {
-                        ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjects(allocNode, (SootField)allocDotField.getField())).forall(new P2SetVisitor() {
-                            public void visit(Node node) {
-                                allocNodes.add((AllocNode)node);
-                            }
-                        });
-                    }
-                } else if (allocNode.getType() instanceof ArrayType) {
-                    HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), (GeomPointsTo)Scene.v().getPointsToAnalysis());
-                    pointsToSet.add(allocNode);
-                    ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
-                        public void visit(Node node) {
-                            allocNodes.add((AllocNode)node);
-                        }
-                    });
-                }
-                allocNodesReachable.addAll(allocNodes);
-                for (AllocNode node : allocNodes) {
-                    if (!allocNodesVisited.contains(node)) {
-                        allocNodesToVisitNewly.add(node);
-                    }
-                }
-            }
-            allocNodesToVisit = allocNodesToVisitNewly;
-        }
-        allocNodeToReachableAllocNodes.put(root, allocNodesReachable);
-        return allocNodesReachable;
-    }
-    
-    Set<AllocNode> reachable(Set<AllocNode> roots) {
+
+
+    Set<AllocNode> reachable(Set<AllocNode> allocNodes) {
         HashSet<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
-        for (AllocNode root : roots) {
-            reachableAllocNodes.addAll(reachable(root));
+        for (AllocNode allocNode : allocNodes) {
+            reachableAllocNodes.addAll(reachable(allocNode));
         }
+        return reachableAllocNodes;
+    }
+
+    Set<AllocNode> reachable(AllocNode allocNode) {
+        return reachable(allocNode, new HashSet<AllocNode>());
+    }
+
+    Set<AllocNode> reachable(AllocNode allocNode, Set<AllocNode> visitedAllocNodes) {
+        visitedAllocNodes.add(allocNode);
+
+        if (allocNodeToReachableAllocNodes.containsKey(allocNode)) {
+            return allocNodeToReachableAllocNodes.get(allocNode);
+        }
+
+        Set<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
+        reachableAllocNodes.add(allocNode);
+        final Set<AllocNode> directlyReachableAllocNodes = new HashSet<AllocNode>();
+        if (allocNode.getType() instanceof RefType) {
+            for (AllocDotField allocDotField : allocNode.getFields()) {
+                ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjects(allocNode, (SootField)allocDotField.getField())).forall(new P2SetVisitor() {
+                    @Override
+                    public void visit(Node node) {
+                        directlyReachableAllocNodes.add((AllocNode)node);
+                    }
+                });
+            }
+        } else if (allocNode.getType() instanceof ArrayType) {
+            HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), (GeomPointsTo)Scene.v().getPointsToAnalysis());
+            pointsToSet.add(allocNode);
+            ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
+                @Override
+                public void visit(Node node) {
+                    directlyReachableAllocNodes.add((AllocNode)node);
+                }
+            });
+        }
+        for (AllocNode directlyReachableAllocNode : directlyReachableAllocNodes) {
+            if (!visitedAllocNodes.contains(directlyReachableAllocNode)) {
+                reachableAllocNodes.addAll(reachable(directlyReachableAllocNode, visitedAllocNodes));
+            }
+        }
+        allocNodeToReachableAllocNodes.put(allocNode, reachableAllocNodes);
+
         return reachableAllocNodes;
     }
 }
