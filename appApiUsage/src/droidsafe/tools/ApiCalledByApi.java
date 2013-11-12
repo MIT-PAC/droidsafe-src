@@ -46,6 +46,12 @@ public class ApiCalledByApi extends ApiUsageListing{
     private PrintStream printStream = System.out;
     
     private Map<SootMethod, Set<SootMethod>> callerSetMap = new HashMap<SootMethod, Set<SootMethod>>();
+    private Set<SootMethod> noCalleeSet = new HashSet<SootMethod>();
+    private Set<SootMethod> privateNoCallerSet = new HashSet<SootMethod>();
+    
+    private int privateCount = 0;
+    private int publicCount = 0;
+    private int protectedCount = 0;
     
     public ApiCalledByApi() {
         super();
@@ -55,6 +61,15 @@ public class ApiCalledByApi extends ApiUsageListing{
     public void buildCallerSetMap() {
         for (SootClass  clz: Scene.v().getClasses()) {
             for (SootMethod caller: clz.getMethods()) {
+                if (caller.isPrivate())
+                    privateCount++;
+
+                if (caller.isProtected())
+                    protectedCount++;
+
+                if (caller.isPublic())
+                    publicCount++;
+
                 // Find the list of caller
                 Set<SootMethod> calleeSet = SootUtils.getCalleeSet(caller);
                 // Foreach callee, we build a set of methods that call the callee
@@ -66,9 +81,22 @@ public class ApiCalledByApi extends ApiUsageListing{
                     Set<SootMethod> callerSet = callerSetMap.get(callee);
                     callerSet.add(caller);
                 }
+                // add to the set of methods that don't call anyone
+                if (calleeSet.size() == 0 && !caller.isPrivate()) {
+                    noCalleeSet.add(caller);
+                }
             }
         }
         
+        // find out private methods that have no caller
+        for (SootClass  clz: Scene.v().getClasses()) {
+            for (SootMethod method: clz.getMethods()) {
+                if (method.isPrivate() && !callerSetMap.containsKey(method)) {
+                    //both private and has no caller
+                    privateNoCallerSet.add(method);
+                }             
+            }
+        }
         // Now we are going through callerSetMap to list out all the keys
         // which are the callees that are called by other methods
         
@@ -92,6 +120,10 @@ public class ApiCalledByApi extends ApiUsageListing{
     
     public void printApiUsedInApi(){
        printStream.printf("======== List of API used inside API =============\n");
+       printStream.printf("public: %d,  protected: %d, private: %d, total: %d \n",
+                   publicCount, protectedCount, privateCount,
+                   (publicCount + privateCount + protectedCount));
+       
        ArrayList<String> methodList = new ArrayList<String>(callerSetMap.size());
        
        for (SootMethod method: callerSetMap.keySet()) {
@@ -118,10 +150,45 @@ public class ApiCalledByApi extends ApiUsageListing{
                logger.warn("exception {}", e);
            }
        }
+       
+       printStream.printf("======== List of unused private methods (%d) =============\n",
+               privateNoCallerSet.size());
+       
+       methodList = new ArrayList<String>(privateNoCallerSet.size());
+       for (SootMethod method: privateNoCallerSet){
+           methodList.add(method.toString());
+       }
+       Collections.sort(methodList);
+       
+       for (String methodSig: methodList) {
+           printStream.printf("%s \n", methodSig);
+       }
+       
+       printStream.printf("======== Non-private, no callee methods (%d) =============\n",
+               noCalleeSet.size());
+       
+       methodList = new ArrayList<String>(noCalleeSet.size());
+       for (SootMethod method: noCalleeSet){
+           if (!method.isPrivate())
+           methodList.add(method.toString());
+       }
+       Collections.sort(methodList);
+       
+       for (String methodSig: methodList) {
+           printStream.printf("%s \n", methodSig);
+       }
+       
     }
     
     
-    
+    /**
+     * print out public method without callees
+     * @param fileName
+     */
+    public void printPublicWithNoCallee(String fileName) {
+        
+    }
+       
     public void printCallByTree(String callbyFile){
         printCallByTree(callbyFile, false);
     }
