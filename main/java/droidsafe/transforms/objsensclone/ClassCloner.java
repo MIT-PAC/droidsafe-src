@@ -23,8 +23,10 @@ import soot.SootClass;
 import soot.SootField;
 import soot.SootFieldRef;
 import soot.SootMethod;
+import soot.SootMethodRef;
 import soot.Type;
 import soot.jimple.FieldRef;
+import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.util.Chain;
@@ -61,6 +63,8 @@ public class ClassCloner {
     public static int uniqueID = 0;
     /** appended to name cloned classes */
     public static final String CLONE_POSTFIX = "_ds_clone_";
+    /** set of methods from ancestors that we have cloned into this clone */
+    public Set<SootMethod> ancestorMethodsAdded = new HashSet<SootMethod>();
  
     /**
      * Private constructor for a specific class cloner.
@@ -117,13 +121,37 @@ public class ClassCloner {
             ancestor = ancestor.getSuperclass();
         }
         
-        
         //install the class
         Scene.v().addClass(clone);
         Scene.v().loadClass(clone.getName(), SootClass.BODIES);
         clone.setApplicationClass();  
         if (isAPI) {
             API.v().addSystemClass(clone);
+        }
+        
+        fixInvokeSpecials();
+    }
+    
+    private void fixInvokeSpecials() {
+        for (SootMethod method : clone.getMethods()) {
+            
+            Body body = method.getActiveBody();
+            StmtBody stmtBody = (StmtBody)body;
+            Chain units = stmtBody.getUnits();
+            Iterator stmtIt = units.iterator();
+
+            while (stmtIt.hasNext()) {
+                Stmt stmt = (Stmt)stmtIt.next();
+
+                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
+                    SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
+
+                    if (ancestorMethodsAdded.contains(si.getMethod())) {
+                        SootMethodRef clonedMethodRef = clone.getMethod(si.getMethod().getSubSignature()).makeRef();
+                        si.setMethodRef(clonedMethodRef);
+                    }
+                }
+            }
         }
     }
 
@@ -158,7 +186,7 @@ public class ClassCloner {
             if (foundIncompArg)
                 continue;
 
-            //if we got here all is well and we found a method that matches!
+          
             return true;
         }
 
@@ -195,11 +223,17 @@ public class ClassCloner {
             if (ancestorM.isStatic())
                 continue;
             
+         
             //check if this method already exists
             if (containsMethod(ancestorM.getSignature())) {
                 //System.out.printf("\tAlready contains method %s.\n", ancestorM);
                 continue;
             }
+            
+            //turn off final for ancestor methods
+            ancestorM.setModifiers(ancestorM.getModifiers() ^ Modifier.FINAL);
+            
+            ancestorMethodsAdded.add(ancestorM);
             
             SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
                 ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
