@@ -47,7 +47,14 @@ public class ApiUsageListing {
     public ApiUsageListing() {
         setSootOptions();
     }
-    
+
+    //We need to activate the scene in order to call getMethod
+    protected void activateSootScene(){
+        for (SootClass clz: Scene.v().getClasses()) {
+            for (SootMethod method: clz.getMethods()){
+            }
+        }
+    }
     
     public void addApiJar(String jarFile) {
         //SootUtils.loadClassesFromJar(jarFile, true, null);
