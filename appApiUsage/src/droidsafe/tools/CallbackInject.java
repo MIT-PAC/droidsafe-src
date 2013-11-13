@@ -72,35 +72,38 @@ public class CallbackInject extends ApiUsageListing {
     
 
     private String buildConstructorInvoke(String className){     
-        StringBuilder builder = new StringBuilder();
-        
         SootClass paramClass = null;
         
         try {
              paramClass = Scene.v().getSootClass(className);
         }
         catch(Exception ex){
+            logger.warn("cannot resolve class {} ", className);
             return "null";
         }
         
         
         if (!paramClass.isConcrete()) {
-            paramClass = SootUtils.getCloseConcrete(paramClass);
+            SootClass resolved = SootUtils.getCloseConcrete(paramClass);
+            logger.info("class {} is not CONRETE, try to resolve to {} ", paramClass, resolved);
+            paramClass = resolved; 
         }            
 
-        logger.warn("className {} ", className);
 
         if (paramClass == null) {
-            return null;            
+            logger.warn("className {} has no conrete implementation ", className);
+            return "null";            
         }
 
         SootMethod constructor = SootUtils.findSimpliestConstructor(paramClass);            
+        String shortName = paramClass.getShortName();
         
-        if (constructor.getParameterCount() == 0) {
-            return (String.format("new %s()", paramClass.getShortName()));
+        if (constructor.getParameterCount() == 0 && !constructor.isPrivate()) {
+            return (String.format("new %s()", shortName));
         }
         
-        return "null";
+       
+        return String.format("%s.droidsafeObtain()", shortName);
         // for more complicated one, we will 
         //return buildInvokeString(constructor);
     }
@@ -109,7 +112,7 @@ public class CallbackInject extends ApiUsageListing {
     private String buildInvokeString(SootMethod method) {
           
         List<Type> parameters = method.getParameterTypes();
-        logger.warn("parameters {}, name {} ", parameters, method.getName());
+        logger.info("name {}: parameters {} ", method.getName(), parameters);
         
         StringBuilder paramBuilder = new StringBuilder();
         for (Type paramType: parameters) {
@@ -140,7 +143,7 @@ public class CallbackInject extends ApiUsageListing {
             
             paramBuilder.append(constructorInvoke);                     
         }
-        logger.warn("paramBuilder {} ", paramBuilder.toString());
+        logger.info("paramBuilder {} ", paramBuilder.toString());
                 
         return String.format("%s(%s);", method.getName(), paramBuilder.toString());        
         
