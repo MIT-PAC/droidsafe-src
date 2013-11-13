@@ -59,7 +59,9 @@ public class CallbackInject extends ApiUsageListing {
             logger.debug("methodName *{}* ", methodName);
             try {
                 SootMethod method = Scene.v().getMethod(methodName);
-                callbackList.add(method);
+                if (!method.getName().contains("<clinit>") && 
+                    !method.getName().contains("<init>"))
+                    callbackList.add(method);
             }
             catch (Exception ex) {
                logger.warn("{}", ex); 
@@ -68,18 +70,7 @@ public class CallbackInject extends ApiUsageListing {
         }
     }
     
-    public void generateOutput(String fileName) {
-        
-        PrintStream stream;
-        try {
-            stream = new PrintStream(fileName);
-            generateOutput(stream);
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }                      
-    }
-    
+
     private String buildConstructorInvoke(String className){     
         StringBuilder builder = new StringBuilder();
         
@@ -154,6 +145,19 @@ public class CallbackInject extends ApiUsageListing {
         return String.format("%s(%s);", method.getName(), paramBuilder.toString());        
         
     }
+    
+    public void generateOutput(String fileName) {
+        
+        PrintStream stream;
+        try {
+            stream = new PrintStream(fileName);
+            generateOutput(stream);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }                      
+    }
+    
     /**
      * 
      * @param stream
