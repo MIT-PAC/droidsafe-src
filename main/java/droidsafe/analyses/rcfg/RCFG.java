@@ -40,7 +40,7 @@ import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.internal.JAssignStmt;
-import soot.jimple.spark.geom.geomPA.CgEdge;
+import soot.jimple.spark.geom.dataRep.CgEdge;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
@@ -141,6 +141,13 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
      */
     public boolean isRecOrArgForAPICall(AllocNode an) {
         return apiCallNodes.contains(an);
+    }
+    
+    /**
+     * Return all nodes that are receiver or argument for interesting api calls.
+     */
+    public Set<AllocNode> getRecOrArgsForAPICalls() {
+        return apiCallNodes;
     }
     
     /**
