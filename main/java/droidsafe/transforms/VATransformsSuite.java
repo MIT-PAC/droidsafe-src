@@ -38,11 +38,11 @@ import droidsafe.utils.SootUtils;
 
 public class VATransformsSuite implements CGVisitorEntryContext {
     public static int localID = 0;
-    
+
     private List<VATransform> transforms = Arrays.asList(
         (VATransform)new ConservativeStartActivity()
-        );
-    
+            );
+
     /**
      * 
      * @author mgordon
@@ -51,66 +51,92 @@ public class VATransformsSuite implements CGVisitorEntryContext {
     class ConservativeStartActivity implements VATransform {
         /** Logger object */
         private final Logger logger = LoggerFactory.getLogger(ConservativeStartActivity.class);
-        
+        private final String START_ACTIVITY_SIG = 
+                "<android.app.Activity: void startActivity(android.content.Intent)>";
+        private final String START_ACTIVITYFORRESULT_SIG = 
+                "<android.app.Activity: void startActivityForResult(android.content.Intent,int)>";
+        private Set<String> methodSigsToOverride;
+
         Set<Stmt> modified = new HashSet<Stmt>();
-        
+        List<SootField> activitiesFromHarness = new LinkedList<SootField>();
+
+        public ConservativeStartActivity() {
+            //get all activities
+            for (SootClass clz : Harness.v().getCreatedClasses()) {
+                if (Hierarchy.v().inheritsFromAndroidActivity(clz)) {
+                    activitiesFromHarness.add(Harness.v().getFieldForCreatedClass(clz));
+                }
+            }
+        }
+
+
+
         @Override
         public void resolvedMethodCall(SootMethod caller, SootMethod callee, InvokeExpr invoke, 
                                        Stmt stmt, Body body, Edge context) {
-            if (!"<android.app.Activity: void startActivity(android.content.Intent)>".equals(callee.getSignature()))
+            if (!methodSigsToOverride.contains(callee.getSignature()))
+                return;
+
+            //don't replace startActivityForResult in startActivity 
+            if (methodSigsToOverride.contains(caller.getSignature()))
                 return;
             
             if (modified.contains(stmt)) 
                 return;
-            
+
             modified.add(stmt);
-            
+
             SootMethod setIntentMethod = 
                     Scene.v().getMethod("<android.app.Activity: void setIntent(android.content.Intent)>");
-            
-            List<SootField> fields = new LinkedList<SootField>();
-            //get all activities
-            for (SootClass clz : Harness.v().getCreatedClasses()) {
-                if (Hierarchy.v().inheritsFromAndroidActivity(clz)) {
-                    fields.add(Harness.v().getFieldForCreatedClass(clz));
-                }
-            }
-            
-            for (SootField activityField : fields) {
+
+            for (SootField activityField : activitiesFromHarness) {
                 logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
                 //call set intent on these activities with local   
-                    
+
                 //create local and add to body
                 Local local = Jimple.v().newLocal("_setIntent_local_" + localID++, activityField.getType());
                 body.getLocals().add(local);
-                
+
                 //set field of activity to local [local = harness.activityfield]
                 //set local to field
                 Stmt localAssign = Jimple.v().newAssignStmt
                         (local, Jimple.v().newStaticFieldRef(activityField.makeRef()));
                 body.getUnits().insertBefore(localAssign, stmt);
-                
+
                 //call setActivity on local with local arg from start activity
                 List<Value> args = new LinkedList<Value>();
+                //this will work for both startActivity and startActivityForResult
                 args.add(invoke.getArg(0));
                 Stmt setIntentCall = 
                         Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
                             (local, setIntentMethod.makeRef(), args));
-                
+
                 body.getUnits().insertAfter(setIntentCall, localAssign);
                 //ignore making output events for this call we add
                 RCFG.v().ignoreInvokeForOutputEvents(setIntentCall);
             }
         }
-        
+
+
+
+        @Override
+        public Set<String> methodSignaturesToTransform() {
+            if (methodSigsToOverride == null) {
+                methodSigsToOverride = new HashSet<String>();
+                methodSigsToOverride.add(START_ACTIVITY_SIG);
+                methodSigsToOverride.add(START_ACTIVITYFORRESULT_SIG);
+            }
+            return methodSigsToOverride;
+        }
+
     }
-    
+
     public static void run() {
         VATransformsSuite v = new VATransformsSuite();
-        
+
         CallGraphTraversal.acceptEntryContext(v);
     }
-    
+
     private VATransformsSuite() {
     }
 
@@ -118,7 +144,7 @@ public class VATransformsSuite implements CGVisitorEntryContext {
     public void visitEntryContext(SootMethod method, Edge entryEdge) {
         if (method.isAbstract() || !method.isConcrete() || method.isPhantom() || SootUtils.isRuntimeStubMethod(method))
             return;
-        
+
         StmtBody stmtBody = (StmtBody)method.getActiveBody();
         Chain units = stmtBody.getUnits();
         Iterator stmtIt = units.snapshotIterator();
@@ -130,6 +156,25 @@ public class VATransformsSuite implements CGVisitorEntryContext {
             }
 
             InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+
+            //run a prepass that will check if the name of the method that is invoked
+            //matches anything we care to transform in the transforms, if not, we 
+            //should not run pta (which is expensive)
+            boolean signatureMatch = false;
+            String invokedMethodName = SootUtils.grabName(expr.getMethodRef().getSignature());
+            for (VATransform transform : transforms) {
+                for (String signature : transform.methodSignaturesToTransform()) {
+                    String currentName = SootUtils.grabName(signature);
+                    if (currentName.equals(invokedMethodName)) {
+                        signatureMatch = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!signatureMatch)
+                continue;
+
             try {
                 for (SootMethod callee : GeoPTA.v().resolveInvokeEventContext(expr, entryEdge)) {
                     for (VATransform transform : transforms) {
@@ -146,5 +191,7 @@ public class VATransformsSuite implements CGVisitorEntryContext {
     interface VATransform {
         public void resolvedMethodCall(SootMethod caller, SootMethod callee, InvokeExpr invoke, 
                                        Stmt stmt, Body body, Edge context);
+
+        public Set<String> methodSignaturesToTransform();
     }
 }
