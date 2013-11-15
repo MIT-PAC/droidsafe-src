@@ -184,16 +184,6 @@ public class Main {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
     
-    //some stats to collect, probably want a better structure for stats gathering
-    /*{
-        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        
-        AppMethodsEventContextStats.run();
-        PTASetsAvgSize.run();
-        exit(0);
-    }*/
-    
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
     
@@ -214,8 +204,7 @@ public class Main {
         }
     }
 
-    if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
+    //don't need a pta run here because jsa does not use our pta!
     
     //run jsa after we inject strings from XML values and layout
     driverMsg("Starting String Analysis...");
@@ -244,6 +233,7 @@ public class Main {
         }
     }
 
+    //need this pta run to account for object sens and jsa injection
     if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
         return DroidsafeExecutionStatus.CANCEL_STATUS;
    
@@ -261,8 +251,11 @@ public class Main {
         }
         driverMsg("Finished Value Analysis: " + vaTimer);
 
-        driverMsg("Running Value Analysis Tranform Suite.");
+        vaTimer.reset();
+        vaTimer.start();
+        driverMsg("Running Value Analysis Tranform Suite...");
         VATransformsSuite.run();
+        driverMsg("Finished Value Analysis Transforms Suite: " + vaTimer);
 
         driverMsg("Undoing String Analysis Result Injection.");
         monitor.subTask("Undoing String Analysis Result Injection.");
@@ -276,6 +269,12 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
 
+    //some stats to collect, probably want a better structure for stats gathering
+    /*{
+        PTASetsAvgSize.run();
+        exit(0);
+    }*/
+    
     driverMsg("Starting Generate RCFG...");
     StopWatch rcfgTimer = new StopWatch();
     rcfgTimer.start();
@@ -287,6 +286,9 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
+    
+   
+    
 
     // print out what modeling is required for this application
     monitor.subTask("Required Modeling");
