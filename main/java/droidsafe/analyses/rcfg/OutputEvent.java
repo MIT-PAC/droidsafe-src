@@ -39,7 +39,7 @@ public class OutputEvent implements PTAMethodInformation {
     private static final Logger logger = LoggerFactory.getLogger(OutputEvent.class);
     /** the cg edge from caller to API */
     private Edge thisEdge;
-    /** the cg context edge from previous caller to caller */
+    /** the cg context edge (the event edge) */
     private Edge contextEdge;
     /** The invoke expression call to an API method, might be null EX finalize*/
     private InvokeExpr invokeExpr;
