@@ -59,8 +59,8 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
 
             typesToConsider.add(node.getType());
             
-            for (SootClass child : SootUtils.getParents(clz)) {
-                typesToConsider.add(RefType.v(child));
+            for (SootClass parent : SootUtils.getParents(clz)) {
+                typesToConsider.add(RefType.v(parent));
             }
         }
     }
