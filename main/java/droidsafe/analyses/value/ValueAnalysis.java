@@ -40,6 +40,7 @@ import soot.RefType;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
+import soot.Type;
 import soot.Value;
 
 /** 
@@ -64,6 +65,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * The value is the Model object which simulates that object. 
      */
     private Map<Object, VAModel> allocNodeToVAModelMap; 
+    
+    private Set<Type> vaModeledTypesAndParents;
 
     private Map<SootClass, Set<SootField>> classesAndFieldsToModel;
 
@@ -90,6 +93,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     private ValueAnalysis() {
         this.allocNodeToVAModelMap = new LinkedHashMap<Object, VAModel>();
         this.classesAndFieldsToModel = VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
+        this.vaModeledTypesAndParents = new HashSet<Type>();
     }
 
     /**
@@ -170,7 +174,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }
 
         am.createObjectModels();
-
+        
         CallGraphTraversal.acceptEntryContextAnd1CFA(am);
 
         am.logResults();
@@ -187,7 +191,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
             logger.warn("Unable to close the va-results.log file.", e);
         }
     }
-
+    
     public void createObjectModels() {
         for(AllocNode allocNode : GeoPTA.v().getAllAllocNodes()) {
             Object newExpr = GeoPTA.v().getNewExpr(allocNode);
@@ -248,6 +252,10 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         }
         if(model != null) {
             this.allocNodeToVAModelMap.put(newExpr, model);
+            SootClass allocType = ((RefType)allocNode.getType()).getSootClass();
+            for (SootClass parent : SootUtils.getParents(allocType)) {
+                this.vaModeledTypesAndParents.add(RefType.v(parent));
+            }
         }
     }
 
@@ -269,6 +277,12 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                 if(leftOp instanceof InstanceFieldRef) {
                     InstanceFieldRef instanceFieldRef = (InstanceFieldRef)leftOp;
                     Value baseValue = instanceFieldRef.getBase();
+                    //use a quick type search to see if we need to look at the pta for this value
+                    //if its types is not possibly one that could be tracked, then continue;
+                    if (!vaModeledTypesAndParents.contains(baseValue.getType()))
+                        continue;
+                                        
+                    //this call here is expensive!!
                     Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetEventContext(baseValue, entryEdge);
                     for(AllocNode allocNode : baseAllocNodes) {
                         Object newExpr = GeoPTA.v().getNewExpr(allocNode);
