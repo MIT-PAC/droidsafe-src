@@ -65,6 +65,7 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.tagkit.GeneratedPhantomMethodTag;
 import soot.tagkit.LineNumberTag;
+import soot.tagkit.SourceLnNamePosTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.Type;
@@ -95,17 +96,17 @@ public class SootUtils {
     public static boolean isStringOrSimilarType(Type type) {
         if (type instanceof RefType) {
             RefType refType = (RefType)type;
-            
+
             return refType.equals(RefType.v("java.lang.String")) || 
                     refType.equals(RefType.v("java.lang.CharSequence")) ||
                     refType.equals(RefType.v("java.lang.StringBuffer")) ||
                     refType.equals(RefType.v("java.lang.StringBuilder"));
-                    
+
         }
-        
+
         return false;
     }
-    
+
     /**
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
      * the appropriate Soot type for the object. 
@@ -315,62 +316,62 @@ public class SootUtils {
             //method exactly
             SootMethodRef invokedMethod= invoke.getMethodRef();
             SootClass invokeClass = invokedMethod.declaringClass();
-                
+
             //target class must be equal
             if (!RefType.v(target.getDeclaringClass()).equals(RefType.v(invokeClass)))
                 return false;
-            
+
             //names of methods must match
             if (!target.getName().equals(invokedMethod.name()) || 
                     target.getParameterCount() != invokedMethod.parameterTypes().size())
                 return false;
-                
+
             //return type of target must be equal to of invoke
             if (!(target.getReturnType().equals(invokedMethod.returnType())))
                 return false;
-            
+
             //arg types must match
             for (int i = 0; i < target.getParameterCount(); i++)
                 if (!target.getParameterType(i).equals(invokedMethod.parameterType(i)))
                     return false;
-                       
+
             //if we get here all has passed, so we could call it.
             return true;
-            
+
         } else if (invoke instanceof InstanceInvokeExpr) {
             InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
             SootMethodRef invokedMethod = iie.getMethodRef();
             SootClass invokeClass = invokedMethod.declaringClass();
-                
+
             //target class must be subclass of invoke method class
             if (!isSubTypeOfIncluding(RefType.v(target.getDeclaringClass()), 
                 RefType.v(invokeClass)))
                 return false;
-            
+
             //names of methods must match
             if (!target.getName().equals(invokedMethod.name()) || 
                     target.getParameterCount() != invokedMethod.parameterTypes().size())
                 return false;
-                
+
             //return type of target must be subtype of invoke
             if (!isSubTypeOfIncluding(target.getReturnType(), invokedMethod.returnType()))
                 return false;
-            
+
             //arg types must match
             for (int i = 0; i < target.getParameterCount(); i++)
                 if (!isSubTypeOfIncluding(target.getParameterType(i),invokedMethod.parameterType(i)))
                     return false;
-                       
+
             //if we get here all has passed, so we could call it.
             return true;
         } else {
             logger.error("Unknown invoke type: {}", invoke);
             droidsafe.main.Main.exit(1);
         }
-        
+
         return false;
     }
-    
+
     /**
      * Given the signature of a method that may or may not concretely exist, search 
      * for the concrete call that will be resolved for the signature.
@@ -409,7 +410,7 @@ public class SootUtils {
             //found at least one argument position that differs
             if (foundCounterEx)
                 continue;
-            
+
             //if we got here all is well and we found a method that matches!
             return curr;
         }
@@ -422,7 +423,7 @@ public class SootUtils {
         //now check the parents
         return resolveMethod(clz.getSuperclass(), signature);
     }
-    
+
     /* Given the signature of a method that may or may not concretely exist, search 
      * for the concrete call that will be resolved for the signature.
      * 
@@ -435,14 +436,14 @@ public class SootUtils {
 
         if (method.hasActiveBody())
             return method;
-        
+
         SootClass clz = method.getDeclaringClass();
-        
-       //if not found, and at object can't find it
+
+        //if not found, and at object can't find it
         if (clz.getName().equals("java.lang.Object") ||
                 clz.getSuperclass() == null)
             return null;
-        
+
         SootClass parentClass = clz.getSuperclass();
 
         SootMethod parentMethod;
@@ -458,8 +459,8 @@ public class SootUtils {
         }
         return null;
     }
-    
-    
+
+
     /**
      * Matching a callback method.  We ignore return type as it is not important in callback
      * @param clz
@@ -470,23 +471,23 @@ public class SootUtils {
         if (Scene.v().containsMethod(signature)) 
             return Scene.v().getMethod(signature);
 
-         //check this class for the method with polymorpism
-         String mName = grabName(signature);
-         String[] args = grabArgs(signature);
-         String rtype = grabReturnType(signature);
+        //check this class for the method with polymorpism
+        String mName = grabName(signature);
+        String[] args = grabArgs(signature);
+        String rtype = grabReturnType(signature);
 
-         for (SootMethod curr : clz.getMethods()) {
-             if (!curr.getName().equals(mName) || curr.getParameterCount() != args.length)
-                 continue;
+        for (SootMethod curr : clz.getMethods()) {
+            if (!curr.getName().equals(mName) || curr.getParameterCount() != args.length)
+                continue;
 
-             for (int i = 0; i < args.length; i++) 
-                 if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i)))
-                     continue;
+            for (int i = 0; i < args.length; i++) 
+                if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i)))
+                    continue;
 
-             //if we got here all is well and we found a method that matches!
-             return curr;
-         }
-         return null;
+            //if we got here all is well and we found a method that matches!
+            return curr;
+        }
+        return null;
     }
 
     /**
@@ -556,7 +557,7 @@ public class SootUtils {
      * and interfaces.
      */
     public static List<SootMethod> findPossibleInheritedMethods(SootClass clz, String name, 
-                                                                String returnType, int numArgs) {
+        String returnType, int numArgs) {
         Hierarchy hierarchy = Scene.v().getActiveHierarchy();
         LinkedList<SootMethod> methods = new LinkedList<SootMethod>();
 
@@ -748,7 +749,7 @@ public class SootUtils {
                jasminClass.print(writerOut);
                writerOut.flush();
                streamOut.close();
-               */
+             */
             fileName = filePrefix + ".jimple";
             streamOut = new FileOutputStream(fileName);
             writerOut = new PrintWriter(new OutputStreamWriter(streamOut));
@@ -816,9 +817,11 @@ public class SootUtils {
             return line;
         }
 
+
         LineNumberTag tag = (LineNumberTag) stmt.getTag("LineNumberTag");
+
         if (tag != null) {
-            line = new SourceLocationTag(clz.toString(),  tag.getLineNumber());
+            line = new SourceLocationTag(clz.toString(),  tag.getLineNumber()); 
         }
 
         return line;
@@ -827,7 +830,7 @@ public class SootUtils {
     /**
      * Wrapped resolve special dispatch method that will throw a more useful exception when
      * it cannot find the method.  
-      */
+     */
     public static SootMethod resolveSpecialDispatch(SpecialInvokeExpr invoke) 
             throws CannotFindMethodException {
         SootMethod container = JimpleRelationships.v().getEnclosingMethod(invoke);
@@ -895,8 +898,8 @@ public class SootUtils {
 
         return (VirtualInvokeExpr)expr;
     }
-    
-    
+
+
     /**
      * Return all methods that the given method (in the class) overrides from all of its parent classes.
      */
@@ -916,7 +919,7 @@ public class SootUtils {
         return methods;
     }
 
-    
+
     /**
      * Return all methods that override the given method (in the given class). Search all children
      */
@@ -957,7 +960,7 @@ public class SootUtils {
         if (!hier.isClassSuperclassOfIncluding(c1, c2) &&
                 !hier.isClassSuperclassOf(c2, c1)) {
             return null;
-                }
+        }
 
         if(hier.isClassSuperclassOfIncluding(c1, c2)) {
             return c2;
@@ -1037,7 +1040,7 @@ public class SootUtils {
         logger.debug("sig {}, subsig {} ", method.getSignature(), method.getSubSignature());
 
         while (clz != null && clz.getName()!= null &&
-              !clz.getName().equals("java.lang.Object")) {
+                !clz.getName().equals("java.lang.Object")) {
 
             SootMethod parentMethod = null;
             try {
@@ -1057,7 +1060,7 @@ public class SootUtils {
 
         return null;
     }
-    
+
     /**
      * check if a method is an API overriden method
      * @param method
@@ -1111,9 +1114,9 @@ public class SootUtils {
         }
         return calleeSet;
     }
-        
 
-    
+
+
     /**
      * get a list of ancestor of a given class, in order from immediate to oldest
      */
@@ -1143,7 +1146,7 @@ public class SootUtils {
         for (SootClass sc: ancestorList) {
             try {
                 SootMethod method = 
-                    Scene.v().getMethod(String.format("<%s: %s>", sc.toString(), signature));
+                        Scene.v().getMethod(String.format("<%s: %s>", sc.toString(), signature));
                 return method;
             } catch (Exception ex) {
             }
@@ -1185,7 +1188,7 @@ public class SootUtils {
         }
         return list;
     }
-    
+
     /**
      * Look for application callbacks with a given name.  No class info is available,
      * as some of the callbacks are not specified with packagename in xml layout
@@ -1206,7 +1209,7 @@ public class SootUtils {
         }
         return matches;
     }
-    
+
     /**
      * Return true if the method has the synthetic tag or flag.
      */
@@ -1219,14 +1222,14 @@ public class SootUtils {
         //modifier for synthetic flag
         if ((method.getModifiers() & 0x1000) != 0)
             return true;
-        
+
         //bridge method?
         if ((method.getModifiers() & 0x0040) != 0)
             return true;
-        
+
         return false;
     }
-    
+
     static SootMethod stubExceptionMethod = null;
     /**
      * check if a given method is a runtime stub
@@ -1234,14 +1237,14 @@ public class SootUtils {
      * @return
      */
     public static boolean isRuntimeStubMethod(SootMethod method) {    
-        
+
         if (stubExceptionMethod == null) {
             String signature = "<java.lang.RuntimeException: void <init>(java.lang.String)>";
             stubExceptionMethod = Scene.v().getMethod(signature);
         }
         if (!method.hasActiveBody())
             return true; 
-        
+
         for (Tag t : method.getTags()) {
             if (t instanceof GeneratedPhantomMethodTag)
                 return true;
@@ -1262,7 +1265,7 @@ public class SootUtils {
         }
         return false;
     }
-    
+
     /**
      * Return true if the class has the synthetic tag or flag.
      */
@@ -1272,20 +1275,20 @@ public class SootUtils {
                 return true;
             }
         }
-        
+
         if ((clz.getModifiers() & 0x1000) != 0)
             return true;
-        
+
         return false;
     }
-    
+
     /**
      * Return true if this class was defined as an enum.
      */
     public static boolean isEnum(SootClass clz) {
         return ((clz.getModifiers() & 0x4000) != 0);
     }
-    
+
     public static SootMethod getMethodFromStmt(Stmt stmt) {
         if (stmt.containsInvokeExpr()) {
             InvokeExpr invokeExpr = stmt.getInvokeExpr();
@@ -1306,7 +1309,7 @@ public class SootUtils {
         }
         return (clist);
     }
-    
+
     /** 
      * Returns a list of all of the android system classes.
      */
@@ -1318,7 +1321,7 @@ public class SootUtils {
         }
         return (clist);
     }
-    
+
     /** 
      * Returns a string describing the specified stmt.  
      * Used for error messages 
