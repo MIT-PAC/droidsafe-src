@@ -54,7 +54,7 @@ public class VAStats {
     private static final Logger logger = LoggerFactory.getLogger(VAStats.class);
 
 
-    private Set<SootClass> reachableInvokeArgSootClasses = new HashSet<SootClass>();
+    private Set<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
 
     private static VAStats v;
 
@@ -63,7 +63,7 @@ public class VAStats {
 
     public static void run() {
         if(v==null) v = new VAStats();
-       
+
         CSVWriter writer = null; 
         try {
             writer = new CSVWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "va-stats.csv"));
@@ -78,59 +78,51 @@ public class VAStats {
             for(OutputEvent oe : rcfgNode.getOutputEvents()) {
                 InvokeExpr ie = oe.getInvokeExpr();
                 if(ie != null) {
-                    for(Value argV : ie.getArgs()){
-                        Type argT = argV.getType();
-                        if(argT instanceof RefType) {
-                            RefType argRefT = (RefType)argT;
-                            SootClass resolvedSootClass = VAStats.getFirstVAResolvedParentSootClass(argRefT.getSootClass());
-                            v.reachableInvokeArgSootClasses.add(resolvedSootClass);
+                    for(int i = 0; i < oe.getNumArgs(); ++i) {
+                        if(oe.isArgPointer(i)) {
+                            v.reachableAllocNodes.addAll(oe.getArgPTSet(i));
                         }
                     }
                 }
             }
         }
 
-        Predicate<SootClass> rcfgFilter = new Predicate<SootClass>() {
-            public boolean apply(SootClass sc) {
-                return v.reachableInvokeArgSootClasses.contains(sc);
-            }
-        };
 
-        Map<SootClass, Set<SootField>> resolvedClassesAndFields= VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
-        Map<String, Set<SootField>> reachableResolvedClassesAndFields = new HashMap<String, Set<SootField>>();
-        for(Map.Entry<SootClass, Set<SootField>> entry : Maps.filterKeys(resolvedClassesAndFields, rcfgFilter).entrySet()) {
-             reachableResolvedClassesAndFields.put(entry.getKey().getName(), entry.getValue());
+        Map<SootClass, Set<SootField>> vaResolvedClassesAndFields= VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
+        Map<String, Set<SootField>> vaResolvedClassNamesAndFields = new HashMap<String, Set<SootField>>();
+        for(Map.Entry<SootClass, Set<SootField>> entry : vaResolvedClassesAndFields.entrySet()) {
+            vaResolvedClassNamesAndFields.put(entry.getKey().getName(), entry.getValue());
         }
 
         for(Map.Entry<Object, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
             Object newExpr = entry.getKey();
             AllocNode node = GeoPTA.v().getAllocNode(newExpr);
             Type type = node.getType();
-            if(type instanceof RefType) { 
-                 SootClass sc = ((RefType)type).getSootClass();
-                 String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
-                 if(reachableResolvedClassesAndFields.containsKey(scName)) {
-                     RefVAModel refVAModel = (RefVAModel)entry.getValue();
-                     for(SootField sf : reachableResolvedClassesAndFields.get(scName)){
-                         Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(sf);
-                         Type fieldType = sf.getType();
-                         List<String> rowEntries = new ArrayList<String>();
-                         rowEntries.add(scName);
-                         rowEntries.add(sf.toString());
-                         int size;
-                         if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)){
-                             size = fieldVAModels.size();
-                         } else {
-                             if(fieldVAModels.size() == 0){
-                                 size = 0;
-                             } else {
-                                 size = ((PrimVAModel)fieldVAModels.iterator().next()).getValues().size();
-                             }
-                         }
-                         rowEntries.add(String.valueOf(size));
-                         writer.writeNext(rowEntries.toArray(new String[] {}));
-                     }
-                 }
+            if(type instanceof RefType && v.reachableAllocNodes.contains(node)) {
+                SootClass sc = ((RefType)type).getSootClass();
+                String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
+                RefVAModel refVAModel = (RefVAModel)entry.getValue();
+                if(vaResolvedClassNamesAndFields.containsKey(scName)) {
+                    for(SootField sf : vaResolvedClassNamesAndFields.get(scName)){
+                        Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(sf);
+                        Type fieldType = sf.getType();
+                        List<String> rowEntries = new ArrayList<String>();
+                        rowEntries.add(scName);
+                        rowEntries.add(sf.toString());
+                        int size;
+                        if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)){
+                            size = fieldVAModels.size();
+                        } else {
+                            if(fieldVAModels.size() == 0){
+                                size = 0;
+                            } else {
+                                size = ((PrimVAModel)fieldVAModels.iterator().next()).getValues().size();
+                            }
+                        }
+                        rowEntries.add(String.valueOf(size));
+                        writer.writeNext(rowEntries.toArray(new String[] {}));
+                    }
+                }
             }
         }
         try {
