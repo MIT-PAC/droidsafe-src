@@ -103,23 +103,47 @@ public class VAStats {
                 String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
                 RefVAModel refVAModel = (RefVAModel)entry.getValue();
                 if(vaResolvedClassNamesAndFields.containsKey(scName)) {
+                    // we claim that we don't know the sizes of any field sets if the containing model got invalidated
+                    boolean containingModelInvalidated = refVAModel.invalidated();
                     for(SootField sf : vaResolvedClassNamesAndFields.get(scName)){
-                        Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(sf);
-                        Type fieldType = sf.getType();
+                        // First two columns of stats - class name and field name
                         List<String> rowEntries = new ArrayList<String>();
                         rowEntries.add(scName);
                         rowEntries.add(sf.toString());
-                        int size;
-                        if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)){
-                            size = fieldVAModels.size();
-                        } else {
-                            if(fieldVAModels.size() == 0){
-                                size = 0;
+                        // Third column is the number of resolved values. -1 means we couldn't figure out the number
+                        // because either the field is a string and could be ANYTHING or got invalidated and means
+                        // we write UNKNOWN in this column
+                        int size = -1;
+                        // we claim that we don't know the sizes of any field sets if the containing model got
+                        // invalidated
+                        if(!containingModelInvalidated) {
+                            // Get the VA models for the field
+                            Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(sf);
+                            if(fieldVAModels.size() > 0) {
+                                // If the field is a primitive or string-like, get the size of the set of values itself
+                                // Otherwise, just get the number of other objects the field could point too
+                                Type fieldType = sf.getType();
+                                if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)){
+                                    size = fieldVAModels.size();
+                                } else {
+                                    PrimVAModel primVAModel = (PrimVAModel)fieldVAModels.iterator().next();
+                                    // if the primitive field is invalidated, we can't trust the number of values
+                                    if(!primVAModel.invalidated()) {
+                                        Set<Object> values = primVAModel.getValues();
+                                        // if the set of values could include ANYTHING, leave size as -1
+                                        if(values.contains("ANYTHING")) size = values.size();
+                                    }
+                                }
                             } else {
-                                size = ((PrimVAModel)fieldVAModels.iterator().next()).getValues().size();
+                                size = 0;
                             }
                         }
-                        rowEntries.add(String.valueOf(size));
+                        // if size is still -1, then we couldn't figure out the number of resolved values
+                        if(size == -1)
+                            rowEntries.add("UNKNOWN");
+                        else
+                            rowEntries.add(String.valueOf(size));
+                        
                         writer.writeNext(rowEntries.toArray(new String[] {}));
                     }
                 }
