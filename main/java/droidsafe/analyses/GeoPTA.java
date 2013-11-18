@@ -55,14 +55,14 @@ import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.dataRep.CallsiteContextVar;
 import soot.jimple.spark.geom.dataRep.IntervalContextVar;
 import soot.jimple.spark.geom.geomE.FullSensitiveNode;
-import soot.jimple.spark.geom.geomPA.CgEdge;
+import soot.jimple.spark.geom.dataRep.CgEdge;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.geom.geomPA.GeomQueries;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
 import soot.jimple.spark.geom.helper.ContextTranslator;
-import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
-import soot.jimple.spark.geom.helper.Obj_full_extractor;
-import soot.jimple.spark.geom.helper.PtSensVisitor;
+import soot.jimple.spark.geom.dataMgr.Obj_1cfa_extractor;
+import soot.jimple.spark.geom.dataMgr.Obj_full_extractor;
+import soot.jimple.spark.geom.dataMgr.PtSensVisitor;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ArrayElement;
@@ -84,6 +84,7 @@ import soot.jimple.spark.sets.P2SetVisitor;
 import soot.jimple.spark.sets.PointsToSetInternal;
 
 import com.google.common.collect.HashBiMap;
+
 import org.apache.commons.io.*;
 import org.apache.commons.io.output.NullOutputStream;
 
@@ -99,6 +100,9 @@ import droidsafe.utils.Utils;
  * Configure and run the Soot Spark PTA.  This class assumes the soot 
  * class path has been set, the appropriate classes have been loaded, 
  * and the entry points have been defined.
+ * 
+ * The option eventcontext currently sets the event context queries to use event context.
+ * Otherwise they are context insensitive.
  * 
  * @author mgordon
  *
@@ -121,11 +125,16 @@ public class GeoPTA {
 
     public static final Set<AllocNode> EMPTY_PTA_SET = Collections.<AllocNode>emptySet();
 
+    private Map<ValueAndContext, Set<AllocNode>> eventEntryQueryCache;
+    public int totalECQueries = 0;
+    public int cachedECQueries = 0;
+    
     /**
      * Reset the PTA and get it ready for another run.
      */
     public static void release() {
         v = null;
+
         Scene.v().releaseCallGraph();
         Scene.v().releasePointsToAnalysis();
 
@@ -149,6 +158,7 @@ public class GeoPTA {
      * Runs Soot's geometric PTA and resolve the context.
      */
     public static void run() {
+        
         //don't print crap to screen!
         G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
@@ -166,6 +176,8 @@ public class GeoPTA {
      * Private constructor.
      */
     private GeoPTA() {
+        eventEntryQueryCache = new HashMap<ValueAndContext, Set<AllocNode>>();
+        
         ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
         
         //update the underlying soot call graph to prune unrealizeable edges
@@ -174,7 +186,7 @@ public class GeoPTA {
         //cache the call graph
         callGraph = Scene.v().getCallGraph();
         
-        queries = new GeomQueries(ptsProvider);
+        queries = new GeomQueries(ptsProvider, 20, 6);
         objFull = new Obj_full_extractor();
         //ContextTranslator.build_1cfa_map(ptsProvider);
 
@@ -382,14 +394,27 @@ public class GeoPTA {
         }
     }
     
+    
     /**
      * Given a value that is a pointer, and a context edge from the call graph, 
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
     public Set<AllocNode> getPTSetEventContext(Value val, Edge context) {
-      return getPTSetContextIns(val);
-      /*
+        if (!Config.v().eventContextPTA)
+            return getPTSetContextIns(val);
+        
+        totalECQueries++;
+        
+        ValueAndContext vandc = new ValueAndContext(val, context);
+        
+        //check the cache first
+        if (eventEntryQueryCache.containsKey(vandc)) {
+            cachedECQueries++;
+            return eventEntryQueryCache.get(vandc);
+        }
+        
+     
         if (val instanceof Local) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
             LocalVarNode vn = ptsProvider.findLocalVarNode((Local)val);
@@ -401,10 +426,11 @@ public class GeoPTA {
             } else {
                 return getPTSetContextIns(val);
             }
-            for ( IntervalContextVar icv : objFull.icvList ) {
+            for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
             }
             
+            eventEntryQueryCache.put(vandc, allocNodes);
             return allocNodes;
         } else if (val instanceof InstanceFieldRef && ((InstanceFieldRef)val).getBase() instanceof Local) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
@@ -420,10 +446,10 @@ public class GeoPTA {
             } else {
                 return getPTSetContextIns(val);
             }
-            for ( IntervalContextVar icv : objFull.icvList ) {
+            for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
             }
-            
+            eventEntryQueryCache.put(vandc, allocNodes);
             return allocNodes;
         } else if (val instanceof ArrayRef && ((ArrayRef)val).getBase() instanceof Local) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
@@ -439,16 +465,15 @@ public class GeoPTA {
             } else {
                 return getPTSetContextIns(val);
             }
-            for ( IntervalContextVar icv : objFull.icvList ) {
+            for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
             }
-            
+            eventEntryQueryCache.put(vandc, allocNodes);
             return allocNodes;
         }
         else {
             return getPTSetContextIns(val);
         }
-        */
     }
     
     /**
@@ -1152,4 +1177,43 @@ public class GeoPTA {
         return SootUtils.getSourceLocation(stmt, 
             JimpleRelationships.v().getEnclosingMethod(stmt).getDeclaringClass()); 
     }
+    
+    class ValueAndContext {
+        Edge edge;
+        Value value;
+        
+        public ValueAndContext(Value v, Edge e) {
+            this.edge = e;
+            this.value = v;
+        }
+        
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+
+            result = prime * result + ((edge == null) ? 0 : edge.hashCode());
+            result = prime * result + ((value == null) ? 0 : value.hashCode());
+            return result;
+        }
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null) return false;
+            if (getClass() != obj.getClass()) return false;
+            ValueAndContext other = (ValueAndContext) obj;
+          
+            if (edge == null) {
+                if (other.edge != null) return false;
+            } else if (!edge.equals(other.edge)) return false;
+            if (value == null) {
+                if (other.value != null) return false;
+            } else if (!value.equals(other.value)) return false;
+            return true;
+        }
+  
+        
+    }
 }
+
+
