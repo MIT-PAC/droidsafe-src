@@ -264,9 +264,7 @@ public class DroidsafePluginUtilities {
       if (matcher.matches()) {
         matched = true;
         if (methodArg.isReceiver()) {
-          offset = matcher.start(3);
-          length = matcher.end(3) - offset + 1;
-          region = new Region(offset, length);
+          region = new Region(offset, document.getLineLength(startLine));
         } else {
           int argIndex = methodArg.getArgumentIndex();
           int start = matcher.start(4);
@@ -341,15 +339,16 @@ public class DroidsafePluginUtilities {
     String str = document.get(offset, length);
     MethodModel method = methodArg.getMethod();
     String methodName = method.getMethodName();
-    String regex = (method.getReceiverType() != null) ?
-        "(.*\\s)?(\\S+)\\.\\s*" + methodName + "\\s*\\(.*" :
-          "(^|(.*)?\\W+)" + methodName + "\\s*\\((.*)";
+    boolean hasReceiver = method.getReceiverType() != null;
+    String regex = (hasReceiver) ?
+        "(.*\\s)?(\\S+)\\.\\s*" + methodName + "\\s*\\((.*)" :
+          "(^|(.*)?(\\W+)" + methodName + "\\s*\\((.*)";
     Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
     Matcher matcher = pattern.matcher(str);
     IRegion region = null;
     if (matcher.matches()) {
       region = (methodArg.isReceiver()) ?
-          getRegionForReceiver(str, offset, matcher.end(2)) :
+          getRegionForReceiver(str, offset, matcher.end(2) - 1) :
             getRegionForArgument(str, offset, matcher.start(3), methodArg.getArgumentIndex()); 
     }
     return region; 
@@ -362,7 +361,7 @@ public class DroidsafePluginUtilities {
     int curPos = end;
     int levels = 0;
     int quotes = 0;
-    while (curPos >= 0) {
+    while (curPos > 0) {
       char ch = input.charAt(curPos--);
       switch (ch) {
         case '(':
@@ -382,9 +381,10 @@ public class DroidsafePluginUtilities {
             quotes--;
           else
             quotes++;
+        case '\t':
         case ' ':
           if (quotes == 0 && levels == 0) {
-            curPos =+ 2;
+            curPos += 2;
             int length = end - curPos + 1;
             return new Region(offset + curPos, length);
           }

@@ -29,6 +29,7 @@ import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.value.VAStats;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
@@ -289,6 +290,18 @@ public class Main {
     
    
     
+
+    driverMsg("Computing Value Analysis Stats");
+    monitor.subTask("Value Analysis Stats");
+    StopWatch vaStatsTimer = new StopWatch();
+    vaStatsTimer.start();
+    VAStats.run();
+    vaStatsTimer.stop();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+        return DroidsafeExecutionStatus.CANCEL_STATUS;
+    }
+    driverMsg("Finished Computing Value Analysis Stats: " + vaStatsTimer);
 
     // print out what modeling is required for this application
     monitor.subTask("Required Modeling");
