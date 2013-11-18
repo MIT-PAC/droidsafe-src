@@ -49,7 +49,7 @@ public class PTASetsAvgSize implements CGVisitorEntryAnd1CFA {
         int eventContextSetSize = GeoPTA.v().getPTSetEventContext(v, entryEdge).size();
         int oneCfaSetSize = GeoPTA.v().getPTSet1CFA(v, edgeInto).size();
         
-       System.out.printf("%s: insens = %s, event = %s\n", v, insensSetSize, eventContextSetSize);
+       //System.out.printf("%s: insens = %s, event = %s\n", v, insensSetSize, eventContextSetSize);
         
         insensTotalSetSize += insensSetSize;
         eventContextTotalSetSize += eventContextSetSize;

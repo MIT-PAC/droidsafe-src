@@ -37,6 +37,8 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
     private Map<AllocNode,Set<Edge>> nodeToCalls;
     /** Singleton object */
     private static MethodCallsOnAlloc v;
+    /** precalculate the types of objects we are tracking so we can reduce number of pta queries by 
+     * a type based filter */
     private Set<Type> typesToConsider;
 
     /**

@@ -21,7 +21,7 @@ import soot.Scene;
 import soot.SootMethod;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.SpecialInvokeExpr;
-import soot.jimple.spark.geom.geomPA.CgEdge;
+import soot.jimple.spark.geom.dataRep.CgEdge;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
