@@ -287,21 +287,20 @@ public class Main {
     if (monitor.isCanceled()) {
       return DroidsafeExecutionStatus.CANCEL_STATUS;
     }
-    
-   
-    
 
-    driverMsg("Computing Value Analysis Stats");
-    monitor.subTask("Value Analysis Stats");
-    StopWatch vaStatsTimer = new StopWatch();
-    vaStatsTimer.start();
-    VAStats.run();
-    vaStatsTimer.stop();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-        return DroidsafeExecutionStatus.CANCEL_STATUS;
+    if (Config.v().computeVAStats) {
+        driverMsg("Computing Value Analysis Stats");
+        monitor.subTask("Value Analysis Stats");
+        StopWatch vaStatsTimer = new StopWatch();
+        vaStatsTimer.start();
+        VAStats.run();
+        vaStatsTimer.stop();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        driverMsg("Finished Computing Value Analysis Stats: " + vaStatsTimer);
     }
-    driverMsg("Finished Computing Value Analysis Stats: " + vaStatsTimer);
 
     // print out what modeling is required for this application
     monitor.subTask("Required Modeling");

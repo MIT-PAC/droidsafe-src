@@ -106,6 +106,9 @@ public class Config {
   /** if true, run value analysis */
   public boolean runValueAnalysis = true;
   
+  /** if true, compute value analysis result stats */
+  public boolean computeVAStats = false;
+
   /** if true, use the small manual set of android classes for the api model, for a fast run. */
   public boolean useManualModeling = false;
 
@@ -206,6 +209,10 @@ public class Config {
             new Option("nova", "Do not run value analysis.");
     options.addOption(noVA);
 
+    Option vaStats =
+            new Option("vastats", "Calculate VA stats.");
+    options.addOption(vaStats);
+
     Option noObjSens =
             new Option("noobjsens", "Do not add object sensitivity to points to analysis.");
     options.addOption(noObjSens);
@@ -294,7 +301,10 @@ public class Config {
     
     if (cmd.hasOption("nova"))
         this.runValueAnalysis = false;
-    
+
+    if (cmd.hasOption("vastats"))
+        this.computeVAStats = true;
+
     if (cmd.hasOption("noobjsens"))
         this.addObjectSensitivity = false;
     
