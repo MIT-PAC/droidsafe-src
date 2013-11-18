@@ -77,6 +77,8 @@ public class Config {
   public String[] infoFlowDotMethods;
   /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
   public boolean infoFlowTrackAll = false;
+  /** if true, use event context, otherwise, use insensitive result */
+  public boolean eventContextPTA = false;
 
   /**
    * If true, classes loaded from android.jar will be treated as application classes and analysis
@@ -217,6 +219,9 @@ public class Config {
 
     Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
     options.addOption(pta);
+    
+    Option eventContext = new Option("eventcontext", "Run analysis with Event Context.");
+    options.addOption(eventContext);
 
     Option callgraph = new Option("callgraph", "Output .dot callgraph file ");
     options.addOption(callgraph);
@@ -322,6 +327,9 @@ public class Config {
     }
 
     if (cmd.hasOption("ptadump")) this.dumpPta = true;
+    
+    if (cmd.hasOption("eventcontext"))
+        this.eventContextPTA = true;
 
     if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
 
