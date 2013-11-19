@@ -27,6 +27,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,7 +41,7 @@ import soot.RefType;
 import soot.SootClass;
 
 import soot.SootField;
-
+import soot.SootMethod;
 import soot.Type;
 
 import soot.Value;
@@ -53,14 +55,21 @@ public class VAStats {
     /** Generic logger */
     private static final Logger logger = LoggerFactory.getLogger(VAStats.class);
 
-
+    // all lrelevant 
     private Set<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
+    
+    // classes and fields resolved by value analysis
+    private Map<String, Set<SootField>> vaResolvedClassNamesAndFields = new HashMap<String, Set<SootField>>();
 
+    // methods for which an allocNode is a receiver or an argument are marked as relevant
+    private Map<AllocNode, Set<SootMethod>> allocNodeToRelevantMethodsMap = new HashMap<AllocNode, Set<SootMethod>>();
+
+    // singleton
     private static VAStats v;
 
     // private constructor to enforce singleton pattern
     private VAStats() {}
-
+    
     public static void run() {
         if(v==null) v = new VAStats();
 
@@ -72,45 +81,67 @@ public class VAStats {
             System.exit(1);
         }
 
+        Map<SootClass, Set<SootField>> vaResolvedClassesAndFields= VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
+        for(Map.Entry<SootClass, Set<SootField>> entry : vaResolvedClassesAndFields.entrySet()) {
+            v.vaResolvedClassNamesAndFields.put(entry.getKey().getName(), entry.getValue());
+        }
+
         // Walks through all the arguments of all output events and gathers a set of sootclasses of the arguments
         // From a VA stats standpoint, only the set sizes of fields of models of these sootclasses matter
         for(RCFGNode rcfgNode : RCFG.v().getNodes()) {
             for(OutputEvent oe : rcfgNode.getOutputEvents()) {
                 InvokeExpr ie = oe.getInvokeExpr();
+                SootMethod sm = ie.getMethod();
                 if(ie != null) {
+                    if(oe.hasReceiver()) {
+                        // process receiver allocNodes
+                        Set<AllocNode> receiverPTSet = oe.getReceiverPTSet();
+                        for(AllocNode allocNode : receiverPTSet) {
+                            v.markAllocNodeAsReachable(allocNode);
+                            v.markMethodAsRelevant(allocNode, sm);
+                        }
+                    }
+                    // process argument allocNodes
                     for(int i = 0; i < oe.getNumArgs(); ++i) {
                         if(oe.isArgPointer(i)) {
-                            v.reachableAllocNodes.addAll(oe.getArgPTSet(i));
+                            Set<AllocNode> argPTSet = oe.getArgPTSet(i);
+                            for(AllocNode allocNode : argPTSet) {
+                                v.markAllocNodeAsReachable(allocNode);
+                                v.markMethodAsRelevant(allocNode, sm);
+                            }
                         }
                     }
                 }
             }
         }
 
-
-        Map<SootClass, Set<SootField>> vaResolvedClassesAndFields= VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
-        Map<String, Set<SootField>> vaResolvedClassNamesAndFields = new HashMap<String, Set<SootField>>();
-        for(Map.Entry<SootClass, Set<SootField>> entry : vaResolvedClassesAndFields.entrySet()) {
-            vaResolvedClassNamesAndFields.put(entry.getKey().getName(), entry.getValue());
-        }
+        // write out headers for columns
+        writer.writeNext(new String[] {"class", "field", "size", "relevant methods"});
 
         for(Map.Entry<Object, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
             Object newExpr = entry.getKey();
             AllocNode node = GeoPTA.v().getAllocNode(newExpr);
             Type type = node.getType();
+            // we only care about reachable nodes
             if(type instanceof RefType && v.reachableAllocNodes.contains(node)) {
+
+                // get soot class name without the ds clone suffix
                 SootClass sc = ((RefType)type).getSootClass();
                 String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
+
                 RefVAModel refVAModel = (RefVAModel)entry.getValue();
-                if(vaResolvedClassNamesAndFields.containsKey(scName)) {
+
+                if(v.vaResolvedClassNamesAndFields.containsKey(scName)) {
                     // we claim that we don't know the sizes of any field sets if the containing model got invalidated
                     boolean containingModelInvalidated = refVAModel.invalidated();
-                    for(SootField sf : vaResolvedClassNamesAndFields.get(scName)){
-                        // First two columns of stats - class name and field name
+                    for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
+
+                        // 1st & 2nd columns - class name and field name
                         List<String> rowEntries = new ArrayList<String>();
                         rowEntries.add(scName);
                         rowEntries.add(sf.toString());
-                        // Third column is the number of resolved values. -1 means we couldn't figure out the number
+
+                        // 3rd column -  size of the resolved value set. -1 means we couldn't figure out the number
                         // because either the field is a string and could be ANYTHING or got invalidated and means
                         // we write UNKNOWN in this column
                         int size = -1;
@@ -131,19 +162,23 @@ public class VAStats {
                                     if(!primVAModel.invalidated()) {
                                         Set<Object> values = primVAModel.getValues();
                                         // if the set of values could include ANYTHING, leave size as -1
-                                        if(values.contains("ANYTHING")) size = values.size();
+                                        if(!values.contains("ANYTHING")) size = values.size();
                                     }
                                 }
                             } else {
                                 size = 0;
                             }
-                        }
+                        }               
                         // if size is still -1, then we couldn't figure out the number of resolved values
                         if(size == -1)
                             rowEntries.add("UNKNOWN");
                         else
                             rowEntries.add(String.valueOf(size));
-                        
+               
+                        // 4th column - relevant methods for the node
+                        rowEntries.add(v.getRelevantMethods(node));
+         
+                        // write out all columns
                         writer.writeNext(rowEntries.toArray(new String[] {}));
                     }
                 }
@@ -154,6 +189,20 @@ public class VAStats {
         } catch(IOException ie) {
             logger.warn("Unable to close va-stats.log: {}", ie);
         }
+    }
+
+    /**
+     * @return Concatinated string of 'relevant' methods, methods for which the object is a receiver or an argument. 
+     *         We record these as another column in the csv file
+     */
+    private String getRelevantMethods(AllocNode node) { 
+        List<String> relevantMethodNames = new ArrayList<String>();
+        if(allocNodeToRelevantMethodsMap.containsKey(node)) {
+            for(SootMethod relevantMethod : v.allocNodeToRelevantMethodsMap.get(node)) {
+                relevantMethodNames.add(relevantMethod.toString());
+            }
+        }
+        return StringUtils.join(relevantMethodNames.toArray(), ";");
     }
 
     private static SootClass getFirstVAResolvedParentSootClass(SootClass sootClass) {
@@ -167,4 +216,39 @@ public class VAStats {
         }
         return sootClass;
     }
+
+    
+    /**
+     * Helper method that records a soot method as being reachable with respect to a particular allocNode
+     */
+    private void markMethodAsRelevant(AllocNode allocNode, SootMethod sootMethod) {
+        if(!v.allocNodeToRelevantMethodsMap.containsKey(allocNode)) {
+             v.allocNodeToRelevantMethodsMap.put(allocNode, new HashSet<SootMethod>());
+        }
+        v.allocNodeToRelevantMethodsMap.get(allocNode).add(sootMethod);
+    }
+
+    /**
+     * Marks the allocNode and any allocNodes that could be assigned ot its VA-resolved fields as reachable.
+     * These are the allocNodes for which we want to dump specs about
+     */ 
+    private void markAllocNodeAsReachable(AllocNode allocNode) {
+        v.reachableAllocNodes.add(allocNode);
+
+        Type type = allocNode.getType();
+
+        if(type instanceof RefType) {
+            SootClass sc = ((RefType)type).getSootClass();
+            String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
+            if(v.vaResolvedClassNamesAndFields.containsKey(scName)) {
+                for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
+                    Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(allocNode, sf);
+                    for(AllocNode an : allocNodes) {
+                        markAllocNodeAsReachable(an);
+                    }
+                }
+            }
+        }
+    }
+
 }
