@@ -2,22 +2,23 @@ package droidsafe.transforms.objsensclone;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
-
 import droidsafe.android.system.API;
+import droidsafe.utils.SootUtils;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
-
 import soot.jimple.AssignStmt;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
@@ -26,21 +27,13 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-
 import soot.Local;
-
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootMethod;
-
 import soot.SootMethodRef;
-
 import soot.util.Chain;
-
 import soot.ValueBox;
 
 /**
@@ -60,7 +53,7 @@ public class ObjectSensitivityCloner {
 
     /** list of classes resolved by VA, some of which should be cloned */
     public static final Set<SootClass> VA_RESOLVED_CLASSES = 
-         VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
+            VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
 
     /** list of class names that should not be cloned */
     public static final Set<String> CLASSES_TO_NOT_CLONE = 
@@ -69,28 +62,21 @@ public class ObjectSensitivityCloner {
                 "java.lang.CharSequence", 
                     "android.app.Activity"));
 
-    
-    
-
-    /**
-     * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
-     * new expression.
-     */
-    public static void run() {
-        int clonedClasses = 0;
-
+    private static AllocGraphNode[] buildAllocationGraph() {
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through
+        Map<SootClass, AllocGraphNode> allocations = new HashMap<SootClass,AllocGraphNode>();
         SootMethod[] methods = GeoPTA.v().getAllReachableMethods().toArray(new SootMethod[0]);
-        Arrays.sort(methods, new ToStringComparator());
-            
+
         for (SootMethod method : methods) {
-               
+
             //if (API.v().isSystemMethod(method))
             //    continue;
 
             if (method.isAbstract() || !method.isConcrete())
                 continue;
+
+            SootClass enclosingClass = method.getDeclaringClass();
 
             Body body = method.getActiveBody();
             StmtBody stmtBody = (StmtBody)body;
@@ -102,59 +88,158 @@ public class ObjectSensitivityCloner {
 
                 if (stmt instanceof AssignStmt) {
                     AssignStmt assign = (AssignStmt) stmt;
-                    if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
-                        NewExpr oldNewExpr = (NewExpr) assign.getRightOp();
-                        SootClass base = oldNewExpr.getBaseType().getSootClass();
-                        String baseClassName = base.getName();
-                        //currently we are cloning any va tracked class, and 
-                        //container classes we have mod'ed in user code
-                        if ((VA_RESOLVED_CLASSES.contains(base) ||
-                                (API.v().isContainerClass(baseClassName) && !API.v().isSystemMethod(method)))
-                                && 
-                                !CLASSES_TO_NOT_CLONE.contains(baseClassName)) {
-                            logger.info("Found new expr to replace and clone class: {} {}\n",
-                                method, assign);
+                    if (assign.getRightOp() instanceof NewExpr) {
+                        NewExpr newExpr = (NewExpr)assign.getRightOp();
+                        SootClass newClass = newExpr.getBaseType().getSootClass();
+                        //is exception?
+                        if (!SootUtils.isSubTypeOfIncluding(RefType.v(newClass), RefType.v("java.lang.Throwable"))) {
+                            if (!allocations.containsKey(newClass))
+                                allocations.put(newClass, new AllocGraphNode(newClass));
 
-                            //now change the constructor call after find the appropriate call to change
-                            try {
-                                SpecialInvokeExpr special = findConstructorCall(method,
-                                    assign);
+                            if (!allocations.containsKey(enclosingClass))
+                                allocations.put(enclosingClass, new AllocGraphNode(enclosingClass));
 
-                                if (special != null) {
-                                    //found an appropriate constructor call
-
-                                    //clone class and install it as an new API class
-                                    SootClass cloned = 
-                                            ClassCloner.cloneClass(oldNewExpr.getBaseType().getSootClass(), true);
-
-                                    SootMethodRef origMethodRef = special.getMethodRef();
-
-                                    //replace old constructor call with call to cloned class
-                                    special.setMethodRef(Scene.v().makeMethodRef(cloned, 
-                                        origMethodRef.name(), 
-                                        origMethodRef.parameterTypes(), 
-                                        origMethodRef.returnType(), 
-                                        origMethodRef.isStatic()));
-
-                                    //replace new expression with new expression of cloned class
-                                    NewExpr newNewExpr = Jimple.v().newNewExpr(RefType.v(cloned));
-                                    assign.setRightOp(newNewExpr);
-
-                                    clonedClasses++;
-                                } else {
-                                    throw new Exception("Special Invoke Not Found!");
-                                }
-                            } catch (Exception e) {
-                                logger.error("Error processing constructor call after modifying new expr: {} in {}", 
-                                    stmt, method, e);
-                            }
-
+                            AllocGraphNode enclosingNode = allocations.get(enclosingClass);
+                            AllocGraphNode allocNode = allocations.get(newClass);
+                            allocNode.in.add(enclosingClass);
+                            enclosingNode.out.add(newClass);
                         }
                     }
                 }
             }
         }
 
+        AllocGraphNode[] sorted = allocations.values().toArray(new AllocGraphNode[0]);
+        Arrays.sort(sorted);
+
+       /*for (AllocGraphNode node : sorted) {
+            System.out.printf("->%d  %d-> %s\n", node.in.size(), 
+                node.out.size(), node.myClz);
+        }*/
+
+        return sorted;
+    }
+
+    static class AllocGraphNode implements Comparable<AllocGraphNode> {
+        SootClass myClz;
+        List<SootClass> in;
+        List<SootClass> out;
+
+        AllocGraphNode(SootClass clz) {
+            myClz = clz;
+            in = new LinkedList<SootClass>();
+            out = new LinkedList<SootClass>();
+        }
+
+        @Override
+        public int compareTo(AllocGraphNode o) {
+            // TODO Auto-generated method stub
+            return Integer.compare(o.in.size(), this.in.size());
+        }
+    }
+
+    /**
+     * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
+     * new expression.
+     */
+    public static void run() {
+        int clonedClasses = 0;
+
+        AllocGraphNode[] sortedNodes = buildAllocationGraph();
+
+        //we want to keep a consistent numbering across runs of droidsafe for clones
+        //so we sort the classes list we go through
+        SootMethod[] methods = GeoPTA.v().getAllReachableMethods().toArray(new SootMethod[0]);
+        Arrays.sort(methods, new ToStringComparator());
+
+        int i = -1;
+        
+        for (AllocGraphNode currentAllocNode : sortedNodes) {
+            i++;
+            SootClass currentClass = currentAllocNode.myClz;
+            
+            if (i > 20 && 
+                    !(VA_RESOLVED_CLASSES.contains(currentClass) ||
+                    (API.v().isContainerClass(currentClass.getName()))))
+                continue;
+            
+            for (SootMethod method : methods) {
+
+                //if (API.v().isSystemMethod(method))
+                //    continue;
+
+                if (method.isAbstract() || !method.isConcrete())
+                    continue;
+
+                Body body = method.getActiveBody();
+                StmtBody stmtBody = (StmtBody)body;
+                Chain units = stmtBody.getUnits();
+                Iterator stmtIt = units.snapshotIterator();
+
+                while (stmtIt.hasNext()) {
+                    Stmt stmt = (Stmt)stmtIt.next();
+
+                    if (stmt instanceof AssignStmt) {
+                        AssignStmt assign = (AssignStmt) stmt;
+                        if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
+                            NewExpr oldNewExpr = (NewExpr) assign.getRightOp();
+                            SootClass base = oldNewExpr.getBaseType().getSootClass();
+                            String baseClassName = base.getName();
+                            
+                            if (!currentClass.equals(base)) 
+                                continue;
+                            
+                            //currently we are cloning any va tracked class, and 
+                            //container classes we have mod'ed in user code
+                            /*
+                            if ((VA_RESOLVED_CLASSES.contains(base) ||
+                                    (API.v().isContainerClass(baseClassName) && !API.v().isSystemMethod(method)))
+                                    && 
+                                    !CLASSES_TO_NOT_CLONE.contains(baseClassName)) {
+                                    */
+                                logger.info("Found new expr to replace and clone class: {} {}\n",
+                                    method, assign);
+
+                                //now change the constructor call after find the appropriate call to change
+                                try {
+                                    SpecialInvokeExpr special = findConstructorCall(method,
+                                        assign);
+
+                                    if (special != null) {
+                                        //found an appropriate constructor call
+
+                                        //clone class and install it as an new API class
+                                        SootClass cloned = 
+                                                ClassCloner.cloneClass(oldNewExpr.getBaseType().getSootClass(), true);
+
+                                        SootMethodRef origMethodRef = special.getMethodRef();
+
+                                        //replace old constructor call with call to cloned class
+                                        special.setMethodRef(Scene.v().makeMethodRef(cloned, 
+                                            origMethodRef.name(), 
+                                            origMethodRef.parameterTypes(), 
+                                            origMethodRef.returnType(), 
+                                            origMethodRef.isStatic()));
+
+                                        //replace new expression with new expression of cloned class
+                                        NewExpr newNewExpr = Jimple.v().newNewExpr(RefType.v(cloned));
+                                        assign.setRightOp(newNewExpr);
+
+                                        clonedClasses++;
+                                    } else {
+                                        throw new Exception("Special Invoke Not Found!");
+                                    }
+                                } catch (Exception e) {
+                                    logger.error("Error processing constructor call after modifying new expr: {} in {}", 
+                                        stmt, method, e);
+                                }
+
+                            }
+                        }
+                    }
+                }
+            /*}*/
+        }
         System.out.printf("Finished cloning: added %d classes.\n", clonedClasses);
     }
 
@@ -206,54 +291,6 @@ public class ObjectSensitivityCloner {
         return null;
     }
 
-    /**
-     * This call is deprecated and uses the PTA to try to find the appropriate constructor call.
-     * We might need this in the future if we are having issues find appropriate constructor calls with 
-     * the simple linear search above.
-     * 
-     * Need to run PTA right before the cloner if we are going to use this!
-     */
-    private static SpecialInvokeExpr findConstructorCall(SootMethod method, Local l, NewExpr oldNewExpr) {
-        AllocNode allocNode = GeoPTA.v().getAllocNode(oldNewExpr);
-        System.out.printf("\tLooking for allocnode: %s\n", allocNode);
-
-        //loop through all instructions in method and find the special invoke on this allocnode
-        Body body = method.getActiveBody();
-        StmtBody stmtBody = (StmtBody)body;
-        Chain units = stmtBody.getUnits();
-        Iterator stmtIt = units.iterator();
-
-        SpecialInvokeExpr found = null;
-
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
-
-            if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
-                SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
-
-                System.out.printf("\tFound special invoke: %s\n", si);
-
-                Set<AllocNode> nodes = GeoPTA.v().getPTSetContextIns(si.getBase());
-
-                //we found the appropriate constructor call if we have an alloc node set size of 1
-                //and the alloc node we are looking for is the only element in the set.
-                if (nodes.size() == 1 && nodes.contains(allocNode) == true) {
-                    System.out.printf("\tFound Alloc Node\n");
-                    if (found != null) {
-                        //we found 2 appropriate constructor calls
-                        //should not happen, so return null to abort the replacement
-                        logger.error("Strange, found two constructor calls {} {} in method {} for {}.", 
-                                found, si, method, oldNewExpr);
-                        return null;
-                    }
-
-                    found = si;
-                }
-            }
-        }
-
-        return found;
-    }
 }
 
 class ToStringComparator implements Comparator<Object> {
@@ -261,5 +298,5 @@ class ToStringComparator implements Comparator<Object> {
     public int compare(Object o1, Object o2) {
         return o1.toString().compareTo(o2.toString());
     }
-    
+
 }

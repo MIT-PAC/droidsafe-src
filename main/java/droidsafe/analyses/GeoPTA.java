@@ -87,6 +87,7 @@ import com.google.common.collect.HashBiMap;
 
 import org.apache.commons.io.*;
 import org.apache.commons.io.output.NullOutputStream;
+import org.apache.commons.lang3.time.StopWatch;
 
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
@@ -128,6 +129,7 @@ public class GeoPTA {
     private Map<ValueAndContext, Set<AllocNode>> eventEntryQueryCache;
     public int totalECQueries = 0;
     public int cachedECQueries = 0;
+    private static int runs = 0;
     
     /**
      * Reset the PTA and get it ready for another run.
@@ -158,18 +160,32 @@ public class GeoPTA {
      * Runs Soot's geometric PTA and resolve the context.
      */
     public static void run() {
-        
+        runs ++;
         //don't print crap to screen!
-        G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
+        //G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
-
+        StopWatch timer = new StopWatch();
+        
+        if (runs == 3) {
+            timer.reset();
+            timer.start();
+            setSparkPointsToAnalysis();
+            timer.stop();
+            System.out.println("Spark: " + timer);
+            release();
+        }
+        
+        timer.reset();
+        timer.start();
         setGeomPointsToAnalysis();
+        timer.stop();
+        System.out.println("Geo: " + timer);
         
 
         v = new GeoPTA();
         
         //other passes can print crap now
-        G.v().out = System.out;
+        //G.v().out = System.out;
     }
 
     /**
@@ -984,7 +1000,7 @@ public class GeoPTA {
         opt.put("types-for-sites","false");        
         opt.put("merge-stringbuffer","false");   
         opt.put("string-constants","true");     
-        opt.put("simulate-natives","true");      
+        opt.put("simulate-natives","false");      
         opt.put("simple-edges-bidirectional","false");
         opt.put("on-fly-cg","true");            
         opt.put("simplify-offline","false");    
@@ -1027,7 +1043,7 @@ public class GeoPTA {
         opt.put("types-for-sites","false");        
         opt.put("merge-stringbuffer","false");   
         opt.put("string-constants","true");     
-        opt.put("simulate-natives","true");      
+        opt.put("simulate-natives","false");      
         opt.put("simple-edges-bidirectional","false");
         opt.put("on-fly-cg","true");            
         opt.put("simplify-offline","false");    
