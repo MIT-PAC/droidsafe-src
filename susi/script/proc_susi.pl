@@ -25,10 +25,14 @@ my @catHash = ();
 while(<IFILE>) {
     next if ($_ !~ /^\</);
     next if (/^\s*$/);
+    s/android\.permission\.[A-Z_]+//g;
     #print;
-    if ($_ =~ /^(.+?)\s*\(([\w_]+)\)\s*$/) {
+    if ($_ =~ /^(\<.+?\>)\s+\(([\w_]+)\)\s*$/) {
         my $method = $1;
         my $cat = $2;
+        if ($cat =~ /NO_CATEGORY/) {
+            $cat = "SENSITIVE_UNCATEGORIZED";
+        }
         my $kind = "$prefix". "Kind." . $cat;
         my $anno = "\@$prefix({$kind})";
         $catHash{$cat} = $anno;
