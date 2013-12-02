@@ -6,6 +6,7 @@ import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -111,12 +112,12 @@ public class ObjectSensitivityCloner {
 
         AllocGraphNode[] sorted = allocations.values().toArray(new AllocGraphNode[0]);
         Arrays.sort(sorted);
-
-       /*for (AllocGraphNode node : sorted) {
+/*
+        for (AllocGraphNode node : sorted) {
             System.out.printf("->%d  %d-> %s\n", node.in.size(), 
                 node.out.size(), node.myClz);
-        }*/
-
+        }
+*/
         return sorted;
     }
 
@@ -149,9 +150,10 @@ public class ObjectSensitivityCloner {
 
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through
-        SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
-        Arrays.sort(methods, new ToStringComparator());
-
+        List<SootMethod> masterMethodList = new LinkedList<SootMethod>();
+        masterMethodList.addAll(PTABridge.v().getAllReachableMethods());
+        Collections.sort(masterMethodList, new ToStringComparator());
+        
         int i = -1;
         
         for (AllocGraphNode currentAllocNode : sortedNodes) {
@@ -163,7 +165,12 @@ public class ObjectSensitivityCloner {
                     (API.v().isContainerClass(currentClass.getName()))))
                 continue;
             
-            for (SootMethod method : methods) {
+            //create a list to iterate over that is the current snap shot of the master list
+            //because we update the master list for each clone...
+            List<SootMethod> iterationList = new LinkedList<SootMethod>();
+            iterationList.addAll(masterMethodList);
+            
+            for (SootMethod method : iterationList) {
 
                 //if (API.v().isSystemMethod(method))
                 //    continue;
@@ -211,6 +218,9 @@ public class ObjectSensitivityCloner {
                                         //clone class and install it as an new API class
                                         SootClass cloned = 
                                                 ClassCloner.cloneClass(oldNewExpr.getBaseType().getSootClass(), true);
+                                        
+                                        //add all cloned methods clone to the master list
+                                        masterMethodList.addAll(cloned.getMethods());
 
                                         SootMethodRef origMethodRef = special.getMethodRef();
 

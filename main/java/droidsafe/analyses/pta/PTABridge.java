@@ -69,7 +69,10 @@ public abstract class PTABridge {
         } else if (pta == PointsToAnalysisPackage.SPARK) {
             v = new SparkPTA();
             v.runInternal();
-        }  else {
+        }  else if (pta == PointsToAnalysisPackage.PADDLE) {
+            v = new PaddlePTA();
+            v.runInternal();
+        } else {
             logger.error("Invalid points to analysis package: {}", pta);
             droidsafe.main.Main.exit(1);
         }
