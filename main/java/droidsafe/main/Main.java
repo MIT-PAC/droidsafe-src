@@ -72,7 +72,7 @@ import org.apache.commons.lang3.time.*;
  */
 public class Main {
     /** The points to analysis to run */
-    private static final PointsToAnalysisPackage POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.PADDLE;
+    private static final PointsToAnalysisPackage POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.GEOPTA;
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 

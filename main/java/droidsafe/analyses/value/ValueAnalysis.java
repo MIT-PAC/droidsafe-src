@@ -3,6 +3,7 @@ package droidsafe.analyses.value;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CGContextVisitor;
 import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.value.primitives.StringVAModel;
@@ -54,7 +55,7 @@ import soot.Value;
  * 
  * @author dpetters
  */
-public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
+public class ValueAnalysis implements CGContextVisitor {
 
     /** Singleton for analysis */
     private static ValueAnalysis am;
@@ -177,7 +178,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
         am.createObjectModels();
         
-        CallGraphTraversal.acceptEntryContextAnd1CFA(am);
+        CallGraphTraversal.acceptContext(am, ContextType.ONE_CFA);;
                                 
         am.logResults();
 
@@ -262,7 +263,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     }
 
     @Override
-    public void visitEntryContextAnd1CFA(SootMethod sootMethod, PTAContext eventContext, PTAContext oneCFAContext) {
+    public void visit(SootMethod sootMethod, PTAContext ptaContext) {
                 
         if(!sootMethod.isConcrete())
             return;
@@ -285,7 +286,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                         continue;
                                         
                     //this call here is expensive!!
-                    Set<AllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue, eventContext);
+                    Set<AllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue, ptaContext);
                     for(AllocNode allocNode : baseAllocNodes) {
                         Object newExpr = PTABridge.v().getNewExpr(allocNode);
                         VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
@@ -300,7 +301,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                     if(fieldObjectVAModel instanceof PrimVAModel) {
                                         PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
                                         if (fieldPrimVAModel instanceof StringVAModel) {
-                                            handleString(assignStmt, fieldPrimVAModel, eventContext);
+                                            handleString(assignStmt, fieldPrimVAModel, ptaContext);
                                         } else  {
                                             //primitive, but not string primitive
                                             if(rightOp instanceof Constant) {

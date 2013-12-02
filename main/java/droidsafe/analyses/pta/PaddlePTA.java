@@ -60,7 +60,7 @@ public class PaddlePTA extends PTABridge {
         
         opt.put("verbose","true");
         opt.put("bdd","true");
-        opt.put("backend","auto");
+        opt.put("backend","buddy");
         opt.put("context","objsens");
         opt.put("k","2");
         opt.put("propagator","auto");
