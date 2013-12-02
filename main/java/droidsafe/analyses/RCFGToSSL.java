@@ -26,6 +26,9 @@ import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ClassConstantNode;
 import soot.jimple.spark.pag.StringConstantNode;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -185,10 +188,11 @@ public class RCFGToSSL {
 
 	    boolean allVAResults = true;
 	    List<ConcreteArgumentValue> vaResults = new LinkedList<ConcreteArgumentValue>();
-        
+        PTAContext eventContext = method.getContext(ContextType.EVENT_CONTEXT);
+	    
         //iterate over all the nodes pointed to and see if they are all va results
         //if not, break and remember
-        for (AllocNode node : method.getReceiverPTSet()) {
+        for (AllocNode node : method.getReceiverPTSet(eventContext)) {
             if (ValueAnalysis.v().hasResult(node)) {
                 //check to see if we have a value analysis result for this alloc node
                 //and if so, add it to the concrete list of values.
@@ -200,7 +204,7 @@ public class RCFGToSSL {
             }
         }
         
-	    if (allVAResults && method.getReceiverPTSet().size() > 0) {
+	    if (allVAResults && method.getReceiverPTSet(eventContext).size() > 0) {
             //if we have all va results, create the concrete argument list from the results
             ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(method.getReceiverType());
             for (ConcreteArgumentValue s : vaResults) 
@@ -236,7 +240,7 @@ public class RCFGToSSL {
 	        return clrv;
 	    }
 	    
-	    Set<AllocNode> ptsToSet = methodInfo.getArgPTSet(i); 
+	    Set<AllocNode> ptsToSet = methodInfo.getArgPTSet(methodInfo.getContext(ContextType.EVENT_CONTEXT), i); 
 		boolean allConstants = true;
 		//here we consider Value Analysis results as constants
 		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();

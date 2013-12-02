@@ -24,7 +24,6 @@ import soot.Local;
 import soot.Unit;
 import soot.Value;
 import soot.ValueBox;
-
 import soot.jimple.AssignStmt;
 import soot.jimple.ConditionExpr;
 import soot.jimple.FieldRef;
@@ -38,10 +37,8 @@ import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Jimple;
 import soot.jimple.Expr;
-
 import soot.util.Chain;
-
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
@@ -187,7 +184,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
      */
     public static void run() {
 
-        if (GeoPTA.v() == null) {
+        if (PTABridge.v() == null) {
             logger.error("IntegrateXMLLayouts must be called after PTA!");
             droidsafe.main.Main.exit(1);
         }

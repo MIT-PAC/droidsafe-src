@@ -16,11 +16,15 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
-import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.utils.SootUtils;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 
 /**
  * Build a mapping of AllocNode to calls that could have the allocnode as either a receiver or an 
@@ -87,7 +91,10 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
      * for the list of alloc nodes used in api calls (from RCFG).  Store in the map the alloc node to edge
      * mapping.
      */
-    public void visitEntryContextAnd1CFA(SootMethod method, Edge context, Edge edgeInto) {
+    public void visitEntryContextAnd1CFA(SootMethod method, PTAContext eventContext, PTAContext oneCFAContext) {
+        Edge edgeInto = oneCFAContext.getContext();
+        
+        
         //do nothing this is not a normal call
         if (edgeInto.srcStmt() == null || !edgeInto.srcStmt().containsInvokeExpr())
             return;
@@ -102,10 +109,10 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
             if (typesToConsider.contains(iie.getBase().getType())) {
                 Set<AllocNode> nodes;
                 //if the context is the same as the edge into, then we cannot use context back to the src
-                if (context == edgeInto) 
-                    nodes = GeoPTA.v().getPTSetContextIns(iie.getBase());
+                if (eventContext.getContext() == edgeInto) 
+                    nodes = PTABridge.v().getPTSet(iie.getBase());
                 else    
-                    nodes = GeoPTA.v().getPTSetEventContext(iie.getBase(), context);
+                    nodes = PTABridge.v().getPTSet(iie.getBase(), eventContext);
 
                 for (AllocNode an : nodes) {
                     if (RCFG.v().isRecOrArgForAPICall(an)) {
@@ -116,13 +123,13 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
         }
 
         for (Value argv : invoke.getArgs()) {
-            if (GeoPTA.v().isPointer(argv) && typesToConsider.contains(argv.getType())) {
+            if (PTABridge.v().isPointer(argv) && typesToConsider.contains(argv.getType())) {
                 Set<AllocNode> nodes;
                 //if the context is the same as the edge into, then we cannot use context back to the src
-                if (context == edgeInto) 
-                    nodes = GeoPTA.v().getPTSetContextIns(argv);
+                if (eventContext.getContext() == edgeInto) 
+                    nodes = PTABridge.v().getPTSet(argv);
                 else    
-                    nodes = GeoPTA.v().getPTSetEventContext(argv, context);
+                    nodes = PTABridge.v().getPTSet(argv, eventContext);
                 for (AllocNode an : nodes) {
                     if (RCFG.v().isRecOrArgForAPICall(an)) {
                         getCalls(an).add(edgeInto);

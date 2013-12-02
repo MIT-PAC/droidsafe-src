@@ -10,26 +10,35 @@ import soot.jimple.toolkits.callgraph.Edge;
  *
  */
 public class PTAContext {
+    /** CG edge context for this context */
     private Edge context;
+    /** The type of context (1CFA or Event) */
     private ContextType type;
 
+    /**
+     * Create a new context object with given type and cg edge.
+     */
     public PTAContext(ContextType type, Edge context) {
         this.context = context;
         this.type = type;
     }
 
+    /** Return CG edge context */
     public Edge getContext() {
         return context;
     }
 
+    /** Set CG edge context */
     public void setContext(Edge context) {
         this.context = context;
     }
 
+    /** Get the type of this context */
     public ContextType getType() {
         return type;
     }
 
+    /** set the context type of this context */
     public void setType(ContextType type) {
         this.type = type;
     }

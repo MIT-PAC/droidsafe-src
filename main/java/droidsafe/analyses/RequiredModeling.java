@@ -17,8 +17,8 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -70,7 +70,7 @@ public class RequiredModeling {
     public static void run() {
         Set<String> toModel = new TreeSet<String>();
 
-        for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
+        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
             //loop through all reachable methods, and find system methods that are not modeled
             //or system methods that do not exist (but are called)
             //ignore clinits
@@ -247,7 +247,7 @@ public class RequiredModeling {
                 continue;
 
             for (SootMethod meth : clazz.getMethods()) {
-                if (meth.isConcrete() && GeoPTA.v().isReachableMethod(meth)) {
+                if (meth.isConcrete() && PTABridge.v().isReachableMethod(meth)) {
                     checkInvokes(meth, meth.retrieveActiveBody(), fw);
                 }
             }
@@ -283,7 +283,7 @@ public class RequiredModeling {
                 Collection<SootMethod> resolved = null;
            
                 try {
-                    resolved = GeoPTA.v().resolveInstanceInvokeContextIns(iie);
+                    resolved = PTABridge.v().resolveInstanceInvoke(iie);
                 } catch (CannotFindMethodException e) {
                     resolved = null;
                 }

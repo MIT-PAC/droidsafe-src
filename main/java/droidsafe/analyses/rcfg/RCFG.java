@@ -49,10 +49,11 @@ import soot.util.Chain;
 import soot.util.queue.QueueReader;
 import soot.Type;
 import soot.RefLikeType;
-
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
@@ -176,7 +177,7 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
      * Also, when an output event is found, query for all the alloc nodes that could be either a receiver or an 
      * argument, and remember these nodes for later processing by MethodCallsOnAllocs.
      */
-    public void visitEntryContextAnd1CFA(SootMethod method, Edge entryEdge, Edge edgeInto) {
+    public void visitEntryContextAnd1CFA(SootMethod method, PTAContext eventContext, PTAContext oneCFAContext) {
         //remember that we have visited this method
         visitedMethods.add(method);
         
@@ -184,17 +185,17 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
         //and the called system method is interesting
         //and we should not ignore it.
         if (API.v().isSystemMethod(method) && 
-                !API.v().isSystemMethod(edgeInto.src()) &&
+                !API.v().isSystemMethod(oneCFAContext.getContext().src()) &&
                 API.v().isInterestingMethod(method) &&
                 !IGNORE_SYS_METHOD_WITH_NAME.contains(method.getName()) &&
-                !ignoreSet.contains(edgeInto.srcStmt())) {
+                !ignoreSet.contains(oneCFAContext.getContext().srcStmt())) {
 
-            RCFGNode node = getNodeForEntryEdge(entryEdge);
+            RCFGNode node = getNodeForEntryEdge(eventContext.getContext());
 
             SourceLocationTag line = 
-                    SootUtils.getSourceLocation(edgeInto.srcStmt(), edgeInto.src().getDeclaringClass());
+                    SootUtils.getSourceLocation(oneCFAContext.getContext().srcStmt(), oneCFAContext.getContext().src().getDeclaringClass());
 
-            InvokeExpr invoke = edgeInto.srcStmt().getInvokeExpr();
+            InvokeExpr invoke = oneCFAContext.getContext().srcStmt().getInvokeExpr();
             if (invoke instanceof InstanceInvokeExpr) {
                 InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
                 try {
@@ -202,26 +203,27 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
                     //for each, see if they map to the destination method, if they do,
                     //create the output event
                     for (Map.Entry<AllocNode, SootMethod> entry : 
-                        GeoPTA.v().resolveInstanceInvokeMapEventContext(iie, entryEdge).entrySet()) {
+                        PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
                         if (entry.getValue().equals(method)) {
-                            OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, entry.getKey(), line);
-                            logger.debug("Found output event: {} {}", edgeInto.tgt(), entry.getKey());
+                            OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, entry.getKey(), line);
+                            logger.debug("Found output event: {} {}", oneCFAContext.getContext().tgt(), entry.getKey());
                             node.addOutputEvent(oe);
                             //remember interesting alloc nodes
                             apiCallNodes.add(entry.getKey());
-                            apiCallNodes.addAll(oe.getAllArgsPTSet());
+                            apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
                         }
                         
                     }
                 } catch (CannotFindMethodException e) {
-                    logger.error("Could not find a possible target for a call (RCFG): {} in {}", iie, edgeInto.getSrc());
+                    logger.error("Could not find a possible target for a call (RCFG): {} in {}", iie, 
+                        oneCFAContext.getContext().getSrc());
                     droidsafe.main.Main.exit(1);
                 }
             } else {
-                OutputEvent oe = new OutputEvent(edgeInto, entryEdge, node, null, line);
-                logger.debug("Found output event: {} (null receiver)", edgeInto.tgt());
+                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, null, line);
+                logger.debug("Found output event: {} (null receiver)", oneCFAContext.getContext().tgt());
                 node.addOutputEvent(oe);
-                apiCallNodes.addAll(oe.getAllArgsPTSet());
+                apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
             }
         }
     }

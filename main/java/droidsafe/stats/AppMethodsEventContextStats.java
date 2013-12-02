@@ -5,11 +5,13 @@ import java.util.Map;
 
 import soot.SootMethod;
 import soot.jimple.toolkits.callgraph.Edge;
-import droidsafe.analyses.helper.CGVisitorEntryContext;
-import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CGContextVisitor;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.android.system.API;
 
-public class AppMethodsEventContextStats implements CGVisitorEntryContext {
+public class AppMethodsEventContextStats implements CGContextVisitor {
 
     private HashMap<SootMethod,Integer> methodToContexts;
     
@@ -21,7 +23,7 @@ public class AppMethodsEventContextStats implements CGVisitorEntryContext {
         // TODO Auto-generated constructor stub
         methodToContexts = new HashMap<SootMethod,Integer>();
         
-        CallGraphTraversal.acceptEntryContext(this);
+        CallGraphTraversal.acceptContext(this, ContextType.EVENT_CONTEXT);
 
         createHistogramOutput();
         
@@ -44,7 +46,7 @@ public class AppMethodsEventContextStats implements CGVisitorEntryContext {
             System.out.println("m-to-c-bin:" + i + ":" + bins[i]);
     }
 
-    public void visitEntryContext(SootMethod method, Edge entryEdge) {
+    public void visit(SootMethod method, PTAContext eventContext) {
         if (API.v().isSystemMethod(method))
             return;
         

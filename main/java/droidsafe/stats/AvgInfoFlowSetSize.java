@@ -13,10 +13,10 @@ import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.Chain;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CGVisitorEntryContext;
-import droidsafe.analyses.helper.CallGraphTraversal;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -35,7 +35,7 @@ public class AvgInfoFlowSetSize {
     private AvgInfoFlowSetSize() {
         for (RCFGNode inputNode : RCFG.v().getNodes()) {
             for (OutputEvent oe : inputNode.getOutputEvents()) {
-                Edge context = oe.getContextEdge();
+                PTAContext context = oe.getContext(ContextType.EVENT_CONTEXT);
                 InvokeExpr invoke = oe.getInvokeExpr();
 
                 try {

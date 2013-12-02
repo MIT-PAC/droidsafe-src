@@ -29,11 +29,9 @@ import soot.jimple.toolkits.callgraph.Edge;
 
 /**
  * This class performs a traversal of the call graph (hopefully using context sensitivity), and calls a visitor 
- * method at different points in the traversal:
- * 
- * 1. Visitor is called for each callee method / entry point edge / 1cfa edge combination.
- * 2. Visitor is called for each callee method / 1cfa edge combination
- * 3. Visitor is called for each callee method / entry point edge combination.
+ * method at different points in the traversal based on the given PTA context.  For example, if 1CFA is used, 
+ * then the visitor will be called for each method and 1cfa context (a unique method may be visited multiple times, 
+ * each with a unique context).
  * 
  * The traversals are cached because the call graph is huge.
  * 
@@ -67,7 +65,10 @@ public class CallGraphTraversal {
     private static void createCachedTraversal() {
         v = new CallGraphTraversal();
         //create the cached traversal
-        v.traversal();  
+        v.traversal();
+        /*System.out.println("Edges: " + v.visitedEdges.size());
+        System.out.println("Method and Entry: " + v.visitedMethodAndContext.size());
+        System.out.println("Method + Entry + 1CFA: " + v.visitedEntryAnd1CFA.size());*/
     }
 
     /**
@@ -86,7 +87,7 @@ public class CallGraphTraversal {
     }
 
     /**
-     * Called for each reachable combinations of method / 1CFA (calling edge) context
+     * Called for each reachable combination of context based on the context type (1CFA or Event)
      */
     public static void acceptContext(CGContextVisitor visitor, ContextType type) {
         if (v == null)

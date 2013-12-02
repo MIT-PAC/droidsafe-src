@@ -1,8 +1,7 @@
 package droidsafe.transforms.objsensclone;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
-
 import droidsafe.android.system.API;
 
 import java.util.Arrays;
@@ -17,7 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
-
 import soot.jimple.AssignStmt;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
@@ -26,21 +24,13 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-
 import soot.Local;
-
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootMethod;
-
 import soot.SootMethodRef;
-
 import soot.util.Chain;
-
 import soot.ValueBox;
 
 /**
@@ -81,7 +71,7 @@ public class ObjectSensitivityCloner {
 
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through
-        SootMethod[] methods = GeoPTA.v().getAllReachableMethods().toArray(new SootMethod[0]);
+        SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
         Arrays.sort(methods, new ToStringComparator());
             
         for (SootMethod method : methods) {
@@ -204,55 +194,6 @@ public class ObjectSensitivityCloner {
         }
         System.out.println("Failed...");
         return null;
-    }
-
-    /**
-     * This call is deprecated and uses the PTA to try to find the appropriate constructor call.
-     * We might need this in the future if we are having issues find appropriate constructor calls with 
-     * the simple linear search above.
-     * 
-     * Need to run PTA right before the cloner if we are going to use this!
-     */
-    private static SpecialInvokeExpr findConstructorCall(SootMethod method, Local l, NewExpr oldNewExpr) {
-        AllocNode allocNode = GeoPTA.v().getAllocNode(oldNewExpr);
-        System.out.printf("\tLooking for allocnode: %s\n", allocNode);
-
-        //loop through all instructions in method and find the special invoke on this allocnode
-        Body body = method.getActiveBody();
-        StmtBody stmtBody = (StmtBody)body;
-        Chain units = stmtBody.getUnits();
-        Iterator stmtIt = units.iterator();
-
-        SpecialInvokeExpr found = null;
-
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
-
-            if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
-                SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
-
-                System.out.printf("\tFound special invoke: %s\n", si);
-
-                Set<AllocNode> nodes = GeoPTA.v().getPTSetContextIns(si.getBase());
-
-                //we found the appropriate constructor call if we have an alloc node set size of 1
-                //and the alloc node we are looking for is the only element in the set.
-                if (nodes.size() == 1 && nodes.contains(allocNode) == true) {
-                    System.out.printf("\tFound Alloc Node\n");
-                    if (found != null) {
-                        //we found 2 appropriate constructor calls
-                        //should not happen, so return null to abort the replacement
-                        logger.error("Strange, found two constructor calls {} {} in method {} for {}.", 
-                                found, si, method, oldNewExpr);
-                        return null;
-                    }
-
-                    found = si;
-                }
-            }
-        }
-
-        return found;
     }
 }
 

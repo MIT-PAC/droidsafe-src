@@ -80,6 +80,7 @@ import soot.jimple.ArrayRef;
 import soot.jimple.FieldRef;
 import soot.jimple.spark.pag.FieldRefNode;
 import soot.jimple.spark.sets.EmptyPointsToSet;
+import soot.jimple.spark.sets.HashPointsToSet;
 import soot.jimple.spark.sets.P2SetVisitor;
 import soot.jimple.spark.sets.PointsToSetInternal;
 
@@ -325,6 +326,22 @@ public class GeoPTA extends PTABridge {
         }
 
         return types;
+    }
+    
+    public Set<AllocNode> getPTSetOfArrayElement(AllocNode allocNode) {
+        final Set<AllocNode> ptSet = new HashSet<AllocNode>();
+        
+        HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), ptsProvider);
+        pointsToSet.add(allocNode);
+        
+                ((PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
+            @Override
+            public void visit(Node node) {
+                ptSet.add((AllocNode)node);
+            }
+        });
+        
+        return ptSet;
     }
     
     /**
@@ -1025,55 +1042,6 @@ public class GeoPTA extends PTABridge {
         SparkTransformer.v().transform("",opt);
 
         logger.info("[GeomPTA] Done!");
-    }
-
-    /**
-     * Run context insensitive spark analysis.
-     */
-    static void setSparkPointsToAnalysis() {
-        logger.info("[spark] Starting analysis ...");
-
-        HashMap<String, String> opt = new HashMap<String, String>();
-        opt.put("enabled","true");
-        opt.put("verbose","false");
-        opt.put("ignore-types","false");          
-        opt.put("force-gc","false");            
-        opt.put("pre-jimplify","false");          
-        opt.put("vta","false");                   
-        opt.put("rta","false");                   
-        opt.put("field-based","false");           
-        opt.put("types-for-sites","false");        
-        opt.put("merge-stringbuffer","false");   
-        opt.put("string-constants","true");     
-        opt.put("simulate-natives","true");      
-        opt.put("simple-edges-bidirectional","false");
-        opt.put("on-fly-cg","true");            
-        opt.put("simplify-offline","false");    
-        opt.put("simplify-sccs","false");        
-        opt.put("ignore-types-for-sccs","false");
-        opt.put("propagator","worklist");
-        opt.put("set-impl","double");
-        opt.put("double-set-old","hybrid");         
-        opt.put("double-set-new","hybrid");
-        opt.put("dump-html","false");           
-        opt.put("dump-pag","false");             
-        opt.put("dump-solution","false");        
-        opt.put("topo-sort","false");           
-        opt.put("dump-types","true");             
-        opt.put("class-method-var","true");     
-        opt.put("dump-answer","false");          
-        opt.put("add-tags","false");             
-        opt.put("set-mass","false"); 
-        //some context sensitivity
-        opt.put("cs-demand", "true");
-        opt.put("lazy-pts", "true");
-        opt.put("passes", "10");
-        opt.put("traversal", "75000");
-
-        SparkTransformer.v().transform("",opt);
-
-
-        logger.info("[spark] Done!");
     }
 
     /**

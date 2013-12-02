@@ -16,8 +16,8 @@ import soot.jimple.NewExpr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
-import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.MethodCallsOnAlloc;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -142,7 +142,7 @@ public class AllocLocationModel extends CodeLocationModel {
     public static AllocLocationModel get(AllocNode node) {
         AllocLocationModel line = map.get(node);
         if (line == null) {
-            Object expr = GeoPTA.v().getNewExpr(node);
+            Object expr = PTABridge.v().getNewExpr(node);
 
             if (expr == null || !(expr instanceof Expr)) {
                 logger.debug("Cannot find new expression for allocnode: {}", node);

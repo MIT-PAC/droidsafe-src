@@ -35,7 +35,6 @@ import soot.tagkit.AnnotationTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
 import soot.util.Chain;
-import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.Project;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;

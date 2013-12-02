@@ -72,9 +72,10 @@ import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.toolkits.graph.Block;
-
 import droidsafe.analyses.EntryPointCGEdges;
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
@@ -109,38 +110,39 @@ public class InformationFlowAnalysis {
         logger.info("Finished Information Flow Analysis...");
     }
 
-    public Set<InfoValue> getTaintsBefore(Edge entryEdge, Unit unit, Local local) {
+    public Set<InfoValue> getTaintsBefore(PTAContext context, Unit unit, Local local) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
         State state = getStateBefore(unit);
         if (local.getType() instanceof RefLikeType) {
-            for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(local, entryEdge)) {
-                values.addAll(state.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
+            for (AllocNode allocNode : PTABridge.v().getPTSet(local, context)) {
+                values.addAll(state.instances.get(context.getContext(), Address.v(allocNode), ObjectUtils.v().taint));
             }
         } else {
-            values.addAll(evaluate(entryEdge, local, state.locals));
+            values.addAll(evaluate(context.getContext(), local, state.locals));
         }
         return values;
     }
 
-    public Set<InfoValue> getTaintsBeforeRecursively(Edge entryEdge, Unit unit, Local local) {
+    public Set<InfoValue> getTaintsBeforeRecursively(PTAContext context, Unit unit, Local local) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
         State state = getStateBefore(unit);
         Type type = local.getType();
         if (type instanceof RefType) {
-            for (AllocNode allocNode : AllocNodeUtils.v().reachable(GeoPTA.v().getPTSetEventContext(local, entryEdge))) {
-                for (ImmutableSet<InfoValue> vs : state.instances.get(entryEdge, Address.v(allocNode)).values()) {
+            for (AllocNode allocNode : AllocNodeUtils.v().reachable(PTABridge.v().getPTSet(local,context))) {
+                for (ImmutableSet<InfoValue> vs : state.instances.get(context.getContext(), Address.v(allocNode)).values()) {
                     values.addAll(vs);
                 }
             }
         } else if (type instanceof ArrayType) {
-            for (AllocNode allocNode : AllocNodeUtils.v().reachable(GeoPTA.v().getPTSetEventContext(local, entryEdge))) {
-                values.addAll(state.arrays.get(entryEdge, Address.v(allocNode)));
+            for (AllocNode allocNode : AllocNodeUtils.v().reachable(PTABridge.v().getPTSet(local,
+                context))) {
+                values.addAll(state.arrays.get(context.getContext(), Address.v(allocNode)));
             }
         } else {
             if (Config.v().strict) {
                 assert !(type instanceof RefLikeType);
             }
-            values.addAll(evaluate(entryEdge, local, state.locals));
+            values.addAll(evaluate(context.getContext(), local, state.locals));
         }
         return values;
     }
@@ -425,9 +427,9 @@ public class InformationFlowAnalysis {
                     assert lLocal.getType() instanceof RefType;
                 }
                 if (Config.v().strict) {
-                    assert GeoPTA.v().getAllocNode(constant) != null :
+                    assert PTABridge.v().getAllocNode(constant) != null :
                             InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
-                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                            "\tPTABridge.v().getAllocNode(" + constant + ") is null";
                 }
                 setResult(inState);
             }
@@ -446,9 +448,9 @@ public class InformationFlowAnalysis {
                     assert lLocal.getType() instanceof RefType;
                 }
                 if (Config.v().strict) {
-                    assert GeoPTA.v().getAllocNode(constant) != null :
+                    assert PTABridge.v().getAllocNode(constant) != null :
                             InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
-                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                            "\tPTABridge.v().getAllocNode(" + constant + ") is null";
                 }
                 setResult(inState);
             }
@@ -501,7 +503,7 @@ public class InformationFlowAnalysis {
             SootField field = instanceFieldRef.getField();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
-                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : PTABridge.v().getPTSet(baseLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                     values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), field));
                 }
                 outState.locals.putS(entryEdge, lLocal, values);
@@ -547,7 +549,7 @@ public class InformationFlowAnalysis {
             Local baseLocal = (Local)arrayRef.getBase();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
-                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : PTABridge.v().getPTSet(baseLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                     values.addAll(inState.arrays.get(entryEdge, Address.v(allocNode)));
                 }
                 outState.locals.putS(entryEdge, lLocal, values);
@@ -565,17 +567,17 @@ public class InformationFlowAnalysis {
         }
         State outState = inState;
         SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
-        AllocNode allocNode = GeoPTA.v().getAllocNode(anyNewExpr);
+        AllocNode allocNode = PTABridge.v().getAllocNode(anyNewExpr);
         if (allocNode != null) {
             Address address = Address.v(allocNode);
             ImmutableSet<InfoValue> taints = ImmutableSet.<InfoValue>copyOf(InjectedSourceFlows.v().getInjectedFlows(allocNode));
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                 if (Config.v().strict) {
-                    assert GeoPTA.v().getPTSetEventContext(lLocal, entryEdge).contains(GeoPTA.v().getAllocNode(anyNewExpr)) :
+                    assert PTABridge.v().getPTSet(lLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge)).contains(PTABridge.v().getAllocNode(anyNewExpr)) :
                             method + ": " + stmt + ":\n" +
-                            "\tGeoPTA.v().getPTSetEventContext(" + lLocal + ", " + entryEdge + ") does not contain GeoPTA.v().getAllocNode(" + anyNewExpr + ")\n" +
-                            "\tGeoPTA.v().getPTSetEventContext(" + lLocal + ", " + entryEdge + ") = " + GeoPTA.v().getPTSetEventContext(lLocal, entryEdge) + "\n" +
-                            "\tGeoPTA.v().getAllocNode(" + anyNewExpr + ") = " + GeoPTA.v().getAllocNode(anyNewExpr);
+                            "\tPTABridge.v().getPTSetEventContext(" + lLocal + ", " + entryEdge + ") does not contain PTABridge.v().getAllocNode(" + anyNewExpr + ")\n" +
+                            "\tPTABridge.v().getPTSetEventContext(" + lLocal + ", " + entryEdge + ") = " + PTABridge.v().getPTSet(lLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge)) + "\n" +
+                            "\tPTABridge.v().getAllocNode(" + anyNewExpr + ") = " + PTABridge.v().getAllocNode(anyNewExpr);
                 }
                 outState.instances.putW(entryEdge, address, ObjectUtils.v().taint, taints);
             }
@@ -637,9 +639,9 @@ public class InformationFlowAnalysis {
                     assert lLocal.getType() instanceof RefType;
                 }
                 if (Config.v().strict) {
-                    assert GeoPTA.v().getAllocNode(constant) != null :
+                    assert PTABridge.v().getAllocNode(constant) != null :
                             InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
-                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                            "\tPTABridge.v().getAllocNode(" + constant + ") is null";
                 }
                 setResult(inState);
             }
@@ -655,9 +657,9 @@ public class InformationFlowAnalysis {
                     assert lLocal.getType() instanceof RefType;
                 }
                 if (Config.v().strict) {
-                    assert GeoPTA.v().getAllocNode(constant) != null :
+                    assert PTABridge.v().getAllocNode(constant) != null :
                             InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod() + ": " + stmt + ":\n" +
-                            "\tGeoPTA.v().getAllocNode(" + constant + ") is null";
+                            "\tPTABridge.v().getAllocNode(" + constant + ") is null";
                 }
                 setResult(inState);
             }
@@ -688,7 +690,7 @@ public class InformationFlowAnalysis {
         Local opLocal = (Local)instanceOfExpr.getOp();
         for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
             HashSet<InfoValue> values = new HashSet<InfoValue>();
-            for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(opLocal, entryEdge)) {
+            for (AllocNode allocNode : PTABridge.v().getPTSet(opLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                 values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
             }
             outState.locals.putS(entryEdge, lLocal, values);
@@ -722,7 +724,7 @@ public class InformationFlowAnalysis {
                 }
                 for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
                     HashSet<InfoValue> values = new HashSet<InfoValue>();
-                    for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(immediate, entryEdge)) {
+                    for (AllocNode allocNode : PTABridge.v().getPTSet(immediate, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                         values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
                     }
                     outState.locals.putS(entryEdge, lLocal, values);
@@ -748,7 +750,7 @@ public class InformationFlowAnalysis {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 for (int i = 0; i < immediates.length; i++) {
                     if (isOpLocal[i]) {
-                        for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(immediates[i], entryEdge)) {
+                        for (AllocNode allocNode : PTABridge.v().getPTSet(immediates[i], new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                             values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
                         }
                     }
@@ -798,7 +800,7 @@ public class InformationFlowAnalysis {
             Local baseLocal = (Local)instanceFieldRef.getBase();
             SootField field = instanceFieldRef.getField();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
-                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : PTABridge.v().getPTSet(baseLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                     outState.instances.putW(entryEdge, Address.v(allocNode), field, evaluate(entryEdge, rLocal, inState.locals));
                 }
             }
@@ -868,7 +870,7 @@ public class InformationFlowAnalysis {
             SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
             Local baseLocal = (Local)arrayRef.getBase();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(method)) {
-                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : PTABridge.v().getPTSet(baseLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                     outState.arrays.putW(entryEdge, Address.v(allocNode), evaluate(entryEdge, rLocal, inState.locals));
                 }
             }
@@ -1022,7 +1024,7 @@ public class InformationFlowAnalysis {
             Local baseLocal = (Local)((VirtualInvokeExpr)invokeExpr).getBase();
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
-                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : PTABridge.v().getPTSet(baseLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                     values.addAll(inState.instances.get(entryEdge, Address.v(allocNode), ObjectUtils.v().taint));
                 }
                 outState.locals.putS(entryEdge, lLocal, values);
@@ -1049,7 +1051,7 @@ public class InformationFlowAnalysis {
         if (argImmediate instanceof Local) {
             for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
                 ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>copyOf(inState.locals.get(entryEdge, (Local)argImmediate));
-                for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(baseLocal, entryEdge)) {
+                for (AllocNode allocNode : PTABridge.v().getPTSet(baseLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                     outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
                 }
             }
@@ -1101,7 +1103,7 @@ public class InformationFlowAnalysis {
                                     || (Config.v().infoFlowTrackAll && !calleeMethod.getDeclaringClass().getPackageName().equals("java.lang"))) {
                                 ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                                 for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(callerMethod)) {
-                                    for (AllocNode allocNode : GeoPTA.v().getPTSetEventContext(lLocal, entryEdge)) {
+                                    for (AllocNode allocNode : PTABridge.v().getPTSet(lLocal, new PTAContext(ContextType.EVENT_CONTEXT, entryEdge))) {
                                         outState.instances.putW(entryEdge, Address.v(allocNode), ObjectUtils.v().taint, values);
                                     }
                                 }
@@ -1197,7 +1199,7 @@ public class InformationFlowAnalysis {
                         for (Local local : toMethod.getActiveBody().getLocals()) {
                             if (local.getType() instanceof RefLikeType) {
                                 for (Edge entryEdge : InterproceduralControlFlowGraph.v().methodToEntryEdges.get(toMethod)) {
-                                    locals.putW(entryEdge, local, ImmutableSet.<InfoValue>copyOf(InformationFlowAnalysis.v().getTaintsBeforeRecursively(entryEdge, toBlock.getHead(), local)));
+                                    locals.putW(entryEdge, local, ImmutableSet.<InfoValue>copyOf(InformationFlowAnalysis.v().getTaintsBeforeRecursively(new PTAContext(ContextType.EVENT_CONTEXT, entryEdge), toBlock.getHead(), local)));
                                 }
                             }
                         }
