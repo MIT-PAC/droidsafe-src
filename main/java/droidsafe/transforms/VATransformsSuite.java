@@ -24,9 +24,11 @@ import soot.jimple.StmtBody;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.Chain;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CGVisitorEntryContext;
-import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CGContextVisitor;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -36,7 +38,7 @@ import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
-public class VATransformsSuite implements CGVisitorEntryContext {
+public class VATransformsSuite implements CGContextVisitor {
     public static int localID = 0;
 
     private List<VATransform> transforms = Arrays.asList(
@@ -134,14 +136,14 @@ public class VATransformsSuite implements CGVisitorEntryContext {
     public static void run() {
         VATransformsSuite v = new VATransformsSuite();
 
-        CallGraphTraversal.acceptEntryContext(v);
+        CallGraphTraversal.acceptContext(v, ContextType.EVENT_CONTEXT);
     }
 
     private VATransformsSuite() {
     }
 
     @Override
-    public void visitEntryContext(SootMethod method, Edge entryEdge) {
+    public void visit(SootMethod method, PTAContext eventContext) {
         if (method.isAbstract() || !method.isConcrete() || method.isPhantom() || SootUtils.isRuntimeStubMethod(method))
             return;
 
@@ -176,9 +178,9 @@ public class VATransformsSuite implements CGVisitorEntryContext {
                 continue;
 
             try {
-                for (SootMethod callee : GeoPTA.v().resolveInvokeEventContext(expr, entryEdge)) {
+                for (SootMethod callee : PTABridge.v().resolveInvoke(expr, eventContext)) {
                     for (VATransform transform : transforms) {
-                        transform.resolvedMethodCall(method, callee, expr, stmt, stmtBody, entryEdge);
+                        transform.resolvedMethodCall(method, callee, expr, stmt, stmtBody, eventContext.getContext());
                     }
                 } 
             } catch (CannotFindMethodException e) {

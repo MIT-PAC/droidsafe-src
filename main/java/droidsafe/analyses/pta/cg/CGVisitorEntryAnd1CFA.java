@@ -1,5 +1,6 @@
-package droidsafe.analyses.helper;
+package droidsafe.analyses.pta.cg;
 
+import droidsafe.analyses.pta.PTAContext;
 import soot.SootMethod;
 import soot.jimple.toolkits.callgraph.Edge;
 
@@ -12,5 +13,5 @@ public interface CGVisitorEntryAnd1CFA {
      * @param entryEdge the context entry point edge
      * @param edgeInto the calling edge (1CFA edge)
      */
-    public void visitEntryContextAnd1CFA(SootMethod method, Edge entryEdge, Edge edgeInto);
+    public void visitEntryContextAnd1CFA(SootMethod method, PTAContext eventContext, PTAContext oneCFAContext);
 }

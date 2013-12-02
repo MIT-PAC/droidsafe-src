@@ -30,10 +30,11 @@ import soot.toolkits.graph.Block;
 import soot.toolkits.graph.BlockGraph;
 import soot.toolkits.graph.DirectedGraph;
 import soot.util.dot.DotGraph;
-
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CGVisitorEntryContext;
-import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CGContextVisitor;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.main.Config;
 import droidsafe.utils.SootUtils;
 
@@ -198,21 +199,21 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         connectIntraproceduralControlFlowGraphs();
         
         methodToEntryEdges = new DefaultHashMap<SootMethod, Set<Edge>>(Collections.<Edge>emptySet());
-        CallGraphTraversal.acceptEntryContext(new CGVisitorEntryContext () {
+        CallGraphTraversal.acceptContext(new CGContextVisitor () {
             @Override
-            public void visitEntryContext(SootMethod method, Edge entryEdge) {
+            public void visit(SootMethod method, PTAContext eventContext) {
                 Set<Edge> entryEdges = methodToEntryEdges.get(method);
                 if (entryEdges.isEmpty()) {
                     entryEdges = new HashSet<Edge>();
                 }
-                entryEdges.add(entryEdge);
+                entryEdges.add(eventContext.getContext());
                 methodToEntryEdges.put(method, entryEdges);
             }
-        });
+        }, ContextType.EVENT_CONTEXT);
     }
 
     private void collectIntraproceduralControlFlowGraphs() {
-        Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
+        Set<SootMethod> reachableMethods = PTABridge.v().getAllReachableMethods();
         List<SootMethod> entryPoints = Scene.v().getEntryPoints();
         TopologicalOrderer topologicalOrderer = new TopologicalOrderer(Scene.v().getCallGraph());
         topologicalOrderer.go();

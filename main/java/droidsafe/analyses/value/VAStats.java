@@ -5,21 +5,18 @@ import au.com.bytecode.opencsv.CSVWriter;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
-
 import droidsafe.android.app.Project;
-
 import droidsafe.transforms.objsensclone.ClassCloner;
-
 import droidsafe.utils.SootUtils;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -28,22 +25,17 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.InvokeExpr;
 import soot.jimple.NewExpr;
 import soot.jimple.spark.pag.AllocNode;
-
 import soot.RefType;
-
 import soot.SootClass;
-
 import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
-
 import soot.Value;
 
 /**
@@ -95,7 +87,7 @@ public class VAStats {
                 if(ie != null) {
                     if(oe.hasReceiver()) {
                         // process receiver allocNodes
-                        Set<AllocNode> receiverPTSet = oe.getReceiverPTSet();
+                        Set<AllocNode> receiverPTSet = oe.getReceiverPTSet(oe.getContext(ContextType.EVENT_CONTEXT));
                         for(AllocNode allocNode : receiverPTSet) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, sm);
@@ -104,7 +96,7 @@ public class VAStats {
                     // process argument allocNodes
                     for(int i = 0; i < oe.getNumArgs(); ++i) {
                         if(oe.isArgPointer(i)) {
-                            Set<AllocNode> argPTSet = oe.getArgPTSet(i);
+                            Set<AllocNode> argPTSet = oe.getArgPTSet(oe.getContext(ContextType.EVENT_CONTEXT), i);
                             for(AllocNode allocNode : argPTSet) {
                                 v.markAllocNodeAsReachable(allocNode);
                                 v.markMethodAsRelevant(allocNode, sm);
@@ -120,7 +112,7 @@ public class VAStats {
 
         for(Map.Entry<Object, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
             Object newExpr = entry.getKey();
-            AllocNode node = GeoPTA.v().getAllocNode(newExpr);
+            AllocNode node = PTABridge.v().getAllocNode(newExpr);
             Type type = node.getType();
             // we only care about reachable nodes
             if(type instanceof RefType && v.reachableAllocNodes.contains(node)) {
@@ -242,7 +234,7 @@ public class VAStats {
             String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
             if(v.vaResolvedClassNamesAndFields.containsKey(scName)) {
                 for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
-                    Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(allocNode, sf);
+                    Set<AllocNode> allocNodes = PTABridge.v().getPTSet(allocNode, sf);
                     for(AllocNode an : allocNodes) {
                         markAllocNodeAsReachable(an);
                     }

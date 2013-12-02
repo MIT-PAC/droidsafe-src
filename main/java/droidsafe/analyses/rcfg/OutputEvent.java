@@ -21,8 +21,10 @@ import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.callgraph.Edge;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.PTAMethodInformation;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
@@ -38,9 +40,9 @@ public class OutputEvent implements PTAMethodInformation {
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(OutputEvent.class);
     /** the cg edge from caller to API */
-    private Edge thisEdge;
+    private PTAContext oneCFAContext;
     /** the cg context edge (the event edge) */
-    private Edge contextEdge;
+    private PTAContext eventContext;
     /** The invoke expression call to an API method, might be null EX finalize*/
     private InvokeExpr invokeExpr;
     /** The parent RFCG Node */
@@ -53,10 +55,10 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Create an output event from an edge, context edge, ... 
      */
-    public OutputEvent(Edge theEdge, Edge ce, RCFGNode p, 
+    public OutputEvent(PTAContext oneCFA, PTAContext eventContext, RCFGNode p, 
                        AllocNode rn, SourceLocationTag ln) {
-        this.thisEdge = theEdge;
-        this.contextEdge = ce;
+        this.oneCFAContext = oneCFA;
+        this.eventContext = eventContext;
         this.parent = p;
         this.receiverNode = rn;
         this.linesTag = ln;
@@ -68,7 +70,7 @@ public class OutputEvent implements PTAMethodInformation {
      * Try to grab the invoke expression from the context
      */
     private void setInvoke() {
-        Unit context = thisEdge.srcUnit();
+        Unit context = oneCFAContext.getContext().srcUnit();
         invokeExpr = null;
 
         if (context == null) {
@@ -149,25 +151,12 @@ public class OutputEvent implements PTAMethodInformation {
         return ((InstanceInvokeExpr)invokeExpr).getBase();
     }
 
-    /**
-     * Return the edge that called this input event's method.
-     */
-    public Edge getThisEdge() {
-        return thisEdge;
-    }
-
-    /**
-     * Set the edge of this output event (from usr code to api call)
-     */
-    public void setThisEdge(Edge e) {
-        this.thisEdge = e;
-    }
-
+    
     /**
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public Set<AllocNode> getReceiverPTSet() {
+    public Set<AllocNode> getReceiverPTSet(PTAContext context) {
         getReceiver();
 
         LinkedHashSet<AllocNode> node = new LinkedHashSet<AllocNode>();
@@ -179,7 +168,7 @@ public class OutputEvent implements PTAMethodInformation {
      * Return true if the receiver is a pointer.
      */
     public boolean isReceiverPointer() {
-        return GeoPTA.v().isPointer(getReceiver());
+        return PTABridge.v().isPointer(getReceiver());
     }
     
     /**
@@ -200,37 +189,39 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return the points to set for the pointer argument at index i.
      */
-    public Set<AllocNode> getArgPTSet(int i) {
+    public Set<AllocNode> getArgPTSet(PTAContext context, int i) {
         Value v = getArgValue(i);
-        return GeoPTA.v().getPTSetEventContext(v, contextEdge);
+        
+        return PTABridge.v().getPTSet(v, context);
     }
 
     /**
      * Return a set of all the alloc nodes that all the of the args can point to.
      */
-    public Set<AllocNode> getAllArgsPTSet() {
+    public Set<AllocNode> getAllArgsPTSet(PTAContext context) {
         HashSet<AllocNode> nodes = new HashSet<AllocNode>();
         
         for (int i = 0; i < getNumArgs(); i++) {
             if (isArgPointer(i))
-                nodes.addAll(getArgPTSet(i));
+                nodes.addAll(getArgPTSet(context, i));
         }
         
         return nodes;
     }
     
     /**
-     * Return the context edge.
+     * Return the context
      */
-    public Edge getContextEdge() {
-        return contextEdge;
-    }
-
-    /**
-     * Set the context edge.
-     */
-    public void setContextEdge(Edge ce) {
-        this.contextEdge = ce;
+    public PTAContext getContext(ContextType type) {
+        if (type == ContextType.EVENT_CONTEXT) {
+            return eventContext;
+        } else if (type == ContextType.ONE_CFA) {
+            return oneCFAContext;
+        } else {
+            logger.error("Invalid context type: {}", type);
+            droidsafe.main.Main.exit(1);
+            return null;
+        }
     }
 
     /**
@@ -238,7 +229,7 @@ public class OutputEvent implements PTAMethodInformation {
      * @return
      */
     public SootMethod getTarget() {
-        return thisEdge.tgt();
+        return oneCFAContext.getContext().tgt();
     }
 
     /**
@@ -257,7 +248,7 @@ public class OutputEvent implements PTAMethodInformation {
      * Return true if arg i value is a pointer in the PT graph.
      */
     public boolean isArgPointer(int i) {
-        return GeoPTA.v().isPointer(getArgValue(i));
+        return PTABridge.v().isPointer(getArgValue(i));
     }
     
     /**
@@ -290,7 +281,7 @@ public class OutputEvent implements PTAMethodInformation {
 
             for (int i = 0; i < getNumArgs(); i++) {
                 if (isArgPointer(i)) {
-                    Set<AllocNode> nodes = getArgPTSet(i);
+                    Set<AllocNode> nodes = PTABridge.v().getPTSet(getArgValue(i));
                     formatter.format("\tArg %d (size %d)\n", i, nodes.size());
                     for (AllocNode node : nodes) {
                         if (node instanceof StringConstantNode) {
@@ -310,4 +301,5 @@ public class OutputEvent implements PTAMethodInformation {
         formatter.close();
         return str.toString();
     }
+
 }

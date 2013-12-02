@@ -13,10 +13,11 @@ import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.Chain;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
-import droidsafe.analyses.helper.CGVisitorEntryContext;
-import droidsafe.analyses.helper.CallGraphTraversal;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
@@ -42,12 +43,12 @@ public class PTASetsAvgSize implements CGVisitorEntryAnd1CFA {
         
     }
     
-    private void recordAndLookUpValue(Value v, Edge entryEdge, Edge edgeInto) {
+    private void recordAndLookUpValue(Value v, PTAContext eventContext, PTAContext oneCFAContext) {
         //it is a pointer, record it and its sets
         numberOfSets++;
-        int insensSetSize = GeoPTA.v().getPTSetContextIns(v).size();
-        int eventContextSetSize = GeoPTA.v().getPTSetEventContext(v, entryEdge).size();
-        int oneCfaSetSize = GeoPTA.v().getPTSet1CFA(v, edgeInto).size();
+        int insensSetSize = PTABridge.v().getPTSet(v).size();
+        int eventContextSetSize = PTABridge.v().getPTSet(v, eventContext).size();
+        int oneCfaSetSize = PTABridge.v().getPTSet(v, oneCFAContext).size();
         
        //System.out.printf("%s: insens = %s, event = %s\n", v, insensSetSize, eventContextSetSize);
         
@@ -56,7 +57,7 @@ public class PTASetsAvgSize implements CGVisitorEntryAnd1CFA {
         oneCFATotalSetSize += oneCfaSetSize;
     }
 
-    public void visitEntryContextAnd1CFA(SootMethod method, Edge entryEdge, Edge edgeInto) {
+    public void visitEntryContextAnd1CFA(SootMethod method, PTAContext eventContext, PTAContext oneCFAContext) {
         if (API.v().isSystemMethod(method) || method.isPhantom() || 
                 !method.isConcrete() || SootUtils.isRuntimeStubMethod(method))
             return;
@@ -77,15 +78,15 @@ public class PTASetsAvgSize implements CGVisitorEntryAnd1CFA {
         while (stmtIt.hasNext()) {
             Stmt stmt = (Stmt)stmtIt.next();
             for (ValueBox vBox : stmt.getUseBoxes()) {
-                if (!seen.contains(vBox.getValue()) && GeoPTA.v().isPointer(vBox.getValue())) {
-                    recordAndLookUpValue(vBox.getValue(), entryEdge, edgeInto);
+                if (!seen.contains(vBox.getValue()) && PTABridge.v().isPointer(vBox.getValue())) {
+                    recordAndLookUpValue(vBox.getValue(), eventContext, oneCFAContext);
                     seen.add(vBox.getValue());
                 }
             }
             
             for (ValueBox vBox : stmt.getDefBoxes()) {
-                if (!seen.contains(vBox.getValue()) && GeoPTA.v().isPointer(vBox.getValue())) {
-                    recordAndLookUpValue(vBox.getValue(), entryEdge, edgeInto);
+                if (!seen.contains(vBox.getValue()) && PTABridge.v().isPointer(vBox.getValue())) {
+                    recordAndLookUpValue(vBox.getValue(), eventContext, oneCFAContext);
                     seen.add(vBox.getValue());
                 }
             }

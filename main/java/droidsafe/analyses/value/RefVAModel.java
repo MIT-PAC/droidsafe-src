@@ -1,13 +1,11 @@
 package droidsafe.analyses.value;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.analyses.value.UnknownVAModel;
-
 import droidsafe.utils.SootUtils;
 
 import java.lang.reflect.Field;
-
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -18,19 +16,14 @@ import java.util.regex.Pattern;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.StringConstantNode;
-
 import soot.RefType;
-
 import soot.SootClass;
-
 import soot.SootField;
-
 import soot.Type;
 
 /**
@@ -69,7 +62,7 @@ public abstract class RefVAModel extends VAModel {
         Type fieldType = sootField.getType();
         if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)) {
             RefType fieldRefType = (RefType)fieldType;
-            Set<AllocNode> allocNodes = GeoPTA.v().getPTSetContextIns(this.getAllocNode(), sootField);
+            Set<AllocNode> allocNodes = PTABridge.v().getPTSet(this.getAllocNode(), sootField);
             if(allocNodes.size() > 0){
                 String fieldClassName = fieldRefType.getSootClass().getName();
                 //took out string code here!
@@ -125,7 +118,7 @@ public abstract class RefVAModel extends VAModel {
      * @returns AllocNode that corresponds to this model.
      */
     public AllocNode getAllocNode(){
-        return GeoPTA.v().getAllocNode(this.newExpr);
+        return PTABridge.v().getAllocNode(this.newExpr);
     }
 
     /**

@@ -1,4 +1,4 @@
-package droidsafe.analyses.helper;
+package droidsafe.analyses.pta.cg;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -10,12 +10,13 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
-
 import soot.Kind;
 import soot.Scene;
 import soot.SootMethod;
@@ -28,11 +29,9 @@ import soot.jimple.toolkits.callgraph.Edge;
 
 /**
  * This class performs a traversal of the call graph (hopefully using context sensitivity), and calls a visitor 
- * method at different points in the traversal:
- * 
- * 1. Visitor is called for each callee method / entry point edge / 1cfa edge combination.
- * 2. Visitor is called for each callee method / 1cfa edge combination
- * 3. Visitor is called for each callee method / entry point edge combination.
+ * method at different points in the traversal based on the given PTA context.  For example, if 1CFA is used, 
+ * then the visitor will be called for each method and 1cfa context (a unique method may be visited multiple times, 
+ * each with a unique context).
  * 
  * The traversals are cached because the call graph is huge.
  * 
@@ -52,23 +51,26 @@ public class CallGraphTraversal {
     private Set<MethodAndContext> visitedMethodAndContext;
     /** Static singleton */
     private static CallGraphTraversal v;
-    
+
     /**
      * Reset the cache of the call graph traversal for a new run or for a change in the code.
      */
     public static void reset() {
         v = null;
     }
-    
+
     /**
      * Create a new singleton and cache the traversals
      */
     private static void createCachedTraversal() {
         v = new CallGraphTraversal();
         //create the cached traversal
-        v.traversal();  
+        v.traversal();
+        /*System.out.println("Edges: " + v.visitedEdges.size());
+        System.out.println("Method and Entry: " + v.visitedMethodAndContext.size());
+        System.out.println("Method + Entry + 1CFA: " + v.visitedEntryAnd1CFA.size());*/
     }
-    
+
     /**
      * Called for each edge in the call graph.  Allows the visitor to do something with the method
      * and its context edge.
@@ -76,37 +78,36 @@ public class CallGraphTraversal {
     public static void acceptEntryContextAnd1CFA(CGVisitorEntryAnd1CFA visitor) {
         if (v == null)
             createCachedTraversal();
-        
+
         for (EdgeAndContext edgeAndContext : v.visitedEntryAnd1CFA) {
-            visitor.visitEntryContextAnd1CFA(edgeAndContext.edgeInto.tgt(), edgeAndContext.context, 
-                edgeAndContext.edgeInto);
-        }
-    }
-    
-    /**
-     * Called for each reachable combinations of method / 1CFA (calling edge) context
-     */
-    public static void accept1CFA(CGVisitor1CFA visitor) {
-        if (v == null)
-            createCachedTraversal();
-        
-        for (Edge edge : v.visitedEdges) {
-            visitor.visit1CFA(edge.tgt(), edge);
+            visitor.visitEntryContextAnd1CFA(edgeAndContext.oneCFAEdge.tgt(), 
+                new PTAContext(ContextType.EVENT_CONTEXT, edgeAndContext.eventEdge), 
+                new PTAContext(ContextType.ONE_CFA, edgeAndContext.oneCFAEdge));
         }
     }
 
     /**
-     * Called for each reachable combination of method / entry edge context 
+     * Called for each reachable combination of context based on the context type (1CFA or Event)
      */
-    public static void acceptEntryContext(CGVisitorEntryContext visitor) {
+    public static void acceptContext(CGContextVisitor visitor, ContextType type) {
         if (v == null)
             createCachedTraversal();
-        
-        for (MethodAndContext methodAndContext : v.visitedMethodAndContext) {
-            visitor.visitEntryContext(methodAndContext.method, methodAndContext.context);
+
+        if (type == ContextType.ONE_CFA) {
+            for (Edge edge : v.visitedEdges) {
+                visitor.visit(edge.tgt(), new PTAContext(ContextType.ONE_CFA, edge));
+            }
+        } else if (type == ContextType.EVENT_CONTEXT) {
+            for (MethodAndContext methodAndContext : v.visitedMethodAndContext) {
+                visitor.visit(methodAndContext.method, 
+                    new PTAContext(ContextType.EVENT_CONTEXT, methodAndContext.context));
+            }
+        } else {
+            logger.error("Invalid context type: {}", type);
+            droidsafe.main.Main.exit(1);
         }
     }
-    
+
     /**
      * Create a new traversal.
      */
@@ -135,11 +136,11 @@ public class CallGraphTraversal {
             if (visitedEntryAnd1CFA.contains(edgeAndContext)) 
                 continue;
 
-            MethodAndContext methodAndContext = new MethodAndContext(edgeAndContext.edgeInto.tgt(), 
-                edgeAndContext.context);
+            MethodAndContext methodAndContext = new MethodAndContext(edgeAndContext.oneCFAEdge.tgt(), 
+                edgeAndContext.eventEdge);
 
-            Edge current = edgeAndContext.edgeInto;
-            Edge contextEntry = edgeAndContext.context;
+            Edge current = edgeAndContext.oneCFAEdge;
+            Edge contextEntry = edgeAndContext.eventEdge;
             SootMethod method = current.tgt();
 
             //remember what we have visited
@@ -171,7 +172,8 @@ public class CallGraphTraversal {
 
                         //Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
                         Map<AllocNode, SootMethod> virtualCallMap = 
-                                GeoPTA.v().resolveInstanceInvokeMap1CFA(iie, current);
+                                PTABridge.v().resolveInstanceInvokeMap(iie, 
+                                    new PTAContext(ContextType.ONE_CFA, current));
                         for (Map.Entry<AllocNode, SootMethod> entry: 
                             virtualCallMap.entrySet()) {
 
@@ -210,7 +212,7 @@ public class CallGraphTraversal {
 class MethodAndContext {
     SootMethod method;
     Edge context;
-    
+
     public MethodAndContext(SootMethod method, Edge context) {
         super();
         this.method = method;
@@ -225,7 +227,7 @@ class MethodAndContext {
         result = prime * result + ((method == null) ? 0 : method.hashCode());
         return result;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -249,38 +251,38 @@ class MethodAndContext {
  *
  */
 class EdgeAndContext {
-    Edge edgeInto;
-    Edge context;
-    
+    Edge oneCFAEdge;
+    Edge eventEdge;
+
     public EdgeAndContext(Edge edgeInto, Edge context) {
         super();
-        this.edgeInto = edgeInto;
-        this.context = context;
+        this.oneCFAEdge = edgeInto;
+        this.eventEdge = context;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((context == null) ? 0 : context.hashCode());
-        result = prime * result + ((edgeInto == null) ? 0 : edgeInto.hashCode());
+        result = prime * result + ((eventEdge == null) ? 0 : eventEdge.hashCode());
+        result = prime * result + ((oneCFAEdge == null) ? 0 : oneCFAEdge.hashCode());
         return result;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
         EdgeAndContext other = (EdgeAndContext) obj;
-        if (context == null) {
-            if (other.context != null) return false;
-        } else if (!context.equals(other.context)) return false;
-        if (edgeInto == null) {
-            if (other.edgeInto != null) return false;
-        } else if (!edgeInto.equals(other.edgeInto)) return false;
+        if (eventEdge == null) {
+            if (other.eventEdge != null) return false;
+        } else if (!eventEdge.equals(other.eventEdge)) return false;
+        if (oneCFAEdge == null) {
+            if (other.oneCFAEdge != null) return false;
+        } else if (!oneCFAEdge.equals(other.oneCFAEdge)) return false;
         return true;
     }
-    
-    
+
+
 }

@@ -1,8 +1,10 @@
 package droidsafe.analyses.value;
 
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.helper.CallGraphTraversal;
-import droidsafe.analyses.helper.CGVisitorEntryAnd1CFA;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
+import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
@@ -127,7 +129,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(AllocNode node) {
-        Object newExpr = GeoPTA.v().getNewExpr(node);
+        Object newExpr = PTABridge.v().getNewExpr(node);
 
         return this.allocNodeToVAModelMap.containsKey(newExpr) &&
                 !this.allocNodeToVAModelMap.get(newExpr).invalidated();
@@ -137,7 +139,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
      * Return the ModeledObject result for a given alloc node.
      */
     public VAModel getResult(AllocNode node) {
-        Object newExpr = GeoPTA.v().getNewExpr(node);
+        Object newExpr = PTABridge.v().getNewExpr(node);
 
         return this.allocNodeToVAModelMap.get(newExpr);
     }
@@ -154,7 +156,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
 
     /** run the analysis to fixed point */
     public static void run() {
-        if (GeoPTA.v() == null) {
+        if (PTABridge.v() == null) {
             logger.error("The GeoPTA pass has not been run. Value analysis requires it.");
             droidsafe.main.Main.exit(1);
         }      
@@ -176,7 +178,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         am.createObjectModels();
         
         CallGraphTraversal.acceptEntryContextAnd1CFA(am);
-
+                                
         am.logResults();
 
         try {
@@ -193,8 +195,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     }
     
     public void createObjectModels() {
-        for(AllocNode allocNode : GeoPTA.v().getAllAllocNodes()) {
-            Object newExpr = GeoPTA.v().getNewExpr(allocNode);
+        for(AllocNode allocNode : PTABridge.v().getAllAllocNodes()) {
+            Object newExpr = PTABridge.v().getNewExpr(allocNode);
             createObjectModel(allocNode, newExpr);    
         }
     }
@@ -260,8 +262,8 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     }
 
     @Override
-    public void visitEntryContextAnd1CFA(SootMethod sootMethod, Edge entryEdge, Edge edgeInto) {
-
+    public void visitEntryContextAnd1CFA(SootMethod sootMethod, PTAContext eventContext, PTAContext oneCFAContext) {
+                
         if(!sootMethod.isConcrete())
             return;
 
@@ -283,9 +285,9 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                         continue;
                                         
                     //this call here is expensive!!
-                    Set<AllocNode> baseAllocNodes = GeoPTA.v().getPTSetEventContext(baseValue, entryEdge);
+                    Set<AllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue, eventContext);
                     for(AllocNode allocNode : baseAllocNodes) {
-                        Object newExpr = GeoPTA.v().getNewExpr(allocNode);
+                        Object newExpr = PTABridge.v().getNewExpr(allocNode);
                         VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
                         if(vaModel != null) {
                             Class<?> c = vaModel.getClass();
@@ -298,7 +300,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
                                     if(fieldObjectVAModel instanceof PrimVAModel) {
                                         PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
                                         if (fieldPrimVAModel instanceof StringVAModel) {
-                                            handleString(assignStmt, fieldPrimVAModel, entryEdge);
+                                            handleString(assignStmt, fieldPrimVAModel, eventContext);
                                         } else  {
                                             //primitive, but not string primitive
                                             if(rightOp instanceof Constant) {
@@ -340,7 +342,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     /**
      * Handle case where type for assignment is a string
      */
-    private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Edge entryEdge) {
+    private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, PTAContext eventContext) {
         //Found string
         //System.out.println("Found String!!: " + fieldObject);
         Set<AllocNode> rhsNodes;
@@ -349,10 +351,10 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
         if (assignStmt.getRightOp() instanceof StringConstant) {
             //if a direct string constant, then get the string constant node from pta
             rhsNodes = new HashSet<AllocNode>();
-            rhsNodes.add(GeoPTA.v().getAllocNode(assignStmt.getRightOp()));
+            rhsNodes.add(PTABridge.v().getAllocNode(assignStmt.getRightOp()));
         } else {
             //if not a string constant, then query pta
-            rhsNodes = GeoPTA.v().getPTSetEventContext(assignStmt.getRightOp(), entryEdge);
+            rhsNodes = PTABridge.v().getPTSet(assignStmt.getRightOp(), eventContext);
         }
 
         for(AllocNode rhsNode : rhsNodes) {
@@ -412,7 +414,7 @@ public class ValueAnalysis implements CGVisitorEntryAnd1CFA {
     private void logResults() {
         for(Map.Entry<Object, VAModel> entry : allocNodeToVAModelMap.entrySet()) {
             logResult("NewExpr: " + entry.getKey().toString());
-            logResult("AllocNode: " + GeoPTA.v().getAllocNode(entry.getKey()));
+            logResult("AllocNode: " + PTABridge.v().getAllocNode(entry.getKey()));
             logResult("Model: " + entry.getValue().toStringPretty());
         }
     }

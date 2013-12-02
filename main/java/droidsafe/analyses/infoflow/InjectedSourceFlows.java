@@ -1,6 +1,6 @@
 package droidsafe.analyses.infoflow;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.analyses.value.ValueAnalysis;
@@ -9,7 +9,6 @@ import droidsafe.analyses.value.RefVAModel;
 import droidsafe.analyses.value.VAUtils;
 
 import java.lang.reflect.Field;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -28,17 +27,11 @@ import soot.jimple.internal.AbstractNewExpr;
 import soot.jimple.NewExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
-
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootField;
-
 import soot.Type;
-
 import soot.util.Chain;
 
 /**
@@ -137,7 +130,7 @@ public class InjectedSourceFlows {
      * Return the set of injected flows for this allocation site.
      */
     public Set<InfoKind> getInjectedFlows(AllocNode node) {
-        Object newExpr = GeoPTA.v().getNewExpr(node);
+        Object newExpr = PTABridge.v().getNewExpr(node);
         if (newExpr instanceof NewExpr) {
             String className = ((NewExpr)newExpr).getBaseType().getClassName();
             if (classNameToFlows.containsKey(className)) {
@@ -192,7 +185,7 @@ public class InjectedSourceFlows {
 
         //loop over all allocnodes in the results and if there is an inject flow, remember it
         for (Object newExpr : ValueAnalysis.v().getResults().keySet()) {
-            AllocNode node = GeoPTA.v().getAllocNode(newExpr);
+            AllocNode node = PTABridge.v().getAllocNode(newExpr);
             Type type = node.getType();
             if (type instanceof RefType) {
                 SootClass clz = ((RefType)type).getSootClass();

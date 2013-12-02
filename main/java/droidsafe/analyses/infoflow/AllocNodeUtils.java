@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+import droidsafe.analyses.pta.PTABridge;
 import soot.ArrayType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootField;
-import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.Node;
@@ -54,6 +54,10 @@ public class AllocNodeUtils {
         final Set<AllocNode> directlyReachableAllocNodes = new HashSet<AllocNode>();
         if (allocNode.getType() instanceof RefType) {
             for (AllocDotField allocDotField : allocNode.getFields()) {
+                directlyReachableAllocNodes.addAll(PTABridge.v().getPTSet(allocNode,  (SootField)allocDotField.getField()));
+            }
+            /*
+            for (AllocDotField allocDotField : allocNode.getFields()) {
                 ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjects(allocNode, (SootField)allocDotField.getField())).forall(new P2SetVisitor() {
                     @Override
                     public void visit(Node node) {
@@ -61,7 +65,10 @@ public class AllocNodeUtils {
                     }
                 });
             }
+            */
         } else if (allocNode.getType() instanceof ArrayType) {
+            directlyReachableAllocNodes.addAll(PTABridge.v().getPTSetOfArrayElement(allocNode));
+            /*
             HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), (GeomPointsTo)Scene.v().getPointsToAnalysis());
             pointsToSet.add(allocNode);
             ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
@@ -70,6 +77,7 @@ public class AllocNodeUtils {
                     directlyReachableAllocNodes.add((AllocNode)node);
                 }
             });
+            */
         }
         for (AllocNode directlyReachableAllocNode : directlyReachableAllocNodes) {
             if (!visitedAllocNodes.contains(directlyReachableAllocNode)) {

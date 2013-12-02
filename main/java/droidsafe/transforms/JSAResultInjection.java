@@ -1,6 +1,6 @@
 package droidsafe.transforms;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
 import droidsafe.analyses.value.ValueAnalysis;
@@ -169,7 +169,7 @@ public class JSAResultInjection extends BodyTransformer {
         AssignStmt assign = (AssignStmt)stmt;
         InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
         try {
-            Collection<SootMethod> targets = GeoPTA.v().resolveInvokeContextIns(invoke);
+            Collection<SootMethod> targets = PTABridge.v().resolveInvoke(invoke);
 
             if (targets.size() != 1)
                 return false;
@@ -179,7 +179,7 @@ public class JSAResultInjection extends BodyTransformer {
                 //replace java.lang.Class.getName() with a string constant if possible
                 if ("<java.lang.Class: java.lang.String getName()>".equals(target.getSignature())) {
                     InstanceInvokeExpr iie = (InstanceInvokeExpr) invoke;
-                    Set<AllocNode> nodes = GeoPTA.v().getPTSetContextIns(iie.getBase());
+                    Set<AllocNode> nodes = PTABridge.v().getPTSet(iie.getBase());
                     if (nodes.size() != 1) 
                         return false;
                             

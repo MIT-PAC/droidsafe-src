@@ -9,6 +9,9 @@ import soot.SootClass;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.queue.QueueReader;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.android.app.Project;
 
@@ -93,7 +96,8 @@ public class EntryPointCGEdges {
      */
     private void checkPTA()  {
         for (Edge e : entryPointEdges) {
-            GeoPTA.v().dumpPTAForContext(System.out, e);
+            PTAContext context = new PTAContext(ContextType.EVENT_CONTEXT, e);
+            PTABridge.v().dumpPTAForContext(System.out, context);
         }
     }
     

@@ -23,13 +23,14 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.tagkit.LineNumberTag;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.PTAMethodInformation;
 import droidsafe.analyses.infoflow.APIInfoKindMapping;
 import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.analyses.infoflow.InfoUnit;
 import droidsafe.analyses.infoflow.InfoValue;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.pta.ContextType;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
@@ -175,10 +176,10 @@ public class Method implements Comparable<Method> {
      * Return a set of allocation nodes for possible new expression that can reach receiver of this method.
      */
     public Set<AllocNode> getReceiverAllocNodes() {
-        if (ptaInfo == null || !ptaInfo.hasReceiver() || !GeoPTA.v().isPointer(ptaInfo.getReceiver()))
+        if (ptaInfo == null || !ptaInfo.hasReceiver() || !PTABridge.v().isPointer(ptaInfo.getReceiver()))
             return new HashSet<AllocNode>();
 
-        return ptaInfo.getReceiverPTSet();
+        return ptaInfo.getReceiverPTSet(ptaInfo.getContext(ContextType.EVENT_CONTEXT));
     }
 
     /**
@@ -186,10 +187,10 @@ public class Method implements Comparable<Method> {
      * assuming it is a pointer value.  Return empty set of any problems.
      */
     public Set<AllocNode> getArgAllocNodes(int i) {
-        if (ptaInfo == null || !GeoPTA.v().isPointer(ptaInfo.getArgValue(i)))
+        if (ptaInfo == null || !PTABridge.v().isPointer(ptaInfo.getArgValue(i)))
             return new HashSet<AllocNode>();
 
-        return ptaInfo.getArgPTSet(i);
+        return ptaInfo.getArgPTSet(ptaInfo.getContext(ContextType.EVENT_CONTEXT), i);
     }
 
     public boolean hasReceiver() {
@@ -368,7 +369,8 @@ public class Method implements Comparable<Method> {
 
         Unit unit = JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr());
         //call the information flow results
-        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getContextEdge(), unit, (Local)val);
+        return InformationFlowAnalysis.v().getTaintsBeforeRecursively(ptaInfo.getContext(ContextType.EVENT_CONTEXT), 
+            unit, (Local)val);
     }
 
     /**
@@ -440,7 +442,7 @@ public class Method implements Comparable<Method> {
 
                 try {
                     Collection<SootMethod> targets = 
-                            GeoPTA.v().resolveInvokeEventContext(invoke, ptaInfo.getContextEdge());
+                            PTABridge.v().resolveInvoke(invoke, ptaInfo.getContext(ContextType.EVENT_CONTEXT));
 
                     for (SootMethod target : targets) {
                         if (APIInfoKindMapping.v().hasSourceInfoKind(target))

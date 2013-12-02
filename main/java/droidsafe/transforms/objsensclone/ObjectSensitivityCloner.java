@@ -1,6 +1,6 @@
 package droidsafe.transforms.objsensclone;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
@@ -66,7 +66,7 @@ public class ObjectSensitivityCloner {
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through
         Map<SootClass, AllocGraphNode> allocations = new HashMap<SootClass,AllocGraphNode>();
-        SootMethod[] methods = GeoPTA.v().getAllReachableMethods().toArray(new SootMethod[0]);
+        SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
 
         for (SootMethod method : methods) {
 
@@ -149,7 +149,7 @@ public class ObjectSensitivityCloner {
 
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through
-        SootMethod[] methods = GeoPTA.v().getAllReachableMethods().toArray(new SootMethod[0]);
+        SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
         Arrays.sort(methods, new ToStringComparator());
 
         int i = -1;
@@ -290,7 +290,6 @@ public class ObjectSensitivityCloner {
         System.out.println("Failed...");
         return null;
     }
-
 }
 
 class ToStringComparator implements Comparator<Object> {

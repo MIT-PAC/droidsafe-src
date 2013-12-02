@@ -1,4 +1,4 @@
-package droidsafe.analyses;
+package droidsafe.analyses.pta;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -80,6 +80,7 @@ import soot.jimple.ArrayRef;
 import soot.jimple.FieldRef;
 import soot.jimple.spark.pag.FieldRefNode;
 import soot.jimple.spark.sets.EmptyPointsToSet;
+import soot.jimple.spark.sets.HashPointsToSet;
 import soot.jimple.spark.sets.P2SetVisitor;
 import soot.jimple.spark.sets.PointsToSetInternal;
 
@@ -87,7 +88,6 @@ import com.google.common.collect.HashBiMap;
 
 import org.apache.commons.io.*;
 import org.apache.commons.io.output.NullOutputStream;
-import org.apache.commons.lang3.time.StopWatch;
 
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
@@ -108,7 +108,7 @@ import droidsafe.utils.Utils;
  * @author mgordon
  *
  */
-public class GeoPTA {
+public class GeoPTA extends PTABridge {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(GeoPTA.class);
     /** internal soot geometric points to analysis object */
@@ -117,8 +117,6 @@ public class GeoPTA {
     private CallGraph callGraph;
     /** bimap of new expressions to their alloc node representation */
     private HashBiMap<Object, AllocNode> newToAllocNodeMap;
-    /** singleton of this analysis */
-    private static GeoPTA v;
     /** Full context query interface */
     private GeomQueries queries;
     /** object to reuse for full sensitive queries */
@@ -129,71 +127,30 @@ public class GeoPTA {
     private Map<ValueAndContext, Set<AllocNode>> eventEntryQueryCache;
     public int totalECQueries = 0;
     public int cachedECQueries = 0;
-    private static int runs = 0;
     
     /**
      * Reset the PTA and get it ready for another run.
      */
-    public static void release() {
-        v = null;
-
-        Scene.v().releaseCallGraph();
-        Scene.v().releasePointsToAnalysis();
-
-        G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
-
+    protected void releaseInternal() {
         ContextTranslator.pts_1cfa_map = null;
         ContextTranslator.objs_1cfa_map = null;
-
-        System.gc();
-        System.gc();
     }
 
-    /**
-     * Return the instance of the PTA.
-     */
-    public static GeoPTA v() {
-        return v;
-    }
 
     /**
      * Runs Soot's geometric PTA and resolve the context.
      */
-    public static void run() {
-        runs ++;
+    protected void runInternal() {
+        
         //don't print crap to screen!
-        //G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
+        G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
-        StopWatch timer = new StopWatch();
-        
-        if (runs == 3) {
-            timer.reset();
-            timer.start();
-            setSparkPointsToAnalysis();
-            timer.stop();
-            System.out.println("Spark: " + timer);
-            release();
-        }
-        
-        timer.reset();
-        timer.start();
-        setGeomPointsToAnalysis();
-        timer.stop();
-        System.out.println("Geo: " + timer);
-        
 
-        v = new GeoPTA();
+        setGeomPointsToAnalysis();
         
         //other passes can print crap now
-        //G.v().out = System.out;
-    }
-
-    /**
-     * Private constructor.
-     */
-    private GeoPTA() {
-        eventEntryQueryCache = new HashMap<ValueAndContext, Set<AllocNode>>();
-        
+        G.v().out = System.out;
+       
         ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
         
         //update the underlying soot call graph to prune unrealizeable edges
@@ -218,6 +175,13 @@ public class GeoPTA {
     }
 
     /**
+     * Private constructor.
+     */
+    GeoPTA() {
+        eventEntryQueryCache = new HashMap<ValueAndContext, Set<AllocNode>>();
+    }
+
+    /**
      * Return true if it is legal to cast objType to the refType.  False if not.
      */
     public boolean isLegalCast(Type objType, Type refType) {
@@ -227,7 +191,7 @@ public class GeoPTA {
     /**
      * Return true is this method is a valid method to use for a context sensitive search.
      */
-    public boolean isValidMethod(SootMethod sm) {
+    public boolean isValidContext(SootMethod sm) {
         return ptsProvider.isValidMethod(sm);
     }
     
@@ -317,7 +281,7 @@ public class GeoPTA {
      * Return the internal node representation for the value (local, fieldref, or array ref)
      * in the pointer assignment graph.  
      */
-    public IVarAbstraction getInternalNode(Value val) {
+    private IVarAbstraction getInternalNode(Value val) {
         Node node = null;
         
         if (val instanceof Local) {
@@ -341,33 +305,88 @@ public class GeoPTA {
         return internalNode;
     }
 
-    /**
-     * For a given pointer in the context, return all the types that the objects pointed to 
-     * by the pointer can realize.
-     */
-    public Set<Type> getTypesEntryPointContext(Value val, Edge context) {
+    @Override
+    public Set<Type> getTypes(Value val) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSetEventContext(val, context)) {
+        for (AllocNode node : getPTSet(val)) {
             types.add(node.getType());
         }
 
         return types;
     }
 
-   
+
+    @Override
+    public Set<Type> getTypes(Value val, PTAContext context) {
+        Set<Type> types = new LinkedHashSet<Type>();
+
+        for (AllocNode node : getPTSet(val, context)) {
+            types.add(node.getType());
+        }
+
+        return types;
+    }
+    
+    public Set<AllocNode> getPTSetOfArrayElement(AllocNode allocNode) {
+        final Set<AllocNode> ptSet = new HashSet<AllocNode>();
+        
+        HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), ptsProvider);
+        pointsToSet.add(allocNode);
+        
+                ((PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
+            @Override
+            public void visit(Node node) {
+                ptSet.add((AllocNode)node);
+            }
+        });
+        
+        return ptSet;
+    }
+    
+    /**
+     * Content Insensitive query of field reference with allocnode and field. 
+     */
+    public Set<AllocNode> getPTSet(AllocNode node, SootField field) {
+        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+
+        PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects(node, field);
+
+        //visit internal points to set and grab all allocnodes        
+        pts.forall(new P2SetVisitor() {
+            public void visit(Node n) {
+                allocNodes.add((AllocNode)n);
+            }
+        });
+
+        return allocNodes;
+    }
+    
+    @Override
+    public Set<AllocNode> getPTSet(Value val, PTAContext context) {
+        if (context.getType() == ContextType.EVENT_CONTEXT) {
+            return getPTSetEventContext(val, context.getContext());
+        } else if (context.getType() == ContextType.ONE_CFA) {
+            return getPTSet1CFA(val, context.getContext());
+        } else {
+            logger.error("Invalid Query Type: {}", context.getType());
+            droidsafe.main.Main.exit(1);
+            return null;
+        }
+    }
+    
     /** 
      * Return the 1CFA context query for reference and 1CFA context edge.
      */
-    public Set<AllocNode> getPTSet1CFA(Value val, Edge context) {
+    private Set<AllocNode> getPTSet1CFA(Value val, Edge context) {
         try {
             //if the context does not make sense, use the insensitive version
             if (context == null || context.srcStmt() == null)
-                return getPTSetContextIns(val);
+                return getPTSet(val);
 
             if (ptsProvider.getInternalEdgeFromSootEdge(context) == null) {
                 //System.out.println("Edge not in geo: " + context);
-                return getPTSetContextIns(val);
+                return getPTSet(val);
             }
 
             final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
@@ -406,7 +425,7 @@ public class GeoPTA {
             return allocNodes;
         } catch (Exception ee) {
             logger.info("Some error in 1CFA search.  Falling back to insensitive search." , ee);
-            return getPTSetContextIns(val);
+            return getPTSet(val);
         }
     }
     
@@ -416,9 +435,9 @@ public class GeoPTA {
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
-    public Set<AllocNode> getPTSetEventContext(Value val, Edge context) {
+    private Set<AllocNode> getPTSetEventContext(Value val, Edge context) {
         if (!Config.v().eventContextPTA)
-            return getPTSetContextIns(val);
+            return getPTSet(val);
         
         totalECQueries++;
         
@@ -440,7 +459,7 @@ public class GeoPTA {
                     queries.contexsByAnyCallEdge(context, (Local)val, objFull) ) {
                 objFull.finish();
             } else {
-                return getPTSetContextIns(val);
+                return getPTSet(val);
             }
             for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
@@ -460,7 +479,7 @@ public class GeoPTA {
                     queries.contextsByAnyCallEdge(context, base, ifr.getField(), objFull) ) {
                 objFull.finish();
             } else {
-                return getPTSetContextIns(val);
+                return getPTSet(val);
             }
             for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
@@ -479,7 +498,7 @@ public class GeoPTA {
                     queries.contextsByAnyCallEdge(context, base, ArrayElement.v(), objFull) ) {
                 objFull.finish();
             } else {
-                return getPTSetContextIns(val);
+                return getPTSet(val);
             }
             for ( IntervalContextVar icv : objFull.outList ) {
                 allocNodes.add((AllocNode)icv.var);
@@ -488,32 +507,14 @@ public class GeoPTA {
             return allocNodes;
         }
         else {
-            return getPTSetContextIns(val);
+            return getPTSet(val);
         }
-    }
-    
-    /**
-     * Content Insensitive query of field reference with allocnode and field. 
-     */
-    public Set<AllocNode> getPTSetContextIns(AllocNode node, SootField field) {
-        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
-
-        PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects(node, field);
-
-        //visit internal points to set and grab all allocnodes        
-        pts.forall(new P2SetVisitor() {
-            public void visit(Node n) {
-                allocNodes.add((AllocNode)n);
-            }
-        });
-
-        return allocNodes;
     }
     
     /**
      * Given a pointer value, return the context insensitive points to set.
      */
-    public Set<AllocNode> getPTSetContextIns(Value val) {
+    public Set<AllocNode> getPTSet(Value val) {
                
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
@@ -577,7 +578,7 @@ public class GeoPTA {
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use an insensitive search.
      */
-    public Collection<SootMethod> resolveInvokeContextIns(InvokeExpr invoke) 
+    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke) 
         throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -587,17 +588,31 @@ public class GeoPTA {
             logger.error("Should not see dynamic invoke expr: {}", invoke);
             droidsafe.main.Main.exit(1);
         } else if (invoke instanceof InstanceInvokeExpr) {
-            return resolveInstanceInvokeContextIns((InstanceInvokeExpr)invoke);
+            return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
         }
         
         return Collections.emptySet();
+    }
+    
+    @Override
+    public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, PTAContext context) 
+            throws CannotFindMethodException {
+        if (context.getType() == ContextType.EVENT_CONTEXT) {
+           return resolveInvokeEventContext(invoke, context.getContext()); 
+        } else if (context.getType() == ContextType.ONE_CFA) {
+            return resolveInvoke1CFA(invoke, context.getContext());
+        } else {
+            logger.error("Invalid Query Type: {}", context.getType());
+            droidsafe.main.Main.exit(1);
+            return null;
+        }
     }
     
     /**
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use an event context search.
      */
-    public Collection<SootMethod> resolveInvokeEventContext(InvokeExpr invoke, Edge context) 
+    private Collection<SootMethod> resolveInvokeEventContext(InvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -617,7 +632,7 @@ public class GeoPTA {
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use a 1cfa search.
      */
-    public Collection<SootMethod> resolveInvoke1CFA(InvokeExpr invoke, Edge context) 
+    private Collection<SootMethod> resolveInvoke1CFA(InvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
@@ -633,23 +648,27 @@ public class GeoPTA {
         return Collections.emptySet();
     }
     
-    /**
-     * Use the PTA to resolve the set of methods that an instance invoke could call.  In this
-     * version, use the context insensitive PTA result.
-     * 
-     * If the method cannot be found, then throw a specialized exception.
-     */
-    public Collection<SootMethod> resolveInstanceInvokeContextIns(InstanceInvokeExpr invoke) 
-            throws CannotFindMethodException {
-        return resolveInstanceInvokeMapContextIns(invoke).values();
-    }
 
+    @Override
+    public  Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context) 
+            throws CannotFindMethodException {
+        if (context.getType() == ContextType.EVENT_CONTEXT) {
+           return resolveInstanceInvokeMapEventContext(invoke, context.getContext()); 
+        } else if (context.getType() == ContextType.ONE_CFA) {
+            return resolveInstanceInvokeMap1CFA(invoke, context.getContext());
+        } else {
+            logger.error("Invalid Query Type: {}", context.getType());
+            droidsafe.main.Main.exit(1);
+            return null;
+        }
+    }
+    
     /**
      * Use the PTA to resolve the set of method that an instance invoke could call.  In this 
      * version, use the context insensitive result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<AllocNode,SootMethod> resolveInstanceInvokeMapContextIns(InstanceInvokeExpr invoke) 
+    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
         throws CannotFindMethodException {
         return resolveInstanceInvokeMap1CFA(invoke, null);
     }
@@ -659,12 +678,12 @@ public class GeoPTA {
      * version, use the 1cfa context result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Edge context) 
+    private Map<AllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Edge context) 
         throws CannotFindMethodException {
         Set<AllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
-            allocs = getPTSetContextIns(invoke.getBase());
+            allocs = getPTSet(invoke.getBase());
         else
             allocs = getPTSet1CFA(invoke.getBase(), context);
         
@@ -722,7 +741,7 @@ public class GeoPTA {
         Set<AllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
-            allocs = getPTSetContextIns(invoke.getBase());
+            allocs = getPTSet(invoke.getBase());
         else
             allocs = getPTSetEventContext(invoke.getBase(), context);
         
@@ -745,7 +764,7 @@ public class GeoPTA {
      * The Geometric PTA has its own internal call graph edge IR that mirrors the soot call graph edge.
      * Use this method to retrieve the internal geo call graph edge from a soot edge.
      */
-    public CgEdge getInternalEdgeFromSootEdge(Edge edge) {
+    private CgEdge getInternalEdgeFromSootEdge(Edge edge) {
         return ptsProvider.getInternalEdgeFromSootEdge(edge);
     }
 
@@ -772,10 +791,10 @@ public class GeoPTA {
      * Given a specific context, a soot edge, dump the pta analysis results only for that context (but
      * considering all references in the program).
      */
-    public void dumpPTAForContext(PrintStream file, Edge sootContext) {
-        file.printf("== dumpPTA for %s ==\n", sootContext);
+    public void dumpPTAForContext(PrintStream file, PTAContext ptaContext) {
+        file.printf("== dumpPTA for %s ==\n", ptaContext);
 
-        CgEdge context = ptsProvider.getInternalEdgeFromSootEdge(sootContext);
+        CgEdge context = ptsProvider.getInternalEdgeFromSootEdge(ptaContext.getContext());
 
         for ( IVarAbstraction pn : ptsProvider.pointers ) {
             IVarAbstraction orig = pn;
@@ -1000,7 +1019,7 @@ public class GeoPTA {
         opt.put("types-for-sites","false");        
         opt.put("merge-stringbuffer","false");   
         opt.put("string-constants","true");     
-        opt.put("simulate-natives","false");      
+        opt.put("simulate-natives","true");      
         opt.put("simple-edges-bidirectional","false");
         opt.put("on-fly-cg","true");            
         opt.put("simplify-offline","false");    
@@ -1023,55 +1042,6 @@ public class GeoPTA {
         SparkTransformer.v().transform("",opt);
 
         logger.info("[GeomPTA] Done!");
-    }
-
-    /**
-     * Run context insensitive spark analysis.
-     */
-    static void setSparkPointsToAnalysis() {
-        logger.info("[spark] Starting analysis ...");
-
-        HashMap<String, String> opt = new HashMap<String, String>();
-        opt.put("enabled","true");
-        opt.put("verbose","false");
-        opt.put("ignore-types","false");          
-        opt.put("force-gc","false");            
-        opt.put("pre-jimplify","false");          
-        opt.put("vta","false");                   
-        opt.put("rta","false");                   
-        opt.put("field-based","false");           
-        opt.put("types-for-sites","false");        
-        opt.put("merge-stringbuffer","false");   
-        opt.put("string-constants","true");     
-        opt.put("simulate-natives","false");      
-        opt.put("simple-edges-bidirectional","false");
-        opt.put("on-fly-cg","true");            
-        opt.put("simplify-offline","false");    
-        opt.put("simplify-sccs","false");        
-        opt.put("ignore-types-for-sccs","false");
-        opt.put("propagator","worklist");
-        opt.put("set-impl","double");
-        opt.put("double-set-old","hybrid");         
-        opt.put("double-set-new","hybrid");
-        opt.put("dump-html","false");           
-        opt.put("dump-pag","false");             
-        opt.put("dump-solution","false");        
-        opt.put("topo-sort","false");           
-        opt.put("dump-types","true");             
-        opt.put("class-method-var","true");     
-        opt.put("dump-answer","false");          
-        opt.put("add-tags","false");             
-        opt.put("set-mass","false"); 
-        //some context sensitivity
-        opt.put("cs-demand", "true");
-        opt.put("lazy-pts", "true");
-        opt.put("passes", "10");
-        opt.put("traversal", "75000");
-
-        SparkTransformer.v().transform("",opt);
-
-
-        logger.info("[spark] Done!");
     }
 
     /**
@@ -1157,7 +1127,7 @@ public class GeoPTA {
      * Return a set of all SootEdges of the call graph that the context sensitive
      * has not obsoleted.  
      */
-    public Set<Edge> getAllCallGraphEdges() {
+    private Set<Edge> getAllCallGraphEdges() {
         Set<Edge> allCSEdges = new LinkedHashSet<Edge>();
         int n_func = ptsProvider.n_func;
 
@@ -1179,7 +1149,7 @@ public class GeoPTA {
     /**
      * Return the source location tag for an allocation node.
      */
-    public SourceLocationTag getSourceTag(AllocNode node) {
+    private SourceLocationTag getSourceTag(AllocNode node) {
         Object newObject = getNewExpr(node);
         
         if (! (newObject instanceof Expr)) {

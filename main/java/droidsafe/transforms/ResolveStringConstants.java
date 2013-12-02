@@ -1,6 +1,6 @@
 package droidsafe.transforms;
 
-import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.Project;
@@ -8,9 +8,7 @@ import droidsafe.android.app.resources.Resources;
 import droidsafe.android.app.resources.RString;
 import droidsafe.android.app.resources.RStringArray;
 import droidsafe.android.system.API;
-
 import droidsafe.transforms.AddAllocsForAPICalls;
-
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 
@@ -27,14 +25,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ArrayType;
-
 import soot.Body;
 import soot.Body;
 import soot.Unit;
-
 import soot.BodyTransformer;
 import soot.BodyTransformer;
-
 import soot.jimple.ArrayRef;
 import soot.jimple.AssignStmt;
 import soot.jimple.AssignStmt;
@@ -54,26 +49,16 @@ import soot.jimple.StmtBody;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
 import soot.jimple.StringConstant;
-
 import soot.RefLikeType;
-
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootField;
-
 import soot.SootMethod;
-
 import soot.tagkit.IntegerConstantValueTag;
 import soot.tagkit.Tag;
-
 import soot.Type;
-
 import soot.util.Chain;
-
 import soot.Value;
 
 
@@ -293,7 +278,7 @@ public class ResolveStringConstants extends BodyTransformer {
     private Collection<SootMethod> getTargets(InvokeExpr expr) {
         if (expr instanceof InstanceInvokeExpr) {
             try {
-                return GeoPTA.v().resolveInstanceInvokeContextIns((InstanceInvokeExpr)expr);
+                return PTABridge.v().resolveInstanceInvoke((InstanceInvokeExpr)expr);
             } catch (CannotFindMethodException e) {
                logger.error("Error resolving virtual call: {}", e);
                droidsafe.main.Main.exit(1);
