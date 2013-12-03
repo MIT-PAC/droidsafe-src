@@ -66,9 +66,11 @@ public class CallGraphTraversal {
         v = new CallGraphTraversal();
         //create the cached traversal
         v.traversal();
-        /*System.out.println("Edges: " + v.visitedEdges.size());
+        
+        System.out.println("Methods: " + PTABridge.v().getAllReachableMethods().size());
+        System.out.println("Edges: " + v.visitedEdges.size());
         System.out.println("Method and Entry: " + v.visitedMethodAndContext.size());
-        System.out.println("Method + Entry + 1CFA: " + v.visitedEntryAnd1CFA.size());*/
+        System.out.println("Method + Entry + 1CFA: " + v.visitedEntryAnd1CFA.size());
     }
 
     /**
