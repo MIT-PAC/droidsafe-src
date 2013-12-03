@@ -135,7 +135,7 @@ public class ObjectSensitivityCloner {
         @Override
         public int compareTo(AllocGraphNode o) {
             // TODO Auto-generated method stub
-            return Integer.compare(o.in.size(), this.in.size());
+            return Integer.compare(this.in.size(), o.in.size());
         }
     }
 
@@ -144,6 +144,10 @@ public class ObjectSensitivityCloner {
      * new expression.
      */
     public static void run() {
+        internalRun();
+    }
+    
+    private static void internalRun() {
         int clonedClasses = 0;
 
         AllocGraphNode[] sortedNodes = buildAllocationGraph();
@@ -160,14 +164,16 @@ public class ObjectSensitivityCloner {
             i++;
             SootClass currentClass = currentAllocNode.myClz;
             
-            if (("java.lang.String".equals(currentClass.getName()) ||
+            
+            /*if (("java.lang.String".equals(currentClass.getName()) ||
                     "java.lang.StringBuffer".equals(currentClass.getName()) ||
                     "java.lang.StringBuilder".equals(currentClass.getName()) ) )
-                    continue;
-                
-            
+                    continue;*/
+                        
             if ( currentAllocNode.in.size() < 2) 
                 continue;
+            
+            System.out.println("Cloning " + currentClass.getName());
             
             //create a list to iterate over that is the current snap shot of the master list
             //because we update the master list for each clone...
