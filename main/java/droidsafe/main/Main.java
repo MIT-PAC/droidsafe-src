@@ -51,6 +51,7 @@ import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.LocalForStringConstantArguments;
+import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.transforms.VATransformsSuite;
@@ -237,6 +238,18 @@ public class Main {
         }
 
         //need this pta run to account for object sens and jsa injection
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
+        driverMsg("Converting Class.getName calls to class name strings.");
+        monitor.subTask("Converting Class.getName calls to class name strings.");
+        ClassGetNameToClassString.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        //need this pta run to propagate the class name strings
         if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
