@@ -143,13 +143,13 @@ public class GeoPTA extends PTABridge {
     protected void runInternal() {
         
         //don't print crap to screen!
-        G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
+        //G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
 
         setGeomPointsToAnalysis();
         
         //other passes can print crap now
-        G.v().out = System.out;
+        //G.v().out = System.out;
        
         ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
         
@@ -368,6 +368,8 @@ public class GeoPTA extends PTABridge {
             return getPTSetEventContext(val, context.getContext());
         } else if (context.getType() == ContextType.ONE_CFA) {
             return getPTSet1CFA(val, context.getContext());
+        } else if (context.getType() == ContextType.NONE) {
+            return getPTSet(val);
         } else {
             logger.error("Invalid Query Type: {}", context.getType());
             droidsafe.main.Main.exit(1);
@@ -601,6 +603,8 @@ public class GeoPTA extends PTABridge {
            return resolveInvokeEventContext(invoke, context.getContext()); 
         } else if (context.getType() == ContextType.ONE_CFA) {
             return resolveInvoke1CFA(invoke, context.getContext());
+        } else if (context.getType() == ContextType.NONE) {
+            return resolveInvoke(invoke);
         } else {
             logger.error("Invalid Query Type: {}", context.getType());
             droidsafe.main.Main.exit(1);
@@ -656,6 +660,8 @@ public class GeoPTA extends PTABridge {
            return resolveInstanceInvokeMapEventContext(invoke, context.getContext()); 
         } else if (context.getType() == ContextType.ONE_CFA) {
             return resolveInstanceInvokeMap1CFA(invoke, context.getContext());
+        } else if (context.getType() == ContextType.NONE) {
+            return resolveInstanceInvokeMap(invoke);
         } else {
             logger.error("Invalid Query Type: {}", context.getType());
             droidsafe.main.Main.exit(1);
