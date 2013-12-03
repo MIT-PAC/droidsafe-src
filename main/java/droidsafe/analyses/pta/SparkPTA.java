@@ -125,6 +125,7 @@ public class SparkPTA extends PTABridge {
         }
         
         System.out.println("Size of reachable methods: " + reachableMethods.size());
+        System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
         
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
@@ -489,12 +490,12 @@ public class SparkPTA extends PTABridge {
      */
     private void createNewToAllocMap() {
         newToAllocNodeMap = HashBiMap.create();
-
-        QueueReader<AllocNode> anReader = ptsProvider.allocNodeListener();
-        while (anReader.hasNext()) {
-            AllocNode node = anReader.next();
+        
+        for (AllocNode node : ptsProvider.getAllocNodes()) {
             newToAllocNodeMap.put(node.getNewExpr(), node);
         }
+        
+        
     }
 
     /**
