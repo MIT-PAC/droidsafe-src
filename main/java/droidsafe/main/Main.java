@@ -72,7 +72,7 @@ import org.apache.commons.lang3.time.*;
  */
 public class Main {
     /** The points to analysis to run */
-    private static final PointsToAnalysisPackage POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.GEOPTA;
+    private static final PointsToAnalysisPackage POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.SPARK;
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
@@ -206,7 +206,7 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
         }
-
+        
         //don't need a pta run here because jsa does not use our pta!
 
         //run jsa after we inject strings from XML values and layout
@@ -225,7 +225,6 @@ public class Main {
         timer1.stop();
         driverMsg("Finished String Analysis: " + timer1);
 
-
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
             monitor.subTask("Injecting String Analysis Results.");
@@ -242,6 +241,18 @@ public class Main {
 
         ValueAnalysis.setup();
         if (Config.v().runValueAnalysis) {
+
+            if (Config.v().writeJimpleAppClasses) {
+                driverMsg("Writing Jimple Classes.");
+                monitor.subTask("Writing all app classes");
+                writeAllAppClasses();
+            }
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+
+            
             driverMsg("Starting Value Analysis");
             monitor.subTask("Value Analysis");
             StopWatch vaTimer = new StopWatch();
