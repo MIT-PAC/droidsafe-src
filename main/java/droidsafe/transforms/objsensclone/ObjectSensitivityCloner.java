@@ -160,9 +160,13 @@ public class ObjectSensitivityCloner {
             i++;
             SootClass currentClass = currentAllocNode.myClz;
             
-            if (i > 20 && 
-                    !(VA_RESOLVED_CLASSES.contains(currentClass) ||
-                    (API.v().isContainerClass(currentClass.getName()))))
+            if (("java.lang.String".equals(currentClass.getName()) ||
+                    "java.lang.StringBuffer".equals(currentClass.getName()) ||
+                    "java.lang.StringBuilder".equals(currentClass.getName()) ) )
+                    continue;
+                
+            
+            if ( currentAllocNode.in.size() < 2) 
                 continue;
             
             //create a list to iterate over that is the current snap shot of the master list
