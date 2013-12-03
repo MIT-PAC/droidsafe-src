@@ -30,6 +30,7 @@ import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.cg.CGContextVisitor;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
@@ -41,6 +42,7 @@ import droidsafe.utils.SootUtils;
 public class VATransformsSuite implements CGContextVisitor {
     public static int localID = 0;
 
+        
     private List<VATransform> transforms = Arrays.asList(
         (VATransform)new ConservativeStartActivity()
             );
@@ -136,7 +138,7 @@ public class VATransformsSuite implements CGContextVisitor {
     public static void run() {
         VATransformsSuite v = new VATransformsSuite();
 
-        CallGraphTraversal.acceptContext(v, ContextType.EVENT_CONTEXT);
+        CallGraphTraversal.acceptContext(v, ValueAnalysis.CONTEXT_TYPE);
     }
 
     private VATransformsSuite() {

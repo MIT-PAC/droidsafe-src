@@ -56,7 +56,8 @@ import soot.Value;
  * @author dpetters
  */
 public class ValueAnalysis implements CGContextVisitor {
-
+    public static final ContextType CONTEXT_TYPE = ContextType.NONE;
+    
     /** Singleton for analysis */
     private static ValueAnalysis am;
 
@@ -178,7 +179,7 @@ public class ValueAnalysis implements CGContextVisitor {
 
         am.createObjectModels();
         
-        CallGraphTraversal.acceptContext(am, ContextType.ONE_CFA);;
+        CallGraphTraversal.acceptContext(am, CONTEXT_TYPE);;
                                 
         am.logResults();
 
