@@ -89,13 +89,17 @@ public class CallGraphTraversal {
     }
 
     /**
-     * Called for each reachable combination of context based on the context type (1CFA or Event)
+     * Called for each reachable combination of context based on the context type (1CFA or Event or No Context)
      */
     public static void acceptContext(CGContextVisitor visitor, ContextType type) {
-        if (v == null)
+        if (type != ContextType.NONE && v == null)
             createCachedTraversal();
 
-        if (type == ContextType.ONE_CFA) {
+        if (type == ContextType.NONE) {
+            for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+                visitor.visit(method, new PTAContext(ContextType.NONE, null));
+            }
+        } else if (type == ContextType.ONE_CFA) {
             for (Edge edge : v.visitedEdges) {
                 visitor.visit(edge.tgt(), new PTAContext(ContextType.ONE_CFA, edge));
             }
