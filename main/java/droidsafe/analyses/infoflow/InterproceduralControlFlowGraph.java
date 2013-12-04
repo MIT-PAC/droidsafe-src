@@ -43,6 +43,8 @@ import droidsafe.utils.SootUtils;
  */
 
 public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
+    public static final ContextType PTA_CONTEXT_TYPE = ContextType.NONE;
+    
     private final List<Block> headBlocks;
 
     private final Map<Block, List<Block>> blockToFollowingBlocks;
@@ -55,7 +57,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     
     public final Map<Unit, Block> unitToBlock;
 
-    public final Map<SootMethod, Set<Edge>> methodToEntryEdges;
+    public final Map<SootMethod, Set<PTAContext>> methodToPTAContext;
     
     private static InterproceduralControlFlowGraph v;
 
@@ -198,18 +200,18 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         collectIntraproceduralControlFlowGraphs();
         connectIntraproceduralControlFlowGraphs();
         
-        methodToEntryEdges = new DefaultHashMap<SootMethod, Set<Edge>>(Collections.<Edge>emptySet());
+        methodToPTAContext = new DefaultHashMap<SootMethod, Set<PTAContext>>(Collections.<PTAContext>emptySet());
         CallGraphTraversal.acceptContext(new CGContextVisitor () {
             @Override
-            public void visit(SootMethod method, PTAContext eventContext) {
-                Set<Edge> entryEdges = methodToEntryEdges.get(method);
-                if (entryEdges.isEmpty()) {
-                    entryEdges = new HashSet<Edge>();
+            public void visit(SootMethod method, PTAContext context) {
+                Set<PTAContext> contexts = methodToPTAContext.get(method);
+                if (contexts.isEmpty()) {
+                    contexts = new HashSet<PTAContext>();
                 }
-                entryEdges.add(eventContext.getContext());
-                methodToEntryEdges.put(method, entryEdges);
+                contexts.add(context);
+                methodToPTAContext.put(method, contexts);
             }
-        }, ContextType.EVENT_CONTEXT);
+        }, PTA_CONTEXT_TYPE);
     }
 
     private void collectIntraproceduralControlFlowGraphs() {

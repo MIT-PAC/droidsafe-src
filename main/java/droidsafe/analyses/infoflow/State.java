@@ -13,29 +13,28 @@ import com.google.common.collect.ImmutableSet;
 import soot.Local;
 import soot.SootField;
 import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.toolkits.callgraph.Edge;
-
+import droidsafe.analyses.pta.PTAContext;
 import droidsafe.main.Config;
 
 class EdgeLocal implements Comparable<EdgeLocal> {
-    private static final HashMap<ImmutablePair<Edge, Local>, EdgeLocal> cache = new HashMap<ImmutablePair<Edge, Local>, EdgeLocal>();
+    private static final HashMap<ImmutablePair<PTAContext, Local>, EdgeLocal> cache = new HashMap<ImmutablePair<PTAContext, Local>, EdgeLocal>();
 
-    Edge entryEdge;
+    PTAContext ptaContext;
     Local local;
 
-    private EdgeLocal(Edge entryEdge, Local local) {
+    private EdgeLocal(PTAContext ptaContext, Local local) {
         if (Config.v().strict) {
-            assert entryEdge != null && local != null;
+            assert ptaContext != null && local != null;
         }
-        this.entryEdge = entryEdge;
+        this.ptaContext = ptaContext;
         this.local = local;
     }
 
-    static EdgeLocal v(Edge entryEdge, Local local) {
-        ImmutablePair<Edge, Local> key = ImmutablePair.of(entryEdge, local);
+    static EdgeLocal v(PTAContext ptaContext, Local local) {
+        ImmutablePair<PTAContext, Local> key = ImmutablePair.of(ptaContext, local);
         EdgeLocal value = cache.get(key);
         if (value == null) {
-            value = new EdgeLocal(entryEdge, local);
+            value = new EdgeLocal(ptaContext, local);
             cache.put(key, value);
         }
         return value;
@@ -51,24 +50,24 @@ class EdgeLocal implements Comparable<EdgeLocal> {
         }
         EdgeLocal that = (EdgeLocal)object;
 
-        return this.entryEdge.equals(that.entryEdge) && this.local.equals(that.local);
+        return this.ptaContext.equals(that.ptaContext) && this.local.equals(that.local);
     }
 
     @Override
     public int hashCode() {
-        return 31 * (31 * 17 + entryEdge.hashCode()) + local.hashCode();
+        return 31 * (31 * 17 + ptaContext.hashCode()) + local.hashCode();
     }
 
     @Override
     public String toString() {
-        return "(" + entryEdge + ", " + local + ")";
+        return "(" + ptaContext + ", " + local + ")";
     }
 
     @Override
     public int compareTo(EdgeLocal that) {
-        int entryEdge = this.entryEdge.toString().compareTo(that.entryEdge.toString());
-        if (entryEdge != 0) {
-            return entryEdge;
+        int ptaContext = this.ptaContext.toString().compareTo(that.ptaContext.toString());
+        if (ptaContext != 0) {
+            return ptaContext;
         } else {
             return this.local.toString().compareTo(that.local.toString());
         }
@@ -88,20 +87,20 @@ class Locals {
         this.edgeLocalToValues = new DefaultHashMap<EdgeLocal, ImmutableSet<InfoValue>>(that.edgeLocalToValues);
     }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, Local local, HashSet<InfoValue> values) {
-        return putS(entryEdge, local, ImmutableSet.<InfoValue>copyOf(values));
+    ImmutableSet<InfoValue> putS(PTAContext ptaContext, Local local, HashSet<InfoValue> values) {
+        return putS(ptaContext, local, ImmutableSet.<InfoValue>copyOf(values));
     }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, Local local, ImmutableSet<InfoValue> values) {
+    ImmutableSet<InfoValue> putS(PTAContext ptaContext, Local local, ImmutableSet<InfoValue> values) {
         if (values != null && !values.isEmpty()) {
-            return edgeLocalToValues.put(EdgeLocal.v(entryEdge, local), values);
+            return edgeLocalToValues.put(EdgeLocal.v(ptaContext, local), values);
         } else {
-            return edgeLocalToValues.remove(EdgeLocal.v(entryEdge, local));
+            return edgeLocalToValues.remove(EdgeLocal.v(ptaContext, local));
         }
     }
 
-    ImmutableSet<InfoValue> putW(Edge entryEdge, Local local, ImmutableSet<InfoValue> values) {
-        EdgeLocal edgeLocal = EdgeLocal.v(entryEdge, local);
+    ImmutableSet<InfoValue> putW(PTAContext ptaContext, Local local, ImmutableSet<InfoValue> values) {
+        EdgeLocal edgeLocal = EdgeLocal.v(ptaContext, local);
         ImmutableSet<InfoValue> oldValues = edgeLocalToValues.get(edgeLocal);
         if (values != null && !values.isEmpty()) {
             HashSet<InfoValue> newValues = new HashSet<InfoValue>(oldValues);
@@ -116,16 +115,16 @@ class Locals {
         return edgeLocalToValues.remove(edgeLocal);
     }
 
-    ImmutableSet<InfoValue> remove(Edge entryEdge, Local local) {
-        return remove(EdgeLocal.v(entryEdge, local));
+    ImmutableSet<InfoValue> remove(PTAContext ptaContext, Local local) {
+        return remove(EdgeLocal.v(ptaContext, local));
     }
 
     private ImmutableSet<InfoValue> get(EdgeLocal edgeLocal) {
         return edgeLocalToValues.get(edgeLocal);
     }
 
-    ImmutableSet<InfoValue> get(Edge entryEdge, Local local) {
-        return get(EdgeLocal.v(entryEdge, local));
+    ImmutableSet<InfoValue> get(PTAContext ptaContext, Local local) {
+        return get(EdgeLocal.v(ptaContext, local));
     }
 
     Locals merge(Locals that) {
@@ -354,65 +353,65 @@ class AddressFieldToValues {
 }
 
 class Instances {
-    private DefaultHashMap<Edge, AddressFieldToValues> edgeToAddressFieldToValues;
+    private DefaultHashMap<PTAContext, AddressFieldToValues> edgeToAddressFieldToValues;
 
     Instances() {
-        edgeToAddressFieldToValues = new DefaultHashMap<Edge, AddressFieldToValues>(AddressFieldToValues.EMPTY);
+        edgeToAddressFieldToValues = new DefaultHashMap<PTAContext, AddressFieldToValues>(AddressFieldToValues.EMPTY);
     }
 
     Instances(Instances that) {
-        this.edgeToAddressFieldToValues = new DefaultHashMap<Edge, AddressFieldToValues>(AddressFieldToValues.EMPTY);
-        for (Map.Entry<Edge, AddressFieldToValues> edgeAddressFieldToValues : that.edgeToAddressFieldToValues.entrySet()) {
-            Edge edge = edgeAddressFieldToValues.getKey();
+        this.edgeToAddressFieldToValues = new DefaultHashMap<PTAContext, AddressFieldToValues>(AddressFieldToValues.EMPTY);
+        for (Map.Entry<PTAContext, AddressFieldToValues> edgeAddressFieldToValues : that.edgeToAddressFieldToValues.entrySet()) {
+            PTAContext edge = edgeAddressFieldToValues.getKey();
             AddressFieldToValues addressFieldToValues = edgeAddressFieldToValues.getValue();
             this.edgeToAddressFieldToValues.put(edge, new AddressFieldToValues(addressFieldToValues));
         }
     }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, AddressField addressField, ImmutableSet<InfoValue> values) {
-        return edgeToAddressFieldToValues.get(entryEdge).putS(addressField, values);
+    ImmutableSet<InfoValue> putS(PTAContext ptaContext, AddressField addressField, ImmutableSet<InfoValue> values) {
+        return edgeToAddressFieldToValues.get(ptaContext).putS(addressField, values);
     }
 
-    void putSAll(Edge entryEdge, AddressFieldToValues addressFieldToValues) {
-        edgeToAddressFieldToValues.get(entryEdge).putSAll(addressFieldToValues);
+    void putSAll(PTAContext ptaContext, AddressFieldToValues addressFieldToValues) {
+        edgeToAddressFieldToValues.get(ptaContext).putSAll(addressFieldToValues);
     }
 
-    ImmutableSet<InfoValue> putW(Edge entryEdge, AddressField addressField, ImmutableSet<InfoValue> values) {
-        return edgeToAddressFieldToValues.get(entryEdge).putW(addressField, values);
+    ImmutableSet<InfoValue> putW(PTAContext ptaContext, AddressField addressField, ImmutableSet<InfoValue> values) {
+        return edgeToAddressFieldToValues.get(ptaContext).putW(addressField, values);
     }
 
-    ImmutableSet<InfoValue> putW(Edge entryEdge, Address address, SootField field, ImmutableSet<InfoValue> values) {
-        return edgeToAddressFieldToValues.get(entryEdge).putW(address, field, values);
+    ImmutableSet<InfoValue> putW(PTAContext ptaContext, Address address, SootField field, ImmutableSet<InfoValue> values) {
+        return edgeToAddressFieldToValues.get(ptaContext).putW(address, field, values);
     }
 
-    void putWAll(Edge entryEdge, AddressFieldToValues addressFieldToValues) {
-        edgeToAddressFieldToValues.get(entryEdge).putWAll(addressFieldToValues);
+    void putWAll(PTAContext ptaContext, AddressFieldToValues addressFieldToValues) {
+        edgeToAddressFieldToValues.get(ptaContext).putWAll(addressFieldToValues);
     }
 
-    ImmutableSet<InfoValue> get(Edge entryEdge, Address address, SootField field) {
-        return edgeToAddressFieldToValues.get(entryEdge).get(address, field);
+    ImmutableSet<InfoValue> get(PTAContext ptaContext, Address address, SootField field) {
+        return edgeToAddressFieldToValues.get(ptaContext).get(address, field);
     }
 
-    AddressFieldToValues get(Edge entryEdge) {
-        return edgeToAddressFieldToValues.get(entryEdge);
+    AddressFieldToValues get(PTAContext ptaContext) {
+        return edgeToAddressFieldToValues.get(ptaContext);
     }
 
     private HashMap<EdgeAddress, FieldToValues> edgeAddressToFieldToValues;
 
     // XXX: put*() must not be called after calling get(Edge, Address). Otherwise, subsequent get(Edge, Address)'s return value may be invalid.
-    FieldToValues get(Edge entryEdge, Address address) {
+    FieldToValues get(PTAContext ptaContext, Address address) {
         if (edgeAddressToFieldToValues == null) {
             edgeAddressToFieldToValues = new HashMap<EdgeAddress, FieldToValues>();
         }
 
-        EdgeAddress edgeAddress = EdgeAddress.v(entryEdge, address);
+        EdgeAddress edgeAddress = EdgeAddress.v(ptaContext, address);
 
         if (edgeAddressToFieldToValues.containsKey(edgeAddress)) {
             return edgeAddressToFieldToValues.get(edgeAddress);
         }
 
         FieldToValues fieldToValues = new FieldToValues();
-        for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : edgeToAddressFieldToValues.get(entryEdge).entrySet()) {
+        for (Map.Entry<AddressField, ImmutableSet<InfoValue>> addressFieldValues : edgeToAddressFieldToValues.get(ptaContext).entrySet()) {
             AddressField addressField = addressFieldValues.getKey();
             ImmutableSet<InfoValue> values = addressFieldValues.getValue();
             if (addressField.address.equals(address)) {
@@ -437,7 +436,7 @@ class Instances {
             return false;
         }
         try {
-            for (Map.Entry<Edge, AddressFieldToValues> edgeAddressFieldToValues : this.edgeToAddressFieldToValues.entrySet()) {
+            for (Map.Entry<PTAContext, AddressFieldToValues> edgeAddressFieldToValues : this.edgeToAddressFieldToValues.entrySet()) {
                 if (!(edgeAddressFieldToValues.getValue().equals(that.edgeToAddressFieldToValues.get(edgeAddressFieldToValues.getKey())))) {
                     return false;
                 }
@@ -458,24 +457,24 @@ class Instances {
 }
 
 class EdgeAddress implements Comparable<EdgeAddress> {
-    private static final HashMap<ImmutablePair<Edge, Address>, EdgeAddress> cache = new HashMap<ImmutablePair<Edge, Address>, EdgeAddress>();
+    private static final HashMap<ImmutablePair<PTAContext, Address>, EdgeAddress> cache = new HashMap<ImmutablePair<PTAContext, Address>, EdgeAddress>();
 
-    Edge entryEdge;
+    PTAContext ptaContext;
     Address address;
 
-    private EdgeAddress(Edge entryEdge, Address address) {
+    private EdgeAddress(PTAContext ptaContext, Address address) {
         if (Config.v().strict) {
-            assert entryEdge != null && address != null;
+            assert ptaContext != null && address != null;
         }
-        this.entryEdge = entryEdge;
+        this.ptaContext = ptaContext;
         this.address = address;
     }
 
-    static EdgeAddress v(Edge entryEdge, Address address) {
-        ImmutablePair<Edge, Address> key = ImmutablePair.of(entryEdge, address);
+    static EdgeAddress v(PTAContext ptaContext, Address address) {
+        ImmutablePair<PTAContext, Address> key = ImmutablePair.of(ptaContext, address);
         EdgeAddress value = cache.get(key);
         if (value == null) {
-            value = new EdgeAddress(entryEdge, address);
+            value = new EdgeAddress(ptaContext, address);
             cache.put(key, value);
         }
         return value;
@@ -491,24 +490,24 @@ class EdgeAddress implements Comparable<EdgeAddress> {
         }
         EdgeAddress that = (EdgeAddress)object;
 
-        return this.entryEdge.equals(that.entryEdge) && this.address.equals(that.address);
+        return this.ptaContext.equals(that.ptaContext) && this.address.equals(that.address);
     }
 
     @Override
     public int hashCode() {
-        return 31 * (31 * 17 + entryEdge.hashCode()) + address.hashCode();
+        return 31 * (31 * 17 + ptaContext.hashCode()) + address.hashCode();
     }
 
     @Override
     public String toString() {
-        return "(" + entryEdge + ", " + address + ")";
+        return "(" + ptaContext + ", " + address + ")";
     }
 
     @Override
     public int compareTo(EdgeAddress that) {
-        int entryEdge = this.entryEdge.toString().compareTo(that.entryEdge.toString());
-        if (entryEdge != 0) {
-            return entryEdge;
+        int ptaContext = this.ptaContext.toString().compareTo(that.ptaContext.toString());
+        if (ptaContext != 0) {
+            return ptaContext;
         } else {
             return this.address.compareTo(that.address);
         }
@@ -598,20 +597,20 @@ class Arrays {
         this.arrays = new DefaultHashMap<EdgeAddress, ImmutableSet<InfoValue>>(that.arrays);
     }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, Address address, ImmutableSet<InfoValue> values) {
-        return arrays.put(EdgeAddress.v(entryEdge, address), values);
+    ImmutableSet<InfoValue> putS(PTAContext ptaContext, Address address, ImmutableSet<InfoValue> values) {
+        return arrays.put(EdgeAddress.v(ptaContext, address), values);
     }
 
-    void putSAll(Edge entryEdge, AddressToValues addressToValues) {
+    void putSAll(PTAContext ptaContext, AddressToValues addressToValues) {
         for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : addressToValues.entrySet()) {
             Address address = addressValues.getKey();
             ImmutableSet<InfoValue> values = addressValues.getValue();
-            putS(entryEdge, address, values);
+            putS(ptaContext, address, values);
         }
     }
 
-    ImmutableSet<InfoValue> putW(Edge entryEdge, Address address, ImmutableSet<InfoValue> values) {
-        EdgeAddress edgeAddress = EdgeAddress.v(entryEdge, address);
+    ImmutableSet<InfoValue> putW(PTAContext ptaContext, Address address, ImmutableSet<InfoValue> values) {
+        EdgeAddress edgeAddress = EdgeAddress.v(ptaContext, address);
         ImmutableSet<InfoValue> oldValues = arrays.get(edgeAddress);
         if (values != null && !values.isEmpty()) {
             HashSet<InfoValue> newValues = new HashSet<InfoValue>(oldValues);
@@ -622,11 +621,11 @@ class Arrays {
         }
     }
 
-    void putWAll(Edge entryEdge, AddressToValues addressToValues) {
+    void putWAll(PTAContext ptaContext, AddressToValues addressToValues) {
         for (Map.Entry<Address, ImmutableSet<InfoValue>> addressValues : addressToValues.entrySet()) {
             Address address = addressValues.getKey();
             ImmutableSet<InfoValue> values = addressValues.getValue();
-            putW(entryEdge, address, values);
+            putW(ptaContext, address, values);
         }
     }
 
@@ -634,16 +633,16 @@ class Arrays {
         return arrays.get(edgeAddress);
     }
 
-    ImmutableSet<InfoValue> get(Edge entryEdge, Address address) {
-        return get(EdgeAddress.v(entryEdge, address));
+    ImmutableSet<InfoValue> get(PTAContext ptaContext, Address address) {
+        return get(EdgeAddress.v(ptaContext, address));
     }
 
-    AddressToValues get(Edge entryEdge) {
+    AddressToValues get(PTAContext ptaContext) {
         AddressToValues addressToValues = new AddressToValues();
         for (Map.Entry<EdgeAddress, ImmutableSet<InfoValue>> edgeAddressValues : arrays.entrySet()) {
             EdgeAddress edgeAddress = edgeAddressValues.getKey();
             ImmutableSet<InfoValue> values = edgeAddressValues.getValue();
-            if (edgeAddress.entryEdge.equals(entryEdge)) {
+            if (edgeAddress.ptaContext.equals(ptaContext)) {
                 addressToValues.putS(edgeAddress.address, values);
             }
         }
@@ -680,24 +679,24 @@ class Arrays {
 }
 
 class EdgeField implements Comparable<EdgeField> {
-    private static final HashMap<ImmutablePair<Edge, SootField>, EdgeField> cache = new HashMap<ImmutablePair<Edge, SootField>, EdgeField>();
+    private static final HashMap<ImmutablePair<PTAContext, SootField>, EdgeField> cache = new HashMap<ImmutablePair<PTAContext, SootField>, EdgeField>();
 
-    Edge entryEdge;
+    PTAContext ptaContext;
     SootField field;
 
-    private EdgeField(Edge entryEdge, SootField field) {
+    private EdgeField(PTAContext ptaContext, SootField field) {
         if (Config.v().strict) {
-            assert entryEdge != null && field != null;
+            assert ptaContext != null && field != null;
         }
-        this.entryEdge = entryEdge;
+        this.ptaContext = ptaContext;
         this.field = field;
     }
 
-    static EdgeField v(Edge entryEdge, SootField field) {
-        ImmutablePair<Edge, SootField> key = ImmutablePair.of(entryEdge, field);
+    static EdgeField v(PTAContext ptaContext, SootField field) {
+        ImmutablePair<PTAContext, SootField> key = ImmutablePair.of(ptaContext, field);
         EdgeField value = cache.get(key);
         if (value == null) {
-            value = new EdgeField(entryEdge, field);
+            value = new EdgeField(ptaContext, field);
             cache.put(key, value);
         }
         return value;
@@ -713,24 +712,24 @@ class EdgeField implements Comparable<EdgeField> {
         }
         EdgeField that = (EdgeField)object;
 
-        return this.entryEdge.equals(that.entryEdge) && this.field.equals(that.field);
+        return this.ptaContext.equals(that.ptaContext) && this.field.equals(that.field);
     }
 
     @Override
     public int hashCode() {
-        return 31 * (31 * 17 + entryEdge.hashCode()) + field.hashCode();
+        return 31 * (31 * 17 + ptaContext.hashCode()) + field.hashCode();
     }
 
     @Override
     public String toString() {
-        return "(" + entryEdge + ", " + field.getSignature() + ")";
+        return "(" + ptaContext + ", " + field.getSignature() + ")";
     }
 
     @Override
     public int compareTo(EdgeField that) {
-        int entryEdge = this.entryEdge.toString().compareTo(that.entryEdge.toString());
-        if (entryEdge != 0) {
-            return entryEdge;
+        int ptaContext = this.ptaContext.toString().compareTo(that.ptaContext.toString());
+        if (ptaContext != 0) {
+            return ptaContext;
         } else {
             return this.field.getSignature().compareTo(that.field.getSignature());
         }
@@ -823,32 +822,32 @@ class Statics {
         this.statics = new DefaultHashMap<EdgeField, ImmutableSet<InfoValue>>(that.statics);
     }
 
-    FieldToValues get(Edge entryEdge) {
+    FieldToValues get(PTAContext ptaContext) {
         FieldToValues fieldToValues = new FieldToValues();
         for (Map.Entry<EdgeField, ImmutableSet<InfoValue>> edgeFieldValues : statics.entrySet()) {
             EdgeField edgeField = edgeFieldValues.getKey();
             ImmutableSet<InfoValue> values = edgeFieldValues.getValue();
-            if (edgeField.entryEdge.equals(entryEdge)) {
+            if (edgeField.ptaContext.equals(ptaContext)) {
                 fieldToValues.putS(edgeField.field, values);
             }
         }
         return fieldToValues;
     }
 
-    ImmutableSet<InfoValue> putS(Edge entryEdge, SootField field, ImmutableSet<InfoValue> values) {
-        return statics.put(EdgeField.v(entryEdge, field), values);
+    ImmutableSet<InfoValue> putS(PTAContext ptaContext, SootField field, ImmutableSet<InfoValue> values) {
+        return statics.put(EdgeField.v(ptaContext, field), values);
     }
 
-    void putSAll(Edge entryEdge, FieldToValues fieldToValues) {
+    void putSAll(PTAContext ptaContext, FieldToValues fieldToValues) {
         for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : fieldToValues.entrySet()) {
             SootField field = fieldValues.getKey();
             ImmutableSet<InfoValue> values = fieldValues.getValue();
-            putS(entryEdge, field, values);
+            putS(ptaContext, field, values);
         }
     }
 
-    ImmutableSet<InfoValue> putW(Edge entryEdge, SootField field, ImmutableSet<InfoValue> values) {
-        EdgeField edgeField = EdgeField.v(entryEdge, field);
+    ImmutableSet<InfoValue> putW(PTAContext ptaContext, SootField field, ImmutableSet<InfoValue> values) {
+        EdgeField edgeField = EdgeField.v(ptaContext, field);
         ImmutableSet<InfoValue> oldValues = statics.get(edgeField);
         if (values != null && !values.isEmpty()) {
             HashSet<InfoValue> newValues = new HashSet<InfoValue>(oldValues);
@@ -859,11 +858,11 @@ class Statics {
         }
     }
 
-    void putWAll(Edge entryEdge, FieldToValues fieldToValues) {
+    void putWAll(PTAContext ptaContext, FieldToValues fieldToValues) {
         for (Map.Entry<SootField, ImmutableSet<InfoValue>> fieldValues : fieldToValues.entrySet()) {
             SootField field = fieldValues.getKey();
             ImmutableSet<InfoValue> values = fieldValues.getValue();
-            putW(entryEdge, field, values);
+            putW(ptaContext, field, values);
         }
     }
 
@@ -871,8 +870,8 @@ class Statics {
         return statics.get(edgeField);
     }
 
-    ImmutableSet<InfoValue> get(Edge entryEdge, SootField field) {
-        return get(EdgeField.v(entryEdge, field));
+    ImmutableSet<InfoValue> get(PTAContext ptaContext, SootField field) {
+        return get(EdgeField.v(ptaContext, field));
     }
 
     @Override
