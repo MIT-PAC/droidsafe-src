@@ -117,7 +117,7 @@ public class SparkPTA extends PTABridge {
         reachableMethods = new HashSet<SootMethod>();
        
         QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
-        
+       
         while (qr.hasNext()) {
             MethodOrMethodContext momc = qr.next();
             if (momc instanceof SootMethod)

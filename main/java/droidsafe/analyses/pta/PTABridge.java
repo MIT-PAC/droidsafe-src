@@ -35,6 +35,12 @@ public abstract class PTABridge {
     private static final Logger logger = LoggerFactory.getLogger(PTABridge.class);
     /** Singleton for PTA bridge */
     private static PTABridge v;
+
+    private static PointsToAnalysisPackage myPackage;
+    
+    public PointsToAnalysisPackage getPackage() {
+        return myPackage;
+    }
     
     /**
      * Perform any specific cleanup required for specific bridge
@@ -63,6 +69,7 @@ public abstract class PTABridge {
 
     /** Run the points to analysis, if an analysis is to be added, it must be added here in the if statement */
     public static void run(PointsToAnalysisPackage pta) {
+        myPackage = pta;
         if (pta == PointsToAnalysisPackage.GEOPTA) {
             v = new GeoPTA();
             v.runInternal();

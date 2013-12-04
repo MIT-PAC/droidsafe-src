@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import soot.AnySubType;
 import soot.ArrayType;
 import soot.Body;
+import soot.Kind;
 import soot.MethodOrMethodContext;
 import soot.RefType;
 import soot.Scene;
@@ -52,6 +53,8 @@ import soot.RefLikeType;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.PointsToAnalysisPackage;
+import droidsafe.analyses.pta.cg.CGContextVisitor;
 import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.android.app.EntryPoints;
@@ -74,19 +77,19 @@ import droidsafe.utils.Utils;
  * @author mgordon
  *
  */
-public class RCFG implements CGVisitorEntryAnd1CFA {
+public class RCFG implements CGContextVisitor {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(RCFG.class);
-     /** Singleton of this class */
+    /** Singleton of this class */
     private static RCFG v;
-     /** File name for output of unreachable user methods */
+    /** File name for output of unreachable user methods */
     private static final String UNREACHABLES_FILE_NAME = "unreachable-user-methods.txt"; 
     /** list of names of methods to ignore when creating the RCFG output events */
     private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = 
             new HashSet<String>(Arrays.asList("<clinit>", "finalize"));
     /** list of package name REs in which to ignore output events */
     private static final Pattern[] IGNORE_INPUT_EVENTS_IN = 
-            {Pattern.compile("android.support.*")};
+        {Pattern.compile("android.support.*")};
     /** Map of entry edge to the rcfg node representing it */
     private Map<Edge,RCFGNode> entryEdgeToNode;
     /** methods we have visited in our search */
@@ -95,7 +98,7 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
     private Set<AllocNode> apiCallNodes;
     /** ignore making output events for stmts in this set */
     private Set<Stmt> ignoreSet;
-    
+
     /**
      * Return the singleton of this class.
      */
@@ -105,7 +108,7 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
 
         return v;
     }
-    
+
     /**
      * Reset state of this analysis.
      */
@@ -118,9 +121,91 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
      * Generate the rCFG.
      */
     public static void generate() {
-        CallGraphTraversal.acceptEntryContextAnd1CFA(v());
+        //old traversal
+        //CallGraphTraversal.acceptContext(v(), ContextType.EVENT_CONTEXT);;
+        
+        //optimized new search, assumes far fewer user calls than api calls
+        v().runAlt();
+        
         //print unreachable methods to the debug log
         v().printUnreachableSrcMethods();
+    }
+
+    private void runAlt() {
+        CallGraph cg = Scene.v().getCallGraph();
+        
+        //loop over all reachable methods
+        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+            //don't do anything for system methods
+            if (API.v().isSystemMethod(method))
+                continue;
+       
+            visitedMethods.add(method);
+            
+            Iterator<Edge> incomingEdges = cg.edgesInto(method);
+            while (incomingEdges.hasNext()) {
+                Edge incomingEdge = incomingEdges.next();
+                //if method is user, and has incoming edge from system, then it is an entry point
+                if (API.v().isSystemMethod(incomingEdge.src())) {
+                    //System.out.println("Event Edge: " + incomingEdge);
+                    //now we have an entry point
+                    //find all reachable user code from method
+                    //for each method call, see if it is an api call
+                    findOutputEventsForEventEdge(incomingEdge);
+                }
+            }
+        } 
+    }
+    
+    /** 
+     * Starting from entry edge, find all reachable user method, stopping at system calls
+     * for each user method, find all output event api calls and build nodes for them
+     */
+    private void findOutputEventsForEventEdge(Edge entryEdge) {
+        CallGraph cg = Scene.v().getCallGraph();
+        
+        LinkedList<Edge> stack = new LinkedList<Edge>();
+        Set<Edge> visitedEdges = new HashSet<Edge>();
+        
+        stack.add(entryEdge);
+
+        while (!stack.isEmpty()) {
+            Edge current = stack.pop();
+
+            //do not visit if we have seen this full context and entry edge before
+            if (visitedEdges.contains(current)) 
+                continue;
+
+            SootMethod method = current.tgt();
+            
+            //remember what we have visited
+            visitedEdges.add(current);
+            
+            //don't do anything if we are in a system method
+            if (API.v().isSystemMethod(method))
+                continue;
+                        
+            Iterator<Edge> ciEdges = cg.edgesOutOf(method);
+
+            //iterate over all the ci edges from soot, and check to see
+            //if they are valid given the context
+            while (ciEdges.hasNext()) {
+                Edge outgoingEdge = ciEdges.next();
+
+                SootMethod calleeMethod = outgoingEdge.tgt();
+
+                if (API.v().isSystemMethod(calleeMethod)) {
+                    //possibly an output event
+                    addOutputEvent(outgoingEdge, entryEdge);
+                    //don't traverse into call
+                    
+                } else {
+                    //call to another user method, add to stack if we have not seen it
+                    if (!visitedEdges.contains(outgoingEdge))
+                        stack.push(outgoingEdge);
+                }
+            }
+        }
     }
     
     private RCFG() {
@@ -136,28 +221,28 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
     public void ignoreInvokeForOutputEvents(Stmt stmt) {
         ignoreSet.add(stmt);
     }
-    
+
     /**
      * Return true if this allocation node can possible be an argument or receiver for an output event.
      */
     public boolean isRecOrArgForAPICall(AllocNode an) {
         return apiCallNodes.contains(an);
     }
-    
+
     /**
      * Return all nodes that are receiver or argument for interesting api calls.
      */
     public Set<AllocNode> getRecOrArgsForAPICalls() {
         return apiCallNodes;
     }
-    
+
     /**
      * Get the nodes of the rCFG (a forrest).
      */
     public Collection<RCFGNode> getNodes() {
         return entryEdgeToNode.values();
     }
-    
+
     /**
      * Given an edge from api -> app, return the rcfgnode that represents it in the RCFG.  
      */
@@ -166,36 +251,34 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
             logger.info("Creating new RCFG node from edge {}", entryEdge);
             entryEdgeToNode.put(entryEdge, new RCFGNode(entryEdge));
         }
-        
+
         return entryEdgeToNode.get(entryEdge);
     }
-    
+
+
     /**
-     * for each edge, decide if the edge should appear as an output event for the context edge represented
-     * by the RCFGNode for the context.
-     * 
-     * Also, when an output event is found, query for all the alloc nodes that could be either a receiver or an 
-     * argument, and remember these nodes for later processing by MethodCallsOnAllocs.
+     * Given a call edge from user to api, and an event edge, decide if we should create
+     * an output event for it, and if so, create the output event.
      */
-    public void visitEntryContextAnd1CFA(SootMethod method, PTAContext eventContext, PTAContext oneCFAContext) {
-        //remember that we have visited this method
-        visitedMethods.add(method);
+    private void addOutputEvent(Edge callEdge, Edge eventEdge) {
+        SootMethod caller = callEdge.src();
+        SootMethod callee = callEdge.tgt();
         
-        //only add to the rcfg node if there is a call from app code (non-system method) into the api (system method)
-        //and the called system method is interesting
-        //and we should not ignore it.
-        if (API.v().isSystemMethod(method) && 
-                !API.v().isSystemMethod(oneCFAContext.getContext().src()) &&
-                API.v().isInterestingMethod(method) &&
-                !IGNORE_SYS_METHOD_WITH_NAME.contains(method.getName()) &&
-                !ignoreSet.contains(oneCFAContext.getContext().srcStmt())) {
-
-            RCFGNode node = getNodeForEntryEdge(eventContext.getContext());
-
+        PTAContext eventContext = new PTAContext(ContextType.EVENT_CONTEXT, eventEdge);
+        PTAContext oneCFAContext = new PTAContext(ContextType.ONE_CFA, callEdge);
+        
+        if (API.v().isSystemMethod(callee) && 
+                !API.v().isSystemMethod(caller) &&
+                API.v().isInterestingMethod(callee) &&
+                !IGNORE_SYS_METHOD_WITH_NAME.contains(callee.getName()) &&
+                !ignoreSet.contains(callEdge.srcStmt())) {
+            
+            RCFGNode node = getNodeForEntryEdge(eventEdge);
+            
             SourceLocationTag line = 
-                    SootUtils.getSourceLocation(oneCFAContext.getContext().srcStmt(), oneCFAContext.getContext().src().getDeclaringClass());
-
-            InvokeExpr invoke = oneCFAContext.getContext().srcStmt().getInvokeExpr();
+                    SootUtils.getSourceLocation(callEdge.srcStmt(), callEdge.src().getDeclaringClass());
+            
+            InvokeExpr invoke = callEdge.srcStmt().getInvokeExpr();
             if (invoke instanceof InstanceInvokeExpr) {
                 InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
                 try {
@@ -204,30 +287,96 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
                     //create the output event
                     for (Map.Entry<AllocNode, SootMethod> entry : 
                         PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
-                        if (entry.getValue().equals(method)) {
+                        if (entry.getValue().equals(callee)) {
                             OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, entry.getKey(), line);
-                            logger.debug("Found output event: {} {}", oneCFAContext.getContext().tgt(), entry.getKey());
+                            logger.debug("Found output event: {} {}", callEdge.tgt(), entry.getKey());
                             node.addOutputEvent(oe);
                             //remember interesting alloc nodes
                             apiCallNodes.add(entry.getKey());
                             apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
                         }
-                        
+
                     }
                 } catch (CannotFindMethodException e) {
                     logger.error("Could not find a possible target for a call (RCFG): {} in {}", iie, 
-                        oneCFAContext.getContext().getSrc());
+                        callEdge.getSrc());
                     droidsafe.main.Main.exit(1);
                 }
             } else {
                 OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, null, line);
-                logger.debug("Found output event: {} (null receiver)", oneCFAContext.getContext().tgt());
+                logger.debug("Found output event: {} (null receiver)", callEdge.tgt());
                 node.addOutputEvent(oe);
                 apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
             }
         }
     }
-  
+
+    /**
+     * for each edge, decide if the edge should appear as an output event for the context edge represented
+     * by the RCFGNode for the context.
+     * 
+     * Also, when an output event is found, query for all the alloc nodes that could be either a receiver or an 
+     * argument, and remember these nodes for later processing by MethodCallsOnAllocs.
+     */
+    public void visit(SootMethod method, PTAContext eventContext) { 
+        //remember that we have visited this method
+        visitedMethods.add(method);
+
+        //loop through all incoming edges for this method
+        CallGraph cg = Scene.v().getCallGraph();
+        Iterator<Edge> incomingEdges = cg.edgesInto(method); 
+        while (incomingEdges.hasNext()) {
+            Edge incomingEdge = incomingEdges.next();
+            PTAContext oneCFAContext = new PTAContext(ContextType.ONE_CFA, incomingEdge);
+
+            //only add to the rcfg node if there is a call from app code (non-system method) into the api (system method)
+            //and the called system method is interesting
+            //and we should not ignore it.
+            if (API.v().isSystemMethod(method) && 
+                    !API.v().isSystemMethod(incomingEdge.src()) &&
+                    API.v().isInterestingMethod(method) &&
+                    !IGNORE_SYS_METHOD_WITH_NAME.contains(method.getName()) &&
+                    !ignoreSet.contains(incomingEdge.srcStmt())) {
+
+                RCFGNode node = getNodeForEntryEdge(eventContext.getContext());
+
+                SourceLocationTag line = 
+                        SootUtils.getSourceLocation(incomingEdge.srcStmt(), incomingEdge.src().getDeclaringClass());
+
+                InvokeExpr invoke = incomingEdge.srcStmt().getInvokeExpr();
+                if (invoke instanceof InstanceInvokeExpr) {
+                    InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
+                    try {
+                        //use the pta to find all the alloc nodes for the source call
+                        //for each, see if they map to the destination method, if they do,
+                        //create the output event
+                        for (Map.Entry<AllocNode, SootMethod> entry : 
+                            PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
+                            if (entry.getValue().equals(method)) {
+                                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, entry.getKey(), line);
+                                logger.debug("Found output event: {} {}", incomingEdge.tgt(), entry.getKey());
+                                node.addOutputEvent(oe);
+                                //remember interesting alloc nodes
+                                apiCallNodes.add(entry.getKey());
+                                apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
+                            }
+
+                        }
+                    } catch (CannotFindMethodException e) {
+                        logger.error("Could not find a possible target for a call (RCFG): {} in {}", iie, 
+                            incomingEdge.getSrc());
+                        droidsafe.main.Main.exit(1);
+                    }
+                } else {
+                    OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, null, line);
+                    logger.debug("Found output event: {} (null receiver)", incomingEdge.tgt());
+                    node.addOutputEvent(oe);
+                    apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
+                }
+            }
+        }
+    }
+
     /**
      * Find and return a string of all invoke statements that could invoke an API call.
      */
@@ -256,11 +405,11 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
             InvokeExpr invokeExpr = stmt.getInvokeExpr();
 
             SootMethod method = invokeExpr.getMethod();
-            
+
             if (API.v().isInterestingMethod(method))
                 strBuilder.append("\t" + method + "\n");
         }
-        
+
         return strBuilder.toString();
     }
 
@@ -272,19 +421,19 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
 
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + UNREACHABLES_FILE_NAME);
-            
+
             fw.write("# Unreachable Methods and the api calls they Invoke \n");
             fw.write("# DroidSafe determined that these methods are unreachable, but that may be unsound\n");
             fw.write("# due to Android api errors or omissions.\n\n");
-            
-            
+
+
             for (SootClass clz : Scene.v().getClasses()) {
                 if (clz.isApplicationClass() && Project.v().isSrcClass(clz.toString()) &&
                         !Project.v().isGenClass(clz.toString())) {
                     for (SootMethod method : clz.getMethods()) {
                         if (!visitedMethods.contains(method)) {
                             String apiCalls = checkForCompleteness(method);
-                            
+
                             if (!apiCalls.isEmpty()) {
                                 fw.write(method + ":\n" + apiCalls + "\n\n");
                             }
@@ -292,14 +441,14 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
                     }
                 }
             }
-            
+
             fw.close();
         } catch (IOException e) {
             logger.error("Error writing unreachable user methods summary files.");
             droidsafe.main.Main.exit(1);
         } 
     }
-    
+
     /** 
      * Return true if the class of the input event is in the ignore list, and thus the 
      * input event should be ignored.
@@ -312,7 +461,7 @@ public class RCFG implements CGVisitorEntryAnd1CFA {
         }
         return false;
     }
-    
+
     /**
      * Return string representation of RCFG.
      */

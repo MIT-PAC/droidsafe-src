@@ -70,6 +70,7 @@ import soot.jimple.StringConstant;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.toolkits.graph.Block;
 import droidsafe.analyses.EntryPointCGEdges;
 import droidsafe.analyses.pta.ContextType;

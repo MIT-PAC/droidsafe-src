@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
 import droidsafe.utils.CannotFindMethodException;
@@ -66,7 +67,7 @@ public class CallGraphTraversal {
         v = new CallGraphTraversal();
         //create the cached traversal
         v.traversal();
-        
+
         System.out.println("Methods: " + PTABridge.v().getAllReachableMethods().size());
         System.out.println("Edges: " + v.visitedEdges.size());
         System.out.println("Method and Entry: " + v.visitedMethodAndContext.size());
@@ -169,42 +170,48 @@ public class CallGraphTraversal {
                     newContextEntry = curEdge;
                 }
 
-                InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
-
-                if (iie != null) {
-                    //if a virtual call, use the pta to do a context sensitive search, and prune the call graph
-                    //only visit the edge if it is in a context sensitive search (search with the old context)
-                    try {
-
-                        //Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
-                        Map<AllocNode, SootMethod> virtualCallMap = 
-                                PTABridge.v().resolveInstanceInvokeMap(iie, 
-                                    new PTAContext(ContextType.ONE_CFA, current));
-                        for (Map.Entry<AllocNode, SootMethod> entry: 
-                            virtualCallMap.entrySet()) {
-
-                            // Only the virtual calls do the following test
-                            if ( entry.getValue() == target ) {
-                                //found edge in context sensitive search
-
-                                EdgeAndContext newEdgeAndContext = new EdgeAndContext(curEdge, newContextEntry);
-                                if (!visitedEntryAnd1CFA.contains((newEdgeAndContext)))
-                                    stack.push(newEdgeAndContext);
-                                break;
-                            }   
-                        } 
-                    } catch (CannotFindMethodException e) {
-                        //if we could not find the method during the resolution, just ignore for now...
-                        logger.info("Cannot resolve method during CallGraph traversal: {}", iie);
-                        //droidsafe.main.Main.exit(1);
-                    }   
-                } else {
+                if (PTABridge.v().getPackage() == PointsToAnalysisPackage.SPARK) {
                     EdgeAndContext newEdgeAndContext = new EdgeAndContext(curEdge, newContextEntry);
                     if (!visitedEntryAnd1CFA.contains((newEdgeAndContext)))
-                        stack.push(newEdgeAndContext); 
+                        stack.push(newEdgeAndContext);
+                } else {
+                    //enter here for a pta that supports 1 cfa context
+                    InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
+
+                    if (iie != null) {
+                        //if a virtual call, use the pta to do a context sensitive search, and prune the call graph
+                        //only visit the edge if it is in a context sensitive search (search with the old context)
+                        try {
+
+                            //Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
+                            Map<AllocNode, SootMethod> virtualCallMap = 
+                                    PTABridge.v().resolveInstanceInvokeMap(iie, 
+                                        new PTAContext(ContextType.ONE_CFA, current));
+                            for (Map.Entry<AllocNode, SootMethod> entry: 
+                                virtualCallMap.entrySet()) {
+
+                                // Only the virtual calls do the following test
+                                if ( entry.getValue() == target ) {
+                                    //found edge in context sensitive search
+
+                                    EdgeAndContext newEdgeAndContext = new EdgeAndContext(curEdge, newContextEntry);
+                                    if (!visitedEntryAnd1CFA.contains((newEdgeAndContext)))
+                                        stack.push(newEdgeAndContext);
+                                    break;
+                                }   
+                            } 
+                        } catch (CannotFindMethodException e) {
+                            //if we could not find the method during the resolution, just ignore for now...
+                            logger.info("Cannot resolve method during CallGraph traversal: {}", iie);
+                            //droidsafe.main.Main.exit(1);
+                        }   
+                    } else {
+                        EdgeAndContext newEdgeAndContext = new EdgeAndContext(curEdge, newContextEntry);
+                        if (!visitedEntryAnd1CFA.contains((newEdgeAndContext)))
+                            stack.push(newEdgeAndContext); 
+                    }
                 }
             }
-
         }
     }
 }

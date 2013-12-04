@@ -54,9 +54,7 @@ public class ClassCloner {
     /** the clone we have created */
     private SootClass clone;
     /** a list of ancestor of the original class, plus the original class */
-    private Set<SootClass> ancestorsOfIncluding;
-    /** should we treat the new cloned class as an api class */
-    private boolean isAPI;
+    private Set<SootClass> ancestorsOfIncluding;;
     /** methods of the new cloned class */
     private SootMethodList methods;
     /** unique ID used for introduced fields */
@@ -69,9 +67,8 @@ public class ClassCloner {
     /**
      * Private constructor for a specific class cloner.
      */
-    private ClassCloner(SootClass org, boolean isSystem) {
+    private ClassCloner(SootClass org) {
         this.original = org;
-        this.isAPI = isSystem;
         methods = new SootMethodList();
         ancestorsOfIncluding = new HashSet<SootClass>();
     }
@@ -82,8 +79,8 @@ public class ClassCloner {
      * If isAPIClass is true, then treat the cloned class as an api class and add it to the list of api classes, and
      * set its methods as safe,spec,ban based on ancestors.
      */
-    public static SootClass cloneClass(SootClass original, boolean isAPIClass) {
-        ClassCloner cloner = new ClassCloner(original, isAPIClass);
+    public static SootClass cloneClass(SootClass original) {
+        ClassCloner cloner = new ClassCloner(original);
         cloner.cloneAndInstallClass();
         return cloner.clone;
     }
@@ -125,7 +122,7 @@ public class ClassCloner {
         Scene.v().addClass(clone);
         Scene.v().loadClass(clone.getName(), SootClass.BODIES);
         clone.setApplicationClass();  
-        if (isAPI) {
+        if (API.v().isSystemClass(original)) {
             API.v().addSystemClass(clone);
         }
         
@@ -243,13 +240,19 @@ public class ClassCloner {
             //register method
             methods.addMethod(newMeth);
             clone.addMethod(newMeth);
-            if (isAPI) {
+            
+            if (API.v().isSystemClass(original)) {
                 if (API.v().isBannedMethod(ancestorM.getSignature())) 
                     API.v().addBanMethod(newMeth);
                 else if (API.v().isSpecMethod(ancestorM)) 
                     API.v().addSpecMethod(newMeth);
                 else if (API.v().isSafeMethod(ancestorM)) 
                     API.v().addSafeMethod(newMeth);
+                else {
+                    //some methods are auto generated and don't have a classification 
+                    //make them safe
+                    API.v().addSafeMethod(newMeth);
+                }
             }
             
             //clone body

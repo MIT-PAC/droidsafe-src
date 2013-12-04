@@ -165,10 +165,10 @@ public class ObjectSensitivityCloner {
             SootClass currentClass = currentAllocNode.myClz;
             
             
-            /*if (("java.lang.String".equals(currentClass.getName()) ||
+            if (("java.lang.String".equals(currentClass.getName()) ||
                     "java.lang.StringBuffer".equals(currentClass.getName()) ||
                     "java.lang.StringBuilder".equals(currentClass.getName()) ) )
-                    continue;*/
+                    continue;
                         
             if ( currentAllocNode.in.size() < 2) 
                 continue;
@@ -226,8 +226,9 @@ public class ObjectSensitivityCloner {
                                         //found an appropriate constructor call
 
                                         //clone class and install it as an new API class
+                                                                                
                                         SootClass cloned = 
-                                                ClassCloner.cloneClass(oldNewExpr.getBaseType().getSootClass(), true);
+                                                ClassCloner.cloneClass(base);
                                         
                                         //add all cloned methods clone to the master list
                                         masterMethodList.addAll(cloned.getMethods());

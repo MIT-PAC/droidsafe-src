@@ -2,12 +2,14 @@ package droidsafe.analyses;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import soot.RefLikeType;
 import soot.RefType;
+import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
@@ -19,12 +21,14 @@ import soot.jimple.toolkits.callgraph.Edge;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.utils.SootUtils;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
+import droidsafe.android.system.API;
 
 /**
  * Build a mapping of AllocNode to calls that could have the allocnode as either a receiver or an 
@@ -83,9 +87,63 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
      */
     public static void run() {
         v = new MethodCallsOnAlloc();
-        CallGraphTraversal.acceptEntryContextAnd1CFA(v);
+        if (PTABridge.v().getPackage() == PointsToAnalysisPackage.SPARK) {
+            v.runInternalSpark();
+        } else //full context traversal for any other pta 
+            CallGraphTraversal.acceptEntryContextAnd1CFA(v);
     }
 
+    /** optimized search for context insensitive points to analysis */
+    private void runInternalSpark() {
+        //loop over all methods, for each invoke in or out, decide track appropriate metrics
+        
+        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+            //do nothing for system methods
+            if (API.v().isSystemMethod(method))
+                continue;
+            
+            Iterator<Edge> outgoingEdges = Scene.v().getCallGraph().edgesOutOf(method);
+            while (outgoingEdges.hasNext()) {
+                Edge edge = outgoingEdges.next();
+                
+                if (edge.srcStmt() == null || !edge.srcStmt().containsInvokeExpr())
+                    continue;
+                
+                InvokeExpr invoke = edge.srcStmt().getInvokeExpr();
+                
+                if (invoke == null)
+                    continue;
+                
+                if (invoke instanceof InstanceInvokeExpr) {
+                    InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
+                    if (typesToConsider.contains(iie.getBase().getType())) {
+                        Set<AllocNode> nodes;
+                        nodes = PTABridge.v().getPTSet(iie.getBase());
+                        
+                        for (AllocNode an : nodes) {
+                            if (RCFG.v().isRecOrArgForAPICall(an)) {
+                                getCalls(an).add(edge);
+                            }
+                        }
+                    }
+                }
+
+                for (Value argv : invoke.getArgs()) {
+                    if (PTABridge.v().isPointer(argv) && typesToConsider.contains(argv.getType())) {
+                        Set<AllocNode> nodes;
+                        nodes = PTABridge.v().getPTSet(argv);
+                            
+                        for (AllocNode an : nodes) {
+                            if (RCFG.v().isRecOrArgForAPICall(an)) {
+                                getCalls(an).add(edge);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     /**
      * For each method call edge, decide if the receiver or any of the args could be an alloc node
      * for the list of alloc nodes used in api calls (from RCFG).  Store in the map the alloc node to edge
