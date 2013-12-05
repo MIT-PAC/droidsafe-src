@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.speclang.Method;
 import droidsafe.utils.SootMethodList;
@@ -58,12 +59,15 @@ public class ClassCloner {
     /** methods of the new cloned class */
     private SootMethodList methods;
     /** unique ID used for introduced fields */
-    public static int uniqueID = 0;
+    private static int uniqueID = 0;
     /** appended to name cloned classes */
     public static final String CLONE_POSTFIX = "_ds_clone_";
     /** set of methods from ancestors that we have cloned into this clone */
-    public Set<SootMethod> ancestorMethodsAdded = new HashSet<SootMethod>();
- 
+    private Set<SootMethod> ancestorMethodsAdded = new HashSet<SootMethod>();
+    /** methods of the clone that are currently reachable based on if the orig method is reachable */
+    private Set<SootMethod> reachableClonedMethods;
+    
+    
     /**
      * Private constructor for a specific class cloner.
      */
@@ -71,18 +75,36 @@ public class ClassCloner {
         this.original = org;
         methods = new SootMethodList();
         ancestorsOfIncluding = new HashSet<SootClass>();
+        reachableClonedMethods = new HashSet<SootMethod>();
     }
 
+    /**
+     * Return the cloned class.
+     */
+    public SootClass getClonedClass() {
+        return clone;
+    }
+    
+    
+    /**
+     * Return set of cloned methods that are reachable based on whether the original method 
+     * that was clone was reachable based on the current pta result.
+     * @return
+     */
+    public Set<SootMethod> getReachableClonedMethods() {
+        return reachableClonedMethods;
+    }
+    
     /** 
      * Static call to clone a particular class, and return the clone. 
      * 
      * If isAPIClass is true, then treat the cloned class as an api class and add it to the list of api classes, and
      * set its methods as safe,spec,ban based on ancestors.
      */
-    public static SootClass cloneClass(SootClass original) {
-        ClassCloner cloner = new ClassCloner(original);
-        cloner.cloneAndInstallClass();
-        return cloner.clone;
+    public static ClassCloner cloneClass(SootClass original) {
+        ClassCloner c = new ClassCloner(original);
+        c.cloneAndInstallClass();
+        return c;
     }
     
     /**
@@ -258,6 +280,10 @@ public class ClassCloner {
             //clone body
             Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
             newMeth.setActiveBody(newBody);
+            
+            //if the original method is reachable, then so is this method
+            if (PTABridge.v().getAllReachableMethods().contains(ancestorM))
+                reachableClonedMethods.add(newMeth);
         }
     }
     

@@ -226,12 +226,14 @@ public class ObjectSensitivityCloner {
                                         //found an appropriate constructor call
 
                                         //clone class and install it as an new API class
-                                                                                
-                                        SootClass cloned = 
-                                                ClassCloner.cloneClass(base);
+                                                           
+                                        ClassCloner cCloner = ClassCloner.cloneClass(base);
+                                        
+                                        SootClass cloned = cCloner.getClonedClass();
+                                        
                                         
                                         //add all cloned methods clone to the master list
-                                        masterMethodList.addAll(cloned.getMethods());
+                                        masterMethodList.addAll(cCloner.getReachableClonedMethods());
 
                                         SootMethodRef origMethodRef = special.getMethodRef();
 
