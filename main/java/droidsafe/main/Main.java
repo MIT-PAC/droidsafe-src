@@ -198,6 +198,13 @@ public class Main {
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
+        driverMsg("Converting Class.getName calls to class name strings.");
+        monitor.subTask("Converting Class.getName calls to class name strings.");
+        ClassGetNameToClassString.run();
+        monitor.worked(1);
+        if (monitor.isCanceled())
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
         if (Config.v().addObjectSensitivity) {
             driverMsg("Adding Object Sensitivity by cloning...");
             monitor.subTask("Adding Object Sensitivity by cloning...");
@@ -235,18 +242,6 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-        }
-
-        //need this pta run to account for object sens and jsa injection
-        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-
-        driverMsg("Converting Class.getName calls to class name strings.");
-        monitor.subTask("Converting Class.getName calls to class name strings.");
-        ClassGetNameToClassString.run();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
         //need this pta run to propagate the class name strings
