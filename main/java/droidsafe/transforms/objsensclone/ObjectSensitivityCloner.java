@@ -49,6 +49,8 @@ import soot.ValueBox;
  *
  */
 public class ObjectSensitivityCloner {
+    private static final boolean CLONE_STRINGS = false;
+    
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(ObjectSensitivityCloner.class);
 
@@ -63,94 +65,20 @@ public class ObjectSensitivityCloner {
                 "java.lang.CharSequence", 
                     "android.app.Activity"));
 
-    private static AllocGraphNode[] buildAllocationGraph() {
-        //we want to keep a consistent numbering across runs of droidsafe for clones
-        //so we sort the classes list we go through
-        Map<SootClass, AllocGraphNode> allocations = new HashMap<SootClass,AllocGraphNode>();
-        SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
-
-        for (SootMethod method : methods) {
-
-            //if (API.v().isSystemMethod(method))
-            //    continue;
-
-            if (method.isAbstract() || !method.isConcrete())
-                continue;
-
-            SootClass enclosingClass = method.getDeclaringClass();
-
-            Body body = method.getActiveBody();
-            StmtBody stmtBody = (StmtBody)body;
-            Chain units = stmtBody.getUnits();
-            Iterator stmtIt = units.snapshotIterator();
-
-            while (stmtIt.hasNext()) {
-                Stmt stmt = (Stmt)stmtIt.next();
-
-                if (stmt instanceof AssignStmt) {
-                    AssignStmt assign = (AssignStmt) stmt;
-                    if (assign.getRightOp() instanceof NewExpr) {
-                        NewExpr newExpr = (NewExpr)assign.getRightOp();
-                        SootClass newClass = newExpr.getBaseType().getSootClass();
-                        //is exception?
-                        if (!SootUtils.isSubTypeOfIncluding(RefType.v(newClass), RefType.v("java.lang.Throwable"))) {
-                            if (!allocations.containsKey(newClass))
-                                allocations.put(newClass, new AllocGraphNode(newClass));
-
-                            if (!allocations.containsKey(enclosingClass))
-                                allocations.put(enclosingClass, new AllocGraphNode(enclosingClass));
-
-                            AllocGraphNode enclosingNode = allocations.get(enclosingClass);
-                            AllocGraphNode allocNode = allocations.get(newClass);
-                            allocNode.in.add(enclosingClass);
-                            enclosingNode.out.add(newClass);
-                        }
-                    }
-                }
-            }
-        }
-
-        AllocGraphNode[] sorted = allocations.values().toArray(new AllocGraphNode[0]);
-        Arrays.sort(sorted);
-/*
-        for (AllocGraphNode node : sorted) {
-            System.out.printf("->%d  %d-> %s\n", node.in.size(), 
-                node.out.size(), node.myClz);
-        }
-*/
-        return sorted;
-    }
-
-    static class AllocGraphNode implements Comparable<AllocGraphNode> {
-        SootClass myClz;
-        List<SootClass> in;
-        List<SootClass> out;
-
-        AllocGraphNode(SootClass clz) {
-            myClz = clz;
-            in = new LinkedList<SootClass>();
-            out = new LinkedList<SootClass>();
-        }
-
-        @Override
-        public int compareTo(AllocGraphNode o) {
-            // TODO Auto-generated method stub
-            return Integer.compare(this.in.size(), o.in.size());
-        }
-    }
-
+ 
     /**
      * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
      * new expression.
      */
     public static void run() {
-        internalRun();
+        AllocationGraph aGraph = new AllocationGraph();
+        internalRun(aGraph);
     }
     
-    private static void internalRun() {
+    private static void internalRun(AllocationGraph aGraph) {
         int clonedClasses = 0;
 
-        AllocGraphNode[] sortedNodes = buildAllocationGraph();
+        //System.out.println("old implementation: " + sortedNodes.length);
 
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through
@@ -160,19 +88,14 @@ public class ObjectSensitivityCloner {
         
         int i = -1;
         
-        for (AllocGraphNode currentAllocNode : sortedNodes) {
+        for (SootClass currentClass : aGraph.workList()) {
             i++;
-            SootClass currentClass = currentAllocNode.myClz;
-            
-            
-            if (("java.lang.String".equals(currentClass.getName()) ||
+                        
+            if (!CLONE_STRINGS && ("java.lang.String".equals(currentClass.getName()) ||
                     "java.lang.StringBuffer".equals(currentClass.getName()) ||
                     "java.lang.StringBuilder".equals(currentClass.getName()) ) )
                     continue;
                         
-            if ( currentAllocNode.in.size() < 2) 
-                continue;
-            
             System.out.println("Cloning " + currentClass.getName());
             
             //create a list to iterate over that is the current snap shot of the master list
