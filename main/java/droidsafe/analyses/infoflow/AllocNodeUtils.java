@@ -4,17 +4,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import droidsafe.analyses.pta.PTABridge;
 import soot.ArrayType;
+import soot.G;
 import soot.RefType;
-import soot.Scene;
 import soot.SootField;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.Node;
-import soot.jimple.spark.sets.HashPointsToSet;
-import soot.jimple.spark.sets.P2SetVisitor;
-import soot.jimple.spark.sets.PointsToSetInternal;
+import droidsafe.analyses.pta.PTABridge;
 
 public class AllocNodeUtils {
     private static AllocNodeUtils v;
@@ -51,33 +47,22 @@ public class AllocNodeUtils {
 
         Set<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
         reachableAllocNodes.add(allocNode);
-        final Set<AllocNode> directlyReachableAllocNodes = new HashSet<AllocNode>();
+        Set<AllocNode> directlyReachableAllocNodes = new HashSet<AllocNode>();
         if (allocNode.getType() instanceof RefType) {
             for (AllocDotField allocDotField : allocNode.getFields()) {
-                directlyReachableAllocNodes.addAll(PTABridge.v().getPTSet(allocNode,  (SootField)allocDotField.getField()));
+                // FIXME FIXME       FIXME       FIXME                   FIXME
+                // FIXME             FIXME             FIXME       FIXME
+                // FIXME FIXME       FIXME                   FIXME
+                // FIXME             FIXME             FIXME       FIXME
+                // FIXME             FIXME       FIXME                   FIXME
+                try {
+                    directlyReachableAllocNodes.addAll(PTABridge.v().getPTSet(allocNode, (SootField)allocDotField.getField()));
+                } catch (RuntimeException exception) {
+                    exception.printStackTrace(G.v().out);
+                }
             }
-            /*
-            for (AllocDotField allocDotField : allocNode.getFields()) {
-                ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjects(allocNode, (SootField)allocDotField.getField())).forall(new P2SetVisitor() {
-                    @Override
-                    public void visit(Node node) {
-                        directlyReachableAllocNodes.add((AllocNode)node);
-                    }
-                });
-            }
-            */
         } else if (allocNode.getType() instanceof ArrayType) {
             directlyReachableAllocNodes.addAll(PTABridge.v().getPTSetOfArrayElement(allocNode));
-            /*
-            HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), (GeomPointsTo)Scene.v().getPointsToAnalysis());
-            pointsToSet.add(allocNode);
-            ((PointsToSetInternal)((GeomPointsTo)Scene.v().getPointsToAnalysis()).reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
-                @Override
-                public void visit(Node node) {
-                    directlyReachableAllocNodes.add((AllocNode)node);
-                }
-            });
-            */
         }
         for (AllocNode directlyReachableAllocNode : directlyReachableAllocNodes) {
             if (!visitedAllocNodes.contains(directlyReachableAllocNode)) {

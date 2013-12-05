@@ -9,13 +9,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.google.common.collect.Lists;
+
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.common.collect.Lists;
 
 import soot.Scene;
 import soot.SootMethod;
@@ -30,6 +31,7 @@ import soot.toolkits.graph.Block;
 import soot.toolkits.graph.BlockGraph;
 import soot.toolkits.graph.DirectedGraph;
 import soot.util.dot.DotGraph;
+
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTAContext;
@@ -44,7 +46,7 @@ import droidsafe.utils.SootUtils;
 
 public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     public static final ContextType PTA_CONTEXT_TYPE = ContextType.NONE;
-    
+
     private final List<Block> headBlocks;
 
     private final Map<Block, List<Block>> blockToFollowingBlocks;
@@ -54,11 +56,11 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
     public final Map<SootMethod, List<Block>> methodToHeadBlocks;
     private final Map<SootMethod, List<Block>> methodToTailBlocks;
     public final Map<SootMethod, List<Block>> methodToBlocks;
-    
+
     public final Map<Unit, Block> unitToBlock;
 
-    public final Map<SootMethod, Set<PTAContext>> methodToPTAContext;
-    
+    public final Map<SootMethod, Set<PTAContext>> methodToContexts;
+
     private static InterproceduralControlFlowGraph v;
 
     private final static Logger logger = LoggerFactory.getLogger(InterproceduralControlFlowGraph.class);
@@ -199,19 +201,19 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
 
         collectIntraproceduralControlFlowGraphs();
         connectIntraproceduralControlFlowGraphs();
-        
-        methodToPTAContext = new DefaultHashMap<SootMethod, Set<PTAContext>>(Collections.<PTAContext>emptySet());
+
+        methodToContexts = new DefaultHashMap<SootMethod, Set<PTAContext>>(Collections.<PTAContext>emptySet());
         CallGraphTraversal.acceptContext(new CGContextVisitor () {
             @Override
             public void visit(SootMethod method, PTAContext context) {
-                Set<PTAContext> contexts = methodToPTAContext.get(method);
+                Set<PTAContext> contexts = methodToContexts.get(method);
                 if (contexts.isEmpty()) {
                     contexts = new HashSet<PTAContext>();
                 }
                 contexts.add(context);
-                methodToPTAContext.put(method, contexts);
+                methodToContexts.put(method, contexts);
             }
-        }, PTA_CONTEXT_TYPE);
+        }, InformationFlowAnalysis.contextType);
     }
 
     private void collectIntraproceduralControlFlowGraphs() {

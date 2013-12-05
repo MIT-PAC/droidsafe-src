@@ -22,6 +22,7 @@ import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.analyses.infoflow.MemoryReadAnalysis;
 import droidsafe.analyses.infoflow.ObjectUtils;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
@@ -357,6 +358,8 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
+
+            MemoryReadAnalysis.run();
 
             try {
                 String[] infoFlowDotMethods = Config.v().infoFlowDotMethods;
