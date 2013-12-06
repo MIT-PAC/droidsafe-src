@@ -47,12 +47,13 @@ public class AllocationGraph {
         
         System.out.println("Allocation graph size: " + graph.vertexSet().size());
         
+        /*
         for (SootClass clz : workList()) {
             System.out.println(clz);
         }
         
         System.out.println("*************");
-        
+        */
     }
     
     private  void buildAllocationGraph() {

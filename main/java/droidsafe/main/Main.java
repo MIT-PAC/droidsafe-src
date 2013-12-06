@@ -108,6 +108,7 @@ public class Main {
         CallGraphTraversal.reset();
         AllocLocationModel.reset();
         CallLocationModel.reset();
+        ObjectSensitivityCloner.reset();
         RCFG.reset();
         monitor.worked(1);
         if (monitor.isCanceled()) {
@@ -201,7 +202,7 @@ public class Main {
         if (Config.v().addObjectSensitivity) {
             driverMsg("Adding Object Sensitivity by cloning...");
             monitor.subTask("Adding Object Sensitivity by cloning...");
-            ObjectSensitivityCloner.run();
+            ObjectSensitivityCloner.v().runForVA();
             monitor.worked(1);
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -242,12 +243,6 @@ public class Main {
 
         ValueAnalysis.setup();
         if (Config.v().runValueAnalysis) {
-
-            if (Config.v().writeJimpleAppClasses) {
-                driverMsg("Writing Jimple Classes.");
-                monitor.subTask("Writing all app classes");
-                writeAllAppClasses();
-            }
             monitor.worked(1);
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -338,6 +333,8 @@ public class Main {
         }
 
         if (Config.v().infoFlow) {
+           // ObjectSensitivityCloner.v().runForInfoFlow();
+            
             StopWatch timer = new StopWatch();
             driverMsg("Starting Information Flow Analysis...");
             monitor.subTask("Information Flow Analysis: Injected source flow");

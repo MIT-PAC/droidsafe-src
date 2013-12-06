@@ -224,6 +224,10 @@ public class ClassCloner {
                 //turn off private
                 ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.PRIVATE);
             }
+            
+            //turn off final for ancestor methods
+            if (ancestorField.isFinal())
+                ancestorField.setModifiers(ancestorField.getModifiers() ^ Modifier.FINAL);
         }
     }
     
@@ -263,7 +267,7 @@ public class ClassCloner {
             methods.addMethod(newMeth);
             clone.addMethod(newMeth);
             
-            if (API.v().isSystemClass(original)) {
+            if (API.v().isSystemClass(ancestorM.getDeclaringClass())) {
                 if (API.v().isBannedMethod(ancestorM.getSignature())) 
                     API.v().addBanMethod(newMeth);
                 else if (API.v().isSpecMethod(ancestorM)) 
@@ -275,7 +279,7 @@ public class ClassCloner {
                     //make them safe
                     API.v().addSafeMethod(newMeth);
                 }
-            }
+            } 
             
             //clone body
             Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
