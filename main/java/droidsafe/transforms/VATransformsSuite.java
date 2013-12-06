@@ -60,7 +60,7 @@ public class VATransformsSuite implements CGContextVisitor {
             try {
                 for (SootMethod callee : PTABridge.v().resolveInvoke(invokeExpr, eventContext)) {
                     for (VATransform transform : transforms) {
-                        transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody, eventContext.getContext());
+                        transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody, eventContext);
                     }
                 } 
             } catch (CannotFindMethodException e) {
