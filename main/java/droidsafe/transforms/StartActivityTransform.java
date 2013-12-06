@@ -9,7 +9,9 @@ import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAModel;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.JimpleRelationships;
+import droidsafe.utils.SootUtils;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -132,8 +134,11 @@ class StartActivityTransform implements VATransform {
 
     private Set<SootField> getDestinationsOfIntent(RefVAModel intentModel) {
         Set<SootField> destActivityHarnessSootFields = new HashSet<SootField>();
-        System.out.println("getDestinationsOfIntent called on: " + intentModel.toString());
-        SootClass intentSootClass = ((RefType)intentModel.getAllocNode().getType()).getSootClass();
+        
+        String clonedIntentClassName = ((RefType)intentModel.getAllocNode().getType()).getSootClass().getName();
+        String intentClassName = ClassCloner.removeClassCloneSuffix(clonedIntentClassName);
+        SootClass intentSootClass = Scene.v().getSootClass(intentClassName);
+
         Set<VAModel> componentNameModels = intentModel.getFieldVAModels(intentSootClass.getFieldByName("mComponent"));
         if(componentNameModels.size() == 0) {
             // implicitely targetted intent
@@ -155,4 +160,20 @@ class StartActivityTransform implements VATransform {
         }
         return destActivityHarnessSootFields;
     }
+    /*
+    private SootField getSootField(SootClass sootClassParam, String fieldName) {
+        // we want to display not only values of fields from this class, but also any parent class in the hierarchy
+        Set<SootClass> classesInHierarchy = new HashSet<SootClass>();
+        classesInHierarchy.add(sootClassParam);
+        classesInHierarchy.addAll(SootUtils.getParents(sootClassParam));
+
+        // go through all fields in the hierarchy, filtering down to only those that should get displayed 
+        for(SootClass sootClass : classesInHierarchy) {
+            if(sootClass.declaresFieldByName(fieldName)) {
+                return sootClass.getFieldByName(fieldName);
+            }
+        }
+        return null;
+    }
+    */
 }
