@@ -59,11 +59,6 @@ public class AllocationGraph {
         SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
 
         for (SootMethod method : methods) {
-            //we are not cloning static methods, so it does not matter if an allocation is in a static
-            //method, we should not clone because of it, so don't add the effects of static methods
-            //to the allocation graph
-            if (method.isStatic())
-                continue;
             
             if (method.isAbstract() || !method.isConcrete())
                 continue;
