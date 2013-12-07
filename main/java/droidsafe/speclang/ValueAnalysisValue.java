@@ -46,7 +46,7 @@ public class ValueAnalysisValue extends ConcreteArgumentValue {
      * Return a string rep of the modeled object.
      */
     public String toString() {
-        return mObj.toString();
+        return mObj.toStringSimple();
     }
 
     @Override

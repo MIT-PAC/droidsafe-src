@@ -171,7 +171,7 @@ public abstract class RefVAModel extends VAModel {
      */
     private String fieldsString(boolean detailed) {
         String fieldsString = "";
-        List<String> fieldStrings = new ArrayList<String>();
+        Set<String> fieldStrings = new HashSet<String>();
         if (this.invalidated) {
             fieldsString += INVALIDATED;
         } else {
@@ -184,7 +184,7 @@ public abstract class RefVAModel extends VAModel {
                     // using which we call getFieldVAModels to get a list of of object models
                     String fieldString = "\"" + sootField.getName() + "\":";
                     if(vaModels.size() > 1) fieldString += "[";
-                    List<String> objectModelStrings = new ArrayList<String>();
+                    Set<String> objectModelStrings = new HashSet<String>();
                     for(VAModel vaModel : vaModels){
                         // TODO: figure out why this can be null
                         if(vaModel != null) {

@@ -47,7 +47,7 @@ public abstract class PrimVAModel extends VAModel {
             fieldsString += INVALIDATED;
         } else {
             fieldsString += "[";
-            List<String> fieldStrings = new ArrayList<String>();
+            Set<String> fieldStrings = new HashSet<String>();
             for(Object val : this.getValues()) {
                 fieldStrings.add("\"" + val.toString() + "\"");
             }
