@@ -90,7 +90,7 @@ public class ClassGetNameToClassString extends BodyTransformer {
                             
                     for (AllocNode node : nodes) {
                         if (node instanceof ClassConstantNode) {
-                            String name = ((ClassConstantNode)node).getClassConstant().toString();
+                            String name = ((ClassConstantNode)node).getClassConstant().getValue().replace("/", ".");
                             
                             //add a local variable
                             Local newLocal = Jimple.v().newLocal(LOCAL_PREFIX + LOCAL_ID++, RefType.v("java.lang.String"));
