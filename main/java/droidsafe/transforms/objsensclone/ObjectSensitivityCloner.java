@@ -2,6 +2,7 @@ package droidsafe.transforms.objsensclone;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
+import droidsafe.android.app.Hierarchy;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
@@ -23,17 +24,23 @@ import soot.Body;
 import soot.jimple.AssignStmt;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
+import soot.jimple.JimpleBody;
 import soot.jimple.NewExpr;
+import soot.jimple.NullConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.Local;
+import soot.PrimType;
+import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.SootMethodRef;
+import soot.Type;
+import soot.VoidType;
 import soot.util.Chain;
 import soot.ValueBox;
 
@@ -57,29 +64,31 @@ public class ObjectSensitivityCloner {
             VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
 
     private static final String[] STRING_CLASSES = new String[]{"java.lang.String", 
-                                                    "java.lang.StringBuffer",
-                                                    "java.lang.StringBuilder"};
-    
-    private int clonedClasses = 0;
+                                                                "java.lang.StringBuffer",
+    "java.lang.StringBuilder"};
+
+    private int numClonedClasses = 0;
     private List<SootMethod> masterMethodList;
     private static ObjectSensitivityCloner v;
+
+    private Set<SootClass> clonedClasses;
 
     public static ObjectSensitivityCloner v() {
         if (v == null)
             v = new ObjectSensitivityCloner();
-        
+
         return v;
     }
-    
+
     public static void reset() {
         v = null;
     }
 
 
     private ObjectSensitivityCloner() {
-        
+        clonedClasses = new HashSet<SootClass>();
     }
-    
+
     private void initMasterList() {
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through
@@ -93,7 +102,7 @@ public class ObjectSensitivityCloner {
      * new expression.
      */
     public void runForVA() {
-        clonedClasses = 0;
+        numClonedClasses = 0;
         AllocationGraph aGraph = new AllocationGraph();
 
         initMasterList();
@@ -104,28 +113,34 @@ public class ObjectSensitivityCloner {
                     "java.lang.StringBuffer".equals(currentClass.getName()) ||
                     "java.lang.StringBuilder".equals(currentClass.getName()) ) )
                 continue;
-            
+
             cloneAllAllocsOfClass(currentClass);
         }
-        
-        System.out.printf("Finished cloning: added %d classes.\n", clonedClasses);
+
+
+        System.out.printf("Finished cloning: added %d classes.\n", numClonedClasses);
     }
 
     public void runForInfoFlow() {
-        clonedClasses = 0;
-        
+        numClonedClasses = 0;
+
         initMasterList();
-                
+
         for (String stringClass : STRING_CLASSES) {
             SootClass currentClass = Scene.v().getSootClass(stringClass);
             cloneAllAllocsOfClass(currentClass);
         }
-        
-        System.out.printf("Finished cloning: added %d classes.\n", clonedClasses);
+
+        System.out.printf("Finished cloning: added %d classes.\n", numClonedClasses);
     }
 
-
     private void cloneAllAllocsOfClass(SootClass currentClass) {
+        if (clonedClasses.contains(currentClass)) {
+            logger.error("Trying to clone allocs for already cloned class: {}", currentClass);
+            droidsafe.main.Main.exit(1);
+        }
+
+
         System.out.println("Cloning " + currentClass.getName());
 
         //create a list to iterate over that is the current snap shot of the master list
@@ -135,7 +150,7 @@ public class ObjectSensitivityCloner {
 
         //don't need to clone the first allocation expr
         //boolean isFirst = true;
-        
+
         for (SootMethod method : iterationList) {
 
             //if (API.v().isSystemMethod(method))
@@ -167,24 +182,16 @@ public class ObjectSensitivityCloner {
 
                         //now change the constructor call after find the appropriate call to change
                         try {
-                           /* //first allocation we have found, so don't try to clone it, clone all subsequent
-                            if (isFirst) {
-                                isFirst = false;
-                                continue;
-                            }*/
-                            
+
                             SpecialInvokeExpr special = findConstructorCall(method,
                                 assign);
 
                             if (special != null) {
                                 //found an appropriate constructor call
-
                                 //clone class and install it as an new API class
 
                                 ClassCloner cCloner = ClassCloner.cloneClass(base);
-
                                 SootClass cloned = cCloner.getClonedClass();
-
 
                                 //add all cloned methods clone to the master list
                                 masterMethodList.addAll(cCloner.getReachableClonedMethods());
@@ -202,7 +209,7 @@ public class ObjectSensitivityCloner {
                                 NewExpr newNewExpr = Jimple.v().newNewExpr(RefType.v(cloned));
                                 assign.setRightOp(newNewExpr);
 
-                                clonedClasses++;
+                                numClonedClasses++;
                             } else {
                                 throw new Exception("Special Invoke Not Found!");
                             }
@@ -215,8 +222,104 @@ public class ObjectSensitivityCloner {
                 }
             }
         }
-        /*}*/
-        
+        clonedClasses.add(currentClass);
+    }
+
+    /**
+     * After all clones are created for clz, wipe clean the original methods of clz, but deleting their code
+     * and calling super if it is a method that overrides a superclasses method... 
+     * 
+     * @param clz
+     */
+    private void sanitizeOriginalClass(SootClass clz) {
+        //what about for super methods that return a value?
+
+        for (SootMethod method : clz.getMethods()) {
+            //don't clean static methods, and don't do anything for methods that don't have a body
+            if (method.isStatic() || method.isAbstract() || method.isPhantom() || !method.isConcrete() || 
+                    SootUtils.isRuntimeStubMethod(method))
+                continue;
+
+            //release the active body
+            method.releaseActiveBody();
+            //create a new body that sets the this, and the arguments
+            JimpleBody body = Jimple.v().newBody(method);
+            method.setActiveBody(body);
+
+            //create the this identity
+            Local thisLocal = Jimple.v().newLocal("this_local", clz.getType());
+            body.getLocals().add(thisLocal);
+            body.getUnits().add(Jimple.v().newIdentityStmt(thisLocal,
+                Jimple.v().newThisRef(clz.getType())));
+
+            //create locals for parameters and reference params
+            int i = 0;
+            Local[] argLocals = new Local[method.getParameterCount()];
+
+            for (Type type : method.getParameterTypes()) {
+                //add local
+                argLocals[i] = Jimple.v().newLocal("l" + i, type);
+                body.getLocals().add(argLocals[i]);
+
+                //add param assignment
+                body.getUnits().add(Jimple.v().newIdentityStmt(argLocals[i], 
+                    Jimple.v().newParameterRef(type, i)));
+
+                i++;
+            }
+
+            Type rType = method.getReturnType();
+            SootMethod ancestorMethod = null;
+            //object has no superclass...
+            if (clz.hasSuperclass())
+                ancestorMethod = SootUtils.findClosetMatch(clz.getSuperclass(), method.makeRef());
+            
+            boolean isOverride = ancestorMethod != null && 
+                    Scene.v().getActiveHierarchy().isVisible(clz, ancestorMethod);
+
+            if (isOverride) {
+                //of an override, then call super, if has a return type, then return it's value
+                //find super method reference
+                SootMethodRef superRef = ancestorMethod.makeRef();
+
+                //construct args
+                List<Local> args = Arrays.asList(argLocals);
+
+                if (rType == VoidType.v()) {
+                    //add call to super
+                    body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(
+                        thisLocal, superRef, args)));
+
+                    //add return statement
+                    body.getUnits().add(Jimple.v().newReturnVoidStmt());
+                } else {
+                    //create local 
+                    Local retValue = Jimple.v().newLocal("super_ret_value", clz.getType());
+                    body.getLocals().add(retValue);
+
+                    //assign local to the super call
+                    body.getUnits().add(Jimple.v().newAssignStmt(
+                        retValue, 
+                        Jimple.v().newSpecialInvokeExpr(thisLocal, superRef, args)
+                            )); 
+                    
+                    //return ret value
+                    body.getUnits().add(Jimple.v().newReturnStmt(retValue));
+                }
+            } else {
+                //remember this will never be called, but should generate legal code
+
+                //if not an override, then just return the return type or null
+                if (rType == VoidType.v()) {
+                    body.getUnits().add(Jimple.v().newReturnVoidStmt());
+                } else if (rType instanceof RefLikeType || rType instanceof PrimType) {
+                    body.getUnits().add(Jimple.v().newReturnStmt(SootUtils.getNullValue(rType)));
+                } else {
+                    logger.error("Unknown return type when sanitizing original method: {}", method.getReturnType());
+                    droidsafe.main.Main.exit(1);
+                }
+            }
+        }
     }
 
     /**
@@ -224,7 +327,7 @@ public class ObjectSensitivityCloner {
      * that is called on the local value.  This method will search starting from the assignment, and conservatively
      * find the constructor call.  Will return null if a constructor is not found.
      */
-    private static SpecialInvokeExpr findConstructorCall(SootMethod method, AssignStmt assignStmt) {
+    private SpecialInvokeExpr findConstructorCall(SootMethod method, AssignStmt assignStmt) {
         Local local = (Local)assignStmt.getLeftOp();
 
         //loop through all instructions in method and find the special invoke on this allocnode
