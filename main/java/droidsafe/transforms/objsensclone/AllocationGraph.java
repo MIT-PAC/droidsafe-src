@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -11,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Comparator;
 
 import org.jgrapht.ext.DOTExporter;
 import org.jgrapht.ext.VertexNameProvider;
@@ -94,8 +96,9 @@ public class AllocationGraph {
     public List<SootClass> workList() {
         List<SootClass> trav = new LinkedList<SootClass>();
         
-        Set<SootClass> unvisited = new LinkedHashSet<SootClass>();
+        List<SootClass> unvisited = new LinkedList<SootClass>();
         unvisited.addAll(graph.vertexSet());
+        Collections.sort(unvisited, new SootClassComparator());
         
         //remove all classes with zero incoming from the graph
         for (SootClass clz : graph.vertexSet()) {
@@ -172,5 +175,19 @@ public class AllocationGraph {
             logger.error("Error writing allocation graph dot file!");
             droidsafe.main.Main.exit(1);
         }
+    }
+
+    /**
+     * Compare soot classes based on their name.
+     * @author mgordon
+     *
+     */
+    public class SootClassComparator implements Comparator<SootClass> {
+
+        @Override
+        public int compare(SootClass o1, SootClass o2) {
+            return o1.getName().compareTo(o2.getName());
+        }
+        
     }
 }
