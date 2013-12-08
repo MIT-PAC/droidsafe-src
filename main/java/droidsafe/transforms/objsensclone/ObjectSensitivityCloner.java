@@ -141,7 +141,7 @@ public class ObjectSensitivityCloner {
         }
 
 
-        System.out.println("Cloning " + currentClass.getName());
+        //System.out.println("Cloning " + currentClass.getName());
 
         //create a list to iterate over that is the current snap shot of the master list
         //because we update the master list for each clone...
