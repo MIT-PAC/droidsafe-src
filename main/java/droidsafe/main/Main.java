@@ -13,6 +13,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.options.Options;
+import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
@@ -114,7 +115,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+        
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
         RemoveStupidOverrides.run();
@@ -138,6 +139,9 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        driverMsg("Checking invoke special calls...");
+        CheckInvokeSpecials.run();
 
         driverMsg("Resolving resources and Manifest.");
         monitor.subTask("Resolving Manifest");

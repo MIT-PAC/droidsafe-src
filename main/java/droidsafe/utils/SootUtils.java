@@ -72,6 +72,7 @@ import soot.Type;
 import soot.Unit;
 import soot.util.Chain;
 import soot.util.JasminOutputStream;
+import soot.util.NumberedString;
 import soot.Value;
 import soot.VoidType;
 
@@ -903,8 +904,8 @@ public class SootUtils {
     /**
      * Return all methods that the given method (in the class) overrides from all of its parent classes.
      */
-    public static Set<SootMethod> getOverriddenMethodsFromParents(SootClass clz, String subSig) {
-        Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
+    public static List<SootMethod> getOverriddenMethodsFromParents(SootClass clz, String subSig) {
+        List<SootMethod> methods = new LinkedList<SootMethod>();
 
         Set<SootClass> parents = getParents(clz);
 
@@ -1121,36 +1122,44 @@ public class SootUtils {
      * get a list of ancestor of a given class, in order from immediate to oldest
      */
     public static List<SootClass> getAncestorList(SootClass me) {
-        SootClass parent = me.getSuperclass();
-        SootClass objClass = Scene.v().getSootClass("java.lang.Object");
-        List<SootClass> list = new LinkedList();
+        List<SootClass> list = new LinkedList<SootClass>();
+        
+        if (!me.hasSuperclass())
+            return list;
+        
+        SootClass current = me.getSuperclass();
+        
 
         //System.out.println("checking accestor for = " + me.toString());
-        while (!parent.equals(objClass)) {
+        while (current != null) {
             //System.out.println("parent = " + parent.toString());
-            list.add(parent);
-            parent = parent.getSuperclass();
+            list.add(current);
+            if (current.hasSuperclass())
+                current = current.getSuperclass();
+            else
+                current = null;
         }
         return list;
     }
 
-    /*
+    /**
      * find the closest method in the inheritance chain (including itself) that matches
      * the signature
+     * 
+     * Returning null implies that the given class and none of its ancestors define the 
+     * given method
      */
-    public static SootMethod findClosetMatch(SootClass sootClass, String signature) {
+    public static SootMethod findClosetMatch(SootClass sootClass, SootMethodRef method) {
         List<SootClass> ancestorList = getAncestorList(sootClass);
 
         ancestorList.add(0, sootClass);
-
+        NumberedString subSig = method.getSubSignature();
+        
         for (SootClass sc: ancestorList) {
-            try {
-                SootMethod method = 
-                        Scene.v().getMethod(String.format("<%s: %s>", sc.toString(), signature));
-                return method;
-            } catch (Exception ex) {
-            }
+           if (sc.declaresMethod(subSig))
+               return sc.getMethod(subSig);
         }
+        
         return null;
     }
 
