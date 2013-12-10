@@ -56,6 +56,8 @@ import soot.Value;
  * @author dpetters
  */
 public class ValueAnalysis implements CGContextVisitor {
+    //if true then for string values, only track jsa resolved strings (so hot spot strings)
+    public static final boolean ONLY_TRACK_JSA_STRINGS = false;
     public static final ContextType CONTEXT_TYPE = ContextType.NONE;
     
     /** Singleton for analysis */
@@ -365,7 +367,7 @@ public class ValueAnalysis implements CGContextVisitor {
                 //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
-                if (JSAResultInjection.trackedStringConstants.contains(sc)) {
+                if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc)) {
                     String value = ((StringConstantNode)rhsNode).getString();
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");
