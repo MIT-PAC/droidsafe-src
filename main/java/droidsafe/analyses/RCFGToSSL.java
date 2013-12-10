@@ -196,7 +196,7 @@ public class RCFGToSSL {
             if (ValueAnalysis.v().hasResult(node)) {
                 //check to see if we have a value analysis result for this alloc node
                 //and if so, add it to the concrete list of values.
-                ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node), node);
+                ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node));
                 vaResults.add(vav);             
             } else {
                 allVAResults = false;
@@ -258,7 +258,7 @@ public class RCFGToSSL {
 			} else if (ValueAnalysis.v().hasResult(node)) {
 			    //check to see if we have a value analysis result for this alloc node
 			    //and if so, add it to the concrete list of values.
-			    ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node), node);
+			    ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node));
 			    constants.add(vav);			    
 			} else {
 				allConstants = false;

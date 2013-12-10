@@ -14,16 +14,13 @@ import soot.jimple.spark.pag.AllocNode;
 public class ValueAnalysisValue extends ConcreteArgumentValue {
     /** The modeled object as calculated by the Value Analysis */
     private VAModel mObj;
-    /** The underlying allocation node */
-    private AllocNode allocNode;
-    
+  
     /**
      * Create a new VAValue with the given modeled object and allocation node.
      */
-    public ValueAnalysisValue(VAModel mo, AllocNode an) {
+    public ValueAnalysisValue(VAModel mo) {
         super();
         this.mObj = mo;
-        this.allocNode = an;
     }
 
     @Override
@@ -53,7 +50,6 @@ public class ValueAnalysisValue extends ConcreteArgumentValue {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((allocNode == null) ? 0 : allocNode.hashCode());
         result = prime * result + ((mObj == null) ? 0 : mObj.hashCode());
         return result;
     }
@@ -64,9 +60,6 @@ public class ValueAnalysisValue extends ConcreteArgumentValue {
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
         ValueAnalysisValue other = (ValueAnalysisValue) obj;
-        if (allocNode == null) {
-            if (other.allocNode != null) return false;
-        } else if (!allocNode.equals(other.allocNode)) return false;
         if (mObj == null) {
             if (other.mObj != null) return false;
         } else if (!mObj.equals(other.mObj)) return false;
