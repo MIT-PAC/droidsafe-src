@@ -2,4 +2,4 @@
 
 : ${APAC_HOME:?"Need to define APAC_HOME"}
 
-$APAC_HOME/system-tests/regtest.py -threads 3 -timeout 7200 -file $APAC_HOME/system-tests/test-suites/on-commit.py
+$APAC_HOME/system-tests/regtest.py -threads 4 -timeout 7200 -file $APAC_HOME/system-tests/test-suites/on-commit.py
