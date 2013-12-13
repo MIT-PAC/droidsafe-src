@@ -71,6 +71,7 @@ public class ObjectSensitivityCloner {
     "java.lang.StringBuilder"};
 
     private int numClonedClasses = 0;
+    private int cloneErrors = 0;
     private List<SootMethod> masterMethodList;
     private static ObjectSensitivityCloner v;
 
@@ -121,7 +122,7 @@ public class ObjectSensitivityCloner {
         }
 
 
-        System.out.printf("Finished cloning: added %d classes.\n", numClonedClasses);
+        System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
 
     public void runForInfoFlow() {
@@ -134,7 +135,7 @@ public class ObjectSensitivityCloner {
             cloneAllAllocsOfClass(currentClass);
         }
 
-        System.out.printf("Finished cloning: added %d classes.\n", numClonedClasses);
+        System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
 
     private void cloneAllAllocsOfClass(SootClass currentClass) {
@@ -219,9 +220,10 @@ public class ObjectSensitivityCloner {
                                 throw new Exception("Special Invoke Not Found!");
                             }
                         } catch (Exception e) {
-                            logger.error("Error processing constructor call after modifying new expr: {} in {}", 
+                            logger.info("Error processing constructor call after modifying new expr: {} in {}", 
                                 stmt, method, e);
-                            droidsafe.main.Main.exit(1);
+                            //droidsafe.main.Main.exit(1);
+                            cloneErrors++;
                         }
 
                     }

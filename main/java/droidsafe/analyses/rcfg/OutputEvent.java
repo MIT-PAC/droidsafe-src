@@ -49,23 +49,31 @@ public class OutputEvent implements PTAMethodInformation {
     private RCFGNode parent;
     /** Source locations of the calls for this output event for the given input event */
     private SourceLocationTag linesTag = null;
-    /** The specific receiver node that triggers this output event */
-    private AllocNode receiverNode;
+    /** The receiver nodes that triggers this output event */
+    private Set<AllocNode> receiverNodes;
+    /** the types of the receivers */
+    private Set<Type> receiverNodeTypes;
 
     /**
      * Create an output event from an edge, context edge, ... 
      */
     public OutputEvent(PTAContext oneCFA, PTAContext eventContext, RCFGNode p, 
-                       AllocNode rn, SourceLocationTag ln) {
+                       SourceLocationTag ln) {
         this.oneCFAContext = oneCFA;
         this.eventContext = eventContext;
         this.parent = p;
-        this.receiverNode = rn;
+        this.receiverNodes = new HashSet<AllocNode>();
+        this.receiverNodeTypes = new HashSet<Type>();
         this.linesTag = ln;
 
         setInvoke();
     }
 
+    public void addReceiverNode(AllocNode an) {
+        receiverNodes.add(an);
+        receiverNodeTypes.add(an.getType());
+    }
+    
     /**
      * Try to grab the invoke expression from the context
      */
@@ -135,7 +143,7 @@ public class OutputEvent implements PTAMethodInformation {
      * @return
      */
     public boolean hasReceiver() {
-        return receiverNode != null; 
+        return !receiverNodes.isEmpty(); 
     }
 
 
@@ -159,9 +167,7 @@ public class OutputEvent implements PTAMethodInformation {
     public Set<AllocNode> getReceiverPTSet(PTAContext context) {
         getReceiver();
 
-        LinkedHashSet<AllocNode> node = new LinkedHashSet<AllocNode>();
-        node.add(receiverNode);
-        return node; 
+        return receiverNodes; 
     }
 
     /**
@@ -172,10 +178,10 @@ public class OutputEvent implements PTAMethodInformation {
     }
     
     /**
-     * Return the type in the points to set of the receiver.
+     * Return the type of the receiver value.
      */
     public Type getReceiverType() {
-        return receiverNode.getType();
+        return getReceiver().getType();
     }
 
     /**
@@ -277,7 +283,8 @@ public class OutputEvent implements PTAMethodInformation {
             formatter.format("\tReceiver: %s (%s)\n", getReceiver(), getReceiver().getClass());
             str.append("\t\tPT Set:\n");
 
-            formatter.format("\t\tNode: %s (%s)\n", receiverNode, receiverNode.getClass());
+            for (AllocNode receiverNode : receiverNodes)
+                formatter.format("\t\tNode: %s (%s)\n", receiverNode, receiverNode.getClass());
 
             for (int i = 0; i < getNumArgs(); i++) {
                 if (isArgPointer(i)) {

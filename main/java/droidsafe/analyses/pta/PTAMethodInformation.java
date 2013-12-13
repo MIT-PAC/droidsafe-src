@@ -34,7 +34,7 @@ public interface PTAMethodInformation {
     public Set<AllocNode> getReceiverPTSet(PTAContext context);
 
     /**
-     * Return the type in the points to set of the receiver.
+     * Return the type of the receiver value.
      */
     public Type getReceiverType();
     

@@ -57,7 +57,7 @@ import soot.Value;
  */
 public class ValueAnalysis implements CGContextVisitor {
     //if true then for string values, only track jsa resolved strings (so hot spot strings)
-    public static final boolean ONLY_TRACK_JSA_STRINGS = false;
+    public static final boolean ONLY_TRACK_JSA_STRINGS = true;
     public static final ContextType CONTEXT_TYPE = ContextType.NONE;
     
     /** Singleton for analysis */

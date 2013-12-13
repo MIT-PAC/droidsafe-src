@@ -292,7 +292,8 @@ public class RCFG implements CGContextVisitor {
                             if (debug)
                                 System.out.println(entry.getKey());
                             
-                            OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, entry.getKey(), line);
+                            OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
+                            oe.addReceiverNode(entry.getKey());
                             
                             node.addOutputEvent(oe);
                             //remember interesting alloc nodes
@@ -307,7 +308,7 @@ public class RCFG implements CGContextVisitor {
                     droidsafe.main.Main.exit(1);
                 }
             } else {
-                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, null, line);
+                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
                 logger.debug("Found output event: {} (null receiver)", callEdge.tgt());
                 node.addOutputEvent(oe);
                 apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
@@ -357,7 +358,10 @@ public class RCFG implements CGContextVisitor {
                         for (Map.Entry<AllocNode, SootMethod> entry : 
                             PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
                             if (entry.getValue().equals(method)) {
-                                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, entry.getKey(), line);
+                                OutputEvent oe = 
+                                        new OutputEvent(oneCFAContext, eventContext, node, line);
+                                oe.addReceiverNode(entry.getKey());
+                                
                                 logger.debug("Found output event: {} {}", incomingEdge.tgt(), entry.getKey());
                                 node.addOutputEvent(oe);
                                 //remember interesting alloc nodes
@@ -372,7 +376,7 @@ public class RCFG implements CGContextVisitor {
                         droidsafe.main.Main.exit(1);
                     }
                 } else {
-                    OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, null, line);
+                    OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
                     logger.debug("Found output event: {} (null receiver)", incomingEdge.tgt());
                     node.addOutputEvent(oe);
                     apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));

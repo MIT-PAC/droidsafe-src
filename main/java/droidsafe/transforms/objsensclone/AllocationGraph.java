@@ -47,7 +47,7 @@ public class AllocationGraph {
         exportToDot(Project.v().getOutputDir() + File.separator + 
             "allocation-graph.dot");
         
-        System.out.println("Allocation graph size: " + graph.vertexSet().size());
+        //System.out.println("Allocation graph size: " + graph.vertexSet().size());
         
         /*
         for (SootClass clz : workList()) {
