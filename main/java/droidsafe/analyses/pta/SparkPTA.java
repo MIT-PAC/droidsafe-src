@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -120,8 +121,9 @@ public class SparkPTA extends PTABridge {
        
         while (qr.hasNext()) {
             MethodOrMethodContext momc = qr.next();
-            if (momc instanceof SootMethod)
+            if (momc instanceof SootMethod) {
                 reachableMethods.add((SootMethod)momc);
+            }
         }
         
         System.out.println("Size of reachable methods: " + reachableMethods.size());

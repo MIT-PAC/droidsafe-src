@@ -263,6 +263,7 @@ public class RCFG implements CGContextVisitor {
     private void addOutputEvent(Edge callEdge, Edge eventEdge) {
         SootMethod caller = callEdge.src();
         SootMethod callee = callEdge.tgt();
+        boolean debug = false;
         
         PTAContext eventContext = new PTAContext(ContextType.EVENT_CONTEXT, eventEdge);
         PTAContext oneCFAContext = new PTAContext(ContextType.ONE_CFA, callEdge);
@@ -288,8 +289,11 @@ public class RCFG implements CGContextVisitor {
                     for (Map.Entry<AllocNode, SootMethod> entry : 
                         PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
                         if (entry.getValue().equals(callee)) {
+                            if (debug)
+                                System.out.println(entry.getKey());
+                            
                             OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, entry.getKey(), line);
-                            logger.debug("Found output event: {} {}", callEdge.tgt(), entry.getKey());
+                            
                             node.addOutputEvent(oe);
                             //remember interesting alloc nodes
                             apiCallNodes.add(entry.getKey());

@@ -35,7 +35,7 @@ public class RCFGNode implements PTAMethodInformation {
     /** The edge representing the Input Event entry point */
 	private PTAContext eventContext;
 	/** The list of output events associated with the input event */
-	private List<OutputEvent> outputEvents;
+	private Set<OutputEvent> outputEvents;
 	/** the invoke expression that triggers the input event */
 	private InvokeExpr invokeExpr;
 
@@ -43,7 +43,7 @@ public class RCFGNode implements PTAMethodInformation {
 	 * Create a new RCFG Node with the given input event entry edge.
 	 */
 	public RCFGNode(Edge entryEdge) {
-		outputEvents = new LinkedList<OutputEvent>();
+		outputEvents = new LinkedHashSet<OutputEvent>();
 		this.eventContext = new PTAContext(ContextType.EVENT_CONTEXT, entryEdge);
 		if (entryEdge.srcStmt().containsInvokeExpr())
 		    invokeExpr = (InvokeExpr)entryEdge.srcStmt().getInvokeExpr();
@@ -67,7 +67,8 @@ public class RCFGNode implements PTAMethodInformation {
 	 * Add a new output event to this input event rCFG node.
 	 */
 	public void addOutputEvent(OutputEvent e) {
-		outputEvents.add(e);
+		if (outputEvents.add(e))
+		    logger.debug("Found output event: {} {}", e.getContext(ContextType.ONE_CFA));
 	}
 
 	/**
@@ -80,7 +81,7 @@ public class RCFGNode implements PTAMethodInformation {
 	/**
 	 * Return list of all output events for this node.
 	 */
-	public List<OutputEvent> getOutputEvents() {
+	public Set<OutputEvent> getOutputEvents() {
 		return outputEvents;
 	}
 

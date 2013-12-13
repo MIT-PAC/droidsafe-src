@@ -27,6 +27,9 @@ import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
 import soot.jimple.NewExpr;
 import soot.jimple.NullConstant;
+import soot.jimple.internal.JAssignStmt;
+import soot.jimple.internal.JGotoStmt;
+import soot.jimple.internal.JIfStmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
@@ -182,9 +185,11 @@ public class ObjectSensitivityCloner {
 
                         //now change the constructor call after find the appropriate call to change
                         try {
-
+                            Set<Local> local = new HashSet<Local>();
+                            local.add((Local)assign.getLeftOp());
+                            
                             SpecialInvokeExpr special = findConstructorCall(method,
-                                assign);
+                                (Stmt)units.getSuccOf(assign), local);
 
                             if (special != null) {
                                 //found an appropriate constructor call
@@ -216,6 +221,7 @@ public class ObjectSensitivityCloner {
                         } catch (Exception e) {
                             logger.error("Error processing constructor call after modifying new expr: {} in {}", 
                                 stmt, method, e);
+                            droidsafe.main.Main.exit(1);
                         }
 
                     }
@@ -273,7 +279,7 @@ public class ObjectSensitivityCloner {
             //object has no superclass...
             if (clz.hasSuperclass())
                 ancestorMethod = SootUtils.findClosetMatch(clz.getSuperclass(), method.makeRef());
-            
+
             boolean isOverride = ancestorMethod != null && 
                     Scene.v().getActiveHierarchy().isVisible(clz, ancestorMethod);
 
@@ -302,7 +308,7 @@ public class ObjectSensitivityCloner {
                         retValue, 
                         Jimple.v().newSpecialInvokeExpr(thisLocal, superRef, args)
                             )); 
-                    
+
                     //return ret value
                     body.getUnits().add(Jimple.v().newReturnStmt(retValue));
                 }
@@ -327,45 +333,65 @@ public class ObjectSensitivityCloner {
      * that is called on the local value.  This method will search starting from the assignment, and conservatively
      * find the constructor call.  Will return null if a constructor is not found.
      */
-    private SpecialInvokeExpr findConstructorCall(SootMethod method, AssignStmt assignStmt) {
-        Local local = (Local)assignStmt.getLeftOp();
-
+    private SpecialInvokeExpr findConstructorCall(SootMethod method, Stmt startStmt, Set<Local> locals) {
         //loop through all instructions in method and find the special invoke on this allocnode
         Body body = method.getActiveBody();
         StmtBody stmtBody = (StmtBody)body;
         Chain units = stmtBody.getUnits();
-        Iterator stmtIt = units.iterator();
+        Iterator stmtIt = units.iterator(startStmt);
 
-        boolean beginSearch = false;
         while (stmtIt.hasNext()) {
             Stmt stmt = (Stmt)stmtIt.next();
 
-            if (stmt == assignStmt) {
-                beginSearch = true;
+            if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
+                SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
+                if (locals.contains(si.getBase()))
+                    return si;
+            }
+            
+            //assigning local to new local, remember lhs
+            if (stmt instanceof AssignStmt &&
+                    locals.contains(((AssignStmt)stmt).getRightOp()) &&
+                    ((AssignStmt)stmt).getLeftOp() instanceof Local) {
+                
+                locals.add((Local) ((AssignStmt)stmt).getLeftOp());
                 continue;
             }
 
-            if (beginSearch) {
-                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
-                    SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
-                    if (si.getBase() == local)
-                        return si;
-
-                    //value has been redefined before we found a constructor, so we can't find anything!
-                    for (ValueBox def : stmt.getDefBoxes()) {
-                        if (def.getValue().equals(local)) {
-                            //System.out.println("Failed on can contain value: " + stmt);
-                            return null;
-                        }
-                    }
-
-                } else if (!stmt.containsInvokeExpr() && stmt.branches()) {
-                    //check for control flow?
-                    //System.out.println("Failed on control flow: " + stmt);
+            //check
+            //value has been redefined before we found a constructor, so we can't find anything!
+            for (ValueBox def : stmt.getDefBoxes()) {
+                if (locals.contains(def.getValue())) {
+                    //System.out.println("Failed on can contain value: " + stmt);
                     return null;
                 }
+
             }
+
+            //now account for some jumps, and if constructs
+            if (stmt instanceof JGotoStmt) {
+                //recurse into goto statements
+                
+                //but only go forward...to avoid loops
+                if (!units.follows((Stmt)((JGotoStmt) stmt).getTarget(), stmt))
+                    return null;
+                
+                return findConstructorCall(method, (Stmt)((JGotoStmt) stmt).getTarget(), locals);
+            } else if (stmt instanceof JIfStmt) {
+                if (!units.follows((Stmt)((JIfStmt) stmt).getTarget(), stmt))
+                    return null;
+                
+                //recurse into if statement target and fall through
+                SpecialInvokeExpr trueBranch = findConstructorCall(method, ((JIfStmt) stmt).getTarget(), locals); 
+                SpecialInvokeExpr falseBranch = findConstructorCall(method, (Stmt)units.getSuccOf(stmt), locals); 
+
+                if (trueBranch == falseBranch)
+                    return trueBranch;
+                else 
+                    return null;
+            } 
         }
+
         System.out.println("Failed...");
         return null;
     }
