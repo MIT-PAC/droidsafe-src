@@ -3547,7 +3547,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         this.onContextItemSelected(menu.add(new String()));
        
         onWindowFocusChanged(getTaintBoolean());
-
         onTouchEvent(MotionEvent.droidsafeObtainEvent());
         onTrackballEvent(MotionEvent.droidsafeObtainEvent());
         onGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
@@ -3557,6 +3556,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         onKeyLongPress(getTaintInt(), KeyEvent.droidsafeGetEvent());
         onKeyShortcut(getTaintInt(), KeyEvent.droidsafeGetEvent());
         onKeyMultiple(getTaintInt(), getTaintInt(), KeyEvent.droidsafeGetEvent());
+        
+        //all dispatch functions
+        dispatchTouchEvent(MotionEvent.droidsafeObtainEvent());
+        dispatchGenericMotionEvent(MotionEvent.droidsafeObtainEvent());
+        dispatchKeyEvent(KeyEvent.droidsafeObtainEvent());
+        dispatchKeyShortcutEvent(KeyEvent.droidsafeGetEvent());
+        dispatchTrackballEvent(MotionEvent.droidsafeObtainEvent());
+        dispatchPopulateAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
     }
 
     
