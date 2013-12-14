@@ -69,7 +69,7 @@ public class API {
     private Map<String,Class<?>> stubsForModeledClasses;
 
     /** Container classes that we have modified to be understood by our analysis. */
-    private final Set<String> droidSafeContainerClasses = 
+    private Set<String> droidSafeContainerClasses = 
             new HashSet<String>(Arrays.asList(
                 "java.util.AbstractCollection",
                 "java.util.AbstractList",
@@ -115,6 +115,12 @@ public class API {
         return droidSafeContainerClasses.contains(clz);
     }
 
+    /**
+     * Add a class to the list of container classes...
+     */
+    public void addContainerClass(SootClass clz) {
+        droidSafeContainerClasses.add(clz.getName());
+    }
 
     public void init() {
         //uncomment this to create system method files

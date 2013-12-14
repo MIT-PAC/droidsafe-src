@@ -309,6 +309,31 @@ public class Project {
     public boolean isSrcClass(String clz) {
         return srcClasses.contains(clz);
     }
+    
+    
+
+    /**
+     * Add a generated class to the list of src classes.
+     */
+    public void addSrcClass(SootClass clz) {
+        srcClasses.add(clz.getName());
+    }
+    
+
+    /**
+     * Add a generated class to the list of gen classes.
+     */
+    public void addGenClass(SootClass clz) {
+        genClasses.add(clz.getName());
+    }
+    
+
+    /**
+     * Add a generated class to the list of src classes.
+     */
+    public void addLibClass(SootClass clz) {
+        libClasses.add(clz.getName());
+    }
 
     /**
      * Return true if the class was loaded from the application src/ directory.
@@ -334,6 +359,12 @@ public class Project {
         return genClasses.contains(clz);
     }
     
+    /**
+     * Return true if this class is defined in gen/ directory of android application. 
+     */
+    public boolean isGenClass(SootClass clz) {
+        return genClasses.contains(clz.getName());
+    }
     
     /**
      * Return the set of generated classe names.

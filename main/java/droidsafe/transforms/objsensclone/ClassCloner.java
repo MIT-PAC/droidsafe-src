@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.speclang.Method;
 import droidsafe.utils.SootMethodList;
@@ -144,8 +145,24 @@ public class ClassCloner {
         Scene.v().addClass(clone);
         Scene.v().loadClass(clone.getName(), SootClass.BODIES);
         clone.setApplicationClass();  
+        
         if (API.v().isSystemClass(original)) {
             API.v().addSystemClass(clone);
+        }
+        
+        if (API.v().isContainerClass(original.getName())) 
+            API.v().addContainerClass(clone);
+        
+        if (Project.v().isSrcClass(original)) {
+            Project.v().addSrcClass(clone);
+        }
+        
+        if (Project.v().isGenClass(original)) {
+            Project.v().addGenClass(clone);
+        }
+        
+        if (Project.v().isLibClass(original)) {
+            Project.v().addLibClass(clone);
         }
         
         fixInvokeSpecials();

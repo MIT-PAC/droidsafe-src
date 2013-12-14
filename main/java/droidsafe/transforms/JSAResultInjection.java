@@ -118,8 +118,9 @@ public class JSAResultInjection extends BodyTransformer {
                 for (Object valueBox : stmt.getUseAndDefBoxes()) {
                     if (valueBox instanceof ValueBox) {
                         Value value = ((ValueBox)valueBox).getValue();
-                        if (value instanceof StringConstant) 
+                        if (value instanceof StringConstant) {
                             trackedStringConstants.add((StringConstant)value);
+                        }
                     }
                 }
                     
