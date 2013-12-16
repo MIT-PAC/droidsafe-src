@@ -6,8 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ValueBox;
+import soot.jimple.Expr;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAStrings.Hotspot;
+import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 
 public class HotspotModel extends ModelChangeSupport implements Serializable {
 
@@ -69,7 +72,14 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
     this.argumentPosition = originalHotspot.getArgumentPosition();
     this.valueClass = JSAStrings.v().getClassName(vb);
     this.valueSourceFile = JSAStrings.v().getSourceFile(vb);
-    this.valueSourceLine = JSAStrings.v().getSourceLine(vb);
+    
+    SourceLocationTag sourceLine = SootUtils.getSourceLocation(vb); 
+    
+    if (sourceLine != null)
+        this.valueSourceLine = Integer.toString(sourceLine.getLine());
+    else
+        this.valueSourceLine = "0";
+        
     this.valueRegularExpression = JSAStrings.v().getRegex(vb.getValue());
     this.valueMethodName = JSAStrings.v().getMetodName(vb);
   }

@@ -62,7 +62,6 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
-import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;

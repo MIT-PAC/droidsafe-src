@@ -8,7 +8,6 @@ import droidsafe.android.app.resources.Resources;
 import droidsafe.android.app.resources.RString;
 import droidsafe.android.app.resources.RStringArray;
 import droidsafe.android.system.API;
-import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 

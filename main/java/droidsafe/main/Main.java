@@ -202,16 +202,6 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
-        if (Config.v().addObjectSensitivity) {
-            driverMsg("Adding Object Sensitivity by cloning...");
-            monitor.subTask("Adding Object Sensitivity by cloning...");
-            ObjectSensitivityCloner.v().runForVA();
-            monitor.worked(1);
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-        }
         
         //don't need a pta run here because jsa does not use our pta!
 
@@ -231,6 +221,16 @@ public class Main {
         timer1.stop();
         driverMsg("Finished String Analysis: " + timer1);
 
+        if (Config.v().addObjectSensitivity) {
+            driverMsg("Adding Object Sensitivity by cloning...");
+            monitor.subTask("Adding Object Sensitivity by cloning...");
+            ObjectSensitivityCloner.v().runForVA();
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+        }
+            
         if (Config.v().runValueAnalysis) {
             driverMsg("Injecting String Analysis Results.");
             monitor.subTask("Injecting String Analysis Results.");
@@ -240,11 +240,11 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
         }
-
+        
         //need this pta run to account for object sens and jsa injection
         if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+     
         ValueAnalysis.setup();
         if (Config.v().runValueAnalysis) {
             monitor.worked(1);

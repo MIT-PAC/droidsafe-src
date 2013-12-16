@@ -30,6 +30,8 @@ public class JimpleRelationships {
     private static final Logger logger = LoggerFactory.getLogger(JimpleRelationships.class);
     /** Map of expr to enclosing statement */
     private HashMap<Expr, Stmt> exprToStmt;
+    /** Map of value box to enclosing statement */
+    private HashMap<ValueBox, Stmt> valueBoxToStmt;
     /** map of statement to enclosing SootMethod */
     private HashMap<Stmt, SootMethod> stmtToMethod;
     /** Static singleton */
@@ -66,6 +68,7 @@ public class JimpleRelationships {
         logger.info("Calculating Jimple relationships...");
         exprToStmt = new HashMap<Expr, Stmt>();
         stmtToMethod = new HashMap<Stmt, SootMethod>();
+        valueBoxToStmt = new HashMap<ValueBox, Stmt>();
         //build maps of relationships by iterating over all user classes:
         for (SootClass clz : Scene.v().getClasses()) {
             for (SootMethod method : clz.getMethods()) {
@@ -83,6 +86,9 @@ public class JimpleRelationships {
                     
                     stmtToMethod.put(stmt, method);
                     for (Object box : stmt.getUseAndDefBoxes()) {
+                        if (box instanceof ValueBox) 
+                            valueBoxToStmt.put((ValueBox)box, stmt);
+                            
                         if (((ValueBox) box).getValue() instanceof Expr)
                             exprToStmt.put((Expr)((ValueBox) box).getValue(), stmt);
                     }
@@ -90,6 +96,13 @@ public class JimpleRelationships {
             }
         }
     } 
+    
+    /**
+     * Given a value box in the scene, return the enclosing statment
+     */
+    public Stmt getEnclosingStmt(ValueBox box) {
+        return valueBoxToStmt.get(box);
+    }
     
     /**
      * Given an expr in the Scene, return the enclosing statement.

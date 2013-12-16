@@ -26,11 +26,14 @@ import soot.Scene;
 import soot.SootClass;
 import soot.Value;
 import soot.ValueBox;
+import soot.jimple.Expr;
 import dk.brics.string.StringAnalysis;
 import dk.brics.string.grammar.Nonterminal;
 import droidsafe.analyses.strings.AutomataUtil.RE;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
+import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 
 /**
  * Wrapper for the Java String Analyzer.
@@ -217,6 +220,21 @@ public class JSAStrings {
     gv = new GrammarVisitor(sa.getGrammar());
     return;
   }
+  
+  /**
+   * Another pass might need to add to the results for JSAStrings.  This method will
+   * clone an existing result to a new value box + hotspot.
+   */
+  public void copyResult(Value toCopy, String calleeSig, int newArgNum, 
+                               ValueBox newVB) {
+      hotspots.add(newVB);
+      regexMap.put(newVB.getValue(), regexMap.get(toCopy));
+      nonterminals.put(newVB.getValue(), nonterminals.get(toCopy));
+      
+      List<ValueBox> vbs = new LinkedList<ValueBox>();
+      vbs.add(newVB);
+      addSignatureToHotspotMap(calleeSig, new Hotspot(calleeSig, newArgNum, hotspots));
+  }
 
   /**
    * Auxiliary method to add an element to the hotspot map.
@@ -276,7 +294,7 @@ public class JSAStrings {
     String res = regexMap.get(v);
     return (res == null) ? "<any string>" : res;
   }
-
+  
   /**
    * Generate the regular expression for the given Value.
    * 
@@ -349,15 +367,18 @@ public class JSAStrings {
   }
 
 
+ 
   /**
    * Get the source line associated with the parameter hotspot.
    * 
    * @param v The hotspot.
    * @return
-   */
+  */
+  @Deprecated
   public String getSourceLine(ValueBox v) {
-    return Integer.toString(sa.getLineNumber(v));
+      return Integer.toString(sa.getLineNumber(v));
   }
+  
 
   // public void logGrammar() {
   // logger.debug("Done with String analysis");

@@ -68,7 +68,9 @@ public class HoistAllocations extends BodyTransformer {
         // a more generic approach
         if (false) {
             // Get all of the android classes and find the methods to be hoisted
-            List<SootClass> android_classes = SootUtils.get_android_classes();
+            
+            //TODO: CHANGED BY MGORDON, THESE SOOTUTILS CALLS DO NOT CONFORM TO DROIDSAFE NORMS
+            List<SootClass> android_classes = null;//SootUtils.get_android_classes();
             for (SootClass clz : android_classes) {
                 for (SootMethod meth : clz.getMethods()) {
                     List<Tag> tlist = meth.getTags();
@@ -84,7 +86,8 @@ public class HoistAllocations extends BodyTransformer {
             }
         }
         
-        List<SootClass> app_classes = SootUtils.get_app_classes();
+        //TODO: CHANGED BY MGORDON, NEEDS TO BE UPDATED
+        List<SootClass> app_classes = null;//SootUtils.get_app_classes();
         
         // call the transformation on each method
         HoistAllocations transformer = new HoistAllocations();

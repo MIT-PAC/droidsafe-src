@@ -37,6 +37,7 @@ import soot.FloatType;
 import soot.Hierarchy;
 import soot.IntType;
 import soot.SootMethodRef;
+import soot.ValueBox;
 import soot.jimple.DoubleConstant;
 import soot.jimple.Expr;
 import soot.jimple.FloatConstant;
@@ -797,6 +798,19 @@ public class SootUtils {
     }
 
     /**
+     * Return the source location of a Jimple value box.
+     */
+    public static SourceLocationTag getSourceLocation(ValueBox vb) {
+        Stmt stmt = JimpleRelationships.v().getEnclosingStmt(vb);
+        if (stmt == null) {
+            logger.debug("Cannot find enclosing statement for value box: {}", vb);
+            return null;
+        }
+
+        return getSourceLocation(stmt);
+    }
+    
+    /**
      * Return the source location of a Jimple statement.
      */
     public static SourceLocationTag getSourceLocation(Stmt stmt) {
@@ -823,6 +837,8 @@ public class SootUtils {
 
         if (tag != null) {
             line = new SourceLocationTag(clz.toString(),  tag.getLineNumber()); 
+        } else {
+           logger.debug("Cannot find line number tag for {} {}", stmt, clz);
         }
 
         return line;
@@ -1305,30 +1321,6 @@ public class SootUtils {
         }
         return null;
 
-    }
-    /** 
-     * Returns a list of all of the application (non android)
-     * classes.
-     */
-    public static List<SootClass> get_app_classes () {
-        List<SootClass> clist = new ArrayList<SootClass>();
-        for (SootClass clz : Scene.v().getClasses()) {
-            if (Project.v().isSrcClass(clz.toString()))
-                clist.add(clz);
-        }
-        return (clist);
-    }
-
-    /** 
-     * Returns a list of all of the android system classes.
-     */
-    public static List<SootClass> get_android_classes () {
-        List<SootClass> clist = new ArrayList<SootClass>();
-        for (SootClass clz : Scene.v().getClasses()) {
-            if (!Project.v().isSrcClass(clz.toString()))
-                clist.add(clz);
-        }
-        return (clist);
     }
 
     /** 

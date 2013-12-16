@@ -319,7 +319,27 @@ public class Project {
         srcClasses.add(clz.getName());
     }
     
-
+    /**
+     * Remove a class from the list of src classes.
+     */
+    public void removeSrcClass(SootClass clz) {
+        srcClasses.remove(clz.getName());
+    }
+    
+    /**
+     * Remove a class from the list of lib classes.
+     */
+    public void removeLibClass(SootClass clz) {
+        libClasses.remove(clz.getName());
+    }
+    
+    /**
+     * Remove a class from the list of gen classes.
+     */
+    public void removeGenClass(SootClass clz) {
+        genClasses.remove(clz.getName());
+    }
+    
     /**
      * Add a generated class to the list of gen classes.
      */

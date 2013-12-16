@@ -3,6 +3,7 @@ package droidsafe.transforms.objsensclone;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
@@ -121,9 +122,12 @@ public class ObjectSensitivityCloner {
             cloneAllAllocsOfClass(currentClass);
         }
 
+        Scene.v().releaseActiveHierarchy();
+        Scene.v().releaseFastHierarchy();
 
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
+    
 
     public void runForInfoFlow() {
         numClonedClasses = 0;
@@ -135,6 +139,9 @@ public class ObjectSensitivityCloner {
             cloneAllAllocsOfClass(currentClass);
         }
 
+        Scene.v().releaseActiveHierarchy();
+        Scene.v().releaseFastHierarchy();
+        
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
 
@@ -197,6 +204,7 @@ public class ObjectSensitivityCloner {
                                 //clone class and install it as an new API class
 
                                 ClassCloner cCloner = ClassCloner.cloneClass(base);
+                                
                                 SootClass cloned = cCloner.getClonedClass();
 
                                 //add all cloned methods clone to the master list
@@ -216,6 +224,7 @@ public class ObjectSensitivityCloner {
                                 assign.setRightOp(newNewExpr);
 
                                 numClonedClasses++;
+                                clonedClasses.add(currentClass);
                             } else {
                                 throw new Exception("Special Invoke Not Found!");
                             }
@@ -230,7 +239,7 @@ public class ObjectSensitivityCloner {
                 }
             }
         }
-        clonedClasses.add(currentClass);
+        
     }
 
     /**
@@ -394,8 +403,18 @@ public class ObjectSensitivityCloner {
             } 
         }
 
-        System.out.println("Failed...");
         return null;
+    }
+    
+    /**
+     * For each original class that was cloned, remove it from lists of src, lib, gen
+     */
+    private void cleanUpProjectSets() {
+        for (SootClass clz : clonedClasses) {
+            Project.v().removeSrcClass(clz);
+            Project.v().removeGenClass(clz);
+            Project.v().removeLibClass(clz);
+        }
     }
 }
 
