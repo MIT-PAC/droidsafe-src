@@ -6,6 +6,9 @@ import os
 import subprocess
 import socket
 
+# if your hostname is one of these, then issue a server run (use 32 GB memory)
+SERVERS = ["hippo", "rhino"]
+
 HOSTNAME = socket.gethostname()
 JARS = ["droidsafe-core.jar","droidsafe-libs.jar"]
 MAIN_CLASS = "droidsafe.main.Main"
@@ -19,28 +22,29 @@ def run_droidsafe(args):
     java_command.append("java")
     java_command.append("-cp")
 
-    classpath = "";
+    classpath = ""
     for jar in JARS:
-    	classpath += libs + jar + ":";
+    	classpath += libs + jar + ":"
     #needed for logback configuration
     classpath += APAC_HOME + os.sep + "config-files"
     classpath += ":."
     java_command.append(classpath)
 
     #uncomment for yourkit profiler
-    #java_command.append("-agentpath:/Users/mgordon/tools/YourKit_Java_Profiler_2013_build_13052.app/bin/mac/libyjpagent.jnilib");
+    #java_command.append("-agentpath:/Users/mgordon/tools/YourKit_Java_Profiler_2013_build_13052.app/bin/mac/libyjpagent.jnilib")
 
     java_command.append("-Djava.library.path=" + APAC_HOME + "lib")
 
-    if (HOSTNAME.startswith("hippo")):
-        java_command.append("-Xms2g");
-        java_command.append("-Xmx32g");
+    if (HOSTNAME in SERVERS):
+        print("Server run: setting memory size to 32GB")
+        java_command.append("-Xms2g")
+        java_command.append("-Xmx32g")
     else:
-        java_command.append("-Xms1g");
-        java_command.append("-Xmx16g");
+        java_command.append("-Xms1g")
+        java_command.append("-Xmx16g")
 
-#   java_command.append("-Xrunhprof:heap=sites,depth=6");
-    java_command.append("-Dfile.encoding=UTF-8");
+#   java_command.append("-Xrunhprof:heap=sites,depth=6")
+    java_command.append("-Dfile.encoding=UTF-8")
 
     #search args for -strict to enable assertions
     for arg in args[1:]:
