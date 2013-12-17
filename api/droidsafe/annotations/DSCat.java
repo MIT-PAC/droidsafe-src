@@ -4,7 +4,6 @@ public enum DSCat {
     //Safe Categories */
     ANDROID_ANIMATION,
     OS_GENERAL,
-    CONTAINER_CLASS,
     DATA_STRUCTURE,  
     FRAMEWORK_FINAL,  //cannot override
     SAFE_LIST,
@@ -16,15 +15,19 @@ public enum DSCat {
     REFLECTION,
     
     //Spec Categories
+    ABSTRACT_METHOD,
     ANDROID_APPLICATION,
     ANDROID_INTERNAL,
     ANDROID_INSTRUMENTATION,
     ANDROID_MANAGER,
+    AUDIO_CALL,
+    CALLBACK_INVOKE,  //method to trigger callback (user requests)
     CONTENT,
     TO_MODEL, //once the method is modeled, it will be safe
 
+    DATABASE,  //database changing
     DEFAULT_MODIFIER,  
-    DEVICE,
+    DEVICE,    
 
     GPS,
     GRAPHICS,
@@ -42,6 +45,8 @@ public enum DSCat {
     
     OS_LOW_LEVEL,    
     PHONE_CALL,
+    RESOURCE,
+    SENSOR,
     SMS,
     SHARING,
     STORAGE,
