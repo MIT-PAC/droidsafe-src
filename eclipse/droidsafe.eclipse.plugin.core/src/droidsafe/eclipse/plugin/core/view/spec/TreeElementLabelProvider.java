@@ -87,16 +87,10 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       Object data = ((TreeElement<?, ?>) element).getData();
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
-        String receiver = method.getReceiverValue();
-        if (receiver == null) {
-          receiver = "";
-        } else if (!receiver.equals("")) {
-          receiver = "\n" + receiver;
-        }
         if (!useShortSignatureForMethods) {
-          return ClassCloner.removeClassCloneSuffix(method.getSignature() + receiver);
+          return ClassCloner.removeClassCloneSuffix(method.getSignature());
         } else {
-          return ClassCloner.removeClassCloneSuffix(method.getShortSignature() + receiver);
+          return ClassCloner.removeClassCloneSuffix(method.getShortSignature());
         }
       } else if (data instanceof HotspotModel) {
           return "hotspot: argument " + (((HotspotModel)data).getArgumentPosition() + 1);

@@ -364,4 +364,7 @@ public class ClassCloner {
         return matcher.replaceAll("");
     }
 
+    public static SootClass getClonedClassFromClone(SootClass clone) {
+        return Scene.v().getSootClass(ClassCloner.removeClassCloneSuffix(clone.getName()));
+    }
 }
