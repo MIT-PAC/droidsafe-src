@@ -2026,10 +2026,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         passed to this method.  Of course, we cannot model the response intent
         perfectly, but grab as many fields as we can.
 		*/
-		Intent resultIntent;
-		resultIntent = intent.translateIntent();
+		//Intent resultIntent;
+		//resultIntent = intent.translateIntent();
 		this.onActivityResult(requestCode, /* just make this up */ -1,
-				resultIntent);
+				intent);
 		// Original method
 		/*
 		{
@@ -2089,7 +2089,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     
     @DSModeled(DSC.SPEC)
     @Override public void startActivity(Intent intent){
-		startActivityForResult(intent, -1);
+		onActivityResult(-1, -1, intent);
 		// Original method
 		/*
 		{
